@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace DeQcc
+namespace DeQcc2
 {
     // TODO only difference between IMMEDIATE and other variable is it is never written, only read.
     // so without names to identify immediates, give them a random name then post-decompile step to find all names never written?

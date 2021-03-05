@@ -5,15 +5,12 @@ using System.Text;
 
 namespace DeQcc
 {
-    // offsets are always multiplied by 4 before using
-    using gofs_t = System.Int32;		// offset in global data block
-
-    enum etype_t
+    enum Types
     {
         ev_void, ev_string, ev_float, ev_vector, ev_entity, ev_field, ev_function, ev_pointer
     }
 
-    enum opcodes
+    enum Opcodes
     {
         OP_DONE,
         OP_MUL_F,
@@ -92,14 +89,13 @@ namespace DeQcc
         OP_BITOR
     }
 
-
-    class dstatement_t
+    class Statement
     {
         public ushort op;
         public short a, b, c;
     }
 
-    class ddef_t
+    class Def
     {
         public ushort type;	// if DEF_SAVEGLOBGAL bit is set
         // the variable needs to be saved in savegames
@@ -108,7 +104,7 @@ namespace DeQcc
         public int s_name;
     }
 
-    class dfunction_t
+    class Function
     {
         public int first_statement;    // negative numbers are builtins
 
@@ -124,7 +120,7 @@ namespace DeQcc
         public byte[] parm_size = new byte[ProQCC.MAX_PARMS];
     }
 
-    class dprograms_t
+    class Progs
     {
         public int version;
         public int crc;			// check of header file
@@ -150,43 +146,17 @@ namespace DeQcc
         public int entityfields;
     }
 
-    class type_t
-    {
-        public etype_t type;
-        public def_t def;   // NG ptr		// a def that points to this type
-
-        public type_t next; // NG ptr
-        // function types are more complex
-        public type_t aux_type; // NG ptr	// return type or field type
-
-        public int num_parms;      // -1 = variable args
-
-        public type_t[] parm_types = new type_t[ProQCC.MAX_PARMS];    // NG ptr	// only [num_parms] allocated
-    }
-
-    class def_t
-    {
-        public type_t type;    // NG ptr
-        public char name;  // NG ptr
-        public def_t next;
-        public def_t prev;    // NG ptrs
-        public gofs_t ofs;
-        public def_t scope;	// NG ptr // function the var was defined in, or NULL
-
-        public int initialized;        // 1 when a declaration included "= immediate"
-    }
-
-    class opcode_t
+    class Opcode
     {
         public string name;
         public string opname;
         public int priority;
         public bool right_associative;
-        public def_t type_a;
-        public def_t type_b;
-        public def_t type_c;
+        public Types type_a;
+        public Types type_b;
+        public Types type_c;
 
-        public opcode_t(string _name, string _opname, int _priority, bool _right_associative, def_t _type_a, def_t _type_b, def_t _type_c)
+        public Opcode(string _name, string _opname, int _priority, bool _right_associative, Types _type_a, Types _type_b, Types _type_c)
         {
             name = _name;
             opname = _opname;
@@ -219,18 +189,7 @@ namespace DeQcc
         const int MAX_STATEMENTS = 131072;
         const int MAX_FUNCTIONS = 16384;
 
-        def_t def_ret = new def_t();
-        def_t[] def_parms = new def_t[MAX_PARMS];
-        def_t def_void = new def_t();
-        def_t def_string = new def_t();
-        def_t def_float = new def_t();
-        def_t def_vector = new def_t();
-        def_t def_entity = new def_t();
-        def_t def_field = new def_t();
-        def_t def_function = new def_t();
-        def_t def_pointer = new def_t();
-
-        List<opcode_t> pr_opcodes = new List<opcode_t>();
+        List<Opcode> pr_opcodes = new List<Opcode>();
 
         float[] pr_globals = new float[MAX_REGS];
         int numpr_globals;
@@ -238,17 +197,16 @@ namespace DeQcc
         char[] strings = new char[MAX_STRINGS];
         int strofs;
 
-        dstatement_t[] statements = new dstatement_t[MAX_STATEMENTS];
+        Statement[] statements = new Statement[MAX_STATEMENTS];
         int numstatements;
-        int[] statement_linenums = new int[MAX_STATEMENTS];
 
-        dfunction_t[] functions = new dfunction_t[MAX_FUNCTIONS];
+        Function[] functions = new Function[MAX_FUNCTIONS];
         int numfunctions;
 
-        ddef_t[] globals = new ddef_t[MAX_GLOBALS];
+        Def[] globals = new Def[MAX_GLOBALS];
         int numglobaldefs;
 
-        ddef_t[] fields = new ddef_t[MAX_FIELDS];
+        Def[] fields = new Def[MAX_FIELDS];
         int numfielddefs;
 
         public void InitData()
@@ -260,13 +218,6 @@ namespace DeQcc
             numfunctions = 1;
             numglobaldefs = 1;
             numfielddefs = 1;
-
-            def_ret.ofs = OFS_RETURN;
-            for (i = 0; i < MAX_PARMS; i++)
-            {
-                def_parms[i] = new def_t(); // NG
-                def_parms[i].ofs = OFS_PARM0 + 3 * i;
-            }
         }
 
         StreamWriter Decompileofile;
@@ -388,72 +339,72 @@ namespace DeQcc
             builtins.Add("string (string s)");
             builtins.Add("void (entity e)");
 
-            pr_opcodes.Add(new opcode_t("<DONE>", "DONE", -1, false, def_entity, def_field, def_void));
-            pr_opcodes.Add(new opcode_t("*", "MUL_F", 2, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("*", "MUL_V", 2, false, def_vector, def_vector, def_float));
-            pr_opcodes.Add(new opcode_t("*", "MUL_FV", 2, false, def_float, def_vector, def_vector));
-            pr_opcodes.Add(new opcode_t("*", "MUL_VF", 2, false, def_vector, def_float, def_vector));
-            pr_opcodes.Add(new opcode_t("/", "DIV", 2, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("+", "ADD_F", 3, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("+", "ADD_V", 3, false, def_vector, def_vector, def_vector));
-            pr_opcodes.Add(new opcode_t("-", "SUB_F", 3, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("-", "SUB_V", 3, false, def_vector, def_vector, def_vector));
-            pr_opcodes.Add(new opcode_t("==", "EQ_F", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("==", "EQ_V", 4, false, def_vector, def_vector, def_float));
-            pr_opcodes.Add(new opcode_t("==", "EQ_S", 4, false, def_string, def_string, def_float));
-            pr_opcodes.Add(new opcode_t("==", "EQ_E", 4, false, def_entity, def_entity, def_float));
-            pr_opcodes.Add(new opcode_t("==", "EQ_FNC", 4, false, def_function, def_function, def_float));
-            pr_opcodes.Add(new opcode_t("!=", "NE_F", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("!=", "NE_V", 4, false, def_vector, def_vector, def_float));
-            pr_opcodes.Add(new opcode_t("!=", "NE_S", 4, false, def_string, def_string, def_float));
-            pr_opcodes.Add(new opcode_t("!=", "NE_E", 4, false, def_entity, def_entity, def_float));
-            pr_opcodes.Add(new opcode_t("!=", "NE_FNC", 4, false, def_function, def_function, def_float));
-            pr_opcodes.Add(new opcode_t("<=", "LE", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t(">=", "GE", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("<", "LT", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t(">", "GT", 4, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_float));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_vector));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_string));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_entity));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_field));
-            pr_opcodes.Add(new opcode_t(".", "INDIRECT", 1, false, def_entity, def_field, def_function));
-            pr_opcodes.Add(new opcode_t(".", "ADDRESS", 1, false, def_entity, def_field, def_pointer));
-            pr_opcodes.Add(new opcode_t("=", "STORE_F", 5, true, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("=", "STORE_V", 5, true, def_vector, def_vector, def_vector));
-            pr_opcodes.Add(new opcode_t("=", "STORE_S", 5, true, def_string, def_string, def_string));
-            pr_opcodes.Add(new opcode_t("=", "STORE_ENT", 5, true, def_entity, def_entity, def_entity));
-            pr_opcodes.Add(new opcode_t("=", "STORE_FLD", 5, true, def_field, def_field, def_field));
-            pr_opcodes.Add(new opcode_t("=", "STORE_FNC", 5, true, def_function, def_function, def_function));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_F", 5, true, def_pointer, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_V", 5, true, def_pointer, def_vector, def_vector));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_S", 5, true, def_pointer, def_string, def_string));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_ENT", 5, true, def_pointer, def_entity, def_entity));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_FLD", 5, true, def_pointer, def_field, def_field));
-            pr_opcodes.Add(new opcode_t("=", "STOREP_FNC", 5, true, def_pointer, def_function, def_function));
-            pr_opcodes.Add(new opcode_t("<RETURN>", "RETURN", -1, false, def_void, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("!", "NOT_F", -1, false, def_float, def_void, def_float));
-            pr_opcodes.Add(new opcode_t("!", "NOT_V", -1, false, def_vector, def_void, def_float));
-            pr_opcodes.Add(new opcode_t("!", "NOT_S", -1, false, def_vector, def_void, def_float));
-            pr_opcodes.Add(new opcode_t("!", "NOT_ENT", -1, false, def_entity, def_void, def_float));
-            pr_opcodes.Add(new opcode_t("!", "NOT_FNC", -1, false, def_function, def_void, def_float));
-            pr_opcodes.Add(new opcode_t("<IF>", "IF", -1, false, def_float, def_float, def_void));
-            pr_opcodes.Add(new opcode_t("<IFNOT>", "IFNOT", -1, false, def_float, def_float, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL0>", "CALL0", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL1>", "CALL1", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL2>", "CALL2", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL3>", "CALL3", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL4>", "CALL4", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL5>", "CALL5", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL6>", "CALL6", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL7>", "CALL7", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<CALL8>", "CALL8", -1, false, def_function, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("<STATE>", "STATE", -1, false, def_float, def_float, def_void));
-            pr_opcodes.Add(new opcode_t("<GOTO>", "GOTO", -1, false, def_float, def_void, def_void));
-            pr_opcodes.Add(new opcode_t("&&", "AND", 6, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("||", "OR", 6, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("&", "BITAND", 2, false, def_float, def_float, def_float));
-            pr_opcodes.Add(new opcode_t("|", "BITOR", 2, false, def_float, def_float, def_float));
+            pr_opcodes.Add(new Opcode("<DONE>", "DONE", -1, false, Types.ev_entity, Types.ev_field, Types.ev_void));
+            pr_opcodes.Add(new Opcode("*", "MUL_F", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("*", "MUL_V", 2, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
+            pr_opcodes.Add(new Opcode("*", "MUL_FV", 2, false, Types.ev_float, Types.ev_vector, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("*", "MUL_VF", 2, false, Types.ev_vector, Types.ev_float, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("/", "DIV", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("+", "ADD_F", 3, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("+", "ADD_V", 3, false, Types.ev_vector, Types.ev_vector, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("-", "SUB_F", 3, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("-", "SUB_V", 3, false, Types.ev_vector, Types.ev_vector, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("==", "EQ_F", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("==", "EQ_V", 4, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
+            pr_opcodes.Add(new Opcode("==", "EQ_S", 4, false, Types.ev_string, Types.ev_string, Types.ev_float));
+            pr_opcodes.Add(new Opcode("==", "EQ_E", 4, false, Types.ev_entity, Types.ev_entity, Types.ev_float));
+            pr_opcodes.Add(new Opcode("==", "EQ_FNC", 4, false, Types.ev_function, Types.ev_function, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!=", "NE_F", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!=", "NE_V", 4, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!=", "NE_S", 4, false, Types.ev_string, Types.ev_string, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!=", "NE_E", 4, false, Types.ev_entity, Types.ev_entity, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!=", "NE_FNC", 4, false, Types.ev_function, Types.ev_function, Types.ev_float));
+            pr_opcodes.Add(new Opcode("<=", "LE", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode(">=", "GE", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("<", "LT", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode(">", "GT", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_float));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_vector));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_string));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_entity));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_field));
+            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_function));
+            pr_opcodes.Add(new Opcode(".", "ADDRESS", 1, false, Types.ev_entity, Types.ev_field, Types.ev_pointer));
+            pr_opcodes.Add(new Opcode("=", "STORE_F", 5, true, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("=", "STORE_V", 5, true, Types.ev_vector, Types.ev_vector, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("=", "STORE_S", 5, true, Types.ev_string, Types.ev_string, Types.ev_string));
+            pr_opcodes.Add(new Opcode("=", "STORE_ENT", 5, true, Types.ev_entity, Types.ev_entity, Types.ev_entity));
+            pr_opcodes.Add(new Opcode("=", "STORE_FLD", 5, true, Types.ev_field, Types.ev_field, Types.ev_field));
+            pr_opcodes.Add(new Opcode("=", "STORE_FNC", 5, true, Types.ev_function, Types.ev_function, Types.ev_function));
+            pr_opcodes.Add(new Opcode("=", "STOREP_F", 5, true, Types.ev_pointer, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("=", "STOREP_V", 5, true, Types.ev_pointer, Types.ev_vector, Types.ev_vector));
+            pr_opcodes.Add(new Opcode("=", "STOREP_S", 5, true, Types.ev_pointer, Types.ev_string, Types.ev_string));
+            pr_opcodes.Add(new Opcode("=", "STOREP_ENT", 5, true, Types.ev_pointer, Types.ev_entity, Types.ev_entity));
+            pr_opcodes.Add(new Opcode("=", "STOREP_FLD", 5, true, Types.ev_pointer, Types.ev_field, Types.ev_field));
+            pr_opcodes.Add(new Opcode("=", "STOREP_FNC", 5, true, Types.ev_pointer, Types.ev_function, Types.ev_function));
+            pr_opcodes.Add(new Opcode("<RETURN>", "RETURN", -1, false, Types.ev_void, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("!", "NOT_F", -1, false, Types.ev_float, Types.ev_void, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!", "NOT_V", -1, false, Types.ev_vector, Types.ev_void, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!", "NOT_S", -1, false, Types.ev_vector, Types.ev_void, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!", "NOT_ENT", -1, false, Types.ev_entity, Types.ev_void, Types.ev_float));
+            pr_opcodes.Add(new Opcode("!", "NOT_FNC", -1, false, Types.ev_function, Types.ev_void, Types.ev_float));
+            pr_opcodes.Add(new Opcode("<IF>", "IF", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<IFNOT>", "IFNOT", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL0>", "CALL0", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL1>", "CALL1", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL2>", "CALL2", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL3>", "CALL3", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL4>", "CALL4", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL5>", "CALL5", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL6>", "CALL6", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL7>", "CALL7", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<CALL8>", "CALL8", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<STATE>", "STATE", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
+            pr_opcodes.Add(new Opcode("<GOTO>", "GOTO", -1, false, Types.ev_float, Types.ev_void, Types.ev_void));
+            pr_opcodes.Add(new Opcode("&&", "AND", 6, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("||", "OR", 6, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("&", "BITAND", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
+            pr_opcodes.Add(new Opcode("|", "BITOR", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
         }
 
         public void DecompileProgsDat(string name)
@@ -467,7 +418,7 @@ namespace DeQcc
         // checked
         void DecompileReadData(string srcfile)
         {
-            dprograms_t progs = new dprograms_t();
+            Progs progs = new Progs();
 
             BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open));
             progs.version = h.ReadInt32();
@@ -497,7 +448,7 @@ namespace DeQcc
             numstatements = progs.numstatements;
             for (int i = 0; i < numstatements; i++)
             {
-                statements[i] = new dstatement_t();
+                statements[i] = new Statement();
                 statements[i].op = h.ReadUInt16();
                 statements[i].a = h.ReadInt16();
                 statements[i].b = h.ReadInt16();
@@ -508,7 +459,7 @@ namespace DeQcc
             numfunctions = progs.numfunctions;
             for (int i = 0; i < numfunctions; i++)
             {
-                functions[i] = new dfunction_t();
+                functions[i] = new Function();
                 functions[i].first_statement = h.ReadInt32();
                 functions[i].parm_start = h.ReadInt32();
                 functions[i].locals = h.ReadInt32();
@@ -524,7 +475,7 @@ namespace DeQcc
             numglobaldefs = progs.numglobaldefs;
             for(int i = 0; i < numglobaldefs; i++)
             {
-                globals[i] = new ddef_t();
+                globals[i] = new Def();
                 globals[i].type = h.ReadUInt16();
                 globals[i].ofs = h.ReadUInt16();
                 globals[i].s_name = h.ReadInt32();
@@ -534,7 +485,7 @@ namespace DeQcc
             numfielddefs = progs.numfielddefs;
             for (int i = 0; i < numfielddefs; i++)
             {
-                fields[i] = new ddef_t();
+                fields[i] = new Def();
                 fields[i].type = h.ReadUInt16();
                 fields[i].ofs = h.ReadUInt16();
                 fields[i].s_name = h.ReadInt32();
@@ -551,9 +502,9 @@ namespace DeQcc
         // checked
         void DecompileCalcProfiles()
         {
-            dfunction_t df;
-            dstatement_t ds, rds;
-            ddef_t par;
+            Function df;
+            Statement ds, rds;
+            Def par;
             ushort dom;
             string fname;
             string line;
@@ -583,7 +534,7 @@ namespace DeQcc
                         dom = (ushort)((ds.op) % 100);
                         if (dom == 0)
                             break;
-                        if (dom == (ushort)opcodes.OP_RETURN)
+                        if (dom == (ushort)Opcodes.OP_RETURN)
                         {
                             rds = ds;
                         }
@@ -630,7 +581,7 @@ namespace DeQcc
                             if (par is null)
                                 throw new Exception("Error - No parameter names with offset " + j + ".");
 
-                            if (par.type == (ushort)etype_t.ev_vector)
+                            if (par.type == (ushort)Types.ev_vector)
                                 j += 2;
 
                             if (j < (df.parm_start) + ps - 1)
@@ -657,13 +608,13 @@ namespace DeQcc
             }
         }
 
-        string DecompilePrintParameter(ddef_t def)
+        string DecompilePrintParameter(Def def)
         {
             string line = "";
 
             if (NGGetString(def.s_name) == "IMMEDIATE")
             {
-                line = DecompileValueString((etype_t)def.type, def.ofs);
+                line = DecompileValueString((Types)def.type, def.ofs);
             }
             else
             {
@@ -673,22 +624,22 @@ namespace DeQcc
             return line;
         }
 
-        string DecompileValueString(etype_t type, ushort pr_globals_offset)
+        string DecompileValueString(Types type, ushort pr_globals_offset)
         {
             string line = "";
 
             switch (type)
             {
-                case etype_t.ev_string:
+                case Types.ev_string:
                     line = DecompileString(NGGetString(BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]))));
                     break;
-                case etype_t.ev_void:
+                case Types.ev_void:
                     line = "void";
                     break;
-                case etype_t.ev_float:
+                case Types.ev_float:
                     line = ((float)pr_globals[pr_globals_offset]).ToString("F3");
                     break;
-                case etype_t.ev_vector:
+                case Types.ev_vector:
                     line = "'" + ((float)pr_globals[pr_globals_offset]).ToString("F3") + " " + ((float)pr_globals[pr_globals_offset + 1]).ToString("F3") + " " + ((float)pr_globals[pr_globals_offset + 2]).ToString("F3") + "'";
                     break;
                 default:
@@ -728,11 +679,11 @@ namespace DeQcc
             return buf.ToString();
         }
 
-        ddef_t? DecompileGetParameter(gofs_t ofs)
+        Def? DecompileGetParameter(int ofs)
         {
             for (int i = 0; i < numglobaldefs; i++)
             {
-                ddef_t def = globals[i];
+                Def def = globals[i];
 
                 if (def.ofs == ofs)
                 {
@@ -762,7 +713,7 @@ namespace DeQcc
         void DecompileDecompileFunctions()
         {
             int i;
-            dfunction_t d;
+            Function d;
             StreamWriter f;
             string fname;
             bool shownwarning = false;
@@ -809,20 +760,20 @@ namespace DeQcc
         {
             int i, findex, ps;
             int dsIndex, tsIndex;   // NG
-            dstatement_t ds, ts;
-            dfunction_t df;
-            ddef_t par;
+            Statement ds, ts;
+            Function df;
+            Def par;
             string arg2;
             ushort dom, tom;
 
             int j, start, end;
-            dfunction_t dfpred;
-            ddef_t ef;
+            Function dfpred;
+            Def ef;
 
             string line;
 
             int kIndex;
-            dstatement_t k;
+            Statement k;
             int dum;
 
             for (i = 1; i < numfunctions; i++)
@@ -869,7 +820,7 @@ namespace DeQcc
                         par.type -= (1 << 15);
                     }
 
-                    if (par.type == (ushort)etype_t.ev_function)
+                    if (par.type == (ushort)Types.ev_function)
                     {
                         if (NGGetString(par.s_name) != "IMMEDIATE")
                         {
@@ -885,17 +836,17 @@ namespace DeQcc
                             }
                         }
                     }
-                    else if (par.type != (ushort)etype_t.ev_pointer)
+                    else if (par.type != (ushort)Types.ev_pointer)
                     {
                         if (NGGetString(par.s_name) != "IMMEDIATE")
                         {
-                            if (par.type == (ushort)etype_t.ev_field)
+                            if (par.type == (ushort)Types.ev_field)
                             {
                                 ef = GetField(NGGetString(par.s_name));
 
                                 if (ef is null) { throw new Exception("Could not locate a field named \"" + NGGetString(par.s_name) + "\""); }
 
-                                if (ef.type == (ushort)etype_t.ev_vector)
+                                if (ef.type == (ushort)Types.ev_vector)
                                 {
                                     j += 3;
                                 }
@@ -904,18 +855,18 @@ namespace DeQcc
                             }
                             else
                             {
-                                if (par.type == (ushort)etype_t.ev_vector)
+                                if (par.type == (ushort)Types.ev_vector)
                                 {
                                     j += 2;
                                 }
 
-                                if (par.type == (ushort)etype_t.ev_entity || par.type == (ushort)etype_t.ev_void)
+                                if (par.type == (ushort)Types.ev_entity || par.type == (ushort)Types.ev_void)
                                 {
                                     Decompileofile.WriteLine(type_names[par.type] + " " + NGGetString(par.s_name) + ";");
                                 }
                                 else
                                 {
-                                    line = DecompileValueString((etype_t)par.type, par.ofs);
+                                    line = DecompileValueString((Types)par.type, par.ofs);
 
                                     if ((NGGetString(par.s_name).Length > 1) &&
                                         Char.IsUpper((NGGetString(par.s_name))[0]) &&
@@ -951,7 +902,7 @@ namespace DeQcc
 
                 if (dom == 0) { break; }
 
-                else if (dom == (ushort)opcodes.OP_GOTO)
+                else if (dom == (ushort)Opcodes.OP_GOTO)
                 {
                     /*
                     * check for i-t-e 
@@ -965,7 +916,7 @@ namespace DeQcc
 					*/
                     }
                 }
-                else if (dom == (ushort)opcodes.OP_IFNOT)
+                else if (dom == (ushort)Opcodes.OP_IFNOT)
                 {
                     /*
                     * check for pure if 
@@ -974,7 +925,7 @@ namespace DeQcc
                     ts = statements[tsIndex];
                     tom = (ushort)(statements[tsIndex - 1].op % 100);
 
-                    if (tom != (ushort)opcodes.OP_GOTO)
+                    if (tom != (ushort)Opcodes.OP_GOTO)
                     {
                         ts.op += 100;  /*
 								* mark the end of a if/ite construct 
@@ -998,7 +949,7 @@ namespace DeQcc
                             {
                                 k = statements[kIndex];
                                 tom = (ushort)(k.op % 100);
-                                if (tom == (ushort)opcodes.OP_GOTO || tom == (ushort)opcodes.OP_IF || tom == (ushort)opcodes.OP_IFNOT)
+                                if (tom == (ushort)Opcodes.OP_GOTO || tom == (ushort)Opcodes.OP_IF || tom == (ushort)Opcodes.OP_IFNOT)
                                     dum = 0;
                             }
                             if (dum == 0)
@@ -1013,7 +964,7 @@ namespace DeQcc
                         }
                     }
                 }
-                else if (dom == (ushort)opcodes.OP_IF)
+                else if (dom == (ushort)Opcodes.OP_IF)
                 {
                     tsIndex = dsIndex + ds.b;
                     ts = statements[tsIndex];
@@ -1036,7 +987,7 @@ namespace DeQcc
             dsIndex = df.first_statement;
             ds = statements[dsIndex];
 
-            if (ds.op == (ushort)opcodes.OP_STATE)
+            if (ds.op == (ushort)Opcodes.OP_STATE)
             {
                 par = DecompileGetParameter(ds.a);
                 if (par is null) { throw new Exception("Error - Can't determine frame number."); }
@@ -1044,7 +995,7 @@ namespace DeQcc
                 arg2 = DecompileGet(df, ds.b, null);
                 if (arg2 is null) { throw new Exception("Error - No state parameter with offset " + ds.b + "."); }
 
-                Decompileofile.Write(" = [ " + DecompileValueString((etype_t)par.type, par.ofs) + ", " + arg2 + " ]");
+                Decompileofile.Write(" = [ " + DecompileValueString((Types)par.type, par.ofs) + ", " + arg2 + " ]");
             }
             else
             {
@@ -1078,7 +1029,7 @@ namespace DeQcc
                         }
                         else
                         {
-                            if (par.type == (ushort)etype_t.ev_function)
+                            if (par.type == (ushort)Types.ev_function)
                             {
                                 Decompileofile.WriteLine("   /* Warning: Fields and functions must be global */");
                             }
@@ -1087,7 +1038,7 @@ namespace DeQcc
                                 Decompileofile.WriteLine("   local " + DecompilePrintParameter(par) + ";");
                             }
 
-                            if (par.type == (ushort)etype_t.ev_vector)
+                            if (par.type == (ushort)Types.ev_vector)
                             {
                                 i += 2;
                             }
@@ -1106,9 +1057,9 @@ namespace DeQcc
             Decompileofile.WriteLine("};");
         }
 
-        ddef_t? GetField(string name)
+        Def? GetField(string name)
         {
-            ddef_t d;
+            Def d;
 
             for (int i = 1; i < numfielddefs; i++)
             {
@@ -1133,7 +1084,7 @@ namespace DeQcc
             return i;
         }
 
-        string? DecompileGet(dfunction_t df, gofs_t ofs, def_t req_t)
+        string? DecompileGet(Function df, int ofs, Types? req_t)
         {
             string arg1 = null;
 
@@ -1146,10 +1097,10 @@ namespace DeQcc
             return arg1;
         }
 
-        string? DecompileGlobal(gofs_t ofs, def_t req_t)
+        string? DecompileGlobal(int ofs, Types? req_t)
         {
             int i;
-            ddef_t def = null;
+            Def def = null;
             string line = "";
             bool found = false;
 
@@ -1168,12 +1119,12 @@ namespace DeQcc
             {
 
                 if (NGGetString(def.s_name) == "IMMEDIATE")
-                    line = DecompileValueString((etype_t)def.type, def.ofs);
+                    line = DecompileValueString((Types)def.type, def.ofs);
                 else
                 {
 
                     line = NGGetString(def.s_name);
-                    if (def.type == ((ushort)(etype_t.ev_vector)) && req_t == def_float)
+                    if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
                     {
                         line += "_x";
                     }
@@ -1183,12 +1134,12 @@ namespace DeQcc
             return null;
         }
 
-        string? DecompileImmediate(dfunction_t df, gofs_t ofs, int fun, string newStr)
+        string? DecompileImmediate(Function df, int ofs, int fun, string newStr)
         {
             int i;
             string  res;
             
-            gofs_t nofs;
+            int nofs;
 	
             if (fun == 0)
             {
@@ -1221,9 +1172,9 @@ namespace DeQcc
             return null;
          }
 
-        gofs_t DecompileScaleIndex(dfunction_t df, gofs_t ofs)
+        int DecompileScaleIndex(Function df, int ofs)
         {
-            gofs_t nofs = 0;
+            int nofs = 0;
 
             if (ofs > RESERVED_OFS)
                 nofs = ofs - df.parm_start + RESERVED_OFS;
@@ -1233,7 +1184,7 @@ namespace DeQcc
             return nofs;
         }
 
-        void DecompileDecompileFunction(dfunction_t df)
+        void DecompileDecompileFunction(Function df)
         {
             // Initialize 
             DecompileImmediate(df, 0, 0, null);
@@ -1265,12 +1216,12 @@ namespace DeQcc
             }
         }
 
-        void DecompileDecompileStatement(dfunction_t df, int sIndex, ref int indent)
+        void DecompileDecompileStatement(Function df, int sIndex, ref int indent)
         {
-            dstatement_t s = statements[sIndex];
-            dstatement_t t;
+            Statement s = statements[sIndex];
+            Statement t;
             ushort tom;
-            def_t typ1, typ2, typ3;
+            Types? typ1, typ2, typ3;
 
             int dum;
 
@@ -1307,10 +1258,10 @@ namespace DeQcc
             typ3 = pr_opcodes[s.op].type_c;
 
             // states are handled at top level 
-            if (s.op == (ushort)opcodes.OP_DONE || s.op == (ushort)opcodes.OP_STATE)
+            if (s.op == (ushort)Opcodes.OP_DONE || s.op == (ushort)Opcodes.OP_STATE)
             {
             }
-            else if (s.op == (ushort)opcodes.OP_RETURN)
+            else if (s.op == (ushort)Opcodes.OP_RETURN)
             {
                 DecompileIndent(indent);
                 Decompileofile.Write("return ");
@@ -1322,9 +1273,9 @@ namespace DeQcc
                 }
                 Decompileofile.WriteLine(";");
             }
-            else if (((ushort)opcodes.OP_MUL_F <= s.op && s.op <= (ushort)opcodes.OP_SUB_V) ||
-              ((ushort)opcodes.OP_EQ_F <= s.op && s.op <= (ushort)opcodes.OP_GT) ||
-              ((ushort)opcodes.OP_AND <= s.op && s.op <= (ushort)opcodes.OP_BITOR))
+            else if (((ushort)Opcodes.OP_MUL_F <= s.op && s.op <= (ushort)Opcodes.OP_SUB_V) ||
+              ((ushort)Opcodes.OP_EQ_F <= s.op && s.op <= (ushort)Opcodes.OP_GT) ||
+              ((ushort)Opcodes.OP_AND <= s.op && s.op <= (ushort)Opcodes.OP_BITOR))
             {
                 arg1 = DecompileGet(df, s.a, typ1);
                 arg2 = DecompileGet(df, s.b, typ2);
@@ -1341,7 +1292,7 @@ namespace DeQcc
                     DecompileImmediate(df, s.c, 1, line);
                 }
             }
-            else if ((ushort)opcodes.OP_LOAD_F <= s.op && s.op <= (ushort)opcodes.OP_ADDRESS)
+            else if ((ushort)Opcodes.OP_LOAD_F <= s.op && s.op <= (ushort)Opcodes.OP_ADDRESS)
             {
                 arg1 = DecompileGet(df, s.a, typ1);
                 arg2 = DecompileGet(df, s.b, typ2);
@@ -1358,7 +1309,7 @@ namespace DeQcc
                     DecompileImmediate(df, s.c, 1, line);
                 }
             }
-            else if ((ushort)opcodes.OP_STORE_F <= s.op && s.op <= (ushort)opcodes.OP_STORE_FNC)
+            else if ((ushort)Opcodes.OP_STORE_F <= s.op && s.op <= (ushort)Opcodes.OP_STORE_FNC)
             {
                 arg1 = DecompileGet(df, s.a, typ1);
                 arg3 = DecompileGlobal(s.b, typ2);
@@ -1374,7 +1325,7 @@ namespace DeQcc
                     DecompileImmediate(df, s.b, 1, line);
                 }
             }
-            else if ((ushort)opcodes.OP_STOREP_F <= s.op && s.op <= (ushort)opcodes.OP_STOREP_FNC)
+            else if ((ushort)Opcodes.OP_STOREP_F <= s.op && s.op <= (ushort)Opcodes.OP_STOREP_FNC)
             {
                 arg1 = DecompileGet(df, s.a, typ1);
                 arg2 = DecompileGet(df, s.b, typ2);
@@ -1382,15 +1333,15 @@ namespace DeQcc
                 DecompileIndent(indent);
                 Decompileofile.WriteLine(arg2 + " = " + arg1 + ";");
             }
-            else if ((ushort)opcodes.OP_NOT_F <= s.op && s.op <= (ushort)opcodes.OP_NOT_FNC)
+            else if ((ushort)Opcodes.OP_NOT_F <= s.op && s.op <= (ushort)Opcodes.OP_NOT_FNC)
             {
                 arg1 = DecompileGet(df, s.a, typ1);
                 line = "!" + arg1;
                 DecompileImmediate(df, s.c, 1, line);
             }
-            else if ((ushort)opcodes.OP_CALL0 <= s.op && s.op <= (ushort)opcodes.OP_CALL8)
+            else if ((ushort)Opcodes.OP_CALL0 <= s.op && s.op <= (ushort)Opcodes.OP_CALL8)
             {
-                int nargs = s.op - (ushort)opcodes.OP_CALL0;
+                int nargs = s.op - (ushort)Opcodes.OP_CALL0;
 
                 arg1 = DecompileGet(df, s.a, null);
                 line = arg1 + " (";
@@ -1414,18 +1365,18 @@ namespace DeQcc
 
                 if (((statements[sIndex + 1].a != 1) && (statements[sIndex + 1].b != 1) &&
                     (statements[sIndex + 2].a != 1) && (statements[sIndex + 2].b != 1)) ||
-                    (((statements[sIndex + 1].op) % 100 == (ushort)opcodes.OP_CALL0) && (((statements[sIndex + 2].a != 1)) || (statements[sIndex + 2].b != 1))))
+                    (((statements[sIndex + 1].op) % 100 == (ushort)Opcodes.OP_CALL0) && (((statements[sIndex + 2].a != 1)) || (statements[sIndex + 2].b != 1))))
                 {
                     DecompileIndent(indent);
                     Decompileofile.WriteLine(line + ";");
                 }
             }
-            else if (s.op == (ushort)opcodes.OP_IF || s.op == (ushort)opcodes.OP_IFNOT)
+            else if (s.op == (ushort)Opcodes.OP_IF || s.op == (ushort)Opcodes.OP_IFNOT)
             {
                 arg1 = DecompileGet(df, s.a, null);
                 arg2 = DecompileGlobal(s.a, null);
 
-                if (s.op == (ushort)opcodes.OP_IFNOT)
+                if (s.op == (ushort)Opcodes.OP_IFNOT)
                 {
                     if (s.b < 1)
                         throw new Exception("Found a negative IFNOT jump.");
@@ -1435,7 +1386,7 @@ namespace DeQcc
                     t = statements[tIndex];
                     tom = (ushort)(t.op % 100);
 
-                    if (tom != (ushort)opcodes.OP_GOTO)
+                    if (tom != (ushort)Opcodes.OP_GOTO)
                     {
                         // pure if 
                         DecompileIndent(indent);
@@ -1469,7 +1420,7 @@ namespace DeQcc
                                 for (int kIndex = tIndex + (t.a); kIndex < sIndex; kIndex++)
                                 {
                                     tom = (ushort)(statements[kIndex].op % 100);
-                                    if (tom == (ushort)opcodes.OP_GOTO || tom == (ushort)opcodes.OP_IF || tom == (ushort)opcodes.OP_IFNOT)
+                                    if (tom == (ushort)Opcodes.OP_GOTO || tom == (ushort)Opcodes.OP_IF || tom == (ushort)Opcodes.OP_IFNOT)
                                         dum = 0;
                                 }
                                 if (dum != 0)
@@ -1501,7 +1452,7 @@ namespace DeQcc
                     Decompileofile.WriteLine("} while ( " + arg1 + " );");
                 }
             }
-            else if (s.op == (ushort)opcodes.OP_GOTO)
+            else if (s.op == (ushort)Opcodes.OP_GOTO)
             {
                 if (s.a > 0)
                 {
