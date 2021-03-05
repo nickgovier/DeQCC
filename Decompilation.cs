@@ -5,10 +5,270 @@ using System.Text;
 
 namespace DeQcc
 {
-    using gofs_t = System.Int32;    // from qcc.h
+    // offsets are always multiplied by 4 before using
+    using gofs_t = System.Int32;		// offset in global data block
+
+    enum etype_t
+    {
+        ev_void, ev_string, ev_float, ev_vector, ev_entity, ev_field, ev_function, ev_pointer
+    }
+
+    enum opcodes
+    {
+        OP_DONE,
+        OP_MUL_F,
+        OP_MUL_V,
+        OP_MUL_FV,
+        OP_MUL_VF,
+        OP_DIV_F,
+        OP_ADD_F,
+        OP_ADD_V,
+        OP_SUB_F,
+        OP_SUB_V,
+
+        OP_EQ_F,
+        OP_EQ_V,
+        OP_EQ_S,
+        OP_EQ_E,
+        OP_EQ_FNC,
+
+        OP_NE_F,
+        OP_NE_V,
+        OP_NE_S,
+        OP_NE_E,
+        OP_NE_FNC,
+
+        OP_LE,
+        OP_GE,
+        OP_LT,
+        OP_GT,
+
+        OP_LOAD_F,
+        OP_LOAD_V,
+        OP_LOAD_S,
+        OP_LOAD_ENT,
+        OP_LOAD_FLD,
+        OP_LOAD_FNC,
+
+        OP_ADDRESS,
+
+        OP_STORE_F,
+        OP_STORE_V,
+        OP_STORE_S,
+        OP_STORE_ENT,
+        OP_STORE_FLD,
+        OP_STORE_FNC,
+
+        OP_STOREP_F,
+        OP_STOREP_V,
+        OP_STOREP_S,
+        OP_STOREP_ENT,
+        OP_STOREP_FLD,
+        OP_STOREP_FNC,
+
+        OP_RETURN,
+        OP_NOT_F,
+        OP_NOT_V,
+        OP_NOT_S,
+        OP_NOT_ENT,
+        OP_NOT_FNC,
+        OP_IF,
+        OP_IFNOT,
+        OP_CALL0,
+        OP_CALL1,
+        OP_CALL2,
+        OP_CALL3,
+        OP_CALL4,
+        OP_CALL5,
+        OP_CALL6,
+        OP_CALL7,
+        OP_CALL8,
+        OP_STATE,
+        OP_GOTO,
+        OP_AND,
+        OP_OR,
+
+        OP_BITAND,
+        OP_BITOR
+    }
+
+
+    class dstatement_t
+    {
+        public ushort op;
+        public short a, b, c;
+    }
+
+    class ddef_t
+    {
+        public ushort type;	// if DEF_SAVEGLOBGAL bit is set
+        // the variable needs to be saved in savegames
+
+        public ushort ofs;
+        public int s_name;
+    }
+
+    class dfunction_t
+    {
+        public int first_statement;    // negative numbers are builtins
+
+        public int parm_start;
+        public int locals;         // total ints of parms + locals
+
+        public int profile;        // runtime
+
+        public int s_name;
+        public int s_file;         // source file defined in
+
+        public int numparms;
+        public byte[] parm_size = new byte[ProQCC.MAX_PARMS];
+    }
+
+    class dprograms_t
+    {
+        public int version;
+        public int crc;			// check of header file
+
+        public int ofs_statements;
+        public int numstatements;		// statement 0 is an error
+
+        public int ofs_globaldefs;
+        public int numglobaldefs;
+
+        public int ofs_fielddefs;
+        public int numfielddefs;
+
+        public int ofs_functions;
+        public int numfunctions;		// function 0 is an empty
+
+        public int ofs_strings;
+        public int numstrings;		// first string is a null string
+
+        public int ofs_globals;
+        public int numglobals;
+
+        public int entityfields;
+    }
+
+    class type_t
+    {
+        public etype_t type;
+        public def_t def;   // NG ptr		// a def that points to this type
+
+        public type_t next; // NG ptr
+        // function types are more complex
+        public type_t aux_type; // NG ptr	// return type or field type
+
+        public int num_parms;      // -1 = variable args
+
+        public type_t[] parm_types = new type_t[ProQCC.MAX_PARMS];    // NG ptr	// only [num_parms] allocated
+    }
+
+    class def_t
+    {
+        public type_t type;    // NG ptr
+        public char name;  // NG ptr
+        public def_t next;
+        public def_t prev;    // NG ptrs
+        public gofs_t ofs;
+        public def_t scope;	// NG ptr // function the var was defined in, or NULL
+
+        public int initialized;        // 1 when a declaration included "= immediate"
+    }
+
+    class opcode_t
+    {
+        public string name;
+        public string opname;
+        public int priority;
+        public bool right_associative;
+        public def_t type_a;
+        public def_t type_b;
+        public def_t type_c;
+
+        public opcode_t(string _name, string _opname, int _priority, bool _right_associative, def_t _type_a, def_t _type_b, def_t _type_c)
+        {
+            name = _name;
+            opname = _opname;
+            priority = _priority;
+            right_associative = _right_associative;
+            type_a = _type_a;
+            type_b = _type_b;
+            type_c = _type_c;
+        }
+    }
 
     partial class ProQCC
     {
+        public const int MAX_PARMS = 8;
+
+        const int MAX_REGS = 100000;
+
+        const int OFS_NULL = 0;
+        const int OFS_RETURN = 1;
+        const int OFS_PARM0 = 4;    // leave 3 ofs for each parm to hold vectors
+        const int OFS_PARM1 = 7;
+        const int OFS_PARM2 = 10;
+        const int OFS_PARM3 = 13;
+        const int OFS_PARM4 = 16;
+        const int RESERVED_OFS = 28;
+
+        const int MAX_STRINGS = 1000000;
+        const int MAX_GLOBALS = 80000;
+        const int MAX_FIELDS = 2048;
+        const int MAX_STATEMENTS = 131072;
+        const int MAX_FUNCTIONS = 16384;
+
+        def_t def_ret = new def_t();
+        def_t[] def_parms = new def_t[MAX_PARMS];
+        def_t def_void = new def_t();
+        def_t def_string = new def_t();
+        def_t def_float = new def_t();
+        def_t def_vector = new def_t();
+        def_t def_entity = new def_t();
+        def_t def_field = new def_t();
+        def_t def_function = new def_t();
+        def_t def_pointer = new def_t();
+
+        List<opcode_t> pr_opcodes = new List<opcode_t>();
+
+        float[] pr_globals = new float[MAX_REGS];
+        int numpr_globals;
+
+        char[] strings = new char[MAX_STRINGS];
+        int strofs;
+
+        dstatement_t[] statements = new dstatement_t[MAX_STATEMENTS];
+        int numstatements;
+        int[] statement_linenums = new int[MAX_STATEMENTS];
+
+        dfunction_t[] functions = new dfunction_t[MAX_FUNCTIONS];
+        int numfunctions;
+
+        ddef_t[] globals = new ddef_t[MAX_GLOBALS];
+        int numglobaldefs;
+
+        ddef_t[] fields = new ddef_t[MAX_FIELDS];
+        int numfielddefs;
+
+        public void InitData()
+        {
+            int i;
+
+            numstatements = 1;
+            strofs = 1;
+            numfunctions = 1;
+            numglobaldefs = 1;
+            numfielddefs = 1;
+
+            def_ret.ofs = OFS_RETURN;
+            for (i = 0; i < MAX_PARMS; i++)
+            {
+                def_parms[i] = new def_t(); // NG
+                def_parms[i].ofs = OFS_PARM0 + 3 * i;
+            }
+        }
+
         StreamWriter Decompileofile;
         StreamWriter Decompileprogssrc;
         StreamWriter Decompileprofile;
