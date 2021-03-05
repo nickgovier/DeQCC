@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DeQcc": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)\\"
+    }
+  }
+}
