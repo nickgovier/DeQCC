@@ -9,47 +9,30 @@ namespace DeQcc
     {
         static void Main(string[] args)
         {
-            /*
-            Progs progs = new Progs();
-            progs.LoadProgs();
+            ProQCC p = new ProQCC();
+            p.InitData();
+            p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\output\\");
 
-            for (int i = 66; i <= 68; i++)
+            // Now cross check with original source to highlight differences
+            string newfiles = Directory.GetCurrentDirectory() + "\\output\\";
+            string oldfiles = Directory.GetCurrentDirectory() + "\\target\\";
+
+            checkFile(newfiles, oldfiles, "progs.src");
+
+            StreamReader progssrc = new StreamReader(File.Open(newfiles + "progs.src", FileMode.Open));
+            while(true)
             {
-                progs.DecompileFunction(i);
-            }
-            */
-
-            bool crosscheck = false;
-
-            if (!crosscheck)
-            {
-                ProQCC p = new ProQCC();
-                p.InitData();
-                p.DecompileProgsDat("vanillaprogs.dat");
-            }
-            else
-            {
-                string newfiles = @"C:\location1\";
-                string oldfiles = @"C:\location2\";
-
-                checkFile(newfiles, oldfiles, "progs.src");
-
-                StreamReader progssrc = new StreamReader(File.Open(newfiles + "progs.src", FileMode.Open));
-                while(true)
+                string line = progssrc.ReadLine();
+                if(line == null)
                 {
-                    string line = progssrc.ReadLine();
-                    if(line == null)
-                    {
-                        Console.Out.WriteLine("Finished");
-                        break;
-                    }
-
-                    if(line.EndsWith(".qc"))
-                    {
-                        checkFile(newfiles, oldfiles, line);
-                    }
+                    Console.Out.WriteLine("Finished");
+                    break;
                 }
 
+                if(line.EndsWith(".qc"))
+                {
+                    checkFile(newfiles, oldfiles, line);
+                }
             }
         }
 

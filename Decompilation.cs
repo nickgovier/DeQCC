@@ -93,6 +93,16 @@ namespace DeQcc
     {
         public ushort op;
         public short a, b, c;
+
+        public Opcodes Opcode
+        {
+            get { return (Opcodes)op; }
+        }
+
+        public override string ToString()
+        {
+            return Opcode.ToString() + "\t" + a.ToString() + "\t" + b.ToString() + "\t" + c.ToString();
+        }
     }
 
     class Def
@@ -407,12 +417,12 @@ namespace DeQcc
             pr_opcodes.Add(new Opcode("|", "BITOR", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
         }
 
-        public void DecompileProgsDat(string name)
+        public void DecompileProgsDat(string name, string outputfolder)
         {
             NGInit();
 
             DecompileReadData(name);
-            DecompileDecompileFunctions();
+            DecompileDecompileFunctions(outputfolder);
         }
 
         // checked
@@ -710,7 +720,7 @@ namespace DeQcc
             return 0;
         }
 
-        void DecompileDecompileFunctions()
+        void DecompileDecompileFunctions(string folder)
         {
             int i;
             Function d;
@@ -720,7 +730,7 @@ namespace DeQcc
 
             DecompileCalcProfiles();
 
-            Decompileprogssrc = new StreamWriter("progs.src", false);
+            Decompileprogssrc = new StreamWriter(folder + "progs.src", false);
             Decompileprogssrc.WriteLine("./progs.dat");
             Decompileprogssrc.WriteLine();
 
@@ -740,7 +750,7 @@ namespace DeQcc
                     }
                 }
 
-                f = new StreamWriter(fname, true);
+                f = new StreamWriter(folder + fname, true);
 
                 if (DecompileAlreadySeen(fname) == 0)
                 {
@@ -782,7 +792,6 @@ namespace DeQcc
             }
             if (i == numfunctions) { throw new Exception("No function named \"" + name + "\""); }
             df = functions[i];
-
             findex = i;
 
             /*
@@ -975,6 +984,26 @@ namespace DeQcc
                 dsIndex++;
                 ds = statements[dsIndex];
             }
+
+            // NG ->
+            // write out the bytecode for the function
+            int ip = df.first_statement;    // instruction pointer
+            if (ip >= 0)
+            {
+                Decompileofile.WriteLine();
+                Decompileofile.WriteLine("// function " + name);
+                Decompileofile.WriteLine("// function number " + i + " begins at statement " + df.first_statement);
+                Decompileofile.WriteLine("/*");
+                // print the bytecode as a comment
+                while (statements[ip].Opcode != Opcodes.OP_DONE)
+                {
+                    Decompileofile.WriteLine(" * " + statements[ip].ToString());
+                    ip++;
+                }
+                Decompileofile.WriteLine(" * " + statements[ip].ToString()); // final DONE
+                Decompileofile.WriteLine(" */");
+            }
+            // <- NG
 
             /*
             * print the prototype 

@@ -633,28 +633,6 @@ namespace DeQcc2
             // Process the opcode
             switch (statement.Opcode)
             {
-                case Opcode.OP_DONE:    // pr_globals[OFS_RETURN] = pr_globals[st->a]; pr_globals[OFS_RETURN + 1] = pr_globals[st->a + 1];  pr_globals[OFS_RETURN + 2] = pr_globals[st->a + 2]; s = PR_LeaveFunction(); if (pr_depth == exitdepth) { return; }		// all done
-                    break;
-                case Opcode.OP_MUL_F:   // c->_float = a->_float * b->_float;
-                    break;
-                case Opcode.OP_MUL_V:   // c->_float = a->vector[0]*b->vector[0] + a->vector[1] * b->vector[1] + a->vector[2] * b->vector[2];
-                    break;
-                case Opcode.OP_MUL_FV:  // c->vector[0] = a->_float * b->vector[0]; c->vector[1] = a->_float * b->vector[1]; c->vector[2] = a->_float * b->vector[2];
-                    break;
-                case Opcode.OP_MUL_VF:  // c->vector[0] = b->_float * a->vector[0]; c->vector[1] = b->_float * a->vector[1]; c->vector[2] = b->_float * a->vector[2];
-                    break;
-                case Opcode.OP_DIV_F:   // c->_float = a->_float / b->_float;
-                    break;
-                case Opcode.OP_ADD_F:   // c->_float = a->_float + b->_float;
-                    break;
-                case Opcode.OP_ADD_V:   // c->vector[0] = a->vector[0] + b->vector[0]; c->vector[1] = a->vector[1] + b->vector[1]; c->vector[2] = a->vector[2] + b->vector[2];
-                    break;
-                case Opcode.OP_SUB_F:   // c->_float = a->_float - b->_float;
-                    break;
-                case Opcode.OP_SUB_V:   // c->vector[0] = a->vector[0] - b->vector[0]; c->vector[1] = a->vector[1] - b->vector[1]; c->vector[2] = a->vector[2] - b->vector[2];
-                    break;
-                case Opcode.OP_EQ_F:    // c->_float = a->_float == b->_float;
-                    break;
                 case Opcode.OP_EQ_V:    // c->_float = (a->vector[0] == b->vector[0]) && (a->vector[1] == b->vector[1]) && (a->vector[2] == b->vector[2]);
                     aVal = GetGlobaldef(statement.a);
                     bVal = GetGlobaldef(statement.b);
@@ -678,32 +656,6 @@ namespace DeQcc2
                     }
 
                     break;
-                case Opcode.OP_EQ_S:    // c->_float = !strcmp(pr_strings+a->string,pr_strings+b->string);
-                    break;
-                case Opcode.OP_EQ_E:    // c->_float = a->_int == b->_int;
-                    break;
-                case Opcode.OP_EQ_FNC:  // c->_float = a->function == b->function;
-                    break;
-                case Opcode.OP_NE_F:    // c->_float = a->_float != b->_float;
-                    break;
-                case Opcode.OP_NE_V:    // c->_float = (a->vector[0] != b->vector[0]) || (a->vector[1] != b->vector[1]) || (a->vector[2] != b->vector[2]);
-                    break;
-                case Opcode.OP_NE_S:    // c->_float = strcmp(pr_strings+a->string,pr_strings+b->string);
-                    break;
-                case Opcode.OP_NE_E:    // c->_float = a->_int != b->_int;
-                    break;
-                case Opcode.OP_NE_FNC:  // c->_float = a->function != b->function;
-                    break;
-                case Opcode.OP_LE:  // c->_float = a->_float <= b->_float;
-                    break;
-                case Opcode.OP_GE:  // c->_float = a->_float >= b->_float;
-                    break;
-                case Opcode.OP_LT:  // c->_float = a->_float < b->_float;
-                    break;
-                case Opcode.OP_GT:  // c->_float = a->_float > b->_float;
-                    break;
-                case Opcode.OP_LOAD_F:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->_int = a->_int;
-                    break;
                 case Opcode.OP_LOAD_V:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->vector[0] = a->vector[0]; c->vector[1] = a->vector[1]; c->vector[2] = a->vector[2];
                     // vector c = vector a.b
                     aVal = GetGlobaldef(statement.a);
@@ -720,16 +672,6 @@ namespace DeQcc2
                         scratchpad = cVal + " = " + aVal + "." + bVal;
                     }
 
-                    break;
-                case Opcode.OP_LOAD_S:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->_int = a->_int;
-                    break;
-                case Opcode.OP_LOAD_ENT:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->_int = a->_int;
-                    break;
-                case Opcode.OP_LOAD_FLD:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->_int = a->_int;
-                    break;
-                case Opcode.OP_LOAD_FNC:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->_int = a->_int;
-                    break;
-                case Opcode.OP_ADDRESS: // ed = PROG_TO_EDICT(a->edict); c->_int = (byte*)((int*)&ed->v + b->_int) - (byte*)sv.edicts;
                     break;
                 case Opcode.OP_STORE_F:    // b->_int = a->_int;
                 case Opcode.OP_STORE_V: // b->vector[0] = a->vector[0]; b->vector[1] = a->vector[1]; b->vector[2] = a->vector[2];
@@ -751,37 +693,6 @@ namespace DeQcc2
                         string? variable = GetGlobaldef(statement.b);   // params to functions are 4,7,10 for params 1,2,3 etc
                         output.WriteLine(variable + " = " + value);
                     }
-                    break;
-                case Opcode.OP_STOREP_F:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->_int = a->_int;
-                    break;
-                case Opcode.OP_STOREP_V:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->vector[0] = a->vector[0]; ptr->vector[1] = a->vector[1]; ptr->vector[2] = a->vector[2];
-                    break;
-                case Opcode.OP_STOREP_S:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->_int = a->_int;
-                    break;
-                case Opcode.OP_STOREP_ENT:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->_int = a->_int;
-                    break;
-                case Opcode.OP_STOREP_FLD:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->_int = a->_int;
-                    break;
-                case Opcode.OP_STOREP_FNC:    // ptr = (eval_t *)((byte *)sv.edicts + b->_int); ptr->_int = a->_int;
-                    break;
-                case Opcode.OP_RETURN:    // pr_globals[OFS_RETURN] = pr_globals[st->a]; pr_globals[OFS_RETURN + 1] = pr_globals[st->a + 1];  pr_globals[OFS_RETURN + 2] = pr_globals[st->a + 2]; s = PR_LeaveFunction(); if (pr_depth == exitdepth) { return; }		// all done
-                    break;
-                case Opcode.OP_NOT_F:   // c->_float = !a->_float;
-                case Opcode.OP_NOT_V:   // c->_float = !a->vector[0] && !a->vector[1] && !a->vector[2];
-                case Opcode.OP_NOT_S:   // c->_float = !a->string || !pr_strings[a->string];
-                case Opcode.OP_NOT_ENT: // c->_float = (PROG_TO_EDICT(a->edict) == sv.edicts);
-                case Opcode.OP_NOT_FNC: // c->_float = !a->function;
-                    // c(float) = !a(type)
-                    //arg1 = DecompileGet(df, s->a, typ1);
-                    //arg1 = DecompileGlobal(s->a, typ1);
-                    //if (arg1 == null) arg1 = DecompileImmediate(df, s->a, 2, NULL);
-
-                    output.WriteLine("!");// + arg1);
-                    //DecompileImmediate(df, s->c, 1, line);
-                    break;
-                case Opcode.OP_IF:  // if (a->_int) { s += st->b - 1; }	// offset the s++
-                    break;
-                case Opcode.OP_IFNOT:   // if (!a->_int) { s += st->b - 1; }	// offset the s++
                     break;
                 case Opcode.OP_CALL0:   // pr_argc = st->op - OP_CALL0; newf = &pr_functions[a->function]; if (newf->first_statement < 0) { i = -newf->first_statement; pr_builtins[i](); break; } s = PR_EnterFunction(newf);
                 case Opcode.OP_CALL1:
@@ -807,18 +718,6 @@ namespace DeQcc2
                     }
 
                     output.WriteLine(");");
-                    break;
-                case Opcode.OP_STATE:   // ed = PROG_TO_EDICT(pr_global_struct->self); ed->v.nextthink = pr_global_struct->time + 0.1; if (a->_float != ed->v.frame) { ed->v.frame = a->_float; } ed->v.think = b->function;
-                    break;
-                case Opcode.OP_GOTO:    // s += st->a - 1;	// offset the s++
-                    break;
-                case Opcode.OP_AND: // c->_float = a->_float && b->_float;
-                    break;
-                case Opcode.OP_OR:  // c->_float = a->_float || b->_float;
-                    break;
-                case Opcode.OP_BITAND:  // c->_float = (int)a->_float & (int)b->_float;
-                    break;
-                case Opcode.OP_BITOR:   // c->_float = (int)a->_float | (int)b->_float;
                     break;
             }
         }
