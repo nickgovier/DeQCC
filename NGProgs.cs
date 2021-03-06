@@ -238,16 +238,10 @@ namespace DeQcc2
         public Dictionary<Opcode, Typecode> typeB = new Dictionary<Opcode, Typecode>();
         public Dictionary<Opcode, Typecode> typeC = new Dictionary<Opcode, Typecode>();
         public Dictionary<int, string> globalNames = new Dictionary<int, string>();    // to save names of variables that were loaded into globals
-        StreamWriter output;
-        string scratchpad;  // temporary storage of values while constructing a line of source code
 
         public void LoadProgs()
         {
             BinaryReader br = new BinaryReader(File.Open("progs.dat", FileMode.Open));
-            //br.BaseStream.Seek(offset, SeekOrigin.Begin);
-            //byte[] data = br.ReadBytes(length);
-            //br.ReadChar();
-            //br.ReadInt32();
 
             version = br.ReadInt32();
             crc = br.ReadInt32();
@@ -565,51 +559,6 @@ namespace DeQcc2
             #endregion
         }
 
-        public void DecompileFunction(int function)
-        {
-            output = new StreamWriter(pr_functions[function].file, true);
-
-            output.WriteLine("// function " + pr_functions[function].name);
-            output.WriteLine("/*");
-            int ip = pr_functions[function].first_statement;    // instruction pointer
-            // print the bytecode as a comment
-            while (pr_statements[ip].Opcode != Opcode.OP_DONE)
-            {
-                output.WriteLine(" * " + pr_statements[ip].ToString());
-                ip++;
-            }
-            output.WriteLine(" * " + pr_statements[ip].ToString()); // final DONE
-            output.WriteLine(" */");
-
-            // TODO return type
-            // TODO arguments
-            output.WriteLine("TODO (TODO) " + pr_functions[function].name + " = {");
-
-            ip = pr_functions[function].first_statement;    // instruction pointer
-            while (pr_statements[ip].Opcode != Opcode.OP_DONE)
-            {
-                DecompileStatement(pr_statements[ip], pr_functions[function]);
-                ip++;
-            }
-
-            output.WriteLine("};");
-            output.WriteLine(); // blank line
-            output.Close();
-        }
-
-        // Get a name from the globaldefs
-        string? GetGlobaldef(int offset)
-        {
-            foreach (Def d in pr_globaldefs)
-            {
-                if (d.ofs == offset)
-                {
-                    return d.name;
-                }
-            }
-            return null;
-        }
-
         string GetGlobal(int parm_offset, int parm_start, Typecode type)
         {
             int offset = parm_offset - parm_start + 28; // 28 reserved offsets (RESERVED_OFS)
@@ -628,98 +577,6 @@ namespace DeQcc2
             Typecode paramAType = typeA[statement.Opcode];
             Typecode paramBType = typeB[statement.Opcode];
             Typecode paramCType = typeC[statement.Opcode];
-            string aVal, bVal, cVal;
-
-            // Process the opcode
-            switch (statement.Opcode)
-            {
-                case Opcode.OP_EQ_V:    // c->_float = (a->vector[0] == b->vector[0]) && (a->vector[1] == b->vector[1]) && (a->vector[2] == b->vector[2]);
-                    aVal = GetGlobaldef(statement.a);
-                    bVal = GetGlobaldef(statement.b);
-                    cVal = GetGlobaldef(statement.c);
-
-                    if (aVal is null) { aVal = globalNames[statement.a]; }
-                    // else if(aVal == "IMMEDIATE") { aVal = GetGlobal(statement.a, function.parm_start, paramAType); }
-                    else if (aVal == "IMMEDIATE") { aVal += "_" + statement.a.ToString(); }  // simulate random variable name
-                    if (bVal is null) { bVal = globalNames[statement.b]; }
-                    // else if(bVal == "IMMEDIATE") { bVal = GetGlobal(statement.b, function.parm_start, paramBType); }
-                    else if (bVal == "IMMEDIATE") { bVal += "_" + statement.b.ToString(); } // simulate random variable name
-
-                    if (cVal is null)
-                    {
-                        scratchpad = "(" + aVal + " == " + bVal + ")";
-                        globalNames[statement.c] = scratchpad;
-                    }
-                    else
-                    {
-                        output.WriteLine(cVal + " = " + aVal + " == " + bVal);
-                    }
-
-                    break;
-                case Opcode.OP_LOAD_V:  // ed = PROG_TO_EDICT(a->edict); a = (eval_t*)((int*)&ed->v + b->_int); c->vector[0] = a->vector[0]; c->vector[1] = a->vector[1]; c->vector[2] = a->vector[2];
-                    // vector c = vector a.b
-                    aVal = GetGlobaldef(statement.a);
-                    bVal = GetGlobaldef(statement.b);
-                    cVal = GetGlobaldef(statement.c);
-
-                    if (cVal is null)
-                    {
-                        scratchpad = aVal + "." + bVal;
-                        globalNames[statement.c] = scratchpad;
-                    }
-                    else
-                    {
-                        scratchpad = cVal + " = " + aVal + "." + bVal;
-                    }
-
-                    break;
-                case Opcode.OP_STORE_F:    // b->_int = a->_int;
-                case Opcode.OP_STORE_V: // b->vector[0] = a->vector[0]; b->vector[1] = a->vector[1]; b->vector[2] = a->vector[2];
-                case Opcode.OP_STORE_S:    // b->_int = a->_int;
-                case Opcode.OP_STORE_ENT:    // b->_int = a->_int;
-                case Opcode.OP_STORE_FLD:    // b->_int = a->_int;
-                case Opcode.OP_STORE_FNC:    // b->_int = a->_int;
-                    string value = GetGlobaldef(statement.a);
-
-                    if (statement.b >= 4 && statement.b <= 27)
-                    {
-                        // this is a parameter to an upcoming function call
-                        if (statement.b == 4) scratchpad = "";  // first argument
-                        if (scratchpad.Length > 0) scratchpad += ",";   // already exists an argument
-                        scratchpad += value;
-                    }
-                    else
-                    {
-                        string? variable = GetGlobaldef(statement.b);   // params to functions are 4,7,10 for params 1,2,3 etc
-                        output.WriteLine(variable + " = " + value);
-                    }
-                    break;
-                case Opcode.OP_CALL0:   // pr_argc = st->op - OP_CALL0; newf = &pr_functions[a->function]; if (newf->first_statement < 0) { i = -newf->first_statement; pr_builtins[i](); break; } s = PR_EnterFunction(newf);
-                case Opcode.OP_CALL1:
-                case Opcode.OP_CALL2:
-                case Opcode.OP_CALL3:
-                case Opcode.OP_CALL4:
-                case Opcode.OP_CALL5:
-                case Opcode.OP_CALL6:
-                case Opcode.OP_CALL7:
-                case Opcode.OP_CALL8:
-                    string? functionName = GetGlobaldef(statement.a);
-                    if (functionName is null) { throw new Exception("NG Couldn't find functionName"); }
-
-                    // todo print return type
-
-                    output.Write(functionName + "(");
-
-                    // if there are arguments already processed and sitting in scratchpad, include them
-                    if (statement.Opcode > Opcode.OP_CALL0)
-                    {
-                        output.Write(scratchpad);
-                        scratchpad = "";
-                    }
-
-                    output.WriteLine(");");
-                    break;
-            }
         }
     }
 }

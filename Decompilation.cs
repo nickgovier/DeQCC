@@ -127,7 +127,7 @@ namespace DeQcc
         public int s_file;         // source file defined in
 
         public int numparms;
-        public byte[] parm_size = new byte[ProQCC.MAX_PARMS];
+        public byte[] parm_size = new byte[8];
     }
 
     class Progs
@@ -180,10 +180,6 @@ namespace DeQcc
 
     partial class ProQCC
     {
-        public const int MAX_PARMS = 8;
-
-        const int MAX_REGS = 100000;
-
         const int OFS_NULL = 0;
         const int OFS_RETURN = 1;
         const int OFS_PARM0 = 4;    // leave 3 ofs for each parm to hold vectors
@@ -193,49 +189,30 @@ namespace DeQcc
         const int OFS_PARM4 = 16;
         const int RESERVED_OFS = 28;
 
-        const int MAX_STRINGS = 1000000;
-        const int MAX_GLOBALS = 80000;
-        const int MAX_FIELDS = 2048;
-        const int MAX_STATEMENTS = 131072;
-        const int MAX_FUNCTIONS = 16384;
-
         List<Opcode> pr_opcodes = new List<Opcode>();
 
-        float[] pr_globals = new float[MAX_REGS];
+        List<float> pr_globals = new List<float>();
         int numpr_globals;
 
-        char[] strings = new char[MAX_STRINGS];
+        char[] strings = new char[1000000];
         int strofs;
 
-        Statement[] statements = new Statement[MAX_STATEMENTS];
+        List<Statement> statements = new List<Statement>();
         int numstatements;
 
-        Function[] functions = new Function[MAX_FUNCTIONS];
+        List<Function> functions = new List<Function>();
         int numfunctions;
 
-        Def[] globals = new Def[MAX_GLOBALS];
+        List<Def> globals = new List<Def>();
         int numglobaldefs;
 
-        Def[] fields = new Def[MAX_FIELDS];
+        List<Def> fields = new List<Def>();
         int numfielddefs;
-
-        public void InitData()
-        {
-            int i;
-
-            numstatements = 1;
-            strofs = 1;
-            numfunctions = 1;
-            numglobaldefs = 1;
-            numfielddefs = 1;
-        }
 
         StreamWriter Decompileofile;
         StreamWriter Decompileprogssrc;
-        StreamWriter Decompileprofile;
-        string[] DecompileFilesSeen = new string[1024];
-        int DecompileFileCtr = 0;
-        string[] DecompileProfiles = new string[MAX_FUNCTIONS];
+        List<string> DecompileFilesSeen = new List<string>();
+        Dictionary<int,string> DecompileProfiles = new Dictionary<int, string>();
 
         List<string> type_names = new List<string>();
         List<string> builtins = new List<string>();
@@ -458,54 +435,58 @@ namespace DeQcc
             numstatements = progs.numstatements;
             for (int i = 0; i < numstatements; i++)
             {
-                statements[i] = new Statement();
-                statements[i].op = h.ReadUInt16();
-                statements[i].a = h.ReadInt16();
-                statements[i].b = h.ReadInt16();
-                statements[i].c = h.ReadInt16();
+                Statement s = new Statement();
+                s.op = h.ReadUInt16();
+                s.a = h.ReadInt16();
+                s.b = h.ReadInt16();
+                s.c = h.ReadInt16();
+                statements.Add(s);
             }
 
             h.BaseStream.Seek(progs.ofs_functions, SeekOrigin.Begin);
             numfunctions = progs.numfunctions;
             for (int i = 0; i < numfunctions; i++)
             {
-                functions[i] = new Function();
-                functions[i].first_statement = h.ReadInt32();
-                functions[i].parm_start = h.ReadInt32();
-                functions[i].locals = h.ReadInt32();
-                functions[i].profile = h.ReadInt32();
-                functions[i].s_name = h.ReadInt32();
-                functions[i].s_file = h.ReadInt32();
-                functions[i].numparms = h.ReadInt32();
-                for(int j = 0; j < ProQCC.MAX_PARMS; j++)
-                    functions[i].parm_size[j] = h.ReadByte();
+                Function f = new Function();
+                f.first_statement = h.ReadInt32();
+                f.parm_start = h.ReadInt32();
+                f.locals = h.ReadInt32();
+                f.profile = h.ReadInt32();
+                f.s_name = h.ReadInt32();
+                f.s_file = h.ReadInt32();
+                f.numparms = h.ReadInt32();
+                for(int j = 0; j < 8; j++)
+                    f.parm_size[j] = h.ReadByte();
+                functions.Add(f);
             }
 
             h.BaseStream.Seek(progs.ofs_globaldefs, SeekOrigin.Begin);
             numglobaldefs = progs.numglobaldefs;
             for(int i = 0; i < numglobaldefs; i++)
             {
-                globals[i] = new Def();
-                globals[i].type = h.ReadUInt16();
-                globals[i].ofs = h.ReadUInt16();
-                globals[i].s_name = h.ReadInt32();
+                Def g = new Def();
+                g.type = h.ReadUInt16();
+                g.ofs = h.ReadUInt16();
+                g.s_name = h.ReadInt32();
+                globals.Add(g);
             }
 
             h.BaseStream.Seek(progs.ofs_fielddefs, SeekOrigin.Begin);
             numfielddefs = progs.numfielddefs;
             for (int i = 0; i < numfielddefs; i++)
             {
-                fields[i] = new Def();
-                fields[i].type = h.ReadUInt16();
-                fields[i].ofs = h.ReadUInt16();
-                fields[i].s_name = h.ReadInt32();
+                Def f = new Def();
+                f.type = h.ReadUInt16();
+                f.ofs = h.ReadUInt16();
+                f.s_name = h.ReadInt32();
+                fields.Add(f);
             }
 
             h.BaseStream.Seek(progs.ofs_globals, SeekOrigin.Begin);
             numpr_globals = progs.numglobals;
             for(int i = 0; i < numpr_globals; i++)
             {
-                pr_globals[i] = h.ReadSingle();
+                pr_globals.Add(h.ReadSingle());
             }
         }
 
@@ -611,9 +592,6 @@ namespace DeQcc
                     fname += line;
                 }
 
-                if (i >= MAX_FUNCTIONS)
-                    throw new Exception("Fatal Error - too many functions.");
-
                 DecompileProfiles[i] = fname;
             }
         }
@@ -647,10 +625,10 @@ namespace DeQcc
                     line = "void";
                     break;
                 case Types.ev_float:
-                    line = ((float)pr_globals[pr_globals_offset]).ToString("F3");
+                    line = (pr_globals[pr_globals_offset]).ToString("F3");
                     break;
                 case Types.ev_vector:
-                    line = "'" + ((float)pr_globals[pr_globals_offset]).ToString("F3") + " " + ((float)pr_globals[pr_globals_offset + 1]).ToString("F3") + " " + ((float)pr_globals[pr_globals_offset + 2]).ToString("F3") + "'";
+                    line = "'" + (pr_globals[pr_globals_offset]).ToString("F3") + " " + (pr_globals[pr_globals_offset + 1]).ToString("F3") + " " + (pr_globals[pr_globals_offset + 2]).ToString("F3") + "'";
                     break;
                 default:
                     line = "bad type " + type;
@@ -693,31 +671,22 @@ namespace DeQcc
         {
             for (int i = 0; i < numglobaldefs; i++)
             {
-                Def def = globals[i];
-
-                if (def.ofs == ofs)
+                if (globals[i].ofs == ofs)
                 {
-                    return def;
+                    return globals[i];
                 }
             }
             return null;
         }
 
-        int DecompileAlreadySeen(string fname)
+        bool DecompileAlreadySeen(string fname)
         {
-            if (DecompileFileCtr > 1000)
-                throw new Exception("Fatal Error - too many source files.");
-
-            for (int i = 0; i < DecompileFileCtr; i++)
+            if(DecompileFilesSeen.Contains(fname))
             {
-                if (fname == DecompileFilesSeen[i])
-                    return 1;
+                return true;
             }
-
-            DecompileFilesSeen[DecompileFileCtr] = fname;
-            DecompileFileCtr++;
-
-            return 0;
+            DecompileFilesSeen.Add(fname);
+            return false;
         }
 
         void DecompileDecompileFunctions(string folder)
@@ -752,7 +721,7 @@ namespace DeQcc
 
                 f = new StreamWriter(folder + fname, true);
 
-                if (DecompileAlreadySeen(fname) == 0)
+                if (DecompileAlreadySeen(fname) == false)
                 {
                     Decompileprogssrc.WriteLine(fname);
                 }
@@ -1088,14 +1057,10 @@ namespace DeQcc
 
         Def? GetField(string name)
         {
-            Def d;
-
             for (int i = 1; i < numfielddefs; i++)
             {
-                d = fields[i];
-
-                if (NGGetString(d.s_name) == name)
-                    return d;
+                if (NGGetString(fields[i].s_name) == name)
+                    return fields[i];
             }
             return null;
         }
@@ -1115,10 +1080,7 @@ namespace DeQcc
 
         string? DecompileGet(Function df, int ofs, Types? req_t)
         {
-            string arg1 = null;
-
-            arg1 = DecompileGlobal(ofs, req_t);
-
+            string arg1 = DecompileGlobal(ofs, req_t);
             if (arg1 == null)
             {
                 arg1 = DecompileImmediate(df, ofs, 2, null);
@@ -1135,10 +1097,9 @@ namespace DeQcc
 
             for (i = 0; i < numglobaldefs; i++)
             {
-                def = globals[i];
-
-                if (def.ofs == ofs)
+                if (globals[i].ofs == ofs)
                 {
+                    def = globals[i];
                     found = true;
                     break;
                 }

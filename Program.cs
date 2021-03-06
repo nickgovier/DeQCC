@@ -10,10 +10,11 @@ namespace DeQcc
         static void Main(string[] args)
         {
             ProQCC p = new ProQCC();
-            p.InitData();
             p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\output\\");
 
+            
             // Now cross check with original source to highlight differences
+
             string newfiles = Directory.GetCurrentDirectory() + "\\output\\";
             string oldfiles = Directory.GetCurrentDirectory() + "\\target\\";
 
