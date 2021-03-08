@@ -194,22 +194,6 @@ namespace DeQcc
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
         Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
 
-        void InitObotMaps()
-        {
-            nameMap.Add("globaldef1_off28", "self");
-            nameMap.Add("globaldef2_off29", "other");
-            nameMap.Add("globaldef3_off30", "world");
-            nameMap.Add("func149_fs2438", "SUB_Null");
-            nameMap.Add("func150_fs2439", "SUB_Remove");
-            nameMap.Add("globaldef448_off465", "remove");
-            nameMap.Add("func151_fs2442", "SetMovedir");
-
-            // fileMap runs AFTER nameMap
-            fileMap.Add("SUB_Null", "subs.qc");
-            fileMap.Add("SUB_Remove", "subs.qc");
-            fileMap.Add("SetMovedir", "subs.qc");
-        }
-
         void NGInit(string progsName)
         {
             if(progsName == "obots102progs.dat")
