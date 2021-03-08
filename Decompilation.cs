@@ -135,32 +135,6 @@ namespace DeQcc
         public string file;
     }
 
-    class Progs
-    {
-        public int version;
-        public int crc;			// check of header file
-
-        public int ofs_statements;
-        public int numstatements;		// statement 0 is an error
-
-        public int ofs_globaldefs;
-        public int numglobaldefs;
-
-        public int ofs_fielddefs;
-        public int numfielddefs;
-
-        public int ofs_functions;
-        public int numfunctions;		// function 0 is an empty
-
-        public int ofs_strings;
-        public int numstrings;		// first string is a null string
-
-        public int ofs_globals;
-        public int numglobals;
-
-        public int entityfields;
-    }
-
     class Opcode
     {
         public string name;
@@ -197,22 +171,14 @@ namespace DeQcc
         List<Opcode> pr_opcodes = new List<Opcode>();
 
         List<float> pr_globals = new List<float>();
-        int numpr_globals;
 
         List<string> strings = new List<string>();
         public Dictionary<int, int> stringIndexMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
 
         List<Statement> statements = new List<Statement>();
-        int numstatements;
-
         List<Function> functions = new List<Function>();
-        int numfunctions;
-
         List<Def> globals = new List<Def>();
-        int numglobaldefs;
-
         List<Def> fields = new List<Def>();
-        int numfielddefs;
 
         StreamWriter Decompileofile;
         StreamWriter Decompileprogssrc;
@@ -395,24 +361,22 @@ namespace DeQcc
         // checked
         void ReadData(string srcfile)
         {
-            Progs progs = new Progs();
-
             BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open), Encoding.ASCII);
-            progs.version = h.ReadInt32();
-            progs.crc = h.ReadInt32();
-            progs.ofs_statements = h.ReadInt32();
-            progs.numstatements = h.ReadInt32();
-            progs.ofs_globaldefs = h.ReadInt32();
-            progs.numglobaldefs = h.ReadInt32();
-            progs.ofs_fielddefs = h.ReadInt32();
-            progs.numfielddefs = h.ReadInt32();
-            progs.ofs_functions = h.ReadInt32();
-            progs.numfunctions = h.ReadInt32();
-            progs.ofs_strings = h.ReadInt32();
-            progs.numstrings = h.ReadInt32();
-            progs.ofs_globals = h.ReadInt32();
-            progs.numglobals = h.ReadInt32();
-            progs.entityfields = h.ReadInt32();
+            int version = h.ReadInt32();
+            int crc = h.ReadInt32();
+            int ofs_statements = h.ReadInt32();
+            int numstatements = h.ReadInt32();
+            int ofs_globaldefs = h.ReadInt32();
+            int numglobaldefs = h.ReadInt32();
+            int ofs_fielddefs = h.ReadInt32();
+            int numfielddefs = h.ReadInt32();
+            int ofs_functions = h.ReadInt32();
+            int numfunctions = h.ReadInt32();
+            int ofs_strings = h.ReadInt32();
+            int numstrings = h.ReadInt32();
+            int ofs_globals = h.ReadInt32();
+            int numglobals = h.ReadInt32();
+            int entityfields = h.ReadInt32();
 
             /*
             h.BaseStream.Seek(progs.ofs_strings, SeekOrigin.Begin);
@@ -424,16 +388,16 @@ namespace DeQcc
             */
             
             // strings are now referenced by strings[stringIndexMap[offset]]
-            h.BaseStream.Seek(progs.ofs_strings, SeekOrigin.Begin);
+            h.BaseStream.Seek(ofs_strings, SeekOrigin.Begin);
             StringBuilder sb = new StringBuilder();
             stringIndexMap.Add(0, 0); // offset 0 is string 0
-            for (int i = 0; i < progs.numstrings; i++)  // actually numchars not numstrings
+            for (int i = 0; i < numstrings; i++)  // actually numchars not numstrings
             {
                 char nextChar = h.ReadChar();
                 if (nextChar == '\0')
                 {
                     strings.Add(sb.ToString());
-                    if (i < progs.numstrings - 1)   // still have more chars to process
+                    if (i < numstrings - 1)   // still have more chars to process
                     {
                         sb = new StringBuilder();
                         stringIndexMap.Add(i + 1, strings.Count);    // next string offset (i+1) will be string Count in List
@@ -445,8 +409,7 @@ namespace DeQcc
                 }
             }
 
-            h.BaseStream.Seek(progs.ofs_statements, SeekOrigin.Begin);
-            numstatements = progs.numstatements;
+            h.BaseStream.Seek(ofs_statements, SeekOrigin.Begin);
             for (int i = 0; i < numstatements; i++)
             {
                 Statement s = new Statement();
@@ -457,8 +420,7 @@ namespace DeQcc
                 statements.Add(s);
             }
 
-            h.BaseStream.Seek(progs.ofs_functions, SeekOrigin.Begin);
-            numfunctions = progs.numfunctions;
+            h.BaseStream.Seek(ofs_functions, SeekOrigin.Begin);
             for (int i = 0; i < numfunctions; i++)
             {
                 Function f = new Function();
@@ -481,8 +443,7 @@ namespace DeQcc
                 functions.Add(f);
             }
 
-            h.BaseStream.Seek(progs.ofs_globaldefs, SeekOrigin.Begin);
-            numglobaldefs = progs.numglobaldefs;
+            h.BaseStream.Seek(ofs_globaldefs, SeekOrigin.Begin);
             for(int i = 0; i < numglobaldefs; i++)
             {
                 Def g = new Def();
@@ -497,8 +458,7 @@ namespace DeQcc
                 globals.Add(g);
             }
 
-            h.BaseStream.Seek(progs.ofs_fielddefs, SeekOrigin.Begin);
-            numfielddefs = progs.numfielddefs;
+            h.BaseStream.Seek(ofs_fielddefs, SeekOrigin.Begin);
             for (int i = 0; i < numfielddefs; i++)
             {
                 Def f = new Def();
@@ -513,9 +473,8 @@ namespace DeQcc
                 fields.Add(f);
             }
 
-            h.BaseStream.Seek(progs.ofs_globals, SeekOrigin.Begin);
-            numpr_globals = progs.numglobals;
-            for(int i = 0; i < numpr_globals; i++)
+            h.BaseStream.Seek(ofs_globals, SeekOrigin.Begin);
+            for(int i = 0; i < numglobals; i++)
             {
                 pr_globals.Add(h.ReadSingle());
             }
@@ -531,7 +490,7 @@ namespace DeQcc
             string fname;
             string line;
 
-            for (int i = 1; i < numfunctions; i++)
+            for (int i = 1; i < functions.Count; i++)
             {
                 df = functions[i];
                 fname = "";
@@ -701,7 +660,7 @@ namespace DeQcc
 
         Def? GetParameter(int ofs)
         {
-            for (int i = 0; i < numglobaldefs; i++)
+            for (int i = 0; i < globals.Count; i++)
             {
                 if (globals[i].ofs == ofs)
                 {
@@ -736,7 +695,7 @@ namespace DeQcc
             Decompileprogssrc.WriteLine("./progs.dat");
             Decompileprogssrc.WriteLine();
 
-            for (i = 1; i < numfunctions; i++)
+            for (i = 1; i < functions.Count; i++)
             {
                 fname = functions[i].file;
 
@@ -1078,7 +1037,7 @@ namespace DeQcc
 
         Def? GetField(string name)
         {
-            for (int i = 1; i < numfielddefs; i++)
+            for (int i = 1; i < fields.Count; i++)
             {
                 if (fields[i].name == name) // TODO
                     return fields[i];
@@ -1118,7 +1077,7 @@ namespace DeQcc
             string line = "";
             bool found = false;
 
-            for (i = 0; i < numglobaldefs; i++)
+            for (i = 0; i < globals.Count; i++)
             {
                 if (globals[i].ofs == ofs)
                 {
