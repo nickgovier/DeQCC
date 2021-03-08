@@ -96,7 +96,7 @@ namespace DeQcc
 
         public Opcodes Opcode
         {
-            get { return (Opcodes)op; }
+            get { return (Opcodes)(op % 100); }
         }
 
         public override string ToString()
@@ -112,6 +112,8 @@ namespace DeQcc
 
         public ushort ofs;
         public int s_name;
+
+        public string name;
     }
 
     class Function
@@ -128,6 +130,9 @@ namespace DeQcc
 
         public int numparms;
         public byte[] parm_size = new byte[8];
+
+        public string name;
+        public string file;
     }
 
     class Progs
@@ -194,8 +199,8 @@ namespace DeQcc
         List<float> pr_globals = new List<float>();
         int numpr_globals;
 
-        char[] strings = new char[1000000];
-        int strofs;
+        List<string> strings = new List<string>();
+        public Dictionary<int, int> stringIndexMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
 
         List<Statement> statements = new List<Statement>();
         int numstatements;
@@ -217,21 +222,6 @@ namespace DeQcc
         List<string> type_names = new List<string>();
         List<string> builtins = new List<string>();
         Dictionary<int, string> IMMEDIATES = new Dictionary<int, string>();   // used in DecompileImmediate()
-
-        // from offset into char[] array ending at null, to string
-        string NGGetString(int offset)
-        {
-            StringBuilder sb = new StringBuilder();
-            int currentCharOffset = offset;
-            char currentChar = strings[currentCharOffset];
-            while (currentChar != '\0')
-            {
-                sb.Append(currentChar);
-                currentCharOffset++;
-                currentChar = strings[currentCharOffset];
-            }
-            return sb.ToString();
-        }
 
         void NGInit()
         {
@@ -398,16 +388,16 @@ namespace DeQcc
         {
             NGInit();
 
-            DecompileReadData(name);
-            DecompileDecompileFunctions(outputfolder);
+            ReadData(name);
+            Decompile(outputfolder);
         }
 
         // checked
-        void DecompileReadData(string srcfile)
+        void ReadData(string srcfile)
         {
             Progs progs = new Progs();
 
-            BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open));
+            BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open), Encoding.ASCII);
             progs.version = h.ReadInt32();
             progs.crc = h.ReadInt32();
             progs.ofs_statements = h.ReadInt32();
@@ -424,11 +414,35 @@ namespace DeQcc
             progs.numglobals = h.ReadInt32();
             progs.entityfields = h.ReadInt32();
 
+            /*
             h.BaseStream.Seek(progs.ofs_strings, SeekOrigin.Begin);
             strofs = progs.numstrings;
             for (int i = 0; i < strofs; i++)
             {
                 strings[i] = h.ReadChar();
+            }
+            */
+            
+            // strings are now referenced by strings[stringIndexMap[offset]]
+            h.BaseStream.Seek(progs.ofs_strings, SeekOrigin.Begin);
+            StringBuilder sb = new StringBuilder();
+            stringIndexMap.Add(0, 0); // offset 0 is string 0
+            for (int i = 0; i < progs.numstrings; i++)  // actually numchars not numstrings
+            {
+                char nextChar = h.ReadChar();
+                if (nextChar == '\0')
+                {
+                    strings.Add(sb.ToString());
+                    if (i < progs.numstrings - 1)   // still have more chars to process
+                    {
+                        sb = new StringBuilder();
+                        stringIndexMap.Add(i + 1, strings.Count);    // next string offset (i+1) will be string Count in List
+                    }
+                }
+                else
+                {
+                    sb.Append(nextChar);
+                }
             }
 
             h.BaseStream.Seek(progs.ofs_statements, SeekOrigin.Begin);
@@ -457,6 +471,13 @@ namespace DeQcc
                 f.numparms = h.ReadInt32();
                 for(int j = 0; j < 8; j++)
                     f.parm_size[j] = h.ReadByte();
+
+                // set strings
+                if (f.s_name > 0) { f.name = strings[stringIndexMap[f.s_name]]; }
+                else { f.name = "func" + i + "_fs" + f.first_statement; }
+                if (f.s_file > 0) { f.file = strings[stringIndexMap[f.s_file]]; }
+                else { f.file = "unknown.qc"; }
+
                 functions.Add(f);
             }
 
@@ -468,6 +489,11 @@ namespace DeQcc
                 g.type = h.ReadUInt16();
                 g.ofs = h.ReadUInt16();
                 g.s_name = h.ReadInt32();
+
+                // set strings
+                if (g.s_name > 0) { g.name = strings[stringIndexMap[g.s_name]]; }
+                else { g.name = "globaldef" + i + "_off" + g.ofs; }
+
                 globals.Add(g);
             }
 
@@ -479,6 +505,11 @@ namespace DeQcc
                 f.type = h.ReadUInt16();
                 f.ofs = h.ReadUInt16();
                 f.s_name = h.ReadInt32();
+
+                // set strings
+                if (f.s_name > 0) { f.name = strings[stringIndexMap[f.s_name]]; }
+                else { f.name = "field" + i + "_off" + f.ofs; }
+
                 fields.Add(f);
             }
 
@@ -490,8 +521,8 @@ namespace DeQcc
             }
         }
 
-        // checked
-        void DecompileCalcProfiles()
+        // works with obots
+        void CalcProfiles()
         {
             Function df;
             Statement ds, rds;
@@ -507,9 +538,9 @@ namespace DeQcc
                 line = "";
                 DecompileProfiles[i] = null;
 
-                if (df.first_statement <= 0)
+                if (df.first_statement <= 0)    // this is a builtin function
                 {
-                    fname = builtins[-df.first_statement] + " " + NGGetString(functions[i].s_name);
+                    fname = builtins[-df.first_statement] + " " + functions[i].name;    // TODO can save builtin names when loading functions from file as we already know what they are
                 }
                 else
                 {
@@ -538,7 +569,7 @@ namespace DeQcc
                     */
                     if ((rds != null) && (rds.a != 0))
                     {
-                        par = DecompileGetParameter(rds.a);
+                        par = GetParameter(rds.a);
 
                         if (par != null && par.type >= 0 && par.type < 8)   // NG TODO some par.types are 5 figures?!
                         {
@@ -567,7 +598,7 @@ namespace DeQcc
                         for (int j = df.parm_start; j < (df.parm_start) + ps; j++)
                         {
                             line = "";
-                            par = DecompileGetParameter(j);
+                            par = GetParameter(j);
 
                             if (par is null)
                                 throw new Exception("Error - No parameter names with offset " + j + ".");
@@ -577,18 +608,18 @@ namespace DeQcc
 
                             if (j < (df.parm_start) + ps - 1)
                             {
-                                line = DecompilePrintParameter(par) + ", ";
+                                line = PrintParameter(par) + ", ";
                             }
                             else
                             {
-                                line = DecompilePrintParameter(par);
+                                line = PrintParameter(par);
                             }
                             fname += line;
                         }
                     }
                     fname += ") ";
                     line = "";
-                    line = NGGetString(functions[i].s_name);
+                    line = functions[i].name;
                     fname += line;
                 }
 
@@ -596,30 +627,31 @@ namespace DeQcc
             }
         }
 
-        string DecompilePrintParameter(Def def)
+        string PrintParameter(Def def)
         {
-            string line = "";
+            string line;
 
-            if (NGGetString(def.s_name) == "IMMEDIATE")
+            if (def.name == "IMMEDIATE")    // TODO new way of detecting immediates
             {
-                line = DecompileValueString((Types)def.type, def.ofs);
+                line = ValueString((Types)def.type, def.ofs);
             }
             else
             {
-                line = type_names[def.type] + " " + NGGetString(def.s_name);
+                line = type_names[def.type] + " " + def.name;
             }
 
             return line;
         }
 
-        string DecompileValueString(Types type, ushort pr_globals_offset)
+        string ValueString(Types type, ushort pr_globals_offset)
         {
-            string line = "";
+            string line;
 
             switch (type)
             {
                 case Types.ev_string:
-                    line = DecompileString(NGGetString(BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]))));
+                    int offset = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]));
+                    line = CleanseString(strings[stringIndexMap[offset]]);
                     break;
                 case Types.ev_void:
                     line = "void";
@@ -638,7 +670,7 @@ namespace DeQcc
             return line;
         }
 
-        string DecompileString(string stringToDecompile)
+        string CleanseString(string stringToDecompile)
         {
             // doesn't escape newlines - see ending message in oldone.qc
             //stringToDecompile.Replace('"', '\"');
@@ -667,7 +699,7 @@ namespace DeQcc
             return buf.ToString();
         }
 
-        Def? DecompileGetParameter(int ofs)
+        Def? GetParameter(int ofs)
         {
             for (int i = 0; i < numglobaldefs; i++)
             {
@@ -679,7 +711,7 @@ namespace DeQcc
             return null;
         }
 
-        bool DecompileAlreadySeen(string fname)
+        bool AlreadySeen(string fname)
         {
             if(DecompileFilesSeen.Contains(fname))
             {
@@ -689,7 +721,7 @@ namespace DeQcc
             return false;
         }
 
-        void DecompileDecompileFunctions(string folder)
+        void Decompile(string folder)
         {
             int i;
             Function d;
@@ -697,37 +729,27 @@ namespace DeQcc
             string fname;
             bool shownwarning = false;
 
-            DecompileCalcProfiles();
+            CalcProfiles();
 
             Decompileprogssrc = new StreamWriter(folder + "progs.src", false);
+            Decompileprogssrc.AutoFlush = true;
             Decompileprogssrc.WriteLine("./progs.dat");
             Decompileprogssrc.WriteLine();
 
             for (i = 1; i < numfunctions; i++)
             {
-                d = functions[i];
-
-                fname = NGGetString(d.s_file);
-
-                if (fname.Length == 0)
-                {
-                    fname = "scram.qc";
-                    if (!shownwarning)
-                    {
-                        Console.Out.WriteLine("Warning - Scrambled file, generating " + fname + ".");
-                        shownwarning = true;
-                    }
-                }
+                fname = functions[i].file;
 
                 f = new StreamWriter(folder + fname, true);
 
-                if (DecompileAlreadySeen(fname) == false)
+                if (AlreadySeen(fname) == false)
                 {
                     Decompileprogssrc.WriteLine(fname);
                 }
 
                 Decompileofile = f;
-                DecompileFunction(NGGetString(d.s_name));
+                Decompileofile.AutoFlush = true;
+                DecompileFunctionDef(i);  // TODO
 
                 f.Close();
             }
@@ -735,9 +757,9 @@ namespace DeQcc
             Decompileprogssrc.Close();
         }
 
-        void DecompileFunction(string name)
+        void DecompileFunctionDef(int funcIndex)
         {
-            int i, findex, ps;
+            int findex, paramSize=0;
             int dsIndex, tsIndex;   // NG
             Statement ds, ts;
             Function df;
@@ -745,7 +767,7 @@ namespace DeQcc
             string arg2;
             ushort dom, tom;
 
-            int j, start, end;
+            int start, end;
             Function dfpred;
             Def ef;
 
@@ -755,25 +777,20 @@ namespace DeQcc
             Statement k;
             int dum;
 
-            for (i = 1; i < numfunctions; i++)
-            {
-                if (name == NGGetString(functions[i].s_name)) { break; }
-            }
-            if (i == numfunctions) { throw new Exception("No function named \"" + name + "\""); }
-            df = functions[i];
-            findex = i;
+            df = functions[funcIndex];
+            findex = funcIndex;
 
             /*
             * Check ''local globals'' 
             */
             dfpred = functions[findex - 1];
 
-            for (j = 0, ps = 0; j < dfpred.numparms; j++)
+            for (int i = 0; i < dfpred.numparms; i++)
             {
-                ps += dfpred.parm_size[j];
+                paramSize += dfpred.parm_size[i];
             }
 
-            start = dfpred.parm_start + dfpred.locals + ps;
+            start = dfpred.parm_start + dfpred.locals + paramSize;
 
             if (dfpred.first_statement < 0 && df.first_statement > 0)
             {
@@ -787,9 +804,9 @@ namespace DeQcc
 
             end = df.parm_start;
 
-            for (j = start; j < end; j++)
+            for (int i = start; i < end; i++)
             {
-                par = DecompileGetParameter(j);
+                par = GetParameter(i);
 
                 if (par != null)
                 {
@@ -800,61 +817,64 @@ namespace DeQcc
 
                     if (par.type == (ushort)Types.ev_function)
                     {
-                        if (NGGetString(par.s_name) != "IMMEDIATE")
+                        if (par.name != "IMMEDIATE")
                         {
-                            if (NGGetString(par.s_name) != name)
+                            if (par.name != df.name)   // if it's not this function, write the profile
                             {
-                                string profile = DecompileProfiles[DecompileGetFunctionIdxByName(NGGetString(par.s_name))];
+                                string profile = DecompileProfiles[BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]))];
+                                // string profile = DecompileProfiles[GetFunctionIdxByName(par.name)];
                                 if(profile.StartsWith("\n"))
                                 {
                                     Decompileofile.WriteLine();
                                     profile = profile.Remove(0, 1); // remove the \n
                                 }
                                 Decompileofile.WriteLine(profile + ";");
+                                Decompileofile.Flush();
                             }
                         }
                     }
                     else if (par.type != (ushort)Types.ev_pointer)
                     {
-                        if (NGGetString(par.s_name) != "IMMEDIATE")
+                        if (par.name != "IMMEDIATE")    // TODO
                         {
                             if (par.type == (ushort)Types.ev_field)
                             {
-                                ef = GetField(NGGetString(par.s_name));
+                                ef = fields[BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]))];
+                                //ef = GetField(par.name);    // TODO
 
-                                if (ef is null) { throw new Exception("Could not locate a field named \"" + NGGetString(par.s_name) + "\""); }
+                                if (ef is null) { throw new Exception("Could not locate a field named \"" + par.name + "\""); } // TODO
 
                                 if (ef.type == (ushort)Types.ev_vector)
                                 {
-                                    j += 3;
+                                    i += 3;
                                 }
 
-                                Decompileofile.WriteLine("." + type_names[ef.type] + " " + NGGetString(ef.s_name) + ";");
+                                Decompileofile.WriteLine("." + type_names[ef.type] + " " + ef.name + ";");
                             }
                             else
                             {
                                 if (par.type == (ushort)Types.ev_vector)
                                 {
-                                    j += 2;
+                                    i += 2;
                                 }
 
                                 if (par.type == (ushort)Types.ev_entity || par.type == (ushort)Types.ev_void)
                                 {
-                                    Decompileofile.WriteLine(type_names[par.type] + " " + NGGetString(par.s_name) + ";");
+                                    Decompileofile.WriteLine(type_names[par.type] + " " + par.name + ";");
                                 }
                                 else
                                 {
-                                    line = DecompileValueString((Types)par.type, par.ofs);
+                                    line = ValueString((Types)par.type, par.ofs);
 
-                                    if ((NGGetString(par.s_name).Length > 1) &&
-                                        Char.IsUpper((NGGetString(par.s_name))[0]) &&
-                                        (Char.IsUpper((NGGetString(par.s_name))[1]) || (NGGetString(par.s_name))[1] == '_'))
+                                    if ((par.name.Length > 1) &&
+                                        Char.IsUpper((par.name)[0]) &&
+                                        (Char.IsUpper((par.name)[1]) || (par.name)[1] == '_'))  // TODO
                                     {
-                                        Decompileofile.WriteLine(type_names[par.type] + " " + NGGetString(par.s_name) + " = " + line + ";");
+                                        Decompileofile.WriteLine(type_names[par.type] + " " + par.name + " = " + line + ";");
                                     }
                                     else
                                     {
-                                        Decompileofile.WriteLine(type_names[par.type] + " " + NGGetString(par.s_name) + " /* = " + line + " */;");
+                                        Decompileofile.WriteLine(type_names[par.type] + " " + par.name + " /* = " + line + " */;");
                                     }
                                 }
                             }
@@ -960,8 +980,8 @@ namespace DeQcc
             if (ip >= 0)
             {
                 Decompileofile.WriteLine();
-                Decompileofile.WriteLine("// function " + name);
-                Decompileofile.WriteLine("// function number " + i + " begins at statement " + df.first_statement);
+                Decompileofile.WriteLine("// function " + df.name);
+                Decompileofile.WriteLine("// function number " + funcIndex + " begins at statement " + df.first_statement);
                 Decompileofile.WriteLine("/*");
                 // print the bytecode as a comment
                 while (statements[ip].Opcode != Opcodes.OP_DONE)
@@ -987,13 +1007,13 @@ namespace DeQcc
 
             if (ds.op == (ushort)Opcodes.OP_STATE)
             {
-                par = DecompileGetParameter(ds.a);
+                par = GetParameter(ds.a);
                 if (par is null) { throw new Exception("Error - Can't determine frame number."); }
 
-                arg2 = DecompileGet(df, ds.b, null);
+                arg2 = Get(df, ds.b, null);
                 if (arg2 is null) { throw new Exception("Error - No state parameter with offset " + ds.b + "."); }
 
-                Decompileofile.Write(" = [ " + DecompileValueString((Types)par.type, par.ofs) + ", " + arg2 + " ]");
+                Decompileofile.Write(" = [ " + ValueString((Types)par.type, par.ofs) + ", " + arg2 + " ]");
             }
             else
             {
@@ -1005,9 +1025,10 @@ namespace DeQcc
             /*
             * calculate the parameter size 
             */
-            for (j = 0, ps = 0; j < df.numparms; j++)
+            paramSize = 0;
+            for (int i = 0; i < df.numparms; i++)
             {
-                ps += df.parm_size[j];
+                paramSize += df.parm_size[i];
             }
 
             /*
@@ -1015,15 +1036,15 @@ namespace DeQcc
 		    */
             if (df.locals > 0)
             {
-                if ((df.parm_start) + df.locals - 1 >= (df.parm_start) + ps)
+                if ((df.parm_start) + df.locals - 1 >= (df.parm_start) + paramSize)
                 {
-                    for (i = df.parm_start + ps; i < (df.parm_start) + df.locals; i++)
+                    for (funcIndex = df.parm_start + paramSize; funcIndex < (df.parm_start) + df.locals; funcIndex++)
                     {
-                        par = DecompileGetParameter(i);
+                        par = GetParameter(funcIndex);
 
                         if (par is null)
                         {
-                            Decompileofile.WriteLine("   /* Warning: No local name with offset " + i + " */");
+                            Decompileofile.WriteLine("   /* Warning: No local name with offset " + funcIndex + " */");
                         }
                         else
                         {
@@ -1033,12 +1054,12 @@ namespace DeQcc
                             }
                             else
                             {
-                                Decompileofile.WriteLine("   local " + DecompilePrintParameter(par) + ";");
+                                Decompileofile.WriteLine("   local " + PrintParameter(par) + ";");
                             }
 
                             if (par.type == (ushort)Types.ev_vector)
                             {
-                                i += 2;
+                                funcIndex += 2;
                             }
                         }
                     }
@@ -1049,7 +1070,7 @@ namespace DeQcc
             /*
             * do the hard work 
             */
-            DecompileDecompileFunction(df);
+            DecompileFunction(df);
 
             Decompileofile.WriteLine();
             Decompileofile.WriteLine("};");
@@ -1059,36 +1080,38 @@ namespace DeQcc
         {
             for (int i = 1; i < numfielddefs; i++)
             {
-                if (NGGetString(fields[i].s_name) == name)
+                if (fields[i].name == name) // TODO
                     return fields[i];
             }
             return null;
         }
 
-        int DecompileGetFunctionIdxByName(string name)
+        /*
+        int GetFunctionIdxByName(string name)
         {
             int i;
             for (i = 1; i < numfunctions; i++)
             {
-                if (name == NGGetString(functions[i].s_name))
+                if (name == functions[i].name)  // TODO
                 {
                     break;
                 }
             }
             return i;
         }
+        */
 
-        string? DecompileGet(Function df, int ofs, Types? req_t)
+        string? Get(Function df, int ofs, Types? req_t)
         {
-            string arg1 = DecompileGlobal(ofs, req_t);
+            string arg1 = Global(ofs, req_t);
             if (arg1 == null)
             {
-                arg1 = DecompileImmediate(df, ofs, 2, null);
+                arg1 = Immediate(df, ofs, 2, null);
             }
             return arg1;
         }
 
-        string? DecompileGlobal(int ofs, Types? req_t)
+        string? Global(int ofs, Types? req_t)
         {
             int i;
             Def def = null;
@@ -1108,12 +1131,12 @@ namespace DeQcc
             if (found)
             {
 
-                if (NGGetString(def.s_name) == "IMMEDIATE")
-                    line = DecompileValueString((Types)def.type, def.ofs);
+                if (def.name == "IMMEDIATE")    // TODO
+                    line = ValueString((Types)def.type, def.ofs);
                 else
                 {
 
-                    line = NGGetString(def.s_name);
+                    line = def.name;
                     if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
                     {
                         line += "_x";
@@ -1124,7 +1147,7 @@ namespace DeQcc
             return null;
         }
 
-        string? DecompileImmediate(Function df, int ofs, int fun, string newStr)
+        string? Immediate(Function df, int ofs, int fun, string newStr)
         {
             int i;
             string  res;
@@ -1138,7 +1161,7 @@ namespace DeQcc
                 return null;
             }
 
-            nofs = DecompileScaleIndex(df, ofs);
+            nofs = ScaleIndex(df, ofs);
             if ((nofs <= 0) /*|| (nofs > MAX_NO_LOCAL_IMMEDIATES - 1)*/) throw new Exception("Fatal Error - Index (" + nofs + ") out of bounds.");
 
             if (fun == 1)
@@ -1162,7 +1185,7 @@ namespace DeQcc
             return null;
          }
 
-        int DecompileScaleIndex(Function df, int ofs)
+        int ScaleIndex(Function df, int ofs)
         {
             int nofs = 0;
 
@@ -1174,17 +1197,17 @@ namespace DeQcc
             return nofs;
         }
 
-        void DecompileDecompileFunction(Function df)
+        void DecompileFunction(Function df)
         {
             // Initialize 
-            DecompileImmediate(df, 0, 0, null);
+            Immediate(df, 0, 0, null);
 
             int indent = 1;
 
             int dsIndex = df.first_statement;
             while (true)
             {
-                DecompileDecompileStatement(df, dsIndex, ref indent);
+                DecompileStatement(df, dsIndex, ref indent);
                 if (statements[dsIndex].op == 0)
                     break;
                 dsIndex++;
@@ -1195,7 +1218,7 @@ namespace DeQcc
 
         }
 
-        void DecompileIndent(int c)
+        void Indent(int c)
         {
             if (c < 0)
                 c = 0;
@@ -1206,7 +1229,7 @@ namespace DeQcc
             }
         }
 
-        void DecompileDecompileStatement(Function df, int sIndex, ref int indent)
+        void DecompileStatement(Function df, int sIndex, ref int indent)
         {
             Statement s = statements[sIndex];
             Statement t;
@@ -1229,12 +1252,12 @@ namespace DeQcc
             {
                 indent--;
                 Decompileofile.WriteLine();
-                DecompileIndent(indent);
+                Indent(indent);
                 Decompileofile.WriteLine("}");
             }
             for (int i = 0; i < doc; i++)
             {
-                DecompileIndent(indent);
+                Indent(indent);
                 Decompileofile.WriteLine("do {");
                 Decompileofile.WriteLine();
                 indent++;
@@ -1253,12 +1276,12 @@ namespace DeQcc
             }
             else if (s.op == (ushort)Opcodes.OP_RETURN)
             {
-                DecompileIndent(indent);
+                Indent(indent);
                 Decompileofile.Write("return ");
 
                 if (s.a != 0)
                 {
-                    arg1 = DecompileGet(df, s.a, typ1);
+                    arg1 = Get(df, s.a, typ1);
                     Decompileofile.Write("( " + arg1 + " )");
                 }
                 Decompileofile.WriteLine(";");
@@ -1267,73 +1290,73 @@ namespace DeQcc
               ((ushort)Opcodes.OP_EQ_F <= s.op && s.op <= (ushort)Opcodes.OP_GT) ||
               ((ushort)Opcodes.OP_AND <= s.op && s.op <= (ushort)Opcodes.OP_BITOR))
             {
-                arg1 = DecompileGet(df, s.a, typ1);
-                arg2 = DecompileGet(df, s.b, typ2);
-                arg3 = DecompileGlobal(s.c, typ3);
+                arg1 = Get(df, s.a, typ1);
+                arg2 = Get(df, s.b, typ2);
+                arg3 = Global(s.c, typ3);
 
                 if (arg3 != null)
                 {
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine(arg3 + " = " + arg1 + " " + pr_opcodes[s.op].name + " " + arg2 + ";");
                 }
                 else
                 {
                     line = "(" + arg1 + " " + pr_opcodes[s.op].name + " " + arg2 + ")";
-                    DecompileImmediate(df, s.c, 1, line);
+                    Immediate(df, s.c, 1, line);
                 }
             }
             else if ((ushort)Opcodes.OP_LOAD_F <= s.op && s.op <= (ushort)Opcodes.OP_ADDRESS)
             {
-                arg1 = DecompileGet(df, s.a, typ1);
-                arg2 = DecompileGet(df, s.b, typ2);
-                arg3 = DecompileGlobal(s.c, typ3);
+                arg1 = Get(df, s.a, typ1);
+                arg2 = Get(df, s.b, typ2);
+                arg3 = Global(s.c, typ3);
 
                 if (arg3 != null)
                 {
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine(arg3 + " = " + arg1 + "." + arg2 + ";");
                 }
                 else
                 {
                     line = arg1 + "." + arg2;
-                    DecompileImmediate(df, s.c, 1, line);
+                    Immediate(df, s.c, 1, line);
                 }
             }
             else if ((ushort)Opcodes.OP_STORE_F <= s.op && s.op <= (ushort)Opcodes.OP_STORE_FNC)
             {
-                arg1 = DecompileGet(df, s.a, typ1);
-                arg3 = DecompileGlobal(s.b, typ2);
+                arg1 = Get(df, s.a, typ1);
+                arg3 = Global(s.b, typ2);
 
                 if (arg3 != null)
                 {
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine(arg3 + " = " + arg1 + ";");
                 }
                 else
                 {
                     line = arg1;
-                    DecompileImmediate(df, s.b, 1, line);
+                    Immediate(df, s.b, 1, line);
                 }
             }
             else if ((ushort)Opcodes.OP_STOREP_F <= s.op && s.op <= (ushort)Opcodes.OP_STOREP_FNC)
             {
-                arg1 = DecompileGet(df, s.a, typ1);
-                arg2 = DecompileGet(df, s.b, typ2);
+                arg1 = Get(df, s.a, typ1);
+                arg2 = Get(df, s.b, typ2);
 
-                DecompileIndent(indent);
+                Indent(indent);
                 Decompileofile.WriteLine(arg2 + " = " + arg1 + ";");
             }
             else if ((ushort)Opcodes.OP_NOT_F <= s.op && s.op <= (ushort)Opcodes.OP_NOT_FNC)
             {
-                arg1 = DecompileGet(df, s.a, typ1);
+                arg1 = Get(df, s.a, typ1);
                 line = "!" + arg1;
-                DecompileImmediate(df, s.c, 1, line);
+                Immediate(df, s.c, 1, line);
             }
             else if ((ushort)Opcodes.OP_CALL0 <= s.op && s.op <= (ushort)Opcodes.OP_CALL8)
             {
                 int nargs = s.op - (ushort)Opcodes.OP_CALL0;
 
-                arg1 = DecompileGet(df, s.a, null);
+                arg1 = Get(df, s.a, null);
                 line = arg1 + " (";
                 fnam = arg1;
 
@@ -1343,7 +1366,7 @@ namespace DeQcc
 
                     int j = 4 + 3 * i;
 
-                    arg1 = DecompileGet(df, j, typ1);
+                    arg1 = Get(df, j, typ1);
                     line += arg1;
 
                     if (i < nargs - 1)
@@ -1351,20 +1374,30 @@ namespace DeQcc
                 }
 
                 line += ")";
-                DecompileImmediate(df, 1, 1, line);
+                Immediate(df, 1, 1, line);
 
-                if (((statements[sIndex + 1].a != 1) && (statements[sIndex + 1].b != 1) &&
-                    (statements[sIndex + 2].a != 1) && (statements[sIndex + 2].b != 1)) ||
-                    (((statements[sIndex + 1].op) % 100 == (ushort)Opcodes.OP_CALL0) && (((statements[sIndex + 2].a != 1)) || (statements[sIndex + 2].b != 1))))
+                // NG in case this call is at the end of the final function in the file (as in obots102)
+                if (sIndex >= statements.Count - 2)
                 {
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine(line + ";");
+                }
+                else
+                {
+
+                    if (((statements[sIndex + 1].a != 1) && (statements[sIndex + 1].b != 1) &&
+                        (statements[sIndex + 2].a != 1) && (statements[sIndex + 2].b != 1)) ||
+                        (((statements[sIndex + 1].op) % 100 == (ushort)Opcodes.OP_CALL0) && (((statements[sIndex + 2].a != 1)) || (statements[sIndex + 2].b != 1))))
+                    {
+                        Indent(indent);
+                        Decompileofile.WriteLine(line + ";");
+                    }
                 }
             }
             else if (s.op == (ushort)Opcodes.OP_IF || s.op == (ushort)Opcodes.OP_IFNOT)
             {
-                arg1 = DecompileGet(df, s.a, null);
-                arg2 = DecompileGlobal(s.a, null);
+                arg1 = Get(df, s.a, null);
+                arg2 = Global(s.a, null);
 
                 if (s.op == (ushort)Opcodes.OP_IFNOT)
                 {
@@ -1379,7 +1412,7 @@ namespace DeQcc
                     if (tom != (ushort)Opcodes.OP_GOTO)
                     {
                         // pure if 
-                        DecompileIndent(indent);
+                        Indent(indent);
                         Decompileofile.WriteLine("if ( " + arg1 + " ) {");
                         Decompileofile.WriteLine();
                         indent++;
@@ -1389,7 +1422,7 @@ namespace DeQcc
                         if (t.a > 0)
                         {
                             // if-then-else
-                            DecompileIndent(indent);
+                            Indent(indent);
                             Decompileofile.WriteLine("if ( " + arg1 + " ) {");
                             Decompileofile.WriteLine();
                             indent++;
@@ -1399,7 +1432,7 @@ namespace DeQcc
                             if ((t.a + s.b) > 1)
                             {
                                 // pure if
-                                DecompileIndent(indent);
+                                Indent(indent);
                                 Decompileofile.WriteLine("if ( " + arg1 + " ) {");
                                 Decompileofile.WriteLine();
                                 indent++;
@@ -1416,7 +1449,7 @@ namespace DeQcc
                                 if (dum != 0)
                                 {
                                     // while
-                                    DecompileIndent(indent);
+                                    Indent(indent);
                                     Decompileofile.WriteLine("while ( " + arg1 + " ) {");
                                     Decompileofile.WriteLine();
                                     indent++;
@@ -1424,7 +1457,7 @@ namespace DeQcc
                                 else
                                 {
                                     // pure if
-                                    DecompileIndent(indent);
+                                    Indent(indent);
                                     Decompileofile.WriteLine("if ( " + arg1 + " ) {");
                                     Decompileofile.WriteLine();
                                     indent++;
@@ -1438,7 +1471,7 @@ namespace DeQcc
                     // do ... while 
                     indent--;
                     Decompileofile.WriteLine();
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine("} while ( " + arg1 + " );");
                 }
             }
@@ -1449,7 +1482,7 @@ namespace DeQcc
                     // else 
                     indent--;
                     Decompileofile.WriteLine();
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine("} else {");
                     Decompileofile.WriteLine();
                     indent++;
@@ -1459,7 +1492,7 @@ namespace DeQcc
                     // while 
                     indent--;
                     Decompileofile.WriteLine();
-                    DecompileIndent(indent);
+                    Indent(indent);
                     Decompileofile.WriteLine("}");
                 }
             }

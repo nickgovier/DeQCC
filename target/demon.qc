@@ -196,7 +196,7 @@ void () demon1_stand13 = [ 12.000, demon1_stand1 ] {
  * OP_STORE_V	7368	13	0
  * OP_STORE_V	327	16	0
  * OP_CALL5	453	0	0
- * 132	6077	4	0
+ * OP_STORE_V	6077	4	0
  * OP_CALL1	1351	0	0
  * OP_DONE	0	0	0
  */
@@ -330,7 +330,7 @@ void () demon1_walk8 = [ 20.000, demon1_walk1 ] {
  * OP_STORE_V	7368	13	0
  * OP_STORE_V	327	16	0
  * OP_CALL5	453	0	0
- * 132	894	4	0
+ * OP_STORE_V	894	4	0
  * OP_CALL1	1432	0	0
  * OP_DONE	0	0	0
  */
@@ -488,8 +488,6 @@ void () demon1_jump3 = [ 29.000, demon1_jump4 ] {
  * OP_LOAD_F	28	182	8045
  * OP_SUB_F	8045	223	8046
  * OP_STOREP_F	8046	8044	0
- * 100	0	0	0
- * OP_STATE	305	8047	0
  * OP_DONE	0	0	0
  */
 
@@ -915,11 +913,11 @@ void () demon1_pain6 = [ 44.000, demon1_run1 ] {
  * OP_EQ_FNC	8080	7987	8081
  * OP_IFNOT	8081	2	0
  * OP_RETURN	0	0	0
- * 124	28	374	8082
+ * OP_LOAD_F	28	374	8082
  * OP_GT	8082	31	8083
  * OP_IFNOT	8083	2	0
  * OP_RETURN	0	0	0
- * 130	28	374	8084
+ * OP_ADDRESS	28	374	8084
  * OP_ADD_F	31	7368	8085
  * OP_STOREP_F	8085	8084	0
  * OP_STORE_V	28	4	0
@@ -933,7 +931,7 @@ void () demon1_pain6 = [ 44.000, demon1_run1 ] {
  * OP_GT	8087	8079	8088
  * OP_IFNOT	8088	2	0
  * OP_RETURN	0	0	0
- * 151	8071	0	0
+ * OP_CALL0	8071	0	0
  * OP_DONE	0	0	0
  */
 
@@ -1107,7 +1105,7 @@ void () demon1_die9 = [ 53.000, demon1_die9 ] {
  * OP_STORE_V	8107	7	0
  * OP_CALL2	5218	0	0
  * OP_RETURN	0	0	0
- * 151	8089	0	0
+ * OP_CALL0	8089	0	0
  * OP_DONE	0	0	0
  */
 
@@ -1147,7 +1145,7 @@ void () Demon_MeleeAttack = {
  * OP_STORE_V	28	4	0
  * OP_CALL1	460	0	0
  * OP_RETURN	0	0	0
- * 132	8110	4	0
+ * OP_STORE_V	8110	4	0
  * OP_CALL1	465	0	0
  * OP_STORE_V	8103	4	0
  * OP_CALL1	465	0	0
@@ -1234,7 +1232,7 @@ void () monster_demon1 = {
  * OP_ADDRESS	28	367	8125
  * OP_STOREP_F	370	8125	0
  * OP_RETURN	214	0	0
- * 143	213	0	0
+ * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
 float () CheckDemonMelee = {
@@ -1267,7 +1265,7 @@ float () CheckDemonMelee = {
  * OP_GT	8133	8142	8143
  * OP_IFNOT	8143	2	0
  * OP_RETURN	213	0	0
- * 124	28	108	8144
+ * OP_LOAD_F	28	108	8144
  * OP_LOAD_F	28	141	8145
  * OP_ADD_F	8144	8145	8146
  * OP_LOAD_ENT	28	181	8147
@@ -1282,7 +1280,7 @@ float () CheckDemonMelee = {
  * OP_LT	8146	8155	8156
  * OP_IFNOT	8156	2	0
  * OP_RETURN	213	0	0
- * 127	28	181	8157
+ * OP_LOAD_ENT	28	181	8157
  * OP_LOAD_V	8157	105	8158
  * OP_LOAD_V	28	105	8161
  * OP_SUB_V	8158	8161	8164
@@ -1294,13 +1292,13 @@ float () CheckDemonMelee = {
  * OP_LT	8130	1884	8167
  * OP_IFNOT	8167	2	0
  * OP_RETURN	213	0	0
- * 123	8130	1965	8168
+ * OP_GT	8130	1965	8168
  * OP_IFNOT	8168	5	0
  * OP_CALL0	452	0	0
  * OP_LT	1	832	8169
  * OP_IFNOT	8169	2	0
  * OP_RETURN	213	0	0
- * 243	214	0	0
+ * OP_RETURN	214	0	0
  * OP_DONE	0	0	0
  */
 float () CheckDemonJump = {
@@ -1347,7 +1345,7 @@ float () CheckDemonJump = {
  * OP_ADDRESS	28	367	8173
  * OP_STOREP_F	370	8173	0
  * OP_RETURN	214	0	0
- * 151	8126	0	0
+ * OP_CALL0	8126	0	0
  * OP_IFNOT	1	10	0
  * OP_ADDRESS	28	367	8174
  * OP_STOREP_F	371	8174	0
@@ -1358,7 +1356,7 @@ float () CheckDemonJump = {
  * OP_STORE_V	326	16	0
  * OP_CALL5	453	0	0
  * OP_RETURN	214	0	0
- * 143	213	0	0
+ * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
 float () DemonCheckAttack = {
@@ -1400,14 +1398,14 @@ float () DemonCheckAttack = {
  * OP_GT	1	1884	8191
  * OP_IFNOT	8191	2	0
  * OP_RETURN	0	0	0
- * 127	28	181	8192
+ * OP_LOAD_ENT	28	181	8192
  * OP_STORE_V	8192	4	0
  * OP_STORE_V	28	7	0
  * OP_CALL2	522	0	0
  * OP_NOT_F	1	0	8193
  * OP_IFNOT	8193	2	0
  * OP_RETURN	0	0	0
- * 132	28	4	0
+ * OP_STORE_V	28	4	0
  * OP_STORE_V	321	7	0
  * OP_STORE_V	8111	10	0
  * OP_STORE_V	7368	13	0
@@ -1469,7 +1467,7 @@ void (float side) Demon_Melee = {
  * OP_LE	8213	337	8214
  * OP_IFNOT	8214	2	0
  * OP_RETURN	0	0	0
- * 124	29	163	8215
+ * OP_LOAD_F	29	163	8215
  * OP_IFNOT	8215	15	0
  * OP_LOAD_V	28	113	8216
  * OP_STORE_V	8216	4	0
@@ -1485,7 +1483,7 @@ void (float side) Demon_Melee = {
  * OP_STORE_V	28	10	0
  * OP_STORE_V	8212	13	0
  * OP_CALL4	520	0	0
- * 232	28	4	0
+ * OP_STORE_V	28	4	0
  * OP_CALL1	483	0	0
  * OP_NOT_F	1	0	8222
  * OP_IFNOT	8222	12	0
@@ -1499,8 +1497,8 @@ void (float side) Demon_Melee = {
  * OP_ADDRESS	28	150	8227
  * OP_ADD_F	31	603	8228
  * OP_STOREP_F	8228	8227	0
- * 143	0	0	0
- * 130	28	146	8229
+ * OP_RETURN	0	0	0
+ * OP_ADDRESS	28	146	8229
  * OP_STOREP_FNC	517	8229	0
  * OP_ADDRESS	28	148	8230
  * OP_STOREP_FNC	8054	8230	0

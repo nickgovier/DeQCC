@@ -45,7 +45,29 @@ float enemy_yaw /* = 0.000 */;
  * OP_CALL0	748	0	0
  * OP_GOTO	2	0	0
  * OP_CALL0	749	0	0
- * 100	0	0	0
+ * OP_DONE	0	0	0
+ */
+
+void () knight_attack = {
+
+   local float len;
+
+   len = vlen (((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs)));
+   if ( (len < 80.000) ) {
+
+      knight_atk1 ();
+
+   } else {
+
+      knight_runatk1 ();
+
+   }
+
+};
+
+// function CheckAttack
+// function number 81 begins at statement 293
+/*
  * OP_LOAD_ENT	28	181	799
  * OP_STORE_ENT	799	797	0
  * OP_LOAD_V	28	105	800
@@ -124,107 +146,6 @@ float enemy_yaw /* = 0.000 */;
  * OP_CALL1	731	0	0
  * OP_RETURN	214	0	0
  * OP_RETURN	213	0	0
- * OP_DONE	0	0	0
- */
-
-void () knight_attack = {
-
-   local float len;
-
-   len = vlen (((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs)));
-   if ( (len < 80.000) ) {
-
-      knight_atk1 ();
-
-   } else {
-
-      knight_runatk1 ();
-
-   }
-
-};
-
-// function CheckAttack
-// function number 81 begins at statement 293
-/*
- * OP_LOAD_ENT	28	181	799
- * OP_STORE_ENT	799	797	0
- * OP_LOAD_V	28	105	800
- * OP_LOAD_V	28	166	803
- * OP_ADD_V	800	803	806
- * OP_STORE_V	806	791	0
- * OP_LOAD_V	797	105	809
- * OP_LOAD_V	797	166	812
- * OP_ADD_V	809	812	815
- * OP_STORE_V	815	794	0
- * OP_STORE_V	791	4	0
- * OP_STORE_V	794	7	0
- * OP_STORE_V	213	10	0
- * OP_STORE_V	28	13	0
- * OP_CALL4	461	0	0
- * OP_NE_E	78	797	818
- * OP_IFNOT	818	2	0
- * OP_RETURN	213	0	0
- * 162	79	80	819
- * OP_IFNOT	819	2	0
- * OP_RETURN	213	0	0
- * 110	761	242	820
- * OP_IFNOT	820	11	0
- * OP_LOAD_FNC	28	360	821
- * OP_IFNOT	821	9	0
- * OP_LOAD_S	28	129	822
- * OP_EQ_S	822	823	824
- * OP_IFNOT	824	3	0
- * OP_CALL0	763	0	0
- * OP_GOTO	3	0	0
- * OP_LOAD_FNC	28	360	825
- * OP_CALL0	825	0	0
- * 143	214	0	0
- * 229	28	359	826
- * OP_NOT_FNC	826	0	827
- * OP_IFNOT	827	2	0
- * OP_RETURN	213	0	0
- * 124	28	373	828
- * OP_LT	31	828	829
- * OP_IFNOT	829	2	0
- * OP_RETURN	213	0	0
- * 110	761	245	830
- * OP_IFNOT	830	2	0
- * OP_RETURN	213	0	0
- * 110	761	242	831
- * OP_IFNOT	831	5	0
- * OP_STORE_F	832	798	0
- * OP_ADDRESS	28	373	833
- * OP_STOREP_F	337	833	0
- * OP_GOTO	18	0	0
- * OP_EQ_F	761	243	834
- * OP_IFNOT	834	7	0
- * OP_LOAD_FNC	28	360	835
- * OP_IFNOT	835	3	0
- * OP_STORE_F	836	798	0
- * OP_GOTO	2	0	0
- * OP_STORE_F	837	798	0
- * 161	10	0	0
- * OP_EQ_F	761	244	838
- * OP_IFNOT	838	7	0
- * OP_LOAD_FNC	28	360	839
- * OP_IFNOT	839	3	0
- * OP_STORE_F	840	798	0
- * OP_GOTO	2	0	0
- * OP_STORE_F	603	798	0
- * 161	2	0	0
- * OP_STORE_F	337	798	0
- * 351	452	0	0
- * OP_LT	1	798	841
- * OP_IFNOT	841	8	0
- * OP_LOAD_FNC	28	359	842
- * OP_CALL0	842	0	0
- * OP_CALL0	452	0	0
- * OP_MUL_F	369	1	843
- * OP_STORE_V	843	4	0
- * OP_CALL1	731	0	0
- * OP_RETURN	214	0	0
- * 143	213	0	0
  * OP_DONE	0	0	0
  */
 float () CheckAttack = {
@@ -426,7 +347,7 @@ void () ai_charge_side = {
  * OP_NOT_ENT	900	0	901
  * OP_IFNOT	901	2	0
  * OP_RETURN	0	0	0
- * 127	28	181	902
+ * OP_LOAD_ENT	28	181	902
  * OP_LOAD_V	902	105	903
  * OP_LOAD_V	28	105	906
  * OP_SUB_V	903	906	909
@@ -436,7 +357,7 @@ void () ai_charge_side = {
  * OP_GT	1	912	913
  * OP_IFNOT	913	2	0
  * OP_RETURN	0	0	0
- * 151	452	0	0
+ * OP_CALL0	452	0	0
  * OP_STORE_V	1	914	0
  * OP_CALL0	452	0	0
  * OP_ADD_F	914	1	917
@@ -481,7 +402,7 @@ void () ai_melee = {
  * OP_NOT_ENT	926	0	927
  * OP_IFNOT	927	2	0
  * OP_RETURN	0	0	0
- * 151	859	0	0
+ * OP_CALL0	859	0	0
  * OP_LOAD_ENT	28	181	928
  * OP_LOAD_V	928	105	929
  * OP_LOAD_V	28	105	932
@@ -492,14 +413,14 @@ void () ai_melee = {
  * OP_GT	1	912	938
  * OP_IFNOT	938	2	0
  * OP_RETURN	0	0	0
- * 127	28	181	939
+ * OP_LOAD_ENT	28	181	939
  * OP_STORE_V	939	4	0
  * OP_STORE_V	28	7	0
  * OP_CALL2	522	0	0
  * OP_NOT_F	1	0	940
  * OP_IFNOT	940	2	0
  * OP_RETURN	0	0	0
- * 151	452	0	0
+ * OP_CALL0	452	0	0
  * OP_STORE_V	1	941	0
  * OP_CALL0	452	0	0
  * OP_ADD_F	941	1	944
@@ -564,17 +485,17 @@ void () ai_melee_side = {
  * OP_AND	79	80	976
  * OP_IFNOT	976	2	0
  * OP_RETURN	213	0	0
- * 118	78	955	977
+ * OP_NE_E	78	955	977
  * OP_IFNOT	977	2	0
  * OP_RETURN	213	0	0
- * 124	28	373	978
+ * OP_LOAD_F	28	373	978
  * OP_LT	31	978	979
  * OP_IFNOT	979	2	0
  * OP_RETURN	213	0	0
- * 110	761	245	980
+ * OP_EQ_F	761	245	980
  * OP_IFNOT	980	2	0
  * OP_RETURN	213	0	0
- * 110	761	242	981
+ * OP_EQ_F	761	242	981
  * OP_IFNOT	981	3	0
  * OP_STORE_F	832	956	0
  * OP_GOTO	10	0	0
@@ -587,7 +508,7 @@ void () ai_melee_side = {
  * OP_STORE_F	840	956	0
  * OP_GOTO	2	0	0
  * OP_STORE_F	337	956	0
- * 351	452	0	0
+ * OP_CALL0	452	0	0
  * OP_LT	1	956	984
  * OP_IFNOT	984	15	0
  * OP_LOAD_FNC	28	359	985
@@ -603,8 +524,8 @@ void () ai_melee_side = {
  * OP_LOAD_F	28	365	990
  * OP_NOT_F	990	0	991
  * OP_STOREP_F	991	989	0
- * 143	214	0	0
- * 143	213	0	0
+ * OP_RETURN	214	0	0
+ * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
 float () SoldierCheckAttack = {
@@ -692,14 +613,14 @@ float () SoldierCheckAttack = {
  * OP_ADDRESS	28	367	1003
  * OP_STOREP_F	370	1003	0
  * OP_RETURN	214	0	0
- * 224	28	373	1004
+ * OP_LOAD_F	28	373	1004
  * OP_LT	31	1004	1005
  * OP_IFNOT	1005	2	0
  * OP_RETURN	213	0	0
- * 144	759	0	1006
+ * OP_NOT_F	759	0	1006
  * OP_IFNOT	1006	2	0
  * OP_RETURN	213	0	0
- * 127	28	181	1007
+ * OP_LOAD_ENT	28	181	1007
  * OP_STORE_ENT	1007	999	0
  * OP_LOAD_V	28	105	1008
  * OP_LOAD_V	28	166	1011
@@ -715,7 +636,7 @@ float () SoldierCheckAttack = {
  * OP_GT	1	1029	1030
  * OP_IFNOT	1030	2	0
  * OP_RETURN	213	0	0
- * 132	993	4	0
+ * OP_STORE_V	993	4	0
  * OP_STORE_V	996	7	0
  * OP_STORE_V	213	10	0
  * OP_STORE_V	28	13	0
@@ -723,13 +644,13 @@ float () SoldierCheckAttack = {
  * OP_AND	79	80	1031
  * OP_IFNOT	1031	2	0
  * OP_RETURN	213	0	0
- * 118	78	999	1032
+ * OP_NE_E	78	999	1032
  * OP_IFNOT	1032	2	0
  * OP_RETURN	213	0	0
- * 110	761	245	1033
+ * OP_EQ_F	761	245	1033
  * OP_IFNOT	1033	2	0
  * OP_RETURN	213	0	0
- * 130	28	367	1034
+ * OP_ADDRESS	28	367	1034
  * OP_STOREP_F	371	1034	0
  * OP_CALL0	452	0	0
  * OP_MUL_F	369	1	1035
@@ -809,14 +730,14 @@ float () ShamCheckAttack = {
  * OP_ADDRESS	28	367	1048
  * OP_STOREP_F	370	1048	0
  * OP_RETURN	214	0	0
- * 224	28	373	1049
+ * OP_LOAD_F	28	373	1049
  * OP_LT	31	1049	1050
  * OP_IFNOT	1050	2	0
  * OP_RETURN	213	0	0
- * 144	759	0	1051
+ * OP_NOT_F	759	0	1051
  * OP_IFNOT	1051	2	0
  * OP_RETURN	213	0	0
- * 127	28	181	1052
+ * OP_LOAD_ENT	28	181	1052
  * OP_STORE_ENT	1052	1044	0
  * OP_LOAD_V	28	105	1053
  * OP_LOAD_V	28	166	1056
@@ -834,14 +755,14 @@ float () ShamCheckAttack = {
  * OP_AND	79	80	1071
  * OP_IFNOT	1071	2	0
  * OP_RETURN	213	0	0
- * 118	78	1044	1072
+ * OP_NE_E	78	1044	1072
  * OP_IFNOT	1072	2	0
  * OP_RETURN	213	0	0
- * 124	28	373	1073
+ * OP_LOAD_F	28	373	1073
  * OP_LT	31	1073	1074
  * OP_IFNOT	1074	2	0
  * OP_RETURN	213	0	0
- * 110	761	245	1075
+ * OP_EQ_F	761	245	1075
  * OP_IFNOT	1075	3	0
  * OP_RETURN	213	0	0
  * OP_GOTO	10	0	0
@@ -854,7 +775,7 @@ float () ShamCheckAttack = {
  * OP_STORE_F	840	1045	0
  * OP_GOTO	2	0	0
  * OP_STORE_F	337	1045	0
- * 330	28	367	1078
+ * OP_ADDRESS	28	367	1078
  * OP_STOREP_F	371	1078	0
  * OP_CALL0	452	0	0
  * OP_MUL_F	369	1	1079

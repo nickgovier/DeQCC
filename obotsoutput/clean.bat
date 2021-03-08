@@ -1,0 +1,2 @@
+del *.qc
+del *.src

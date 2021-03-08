@@ -536,10 +536,6 @@ void () f_walk18 = [ 56.000, f_walk1 ] {
  * OP_STORE_V	9491	13	0
  * OP_STORE_V	326	16	0
  * OP_CALL5	453	0	0
- * 100	0	0	0
- * OP_STATE	5443	10765	0
- * OP_STORE_V	2250	4	0
- * OP_CALL1	1432	0	0
  * OP_DONE	0	0	0
  */
 
@@ -681,7 +677,7 @@ void () f_run9 = [ 55.000, f_run1 ] {
  * OP_NOT_ENT	10777	0	10778
  * OP_IFNOT	10778	2	0
  * OP_RETURN	0	0	0
- * 127	28	181	10779
+ * OP_LOAD_ENT	28	181	10779
  * OP_LOAD_V	10779	105	10780
  * OP_LOAD_V	28	105	10783
  * OP_SUB_V	10780	10783	10786
@@ -691,7 +687,7 @@ void () f_run9 = [ 55.000, f_run1 ] {
  * OP_GT	1	912	10789
  * OP_IFNOT	10789	2	0
  * OP_RETURN	0	0	0
- * 132	28	4	0
+ * OP_STORE_V	28	4	0
  * OP_STORE_V	322	7	0
  * OP_STORE_V	10790	10	0
  * OP_STORE_V	9491	13	0
@@ -1415,7 +1411,7 @@ void (entity attacker, float damage) fish_pain = {
  * OP_STORE_V	28	4	0
  * OP_CALL1	460	0	0
  * OP_RETURN	0	0	0
- * 132	10851	4	0
+ * OP_STORE_V	10851	4	0
  * OP_CALL1	508	0	0
  * OP_STORE_V	10817	4	0
  * OP_CALL1	509	0	0
