@@ -157,7 +157,7 @@ namespace DeQcc
         }
     }
 
-    partial class ProQCC
+    partial class DeQCC
     {
         const int OFS_NULL = 0;
         const int OFS_RETURN = 1;
@@ -173,11 +173,12 @@ namespace DeQcc
         List<float> pr_globals = new List<float>();
 
         List<string> strings = new List<string>();
-        public Dictionary<int, int> stringIndexMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
+        public Dictionary<int, int> stringOffsetMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
 
         List<Statement> statements = new List<Statement>();
         List<Function> functions = new List<Function>();
         List<Def> globals = new List<Def>();
+        Dictionary<int, int> globalsOffsetMap = new Dictionary<int, int>();  // to look up global by offset
         List<Def> fields = new List<Def>();
 
         StreamWriter Decompileofile;
@@ -189,8 +190,33 @@ namespace DeQcc
         List<string> builtins = new List<string>();
         Dictionary<int, string> IMMEDIATES = new Dictionary<int, string>();   // used in DecompileImmediate()
 
-        void NGInit()
+        // Maps for obfuscated progs.dat files
+        Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
+        Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
+
+        void InitObotMaps()
         {
+            nameMap.Add("globaldef1_off28", "self");
+            nameMap.Add("globaldef2_off29", "other");
+            nameMap.Add("globaldef3_off30", "world");
+            nameMap.Add("func149_fs2438", "SUB_Null");
+            nameMap.Add("func150_fs2439", "SUB_Remove");
+            nameMap.Add("globaldef448_off465", "remove");
+            nameMap.Add("func151_fs2442", "SetMovedir");
+
+            // fileMap runs AFTER nameMap
+            fileMap.Add("SUB_Null", "subs.qc");
+            fileMap.Add("SUB_Remove", "subs.qc");
+            fileMap.Add("SetMovedir", "subs.qc");
+        }
+
+        void NGInit(string progsName)
+        {
+            if(progsName == "obots102progs.dat")
+            {
+                InitObotMaps();
+            }
+
             type_names.Clear();
             type_names.Add("void");
             type_names.Add("string");
@@ -352,8 +378,7 @@ namespace DeQcc
 
         public void DecompileProgsDat(string name, string outputfolder)
         {
-            NGInit();
-
+            NGInit(name);
             ReadData(name);
             Decompile(outputfolder);
         }
@@ -378,19 +403,10 @@ namespace DeQcc
             int numglobals = h.ReadInt32();
             int entityfields = h.ReadInt32();
 
-            /*
-            h.BaseStream.Seek(progs.ofs_strings, SeekOrigin.Begin);
-            strofs = progs.numstrings;
-            for (int i = 0; i < strofs; i++)
-            {
-                strings[i] = h.ReadChar();
-            }
-            */
-            
             // strings are now referenced by strings[stringIndexMap[offset]]
             h.BaseStream.Seek(ofs_strings, SeekOrigin.Begin);
             StringBuilder sb = new StringBuilder();
-            stringIndexMap.Add(0, 0); // offset 0 is string 0
+            stringOffsetMap.Add(0, 0); // offset 0 is string 0
             for (int i = 0; i < numstrings; i++)  // actually numchars not numstrings
             {
                 char nextChar = h.ReadChar();
@@ -400,7 +416,7 @@ namespace DeQcc
                     if (i < numstrings - 1)   // still have more chars to process
                     {
                         sb = new StringBuilder();
-                        stringIndexMap.Add(i + 1, strings.Count);    // next string offset (i+1) will be string Count in List
+                        stringOffsetMap.Add(i + 1, strings.Count);    // next string offset (i+1) will be string Count in List
                     }
                 }
                 else
@@ -435,9 +451,12 @@ namespace DeQcc
                     f.parm_size[j] = h.ReadByte();
 
                 // set strings
-                if (f.s_name > 0) { f.name = strings[stringIndexMap[f.s_name]]; }
+                if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
                 else { f.name = "func" + i + "_fs" + f.first_statement; }
-                if (f.s_file > 0) { f.file = strings[stringIndexMap[f.s_file]]; }
+                if(nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
+
+                if (f.s_file > 0) { f.file = strings[stringOffsetMap[f.s_file]]; }
+                else if(fileMap.ContainsKey(f.name)) { f.file = fileMap[f.name]; }
                 else { f.file = "unknown.qc"; }
 
                 functions.Add(f);
@@ -452,10 +471,15 @@ namespace DeQcc
                 g.s_name = h.ReadInt32();
 
                 // set strings
-                if (g.s_name > 0) { g.name = strings[stringIndexMap[g.s_name]]; }
+                if (g.s_name > 0) { g.name = strings[stringOffsetMap[g.s_name]]; }
                 else { g.name = "globaldef" + i + "_off" + g.ofs; }
+                if (nameMap.ContainsKey(g.name)) { g.name = nameMap[g.name]; }
 
                 globals.Add(g);
+                if (!globalsOffsetMap.ContainsKey(g.ofs))   // for vectors, var and var_x are separate globals with same offset
+                {
+                    globalsOffsetMap.Add(g.ofs, i);
+                }
             }
 
             h.BaseStream.Seek(ofs_fielddefs, SeekOrigin.Begin);
@@ -467,8 +491,9 @@ namespace DeQcc
                 f.s_name = h.ReadInt32();
 
                 // set strings
-                if (f.s_name > 0) { f.name = strings[stringIndexMap[f.s_name]]; }
+                if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
                 else { f.name = "field" + i + "_off" + f.ofs; }
+                if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 fields.Add(f);
             }
@@ -476,7 +501,7 @@ namespace DeQcc
             h.BaseStream.Seek(ofs_globals, SeekOrigin.Begin);
             for(int i = 0; i < numglobals; i++)
             {
-                pr_globals.Add(h.ReadSingle());
+                pr_globals.Add(h.ReadSingle());     // Read these as floats for now, will need to bitconvert some to ints later
             }
         }
 
@@ -495,7 +520,6 @@ namespace DeQcc
                 df = functions[i];
                 fname = "";
                 line = "";
-                DecompileProfiles[i] = null;
 
                 if (df.first_statement <= 0)    // this is a builtin function
                 {
@@ -528,7 +552,7 @@ namespace DeQcc
                     */
                     if ((rds != null) && (rds.a != 0))
                     {
-                        par = GetParameter(rds.a);
+                        par = GetGlobalByOffset(rds.a);
 
                         if (par != null && par.type >= 0 && par.type < 8)   // NG TODO some par.types are 5 figures?!
                         {
@@ -557,7 +581,7 @@ namespace DeQcc
                         for (int j = df.parm_start; j < (df.parm_start) + ps; j++)
                         {
                             line = "";
-                            par = GetParameter(j);
+                            par = GetGlobalByOffset(j);
 
                             if (par is null)
                                 throw new Exception("Error - No parameter names with offset " + j + ".");
@@ -609,8 +633,8 @@ namespace DeQcc
             switch (type)
             {
                 case Types.ev_string:
-                    int offset = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]));
-                    line = CleanseString(strings[stringIndexMap[offset]]);
+                    int intVal = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]));
+                    line = CleanseString(strings[stringOffsetMap[intVal]]);
                     break;
                 case Types.ev_void:
                     line = "void";
@@ -658,14 +682,11 @@ namespace DeQcc
             return buf.ToString();
         }
 
-        Def? GetParameter(int ofs)
+        Def? GetGlobalByOffset(int ofs)
         {
-            for (int i = 0; i < globals.Count; i++)
+            if (globalsOffsetMap.ContainsKey(ofs))
             {
-                if (globals[i].ofs == ofs)
-                {
-                    return globals[i];
-                }
+                return globals[globalsOffsetMap[ofs]];
             }
             return null;
         }
@@ -683,10 +704,8 @@ namespace DeQcc
         void Decompile(string folder)
         {
             int i;
-            Function d;
             StreamWriter f;
             string fname;
-            bool shownwarning = false;
 
             CalcProfiles();
 
@@ -765,7 +784,7 @@ namespace DeQcc
 
             for (int i = start; i < end; i++)
             {
-                par = GetParameter(i);
+                par = GetGlobalByOffset(i);
 
                 if (par != null)
                 {
@@ -780,7 +799,8 @@ namespace DeQcc
                         {
                             if (par.name != df.name)   // if it's not this function, write the profile
                             {
-                                string profile = DecompileProfiles[BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]))];
+                                int intVal = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]));
+                                string profile = DecompileProfiles[intVal];
                                 // string profile = DecompileProfiles[GetFunctionIdxByName(par.name)];
                                 if(profile.StartsWith("\n"))
                                 {
@@ -798,8 +818,8 @@ namespace DeQcc
                         {
                             if (par.type == (ushort)Types.ev_field)
                             {
-                                ef = fields[BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]))];
-                                //ef = GetField(par.name);    // TODO
+                                int intVal = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]));
+                                ef = fields[intVal];
 
                                 if (ef is null) { throw new Exception("Could not locate a field named \"" + par.name + "\""); } // TODO
 
@@ -966,7 +986,7 @@ namespace DeQcc
 
             if (ds.op == (ushort)Opcodes.OP_STATE)
             {
-                par = GetParameter(ds.a);
+                par = GetGlobalByOffset(ds.a);
                 if (par is null) { throw new Exception("Error - Can't determine frame number."); }
 
                 arg2 = Get(df, ds.b, null);
@@ -999,7 +1019,7 @@ namespace DeQcc
                 {
                     for (funcIndex = df.parm_start + paramSize; funcIndex < (df.parm_start) + df.locals; funcIndex++)
                     {
-                        par = GetParameter(funcIndex);
+                        par = GetGlobalByOffset(funcIndex);
 
                         if (par is null)
                         {
@@ -1035,31 +1055,6 @@ namespace DeQcc
             Decompileofile.WriteLine("};");
         }
 
-        Def? GetField(string name)
-        {
-            for (int i = 1; i < fields.Count; i++)
-            {
-                if (fields[i].name == name) // TODO
-                    return fields[i];
-            }
-            return null;
-        }
-
-        /*
-        int GetFunctionIdxByName(string name)
-        {
-            int i;
-            for (i = 1; i < numfunctions; i++)
-            {
-                if (name == functions[i].name)  // TODO
-                {
-                    break;
-                }
-            }
-            return i;
-        }
-        */
-
         string? Get(Function df, int ofs, Types? req_t)
         {
             string arg1 = Global(ofs, req_t);
@@ -1072,29 +1067,19 @@ namespace DeQcc
 
         string? Global(int ofs, Types? req_t)
         {
-            int i;
-            Def def = null;
+            Def? def = null;
             string line = "";
-            bool found = false;
 
-            for (i = 0; i < globals.Count; i++)
+            def = GetGlobalByOffset(ofs);
+
+            if (def != null)
             {
-                if (globals[i].ofs == ofs)
-                {
-                    def = globals[i];
-                    found = true;
-                    break;
-                }
-            }
-
-            if (found)
-            {
-
                 if (def.name == "IMMEDIATE")    // TODO
+                {
                     line = ValueString((Types)def.type, def.ofs);
+                }
                 else
                 {
-
                     line = def.name;
                     if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
                     {
@@ -1108,9 +1093,6 @@ namespace DeQcc
 
         string? Immediate(Function df, int ofs, int fun, string newStr)
         {
-            int i;
-            string  res;
-            
             int nofs;
 	
             if (fun == 0)
@@ -1121,7 +1103,7 @@ namespace DeQcc
             }
 
             nofs = ScaleIndex(df, ofs);
-            if ((nofs <= 0) /*|| (nofs > MAX_NO_LOCAL_IMMEDIATES - 1)*/) throw new Exception("Fatal Error - Index (" + nofs + ") out of bounds.");
+            if (nofs <= 0) throw new Exception("Fatal Error - Index (" + nofs + ") out of bounds.");
 
             if (fun == 1)
             {

@@ -9,9 +9,9 @@ namespace DeQcc
     {
         static void Main(string[] args)
         {
-            ProQCC p = new ProQCC();
-            p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\output\\");
-            //p.DecompileProgsDat("obots102progs.dat", Directory.GetCurrentDirectory() + "\\obotsoutput\\");
+            DeQCC p = new DeQCC();
+            //p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\output\\");
+            p.DecompileProgsDat("obots102progs.dat", Directory.GetCurrentDirectory() + "\\obotsoutput\\");
 
             
             // Now cross check with original source to highlight differences
