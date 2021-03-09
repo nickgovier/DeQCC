@@ -431,23 +431,23 @@ namespace DeQcc
                 f.s_name = h.ReadInt32();
                 f.s_file = h.ReadInt32();
                 f.numparms = h.ReadInt32();
-                for(int j = 0; j < 8; j++)
+                for (int j = 0; j < 8; j++)
                     f.parm_size[j] = h.ReadByte();
 
                 // set strings
                 if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
                 else { f.name = "func" + i + "_fs" + f.first_statement; }
-                if(nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
+                if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 if (f.s_file > 0) { f.file = strings[stringOffsetMap[f.s_file]]; }
-                else if(fileMap.ContainsKey(f.name)) { f.file = fileMap[f.name]; }
+                else if (fileMap.ContainsKey(f.name)) { f.file = fileMap[f.name]; }
                 else { f.file = "unknown.qc"; }
 
                 functions.Add(f);
             }
 
             h.BaseStream.Seek(ofs_globaldefs, SeekOrigin.Begin);
-            for(int i = 0; i < numglobaldefs; i++)
+            for (int i = 0; i < numglobaldefs; i++)
             {
                 Def g = new Def();
                 g.type = h.ReadUInt16();
@@ -483,10 +483,79 @@ namespace DeQcc
             }
 
             h.BaseStream.Seek(ofs_globals, SeekOrigin.Begin);
-            for(int i = 0; i < numglobals; i++)
+            for (int i = 0; i < numglobals; i++)
             {
                 pr_globals.Add(h.ReadSingle());     // Read these as floats for now, will need to bitconvert some to ints later
             }
+        }
+
+        void WriteProgsData(string folder)
+        {
+            int i;
+            StreamWriter outfile;
+
+            outfile = new StreamWriter(File.Open(folder + "strings.csv", FileMode.Create));
+            outfile.WriteLine("row,offset,id,string");
+            i = 0;
+            foreach(KeyValuePair<int,int> kvp in stringOffsetMap)
+            {
+                outfile.WriteLine((i++) + "," + kvp.Key + "," + kvp.Value + "," + CleanseString(strings[kvp.Value]));
+            }
+            outfile.Close();
+
+            outfile = new StreamWriter(File.Open(folder + "statements.csv", FileMode.Create));
+            outfile.WriteLine("row,opcode,op,a,b,c");
+            i = 0;
+            foreach (Statement s in statements)
+            {
+                outfile.WriteLine((i++) + "," + s.Opcode + "," + s.op + "," + s.a + "," + s.b + "," + s.c);
+            }
+            outfile.Close();
+
+            outfile = new StreamWriter(File.Open(folder + "functions.csv", FileMode.Create));
+            outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
+            i = 0;
+            foreach (Function f in functions)
+            {
+                string parm_sizes = "";
+                for(int j = 0; j < 8; j++)
+                {
+                    parm_sizes += f.parm_size[j];
+                }
+                outfile.WriteLine((i++) + "," + f.file + "," + f.s_file + "," + f.name + "," + f.s_name + "," + f.profile + "," + f.first_statement + "," + f.locals + "," + f.numparms + "," + f.parm_start + "," + parm_sizes);
+            }
+            outfile.Close();
+
+            outfile = new StreamWriter(File.Open(folder + "globaldefs.csv", FileMode.Create));
+            outfile.WriteLine("row,name,s_name,ofs,type,typename");
+            i = 0;
+            foreach (Def g in globals)
+            {
+                string typename = "";
+                if (g.type < 8) { typename = type_names[g.type]; }
+                outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+            }
+            outfile.Close();
+
+            outfile = new StreamWriter(File.Open(folder + "fields.csv", FileMode.Create));
+            outfile.WriteLine("row,name,s_name,ofs,type,typename");
+            i = 0;
+            foreach (Def g in fields)
+            {
+                string typename = "";
+                if (g.type < 8) { typename = type_names[g.type]; }
+                outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+            }
+            outfile.Close();
+
+            outfile = new StreamWriter(File.Open(folder + "globals.csv", FileMode.Create));
+            outfile.WriteLine("row,floatVal,intVal");
+            i = 0;
+            foreach (float f in pr_globals)
+            {
+                outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)));
+            }
+            outfile.Close();
         }
 
         // works with obots
@@ -690,6 +759,8 @@ namespace DeQcc
             int i;
             StreamWriter f;
             string fname;
+
+            WriteProgsData(folder);
 
             CalcProfiles();
 
