@@ -181,20 +181,20 @@ namespace DeQcc
         Dictionary<int, int> globalsOffsetMap = new Dictionary<int, int>();  // to look up global by offset
         List<Def> fields = new List<Def>();
 
-        StreamWriter Decompileofile;
-        StreamWriter Decompileprogssrc;
+        StreamWriter qcOutputFile;
+        StreamWriter progsSrcOutputFile;
         List<string> DecompileFilesSeen = new List<string>();
         Dictionary<int,string> DecompileProfiles = new Dictionary<int, string>();
 
         List<string> type_names = new List<string>();
         List<string> builtins = new List<string>();
-        Dictionary<int, string> IMMEDIATES = new Dictionary<int, string>();   // used in DecompileImmediate()
+        Dictionary<int, string> immediates = new Dictionary<int, string>();   // used in DecompileImmediate()
 
         // Maps for obfuscated progs.dat files
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
         Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
 
-        void NGInit(string progsName)
+        void InitStaticData(string progsName)
         {
             if(progsName == "obots102progs.dat")
             {
@@ -362,12 +362,11 @@ namespace DeQcc
 
         public void DecompileProgsDat(string name, string outputfolder)
         {
-            NGInit(name);
+            InitStaticData(name);
             ReadData(name);
             Decompile(outputfolder);
         }
 
-        // checked
         void ReadData(string srcfile)
         {
             BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open), Encoding.ASCII);
@@ -436,7 +435,7 @@ namespace DeQcc
 
                 // set strings
                 if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "func" + i + "_fs" + f.first_statement; }
+                else { f.name = "func" + i; }
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 if (f.s_file > 0) { f.file = strings[stringOffsetMap[f.s_file]]; }
@@ -456,7 +455,7 @@ namespace DeQcc
 
                 // set strings
                 if (g.s_name > 0) { g.name = strings[stringOffsetMap[g.s_name]]; }
-                else { g.name = "globaldef" + i + "_off" + g.ofs; }
+                else { g.name = "globaldef" + i; }
                 if (nameMap.ContainsKey(g.name)) { g.name = nameMap[g.name]; }
 
                 globals.Add(g);
@@ -476,7 +475,7 @@ namespace DeQcc
 
                 // set strings
                 if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "field" + i + "_off" + f.ofs; }
+                else { f.name = "field" + i; }
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 fields.Add(f);
@@ -494,7 +493,7 @@ namespace DeQcc
             int i;
             StreamWriter outfile;
 
-            outfile = new StreamWriter(File.Open(folder + "strings.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "strings.csv", false);
             outfile.WriteLine("row,offset,id,string");
             i = 0;
             foreach(KeyValuePair<int,int> kvp in stringOffsetMap)
@@ -503,7 +502,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(File.Open(folder + "statements.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "statements.csv", false);
             outfile.WriteLine("row,opcode,op,a,b,c");
             i = 0;
             foreach (Statement s in statements)
@@ -512,7 +511,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(File.Open(folder + "functions.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "functions.csv", false);
             outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
             i = 0;
             foreach (Function f in functions)
@@ -526,7 +525,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(File.Open(folder + "globaldefs.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "globaldefs.csv", false);
             outfile.WriteLine("row,name,s_name,ofs,type,typename");
             i = 0;
             foreach (Def g in globals)
@@ -537,7 +536,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(File.Open(folder + "fields.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "fields.csv", false);
             outfile.WriteLine("row,name,s_name,ofs,type,typename");
             i = 0;
             foreach (Def g in fields)
@@ -548,7 +547,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(File.Open(folder + "globals.csv", FileMode.Create));
+            outfile = new StreamWriter(folder + "globals.csv", false);
             outfile.WriteLine("row,floatVal,intVal");
             i = 0;
             foreach (float f in pr_globals)
@@ -764,30 +763,32 @@ namespace DeQcc
 
             CalcProfiles();
 
-            Decompileprogssrc = new StreamWriter(folder + "progs.src", false);
-            Decompileprogssrc.AutoFlush = true;
-            Decompileprogssrc.WriteLine("./progs.dat");
-            Decompileprogssrc.WriteLine();
+            progsSrcOutputFile = new StreamWriter(folder + "progs.src", false);     // overwrite
+            progsSrcOutputFile.AutoFlush = true;
+            progsSrcOutputFile.WriteLine("./progs.dat");
+            progsSrcOutputFile.WriteLine();
 
             for (i = 1; i < functions.Count; i++)
             {
                 fname = functions[i].file;
 
-                f = new StreamWriter(folder + fname, true);
-
                 if (AlreadySeen(fname) == false)
                 {
-                    Decompileprogssrc.WriteLine(fname);
+                    progsSrcOutputFile.WriteLine(fname);
+                    f = new StreamWriter(folder + fname, false);    // overwrite
+                } else
+                {
+                    f = new StreamWriter(folder + fname, true);     // append
                 }
 
-                Decompileofile = f;
-                Decompileofile.AutoFlush = true;
+                qcOutputFile = f;
+                qcOutputFile.AutoFlush = true;
                 DecompileFunctionDef(i);  // TODO
 
                 f.Close();
             }
 
-            Decompileprogssrc.Close();
+            progsSrcOutputFile.Close();
         }
 
         void DecompileFunctionDef(int funcIndex)
@@ -859,11 +860,11 @@ namespace DeQcc
                                 // string profile = DecompileProfiles[GetFunctionIdxByName(par.name)];
                                 if(profile.StartsWith("\n"))
                                 {
-                                    Decompileofile.WriteLine();
+                                    qcOutputFile.WriteLine();
                                     profile = profile.Remove(0, 1); // remove the \n
                                 }
-                                Decompileofile.WriteLine(profile + ";");
-                                Decompileofile.Flush();
+                                qcOutputFile.WriteLine(profile + ";");
+                                qcOutputFile.Flush();
                             }
                         }
                     }
@@ -883,7 +884,7 @@ namespace DeQcc
                                     i += 3;
                                 }
 
-                                Decompileofile.WriteLine("." + type_names[ef.type] + " " + ef.name + ";");
+                                qcOutputFile.WriteLine("." + type_names[ef.type] + " " + ef.name + ";");
                             }
                             else
                             {
@@ -894,7 +895,7 @@ namespace DeQcc
 
                                 if (par.type == (ushort)Types.ev_entity || par.type == (ushort)Types.ev_void)
                                 {
-                                    Decompileofile.WriteLine(type_names[par.type] + " " + par.name + ";");
+                                    qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + ";");
                                 }
                                 else
                                 {
@@ -904,11 +905,11 @@ namespace DeQcc
                                         Char.IsUpper((par.name)[0]) &&
                                         (Char.IsUpper((par.name)[1]) || (par.name)[1] == '_'))  // TODO
                                     {
-                                        Decompileofile.WriteLine(type_names[par.type] + " " + par.name + " = " + line + ";");
+                                        qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + " = " + line + ";");
                                     }
                                     else
                                     {
-                                        Decompileofile.WriteLine(type_names[par.type] + " " + par.name + " /* = " + line + " */;");
+                                        qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + " /* = " + line + " */;");
                                     }
                                 }
                             }
@@ -922,7 +923,7 @@ namespace DeQcc
             */
             if (df.first_statement <= 0)
             {
-                Decompileofile.WriteLine(DecompileProfiles[findex] + " = #" + (-df.first_statement) + ";");
+                qcOutputFile.WriteLine(DecompileProfiles[findex] + " = #" + (-df.first_statement) + ";");
                 return;
             }
             dsIndex = df.first_statement;
@@ -1013,25 +1014,25 @@ namespace DeQcc
             int ip = df.first_statement;    // instruction pointer
             if (ip >= 0)
             {
-                Decompileofile.WriteLine();
-                Decompileofile.WriteLine("// function " + df.name);
-                Decompileofile.WriteLine("// function number " + funcIndex + " begins at statement " + df.first_statement);
-                Decompileofile.WriteLine("/*");
+                qcOutputFile.WriteLine();
+                qcOutputFile.WriteLine("// function " + df.name);
+                qcOutputFile.WriteLine("// function number " + funcIndex + " begins at statement " + df.first_statement);
+                qcOutputFile.WriteLine("/*");
                 // print the bytecode as a comment
                 while (statements[ip].Opcode != Opcodes.OP_DONE)
                 {
-                    Decompileofile.WriteLine(" * " + statements[ip].ToString());
+                    qcOutputFile.WriteLine(" * " + statements[ip].ToString());
                     ip++;
                 }
-                Decompileofile.WriteLine(" * " + statements[ip].ToString()); // final DONE
-                Decompileofile.WriteLine(" */");
+                qcOutputFile.WriteLine(" * " + statements[ip].ToString()); // final DONE
+                qcOutputFile.WriteLine(" */");
             }
             // <- NG
 
             /*
             * print the prototype 
             */
-            Decompileofile.Write(DecompileProfiles[findex]);
+            qcOutputFile.Write(DecompileProfiles[findex]);
 
             /*
             * handle state functions 
@@ -1047,14 +1048,14 @@ namespace DeQcc
                 arg2 = Get(df, ds.b, null);
                 if (arg2 is null) { throw new Exception("Error - No state parameter with offset " + ds.b + "."); }
 
-                Decompileofile.Write(" = [ " + ValueString((Types)par.type, par.ofs) + ", " + arg2 + " ]");
+                qcOutputFile.Write(" = [ " + ValueString((Types)par.type, par.ofs) + ", " + arg2 + " ]");
             }
             else
             {
-                Decompileofile.Write(" =");
+                qcOutputFile.Write(" =");
             }
-            Decompileofile.WriteLine(" {");
-            Decompileofile.WriteLine();
+            qcOutputFile.WriteLine(" {");
+            qcOutputFile.WriteLine();
 
             /*
             * calculate the parameter size 
@@ -1078,17 +1079,17 @@ namespace DeQcc
 
                         if (par is null)
                         {
-                            Decompileofile.WriteLine("   /* Warning: No local name with offset " + funcIndex + " */");
+                            qcOutputFile.WriteLine("   /* Warning: No local name with offset " + funcIndex + " */");
                         }
                         else
                         {
                             if (par.type == (ushort)Types.ev_function)
                             {
-                                Decompileofile.WriteLine("   /* Warning: Fields and functions must be global */");
+                                qcOutputFile.WriteLine("   /* Warning: Fields and functions must be global */");
                             }
                             else
                             {
-                                Decompileofile.WriteLine("   local " + PrintParameter(par) + ";");
+                                qcOutputFile.WriteLine("   local " + PrintParameter(par) + ";");
                             }
 
                             if (par.type == (ushort)Types.ev_vector)
@@ -1097,7 +1098,7 @@ namespace DeQcc
                             }
                         }
                     }
-                    Decompileofile.WriteLine();
+                    qcOutputFile.WriteLine();
                 }
             }
 
@@ -1106,8 +1107,8 @@ namespace DeQcc
             */
             DecompileFunction(df);
 
-            Decompileofile.WriteLine();
-            Decompileofile.WriteLine("};");
+            qcOutputFile.WriteLine();
+            qcOutputFile.WriteLine("};");
         }
 
         string? Get(Function df, int ofs, Types? req_t)
@@ -1153,7 +1154,7 @@ namespace DeQcc
             if (fun == 0)
             {
                 // free 'em all
-                IMMEDIATES.Clear();
+                immediates.Clear();
                 return null;
             }
 
@@ -1163,15 +1164,15 @@ namespace DeQcc
             if (fun == 1)
             {
                 // insert
-                IMMEDIATES[nofs] = newStr;
+                immediates[nofs] = newStr;
             }
 
             if (fun == 2)
             {
                 // get
-                if(IMMEDIATES.ContainsKey(nofs))
+                if(immediates.ContainsKey(nofs))
                 {
-                    return IMMEDIATES[nofs];
+                    return immediates[nofs];
                 }
                 else
                 {
@@ -1210,7 +1211,7 @@ namespace DeQcc
             }
 
             if (indent != 1)
-                Decompileofile.WriteLine("/* Warning : Indentiation structure corrupt */");
+                qcOutputFile.WriteLine("/* Warning : Indentiation structure corrupt */");
 
         }
 
@@ -1221,7 +1222,7 @@ namespace DeQcc
 
             for (int i = 0; i < c; i++)
             {
-                Decompileofile.Write("   ");
+                qcOutputFile.Write("   ");
             }
         }
 
@@ -1247,15 +1248,15 @@ namespace DeQcc
             for (int i = 0; i < ifc; i++)
             {
                 indent--;
-                Decompileofile.WriteLine();
+                qcOutputFile.WriteLine();
                 Indent(indent);
-                Decompileofile.WriteLine("}");
+                qcOutputFile.WriteLine("}");
             }
             for (int i = 0; i < doc; i++)
             {
                 Indent(indent);
-                Decompileofile.WriteLine("do {");
-                Decompileofile.WriteLine();
+                qcOutputFile.WriteLine("do {");
+                qcOutputFile.WriteLine();
                 indent++;
             }
 
@@ -1273,14 +1274,14 @@ namespace DeQcc
             else if (s.op == (ushort)Opcodes.OP_RETURN)
             {
                 Indent(indent);
-                Decompileofile.Write("return ");
+                qcOutputFile.Write("return ");
 
                 if (s.a != 0)
                 {
                     arg1 = Get(df, s.a, typ1);
-                    Decompileofile.Write("( " + arg1 + " )");
+                    qcOutputFile.Write("( " + arg1 + " )");
                 }
-                Decompileofile.WriteLine(";");
+                qcOutputFile.WriteLine(";");
             }
             else if (((ushort)Opcodes.OP_MUL_F <= s.op && s.op <= (ushort)Opcodes.OP_SUB_V) ||
               ((ushort)Opcodes.OP_EQ_F <= s.op && s.op <= (ushort)Opcodes.OP_GT) ||
@@ -1293,7 +1294,7 @@ namespace DeQcc
                 if (arg3 != null)
                 {
                     Indent(indent);
-                    Decompileofile.WriteLine(arg3 + " = " + arg1 + " " + pr_opcodes[s.op].name + " " + arg2 + ";");
+                    qcOutputFile.WriteLine(arg3 + " = " + arg1 + " " + pr_opcodes[s.op].name + " " + arg2 + ";");
                 }
                 else
                 {
@@ -1310,7 +1311,7 @@ namespace DeQcc
                 if (arg3 != null)
                 {
                     Indent(indent);
-                    Decompileofile.WriteLine(arg3 + " = " + arg1 + "." + arg2 + ";");
+                    qcOutputFile.WriteLine(arg3 + " = " + arg1 + "." + arg2 + ";");
                 }
                 else
                 {
@@ -1326,7 +1327,7 @@ namespace DeQcc
                 if (arg3 != null)
                 {
                     Indent(indent);
-                    Decompileofile.WriteLine(arg3 + " = " + arg1 + ";");
+                    qcOutputFile.WriteLine(arg3 + " = " + arg1 + ";");
                 }
                 else
                 {
@@ -1340,7 +1341,7 @@ namespace DeQcc
                 arg2 = Get(df, s.b, typ2);
 
                 Indent(indent);
-                Decompileofile.WriteLine(arg2 + " = " + arg1 + ";");
+                qcOutputFile.WriteLine(arg2 + " = " + arg1 + ";");
             }
             else if ((ushort)Opcodes.OP_NOT_F <= s.op && s.op <= (ushort)Opcodes.OP_NOT_FNC)
             {
@@ -1376,7 +1377,7 @@ namespace DeQcc
                 if (sIndex >= statements.Count - 2)
                 {
                     Indent(indent);
-                    Decompileofile.WriteLine(line + ";");
+                    qcOutputFile.WriteLine(line + ";");
                 }
                 else
                 {
@@ -1386,7 +1387,7 @@ namespace DeQcc
                         (((statements[sIndex + 1].op) % 100 == (ushort)Opcodes.OP_CALL0) && (((statements[sIndex + 2].a != 1)) || (statements[sIndex + 2].b != 1))))
                     {
                         Indent(indent);
-                        Decompileofile.WriteLine(line + ";");
+                        qcOutputFile.WriteLine(line + ";");
                     }
                 }
             }
@@ -1409,8 +1410,8 @@ namespace DeQcc
                     {
                         // pure if 
                         Indent(indent);
-                        Decompileofile.WriteLine("if ( " + arg1 + " ) {");
-                        Decompileofile.WriteLine();
+                        qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
+                        qcOutputFile.WriteLine();
                         indent++;
                     }
                     else
@@ -1419,8 +1420,8 @@ namespace DeQcc
                         {
                             // if-then-else
                             Indent(indent);
-                            Decompileofile.WriteLine("if ( " + arg1 + " ) {");
-                            Decompileofile.WriteLine();
+                            qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
+                            qcOutputFile.WriteLine();
                             indent++;
                         }
                         else
@@ -1429,8 +1430,8 @@ namespace DeQcc
                             {
                                 // pure if
                                 Indent(indent);
-                                Decompileofile.WriteLine("if ( " + arg1 + " ) {");
-                                Decompileofile.WriteLine();
+                                qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
+                                qcOutputFile.WriteLine();
                                 indent++;
                             }
                             else
@@ -1446,16 +1447,16 @@ namespace DeQcc
                                 {
                                     // while
                                     Indent(indent);
-                                    Decompileofile.WriteLine("while ( " + arg1 + " ) {");
-                                    Decompileofile.WriteLine();
+                                    qcOutputFile.WriteLine("while ( " + arg1 + " ) {");
+                                    qcOutputFile.WriteLine();
                                     indent++;
                                 }
                                 else
                                 {
                                     // pure if
                                     Indent(indent);
-                                    Decompileofile.WriteLine("if ( " + arg1 + " ) {");
-                                    Decompileofile.WriteLine();
+                                    qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
+                                    qcOutputFile.WriteLine();
                                     indent++;
                                 }
                             }
@@ -1466,9 +1467,9 @@ namespace DeQcc
                 {
                     // do ... while 
                     indent--;
-                    Decompileofile.WriteLine();
+                    qcOutputFile.WriteLine();
                     Indent(indent);
-                    Decompileofile.WriteLine("} while ( " + arg1 + " );");
+                    qcOutputFile.WriteLine("} while ( " + arg1 + " );");
                 }
             }
             else if (s.op == (ushort)Opcodes.OP_GOTO)
@@ -1477,25 +1478,25 @@ namespace DeQcc
                 {
                     // else 
                     indent--;
-                    Decompileofile.WriteLine();
+                    qcOutputFile.WriteLine();
                     Indent(indent);
-                    Decompileofile.WriteLine("} else {");
-                    Decompileofile.WriteLine();
+                    qcOutputFile.WriteLine("} else {");
+                    qcOutputFile.WriteLine();
                     indent++;
                 }
                 else
                 {
                     // while 
                     indent--;
-                    Decompileofile.WriteLine();
+                    qcOutputFile.WriteLine();
                     Indent(indent);
-                    Decompileofile.WriteLine("}");
+                    qcOutputFile.WriteLine("}");
                 }
             }
             else
             {
-                Decompileofile.WriteLine();
-                Decompileofile.WriteLine("/* Warning: UNKNOWN COMMAND */");
+                qcOutputFile.WriteLine();
+                qcOutputFile.WriteLine("/* Warning: UNKNOWN COMMAND */");
             }
 
             return;

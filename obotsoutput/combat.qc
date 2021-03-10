@@ -1,11 +1,11 @@
 
-void () func271_fs6802;
+void () T_MissileTouch;
 
 void () info_player_start;
 
-void (entity globaldef2975_off9093, entity globaldef2976_off9094) func406_fs12846;
+void (entity globaldef2975, entity globaldef2976) ClientObituary;
 
-void () func529_fs14508;
+void () monster_death_use;
 
 // function CanDamage
 // function number 199 begins at statement 3781
@@ -87,17 +87,17 @@ void () func529_fs14508;
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1749_off3926, entity globaldef1750_off3927) CanDamage = {
+float (entity globaldef1749, entity globaldef1750) CanDamage = {
 
-   if ( (globaldef1749_off3926.movetype == MOVETYPE_PUSH) ) {
+   if ( (globaldef1749.movetype == MOVETYPE_PUSH) ) {
 
-      globaldef449_off466 (globaldef1750_off3927.origin,(globaldef522_off539 * (globaldef1749_off3926.globaldef72_off94 + globaldef1749_off3926.globaldef76_off98)),TRUE,self);
+      globaldef449 (globaldef1750.origin,(globaldef522 * (globaldef1749.globaldef72 + globaldef1749.globaldef76)),TRUE,self);
       if ( (trace_fraction == TRUE) ) {
 
          return ( TRUE );
 
       }
-      if ( (trace_ent == globaldef1749_off3926) ) {
+      if ( (trace_ent == globaldef1749) ) {
 
          return ( TRUE );
 
@@ -105,36 +105,720 @@ float (entity globaldef1749_off3926, entity globaldef1750_off3927) CanDamage = {
       return ( FALSE );
 
    }
-   globaldef449_off466 (globaldef1750_off3927.origin,globaldef1749_off3926.origin,TRUE,self);
+   globaldef449 (globaldef1750.origin,globaldef1749.origin,TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449_off466 (globaldef1750_off3927.origin,(globaldef1749_off3926.origin + globaldef1751_off3960),TRUE,self);
+   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1751),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449_off466 (globaldef1750_off3927.origin,(globaldef1749_off3926.origin + globaldef1752_off3973),TRUE,self);
+   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1752),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449_off466 (globaldef1750_off3927.origin,(globaldef1749_off3926.origin + globaldef1753_off3986),TRUE,self);
+   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1753),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449_off466 (globaldef1750_off3927.origin,(globaldef1749_off3926.origin + globaldef1754_off3999),TRUE,self);
+   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1754),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
    return ( FALSE );
+
+};
+vector globaldef1751 /* = '15.000 15.000 0.000' */;
+vector globaldef1752 /* = '-15.000 -15.000 0.000' */;
+vector globaldef1753 /* = '-15.000 15.000 0.000' */;
+vector globaldef1754 /* = '15.000 -15.000 0.000' */;
+
+void (entity globaldef1756, entity globaldef1757) Killed;
+
+// function Killed
+// function number 200 begins at statement 3857
+/*
+ * OP_STORE_ENT	28	4009	0
+ * OP_STORE_ENT	4007	28	0
+ * OP_LOAD_F	28	152	4010
+ * OP_LT	4010	4011	4012
+ * OP_IFNOT	4012	3	0
+ * OP_ADDRESS	28	152	4013
+ * OP_STOREP_F	4011	4013	0
+ * OP_LOAD_F	28	103	4014
+ * OP_EQ_F	4014	232	4015
+ * OP_LOAD_F	28	103	4016
+ * OP_EQ_F	4016	227	4017
+ * OP_OR	4015	4017	4018
+ * OP_IFNOT	4018	5	0
+ * OP_LOAD_FNC	28	367	4019
+ * OP_CALL0	4019	0	0
+ * OP_STORE_ENT	4009	28	0
+ * OP_RETURN	0	0	0
+ * OP_ADDRESS	28	181	4020
+ * OP_STOREP_ENT	4008	4020	0
+ * OP_LOAD_F	28	182	4021
+ * OP_BITAND	4021	219	4022
+ * OP_IFNOT	4022	6	0
+ * OP_ADD_F	42	214	4023
+ * OP_STORE_F	4023	42	0
+ * OP_STORE_V	344	4	0
+ * OP_STORE_V	307	7	0
+ * OP_CALL2	496	0	0
+ * OP_STORE_V	28	4	0
+ * OP_STORE_V	4008	7	0
+ * OP_CALL2	3924	0	0
+ * OP_LOAD_S	4008	129	4024
+ * OP_EQ_S	4024	1241	4025
+ * OP_IFNOT	4025	7	0
+ * OP_LOAD_F	4008	608	4026
+ * OP_STORE_V	4026	4	0
+ * OP_LOAD_F	4008	153	4027
+ * OP_STORE_V	4027	7	0
+ * OP_CALL2	1051	0	0
+ * OP_GOTO	12	0	0
+ * OP_LOAD_ENT	4008	201	4028
+ * OP_LOAD_S	4028	129	4029
+ * OP_EQ_S	4029	1241	4030
+ * OP_IFNOT	4030	8	0
+ * OP_LOAD_ENT	4008	201	4031
+ * OP_LOAD_F	4031	608	4032
+ * OP_STORE_V	4032	4	0
+ * OP_LOAD_ENT	4008	201	4033
+ * OP_LOAD_F	4033	153	4034
+ * OP_STORE_V	4034	7	0
+ * OP_CALL2	1051	0	0
+ * OP_LOAD_S	4007	129	4035
+ * OP_EQ_S	4035	1241	4036
+ * OP_IFNOT	4036	6	0
+ * OP_LOAD_F	4007	608	4037
+ * OP_STORE_V	4037	4	0
+ * OP_LOAD_F	4007	153	4038
+ * OP_STORE_V	4038	7	0
+ * OP_CALL2	1051	0	0
+ * OP_IFNOT	4008	3	0
+ * OP_ADDRESS	4008	618	4039
+ * OP_STOREP_ENT	28	4039	0
+ * OP_IFNOT	28	3	0
+ * OP_ADDRESS	28	619	4040
+ * OP_STOREP_ENT	4008	4040	0
+ * OP_ADDRESS	28	163	4041
+ * OP_STOREP_F	250	4041	0
+ * OP_ADDRESS	28	146	4042
+ * OP_STOREP_FNC	519	4042	0
+ * OP_CALL0	3925	0	0
+ * OP_LOAD_FNC	28	367	4043
+ * OP_CALL0	4043	0	0
+ * OP_STORE_ENT	4009	28	0
+ * OP_DONE	0	0	0
+ */
+
+void (entity globaldef1756, entity globaldef1757) Killed = {
+
+   local entity globaldef1758;
+
+   globaldef1758 = self;
+   self = globaldef1756;
+   if ( (self.globaldef130 < globaldef1759) ) {
+
+      self.globaldef130 = globaldef1759;
+
+   }
+   if ( ((self.movetype == MOVETYPE_PUSH) || (self.movetype == MOVETYPE_NONE)) ) {
+
+      self.globaldef350 ();
+      self = globaldef1758;
+      return ;
+
+   }
+   self.enemy = globaldef1757;
+   if ( (self.globaldef160 & FL_MONSTER) ) {
+
+      killed_monsters = (killed_monsters + TRUE);
+      globaldef479 (MSG_ALL,SVC_KILLEDMONSTER);
+
+   }
+   globaldef1747 (self,globaldef1757);
+   if ( (globaldef1757.classname == globaldef1171) ) {
+
+      globaldef989 (globaldef1757.globaldef591,globaldef1757.globaldef131);
+
+   } else {
+
+      if ( (globaldef1757.globaldef179.classname == globaldef1171) ) {
+
+         globaldef989 (globaldef1757.globaldef179.globaldef591,globaldef1757.globaldef179.globaldef131);
+
+      }
+
+   }
+   if ( (globaldef1756.classname == globaldef1171) ) {
+
+      globaldef989 (globaldef1756.globaldef591,globaldef1756.globaldef131);
+
+   }
+   if ( globaldef1757 ) {
+
+      globaldef1757.globaldef601 = self;
+
+   }
+   if ( self ) {
+
+      self.globaldef602 = globaldef1757;
+
+   }
+   self.globaldef141 = DAMAGE_NO;
+   self.globaldef124 = SUB_Null;
+   globaldef1748 ();
+   self.globaldef350 ();
+   self = globaldef1758;
+
+};
+
+// function T_Damage
+// function number 201 begins at statement 3930
+/*
+ * OP_IFNOT	816	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_F	4044	163	4054
+ * OP_NOT_F	4054	0	4055
+ * OP_IFNOT	4055	2	0
+ * OP_RETURN	0	0	0
+ * OP_STORE_ENT	4046	352	0
+ * OP_LOAD_F	4046	382	4056
+ * OP_GT	4056	31	4057
+ * OP_IFNOT	4057	8	0
+ * OP_EQ_F	35	229	4058
+ * OP_IFNOT	4058	4	0
+ * OP_MUL_F	4047	217	4059
+ * OP_STORE_F	4059	4047	0
+ * OP_GOTO	3	0	0
+ * OP_MUL_F	4047	229	4060
+ * OP_STORE_F	4060	4047	0
+ * OP_LOAD_F	4044	187	4061
+ * OP_MUL_F	4061	4047	4062
+ * OP_STORE_V	4062	4	0
+ * OP_CALL1	485	0	0
+ * OP_STORE_F	1	4052	0
+ * OP_LOAD_F	4044	188	4063
+ * OP_GE	4052	4063	4064
+ * OP_IFNOT	4064	13	0
+ * OP_LOAD_F	4044	188	4065
+ * OP_STORE_F	4065	4052	0
+ * OP_ADDRESS	4044	187	4066
+ * OP_STOREP_F	213	4066	0
+ * OP_ADDRESS	4044	162	4067
+ * OP_LOAD_F	4044	162	4068
+ * OP_LOAD_F	4044	162	4069
+ * OP_BITOR	266	267	4070
+ * OP_BITOR	4070	268	4071
+ * OP_BITAND	4069	4071	4072
+ * OP_SUB_F	4068	4072	4073
+ * OP_STOREP_F	4073	4067	0
+ * OP_ADDRESS	4044	188	4074
+ * OP_LOAD_F	4044	188	4075
+ * OP_SUB_F	4075	4052	4076
+ * OP_STOREP_F	4076	4074	0
+ * OP_SUB_F	4047	4052	4077
+ * OP_STORE_V	4077	4	0
+ * OP_CALL1	485	0	0
+ * OP_STORE_F	1	4053	0
+ * OP_LOAD_F	4044	182	4078
+ * OP_BITAND	4078	217	4079
+ * OP_IFNOT	4079	11	0
+ * OP_ADDRESS	4044	198	4080
+ * OP_LOAD_F	4044	198	4081
+ * OP_ADD_F	4081	4053	4082
+ * OP_STOREP_F	4082	4080	0
+ * OP_ADDRESS	4044	199	4083
+ * OP_LOAD_F	4044	199	4084
+ * OP_ADD_F	4084	4052	4085
+ * OP_STOREP_F	4085	4083	0
+ * OP_ADDRESS	4044	200	4086
+ * OP_STOREP_ENT	4045	4086	0
+ * OP_NE_E	4045	30	4087
+ * OP_LOAD_F	4044	103	4088
+ * OP_EQ_F	4088	228	4089
+ * OP_AND	4087	4089	4090
+ * OP_IFNOT	4090	17	0
+ * OP_LOAD_V	4044	105	4091
+ * OP_LOAD_V	4045	94	4094
+ * OP_LOAD_V	4045	98	4097
+ * OP_ADD_V	4094	4097	4100
+ * OP_MUL_VF	4100	539	4103
+ * OP_SUB_V	4091	4103	4106
+ * OP_STORE_V	4106	4048	0
+ * OP_STORE_V	4048	4	0
+ * OP_CALL1	459	0	0
+ * OP_STORE_V	1	4048	0
+ * OP_ADDRESS	4044	113	4109
+ * OP_LOAD_V	4044	113	4112
+ * OP_MUL_VF	4048	4047	4115
+ * OP_MUL_VF	4115	217	4118
+ * OP_ADD_V	4112	4118	4121
+ * OP_STOREP_V	4121	4109	0
+ * OP_NE_E	4045	30	4124
+ * OP_LOAD_S	4044	129	4125
+ * OP_EQ_S	4125	1241	4126
+ * OP_AND	4124	4126	4127
+ * OP_IFNOT	4127	28	0
+ * OP_LOAD_V	4044	105	4128
+ * OP_LOAD_V	4045	94	4131
+ * OP_LOAD_V	4045	98	4134
+ * OP_ADD_V	4131	4134	4137
+ * OP_MUL_VF	4137	539	4140
+ * OP_SUB_V	4128	4140	4143
+ * OP_STORE_V	4143	4048	0
+ * OP_STORE_V	4048	4	0
+ * OP_CALL1	459	0	0
+ * OP_STORE_V	1	4048	0
+ * OP_ADDRESS	4044	113	4146
+ * OP_LOAD_V	4044	113	4149
+ * OP_MUL_VF	4048	4047	4152
+ * OP_MUL_VF	4152	217	4155
+ * OP_ADD_V	4149	4155	4158
+ * OP_STOREP_V	4158	4146	0
+ * OP_LOAD_F	4044	601	4161
+ * OP_GT	4161	31	4162
+ * OP_IFNOT	4162	9	0
+ * OP_ADDRESS	4044	113	4163
+ * OP_LOAD_V	4044	113	4166
+ * OP_LOAD_V	4044	602	4169
+ * OP_ADD_V	4166	4169	4172
+ * OP_STOREP_V	4172	4163	0
+ * OP_ADDRESS	4044	601	4175
+ * OP_SUB_F	31	214	4176
+ * OP_STOREP_F	4176	4175	0
+ * OP_LOAD_F	4044	182	4177
+ * OP_BITAND	4177	220	4178
+ * OP_IFNOT	4178	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_F	4044	380	4179
+ * OP_GE	4179	31	4180
+ * OP_IFNOT	4180	14	0
+ * OP_LOAD_F	28	385	4181
+ * OP_LT	4181	31	4182
+ * OP_IFNOT	4182	10	0
+ * OP_STORE_V	4044	4	0
+ * OP_STORE_V	328	7	0
+ * OP_STORE_V	4183	10	0
+ * OP_STORE_V	214	13	0
+ * OP_STORE_V	331	16	0
+ * OP_CALL5	458	0	0
+ * OP_ADDRESS	28	385	4184
+ * OP_ADD_F	31	216	4185
+ * OP_STOREP_F	4185	4184	0
+ * OP_RETURN	0	0	0
+ * OP_ADDRESS	4044	152	4186
+ * OP_LOAD_F	4044	152	4187
+ * OP_SUB_F	4187	4053	4188
+ * OP_STOREP_F	4188	4186	0
+ * OP_LOAD_F	4044	152	4189
+ * OP_LE	4189	213	4190
+ * OP_IFNOT	4190	5	0
+ * OP_STORE_V	4044	4	0
+ * OP_STORE_V	4046	7	0
+ * OP_CALL2	4006	0	0
+ * OP_RETURN	0	0	0
+ * OP_STORE_ENT	28	4051	0
+ * OP_STORE_ENT	4044	28	0
+ * OP_LOAD_F	28	182	4191
+ * OP_BITAND	4191	219	4192
+ * OP_NE_E	4046	30	4193
+ * OP_AND	4192	4193	4194
+ * OP_IFNOT	4194	23	0
+ * OP_NE_E	28	4046	4195
+ * OP_LOAD_ENT	28	181	4196
+ * OP_NE_E	4046	4196	4197
+ * OP_AND	4195	4197	4198
+ * OP_IFNOT	4198	18	0
+ * OP_LOAD_S	28	129	4199
+ * OP_LOAD_S	4046	129	4200
+ * OP_NE_S	4199	4200	4201
+ * OP_LOAD_S	28	129	4202
+ * OP_EQ_S	4202	3704	4203
+ * OP_OR	4201	4203	4204
+ * OP_IFNOT	4204	11	0
+ * OP_LOAD_ENT	28	181	4205
+ * OP_LOAD_S	4205	129	4206
+ * OP_EQ_S	4206	1236	4207
+ * OP_IFNOT	4207	4	0
+ * OP_ADDRESS	28	368	4208
+ * OP_LOAD_ENT	28	181	4209
+ * OP_STOREP_ENT	4209	4208	0
+ * OP_ADDRESS	28	181	4210
+ * OP_STOREP_ENT	4046	4210	0
+ * OP_CALL0	3711	0	0
+ * OP_LOAD_FNC	28	366	4211
+ * OP_IFNOT	4211	10	0
+ * OP_LOAD_FNC	28	366	4212
+ * OP_STORE_V	4046	4	0
+ * OP_STORE_V	4053	7	0
+ * OP_CALL2	4212	0	0
+ * OP_EQ_F	354	228	4213
+ * OP_IFNOT	4213	4	0
+ * OP_ADDRESS	28	379	4214
+ * OP_ADD_F	31	230	4215
+ * OP_STOREP_F	4215	4214	0
+ * OP_STORE_ENT	4051	28	0
+ * OP_DONE	0	0	0
+ */
+
+void (entity globaldef1760, entity globaldef1761, entity globaldef1762, float globaldef1763) T_Damage = {
+
+   local vector globaldef1764;
+   local entity globaldef1768;
+   local float globaldef1769;
+   local float globaldef1770;
+
+   if ( globaldef799 ) {
+
+      return ;
+
+   }
+   if ( !globaldef1760.globaldef141 ) {
+
+      return ;
+
+   }
+   damage_attacker = globaldef1762;
+   if ( (globaldef1762.globaldef365 > time) ) {
+
+      if ( (deathmatch == MOVETYPE_STEP) ) {
+
+         globaldef1763 = (globaldef1763 * FL_CLIENT);
+
+      } else {
+
+         globaldef1763 = (globaldef1763 * MOVETYPE_STEP);
+
+      }
+
+   }
+   globaldef1769 = globaldef468 ((globaldef1760.globaldef165 * globaldef1763));
+   if ( (globaldef1769 >= globaldef1760.globaldef166) ) {
+
+      globaldef1769 = globaldef1760.globaldef166;
+      globaldef1760.globaldef165 = FALSE;
+      globaldef1760.globaldef140 = (globaldef1760.globaldef140 - (globaldef1760.globaldef140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3)));
+
+   }
+   globaldef1760.globaldef166 = (globaldef1760.globaldef166 - globaldef1769);
+   globaldef1770 = globaldef468 ((globaldef1763 - globaldef1769));
+   if ( (globaldef1760.globaldef160 & FL_CLIENT) ) {
+
+      globaldef1760.globaldef176 = (globaldef1760.globaldef176 + globaldef1770);
+      globaldef1760.globaldef177 = (globaldef1760.globaldef177 + globaldef1769);
+      globaldef1760.globaldef178 = globaldef1761;
+
+   }
+   if ( ((globaldef1761 != world) && (globaldef1760.movetype == MOVETYPE_WALK)) ) {
+
+      globaldef1764 = (globaldef1760.origin - ((globaldef1761.globaldef72 + globaldef1761.globaldef76) * globaldef522));
+      globaldef1764 = globaldef442 (globaldef1764);
+      globaldef1760.velocity = (globaldef1760.velocity + ((globaldef1764 * globaldef1763) * FL_CLIENT));
+
+   }
+   if ( ((globaldef1761 != world) && (globaldef1760.classname == globaldef1171)) ) {
+
+      globaldef1764 = (globaldef1760.origin - ((globaldef1761.globaldef72 + globaldef1761.globaldef76) * globaldef522));
+      globaldef1764 = globaldef442 (globaldef1764);
+      globaldef1760.velocity = (globaldef1760.velocity + ((globaldef1764 * globaldef1763) * FL_CLIENT));
+      if ( (globaldef1760.globaldef584 > time) ) {
+
+         globaldef1760.velocity = (globaldef1760.velocity + globaldef1760.globaldef585);
+         globaldef1760.globaldef584 = (time - TRUE);
+
+      }
+
+   }
+   if ( (globaldef1760.globaldef160 & FL_GODMODE) ) {
+
+      return ;
+
+   }
+   if ( (globaldef1760.globaldef363 >= time) ) {
+
+      if ( (self.globaldef368 < time) ) {
+
+         sound (globaldef1760,CHAN_ITEM,globaldef1771,TRUE,ATTN_NORM);
+         self.globaldef368 = (time + FL_SWIM);
+
+      }
+      return ;
+
+   }
+   globaldef1760.globaldef130 = (globaldef1760.globaldef130 - globaldef1770);
+   if ( (globaldef1760.globaldef130 <= FALSE) ) {
+
+      globaldef1755 (globaldef1760,globaldef1762);
+      return ;
+
+   }
+   globaldef1768 = self;
+   self = globaldef1760;
+   if ( ((self.globaldef160 & FL_MONSTER) && (globaldef1762 != world)) ) {
+
+      if ( ((self != globaldef1762) && (globaldef1762 != self.enemy)) ) {
+
+         if ( ((self.classname != globaldef1762.classname) || (self.classname == "monster_army")) ) {
+
+            if ( (self.enemy.classname == "player") ) {
+
+               self.globaldef351 = self.enemy;
+
+            }
+            self.enemy = globaldef1762;
+            globaldef1684 ();
+
+         }
+
+      }
+
+   }
+   if ( self.globaldef349 ) {
+
+      self.globaldef349 (globaldef1762,globaldef1770);
+      if ( (skill == MOVETYPE_WALK) ) {
+
+         self.globaldef362 = (time + MOVETYPE_FLY);
+
+      }
+
+   }
+   self = globaldef1768;
+
+};
+string globaldef1771 /* = "items/protect3.wav" */;
+
+void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity globaldef1776) T_RadiusDamage;
+
+// function T_RadiusDamage
+// function number 202 begins at statement 4114
+/*
+ * OP_LOAD_V	4217	105	4226
+ * OP_STORE_V	4226	4	0
+ * OP_ADD_F	4219	746	4229
+ * OP_STORE_V	4229	7	0
+ * OP_CALL2	471	0	0
+ * OP_STORE_ENT	1	4222	0
+ * OP_IFNOT	4222	51	0
+ * OP_NE_E	4222	4220	4230
+ * OP_IFNOT	4230	46	0
+ * OP_LOAD_F	4222	163	4231
+ * OP_IFNOT	4231	44	0
+ * OP_LOAD_V	4222	105	4232
+ * OP_LOAD_V	4222	134	4235
+ * OP_LOAD_V	4222	138	4238
+ * OP_ADD_V	4235	4238	4241
+ * OP_MUL_VF	4241	539	4244
+ * OP_ADD_V	4232	4244	4247
+ * OP_STORE_V	4247	4223	0
+ * OP_LOAD_V	4217	105	4250
+ * OP_SUB_V	4250	4223	4253
+ * OP_STORE_V	4253	4	0
+ * OP_CALL1	462	0	0
+ * OP_MUL_F	539	1	4256
+ * OP_STORE_F	4256	4221	0
+ * OP_LT	4221	213	4257
+ * OP_IFNOT	4257	2	0
+ * OP_STORE_F	213	4221	0
+ * OP_SUB_F	4219	4221	4258
+ * OP_STORE_F	4258	4221	0
+ * OP_EQ_E	4222	4218	4259
+ * OP_IFNOT	4259	3	0
+ * OP_MUL_F	4221	539	4260
+ * OP_STORE_F	4260	4221	0
+ * OP_GT	4221	213	4261
+ * OP_IFNOT	4261	20	0
+ * OP_STORE_V	4222	4	0
+ * OP_STORE_V	4217	7	0
+ * OP_CALL2	524	0	0
+ * OP_IFNOT	1	16	0
+ * OP_LOAD_S	4222	129	4262
+ * OP_EQ_S	4262	3661	4263
+ * OP_IFNOT	4263	8	0
+ * OP_STORE_V	4222	4	0
+ * OP_STORE_V	4217	7	0
+ * OP_STORE_V	4218	10	0
+ * OP_MUL_F	4221	539	4264
+ * OP_STORE_V	4264	13	0
+ * OP_CALL4	522	0	0
+ * OP_GOTO	6	0	0
+ * OP_STORE_V	4222	4	0
+ * OP_STORE_V	4217	7	0
+ * OP_STORE_V	4218	10	0
+ * OP_STORE_V	4221	13	0
+ * OP_CALL4	522	0	0
+ * OP_LOAD_ENT	4222	164	4265
+ * OP_STORE_ENT	4265	4222	0
+ * OP_GOTO	-50	0	0
+ * OP_DONE	0	0	0
+ */
+
+void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity globaldef1776) T_RadiusDamage = {
+
+   local float globaldef1777;
+   local entity globaldef1778;
+   local vector globaldef1779;
+
+   globaldef1778 = globaldef454 (globaldef1773.origin,(globaldef1775 + globaldef729));
+   while ( globaldef1778 ) {
+
+      if ( (globaldef1778 != globaldef1776) ) {
+
+         if ( globaldef1778.globaldef141 ) {
+
+            globaldef1779 = (globaldef1778.origin + ((globaldef1778.globaldef112 + globaldef1778.globaldef116) * globaldef522));
+            globaldef1777 = (globaldef522 * vlen ((globaldef1773.origin - globaldef1779)));
+            if ( (globaldef1777 < FALSE) ) {
+
+               globaldef1777 = FALSE;
+
+            }
+            globaldef1777 = (globaldef1775 - globaldef1777);
+            if ( (globaldef1778 == globaldef1774) ) {
+
+               globaldef1777 = (globaldef1777 * globaldef522);
+
+            }
+            if ( (globaldef1777 > FALSE) ) {
+
+               if ( globaldef507 (globaldef1778,globaldef1773) ) {
+
+                  if ( (globaldef1778.classname == "monster_shambler") ) {
+
+                     globaldef505 (globaldef1778,globaldef1773,globaldef1774,(globaldef1777 * globaldef522));
+
+                  } else {
+
+                     globaldef505 (globaldef1778,globaldef1773,globaldef1774,globaldef1777);
+
+                  }
+
+               }
+
+            }
+
+         }
+
+      }
+      globaldef1778 = globaldef1778.globaldef142;
+
+   }
+
+};
+
+void (entity globaldef1784, float globaldef1785) T_BeamDamage;
+
+// function T_BeamDamage
+// function number 203 begins at statement 4172
+/*
+ * OP_LOAD_V	4267	105	4271
+ * OP_STORE_V	4271	4	0
+ * OP_ADD_F	4268	746	4274
+ * OP_STORE_V	4274	7	0
+ * OP_CALL2	471	0	0
+ * OP_STORE_ENT	1	4270	0
+ * OP_IFNOT	4270	43	0
+ * OP_LOAD_F	4270	163	4275
+ * OP_IFNOT	4275	38	0
+ * OP_LOAD_V	4267	105	4276
+ * OP_LOAD_V	4270	105	4279
+ * OP_SUB_V	4276	4279	4282
+ * OP_STORE_V	4282	4	0
+ * OP_CALL1	462	0	0
+ * OP_MUL_F	539	1	4285
+ * OP_STORE_F	4285	4269	0
+ * OP_LT	4269	213	4286
+ * OP_IFNOT	4286	2	0
+ * OP_STORE_F	213	4269	0
+ * OP_SUB_F	4268	4269	4287
+ * OP_STORE_F	4287	4269	0
+ * OP_EQ_E	4270	4267	4288
+ * OP_IFNOT	4288	3	0
+ * OP_MUL_F	4269	539	4289
+ * OP_STORE_F	4289	4269	0
+ * OP_GT	4269	213	4290
+ * OP_IFNOT	4290	20	0
+ * OP_STORE_V	4270	4	0
+ * OP_STORE_V	4267	7	0
+ * OP_CALL2	524	0	0
+ * OP_IFNOT	1	16	0
+ * OP_LOAD_S	4270	129	4291
+ * OP_EQ_S	4291	3661	4292
+ * OP_IFNOT	4292	8	0
+ * OP_STORE_V	4270	4	0
+ * OP_STORE_V	4267	7	0
+ * OP_STORE_V	4267	10	0
+ * OP_MUL_F	4269	539	4293
+ * OP_STORE_V	4293	13	0
+ * OP_CALL4	522	0	0
+ * OP_GOTO	6	0	0
+ * OP_STORE_V	4270	4	0
+ * OP_STORE_V	4267	7	0
+ * OP_STORE_V	4267	10	0
+ * OP_STORE_V	4269	13	0
+ * OP_CALL4	522	0	0
+ * OP_LOAD_ENT	4270	164	4294
+ * OP_STORE_ENT	4294	4270	0
+ * OP_GOTO	-42	0	0
+ * OP_DONE	0	0	0
+ */
+
+void (entity globaldef1784, float globaldef1785) T_BeamDamage = {
+
+   local float globaldef1786;
+   local entity globaldef1787;
+
+   globaldef1787 = globaldef454 (globaldef1784.origin,(globaldef1785 + globaldef729));
+   while ( globaldef1787 ) {
+
+      if ( globaldef1787.globaldef141 ) {
+
+         globaldef1786 = (globaldef522 * vlen ((globaldef1784.origin - globaldef1787.origin)));
+         if ( (globaldef1786 < FALSE) ) {
+
+            globaldef1786 = FALSE;
+
+         }
+         globaldef1786 = (globaldef1785 - globaldef1786);
+         if ( (globaldef1787 == globaldef1784) ) {
+
+            globaldef1786 = (globaldef1786 * globaldef522);
+
+         }
+         if ( (globaldef1786 > FALSE) ) {
+
+            if ( globaldef507 (globaldef1787,globaldef1784) ) {
+
+               if ( (globaldef1787.classname == "monster_shambler") ) {
+
+                  globaldef505 (globaldef1787,globaldef1784,globaldef1784,(globaldef1786 * globaldef522));
+
+               } else {
+
+                  globaldef505 (globaldef1787,globaldef1784,globaldef1784,globaldef1786);
+
+               }
+
+            }
+
+         }
+
+      }
+      globaldef1787 = globaldef1787.globaldef142;
+
+   }
 
 };

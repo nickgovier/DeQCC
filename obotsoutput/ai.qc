@@ -3,14 +3,14 @@ void () movetarget_f;
 
 void () t_movetarget;
 
-void () func997_fs20368;
+void () knight_walk1;
 
 void () knight_bow6;
 
 void () knight_bow1;
-float globaldef1616_off3507 /* = 0.000 */;
-entity globaldef1617_off3508;
-float globaldef1618_off3509 /* = 0.000 */;
+float globaldef1616 /* = 0.000 */;
+entity globaldef1617;
+float globaldef1618 /* = 0.000 */;
 
 // function anglemod
 // function number 173 begins at statement 3093
@@ -28,19 +28,19 @@ float globaldef1618_off3509 /* = 0.000 */;
  * OP_RETURN	3510	0	0
  * OP_DONE	0	0	0
  */
-float (float globaldef1619_off3510) anglemod = {
+float (float globaldef1619) anglemod = {
 
-   while ( (globaldef1619_off3510 >= globaldef1198_off1298) ) {
+   while ( (globaldef1619 >= globaldef1198) ) {
 
-      globaldef1619_off3510 = (globaldef1619_off3510 - globaldef1198_off1298);
-
-   }
-   while ( (globaldef1619_off3510 < FALSE) ) {
-
-      globaldef1619_off3510 = (globaldef1619_off3510 + globaldef1198_off1298);
+      globaldef1619 = (globaldef1619 - globaldef1198);
 
    }
-   return ( globaldef1619_off3510 );
+   while ( (globaldef1619 < FALSE) ) {
+
+      globaldef1619 = (globaldef1619 + globaldef1198);
+
+   }
+   return ( globaldef1619 );
 
 };
 
@@ -67,17 +67,17 @@ void () movetarget_f = {
 
    if ( !self.targetname ) {
 
-      objerror (globaldef1620_off3517);
+      objerror (globaldef1620);
 
    }
    self.solid = SOLID_TRIGGER;
-   self.globaldef124_off146 = globaldef1612_off3503;
-   globaldef438_off455 (self,globaldef1621_off3520,globaldef1622_off3523);
+   self.globaldef124 = globaldef1612;
+   globaldef438 (self,globaldef1621,globaldef1622);
 
 };
-string globaldef1620_off3517 /* = "monster_movetarget: no targetname" */;
-vector globaldef1621_off3520 /* = '-8.000 -8.000 -8.000' */;
-vector globaldef1622_off3523 /* = '8.000 8.000 8.000' */;
+string globaldef1620 /* = "monster_movetarget: no targetname" */;
+vector globaldef1621 /* = '-8.000 -8.000 -8.000' */;
+vector globaldef1622 /* = '8.000 8.000 8.000' */;
 
 void () path_corner;
 
@@ -90,7 +90,7 @@ void () path_corner;
 
 void () path_corner = {
 
-   globaldef1611_off3502 ();
+   globaldef1611 ();
 
 };
 
@@ -147,9 +147,9 @@ void () path_corner = {
 
 void () t_movetarget = {
 
-   local entity globaldef1624_off3527;
+   local entity globaldef1624;
 
-   if ( (other.globaldef406_off423 != self) ) {
+   if ( (other.globaldef406 != self) ) {
 
       return ;
 
@@ -159,29 +159,29 @@ void () t_movetarget = {
       return ;
 
    }
-   globaldef1624_off3527 = self;
+   globaldef1624 = self;
    self = other;
-   other = globaldef1624_off3527;
-   if ( (self.classname == globaldef1625_off3532) ) {
+   other = globaldef1624;
+   if ( (self.classname == globaldef1625) ) {
 
-      sound (self,CHAN_VOICE,globaldef1626_off3534,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef1626,TRUE,ATTN_IDLE);
 
    }
-   self.globaldef406_off423 = find (world,targetname,other.target);
-   self.globaldef172_off194 = find (world,targetname,other.target);
-   self.globaldef169_off191 = globaldef446_off463 ((self.globaldef172_off194.origin - self.origin));
-   if ( !self.globaldef406_off423 ) {
+   self.globaldef406 = find (world,targetname,other.target);
+   self.globaldef172 = find (world,targetname,other.target);
+   self.globaldef169 = globaldef446 ((self.globaldef172.origin - self.origin));
+   if ( !self.globaldef406 ) {
 
-      self.globaldef405_off422 = (time + globaldef1627_off3552);
-      self.globaldef344_off361 ();
+      self.globaldef405 = (time + globaldef1627);
+      self.globaldef344 ();
       return ;
 
    }
 
 };
-string globaldef1625_off3532 /* = "monster_ogre" */;
-string globaldef1626_off3534 /* = "ogre/ogdrag.wav" */;
-float globaldef1627_off3552 /* = 999999.000 */;
+string globaldef1625 /* = "monster_ogre" */;
+string globaldef1626 /* = "ogre/ogdrag.wav" */;
+float globaldef1627 /* = 999999.000 */;
 
 // function range
 // function number 177 begins at statement 3167
@@ -210,26 +210,26 @@ float globaldef1627_off3552 /* = 999999.000 */;
  * OP_RETURN	245	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1628_off3555) range = {
+float (entity globaldef1628) range = {
 
-   local vector globaldef1629_off3556;
-   local vector globaldef1633_off3559;
-   local float globaldef1637_off3562;
+   local vector globaldef1629;
+   local vector globaldef1633;
+   local float globaldef1637;
 
-   globaldef1629_off3556 = (self.origin + self.globaldef144_off166);
-   globaldef1633_off3559 = (globaldef1628_off3555.origin + globaldef1628_off3555.globaldef144_off166);
-   globaldef1637_off3562 = vlen ((globaldef1629_off3556 - globaldef1633_off3559));
-   if ( (globaldef1637_off3562 < globaldef1638_off3584) ) {
+   globaldef1629 = (self.origin + self.globaldef144);
+   globaldef1633 = (globaldef1628.origin + globaldef1628.globaldef144);
+   globaldef1637 = vlen ((globaldef1629 - globaldef1633));
+   if ( (globaldef1637 < globaldef1638) ) {
 
       return ( RANGE_MELEE );
 
    }
-   if ( (globaldef1637_off3562 < globaldef728_off745) ) {
+   if ( (globaldef1637 < globaldef728) ) {
 
       return ( RANGE_NEAR );
 
    }
-   if ( (globaldef1637_off3562 < globaldef1302_off1663) ) {
+   if ( (globaldef1637 < globaldef1302) ) {
 
       return ( RANGE_MID );
 
@@ -237,7 +237,7 @@ float (entity globaldef1628_off3555) range = {
    return ( RANGE_FAR );
 
 };
-float globaldef1638_off3584 /* = 120.000 */;
+float globaldef1638 /* = 120.000 */;
 
 // function visible
 // function number 178 begins at statement 3190
@@ -264,14 +264,14 @@ float globaldef1638_off3584 /* = 120.000 */;
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1639_off3588) visible = {
+float (entity globaldef1639) visible = {
 
-   local vector globaldef1640_off3589;
-   local vector globaldef1644_off3592;
+   local vector globaldef1640;
+   local vector globaldef1644;
 
-   globaldef1640_off3589 = (self.origin + self.globaldef144_off166);
-   globaldef1644_off3592 = (globaldef1639_off3588.origin + globaldef1639_off3588.globaldef144_off166);
-   globaldef449_off466 (globaldef1640_off3589,globaldef1644_off3592,TRUE,self);
+   globaldef1640 = (self.origin + self.globaldef144);
+   globaldef1644 = (globaldef1639.origin + globaldef1639.globaldef144);
+   globaldef449 (globaldef1640,globaldef1644,TRUE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
@@ -306,15 +306,15 @@ float (entity globaldef1639_off3588) visible = {
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1648_off3615) infront = {
+float (entity globaldef1648) infront = {
 
-   local vector globaldef1649_off3616;
-   local float globaldef1653_off3619;
+   local vector globaldef1649;
+   local float globaldef1653;
 
    makevectors (self.angles);
-   globaldef1649_off3616 = globaldef442_off459 ((globaldef1648_off3615.origin - self.origin));
-   globaldef1653_off3619 = (globaldef1649_off3616 * v_forward);
-   if ( (globaldef1653_off3619 > globaldef1588_off3409) ) {
+   globaldef1649 = globaldef442 ((globaldef1648.origin - self.origin));
+   globaldef1653 = (globaldef1649 * v_forward);
+   if ( (globaldef1653 > globaldef1588) ) {
 
       return ( TRUE );
 
@@ -352,11 +352,11 @@ void () HuntTarget;
 
 void () HuntTarget = {
 
-   self.globaldef172_off194 = self.enemy;
-   self.think = self.globaldef346_off363;
-   self.globaldef169_off191 = globaldef446_off463 ((self.enemy.origin - self.origin));
+   self.globaldef172 = self.enemy;
+   self.think = self.globaldef346;
+   self.globaldef169 = globaldef446 ((self.enemy.origin - self.origin));
    self.nextthink = (time + 0.100);
-   globaldef1517_off3163 (TRUE);
+   globaldef1517 (TRUE);
 
 };
 
@@ -531,15 +531,15 @@ void () SightSound;
 
 void () SightSound = {
 
-   local float globaldef1656_off3653;
+   local float globaldef1656;
 
-   if ( (self.classname == globaldef1625_off3532) ) {
+   if ( (self.classname == globaldef1625) ) {
 
       sound (self,CHAN_VOICE,"ogre/ogwake.wav",TRUE,ATTN_NORM);
 
    } else {
 
-      if ( (self.classname == globaldef1551_off3254) ) {
+      if ( (self.classname == globaldef1551) ) {
 
          sound (self,CHAN_VOICE,"knight/ksight.wav",TRUE,ATTN_NORM);
 
@@ -595,20 +595,20 @@ void () SightSound = {
 
                                  if ( (self.classname == "monster_enforcer") ) {
 
-                                    globaldef1656_off3653 = globaldef466_off483 ((globaldef440_off457 () * MOVETYPE_WALK));
-                                    if ( (globaldef1656_off3653 == TRUE) ) {
+                                    globaldef1656 = globaldef466 ((globaldef440 () * MOVETYPE_WALK));
+                                    if ( (globaldef1656 == TRUE) ) {
 
                                        sound (self,CHAN_VOICE,"enforcer/sight1.wav",TRUE,ATTN_NORM);
 
                                     } else {
 
-                                       if ( (globaldef1656_off3653 == FL_SWIM) ) {
+                                       if ( (globaldef1656 == FL_SWIM) ) {
 
                                           sound (self,CHAN_VOICE,"enforcer/sight2.wav",TRUE,ATTN_NORM);
 
                                        } else {
 
-                                          if ( (globaldef1656_off3653 == FALSE) ) {
+                                          if ( (globaldef1656 == FALSE) ) {
 
                                              sound (self,CHAN_VOICE,"enforcer/sight3.wav",TRUE,ATTN_NORM);
 
@@ -685,18 +685,18 @@ void () FoundTarget = {
 
    if ( (self.enemy.classname == "player") ) {
 
-      globaldef1617_off3508 = self;
-      globaldef1618_off3509 = time;
+      globaldef1617 = self;
+      globaldef1618 = time;
 
    }
-   self.globaldef376_off393 = (time + TRUE);
-   globaldef1655_off3652 ();
-   globaldef1654_off3634 ();
+   self.globaldef376 = (time + TRUE);
+   globaldef1655 ();
+   globaldef1654 ();
 
 };
-entity () func183_fs3421;
+entity () func183;
 
-// function func183_fs3421
+// function func183
 // function number 183 begins at statement 3421
 /*
  * OP_STORE_ENT	30	3721	0
@@ -725,40 +725,40 @@ entity () func183_fs3421;
  * OP_RETURN	3721	0	0
  * OP_DONE	0	0	0
  */
-entity () func183_fs3421 = {
+entity () func183 = {
 
-   local float globaldef1686_off3718;
-   local float globaldef1687_off3719;
-   local entity globaldef1688_off3720;
-   local entity globaldef1689_off3721;
+   local float globaldef1686;
+   local float globaldef1687;
+   local entity globaldef1688;
+   local entity globaldef1689;
 
-   globaldef1689_off3721 = world;
-   globaldef1687_off3719 = globaldef1690_off3722;
-   globaldef1688_off3720 = globaldef817_off834;
-   while ( globaldef1688_off3720 ) {
+   globaldef1689 = world;
+   globaldef1687 = globaldef1690;
+   globaldef1688 = globaldef817;
+   while ( globaldef1688 ) {
 
-      globaldef1686_off3718 = vlen ((self.origin - globaldef1688_off3720.origin));
-      if ( (globaldef1686_off3718 < globaldef1687_off3719) ) {
+      globaldef1686 = vlen ((self.origin - globaldef1688.origin));
+      if ( (globaldef1686 < globaldef1687) ) {
 
-         if ( visible (globaldef1688_off3720) ) {
+         if ( visible (globaldef1688) ) {
 
-            if ( globaldef1555_off3285 (globaldef1688_off3720) ) {
+            if ( globaldef1555 (globaldef1688) ) {
 
-               globaldef1687_off3719 = globaldef1686_off3718;
-               globaldef1689_off3721 = globaldef1688_off3720;
+               globaldef1687 = globaldef1686;
+               globaldef1689 = globaldef1688;
 
             }
 
          }
 
       }
-      globaldef1688_off3720 = globaldef1688_off3720.globaldef603_off620;
+      globaldef1688 = globaldef1688.globaldef603;
 
    }
-   return ( globaldef1689_off3721 );
+   return ( globaldef1689 );
 
 };
-float globaldef1690_off3722 /* = 9999.000 */;
+float globaldef1690 /* = 9999.000 */;
 float () FindTarget;
 
 // function FindTarget
@@ -859,13 +859,13 @@ float () FindTarget;
  */
 float () FindTarget = {
 
-   local entity globaldef1692_off3735;
-   local float globaldef1693_off3736;
+   local entity globaldef1692;
+   local float globaldef1693;
 
-   if ( ((globaldef1618_off3509 >= (time - 0.100)) && !(self.globaldef173_off195 & MOVETYPE_WALK)) ) {
+   if ( ((globaldef1618 >= (time - 0.100)) && !(self.globaldef173 & MOVETYPE_WALK)) ) {
 
-      globaldef1692_off3735 = globaldef1617_off3508;
-      if ( (globaldef1692_off3735.enemy == self.enemy) ) {
+      globaldef1692 = globaldef1617;
+      if ( (globaldef1692.enemy == self.enemy) ) {
 
          return ;
 
@@ -873,48 +873,48 @@ float () FindTarget = {
 
    } else {
 
-      globaldef1692_off3735 = globaldef1685_off3717 ();
-      if ( !globaldef1692_off3735 ) {
+      globaldef1692 = globaldef1685 ();
+      if ( !globaldef1692 ) {
 
-         globaldef1692_off3735 = globaldef450_off467 ();
+         globaldef1692 = globaldef450 ();
 
       }
-      if ( !globaldef1692_off3735 ) {
+      if ( !globaldef1692 ) {
 
          return ( FALSE );
 
       }
 
    }
-   if ( (globaldef1692_off3735 == self.enemy) ) {
+   if ( (globaldef1692 == self.enemy) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1692_off3735.globaldef160_off182 & FL_NOTARGET) ) {
+   if ( (globaldef1692.globaldef160 & FL_NOTARGET) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1692_off3735.globaldef140_off162 & IT_INVISIBILITY) ) {
+   if ( (globaldef1692.globaldef140 & IT_INVISIBILITY) ) {
 
       return ( FALSE );
 
    }
-   globaldef1693_off3736 = globaldef1556_off3286 (globaldef1692_off3735);
-   if ( (globaldef1693_off3736 == RANGE_FAR) ) {
+   globaldef1693 = globaldef1556 (globaldef1692);
+   if ( (globaldef1693 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   if ( !visible (globaldef1692_off3735) ) {
+   if ( !visible (globaldef1692) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1693_off3736 == RANGE_NEAR) ) {
+   if ( (globaldef1693 == RANGE_NEAR) ) {
 
-      if ( ((globaldef1692_off3735.globaldef376_off393 < time) && !globaldef1555_off3285 (globaldef1692_off3735)) ) {
+      if ( ((globaldef1692.globaldef376 < time) && !globaldef1555 (globaldef1692)) ) {
 
          return ( FALSE );
 
@@ -922,9 +922,9 @@ float () FindTarget = {
 
    } else {
 
-      if ( (globaldef1693_off3736 == RANGE_MID) ) {
+      if ( (globaldef1693 == RANGE_MID) ) {
 
-         if ( !globaldef1555_off3285 (globaldef1692_off3735) ) {
+         if ( !globaldef1555 (globaldef1692) ) {
 
             return ( FALSE );
 
@@ -933,11 +933,11 @@ float () FindTarget = {
       }
 
    }
-   self.enemy = globaldef1692_off3735;
-   if ( ((self.enemy.classname != "player") && (self.enemy.classname != globaldef1171_off1241)) ) {
+   self.enemy = globaldef1692;
+   if ( ((self.enemy.classname != "player") && (self.enemy.classname != globaldef1171)) ) {
 
       self.enemy = self.enemy.enemy;
-      if ( ((self.enemy.classname != "player") && (self.enemy.classname != globaldef1171_off1241)) ) {
+      if ( ((self.enemy.classname != "player") && (self.enemy.classname != globaldef1171)) ) {
 
          self.enemy = world;
          return ( FALSE );
@@ -945,12 +945,12 @@ float () FindTarget = {
       }
 
    }
-   globaldef1684_off3711 ();
+   globaldef1684 ();
    return ( TRUE );
 
 };
 
-void (float globaldef1695_off3783) ai_forward;
+void (float globaldef1695) ai_forward;
 
 // function ai_forward
 // function number 185 begins at statement 3538
@@ -962,13 +962,13 @@ void (float globaldef1695_off3783) ai_forward;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1695_off3783) ai_forward = {
+void (float globaldef1695) ai_forward = {
 
-   globaldef463_off480 (self.globaldef97_off119,globaldef1695_off3783);
+   globaldef463 (self.globaldef97,globaldef1695);
 
 };
 
-void (float globaldef1697_off3786) ai_back;
+void (float globaldef1697) ai_back;
 
 // function ai_back
 // function number 186 begins at statement 3543
@@ -981,13 +981,13 @@ void (float globaldef1697_off3786) ai_back;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1697_off3786) ai_back = {
+void (float globaldef1697) ai_back = {
 
-   globaldef463_off480 ((self.globaldef97_off119 + globaldef1197_off1296),globaldef1697_off3786);
+   globaldef463 ((self.globaldef97 + globaldef1197),globaldef1697);
 
 };
 
-void (float globaldef1699_off3790) ai_pain;
+void (float globaldef1699) ai_pain;
 
 // function ai_pain
 // function number 187 begins at statement 3549
@@ -997,13 +997,13 @@ void (float globaldef1699_off3790) ai_pain;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1699_off3790) ai_pain = {
+void (float globaldef1699) ai_pain = {
 
-   globaldef1696_off3785 (globaldef1699_off3790);
+   globaldef1696 (globaldef1699);
 
 };
 
-void (float globaldef1701_off3792) ai_painforward;
+void (float globaldef1701) ai_painforward;
 
 // function ai_painforward
 // function number 188 begins at statement 3552
@@ -1015,13 +1015,13 @@ void (float globaldef1701_off3792) ai_painforward;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1701_off3792) ai_painforward = {
+void (float globaldef1701) ai_painforward = {
 
-   globaldef463_off480 (self.globaldef169_off191,globaldef1701_off3792);
+   globaldef463 (self.globaldef169,globaldef1701);
 
 };
 
-void (float globaldef1703_off3795) ai_walk;
+void (float globaldef1703) ai_walk;
 
 // function ai_walk
 // function number 189 begins at statement 3557
@@ -1041,26 +1041,26 @@ void (float globaldef1703_off3795) ai_walk;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1703_off3795) ai_walk = {
+void (float globaldef1703) ai_walk = {
 
-   local vector globaldef1704_off3796;
+   local vector globaldef1704;
 
-   movedist = globaldef1703_off3795;
-   if ( (self.classname == globaldef1708_off3800) ) {
+   movedist = globaldef1703;
+   if ( (self.classname == globaldef1708) ) {
 
-      globaldef487_off504 (globaldef1703_off3795);
+      globaldef487 (globaldef1703);
       return ;
 
    }
-   if ( globaldef1691_off3734 () ) {
+   if ( globaldef1691 () ) {
 
       return ;
 
    }
-   globaldef487_off504 (globaldef1703_off3795);
+   globaldef487 (globaldef1703);
 
 };
-string globaldef1708_off3800 /* = "monster_dragon" */;
+string globaldef1708 /* = "monster_dragon" */;
 
 void () ai_stand;
 
@@ -1081,14 +1081,14 @@ void () ai_stand;
 
 void () ai_stand = {
 
-   if ( globaldef1691_off3734 () ) {
+   if ( globaldef1691 () ) {
 
       return ;
 
    }
-   if ( (time > self.globaldef405_off422) ) {
+   if ( (time > self.globaldef405) ) {
 
-      self.globaldef345_off362 ();
+      self.globaldef345 ();
       return ;
 
    }
@@ -1109,12 +1109,12 @@ void () ai_turn;
 
 void () ai_turn = {
 
-   if ( globaldef1691_off3734 () ) {
+   if ( globaldef1691 () ) {
 
       return ;
 
    }
-   globaldef477_off494 ();
+   globaldef477 ();
 
 };
 
@@ -1146,28 +1146,28 @@ void () ai_turn = {
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef1711_off3807) ChooseTurn = {
+void (vector globaldef1711) ChooseTurn = {
 
-   local vector globaldef1715_off3810;
-   local vector globaldef1719_off3813;
+   local vector globaldef1715;
+   local vector globaldef1719;
 
-   globaldef1715_off3810 = (self.origin - globaldef1711_off3807);
-   globaldef1719_off3813_x = globaldef53_off75;
-   globaldef1721_off3814 = (FALSE - trace_plane_normal_x);
-   globaldef1722_off3815 = FALSE;
-   if ( ((globaldef1715_off3810 * globaldef1719_off3813) > FALSE) ) {
+   globaldef1715 = (self.origin - globaldef1711);
+   globaldef1719_x = globaldef53;
+   globaldef1721 = (FALSE - trace_plane_normal_x);
+   globaldef1722 = FALSE;
+   if ( ((globaldef1715 * globaldef1719) > FALSE) ) {
 
-      globaldef1715_off3810_x = (FALSE - globaldef53_off75);
-      globaldef1717_off3811 = trace_plane_normal_x;
+      globaldef1715_x = (FALSE - globaldef53);
+      globaldef1717 = trace_plane_normal_x;
 
    } else {
 
-      globaldef1715_off3810_x = globaldef53_off75;
-      globaldef1717_off3811 = (FALSE - trace_plane_normal_x);
+      globaldef1715_x = globaldef53;
+      globaldef1717 = (FALSE - trace_plane_normal_x);
 
    }
-   globaldef1718_off3812 = FALSE;
-   self.globaldef169_off191 = globaldef446_off463 (globaldef1715_off3810);
+   globaldef1718 = FALSE;
+   self.globaldef169 = globaldef446 (globaldef1715);
 
 };
 float () FacingIdeal;
@@ -1191,10 +1191,10 @@ float () FacingIdeal;
  */
 float () FacingIdeal = {
 
-   local float globaldef1724_off3829;
+   local float globaldef1724;
 
-   globaldef1724_off3829 = globaldef1522_off3179 ((self.globaldef97_off119 - self.globaldef169_off191));
-   if ( ((globaldef1724_off3829 > globaldef1431_off2598) && (globaldef1724_off3829 < globaldef1725_off3834)) ) {
+   globaldef1724 = globaldef1522 ((self.globaldef97 - self.globaldef169));
+   if ( ((globaldef1724 > globaldef1431) && (globaldef1724 < globaldef1725)) ) {
 
       return ( FALSE );
 
@@ -1202,9 +1202,9 @@ float () FacingIdeal = {
    return ( TRUE );
 
 };
-float globaldef1725_off3834 /* = 315.000 */;
-float () func1196_fs21377;
-float () func1357_fs22431;
+float globaldef1725 /* = 315.000 */;
+float () WizardCheckAttack;
+float () DogCheckAttack;
 float /* Warning: Could not determine return type */ () CheckAnyAttack;
 
 // function CheckAnyAttack
@@ -1249,42 +1249,42 @@ float /* Warning: Could not determine return type */ () CheckAnyAttack;
  */
 float /* Warning: Could not determine return type */ () CheckAnyAttack = {
 
-   if ( !globaldef1534_off3191 ) {
+   if ( !globaldef1534 ) {
 
       return ;
 
    }
    if ( (self.classname == "monster_army") ) {
 
-      return ( globaldef1577_off3370 () );
+      return ( globaldef1577 () );
 
    }
-   if ( (self.classname == globaldef1625_off3532) ) {
+   if ( (self.classname == globaldef1625) ) {
 
-      return ( globaldef1600_off3458 () );
+      return ( globaldef1600 () );
 
    }
    if ( (self.classname == "monster_shambler") ) {
 
-      return ( globaldef1589_off3414 () );
+      return ( globaldef1589 () );
 
    }
    if ( (self.classname == "monster_demon1") ) {
 
-      return ( globaldef1530_off3187 () );
+      return ( globaldef1530 () );
 
    }
    if ( (self.classname == "monster_dog") ) {
 
-      return ( globaldef1727_off3838 () );
+      return ( globaldef1727 () );
 
    }
    if ( (self.classname == "monster_wizard") ) {
 
-      return ( globaldef1726_off3837 () );
+      return ( globaldef1726 () );
 
    }
-   return ( globaldef1540_off3221 () );
+   return ( globaldef1540 () );
 
 };
 
@@ -1307,12 +1307,12 @@ void () ai_run_melee;
 
 void () ai_run_melee = {
 
-   self.globaldef169_off191 = globaldef1537_off3194;
-   globaldef477_off494 ();
-   if ( globaldef1723_off3828 () ) {
+   self.globaldef169 = globaldef1537;
+   globaldef477 ();
+   if ( globaldef1723 () ) {
 
-      self.globaldef348_off365 ();
-      self.globaldef355_off372 = AS_STRAIGHT;
+      self.globaldef348 ();
+      self.globaldef355 = AS_STRAIGHT;
 
    }
 
@@ -1337,12 +1337,12 @@ void () ai_run_missile;
 
 void () ai_run_missile = {
 
-   self.globaldef169_off191 = globaldef1537_off3194;
-   globaldef477_off494 ();
-   if ( globaldef1723_off3828 () ) {
+   self.globaldef169 = globaldef1537;
+   globaldef477 ();
+   if ( globaldef1723 () ) {
 
-      self.globaldef347_off364 ();
-      self.globaldef355_off372 = AS_STRAIGHT;
+      self.globaldef347 ();
+      self.globaldef355 = AS_STRAIGHT;
 
    }
 
@@ -1382,31 +1382,31 @@ void () ai_run_slide;
 
 void () ai_run_slide = {
 
-   local float globaldef1732_off3862;
+   local float globaldef1732;
 
-   self.globaldef169_off191 = globaldef1537_off3194;
-   globaldef477_off494 ();
-   if ( self.globaldef353_off370 ) {
+   self.globaldef169 = globaldef1537;
+   globaldef477 ();
+   if ( self.globaldef353 ) {
 
-      globaldef1732_off3862 = globaldef1434_off2658;
+      globaldef1732 = globaldef1434;
 
    } else {
 
-      globaldef1732_off3862 = globaldef1733_off3865;
+      globaldef1732 = globaldef1733;
 
    }
-   if ( globaldef463_off480 ((self.globaldef169_off191 + globaldef1732_off3862),movedist) ) {
+   if ( globaldef463 ((self.globaldef169 + globaldef1732),movedist) ) {
 
       return ;
 
    }
-   self.globaldef353_off370 = (TRUE - self.globaldef353_off370);
-   globaldef463_off480 ((self.globaldef169_off191 - globaldef1732_off3862),movedist);
+   self.globaldef353 = (TRUE - self.globaldef353);
+   globaldef463 ((self.globaldef169 - globaldef1732),movedist);
 
 };
-float globaldef1733_off3865 /* = -90.000 */;
+float globaldef1733 /* = -90.000 */;
 
-void (float globaldef1735_off3874) ai_run;
+void (float globaldef1735) ai_run;
 
 // function ai_run
 // function number 198 begins at statement 3702
@@ -1492,33 +1492,33 @@ void (float globaldef1735_off3874) ai_run;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1735_off3874) ai_run = {
+void (float globaldef1735) ai_run = {
 
-   local vector globaldef1736_off3875;
-   local float globaldef1740_off3878;
-   local float globaldef1741_off3879;
-   local float globaldef1742_off3880;
-   local float globaldef1743_off3881;
-   local float globaldef1744_off3882;
+   local vector globaldef1736;
+   local float globaldef1740;
+   local float globaldef1741;
+   local float globaldef1742;
+   local float globaldef1743;
+   local float globaldef1744;
 
-   movedist = globaldef1735_off3874;
-   if ( (self.enemy.globaldef130_off152 <= FALSE) ) {
+   movedist = globaldef1735;
+   if ( (self.enemy.globaldef130 <= FALSE) ) {
 
       self.enemy = world;
-      if ( (self.globaldef351_off368.globaldef130_off152 > FALSE) ) {
+      if ( (self.globaldef351.globaldef130 > FALSE) ) {
 
-         self.enemy = self.globaldef351_off368;
-         globaldef1654_off3634 ();
+         self.enemy = self.globaldef351;
+         globaldef1654 ();
 
       } else {
 
-         if ( self.globaldef406_off423 ) {
+         if ( self.globaldef406 ) {
 
-            self.globaldef345_off362 ();
+            self.globaldef345 ();
 
          } else {
 
-            self.globaldef344_off361 ();
+            self.globaldef344 ();
 
          }
          return ;
@@ -1526,48 +1526,48 @@ void (float globaldef1735_off3874) ai_run = {
       }
 
    }
-   self.globaldef376_off393 = (time + TRUE);
-   globaldef1534_off3191 = visible (self.enemy);
-   if ( globaldef1534_off3191 ) {
+   self.globaldef376 = (time + TRUE);
+   globaldef1534 = visible (self.enemy);
+   if ( globaldef1534 ) {
 
-      self.globaldef354_off371 = (time + MOVETYPE_FLY);
+      self.globaldef354 = (time + MOVETYPE_FLY);
 
    }
-   if ( ((coop || deathmatch) && (self.globaldef354_off371 < time)) ) {
+   if ( ((coop || deathmatch) && (self.globaldef354 < time)) ) {
 
-      if ( globaldef1691_off3734 () ) {
+      if ( globaldef1691 () ) {
 
          return ;
 
       }
 
    }
-   globaldef1535_off3192 = globaldef1555_off3285 (self.enemy);
-   globaldef1536_off3193 = globaldef1556_off3286 (self.enemy);
-   globaldef1537_off3194 = globaldef446_off463 ((self.enemy.origin - self.origin));
-   if ( (self.globaldef355_off372 == AS_MISSILE) ) {
+   globaldef1535 = globaldef1555 (self.enemy);
+   globaldef1536 = globaldef1556 (self.enemy);
+   globaldef1537 = globaldef446 ((self.enemy.origin - self.origin));
+   if ( (self.globaldef355 == AS_MISSILE) ) {
 
-      globaldef1730_off3857 ();
+      globaldef1730 ();
       return ;
 
    }
-   if ( (self.globaldef355_off372 == AS_MELEE) ) {
+   if ( (self.globaldef355 == AS_MELEE) ) {
 
-      globaldef1729_off3853 ();
+      globaldef1729 ();
       return ;
 
    }
-   if ( globaldef1728_off3839 () ) {
+   if ( globaldef1728 () ) {
 
       return ;
 
    }
-   if ( (self.globaldef355_off372 == AS_SLIDING) ) {
+   if ( (self.globaldef355 == AS_SLIDING) ) {
 
-      globaldef1731_off3861 ();
+      globaldef1731 ();
       return ;
 
    }
-   globaldef487_off504 (globaldef1735_off3874);
+   globaldef487 (globaldef1735);
 
 };

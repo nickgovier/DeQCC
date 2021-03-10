@@ -1,0 +1,623 @@
+float globaldef3295 /* = 49.000 */;
+
+void () monster_use;
+
+// function monster_use
+// function number 528 begins at statement 14481
+/*
+ * OP_LOAD_ENT	28	181	10010
+ * OP_IFNOT	10010	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_F	28	152	10011
+ * OP_LE	10011	213	10012
+ * OP_IFNOT	10012	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_F	351	162	10013
+ * OP_BITAND	10013	272	10014
+ * OP_IFNOT	10014	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_F	351	182	10015
+ * OP_BITAND	10015	221	10016
+ * OP_IFNOT	10016	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_S	351	129	10017
+ * OP_NE_S	10017	1236	10018
+ * OP_IFNOT	10018	2	0
+ * OP_RETURN	0	0	0
+ * OP_ADDRESS	28	181	10019
+ * OP_STOREP_ENT	351	10019	0
+ * OP_ADDRESS	28	150	10020
+ * OP_ADD_F	31	3036	10021
+ * OP_STOREP_F	10021	10020	0
+ * OP_ADDRESS	28	148	10022
+ * OP_STOREP_FNC	3711	10022	0
+ * OP_DONE	0	0	0
+ */
+
+void () monster_use = {
+
+   if ( self.enemy ) {
+
+      return ;
+
+   }
+   if ( (self.globaldef130 <= FALSE) ) {
+
+      return ;
+
+   }
+   if ( (activator.globaldef140 & IT_INVISIBILITY) ) {
+
+      return ;
+
+   }
+   if ( (activator.globaldef160 & FL_NOTARGET) ) {
+
+      return ;
+
+   }
+   if ( (activator.classname != "player") ) {
+
+      return ;
+
+   }
+   self.enemy = activator;
+   self.nextthink = (time + 0.100);
+   self.think = globaldef1684;
+
+};
+
+// function monster_death_use
+// function number 529 begins at statement 14508
+/*
+ * OP_LOAD_F	28	182	10026
+ * OP_BITAND	10026	215	10027
+ * OP_IFNOT	10027	5	0
+ * OP_ADDRESS	28	182	10028
+ * OP_LOAD_F	28	182	10029
+ * OP_SUB_F	10029	215	10030
+ * OP_STOREP_F	10030	10028	0
+ * OP_LOAD_F	28	182	10031
+ * OP_BITAND	10031	216	10032
+ * OP_IFNOT	10032	5	0
+ * OP_ADDRESS	28	182	10033
+ * OP_LOAD_F	28	182	10034
+ * OP_SUB_F	10034	216	10035
+ * OP_STOREP_F	10035	10033	0
+ * OP_LOAD_S	28	196	10036
+ * OP_NOT_S	10036	0	10037
+ * OP_IFNOT	10037	2	0
+ * OP_RETURN	0	0	0
+ * OP_LOAD_ENT	28	181	10038
+ * OP_STORE_ENT	10038	351	0
+ * OP_CALL0	520	0	0
+ * OP_DONE	0	0	0
+ */
+
+void () monster_death_use = {
+
+   local entity globaldef3297;
+   local entity globaldef3298;
+   local entity globaldef3299;
+
+   if ( (self.globaldef160 & FL_FLY) ) {
+
+      self.globaldef160 = (self.globaldef160 - FL_FLY);
+
+   }
+   if ( (self.globaldef160 & FL_SWIM) ) {
+
+      self.globaldef160 = (self.globaldef160 - FL_SWIM);
+
+   }
+   if ( !self.target ) {
+
+      return ;
+
+   }
+   activator = self.enemy;
+   SUB_UseTargets ();
+
+};
+
+void () walkmonster_start_go;
+
+// function walkmonster_start_go
+// function number 530 begins at statement 14530
+/*
+ * OP_ADDRESS	28	108	10042
+ * OP_LOAD_F	28	108	10043
+ * OP_ADD_F	10043	214	10044
+ * OP_STOREP_F	10044	10042	0
+ * OP_CALL0	481	0	0
+ * OP_STORE_V	213	4	0
+ * OP_STORE_V	213	7	0
+ * OP_CALL2	480	0	0
+ * OP_NOT_F	1	0	10045
+ * OP_IFNOT	10045	10	0
+ * OP_STORE_V	10046	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_V	28	105	10047
+ * OP_STORE_V	10047	4	0
+ * OP_CALL1	475	0	0
+ * OP_STORE_V	1	4	0
+ * OP_CALL1	473	0	0
+ * OP_STORE_V	2127	4	0
+ * OP_CALL1	473	0	0
+ * OP_ADDRESS	28	163	10050
+ * OP_STOREP_F	252	10050	0
+ * OP_ADDRESS	28	191	10051
+ * OP_LOAD_V	28	117	10052
+ * OP_MUL_V	10052	10055	10058
+ * OP_STOREP_F	10058	10051	0
+ * OP_LOAD_F	28	192	10059
+ * OP_NOT_F	10059	0	10060
+ * OP_IFNOT	10060	3	0
+ * OP_ADDRESS	28	192	10061
+ * OP_STOREP_F	2323	10061	0
+ * OP_ADDRESS	28	166	10062
+ * OP_STOREP_V	10065	10062	0
+ * OP_ADDRESS	28	147	10068
+ * OP_STOREP_FNC	10009	10068	0
+ * OP_ADDRESS	28	182	10069
+ * OP_LOAD_F	28	182	10070
+ * OP_BITOR	10070	219	10071
+ * OP_STOREP_F	10071	10069	0
+ * OP_LOAD_S	28	196	10072
+ * OP_IFNOT	10072	42	0
+ * OP_ADDRESS	28	194	10073
+ * OP_ADDRESS	28	423	10074
+ * OP_STORE_V	30	4	0
+ * OP_STORE_V	197	7	0
+ * OP_LOAD_S	28	196	10075
+ * OP_STORE_V	10075	10	0
+ * OP_CALL3	468	0	0
+ * OP_STOREP_ENT	1	10074	0
+ * OP_STOREP_ENT	1	10073	0
+ * OP_ADDRESS	28	191	10076
+ * OP_LOAD_ENT	28	194	10077
+ * OP_LOAD_V	10077	105	10078
+ * OP_LOAD_V	28	105	10081
+ * OP_SUB_V	10078	10081	10084
+ * OP_STORE_V	10084	4	0
+ * OP_CALL1	463	0	0
+ * OP_STOREP_F	1	10076	0
+ * OP_LOAD_ENT	28	423	10087
+ * OP_NOT_ENT	10087	0	10088
+ * OP_IFNOT	10088	10	0
+ * OP_STORE_V	10089	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_V	28	105	10090
+ * OP_STORE_V	10090	4	0
+ * OP_CALL1	475	0	0
+ * OP_STORE_V	1	4	0
+ * OP_CALL1	473	0	0
+ * OP_STORE_V	2127	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_ENT	28	423	10093
+ * OP_LOAD_S	10093	129	10094
+ * OP_EQ_S	10094	10095	10096
+ * OP_IFNOT	10096	4	0
+ * OP_LOAD_FNC	28	362	10097
+ * OP_CALL0	10097	0	0
+ * OP_GOTO	3	0	0
+ * OP_ADDRESS	28	422	10098
+ * OP_STOREP_F	10099	10098	0
+ * OP_LOAD_FNC	28	361	10100
+ * OP_CALL0	10100	0	0
+ * OP_GOTO	5	0	0
+ * OP_ADDRESS	28	422	10101
+ * OP_STOREP_F	10099	10101	0
+ * OP_LOAD_FNC	28	361	10102
+ * OP_CALL0	10102	0	0
+ * OP_ADDRESS	28	150	10103
+ * OP_LOAD_F	28	150	10104
+ * OP_CALL0	457	0	0
+ * OP_MUL_F	1	539	10105
+ * OP_ADD_F	10104	10105	10106
+ * OP_STOREP_F	10106	10103	0
+ * OP_DONE	0	0	0
+ */
+
+void () walkmonster_start_go = {
+
+   local string globaldef3301;
+   local entity globaldef3302;
+
+   self.globaldef86 = (self.globaldef86 + TRUE);
+   globaldef464 ();
+   if ( !globaldef463 (FALSE,FALSE) ) {
+
+      globaldef456 (globaldef3303);
+      globaldef456 (globaldef458 (self.origin));
+      globaldef456 (globaldef1354);
+
+   }
+   self.globaldef141 = DAMAGE_AIM;
+   self.globaldef169 = (self.angles * globaldef3304);
+   if ( !self.globaldef170 ) {
+
+      self.globaldef170 = globaldef1384;
+
+   }
+   self.globaldef144 = globaldef3305;
+   self.use = globaldef3296;
+   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
+   if ( self.target ) {
+
+      self.globaldef406 = find (world,targetname,self.target);
+      self.globaldef172 = find (world,targetname,self.target);
+      self.globaldef169 = globaldef446 ((self.globaldef172.origin - self.origin));
+      if ( !self.globaldef406 ) {
+
+         globaldef456 (globaldef3306);
+         globaldef456 (globaldef458 (self.origin));
+         globaldef456 (globaldef1354);
+
+      }
+      if ( (self.globaldef406.classname == globaldef3307) ) {
+
+         self.globaldef345 ();
+
+      } else {
+
+         self.globaldef405 = globaldef3308;
+
+      }
+      self.globaldef344 ();
+
+   } else {
+
+      self.globaldef405 = globaldef3308;
+      self.globaldef344 ();
+
+   }
+   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+
+};
+string globaldef3303 /* = "walkmonster in wall at: " */;
+vector globaldef3304 /* = '0.000 1.000 0.000' */;
+vector globaldef3305 /* = '0.000 0.000 25.000' */;
+string globaldef3306 /* = "Monster can't find target at " */;
+string globaldef3307 /* = "path_corner" */;
+float globaldef3308 /* = 100000000.000 */;
+
+void () walkmonster_start;
+
+// function walkmonster_start
+// function number 531 begins at statement 14622
+/*
+ * OP_ADDRESS	28	150	10108
+ * OP_LOAD_F	28	150	10109
+ * OP_CALL0	457	0	0
+ * OP_MUL_F	1	539	10110
+ * OP_ADD_F	10109	10110	10111
+ * OP_STOREP_F	10111	10108	0
+ * OP_ADDRESS	28	148	10112
+ * OP_STOREP_FNC	10039	10112	0
+ * OP_ADD_F	40	214	10113
+ * OP_STORE_F	10113	40	0
+ * OP_DONE	0	0	0
+ */
+
+void () walkmonster_start = {
+
+   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+   self.think = globaldef3300;
+   total_monsters = (total_monsters + TRUE);
+
+};
+
+void () flymonster_start_go;
+
+// function flymonster_start_go
+// function number 532 begins at statement 14633
+/*
+ * OP_ADDRESS	28	163	10115
+ * OP_STOREP_F	252	10115	0
+ * OP_ADDRESS	28	191	10116
+ * OP_LOAD_V	28	117	10117
+ * OP_MUL_V	10117	10055	10120
+ * OP_STOREP_F	10120	10116	0
+ * OP_LOAD_F	28	192	10121
+ * OP_NOT_F	10121	0	10122
+ * OP_IFNOT	10122	3	0
+ * OP_ADDRESS	28	192	10123
+ * OP_STOREP_F	235	10123	0
+ * OP_ADDRESS	28	166	10124
+ * OP_STOREP_V	10065	10124	0
+ * OP_ADDRESS	28	147	10127
+ * OP_STOREP_FNC	10009	10127	0
+ * OP_ADDRESS	28	182	10128
+ * OP_LOAD_F	28	182	10129
+ * OP_BITOR	10129	215	10130
+ * OP_STOREP_F	10130	10128	0
+ * OP_ADDRESS	28	182	10131
+ * OP_LOAD_F	28	182	10132
+ * OP_BITOR	10132	219	10133
+ * OP_STOREP_F	10133	10131	0
+ * OP_STORE_V	213	4	0
+ * OP_STORE_V	213	7	0
+ * OP_CALL2	480	0	0
+ * OP_NOT_F	1	0	10134
+ * OP_IFNOT	10134	10	0
+ * OP_STORE_V	10135	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_V	28	105	10136
+ * OP_STORE_V	10136	4	0
+ * OP_CALL1	475	0	0
+ * OP_STORE_V	1	4	0
+ * OP_CALL1	473	0	0
+ * OP_STORE_V	2127	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_S	28	196	10139
+ * OP_IFNOT	10139	34	0
+ * OP_ADDRESS	28	194	10140
+ * OP_ADDRESS	28	423	10141
+ * OP_STORE_V	30	4	0
+ * OP_STORE_V	197	7	0
+ * OP_LOAD_S	28	196	10142
+ * OP_STORE_V	10142	10	0
+ * OP_CALL3	468	0	0
+ * OP_STOREP_ENT	1	10141	0
+ * OP_STOREP_ENT	1	10140	0
+ * OP_LOAD_ENT	28	423	10143
+ * OP_NOT_ENT	10143	0	10144
+ * OP_IFNOT	10144	10	0
+ * OP_STORE_V	10089	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_V	28	105	10145
+ * OP_STORE_V	10145	4	0
+ * OP_CALL1	475	0	0
+ * OP_STORE_V	1	4	0
+ * OP_CALL1	473	0	0
+ * OP_STORE_V	2127	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_ENT	28	423	10148
+ * OP_LOAD_S	10148	129	10149
+ * OP_EQ_S	10149	10095	10150
+ * OP_IFNOT	10150	4	0
+ * OP_LOAD_FNC	28	362	10151
+ * OP_CALL0	10151	0	0
+ * OP_GOTO	3	0	0
+ * OP_ADDRESS	28	422	10152
+ * OP_STOREP_F	10099	10152	0
+ * OP_LOAD_FNC	28	361	10153
+ * OP_CALL0	10153	0	0
+ * OP_GOTO	5	0	0
+ * OP_ADDRESS	28	422	10154
+ * OP_STOREP_F	10099	10154	0
+ * OP_LOAD_FNC	28	361	10155
+ * OP_CALL0	10155	0	0
+ * OP_DONE	0	0	0
+ */
+
+void () flymonster_start_go = {
+
+   self.globaldef141 = DAMAGE_AIM;
+   self.globaldef169 = (self.angles * globaldef3304);
+   if ( !self.globaldef170 ) {
+
+      self.globaldef170 = MOVETYPE_BOUNCE;
+
+   }
+   self.globaldef144 = globaldef3305;
+   self.use = globaldef3296;
+   self.globaldef160 = (self.globaldef160 | FL_FLY);
+   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
+   if ( !globaldef463 (FALSE,FALSE) ) {
+
+      globaldef456 (globaldef3311);
+      globaldef456 (globaldef458 (self.origin));
+      globaldef456 (globaldef1354);
+
+   }
+   if ( self.target ) {
+
+      self.globaldef406 = find (world,targetname,self.target);
+      self.globaldef172 = find (world,targetname,self.target);
+      if ( !self.globaldef406 ) {
+
+         globaldef456 (globaldef3306);
+         globaldef456 (globaldef458 (self.origin));
+         globaldef456 (globaldef1354);
+
+      }
+      if ( (self.globaldef406.classname == globaldef3307) ) {
+
+         self.globaldef345 ();
+
+      } else {
+
+         self.globaldef405 = globaldef3308;
+
+      }
+      self.globaldef344 ();
+
+   } else {
+
+      self.globaldef405 = globaldef3308;
+      self.globaldef344 ();
+
+   }
+
+};
+string globaldef3311 /* = "flymonster in wall at: " */;
+
+void () flymonster_start;
+
+// function flymonster_start
+// function number 533 begins at statement 14710
+/*
+ * OP_ADDRESS	28	150	10157
+ * OP_LOAD_F	28	150	10158
+ * OP_CALL0	457	0	0
+ * OP_MUL_F	1	539	10159
+ * OP_ADD_F	10158	10159	10160
+ * OP_STOREP_F	10160	10157	0
+ * OP_ADDRESS	28	148	10161
+ * OP_STOREP_FNC	10114	10161	0
+ * OP_ADD_F	40	214	10162
+ * OP_STORE_F	10162	40	0
+ * OP_DONE	0	0	0
+ */
+
+void () flymonster_start = {
+
+   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+   self.think = globaldef3310;
+   total_monsters = (total_monsters + TRUE);
+
+};
+
+void () swimmonster_start_go;
+
+// function swimmonster_start_go
+// function number 534 begins at statement 14721
+/*
+ * OP_IFNOT	35	4	0
+ * OP_STORE_V	28	4	0
+ * OP_CALL1	465	0	0
+ * OP_RETURN	0	0	0
+ * OP_ADDRESS	28	163	10164
+ * OP_STOREP_F	252	10164	0
+ * OP_ADD_F	40	214	10165
+ * OP_STORE_F	10165	40	0
+ * OP_ADDRESS	28	191	10166
+ * OP_LOAD_V	28	117	10167
+ * OP_MUL_V	10167	10055	10170
+ * OP_STOREP_F	10170	10166	0
+ * OP_LOAD_F	28	192	10171
+ * OP_NOT_F	10171	0	10172
+ * OP_IFNOT	10172	3	0
+ * OP_ADDRESS	28	192	10173
+ * OP_STOREP_F	235	10173	0
+ * OP_ADDRESS	28	166	10174
+ * OP_STOREP_V	10177	10174	0
+ * OP_ADDRESS	28	147	10180
+ * OP_STOREP_FNC	10009	10180	0
+ * OP_ADDRESS	28	182	10181
+ * OP_LOAD_F	28	182	10182
+ * OP_BITOR	10182	216	10183
+ * OP_STOREP_F	10183	10181	0
+ * OP_ADDRESS	28	182	10184
+ * OP_LOAD_F	28	182	10185
+ * OP_BITOR	10185	219	10186
+ * OP_STOREP_F	10186	10184	0
+ * OP_LOAD_S	28	196	10187
+ * OP_IFNOT	10187	33	0
+ * OP_ADDRESS	28	194	10188
+ * OP_ADDRESS	28	423	10189
+ * OP_STORE_V	30	4	0
+ * OP_STORE_V	197	7	0
+ * OP_LOAD_S	28	196	10190
+ * OP_STORE_V	10190	10	0
+ * OP_CALL3	468	0	0
+ * OP_STOREP_ENT	1	10189	0
+ * OP_STOREP_ENT	1	10188	0
+ * OP_LOAD_ENT	28	423	10191
+ * OP_NOT_ENT	10191	0	10192
+ * OP_IFNOT	10192	10	0
+ * OP_STORE_V	10089	4	0
+ * OP_CALL1	473	0	0
+ * OP_LOAD_V	28	105	10193
+ * OP_STORE_V	10193	4	0
+ * OP_CALL1	475	0	0
+ * OP_STORE_V	1	4	0
+ * OP_CALL1	473	0	0
+ * OP_STORE_V	2127	4	0
+ * OP_CALL1	473	0	0
+ * OP_ADDRESS	28	191	10196
+ * OP_LOAD_ENT	28	194	10197
+ * OP_LOAD_V	10197	105	10198
+ * OP_LOAD_V	28	105	10201
+ * OP_SUB_V	10198	10201	10204
+ * OP_STORE_V	10204	4	0
+ * OP_CALL1	463	0	0
+ * OP_STOREP_F	1	10196	0
+ * OP_LOAD_FNC	28	362	10207
+ * OP_CALL0	10207	0	0
+ * OP_GOTO	5	0	0
+ * OP_ADDRESS	28	422	10208
+ * OP_STOREP_F	10099	10208	0
+ * OP_LOAD_FNC	28	361	10209
+ * OP_CALL0	10209	0	0
+ * OP_ADDRESS	28	150	10210
+ * OP_LOAD_F	28	150	10211
+ * OP_CALL0	457	0	0
+ * OP_MUL_F	1	539	10212
+ * OP_ADD_F	10211	10212	10213
+ * OP_STOREP_F	10213	10210	0
+ * OP_DONE	0	0	0
+ */
+
+void () swimmonster_start_go = {
+
+   if ( deathmatch ) {
+
+      remove (self);
+      return ;
+
+   }
+   self.globaldef141 = DAMAGE_AIM;
+   total_monsters = (total_monsters + TRUE);
+   self.globaldef169 = (self.angles * globaldef3304);
+   if ( !self.globaldef170 ) {
+
+      self.globaldef170 = MOVETYPE_BOUNCE;
+
+   }
+   self.globaldef144 = globaldef3314;
+   self.use = globaldef3296;
+   self.globaldef160 = (self.globaldef160 | FL_SWIM);
+   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
+   if ( self.target ) {
+
+      self.globaldef406 = find (world,targetname,self.target);
+      self.globaldef172 = find (world,targetname,self.target);
+      if ( !self.globaldef406 ) {
+
+         globaldef456 (globaldef3306);
+         globaldef456 (globaldef458 (self.origin));
+         globaldef456 (globaldef1354);
+
+      }
+      self.globaldef169 = globaldef446 ((self.globaldef172.origin - self.origin));
+      self.globaldef345 ();
+
+   } else {
+
+      self.globaldef405 = globaldef3308;
+      self.globaldef344 ();
+
+   }
+   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+
+};
+vector globaldef3314 /* = '0.000 0.000 10.000' */;
+
+void () swimmonster_start;
+
+// function swimmonster_start
+// function number 535 begins at statement 14795
+/*
+ * OP_ADDRESS	28	150	10215
+ * OP_LOAD_F	28	150	10216
+ * OP_CALL0	457	0	0
+ * OP_MUL_F	1	539	10217
+ * OP_ADD_F	10216	10217	10218
+ * OP_STOREP_F	10218	10215	0
+ * OP_ADDRESS	28	148	10219
+ * OP_STOREP_FNC	10163	10219	0
+ * OP_ADD_F	40	214	10220
+ * OP_STORE_F	10220	40	0
+ * OP_DONE	0	0	0
+ */
+
+void () swimmonster_start = {
+
+   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+   self.think = globaldef3313;
+   total_monsters = (total_monsters + TRUE);
+
+};

@@ -581,7 +581,7 @@ void (float normal) SUB_AttackFinished = {
    }
 
 };
-float (entity globaldef1639_off3588) visible;
+float (entity globaldef1639) visible;
 
 void (void() thinkst) SUB_CheckRefire;
 

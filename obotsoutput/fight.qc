@@ -1,29 +1,29 @@
-float (float globaldef1619_off3510) anglemod;
+float (float globaldef1619) anglemod;
 
-void () func1030_fs20525;
+void () knight_atk1;
 
-void () func1019_fs20474;
+void () knight_runatk1;
 
-void () func716_fs18677;
+void () ogre_smash1;
 
-void () func702_fs18571;
+void () ogre_swing1;
 
-void () func925_fs19770;
+void () sham_smash1;
 
-void () func947_fs19978;
+void () sham_swingr1;
 
-void () func938_fs19929;
-float () func887_fs19519;
+void () sham_swingl1;
+float () DemonCheckAttack;
 
-void (float globaldef3923_off12861) func888_fs19537;
+void (float globaldef3923) Demon_Melee;
 
-void (vector globaldef1711_off3807) ChooseTurn;
+void (vector globaldef1711) ChooseTurn;
 
 void () ai_face;
-float globaldef1534_off3191 /* = 0.000 */;
-float globaldef1535_off3192 /* = 0.000 */;
-float globaldef1536_off3193 /* = 0.000 */;
-float globaldef1537_off3194 /* = 0.000 */;
+float globaldef1534 /* = 0.000 */;
+float globaldef1535 /* = 0.000 */;
+float globaldef1536 /* = 0.000 */;
+float globaldef1537 /* = 0.000 */;
 
 void () knight_attack;
 
@@ -52,16 +52,16 @@ void () knight_attack;
 
 void () knight_attack = {
 
-   local float globaldef1539_off3196;
+   local float globaldef1539;
 
-   globaldef1539_off3196 = vlen (((self.enemy.origin + self.enemy.globaldef144_off166) - (self.origin + self.globaldef144_off166)));
-   if ( (globaldef1539_off3196 < globaldef1439_off2805) ) {
+   globaldef1539 = vlen (((self.enemy.origin + self.enemy.globaldef144) - (self.origin + self.globaldef144)));
+   if ( (globaldef1539 < globaldef1439) ) {
 
-      globaldef1523_off3180 ();
+      globaldef1523 ();
 
    } else {
 
-      globaldef1524_off3181 ();
+      globaldef1524 ();
 
    }
 
@@ -153,16 +153,16 @@ float () CheckAttack;
  */
 float () CheckAttack = {
 
-   local vector globaldef1541_off3222;
-   local vector globaldef1545_off3225;
-   local entity globaldef1549_off3228;
-   local float globaldef1550_off3229;
+   local vector globaldef1541;
+   local vector globaldef1545;
+   local entity globaldef1549;
+   local float globaldef1550;
 
-   globaldef1549_off3228 = self.enemy;
-   globaldef1541_off3222 = (self.origin + self.globaldef144_off166);
-   globaldef1545_off3225 = (globaldef1549_off3228.origin + globaldef1549_off3228.globaldef144_off166);
-   globaldef449_off466 (globaldef1541_off3222,globaldef1545_off3225,FALSE,self);
-   if ( (trace_ent != globaldef1549_off3228) ) {
+   globaldef1549 = self.enemy;
+   globaldef1541 = (self.origin + self.globaldef144);
+   globaldef1545 = (globaldef1549.origin + globaldef1549.globaldef144);
+   globaldef449 (globaldef1541,globaldef1545,FALSE,self);
+   if ( (trace_ent != globaldef1549) ) {
 
       return ( FALSE );
 
@@ -172,17 +172,17 @@ float () CheckAttack = {
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_MELEE) ) {
+   if ( (globaldef1536 == RANGE_MELEE) ) {
 
-      if ( self.globaldef348_off365 ) {
+      if ( self.globaldef348 ) {
 
-         if ( (self.classname == globaldef1551_off3254) ) {
+         if ( (self.classname == globaldef1551) ) {
 
-            globaldef1538_off3195 ();
+            globaldef1538 ();
 
          } else {
 
-            self.globaldef348_off365 ();
+            self.globaldef348 ();
 
          }
          return ( TRUE );
@@ -190,7 +190,7 @@ float () CheckAttack = {
       }
 
    }
-   if ( !self.globaldef347_off364 ) {
+   if ( !self.globaldef347 ) {
 
       return ( FALSE );
 
@@ -200,67 +200,67 @@ float () CheckAttack = {
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_FAR) ) {
+   if ( (globaldef1536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_MELEE) ) {
+   if ( (globaldef1536 == RANGE_MELEE) ) {
 
-      globaldef1550_off3229 = globaldef1552_off3263;
+      globaldef1550 = globaldef1552;
       self.attack_finished = FALSE;
 
    } else {
 
-      if ( (globaldef1536_off3193 == RANGE_NEAR) ) {
+      if ( (globaldef1536 == RANGE_NEAR) ) {
 
-         if ( self.globaldef348_off365 ) {
+         if ( self.globaldef348 ) {
 
-            globaldef1550_off3229 = globaldef1553_off3267;
+            globaldef1550 = globaldef1553;
 
          } else {
 
-            globaldef1550_off3229 = globaldef1300_off1644;
+            globaldef1550 = globaldef1300;
 
          }
 
       } else {
 
-         if ( (globaldef1536_off3193 == RANGE_MID) ) {
+         if ( (globaldef1536 == RANGE_MID) ) {
 
-            if ( self.globaldef348_off365 ) {
+            if ( self.globaldef348 ) {
 
-               globaldef1550_off3229 = globaldef1554_off3270;
+               globaldef1550 = globaldef1554;
 
             } else {
 
-               globaldef1550_off3229 = 0.100;
+               globaldef1550 = 0.100;
 
             }
 
          } else {
 
-            globaldef1550_off3229 = FALSE;
+            globaldef1550 = FALSE;
 
          }
 
       }
 
    }
-   if ( (globaldef440_off457 () < globaldef1550_off3229) ) {
+   if ( (globaldef440 () < globaldef1550) ) {
 
-      self.globaldef347_off364 ();
-      globaldef1517_off3163 ((FL_SWIM * globaldef440_off457 ()));
+      self.globaldef347 ();
+      globaldef1517 ((FL_SWIM * globaldef440 ()));
       return ( TRUE );
 
    }
    return ( FALSE );
 
 };
-string globaldef1551_off3254 /* = "monster_knight" */;
-float globaldef1552_off3263 /* = 0.900 */;
-float globaldef1553_off3267 /* = 0.200 */;
-float globaldef1554_off3270 /* = 0.050 */;
+string globaldef1551 /* = "monster_knight" */;
+float globaldef1552 /* = 0.900 */;
+float globaldef1553 /* = 0.200 */;
+float globaldef1554 /* = 0.050 */;
 
 // function ai_face
 // function number 165 begins at statement 2809
@@ -279,14 +279,14 @@ float globaldef1554_off3270 /* = 0.050 */;
 
 void () ai_face = {
 
-   self.globaldef169_off191 = globaldef446_off463 ((self.enemy.origin - self.origin));
-   globaldef477_off494 ();
+   self.globaldef169 = globaldef446 ((self.enemy.origin - self.origin));
+   globaldef477 ();
 
 };
-float (entity globaldef1648_off3615) infront;
-float (entity globaldef1628_off3555) range;
+float (entity globaldef1648) infront;
+float (entity globaldef1628) range;
 
-void (float globaldef1558_off3288) ai_charge;
+void (float globaldef1558) ai_charge;
 
 // function ai_charge
 // function number 166 begins at statement 2819
@@ -297,10 +297,10 @@ void (float globaldef1558_off3288) ai_charge;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1558_off3288) ai_charge = {
+void (float globaldef1558) ai_charge = {
 
-   globaldef1533_off3190 ();
-   globaldef487_off504 (globaldef1558_off3288);
+   globaldef1533 ();
+   globaldef487 (globaldef1558);
 
 };
 
@@ -339,15 +339,15 @@ void () ai_charge_side;
 
 void () ai_charge_side = {
 
-   local vector globaldef1560_off3290;
-   local float globaldef1564_off3293;
+   local vector globaldef1560;
+   local float globaldef1564;
 
-   self.globaldef169_off191 = globaldef446_off463 ((self.enemy.origin - self.origin));
-   globaldef477_off494 ();
+   self.globaldef169 = globaldef446 ((self.enemy.origin - self.origin));
+   globaldef477 ();
    makevectors (self.angles);
-   globaldef1560_off3290 = (self.enemy.origin - (SVC_INTERMISSION * v_right));
-   globaldef1564_off3293 = globaldef446_off463 ((globaldef1560_off3290 - self.origin));
-   globaldef463_off480 (globaldef1564_off3293,globaldef1384_off2323);
+   globaldef1560 = (self.enemy.origin - (SVC_INTERMISSION * v_right));
+   globaldef1564 = globaldef446 ((globaldef1560 - self.origin));
+   globaldef463 (globaldef1564,globaldef1384);
 
 };
 
@@ -388,22 +388,22 @@ void () ai_melee;
 
 void () ai_melee = {
 
-   local vector globaldef1566_off3325;
-   local float globaldef1570_off3328;
+   local vector globaldef1566;
+   local float globaldef1570;
 
    if ( !self.enemy ) {
 
       return ;
 
    }
-   globaldef1566_off3325 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef1566_off3325) > globaldef1337_off2019) ) {
+   globaldef1566 = (self.enemy.origin - self.origin);
+   if ( (vlen (globaldef1566) > globaldef1337) ) {
 
       return ;
 
    }
-   globaldef1570_off3328 = (((globaldef440_off457 () + globaldef440_off457 ()) + globaldef440_off457 ()) * MOVETYPE_WALK);
-   globaldef505_off522 (self.enemy,self,self,globaldef1570_off3328);
+   globaldef1570 = (((globaldef440 () + globaldef440 ()) + globaldef440 ()) * MOVETYPE_WALK);
+   globaldef505 (self.enemy,self,self,globaldef1570);
 
 };
 
@@ -452,28 +452,28 @@ void () ai_melee_side;
 
 void () ai_melee_side = {
 
-   local vector globaldef1572_off3347;
-   local float globaldef1576_off3350;
+   local vector globaldef1572;
+   local float globaldef1576;
 
    if ( !self.enemy ) {
 
       return ;
 
    }
-   globaldef1559_off3289 ();
-   globaldef1572_off3347 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef1572_off3347) > globaldef1337_off2019) ) {
+   globaldef1559 ();
+   globaldef1572 = (self.enemy.origin - self.origin);
+   if ( (vlen (globaldef1572) > globaldef1337) ) {
 
       return ;
 
    }
-   if ( !globaldef507_off524 (self.enemy,self) ) {
+   if ( !globaldef507 (self.enemy,self) ) {
 
       return ;
 
    }
-   globaldef1576_off3350 = (((globaldef440_off457 () + globaldef440_off457 ()) + globaldef440_off457 ()) * MOVETYPE_WALK);
-   globaldef505_off522 (self.enemy,self,self,globaldef1576_off3350);
+   globaldef1576 = (((globaldef440 () + globaldef440 ()) + globaldef440 ()) * MOVETYPE_WALK);
+   globaldef505 (self.enemy,self,self,globaldef1576);
 
 };
 float () SoldierCheckAttack;
@@ -544,21 +544,21 @@ float () SoldierCheckAttack;
  */
 float () SoldierCheckAttack = {
 
-   local vector globaldef1578_off3371;
-   local vector globaldef1582_off3374;
-   local entity globaldef1586_off3377;
-   local float globaldef1587_off3378;
+   local vector globaldef1578;
+   local vector globaldef1582;
+   local entity globaldef1586;
+   local float globaldef1587;
 
-   globaldef1586_off3377 = self.enemy;
-   globaldef1578_off3371 = (self.origin + self.globaldef144_off166);
-   globaldef1582_off3374 = (globaldef1586_off3377.origin + globaldef1586_off3377.globaldef144_off166);
-   globaldef449_off466 (globaldef1578_off3371,globaldef1582_off3374,FALSE,self);
+   globaldef1586 = self.enemy;
+   globaldef1578 = (self.origin + self.globaldef144);
+   globaldef1582 = (globaldef1586.origin + globaldef1586.globaldef144);
+   globaldef449 (globaldef1578,globaldef1582,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1586_off3377) ) {
+   if ( (trace_ent != globaldef1586) ) {
 
       return ( FALSE );
 
@@ -568,43 +568,43 @@ float () SoldierCheckAttack = {
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_FAR) ) {
+   if ( (globaldef1536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_MELEE) ) {
+   if ( (globaldef1536 == RANGE_MELEE) ) {
 
-      globaldef1587_off3378 = globaldef1552_off3263;
+      globaldef1587 = globaldef1552;
 
    } else {
 
-      if ( (globaldef1536_off3193 == RANGE_NEAR) ) {
+      if ( (globaldef1536 == RANGE_NEAR) ) {
 
-         globaldef1587_off3378 = globaldef1300_off1644;
+         globaldef1587 = globaldef1300;
 
       } else {
 
-         if ( (globaldef1536_off3193 == RANGE_MID) ) {
+         if ( (globaldef1536 == RANGE_MID) ) {
 
-            globaldef1587_off3378 = globaldef1554_off3270;
+            globaldef1587 = globaldef1554;
 
          } else {
 
-            globaldef1587_off3378 = FALSE;
+            globaldef1587 = FALSE;
 
          }
 
       }
 
    }
-   if ( (globaldef440_off457 () < globaldef1587_off3378) ) {
+   if ( (globaldef440 () < globaldef1587) ) {
 
-      self.globaldef347_off364 ();
-      globaldef1517_off3163 ((TRUE + globaldef440_off457 ()));
-      if ( (globaldef440_off457 () < globaldef1588_off3409) ) {
+      self.globaldef347 ();
+      globaldef1517 ((TRUE + globaldef440 ()));
+      if ( (globaldef440 () < globaldef1588) ) {
 
-         self.globaldef353_off370 = !self.globaldef353_off370;
+         self.globaldef353 = !self.globaldef353;
 
       }
       return ( TRUE );
@@ -613,7 +613,7 @@ float () SoldierCheckAttack = {
    return ( FALSE );
 
 };
-float globaldef1588_off3409 /* = 0.300 */;
+float globaldef1588 /* = 0.300 */;
 float () ShamCheckAttack;
 
 // function ShamCheckAttack
@@ -678,16 +678,16 @@ float () ShamCheckAttack;
  */
 float () ShamCheckAttack = {
 
-   local vector globaldef1590_off3415;
-   local vector globaldef1594_off3418;
-   local entity globaldef1598_off3421;
-   local float globaldef1599_off3422;
+   local vector globaldef1590;
+   local vector globaldef1594;
+   local entity globaldef1598;
+   local float globaldef1599;
 
-   if ( (globaldef1536_off3193 == RANGE_MELEE) ) {
+   if ( (globaldef1536 == RANGE_MELEE) ) {
 
-      if ( globaldef507_off524 (self.enemy,self) ) {
+      if ( globaldef507 (self.enemy,self) ) {
 
-         self.globaldef355_off372 = AS_MELEE;
+         self.globaldef355 = AS_MELEE;
          return ( TRUE );
 
       }
@@ -698,37 +698,37 @@ float () ShamCheckAttack = {
       return ( FALSE );
 
    }
-   if ( !globaldef1534_off3191 ) {
+   if ( !globaldef1534 ) {
 
       return ( FALSE );
 
    }
-   globaldef1598_off3421 = self.enemy;
-   globaldef1590_off3415 = (self.origin + self.globaldef144_off166);
-   globaldef1594_off3418 = (globaldef1598_off3421.origin + globaldef1598_off3421.globaldef144_off166);
-   if ( (vlen ((globaldef1590_off3415 - globaldef1594_off3418)) > globaldef723_off740) ) {
+   globaldef1598 = self.enemy;
+   globaldef1590 = (self.origin + self.globaldef144);
+   globaldef1594 = (globaldef1598.origin + globaldef1598.globaldef144);
+   if ( (vlen ((globaldef1590 - globaldef1594)) > globaldef723) ) {
 
       return ( FALSE );
 
    }
-   globaldef449_off466 (globaldef1590_off3415,globaldef1594_off3418,FALSE,self);
+   globaldef449 (globaldef1590,globaldef1594,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1598_off3421) ) {
+   if ( (trace_ent != globaldef1598) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_FAR) ) {
+   if ( (globaldef1536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   self.globaldef355_off372 = AS_MISSILE;
-   globaldef1517_off3163 ((FL_SWIM + (FL_SWIM * globaldef440_off457 ())));
+   self.globaldef355 = AS_MISSILE;
+   globaldef1517 ((FL_SWIM + (FL_SWIM * globaldef440 ())));
    return ( TRUE );
 
 };
@@ -804,16 +804,16 @@ float () OgreCheckAttack;
  */
 float () OgreCheckAttack = {
 
-   local vector globaldef1601_off3459;
-   local vector globaldef1605_off3462;
-   local entity globaldef1609_off3465;
-   local float globaldef1610_off3466;
+   local vector globaldef1601;
+   local vector globaldef1605;
+   local entity globaldef1609;
+   local float globaldef1610;
 
-   if ( (globaldef1536_off3193 == RANGE_MELEE) ) {
+   if ( (globaldef1536 == RANGE_MELEE) ) {
 
-      if ( globaldef507_off524 (self.enemy,self) ) {
+      if ( globaldef507 (self.enemy,self) ) {
 
-         self.globaldef355_off372 = AS_MELEE;
+         self.globaldef355 = AS_MELEE;
          return ( TRUE );
 
       }
@@ -824,21 +824,21 @@ float () OgreCheckAttack = {
       return ( FALSE );
 
    }
-   if ( !globaldef1534_off3191 ) {
+   if ( !globaldef1534 ) {
 
       return ( FALSE );
 
    }
-   globaldef1609_off3465 = self.enemy;
-   globaldef1601_off3459 = (self.origin + self.globaldef144_off166);
-   globaldef1605_off3462 = (globaldef1609_off3465.origin + globaldef1609_off3465.globaldef144_off166);
-   globaldef449_off466 (globaldef1601_off3459,globaldef1605_off3462,FALSE,self);
+   globaldef1609 = self.enemy;
+   globaldef1601 = (self.origin + self.globaldef144);
+   globaldef1605 = (globaldef1609.origin + globaldef1609.globaldef144);
+   globaldef449 (globaldef1601,globaldef1605,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1609_off3465) ) {
+   if ( (trace_ent != globaldef1609) ) {
 
       return ( FALSE );
 
@@ -848,33 +848,33 @@ float () OgreCheckAttack = {
       return ( FALSE );
 
    }
-   if ( (globaldef1536_off3193 == RANGE_FAR) ) {
+   if ( (globaldef1536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    } else {
 
-      if ( (globaldef1536_off3193 == RANGE_NEAR) ) {
+      if ( (globaldef1536 == RANGE_NEAR) ) {
 
-         globaldef1610_off3466 = 0.100;
+         globaldef1610 = 0.100;
 
       } else {
 
-         if ( (globaldef1536_off3193 == RANGE_MID) ) {
+         if ( (globaldef1536 == RANGE_MID) ) {
 
-            globaldef1610_off3466 = globaldef1554_off3270;
+            globaldef1610 = globaldef1554;
 
          } else {
 
-            globaldef1610_off3466 = FALSE;
+            globaldef1610 = FALSE;
 
          }
 
       }
 
    }
-   self.globaldef355_off372 = AS_MISSILE;
-   globaldef1517_off3163 ((TRUE + (FL_SWIM * globaldef440_off457 ())));
+   self.globaldef355 = AS_MISSILE;
+   globaldef1517 ((TRUE + (FL_SWIM * globaldef440 ())));
    return ( TRUE );
 
 };
