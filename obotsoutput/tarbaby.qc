@@ -9,9 +9,9 @@ void () tbaby_stand1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_stand1 = [ 0.000, globaldef4971 ] {
+void () tbaby_stand1 = [ 0.000, tbaby_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -25,9 +25,9 @@ void () tbaby_hang1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_hang1 = [ 0.000, globaldef4972 ] {
+void () tbaby_hang1 = [ 0.000, tbaby_hang1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -41,9 +41,9 @@ void () tbaby_walk1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk1 = [ 0.000, globaldef4974 ] {
+void () tbaby_walk1 = [ 0.000, tbaby_walk2 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -57,9 +57,9 @@ void () tbaby_walk2;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk2 = [ 1.000, globaldef4975 ] {
+void () tbaby_walk2 = [ 1.000, tbaby_walk3 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -73,9 +73,9 @@ void () tbaby_walk3;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk3 = [ 2.000, globaldef4976 ] {
+void () tbaby_walk3 = [ 2.000, tbaby_walk4 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -89,9 +89,9 @@ void () tbaby_walk4;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk4 = [ 3.000, globaldef4977 ] {
+void () tbaby_walk4 = [ 3.000, tbaby_walk5 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -105,9 +105,9 @@ void () tbaby_walk5;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk5 = [ 4.000, globaldef4978 ] {
+void () tbaby_walk5 = [ 4.000, tbaby_walk6 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -121,9 +121,9 @@ void () tbaby_walk6;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk6 = [ 5.000, globaldef4979 ] {
+void () tbaby_walk6 = [ 5.000, tbaby_walk7 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -137,9 +137,9 @@ void () tbaby_walk7;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk7 = [ 6.000, globaldef4980 ] {
+void () tbaby_walk7 = [ 6.000, tbaby_walk8 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -153,9 +153,9 @@ void () tbaby_walk8;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk8 = [ 7.000, globaldef4981 ] {
+void () tbaby_walk8 = [ 7.000, tbaby_walk9 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -169,9 +169,9 @@ void () tbaby_walk9;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk9 = [ 8.000, globaldef4982 ] {
+void () tbaby_walk9 = [ 8.000, tbaby_walk10 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -185,9 +185,9 @@ void () tbaby_walk10;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk10 = [ 9.000, globaldef4983 ] {
+void () tbaby_walk10 = [ 9.000, tbaby_walk11 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -202,9 +202,9 @@ void () tbaby_walk11;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk11 = [ 10.000, globaldef4984 ] {
+void () tbaby_walk11 = [ 10.000, tbaby_walk12 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -219,9 +219,9 @@ void () tbaby_walk12;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk12 = [ 11.000, globaldef4985 ] {
+void () tbaby_walk12 = [ 11.000, tbaby_walk13 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -236,9 +236,9 @@ void () tbaby_walk13;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk13 = [ 12.000, globaldef4986 ] {
+void () tbaby_walk13 = [ 12.000, tbaby_walk14 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -253,9 +253,9 @@ void () tbaby_walk14;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk14 = [ 13.000, globaldef4987 ] {
+void () tbaby_walk14 = [ 13.000, tbaby_walk15 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -270,9 +270,9 @@ void () tbaby_walk15;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk15 = [ 14.000, globaldef4988 ] {
+void () tbaby_walk15 = [ 14.000, tbaby_walk16 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -287,9 +287,9 @@ void () tbaby_walk16;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk16 = [ 15.000, globaldef4989 ] {
+void () tbaby_walk16 = [ 15.000, tbaby_walk17 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -304,9 +304,9 @@ void () tbaby_walk17;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk17 = [ 16.000, globaldef4990 ] {
+void () tbaby_walk17 = [ 16.000, tbaby_walk18 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -321,9 +321,9 @@ void () tbaby_walk18;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk18 = [ 17.000, globaldef4991 ] {
+void () tbaby_walk18 = [ 17.000, tbaby_walk19 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -338,9 +338,9 @@ void () tbaby_walk19;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk19 = [ 18.000, globaldef4992 ] {
+void () tbaby_walk19 = [ 18.000, tbaby_walk20 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -355,9 +355,9 @@ void () tbaby_walk20;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk20 = [ 19.000, globaldef4993 ] {
+void () tbaby_walk20 = [ 19.000, tbaby_walk21 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -372,9 +372,9 @@ void () tbaby_walk21;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk21 = [ 20.000, globaldef4994 ] {
+void () tbaby_walk21 = [ 20.000, tbaby_walk22 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -389,9 +389,9 @@ void () tbaby_walk22;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk22 = [ 21.000, globaldef4995 ] {
+void () tbaby_walk22 = [ 21.000, tbaby_walk23 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -406,9 +406,9 @@ void () tbaby_walk23;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk23 = [ 22.000, globaldef4996 ] {
+void () tbaby_walk23 = [ 22.000, tbaby_walk24 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -423,9 +423,9 @@ void () tbaby_walk24;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk24 = [ 23.000, globaldef4997 ] {
+void () tbaby_walk24 = [ 23.000, tbaby_walk25 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -440,9 +440,9 @@ void () tbaby_walk25;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_walk25 = [ 24.000, globaldef4973 ] {
+void () tbaby_walk25 = [ 24.000, tbaby_walk1 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -456,9 +456,9 @@ void () tbaby_run1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run1 = [ 25.000, globaldef4999 ] {
+void () tbaby_run1 = [ 25.000, tbaby_run2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -472,9 +472,9 @@ void () tbaby_run2;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run2 = [ 26.000, globaldef5000 ] {
+void () tbaby_run2 = [ 26.000, tbaby_run3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -488,9 +488,9 @@ void () tbaby_run3;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run3 = [ 27.000, globaldef5001 ] {
+void () tbaby_run3 = [ 27.000, tbaby_run4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -504,9 +504,9 @@ void () tbaby_run4;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run4 = [ 28.000, globaldef5002 ] {
+void () tbaby_run4 = [ 28.000, tbaby_run5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -520,9 +520,9 @@ void () tbaby_run5;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run5 = [ 29.000, globaldef5003 ] {
+void () tbaby_run5 = [ 29.000, tbaby_run6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -536,9 +536,9 @@ void () tbaby_run6;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run6 = [ 30.000, globaldef5004 ] {
+void () tbaby_run6 = [ 30.000, tbaby_run7 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -552,9 +552,9 @@ void () tbaby_run7;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run7 = [ 31.000, globaldef5005 ] {
+void () tbaby_run7 = [ 31.000, tbaby_run8 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -568,9 +568,9 @@ void () tbaby_run8;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run8 = [ 32.000, globaldef5006 ] {
+void () tbaby_run8 = [ 32.000, tbaby_run9 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -584,9 +584,9 @@ void () tbaby_run9;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run9 = [ 33.000, globaldef5007 ] {
+void () tbaby_run9 = [ 33.000, tbaby_run10 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -600,9 +600,9 @@ void () tbaby_run10;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run10 = [ 34.000, globaldef5008 ] {
+void () tbaby_run10 = [ 34.000, tbaby_run11 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -617,9 +617,9 @@ void () tbaby_run11;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run11 = [ 35.000, globaldef5009 ] {
+void () tbaby_run11 = [ 35.000, tbaby_run12 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -634,9 +634,9 @@ void () tbaby_run12;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run12 = [ 36.000, globaldef5010 ] {
+void () tbaby_run12 = [ 36.000, tbaby_run13 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -651,9 +651,9 @@ void () tbaby_run13;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run13 = [ 37.000, globaldef5011 ] {
+void () tbaby_run13 = [ 37.000, tbaby_run14 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -668,9 +668,9 @@ void () tbaby_run14;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run14 = [ 38.000, globaldef5012 ] {
+void () tbaby_run14 = [ 38.000, tbaby_run15 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -685,9 +685,9 @@ void () tbaby_run15;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run15 = [ 39.000, globaldef5013 ] {
+void () tbaby_run15 = [ 39.000, tbaby_run16 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -702,9 +702,9 @@ void () tbaby_run16;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run16 = [ 40.000, globaldef5014 ] {
+void () tbaby_run16 = [ 40.000, tbaby_run17 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -719,9 +719,9 @@ void () tbaby_run17;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run17 = [ 41.000, globaldef5015 ] {
+void () tbaby_run17 = [ 41.000, tbaby_run18 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -736,9 +736,9 @@ void () tbaby_run18;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run18 = [ 42.000, globaldef5016 ] {
+void () tbaby_run18 = [ 42.000, tbaby_run19 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -753,9 +753,9 @@ void () tbaby_run19;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run19 = [ 43.000, globaldef5017 ] {
+void () tbaby_run19 = [ 43.000, tbaby_run20 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -770,9 +770,9 @@ void () tbaby_run20;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run20 = [ 44.000, globaldef5018 ] {
+void () tbaby_run20 = [ 44.000, tbaby_run21 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -787,9 +787,9 @@ void () tbaby_run21;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run21 = [ 45.000, globaldef5019 ] {
+void () tbaby_run21 = [ 45.000, tbaby_run22 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -804,9 +804,9 @@ void () tbaby_run22;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run22 = [ 46.000, globaldef5020 ] {
+void () tbaby_run22 = [ 46.000, tbaby_run23 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -821,9 +821,9 @@ void () tbaby_run23;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run23 = [ 47.000, globaldef5021 ] {
+void () tbaby_run23 = [ 47.000, tbaby_run24 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -838,9 +838,9 @@ void () tbaby_run24;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run24 = [ 48.000, globaldef5022 ] {
+void () tbaby_run24 = [ 48.000, tbaby_run25 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -855,9 +855,9 @@ void () tbaby_run25;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_run25 = [ 49.000, globaldef4998 ] {
+void () tbaby_run25 = [ 49.000, tbaby_run1 ] {
 
-   globaldef1734 (FL_SWIM);
+   ai_run (FL_SWIM);
 
 };
 
@@ -930,43 +930,43 @@ void () Tar_JumpTouch;
 
 void () Tar_JumpTouch = {
 
-   local float globaldef5025;
+   local float ldmg;
 
-   if ( (other.globaldef141 && (other.classname != self.classname)) ) {
+   if ( (other.globaldef000141 && (other.globaldef000107 != self.globaldef000107)) ) {
 
-      if ( (vlen (self.velocity) > globaldef2007) ) {
+      if ( (vlen (self.globaldef000091) > globaldef002007) ) {
 
-         globaldef5025 = (MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * globaldef440 ()));
-         globaldef505 (other,self,self,globaldef5025);
-         sound (self,CHAN_WEAPON,globaldef5026,TRUE,ATTN_NORM);
+         ldmg = (MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * random ()));
+         T_Damage (other,self,self,ldmg);
+         sound (self,CHAN_WEAPON,globaldef005026,TRUE,ATTN_NORM);
 
       }
 
    } else {
 
-      sound (self,CHAN_WEAPON,globaldef5027,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef005027,TRUE,ATTN_NORM);
 
    }
-   if ( !globaldef469 (self) ) {
+   if ( !checkbottom (self) ) {
 
-      if ( (self.globaldef160 & FL_ONGROUND) ) {
+      if ( (self.globaldef000160 & FL_ONGROUND) ) {
 
-         self.globaldef124 = SUB_Null;
-         self.think = globaldef4998;
-         self.movetype = MOVETYPE_STEP;
-         self.nextthink = (time + 0.100);
+         self.globaldef000124 = SUB_Null;
+         self.globaldef000126 = tbaby_run1;
+         self.globaldef000081 = MOVETYPE_STEP;
+         self.globaldef000128 = (time + globaldef001488);
 
       }
       return ;
 
    }
-   self.globaldef124 = SUB_Null;
-   self.think = globaldef5023;
-   self.nextthink = (time + 0.100);
+   self.globaldef000124 = SUB_Null;
+   self.globaldef000126 = tbaby_jump1;
+   self.globaldef000128 = (time + globaldef001488);
 
 };
-string globaldef5026 /* = "blob/hit1.wav" */;
-string globaldef5027 /* = "blob/land1.wav" */;
+string globaldef005026 /* = "blob/hit1.wav" */;
+string globaldef005027 /* = "blob/land1.wav" */;
 
 void () tbaby_jump5;
 
@@ -979,7 +979,7 @@ void () tbaby_fly1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_fly1 = [ 56.000, globaldef5030 ] {
+void () tbaby_fly1 = [ 56.000, tbaby_fly2 ] {
 
 
 };
@@ -993,7 +993,7 @@ void () tbaby_fly2;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_fly2 = [ 57.000, globaldef5031 ] {
+void () tbaby_fly2 = [ 57.000, tbaby_fly3 ] {
 
 
 };
@@ -1007,7 +1007,7 @@ void () tbaby_fly3;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_fly3 = [ 58.000, globaldef5032 ] {
+void () tbaby_fly3 = [ 58.000, tbaby_fly4 ] {
 
 
 };
@@ -1029,12 +1029,12 @@ void () tbaby_fly4;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_fly4 = [ 59.000, globaldef5029 ] {
+void () tbaby_fly4 = [ 59.000, tbaby_fly1 ] {
 
-   self.cnt = (self.cnt + TRUE);
-   if ( (self.cnt == MOVETYPE_STEP) ) {
+   self.globaldef000409 = (self.globaldef000409 + TRUE);
+   if ( (self.globaldef000409 == MOVETYPE_STEP) ) {
 
-      globaldef5028 ();
+      tbaby_jump5 ();
 
    }
 
@@ -1048,9 +1048,9 @@ void () tbaby_fly4 = [ 59.000, globaldef5029 ] {
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump1 = [ 50.000, globaldef5033 ] {
+void () tbaby_jump1 = [ 50.000, tbaby_jump2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1064,9 +1064,9 @@ void () tbaby_jump2;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump2 = [ 51.000, globaldef5034 ] {
+void () tbaby_jump2 = [ 51.000, tbaby_jump3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1080,9 +1080,9 @@ void () tbaby_jump3;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump3 = [ 52.000, globaldef5035 ] {
+void () tbaby_jump3 = [ 52.000, tbaby_jump4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1096,9 +1096,9 @@ void () tbaby_jump4;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump4 = [ 53.000, globaldef5028 ] {
+void () tbaby_jump4 = [ 53.000, tbaby_jump5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1139,20 +1139,20 @@ void () tbaby_jump4 = [ 53.000, globaldef5028 ] {
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump5 = [ 54.000, globaldef5036 ] {
+void () tbaby_jump5 = [ 54.000, tbaby_jump6 ] {
 
-   self.movetype = MOVETYPE_BOUNCE;
-   self.globaldef124 = globaldef5024;
-   makevectors (self.angles);
-   self.globaldef86 = (self.globaldef86 + TRUE);
-   self.velocity = ((v_forward * globaldef723) + globaldef4458);
-   self.globaldef94 = (self.globaldef94 + (globaldef440 () * globaldef1336));
-   if ( (self.globaldef160 & FL_ONGROUND) ) {
+   self.globaldef000081 = MOVETYPE_BOUNCE;
+   self.globaldef000124 = Tar_JumpTouch;
+   makevectors (self.globaldef000095);
+   self.globaldef000086 = (self.globaldef000086 + TRUE);
+   self.globaldef000091 = ((v_forward * globaldef000723) + globaldef004458);
+   self.globaldef000094 = (self.globaldef000094 + (random () * globaldef001336));
+   if ( (self.globaldef000160 & FL_ONGROUND) ) {
 
-      self.globaldef160 = (self.globaldef160 - FL_ONGROUND);
+      self.globaldef000160 = (self.globaldef000160 - FL_ONGROUND);
 
    }
-   self.cnt = FALSE;
+   self.globaldef000409 = FALSE;
 
 };
 
@@ -1165,7 +1165,7 @@ void () tbaby_jump6;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_jump6 = [ 55.000, globaldef5029 ] {
+void () tbaby_jump6 = [ 55.000, tbaby_fly1 ] {
 
 
 };
@@ -1181,9 +1181,9 @@ void () tbaby_die1;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_die1 = [ 60.000, globaldef5038 ] {
+void () tbaby_die1 = [ 60.000, tbaby_die2 ] {
 
-   self.globaldef141 = DAMAGE_NO;
+   self.globaldef000141 = DAMAGE_NO;
 
 };
 
@@ -1234,20 +1234,20 @@ void () tbaby_die2;
  * OP_DONE	0	0	0
  */
 
-void () tbaby_die2 = [ 60.000, globaldef4998 ] {
+void () tbaby_die2 = [ 60.000, tbaby_run1 ] {
 
-   globaldef1772 (self,self,globaldef1638,world);
-   sound (self,CHAN_VOICE,globaldef5039,TRUE,ATTN_NORM);
-   self.origin = (self.origin - (FL_CLIENT * globaldef442 (self.velocity)));
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_TAREXPLOSION);
-   globaldef483 (MSG_BROADCAST,self.globaldef84);
-   globaldef483 (MSG_BROADCAST,self.globaldef85);
-   globaldef483 (MSG_BROADCAST,self.globaldef86);
-   globaldef2144 ();
+   T_RadiusDamage (self,self,globaldef001638,world);
+   sound (self,CHAN_VOICE,globaldef005039,TRUE,ATTN_NORM);
+   self.globaldef000083 = (self.globaldef000083 - (FL_CLIENT * normalize (self.globaldef000091)));
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_TAREXPLOSION);
+   WriteCoord (MSG_BROADCAST,self.globaldef000084);
+   WriteCoord (MSG_BROADCAST,self.globaldef000085);
+   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   BecomeExplosion ();
 
 };
-string globaldef5039 /* = "blob/death1.wav" */;
+string globaldef005039 /* = "blob/death1.wav" */;
 
 void () monster_tarbaby;
 
@@ -1305,22 +1305,22 @@ void () monster_tarbaby = {
       return ;
 
    }
-   globaldef493 (globaldef5041);
-   globaldef494 (globaldef5039);
-   globaldef494 (globaldef5026);
-   globaldef494 (globaldef5027);
-   globaldef494 ("blob/sight1.wav");
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef5041);
-   globaldef438 (self,VEC_HULL_MIN,globaldef4167);
-   self.globaldef130 = globaldef1439;
-   self.globaldef344 = globaldef4971;
-   self.globaldef345 = globaldef4973;
-   self.globaldef346 = globaldef4998;
-   self.globaldef347 = globaldef5023;
-   self.globaldef348 = globaldef5023;
-   self.globaldef350 = globaldef5037;
-   globaldef3309 ();
+   precache_model2 (globaldef005041);
+   precache_sound2 (globaldef005039);
+   precache_sound2 (globaldef005026);
+   precache_sound2 (globaldef005027);
+   precache_sound2 (globaldef001672);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef005041);
+   setsize (self,VEC_HULL_MIN,globaldef004167);
+   self.globaldef000130 = globaldef001439;
+   self.globaldef000344 = tbaby_stand1;
+   self.globaldef000345 = tbaby_walk1;
+   self.globaldef000346 = tbaby_run1;
+   self.globaldef000347 = tbaby_jump1;
+   self.globaldef000348 = tbaby_jump1;
+   self.globaldef000350 = tbaby_die1;
+   walkmonster_start ();
 
 };

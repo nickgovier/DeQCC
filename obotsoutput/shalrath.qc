@@ -1,5 +1,5 @@
-string globaldef5348 /* = "progs/fish.mdl" */;
-vector globaldef5349 /* = '16.000 16.000 24.000' */;
+string globaldef005348 /* = "progs/fish.mdl" */;
+vector globaldef005349 /* = '16.000 16.000 24.000' */;
 
 void () shalrath_pain;
 
@@ -15,9 +15,9 @@ void () shal_stand;
  * OP_DONE	0	0	0
  */
 
-void () shal_stand = [ 23.000, globaldef5352 ] {
+void () shal_stand = [ 23.000, shal_stand ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -41,19 +41,19 @@ void () shal_walk1;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk1 = [ 24.000, globaldef5354 ] {
+void () shal_walk1 = [ 24.000, shal_walk2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef5355,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef005355,TRUE,ATTN_IDLE);
 
    }
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
 void () shal_walk2;
-string globaldef5355 /* = "shalrath/idle.wav" */;
+string globaldef005355 /* = "shalrath/idle.wav" */;
 
 // function shal_walk2
 // function number 2019 begins at statement 25802
@@ -64,9 +64,9 @@ string globaldef5355 /* = "shalrath/idle.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk2 = [ 25.000, globaldef5356 ] {
+void () shal_walk2 = [ 25.000, shal_walk3 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -81,9 +81,9 @@ void () shal_walk3;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk3 = [ 26.000, globaldef5357 ] {
+void () shal_walk3 = [ 26.000, shal_walk4 ] {
 
-   globaldef1702 (FALSE);
+   ai_walk (FALSE);
 
 };
 
@@ -98,9 +98,9 @@ void () shal_walk4;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk4 = [ 27.000, globaldef5358 ] {
+void () shal_walk4 = [ 27.000, shal_walk5 ] {
 
-   globaldef1702 (FALSE);
+   ai_walk (FALSE);
 
 };
 
@@ -115,9 +115,9 @@ void () shal_walk5;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk5 = [ 28.000, globaldef5359 ] {
+void () shal_walk5 = [ 28.000, shal_walk6 ] {
 
-   globaldef1702 (FALSE);
+   ai_walk (FALSE);
 
 };
 
@@ -132,9 +132,9 @@ void () shal_walk6;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk6 = [ 29.000, globaldef5360 ] {
+void () shal_walk6 = [ 29.000, shal_walk7 ] {
 
-   globaldef1702 (FALSE);
+   ai_walk (FALSE);
 
 };
 
@@ -149,9 +149,9 @@ void () shal_walk7;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk7 = [ 30.000, globaldef5361 ] {
+void () shal_walk7 = [ 30.000, shal_walk8 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
+   ai_walk (MOVETYPE_FLY);
 
 };
 
@@ -166,9 +166,9 @@ void () shal_walk8;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk8 = [ 31.000, globaldef5362 ] {
+void () shal_walk8 = [ 31.000, shal_walk9 ] {
 
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
@@ -183,9 +183,9 @@ void () shal_walk9;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk9 = [ 32.000, globaldef5363 ] {
+void () shal_walk9 = [ 32.000, shal_walk10 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
+   ai_walk (MOVETYPE_FLY);
 
 };
 
@@ -200,9 +200,9 @@ void () shal_walk10;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk10 = [ 33.000, globaldef5364 ] {
+void () shal_walk10 = [ 33.000, shal_walk11 ] {
 
-   globaldef1702 (FALSE);
+   ai_walk (FALSE);
 
 };
 
@@ -217,9 +217,9 @@ void () shal_walk11;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk11 = [ 34.000, globaldef5365 ] {
+void () shal_walk11 = [ 34.000, shal_walk12 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -234,9 +234,9 @@ void () shal_walk12;
  * OP_DONE	0	0	0
  */
 
-void () shal_walk12 = [ 23.000, globaldef5353 ] {
+void () shal_walk12 = [ 23.000, shal_walk1 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
+   ai_walk (MOVETYPE_FLY);
 
 };
 
@@ -260,14 +260,14 @@ void () shal_run1;
  * OP_DONE	0	0	0
  */
 
-void () shal_run1 = [ 24.000, globaldef5367 ] {
+void () shal_run1 = [ 24.000, shal_run2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef5355,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef005355,TRUE,ATTN_IDLE);
 
    }
-   globaldef1734 (MOVETYPE_TOSS);
+   ai_run (MOVETYPE_TOSS);
 
 };
 
@@ -282,9 +282,9 @@ void () shal_run2;
  * OP_DONE	0	0	0
  */
 
-void () shal_run2 = [ 25.000, globaldef5368 ] {
+void () shal_run2 = [ 25.000, shal_run3 ] {
 
-   globaldef1734 (MOVETYPE_STEP);
+   ai_run (MOVETYPE_STEP);
 
 };
 
@@ -299,9 +299,9 @@ void () shal_run3;
  * OP_DONE	0	0	0
  */
 
-void () shal_run3 = [ 26.000, globaldef5369 ] {
+void () shal_run3 = [ 26.000, shal_run4 ] {
 
-   globaldef1734 (FALSE);
+   ai_run (FALSE);
 
 };
 
@@ -316,9 +316,9 @@ void () shal_run4;
  * OP_DONE	0	0	0
  */
 
-void () shal_run4 = [ 27.000, globaldef5370 ] {
+void () shal_run4 = [ 27.000, shal_run5 ] {
 
-   globaldef1734 (FALSE);
+   ai_run (FALSE);
 
 };
 
@@ -333,9 +333,9 @@ void () shal_run5;
  * OP_DONE	0	0	0
  */
 
-void () shal_run5 = [ 28.000, globaldef5371 ] {
+void () shal_run5 = [ 28.000, shal_run6 ] {
 
-   globaldef1734 (FALSE);
+   ai_run (FALSE);
 
 };
 
@@ -350,9 +350,9 @@ void () shal_run6;
  * OP_DONE	0	0	0
  */
 
-void () shal_run6 = [ 29.000, globaldef5372 ] {
+void () shal_run6 = [ 29.000, shal_run7 ] {
 
-   globaldef1734 (FALSE);
+   ai_run (FALSE);
 
 };
 
@@ -367,9 +367,9 @@ void () shal_run7;
  * OP_DONE	0	0	0
  */
 
-void () shal_run7 = [ 30.000, globaldef5373 ] {
+void () shal_run7 = [ 30.000, shal_run8 ] {
 
-   globaldef1734 (MOVETYPE_FLY);
+   ai_run (MOVETYPE_FLY);
 
 };
 
@@ -384,9 +384,9 @@ void () shal_run8;
  * OP_DONE	0	0	0
  */
 
-void () shal_run8 = [ 31.000, globaldef5374 ] {
+void () shal_run8 = [ 31.000, shal_run9 ] {
 
-   globaldef1734 (MOVETYPE_TOSS);
+   ai_run (MOVETYPE_TOSS);
 
 };
 
@@ -401,9 +401,9 @@ void () shal_run9;
  * OP_DONE	0	0	0
  */
 
-void () shal_run9 = [ 32.000, globaldef5375 ] {
+void () shal_run9 = [ 32.000, shal_run10 ] {
 
-   globaldef1734 (MOVETYPE_FLY);
+   ai_run (MOVETYPE_FLY);
 
 };
 
@@ -418,9 +418,9 @@ void () shal_run10;
  * OP_DONE	0	0	0
  */
 
-void () shal_run10 = [ 33.000, globaldef5376 ] {
+void () shal_run10 = [ 33.000, shal_run11 ] {
 
-   globaldef1734 (FALSE);
+   ai_run (FALSE);
 
 };
 
@@ -435,9 +435,9 @@ void () shal_run11;
  * OP_DONE	0	0	0
  */
 
-void () shal_run11 = [ 34.000, globaldef5377 ] {
+void () shal_run11 = [ 34.000, shal_run12 ] {
 
-   globaldef1734 (MOVETYPE_STEP);
+   ai_run (MOVETYPE_STEP);
 
 };
 
@@ -452,9 +452,9 @@ void () shal_run12;
  * OP_DONE	0	0	0
  */
 
-void () shal_run12 = [ 23.000, globaldef5366 ] {
+void () shal_run12 = [ 23.000, shal_run1 ] {
 
-   globaldef1734 (MOVETYPE_FLY);
+   ai_run (MOVETYPE_FLY);
 
 };
 
@@ -474,15 +474,15 @@ void () shal_attack1;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack1 = [ 0.000, globaldef5379 ] {
+void () shal_attack1 = [ 0.000, shal_attack2 ] {
 
-   sound (self,CHAN_VOICE,globaldef5380,TRUE,ATTN_NORM);
-   globaldef1533 ();
+   sound (self,CHAN_VOICE,globaldef005380,TRUE,ATTN_NORM);
+   ai_face ();
 
 };
 
 void () shal_attack2;
-string globaldef5380 /* = "shalrath/attack.wav" */;
+string globaldef005380 /* = "shalrath/attack.wav" */;
 
 // function shal_attack2
 // function number 2043 begins at statement 25912
@@ -492,9 +492,9 @@ string globaldef5380 /* = "shalrath/attack.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack2 = [ 1.000, globaldef5381 ] {
+void () shal_attack2 = [ 1.000, shal_attack3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -508,9 +508,9 @@ void () shal_attack3;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack3 = [ 2.000, globaldef5382 ] {
+void () shal_attack3 = [ 2.000, shal_attack4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -524,9 +524,9 @@ void () shal_attack4;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack4 = [ 3.000, globaldef5383 ] {
+void () shal_attack4 = [ 3.000, shal_attack5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -540,9 +540,9 @@ void () shal_attack5;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack5 = [ 4.000, globaldef5384 ] {
+void () shal_attack5 = [ 4.000, shal_attack6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -556,9 +556,9 @@ void () shal_attack6;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack6 = [ 5.000, globaldef5385 ] {
+void () shal_attack6 = [ 5.000, shal_attack7 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -572,9 +572,9 @@ void () shal_attack7;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack7 = [ 6.000, globaldef5386 ] {
+void () shal_attack7 = [ 6.000, shal_attack8 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -588,9 +588,9 @@ void () shal_attack8;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack8 = [ 7.000, globaldef5387 ] {
+void () shal_attack8 = [ 7.000, shal_attack9 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -604,9 +604,9 @@ void () shal_attack9;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack9 = [ 8.000, globaldef5388 ] {
+void () shal_attack9 = [ 8.000, shal_attack10 ] {
 
-   globaldef5351 ();
+   ShalMissile ();
 
 };
 
@@ -620,9 +620,9 @@ void () shal_attack10;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack10 = [ 9.000, globaldef5389 ] {
+void () shal_attack10 = [ 9.000, shal_attack11 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -635,7 +635,7 @@ void () shal_attack11;
  * OP_DONE	0	0	0
  */
 
-void () shal_attack11 = [ 10.000, globaldef5366 ] {
+void () shal_attack11 = [ 10.000, shal_run1 ] {
 
 
 };
@@ -649,7 +649,7 @@ void () shal_pain1;
  * OP_DONE	0	0	0
  */
 
-void () shal_pain1 = [ 11.000, globaldef5391 ] {
+void () shal_pain1 = [ 11.000, shal_pain2 ] {
 
 
 };
@@ -663,7 +663,7 @@ void () shal_pain2;
  * OP_DONE	0	0	0
  */
 
-void () shal_pain2 = [ 12.000, globaldef5392 ] {
+void () shal_pain2 = [ 12.000, shal_pain3 ] {
 
 
 };
@@ -677,7 +677,7 @@ void () shal_pain3;
  * OP_DONE	0	0	0
  */
 
-void () shal_pain3 = [ 13.000, globaldef5393 ] {
+void () shal_pain3 = [ 13.000, shal_pain4 ] {
 
 
 };
@@ -691,7 +691,7 @@ void () shal_pain4;
  * OP_DONE	0	0	0
  */
 
-void () shal_pain4 = [ 14.000, globaldef5394 ] {
+void () shal_pain4 = [ 14.000, shal_pain5 ] {
 
 
 };
@@ -705,7 +705,7 @@ void () shal_pain5;
  * OP_DONE	0	0	0
  */
 
-void () shal_pain5 = [ 15.000, globaldef5366 ] {
+void () shal_pain5 = [ 15.000, shal_run1 ] {
 
 
 };
@@ -719,7 +719,7 @@ void () shal_death1;
  * OP_DONE	0	0	0
  */
 
-void () shal_death1 = [ 16.000, globaldef5396 ] {
+void () shal_death1 = [ 16.000, shal_death2 ] {
 
 
 };
@@ -733,7 +733,7 @@ void () shal_death2;
  * OP_DONE	0	0	0
  */
 
-void () shal_death2 = [ 17.000, globaldef5397 ] {
+void () shal_death2 = [ 17.000, shal_death3 ] {
 
 
 };
@@ -747,7 +747,7 @@ void () shal_death3;
  * OP_DONE	0	0	0
  */
 
-void () shal_death3 = [ 18.000, globaldef5398 ] {
+void () shal_death3 = [ 18.000, shal_death4 ] {
 
 
 };
@@ -761,7 +761,7 @@ void () shal_death4;
  * OP_DONE	0	0	0
  */
 
-void () shal_death4 = [ 19.000, globaldef5399 ] {
+void () shal_death4 = [ 19.000, shal_death5 ] {
 
 
 };
@@ -775,7 +775,7 @@ void () shal_death5;
  * OP_DONE	0	0	0
  */
 
-void () shal_death5 = [ 20.000, globaldef5400 ] {
+void () shal_death5 = [ 20.000, shal_death6 ] {
 
 
 };
@@ -789,7 +789,7 @@ void () shal_death6;
  * OP_DONE	0	0	0
  */
 
-void () shal_death6 = [ 21.000, globaldef5401 ] {
+void () shal_death6 = [ 21.000, shal_death7 ] {
 
 
 };
@@ -803,7 +803,7 @@ void () shal_death7;
  * OP_DONE	0	0	0
  */
 
-void () shal_death7 = [ 22.000, globaldef5401 ] {
+void () shal_death7 = [ 22.000, shal_death7 ] {
 
 
 };
@@ -830,17 +830,17 @@ void () shal_death7 = [ 22.000, globaldef5401 ] {
 
 void () shalrath_pain = {
 
-   if ( (self.globaldef362 > time) ) {
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef5402,TRUE,ATTN_NORM);
-   globaldef5390 ();
-   self.globaldef362 = (time + MOVETYPE_WALK);
+   sound (self,CHAN_VOICE,globaldef005402,TRUE,ATTN_NORM);
+   shal_pain1 ();
+   self.globaldef000362 = (time + MOVETYPE_WALK);
 
 };
-string globaldef5402 /* = "shalrath/pain.wav" */;
+string globaldef005402 /* = "shalrath/pain.wav" */;
 
 void () shalrath_die;
 
@@ -887,23 +887,23 @@ void () shalrath_die;
 
 void () shalrath_die = {
 
-   if ( (self.globaldef130 < globaldef1733) ) {
+   if ( (self.globaldef000130 < globaldef001733) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef5404,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2433,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef005404,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002433,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef5405,TRUE,ATTN_NORM);
-   globaldef5395 ();
-   self.solid = SOLID_NOT;
+   sound (self,CHAN_VOICE,globaldef005405,TRUE,ATTN_NORM);
+   shal_death1 ();
+   self.globaldef000082 = SOLID_NOT;
 
 };
-string globaldef5404 /* = "progs/h_shal.mdl" */;
-string globaldef5405 /* = "shalrath/death.wav" */;
+string globaldef005404 /* = "progs/h_shal.mdl" */;
+string globaldef005405 /* = "shalrath/death.wav" */;
 
 void () ShalMissileTouch;
 
@@ -981,39 +981,39 @@ void () ShalHome;
 
 void () ShalMissile = {
 
-   local entity globaldef5408;
-   local vector globaldef5409;
-   local float globaldef5413;
-   local float globaldef5414;
+   local entity missile;
+   local vector dir;
+   local float dist;
+   local float flytime;
 
-   globaldef5409 = globaldef442 (((self.enemy.origin + globaldef3314) - self.origin));
-   globaldef5413 = vlen ((self.enemy.origin - self.origin));
-   globaldef5414 = (globaldef5413 * globaldef5415);
-   if ( (globaldef5414 < 0.100) ) {
+   dir = normalize (((self.globaldef000159.globaldef000083 + globaldef003314) - self.globaldef000083));
+   dist = vlen ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   flytime = (dist * globaldef005415);
+   if ( (flytime < globaldef001488) ) {
 
-      globaldef5414 = 0.100;
+      flytime = globaldef001488;
 
    }
-   self.globaldef111 = (self.globaldef111 | EF_MUZZLEFLASH);
-   sound (self,CHAN_WEAPON,globaldef5416,TRUE,ATTN_NORM);
-   globaldef5408 = spawn ();
-   globaldef5408.globaldef179 = self;
-   globaldef5408.solid = SOLID_BBOX;
-   globaldef5408.movetype = MOVETYPE_FLYMISSILE;
-   setmodel (globaldef5408,globaldef5417);
-   globaldef438 (globaldef5408,VEC_ORIGIN,VEC_ORIGIN);
-   globaldef5408.origin = (self.origin + globaldef3314);
-   globaldef5408.velocity = (globaldef5409 * globaldef2007);
-   globaldef5408.avelocity = globaldef2186;
-   globaldef5408.nextthink = (globaldef5414 + time);
-   globaldef5408.think = globaldef5407;
-   globaldef5408.enemy = self.enemy;
-   globaldef5408.globaldef124 = globaldef5406;
+   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   sound (self,CHAN_WEAPON,globaldef005416,TRUE,ATTN_NORM);
+   missile = spawn ();
+   missile.globaldef000179 = self;
+   missile.globaldef000082 = SOLID_BBOX;
+   missile.globaldef000081 = MOVETYPE_FLYMISSILE;
+   setmodel (missile,globaldef005417);
+   setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
+   missile.globaldef000083 = (self.globaldef000083 + globaldef003314);
+   missile.globaldef000091 = (dir * globaldef002007);
+   missile.globaldef000099 = globaldef002186;
+   missile.globaldef000128 = (flytime + time);
+   missile.globaldef000126 = ShalHome;
+   missile.globaldef000159 = self.globaldef000159;
+   missile.globaldef000124 = ShalMissileTouch;
 
 };
-float globaldef5415 /* = 0.002 */;
-string globaldef5416 /* = "shalrath/attack2.wav" */;
-string globaldef5417 /* = "progs/v_spike.mdl" */;
+float globaldef005415 /* = 0.002 */;
+string globaldef005416 /* = "shalrath/attack2.wav" */;
+string globaldef005417 /* = "progs/v_spike.mdl" */;
 
 // function ShalHome
 // function number 2068 begins at statement 26081
@@ -1053,31 +1053,31 @@ string globaldef5417 /* = "progs/v_spike.mdl" */;
 
 void () ShalHome = {
 
-   local vector globaldef5418;
-   local vector globaldef5422;
+   local vector dir;
+   local vector vtemp;
 
-   globaldef5422 = (self.enemy.origin + globaldef3314);
-   if ( (self.enemy.globaldef130 < TRUE) ) {
+   vtemp = (self.globaldef000159.globaldef000083 + globaldef003314);
+   if ( (self.globaldef000159.globaldef000130 < TRUE) ) {
 
       remove (self);
       return ;
 
    }
-   globaldef5418 = globaldef442 ((globaldef5422 - self.origin));
+   dir = normalize ((vtemp - self.globaldef000083));
    if ( (skill == MOVETYPE_WALK) ) {
 
-      self.velocity = (globaldef5418 * globaldef5426);
+      self.globaldef000091 = (dir * globaldef005426);
 
    } else {
 
-      self.velocity = (globaldef5418 * globaldef721);
+      self.globaldef000091 = (dir * globaldef000721);
 
    }
-   self.nextthink = (time + globaldef1553);
-   self.think = globaldef5407;
+   self.globaldef000128 = (time + globaldef001553);
+   self.globaldef000126 = ShalHome;
 
 };
-float globaldef5426 /* = 350.000 */;
+float globaldef005426 /* = 350.000 */;
 
 // function ShalMissileTouch
 // function number 2069 begins at statement 26112
@@ -1139,28 +1139,28 @@ float globaldef5426 /* = 350.000 */;
 
 void () ShalMissileTouch = {
 
-   if ( (other == self.globaldef179) ) {
+   if ( (other == self.globaldef000179) ) {
 
       return ;
 
    }
-   if ( (other.classname == "monster_zombie") ) {
+   if ( (other.globaldef000107 == globaldef001665) ) {
 
-      globaldef505 (other,self,self,globaldef3137);
+      T_Damage (other,self,self,globaldef003137);
 
    }
-   globaldef1772 (self,self.globaldef179,globaldef729,world);
-   sound (self,CHAN_WEAPON,globaldef2012,TRUE,ATTN_NORM);
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_EXPLOSION);
-   globaldef483 (MSG_BROADCAST,self.globaldef84);
-   globaldef483 (MSG_BROADCAST,self.globaldef85);
-   globaldef483 (MSG_BROADCAST,self.globaldef86);
-   self.velocity = VEC_ORIGIN;
-   self.globaldef124 = SUB_Null;
-   setmodel (self,globaldef2145);
-   self.solid = SOLID_NOT;
-   globaldef2138 ();
+   T_RadiusDamage (self,self.globaldef000179,globaldef000729,world);
+   sound (self,CHAN_WEAPON,globaldef002012,TRUE,ATTN_NORM);
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_EXPLOSION);
+   WriteCoord (MSG_BROADCAST,self.globaldef000084);
+   WriteCoord (MSG_BROADCAST,self.globaldef000085);
+   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   self.globaldef000091 = VEC_ORIGIN;
+   self.globaldef000124 = SUB_Null;
+   setmodel (self,globaldef002145);
+   self.globaldef000082 = SOLID_NOT;
+   s_explode1 ();
 
 };
 
@@ -1235,27 +1235,27 @@ void () monster_shalrath = {
       return ;
 
    }
-   globaldef493 (globaldef5428);
-   globaldef493 (globaldef5404);
-   globaldef493 (globaldef5417);
-   globaldef494 (globaldef5380);
-   globaldef494 (globaldef5416);
-   globaldef494 (globaldef5405);
-   globaldef494 (globaldef5355);
-   globaldef494 (globaldef5402);
-   globaldef494 ("shalrath/sight.wav");
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef5428);
-   globaldef438 (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef130 = globaldef2007;
-   self.globaldef344 = globaldef5352;
-   self.globaldef345 = globaldef5353;
-   self.globaldef346 = globaldef5366;
-   self.globaldef350 = globaldef5403;
-   self.globaldef349 = globaldef5350;
-   self.globaldef347 = globaldef5378;
-   self.think = globaldef3309;
-   self.nextthink = ((time + 0.100) + (globaldef440 () * 0.100));
+   precache_model2 (globaldef005428);
+   precache_model2 (globaldef005404);
+   precache_model2 (globaldef005417);
+   precache_sound2 (globaldef005380);
+   precache_sound2 (globaldef005416);
+   precache_sound2 (globaldef005405);
+   precache_sound2 (globaldef005355);
+   precache_sound2 (globaldef005402);
+   precache_sound2 (globaldef001683);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef005428);
+   setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
+   self.globaldef000130 = globaldef002007;
+   self.globaldef000344 = shal_stand;
+   self.globaldef000345 = shal_walk1;
+   self.globaldef000346 = shal_run1;
+   self.globaldef000350 = shalrath_die;
+   self.globaldef000349 = shalrath_pain;
+   self.globaldef000347 = shal_attack1;
+   self.globaldef000126 = walkmonster_start;
+   self.globaldef000128 = ((time + globaldef001488) + (random () * globaldef001488));
 
 };

@@ -1,4 +1,4 @@
-vector globaldef3517 /* = '0.000 360.000 0.000' */;
+vector globaldef003517 /* = '0.000 360.000 0.000' */;
 
 void () plat_center_touch;
 
@@ -11,7 +11,7 @@ void () plat_go_up;
 void () plat_go_down;
 
 void () plat_crush;
-float globaldef3524 /* = 1.000 */;
+float globaldef003524 /* = 1.000 */;
 
 void () plat_spawn_inside_trigger;
 
@@ -74,40 +74,40 @@ void () plat_spawn_inside_trigger;
 
 void () plat_spawn_inside_trigger = {
 
-   local entity globaldef3526;
-   local vector globaldef3527;
-   local vector globaldef3531;
+   local entity trigger;
+   local vector tmin;
+   local vector tmax;
 
-   globaldef3526 = spawn ();
-   globaldef3526.globaldef124 = globaldef3518;
-   globaldef3526.movetype = MOVETYPE_NONE;
-   globaldef3526.solid = SOLID_TRIGGER;
-   globaldef3526.enemy = self;
-   globaldef3527 = (self.globaldef112 + globaldef3535);
-   globaldef3531 = (self.globaldef116 - globaldef3536);
-   globaldef3530 = (globaldef3534 - ((self.globaldef425 - self.globaldef429) + FL_CLIENT));
-   if ( (self.globaldef173 & globaldef3524) ) {
+   trigger = spawn ();
+   trigger.globaldef000124 = plat_center_touch;
+   trigger.globaldef000081 = MOVETYPE_NONE;
+   trigger.globaldef000082 = SOLID_TRIGGER;
+   trigger.globaldef000159 = self;
+   tmin = (self.globaldef000112 + globaldef003535);
+   tmax = (self.globaldef000116 - globaldef003536);
+   globaldef003530 = (globaldef003534 - ((self.globaldef000425 - self.globaldef000429) + FL_CLIENT));
+   if ( (self.globaldef000173 & globaldef003524) ) {
 
-      globaldef3534 = (globaldef3530 + FL_CLIENT);
-
-   }
-   if ( (self.globaldef121 <= globaldef1257) ) {
-
-      globaldef3527_x = ((self.globaldef113 + self.globaldef117) / FL_SWIM);
-      globaldef3531_x = (globaldef3527_x + TRUE);
+      globaldef003534 = (globaldef003530 + FL_CLIENT);
 
    }
-   if ( (self.globaldef122 <= globaldef1257) ) {
+   if ( (self.globaldef000121 <= globaldef001257) ) {
 
-      globaldef3529 = ((self.globaldef114 + self.globaldef118) / FL_SWIM);
-      globaldef3533 = (globaldef3529 + TRUE);
+      tmin_x = ((self.globaldef000113 + self.globaldef000117) / FL_SWIM);
+      tmax_x = (tmin_x + TRUE);
 
    }
-   globaldef438 (globaldef3526,globaldef3527,globaldef3531);
+   if ( (self.globaldef000122 <= globaldef001257) ) {
+
+      globaldef003529 = ((self.globaldef000114 + self.globaldef000118) / FL_SWIM);
+      globaldef003533 = (globaldef003529 + TRUE);
+
+   }
+   setsize (trigger,tmin,tmax);
 
 };
-vector globaldef3535 /* = '25.000 25.000 0.000' */;
-vector globaldef3536 /* = '25.000 25.000 -8.000' */;
+vector globaldef003535 /* = '25.000 25.000 0.000' */;
+vector globaldef003536 /* = '25.000 25.000 -8.000' */;
 
 void () plat_hit_top;
 
@@ -134,10 +134,10 @@ void () plat_hit_top;
 
 void () plat_hit_top = {
 
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_TOP;
-   self.think = globaldef3522;
-   self.nextthink = (self.ltime + MOVETYPE_WALK);
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_TOP;
+   self.globaldef000126 = plat_go_down;
+   self.globaldef000128 = (self.globaldef000080 + MOVETYPE_WALK);
 
 };
 
@@ -160,8 +160,8 @@ void () plat_hit_bottom;
 
 void () plat_hit_bottom = {
 
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_BOTTOM;
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_BOTTOM;
 
 };
 
@@ -188,9 +188,9 @@ void () plat_hit_bottom = {
 
 void () plat_go_down = {
 
-   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef426,self.globaldef352,globaldef3538);
+   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_DOWN;
+   SUB_CalcMove (self.globaldef000426,self.globaldef000352,plat_hit_bottom);
 
 };
 
@@ -217,9 +217,9 @@ void () plat_go_down = {
 
 void () plat_go_up = {
 
-   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_UP;
-   SUB_CalcMove (self.globaldef422,self.globaldef352,globaldef3537);
+   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_UP;
+   SUB_CalcMove (self.globaldef000422,self.globaldef000352,plat_hit_top);
 
 };
 
@@ -282,49 +282,49 @@ void () plat_go_up = {
 
 void () plat_center_touch = {
 
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   self = self.enemy;
-   if ( (self.globaldef421 == STATE_BOTTOM) ) {
+   self = self.globaldef000159;
+   if ( (self.globaldef000421 == STATE_BOTTOM) ) {
 
-      globaldef3521 ();
+      plat_go_up ();
 
    } else {
 
-      if ( (self.globaldef421 == STATE_TOP) ) {
+      if ( (self.globaldef000421 == STATE_TOP) ) {
 
-         self.nextthink = (self.ltime + TRUE);
-
-      }
-
-   }
-   if ( (other.globaldef558 & globaldef686) ) {
-
-      if ( !self.globaldef605 ) {
-
-         globaldef1138 (other,self);
+         self.globaldef000128 = (self.globaldef000080 + TRUE);
 
       }
 
    }
-   if ( ((other.globaldef172.globaldef172 == self) || (other.globaldef172.globaldef172 == self.globaldef605)) ) {
+   if ( (other.globaldef000558 & globaldef000686) ) {
 
-      other.globaldef354 = (time - TRUE);
-      if ( self.globaldef605 ) {
+      if ( !self.globaldef000605 ) {
 
-         other.globaldef569 = self.globaldef605;
+         func002677 (other,self);
+
+      }
+
+   }
+   if ( ((other.globaldef000172.globaldef000172 == self) || (other.globaldef000172.globaldef000172 == self.globaldef000605)) ) {
+
+      other.globaldef000354 = (time - TRUE);
+      if ( self.globaldef000605 ) {
+
+         other.globaldef000569 = self.globaldef000605;
 
       }
 
@@ -357,24 +357,24 @@ void () plat_center_touch = {
 
 void () plat_outside_touch = {
 
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   self = self.enemy;
-   if ( (self.globaldef421 == STATE_TOP) ) {
+   self = self.globaldef000159;
+   if ( (self.globaldef000421 == STATE_TOP) ) {
 
-      globaldef3522 ();
+      plat_go_down ();
 
    }
 
@@ -392,12 +392,12 @@ void () plat_outside_touch = {
 
 void () plat_trigger_use = {
 
-   if ( self.think ) {
+   if ( self.globaldef000126 ) {
 
       return ;
 
    }
-   globaldef3522 ();
+   plat_go_down ();
 
 };
 
@@ -426,27 +426,27 @@ void () plat_trigger_use = {
 
 void () plat_crush = {
 
-   globaldef505 (other,self,self,TRUE);
-   if ( (self.globaldef421 == STATE_UP) ) {
+   T_Damage (other,self,self,TRUE);
+   if ( (self.globaldef000421 == STATE_UP) ) {
 
-      globaldef3522 ();
+      plat_go_down ();
 
    } else {
 
-      if ( (self.globaldef421 == STATE_DOWN) ) {
+      if ( (self.globaldef000421 == STATE_DOWN) ) {
 
-         globaldef3521 ();
+         plat_go_up ();
 
       } else {
 
-         objerror (globaldef3539);
+         objerror (globaldef003539);
 
       }
 
    }
 
 };
-string globaldef3539 /* = "plat_crush: bad self.state\n" */;
+string globaldef003539 /* = "plat_crush: bad self.state\n" */;
 
 void () plat_use;
 
@@ -466,16 +466,16 @@ void () plat_use;
 
 void () plat_use = {
 
-   self.use = SUB_Null;
-   if ( (self.globaldef421 != STATE_UP) ) {
+   self.globaldef000125 = SUB_Null;
+   if ( (self.globaldef000421 != STATE_UP) ) {
 
-      objerror (globaldef3541);
+      objerror (globaldef003541);
 
    }
-   globaldef3522 ();
+   plat_go_down ();
 
 };
-string globaldef3541 /* = "plat_use: not in up state" */;
+string globaldef003541 /* = "plat_use: not in up state" */;
 
 void () func_plat;
 
@@ -594,85 +594,85 @@ void () func_plat;
 
 void () func_plat = {
 
-   local entity globaldef3543;
+   local entity t;
 
-   if ( !self.globaldef387 ) {
+   if ( !self.globaldef000387 ) {
 
-      self.globaldef387 = globaldef1439;
-
-   }
-   if ( !self.globaldef388 ) {
-
-      self.globaldef388 = MOVETYPE_BOUNCE;
+      self.globaldef000387 = globaldef001439;
 
    }
-   if ( (self.globaldef185 == FALSE) ) {
+   if ( !self.globaldef000388 ) {
 
-      self.globaldef185 = FL_SWIM;
-
-   }
-   if ( (self.globaldef185 == TRUE) ) {
-
-      globaldef452 (globaldef3544);
-      globaldef452 (globaldef3545);
-      self.noise = globaldef3544;
-      self.globaldef187 = globaldef3545;
+      self.globaldef000388 = MOVETYPE_BOUNCE;
 
    }
-   if ( (self.globaldef185 == FL_SWIM) ) {
+   if ( (self.globaldef000185 == FALSE) ) {
 
-      globaldef452 (globaldef3546);
-      globaldef452 (globaldef3547);
-      self.noise = globaldef3546;
-      self.globaldef187 = globaldef3547;
+      self.globaldef000185 = FL_SWIM;
 
    }
-   self.globaldef383 = self.angles;
-   self.angles = VEC_ORIGIN;
-   self.classname = globaldef3548;
-   self.solid = SOLID_BSP;
-   self.movetype = MOVETYPE_PUSH;
-   setorigin (self,self.origin);
-   setmodel (self,self.model);
-   globaldef438 (self,self.globaldef112,self.globaldef116);
-   self.globaldef127 = globaldef3523;
-   if ( !self.globaldef352 ) {
+   if ( (self.globaldef000185 == TRUE) ) {
 
-      self.globaldef352 = globaldef1336;
+      precache_sound (globaldef003544);
+      precache_sound (globaldef003545);
+      self.globaldef000186 = globaldef003544;
+      self.globaldef000187 = globaldef003545;
 
    }
-   self.globaldef531 = globaldef940;
-   self.globaldef422 = self.origin;
-   self.globaldef426 = self.origin;
-   if ( self.globaldef430 ) {
+   if ( (self.globaldef000185 == FL_SWIM) ) {
 
-      self.globaldef429 = (self.globaldef86 - self.globaldef430);
+      precache_sound (globaldef003546);
+      precache_sound (globaldef003547);
+      self.globaldef000186 = globaldef003546;
+      self.globaldef000187 = globaldef003547;
+
+   }
+   self.globaldef000383 = self.globaldef000095;
+   self.globaldef000095 = VEC_ORIGIN;
+   self.globaldef000107 = globaldef003548;
+   self.globaldef000082 = SOLID_BSP;
+   self.globaldef000081 = MOVETYPE_PUSH;
+   setorigin (self,self.globaldef000083);
+   setmodel (self,self.globaldef000108);
+   setsize (self,self.globaldef000112,self.globaldef000116);
+   self.globaldef000127 = plat_crush;
+   if ( !self.globaldef000352 ) {
+
+      self.globaldef000352 = globaldef001336;
+
+   }
+   self.globaldef000531 = func002292;
+   self.globaldef000422 = self.globaldef000083;
+   self.globaldef000426 = self.globaldef000083;
+   if ( self.globaldef000430 ) {
+
+      self.globaldef000429 = (self.globaldef000086 - self.globaldef000430);
 
    } else {
 
-      self.globaldef429 = ((self.globaldef86 - self.globaldef123) + FL_CLIENT);
+      self.globaldef000429 = ((self.globaldef000086 - self.globaldef000123) + FL_CLIENT);
 
    }
-   self.use = globaldef3520;
-   globaldef3525 ();
-   if ( self.targetname ) {
+   self.globaldef000125 = plat_trigger_use;
+   plat_spawn_inside_trigger ();
+   if ( self.globaldef000175 ) {
 
-      self.globaldef421 = STATE_UP;
-      self.use = globaldef3540;
+      self.globaldef000421 = STATE_UP;
+      self.globaldef000125 = plat_use;
 
    } else {
 
-      setorigin (self,self.globaldef426);
-      self.globaldef421 = STATE_BOTTOM;
+      setorigin (self,self.globaldef000426);
+      self.globaldef000421 = STATE_BOTTOM;
 
    }
 
 };
-string globaldef3544 /* = "plats/plat1.wav" */;
-string globaldef3545 /* = "plats/plat2.wav" */;
-string globaldef3546 /* = "plats/medplat1.wav" */;
-string globaldef3547 /* = "plats/medplat2.wav" */;
-string globaldef3548 /* = "plat" */;
+string globaldef003544 /* = "plats/plat1.wav" */;
+string globaldef003545 /* = "plats/plat2.wav" */;
+string globaldef003546 /* = "plats/medplat1.wav" */;
+string globaldef003547 /* = "plats/medplat2.wav" */;
+string globaldef003548 /* = "plat" */;
 
 void () train_next;
 
@@ -701,13 +701,13 @@ void () train_blocked;
 
 void () train_blocked = {
 
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ;
 
    }
-   self.attack_finished = (time + globaldef522);
-   globaldef505 (other,self,self,self.globaldef408);
+   self.globaldef000361 = (time + globaldef000522);
+   T_Damage (other,self,self,self.globaldef000408);
 
 };
 
@@ -726,12 +726,12 @@ void () train_use;
 
 void () train_use = {
 
-   if ( (self.think != globaldef3550) ) {
+   if ( (self.globaldef000126 != func_train_find) ) {
 
       return ;
 
    }
-   globaldef3549 ();
+   train_next ();
 
 };
 
@@ -766,17 +766,17 @@ void () train_wait;
 
 void () train_wait = {
 
-   if ( self.globaldef401 ) {
+   if ( self.globaldef000401 ) {
 
-      self.nextthink = (self.ltime + self.globaldef401);
-      sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
+      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
+      sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
 
    } else {
 
-      self.nextthink = (self.ltime + 0.100);
+      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
 
    }
-   self.think = globaldef3549;
+   self.globaldef000126 = train_next;
 
 };
 
@@ -825,30 +825,30 @@ void () train_wait = {
 
 void () train_next = {
 
-   local entity globaldef3554;
-   local float globaldef3555;
+   local entity globaldef003554;
+   local float globaldef003555;
 
-   globaldef3554 = find (world,targetname,self.target);
-   self.target = globaldef3554.target;
-   if ( !self.target ) {
+   globaldef003554 = find (world,globaldef000175,self.globaldef000174);
+   self.globaldef000174 = globaldef003554.globaldef000174;
+   if ( !self.globaldef000174 ) {
 
-      objerror (globaldef3556);
+      objerror (globaldef003556);
 
    }
-   if ( globaldef3554.globaldef401 ) {
+   if ( globaldef003554.globaldef000401 ) {
 
-      self.globaldef401 = globaldef3554.globaldef401;
+      self.globaldef000401 = globaldef003554.globaldef000401;
 
    } else {
 
-      self.globaldef401 = FALSE;
+      self.globaldef000401 = FALSE;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   SUB_CalcMove ((globaldef3554.origin - self.globaldef112),self.globaldef352,globaldef3553);
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   SUB_CalcMove ((globaldef003554.globaldef000083 - self.globaldef000112),self.globaldef000352,train_wait);
 
 };
-string globaldef3556 /* = "train_next: no next target" */;
+string globaldef003556 /* = "train_next: no next target" */;
 
 // function func_train_find
 // function number 617 begins at statement 17276
@@ -882,15 +882,15 @@ string globaldef3556 /* = "train_next: no next target" */;
 
 void () func_train_find = {
 
-   local entity globaldef3557;
+   local entity targ;
 
-   globaldef3557 = find (world,targetname,self.target);
-   self.target = globaldef3557.target;
-   setorigin (self,(globaldef3557.origin - self.globaldef112));
-   if ( !self.targetname ) {
+   targ = find (world,globaldef000175,self.globaldef000174);
+   self.globaldef000174 = targ.globaldef000174;
+   setorigin (self,(targ.globaldef000083 - self.globaldef000112));
+   if ( !self.globaldef000175 ) {
 
-      self.nextthink = (self.ltime + 0.100);
-      self.think = globaldef3549;
+      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+      self.globaldef000126 = train_next;
 
    }
 
@@ -977,55 +977,55 @@ void () func_train;
 
 void () func_train = {
 
-   if ( !self.globaldef352 ) {
+   if ( !self.globaldef000352 ) {
 
-      self.globaldef352 = globaldef1335;
-
-   }
-   if ( !self.target ) {
-
-      objerror (globaldef3559);
+      self.globaldef000352 = globaldef001335;
 
    }
-   if ( !self.globaldef408 ) {
+   if ( !self.globaldef000174 ) {
 
-      self.globaldef408 = FL_SWIM;
-
-   }
-   if ( (self.globaldef185 == FALSE) ) {
-
-      self.noise = globaldef3388;
-      globaldef452 (globaldef3388);
-      self.globaldef187 = globaldef3388;
-      globaldef452 (globaldef3388);
+      objerror (globaldef003559);
 
    }
-   if ( (self.globaldef185 == TRUE) ) {
+   if ( !self.globaldef000408 ) {
 
-      self.noise = globaldef3560;
-      globaldef452 (globaldef3560);
-      self.globaldef187 = globaldef3561;
-      globaldef452 (globaldef3561);
+      self.globaldef000408 = FL_SWIM;
 
    }
-   self.cnt = TRUE;
-   self.solid = SOLID_BSP;
-   self.movetype = MOVETYPE_PUSH;
-   self.globaldef127 = globaldef3551;
-   self.use = globaldef3552;
-   self.classname = globaldef3562;
-   self.globaldef531 = globaldef941;
-   setmodel (self,self.model);
-   globaldef438 (self,self.globaldef112,self.globaldef116);
-   setorigin (self,self.origin);
-   self.nextthink = (self.ltime + 0.100);
-   self.think = globaldef3550;
+   if ( (self.globaldef000185 == FALSE) ) {
+
+      self.globaldef000186 = globaldef003388;
+      precache_sound (globaldef003388);
+      self.globaldef000187 = globaldef003388;
+      precache_sound (globaldef003388);
+
+   }
+   if ( (self.globaldef000185 == TRUE) ) {
+
+      self.globaldef000186 = globaldef003560;
+      precache_sound (globaldef003560);
+      self.globaldef000187 = globaldef003561;
+      precache_sound (globaldef003561);
+
+   }
+   self.globaldef000409 = TRUE;
+   self.globaldef000082 = SOLID_BSP;
+   self.globaldef000081 = MOVETYPE_PUSH;
+   self.globaldef000127 = train_blocked;
+   self.globaldef000125 = train_use;
+   self.globaldef000107 = globaldef003562;
+   self.globaldef000531 = func002293;
+   setmodel (self,self.globaldef000108);
+   setsize (self,self.globaldef000112,self.globaldef000116);
+   setorigin (self,self.globaldef000083);
+   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+   self.globaldef000126 = func_train_find;
 
 };
-string globaldef3559 /* = "func_train without a target" */;
-string globaldef3560 /* = "plats/train2.wav" */;
-string globaldef3561 /* = "plats/train1.wav" */;
-string globaldef3562 /* = "train" */;
+string globaldef003559 /* = "func_train without a target" */;
+string globaldef003560 /* = "plats/train2.wav" */;
+string globaldef003561 /* = "plats/train1.wav" */;
+string globaldef003562 /* = "train" */;
 
 void () misc_teleporttrain;
 
@@ -1088,31 +1088,31 @@ void () misc_teleporttrain;
 
 void () misc_teleporttrain = {
 
-   if ( !self.globaldef352 ) {
+   if ( !self.globaldef000352 ) {
 
-      self.globaldef352 = globaldef1335;
-
-   }
-   if ( !self.target ) {
-
-      objerror (globaldef3559);
+      self.globaldef000352 = globaldef001335;
 
    }
-   self.cnt = TRUE;
-   self.solid = SOLID_NOT;
-   self.movetype = MOVETYPE_PUSH;
-   self.globaldef127 = globaldef3551;
-   self.use = globaldef3552;
-   self.avelocity = globaldef3564;
-   self.noise = globaldef3388;
-   globaldef452 (globaldef3388);
-   self.globaldef187 = globaldef3388;
-   globaldef452 (globaldef3388);
-   globaldef493 (globaldef3565);
-   setmodel (self,globaldef3565);
-   globaldef438 (self,self.globaldef112,self.globaldef116);
-   setorigin (self,self.origin);
-   self.nextthink = (self.ltime + 0.100);
-   self.think = globaldef3550;
+   if ( !self.globaldef000174 ) {
+
+      objerror (globaldef003559);
+
+   }
+   self.globaldef000409 = TRUE;
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000081 = MOVETYPE_PUSH;
+   self.globaldef000127 = train_blocked;
+   self.globaldef000125 = train_use;
+   self.globaldef000099 = globaldef003564;
+   self.globaldef000186 = globaldef003388;
+   precache_sound (globaldef003388);
+   self.globaldef000187 = globaldef003388;
+   precache_sound (globaldef003388);
+   precache_model2 (globaldef003565);
+   setmodel (self,globaldef003565);
+   setsize (self,self.globaldef000112,self.globaldef000116);
+   setorigin (self,self.globaldef000083);
+   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+   self.globaldef000126 = func_train_find;
 
 };

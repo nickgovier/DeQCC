@@ -1,4 +1,4 @@
-float globaldef3295 /* = 49.000 */;
+float globaldef003295 /* = 49.000 */;
 
 void () monster_use;
 
@@ -36,34 +36,34 @@ void () monster_use;
 
 void () monster_use = {
 
-   if ( self.enemy ) {
+   if ( self.globaldef000159 ) {
 
       return ;
 
    }
-   if ( (self.globaldef130 <= FALSE) ) {
+   if ( (self.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   if ( (activator.globaldef140 & IT_INVISIBILITY) ) {
+   if ( (activator.globaldef000140 & IT_INVISIBILITY) ) {
 
       return ;
 
    }
-   if ( (activator.globaldef160 & FL_NOTARGET) ) {
+   if ( (activator.globaldef000160 & FL_NOTARGET) ) {
 
       return ;
 
    }
-   if ( (activator.classname != "player") ) {
+   if ( (activator.globaldef000107 != globaldef001170) ) {
 
       return ;
 
    }
-   self.enemy = activator;
-   self.nextthink = (time + 0.100);
-   self.think = globaldef1684;
+   self.globaldef000159 = activator;
+   self.globaldef000128 = (time + globaldef001488);
+   self.globaldef000126 = FoundTarget;
 
 };
 
@@ -96,26 +96,26 @@ void () monster_use = {
 
 void () monster_death_use = {
 
-   local entity globaldef3297;
-   local entity globaldef3298;
-   local entity globaldef3299;
+   local entity ent;
+   local entity otemp;
+   local entity stemp;
 
-   if ( (self.globaldef160 & FL_FLY) ) {
+   if ( (self.globaldef000160 & FL_FLY) ) {
 
-      self.globaldef160 = (self.globaldef160 - FL_FLY);
-
-   }
-   if ( (self.globaldef160 & FL_SWIM) ) {
-
-      self.globaldef160 = (self.globaldef160 - FL_SWIM);
+      self.globaldef000160 = (self.globaldef000160 - FL_FLY);
 
    }
-   if ( !self.target ) {
+   if ( (self.globaldef000160 & FL_SWIM) ) {
+
+      self.globaldef000160 = (self.globaldef000160 - FL_SWIM);
+
+   }
+   if ( !self.globaldef000174 ) {
 
       return ;
 
    }
-   activator = self.enemy;
+   activator = self.globaldef000159;
    SUB_UseTargets ();
 
 };
@@ -221,66 +221,66 @@ void () walkmonster_start_go;
 
 void () walkmonster_start_go = {
 
-   local string globaldef3301;
-   local entity globaldef3302;
+   local string stemp;
+   local entity etemp;
 
-   self.globaldef86 = (self.globaldef86 + TRUE);
-   globaldef464 ();
-   if ( !globaldef463 (FALSE,FALSE) ) {
+   self.globaldef000086 = (self.globaldef000086 + TRUE);
+   droptofloor ();
+   if ( !walkmove (FALSE,FALSE) ) {
 
-      globaldef456 (globaldef3303);
-      globaldef456 (globaldef458 (self.origin));
-      globaldef456 (globaldef1354);
-
-   }
-   self.globaldef141 = DAMAGE_AIM;
-   self.globaldef169 = (self.angles * globaldef3304);
-   if ( !self.globaldef170 ) {
-
-      self.globaldef170 = globaldef1384;
+      dprint (globaldef003303);
+      dprint (vtos (self.globaldef000083));
+      dprint (globaldef001354);
 
    }
-   self.globaldef144 = globaldef3305;
-   self.use = globaldef3296;
-   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
-   if ( self.target ) {
+   self.globaldef000141 = DAMAGE_AIM;
+   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
+   if ( !self.globaldef000170 ) {
 
-      self.globaldef406 = find (world,targetname,self.target);
-      self.globaldef172 = find (world,targetname,self.target);
-      self.globaldef169 = globaldef446 ((self.globaldef172.origin - self.origin));
-      if ( !self.globaldef406 ) {
+      self.globaldef000170 = globaldef001384;
 
-         globaldef456 (globaldef3306);
-         globaldef456 (globaldef458 (self.origin));
-         globaldef456 (globaldef1354);
+   }
+   self.globaldef000144 = globaldef003305;
+   self.globaldef000125 = monster_use;
+   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
+   if ( self.globaldef000174 ) {
+
+      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
+      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
+      self.globaldef000169 = vectoyaw ((self.globaldef000172.globaldef000083 - self.globaldef000083));
+      if ( !self.globaldef000406 ) {
+
+         dprint (globaldef003306);
+         dprint (vtos (self.globaldef000083));
+         dprint (globaldef001354);
 
       }
-      if ( (self.globaldef406.classname == globaldef3307) ) {
+      if ( (self.globaldef000406.globaldef000107 == globaldef003307) ) {
 
-         self.globaldef345 ();
+         self.globaldef000345 ();
 
       } else {
 
-         self.globaldef405 = globaldef3308;
+         self.globaldef000405 = globaldef003308;
 
       }
-      self.globaldef344 ();
+      self.globaldef000344 ();
 
    } else {
 
-      self.globaldef405 = globaldef3308;
-      self.globaldef344 ();
+      self.globaldef000405 = globaldef003308;
+      self.globaldef000344 ();
 
    }
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
 
 };
-string globaldef3303 /* = "walkmonster in wall at: " */;
-vector globaldef3304 /* = '0.000 1.000 0.000' */;
-vector globaldef3305 /* = '0.000 0.000 25.000' */;
-string globaldef3306 /* = "Monster can't find target at " */;
-string globaldef3307 /* = "path_corner" */;
-float globaldef3308 /* = 100000000.000 */;
+string globaldef003303 /* = "walkmonster in wall at: " */;
+vector globaldef003304 /* = '0.000 1.000 0.000' */;
+vector globaldef003305 /* = '0.000 0.000 25.000' */;
+string globaldef003306 /* = "Monster can't find target at " */;
+string globaldef003307 /* = "path_corner" */;
+float globaldef003308 /* = 100000000.000 */;
 
 void () walkmonster_start;
 
@@ -302,8 +302,8 @@ void () walkmonster_start;
 
 void () walkmonster_start = {
 
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
-   self.think = globaldef3300;
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
+   self.globaldef000126 = walkmonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };
@@ -394,55 +394,55 @@ void () flymonster_start_go;
 
 void () flymonster_start_go = {
 
-   self.globaldef141 = DAMAGE_AIM;
-   self.globaldef169 = (self.angles * globaldef3304);
-   if ( !self.globaldef170 ) {
+   self.globaldef000141 = DAMAGE_AIM;
+   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
+   if ( !self.globaldef000170 ) {
 
-      self.globaldef170 = MOVETYPE_BOUNCE;
-
-   }
-   self.globaldef144 = globaldef3305;
-   self.use = globaldef3296;
-   self.globaldef160 = (self.globaldef160 | FL_FLY);
-   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
-   if ( !globaldef463 (FALSE,FALSE) ) {
-
-      globaldef456 (globaldef3311);
-      globaldef456 (globaldef458 (self.origin));
-      globaldef456 (globaldef1354);
+      self.globaldef000170 = MOVETYPE_BOUNCE;
 
    }
-   if ( self.target ) {
+   self.globaldef000144 = globaldef003305;
+   self.globaldef000125 = monster_use;
+   self.globaldef000160 = (self.globaldef000160 | FL_FLY);
+   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
+   if ( !walkmove (FALSE,FALSE) ) {
 
-      self.globaldef406 = find (world,targetname,self.target);
-      self.globaldef172 = find (world,targetname,self.target);
-      if ( !self.globaldef406 ) {
+      dprint (globaldef003311);
+      dprint (vtos (self.globaldef000083));
+      dprint (globaldef001354);
 
-         globaldef456 (globaldef3306);
-         globaldef456 (globaldef458 (self.origin));
-         globaldef456 (globaldef1354);
+   }
+   if ( self.globaldef000174 ) {
+
+      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
+      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
+      if ( !self.globaldef000406 ) {
+
+         dprint (globaldef003306);
+         dprint (vtos (self.globaldef000083));
+         dprint (globaldef001354);
 
       }
-      if ( (self.globaldef406.classname == globaldef3307) ) {
+      if ( (self.globaldef000406.globaldef000107 == globaldef003307) ) {
 
-         self.globaldef345 ();
+         self.globaldef000345 ();
 
       } else {
 
-         self.globaldef405 = globaldef3308;
+         self.globaldef000405 = globaldef003308;
 
       }
-      self.globaldef344 ();
+      self.globaldef000344 ();
 
    } else {
 
-      self.globaldef405 = globaldef3308;
-      self.globaldef344 ();
+      self.globaldef000405 = globaldef003308;
+      self.globaldef000344 ();
 
    }
 
 };
-string globaldef3311 /* = "flymonster in wall at: " */;
+string globaldef003311 /* = "flymonster in wall at: " */;
 
 void () flymonster_start;
 
@@ -464,8 +464,8 @@ void () flymonster_start;
 
 void () flymonster_start = {
 
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
-   self.think = globaldef3310;
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
+   self.globaldef000126 = flymonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };
@@ -559,42 +559,42 @@ void () swimmonster_start_go = {
       return ;
 
    }
-   self.globaldef141 = DAMAGE_AIM;
+   self.globaldef000141 = DAMAGE_AIM;
    total_monsters = (total_monsters + TRUE);
-   self.globaldef169 = (self.angles * globaldef3304);
-   if ( !self.globaldef170 ) {
+   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
+   if ( !self.globaldef000170 ) {
 
-      self.globaldef170 = MOVETYPE_BOUNCE;
+      self.globaldef000170 = MOVETYPE_BOUNCE;
 
    }
-   self.globaldef144 = globaldef3314;
-   self.use = globaldef3296;
-   self.globaldef160 = (self.globaldef160 | FL_SWIM);
-   self.globaldef160 = (self.globaldef160 | FL_MONSTER);
-   if ( self.target ) {
+   self.globaldef000144 = globaldef003314;
+   self.globaldef000125 = monster_use;
+   self.globaldef000160 = (self.globaldef000160 | FL_SWIM);
+   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
+   if ( self.globaldef000174 ) {
 
-      self.globaldef406 = find (world,targetname,self.target);
-      self.globaldef172 = find (world,targetname,self.target);
-      if ( !self.globaldef406 ) {
+      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
+      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
+      if ( !self.globaldef000406 ) {
 
-         globaldef456 (globaldef3306);
-         globaldef456 (globaldef458 (self.origin));
-         globaldef456 (globaldef1354);
+         dprint (globaldef003306);
+         dprint (vtos (self.globaldef000083));
+         dprint (globaldef001354);
 
       }
-      self.globaldef169 = globaldef446 ((self.globaldef172.origin - self.origin));
-      self.globaldef345 ();
+      self.globaldef000169 = vectoyaw ((self.globaldef000172.globaldef000083 - self.globaldef000083));
+      self.globaldef000345 ();
 
    } else {
 
-      self.globaldef405 = globaldef3308;
-      self.globaldef344 ();
+      self.globaldef000405 = globaldef003308;
+      self.globaldef000344 ();
 
    }
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
 
 };
-vector globaldef3314 /* = '0.000 0.000 10.000' */;
+vector globaldef003314 /* = '0.000 0.000 10.000' */;
 
 void () swimmonster_start;
 
@@ -616,8 +616,8 @@ void () swimmonster_start;
 
 void () swimmonster_start = {
 
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef522));
-   self.think = globaldef3313;
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
+   self.globaldef000126 = swimmonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };

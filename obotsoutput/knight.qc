@@ -1,4 +1,4 @@
-string globaldef4060 /* = "progs/shambler.mdl" */;
+string globaldef004060 /* = "progs/shambler.mdl" */;
 
 void () knight_stand1;
 
@@ -10,9 +10,9 @@ void () knight_stand1;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand1 = [ 0.000, globaldef4062 ] {
+void () knight_stand1 = [ 0.000, knight_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -26,9 +26,9 @@ void () knight_stand2;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand2 = [ 1.000, globaldef4063 ] {
+void () knight_stand2 = [ 1.000, knight_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -42,9 +42,9 @@ void () knight_stand3;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand3 = [ 2.000, globaldef4064 ] {
+void () knight_stand3 = [ 2.000, knight_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -58,9 +58,9 @@ void () knight_stand4;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand4 = [ 3.000, globaldef4065 ] {
+void () knight_stand4 = [ 3.000, knight_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -74,9 +74,9 @@ void () knight_stand5;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand5 = [ 4.000, globaldef4066 ] {
+void () knight_stand5 = [ 4.000, knight_stand6 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -90,9 +90,9 @@ void () knight_stand6;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand6 = [ 5.000, globaldef4067 ] {
+void () knight_stand6 = [ 5.000, knight_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -106,9 +106,9 @@ void () knight_stand7;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand7 = [ 6.000, globaldef4068 ] {
+void () knight_stand7 = [ 6.000, knight_stand8 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -122,9 +122,9 @@ void () knight_stand8;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand8 = [ 7.000, globaldef4069 ] {
+void () knight_stand8 = [ 7.000, knight_stand9 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -138,9 +138,9 @@ void () knight_stand9;
  * OP_DONE	0	0	0
  */
 
-void () knight_stand9 = [ 8.000, globaldef4061 ] {
+void () knight_stand9 = [ 8.000, knight_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -162,19 +162,19 @@ void () knight_stand9 = [ 8.000, globaldef4061 ] {
  * OP_DONE	0	0	0
  */
 
-void () knight_walk1 = [ 53.000, globaldef4070 ] {
+void () knight_walk1 = [ 53.000, knight_walk2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef4071,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef004071,TRUE,ATTN_IDLE);
 
    }
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
 void () knight_walk2;
-string globaldef4071 /* = "knight/idle.wav" */;
+string globaldef004071 /* = "knight/idle.wav" */;
 
 // function knight_walk2
 // function number 998 begins at statement 20381
@@ -185,9 +185,9 @@ string globaldef4071 /* = "knight/idle.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk2 = [ 54.000, globaldef4072 ] {
+void () knight_walk2 = [ 54.000, knight_walk3 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -202,9 +202,9 @@ void () knight_walk3;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk3 = [ 55.000, globaldef4073 ] {
+void () knight_walk3 = [ 55.000, knight_walk4 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -219,9 +219,9 @@ void () knight_walk4;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk4 = [ 56.000, globaldef4074 ] {
+void () knight_walk4 = [ 56.000, knight_walk5 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -236,9 +236,9 @@ void () knight_walk5;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk5 = [ 57.000, globaldef4075 ] {
+void () knight_walk5 = [ 57.000, knight_walk6 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -253,9 +253,9 @@ void () knight_walk6;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk6 = [ 58.000, globaldef4076 ] {
+void () knight_walk6 = [ 58.000, knight_walk7 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -270,9 +270,9 @@ void () knight_walk7;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk7 = [ 59.000, globaldef4077 ] {
+void () knight_walk7 = [ 59.000, knight_walk8 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -287,9 +287,9 @@ void () knight_walk8;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk8 = [ 60.000, globaldef4078 ] {
+void () knight_walk8 = [ 60.000, knight_walk9 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -304,9 +304,9 @@ void () knight_walk9;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk9 = [ 61.000, globaldef4079 ] {
+void () knight_walk9 = [ 61.000, knight_walk10 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -321,9 +321,9 @@ void () knight_walk10;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk10 = [ 62.000, globaldef4080 ] {
+void () knight_walk10 = [ 62.000, knight_walk11 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -338,9 +338,9 @@ void () knight_walk11;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk11 = [ 63.000, globaldef4081 ] {
+void () knight_walk11 = [ 63.000, knight_walk12 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -355,9 +355,9 @@ void () knight_walk12;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk12 = [ 64.000, globaldef4082 ] {
+void () knight_walk12 = [ 64.000, knight_walk13 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -372,9 +372,9 @@ void () knight_walk13;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk13 = [ 65.000, globaldef4083 ] {
+void () knight_walk13 = [ 65.000, knight_walk14 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -389,9 +389,9 @@ void () knight_walk14;
  * OP_DONE	0	0	0
  */
 
-void () knight_walk14 = [ 66.000, globaldef1613 ] {
+void () knight_walk14 = [ 66.000, knight_walk1 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -415,14 +415,14 @@ void () knight_run1;
  * OP_DONE	0	0	0
  */
 
-void () knight_run1 = [ 9.000, globaldef4085 ] {
+void () knight_run1 = [ 9.000, knight_run2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef4071,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef004071,TRUE,ATTN_IDLE);
 
    }
-   globaldef1734 (FL_INWATER);
+   ai_run (FL_INWATER);
 
 };
 
@@ -437,9 +437,9 @@ void () knight_run2;
  * OP_DONE	0	0	0
  */
 
-void () knight_run2 = [ 10.000, globaldef4086 ] {
+void () knight_run2 = [ 10.000, knight_run3 ] {
 
-   globaldef1734 (globaldef1384);
+   ai_run (globaldef001384);
 
 };
 
@@ -454,9 +454,9 @@ void () knight_run3;
  * OP_DONE	0	0	0
  */
 
-void () knight_run3 = [ 11.000, globaldef4087 ] {
+void () knight_run3 = [ 11.000, knight_run4 ] {
 
-   globaldef1734 (globaldef775);
+   ai_run (globaldef000775);
 
 };
 
@@ -471,9 +471,9 @@ void () knight_run4;
  * OP_DONE	0	0	0
  */
 
-void () knight_run4 = [ 12.000, globaldef4088 ] {
+void () knight_run4 = [ 12.000, knight_run5 ] {
 
-   globaldef1734 (MOVETYPE_PUSH);
+   ai_run (MOVETYPE_PUSH);
 
 };
 
@@ -488,9 +488,9 @@ void () knight_run5;
  * OP_DONE	0	0	0
  */
 
-void () knight_run5 = [ 13.000, globaldef4089 ] {
+void () knight_run5 = [ 13.000, knight_run6 ] {
 
-   globaldef1734 (FL_INWATER);
+   ai_run (FL_INWATER);
 
 };
 
@@ -505,9 +505,9 @@ void () knight_run6;
  * OP_DONE	0	0	0
  */
 
-void () knight_run6 = [ 14.000, globaldef4090 ] {
+void () knight_run6 = [ 14.000, knight_run7 ] {
 
-   globaldef1734 (globaldef1384);
+   ai_run (globaldef001384);
 
 };
 
@@ -522,9 +522,9 @@ void () knight_run7;
  * OP_DONE	0	0	0
  */
 
-void () knight_run7 = [ 15.000, globaldef4091 ] {
+void () knight_run7 = [ 15.000, knight_run8 ] {
 
-   globaldef1734 (globaldef2136);
+   ai_run (globaldef002136);
 
 };
 
@@ -539,9 +539,9 @@ void () knight_run8;
  * OP_DONE	0	0	0
  */
 
-void () knight_run8 = [ 16.000, globaldef4084 ] {
+void () knight_run8 = [ 16.000, knight_run1 ] {
 
-   globaldef1734 (MOVETYPE_TOSS);
+   ai_run (MOVETYPE_TOSS);
 
 };
 
@@ -570,24 +570,24 @@ void () knight_run8 = [ 16.000, globaldef4084 ] {
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk1 = [ 17.000, globaldef4092 ] {
+void () knight_runatk1 = [ 17.000, knight_runatk2 ] {
 
-   if ( (globaldef440 () > globaldef522) ) {
+   if ( (random () > globaldef000522) ) {
 
-      sound (self,CHAN_WEAPON,globaldef4093,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef004093,TRUE,ATTN_NORM);
 
    } else {
 
-      sound (self,CHAN_WEAPON,globaldef4094,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef004094,TRUE,ATTN_NORM);
 
    }
-   globaldef1557 (globaldef1384);
+   ai_charge (globaldef001384);
 
 };
 
 void () knight_runatk2;
-string globaldef4093 /* = "knight/sword2.wav" */;
-string globaldef4094 /* = "knight/sword1.wav" */;
+string globaldef004093 /* = "knight/sword2.wav" */;
+string globaldef004094 /* = "knight/sword1.wav" */;
 
 // function knight_runatk2
 // function number 1020 begins at statement 20494
@@ -597,9 +597,9 @@ string globaldef4094 /* = "knight/sword1.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk2 = [ 18.000, globaldef4095 ] {
+void () knight_runatk2 = [ 18.000, knight_runatk3 ] {
 
-   globaldef1559 ();
+   ai_charge_side ();
 
 };
 
@@ -613,9 +613,9 @@ void () knight_runatk3;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk3 = [ 19.000, globaldef4096 ] {
+void () knight_runatk3 = [ 19.000, knight_runatk4 ] {
 
-   globaldef1559 ();
+   ai_charge_side ();
 
 };
 
@@ -629,9 +629,9 @@ void () knight_runatk4;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk4 = [ 20.000, globaldef4097 ] {
+void () knight_runatk4 = [ 20.000, knight_runatk5 ] {
 
-   globaldef1559 ();
+   ai_charge_side ();
 
 };
 
@@ -645,9 +645,9 @@ void () knight_runatk5;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk5 = [ 21.000, globaldef4098 ] {
+void () knight_runatk5 = [ 21.000, knight_runatk6 ] {
 
-   globaldef1571 ();
+   ai_melee_side ();
 
 };
 
@@ -661,9 +661,9 @@ void () knight_runatk6;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk6 = [ 22.000, globaldef4099 ] {
+void () knight_runatk6 = [ 22.000, knight_runatk7 ] {
 
-   globaldef1571 ();
+   ai_melee_side ();
 
 };
 
@@ -677,9 +677,9 @@ void () knight_runatk7;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk7 = [ 23.000, globaldef4100 ] {
+void () knight_runatk7 = [ 23.000, knight_runatk8 ] {
 
-   globaldef1571 ();
+   ai_melee_side ();
 
 };
 
@@ -693,9 +693,9 @@ void () knight_runatk8;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk8 = [ 24.000, globaldef4101 ] {
+void () knight_runatk8 = [ 24.000, knight_runatk9 ] {
 
-   globaldef1571 ();
+   ai_melee_side ();
 
 };
 
@@ -709,9 +709,9 @@ void () knight_runatk9;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk9 = [ 25.000, globaldef4102 ] {
+void () knight_runatk9 = [ 25.000, knight_runatk10 ] {
 
-   globaldef1571 ();
+   ai_melee_side ();
 
 };
 
@@ -725,9 +725,9 @@ void () knight_runatk10;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk10 = [ 26.000, globaldef4103 ] {
+void () knight_runatk10 = [ 26.000, knight_runatk11 ] {
 
-   globaldef1559 ();
+   ai_charge_side ();
 
 };
 
@@ -742,9 +742,9 @@ void () knight_runatk11;
  * OP_DONE	0	0	0
  */
 
-void () knight_runatk11 = [ 27.000, globaldef4084 ] {
+void () knight_runatk11 = [ 27.000, knight_run1 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -763,10 +763,10 @@ void () knight_runatk11 = [ 27.000, globaldef4084 ] {
  * OP_DONE	0	0	0
  */
 
-void () knight_atk1 = [ 42.000, globaldef4104 ] {
+void () knight_atk1 = [ 42.000, knight_atk2 ] {
 
-   sound (self,CHAN_WEAPON,globaldef4094,TRUE,ATTN_NORM);
-   globaldef1557 (FALSE);
+   sound (self,CHAN_WEAPON,globaldef004094,TRUE,ATTN_NORM);
+   ai_charge (FALSE);
 
 };
 
@@ -781,9 +781,9 @@ void () knight_atk2;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk2 = [ 44.000, globaldef4105 ] {
+void () knight_atk2 = [ 44.000, knight_atk3 ] {
 
-   globaldef1557 (MOVETYPE_PUSH);
+   ai_charge (MOVETYPE_PUSH);
 
 };
 
@@ -798,9 +798,9 @@ void () knight_atk3;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk3 = [ 45.000, globaldef4106 ] {
+void () knight_atk3 = [ 45.000, knight_atk4 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -815,9 +815,9 @@ void () knight_atk4;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk4 = [ 46.000, globaldef4107 ] {
+void () knight_atk4 = [ 46.000, knight_atk5 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -832,9 +832,9 @@ void () knight_atk5;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk5 = [ 47.000, globaldef4108 ] {
+void () knight_atk5 = [ 47.000, knight_atk6 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
+   ai_charge (MOVETYPE_WALK);
 
 };
 
@@ -850,10 +850,10 @@ void () knight_atk6;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk6 = [ 48.000, globaldef4109 ] {
+void () knight_atk6 = [ 48.000, knight_atk7 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_STEP);
+   ai_melee ();
 
 };
 
@@ -869,10 +869,10 @@ void () knight_atk7;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk7 = [ 49.000, globaldef4110 ] {
+void () knight_atk7 = [ 49.000, knight_atk8 ] {
 
-   globaldef1557 (TRUE);
-   globaldef1565 ();
+   ai_charge (TRUE);
+   ai_melee ();
 
 };
 
@@ -888,10 +888,10 @@ void () knight_atk8;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk8 = [ 50.000, globaldef4111 ] {
+void () knight_atk8 = [ 50.000, knight_atk9 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_WALK);
+   ai_melee ();
 
 };
 
@@ -906,9 +906,9 @@ void () knight_atk9;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk9 = [ 51.000, globaldef4112 ] {
+void () knight_atk9 = [ 51.000, knight_atk10 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -923,9 +923,9 @@ void () knight_atk10;
  * OP_DONE	0	0	0
  */
 
-void () knight_atk10 = [ 52.000, globaldef4084 ] {
+void () knight_atk10 = [ 52.000, knight_run1 ] {
 
-   globaldef1557 (MOVETYPE_FLY);
+   ai_charge (MOVETYPE_FLY);
 
 };
 
@@ -938,7 +938,7 @@ void () knight_pain1;
  * OP_DONE	0	0	0
  */
 
-void () knight_pain1 = [ 28.000, globaldef4114 ] {
+void () knight_pain1 = [ 28.000, knight_pain2 ] {
 
 
 };
@@ -952,7 +952,7 @@ void () knight_pain2;
  * OP_DONE	0	0	0
  */
 
-void () knight_pain2 = [ 29.000, globaldef4115 ] {
+void () knight_pain2 = [ 29.000, knight_pain3 ] {
 
 
 };
@@ -966,7 +966,7 @@ void () knight_pain3;
  * OP_DONE	0	0	0
  */
 
-void () knight_pain3 = [ 30.000, globaldef4084 ] {
+void () knight_pain3 = [ 30.000, knight_run1 ] {
 
 
 };
@@ -982,9 +982,9 @@ void () knight_painb1;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb1 = [ 31.000, globaldef4117 ] {
+void () knight_painb1 = [ 31.000, knight_painb2 ] {
 
-   globaldef1700 (FALSE);
+   ai_painforward (FALSE);
 
 };
 
@@ -999,9 +999,9 @@ void () knight_painb2;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb2 = [ 32.000, globaldef4118 ] {
+void () knight_painb2 = [ 32.000, knight_painb3 ] {
 
-   globaldef1700 (MOVETYPE_WALK);
+   ai_painforward (MOVETYPE_WALK);
 
 };
 
@@ -1014,7 +1014,7 @@ void () knight_painb3;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb3 = [ 33.000, globaldef4119 ] {
+void () knight_painb3 = [ 33.000, knight_painb4 ] {
 
 
 };
@@ -1028,7 +1028,7 @@ void () knight_painb4;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb4 = [ 34.000, globaldef4120 ] {
+void () knight_painb4 = [ 34.000, knight_painb5 ] {
 
 
 };
@@ -1044,9 +1044,9 @@ void () knight_painb5;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb5 = [ 35.000, globaldef4121 ] {
+void () knight_painb5 = [ 35.000, knight_painb6 ] {
 
-   globaldef1700 (FL_SWIM);
+   ai_painforward (FL_SWIM);
 
 };
 
@@ -1061,9 +1061,9 @@ void () knight_painb6;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb6 = [ 36.000, globaldef4122 ] {
+void () knight_painb6 = [ 36.000, knight_painb7 ] {
 
-   globaldef1700 (MOVETYPE_STEP);
+   ai_painforward (MOVETYPE_STEP);
 
 };
 
@@ -1078,9 +1078,9 @@ void () knight_painb7;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb7 = [ 37.000, globaldef4123 ] {
+void () knight_painb7 = [ 37.000, knight_painb8 ] {
 
-   globaldef1700 (FL_SWIM);
+   ai_painforward (FL_SWIM);
 
 };
 
@@ -1095,9 +1095,9 @@ void () knight_painb8;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb8 = [ 38.000, globaldef4124 ] {
+void () knight_painb8 = [ 38.000, knight_painb9 ] {
 
-   globaldef1700 (MOVETYPE_FLY);
+   ai_painforward (MOVETYPE_FLY);
 
 };
 
@@ -1112,9 +1112,9 @@ void () knight_painb9;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb9 = [ 39.000, globaldef4125 ] {
+void () knight_painb9 = [ 39.000, knight_painb10 ] {
 
-   globaldef1700 (MOVETYPE_FLY);
+   ai_painforward (MOVETYPE_FLY);
 
 };
 
@@ -1129,9 +1129,9 @@ void () knight_painb10;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb10 = [ 40.000, globaldef4126 ] {
+void () knight_painb10 = [ 40.000, knight_painb11 ] {
 
-   globaldef1700 (FALSE);
+   ai_painforward (FALSE);
 
 };
 
@@ -1144,12 +1144,12 @@ void () knight_painb11;
  * OP_DONE	0	0	0
  */
 
-void () knight_painb11 = [ 41.000, globaldef4084 ] {
+void () knight_painb11 = [ 41.000, knight_run1 ] {
 
 
 };
 
-void (entity globaldef4128, float globaldef4129) knight_pain;
+void (entity globaldef004128, float globaldef004129) knight_pain;
 
 // function knight_pain
 // function number 1054 begins at statement 20618
@@ -1180,32 +1180,32 @@ void (entity globaldef4128, float globaldef4129) knight_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef4128, float globaldef4129) knight_pain = {
+void (entity globaldef004128, float globaldef004129) knight_pain = {
 
-   local float globaldef4130;
+   local float r;
 
-   if ( (self.globaldef362 > time) ) {
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   globaldef4130 = globaldef440 ();
-   sound (self,CHAN_VOICE,globaldef4131,TRUE,ATTN_NORM);
-   if ( (globaldef4130 < globaldef4132) ) {
+   r = random ();
+   sound (self,CHAN_VOICE,globaldef004131,TRUE,ATTN_NORM);
+   if ( (r < globaldef004132) ) {
 
-      globaldef4113 ();
-      self.globaldef362 = (time + TRUE);
+      knight_pain1 ();
+      self.globaldef000362 = (time + TRUE);
 
    } else {
 
-      globaldef4116 ();
-      self.globaldef362 = (time + TRUE);
+      knight_painb1 ();
+      self.globaldef000362 = (time + TRUE);
 
    }
 
 };
-string globaldef4131 /* = "knight/khurt.wav" */;
-float globaldef4132 /* = 0.850 */;
+string globaldef004131 /* = "knight/khurt.wav" */;
+float globaldef004132 /* = 0.850 */;
 
 // function knight_bow1
 // function number 1055 begins at statement 20642
@@ -1215,9 +1215,9 @@ float globaldef4132 /* = 0.850 */;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow1 = [ 67.000, globaldef4133 ] {
+void () knight_bow1 = [ 67.000, knight_bow2 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1231,9 +1231,9 @@ void () knight_bow2;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow2 = [ 68.000, globaldef4134 ] {
+void () knight_bow2 = [ 68.000, knight_bow3 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1247,9 +1247,9 @@ void () knight_bow3;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow3 = [ 69.000, globaldef4135 ] {
+void () knight_bow3 = [ 69.000, knight_bow4 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1263,9 +1263,9 @@ void () knight_bow4;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow4 = [ 70.000, globaldef4136 ] {
+void () knight_bow4 = [ 70.000, knight_bow5 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1279,9 +1279,9 @@ void () knight_bow5;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow5 = [ 71.000, globaldef4136 ] {
+void () knight_bow5 = [ 71.000, knight_bow5 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1293,9 +1293,9 @@ void () knight_bow5 = [ 71.000, globaldef4136 ] {
  * OP_DONE	0	0	0
  */
 
-void () knight_bow6 = [ 70.000, globaldef4137 ] {
+void () knight_bow6 = [ 70.000, knight_bow7 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1309,9 +1309,9 @@ void () knight_bow7;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow7 = [ 69.000, globaldef4138 ] {
+void () knight_bow7 = [ 69.000, knight_bow8 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1325,9 +1325,9 @@ void () knight_bow8;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow8 = [ 68.000, globaldef4139 ] {
+void () knight_bow8 = [ 68.000, knight_bow9 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1341,9 +1341,9 @@ void () knight_bow9;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow9 = [ 67.000, globaldef4140 ] {
+void () knight_bow9 = [ 67.000, knight_bow10 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1357,9 +1357,9 @@ void () knight_bow10;
  * OP_DONE	0	0	0
  */
 
-void () knight_bow10 = [ 53.000, globaldef1613 ] {
+void () knight_bow10 = [ 53.000, knight_walk1 ] {
 
-   globaldef1710 ();
+   ai_turn ();
 
 };
 
@@ -1372,7 +1372,7 @@ void () knight_die1;
  * OP_DONE	0	0	0
  */
 
-void () knight_die1 = [ 76.000, globaldef4142 ] {
+void () knight_die1 = [ 76.000, knight_die2 ] {
 
 
 };
@@ -1386,7 +1386,7 @@ void () knight_die2;
  * OP_DONE	0	0	0
  */
 
-void () knight_die2 = [ 77.000, globaldef4143 ] {
+void () knight_die2 = [ 77.000, knight_die3 ] {
 
 
 };
@@ -1402,9 +1402,9 @@ void () knight_die3;
  * OP_DONE	0	0	0
  */
 
-void () knight_die3 = [ 78.000, globaldef4144 ] {
+void () knight_die3 = [ 78.000, knight_die4 ] {
 
-   self.solid = SOLID_NOT;
+   self.globaldef000082 = SOLID_NOT;
 
 };
 
@@ -1417,7 +1417,7 @@ void () knight_die4;
  * OP_DONE	0	0	0
  */
 
-void () knight_die4 = [ 79.000, globaldef4145 ] {
+void () knight_die4 = [ 79.000, knight_die5 ] {
 
 
 };
@@ -1431,7 +1431,7 @@ void () knight_die5;
  * OP_DONE	0	0	0
  */
 
-void () knight_die5 = [ 80.000, globaldef4146 ] {
+void () knight_die5 = [ 80.000, knight_die6 ] {
 
 
 };
@@ -1445,7 +1445,7 @@ void () knight_die6;
  * OP_DONE	0	0	0
  */
 
-void () knight_die6 = [ 81.000, globaldef4147 ] {
+void () knight_die6 = [ 81.000, knight_die7 ] {
 
 
 };
@@ -1459,7 +1459,7 @@ void () knight_die7;
  * OP_DONE	0	0	0
  */
 
-void () knight_die7 = [ 82.000, globaldef4148 ] {
+void () knight_die7 = [ 82.000, knight_die8 ] {
 
 
 };
@@ -1473,7 +1473,7 @@ void () knight_die8;
  * OP_DONE	0	0	0
  */
 
-void () knight_die8 = [ 83.000, globaldef4149 ] {
+void () knight_die8 = [ 83.000, knight_die9 ] {
 
 
 };
@@ -1487,7 +1487,7 @@ void () knight_die9;
  * OP_DONE	0	0	0
  */
 
-void () knight_die9 = [ 84.000, globaldef4150 ] {
+void () knight_die9 = [ 84.000, knight_die10 ] {
 
 
 };
@@ -1501,7 +1501,7 @@ void () knight_die10;
  * OP_DONE	0	0	0
  */
 
-void () knight_die10 = [ 85.000, globaldef4150 ] {
+void () knight_die10 = [ 85.000, knight_die10 ] {
 
 
 };
@@ -1515,7 +1515,7 @@ void () knight_dieb1;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb1 = [ 86.000, globaldef4152 ] {
+void () knight_dieb1 = [ 86.000, knight_dieb2 ] {
 
 
 };
@@ -1529,7 +1529,7 @@ void () knight_dieb2;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb2 = [ 87.000, globaldef4153 ] {
+void () knight_dieb2 = [ 87.000, knight_dieb3 ] {
 
 
 };
@@ -1545,9 +1545,9 @@ void () knight_dieb3;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb3 = [ 88.000, globaldef4154 ] {
+void () knight_dieb3 = [ 88.000, knight_dieb4 ] {
 
-   self.solid = SOLID_NOT;
+   self.globaldef000082 = SOLID_NOT;
 
 };
 
@@ -1560,7 +1560,7 @@ void () knight_dieb4;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb4 = [ 89.000, globaldef4155 ] {
+void () knight_dieb4 = [ 89.000, knight_dieb5 ] {
 
 
 };
@@ -1574,7 +1574,7 @@ void () knight_dieb5;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb5 = [ 90.000, globaldef4156 ] {
+void () knight_dieb5 = [ 90.000, knight_dieb6 ] {
 
 
 };
@@ -1588,7 +1588,7 @@ void () knight_dieb6;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb6 = [ 91.000, globaldef4157 ] {
+void () knight_dieb6 = [ 91.000, knight_dieb7 ] {
 
 
 };
@@ -1602,7 +1602,7 @@ void () knight_dieb7;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb7 = [ 92.000, globaldef4158 ] {
+void () knight_dieb7 = [ 92.000, knight_dieb8 ] {
 
 
 };
@@ -1616,7 +1616,7 @@ void () knight_dieb8;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb8 = [ 93.000, globaldef4159 ] {
+void () knight_dieb8 = [ 93.000, knight_dieb9 ] {
 
 
 };
@@ -1630,7 +1630,7 @@ void () knight_dieb9;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb9 = [ 94.000, globaldef4160 ] {
+void () knight_dieb9 = [ 94.000, knight_dieb10 ] {
 
 
 };
@@ -1644,7 +1644,7 @@ void () knight_dieb10;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb10 = [ 95.000, globaldef4161 ] {
+void () knight_dieb10 = [ 95.000, knight_dieb11 ] {
 
 
 };
@@ -1658,7 +1658,7 @@ void () knight_dieb11;
  * OP_DONE	0	0	0
  */
 
-void () knight_dieb11 = [ 96.000, globaldef4161 ] {
+void () knight_dieb11 = [ 96.000, knight_dieb11 ] {
 
 
 };
@@ -1711,30 +1711,30 @@ void () knight_die;
 
 void () knight_die = {
 
-   if ( (self.globaldef130 < globaldef3008) ) {
+   if ( (self.globaldef000130 < globaldef003008) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef4163,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2433,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef004163,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002433,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef4164,TRUE,ATTN_NORM);
-   if ( (globaldef440 () < globaldef522) ) {
+   sound (self,CHAN_VOICE,globaldef004164,TRUE,ATTN_NORM);
+   if ( (random () < globaldef000522) ) {
 
-      globaldef4141 ();
+      knight_die1 ();
 
    } else {
 
-      globaldef4151 ();
+      knight_dieb1 ();
 
    }
 
 };
-string globaldef4163 /* = "progs/h_knight.mdl" */;
-string globaldef4164 /* = "knight/kdeath.wav" */;
+string globaldef004163 /* = "progs/h_knight.mdl" */;
+string globaldef004164 /* = "knight/kdeath.wav" */;
 
 void () monster_knight;
 
@@ -1798,25 +1798,25 @@ void () monster_knight = {
       return ;
 
    }
-   globaldef453 (globaldef4166);
-   globaldef453 (globaldef4163);
-   globaldef452 (globaldef4164);
-   globaldef452 (globaldef4131);
-   globaldef452 ("knight/ksight.wav");
-   globaldef452 (globaldef4094);
-   globaldef452 (globaldef4093);
-   globaldef452 (globaldef4071);
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef4166);
-   globaldef438 (self,VEC_HULL_MIN,globaldef4167);
-   self.globaldef130 = globaldef2995;
-   self.globaldef344 = globaldef4061;
-   self.globaldef345 = globaldef1613;
-   self.globaldef346 = globaldef4084;
-   self.globaldef348 = globaldef1523;
-   self.globaldef349 = globaldef4127;
-   self.globaldef350 = globaldef4162;
-   globaldef3309 ();
+   precache_model (globaldef004166);
+   precache_model (globaldef004163);
+   precache_sound (globaldef004164);
+   precache_sound (globaldef004131);
+   precache_sound (globaldef001658);
+   precache_sound (globaldef004094);
+   precache_sound (globaldef004093);
+   precache_sound (globaldef004071);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef004166);
+   setsize (self,VEC_HULL_MIN,globaldef004167);
+   self.globaldef000130 = globaldef002995;
+   self.globaldef000344 = knight_stand1;
+   self.globaldef000345 = knight_walk1;
+   self.globaldef000346 = knight_run1;
+   self.globaldef000348 = knight_atk1;
+   self.globaldef000349 = knight_pain;
+   self.globaldef000350 = knight_die;
+   walkmonster_start ();
 
 };

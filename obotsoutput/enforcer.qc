@@ -1,4 +1,4 @@
-string globaldef5428 /* = "progs/shalrath.mdl" */;
+string globaldef005428 /* = "progs/shalrath.mdl" */;
 
 void () Laser_Touch;
 
@@ -67,33 +67,33 @@ void () Laser_Touch;
 
 void () Laser_Touch = {
 
-   local vector globaldef5430;
+   local vector org;
 
-   if ( (other == self.globaldef179) ) {
+   if ( (other == self.globaldef000179) ) {
 
       return ;
 
    }
-   if ( (globaldef470 (self.origin) == CONTENT_SKY) ) {
+   if ( (pointcontents (self.globaldef000083) == CONTENT_SKY) ) {
 
       remove (self);
       return ;
 
    }
-   sound (self,CHAN_WEAPON,globaldef3607,TRUE,ATTN_STATIC);
-   globaldef5430 = (self.origin - (FL_CLIENT * globaldef442 (self.velocity)));
-   if ( other.globaldef130 ) {
+   sound (self,CHAN_WEAPON,globaldef003607,TRUE,ATTN_STATIC);
+   org = (self.globaldef000083 - (FL_CLIENT * normalize (self.globaldef000091)));
+   if ( other.globaldef000130 ) {
 
-      globaldef2009 (globaldef5430,(self.velocity * globaldef1553),globaldef748);
-      globaldef505 (other,self,self.globaldef179,globaldef748);
+      func000254 (org,(self.globaldef000091 * globaldef001553),globaldef000748);
+      T_Damage (other,self,self.globaldef000179,globaldef000748);
 
    } else {
 
-      globaldef479 (MSG_BROADCAST,SVC_TEMP);
-      globaldef479 (MSG_BROADCAST,TE_GUNSHOT);
-      globaldef483 (MSG_BROADCAST,globaldef5430);
-      globaldef483 (MSG_BROADCAST,globaldef5432);
-      globaldef483 (MSG_BROADCAST,globaldef5433);
+      WriteByte (MSG_BROADCAST,globaldef000287);
+      WriteByte (MSG_BROADCAST,TE_GUNSHOT);
+      WriteCoord (MSG_BROADCAST,org);
+      WriteCoord (MSG_BROADCAST,globaldef005432);
+      WriteCoord (MSG_BROADCAST,globaldef005433);
 
    }
    remove (self);
@@ -153,27 +153,27 @@ void () Laser_Touch = {
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef5434, vector globaldef5438) LaunchLaser = {
+void (vector globaldef005434, vector globaldef005438) LaunchLaser = {
 
-   if ( (self.classname == "monster_enforcer") ) {
+   if ( (self.globaldef000107 == globaldef001675) ) {
 
-      sound (self,CHAN_WEAPON,globaldef3603,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef003603,TRUE,ATTN_NORM);
 
    }
-   globaldef5438 = globaldef442 (globaldef5438);
+   globaldef005438 = normalize (globaldef005438);
    newmis = spawn ();
-   newmis.globaldef179 = self;
-   newmis.movetype = MOVETYPE_FLY;
-   newmis.solid = SOLID_BBOX;
-   newmis.globaldef111 = EF_DIMLIGHT;
-   setmodel (newmis,globaldef3606);
-   globaldef438 (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (newmis,globaldef5434);
-   newmis.velocity = (globaldef5438 * globaldef723);
-   newmis.angles = globaldef478 (newmis.velocity);
-   newmis.nextthink = (time + MOVETYPE_FLY);
-   newmis.think = globaldef504;
-   newmis.globaldef124 = globaldef5429;
+   newmis.globaldef000179 = self;
+   newmis.globaldef000081 = MOVETYPE_FLY;
+   newmis.globaldef000082 = SOLID_BBOX;
+   newmis.globaldef000111 = EF_DIMLIGHT;
+   setmodel (newmis,globaldef003606);
+   setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
+   setorigin (newmis,globaldef005434);
+   newmis.globaldef000091 = (globaldef005438 * globaldef000723);
+   newmis.globaldef000095 = vectoangles (newmis.globaldef000091);
+   newmis.globaldef000128 = (time + MOVETYPE_FLY);
+   newmis.globaldef000126 = SUB_Remove;
+   newmis.globaldef000124 = Laser_Touch;
 
 };
 
@@ -208,15 +208,15 @@ void () enforcer_fire;
 
 void () enforcer_fire = {
 
-   local vector globaldef5443;
+   local vector org;
 
-   self.globaldef111 = (self.globaldef111 | EF_MUZZLEFLASH);
-   makevectors (self.angles);
-   globaldef5443 = (((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * globaldef5447)) + globaldef2037);
-   globaldef3601 (globaldef5443,(self.enemy.origin - self.origin));
+   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   makevectors (self.globaldef000095);
+   org = (((self.globaldef000083 + (v_forward * SVC_INTERMISSION)) + (v_right * globaldef005447)) + globaldef002037);
+   LaunchLaser (org,(self.globaldef000159.globaldef000083 - self.globaldef000083));
 
 };
-float globaldef5447 /* = 8.500 */;
+float globaldef005447 /* = 8.500 */;
 
 void () enf_stand1;
 
@@ -228,9 +228,9 @@ void () enf_stand1;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand1 = [ 0.000, globaldef5449 ] {
+void () enf_stand1 = [ 0.000, enf_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -244,9 +244,9 @@ void () enf_stand2;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand2 = [ 1.000, globaldef5450 ] {
+void () enf_stand2 = [ 1.000, enf_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -260,9 +260,9 @@ void () enf_stand3;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand3 = [ 2.000, globaldef5451 ] {
+void () enf_stand3 = [ 2.000, enf_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -276,9 +276,9 @@ void () enf_stand4;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand4 = [ 3.000, globaldef5452 ] {
+void () enf_stand4 = [ 3.000, enf_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -292,9 +292,9 @@ void () enf_stand5;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand5 = [ 4.000, globaldef5453 ] {
+void () enf_stand5 = [ 4.000, enf_stand6 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -308,9 +308,9 @@ void () enf_stand6;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand6 = [ 5.000, globaldef5454 ] {
+void () enf_stand6 = [ 5.000, enf_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -324,9 +324,9 @@ void () enf_stand7;
  * OP_DONE	0	0	0
  */
 
-void () enf_stand7 = [ 6.000, globaldef5448 ] {
+void () enf_stand7 = [ 6.000, enf_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -350,14 +350,14 @@ void () enf_walk1;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk1 = [ 7.000, globaldef5456 ] {
+void () enf_walk1 = [ 7.000, enf_walk2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3655,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003655,TRUE,ATTN_IDLE);
 
    }
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -372,9 +372,9 @@ void () enf_walk2;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk2 = [ 8.000, globaldef5457 ] {
+void () enf_walk2 = [ 8.000, enf_walk3 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -389,9 +389,9 @@ void () enf_walk3;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk3 = [ 9.000, globaldef5458 ] {
+void () enf_walk3 = [ 9.000, enf_walk4 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -406,9 +406,9 @@ void () enf_walk4;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk4 = [ 10.000, globaldef5459 ] {
+void () enf_walk4 = [ 10.000, enf_walk5 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -423,9 +423,9 @@ void () enf_walk5;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk5 = [ 11.000, globaldef5460 ] {
+void () enf_walk5 = [ 11.000, enf_walk6 ] {
 
-   globaldef1702 (TRUE);
+   ai_walk (TRUE);
 
 };
 
@@ -440,9 +440,9 @@ void () enf_walk6;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk6 = [ 12.000, globaldef5461 ] {
+void () enf_walk6 = [ 12.000, enf_walk7 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -457,9 +457,9 @@ void () enf_walk7;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk7 = [ 13.000, globaldef5462 ] {
+void () enf_walk7 = [ 13.000, enf_walk8 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -474,9 +474,9 @@ void () enf_walk8;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk8 = [ 14.000, globaldef5463 ] {
+void () enf_walk8 = [ 14.000, enf_walk9 ] {
 
-   globaldef1702 (TRUE);
+   ai_walk (TRUE);
 
 };
 
@@ -491,9 +491,9 @@ void () enf_walk9;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk9 = [ 15.000, globaldef5464 ] {
+void () enf_walk9 = [ 15.000, enf_walk10 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -508,9 +508,9 @@ void () enf_walk10;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk10 = [ 16.000, globaldef5465 ] {
+void () enf_walk10 = [ 16.000, enf_walk11 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -525,9 +525,9 @@ void () enf_walk11;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk11 = [ 17.000, globaldef5466 ] {
+void () enf_walk11 = [ 17.000, enf_walk12 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -542,9 +542,9 @@ void () enf_walk12;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk12 = [ 18.000, globaldef5467 ] {
+void () enf_walk12 = [ 18.000, enf_walk13 ] {
 
-   globaldef1702 (TRUE);
+   ai_walk (TRUE);
 
 };
 
@@ -559,9 +559,9 @@ void () enf_walk13;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk13 = [ 19.000, globaldef5468 ] {
+void () enf_walk13 = [ 19.000, enf_walk14 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -576,9 +576,9 @@ void () enf_walk14;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk14 = [ 20.000, globaldef5469 ] {
+void () enf_walk14 = [ 20.000, enf_walk15 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -593,9 +593,9 @@ void () enf_walk15;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk15 = [ 21.000, globaldef5470 ] {
+void () enf_walk15 = [ 21.000, enf_walk16 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -610,9 +610,9 @@ void () enf_walk16;
  * OP_DONE	0	0	0
  */
 
-void () enf_walk16 = [ 22.000, globaldef5455 ] {
+void () enf_walk16 = [ 22.000, enf_walk1 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -636,14 +636,14 @@ void () enf_run1;
  * OP_DONE	0	0	0
  */
 
-void () enf_run1 = [ 23.000, globaldef5472 ] {
+void () enf_run1 = [ 23.000, enf_run2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3655,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003655,TRUE,ATTN_IDLE);
 
    }
-   globaldef1734 (globaldef2221);
+   ai_run (globaldef002221);
 
 };
 
@@ -658,9 +658,9 @@ void () enf_run2;
  * OP_DONE	0	0	0
  */
 
-void () enf_run2 = [ 24.000, globaldef5473 ] {
+void () enf_run2 = [ 24.000, enf_run3 ] {
 
-   globaldef1734 (globaldef2136);
+   ai_run (globaldef002136);
 
 };
 
@@ -675,9 +675,9 @@ void () enf_run3;
  * OP_DONE	0	0	0
  */
 
-void () enf_run3 = [ 25.000, globaldef5474 ] {
+void () enf_run3 = [ 25.000, enf_run4 ] {
 
-   globaldef1734 (MOVETYPE_PUSH);
+   ai_run (MOVETYPE_PUSH);
 
 };
 
@@ -692,9 +692,9 @@ void () enf_run4;
  * OP_DONE	0	0	0
  */
 
-void () enf_run4 = [ 26.000, globaldef5475 ] {
+void () enf_run4 = [ 26.000, enf_run5 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -709,9 +709,9 @@ void () enf_run5;
  * OP_DONE	0	0	0
  */
 
-void () enf_run5 = [ 27.000, globaldef5476 ] {
+void () enf_run5 = [ 27.000, enf_run6 ] {
 
-   globaldef1734 (globaldef2136);
+   ai_run (globaldef002136);
 
 };
 
@@ -726,9 +726,9 @@ void () enf_run6;
  * OP_DONE	0	0	0
  */
 
-void () enf_run6 = [ 28.000, globaldef5477 ] {
+void () enf_run6 = [ 28.000, enf_run7 ] {
 
-   globaldef1734 (globaldef2136);
+   ai_run (globaldef002136);
 
 };
 
@@ -743,9 +743,9 @@ void () enf_run7;
  * OP_DONE	0	0	0
  */
 
-void () enf_run7 = [ 29.000, globaldef5478 ] {
+void () enf_run7 = [ 29.000, enf_run8 ] {
 
-   globaldef1734 (MOVETYPE_PUSH);
+   ai_run (MOVETYPE_PUSH);
 
 };
 
@@ -760,9 +760,9 @@ void () enf_run8;
  * OP_DONE	0	0	0
  */
 
-void () enf_run8 = [ 30.000, globaldef5471 ] {
+void () enf_run8 = [ 30.000, enf_run1 ] {
 
-   globaldef1734 (MOVETYPE_BOUNCEMISSILE);
+   ai_run (MOVETYPE_BOUNCEMISSILE);
 
 };
 
@@ -776,9 +776,9 @@ void () enf_atk1;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk1 = [ 31.000, globaldef5480 ] {
+void () enf_atk1 = [ 31.000, enf_atk2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -792,9 +792,9 @@ void () enf_atk2;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk2 = [ 32.000, globaldef5481 ] {
+void () enf_atk2 = [ 32.000, enf_atk3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -808,9 +808,9 @@ void () enf_atk3;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk3 = [ 33.000, globaldef5482 ] {
+void () enf_atk3 = [ 33.000, enf_atk4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -824,9 +824,9 @@ void () enf_atk4;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk4 = [ 34.000, globaldef5483 ] {
+void () enf_atk4 = [ 34.000, enf_atk5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -840,9 +840,9 @@ void () enf_atk5;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk5 = [ 35.000, globaldef5484 ] {
+void () enf_atk5 = [ 35.000, enf_atk6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -856,9 +856,9 @@ void () enf_atk6;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk6 = [ 36.000, globaldef5485 ] {
+void () enf_atk6 = [ 36.000, enf_atk7 ] {
 
-   globaldef5442 ();
+   enforcer_fire ();
 
 };
 
@@ -872,9 +872,9 @@ void () enf_atk7;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk7 = [ 37.000, globaldef5486 ] {
+void () enf_atk7 = [ 37.000, enf_atk8 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -888,9 +888,9 @@ void () enf_atk8;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk8 = [ 38.000, globaldef5487 ] {
+void () enf_atk8 = [ 38.000, enf_atk9 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -904,9 +904,9 @@ void () enf_atk9;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk9 = [ 35.000, globaldef5488 ] {
+void () enf_atk9 = [ 35.000, enf_atk10 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -920,9 +920,9 @@ void () enf_atk10;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk10 = [ 36.000, globaldef5489 ] {
+void () enf_atk10 = [ 36.000, enf_atk11 ] {
 
-   globaldef5442 ();
+   enforcer_fire ();
 
 };
 
@@ -936,9 +936,9 @@ void () enf_atk11;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk11 = [ 37.000, globaldef5490 ] {
+void () enf_atk11 = [ 37.000, enf_atk12 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -952,9 +952,9 @@ void () enf_atk12;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk12 = [ 38.000, globaldef5491 ] {
+void () enf_atk12 = [ 38.000, enf_atk13 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -968,9 +968,9 @@ void () enf_atk13;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk13 = [ 39.000, globaldef5492 ] {
+void () enf_atk13 = [ 39.000, enf_atk14 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -986,10 +986,10 @@ void () enf_atk14;
  * OP_DONE	0	0	0
  */
 
-void () enf_atk14 = [ 40.000, globaldef5471 ] {
+void () enf_atk14 = [ 40.000, enf_run1 ] {
 
-   globaldef1533 ();
-   globaldef1520 (globaldef5479);
+   ai_face ();
+   SUB_CheckRefire (enf_atk1);
 
 };
 
@@ -1002,7 +1002,7 @@ void () enf_paina1;
  * OP_DONE	0	0	0
  */
 
-void () enf_paina1 = [ 66.000, globaldef5494 ] {
+void () enf_paina1 = [ 66.000, enf_paina2 ] {
 
 
 };
@@ -1016,7 +1016,7 @@ void () enf_paina2;
  * OP_DONE	0	0	0
  */
 
-void () enf_paina2 = [ 67.000, globaldef5495 ] {
+void () enf_paina2 = [ 67.000, enf_paina3 ] {
 
 
 };
@@ -1030,7 +1030,7 @@ void () enf_paina3;
  * OP_DONE	0	0	0
  */
 
-void () enf_paina3 = [ 68.000, globaldef5496 ] {
+void () enf_paina3 = [ 68.000, enf_paina4 ] {
 
 
 };
@@ -1044,7 +1044,7 @@ void () enf_paina4;
  * OP_DONE	0	0	0
  */
 
-void () enf_paina4 = [ 69.000, globaldef5471 ] {
+void () enf_paina4 = [ 69.000, enf_run1 ] {
 
 
 };
@@ -1058,7 +1058,7 @@ void () enf_painb1;
  * OP_DONE	0	0	0
  */
 
-void () enf_painb1 = [ 70.000, globaldef5498 ] {
+void () enf_painb1 = [ 70.000, enf_painb2 ] {
 
 
 };
@@ -1072,7 +1072,7 @@ void () enf_painb2;
  * OP_DONE	0	0	0
  */
 
-void () enf_painb2 = [ 71.000, globaldef5499 ] {
+void () enf_painb2 = [ 71.000, enf_painb3 ] {
 
 
 };
@@ -1086,7 +1086,7 @@ void () enf_painb3;
  * OP_DONE	0	0	0
  */
 
-void () enf_painb3 = [ 72.000, globaldef5500 ] {
+void () enf_painb3 = [ 72.000, enf_painb4 ] {
 
 
 };
@@ -1100,7 +1100,7 @@ void () enf_painb4;
  * OP_DONE	0	0	0
  */
 
-void () enf_painb4 = [ 73.000, globaldef5501 ] {
+void () enf_painb4 = [ 73.000, enf_painb5 ] {
 
 
 };
@@ -1114,7 +1114,7 @@ void () enf_painb5;
  * OP_DONE	0	0	0
  */
 
-void () enf_painb5 = [ 74.000, globaldef5471 ] {
+void () enf_painb5 = [ 74.000, enf_run1 ] {
 
 
 };
@@ -1128,7 +1128,7 @@ void () enf_painc1;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc1 = [ 75.000, globaldef5503 ] {
+void () enf_painc1 = [ 75.000, enf_painc2 ] {
 
 
 };
@@ -1142,7 +1142,7 @@ void () enf_painc2;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc2 = [ 76.000, globaldef5504 ] {
+void () enf_painc2 = [ 76.000, enf_painc3 ] {
 
 
 };
@@ -1156,7 +1156,7 @@ void () enf_painc3;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc3 = [ 77.000, globaldef5505 ] {
+void () enf_painc3 = [ 77.000, enf_painc4 ] {
 
 
 };
@@ -1170,7 +1170,7 @@ void () enf_painc4;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc4 = [ 78.000, globaldef5506 ] {
+void () enf_painc4 = [ 78.000, enf_painc5 ] {
 
 
 };
@@ -1184,7 +1184,7 @@ void () enf_painc5;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc5 = [ 79.000, globaldef5507 ] {
+void () enf_painc5 = [ 79.000, enf_painc6 ] {
 
 
 };
@@ -1198,7 +1198,7 @@ void () enf_painc6;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc6 = [ 80.000, globaldef5508 ] {
+void () enf_painc6 = [ 80.000, enf_painc7 ] {
 
 
 };
@@ -1212,7 +1212,7 @@ void () enf_painc7;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc7 = [ 81.000, globaldef5509 ] {
+void () enf_painc7 = [ 81.000, enf_painc8 ] {
 
 
 };
@@ -1226,7 +1226,7 @@ void () enf_painc8;
  * OP_DONE	0	0	0
  */
 
-void () enf_painc8 = [ 82.000, globaldef5471 ] {
+void () enf_painc8 = [ 82.000, enf_run1 ] {
 
 
 };
@@ -1240,7 +1240,7 @@ void () enf_paind1;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind1 = [ 83.000, globaldef5511 ] {
+void () enf_paind1 = [ 83.000, enf_paind2 ] {
 
 
 };
@@ -1254,7 +1254,7 @@ void () enf_paind2;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind2 = [ 84.000, globaldef5512 ] {
+void () enf_paind2 = [ 84.000, enf_paind3 ] {
 
 
 };
@@ -1268,7 +1268,7 @@ void () enf_paind3;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind3 = [ 85.000, globaldef5513 ] {
+void () enf_paind3 = [ 85.000, enf_paind4 ] {
 
 
 };
@@ -1284,9 +1284,9 @@ void () enf_paind4;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind4 = [ 86.000, globaldef5514 ] {
+void () enf_paind4 = [ 86.000, enf_paind5 ] {
 
-   globaldef1700 (FL_SWIM);
+   ai_painforward (FL_SWIM);
 
 };
 
@@ -1301,9 +1301,9 @@ void () enf_paind5;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind5 = [ 87.000, globaldef5515 ] {
+void () enf_paind5 = [ 87.000, enf_paind6 ] {
 
-   globaldef1700 (TRUE);
+   ai_painforward (TRUE);
 
 };
 
@@ -1316,7 +1316,7 @@ void () enf_paind6;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind6 = [ 88.000, globaldef5516 ] {
+void () enf_paind6 = [ 88.000, enf_paind7 ] {
 
 
 };
@@ -1330,7 +1330,7 @@ void () enf_paind7;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind7 = [ 89.000, globaldef5517 ] {
+void () enf_paind7 = [ 89.000, enf_paind8 ] {
 
 
 };
@@ -1344,7 +1344,7 @@ void () enf_paind8;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind8 = [ 90.000, globaldef5518 ] {
+void () enf_paind8 = [ 90.000, enf_paind9 ] {
 
 
 };
@@ -1358,7 +1358,7 @@ void () enf_paind9;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind9 = [ 91.000, globaldef5519 ] {
+void () enf_paind9 = [ 91.000, enf_paind10 ] {
 
 
 };
@@ -1372,7 +1372,7 @@ void () enf_paind10;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind10 = [ 92.000, globaldef5520 ] {
+void () enf_paind10 = [ 92.000, enf_paind11 ] {
 
 
 };
@@ -1388,9 +1388,9 @@ void () enf_paind11;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind11 = [ 93.000, globaldef5521 ] {
+void () enf_paind11 = [ 93.000, enf_paind12 ] {
 
-   globaldef1700 (TRUE);
+   ai_painforward (TRUE);
 
 };
 
@@ -1405,9 +1405,9 @@ void () enf_paind12;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind12 = [ 94.000, globaldef5522 ] {
+void () enf_paind12 = [ 94.000, enf_paind13 ] {
 
-   globaldef1700 (TRUE);
+   ai_painforward (TRUE);
 
 };
 
@@ -1422,9 +1422,9 @@ void () enf_paind13;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind13 = [ 95.000, globaldef5523 ] {
+void () enf_paind13 = [ 95.000, enf_paind14 ] {
 
-   globaldef1700 (TRUE);
+   ai_painforward (TRUE);
 
 };
 
@@ -1437,7 +1437,7 @@ void () enf_paind14;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind14 = [ 96.000, globaldef5524 ] {
+void () enf_paind14 = [ 96.000, enf_paind15 ] {
 
 
 };
@@ -1451,7 +1451,7 @@ void () enf_paind15;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind15 = [ 97.000, globaldef5525 ] {
+void () enf_paind15 = [ 97.000, enf_paind16 ] {
 
 
 };
@@ -1467,9 +1467,9 @@ void () enf_paind16;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind16 = [ 98.000, globaldef5526 ] {
+void () enf_paind16 = [ 98.000, enf_paind17 ] {
 
-   globaldef1698 (TRUE);
+   ai_pain (TRUE);
 
 };
 
@@ -1484,9 +1484,9 @@ void () enf_paind17;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind17 = [ 99.000, globaldef5527 ] {
+void () enf_paind17 = [ 99.000, enf_paind18 ] {
 
-   globaldef1698 (TRUE);
+   ai_pain (TRUE);
 
 };
 
@@ -1499,7 +1499,7 @@ void () enf_paind18;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind18 = [ 100.000, globaldef5528 ] {
+void () enf_paind18 = [ 100.000, enf_paind19 ] {
 
 
 };
@@ -1513,12 +1513,12 @@ void () enf_paind19;
  * OP_DONE	0	0	0
  */
 
-void () enf_paind19 = [ 101.000, globaldef5471 ] {
+void () enf_paind19 = [ 101.000, enf_run1 ] {
 
 
 };
 
-void (entity globaldef5530, float globaldef5531) enf_pain;
+void (entity globaldef005530, float globaldef005531) enf_pain;
 
 // function enf_pain
 // function number 2155 begins at statement 26614
@@ -1572,48 +1572,48 @@ void (entity globaldef5530, float globaldef5531) enf_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef5530, float globaldef5531) enf_pain = {
+void (entity globaldef005530, float globaldef005531) enf_pain = {
 
-   local float globaldef5532;
+   local float r;
 
-   globaldef5532 = globaldef440 ();
-   if ( (self.globaldef362 > time) ) {
+   r = random ();
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   if ( (globaldef5532 < globaldef522) ) {
+   if ( (r < globaldef000522) ) {
 
-      sound (self,CHAN_VOICE,globaldef3651,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,globaldef003651,TRUE,ATTN_NORM);
 
    } else {
 
-      sound (self,CHAN_VOICE,globaldef3653,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,globaldef003653,TRUE,ATTN_NORM);
 
    }
-   if ( (globaldef5532 < globaldef1553) ) {
+   if ( (r < globaldef001553) ) {
 
-      self.globaldef362 = (time + TRUE);
-      globaldef5493 ();
+      self.globaldef000362 = (time + TRUE);
+      enf_paina1 ();
 
    } else {
 
-      if ( (globaldef5532 < globaldef1300) ) {
+      if ( (r < globaldef001300) ) {
 
-         self.globaldef362 = (time + TRUE);
-         globaldef5497 ();
+         self.globaldef000362 = (time + TRUE);
+         enf_painb1 ();
 
       } else {
 
-         if ( (globaldef5532 < globaldef2123) ) {
+         if ( (r < globaldef002123) ) {
 
-            self.globaldef362 = (time + TRUE);
-            globaldef5502 ();
+            self.globaldef000362 = (time + TRUE);
+            enf_painc1 ();
 
          } else {
 
-            self.globaldef362 = (time + FL_SWIM);
-            globaldef5510 ();
+            self.globaldef000362 = (time + FL_SWIM);
+            enf_paind1 ();
 
          }
 
@@ -1632,7 +1632,7 @@ void () enf_die1;
  * OP_DONE	0	0	0
  */
 
-void () enf_die1 = [ 41.000, globaldef5534 ] {
+void () enf_die1 = [ 41.000, enf_die2 ] {
 
 
 };
@@ -1646,7 +1646,7 @@ void () enf_die2;
  * OP_DONE	0	0	0
  */
 
-void () enf_die2 = [ 42.000, globaldef5535 ] {
+void () enf_die2 = [ 42.000, enf_die3 ] {
 
 
 };
@@ -1665,11 +1665,11 @@ void () enf_die3;
  * OP_DONE	0	0	0
  */
 
-void () enf_die3 = [ 43.000, globaldef5536 ] {
+void () enf_die3 = [ 43.000, enf_die4 ] {
 
-   self.solid = SOLID_NOT;
-   self.globaldef139 = MOVETYPE_FLY;
-   globaldef1980 ();
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000139 = MOVETYPE_FLY;
+   func000244 ();
 
 };
 
@@ -1684,9 +1684,9 @@ void () enf_die4;
  * OP_DONE	0	0	0
  */
 
-void () enf_die4 = [ 44.000, globaldef5537 ] {
+void () enf_die4 = [ 44.000, enf_die5 ] {
 
-   globaldef1694 (globaldef2136);
+   ai_forward (globaldef002136);
 
 };
 
@@ -1701,9 +1701,9 @@ void () enf_die5;
  * OP_DONE	0	0	0
  */
 
-void () enf_die5 = [ 45.000, globaldef5538 ] {
+void () enf_die5 = [ 45.000, enf_die6 ] {
 
-   globaldef1694 (FL_SWIM);
+   ai_forward (FL_SWIM);
 
 };
 
@@ -1716,7 +1716,7 @@ void () enf_die6;
  * OP_DONE	0	0	0
  */
 
-void () enf_die6 = [ 46.000, globaldef5539 ] {
+void () enf_die6 = [ 46.000, enf_die7 ] {
 
 
 };
@@ -1730,7 +1730,7 @@ void () enf_die7;
  * OP_DONE	0	0	0
  */
 
-void () enf_die7 = [ 47.000, globaldef5540 ] {
+void () enf_die7 = [ 47.000, enf_die8 ] {
 
 
 };
@@ -1744,7 +1744,7 @@ void () enf_die8;
  * OP_DONE	0	0	0
  */
 
-void () enf_die8 = [ 48.000, globaldef5541 ] {
+void () enf_die8 = [ 48.000, enf_die9 ] {
 
 
 };
@@ -1760,9 +1760,9 @@ void () enf_die9;
  * OP_DONE	0	0	0
  */
 
-void () enf_die9 = [ 49.000, globaldef5542 ] {
+void () enf_die9 = [ 49.000, enf_die10 ] {
 
-   globaldef1694 (MOVETYPE_WALK);
+   ai_forward (MOVETYPE_WALK);
 
 };
 
@@ -1777,9 +1777,9 @@ void () enf_die10;
  * OP_DONE	0	0	0
  */
 
-void () enf_die10 = [ 50.000, globaldef5543 ] {
+void () enf_die10 = [ 50.000, enf_die11 ] {
 
-   globaldef1694 (MOVETYPE_FLY);
+   ai_forward (MOVETYPE_FLY);
 
 };
 
@@ -1794,9 +1794,9 @@ void () enf_die11;
  * OP_DONE	0	0	0
  */
 
-void () enf_die11 = [ 51.000, globaldef5544 ] {
+void () enf_die11 = [ 51.000, enf_die12 ] {
 
-   globaldef1694 (MOVETYPE_FLY);
+   ai_forward (MOVETYPE_FLY);
 
 };
 
@@ -1811,9 +1811,9 @@ void () enf_die12;
  * OP_DONE	0	0	0
  */
 
-void () enf_die12 = [ 52.000, globaldef5545 ] {
+void () enf_die12 = [ 52.000, enf_die13 ] {
 
-   globaldef1694 (MOVETYPE_FLY);
+   ai_forward (MOVETYPE_FLY);
 
 };
 
@@ -1826,7 +1826,7 @@ void () enf_die13;
  * OP_DONE	0	0	0
  */
 
-void () enf_die13 = [ 53.000, globaldef5546 ] {
+void () enf_die13 = [ 53.000, enf_die14 ] {
 
 
 };
@@ -1840,7 +1840,7 @@ void () enf_die14;
  * OP_DONE	0	0	0
  */
 
-void () enf_die14 = [ 54.000, globaldef5546 ] {
+void () enf_die14 = [ 54.000, enf_die14 ] {
 
 
 };
@@ -1854,7 +1854,7 @@ void () enf_fdie1;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie1 = [ 55.000, globaldef5548 ] {
+void () enf_fdie1 = [ 55.000, enf_fdie2 ] {
 
 
 };
@@ -1868,7 +1868,7 @@ void () enf_fdie2;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie2 = [ 56.000, globaldef5549 ] {
+void () enf_fdie2 = [ 56.000, enf_fdie3 ] {
 
 
 };
@@ -1887,11 +1887,11 @@ void () enf_fdie3;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie3 = [ 57.000, globaldef5550 ] {
+void () enf_fdie3 = [ 57.000, enf_fdie4 ] {
 
-   self.solid = SOLID_NOT;
-   self.globaldef139 = MOVETYPE_FLY;
-   globaldef1980 ();
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000139 = MOVETYPE_FLY;
+   func000244 ();
 
 };
 
@@ -1904,7 +1904,7 @@ void () enf_fdie4;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie4 = [ 58.000, globaldef5551 ] {
+void () enf_fdie4 = [ 58.000, enf_fdie5 ] {
 
 
 };
@@ -1918,7 +1918,7 @@ void () enf_fdie5;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie5 = [ 59.000, globaldef5552 ] {
+void () enf_fdie5 = [ 59.000, enf_fdie6 ] {
 
 
 };
@@ -1932,7 +1932,7 @@ void () enf_fdie6;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie6 = [ 60.000, globaldef5553 ] {
+void () enf_fdie6 = [ 60.000, enf_fdie7 ] {
 
 
 };
@@ -1946,7 +1946,7 @@ void () enf_fdie7;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie7 = [ 61.000, globaldef5554 ] {
+void () enf_fdie7 = [ 61.000, enf_fdie8 ] {
 
 
 };
@@ -1960,7 +1960,7 @@ void () enf_fdie8;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie8 = [ 62.000, globaldef5555 ] {
+void () enf_fdie8 = [ 62.000, enf_fdie9 ] {
 
 
 };
@@ -1974,7 +1974,7 @@ void () enf_fdie9;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie9 = [ 63.000, globaldef5556 ] {
+void () enf_fdie9 = [ 63.000, enf_fdie10 ] {
 
 
 };
@@ -1988,7 +1988,7 @@ void () enf_fdie10;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie10 = [ 64.000, globaldef5557 ] {
+void () enf_fdie10 = [ 64.000, enf_fdie11 ] {
 
 
 };
@@ -2002,7 +2002,7 @@ void () enf_fdie11;
  * OP_DONE	0	0	0
  */
 
-void () enf_fdie11 = [ 65.000, globaldef5557 ] {
+void () enf_fdie11 = [ 65.000, enf_fdie11 ] {
 
 
 };
@@ -2055,29 +2055,29 @@ void () enf_die;
 
 void () enf_die = {
 
-   if ( (self.globaldef130 < globaldef4288) ) {
+   if ( (self.globaldef000130 < globaldef004288) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef5559,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2433,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef005559,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002433,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef3654,TRUE,ATTN_NORM);
-   if ( (globaldef440 () > globaldef522) ) {
+   sound (self,CHAN_VOICE,globaldef003654,TRUE,ATTN_NORM);
+   if ( (random () > globaldef000522) ) {
 
-      globaldef5533 ();
+      enf_die1 ();
 
    } else {
 
-      globaldef5547 ();
+      enf_fdie1 ();
 
    }
 
 };
-string globaldef5559 /* = "progs/h_mega.mdl" */;
+string globaldef005559 /* = "progs/h_mega.mdl" */;
 
 void () monster_enforcer;
 
@@ -2151,30 +2151,30 @@ void () monster_enforcer = {
       return ;
 
    }
-   globaldef493 (globaldef5561);
-   globaldef493 (globaldef5559);
-   globaldef493 (globaldef3606);
-   globaldef494 (globaldef3654);
-   globaldef494 (globaldef3603);
-   globaldef494 (globaldef3607);
-   globaldef494 (globaldef3655);
-   globaldef494 (globaldef3651);
-   globaldef494 (globaldef3653);
-   globaldef494 ("enforcer/sight1.wav");
-   globaldef494 ("enforcer/sight2.wav");
-   globaldef494 ("enforcer/sight3.wav");
-   globaldef494 ("enforcer/sight4.wav");
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef5561);
-   globaldef438 (self,VEC_HULL_MIN,globaldef4167);
-   self.globaldef130 = globaldef1439;
-   self.globaldef344 = globaldef5448;
-   self.globaldef345 = globaldef5455;
-   self.globaldef346 = globaldef5471;
-   self.globaldef349 = globaldef5529;
-   self.globaldef350 = globaldef5558;
-   self.globaldef347 = globaldef5479;
-   globaldef3309 ();
+   precache_model2 (globaldef005561);
+   precache_model2 (globaldef005559);
+   precache_model2 (globaldef003606);
+   precache_sound2 (globaldef003654);
+   precache_sound2 (globaldef003603);
+   precache_sound2 (globaldef003607);
+   precache_sound2 (globaldef003655);
+   precache_sound2 (globaldef003651);
+   precache_sound2 (globaldef003653);
+   precache_sound2 (globaldef001676);
+   precache_sound2 (globaldef001677);
+   precache_sound2 (globaldef001678);
+   precache_sound2 (globaldef001679);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef005561);
+   setsize (self,VEC_HULL_MIN,globaldef004167);
+   self.globaldef000130 = globaldef001439;
+   self.globaldef000344 = enf_stand1;
+   self.globaldef000345 = enf_walk1;
+   self.globaldef000346 = enf_run1;
+   self.globaldef000349 = enf_pain;
+   self.globaldef000350 = enf_die;
+   self.globaldef000347 = enf_atk1;
+   walkmonster_start ();
 
 };

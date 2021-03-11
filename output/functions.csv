@@ -1,5 +1,5 @@
 row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size
-0,unknown.qc,0,func0_fs0,0,0,0,0,0,0,00000000
+0,unknown.qc,0,func000000,0,0,0,0,0,0,00000000
 1,defs.qc,1,makevectors,9,0,-1,0,1,448,30000000
 2,defs.qc,1,setorigin,21,0,-2,0,2,449,13000000
 3,defs.qc,1,setmodel,31,0,-3,0,2,450,11000000

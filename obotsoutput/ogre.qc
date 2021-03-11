@@ -1,6 +1,6 @@
-string globaldef3653 /* = "enforcer/pain2.wav" */;
-string globaldef3654 /* = "enforcer/death1.wav" */;
-string globaldef3655 /* = "enforcer/idle1.wav" */;
+string globaldef003653 /* = "enforcer/pain2.wav" */;
+string globaldef003654 /* = "enforcer/death1.wav" */;
+string globaldef003655 /* = "enforcer/idle1.wav" */;
 
 void () OgreGrenadeExplode;
 
@@ -52,18 +52,18 @@ void () OgreGrenadeExplode;
 
 void () OgreGrenadeExplode = {
 
-   globaldef1772 (self,self.globaldef179,globaldef729,world);
-   sound (self,CHAN_VOICE,globaldef2012,TRUE,ATTN_NORM);
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_EXPLOSION);
-   globaldef483 (MSG_BROADCAST,self.globaldef84);
-   globaldef483 (MSG_BROADCAST,self.globaldef85);
-   globaldef483 (MSG_BROADCAST,self.globaldef86);
-   self.velocity = VEC_ORIGIN;
-   self.globaldef124 = SUB_Null;
-   setmodel (self,globaldef2145);
-   self.solid = SOLID_NOT;
-   globaldef2138 ();
+   T_RadiusDamage (self,self.globaldef000179,globaldef000729,world);
+   sound (self,CHAN_VOICE,globaldef002012,TRUE,ATTN_NORM);
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_EXPLOSION);
+   WriteCoord (MSG_BROADCAST,self.globaldef000084);
+   WriteCoord (MSG_BROADCAST,self.globaldef000085);
+   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   self.globaldef000091 = VEC_ORIGIN;
+   self.globaldef000124 = SUB_Null;
+   setmodel (self,globaldef002145);
+   self.globaldef000082 = SOLID_NOT;
+   s_explode1 ();
 
 };
 
@@ -97,21 +97,21 @@ void () OgreGrenadeTouch;
 
 void () OgreGrenadeTouch = {
 
-   if ( (other == self.globaldef179) ) {
+   if ( (other == self.globaldef000179) ) {
 
       return ;
 
    }
-   if ( (other.globaldef141 == DAMAGE_AIM) ) {
+   if ( (other.globaldef000141 == DAMAGE_AIM) ) {
 
-      globaldef3656 ();
+      OgreGrenadeExplode ();
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef2022,TRUE,ATTN_NORM);
-   if ( (self.velocity == VEC_ORIGIN) ) {
+   sound (self,CHAN_VOICE,globaldef002022,TRUE,ATTN_NORM);
+   if ( (self.globaldef000091 == VEC_ORIGIN) ) {
 
-      self.avelocity = VEC_ORIGIN;
+      self.globaldef000099 = VEC_ORIGIN;
 
    }
 
@@ -187,31 +187,31 @@ void () OgreFireGrenade;
 
 void () OgreFireGrenade = {
 
-   local entity globaldef3659;
-   local entity globaldef3660;
+   local entity missile;
+   local entity mpuff;
 
-   self.globaldef111 = (self.globaldef111 | EF_MUZZLEFLASH);
-   sound (self,CHAN_WEAPON,globaldef2021,TRUE,ATTN_NORM);
-   globaldef3659 = spawn ();
-   globaldef3659.globaldef179 = self;
-   globaldef3659.movetype = MOVETYPE_BOUNCE;
-   globaldef3659.solid = SOLID_BBOX;
-   makevectors (self.angles);
-   globaldef3659.velocity = globaldef442 ((self.enemy.origin - self.origin));
-   globaldef3659.velocity = (globaldef3659.velocity * globaldef723);
-   globaldef3659.globaldef94 = globaldef1343;
-   globaldef3659.avelocity = globaldef2186;
-   globaldef3659.angles = globaldef478 (globaldef3659.velocity);
-   globaldef3659.globaldef124 = globaldef3657;
-   globaldef3659.nextthink = (time + globaldef2187);
-   globaldef3659.think = globaldef3656;
-   setmodel (globaldef3659,globaldef2188);
-   globaldef438 (globaldef3659,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (globaldef3659,self.origin);
+   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   sound (self,CHAN_WEAPON,globaldef002021,TRUE,ATTN_NORM);
+   missile = spawn ();
+   missile.globaldef000179 = self;
+   missile.globaldef000081 = MOVETYPE_BOUNCE;
+   missile.globaldef000082 = SOLID_BBOX;
+   makevectors (self.globaldef000095);
+   missile.globaldef000091 = normalize ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   missile.globaldef000091 = (missile.globaldef000091 * globaldef000723);
+   missile.globaldef000094 = globaldef001343;
+   missile.globaldef000099 = globaldef002186;
+   missile.globaldef000095 = vectoangles (missile.globaldef000091);
+   missile.globaldef000124 = OgreGrenadeTouch;
+   missile.globaldef000128 = (time + globaldef002187);
+   missile.globaldef000126 = OgreGrenadeExplode;
+   setmodel (missile,globaldef002188);
+   setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
+   setorigin (missile,self.globaldef000083);
 
 };
 
-void (float globaldef3662) chainsaw;
+void (float globaldef003662) chainsaw;
 
 // function chainsaw
 // function number 668 begins at statement 18352
@@ -278,40 +278,40 @@ void (float globaldef3662) chainsaw;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef3662) chainsaw = {
+void (float globaldef003662) chainsaw = {
 
-   local vector globaldef3663;
-   local float globaldef3667;
+   local vector delta;
+   local float ldmg;
 
-   if ( !self.enemy ) {
-
-      return ;
-
-   }
-   if ( !globaldef507 (self.enemy,self) ) {
+   if ( !self.globaldef000159 ) {
 
       return ;
 
    }
-   globaldef1557 (MOVETYPE_BOUNCE);
-   globaldef3663 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef3663) > globaldef1335) ) {
+   if ( !CanDamage (self.globaldef000159,self) ) {
 
       return ;
 
    }
-   globaldef3667 = (((globaldef440 () + globaldef440 ()) + globaldef440 ()) * MOVETYPE_STEP);
-   globaldef505 (self.enemy,self,self,globaldef3667);
-   if ( globaldef3662 ) {
+   ai_charge (MOVETYPE_BOUNCE);
+   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   if ( (vlen (delta) > globaldef001335) ) {
 
-      makevectors (self.angles);
-      if ( (globaldef3662 == TRUE) ) {
+      return ;
 
-         globaldef2044 ((self.origin + (v_forward * FL_INWATER)),((globaldef2024 () * globaldef1335) * v_right));
+   }
+   ldmg = (((random () + random ()) + random ()) * MOVETYPE_STEP);
+   T_Damage (self.globaldef000159,self,self,ldmg);
+   if ( globaldef003662 ) {
+
+      makevectors (self.globaldef000095);
+      if ( (globaldef003662 == TRUE) ) {
+
+         func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
 
       } else {
 
-         globaldef2044 ((self.origin + (v_forward * FL_INWATER)),(globaldef3662 * v_right));
+         func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),(globaldef003662 * v_right));
 
       }
 
@@ -329,9 +329,9 @@ void () ogre_stand1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand1 = [ 0.000, globaldef3669 ] {
+void () ogre_stand1 = [ 0.000, ogre_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -345,9 +345,9 @@ void () ogre_stand2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand2 = [ 1.000, globaldef3670 ] {
+void () ogre_stand2 = [ 1.000, ogre_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -361,9 +361,9 @@ void () ogre_stand3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand3 = [ 2.000, globaldef3671 ] {
+void () ogre_stand3 = [ 2.000, ogre_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -377,9 +377,9 @@ void () ogre_stand4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand4 = [ 3.000, globaldef3672 ] {
+void () ogre_stand4 = [ 3.000, ogre_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -402,19 +402,19 @@ void () ogre_stand5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand5 = [ 4.000, globaldef3673 ] {
+void () ogre_stand5 = [ 4.000, ogre_stand6 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3674,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003674,TRUE,ATTN_IDLE);
 
    }
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
 void () ogre_stand6;
-string globaldef3674 /* = "ogre/ogidle.wav" */;
+string globaldef003674 /* = "ogre/ogidle.wav" */;
 
 // function ogre_stand6
 // function number 674 begins at statement 18436
@@ -424,9 +424,9 @@ string globaldef3674 /* = "ogre/ogidle.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand6 = [ 5.000, globaldef3675 ] {
+void () ogre_stand6 = [ 5.000, ogre_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -440,9 +440,9 @@ void () ogre_stand7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand7 = [ 6.000, globaldef3676 ] {
+void () ogre_stand7 = [ 6.000, ogre_stand8 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -456,9 +456,9 @@ void () ogre_stand8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand8 = [ 7.000, globaldef3677 ] {
+void () ogre_stand8 = [ 7.000, ogre_stand9 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -472,9 +472,9 @@ void () ogre_stand9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_stand9 = [ 8.000, globaldef3668 ] {
+void () ogre_stand9 = [ 8.000, ogre_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -489,9 +489,9 @@ void () ogre_walk1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk1 = [ 9.000, globaldef3679 ] {
+void () ogre_walk1 = [ 9.000, ogre_walk2 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -506,9 +506,9 @@ void () ogre_walk2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk2 = [ 10.000, globaldef3680 ] {
+void () ogre_walk2 = [ 10.000, ogre_walk3 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -532,12 +532,12 @@ void () ogre_walk3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk3 = [ 11.000, globaldef3681 ] {
+void () ogre_walk3 = [ 11.000, ogre_walk4 ] {
 
-   globaldef1702 (FL_SWIM);
-   if ( (globaldef440 () < globaldef1553) ) {
+   ai_walk (FL_SWIM);
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3674,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003674,TRUE,ATTN_IDLE);
 
    }
 
@@ -554,9 +554,9 @@ void () ogre_walk4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk4 = [ 12.000, globaldef3682 ] {
+void () ogre_walk4 = [ 12.000, ogre_walk5 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -571,9 +571,9 @@ void () ogre_walk5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk5 = [ 13.000, globaldef3683 ] {
+void () ogre_walk5 = [ 13.000, ogre_walk6 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -597,12 +597,12 @@ void () ogre_walk6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk6 = [ 14.000, globaldef3684 ] {
+void () ogre_walk6 = [ 14.000, ogre_walk7 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
-   if ( (globaldef440 () < 0.100) ) {
+   ai_walk (MOVETYPE_FLY);
+   if ( (random () < globaldef001488) ) {
 
-      sound (self,CHAN_VOICE,globaldef1626,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef001626,TRUE,ATTN_IDLE);
 
    }
 
@@ -619,9 +619,9 @@ void () ogre_walk7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk7 = [ 15.000, globaldef3685 ] {
+void () ogre_walk7 = [ 15.000, ogre_walk8 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -636,9 +636,9 @@ void () ogre_walk8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk8 = [ 16.000, globaldef3686 ] {
+void () ogre_walk8 = [ 16.000, ogre_walk9 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -653,9 +653,9 @@ void () ogre_walk9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk9 = [ 17.000, globaldef3687 ] {
+void () ogre_walk9 = [ 17.000, ogre_walk10 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -670,9 +670,9 @@ void () ogre_walk10;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk10 = [ 18.000, globaldef3688 ] {
+void () ogre_walk10 = [ 18.000, ogre_walk11 ] {
 
-   globaldef1702 (TRUE);
+   ai_walk (TRUE);
 
 };
 
@@ -687,9 +687,9 @@ void () ogre_walk11;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk11 = [ 19.000, globaldef3689 ] {
+void () ogre_walk11 = [ 19.000, ogre_walk12 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -704,9 +704,9 @@ void () ogre_walk12;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk12 = [ 20.000, globaldef3690 ] {
+void () ogre_walk12 = [ 20.000, ogre_walk13 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -721,12 +721,12 @@ void () ogre_walk13;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk13 = [ 21.000, globaldef3692 ] {
+void () ogre_walk13 = [ 21.000, ogre_walk14 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
-float globaldef3691 /* = 21.000 */;
+float globaldef003691 /* = 21.000 */;
 
 void () ogre_walk14;
 
@@ -739,12 +739,12 @@ void () ogre_walk14;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk14 = [ 22.000, globaldef3694 ] {
+void () ogre_walk14 = [ 22.000, ogre_walk15 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
-float globaldef3693 /* = 22.000 */;
+float globaldef003693 /* = 22.000 */;
 
 void () ogre_walk15;
 
@@ -757,9 +757,9 @@ void () ogre_walk15;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk15 = [ 23.000, globaldef3695 ] {
+void () ogre_walk15 = [ 23.000, ogre_walk16 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -774,9 +774,9 @@ void () ogre_walk16;
  * OP_DONE	0	0	0
  */
 
-void () ogre_walk16 = [ 24.000, globaldef3678 ] {
+void () ogre_walk16 = [ 24.000, ogre_walk1 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -800,19 +800,19 @@ void () ogre_run1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run1 = [ 25.000, globaldef3697 ] {
+void () ogre_run1 = [ 25.000, ogre_run2 ] {
 
-   globaldef1734 (MOVETYPE_FLYMISSILE);
-   if ( (globaldef440 () < globaldef1553) ) {
+   ai_run (MOVETYPE_FLYMISSILE);
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3698,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003698,TRUE,ATTN_IDLE);
 
    }
 
 };
 
 void () ogre_run2;
-string globaldef3698 /* = "ogre/ogidle2.wav" */;
+string globaldef003698 /* = "ogre/ogidle2.wav" */;
 
 // function ogre_run2
 // function number 695 begins at statement 18543
@@ -823,9 +823,9 @@ string globaldef3698 /* = "ogre/ogidle2.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run2 = [ 26.000, globaldef3699 ] {
+void () ogre_run2 = [ 26.000, ogre_run3 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -840,9 +840,9 @@ void () ogre_run3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run3 = [ 27.000, globaldef3700 ] {
+void () ogre_run3 = [ 27.000, ogre_run4 ] {
 
-   globaldef1734 (FL_CLIENT);
+   ai_run (FL_CLIENT);
 
 };
 
@@ -857,9 +857,9 @@ void () ogre_run4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run4 = [ 28.000, globaldef3701 ] {
+void () ogre_run4 = [ 28.000, ogre_run5 ] {
 
-   globaldef1734 (globaldef3693);
+   ai_run (globaldef003693);
 
 };
 
@@ -874,9 +874,9 @@ void () ogre_run5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run5 = [ 29.000, globaldef3702 ] {
+void () ogre_run5 = [ 29.000, ogre_run6 ] {
 
-   globaldef1734 (FL_INWATER);
+   ai_run (FL_INWATER);
 
 };
 
@@ -891,9 +891,9 @@ void () ogre_run6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run6 = [ 30.000, globaldef3703 ] {
+void () ogre_run6 = [ 30.000, ogre_run7 ] {
 
-   globaldef1734 (MOVETYPE_STEP);
+   ai_run (MOVETYPE_STEP);
 
 };
 
@@ -908,9 +908,9 @@ void () ogre_run7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run7 = [ 31.000, globaldef3704 ] {
+void () ogre_run7 = [ 31.000, ogre_run8 ] {
 
-   globaldef1734 (globaldef775);
+   ai_run (globaldef000775);
 
 };
 
@@ -925,9 +925,9 @@ void () ogre_run8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_run8 = [ 32.000, globaldef3696 ] {
+void () ogre_run8 = [ 32.000, ogre_run1 ] {
 
-   globaldef1734 (globaldef719);
+   ai_run (globaldef000719);
 
 };
 
@@ -946,15 +946,15 @@ void () ogre_run8 = [ 32.000, globaldef3696 ] {
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing1 = [ 33.000, globaldef3705 ] {
+void () ogre_swing1 = [ 33.000, ogre_swing2 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCEMISSILE);
-   sound (self,CHAN_WEAPON,globaldef3706,TRUE,ATTN_NORM);
+   ai_charge (MOVETYPE_BOUNCEMISSILE);
+   sound (self,CHAN_WEAPON,globaldef003706,TRUE,ATTN_NORM);
 
 };
 
 void () ogre_swing2;
-string globaldef3706 /* = "ogre/ogsawatk.wav" */;
+string globaldef003706 /* = "ogre/ogsawatk.wav" */;
 
 // function ogre_swing2
 // function number 703 begins at statement 18581
@@ -965,9 +965,9 @@ string globaldef3706 /* = "ogre/ogsawatk.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing2 = [ 34.000, globaldef3707 ] {
+void () ogre_swing2 = [ 34.000, ogre_swing3 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -982,9 +982,9 @@ void () ogre_swing3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing3 = [ 35.000, globaldef3708 ] {
+void () ogre_swing3 = [ 35.000, ogre_swing4 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -999,9 +999,9 @@ void () ogre_swing4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing4 = [ 36.000, globaldef3709 ] {
+void () ogre_swing4 = [ 36.000, ogre_swing5 ] {
 
-   globaldef1557 (globaldef775);
+   ai_charge (globaldef000775);
 
 };
 
@@ -1024,11 +1024,11 @@ void () ogre_swing5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing5 = [ 37.000, globaldef3710 ] {
+void () ogre_swing5 = [ 37.000, ogre_swing6 ] {
 
-   globaldef1557 (MOVETYPE_FLYMISSILE);
-   globaldef3661 (FALSE);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   ai_charge (MOVETYPE_FLYMISSILE);
+   chainsaw (FALSE);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1049,10 +1049,10 @@ void () ogre_swing6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing6 = [ 38.000, globaldef3711 ] {
+void () ogre_swing6 = [ 38.000, ogre_swing7 ] {
 
-   globaldef3661 (globaldef1343);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (globaldef001343);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1073,10 +1073,10 @@ void () ogre_swing7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing7 = [ 39.000, globaldef3712 ] {
+void () ogre_swing7 = [ 39.000, ogre_swing8 ] {
 
-   globaldef3661 (FALSE);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (FALSE);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1097,10 +1097,10 @@ void () ogre_swing8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing8 = [ 40.000, globaldef3713 ] {
+void () ogre_swing8 = [ 40.000, ogre_swing9 ] {
 
-   globaldef3661 (FALSE);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (FALSE);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1121,10 +1121,10 @@ void () ogre_swing9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing9 = [ 41.000, globaldef3714 ] {
+void () ogre_swing9 = [ 41.000, ogre_swing10 ] {
 
-   globaldef3661 (FALSE);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (FALSE);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1145,10 +1145,10 @@ void () ogre_swing10;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing10 = [ 42.000, globaldef3715 ] {
+void () ogre_swing10 = [ 42.000, ogre_swing11 ] {
 
-   globaldef3661 (globaldef3183);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (globaldef003183);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1169,10 +1169,10 @@ void () ogre_swing11;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing11 = [ 43.000, globaldef3716 ] {
+void () ogre_swing11 = [ 43.000, ogre_swing12 ] {
 
-   globaldef3661 (FALSE);
-   self.globaldef97 = (self.globaldef97 + (globaldef440 () * globaldef288));
+   chainsaw (FALSE);
+   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
 
 };
 
@@ -1187,9 +1187,9 @@ void () ogre_swing12;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing12 = [ 44.000, globaldef3717 ] {
+void () ogre_swing12 = [ 44.000, ogre_swing13 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
+   ai_charge (MOVETYPE_WALK);
 
 };
 
@@ -1204,9 +1204,9 @@ void () ogre_swing13;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing13 = [ 45.000, globaldef3718 ] {
+void () ogre_swing13 = [ 45.000, ogre_swing14 ] {
 
-   globaldef1557 (FL_CLIENT);
+   ai_charge (FL_CLIENT);
 
 };
 
@@ -1221,9 +1221,9 @@ void () ogre_swing14;
  * OP_DONE	0	0	0
  */
 
-void () ogre_swing14 = [ 46.000, globaldef3696 ] {
+void () ogre_swing14 = [ 46.000, ogre_run1 ] {
 
-   globaldef1557 (MOVETYPE_FLYMISSILE);
+   ai_charge (MOVETYPE_FLYMISSILE);
 
 };
 
@@ -1242,10 +1242,10 @@ void () ogre_swing14 = [ 46.000, globaldef3696 ] {
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash1 = [ 47.000, globaldef3719 ] {
+void () ogre_smash1 = [ 47.000, ogre_smash2 ] {
 
-   globaldef1557 (MOVETYPE_TOSS);
-   sound (self,CHAN_WEAPON,globaldef3706,TRUE,ATTN_NORM);
+   ai_charge (MOVETYPE_TOSS);
+   sound (self,CHAN_WEAPON,globaldef003706,TRUE,ATTN_NORM);
 
 };
 
@@ -1260,9 +1260,9 @@ void () ogre_smash2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash2 = [ 48.000, globaldef3720 ] {
+void () ogre_smash2 = [ 48.000, ogre_smash3 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -1277,9 +1277,9 @@ void () ogre_smash3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash3 = [ 49.000, globaldef3721 ] {
+void () ogre_smash3 = [ 49.000, ogre_smash4 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -1294,9 +1294,9 @@ void () ogre_smash4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash4 = [ 50.000, globaldef3722 ] {
+void () ogre_smash4 = [ 50.000, ogre_smash5 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -1311,9 +1311,9 @@ void () ogre_smash5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash5 = [ 51.000, globaldef3723 ] {
+void () ogre_smash5 = [ 51.000, ogre_smash6 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -1330,10 +1330,10 @@ void () ogre_smash6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash6 = [ 52.000, globaldef3724 ] {
+void () ogre_smash6 = [ 52.000, ogre_smash7 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
-   globaldef3661 (FALSE);
+   ai_charge (MOVETYPE_STEP);
+   chainsaw (FALSE);
 
 };
 
@@ -1350,10 +1350,10 @@ void () ogre_smash7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash7 = [ 53.000, globaldef3725 ] {
+void () ogre_smash7 = [ 53.000, ogre_smash8 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
-   globaldef3661 (FALSE);
+   ai_charge (MOVETYPE_STEP);
+   chainsaw (FALSE);
 
 };
 
@@ -1370,10 +1370,10 @@ void () ogre_smash8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash8 = [ 54.000, globaldef3726 ] {
+void () ogre_smash8 = [ 54.000, ogre_smash9 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
-   globaldef3661 (FALSE);
+   ai_charge (MOVETYPE_BOUNCE);
+   chainsaw (FALSE);
 
 };
 
@@ -1390,10 +1390,10 @@ void () ogre_smash9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash9 = [ 55.000, globaldef3727 ] {
+void () ogre_smash9 = [ 55.000, ogre_smash10 ] {
 
-   globaldef1557 (globaldef775);
-   globaldef3661 (FALSE);
+   ai_charge (globaldef000775);
+   chainsaw (FALSE);
 
 };
 
@@ -1408,9 +1408,9 @@ void () ogre_smash10;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash10 = [ 56.000, globaldef3728 ] {
+void () ogre_smash10 = [ 56.000, ogre_smash11 ] {
 
-   globaldef3661 (TRUE);
+   chainsaw (TRUE);
 
 };
 
@@ -1433,11 +1433,11 @@ void () ogre_smash11;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash11 = [ 57.000, globaldef3729 ] {
+void () ogre_smash11 = [ 57.000, ogre_smash12 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef3661 (FALSE);
-   self.nextthink = (self.nextthink + (globaldef440 () * globaldef1553));
+   ai_charge (FL_SWIM);
+   chainsaw (FALSE);
+   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef001553));
 
 };
 
@@ -1452,9 +1452,9 @@ void () ogre_smash12;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash12 = [ 58.000, globaldef3730 ] {
+void () ogre_smash12 = [ 58.000, ogre_smash13 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
+   ai_charge (MOVETYPE_WALK);
 
 };
 
@@ -1469,9 +1469,9 @@ void () ogre_smash13;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash13 = [ 59.000, globaldef3731 ] {
+void () ogre_smash13 = [ 59.000, ogre_smash14 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -1486,9 +1486,9 @@ void () ogre_smash14;
  * OP_DONE	0	0	0
  */
 
-void () ogre_smash14 = [ 60.000, globaldef3696 ] {
+void () ogre_smash14 = [ 60.000, ogre_run1 ] {
 
-   globaldef1557 (globaldef774);
+   ai_charge (globaldef000774);
 
 };
 
@@ -1502,9 +1502,9 @@ void () ogre_nail1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail1 = [ 61.000, globaldef3733 ] {
+void () ogre_nail1 = [ 61.000, ogre_nail2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1518,9 +1518,9 @@ void () ogre_nail2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail2 = [ 62.000, globaldef3734 ] {
+void () ogre_nail2 = [ 62.000, ogre_nail3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1534,9 +1534,9 @@ void () ogre_nail3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail3 = [ 62.000, globaldef3735 ] {
+void () ogre_nail3 = [ 62.000, ogre_nail4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1551,10 +1551,10 @@ void () ogre_nail4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail4 = [ 63.000, globaldef3736 ] {
+void () ogre_nail4 = [ 63.000, ogre_nail5 ] {
 
-   globaldef1533 ();
-   globaldef3658 ();
+   ai_face ();
+   OgreFireGrenade ();
 
 };
 
@@ -1568,9 +1568,9 @@ void () ogre_nail5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail5 = [ 64.000, globaldef3737 ] {
+void () ogre_nail5 = [ 64.000, ogre_nail6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1584,9 +1584,9 @@ void () ogre_nail6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail6 = [ 65.000, globaldef3738 ] {
+void () ogre_nail6 = [ 65.000, ogre_nail7 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1600,9 +1600,9 @@ void () ogre_nail7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_nail7 = [ 66.000, globaldef3696 ] {
+void () ogre_nail7 = [ 66.000, ogre_run1 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1615,7 +1615,7 @@ void () ogre_pain1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_pain1 = [ 67.000, globaldef3740 ] {
+void () ogre_pain1 = [ 67.000, ogre_pain2 ] {
 
 
 };
@@ -1629,7 +1629,7 @@ void () ogre_pain2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_pain2 = [ 68.000, globaldef3741 ] {
+void () ogre_pain2 = [ 68.000, ogre_pain3 ] {
 
 
 };
@@ -1643,7 +1643,7 @@ void () ogre_pain3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_pain3 = [ 69.000, globaldef3742 ] {
+void () ogre_pain3 = [ 69.000, ogre_pain4 ] {
 
 
 };
@@ -1657,7 +1657,7 @@ void () ogre_pain4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_pain4 = [ 70.000, globaldef3743 ] {
+void () ogre_pain4 = [ 70.000, ogre_pain5 ] {
 
 
 };
@@ -1671,7 +1671,7 @@ void () ogre_pain5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_pain5 = [ 71.000, globaldef3696 ] {
+void () ogre_pain5 = [ 71.000, ogre_run1 ] {
 
 
 };
@@ -1685,7 +1685,7 @@ void () ogre_painb1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painb1 = [ 72.000, globaldef3745 ] {
+void () ogre_painb1 = [ 72.000, ogre_painb2 ] {
 
 
 };
@@ -1699,7 +1699,7 @@ void () ogre_painb2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painb2 = [ 73.000, globaldef3746 ] {
+void () ogre_painb2 = [ 73.000, ogre_painb3 ] {
 
 
 };
@@ -1713,7 +1713,7 @@ void () ogre_painb3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painb3 = [ 74.000, globaldef3696 ] {
+void () ogre_painb3 = [ 74.000, ogre_run1 ] {
 
 
 };
@@ -1727,7 +1727,7 @@ void () ogre_painc1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc1 = [ 75.000, globaldef3748 ] {
+void () ogre_painc1 = [ 75.000, ogre_painc2 ] {
 
 
 };
@@ -1741,7 +1741,7 @@ void () ogre_painc2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc2 = [ 76.000, globaldef3749 ] {
+void () ogre_painc2 = [ 76.000, ogre_painc3 ] {
 
 
 };
@@ -1755,7 +1755,7 @@ void () ogre_painc3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc3 = [ 77.000, globaldef3750 ] {
+void () ogre_painc3 = [ 77.000, ogre_painc4 ] {
 
 
 };
@@ -1769,7 +1769,7 @@ void () ogre_painc4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc4 = [ 78.000, globaldef3751 ] {
+void () ogre_painc4 = [ 78.000, ogre_painc5 ] {
 
 
 };
@@ -1783,7 +1783,7 @@ void () ogre_painc5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc5 = [ 79.000, globaldef3752 ] {
+void () ogre_painc5 = [ 79.000, ogre_painc6 ] {
 
 
 };
@@ -1797,7 +1797,7 @@ void () ogre_painc6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_painc6 = [ 80.000, globaldef3696 ] {
+void () ogre_painc6 = [ 80.000, ogre_run1 ] {
 
 
 };
@@ -1811,7 +1811,7 @@ void () ogre_paind1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind1 = [ 81.000, globaldef3754 ] {
+void () ogre_paind1 = [ 81.000, ogre_paind2 ] {
 
 
 };
@@ -1827,9 +1827,9 @@ void () ogre_paind2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind2 = [ 82.000, globaldef3755 ] {
+void () ogre_paind2 = [ 82.000, ogre_paind3 ] {
 
-   globaldef1698 (MOVETYPE_BOUNCE);
+   ai_pain (MOVETYPE_BOUNCE);
 
 };
 
@@ -1844,9 +1844,9 @@ void () ogre_paind3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind3 = [ 83.000, globaldef3756 ] {
+void () ogre_paind3 = [ 83.000, ogre_paind4 ] {
 
-   globaldef1698 (MOVETYPE_FLYMISSILE);
+   ai_pain (MOVETYPE_FLYMISSILE);
 
 };
 
@@ -1861,9 +1861,9 @@ void () ogre_paind4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind4 = [ 84.000, globaldef3757 ] {
+void () ogre_paind4 = [ 84.000, ogre_paind5 ] {
 
-   globaldef1698 (MOVETYPE_STEP);
+   ai_pain (MOVETYPE_STEP);
 
 };
 
@@ -1876,7 +1876,7 @@ void () ogre_paind5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind5 = [ 85.000, globaldef3758 ] {
+void () ogre_paind5 = [ 85.000, ogre_paind6 ] {
 
 
 };
@@ -1890,7 +1890,7 @@ void () ogre_paind6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind6 = [ 86.000, globaldef3759 ] {
+void () ogre_paind6 = [ 86.000, ogre_paind7 ] {
 
 
 };
@@ -1904,7 +1904,7 @@ void () ogre_paind7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind7 = [ 87.000, globaldef3760 ] {
+void () ogre_paind7 = [ 87.000, ogre_paind8 ] {
 
 
 };
@@ -1918,7 +1918,7 @@ void () ogre_paind8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind8 = [ 88.000, globaldef3761 ] {
+void () ogre_paind8 = [ 88.000, ogre_paind9 ] {
 
 
 };
@@ -1932,7 +1932,7 @@ void () ogre_paind9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind9 = [ 89.000, globaldef3762 ] {
+void () ogre_paind9 = [ 89.000, ogre_paind10 ] {
 
 
 };
@@ -1946,7 +1946,7 @@ void () ogre_paind10;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind10 = [ 90.000, globaldef3763 ] {
+void () ogre_paind10 = [ 90.000, ogre_paind11 ] {
 
 
 };
@@ -1960,7 +1960,7 @@ void () ogre_paind11;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind11 = [ 91.000, globaldef3764 ] {
+void () ogre_paind11 = [ 91.000, ogre_paind12 ] {
 
 
 };
@@ -1974,7 +1974,7 @@ void () ogre_paind12;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind12 = [ 92.000, globaldef3765 ] {
+void () ogre_paind12 = [ 92.000, ogre_paind13 ] {
 
 
 };
@@ -1988,7 +1988,7 @@ void () ogre_paind13;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind13 = [ 93.000, globaldef3766 ] {
+void () ogre_paind13 = [ 93.000, ogre_paind14 ] {
 
 
 };
@@ -2002,7 +2002,7 @@ void () ogre_paind14;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind14 = [ 94.000, globaldef3767 ] {
+void () ogre_paind14 = [ 94.000, ogre_paind15 ] {
 
 
 };
@@ -2016,7 +2016,7 @@ void () ogre_paind15;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind15 = [ 95.000, globaldef3768 ] {
+void () ogre_paind15 = [ 95.000, ogre_paind16 ] {
 
 
 };
@@ -2030,7 +2030,7 @@ void () ogre_paind16;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paind16 = [ 96.000, globaldef3696 ] {
+void () ogre_paind16 = [ 96.000, ogre_run1 ] {
 
 
 };
@@ -2044,7 +2044,7 @@ void () ogre_paine1;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine1 = [ 97.000, globaldef3770 ] {
+void () ogre_paine1 = [ 97.000, ogre_paine2 ] {
 
 
 };
@@ -2060,9 +2060,9 @@ void () ogre_paine2;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine2 = [ 98.000, globaldef3771 ] {
+void () ogre_paine2 = [ 98.000, ogre_paine3 ] {
 
-   globaldef1698 (MOVETYPE_BOUNCE);
+   ai_pain (MOVETYPE_BOUNCE);
 
 };
 
@@ -2077,9 +2077,9 @@ void () ogre_paine3;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine3 = [ 99.000, globaldef3772 ] {
+void () ogre_paine3 = [ 99.000, ogre_paine4 ] {
 
-   globaldef1698 (MOVETYPE_FLYMISSILE);
+   ai_pain (MOVETYPE_FLYMISSILE);
 
 };
 
@@ -2094,9 +2094,9 @@ void () ogre_paine4;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine4 = [ 100.000, globaldef3773 ] {
+void () ogre_paine4 = [ 100.000, ogre_paine5 ] {
 
-   globaldef1698 (MOVETYPE_STEP);
+   ai_pain (MOVETYPE_STEP);
 
 };
 
@@ -2109,7 +2109,7 @@ void () ogre_paine5;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine5 = [ 101.000, globaldef3774 ] {
+void () ogre_paine5 = [ 101.000, ogre_paine6 ] {
 
 
 };
@@ -2123,7 +2123,7 @@ void () ogre_paine6;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine6 = [ 102.000, globaldef3775 ] {
+void () ogre_paine6 = [ 102.000, ogre_paine7 ] {
 
 
 };
@@ -2137,7 +2137,7 @@ void () ogre_paine7;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine7 = [ 103.000, globaldef3776 ] {
+void () ogre_paine7 = [ 103.000, ogre_paine8 ] {
 
 
 };
@@ -2151,7 +2151,7 @@ void () ogre_paine8;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine8 = [ 104.000, globaldef3777 ] {
+void () ogre_paine8 = [ 104.000, ogre_paine9 ] {
 
 
 };
@@ -2165,7 +2165,7 @@ void () ogre_paine9;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine9 = [ 105.000, globaldef3778 ] {
+void () ogre_paine9 = [ 105.000, ogre_paine10 ] {
 
 
 };
@@ -2179,7 +2179,7 @@ void () ogre_paine10;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine10 = [ 106.000, globaldef3779 ] {
+void () ogre_paine10 = [ 106.000, ogre_paine11 ] {
 
 
 };
@@ -2193,7 +2193,7 @@ void () ogre_paine11;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine11 = [ 107.000, globaldef3780 ] {
+void () ogre_paine11 = [ 107.000, ogre_paine12 ] {
 
 
 };
@@ -2207,7 +2207,7 @@ void () ogre_paine12;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine12 = [ 108.000, globaldef3781 ] {
+void () ogre_paine12 = [ 108.000, ogre_paine13 ] {
 
 
 };
@@ -2221,7 +2221,7 @@ void () ogre_paine13;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine13 = [ 109.000, globaldef3782 ] {
+void () ogre_paine13 = [ 109.000, ogre_paine14 ] {
 
 
 };
@@ -2235,7 +2235,7 @@ void () ogre_paine14;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine14 = [ 110.000, globaldef3783 ] {
+void () ogre_paine14 = [ 110.000, ogre_paine15 ] {
 
 
 };
@@ -2249,12 +2249,12 @@ void () ogre_paine15;
  * OP_DONE	0	0	0
  */
 
-void () ogre_paine15 = [ 111.000, globaldef3696 ] {
+void () ogre_paine15 = [ 111.000, ogre_run1 ] {
 
 
 };
 
-void (entity globaldef3785, float globaldef3786) ogre_pain;
+void (entity globaldef003785, float globaldef003786) ogre_pain;
 
 // function ogre_pain
 // function number 782 begins at statement 18879
@@ -2306,47 +2306,47 @@ void (entity globaldef3785, float globaldef3786) ogre_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef3785, float globaldef3786) ogre_pain = {
+void (entity globaldef003785, float globaldef003786) ogre_pain = {
 
-   local float globaldef3787;
+   local float r;
 
-   if ( (self.globaldef362 > time) ) {
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef3788,TRUE,ATTN_NORM);
-   globaldef3787 = globaldef440 ();
-   if ( (globaldef3787 < globaldef2243) ) {
+   sound (self,CHAN_VOICE,globaldef003788,TRUE,ATTN_NORM);
+   r = random ();
+   if ( (r < globaldef002243) ) {
 
-      globaldef3739 ();
-      self.globaldef362 = (time + TRUE);
+      ogre_pain1 ();
+      self.globaldef000362 = (time + TRUE);
 
    } else {
 
-      if ( (globaldef3787 < globaldef522) ) {
+      if ( (r < globaldef000522) ) {
 
-         globaldef3744 ();
-         self.globaldef362 = (time + TRUE);
+         ogre_painb1 ();
+         self.globaldef000362 = (time + TRUE);
 
       } else {
 
-         if ( (globaldef3787 < globaldef2244) ) {
+         if ( (r < globaldef002244) ) {
 
-            globaldef3747 ();
-            self.globaldef362 = (time + TRUE);
+            ogre_painc1 ();
+            self.globaldef000362 = (time + TRUE);
 
          } else {
 
-            if ( (globaldef3787 < globaldef3789) ) {
+            if ( (r < globaldef003789) ) {
 
-               globaldef3753 ();
-               self.globaldef362 = (time + FL_SWIM);
+               ogre_paind1 ();
+               self.globaldef000362 = (time + FL_SWIM);
 
             } else {
 
-               globaldef3769 ();
-               self.globaldef362 = (time + FL_SWIM);
+               ogre_paine1 ();
+               self.globaldef000362 = (time + FL_SWIM);
 
             }
 
@@ -2357,40 +2357,40 @@ void (entity globaldef3785, float globaldef3786) ogre_pain = {
    }
 
 };
-string globaldef3788 /* = "ogre/ogpain1.wav" */;
-float globaldef3789 /* = 0.880 */;
+string globaldef003788 /* = "ogre/ogpain1.wav" */;
+float globaldef003789 /* = 0.880 */;
 
-void () func783;
+void () func000783;
 
-// function func783
+// function func000783
 // function number 783 begins at statement 18924
 /*
  * OP_STATE	9608	12614	0
  * OP_DONE	0	0	0
  */
 
-void () func783 = [ 112.000, globaldef3791 ] {
+void () func000783 = [ 112.000, func000784 ] {
 
 
 };
 
-void () func784;
+void () func000784;
 
-// function func784
+// function func000784
 // function number 784 begins at statement 18926
 /*
  * OP_STATE	9473	12615	0
  * OP_DONE	0	0	0
  */
 
-void () func784 = [ 113.000, globaldef3792 ] {
+void () func000784 = [ 113.000, func000785 ] {
 
 
 };
 
-void () func785;
+void () func000785;
 
-// function func785
+// function func000785
 // function number 785 begins at statement 18928
 /*
  * OP_STATE	9479	12616	0
@@ -2402,187 +2402,187 @@ void () func785;
  * OP_DONE	0	0	0
  */
 
-void () func785 = [ 114.000, globaldef3793 ] {
+void () func000785 = [ 114.000, func000786 ] {
 
-   self.solid = SOLID_NOT;
-   self.globaldef138 = FL_SWIM;
-   globaldef1980 ();
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000138 = FL_SWIM;
+   func000244 ();
 
 };
 
-void () func786;
+void () func000786;
 
-// function func786
+// function func000786
 // function number 786 begins at statement 18935
 /*
  * OP_STATE	9482	12619	0
  * OP_DONE	0	0	0
  */
 
-void () func786 = [ 115.000, globaldef3794 ] {
+void () func000786 = [ 115.000, func000787 ] {
 
 
 };
 
-void () func787;
+void () func000787;
 
-// function func787
+// function func000787
 // function number 787 begins at statement 18937
 /*
  * OP_STATE	9485	12620	0
  * OP_DONE	0	0	0
  */
 
-void () func787 = [ 116.000, globaldef3795 ] {
+void () func000787 = [ 116.000, func000788 ] {
 
 
 };
 
-void () func788;
+void () func000788;
 
-// function func788
+// function func000788
 // function number 788 begins at statement 18939
 /*
  * OP_STATE	9488	12621	0
  * OP_DONE	0	0	0
  */
 
-void () func788 = [ 117.000, globaldef3796 ] {
+void () func000788 = [ 117.000, func000789 ] {
 
 
 };
 
-void () func789;
+void () func000789;
 
-// function func789
+// function func000789
 // function number 789 begins at statement 18941
 /*
  * OP_STATE	9491	12622	0
  * OP_DONE	0	0	0
  */
 
-void () func789 = [ 118.000, globaldef3797 ] {
+void () func000789 = [ 118.000, func000790 ] {
 
 
 };
 
-void () func790;
+void () func000790;
 
-// function func790
+// function func000790
 // function number 790 begins at statement 18943
 /*
  * OP_STATE	9493	12623	0
  * OP_DONE	0	0	0
  */
 
-void () func790 = [ 119.000, globaldef3798 ] {
+void () func000790 = [ 119.000, func000791 ] {
 
 
 };
 
-void () func791;
+void () func000791;
 
-// function func791
+// function func000791
 // function number 791 begins at statement 18945
 /*
  * OP_STATE	3584	12624	0
  * OP_DONE	0	0	0
  */
 
-void () func791 = [ 120.000, globaldef3799 ] {
+void () func000791 = [ 120.000, func000792 ] {
 
 
 };
 
-void () func792;
+void () func000792;
 
-// function func792
+// function func000792
 // function number 792 begins at statement 18947
 /*
  * OP_STATE	9498	12625	0
  * OP_DONE	0	0	0
  */
 
-void () func792 = [ 121.000, globaldef3800 ] {
+void () func000792 = [ 121.000, func000793 ] {
 
 
 };
 
-void () func793;
+void () func000793;
 
-// function func793
+// function func000793
 // function number 793 begins at statement 18949
 /*
  * OP_STATE	9501	12626	0
  * OP_DONE	0	0	0
  */
 
-void () func793 = [ 122.000, globaldef3801 ] {
+void () func000793 = [ 122.000, func000794 ] {
 
 
 };
 
-void () func794;
+void () func000794;
 
-// function func794
+// function func000794
 // function number 794 begins at statement 18951
 /*
  * OP_STATE	12627	12628	0
  * OP_DONE	0	0	0
  */
 
-void () func794 = [ 123.000, globaldef3803 ] {
+void () func000794 = [ 123.000, func000795 ] {
 
 
 };
-float globaldef3802 /* = 123.000 */;
+float globaldef003802 /* = 123.000 */;
 
-void () func795;
+void () func000795;
 
-// function func795
+// function func000795
 // function number 795 begins at statement 18953
 /*
  * OP_STATE	12629	12630	0
  * OP_DONE	0	0	0
  */
 
-void () func795 = [ 124.000, globaldef3805 ] {
+void () func000795 = [ 124.000, func000796 ] {
 
 
 };
-float globaldef3804 /* = 124.000 */;
+float globaldef003804 /* = 124.000 */;
 
-void () func796;
+void () func000796;
 
-// function func796
+// function func000796
 // function number 796 begins at statement 18955
 /*
  * OP_STATE	9503	12630	0
  * OP_DONE	0	0	0
  */
 
-void () func796 = [ 125.000, globaldef3805 ] {
+void () func000796 = [ 125.000, func000796 ] {
 
 
 };
 
-void () func797;
+void () func000797;
 
-// function func797
+// function func000797
 // function number 797 begins at statement 18957
 /*
  * OP_STATE	9506	12632	0
  * OP_DONE	0	0	0
  */
 
-void () func797 = [ 126.000, globaldef3807 ] {
+void () func000797 = [ 126.000, func000798 ] {
 
 
 };
 
-void () func798;
+void () func000798;
 
-// function func798
+// function func000798
 // function number 798 begins at statement 18959
 /*
  * OP_STATE	9509	12633	0
@@ -2591,15 +2591,15 @@ void () func798;
  * OP_DONE	0	0	0
  */
 
-void () func798 = [ 127.000, globaldef3808 ] {
+void () func000798 = [ 127.000, func000799 ] {
 
-   globaldef1694 (MOVETYPE_FLY);
+   ai_forward (MOVETYPE_FLY);
 
 };
 
-void () func799;
+void () func000799;
 
-// function func799
+// function func000799
 // function number 799 begins at statement 18963
 /*
  * OP_STATE	221	12634	0
@@ -2611,17 +2611,17 @@ void () func799;
  * OP_DONE	0	0	0
  */
 
-void () func799 = [ 128.000, globaldef3809 ] {
+void () func000799 = [ 128.000, func000800 ] {
 
-   self.solid = SOLID_NOT;
-   self.globaldef138 = FL_SWIM;
-   globaldef1980 ();
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000138 = FL_SWIM;
+   func000244 ();
 
 };
 
-void () func800;
+void () func000800;
 
-// function func800
+// function func000800
 // function number 800 begins at statement 18970
 /*
  * OP_STATE	12637	12638	0
@@ -2630,16 +2630,16 @@ void () func800;
  * OP_DONE	0	0	0
  */
 
-void () func800 = [ 129.000, globaldef3811 ] {
+void () func000800 = [ 129.000, func000801 ] {
 
-   globaldef1694 (TRUE);
+   ai_forward (TRUE);
 
 };
-float globaldef3810 /* = 129.000 */;
+float globaldef003810 /* = 129.000 */;
 
-void () func801;
+void () func000801;
 
-// function func801
+// function func000801
 // function number 801 begins at statement 18974
 /*
  * OP_STATE	12639	12640	0
@@ -2648,16 +2648,16 @@ void () func801;
  * OP_DONE	0	0	0
  */
 
-void () func801 = [ 130.000, globaldef3813 ] {
+void () func000801 = [ 130.000, func000802 ] {
 
-   globaldef1694 (MOVETYPE_WALK);
+   ai_forward (MOVETYPE_WALK);
 
 };
-float globaldef3812 /* = 130.000 */;
+float globaldef003812 /* = 130.000 */;
 
-void () func802;
+void () func000802;
 
-// function func802
+// function func000802
 // function number 802 begins at statement 18978
 /*
  * OP_STATE	9513	12641	0
@@ -2666,15 +2666,15 @@ void () func802;
  * OP_DONE	0	0	0
  */
 
-void () func802 = [ 131.000, globaldef3814 ] {
+void () func000802 = [ 131.000, func000803 ] {
 
-   globaldef1694 (MOVETYPE_PUSH);
+   ai_forward (MOVETYPE_PUSH);
 
 };
 
-void () func803;
+void () func000803;
 
-// function func803
+// function func000803
 // function number 803 begins at statement 18982
 /*
  * OP_STATE	9516	12642	0
@@ -2683,58 +2683,58 @@ void () func803;
  * OP_DONE	0	0	0
  */
 
-void () func803 = [ 132.000, globaldef3815 ] {
+void () func000803 = [ 132.000, func000804 ] {
 
-   globaldef1694 (globaldef288);
+   ai_forward (globaldef000288);
 
 };
 
-void () func804;
+void () func000804;
 
-// function func804
+// function func000804
 // function number 804 begins at statement 18986
 /*
  * OP_STATE	9519	12643	0
  * OP_DONE	0	0	0
  */
 
-void () func804 = [ 133.000, globaldef3816 ] {
+void () func000804 = [ 133.000, func000805 ] {
 
 
 };
 
-void () func805;
+void () func000805;
 
-// function func805
+// function func000805
 // function number 805 begins at statement 18988
 /*
  * OP_STATE	9522	12644	0
  * OP_DONE	0	0	0
  */
 
-void () func805 = [ 134.000, globaldef3817 ] {
+void () func000805 = [ 134.000, func000806 ] {
 
 
 };
 
-void () func806;
+void () func000806;
 
-// function func806
+// function func000806
 // function number 806 begins at statement 18990
 /*
  * OP_STATE	12645	12644	0
  * OP_DONE	0	0	0
  */
 
-void () func806 = [ 135.000, globaldef3817 ] {
+void () func000806 = [ 135.000, func000806 ] {
 
 
 };
-float globaldef3818 /* = 135.000 */;
+float globaldef003818 /* = 135.000 */;
 
-void () func807;
+void () func000807;
 
-// function func807
+// function func000807
 // function number 807 begins at statement 18992
 /*
  * OP_LOAD_F	28	152	12647
@@ -2778,37 +2778,37 @@ void () func807;
  * OP_DONE	0	0	0
  */
 
-void () func807 = {
+void () func000807 = {
 
-   if ( (self.globaldef130 < globaldef3820) ) {
+   if ( (self.globaldef000130 < globaldef003820) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef3821,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef003821,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef3822,TRUE,ATTN_NORM);
-   if ( (globaldef440 () < globaldef522) ) {
+   sound (self,CHAN_VOICE,globaldef003822,TRUE,ATTN_NORM);
+   if ( (random () < globaldef000522) ) {
 
-      globaldef3790 ();
+      func000783 ();
 
    } else {
 
-      globaldef3806 ();
+      func000797 ();
 
    }
 
 };
-float globaldef3820 /* = -80.000 */;
-string globaldef3821 /* = "progs/h_ogre.mdl" */;
-string globaldef3822 /* = "ogre/ogdth.wav" */;
+float globaldef003820 /* = -80.000 */;
+string globaldef003821 /* = "progs/h_ogre.mdl" */;
+string globaldef003822 /* = "ogre/ogdth.wav" */;
 
-void () func808;
+void () func000808;
 
-// function func808
+// function func000808
 // function number 808 begins at statement 19031
 /*
  * OP_CALL0	457	0	0
@@ -2820,23 +2820,23 @@ void () func808;
  * OP_DONE	0	0	0
  */
 
-void () func808 = {
+void () func000808 = {
 
-   if ( (globaldef440 () > globaldef522) ) {
+   if ( (random () > globaldef000522) ) {
 
-      globaldef1525 ();
+      ogre_smash1 ();
 
    } else {
 
-      globaldef1526 ();
+      ogre_swing1 ();
 
    }
 
 };
 
-void () func809;
+void () func000809;
 
-// function func809
+// function func000809
 // function number 809 begins at statement 19038
 /*
  * OP_IFNOT	35	4	0
@@ -2894,7 +2894,7 @@ void () func809;
  * OP_DONE	0	0	0
  */
 
-void () func809 = {
+void () func000809 = {
 
    if ( deathmatch ) {
 
@@ -2902,32 +2902,32 @@ void () func809 = {
       return ;
 
    }
-   globaldef453 (globaldef3825);
-   globaldef453 (globaldef3821);
-   globaldef453 (globaldef2188);
-   globaldef452 (globaldef1626);
-   globaldef452 (globaldef3822);
-   globaldef452 (globaldef3674);
-   globaldef452 (globaldef3698);
-   globaldef452 (globaldef3788);
-   globaldef452 (globaldef3706);
-   globaldef452 ("ogre/ogwake.wav");
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef3825);
-   globaldef438 (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef130 = globaldef1343;
-   self.globaldef344 = globaldef3668;
-   self.globaldef345 = globaldef3678;
-   self.globaldef346 = globaldef3696;
-   self.globaldef350 = globaldef3819;
-   self.globaldef348 = globaldef3823;
-   self.globaldef347 = globaldef3732;
-   self.globaldef349 = globaldef3784;
-   globaldef3309 ();
+   precache_model (globaldef003825);
+   precache_model (globaldef003821);
+   precache_model (globaldef002188);
+   precache_sound (globaldef001626);
+   precache_sound (globaldef003822);
+   precache_sound (globaldef003674);
+   precache_sound (globaldef003698);
+   precache_sound (globaldef003788);
+   precache_sound (globaldef003706);
+   precache_sound (globaldef001657);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef003825);
+   setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
+   self.globaldef000130 = globaldef001343;
+   self.globaldef000344 = ogre_stand1;
+   self.globaldef000345 = ogre_walk1;
+   self.globaldef000346 = ogre_run1;
+   self.globaldef000350 = func000807;
+   self.globaldef000348 = func000808;
+   self.globaldef000347 = ogre_nail1;
+   self.globaldef000349 = ogre_pain;
+   walkmonster_start ();
 
 };
-string globaldef3825 /* = "progs/ogre.mdl" */;
+string globaldef003825 /* = "progs/ogre.mdl" */;
 
 void () monster_ogre;
 
@@ -2940,7 +2940,7 @@ void () monster_ogre;
 
 void () monster_ogre = {
 
-   globaldef3824 ();
+   func000809 ();
 
 };
 
@@ -2955,6 +2955,6 @@ void () monster_ogre_marksman;
 
 void () monster_ogre_marksman = {
 
-   globaldef3824 ();
+   func000809 ();
 
 };

@@ -1,8 +1,8 @@
-string globaldef2471 /* = "bla" */;
+string globaldef002471 /* = "bla" */;
 
-void (vector globaldef2473, vector globaldef2477, float globaldef2481, float globaldef2482) func302;
+void (vector globaldef002473, vector globaldef002477, float globaldef002481, float globaldef002482) func000302;
 
-// function func302
+// function func000302
 // function number 302 begins at statement 8870
 /*
  * OP_STORE_V	6844	4	0
@@ -13,15 +13,15 @@ void (vector globaldef2473, vector globaldef2477, float globaldef2481, float glo
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef2473, vector globaldef2477, float globaldef2481, float globaldef2482) func302 = {
+void (vector globaldef002473, vector globaldef002477, float globaldef002481, float globaldef002482) func000302 = {
 
-   globaldef476 (globaldef2473,globaldef2477,globaldef2481,globaldef2482);
+   particle (globaldef002473,globaldef002477,globaldef002481,globaldef002482);
 
 };
 
-void (vector globaldef2484, vector globaldef2488, entity globaldef2492) func303;
+void (vector globaldef002484, vector globaldef002488, entity globaldef002492) func000303;
 
-// function func303
+// function func000303
 // function number 303 begins at statement 8876
 /*
  * OP_STORE_V	342	4	0
@@ -54,23 +54,23 @@ void (vector globaldef2484, vector globaldef2488, entity globaldef2492) func303;
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef2484, vector globaldef2488, entity globaldef2492) func303 = {
+void (vector globaldef002484, vector globaldef002488, entity globaldef002492) func000303 = {
 
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_LIGHTNING2);
-   globaldef486 (MSG_BROADCAST,globaldef2492);
-   globaldef483 (MSG_BROADCAST,globaldef2484);
-   globaldef483 (MSG_BROADCAST,globaldef2486);
-   globaldef483 (MSG_BROADCAST,globaldef2487);
-   globaldef483 (MSG_BROADCAST,globaldef2488);
-   globaldef483 (MSG_BROADCAST,globaldef2490);
-   globaldef483 (MSG_BROADCAST,globaldef2491);
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_LIGHTNING2);
+   WriteEntity (MSG_BROADCAST,globaldef002492);
+   WriteCoord (MSG_BROADCAST,globaldef002484);
+   WriteCoord (MSG_BROADCAST,globaldef002486);
+   WriteCoord (MSG_BROADCAST,globaldef002487);
+   WriteCoord (MSG_BROADCAST,globaldef002488);
+   WriteCoord (MSG_BROADCAST,globaldef002490);
+   WriteCoord (MSG_BROADCAST,globaldef002491);
 
 };
 
-void () func304;
+void () func000304;
 
-// function func304
+// function func000304
 // function number 304 begins at statement 8904
 /*
  * OP_ADDRESS	28	133	6861
@@ -80,25 +80,25 @@ void () func304;
  * OP_DONE	0	0	0
  */
 
-void () func304 = {
+void () func000304 = {
 
-   self.globaldef111 = (self.globaldef111 | EF_MUZZLEFLASH);
+   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
 
 };
-float globaldef2494 /* = 1.000 */;
-float globaldef2495 /* = 20.000 */;
-float globaldef2496 /* = 200.000 */;
-float globaldef2497 /* = 200.000 */;
+float globaldef002494 /* = 1.000 */;
+float globaldef002495 /* = 20.000 */;
+float globaldef002496 /* = 200.000 */;
+float globaldef002497 /* = 200.000 */;
 
-void (float globaldef2529, float globaldef2530, float globaldef2531) func326;
+void (float globaldef002529, float globaldef002530, float globaldef002531) func000326;
 
-void () func333;
+void () func000333;
 
-void () func325;
+void () func000325;
 
-void () func305;
+void () func000305;
 
-// function func305
+// function func000305
 // function number 305 begins at statement 8909
 /*
  * OP_STATE	213	6872	0
@@ -110,16 +110,16 @@ void () func305;
  * OP_DONE	0	0	0
  */
 
-void () func305 = [ 0.000, globaldef2502 ] {
+void () func000305 = [ 0.000, func000306 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,TRUE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,TRUE);
+   func000333 ();
 
 };
 
-void () func306;
+void () func000306;
 
-// function func306
+// function func000306
 // function number 306 begins at statement 8916
 /*
  * OP_STATE	214	6873	0
@@ -131,16 +131,16 @@ void () func306;
  * OP_DONE	0	0	0
  */
 
-void () func306 = [ 1.000, globaldef2503 ] {
+void () func000306 = [ 1.000, func000307 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func307;
+void () func000307;
 
-// function func307
+// function func000307
 // function number 307 begins at statement 8923
 /*
  * OP_STATE	216	6874	0
@@ -152,16 +152,16 @@ void () func307;
  * OP_DONE	0	0	0
  */
 
-void () func307 = [ 2.000, globaldef2504 ] {
+void () func000307 = [ 2.000, func000308 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func308;
+void () func000308;
 
-// function func308
+// function func000308
 // function number 308 begins at statement 8930
 /*
  * OP_STATE	228	6875	0
@@ -173,16 +173,16 @@ void () func308;
  * OP_DONE	0	0	0
  */
 
-void () func308 = [ 3.000, globaldef2505 ] {
+void () func000308 = [ 3.000, func000309 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func309;
+void () func000309;
 
-// function func309
+// function func000309
 // function number 309 begins at statement 8937
 /*
  * OP_STATE	229	6876	0
@@ -194,16 +194,16 @@ void () func309;
  * OP_DONE	0	0	0
  */
 
-void () func309 = [ 4.000, globaldef2506 ] {
+void () func000309 = [ 4.000, func000310 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func310;
+void () func000310;
 
-// function func310
+// function func000310
 // function number 310 begins at statement 8944
 /*
  * OP_STATE	230	6877	0
@@ -216,17 +216,17 @@ void () func310;
  * OP_DONE	0	0	0
  */
 
-void () func310 = [ 5.000, globaldef2507 ] {
+void () func000310 = [ 5.000, func000311 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
-   globaldef2500 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
+   func000325 ();
 
 };
 
-void () func311;
+void () func000311;
 
-// function func311
+// function func000311
 // function number 311 begins at statement 8952
 /*
  * OP_STATE	231	6878	0
@@ -238,16 +238,16 @@ void () func311;
  * OP_DONE	0	0	0
  */
 
-void () func311 = [ 6.000, globaldef2508 ] {
+void () func000311 = [ 6.000, func000312 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func312;
+void () func000312;
 
-// function func312
+// function func000312
 // function number 312 begins at statement 8959
 /*
  * OP_STATE	232	6879	0
@@ -259,16 +259,16 @@ void () func312;
  * OP_DONE	0	0	0
  */
 
-void () func312 = [ 7.000, globaldef2509 ] {
+void () func000312 = [ 7.000, func000313 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func313;
+void () func000313;
 
-// function func313
+// function func000313
 // function number 313 begins at statement 8966
 /*
  * OP_STATE	217	6880	0
@@ -280,16 +280,16 @@ void () func313;
  * OP_DONE	0	0	0
  */
 
-void () func313 = [ 8.000, globaldef2510 ] {
+void () func000313 = [ 8.000, func000314 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func314;
+void () func000314;
 
-// function func314
+// function func000314
 // function number 314 begins at statement 8973
 /*
  * OP_STATE	234	6881	0
@@ -301,16 +301,16 @@ void () func314;
  * OP_DONE	0	0	0
  */
 
-void () func314 = [ 9.000, globaldef2511 ] {
+void () func000314 = [ 9.000, func000315 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func315;
+void () func000315;
 
-// function func315
+// function func000315
 // function number 315 begins at statement 8980
 /*
  * OP_STATE	235	6882	0
@@ -322,16 +322,16 @@ void () func315;
  * OP_DONE	0	0	0
  */
 
-void () func315 = [ 10.000, globaldef2512 ] {
+void () func000315 = [ 10.000, func000316 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
 
 };
 
-void () func316;
+void () func000316;
 
-// function func316
+// function func000316
 // function number 316 begins at statement 8987
 /*
  * OP_STATE	236	6871	0
@@ -344,73 +344,73 @@ void () func316;
  * OP_DONE	0	0	0
  */
 
-void () func316 = [ 11.000, globaldef2501 ] {
+void () func000316 = [ 11.000, func000305 ] {
 
-   globaldef2498 (globaldef288,MOVETYPE_BOUNCE,FALSE);
-   globaldef2499 ();
-   globaldef2500 ();
+   func000326 (globaldef000288,MOVETYPE_BOUNCE,FALSE);
+   func000333 ();
+   func000325 ();
 
 };
 
-void () func317;
+void () func000317;
 
-// function func317
+// function func000317
 // function number 317 begins at statement 8995
 /*
  * OP_STATE	791	6884	0
  * OP_DONE	0	0	0
  */
 
-void () func317 = [ 12.000, globaldef2514 ] {
+void () func000317 = [ 12.000, func000318 ] {
 
 
 };
 
-void () func318;
+void () func000318;
 
-// function func318
+// function func000318
 // function number 318 begins at statement 8997
 /*
  * OP_STATE	792	6885	0
  * OP_DONE	0	0	0
  */
 
-void () func318 = [ 13.000, globaldef2515 ] {
+void () func000318 = [ 13.000, func000319 ] {
 
 
 };
 
-void () func319;
+void () func000319;
 
-// function func319
+// function func000319
 // function number 319 begins at statement 8999
 /*
  * OP_STATE	5693	6886	0
  * OP_DONE	0	0	0
  */
 
-void () func319 = [ 14.000, globaldef2516 ] {
+void () func000319 = [ 14.000, func000320 ] {
 
 
 };
 
-void () func320;
+void () func000320;
 
-// function func320
+// function func000320
 // function number 320 begins at statement 9001
 /*
  * OP_STATE	765	6871	0
  * OP_DONE	0	0	0
  */
 
-void () func320 = [ 15.000, globaldef2501 ] {
+void () func000320 = [ 15.000, func000305 ] {
 
 
 };
 
-void () func321;
+void () func000321;
 
-// function func321
+// function func000321
 // function number 321 begins at statement 9003
 /*
  * OP_STATE	218	6888	0
@@ -423,16 +423,16 @@ void () func321;
  * OP_DONE	0	0	0
  */
 
-void () func321 = [ 16.000, globaldef2518 ] {
+void () func000321 = [ 16.000, func000322 ] {
 
-   globaldef2498 (globaldef748,MOVETYPE_TOSS,FALSE);
-   self.velocity = VEC_ORIGIN;
+   func000326 (globaldef000748,MOVETYPE_TOSS,FALSE);
+   self.globaldef000091 = VEC_ORIGIN;
 
 };
 
-void () func322;
+void () func000322;
 
-// function func322
+// function func000322
 // function number 322 begins at statement 9011
 /*
  * OP_STATE	6892	6893	0
@@ -443,16 +443,16 @@ void () func322;
  * OP_DONE	0	0	0
  */
 
-void () func322 = [ 17.000, globaldef2520 ] {
+void () func000322 = [ 17.000, func000323 ] {
 
-   globaldef2498 (MOVETYPE_BOUNCE,MOVETYPE_STEP,FALSE);
+   func000326 (MOVETYPE_BOUNCE,MOVETYPE_STEP,FALSE);
 
 };
-float globaldef2519 /* = 17.000 */;
+float globaldef002519 /* = 17.000 */;
 
-void () func323;
+void () func000323;
 
-// function func323
+// function func000323
 // function number 323 begins at statement 9017
 /*
  * OP_STATE	6133	6894	0
@@ -463,30 +463,30 @@ void () func323;
  * OP_DONE	0	0	0
  */
 
-void () func323 = [ 18.000, globaldef2521 ] {
+void () func000323 = [ 18.000, func000324 ] {
 
-   globaldef2498 (MOVETYPE_FLY,FL_SWIM,FALSE);
+   func000326 (MOVETYPE_FLY,FL_SWIM,FALSE);
 
 };
 
-void () func324;
+void () func000324;
 
-// function func324
+// function func000324
 // function number 324 begins at statement 9023
 /*
  * OP_STATE	6895	6896	0
  * OP_DONE	0	0	0
  */
 
-void () func324 = [ 19.000, globaldef2523 ] {
+void () func000324 = [ 19.000, func000332 ] {
 
 
 };
-float globaldef2522 /* = 19.000 */;
+float globaldef002522 /* = 19.000 */;
 
-void () func332;
+void () func000332;
 
-// function func325
+// function func000325
 // function number 325 begins at statement 9025
 /*
  * OP_CALL0	457	0	0
@@ -532,28 +532,28 @@ void () func332;
  * OP_DONE	0	0	0
  */
 
-void () func325 = {
+void () func000325 = {
 
-   local vector globaldef2524;
+   local vector globaldef002524;
 
-   if ( (globaldef440 () > 0.100) ) {
+   if ( (random () > globaldef001488) ) {
 
       return ;
 
    }
-   globaldef2524 = globaldef2528;
-   globaldef2524_x = (globaldef2524_x + globaldef440 ());
-   globaldef2526 = (globaldef2526 + globaldef440 ());
-   globaldef449 (self.origin,(self.origin + (globaldef2524 * globaldef2497)),TRUE,self);
-   globaldef2483 (self.origin,trace_endpos,self);
-   sound (self,CHAN_WEAPON,globaldef2386,TRUE,ATTN_NORM);
-   globaldef2493 ();
-   globaldef2152 (self.origin,(trace_endpos + (globaldef2524 * MOVETYPE_STEP)),self,globaldef1384);
+   globaldef002524 = globaldef002528;
+   globaldef002524_x = (globaldef002524_x + random ());
+   globaldef002526 = (globaldef002526 + random ());
+   traceline (self.globaldef000083,(self.globaldef000083 + (globaldef002524 * globaldef002497)),TRUE,self);
+   func000303 (self.globaldef000083,trace_endpos,self);
+   sound (self,CHAN_WEAPON,globaldef002386,TRUE,ATTN_NORM);
+   func000304 ();
+   LightningDamage (self.globaldef000083,(trace_endpos + (globaldef002524 * MOVETYPE_STEP)),self,globaldef001384);
 
 };
-vector globaldef2528 /* = '-0.500 -0.500 -0.700' */;
+vector globaldef002528 /* = '-0.500 -0.500 -0.700' */;
 
-// function func326
+// function func000326
 // function number 326 begins at statement 9066
 /*
  * OP_STORE_F	235	6936	0
@@ -591,32 +591,32 @@ vector globaldef2528 /* = '-0.500 -0.500 -0.700' */;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef2529, float globaldef2530, float globaldef2531) func326 = {
+void (float globaldef002529, float globaldef002530, float globaldef002531) func000326 = {
 
-   local vector globaldef2532;
-   local float globaldef2536;
+   local vector globaldef002532;
+   local float globaldef002536;
 
-   globaldef2536 = MOVETYPE_BOUNCE;
-   while ( (globaldef2536 > FALSE) ) {
+   globaldef002536 = MOVETYPE_BOUNCE;
+   while ( (globaldef002536 > FALSE) ) {
 
-      globaldef2532 = self.origin;
-      globaldef2532_x = ((globaldef2532_x - globaldef2529) + ((globaldef440 () * globaldef2529) * FL_SWIM));
-      globaldef2534 = ((globaldef2534 - globaldef2529) + ((globaldef440 () * globaldef2529) * FL_SWIM));
-      globaldef2472 (globaldef2532,globaldef2537,FL_MONSTER,globaldef2530);
-      globaldef2536 = (globaldef2536 - TRUE);
+      globaldef002532 = self.globaldef000083;
+      globaldef002532_x = ((globaldef002532_x - globaldef002529) + ((random () * globaldef002529) * FL_SWIM));
+      globaldef002534 = ((globaldef002534 - globaldef002529) + ((random () * globaldef002529) * FL_SWIM));
+      func000302 (globaldef002532,globaldef002537,FL_MONSTER,globaldef002530);
+      globaldef002536 = (globaldef002536 - TRUE);
 
    }
-   if ( globaldef2531 ) {
+   if ( globaldef002531 ) {
 
-      sound (self,CHAN_VOICE,globaldef2387,globaldef2123,ATTN_NORM);
+      sound (self,CHAN_VOICE,globaldef002387,globaldef002123,ATTN_NORM);
 
    }
 
 };
-vector globaldef2537 /* = '0.000 0.000 -300.000' */;
-float (entity globaldef2539) func327;
+vector globaldef002537 /* = '0.000 0.000 -300.000' */;
+float (entity globaldef002539) func000327;
 
-// function func327
+// function func000327
 // function number 327 begins at statement 9099
 /*
  * OP_LOAD_ENT	6954	423	6961
@@ -647,32 +647,32 @@ float (entity globaldef2539) func327;
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef2539) func327 = {
+float (entity globaldef002539) func000327 = {
 
-   local vector globaldef2540;
-   local vector globaldef2544;
+   local vector globaldef002540;
+   local vector globaldef002544;
 
-   globaldef2544 = globaldef2539.globaldef406.origin;
-   globaldef2547 = (globaldef2547 + FL_MONSTER);
-   globaldef2540 = globaldef2544;
-   globaldef2543 = (globaldef2543 + globaldef2495);
-   globaldef449 (globaldef2544,globaldef2540,TRUE,self.globaldef406);
+   globaldef002544 = globaldef002539.globaldef000406.globaldef000083;
+   globaldef002547 = (globaldef002547 + FL_MONSTER);
+   globaldef002540 = globaldef002544;
+   globaldef002543 = (globaldef002543 + globaldef002495);
+   traceline (globaldef002544,globaldef002540,TRUE,self.globaldef000406);
    if ( trace_inwater ) {
 
       return ( FALSE );
 
    }
-   if ( ((trace_fraction == TRUE) || ((globaldef50 - globaldef2547) > globaldef2494)) ) {
+   if ( ((trace_fraction == TRUE) || ((globaldef000050 - globaldef002547) > globaldef002494)) ) {
 
-      return ( (globaldef50 - globaldef2539.globaldef406.globaldef86) );
+      return ( (globaldef000050 - globaldef002539.globaldef000406.globaldef000086) );
 
    }
    return ( FALSE );
 
 };
-float (float globaldef2549) func328;
+float (float globaldef002549) func000328;
 
-// function func328
+// function func000328
 // function number 328 begins at statement 9126
 /*
  * OP_GE	6976	1298	6977
@@ -688,25 +688,25 @@ float (float globaldef2549) func328;
  * OP_RETURN	6976	0	0
  * OP_DONE	0	0	0
  */
-float (float globaldef2549) func328 = {
+float (float globaldef002549) func000328 = {
 
-   while ( (globaldef2549 >= globaldef1198) ) {
+   while ( (globaldef002549 >= globaldef001198) ) {
 
-      globaldef2549 = (globaldef2549 - globaldef1198);
-
-   }
-   while ( (globaldef2549 < FALSE) ) {
-
-      globaldef2549 = (globaldef2549 + globaldef1198);
+      globaldef002549 = (globaldef002549 - globaldef001198);
 
    }
-   return ( globaldef2549 );
+   while ( (globaldef002549 < FALSE) ) {
+
+      globaldef002549 = (globaldef002549 + globaldef001198);
+
+   }
+   return ( globaldef002549 );
 
 };
 
-void (entity globaldef2551) func329;
+void (entity globaldef002551) func000329;
 
-// function func329
+// function func000329
 // function number 329 begins at statement 9138
 /*
  * OP_LOAD_F	6982	119	6986
@@ -759,51 +759,51 @@ void (entity globaldef2551) func329;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2551) func329 = {
+void (entity globaldef002551) func000329 = {
 
-   local float globaldef2552;
-   local float globaldef2553;
-   local float globaldef2554;
+   local float globaldef002552;
+   local float globaldef002553;
+   local float globaldef002554;
 
-   globaldef2553 = globaldef2548 (globaldef2551.globaldef97);
-   globaldef2554 = globaldef2548 (globaldef2551.globaldef406.globaldef97);
-   if ( (globaldef2553 > globaldef2554) ) {
+   globaldef002553 = func000328 (globaldef002551.globaldef000097);
+   globaldef002554 = func000328 (globaldef002551.globaldef000406.globaldef000097);
+   if ( (globaldef002553 > globaldef002554) ) {
 
-      if ( ((globaldef2553 - globaldef2554) < globaldef1197) ) {
+      if ( ((globaldef002553 - globaldef002554) < globaldef001197) ) {
 
-         globaldef2552 = ((globaldef2554 - globaldef2553) / FL_CLIENT);
+         globaldef002552 = ((globaldef002554 - globaldef002553) / FL_CLIENT);
 
       } else {
 
-         globaldef2552 = (((globaldef1198 - globaldef2553) + globaldef2554) / FL_CLIENT);
+         globaldef002552 = (((globaldef001198 - globaldef002553) + globaldef002554) / FL_CLIENT);
 
       }
 
    } else {
 
-      if ( ((globaldef2554 - globaldef2553) < globaldef1197) ) {
+      if ( ((globaldef002554 - globaldef002553) < globaldef001197) ) {
 
-         globaldef2552 = ((globaldef2554 - globaldef2553) / FL_CLIENT);
+         globaldef002552 = ((globaldef002554 - globaldef002553) / FL_CLIENT);
 
       } else {
 
-         globaldef2552 = (((globaldef2555 + globaldef2554) - globaldef2553) / FL_CLIENT);
+         globaldef002552 = (((globaldef002555 + globaldef002554) - globaldef002553) / FL_CLIENT);
 
       }
 
    }
-   self.globaldef96 = FALSE;
-   self.globaldef98 = FALSE;
-   self.globaldef100 = FALSE;
-   self.globaldef101 = ((self.globaldef101 * globaldef1552) + globaldef2552);
-   self.globaldef102 = FALSE;
+   self.globaldef000096 = FALSE;
+   self.globaldef000098 = FALSE;
+   self.globaldef000100 = FALSE;
+   self.globaldef000101 = ((self.globaldef000101 * globaldef001552) + globaldef002552);
+   self.globaldef000102 = FALSE;
 
 };
-float globaldef2555 /* = -360.000 */;
+float globaldef002555 /* = -360.000 */;
 
-void () func330;
+void () func000330;
 
-// function func330
+// function func000330
 // function number 330 begins at statement 9186
 /*
  * OP_STORE_V	28	4	0
@@ -840,35 +840,35 @@ void () func330;
  * OP_DONE	0	0	0
  */
 
-void () func330 = {
+void () func000330 = {
 
-   local float globaldef2557;
-   local vector globaldef2558;
+   local float globaldef002557;
+   local vector globaldef002558;
 
-   globaldef2557 = globaldef2538 (self);
-   if ( globaldef2557 ) {
+   globaldef002557 = func000327 (self);
+   if ( globaldef002557 ) {
 
-      setmodel (self,self.globaldef382);
-      globaldef2558 = self.globaldef406.origin;
-      globaldef2561 = (globaldef2561 + globaldef2557);
-      setorigin (self,globaldef2558);
-      self.globaldef96 = FALSE;
-      self.globaldef97 = self.globaldef406.globaldef97;
-      self.globaldef98 = FALSE;
-      globaldef2513 ();
+      setmodel (self,self.globaldef000382);
+      globaldef002558 = self.globaldef000406.globaldef000083;
+      globaldef002561 = (globaldef002561 + globaldef002557);
+      setorigin (self,globaldef002558);
+      self.globaldef000096 = FALSE;
+      self.globaldef000097 = self.globaldef000406.globaldef000097;
+      self.globaldef000098 = FALSE;
+      func000317 ();
 
    } else {
 
-      self.nextthink = (time + 0.100);
-      self.think = globaldef2556;
+      self.globaldef000128 = (time + globaldef001488);
+      self.globaldef000126 = func000330;
 
    }
 
 };
 
-void () func331;
+void () func000331;
 
-// function func331
+// function func000331
 // function number 331 begins at statement 9218
 /*
  * OP_STORE_V	28	4	0
@@ -876,13 +876,13 @@ void () func331;
  * OP_DONE	0	0	0
  */
 
-void () func331 = {
+void () func000331 = {
 
    remove (self);
 
 };
 
-// function func332
+// function func000332
 // function number 332 begins at statement 9221
 /*
  * OP_STORE_V	28	4	0
@@ -902,23 +902,23 @@ void () func331 = {
  * OP_DONE	0	0	0
  */
 
-void () func332 = {
+void () func000332 = {
 
    setmodel (self,string_null);
-   self.nextthink = (time + 0.100);
-   if ( (self.cnt <= FALSE) ) {
+   self.globaldef000128 = (time + globaldef001488);
+   if ( (self.globaldef000409 <= FALSE) ) {
 
-      self.think = globaldef2562;
+      self.globaldef000126 = func000331;
 
    } else {
 
-      self.think = globaldef2556;
+      self.globaldef000126 = func000330;
 
    }
 
 };
 
-// function func333
+// function func000333
 // function number 333 begins at statement 9236
 /*
  * OP_ADDRESS	28	426	7046
@@ -959,38 +959,38 @@ void () func332 = {
  * OP_DONE	0	0	0
  */
 
-void () func333 = {
+void () func000333 = {
 
-   local float globaldef2563;
-   local vector globaldef2564;
-   local vector globaldef2568;
+   local float globaldef002563;
+   local vector globaldef002564;
+   local vector globaldef002568;
 
-   self.cnt = (self.cnt - TRUE);
-   if ( (self.cnt <= FALSE) ) {
+   self.globaldef000409 = (self.globaldef000409 - TRUE);
+   if ( (self.globaldef000409 <= FALSE) ) {
 
-      globaldef2517 ();
+      func000321 ();
 
    } else {
 
-      globaldef2563 = globaldef2538 (self);
-      if ( globaldef2563 ) {
+      globaldef002563 = func000327 (self);
+      if ( globaldef002563 ) {
 
-         globaldef2564 = self.globaldef406.origin;
-         globaldef2567 = (globaldef2567 + globaldef2563);
-         if ( (vlen ((globaldef2564 - self.origin)) > globaldef2496) ) {
+         globaldef002564 = self.globaldef000406.globaldef000083;
+         globaldef002567 = (globaldef002567 + globaldef002563);
+         if ( (vlen ((globaldef002564 - self.globaldef000083)) > globaldef002496) ) {
 
-            globaldef2517 ();
+            func000321 ();
 
          } else {
 
-            self.velocity = ((globaldef2564 - self.origin) * MOVETYPE_BOUNCE);
-            globaldef2550 (self);
+            self.globaldef000091 = ((globaldef002564 - self.globaldef000083) * MOVETYPE_BOUNCE);
+            func000329 (self);
 
          }
 
       } else {
 
-         globaldef2517 ();
+         func000321 ();
 
       }
 
@@ -998,9 +998,9 @@ void () func333 = {
 
 };
 
-void (entity globaldef2573) func334;
+void (entity globaldef002573) func000334;
 
-// function func334
+// function func000334
 // function number 334 begins at statement 9272
 /*
  * OP_STORE_V	30	4	0
@@ -1028,29 +1028,29 @@ void (entity globaldef2573) func334;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2573) func334 = {
+void (entity globaldef002573) func000334 = {
 
-   local entity globaldef2574;
+   local entity globaldef002574;
 
-   globaldef2574 = find (world,classname,globaldef2575);
-   while ( globaldef2574 ) {
+   globaldef002574 = find (world,globaldef000107,globaldef002575);
+   while ( globaldef002574 ) {
 
-      if ( (globaldef2574.globaldef406 == globaldef2573) ) {
+      if ( (globaldef002574.globaldef000406 == globaldef002573) ) {
 
-         globaldef2574.cnt = FALSE;
-         globaldef2574.nextthink = (time + 0.100);
-         globaldef2574.think = globaldef2517;
+         globaldef002574.globaldef000409 = FALSE;
+         globaldef002574.globaldef000128 = (time + globaldef001488);
+         globaldef002574.globaldef000126 = func000321;
 
       }
-      globaldef2574 = find (globaldef2574,classname,globaldef2575);
+      globaldef002574 = find (globaldef002574,globaldef000107,globaldef002575);
 
    }
 
 };
 
-void (entity globaldef2577, float globaldef2578) func335;
+void (entity globaldef002577, float globaldef002578) func000335;
 
-// function func335
+// function func000335
 // function number 335 begins at statement 9295
 /*
  * OP_CALL0	464	0	0
@@ -1085,30 +1085,30 @@ void (entity globaldef2577, float globaldef2578) func335;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2577, float globaldef2578) func335 = {
+void (entity globaldef002577, float globaldef002578) func000335 = {
 
-   local entity globaldef2579;
-   local vector globaldef2580;
-   local float globaldef2584;
+   local entity globaldef002579;
+   local vector globaldef002580;
+   local float globaldef002584;
 
-   globaldef2579 = spawn ();
-   globaldef2579.classname = globaldef2575;
-   globaldef2579.movetype = MOVETYPE_NOCLIP;
-   globaldef2579.solid = SOLID_NOT;
-   globaldef2579.globaldef406 = globaldef2577;
-   globaldef2579.globaldef431 = FALSE;
-   globaldef2579.globaldef382 = globaldef2384;
-   setmodel (globaldef2579,string_null);
-   globaldef438 (globaldef2579,VEC_ORIGIN,VEC_ORIGIN);
-   globaldef2579.nextthink = (time + 0.100);
-   globaldef2579.think = globaldef2556;
-   globaldef2579.cnt = (globaldef2578 * MOVETYPE_BOUNCE);
+   globaldef002579 = spawn ();
+   globaldef002579.globaldef000107 = globaldef002575;
+   globaldef002579.globaldef000081 = MOVETYPE_NOCLIP;
+   globaldef002579.globaldef000082 = SOLID_NOT;
+   globaldef002579.globaldef000406 = globaldef002577;
+   globaldef002579.globaldef000431 = FALSE;
+   globaldef002579.globaldef000382 = globaldef002384;
+   setmodel (globaldef002579,string_null);
+   setsize (globaldef002579,VEC_ORIGIN,VEC_ORIGIN);
+   globaldef002579.globaldef000128 = (time + globaldef001488);
+   globaldef002579.globaldef000126 = func000330;
+   globaldef002579.globaldef000409 = (globaldef002578 * MOVETYPE_BOUNCE);
 
 };
 
-void (string globaldef2586) func336;
+void (string globaldef002586) func000336;
 
-// function func336
+// function func000336
 // function number 336 begins at statement 9325
 /*
  * OP_STORE_V	7105	4	0
@@ -1116,32 +1116,32 @@ void (string globaldef2586) func336;
  * OP_DONE	0	0	0
  */
 
-void (string globaldef2586) func336 = {
+void (string globaldef002586) func000336 = {
 
-   globaldef455 (globaldef2586);
+   bprint (globaldef002586);
 
 };
-void globaldef2587;
-.float field343;
-.float field343;
-.entity field344;
-.vector field345;
-.float field348;
-.vector field349;
-float globaldef2600 /* = 640.000 */;
-float globaldef2601 /* = 20.000 */;
-float globaldef2602 /* = 25.000 */;
-float globaldef2603 /* = 30.000 */;
-float globaldef2604 /* = 40.000 */;
-float globaldef2605 /* = 0.000 */;
-float globaldef2606 /* = 1.000 */;
-float globaldef2607 /* = 2.000 */;
-float globaldef2608 /* = 3.000 */;
-float globaldef2609 /* = 0.000 */;
+void globaldef002587;
+.float field000343;
+.float field000343;
+.entity field000344;
+.vector field000345;
+.float field000348;
+.vector field000349;
+float globaldef002600 /* = 640.000 */;
+float globaldef002601 /* = 20.000 */;
+float globaldef002602 /* = 25.000 */;
+float globaldef002603 /* = 30.000 */;
+float globaldef002604 /* = 40.000 */;
+float globaldef002605 /* = 0.000 */;
+float globaldef002606 /* = 1.000 */;
+float globaldef002607 /* = 2.000 */;
+float globaldef002608 /* = 3.000 */;
+float globaldef002609 /* = 0.000 */;
 
-void () func337;
+void () func000337;
 
-// function func337
+// function func000337
 // function number 337 begins at statement 9328
 /*
  * OP_STORE_V	7130	4	0
@@ -1170,32 +1170,32 @@ void () func337;
  * OP_DONE	0	0	0
  */
 
-void () func337 = {
+void () func000337 = {
 
-   globaldef2585 (globaldef2611);
-   if ( (globaldef2609 == globaldef2605) ) {
+   func000336 (globaldef002611);
+   if ( (globaldef002609 == globaldef002605) ) {
 
-      globaldef2609 = globaldef2606;
-      globaldef2585 (globaldef2612);
+      globaldef002609 = globaldef002606;
+      func000336 (globaldef002612);
 
    } else {
 
-      if ( (globaldef2609 == globaldef2606) ) {
+      if ( (globaldef002609 == globaldef002606) ) {
 
-         globaldef2609 = globaldef2607;
-         globaldef2585 (globaldef2613);
+         globaldef002609 = globaldef002607;
+         func000336 (globaldef002613);
 
       } else {
 
-         if ( (globaldef2609 == globaldef2607) ) {
+         if ( (globaldef002609 == globaldef002607) ) {
 
-            globaldef2609 = globaldef2608;
-            globaldef2585 (globaldef2614);
+            globaldef002609 = globaldef002608;
+            func000336 (globaldef002614);
 
          } else {
 
-            globaldef2609 = globaldef2605;
-            globaldef2585 (globaldef2615);
+            globaldef002609 = globaldef002605;
+            func000336 (globaldef002615);
 
          }
 
@@ -1204,15 +1204,15 @@ void () func337 = {
    }
 
 };
-string globaldef2611 /* = "camping mode = " */;
-string globaldef2612 /* = "detect only\n" */;
-string globaldef2613 /* = "detect & punish\n" */;
-string globaldef2614 /* = "detect & punish severe\n" */;
-string globaldef2615 /* = "no detection\n" */;
+string globaldef002611 /* = "camping mode = " */;
+string globaldef002612 /* = "detect only\n" */;
+string globaldef002613 /* = "detect & punish\n" */;
+string globaldef002614 /* = "detect & punish severe\n" */;
+string globaldef002615 /* = "no detection\n" */;
 
-void (entity globaldef2617) func338;
+void (entity globaldef002617) func000338;
 
-// function func338
+// function func000338
 // function number 338 begins at statement 9352
 /*
  * OP_ADDRESS	7139	7107	7140
@@ -1233,19 +1233,19 @@ void (entity globaldef2617) func338;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2617) func338 = {
+void (entity globaldef002617) func000338 = {
 
-   globaldef2617.globaldef2588 = globaldef2617.origin;
-   globaldef2617.globaldef2592 = globaldef2617.angles;
-   globaldef2617.globaldef2596 = (time + TRUE);
-   globaldef2617.globaldef2597 = FALSE;
-   globaldef2617.globaldef2598 = globaldef2617;
-   globaldef2617.message = string_null;
+   globaldef002617.globaldef002588 = globaldef002617.globaldef000083;
+   globaldef002617.globaldef002592 = globaldef002617.globaldef000095;
+   globaldef002617.globaldef002596 = (time + TRUE);
+   globaldef002617.globaldef002597 = FALSE;
+   globaldef002617.globaldef002598 = globaldef002617;
+   globaldef002617.globaldef000184 = string_null;
 
 };
-entity (entity globaldef2619, string globaldef2620) func339;
+entity (entity globaldef002619, string globaldef002620) func000339;
 
-// function func339
+// function func000339
 // function number 339 begins at statement 9368
 /*
  * OP_ADDRESS	7158	450	7163
@@ -1290,39 +1290,39 @@ entity (entity globaldef2619, string globaldef2620) func339;
  * OP_RETURN	7161	0	0
  * OP_DONE	0	0	0
  */
-entity (entity globaldef2619, string globaldef2620) func339 = {
+entity (entity globaldef002619, string globaldef002620) func000339 = {
 
-   local entity globaldef2621;
-   local entity globaldef2622;
-   local float globaldef2623;
+   local entity globaldef002621;
+   local entity globaldef002622;
+   local float globaldef002623;
 
-   globaldef2619.globaldef433 = globaldef2600;
-   globaldef2622 = globaldef2619;
-   globaldef2621 = find (world,classname,globaldef2620);
-   while ( globaldef2621 ) {
+   globaldef002619.globaldef000433 = globaldef002600;
+   globaldef002622 = globaldef002619;
+   globaldef002621 = find (world,globaldef000107,globaldef002620);
+   while ( globaldef002621 ) {
 
-      globaldef2623 = vlen ((globaldef2621.origin - globaldef2619.origin));
-      if ( (globaldef2623 < globaldef2619.globaldef433) ) {
+      globaldef002623 = vlen ((globaldef002621.globaldef000083 - globaldef002619.globaldef000083));
+      if ( (globaldef002623 < globaldef002619.globaldef000433) ) {
 
-         globaldef449 ((globaldef2619.origin + globaldef2619.globaldef144),(globaldef2621.origin + globaldef2037),TRUE,globaldef2619);
+         traceline ((globaldef002619.globaldef000083 + globaldef002619.globaldef000144),(globaldef002621.globaldef000083 + globaldef002037),TRUE,globaldef002619);
          if ( (trace_fraction >= TRUE) ) {
 
-            globaldef2619.globaldef433 = globaldef2623;
-            globaldef2622 = globaldef2621;
+            globaldef002619.globaldef000433 = globaldef002623;
+            globaldef002622 = globaldef002621;
 
          }
 
       }
-      globaldef2621 = find (globaldef2621,classname,globaldef2620);
+      globaldef002621 = find (globaldef002621,globaldef000107,globaldef002620);
 
    }
-   return ( globaldef2622 );
+   return ( globaldef002622 );
 
 };
 
-void (entity globaldef2625) func340;
+void (entity globaldef002625) func000340;
 
-// function func340
+// function func000340
 // function number 340 begins at statement 9409
 /*
  * OP_STORE_F	7119	7194	0
@@ -1465,115 +1465,115 @@ void (entity globaldef2625) func340;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2625) func340 = {
+void (entity globaldef002625) func000340 = {
 
-   local float globaldef2626;
-   local entity globaldef2627;
+   local float globaldef002626;
+   local entity globaldef002627;
 
-   globaldef2626 = globaldef2600;
-   globaldef2625.message = string_null;
-   globaldef2625.globaldef2598 = globaldef2625;
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1940);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
+   globaldef002626 = globaldef002600;
+   globaldef002625.globaldef000184 = string_null;
+   globaldef002625.globaldef002598 = globaldef002625;
+   globaldef002627 = func000339 (globaldef002625,globaldef001940);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
 
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2628;
-      globaldef2625.globaldef2598 = globaldef2627;
-
-   }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1943);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
-
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2629;
-      globaldef2625.globaldef2598 = globaldef2627;
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002628;
+      globaldef002625.globaldef002598 = globaldef002627;
 
    }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1826);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
+   globaldef002627 = func000339 (globaldef002625,globaldef001943);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
 
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2630;
-      globaldef2625.globaldef2598 = globaldef2627;
-
-   }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1824);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
-
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2631;
-      globaldef2625.globaldef2598 = globaldef2627;
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002629;
+      globaldef002625.globaldef002598 = globaldef002627;
 
    }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1855);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
+   globaldef002627 = func000339 (globaldef002625,globaldef001826);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
 
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2632;
-      globaldef2625.globaldef2598 = globaldef2627;
-
-   }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1856);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
-
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2633;
-      globaldef2625.globaldef2598 = globaldef2627;
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002630;
+      globaldef002625.globaldef002598 = globaldef002627;
 
    }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1857);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
+   globaldef002627 = func000339 (globaldef002625,globaldef001824);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
 
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2634;
-      globaldef2625.globaldef2598 = globaldef2627;
-
-   }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1853);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
-
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2635;
-      globaldef2625.globaldef2598 = globaldef2627;
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002631;
+      globaldef002625.globaldef002598 = globaldef002627;
 
    }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1942);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
+   globaldef002627 = func000339 (globaldef002625,globaldef001855);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
 
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2636;
-      globaldef2625.globaldef2598 = globaldef2627;
-
-   }
-   globaldef2627 = globaldef2618 (globaldef2625,globaldef1941);
-   if ( (globaldef2625.globaldef433 < globaldef2626) ) {
-
-      globaldef2626 = globaldef2625.globaldef433;
-      globaldef2625.message = globaldef2637;
-      globaldef2625.globaldef2598 = globaldef2627;
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002632;
+      globaldef002625.globaldef002598 = globaldef002627;
 
    }
-   globaldef2625.globaldef433 = globaldef2626;
+   globaldef002627 = func000339 (globaldef002625,globaldef001856);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
+
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002633;
+      globaldef002625.globaldef002598 = globaldef002627;
+
+   }
+   globaldef002627 = func000339 (globaldef002625,globaldef001857);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
+
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002634;
+      globaldef002625.globaldef002598 = globaldef002627;
+
+   }
+   globaldef002627 = func000339 (globaldef002625,globaldef001853);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
+
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002635;
+      globaldef002625.globaldef002598 = globaldef002627;
+
+   }
+   globaldef002627 = func000339 (globaldef002625,globaldef001942);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
+
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002636;
+      globaldef002625.globaldef002598 = globaldef002627;
+
+   }
+   globaldef002627 = func000339 (globaldef002625,globaldef001941);
+   if ( (globaldef002625.globaldef000433 < globaldef002626) ) {
+
+      globaldef002626 = globaldef002625.globaldef000433;
+      globaldef002625.globaldef000184 = globaldef002637;
+      globaldef002625.globaldef002598 = globaldef002627;
+
+   }
+   globaldef002625.globaldef000433 = globaldef002626;
 
 };
-string globaldef2628 /* = "Pentagram of Protection" */;
-string globaldef2629 /* = "Quad Damage" */;
-string globaldef2630 /* = "Red Armor" */;
-string globaldef2631 /* = "Yellow Armor" */;
-string globaldef2632 /* = "Rocket Launcher" */;
-string globaldef2633 /* = "Grenade Launcher" */;
-string globaldef2634 /* = "Thunderbolt" */;
-string globaldef2635 /* = "Super Nailgun" */;
-string globaldef2636 /* = "Biosuit" */;
-string globaldef2637 /* = "Ring of Shadows" */;
+string globaldef002628 /* = "Pentagram of Protection" */;
+string globaldef002629 /* = "Quad Damage" */;
+string globaldef002630 /* = "Red Armor" */;
+string globaldef002631 /* = "Yellow Armor" */;
+string globaldef002632 /* = "Rocket Launcher" */;
+string globaldef002633 /* = "Grenade Launcher" */;
+string globaldef002634 /* = "Thunderbolt" */;
+string globaldef002635 /* = "Super Nailgun" */;
+string globaldef002636 /* = "Biosuit" */;
+string globaldef002637 /* = "Ring of Shadows" */;
 
-void (vector globaldef3474) spawn_tfog;
+void (vector globaldef003474) spawn_tfog;
 
-void (vector globaldef3479, entity globaldef3483) spawn_tdeath;
+void (vector globaldef003479, entity globaldef003483) spawn_tdeath;
 
-void (entity globaldef2641) func341;
+void (entity globaldef002641) func000341;
 
-// function func341
+// function func000341
 // function number 341 begins at statement 9547
 /*
  * OP_CALL0	2814	0	0
@@ -1629,34 +1629,34 @@ void (entity globaldef2641) func341;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2641) func341 = {
+void (entity globaldef002641) func000341 = {
 
-   local entity globaldef2642;
-   local float globaldef2643;
+   local entity globaldef002642;
+   local float globaldef002643;
 
-   globaldef2642 = globaldef1440 ();
-   globaldef2643 = FALSE;
-   while ( ((vlen ((globaldef2642.origin - globaldef2641.globaldef2588)) < globaldef2600) && (globaldef2643 < MOVETYPE_FLY)) ) {
+   globaldef002642 = func000387 ();
+   globaldef002643 = FALSE;
+   while ( ((vlen ((globaldef002642.globaldef000083 - globaldef002641.globaldef002588)) < globaldef002600) && (globaldef002643 < MOVETYPE_FLY)) ) {
 
-      globaldef2642 = globaldef1440 ();
-      globaldef2643 = (globaldef2643 + TRUE);
+      globaldef002642 = func000387 ();
+      globaldef002643 = (globaldef002643 + TRUE);
 
    }
-   globaldef2638 (globaldef2641.origin);
-   setorigin (globaldef2641,(globaldef2642.origin + '0.000 0.000 1.000'));
-   globaldef2641.angles = globaldef2642.angles;
-   globaldef2641.globaldef152 = TRUE;
-   globaldef2641.velocity = VEC_ORIGIN;
-   globaldef2641.globaldef160 = (globaldef2641.globaldef160 - (globaldef2641.globaldef160 & FL_ONGROUND));
-   makevectors (globaldef2641.angles);
-   globaldef2638 ((globaldef2641.origin + (v_forward * globaldef1384)));
-   globaldef2639 (globaldef2641.origin,globaldef2641);
+   spawn_tfog (globaldef002641.globaldef000083);
+   setorigin (globaldef002641,(globaldef002642.globaldef000083 + globaldef001462));
+   globaldef002641.globaldef000095 = globaldef002642.globaldef000095;
+   globaldef002641.globaldef000152 = TRUE;
+   globaldef002641.globaldef000091 = VEC_ORIGIN;
+   globaldef002641.globaldef000160 = (globaldef002641.globaldef000160 - (globaldef002641.globaldef000160 & FL_ONGROUND));
+   makevectors (globaldef002641.globaldef000095);
+   spawn_tfog ((globaldef002641.globaldef000083 + (v_forward * globaldef001384)));
+   spawn_tdeath (globaldef002641.globaldef000083,globaldef002641);
 
 };
 
-void (entity globaldef2645) func342;
+void (entity globaldef002645) func000342;
 
-// function func342
+// function func000342
 // function number 342 begins at statement 9598
 /*
  * OP_LOAD_F	7318	152	7319
@@ -1671,21 +1671,21 @@ void (entity globaldef2645) func342;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2645) func342 = {
+void (entity globaldef002645) func000342 = {
 
-   if ( (globaldef2645.globaldef130 > MOVETYPE_BOUNCE) ) {
+   if ( (globaldef002645.globaldef000130 > MOVETYPE_BOUNCE) ) {
 
-      globaldef2645.globaldef130 = MOVETYPE_BOUNCE;
+      globaldef002645.globaldef000130 = MOVETYPE_BOUNCE;
 
    }
-   globaldef2645.globaldef166 = FALSE;
-   globaldef2645.globaldef363 = FALSE;
+   globaldef002645.globaldef000166 = FALSE;
+   globaldef002645.globaldef000363 = FALSE;
 
 };
 
-void (entity globaldef2647) func343;
+void (entity globaldef002647) func000343;
 
-// function func343
+// function func000343
 // function number 343 begins at statement 9608
 /*
  * OP_ADDRESS	7325	162	7326
@@ -1714,19 +1714,19 @@ void (entity globaldef2647) func343;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2647) func343 = {
+void (entity globaldef002647) func000343 = {
 
-   globaldef2647.globaldef140 = (globaldef2647.globaldef140 - (globaldef2647.globaldef140 & (((((((((IT_SUPER_SHOTGUN | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_LIGHTNING) | IT_SHELLS) | IT_NAILS) | IT_ROCKETS) | IT_CELLS)));
-   globaldef2647.globaldef132 = IT_AXE;
-   globaldef2647.globaldef135 = FALSE;
-   globaldef2647.globaldef133 = globaldef2222;
-   globaldef2647.globaldef134 = FALSE;
+   globaldef002647.globaldef000140 = (globaldef002647.globaldef000140 - (globaldef002647.globaldef000140 & (((((((((IT_SUPER_SHOTGUN | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_LIGHTNING) | IT_SHELLS) | IT_NAILS) | IT_ROCKETS) | IT_CELLS)));
+   globaldef002647.globaldef000132 = IT_AXE;
+   globaldef002647.globaldef000135 = FALSE;
+   globaldef002647.globaldef000133 = globaldef002222;
+   globaldef002647.globaldef000134 = FALSE;
 
 };
 
-void (entity globaldef2649) func344;
+void (entity globaldef002649) func000344;
 
-// function func344
+// function func000344
 // function number 344 begins at statement 9632
 /*
  * OP_STORE_V	7345	4	0
@@ -1735,15 +1735,15 @@ void (entity globaldef2649) func344;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2649) func344 = {
+void (entity globaldef002649) func000344 = {
 
-   globaldef2576 (globaldef2649,globaldef1337);
+   func000335 (globaldef002649,globaldef001337);
 
 };
 
-void (entity globaldef2651) func345;
+void (entity globaldef002651) func000345;
 
-// function func345
+// function func000345
 // function number 345 begins at statement 9636
 /*
  * OP_STORE_V	7347	4	0
@@ -1808,36 +1808,36 @@ void (entity globaldef2651) func345;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2651) func345 = {
+void (entity globaldef002651) func000345 = {
 
-   local string globaldef2652;
-   local float globaldef2653;
+   local string globaldef002652;
+   local float globaldef002653;
 
-   centerprint (globaldef2651,"");
-   globaldef2653 = globaldef440 ();
-   if ( (globaldef2609 == globaldef2608) ) {
+   func000072 (globaldef002651,globaldef001466);
+   globaldef002653 = random ();
+   if ( (globaldef002609 == globaldef002608) ) {
 
-      if ( (!globaldef805 && (globaldef2653 < globaldef2243)) ) {
+      if ( (!globaldef000805 && (globaldef002653 < globaldef002243)) ) {
 
-         globaldef2648 (globaldef2651);
+         func000344 (globaldef002651);
 
       } else {
 
-         if ( (globaldef2653 < globaldef522) ) {
+         if ( (globaldef002653 < globaldef000522) ) {
 
-            globaldef2644 (globaldef2651);
+            func000342 (globaldef002651);
 
          } else {
 
-            if ( (globaldef2653 < globaldef2244) ) {
+            if ( (globaldef002653 < globaldef002244) ) {
 
-               globaldef2646 (globaldef2651);
+               func000343 (globaldef002651);
 
             } else {
 
-               if ( (globaldef2653 < TRUE) ) {
+               if ( (globaldef002653 < TRUE) ) {
 
-                  globaldef2640 (globaldef2651);
+                  func000341 (globaldef002651);
 
                }
 
@@ -1849,39 +1849,39 @@ void (entity globaldef2651) func345 = {
 
    } else {
 
-      if ( (!globaldef805 && (globaldef2653 < globaldef522)) ) {
+      if ( (!globaldef000805 && (globaldef002653 < globaldef000522)) ) {
 
-         globaldef2648 (globaldef2651);
+         func000344 (globaldef002651);
 
       } else {
 
-         globaldef2640 (globaldef2651);
+         func000341 (globaldef002651);
 
       }
 
    }
-   globaldef2585 (globaldef2651.globaldef158);
-   globaldef2585 (globaldef2654);
-   globaldef2585 (globaldef2655);
-   globaldef2585 (globaldef2656);
-   if ( (globaldef2651.message != string_null) ) {
+   func000336 (globaldef002651.globaldef000158);
+   func000336 (globaldef002654);
+   func000336 (globaldef002655);
+   func000336 (globaldef002656);
+   if ( (globaldef002651.globaldef000184 != string_null) ) {
 
-      globaldef2585 (globaldef2657);
-      globaldef2585 (globaldef2651.message);
+      func000336 (globaldef002657);
+      func000336 (globaldef002651.globaldef000184);
 
    }
-   globaldef2585 (globaldef1354);
-   globaldef2616 (globaldef2651);
+   func000336 (globaldef001354);
+   func000338 (globaldef002651);
 
 };
-string globaldef2654 /* = " is " */;
-string globaldef2655 /* = "punished" */;
-string globaldef2656 /* = " for camping" */;
-string globaldef2657 /* = " near the " */;
+string globaldef002654 /* = " is " */;
+string globaldef002655 /* = "punished" */;
+string globaldef002656 /* = " for camping" */;
+string globaldef002657 /* = " near the " */;
 
-void (entity globaldef2659) func346;
+void (entity globaldef002659) func000346;
 
-// function func346
+// function func000346
 // function number 346 begins at statement 9696
 /*
  * OP_LOAD_F	7369	7116	7373
@@ -1968,70 +1968,70 @@ void (entity globaldef2659) func346;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2659) func346 = {
+void (entity globaldef002659) func000346 = {
 
-   local string globaldef2660;
-   local float globaldef2661;
-   local float globaldef2662;
+   local string globaldef002660;
+   local float globaldef002661;
+   local float globaldef002662;
 
-   if ( (globaldef2659.globaldef2597 == globaldef2601) ) {
+   if ( (globaldef002659.globaldef002597 == globaldef002601) ) {
 
-      globaldef2585 (globaldef2659.globaldef158);
-      globaldef2585 (globaldef2654);
-      globaldef2585 (globaldef2663);
-      if ( (globaldef2659.message != string_null) ) {
+      func000336 (globaldef002659.globaldef000158);
+      func000336 (globaldef002654);
+      func000336 (globaldef002663);
+      if ( (globaldef002659.globaldef000184 != string_null) ) {
 
-         globaldef2585 (globaldef2657);
-         globaldef2585 (globaldef2659.message);
+         func000336 (globaldef002657);
+         func000336 (globaldef002659.globaldef000184);
 
       }
-      globaldef2585 (globaldef1354);
-      globaldef2659.globaldef2597 = (globaldef2659.globaldef2597 + 0.100);
+      func000336 (globaldef001354);
+      globaldef002659.globaldef002597 = (globaldef002659.globaldef002597 + globaldef001488);
 
    } else {
 
-      if ( (globaldef2659.globaldef2597 == globaldef2602) ) {
+      if ( (globaldef002659.globaldef002597 == globaldef002602) ) {
 
-         globaldef2585 (globaldef2659.globaldef158);
-         globaldef2585 (globaldef2654);
-         globaldef2661 = globaldef440 ();
-         if ( (globaldef2661 < globaldef2664) ) {
+         func000336 (globaldef002659.globaldef000158);
+         func000336 (globaldef002654);
+         globaldef002661 = random ();
+         if ( (globaldef002661 < globaldef002664) ) {
 
-            globaldef2585 (globaldef2665);
+            func000336 (globaldef002665);
 
          } else {
 
-            if ( (globaldef2661 < globaldef2666) ) {
+            if ( (globaldef002661 < globaldef002666) ) {
 
-               globaldef2585 (globaldef2667);
+               func000336 (globaldef002667);
 
             } else {
 
-               if ( (globaldef2661 < globaldef2668) ) {
+               if ( (globaldef002661 < globaldef002668) ) {
 
-                  globaldef2585 (globaldef2669);
+                  func000336 (globaldef002669);
 
                } else {
 
-                  if ( (globaldef2661 < globaldef2670) ) {
+                  if ( (globaldef002661 < globaldef002670) ) {
 
-                     globaldef2585 (globaldef2671);
+                     func000336 (globaldef002671);
 
                   } else {
 
-                     if ( (globaldef2661 < globaldef2123) ) {
+                     if ( (globaldef002661 < globaldef002123) ) {
 
-                        globaldef2585 (globaldef2672);
+                        func000336 (globaldef002672);
 
                      } else {
 
-                        if ( (globaldef2661 < globaldef2673) ) {
+                        if ( (globaldef002661 < globaldef002673) ) {
 
-                           globaldef2585 (globaldef2674);
+                           func000336 (globaldef002674);
 
                         } else {
 
-                           globaldef2585 (globaldef2675);
+                           func000336 (globaldef002675);
 
                         }
 
@@ -2044,37 +2044,37 @@ void (entity globaldef2659) func346 = {
             }
 
          }
-         if ( (globaldef2659.message != string_null) ) {
+         if ( (globaldef002659.globaldef000184 != string_null) ) {
 
-            globaldef2585 (globaldef2657);
-            globaldef2585 (globaldef2659.message);
+            func000336 (globaldef002657);
+            func000336 (globaldef002659.globaldef000184);
 
          }
-         globaldef2585 (globaldef1354);
-         globaldef2659.globaldef2597 = (globaldef2659.globaldef2597 + 0.100);
+         func000336 (globaldef001354);
+         globaldef002659.globaldef002597 = (globaldef002659.globaldef002597 + globaldef001488);
 
       }
 
    }
 
 };
-string globaldef2663 /* = "suspected of camping" */;
-float globaldef2664 /* = 0.140 */;
-string globaldef2665 /* = "building a house" */;
-float globaldef2666 /* = 0.280 */;
-string globaldef2667 /* = "taking up permanent residence" */;
-float globaldef2668 /* = 0.420 */;
-string globaldef2669 /* = "fortifying his position" */;
-float globaldef2670 /* = 0.560 */;
-string globaldef2671 /* = "not able to break up camp" */;
-string globaldef2672 /* = "saying 'hi' from his new home" */;
-float globaldef2673 /* = 0.840 */;
-string globaldef2674 /* = "holding a garage sale" */;
-string globaldef2675 /* = "digging a trench" */;
+string globaldef002663 /* = "suspected of camping" */;
+float globaldef002664 /* = 0.140 */;
+string globaldef002665 /* = "building a house" */;
+float globaldef002666 /* = 0.280 */;
+string globaldef002667 /* = "taking up permanent residence" */;
+float globaldef002668 /* = 0.420 */;
+string globaldef002669 /* = "fortifying his position" */;
+float globaldef002670 /* = 0.560 */;
+string globaldef002671 /* = "not able to break up camp" */;
+string globaldef002672 /* = "saying 'hi' from his new home" */;
+float globaldef002673 /* = 0.840 */;
+string globaldef002674 /* = "holding a garage sale" */;
+string globaldef002675 /* = "digging a trench" */;
 
-void (entity globaldef2677) func347;
+void (entity globaldef002677) func000347;
 
-// function func347
+// function func000347
 // function number 347 begins at statement 9778
 /*
  * OP_LOAD_F	7411	173	7412
@@ -2163,67 +2163,67 @@ void (entity globaldef2677) func347;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2677) func347 = {
+void (entity globaldef002677) func000347 = {
 
-   if ( (globaldef2677.globaldef151 == globaldef2678) ) {
+   if ( (globaldef002677.globaldef000151 == globaldef002678) ) {
 
-      centerprint (globaldef2677,globaldef2679);
-      globaldef2677.globaldef151 = FALSE;
+      func000072 (globaldef002677,globaldef002679);
+      globaldef002677.globaldef000151 = FALSE;
 
    }
-   if ( (globaldef2677.globaldef2596 < time) ) {
+   if ( (globaldef002677.globaldef002596 < time) ) {
 
-      globaldef2677.globaldef2596 = (time + TRUE);
-      if ( (globaldef2609 == globaldef2605) ) {
-
-         return ;
-
-      }
-      if ( (self.globaldef130 <= FALSE) ) {
+      globaldef002677.globaldef002596 = (time + TRUE);
+      if ( (globaldef002609 == globaldef002605) ) {
 
          return ;
 
       }
-      if ( (globaldef2677.angles != globaldef2677.globaldef2592) ) {
+      if ( (self.globaldef000130 <= FALSE) ) {
 
-         if ( (vlen ((globaldef2677.origin - globaldef2677.globaldef2588)) < globaldef2600) ) {
+         return ;
 
-            globaldef2677.globaldef2597 = (globaldef467 (globaldef2677.globaldef2597) + TRUE);
+      }
+      if ( (globaldef002677.globaldef000095 != globaldef002677.globaldef002592) ) {
+
+         if ( (vlen ((globaldef002677.globaldef000083 - globaldef002677.globaldef002588)) < globaldef002600) ) {
+
+            globaldef002677.globaldef002597 = (floor (globaldef002677.globaldef002597) + TRUE);
 
          } else {
 
-            globaldef2677.globaldef2588 = globaldef2677.origin;
-            globaldef2677.globaldef2597 = FALSE;
-            globaldef2677.globaldef2598 = globaldef2677;
-            globaldef2677.message = string_null;
+            globaldef002677.globaldef002588 = globaldef002677.globaldef000083;
+            globaldef002677.globaldef002597 = FALSE;
+            globaldef002677.globaldef002598 = globaldef002677;
+            globaldef002677.globaldef000184 = string_null;
 
          }
-         globaldef2677.globaldef2592 = globaldef2677.angles;
+         globaldef002677.globaldef002592 = globaldef002677.globaldef000095;
 
       }
-      if ( (globaldef2677.globaldef2597 >= globaldef2601) ) {
+      if ( (globaldef002677.globaldef002597 >= globaldef002601) ) {
 
-         if ( (globaldef2677.globaldef2598 == globaldef2677) ) {
+         if ( (globaldef002677.globaldef002598 == globaldef002677) ) {
 
-            globaldef2624 (globaldef2677);
-            if ( (globaldef2677.globaldef2598 != globaldef2677) ) {
+            func000340 (globaldef002677);
+            if ( (globaldef002677.globaldef002598 != globaldef002677) ) {
 
-               globaldef2677.globaldef2588 = globaldef2677.globaldef2598.origin;
+               globaldef002677.globaldef002588 = globaldef002677.globaldef002598.globaldef000083;
 
             }
 
          }
-         globaldef2658 (globaldef2677);
-         if ( ((globaldef2609 == globaldef2607) || (globaldef2609 == globaldef2608)) ) {
+         func000346 (globaldef002677);
+         if ( ((globaldef002609 == globaldef002607) || (globaldef002609 == globaldef002608)) ) {
 
-            if ( (globaldef2677.globaldef2597 >= globaldef2603) ) {
+            if ( (globaldef002677.globaldef002597 >= globaldef002603) ) {
 
-               centerprint (globaldef2677,globaldef2680);
+               func000072 (globaldef002677,globaldef002680);
 
             }
-            if ( (globaldef2677.globaldef2597 == globaldef2604) ) {
+            if ( (globaldef002677.globaldef002597 == globaldef002604) ) {
 
-               globaldef2650 (globaldef2677);
+               func000345 (globaldef002677);
 
             }
 
@@ -2234,14 +2234,14 @@ void (entity globaldef2677) func347 = {
    }
 
 };
-float globaldef2678 /* = 254.000 */;
-string globaldef2679 /* = "\n\n\nThis server is running the\n\nOmicron Camper Exterminator" */;
-string globaldef2680 /* = "Stop camping or you'll be punished!" */;
-float globaldef2681 /* = 63.000 */;
+float globaldef002678 /* = 254.000 */;
+string globaldef002679 /* = "\n\n\nThis server is running the\n\nOmicron Camper Exterminator" */;
+string globaldef002680 /* = "Stop camping or you'll be punished!" */;
+float globaldef002681 /* = 63.000 */;
 
-void (string globaldef2683, string globaldef2684) func348;
+void (string globaldef002683, string globaldef002684) func000348;
 
-// function func348
+// function func000348
 // function number 348 begins at statement 9862
 /*
  * OP_STORE_V	7490	4	0
@@ -2353,82 +2353,82 @@ void (string globaldef2683, string globaldef2684) func348;
  * OP_DONE	0	0	0
  */
 
-void (string globaldef2683, string globaldef2684) func348 = {
+void (string globaldef002683, string globaldef002684) func000348 = {
 
-   local float globaldef2685;
-   local float globaldef2686;
-   local float globaldef2687;
-   local float globaldef2688;
-   local float globaldef2689;
-   local string globaldef2690;
+   local float globaldef002685;
+   local float globaldef002686;
+   local float globaldef002687;
+   local float globaldef002688;
+   local float globaldef002689;
+   local string globaldef002690;
 
-   globaldef2686 = globaldef473 (globaldef2691);
-   globaldef2686 = globaldef466 (globaldef2686);
-   if ( (globaldef2686 == FALSE) ) {
+   globaldef002686 = cvar (globaldef002691);
+   globaldef002686 = rint (globaldef002686);
+   if ( (globaldef002686 == FALSE) ) {
 
-      globaldef490 (globaldef2684);
+      changelevel (globaldef002684);
 
    } else {
 
-      if ( ((globaldef2686 == TRUE) || (globaldef2686 == CONTENT_EMPTY)) ) {
+      if ( ((globaldef002686 == TRUE) || (globaldef002686 == CONTENT_EMPTY)) ) {
 
-         globaldef490 (globaldef2683);
+         changelevel (globaldef002683);
 
       } else {
 
-         if ( (globaldef2686 >= FL_SWIM) ) {
+         if ( (globaldef002686 >= FL_SWIM) ) {
 
-            globaldef2687 = ((globaldef2686 / FL_GODMODE) & globaldef2681);
-            globaldef2688 = ((globaldef2686 / FL_JUMPRELEASED) & globaldef2681);
-            globaldef2689 = ((globaldef2686 / IT_KEY2) & globaldef2681);
-            globaldef2686 = (globaldef2686 & globaldef2681);
-            if ( (globaldef2686 < MOVETYPE_WALK) ) {
+            globaldef002687 = ((globaldef002686 / FL_GODMODE) & globaldef002681);
+            globaldef002688 = ((globaldef002686 / FL_JUMPRELEASED) & globaldef002681);
+            globaldef002689 = ((globaldef002686 / IT_KEY2) & globaldef002681);
+            globaldef002686 = (globaldef002686 & globaldef002681);
+            if ( (globaldef002686 < MOVETYPE_WALK) ) {
 
-               globaldef2688 = FALSE;
+               globaldef002688 = FALSE;
 
             }
-            if ( (globaldef2686 < MOVETYPE_STEP) ) {
+            if ( (globaldef002686 < MOVETYPE_STEP) ) {
 
-               globaldef2689 = FALSE;
+               globaldef002689 = FALSE;
 
             }
             do {
 
-               globaldef2685 = (TRUE + globaldef467 ((globaldef440 () * globaldef2686)));
+               globaldef002685 = (TRUE + floor ((random () * globaldef002686)));
 
-            } while ( (((globaldef2685 == globaldef2687) || (globaldef2685 == globaldef2688)) || (globaldef2685 == globaldef2689)) );
-            globaldef2690 = globaldef457 ((((globaldef2686 + (globaldef2685 * FL_GODMODE)) + (globaldef2687 * FL_JUMPRELEASED)) + (globaldef2688 * IT_KEY2)));
-            globaldef491 (globaldef2691,globaldef2690);
-            globaldef2690 = globaldef457 (globaldef2685);
-            globaldef474 (globaldef2692);
-            globaldef474 (globaldef2690);
-            globaldef474 (globaldef1354);
+            } while ( (((globaldef002685 == globaldef002687) || (globaldef002685 == globaldef002688)) || (globaldef002685 == globaldef002689)) );
+            globaldef002690 = ftos ((((globaldef002686 + (globaldef002685 * FL_GODMODE)) + (globaldef002687 * FL_JUMPRELEASED)) + (globaldef002688 * IT_KEY2)));
+            cvar_set (globaldef002691,globaldef002690);
+            globaldef002690 = ftos (globaldef002685);
+            localcmd (globaldef002692);
+            localcmd (globaldef002690);
+            localcmd (globaldef001354);
 
          } else {
 
-            globaldef2686 = globaldef471 (globaldef2686);
-            globaldef2687 = ((globaldef2686 / FL_GODMODE) & globaldef2681);
-            globaldef2686 = (globaldef2686 & globaldef2681);
-            if ( (globaldef2687 == FALSE) ) {
+            globaldef002686 = fabs (globaldef002686);
+            globaldef002687 = ((globaldef002686 / FL_GODMODE) & globaldef002681);
+            globaldef002686 = (globaldef002686 & globaldef002681);
+            if ( (globaldef002687 == FALSE) ) {
 
-               globaldef2687 = FL_SWIM;
+               globaldef002687 = FL_SWIM;
 
             } else {
 
-               globaldef2687 = (globaldef2687 + TRUE);
-               if ( (globaldef2687 > globaldef2686) ) {
+               globaldef002687 = (globaldef002687 + TRUE);
+               if ( (globaldef002687 > globaldef002686) ) {
 
-                  globaldef2687 = TRUE;
+                  globaldef002687 = TRUE;
 
                }
 
             }
-            globaldef2690 = globaldef457 ((CONTENT_EMPTY * (globaldef2686 + (globaldef2687 * FL_GODMODE))));
-            globaldef491 (globaldef2691,globaldef2690);
-            globaldef2690 = globaldef457 (globaldef2687);
-            globaldef474 (globaldef2692);
-            globaldef474 (globaldef2690);
-            globaldef474 (globaldef1354);
+            globaldef002690 = ftos ((CONTENT_EMPTY * (globaldef002686 + (globaldef002687 * FL_GODMODE))));
+            cvar_set (globaldef002691,globaldef002690);
+            globaldef002690 = ftos (globaldef002687);
+            localcmd (globaldef002692);
+            localcmd (globaldef002690);
+            localcmd (globaldef001354);
 
          }
 
@@ -2437,10 +2437,10 @@ void (string globaldef2683, string globaldef2684) func348 = {
    }
 
 };
-string globaldef2692 /* = "map" */;
-float (entity globaldef2694, vector globaldef2695) func349;
+string globaldef002692 /* = "map" */;
+float (entity globaldef002694, vector globaldef002695) func000349;
 
-// function func349
+// function func000349
 // function number 349 begins at statement 9969
 /*
  * OP_LOAD_V	7529	134	7546
@@ -2506,26 +2506,26 @@ float (entity globaldef2694, vector globaldef2695) func349;
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef2694, vector globaldef2695) func349 = {
+float (entity globaldef002694, vector globaldef002695) func000349 = {
 
-   local entity globaldef2699;
-   local vector globaldef2700;
-   local vector globaldef2704;
-   local vector globaldef2708;
-   local vector globaldef2712;
+   local entity globaldef002699;
+   local vector globaldef002700;
+   local vector globaldef002704;
+   local vector globaldef002708;
+   local vector globaldef002712;
 
-   globaldef2704 = ((globaldef2695 + globaldef2694.globaldef112) - globaldef2716);
-   globaldef2700 = ((globaldef2695 + globaldef2694.globaldef116) + globaldef2716);
-   globaldef2699 = globaldef816;
-   while ( globaldef2699 ) {
+   globaldef002704 = ((globaldef002695 + globaldef002694.globaldef000112) - globaldef002716);
+   globaldef002700 = ((globaldef002695 + globaldef002694.globaldef000116) + globaldef002716);
+   globaldef002699 = globaldef000816;
+   while ( globaldef002699 ) {
 
-      globaldef2712 = (globaldef2699.origin + globaldef2699.globaldef112);
-      globaldef2708 = (globaldef2699.origin + globaldef2699.globaldef116);
-      if ( ((globaldef2712_x <= globaldef2700_x) && (globaldef2708_x >= globaldef2704_x)) ) {
+      globaldef002712 = (globaldef002699.globaldef000083 + globaldef002699.globaldef000112);
+      globaldef002708 = (globaldef002699.globaldef000083 + globaldef002699.globaldef000116);
+      if ( ((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x)) ) {
 
-         if ( ((globaldef2714 <= globaldef2702) && (globaldef2710 >= globaldef2706)) ) {
+         if ( ((globaldef002714 <= globaldef002702) && (globaldef002710 >= globaldef002706)) ) {
 
-            if ( ((globaldef2715 <= globaldef2703) && (globaldef2711 >= globaldef2707)) ) {
+            if ( ((globaldef002715 <= globaldef002703) && (globaldef002711 >= globaldef002707)) ) {
 
                return ( TRUE );
 
@@ -2534,19 +2534,19 @@ float (entity globaldef2694, vector globaldef2695) func349 = {
          }
 
       }
-      globaldef2699 = globaldef2699.globaldef603;
+      globaldef002699 = globaldef002699.globaldef000603;
 
    }
-   globaldef2699 = globaldef817;
-   while ( globaldef2699 ) {
+   globaldef002699 = globaldef000817;
+   while ( globaldef002699 ) {
 
-      globaldef2712 = (globaldef2699.origin + globaldef2699.globaldef112);
-      globaldef2708 = (globaldef2699.origin + globaldef2699.globaldef116);
-      if ( ((globaldef2712_x <= globaldef2700_x) && (globaldef2708_x >= globaldef2704_x)) ) {
+      globaldef002712 = (globaldef002699.globaldef000083 + globaldef002699.globaldef000112);
+      globaldef002708 = (globaldef002699.globaldef000083 + globaldef002699.globaldef000116);
+      if ( ((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x)) ) {
 
-         if ( ((globaldef2714 <= globaldef2702) && (globaldef2710 >= globaldef2706)) ) {
+         if ( ((globaldef002714 <= globaldef002702) && (globaldef002710 >= globaldef002706)) ) {
 
-            if ( ((globaldef2715 <= globaldef2703) && (globaldef2711 >= globaldef2707)) ) {
+            if ( ((globaldef002715 <= globaldef002703) && (globaldef002711 >= globaldef002707)) ) {
 
                return ( TRUE );
 
@@ -2555,16 +2555,16 @@ float (entity globaldef2694, vector globaldef2695) func349 = {
          }
 
       }
-      globaldef2699 = globaldef2699.globaldef603;
+      globaldef002699 = globaldef002699.globaldef000603;
 
    }
    return ( FALSE );
 
 };
-vector globaldef2716 /* = '50.000 50.000 50.000' */;
-entity (entity globaldef2718) func350;
+vector globaldef002716 /* = '50.000 50.000 50.000' */;
+entity (entity globaldef002718) func000350;
 
-// function func350
+// function func000350
 // function number 350 begins at statement 10031
 /*
  * OP_STORE_F	213	7626	0
@@ -2584,30 +2584,30 @@ entity (entity globaldef2718) func350;
  * OP_RETURN	7625	0	0
  * OP_DONE	0	0	0
  */
-entity (entity globaldef2718) func350 = {
+entity (entity globaldef002718) func000350 = {
 
-   local entity globaldef2719;
-   local float globaldef2720;
+   local entity globaldef002719;
+   local float globaldef002720;
 
-   globaldef2720 = FALSE;
+   globaldef002720 = FALSE;
    do {
 
-      globaldef2719 = globaldef1440 ();
-      if ( !globaldef2693 (globaldef2718,globaldef2719.origin) ) {
+      globaldef002719 = func000387 ();
+      if ( !func000349 (globaldef002718,globaldef002719.globaldef000083) ) {
 
-         return ( globaldef2719 );
+         return ( globaldef002719 );
 
       }
-      globaldef2720 = (globaldef2720 + TRUE);
+      globaldef002720 = (globaldef002720 + TRUE);
 
-   } while ( (globaldef2720 < MOVETYPE_BOUNCE) );
-   return ( globaldef2719 );
+   } while ( (globaldef002720 < MOVETYPE_BOUNCE) );
+   return ( globaldef002719 );
 
 };
 
-void (entity globaldef2722) func351;
+void (entity globaldef002722) func000351;
 
-// function func351
+// function func000351
 // function number 351 begins at statement 10047
 /*
  * OP_LOAD_F	7634	371	7638
@@ -2654,33 +2654,33 @@ void (entity globaldef2722) func351;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2722) func351 = {
+void (entity globaldef002722) func000351 = {
 
-   local vector globaldef2723;
+   local vector globaldef002723;
 
-   if ( (globaldef2722.globaldef354 <= time) ) {
+   if ( (globaldef002722.globaldef000354 <= time) ) {
 
-      globaldef2723 = globaldef1067 (globaldef2722);
-      globaldef2722.globaldef172.globaldef172 = globaldef2722.globaldef172;
-      setorigin (globaldef2722.globaldef172,globaldef2723);
-      globaldef2722.globaldef354 = (time + MOVETYPE_WALK);
+      globaldef002723 = func002474 (globaldef002722);
+      globaldef002722.globaldef000172.globaldef000172 = globaldef002722.globaldef000172;
+      setorigin (globaldef002722.globaldef000172,globaldef002723);
+      globaldef002722.globaldef000354 = (time + MOVETYPE_WALK);
 
    }
-   globaldef1066 (globaldef2722);
-   globaldef2722.velocity = (globaldef2722.globaldef172.origin - globaldef2722.origin);
-   globaldef2722.globaldef94 = FALSE;
-   globaldef2722.velocity = (globaldef442 (globaldef2722.velocity) * globaldef783);
-   if ( !globaldef1065 (globaldef2722) ) {
+   func002468 (globaldef002722);
+   globaldef002722.globaldef000091 = (globaldef002722.globaldef000172.globaldef000083 - globaldef002722.globaldef000083);
+   globaldef002722.globaldef000094 = FALSE;
+   globaldef002722.globaldef000091 = (normalize (globaldef002722.globaldef000091) * globaldef000783);
+   if ( !func002446 (globaldef002722) ) {
 
-      globaldef2722.globaldef354 = (globaldef2722.globaldef354 - TRUE);
+      globaldef002722.globaldef000354 = (globaldef002722.globaldef000354 - TRUE);
 
    }
 
 };
 
-void (entity globaldef2728) func352;
+void (entity globaldef002728) func000352;
 
-// function func352
+// function func000352
 // function number 352 begins at statement 10089
 /*
  * OP_ADDRESS	7674	611	7675
@@ -2694,16 +2694,16 @@ void (entity globaldef2728) func352;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2728) func352 = {
+void (entity globaldef002728) func000352 = {
 
-   globaldef2728.globaldef594 = FALSE;
-   globaldef2728.globaldef141 = DAMAGE_NO;
-   globaldef2728.enemy = world;
-   globaldef2728.globaldef534 = globaldef2721;
+   globaldef002728.globaldef000594 = FALSE;
+   globaldef002728.globaldef000141 = DAMAGE_NO;
+   globaldef002728.globaldef000159 = world;
+   globaldef002728.globaldef000534 = func000351;
 
 };
 
-// function func353
+// function func000353
 // function number 353 begins at statement 10098
 /*
  * OP_STORE_F	213	7683	0
@@ -2798,83 +2798,83 @@ void (entity globaldef2728) func352 = {
  * OP_RETURN	7680	0	0
  * OP_DONE	0	0	0
  */
-entity (string globaldef2729) func353 = {
+entity (string globaldef002729) func000353 = {
 
-   local entity globaldef2730;
-   local entity globaldef2731;
-   local entity globaldef2732;
-   local float globaldef2733;
-   local float globaldef2734;
-   local float globaldef2735;
-   local float globaldef2736;
-   local float globaldef2737;
-   local entity globaldef2738;
+   local entity globaldef002730;
+   local entity globaldef002731;
+   local entity globaldef002732;
+   local float globaldef002733;
+   local float globaldef002734;
+   local float globaldef002735;
+   local float globaldef002736;
+   local float globaldef002737;
+   local entity globaldef002738;
 
-   globaldef2733 = FALSE;
-   globaldef2734 = FALSE;
-   globaldef2730 = find (world,classname,globaldef2739);
-   if ( globaldef2730 ) {
+   globaldef002733 = FALSE;
+   globaldef002734 = FALSE;
+   globaldef002730 = find (world,globaldef000107,globaldef002739);
+   if ( globaldef002730 ) {
 
-      return ( globaldef2730 );
+      return ( globaldef002730 );
 
    }
-   globaldef2738 = world;
-   globaldef2730 = find (world,classname,globaldef2729);
-   while ( globaldef2730 ) {
+   globaldef002738 = world;
+   globaldef002730 = find (world,globaldef000107,globaldef002729);
+   while ( globaldef002730 ) {
 
-      globaldef2734 = (globaldef2734 + TRUE);
-      globaldef2732 = globaldef454 (globaldef2730.origin,globaldef2740);
-      globaldef2736 = FALSE;
-      while ( globaldef2732 ) {
+      globaldef002734 = (globaldef002734 + TRUE);
+      globaldef002732 = findradius (globaldef002730.globaldef000083,globaldef002740);
+      globaldef002736 = FALSE;
+      while ( globaldef002732 ) {
 
-         if ( ((globaldef2732.classname == "player") || (globaldef2732.classname == globaldef1171)) ) {
+         if ( ((globaldef002732.globaldef000107 == globaldef001170) || (globaldef002732.globaldef000107 == globaldef001171)) ) {
 
-            globaldef2736 = (globaldef2736 + TRUE);
+            globaldef002736 = (globaldef002736 + TRUE);
 
          }
-         globaldef2732 = globaldef2732.globaldef142;
+         globaldef002732 = globaldef002732.globaldef000142;
 
       }
-      if ( (globaldef2736 == FALSE) ) {
+      if ( (globaldef002736 == FALSE) ) {
 
-         globaldef2730.globaldef172 = globaldef2738;
-         globaldef2738 = globaldef2730;
-         globaldef2733 = (globaldef2733 + TRUE);
-
-      }
-      globaldef2730 = find (globaldef2730,classname,globaldef2729);
-
-   }
-   globaldef2734 = (globaldef2734 - TRUE);
-   if ( !globaldef2733 ) {
-
-      globaldef2734 = globaldef466 ((globaldef440 () * globaldef2734));
-      globaldef2730 = find (world,classname,globaldef2729);
-      while ( (globaldef2734 > FALSE) ) {
-
-         globaldef2734 = (globaldef2734 - TRUE);
-         globaldef2730 = find (globaldef2730,classname,globaldef2729);
+         globaldef002730.globaldef000172 = globaldef002738;
+         globaldef002738 = globaldef002730;
+         globaldef002733 = (globaldef002733 + TRUE);
 
       }
-      return ( globaldef2730 );
+      globaldef002730 = find (globaldef002730,globaldef000107,globaldef002729);
 
    }
-   globaldef2733 = (globaldef2733 - TRUE);
-   globaldef2733 = globaldef466 ((globaldef440 () * globaldef2733));
-   globaldef2730 = globaldef2738;
-   while ( (globaldef2733 > FALSE) ) {
+   globaldef002734 = (globaldef002734 - TRUE);
+   if ( !globaldef002733 ) {
 
-      globaldef2730 = globaldef2730.globaldef172;
-      globaldef2733 = (globaldef2733 - TRUE);
+      globaldef002734 = rint ((random () * globaldef002734));
+      globaldef002730 = find (world,globaldef000107,globaldef002729);
+      while ( (globaldef002734 > FALSE) ) {
+
+         globaldef002734 = (globaldef002734 - TRUE);
+         globaldef002730 = find (globaldef002730,globaldef000107,globaldef002729);
+
+      }
+      return ( globaldef002730 );
 
    }
-   return ( globaldef2730 );
+   globaldef002733 = (globaldef002733 - TRUE);
+   globaldef002733 = rint ((random () * globaldef002733));
+   globaldef002730 = globaldef002738;
+   while ( (globaldef002733 > FALSE) ) {
+
+      globaldef002730 = globaldef002730.globaldef000172;
+      globaldef002733 = (globaldef002733 - TRUE);
+
+   }
+   return ( globaldef002730 );
 
 };
-float globaldef2740 /* = 84.000 */;
-string (entity globaldef2742) func354;
+float globaldef002740 /* = 84.000 */;
+string (entity globaldef002742) func000354;
 
-// function func354
+// function func000354
 // function number 354 begins at statement 10189
 /*
  * OP_LOAD_F	7716	533	7717
@@ -2919,53 +2919,53 @@ string (entity globaldef2742) func354;
  * OP_RETURN	7741	0	0
  * OP_DONE	0	0	0
  */
-string (entity globaldef2742) func354 = {
+string (entity globaldef002742) func000354 = {
 
-   if ( (globaldef2742.globaldef516 > MOVETYPE_PUSH) ) {
+   if ( (globaldef002742.globaldef000516 > MOVETYPE_PUSH) ) {
 
-      return ( globaldef2743 );
+      return ( globaldef002743 );
 
    } else {
 
-      if ( (globaldef2742.globaldef516 == MOVETYPE_PUSH) ) {
+      if ( (globaldef002742.globaldef000516 == MOVETYPE_PUSH) ) {
 
-         return ( globaldef2744 );
+         return ( globaldef002744 );
 
       } else {
 
-         if ( (globaldef2742.globaldef516 == MOVETYPE_TOSS) ) {
+         if ( (globaldef002742.globaldef000516 == MOVETYPE_TOSS) ) {
 
-            return ( globaldef2745 );
+            return ( globaldef002745 );
 
          } else {
 
-            if ( (globaldef2742.globaldef516 == MOVETYPE_FLY) ) {
+            if ( (globaldef002742.globaldef000516 == MOVETYPE_FLY) ) {
 
-               return ( globaldef2746 );
+               return ( globaldef002746 );
 
             } else {
 
-               if ( (globaldef2742.globaldef516 == MOVETYPE_STEP) ) {
+               if ( (globaldef002742.globaldef000516 == MOVETYPE_STEP) ) {
 
-                  return ( globaldef2747 );
+                  return ( globaldef002747 );
 
                } else {
 
-                  if ( (globaldef2742.globaldef516 == MOVETYPE_WALK) ) {
+                  if ( (globaldef002742.globaldef000516 == MOVETYPE_WALK) ) {
 
-                     return ( globaldef2748 );
+                     return ( globaldef002748 );
 
                   } else {
 
-                     if ( (globaldef2742.globaldef516 == FL_SWIM) ) {
+                     if ( (globaldef002742.globaldef000516 == FL_SWIM) ) {
 
-                        return ( globaldef2749 );
+                        return ( globaldef002749 );
 
                      } else {
 
-                        if ( (globaldef2742.globaldef516 == TRUE) ) {
+                        if ( (globaldef002742.globaldef000516 == TRUE) ) {
 
-                           return ( globaldef2750 );
+                           return ( globaldef002750 );
 
                         }
 
@@ -2982,22 +2982,22 @@ string (entity globaldef2742) func354 = {
       }
 
    }
-   return ( globaldef2751 );
+   return ( globaldef002751 );
 
 };
-string globaldef2743 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2744 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2745 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2746 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2747 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2748 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2749 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2750 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
-string globaldef2751 /* = "\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002743 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002744 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002745 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002746 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002747 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002748 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002749 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002750 /* = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" */;
+string globaldef002751 /* = "\n\n\n\n\n\n\n\n\n\n\n\n" */;
 
-void (entity globaldef2753) func355;
+void (entity globaldef002753) func000355;
 
-// function func355
+// function func000355
 // function number 355 begins at statement 10230
 /*
  * OP_ADDRESS	7743	532	7749
@@ -3033,34 +3033,34 @@ void (entity globaldef2753) func355;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2753) func355 = {
+void (entity globaldef002753) func000355 = {
 
-   local string globaldef2754;
-   local string globaldef2755;
-   local string globaldef2756;
-   local string globaldef2757;
-   local string globaldef2758;
+   local string globaldef002754;
+   local string globaldef002755;
+   local string globaldef002756;
+   local string globaldef002757;
+   local string globaldef002758;
 
-   globaldef2753.globaldef515 = (time + globaldef522);
-   globaldef2758 = globaldef2741 (globaldef2753);
-   globaldef850 (globaldef2753,globaldef2758,globaldef524.globaldef158,globaldef2759,globaldef525.globaldef158,globaldef2760);
-   if ( (globaldef524.globaldef130 > FALSE) ) {
+   globaldef002753.globaldef000515 = (time + globaldef000522);
+   globaldef002758 = func000354 (globaldef002753);
+   func000076 (globaldef002753,globaldef002758,globaldef000524.globaldef000158,globaldef002759,globaldef000525.globaldef000158,globaldef002760);
+   if ( (globaldef000524.globaldef000130 > FALSE) ) {
 
-      self.globaldef166 = globaldef524.globaldef130;
-
-   }
-   if ( (globaldef525.globaldef130 > FALSE) ) {
-
-      self.globaldef130 = globaldef525.globaldef130;
+      self.globaldef000166 = globaldef000524.globaldef000130;
 
    }
-   globaldef2753.globaldef135 = globaldef2753.globaldef517;
+   if ( (globaldef000525.globaldef000130 > FALSE) ) {
+
+      self.globaldef000130 = globaldef000525.globaldef000130;
+
+   }
+   globaldef002753.globaldef000135 = globaldef002753.globaldef000517;
 
 };
-string globaldef2759 /* = "          " */;
-string globaldef2760 /* = "              " */;
+string globaldef002759 /* = "          " */;
+string globaldef002760 /* = "              " */;
 
-// function func356
+// function func000356
 // function number 356 begins at statement 10261
 /*
  * OP_LOAD_S	541	129	7767
@@ -3093,34 +3093,34 @@ string globaldef2760 /* = "              " */;
  * OP_DONE	0	0	0
  */
 
-void (string globaldef2761) func356 = {
+void (string globaldef002761) func000356 = {
 
-   local entity globaldef2762;
+   local entity globaldef002762;
 
-   if ( (globaldef524.classname == "player") ) {
+   if ( (globaldef000524.globaldef000107 == globaldef001170) ) {
 
-      globaldef822 (globaldef524,globaldef2761);
-
-   }
-   if ( (globaldef525.classname == "player") ) {
-
-      globaldef822 (globaldef525,globaldef2761);
+      func000064 (globaldef000524,globaldef002761);
 
    }
-   if ( (self.classname == "player") ) {
+   if ( (globaldef000525.globaldef000107 == globaldef001170) ) {
 
-      globaldef822 (self,globaldef2761);
+      func000064 (globaldef000525,globaldef002761);
 
    }
-   if ( globaldef526 ) {
+   if ( (self.globaldef000107 == globaldef001170) ) {
 
-      globaldef2762 = globaldef526;
+      func000064 (self,globaldef002761);
+
+   }
+   if ( globaldef000526 ) {
+
+      globaldef002762 = globaldef000526;
       do {
 
-         globaldef822 (globaldef2762,globaldef2761);
-         globaldef2762 = globaldef2762.globaldef511;
+         func000064 (globaldef002762,globaldef002761);
+         globaldef002762 = globaldef002762.globaldef000511;
 
-      } while ( (globaldef2762 != globaldef526) );
+      } while ( (globaldef002762 != globaldef000526) );
 
    }
 
@@ -3143,7 +3143,7 @@ float () readytostart;
  */
 float () readytostart = {
 
-   if ( (((time > globaldef527) && (globaldef524 != world)) && (globaldef525 != world)) ) {
+   if ( (((time > globaldef000527) && (globaldef000524 != world)) && (globaldef000525 != world)) ) {
 
       return ( TRUE );
 
@@ -3155,9 +3155,9 @@ float () readytostart = {
 
 };
 
-void (entity globaldef2765) func358;
+void (entity globaldef002765) func000358;
 
-// function func358
+// function func000358
 // function number 358 begins at statement 10299
 /*
  * OP_ADDRESS	7782	159	7784
@@ -3259,60 +3259,60 @@ void (entity globaldef2765) func358;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2765) func358 = {
+void (entity globaldef002765) func000358 = {
 
-   local entity globaldef2766;
+   local entity globaldef002766;
 
-   globaldef2765.globaldef137 = (globaldef2765.globaldef137 + globaldef1439);
-   globaldef2765.globaldef136 = (globaldef2765.globaldef136 + SVC_INTERMISSION);
-   globaldef2765.globaldef138 = (globaldef2765.globaldef138 + SVC_INTERMISSION);
-   globaldef2765.globaldef139 = (globaldef2765.globaldef139 + SVC_INTERMISSION);
-   if ( (globaldef2765.globaldef136 > globaldef1335) ) {
+   globaldef002765.globaldef000137 = (globaldef002765.globaldef000137 + globaldef001439);
+   globaldef002765.globaldef000136 = (globaldef002765.globaldef000136 + SVC_INTERMISSION);
+   globaldef002765.globaldef000138 = (globaldef002765.globaldef000138 + SVC_INTERMISSION);
+   globaldef002765.globaldef000139 = (globaldef002765.globaldef000139 + SVC_INTERMISSION);
+   if ( (globaldef002765.globaldef000136 > globaldef001335) ) {
 
-      globaldef2765.globaldef136 = globaldef1335;
-
-   }
-   if ( (globaldef2765.globaldef137 > globaldef1343) ) {
-
-      globaldef2765.globaldef137 = globaldef1343;
+      globaldef002765.globaldef000136 = globaldef001335;
 
    }
-   if ( (globaldef2765.globaldef138 > globaldef1335) ) {
+   if ( (globaldef002765.globaldef000137 > globaldef001343) ) {
 
-      globaldef2765.globaldef138 = globaldef1335;
-
-   }
-   if ( (globaldef2765.globaldef139 > globaldef1335) ) {
-
-      globaldef2765.globaldef139 = globaldef1335;
+      globaldef002765.globaldef000137 = globaldef001343;
 
    }
-   globaldef2765.globaldef140 = (IT_AXE | IT_SHOTGUN);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_NAILGUN);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_SUPER_NAILGUN);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_SUPER_SHOTGUN);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_ROCKET_LAUNCHER);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_GRENADE_LAUNCHER);
-   globaldef2765.globaldef140 = (globaldef2765.globaldef140 | IT_LIGHTNING);
-   globaldef2765.globaldef140 = ((globaldef2765.globaldef140 - (globaldef2765.globaldef140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + IT_ARMOR3);
-   globaldef2765.globaldef166 = globaldef1343;
-   globaldef2765.globaldef165 = globaldef1827;
-   globaldef2765.globaldef130 = globaldef1335;
-   globaldef2765.globaldef132 = FL_MONSTER;
-   globaldef2765.globaldef365 = FALSE;
-   globaldef2765.globaldef366 = FALSE;
-   globaldef2765.globaldef364 = FALSE;
-   globaldef2765.globaldef363 = FALSE;
-   globaldef2765.globaldef111 = FALSE;
-   globaldef2765.globaldef367 = FALSE;
-   globaldef2766 = self;
-   self = globaldef2765;
-   globaldef1788 ();
-   self = globaldef2766;
+   if ( (globaldef002765.globaldef000138 > globaldef001335) ) {
+
+      globaldef002765.globaldef000138 = globaldef001335;
+
+   }
+   if ( (globaldef002765.globaldef000139 > globaldef001335) ) {
+
+      globaldef002765.globaldef000139 = globaldef001335;
+
+   }
+   globaldef002765.globaldef000140 = (IT_AXE | IT_SHOTGUN);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_NAILGUN);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_SUPER_NAILGUN);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_SUPER_SHOTGUN);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_ROCKET_LAUNCHER);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_GRENADE_LAUNCHER);
+   globaldef002765.globaldef000140 = (globaldef002765.globaldef000140 | IT_LIGHTNING);
+   globaldef002765.globaldef000140 = ((globaldef002765.globaldef000140 - (globaldef002765.globaldef000140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + IT_ARMOR3);
+   globaldef002765.globaldef000166 = globaldef001343;
+   globaldef002765.globaldef000165 = globaldef001827;
+   globaldef002765.globaldef000130 = globaldef001335;
+   globaldef002765.globaldef000132 = FL_MONSTER;
+   globaldef002765.globaldef000365 = FALSE;
+   globaldef002765.globaldef000366 = FALSE;
+   globaldef002765.globaldef000364 = FALSE;
+   globaldef002765.globaldef000363 = FALSE;
+   globaldef002765.globaldef000111 = FALSE;
+   globaldef002765.globaldef000367 = FALSE;
+   globaldef002766 = self;
+   self = globaldef002765;
+   W_SetCurrentAmmo ();
+   self = globaldef002766;
 
 };
 
-void (entity globaldef2768) setfullhealth;
+void (entity globaldef002768) setfullhealth;
 
 // function setfullhealth
 // function number 359 begins at statement 10396
@@ -3326,17 +3326,17 @@ void (entity globaldef2768) setfullhealth;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2768) setfullhealth = {
+void (entity globaldef002768) setfullhealth = {
 
-   globaldef2768.globaldef166 = globaldef1343;
-   globaldef2768.globaldef165 = globaldef1827;
-   globaldef2768.globaldef130 = globaldef1335;
+   globaldef002768.globaldef000166 = globaldef001343;
+   globaldef002768.globaldef000165 = globaldef001827;
+   globaldef002768.globaldef000130 = globaldef001335;
 
 };
 
-void (entity globaldef2770, entity globaldef2771) func360;
+void (entity globaldef002770, entity globaldef002771) func000360;
 
-// function func360
+// function func000360
 // function number 360 begins at statement 10403
 /*
  * OP_LOAD_V	7852	105	7857
@@ -3401,43 +3401,43 @@ void (entity globaldef2770, entity globaldef2771) func360;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2770, entity globaldef2771) func360 = {
+void (entity globaldef002770, entity globaldef002771) func000360 = {
 
-   local vector globaldef2772;
+   local vector globaldef002772;
 
-   globaldef2638 (globaldef2770.origin);
-   makevectors (globaldef2771.globaldef383);
-   globaldef2772 = (globaldef2771.origin + (FL_MONSTER * v_forward));
-   globaldef2638 (globaldef2772);
-   globaldef2639 (globaldef2771.origin,globaldef2770);
-   if ( !globaldef2770.globaldef130 ) {
+   spawn_tfog (globaldef002770.globaldef000083);
+   makevectors (globaldef002771.globaldef000383);
+   globaldef002772 = (globaldef002771.globaldef000083 + (FL_MONSTER * v_forward));
+   spawn_tfog (globaldef002772);
+   spawn_tdeath (globaldef002771.globaldef000083,globaldef002770);
+   if ( !globaldef002770.globaldef000130 ) {
 
-      globaldef2770.origin = globaldef2771.origin;
-      globaldef2770.velocity = ((v_forward * globaldef2770.globaldef92) + (v_forward * globaldef2770.globaldef93));
+      globaldef002770.globaldef000083 = globaldef002771.globaldef000083;
+      globaldef002770.globaldef000091 = ((v_forward * globaldef002770.globaldef000092) + (v_forward * globaldef002770.globaldef000093));
       return ;
 
    }
-   setorigin (globaldef2770,globaldef2771.origin);
-   globaldef2770.angles = globaldef2771.globaldef383;
-   if ( globaldef2770 ) {
+   setorigin (globaldef002770,globaldef002771.globaldef000083);
+   globaldef002770.globaldef000095 = globaldef002771.globaldef000383;
+   if ( globaldef002770 ) {
 
-      globaldef2770.globaldef152 = TRUE;
-      globaldef2770.globaldef164 = (time + globaldef2123);
-      if ( (globaldef2770.globaldef160 & FL_ONGROUND) ) {
+      globaldef002770.globaldef000152 = TRUE;
+      globaldef002770.globaldef000164 = (time + globaldef002123);
+      if ( (globaldef002770.globaldef000160 & FL_ONGROUND) ) {
 
-         globaldef2770.globaldef160 = (globaldef2770.globaldef160 - FL_ONGROUND);
+         globaldef002770.globaldef000160 = (globaldef002770.globaldef000160 - FL_ONGROUND);
 
       }
-      globaldef2770.velocity = (v_forward * globaldef523);
+      globaldef002770.globaldef000091 = (v_forward * globaldef000523);
 
    }
-   globaldef2770.globaldef160 = (globaldef2770.globaldef160 - (globaldef2770.globaldef160 & FL_ONGROUND));
+   globaldef002770.globaldef000160 = (globaldef002770.globaldef000160 - (globaldef002770.globaldef000160 & FL_ONGROUND));
 
 };
 
-void (entity globaldef2777) func361;
+void (entity globaldef002777) func000361;
 
-// function func361
+// function func000361
 // function number 361 begins at statement 10463
 /*
  * OP_LOAD_F	7926	182	7928
@@ -3472,34 +3472,34 @@ void (entity globaldef2777) func361;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2777) func361 = {
+void (entity globaldef002777) func000361 = {
 
-   local entity globaldef2778;
+   local entity globaldef002778;
 
-   if ( (globaldef2777.globaldef160 & globaldef681) ) {
+   if ( (globaldef002777.globaldef000160 & globaldef000681) ) {
 
-      globaldef1081 (globaldef2777);
-
-   }
-   globaldef2778 = globaldef1158 (globaldef2779);
-   globaldef2769 (globaldef2777,globaldef2778);
-   setorigin (globaldef2777,globaldef2778.origin);
-   globaldef2764 (globaldef2777);
-   globaldef822 (globaldef2777,globaldef2780);
-   globaldef2777.enemy = world;
-   if ( (globaldef524 != globaldef2777) ) {
-
-      globaldef2764 (globaldef524);
-      globaldef527 = (time + MOVETYPE_BOUNCE);
+      func002502 (globaldef002777);
 
    }
-   globaldef799 = TRUE;
+   globaldef002778 = func000353 (globaldef002779);
+   func000360 (globaldef002777,globaldef002778);
+   setorigin (globaldef002777,globaldef002778.globaldef000083);
+   func000358 (globaldef002777);
+   func000064 (globaldef002777,globaldef002780);
+   globaldef002777.globaldef000159 = world;
+   if ( (globaldef000524 != globaldef002777) ) {
+
+      func000358 (globaldef000524);
+      globaldef000527 = (time + MOVETYPE_BOUNCE);
+
+   }
+   globaldef000799 = TRUE;
 
 };
-string globaldef2779 /* = "info_teleport_destination" */;
-string globaldef2780 /* = "r_drawviewmodel 1\n" */;
+string globaldef002779 /* = "info_teleport_destination" */;
+string globaldef002780 /* = "r_drawviewmodel 1\n" */;
 
-// function func362
+// function func000362
 // function number 362 begins at statement 10493
 /*
  * OP_IFNOT	543	36	0
@@ -3544,58 +3544,58 @@ string globaldef2780 /* = "r_drawviewmodel 1\n" */;
  * OP_DONE	0	0	0
  */
 
-void () func362 = {
+void () func000362 = {
 
-   local entity globaldef2781;
-   local float globaldef2782;
+   local entity globaldef002781;
+   local float globaldef002782;
 
-   if ( globaldef526 ) {
+   if ( globaldef000526 ) {
 
-      globaldef525 = globaldef526;
-      globaldef2781 = globaldef526.globaldef512;
-      if ( (globaldef526 == globaldef526.globaldef511) ) {
+      globaldef000525 = globaldef000526;
+      globaldef002781 = globaldef000526.globaldef000512;
+      if ( (globaldef000526 == globaldef000526.globaldef000511) ) {
 
-         globaldef526 = world;
+         globaldef000526 = world;
 
       } else {
 
-         globaldef526 = globaldef526.globaldef511;
-         globaldef526.globaldef512 = globaldef2781;
-         globaldef2781.globaldef511 = globaldef526;
+         globaldef000526 = globaldef000526.globaldef000511;
+         globaldef000526.globaldef000512 = globaldef002781;
+         globaldef002781.globaldef000511 = globaldef000526;
 
       }
-      globaldef2776 (globaldef525);
-      globaldef455 (globaldef2783);
-      globaldef455 (globaldef525.globaldef158);
-      globaldef455 (globaldef1354);
-      if ( globaldef526 ) {
+      func000361 (globaldef000525);
+      bprint (globaldef002783);
+      bprint (globaldef000525.globaldef000158);
+      bprint (globaldef001354);
+      if ( globaldef000526 ) {
 
-         globaldef2781 = globaldef526;
-         globaldef2782 = FALSE;
+         globaldef002781 = globaldef000526;
+         globaldef002782 = FALSE;
          do {
 
-            globaldef2782 = (globaldef2782 + TRUE);
-            globaldef2781.globaldef517 = globaldef2782;
-            globaldef2781 = globaldef2781.globaldef511;
+            globaldef002782 = (globaldef002782 + TRUE);
+            globaldef002781.globaldef000517 = globaldef002782;
+            globaldef002781 = globaldef002781.globaldef000511;
 
-         } while ( (globaldef2781 != globaldef526) );
+         } while ( (globaldef002781 != globaldef000526) );
 
       }
 
    } else {
 
-      globaldef525 = world;
-      globaldef455 (globaldef2784);
+      globaldef000525 = world;
+      bprint (globaldef002784);
 
    }
 
 };
-string globaldef2783 /* = "The new challenger is " */;
-string globaldef2784 /* = "Waiting for opponent\n" */;
+string globaldef002783 /* = "The new challenger is " */;
+string globaldef002784 /* = "Waiting for opponent\n" */;
 
-void (entity globaldef2786) func363;
+void (entity globaldef002786) func000363;
 
-// function func363
+// function func000363
 // function number 363 begins at statement 10533
 /*
  * OP_NOT_ENT	543	0	7957
@@ -3642,49 +3642,49 @@ void (entity globaldef2786) func363;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2786) func363 = {
+void (entity globaldef002786) func000363 = {
 
-   local entity globaldef2787;
-   local float globaldef2788;
+   local entity globaldef002787;
+   local float globaldef002788;
 
-   if ( !globaldef526 ) {
+   if ( !globaldef000526 ) {
 
-      globaldef526 = globaldef2786;
-      globaldef526.globaldef511 = globaldef526;
-      globaldef526.globaldef512 = globaldef526;
-      globaldef887 (globaldef2786,globaldef2789);
-      globaldef2786.globaldef517 = TRUE;
+      globaldef000526 = globaldef002786;
+      globaldef000526.globaldef000511 = globaldef000526;
+      globaldef000526.globaldef000512 = globaldef000526;
+      func000092 (globaldef002786,globaldef002789);
+      globaldef002786.globaldef000517 = TRUE;
 
    } else {
 
-      globaldef2787 = globaldef526.globaldef512;
-      globaldef2787.globaldef511 = globaldef2786;
-      globaldef2786.globaldef512 = globaldef2787;
-      globaldef526.globaldef512 = globaldef2786;
-      globaldef2786.globaldef511 = globaldef526;
-      globaldef887 (globaldef2786,globaldef2790);
-      globaldef2787 = globaldef526;
-      globaldef2788 = TRUE;
+      globaldef002787 = globaldef000526.globaldef000512;
+      globaldef002787.globaldef000511 = globaldef002786;
+      globaldef002786.globaldef000512 = globaldef002787;
+      globaldef000526.globaldef000512 = globaldef002786;
+      globaldef002786.globaldef000511 = globaldef000526;
+      func000092 (globaldef002786,globaldef002790);
+      globaldef002787 = globaldef000526;
+      globaldef002788 = TRUE;
       do {
 
-         globaldef2787 = globaldef2787.globaldef511;
-         globaldef2788 = (globaldef2788 + TRUE);
+         globaldef002787 = globaldef002787.globaldef000511;
+         globaldef002788 = (globaldef002788 + TRUE);
 
-      } while ( (globaldef2787 != globaldef2786) );
-      globaldef2786.globaldef517 = globaldef2788;
+      } while ( (globaldef002787 != globaldef002786) );
+      globaldef002786.globaldef000517 = globaldef002788;
 
    }
-   if ( (globaldef2786.globaldef160 & globaldef681) ) {
+   if ( (globaldef002786.globaldef000160 & globaldef000681) ) {
 
-      globaldef2727 (globaldef2786);
+      func000352 (globaldef002786);
 
    }
 
 };
-string globaldef2789 /* = "You are next in line\n" */;
-string globaldef2790 /* = "You are last in line\n" */;
+string globaldef002789 /* = "You are next in line\n" */;
+string globaldef002790 /* = "You are last in line\n" */;
 
-// function func364
+// function func000364
 // function number 364 begins at statement 10575
 /*
  * OP_ADDRESS	7974	158	7976
@@ -3762,72 +3762,72 @@ string globaldef2790 /* = "You are last in line\n" */;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2791) func364 = {
+void (entity globaldef002791) func000364 = {
 
-   local entity globaldef2792;
+   local entity globaldef002792;
 
-   globaldef2791.globaldef136 = MOVETYPE_BOUNCE;
-   globaldef2791.globaldef137 = FALSE;
-   globaldef2791.globaldef136 = FALSE;
-   globaldef2791.globaldef138 = FALSE;
-   globaldef2791.globaldef139 = FALSE;
-   globaldef2791.globaldef141 = DAMAGE_NO;
-   globaldef2791.globaldef140 = IT_AXE;
-   globaldef2791.globaldef166 = FALSE;
-   globaldef2791.globaldef165 = FALSE;
-   globaldef2791.globaldef130 = globaldef1335;
-   globaldef2791.globaldef132 = FL_JUMPRELEASED;
-   globaldef2791.globaldef513 = FALSE;
-   globaldef2791.globaldef514 = FALSE;
-   globaldef2791.globaldef515 = FALSE;
-   if ( (globaldef2791.globaldef158 == globaldef2793) ) {
+   globaldef002791.globaldef000136 = MOVETYPE_BOUNCE;
+   globaldef002791.globaldef000137 = FALSE;
+   globaldef002791.globaldef000136 = FALSE;
+   globaldef002791.globaldef000138 = FALSE;
+   globaldef002791.globaldef000139 = FALSE;
+   globaldef002791.globaldef000141 = DAMAGE_NO;
+   globaldef002791.globaldef000140 = IT_AXE;
+   globaldef002791.globaldef000166 = FALSE;
+   globaldef002791.globaldef000165 = FALSE;
+   globaldef002791.globaldef000130 = globaldef001335;
+   globaldef002791.globaldef000132 = FL_JUMPRELEASED;
+   globaldef002791.globaldef000513 = FALSE;
+   globaldef002791.globaldef000514 = FALSE;
+   globaldef002791.globaldef000515 = FALSE;
+   if ( (globaldef002791.globaldef000158 == globaldef002793) ) {
 
       return ;
 
    }
-   if ( !globaldef524 ) {
+   if ( !globaldef000524 ) {
 
-      globaldef524 = globaldef2791;
-      globaldef2776 (globaldef2791);
-      globaldef2791.globaldef511 = globaldef2791;
-      globaldef2791.globaldef512 = globaldef2791;
-      globaldef455 (globaldef2784);
+      globaldef000524 = globaldef002791;
+      func000361 (globaldef002791);
+      globaldef002791.globaldef000511 = globaldef002791;
+      globaldef002791.globaldef000512 = globaldef002791;
+      bprint (globaldef002784);
 
    } else {
 
-      if ( !globaldef525 ) {
+      if ( !globaldef000525 ) {
 
-         globaldef525 = globaldef2791;
-         globaldef2776 (globaldef2791);
-         globaldef2791.globaldef511 = globaldef2791;
-         globaldef2791.globaldef512 = globaldef2791;
-         globaldef455 (globaldef2791.globaldef158);
-         globaldef455 (globaldef2794);
+         globaldef000525 = globaldef002791;
+         func000361 (globaldef002791);
+         globaldef002791.globaldef000511 = globaldef002791;
+         globaldef002791.globaldef000512 = globaldef002791;
+         bprint (globaldef002791.globaldef000158);
+         bprint (globaldef002794);
 
       } else {
 
-         if ( ((globaldef524 != globaldef2791) && (globaldef525 != globaldef2791)) ) {
+         if ( ((globaldef000524 != globaldef002791) && (globaldef000525 != globaldef002791)) ) {
 
-            globaldef822 (globaldef2791,globaldef2795);
-            globaldef2785 (globaldef2791);
+            func000064 (globaldef002791,globaldef002795);
+            func000363 (globaldef002791);
 
          }
 
       }
 
    }
-   globaldef2792 = self;
-   self = globaldef2791;
-   globaldef1788 ();
-   self = globaldef2792;
+   globaldef002792 = self;
+   self = globaldef002791;
+   W_SetCurrentAmmo ();
+   self = globaldef002792;
 
 };
-string globaldef2793 /* = "unconnected" */;
-string globaldef2794 /* = " is the new challenger\n" */;
-string globaldef2795 /* = "r_drawviewmodel 0\n" */;
+string globaldef002793 /* = "unconnected" */;
+string globaldef002794 /* = " is the new challenger\n" */;
+string globaldef002795 /* = "r_drawviewmodel 0\n" */;
 entity () FindIntermission;
 
-// function func365
+// function func000365
 // function number 365 begins at statement 10648
 /*
  * OP_LOAD_F	8006	538	8010
@@ -4012,112 +4012,112 @@ entity () FindIntermission;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2797) func365 = {
+void (entity globaldef002797) func000365 = {
 
-   local string globaldef2798;
-   local entity globaldef2799;
-   local float globaldef2800;
+   local string globaldef002798;
+   local entity globaldef002799;
+   local float globaldef002800;
 
-   if ( (globaldef2797.globaldef521 == TRUE) ) {
+   if ( (globaldef002797.globaldef000521 == TRUE) ) {
 
-      globaldef887 (globaldef2797,globaldef2801);
-      globaldef887 (globaldef2797,globaldef2802);
-      globaldef2797.globaldef521 = FALSE;
+      func000092 (globaldef002797,globaldef002801);
+      func000092 (globaldef002797,globaldef002802);
+      globaldef002797.globaldef000521 = FALSE;
 
    }
-   globaldef2800 = globaldef466 ((globaldef527 - time));
-   if ( (((((globaldef2800 >= FALSE) && (globaldef527 > FALSE)) && (globaldef2800 != globaldef528)) && (globaldef524 != world)) && (globaldef525 != world)) ) {
+   globaldef002800 = rint ((globaldef000527 - time));
+   if ( (((((globaldef002800 >= FALSE) && (globaldef000527 > FALSE)) && (globaldef002800 != globaldef000528)) && (globaldef000524 != world)) && (globaldef000525 != world)) ) {
 
-      globaldef528 = globaldef2800;
-      if ( (globaldef2800 == FALSE) ) {
+      globaldef000528 = globaldef002800;
+      if ( (globaldef002800 == FALSE) ) {
 
-         globaldef822 (globaldef524,globaldef2803);
-         globaldef822 (globaldef525,globaldef2803);
-         globaldef455 (globaldef524.globaldef158);
-         globaldef455 (globaldef2804);
-         globaldef455 (globaldef525.globaldef158);
-         globaldef455 (globaldef1354);
-         if ( globaldef526 ) {
+         func000064 (globaldef000524,globaldef002803);
+         func000064 (globaldef000525,globaldef002803);
+         bprint (globaldef000524.globaldef000158);
+         bprint (globaldef002804);
+         bprint (globaldef000525.globaldef000158);
+         bprint (globaldef001354);
+         if ( globaldef000526 ) {
 
-            globaldef455 (globaldef526.globaldef158);
-            globaldef455 (globaldef2805);
+            bprint (globaldef000526.globaldef000158);
+            bprint (globaldef002805);
 
          }
-         globaldef524.globaldef141 = DAMAGE_AIM;
-         globaldef525.globaldef141 = DAMAGE_AIM;
-         centerprint (globaldef524,globaldef2806);
-         centerprint (globaldef525,globaldef2806);
-         globaldef799 = FALSE;
-         globaldef527 = FALSE;
+         globaldef000524.globaldef000141 = DAMAGE_AIM;
+         globaldef000525.globaldef000141 = DAMAGE_AIM;
+         func000072 (globaldef000524,globaldef002806);
+         func000072 (globaldef000525,globaldef002806);
+         globaldef000799 = FALSE;
+         globaldef000527 = FALSE;
 
       } else {
 
-         globaldef2798 = globaldef457 (globaldef2800);
-         if ( (globaldef2800 <= MOVETYPE_WALK) ) {
+         globaldef002798 = ftos (globaldef002800);
+         if ( (globaldef002800 <= MOVETYPE_WALK) ) {
 
-            globaldef822 (globaldef524,globaldef2807);
-            globaldef822 (globaldef524,globaldef2798);
-            globaldef822 (globaldef524,globaldef2808);
-            globaldef822 (globaldef525,globaldef2807);
-            globaldef822 (globaldef525,globaldef2798);
-            globaldef822 (globaldef525,globaldef2808);
+            func000064 (globaldef000524,globaldef002807);
+            func000064 (globaldef000524,globaldef002798);
+            func000064 (globaldef000524,globaldef002808);
+            func000064 (globaldef000525,globaldef002807);
+            func000064 (globaldef000525,globaldef002798);
+            func000064 (globaldef000525,globaldef002808);
 
          }
-         globaldef839 (globaldef524,globaldef525.globaldef158,globaldef2809,globaldef2798);
-         globaldef839 (globaldef525,globaldef524.globaldef158,globaldef2809,globaldef2798);
+         func000074 (globaldef000524,globaldef000525.globaldef000158,globaldef002809,globaldef002798);
+         func000074 (globaldef000525,globaldef000524.globaldef000158,globaldef002809,globaldef002798);
 
       }
 
    }
-   if ( (globaldef2797.classname != globaldef1339) ) {
+   if ( (globaldef002797.globaldef000107 != globaldef001339) ) {
 
-      if ( (globaldef2797.globaldef513 != FALSE) ) {
+      if ( (globaldef002797.globaldef000513 != FALSE) ) {
 
-         globaldef2800 = globaldef466 ((globaldef2797.globaldef513 - time));
-         if ( (globaldef2800 != globaldef2797.globaldef514) ) {
+         globaldef002800 = rint ((globaldef002797.globaldef000513 - time));
+         if ( (globaldef002800 != globaldef002797.globaldef000514) ) {
 
-            if ( (globaldef2800 == globaldef1337) ) {
+            if ( (globaldef002800 == globaldef001337) ) {
 
-               globaldef887 (globaldef2797,globaldef2810);
-               globaldef822 (globaldef2797,globaldef2811);
-
-            }
-            if ( (globaldef2800 == SVC_INTERMISSION) ) {
-
-               globaldef887 (globaldef2797,globaldef2812);
-               globaldef822 (globaldef2797,globaldef2811);
+               func000092 (globaldef002797,globaldef002810);
+               func000064 (globaldef002797,globaldef002811);
 
             }
-            if ( (globaldef2800 == FALSE) ) {
+            if ( (globaldef002800 == SVC_INTERMISSION) ) {
 
-               globaldef887 (globaldef2797,globaldef2813);
-               globaldef455 (globaldef2797.globaldef158);
-               globaldef2797.globaldef513 = FALSE;
-               globaldef455 (globaldef2814);
-               globaldef822 (globaldef2797,globaldef2815);
-               globaldef822 (globaldef2797,globaldef2816);
+               func000092 (globaldef002797,globaldef002812);
+               func000064 (globaldef002797,globaldef002811);
+
+            }
+            if ( (globaldef002800 == FALSE) ) {
+
+               func000092 (globaldef002797,globaldef002813);
+               bprint (globaldef002797.globaldef000158);
+               globaldef002797.globaldef000513 = FALSE;
+               bprint (globaldef002814);
+               func000064 (globaldef002797,globaldef002815);
+               func000064 (globaldef002797,globaldef002816);
                return ;
 
             }
-            if ( (globaldef2800 <= MOVETYPE_BOUNCE) ) {
+            if ( (globaldef002800 <= MOVETYPE_BOUNCE) ) {
 
-               globaldef887 (globaldef2797,globaldef2817);
-               globaldef2798 = globaldef457 (globaldef2800);
-               globaldef887 (globaldef2797,globaldef2798);
-               globaldef887 (globaldef2797,globaldef2818);
-               globaldef822 (globaldef2797,globaldef2811);
+               func000092 (globaldef002797,globaldef002817);
+               globaldef002798 = ftos (globaldef002800);
+               func000092 (globaldef002797,globaldef002798);
+               func000092 (globaldef002797,globaldef002818);
+               func000064 (globaldef002797,globaldef002811);
 
             }
 
          }
-         globaldef2797.globaldef514 = globaldef2800;
+         globaldef002797.globaldef000514 = globaldef002800;
 
       }
-      if ( ((globaldef2797 != globaldef525) && (globaldef2797 != globaldef524)) ) {
+      if ( ((globaldef002797 != globaldef000525) && (globaldef002797 != globaldef000524)) ) {
 
-         if ( (((globaldef2797.globaldef515 < time) && (globaldef524 != world)) && (globaldef525 != world)) ) {
+         if ( (((globaldef002797.globaldef000515 < time) && (globaldef000524 != world)) && (globaldef000525 != world)) ) {
 
-            globaldef2752 (globaldef2797);
+            func000355 (globaldef002797);
 
          }
 
@@ -4126,26 +4126,26 @@ void (entity globaldef2797) func365 = {
    }
 
 };
-string globaldef2801 /* = "??????? ?? ?????? ????? v1.2\n" */;
-string globaldef2802 /* = "by crt - wrightd@stanford.edu\n Port by WhiteFang - matt@lithium.com\n" */;
-string globaldef2803 /* = "play ra/fight.wav\n" */;
-string globaldef2804 /* = " vs. " */;
-string globaldef2805 /* = " is next in line\n" */;
-string globaldef2806 /* = "??????" */;
-string globaldef2807 /* = "play ra/" */;
-string globaldef2808 /* = ".wav\n" */;
-string globaldef2809 /* = "\n\n" */;
-string globaldef2810 /* = "You have 1 minute left.\n Impulse 70 to get back in line\n" */;
-string globaldef2811 /* = "play player/axhit1.wav\n" */;
-string globaldef2812 /* = "You have 30 seconds left.\n Impulse 70 to get back in line\n" */;
-string globaldef2813 /* = "Sorry, your wait time has expired!\n" */;
-string globaldef2814 /* = " stood around too long\n" */;
-string globaldef2815 /* = "play player/death1.wav\n" */;
-string globaldef2816 /* = "disconnect\n" */;
-string globaldef2817 /* = "You have " */;
-string globaldef2818 /* = " seconds left to get in line\n" */;
+string globaldef002801 /* = "??????? ?? ?????? ????? v1.2\n" */;
+string globaldef002802 /* = "by crt - wrightd@stanford.edu\n Port by WhiteFang - matt@lithium.com\n" */;
+string globaldef002803 /* = "play ra/fight.wav\n" */;
+string globaldef002804 /* = " vs. " */;
+string globaldef002805 /* = " is next in line\n" */;
+string globaldef002806 /* = "??????" */;
+string globaldef002807 /* = "play ra/" */;
+string globaldef002808 /* = ".wav\n" */;
+string globaldef002809 /* = "\n\n" */;
+string globaldef002810 /* = "You have 1 minute left.\n Impulse 70 to get back in line\n" */;
+string globaldef002811 /* = "play player/axhit1.wav\n" */;
+string globaldef002812 /* = "You have 30 seconds left.\n Impulse 70 to get back in line\n" */;
+string globaldef002813 /* = "Sorry, your wait time has expired!\n" */;
+string globaldef002814 /* = " stood around too long\n" */;
+string globaldef002815 /* = "play player/death1.wav\n" */;
+string globaldef002816 /* = "disconnect\n" */;
+string globaldef002817 /* = "You have " */;
+string globaldef002818 /* = " seconds left to get in line\n" */;
 
-// function func366
+// function func000366
 // function number 366 begins at statement 10828
 /*
  * OP_EQ_E	8074	541	8078
@@ -4211,66 +4211,66 @@ string globaldef2818 /* = " seconds left to get in line\n" */;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2819, float globaldef2820) func366 = {
+void (entity globaldef002819, float globaldef002820) func000366 = {
 
-   local entity globaldef2821;
-   local string globaldef2822;
+   local entity globaldef002821;
+   local string globaldef002822;
 
-   if ( (globaldef2819 == globaldef524) ) {
+   if ( (globaldef002819 == globaldef000524) ) {
 
-      globaldef455 (globaldef2823);
-      globaldef524 = globaldef525;
-      if ( globaldef524 ) {
+      bprint (globaldef002823);
+      globaldef000524 = globaldef000525;
+      if ( globaldef000524 ) {
 
-         globaldef455 (globaldef2824);
-         globaldef455 (globaldef524.globaldef158);
-         globaldef455 (globaldef1354);
-         globaldef525.globaldef141 = DAMAGE_NO;
+         bprint (globaldef002824);
+         bprint (globaldef000524.globaldef000158);
+         bprint (globaldef001354);
+         globaldef000525.globaldef000141 = DAMAGE_NO;
 
       } else {
 
-         globaldef455 (globaldef2825);
+         bprint (globaldef002825);
 
       }
-      globaldef1156 ();
+      func000362 ();
 
    } else {
 
-      if ( (globaldef2819 == globaldef525) ) {
+      if ( (globaldef002819 == globaldef000525) ) {
 
-         globaldef455 (globaldef2826);
-         globaldef1156 ();
-         globaldef524.globaldef141 = DAMAGE_NO;
+         bprint (globaldef002826);
+         func000362 ();
+         globaldef000524.globaldef000141 = DAMAGE_NO;
 
       } else {
 
-         if ( (globaldef2819 == globaldef526) ) {
+         if ( (globaldef002819 == globaldef000526) ) {
 
-            globaldef455 (globaldef2827);
-            if ( (globaldef526.globaldef511 == globaldef526) ) {
+            bprint (globaldef002827);
+            if ( (globaldef000526.globaldef000511 == globaldef000526) ) {
 
-               globaldef526 = world;
+               globaldef000526 = world;
 
             } else {
 
-               globaldef2821 = globaldef526.globaldef512;
-               globaldef526 = globaldef526.globaldef511;
-               globaldef526.globaldef512 = globaldef2821;
-               globaldef2821.globaldef511 = globaldef526;
+               globaldef002821 = globaldef000526.globaldef000512;
+               globaldef000526 = globaldef000526.globaldef000511;
+               globaldef000526.globaldef000512 = globaldef002821;
+               globaldef002821.globaldef000511 = globaldef000526;
 
             }
 
          } else {
 
-            if ( (globaldef2819.globaldef511 == world) ) {
+            if ( (globaldef002819.globaldef000511 == world) ) {
 
                return ;
 
             }
-            globaldef2821 = globaldef2819.globaldef511;
-            globaldef2821.globaldef512 = globaldef2819.globaldef512;
-            globaldef2821 = globaldef2819.globaldef512;
-            globaldef2821.globaldef511 = globaldef2819.globaldef511;
+            globaldef002821 = globaldef002819.globaldef000511;
+            globaldef002821.globaldef000512 = globaldef002819.globaldef000512;
+            globaldef002821 = globaldef002819.globaldef000512;
+            globaldef002821.globaldef000511 = globaldef002819.globaldef000511;
 
          }
 
@@ -4279,12 +4279,12 @@ void (entity globaldef2819, float globaldef2820) func366 = {
    }
 
 };
-string globaldef2824 /* = "The new winner is " */;
-string globaldef2825 /* = "Waiting for winner\n" */;
-string globaldef2826 /* = "The challenger has left\n" */;
-string globaldef2827 /* = "The line leader has left\n" */;
+string globaldef002824 /* = "The new winner is " */;
+string globaldef002825 /* = "Waiting for winner\n" */;
+string globaldef002826 /* = "The challenger has left\n" */;
+string globaldef002827 /* = "The line leader has left\n" */;
 
-void (float globaldef2829) entinfo;
+void (float globaldef002829) entinfo;
 
 // function entinfo
 // function number 367 begins at statement 10889
@@ -4316,47 +4316,47 @@ void (float globaldef2829) entinfo;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef2829) entinfo = {
+void (float globaldef002829) entinfo = {
 
-   local entity globaldef2830;
+   local entity globaldef002830;
 
-   if ( (globaldef2829 == globaldef1335) ) {
+   if ( (globaldef002829 == globaldef001335) ) {
 
-      globaldef462 (globaldef524);
-
-   }
-   if ( (globaldef2829 == globaldef2831) ) {
-
-      globaldef462 (globaldef525);
+      eprint (globaldef000524);
 
    }
-   if ( (globaldef2829 == globaldef2832) ) {
+   if ( (globaldef002829 == globaldef002831) ) {
 
-      globaldef462 (globaldef526);
-
-   }
-   if ( (globaldef2829 == globaldef2833) ) {
-
-      globaldef2830 = globaldef526.globaldef511;
-      globaldef462 (globaldef2830);
+      eprint (globaldef000525);
 
    }
-   if ( (globaldef2829 == globaldef2834) ) {
+   if ( (globaldef002829 == globaldef002832) ) {
 
-      globaldef2830 = globaldef526.globaldef512;
-      globaldef462 (globaldef2830);
+      eprint (globaldef000526);
+
+   }
+   if ( (globaldef002829 == globaldef002833) ) {
+
+      globaldef002830 = globaldef000526.globaldef000511;
+      eprint (globaldef002830);
+
+   }
+   if ( (globaldef002829 == globaldef002834) ) {
+
+      globaldef002830 = globaldef000526.globaldef000512;
+      eprint (globaldef002830);
 
    }
 
 };
-float globaldef2831 /* = 101.000 */;
-float globaldef2832 /* = 102.000 */;
-float globaldef2833 /* = 103.000 */;
-float globaldef2834 /* = 104.000 */;
+float globaldef002831 /* = 101.000 */;
+float globaldef002832 /* = 102.000 */;
+float globaldef002833 /* = 103.000 */;
+float globaldef002834 /* = 104.000 */;
 
-void (entity globaldef2836) func368;
+void (entity globaldef002836) func000368;
 
-// function func368
+// function func000368
 // function number 368 begins at statement 10914
 /*
  * OP_LOAD_S	8118	129	8120
@@ -4422,45 +4422,45 @@ void (entity globaldef2836) func368;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2836) func368 = {
+void (entity globaldef002836) func000368 = {
 
-   local string globaldef2837;
+   local string globaldef002837;
 
-   if ( ((globaldef2836.classname != "player") && (globaldef2836.classname != globaldef1171)) ) {
+   if ( ((globaldef002836.globaldef000107 != globaldef001170) && (globaldef002836.globaldef000107 != globaldef001171)) ) {
 
       return ;
 
    }
-   if ( ((globaldef2836.globaldef519 + globaldef2836.globaldef518) == FALSE) ) {
+   if ( ((globaldef002836.globaldef000519 + globaldef002836.globaldef000518) == FALSE) ) {
 
-      globaldef2836.globaldef520 = FALSE;
+      globaldef002836.globaldef000520 = FALSE;
 
    } else {
 
-      globaldef2836.globaldef520 = ((globaldef2836.globaldef518 * globaldef1335) / (globaldef2836.globaldef519 + globaldef2836.globaldef518));
+      globaldef002836.globaldef000520 = ((globaldef002836.globaldef000518 * globaldef001335) / (globaldef002836.globaldef000519 + globaldef002836.globaldef000518));
 
    }
-   globaldef887 (self,globaldef2836.globaldef158);
-   globaldef887 (self,globaldef2838);
-   globaldef2837 = globaldef457 (globaldef2836.globaldef518);
-   globaldef887 (self,globaldef2837);
-   globaldef887 (self,globaldef2839);
-   globaldef2837 = globaldef457 (globaldef2836.globaldef519);
-   globaldef887 (self,globaldef2837);
-   globaldef887 (self,globaldef2840);
-   globaldef2837 = globaldef457 (globaldef2836.globaldef520);
-   globaldef887 (self,globaldef2837);
-   globaldef887 (self,globaldef2841);
+   func000092 (self,globaldef002836.globaldef000158);
+   func000092 (self,globaldef002838);
+   globaldef002837 = ftos (globaldef002836.globaldef000518);
+   func000092 (self,globaldef002837);
+   func000092 (self,globaldef002839);
+   globaldef002837 = ftos (globaldef002836.globaldef000519);
+   func000092 (self,globaldef002837);
+   func000092 (self,globaldef002840);
+   globaldef002837 = ftos (globaldef002836.globaldef000520);
+   func000092 (self,globaldef002837);
+   func000092 (self,globaldef002841);
 
 };
-string globaldef2838 /* = "  W:" */;
-string globaldef2839 /* = "  L:" */;
-string globaldef2840 /* = "  SKILL:" */;
-string globaldef2841 /* = "%\n" */;
+string globaldef002838 /* = "  W:" */;
+string globaldef002839 /* = "  L:" */;
+string globaldef002840 /* = "  SKILL:" */;
+string globaldef002841 /* = "%\n" */;
 
-void () func369;
+void () func000369;
 
-// function func369
+// function func000369
 // function number 369 begins at statement 10975
 /*
  * OP_STORE_V	541	4	0
@@ -4478,29 +4478,29 @@ void () func369;
  * OP_DONE	0	0	0
  */
 
-void () func369 = {
+void () func000369 = {
 
-   local entity globaldef2843;
+   local entity globaldef002843;
 
-   globaldef2835 (globaldef524);
-   globaldef2835 (globaldef525);
-   if ( globaldef526 ) {
+   func000368 (globaldef000524);
+   func000368 (globaldef000525);
+   if ( globaldef000526 ) {
 
-      globaldef2843 = globaldef526;
+      globaldef002843 = globaldef000526;
       do {
 
-         globaldef2835 (globaldef2843);
-         globaldef2843 = globaldef2843.globaldef511;
+         func000368 (globaldef002843);
+         globaldef002843 = globaldef002843.globaldef000511;
 
-      } while ( (globaldef2843 != globaldef526) );
+      } while ( (globaldef002843 != globaldef000526) );
 
    }
 
 };
 
-void () func370;
+void () func000370;
 
-// function func370
+// function func000370
 // function number 370 begins at statement 10988
 /*
  * OP_EQ_E	28	541	8153
@@ -4550,60 +4550,60 @@ void () func370;
  * OP_DONE	0	0	0
  */
 
-void () func370 = {
+void () func000370 = {
 
-   local float globaldef2845;
-   local entity globaldef2846;
-   local string globaldef2847;
+   local float globaldef002845;
+   local entity globaldef002846;
+   local string globaldef002847;
 
-   if ( ((self == globaldef524) || (self == globaldef525)) ) {
+   if ( ((self == globaldef000524) || (self == globaldef000525)) ) {
 
       return ;
 
    }
-   if ( (self == globaldef526) ) {
+   if ( (self == globaldef000526) ) {
 
-      globaldef887 (self,globaldef2848);
+      func000092 (self,globaldef002848);
       return ;
 
    }
-   if ( (self.globaldef511 == world) ) {
+   if ( (self.globaldef000511 == world) ) {
 
-      globaldef887 (self,globaldef2849);
+      func000092 (self,globaldef002849);
       return ;
 
    }
-   globaldef2845 = FALSE;
-   globaldef2846 = self;
+   globaldef002845 = FALSE;
+   globaldef002846 = self;
    do {
 
-      globaldef2846 = globaldef2846.globaldef512;
-      globaldef2845 = (globaldef2845 + TRUE);
+      globaldef002846 = globaldef002846.globaldef000512;
+      globaldef002845 = (globaldef002845 + TRUE);
 
-   } while ( (globaldef2846 != globaldef526) );
-   globaldef2847 = globaldef457 (globaldef2845);
-   if ( (globaldef2845 != TRUE) ) {
+   } while ( (globaldef002846 != globaldef000526) );
+   globaldef002847 = ftos (globaldef002845);
+   if ( (globaldef002845 != TRUE) ) {
 
-      globaldef887 (self,globaldef2850);
-      globaldef887 (self,globaldef2847);
-      globaldef887 (self,globaldef2851);
+      func000092 (self,globaldef002850);
+      func000092 (self,globaldef002847);
+      func000092 (self,globaldef002851);
 
    } else {
 
-      globaldef887 (self,globaldef2852);
+      func000092 (self,globaldef002852);
 
    }
 
 };
-string globaldef2848 /* = "You are next\n" */;
-string globaldef2849 /* = "You are out of line\n Impulse 70 to return\n" */;
-string globaldef2850 /* = "There are " */;
-string globaldef2851 /* = " people ahead of you\n" */;
-string globaldef2852 /* = "There is 1 person ahead of you\n" */;
+string globaldef002848 /* = "You are next\n" */;
+string globaldef002849 /* = "You are out of line\n Impulse 70 to return\n" */;
+string globaldef002850 /* = "There are " */;
+string globaldef002851 /* = " people ahead of you\n" */;
+string globaldef002852 /* = "There is 1 person ahead of you\n" */;
 
-void () func371;
+void () func000371;
 
-// function func371
+// function func000371
 // function number 371 begins at statement 11033
 /*
  * OP_EQ_E	28	541	8170
@@ -4651,50 +4651,50 @@ void () func371;
  * OP_DONE	0	0	0
  */
 
-void () func371 = {
+void () func000371 = {
 
-   local entity globaldef2854;
+   local entity globaldef002854;
 
-   if ( ((self == globaldef524) || (self == globaldef525)) ) {
+   if ( ((self == globaldef000524) || (self == globaldef000525)) ) {
 
       return ;
 
    }
-   if ( (self.globaldef511 != world) ) {
+   if ( (self.globaldef000511 != world) ) {
 
-      if ( (self == globaldef526) ) {
+      if ( (self == globaldef000526) ) {
 
-         if ( (self != self.globaldef511) ) {
+         if ( (self != self.globaldef000511) ) {
 
-            globaldef526 = self.globaldef511;
+            globaldef000526 = self.globaldef000511;
 
          } else {
 
-            globaldef526 = world;
+            globaldef000526 = world;
 
          }
 
       }
-      globaldef2854 = self.globaldef512;
-      globaldef2854.globaldef511 = self.globaldef511;
-      globaldef2854 = self.globaldef511;
-      globaldef2854.globaldef512 = self.globaldef512;
-      self.globaldef511 = world;
-      self.globaldef512 = world;
-      self.globaldef513 = (time + globaldef523);
-      globaldef887 (self,globaldef2855);
+      globaldef002854 = self.globaldef000512;
+      globaldef002854.globaldef000511 = self.globaldef000511;
+      globaldef002854 = self.globaldef000511;
+      globaldef002854.globaldef000512 = self.globaldef000512;
+      self.globaldef000511 = world;
+      self.globaldef000512 = world;
+      self.globaldef000513 = (time + globaldef000523);
+      func000092 (self,globaldef002855);
 
    } else {
 
-      self.globaldef513 = FALSE;
-      globaldef2785 (self);
+      self.globaldef000513 = FALSE;
+      func000363 (self);
 
    }
 
 };
-string globaldef2855 /* = "You can have up to a 5 minute break.\n Impulse 70 to get back in line\n" */;
+string globaldef002855 /* = "You can have up to a 5 minute break.\n Impulse 70 to get back in line\n" */;
 
-// function func372
+// function func000372
 // function number 372 begins at statement 11076
 /*
  * OP_BITAND	821	767	8191
@@ -4727,29 +4727,29 @@ string globaldef2855 /* = "You can have up to a 5 minute break.\n Impulse 70 to 
  * OP_DONE	0	0	0
  */
 
-void () func372 = {
+void () func000372 = {
 
-   if ( (globaldef804 & globaldef750) ) {
+   if ( (globaldef000804 & globaldef000750) ) {
 
-      if ( (self.globaldef151 == globaldef2856) ) {
+      if ( (self.globaldef000151 == globaldef002856) ) {
 
-         globaldef2842 ();
-
-      }
-      if ( (self.globaldef151 == globaldef2857) ) {
-
-         globaldef2844 ();
+         func000369 ();
 
       }
-      if ( (self.globaldef151 == globaldef1271) ) {
+      if ( (self.globaldef000151 == globaldef002857) ) {
 
-         globaldef2853 ();
+         func000370 ();
 
       }
-      if ( ((self.globaldef151 >= globaldef2858) && (self.globaldef151 <= globaldef2859)) ) {
+      if ( (self.globaldef000151 == globaldef001271) ) {
 
-         self.globaldef516 = (self.globaldef151 - globaldef2858);
-         globaldef887 (self,globaldef2860);
+         func000371 ();
+
+      }
+      if ( ((self.globaldef000151 >= globaldef002858) && (self.globaldef000151 <= globaldef002859)) ) {
+
+         self.globaldef000516 = (self.globaldef000151 - globaldef002858);
+         func000092 (self,globaldef002860);
 
       }
 

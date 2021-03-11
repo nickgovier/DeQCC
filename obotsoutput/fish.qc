@@ -1,6 +1,6 @@
-string globaldef5239 /* = "progs/hknight.mdl" */;
-string globaldef5240 /* = "hknight/hit.wav" */;
-string globaldef5241 /* = "hknight/grunt.wav" */;
+string globaldef005239 /* = "progs/hknight.mdl" */;
+string globaldef005240 /* = "hknight/hit.wav" */;
+string globaldef005241 /* = "hknight/grunt.wav" */;
 
 void () f_stand1;
 
@@ -12,9 +12,9 @@ void () f_stand1;
  * OP_DONE	0	0	0
  */
 
-void () f_stand1 = [ 39.000, globaldef5243 ] {
+void () f_stand1 = [ 39.000, f_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -28,9 +28,9 @@ void () f_stand2;
  * OP_DONE	0	0	0
  */
 
-void () f_stand2 = [ 40.000, globaldef5244 ] {
+void () f_stand2 = [ 40.000, f_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -44,9 +44,9 @@ void () f_stand3;
  * OP_DONE	0	0	0
  */
 
-void () f_stand3 = [ 41.000, globaldef5245 ] {
+void () f_stand3 = [ 41.000, f_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -60,9 +60,9 @@ void () f_stand4;
  * OP_DONE	0	0	0
  */
 
-void () f_stand4 = [ 42.000, globaldef5246 ] {
+void () f_stand4 = [ 42.000, f_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -76,9 +76,9 @@ void () f_stand5;
  * OP_DONE	0	0	0
  */
 
-void () f_stand5 = [ 43.000, globaldef5247 ] {
+void () f_stand5 = [ 43.000, f_stand6 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -92,9 +92,9 @@ void () f_stand6;
  * OP_DONE	0	0	0
  */
 
-void () f_stand6 = [ 44.000, globaldef5248 ] {
+void () f_stand6 = [ 44.000, f_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -108,9 +108,9 @@ void () f_stand7;
  * OP_DONE	0	0	0
  */
 
-void () f_stand7 = [ 45.000, globaldef5249 ] {
+void () f_stand7 = [ 45.000, f_stand8 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -124,9 +124,9 @@ void () f_stand8;
  * OP_DONE	0	0	0
  */
 
-void () f_stand8 = [ 46.000, globaldef5250 ] {
+void () f_stand8 = [ 46.000, f_stand9 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -140,9 +140,9 @@ void () f_stand9;
  * OP_DONE	0	0	0
  */
 
-void () f_stand9 = [ 47.000, globaldef5251 ] {
+void () f_stand9 = [ 47.000, f_stand10 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -156,9 +156,9 @@ void () f_stand10;
  * OP_DONE	0	0	0
  */
 
-void () f_stand10 = [ 48.000, globaldef5252 ] {
+void () f_stand10 = [ 48.000, f_stand11 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -172,9 +172,9 @@ void () f_stand11;
  * OP_DONE	0	0	0
  */
 
-void () f_stand11 = [ 49.000, globaldef5253 ] {
+void () f_stand11 = [ 49.000, f_stand12 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -188,9 +188,9 @@ void () f_stand12;
  * OP_DONE	0	0	0
  */
 
-void () f_stand12 = [ 50.000, globaldef5254 ] {
+void () f_stand12 = [ 50.000, f_stand13 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -204,9 +204,9 @@ void () f_stand13;
  * OP_DONE	0	0	0
  */
 
-void () f_stand13 = [ 51.000, globaldef5255 ] {
+void () f_stand13 = [ 51.000, f_stand14 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -220,9 +220,9 @@ void () f_stand14;
  * OP_DONE	0	0	0
  */
 
-void () f_stand14 = [ 52.000, globaldef5256 ] {
+void () f_stand14 = [ 52.000, f_stand15 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -236,9 +236,9 @@ void () f_stand15;
  * OP_DONE	0	0	0
  */
 
-void () f_stand15 = [ 53.000, globaldef5257 ] {
+void () f_stand15 = [ 53.000, f_stand16 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -252,9 +252,9 @@ void () f_stand16;
  * OP_DONE	0	0	0
  */
 
-void () f_stand16 = [ 54.000, globaldef5258 ] {
+void () f_stand16 = [ 54.000, f_stand17 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -268,9 +268,9 @@ void () f_stand17;
  * OP_DONE	0	0	0
  */
 
-void () f_stand17 = [ 55.000, globaldef5259 ] {
+void () f_stand17 = [ 55.000, f_stand18 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -284,9 +284,9 @@ void () f_stand18;
  * OP_DONE	0	0	0
  */
 
-void () f_stand18 = [ 56.000, globaldef5242 ] {
+void () f_stand18 = [ 56.000, f_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -301,9 +301,9 @@ void () f_walk1;
  * OP_DONE	0	0	0
  */
 
-void () f_walk1 = [ 39.000, globaldef5261 ] {
+void () f_walk1 = [ 39.000, f_walk2 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -318,9 +318,9 @@ void () f_walk2;
  * OP_DONE	0	0	0
  */
 
-void () f_walk2 = [ 40.000, globaldef5262 ] {
+void () f_walk2 = [ 40.000, f_walk3 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -335,9 +335,9 @@ void () f_walk3;
  * OP_DONE	0	0	0
  */
 
-void () f_walk3 = [ 41.000, globaldef5263 ] {
+void () f_walk3 = [ 41.000, f_walk4 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -352,9 +352,9 @@ void () f_walk4;
  * OP_DONE	0	0	0
  */
 
-void () f_walk4 = [ 42.000, globaldef5264 ] {
+void () f_walk4 = [ 42.000, f_walk5 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -369,9 +369,9 @@ void () f_walk5;
  * OP_DONE	0	0	0
  */
 
-void () f_walk5 = [ 43.000, globaldef5265 ] {
+void () f_walk5 = [ 43.000, f_walk6 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -386,9 +386,9 @@ void () f_walk6;
  * OP_DONE	0	0	0
  */
 
-void () f_walk6 = [ 44.000, globaldef5266 ] {
+void () f_walk6 = [ 44.000, f_walk7 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -403,9 +403,9 @@ void () f_walk7;
  * OP_DONE	0	0	0
  */
 
-void () f_walk7 = [ 45.000, globaldef5267 ] {
+void () f_walk7 = [ 45.000, f_walk8 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -420,9 +420,9 @@ void () f_walk8;
  * OP_DONE	0	0	0
  */
 
-void () f_walk8 = [ 46.000, globaldef5268 ] {
+void () f_walk8 = [ 46.000, f_walk9 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -437,9 +437,9 @@ void () f_walk9;
  * OP_DONE	0	0	0
  */
 
-void () f_walk9 = [ 47.000, globaldef5269 ] {
+void () f_walk9 = [ 47.000, f_walk10 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -454,9 +454,9 @@ void () f_walk10;
  * OP_DONE	0	0	0
  */
 
-void () f_walk10 = [ 48.000, globaldef5270 ] {
+void () f_walk10 = [ 48.000, f_walk11 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -471,9 +471,9 @@ void () f_walk11;
  * OP_DONE	0	0	0
  */
 
-void () f_walk11 = [ 49.000, globaldef5271 ] {
+void () f_walk11 = [ 49.000, f_walk12 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -488,9 +488,9 @@ void () f_walk12;
  * OP_DONE	0	0	0
  */
 
-void () f_walk12 = [ 50.000, globaldef5272 ] {
+void () f_walk12 = [ 50.000, f_walk13 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -505,9 +505,9 @@ void () f_walk13;
  * OP_DONE	0	0	0
  */
 
-void () f_walk13 = [ 51.000, globaldef5273 ] {
+void () f_walk13 = [ 51.000, f_walk14 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -522,9 +522,9 @@ void () f_walk14;
  * OP_DONE	0	0	0
  */
 
-void () f_walk14 = [ 52.000, globaldef5274 ] {
+void () f_walk14 = [ 52.000, f_walk15 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -539,9 +539,9 @@ void () f_walk15;
  * OP_DONE	0	0	0
  */
 
-void () f_walk15 = [ 53.000, globaldef5275 ] {
+void () f_walk15 = [ 53.000, f_walk16 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -556,9 +556,9 @@ void () f_walk16;
  * OP_DONE	0	0	0
  */
 
-void () f_walk16 = [ 54.000, globaldef5276 ] {
+void () f_walk16 = [ 54.000, f_walk17 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -573,9 +573,9 @@ void () f_walk17;
  * OP_DONE	0	0	0
  */
 
-void () f_walk17 = [ 55.000, globaldef5277 ] {
+void () f_walk17 = [ 55.000, f_walk18 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -590,9 +590,9 @@ void () f_walk18;
  * OP_DONE	0	0	0
  */
 
-void () f_walk18 = [ 56.000, globaldef5260 ] {
+void () f_walk18 = [ 56.000, f_walk1 ] {
 
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
@@ -616,19 +616,19 @@ void () f_run1;
  * OP_DONE	0	0	0
  */
 
-void () f_run1 = [ 39.000, globaldef5279 ] {
+void () f_run1 = [ 39.000, f_run2 ] {
 
-   globaldef1734 (globaldef774);
-   if ( (globaldef440 () < globaldef522) ) {
+   ai_run (globaldef000774);
+   if ( (random () < globaldef000522) ) {
 
-      sound (self,CHAN_VOICE,globaldef5280,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,globaldef005280,TRUE,ATTN_NORM);
 
    }
 
 };
 
 void () f_run2;
-string globaldef5280 /* = "fish/idle.wav" */;
+string globaldef005280 /* = "fish/idle.wav" */;
 
 // function f_run2
 // function number 1958 begins at statement 25528
@@ -639,9 +639,9 @@ string globaldef5280 /* = "fish/idle.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () f_run2 = [ 41.000, globaldef5281 ] {
+void () f_run2 = [ 41.000, f_run3 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -656,9 +656,9 @@ void () f_run3;
  * OP_DONE	0	0	0
  */
 
-void () f_run3 = [ 43.000, globaldef5282 ] {
+void () f_run3 = [ 43.000, f_run4 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -673,9 +673,9 @@ void () f_run4;
  * OP_DONE	0	0	0
  */
 
-void () f_run4 = [ 45.000, globaldef5283 ] {
+void () f_run4 = [ 45.000, f_run5 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -690,9 +690,9 @@ void () f_run5;
  * OP_DONE	0	0	0
  */
 
-void () f_run5 = [ 47.000, globaldef5284 ] {
+void () f_run5 = [ 47.000, f_run6 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -707,9 +707,9 @@ void () f_run6;
  * OP_DONE	0	0	0
  */
 
-void () f_run6 = [ 49.000, globaldef5285 ] {
+void () f_run6 = [ 49.000, f_run7 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -724,9 +724,9 @@ void () f_run7;
  * OP_DONE	0	0	0
  */
 
-void () f_run7 = [ 51.000, globaldef5286 ] {
+void () f_run7 = [ 51.000, f_run8 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -741,9 +741,9 @@ void () f_run8;
  * OP_DONE	0	0	0
  */
 
-void () f_run8 = [ 53.000, globaldef5287 ] {
+void () f_run8 = [ 53.000, f_run9 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -758,9 +758,9 @@ void () f_run9;
  * OP_DONE	0	0	0
  */
 
-void () f_run9 = [ 55.000, globaldef5278 ] {
+void () f_run9 = [ 55.000, f_run1 ] {
 
-   globaldef1734 (globaldef774);
+   ai_run (globaldef000774);
 
 };
 
@@ -805,26 +805,26 @@ void () fish_melee;
 
 void () fish_melee = {
 
-   local vector globaldef5289;
-   local float globaldef5293;
+   local vector delta;
+   local float ldmg;
 
-   if ( !self.enemy ) {
-
-      return ;
-
-   }
-   globaldef5289 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef5289) > globaldef1337) ) {
+   if ( !self.globaldef000159 ) {
 
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef5294,TRUE,ATTN_NORM);
-   globaldef5293 = ((globaldef440 () + globaldef440 ()) * MOVETYPE_WALK);
-   globaldef505 (self.enemy,self,self,globaldef5293);
+   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   if ( (vlen (delta) > globaldef001337) ) {
+
+      return ;
+
+   }
+   sound (self,CHAN_VOICE,globaldef005294,TRUE,ATTN_NORM);
+   ldmg = ((random () + random ()) * MOVETYPE_WALK);
+   T_Damage (self.globaldef000159,self,self,ldmg);
 
 };
-string globaldef5294 /* = "fish/bite.wav" */;
+string globaldef005294 /* = "fish/bite.wav" */;
 
 void () f_attack1;
 
@@ -837,9 +837,9 @@ void () f_attack1;
  * OP_DONE	0	0	0
  */
 
-void () f_attack1 = [ 0.000, globaldef5296 ] {
+void () f_attack1 = [ 0.000, f_attack2 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -854,9 +854,9 @@ void () f_attack2;
  * OP_DONE	0	0	0
  */
 
-void () f_attack2 = [ 1.000, globaldef5297 ] {
+void () f_attack2 = [ 1.000, f_attack3 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -870,9 +870,9 @@ void () f_attack3;
  * OP_DONE	0	0	0
  */
 
-void () f_attack3 = [ 2.000, globaldef5298 ] {
+void () f_attack3 = [ 2.000, f_attack4 ] {
 
-   globaldef5288 ();
+   fish_melee ();
 
 };
 
@@ -887,9 +887,9 @@ void () f_attack4;
  * OP_DONE	0	0	0
  */
 
-void () f_attack4 = [ 3.000, globaldef5299 ] {
+void () f_attack4 = [ 3.000, f_attack5 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -904,9 +904,9 @@ void () f_attack5;
  * OP_DONE	0	0	0
  */
 
-void () f_attack5 = [ 4.000, globaldef5300 ] {
+void () f_attack5 = [ 4.000, f_attack6 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -921,9 +921,9 @@ void () f_attack6;
  * OP_DONE	0	0	0
  */
 
-void () f_attack6 = [ 5.000, globaldef5301 ] {
+void () f_attack6 = [ 5.000, f_attack7 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -938,9 +938,9 @@ void () f_attack7;
  * OP_DONE	0	0	0
  */
 
-void () f_attack7 = [ 6.000, globaldef5302 ] {
+void () f_attack7 = [ 6.000, f_attack8 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -955,9 +955,9 @@ void () f_attack8;
  * OP_DONE	0	0	0
  */
 
-void () f_attack8 = [ 7.000, globaldef5303 ] {
+void () f_attack8 = [ 7.000, f_attack9 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -971,9 +971,9 @@ void () f_attack9;
  * OP_DONE	0	0	0
  */
 
-void () f_attack9 = [ 8.000, globaldef5304 ] {
+void () f_attack9 = [ 8.000, f_attack10 ] {
 
-   globaldef5288 ();
+   fish_melee ();
 
 };
 
@@ -988,9 +988,9 @@ void () f_attack10;
  * OP_DONE	0	0	0
  */
 
-void () f_attack10 = [ 9.000, globaldef5305 ] {
+void () f_attack10 = [ 9.000, f_attack11 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1005,9 +1005,9 @@ void () f_attack11;
  * OP_DONE	0	0	0
  */
 
-void () f_attack11 = [ 10.000, globaldef5306 ] {
+void () f_attack11 = [ 10.000, f_attack12 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1022,9 +1022,9 @@ void () f_attack12;
  * OP_DONE	0	0	0
  */
 
-void () f_attack12 = [ 11.000, globaldef5307 ] {
+void () f_attack12 = [ 11.000, f_attack13 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1039,9 +1039,9 @@ void () f_attack13;
  * OP_DONE	0	0	0
  */
 
-void () f_attack13 = [ 12.000, globaldef5308 ] {
+void () f_attack13 = [ 12.000, f_attack14 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1056,9 +1056,9 @@ void () f_attack14;
  * OP_DONE	0	0	0
  */
 
-void () f_attack14 = [ 13.000, globaldef5309 ] {
+void () f_attack14 = [ 13.000, f_attack15 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1072,9 +1072,9 @@ void () f_attack15;
  * OP_DONE	0	0	0
  */
 
-void () f_attack15 = [ 14.000, globaldef5310 ] {
+void () f_attack15 = [ 14.000, f_attack16 ] {
 
-   globaldef5288 ();
+   fish_melee ();
 
 };
 
@@ -1089,9 +1089,9 @@ void () f_attack16;
  * OP_DONE	0	0	0
  */
 
-void () f_attack16 = [ 15.000, globaldef5311 ] {
+void () f_attack16 = [ 15.000, f_attack17 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1106,9 +1106,9 @@ void () f_attack17;
  * OP_DONE	0	0	0
  */
 
-void () f_attack17 = [ 16.000, globaldef5312 ] {
+void () f_attack17 = [ 16.000, f_attack18 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1123,9 +1123,9 @@ void () f_attack18;
  * OP_DONE	0	0	0
  */
 
-void () f_attack18 = [ 17.000, globaldef5278 ] {
+void () f_attack18 = [ 17.000, f_run1 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
+   ai_charge (MOVETYPE_BOUNCE);
 
 };
 
@@ -1144,14 +1144,14 @@ void () f_death1;
  * OP_DONE	0	0	0
  */
 
-void () f_death1 = [ 18.000, globaldef5314 ] {
+void () f_death1 = [ 18.000, f_death2 ] {
 
-   sound (self,CHAN_VOICE,globaldef5315,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,globaldef005315,TRUE,ATTN_NORM);
 
 };
 
 void () f_death2;
-string globaldef5315 /* = "fish/death.wav" */;
+string globaldef005315 /* = "fish/death.wav" */;
 
 // function f_death2
 // function number 1986 begins at statement 25669
@@ -1160,7 +1160,7 @@ string globaldef5315 /* = "fish/death.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () f_death2 = [ 19.000, globaldef5316 ] {
+void () f_death2 = [ 19.000, f_death3 ] {
 
 
 };
@@ -1174,7 +1174,7 @@ void () f_death3;
  * OP_DONE	0	0	0
  */
 
-void () f_death3 = [ 20.000, globaldef5317 ] {
+void () f_death3 = [ 20.000, f_death4 ] {
 
 
 };
@@ -1188,7 +1188,7 @@ void () f_death4;
  * OP_DONE	0	0	0
  */
 
-void () f_death4 = [ 21.000, globaldef5318 ] {
+void () f_death4 = [ 21.000, f_death5 ] {
 
 
 };
@@ -1202,7 +1202,7 @@ void () f_death5;
  * OP_DONE	0	0	0
  */
 
-void () f_death5 = [ 22.000, globaldef5319 ] {
+void () f_death5 = [ 22.000, f_death6 ] {
 
 
 };
@@ -1216,7 +1216,7 @@ void () f_death6;
  * OP_DONE	0	0	0
  */
 
-void () f_death6 = [ 23.000, globaldef5320 ] {
+void () f_death6 = [ 23.000, f_death7 ] {
 
 
 };
@@ -1230,7 +1230,7 @@ void () f_death7;
  * OP_DONE	0	0	0
  */
 
-void () f_death7 = [ 24.000, globaldef5321 ] {
+void () f_death7 = [ 24.000, f_death8 ] {
 
 
 };
@@ -1244,7 +1244,7 @@ void () f_death8;
  * OP_DONE	0	0	0
  */
 
-void () f_death8 = [ 25.000, globaldef5322 ] {
+void () f_death8 = [ 25.000, f_death9 ] {
 
 
 };
@@ -1258,7 +1258,7 @@ void () f_death9;
  * OP_DONE	0	0	0
  */
 
-void () f_death9 = [ 26.000, globaldef5323 ] {
+void () f_death9 = [ 26.000, f_death10 ] {
 
 
 };
@@ -1272,7 +1272,7 @@ void () f_death10;
  * OP_DONE	0	0	0
  */
 
-void () f_death10 = [ 27.000, globaldef5324 ] {
+void () f_death10 = [ 27.000, f_death11 ] {
 
 
 };
@@ -1286,7 +1286,7 @@ void () f_death11;
  * OP_DONE	0	0	0
  */
 
-void () f_death11 = [ 28.000, globaldef5325 ] {
+void () f_death11 = [ 28.000, f_death12 ] {
 
 
 };
@@ -1300,7 +1300,7 @@ void () f_death12;
  * OP_DONE	0	0	0
  */
 
-void () f_death12 = [ 29.000, globaldef5326 ] {
+void () f_death12 = [ 29.000, f_death13 ] {
 
 
 };
@@ -1314,7 +1314,7 @@ void () f_death13;
  * OP_DONE	0	0	0
  */
 
-void () f_death13 = [ 30.000, globaldef5327 ] {
+void () f_death13 = [ 30.000, f_death14 ] {
 
 
 };
@@ -1328,7 +1328,7 @@ void () f_death14;
  * OP_DONE	0	0	0
  */
 
-void () f_death14 = [ 31.000, globaldef5328 ] {
+void () f_death14 = [ 31.000, f_death15 ] {
 
 
 };
@@ -1342,7 +1342,7 @@ void () f_death15;
  * OP_DONE	0	0	0
  */
 
-void () f_death15 = [ 32.000, globaldef5329 ] {
+void () f_death15 = [ 32.000, f_death16 ] {
 
 
 };
@@ -1356,7 +1356,7 @@ void () f_death16;
  * OP_DONE	0	0	0
  */
 
-void () f_death16 = [ 33.000, globaldef5330 ] {
+void () f_death16 = [ 33.000, f_death17 ] {
 
 
 };
@@ -1370,7 +1370,7 @@ void () f_death17;
  * OP_DONE	0	0	0
  */
 
-void () f_death17 = [ 34.000, globaldef5331 ] {
+void () f_death17 = [ 34.000, f_death18 ] {
 
 
 };
@@ -1384,7 +1384,7 @@ void () f_death18;
  * OP_DONE	0	0	0
  */
 
-void () f_death18 = [ 35.000, globaldef5332 ] {
+void () f_death18 = [ 35.000, f_death19 ] {
 
 
 };
@@ -1398,7 +1398,7 @@ void () f_death19;
  * OP_DONE	0	0	0
  */
 
-void () f_death19 = [ 36.000, globaldef5333 ] {
+void () f_death19 = [ 36.000, f_death20 ] {
 
 
 };
@@ -1412,7 +1412,7 @@ void () f_death20;
  * OP_DONE	0	0	0
  */
 
-void () f_death20 = [ 37.000, globaldef5334 ] {
+void () f_death20 = [ 37.000, f_death21 ] {
 
 
 };
@@ -1428,9 +1428,9 @@ void () f_death21;
  * OP_DONE	0	0	0
  */
 
-void () f_death21 = [ 38.000, globaldef5334 ] {
+void () f_death21 = [ 38.000, f_death21 ] {
 
-   self.solid = SOLID_NOT;
+   self.globaldef000082 = SOLID_NOT;
 
 };
 
@@ -1443,7 +1443,7 @@ void () f_pain1;
  * OP_DONE	0	0	0
  */
 
-void () f_pain1 = [ 57.000, globaldef5336 ] {
+void () f_pain1 = [ 57.000, f_pain2 ] {
 
 
 };
@@ -1459,9 +1459,9 @@ void () f_pain2;
  * OP_DONE	0	0	0
  */
 
-void () f_pain2 = [ 58.000, globaldef5337 ] {
+void () f_pain2 = [ 58.000, f_pain3 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1476,9 +1476,9 @@ void () f_pain3;
  * OP_DONE	0	0	0
  */
 
-void () f_pain3 = [ 59.000, globaldef5338 ] {
+void () f_pain3 = [ 59.000, f_pain4 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1493,9 +1493,9 @@ void () f_pain4;
  * OP_DONE	0	0	0
  */
 
-void () f_pain4 = [ 60.000, globaldef5339 ] {
+void () f_pain4 = [ 60.000, f_pain5 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1510,9 +1510,9 @@ void () f_pain5;
  * OP_DONE	0	0	0
  */
 
-void () f_pain5 = [ 61.000, globaldef5340 ] {
+void () f_pain5 = [ 61.000, f_pain6 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1527,9 +1527,9 @@ void () f_pain6;
  * OP_DONE	0	0	0
  */
 
-void () f_pain6 = [ 62.000, globaldef5341 ] {
+void () f_pain6 = [ 62.000, f_pain7 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1544,9 +1544,9 @@ void () f_pain7;
  * OP_DONE	0	0	0
  */
 
-void () f_pain7 = [ 63.000, globaldef5342 ] {
+void () f_pain7 = [ 63.000, f_pain8 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1561,9 +1561,9 @@ void () f_pain8;
  * OP_DONE	0	0	0
  */
 
-void () f_pain8 = [ 64.000, globaldef5343 ] {
+void () f_pain8 = [ 64.000, f_pain9 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
@@ -1578,13 +1578,13 @@ void () f_pain9;
  * OP_DONE	0	0	0
  */
 
-void () f_pain9 = [ 65.000, globaldef5278 ] {
+void () f_pain9 = [ 65.000, f_run1 ] {
 
-   globaldef1698 (MOVETYPE_TOSS);
+   ai_pain (MOVETYPE_TOSS);
 
 };
 
-void (entity globaldef5345, float globaldef5346) fish_pain;
+void (entity globaldef005345, float globaldef005346) fish_pain;
 
 // function fish_pain
 // function number 2015 begins at statement 25745
@@ -1593,9 +1593,9 @@ void (entity globaldef5345, float globaldef5346) fish_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef5345, float globaldef5346) fish_pain = {
+void (entity globaldef005345, float globaldef005346) fish_pain = {
 
-   globaldef5335 ();
+   f_pain1 ();
 
 };
 
@@ -1653,21 +1653,21 @@ void () monster_fish = {
       return ;
 
    }
-   globaldef493 (globaldef5348);
-   globaldef494 (globaldef5315);
-   globaldef494 (globaldef5294);
-   globaldef494 (globaldef5280);
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef5348);
-   globaldef438 (self,VEC_HULL_MIN,globaldef5349);
-   self.globaldef130 = globaldef288;
-   self.globaldef344 = globaldef5242;
-   self.globaldef345 = globaldef5260;
-   self.globaldef346 = globaldef5278;
-   self.globaldef350 = globaldef5313;
-   self.globaldef349 = globaldef5344;
-   self.globaldef348 = globaldef5295;
-   globaldef3315 ();
+   precache_model2 (globaldef005348);
+   precache_sound2 (globaldef005315);
+   precache_sound2 (globaldef005294);
+   precache_sound2 (globaldef005280);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef005348);
+   setsize (self,VEC_HULL_MIN,globaldef005349);
+   self.globaldef000130 = globaldef000288;
+   self.globaldef000344 = f_stand1;
+   self.globaldef000345 = f_walk1;
+   self.globaldef000346 = f_run1;
+   self.globaldef000350 = f_death1;
+   self.globaldef000349 = fish_pain;
+   self.globaldef000348 = f_attack1;
+   swimmonster_start ();
 
 };

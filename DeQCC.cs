@@ -183,6 +183,7 @@ namespace DeQcc
 
         StreamWriter qcOutputFile;
         StreamWriter progsSrcOutputFile;
+        StreamWriter metaOutputFile;
         List<string> DecompileFilesSeen = new List<string>();
         Dictionary<int,string> DecompileProfiles = new Dictionary<int, string>();
 
@@ -435,7 +436,7 @@ namespace DeQcc
 
                 // set strings
                 if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "func" + i; }
+                else { f.name = "func" + i.ToString("D6"); }
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 if (f.s_file > 0) { f.file = strings[stringOffsetMap[f.s_file]]; }
@@ -455,7 +456,7 @@ namespace DeQcc
 
                 // set strings
                 if (g.s_name > 0) { g.name = strings[stringOffsetMap[g.s_name]]; }
-                else { g.name = "globaldef" + i; }
+                else { g.name = "globaldef" + i.ToString("D6"); }
                 if (nameMap.ContainsKey(g.name)) { g.name = nameMap[g.name]; }
 
                 globals.Add(g);
@@ -475,7 +476,7 @@ namespace DeQcc
 
                 // set strings
                 if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "field" + i; }
+                else { f.name = "field" + i.ToString("D6"); }
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 fields.Add(f);
@@ -583,9 +584,7 @@ namespace DeQcc
                     ds = statements[statementIndex];
                     rds = null;
 
-                    /*
-                    * find a return statement, to determine the result type 
-                    */
+                    // find a return statement, to determine the result type 
                     while (true)
                     {
                         dom = (ushort)((ds.op) % 100);
@@ -599,9 +598,7 @@ namespace DeQcc
                         ds = statements[statementIndex];
                     }
 
-                    /*
-                    * print the return type  
-                    */
+                    // print the return type  
                     if ((rds != null) && (rds.a != 0))
                     {
                         par = GetGlobalByOffset(rds.a);
@@ -621,9 +618,7 @@ namespace DeQcc
                     }
                     fname += "(";
 
-                    /*
-                    * determine overall parameter size 
-                    */
+                    // determine overall parameter size 
                     int ps = 0;
                     for (int j = 0; j < df.numparms; j++)
                         ps += df.parm_size[j];
@@ -757,11 +752,15 @@ namespace DeQcc
         {
             int i;
             StreamWriter f;
-            string fname;
+            string filename;
 
             WriteProgsData(folder);
 
             CalcProfiles();
+
+            // for printing local variable names, etc
+            metaOutputFile = new StreamWriter(folder + "meta.txt", false);
+            metaOutputFile.AutoFlush = true;
 
             progsSrcOutputFile = new StreamWriter(folder + "progs.src", false);     // overwrite
             progsSrcOutputFile.AutoFlush = true;
@@ -770,20 +769,23 @@ namespace DeQcc
 
             for (i = 1; i < functions.Count; i++)
             {
-                fname = functions[i].file;
+                filename = functions[i].file;
 
-                if (AlreadySeen(fname) == false)
+                if (AlreadySeen(filename) == false)
                 {
-                    progsSrcOutputFile.WriteLine(fname);
-                    f = new StreamWriter(folder + fname, false);    // overwrite
+                    progsSrcOutputFile.WriteLine(filename);
+                    f = new StreamWriter(folder + filename, false);    // overwrite
                 } else
                 {
-                    f = new StreamWriter(folder + fname, true);     // append
+                    f = new StreamWriter(folder + filename, true);     // append
                 }
 
                 qcOutputFile = f;
                 qcOutputFile.AutoFlush = true;
+                
+                metaOutputFile.WriteLine(functions[i].name);
                 DecompileFunctionDef(i);  // TODO
+                metaOutputFile.WriteLine();
 
                 f.Close();
             }
@@ -814,9 +816,7 @@ namespace DeQcc
             df = functions[funcIndex];
             findex = funcIndex;
 
-            /*
-            * Check ''local globals'' 
-            */
+            // Check ''local globals'' 
             dfpred = functions[findex - 1];
 
             for (int i = 0; i < dfpred.numparms; i++)
@@ -918,9 +918,7 @@ namespace DeQcc
                 }
             }
 
-            /*
-            * Check ''local globals'' 
-            */
+            // Check ''local globals'' 
             if (df.first_statement <= 0)
             {
                 qcOutputFile.WriteLine(DecompileProfiles[findex] + " = #" + (-df.first_statement) + ";");
@@ -937,43 +935,34 @@ namespace DeQcc
 
                 else if (dom == (ushort)Opcodes.OP_GOTO)
                 {
-                    /*
-                    * check for i-t-e 
-                        */
+                    // check for i-t-e 
                     if (ds.a > 0)
                     {
                         tsIndex = dsIndex + ds.a;
                         ts = statements[tsIndex];
-                        ts.op += 100;  /*
-									* mark the end of a if/ite construct 
-					*/
+                        ts.op += 100;
+                        // mark the end of a if/ite construct 
                     }
                 }
                 else if (dom == (ushort)Opcodes.OP_IFNOT)
                 {
-                    /*
-                    * check for pure if 
-                        */
+                    // check for pure if 
                     tsIndex = dsIndex + ds.b;
                     ts = statements[tsIndex];
                     tom = (ushort)(statements[tsIndex - 1].op % 100);
 
                     if (tom != (ushort)Opcodes.OP_GOTO)
                     {
-                        ts.op += 100;  /*
-								* mark the end of a if/ite construct 
-				*/
+                        ts.op += 100;
+						// mark the end of a if/ite construct 
                     }
                     else if (statements[tsIndex - 1].a < 0)
                     {
                         if ((statements[tsIndex - 1].a + ds.b) > 1)
                         {
-                            /*
-                            * pure if  
-                                */
-                            ts.op += 100;  /*
-										* mark the end of a if/ite construct 
-						*/
+                            // pure if  
+                            ts.op += 100;
+							// mark the end of a if/ite construct 
                         }
                         else
                         {
@@ -987,12 +976,9 @@ namespace DeQcc
                             }
                             if (dum == 0)
                             {
-                                /*
-                                * pure if  
-                                    */
-                                ts.op += 100;  /*
-											* mark the end of a if/ite construct 
-							*/
+                                // pure if  
+                                ts.op += 100;
+								// mark the end of a if/ite construct 
                             }
                         }
                     }
@@ -1001,9 +987,8 @@ namespace DeQcc
                 {
                     tsIndex = dsIndex + ds.b;
                     ts = statements[tsIndex];
-                    ts.op += 10000;    /*
-									* mark the start of a do construct 
-				*/
+                    ts.op += 10000;
+					// mark the start of a do construct 
                 }
                 dsIndex++;
                 ds = statements[dsIndex];
@@ -1029,14 +1014,10 @@ namespace DeQcc
             }
             // <- NG
 
-            /*
-            * print the prototype 
-            */
+            // print the prototype 
             qcOutputFile.Write(DecompileProfiles[findex]);
 
-            /*
-            * handle state functions 
-            */
+            // handle state functions 
             dsIndex = df.first_statement;
             ds = statements[dsIndex];
 
@@ -1066,9 +1047,7 @@ namespace DeQcc
                 paramSize += df.parm_size[i];
             }
 
-            /*
-			* print the locals 
-		    */
+			// print the locals 
             if (df.locals > 0)
             {
                 if ((df.parm_start) + df.locals - 1 >= (df.parm_start) + paramSize)
@@ -1090,6 +1069,7 @@ namespace DeQcc
                             else
                             {
                                 qcOutputFile.WriteLine("   local " + PrintParameter(par) + ";");
+                                metaOutputFile.WriteLine(PrintParameter(par));
                             }
 
                             if (par.type == (ushort)Types.ev_vector)
@@ -1102,9 +1082,7 @@ namespace DeQcc
                 }
             }
 
-            /*
-            * do the hard work 
-            */
+            // do the hard work 
             DecompileFunction(df);
 
             qcOutputFile.WriteLine();
@@ -1136,10 +1114,26 @@ namespace DeQcc
                 }
                 else
                 {
-                    line = def.name;
-                    if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
+                    // NG added - if function, link through to the underlying function name
+                    if (def.type == ((ushort)(Types.ev_function)))
                     {
-                        line += "_x";
+                        int funcIndex = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[def.ofs]));
+                        if (funcIndex > 0)
+                        {
+                            line = functions[funcIndex].name;
+                        }
+                        else
+                        {
+                            line = def.name;
+                        }
+                    }
+                    else
+                    {
+                        line = def.name;
+                        if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
+                        {
+                            line += "_x";
+                        }
                     }
                 }
                 return line;

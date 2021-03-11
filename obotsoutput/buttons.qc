@@ -1,9 +1,9 @@
-string globaldef3414 /* = "doors/latch2.wav" */;
-string globaldef3415 /* = "doors/winch2.wav" */;
-string globaldef3416 /* = "doors/airdoor1.wav" */;
-string globaldef3417 /* = "doors/airdoor2.wav" */;
-string globaldef3418 /* = "doors/basesec1.wav" */;
-string globaldef3419 /* = "doors/basesec2.wav" */;
+string globaldef003414 /* = "doors/latch2.wav" */;
+string globaldef003415 /* = "doors/winch2.wav" */;
+string globaldef003416 /* = "doors/airdoor1.wav" */;
+string globaldef003417 /* = "doors/airdoor2.wav" */;
+string globaldef003418 /* = "doors/basesec1.wav" */;
+string globaldef003419 /* = "doors/basesec2.wav" */;
 
 void () button_return;
 
@@ -31,12 +31,12 @@ void () button_wait;
 
 void () button_wait = {
 
-   self.globaldef421 = STATE_TOP;
-   self.nextthink = (self.ltime + self.globaldef401);
-   self.think = globaldef3420;
-   activator = self.enemy;
+   self.globaldef000421 = STATE_TOP;
+   self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
+   self.globaldef000126 = button_return;
+   activator = self.globaldef000159;
    SUB_UseTargets ();
-   self.globaldef109 = TRUE;
+   self.globaldef000109 = TRUE;
 
 };
 
@@ -52,7 +52,7 @@ void () button_done;
 
 void () button_done = {
 
-   self.globaldef421 = STATE_BOTTOM;
+   self.globaldef000421 = STATE_BOTTOM;
 
 };
 
@@ -78,12 +78,12 @@ void () button_done = {
 
 void () button_return = {
 
-   self.globaldef421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef422,self.globaldef352,globaldef3422);
-   self.globaldef109 = FALSE;
-   if ( self.globaldef130 ) {
+   self.globaldef000421 = STATE_DOWN;
+   SUB_CalcMove (self.globaldef000422,self.globaldef000352,button_done);
+   self.globaldef000109 = FALSE;
+   if ( self.globaldef000130 ) {
 
-      self.globaldef141 = DAMAGE_YES;
+      self.globaldef000141 = DAMAGE_YES;
 
    }
 
@@ -134,14 +134,14 @@ void () button_fire;
 
 void () button_fire = {
 
-   if ( ((self.globaldef421 == STATE_UP) || (self.globaldef421 == STATE_TOP)) ) {
+   if ( ((self.globaldef000421 == STATE_UP) || (self.globaldef000421 == STATE_TOP)) ) {
 
       return ;
 
    }
-   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_UP;
-   SUB_CalcMove (self.globaldef426,self.globaldef352,globaldef3421);
+   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_UP;
+   SUB_CalcMove (self.globaldef000426,self.globaldef000352,button_wait);
 
 };
 
@@ -164,13 +164,13 @@ void () button_use;
 
 void () button_use = {
 
-   self.enemy = activator;
-   if ( (activator.classname == globaldef1171) ) {
+   self.globaldef000159 = activator;
+   if ( (activator.globaldef000107 == globaldef001171) ) {
 
-      globaldef1070 (activator,self);
+      func002472 (activator,self);
 
    }
-   globaldef3424 ();
+   button_fire ();
 
 };
 
@@ -200,24 +200,24 @@ void () button_touch;
 
 void () button_touch = {
 
-   local vector globaldef3427;
+   local vector globaldef003427;
 
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   self.enemy = other;
-   if ( (other.classname == globaldef1171) ) {
+   self.globaldef000159 = other;
+   if ( (other.globaldef000107 == globaldef001171) ) {
 
-      globaldef1070 (other,self);
+      func002472 (other,self);
 
    }
-   globaldef3424 ();
+   button_fire ();
 
 };
 
@@ -245,15 +245,15 @@ void () button_killed;
 
 void () button_killed = {
 
-   self.enemy = damage_attacker;
-   self.globaldef130 = self.globaldef163;
-   self.globaldef141 = DAMAGE_NO;
-   if ( (damage_attacker.classname == globaldef1171) ) {
+   self.globaldef000159 = damage_attacker;
+   self.globaldef000130 = self.globaldef000163;
+   self.globaldef000141 = DAMAGE_NO;
+   if ( (damage_attacker.globaldef000107 == globaldef001171) ) {
 
-      globaldef1070 (damage_attacker,self);
+      func002472 (damage_attacker,self);
 
    }
-   globaldef3424 ();
+   button_fire ();
 
 };
 
@@ -355,68 +355,68 @@ void () func_button;
 
 void () func_button = {
 
-   local float globaldef3433;
-   local float globaldef3434;
+   local float gtemp;
+   local float ftemp;
 
-   if ( (self.globaldef185 == FALSE) ) {
+   if ( (self.globaldef000185 == FALSE) ) {
 
-      globaldef452 (globaldef3435);
-      self.noise = globaldef3435;
-
-   }
-   if ( (self.globaldef185 == TRUE) ) {
-
-      globaldef452 (globaldef3436);
-      self.noise = globaldef3436;
+      precache_sound (globaldef003435);
+      self.globaldef000186 = globaldef003435;
 
    }
-   if ( (self.globaldef185 == FL_SWIM) ) {
+   if ( (self.globaldef000185 == TRUE) ) {
 
-      globaldef452 (globaldef3437);
-      self.noise = globaldef3437;
+      precache_sound (globaldef003436);
+      self.globaldef000186 = globaldef003436;
 
    }
-   if ( (self.globaldef185 == MOVETYPE_WALK) ) {
+   if ( (self.globaldef000185 == FL_SWIM) ) {
 
-      globaldef452 (globaldef3438);
-      self.noise = globaldef3438;
+      precache_sound (globaldef003437);
+      self.globaldef000186 = globaldef003437;
+
+   }
+   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+
+      precache_sound (globaldef003438);
+      self.globaldef000186 = globaldef003438;
 
    }
    SetMovedir ();
-   self.movetype = MOVETYPE_PUSH;
-   self.solid = SOLID_BSP;
-   setmodel (self,self.model);
-   self.globaldef127 = globaldef3423;
-   self.use = globaldef3425;
-   self.globaldef531 = globaldef939;
-   if ( self.globaldef130 ) {
+   self.globaldef000081 = MOVETYPE_PUSH;
+   self.globaldef000082 = SOLID_BSP;
+   setmodel (self,self.globaldef000108);
+   self.globaldef000127 = button_blocked;
+   self.globaldef000125 = button_use;
+   self.globaldef000531 = func002291;
+   if ( self.globaldef000130 ) {
 
-      self.globaldef163 = self.globaldef130;
-      self.globaldef350 = globaldef3431;
-      self.globaldef141 = DAMAGE_YES;
+      self.globaldef000163 = self.globaldef000130;
+      self.globaldef000350 = button_killed;
+      self.globaldef000141 = DAMAGE_YES;
 
    } else {
 
-      self.globaldef124 = globaldef3426;
+      self.globaldef000124 = button_touch;
 
    }
-   if ( !self.globaldef352 ) {
+   if ( !self.globaldef000352 ) {
 
-      self.globaldef352 = globaldef729;
-
-   }
-   if ( !self.globaldef401 ) {
-
-      self.globaldef401 = TRUE;
+      self.globaldef000352 = globaldef000729;
 
    }
-   if ( !self.globaldef420 ) {
+   if ( !self.globaldef000401 ) {
 
-      self.globaldef420 = MOVETYPE_STEP;
+      self.globaldef000401 = TRUE;
 
    }
-   self.globaldef421 = STATE_BOTTOM;
-   self.globaldef422 = self.origin;
-   self.globaldef426 = (self.globaldef422 + (self.movedir * (globaldef471 ((self.movedir * self.globaldef120)) - self.globaldef420)));
+   if ( !self.globaldef000420 ) {
+
+      self.globaldef000420 = MOVETYPE_STEP;
+
+   }
+   self.globaldef000421 = STATE_BOTTOM;
+   self.globaldef000422 = self.globaldef000083;
+   self.globaldef000426 = (self.globaldef000422 + (self.globaldef000180 * (fabs ((self.globaldef000180 * self.globaldef000120)) - self.globaldef000420)));
 
 };

@@ -1,4 +1,4 @@
-float (float globaldef1619) anglemod;
+float (float globaldef001619) anglemod;
 
 void () knight_atk1;
 
@@ -15,15 +15,15 @@ void () sham_swingr1;
 void () sham_swingl1;
 float () DemonCheckAttack;
 
-void (float globaldef3923) Demon_Melee;
+void (float globaldef003923) Demon_Melee;
 
-void (vector globaldef1711) ChooseTurn;
+void (vector globaldef001711) ChooseTurn;
 
 void () ai_face;
-float globaldef1534 /* = 0.000 */;
-float globaldef1535 /* = 0.000 */;
-float globaldef1536 /* = 0.000 */;
-float globaldef1537 /* = 0.000 */;
+float globaldef001534 /* = 0.000 */;
+float globaldef001535 /* = 0.000 */;
+float globaldef001536 /* = 0.000 */;
+float globaldef001537 /* = 0.000 */;
 
 void () knight_attack;
 
@@ -52,16 +52,16 @@ void () knight_attack;
 
 void () knight_attack = {
 
-   local float globaldef1539;
+   local float len;
 
-   globaldef1539 = vlen (((self.enemy.origin + self.enemy.globaldef144) - (self.origin + self.globaldef144)));
-   if ( (globaldef1539 < globaldef1439) ) {
+   len = vlen (((self.globaldef000159.globaldef000083 + self.globaldef000159.globaldef000144) - (self.globaldef000083 + self.globaldef000144)));
+   if ( (len < globaldef001439) ) {
 
-      globaldef1523 ();
+      knight_atk1 ();
 
    } else {
 
-      globaldef1524 ();
+      knight_runatk1 ();
 
    }
 
@@ -153,16 +153,16 @@ float () CheckAttack;
  */
 float () CheckAttack = {
 
-   local vector globaldef1541;
-   local vector globaldef1545;
-   local entity globaldef1549;
-   local float globaldef1550;
+   local vector spot1;
+   local vector spot2;
+   local entity targ;
+   local float chance;
 
-   globaldef1549 = self.enemy;
-   globaldef1541 = (self.origin + self.globaldef144);
-   globaldef1545 = (globaldef1549.origin + globaldef1549.globaldef144);
-   globaldef449 (globaldef1541,globaldef1545,FALSE,self);
-   if ( (trace_ent != globaldef1549) ) {
+   targ = self.globaldef000159;
+   spot1 = (self.globaldef000083 + self.globaldef000144);
+   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   traceline (spot1,spot2,FALSE,self);
+   if ( (trace_ent != targ) ) {
 
       return ( FALSE );
 
@@ -172,17 +172,17 @@ float () CheckAttack = {
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( self.globaldef348 ) {
+      if ( self.globaldef000348 ) {
 
-         if ( (self.classname == globaldef1551) ) {
+         if ( (self.globaldef000107 == globaldef001551) ) {
 
-            globaldef1538 ();
+            knight_attack ();
 
          } else {
 
-            self.globaldef348 ();
+            self.globaldef000348 ();
 
          }
          return ( TRUE );
@@ -190,77 +190,77 @@ float () CheckAttack = {
       }
 
    }
-   if ( !self.globaldef347 ) {
+   if ( !self.globaldef000347 ) {
 
       return ( FALSE );
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_FAR) ) {
+   if ( (globaldef001536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      globaldef1550 = globaldef1552;
-      self.attack_finished = FALSE;
+      chance = globaldef001552;
+      self.globaldef000361 = FALSE;
 
    } else {
 
-      if ( (globaldef1536 == RANGE_NEAR) ) {
+      if ( (globaldef001536 == RANGE_NEAR) ) {
 
-         if ( self.globaldef348 ) {
+         if ( self.globaldef000348 ) {
 
-            globaldef1550 = globaldef1553;
+            chance = globaldef001553;
 
          } else {
 
-            globaldef1550 = globaldef1300;
+            chance = globaldef001300;
 
          }
 
       } else {
 
-         if ( (globaldef1536 == RANGE_MID) ) {
+         if ( (globaldef001536 == RANGE_MID) ) {
 
-            if ( self.globaldef348 ) {
+            if ( self.globaldef000348 ) {
 
-               globaldef1550 = globaldef1554;
+               chance = globaldef001554;
 
             } else {
 
-               globaldef1550 = 0.100;
+               chance = globaldef001488;
 
             }
 
          } else {
 
-            globaldef1550 = FALSE;
+            chance = FALSE;
 
          }
 
       }
 
    }
-   if ( (globaldef440 () < globaldef1550) ) {
+   if ( (random () < chance) ) {
 
-      self.globaldef347 ();
-      globaldef1517 ((FL_SWIM * globaldef440 ()));
+      self.globaldef000347 ();
+      SUB_AttackFinished ((FL_SWIM * random ()));
       return ( TRUE );
 
    }
    return ( FALSE );
 
 };
-string globaldef1551 /* = "monster_knight" */;
-float globaldef1552 /* = 0.900 */;
-float globaldef1553 /* = 0.200 */;
-float globaldef1554 /* = 0.050 */;
+string globaldef001551 /* = "monster_knight" */;
+float globaldef001552 /* = 0.900 */;
+float globaldef001553 /* = 0.200 */;
+float globaldef001554 /* = 0.050 */;
 
 // function ai_face
 // function number 165 begins at statement 2809
@@ -279,14 +279,14 @@ float globaldef1554 /* = 0.050 */;
 
 void () ai_face = {
 
-   self.globaldef169 = globaldef446 ((self.enemy.origin - self.origin));
-   globaldef477 ();
+   self.globaldef000169 = vectoyaw ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   ChangeYaw ();
 
 };
-float (entity globaldef1648) infront;
-float (entity globaldef1628) range;
+float (entity globaldef001648) infront;
+float (entity globaldef001628) range;
 
-void (float globaldef1558) ai_charge;
+void (float globaldef001558) ai_charge;
 
 // function ai_charge
 // function number 166 begins at statement 2819
@@ -297,10 +297,10 @@ void (float globaldef1558) ai_charge;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1558) ai_charge = {
+void (float globaldef001558) ai_charge = {
 
-   globaldef1533 ();
-   globaldef487 (globaldef1558);
+   ai_face ();
+   movetogoal (globaldef001558);
 
 };
 
@@ -339,15 +339,15 @@ void () ai_charge_side;
 
 void () ai_charge_side = {
 
-   local vector globaldef1560;
-   local float globaldef1564;
+   local vector dtemp;
+   local float heading;
 
-   self.globaldef169 = globaldef446 ((self.enemy.origin - self.origin));
-   globaldef477 ();
-   makevectors (self.angles);
-   globaldef1560 = (self.enemy.origin - (SVC_INTERMISSION * v_right));
-   globaldef1564 = globaldef446 ((globaldef1560 - self.origin));
-   globaldef463 (globaldef1564,globaldef1384);
+   self.globaldef000169 = vectoyaw ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   ChangeYaw ();
+   makevectors (self.globaldef000095);
+   dtemp = (self.globaldef000159.globaldef000083 - (SVC_INTERMISSION * v_right));
+   heading = vectoyaw ((dtemp - self.globaldef000083));
+   walkmove (heading,globaldef001384);
 
 };
 
@@ -388,22 +388,22 @@ void () ai_melee;
 
 void () ai_melee = {
 
-   local vector globaldef1566;
-   local float globaldef1570;
+   local vector delta;
+   local float ldmg;
 
-   if ( !self.enemy ) {
-
-      return ;
-
-   }
-   globaldef1566 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef1566) > globaldef1337) ) {
+   if ( !self.globaldef000159 ) {
 
       return ;
 
    }
-   globaldef1570 = (((globaldef440 () + globaldef440 ()) + globaldef440 ()) * MOVETYPE_WALK);
-   globaldef505 (self.enemy,self,self,globaldef1570);
+   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   if ( (vlen (delta) > globaldef001337) ) {
+
+      return ;
+
+   }
+   ldmg = (((random () + random ()) + random ()) * MOVETYPE_WALK);
+   T_Damage (self.globaldef000159,self,self,ldmg);
 
 };
 
@@ -452,28 +452,28 @@ void () ai_melee_side;
 
 void () ai_melee_side = {
 
-   local vector globaldef1572;
-   local float globaldef1576;
+   local vector delta;
+   local float ldmg;
 
-   if ( !self.enemy ) {
-
-      return ;
-
-   }
-   globaldef1559 ();
-   globaldef1572 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef1572) > globaldef1337) ) {
+   if ( !self.globaldef000159 ) {
 
       return ;
 
    }
-   if ( !globaldef507 (self.enemy,self) ) {
+   ai_charge_side ();
+   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   if ( (vlen (delta) > globaldef001337) ) {
 
       return ;
 
    }
-   globaldef1576 = (((globaldef440 () + globaldef440 ()) + globaldef440 ()) * MOVETYPE_WALK);
-   globaldef505 (self.enemy,self,self,globaldef1576);
+   if ( !CanDamage (self.globaldef000159,self) ) {
+
+      return ;
+
+   }
+   ldmg = (((random () + random ()) + random ()) * MOVETYPE_WALK);
+   T_Damage (self.globaldef000159,self,self,ldmg);
 
 };
 float () SoldierCheckAttack;
@@ -544,67 +544,67 @@ float () SoldierCheckAttack;
  */
 float () SoldierCheckAttack = {
 
-   local vector globaldef1578;
-   local vector globaldef1582;
-   local entity globaldef1586;
-   local float globaldef1587;
+   local vector spot1;
+   local vector spot2;
+   local entity targ;
+   local float chance;
 
-   globaldef1586 = self.enemy;
-   globaldef1578 = (self.origin + self.globaldef144);
-   globaldef1582 = (globaldef1586.origin + globaldef1586.globaldef144);
-   globaldef449 (globaldef1578,globaldef1582,FALSE,self);
+   targ = self.globaldef000159;
+   spot1 = (self.globaldef000083 + self.globaldef000144);
+   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   traceline (spot1,spot2,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1586) ) {
+   if ( (trace_ent != targ) ) {
 
       return ( FALSE );
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_FAR) ) {
+   if ( (globaldef001536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      globaldef1587 = globaldef1552;
+      chance = globaldef001552;
 
    } else {
 
-      if ( (globaldef1536 == RANGE_NEAR) ) {
+      if ( (globaldef001536 == RANGE_NEAR) ) {
 
-         globaldef1587 = globaldef1300;
+         chance = globaldef001300;
 
       } else {
 
-         if ( (globaldef1536 == RANGE_MID) ) {
+         if ( (globaldef001536 == RANGE_MID) ) {
 
-            globaldef1587 = globaldef1554;
+            chance = globaldef001554;
 
          } else {
 
-            globaldef1587 = FALSE;
+            chance = FALSE;
 
          }
 
       }
 
    }
-   if ( (globaldef440 () < globaldef1587) ) {
+   if ( (random () < chance) ) {
 
-      self.globaldef347 ();
-      globaldef1517 ((TRUE + globaldef440 ()));
-      if ( (globaldef440 () < globaldef1588) ) {
+      self.globaldef000347 ();
+      SUB_AttackFinished ((TRUE + random ()));
+      if ( (random () < globaldef001588) ) {
 
-         self.globaldef353 = !self.globaldef353;
+         self.globaldef000353 = !self.globaldef000353;
 
       }
       return ( TRUE );
@@ -613,7 +613,7 @@ float () SoldierCheckAttack = {
    return ( FALSE );
 
 };
-float globaldef1588 /* = 0.300 */;
+float globaldef001588 /* = 0.300 */;
 float () ShamCheckAttack;
 
 // function ShamCheckAttack
@@ -678,57 +678,57 @@ float () ShamCheckAttack;
  */
 float () ShamCheckAttack = {
 
-   local vector globaldef1590;
-   local vector globaldef1594;
-   local entity globaldef1598;
-   local float globaldef1599;
+   local vector spot1;
+   local vector spot2;
+   local entity targ;
+   local float chance;
 
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( globaldef507 (self.enemy,self) ) {
+      if ( CanDamage (self.globaldef000159,self) ) {
 
-         self.globaldef355 = AS_MELEE;
+         self.globaldef000355 = AS_MELEE;
          return ( TRUE );
 
       }
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ( FALSE );
 
    }
-   if ( !globaldef1534 ) {
+   if ( !globaldef001534 ) {
 
       return ( FALSE );
 
    }
-   globaldef1598 = self.enemy;
-   globaldef1590 = (self.origin + self.globaldef144);
-   globaldef1594 = (globaldef1598.origin + globaldef1598.globaldef144);
-   if ( (vlen ((globaldef1590 - globaldef1594)) > globaldef723) ) {
+   targ = self.globaldef000159;
+   spot1 = (self.globaldef000083 + self.globaldef000144);
+   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   if ( (vlen ((spot1 - spot2)) > globaldef000723) ) {
 
       return ( FALSE );
 
    }
-   globaldef449 (globaldef1590,globaldef1594,FALSE,self);
+   traceline (spot1,spot2,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1598) ) {
+   if ( (trace_ent != targ) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_FAR) ) {
+   if ( (globaldef001536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    }
-   self.globaldef355 = AS_MISSILE;
-   globaldef1517 ((FL_SWIM + (FL_SWIM * globaldef440 ())));
+   self.globaldef000355 = AS_MISSILE;
+   SUB_AttackFinished ((FL_SWIM + (FL_SWIM * random ())));
    return ( TRUE );
 
 };
@@ -804,77 +804,77 @@ float () OgreCheckAttack;
  */
 float () OgreCheckAttack = {
 
-   local vector globaldef1601;
-   local vector globaldef1605;
-   local entity globaldef1609;
-   local float globaldef1610;
+   local vector spot1;
+   local vector spot2;
+   local entity targ;
+   local float chance;
 
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( globaldef507 (self.enemy,self) ) {
+      if ( CanDamage (self.globaldef000159,self) ) {
 
-         self.globaldef355 = AS_MELEE;
+         self.globaldef000355 = AS_MELEE;
          return ( TRUE );
 
       }
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ( FALSE );
 
    }
-   if ( !globaldef1534 ) {
+   if ( !globaldef001534 ) {
 
       return ( FALSE );
 
    }
-   globaldef1609 = self.enemy;
-   globaldef1601 = (self.origin + self.globaldef144);
-   globaldef1605 = (globaldef1609.origin + globaldef1609.globaldef144);
-   globaldef449 (globaldef1601,globaldef1605,FALSE,self);
+   targ = self.globaldef000159;
+   spot1 = (self.globaldef000083 + self.globaldef000144);
+   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   traceline (spot1,spot2,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
       return ( FALSE );
 
    }
-   if ( (trace_ent != globaldef1609) ) {
+   if ( (trace_ent != targ) ) {
 
       return ( FALSE );
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1536 == RANGE_FAR) ) {
+   if ( (globaldef001536 == RANGE_FAR) ) {
 
       return ( FALSE );
 
    } else {
 
-      if ( (globaldef1536 == RANGE_NEAR) ) {
+      if ( (globaldef001536 == RANGE_NEAR) ) {
 
-         globaldef1610 = 0.100;
+         chance = globaldef001488;
 
       } else {
 
-         if ( (globaldef1536 == RANGE_MID) ) {
+         if ( (globaldef001536 == RANGE_MID) ) {
 
-            globaldef1610 = globaldef1554;
+            chance = globaldef001554;
 
          } else {
 
-            globaldef1610 = FALSE;
+            chance = FALSE;
 
          }
 
       }
 
    }
-   self.globaldef355 = AS_MISSILE;
-   globaldef1517 ((TRUE + (FL_SWIM * globaldef440 ())));
+   self.globaldef000355 = AS_MISSILE;
+   SUB_AttackFinished ((TRUE + (FL_SWIM * random ())));
    return ( TRUE );
 
 };

@@ -1,0 +1,6691 @@
+makevectors
+
+setorigin
+
+setmodel
+
+setsize
+
+break
+
+random
+
+sound
+
+normalize
+
+error
+
+objerror
+
+vlen
+
+vectoyaw
+
+spawn
+
+remove
+
+traceline
+
+checkclient
+
+find
+
+precache_sound
+
+precache_model
+
+findradius
+
+bprint
+
+dprint
+
+ftos
+
+vtos
+
+coredump
+
+traceon
+
+traceoff
+
+eprint
+
+walkmove
+
+droptofloor
+
+lightstyle
+
+rint
+
+floor
+
+ceil
+
+checkbottom
+
+pointcontents
+
+fabs
+
+aim
+
+cvar
+
+localcmd
+
+nextent
+
+particle
+
+ChangeYaw
+
+vectoangles
+
+WriteByte
+
+WriteChar
+
+WriteShort
+
+WriteLong
+
+WriteCoord
+
+WriteAngle
+
+WriteString
+
+WriteEntity
+
+movetogoal
+
+precache_file
+
+makestatic
+
+changelevel
+
+cvar_set
+
+ambientsound
+
+precache_model2
+
+precache_sound2
+
+precache_file2
+
+setspawnparms
+
+bot_stuffcmd
+
+func000064
+
+bot_centerprint
+
+bot_centerprint2
+
+bot_centerprint3
+
+bot_centerprint4
+
+bot_centerprint5
+
+bot_centerprint6
+
+bot_centerprint7
+
+func000072
+
+centerprint2
+
+func000074
+
+centerprint4
+
+func000076
+
+centerprint6
+
+centerprint7
+
+bprint2
+
+bprint3
+
+bprint4
+
+bprint5
+
+bprint6
+
+bprint7
+
+bot_sprint
+
+bot_sprint2
+
+bot_sprint3
+
+bot_sprint4
+
+bot_sprint5
+
+bot_sprint6
+
+bot_sprint7
+
+func000092
+
+func000093
+
+func000094
+
+sprint4
+
+sprint5
+
+sprint6
+
+sprint7
+
+objerror2
+
+objerror3
+
+objerror4
+
+objerror5
+
+objerror6
+
+objerror7
+
+IDCopyright
+
+func000106
+
+func000107
+
+camcenterprint1
+
+camcenterprint2
+
+camcenterprint3
+
+camcenterprint4
+
+camcenterprint5
+
+camcenterprint6
+
+camcenterprint7
+
+func000115
+string globaldef001184
+string globaldef001185
+
+func000116
+float globaldef001193
+
+func000117
+
+func000118
+
+func000119
+vector globaldef001207
+
+func000120
+entity globaldef001212
+entity globaldef001213
+vector globaldef001214
+float globaldef001218
+float globaldef001219
+
+func000121
+float globaldef001223
+float globaldef001224
+float globaldef001225
+
+func000122
+float globaldef001230
+float globaldef001231
+float globaldef001232
+float globaldef001233
+float globaldef001234
+float globaldef001235
+float globaldef001236
+vector globaldef001237
+
+func000123
+vector globaldef001246
+vector globaldef001250
+float globaldef001254
+
+func000124
+vector globaldef001262
+vector globaldef001266
+float globaldef001270
+
+func000125
+
+func000126
+
+func000127
+
+func000128
+vector globaldef001279
+
+func000129
+float globaldef001285
+float globaldef001286
+vector globaldef001287
+vector globaldef001291
+vector globaldef001295
+entity globaldef001299
+
+func000130
+vector globaldef001305
+vector globaldef001309
+
+func000131
+vector globaldef001315
+
+func000132
+
+func000133
+entity globaldef001323
+
+func000134
+entity globaldef001327
+
+func000135
+entity globaldef001330
+
+func000136
+float globaldef001332
+entity globaldef001333
+string globaldef001334
+
+func000137
+float globaldef001363
+
+func000138
+float globaldef001368
+
+func000139
+entity globaldef001370
+entity globaldef001371
+vector globaldef001372
+vector globaldef001376
+float globaldef001380
+float globaldef001381
+float globaldef001382
+float globaldef001383
+
+func000140
+float globaldef001386
+float globaldef001387
+float globaldef001388
+float globaldef001389
+vector globaldef001390
+entity globaldef001394
+float globaldef001395
+
+func000141
+entity globaldef001399
+vector globaldef001400
+
+func000142
+vector globaldef001405
+entity globaldef001409
+float globaldef001410
+float globaldef001411
+float globaldef001412
+float globaldef001413
+float globaldef001414
+float globaldef001415
+float globaldef001416
+vector globaldef001417
+vector globaldef001421
+vector globaldef001425
+float globaldef001429
+
+func000143
+float globaldef001436
+
+func000144
+
+func000145
+entity globaldef001442
+entity globaldef001443
+
+func000146
+float globaldef001448
+entity globaldef001449
+entity globaldef001450
+
+func000147
+entity globaldef001453
+entity globaldef001454
+
+func000148
+entity globaldef001458
+entity globaldef001459
+
+SUB_Null
+
+SUB_Remove
+
+SetMovedir
+
+InitTrigger
+
+SUB_CalcMoveEnt
+entity stemp
+
+SUB_CalcMove
+vector vdestdelta
+float len
+float traveltime
+
+SUB_CalcMoveDone
+
+SUB_CalcAngleMoveEnt
+entity stemp
+
+SUB_CalcAngleMove
+vector destdelta
+float len
+float traveltime
+
+SUB_CalcAngleMoveDone
+
+DelayThink
+
+SUB_UseTargets
+entity t
+entity stemp
+entity otemp
+entity act
+
+SUB_AttackFinished
+
+SUB_CheckRefire
+
+knight_attack
+float len
+
+CheckAttack
+vector spot1
+vector spot2
+entity targ
+float chance
+
+ai_face
+
+ai_charge
+
+ai_charge_side
+vector dtemp
+float heading
+
+ai_melee
+vector delta
+float ldmg
+
+ai_melee_side
+vector delta
+float ldmg
+
+SoldierCheckAttack
+vector spot1
+vector spot2
+entity targ
+float chance
+
+ShamCheckAttack
+vector spot1
+vector spot2
+entity targ
+float chance
+
+OgreCheckAttack
+vector spot1
+vector spot2
+entity targ
+float chance
+
+anglemod
+
+movetarget_f
+
+path_corner
+
+t_movetarget
+entity temp
+
+range
+vector spot1
+vector spot2
+float r
+
+visible
+vector spot1
+vector spot2
+
+infront
+vector vec
+float dot
+
+HuntTarget
+
+SightSound
+float rsnd
+
+FoundTarget
+
+func000183
+float globaldef001686
+float globaldef001687
+entity globaldef001688
+entity globaldef001689
+
+FindTarget
+entity client
+float r
+
+ai_forward
+
+ai_back
+
+ai_pain
+
+ai_painforward
+
+ai_walk
+vector mtemp
+
+ai_stand
+
+ai_turn
+
+ChooseTurn
+vector dir
+vector newdir
+
+FacingIdeal
+float delta
+
+CheckAnyAttack
+
+ai_run_melee
+
+ai_run_missile
+
+ai_run_slide
+float ofs
+
+ai_run
+vector delta
+float axis
+float direct
+float ang_rint
+float ang_floor
+float ang_ceil
+
+CanDamage
+
+Killed
+entity oself
+
+T_Damage
+vector dir
+entity oldself
+float save
+float take
+
+T_RadiusDamage
+float points
+entity head
+vector org
+
+T_BeamDamage
+float points
+entity head
+
+SUB_regen
+
+noclass
+
+PlaceItem
+float oldz
+
+StartItem
+
+T_Heal
+
+item_health
+
+health_touch
+float amount
+string s
+
+item_megahealth_rot
+
+armor_touch
+float type
+float value
+float bit
+
+item_armor1
+
+item_armor2
+
+item_armorInv
+
+bound_other_ammo
+
+RankForWeapon
+
+Deathmatch_Weapon
+float or
+float nr
+
+weapon_touch
+float hadammo
+float best
+float new
+float old
+entity stemp
+float leave
+
+weapon_supershotgun
+
+weapon_nailgun
+
+weapon_supernailgun
+
+weapon_grenadelauncher
+
+weapon_rocketlauncher
+
+weapon_lightning
+
+ammo_touch
+entity stemp
+float best
+
+item_shells
+
+item_spikes
+
+item_rockets
+
+item_cells
+
+item_weapon
+
+key_touch
+entity stemp
+float best
+
+key_setsounds
+
+item_key1
+
+item_key2
+
+sigil_touch
+entity stemp
+float best
+
+item_sigil
+
+powerup_touch
+entity stemp
+float best
+
+item_artifact_invulnerability
+
+item_artifact_envirosuit
+
+item_artifact_invisibility
+
+item_artifact_super_damage
+
+func000243
+string globaldef001967
+float globaldef001968
+float globaldef001969
+float globaldef001970
+entity globaldef001971
+float globaldef001972
+
+func000244
+entity globaldef001981
+
+func000245
+
+func000246
+float globaldef001990
+
+func000247
+entity globaldef002003
+entity globaldef002004
+
+func000248
+
+func000249
+
+func000250
+
+func000251
+vector globaldef002029
+vector globaldef002033
+
+func000252
+vector globaldef002040
+
+func000253
+entity globaldef002053
+entity globaldef002054
+
+func000254
+
+func000255
+vector globaldef002069
+
+SpawnChunk
+
+ClearMultiDamage
+
+ApplyMultiDamage
+
+AddMultiDamage
+
+TraceAttack
+vector vel
+vector org
+
+FireBullets
+vector direction
+vector src
+
+W_FireShotgun
+vector dir
+
+W_FireSuperShotgun
+vector dir
+
+s_explode1
+
+s_explode2
+
+s_explode3
+
+s_explode4
+
+s_explode5
+
+s_explode6
+
+BecomeExplosion
+
+T_MissileTouch
+float damg
+
+W_FireRocket
+entity missile
+entity mpuff
+
+LightningDamage
+entity e1
+entity e2
+vector f
+
+W_FireLightning
+vector org
+float cells
+
+GrenadeExplode
+
+GrenadeTouch
+
+W_FireGrenade
+entity missile
+entity mpuff
+
+launch_spike
+
+W_FireSuperSpikes
+vector dir
+entity old
+
+W_FireSpikes
+vector dir
+entity old
+
+spike_touch
+float rand
+
+superspike_touch
+float rand
+
+W_SetCurrentAmmo
+
+W_BestWeapon
+float it
+
+W_CheckNoAmmo
+
+W_Attack
+float r
+
+W_ChangeWeapon
+float it
+float am
+float fl
+
+CheatCommand
+
+func000289
+float globaldef002254
+
+CycleWeaponReverseCommand
+float it
+float am
+
+ServerflagsCommand
+
+QuadCheat
+
+ImpulseCommands
+
+W_WeaponFrame
+
+SuperDamageSound
+
+main
+
+worldspawn
+
+StartFrame
+string globaldef002455
+entity globaldef002456
+string globaldef002457
+string globaldef002458
+float globaldef002459
+string globaldef002460
+float globaldef002461
+
+bodyque
+
+InitBodyQue
+entity e
+
+CopyToBodyQue
+
+func000302
+
+func000303
+
+func000304
+
+func000305
+
+func000306
+
+func000307
+
+func000308
+
+func000309
+
+func000310
+
+func000311
+
+func000312
+
+func000313
+
+func000314
+
+func000315
+
+func000316
+
+func000317
+
+func000318
+
+func000319
+
+func000320
+
+func000321
+
+func000322
+
+func000323
+
+func000324
+
+func000325
+vector globaldef002524
+
+func000326
+vector globaldef002532
+float globaldef002536
+
+func000327
+vector globaldef002540
+vector globaldef002544
+
+func000328
+
+func000329
+float globaldef002552
+float globaldef002553
+float globaldef002554
+
+func000330
+float globaldef002557
+vector globaldef002558
+
+func000331
+
+func000332
+
+func000333
+float globaldef002563
+vector globaldef002564
+vector globaldef002568
+
+func000334
+entity globaldef002574
+
+func000335
+entity globaldef002579
+vector globaldef002580
+float globaldef002584
+
+func000336
+
+func000337
+
+func000338
+
+func000339
+entity globaldef002621
+entity globaldef002622
+float globaldef002623
+
+func000340
+float globaldef002626
+entity globaldef002627
+
+func000341
+entity globaldef002642
+float globaldef002643
+
+func000342
+
+func000343
+
+func000344
+
+func000345
+string globaldef002652
+float globaldef002653
+
+func000346
+string globaldef002660
+float globaldef002661
+float globaldef002662
+
+func000347
+
+func000348
+float globaldef002685
+float globaldef002686
+float globaldef002687
+float globaldef002688
+float globaldef002689
+string globaldef002690
+
+func000349
+entity globaldef002699
+vector globaldef002700
+vector globaldef002704
+vector globaldef002708
+vector globaldef002712
+
+func000350
+entity globaldef002719
+float globaldef002720
+
+func000351
+vector globaldef002723
+
+func000352
+
+func000353
+entity globaldef002730
+entity globaldef002731
+entity globaldef002732
+float globaldef002733
+float globaldef002734
+float globaldef002735
+float globaldef002736
+float globaldef002737
+entity globaldef002738
+
+func000354
+
+func000355
+string globaldef002754
+string globaldef002755
+string globaldef002756
+string globaldef002757
+string globaldef002758
+
+func000356
+entity globaldef002762
+
+readytostart
+
+func000358
+entity globaldef002766
+
+setfullhealth
+
+func000360
+vector globaldef002772
+
+func000361
+entity globaldef002778
+
+func000362
+entity globaldef002781
+float globaldef002782
+
+func000363
+entity globaldef002787
+float globaldef002788
+
+func000364
+entity globaldef002792
+
+func000365
+string globaldef002798
+entity globaldef002799
+float globaldef002800
+
+func000366
+entity globaldef002821
+string globaldef002822
+
+entinfo
+entity globaldef002830
+
+func000368
+string globaldef002837
+
+func000369
+entity globaldef002843
+
+func000370
+float globaldef002845
+entity globaldef002846
+string globaldef002847
+
+func000371
+entity globaldef002854
+
+func000372
+
+info_intermission
+
+SetChangeParms
+
+SetNewParms
+
+DecodeLevelParms
+
+FindIntermission
+entity spot
+float cyc
+
+GotoNextMap
+
+ExitIntermission
+
+IntermissionThink
+
+execute_changelevel
+entity pos
+
+changelevel_touch
+entity pos
+
+trigger_changelevel
+
+respawn
+
+ClientKill
+
+CheckSpawnPoint
+
+func000387
+entity globaldef002899
+float globaldef002900
+
+func000388
+
+PutClientInServer
+entity globaldef002910
+float globaldef002911
+
+info_player_start
+
+info_player_start2
+
+testplayerstart
+
+info_player_deathmatch
+
+info_player_coop
+
+NextLevel
+entity o
+
+CheckRules
+float timelimit
+float fraglimit
+
+PlayerDeathThink
+entity old_self
+float forward
+
+PlayerJump
+vector start
+vector end
+
+WaterMove
+
+CheckWaterJump
+vector start
+vector end
+
+PlayerPreThink
+float globaldef002953
+float globaldef002954
+
+CheckPowerups
+
+PlayerPostThink
+float mspeed
+float aspeed
+float r
+
+ClientConnect
+entity globaldef002966
+float globaldef002967
+
+ClientDisconnect
+float globaldef002970
+float globaldef002971
+
+ClientObituary
+float globaldef002977
+string globaldef002978
+string globaldef002979
+float globaldef002980
+float globaldef002981
+string globaldef002982
+string globaldef002983
+string globaldef002984
+string globaldef002985
+string globaldef002986
+string globaldef002987
+string globaldef002988
+string globaldef002989
+string globaldef002990
+string globaldef002991
+string globaldef002992
+string globaldef002993
+string globaldef002994
+float globaldef002995
+string globaldef002996
+string globaldef002997
+string globaldef002998
+string globaldef002999
+string globaldef003000
+string globaldef003001
+string globaldef003002
+string globaldef003003
+string globaldef003004
+string globaldef003005
+string globaldef003006
+float globaldef003007
+
+player_stand1
+
+player_run
+
+player_shot1
+
+player_shot2
+
+player_shot3
+
+player_shot4
+
+player_shot5
+
+player_shot6
+
+player_axe1
+
+player_axe2
+
+player_axe3
+
+player_axe4
+
+player_axeb1
+
+player_axeb2
+
+player_axeb3
+
+player_axeb4
+
+player_axec1
+
+player_axec2
+
+player_axec3
+
+player_axec4
+
+player_axed1
+
+player_axed2
+
+player_axed3
+
+player_axed4
+
+player_nail1
+
+player_nail2
+
+player_light1
+
+player_light2
+
+player_rocket1
+
+player_rocket2
+
+player_rocket3
+
+player_rocket4
+
+player_rocket5
+
+player_rocket6
+
+PainSound
+float rs
+
+player_pain1
+
+player_pain2
+
+player_pain3
+
+player_pain4
+
+player_pain5
+
+player_pain6
+
+player_axpain1
+
+player_axpain2
+
+player_axpain3
+
+player_axpain4
+
+player_axpain5
+
+player_axpain6
+
+player_pain
+
+DeathBubblesSpawn
+entity bubble
+
+DeathBubbles
+entity bubble_spawner
+
+DeathSound
+float rs
+
+PlayerDead
+
+VelocityForDamage
+vector v
+
+func000460
+
+ThrowGib
+entity new
+
+ThrowHead
+
+GibPlayer
+
+PlayerDie
+float i
+
+set_suicide_frame
+
+player_diea1
+
+player_diea2
+
+player_diea3
+
+player_diea4
+
+player_diea5
+
+player_diea6
+
+player_diea7
+
+player_diea8
+
+player_diea9
+
+player_diea10
+
+player_diea11
+
+player_dieb1
+
+player_dieb2
+
+player_dieb3
+
+player_dieb4
+
+player_dieb5
+
+player_dieb6
+
+player_dieb7
+
+player_dieb8
+
+player_dieb9
+
+player_diec1
+
+player_diec2
+
+player_diec3
+
+player_diec4
+
+player_diec5
+
+player_diec6
+
+player_diec7
+
+player_diec8
+
+player_diec9
+
+player_diec10
+
+player_diec11
+
+player_diec12
+
+player_diec13
+
+player_diec14
+
+player_diec15
+
+player_died1
+
+player_died2
+
+player_died3
+
+player_died4
+
+player_died5
+
+player_died6
+
+player_died7
+
+player_died8
+
+player_died9
+
+player_diee1
+
+player_diee2
+
+player_diee3
+
+player_diee4
+
+player_diee5
+
+player_diee6
+
+player_diee7
+
+player_diee8
+
+player_diee9
+
+player_die_ax1
+
+player_die_ax2
+
+player_die_ax3
+
+player_die_ax4
+
+player_die_ax5
+
+player_die_ax6
+
+player_die_ax7
+
+player_die_ax8
+
+player_die_ax9
+
+monster_use
+
+monster_death_use
+entity ent
+entity otemp
+entity stemp
+
+walkmonster_start_go
+string stemp
+entity etemp
+
+walkmonster_start
+
+flymonster_start_go
+
+flymonster_start
+
+swimmonster_start_go
+
+swimmonster_start
+
+door_blocked
+
+door_hit_top
+
+door_hit_bottom
+
+door_go_down
+
+door_go_up
+
+door_fire
+entity oself
+entity starte
+
+door_use
+entity oself
+
+door_trigger_touch
+
+door_killed
+entity oself
+
+door_touch
+vector globaldef003336
+
+spawn_field
+entity trigger
+vector t1
+vector t2
+
+EntitiesTouching
+
+LinkDoors
+entity t
+entity starte
+vector cmins
+vector cmaxs
+
+func_door
+
+fd_secret_use
+float temp
+
+fd_secret_move1
+
+fd_secret_move2
+
+fd_secret_move3
+
+fd_secret_move4
+
+fd_secret_move5
+
+fd_secret_move6
+
+fd_secret_done
+
+secret_blocked
+
+secret_touch
+
+func_door_secret
+
+button_wait
+
+button_done
+
+button_return
+
+button_blocked
+
+button_fire
+
+button_use
+
+button_touch
+vector globaldef003427
+
+button_killed
+
+func_button
+float gtemp
+float ftemp
+
+trigger_reactivate
+
+func000571
+
+func000572
+
+func000573
+
+func000574
+
+func000575
+
+func000576
+
+trigger_multiple
+
+trigger_once
+
+trigger_relay
+
+trigger_secret
+
+counter_use
+string junk
+
+trigger_counter
+
+play_teleport
+float v
+string tmpstr
+
+spawn_tfog
+
+tdeath_touch
+
+spawn_tdeath
+entity death
+
+teleport_touch
+entity t
+vector org
+
+info_teleport_destination
+
+teleport_use
+
+trigger_teleport
+vector o
+
+trigger_skill_touch
+
+trigger_setskill
+
+trigger_onlyregistered_touch
+
+trigger_onlyregistered
+
+hurt_on
+
+hurt_touch
+
+trigger_hurt
+
+trigger_push_touch
+
+trigger_push
+
+trigger_monsterjump_touch
+
+trigger_monsterjump
+
+plat_spawn_inside_trigger
+entity trigger
+vector tmin
+vector tmax
+
+plat_hit_top
+
+plat_hit_bottom
+
+plat_go_down
+
+plat_go_up
+
+plat_center_touch
+
+plat_outside_touch
+
+plat_trigger_use
+
+plat_crush
+
+plat_use
+
+func_plat
+entity t
+
+train_blocked
+
+train_use
+
+train_wait
+
+train_next
+entity globaldef003554
+float globaldef003555
+
+func_train_find
+entity targ
+
+func_train
+
+misc_teleporttrain
+
+info_null
+
+info_notnull
+
+light_use
+
+light
+
+light_fluoro
+
+light_fluorospark
+
+light_globe
+
+FireAmbient
+
+light_torch_small_walltorch
+
+light_flame_large_yellow
+
+light_flame_small_yellow
+
+light_flame_small_white
+
+misc_fireball
+
+fire_fly
+entity fireball
+
+fire_touch
+
+barrel_explode
+
+misc_explobox
+float oldz
+
+misc_explobox2
+float oldz
+
+func000638
+
+func000639
+
+func000640
+
+trap_spikeshooter
+
+trap_shooter
+
+air_bubbles
+
+make_bubbles
+entity bubble
+
+bubble_split
+entity bubble
+
+bubble_remove
+
+bubble_bob
+float rnd1
+float rnd2
+float rnd3
+vector vtmp1
+vector modi
+
+viewthing
+
+func_wall_use
+
+func_wall
+
+func_illusionary
+
+func_episodegate
+
+func_bossgate
+
+ambient_suck_wind
+
+ambient_drone
+
+ambient_flouro_buzz
+
+ambient_drip
+
+ambient_comp_hum
+
+ambient_thunder
+
+ambient_light_buzz
+
+ambient_swamp1
+
+ambient_swamp2
+
+noise_think
+
+misc_noisemaker
+
+OgreGrenadeExplode
+
+OgreGrenadeTouch
+
+OgreFireGrenade
+entity missile
+entity mpuff
+
+chainsaw
+vector delta
+float ldmg
+
+ogre_stand1
+
+ogre_stand2
+
+ogre_stand3
+
+ogre_stand4
+
+ogre_stand5
+
+ogre_stand6
+
+ogre_stand7
+
+ogre_stand8
+
+ogre_stand9
+
+ogre_walk1
+
+ogre_walk2
+
+ogre_walk3
+
+ogre_walk4
+
+ogre_walk5
+
+ogre_walk6
+
+ogre_walk7
+
+ogre_walk8
+
+ogre_walk9
+
+ogre_walk10
+
+ogre_walk11
+
+ogre_walk12
+
+ogre_walk13
+
+ogre_walk14
+
+ogre_walk15
+
+ogre_walk16
+
+ogre_run1
+
+ogre_run2
+
+ogre_run3
+
+ogre_run4
+
+ogre_run5
+
+ogre_run6
+
+ogre_run7
+
+ogre_run8
+
+ogre_swing1
+
+ogre_swing2
+
+ogre_swing3
+
+ogre_swing4
+
+ogre_swing5
+
+ogre_swing6
+
+ogre_swing7
+
+ogre_swing8
+
+ogre_swing9
+
+ogre_swing10
+
+ogre_swing11
+
+ogre_swing12
+
+ogre_swing13
+
+ogre_swing14
+
+ogre_smash1
+
+ogre_smash2
+
+ogre_smash3
+
+ogre_smash4
+
+ogre_smash5
+
+ogre_smash6
+
+ogre_smash7
+
+ogre_smash8
+
+ogre_smash9
+
+ogre_smash10
+
+ogre_smash11
+
+ogre_smash12
+
+ogre_smash13
+
+ogre_smash14
+
+ogre_nail1
+
+ogre_nail2
+
+ogre_nail3
+
+ogre_nail4
+
+ogre_nail5
+
+ogre_nail6
+
+ogre_nail7
+
+ogre_pain1
+
+ogre_pain2
+
+ogre_pain3
+
+ogre_pain4
+
+ogre_pain5
+
+ogre_painb1
+
+ogre_painb2
+
+ogre_painb3
+
+ogre_painc1
+
+ogre_painc2
+
+ogre_painc3
+
+ogre_painc4
+
+ogre_painc5
+
+ogre_painc6
+
+ogre_paind1
+
+ogre_paind2
+
+ogre_paind3
+
+ogre_paind4
+
+ogre_paind5
+
+ogre_paind6
+
+ogre_paind7
+
+ogre_paind8
+
+ogre_paind9
+
+ogre_paind10
+
+ogre_paind11
+
+ogre_paind12
+
+ogre_paind13
+
+ogre_paind14
+
+ogre_paind15
+
+ogre_paind16
+
+ogre_paine1
+
+ogre_paine2
+
+ogre_paine3
+
+ogre_paine4
+
+ogre_paine5
+
+ogre_paine6
+
+ogre_paine7
+
+ogre_paine8
+
+ogre_paine9
+
+ogre_paine10
+
+ogre_paine11
+
+ogre_paine12
+
+ogre_paine13
+
+ogre_paine14
+
+ogre_paine15
+
+ogre_pain
+float r
+
+func000783
+
+func000784
+
+func000785
+
+func000786
+
+func000787
+
+func000788
+
+func000789
+
+func000790
+
+func000791
+
+func000792
+
+func000793
+
+func000794
+
+func000795
+
+func000796
+
+func000797
+
+func000798
+
+func000799
+
+func000800
+
+func000801
+
+func000802
+
+func000803
+
+func000804
+
+func000805
+
+func000806
+
+func000807
+
+func000808
+
+func000809
+
+monster_ogre
+
+monster_ogre_marksman
+
+demon1_stand1
+
+demon1_stand2
+
+demon1_stand3
+
+demon1_stand4
+
+demon1_stand5
+
+demon1_stand6
+
+demon1_stand7
+
+demon1_stand8
+
+demon1_stand9
+
+demon1_stand10
+
+demon1_stand11
+
+demon1_stand12
+
+demon1_stand13
+
+demon1_walk1
+
+demon1_walk2
+
+demon1_walk3
+
+demon1_walk4
+
+demon1_walk5
+
+demon1_walk6
+
+demon1_walk7
+
+demon1_walk8
+
+demon1_run1
+
+demon1_run2
+
+demon1_run3
+
+demon1_run4
+
+demon1_run5
+
+demon1_run6
+
+demon1_jump1
+
+demon1_jump2
+
+demon1_jump3
+
+demon1_jump4
+
+demon1_jump5
+
+demon1_jump6
+
+demon1_jump7
+
+demon1_jump8
+
+demon1_jump9
+
+demon1_jump10
+
+demon1_jump11
+
+demon1_jump12
+
+demon1_atta1
+
+demon1_atta2
+
+demon1_atta3
+
+demon1_atta4
+
+demon1_atta5
+
+demon1_atta6
+
+demon1_atta7
+
+demon1_atta8
+
+demon1_atta9
+
+demon1_atta10
+
+demon1_atta11
+
+demon1_atta12
+
+demon1_atta13
+
+demon1_atta14
+
+demon1_atta15
+
+demon1_pain1
+
+demon1_pain2
+
+demon1_pain3
+
+demon1_pain4
+
+demon1_pain5
+
+demon1_pain6
+
+demon1_pain
+
+demon1_die1
+
+demon1_die2
+
+demon1_die3
+
+demon1_die4
+
+demon1_die5
+
+demon1_die6
+
+demon1_die7
+
+demon1_die8
+
+demon1_die9
+
+demon_die
+
+Demon_MeleeAttack
+
+monster_demon1
+
+CheckDemonMelee
+
+CheckDemonJump
+vector dist
+float d
+
+DemonCheckAttack
+vector vec
+
+Demon_Melee
+float ldmg
+vector delta
+
+Demon_JumpTouch
+float ldmg
+
+sham_stand1
+
+sham_stand2
+
+sham_stand3
+
+sham_stand4
+
+sham_stand5
+
+sham_stand6
+
+sham_stand7
+
+sham_stand8
+
+sham_stand9
+
+sham_stand10
+
+sham_stand11
+
+sham_stand12
+
+sham_stand13
+
+sham_stand14
+
+sham_stand15
+
+sham_stand16
+
+sham_stand17
+
+sham_walk1
+
+sham_walk2
+
+sham_walk3
+
+sham_walk4
+
+sham_walk5
+
+sham_walk6
+
+sham_walk7
+
+sham_walk8
+
+sham_walk9
+
+sham_walk10
+
+sham_walk11
+
+sham_walk12
+
+sham_run1
+
+sham_run2
+
+sham_run3
+
+sham_run4
+
+sham_run5
+
+sham_run6
+
+sham_smash1
+
+sham_smash2
+
+sham_smash3
+
+sham_smash4
+
+sham_smash5
+
+sham_smash6
+
+sham_smash7
+
+sham_smash8
+
+sham_smash9
+
+sham_smash10
+vector delta
+float ldmg
+
+sham_smash11
+
+sham_smash12
+
+ShamClaw
+vector delta
+float ldmg
+
+sham_swingl1
+
+sham_swingl2
+
+sham_swingl3
+
+sham_swingl4
+
+sham_swingl5
+
+sham_swingl6
+
+sham_swingl7
+
+sham_swingl8
+
+sham_swingl9
+
+sham_swingr1
+
+sham_swingr2
+
+sham_swingr3
+
+sham_swingr4
+
+sham_swingr5
+
+sham_swingr6
+
+sham_swingr7
+
+sham_swingr8
+
+sham_swingr9
+
+sham_melee
+float chance
+
+CastLightning
+vector org
+vector dir
+
+sham_magic1
+
+sham_magic2
+
+sham_magic3
+entity o
+
+sham_magic4
+
+sham_magic5
+
+sham_magic6
+
+sham_magic9
+
+sham_magic10
+
+sham_magic11
+
+sham_magic12
+
+sham_pain1
+
+sham_pain2
+
+sham_pain3
+
+sham_pain4
+
+sham_pain5
+
+sham_pain6
+
+sham_pain
+
+sham_death1
+
+sham_death2
+
+sham_death3
+
+sham_death4
+
+sham_death5
+
+sham_death6
+
+sham_death7
+
+sham_death8
+
+sham_death9
+
+sham_death10
+
+sham_death11
+
+sham_die
+
+monster_shambler
+
+knight_stand1
+
+knight_stand2
+
+knight_stand3
+
+knight_stand4
+
+knight_stand5
+
+knight_stand6
+
+knight_stand7
+
+knight_stand8
+
+knight_stand9
+
+knight_walk1
+
+knight_walk2
+
+knight_walk3
+
+knight_walk4
+
+knight_walk5
+
+knight_walk6
+
+knight_walk7
+
+knight_walk8
+
+knight_walk9
+
+knight_walk10
+
+knight_walk11
+
+knight_walk12
+
+knight_walk13
+
+knight_walk14
+
+knight_run1
+
+knight_run2
+
+knight_run3
+
+knight_run4
+
+knight_run5
+
+knight_run6
+
+knight_run7
+
+knight_run8
+
+knight_runatk1
+
+knight_runatk2
+
+knight_runatk3
+
+knight_runatk4
+
+knight_runatk5
+
+knight_runatk6
+
+knight_runatk7
+
+knight_runatk8
+
+knight_runatk9
+
+knight_runatk10
+
+knight_runatk11
+
+knight_atk1
+
+knight_atk2
+
+knight_atk3
+
+knight_atk4
+
+knight_atk5
+
+knight_atk6
+
+knight_atk7
+
+knight_atk8
+
+knight_atk9
+
+knight_atk10
+
+knight_pain1
+
+knight_pain2
+
+knight_pain3
+
+knight_painb1
+
+knight_painb2
+
+knight_painb3
+
+knight_painb4
+
+knight_painb5
+
+knight_painb6
+
+knight_painb7
+
+knight_painb8
+
+knight_painb9
+
+knight_painb10
+
+knight_painb11
+
+knight_pain
+float r
+
+knight_bow1
+
+knight_bow2
+
+knight_bow3
+
+knight_bow4
+
+knight_bow5
+
+knight_bow6
+
+knight_bow7
+
+knight_bow8
+
+knight_bow9
+
+knight_bow10
+
+knight_die1
+
+knight_die2
+
+knight_die3
+
+knight_die4
+
+knight_die5
+
+knight_die6
+
+knight_die7
+
+knight_die8
+
+knight_die9
+
+knight_die10
+
+knight_dieb1
+
+knight_dieb2
+
+knight_dieb3
+
+knight_dieb4
+
+knight_dieb5
+
+knight_dieb6
+
+knight_dieb7
+
+knight_dieb8
+
+knight_dieb9
+
+knight_dieb10
+
+knight_dieb11
+
+knight_die
+
+monster_knight
+
+army_stand1
+
+army_stand2
+
+army_stand3
+
+army_stand4
+
+army_stand5
+
+army_stand6
+
+army_stand7
+
+army_stand8
+
+army_walk1
+
+army_walk2
+
+army_walk3
+
+army_walk4
+
+army_walk5
+
+army_walk6
+
+army_walk7
+
+army_walk8
+
+army_walk9
+
+army_walk10
+
+army_walk11
+
+army_walk12
+
+army_walk13
+
+army_walk14
+
+army_walk15
+
+army_walk16
+
+army_walk17
+
+army_walk18
+
+army_walk19
+
+army_walk20
+
+army_walk21
+
+army_walk22
+
+army_walk23
+
+army_walk24
+
+army_run1
+
+army_run2
+
+army_run3
+
+army_run4
+
+army_run5
+
+army_run6
+
+army_run7
+
+army_run8
+
+army_atk1
+
+army_atk2
+
+army_atk3
+
+army_atk4
+
+army_atk5
+
+army_atk6
+
+army_atk7
+
+army_atk8
+
+army_atk9
+
+army_pain1
+
+army_pain2
+
+army_pain3
+
+army_pain4
+
+army_pain5
+
+army_pain6
+
+army_painb1
+
+army_painb2
+
+army_painb3
+
+army_painb4
+
+army_painb5
+
+army_painb6
+
+army_painb7
+
+army_painb8
+
+army_painb9
+
+army_painb10
+
+army_painb11
+
+army_painb12
+
+army_painb13
+
+army_painb14
+
+army_painc1
+
+army_painc2
+
+army_painc3
+
+army_painc4
+
+army_painc5
+
+army_painc6
+
+army_painc7
+
+army_painc8
+
+army_painc9
+
+army_painc10
+
+army_painc11
+
+army_painc12
+
+army_painc13
+
+army_pain
+float r
+
+army_fire
+vector dir
+entity en
+
+army_die1
+
+army_die2
+
+army_die3
+
+army_die4
+
+army_die5
+
+army_die6
+
+army_die7
+
+army_die8
+
+army_die9
+
+army_die10
+
+army_cdie1
+
+army_cdie2
+
+army_cdie3
+
+army_cdie4
+
+army_cdie5
+
+army_cdie6
+
+army_cdie7
+
+army_cdie8
+
+army_cdie9
+
+army_cdie10
+
+army_cdie11
+
+army_die
+
+monster_army
+
+LaunchMissile
+vector vec
+vector move
+float fly
+
+WizardCheckAttack
+vector spot1
+vector spot2
+entity targ
+float chance
+
+WizardAttackFinished
+
+Wiz_FastFire
+vector vec
+vector dst
+
+Wiz_StartFast
+entity missile
+
+Wiz_idlesound
+float wr
+
+wiz_stand1
+
+wiz_stand2
+
+wiz_stand3
+
+wiz_stand4
+
+wiz_stand5
+
+wiz_stand6
+
+wiz_stand7
+
+wiz_stand8
+
+wiz_walk1
+
+wiz_walk2
+
+wiz_walk3
+
+wiz_walk4
+
+wiz_walk5
+
+wiz_walk6
+
+wiz_walk7
+
+wiz_walk8
+
+wiz_side1
+
+wiz_side2
+
+wiz_side3
+
+wiz_side4
+
+wiz_side5
+
+wiz_side6
+
+wiz_side7
+
+wiz_side8
+
+wiz_run1
+
+wiz_run2
+
+wiz_run3
+
+wiz_run4
+
+wiz_run5
+
+wiz_run6
+
+wiz_run7
+
+wiz_run8
+
+wiz_run9
+
+wiz_run10
+
+wiz_run11
+
+wiz_run12
+
+wiz_run13
+
+wiz_run14
+
+wiz_fast1
+
+wiz_fast2
+
+wiz_fast3
+
+wiz_fast4
+
+wiz_fast5
+
+wiz_fast6
+
+wiz_fast7
+
+wiz_fast8
+
+wiz_fast9
+
+wiz_fast10
+
+wiz_pain1
+
+wiz_pain2
+
+wiz_pain3
+
+wiz_pain4
+
+wiz_death1
+
+wiz_death2
+
+wiz_death3
+
+wiz_death4
+
+wiz_death5
+
+wiz_death6
+
+wiz_death7
+
+wiz_death8
+
+wiz_die
+
+Wiz_Pain
+
+Wiz_Missile
+
+monster_wizard
+
+dog_bite
+vector delta
+float ldmg
+
+Dog_JumpTouch
+float ldmg
+
+dog_stand1
+
+dog_stand2
+
+dog_stand3
+
+dog_stand4
+
+dog_stand5
+
+dog_stand6
+
+dog_stand7
+
+dog_stand8
+
+dog_stand9
+
+dog_walk1
+
+dog_walk2
+
+dog_walk3
+
+dog_walk4
+
+dog_walk5
+
+dog_walk6
+
+dog_walk7
+
+dog_walk8
+
+dog_run1
+
+dog_run2
+
+dog_run3
+
+dog_run4
+
+dog_run5
+
+dog_run6
+
+dog_run7
+
+dog_run8
+
+dog_run9
+
+dog_run10
+
+dog_run11
+
+dog_run12
+
+dog_atta1
+
+dog_atta2
+
+dog_atta3
+
+dog_atta4
+
+dog_atta5
+
+dog_atta6
+
+dog_atta7
+
+dog_atta8
+
+dog_leap1
+
+dog_leap2
+
+dog_leap3
+
+dog_leap4
+
+dog_leap5
+
+dog_leap6
+
+dog_leap7
+
+dog_leap8
+
+dog_leap9
+
+dog_pain1
+
+dog_pain2
+
+dog_pain3
+
+dog_pain4
+
+dog_pain5
+
+dog_pain6
+
+dog_painb1
+
+dog_painb2
+
+dog_painb3
+
+dog_painb4
+
+dog_painb5
+
+dog_painb6
+
+dog_painb7
+
+dog_painb8
+
+dog_painb9
+
+dog_painb10
+
+dog_painb11
+
+dog_painb12
+
+dog_painb13
+
+dog_painb14
+
+dog_painb15
+
+dog_painb16
+
+dog_pain
+
+dog_die1
+
+dog_die2
+
+dog_die3
+
+dog_die4
+
+dog_die5
+
+dog_die6
+
+dog_die7
+
+dog_die8
+
+dog_die9
+
+dog_dieb1
+
+dog_dieb2
+
+dog_dieb3
+
+dog_dieb4
+
+dog_dieb5
+
+dog_dieb6
+
+dog_dieb7
+
+dog_dieb8
+
+dog_dieb9
+
+dog_die
+
+CheckDogMelee
+
+CheckDogJump
+vector dist
+float d
+
+DogCheckAttack
+vector vec
+
+monster_dog
+
+zombie_stand1
+
+zombie_stand2
+
+zombie_stand3
+
+zombie_stand4
+
+zombie_stand5
+
+zombie_stand6
+
+zombie_stand7
+
+zombie_stand8
+
+zombie_stand9
+
+zombie_stand10
+
+zombie_stand11
+
+zombie_stand12
+
+zombie_stand13
+
+zombie_stand14
+
+zombie_stand15
+
+zombie_cruc1
+
+zombie_cruc2
+
+zombie_cruc3
+
+zombie_cruc4
+
+zombie_cruc5
+
+zombie_cruc6
+
+zombie_walk1
+
+zombie_walk2
+
+zombie_walk3
+
+zombie_walk4
+
+zombie_walk5
+
+zombie_walk6
+
+zombie_walk7
+
+zombie_walk8
+
+zombie_walk9
+
+zombie_walk10
+
+zombie_walk11
+
+zombie_walk12
+
+zombie_walk13
+
+zombie_walk14
+
+zombie_walk15
+
+zombie_walk16
+
+zombie_walk17
+
+zombie_walk18
+
+zombie_walk19
+
+zombie_run1
+
+zombie_run2
+
+zombie_run3
+
+zombie_run4
+
+zombie_run5
+
+zombie_run6
+
+zombie_run7
+
+zombie_run8
+
+zombie_run9
+
+zombie_run10
+
+zombie_run11
+
+zombie_run12
+
+zombie_run13
+
+zombie_run14
+
+zombie_run15
+
+zombie_run16
+
+zombie_run17
+
+zombie_run18
+
+ZombieGrenadeTouch
+
+ZombieFireGrenade
+entity missile
+entity mpuff
+vector org
+
+zombie_atta1
+
+zombie_atta2
+
+zombie_atta3
+
+zombie_atta4
+
+zombie_atta5
+
+zombie_atta6
+
+zombie_atta7
+
+zombie_atta8
+
+zombie_atta9
+
+zombie_atta10
+
+zombie_atta11
+
+zombie_atta12
+
+zombie_atta13
+
+zombie_attb1
+
+zombie_attb2
+
+zombie_attb3
+
+zombie_attb4
+
+zombie_attb5
+
+zombie_attb6
+
+zombie_attb7
+
+zombie_attb8
+
+zombie_attb9
+
+zombie_attb10
+
+zombie_attb11
+
+zombie_attb12
+
+zombie_attb13
+
+zombie_attb14
+
+zombie_attc1
+
+zombie_attc2
+
+zombie_attc3
+
+zombie_attc4
+
+zombie_attc5
+
+zombie_attc6
+
+zombie_attc7
+
+zombie_attc8
+
+zombie_attc9
+
+zombie_attc10
+
+zombie_attc11
+
+zombie_attc12
+
+zombie_missile
+float r
+
+zombie_paina1
+
+zombie_paina2
+
+zombie_paina3
+
+zombie_paina4
+
+zombie_paina5
+
+zombie_paina6
+
+zombie_paina7
+
+zombie_paina8
+
+zombie_paina9
+
+zombie_paina10
+
+zombie_paina11
+
+zombie_paina12
+
+zombie_painb1
+
+zombie_painb2
+
+zombie_painb3
+
+zombie_painb4
+
+zombie_painb5
+
+zombie_painb6
+
+zombie_painb7
+
+zombie_painb8
+
+zombie_painb9
+
+zombie_painb10
+
+zombie_painb11
+
+zombie_painb12
+
+zombie_painb13
+
+zombie_painb14
+
+zombie_painb15
+
+zombie_painb16
+
+zombie_painb17
+
+zombie_painb18
+
+zombie_painb19
+
+zombie_painb20
+
+zombie_painb21
+
+zombie_painb22
+
+zombie_painb23
+
+zombie_painb24
+
+zombie_painb25
+
+zombie_painb26
+
+zombie_painb27
+
+zombie_painb28
+
+zombie_painc1
+
+zombie_painc2
+
+zombie_painc3
+
+zombie_painc4
+
+zombie_painc5
+
+zombie_painc6
+
+zombie_painc7
+
+zombie_painc8
+
+zombie_painc9
+
+zombie_painc10
+
+zombie_painc11
+
+zombie_painc12
+
+zombie_painc13
+
+zombie_painc14
+
+zombie_painc15
+
+zombie_painc16
+
+zombie_painc17
+
+zombie_painc18
+
+zombie_paind1
+
+zombie_paind2
+
+zombie_paind3
+
+zombie_paind4
+
+zombie_paind5
+
+zombie_paind6
+
+zombie_paind7
+
+zombie_paind8
+
+zombie_paind9
+
+zombie_paind10
+
+zombie_paind11
+
+zombie_paind12
+
+zombie_paind13
+
+zombie_paine1
+
+zombie_paine2
+
+zombie_paine3
+
+zombie_paine4
+
+zombie_paine5
+
+zombie_paine6
+
+zombie_paine7
+
+zombie_paine8
+
+zombie_paine9
+
+zombie_paine10
+
+zombie_paine11
+
+zombie_paine12
+
+zombie_paine13
+
+zombie_paine14
+
+zombie_paine15
+
+zombie_paine16
+
+zombie_paine17
+
+zombie_paine18
+
+zombie_paine19
+
+zombie_paine20
+
+zombie_paine21
+
+zombie_paine22
+
+zombie_paine23
+
+zombie_paine24
+
+zombie_paine25
+
+zombie_paine26
+
+zombie_paine27
+
+zombie_paine28
+
+zombie_paine29
+
+zombie_paine30
+
+zombie_die
+
+zombie_pain
+float r
+
+monster_zombie
+
+boss_face
+
+boss_rise1
+
+boss_rise2
+
+boss_rise3
+
+boss_rise4
+
+boss_rise5
+
+boss_rise6
+
+boss_rise7
+
+boss_rise8
+
+boss_rise9
+
+boss_rise10
+
+boss_rise11
+
+boss_rise12
+
+boss_rise13
+
+boss_rise14
+
+boss_rise15
+
+boss_rise16
+
+boss_rise17
+
+boss_idle1
+
+boss_idle2
+
+boss_idle3
+
+boss_idle4
+
+boss_idle5
+
+boss_idle6
+
+boss_idle7
+
+boss_idle8
+
+boss_idle9
+
+boss_idle10
+
+boss_idle11
+
+boss_idle12
+
+boss_idle13
+
+boss_idle14
+
+boss_idle15
+
+boss_idle16
+
+boss_idle17
+
+boss_idle18
+
+boss_idle19
+
+boss_idle20
+
+boss_idle21
+
+boss_idle22
+
+boss_idle23
+
+boss_idle24
+
+boss_idle25
+
+boss_idle26
+
+boss_idle27
+
+boss_idle28
+
+boss_idle29
+
+boss_idle30
+
+boss_idle31
+
+boss_missile1
+
+boss_missile2
+
+boss_missile3
+
+boss_missile4
+
+boss_missile5
+
+boss_missile6
+
+boss_missile7
+
+boss_missile8
+
+boss_missile9
+
+boss_missile10
+
+boss_missile11
+
+boss_missile12
+
+boss_missile13
+
+boss_missile14
+
+boss_missile15
+
+boss_missile16
+
+boss_missile17
+
+boss_missile18
+
+boss_missile19
+
+boss_missile20
+
+boss_missile21
+
+boss_missile22
+
+boss_missile23
+
+boss_shocka1
+
+boss_shocka2
+
+boss_shocka3
+
+boss_shocka4
+
+boss_shocka5
+
+boss_shocka6
+
+boss_shocka7
+
+boss_shocka8
+
+boss_shocka9
+
+boss_shocka10
+
+boss_shockb1
+
+boss_shockb2
+
+boss_shockb3
+
+boss_shockb4
+
+boss_shockb5
+
+boss_shockb6
+
+boss_shockb7
+
+boss_shockb8
+
+boss_shockb9
+
+boss_shockb10
+
+boss_shockc1
+
+boss_shockc2
+
+boss_shockc3
+
+boss_shockc4
+
+boss_shockc5
+
+boss_shockc6
+
+boss_shockc7
+
+boss_shockc8
+
+boss_shockc9
+
+boss_shockc10
+
+boss_death1
+
+boss_death2
+
+boss_death3
+
+boss_death4
+
+boss_death5
+
+boss_death6
+
+boss_death7
+
+boss_death8
+
+boss_death9
+
+boss_death10
+
+boss_missile
+vector offang
+vector org
+vector vec
+vector d
+float t
+
+boss_awake
+
+monster_boss
+
+lightning_fire
+vector p1
+vector p2
+
+lightning_use
+
+event_lightning
+
+tbaby_stand1
+
+tbaby_hang1
+
+tbaby_walk1
+
+tbaby_walk2
+
+tbaby_walk3
+
+tbaby_walk4
+
+tbaby_walk5
+
+tbaby_walk6
+
+tbaby_walk7
+
+tbaby_walk8
+
+tbaby_walk9
+
+tbaby_walk10
+
+tbaby_walk11
+
+tbaby_walk12
+
+tbaby_walk13
+
+tbaby_walk14
+
+tbaby_walk15
+
+tbaby_walk16
+
+tbaby_walk17
+
+tbaby_walk18
+
+tbaby_walk19
+
+tbaby_walk20
+
+tbaby_walk21
+
+tbaby_walk22
+
+tbaby_walk23
+
+tbaby_walk24
+
+tbaby_walk25
+
+tbaby_run1
+
+tbaby_run2
+
+tbaby_run3
+
+tbaby_run4
+
+tbaby_run5
+
+tbaby_run6
+
+tbaby_run7
+
+tbaby_run8
+
+tbaby_run9
+
+tbaby_run10
+
+tbaby_run11
+
+tbaby_run12
+
+tbaby_run13
+
+tbaby_run14
+
+tbaby_run15
+
+tbaby_run16
+
+tbaby_run17
+
+tbaby_run18
+
+tbaby_run19
+
+tbaby_run20
+
+tbaby_run21
+
+tbaby_run22
+
+tbaby_run23
+
+tbaby_run24
+
+tbaby_run25
+
+Tar_JumpTouch
+float ldmg
+
+tbaby_fly1
+
+tbaby_fly2
+
+tbaby_fly3
+
+tbaby_fly4
+
+tbaby_jump1
+
+tbaby_jump2
+
+tbaby_jump3
+
+tbaby_jump4
+
+tbaby_jump5
+
+tbaby_jump6
+
+tbaby_die1
+
+tbaby_die2
+
+monster_tarbaby
+
+hknight_shot
+vector offang
+vector org
+vector vec
+
+CheckForCharge
+
+CheckContinueCharge
+
+hknight_stand1
+
+hknight_stand2
+
+hknight_stand3
+
+hknight_stand4
+
+hknight_stand5
+
+hknight_stand6
+
+hknight_stand7
+
+hknight_stand8
+
+hknight_stand9
+
+hknight_walk1
+
+hknight_walk2
+
+hknight_walk3
+
+hknight_walk4
+
+hknight_walk5
+
+hknight_walk6
+
+hknight_walk7
+
+hknight_walk8
+
+hknight_walk9
+
+hknight_walk10
+
+hknight_walk11
+
+hknight_walk12
+
+hknight_walk13
+
+hknight_walk14
+
+hknight_walk15
+
+hknight_walk16
+
+hknight_walk17
+
+hknight_walk18
+
+hknight_walk19
+
+hknight_walk20
+
+hknight_run1
+
+hknight_run2
+
+hknight_run3
+
+hknight_run4
+
+hknight_run5
+
+hknight_run6
+
+hknight_run7
+
+hknight_run8
+
+hknight_pain1
+
+hknight_pain2
+
+hknight_pain3
+
+hknight_pain4
+
+hknight_pain5
+
+hknight_die1
+
+hknight_die2
+
+hknight_die3
+
+hknight_die4
+
+hknight_die5
+
+hknight_die6
+
+hknight_die7
+
+hknight_die8
+
+hknight_die9
+
+hknight_die10
+
+hknight_die11
+
+hknight_die12
+
+hknight_dieb1
+
+hknight_dieb2
+
+hknight_dieb3
+
+hknight_dieb4
+
+hknight_dieb5
+
+hknight_dieb6
+
+hknight_dieb7
+
+hknight_dieb8
+
+hknight_dieb9
+
+hknight_die
+
+hknight_magica1
+
+hknight_magica2
+
+hknight_magica3
+
+hknight_magica4
+
+hknight_magica5
+
+hknight_magica6
+
+hknight_magica7
+
+hknight_magica8
+
+hknight_magica9
+
+hknight_magica10
+
+hknight_magica11
+
+hknight_magica12
+
+hknight_magica13
+
+hknight_magica14
+
+hknight_magicb1
+
+hknight_magicb2
+
+hknight_magicb3
+
+hknight_magicb4
+
+hknight_magicb5
+
+hknight_magicb6
+
+hknight_magicb7
+
+hknight_magicb8
+
+hknight_magicb9
+
+hknight_magicb10
+
+hknight_magicb11
+
+hknight_magicb12
+
+hknight_magicb13
+
+hknight_magicc1
+
+hknight_magicc2
+
+hknight_magicc3
+
+hknight_magicc4
+
+hknight_magicc5
+
+hknight_magicc6
+
+hknight_magicc7
+
+hknight_magicc8
+
+hknight_magicc9
+
+hknight_magicc10
+
+hknight_magicc11
+
+hknight_char_a1
+
+hknight_char_a2
+
+hknight_char_a3
+
+hknight_char_a4
+
+hknight_char_a5
+
+hknight_char_a6
+
+hknight_char_a7
+
+hknight_char_a8
+
+hknight_char_a9
+
+hknight_char_a10
+
+hknight_char_a11
+
+hknight_char_a12
+
+hknight_char_a13
+
+hknight_char_a14
+
+hknight_char_a15
+
+hknight_char_a16
+
+hknight_char_b1
+
+hknight_char_b2
+
+hknight_char_b3
+
+hknight_char_b4
+
+hknight_char_b5
+
+hknight_char_b6
+
+hknight_slice1
+
+hknight_slice2
+
+hknight_slice3
+
+hknight_slice4
+
+hknight_slice5
+
+hknight_slice6
+
+hknight_slice7
+
+hknight_slice8
+
+hknight_slice9
+
+hknight_slice10
+
+hknight_smash1
+
+hknight_smash2
+
+hknight_smash3
+
+hknight_smash4
+
+hknight_smash5
+
+hknight_smash6
+
+hknight_smash7
+
+hknight_smash8
+
+hknight_smash9
+
+hknight_smash10
+
+hknight_smash11
+
+hknight_watk1
+
+hknight_watk2
+
+hknight_watk3
+
+hknight_watk4
+
+hknight_watk5
+
+hknight_watk6
+
+hknight_watk7
+
+hknight_watk8
+
+hknight_watk9
+
+hknight_watk10
+
+hknight_watk11
+
+hknight_watk12
+
+hknight_watk13
+
+hknight_watk14
+
+hknight_watk15
+
+hknight_watk16
+
+hknight_watk17
+
+hknight_watk18
+
+hknight_watk19
+
+hknight_watk20
+
+hknight_watk21
+
+hknight_watk22
+
+hk_idle_sound
+
+hknight_pain
+
+hknight_melee
+
+monster_hell_knight
+
+f_stand1
+
+f_stand2
+
+f_stand3
+
+f_stand4
+
+f_stand5
+
+f_stand6
+
+f_stand7
+
+f_stand8
+
+f_stand9
+
+f_stand10
+
+f_stand11
+
+f_stand12
+
+f_stand13
+
+f_stand14
+
+f_stand15
+
+f_stand16
+
+f_stand17
+
+f_stand18
+
+f_walk1
+
+f_walk2
+
+f_walk3
+
+f_walk4
+
+f_walk5
+
+f_walk6
+
+f_walk7
+
+f_walk8
+
+f_walk9
+
+f_walk10
+
+f_walk11
+
+f_walk12
+
+f_walk13
+
+f_walk14
+
+f_walk15
+
+f_walk16
+
+f_walk17
+
+f_walk18
+
+f_run1
+
+f_run2
+
+f_run3
+
+f_run4
+
+f_run5
+
+f_run6
+
+f_run7
+
+f_run8
+
+f_run9
+
+fish_melee
+vector delta
+float ldmg
+
+f_attack1
+
+f_attack2
+
+f_attack3
+
+f_attack4
+
+f_attack5
+
+f_attack6
+
+f_attack7
+
+f_attack8
+
+f_attack9
+
+f_attack10
+
+f_attack11
+
+f_attack12
+
+f_attack13
+
+f_attack14
+
+f_attack15
+
+f_attack16
+
+f_attack17
+
+f_attack18
+
+f_death1
+
+f_death2
+
+f_death3
+
+f_death4
+
+f_death5
+
+f_death6
+
+f_death7
+
+f_death8
+
+f_death9
+
+f_death10
+
+f_death11
+
+f_death12
+
+f_death13
+
+f_death14
+
+f_death15
+
+f_death16
+
+f_death17
+
+f_death18
+
+f_death19
+
+f_death20
+
+f_death21
+
+f_pain1
+
+f_pain2
+
+f_pain3
+
+f_pain4
+
+f_pain5
+
+f_pain6
+
+f_pain7
+
+f_pain8
+
+f_pain9
+
+fish_pain
+
+monster_fish
+
+shal_stand
+
+shal_walk1
+
+shal_walk2
+
+shal_walk3
+
+shal_walk4
+
+shal_walk5
+
+shal_walk6
+
+shal_walk7
+
+shal_walk8
+
+shal_walk9
+
+shal_walk10
+
+shal_walk11
+
+shal_walk12
+
+shal_run1
+
+shal_run2
+
+shal_run3
+
+shal_run4
+
+shal_run5
+
+shal_run6
+
+shal_run7
+
+shal_run8
+
+shal_run9
+
+shal_run10
+
+shal_run11
+
+shal_run12
+
+shal_attack1
+
+shal_attack2
+
+shal_attack3
+
+shal_attack4
+
+shal_attack5
+
+shal_attack6
+
+shal_attack7
+
+shal_attack8
+
+shal_attack9
+
+shal_attack10
+
+shal_attack11
+
+shal_pain1
+
+shal_pain2
+
+shal_pain3
+
+shal_pain4
+
+shal_pain5
+
+shal_death1
+
+shal_death2
+
+shal_death3
+
+shal_death4
+
+shal_death5
+
+shal_death6
+
+shal_death7
+
+shalrath_pain
+
+shalrath_die
+
+ShalMissile
+entity missile
+vector dir
+float dist
+float flytime
+
+ShalHome
+vector dir
+vector vtemp
+
+ShalMissileTouch
+
+monster_shalrath
+
+Laser_Touch
+vector org
+
+LaunchLaser
+
+enforcer_fire
+vector org
+
+enf_stand1
+
+enf_stand2
+
+enf_stand3
+
+enf_stand4
+
+enf_stand5
+
+enf_stand6
+
+enf_stand7
+
+enf_walk1
+
+enf_walk2
+
+enf_walk3
+
+enf_walk4
+
+enf_walk5
+
+enf_walk6
+
+enf_walk7
+
+enf_walk8
+
+enf_walk9
+
+enf_walk10
+
+enf_walk11
+
+enf_walk12
+
+enf_walk13
+
+enf_walk14
+
+enf_walk15
+
+enf_walk16
+
+enf_run1
+
+enf_run2
+
+enf_run3
+
+enf_run4
+
+enf_run5
+
+enf_run6
+
+enf_run7
+
+enf_run8
+
+enf_atk1
+
+enf_atk2
+
+enf_atk3
+
+enf_atk4
+
+enf_atk5
+
+enf_atk6
+
+enf_atk7
+
+enf_atk8
+
+enf_atk9
+
+enf_atk10
+
+enf_atk11
+
+enf_atk12
+
+enf_atk13
+
+enf_atk14
+
+enf_paina1
+
+enf_paina2
+
+enf_paina3
+
+enf_paina4
+
+enf_painb1
+
+enf_painb2
+
+enf_painb3
+
+enf_painb4
+
+enf_painb5
+
+enf_painc1
+
+enf_painc2
+
+enf_painc3
+
+enf_painc4
+
+enf_painc5
+
+enf_painc6
+
+enf_painc7
+
+enf_painc8
+
+enf_paind1
+
+enf_paind2
+
+enf_paind3
+
+enf_paind4
+
+enf_paind5
+
+enf_paind6
+
+enf_paind7
+
+enf_paind8
+
+enf_paind9
+
+enf_paind10
+
+enf_paind11
+
+enf_paind12
+
+enf_paind13
+
+enf_paind14
+
+enf_paind15
+
+enf_paind16
+
+enf_paind17
+
+enf_paind18
+
+enf_paind19
+
+enf_pain
+float r
+
+enf_die1
+
+enf_die2
+
+enf_die3
+
+enf_die4
+
+enf_die5
+
+enf_die6
+
+enf_die7
+
+enf_die8
+
+enf_die9
+
+enf_die10
+
+enf_die11
+
+enf_die12
+
+enf_die13
+
+enf_die14
+
+enf_fdie1
+
+enf_fdie2
+
+enf_fdie3
+
+enf_fdie4
+
+enf_fdie5
+
+enf_fdie6
+
+enf_fdie7
+
+enf_fdie8
+
+enf_fdie9
+
+enf_fdie10
+
+enf_fdie11
+
+enf_die
+
+monster_enforcer
+
+old_idle1
+
+old_idle2
+
+old_idle3
+
+old_idle4
+
+old_idle5
+
+old_idle6
+
+old_idle7
+
+old_idle8
+
+old_idle9
+
+old_idle10
+
+old_idle11
+
+old_idle12
+
+old_idle13
+
+old_idle14
+
+old_idle15
+
+old_idle16
+
+old_idle17
+
+old_idle18
+
+old_idle19
+
+old_idle20
+
+old_idle21
+
+old_idle22
+
+old_idle23
+
+old_idle24
+
+old_idle25
+
+old_idle26
+
+old_idle27
+
+old_idle28
+
+old_idle29
+
+old_idle30
+
+old_idle31
+
+old_idle32
+
+old_idle33
+
+old_idle34
+
+old_idle35
+
+old_idle36
+
+old_idle37
+
+old_idle38
+
+old_idle39
+
+old_idle40
+
+old_idle41
+
+old_idle42
+
+old_idle43
+
+old_idle44
+
+old_idle45
+
+old_idle46
+
+old_thrash1
+
+old_thrash2
+
+old_thrash3
+
+old_thrash4
+
+old_thrash5
+
+old_thrash6
+
+old_thrash7
+
+old_thrash8
+
+old_thrash9
+
+old_thrash10
+
+old_thrash11
+
+old_thrash12
+
+old_thrash13
+
+old_thrash14
+
+old_thrash15
+
+old_thrash16
+
+old_thrash17
+
+old_thrash18
+
+old_thrash19
+
+old_thrash20
+
+finale_1
+entity pos
+entity pl
+entity timer
+
+finale_2
+vector o
+
+finale_3
+
+finale_4
+vector oldo
+float x
+float y
+float z
+float r
+entity n
+
+nopain
+
+monster_oldone
+
+func002255
+entity globaldef005679
+
+func002256
+float globaldef005683
+
+func002257
+
+func002258
+float globaldef005686
+float globaldef005687
+
+func002259
+
+func002260
+
+func002261
+float globaldef005690
+
+func002262
+
+func002263
+
+func002264
+
+func002265
+entity globaldef005697
+float globaldef005698
+
+func002266
+entity globaldef005700
+float globaldef005701
+
+func002267
+
+func002268
+entity globaldef005705
+vector globaldef005706
+float globaldef005710
+float globaldef005711
+
+func002269
+entity globaldef005715
+
+func002270
+entity globaldef005718
+
+func002271
+float globaldef005721
+float globaldef005722
+float globaldef005723
+float globaldef005724
+float globaldef005725
+vector globaldef005726
+
+func002272
+float globaldef005734
+vector globaldef005735
+
+func002273
+float globaldef005740
+vector globaldef005741
+entity globaldef005745
+entity globaldef005746
+
+func002274
+vector globaldef005749
+vector globaldef005753
+entity globaldef005757
+entity globaldef005758
+vector globaldef005759
+float globaldef005763
+float globaldef005764
+
+func002275
+float globaldef005766
+
+func002276
+vector globaldef005768
+vector globaldef005772
+float globaldef005776
+float globaldef005777
+float globaldef005778
+float globaldef005779
+float globaldef005780
+
+func002277
+entity globaldef005781
+
+BotName
+
+BotConsoleName
+
+BotShirtPantsColor
+
+BotChooseExitMessage
+float choice
+
+BotChooseKillMessage
+float choice
+string globaldef005900
+
+BotChooseDeathMessage
+float choice
+string globaldef006022
+
+func002284
+float choice
+float globaldef006146
+string globaldef006147
+
+BotChooseTelefragMessage
+float choice
+
+func002286
+float choice
+
+func002287
+
+func002288
+
+func002289
+
+func002290
+
+func002291
+
+func002292
+
+func002293
+
+func002294
+
+func002295
+vector globaldef006516
+vector globaldef006520
+
+func002296
+
+func002297
+
+func002298
+
+func002299
+
+func002300
+
+func002301
+
+func002302
+
+func002303
+
+func002304
+
+func002305
+
+func002306
+
+func002307
+
+func002308
+
+func002309
+
+func002310
+
+func002311
+float globaldef006556
+
+func002312
+float globaldef006559
+
+func002313
+float globaldef006562
+
+func002314
+
+func002315
+
+func002316
+
+func002317
+
+func002318
+
+func002319
+
+func002320
+
+func002321
+
+func002322
+
+func002323
+
+func002324
+
+func002325
+
+func002326
+
+func002327
+
+func002328
+
+func002329
+
+func002330
+float globaldef006597
+
+func002331
+float globaldef006600
+float globaldef006601
+
+func002332
+float globaldef006604
+
+func002333
+
+func002334
+
+func002335
+float globaldef006611
+
+func002336
+
+func002337
+float globaldef006616
+
+func002338
+float globaldef006618
+float globaldef006619
+float globaldef006620
+
+func002339
+
+func002340
+float globaldef006623
+
+func002341
+
+func002342
+
+func002343
+entity globaldef006629
+entity globaldef006630
+vector globaldef006631
+vector globaldef006635
+float globaldef006639
+float globaldef006640
+float globaldef006641
+float globaldef006642
+float globaldef006643
+vector globaldef006644
+vector globaldef006648
+entity globaldef006652
+vector globaldef006653
+vector globaldef006654
+vector globaldef006655
+
+func002344
+entity globaldef006662
+vector globaldef006663
+vector globaldef006667
+
+func002345
+entity globaldef006673
+
+func002346
+
+func002347
+
+func002348
+
+func002349
+
+func002350
+
+func002351
+float globaldef006701
+
+func002352
+vector globaldef006712
+float globaldef006716
+
+func002353
+float globaldef006719
+float globaldef006720
+float globaldef006721
+float globaldef006722
+float globaldef006723
+float globaldef006724
+float globaldef006725
+float globaldef006726
+vector globaldef006727
+vector globaldef006731
+vector globaldef006735
+
+func002354
+vector globaldef006742
+float globaldef006746
+entity globaldef006747
+
+func002355
+vector globaldef006750
+vector globaldef006754
+vector globaldef006758
+vector globaldef006762
+vector globaldef006766
+vector globaldef006770
+vector globaldef006774
+float globaldef006778
+
+func002356
+vector globaldef006780
+
+func002357
+
+func002358
+entity globaldef006786
+
+func002359
+entity globaldef006791
+
+func002360
+
+func002361
+
+func002362
+
+func002363
+
+func002364
+
+func002365
+
+func002366
+
+func002367
+
+func002368
+
+func002369
+
+func002370
+
+func002371
+
+func002372
+float globaldef006831
+float globaldef006832
+entity globaldef006833
+
+func002373
+float globaldef006835
+float globaldef006836
+entity globaldef006837
+
+func002374
+
+func002375
+
+func002376
+
+func002377
+
+func002378
+
+func002379
+
+func002380
+
+func002381
+vector globaldef006849
+vector globaldef006853
+vector globaldef006857
+
+func002382
+vector globaldef006863
+vector globaldef006867
+vector globaldef006871
+float globaldef006875
+
+func002383
+vector globaldef006879
+vector globaldef006883
+
+func002384
+vector globaldef006889
+vector globaldef006893
+vector globaldef006897
+vector globaldef006901
+vector globaldef006905
+float globaldef006909
+float globaldef006910
+
+func002385
+vector globaldef006916
+vector globaldef006920
+vector globaldef006924
+vector globaldef006928
+vector globaldef006932
+float globaldef006936
+float globaldef006937
+
+func002386
+vector globaldef006941
+vector globaldef006945
+vector globaldef006949
+float globaldef006953
+
+func002387
+
+func002388
+vector globaldef006960
+vector globaldef006964
+
+func002389
+
+func002390
+float globaldef006972
+float globaldef006973
+entity globaldef006974
+
+func002391
+vector globaldef006976
+vector globaldef006980
+vector globaldef006984
+entity globaldef006988
+entity globaldef006989
+float globaldef006990
+
+func002392
+vector globaldef006993
+vector globaldef006997
+
+func002393
+float globaldef007005
+
+func002394
+vector globaldef007009
+vector globaldef007013
+
+func002395
+vector globaldef007019
+
+func002396
+entity globaldef007025
+
+func002397
+
+func002398
+vector globaldef007030
+vector globaldef007034
+float globaldef007038
+float globaldef007039
+
+func002399
+float globaldef007042
+float globaldef007043
+float globaldef007044
+float globaldef007045
+float globaldef007046
+float globaldef007047
+
+func002400
+vector globaldef007054
+vector globaldef007058
+float globaldef007062
+float globaldef007063
+
+func002401
+float globaldef007065
+float globaldef007066
+float globaldef007067
+
+func002402
+float globaldef007069
+float globaldef007070
+float globaldef007071
+
+func002403
+float globaldef007073
+float globaldef007074
+
+func002404
+float globaldef007076
+float globaldef007077
+float globaldef007078
+float globaldef007079
+
+func002405
+float globaldef007081
+float globaldef007082
+float globaldef007083
+
+func002406
+
+func002407
+
+func002408
+
+func002409
+
+func002410
+
+func002411
+float globaldef007091
+
+func002412
+
+func002413
+
+func002414
+
+func002415
+float globaldef007099
+
+func002416
+float globaldef007101
+
+func002417
+entity globaldef007103
+float globaldef007104
+
+func002418
+entity globaldef007107
+entity globaldef007108
+string globaldef007109
+
+func002419
+
+func002420
+entity globaldef007114
+float globaldef007115
+
+func002421
+
+func002422
+entity globaldef007119
+
+func002423
+float globaldef007120
+
+func002424
+entity globaldef007121
+
+func002425
+entity globaldef007122
+
+func002426
+
+func002427
+entity globaldef007126
+
+func002428
+entity globaldef007128
+
+func002429
+float globaldef007129
+float globaldef007130
+float globaldef007131
+
+func002430
+float globaldef007149
+vector globaldef007150
+float globaldef007154
+float globaldef007155
+vector globaldef007156
+vector globaldef007160
+vector globaldef007164
+vector globaldef007168
+vector globaldef007172
+vector globaldef007176
+vector globaldef007180
+float globaldef007184
+float globaldef007185
+float globaldef007186
+float globaldef007187
+vector globaldef007188
+vector globaldef007192
+vector globaldef007196
+float globaldef007200
+float globaldef007201
+float globaldef007202
+
+func002431
+
+func002432
+vector globaldef007216
+vector globaldef007220
+vector globaldef007224
+vector globaldef007228
+vector globaldef007232
+entity globaldef007236
+float globaldef007237
+float globaldef007238
+float globaldef007239
+float globaldef007240
+float globaldef007241
+
+func002433
+vector globaldef007251
+vector globaldef007255
+vector globaldef007259
+vector globaldef007263
+vector globaldef007267
+vector globaldef007271
+vector globaldef007275
+vector globaldef007279
+vector globaldef007283
+vector globaldef007287
+vector globaldef007291
+vector globaldef007295
+vector globaldef007299
+vector globaldef007303
+vector globaldef007307
+vector globaldef007311
+vector globaldef007315
+vector globaldef007319
+vector globaldef007323
+vector globaldef007327
+vector globaldef007331
+vector globaldef007335
+float globaldef007339
+float globaldef007340
+float globaldef007341
+float globaldef007342
+float globaldef007343
+float globaldef007344
+float globaldef007345
+float globaldef007346
+float globaldef007347
+float globaldef007348
+float globaldef007349
+
+func002434
+float globaldef007353
+float globaldef007354
+float globaldef007355
+float globaldef007356
+float globaldef007357
+float globaldef007358
+float globaldef007359
+float globaldef007360
+vector globaldef007361
+vector globaldef007365
+vector globaldef007369
+
+func002435
+
+func002436
+float globaldef007390
+vector globaldef007391
+
+func002437
+float globaldef007402
+vector globaldef007403
+vector globaldef007407
+
+func002438
+vector globaldef007413
+vector globaldef007417
+vector globaldef007421
+vector globaldef007425
+vector globaldef007429
+vector globaldef007433
+vector globaldef007437
+vector globaldef007441
+vector globaldef007445
+float globaldef007449
+float globaldef007450
+float globaldef007451
+float globaldef007452
+float globaldef007453
+entity globaldef007454
+
+func002439
+float globaldef007462
+float globaldef007463
+float globaldef007464
+float globaldef007465
+float globaldef007466
+float globaldef007467
+vector globaldef007468
+vector globaldef007472
+vector globaldef007476
+vector globaldef007480
+vector globaldef007484
+vector globaldef007488
+vector globaldef007492
+vector globaldef007496
+
+func002440
+entity globaldef007509
+entity globaldef007510
+vector globaldef007511
+vector globaldef007515
+vector globaldef007519
+vector globaldef007523
+vector globaldef007527
+vector globaldef007531
+vector globaldef007535
+float globaldef007539
+float globaldef007540
+float globaldef007541
+float globaldef007542
+float globaldef007543
+string globaldef007544
+string globaldef007545
+vector globaldef007546
+vector globaldef007550
+vector globaldef007554
+vector globaldef007558
+float globaldef007562
+float globaldef007563
+float globaldef007564
+float globaldef007565
+
+func002441
+vector globaldef007574
+string globaldef007578
+
+func002442
+float globaldef007581
+
+BotJumpToGoal
+float globaldef007584
+
+func002444
+vector globaldef007588
+float globaldef007592
+
+func002445
+vector globaldef007596
+float globaldef007600
+
+func002446
+entity globaldef007602
+entity globaldef007603
+float globaldef007604
+float globaldef007605
+vector globaldef007606
+
+func002447
+float globaldef007618
+float globaldef007619
+entity globaldef007620
+
+func002448
+float globaldef007624
+float globaldef007625
+entity globaldef007626
+
+func002449
+float globaldef007630
+float globaldef007631
+entity globaldef007632
+
+func002450
+float globaldef007636
+float globaldef007637
+entity globaldef007638
+
+func002451
+float globaldef007642
+float globaldef007643
+entity globaldef007644
+
+func002452
+
+func002453
+entity globaldef007653
+
+func002454
+entity globaldef007659
+
+func002455
+float globaldef007661
+float globaldef007662
+float globaldef007663
+entity globaldef007664
+entity globaldef007665
+string globaldef007666
+
+func002456
+vector globaldef007669
+vector globaldef007673
+
+func002457
+
+func002458
+
+func002459
+vector globaldef007684
+vector globaldef007688
+
+func002460
+
+func002461
+vector globaldef007694
+vector globaldef007698
+
+func002462
+vector globaldef007704
+vector globaldef007708
+vector globaldef007712
+vector globaldef007716
+float globaldef007720
+float globaldef007721
+float globaldef007722
+float globaldef007723
+float globaldef007724
+
+func002463
+vector globaldef007731
+vector globaldef007735
+vector globaldef007739
+vector globaldef007743
+vector globaldef007747
+vector globaldef007751
+float globaldef007755
+float globaldef007756
+float globaldef007757
+
+func002464
+vector globaldef007763
+vector globaldef007767
+vector globaldef007771
+vector globaldef007775
+vector globaldef007779
+vector globaldef007783
+vector globaldef007787
+vector globaldef007791
+vector globaldef007795
+float globaldef007799
+float globaldef007800
+float globaldef007801
+float globaldef007802
+float globaldef007803
+float globaldef007804
+float globaldef007805
+
+func002465
+vector globaldef007812
+vector globaldef007816
+vector globaldef007820
+vector globaldef007824
+vector globaldef007828
+float globaldef007832
+float globaldef007833
+float globaldef007834
+float globaldef007835
+float globaldef007836
+float globaldef007837
+float globaldef007838
+float globaldef007839
+string globaldef007840
+
+func002466
+
+func002467
+
+func002468
+vector globaldef007846
+string globaldef007850
+float globaldef007851
+
+func002469
+
+func002470
+entity globaldef007855
+
+func002471
+
+func002472
+vector globaldef007862
+entity globaldef007866
+
+func002473
+
+func002474
+float globaldef007870
+float globaldef007871
+float globaldef007872
+float globaldef007873
+float globaldef007874
+float globaldef007875
+vector globaldef007876
+vector globaldef007880
+vector globaldef007884
+
+func002475
+float globaldef007892
+float globaldef007893
+float globaldef007894
+float globaldef007895
+vector globaldef007896
+vector globaldef007900
+vector globaldef007904
+
+func002476
+vector globaldef007910
+vector globaldef007914
+float globaldef007918
+
+func002477
+vector globaldef007922
+vector globaldef007926
+vector globaldef007930
+vector globaldef007934
+float globaldef007938
+float globaldef007939
+float globaldef007940
+
+func002478
+entity globaldef007944
+entity globaldef007945
+entity globaldef007946
+vector globaldef007947
+vector globaldef007951
+float globaldef007955
+float globaldef007956
+float globaldef007957
+float globaldef007958
+
+func002479
+entity globaldef007962
+vector globaldef007963
+
+func002480
+
+func002481
+float globaldef007972
+float globaldef007973
+vector globaldef007974
+
+func002482
+vector globaldef007981
+vector globaldef007985
+float globaldef007989
+float globaldef007990
+float globaldef007991
+float globaldef007992
+float globaldef007993
+entity globaldef007994
+entity globaldef007995
+entity globaldef007996
+entity globaldef007997
+
+func002483
+entity globaldef008000
+entity globaldef008001
+float globaldef008002
+float globaldef008003
+
+func002484
+
+func002485
+float globaldef008009
+float globaldef008010
+entity globaldef008011
+entity globaldef008012
+
+func002486
+float globaldef008015
+
+func002487
+entity globaldef008018
+entity globaldef008019
+
+func002488
+float globaldef008022
+float globaldef008023
+
+func002489
+entity globaldef008025
+
+func002490
+entity globaldef008033
+vector globaldef008034
+
+func002491
+entity globaldef008040
+entity globaldef008041
+entity globaldef008042
+float globaldef008043
+float globaldef008044
+
+func002492
+entity globaldef008048
+entity globaldef008049
+entity globaldef008050
+float globaldef008051
+float globaldef008052
+
+func002493
+entity globaldef008061
+entity globaldef008062
+vector globaldef008063
+
+func002494
+entity globaldef008069
+entity globaldef008070
+entity globaldef008071
+entity globaldef008072
+float globaldef008073
+float globaldef008074
+
+func002495
+float globaldef008077
+float globaldef008078
+float globaldef008079
+float globaldef008080
+float globaldef008081
+float globaldef008082
+float globaldef008083
+float globaldef008084
+float globaldef008085
+float globaldef008086
+float globaldef008087
+entity globaldef008088
+entity globaldef008089
+entity globaldef008090
+entity globaldef008091
+entity globaldef008092
+entity globaldef008093
+entity globaldef008094
+entity globaldef008095
+entity globaldef008096
+entity globaldef008097
+entity globaldef008098
+
+func002496
+
+func002497
+entity globaldef008102
+
+func002498
+entity globaldef008104
+entity globaldef008105
+entity globaldef008106
+entity globaldef008107
+float globaldef008108
+float globaldef008109
+
+func002499
+
+func002500
+
+func002501
+
+func002502
+
+func002503
+
+func002504
+
+func002505
+
+func002506
+
+func002507
+
+func002508
+entity globaldef008120
+entity globaldef008121
+vector globaldef008122
+vector globaldef008126
+
+func002509
+
+func002510
+
+func002511
+
+func002512
+
+func002513
+
+func002514
+
+func002515
+entity globaldef008138
+
+func002516
+
+func002517
+entity globaldef008141
+
+func002518
+
+func002519
+
+func002520
+float globaldef008145
+float globaldef008146
+
+func002521
+entity globaldef008147
+
+func002522
+entity globaldef008149
+
+func002523
+entity globaldef008150
+
+func002524
+
+func002525
+
+func002526
+
+func002527
+
+func002528
+
+func002529
+
+func002530
+
+func002531
+
+func002532
+
+func002533
+
+func002534
+
+func002535
+
+func002536
+
+func002537
+
+func002538
+
+func002539
+
+func002540
+
+func002541
+
+func002542
+
+func002543
+
+func002544
+
+func002545
+
+func002546
+
+func002547
+
+func002548
+
+func002549
+
+func002550
+
+func002551
+
+func002552
+
+func002553
+
+func002554
+
+func002555
+
+func002556
+
+func002557
+
+func002558
+float globaldef008176
+
+func002559
+
+func002560
+
+func002561
+
+func002562
+
+func002563
+
+func002564
+
+func002565
+
+func002566
+
+func002567
+
+func002568
+
+func002569
+
+func002570
+
+func002571
+
+func002572
+
+func002573
+
+func002574
+
+func002575
+
+func002576
+
+func002577
+
+func002578
+
+func002579
+
+func002580
+
+func002581
+
+func002582
+
+func002583
+
+func002584
+
+func002585
+
+func002586
+
+func002587
+
+func002588
+
+func002589
+
+func002590
+
+func002591
+
+func002592
+
+func002593
+
+func002594
+
+func002595
+
+func002596
+
+func002597
+
+func002598
+
+func002599
+
+func002600
+
+func002601
+
+func002602
+
+func002603
+
+func002604
+
+func002605
+
+func002606
+
+func002607
+
+func002608
+
+func002609
+
+func002610
+
+func002611
+
+func002612
+
+func002613
+
+func002614
+
+func002615
+
+func002616
+
+func002617
+
+func002618
+
+func002619
+
+func002620
+
+func002621
+
+func002622
+
+func002623
+
+func002624
+
+func002625
+
+func002626
+
+func002627
+
+func002628
+
+func002629
+
+func002630
+
+func002631
+
+func002632
+
+func002633
+
+func002634
+
+func002635
+
+func002636
+float globaldef008256
+
+func002637
+float globaldef008257
+
+func002638
+
+func002639
+entity globaldef008982
+
+func002640
+
+func002641
+
+func002642
+
+func002643
+
+func002644
+
+func002645
+
+func002646
+
+func002647
+
+func002648
+
+update_cachex2
+
+func002650
+entity globaldef009017
+
+func002651
+entity globaldef009020
+entity globaldef009021
+float globaldef009022
+float globaldef009023
+string globaldef009024
+vector globaldef009025
+
+func002652
+entity globaldef009032
+entity globaldef009033
+float globaldef009034
+float globaldef009035
+string globaldef009036
+vector globaldef009037
+
+func002653
+entity globaldef009044
+entity globaldef009045
+float globaldef009046
+float globaldef009047
+string globaldef009048
+vector globaldef009049
+
+func002654
+entity globaldef009056
+entity globaldef009057
+float globaldef009058
+float globaldef009059
+string globaldef009060
+vector globaldef009061
+
+func002655
+float globaldef009069
+
+func002656
+entity globaldef009071
+float globaldef009072
+
+func002657
+entity globaldef009073
+float globaldef009074
+
+func002658
+float globaldef009083
+float globaldef009084
+float globaldef009085
+
+func002659
+
+func002660
+
+func002661
+entity globaldef009092
+float globaldef009093
+string globaldef009094
+
+func002662
+
+func002663
+entity globaldef009113
+float globaldef009114
+string globaldef009115
+
+func002664
+
+func002665
+
+func002666
+
+waypoint
+
+func002668
+entity globaldef009140
+
+func002669
+entity globaldef009146
+string globaldef009147
+
+func002670
+entity globaldef009154
+string globaldef009155
+
+func002671
+entity globaldef009158
+
+DestroyWaypoint
+
+func002673
+
+func002674
+float globaldef009164
+float globaldef009165
+float globaldef009166
+float globaldef009167
+entity globaldef009168
+entity globaldef009169
+entity globaldef009170
+vector globaldef009171
+vector globaldef009175
+
+func002675
+entity globaldef009180
+float globaldef009181
+vector globaldef009182
+
+func002676
+entity globaldef009188
+vector globaldef009189
+
+func002677
+entity globaldef009195
+entity globaldef009196
+vector globaldef009197
+
+func002678
+entity globaldef009204
+vector globaldef009205
+
+func002679
+float globaldef009210
+vector globaldef009211
+
+func002680
+
+func002681
+entity globaldef009220
+entity globaldef009221
+entity globaldef009222
+entity globaldef009223
+float globaldef009224
+float globaldef009225
+float globaldef009226
+
+func002682
+entity globaldef009234
+entity globaldef009235
+entity globaldef009236
+entity globaldef009237
+float globaldef009238
+float globaldef009239
+float globaldef009240
+
+func002683
+
+func002684
+
+func002685
+float globaldef009250
+float globaldef009251
+
+func002686
+
+func002687
+
+func002688
+
+func002689
+
+MovingEntityCached
+
+func002691
+entity globaldef009263
+entity globaldef009264
+float globaldef009265
+float globaldef009266
+vector globaldef009267
+vector globaldef009271
+
+func002692
+entity globaldef009277
+
+func002693
+
+func002694
+float globaldef009350
+string globaldef009351
+
+func002695
+
+func002696
+
+func002697
+entity globaldef009407
+
+func002698
+
+func002699
+
+func002700
+entity globaldef009415
+
+func002701
+entity globaldef009418
+
+func002702
+
+func002703
+
+func002704
+entity globaldef009430
+
+func002705
+
+func002706
+
+func002707
+entity globaldef009440
+
+func002708
+
+func002709
+entity globaldef009448
+
+func002710
+entity globaldef009450
+
+func002711
+
+func002712
+
+func002713
+
+func002714
+
+func002715
+
+func002716
+
+func002717
+
+func002718
+
+func002719
+
+func002720
+entity globaldef009479
+string globaldef009480
+
+func002721
+
+func002722
+entity globaldef009486
+
+func002723
+entity globaldef009488
+
+func002724
+
+func002725
+
+func002726
+entity globaldef009499
+float globaldef009500
+
+func002727
+entity globaldef009503
+float globaldef009504
+
+func002728
+entity globaldef009507
+float globaldef009508
+
+func002729
+float globaldef009513
+float globaldef009514
+
+func002730
+float globaldef009519
+float globaldef009520
+float globaldef009521
+
+func002731
+
+func002732
+float globaldef009528
+
+func002733
+float globaldef009535
+float globaldef009536
+
+func002734
+float globaldef009539
+
+func002735
+float globaldef009541
+
+func002736
+float globaldef009543
+float globaldef009544
+string globaldef009545
+
+func002737
+
+func002738
+
+func002739
+
+func002740
+entity globaldef009553
+
+func002741
+entity globaldef009556
+
+func002742
+entity globaldef009563
+float globaldef009564
+float globaldef009565
+
+func002743
+
+func002744
+
+func002745
+
+func002746
+
+func002747
+
+func002748
+

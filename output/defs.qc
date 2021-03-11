@@ -63,7 +63,7 @@ void () SetNewParms;
 
 void () SetChangeParms;
 void end_sys_globals;
-.void field0_off0;
+.void field000000;
 .float modelindex;
 .float modelindex;
 .vector absmin;

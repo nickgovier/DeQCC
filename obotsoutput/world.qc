@@ -231,230 +231,230 @@ void () InitBodyQue;
 
 void () main = {
 
-   globaldef456 (globaldef2265);
-   globaldef488 (globaldef2266);
-   globaldef488 (globaldef2267);
-   globaldef488 (globaldef2268);
-   globaldef488 (globaldef2269);
-   globaldef488 (globaldef2270);
-   globaldef495 (globaldef2271);
-   globaldef488 (globaldef2272);
-   globaldef488 (globaldef2273);
-   globaldef488 (globaldef2274);
-   globaldef488 (globaldef2275);
-   globaldef488 (globaldef2276);
-   globaldef495 (globaldef2277);
-   globaldef488 (globaldef2278);
-   globaldef488 (globaldef2279);
-   globaldef488 (globaldef2280);
-   globaldef488 (globaldef2281);
-   globaldef488 (globaldef2282);
-   globaldef488 (globaldef2283);
-   globaldef488 (globaldef2284);
-   globaldef488 (globaldef2285);
-   globaldef488 (globaldef2286);
-   globaldef488 (globaldef2287);
-   globaldef488 (globaldef2288);
-   globaldef488 (globaldef2289);
-   globaldef488 (globaldef2290);
-   globaldef488 (globaldef2291);
-   globaldef488 (globaldef2292);
-   globaldef488 (globaldef2293);
-   globaldef488 (globaldef2294);
-   globaldef488 (globaldef2295);
-   globaldef488 (globaldef2296);
-   globaldef488 (globaldef2297);
-   globaldef488 (globaldef2298);
-   globaldef488 (globaldef2299);
-   globaldef488 (globaldef2300);
-   globaldef488 (globaldef2301);
-   globaldef488 (globaldef2302);
-   globaldef488 (globaldef2303);
-   globaldef488 (globaldef2304);
-   globaldef488 (globaldef2305);
-   globaldef488 (globaldef2306);
-   globaldef488 (globaldef2307);
-   globaldef488 (globaldef2308);
-   globaldef488 (globaldef2309);
-   globaldef488 (globaldef2310);
-   globaldef488 (globaldef2311);
-   globaldef488 (globaldef2312);
-   globaldef488 (globaldef2313);
-   globaldef488 (globaldef2314);
-   globaldef488 (globaldef2315);
-   globaldef488 (globaldef2316);
-   globaldef488 (globaldef2317);
-   globaldef488 (globaldef2318);
-   globaldef488 (globaldef2319);
-   globaldef488 (globaldef2320);
-   globaldef488 (globaldef2321);
-   globaldef488 (globaldef2322);
-   globaldef488 (globaldef2323);
-   globaldef488 (globaldef2324);
-   globaldef488 (globaldef2325);
-   globaldef488 (globaldef2326);
-   globaldef488 (globaldef2327);
-   globaldef488 (globaldef2328);
-   globaldef488 (globaldef2329);
-   globaldef488 (globaldef2330);
-   globaldef488 (globaldef2331);
-   globaldef452 (globaldef2332);
-   globaldef452 (globaldef2333);
-   globaldef452 (globaldef2334);
-   globaldef452 (globaldef2335);
-   globaldef452 (globaldef2336);
-   globaldef488 (globaldef2337);
-   globaldef488 (globaldef2338);
-   globaldef488 (globaldef2339);
-   globaldef488 (globaldef2340);
-   globaldef488 (globaldef2341);
-   globaldef488 (globaldef2342);
-   globaldef488 (globaldef2343);
-   globaldef488 (globaldef2344);
-   globaldef488 (globaldef2345);
-   globaldef495 (globaldef2277);
-   globaldef495 (globaldef2346);
-   globaldef495 (globaldef2347);
-   globaldef495 (globaldef2348);
-   globaldef495 (globaldef2349);
-   globaldef495 (globaldef2350);
-   globaldef495 (globaldef2351);
-   globaldef495 (globaldef2352);
-   globaldef495 (globaldef2353);
-   globaldef495 (globaldef2354);
-   globaldef495 (globaldef2355);
-   globaldef495 (globaldef2356);
-   globaldef495 (globaldef2357);
-   globaldef495 (globaldef2358);
-   globaldef495 (globaldef2359);
-   globaldef495 (globaldef2360);
-   globaldef495 (globaldef2361);
-   globaldef495 (globaldef2362);
-   globaldef495 (globaldef2363);
-   globaldef495 (globaldef2364);
-   globaldef495 (globaldef2365);
-   globaldef495 (globaldef2366);
-   globaldef495 (globaldef2367);
-   globaldef495 (globaldef2368);
-   globaldef495 (globaldef2369);
-   globaldef495 (globaldef2370);
-   globaldef495 (globaldef2371);
-   globaldef495 (globaldef2372);
-   globaldef495 (globaldef2373);
-   globaldef495 (globaldef2374);
+   dprint (globaldef002265);
+   precache_file (globaldef002266);
+   precache_file (globaldef002267);
+   precache_file (globaldef002268);
+   precache_file (globaldef002269);
+   precache_file (globaldef002270);
+   precache_file2 (globaldef002271);
+   precache_file (globaldef002272);
+   precache_file (globaldef002273);
+   precache_file (globaldef002274);
+   precache_file (globaldef002275);
+   precache_file (globaldef002276);
+   precache_file2 (globaldef002277);
+   precache_file (globaldef002278);
+   precache_file (globaldef002279);
+   precache_file (globaldef002280);
+   precache_file (globaldef002281);
+   precache_file (globaldef002282);
+   precache_file (globaldef002283);
+   precache_file (globaldef002284);
+   precache_file (globaldef002285);
+   precache_file (globaldef002286);
+   precache_file (globaldef002287);
+   precache_file (globaldef002288);
+   precache_file (globaldef002289);
+   precache_file (globaldef002290);
+   precache_file (globaldef002291);
+   precache_file (globaldef002292);
+   precache_file (globaldef002293);
+   precache_file (globaldef002294);
+   precache_file (globaldef002295);
+   precache_file (globaldef002296);
+   precache_file (globaldef002297);
+   precache_file (globaldef002298);
+   precache_file (globaldef002299);
+   precache_file (globaldef002300);
+   precache_file (globaldef002301);
+   precache_file (globaldef002302);
+   precache_file (globaldef002303);
+   precache_file (globaldef002304);
+   precache_file (globaldef002305);
+   precache_file (globaldef002306);
+   precache_file (globaldef002307);
+   precache_file (globaldef002308);
+   precache_file (globaldef002309);
+   precache_file (globaldef002310);
+   precache_file (globaldef002311);
+   precache_file (globaldef002312);
+   precache_file (globaldef002313);
+   precache_file (globaldef002314);
+   precache_file (globaldef002315);
+   precache_file (globaldef002316);
+   precache_file (globaldef002317);
+   precache_file (globaldef002318);
+   precache_file (globaldef002319);
+   precache_file (globaldef002320);
+   precache_file (globaldef002321);
+   precache_file (globaldef002322);
+   precache_file (globaldef002323);
+   precache_file (globaldef002324);
+   precache_file (globaldef002325);
+   precache_file (globaldef002326);
+   precache_file (globaldef002327);
+   precache_file (globaldef002328);
+   precache_file (globaldef002329);
+   precache_file (globaldef002330);
+   precache_file (globaldef002331);
+   precache_sound (globaldef002332);
+   precache_sound (globaldef002333);
+   precache_sound (globaldef002334);
+   precache_sound (globaldef002335);
+   precache_sound (globaldef002336);
+   precache_file (globaldef002337);
+   precache_file (globaldef002338);
+   precache_file (globaldef002339);
+   precache_file (globaldef002340);
+   precache_file (globaldef002341);
+   precache_file (globaldef002342);
+   precache_file (globaldef002343);
+   precache_file (globaldef002344);
+   precache_file (globaldef002345);
+   precache_file2 (globaldef002277);
+   precache_file2 (globaldef002346);
+   precache_file2 (globaldef002347);
+   precache_file2 (globaldef002348);
+   precache_file2 (globaldef002349);
+   precache_file2 (globaldef002350);
+   precache_file2 (globaldef002351);
+   precache_file2 (globaldef002352);
+   precache_file2 (globaldef002353);
+   precache_file2 (globaldef002354);
+   precache_file2 (globaldef002355);
+   precache_file2 (globaldef002356);
+   precache_file2 (globaldef002357);
+   precache_file2 (globaldef002358);
+   precache_file2 (globaldef002359);
+   precache_file2 (globaldef002360);
+   precache_file2 (globaldef002361);
+   precache_file2 (globaldef002362);
+   precache_file2 (globaldef002363);
+   precache_file2 (globaldef002364);
+   precache_file2 (globaldef002365);
+   precache_file2 (globaldef002366);
+   precache_file2 (globaldef002367);
+   precache_file2 (globaldef002368);
+   precache_file2 (globaldef002369);
+   precache_file2 (globaldef002370);
+   precache_file2 (globaldef002371);
+   precache_file2 (globaldef002372);
+   precache_file2 (globaldef002373);
+   precache_file2 (globaldef002374);
 
 };
-string globaldef2265 /* = "main function\n" */;
-string globaldef2266 /* = "progs.dat" */;
-string globaldef2267 /* = "gfx.wad" */;
-string globaldef2268 /* = "quake.rc" */;
-string globaldef2269 /* = "default.cfg" */;
-string globaldef2270 /* = "end1.bin" */;
-string globaldef2271 /* = "end2.bin" */;
-string globaldef2272 /* = "demo1.dem" */;
-string globaldef2273 /* = "demo2.dem" */;
-string globaldef2274 /* = "demo3.dem" */;
-string globaldef2275 /* = "gfx/palette.lmp" */;
-string globaldef2276 /* = "gfx/colormap.lmp" */;
-string globaldef2277 /* = "gfx/pop.lmp" */;
-string globaldef2278 /* = "gfx/complete.lmp" */;
-string globaldef2279 /* = "gfx/inter.lmp" */;
-string globaldef2280 /* = "gfx/ranking.lmp" */;
-string globaldef2281 /* = "gfx/vidmodes.lmp" */;
-string globaldef2282 /* = "gfx/finale.lmp" */;
-string globaldef2283 /* = "gfx/conback.lmp" */;
-string globaldef2284 /* = "gfx/qplaque.lmp" */;
-string globaldef2285 /* = "gfx/menudot1.lmp" */;
-string globaldef2286 /* = "gfx/menudot2.lmp" */;
-string globaldef2287 /* = "gfx/menudot3.lmp" */;
-string globaldef2288 /* = "gfx/menudot4.lmp" */;
-string globaldef2289 /* = "gfx/menudot5.lmp" */;
-string globaldef2290 /* = "gfx/menudot6.lmp" */;
-string globaldef2291 /* = "gfx/menuplyr.lmp" */;
-string globaldef2292 /* = "gfx/bigbox.lmp" */;
-string globaldef2293 /* = "gfx/dim_modm.lmp" */;
-string globaldef2294 /* = "gfx/dim_drct.lmp" */;
-string globaldef2295 /* = "gfx/dim_ipx.lmp" */;
-string globaldef2296 /* = "gfx/dim_tcp.lmp" */;
-string globaldef2297 /* = "gfx/dim_mult.lmp" */;
-string globaldef2298 /* = "gfx/mainmenu.lmp" */;
-string globaldef2299 /* = "gfx/box_tl.lmp" */;
-string globaldef2300 /* = "gfx/box_tm.lmp" */;
-string globaldef2301 /* = "gfx/box_tr.lmp" */;
-string globaldef2302 /* = "gfx/box_ml.lmp" */;
-string globaldef2303 /* = "gfx/box_mm.lmp" */;
-string globaldef2304 /* = "gfx/box_mm2.lmp" */;
-string globaldef2305 /* = "gfx/box_mr.lmp" */;
-string globaldef2306 /* = "gfx/box_bl.lmp" */;
-string globaldef2307 /* = "gfx/box_bm.lmp" */;
-string globaldef2308 /* = "gfx/box_br.lmp" */;
-string globaldef2309 /* = "gfx/sp_menu.lmp" */;
-string globaldef2310 /* = "gfx/ttl_sgl.lmp" */;
-string globaldef2311 /* = "gfx/ttl_main.lmp" */;
-string globaldef2312 /* = "gfx/ttl_cstm.lmp" */;
-string globaldef2313 /* = "gfx/mp_menu.lmp" */;
-string globaldef2314 /* = "gfx/netmen1.lmp" */;
-string globaldef2315 /* = "gfx/netmen2.lmp" */;
-string globaldef2316 /* = "gfx/netmen3.lmp" */;
-string globaldef2317 /* = "gfx/netmen4.lmp" */;
-string globaldef2318 /* = "gfx/netmen5.lmp" */;
-string globaldef2319 /* = "gfx/sell.lmp" */;
-string globaldef2320 /* = "gfx/help0.lmp" */;
-string globaldef2321 /* = "gfx/help1.lmp" */;
-string globaldef2322 /* = "gfx/help2.lmp" */;
-string globaldef2323 /* = "gfx/help3.lmp" */;
-string globaldef2324 /* = "gfx/help4.lmp" */;
-string globaldef2325 /* = "gfx/help5.lmp" */;
-string globaldef2326 /* = "gfx/pause.lmp" */;
-string globaldef2327 /* = "gfx/loading.lmp" */;
-string globaldef2328 /* = "gfx/p_option.lmp" */;
-string globaldef2329 /* = "gfx/p_load.lmp" */;
-string globaldef2330 /* = "gfx/p_save.lmp" */;
-string globaldef2331 /* = "gfx/p_multi.lmp" */;
-string globaldef2332 /* = "misc/menu1.wav" */;
-string globaldef2333 /* = "misc/menu2.wav" */;
-string globaldef2334 /* = "misc/menu3.wav" */;
-string globaldef2335 /* = "ambience/water1.wav" */;
-string globaldef2336 /* = "ambience/wind2.wav" */;
-string globaldef2337 /* = "maps/start.bsp" */;
-string globaldef2338 /* = "maps/e1m1.bsp" */;
-string globaldef2339 /* = "maps/e1m2.bsp" */;
-string globaldef2340 /* = "maps/e1m3.bsp" */;
-string globaldef2341 /* = "maps/e1m4.bsp" */;
-string globaldef2342 /* = "maps/e1m5.bsp" */;
-string globaldef2343 /* = "maps/e1m6.bsp" */;
-string globaldef2344 /* = "maps/e1m7.bsp" */;
-string globaldef2345 /* = "maps/e1m8.bsp" */;
-string globaldef2346 /* = "maps/e2m1.bsp" */;
-string globaldef2347 /* = "maps/e2m2.bsp" */;
-string globaldef2348 /* = "maps/e2m3.bsp" */;
-string globaldef2349 /* = "maps/e2m4.bsp" */;
-string globaldef2350 /* = "maps/e2m5.bsp" */;
-string globaldef2351 /* = "maps/e2m6.bsp" */;
-string globaldef2352 /* = "maps/e2m7.bsp" */;
-string globaldef2353 /* = "maps/e3m1.bsp" */;
-string globaldef2354 /* = "maps/e3m2.bsp" */;
-string globaldef2355 /* = "maps/e3m3.bsp" */;
-string globaldef2356 /* = "maps/e3m4.bsp" */;
-string globaldef2357 /* = "maps/e3m5.bsp" */;
-string globaldef2358 /* = "maps/e3m6.bsp" */;
-string globaldef2359 /* = "maps/e3m7.bsp" */;
-string globaldef2360 /* = "maps/e4m1.bsp" */;
-string globaldef2361 /* = "maps/e4m2.bsp" */;
-string globaldef2362 /* = "maps/e4m3.bsp" */;
-string globaldef2363 /* = "maps/e4m4.bsp" */;
-string globaldef2364 /* = "maps/e4m5.bsp" */;
-string globaldef2365 /* = "maps/e4m6.bsp" */;
-string globaldef2366 /* = "maps/e4m7.bsp" */;
-string globaldef2367 /* = "maps/e4m8.bsp" */;
-string globaldef2368 /* = "maps/end.bsp" */;
-string globaldef2369 /* = "maps/dm1.bsp" */;
-string globaldef2370 /* = "maps/dm2.bsp" */;
-string globaldef2371 /* = "maps/dm3.bsp" */;
-string globaldef2372 /* = "maps/dm4.bsp" */;
-string globaldef2373 /* = "maps/dm5.bsp" */;
-string globaldef2374 /* = "maps/dm6.bsp" */;
-entity globaldef2375;
+string globaldef002265 /* = "main function\n" */;
+string globaldef002266 /* = "progs.dat" */;
+string globaldef002267 /* = "gfx.wad" */;
+string globaldef002268 /* = "quake.rc" */;
+string globaldef002269 /* = "default.cfg" */;
+string globaldef002270 /* = "end1.bin" */;
+string globaldef002271 /* = "end2.bin" */;
+string globaldef002272 /* = "demo1.dem" */;
+string globaldef002273 /* = "demo2.dem" */;
+string globaldef002274 /* = "demo3.dem" */;
+string globaldef002275 /* = "gfx/palette.lmp" */;
+string globaldef002276 /* = "gfx/colormap.lmp" */;
+string globaldef002277 /* = "gfx/pop.lmp" */;
+string globaldef002278 /* = "gfx/complete.lmp" */;
+string globaldef002279 /* = "gfx/inter.lmp" */;
+string globaldef002280 /* = "gfx/ranking.lmp" */;
+string globaldef002281 /* = "gfx/vidmodes.lmp" */;
+string globaldef002282 /* = "gfx/finale.lmp" */;
+string globaldef002283 /* = "gfx/conback.lmp" */;
+string globaldef002284 /* = "gfx/qplaque.lmp" */;
+string globaldef002285 /* = "gfx/menudot1.lmp" */;
+string globaldef002286 /* = "gfx/menudot2.lmp" */;
+string globaldef002287 /* = "gfx/menudot3.lmp" */;
+string globaldef002288 /* = "gfx/menudot4.lmp" */;
+string globaldef002289 /* = "gfx/menudot5.lmp" */;
+string globaldef002290 /* = "gfx/menudot6.lmp" */;
+string globaldef002291 /* = "gfx/menuplyr.lmp" */;
+string globaldef002292 /* = "gfx/bigbox.lmp" */;
+string globaldef002293 /* = "gfx/dim_modm.lmp" */;
+string globaldef002294 /* = "gfx/dim_drct.lmp" */;
+string globaldef002295 /* = "gfx/dim_ipx.lmp" */;
+string globaldef002296 /* = "gfx/dim_tcp.lmp" */;
+string globaldef002297 /* = "gfx/dim_mult.lmp" */;
+string globaldef002298 /* = "gfx/mainmenu.lmp" */;
+string globaldef002299 /* = "gfx/box_tl.lmp" */;
+string globaldef002300 /* = "gfx/box_tm.lmp" */;
+string globaldef002301 /* = "gfx/box_tr.lmp" */;
+string globaldef002302 /* = "gfx/box_ml.lmp" */;
+string globaldef002303 /* = "gfx/box_mm.lmp" */;
+string globaldef002304 /* = "gfx/box_mm2.lmp" */;
+string globaldef002305 /* = "gfx/box_mr.lmp" */;
+string globaldef002306 /* = "gfx/box_bl.lmp" */;
+string globaldef002307 /* = "gfx/box_bm.lmp" */;
+string globaldef002308 /* = "gfx/box_br.lmp" */;
+string globaldef002309 /* = "gfx/sp_menu.lmp" */;
+string globaldef002310 /* = "gfx/ttl_sgl.lmp" */;
+string globaldef002311 /* = "gfx/ttl_main.lmp" */;
+string globaldef002312 /* = "gfx/ttl_cstm.lmp" */;
+string globaldef002313 /* = "gfx/mp_menu.lmp" */;
+string globaldef002314 /* = "gfx/netmen1.lmp" */;
+string globaldef002315 /* = "gfx/netmen2.lmp" */;
+string globaldef002316 /* = "gfx/netmen3.lmp" */;
+string globaldef002317 /* = "gfx/netmen4.lmp" */;
+string globaldef002318 /* = "gfx/netmen5.lmp" */;
+string globaldef002319 /* = "gfx/sell.lmp" */;
+string globaldef002320 /* = "gfx/help0.lmp" */;
+string globaldef002321 /* = "gfx/help1.lmp" */;
+string globaldef002322 /* = "gfx/help2.lmp" */;
+string globaldef002323 /* = "gfx/help3.lmp" */;
+string globaldef002324 /* = "gfx/help4.lmp" */;
+string globaldef002325 /* = "gfx/help5.lmp" */;
+string globaldef002326 /* = "gfx/pause.lmp" */;
+string globaldef002327 /* = "gfx/loading.lmp" */;
+string globaldef002328 /* = "gfx/p_option.lmp" */;
+string globaldef002329 /* = "gfx/p_load.lmp" */;
+string globaldef002330 /* = "gfx/p_save.lmp" */;
+string globaldef002331 /* = "gfx/p_multi.lmp" */;
+string globaldef002332 /* = "misc/menu1.wav" */;
+string globaldef002333 /* = "misc/menu2.wav" */;
+string globaldef002334 /* = "misc/menu3.wav" */;
+string globaldef002335 /* = "ambience/water1.wav" */;
+string globaldef002336 /* = "ambience/wind2.wav" */;
+string globaldef002337 /* = "maps/start.bsp" */;
+string globaldef002338 /* = "maps/e1m1.bsp" */;
+string globaldef002339 /* = "maps/e1m2.bsp" */;
+string globaldef002340 /* = "maps/e1m3.bsp" */;
+string globaldef002341 /* = "maps/e1m4.bsp" */;
+string globaldef002342 /* = "maps/e1m5.bsp" */;
+string globaldef002343 /* = "maps/e1m6.bsp" */;
+string globaldef002344 /* = "maps/e1m7.bsp" */;
+string globaldef002345 /* = "maps/e1m8.bsp" */;
+string globaldef002346 /* = "maps/e2m1.bsp" */;
+string globaldef002347 /* = "maps/e2m2.bsp" */;
+string globaldef002348 /* = "maps/e2m3.bsp" */;
+string globaldef002349 /* = "maps/e2m4.bsp" */;
+string globaldef002350 /* = "maps/e2m5.bsp" */;
+string globaldef002351 /* = "maps/e2m6.bsp" */;
+string globaldef002352 /* = "maps/e2m7.bsp" */;
+string globaldef002353 /* = "maps/e3m1.bsp" */;
+string globaldef002354 /* = "maps/e3m2.bsp" */;
+string globaldef002355 /* = "maps/e3m3.bsp" */;
+string globaldef002356 /* = "maps/e3m4.bsp" */;
+string globaldef002357 /* = "maps/e3m5.bsp" */;
+string globaldef002358 /* = "maps/e3m6.bsp" */;
+string globaldef002359 /* = "maps/e3m7.bsp" */;
+string globaldef002360 /* = "maps/e4m1.bsp" */;
+string globaldef002361 /* = "maps/e4m2.bsp" */;
+string globaldef002362 /* = "maps/e4m3.bsp" */;
+string globaldef002363 /* = "maps/e4m4.bsp" */;
+string globaldef002364 /* = "maps/e4m5.bsp" */;
+string globaldef002365 /* = "maps/e4m6.bsp" */;
+string globaldef002366 /* = "maps/e4m7.bsp" */;
+string globaldef002367 /* = "maps/e4m8.bsp" */;
+string globaldef002368 /* = "maps/end.bsp" */;
+string globaldef002369 /* = "maps/dm1.bsp" */;
+string globaldef002370 /* = "maps/dm2.bsp" */;
+string globaldef002371 /* = "maps/dm3.bsp" */;
+string globaldef002372 /* = "maps/dm4.bsp" */;
+string globaldef002373 /* = "maps/dm5.bsp" */;
+string globaldef002374 /* = "maps/dm6.bsp" */;
+entity globaldef002375;
 
 void () worldspawn;
 
@@ -716,228 +716,228 @@ void () worldspawn;
 
 void () worldspawn = {
 
-   globaldef2375 = world;
-   globaldef983 ();
-   globaldef1447 ();
-   globaldef2264 ();
-   if ( (self.model == globaldef2345) ) {
+   globaldef002375 = world;
+   func002255 ();
+   func000146 ();
+   InitBodyQue ();
+   if ( (self.globaldef000108 == globaldef002345) ) {
 
-      globaldef491 (globaldef2377,globaldef2378);
+      cvar_set (globaldef002377,globaldef002378);
 
    } else {
 
-      if ( (self.model == globaldef2379) ) {
+      if ( (self.globaldef000108 == globaldef002379) ) {
 
-         globaldef491 (globaldef2377,globaldef2380);
+         cvar_set (globaldef002377,globaldef002380);
 
       } else {
 
-         if ( (self.model == globaldef2381) ) {
+         if ( (self.globaldef000108 == globaldef002381) ) {
 
-            globaldef491 (globaldef2377,globaldef2380);
+            cvar_set (globaldef002377,globaldef002380);
 
          } else {
 
-            globaldef491 (globaldef2377,globaldef2382);
+            cvar_set (globaldef002377,globaldef002382);
 
          }
 
       }
 
    }
-   globaldef2011 ();
-   globaldef1050 ();
-   if ( (globaldef473 (globaldef2383) == FL_SWIM) ) {
+   func000248 ();
+   func002458 ();
+   if ( (cvar (globaldef002383) == FL_SWIM) ) {
 
-      globaldef805 = TRUE;
-
-   }
-   globaldef452 (globaldef1946);
-   globaldef452 (globaldef1947);
-   globaldef452 (globaldef1771);
-   if ( !globaldef805 ) {
-
-      globaldef453 (globaldef2006);
-      globaldef452 (globaldef1993);
+      globaldef000805 = TRUE;
 
    }
-   if ( !globaldef805 ) {
+   precache_sound (globaldef001946);
+   precache_sound (globaldef001947);
+   precache_sound (globaldef001771);
+   if ( !globaldef000805 ) {
 
-      globaldef453 (globaldef2384);
-      globaldef453 (globaldef2385);
-      globaldef452 (globaldef2386);
-      globaldef452 (globaldef2387);
+      precache_model (globaldef002006);
+      precache_sound (globaldef001993);
 
    }
-   globaldef452 (globaldef2388);
-   globaldef452 (globaldef2389);
-   globaldef452 (globaldef1790);
-   globaldef452 (globaldef2390);
-   globaldef452 (globaldef2391);
-   globaldef452 (globaldef2392);
-   globaldef452 (globaldef2393);
-   globaldef452 (globaldef2394);
-   globaldef452 (globaldef2395);
-   globaldef452 (globaldef2396);
-   globaldef452 (globaldef2397);
-   globaldef452 ("misc/talk.wav");
-   globaldef452 (globaldef2398);
-   globaldef452 (globaldef2399);
-   globaldef452 (globaldef2400);
-   globaldef452 (globaldef2401);
-   globaldef452 (globaldef2402);
-   globaldef452 (globaldef2403);
-   globaldef452 (globaldef1882);
-   globaldef452 (globaldef1860);
-   globaldef452 (globaldef1829);
-   globaldef452 (globaldef2178);
-   globaldef452 (globaldef2245);
-   globaldef452 (globaldef1964);
-   globaldef452 (globaldef2404);
-   globaldef452 (globaldef2405);
-   globaldef452 (globaldef2406);
-   globaldef452 (globaldef2407);
-   globaldef452 (globaldef2408);
-   globaldef452 (globaldef2409);
-   globaldef452 (globaldef2410);
-   globaldef452 (globaldef2411);
-   globaldef452 (globaldef2412);
-   globaldef452 (globaldef2413);
-   globaldef452 (globaldef2414);
-   globaldef452 (globaldef2415);
-   globaldef452 (globaldef2416);
-   globaldef452 (globaldef2417);
-   globaldef452 (globaldef2418);
-   globaldef452 (globaldef2242);
-   globaldef452 (globaldef2419);
-   globaldef452 (globaldef2038);
-   globaldef452 (globaldef2420);
-   globaldef452 (globaldef2421);
-   globaldef452 (globaldef2422);
-   globaldef452 (globaldef2423);
-   globaldef452 (globaldef2424);
-   globaldef452 (globaldef2425);
-   globaldef452 (globaldef2426);
-   globaldef452 (globaldef2427);
-   globaldef452 (globaldef2428);
-   globaldef453 (globaldef2429);
-   globaldef453 (globaldef2430);
-   globaldef453 (globaldef2431);
-   globaldef453 (globaldef2432);
-   globaldef453 (globaldef2433);
-   globaldef453 (globaldef2434);
-   globaldef453 (globaldef2435);
-   globaldef453 (globaldef2145);
-   globaldef453 (globaldef2222);
-   globaldef453 (globaldef2223);
-   globaldef453 (globaldef2225);
-   globaldef453 (globaldef2227);
-   globaldef453 (globaldef2224);
-   globaldef453 (globaldef2226);
-   globaldef453 (globaldef2228);
-   globaldef453 (globaldef2436);
-   globaldef453 (globaldef2437);
-   globaldef453 (globaldef2438);
-   globaldef453 (globaldef2439);
-   globaldef453 (globaldef2151);
-   globaldef453 (globaldef2188);
-   globaldef453 (globaldef2201);
-   globaldef453 (globaldef2208);
-   globaldef453 (globaldef1986);
-   globaldef453 (globaldef2056);
-   globaldef453 (globaldef2229);
-   globaldef465 (FALSE,globaldef2440);
-   globaldef465 (TRUE,globaldef2441);
-   globaldef465 (FL_SWIM,globaldef2442);
-   globaldef465 (MOVETYPE_WALK,globaldef2443);
-   globaldef465 (MOVETYPE_STEP,globaldef2444);
-   globaldef465 (MOVETYPE_FLY,globaldef2445);
-   globaldef465 (MOVETYPE_TOSS,globaldef2446);
-   globaldef465 (MOVETYPE_PUSH,globaldef2447);
-   globaldef465 (FL_CLIENT,globaldef2448);
-   globaldef465 (MOVETYPE_FLYMISSILE,globaldef2449);
-   globaldef465 (MOVETYPE_BOUNCE,globaldef2450);
-   globaldef465 (MOVETYPE_BOUNCEMISSILE,globaldef2451);
-   globaldef465 (globaldef2452,globaldef2453);
+   if ( !globaldef000805 ) {
+
+      precache_model (globaldef002384);
+      precache_model (globaldef002385);
+      precache_sound (globaldef002386);
+      precache_sound (globaldef002387);
+
+   }
+   precache_sound (globaldef002388);
+   precache_sound (globaldef002389);
+   precache_sound (globaldef001790);
+   precache_sound (globaldef002390);
+   precache_sound (globaldef002391);
+   precache_sound (globaldef002392);
+   precache_sound (globaldef002393);
+   precache_sound (globaldef002394);
+   precache_sound (globaldef002395);
+   precache_sound (globaldef002396);
+   precache_sound (globaldef002397);
+   precache_sound (globaldef001516);
+   precache_sound (globaldef002398);
+   precache_sound (globaldef002399);
+   precache_sound (globaldef002400);
+   precache_sound (globaldef002401);
+   precache_sound (globaldef002402);
+   precache_sound (globaldef002403);
+   precache_sound (globaldef001882);
+   precache_sound (globaldef001860);
+   precache_sound (globaldef001829);
+   precache_sound (globaldef002178);
+   precache_sound (globaldef002245);
+   precache_sound (globaldef001964);
+   precache_sound (globaldef002404);
+   precache_sound (globaldef002405);
+   precache_sound (globaldef002406);
+   precache_sound (globaldef002407);
+   precache_sound (globaldef002408);
+   precache_sound (globaldef002409);
+   precache_sound (globaldef002410);
+   precache_sound (globaldef002411);
+   precache_sound (globaldef002412);
+   precache_sound (globaldef002413);
+   precache_sound (globaldef002414);
+   precache_sound (globaldef002415);
+   precache_sound (globaldef002416);
+   precache_sound (globaldef002417);
+   precache_sound (globaldef002418);
+   precache_sound (globaldef002242);
+   precache_sound (globaldef002419);
+   precache_sound (globaldef002038);
+   precache_sound (globaldef002420);
+   precache_sound (globaldef002421);
+   precache_sound (globaldef002422);
+   precache_sound (globaldef002423);
+   precache_sound (globaldef002424);
+   precache_sound (globaldef002425);
+   precache_sound (globaldef002426);
+   precache_sound (globaldef002427);
+   precache_sound (globaldef002428);
+   precache_model (globaldef002429);
+   precache_model (globaldef002430);
+   precache_model (globaldef002431);
+   precache_model (globaldef002432);
+   precache_model (globaldef002433);
+   precache_model (globaldef002434);
+   precache_model (globaldef002435);
+   precache_model (globaldef002145);
+   precache_model (globaldef002222);
+   precache_model (globaldef002223);
+   precache_model (globaldef002225);
+   precache_model (globaldef002227);
+   precache_model (globaldef002224);
+   precache_model (globaldef002226);
+   precache_model (globaldef002228);
+   precache_model (globaldef002436);
+   precache_model (globaldef002437);
+   precache_model (globaldef002438);
+   precache_model (globaldef002439);
+   precache_model (globaldef002151);
+   precache_model (globaldef002188);
+   precache_model (globaldef002201);
+   precache_model (globaldef002208);
+   precache_model (globaldef001986);
+   precache_model (globaldef002056);
+   precache_model (globaldef002229);
+   lightstyle (FALSE,globaldef002440);
+   lightstyle (TRUE,globaldef002441);
+   lightstyle (FL_SWIM,globaldef002442);
+   lightstyle (MOVETYPE_WALK,globaldef002443);
+   lightstyle (MOVETYPE_STEP,globaldef002444);
+   lightstyle (MOVETYPE_FLY,globaldef002445);
+   lightstyle (MOVETYPE_TOSS,globaldef002446);
+   lightstyle (MOVETYPE_PUSH,globaldef002447);
+   lightstyle (FL_CLIENT,globaldef002448);
+   lightstyle (MOVETYPE_FLYMISSILE,globaldef002449);
+   lightstyle (MOVETYPE_BOUNCE,globaldef002450);
+   lightstyle (MOVETYPE_BOUNCEMISSILE,globaldef002451);
+   lightstyle (globaldef002452,globaldef002453);
 
 };
-string globaldef2377 /* = "sv_gravity" */;
-string globaldef2378 /* = "100" */;
-string globaldef2379 /* = "maps/bunmoo3.bsp" */;
-string globaldef2380 /* = "150" */;
-string globaldef2381 /* = "maps/lowgrav.bsp" */;
-string globaldef2382 /* = "800" */;
-string globaldef2383 /* = "registered" */;
-string globaldef2384 /* = "progs/cloud.mdl" */;
-string globaldef2385 /* = "progs/particle.spr" */;
-string globaldef2386 /* = "cloud/thunder.wav" */;
-string globaldef2387 /* = "cloud/rain.wav" */;
-string globaldef2388 /* = "demon/dland2.wav" */;
-string globaldef2389 /* = "misc/h2ohit1.wav" */;
-string globaldef2390 /* = "player/plyrjmp8.wav" */;
-string globaldef2391 /* = "player/land.wav" */;
-string globaldef2392 /* = "player/land2.wav" */;
-string globaldef2393 /* = "player/drown1.wav" */;
-string globaldef2394 /* = "player/drown2.wav" */;
-string globaldef2395 /* = "player/gasp1.wav" */;
-string globaldef2396 /* = "player/gasp2.wav" */;
-string globaldef2397 /* = "player/h2odeath.wav" */;
-string globaldef2398 /* = "player/teledth1.wav" */;
-string globaldef2399 /* = "misc/r_tele1.wav" */;
-string globaldef2400 /* = "misc/r_tele2.wav" */;
-string globaldef2401 /* = "misc/r_tele3.wav" */;
-string globaldef2402 /* = "misc/r_tele4.wav" */;
-string globaldef2403 /* = "misc/r_tele5.wav" */;
-string globaldef2404 /* = "misc/power.wav" */;
-string globaldef2405 /* = "player/gib.wav" */;
-string globaldef2406 /* = "player/udeath.wav" */;
-string globaldef2407 /* = "player/tornoff2.wav" */;
-string globaldef2408 /* = "player/pain1.wav" */;
-string globaldef2409 /* = "player/pain2.wav" */;
-string globaldef2410 /* = "player/pain3.wav" */;
-string globaldef2411 /* = "player/pain4.wav" */;
-string globaldef2412 /* = "player/pain5.wav" */;
-string globaldef2413 /* = "player/pain6.wav" */;
-string globaldef2414 /* = "player/death1.wav" */;
-string globaldef2415 /* = "player/death2.wav" */;
-string globaldef2416 /* = "player/death3.wav" */;
-string globaldef2417 /* = "player/death4.wav" */;
-string globaldef2418 /* = "player/death5.wav" */;
-string globaldef2419 /* = "player/axhit1.wav" */;
-string globaldef2420 /* = "player/h2ojump.wav" */;
-string globaldef2421 /* = "player/slimbrn2.wav" */;
-string globaldef2422 /* = "player/inh2o.wav" */;
-string globaldef2423 /* = "player/inlava.wav" */;
-string globaldef2424 /* = "misc/outwater.wav" */;
-string globaldef2425 /* = "player/lburn1.wav" */;
-string globaldef2426 /* = "player/lburn2.wav" */;
-string globaldef2427 /* = "misc/water1.wav" */;
-string globaldef2428 /* = "misc/water2.wav" */;
-string globaldef2429 /* = "progs/player.mdl" */;
-string globaldef2430 /* = "progs/eyes.mdl" */;
-string globaldef2431 /* = "progs/h_player.mdl" */;
-string globaldef2432 /* = "progs/gib1.mdl" */;
-string globaldef2433 /* = "progs/gib2.mdl" */;
-string globaldef2434 /* = "progs/gib3.mdl" */;
-string globaldef2435 /* = "progs/s_bubble.spr" */;
-string globaldef2436 /* = "progs/bolt.mdl" */;
-string globaldef2437 /* = "progs/bolt2.mdl" */;
-string globaldef2438 /* = "progs/bolt3.mdl" */;
-string globaldef2439 /* = "progs/lavaball.mdl" */;
-string globaldef2440 /* = "m" */;
-string globaldef2441 /* = "mmnmmommommnonmmonqnmmo" */;
-string globaldef2442 /* = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba" */;
-string globaldef2443 /* = "mmmmmaaaaammmmmaaaaaabcdefgabcdefg" */;
-string globaldef2444 /* = "mamamamamama" */;
-string globaldef2445 /* = "jklmnopqrstuvwxyzyxwvutsrqponmlkj" */;
-string globaldef2446 /* = "nmonqnmomnmomomno" */;
-string globaldef2447 /* = "mmmaaaabcdefgmmmmaaaammmaamm" */;
-string globaldef2448 /* = "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa" */;
-string globaldef2449 /* = "aaaaaaaazzzzzzzz" */;
-string globaldef2450 /* = "mmamammmmammamamaaamammma" */;
-string globaldef2451 /* = "abcdefghijklmnopqrrqponmlkjihgfedcba" */;
-float globaldef2452 /* = 63.000 */;
-string globaldef2453 /* = "a" */;
+string globaldef002377 /* = "sv_gravity" */;
+string globaldef002378 /* = "100" */;
+string globaldef002379 /* = "maps/bunmoo3.bsp" */;
+string globaldef002380 /* = "150" */;
+string globaldef002381 /* = "maps/lowgrav.bsp" */;
+string globaldef002382 /* = "800" */;
+string globaldef002383 /* = "registered" */;
+string globaldef002384 /* = "progs/cloud.mdl" */;
+string globaldef002385 /* = "progs/particle.spr" */;
+string globaldef002386 /* = "cloud/thunder.wav" */;
+string globaldef002387 /* = "cloud/rain.wav" */;
+string globaldef002388 /* = "demon/dland2.wav" */;
+string globaldef002389 /* = "misc/h2ohit1.wav" */;
+string globaldef002390 /* = "player/plyrjmp8.wav" */;
+string globaldef002391 /* = "player/land.wav" */;
+string globaldef002392 /* = "player/land2.wav" */;
+string globaldef002393 /* = "player/drown1.wav" */;
+string globaldef002394 /* = "player/drown2.wav" */;
+string globaldef002395 /* = "player/gasp1.wav" */;
+string globaldef002396 /* = "player/gasp2.wav" */;
+string globaldef002397 /* = "player/h2odeath.wav" */;
+string globaldef002398 /* = "player/teledth1.wav" */;
+string globaldef002399 /* = "misc/r_tele1.wav" */;
+string globaldef002400 /* = "misc/r_tele2.wav" */;
+string globaldef002401 /* = "misc/r_tele3.wav" */;
+string globaldef002402 /* = "misc/r_tele4.wav" */;
+string globaldef002403 /* = "misc/r_tele5.wav" */;
+string globaldef002404 /* = "misc/power.wav" */;
+string globaldef002405 /* = "player/gib.wav" */;
+string globaldef002406 /* = "player/udeath.wav" */;
+string globaldef002407 /* = "player/tornoff2.wav" */;
+string globaldef002408 /* = "player/pain1.wav" */;
+string globaldef002409 /* = "player/pain2.wav" */;
+string globaldef002410 /* = "player/pain3.wav" */;
+string globaldef002411 /* = "player/pain4.wav" */;
+string globaldef002412 /* = "player/pain5.wav" */;
+string globaldef002413 /* = "player/pain6.wav" */;
+string globaldef002414 /* = "player/death1.wav" */;
+string globaldef002415 /* = "player/death2.wav" */;
+string globaldef002416 /* = "player/death3.wav" */;
+string globaldef002417 /* = "player/death4.wav" */;
+string globaldef002418 /* = "player/death5.wav" */;
+string globaldef002419 /* = "player/axhit1.wav" */;
+string globaldef002420 /* = "player/h2ojump.wav" */;
+string globaldef002421 /* = "player/slimbrn2.wav" */;
+string globaldef002422 /* = "player/inh2o.wav" */;
+string globaldef002423 /* = "player/inlava.wav" */;
+string globaldef002424 /* = "misc/outwater.wav" */;
+string globaldef002425 /* = "player/lburn1.wav" */;
+string globaldef002426 /* = "player/lburn2.wav" */;
+string globaldef002427 /* = "misc/water1.wav" */;
+string globaldef002428 /* = "misc/water2.wav" */;
+string globaldef002429 /* = "progs/player.mdl" */;
+string globaldef002430 /* = "progs/eyes.mdl" */;
+string globaldef002431 /* = "progs/h_player.mdl" */;
+string globaldef002432 /* = "progs/gib1.mdl" */;
+string globaldef002433 /* = "progs/gib2.mdl" */;
+string globaldef002434 /* = "progs/gib3.mdl" */;
+string globaldef002435 /* = "progs/s_bubble.spr" */;
+string globaldef002436 /* = "progs/bolt.mdl" */;
+string globaldef002437 /* = "progs/bolt2.mdl" */;
+string globaldef002438 /* = "progs/bolt3.mdl" */;
+string globaldef002439 /* = "progs/lavaball.mdl" */;
+string globaldef002440 /* = "m" */;
+string globaldef002441 /* = "mmnmmommommnonmmonqnmmo" */;
+string globaldef002442 /* = "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba" */;
+string globaldef002443 /* = "mmmmmaaaaammmmmaaaaaabcdefgabcdefg" */;
+string globaldef002444 /* = "mamamamamama" */;
+string globaldef002445 /* = "jklmnopqrstuvwxyzyxwvutsrqponmlkj" */;
+string globaldef002446 /* = "nmonqnmomnmomomno" */;
+string globaldef002447 /* = "mmmaaaabcdefgmmmmaaaammmaamm" */;
+string globaldef002448 /* = "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa" */;
+string globaldef002449 /* = "aaaaaaaazzzzzzzz" */;
+string globaldef002450 /* = "mmamammmmammamamaaamammma" */;
+string globaldef002451 /* = "abcdefghijklmnopqrrqponmlkjihgfedcba" */;
+float globaldef002452 /* = 63.000 */;
+string globaldef002453 /* = "a" */;
 
 void () NextLevel;
 
@@ -1074,109 +1074,109 @@ void () NextLevel;
 
 void () StartFrame = {
 
-   local string globaldef2455;
-   local entity globaldef2456;
-   local string globaldef2457;
-   local string globaldef2458;
+   local string globaldef002455;
+   local entity globaldef002456;
+   local string globaldef002457;
+   local string globaldef002458;
    /* Warning: No local name with offset 6714 */
-   local float globaldef2459;
-   local string globaldef2460;
+   local float globaldef002459;
+   local string globaldef002460;
    /* Warning: No local name with offset 6717 */
-   local float globaldef2461;
+   local float globaldef002461;
 
-   teamplay = globaldef473 (globaldef2457);
-   skill = globaldef473 (globaldef2458);
+   teamplay = cvar (globaldef002457);
+   skill = cvar (globaldef002458);
    framecount = (framecount + TRUE);
-   if ( (deathmatch != globaldef473 (globaldef2460)) ) {
+   if ( (deathmatch != cvar (globaldef002460)) ) {
 
-      deathmatch = globaldef473 (globaldef2460);
-      globaldef1152 ();
-
-   }
-   if ( globaldef799 ) {
-
-      globaldef800 = time;
+      deathmatch = cvar (globaldef002460);
+      func002708 ();
 
    }
-   globaldef2461 = (globaldef473 (globaldef2462) * globaldef1337);
-   if ( (globaldef2461 && ((time - globaldef800) >= globaldef2461)) ) {
+   if ( globaldef000799 ) {
 
-      globaldef2454 ();
-
-   }
-   globaldef791 = FALSE;
-   if ( (globaldef782 != globaldef473 (globaldef2377)) ) {
-
-      globaldef782 = globaldef473 (globaldef2377);
-      globaldef776 = ((((globaldef522 * globaldef782) * (globaldef717 / globaldef782)) * (globaldef717 / globaldef782)) - globaldef2136);
-      globaldef777 = (((globaldef522 * globaldef782) * (globaldef718 / globaldef782)) * (globaldef718 / globaldef782));
-      globaldef778 = ((FL_SWIM * (globaldef717 / globaldef782)) - 0.100);
-      globaldef779 = (FL_SWIM * (globaldef718 / globaldef782));
-      globaldef780 = ((((globaldef522 * globaldef782) * (globaldef1343 / globaldef782)) * (globaldef1343 / globaldef782)) - MOVETYPE_BOUNCE);
-      globaldef781 = (((0.100 * FL_SWIM) * (globaldef1343 - (globaldef782 * 0.100))) / (globaldef782 * 0.100));
-      globaldef781 = (TRUE / (globaldef781 * globaldef723));
+      globaldef000800 = time;
 
    }
-   globaldef783 = globaldef473 (globaldef2463);
+   globaldef002461 = (cvar (globaldef002462) * globaldef001337);
+   if ( (globaldef002461 && ((time - globaldef000800) >= globaldef002461)) ) {
+
+      NextLevel ();
+
+   }
+   globaldef000791 = FALSE;
+   if ( (globaldef000782 != cvar (globaldef002377)) ) {
+
+      globaldef000782 = cvar (globaldef002377);
+      globaldef000776 = ((((globaldef000522 * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - globaldef002136);
+      globaldef000777 = (((globaldef000522 * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782));
+      globaldef000778 = ((FL_SWIM * (globaldef000717 / globaldef000782)) - globaldef001488);
+      globaldef000779 = (FL_SWIM * (globaldef000718 / globaldef000782));
+      globaldef000780 = ((((globaldef000522 * globaldef000782) * (globaldef001343 / globaldef000782)) * (globaldef001343 / globaldef000782)) - MOVETYPE_BOUNCE);
+      globaldef000781 = (((globaldef001488 * FL_SWIM) * (globaldef001343 - (globaldef000782 * globaldef001488))) / (globaldef000782 * globaldef001488));
+      globaldef000781 = (TRUE / (globaldef000781 * globaldef000723));
+
+   }
+   globaldef000783 = cvar (globaldef002463);
    if ( (framecount == TRUE) ) {
 
-      globaldef804 = serverflags;
-      globaldef804 = (globaldef804 | globaldef760);
+      globaldef000804 = serverflags;
+      globaldef000804 = (globaldef000804 | globaldef000760);
 
    } else {
 
       if ( (framecount == MOVETYPE_PUSH) ) {
 
-         globaldef1151 ();
-         globaldef1046 ();
+         func002719 ();
+         func002429 ();
 
       } else {
 
          if ( (framecount > MOVETYPE_PUSH) ) {
 
-            if ( (globaldef788 != globaldef710) ) {
+            if ( (globaldef000788 != globaldef000710) ) {
 
-               globaldef1125 ();
+               func002657 ();
 
             }
             if ( teamplay ) {
 
-               globaldef2456 = globaldef816;
-               while ( globaldef2456 ) {
+               globaldef002456 = globaldef000816;
+               while ( globaldef002456 ) {
 
-                  globaldef1047 (globaldef2456,globaldef2456.globaldef590);
-                  globaldef990 (globaldef2456.globaldef591,globaldef2456.globaldef593);
-                  globaldef2456 = globaldef2456.globaldef603;
+                  func002426 (globaldef002456,globaldef002456.globaldef000590);
+                  func002264 (globaldef002456.globaldef000591,globaldef002456.globaldef000593);
+                  globaldef002456 = globaldef002456.globaldef000603;
 
                }
-               globaldef491 (globaldef2464,globaldef2465);
+               cvar_set (globaldef002464,globaldef002465);
 
             } else {
 
-               globaldef2455 = globaldef457 (globaldef794);
-               globaldef491 (globaldef2464,globaldef2455);
+               globaldef002455 = ftos (globaldef000794);
+               cvar_set (globaldef002464,globaldef002455);
 
             }
-            globaldef996 ();
-            serverflags = ((globaldef804 - (globaldef804 & globaldef748)) | (serverflags & globaldef748));
+            func002277 ();
+            serverflags = ((globaldef000804 - (globaldef000804 & globaldef000748)) | (serverflags & globaldef000748));
 
          }
 
       }
 
    }
-   if ( (globaldef788 != globaldef710) ) {
+   if ( (globaldef000788 != globaldef000710) ) {
 
-      globaldef799 = TRUE;
+      globaldef000799 = TRUE;
 
    }
 
 };
-string globaldef2462 /* = "timelimit" */;
-string globaldef2463 /* = "sv_maxspeed" */;
-string globaldef2464 /* = "temp1" */;
-string globaldef2465 /* = "0" */;
-entity globaldef2466;
+string globaldef002462 /* = "timelimit" */;
+string globaldef002463 /* = "sv_maxspeed" */;
+string globaldef002464 /* = "temp1" */;
+string globaldef002465 /* = "0" */;
+entity globaldef002466;
 
 void () bodyque;
 
@@ -1232,21 +1232,21 @@ void () bodyque = {
 
 void () InitBodyQue = {
 
-   local entity globaldef2468;
+   local entity e;
 
-   globaldef2466 = spawn ();
-   globaldef2466.classname = globaldef1364;
-   globaldef2466.globaldef179 = spawn ();
-   globaldef2466.globaldef179.classname = globaldef1364;
-   globaldef2466.globaldef179.globaldef179 = spawn ();
-   globaldef2466.globaldef179.globaldef179.classname = globaldef1364;
-   globaldef2466.globaldef179.globaldef179.globaldef179 = spawn ();
-   globaldef2466.globaldef179.globaldef179.globaldef179.classname = globaldef1364;
-   globaldef2466.globaldef179.globaldef179.globaldef179.globaldef179 = globaldef2466;
+   globaldef002466 = spawn ();
+   globaldef002466.globaldef000107 = globaldef001364;
+   globaldef002466.globaldef000179 = spawn ();
+   globaldef002466.globaldef000179.globaldef000107 = globaldef001364;
+   globaldef002466.globaldef000179.globaldef000179 = spawn ();
+   globaldef002466.globaldef000179.globaldef000179.globaldef000107 = globaldef001364;
+   globaldef002466.globaldef000179.globaldef000179.globaldef000179 = spawn ();
+   globaldef002466.globaldef000179.globaldef000179.globaldef000179.globaldef000107 = globaldef001364;
+   globaldef002466.globaldef000179.globaldef000179.globaldef000179.globaldef000179 = globaldef002466;
 
 };
 
-void (entity globaldef2470) CopyToBodyQue;
+void (entity globaldef002470) CopyToBodyQue;
 
 // function CopyToBodyQue
 // function number 301 begins at statement 8813
@@ -1310,30 +1310,30 @@ void (entity globaldef2470) CopyToBodyQue;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef2470) CopyToBodyQue = {
+void (entity globaldef002470) CopyToBodyQue = {
 
-   globaldef2466.angles = globaldef2470.angles;
-   if ( ((globaldef2470.classname == "player") || (globaldef2470.classname == globaldef1171)) ) {
+   globaldef002466.globaldef000095 = globaldef002470.globaldef000095;
+   if ( ((globaldef002470.globaldef000107 == globaldef001170) || (globaldef002470.globaldef000107 == globaldef001171)) ) {
 
-      globaldef2466.globaldef110 = globaldef2470.globaldef557;
-      globaldef2466.modelindex = globaldef2470.globaldef556;
-      globaldef2466.model = globaldef2471;
+      globaldef002466.globaldef000110 = globaldef002470.globaldef000557;
+      globaldef002466.globaldef000071 = globaldef002470.globaldef000556;
+      globaldef002466.globaldef000108 = globaldef002471;
 
    } else {
 
-      globaldef2466.globaldef110 = globaldef2470.globaldef110;
-      globaldef2466.model = globaldef2470.model;
-      globaldef2466.modelindex = globaldef2470.modelindex;
+      globaldef002466.globaldef000110 = globaldef002470.globaldef000110;
+      globaldef002466.globaldef000108 = globaldef002470.globaldef000108;
+      globaldef002466.globaldef000071 = globaldef002470.globaldef000071;
 
    }
-   globaldef2466.globaldef109 = globaldef2470.globaldef109;
-   globaldef2466.globaldef161 = globaldef2470.globaldef161;
-   globaldef2466.movetype = globaldef2470.movetype;
-   globaldef2466.velocity = globaldef2470.velocity;
-   globaldef2466.globaldef160 = FALSE;
-   setorigin (globaldef2466,globaldef2470.origin);
-   globaldef438 (globaldef2466,globaldef2470.globaldef112,globaldef2470.globaldef116);
-   globaldef1455 (globaldef2470,globaldef2466);
-   globaldef2466 = globaldef2466.globaldef179;
+   globaldef002466.globaldef000109 = globaldef002470.globaldef000109;
+   globaldef002466.globaldef000161 = globaldef002470.globaldef000161;
+   globaldef002466.globaldef000081 = globaldef002470.globaldef000081;
+   globaldef002466.globaldef000091 = globaldef002470.globaldef000091;
+   globaldef002466.globaldef000160 = FALSE;
+   setorigin (globaldef002466,globaldef002470.globaldef000083);
+   setsize (globaldef002466,globaldef002470.globaldef000112,globaldef002470.globaldef000116);
+   func000148 (globaldef002470,globaldef002466);
+   globaldef002466 = globaldef002466.globaldef000179;
 
 };

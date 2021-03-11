@@ -1,7 +1,7 @@
 
-void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt;
+void (entity globaldef001467, vector globaldef001468, float globaldef001472, void() globaldef001473) SUB_CalcMoveEnt;
 
-void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove;
+void (vector globaldef001498, float globaldef001502, void() globaldef001503) SUB_CalcAngleMove;
 
 void () SUB_CalcMoveDone;
 
@@ -13,12 +13,12 @@ void () SUB_UseTargets;
 
 void () SUB_Remove;
 
-void (entity globaldef1760, entity globaldef1761, entity globaldef1762, float globaldef1763) T_Damage;
-float (entity globaldef1797, float globaldef1798, float globaldef1799) T_Heal;
-float (entity globaldef1749, entity globaldef1750) CanDamage;
-float globaldef508 /* = 0.000 */;
-float globaldef509 /* = 0.000 */;
-float globaldef510 /* = 0.000 */;
+void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage;
+float (entity globaldef001797, float globaldef001798, float globaldef001799) T_Heal;
+float (entity globaldef001749, entity globaldef001750) CanDamage;
+float globaldef000508 /* = 0.000 */;
+float globaldef000509 /* = 0.000 */;
+float globaldef000510 /* = 0.000 */;
 .float finaldest_x;
 .float finaldest_y;
 .float finaldest_z;
@@ -27,11 +27,11 @@ float globaldef510 /* = 0.000 */;
 .float lip;
 .float state;
 .vector pos1;
-entity globaldef525;
-entity globaldef526;
-float globaldef527 /* = 0.000 */;
-float globaldef528 /* = 0.000 */;
-void globaldef529;
+entity globaldef000525;
+entity globaldef000526;
+float globaldef000527 /* = 0.000 */;
+float globaldef000528 /* = 0.000 */;
+void globaldef000529;
 .float pos1_x;
 .float pos1_y;
 .float pos1_z;
@@ -56,253 +56,253 @@ void globaldef529;
 .float loses;
 .float ratio;
 .float motd;
-.void() field224;
-.void() field225;
-.void() field226;
-.void() field226;
-.void() field227;
-.void() field228;
-.void() field229;
-.void() field229;
-.void() field230;
-.float field231;
-.float field232;
-.vector field233;
-.vector field237;
-.vector field241;
-.vector field245;
-.float field249;
-.float field250;
-.float field250;
-.float field251;
-.float field252;
-.vector field253;
-.vector field257;
-.float field261;
-.float field262;
-.entity field263;
-.float field264;
-.float field265;
-.entity field266;
-.entity field267;
-.entity field268;
-.float field269;
-.float field270;
-.float field271;
-.float field272;
-.float field273;
-.float field274;
-.float field275;
-.float field276;
-.float field277;
-.float field278;
-.vector field279;
-.string field283;
-.float field284;
-.float field285;
-.float field286;
-.float field287;
-.float field288;
-.float field289;
-.entity field290;
-.string field291;
-.string field292;
-.string field293;
-.float field294;
-.entity field295;
-.entity field296;
-.entity field297;
-.entity field298;
-.entity field299;
-.entity field300;
-.entity field301;
-.entity field302;
-.entity field303;
-.entity field304;
-.entity field305;
-.entity field306;
-.float field307;
-.float field308;
-.float field309;
-.float field310;
-.float field311;
-.float field312;
-.float field313;
-.float field314;
-.entity field315;
-.entity field315;
-.entity field316;
-.entity field317;
-.entity field318;
-.entity field318;
-.entity field319;
-.entity field320;
-.entity field321;
-.entity field321;
-.entity field322;
-.entity field323;
-.entity field324;
-.float field325;
-.float field325;
-.float field326;
-.float field327;
-.float field328;
-void globaldef669;
-.float field329;
-.float field330;
-.float field331;
-.float field332;
-.float field333;
-.float field334;
-.entity field335;
-.entity field336;
-.float field337;
-.float field338;
-.entity field339;
-float globaldef681 /* = 8192.000 */;
-float globaldef682 /* = 16384.000 */;
-float globaldef683 /* = 1.000 */;
-float globaldef684 /* = 2.000 */;
-float globaldef685 /* = 4.000 */;
-float globaldef686 /* = 8.000 */;
-float globaldef687 /* = 16.000 */;
-float globaldef688 /* = 32.000 */;
-float globaldef689 /* = 64.000 */;
-float globaldef690 /* = 128.000 */;
-float globaldef691 /* = 256.000 */;
-float globaldef692 /* = 512.000 */;
-float globaldef693 /* = 1024.000 */;
-float globaldef694 /* = 2048.000 */;
-float globaldef695 /* = 4096.000 */;
-float globaldef696 /* = 8192.000 */;
-float globaldef697 /* = 16384.000 */;
-float globaldef698 /* = 0.000 */;
-float globaldef699 /* = 1.000 */;
-float globaldef700 /* = 2.000 */;
-float globaldef701 /* = 3.000 */;
-float globaldef702 /* = 4.000 */;
-float globaldef703 /* = 5.000 */;
-float globaldef704 /* = 6.000 */;
-float globaldef705 /* = 7.000 */;
-float globaldef706 /* = 8.000 */;
-float globaldef707 /* = 0.000 */;
-float globaldef708 /* = 1.000 */;
-float globaldef709 /* = 2.000 */;
-float globaldef710 /* = 3.000 */;
-float globaldef711 /* = 0.000 */;
-float globaldef712 /* = 1.000 */;
-float globaldef713 /* = 2.000 */;
-float globaldef714 /* = 3.000 */;
-float globaldef715 /* = 4.000 */;
-float globaldef716 /* = 5.000 */;
-float globaldef717 /* = 270.000 */;
-float globaldef718 /* = 687.000 */;
-float globaldef719 /* = 24.000 */;
-float globaldef720 /* = 640.000 */;
-float globaldef721 /* = 250.000 */;
-float globaldef722 /* = 10.000 */;
-float globaldef723 /* = 600.000 */;
-float globaldef724 /* = 800.000 */;
-float globaldef725 /* = 30.000 */;
-float globaldef726 /* = 16.000 */;
-float globaldef727 /* = 30.000 */;
-float globaldef728 /* = 500.000 */;
-float globaldef729 /* = 40.000 */;
-float globaldef730 /* = 0.000 */;
-float globaldef731 /* = 1.000 */;
-float globaldef732 /* = 2.000 */;
-float globaldef733 /* = 3.000 */;
-float globaldef734 /* = 5.000 */;
-float globaldef735 /* = 6.000 */;
-float globaldef736 /* = 7.000 */;
-float globaldef737 /* = 8.000 */;
-float globaldef738 /* = 32.000 */;
-float globaldef739 /* = 1.000 */;
-float globaldef740 /* = 2.000 */;
-float globaldef741 /* = 3.000 */;
-float globaldef742 /* = 4.000 */;
-float globaldef743 /* = 5.000 */;
-float globaldef744 /* = 1.000 */;
-float globaldef745 /* = 2.000 */;
-float globaldef746 /* = 4.000 */;
-float globaldef747 /* = 8.000 */;
-float globaldef748 /* = 15.000 */;
-float globaldef749 /* = 16.000 */;
-float globaldef750 /* = 32.000 */;
-float globaldef751 /* = 64.000 */;
-float globaldef752 /* = 128.000 */;
-float globaldef753 /* = 256.000 */;
-float globaldef754 /* = 512.000 */;
-float globaldef755 /* = 1024.000 */;
-float globaldef756 /* = 2048.000 */;
-float globaldef757 /* = 4096.000 */;
-float globaldef758 /* = 8192.000 */;
-float globaldef759 /* = 16384.000 */;
-float globaldef760 /* = 32768.000 */;
-float globaldef761 /* = 65536.000 */;
-float globaldef762 /* = 0.000 */;
-float globaldef763 /* = 1.000 */;
-float globaldef764 /* = 2.000 */;
-float globaldef765 /* = 3.000 */;
-float globaldef766 /* = 4.000 */;
-float globaldef767 /* = 5.000 */;
-float globaldef768 /* = 6.000 */;
-float globaldef769 /* = 7.000 */;
-float globaldef770 /* = 8.000 */;
-float globaldef771 /* = 9.000 */;
-float globaldef772 /* = 10.000 */;
-float globaldef773 /* = 11.000 */;
-float globaldef774 /* = 12.000 */;
-float globaldef775 /* = 13.000 */;
-float globaldef776 /* = 0.000 */;
-float globaldef777 /* = 0.000 */;
-float globaldef778 /* = 0.000 */;
-float globaldef779 /* = 0.000 */;
-float globaldef780 /* = 0.000 */;
-float globaldef781 /* = 0.000 */;
-float globaldef782 /* = 0.000 */;
-float globaldef783 /* = 0.000 */;
-float globaldef784 /* = 0.000 */;
-float globaldef785 /* = 0.000 */;
-float globaldef786 /* = 0.000 */;
-float globaldef787 /* = 0.000 */;
-float globaldef788 /* = 0.000 */;
-float globaldef789 /* = 0.000 */;
-float globaldef790 /* = 0.000 */;
-float globaldef791 /* = 0.000 */;
-float globaldef792 /* = 0.000 */;
-float globaldef793 /* = 0.000 */;
-float globaldef794 /* = 0.000 */;
-float globaldef795 /* = 0.000 */;
-float globaldef796 /* = 0.000 */;
-float globaldef797 /* = 0.000 */;
-float globaldef798 /* = 0.000 */;
-float globaldef799 /* = 0.000 */;
-float globaldef800 /* = 0.000 */;
-float globaldef801 /* = 0.000 */;
-float globaldef802 /* = 0.000 */;
-float globaldef803 /* = 0.000 */;
-float globaldef804 /* = 0.000 */;
-float globaldef805 /* = 0.000 */;
-float globaldef806 /* = 0.000 */;
-float globaldef807 /* = 0.000 */;
-entity globaldef808;
-entity globaldef809;
-entity globaldef810;
-entity globaldef811;
-entity globaldef812;
-entity globaldef813;
-entity globaldef814;
-entity globaldef815;
-entity globaldef816;
-entity globaldef817;
-entity globaldef818;
-entity globaldef819;
-entity globaldef820;
+.void() field000224;
+.void() field000225;
+.void() field000226;
+.void() field000226;
+.void() field000227;
+.void() field000228;
+.void() field000229;
+.void() field000229;
+.void() field000230;
+.float field000231;
+.float field000232;
+.vector field000233;
+.vector field000237;
+.vector field000241;
+.vector field000245;
+.float field000249;
+.float field000250;
+.float field000250;
+.float field000251;
+.float field000252;
+.vector field000253;
+.vector field000257;
+.float field000261;
+.float field000262;
+.entity field000263;
+.float field000264;
+.float field000265;
+.entity field000266;
+.entity field000267;
+.entity field000268;
+.float field000269;
+.float field000270;
+.float field000271;
+.float field000272;
+.float field000273;
+.float field000274;
+.float field000275;
+.float field000276;
+.float field000277;
+.float field000278;
+.vector field000279;
+.string field000283;
+.float field000284;
+.float field000285;
+.float field000286;
+.float field000287;
+.float field000288;
+.float field000289;
+.entity field000290;
+.string field000291;
+.string field000292;
+.string field000293;
+.float field000294;
+.entity field000295;
+.entity field000296;
+.entity field000297;
+.entity field000298;
+.entity field000299;
+.entity field000300;
+.entity field000301;
+.entity field000302;
+.entity field000303;
+.entity field000304;
+.entity field000305;
+.entity field000306;
+.float field000307;
+.float field000308;
+.float field000309;
+.float field000310;
+.float field000311;
+.float field000312;
+.float field000313;
+.float field000314;
+.entity field000315;
+.entity field000315;
+.entity field000316;
+.entity field000317;
+.entity field000318;
+.entity field000318;
+.entity field000319;
+.entity field000320;
+.entity field000321;
+.entity field000321;
+.entity field000322;
+.entity field000323;
+.entity field000324;
+.float field000325;
+.float field000325;
+.float field000326;
+.float field000327;
+.float field000328;
+void globaldef000669;
+.float field000329;
+.float field000330;
+.float field000331;
+.float field000332;
+.float field000333;
+.float field000334;
+.entity field000335;
+.entity field000336;
+.float field000337;
+.float field000338;
+.entity field000339;
+float globaldef000681 /* = 8192.000 */;
+float globaldef000682 /* = 16384.000 */;
+float globaldef000683 /* = 1.000 */;
+float globaldef000684 /* = 2.000 */;
+float globaldef000685 /* = 4.000 */;
+float globaldef000686 /* = 8.000 */;
+float globaldef000687 /* = 16.000 */;
+float globaldef000688 /* = 32.000 */;
+float globaldef000689 /* = 64.000 */;
+float globaldef000690 /* = 128.000 */;
+float globaldef000691 /* = 256.000 */;
+float globaldef000692 /* = 512.000 */;
+float globaldef000693 /* = 1024.000 */;
+float globaldef000694 /* = 2048.000 */;
+float globaldef000695 /* = 4096.000 */;
+float globaldef000696 /* = 8192.000 */;
+float globaldef000697 /* = 16384.000 */;
+float globaldef000698 /* = 0.000 */;
+float globaldef000699 /* = 1.000 */;
+float globaldef000700 /* = 2.000 */;
+float globaldef000701 /* = 3.000 */;
+float globaldef000702 /* = 4.000 */;
+float globaldef000703 /* = 5.000 */;
+float globaldef000704 /* = 6.000 */;
+float globaldef000705 /* = 7.000 */;
+float globaldef000706 /* = 8.000 */;
+float globaldef000707 /* = 0.000 */;
+float globaldef000708 /* = 1.000 */;
+float globaldef000709 /* = 2.000 */;
+float globaldef000710 /* = 3.000 */;
+float globaldef000711 /* = 0.000 */;
+float globaldef000712 /* = 1.000 */;
+float globaldef000713 /* = 2.000 */;
+float globaldef000714 /* = 3.000 */;
+float globaldef000715 /* = 4.000 */;
+float globaldef000716 /* = 5.000 */;
+float globaldef000717 /* = 270.000 */;
+float globaldef000718 /* = 687.000 */;
+float globaldef000719 /* = 24.000 */;
+float globaldef000720 /* = 640.000 */;
+float globaldef000721 /* = 250.000 */;
+float globaldef000722 /* = 10.000 */;
+float globaldef000723 /* = 600.000 */;
+float globaldef000724 /* = 800.000 */;
+float globaldef000725 /* = 30.000 */;
+float globaldef000726 /* = 16.000 */;
+float globaldef000727 /* = 30.000 */;
+float globaldef000728 /* = 500.000 */;
+float globaldef000729 /* = 40.000 */;
+float globaldef000730 /* = 0.000 */;
+float globaldef000731 /* = 1.000 */;
+float globaldef000732 /* = 2.000 */;
+float globaldef000733 /* = 3.000 */;
+float globaldef000734 /* = 5.000 */;
+float globaldef000735 /* = 6.000 */;
+float globaldef000736 /* = 7.000 */;
+float globaldef000737 /* = 8.000 */;
+float globaldef000738 /* = 32.000 */;
+float globaldef000739 /* = 1.000 */;
+float globaldef000740 /* = 2.000 */;
+float globaldef000741 /* = 3.000 */;
+float globaldef000742 /* = 4.000 */;
+float globaldef000743 /* = 5.000 */;
+float globaldef000744 /* = 1.000 */;
+float globaldef000745 /* = 2.000 */;
+float globaldef000746 /* = 4.000 */;
+float globaldef000747 /* = 8.000 */;
+float globaldef000748 /* = 15.000 */;
+float globaldef000749 /* = 16.000 */;
+float globaldef000750 /* = 32.000 */;
+float globaldef000751 /* = 64.000 */;
+float globaldef000752 /* = 128.000 */;
+float globaldef000753 /* = 256.000 */;
+float globaldef000754 /* = 512.000 */;
+float globaldef000755 /* = 1024.000 */;
+float globaldef000756 /* = 2048.000 */;
+float globaldef000757 /* = 4096.000 */;
+float globaldef000758 /* = 8192.000 */;
+float globaldef000759 /* = 16384.000 */;
+float globaldef000760 /* = 32768.000 */;
+float globaldef000761 /* = 65536.000 */;
+float globaldef000762 /* = 0.000 */;
+float globaldef000763 /* = 1.000 */;
+float globaldef000764 /* = 2.000 */;
+float globaldef000765 /* = 3.000 */;
+float globaldef000766 /* = 4.000 */;
+float globaldef000767 /* = 5.000 */;
+float globaldef000768 /* = 6.000 */;
+float globaldef000769 /* = 7.000 */;
+float globaldef000770 /* = 8.000 */;
+float globaldef000771 /* = 9.000 */;
+float globaldef000772 /* = 10.000 */;
+float globaldef000773 /* = 11.000 */;
+float globaldef000774 /* = 12.000 */;
+float globaldef000775 /* = 13.000 */;
+float globaldef000776 /* = 0.000 */;
+float globaldef000777 /* = 0.000 */;
+float globaldef000778 /* = 0.000 */;
+float globaldef000779 /* = 0.000 */;
+float globaldef000780 /* = 0.000 */;
+float globaldef000781 /* = 0.000 */;
+float globaldef000782 /* = 0.000 */;
+float globaldef000783 /* = 0.000 */;
+float globaldef000784 /* = 0.000 */;
+float globaldef000785 /* = 0.000 */;
+float globaldef000786 /* = 0.000 */;
+float globaldef000787 /* = 0.000 */;
+float globaldef000788 /* = 0.000 */;
+float globaldef000789 /* = 0.000 */;
+float globaldef000790 /* = 0.000 */;
+float globaldef000791 /* = 0.000 */;
+float globaldef000792 /* = 0.000 */;
+float globaldef000793 /* = 0.000 */;
+float globaldef000794 /* = 0.000 */;
+float globaldef000795 /* = 0.000 */;
+float globaldef000796 /* = 0.000 */;
+float globaldef000797 /* = 0.000 */;
+float globaldef000798 /* = 0.000 */;
+float globaldef000799 /* = 0.000 */;
+float globaldef000800 /* = 0.000 */;
+float globaldef000801 /* = 0.000 */;
+float globaldef000802 /* = 0.000 */;
+float globaldef000803 /* = 0.000 */;
+float globaldef000804 /* = 0.000 */;
+float globaldef000805 /* = 0.000 */;
+float globaldef000806 /* = 0.000 */;
+float globaldef000807 /* = 0.000 */;
+entity globaldef000808;
+entity globaldef000809;
+entity globaldef000810;
+entity globaldef000811;
+entity globaldef000812;
+entity globaldef000813;
+entity globaldef000814;
+entity globaldef000815;
+entity globaldef000816;
+entity globaldef000817;
+entity globaldef000818;
+entity globaldef000819;
+entity globaldef000820;
 void (entity client, string s) bot_stuffcmd;
 void (entity client, string s) bot_stuffcmd = #21;
 
-// function func64
+// function func000064
 // function number 64 begins at statement 1
 /*
  * OP_LOAD_F	840	182	842
@@ -315,11 +315,11 @@ void (entity client, string s) bot_stuffcmd = #21;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef823, string globaldef824) func64 = {
+void (entity globaldef000823, string globaldef000824) func000064 = {
 
-   if ( !(globaldef823.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000823.globaldef000160 & globaldef000681) ) {
 
-      globaldef821 (globaldef823,globaldef824);
+      bot_stuffcmd (globaldef000823,globaldef000824);
 
    }
 
@@ -333,7 +333,7 @@ void (entity client, string s) bot_centerprint5 = #73;
 void (entity client, string s) bot_centerprint6 = #73;
 void (entity client, string s) bot_centerprint7 = #73;
 
-// function func72
+// function func000072
 // function number 72 begins at statement 9
 /*
  * OP_LOAD_F	853	182	855
@@ -346,17 +346,17 @@ void (entity client, string s) bot_centerprint7 = #73;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef833, string globaldef834) func72 = {
+void (entity globaldef000833, string globaldef000834) func000072 = {
 
-   if ( !(globaldef833.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000833.globaldef000160 & globaldef000681) ) {
 
-      globaldef825 (globaldef833,globaldef834);
+      bot_centerprint (globaldef000833,globaldef000834);
 
    }
 
 };
 
-void (entity globaldef836, string globaldef837, string globaldef838) centerprint2;
+void (entity globaldef000836, string globaldef000837, string globaldef000838) centerprint2;
 
 // function centerprint2
 // function number 73 begins at statement 17
@@ -372,19 +372,19 @@ void (entity globaldef836, string globaldef837, string globaldef838) centerprint
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef836, string globaldef837, string globaldef838) centerprint2 = {
+void (entity globaldef000836, string globaldef000837, string globaldef000838) centerprint2 = {
 
-   if ( !(globaldef836.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000836.globaldef000160 & globaldef000681) ) {
 
-      globaldef826 (globaldef836,globaldef837,globaldef838);
+      bot_centerprint2 (globaldef000836,globaldef000837,globaldef000838);
 
    }
 
 };
 
-void (entity globaldef840, string globaldef841, string globaldef842, string globaldef843) func74;
+void (entity globaldef000840, string globaldef000841, string globaldef000842, string globaldef000843) func000074;
 
-// function func74
+// function func000074
 // function number 74 begins at statement 26
 /*
  * OP_LOAD_F	866	182	870
@@ -399,17 +399,17 @@ void (entity globaldef840, string globaldef841, string globaldef842, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef840, string globaldef841, string globaldef842, string globaldef843) func74 = {
+void (entity globaldef000840, string globaldef000841, string globaldef000842, string globaldef000843) func000074 = {
 
-   if ( !(globaldef840.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000840.globaldef000160 & globaldef000681) ) {
 
-      globaldef827 (globaldef840,globaldef841,globaldef842,globaldef843);
+      bot_centerprint3 (globaldef000840,globaldef000841,globaldef000842,globaldef000843);
 
    }
 
 };
 
-void (entity globaldef845, string globaldef846, string globaldef847, string globaldef848, string globaldef849) centerprint4;
+void (entity globaldef000845, string globaldef000846, string globaldef000847, string globaldef000848, string globaldef000849) centerprint4;
 
 // function centerprint4
 // function number 75 begins at statement 36
@@ -427,19 +427,19 @@ void (entity globaldef845, string globaldef846, string globaldef847, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef845, string globaldef846, string globaldef847, string globaldef848, string globaldef849) centerprint4 = {
+void (entity globaldef000845, string globaldef000846, string globaldef000847, string globaldef000848, string globaldef000849) centerprint4 = {
 
-   if ( !(globaldef845.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000845.globaldef000160 & globaldef000681) ) {
 
-      globaldef828 (globaldef845,globaldef846,globaldef847,globaldef848,globaldef849);
+      bot_centerprint4 (globaldef000845,globaldef000846,globaldef000847,globaldef000848,globaldef000849);
 
    }
 
 };
 
-void (entity globaldef851, string globaldef852, string globaldef853, string globaldef854, string globaldef855, string globaldef856) func76;
+void (entity globaldef000851, string globaldef000852, string globaldef000853, string globaldef000854, string globaldef000855, string globaldef000856) func000076;
 
-// function func76
+// function func000076
 // function number 76 begins at statement 47
 /*
  * OP_LOAD_F	883	182	889
@@ -456,17 +456,17 @@ void (entity globaldef851, string globaldef852, string globaldef853, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef851, string globaldef852, string globaldef853, string globaldef854, string globaldef855, string globaldef856) func76 = {
+void (entity globaldef000851, string globaldef000852, string globaldef000853, string globaldef000854, string globaldef000855, string globaldef000856) func000076 = {
 
-   if ( !(globaldef851.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000851.globaldef000160 & globaldef000681) ) {
 
-      globaldef829 (globaldef851,globaldef852,globaldef853,globaldef854,globaldef855,globaldef856);
+      bot_centerprint5 (globaldef000851,globaldef000852,globaldef000853,globaldef000854,globaldef000855,globaldef000856);
 
    }
 
 };
 
-void (entity globaldef858, string globaldef859, string globaldef860, string globaldef861, string globaldef862, string globaldef863, string globaldef864) centerprint6;
+void (entity globaldef000858, string globaldef000859, string globaldef000860, string globaldef000861, string globaldef000862, string globaldef000863, string globaldef000864) centerprint6;
 
 // function centerprint6
 // function number 77 begins at statement 59
@@ -486,17 +486,17 @@ void (entity globaldef858, string globaldef859, string globaldef860, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef858, string globaldef859, string globaldef860, string globaldef861, string globaldef862, string globaldef863, string globaldef864) centerprint6 = {
+void (entity globaldef000858, string globaldef000859, string globaldef000860, string globaldef000861, string globaldef000862, string globaldef000863, string globaldef000864) centerprint6 = {
 
-   if ( !(globaldef858.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000858.globaldef000160 & globaldef000681) ) {
 
-      globaldef830 (globaldef858,globaldef859,globaldef860,globaldef861,globaldef862,globaldef863,globaldef864);
+      bot_centerprint6 (globaldef000858,globaldef000859,globaldef000860,globaldef000861,globaldef000862,globaldef000863,globaldef000864);
 
    }
 
 };
 
-void (entity globaldef866, string globaldef867, string globaldef868, string globaldef869, string globaldef870, string globaldef871, string globaldef872, string globaldef873) centerprint7;
+void (entity globaldef000866, string globaldef000867, string globaldef000868, string globaldef000869, string globaldef000870, string globaldef000871, string globaldef000872, string globaldef000873) centerprint7;
 
 // function centerprint7
 // function number 78 begins at statement 72
@@ -517,11 +517,11 @@ void (entity globaldef866, string globaldef867, string globaldef868, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef866, string globaldef867, string globaldef868, string globaldef869, string globaldef870, string globaldef871, string globaldef872, string globaldef873) centerprint7 = {
+void (entity globaldef000866, string globaldef000867, string globaldef000868, string globaldef000869, string globaldef000870, string globaldef000871, string globaldef000872, string globaldef000873) centerprint7 = {
 
-   if ( !(globaldef866.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000866.globaldef000160 & globaldef000681) ) {
 
-      globaldef831 (globaldef866,globaldef867,globaldef868,globaldef869,globaldef870,globaldef871,globaldef872,globaldef873);
+      bot_centerprint7 (globaldef000866,globaldef000867,globaldef000868,globaldef000869,globaldef000870,globaldef000871,globaldef000872,globaldef000873);
 
    }
 
@@ -541,7 +541,7 @@ void (entity client, string s) bot_sprint5 = #24;
 void (entity client, string s) bot_sprint6 = #24;
 void (entity client, string s) bot_sprint7 = #24;
 
-// function func92
+// function func000092
 // function number 92 begins at statement 86
 /*
  * OP_LOAD_F	929	182	931
@@ -554,19 +554,19 @@ void (entity client, string s) bot_sprint7 = #24;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef888, string globaldef889) func92 = {
+void (entity globaldef000888, string globaldef000889) func000092 = {
 
-   if ( !(globaldef888.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000888.globaldef000160 & globaldef000681) ) {
 
-      globaldef880 (globaldef888,globaldef889);
+      bot_sprint (globaldef000888,globaldef000889);
 
    }
 
 };
 
-void (entity globaldef891, string globaldef892, string globaldef893) func93;
+void (entity globaldef000891, string globaldef000892, string globaldef000893) func000093;
 
-// function func93
+// function func000093
 // function number 93 begins at statement 94
 /*
  * OP_LOAD_F	935	182	938
@@ -580,19 +580,19 @@ void (entity globaldef891, string globaldef892, string globaldef893) func93;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef891, string globaldef892, string globaldef893) func93 = {
+void (entity globaldef000891, string globaldef000892, string globaldef000893) func000093 = {
 
-   if ( !(globaldef891.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000891.globaldef000160 & globaldef000681) ) {
 
-      globaldef881 (globaldef891,globaldef892,globaldef893);
+      bot_sprint2 (globaldef000891,globaldef000892,globaldef000893);
 
    }
 
 };
 
-void (entity globaldef895, string globaldef896, string globaldef897, string globaldef898) func94;
+void (entity globaldef000895, string globaldef000896, string globaldef000897, string globaldef000898) func000094;
 
-// function func94
+// function func000094
 // function number 94 begins at statement 103
 /*
  * OP_LOAD_F	942	182	946
@@ -607,17 +607,17 @@ void (entity globaldef895, string globaldef896, string globaldef897, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef895, string globaldef896, string globaldef897, string globaldef898) func94 = {
+void (entity globaldef000895, string globaldef000896, string globaldef000897, string globaldef000898) func000094 = {
 
-   if ( !(globaldef895.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000895.globaldef000160 & globaldef000681) ) {
 
-      globaldef882 (globaldef895,globaldef896,globaldef897,globaldef898);
+      bot_sprint3 (globaldef000895,globaldef000896,globaldef000897,globaldef000898);
 
    }
 
 };
 
-void (entity globaldef900, string globaldef901, string globaldef902, string globaldef903, string globaldef904) sprint4;
+void (entity globaldef000900, string globaldef000901, string globaldef000902, string globaldef000903, string globaldef000904) sprint4;
 
 // function sprint4
 // function number 95 begins at statement 113
@@ -635,17 +635,17 @@ void (entity globaldef900, string globaldef901, string globaldef902, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef900, string globaldef901, string globaldef902, string globaldef903, string globaldef904) sprint4 = {
+void (entity globaldef000900, string globaldef000901, string globaldef000902, string globaldef000903, string globaldef000904) sprint4 = {
 
-   if ( !(globaldef900.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000900.globaldef000160 & globaldef000681) ) {
 
-      globaldef883 (globaldef900,globaldef901,globaldef902,globaldef903,globaldef904);
+      bot_sprint4 (globaldef000900,globaldef000901,globaldef000902,globaldef000903,globaldef000904);
 
    }
 
 };
 
-void (entity globaldef906, string globaldef907, string globaldef908, string globaldef909, string globaldef910, string globaldef911) sprint5;
+void (entity globaldef000906, string globaldef000907, string globaldef000908, string globaldef000909, string globaldef000910, string globaldef000911) sprint5;
 
 // function sprint5
 // function number 96 begins at statement 124
@@ -664,17 +664,17 @@ void (entity globaldef906, string globaldef907, string globaldef908, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef906, string globaldef907, string globaldef908, string globaldef909, string globaldef910, string globaldef911) sprint5 = {
+void (entity globaldef000906, string globaldef000907, string globaldef000908, string globaldef000909, string globaldef000910, string globaldef000911) sprint5 = {
 
-   if ( !(globaldef906.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000906.globaldef000160 & globaldef000681) ) {
 
-      globaldef884 (globaldef906,globaldef907,globaldef908,globaldef909,globaldef910,globaldef911);
+      bot_sprint5 (globaldef000906,globaldef000907,globaldef000908,globaldef000909,globaldef000910,globaldef000911);
 
    }
 
 };
 
-void (entity globaldef913, string globaldef914, string globaldef915, string globaldef916, string globaldef917, string globaldef918, string globaldef919) sprint6;
+void (entity globaldef000913, string globaldef000914, string globaldef000915, string globaldef000916, string globaldef000917, string globaldef000918, string globaldef000919) sprint6;
 
 // function sprint6
 // function number 97 begins at statement 136
@@ -694,17 +694,17 @@ void (entity globaldef913, string globaldef914, string globaldef915, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef913, string globaldef914, string globaldef915, string globaldef916, string globaldef917, string globaldef918, string globaldef919) sprint6 = {
+void (entity globaldef000913, string globaldef000914, string globaldef000915, string globaldef000916, string globaldef000917, string globaldef000918, string globaldef000919) sprint6 = {
 
-   if ( !(globaldef913.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000913.globaldef000160 & globaldef000681) ) {
 
-      globaldef885 (globaldef913,globaldef914,globaldef915,globaldef916,globaldef917,globaldef918,globaldef919);
+      bot_sprint6 (globaldef000913,globaldef000914,globaldef000915,globaldef000916,globaldef000917,globaldef000918,globaldef000919);
 
    }
 
 };
 
-void (entity globaldef921, string globaldef922, string globaldef923, string globaldef924, string globaldef925, string globaldef926, string globaldef927, string globaldef928) sprint7;
+void (entity globaldef000921, string globaldef000922, string globaldef000923, string globaldef000924, string globaldef000925, string globaldef000926, string globaldef000927, string globaldef000928) sprint7;
 
 // function sprint7
 // function number 98 begins at statement 149
@@ -725,11 +725,11 @@ void (entity globaldef921, string globaldef922, string globaldef923, string glob
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef921, string globaldef922, string globaldef923, string globaldef924, string globaldef925, string globaldef926, string globaldef927, string globaldef928) sprint7 = {
+void (entity globaldef000921, string globaldef000922, string globaldef000923, string globaldef000924, string globaldef000925, string globaldef000926, string globaldef000927, string globaldef000928) sprint7 = {
 
-   if ( !(globaldef921.globaldef160 & globaldef681) ) {
+   if ( !(globaldef000921.globaldef000160 & globaldef000681) ) {
 
-      globaldef886 (globaldef921,globaldef922,globaldef923,globaldef924,globaldef925,globaldef926,globaldef927,globaldef928);
+      bot_sprint7 (globaldef000921,globaldef000922,globaldef000923,globaldef000924,globaldef000925,globaldef000926,globaldef000927,globaldef000928);
 
    }
 
@@ -752,369 +752,369 @@ void (string e) objerror7 = #11;
 
 void () IDCopyright = {
 
-   globaldef455 (globaldef936);
+   bprint (globaldef000936);
 
 };
-string globaldef936 /* = "The original QuakeC source is Copyright 1996, ID Software." */;
-float /* Warning: Could not determine return type */ (entity globaldef6502, entity globaldef6503) func2289;
-float (entity globaldef6504, entity globaldef6505) func2290;
-float (entity globaldef6506, entity globaldef6507) func2291;
-float (entity globaldef6508, entity globaldef6509) func2292;
-float (entity globaldef6510, entity globaldef6511) func2293;
-float (entity globaldef6512, entity globaldef6513) func2294;
-float (entity globaldef6514, entity globaldef6515) func2295;
-float /* Warning: Could not determine return type */ (entity globaldef6524, entity globaldef6525) func2296;
-float (entity globaldef6526, entity globaldef6527) func2297;
-float (entity globaldef6530, entity globaldef6531) func2299;
-float (entity globaldef6532, entity globaldef6533) func2300;
-float (entity globaldef6528, entity globaldef6529) func2298;
-float (entity globaldef6534, entity globaldef6535) func2301;
-float (entity globaldef6536, entity globaldef6537) func2302;
-float (entity globaldef6538, entity globaldef6539) func2303;
-float (entity globaldef6540, entity globaldef6541) func2304;
-float (entity globaldef6542, entity globaldef6543) func2305;
-float (entity globaldef6544, entity globaldef6545) func2306;
-float (entity globaldef6546, entity globaldef6547) func2307;
-float (entity globaldef6548, entity globaldef6549) func2308;
-float (entity globaldef6550, entity globaldef6551) func2309;
-float (entity globaldef6552, entity globaldef6553) func2310;
-float (entity globaldef6554, entity globaldef6555) func2311;
-float (entity globaldef6557, entity globaldef6558) func2312;
-float (entity globaldef6560, entity globaldef6561) func2313;
-float (entity globaldef6563, entity globaldef6564) func2314;
-float /* Warning: Could not determine return type */ (entity globaldef6565, entity globaldef6566) func2315;
-float /* Warning: Could not determine return type */ (entity globaldef6567, entity globaldef6568) func2316;
-float /* Warning: Could not determine return type */ (entity globaldef6569, entity globaldef6570) func2317;
-float (entity globaldef6571, entity globaldef6572) func2318;
-float (entity globaldef6573, entity globaldef6574) func2319;
-float (entity globaldef6575, entity globaldef6576) func2320;
-float (entity globaldef6577, entity globaldef6578) func2321;
-float (entity globaldef6579, entity globaldef6580) func2322;
-float (entity globaldef6581, entity globaldef6582) func2323;
-float (entity globaldef6583, entity globaldef6584) func2324;
-float (entity globaldef6585, entity globaldef6586) func2325;
-float (entity globaldef6587, entity globaldef6588) func2326;
-float (entity globaldef6589, entity globaldef6590) func2327;
-float (entity globaldef6591, entity globaldef6592) func2328;
-float (entity globaldef6593, entity globaldef6594) func2329;
+string globaldef000936 /* = "The original QuakeC source is Copyright 1996, ID Software." */;
+float /* Warning: Could not determine return type */ (entity globaldef006502, entity globaldef006503) func002289;
+float (entity globaldef006504, entity globaldef006505) func002290;
+float (entity globaldef006506, entity globaldef006507) func002291;
+float (entity globaldef006508, entity globaldef006509) func002292;
+float (entity globaldef006510, entity globaldef006511) func002293;
+float (entity globaldef006512, entity globaldef006513) func002294;
+float (entity globaldef006514, entity globaldef006515) func002295;
+float /* Warning: Could not determine return type */ (entity globaldef006524, entity globaldef006525) func002296;
+float (entity globaldef006526, entity globaldef006527) func002297;
+float (entity globaldef006530, entity globaldef006531) func002299;
+float (entity globaldef006532, entity globaldef006533) func002300;
+float (entity globaldef006528, entity globaldef006529) func002298;
+float (entity globaldef006534, entity globaldef006535) func002301;
+float (entity globaldef006536, entity globaldef006537) func002302;
+float (entity globaldef006538, entity globaldef006539) func002303;
+float (entity globaldef006540, entity globaldef006541) func002304;
+float (entity globaldef006542, entity globaldef006543) func002305;
+float (entity globaldef006544, entity globaldef006545) func002306;
+float (entity globaldef006546, entity globaldef006547) func002307;
+float (entity globaldef006548, entity globaldef006549) func002308;
+float (entity globaldef006550, entity globaldef006551) func002309;
+float (entity globaldef006552, entity globaldef006553) func002310;
+float (entity globaldef006554, entity globaldef006555) func002311;
+float (entity globaldef006557, entity globaldef006558) func002312;
+float (entity globaldef006560, entity globaldef006561) func002313;
+float (entity globaldef006563, entity globaldef006564) func002314;
+float /* Warning: Could not determine return type */ (entity globaldef006565, entity globaldef006566) func002315;
+float /* Warning: Could not determine return type */ (entity globaldef006567, entity globaldef006568) func002316;
+float /* Warning: Could not determine return type */ (entity globaldef006569, entity globaldef006570) func002317;
+float (entity globaldef006571, entity globaldef006572) func002318;
+float (entity globaldef006573, entity globaldef006574) func002319;
+float (entity globaldef006575, entity globaldef006576) func002320;
+float (entity globaldef006577, entity globaldef006578) func002321;
+float (entity globaldef006579, entity globaldef006580) func002322;
+float (entity globaldef006581, entity globaldef006582) func002323;
+float (entity globaldef006583, entity globaldef006584) func002324;
+float (entity globaldef006585, entity globaldef006586) func002325;
+float (entity globaldef006587, entity globaldef006588) func002326;
+float (entity globaldef006589, entity globaldef006590) func002327;
+float (entity globaldef006591, entity globaldef006592) func002328;
+float (entity globaldef006593, entity globaldef006594) func002329;
 
-void (entity globaldef6617) func2338;
-float (entity globaldef6621) func2339;
-float (entity globaldef6622) func2340;
-float /* Warning: Could not determine return type */ (entity globaldef6624) func2341;
-float (entity globaldef6625) func2342;
+void (entity globaldef006617) func002338;
+float (entity globaldef006621) func002339;
+float (entity globaldef006622) func002340;
+float /* Warning: Could not determine return type */ (entity globaldef006624) func002341;
+float (entity globaldef006625) func002342;
 
-void () func2255;
-float () func2261;
-float (float globaldef5684) func2257;
+void () func002255;
+float () func002261;
+float (float globaldef005684) func002257;
 
-void (float globaldef5688) func2259;
+void (float globaldef005688) func002259;
 
-void (float globaldef5689) func2260;
+void (float globaldef005689) func002260;
 
-void (float globaldef5691, string globaldef5692) func2262;
+void (float globaldef005691, string globaldef005692) func002262;
 
-void (float globaldef5693, float globaldef5694) func2263;
+void (float globaldef005693, float globaldef005694) func002263;
 
-void (float globaldef5695, float globaldef5696) func2264;
+void (float globaldef005695, float globaldef005696) func002264;
 
-void () func2265;
-float /* Warning: Could not determine return type */ (float globaldef5699) func2266;
+void () func002265;
+float /* Warning: Could not determine return type */ (float globaldef005699) func002266;
 
-void (entity globaldef5702, entity globaldef5703) func2267;
+void (entity globaldef005702, entity globaldef005703) func002267;
 
-void (entity globaldef5704) func2268;
+void (entity globaldef005704) func002268;
 
-void (entity globaldef5739) func2273;
+void (entity globaldef005739) func002273;
 
-void () func2277;
+void () func002277;
 
-void (entity globaldef6690, entity globaldef6691) func2349;
+void (entity globaldef006690, entity globaldef006691) func002349;
 
-void (entity globaldef6692, vector globaldef6693) func2350;
+void (entity globaldef006692, vector globaldef006693) func002350;
 
-void (entity globaldef6784) func2357;
+void (entity globaldef006784) func002357;
 
-void (entity globaldef6798) func2365;
+void (entity globaldef006798) func002365;
 
-void (entity globaldef6792) func2360;
+void (entity globaldef006792) func002360;
 
-void (entity globaldef6793) func2361;
+void (entity globaldef006793) func002361;
 
-void (entity globaldef6796) func2363;
+void (entity globaldef006796) func002363;
 
-void (entity globaldef6790) func2359;
+void (entity globaldef006790) func002359;
 
-void (entity globaldef6797) func2364;
+void (entity globaldef006797) func002364;
 
-void (entity globaldef6785) func2358;
+void (entity globaldef006785) func002358;
 
-void (entity globaldef6779) func2356;
+void (entity globaldef006779) func002356;
 
-void (entity globaldef6801, string globaldef6802, float globaldef6803) func2366;
+void (entity globaldef006801, string globaldef006802, float globaldef006803) func002366;
 
-void (entity globaldef6806, string globaldef6807, string globaldef6808, float globaldef6809) func2367;
+void (entity globaldef006806, string globaldef006807, string globaldef006808, float globaldef006809) func002367;
 
-void (entity globaldef6810, string globaldef6811, string globaldef6812, string globaldef6813, float globaldef6814) func2368;
+void (entity globaldef006810, string globaldef006811, string globaldef006812, string globaldef006813, float globaldef006814) func002368;
 
-void (entity globaldef6815, string globaldef6816, float globaldef6817, float globaldef6818) func2369;
+void (entity globaldef006815, string globaldef006816, float globaldef006817, float globaldef006818) func002369;
 
-void (entity globaldef6819, string globaldef6820, string globaldef6821, float globaldef6822, float globaldef6823) func2370;
+void (entity globaldef006819, string globaldef006820, string globaldef006821, float globaldef006822, float globaldef006823) func002370;
 
-void (entity globaldef6824, string globaldef6825, string globaldef6826, string globaldef6827, float globaldef6828, float globaldef6829) func2371;
+void (entity globaldef006824, string globaldef006825, string globaldef006826, string globaldef006827, float globaldef006828, float globaldef006829) func002371;
 
-void (entity globaldef6839) func2374;
+void (entity globaldef006839) func002374;
 
-void (entity globaldef6840) func2375;
-float (entity globaldef6841) func2376;
-float (entity globaldef6843) func2378;
-float (entity globaldef6842) func2377;
-float (entity globaldef6844) func2379;
-string () func2373;
-string (entity globaldef6830) func2372;
+void (entity globaldef006840) func002375;
+float (entity globaldef006841) func002376;
+float (entity globaldef006843) func002378;
+float (entity globaldef006842) func002377;
+float (entity globaldef006844) func002379;
+string () func002373;
+string (entity globaldef006830) func002372;
 
-void () func2380;
-string (float globaldef5820) func2278;
-string (float globaldef5846) func2279;
-float /* Warning: Could not determine return type */ (float globaldef5871) func2280;
+void () func002380;
+string (float n) BotName;
+string (float n) BotConsoleName;
+float /* Warning: Could not determine return type */ (float n) BotShirtPantsColor;
 
-void (entity globaldef5872) func2281;
+void (entity e) BotChooseExitMessage;
 
-void (entity globaldef5898) func2282;
+void (entity e) BotChooseKillMessage;
 
-void (entity globaldef6020) func2283;
+void (entity e) BotChooseDeathMessage;
 
-void (entity globaldef6464) BotChooseTelefragMessage;
+void (entity e) BotChooseTelefragMessage;
 
-void (entity globaldef6144) func2284;
+void (entity e) func002284;
 
-void (entity globaldef6474) func2286;
+void (entity e) func002286;
 
-void (entity globaldef6959) func2388;
+void (entity globaldef006959) func002388;
 
-void (entity globaldef6975) func2391;
-float (entity globaldef6991, entity globaldef6992) func2392;
+void (entity globaldef006975) func002391;
+float (entity globaldef006991, entity globaldef006992) func002392;
 
-void (entity globaldef7026) func2397;
+void (entity globaldef007026) func002397;
 
-void (entity globaldef7040, float globaldef7041) func2399;
+void (entity globaldef007040, float globaldef007041) func002399;
 
-void (float globaldef7088) func2410;
+void (float globaldef007088) func002410;
 
-void (entity globaldef7102) func2417;
+void (entity globaldef007102) func002417;
 
-void () func2421;
+void () func002421;
 
-void () func2423;
+void () func002423;
 
-void () func2425;
+void () func002425;
 
-void (float globaldef7118) func2422;
+void (float globaldef007118) func002422;
 
-void (float globaldef7125) func2427;
+void (float globaldef007125) func002427;
 
-void (float globaldef7127) func2428;
+void (float globaldef007127) func002428;
 
-void () func2424;
+void () func002424;
 
-void () func2429;
+void () func002429;
 
-void (entity globaldef7123, float globaldef7124) func2426;
-float (entity globaldef7667, entity globaldef7668) func2456;
-float /* Warning: Could not determine return type */ (vector globaldef7677) func2457;
+void (entity globaldef007123, float globaldef007124) func002426;
+float (entity globaldef007667, entity globaldef007668) func002456;
+float /* Warning: Could not determine return type */ (vector globaldef007677) func002457;
 
-void () func2458;
-float (entity globaldef7683) func2459;
-float (entity globaldef7692) func2460;
-float /* Warning: Could not determine return type */ (entity globaldef7693) func2461;
-float (entity globaldef7702, entity globaldef7703) func2462;
-float (entity globaldef7728, entity globaldef7729, entity globaldef7730) func2463;
-float /* Warning: Could not determine return type */ (entity globaldef7841, entity globaldef7842) func2466;
-float /* Warning: Could not determine return type */ (entity globaldef7843, entity globaldef7844) func2467;
+void () func002458;
+float (entity globaldef007683) func002459;
+float (entity globaldef007692) func002460;
+float /* Warning: Could not determine return type */ (entity globaldef007693) func002461;
+float (entity globaldef007702, entity globaldef007703) func002462;
+float (entity globaldef007728, entity globaldef007729, entity globaldef007730) func002463;
+float /* Warning: Could not determine return type */ (entity globaldef007841, entity globaldef007842) func002466;
+float /* Warning: Could not determine return type */ (entity globaldef007843, entity globaldef007844) func002467;
 
-void (entity globaldef7646, vector globaldef7647, float globaldef7651, float globaldef7652) func2453;
-float (entity globaldef7657, entity globaldef7658) func2454;
-entity (entity globaldef7660) func2455;
-float (entity globaldef7579, float globaldef7580) func2442;
-float (entity globaldef7582, float globaldef7583) BotJumpToGoal;
-float /* Warning: Could not determine return type */ (entity globaldef7585, float globaldef7586, float globaldef7587) func2444;
-float /* Warning: Could not determine return type */ (entity globaldef7593, float globaldef7594, float globaldef7595) func2445;
-float (entity globaldef7601) func2446;
+void (entity globaldef007646, vector globaldef007647, float globaldef007651, float globaldef007652) func002453;
+float (entity globaldef007657, entity globaldef007658) func002454;
+entity (entity globaldef007660) func002455;
+float (entity globaldef007579, float globaldef007580) func002442;
+float (entity globaldef007582, float globaldef007583) BotJumpToGoal;
+float /* Warning: Could not determine return type */ (entity globaldef007585, float globaldef007586, float globaldef007587) func002444;
+float /* Warning: Could not determine return type */ (entity globaldef007593, float globaldef007594, float globaldef007595) func002445;
+float (entity globaldef007601) func002446;
 
-void (entity globaldef7845) func2468;
-vector (entity globaldef7869) func2474;
-entity () func2470;
+void (entity globaldef007845) func002468;
+vector (entity globaldef007869) func002474;
+entity () func002470;
 
-void (entity globaldef7858, entity globaldef7859) func2471;
+void (entity globaldef007858, entity globaldef007859) func002471;
 
-void (entity globaldef7860, entity globaldef7861) func2472;
+void (entity globaldef007860, entity globaldef007861) func002472;
 
-void (entity globaldef7868) func2473;
-float (entity globaldef7978, float globaldef7979, float globaldef7980) func2482;
-float (entity globaldef7998, float globaldef7999) func2483;
-float (entity globaldef8024) func2489;
-entity (entity globaldef8038, entity globaldef8039) func2491;
-entity (entity globaldef8046, entity globaldef8047) func2492;
-float /* Warning: Could not determine return type */ (entity globaldef8101) func2497;
-float /* Warning: Could not determine return type */ (entity globaldef8103) func2498;
+void (entity globaldef007868) func002473;
+float (entity globaldef007978, float globaldef007979, float globaldef007980) func002482;
+float (entity globaldef007998, float globaldef007999) func002483;
+float (entity globaldef008024) func002489;
+entity (entity globaldef008038, entity globaldef008039) func002491;
+entity (entity globaldef008046, entity globaldef008047) func002492;
+float /* Warning: Could not determine return type */ (entity globaldef008101) func002497;
+float /* Warning: Could not determine return type */ (entity globaldef008103) func002498;
 
-void (entity globaldef8110) func2499;
+void (entity globaldef008110) func002499;
 
-void (entity globaldef8111) func2500;
+void (entity globaldef008111) func002500;
 
-void (entity globaldef8113) func2502;
+void (entity globaldef008113) func002502;
 
-void (entity globaldef8115) func2504;
+void (entity globaldef008115) func002504;
 
-void (entity globaldef8116) func2505;
+void (entity globaldef008116) func002505;
 
-void (entity globaldef8118) func2507;
+void (entity globaldef008118) func002507;
 
-void (entity globaldef8130) func2509;
+void (entity globaldef008130) func002509;
 
-void (entity globaldef8134) func2512;
+void (entity globaldef008134) func002512;
 
-void (entity globaldef8132) func2510;
+void (entity globaldef008132) func002510;
 
-void (entity globaldef8136) func2514;
+void (entity globaldef008136) func002514;
 
-void (entity globaldef8139) func2516;
+void (entity globaldef008139) func002516;
 
-void (entity globaldef8142) func2518;
+void (entity globaldef008142) func002518;
 
-void (entity globaldef8143) func2519;
+void (entity globaldef008143) func002519;
 
-void (entity globaldef8112) func2501;
+void (entity globaldef008112) func002501;
 
-void (entity globaldef8114) func2503;
+void (entity globaldef008114) func002503;
 
-void (entity globaldef8117) func2506;
+void (entity globaldef008117) func002506;
 
-void (entity globaldef8119) func2508;
+void (entity globaldef008119) func002508;
 
-void (entity globaldef8135) func2513;
+void (entity globaldef008135) func002513;
 
-void (entity globaldef8133) func2511;
+void (entity globaldef008133) func002511;
 
-void (entity globaldef8137) func2515;
+void (entity globaldef008137) func002515;
 
-void (entity globaldef8140) func2517;
+void (entity globaldef008140) func002517;
 
-void (entity globaldef8144) func2520;
+void (entity globaldef008144) func002520;
 
-void () func2521;
+void () func002521;
 
-void (entity globaldef8148) func2522;
+void (entity globaldef008148) func002522;
 
-void () func2523;
+void () func002523;
 
-void () func2524;
+void () func002524;
 
-void () func2525;
+void () func002525;
 
-void () func2526;
+void () func002526;
 
-void () func2532;
+void () func002532;
 
-void () func2536;
+void () func002536;
 
-void () func2540;
+void () func002540;
 
-void () func2544;
+void () func002544;
 
-void () func2548;
+void () func002548;
 
-void () func2550;
+void () func002550;
 
-void () func2552;
+void () func002552;
 
-void (entity globaldef8189, float globaldef8190) func2571;
+void (entity globaldef008189, float globaldef008190) func002571;
 
-void () func2637;
+void () func002637;
 
-void () func2638;
-float (entity globaldef8983, float globaldef8984, entity globaldef8985) func2640;
-float (entity globaldef8986, float globaldef8987, entity globaldef8988) func2641;
-float (entity globaldef8989, float globaldef8990, entity globaldef8991) func2642;
-float (entity globaldef8992, float globaldef8993, entity globaldef8994) func2643;
-float (entity globaldef8995, float globaldef8996, entity globaldef8997) func2644;
-float (entity globaldef8998, float globaldef8999, entity globaldef9000) func2645;
-float (entity globaldef9001, float globaldef9002, entity globaldef9003) func2646;
-float (entity globaldef9004, float globaldef9005, entity globaldef9006) func2647;
+void () func002638;
+float (entity globaldef008983, float globaldef008984, entity globaldef008985) func002640;
+float (entity globaldef008986, float globaldef008987, entity globaldef008988) func002641;
+float (entity globaldef008989, float globaldef008990, entity globaldef008991) func002642;
+float (entity globaldef008992, float globaldef008993, entity globaldef008994) func002643;
+float (entity globaldef008995, float globaldef008996, entity globaldef008997) func002644;
+float (entity globaldef008998, float globaldef008999, entity globaldef009000) func002645;
+float (entity globaldef009001, float globaldef009002, entity globaldef009003) func002646;
+float (entity globaldef009004, float globaldef009005, entity globaldef009006) func002647;
 
-void () func2657;
+void () func002657;
 
-void () func2660;
+void () func002660;
 
-void () func2661;
+void () func002661;
 
-void () func2662;
+void () func002662;
 
-void () func2663;
+void () func002663;
 
-void (vector globaldef9133, float globaldef9137, float globaldef9138, string globaldef9139) func2668;
+void (vector globaldef009133, float globaldef009137, float globaldef009138, string globaldef009139) func002668;
 
-void (float globaldef9141, float globaldef9142, float globaldef9143, float globaldef9144, float globaldef9145) func2669;
+void (float globaldef009141, float globaldef009142, float globaldef009143, float globaldef009144, float globaldef009145) func002669;
 
-void (float globaldef9149, float globaldef9150, float globaldef9151, float globaldef9152, float globaldef9153) func2670;
-float (entity globaldef9161, entity globaldef9162) func2673;
+void (float globaldef009149, float globaldef009150, float globaldef009151, float globaldef009152, float globaldef009153) func002670;
+float (entity globaldef009161, entity globaldef009162) func002673;
 
-void () func2680;
+void () func002680;
 
-void (entity globaldef9179) func2675;
+void (entity globaldef009179) func002675;
 
-void (entity globaldef9252, entity globaldef9253) func2686;
+void (entity globaldef009252, entity globaldef009253) func002686;
 
-void (entity globaldef9186, entity globaldef9187) func2676;
+void (entity globaldef009186, entity globaldef009187) func002676;
 
-void (entity globaldef9193, entity globaldef9194) func2677;
+void (entity globaldef009193, entity globaldef009194) func002677;
 
-void (entity globaldef9241, entity globaldef9242, float globaldef9243, entity globaldef9244) func2683;
+void (entity globaldef009241, entity globaldef009242, float globaldef009243, entity globaldef009244) func002683;
 
-void (entity globaldef9248, entity globaldef9249) func2685;
-float (entity globaldef9258, entity globaldef9259) func2689;
-float (entity globaldef9260, entity globaldef9261) MovingEntityCached;
-float (entity globaldef9254, entity globaldef9255) func2687;
-float (entity globaldef9256, entity globaldef9257) func2688;
-float /* Warning: Could not determine return type */ (entity globaldef9262) func2691;
+void (entity globaldef009248, entity globaldef009249) func002685;
+float (entity globaldef009258, entity globaldef009259) func002689;
+float (entity globaldef009260, entity globaldef009261) MovingEntityCached;
+float (entity globaldef009254, entity globaldef009255) func002687;
+float (entity globaldef009256, entity globaldef009257) func002688;
+float /* Warning: Could not determine return type */ (entity globaldef009262) func002691;
 
-void (entity globaldef9275, entity globaldef9276) func2692;
+void (entity globaldef009275, entity globaldef009276) func002692;
 
-void (entity globaldef9548) func2738;
+void (entity globaldef009548) func002738;
 
-void (entity globaldef9550) func2739;
+void (entity globaldef009550) func002739;
 
-void () func2748;
+void () func002748;
 
-void () func2704;
+void () func002704;
 
-void () func2719;
+void () func002719;
 
-void () func2708;
+void () func002708;
 
-void (entity globaldef2819, float globaldef2820) func366;
+void (entity globaldef002819, float globaldef002820) func000366;
 
-void (entity globaldef2797) func365;
+void (entity globaldef002797) func000365;
 
-void (entity globaldef2791) func364;
+void (entity globaldef002791) func000364;
 
-void () func362;
+void () func000362;
 
-void (string globaldef2761) func356;
-entity (string globaldef2729) func353;
+void (string globaldef002761) func000356;
+entity (string globaldef002729) func000353;
 
-void () func372;
-float globaldef1160 /* = 0.000 */;
-float globaldef1161 /* = 1.000 */;
-float globaldef1162 /* = 2.000 */;
-float globaldef1163 /* = 3.000 */;
-float globaldef1164 /* = 4.000 */;
-float globaldef1165 /* = 5.000 */;
-float globaldef1166 /* = 6.000 */;
-float globaldef1167 /* = 7.000 */;
-entity (entity globaldef1169) func106;
+void () func000372;
+float globaldef001160 /* = 0.000 */;
+float globaldef001161 /* = 1.000 */;
+float globaldef001162 /* = 2.000 */;
+float globaldef001163 /* = 3.000 */;
+float globaldef001164 /* = 4.000 */;
+float globaldef001165 /* = 5.000 */;
+float globaldef001166 /* = 6.000 */;
+float globaldef001167 /* = 7.000 */;
+entity (entity globaldef001169) func000106;
 
-// function func106
+// function func000106
 // function number 106 begins at statement 166
 /*
  * OP_EQ_E	1231	30	1232
@@ -1144,36 +1144,37 @@ entity (entity globaldef1169) func106;
  * OP_RETURN	1231	0	0
  * OP_DONE	0	0	0
  */
-entity (entity globaldef1169) func106 = {
+entity (entity globaldef001169) func000106 = {
 
-   if ( (globaldef1169 == world) ) {
+   if ( (globaldef001169 == world) ) {
 
-      self.cnt = FALSE;
+      self.globaldef000409 = FALSE;
 
    }
-   if ( (self.cnt == FALSE) ) {
+   if ( (self.globaldef000409 == FALSE) ) {
 
-      globaldef1169 = find (globaldef1169,classname,"player");
-      if ( (globaldef1169 == world) ) {
+      globaldef001169 = find (globaldef001169,globaldef000107,globaldef001170);
+      if ( (globaldef001169 == world) ) {
 
-         self.cnt = TRUE;
+         self.globaldef000409 = TRUE;
 
       }
 
    }
-   if ( (self.cnt == TRUE) ) {
+   if ( (self.globaldef000409 == TRUE) ) {
 
-      globaldef1169 = find (globaldef1169,classname,globaldef1171);
+      globaldef001169 = find (globaldef001169,globaldef000107,globaldef001171);
 
    }
-   return ( globaldef1169 );
+   return ( globaldef001169 );
 
 };
-string globaldef1171 /* = "bot" */;
+string globaldef001170 /* = "player" */;
+string globaldef001171 /* = "bot" */;
 
-void (entity globaldef1173) func107;
+void (entity globaldef001173) func000107;
 
-// function func107
+// function func000107
 // function number 107 begins at statement 192
 /*
  * OP_LOAD_S	1243	129	1244
@@ -1196,21 +1197,21 @@ void (entity globaldef1173) func107;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1173) func107 = {
+void (entity globaldef001173) func000107 = {
 
-   if ( (globaldef1173.classname == "player") ) {
+   if ( (globaldef001173.globaldef000107 == globaldef001170) ) {
 
-      makevectors (globaldef1173.globaldef153);
+      makevectors (globaldef001173.globaldef000153);
 
    } else {
 
-      if ( (globaldef1173.classname == globaldef1171) ) {
+      if ( (globaldef001173.globaldef000107 == globaldef001171) ) {
 
-         makevectors (globaldef1173.globaldef153);
+         makevectors (globaldef001173.globaldef000153);
 
       } else {
 
-         makevectors (globaldef1173.angles);
+         makevectors (globaldef001173.globaldef000095);
 
       }
 
@@ -1226,7 +1227,7 @@ void (entity client, string s) camcenterprint5 = #73;
 void (entity client, string s) camcenterprint6 = #73;
 void (entity client, string s) camcenterprint7 = #73;
 
-// function func115
+// function func000115
 // function number 115 begins at statement 210
 /*
  * OP_LOAD_F	1265	153	1269
@@ -1256,40 +1257,40 @@ void (entity client, string s) camcenterprint7 = #73;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1182, string globaldef1183) func115 = {
+void (entity globaldef001182, string globaldef001183) func000115 = {
 
-   local string globaldef1184;
-   local string globaldef1185;
+   local string globaldef001184;
+   local string globaldef001185;
 
-   if ( (globaldef1182.globaldef131 < TRUE) ) {
+   if ( (globaldef001182.globaldef000131 < TRUE) ) {
 
-      globaldef1184 = globaldef1186;
-
-   } else {
-
-      globaldef1184 = globaldef457 (globaldef1182.globaldef131);
-
-   }
-   if ( (globaldef1182.globaldef131 != TRUE) ) {
-
-      globaldef1185 = globaldef1187;
+      globaldef001184 = globaldef001186;
 
    } else {
 
-      globaldef1185 = globaldef1188;
+      globaldef001184 = ftos (globaldef001182.globaldef000131);
 
    }
-   globaldef1179 (self,globaldef1183,globaldef1189,globaldef1182.globaldef158,globaldef1190,globaldef1184,globaldef1185);
+   if ( (globaldef001182.globaldef000131 != TRUE) ) {
+
+      globaldef001185 = globaldef001187;
+
+   } else {
+
+      globaldef001185 = globaldef001188;
+
+   }
+   camcenterprint6 (self,globaldef001183,globaldef001189,globaldef001182.globaldef000158,globaldef001190,globaldef001184,globaldef001185);
 
 };
-string globaldef1186 /* = "no" */;
-string globaldef1187 /* = " frags" */;
-string globaldef1188 /* = " frag" */;
-string globaldef1189 /* = "\n\n\n" */;
-string globaldef1190 /* = " - " */;
-float (float globaldef1192) func116;
+string globaldef001186 /* = "no" */;
+string globaldef001187 /* = " frags" */;
+string globaldef001188 /* = " frag" */;
+string globaldef001189 /* = "\n\n\n" */;
+string globaldef001190 /* = " - " */;
+float (float globaldef001192) func000116;
 
-// function func116
+// function func000116
 // function number 116 begins at statement 235
 /*
  * OP_LT	1281	1283	1284
@@ -1315,35 +1316,35 @@ float (float globaldef1192) func116;
  * OP_RETURN	1282	0	0
  * OP_DONE	0	0	0
  */
-float (float globaldef1192) func116 = {
+float (float globaldef001192) func000116 = {
 
-   local float globaldef1193;
+   local float globaldef001193;
 
-   if ( (globaldef1192 < globaldef1194) ) {
+   if ( (globaldef001192 < globaldef001194) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef1192 > TRUE) ) {
+   if ( (globaldef001192 > TRUE) ) {
 
-      globaldef1193 = globaldef1192;
+      globaldef001193 = globaldef001192;
 
    } else {
 
-      globaldef1193 = TRUE;
+      globaldef001193 = TRUE;
 
    }
    do {
 
-      globaldef1193 = ((globaldef1192 + (globaldef1193 * globaldef1193)) / (FL_SWIM * globaldef1193));
+      globaldef001193 = ((globaldef001192 + (globaldef001193 * globaldef001193)) / (FL_SWIM * globaldef001193));
 
-   } while ( (globaldef471 (((globaldef1193 * globaldef1193) - globaldef1192)) > (globaldef1192 * globaldef1194)) );
-   return ( globaldef1193 );
+   } while ( (fabs (((globaldef001193 * globaldef001193) - globaldef001192)) > (globaldef001192 * globaldef001194)) );
+   return ( globaldef001193 );
 
 };
-float (float globaldef1196) func117;
+float (float globaldef001196) func000117;
 
-// function func117
+// function func000117
 // function number 117 begins at statement 257
 /*
  * OP_GT	1295	1296	1297
@@ -1359,27 +1360,27 @@ float (float globaldef1196) func117;
  * OP_RETURN	1295	0	0
  * OP_DONE	0	0	0
  */
-float (float globaldef1196) func117 = {
+float (float globaldef001196) func000117 = {
 
-   while ( (globaldef1196 > globaldef1197) ) {
+   while ( (globaldef001196 > globaldef001197) ) {
 
-      globaldef1196 = (globaldef1196 - globaldef1198);
-
-   }
-   while ( (globaldef1196 < globaldef1199) ) {
-
-      globaldef1196 = (globaldef1196 + globaldef1198);
+      globaldef001196 = (globaldef001196 - globaldef001198);
 
    }
-   return ( globaldef1196 );
+   while ( (globaldef001196 < globaldef001199) ) {
+
+      globaldef001196 = (globaldef001196 + globaldef001198);
+
+   }
+   return ( globaldef001196 );
 
 };
-float globaldef1197 /* = 180.000 */;
-float globaldef1198 /* = 360.000 */;
-float globaldef1199 /* = -180.000 */;
-float /* Warning: Could not determine return type */ (vector globaldef1201) func118;
+float globaldef001197 /* = 180.000 */;
+float globaldef001198 /* = 360.000 */;
+float globaldef001199 /* = -180.000 */;
+float /* Warning: Could not determine return type */ (vector globaldef001201) func000118;
 
-// function func118
+// function func000118
 // function number 118 begins at statement 269
 /*
  * OP_LOAD_V	28	105	1307
@@ -1395,15 +1396,15 @@ float /* Warning: Could not determine return type */ (vector globaldef1201) func
  * OP_RETURN	1313	0	0
  * OP_DONE	0	0	0
  */
-float /* Warning: Could not determine return type */ (vector globaldef1201) func118 = {
+float /* Warning: Could not determine return type */ (vector globaldef001201) func000118 = {
 
-   globaldef449 (self.origin,globaldef1201,TRUE,self);
+   traceline (self.globaldef000083,globaldef001201,TRUE,self);
    return ( ((trace_fraction == TRUE) && !(trace_inopen && trace_inwater)) );
 
 };
-float /* Warning: Could not determine return type */ (entity globaldef1206) func119;
+float /* Warning: Could not determine return type */ (entity globaldef001206) func000119;
 
-// function func119
+// function func000119
 // function number 119 begins at statement 281
 /*
  * OP_LOAD_V	1315	105	1319
@@ -1427,29 +1428,29 @@ float /* Warning: Could not determine return type */ (entity globaldef1206) func
  * OP_RETURN	1	0	0
  * OP_DONE	0	0	0
  */
-float /* Warning: Could not determine return type */ (entity globaldef1206) func119 = {
+float /* Warning: Could not determine return type */ (entity globaldef001206) func000119 = {
 
-   local vector globaldef1207;
+   local vector globaldef001207;
 
-   if ( globaldef1200 (globaldef1206.origin) ) {
-
-      return ( TRUE );
-
-   }
-   globaldef1207 = globaldef1206.origin;
-   globaldef1210 = globaldef1206.globaldef75;
-   if ( globaldef1200 (globaldef1207) ) {
+   if ( func000118 (globaldef001206.globaldef000083) ) {
 
       return ( TRUE );
 
    }
-   globaldef1210 = (globaldef1206.globaldef79 - FL_CLIENT);
-   return ( globaldef1200 (globaldef1207) );
+   globaldef001207 = globaldef001206.globaldef000083;
+   globaldef001210 = globaldef001206.globaldef000075;
+   if ( func000118 (globaldef001207) ) {
+
+      return ( TRUE );
+
+   }
+   globaldef001210 = (globaldef001206.globaldef000079 - FL_CLIENT);
+   return ( func000118 (globaldef001207) );
 
 };
-entity () func120;
+entity () func000120;
 
-// function func120
+// function func000120
 // function number 120 begins at statement 301
 /*
  * OP_LOAD_V	28	175	1336
@@ -1493,46 +1494,46 @@ entity () func120;
  * OP_RETURN	1330	0	0
  * OP_DONE	0	0	0
  */
-entity () func120 = {
+entity () func000120 = {
 
-   local entity globaldef1212;
-   local entity globaldef1213;
-   local vector globaldef1214;
-   local float globaldef1218;
-   local float globaldef1219;
+   local entity globaldef001212;
+   local entity globaldef001213;
+   local vector globaldef001214;
+   local float globaldef001218;
+   local float globaldef001219;
 
-   makevectors (self.globaldef153);
-   globaldef1213 = world;
-   globaldef1212 = globaldef1168 (world);
-   globaldef1219 = FALSE;
-   while ( (globaldef1212 != world) ) {
+   makevectors (self.globaldef000153);
+   globaldef001213 = world;
+   globaldef001212 = func000106 (world);
+   globaldef001219 = FALSE;
+   while ( (globaldef001212 != world) ) {
 
-      if ( (globaldef1212.globaldef143 == DEAD_NO) ) {
+      if ( (globaldef001212.globaldef000143 == DEAD_NO) ) {
 
-         globaldef1214 = (globaldef1212.origin - self.origin);
-         globaldef1214 = globaldef442 (globaldef1214);
-         globaldef1218 = (((v_forward_x * globaldef1214_x) + (globaldef34 * globaldef1216)) + (globaldef35 * globaldef1217));
-         if ( (globaldef1218 > globaldef1219) ) {
+         globaldef001214 = (globaldef001212.globaldef000083 - self.globaldef000083);
+         globaldef001214 = normalize (globaldef001214);
+         globaldef001218 = (((v_forward_x * globaldef001214_x) + (globaldef000034 * globaldef001216)) + (globaldef000035 * globaldef001217));
+         if ( (globaldef001218 > globaldef001219) ) {
 
-            if ( globaldef1200 (globaldef1212.origin) ) {
+            if ( func000118 (globaldef001212.globaldef000083) ) {
 
-               globaldef1213 = globaldef1212;
-               globaldef1219 = globaldef1218;
+               globaldef001213 = globaldef001212;
+               globaldef001219 = globaldef001218;
 
             }
 
          }
 
       }
-      globaldef1212 = globaldef1168 (globaldef1212);
+      globaldef001212 = func000106 (globaldef001212);
 
    }
-   return ( globaldef1213 );
+   return ( globaldef001213 );
 
 };
-float /* Warning: Could not determine return type */ (float globaldef1221, float globaldef1222) func121;
+float /* Warning: Could not determine return type */ (float globaldef001221, float globaldef001222) func000121;
 
-// function func121
+// function func000121
 // function number 121 begins at statement 341
 /*
  * OP_LT	1361	213	1366
@@ -1555,33 +1556,33 @@ float /* Warning: Could not determine return type */ (float globaldef1221, float
  * OP_RETURN	1373	0	0
  * OP_DONE	0	0	0
  */
-float /* Warning: Could not determine return type */ (float globaldef1221, float globaldef1222) func121 = {
+float /* Warning: Could not determine return type */ (float globaldef001221, float globaldef001222) func000121 = {
 
-   local float globaldef1223;
-   local float globaldef1224;
-   local float globaldef1225;
+   local float globaldef001223;
+   local float globaldef001224;
+   local float globaldef001225;
 
-   if ( (globaldef1221 < FALSE) ) {
+   if ( (globaldef001221 < FALSE) ) {
 
-      globaldef1222 = (FALSE - globaldef1222);
+      globaldef001222 = (FALSE - globaldef001222);
 
    }
-   globaldef1224 = frametime;
-   globaldef1225 = globaldef1191 ((globaldef1221 / globaldef1222));
-   if ( (globaldef1224 > globaldef1225) ) {
+   globaldef001224 = frametime;
+   globaldef001225 = func000116 ((globaldef001221 / globaldef001222));
+   if ( (globaldef001224 > globaldef001225) ) {
 
-      return ( globaldef1221 );
+      return ( globaldef001221 );
 
    } else {
 
-      return ( ((globaldef1222 * globaldef1224) * ((FL_SWIM * globaldef1225) - globaldef1224)) );
+      return ( ((globaldef001222 * globaldef001224) * ((FL_SWIM * globaldef001225) - globaldef001224)) );
 
    }
 
 };
-vector (float globaldef1227, float globaldef1228, float globaldef1229) func122;
+vector (float globaldef001227, float globaldef001228, float globaldef001229) func000122;
 
-// function func122
+// function func000122
 // function number 122 begins at statement 360
 /*
  * OP_STORE_V	1375	4	0
@@ -1664,73 +1665,73 @@ vector (float globaldef1227, float globaldef1228, float globaldef1229) func122;
  * OP_RETURN	1385	0	0
  * OP_DONE	0	0	0
  */
-vector (float globaldef1227, float globaldef1228, float globaldef1229) func122 = {
+vector (float globaldef001227, float globaldef001228, float globaldef001229) func000122 = {
 
-   local float globaldef1230;
-   local float globaldef1231;
-   local float globaldef1232;
-   local float globaldef1233;
-   local float globaldef1234;
-   local float globaldef1235;
-   local float globaldef1236;
-   local vector globaldef1237;
+   local float globaldef001230;
+   local float globaldef001231;
+   local float globaldef001232;
+   local float globaldef001233;
+   local float globaldef001234;
+   local float globaldef001235;
+   local float globaldef001236;
+   local vector globaldef001237;
 
-   globaldef1227 = globaldef1195 (globaldef1227);
-   globaldef1233 = (globaldef1228 / FL_SWIM);
-   globaldef1234 = (globaldef1229 * globaldef1227);
-   globaldef1235 = (globaldef1233 * globaldef1233);
-   globaldef1230 = frametime;
-   if ( (globaldef471 (globaldef1234) < globaldef1235) ) {
+   globaldef001227 = func000117 (globaldef001227);
+   globaldef001233 = (globaldef001228 / FL_SWIM);
+   globaldef001234 = (globaldef001229 * globaldef001227);
+   globaldef001235 = (globaldef001233 * globaldef001233);
+   globaldef001230 = frametime;
+   if ( (fabs (globaldef001234) < globaldef001235) ) {
 
-      globaldef1236 = (globaldef1228 > FALSE);
+      globaldef001236 = (globaldef001228 > FALSE);
 
    } else {
 
-      globaldef1236 = (globaldef1227 > FALSE);
+      globaldef001236 = (globaldef001227 > FALSE);
 
    }
-   if ( globaldef1236 ) {
+   if ( globaldef001236 ) {
 
-      globaldef1232 = (globaldef1191 (((globaldef1235 + globaldef1234) / FL_SWIM)) / globaldef1229);
-      globaldef1229 = (FALSE - globaldef1229);
+      globaldef001232 = (func000116 (((globaldef001235 + globaldef001234) / FL_SWIM)) / globaldef001229);
+      globaldef001229 = (FALSE - globaldef001229);
 
    } else {
 
-      globaldef1232 = (globaldef1191 (((globaldef1235 - globaldef1234) / FL_SWIM)) / globaldef1229);
+      globaldef001232 = (func000116 (((globaldef001235 - globaldef001234) / FL_SWIM)) / globaldef001229);
 
    }
-   globaldef1231 = (globaldef1232 - (globaldef1233 / globaldef1229));
-   if ( (globaldef1231 > globaldef1230) ) {
+   globaldef001231 = (globaldef001232 - (globaldef001233 / globaldef001229));
+   if ( (globaldef001231 > globaldef001230) ) {
 
-      globaldef1227 = ((((globaldef1229 * globaldef1230) + globaldef1228) * globaldef1230) + globaldef1227);
-      globaldef1228 = (((globaldef1229 * globaldef1230) * FL_SWIM) + globaldef1228);
+      globaldef001227 = ((((globaldef001229 * globaldef001230) + globaldef001228) * globaldef001230) + globaldef001227);
+      globaldef001228 = (((globaldef001229 * globaldef001230) * FL_SWIM) + globaldef001228);
 
    } else {
 
-      globaldef1227 = ((((globaldef1229 * globaldef1231) + globaldef1228) * globaldef1231) + globaldef1227);
-      globaldef1228 = (((globaldef1229 * globaldef1231) * FL_SWIM) + globaldef1228);
-      globaldef1231 = (globaldef1230 - globaldef1231);
-      if ( (globaldef1231 < globaldef1232) ) {
+      globaldef001227 = ((((globaldef001229 * globaldef001231) + globaldef001228) * globaldef001231) + globaldef001227);
+      globaldef001228 = (((globaldef001229 * globaldef001231) * FL_SWIM) + globaldef001228);
+      globaldef001231 = (globaldef001230 - globaldef001231);
+      if ( (globaldef001231 < globaldef001232) ) {
 
-         globaldef1227 = (((globaldef1228 - (globaldef1229 * globaldef1231)) * globaldef1231) + globaldef1227);
-         globaldef1228 = (globaldef1228 - ((globaldef1229 * globaldef1231) * FL_SWIM));
+         globaldef001227 = (((globaldef001228 - (globaldef001229 * globaldef001231)) * globaldef001231) + globaldef001227);
+         globaldef001228 = (globaldef001228 - ((globaldef001229 * globaldef001231) * FL_SWIM));
 
       } else {
 
-         globaldef1227 = FALSE;
-         globaldef1228 = FALSE;
+         globaldef001227 = FALSE;
+         globaldef001228 = FALSE;
 
       }
 
    }
-   globaldef1237_x = globaldef1227;
-   globaldef1239 = globaldef1228;
-   return ( globaldef1237 );
+   globaldef001237_x = globaldef001227;
+   globaldef001239 = globaldef001228;
+   return ( globaldef001237 );
 
 };
-float /* Warning: Could not determine return type */ (vector globaldef1242) func123;
+float /* Warning: Could not determine return type */ (vector globaldef001242) func000123;
 
-// function func123
+// function func000123
 // function number 123 begins at statement 439
 /*
  * OP_STORE_V	1428	4	0
@@ -1782,50 +1783,50 @@ float /* Warning: Could not determine return type */ (vector globaldef1242) func
  * OP_RETURN	1	0	0
  * OP_DONE	0	0	0
  */
-float /* Warning: Could not determine return type */ (vector globaldef1242) func123 = {
+float /* Warning: Could not determine return type */ (vector globaldef001242) func000123 = {
 
-   local vector globaldef1246;
-   local vector globaldef1250;
-   local float globaldef1254;
+   local vector globaldef001246;
+   local vector globaldef001250;
+   local float globaldef001254;
 
-   globaldef1250 = globaldef442 (globaldef1242);
-   globaldef1242 = (globaldef1255 * globaldef1250);
-   globaldef1250 = (MOVETYPE_FLY * globaldef1250);
-   globaldef1246 = self.enemy.origin;
-   globaldef1249 = (self.enemy.globaldef79 - FL_CLIENT);
-   globaldef449 (globaldef1246,(globaldef1246 + globaldef1242),FALSE,self.enemy);
+   globaldef001250 = normalize (globaldef001242);
+   globaldef001242 = (globaldef001255 * globaldef001250);
+   globaldef001250 = (MOVETYPE_FLY * globaldef001250);
+   globaldef001246 = self.globaldef000159.globaldef000083;
+   globaldef001249 = (self.globaldef000159.globaldef000079 - FL_CLIENT);
+   traceline (globaldef001246,(globaldef001246 + globaldef001242),FALSE,self.globaldef000159);
    if ( (trace_ent != world) ) {
 
-      return ( globaldef1256 );
+      return ( globaldef001256 );
 
    }
    if ( (trace_inopen && trace_inwater) ) {
 
-      return ( globaldef1256 );
+      return ( globaldef001256 );
 
    }
-   trace_endpos = (trace_endpos - globaldef1250);
-   if ( (globaldef470 (trace_endpos) == CONTENT_SOLID) ) {
+   trace_endpos = (trace_endpos - globaldef001250);
+   if ( (pointcontents (trace_endpos) == CONTENT_SOLID) ) {
 
-      return ( globaldef1256 );
-
-   }
-   globaldef1254 = vlen ((self.enemy.origin - trace_endpos));
-   if ( (globaldef1254 < globaldef1257) ) {
-
-      return ( globaldef1256 );
+      return ( globaldef001256 );
 
    }
-   return ( globaldef471 ((globaldef1258 - globaldef1254)) );
+   globaldef001254 = vlen ((self.globaldef000159.globaldef000083 - trace_endpos));
+   if ( (globaldef001254 < globaldef001257) ) {
+
+      return ( globaldef001256 );
+
+   }
+   return ( fabs ((globaldef001258 - globaldef001254)) );
 
 };
-float globaldef1256 /* = 1111.000 */;
-float globaldef1257 /* = 50.000 */;
-float globaldef1258 /* = 333.000 */;
+float globaldef001256 /* = 1111.000 */;
+float globaldef001257 /* = 50.000 */;
+float globaldef001258 /* = 333.000 */;
 
-void (float globaldef1260, float globaldef1261) func124;
+void (float globaldef001260, float globaldef001261) func000124;
 
-// function func124
+// function func000124
 // function number 124 begins at statement 487
 /*
  * OP_LOAD_V	28	105	1484
@@ -1951,86 +1952,86 @@ void (float globaldef1260, float globaldef1261) func124;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1260, float globaldef1261) func124 = {
+void (float globaldef001260, float globaldef001261) func000124 = {
 
-   local vector globaldef1262;
-   local vector globaldef1266;
-   local float globaldef1270;
+   local vector globaldef001262;
+   local vector globaldef001266;
+   local float globaldef001270;
 
-   globaldef449 (self.origin,self.globaldef389,TRUE,self);
+   traceline (self.globaldef000083,self.globaldef000389,TRUE,self);
    if ( (trace_fraction != TRUE) ) {
 
-      globaldef1260 = FALSE;
-      globaldef1261 = FALSE;
+      globaldef001260 = FALSE;
+      globaldef001261 = FALSE;
 
    }
-   if ( (globaldef1260 == FALSE) ) {
+   if ( (globaldef001260 == FALSE) ) {
 
-      setorigin (self,self.globaldef389);
+      setorigin (self,self.globaldef000389);
 
    } else {
 
-      globaldef1262 = (self.globaldef389 - self.origin);
-      globaldef1270 = vlen (globaldef1262);
-      globaldef1262 = globaldef442 (globaldef1262);
-      globaldef1270 = globaldef1220 (globaldef1270,globaldef1260);
-      globaldef1262 = (globaldef1270 * globaldef1262);
-      setorigin (self,(self.origin + globaldef1262));
+      globaldef001262 = (self.globaldef000389 - self.globaldef000083);
+      globaldef001270 = vlen (globaldef001262);
+      globaldef001262 = normalize (globaldef001262);
+      globaldef001270 = func000121 (globaldef001270,globaldef001260);
+      globaldef001262 = (globaldef001270 * globaldef001262);
+      setorigin (self,(self.globaldef000083 + globaldef001262));
 
    }
-   self.globaldef152 = TRUE;
-   self.movetype = MOVETYPE_NONE;
-   if ( (self.globaldef421 != globaldef1167) ) {
+   self.globaldef000152 = TRUE;
+   self.globaldef000081 = MOVETYPE_NONE;
+   if ( (self.globaldef000421 != globaldef001167) ) {
 
-      globaldef1262 = globaldef478 ((self.globaldef393 - self.globaldef389));
+      globaldef001262 = vectoangles ((self.globaldef000393 - self.globaldef000389));
 
    } else {
 
-      globaldef1262 = globaldef478 ((self.globaldef393 - self.origin));
+      globaldef001262 = vectoangles ((self.globaldef000393 - self.globaldef000083));
 
    }
-   globaldef1265 = FALSE;
-   globaldef1262_x = globaldef1195 ((globaldef1198 - globaldef1262_x));
-   globaldef1264 = globaldef1195 (globaldef1264);
-   if ( (globaldef1262_x > globaldef1271) ) {
+   globaldef001265 = FALSE;
+   globaldef001262_x = func000117 ((globaldef001198 - globaldef001262_x));
+   globaldef001264 = func000117 (globaldef001264);
+   if ( (globaldef001262_x > globaldef001271) ) {
 
-      globaldef1262_x = globaldef1271;
+      globaldef001262_x = globaldef001271;
 
    } else {
 
-      if ( (globaldef1262_x < globaldef1272) ) {
+      if ( (globaldef001262_x < globaldef001272) ) {
 
-         globaldef1262_x = globaldef1272;
+         globaldef001262_x = globaldef001272;
 
       }
 
    }
-   if ( (globaldef1261 == FALSE) ) {
+   if ( (globaldef001261 == FALSE) ) {
 
-      self.angles = globaldef1262;
-      self.globaldef383 = VEC_ORIGIN;
+      self.globaldef000095 = globaldef001262;
+      self.globaldef000383 = VEC_ORIGIN;
 
    } else {
 
-      globaldef1266 = globaldef1226 ((self.globaldef96 - globaldef1262_x),self.globaldef384,globaldef1261);
-      self.globaldef384 = globaldef1268;
-      self.globaldef96 = (globaldef1262_x + globaldef1266_x);
-      globaldef1266 = globaldef1226 ((self.globaldef97 - globaldef1264),self.globaldef385,globaldef1261);
-      self.globaldef385 = globaldef1268;
-      self.globaldef97 = (globaldef1264 + globaldef1266_x);
-      self.globaldef96 = globaldef1195 (self.globaldef96);
-      self.globaldef97 = globaldef1195 (self.globaldef97);
+      globaldef001266 = func000122 ((self.globaldef000096 - globaldef001262_x),self.globaldef000384,globaldef001261);
+      self.globaldef000384 = globaldef001268;
+      self.globaldef000096 = (globaldef001262_x + globaldef001266_x);
+      globaldef001266 = func000122 ((self.globaldef000097 - globaldef001264),self.globaldef000385,globaldef001261);
+      self.globaldef000385 = globaldef001268;
+      self.globaldef000097 = (globaldef001264 + globaldef001266_x);
+      self.globaldef000096 = func000117 (self.globaldef000096);
+      self.globaldef000097 = func000117 (self.globaldef000097);
 
    }
-   self.globaldef153 = self.angles;
+   self.globaldef000153 = self.globaldef000095;
 
 };
-float globaldef1271 /* = 70.000 */;
-float globaldef1272 /* = -70.000 */;
+float globaldef001271 /* = 70.000 */;
+float globaldef001272 /* = -70.000 */;
 
-void () func125;
+void () func000125;
 
-// function func125
+// function func000125
 // function number 125 begins at statement 608
 /*
  * OP_ADDRESS	28	406	1570
@@ -2049,18 +2050,18 @@ void () func125;
  * OP_DONE	0	0	0
  */
 
-void () func125 = {
+void () func000125 = {
 
-   self.globaldef389 = self.origin;
-   makevectors (self.globaldef153);
-   self.globaldef393 = (self.origin + v_forward);
-   globaldef1259 (FALSE,FALSE);
+   self.globaldef000389 = self.globaldef000083;
+   makevectors (self.globaldef000153);
+   self.globaldef000393 = (self.globaldef000083 + v_forward);
+   func000124 (FALSE,FALSE);
 
 };
 
-void () func126;
+void () func000126;
 
-// function func126
+// function func000126
 // function number 126 begins at statement 622
 /*
  * OP_CALL0	1569	0	0
@@ -2079,20 +2080,20 @@ void () func126;
  * OP_DONE	0	0	0
  */
 
-void () func126 = {
+void () func000126 = {
 
-   globaldef1273 ();
-   self.globaldef421 = globaldef1160;
-   self.globaldef405 = (time + FL_SWIM);
-   self.globaldef354 = time;
-   self.globaldef397 = self.globaldef393;
-   self.enemy = self;
+   func000125 ();
+   self.globaldef000421 = globaldef001160;
+   self.globaldef000405 = (time + FL_SWIM);
+   self.globaldef000354 = time;
+   self.globaldef000397 = self.globaldef000393;
+   self.globaldef000159 = self;
 
 };
 
-void () func127;
+void () func000127;
 
-// function func127
+// function func000127
 // function number 127 begins at statement 636
 /*
  * OP_LOAD_F	28	424	1601
@@ -2119,25 +2120,25 @@ void () func127;
  * OP_DONE	0	0	0
  */
 
-void () func127 = {
+void () func000127 = {
 
-   if ( self.globaldef407 ) {
+   if ( self.globaldef000407 ) {
 
-      globaldef1181 (self.enemy,globaldef1276);
+      func000115 (self.globaldef000159,globaldef001276);
 
    }
-   self.globaldef383 = VEC_ORIGIN;
-   self.globaldef389 = self.origin;
-   self.globaldef421 = globaldef1167;
-   self.globaldef405 = (time + TRUE);
-   self.globaldef406 = world;
-   self.globaldef354 = (time + MOVETYPE_FLY);
+   self.globaldef000383 = VEC_ORIGIN;
+   self.globaldef000389 = self.globaldef000083;
+   self.globaldef000421 = globaldef001167;
+   self.globaldef000405 = (time + TRUE);
+   self.globaldef000406 = world;
+   self.globaldef000354 = (time + MOVETYPE_FLY);
 
 };
-string globaldef1276 /* = "R.I.P." */;
-vector (entity globaldef1278) func128;
+string globaldef001276 /* = "R.I.P." */;
+vector (entity globaldef001278) func000128;
 
-// function func128
+// function func000128
 // function number 128 begins at statement 658
 /*
  * OP_LOAD_V	1620	105	1624
@@ -2148,19 +2149,19 @@ vector (entity globaldef1278) func128;
  * OP_RETURN	1621	0	0
  * OP_DONE	0	0	0
  */
-vector (entity globaldef1278) func128 = {
+vector (entity globaldef001278) func000128 = {
 
-   local vector globaldef1279;
+   local vector globaldef001279;
 
-   globaldef1279 = globaldef1278.origin;
-   globaldef1282 = (globaldef1278.globaldef79 - FL_CLIENT);
-   return ( globaldef1279 );
+   globaldef001279 = globaldef001278.globaldef000083;
+   globaldef001282 = (globaldef001278.globaldef000079 - FL_CLIENT);
+   return ( globaldef001279 );
 
 };
 
-void (entity globaldef1284) func129;
+void (entity globaldef001284) func000129;
 
-// function func129
+// function func000129
 // function number 129 begins at statement 665
 /*
  * OP_ADDRESS	28	422	1643
@@ -2446,251 +2447,251 @@ void (entity globaldef1284) func129;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1284) func129 = {
+void (entity globaldef001284) func000129 = {
 
-   local float globaldef1285;
-   local float globaldef1286;
-   local vector globaldef1287;
-   local vector globaldef1291;
-   local vector globaldef1295;
-   local entity globaldef1299;
+   local float globaldef001285;
+   local float globaldef001286;
+   local vector globaldef001287;
+   local vector globaldef001291;
+   local vector globaldef001295;
+   local entity globaldef001299;
 
-   self.globaldef405 = (time + globaldef1300);
-   if ( (self.enemy != globaldef1284) ) {
+   self.globaldef000405 = (time + globaldef001300);
+   if ( (self.globaldef000159 != globaldef001284) ) {
 
-      self.enemy = globaldef1284;
-      if ( (self.globaldef406 != self.enemy) ) {
+      self.globaldef000159 = globaldef001284;
+      if ( (self.globaldef000406 != self.globaldef000159) ) {
 
-         if ( self.globaldef407 ) {
+         if ( self.globaldef000407 ) {
 
-            globaldef1181 (self.enemy,globaldef1301);
+            func000115 (self.globaldef000159,globaldef001301);
 
          }
-         self.globaldef406 = globaldef1284;
+         self.globaldef000406 = globaldef001284;
 
       }
 
    }
-   globaldef1287 = self.enemy.angles;
-   globaldef1287_x = FALSE;
-   globaldef1289 = FALSE;
-   makevectors (globaldef1287);
+   globaldef001287 = self.globaldef000159.globaldef000095;
+   globaldef001287_x = FALSE;
+   globaldef001289 = FALSE;
+   makevectors (globaldef001287);
    v_forward = (MOVETYPE_WALK * v_forward);
-   globaldef1286 = globaldef1302;
-   globaldef1285 = globaldef1241 (((v_up + v_forward) + v_right));
-   if ( (globaldef1285 < globaldef1286) ) {
+   globaldef001286 = globaldef001302;
+   globaldef001285 = func000123 (((v_up + v_forward) + v_right));
+   if ( (globaldef001285 < globaldef001286) ) {
 
-      globaldef1286 = globaldef1285;
-      globaldef1287 = trace_endpos;
-
-   }
-   globaldef1285 = globaldef1241 (((v_up - v_forward) + v_right));
-   if ( (globaldef1285 < globaldef1286) ) {
-
-      globaldef1286 = globaldef1285;
-      globaldef1287 = trace_endpos;
+      globaldef001286 = globaldef001285;
+      globaldef001287 = trace_endpos;
 
    }
-   globaldef1285 = globaldef1241 (((v_up + v_forward) - v_right));
-   if ( (globaldef1285 < globaldef1286) ) {
+   globaldef001285 = func000123 (((v_up - v_forward) + v_right));
+   if ( (globaldef001285 < globaldef001286) ) {
 
-      globaldef1286 = globaldef1285;
-      globaldef1287 = trace_endpos;
-
-   }
-   globaldef1285 = globaldef1241 (((v_up - v_forward) - v_right));
-   if ( (globaldef1285 < globaldef1286) ) {
-
-      globaldef1286 = globaldef1285;
-      globaldef1287 = trace_endpos;
+      globaldef001286 = globaldef001285;
+      globaldef001287 = trace_endpos;
 
    }
-   if ( (globaldef1286 >= globaldef1302) ) {
+   globaldef001285 = func000123 (((v_up + v_forward) - v_right));
+   if ( (globaldef001285 < globaldef001286) ) {
 
-      globaldef1285 = globaldef1241 ((v_up + v_forward));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((v_up - v_forward));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((v_up + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((v_up - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
+      globaldef001286 = globaldef001285;
+      globaldef001287 = trace_endpos;
 
    }
-   if ( (globaldef1286 >= globaldef1302) ) {
+   globaldef001285 = func000123 (((v_up - v_forward) - v_right));
+   if ( (globaldef001285 < globaldef001286) ) {
 
-      globaldef1285 = globaldef1241 ((v_forward + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001286 = globaldef001285;
+      globaldef001287 = trace_endpos;
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+   }
+   if ( (globaldef001286 >= globaldef001302) ) {
 
-      }
-      globaldef1285 = globaldef1241 ((v_forward - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 ((v_up + v_forward));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_forward) + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_forward) - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 ((v_up - v_forward));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((v_up + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((v_up - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
 
    }
-   if ( (globaldef1286 >= globaldef1302) ) {
+   if ( (globaldef001286 >= globaldef001302) ) {
 
-      globaldef1285 = globaldef1241 (v_forward);
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 ((v_forward + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 (v_right);
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
-      globaldef1285 = globaldef1241 ((VEC_ORIGIN - v_forward));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 ((v_forward - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((VEC_ORIGIN - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_forward) + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-   }
-   if ( (globaldef1286 >= globaldef1302) ) {
-
-      globaldef1285 = globaldef1241 ((((VEC_ORIGIN - v_up) + v_forward) + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
-      globaldef1285 = globaldef1241 ((((VEC_ORIGIN - v_up) - v_forward) + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_forward) - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((((VEC_ORIGIN - v_up) + v_forward) - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 ((((VEC_ORIGIN - v_up) - v_forward) - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
 
    }
-   if ( (globaldef1286 >= globaldef1302) ) {
+   if ( (globaldef001286 >= globaldef001302) ) {
 
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_up) + v_forward));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 (v_forward);
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
-
-      }
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_up) + v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
-
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_up) - v_forward));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 (v_right);
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
-      globaldef1285 = globaldef1241 (((VEC_ORIGIN - v_up) - v_right));
-      if ( (globaldef1285 < globaldef1286) ) {
+      globaldef001285 = func000123 ((VEC_ORIGIN - v_forward));
+      if ( (globaldef001285 < globaldef001286) ) {
 
-         globaldef1286 = globaldef1285;
-         globaldef1287 = trace_endpos;
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((VEC_ORIGIN - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
 
       }
 
    }
-   if ( (globaldef1286 >= globaldef1302) ) {
+   if ( (globaldef001286 >= globaldef001302) ) {
 
-      globaldef1274 ();
-      self.globaldef405 = (time + FL_SWIM);
+      globaldef001285 = func000123 ((((VEC_ORIGIN - v_up) + v_forward) + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((((VEC_ORIGIN - v_up) - v_forward) + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((((VEC_ORIGIN - v_up) + v_forward) - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 ((((VEC_ORIGIN - v_up) - v_forward) - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+
+   }
+   if ( (globaldef001286 >= globaldef001302) ) {
+
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_up) + v_forward));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_up) + v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_up) - v_forward));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+      globaldef001285 = func000123 (((VEC_ORIGIN - v_up) - v_right));
+      if ( (globaldef001285 < globaldef001286) ) {
+
+         globaldef001286 = globaldef001285;
+         globaldef001287 = trace_endpos;
+
+      }
+
+   }
+   if ( (globaldef001286 >= globaldef001302) ) {
+
+      func000126 ();
+      self.globaldef000405 = (time + FL_SWIM);
       return ;
 
    }
-   self.globaldef393 = globaldef1277 (self.enemy);
-   self.globaldef389 = globaldef1287;
-   self.globaldef421 = globaldef1162;
-   self.globaldef420 = (globaldef1303 * vlen ((self.globaldef389 - self.globaldef393)));
-   if ( (self.globaldef420 < globaldef728) ) {
+   self.globaldef000393 = func000128 (self.globaldef000159);
+   self.globaldef000389 = globaldef001287;
+   self.globaldef000421 = globaldef001162;
+   self.globaldef000420 = (globaldef001303 * vlen ((self.globaldef000389 - self.globaldef000393)));
+   if ( (self.globaldef000420 < globaldef000728) ) {
 
-      self.globaldef420 = globaldef728;
+      self.globaldef000420 = globaldef000728;
 
    }
-   globaldef1259 (FALSE,FALSE);
+   func000124 (FALSE,FALSE);
 
 };
-float globaldef1300 /* = 0.400 */;
-string globaldef1301 /* = "Now taking" */;
-float globaldef1302 /* = 1000.000 */;
-float globaldef1303 /* = 1.500 */;
-vector () func130;
+float globaldef001300 /* = 0.400 */;
+string globaldef001301 /* = "Now taking" */;
+float globaldef001302 /* = 1000.000 */;
+float globaldef001303 /* = 1.500 */;
+vector () func000130;
 
-// function func130
+// function func000130
 // function number 130 begins at statement 946
 /*
  * OP_LOAD_ENT	28	181	1846
@@ -2735,33 +2736,33 @@ vector () func130;
  * OP_RETURN	1840	0	0
  * OP_DONE	0	0	0
  */
-vector () func130 = {
+vector () func000130 = {
 
-   local vector globaldef1305;
-   local vector globaldef1309;
+   local vector globaldef001305;
+   local vector globaldef001309;
 
-   globaldef1172 (self.enemy);
-   globaldef1305 = (self.enemy.origin + ((self.enemy.globaldef119 + MOVETYPE_STEP) * v_up));
-   globaldef449 (self.enemy.origin,globaldef1305,FALSE,self);
-   globaldef1305 = (trace_endpos - globaldef442 (globaldef1305));
-   globaldef1309 = (globaldef1313 * v_forward);
-   globaldef449 (globaldef1305,(globaldef1305 + globaldef1309),TRUE,self);
-   globaldef1309 = (trace_endpos - globaldef442 (globaldef1309));
-   if ( globaldef1200 (globaldef1309) ) {
+   func000107 (self.globaldef000159);
+   globaldef001305 = (self.globaldef000159.globaldef000083 + ((self.globaldef000159.globaldef000119 + MOVETYPE_STEP) * v_up));
+   traceline (self.globaldef000159.globaldef000083,globaldef001305,FALSE,self);
+   globaldef001305 = (trace_endpos - normalize (globaldef001305));
+   globaldef001309 = (globaldef001313 * v_forward);
+   traceline (globaldef001305,(globaldef001305 + globaldef001309),TRUE,self);
+   globaldef001309 = (trace_endpos - normalize (globaldef001309));
+   if ( func000118 (globaldef001309) ) {
 
-      return ( globaldef1309 );
+      return ( globaldef001309 );
 
    } else {
 
-      return ( globaldef1305 );
+      return ( globaldef001305 );
 
    }
 
 };
-float globaldef1313 /* = -100.000 */;
-vector () func131;
+float globaldef001313 /* = -100.000 */;
+vector () func000131;
 
-// function func131
+// function func000131
 // function number 131 begins at statement 987
 /*
  * OP_LOAD_ENT	28	181	1881
@@ -2783,27 +2784,27 @@ vector () func131;
  * OP_RETURN	1878	0	0
  * OP_DONE	0	0	0
  */
-vector () func131 = {
+vector () func000131 = {
 
-   local vector globaldef1315;
+   local vector globaldef001315;
 
-   if ( (self.enemy.globaldef143 == DEAD_NO) ) {
+   if ( (self.globaldef000159.globaldef000143 == DEAD_NO) ) {
 
-      globaldef1172 (self.enemy);
-      globaldef1315 = (self.enemy.origin + (FL_WATERJUMP * v_forward));
+      func000107 (self.globaldef000159);
+      globaldef001315 = (self.globaldef000159.globaldef000083 + (FL_WATERJUMP * v_forward));
 
    } else {
 
-      globaldef1315 = self.enemy.origin;
+      globaldef001315 = self.globaldef000159.globaldef000083;
 
    }
-   return ( globaldef1315 );
+   return ( globaldef001315 );
 
 };
 
-void () func132;
+void () func000132;
 
-// function func132
+// function func000132
 // function number 132 begins at statement 1005
 /*
  * OP_LOAD_V	28	175	1900
@@ -2835,19 +2836,19 @@ void () func132;
  * OP_DONE	0	0	0
  */
 
-void () func132 = {
+void () func000132 = {
 
-   makevectors (self.globaldef153);
-   globaldef449 (self.origin,(self.origin + (globaldef1320 * v_forward)),TRUE,self);
-   self.globaldef389 = (trace_endpos - (MOVETYPE_FLY * globaldef442 ((trace_endpos - self.origin))));
-   self.globaldef393 = self.origin;
-   globaldef1259 (FALSE,FALSE);
+   makevectors (self.globaldef000153);
+   traceline (self.globaldef000083,(self.globaldef000083 + (globaldef001320 * v_forward)),TRUE,self);
+   self.globaldef000389 = (trace_endpos - (MOVETYPE_FLY * normalize ((trace_endpos - self.globaldef000083))));
+   self.globaldef000393 = self.globaldef000083;
+   func000124 (FALSE,FALSE);
 
 };
-float globaldef1320 /* = 2000.000 */;
-entity (float globaldef1322) func133;
+float globaldef001320 /* = 2000.000 */;
+entity (float globaldef001322) func000133;
 
-// function func133
+// function func000133
 // function number 133 begins at statement 1032
 /*
  * OP_STORE_V	30	4	0
@@ -2870,24 +2871,24 @@ entity (float globaldef1322) func133;
  * OP_RETURN	1939	0	0
  * OP_DONE	0	0	0
  */
-entity (float globaldef1322) func133 = {
+entity (float globaldef001322) func000133 = {
 
-   local entity globaldef1323;
+   local entity globaldef001323;
 
-   globaldef1323 = find (world,classname,globaldef1324);
-   while ( ((globaldef1322 > FALSE) && (globaldef1323 != world)) ) {
+   globaldef001323 = find (world,globaldef000107,globaldef001324);
+   while ( ((globaldef001322 > FALSE) && (globaldef001323 != world)) ) {
 
-      globaldef1323 = find (globaldef1323,classname,globaldef1324);
-      globaldef1322 = (globaldef1322 - TRUE);
+      globaldef001323 = find (globaldef001323,globaldef000107,globaldef001324);
+      globaldef001322 = (globaldef001322 - TRUE);
 
    }
-   return ( globaldef1323 );
+   return ( globaldef001323 );
 
 };
 
-void (float globaldef1326) func134;
+void (float globaldef001326) func000134;
 
-// function func134
+// function func000134
 // function number 134 begins at statement 1051
 /*
  * OP_STORE_V	1946	4	0
@@ -2908,24 +2909,24 @@ void (float globaldef1326) func134;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1326) func134 = {
+void (float globaldef001326) func000134 = {
 
-   local entity globaldef1327;
+   local entity globaldef001327;
 
-   globaldef1327 = globaldef1321 (globaldef1326);
-   if ( (globaldef1327 != world) ) {
+   globaldef001327 = func000133 (globaldef001326);
+   if ( (globaldef001327 != world) ) {
 
-      globaldef1327.angles = self.angles;
-      globaldef1327.globaldef153 = self.globaldef153;
-      setorigin (globaldef1327,self.origin);
+      globaldef001327.globaldef000095 = self.globaldef000095;
+      globaldef001327.globaldef000153 = self.globaldef000153;
+      setorigin (globaldef001327,self.globaldef000083);
 
    }
 
 };
 
-void (float globaldef1329) func135;
+void (float globaldef001329) func000135;
 
-// function func135
+// function func000135
 // function number 135 begins at statement 1067
 /*
  * OP_LOAD_F	28	438	1967
@@ -2957,19 +2958,19 @@ void (float globaldef1329) func135;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1329) func135 = {
+void (float globaldef001329) func000135 = {
 
-   local entity globaldef1330;
+   local entity globaldef001330;
 
-   if ( (((self.globaldef421 == globaldef1164) || (self.globaldef421 == globaldef1165)) || (self.globaldef421 == globaldef1166)) ) {
+   if ( (((self.globaldef000421 == globaldef001164) || (self.globaldef000421 == globaldef001165)) || (self.globaldef000421 == globaldef001166)) ) {
 
-      globaldef1330 = globaldef1321 (globaldef1329);
-      if ( (globaldef1330 != world) ) {
+      globaldef001330 = func000133 (globaldef001329);
+      if ( (globaldef001330 != world) ) {
 
-         self.globaldef152 = TRUE;
-         self.angles = globaldef1330.angles;
-         self.globaldef153 = globaldef1330.globaldef153;
-         setorigin (self,globaldef1330.origin);
+         self.globaldef000152 = TRUE;
+         self.globaldef000095 = globaldef001330.globaldef000095;
+         self.globaldef000153 = globaldef001330.globaldef000153;
+         setorigin (self,globaldef001330.globaldef000083);
 
       }
 
@@ -2977,9 +2978,9 @@ void (float globaldef1329) func135 = {
 
 };
 
-void () func136;
+void () func000136;
 
-// function func136
+// function func000136
 // function number 136 begins at statement 1094
 /*
  * OP_LOAD_F	28	173	1996
@@ -3291,37 +3292,37 @@ void () func136;
  * OP_DONE	0	0	0
  */
 
-void () func136 = {
+void () func000136 = {
 
-   local float globaldef1332;
-   local entity globaldef1333;
-   local string globaldef1334;
+   local float globaldef001332;
+   local entity globaldef001333;
+   local string globaldef001334;
 
-   if ( (self.globaldef151 == globaldef1335) ) {
+   if ( (self.globaldef000151 == globaldef001335) ) {
 
-      self.globaldef172 = world;
-      globaldef1274 ();
+      self.globaldef000172 = world;
+      func000126 ();
 
    } else {
 
-      if ( ((self.globaldef151 > globaldef1335) && (self.globaldef151 < globaldef1336)) ) {
+      if ( ((self.globaldef000151 > globaldef001335) && (self.globaldef000151 < globaldef001336)) ) {
 
-         self.globaldef172 = world;
-         globaldef1332 = (self.globaldef151 - globaldef1335);
-         globaldef1333 = world;
+         self.globaldef000172 = world;
+         globaldef001332 = (self.globaldef000151 - globaldef001335);
+         globaldef001333 = world;
          do {
 
-            globaldef1333 = globaldef1168 (globaldef1333);
-            globaldef1332 = (globaldef1332 - TRUE);
+            globaldef001333 = func000106 (globaldef001333);
+            globaldef001332 = (globaldef001332 - TRUE);
 
-         } while ( ((globaldef1332 > FALSE) && (globaldef1333 != world)) );
-         if ( (globaldef1333 != world) ) {
+         } while ( ((globaldef001332 > FALSE) && (globaldef001333 != world)) );
+         if ( (globaldef001333 != world) ) {
 
-            if ( (globaldef1333.globaldef143 == DEAD_NO) ) {
+            if ( (globaldef001333.globaldef000143 == DEAD_NO) ) {
 
-               globaldef1283 (globaldef1333);
-               self.delay = (time + MOVETYPE_BOUNCE);
-               self.globaldef354 = (time + globaldef1337);
+               func000129 (globaldef001333);
+               self.globaldef000402 = (time + MOVETYPE_BOUNCE);
+               self.globaldef000354 = (time + globaldef001337);
 
             }
 
@@ -3329,41 +3330,41 @@ void () func136 = {
 
       } else {
 
-         if ( (self.globaldef151 == globaldef1338) ) {
+         if ( (self.globaldef000151 == globaldef001338) ) {
 
-            self.classname = globaldef1339;
-            globaldef1000 (self);
+            self.globaldef000107 = globaldef001339;
+            func002365 (self);
 
          } else {
 
-            if ( ((self.globaldef151 >= globaldef1197) && (self.globaldef151 <= globaldef1340)) ) {
+            if ( ((self.globaldef000151 >= globaldef001197) && (self.globaldef000151 <= globaldef001340)) ) {
 
-               globaldef1332 = (self.globaldef151 - globaldef1197);
-               globaldef1325 (globaldef1332);
+               globaldef001332 = (self.globaldef000151 - globaldef001197);
+               func000134 (globaldef001332);
 
             } else {
 
-               if ( ((self.globaldef151 >= globaldef1341) && (self.globaldef151 <= globaldef1342)) ) {
+               if ( ((self.globaldef000151 >= globaldef001341) && (self.globaldef000151 <= globaldef001342)) ) {
 
-                  globaldef1332 = (self.globaldef151 - globaldef1341);
-                  globaldef1328 (globaldef1332);
+                  globaldef001332 = (self.globaldef000151 - globaldef001341);
+                  func000135 (globaldef001332);
 
                } else {
 
-                  if ( (self.globaldef151 == globaldef1343) ) {
+                  if ( (self.globaldef000151 == globaldef001343) ) {
 
-                     if ( (self.enemy != self) ) {
+                     if ( (self.globaldef000159 != self) ) {
 
-                        globaldef1283 (self.enemy);
+                        func000129 (self.globaldef000159);
 
                      } else {
 
-                        globaldef1333 = globaldef1211 ();
-                        if ( (globaldef1333 != world) ) {
+                        globaldef001333 = func000120 ();
+                        if ( (globaldef001333 != world) ) {
 
-                           globaldef1283 (globaldef1333);
-                           self.delay = (time + MOVETYPE_BOUNCE);
-                           self.globaldef354 = (time + globaldef1337);
+                           func000129 (globaldef001333);
+                           self.globaldef000402 = (time + MOVETYPE_BOUNCE);
+                           self.globaldef000354 = (time + globaldef001337);
 
                         }
 
@@ -3371,27 +3372,27 @@ void () func136 = {
 
                   } else {
 
-                     if ( (self.globaldef151 == globaldef1344) ) {
+                     if ( (self.globaldef000151 == globaldef001344) ) {
 
-                        if ( (self.enemy != self) ) {
+                        if ( (self.globaldef000159 != self) ) {
 
-                           self.globaldef421 = globaldef1163;
+                           self.globaldef000421 = globaldef001163;
 
                         } else {
 
-                           globaldef1333 = globaldef1211 ();
-                           if ( (globaldef1333 != world) ) {
+                           globaldef001333 = func000120 ();
+                           if ( (globaldef001333 != world) ) {
 
-                              self.enemy = globaldef1333;
-                              self.globaldef406 = globaldef1333;
-                              if ( self.globaldef407 ) {
+                              self.globaldef000159 = globaldef001333;
+                              self.globaldef000406 = globaldef001333;
+                              if ( self.globaldef000407 ) {
 
-                                 globaldef1181 (self.enemy,globaldef1345);
+                                 func000115 (self.globaldef000159,globaldef001345);
 
                               }
-                              self.globaldef421 = globaldef1163;
-                              self.globaldef354 = (time + globaldef1337);
-                              self.globaldef383 = VEC_ORIGIN;
+                              self.globaldef000421 = globaldef001163;
+                              self.globaldef000354 = (time + globaldef001337);
+                              self.globaldef000383 = VEC_ORIGIN;
 
                            }
 
@@ -3399,139 +3400,139 @@ void () func136 = {
 
                      } else {
 
-                        if ( (self.globaldef151 == globaldef1346) ) {
+                        if ( (self.globaldef000151 == globaldef001346) ) {
 
-                           if ( ((self.globaldef421 != globaldef1162) && (self.globaldef421 != globaldef1161)) ) {
+                           if ( ((self.globaldef000421 != globaldef001162) && (self.globaldef000421 != globaldef001161)) ) {
 
-                              globaldef1319 ();
+                              func000132 ();
 
                            }
-                           self.globaldef421 = globaldef1164;
-                           self.movetype = MOVETYPE_NONE;
-                           self.enemy = self;
-                           self.globaldef406 = world;
+                           self.globaldef000421 = globaldef001164;
+                           self.globaldef000081 = MOVETYPE_NONE;
+                           self.globaldef000159 = self;
+                           self.globaldef000406 = world;
 
                         } else {
 
-                           if ( (self.globaldef151 == globaldef1347) ) {
+                           if ( (self.globaldef000151 == globaldef001347) ) {
 
-                              self.globaldef421 = globaldef1165;
-                              self.movetype = MOVETYPE_FLY;
-                              self.enemy = self;
-                              self.globaldef406 = world;
+                              self.globaldef000421 = globaldef001165;
+                              self.globaldef000081 = MOVETYPE_FLY;
+                              self.globaldef000159 = self;
+                              self.globaldef000406 = world;
 
                            } else {
 
-                              if ( (self.globaldef151 == globaldef1348) ) {
+                              if ( (self.globaldef000151 == globaldef001348) ) {
 
-                                 self.globaldef421 = globaldef1166;
-                                 self.enemy = self;
-                                 self.globaldef406 = world;
-                                 self.movetype = MOVETYPE_NOCLIP;
+                                 self.globaldef000421 = globaldef001166;
+                                 self.globaldef000159 = self;
+                                 self.globaldef000406 = world;
+                                 self.globaldef000081 = MOVETYPE_NOCLIP;
 
                               } else {
 
-                                 if ( (self.globaldef151 == globaldef1349) ) {
+                                 if ( (self.globaldef000151 == globaldef001349) ) {
 
-                                    if ( ((self.globaldef421 == globaldef1162) || (self.globaldef421 == globaldef1164)) ) {
+                                    if ( ((self.globaldef000421 == globaldef001162) || (self.globaldef000421 == globaldef001164)) ) {
 
-                                       globaldef1273 ();
-                                       self.globaldef421 = globaldef1161;
-                                       self.enemy = self;
-                                       self.globaldef406 = world;
-                                       self.globaldef354 = (time + globaldef1350);
-                                       self.globaldef405 = (time + MOVETYPE_WALK);
+                                       func000125 ();
+                                       self.globaldef000421 = globaldef001161;
+                                       self.globaldef000159 = self;
+                                       self.globaldef000406 = world;
+                                       self.globaldef000354 = (time + globaldef001350);
+                                       self.globaldef000405 = (time + MOVETYPE_WALK);
 
                                     }
 
                                  } else {
 
-                                    if ( (self.globaldef151 == globaldef1351) ) {
+                                    if ( (self.globaldef000151 == globaldef001351) ) {
 
-                                       self.globaldef407 = !self.globaldef407;
+                                       self.globaldef000407 = !self.globaldef000407;
 
                                     } else {
 
-                                       if ( (self.globaldef151 == globaldef1352) ) {
+                                       if ( (self.globaldef000151 == globaldef001352) ) {
 
-                                          globaldef455 (globaldef1353);
-                                          globaldef455 (globaldef458 (self.origin));
-                                          globaldef455 (globaldef1354);
+                                          bprint (globaldef001353);
+                                          bprint (vtos (self.globaldef000083));
+                                          bprint (globaldef001354);
 
                                        } else {
 
-                                          if ( (self.globaldef151 == globaldef1355) ) {
+                                          if ( (self.globaldef000151 == globaldef001355) ) {
 
-                                             self.globaldef407 = TRUE;
+                                             self.globaldef000407 = TRUE;
 
                                           } else {
 
-                                             if ( (self.globaldef151 == globaldef1356) ) {
+                                             if ( (self.globaldef000151 == globaldef001356) ) {
 
-                                                self.globaldef407 = FALSE;
+                                                self.globaldef000407 = FALSE;
 
                                              } else {
 
-                                                if ( (self.globaldef151 == globaldef1357) ) {
+                                                if ( (self.globaldef000151 == globaldef001357) ) {
 
-                                                   self.globaldef355 = TRUE;
+                                                   self.globaldef000355 = TRUE;
 
                                                 } else {
 
-                                                   if ( (self.globaldef151 == globaldef1358) ) {
+                                                   if ( (self.globaldef000151 == globaldef001358) ) {
 
-                                                      self.globaldef355 = FALSE;
+                                                      self.globaldef000355 = FALSE;
 
                                                    } else {
 
-                                                      if ( (self.globaldef151 == globaldef1359) ) {
+                                                      if ( (self.globaldef000151 == globaldef001359) ) {
 
-                                                         if ( (self.enemy != self) ) {
+                                                         if ( (self.globaldef000159 != self) ) {
 
-                                                            self.globaldef172 = self.enemy;
+                                                            self.globaldef000172 = self.globaldef000159;
 
                                                          }
 
                                                       } else {
 
-                                                         if ( ((self.globaldef151 == globaldef1360) || (self.globaldef151 == globaldef1361)) ) {
+                                                         if ( ((self.globaldef000151 == globaldef001360) || (self.globaldef000151 == globaldef001361)) ) {
 
-                                                            if ( (self.enemy != self) ) {
+                                                            if ( (self.globaldef000159 != self) ) {
 
-                                                               globaldef1333 = globaldef1168 (world);
-                                                               while ( ((globaldef1333 != world) && (globaldef1333 != self.enemy)) ) {
+                                                               globaldef001333 = func000106 (world);
+                                                               while ( ((globaldef001333 != world) && (globaldef001333 != self.globaldef000159)) ) {
 
-                                                                  globaldef1333 = globaldef1168 (globaldef1333);
+                                                                  globaldef001333 = func000106 (globaldef001333);
 
                                                                }
-                                                               if ( (globaldef1333 != world) ) {
+                                                               if ( (globaldef001333 != world) ) {
 
-                                                                  globaldef1332 = TRUE;
-                                                                  while ( globaldef1332 ) {
+                                                                  globaldef001332 = TRUE;
+                                                                  while ( globaldef001332 ) {
 
-                                                                     globaldef1333 = globaldef1168 (globaldef1333);
-                                                                     if ( (globaldef1333 == world) ) {
+                                                                     globaldef001333 = func000106 (globaldef001333);
+                                                                     if ( (globaldef001333 == world) ) {
 
-                                                                        globaldef1333 = globaldef1168 (globaldef1333);
+                                                                        globaldef001333 = func000106 (globaldef001333);
 
                                                                      }
-                                                                     if ( (globaldef1333 == world) ) {
+                                                                     if ( (globaldef001333 == world) ) {
 
-                                                                        globaldef1332 = FALSE;
+                                                                        globaldef001332 = FALSE;
 
                                                                      } else {
 
-                                                                        if ( (globaldef1333.globaldef143 == DEAD_NO) ) {
+                                                                        if ( (globaldef001333.globaldef000143 == DEAD_NO) ) {
 
-                                                                           if ( (self.globaldef172 != world) ) {
+                                                                           if ( (self.globaldef000172 != world) ) {
 
-                                                                              self.globaldef172 = globaldef1333;
+                                                                              self.globaldef000172 = globaldef001333;
 
                                                                            }
-                                                                           globaldef1283 (globaldef1333);
-                                                                           self.delay = (time + MOVETYPE_BOUNCE);
-                                                                           self.globaldef354 = (time + globaldef1337);
-                                                                           globaldef1332 = FALSE;
+                                                                           func000129 (globaldef001333);
+                                                                           self.globaldef000402 = (time + MOVETYPE_BOUNCE);
+                                                                           self.globaldef000354 = (time + globaldef001337);
+                                                                           globaldef001332 = FALSE;
 
                                                                         }
 
@@ -3580,40 +3581,40 @@ void () func136 = {
       }
 
    }
-   self.globaldef151 = FALSE;
+   self.globaldef000151 = FALSE;
 
 };
-float globaldef1335 /* = 100.000 */;
-float globaldef1336 /* = 150.000 */;
-float globaldef1337 /* = 60.000 */;
-float globaldef1338 /* = 166.000 */;
-string globaldef1339 /* = "observer" */;
-float globaldef1340 /* = 189.000 */;
-float globaldef1341 /* = 190.000 */;
-float globaldef1342 /* = 199.000 */;
-float globaldef1343 /* = 200.000 */;
-float globaldef1344 /* = 201.000 */;
-string globaldef1345 /* = "Now Taking" */;
-float globaldef1346 /* = 202.000 */;
-float globaldef1347 /* = 203.000 */;
-float globaldef1348 /* = 204.000 */;
-float globaldef1349 /* = 205.000 */;
-float globaldef1350 /* = 100000.000 */;
-float globaldef1351 /* = 210.000 */;
-float globaldef1352 /* = 211.000 */;
-string globaldef1353 /* = "Current camera position: " */;
-string globaldef1354 /* = "\n" */;
-float globaldef1355 /* = 212.000 */;
-float globaldef1356 /* = 213.000 */;
-float globaldef1357 /* = 214.000 */;
-float globaldef1358 /* = 215.000 */;
-float globaldef1359 /* = 216.000 */;
-float globaldef1360 /* = 217.000 */;
-float globaldef1361 /* = 161.000 */;
+float globaldef001335 /* = 100.000 */;
+float globaldef001336 /* = 150.000 */;
+float globaldef001337 /* = 60.000 */;
+float globaldef001338 /* = 166.000 */;
+string globaldef001339 /* = "observer" */;
+float globaldef001340 /* = 189.000 */;
+float globaldef001341 /* = 190.000 */;
+float globaldef001342 /* = 199.000 */;
+float globaldef001343 /* = 200.000 */;
+float globaldef001344 /* = 201.000 */;
+string globaldef001345 /* = "Now Taking" */;
+float globaldef001346 /* = 202.000 */;
+float globaldef001347 /* = 203.000 */;
+float globaldef001348 /* = 204.000 */;
+float globaldef001349 /* = 205.000 */;
+float globaldef001350 /* = 100000.000 */;
+float globaldef001351 /* = 210.000 */;
+float globaldef001352 /* = 211.000 */;
+string globaldef001353 /* = "Current camera position: " */;
+string globaldef001354 /* = "\n" */;
+float globaldef001355 /* = 212.000 */;
+float globaldef001356 /* = 213.000 */;
+float globaldef001357 /* = 214.000 */;
+float globaldef001358 /* = 215.000 */;
+float globaldef001359 /* = 216.000 */;
+float globaldef001360 /* = 217.000 */;
+float globaldef001361 /* = 161.000 */;
 
-void () func137;
+void () func000137;
 
-// function func137
+// function func000137
 // function number 137 begins at statement 1401
 /*
  * OP_LOAD_ENT	28	181	2179
@@ -3691,43 +3692,43 @@ void () func137;
  * OP_DONE	0	0	0
  */
 
-void () func137 = {
+void () func000137 = {
 
-   local float globaldef1363;
+   local float globaldef001363;
 
-   if ( (((self.enemy != self) && (self.enemy.classname != globaldef1364)) && (self.enemy.globaldef130 > FALSE)) ) {
+   if ( (((self.globaldef000159 != self) && (self.globaldef000159.globaldef000107 != globaldef001364)) && (self.globaldef000159.globaldef000130 > FALSE)) ) {
 
-      globaldef1363 = (((IT_INVISIBILITY | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD);
-      self.globaldef140 = ((self.enemy.globaldef140 | globaldef1363) - globaldef1363);
-      self.globaldef130 = self.enemy.globaldef130;
-      self.globaldef166 = self.enemy.globaldef166;
-      self.globaldef136 = self.enemy.globaldef136;
-      self.globaldef137 = self.enemy.globaldef137;
-      self.globaldef138 = self.enemy.globaldef138;
-      self.globaldef139 = self.enemy.globaldef139;
-      self.globaldef132 = self.enemy.globaldef132;
-      self.globaldef135 = self.enemy.globaldef135;
+      globaldef001363 = (((IT_INVISIBILITY | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD);
+      self.globaldef000140 = ((self.globaldef000159.globaldef000140 | globaldef001363) - globaldef001363);
+      self.globaldef000130 = self.globaldef000159.globaldef000130;
+      self.globaldef000166 = self.globaldef000159.globaldef000166;
+      self.globaldef000136 = self.globaldef000159.globaldef000136;
+      self.globaldef000137 = self.globaldef000159.globaldef000137;
+      self.globaldef000138 = self.globaldef000159.globaldef000138;
+      self.globaldef000139 = self.globaldef000159.globaldef000139;
+      self.globaldef000132 = self.globaldef000159.globaldef000132;
+      self.globaldef000135 = self.globaldef000159.globaldef000135;
 
    } else {
 
-      self.globaldef140 = FALSE;
-      self.globaldef130 = globaldef1365;
-      self.globaldef166 = globaldef1365;
-      self.globaldef136 = globaldef1365;
-      self.globaldef137 = globaldef1365;
-      self.globaldef138 = globaldef1365;
-      self.globaldef139 = globaldef1365;
-      self.globaldef132 = IT_AXE;
-      self.globaldef135 = globaldef1365;
+      self.globaldef000140 = FALSE;
+      self.globaldef000130 = globaldef001365;
+      self.globaldef000166 = globaldef001365;
+      self.globaldef000136 = globaldef001365;
+      self.globaldef000137 = globaldef001365;
+      self.globaldef000138 = globaldef001365;
+      self.globaldef000139 = globaldef001365;
+      self.globaldef000132 = IT_AXE;
+      self.globaldef000135 = globaldef001365;
 
    }
 
 };
-string globaldef1364 /* = "bodyque" */;
-float globaldef1365 /* = 111.000 */;
-float (entity globaldef1367) func138;
+string globaldef001364 /* = "bodyque" */;
+float globaldef001365 /* = 111.000 */;
+float (entity globaldef001367) func000138;
 
-// function func138
+// function func000138
 // function number 138 begins at statement 1474
 /*
  * OP_LOAD_F	2233	152	2235
@@ -3747,23 +3748,23 @@ float (entity globaldef1367) func138;
  * OP_RETURN	2234	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1367) func138 = {
+float (entity globaldef001367) func000138 = {
 
-   local float globaldef1368;
+   local float globaldef001368;
 
-   globaldef1368 = (globaldef1367.globaldef130 / (TRUE - globaldef1367.globaldef165));
-   if ( (globaldef1368 > (globaldef1367.globaldef130 + globaldef1367.globaldef166)) ) {
+   globaldef001368 = (globaldef001367.globaldef000130 / (TRUE - globaldef001367.globaldef000165));
+   if ( (globaldef001368 > (globaldef001367.globaldef000130 + globaldef001367.globaldef000166)) ) {
 
-      globaldef1368 = (globaldef1367.globaldef130 + globaldef1367.globaldef166);
+      globaldef001368 = (globaldef001367.globaldef000130 + globaldef001367.globaldef000166);
 
    }
-   return ( globaldef1368 );
+   return ( globaldef001368 );
 
 };
 
-void () func139;
+void () func000139;
 
-// function func139
+// function func000139
 // function number 139 begins at statement 1490
 /*
  * OP_STORE_ENT	28	2248	0
@@ -4061,121 +4062,121 @@ void () func139;
  * OP_DONE	0	0	0
  */
 
-void () func139 = {
+void () func000139 = {
 
-   local entity globaldef1370;
-   local entity globaldef1371;
-   local vector globaldef1372;
-   local vector globaldef1376;
-   local float globaldef1380;
-   local float globaldef1381;
-   local float globaldef1382;
-   local float globaldef1383;
+   local entity globaldef001370;
+   local entity globaldef001371;
+   local vector globaldef001372;
+   local vector globaldef001376;
+   local float globaldef001380;
+   local float globaldef001381;
+   local float globaldef001382;
+   local float globaldef001383;
 
-   globaldef1371 = self;
-   if ( (self.globaldef406 != world) ) {
+   globaldef001371 = self;
+   if ( (self.globaldef000406 != world) ) {
 
-      if ( (self.globaldef406.globaldef143 == DEAD_NO) ) {
+      if ( (self.globaldef000406.globaldef000143 == DEAD_NO) ) {
 
-         globaldef1371 = self.globaldef406;
+         globaldef001371 = self.globaldef000406;
 
       }
 
    }
-   globaldef1381 = CONTENT_EMPTY;
-   globaldef1380 = (MOVETYPE_FLY * globaldef440 ());
-   if ( (self.globaldef172 != world) ) {
+   globaldef001381 = CONTENT_EMPTY;
+   globaldef001380 = (MOVETYPE_FLY * random ());
+   if ( (self.globaldef000172 != world) ) {
 
-      if ( (self.globaldef172.globaldef143 == DEAD_NO) ) {
+      if ( (self.globaldef000172.globaldef000143 == DEAD_NO) ) {
 
-         globaldef1371 = self.globaldef172;
+         globaldef001371 = self.globaldef000172;
 
       } else {
 
-         globaldef1371 = self;
+         globaldef001371 = self;
 
       }
 
    } else {
 
-      if ( (globaldef1380 < TRUE) ) {
+      if ( (globaldef001380 < TRUE) ) {
 
-         globaldef1370 = globaldef1168 (world);
-         while ( (globaldef1370 != world) ) {
+         globaldef001370 = func000106 (world);
+         while ( (globaldef001370 != world) ) {
 
-            if ( ((globaldef1370 != self.globaldef406) && (globaldef1370.globaldef143 == DEAD_NO)) ) {
+            if ( ((globaldef001370 != self.globaldef000406) && (globaldef001370.globaldef000143 == DEAD_NO)) ) {
 
-               globaldef1380 = globaldef1366 (globaldef1370);
-               if ( (globaldef1381 < globaldef1380) ) {
+               globaldef001380 = func000138 (globaldef001370);
+               if ( (globaldef001381 < globaldef001380) ) {
 
-                  globaldef1371 = globaldef1370;
-                  globaldef1381 = globaldef1380;
+                  globaldef001371 = globaldef001370;
+                  globaldef001381 = globaldef001380;
 
                }
 
             }
-            globaldef1370 = globaldef1168 (globaldef1370);
+            globaldef001370 = func000106 (globaldef001370);
 
          }
 
       } else {
 
-         if ( (globaldef1380 < FL_SWIM) ) {
+         if ( (globaldef001380 < FL_SWIM) ) {
 
-            globaldef1370 = globaldef1168 (world);
-            while ( (globaldef1370 != world) ) {
+            globaldef001370 = func000106 (world);
+            while ( (globaldef001370 != world) ) {
 
-               if ( ((globaldef1370 != self.globaldef406) && (globaldef1370.globaldef143 == DEAD_NO)) ) {
+               if ( ((globaldef001370 != self.globaldef000406) && (globaldef001370.globaldef000143 == DEAD_NO)) ) {
 
-                  globaldef1380 = globaldef1370.globaldef131;
-                  if ( (globaldef1380 < FALSE) ) {
+                  globaldef001380 = globaldef001370.globaldef000131;
+                  if ( (globaldef001380 < FALSE) ) {
 
-                     globaldef1380 = FALSE;
+                     globaldef001380 = FALSE;
 
                   }
-                  if ( (globaldef1381 < globaldef1380) ) {
+                  if ( (globaldef001381 < globaldef001380) ) {
 
-                     globaldef1371 = globaldef1370;
-                     globaldef1381 = globaldef1380;
+                     globaldef001371 = globaldef001370;
+                     globaldef001381 = globaldef001380;
 
                   }
 
                }
-               globaldef1370 = globaldef1168 (globaldef1370);
+               globaldef001370 = func000106 (globaldef001370);
 
             }
 
          } else {
 
-            globaldef1381 = FALSE;
-            globaldef1370 = globaldef1168 (world);
-            while ( (globaldef1370 != world) ) {
+            globaldef001381 = FALSE;
+            globaldef001370 = func000106 (world);
+            while ( (globaldef001370 != world) ) {
 
-               if ( ((globaldef1370 != self.globaldef406) && (globaldef1370.globaldef143 == DEAD_NO)) ) {
+               if ( ((globaldef001370 != self.globaldef000406) && (globaldef001370.globaldef000143 == DEAD_NO)) ) {
 
-                  globaldef1381 = (globaldef1381 + TRUE);
+                  globaldef001381 = (globaldef001381 + TRUE);
 
                }
-               globaldef1370 = globaldef1168 (globaldef1370);
+               globaldef001370 = func000106 (globaldef001370);
 
             }
-            if ( (globaldef1381 > FALSE) ) {
+            if ( (globaldef001381 > FALSE) ) {
 
-               globaldef1381 = (globaldef1381 * globaldef440 ());
-               globaldef1370 = world;
+               globaldef001381 = (globaldef001381 * random ());
+               globaldef001370 = world;
                do {
 
                   do {
 
-                     globaldef1370 = globaldef1168 (globaldef1370);
+                     globaldef001370 = func000106 (globaldef001370);
 
-                  } while ( ((globaldef1370 == self.globaldef406) || (globaldef1370.globaldef143 != DEAD_NO)) );
-                  globaldef1381 = (globaldef1381 - TRUE);
+                  } while ( ((globaldef001370 == self.globaldef000406) || (globaldef001370.globaldef000143 != DEAD_NO)) );
+                  globaldef001381 = (globaldef001381 - TRUE);
 
-               } while ( (globaldef1381 > FALSE) );
-               if ( (globaldef1370 != world) ) {
+               } while ( (globaldef001381 > FALSE) );
+               if ( (globaldef001370 != world) ) {
 
-                  globaldef1371 = globaldef1370;
+                  globaldef001371 = globaldef001370;
 
                }
 
@@ -4186,88 +4187,88 @@ void () func139 = {
       }
 
    }
-   if ( (globaldef1371 != self) ) {
+   if ( (globaldef001371 != self) ) {
 
-      globaldef1283 (globaldef1371);
-      self.delay = (time + MOVETYPE_BOUNCE);
-      self.globaldef354 = (time + globaldef1337);
+      func000129 (globaldef001371);
+      self.globaldef000402 = (time + MOVETYPE_BOUNCE);
+      self.globaldef000354 = (time + globaldef001337);
 
    } else {
 
-      self.enemy = self;
-      globaldef449 (self.globaldef389,self.globaldef393,TRUE,self);
-      self.globaldef393 = trace_endpos;
-      globaldef1372_x = ((globaldef729 * globaldef440 ()) - globaldef1384);
-      globaldef1374 = (globaldef1198 * globaldef440 ());
-      globaldef1375 = FALSE;
-      globaldef1382 = globaldef1374;
-      if ( (self.origin != self.globaldef389) ) {
+      self.globaldef000159 = self;
+      traceline (self.globaldef000389,self.globaldef000393,TRUE,self);
+      self.globaldef000393 = trace_endpos;
+      globaldef001372_x = ((globaldef000729 * random ()) - globaldef001384);
+      globaldef001374 = (globaldef001198 * random ());
+      globaldef001375 = FALSE;
+      globaldef001382 = globaldef001374;
+      if ( (self.globaldef000083 != self.globaldef000389) ) {
 
-         globaldef1376 = (self.origin - self.globaldef389);
-         globaldef1376 = globaldef478 (globaldef1376);
-         globaldef1383 = globaldef1378;
+         globaldef001376 = (self.globaldef000083 - self.globaldef000389);
+         globaldef001376 = vectoangles (globaldef001376);
+         globaldef001383 = globaldef001378;
 
       } else {
 
-         globaldef1383 = FALSE;
+         globaldef001383 = FALSE;
 
       }
-      globaldef1382 = globaldef1195 (globaldef1382);
-      makevectors (globaldef1372);
-      globaldef1372 = (globaldef1320 * v_forward);
-      globaldef1381 = vlen ((self.globaldef397 - self.globaldef389));
-      if ( (globaldef471 (globaldef1195 ((globaldef1382 - globaldef1383))) > globaldef1337) ) {
+      globaldef001382 = func000117 (globaldef001382);
+      makevectors (globaldef001372);
+      globaldef001372 = (globaldef001320 * v_forward);
+      globaldef001381 = vlen ((self.globaldef000397 - self.globaldef000389));
+      if ( (fabs (func000117 ((globaldef001382 - globaldef001383))) > globaldef001337) ) {
 
-         globaldef1376 = (self.globaldef389 + globaldef1372);
-         globaldef449 (self.globaldef389,globaldef1376,TRUE,self);
-         globaldef1376 = trace_endpos;
-         globaldef1380 = vlen ((globaldef1376 - self.globaldef389));
-         if ( (globaldef1380 > globaldef1381) ) {
+         globaldef001376 = (self.globaldef000389 + globaldef001372);
+         traceline (self.globaldef000389,globaldef001376,TRUE,self);
+         globaldef001376 = trace_endpos;
+         globaldef001380 = vlen ((globaldef001376 - self.globaldef000389));
+         if ( (globaldef001380 > globaldef001381) ) {
 
-            self.globaldef397 = globaldef1376;
-            globaldef1381 = globaldef1380;
+            self.globaldef000397 = globaldef001376;
+            globaldef001381 = globaldef001380;
 
          }
 
       }
-      globaldef1382 = (globaldef1382 + globaldef1197);
-      globaldef1382 = globaldef1195 (globaldef1382);
-      if ( (globaldef471 (globaldef1195 ((globaldef1382 - globaldef1383))) > globaldef1337) ) {
+      globaldef001382 = (globaldef001382 + globaldef001197);
+      globaldef001382 = func000117 (globaldef001382);
+      if ( (fabs (func000117 ((globaldef001382 - globaldef001383))) > globaldef001337) ) {
 
-         globaldef1376 = (self.globaldef389 - globaldef1372);
-         globaldef449 (self.globaldef389,globaldef1376,TRUE,self);
-         globaldef1376 = trace_endpos;
-         globaldef1380 = vlen ((globaldef1376 - self.globaldef389));
-         if ( (globaldef1380 > globaldef1381) ) {
+         globaldef001376 = (self.globaldef000389 - globaldef001372);
+         traceline (self.globaldef000389,globaldef001376,TRUE,self);
+         globaldef001376 = trace_endpos;
+         globaldef001380 = vlen ((globaldef001376 - self.globaldef000389));
+         if ( (globaldef001380 > globaldef001381) ) {
 
-            self.globaldef397 = globaldef1376;
-            globaldef1381 = globaldef1380;
+            self.globaldef000397 = globaldef001376;
+            globaldef001381 = globaldef001380;
 
          }
 
       }
-      if ( (self.globaldef405 < time) ) {
+      if ( (self.globaldef000405 < time) ) {
 
-         self.globaldef405 = ((time + MOVETYPE_WALK) + (FL_SWIM * globaldef440 ()));
-         self.globaldef393 = self.globaldef397;
+         self.globaldef000405 = ((time + MOVETYPE_WALK) + (FL_SWIM * random ()));
+         self.globaldef000393 = self.globaldef000397;
 
       }
-      if ( (self.globaldef354 < time) ) {
+      if ( (self.globaldef000354 < time) ) {
 
-         globaldef1372 = (self.globaldef389 - self.globaldef393);
-         globaldef1372 = ((MOVETYPE_FLY + (globaldef1257 * globaldef440 ())) * globaldef442 (globaldef1372));
-         globaldef1372 = (self.globaldef393 + globaldef1372);
-         globaldef449 (self.origin,globaldef1372,TRUE,self);
+         globaldef001372 = (self.globaldef000389 - self.globaldef000393);
+         globaldef001372 = ((MOVETYPE_FLY + (globaldef001257 * random ())) * normalize (globaldef001372));
+         globaldef001372 = (self.globaldef000393 + globaldef001372);
+         traceline (self.globaldef000083,globaldef001372,TRUE,self);
          if ( (trace_fraction == TRUE) ) {
 
-            self.globaldef389 = globaldef1372;
-            self.globaldef397 = self.globaldef393;
-            self.globaldef354 = ((time + FL_CLIENT) + (MOVETYPE_FLY * globaldef440 ()));
+            self.globaldef000389 = globaldef001372;
+            self.globaldef000397 = self.globaldef000393;
+            self.globaldef000354 = ((time + FL_CLIENT) + (MOVETYPE_FLY * random ()));
 
          } else {
 
-            self.globaldef397 = self.globaldef389;
-            self.globaldef354 = ((time + TRUE) + globaldef440 ());
+            self.globaldef000397 = self.globaldef000389;
+            self.globaldef000354 = ((time + TRUE) + random ());
 
          }
 
@@ -4276,11 +4277,11 @@ void () func139 = {
    }
 
 };
-float globaldef1384 /* = 20.000 */;
+float globaldef001384 /* = 20.000 */;
 
-void () func140;
+void () func000140;
 
-// function func140
+// function func000140
 // function number 140 begins at statement 1783
 /*
  * OP_LOAD_ENT	28	181	2467
@@ -4422,61 +4423,61 @@ void () func140;
  * OP_DONE	0	0	0
  */
 
-void () func140 = {
+void () func000140 = {
 
-   local float globaldef1386;
-   local float globaldef1387;
-   local float globaldef1388;
-   local float globaldef1389;
-   local vector globaldef1390;
-   local entity globaldef1394;
-   local float globaldef1395;
+   local float globaldef001386;
+   local float globaldef001387;
+   local float globaldef001388;
+   local float globaldef001389;
+   local vector globaldef001390;
+   local entity globaldef001394;
+   local float globaldef001395;
 
-   if ( (self.enemy.globaldef143 != DEAD_NO) ) {
+   if ( (self.globaldef000159.globaldef000143 != DEAD_NO) ) {
 
       if ( (time < SVC_FINALE) ) {
 
-         globaldef1274 ();
+         func000126 ();
          return ;
 
       }
-      globaldef1275 ();
+      func000127 ();
       return ;
 
    }
-   globaldef1387 = vlen ((self.globaldef389 - self.enemy.origin));
-   globaldef1205 (self.enemy);
-   if ( ((globaldef1205 (self.enemy) && (self.globaldef420 > globaldef1387)) || (self.globaldef405 > time)) ) {
+   globaldef001387 = vlen ((self.globaldef000389 - self.globaldef000159.globaldef000083));
+   func000119 (self.globaldef000159);
+   if ( ((func000119 (self.globaldef000159) && (self.globaldef000420 > globaldef001387)) || (self.globaldef000405 > time)) ) {
 
-      self.globaldef393 = globaldef1277 (self.enemy);
+      self.globaldef000393 = func000128 (self.globaldef000159);
 
    } else {
 
-      globaldef1283 (self.enemy);
+      func000129 (self.globaldef000159);
 
    }
-   if ( self.globaldef355 ) {
+   if ( self.globaldef000355 ) {
 
-      self.globaldef421 = globaldef1163;
+      self.globaldef000421 = globaldef001163;
       return ;
 
    } else {
 
-      globaldef1387 = vlen ((self.enemy.origin - self.origin));
-      if ( (globaldef1387 < globaldef1396) ) {
+      globaldef001387 = vlen ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+      if ( (globaldef001387 < globaldef001396) ) {
 
-         globaldef1388 = globaldef471 ((self.enemy.globaldef97 - self.globaldef97));
-         if ( (globaldef1388 > globaldef1197) ) {
+         globaldef001388 = fabs ((self.globaldef000159.globaldef000097 - self.globaldef000097));
+         if ( (globaldef001388 > globaldef001197) ) {
 
-            globaldef1388 = (globaldef1198 - globaldef1388);
+            globaldef001388 = (globaldef001198 - globaldef001388);
 
          }
-         if ( (globaldef1388 < SVC_INTERMISSION) ) {
+         if ( (globaldef001388 < SVC_INTERMISSION) ) {
 
-            globaldef1390 = globaldef1304 ();
-            if ( globaldef1200 (globaldef1390) ) {
+            globaldef001390 = func000130 ();
+            if ( func000118 (globaldef001390) ) {
 
-               self.globaldef421 = globaldef1163;
+               self.globaldef000421 = globaldef001163;
                return ;
 
             }
@@ -4486,77 +4487,77 @@ void () func140 = {
       }
 
    }
-   if ( (self.globaldef172 == world) ) {
+   if ( (self.globaldef000172 == world) ) {
 
-      globaldef1386 = FALSE;
-      globaldef1387 = FALSE;
-      if ( (self.delay < time) ) {
+      globaldef001386 = FALSE;
+      globaldef001387 = FALSE;
+      if ( (self.globaldef000402 < time) ) {
 
-         globaldef1394 = globaldef1168 (world);
-         while ( (globaldef1394 != world) ) {
+         globaldef001394 = func000106 (world);
+         while ( (globaldef001394 != world) ) {
 
-            globaldef1386 = (globaldef1386 + TRUE);
-            if ( (globaldef1394.globaldef143 == DEAD_NO) ) {
+            globaldef001386 = (globaldef001386 + TRUE);
+            if ( (globaldef001394.globaldef000143 == DEAD_NO) ) {
 
-               globaldef1389 = vlen ((globaldef1394.origin - self.origin));
-               if ( (globaldef1389 < globaldef1397) ) {
+               globaldef001389 = vlen ((globaldef001394.globaldef000083 - self.globaldef000083));
+               if ( (globaldef001389 < globaldef001397) ) {
 
-                  if ( globaldef1200 (globaldef1394.origin) ) {
+                  if ( func000118 (globaldef001394.globaldef000083) ) {
 
-                     globaldef1387 = (globaldef1387 + TRUE);
+                     globaldef001387 = (globaldef001387 + TRUE);
 
                   }
 
                }
 
             }
-            globaldef1394 = globaldef1168 (globaldef1394);
+            globaldef001394 = func000106 (globaldef001394);
 
          }
 
       }
-      if ( (globaldef1386 < MOVETYPE_STEP) ) {
+      if ( (globaldef001386 < MOVETYPE_STEP) ) {
 
-         globaldef1386 = FL_SWIM;
+         globaldef001386 = FL_SWIM;
 
       } else {
 
-         if ( (globaldef1386 < FL_CLIENT) ) {
+         if ( (globaldef001386 < FL_CLIENT) ) {
 
-            globaldef1386 = MOVETYPE_WALK;
+            globaldef001386 = MOVETYPE_WALK;
 
          } else {
 
-            globaldef1386 = MOVETYPE_STEP;
+            globaldef001386 = MOVETYPE_STEP;
 
          }
 
       }
-      if ( (globaldef1387 > globaldef1386) ) {
+      if ( (globaldef001387 > globaldef001386) ) {
 
-         self.enemy = self;
-         self.globaldef406 = world;
-         self.globaldef421 = globaldef1161;
-         self.globaldef354 = (time + globaldef748);
-         self.globaldef405 = (time + MOVETYPE_WALK);
+         self.globaldef000159 = self;
+         self.globaldef000406 = world;
+         self.globaldef000421 = globaldef001161;
+         self.globaldef000354 = (time + globaldef000748);
+         self.globaldef000405 = (time + MOVETYPE_WALK);
          return ;
 
       }
 
    }
-   if ( (self.globaldef354 < time) ) {
+   if ( (self.globaldef000354 < time) ) {
 
-      globaldef1274 ();
+      func000126 ();
 
    }
 
 };
-float globaldef1396 /* = 170.000 */;
-float globaldef1397 /* = 1500.000 */;
+float globaldef001396 /* = 170.000 */;
+float globaldef001397 /* = 1500.000 */;
 
-void () func141;
+void () func000141;
 
-// function func141
+// function func000141
 // function number 141 begins at statement 1920
 /*
  * OP_LOAD_ENT	28	181	2555
@@ -4599,52 +4600,52 @@ void () func141;
  * OP_DONE	0	0	0
  */
 
-void () func141 = {
+void () func000141 = {
 
-   local entity globaldef1399;
-   local vector globaldef1400;
+   local entity globaldef001399;
+   local vector globaldef001400;
 
-   if ( (self.enemy.globaldef143 != DEAD_NO) ) {
+   if ( (self.globaldef000159.globaldef000143 != DEAD_NO) ) {
 
       if ( (time < SVC_FINALE) ) {
 
-         globaldef1274 ();
+         func000126 ();
          return ;
 
       }
-      globaldef1275 ();
+      func000127 ();
       return ;
 
    } else {
 
-      if ( globaldef1205 (self.enemy) ) {
+      if ( func000119 (self.globaldef000159) ) {
 
-         self.globaldef389 = globaldef1304 ();
-         self.globaldef393 = globaldef1314 ();
-         if ( (globaldef470 (self.globaldef389) == CONTENT_SOLID) ) {
+         self.globaldef000389 = func000130 ();
+         self.globaldef000393 = func000131 ();
+         if ( (pointcontents (self.globaldef000389) == CONTENT_SOLID) ) {
 
-            globaldef1283 (self.enemy);
+            func000129 (self.globaldef000159);
 
          }
 
       } else {
 
-         globaldef1283 (self.enemy);
+         func000129 (self.globaldef000159);
 
       }
 
    }
-   if ( (self.globaldef354 < time) ) {
+   if ( (self.globaldef000354 < time) ) {
 
-      globaldef1274 ();
+      func000126 ();
 
    }
 
 };
 
-void () func142;
+void () func000142;
 
-// function func142
+// function func000142
 // function number 142 begins at statement 1958
 /*
  * OP_LOAD_F	28	177	2596
@@ -4778,85 +4779,85 @@ void () func142;
  * OP_DONE	0	0	0
  */
 
-void () func142 = {
+void () func000142 = {
 
-   local vector globaldef1405;
-   local entity globaldef1409;
-   local float globaldef1410;
-   local float globaldef1411;
-   local float globaldef1412;
-   local float globaldef1413;
-   local float globaldef1414;
-   local float globaldef1415;
-   local float globaldef1416;
-   local vector globaldef1417;
-   local vector globaldef1421;
-   local vector globaldef1425;
-   local float globaldef1429;
+   local vector globaldef001405;
+   local entity globaldef001409;
+   local float globaldef001410;
+   local float globaldef001411;
+   local float globaldef001412;
+   local float globaldef001413;
+   local float globaldef001414;
+   local float globaldef001415;
+   local float globaldef001416;
+   local vector globaldef001417;
+   local vector globaldef001421;
+   local vector globaldef001425;
+   local float globaldef001429;
 
-   globaldef1410 = self.globaldef155;
-   globaldef1412 = FALSE;
-   globaldef1413 = globaldef1430;
-   globaldef1414 = globaldef1431;
-   globaldef1415 = globaldef1432;
-   globaldef1416 = globaldef1433;
-   globaldef1417 = VEC_ORIGIN;
-   globaldef1429 = FALSE;
-   globaldef1409 = globaldef1168 (world);
-   while ( (globaldef1409 != world) ) {
+   globaldef001410 = self.globaldef000155;
+   globaldef001412 = FALSE;
+   globaldef001413 = globaldef001430;
+   globaldef001414 = globaldef001431;
+   globaldef001415 = globaldef001432;
+   globaldef001416 = globaldef001433;
+   globaldef001417 = VEC_ORIGIN;
+   globaldef001429 = FALSE;
+   globaldef001409 = func000106 (world);
+   while ( (globaldef001409 != world) ) {
 
-      if ( (globaldef1409.globaldef143 == DEAD_NO) ) {
+      if ( (globaldef001409.globaldef000143 == DEAD_NO) ) {
 
-         globaldef1411 = vlen ((globaldef1409.origin - self.origin));
-         if ( (globaldef1411 < globaldef1397) ) {
+         globaldef001411 = vlen ((globaldef001409.globaldef000083 - self.globaldef000083));
+         if ( (globaldef001411 < globaldef001397) ) {
 
-            if ( globaldef1200 (globaldef1409.origin) ) {
+            if ( func000118 (globaldef001409.globaldef000083) ) {
 
-               globaldef1429 = (globaldef1429 + TRUE);
-               globaldef1405 = globaldef478 ((globaldef1409.origin - self.origin));
-               globaldef1411 = (globaldef1407 - globaldef1410);
-               while ( (globaldef1411 > globaldef1197) ) {
+               globaldef001429 = (globaldef001429 + TRUE);
+               globaldef001405 = vectoangles ((globaldef001409.globaldef000083 - self.globaldef000083));
+               globaldef001411 = (globaldef001407 - globaldef001410);
+               while ( (globaldef001411 > globaldef001197) ) {
 
-                  globaldef1411 = (globaldef1411 - globaldef1198);
-
-               }
-               while ( (globaldef1411 < globaldef1199) ) {
-
-                  globaldef1411 = (globaldef1411 + globaldef1198);
+                  globaldef001411 = (globaldef001411 - globaldef001198);
 
                }
-               if ( (globaldef471 (globaldef1411) < globaldef1431) ) {
+               while ( (globaldef001411 < globaldef001199) ) {
 
-                  globaldef1412 = (globaldef1412 + TRUE);
-                  globaldef1417 = (globaldef1417 + globaldef1409.origin);
-                  if ( (globaldef1411 < globaldef1414) ) {
+                  globaldef001411 = (globaldef001411 + globaldef001198);
 
-                     globaldef1414 = globaldef1411;
+               }
+               if ( (fabs (globaldef001411) < globaldef001431) ) {
+
+                  globaldef001412 = (globaldef001412 + TRUE);
+                  globaldef001417 = (globaldef001417 + globaldef001409.globaldef000083);
+                  if ( (globaldef001411 < globaldef001414) ) {
+
+                     globaldef001414 = globaldef001411;
 
                   }
-                  if ( (globaldef1411 > globaldef1413) ) {
+                  if ( (globaldef001411 > globaldef001413) ) {
 
-                     globaldef1413 = globaldef1411;
+                     globaldef001413 = globaldef001411;
 
                   }
 
                } else {
 
-                  if ( (globaldef1411 > FALSE) ) {
+                  if ( (globaldef001411 > FALSE) ) {
 
-                     if ( (globaldef1411 < globaldef1416) ) {
+                     if ( (globaldef001411 < globaldef001416) ) {
 
-                        globaldef1416 = globaldef1411;
-                        globaldef1421 = globaldef1409.origin;
+                        globaldef001416 = globaldef001411;
+                        globaldef001421 = globaldef001409.globaldef000083;
 
                      }
 
                   } else {
 
-                     if ( (globaldef1411 > globaldef1415) ) {
+                     if ( (globaldef001411 > globaldef001415) ) {
 
-                        globaldef1415 = globaldef1411;
-                        globaldef1425 = globaldef1409.origin;
+                        globaldef001415 = globaldef001411;
+                        globaldef001425 = globaldef001409.globaldef000083;
 
                      }
 
@@ -4869,57 +4870,57 @@ void () func142 = {
          }
 
       }
-      globaldef1409 = globaldef1168 (globaldef1409);
+      globaldef001409 = func000106 (globaldef001409);
 
    }
-   if ( (globaldef1429 > FALSE) ) {
+   if ( (globaldef001429 > FALSE) ) {
 
-      if ( (globaldef1429 > TRUE) ) {
+      if ( (globaldef001429 > TRUE) ) {
 
-         self.globaldef405 = (time + MOVETYPE_WALK);
+         self.globaldef000405 = (time + MOVETYPE_WALK);
 
       }
-      if ( (globaldef1412 < globaldef1429) ) {
+      if ( (globaldef001412 < globaldef001429) ) {
 
-         if ( (((globaldef1412 == FALSE) || ((globaldef1413 - globaldef1415) <= globaldef1434)) || ((globaldef1416 - globaldef1414) <= globaldef1434)) ) {
+         if ( (((globaldef001412 == FALSE) || ((globaldef001413 - globaldef001415) <= globaldef001434)) || ((globaldef001416 - globaldef001414) <= globaldef001434)) ) {
 
-            globaldef1412 = (globaldef1412 + TRUE);
-            if ( ((globaldef1413 - globaldef1415) > (globaldef1416 - globaldef1414)) ) {
+            globaldef001412 = (globaldef001412 + TRUE);
+            if ( ((globaldef001413 - globaldef001415) > (globaldef001416 - globaldef001414)) ) {
 
-               globaldef1417 = (globaldef1417 + globaldef1421);
+               globaldef001417 = (globaldef001417 + globaldef001421);
 
             } else {
 
-               globaldef1417 = (globaldef1417 + globaldef1425);
+               globaldef001417 = (globaldef001417 + globaldef001425);
 
             }
 
          }
 
       }
-      globaldef1417_x = (globaldef1417_x / globaldef1412);
-      globaldef1419 = (globaldef1419 / globaldef1412);
-      globaldef1420 = (globaldef1420 / globaldef1412);
-      self.globaldef393 = globaldef1417;
+      globaldef001417_x = (globaldef001417_x / globaldef001412);
+      globaldef001419 = (globaldef001419 / globaldef001412);
+      globaldef001420 = (globaldef001420 / globaldef001412);
+      self.globaldef000393 = globaldef001417;
 
    }
-   self.globaldef389 = self.origin;
-   if ( ((self.globaldef405 < time) || (self.globaldef354 < time)) ) {
+   self.globaldef000389 = self.globaldef000083;
+   if ( ((self.globaldef000405 < time) || (self.globaldef000354 < time)) ) {
 
-      globaldef1274 ();
+      func000126 ();
 
    }
 
 };
-float globaldef1430 /* = -45.000 */;
-float globaldef1431 /* = 45.000 */;
-float globaldef1432 /* = -181.000 */;
-float globaldef1433 /* = 181.000 */;
-float globaldef1434 /* = 90.000 */;
+float globaldef001430 /* = -45.000 */;
+float globaldef001431 /* = 45.000 */;
+float globaldef001432 /* = -181.000 */;
+float globaldef001433 /* = 181.000 */;
+float globaldef001434 /* = 90.000 */;
 
-void () func143;
+void () func000143;
 
-// function func143
+// function func000143
 // function number 143 begins at statement 2087
 /*
  * OP_LOAD_F	28	371	2693
@@ -5019,83 +5020,83 @@ void () func143;
  * OP_DONE	0	0	0
  */
 
-void () func143 = {
+void () func000143 = {
 
-   local float globaldef1436;
+   local float globaldef001436;
 
-   if ( (self.globaldef354 < time) ) {
+   if ( (self.globaldef000354 < time) ) {
 
-      globaldef1274 ();
+      func000126 ();
       return ;
 
    }
-   if ( (self.enemy != self) ) {
+   if ( (self.globaldef000159 != self) ) {
 
-      globaldef1436 = vlen ((self.origin - self.globaldef389));
-      if ( ((globaldef1436 > TRUE) || (self.globaldef383 != VEC_ORIGIN)) ) {
+      globaldef001436 = vlen ((self.globaldef000083 - self.globaldef000389));
+      if ( ((globaldef001436 > TRUE) || (self.globaldef000383 != VEC_ORIGIN)) ) {
 
-         globaldef1436 = (time + globaldef522);
-         if ( (self.globaldef405 < globaldef1436) ) {
+         globaldef001436 = (time + globaldef000522);
+         if ( (self.globaldef000405 < globaldef001436) ) {
 
-            self.globaldef405 = globaldef1436;
+            self.globaldef000405 = globaldef001436;
 
          }
 
       }
 
    }
-   if ( (time > self.globaldef405) ) {
+   if ( (time > self.globaldef000405) ) {
 
-      globaldef1274 ();
+      func000126 ();
 
    } else {
 
-      if ( (self.enemy != self) ) {
+      if ( (self.globaldef000159 != self) ) {
 
-         self.globaldef393 = self.enemy.origin;
+         self.globaldef000393 = self.globaldef000159.globaldef000083;
 
       }
 
    }
-   if ( (self.enemy != self) ) {
+   if ( (self.globaldef000159 != self) ) {
 
-      globaldef449 (self.origin,self.globaldef393,TRUE,self);
+      traceline (self.globaldef000083,self.globaldef000393,TRUE,self);
       if ( (trace_fraction != TRUE) ) {
 
-         if ( (self.enemy.velocity == VEC_ORIGIN) ) {
+         if ( (self.globaldef000159.globaldef000091 == VEC_ORIGIN) ) {
 
-            globaldef1274 ();
+            func000126 ();
 
          } else {
 
-            globaldef1283 (self.enemy);
-            self.globaldef421 = globaldef1167;
-            self.globaldef405 = (time + FL_SWIM);
+            func000129 (self.globaldef000159);
+            self.globaldef000421 = globaldef001167;
+            self.globaldef000405 = (time + FL_SWIM);
 
          }
 
       }
-      if ( (self.enemy.velocity != VEC_ORIGIN) ) {
+      if ( (self.globaldef000159.globaldef000091 != VEC_ORIGIN) ) {
 
-         self.globaldef405 = (time + FL_SWIM);
+         self.globaldef000405 = (time + FL_SWIM);
 
       }
 
    }
-   if ( (vlen ((self.globaldef389 - self.globaldef393)) > globaldef1337) ) {
+   if ( (vlen ((self.globaldef000389 - self.globaldef000393)) > globaldef001337) ) {
 
-      self.globaldef389 = (self.globaldef389 - self.globaldef393);
-      self.globaldef389 = globaldef442 (self.globaldef389);
-      self.globaldef389 = ((globaldef1437 * self.globaldef389) + self.globaldef393);
+      self.globaldef000389 = (self.globaldef000389 - self.globaldef000393);
+      self.globaldef000389 = normalize (self.globaldef000389);
+      self.globaldef000389 = ((globaldef001437 * self.globaldef000389) + self.globaldef000393);
 
    }
 
 };
-float globaldef1437 /* = 59.000 */;
+float globaldef001437 /* = 59.000 */;
 
-void () func144;
+void () func000144;
 
-// function func144
+// function func000144
 // function number 144 begins at statement 2182
 /*
  * OP_CALL0	2177	0	0
@@ -5146,43 +5147,43 @@ void () func144;
  * OP_DONE	0	0	0
  */
 
-void () func144 = {
+void () func000144 = {
 
-   globaldef1362 ();
-   self.velocity = VEC_ORIGIN;
-   self.avelocity = VEC_ORIGIN;
-   if ( (self.globaldef421 == globaldef1160) ) {
+   func000137 ();
+   self.globaldef000091 = VEC_ORIGIN;
+   self.globaldef000099 = VEC_ORIGIN;
+   if ( (self.globaldef000421 == globaldef001160) ) {
 
-      globaldef1369 ();
-      globaldef1259 (TRUE,globaldef1439);
+      func000139 ();
+      func000124 (TRUE,globaldef001439);
 
    } else {
 
-      if ( (self.globaldef421 == globaldef1162) ) {
+      if ( (self.globaldef000421 == globaldef001162) ) {
 
-         globaldef1385 ();
-         globaldef1259 (FALSE,globaldef728);
+         func000140 ();
+         func000124 (FALSE,globaldef000728);
 
       } else {
 
-         if ( (self.globaldef421 == globaldef1163) ) {
+         if ( (self.globaldef000421 == globaldef001163) ) {
 
-            globaldef1398 ();
-            globaldef1259 (globaldef724,globaldef1302);
+            func000141 ();
+            func000124 (globaldef000724,globaldef001302);
 
          } else {
 
-            if ( (self.globaldef421 == globaldef1161) ) {
+            if ( (self.globaldef000421 == globaldef001161) ) {
 
-               globaldef1404 ();
-               globaldef1259 (FALSE,globaldef1439);
+               func000142 ();
+               func000124 (FALSE,globaldef001439);
 
             } else {
 
-               if ( (self.globaldef421 == globaldef1167) ) {
+               if ( (self.globaldef000421 == globaldef001167) ) {
 
-                  globaldef1435 ();
-                  globaldef1259 (globaldef1335,globaldef1336);
+                  func000143 ();
+                  func000124 (globaldef001335,globaldef001336);
 
                }
 
@@ -5193,15 +5194,15 @@ void () func144 = {
       }
 
    }
-   globaldef1331 ();
+   func000136 ();
 
 };
-float globaldef1439 /* = 80.000 */;
-entity () func387;
+float globaldef001439 /* = 80.000 */;
+entity () func000387;
 
-void () func145;
+void () func000145;
 
-// function func145
+// function func000145
 // function number 145 begins at statement 2228
 /*
  * OP_LOAD_S	28	129	2818
@@ -5326,84 +5327,84 @@ void () func145;
  * OP_DONE	0	0	0
  */
 
-void () func145 = {
+void () func000145 = {
 
-   local entity globaldef1442;
-   local entity globaldef1443;
+   local entity globaldef001442;
+   local entity globaldef001443;
 
-   if ( (self.classname == globaldef1339) ) {
+   if ( (self.globaldef000107 == globaldef001339) ) {
 
-      globaldef999 (self);
-      self.classname = "player";
-      globaldef1443 = globaldef1440 ();
-      self.origin = (globaldef1443.origin + globaldef1444);
-      self.angles = globaldef1443.angles;
-      self.globaldef152 = TRUE;
-      globaldef792 = (globaldef792 - TRUE);
+      func002357 (self);
+      self.globaldef000107 = globaldef001170;
+      globaldef001443 = func000387 ();
+      self.globaldef000083 = (globaldef001443.globaldef000083 + globaldef001444);
+      self.globaldef000095 = globaldef001443.globaldef000095;
+      self.globaldef000152 = TRUE;
+      globaldef000792 = (globaldef000792 - TRUE);
 
    }
-   if ( (self.classname != "player") ) {
+   if ( (self.globaldef000107 != globaldef001170) ) {
 
       return ;
 
    }
-   if ( ((self.globaldef130 <= FALSE) || (self.globaldef143 != DEAD_NO)) ) {
+   if ( ((self.globaldef000130 <= FALSE) || (self.globaldef000143 != DEAD_NO)) ) {
 
       return ;
 
    }
-   self.classname = globaldef1445;
+   self.globaldef000107 = globaldef001445;
    setmodel (self,string_null);
-   self.modelindex = globaldef509;
-   if ( (globaldef804 & globaldef760) ) {
+   self.globaldef000071 = globaldef000509;
+   if ( (globaldef000804 & globaldef000760) ) {
 
-      self.globaldef557 = FALSE;
-      self.globaldef556 = FALSE;
+      self.globaldef000557 = FALSE;
+      self.globaldef000556 = FALSE;
 
    }
-   self.globaldef133 = string_null;
-   globaldef438 (self,VEC_ORIGIN,VEC_ORIGIN);
-   self.velocity = VEC_ORIGIN;
-   self.globaldef144 = VEC_ORIGIN;
-   self.movetype = MOVETYPE_NONE;
-   self.solid = SOLID_NOT;
-   self.globaldef141 = DAMAGE_NO;
-   self.globaldef152 = TRUE;
-   self.nextthink = CONTENT_EMPTY;
-   self.globaldef131 = FALSE;
-   self.globaldef111 = FALSE;
-   self.globaldef373 = TRUE;
-   self.globaldef366 = FALSE;
-   self.globaldef367 = FALSE;
-   self.globaldef363 = FALSE;
-   self.globaldef369 = FALSE;
-   self.globaldef364 = FALSE;
-   self.globaldef371 = FALSE;
-   self.globaldef365 = FALSE;
-   self.globaldef389 = self.origin;
-   makevectors (self.globaldef153);
-   self.globaldef393 = (self.globaldef389 + (globaldef1335 * v_forward));
-   self.enemy = self;
-   self.globaldef406 = world;
-   self.globaldef172 = world;
-   self.globaldef407 = TRUE;
-   self.globaldef383 = VEC_ORIGIN;
-   self.globaldef405 = time;
-   self.delay = time;
-   self.globaldef355 = FALSE;
-   globaldef1274 ();
-   globaldef887 (self,globaldef1446);
-   globaldef1102 (self);
-   globaldef792 = (globaldef792 + TRUE);
+   self.globaldef000133 = string_null;
+   setsize (self,VEC_ORIGIN,VEC_ORIGIN);
+   self.globaldef000091 = VEC_ORIGIN;
+   self.globaldef000144 = VEC_ORIGIN;
+   self.globaldef000081 = MOVETYPE_NONE;
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000141 = DAMAGE_NO;
+   self.globaldef000152 = TRUE;
+   self.globaldef000128 = CONTENT_EMPTY;
+   self.globaldef000131 = FALSE;
+   self.globaldef000111 = FALSE;
+   self.globaldef000373 = TRUE;
+   self.globaldef000366 = FALSE;
+   self.globaldef000367 = FALSE;
+   self.globaldef000363 = FALSE;
+   self.globaldef000369 = FALSE;
+   self.globaldef000364 = FALSE;
+   self.globaldef000371 = FALSE;
+   self.globaldef000365 = FALSE;
+   self.globaldef000389 = self.globaldef000083;
+   makevectors (self.globaldef000153);
+   self.globaldef000393 = (self.globaldef000389 + (globaldef001335 * v_forward));
+   self.globaldef000159 = self;
+   self.globaldef000406 = world;
+   self.globaldef000172 = world;
+   self.globaldef000407 = TRUE;
+   self.globaldef000383 = VEC_ORIGIN;
+   self.globaldef000405 = time;
+   self.globaldef000402 = time;
+   self.globaldef000355 = FALSE;
+   func000126 ();
+   func000092 (self,globaldef001446);
+   func002522 (self);
+   globaldef000792 = (globaldef000792 + TRUE);
 
 };
-vector globaldef1444 /* = '0.000 0.000 2.000' */;
-string globaldef1445 /* = "KasCam" */;
-string globaldef1446 /* = "KasCam activated\n" */;
+vector globaldef001444 /* = '0.000 0.000 2.000' */;
+string globaldef001445 /* = "KasCam" */;
+string globaldef001446 /* = "KasCam activated\n" */;
 
-void () func146;
+void () func000146;
 
-// function func146
+// function func000146
 // function number 146 begins at statement 2348
 /*
  * OP_STORE_V	30	4	0
@@ -5434,30 +5435,30 @@ void () func146;
  * OP_DONE	0	0	0
  */
 
-void () func146 = {
+void () func000146 = {
 
-   local float globaldef1448;
-   local entity globaldef1449;
-   local entity globaldef1450;
+   local float globaldef001448;
+   local entity globaldef001449;
+   local entity globaldef001450;
 
-   globaldef1450 = find (world,classname,globaldef1451);
-   globaldef1448 = MOVETYPE_BOUNCE;
-   while ( (globaldef1448 > FALSE) ) {
+   globaldef001450 = find (world,globaldef000107,globaldef001451);
+   globaldef001448 = MOVETYPE_BOUNCE;
+   while ( (globaldef001448 > FALSE) ) {
 
-      globaldef1449 = spawn ();
-      globaldef1449.classname = globaldef1324;
-      globaldef1449.angles = globaldef1450.angles;
-      globaldef1449.globaldef153 = globaldef1450.globaldef153;
-      setorigin (globaldef1449,globaldef1450.origin);
-      globaldef1448 = (globaldef1448 - TRUE);
+      globaldef001449 = spawn ();
+      globaldef001449.globaldef000107 = globaldef001324;
+      globaldef001449.globaldef000095 = globaldef001450.globaldef000095;
+      globaldef001449.globaldef000153 = globaldef001450.globaldef000153;
+      setorigin (globaldef001449,globaldef001450.globaldef000083);
+      globaldef001448 = (globaldef001448 - TRUE);
 
    }
 
 };
-string globaldef1451 /* = "info_player_start" */;
-float () func147;
+string globaldef001451 /* = "info_player_start" */;
+float () func000147;
 
-// function func147
+// function func000147
 // function number 147 begins at statement 2374
 /*
  * OP_LOAD_S	28	129	2935
@@ -5494,35 +5495,35 @@ float () func147;
  * OP_RETURN	214	0	0
  * OP_DONE	0	0	0
  */
-float () func147 = {
+float () func000147 = {
 
-   local entity globaldef1453;
-   local entity globaldef1454;
+   local entity globaldef001453;
+   local entity globaldef001454;
 
-   if ( (self.classname == globaldef1445) ) {
+   if ( (self.globaldef000107 == globaldef001445) ) {
 
-      globaldef792 = (globaldef792 - TRUE);
+      globaldef000792 = (globaldef000792 - TRUE);
       return ( FALSE );
 
    } else {
 
-      globaldef1453 = find (world,classname,globaldef1445);
-      while ( globaldef1453 ) {
+      globaldef001453 = find (world,globaldef000107,globaldef001445);
+      while ( globaldef001453 ) {
 
-         if ( (globaldef1453.enemy == self) ) {
+         if ( (globaldef001453.globaldef000159 == self) ) {
 
-            globaldef1454 = self;
-            self = globaldef1453;
-            globaldef1274 ();
-            self = globaldef1454;
-
-         }
-         if ( (globaldef1453.globaldef406 == self) ) {
-
-            globaldef1453.globaldef406 = world;
+            globaldef001454 = self;
+            self = globaldef001453;
+            func000126 ();
+            self = globaldef001454;
 
          }
-         globaldef1453 = find (globaldef1453,classname,globaldef1445);
+         if ( (globaldef001453.globaldef000406 == self) ) {
+
+            globaldef001453.globaldef000406 = world;
+
+         }
+         globaldef001453 = find (globaldef001453,globaldef000107,globaldef001445);
 
       }
       return ( TRUE );
@@ -5531,9 +5532,9 @@ float () func147 = {
 
 };
 
-void (entity globaldef1456, entity globaldef1457) func148;
+void (entity globaldef001456, entity globaldef001457) func000148;
 
-// function func148
+// function func000148
 // function number 148 begins at statement 2407
 /*
  * OP_STORE_V	30	4	0
@@ -5569,36 +5570,36 @@ void (entity globaldef1456, entity globaldef1457) func148;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1456, entity globaldef1457) func148 = {
+void (entity globaldef001456, entity globaldef001457) func000148 = {
 
-   local entity globaldef1458;
-   local entity globaldef1459;
+   local entity globaldef001458;
+   local entity globaldef001459;
 
-   globaldef1459 = find (world,classname,globaldef1445);
-   while ( globaldef1459 ) {
+   globaldef001459 = find (world,globaldef000107,globaldef001445);
+   while ( globaldef001459 ) {
 
-      if ( (globaldef1456 == globaldef1459.enemy) ) {
+      if ( (globaldef001456 == globaldef001459.globaldef000159) ) {
 
-         if ( (globaldef1459.globaldef421 != globaldef1167) ) {
+         if ( (globaldef001459.globaldef000421 != globaldef001167) ) {
 
-            globaldef1458 = self;
-            self = globaldef1459;
-            globaldef1275 ();
-            self = globaldef1458;
+            globaldef001458 = self;
+            self = globaldef001459;
+            func000127 ();
+            self = globaldef001458;
 
          }
-         globaldef1459.enemy = globaldef1457;
+         globaldef001459.globaldef000159 = globaldef001457;
 
       } else {
 
-         if ( (globaldef1457 == globaldef1459.enemy) ) {
+         if ( (globaldef001457 == globaldef001459.globaldef000159) ) {
 
-            globaldef1459.enemy = globaldef1459;
+            globaldef001459.globaldef000159 = globaldef001459;
 
          }
 
       }
-      globaldef1459 = find (globaldef1459,classname,globaldef1445);
+      globaldef001459 = find (globaldef001459,globaldef000107,globaldef001445);
 
    }
 

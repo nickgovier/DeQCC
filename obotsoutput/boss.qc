@@ -1,6 +1,6 @@
-string globaldef4806 /* = "progs/zombie.mdl" */;
+string globaldef004806 /* = "progs/zombie.mdl" */;
 
-void (vector globaldef4925) boss_missile;
+void (vector globaldef004925) boss_missile;
 
 void () boss_face;
 
@@ -37,17 +37,17 @@ void () boss_face;
 
 void () boss_face = {
 
-   if ( ((self.enemy.globaldef130 <= FALSE) || (globaldef440 () < globaldef2083)) ) {
+   if ( ((self.globaldef000159.globaldef000130 <= FALSE) || (random () < globaldef002083)) ) {
 
-      self.enemy = find (self.enemy,classname,"player");
-      if ( !self.enemy ) {
+      self.globaldef000159 = find (self.globaldef000159,globaldef000107,globaldef001170);
+      if ( !self.globaldef000159 ) {
 
-         self.enemy = find (self.enemy,classname,"player");
+         self.globaldef000159 = find (self.globaldef000159,globaldef000107,globaldef001170);
 
       }
 
    }
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -66,14 +66,14 @@ void () boss_rise1;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise1 = [ 0.000, globaldef4810 ] {
+void () boss_rise1 = [ 0.000, boss_rise2 ] {
 
-   sound (self,CHAN_WEAPON,globaldef4811,TRUE,ATTN_NORM);
+   sound (self,CHAN_WEAPON,globaldef004811,TRUE,ATTN_NORM);
 
 };
 
 void () boss_rise2;
-string globaldef4811 /* = "boss1/out1.wav" */;
+string globaldef004811 /* = "boss1/out1.wav" */;
 
 // function boss_rise2
 // function number 1565 begins at statement 23486
@@ -88,14 +88,14 @@ string globaldef4811 /* = "boss1/out1.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise2 = [ 1.000, globaldef4812 ] {
+void () boss_rise2 = [ 1.000, boss_rise3 ] {
 
-   sound (self,CHAN_VOICE,globaldef4813,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,globaldef004813,TRUE,ATTN_NORM);
 
 };
 
 void () boss_rise3;
-string globaldef4813 /* = "boss1/sight1.wav" */;
+string globaldef004813 /* = "boss1/sight1.wav" */;
 
 // function boss_rise3
 // function number 1566 begins at statement 23494
@@ -104,7 +104,7 @@ string globaldef4813 /* = "boss1/sight1.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise3 = [ 2.000, globaldef4814 ] {
+void () boss_rise3 = [ 2.000, boss_rise4 ] {
 
 
 };
@@ -118,7 +118,7 @@ void () boss_rise4;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise4 = [ 3.000, globaldef4815 ] {
+void () boss_rise4 = [ 3.000, boss_rise5 ] {
 
 
 };
@@ -132,7 +132,7 @@ void () boss_rise5;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise5 = [ 4.000, globaldef4816 ] {
+void () boss_rise5 = [ 4.000, boss_rise6 ] {
 
 
 };
@@ -146,7 +146,7 @@ void () boss_rise6;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise6 = [ 5.000, globaldef4817 ] {
+void () boss_rise6 = [ 5.000, boss_rise7 ] {
 
 
 };
@@ -160,7 +160,7 @@ void () boss_rise7;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise7 = [ 6.000, globaldef4818 ] {
+void () boss_rise7 = [ 6.000, boss_rise8 ] {
 
 
 };
@@ -174,7 +174,7 @@ void () boss_rise8;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise8 = [ 7.000, globaldef4819 ] {
+void () boss_rise8 = [ 7.000, boss_rise9 ] {
 
 
 };
@@ -188,7 +188,7 @@ void () boss_rise9;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise9 = [ 8.000, globaldef4820 ] {
+void () boss_rise9 = [ 8.000, boss_rise10 ] {
 
 
 };
@@ -202,7 +202,7 @@ void () boss_rise10;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise10 = [ 9.000, globaldef4821 ] {
+void () boss_rise10 = [ 9.000, boss_rise11 ] {
 
 
 };
@@ -216,7 +216,7 @@ void () boss_rise11;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise11 = [ 10.000, globaldef4822 ] {
+void () boss_rise11 = [ 10.000, boss_rise12 ] {
 
 
 };
@@ -230,7 +230,7 @@ void () boss_rise12;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise12 = [ 11.000, globaldef4823 ] {
+void () boss_rise12 = [ 11.000, boss_rise13 ] {
 
 
 };
@@ -244,7 +244,7 @@ void () boss_rise13;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise13 = [ 12.000, globaldef4824 ] {
+void () boss_rise13 = [ 12.000, boss_rise14 ] {
 
 
 };
@@ -258,7 +258,7 @@ void () boss_rise14;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise14 = [ 13.000, globaldef4825 ] {
+void () boss_rise14 = [ 13.000, boss_rise15 ] {
 
 
 };
@@ -272,7 +272,7 @@ void () boss_rise15;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise15 = [ 14.000, globaldef4826 ] {
+void () boss_rise15 = [ 14.000, boss_rise16 ] {
 
 
 };
@@ -286,7 +286,7 @@ void () boss_rise16;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise16 = [ 15.000, globaldef4827 ] {
+void () boss_rise16 = [ 15.000, boss_rise17 ] {
 
 
 };
@@ -300,7 +300,7 @@ void () boss_rise17;
  * OP_DONE	0	0	0
  */
 
-void () boss_rise17 = [ 16.000, globaldef4828 ] {
+void () boss_rise17 = [ 16.000, boss_missile1 ] {
 
 
 };
@@ -316,7 +316,7 @@ void () boss_idle1;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle1 = [ 17.000, globaldef4830 ] {
+void () boss_idle1 = [ 17.000, boss_idle2 ] {
 
 
 };
@@ -331,9 +331,9 @@ void () boss_idle2;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle2 = [ 18.000, globaldef4831 ] {
+void () boss_idle2 = [ 18.000, boss_idle3 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -347,9 +347,9 @@ void () boss_idle3;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle3 = [ 19.000, globaldef4832 ] {
+void () boss_idle3 = [ 19.000, boss_idle4 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -363,9 +363,9 @@ void () boss_idle4;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle4 = [ 20.000, globaldef4833 ] {
+void () boss_idle4 = [ 20.000, boss_idle5 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -379,9 +379,9 @@ void () boss_idle5;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle5 = [ 21.000, globaldef4834 ] {
+void () boss_idle5 = [ 21.000, boss_idle6 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -395,9 +395,9 @@ void () boss_idle6;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle6 = [ 22.000, globaldef4835 ] {
+void () boss_idle6 = [ 22.000, boss_idle7 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -411,9 +411,9 @@ void () boss_idle7;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle7 = [ 23.000, globaldef4836 ] {
+void () boss_idle7 = [ 23.000, boss_idle8 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -427,9 +427,9 @@ void () boss_idle8;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle8 = [ 24.000, globaldef4837 ] {
+void () boss_idle8 = [ 24.000, boss_idle9 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -443,9 +443,9 @@ void () boss_idle9;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle9 = [ 25.000, globaldef4838 ] {
+void () boss_idle9 = [ 25.000, boss_idle10 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -459,9 +459,9 @@ void () boss_idle10;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle10 = [ 26.000, globaldef4839 ] {
+void () boss_idle10 = [ 26.000, boss_idle11 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -475,9 +475,9 @@ void () boss_idle11;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle11 = [ 27.000, globaldef4840 ] {
+void () boss_idle11 = [ 27.000, boss_idle12 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -491,9 +491,9 @@ void () boss_idle12;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle12 = [ 28.000, globaldef4841 ] {
+void () boss_idle12 = [ 28.000, boss_idle13 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -507,9 +507,9 @@ void () boss_idle13;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle13 = [ 29.000, globaldef4842 ] {
+void () boss_idle13 = [ 29.000, boss_idle14 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -523,9 +523,9 @@ void () boss_idle14;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle14 = [ 30.000, globaldef4843 ] {
+void () boss_idle14 = [ 30.000, boss_idle15 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -539,9 +539,9 @@ void () boss_idle15;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle15 = [ 31.000, globaldef4844 ] {
+void () boss_idle15 = [ 31.000, boss_idle16 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -555,9 +555,9 @@ void () boss_idle16;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle16 = [ 32.000, globaldef4845 ] {
+void () boss_idle16 = [ 32.000, boss_idle17 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -571,9 +571,9 @@ void () boss_idle17;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle17 = [ 33.000, globaldef4846 ] {
+void () boss_idle17 = [ 33.000, boss_idle18 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -587,9 +587,9 @@ void () boss_idle18;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle18 = [ 34.000, globaldef4847 ] {
+void () boss_idle18 = [ 34.000, boss_idle19 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -603,9 +603,9 @@ void () boss_idle19;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle19 = [ 35.000, globaldef4848 ] {
+void () boss_idle19 = [ 35.000, boss_idle20 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -619,9 +619,9 @@ void () boss_idle20;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle20 = [ 36.000, globaldef4849 ] {
+void () boss_idle20 = [ 36.000, boss_idle21 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -635,9 +635,9 @@ void () boss_idle21;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle21 = [ 37.000, globaldef4850 ] {
+void () boss_idle21 = [ 37.000, boss_idle22 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -651,9 +651,9 @@ void () boss_idle22;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle22 = [ 38.000, globaldef4851 ] {
+void () boss_idle22 = [ 38.000, boss_idle23 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -667,9 +667,9 @@ void () boss_idle23;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle23 = [ 39.000, globaldef4852 ] {
+void () boss_idle23 = [ 39.000, boss_idle24 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -683,9 +683,9 @@ void () boss_idle24;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle24 = [ 40.000, globaldef4853 ] {
+void () boss_idle24 = [ 40.000, boss_idle25 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -699,9 +699,9 @@ void () boss_idle25;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle25 = [ 41.000, globaldef4854 ] {
+void () boss_idle25 = [ 41.000, boss_idle26 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -715,9 +715,9 @@ void () boss_idle26;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle26 = [ 42.000, globaldef4855 ] {
+void () boss_idle26 = [ 42.000, boss_idle27 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -731,9 +731,9 @@ void () boss_idle27;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle27 = [ 43.000, globaldef4856 ] {
+void () boss_idle27 = [ 43.000, boss_idle28 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -747,9 +747,9 @@ void () boss_idle28;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle28 = [ 44.000, globaldef4857 ] {
+void () boss_idle28 = [ 44.000, boss_idle29 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -763,9 +763,9 @@ void () boss_idle29;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle29 = [ 45.000, globaldef4858 ] {
+void () boss_idle29 = [ 45.000, boss_idle30 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -779,9 +779,9 @@ void () boss_idle30;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle30 = [ 46.000, globaldef4859 ] {
+void () boss_idle30 = [ 46.000, boss_idle31 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -795,9 +795,9 @@ void () boss_idle31;
  * OP_DONE	0	0	0
  */
 
-void () boss_idle31 = [ 47.000, globaldef4829 ] {
+void () boss_idle31 = [ 47.000, boss_idle1 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -809,9 +809,9 @@ void () boss_idle31 = [ 47.000, globaldef4829 ] {
  * OP_DONE	0	0	0
  */
 
-void () boss_missile1 = [ 57.000, globaldef4860 ] {
+void () boss_missile1 = [ 57.000, boss_missile2 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -825,9 +825,9 @@ void () boss_missile2;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile2 = [ 58.000, globaldef4861 ] {
+void () boss_missile2 = [ 58.000, boss_missile3 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -841,9 +841,9 @@ void () boss_missile3;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile3 = [ 59.000, globaldef4862 ] {
+void () boss_missile3 = [ 59.000, boss_missile4 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -857,9 +857,9 @@ void () boss_missile4;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile4 = [ 60.000, globaldef4863 ] {
+void () boss_missile4 = [ 60.000, boss_missile5 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -873,9 +873,9 @@ void () boss_missile5;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile5 = [ 61.000, globaldef4864 ] {
+void () boss_missile5 = [ 61.000, boss_missile6 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -889,9 +889,9 @@ void () boss_missile6;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile6 = [ 62.000, globaldef4865 ] {
+void () boss_missile6 = [ 62.000, boss_missile7 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -905,9 +905,9 @@ void () boss_missile7;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile7 = [ 63.000, globaldef4866 ] {
+void () boss_missile7 = [ 63.000, boss_missile8 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -921,9 +921,9 @@ void () boss_missile8;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile8 = [ 64.000, globaldef4867 ] {
+void () boss_missile8 = [ 64.000, boss_missile9 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -938,14 +938,14 @@ void () boss_missile9;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile9 = [ 65.000, globaldef4868 ] {
+void () boss_missile9 = [ 65.000, boss_missile10 ] {
 
-   globaldef4807 (globaldef4869);
+   boss_missile (globaldef004869);
 
 };
 
 void () boss_missile10;
-vector globaldef4869 /* = '100.000 100.000 200.000' */;
+vector globaldef004869 /* = '100.000 100.000 200.000' */;
 
 // function boss_missile10
 // function number 1621 begins at statement 23644
@@ -955,9 +955,9 @@ vector globaldef4869 /* = '100.000 100.000 200.000' */;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile10 = [ 66.000, globaldef4870 ] {
+void () boss_missile10 = [ 66.000, boss_missile11 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -971,9 +971,9 @@ void () boss_missile11;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile11 = [ 67.000, globaldef4871 ] {
+void () boss_missile11 = [ 67.000, boss_missile12 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -987,9 +987,9 @@ void () boss_missile12;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile12 = [ 68.000, globaldef4872 ] {
+void () boss_missile12 = [ 68.000, boss_missile13 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1003,9 +1003,9 @@ void () boss_missile13;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile13 = [ 69.000, globaldef4873 ] {
+void () boss_missile13 = [ 69.000, boss_missile14 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1019,9 +1019,9 @@ void () boss_missile14;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile14 = [ 70.000, globaldef4874 ] {
+void () boss_missile14 = [ 70.000, boss_missile15 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1035,9 +1035,9 @@ void () boss_missile15;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile15 = [ 71.000, globaldef4875 ] {
+void () boss_missile15 = [ 71.000, boss_missile16 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1051,9 +1051,9 @@ void () boss_missile16;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile16 = [ 72.000, globaldef4876 ] {
+void () boss_missile16 = [ 72.000, boss_missile17 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1067,9 +1067,9 @@ void () boss_missile17;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile17 = [ 73.000, globaldef4877 ] {
+void () boss_missile17 = [ 73.000, boss_missile18 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1083,9 +1083,9 @@ void () boss_missile18;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile18 = [ 74.000, globaldef4878 ] {
+void () boss_missile18 = [ 74.000, boss_missile19 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1099,9 +1099,9 @@ void () boss_missile19;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile19 = [ 75.000, globaldef4879 ] {
+void () boss_missile19 = [ 75.000, boss_missile20 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1116,14 +1116,14 @@ void () boss_missile20;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile20 = [ 76.000, globaldef4880 ] {
+void () boss_missile20 = [ 76.000, boss_missile21 ] {
 
-   globaldef4807 (globaldef4881);
+   boss_missile (globaldef004881);
 
 };
 
 void () boss_missile21;
-vector globaldef4881 /* = '100.000 -100.000 200.000' */;
+vector globaldef004881 /* = '100.000 -100.000 200.000' */;
 
 // function boss_missile21
 // function number 1632 begins at statement 23678
@@ -1133,9 +1133,9 @@ vector globaldef4881 /* = '100.000 -100.000 200.000' */;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile21 = [ 77.000, globaldef4882 ] {
+void () boss_missile21 = [ 77.000, boss_missile22 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1149,9 +1149,9 @@ void () boss_missile22;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile22 = [ 78.000, globaldef4883 ] {
+void () boss_missile22 = [ 78.000, boss_missile23 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1165,9 +1165,9 @@ void () boss_missile23;
  * OP_DONE	0	0	0
  */
 
-void () boss_missile23 = [ 79.000, globaldef4828 ] {
+void () boss_missile23 = [ 79.000, boss_missile1 ] {
 
-   globaldef4808 ();
+   boss_face ();
 
 };
 
@@ -1180,7 +1180,7 @@ void () boss_shocka1;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka1 = [ 80.000, globaldef4885 ] {
+void () boss_shocka1 = [ 80.000, boss_shocka2 ] {
 
 
 };
@@ -1194,7 +1194,7 @@ void () boss_shocka2;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka2 = [ 81.000, globaldef4886 ] {
+void () boss_shocka2 = [ 81.000, boss_shocka3 ] {
 
 
 };
@@ -1208,7 +1208,7 @@ void () boss_shocka3;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka3 = [ 82.000, globaldef4887 ] {
+void () boss_shocka3 = [ 82.000, boss_shocka4 ] {
 
 
 };
@@ -1222,7 +1222,7 @@ void () boss_shocka4;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka4 = [ 83.000, globaldef4888 ] {
+void () boss_shocka4 = [ 83.000, boss_shocka5 ] {
 
 
 };
@@ -1236,7 +1236,7 @@ void () boss_shocka5;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka5 = [ 84.000, globaldef4889 ] {
+void () boss_shocka5 = [ 84.000, boss_shocka6 ] {
 
 
 };
@@ -1250,7 +1250,7 @@ void () boss_shocka6;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka6 = [ 85.000, globaldef4890 ] {
+void () boss_shocka6 = [ 85.000, boss_shocka7 ] {
 
 
 };
@@ -1264,7 +1264,7 @@ void () boss_shocka7;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka7 = [ 86.000, globaldef4891 ] {
+void () boss_shocka7 = [ 86.000, boss_shocka8 ] {
 
 
 };
@@ -1278,7 +1278,7 @@ void () boss_shocka8;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka8 = [ 87.000, globaldef4892 ] {
+void () boss_shocka8 = [ 87.000, boss_shocka9 ] {
 
 
 };
@@ -1292,7 +1292,7 @@ void () boss_shocka9;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka9 = [ 88.000, globaldef4893 ] {
+void () boss_shocka9 = [ 88.000, boss_shocka10 ] {
 
 
 };
@@ -1306,7 +1306,7 @@ void () boss_shocka10;
  * OP_DONE	0	0	0
  */
 
-void () boss_shocka10 = [ 89.000, globaldef4828 ] {
+void () boss_shocka10 = [ 89.000, boss_missile1 ] {
 
 
 };
@@ -1320,7 +1320,7 @@ void () boss_shockb1;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb1 = [ 90.000, globaldef4895 ] {
+void () boss_shockb1 = [ 90.000, boss_shockb2 ] {
 
 
 };
@@ -1334,7 +1334,7 @@ void () boss_shockb2;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb2 = [ 91.000, globaldef4896 ] {
+void () boss_shockb2 = [ 91.000, boss_shockb3 ] {
 
 
 };
@@ -1348,7 +1348,7 @@ void () boss_shockb3;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb3 = [ 92.000, globaldef4897 ] {
+void () boss_shockb3 = [ 92.000, boss_shockb4 ] {
 
 
 };
@@ -1362,7 +1362,7 @@ void () boss_shockb4;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb4 = [ 93.000, globaldef4898 ] {
+void () boss_shockb4 = [ 93.000, boss_shockb5 ] {
 
 
 };
@@ -1376,7 +1376,7 @@ void () boss_shockb5;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb5 = [ 94.000, globaldef4899 ] {
+void () boss_shockb5 = [ 94.000, boss_shockb6 ] {
 
 
 };
@@ -1390,7 +1390,7 @@ void () boss_shockb6;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb6 = [ 95.000, globaldef4900 ] {
+void () boss_shockb6 = [ 95.000, boss_shockb7 ] {
 
 
 };
@@ -1404,7 +1404,7 @@ void () boss_shockb7;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb7 = [ 90.000, globaldef4901 ] {
+void () boss_shockb7 = [ 90.000, boss_shockb8 ] {
 
 
 };
@@ -1418,7 +1418,7 @@ void () boss_shockb8;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb8 = [ 91.000, globaldef4902 ] {
+void () boss_shockb8 = [ 91.000, boss_shockb9 ] {
 
 
 };
@@ -1432,7 +1432,7 @@ void () boss_shockb9;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb9 = [ 92.000, globaldef4903 ] {
+void () boss_shockb9 = [ 92.000, boss_shockb10 ] {
 
 
 };
@@ -1446,7 +1446,7 @@ void () boss_shockb10;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockb10 = [ 93.000, globaldef4828 ] {
+void () boss_shockb10 = [ 93.000, boss_missile1 ] {
 
 
 };
@@ -1460,7 +1460,7 @@ void () boss_shockc1;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc1 = [ 96.000, globaldef4905 ] {
+void () boss_shockc1 = [ 96.000, boss_shockc2 ] {
 
 
 };
@@ -1474,7 +1474,7 @@ void () boss_shockc2;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc2 = [ 97.000, globaldef4906 ] {
+void () boss_shockc2 = [ 97.000, boss_shockc3 ] {
 
 
 };
@@ -1488,7 +1488,7 @@ void () boss_shockc3;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc3 = [ 98.000, globaldef4907 ] {
+void () boss_shockc3 = [ 98.000, boss_shockc4 ] {
 
 
 };
@@ -1502,7 +1502,7 @@ void () boss_shockc4;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc4 = [ 99.000, globaldef4908 ] {
+void () boss_shockc4 = [ 99.000, boss_shockc5 ] {
 
 
 };
@@ -1516,7 +1516,7 @@ void () boss_shockc5;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc5 = [ 100.000, globaldef4909 ] {
+void () boss_shockc5 = [ 100.000, boss_shockc6 ] {
 
 
 };
@@ -1530,7 +1530,7 @@ void () boss_shockc6;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc6 = [ 101.000, globaldef4910 ] {
+void () boss_shockc6 = [ 101.000, boss_shockc7 ] {
 
 
 };
@@ -1544,7 +1544,7 @@ void () boss_shockc7;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc7 = [ 102.000, globaldef4911 ] {
+void () boss_shockc7 = [ 102.000, boss_shockc8 ] {
 
 
 };
@@ -1558,7 +1558,7 @@ void () boss_shockc8;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc8 = [ 103.000, globaldef4912 ] {
+void () boss_shockc8 = [ 103.000, boss_shockc9 ] {
 
 
 };
@@ -1572,7 +1572,7 @@ void () boss_shockc9;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc9 = [ 104.000, globaldef4913 ] {
+void () boss_shockc9 = [ 104.000, boss_shockc10 ] {
 
 
 };
@@ -1586,7 +1586,7 @@ void () boss_shockc10;
  * OP_DONE	0	0	0
  */
 
-void () boss_shockc10 = [ 105.000, globaldef4914 ] {
+void () boss_shockc10 = [ 105.000, boss_death1 ] {
 
 
 };
@@ -1606,14 +1606,14 @@ void () boss_death1;
  * OP_DONE	0	0	0
  */
 
-void () boss_death1 = [ 48.000, globaldef4915 ] {
+void () boss_death1 = [ 48.000, boss_death2 ] {
 
-   sound (self,CHAN_VOICE,globaldef4916,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,globaldef004916,TRUE,ATTN_NORM);
 
 };
 
 void () boss_death2;
-string globaldef4916 /* = "boss1/death.wav" */;
+string globaldef004916 /* = "boss1/death.wav" */;
 
 // function boss_death2
 // function number 1666 begins at statement 23755
@@ -1622,7 +1622,7 @@ string globaldef4916 /* = "boss1/death.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () boss_death2 = [ 49.000, globaldef4917 ] {
+void () boss_death2 = [ 49.000, boss_death3 ] {
 
 
 };
@@ -1636,7 +1636,7 @@ void () boss_death3;
  * OP_DONE	0	0	0
  */
 
-void () boss_death3 = [ 50.000, globaldef4918 ] {
+void () boss_death3 = [ 50.000, boss_death4 ] {
 
 
 };
@@ -1650,7 +1650,7 @@ void () boss_death4;
  * OP_DONE	0	0	0
  */
 
-void () boss_death4 = [ 51.000, globaldef4919 ] {
+void () boss_death4 = [ 51.000, boss_death5 ] {
 
 
 };
@@ -1664,7 +1664,7 @@ void () boss_death5;
  * OP_DONE	0	0	0
  */
 
-void () boss_death5 = [ 52.000, globaldef4920 ] {
+void () boss_death5 = [ 52.000, boss_death6 ] {
 
 
 };
@@ -1678,7 +1678,7 @@ void () boss_death6;
  * OP_DONE	0	0	0
  */
 
-void () boss_death6 = [ 53.000, globaldef4921 ] {
+void () boss_death6 = [ 53.000, boss_death7 ] {
 
 
 };
@@ -1692,7 +1692,7 @@ void () boss_death7;
  * OP_DONE	0	0	0
  */
 
-void () boss_death7 = [ 54.000, globaldef4922 ] {
+void () boss_death7 = [ 54.000, boss_death8 ] {
 
 
 };
@@ -1706,7 +1706,7 @@ void () boss_death8;
  * OP_DONE	0	0	0
  */
 
-void () boss_death8 = [ 55.000, globaldef4923 ] {
+void () boss_death8 = [ 55.000, boss_death9 ] {
 
 
 };
@@ -1744,14 +1744,14 @@ void () boss_death9;
  * OP_DONE	0	0	0
  */
 
-void () boss_death9 = [ 56.000, globaldef4924 ] {
+void () boss_death9 = [ 56.000, boss_death10 ] {
 
-   sound (self,CHAN_BODY,globaldef4811,TRUE,ATTN_NORM);
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_LAVASPLASH);
-   globaldef483 (MSG_BROADCAST,self.globaldef84);
-   globaldef483 (MSG_BROADCAST,self.globaldef85);
-   globaldef483 (MSG_BROADCAST,self.globaldef86);
+   sound (self,CHAN_BODY,globaldef004811,TRUE,ATTN_NORM);
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_LAVASPLASH);
+   WriteCoord (MSG_BROADCAST,self.globaldef000084);
+   WriteCoord (MSG_BROADCAST,self.globaldef000085);
+   WriteCoord (MSG_BROADCAST,self.globaldef000086);
 
 };
 
@@ -1772,10 +1772,10 @@ void () boss_death10;
  * OP_DONE	0	0	0
  */
 
-void () boss_death10 = [ 56.000, globaldef4924 ] {
+void () boss_death10 = [ 56.000, boss_death10 ] {
 
    killed_monsters = (killed_monsters + TRUE);
-   globaldef479 (MSG_ALL,SVC_KILLEDMONSTER);
+   WriteByte (MSG_ALL,SVC_KILLEDMONSTER);
    SUB_UseTargets ();
    remove (self);
 
@@ -1858,46 +1858,46 @@ void () boss_death10 = [ 56.000, globaldef4924 ] {
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef4925) boss_missile = {
+void (vector globaldef004925) boss_missile = {
 
-   local vector globaldef4929;
-   local vector globaldef4933;
-   local vector globaldef4937;
-   local vector globaldef4941;
-   local float globaldef4945;
+   local vector offang;
+   local vector org;
+   local vector vec;
+   local vector d;
+   local float t;
 
-   globaldef4929 = globaldef478 ((self.enemy.origin - self.origin));
-   makevectors (globaldef4929);
-   globaldef4933 = (((self.origin + (globaldef4925_x * v_forward)) + (globaldef4927 * v_right)) + (globaldef4928 * '0.000 0.000 1.000'));
+   offang = vectoangles ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   makevectors (offang);
+   org = (((self.globaldef000083 + (globaldef004925_x * v_forward)) + (globaldef004927 * v_right)) + (globaldef004928 * globaldef001462));
    if ( (skill > TRUE) ) {
 
-      globaldef4945 = (vlen ((self.enemy.origin - globaldef4933)) / globaldef523);
-      globaldef4937 = self.enemy.velocity;
-      globaldef4940 = FALSE;
-      globaldef4941 = (self.enemy.origin + (globaldef4945 * globaldef4937));
+      t = (vlen ((self.globaldef000159.globaldef000083 - org)) / globaldef000523);
+      vec = self.globaldef000159.globaldef000091;
+      globaldef004940 = FALSE;
+      d = (self.globaldef000159.globaldef000083 + (t * vec));
 
    } else {
 
-      globaldef4941 = self.enemy.origin;
+      d = self.globaldef000159.globaldef000083;
 
    }
-   globaldef4937 = globaldef442 ((globaldef4941 - globaldef4933));
-   globaldef2191 (globaldef4933,globaldef4937);
-   setmodel (newmis,globaldef2439);
-   newmis.avelocity = globaldef4946;
-   globaldef438 (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   newmis.velocity = (globaldef4937 * globaldef523);
-   newmis.globaldef124 = globaldef1745;
-   sound (self,CHAN_WEAPON,globaldef4947,TRUE,ATTN_NORM);
-   if ( (self.enemy.globaldef130 <= FALSE) ) {
+   vec = normalize ((d - org));
+   launch_spike (org,vec);
+   setmodel (newmis,globaldef002439);
+   newmis.globaldef000099 = globaldef004946;
+   setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
+   newmis.globaldef000091 = (vec * globaldef000523);
+   newmis.globaldef000124 = T_MissileTouch;
+   sound (self,CHAN_WEAPON,globaldef004947,TRUE,ATTN_NORM);
+   if ( (self.globaldef000159.globaldef000130 <= FALSE) ) {
 
-      globaldef4829 ();
+      boss_idle1 ();
 
    }
 
 };
-vector globaldef4946 /* = '200.000 100.000 300.000' */;
-string globaldef4947 /* = "boss1/throw.wav" */;
+vector globaldef004946 /* = '200.000 100.000 300.000' */;
+string globaldef004947 /* = "boss1/throw.wav" */;
 
 void () boss_awake;
 
@@ -1952,33 +1952,33 @@ void () boss_awake;
 
 void () boss_awake = {
 
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   self.globaldef141 = DAMAGE_NO;
-   setmodel (self,globaldef4949);
-   globaldef438 (self,globaldef4950,globaldef4951);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   self.globaldef000141 = DAMAGE_NO;
+   setmodel (self,globaldef004949);
+   setsize (self,globaldef004950,globaldef004951);
    if ( (skill == FALSE) ) {
 
-      self.globaldef130 = TRUE;
+      self.globaldef000130 = TRUE;
 
    } else {
 
-      self.globaldef130 = MOVETYPE_WALK;
+      self.globaldef000130 = MOVETYPE_WALK;
 
    }
-   self.enemy = activator;
-   globaldef479 (MSG_BROADCAST,SVC_TEMP);
-   globaldef479 (MSG_BROADCAST,TE_LAVASPLASH);
-   globaldef483 (MSG_BROADCAST,self.globaldef84);
-   globaldef483 (MSG_BROADCAST,self.globaldef85);
-   globaldef483 (MSG_BROADCAST,self.globaldef86);
-   self.globaldef170 = globaldef1384;
-   globaldef4809 ();
+   self.globaldef000159 = activator;
+   WriteByte (MSG_BROADCAST,globaldef000287);
+   WriteByte (MSG_BROADCAST,TE_LAVASPLASH);
+   WriteCoord (MSG_BROADCAST,self.globaldef000084);
+   WriteCoord (MSG_BROADCAST,self.globaldef000085);
+   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   self.globaldef000170 = globaldef001384;
+   boss_rise1 ();
 
 };
-string globaldef4949 /* = "progs/boss.mdl" */;
-vector globaldef4950 /* = '-128.000 -128.000 -24.000' */;
-vector globaldef4951 /* = '128.000 128.000 256.000' */;
+string globaldef004949 /* = "progs/boss.mdl" */;
+vector globaldef004950 /* = '-128.000 -128.000 -24.000' */;
+vector globaldef004951 /* = '128.000 128.000 256.000' */;
 
 void () monster_boss;
 
@@ -2022,23 +2022,23 @@ void () monster_boss = {
       return ;
 
    }
-   globaldef453 (globaldef4949);
-   globaldef453 (globaldef2439);
-   globaldef452 (globaldef2013);
-   globaldef452 (globaldef4811);
-   globaldef452 (globaldef4813);
-   globaldef452 (globaldef2404);
-   globaldef452 (globaldef4947);
-   globaldef452 (globaldef4953);
-   globaldef452 (globaldef4916);
+   precache_model (globaldef004949);
+   precache_model (globaldef002439);
+   precache_sound (globaldef002013);
+   precache_sound (globaldef004811);
+   precache_sound (globaldef004813);
+   precache_sound (globaldef002404);
+   precache_sound (globaldef004947);
+   precache_sound (globaldef004953);
+   precache_sound (globaldef004916);
    total_monsters = (total_monsters + TRUE);
-   self.use = globaldef4948;
+   self.globaldef000125 = boss_awake;
 
 };
-string globaldef4953 /* = "boss1/pain.wav" */;
-entity globaldef4954;
-entity globaldef4955;
-float globaldef4956 /* = 0.000 */;
+string globaldef004953 /* = "boss1/pain.wav" */;
+entity globaldef004954;
+entity globaldef004955;
+float globaldef004956 /* = 0.000 */;
 
 void () lightning_fire;
 
@@ -2111,34 +2111,34 @@ void () lightning_fire;
 
 void () lightning_fire = {
 
-   local vector globaldef4958;
-   local vector globaldef4962;
+   local vector p1;
+   local vector p2;
 
-   if ( (time >= globaldef4956) ) {
+   if ( (time >= globaldef004956) ) {
 
-      self = globaldef4954;
-      globaldef3321 ();
-      self = globaldef4955;
-      globaldef3321 ();
+      self = globaldef004954;
+      door_go_down ();
+      self = globaldef004955;
+      door_go_down ();
       return ;
 
    }
-   globaldef4958 = ((globaldef4954.globaldef112 + globaldef4954.globaldef116) * globaldef522);
-   globaldef4961 = (globaldef4954.globaldef75 - FL_INWATER);
-   globaldef4962 = ((globaldef4955.globaldef112 + globaldef4955.globaldef116) * globaldef522);
-   globaldef4965 = (globaldef4955.globaldef75 - FL_INWATER);
-   globaldef4962 = (globaldef4962 - (globaldef442 ((globaldef4962 - globaldef4958)) * globaldef1335));
-   self.nextthink = (time + 0.100);
-   self.think = globaldef4957;
-   globaldef479 (MSG_ALL,SVC_TEMP);
-   globaldef479 (MSG_ALL,TE_LIGHTNING3);
-   globaldef486 (MSG_ALL,world);
-   globaldef483 (MSG_ALL,globaldef4958);
-   globaldef483 (MSG_ALL,globaldef4960);
-   globaldef483 (MSG_ALL,globaldef4961);
-   globaldef483 (MSG_ALL,globaldef4962);
-   globaldef483 (MSG_ALL,globaldef4964);
-   globaldef483 (MSG_ALL,globaldef4965);
+   p1 = ((globaldef004954.globaldef000112 + globaldef004954.globaldef000116) * globaldef000522);
+   globaldef004961 = (globaldef004954.globaldef000075 - FL_INWATER);
+   p2 = ((globaldef004955.globaldef000112 + globaldef004955.globaldef000116) * globaldef000522);
+   globaldef004965 = (globaldef004955.globaldef000075 - FL_INWATER);
+   p2 = (p2 - (normalize ((p2 - p1)) * globaldef001335));
+   self.globaldef000128 = (time + globaldef001488);
+   self.globaldef000126 = lightning_fire;
+   WriteByte (MSG_ALL,globaldef000287);
+   WriteByte (MSG_ALL,TE_LIGHTNING3);
+   WriteEntity (MSG_ALL,world);
+   WriteCoord (MSG_ALL,p1);
+   WriteCoord (MSG_ALL,globaldef004960);
+   WriteCoord (MSG_ALL,globaldef004961);
+   WriteCoord (MSG_ALL,p2);
+   WriteCoord (MSG_ALL,globaldef004964);
+   WriteCoord (MSG_ALL,globaldef004965);
 
 };
 
@@ -2243,55 +2243,55 @@ void () lightning_use;
 
 void () lightning_use = {
 
-   if ( (globaldef4956 >= (time + TRUE)) ) {
+   if ( (globaldef004956 >= (time + TRUE)) ) {
 
       return ;
 
    }
-   globaldef4954 = find (world,target,globaldef4967);
-   globaldef4955 = find (globaldef4954,target,globaldef4967);
-   if ( (!globaldef4954 || !globaldef4955) ) {
+   globaldef004954 = find (world,globaldef000174,globaldef004967);
+   globaldef004955 = find (globaldef004954,globaldef000174,globaldef004967);
+   if ( (!globaldef004954 || !globaldef004955) ) {
 
-      globaldef456 (globaldef4968);
+      dprint (globaldef004968);
       return ;
 
    }
-   if ( ((((globaldef4954.globaldef421 != STATE_TOP) && (globaldef4954.globaldef421 != STATE_BOTTOM)) || ((globaldef4955.globaldef421 != STATE_TOP) && (globaldef4955.globaldef421 != STATE_BOTTOM))) || (globaldef4954.globaldef421 != globaldef4955.globaldef421)) ) {
+   if ( ((((globaldef004954.globaldef000421 != STATE_TOP) && (globaldef004954.globaldef000421 != STATE_BOTTOM)) || ((globaldef004955.globaldef000421 != STATE_TOP) && (globaldef004955.globaldef000421 != STATE_BOTTOM))) || (globaldef004954.globaldef000421 != globaldef004955.globaldef000421)) ) {
 
       return ;
 
    }
-   globaldef4954.nextthink = CONTENT_EMPTY;
-   globaldef4955.nextthink = CONTENT_EMPTY;
-   globaldef4956 = (time + TRUE);
-   sound (self,CHAN_VOICE,globaldef2404,TRUE,ATTN_NORM);
-   globaldef4957 ();
-   self = find (world,classname,globaldef4969);
+   globaldef004954.globaldef000128 = CONTENT_EMPTY;
+   globaldef004955.globaldef000128 = CONTENT_EMPTY;
+   globaldef004956 = (time + TRUE);
+   sound (self,CHAN_VOICE,globaldef002404,TRUE,ATTN_NORM);
+   lightning_fire ();
+   self = find (world,globaldef000107,globaldef004969);
    if ( !self ) {
 
       return ;
 
    }
-   self.enemy = activator;
-   if ( ((globaldef4954.globaldef421 == STATE_TOP) && (self.globaldef130 > FALSE)) ) {
+   self.globaldef000159 = activator;
+   if ( ((globaldef004954.globaldef000421 == STATE_TOP) && (self.globaldef000130 > FALSE)) ) {
 
-      sound (self,CHAN_VOICE,globaldef4953,TRUE,ATTN_NORM);
-      self.globaldef130 = (self.globaldef130 - TRUE);
-      if ( (self.globaldef130 >= FL_SWIM) ) {
+      sound (self,CHAN_VOICE,globaldef004953,TRUE,ATTN_NORM);
+      self.globaldef000130 = (self.globaldef000130 - TRUE);
+      if ( (self.globaldef000130 >= FL_SWIM) ) {
 
-         globaldef4884 ();
+         boss_shocka1 ();
 
       } else {
 
-         if ( (self.globaldef130 == TRUE) ) {
+         if ( (self.globaldef000130 == TRUE) ) {
 
-            globaldef4894 ();
+            boss_shockb1 ();
 
          } else {
 
-            if ( (self.globaldef130 == FALSE) ) {
+            if ( (self.globaldef000130 == FALSE) ) {
 
-               globaldef4904 ();
+               boss_shockc1 ();
 
             }
 
@@ -2302,9 +2302,9 @@ void () lightning_use = {
    }
 
 };
-string globaldef4967 /* = "lightning" */;
-string globaldef4968 /* = "missing lightning targets\n" */;
-string globaldef4969 /* = "monster_boss" */;
+string globaldef004967 /* = "lightning" */;
+string globaldef004968 /* = "missing lightning targets\n" */;
+string globaldef004969 /* = "monster_boss" */;
 
 void () event_lightning;
 
@@ -2318,6 +2318,6 @@ void () event_lightning;
 
 void () event_lightning = {
 
-   self.use = globaldef4966;
+   self.globaldef000125 = lightning_use;
 
 };

@@ -1,4 +1,4 @@
-string globaldef5041 /* = "progs/tarbaby.mdl" */;
+string globaldef005041 /* = "progs/tarbaby.mdl" */;
 
 void () hknight_char_a1;
 
@@ -6,7 +6,7 @@ void () hknight_run1;
 
 void () hk_idle_sound;
 
-void (float globaldef5046) hknight_shot;
+void (float globaldef005046) hknight_shot;
 
 // function hknight_shot
 // function number 1747 begins at statement 24496
@@ -65,28 +65,28 @@ void (float globaldef5046) hknight_shot;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef5046) hknight_shot = {
+void (float globaldef005046) hknight_shot = {
 
-   local vector globaldef5047;
-   local vector globaldef5051;
-   local vector globaldef5055;
+   local vector offang;
+   local vector org;
+   local vector vec;
 
-   globaldef5047 = globaldef478 ((self.enemy.origin - self.origin));
-   globaldef5049 = (globaldef5049 + (globaldef5046 * MOVETYPE_TOSS));
-   makevectors (globaldef5047);
-   globaldef5051 = (((self.origin + self.globaldef112) + (self.globaldef120 * globaldef522)) + (v_forward * globaldef1384));
-   globaldef5055 = globaldef442 (v_forward);
-   globaldef5058 = ((FALSE - globaldef5058) + ((globaldef440 () - globaldef522) * 0.100));
-   globaldef2191 (globaldef5051,globaldef5055);
-   newmis.classname = globaldef2219;
-   setmodel (newmis,globaldef5059);
-   globaldef438 (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   newmis.velocity = (globaldef5055 * globaldef523);
-   sound (self,CHAN_WEAPON,globaldef5060,TRUE,ATTN_NORM);
+   offang = vectoangles ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   globaldef005049 = (globaldef005049 + (globaldef005046 * MOVETYPE_TOSS));
+   makevectors (offang);
+   org = (((self.globaldef000083 + self.globaldef000112) + (self.globaldef000120 * globaldef000522)) + (v_forward * globaldef001384));
+   vec = normalize (v_forward);
+   globaldef005058 = ((FALSE - globaldef005058) + ((random () - globaldef000522) * globaldef001488));
+   launch_spike (org,vec);
+   newmis.globaldef000107 = globaldef002219;
+   setmodel (newmis,globaldef005059);
+   setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
+   newmis.globaldef000091 = (vec * globaldef000523);
+   sound (self,CHAN_WEAPON,globaldef005060,TRUE,ATTN_NORM);
 
 };
-string globaldef5059 /* = "progs/k_spike.mdl" */;
-string globaldef5060 /* = "hknight/attack1.wav" */;
+string globaldef005059 /* = "progs/k_spike.mdl" */;
+string globaldef005060 /* = "hknight/attack1.wav" */;
 
 void () CheckForCharge;
 
@@ -126,28 +126,28 @@ void () CheckForCharge;
 
 void () CheckForCharge = {
 
-   if ( !globaldef1534 ) {
+   if ( !globaldef001534 ) {
 
       return ;
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ;
 
    }
-   if ( (globaldef471 ((self.globaldef86 - self.enemy.globaldef86)) > globaldef1384) ) {
+   if ( (fabs ((self.globaldef000086 - self.globaldef000159.globaldef000086)) > globaldef001384) ) {
 
       return ;
 
    }
-   if ( (vlen ((self.origin - self.enemy.origin)) < globaldef1439) ) {
+   if ( (vlen ((self.globaldef000083 - self.globaldef000159.globaldef000083)) < globaldef001439) ) {
 
       return ;
 
    }
-   globaldef1517 (FL_SWIM);
-   globaldef5042 ();
+   SUB_AttackFinished (FL_SWIM);
+   hknight_char_a1 ();
 
 };
 
@@ -184,20 +184,20 @@ void () CheckContinueCharge;
 
 void () CheckContinueCharge = {
 
-   if ( (time > self.attack_finished) ) {
+   if ( (time > self.globaldef000361) ) {
 
-      globaldef1517 (MOVETYPE_WALK);
-      globaldef5043 ();
+      SUB_AttackFinished (MOVETYPE_WALK);
+      hknight_run1 ();
       return ;
 
    }
-   if ( (globaldef440 () > globaldef522) ) {
+   if ( (random () > globaldef000522) ) {
 
-      sound (self,CHAN_WEAPON,globaldef4093,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef004093,TRUE,ATTN_NORM);
 
    } else {
 
-      sound (self,CHAN_WEAPON,globaldef4094,TRUE,ATTN_NORM);
+      sound (self,CHAN_WEAPON,globaldef004094,TRUE,ATTN_NORM);
 
    }
 
@@ -213,9 +213,9 @@ void () hknight_stand1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand1 = [ 0.000, globaldef5064 ] {
+void () hknight_stand1 = [ 0.000, hknight_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -229,9 +229,9 @@ void () hknight_stand2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand2 = [ 1.000, globaldef5065 ] {
+void () hknight_stand2 = [ 1.000, hknight_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -245,9 +245,9 @@ void () hknight_stand3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand3 = [ 2.000, globaldef5066 ] {
+void () hknight_stand3 = [ 2.000, hknight_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -261,9 +261,9 @@ void () hknight_stand4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand4 = [ 3.000, globaldef5067 ] {
+void () hknight_stand4 = [ 3.000, hknight_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -277,9 +277,9 @@ void () hknight_stand5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand5 = [ 4.000, globaldef5068 ] {
+void () hknight_stand5 = [ 4.000, hknight_stand6 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -293,9 +293,9 @@ void () hknight_stand6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand6 = [ 5.000, globaldef5069 ] {
+void () hknight_stand6 = [ 5.000, hknight_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -309,9 +309,9 @@ void () hknight_stand7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand7 = [ 6.000, globaldef5070 ] {
+void () hknight_stand7 = [ 6.000, hknight_stand8 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -325,9 +325,9 @@ void () hknight_stand8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand8 = [ 7.000, globaldef5071 ] {
+void () hknight_stand8 = [ 7.000, hknight_stand9 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -341,9 +341,9 @@ void () hknight_stand9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_stand9 = [ 8.000, globaldef5063 ] {
+void () hknight_stand9 = [ 8.000, hknight_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -359,10 +359,10 @@ void () hknight_walk1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk1 = [ 9.000, globaldef5073 ] {
+void () hknight_walk1 = [ 9.000, hknight_walk2 ] {
 
-   globaldef5044 ();
-   globaldef1702 (FL_SWIM);
+   hk_idle_sound ();
+   ai_walk (FL_SWIM);
 
 };
 
@@ -377,9 +377,9 @@ void () hknight_walk2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk2 = [ 10.000, globaldef5074 ] {
+void () hknight_walk2 = [ 10.000, hknight_walk3 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
+   ai_walk (MOVETYPE_FLY);
 
 };
 
@@ -394,9 +394,9 @@ void () hknight_walk3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk3 = [ 11.000, globaldef5075 ] {
+void () hknight_walk3 = [ 11.000, hknight_walk4 ] {
 
-   globaldef1702 (MOVETYPE_FLY);
+   ai_walk (MOVETYPE_FLY);
 
 };
 
@@ -411,9 +411,9 @@ void () hknight_walk4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk4 = [ 12.000, globaldef5076 ] {
+void () hknight_walk4 = [ 12.000, hknight_walk5 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -428,9 +428,9 @@ void () hknight_walk5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk5 = [ 13.000, globaldef5077 ] {
+void () hknight_walk5 = [ 13.000, hknight_walk6 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -445,9 +445,9 @@ void () hknight_walk6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk6 = [ 14.000, globaldef5078 ] {
+void () hknight_walk6 = [ 14.000, hknight_walk7 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -462,9 +462,9 @@ void () hknight_walk7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk7 = [ 15.000, globaldef5079 ] {
+void () hknight_walk7 = [ 15.000, hknight_walk8 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -479,9 +479,9 @@ void () hknight_walk8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk8 = [ 16.000, globaldef5080 ] {
+void () hknight_walk8 = [ 16.000, hknight_walk9 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -496,9 +496,9 @@ void () hknight_walk9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk9 = [ 17.000, globaldef5081 ] {
+void () hknight_walk9 = [ 17.000, hknight_walk10 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -513,9 +513,9 @@ void () hknight_walk10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk10 = [ 18.000, globaldef5082 ] {
+void () hknight_walk10 = [ 18.000, hknight_walk11 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -530,9 +530,9 @@ void () hknight_walk11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk11 = [ 19.000, globaldef5083 ] {
+void () hknight_walk11 = [ 19.000, hknight_walk12 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -547,9 +547,9 @@ void () hknight_walk12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk12 = [ 20.000, globaldef5084 ] {
+void () hknight_walk12 = [ 20.000, hknight_walk13 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -564,9 +564,9 @@ void () hknight_walk13;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk13 = [ 21.000, globaldef5085 ] {
+void () hknight_walk13 = [ 21.000, hknight_walk14 ] {
 
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
@@ -581,9 +581,9 @@ void () hknight_walk14;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk14 = [ 22.000, globaldef5086 ] {
+void () hknight_walk14 = [ 22.000, hknight_walk15 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -598,9 +598,9 @@ void () hknight_walk15;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk15 = [ 23.000, globaldef5087 ] {
+void () hknight_walk15 = [ 23.000, hknight_walk16 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -615,9 +615,9 @@ void () hknight_walk16;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk16 = [ 24.000, globaldef5088 ] {
+void () hknight_walk16 = [ 24.000, hknight_walk17 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -632,9 +632,9 @@ void () hknight_walk17;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk17 = [ 25.000, globaldef5089 ] {
+void () hknight_walk17 = [ 25.000, hknight_walk18 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -649,9 +649,9 @@ void () hknight_walk18;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk18 = [ 26.000, globaldef5090 ] {
+void () hknight_walk18 = [ 26.000, hknight_walk19 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -666,9 +666,9 @@ void () hknight_walk19;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk19 = [ 27.000, globaldef5091 ] {
+void () hknight_walk19 = [ 27.000, hknight_walk20 ] {
 
-   globaldef1702 (MOVETYPE_WALK);
+   ai_walk (MOVETYPE_WALK);
 
 };
 
@@ -683,9 +683,9 @@ void () hknight_walk20;
  * OP_DONE	0	0	0
  */
 
-void () hknight_walk20 = [ 28.000, globaldef5072 ] {
+void () hknight_walk20 = [ 28.000, hknight_walk1 ] {
 
-   globaldef1702 (FL_SWIM);
+   ai_walk (FL_SWIM);
 
 };
 
@@ -700,11 +700,11 @@ void () hknight_walk20 = [ 28.000, globaldef5072 ] {
  * OP_DONE	0	0	0
  */
 
-void () hknight_run1 = [ 29.000, globaldef5092 ] {
+void () hknight_run1 = [ 29.000, hknight_run2 ] {
 
-   globaldef5044 ();
-   globaldef1734 (globaldef1384);
-   globaldef5061 ();
+   hk_idle_sound ();
+   ai_run (globaldef001384);
+   CheckForCharge ();
 
 };
 
@@ -719,9 +719,9 @@ void () hknight_run2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run2 = [ 30.000, globaldef5093 ] {
+void () hknight_run2 = [ 30.000, hknight_run3 ] {
 
-   globaldef1734 (globaldef288);
+   ai_run (globaldef000288);
 
 };
 
@@ -736,9 +736,9 @@ void () hknight_run3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run3 = [ 31.000, globaldef5094 ] {
+void () hknight_run3 = [ 31.000, hknight_run4 ] {
 
-   globaldef1734 (globaldef2221);
+   ai_run (globaldef002221);
 
 };
 
@@ -753,9 +753,9 @@ void () hknight_run4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run4 = [ 32.000, globaldef5095 ] {
+void () hknight_run4 = [ 32.000, hknight_run5 ] {
 
-   globaldef1734 (FL_INWATER);
+   ai_run (FL_INWATER);
 
 };
 
@@ -770,9 +770,9 @@ void () hknight_run5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run5 = [ 33.000, globaldef5096 ] {
+void () hknight_run5 = [ 33.000, hknight_run6 ] {
 
-   globaldef1734 (globaldef2136);
+   ai_run (globaldef002136);
 
 };
 
@@ -787,9 +787,9 @@ void () hknight_run6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run6 = [ 34.000, globaldef5097 ] {
+void () hknight_run6 = [ 34.000, hknight_run7 ] {
 
-   globaldef1734 (globaldef288);
+   ai_run (globaldef000288);
 
 };
 
@@ -804,9 +804,9 @@ void () hknight_run7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run7 = [ 35.000, globaldef5098 ] {
+void () hknight_run7 = [ 35.000, hknight_run8 ] {
 
-   globaldef1734 (globaldef3691);
+   ai_run (globaldef003691);
 
 };
 
@@ -821,9 +821,9 @@ void () hknight_run8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_run8 = [ 36.000, globaldef5043 ] {
+void () hknight_run8 = [ 36.000, hknight_run1 ] {
 
-   globaldef1734 (globaldef775);
+   ai_run (globaldef000775);
 
 };
 
@@ -842,14 +842,14 @@ void () hknight_pain1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_pain1 = [ 37.000, globaldef5100 ] {
+void () hknight_pain1 = [ 37.000, hknight_pain2 ] {
 
-   sound (self,CHAN_VOICE,globaldef5101,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,globaldef005101,TRUE,ATTN_NORM);
 
 };
 
 void () hknight_pain2;
-string globaldef5101 /* = "hknight/pain1.wav" */;
+string globaldef005101 /* = "hknight/pain1.wav" */;
 
 // function hknight_pain2
 // function number 1788 begins at statement 24751
@@ -858,7 +858,7 @@ string globaldef5101 /* = "hknight/pain1.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () hknight_pain2 = [ 38.000, globaldef5102 ] {
+void () hknight_pain2 = [ 38.000, hknight_pain3 ] {
 
 
 };
@@ -872,7 +872,7 @@ void () hknight_pain3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_pain3 = [ 39.000, globaldef5103 ] {
+void () hknight_pain3 = [ 39.000, hknight_pain4 ] {
 
 
 };
@@ -886,7 +886,7 @@ void () hknight_pain4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_pain4 = [ 40.000, globaldef5104 ] {
+void () hknight_pain4 = [ 40.000, hknight_pain5 ] {
 
 
 };
@@ -900,7 +900,7 @@ void () hknight_pain5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_pain5 = [ 41.000, globaldef5043 ] {
+void () hknight_pain5 = [ 41.000, hknight_run1 ] {
 
 
 };
@@ -916,9 +916,9 @@ void () hknight_die1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die1 = [ 42.000, globaldef5106 ] {
+void () hknight_die1 = [ 42.000, hknight_die2 ] {
 
-   globaldef1694 (MOVETYPE_BOUNCE);
+   ai_forward (MOVETYPE_BOUNCE);
 
 };
 
@@ -933,9 +933,9 @@ void () hknight_die2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die2 = [ 43.000, globaldef5107 ] {
+void () hknight_die2 = [ 43.000, hknight_die3 ] {
 
-   globaldef1694 (FL_CLIENT);
+   ai_forward (FL_CLIENT);
 
 };
 
@@ -952,10 +952,10 @@ void () hknight_die3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die3 = [ 44.000, globaldef5108 ] {
+void () hknight_die3 = [ 44.000, hknight_die4 ] {
 
-   self.solid = SOLID_NOT;
-   globaldef1694 (MOVETYPE_PUSH);
+   self.globaldef000082 = SOLID_NOT;
+   ai_forward (MOVETYPE_PUSH);
 
 };
 
@@ -968,7 +968,7 @@ void () hknight_die4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die4 = [ 45.000, globaldef5109 ] {
+void () hknight_die4 = [ 45.000, hknight_die5 ] {
 
 
 };
@@ -982,7 +982,7 @@ void () hknight_die5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die5 = [ 46.000, globaldef5110 ] {
+void () hknight_die5 = [ 46.000, hknight_die6 ] {
 
 
 };
@@ -996,7 +996,7 @@ void () hknight_die6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die6 = [ 47.000, globaldef5111 ] {
+void () hknight_die6 = [ 47.000, hknight_die7 ] {
 
 
 };
@@ -1010,7 +1010,7 @@ void () hknight_die7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die7 = [ 48.000, globaldef5112 ] {
+void () hknight_die7 = [ 48.000, hknight_die8 ] {
 
 
 };
@@ -1026,9 +1026,9 @@ void () hknight_die8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die8 = [ 49.000, globaldef5113 ] {
+void () hknight_die8 = [ 49.000, hknight_die9 ] {
 
-   globaldef1694 (MOVETYPE_BOUNCE);
+   ai_forward (MOVETYPE_BOUNCE);
 
 };
 
@@ -1043,9 +1043,9 @@ void () hknight_die9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die9 = [ 50.000, globaldef5114 ] {
+void () hknight_die9 = [ 50.000, hknight_die10 ] {
 
-   globaldef1694 (MOVETYPE_BOUNCEMISSILE);
+   ai_forward (MOVETYPE_BOUNCEMISSILE);
 
 };
 
@@ -1058,7 +1058,7 @@ void () hknight_die10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die10 = [ 51.000, globaldef5115 ] {
+void () hknight_die10 = [ 51.000, hknight_die11 ] {
 
 
 };
@@ -1072,7 +1072,7 @@ void () hknight_die11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die11 = [ 52.000, globaldef5116 ] {
+void () hknight_die11 = [ 52.000, hknight_die12 ] {
 
 
 };
@@ -1086,7 +1086,7 @@ void () hknight_die12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_die12 = [ 53.000, globaldef5116 ] {
+void () hknight_die12 = [ 53.000, hknight_die12 ] {
 
 
 };
@@ -1100,7 +1100,7 @@ void () hknight_dieb1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb1 = [ 54.000, globaldef5118 ] {
+void () hknight_dieb1 = [ 54.000, hknight_dieb2 ] {
 
 
 };
@@ -1114,7 +1114,7 @@ void () hknight_dieb2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb2 = [ 55.000, globaldef5119 ] {
+void () hknight_dieb2 = [ 55.000, hknight_dieb3 ] {
 
 
 };
@@ -1130,9 +1130,9 @@ void () hknight_dieb3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb3 = [ 56.000, globaldef5120 ] {
+void () hknight_dieb3 = [ 56.000, hknight_dieb4 ] {
 
-   self.solid = SOLID_NOT;
+   self.globaldef000082 = SOLID_NOT;
 
 };
 
@@ -1145,7 +1145,7 @@ void () hknight_dieb4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb4 = [ 57.000, globaldef5121 ] {
+void () hknight_dieb4 = [ 57.000, hknight_dieb5 ] {
 
 
 };
@@ -1159,7 +1159,7 @@ void () hknight_dieb5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb5 = [ 58.000, globaldef5122 ] {
+void () hknight_dieb5 = [ 58.000, hknight_dieb6 ] {
 
 
 };
@@ -1173,7 +1173,7 @@ void () hknight_dieb6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb6 = [ 59.000, globaldef5123 ] {
+void () hknight_dieb6 = [ 59.000, hknight_dieb7 ] {
 
 
 };
@@ -1187,7 +1187,7 @@ void () hknight_dieb7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb7 = [ 60.000, globaldef5124 ] {
+void () hknight_dieb7 = [ 60.000, hknight_dieb8 ] {
 
 
 };
@@ -1201,7 +1201,7 @@ void () hknight_dieb8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb8 = [ 61.000, globaldef5125 ] {
+void () hknight_dieb8 = [ 61.000, hknight_dieb9 ] {
 
 
 };
@@ -1215,7 +1215,7 @@ void () hknight_dieb9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_dieb9 = [ 62.000, globaldef5125 ] {
+void () hknight_dieb9 = [ 62.000, hknight_dieb9 ] {
 
 
 };
@@ -1268,30 +1268,30 @@ void () hknight_die;
 
 void () hknight_die = {
 
-   if ( (self.globaldef130 < globaldef3008) ) {
+   if ( (self.globaldef000130 < globaldef003008) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef5127,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2433,self.globaldef130);
-      globaldef3185 (globaldef2434,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef005127,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002433,self.globaldef000130);
+      ThrowGib (globaldef002434,self.globaldef000130);
       return ;
 
    }
-   sound (self,CHAN_VOICE,globaldef5128,TRUE,ATTN_NORM);
-   if ( (globaldef440 () > globaldef522) ) {
+   sound (self,CHAN_VOICE,globaldef005128,TRUE,ATTN_NORM);
+   if ( (random () > globaldef000522) ) {
 
-      globaldef5105 ();
+      hknight_die1 ();
 
    } else {
 
-      globaldef5117 ();
+      hknight_dieb1 ();
 
    }
 
 };
-string globaldef5127 /* = "progs/h_hellkn.mdl" */;
-string globaldef5128 /* = "hknight/death1.wav" */;
+string globaldef005127 /* = "progs/h_hellkn.mdl" */;
+string globaldef005128 /* = "hknight/death1.wav" */;
 
 void () hknight_magica1;
 
@@ -1303,9 +1303,9 @@ void () hknight_magica1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica1 = [ 79.000, globaldef5130 ] {
+void () hknight_magica1 = [ 79.000, hknight_magica2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1319,9 +1319,9 @@ void () hknight_magica2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica2 = [ 80.000, globaldef5131 ] {
+void () hknight_magica2 = [ 80.000, hknight_magica3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1335,9 +1335,9 @@ void () hknight_magica3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica3 = [ 81.000, globaldef5132 ] {
+void () hknight_magica3 = [ 81.000, hknight_magica4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1351,9 +1351,9 @@ void () hknight_magica4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica4 = [ 82.000, globaldef5133 ] {
+void () hknight_magica4 = [ 82.000, hknight_magica5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1367,9 +1367,9 @@ void () hknight_magica5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica5 = [ 83.000, globaldef5134 ] {
+void () hknight_magica5 = [ 83.000, hknight_magica6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1383,9 +1383,9 @@ void () hknight_magica6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica6 = [ 84.000, globaldef5135 ] {
+void () hknight_magica6 = [ 84.000, hknight_magica7 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1400,9 +1400,9 @@ void () hknight_magica7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica7 = [ 85.000, globaldef5136 ] {
+void () hknight_magica7 = [ 85.000, hknight_magica8 ] {
 
-   globaldef5045 (CONTENT_SOLID);
+   hknight_shot (CONTENT_SOLID);
 
 };
 
@@ -1417,9 +1417,9 @@ void () hknight_magica8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica8 = [ 86.000, globaldef5137 ] {
+void () hknight_magica8 = [ 86.000, hknight_magica9 ] {
 
-   globaldef5045 (CONTENT_EMPTY);
+   hknight_shot (CONTENT_EMPTY);
 
 };
 
@@ -1434,9 +1434,9 @@ void () hknight_magica9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica9 = [ 87.000, globaldef5138 ] {
+void () hknight_magica9 = [ 87.000, hknight_magica10 ] {
 
-   globaldef5045 (FALSE);
+   hknight_shot (FALSE);
 
 };
 
@@ -1451,9 +1451,9 @@ void () hknight_magica10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica10 = [ 88.000, globaldef5139 ] {
+void () hknight_magica10 = [ 88.000, hknight_magica11 ] {
 
-   globaldef5045 (TRUE);
+   hknight_shot (TRUE);
 
 };
 
@@ -1468,9 +1468,9 @@ void () hknight_magica11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica11 = [ 89.000, globaldef5140 ] {
+void () hknight_magica11 = [ 89.000, hknight_magica12 ] {
 
-   globaldef5045 (FL_SWIM);
+   hknight_shot (FL_SWIM);
 
 };
 
@@ -1485,9 +1485,9 @@ void () hknight_magica12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica12 = [ 90.000, globaldef5141 ] {
+void () hknight_magica12 = [ 90.000, hknight_magica13 ] {
 
-   globaldef5045 (MOVETYPE_WALK);
+   hknight_shot (MOVETYPE_WALK);
 
 };
 
@@ -1501,9 +1501,9 @@ void () hknight_magica13;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica13 = [ 91.000, globaldef5142 ] {
+void () hknight_magica13 = [ 91.000, hknight_magica14 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1517,9 +1517,9 @@ void () hknight_magica14;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magica14 = [ 92.000, globaldef5043 ] {
+void () hknight_magica14 = [ 92.000, hknight_run1 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1533,9 +1533,9 @@ void () hknight_magicb1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb1 = [ 93.000, globaldef5144 ] {
+void () hknight_magicb1 = [ 93.000, hknight_magicb2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1549,9 +1549,9 @@ void () hknight_magicb2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb2 = [ 94.000, globaldef5145 ] {
+void () hknight_magicb2 = [ 94.000, hknight_magicb3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1565,9 +1565,9 @@ void () hknight_magicb3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb3 = [ 95.000, globaldef5146 ] {
+void () hknight_magicb3 = [ 95.000, hknight_magicb4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1581,9 +1581,9 @@ void () hknight_magicb4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb4 = [ 96.000, globaldef5147 ] {
+void () hknight_magicb4 = [ 96.000, hknight_magicb5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1597,9 +1597,9 @@ void () hknight_magicb5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb5 = [ 97.000, globaldef5148 ] {
+void () hknight_magicb5 = [ 97.000, hknight_magicb6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1613,9 +1613,9 @@ void () hknight_magicb6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb6 = [ 98.000, globaldef5149 ] {
+void () hknight_magicb6 = [ 98.000, hknight_magicb7 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1630,9 +1630,9 @@ void () hknight_magicb7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb7 = [ 99.000, globaldef5150 ] {
+void () hknight_magicb7 = [ 99.000, hknight_magicb8 ] {
 
-   globaldef5045 (CONTENT_SOLID);
+   hknight_shot (CONTENT_SOLID);
 
 };
 
@@ -1647,9 +1647,9 @@ void () hknight_magicb8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb8 = [ 100.000, globaldef5151 ] {
+void () hknight_magicb8 = [ 100.000, hknight_magicb9 ] {
 
-   globaldef5045 (CONTENT_EMPTY);
+   hknight_shot (CONTENT_EMPTY);
 
 };
 
@@ -1664,9 +1664,9 @@ void () hknight_magicb9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb9 = [ 101.000, globaldef5152 ] {
+void () hknight_magicb9 = [ 101.000, hknight_magicb10 ] {
 
-   globaldef5045 (FALSE);
+   hknight_shot (FALSE);
 
 };
 
@@ -1681,9 +1681,9 @@ void () hknight_magicb10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb10 = [ 102.000, globaldef5153 ] {
+void () hknight_magicb10 = [ 102.000, hknight_magicb11 ] {
 
-   globaldef5045 (TRUE);
+   hknight_shot (TRUE);
 
 };
 
@@ -1698,9 +1698,9 @@ void () hknight_magicb11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb11 = [ 103.000, globaldef5154 ] {
+void () hknight_magicb11 = [ 103.000, hknight_magicb12 ] {
 
-   globaldef5045 (FL_SWIM);
+   hknight_shot (FL_SWIM);
 
 };
 
@@ -1715,9 +1715,9 @@ void () hknight_magicb12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb12 = [ 104.000, globaldef5155 ] {
+void () hknight_magicb12 = [ 104.000, hknight_magicb13 ] {
 
-   globaldef5045 (MOVETYPE_WALK);
+   hknight_shot (MOVETYPE_WALK);
 
 };
 
@@ -1731,9 +1731,9 @@ void () hknight_magicb13;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicb13 = [ 105.000, globaldef5043 ] {
+void () hknight_magicb13 = [ 105.000, hknight_run1 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1747,9 +1747,9 @@ void () hknight_magicc1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc1 = [ 155.000, globaldef5157 ] {
+void () hknight_magicc1 = [ 155.000, hknight_magicc2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1763,9 +1763,9 @@ void () hknight_magicc2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc2 = [ 156.000, globaldef5158 ] {
+void () hknight_magicc2 = [ 156.000, hknight_magicc3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1779,9 +1779,9 @@ void () hknight_magicc3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc3 = [ 157.000, globaldef5159 ] {
+void () hknight_magicc3 = [ 157.000, hknight_magicc4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1795,9 +1795,9 @@ void () hknight_magicc4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc4 = [ 158.000, globaldef5160 ] {
+void () hknight_magicc4 = [ 158.000, hknight_magicc5 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1811,9 +1811,9 @@ void () hknight_magicc5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc5 = [ 159.000, globaldef5161 ] {
+void () hknight_magicc5 = [ 159.000, hknight_magicc6 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -1828,9 +1828,9 @@ void () hknight_magicc6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc6 = [ 160.000, globaldef5162 ] {
+void () hknight_magicc6 = [ 160.000, hknight_magicc7 ] {
 
-   globaldef5045 (CONTENT_SOLID);
+   hknight_shot (CONTENT_SOLID);
 
 };
 
@@ -1845,9 +1845,9 @@ void () hknight_magicc7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc7 = [ 161.000, globaldef5163 ] {
+void () hknight_magicc7 = [ 161.000, hknight_magicc8 ] {
 
-   globaldef5045 (CONTENT_EMPTY);
+   hknight_shot (CONTENT_EMPTY);
 
 };
 
@@ -1862,9 +1862,9 @@ void () hknight_magicc8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc8 = [ 162.000, globaldef5164 ] {
+void () hknight_magicc8 = [ 162.000, hknight_magicc9 ] {
 
-   globaldef5045 (FALSE);
+   hknight_shot (FALSE);
 
 };
 
@@ -1879,9 +1879,9 @@ void () hknight_magicc9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc9 = [ 163.000, globaldef5165 ] {
+void () hknight_magicc9 = [ 163.000, hknight_magicc10 ] {
 
-   globaldef5045 (TRUE);
+   hknight_shot (TRUE);
 
 };
 
@@ -1896,9 +1896,9 @@ void () hknight_magicc10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc10 = [ 164.000, globaldef5166 ] {
+void () hknight_magicc10 = [ 164.000, hknight_magicc11 ] {
 
-   globaldef5045 (FL_SWIM);
+   hknight_shot (FL_SWIM);
 
 };
 
@@ -1913,9 +1913,9 @@ void () hknight_magicc11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_magicc11 = [ 165.000, globaldef5043 ] {
+void () hknight_magicc11 = [ 165.000, hknight_run1 ] {
 
-   globaldef5045 (MOVETYPE_WALK);
+   hknight_shot (MOVETYPE_WALK);
 
 };
 
@@ -1928,9 +1928,9 @@ void () hknight_magicc11 = [ 165.000, globaldef5043 ] {
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a1 = [ 63.000, globaldef5167 ] {
+void () hknight_char_a1 = [ 63.000, hknight_char_a2 ] {
 
-   globaldef1557 (globaldef1384);
+   ai_charge (globaldef001384);
 
 };
 
@@ -1945,9 +1945,9 @@ void () hknight_char_a2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a2 = [ 64.000, globaldef5168 ] {
+void () hknight_char_a2 = [ 64.000, hknight_char_a3 ] {
 
-   globaldef1557 (globaldef288);
+   ai_charge (globaldef000288);
 
 };
 
@@ -1962,9 +1962,9 @@ void () hknight_char_a3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a3 = [ 65.000, globaldef5169 ] {
+void () hknight_char_a3 = [ 65.000, hknight_char_a4 ] {
 
-   globaldef1557 (globaldef2221);
+   ai_charge (globaldef002221);
 
 };
 
@@ -1979,9 +1979,9 @@ void () hknight_char_a4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a4 = [ 66.000, globaldef5170 ] {
+void () hknight_char_a4 = [ 66.000, hknight_char_a5 ] {
 
-   globaldef1557 (FL_INWATER);
+   ai_charge (FL_INWATER);
 
 };
 
@@ -1996,9 +1996,9 @@ void () hknight_char_a5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a5 = [ 67.000, globaldef5171 ] {
+void () hknight_char_a5 = [ 67.000, hknight_char_a6 ] {
 
-   globaldef1557 (globaldef2136);
+   ai_charge (globaldef002136);
 
 };
 
@@ -2014,10 +2014,10 @@ void () hknight_char_a6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a6 = [ 68.000, globaldef5172 ] {
+void () hknight_char_a6 = [ 68.000, hknight_char_a7 ] {
 
-   globaldef1557 (globaldef1384);
-   globaldef1565 ();
+   ai_charge (globaldef001384);
+   ai_melee ();
 
 };
 
@@ -2033,10 +2033,10 @@ void () hknight_char_a7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a7 = [ 69.000, globaldef5173 ] {
+void () hknight_char_a7 = [ 69.000, hknight_char_a8 ] {
 
-   globaldef1557 (globaldef3691);
-   globaldef1565 ();
+   ai_charge (globaldef003691);
+   ai_melee ();
 
 };
 
@@ -2052,10 +2052,10 @@ void () hknight_char_a8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a8 = [ 70.000, globaldef5174 ] {
+void () hknight_char_a8 = [ 70.000, hknight_char_a9 ] {
 
-   globaldef1557 (globaldef775);
-   globaldef1565 ();
+   ai_charge (globaldef000775);
+   ai_melee ();
 
 };
 
@@ -2071,10 +2071,10 @@ void () hknight_char_a9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a9 = [ 71.000, globaldef5175 ] {
+void () hknight_char_a9 = [ 71.000, hknight_char_a10 ] {
 
-   globaldef1557 (globaldef1384);
-   globaldef1565 ();
+   ai_charge (globaldef001384);
+   ai_melee ();
 
 };
 
@@ -2090,10 +2090,10 @@ void () hknight_char_a10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a10 = [ 72.000, globaldef5176 ] {
+void () hknight_char_a10 = [ 72.000, hknight_char_a11 ] {
 
-   globaldef1557 (globaldef1384);
-   globaldef1565 ();
+   ai_charge (globaldef001384);
+   ai_melee ();
 
 };
 
@@ -2109,10 +2109,10 @@ void () hknight_char_a11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a11 = [ 73.000, globaldef5177 ] {
+void () hknight_char_a11 = [ 73.000, hknight_char_a12 ] {
 
-   globaldef1557 (globaldef2221);
-   globaldef1565 ();
+   ai_charge (globaldef002221);
+   ai_melee ();
 
 };
 
@@ -2127,9 +2127,9 @@ void () hknight_char_a12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a12 = [ 74.000, globaldef5178 ] {
+void () hknight_char_a12 = [ 74.000, hknight_char_a13 ] {
 
-   globaldef1557 (FL_INWATER);
+   ai_charge (FL_INWATER);
 
 };
 
@@ -2144,9 +2144,9 @@ void () hknight_char_a13;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a13 = [ 75.000, globaldef5179 ] {
+void () hknight_char_a13 = [ 75.000, hknight_char_a14 ] {
 
-   globaldef1557 (globaldef2136);
+   ai_charge (globaldef002136);
 
 };
 
@@ -2161,9 +2161,9 @@ void () hknight_char_a14;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a14 = [ 76.000, globaldef5180 ] {
+void () hknight_char_a14 = [ 76.000, hknight_char_a15 ] {
 
-   globaldef1557 (globaldef288);
+   ai_charge (globaldef000288);
 
 };
 
@@ -2178,9 +2178,9 @@ void () hknight_char_a15;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a15 = [ 77.000, globaldef5181 ] {
+void () hknight_char_a15 = [ 77.000, hknight_char_a16 ] {
 
-   globaldef1557 (globaldef3691);
+   ai_charge (globaldef003691);
 
 };
 
@@ -2195,9 +2195,9 @@ void () hknight_char_a16;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_a16 = [ 78.000, globaldef5043 ] {
+void () hknight_char_a16 = [ 78.000, hknight_run1 ] {
 
-   globaldef1557 (globaldef775);
+   ai_charge (globaldef000775);
 
 };
 
@@ -2214,11 +2214,11 @@ void () hknight_char_b1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b1 = [ 106.000, globaldef5183 ] {
+void () hknight_char_b1 = [ 106.000, hknight_char_b2 ] {
 
-   globaldef5062 ();
-   globaldef1557 (SVC_TEMP);
-   globaldef1565 ();
+   CheckContinueCharge ();
+   ai_charge (globaldef000287);
+   ai_melee ();
 
 };
 
@@ -2234,10 +2234,10 @@ void () hknight_char_b2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b2 = [ 107.000, globaldef5184 ] {
+void () hknight_char_b2 = [ 107.000, hknight_char_b3 ] {
 
-   globaldef1557 (globaldef2519);
-   globaldef1565 ();
+   ai_charge (globaldef002519);
+   ai_melee ();
 
 };
 
@@ -2253,10 +2253,10 @@ void () hknight_char_b3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b3 = [ 108.000, globaldef5185 ] {
+void () hknight_char_b3 = [ 108.000, hknight_char_b4 ] {
 
-   globaldef1557 (globaldef774);
-   globaldef1565 ();
+   ai_charge (globaldef000774);
+   ai_melee ();
 
 };
 
@@ -2272,10 +2272,10 @@ void () hknight_char_b4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b4 = [ 109.000, globaldef5186 ] {
+void () hknight_char_b4 = [ 109.000, hknight_char_b5 ] {
 
-   globaldef1557 (globaldef3693);
-   globaldef1565 ();
+   ai_charge (globaldef003693);
+   ai_melee ();
 
 };
 
@@ -2291,10 +2291,10 @@ void () hknight_char_b5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b5 = [ 110.000, globaldef5187 ] {
+void () hknight_char_b5 = [ 110.000, hknight_char_b6 ] {
 
-   globaldef1557 (globaldef2221);
-   globaldef1565 ();
+   ai_charge (globaldef002221);
+   ai_melee ();
 
 };
 
@@ -2310,10 +2310,10 @@ void () hknight_char_b6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_char_b6 = [ 111.000, globaldef5182 ] {
+void () hknight_char_b6 = [ 111.000, hknight_char_b1 ] {
 
-   globaldef1557 (FL_CLIENT);
-   globaldef1565 ();
+   ai_charge (FL_CLIENT);
+   ai_melee ();
 
 };
 
@@ -2328,9 +2328,9 @@ void () hknight_slice1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice1 = [ 112.000, globaldef5189 ] {
+void () hknight_slice1 = [ 112.000, hknight_slice2 ] {
 
-   globaldef1557 (MOVETYPE_FLYMISSILE);
+   ai_charge (MOVETYPE_FLYMISSILE);
 
 };
 
@@ -2345,9 +2345,9 @@ void () hknight_slice2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice2 = [ 113.000, globaldef5190 ] {
+void () hknight_slice2 = [ 113.000, hknight_slice3 ] {
 
-   globaldef1557 (MOVETYPE_TOSS);
+   ai_charge (MOVETYPE_TOSS);
 
 };
 
@@ -2362,9 +2362,9 @@ void () hknight_slice3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice3 = [ 114.000, globaldef5191 ] {
+void () hknight_slice3 = [ 114.000, hknight_slice4 ] {
 
-   globaldef1557 (globaldef775);
+   ai_charge (globaldef000775);
 
 };
 
@@ -2379,9 +2379,9 @@ void () hknight_slice4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice4 = [ 115.000, globaldef5192 ] {
+void () hknight_slice4 = [ 115.000, hknight_slice5 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -2397,10 +2397,10 @@ void () hknight_slice5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice5 = [ 116.000, globaldef5193 ] {
+void () hknight_slice5 = [ 116.000, hknight_slice6 ] {
 
-   globaldef1557 (MOVETYPE_PUSH);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_PUSH);
+   ai_melee ();
 
 };
 
@@ -2416,10 +2416,10 @@ void () hknight_slice6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice6 = [ 117.000, globaldef5194 ] {
+void () hknight_slice6 = [ 117.000, hknight_slice7 ] {
 
-   globaldef1557 (globaldef748);
-   globaldef1565 ();
+   ai_charge (globaldef000748);
+   ai_melee ();
 
 };
 
@@ -2435,10 +2435,10 @@ void () hknight_slice7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice7 = [ 118.000, globaldef5195 ] {
+void () hknight_slice7 = [ 118.000, hknight_slice8 ] {
 
-   globaldef1557 (FL_CLIENT);
-   globaldef1565 ();
+   ai_charge (FL_CLIENT);
+   ai_melee ();
 
 };
 
@@ -2454,10 +2454,10 @@ void () hknight_slice8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice8 = [ 119.000, globaldef5196 ] {
+void () hknight_slice8 = [ 119.000, hknight_slice9 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef1565 ();
+   ai_charge (FL_SWIM);
+   ai_melee ();
 
 };
 
@@ -2471,9 +2471,9 @@ void () hknight_slice9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice9 = [ 120.000, globaldef5197 ] {
+void () hknight_slice9 = [ 120.000, hknight_slice10 ] {
 
-   globaldef1565 ();
+   ai_melee ();
 
 };
 
@@ -2488,9 +2488,9 @@ void () hknight_slice10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_slice10 = [ 121.000, globaldef5043 ] {
+void () hknight_slice10 = [ 121.000, hknight_run1 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
+   ai_charge (MOVETYPE_WALK);
 
 };
 
@@ -2505,9 +2505,9 @@ void () hknight_smash1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash1 = [ 122.000, globaldef5199 ] {
+void () hknight_smash1 = [ 122.000, hknight_smash2 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -2522,9 +2522,9 @@ void () hknight_smash2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash2 = [ 123.000, globaldef5200 ] {
+void () hknight_smash2 = [ 123.000, hknight_smash3 ] {
 
-   globaldef1557 (globaldef775);
+   ai_charge (globaldef000775);
 
 };
 
@@ -2539,9 +2539,9 @@ void () hknight_smash3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash3 = [ 124.000, globaldef5201 ] {
+void () hknight_smash3 = [ 124.000, hknight_smash4 ] {
 
-   globaldef1557 (MOVETYPE_FLYMISSILE);
+   ai_charge (MOVETYPE_FLYMISSILE);
 
 };
 
@@ -2556,9 +2556,9 @@ void () hknight_smash4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash4 = [ 125.000, globaldef5202 ] {
+void () hknight_smash4 = [ 125.000, hknight_smash5 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCEMISSILE);
+   ai_charge (MOVETYPE_BOUNCEMISSILE);
 
 };
 
@@ -2574,10 +2574,10 @@ void () hknight_smash5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash5 = [ 126.000, globaldef5203 ] {
+void () hknight_smash5 = [ 126.000, hknight_smash6 ] {
 
-   globaldef1557 (MOVETYPE_BOUNCE);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_BOUNCE);
+   ai_melee ();
 
 };
 
@@ -2593,10 +2593,10 @@ void () hknight_smash6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash6 = [ 127.000, globaldef5204 ] {
+void () hknight_smash6 = [ 127.000, hknight_smash7 ] {
 
-   globaldef1557 (MOVETYPE_PUSH);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_PUSH);
+   ai_melee ();
 
 };
 
@@ -2612,10 +2612,10 @@ void () hknight_smash7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash7 = [ 128.000, globaldef5205 ] {
+void () hknight_smash7 = [ 128.000, hknight_smash8 ] {
 
-   globaldef1557 (globaldef774);
-   globaldef1565 ();
+   ai_charge (globaldef000774);
+   ai_melee ();
 
 };
 
@@ -2631,10 +2631,10 @@ void () hknight_smash8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash8 = [ 129.000, globaldef5206 ] {
+void () hknight_smash8 = [ 129.000, hknight_smash9 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef1565 ();
+   ai_charge (FL_SWIM);
+   ai_melee ();
 
 };
 
@@ -2650,10 +2650,10 @@ void () hknight_smash9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash9 = [ 130.000, globaldef5207 ] {
+void () hknight_smash9 = [ 130.000, hknight_smash10 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_WALK);
+   ai_melee ();
 
 };
 
@@ -2668,9 +2668,9 @@ void () hknight_smash10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash10 = [ 131.000, globaldef5208 ] {
+void () hknight_smash10 = [ 131.000, hknight_smash11 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2685,9 +2685,9 @@ void () hknight_smash11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_smash11 = [ 132.000, globaldef5043 ] {
+void () hknight_smash11 = [ 132.000, hknight_run1 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2702,9 +2702,9 @@ void () hknight_watk1;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk1 = [ 133.000, globaldef5210 ] {
+void () hknight_watk1 = [ 133.000, hknight_watk2 ] {
 
-   globaldef1557 (FL_SWIM);
+   ai_charge (FL_SWIM);
 
 };
 
@@ -2719,9 +2719,9 @@ void () hknight_watk2;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk2 = [ 134.000, globaldef5211 ] {
+void () hknight_watk2 = [ 134.000, hknight_watk3 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2736,9 +2736,9 @@ void () hknight_watk3;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk3 = [ 135.000, globaldef5212 ] {
+void () hknight_watk3 = [ 135.000, hknight_watk4 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2752,9 +2752,9 @@ void () hknight_watk4;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk4 = [ 136.000, globaldef5213 ] {
+void () hknight_watk4 = [ 136.000, hknight_watk5 ] {
 
-   globaldef1565 ();
+   ai_melee ();
 
 };
 
@@ -2768,9 +2768,9 @@ void () hknight_watk5;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk5 = [ 137.000, globaldef5214 ] {
+void () hknight_watk5 = [ 137.000, hknight_watk6 ] {
 
-   globaldef1565 ();
+   ai_melee ();
 
 };
 
@@ -2784,9 +2784,9 @@ void () hknight_watk6;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk6 = [ 138.000, globaldef5215 ] {
+void () hknight_watk6 = [ 138.000, hknight_watk7 ] {
 
-   globaldef1565 ();
+   ai_melee ();
 
 };
 
@@ -2801,9 +2801,9 @@ void () hknight_watk7;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk7 = [ 139.000, globaldef5216 ] {
+void () hknight_watk7 = [ 139.000, hknight_watk8 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -2818,9 +2818,9 @@ void () hknight_watk8;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk8 = [ 140.000, globaldef5217 ] {
+void () hknight_watk8 = [ 140.000, hknight_watk9 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -2835,9 +2835,9 @@ void () hknight_watk9;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk9 = [ 141.000, globaldef5218 ] {
+void () hknight_watk9 = [ 141.000, hknight_watk10 ] {
 
-   globaldef1557 (MOVETYPE_FLY);
+   ai_charge (MOVETYPE_FLY);
 
 };
 
@@ -2853,10 +2853,10 @@ void () hknight_watk10;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk10 = [ 142.000, globaldef5219 ] {
+void () hknight_watk10 = [ 142.000, hknight_watk11 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_WALK);
+   ai_melee ();
 
 };
 
@@ -2872,10 +2872,10 @@ void () hknight_watk11;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk11 = [ 143.000, globaldef5220 ] {
+void () hknight_watk11 = [ 143.000, hknight_watk12 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef1565 ();
+   ai_charge (FL_SWIM);
+   ai_melee ();
 
 };
 
@@ -2891,10 +2891,10 @@ void () hknight_watk12;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk12 = [ 144.000, globaldef5221 ] {
+void () hknight_watk12 = [ 144.000, hknight_watk13 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef1565 ();
+   ai_charge (FL_SWIM);
+   ai_melee ();
 
 };
 
@@ -2909,9 +2909,9 @@ void () hknight_watk13;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk13 = [ 145.000, globaldef5222 ] {
+void () hknight_watk13 = [ 145.000, hknight_watk14 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2926,9 +2926,9 @@ void () hknight_watk14;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk14 = [ 146.000, globaldef5223 ] {
+void () hknight_watk14 = [ 146.000, hknight_watk15 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2943,9 +2943,9 @@ void () hknight_watk15;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk15 = [ 147.000, globaldef5224 ] {
+void () hknight_watk15 = [ 147.000, hknight_watk16 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -2960,9 +2960,9 @@ void () hknight_watk16;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk16 = [ 148.000, globaldef5225 ] {
+void () hknight_watk16 = [ 148.000, hknight_watk17 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -2978,10 +2978,10 @@ void () hknight_watk17;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk17 = [ 149.000, globaldef5226 ] {
+void () hknight_watk17 = [ 149.000, hknight_watk18 ] {
 
-   globaldef1557 (TRUE);
-   globaldef1565 ();
+   ai_charge (TRUE);
+   ai_melee ();
 
 };
 
@@ -2997,10 +2997,10 @@ void () hknight_watk18;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk18 = [ 150.000, globaldef5227 ] {
+void () hknight_watk18 = [ 150.000, hknight_watk19 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_WALK);
+   ai_melee ();
 
 };
 
@@ -3016,10 +3016,10 @@ void () hknight_watk19;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk19 = [ 151.000, globaldef5228 ] {
+void () hknight_watk19 = [ 151.000, hknight_watk20 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
-   globaldef1565 ();
+   ai_charge (MOVETYPE_STEP);
+   ai_melee ();
 
 };
 
@@ -3034,9 +3034,9 @@ void () hknight_watk20;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk20 = [ 152.000, globaldef5229 ] {
+void () hknight_watk20 = [ 152.000, hknight_watk21 ] {
 
-   globaldef1557 (MOVETYPE_TOSS);
+   ai_charge (MOVETYPE_TOSS);
 
 };
 
@@ -3051,9 +3051,9 @@ void () hknight_watk21;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk21 = [ 153.000, globaldef5230 ] {
+void () hknight_watk21 = [ 153.000, hknight_watk22 ] {
 
-   globaldef1557 (MOVETYPE_PUSH);
+   ai_charge (MOVETYPE_PUSH);
 
 };
 
@@ -3068,9 +3068,9 @@ void () hknight_watk22;
  * OP_DONE	0	0	0
  */
 
-void () hknight_watk22 = [ 154.000, globaldef5043 ] {
+void () hknight_watk22 = [ 154.000, hknight_run1 ] {
 
-   globaldef1557 (MOVETYPE_WALK);
+   ai_charge (MOVETYPE_WALK);
 
 };
 
@@ -3091,16 +3091,16 @@ void () hknight_watk22 = [ 154.000, globaldef5043 ] {
 
 void () hk_idle_sound = {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef5231,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,globaldef005231,TRUE,ATTN_NORM);
 
    }
 
 };
-string globaldef5231 /* = "hknight/idle.wav" */;
+string globaldef005231 /* = "hknight/idle.wav" */;
 
-void (entity globaldef5233, float globaldef5234) hknight_pain;
+void (entity globaldef005233, float globaldef005234) hknight_pain;
 
 // function hknight_pain
 // function number 1918 begins at statement 25280
@@ -3136,31 +3136,31 @@ void (entity globaldef5233, float globaldef5234) hknight_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef5233, float globaldef5234) hknight_pain = {
+void (entity globaldef005233, float globaldef005234) hknight_pain = {
 
-   if ( (self.globaldef362 > time) ) {
-
-      return ;
-
-   }
-   sound (self,CHAN_VOICE,globaldef5101,TRUE,ATTN_NORM);
-   if ( ((time - self.globaldef362) > MOVETYPE_FLY) ) {
-
-      globaldef5099 ();
-      self.globaldef362 = (time + TRUE);
-      return ;
-
-   }
-   if ( ((globaldef440 () * SVC_INTERMISSION) > globaldef5234) ) {
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   self.globaldef362 = (time + TRUE);
-   globaldef5099 ();
+   sound (self,CHAN_VOICE,globaldef005101,TRUE,ATTN_NORM);
+   if ( ((time - self.globaldef000362) > MOVETYPE_FLY) ) {
+
+      hknight_pain1 ();
+      self.globaldef000362 = (time + TRUE);
+      return ;
+
+   }
+   if ( ((random () * SVC_INTERMISSION) > globaldef005234) ) {
+
+      return ;
+
+   }
+   self.globaldef000362 = (time + TRUE);
+   hknight_pain1 ();
 
 };
-float globaldef5235 /* = 0.000 */;
+float globaldef005235 /* = 0.000 */;
 
 void () hknight_melee;
 
@@ -3192,24 +3192,24 @@ void () hknight_melee;
 
 void () hknight_melee = {
 
-   globaldef5235 = (globaldef5235 + TRUE);
-   sound (self,CHAN_WEAPON,globaldef5237,TRUE,ATTN_NORM);
-   if ( (globaldef5235 == TRUE) ) {
+   globaldef005235 = (globaldef005235 + TRUE);
+   sound (self,CHAN_WEAPON,globaldef005237,TRUE,ATTN_NORM);
+   if ( (globaldef005235 == TRUE) ) {
 
-      globaldef5188 ();
+      hknight_slice1 ();
 
    } else {
 
-      if ( (globaldef5235 == FL_SWIM) ) {
+      if ( (globaldef005235 == FL_SWIM) ) {
 
-         globaldef5198 ();
+         hknight_smash1 ();
 
       } else {
 
-         if ( (globaldef5235 == MOVETYPE_WALK) ) {
+         if ( (globaldef005235 == MOVETYPE_WALK) ) {
 
-            globaldef5209 ();
-            globaldef5235 = FALSE;
+            hknight_watk1 ();
+            globaldef005235 = FALSE;
 
          }
 
@@ -3218,7 +3218,7 @@ void () hknight_melee = {
    }
 
 };
-string globaldef5237 /* = "hknight/slash1.wav" */;
+string globaldef005237 /* = "hknight/slash1.wav" */;
 
 void () monster_hell_knight;
 
@@ -3294,31 +3294,31 @@ void () monster_hell_knight = {
       return ;
 
    }
-   globaldef493 (globaldef5239);
-   globaldef493 (globaldef5059);
-   globaldef493 (globaldef5127);
-   globaldef494 (globaldef5060);
-   globaldef494 (globaldef5128);
-   globaldef494 (globaldef5101);
-   globaldef494 ("hknight/sight1.wav");
-   globaldef452 (globaldef5240);
-   globaldef494 (globaldef5237);
-   globaldef494 (globaldef5231);
-   globaldef494 (globaldef5241);
-   globaldef452 (globaldef4094);
-   globaldef452 (globaldef4093);
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef5239);
-   globaldef438 (self,VEC_HULL_MIN,globaldef4167);
-   self.globaldef130 = globaldef721;
-   self.globaldef344 = globaldef5063;
-   self.globaldef345 = globaldef5072;
-   self.globaldef346 = globaldef5043;
-   self.globaldef348 = globaldef5236;
-   self.globaldef347 = globaldef5156;
-   self.globaldef349 = globaldef5232;
-   self.globaldef350 = globaldef5126;
-   globaldef3309 ();
+   precache_model2 (globaldef005239);
+   precache_model2 (globaldef005059);
+   precache_model2 (globaldef005127);
+   precache_sound2 (globaldef005060);
+   precache_sound2 (globaldef005128);
+   precache_sound2 (globaldef005101);
+   precache_sound2 (globaldef001670);
+   precache_sound (globaldef005240);
+   precache_sound2 (globaldef005237);
+   precache_sound2 (globaldef005231);
+   precache_sound2 (globaldef005241);
+   precache_sound (globaldef004094);
+   precache_sound (globaldef004093);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef005239);
+   setsize (self,VEC_HULL_MIN,globaldef004167);
+   self.globaldef000130 = globaldef000721;
+   self.globaldef000344 = hknight_stand1;
+   self.globaldef000345 = hknight_walk1;
+   self.globaldef000346 = hknight_run1;
+   self.globaldef000348 = hknight_melee;
+   self.globaldef000347 = hknight_magicc1;
+   self.globaldef000349 = hknight_pain;
+   self.globaldef000350 = hknight_die;
+   walkmonster_start ();
 
 };

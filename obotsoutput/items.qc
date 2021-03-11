@@ -26,13 +26,13 @@ void () SUB_regen;
 
 void () SUB_regen = {
 
-   self.model = self.globaldef382;
-   self.solid = SOLID_TRIGGER;
-   sound (self,CHAN_VOICE,globaldef1790,TRUE,ATTN_NORM);
-   setorigin (self,self.origin);
+   self.globaldef000108 = self.globaldef000382;
+   self.globaldef000082 = SOLID_TRIGGER;
+   sound (self,CHAN_VOICE,globaldef001790,TRUE,ATTN_NORM);
+   setorigin (self,self.globaldef000083);
 
 };
-string globaldef1790 /* = "items/itembk2.wav" */;
+string globaldef001790 /* = "items/itembk2.wav" */;
 
 void () noclass;
 
@@ -55,13 +55,13 @@ void () noclass;
 
 void () noclass = {
 
-   globaldef456 (globaldef1792);
-   globaldef456 (globaldef458 (self.origin));
-   globaldef456 (globaldef1354);
+   dprint (globaldef001792);
+   dprint (vtos (self.globaldef000083));
+   dprint (globaldef001354);
    remove (self);
 
 };
-string globaldef1792 /* = "noclass spawned at" */;
+string globaldef001792 /* = "noclass spawned at" */;
 
 void () PlaceItem;
 
@@ -105,27 +105,27 @@ void () PlaceItem;
 
 void () PlaceItem = {
 
-   local float globaldef1794;
+   local float oldz;
 
-   self.globaldef382 = self.model;
-   self.globaldef160 = FL_ITEM;
-   self.solid = SOLID_TRIGGER;
-   self.movetype = MOVETYPE_TOSS;
-   self.velocity = VEC_ORIGIN;
-   self.globaldef86 = (self.globaldef86 + MOVETYPE_TOSS);
-   globaldef1794 = self.globaldef86;
-   if ( !globaldef464 () ) {
+   self.globaldef000382 = self.globaldef000108;
+   self.globaldef000160 = FL_ITEM;
+   self.globaldef000082 = SOLID_TRIGGER;
+   self.globaldef000081 = MOVETYPE_TOSS;
+   self.globaldef000091 = VEC_ORIGIN;
+   self.globaldef000086 = (self.globaldef000086 + MOVETYPE_TOSS);
+   oldz = self.globaldef000086;
+   if ( !droptofloor () ) {
 
-      globaldef456 (globaldef1795);
-      globaldef456 (globaldef458 (self.origin));
-      globaldef456 (globaldef1354);
+      dprint (globaldef001795);
+      dprint (vtos (self.globaldef000083));
+      dprint (globaldef001354);
       remove (self);
       return ;
 
    }
 
 };
-string globaldef1795 /* = "Bonus item fell out of level at " */;
+string globaldef001795 /* = "Bonus item fell out of level at " */;
 
 void () StartItem;
 
@@ -142,8 +142,8 @@ void () StartItem;
 
 void () StartItem = {
 
-   self.nextthink = (time + globaldef1553);
-   self.think = globaldef1793;
+   self.globaldef000128 = (time + globaldef001553);
+   self.globaldef000126 = PlaceItem;
 
 };
 
@@ -185,37 +185,37 @@ void () StartItem = {
  * OP_RETURN	214	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1797, float globaldef1798, float globaldef1799) T_Heal = {
+float (entity globaldef001797, float globaldef001798, float globaldef001799) T_Heal = {
 
-   if ( (globaldef1797.globaldef130 <= FALSE) ) {
-
-      return ( FALSE );
-
-   }
-   if ( (!globaldef1799 && (globaldef1797.globaldef130 >= other.globaldef163)) ) {
+   if ( (globaldef001797.globaldef000130 <= FALSE) ) {
 
       return ( FALSE );
 
    }
-   globaldef1798 = globaldef468 (globaldef1798);
-   globaldef1797.globaldef130 = (globaldef1797.globaldef130 + globaldef1798);
-   if ( (!globaldef1799 && (globaldef1797.globaldef130 >= other.globaldef163)) ) {
+   if ( (!globaldef001799 && (globaldef001797.globaldef000130 >= other.globaldef000163)) ) {
 
-      globaldef1797.globaldef130 = other.globaldef163;
+      return ( FALSE );
 
    }
-   if ( (globaldef1797.globaldef130 > globaldef721) ) {
+   globaldef001798 = ceil (globaldef001798);
+   globaldef001797.globaldef000130 = (globaldef001797.globaldef000130 + globaldef001798);
+   if ( (!globaldef001799 && (globaldef001797.globaldef000130 >= other.globaldef000163)) ) {
 
-      globaldef1797.globaldef130 = globaldef721;
+      globaldef001797.globaldef000130 = other.globaldef000163;
+
+   }
+   if ( (globaldef001797.globaldef000130 > globaldef000721) ) {
+
+      globaldef001797.globaldef000130 = globaldef000721;
 
    }
    return ( TRUE );
 
 };
-float globaldef1800 /* = 1.000 */;
-float globaldef1801 /* = 2.000 */;
-.float field340;
-.entity field341;
+float globaldef001800 /* = 1.000 */;
+float globaldef001801 /* = 2.000 */;
+.float field000340;
+.entity field000341;
 
 void () health_touch;
 
@@ -295,55 +295,55 @@ void () item_health;
 
 void () item_health = {
 
-   self.globaldef124 = globaldef1804;
-   if ( (self.globaldef173 & globaldef1800) ) {
+   self.globaldef000124 = health_touch;
+   if ( (self.globaldef000173 & globaldef001800) ) {
 
-      globaldef453 (globaldef1807);
-      globaldef452 (globaldef1808);
-      setmodel (self,globaldef1807);
-      self.noise = globaldef1808;
-      self.globaldef1802 = globaldef748;
-      self.globaldef1803 = FALSE;
-      self.globaldef531 = globaldef946;
+      precache_model (globaldef001807);
+      precache_sound (globaldef001808);
+      setmodel (self,globaldef001807);
+      self.globaldef000186 = globaldef001808;
+      self.globaldef001802 = globaldef000748;
+      self.globaldef001803 = FALSE;
+      self.globaldef000531 = func002299;
 
    } else {
 
-      if ( (self.globaldef173 & globaldef1801) ) {
+      if ( (self.globaldef000173 & globaldef001801) ) {
 
-         globaldef453 (globaldef1809);
-         globaldef452 (globaldef1810);
-         setmodel (self,globaldef1809);
-         self.noise = globaldef1810;
-         self.globaldef1802 = globaldef1335;
-         self.globaldef1803 = FL_SWIM;
-         self.globaldef531 = globaldef948;
-         self.globaldef532 = globaldef966;
-         self.globaldef530 = globaldef1124;
+         precache_model (globaldef001809);
+         precache_sound (globaldef001810);
+         setmodel (self,globaldef001809);
+         self.globaldef000186 = globaldef001810;
+         self.globaldef001802 = globaldef001335;
+         self.globaldef001803 = FL_SWIM;
+         self.globaldef000531 = func002298;
+         self.globaldef000532 = func002318;
+         self.globaldef000530 = func002647;
 
       } else {
 
-         globaldef453 (globaldef1811);
-         globaldef452 (globaldef1812);
-         setmodel (self,globaldef1811);
-         self.noise = globaldef1812;
-         self.globaldef1802 = globaldef288;
-         self.globaldef1803 = TRUE;
-         self.globaldef531 = globaldef947;
+         precache_model (globaldef001811);
+         precache_sound (globaldef001812);
+         setmodel (self,globaldef001811);
+         self.globaldef000186 = globaldef001812;
+         self.globaldef001802 = globaldef000288;
+         self.globaldef001803 = TRUE;
+         self.globaldef000531 = func002300;
 
       }
 
    }
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   globaldef1796 ();
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   StartItem ();
 
 };
-string globaldef1807 /* = "maps/b_bh10.bsp" */;
-string globaldef1808 /* = "items/r_item1.wav" */;
-string globaldef1809 /* = "maps/b_bh100.bsp" */;
-string globaldef1810 /* = "items/r_item2.wav" */;
-string globaldef1811 /* = "maps/b_bh25.bsp" */;
-string globaldef1812 /* = "items/health1.wav" */;
-vector globaldef1813 /* = '32.000 32.000 56.000' */;
+string globaldef001807 /* = "maps/b_bh10.bsp" */;
+string globaldef001808 /* = "items/r_item1.wav" */;
+string globaldef001809 /* = "maps/b_bh100.bsp" */;
+string globaldef001810 /* = "items/r_item2.wav" */;
+string globaldef001811 /* = "maps/b_bh25.bsp" */;
+string globaldef001812 /* = "items/health1.wav" */;
+vector globaldef001813 /* = '32.000 32.000 56.000' */;
 
 // function health_touch
 // function number 210 begins at statement 4388
@@ -456,41 +456,41 @@ vector globaldef1813 /* = '32.000 32.000 56.000' */;
 
 void () health_touch = {
 
-   local float globaldef1814;
-   local string globaldef1815;
+   local float amount;
+   local string s;
 
-   if ( globaldef799 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
-
-         return ;
-
-      }
-
-   }
-   if ( (other.globaldef558 & globaldef686) ) {
-
-      globaldef1136 (other,self);
-
-   }
-   if ( (other.classname == globaldef1171) ) {
-
-      globaldef1069 (other,self);
-
-   }
-   if ( (self.globaldef1803 == FL_SWIM) ) {
-
-      if ( (other.globaldef130 >= globaldef721) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
-      if ( !globaldef506 (other,self.globaldef1802,TRUE) ) {
+
+   }
+   if ( (other.globaldef000558 & globaldef000686) ) {
+
+      func002686 (other,self);
+
+   }
+   if ( (other.globaldef000107 == globaldef001171) ) {
+
+      func002471 (other,self);
+
+   }
+   if ( (self.globaldef001803 == FL_SWIM) ) {
+
+      if ( (other.globaldef000130 >= globaldef000721) ) {
+
+         return ;
+
+      }
+      if ( !T_Heal (other,self.globaldef001802,TRUE) ) {
 
          return ;
 
@@ -498,35 +498,35 @@ void () health_touch = {
 
    } else {
 
-      if ( !globaldef506 (other,self.globaldef1802,FALSE) ) {
+      if ( !T_Heal (other,self.globaldef001802,FALSE) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.classname == "player") ) {
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef887 (other,globaldef1816);
-      globaldef1815 = globaldef457 (self.globaldef1802);
-      globaldef887 (other,globaldef1815);
-      globaldef887 (other,globaldef1817);
-
-   }
-   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
-   if ( (other.classname == "player") ) {
-
-      globaldef822 (other,globaldef1818);
+      func000092 (other,globaldef001816);
+      s = ftos (self.globaldef001802);
+      func000092 (other,s);
+      func000092 (other,globaldef001817);
 
    }
-   self.model = string_null;
-   self.solid = SOLID_NOT;
-   if ( (self.globaldef1803 == FL_SWIM) ) {
+   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      other.globaldef140 = (other.globaldef140 | IT_SUPERHEALTH);
-      self.nextthink = (time + MOVETYPE_FLY);
-      self.think = globaldef1805;
-      self.globaldef179 = other;
+      func000064 (other,globaldef001818);
+
+   }
+   self.globaldef000108 = string_null;
+   self.globaldef000082 = SOLID_NOT;
+   if ( (self.globaldef001803 == FL_SWIM) ) {
+
+      other.globaldef000140 = (other.globaldef000140 | IT_SUPERHEALTH);
+      self.globaldef000128 = (time + MOVETYPE_FLY);
+      self.globaldef000126 = item_megahealth_rot;
+      self.globaldef000179 = other;
 
    } else {
 
@@ -534,10 +534,10 @@ void () health_touch = {
 
          if ( deathmatch ) {
 
-            self.nextthink = (time + globaldef1384);
+            self.globaldef000128 = (time + globaldef001384);
 
          }
-         self.think = globaldef1789;
+         self.globaldef000126 = SUB_regen;
 
       }
 
@@ -546,9 +546,9 @@ void () health_touch = {
    SUB_UseTargets ();
 
 };
-string globaldef1816 /* = "You receive " */;
-string globaldef1817 /* = " health\n" */;
-string globaldef1818 /* = "bf\n" */;
+string globaldef001816 /* = "You receive " */;
+string globaldef001817 /* = " health\n" */;
+string globaldef001818 /* = "bf\n" */;
 
 // function item_megahealth_rot
 // function number 211 begins at statement 4492
@@ -592,25 +592,25 @@ string globaldef1818 /* = "bf\n" */;
 
 void () item_megahealth_rot = {
 
-   other = self.globaldef179;
-   if ( (other.globaldef130 > other.globaldef163) ) {
+   other = self.globaldef000179;
+   if ( (other.globaldef000130 > other.globaldef000163) ) {
 
-      other.globaldef130 = (other.globaldef130 - TRUE);
-      self.nextthink = (time + TRUE);
+      other.globaldef000130 = (other.globaldef000130 - TRUE);
+      self.globaldef000128 = (time + TRUE);
       return ;
 
    }
-   other.globaldef140 = (other.globaldef140 - (other.globaldef140 & IT_SUPERHEALTH));
+   other.globaldef000140 = (other.globaldef000140 - (other.globaldef000140 & IT_SUPERHEALTH));
    if ( (deathmatch == TRUE) ) {
 
-      self.nextthink = (time + globaldef1384);
-      self.think = globaldef1789;
+      self.globaldef000128 = (time + globaldef001384);
+      self.globaldef000126 = SUB_regen;
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.nextthink = (time + globaldef1384);
-      self.think = globaldef1789;
+      self.globaldef000128 = (time + globaldef001384);
+      self.globaldef000126 = SUB_regen;
 
    }
 
@@ -731,104 +731,104 @@ void () armor_touch;
 
 void () armor_touch = {
 
-   local float globaldef1820;
-   local float globaldef1821;
-   local float globaldef1822;
+   local float type;
+   local float value;
+   local float bit;
 
-   if ( globaldef799 ) {
-
-      return ;
-
-   }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      return ;
+
+   }
+   if ( (other.globaldef000107 != globaldef001170) ) {
+
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef558 & globaldef686) ) {
+   if ( (other.globaldef000558 & globaldef000686) ) {
 
-      globaldef1136 (other,self);
-
-   }
-   if ( (other.classname == globaldef1171) ) {
-
-      globaldef1069 (other,self);
+      func002686 (other,self);
 
    }
-   if ( (self.classname == globaldef1823) ) {
+   if ( (other.globaldef000107 == globaldef001171) ) {
 
-      globaldef1820 = globaldef1588;
-      globaldef1821 = globaldef1335;
-      globaldef1822 = IT_ARMOR1;
+      func002471 (other,self);
 
    }
-   if ( (self.classname == globaldef1824) ) {
+   if ( (self.globaldef000107 == globaldef001823) ) {
 
-      globaldef1820 = globaldef1825;
-      globaldef1821 = globaldef1336;
-      globaldef1822 = IT_ARMOR2;
-
-   }
-   if ( (self.classname == globaldef1826) ) {
-
-      globaldef1820 = globaldef1827;
-      globaldef1821 = globaldef1343;
-      globaldef1822 = IT_ARMOR3;
+      type = globaldef001588;
+      value = globaldef001335;
+      bit = IT_ARMOR1;
 
    }
-   if ( ((other.globaldef165 * other.globaldef166) >= (globaldef1820 * globaldef1821)) ) {
+   if ( (self.globaldef000107 == globaldef001824) ) {
+
+      type = globaldef001825;
+      value = globaldef001336;
+      bit = IT_ARMOR2;
+
+   }
+   if ( (self.globaldef000107 == globaldef001826) ) {
+
+      type = globaldef001827;
+      value = globaldef001343;
+      bit = IT_ARMOR3;
+
+   }
+   if ( ((other.globaldef000165 * other.globaldef000166) >= (type * value)) ) {
 
       return ;
 
    }
-   other.globaldef165 = globaldef1820;
-   other.globaldef166 = globaldef1821;
-   other.globaldef140 = ((other.globaldef140 - (other.globaldef140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + globaldef1822);
-   self.solid = SOLID_NOT;
-   self.model = string_null;
+   other.globaldef000165 = type;
+   other.globaldef000166 = value;
+   other.globaldef000140 = ((other.globaldef000140 - (other.globaldef000140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + bit);
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000108 = string_null;
    if ( (deathmatch == TRUE) ) {
 
-      self.nextthink = (time + globaldef1384);
+      self.globaldef000128 = (time + globaldef001384);
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.nextthink = (time + globaldef1384);
+      self.globaldef000128 = (time + globaldef001384);
 
    }
-   self.think = globaldef1789;
-   if ( (other.classname == "player") ) {
+   self.globaldef000126 = SUB_regen;
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef887 (other,globaldef1828);
+      func000092 (other,globaldef001828);
 
    }
-   sound (other,CHAN_ITEM,globaldef1829,TRUE,ATTN_NORM);
-   globaldef1058 (other,self.origin,TRUE,globaldef743);
-   if ( (other.classname == "player") ) {
+   sound (other,CHAN_ITEM,globaldef001829,TRUE,ATTN_NORM);
+   func002453 (other,self.globaldef000083,TRUE,globaldef000743);
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef822 (other,globaldef1818);
+      func000064 (other,globaldef001818);
 
    }
    activator = other;
    SUB_UseTargets ();
 
 };
-string globaldef1823 /* = "item_armor1" */;
-string globaldef1824 /* = "item_armor2" */;
-float globaldef1825 /* = 0.600 */;
-string globaldef1826 /* = "item_armorInv" */;
-float globaldef1827 /* = 0.800 */;
-string globaldef1828 /* = "You got armor\n" */;
-string globaldef1829 /* = "items/armor1.wav" */;
+string globaldef001823 /* = "item_armor1" */;
+string globaldef001824 /* = "item_armor2" */;
+float globaldef001825 /* = 0.600 */;
+string globaldef001826 /* = "item_armorInv" */;
+float globaldef001827 /* = 0.800 */;
+string globaldef001828 /* = "You got armor\n" */;
+string globaldef001829 /* = "items/armor1.wav" */;
 
 void () item_armor1;
 
@@ -858,19 +858,19 @@ void () item_armor1;
 
 void () item_armor1 = {
 
-   self.globaldef124 = globaldef1819;
-   globaldef453 (globaldef1831);
-   setmodel (self,globaldef1831);
-   self.globaldef110 = FALSE;
-   self.globaldef166 = globaldef1335;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef959;
-   globaldef1796 ();
+   self.globaldef000124 = armor_touch;
+   precache_model (globaldef001831);
+   setmodel (self,globaldef001831);
+   self.globaldef000110 = FALSE;
+   self.globaldef000166 = globaldef001335;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002311;
+   StartItem ();
 
 };
-string globaldef1831 /* = "progs/armor.mdl" */;
-vector globaldef1832 /* = '-16.000 -16.000 0.000' */;
-vector globaldef1833 /* = '16.000 16.000 56.000' */;
+string globaldef001831 /* = "progs/armor.mdl" */;
+vector globaldef001832 /* = '-16.000 -16.000 0.000' */;
+vector globaldef001833 /* = '16.000 16.000 56.000' */;
 
 void () item_armor2;
 
@@ -904,16 +904,16 @@ void () item_armor2;
 
 void () item_armor2 = {
 
-   self.globaldef124 = globaldef1819;
-   globaldef453 (globaldef1831);
-   setmodel (self,globaldef1831);
-   self.globaldef110 = TRUE;
-   self.globaldef166 = globaldef1336;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef960;
-   self.globaldef532 = globaldef973;
-   self.globaldef530 = globaldef1123;
-   globaldef1796 ();
+   self.globaldef000124 = armor_touch;
+   precache_model (globaldef001831);
+   setmodel (self,globaldef001831);
+   self.globaldef000110 = TRUE;
+   self.globaldef000166 = globaldef001336;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002312;
+   self.globaldef000532 = func002325;
+   self.globaldef000530 = func002646;
+   StartItem ();
 
 };
 
@@ -949,16 +949,16 @@ void () item_armorInv;
 
 void () item_armorInv = {
 
-   self.globaldef124 = globaldef1819;
-   globaldef453 (globaldef1831);
-   setmodel (self,globaldef1831);
-   self.globaldef110 = FL_SWIM;
-   self.globaldef166 = globaldef1343;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef961;
-   self.globaldef532 = globaldef974;
-   self.globaldef530 = globaldef1123;
-   globaldef1796 ();
+   self.globaldef000124 = armor_touch;
+   precache_model (globaldef001831);
+   setmodel (self,globaldef001831);
+   self.globaldef000110 = FL_SWIM;
+   self.globaldef000166 = globaldef001343;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002313;
+   self.globaldef000532 = func002326;
+   self.globaldef000530 = func002646;
+   StartItem ();
 
 };
 
@@ -992,29 +992,29 @@ void () bound_other_ammo;
 
 void () bound_other_ammo = {
 
-   if ( (other.globaldef136 > globaldef1335) ) {
+   if ( (other.globaldef000136 > globaldef001335) ) {
 
-      other.globaldef136 = globaldef1335;
-
-   }
-   if ( (other.globaldef137 > globaldef1343) ) {
-
-      other.globaldef137 = globaldef1343;
+      other.globaldef000136 = globaldef001335;
 
    }
-   if ( (other.globaldef138 > globaldef1335) ) {
+   if ( (other.globaldef000137 > globaldef001343) ) {
 
-      other.globaldef138 = globaldef1335;
+      other.globaldef000137 = globaldef001343;
 
    }
-   if ( (other.globaldef139 > globaldef1335) ) {
+   if ( (other.globaldef000138 > globaldef001335) ) {
 
-      other.globaldef139 = globaldef1335;
+      other.globaldef000138 = globaldef001335;
+
+   }
+   if ( (other.globaldef000139 > globaldef001335) ) {
+
+      other.globaldef000139 = globaldef001335;
 
    }
 
 };
-float (float globaldef1838) RankForWeapon;
+float (float globaldef001838) RankForWeapon;
 
 // function RankForWeapon
 // function number 217 begins at statement 4719
@@ -1040,34 +1040,34 @@ float (float globaldef1838) RankForWeapon;
  * OP_RETURN	232	0	0
  * OP_DONE	0	0	0
  */
-float (float globaldef1838) RankForWeapon = {
+float (float globaldef001838) RankForWeapon = {
 
-   if ( (globaldef1838 == IT_LIGHTNING) ) {
+   if ( (globaldef001838 == IT_LIGHTNING) ) {
 
       return ( TRUE );
 
    }
-   if ( (globaldef1838 == IT_ROCKET_LAUNCHER) ) {
+   if ( (globaldef001838 == IT_ROCKET_LAUNCHER) ) {
 
       return ( FL_SWIM );
 
    }
-   if ( (globaldef1838 == IT_SUPER_NAILGUN) ) {
+   if ( (globaldef001838 == IT_SUPER_NAILGUN) ) {
 
       return ( MOVETYPE_WALK );
 
    }
-   if ( (globaldef1838 == IT_GRENADE_LAUNCHER) ) {
+   if ( (globaldef001838 == IT_GRENADE_LAUNCHER) ) {
 
       return ( MOVETYPE_STEP );
 
    }
-   if ( (globaldef1838 == IT_SUPER_SHOTGUN) ) {
+   if ( (globaldef001838 == IT_SUPER_SHOTGUN) ) {
 
       return ( MOVETYPE_FLY );
 
    }
-   if ( (globaldef1838 == IT_NAILGUN) ) {
+   if ( (globaldef001838 == IT_NAILGUN) ) {
 
       return ( MOVETYPE_TOSS );
 
@@ -1076,7 +1076,7 @@ float (float globaldef1838) RankForWeapon = {
 
 };
 
-void (float globaldef1840, float globaldef1841) Deathmatch_Weapon;
+void (float globaldef001840, float globaldef001841) Deathmatch_Weapon;
 
 // function Deathmatch_Weapon
 // function number 218 begins at statement 4739
@@ -1095,16 +1095,16 @@ void (float globaldef1840, float globaldef1841) Deathmatch_Weapon;
  * OP_DONE	0	0	0
  */
 
-void (float globaldef1840, float globaldef1841) Deathmatch_Weapon = {
+void (float globaldef001840, float globaldef001841) Deathmatch_Weapon = {
 
-   local float globaldef1842;
-   local float globaldef1843;
+   local float or;
+   local float nr;
 
-   globaldef1842 = globaldef1837 (self.globaldef132);
-   globaldef1843 = globaldef1837 (globaldef1841);
-   if ( (globaldef1843 < globaldef1842) ) {
+   or = RankForWeapon (self.globaldef000132);
+   nr = RankForWeapon (globaldef001841);
+   if ( (nr < or) ) {
 
-      self.globaldef132 = globaldef1841;
+      self.globaldef000132 = globaldef001841;
 
    }
 
@@ -1322,138 +1322,138 @@ void () weapon_touch;
 
 void () weapon_touch = {
 
-   local float globaldef1846;
-   local float globaldef1847;
-   local float globaldef1848;
-   local float globaldef1849;
-   local entity globaldef1850;
-   local float globaldef1851;
+   local float hadammo;
+   local float best;
+   local float new;
+   local float old;
+   local entity stemp;
+   local float leave;
 
-   if ( globaldef799 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef558 & globaldef686) ) {
+   if ( (other.globaldef000558 & globaldef000686) ) {
 
-      globaldef1136 (other,self);
-
-   }
-   if ( (other.classname == globaldef1171) ) {
-
-      globaldef1069 (other,self);
+      func002686 (other,self);
 
    }
-   globaldef1850 = self;
+   if ( (other.globaldef000107 == globaldef001171) ) {
+
+      func002471 (other,self);
+
+   }
+   stemp = self;
    self = other;
-   if ( (self.classname == "player") ) {
+   if ( (self.globaldef000107 == globaldef001170) ) {
 
-      globaldef1847 = globaldef1844 ();
+      best = W_BestWeapon ();
 
    }
-   self = globaldef1850;
+   self = stemp;
    if ( ((deathmatch == FL_SWIM) || coop) ) {
 
-      globaldef1851 = TRUE;
+      leave = TRUE;
 
    } else {
 
-      globaldef1851 = FALSE;
+      leave = FALSE;
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      globaldef1851 = TRUE;
+      leave = TRUE;
 
    }
-   if ( (self.classname == globaldef1852) ) {
+   if ( (self.globaldef000107 == globaldef001852) ) {
 
-      if ( (globaldef1851 && (other.globaldef140 & IT_NAILGUN)) ) {
+      if ( (leave && (other.globaldef000140 & IT_NAILGUN)) ) {
 
          return ;
 
       }
-      globaldef1846 = other.globaldef137;
-      globaldef1848 = IT_NAILGUN;
-      other.globaldef137 = (other.globaldef137 + SVC_INTERMISSION);
+      hadammo = other.globaldef000137;
+      new = IT_NAILGUN;
+      other.globaldef000137 = (other.globaldef000137 + SVC_INTERMISSION);
 
    } else {
 
-      if ( (self.classname == globaldef1853) ) {
+      if ( (self.globaldef000107 == globaldef001853) ) {
 
-         if ( (globaldef1851 && (other.globaldef140 & IT_SUPER_NAILGUN)) ) {
+         if ( (leave && (other.globaldef000140 & IT_SUPER_NAILGUN)) ) {
 
             return ;
 
          }
-         globaldef1846 = other.globaldef138;
-         globaldef1848 = IT_SUPER_NAILGUN;
-         other.globaldef137 = (other.globaldef137 + SVC_INTERMISSION);
+         hadammo = other.globaldef000138;
+         new = IT_SUPER_NAILGUN;
+         other.globaldef000137 = (other.globaldef000137 + SVC_INTERMISSION);
 
       } else {
 
-         if ( (self.classname == globaldef1854) ) {
+         if ( (self.globaldef000107 == globaldef001854) ) {
 
-            if ( (globaldef1851 && (other.globaldef140 & IT_SUPER_SHOTGUN)) ) {
+            if ( (leave && (other.globaldef000140 & IT_SUPER_SHOTGUN)) ) {
 
                return ;
 
             }
-            globaldef1846 = other.globaldef138;
-            globaldef1848 = IT_SUPER_SHOTGUN;
-            other.globaldef136 = (other.globaldef136 + MOVETYPE_FLY);
+            hadammo = other.globaldef000138;
+            new = IT_SUPER_SHOTGUN;
+            other.globaldef000136 = (other.globaldef000136 + MOVETYPE_FLY);
 
          } else {
 
-            if ( (self.classname == globaldef1855) ) {
+            if ( (self.globaldef000107 == globaldef001855) ) {
 
-               if ( (globaldef1851 && (other.globaldef140 & IT_ROCKET_LAUNCHER)) ) {
+               if ( (leave && (other.globaldef000140 & IT_ROCKET_LAUNCHER)) ) {
 
                   return ;
 
                }
-               globaldef1846 = other.globaldef138;
-               globaldef1848 = IT_ROCKET_LAUNCHER;
-               other.globaldef138 = (other.globaldef138 + MOVETYPE_FLY);
+               hadammo = other.globaldef000138;
+               new = IT_ROCKET_LAUNCHER;
+               other.globaldef000138 = (other.globaldef000138 + MOVETYPE_FLY);
 
             } else {
 
-               if ( (self.classname == globaldef1856) ) {
+               if ( (self.globaldef000107 == globaldef001856) ) {
 
-                  if ( (globaldef1851 && (other.globaldef140 & IT_GRENADE_LAUNCHER)) ) {
+                  if ( (leave && (other.globaldef000140 & IT_GRENADE_LAUNCHER)) ) {
 
                      return ;
 
                   }
-                  globaldef1846 = other.globaldef138;
-                  globaldef1848 = IT_GRENADE_LAUNCHER;
-                  other.globaldef138 = (other.globaldef138 + MOVETYPE_FLY);
+                  hadammo = other.globaldef000138;
+                  new = IT_GRENADE_LAUNCHER;
+                  other.globaldef000138 = (other.globaldef000138 + MOVETYPE_FLY);
 
                } else {
 
-                  if ( (self.classname == globaldef1857) ) {
+                  if ( (self.globaldef000107 == globaldef001857) ) {
 
-                     if ( (globaldef1851 && (other.globaldef140 & IT_LIGHTNING)) ) {
+                     if ( (leave && (other.globaldef000140 & IT_LIGHTNING)) ) {
 
                         return ;
 
                      }
-                     globaldef1846 = other.globaldef138;
-                     globaldef1848 = IT_LIGHTNING;
-                     other.globaldef139 = (other.globaldef139 + globaldef748);
+                     hadammo = other.globaldef000138;
+                     new = IT_LIGHTNING;
+                     other.globaldef000139 = (other.globaldef000139 + globaldef000748);
 
                   } else {
 
-                     objerror (globaldef1858);
+                     objerror (globaldef001858);
 
                   }
 
@@ -1466,62 +1466,62 @@ void () weapon_touch = {
       }
 
    }
-   if ( (other.classname == "player") ) {
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef887 (other,globaldef1859);
-      globaldef887 (other,self.globaldef158);
-      globaldef887 (other,globaldef1354);
-
-   }
-   sound (other,CHAN_ITEM,globaldef1860,TRUE,ATTN_NORM);
-   globaldef1058 (other,self.origin,globaldef522,globaldef742);
-   if ( (other.classname == "player") ) {
-
-      globaldef822 (other,globaldef1818);
+      func000092 (other,globaldef001859);
+      func000092 (other,self.globaldef000158);
+      func000092 (other,globaldef001354);
 
    }
-   globaldef1836 ();
-   globaldef1849 = other.globaldef140;
-   other.globaldef140 = (other.globaldef140 | globaldef1848);
-   globaldef1850 = self;
+   sound (other,CHAN_ITEM,globaldef001860,TRUE,ATTN_NORM);
+   func002453 (other,self.globaldef000083,globaldef000522,globaldef000742);
+   if ( (other.globaldef000107 == globaldef001170) ) {
+
+      func000064 (other,globaldef001818);
+
+   }
+   bound_other_ammo ();
+   old = other.globaldef000140;
+   other.globaldef000140 = (other.globaldef000140 | new);
+   stemp = self;
    self = other;
    if ( !deathmatch ) {
 
-      self.globaldef132 = globaldef1848;
+      self.globaldef000132 = new;
 
    } else {
 
-      globaldef1839 (globaldef1849,globaldef1848);
+      Deathmatch_Weapon (old,new);
 
    }
-   globaldef1788 ();
-   self = globaldef1850;
-   if ( globaldef1851 ) {
+   W_SetCurrentAmmo ();
+   self = stemp;
+   if ( leave ) {
 
       return ;
 
    }
-   self.model = string_null;
-   self.solid = SOLID_NOT;
+   self.globaldef000108 = string_null;
+   self.globaldef000082 = SOLID_NOT;
    if ( (deathmatch == TRUE) ) {
 
-      self.nextthink = (time + SVC_INTERMISSION);
+      self.globaldef000128 = (time + SVC_INTERMISSION);
 
    }
-   self.think = globaldef1789;
+   self.globaldef000126 = SUB_regen;
    activator = other;
    SUB_UseTargets ();
 
 };
-string globaldef1852 /* = "weapon_nailgun" */;
-string globaldef1853 /* = "weapon_supernailgun" */;
-string globaldef1854 /* = "weapon_supershotgun" */;
-string globaldef1855 /* = "weapon_rocketlauncher" */;
-string globaldef1856 /* = "weapon_grenadelauncher" */;
-string globaldef1857 /* = "weapon_lightning" */;
-string globaldef1858 /* = "weapon_touch: unknown classname" */;
-string globaldef1859 /* = "You got the " */;
-string globaldef1860 /* = "weapons/pkup.wav" */;
+string globaldef001852 /* = "weapon_nailgun" */;
+string globaldef001853 /* = "weapon_supernailgun" */;
+string globaldef001854 /* = "weapon_supershotgun" */;
+string globaldef001855 /* = "weapon_rocketlauncher" */;
+string globaldef001856 /* = "weapon_grenadelauncher" */;
+string globaldef001857 /* = "weapon_lightning" */;
+string globaldef001858 /* = "weapon_touch: unknown classname" */;
+string globaldef001859 /* = "You got the " */;
+string globaldef001860 /* = "weapons/pkup.wav" */;
 
 void () weapon_supershotgun;
 
@@ -1555,20 +1555,20 @@ void () weapon_supershotgun;
 
 void () weapon_supershotgun = {
 
-   globaldef453 (globaldef1862);
-   setmodel (self,globaldef1862);
-   self.globaldef132 = IT_SUPER_SHOTGUN;
-   self.globaldef158 = globaldef1863;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef958;
-   self.globaldef532 = globaldef967;
-   self.globaldef530 = globaldef1117;
-   globaldef1796 ();
+   precache_model (globaldef001862);
+   setmodel (self,globaldef001862);
+   self.globaldef000132 = IT_SUPER_SHOTGUN;
+   self.globaldef000158 = globaldef001863;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002310;
+   self.globaldef000532 = func002319;
+   self.globaldef000530 = func002640;
+   StartItem ();
 
 };
-string globaldef1862 /* = "progs/g_shot.mdl" */;
-string globaldef1863 /* = "Double-barrelled Shotgun" */;
+string globaldef001862 /* = "progs/g_shot.mdl" */;
+string globaldef001863 /* = "Double-barrelled Shotgun" */;
 
 void () weapon_nailgun;
 
@@ -1602,20 +1602,20 @@ void () weapon_nailgun;
 
 void () weapon_nailgun = {
 
-   globaldef453 (globaldef1865);
-   setmodel (self,globaldef1865);
-   self.globaldef132 = IT_NAILGUN;
-   self.globaldef158 = globaldef1866;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef956;
-   self.globaldef532 = globaldef968;
-   self.globaldef530 = globaldef1118;
-   globaldef1796 ();
+   precache_model (globaldef001865);
+   setmodel (self,globaldef001865);
+   self.globaldef000132 = IT_NAILGUN;
+   self.globaldef000158 = globaldef001866;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002308;
+   self.globaldef000532 = func002320;
+   self.globaldef000530 = func002641;
+   StartItem ();
 
 };
-string globaldef1865 /* = "progs/g_nail.mdl" */;
-string globaldef1866 /* = "nailgun" */;
+string globaldef001865 /* = "progs/g_nail.mdl" */;
+string globaldef001866 /* = "nailgun" */;
 
 void () weapon_supernailgun;
 
@@ -1649,20 +1649,20 @@ void () weapon_supernailgun;
 
 void () weapon_supernailgun = {
 
-   globaldef453 (globaldef1868);
-   setmodel (self,globaldef1868);
-   self.globaldef132 = IT_SUPER_NAILGUN;
-   self.globaldef158 = globaldef1869;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef957;
-   self.globaldef532 = globaldef969;
-   self.globaldef530 = globaldef1119;
-   globaldef1796 ();
+   precache_model (globaldef001868);
+   setmodel (self,globaldef001868);
+   self.globaldef000132 = IT_SUPER_NAILGUN;
+   self.globaldef000158 = globaldef001869;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002309;
+   self.globaldef000532 = func002321;
+   self.globaldef000530 = func002642;
+   StartItem ();
 
 };
-string globaldef1868 /* = "progs/g_nail2.mdl" */;
-string globaldef1869 /* = "Super Nailgun" */;
+string globaldef001868 /* = "progs/g_nail2.mdl" */;
+string globaldef001869 /* = "Super Nailgun" */;
 
 void () weapon_grenadelauncher;
 
@@ -1696,20 +1696,20 @@ void () weapon_grenadelauncher;
 
 void () weapon_grenadelauncher = {
 
-   globaldef453 (globaldef1871);
-   setmodel (self,globaldef1871);
-   self.globaldef132 = MOVETYPE_WALK;
-   self.globaldef158 = globaldef1872;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef955;
-   self.globaldef532 = globaldef970;
-   self.globaldef530 = globaldef1120;
-   globaldef1796 ();
+   precache_model (globaldef001871);
+   setmodel (self,globaldef001871);
+   self.globaldef000132 = MOVETYPE_WALK;
+   self.globaldef000158 = globaldef001872;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002307;
+   self.globaldef000532 = func002322;
+   self.globaldef000530 = func002643;
+   StartItem ();
 
 };
-string globaldef1871 /* = "progs/g_rock.mdl" */;
-string globaldef1872 /* = "Grenade Launcher" */;
+string globaldef001871 /* = "progs/g_rock.mdl" */;
+string globaldef001872 /* = "Grenade Launcher" */;
 
 void () weapon_rocketlauncher;
 
@@ -1743,20 +1743,20 @@ void () weapon_rocketlauncher;
 
 void () weapon_rocketlauncher = {
 
-   globaldef453 (globaldef1874);
-   setmodel (self,globaldef1874);
-   self.globaldef132 = MOVETYPE_WALK;
-   self.globaldef158 = globaldef1875;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef953;
-   self.globaldef532 = globaldef971;
-   self.globaldef530 = globaldef1121;
-   globaldef1796 ();
+   precache_model (globaldef001874);
+   setmodel (self,globaldef001874);
+   self.globaldef000132 = MOVETYPE_WALK;
+   self.globaldef000158 = globaldef001875;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002305;
+   self.globaldef000532 = func002323;
+   self.globaldef000530 = func002644;
+   StartItem ();
 
 };
-string globaldef1874 /* = "progs/g_rock2.mdl" */;
-string globaldef1875 /* = "Rocket Launcher" */;
+string globaldef001874 /* = "progs/g_rock2.mdl" */;
+string globaldef001875 /* = "Rocket Launcher" */;
 
 void () weapon_lightning;
 
@@ -1790,20 +1790,20 @@ void () weapon_lightning;
 
 void () weapon_lightning = {
 
-   globaldef453 (globaldef1877);
-   setmodel (self,globaldef1877);
-   self.globaldef132 = MOVETYPE_WALK;
-   self.globaldef158 = globaldef1878;
-   self.globaldef124 = globaldef1845;
-   globaldef438 (self,globaldef1832,globaldef1833);
-   self.globaldef531 = globaldef954;
-   self.globaldef532 = globaldef972;
-   self.globaldef530 = globaldef1122;
-   globaldef1796 ();
+   precache_model (globaldef001877);
+   setmodel (self,globaldef001877);
+   self.globaldef000132 = MOVETYPE_WALK;
+   self.globaldef000158 = globaldef001878;
+   self.globaldef000124 = weapon_touch;
+   setsize (self,globaldef001832,globaldef001833);
+   self.globaldef000531 = func002306;
+   self.globaldef000532 = func002324;
+   self.globaldef000530 = func002645;
+   StartItem ();
 
 };
-string globaldef1877 /* = "progs/g_light.mdl" */;
-string globaldef1878 /* = "Thunderbolt" */;
+string globaldef001877 /* = "progs/g_light.mdl" */;
+string globaldef001878 /* = "Thunderbolt" */;
 
 void () ammo_touch;
 
@@ -1951,124 +1951,124 @@ void () ammo_touch;
 
 void () ammo_touch = {
 
-   local entity globaldef1880;
-   local float globaldef1881;
+   local entity stemp;
+   local float best;
 
-   if ( globaldef799 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.classname == globaldef1171) ) {
+   if ( (other.globaldef000107 == globaldef001171) ) {
 
-      globaldef1069 (other,self);
+      func002471 (other,self);
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   globaldef1880 = self;
+   stemp = self;
    self = other;
-   globaldef1881 = globaldef1844 ();
-   self = globaldef1880;
-   if ( (self.globaldef132 == TRUE) ) {
+   best = W_BestWeapon ();
+   self = stemp;
+   if ( (self.globaldef000132 == TRUE) ) {
 
-      if ( (other.globaldef136 >= globaldef1335) ) {
-
-         return ;
-
-      }
-      other.globaldef136 = (other.globaldef136 + self.globaldef407);
-
-   }
-   if ( (self.globaldef132 == FL_SWIM) ) {
-
-      if ( (other.globaldef137 >= globaldef1343) ) {
+      if ( (other.globaldef000136 >= globaldef001335) ) {
 
          return ;
 
       }
-      other.globaldef137 = (other.globaldef137 + self.globaldef407);
+      other.globaldef000136 = (other.globaldef000136 + self.globaldef000407);
 
    }
-   if ( (self.globaldef132 == MOVETYPE_WALK) ) {
+   if ( (self.globaldef000132 == FL_SWIM) ) {
 
-      if ( (other.globaldef138 >= globaldef1335) ) {
+      if ( (other.globaldef000137 >= globaldef001343) ) {
 
          return ;
 
       }
-      other.globaldef138 = (other.globaldef138 + self.globaldef407);
+      other.globaldef000137 = (other.globaldef000137 + self.globaldef000407);
 
    }
-   if ( (self.globaldef132 == MOVETYPE_STEP) ) {
+   if ( (self.globaldef000132 == MOVETYPE_WALK) ) {
 
-      if ( (other.globaldef139 >= globaldef1335) ) {
+      if ( (other.globaldef000138 >= globaldef001335) ) {
 
          return ;
 
       }
-      other.globaldef139 = (other.globaldef139 + self.globaldef407);
+      other.globaldef000138 = (other.globaldef000138 + self.globaldef000407);
 
    }
-   globaldef1836 ();
-   if ( (other.classname == "player") ) {
+   if ( (self.globaldef000132 == MOVETYPE_STEP) ) {
 
-      globaldef887 (other,globaldef1859);
-      globaldef887 (other,self.globaldef158);
-      globaldef887 (other,globaldef1354);
+      if ( (other.globaldef000139 >= globaldef001335) ) {
 
-   }
-   sound (other,CHAN_ITEM,globaldef1882,TRUE,ATTN_NORM);
-   globaldef1058 (other,self.origin,globaldef522,globaldef742);
-   if ( (other.classname == "player") ) {
+         return ;
 
-      globaldef822 (other,globaldef1818);
+      }
+      other.globaldef000139 = (other.globaldef000139 + self.globaldef000407);
 
    }
-   if ( (other.globaldef132 == globaldef1881) ) {
+   bound_other_ammo ();
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef1880 = self;
+      func000092 (other,globaldef001859);
+      func000092 (other,self.globaldef000158);
+      func000092 (other,globaldef001354);
+
+   }
+   sound (other,CHAN_ITEM,globaldef001882,TRUE,ATTN_NORM);
+   func002453 (other,self.globaldef000083,globaldef000522,globaldef000742);
+   if ( (other.globaldef000107 == globaldef001170) ) {
+
+      func000064 (other,globaldef001818);
+
+   }
+   if ( (other.globaldef000132 == best) ) {
+
+      stemp = self;
       self = other;
-      self.globaldef132 = globaldef1844 ();
-      globaldef1788 ();
-      self = globaldef1880;
+      self.globaldef000132 = W_BestWeapon ();
+      W_SetCurrentAmmo ();
+      self = stemp;
 
    }
-   globaldef1880 = self;
+   stemp = self;
    self = other;
-   globaldef1788 ();
-   self = globaldef1880;
-   self.model = string_null;
-   self.solid = SOLID_NOT;
+   W_SetCurrentAmmo ();
+   self = stemp;
+   self.globaldef000108 = string_null;
+   self.globaldef000082 = SOLID_NOT;
    if ( (deathmatch == TRUE) ) {
 
-      self.nextthink = (time + SVC_INTERMISSION);
+      self.globaldef000128 = (time + SVC_INTERMISSION);
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.nextthink = (time + SVC_INTERMISSION);
+      self.globaldef000128 = (time + SVC_INTERMISSION);
 
    }
-   self.think = globaldef1789;
+   self.globaldef000126 = SUB_regen;
    activator = other;
    SUB_UseTargets ();
 
 };
-string globaldef1882 /* = "weapons/lock4.wav" */;
-float globaldef1883 /* = 1.000 */;
+string globaldef001882 /* = "weapons/lock4.wav" */;
+float globaldef001883 /* = 1.000 */;
 
 void () item_shells;
 
@@ -2111,30 +2111,30 @@ void () item_shells;
 
 void () item_shells = {
 
-   self.globaldef124 = globaldef1879;
-   if ( (self.globaldef173 & globaldef1883) ) {
+   self.globaldef000124 = ammo_touch;
+   if ( (self.globaldef000173 & globaldef001883) ) {
 
-      globaldef453 (globaldef1885);
-      setmodel (self,globaldef1885);
-      self.globaldef407 = globaldef729;
+      precache_model (globaldef001885);
+      setmodel (self,globaldef001885);
+      self.globaldef000407 = globaldef000729;
 
    } else {
 
-      globaldef453 (globaldef1886);
-      setmodel (self,globaldef1886);
-      self.globaldef407 = globaldef1384;
+      precache_model (globaldef001886);
+      setmodel (self,globaldef001886);
+      self.globaldef000407 = globaldef001384;
 
    }
-   self.globaldef132 = TRUE;
-   self.globaldef158 = globaldef1887;
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   self.globaldef531 = globaldef950;
-   globaldef1796 ();
+   self.globaldef000132 = TRUE;
+   self.globaldef000158 = globaldef001887;
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   self.globaldef000531 = func002302;
+   StartItem ();
 
 };
-string globaldef1885 /* = "maps/b_shell1.bsp" */;
-string globaldef1886 /* = "maps/b_shell0.bsp" */;
-string globaldef1887 /* = "shells" */;
+string globaldef001885 /* = "maps/b_shell1.bsp" */;
+string globaldef001886 /* = "maps/b_shell0.bsp" */;
+string globaldef001887 /* = "shells" */;
 
 void () item_spikes;
 
@@ -2177,30 +2177,30 @@ void () item_spikes;
 
 void () item_spikes = {
 
-   self.globaldef124 = globaldef1879;
-   if ( (self.globaldef173 & globaldef1883) ) {
+   self.globaldef000124 = ammo_touch;
+   if ( (self.globaldef000173 & globaldef001883) ) {
 
-      globaldef453 (globaldef1889);
-      setmodel (self,globaldef1889);
-      self.globaldef407 = globaldef1257;
+      precache_model (globaldef001889);
+      setmodel (self,globaldef001889);
+      self.globaldef000407 = globaldef001257;
 
    } else {
 
-      globaldef453 (globaldef1890);
-      setmodel (self,globaldef1890);
-      self.globaldef407 = globaldef288;
+      precache_model (globaldef001890);
+      setmodel (self,globaldef001890);
+      self.globaldef000407 = globaldef000288;
 
    }
-   self.globaldef132 = FL_SWIM;
-   self.globaldef158 = globaldef1891;
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   self.globaldef531 = globaldef949;
-   globaldef1796 ();
+   self.globaldef000132 = FL_SWIM;
+   self.globaldef000158 = globaldef001891;
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   self.globaldef000531 = func002301;
+   StartItem ();
 
 };
-string globaldef1889 /* = "maps/b_nail1.bsp" */;
-string globaldef1890 /* = "maps/b_nail0.bsp" */;
-string globaldef1891 /* = "nails" */;
+string globaldef001889 /* = "maps/b_nail1.bsp" */;
+string globaldef001890 /* = "maps/b_nail0.bsp" */;
+string globaldef001891 /* = "nails" */;
 
 void () item_rockets;
 
@@ -2243,30 +2243,30 @@ void () item_rockets;
 
 void () item_rockets = {
 
-   self.globaldef124 = globaldef1879;
-   if ( (self.globaldef173 & globaldef1883) ) {
+   self.globaldef000124 = ammo_touch;
+   if ( (self.globaldef000173 & globaldef001883) ) {
 
-      globaldef453 (globaldef1893);
-      setmodel (self,globaldef1893);
-      self.globaldef407 = MOVETYPE_BOUNCE;
+      precache_model (globaldef001893);
+      setmodel (self,globaldef001893);
+      self.globaldef000407 = MOVETYPE_BOUNCE;
 
    } else {
 
-      globaldef453 (globaldef1894);
-      setmodel (self,globaldef1894);
-      self.globaldef407 = MOVETYPE_FLY;
+      precache_model (globaldef001894);
+      setmodel (self,globaldef001894);
+      self.globaldef000407 = MOVETYPE_FLY;
 
    }
-   self.globaldef132 = MOVETYPE_WALK;
-   self.globaldef158 = globaldef1895;
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   self.globaldef531 = globaldef952;
-   globaldef1796 ();
+   self.globaldef000132 = MOVETYPE_WALK;
+   self.globaldef000158 = globaldef001895;
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   self.globaldef000531 = func002304;
+   StartItem ();
 
 };
-string globaldef1893 /* = "maps/b_rock1.bsp" */;
-string globaldef1894 /* = "maps/b_rock0.bsp" */;
-string globaldef1895 /* = "rockets" */;
+string globaldef001893 /* = "maps/b_rock1.bsp" */;
+string globaldef001894 /* = "maps/b_rock0.bsp" */;
+string globaldef001895 /* = "rockets" */;
 
 void () item_cells;
 
@@ -2309,34 +2309,34 @@ void () item_cells;
 
 void () item_cells = {
 
-   self.globaldef124 = globaldef1879;
-   if ( (self.globaldef173 & globaldef1883) ) {
+   self.globaldef000124 = ammo_touch;
+   if ( (self.globaldef000173 & globaldef001883) ) {
 
-      globaldef453 (globaldef1897);
-      setmodel (self,globaldef1897);
-      self.globaldef407 = globaldef774;
+      precache_model (globaldef001897);
+      setmodel (self,globaldef001897);
+      self.globaldef000407 = globaldef000774;
 
    } else {
 
-      globaldef453 (globaldef1898);
-      setmodel (self,globaldef1898);
-      self.globaldef407 = MOVETYPE_TOSS;
+      precache_model (globaldef001898);
+      setmodel (self,globaldef001898);
+      self.globaldef000407 = MOVETYPE_TOSS;
 
    }
-   self.globaldef132 = MOVETYPE_STEP;
-   self.globaldef158 = globaldef1899;
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   self.globaldef531 = globaldef951;
-   globaldef1796 ();
+   self.globaldef000132 = MOVETYPE_STEP;
+   self.globaldef000158 = globaldef001899;
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   self.globaldef000531 = func002303;
+   StartItem ();
 
 };
-string globaldef1897 /* = "maps/b_batt1.bsp" */;
-string globaldef1898 /* = "maps/b_batt0.bsp" */;
-string globaldef1899 /* = "cells" */;
-float globaldef1900 /* = 1.000 */;
-float globaldef1901 /* = 2.000 */;
-float globaldef1902 /* = 4.000 */;
-float globaldef1903 /* = 8.000 */;
+string globaldef001897 /* = "maps/b_batt1.bsp" */;
+string globaldef001898 /* = "maps/b_batt0.bsp" */;
+string globaldef001899 /* = "cells" */;
+float globaldef001900 /* = 1.000 */;
+float globaldef001901 /* = 2.000 */;
+float globaldef001902 /* = 4.000 */;
+float globaldef001903 /* = 8.000 */;
 
 void () item_weapon;
 
@@ -2430,69 +2430,69 @@ void () item_weapon;
 
 void () item_weapon = {
 
-   self.globaldef124 = globaldef1879;
-   if ( (self.globaldef173 & globaldef1900) ) {
+   self.globaldef000124 = ammo_touch;
+   if ( (self.globaldef000173 & globaldef001900) ) {
 
-      if ( (self.globaldef173 & globaldef1903) ) {
+      if ( (self.globaldef000173 & globaldef001903) ) {
 
-         globaldef453 (globaldef1885);
-         setmodel (self,globaldef1885);
-         self.globaldef407 = globaldef729;
-
-      } else {
-
-         globaldef453 (globaldef1886);
-         setmodel (self,globaldef1886);
-         self.globaldef407 = globaldef1384;
-
-      }
-      self.globaldef132 = TRUE;
-      self.globaldef158 = globaldef1887;
-
-   }
-   if ( (self.globaldef173 & globaldef1902) ) {
-
-      if ( (self.globaldef173 & globaldef1903) ) {
-
-         globaldef453 (globaldef1889);
-         setmodel (self,globaldef1889);
-         self.globaldef407 = globaldef729;
+         precache_model (globaldef001885);
+         setmodel (self,globaldef001885);
+         self.globaldef000407 = globaldef000729;
 
       } else {
 
-         globaldef453 (globaldef1890);
-         setmodel (self,globaldef1890);
-         self.globaldef407 = globaldef1384;
+         precache_model (globaldef001886);
+         setmodel (self,globaldef001886);
+         self.globaldef000407 = globaldef001384;
 
       }
-      self.globaldef132 = FL_SWIM;
-      self.globaldef158 = globaldef1905;
+      self.globaldef000132 = TRUE;
+      self.globaldef000158 = globaldef001887;
 
    }
-   if ( (self.globaldef173 & globaldef1901) ) {
+   if ( (self.globaldef000173 & globaldef001902) ) {
 
-      if ( (self.globaldef173 & globaldef1903) ) {
+      if ( (self.globaldef000173 & globaldef001903) ) {
 
-         globaldef453 (globaldef1893);
-         setmodel (self,globaldef1893);
-         self.globaldef407 = MOVETYPE_BOUNCE;
+         precache_model (globaldef001889);
+         setmodel (self,globaldef001889);
+         self.globaldef000407 = globaldef000729;
 
       } else {
 
-         globaldef453 (globaldef1894);
-         setmodel (self,globaldef1894);
-         self.globaldef407 = MOVETYPE_FLY;
+         precache_model (globaldef001890);
+         setmodel (self,globaldef001890);
+         self.globaldef000407 = globaldef001384;
 
       }
-      self.globaldef132 = MOVETYPE_WALK;
-      self.globaldef158 = globaldef1895;
+      self.globaldef000132 = FL_SWIM;
+      self.globaldef000158 = globaldef001905;
 
    }
-   globaldef438 (self,VEC_ORIGIN,globaldef1813);
-   globaldef1796 ();
+   if ( (self.globaldef000173 & globaldef001901) ) {
+
+      if ( (self.globaldef000173 & globaldef001903) ) {
+
+         precache_model (globaldef001893);
+         setmodel (self,globaldef001893);
+         self.globaldef000407 = MOVETYPE_BOUNCE;
+
+      } else {
+
+         precache_model (globaldef001894);
+         setmodel (self,globaldef001894);
+         self.globaldef000407 = MOVETYPE_FLY;
+
+      }
+      self.globaldef000132 = MOVETYPE_WALK;
+      self.globaldef000158 = globaldef001895;
+
+   }
+   setsize (self,VEC_ORIGIN,globaldef001813);
+   StartItem ();
 
 };
-string globaldef1905 /* = "spikes" */;
+string globaldef001905 /* = "spikes" */;
 
 void () key_touch;
 
@@ -2561,51 +2561,51 @@ void () key_touch;
 
 void () key_touch = {
 
-   local entity globaldef1907;
-   local float globaldef1908;
+   local entity stemp;
+   local float best;
 
-   if ( globaldef799 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   if ( (other.globaldef140 & self.globaldef140) ) {
+   if ( (other.globaldef000140 & self.globaldef000140) ) {
 
       return ;
 
    }
-   if ( (other.classname == "player") ) {
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef887 (other,globaldef1859);
-      globaldef887 (other,self.globaldef158);
-      globaldef887 (other,globaldef1354);
-
-   }
-   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
-   if ( (other.classname == "player") ) {
-
-      globaldef822 (other,globaldef1818);
+      func000092 (other,globaldef001859);
+      func000092 (other,self.globaldef000158);
+      func000092 (other,globaldef001354);
 
    }
-   other.globaldef140 = (other.globaldef140 | self.globaldef140);
+   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
+   if ( (other.globaldef000107 == globaldef001170) ) {
+
+      func000064 (other,globaldef001818);
+
+   }
+   other.globaldef000140 = (other.globaldef000140 | self.globaldef000140);
    if ( !coop ) {
 
-      self.solid = SOLID_NOT;
-      self.model = string_null;
+      self.globaldef000082 = SOLID_NOT;
+      self.globaldef000108 = string_null;
 
    }
    activator = other;
@@ -2646,24 +2646,24 @@ void () key_setsounds;
 
 void () key_setsounds = {
 
-   if ( (world.globaldef340 == FALSE) ) {
+   if ( (world.globaldef000340 == FALSE) ) {
 
-      globaldef452 (globaldef1910);
-      self.noise = globaldef1910;
+      precache_sound (globaldef001910);
+      self.globaldef000186 = globaldef001910;
 
    } else {
 
-      if ( (world.globaldef340 == TRUE) ) {
+      if ( (world.globaldef000340 == TRUE) ) {
 
-         globaldef452 (globaldef1911);
-         self.noise = globaldef1911;
+         precache_sound (globaldef001911);
+         self.globaldef000186 = globaldef001911;
 
       } else {
 
-         if ( (world.globaldef340 == FL_SWIM) ) {
+         if ( (world.globaldef000340 == FL_SWIM) ) {
 
-            globaldef494 (globaldef1912);
-            self.noise = globaldef1912;
+            precache_sound2 (globaldef001912);
+            self.globaldef000186 = globaldef001912;
 
          }
 
@@ -2672,9 +2672,9 @@ void () key_setsounds = {
    }
 
 };
-string globaldef1910 /* = "misc/medkey.wav" */;
-string globaldef1911 /* = "misc/runekey.wav" */;
-string globaldef1912 /* = "misc/basekey.wav" */;
+string globaldef001910 /* = "misc/medkey.wav" */;
+string globaldef001911 /* = "misc/runekey.wav" */;
+string globaldef001912 /* = "misc/basekey.wav" */;
 
 void () item_key1;
 
@@ -2728,46 +2728,46 @@ void () item_key1;
 
 void () item_key1 = {
 
-   if ( (world.globaldef340 == FALSE) ) {
+   if ( (world.globaldef000340 == FALSE) ) {
 
-      globaldef453 (globaldef1914);
-      setmodel (self,globaldef1914);
-      self.globaldef158 = globaldef1915;
+      precache_model (globaldef001914);
+      setmodel (self,globaldef001914);
+      self.globaldef000158 = globaldef001915;
 
    } else {
 
-      if ( (world.globaldef340 == TRUE) ) {
+      if ( (world.globaldef000340 == TRUE) ) {
 
-         globaldef453 (globaldef1916);
-         setmodel (self,globaldef1916);
-         self.globaldef158 = globaldef1917;
+         precache_model (globaldef001916);
+         setmodel (self,globaldef001916);
+         self.globaldef000158 = globaldef001917;
 
       } else {
 
-         if ( (world.globaldef340 == FL_SWIM) ) {
+         if ( (world.globaldef000340 == FL_SWIM) ) {
 
-            globaldef493 (globaldef1918);
-            setmodel (self,globaldef1918);
-            self.globaldef158 = globaldef1919;
+            precache_model2 (globaldef001918);
+            setmodel (self,globaldef001918);
+            self.globaldef000158 = globaldef001919;
 
          }
 
       }
 
    }
-   globaldef1909 ();
-   self.globaldef124 = globaldef1906;
-   self.globaldef140 = IT_KEY1;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   globaldef1796 ();
+   key_setsounds ();
+   self.globaldef000124 = key_touch;
+   self.globaldef000140 = IT_KEY1;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   StartItem ();
 
 };
-string globaldef1914 /* = "progs/w_s_key.mdl" */;
-string globaldef1915 /* = "silver key" */;
-string globaldef1916 /* = "progs/m_s_key.mdl" */;
-string globaldef1917 /* = "silver runekey" */;
-string globaldef1918 /* = "progs/b_s_key.mdl" */;
-string globaldef1919 /* = "silver keycard" */;
+string globaldef001914 /* = "progs/w_s_key.mdl" */;
+string globaldef001915 /* = "silver key" */;
+string globaldef001916 /* = "progs/m_s_key.mdl" */;
+string globaldef001917 /* = "silver runekey" */;
+string globaldef001918 /* = "progs/b_s_key.mdl" */;
+string globaldef001919 /* = "silver keycard" */;
 
 void () item_key2;
 
@@ -2821,46 +2821,46 @@ void () item_key2;
 
 void () item_key2 = {
 
-   if ( (world.globaldef340 == FALSE) ) {
+   if ( (world.globaldef000340 == FALSE) ) {
 
-      globaldef453 (globaldef1921);
-      setmodel (self,globaldef1921);
-      self.globaldef158 = globaldef1922;
+      precache_model (globaldef001921);
+      setmodel (self,globaldef001921);
+      self.globaldef000158 = globaldef001922;
 
    } else {
 
-      if ( (world.globaldef340 == TRUE) ) {
+      if ( (world.globaldef000340 == TRUE) ) {
 
-         globaldef453 (globaldef1923);
-         setmodel (self,globaldef1923);
-         self.globaldef158 = globaldef1924;
+         precache_model (globaldef001923);
+         setmodel (self,globaldef001923);
+         self.globaldef000158 = globaldef001924;
 
       } else {
 
-         if ( (world.globaldef340 == FL_SWIM) ) {
+         if ( (world.globaldef000340 == FL_SWIM) ) {
 
-            globaldef493 (globaldef1925);
-            setmodel (self,globaldef1925);
-            self.globaldef158 = globaldef1926;
+            precache_model2 (globaldef001925);
+            setmodel (self,globaldef001925);
+            self.globaldef000158 = globaldef001926;
 
          }
 
       }
 
    }
-   globaldef1909 ();
-   self.globaldef124 = globaldef1906;
-   self.globaldef140 = IT_KEY2;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   globaldef1796 ();
+   key_setsounds ();
+   self.globaldef000124 = key_touch;
+   self.globaldef000140 = IT_KEY2;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   StartItem ();
 
 };
-string globaldef1921 /* = "progs/w_g_key.mdl" */;
-string globaldef1922 /* = "gold key" */;
-string globaldef1923 /* = "progs/m_g_key.mdl" */;
-string globaldef1924 /* = "gold runekey" */;
-string globaldef1925 /* = "progs/b_g_key.mdl" */;
-string globaldef1926 /* = "gold keycard" */;
+string globaldef001921 /* = "progs/w_g_key.mdl" */;
+string globaldef001922 /* = "gold key" */;
+string globaldef001923 /* = "progs/m_g_key.mdl" */;
+string globaldef001924 /* = "gold runekey" */;
+string globaldef001925 /* = "progs/b_g_key.mdl" */;
+string globaldef001926 /* = "gold keycard" */;
 
 void () sigil_touch;
 
@@ -2907,36 +2907,36 @@ void () sigil_touch;
 
 void () sigil_touch = {
 
-   local entity globaldef1928;
-   local float globaldef1929;
+   local entity stemp;
+   local float best;
 
-   if ( globaldef799 ) {
-
-      return ;
-
-   }
-   if ( (other.classname != "player") ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
       return ;
 
    }
-   centerprint (other,globaldef1930);
-   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
-   globaldef822 (other,globaldef1818);
-   self.solid = SOLID_NOT;
-   self.model = string_null;
-   serverflags = (serverflags | (self.globaldef173 & globaldef748));
-   self.classname = "";
+   if ( (other.globaldef000130 <= FALSE) ) {
+
+      return ;
+
+   }
+   func000072 (other,globaldef001930);
+   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
+   func000064 (other,globaldef001818);
+   self.globaldef000082 = SOLID_NOT;
+   self.globaldef000108 = string_null;
+   serverflags = (serverflags | (self.globaldef000173 & globaldef000748));
+   self.globaldef000107 = globaldef001466;
    activator = other;
    SUB_UseTargets ();
 
 };
-string globaldef1930 /* = "You got the rune!" */;
+string globaldef001930 /* = "You got the rune!" */;
 
 void () item_sigil;
 
@@ -2996,47 +2996,47 @@ void () item_sigil;
 
 void () item_sigil = {
 
-   if ( !self.globaldef173 ) {
+   if ( !self.globaldef000173 ) {
 
-      objerror (globaldef1932);
-
-   }
-   globaldef452 (globaldef1911);
-   self.noise = globaldef1911;
-   if ( (self.globaldef173 & TRUE) ) {
-
-      globaldef453 (globaldef1933);
-      setmodel (self,globaldef1933);
+      objerror (globaldef001932);
 
    }
-   if ( (self.globaldef173 & FL_SWIM) ) {
+   precache_sound (globaldef001911);
+   self.globaldef000186 = globaldef001911;
+   if ( (self.globaldef000173 & TRUE) ) {
 
-      globaldef493 (globaldef1934);
-      setmodel (self,globaldef1934);
-
-   }
-   if ( (self.globaldef173 & MOVETYPE_STEP) ) {
-
-      globaldef493 (globaldef1935);
-      setmodel (self,globaldef1935);
+      precache_model (globaldef001933);
+      setmodel (self,globaldef001933);
 
    }
-   if ( (self.globaldef173 & FL_CLIENT) ) {
+   if ( (self.globaldef000173 & FL_SWIM) ) {
 
-      globaldef493 (globaldef1936);
-      setmodel (self,globaldef1936);
+      precache_model2 (globaldef001934);
+      setmodel (self,globaldef001934);
 
    }
-   self.globaldef124 = globaldef1927;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   globaldef1796 ();
+   if ( (self.globaldef000173 & MOVETYPE_STEP) ) {
+
+      precache_model2 (globaldef001935);
+      setmodel (self,globaldef001935);
+
+   }
+   if ( (self.globaldef000173 & FL_CLIENT) ) {
+
+      precache_model2 (globaldef001936);
+      setmodel (self,globaldef001936);
+
+   }
+   self.globaldef000124 = sigil_touch;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   StartItem ();
 
 };
-string globaldef1932 /* = "no spawnflags" */;
-string globaldef1933 /* = "progs/end1.mdl" */;
-string globaldef1934 /* = "progs/end2.mdl" */;
-string globaldef1935 /* = "progs/end3.mdl" */;
-string globaldef1936 /* = "progs/end4.mdl" */;
+string globaldef001932 /* = "no spawnflags" */;
+string globaldef001933 /* = "progs/end1.mdl" */;
+string globaldef001934 /* = "progs/end2.mdl" */;
+string globaldef001935 /* = "progs/end3.mdl" */;
+string globaldef001936 /* = "progs/end4.mdl" */;
 
 void () powerup_touch;
 
@@ -3162,101 +3162,101 @@ void () powerup_touch;
 
 void () powerup_touch = {
 
-   local entity globaldef1938;
-   local float globaldef1939;
+   local entity stemp;
+   local float best;
 
-   if ( globaldef799 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   if ( (other.globaldef558 & globaldef686) ) {
+   if ( (other.globaldef000558 & globaldef000686) ) {
 
-      globaldef1136 (other,self);
-
-   }
-   if ( (other.classname == globaldef1171) ) {
-
-      globaldef1069 (other,self);
+      func002686 (other,self);
 
    }
-   if ( (other.classname == "player") ) {
+   if ( (other.globaldef000107 == globaldef001171) ) {
 
-      globaldef887 (other,globaldef1859);
-      globaldef887 (other,self.globaldef158);
-      globaldef887 (other,globaldef1354);
+      func002471 (other,self);
+
+   }
+   if ( (other.globaldef000107 == globaldef001170) ) {
+
+      func000092 (other,globaldef001859);
+      func000092 (other,self.globaldef000158);
+      func000092 (other,globaldef001354);
 
    }
    if ( deathmatch ) {
 
-      self.globaldef382 = self.model;
-      if ( ((self.classname == globaldef1940) || (self.classname == globaldef1941)) ) {
+      self.globaldef000382 = self.globaldef000108;
+      if ( ((self.globaldef000107 == globaldef001940) || (self.globaldef000107 == globaldef001941)) ) {
 
-         self.nextthink = (time + (globaldef1337 * MOVETYPE_FLY));
+         self.globaldef000128 = (time + (globaldef001337 * MOVETYPE_FLY));
 
       } else {
 
-         self.nextthink = (time + globaldef1337);
+         self.globaldef000128 = (time + globaldef001337);
 
       }
-      self.think = globaldef1789;
+      self.globaldef000126 = SUB_regen;
 
    }
-   sound (other,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
-   if ( (other.classname == "player") ) {
+   sound (other,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+   if ( (other.globaldef000107 == globaldef001170) ) {
 
-      globaldef822 (other,globaldef1818);
-
-   }
-   self.solid = SOLID_NOT;
-   other.globaldef140 = (other.globaldef140 | self.globaldef140);
-   self.model = string_null;
-   if ( (self.classname == globaldef1942) ) {
-
-      other.globaldef373 = TRUE;
-      other.globaldef366 = (time + SVC_INTERMISSION);
+      func000064 (other,globaldef001818);
 
    }
-   if ( (self.classname == globaldef1940) ) {
+   self.globaldef000082 = SOLID_NOT;
+   other.globaldef000140 = (other.globaldef000140 | self.globaldef000140);
+   self.globaldef000108 = string_null;
+   if ( (self.globaldef000107 == globaldef001942) ) {
 
-      other.globaldef367 = TRUE;
-      other.globaldef363 = (time + SVC_INTERMISSION);
-
-   }
-   if ( (self.classname == globaldef1941) ) {
-
-      other.globaldef369 = TRUE;
-      other.globaldef364 = (time + SVC_INTERMISSION);
+      other.globaldef000373 = TRUE;
+      other.globaldef000366 = (time + SVC_INTERMISSION);
 
    }
-   if ( (self.classname == globaldef1943) ) {
+   if ( (self.globaldef000107 == globaldef001940) ) {
 
-      other.globaldef371 = TRUE;
-      other.globaldef365 = (time + SVC_INTERMISSION);
+      other.globaldef000367 = TRUE;
+      other.globaldef000363 = (time + SVC_INTERMISSION);
+
+   }
+   if ( (self.globaldef000107 == globaldef001941) ) {
+
+      other.globaldef000369 = TRUE;
+      other.globaldef000364 = (time + SVC_INTERMISSION);
+
+   }
+   if ( (self.globaldef000107 == globaldef001943) ) {
+
+      other.globaldef000371 = TRUE;
+      other.globaldef000365 = (time + SVC_INTERMISSION);
 
    }
    activator = other;
    SUB_UseTargets ();
 
 };
-string globaldef1940 /* = "item_artifact_invulnerability" */;
-string globaldef1941 /* = "item_artifact_invisibility" */;
-string globaldef1942 /* = "item_artifact_envirosuit" */;
-string globaldef1943 /* = "item_artifact_super_damage" */;
+string globaldef001940 /* = "item_artifact_invulnerability" */;
+string globaldef001941 /* = "item_artifact_invisibility" */;
+string globaldef001942 /* = "item_artifact_envirosuit" */;
+string globaldef001943 /* = "item_artifact_super_damage" */;
 
 void () item_artifact_invulnerability;
 
@@ -3298,26 +3298,26 @@ void () item_artifact_invulnerability;
 
 void () item_artifact_invulnerability = {
 
-   self.globaldef124 = globaldef1937;
-   globaldef453 (globaldef1945);
-   globaldef452 (globaldef1946);
-   globaldef452 (globaldef1947);
-   globaldef452 (globaldef1771);
-   self.noise = globaldef1946;
-   setmodel (self,globaldef1945);
-   self.globaldef158 = globaldef1948;
-   self.globaldef140 = IT_INVULNERABILITY;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef531 = globaldef965;
-   self.globaldef532 = globaldef977;
-   self.globaldef530 = globaldef1124;
-   globaldef1796 ();
+   self.globaldef000124 = powerup_touch;
+   precache_model (globaldef001945);
+   precache_sound (globaldef001946);
+   precache_sound (globaldef001947);
+   precache_sound (globaldef001771);
+   self.globaldef000186 = globaldef001946;
+   setmodel (self,globaldef001945);
+   self.globaldef000158 = globaldef001948;
+   self.globaldef000140 = IT_INVULNERABILITY;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   self.globaldef000531 = func002317;
+   self.globaldef000532 = func002329;
+   self.globaldef000530 = func002647;
+   StartItem ();
 
 };
-string globaldef1945 /* = "progs/invulner.mdl" */;
-string globaldef1946 /* = "items/protect.wav" */;
-string globaldef1947 /* = "items/protect2.wav" */;
-string globaldef1948 /* = "Pentagram of Protection" */;
+string globaldef001945 /* = "progs/invulner.mdl" */;
+string globaldef001946 /* = "items/protect.wav" */;
+string globaldef001947 /* = "items/protect2.wav" */;
+string globaldef001948 /* = "Pentagram of Protection" */;
 
 void () item_artifact_envirosuit;
 
@@ -3353,23 +3353,23 @@ void () item_artifact_envirosuit;
 
 void () item_artifact_envirosuit = {
 
-   self.globaldef124 = globaldef1937;
-   globaldef453 (globaldef1950);
-   globaldef452 (globaldef1951);
-   globaldef452 (globaldef1952);
-   self.noise = globaldef1951;
-   setmodel (self,globaldef1950);
-   self.globaldef158 = globaldef1953;
-   self.globaldef140 = IT_SUIT;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef531 = globaldef962;
-   globaldef1796 ();
+   self.globaldef000124 = powerup_touch;
+   precache_model (globaldef001950);
+   precache_sound (globaldef001951);
+   precache_sound (globaldef001952);
+   self.globaldef000186 = globaldef001951;
+   setmodel (self,globaldef001950);
+   self.globaldef000158 = globaldef001953;
+   self.globaldef000140 = IT_SUIT;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   self.globaldef000531 = func002314;
+   StartItem ();
 
 };
-string globaldef1950 /* = "progs/suit.mdl" */;
-string globaldef1951 /* = "items/suit.wav" */;
-string globaldef1952 /* = "items/suit2.wav" */;
-string globaldef1953 /* = "Biosuit" */;
+string globaldef001950 /* = "progs/suit.mdl" */;
+string globaldef001951 /* = "items/suit.wav" */;
+string globaldef001952 /* = "items/suit2.wav" */;
+string globaldef001953 /* = "Biosuit" */;
 
 void () item_artifact_invisibility;
 
@@ -3411,27 +3411,27 @@ void () item_artifact_invisibility;
 
 void () item_artifact_invisibility = {
 
-   self.globaldef124 = globaldef1937;
-   globaldef453 (globaldef1955);
-   globaldef452 (globaldef1956);
-   globaldef452 (globaldef1957);
-   globaldef452 (globaldef1958);
-   self.noise = globaldef1956;
-   setmodel (self,globaldef1955);
-   self.globaldef158 = globaldef1959;
-   self.globaldef140 = IT_INVISIBILITY;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef531 = globaldef963;
-   self.globaldef532 = globaldef975;
-   self.globaldef530 = globaldef1124;
-   globaldef1796 ();
+   self.globaldef000124 = powerup_touch;
+   precache_model (globaldef001955);
+   precache_sound (globaldef001956);
+   precache_sound (globaldef001957);
+   precache_sound (globaldef001958);
+   self.globaldef000186 = globaldef001956;
+   setmodel (self,globaldef001955);
+   self.globaldef000158 = globaldef001959;
+   self.globaldef000140 = IT_INVISIBILITY;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   self.globaldef000531 = func002315;
+   self.globaldef000532 = func002327;
+   self.globaldef000530 = func002647;
+   StartItem ();
 
 };
-string globaldef1955 /* = "progs/invisibl.mdl" */;
-string globaldef1956 /* = "items/inv1.wav" */;
-string globaldef1957 /* = "items/inv2.wav" */;
-string globaldef1958 /* = "items/inv3.wav" */;
-string globaldef1959 /* = "Ring of Shadows" */;
+string globaldef001955 /* = "progs/invisibl.mdl" */;
+string globaldef001956 /* = "items/inv1.wav" */;
+string globaldef001957 /* = "items/inv2.wav" */;
+string globaldef001958 /* = "items/inv3.wav" */;
+string globaldef001959 /* = "Ring of Shadows" */;
 
 void () item_artifact_super_damage;
 
@@ -3473,19 +3473,19 @@ void () item_artifact_super_damage;
 
 void () item_artifact_super_damage = {
 
-   self.globaldef124 = globaldef1937;
-   globaldef453 (globaldef1961);
-   globaldef452 (globaldef1962);
-   globaldef452 (globaldef1963);
-   globaldef452 (globaldef1964);
-   self.noise = globaldef1962;
-   setmodel (self,globaldef1961);
-   self.globaldef158 = globaldef1965;
-   self.globaldef140 = IT_QUAD;
-   globaldef438 (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef531 = globaldef964;
-   self.globaldef532 = globaldef976;
-   self.globaldef530 = globaldef1124;
-   globaldef1796 ();
+   self.globaldef000124 = powerup_touch;
+   precache_model (globaldef001961);
+   precache_sound (globaldef001962);
+   precache_sound (globaldef001963);
+   precache_sound (globaldef001964);
+   self.globaldef000186 = globaldef001962;
+   setmodel (self,globaldef001961);
+   self.globaldef000158 = globaldef001965;
+   self.globaldef000140 = IT_QUAD;
+   setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
+   self.globaldef000531 = func002316;
+   self.globaldef000532 = func002328;
+   self.globaldef000530 = func002647;
+   StartItem ();
 
 };

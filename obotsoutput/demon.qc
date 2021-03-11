@@ -11,9 +11,9 @@ void () demon1_stand1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand1 = [ 0.000, globaldef3830 ] {
+void () demon1_stand1 = [ 0.000, demon1_stand2 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -27,9 +27,9 @@ void () demon1_stand2;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand2 = [ 1.000, globaldef3831 ] {
+void () demon1_stand2 = [ 1.000, demon1_stand3 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -43,9 +43,9 @@ void () demon1_stand3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand3 = [ 2.000, globaldef3832 ] {
+void () demon1_stand3 = [ 2.000, demon1_stand4 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -59,9 +59,9 @@ void () demon1_stand4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand4 = [ 3.000, globaldef3833 ] {
+void () demon1_stand4 = [ 3.000, demon1_stand5 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -75,9 +75,9 @@ void () demon1_stand5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand5 = [ 4.000, globaldef3834 ] {
+void () demon1_stand5 = [ 4.000, demon1_stand6 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -91,9 +91,9 @@ void () demon1_stand6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand6 = [ 5.000, globaldef3835 ] {
+void () demon1_stand6 = [ 5.000, demon1_stand7 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -107,9 +107,9 @@ void () demon1_stand7;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand7 = [ 6.000, globaldef3836 ] {
+void () demon1_stand7 = [ 6.000, demon1_stand8 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -123,9 +123,9 @@ void () demon1_stand8;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand8 = [ 7.000, globaldef3837 ] {
+void () demon1_stand8 = [ 7.000, demon1_stand9 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -139,9 +139,9 @@ void () demon1_stand9;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand9 = [ 8.000, globaldef3838 ] {
+void () demon1_stand9 = [ 8.000, demon1_stand10 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -155,9 +155,9 @@ void () demon1_stand10;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand10 = [ 9.000, globaldef3839 ] {
+void () demon1_stand10 = [ 9.000, demon1_stand11 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -171,9 +171,9 @@ void () demon1_stand11;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand11 = [ 10.000, globaldef3840 ] {
+void () demon1_stand11 = [ 10.000, demon1_stand12 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -187,9 +187,9 @@ void () demon1_stand12;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand12 = [ 11.000, globaldef3841 ] {
+void () demon1_stand12 = [ 11.000, demon1_stand13 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -203,9 +203,9 @@ void () demon1_stand13;
  * OP_DONE	0	0	0
  */
 
-void () demon1_stand13 = [ 12.000, globaldef3829 ] {
+void () demon1_stand13 = [ 12.000, demon1_stand1 ] {
 
-   globaldef1709 ();
+   ai_stand ();
 
 };
 
@@ -229,19 +229,19 @@ void () demon1_walk1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk1 = [ 13.000, globaldef3843 ] {
+void () demon1_walk1 = [ 13.000, demon1_walk2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3844,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003844,TRUE,ATTN_IDLE);
 
    }
-   globaldef1702 (FL_CLIENT);
+   ai_walk (FL_CLIENT);
 
 };
 
 void () demon1_walk2;
-string globaldef3844 /* = "demon/idle1.wav" */;
+string globaldef003844 /* = "demon/idle1.wav" */;
 
 // function demon1_walk2
 // function number 826 begins at statement 19147
@@ -252,9 +252,9 @@ string globaldef3844 /* = "demon/idle1.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk2 = [ 14.000, globaldef3845 ] {
+void () demon1_walk2 = [ 14.000, demon1_walk3 ] {
 
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
@@ -269,9 +269,9 @@ void () demon1_walk3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk3 = [ 15.000, globaldef3846 ] {
+void () demon1_walk3 = [ 15.000, demon1_walk4 ] {
 
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
@@ -286,9 +286,9 @@ void () demon1_walk4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk4 = [ 16.000, globaldef3847 ] {
+void () demon1_walk4 = [ 16.000, demon1_walk5 ] {
 
-   globaldef1702 (MOVETYPE_PUSH);
+   ai_walk (MOVETYPE_PUSH);
 
 };
 
@@ -303,9 +303,9 @@ void () demon1_walk5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk5 = [ 17.000, globaldef3848 ] {
+void () demon1_walk5 = [ 17.000, demon1_walk6 ] {
 
-   globaldef1702 (MOVETYPE_STEP);
+   ai_walk (MOVETYPE_STEP);
 
 };
 
@@ -320,9 +320,9 @@ void () demon1_walk6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk6 = [ 18.000, globaldef3849 ] {
+void () demon1_walk6 = [ 18.000, demon1_walk7 ] {
 
-   globaldef1702 (MOVETYPE_TOSS);
+   ai_walk (MOVETYPE_TOSS);
 
 };
 
@@ -337,9 +337,9 @@ void () demon1_walk7;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk7 = [ 19.000, globaldef3850 ] {
+void () demon1_walk7 = [ 19.000, demon1_walk8 ] {
 
-   globaldef1702 (MOVETYPE_BOUNCE);
+   ai_walk (MOVETYPE_BOUNCE);
 
 };
 
@@ -354,9 +354,9 @@ void () demon1_walk8;
  * OP_DONE	0	0	0
  */
 
-void () demon1_walk8 = [ 20.000, globaldef3842 ] {
+void () demon1_walk8 = [ 20.000, demon1_walk1 ] {
 
-   globaldef1702 (MOVETYPE_BOUNCE);
+   ai_walk (MOVETYPE_BOUNCE);
 
 };
 
@@ -380,14 +380,14 @@ void () demon1_run1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run1 = [ 21.000, globaldef3852 ] {
+void () demon1_run1 = [ 21.000, demon1_run2 ] {
 
-   if ( (globaldef440 () < globaldef1553) ) {
+   if ( (random () < globaldef001553) ) {
 
-      sound (self,CHAN_VOICE,globaldef3844,TRUE,ATTN_IDLE);
+      sound (self,CHAN_VOICE,globaldef003844,TRUE,ATTN_IDLE);
 
    }
-   globaldef1734 (globaldef1384);
+   ai_run (globaldef001384);
 
 };
 
@@ -402,9 +402,9 @@ void () demon1_run2;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run2 = [ 22.000, globaldef3853 ] {
+void () demon1_run2 = [ 22.000, demon1_run3 ] {
 
-   globaldef1734 (globaldef748);
+   ai_run (globaldef000748);
 
 };
 
@@ -419,9 +419,9 @@ void () demon1_run3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run3 = [ 23.000, globaldef3854 ] {
+void () demon1_run3 = [ 23.000, demon1_run4 ] {
 
-   globaldef1734 (globaldef3146);
+   ai_run (globaldef003146);
 
 };
 
@@ -436,9 +436,9 @@ void () demon1_run4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run4 = [ 24.000, globaldef3855 ] {
+void () demon1_run4 = [ 24.000, demon1_run5 ] {
 
-   globaldef1734 (globaldef1384);
+   ai_run (globaldef001384);
 
 };
 
@@ -453,9 +453,9 @@ void () demon1_run5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run5 = [ 25.000, globaldef3856 ] {
+void () demon1_run5 = [ 25.000, demon1_run6 ] {
 
-   globaldef1734 (globaldef748);
+   ai_run (globaldef000748);
 
 };
 
@@ -470,9 +470,9 @@ void () demon1_run6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_run6 = [ 26.000, globaldef3851 ] {
+void () demon1_run6 = [ 26.000, demon1_run1 ] {
 
-   globaldef1734 (globaldef3146);
+   ai_run (globaldef003146);
 
 };
 
@@ -486,9 +486,9 @@ void () demon1_jump1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump1 = [ 27.000, globaldef3858 ] {
+void () demon1_jump1 = [ 27.000, demon1_jump2 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -502,9 +502,9 @@ void () demon1_jump2;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump2 = [ 28.000, globaldef3859 ] {
+void () demon1_jump2 = [ 28.000, demon1_jump3 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -518,9 +518,9 @@ void () demon1_jump3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump3 = [ 29.000, globaldef3860 ] {
+void () demon1_jump3 = [ 29.000, demon1_jump4 ] {
 
-   globaldef1533 ();
+   ai_face ();
 
 };
 
@@ -554,23 +554,23 @@ void () demon1_jump4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump4 = [ 30.000, globaldef3861 ] {
+void () demon1_jump4 = [ 30.000, demon1_jump5 ] {
 
-   globaldef1533 ();
-   self.globaldef124 = globaldef3828;
-   makevectors (self.angles);
-   self.globaldef86 = (self.globaldef86 + TRUE);
-   self.velocity = ((v_forward * globaldef723) + globaldef3862);
-   if ( (self.globaldef160 & FL_ONGROUND) ) {
+   ai_face ();
+   self.globaldef000124 = Demon_JumpTouch;
+   makevectors (self.globaldef000095);
+   self.globaldef000086 = (self.globaldef000086 + TRUE);
+   self.globaldef000091 = ((v_forward * globaldef000723) + globaldef003862);
+   if ( (self.globaldef000160 & FL_ONGROUND) ) {
 
-      self.globaldef160 = (self.globaldef160 - FL_ONGROUND);
+      self.globaldef000160 = (self.globaldef000160 - FL_ONGROUND);
 
    }
 
 };
 
 void () demon1_jump5;
-vector globaldef3862 /* = '0.000 0.000 250.000' */;
+vector globaldef003862 /* = '0.000 0.000 250.000' */;
 
 // function demon1_jump5
 // function number 843 begins at statement 19240
@@ -579,7 +579,7 @@ vector globaldef3862 /* = '0.000 0.000 250.000' */;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump5 = [ 31.000, globaldef3863 ] {
+void () demon1_jump5 = [ 31.000, demon1_jump6 ] {
 
 
 };
@@ -593,7 +593,7 @@ void () demon1_jump6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump6 = [ 32.000, globaldef3864 ] {
+void () demon1_jump6 = [ 32.000, demon1_jump7 ] {
 
 
 };
@@ -607,7 +607,7 @@ void () demon1_jump7;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump7 = [ 33.000, globaldef3865 ] {
+void () demon1_jump7 = [ 33.000, demon1_jump8 ] {
 
 
 };
@@ -621,7 +621,7 @@ void () demon1_jump8;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump8 = [ 34.000, globaldef3866 ] {
+void () demon1_jump8 = [ 34.000, demon1_jump9 ] {
 
 
 };
@@ -635,7 +635,7 @@ void () demon1_jump9;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump9 = [ 35.000, globaldef3867 ] {
+void () demon1_jump9 = [ 35.000, demon1_jump10 ] {
 
 
 };
@@ -652,9 +652,9 @@ void () demon1_jump10;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump10 = [ 36.000, globaldef3857 ] {
+void () demon1_jump10 = [ 36.000, demon1_jump1 ] {
 
-   self.nextthink = (time + MOVETYPE_WALK);
+   self.globaldef000128 = (time + MOVETYPE_WALK);
 
 };
 
@@ -667,7 +667,7 @@ void () demon1_jump11;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump11 = [ 37.000, globaldef3869 ] {
+void () demon1_jump11 = [ 37.000, demon1_jump12 ] {
 
 
 };
@@ -681,7 +681,7 @@ void () demon1_jump12;
  * OP_DONE	0	0	0
  */
 
-void () demon1_jump12 = [ 38.000, globaldef3851 ] {
+void () demon1_jump12 = [ 38.000, demon1_run1 ] {
 
 
 };
@@ -697,9 +697,9 @@ void () demon1_atta1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta1 = [ 54.000, globaldef3871 ] {
+void () demon1_atta1 = [ 54.000, demon1_atta2 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -714,9 +714,9 @@ void () demon1_atta2;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta2 = [ 55.000, globaldef3872 ] {
+void () demon1_atta2 = [ 55.000, demon1_atta3 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -731,9 +731,9 @@ void () demon1_atta3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta3 = [ 56.000, globaldef3873 ] {
+void () demon1_atta3 = [ 56.000, demon1_atta4 ] {
 
-   globaldef1557 (FALSE);
+   ai_charge (FALSE);
 
 };
 
@@ -748,9 +748,9 @@ void () demon1_atta4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta4 = [ 57.000, globaldef3874 ] {
+void () demon1_atta4 = [ 57.000, demon1_atta5 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -767,10 +767,10 @@ void () demon1_atta5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta5 = [ 58.000, globaldef3875 ] {
+void () demon1_atta5 = [ 58.000, demon1_atta6 ] {
 
-   globaldef1557 (FL_SWIM);
-   globaldef1531 (globaldef1343);
+   ai_charge (FL_SWIM);
+   Demon_Melee (globaldef001343);
 
 };
 
@@ -785,9 +785,9 @@ void () demon1_atta6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta6 = [ 59.000, globaldef3876 ] {
+void () demon1_atta6 = [ 59.000, demon1_atta7 ] {
 
-   globaldef1557 (TRUE);
+   ai_charge (TRUE);
 
 };
 
@@ -802,9 +802,9 @@ void () demon1_atta7;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta7 = [ 60.000, globaldef3877 ] {
+void () demon1_atta7 = [ 60.000, demon1_atta8 ] {
 
-   globaldef1557 (MOVETYPE_TOSS);
+   ai_charge (MOVETYPE_TOSS);
 
 };
 
@@ -819,9 +819,9 @@ void () demon1_atta8;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta8 = [ 61.000, globaldef3878 ] {
+void () demon1_atta8 = [ 61.000, demon1_atta9 ] {
 
-   globaldef1557 (FL_CLIENT);
+   ai_charge (FL_CLIENT);
 
 };
 
@@ -836,9 +836,9 @@ void () demon1_atta9;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta9 = [ 62.000, globaldef3879 ] {
+void () demon1_atta9 = [ 62.000, demon1_atta10 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -853,9 +853,9 @@ void () demon1_atta10;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta10 = [ 63.000, globaldef3880 ] {
+void () demon1_atta10 = [ 63.000, demon1_atta11 ] {
 
-   globaldef1557 (FL_SWIM);
+   ai_charge (FL_SWIM);
 
 };
 
@@ -870,9 +870,9 @@ void () demon1_atta11;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta11 = [ 64.000, globaldef3881 ] {
+void () demon1_atta11 = [ 64.000, demon1_atta12 ] {
 
-   globaldef1531 (globaldef3183);
+   Demon_Melee (globaldef003183);
 
 };
 
@@ -887,9 +887,9 @@ void () demon1_atta12;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta12 = [ 65.000, globaldef3882 ] {
+void () demon1_atta12 = [ 65.000, demon1_atta13 ] {
 
-   globaldef1557 (MOVETYPE_FLY);
+   ai_charge (MOVETYPE_FLY);
 
 };
 
@@ -904,9 +904,9 @@ void () demon1_atta13;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta13 = [ 66.000, globaldef3883 ] {
+void () demon1_atta13 = [ 66.000, demon1_atta14 ] {
 
-   globaldef1557 (FL_CLIENT);
+   ai_charge (FL_CLIENT);
 
 };
 
@@ -921,9 +921,9 @@ void () demon1_atta14;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta14 = [ 67.000, globaldef3884 ] {
+void () demon1_atta14 = [ 67.000, demon1_atta15 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -938,9 +938,9 @@ void () demon1_atta15;
  * OP_DONE	0	0	0
  */
 
-void () demon1_atta15 = [ 68.000, globaldef3851 ] {
+void () demon1_atta15 = [ 68.000, demon1_run1 ] {
 
-   globaldef1557 (MOVETYPE_STEP);
+   ai_charge (MOVETYPE_STEP);
 
 };
 
@@ -953,7 +953,7 @@ void () demon1_pain1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain1 = [ 39.000, globaldef3886 ] {
+void () demon1_pain1 = [ 39.000, demon1_pain2 ] {
 
 
 };
@@ -967,7 +967,7 @@ void () demon1_pain2;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain2 = [ 40.000, globaldef3887 ] {
+void () demon1_pain2 = [ 40.000, demon1_pain3 ] {
 
 
 };
@@ -981,7 +981,7 @@ void () demon1_pain3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain3 = [ 41.000, globaldef3888 ] {
+void () demon1_pain3 = [ 41.000, demon1_pain4 ] {
 
 
 };
@@ -995,7 +995,7 @@ void () demon1_pain4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain4 = [ 42.000, globaldef3889 ] {
+void () demon1_pain4 = [ 42.000, demon1_pain5 ] {
 
 
 };
@@ -1009,7 +1009,7 @@ void () demon1_pain5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain5 = [ 43.000, globaldef3890 ] {
+void () demon1_pain5 = [ 43.000, demon1_pain6 ] {
 
 
 };
@@ -1023,12 +1023,12 @@ void () demon1_pain6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_pain6 = [ 44.000, globaldef3851 ] {
+void () demon1_pain6 = [ 44.000, demon1_run1 ] {
 
 
 };
 
-void (entity globaldef3892, float globaldef3893) demon1_pain;
+void (entity globaldef003892, float globaldef003893) demon1_pain;
 
 // function demon1_pain
 // function number 872 begins at statement 19333
@@ -1059,29 +1059,29 @@ void (entity globaldef3892, float globaldef3893) demon1_pain;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef3892, float globaldef3893) demon1_pain = {
+void (entity globaldef003892, float globaldef003893) demon1_pain = {
 
-   if ( (self.globaldef124 == globaldef3828) ) {
-
-      return ;
-
-   }
-   if ( (self.globaldef362 > time) ) {
+   if ( (self.globaldef000124 == Demon_JumpTouch) ) {
 
       return ;
 
    }
-   self.globaldef362 = (time + TRUE);
-   sound (self,CHAN_VOICE,globaldef3894,TRUE,ATTN_NORM);
-   if ( ((globaldef440 () * globaldef1343) > globaldef3893) ) {
+   if ( (self.globaldef000362 > time) ) {
 
       return ;
 
    }
-   globaldef3885 ();
+   self.globaldef000362 = (time + TRUE);
+   sound (self,CHAN_VOICE,globaldef003894,TRUE,ATTN_NORM);
+   if ( ((random () * globaldef001343) > globaldef003893) ) {
+
+      return ;
+
+   }
+   demon1_pain1 ();
 
 };
-string globaldef3894 /* = "demon/dpain1.wav" */;
+string globaldef003894 /* = "demon/dpain1.wav" */;
 
 void () demon1_die1;
 
@@ -1098,14 +1098,14 @@ void () demon1_die1;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die1 = [ 45.000, globaldef3896 ] {
+void () demon1_die1 = [ 45.000, demon1_die2 ] {
 
-   sound (self,CHAN_VOICE,globaldef3897,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,globaldef003897,TRUE,ATTN_NORM);
 
 };
 
 void () demon1_die2;
-string globaldef3897 /* = "demon/ddeath.wav" */;
+string globaldef003897 /* = "demon/ddeath.wav" */;
 
 // function demon1_die2
 // function number 874 begins at statement 19365
@@ -1114,7 +1114,7 @@ string globaldef3897 /* = "demon/ddeath.wav" */;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die2 = [ 46.000, globaldef3898 ] {
+void () demon1_die2 = [ 46.000, demon1_die3 ] {
 
 
 };
@@ -1128,7 +1128,7 @@ void () demon1_die3;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die3 = [ 47.000, globaldef3899 ] {
+void () demon1_die3 = [ 47.000, demon1_die4 ] {
 
 
 };
@@ -1142,7 +1142,7 @@ void () demon1_die4;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die4 = [ 48.000, globaldef3900 ] {
+void () demon1_die4 = [ 48.000, demon1_die5 ] {
 
 
 };
@@ -1156,7 +1156,7 @@ void () demon1_die5;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die5 = [ 49.000, globaldef3901 ] {
+void () demon1_die5 = [ 49.000, demon1_die6 ] {
 
 
 };
@@ -1172,9 +1172,9 @@ void () demon1_die6;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die6 = [ 50.000, globaldef3902 ] {
+void () demon1_die6 = [ 50.000, demon1_die7 ] {
 
-   self.solid = SOLID_NOT;
+   self.globaldef000082 = SOLID_NOT;
 
 };
 
@@ -1187,7 +1187,7 @@ void () demon1_die7;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die7 = [ 51.000, globaldef3903 ] {
+void () demon1_die7 = [ 51.000, demon1_die8 ] {
 
 
 };
@@ -1201,7 +1201,7 @@ void () demon1_die8;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die8 = [ 52.000, globaldef3904 ] {
+void () demon1_die8 = [ 52.000, demon1_die9 ] {
 
 
 };
@@ -1215,7 +1215,7 @@ void () demon1_die9;
  * OP_DONE	0	0	0
  */
 
-void () demon1_die9 = [ 53.000, globaldef3904 ] {
+void () demon1_die9 = [ 53.000, demon1_die9 ] {
 
 
 };
@@ -1257,20 +1257,20 @@ void () demon_die;
 
 void () demon_die = {
 
-   if ( (self.globaldef130 < globaldef3820) ) {
+   if ( (self.globaldef000130 < globaldef003820) ) {
 
-      sound (self,CHAN_VOICE,globaldef2406,TRUE,ATTN_NORM);
-      globaldef3189 (globaldef3906,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
-      globaldef3185 (globaldef2432,self.globaldef130);
+      sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
+      ThrowHead (globaldef003906,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowGib (globaldef002432,self.globaldef000130);
       return ;
 
    }
-   globaldef3895 ();
+   demon1_die1 ();
 
 };
-string globaldef3906 /* = "progs/h_demon.mdl" */;
+string globaldef003906 /* = "progs/h_demon.mdl" */;
 
 void () Demon_MeleeAttack;
 
@@ -1283,7 +1283,7 @@ void () Demon_MeleeAttack;
 
 void () Demon_MeleeAttack = {
 
-   globaldef3870 ();
+   demon1_atta1 ();
 
 };
 
@@ -1351,32 +1351,32 @@ void () monster_demon1 = {
       return ;
 
    }
-   globaldef453 (globaldef3909);
-   globaldef453 (globaldef3906);
-   globaldef452 (globaldef3897);
-   globaldef452 (globaldef3910);
-   globaldef452 (globaldef3911);
-   globaldef452 (globaldef3894);
-   globaldef452 (globaldef3844);
-   globaldef452 ("demon/sight2.wav");
-   self.solid = SOLID_SLIDEBOX;
-   self.movetype = MOVETYPE_STEP;
-   setmodel (self,globaldef3909);
-   globaldef438 (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef130 = globaldef523;
-   self.globaldef344 = globaldef3829;
-   self.globaldef345 = globaldef3842;
-   self.globaldef346 = globaldef3851;
-   self.globaldef350 = globaldef3905;
-   self.globaldef348 = globaldef3907;
-   self.globaldef347 = globaldef3857;
-   self.globaldef349 = globaldef3891;
-   globaldef3309 ();
+   precache_model (globaldef003909);
+   precache_model (globaldef003906);
+   precache_sound (globaldef003897);
+   precache_sound (globaldef003910);
+   precache_sound (globaldef003911);
+   precache_sound (globaldef003894);
+   precache_sound (globaldef003844);
+   precache_sound (globaldef001662);
+   self.globaldef000082 = SOLID_SLIDEBOX;
+   self.globaldef000081 = MOVETYPE_STEP;
+   setmodel (self,globaldef003909);
+   setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
+   self.globaldef000130 = globaldef000523;
+   self.globaldef000344 = demon1_stand1;
+   self.globaldef000345 = demon1_walk1;
+   self.globaldef000346 = demon1_run1;
+   self.globaldef000350 = demon_die;
+   self.globaldef000348 = Demon_MeleeAttack;
+   self.globaldef000347 = demon1_jump1;
+   self.globaldef000349 = demon1_pain;
+   walkmonster_start ();
 
 };
-string globaldef3909 /* = "progs/demon.mdl" */;
-string globaldef3910 /* = "demon/dhit2.wav" */;
-string globaldef3911 /* = "demon/djump.wav" */;
+string globaldef003909 /* = "progs/demon.mdl" */;
+string globaldef003910 /* = "demon/dhit2.wav" */;
+string globaldef003911 /* = "demon/djump.wav" */;
 float () CheckDemonMelee;
 
 // function CheckDemonMelee
@@ -1392,9 +1392,9 @@ float () CheckDemonMelee;
  */
 float () CheckDemonMelee = {
 
-   if ( (globaldef1536 == RANGE_MELEE) ) {
+   if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      self.globaldef355 = AS_MELEE;
+      self.globaldef000355 = AS_MELEE;
       return ( TRUE );
 
    }
@@ -1459,30 +1459,30 @@ float () CheckDemonJump;
  */
 float () CheckDemonJump = {
 
-   local vector globaldef3914;
-   local float globaldef3918;
+   local vector dist;
+   local float d;
 
-   if ( ((self.globaldef86 + self.globaldef115) > ((self.enemy.globaldef86 + self.enemy.globaldef115) + (globaldef2244 * self.enemy.globaldef123))) ) {
-
-      return ( FALSE );
-
-   }
-   if ( ((self.globaldef86 + self.globaldef119) < ((self.enemy.globaldef86 + self.enemy.globaldef115) + (globaldef2243 * self.enemy.globaldef123))) ) {
+   if ( ((self.globaldef000086 + self.globaldef000115) > ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002244 * self.globaldef000159.globaldef000123))) ) {
 
       return ( FALSE );
 
    }
-   globaldef3914 = (self.enemy.origin - self.origin);
-   globaldef3917 = FALSE;
-   globaldef3918 = vlen (globaldef3914);
-   if ( (globaldef3918 < globaldef1335) ) {
+   if ( ((self.globaldef000086 + self.globaldef000119) < ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002243 * self.globaldef000159.globaldef000123))) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef3918 > globaldef1343) ) {
+   dist = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   globaldef003917 = FALSE;
+   d = vlen (dist);
+   if ( (d < globaldef001335) ) {
 
-      if ( (globaldef440 () < globaldef1552) ) {
+      return ( FALSE );
+
+   }
+   if ( (d > globaldef001343) ) {
+
+      if ( (random () < globaldef001552) ) {
 
          return ( FALSE );
 
@@ -1517,18 +1517,18 @@ float () CheckDemonJump = {
  */
 float () DemonCheckAttack = {
 
-   local vector globaldef3919;
+   local vector vec;
 
-   if ( globaldef3912 () ) {
+   if ( CheckDemonMelee () ) {
 
-      self.globaldef355 = AS_MELEE;
+      self.globaldef000355 = AS_MELEE;
       return ( TRUE );
 
    }
-   if ( globaldef3913 () ) {
+   if ( CheckDemonJump () ) {
 
-      self.globaldef355 = AS_MISSILE;
-      sound (self,CHAN_VOICE,globaldef3911,TRUE,ATTN_NORM);
+      self.globaldef000355 = AS_MISSILE;
+      sound (self,CHAN_VOICE,globaldef003911,TRUE,ATTN_NORM);
       return ( TRUE );
 
    }
@@ -1590,29 +1590,29 @@ float () DemonCheckAttack = {
  * OP_DONE	0	0	0
  */
 
-void (float globaldef3923) Demon_Melee = {
+void (float globaldef003923) Demon_Melee = {
 
-   local float globaldef3924;
-   local vector globaldef3925;
+   local float ldmg;
+   local vector delta;
 
-   globaldef1533 ();
-   globaldef463 (self.globaldef169,globaldef774);
-   globaldef3925 = (self.enemy.origin - self.origin);
-   if ( (vlen (globaldef3925) > globaldef1335) ) {
-
-      return ;
-
-   }
-   if ( !globaldef507 (self.enemy,self) ) {
+   ai_face ();
+   walkmove (self.globaldef000169,globaldef000774);
+   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
-   sound (self,CHAN_WEAPON,globaldef3910,TRUE,ATTN_NORM);
-   globaldef3924 = (MOVETYPE_BOUNCE + (MOVETYPE_FLY * globaldef440 ()));
-   globaldef505 (self.enemy,self,self,globaldef3924);
-   makevectors (self.angles);
-   globaldef2044 ((self.origin + (v_forward * FL_INWATER)),(globaldef3923 * v_right));
+   if ( !CanDamage (self.globaldef000159,self) ) {
+
+      return ;
+
+   }
+   sound (self,CHAN_WEAPON,globaldef003910,TRUE,ATTN_NORM);
+   ldmg = (MOVETYPE_BOUNCE + (MOVETYPE_FLY * random ()));
+   T_Damage (self.globaldef000159,self,self,ldmg);
+   makevectors (self.globaldef000095);
+   func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),(globaldef003923 * v_right));
 
 };
 
@@ -1666,37 +1666,37 @@ void (float globaldef3923) Demon_Melee = {
 
 void () Demon_JumpTouch = {
 
-   local float globaldef3929;
+   local float ldmg;
 
-   if ( (self.globaldef130 <= FALSE) ) {
+   if ( (self.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   if ( other.globaldef141 ) {
+   if ( other.globaldef000141 ) {
 
-      if ( (vlen (self.velocity) > globaldef2007) ) {
+      if ( (vlen (self.globaldef000091) > globaldef002007) ) {
 
-         globaldef3929 = (globaldef729 + (MOVETYPE_BOUNCE * globaldef440 ()));
-         globaldef505 (other,self,self,globaldef3929);
+         ldmg = (globaldef000729 + (MOVETYPE_BOUNCE * random ()));
+         T_Damage (other,self,self,ldmg);
 
       }
 
    }
-   if ( !globaldef469 (self) ) {
+   if ( !checkbottom (self) ) {
 
-      if ( (self.globaldef160 & FL_ONGROUND) ) {
+      if ( (self.globaldef000160 & FL_ONGROUND) ) {
 
-         self.globaldef124 = SUB_Null;
-         self.think = globaldef3857;
-         self.nextthink = (time + 0.100);
+         self.globaldef000124 = SUB_Null;
+         self.globaldef000126 = demon1_jump1;
+         self.globaldef000128 = (time + globaldef001488);
 
       }
       return ;
 
    }
-   self.globaldef124 = SUB_Null;
-   self.think = globaldef3868;
-   self.nextthink = (time + 0.100);
+   self.globaldef000124 = SUB_Null;
+   self.globaldef000126 = demon1_jump11;
+   self.globaldef000128 = (time + globaldef001488);
 
 };

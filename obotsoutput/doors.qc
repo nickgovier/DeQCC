@@ -1,8 +1,8 @@
-float globaldef3316 /* = 1.000 */;
-float globaldef3317 /* = 4.000 */;
-float globaldef3318 /* = 8.000 */;
-float globaldef3319 /* = 16.000 */;
-float globaldef3320 /* = 32.000 */;
+float globaldef003316 /* = 1.000 */;
+float globaldef003317 /* = 4.000 */;
+float globaldef003318 /* = 8.000 */;
+float globaldef003319 /* = 16.000 */;
+float globaldef003320 /* = 32.000 */;
 
 void () door_go_down;
 
@@ -33,16 +33,16 @@ void () door_blocked;
 
 void () door_blocked = {
 
-   globaldef505 (other,self,self,self.globaldef408);
-   if ( (self.globaldef401 >= FALSE) ) {
+   T_Damage (other,self,self,self.globaldef000408);
+   if ( (self.globaldef000401 >= FALSE) ) {
 
-      if ( (self.globaldef421 == STATE_DOWN) ) {
+      if ( (self.globaldef000421 == STATE_DOWN) ) {
 
-         globaldef3322 ();
+         door_go_up ();
 
       } else {
 
-         globaldef3321 ();
+         door_go_down ();
 
       }
 
@@ -80,15 +80,15 @@ void () door_hit_top;
 
 void () door_hit_top = {
 
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_TOP;
-   if ( (self.globaldef173 & globaldef3320) ) {
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_TOP;
+   if ( (self.globaldef000173 & globaldef003320) ) {
 
       return ;
 
    }
-   self.think = globaldef3321;
-   self.nextthink = (self.ltime + self.globaldef401);
+   self.globaldef000126 = door_go_down;
+   self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
 
 };
 
@@ -111,8 +111,8 @@ void () door_hit_bottom;
 
 void () door_hit_bottom = {
 
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_BOTTOM;
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_BOTTOM;
 
 };
 
@@ -146,15 +146,15 @@ void () door_hit_bottom = {
 
 void () door_go_down = {
 
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
-   if ( self.globaldef163 ) {
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   if ( self.globaldef000163 ) {
 
-      self.globaldef141 = DAMAGE_YES;
-      self.globaldef130 = self.globaldef163;
+      self.globaldef000141 = DAMAGE_YES;
+      self.globaldef000130 = self.globaldef000163;
 
    }
-   self.globaldef421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef422,self.globaldef352,globaldef3325);
+   self.globaldef000421 = STATE_DOWN;
+   SUB_CalcMove (self.globaldef000422,self.globaldef000352,door_hit_bottom);
 
 };
 
@@ -195,20 +195,20 @@ void () door_go_down = {
 
 void () door_go_up = {
 
-   if ( (self.globaldef421 == STATE_UP) ) {
+   if ( (self.globaldef000421 == STATE_UP) ) {
 
       return ;
 
    }
-   if ( (self.globaldef421 == STATE_TOP) ) {
+   if ( (self.globaldef000421 == STATE_TOP) ) {
 
-      self.nextthink = (self.ltime + self.globaldef401);
+      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
       return ;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
-   self.globaldef421 = STATE_UP;
-   SUB_CalcMove (self.globaldef426,self.globaldef352,globaldef3324);
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   self.globaldef000421 = STATE_UP;
+   SUB_CalcMove (self.globaldef000426,self.globaldef000352,door_hit_top);
    SUB_UseTargets ();
 
 };
@@ -268,49 +268,49 @@ void () door_fire;
 
 void () door_fire = {
 
-   local entity globaldef3327;
-   local entity globaldef3328;
+   local entity oself;
+   local entity starte;
 
-   if ( (self.globaldef179 != self) ) {
+   if ( (self.globaldef000179 != self) ) {
 
-      objerror (globaldef3329);
-
-   }
-   if ( self.globaldef140 ) {
-
-      sound (self,CHAN_VOICE,self.globaldef404,TRUE,ATTN_NORM);
+      objerror (globaldef003329);
 
    }
-   self.message = string_null;
-   globaldef3327 = self;
-   if ( (self.globaldef173 & globaldef3320) ) {
+   if ( self.globaldef000140 ) {
 
-      if ( ((self.globaldef421 == STATE_UP) || (self.globaldef421 == STATE_TOP)) ) {
+      sound (self,CHAN_VOICE,self.globaldef000404,TRUE,ATTN_NORM);
 
-         globaldef3328 = self;
+   }
+   self.globaldef000184 = string_null;
+   oself = self;
+   if ( (self.globaldef000173 & globaldef003320) ) {
+
+      if ( ((self.globaldef000421 == STATE_UP) || (self.globaldef000421 == STATE_TOP)) ) {
+
+         starte = self;
          do {
 
-            globaldef3321 ();
-            self = self.enemy;
+            door_go_down ();
+            self = self.globaldef000159;
 
-         } while ( ((self != globaldef3328) && (self != world)) );
-         self = globaldef3327;
+         } while ( ((self != starte) && (self != world)) );
+         self = oself;
          return ;
 
       }
 
    }
-   globaldef3328 = self;
+   starte = self;
    do {
 
-      globaldef3322 ();
-      self = self.enemy;
+      door_go_up ();
+      self = self.globaldef000159;
 
-   } while ( ((self != globaldef3328) && (self != world)) );
-   self = globaldef3327;
+   } while ( ((self != starte) && (self != world)) );
+   self = oself;
 
 };
-string globaldef3329 /* = "door_fire: self.owner != self" */;
+string globaldef003329 /* = "door_fire: self.owner != self" */;
 
 void () door_use;
 
@@ -346,21 +346,21 @@ void () door_use;
 
 void () door_use = {
 
-   local entity globaldef3331;
+   local entity oself;
 
-   globaldef1058 (other,other.origin,TRUE,globaldef739);
-   if ( (other.classname == globaldef1171) ) {
+   func002453 (other,other.globaldef000083,TRUE,globaldef000739);
+   if ( (other.globaldef000107 == globaldef001171) ) {
 
-      globaldef1071 (other);
+      func002473 (other);
 
    }
-   self.message = "";
-   self.globaldef179.message = "";
-   self.enemy.message = "";
-   globaldef3331 = self;
-   self = self.globaldef179;
-   globaldef3326 ();
-   self = globaldef3331;
+   self.globaldef000184 = globaldef001466;
+   self.globaldef000179.globaldef000184 = globaldef001466;
+   self.globaldef000159.globaldef000184 = globaldef001466;
+   oself = self;
+   self = self.globaldef000179;
+   door_fire ();
+   self = oself;
 
 };
 
@@ -389,20 +389,20 @@ void () door_trigger_touch;
 
 void () door_trigger_touch = {
 
-   if ( (other.globaldef130 <= FALSE) ) {
+   if ( (other.globaldef000130 <= FALSE) ) {
 
       return ;
 
    }
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ;
 
    }
-   self.attack_finished = (time + TRUE);
+   self.globaldef000361 = (time + TRUE);
    activator = other;
-   self = self.globaldef179;
-   globaldef3330 ();
+   self = self.globaldef000179;
+   door_use ();
 
 };
 
@@ -426,14 +426,14 @@ void () door_killed;
 
 void () door_killed = {
 
-   local entity globaldef3334;
+   local entity oself;
 
-   globaldef3334 = self;
-   self = self.globaldef179;
-   self.globaldef130 = self.globaldef163;
-   self.globaldef141 = DAMAGE_NO;
-   globaldef3330 ();
-   self = globaldef3334;
+   oself = self;
+   self = self.globaldef000179;
+   self.globaldef000130 = self.globaldef000163;
+   self.globaldef000141 = DAMAGE_NO;
+   door_use ();
+   self = oself;
 
 };
 
@@ -598,60 +598,60 @@ void () door_touch;
 
 void () door_touch = {
 
-   local vector globaldef3336;
+   local vector globaldef003336;
 
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.globaldef179.attack_finished > time) ) {
+   if ( (self.globaldef000179.globaldef000361 > time) ) {
 
       return ;
 
    }
-   self.globaldef179.attack_finished = (time + FL_SWIM);
-   if ( (self.globaldef179.message != "") ) {
+   self.globaldef000179.globaldef000361 = (time + FL_SWIM);
+   if ( (self.globaldef000179.globaldef000184 != globaldef001466) ) {
 
-      if ( (other.classname == "player") ) {
+      if ( (other.globaldef000107 == globaldef001170) ) {
 
-         centerprint (other,self.globaldef179.message);
+         func000072 (other,self.globaldef000179.globaldef000184);
 
       }
-      sound (other,CHAN_VOICE,"misc/talk.wav",TRUE,ATTN_NORM);
+      sound (other,CHAN_VOICE,globaldef001516,TRUE,ATTN_NORM);
 
    }
-   if ( !self.globaldef140 ) {
+   if ( !self.globaldef000140 ) {
 
       return ;
 
    }
-   if ( ((self.globaldef140 & other.globaldef140) != self.globaldef140) ) {
+   if ( ((self.globaldef000140 & other.globaldef000140) != self.globaldef000140) ) {
 
-      if ( ((self.globaldef179.globaldef140 == IT_KEY1) && (other.classname == "player")) ) {
+      if ( ((self.globaldef000179.globaldef000140 == IT_KEY1) && (other.globaldef000107 == globaldef001170)) ) {
 
-         if ( (world.globaldef340 == FL_SWIM) ) {
+         if ( (world.globaldef000340 == FL_SWIM) ) {
 
-            centerprint (other,globaldef3340);
-            sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+            func000072 (other,globaldef003340);
+            sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
          } else {
 
-            if ( (world.globaldef340 == TRUE) ) {
+            if ( (world.globaldef000340 == TRUE) ) {
 
-               centerprint (other,globaldef3341);
-               sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+               func000072 (other,globaldef003341);
+               sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
             } else {
 
-               if ( (world.globaldef340 == FALSE) ) {
+               if ( (world.globaldef000340 == FALSE) ) {
 
-                  centerprint (other,globaldef3342);
-                  sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+                  func000072 (other,globaldef003342);
+                  sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
                }
 
@@ -661,26 +661,26 @@ void () door_touch = {
 
       } else {
 
-         if ( (other.classname == "player") ) {
+         if ( (other.globaldef000107 == globaldef001170) ) {
 
-            if ( (world.globaldef340 == FL_SWIM) ) {
+            if ( (world.globaldef000340 == FL_SWIM) ) {
 
-               centerprint (other,globaldef3343);
-               sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+               func000072 (other,globaldef003343);
+               sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
             } else {
 
-               if ( (world.globaldef340 == TRUE) ) {
+               if ( (world.globaldef000340 == TRUE) ) {
 
-                  centerprint (other,globaldef3344);
-                  sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+                  func000072 (other,globaldef003344);
+                  sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
                } else {
 
-                  if ( (world.globaldef340 == FALSE) ) {
+                  if ( (world.globaldef000340 == FALSE) ) {
 
-                     centerprint (other,globaldef3345);
-                     sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+                     func000072 (other,globaldef003345);
+                     sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
                   }
 
@@ -694,23 +694,23 @@ void () door_touch = {
       return ;
 
    }
-   other.globaldef140 = (other.globaldef140 - self.globaldef140);
-   self.globaldef124 = SUB_Null;
-   if ( self.enemy ) {
+   other.globaldef000140 = (other.globaldef000140 - self.globaldef000140);
+   self.globaldef000124 = SUB_Null;
+   if ( self.globaldef000159 ) {
 
-      self.enemy.globaldef124 = SUB_Null;
+      self.globaldef000159.globaldef000124 = SUB_Null;
 
    }
-   globaldef3330 ();
+   door_use ();
 
 };
-string globaldef3340 /* = "You need the silver keycard" */;
-string globaldef3341 /* = "You need the silver runekey" */;
-string globaldef3342 /* = "You need the silver key" */;
-string globaldef3343 /* = "You need the gold keycard" */;
-string globaldef3344 /* = "You need the gold runekey" */;
-string globaldef3345 /* = "You need the gold key" */;
-entity (vector globaldef3347, vector globaldef3351) spawn_field;
+string globaldef003340 /* = "You need the silver keycard" */;
+string globaldef003341 /* = "You need the silver runekey" */;
+string globaldef003342 /* = "You need the silver key" */;
+string globaldef003343 /* = "You need the gold keycard" */;
+string globaldef003344 /* = "You need the gold runekey" */;
+string globaldef003345 /* = "You need the gold key" */;
+entity (vector globaldef003347, vector globaldef003351) spawn_field;
 
 // function spawn_field
 // function number 546 begins at statement 15156
@@ -736,24 +736,24 @@ entity (vector globaldef3347, vector globaldef3351) spawn_field;
  * OP_RETURN	10397	0	0
  * OP_DONE	0	0	0
  */
-entity (vector globaldef3347, vector globaldef3351) spawn_field = {
+entity (vector globaldef003347, vector globaldef003351) spawn_field = {
 
-   local entity globaldef3355;
-   local vector globaldef3356;
-   local vector globaldef3360;
+   local entity trigger;
+   local vector t1;
+   local vector t2;
 
-   globaldef3355 = spawn ();
-   globaldef3355.movetype = MOVETYPE_NONE;
-   globaldef3355.solid = SOLID_TRIGGER;
-   globaldef3355.globaldef179 = self;
-   globaldef3355.globaldef124 = globaldef3332;
-   globaldef3356 = globaldef3347;
-   globaldef3360 = globaldef3351;
-   globaldef438 (globaldef3355,(globaldef3356 - globaldef3364),(globaldef3360 + globaldef3364));
-   return ( globaldef3355 );
+   trigger = spawn ();
+   trigger.globaldef000081 = MOVETYPE_NONE;
+   trigger.globaldef000082 = SOLID_TRIGGER;
+   trigger.globaldef000179 = self;
+   trigger.globaldef000124 = door_trigger_touch;
+   t1 = globaldef003347;
+   t2 = globaldef003351;
+   setsize (trigger,(t1 - globaldef003364),(t2 + globaldef003364));
+   return ( trigger );
 
 };
-float (entity globaldef3366, entity globaldef3367) EntitiesTouching;
+float (entity globaldef003366, entity globaldef003367) EntitiesTouching;
 
 // function EntitiesTouching
 // function number 547 begins at statement 15176
@@ -791,34 +791,34 @@ float (entity globaldef3366, entity globaldef3367) EntitiesTouching;
  * OP_RETURN	214	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef3366, entity globaldef3367) EntitiesTouching = {
+float (entity globaldef003366, entity globaldef003367) EntitiesTouching = {
 
-   if ( (globaldef3366.globaldef113 > globaldef3367.globaldef117) ) {
-
-      return ( FALSE );
-
-   }
-   if ( (globaldef3366.globaldef114 > globaldef3367.globaldef118) ) {
+   if ( (globaldef003366.globaldef000113 > globaldef003367.globaldef000117) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef3366.globaldef115 > globaldef3367.globaldef119) ) {
+   if ( (globaldef003366.globaldef000114 > globaldef003367.globaldef000118) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef3366.globaldef117 < globaldef3367.globaldef113) ) {
+   if ( (globaldef003366.globaldef000115 > globaldef003367.globaldef000119) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef3366.globaldef118 < globaldef3367.globaldef114) ) {
+   if ( (globaldef003366.globaldef000117 < globaldef003367.globaldef000113) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef3366.globaldef119 < globaldef3367.globaldef115) ) {
+   if ( (globaldef003366.globaldef000118 < globaldef003367.globaldef000114) ) {
+
+      return ( FALSE );
+
+   }
+   if ( (globaldef003366.globaldef000119 < globaldef003367.globaldef000115) ) {
 
       return ( FALSE );
 
@@ -942,106 +942,106 @@ void () LinkDoors;
 
 void () LinkDoors = {
 
-   local entity globaldef3369;
-   local entity globaldef3370;
-   local vector globaldef3371;
-   local vector globaldef3375;
+   local entity t;
+   local entity starte;
+   local vector cmins;
+   local vector cmaxs;
 
-   if ( self.enemy ) {
+   if ( self.globaldef000159 ) {
 
       return ;
 
    }
-   if ( (self.globaldef173 & MOVETYPE_STEP) ) {
+   if ( (self.globaldef000173 & MOVETYPE_STEP) ) {
 
-      self.enemy = self;
-      self.globaldef179 = self;
+      self.globaldef000159 = self;
+      self.globaldef000179 = self;
       return ;
 
    }
-   globaldef3371 = self.globaldef112;
-   globaldef3375 = self.globaldef116;
-   globaldef3370 = self;
-   globaldef3369 = self;
+   cmins = self.globaldef000112;
+   cmaxs = self.globaldef000116;
+   starte = self;
+   t = self;
    do {
 
-      self.globaldef179 = globaldef3370;
-      if ( self.globaldef130 ) {
+      self.globaldef000179 = starte;
+      if ( self.globaldef000130 ) {
 
-         globaldef3370.globaldef130 = self.globaldef130;
-
-      }
-      if ( self.targetname ) {
-
-         globaldef3370.targetname = self.targetname;
+         starte.globaldef000130 = self.globaldef000130;
 
       }
-      if ( (self.message != "") ) {
+      if ( self.globaldef000175 ) {
 
-         globaldef3370.message = self.message;
+         starte.globaldef000175 = self.globaldef000175;
 
       }
-      globaldef3369 = find (globaldef3369,classname,self.classname);
-      if ( !globaldef3369 ) {
+      if ( (self.globaldef000184 != globaldef001466) ) {
 
-         self.enemy = globaldef3370;
-         self = self.globaldef179;
-         if ( self.globaldef130 ) {
+         starte.globaldef000184 = self.globaldef000184;
+
+      }
+      t = find (t,globaldef000107,self.globaldef000107);
+      if ( !t ) {
+
+         self.globaldef000159 = starte;
+         self = self.globaldef000179;
+         if ( self.globaldef000130 ) {
 
             return ;
 
          }
-         if ( self.targetname ) {
+         if ( self.globaldef000175 ) {
 
             return ;
 
          }
-         if ( self.globaldef140 ) {
+         if ( self.globaldef000140 ) {
 
             return ;
 
          }
-         self.globaldef179.globaldef403 = globaldef3346 (globaldef3371,globaldef3375);
+         self.globaldef000179.globaldef000403 = spawn_field (cmins,cmaxs);
          return ;
 
       }
-      if ( globaldef3365 (self,globaldef3369) ) {
+      if ( EntitiesTouching (self,t) ) {
 
-         if ( globaldef3369.enemy ) {
+         if ( t.globaldef000159 ) {
 
-            objerror (globaldef3379);
-
-         }
-         self.enemy = globaldef3369;
-         self = globaldef3369;
-         if ( (globaldef3369.globaldef113 < globaldef3371_x) ) {
-
-            globaldef3371_x = globaldef3369.globaldef113;
+            objerror (globaldef003379);
 
          }
-         if ( (globaldef3369.globaldef114 < globaldef3373) ) {
+         self.globaldef000159 = t;
+         self = t;
+         if ( (t.globaldef000113 < cmins_x) ) {
 
-            globaldef3373 = globaldef3369.globaldef114;
-
-         }
-         if ( (globaldef3369.globaldef115 < globaldef3374) ) {
-
-            globaldef3374 = globaldef3369.globaldef115;
+            cmins_x = t.globaldef000113;
 
          }
-         if ( (globaldef3369.globaldef117 > globaldef3375_x) ) {
+         if ( (t.globaldef000114 < globaldef003373) ) {
 
-            globaldef3375_x = globaldef3369.globaldef117;
-
-         }
-         if ( (globaldef3369.globaldef118 > globaldef3377) ) {
-
-            globaldef3377 = globaldef3369.globaldef118;
+            globaldef003373 = t.globaldef000114;
 
          }
-         if ( (globaldef3369.globaldef119 > globaldef3378) ) {
+         if ( (t.globaldef000115 < globaldef003374) ) {
 
-            globaldef3378 = globaldef3369.globaldef119;
+            globaldef003374 = t.globaldef000115;
+
+         }
+         if ( (t.globaldef000117 > cmaxs_x) ) {
+
+            cmaxs_x = t.globaldef000117;
+
+         }
+         if ( (t.globaldef000118 > globaldef003377) ) {
+
+            globaldef003377 = t.globaldef000118;
+
+         }
+         if ( (t.globaldef000119 > globaldef003378) ) {
+
+            globaldef003378 = t.globaldef000119;
 
          }
 
@@ -1050,7 +1050,7 @@ void () LinkDoors = {
    } while ( TRUE );
 
 };
-string globaldef3379 /* = "cross connected doors" */;
+string globaldef003379 /* = "cross connected doors" */;
 
 void () func_door;
 
@@ -1258,162 +1258,162 @@ void () func_door;
 
 void () func_door = {
 
-   if ( (world.globaldef340 == FALSE) ) {
+   if ( (world.globaldef000340 == FALSE) ) {
 
-      globaldef452 (globaldef3381);
-      globaldef452 (globaldef3382);
-      self.globaldef189 = globaldef3381;
-      self.globaldef404 = globaldef3382;
+      precache_sound (globaldef003381);
+      precache_sound (globaldef003382);
+      self.globaldef000189 = globaldef003381;
+      self.globaldef000404 = globaldef003382;
 
    } else {
 
-      if ( (world.globaldef340 == TRUE) ) {
+      if ( (world.globaldef000340 == TRUE) ) {
 
-         globaldef452 (globaldef3383);
-         globaldef452 (globaldef3384);
-         self.globaldef189 = globaldef3383;
-         self.globaldef404 = globaldef3384;
+         precache_sound (globaldef003383);
+         precache_sound (globaldef003384);
+         self.globaldef000189 = globaldef003383;
+         self.globaldef000404 = globaldef003384;
 
       } else {
 
-         if ( (world.globaldef340 == FL_SWIM) ) {
+         if ( (world.globaldef000340 == FL_SWIM) ) {
 
-            globaldef452 (globaldef3385);
-            globaldef452 (globaldef3386);
-            self.globaldef189 = globaldef3385;
-            self.globaldef404 = globaldef3386;
+            precache_sound (globaldef003385);
+            precache_sound (globaldef003386);
+            self.globaldef000189 = globaldef003385;
+            self.globaldef000404 = globaldef003386;
 
          } else {
 
-            globaldef456 (globaldef3387);
+            dprint (globaldef003387);
 
          }
 
       }
 
    }
-   if ( (self.globaldef185 == FALSE) ) {
+   if ( (self.globaldef000185 == FALSE) ) {
 
-      globaldef452 (globaldef3388);
-      globaldef452 (globaldef3388);
-      self.globaldef187 = globaldef3388;
-      self.globaldef188 = globaldef3388;
-
-   }
-   if ( (self.globaldef185 == TRUE) ) {
-
-      globaldef452 (globaldef3389);
-      globaldef452 (globaldef3390);
-      self.globaldef187 = globaldef3389;
-      self.globaldef188 = globaldef3390;
+      precache_sound (globaldef003388);
+      precache_sound (globaldef003388);
+      self.globaldef000187 = globaldef003388;
+      self.globaldef000188 = globaldef003388;
 
    }
-   if ( (self.globaldef185 == FL_SWIM) ) {
+   if ( (self.globaldef000185 == TRUE) ) {
 
-      globaldef452 (globaldef3391);
-      globaldef452 (globaldef3392);
-      self.globaldef188 = globaldef3391;
-      self.globaldef187 = globaldef3392;
-
-   }
-   if ( (self.globaldef185 == MOVETYPE_WALK) ) {
-
-      globaldef452 (globaldef3393);
-      globaldef452 (globaldef3394);
-      self.globaldef188 = globaldef3393;
-      self.globaldef187 = globaldef3394;
+      precache_sound (globaldef003389);
+      precache_sound (globaldef003390);
+      self.globaldef000187 = globaldef003389;
+      self.globaldef000188 = globaldef003390;
 
    }
-   if ( (self.globaldef185 == MOVETYPE_STEP) ) {
+   if ( (self.globaldef000185 == FL_SWIM) ) {
 
-      globaldef452 (globaldef3395);
-      globaldef452 (globaldef3396);
-      self.globaldef187 = globaldef3396;
-      self.globaldef188 = globaldef3395;
+      precache_sound (globaldef003391);
+      precache_sound (globaldef003392);
+      self.globaldef000188 = globaldef003391;
+      self.globaldef000187 = globaldef003392;
+
+   }
+   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+
+      precache_sound (globaldef003393);
+      precache_sound (globaldef003394);
+      self.globaldef000188 = globaldef003393;
+      self.globaldef000187 = globaldef003394;
+
+   }
+   if ( (self.globaldef000185 == MOVETYPE_STEP) ) {
+
+      precache_sound (globaldef003395);
+      precache_sound (globaldef003396);
+      self.globaldef000187 = globaldef003396;
+      self.globaldef000188 = globaldef003395;
 
    }
    SetMovedir ();
-   self.globaldef163 = self.globaldef130;
-   self.solid = SOLID_BSP;
-   self.movetype = MOVETYPE_PUSH;
-   setorigin (self,self.origin);
-   setmodel (self,self.model);
-   self.classname = globaldef1991;
-   self.globaldef127 = globaldef3323;
-   self.use = globaldef3330;
-   if ( (self.globaldef173 & globaldef3319) ) {
+   self.globaldef000163 = self.globaldef000130;
+   self.globaldef000082 = SOLID_BSP;
+   self.globaldef000081 = MOVETYPE_PUSH;
+   setorigin (self,self.globaldef000083);
+   setmodel (self,self.globaldef000108);
+   self.globaldef000107 = globaldef001991;
+   self.globaldef000127 = door_blocked;
+   self.globaldef000125 = door_use;
+   if ( (self.globaldef000173 & globaldef003319) ) {
 
-      self.globaldef140 = IT_KEY1;
-
-   }
-   if ( (self.globaldef173 & globaldef3318) ) {
-
-      self.globaldef140 = IT_KEY2;
+      self.globaldef000140 = IT_KEY1;
 
    }
-   if ( !self.globaldef352 ) {
+   if ( (self.globaldef000173 & globaldef003318) ) {
 
-      self.globaldef352 = globaldef1335;
-
-   }
-   if ( !self.globaldef401 ) {
-
-      self.globaldef401 = MOVETYPE_WALK;
+      self.globaldef000140 = IT_KEY2;
 
    }
-   if ( !self.globaldef420 ) {
+   if ( !self.globaldef000352 ) {
 
-      self.globaldef420 = FL_CLIENT;
-
-   }
-   if ( !self.globaldef408 ) {
-
-      self.globaldef408 = FL_SWIM;
+      self.globaldef000352 = globaldef001335;
 
    }
-   self.globaldef422 = self.origin;
-   self.globaldef426 = (self.globaldef422 + (self.movedir * (globaldef471 ((self.movedir * self.globaldef120)) - self.globaldef420)));
-   if ( (self.globaldef173 & globaldef3316) ) {
+   if ( !self.globaldef000401 ) {
 
-      setorigin (self,self.globaldef426);
-      self.globaldef426 = self.globaldef422;
-      self.globaldef422 = self.origin;
+      self.globaldef000401 = MOVETYPE_WALK;
 
    }
-   self.globaldef421 = STATE_BOTTOM;
-   if ( self.globaldef130 ) {
+   if ( !self.globaldef000420 ) {
 
-      self.globaldef141 = DAMAGE_YES;
-      self.globaldef350 = globaldef3333;
+      self.globaldef000420 = FL_CLIENT;
 
    }
-   if ( self.globaldef140 ) {
+   if ( !self.globaldef000408 ) {
 
-      self.globaldef401 = CONTENT_EMPTY;
+      self.globaldef000408 = FL_SWIM;
 
    }
-   self.globaldef124 = globaldef3335;
-   self.globaldef531 = globaldef937;
-   self.think = globaldef3368;
-   self.nextthink = (self.ltime + 0.100);
+   self.globaldef000422 = self.globaldef000083;
+   self.globaldef000426 = (self.globaldef000422 + (self.globaldef000180 * (fabs ((self.globaldef000180 * self.globaldef000120)) - self.globaldef000420)));
+   if ( (self.globaldef000173 & globaldef003316) ) {
+
+      setorigin (self,self.globaldef000426);
+      self.globaldef000426 = self.globaldef000422;
+      self.globaldef000422 = self.globaldef000083;
+
+   }
+   self.globaldef000421 = STATE_BOTTOM;
+   if ( self.globaldef000130 ) {
+
+      self.globaldef000141 = DAMAGE_YES;
+      self.globaldef000350 = door_killed;
+
+   }
+   if ( self.globaldef000140 ) {
+
+      self.globaldef000401 = CONTENT_EMPTY;
+
+   }
+   self.globaldef000124 = door_touch;
+   self.globaldef000531 = func002289;
+   self.globaldef000126 = LinkDoors;
+   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
 
 };
-string globaldef3381 /* = "doors/medtry.wav" */;
-string globaldef3382 /* = "doors/meduse.wav" */;
-string globaldef3383 /* = "doors/runetry.wav" */;
-string globaldef3384 /* = "doors/runeuse.wav" */;
-string globaldef3385 /* = "doors/basetry.wav" */;
-string globaldef3386 /* = "doors/baseuse.wav" */;
-string globaldef3387 /* = "no worldtype set!\n" */;
-string globaldef3388 /* = "misc/null.wav" */;
-string globaldef3389 /* = "doors/drclos4.wav" */;
-string globaldef3390 /* = "doors/doormv1.wav" */;
-string globaldef3391 /* = "doors/hydro1.wav" */;
-string globaldef3392 /* = "doors/hydro2.wav" */;
-string globaldef3393 /* = "doors/stndr1.wav" */;
-string globaldef3394 /* = "doors/stndr2.wav" */;
-string globaldef3395 /* = "doors/ddoor1.wav" */;
-string globaldef3396 /* = "doors/ddoor2.wav" */;
+string globaldef003381 /* = "doors/medtry.wav" */;
+string globaldef003382 /* = "doors/meduse.wav" */;
+string globaldef003383 /* = "doors/runetry.wav" */;
+string globaldef003384 /* = "doors/runeuse.wav" */;
+string globaldef003385 /* = "doors/basetry.wav" */;
+string globaldef003386 /* = "doors/baseuse.wav" */;
+string globaldef003387 /* = "no worldtype set!\n" */;
+string globaldef003388 /* = "misc/null.wav" */;
+string globaldef003389 /* = "doors/drclos4.wav" */;
+string globaldef003390 /* = "doors/doormv1.wav" */;
+string globaldef003391 /* = "doors/hydro1.wav" */;
+string globaldef003392 /* = "doors/hydro2.wav" */;
+string globaldef003393 /* = "doors/stndr1.wav" */;
+string globaldef003394 /* = "doors/stndr2.wav" */;
+string globaldef003395 /* = "doors/ddoor1.wav" */;
+string globaldef003396 /* = "doors/ddoor2.wav" */;
 
 void () fd_secret_move1;
 
@@ -1428,11 +1428,11 @@ void () fd_secret_move5;
 void () fd_secret_move6;
 
 void () fd_secret_done;
-float globaldef3404 /* = 1.000 */;
-float globaldef3405 /* = 2.000 */;
-float globaldef3406 /* = 4.000 */;
-float globaldef3407 /* = 8.000 */;
-float globaldef3408 /* = 16.000 */;
+float globaldef003404 /* = 1.000 */;
+float globaldef003405 /* = 2.000 */;
+float globaldef003406 /* = 4.000 */;
+float globaldef003407 /* = 8.000 */;
+float globaldef003408 /* = 16.000 */;
 
 void () fd_secret_use;
 
@@ -1546,57 +1546,57 @@ void () fd_secret_use;
 
 void () fd_secret_use = {
 
-   local float globaldef3410;
+   local float temp;
 
-   self.globaldef130 = globaldef2185;
-   if ( (self.origin != self.globaldef87) ) {
+   self.globaldef000130 = globaldef002185;
+   if ( (self.globaldef000083 != self.globaldef000087) ) {
 
       return ;
 
    }
-   self.message = string_null;
+   self.globaldef000184 = string_null;
    SUB_UseTargets ();
-   if ( !(self.globaldef173 & globaldef3407) ) {
+   if ( !(self.globaldef000173 & globaldef003407) ) {
 
-      self.globaldef349 = SUB_Null;
-      self.globaldef141 = DAMAGE_NO;
+      self.globaldef000349 = SUB_Null;
+      self.globaldef000141 = DAMAGE_NO;
 
    }
-   self.velocity = VEC_ORIGIN;
-   sound (self,CHAN_VOICE,self.globaldef187,TRUE,ATTN_NORM);
-   self.nextthink = (self.ltime + 0.100);
-   globaldef3410 = (TRUE - (self.globaldef173 & globaldef3405));
-   makevectors (self.globaldef383);
-   if ( !self.globaldef388 ) {
+   self.globaldef000091 = VEC_ORIGIN;
+   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
+   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+   temp = (TRUE - (self.globaldef000173 & globaldef003405));
+   makevectors (self.globaldef000383);
+   if ( !self.globaldef000388 ) {
 
-      if ( (self.globaldef173 & globaldef3406) ) {
+      if ( (self.globaldef000173 & globaldef003406) ) {
 
-         self.globaldef388 = globaldef471 ((v_up * self.globaldef120));
+         self.globaldef000388 = fabs ((v_up * self.globaldef000120));
 
       } else {
 
-         self.globaldef388 = globaldef471 ((v_right * self.globaldef120));
+         self.globaldef000388 = fabs ((v_right * self.globaldef000120));
 
       }
 
    }
-   if ( !self.globaldef387 ) {
+   if ( !self.globaldef000387 ) {
 
-      self.globaldef387 = globaldef471 ((v_forward * self.globaldef120));
+      self.globaldef000387 = fabs ((v_forward * self.globaldef000120));
 
    }
-   if ( (self.globaldef173 & globaldef3406) ) {
+   if ( (self.globaldef000173 & globaldef003406) ) {
 
-      self.globaldef393 = (self.origin - (v_up * self.globaldef388));
+      self.globaldef000393 = (self.globaldef000083 - (v_up * self.globaldef000388));
 
    } else {
 
-      self.globaldef393 = (self.origin + (v_right * (self.globaldef388 * globaldef3410)));
+      self.globaldef000393 = (self.globaldef000083 + (v_right * (self.globaldef000388 * temp)));
 
    }
-   self.globaldef397 = (self.globaldef393 + (v_forward * self.globaldef387));
-   SUB_CalcMove (self.globaldef393,self.globaldef352,globaldef3397);
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
+   self.globaldef000397 = (self.globaldef000393 + (v_forward * self.globaldef000387));
+   SUB_CalcMove (self.globaldef000393,self.globaldef000352,fd_secret_move1);
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
 
 };
 
@@ -1621,9 +1621,9 @@ void () fd_secret_use = {
 
 void () fd_secret_move1 = {
 
-   self.nextthink = (self.ltime + TRUE);
-   self.think = globaldef3398;
-   sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+   self.globaldef000128 = (self.globaldef000080 + TRUE);
+   self.globaldef000126 = fd_secret_move2;
+   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
 };
 
@@ -1648,8 +1648,8 @@ void () fd_secret_move1 = {
 
 void () fd_secret_move2 = {
 
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef397,self.globaldef352,globaldef3399);
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.globaldef000397,self.globaldef000352,fd_secret_move3);
 
 };
 
@@ -1679,11 +1679,11 @@ void () fd_secret_move2 = {
 
 void () fd_secret_move3 = {
 
-   sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
-   if ( !(self.globaldef173 & globaldef3404) ) {
+   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+   if ( !(self.globaldef000173 & globaldef003404) ) {
 
-      self.nextthink = (self.ltime + self.globaldef401);
-      self.think = globaldef3400;
+      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
+      self.globaldef000126 = fd_secret_move4;
 
    }
 
@@ -1710,8 +1710,8 @@ void () fd_secret_move3 = {
 
 void () fd_secret_move4 = {
 
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef393,self.globaldef352,globaldef3401);
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.globaldef000393,self.globaldef000352,fd_secret_move5);
 
 };
 
@@ -1736,9 +1736,9 @@ void () fd_secret_move4 = {
 
 void () fd_secret_move5 = {
 
-   self.nextthink = (self.ltime + TRUE);
-   self.think = globaldef3402;
-   sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+   self.globaldef000128 = (self.globaldef000080 + TRUE);
+   self.globaldef000126 = fd_secret_move6;
+   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
 };
 
@@ -1763,8 +1763,8 @@ void () fd_secret_move5 = {
 
 void () fd_secret_move6 = {
 
-   sound (self,CHAN_VOICE,self.globaldef188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef87,self.globaldef352,globaldef3403);
+   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.globaldef000087,self.globaldef000352,fd_secret_done);
 
 };
 
@@ -1795,14 +1795,14 @@ void () fd_secret_move6 = {
 
 void () fd_secret_done = {
 
-   if ( (!self.targetname || (self.globaldef173 & globaldef3408)) ) {
+   if ( (!self.globaldef000175 || (self.globaldef000173 & globaldef003408)) ) {
 
-      self.globaldef130 = globaldef2185;
-      self.globaldef141 = DAMAGE_YES;
-      self.globaldef349 = globaldef3409;
+      self.globaldef000130 = globaldef002185;
+      self.globaldef000141 = DAMAGE_YES;
+      self.globaldef000349 = fd_secret_use;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef189,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
 
 };
 
@@ -1829,13 +1829,13 @@ void () secret_blocked;
 
 void () secret_blocked = {
 
-   if ( (time < self.attack_finished) ) {
+   if ( (time < self.globaldef000361) ) {
 
       return ;
 
    }
-   self.attack_finished = (time + globaldef522);
-   globaldef505 (other,self,self,self.globaldef408);
+   self.globaldef000361 = (time + globaldef000522);
+   T_Damage (other,self,self,self.globaldef000408);
 
 };
 
@@ -1878,29 +1878,29 @@ void () secret_touch;
 
 void () secret_touch = {
 
-   if ( (other.classname != "player") ) {
+   if ( (other.globaldef000107 != globaldef001170) ) {
 
-      if ( (other.classname != globaldef1171) ) {
+      if ( (other.globaldef000107 != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.attack_finished > time) ) {
+   if ( (self.globaldef000361 > time) ) {
 
       return ;
 
    }
-   self.attack_finished = (time + FL_SWIM);
-   if ( self.message ) {
+   self.globaldef000361 = (time + FL_SWIM);
+   if ( self.globaldef000184 ) {
 
-      if ( (other.classname == "player") ) {
+      if ( (other.globaldef000107 == globaldef001170) ) {
 
-         centerprint (other,self.message);
+         func000072 (other,self.globaldef000184);
 
       }
-      sound (other,CHAN_BODY,"misc/talk.wav",TRUE,ATTN_NORM);
+      sound (other,CHAN_BODY,globaldef001516,TRUE,ATTN_NORM);
 
    }
 
@@ -2016,67 +2016,67 @@ void () func_door_secret;
 
 void () func_door_secret = {
 
-   if ( (self.globaldef185 == FALSE) ) {
+   if ( (self.globaldef000185 == FALSE) ) {
 
-      self.globaldef185 = MOVETYPE_WALK;
-
-   }
-   if ( (self.globaldef185 == TRUE) ) {
-
-      globaldef452 (globaldef3414);
-      globaldef452 (globaldef3415);
-      globaldef452 (globaldef3389);
-      self.globaldef187 = globaldef3414;
-      self.globaldef188 = globaldef3415;
-      self.globaldef189 = globaldef3389;
+      self.globaldef000185 = MOVETYPE_WALK;
 
    }
-   if ( (self.globaldef185 == FL_SWIM) ) {
+   if ( (self.globaldef000185 == TRUE) ) {
 
-      globaldef452 (globaldef3416);
-      globaldef452 (globaldef3417);
-      self.globaldef188 = globaldef3416;
-      self.globaldef187 = globaldef3417;
-      self.globaldef189 = globaldef3417;
-
-   }
-   if ( (self.globaldef185 == MOVETYPE_WALK) ) {
-
-      globaldef452 (globaldef3418);
-      globaldef452 (globaldef3419);
-      self.globaldef188 = globaldef3418;
-      self.globaldef187 = globaldef3419;
-      self.globaldef189 = globaldef3419;
+      precache_sound (globaldef003414);
+      precache_sound (globaldef003415);
+      precache_sound (globaldef003389);
+      self.globaldef000187 = globaldef003414;
+      self.globaldef000188 = globaldef003415;
+      self.globaldef000189 = globaldef003389;
 
    }
-   if ( !self.globaldef408 ) {
+   if ( (self.globaldef000185 == FL_SWIM) ) {
 
-      self.globaldef408 = FL_SWIM;
-
-   }
-   self.globaldef383 = self.angles;
-   self.angles = VEC_ORIGIN;
-   self.solid = SOLID_BSP;
-   self.movetype = MOVETYPE_PUSH;
-   self.classname = globaldef1991;
-   setmodel (self,self.model);
-   setorigin (self,self.origin);
-   self.globaldef124 = globaldef3412;
-   self.globaldef531 = globaldef938;
-   self.globaldef127 = globaldef3411;
-   self.globaldef352 = globaldef1257;
-   self.use = globaldef3409;
-   if ( (!self.targetname || (self.globaldef173 & globaldef3408)) ) {
-
-      self.globaldef130 = globaldef2185;
-      self.globaldef141 = DAMAGE_YES;
-      self.globaldef349 = globaldef3409;
+      precache_sound (globaldef003416);
+      precache_sound (globaldef003417);
+      self.globaldef000188 = globaldef003416;
+      self.globaldef000187 = globaldef003417;
+      self.globaldef000189 = globaldef003417;
 
    }
-   self.globaldef87 = self.origin;
-   if ( !self.globaldef401 ) {
+   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
 
-      self.globaldef401 = MOVETYPE_FLY;
+      precache_sound (globaldef003418);
+      precache_sound (globaldef003419);
+      self.globaldef000188 = globaldef003418;
+      self.globaldef000187 = globaldef003419;
+      self.globaldef000189 = globaldef003419;
+
+   }
+   if ( !self.globaldef000408 ) {
+
+      self.globaldef000408 = FL_SWIM;
+
+   }
+   self.globaldef000383 = self.globaldef000095;
+   self.globaldef000095 = VEC_ORIGIN;
+   self.globaldef000082 = SOLID_BSP;
+   self.globaldef000081 = MOVETYPE_PUSH;
+   self.globaldef000107 = globaldef001991;
+   setmodel (self,self.globaldef000108);
+   setorigin (self,self.globaldef000083);
+   self.globaldef000124 = secret_touch;
+   self.globaldef000531 = func002290;
+   self.globaldef000127 = secret_blocked;
+   self.globaldef000352 = globaldef001257;
+   self.globaldef000125 = fd_secret_use;
+   if ( (!self.globaldef000175 || (self.globaldef000173 & globaldef003408)) ) {
+
+      self.globaldef000130 = globaldef002185;
+      self.globaldef000141 = DAMAGE_YES;
+      self.globaldef000349 = fd_secret_use;
+
+   }
+   self.globaldef000087 = self.globaldef000083;
+   if ( !self.globaldef000401 ) {
+
+      self.globaldef000401 = MOVETYPE_FLY;
 
    }
 

@@ -3,7 +3,7 @@ void () T_MissileTouch;
 
 void () info_player_start;
 
-void (entity globaldef2975, entity globaldef2976) ClientObituary;
+void (entity globaldef002975, entity globaldef002976) ClientObituary;
 
 void () monster_death_use;
 
@@ -87,17 +87,17 @@ void () monster_death_use;
  * OP_RETURN	213	0	0
  * OP_DONE	0	0	0
  */
-float (entity globaldef1749, entity globaldef1750) CanDamage = {
+float (entity globaldef001749, entity globaldef001750) CanDamage = {
 
-   if ( (globaldef1749.movetype == MOVETYPE_PUSH) ) {
+   if ( (globaldef001749.globaldef000081 == MOVETYPE_PUSH) ) {
 
-      globaldef449 (globaldef1750.origin,(globaldef522 * (globaldef1749.globaldef72 + globaldef1749.globaldef76)),TRUE,self);
+      traceline (globaldef001750.globaldef000083,(globaldef000522 * (globaldef001749.globaldef000072 + globaldef001749.globaldef000076)),TRUE,self);
       if ( (trace_fraction == TRUE) ) {
 
          return ( TRUE );
 
       }
-      if ( (trace_ent == globaldef1749) ) {
+      if ( (trace_ent == globaldef001749) ) {
 
          return ( TRUE );
 
@@ -105,31 +105,31 @@ float (entity globaldef1749, entity globaldef1750) CanDamage = {
       return ( FALSE );
 
    }
-   globaldef449 (globaldef1750.origin,globaldef1749.origin,TRUE,self);
+   traceline (globaldef001750.globaldef000083,globaldef001749.globaldef000083,TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1751),TRUE,self);
+   traceline (globaldef001750.globaldef000083,(globaldef001749.globaldef000083 + globaldef001751),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1752),TRUE,self);
+   traceline (globaldef001750.globaldef000083,(globaldef001749.globaldef000083 + globaldef001752),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1753),TRUE,self);
+   traceline (globaldef001750.globaldef000083,(globaldef001749.globaldef000083 + globaldef001753),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
 
    }
-   globaldef449 (globaldef1750.origin,(globaldef1749.origin + globaldef1754),TRUE,self);
+   traceline (globaldef001750.globaldef000083,(globaldef001749.globaldef000083 + globaldef001754),TRUE,self);
    if ( (trace_fraction == TRUE) ) {
 
       return ( TRUE );
@@ -138,12 +138,12 @@ float (entity globaldef1749, entity globaldef1750) CanDamage = {
    return ( FALSE );
 
 };
-vector globaldef1751 /* = '15.000 15.000 0.000' */;
-vector globaldef1752 /* = '-15.000 -15.000 0.000' */;
-vector globaldef1753 /* = '-15.000 15.000 0.000' */;
-vector globaldef1754 /* = '15.000 -15.000 0.000' */;
+vector globaldef001751 /* = '15.000 15.000 0.000' */;
+vector globaldef001752 /* = '-15.000 -15.000 0.000' */;
+vector globaldef001753 /* = '-15.000 15.000 0.000' */;
+vector globaldef001754 /* = '15.000 -15.000 0.000' */;
 
-void (entity globaldef1756, entity globaldef1757) Killed;
+void (entity globaldef001756, entity globaldef001757) Killed;
 
 // function Killed
 // function number 200 begins at statement 3857
@@ -223,65 +223,65 @@ void (entity globaldef1756, entity globaldef1757) Killed;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1756, entity globaldef1757) Killed = {
+void (entity globaldef001756, entity globaldef001757) Killed = {
 
-   local entity globaldef1758;
+   local entity oself;
 
-   globaldef1758 = self;
-   self = globaldef1756;
-   if ( (self.globaldef130 < globaldef1759) ) {
+   oself = self;
+   self = globaldef001756;
+   if ( (self.globaldef000130 < globaldef001759) ) {
 
-      self.globaldef130 = globaldef1759;
+      self.globaldef000130 = globaldef001759;
 
    }
-   if ( ((self.movetype == MOVETYPE_PUSH) || (self.movetype == MOVETYPE_NONE)) ) {
+   if ( ((self.globaldef000081 == MOVETYPE_PUSH) || (self.globaldef000081 == MOVETYPE_NONE)) ) {
 
-      self.globaldef350 ();
-      self = globaldef1758;
+      self.globaldef000350 ();
+      self = oself;
       return ;
 
    }
-   self.enemy = globaldef1757;
-   if ( (self.globaldef160 & FL_MONSTER) ) {
+   self.globaldef000159 = globaldef001757;
+   if ( (self.globaldef000160 & FL_MONSTER) ) {
 
       killed_monsters = (killed_monsters + TRUE);
-      globaldef479 (MSG_ALL,SVC_KILLEDMONSTER);
+      WriteByte (MSG_ALL,SVC_KILLEDMONSTER);
 
    }
-   globaldef1747 (self,globaldef1757);
-   if ( (globaldef1757.classname == globaldef1171) ) {
+   ClientObituary (self,globaldef001757);
+   if ( (globaldef001757.globaldef000107 == globaldef001171) ) {
 
-      globaldef989 (globaldef1757.globaldef591,globaldef1757.globaldef131);
+      func002263 (globaldef001757.globaldef000591,globaldef001757.globaldef000131);
 
    } else {
 
-      if ( (globaldef1757.globaldef179.classname == globaldef1171) ) {
+      if ( (globaldef001757.globaldef000179.globaldef000107 == globaldef001171) ) {
 
-         globaldef989 (globaldef1757.globaldef179.globaldef591,globaldef1757.globaldef179.globaldef131);
+         func002263 (globaldef001757.globaldef000179.globaldef000591,globaldef001757.globaldef000179.globaldef000131);
 
       }
 
    }
-   if ( (globaldef1756.classname == globaldef1171) ) {
+   if ( (globaldef001756.globaldef000107 == globaldef001171) ) {
 
-      globaldef989 (globaldef1756.globaldef591,globaldef1756.globaldef131);
+      func002263 (globaldef001756.globaldef000591,globaldef001756.globaldef000131);
 
    }
-   if ( globaldef1757 ) {
+   if ( globaldef001757 ) {
 
-      globaldef1757.globaldef601 = self;
+      globaldef001757.globaldef000601 = self;
 
    }
    if ( self ) {
 
-      self.globaldef602 = globaldef1757;
+      self.globaldef000602 = globaldef001757;
 
    }
-   self.globaldef141 = DAMAGE_NO;
-   self.globaldef124 = SUB_Null;
-   globaldef1748 ();
-   self.globaldef350 ();
-   self = globaldef1758;
+   self.globaldef000141 = DAMAGE_NO;
+   self.globaldef000124 = SUB_Null;
+   monster_death_use ();
+   self.globaldef000350 ();
+   self = oself;
 
 };
 
@@ -474,134 +474,134 @@ void (entity globaldef1756, entity globaldef1757) Killed = {
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1760, entity globaldef1761, entity globaldef1762, float globaldef1763) T_Damage = {
+void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage = {
 
-   local vector globaldef1764;
-   local entity globaldef1768;
-   local float globaldef1769;
-   local float globaldef1770;
+   local vector dir;
+   local entity oldself;
+   local float save;
+   local float take;
 
-   if ( globaldef799 ) {
-
-      return ;
-
-   }
-   if ( !globaldef1760.globaldef141 ) {
+   if ( globaldef000799 ) {
 
       return ;
 
    }
-   damage_attacker = globaldef1762;
-   if ( (globaldef1762.globaldef365 > time) ) {
+   if ( !globaldef001760.globaldef000141 ) {
+
+      return ;
+
+   }
+   damage_attacker = globaldef001762;
+   if ( (globaldef001762.globaldef000365 > time) ) {
 
       if ( (deathmatch == MOVETYPE_STEP) ) {
 
-         globaldef1763 = (globaldef1763 * FL_CLIENT);
+         globaldef001763 = (globaldef001763 * FL_CLIENT);
 
       } else {
 
-         globaldef1763 = (globaldef1763 * MOVETYPE_STEP);
+         globaldef001763 = (globaldef001763 * MOVETYPE_STEP);
 
       }
 
    }
-   globaldef1769 = globaldef468 ((globaldef1760.globaldef165 * globaldef1763));
-   if ( (globaldef1769 >= globaldef1760.globaldef166) ) {
+   save = ceil ((globaldef001760.globaldef000165 * globaldef001763));
+   if ( (save >= globaldef001760.globaldef000166) ) {
 
-      globaldef1769 = globaldef1760.globaldef166;
-      globaldef1760.globaldef165 = FALSE;
-      globaldef1760.globaldef140 = (globaldef1760.globaldef140 - (globaldef1760.globaldef140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3)));
-
-   }
-   globaldef1760.globaldef166 = (globaldef1760.globaldef166 - globaldef1769);
-   globaldef1770 = globaldef468 ((globaldef1763 - globaldef1769));
-   if ( (globaldef1760.globaldef160 & FL_CLIENT) ) {
-
-      globaldef1760.globaldef176 = (globaldef1760.globaldef176 + globaldef1770);
-      globaldef1760.globaldef177 = (globaldef1760.globaldef177 + globaldef1769);
-      globaldef1760.globaldef178 = globaldef1761;
+      save = globaldef001760.globaldef000166;
+      globaldef001760.globaldef000165 = FALSE;
+      globaldef001760.globaldef000140 = (globaldef001760.globaldef000140 - (globaldef001760.globaldef000140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3)));
 
    }
-   if ( ((globaldef1761 != world) && (globaldef1760.movetype == MOVETYPE_WALK)) ) {
+   globaldef001760.globaldef000166 = (globaldef001760.globaldef000166 - save);
+   take = ceil ((globaldef001763 - save));
+   if ( (globaldef001760.globaldef000160 & FL_CLIENT) ) {
 
-      globaldef1764 = (globaldef1760.origin - ((globaldef1761.globaldef72 + globaldef1761.globaldef76) * globaldef522));
-      globaldef1764 = globaldef442 (globaldef1764);
-      globaldef1760.velocity = (globaldef1760.velocity + ((globaldef1764 * globaldef1763) * FL_CLIENT));
+      globaldef001760.globaldef000176 = (globaldef001760.globaldef000176 + take);
+      globaldef001760.globaldef000177 = (globaldef001760.globaldef000177 + save);
+      globaldef001760.globaldef000178 = globaldef001761;
 
    }
-   if ( ((globaldef1761 != world) && (globaldef1760.classname == globaldef1171)) ) {
+   if ( ((globaldef001761 != world) && (globaldef001760.globaldef000081 == MOVETYPE_WALK)) ) {
 
-      globaldef1764 = (globaldef1760.origin - ((globaldef1761.globaldef72 + globaldef1761.globaldef76) * globaldef522));
-      globaldef1764 = globaldef442 (globaldef1764);
-      globaldef1760.velocity = (globaldef1760.velocity + ((globaldef1764 * globaldef1763) * FL_CLIENT));
-      if ( (globaldef1760.globaldef584 > time) ) {
+      dir = (globaldef001760.globaldef000083 - ((globaldef001761.globaldef000072 + globaldef001761.globaldef000076) * globaldef000522));
+      dir = normalize (dir);
+      globaldef001760.globaldef000091 = (globaldef001760.globaldef000091 + ((dir * globaldef001763) * FL_CLIENT));
 
-         globaldef1760.velocity = (globaldef1760.velocity + globaldef1760.globaldef585);
-         globaldef1760.globaldef584 = (time - TRUE);
+   }
+   if ( ((globaldef001761 != world) && (globaldef001760.globaldef000107 == globaldef001171)) ) {
+
+      dir = (globaldef001760.globaldef000083 - ((globaldef001761.globaldef000072 + globaldef001761.globaldef000076) * globaldef000522));
+      dir = normalize (dir);
+      globaldef001760.globaldef000091 = (globaldef001760.globaldef000091 + ((dir * globaldef001763) * FL_CLIENT));
+      if ( (globaldef001760.globaldef000584 > time) ) {
+
+         globaldef001760.globaldef000091 = (globaldef001760.globaldef000091 + globaldef001760.globaldef000585);
+         globaldef001760.globaldef000584 = (time - TRUE);
 
       }
 
    }
-   if ( (globaldef1760.globaldef160 & FL_GODMODE) ) {
+   if ( (globaldef001760.globaldef000160 & FL_GODMODE) ) {
 
       return ;
 
    }
-   if ( (globaldef1760.globaldef363 >= time) ) {
+   if ( (globaldef001760.globaldef000363 >= time) ) {
 
-      if ( (self.globaldef368 < time) ) {
+      if ( (self.globaldef000368 < time) ) {
 
-         sound (globaldef1760,CHAN_ITEM,globaldef1771,TRUE,ATTN_NORM);
-         self.globaldef368 = (time + FL_SWIM);
+         sound (globaldef001760,CHAN_ITEM,globaldef001771,TRUE,ATTN_NORM);
+         self.globaldef000368 = (time + FL_SWIM);
 
       }
       return ;
 
    }
-   globaldef1760.globaldef130 = (globaldef1760.globaldef130 - globaldef1770);
-   if ( (globaldef1760.globaldef130 <= FALSE) ) {
+   globaldef001760.globaldef000130 = (globaldef001760.globaldef000130 - take);
+   if ( (globaldef001760.globaldef000130 <= FALSE) ) {
 
-      globaldef1755 (globaldef1760,globaldef1762);
+      Killed (globaldef001760,globaldef001762);
       return ;
 
    }
-   globaldef1768 = self;
-   self = globaldef1760;
-   if ( ((self.globaldef160 & FL_MONSTER) && (globaldef1762 != world)) ) {
+   oldself = self;
+   self = globaldef001760;
+   if ( ((self.globaldef000160 & FL_MONSTER) && (globaldef001762 != world)) ) {
 
-      if ( ((self != globaldef1762) && (globaldef1762 != self.enemy)) ) {
+      if ( ((self != globaldef001762) && (globaldef001762 != self.globaldef000159)) ) {
 
-         if ( ((self.classname != globaldef1762.classname) || (self.classname == "monster_army")) ) {
+         if ( ((self.globaldef000107 != globaldef001762.globaldef000107) || (self.globaldef000107 == globaldef001680)) ) {
 
-            if ( (self.enemy.classname == "player") ) {
+            if ( (self.globaldef000159.globaldef000107 == globaldef001170) ) {
 
-               self.globaldef351 = self.enemy;
+               self.globaldef000351 = self.globaldef000159;
 
             }
-            self.enemy = globaldef1762;
-            globaldef1684 ();
+            self.globaldef000159 = globaldef001762;
+            FoundTarget ();
 
          }
 
       }
 
    }
-   if ( self.globaldef349 ) {
+   if ( self.globaldef000349 ) {
 
-      self.globaldef349 (globaldef1762,globaldef1770);
+      self.globaldef000349 (globaldef001762,take);
       if ( (skill == MOVETYPE_WALK) ) {
 
-         self.globaldef362 = (time + MOVETYPE_FLY);
+         self.globaldef000362 = (time + MOVETYPE_FLY);
 
       }
 
    }
-   self = globaldef1768;
+   self = oldself;
 
 };
-string globaldef1771 /* = "items/protect3.wav" */;
+string globaldef001771 /* = "items/protect3.wav" */;
 
-void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity globaldef1776) T_RadiusDamage;
+void (entity globaldef001773, entity globaldef001774, float globaldef001775, entity globaldef001776) T_RadiusDamage;
 
 // function T_RadiusDamage
 // function number 202 begins at statement 4114
@@ -666,43 +666,43 @@ void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity gl
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity globaldef1776) T_RadiusDamage = {
+void (entity globaldef001773, entity globaldef001774, float globaldef001775, entity globaldef001776) T_RadiusDamage = {
 
-   local float globaldef1777;
-   local entity globaldef1778;
-   local vector globaldef1779;
+   local float points;
+   local entity head;
+   local vector org;
 
-   globaldef1778 = globaldef454 (globaldef1773.origin,(globaldef1775 + globaldef729));
-   while ( globaldef1778 ) {
+   head = findradius (globaldef001773.globaldef000083,(globaldef001775 + globaldef000729));
+   while ( head ) {
 
-      if ( (globaldef1778 != globaldef1776) ) {
+      if ( (head != globaldef001776) ) {
 
-         if ( globaldef1778.globaldef141 ) {
+         if ( head.globaldef000141 ) {
 
-            globaldef1779 = (globaldef1778.origin + ((globaldef1778.globaldef112 + globaldef1778.globaldef116) * globaldef522));
-            globaldef1777 = (globaldef522 * vlen ((globaldef1773.origin - globaldef1779)));
-            if ( (globaldef1777 < FALSE) ) {
+            org = (head.globaldef000083 + ((head.globaldef000112 + head.globaldef000116) * globaldef000522));
+            points = (globaldef000522 * vlen ((globaldef001773.globaldef000083 - org)));
+            if ( (points < FALSE) ) {
 
-               globaldef1777 = FALSE;
-
-            }
-            globaldef1777 = (globaldef1775 - globaldef1777);
-            if ( (globaldef1778 == globaldef1774) ) {
-
-               globaldef1777 = (globaldef1777 * globaldef522);
+               points = FALSE;
 
             }
-            if ( (globaldef1777 > FALSE) ) {
+            points = (globaldef001775 - points);
+            if ( (head == globaldef001774) ) {
 
-               if ( globaldef507 (globaldef1778,globaldef1773) ) {
+               points = (points * globaldef000522);
 
-                  if ( (globaldef1778.classname == "monster_shambler") ) {
+            }
+            if ( (points > FALSE) ) {
 
-                     globaldef505 (globaldef1778,globaldef1773,globaldef1774,(globaldef1777 * globaldef522));
+               if ( CanDamage (head,globaldef001773) ) {
+
+                  if ( (head.globaldef000107 == globaldef001659) ) {
+
+                     T_Damage (head,globaldef001773,globaldef001774,(points * globaldef000522));
 
                   } else {
 
-                     globaldef505 (globaldef1778,globaldef1773,globaldef1774,globaldef1777);
+                     T_Damage (head,globaldef001773,globaldef001774,points);
 
                   }
 
@@ -713,13 +713,13 @@ void (entity globaldef1773, entity globaldef1774, float globaldef1775, entity gl
          }
 
       }
-      globaldef1778 = globaldef1778.globaldef142;
+      head = head.globaldef000142;
 
    }
 
 };
 
-void (entity globaldef1784, float globaldef1785) T_BeamDamage;
+void (entity globaldef001784, float globaldef001785) T_BeamDamage;
 
 // function T_BeamDamage
 // function number 203 begins at statement 4172
@@ -776,39 +776,39 @@ void (entity globaldef1784, float globaldef1785) T_BeamDamage;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef1784, float globaldef1785) T_BeamDamage = {
+void (entity globaldef001784, float globaldef001785) T_BeamDamage = {
 
-   local float globaldef1786;
-   local entity globaldef1787;
+   local float points;
+   local entity head;
 
-   globaldef1787 = globaldef454 (globaldef1784.origin,(globaldef1785 + globaldef729));
-   while ( globaldef1787 ) {
+   head = findradius (globaldef001784.globaldef000083,(globaldef001785 + globaldef000729));
+   while ( head ) {
 
-      if ( globaldef1787.globaldef141 ) {
+      if ( head.globaldef000141 ) {
 
-         globaldef1786 = (globaldef522 * vlen ((globaldef1784.origin - globaldef1787.origin)));
-         if ( (globaldef1786 < FALSE) ) {
+         points = (globaldef000522 * vlen ((globaldef001784.globaldef000083 - head.globaldef000083)));
+         if ( (points < FALSE) ) {
 
-            globaldef1786 = FALSE;
-
-         }
-         globaldef1786 = (globaldef1785 - globaldef1786);
-         if ( (globaldef1787 == globaldef1784) ) {
-
-            globaldef1786 = (globaldef1786 * globaldef522);
+            points = FALSE;
 
          }
-         if ( (globaldef1786 > FALSE) ) {
+         points = (globaldef001785 - points);
+         if ( (head == globaldef001784) ) {
 
-            if ( globaldef507 (globaldef1787,globaldef1784) ) {
+            points = (points * globaldef000522);
 
-               if ( (globaldef1787.classname == "monster_shambler") ) {
+         }
+         if ( (points > FALSE) ) {
 
-                  globaldef505 (globaldef1787,globaldef1784,globaldef1784,(globaldef1786 * globaldef522));
+            if ( CanDamage (head,globaldef001784) ) {
+
+               if ( (head.globaldef000107 == globaldef001659) ) {
+
+                  T_Damage (head,globaldef001784,globaldef001784,(points * globaldef000522));
 
                } else {
 
-                  globaldef505 (globaldef1787,globaldef1784,globaldef1784,globaldef1786);
+                  T_Damage (head,globaldef001784,globaldef001784,points);
 
                }
 
@@ -817,7 +817,7 @@ void (entity globaldef1784, float globaldef1785) T_BeamDamage = {
          }
 
       }
-      globaldef1787 = globaldef1787.globaldef142;
+      head = head.globaldef000142;
 
    }
 
