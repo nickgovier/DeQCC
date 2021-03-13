@@ -1,7 +1,5 @@
 string globaldef004060 /* = "progs/shambler.mdl" */;
 
-void () knight_stand1;
-
 // function knight_stand1
 // function number 988 begins at statement 20341
 /*
@@ -15,8 +13,6 @@ void () knight_stand1 = [ 0.000, knight_stand2 ] {
    ai_stand ();
 
 };
-
-void () knight_stand2;
 
 // function knight_stand2
 // function number 989 begins at statement 20344
@@ -32,8 +28,6 @@ void () knight_stand2 = [ 1.000, knight_stand3 ] {
 
 };
 
-void () knight_stand3;
-
 // function knight_stand3
 // function number 990 begins at statement 20347
 /*
@@ -47,8 +41,6 @@ void () knight_stand3 = [ 2.000, knight_stand4 ] {
    ai_stand ();
 
 };
-
-void () knight_stand4;
 
 // function knight_stand4
 // function number 991 begins at statement 20350
@@ -64,8 +56,6 @@ void () knight_stand4 = [ 3.000, knight_stand5 ] {
 
 };
 
-void () knight_stand5;
-
 // function knight_stand5
 // function number 992 begins at statement 20353
 /*
@@ -79,8 +69,6 @@ void () knight_stand5 = [ 4.000, knight_stand6 ] {
    ai_stand ();
 
 };
-
-void () knight_stand6;
 
 // function knight_stand6
 // function number 993 begins at statement 20356
@@ -96,8 +84,6 @@ void () knight_stand6 = [ 5.000, knight_stand7 ] {
 
 };
 
-void () knight_stand7;
-
 // function knight_stand7
 // function number 994 begins at statement 20359
 /*
@@ -112,8 +98,6 @@ void () knight_stand7 = [ 6.000, knight_stand8 ] {
 
 };
 
-void () knight_stand8;
-
 // function knight_stand8
 // function number 995 begins at statement 20362
 /*
@@ -127,8 +111,6 @@ void () knight_stand8 = [ 7.000, knight_stand9 ] {
    ai_stand ();
 
 };
-
-void () knight_stand9;
 
 // function knight_stand9
 // function number 996 begins at statement 20365
@@ -172,8 +154,6 @@ void () knight_walk1 = [ 53.000, knight_walk2 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_walk2;
 string globaldef004071 /* = "knight/idle.wav" */;
 
 // function knight_walk2
@@ -191,8 +171,6 @@ void () knight_walk2 = [ 54.000, knight_walk3 ] {
 
 };
 
-void () knight_walk3;
-
 // function knight_walk3
 // function number 999 begins at statement 20385
 /*
@@ -207,8 +185,6 @@ void () knight_walk3 = [ 55.000, knight_walk4 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_walk4;
 
 // function knight_walk4
 // function number 1000 begins at statement 20389
@@ -225,8 +201,6 @@ void () knight_walk4 = [ 56.000, knight_walk5 ] {
 
 };
 
-void () knight_walk5;
-
 // function knight_walk5
 // function number 1001 begins at statement 20393
 /*
@@ -241,8 +215,6 @@ void () knight_walk5 = [ 57.000, knight_walk6 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_walk6;
 
 // function knight_walk6
 // function number 1002 begins at statement 20397
@@ -259,8 +231,6 @@ void () knight_walk6 = [ 58.000, knight_walk7 ] {
 
 };
 
-void () knight_walk7;
-
 // function knight_walk7
 // function number 1003 begins at statement 20401
 /*
@@ -275,8 +245,6 @@ void () knight_walk7 = [ 59.000, knight_walk8 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_walk8;
 
 // function knight_walk8
 // function number 1004 begins at statement 20405
@@ -293,8 +261,6 @@ void () knight_walk8 = [ 60.000, knight_walk9 ] {
 
 };
 
-void () knight_walk9;
-
 // function knight_walk9
 // function number 1005 begins at statement 20409
 /*
@@ -309,8 +275,6 @@ void () knight_walk9 = [ 61.000, knight_walk10 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_walk10;
 
 // function knight_walk10
 // function number 1006 begins at statement 20413
@@ -327,8 +291,6 @@ void () knight_walk10 = [ 62.000, knight_walk11 ] {
 
 };
 
-void () knight_walk11;
-
 // function knight_walk11
 // function number 1007 begins at statement 20417
 /*
@@ -343,8 +305,6 @@ void () knight_walk11 = [ 63.000, knight_walk12 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () knight_walk12;
 
 // function knight_walk12
 // function number 1008 begins at statement 20421
@@ -361,8 +321,6 @@ void () knight_walk12 = [ 64.000, knight_walk13 ] {
 
 };
 
-void () knight_walk13;
-
 // function knight_walk13
 // function number 1009 begins at statement 20425
 /*
@@ -378,8 +336,6 @@ void () knight_walk13 = [ 65.000, knight_walk14 ] {
 
 };
 
-void () knight_walk14;
-
 // function knight_walk14
 // function number 1010 begins at statement 20429
 /*
@@ -394,8 +350,6 @@ void () knight_walk14 = [ 66.000, knight_walk1 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () knight_run1;
 
 // function knight_run1
 // function number 1011 begins at statement 20433
@@ -426,8 +380,6 @@ void () knight_run1 = [ 9.000, knight_run2 ] {
 
 };
 
-void () knight_run2;
-
 // function knight_run2
 // function number 1012 begins at statement 20446
 /*
@@ -442,8 +394,6 @@ void () knight_run2 = [ 10.000, knight_run3 ] {
    ai_run (globaldef001384);
 
 };
-
-void () knight_run3;
 
 // function knight_run3
 // function number 1013 begins at statement 20450
@@ -460,8 +410,6 @@ void () knight_run3 = [ 11.000, knight_run4 ] {
 
 };
 
-void () knight_run4;
-
 // function knight_run4
 // function number 1014 begins at statement 20454
 /*
@@ -476,8 +424,6 @@ void () knight_run4 = [ 12.000, knight_run5 ] {
    ai_run (MOVETYPE_PUSH);
 
 };
-
-void () knight_run5;
 
 // function knight_run5
 // function number 1015 begins at statement 20458
@@ -494,8 +440,6 @@ void () knight_run5 = [ 13.000, knight_run6 ] {
 
 };
 
-void () knight_run6;
-
 // function knight_run6
 // function number 1016 begins at statement 20462
 /*
@@ -511,8 +455,6 @@ void () knight_run6 = [ 14.000, knight_run7 ] {
 
 };
 
-void () knight_run7;
-
 // function knight_run7
 // function number 1017 begins at statement 20466
 /*
@@ -527,8 +469,6 @@ void () knight_run7 = [ 15.000, knight_run8 ] {
    ai_run (globaldef002136);
 
 };
-
-void () knight_run8;
 
 // function knight_run8
 // function number 1018 begins at statement 20470
@@ -584,8 +524,6 @@ void () knight_runatk1 = [ 17.000, knight_runatk2 ] {
    ai_charge (globaldef001384);
 
 };
-
-void () knight_runatk2;
 string globaldef004093 /* = "knight/sword2.wav" */;
 string globaldef004094 /* = "knight/sword1.wav" */;
 
@@ -603,8 +541,6 @@ void () knight_runatk2 = [ 18.000, knight_runatk3 ] {
 
 };
 
-void () knight_runatk3;
-
 // function knight_runatk3
 // function number 1021 begins at statement 20497
 /*
@@ -618,8 +554,6 @@ void () knight_runatk3 = [ 19.000, knight_runatk4 ] {
    ai_charge_side ();
 
 };
-
-void () knight_runatk4;
 
 // function knight_runatk4
 // function number 1022 begins at statement 20500
@@ -635,8 +569,6 @@ void () knight_runatk4 = [ 20.000, knight_runatk5 ] {
 
 };
 
-void () knight_runatk5;
-
 // function knight_runatk5
 // function number 1023 begins at statement 20503
 /*
@@ -650,8 +582,6 @@ void () knight_runatk5 = [ 21.000, knight_runatk6 ] {
    ai_melee_side ();
 
 };
-
-void () knight_runatk6;
 
 // function knight_runatk6
 // function number 1024 begins at statement 20506
@@ -667,8 +597,6 @@ void () knight_runatk6 = [ 22.000, knight_runatk7 ] {
 
 };
 
-void () knight_runatk7;
-
 // function knight_runatk7
 // function number 1025 begins at statement 20509
 /*
@@ -682,8 +610,6 @@ void () knight_runatk7 = [ 23.000, knight_runatk8 ] {
    ai_melee_side ();
 
 };
-
-void () knight_runatk8;
 
 // function knight_runatk8
 // function number 1026 begins at statement 20512
@@ -699,8 +625,6 @@ void () knight_runatk8 = [ 24.000, knight_runatk9 ] {
 
 };
 
-void () knight_runatk9;
-
 // function knight_runatk9
 // function number 1027 begins at statement 20515
 /*
@@ -715,8 +639,6 @@ void () knight_runatk9 = [ 25.000, knight_runatk10 ] {
 
 };
 
-void () knight_runatk10;
-
 // function knight_runatk10
 // function number 1028 begins at statement 20518
 /*
@@ -730,8 +652,6 @@ void () knight_runatk10 = [ 26.000, knight_runatk11 ] {
    ai_charge_side ();
 
 };
-
-void () knight_runatk11;
 
 // function knight_runatk11
 // function number 1029 begins at statement 20521
@@ -770,8 +690,6 @@ void () knight_atk1 = [ 42.000, knight_atk2 ] {
 
 };
 
-void () knight_atk2;
-
 // function knight_atk2
 // function number 1031 begins at statement 20535
 /*
@@ -786,8 +704,6 @@ void () knight_atk2 = [ 44.000, knight_atk3 ] {
    ai_charge (MOVETYPE_PUSH);
 
 };
-
-void () knight_atk3;
 
 // function knight_atk3
 // function number 1032 begins at statement 20539
@@ -804,8 +720,6 @@ void () knight_atk3 = [ 45.000, knight_atk4 ] {
 
 };
 
-void () knight_atk4;
-
 // function knight_atk4
 // function number 1033 begins at statement 20543
 /*
@@ -821,8 +735,6 @@ void () knight_atk4 = [ 46.000, knight_atk5 ] {
 
 };
 
-void () knight_atk5;
-
 // function knight_atk5
 // function number 1034 begins at statement 20547
 /*
@@ -837,8 +749,6 @@ void () knight_atk5 = [ 47.000, knight_atk6 ] {
    ai_charge (MOVETYPE_WALK);
 
 };
-
-void () knight_atk6;
 
 // function knight_atk6
 // function number 1035 begins at statement 20551
@@ -857,8 +767,6 @@ void () knight_atk6 = [ 48.000, knight_atk7 ] {
 
 };
 
-void () knight_atk7;
-
 // function knight_atk7
 // function number 1036 begins at statement 20556
 /*
@@ -875,8 +783,6 @@ void () knight_atk7 = [ 49.000, knight_atk8 ] {
    ai_melee ();
 
 };
-
-void () knight_atk8;
 
 // function knight_atk8
 // function number 1037 begins at statement 20561
@@ -895,8 +801,6 @@ void () knight_atk8 = [ 50.000, knight_atk9 ] {
 
 };
 
-void () knight_atk9;
-
 // function knight_atk9
 // function number 1038 begins at statement 20566
 /*
@@ -911,8 +815,6 @@ void () knight_atk9 = [ 51.000, knight_atk10 ] {
    ai_charge (TRUE);
 
 };
-
-void () knight_atk10;
 
 // function knight_atk10
 // function number 1039 begins at statement 20570
@@ -929,8 +831,6 @@ void () knight_atk10 = [ 52.000, knight_run1 ] {
 
 };
 
-void () knight_pain1;
-
 // function knight_pain1
 // function number 1040 begins at statement 20574
 /*
@@ -942,8 +842,6 @@ void () knight_pain1 = [ 28.000, knight_pain2 ] {
 
 
 };
-
-void () knight_pain2;
 
 // function knight_pain2
 // function number 1041 begins at statement 20576
@@ -957,8 +855,6 @@ void () knight_pain2 = [ 29.000, knight_pain3 ] {
 
 };
 
-void () knight_pain3;
-
 // function knight_pain3
 // function number 1042 begins at statement 20578
 /*
@@ -970,8 +866,6 @@ void () knight_pain3 = [ 30.000, knight_run1 ] {
 
 
 };
-
-void () knight_painb1;
 
 // function knight_painb1
 // function number 1043 begins at statement 20580
@@ -988,8 +882,6 @@ void () knight_painb1 = [ 31.000, knight_painb2 ] {
 
 };
 
-void () knight_painb2;
-
 // function knight_painb2
 // function number 1044 begins at statement 20584
 /*
@@ -1005,8 +897,6 @@ void () knight_painb2 = [ 32.000, knight_painb3 ] {
 
 };
 
-void () knight_painb3;
-
 // function knight_painb3
 // function number 1045 begins at statement 20588
 /*
@@ -1019,8 +909,6 @@ void () knight_painb3 = [ 33.000, knight_painb4 ] {
 
 };
 
-void () knight_painb4;
-
 // function knight_painb4
 // function number 1046 begins at statement 20590
 /*
@@ -1032,8 +920,6 @@ void () knight_painb4 = [ 34.000, knight_painb5 ] {
 
 
 };
-
-void () knight_painb5;
 
 // function knight_painb5
 // function number 1047 begins at statement 20592
@@ -1050,8 +936,6 @@ void () knight_painb5 = [ 35.000, knight_painb6 ] {
 
 };
 
-void () knight_painb6;
-
 // function knight_painb6
 // function number 1048 begins at statement 20596
 /*
@@ -1066,8 +950,6 @@ void () knight_painb6 = [ 36.000, knight_painb7 ] {
    ai_painforward (MOVETYPE_STEP);
 
 };
-
-void () knight_painb7;
 
 // function knight_painb7
 // function number 1049 begins at statement 20600
@@ -1084,8 +966,6 @@ void () knight_painb7 = [ 37.000, knight_painb8 ] {
 
 };
 
-void () knight_painb8;
-
 // function knight_painb8
 // function number 1050 begins at statement 20604
 /*
@@ -1100,8 +980,6 @@ void () knight_painb8 = [ 38.000, knight_painb9 ] {
    ai_painforward (MOVETYPE_FLY);
 
 };
-
-void () knight_painb9;
 
 // function knight_painb9
 // function number 1051 begins at statement 20608
@@ -1118,8 +996,6 @@ void () knight_painb9 = [ 39.000, knight_painb10 ] {
 
 };
 
-void () knight_painb10;
-
 // function knight_painb10
 // function number 1052 begins at statement 20612
 /*
@@ -1135,8 +1011,6 @@ void () knight_painb10 = [ 40.000, knight_painb11 ] {
 
 };
 
-void () knight_painb11;
-
 // function knight_painb11
 // function number 1053 begins at statement 20616
 /*
@@ -1148,8 +1022,6 @@ void () knight_painb11 = [ 41.000, knight_run1 ] {
 
 
 };
-
-void (entity globaldef004128, float globaldef004129) knight_pain;
 
 // function knight_pain
 // function number 1054 begins at statement 20618
@@ -1184,7 +1056,7 @@ void (entity globaldef004128, float globaldef004129) knight_pain = {
 
    local float r;
 
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
@@ -1194,12 +1066,12 @@ void (entity globaldef004128, float globaldef004129) knight_pain = {
    if ( (r < globaldef004132) ) {
 
       knight_pain1 ();
-      self.globaldef000362 = (time + TRUE);
+      self.pain_finished = (time + TRUE);
 
    } else {
 
       knight_painb1 ();
-      self.globaldef000362 = (time + TRUE);
+      self.pain_finished = (time + TRUE);
 
    }
 
@@ -1221,8 +1093,6 @@ void () knight_bow1 = [ 67.000, knight_bow2 ] {
 
 };
 
-void () knight_bow2;
-
 // function knight_bow2
 // function number 1056 begins at statement 20645
 /*
@@ -1236,8 +1106,6 @@ void () knight_bow2 = [ 68.000, knight_bow3 ] {
    ai_turn ();
 
 };
-
-void () knight_bow3;
 
 // function knight_bow3
 // function number 1057 begins at statement 20648
@@ -1253,8 +1121,6 @@ void () knight_bow3 = [ 69.000, knight_bow4 ] {
 
 };
 
-void () knight_bow4;
-
 // function knight_bow4
 // function number 1058 begins at statement 20651
 /*
@@ -1268,8 +1134,6 @@ void () knight_bow4 = [ 70.000, knight_bow5 ] {
    ai_turn ();
 
 };
-
-void () knight_bow5;
 
 // function knight_bow5
 // function number 1059 begins at statement 20654
@@ -1299,8 +1163,6 @@ void () knight_bow6 = [ 70.000, knight_bow7 ] {
 
 };
 
-void () knight_bow7;
-
 // function knight_bow7
 // function number 1061 begins at statement 20660
 /*
@@ -1314,8 +1176,6 @@ void () knight_bow7 = [ 69.000, knight_bow8 ] {
    ai_turn ();
 
 };
-
-void () knight_bow8;
 
 // function knight_bow8
 // function number 1062 begins at statement 20663
@@ -1331,8 +1191,6 @@ void () knight_bow8 = [ 68.000, knight_bow9 ] {
 
 };
 
-void () knight_bow9;
-
 // function knight_bow9
 // function number 1063 begins at statement 20666
 /*
@@ -1346,8 +1204,6 @@ void () knight_bow9 = [ 67.000, knight_bow10 ] {
    ai_turn ();
 
 };
-
-void () knight_bow10;
 
 // function knight_bow10
 // function number 1064 begins at statement 20669
@@ -1363,8 +1219,6 @@ void () knight_bow10 = [ 53.000, knight_walk1 ] {
 
 };
 
-void () knight_die1;
-
 // function knight_die1
 // function number 1065 begins at statement 20672
 /*
@@ -1376,8 +1230,6 @@ void () knight_die1 = [ 76.000, knight_die2 ] {
 
 
 };
-
-void () knight_die2;
 
 // function knight_die2
 // function number 1066 begins at statement 20674
@@ -1391,8 +1243,6 @@ void () knight_die2 = [ 77.000, knight_die3 ] {
 
 };
 
-void () knight_die3;
-
 // function knight_die3
 // function number 1067 begins at statement 20676
 /*
@@ -1404,11 +1254,9 @@ void () knight_die3;
 
 void () knight_die3 = [ 78.000, knight_die4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () knight_die4;
 
 // function knight_die4
 // function number 1068 begins at statement 20680
@@ -1422,8 +1270,6 @@ void () knight_die4 = [ 79.000, knight_die5 ] {
 
 };
 
-void () knight_die5;
-
 // function knight_die5
 // function number 1069 begins at statement 20682
 /*
@@ -1435,8 +1281,6 @@ void () knight_die5 = [ 80.000, knight_die6 ] {
 
 
 };
-
-void () knight_die6;
 
 // function knight_die6
 // function number 1070 begins at statement 20684
@@ -1450,8 +1294,6 @@ void () knight_die6 = [ 81.000, knight_die7 ] {
 
 };
 
-void () knight_die7;
-
 // function knight_die7
 // function number 1071 begins at statement 20686
 /*
@@ -1463,8 +1305,6 @@ void () knight_die7 = [ 82.000, knight_die8 ] {
 
 
 };
-
-void () knight_die8;
 
 // function knight_die8
 // function number 1072 begins at statement 20688
@@ -1478,8 +1318,6 @@ void () knight_die8 = [ 83.000, knight_die9 ] {
 
 };
 
-void () knight_die9;
-
 // function knight_die9
 // function number 1073 begins at statement 20690
 /*
@@ -1491,8 +1329,6 @@ void () knight_die9 = [ 84.000, knight_die10 ] {
 
 
 };
-
-void () knight_die10;
 
 // function knight_die10
 // function number 1074 begins at statement 20692
@@ -1506,8 +1342,6 @@ void () knight_die10 = [ 85.000, knight_die10 ] {
 
 };
 
-void () knight_dieb1;
-
 // function knight_dieb1
 // function number 1075 begins at statement 20694
 /*
@@ -1519,8 +1353,6 @@ void () knight_dieb1 = [ 86.000, knight_dieb2 ] {
 
 
 };
-
-void () knight_dieb2;
 
 // function knight_dieb2
 // function number 1076 begins at statement 20696
@@ -1534,8 +1366,6 @@ void () knight_dieb2 = [ 87.000, knight_dieb3 ] {
 
 };
 
-void () knight_dieb3;
-
 // function knight_dieb3
 // function number 1077 begins at statement 20698
 /*
@@ -1547,11 +1377,9 @@ void () knight_dieb3;
 
 void () knight_dieb3 = [ 88.000, knight_dieb4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () knight_dieb4;
 
 // function knight_dieb4
 // function number 1078 begins at statement 20702
@@ -1565,8 +1393,6 @@ void () knight_dieb4 = [ 89.000, knight_dieb5 ] {
 
 };
 
-void () knight_dieb5;
-
 // function knight_dieb5
 // function number 1079 begins at statement 20704
 /*
@@ -1578,8 +1404,6 @@ void () knight_dieb5 = [ 90.000, knight_dieb6 ] {
 
 
 };
-
-void () knight_dieb6;
 
 // function knight_dieb6
 // function number 1080 begins at statement 20706
@@ -1593,8 +1417,6 @@ void () knight_dieb6 = [ 91.000, knight_dieb7 ] {
 
 };
 
-void () knight_dieb7;
-
 // function knight_dieb7
 // function number 1081 begins at statement 20708
 /*
@@ -1606,8 +1428,6 @@ void () knight_dieb7 = [ 92.000, knight_dieb8 ] {
 
 
 };
-
-void () knight_dieb8;
 
 // function knight_dieb8
 // function number 1082 begins at statement 20710
@@ -1621,8 +1441,6 @@ void () knight_dieb8 = [ 93.000, knight_dieb9 ] {
 
 };
 
-void () knight_dieb9;
-
 // function knight_dieb9
 // function number 1083 begins at statement 20712
 /*
@@ -1634,8 +1452,6 @@ void () knight_dieb9 = [ 94.000, knight_dieb10 ] {
 
 
 };
-
-void () knight_dieb10;
 
 // function knight_dieb10
 // function number 1084 begins at statement 20714
@@ -1649,8 +1465,6 @@ void () knight_dieb10 = [ 95.000, knight_dieb11 ] {
 
 };
 
-void () knight_dieb11;
-
 // function knight_dieb11
 // function number 1085 begins at statement 20716
 /*
@@ -1662,8 +1476,6 @@ void () knight_dieb11 = [ 96.000, knight_dieb11 ] {
 
 
 };
-
-void () knight_die;
 
 // function knight_die
 // function number 1086 begins at statement 20718
@@ -1711,13 +1523,13 @@ void () knight_die;
 
 void () knight_die = {
 
-   if ( (self.globaldef000130 < globaldef003008) ) {
+   if ( (self.health < globaldef003008) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef004163,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef004163,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -1735,8 +1547,6 @@ void () knight_die = {
 };
 string globaldef004163 /* = "progs/h_knight.mdl" */;
 string globaldef004164 /* = "knight/kdeath.wav" */;
-
-void () monster_knight;
 
 // function monster_knight
 // function number 1087 begins at statement 20757
@@ -1806,17 +1616,17 @@ void () monster_knight = {
    precache_sound (globaldef004094);
    precache_sound (globaldef004093);
    precache_sound (globaldef004071);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef004166);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = globaldef002995;
-   self.globaldef000344 = knight_stand1;
-   self.globaldef000345 = knight_walk1;
-   self.globaldef000346 = knight_run1;
-   self.globaldef000348 = knight_atk1;
-   self.globaldef000349 = knight_pain;
-   self.globaldef000350 = knight_die;
+   self.health = globaldef002995;
+   self.th_stand = knight_stand1;
+   self.th_walk = knight_walk1;
+   self.th_run = knight_run1;
+   self.th_melee = knight_atk1;
+   self.th_pain = knight_pain;
+   self.th_die = knight_die;
    walkmonster_start ();
 
 };

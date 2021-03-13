@@ -24,8 +24,6 @@ void () SUB_Remove = {
 
 };
 
-void () SetMovedir;
-
 // function SetMovedir
 // function number 151 begins at statement 2442
 /*
@@ -53,33 +51,31 @@ void () SetMovedir;
 
 void () SetMovedir = {
 
-   if ( (self.globaldef000095 == globaldef001461) ) {
+   if ( (self.angles == globaldef001461) ) {
 
-      self.globaldef000180 = globaldef001462;
+      self.movedir = globaldef001462;
 
    } else {
 
-      if ( (self.globaldef000095 == globaldef001463) ) {
+      if ( (self.angles == globaldef001463) ) {
 
-         self.globaldef000180 = globaldef001464;
+         self.movedir = globaldef001464;
 
       } else {
 
-         makevectors (self.globaldef000095);
-         self.globaldef000180 = v_forward;
+         makevectors (self.angles);
+         self.movedir = v_forward;
 
       }
 
    }
-   self.globaldef000095 = VEC_ORIGIN;
+   self.angles = VEC_ORIGIN;
 
 };
 vector globaldef001461 /* = '0.000 -1.000 0.000' */;
 vector globaldef001462 /* = '0.000 0.000 1.000' */;
 vector globaldef001463 /* = '0.000 -2.000 0.000' */;
 vector globaldef001464 /* = '0.000 0.000 -1.000' */;
-
-void () InitTrigger;
 
 // function InitTrigger
 // function number 152 begins at statement 2462
@@ -105,16 +101,16 @@ void () InitTrigger;
 
 void () InitTrigger = {
 
-   if ( (self.globaldef000095 != VEC_ORIGIN) ) {
+   if ( (self.angles != VEC_ORIGIN) ) {
 
       SetMovedir ();
 
    }
-   self.globaldef000082 = SOLID_TRIGGER;
-   setmodel (self,self.globaldef000108);
-   self.globaldef000081 = MOVETYPE_NONE;
-   self.globaldef000071 = FALSE;
-   self.globaldef000108 = globaldef001466;
+   self.solid = SOLID_TRIGGER;
+   setmodel (self,self.model);
+   self.movetype = MOVETYPE_NONE;
+   self.modelindex = FALSE;
+   self.model = globaldef001466;
 
 };
 string globaldef001466 /* = "" */;
@@ -132,13 +128,13 @@ string globaldef001466 /* = "" */;
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef001467, vector globaldef001468, float globaldef001472, void() globaldef001473) SUB_CalcMoveEnt = {
+void (entity globaldef001467, vector globaldef001468, float globaldef001472, void() func000000) SUB_CalcMoveEnt = {
 
    local entity stemp;
 
    stemp = self;
    self = globaldef001467;
-   SUB_CalcMove (globaldef001468,globaldef001472,globaldef001473);
+   SUB_CalcMove (globaldef001468,globaldef001472,func000000);
    self = stemp;
 
 };
@@ -194,7 +190,7 @@ void (entity globaldef001467, vector globaldef001468, float globaldef001472, voi
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef001475, float globaldef001479, void() globaldef001480) SUB_CalcMove = {
+void (vector globaldef001475, float globaldef001479, void() func000000) SUB_CalcMove = {
 
    local vector vdestdelta;
    local float len;
@@ -205,28 +201,28 @@ void (vector globaldef001475, float globaldef001479, void() globaldef001480) SUB
       objerror (globaldef001487);
 
    }
-   self.globaldef000410 = globaldef001480;
-   self.globaldef000411 = globaldef001475;
-   self.globaldef000126 = SUB_CalcMoveDone;
-   if ( (globaldef001475 == self.globaldef000083) ) {
+   self.think1 = func000000;
+   self.finaldest = globaldef001475;
+   self.think = SUB_CalcMoveDone;
+   if ( (globaldef001475 == self.origin) ) {
 
-      self.globaldef000091 = VEC_ORIGIN;
-      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+      self.velocity = VEC_ORIGIN;
+      self.nextthink = (self.ltime + globaldef001488);
       return ;
 
    }
-   vdestdelta = (globaldef001475 - self.globaldef000083);
+   vdestdelta = (globaldef001475 - self.origin);
    len = vlen (vdestdelta);
    traveltime = (len / globaldef001479);
    if ( (traveltime < globaldef001488) ) {
 
-      self.globaldef000091 = VEC_ORIGIN;
-      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+      self.velocity = VEC_ORIGIN;
+      self.nextthink = (self.ltime + globaldef001488);
       return ;
 
    }
-   self.globaldef000128 = (self.globaldef000080 + traveltime);
-   self.globaldef000091 = (vdestdelta * (TRUE / traveltime));
+   self.nextthink = (self.ltime + traveltime);
+   self.velocity = (vdestdelta * (TRUE / traveltime));
 
 };
 float globaldef001488 /* = 0.100 */;
@@ -251,18 +247,16 @@ float globaldef001488 /* = 0.100 */;
 
 void () SUB_CalcMoveDone = {
 
-   setorigin (self,self.globaldef000411);
-   self.globaldef000091 = VEC_ORIGIN;
-   self.globaldef000128 = CONTENT_EMPTY;
-   if ( self.globaldef000410 ) {
+   setorigin (self,self.finaldest);
+   self.velocity = VEC_ORIGIN;
+   self.nextthink = CONTENT_EMPTY;
+   if ( self.think1 ) {
 
-      self.globaldef000410 ();
+      self.think1 ();
 
    }
 
 };
-
-void (entity globaldef001490, vector globaldef001491, float globaldef001495, void() globaldef001496) SUB_CalcAngleMoveEnt;
 
 // function SUB_CalcAngleMoveEnt
 // function number 156 begins at statement 2546
@@ -277,13 +271,13 @@ void (entity globaldef001490, vector globaldef001491, float globaldef001495, voi
  * OP_DONE	0	0	0
  */
 
-void (entity globaldef001490, vector globaldef001491, float globaldef001495, void() globaldef001496) SUB_CalcAngleMoveEnt = {
+void (entity globaldef001490, vector globaldef001491, float globaldef001495, void() func000000) SUB_CalcAngleMoveEnt = {
 
    local entity stemp;
 
    stemp = self;
    self = globaldef001490;
-   SUB_CalcAngleMove (globaldef001491,globaldef001495,globaldef001496);
+   SUB_CalcAngleMove (globaldef001491,globaldef001495,func000000);
    self = stemp;
 
 };
@@ -320,7 +314,7 @@ void (entity globaldef001490, vector globaldef001491, float globaldef001495, voi
  * OP_DONE	0	0	0
  */
 
-void (vector globaldef001498, float globaldef001502, void() globaldef001503) SUB_CalcAngleMove = {
+void (vector globaldef001498, float globaldef001502, void() func000000) SUB_CalcAngleMove = {
 
    local vector destdelta;
    local float len;
@@ -331,14 +325,14 @@ void (vector globaldef001498, float globaldef001502, void() globaldef001503) SUB
       objerror (globaldef001487);
 
    }
-   destdelta = (globaldef001498 - self.globaldef000095);
+   destdelta = (globaldef001498 - self.angles);
    len = vlen (destdelta);
    traveltime = (len / globaldef001502);
-   self.globaldef000128 = (self.globaldef000080 + traveltime);
-   self.globaldef000099 = (destdelta * (TRUE / traveltime));
-   self.globaldef000410 = globaldef001503;
-   self.globaldef000415 = globaldef001498;
-   self.globaldef000126 = SUB_CalcAngleMoveDone;
+   self.nextthink = (self.ltime + traveltime);
+   self.avelocity = (destdelta * (TRUE / traveltime));
+   self.think1 = func000000;
+   self.finalangle = globaldef001498;
+   self.think = SUB_CalcAngleMoveDone;
 
 };
 
@@ -361,18 +355,16 @@ void (vector globaldef001498, float globaldef001502, void() globaldef001503) SUB
 
 void () SUB_CalcAngleMoveDone = {
 
-   self.globaldef000095 = self.globaldef000415;
-   self.globaldef000099 = VEC_ORIGIN;
-   self.globaldef000128 = CONTENT_EMPTY;
-   if ( self.globaldef000410 ) {
+   self.angles = self.finalangle;
+   self.avelocity = VEC_ORIGIN;
+   self.nextthink = CONTENT_EMPTY;
+   if ( self.think1 ) {
 
-      self.globaldef000410 ();
+      self.think1 ();
 
    }
 
 };
-
-void () DelayThink;
 
 // function DelayThink
 // function number 159 begins at statement 2593
@@ -387,7 +379,7 @@ void () DelayThink;
 
 void () DelayThink = {
 
-   activator = self.globaldef000159;
+   activator = self.enemy;
    SUB_UseTargets ();
    remove (self);
 
@@ -492,35 +484,35 @@ void () SUB_UseTargets = {
    local entity otemp;
    local entity act;
 
-   if ( self.globaldef000402 ) {
+   if ( self.delay ) {
 
       t = spawn ();
-      t.globaldef000107 = globaldef001515;
-      t.globaldef000128 = (time + self.globaldef000402);
-      t.globaldef000126 = DelayThink;
-      t.globaldef000159 = activator;
-      t.globaldef000184 = self.globaldef000184;
-      t.globaldef000341 = self.globaldef000341;
-      t.globaldef000174 = self.globaldef000174;
+      t.classname = globaldef001515;
+      t.nextthink = (time + self.delay);
+      t.think = DelayThink;
+      t.enemy = activator;
+      t.message = self.message;
+      t.killtarget = self.killtarget;
+      t.target = self.target;
       return ;
 
    }
-   if ( ((activator.globaldef000107 == globaldef001170) && (self.globaldef000184 != globaldef001466)) ) {
+   if ( ((activator.classname == globaldef001170) && (self.message != globaldef001466)) ) {
 
-      func000072 (activator,self.globaldef000184);
-      if ( !self.globaldef000186 ) {
+      func000072 (activator,self.message);
+      if ( !self.noise ) {
 
          sound (activator,CHAN_VOICE,globaldef001516,TRUE,ATTN_NORM);
 
       }
 
    }
-   if ( self.globaldef000341 ) {
+   if ( self.killtarget ) {
 
       t = world;
       do {
 
-         t = find (t,globaldef000175,self.globaldef000341);
+         t = find (t,targetname,self.killtarget);
          if ( !t ) {
 
             return ;
@@ -531,13 +523,13 @@ void () SUB_UseTargets = {
       } while ( TRUE );
 
    }
-   if ( self.globaldef000174 ) {
+   if ( self.target ) {
 
       act = activator;
       t = world;
       do {
 
-         t = find (t,globaldef000175,self.globaldef000174);
+         t = find (t,targetname,self.target);
          if ( !t ) {
 
             return ;
@@ -547,11 +539,11 @@ void () SUB_UseTargets = {
          otemp = other;
          self = t;
          other = stemp;
-         if ( (self.globaldef000125 != SUB_Null) ) {
+         if ( (self.use != SUB_Null) ) {
 
-            if ( self.globaldef000125 ) {
+            if ( self.use ) {
 
-               self.globaldef000125 ();
+               self.use ();
 
             }
 
@@ -568,8 +560,6 @@ void () SUB_UseTargets = {
 string globaldef001515 /* = "DelayedUse" */;
 string globaldef001516 /* = "misc/talk.wav" */;
 
-void (float globaldef001518) SUB_AttackFinished;
-
 // function SUB_AttackFinished
 // function number 161 begins at statement 2686
 /*
@@ -585,17 +575,15 @@ void (float globaldef001518) SUB_AttackFinished;
 
 void (float globaldef001518) SUB_AttackFinished = {
 
-   self.globaldef000409 = FALSE;
+   self.cnt = FALSE;
    if ( (skill != MOVETYPE_WALK) ) {
 
-      self.globaldef000361 = (time + globaldef001518);
+      self.attack_finished = (time + globaldef001518);
 
    }
 
 };
 float (entity globaldef001639) visible;
-
-void (void() globaldef001521) SUB_CheckRefire;
 
 // function SUB_CheckRefire
 // function number 162 begins at statement 2694
@@ -620,24 +608,24 @@ void (void() globaldef001521) SUB_CheckRefire;
  * OP_DONE	0	0	0
  */
 
-void (void() globaldef001521) SUB_CheckRefire = {
+void (void() func000000) SUB_CheckRefire = {
 
    if ( (skill != MOVETYPE_WALK) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000409 == TRUE) ) {
+   if ( (self.cnt == TRUE) ) {
 
       return ;
 
    }
-   if ( !visible (self.globaldef000159) ) {
+   if ( !visible (self.enemy) ) {
 
       return ;
 
    }
-   self.globaldef000409 = TRUE;
-   self.globaldef000126 = globaldef001521;
+   self.cnt = TRUE;
+   self.think = func000000;
 
 };

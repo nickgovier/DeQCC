@@ -5,8 +5,6 @@ void () shalrath_pain;
 
 void () ShalMissile;
 
-void () shal_stand;
-
 // function shal_stand
 // function number 2017 begins at statement 25786
 /*
@@ -20,8 +18,6 @@ void () shal_stand = [ 23.000, shal_stand ] {
    ai_stand ();
 
 };
-
-void () shal_walk1;
 
 // function shal_walk1
 // function number 2018 begins at statement 25789
@@ -51,8 +47,6 @@ void () shal_walk1 = [ 24.000, shal_walk2 ] {
    ai_walk (MOVETYPE_TOSS);
 
 };
-
-void () shal_walk2;
 string globaldef005355 /* = "shalrath/idle.wav" */;
 
 // function shal_walk2
@@ -70,8 +64,6 @@ void () shal_walk2 = [ 25.000, shal_walk3 ] {
 
 };
 
-void () shal_walk3;
-
 // function shal_walk3
 // function number 2020 begins at statement 25806
 /*
@@ -86,8 +78,6 @@ void () shal_walk3 = [ 26.000, shal_walk4 ] {
    ai_walk (FALSE);
 
 };
-
-void () shal_walk4;
 
 // function shal_walk4
 // function number 2021 begins at statement 25810
@@ -104,8 +94,6 @@ void () shal_walk4 = [ 27.000, shal_walk5 ] {
 
 };
 
-void () shal_walk5;
-
 // function shal_walk5
 // function number 2022 begins at statement 25814
 /*
@@ -120,8 +108,6 @@ void () shal_walk5 = [ 28.000, shal_walk6 ] {
    ai_walk (FALSE);
 
 };
-
-void () shal_walk6;
 
 // function shal_walk6
 // function number 2023 begins at statement 25818
@@ -138,8 +124,6 @@ void () shal_walk6 = [ 29.000, shal_walk7 ] {
 
 };
 
-void () shal_walk7;
-
 // function shal_walk7
 // function number 2024 begins at statement 25822
 /*
@@ -154,8 +138,6 @@ void () shal_walk7 = [ 30.000, shal_walk8 ] {
    ai_walk (MOVETYPE_FLY);
 
 };
-
-void () shal_walk8;
 
 // function shal_walk8
 // function number 2025 begins at statement 25826
@@ -172,8 +154,6 @@ void () shal_walk8 = [ 31.000, shal_walk9 ] {
 
 };
 
-void () shal_walk9;
-
 // function shal_walk9
 // function number 2026 begins at statement 25830
 /*
@@ -188,8 +168,6 @@ void () shal_walk9 = [ 32.000, shal_walk10 ] {
    ai_walk (MOVETYPE_FLY);
 
 };
-
-void () shal_walk10;
 
 // function shal_walk10
 // function number 2027 begins at statement 25834
@@ -206,8 +184,6 @@ void () shal_walk10 = [ 33.000, shal_walk11 ] {
 
 };
 
-void () shal_walk11;
-
 // function shal_walk11
 // function number 2028 begins at statement 25838
 /*
@@ -223,8 +199,6 @@ void () shal_walk11 = [ 34.000, shal_walk12 ] {
 
 };
 
-void () shal_walk12;
-
 // function shal_walk12
 // function number 2029 begins at statement 25842
 /*
@@ -239,8 +213,6 @@ void () shal_walk12 = [ 23.000, shal_walk1 ] {
    ai_walk (MOVETYPE_FLY);
 
 };
-
-void () shal_run1;
 
 // function shal_run1
 // function number 2030 begins at statement 25846
@@ -271,8 +243,6 @@ void () shal_run1 = [ 24.000, shal_run2 ] {
 
 };
 
-void () shal_run2;
-
 // function shal_run2
 // function number 2031 begins at statement 25859
 /*
@@ -287,8 +257,6 @@ void () shal_run2 = [ 25.000, shal_run3 ] {
    ai_run (MOVETYPE_STEP);
 
 };
-
-void () shal_run3;
 
 // function shal_run3
 // function number 2032 begins at statement 25863
@@ -305,8 +273,6 @@ void () shal_run3 = [ 26.000, shal_run4 ] {
 
 };
 
-void () shal_run4;
-
 // function shal_run4
 // function number 2033 begins at statement 25867
 /*
@@ -321,8 +287,6 @@ void () shal_run4 = [ 27.000, shal_run5 ] {
    ai_run (FALSE);
 
 };
-
-void () shal_run5;
 
 // function shal_run5
 // function number 2034 begins at statement 25871
@@ -339,8 +303,6 @@ void () shal_run5 = [ 28.000, shal_run6 ] {
 
 };
 
-void () shal_run6;
-
 // function shal_run6
 // function number 2035 begins at statement 25875
 /*
@@ -355,8 +317,6 @@ void () shal_run6 = [ 29.000, shal_run7 ] {
    ai_run (FALSE);
 
 };
-
-void () shal_run7;
 
 // function shal_run7
 // function number 2036 begins at statement 25879
@@ -373,8 +333,6 @@ void () shal_run7 = [ 30.000, shal_run8 ] {
 
 };
 
-void () shal_run8;
-
 // function shal_run8
 // function number 2037 begins at statement 25883
 /*
@@ -389,8 +347,6 @@ void () shal_run8 = [ 31.000, shal_run9 ] {
    ai_run (MOVETYPE_TOSS);
 
 };
-
-void () shal_run9;
 
 // function shal_run9
 // function number 2038 begins at statement 25887
@@ -407,8 +363,6 @@ void () shal_run9 = [ 32.000, shal_run10 ] {
 
 };
 
-void () shal_run10;
-
 // function shal_run10
 // function number 2039 begins at statement 25891
 /*
@@ -423,8 +377,6 @@ void () shal_run10 = [ 33.000, shal_run11 ] {
    ai_run (FALSE);
 
 };
-
-void () shal_run11;
 
 // function shal_run11
 // function number 2040 begins at statement 25895
@@ -441,8 +393,6 @@ void () shal_run11 = [ 34.000, shal_run12 ] {
 
 };
 
-void () shal_run12;
-
 // function shal_run12
 // function number 2041 begins at statement 25899
 /*
@@ -457,8 +407,6 @@ void () shal_run12 = [ 23.000, shal_run1 ] {
    ai_run (MOVETYPE_FLY);
 
 };
-
-void () shal_attack1;
 
 // function shal_attack1
 // function number 2042 begins at statement 25903
@@ -480,8 +428,6 @@ void () shal_attack1 = [ 0.000, shal_attack2 ] {
    ai_face ();
 
 };
-
-void () shal_attack2;
 string globaldef005380 /* = "shalrath/attack.wav" */;
 
 // function shal_attack2
@@ -498,8 +444,6 @@ void () shal_attack2 = [ 1.000, shal_attack3 ] {
 
 };
 
-void () shal_attack3;
-
 // function shal_attack3
 // function number 2044 begins at statement 25915
 /*
@@ -513,8 +457,6 @@ void () shal_attack3 = [ 2.000, shal_attack4 ] {
    ai_face ();
 
 };
-
-void () shal_attack4;
 
 // function shal_attack4
 // function number 2045 begins at statement 25918
@@ -530,8 +472,6 @@ void () shal_attack4 = [ 3.000, shal_attack5 ] {
 
 };
 
-void () shal_attack5;
-
 // function shal_attack5
 // function number 2046 begins at statement 25921
 /*
@@ -545,8 +485,6 @@ void () shal_attack5 = [ 4.000, shal_attack6 ] {
    ai_face ();
 
 };
-
-void () shal_attack6;
 
 // function shal_attack6
 // function number 2047 begins at statement 25924
@@ -562,8 +500,6 @@ void () shal_attack6 = [ 5.000, shal_attack7 ] {
 
 };
 
-void () shal_attack7;
-
 // function shal_attack7
 // function number 2048 begins at statement 25927
 /*
@@ -577,8 +513,6 @@ void () shal_attack7 = [ 6.000, shal_attack8 ] {
    ai_face ();
 
 };
-
-void () shal_attack8;
 
 // function shal_attack8
 // function number 2049 begins at statement 25930
@@ -594,8 +528,6 @@ void () shal_attack8 = [ 7.000, shal_attack9 ] {
 
 };
 
-void () shal_attack9;
-
 // function shal_attack9
 // function number 2050 begins at statement 25933
 /*
@@ -609,8 +541,6 @@ void () shal_attack9 = [ 8.000, shal_attack10 ] {
    ShalMissile ();
 
 };
-
-void () shal_attack10;
 
 // function shal_attack10
 // function number 2051 begins at statement 25936
@@ -626,8 +556,6 @@ void () shal_attack10 = [ 9.000, shal_attack11 ] {
 
 };
 
-void () shal_attack11;
-
 // function shal_attack11
 // function number 2052 begins at statement 25939
 /*
@@ -639,8 +567,6 @@ void () shal_attack11 = [ 10.000, shal_run1 ] {
 
 
 };
-
-void () shal_pain1;
 
 // function shal_pain1
 // function number 2053 begins at statement 25941
@@ -654,8 +580,6 @@ void () shal_pain1 = [ 11.000, shal_pain2 ] {
 
 };
 
-void () shal_pain2;
-
 // function shal_pain2
 // function number 2054 begins at statement 25943
 /*
@@ -667,8 +591,6 @@ void () shal_pain2 = [ 12.000, shal_pain3 ] {
 
 
 };
-
-void () shal_pain3;
 
 // function shal_pain3
 // function number 2055 begins at statement 25945
@@ -682,8 +604,6 @@ void () shal_pain3 = [ 13.000, shal_pain4 ] {
 
 };
 
-void () shal_pain4;
-
 // function shal_pain4
 // function number 2056 begins at statement 25947
 /*
@@ -695,8 +615,6 @@ void () shal_pain4 = [ 14.000, shal_pain5 ] {
 
 
 };
-
-void () shal_pain5;
 
 // function shal_pain5
 // function number 2057 begins at statement 25949
@@ -710,8 +628,6 @@ void () shal_pain5 = [ 15.000, shal_run1 ] {
 
 };
 
-void () shal_death1;
-
 // function shal_death1
 // function number 2058 begins at statement 25951
 /*
@@ -723,8 +639,6 @@ void () shal_death1 = [ 16.000, shal_death2 ] {
 
 
 };
-
-void () shal_death2;
 
 // function shal_death2
 // function number 2059 begins at statement 25953
@@ -738,8 +652,6 @@ void () shal_death2 = [ 17.000, shal_death3 ] {
 
 };
 
-void () shal_death3;
-
 // function shal_death3
 // function number 2060 begins at statement 25955
 /*
@@ -751,8 +663,6 @@ void () shal_death3 = [ 18.000, shal_death4 ] {
 
 
 };
-
-void () shal_death4;
 
 // function shal_death4
 // function number 2061 begins at statement 25957
@@ -766,8 +676,6 @@ void () shal_death4 = [ 19.000, shal_death5 ] {
 
 };
 
-void () shal_death5;
-
 // function shal_death5
 // function number 2062 begins at statement 25959
 /*
@@ -780,8 +688,6 @@ void () shal_death5 = [ 20.000, shal_death6 ] {
 
 };
 
-void () shal_death6;
-
 // function shal_death6
 // function number 2063 begins at statement 25961
 /*
@@ -793,8 +699,6 @@ void () shal_death6 = [ 21.000, shal_death7 ] {
 
 
 };
-
-void () shal_death7;
 
 // function shal_death7
 // function number 2064 begins at statement 25963
@@ -830,19 +734,17 @@ void () shal_death7 = [ 22.000, shal_death7 ] {
 
 void () shalrath_pain = {
 
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
    }
    sound (self,CHAN_VOICE,globaldef005402,TRUE,ATTN_NORM);
    shal_pain1 ();
-   self.globaldef000362 = (time + MOVETYPE_WALK);
+   self.pain_finished = (time + MOVETYPE_WALK);
 
 };
 string globaldef005402 /* = "shalrath/pain.wav" */;
-
-void () shalrath_die;
 
 // function shalrath_die
 // function number 2066 begins at statement 25980
@@ -887,19 +789,19 @@ void () shalrath_die;
 
 void () shalrath_die = {
 
-   if ( (self.globaldef000130 < globaldef001733) ) {
+   if ( (self.health < globaldef001733) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef005404,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef005404,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
    sound (self,CHAN_VOICE,globaldef005405,TRUE,ATTN_NORM);
    shal_death1 ();
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
 string globaldef005404 /* = "progs/h_shal.mdl" */;
@@ -986,29 +888,29 @@ void () ShalMissile = {
    local float dist;
    local float flytime;
 
-   dir = normalize (((self.globaldef000159.globaldef000083 + globaldef003314) - self.globaldef000083));
-   dist = vlen ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   dir = normalize (((self.enemy.origin + globaldef003314) - self.origin));
+   dist = vlen ((self.enemy.origin - self.origin));
    flytime = (dist * globaldef005415);
    if ( (flytime < globaldef001488) ) {
 
       flytime = globaldef001488;
 
    }
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.effects = (self.effects | EF_MUZZLEFLASH);
    sound (self,CHAN_WEAPON,globaldef005416,TRUE,ATTN_NORM);
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000082 = SOLID_BBOX;
-   missile.globaldef000081 = MOVETYPE_FLYMISSILE;
+   missile.owner = self;
+   missile.solid = SOLID_BBOX;
+   missile.movetype = MOVETYPE_FLYMISSILE;
    setmodel (missile,globaldef005417);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   missile.globaldef000083 = (self.globaldef000083 + globaldef003314);
-   missile.globaldef000091 = (dir * globaldef002007);
-   missile.globaldef000099 = globaldef002186;
-   missile.globaldef000128 = (flytime + time);
-   missile.globaldef000126 = ShalHome;
-   missile.globaldef000159 = self.globaldef000159;
-   missile.globaldef000124 = ShalMissileTouch;
+   missile.origin = (self.origin + globaldef003314);
+   missile.velocity = (dir * globaldef002007);
+   missile.avelocity = globaldef002186;
+   missile.nextthink = (flytime + time);
+   missile.think = ShalHome;
+   missile.enemy = self.enemy;
+   missile.touch = ShalMissileTouch;
 
 };
 float globaldef005415 /* = 0.002 */;
@@ -1056,25 +958,25 @@ void () ShalHome = {
    local vector dir;
    local vector vtemp;
 
-   vtemp = (self.globaldef000159.globaldef000083 + globaldef003314);
-   if ( (self.globaldef000159.globaldef000130 < TRUE) ) {
+   vtemp = (self.enemy.origin + globaldef003314);
+   if ( (self.enemy.health < TRUE) ) {
 
       remove (self);
       return ;
 
    }
-   dir = normalize ((vtemp - self.globaldef000083));
+   dir = normalize ((vtemp - self.origin));
    if ( (skill == MOVETYPE_WALK) ) {
 
-      self.globaldef000091 = (dir * globaldef005426);
+      self.velocity = (dir * globaldef005426);
 
    } else {
 
-      self.globaldef000091 = (dir * globaldef000721);
+      self.velocity = (dir * globaldef000721);
 
    }
-   self.globaldef000128 = (time + globaldef001553);
-   self.globaldef000126 = ShalHome;
+   self.nextthink = (time + globaldef001553);
+   self.think = ShalHome;
 
 };
 float globaldef005426 /* = 350.000 */;
@@ -1139,32 +1041,30 @@ float globaldef005426 /* = 350.000 */;
 
 void () ShalMissileTouch = {
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000107 == globaldef001665) ) {
+   if ( (other.classname == globaldef001665) ) {
 
       T_Damage (other,self,self,globaldef003137);
 
    }
-   T_RadiusDamage (self,self.globaldef000179,globaldef000729,world);
+   T_RadiusDamage (self,self.owner,globaldef000729,world);
    sound (self,CHAN_WEAPON,globaldef002012,TRUE,ATTN_NORM);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_EXPLOSION);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
-   self.globaldef000091 = VEC_ORIGIN;
-   self.globaldef000124 = SUB_Null;
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
+   self.velocity = VEC_ORIGIN;
+   self.touch = SUB_Null;
    setmodel (self,globaldef002145);
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
    s_explode1 ();
 
 };
-
-void () monster_shalrath;
 
 // function monster_shalrath
 // function number 2070 begins at statement 26165
@@ -1244,18 +1144,18 @@ void () monster_shalrath = {
    precache_sound2 (globaldef005355);
    precache_sound2 (globaldef005402);
    precache_sound2 (globaldef001683);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005428);
    setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef000130 = globaldef002007;
-   self.globaldef000344 = shal_stand;
-   self.globaldef000345 = shal_walk1;
-   self.globaldef000346 = shal_run1;
-   self.globaldef000350 = shalrath_die;
-   self.globaldef000349 = shalrath_pain;
-   self.globaldef000347 = shal_attack1;
-   self.globaldef000126 = walkmonster_start;
-   self.globaldef000128 = ((time + globaldef001488) + (random () * globaldef001488));
+   self.health = globaldef002007;
+   self.th_stand = shal_stand;
+   self.th_walk = shal_walk1;
+   self.th_run = shal_run1;
+   self.th_die = shalrath_die;
+   self.th_pain = shalrath_pain;
+   self.th_missile = shal_attack1;
+   self.think = walkmonster_start;
+   self.nextthink = ((time + globaldef001488) + (random () * globaldef001488));
 
 };

@@ -8,8 +8,6 @@ void () door_go_down;
 
 void () door_go_up;
 
-void () door_blocked;
-
 // function door_blocked
 // function number 536 begins at statement 14806
 /*
@@ -33,10 +31,10 @@ void () door_blocked;
 
 void () door_blocked = {
 
-   T_Damage (other,self,self,self.globaldef000408);
-   if ( (self.globaldef000401 >= FALSE) ) {
+   T_Damage (other,self,self,self.dmg);
+   if ( (self.wait >= FALSE) ) {
 
-      if ( (self.globaldef000421 == STATE_DOWN) ) {
+      if ( (self.state == STATE_DOWN) ) {
 
          door_go_up ();
 
@@ -49,8 +47,6 @@ void () door_blocked = {
    }
 
 };
-
-void () door_hit_top;
 
 // function door_hit_top
 // function number 537 begins at statement 14822
@@ -80,19 +76,17 @@ void () door_hit_top;
 
 void () door_hit_top = {
 
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_TOP;
-   if ( (self.globaldef000173 & globaldef003320) ) {
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   self.state = STATE_TOP;
+   if ( (self.spawnflags & globaldef003320) ) {
 
       return ;
 
    }
-   self.globaldef000126 = door_go_down;
-   self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
+   self.think = door_go_down;
+   self.nextthink = (self.ltime + self.wait);
 
 };
-
-void () door_hit_bottom;
 
 // function door_hit_bottom
 // function number 538 begins at statement 14843
@@ -111,8 +105,8 @@ void () door_hit_bottom;
 
 void () door_hit_bottom = {
 
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_BOTTOM;
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   self.state = STATE_BOTTOM;
 
 };
 
@@ -146,15 +140,15 @@ void () door_hit_bottom = {
 
 void () door_go_down = {
 
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
-   if ( self.globaldef000163 ) {
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
+   if ( self.max_health ) {
 
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000130 = self.globaldef000163;
+      self.takedamage = DAMAGE_YES;
+      self.health = self.max_health;
 
    }
-   self.globaldef000421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef000422,self.globaldef000352,door_hit_bottom);
+   self.state = STATE_DOWN;
+   SUB_CalcMove (self.pos1,self.speed,door_hit_bottom);
 
 };
 
@@ -195,25 +189,23 @@ void () door_go_down = {
 
 void () door_go_up = {
 
-   if ( (self.globaldef000421 == STATE_UP) ) {
+   if ( (self.state == STATE_UP) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000421 == STATE_TOP) ) {
+   if ( (self.state == STATE_TOP) ) {
 
-      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
+      self.nextthink = (self.ltime + self.wait);
       return ;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_UP;
-   SUB_CalcMove (self.globaldef000426,self.globaldef000352,door_hit_top);
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
+   self.state = STATE_UP;
+   SUB_CalcMove (self.pos2,self.speed,door_hit_top);
    SUB_UseTargets ();
 
 };
-
-void () door_fire;
 
 // function door_fire
 // function number 541 begins at statement 14906
@@ -271,27 +263,27 @@ void () door_fire = {
    local entity oself;
    local entity starte;
 
-   if ( (self.globaldef000179 != self) ) {
+   if ( (self.owner != self) ) {
 
       objerror (globaldef003329);
 
    }
-   if ( self.globaldef000140 ) {
+   if ( self.items ) {
 
-      sound (self,CHAN_VOICE,self.globaldef000404,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,self.noise4,TRUE,ATTN_NORM);
 
    }
-   self.globaldef000184 = string_null;
+   self.message = string_null;
    oself = self;
-   if ( (self.globaldef000173 & globaldef003320) ) {
+   if ( (self.spawnflags & globaldef003320) ) {
 
-      if ( ((self.globaldef000421 == STATE_UP) || (self.globaldef000421 == STATE_TOP)) ) {
+      if ( ((self.state == STATE_UP) || (self.state == STATE_TOP)) ) {
 
          starte = self;
          do {
 
             door_go_down ();
-            self = self.globaldef000159;
+            self = self.enemy;
 
          } while ( ((self != starte) && (self != world)) );
          self = oself;
@@ -304,15 +296,13 @@ void () door_fire = {
    do {
 
       door_go_up ();
-      self = self.globaldef000159;
+      self = self.enemy;
 
    } while ( ((self != starte) && (self != world)) );
    self = oself;
 
 };
 string globaldef003329 /* = "door_fire: self.owner != self" */;
-
-void () door_use;
 
 // function door_use
 // function number 542 begins at statement 14952
@@ -348,23 +338,21 @@ void () door_use = {
 
    local entity oself;
 
-   func002453 (other,other.globaldef000083,TRUE,globaldef000739);
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   func002453 (other,other.origin,TRUE,globaldef000739);
+   if ( (other.classname == globaldef001171) ) {
 
       func002473 (other);
 
    }
-   self.globaldef000184 = globaldef001466;
-   self.globaldef000179.globaldef000184 = globaldef001466;
-   self.globaldef000159.globaldef000184 = globaldef001466;
+   self.message = globaldef001466;
+   self.owner.message = globaldef001466;
+   self.enemy.message = globaldef001466;
    oself = self;
-   self = self.globaldef000179;
+   self = self.owner;
    door_fire ();
    self = oself;
 
 };
-
-void () door_trigger_touch;
 
 // function door_trigger_touch
 // function number 543 begins at statement 14977
@@ -389,24 +377,22 @@ void () door_trigger_touch;
 
 void () door_trigger_touch = {
 
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ;
 
    }
-   self.globaldef000361 = (time + TRUE);
+   self.attack_finished = (time + TRUE);
    activator = other;
-   self = self.globaldef000179;
+   self = self.owner;
    door_use ();
 
 };
-
-void () door_killed;
 
 // function door_killed
 // function number 544 begins at statement 14993
@@ -429,15 +415,13 @@ void () door_killed = {
    local entity oself;
 
    oself = self;
-   self = self.globaldef000179;
-   self.globaldef000130 = self.globaldef000163;
-   self.globaldef000141 = DAMAGE_NO;
+   self = self.owner;
+   self.health = self.max_health;
+   self.takedamage = DAMAGE_NO;
    door_use ();
    self = oself;
 
 };
-
-void () door_touch;
 
 // function door_touch
 // function number 545 begins at statement 15004
@@ -600,58 +584,58 @@ void () door_touch = {
 
    local vector globaldef003336;
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.globaldef000179.globaldef000361 > time) ) {
+   if ( (self.owner.attack_finished > time) ) {
 
       return ;
 
    }
-   self.globaldef000179.globaldef000361 = (time + FL_SWIM);
-   if ( (self.globaldef000179.globaldef000184 != globaldef001466) ) {
+   self.owner.attack_finished = (time + FL_SWIM);
+   if ( (self.owner.message != globaldef001466) ) {
 
-      if ( (other.globaldef000107 == globaldef001170) ) {
+      if ( (other.classname == globaldef001170) ) {
 
-         func000072 (other,self.globaldef000179.globaldef000184);
+         func000072 (other,self.owner.message);
 
       }
       sound (other,CHAN_VOICE,globaldef001516,TRUE,ATTN_NORM);
 
    }
-   if ( !self.globaldef000140 ) {
+   if ( !self.items ) {
 
       return ;
 
    }
-   if ( ((self.globaldef000140 & other.globaldef000140) != self.globaldef000140) ) {
+   if ( ((self.items & other.items) != self.items) ) {
 
-      if ( ((self.globaldef000179.globaldef000140 == IT_KEY1) && (other.globaldef000107 == globaldef001170)) ) {
+      if ( ((self.owner.items == IT_KEY1) && (other.classname == globaldef001170)) ) {
 
-         if ( (world.globaldef000340 == FL_SWIM) ) {
+         if ( (world.worldtype == FL_SWIM) ) {
 
             func000072 (other,globaldef003340);
-            sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+            sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
          } else {
 
-            if ( (world.globaldef000340 == TRUE) ) {
+            if ( (world.worldtype == TRUE) ) {
 
                func000072 (other,globaldef003341);
-               sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+               sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
             } else {
 
-               if ( (world.globaldef000340 == FALSE) ) {
+               if ( (world.worldtype == FALSE) ) {
 
                   func000072 (other,globaldef003342);
-                  sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+                  sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
                }
 
@@ -661,26 +645,26 @@ void () door_touch = {
 
       } else {
 
-         if ( (other.globaldef000107 == globaldef001170) ) {
+         if ( (other.classname == globaldef001170) ) {
 
-            if ( (world.globaldef000340 == FL_SWIM) ) {
+            if ( (world.worldtype == FL_SWIM) ) {
 
                func000072 (other,globaldef003343);
-               sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+               sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
             } else {
 
-               if ( (world.globaldef000340 == TRUE) ) {
+               if ( (world.worldtype == TRUE) ) {
 
                   func000072 (other,globaldef003344);
-                  sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+                  sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
                } else {
 
-                  if ( (world.globaldef000340 == FALSE) ) {
+                  if ( (world.worldtype == FALSE) ) {
 
                      func000072 (other,globaldef003345);
-                     sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+                     sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
                   }
 
@@ -694,11 +678,11 @@ void () door_touch = {
       return ;
 
    }
-   other.globaldef000140 = (other.globaldef000140 - self.globaldef000140);
-   self.globaldef000124 = SUB_Null;
-   if ( self.globaldef000159 ) {
+   other.items = (other.items - self.items);
+   self.touch = SUB_Null;
+   if ( self.enemy ) {
 
-      self.globaldef000159.globaldef000124 = SUB_Null;
+      self.enemy.touch = SUB_Null;
 
    }
    door_use ();
@@ -710,7 +694,6 @@ string globaldef003342 /* = "You need the silver key" */;
 string globaldef003343 /* = "You need the gold keycard" */;
 string globaldef003344 /* = "You need the gold runekey" */;
 string globaldef003345 /* = "You need the gold key" */;
-entity (vector globaldef003347, vector globaldef003351) spawn_field;
 
 // function spawn_field
 // function number 546 begins at statement 15156
@@ -743,17 +726,16 @@ entity (vector globaldef003347, vector globaldef003351) spawn_field = {
    local vector t2;
 
    trigger = spawn ();
-   trigger.globaldef000081 = MOVETYPE_NONE;
-   trigger.globaldef000082 = SOLID_TRIGGER;
-   trigger.globaldef000179 = self;
-   trigger.globaldef000124 = door_trigger_touch;
+   trigger.movetype = MOVETYPE_NONE;
+   trigger.solid = SOLID_TRIGGER;
+   trigger.owner = self;
+   trigger.touch = door_trigger_touch;
    t1 = globaldef003347;
    t2 = globaldef003351;
    setsize (trigger,(t1 - globaldef003364),(t2 + globaldef003364));
    return ( trigger );
 
 };
-float (entity globaldef003366, entity globaldef003367) EntitiesTouching;
 
 // function EntitiesTouching
 // function number 547 begins at statement 15176
@@ -793,32 +775,32 @@ float (entity globaldef003366, entity globaldef003367) EntitiesTouching;
  */
 float (entity globaldef003366, entity globaldef003367) EntitiesTouching = {
 
-   if ( (globaldef003366.globaldef000113 > globaldef003367.globaldef000117) ) {
+   if ( (globaldef003366.mins > globaldef003367.maxs) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef003366.globaldef000114 > globaldef003367.globaldef000118) ) {
+   if ( (globaldef003366.mins_y > globaldef003367.maxs_y) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef003366.globaldef000115 > globaldef003367.globaldef000119) ) {
+   if ( (globaldef003366.mins_z > globaldef003367.maxs_z) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef003366.globaldef000117 < globaldef003367.globaldef000113) ) {
+   if ( (globaldef003366.maxs < globaldef003367.mins) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef003366.globaldef000118 < globaldef003367.globaldef000114) ) {
+   if ( (globaldef003366.maxs_y < globaldef003367.mins_y) ) {
 
       return ( FALSE );
 
    }
-   if ( (globaldef003366.globaldef000119 < globaldef003367.globaldef000115) ) {
+   if ( (globaldef003366.maxs_z < globaldef003367.mins_z) ) {
 
       return ( FALSE );
 
@@ -826,8 +808,6 @@ float (entity globaldef003366, entity globaldef003367) EntitiesTouching = {
    return ( TRUE );
 
 };
-
-void () LinkDoors;
 
 // function LinkDoors
 // function number 548 begins at statement 15208
@@ -947,101 +927,101 @@ void () LinkDoors = {
    local vector cmins;
    local vector cmaxs;
 
-   if ( self.globaldef000159 ) {
+   if ( self.enemy ) {
 
       return ;
 
    }
-   if ( (self.globaldef000173 & MOVETYPE_STEP) ) {
+   if ( (self.spawnflags & MOVETYPE_STEP) ) {
 
-      self.globaldef000159 = self;
-      self.globaldef000179 = self;
+      self.enemy = self;
+      self.owner = self;
       return ;
 
    }
-   cmins = self.globaldef000112;
-   cmaxs = self.globaldef000116;
+   cmins = self.mins;
+   cmaxs = self.maxs;
    starte = self;
    t = self;
    do {
 
-      self.globaldef000179 = starte;
-      if ( self.globaldef000130 ) {
+      self.owner = starte;
+      if ( self.health ) {
 
-         starte.globaldef000130 = self.globaldef000130;
-
-      }
-      if ( self.globaldef000175 ) {
-
-         starte.globaldef000175 = self.globaldef000175;
+         starte.health = self.health;
 
       }
-      if ( (self.globaldef000184 != globaldef001466) ) {
+      if ( self.targetname ) {
 
-         starte.globaldef000184 = self.globaldef000184;
+         starte.targetname = self.targetname;
 
       }
-      t = find (t,globaldef000107,self.globaldef000107);
+      if ( (self.message != globaldef001466) ) {
+
+         starte.message = self.message;
+
+      }
+      t = find (t,classname,self.classname);
       if ( !t ) {
 
-         self.globaldef000159 = starte;
-         self = self.globaldef000179;
-         if ( self.globaldef000130 ) {
+         self.enemy = starte;
+         self = self.owner;
+         if ( self.health ) {
 
             return ;
 
          }
-         if ( self.globaldef000175 ) {
+         if ( self.targetname ) {
 
             return ;
 
          }
-         if ( self.globaldef000140 ) {
+         if ( self.items ) {
 
             return ;
 
          }
-         self.globaldef000179.globaldef000403 = spawn_field (cmins,cmaxs);
+         self.owner.trigger_field = spawn_field (cmins,cmaxs);
          return ;
 
       }
       if ( EntitiesTouching (self,t) ) {
 
-         if ( t.globaldef000159 ) {
+         if ( t.enemy ) {
 
             objerror (globaldef003379);
 
          }
-         self.globaldef000159 = t;
+         self.enemy = t;
          self = t;
-         if ( (t.globaldef000113 < cmins_x) ) {
+         if ( (t.mins < cmins_x) ) {
 
-            cmins_x = t.globaldef000113;
-
-         }
-         if ( (t.globaldef000114 < globaldef003373) ) {
-
-            globaldef003373 = t.globaldef000114;
+            cmins_x = t.mins;
 
          }
-         if ( (t.globaldef000115 < globaldef003374) ) {
+         if ( (t.mins_y < globaldef003373) ) {
 
-            globaldef003374 = t.globaldef000115;
-
-         }
-         if ( (t.globaldef000117 > cmaxs_x) ) {
-
-            cmaxs_x = t.globaldef000117;
+            globaldef003373 = t.mins_y;
 
          }
-         if ( (t.globaldef000118 > globaldef003377) ) {
+         if ( (t.mins_z < globaldef003374) ) {
 
-            globaldef003377 = t.globaldef000118;
+            globaldef003374 = t.mins_z;
 
          }
-         if ( (t.globaldef000119 > globaldef003378) ) {
+         if ( (t.maxs > cmaxs_x) ) {
 
-            globaldef003378 = t.globaldef000119;
+            cmaxs_x = t.maxs;
+
+         }
+         if ( (t.maxs_y > globaldef003377) ) {
+
+            globaldef003377 = t.maxs_y;
+
+         }
+         if ( (t.maxs_z > globaldef003378) ) {
+
+            globaldef003378 = t.maxs_z;
 
          }
 
@@ -1051,8 +1031,6 @@ void () LinkDoors = {
 
 };
 string globaldef003379 /* = "cross connected doors" */;
-
-void () func_door;
 
 // function func_door
 // function number 549 begins at statement 15314
@@ -1258,30 +1236,30 @@ void () func_door;
 
 void () func_door = {
 
-   if ( (world.globaldef000340 == FALSE) ) {
+   if ( (world.worldtype == FALSE) ) {
 
       precache_sound (globaldef003381);
       precache_sound (globaldef003382);
-      self.globaldef000189 = globaldef003381;
-      self.globaldef000404 = globaldef003382;
+      self.noise3 = globaldef003381;
+      self.noise4 = globaldef003382;
 
    } else {
 
-      if ( (world.globaldef000340 == TRUE) ) {
+      if ( (world.worldtype == TRUE) ) {
 
          precache_sound (globaldef003383);
          precache_sound (globaldef003384);
-         self.globaldef000189 = globaldef003383;
-         self.globaldef000404 = globaldef003384;
+         self.noise3 = globaldef003383;
+         self.noise4 = globaldef003384;
 
       } else {
 
-         if ( (world.globaldef000340 == FL_SWIM) ) {
+         if ( (world.worldtype == FL_SWIM) ) {
 
             precache_sound (globaldef003385);
             precache_sound (globaldef003386);
-            self.globaldef000189 = globaldef003385;
-            self.globaldef000404 = globaldef003386;
+            self.noise3 = globaldef003385;
+            self.noise4 = globaldef003386;
 
          } else {
 
@@ -1292,110 +1270,110 @@ void () func_door = {
       }
 
    }
-   if ( (self.globaldef000185 == FALSE) ) {
+   if ( (self.sounds == FALSE) ) {
 
       precache_sound (globaldef003388);
       precache_sound (globaldef003388);
-      self.globaldef000187 = globaldef003388;
-      self.globaldef000188 = globaldef003388;
+      self.noise1 = globaldef003388;
+      self.noise2 = globaldef003388;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003389);
       precache_sound (globaldef003390);
-      self.globaldef000187 = globaldef003389;
-      self.globaldef000188 = globaldef003390;
+      self.noise1 = globaldef003389;
+      self.noise2 = globaldef003390;
 
    }
-   if ( (self.globaldef000185 == FL_SWIM) ) {
+   if ( (self.sounds == FL_SWIM) ) {
 
       precache_sound (globaldef003391);
       precache_sound (globaldef003392);
-      self.globaldef000188 = globaldef003391;
-      self.globaldef000187 = globaldef003392;
+      self.noise2 = globaldef003391;
+      self.noise1 = globaldef003392;
 
    }
-   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+   if ( (self.sounds == MOVETYPE_WALK) ) {
 
       precache_sound (globaldef003393);
       precache_sound (globaldef003394);
-      self.globaldef000188 = globaldef003393;
-      self.globaldef000187 = globaldef003394;
+      self.noise2 = globaldef003393;
+      self.noise1 = globaldef003394;
 
    }
-   if ( (self.globaldef000185 == MOVETYPE_STEP) ) {
+   if ( (self.sounds == MOVETYPE_STEP) ) {
 
       precache_sound (globaldef003395);
       precache_sound (globaldef003396);
-      self.globaldef000187 = globaldef003396;
-      self.globaldef000188 = globaldef003395;
+      self.noise1 = globaldef003396;
+      self.noise2 = globaldef003395;
 
    }
    SetMovedir ();
-   self.globaldef000163 = self.globaldef000130;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   setorigin (self,self.globaldef000083);
-   setmodel (self,self.globaldef000108);
-   self.globaldef000107 = globaldef001991;
-   self.globaldef000127 = door_blocked;
-   self.globaldef000125 = door_use;
-   if ( (self.globaldef000173 & globaldef003319) ) {
+   self.max_health = self.health;
+   self.solid = SOLID_BSP;
+   self.movetype = MOVETYPE_PUSH;
+   setorigin (self,self.origin);
+   setmodel (self,self.model);
+   self.classname = globaldef001991;
+   self.blocked = door_blocked;
+   self.use = door_use;
+   if ( (self.spawnflags & globaldef003319) ) {
 
-      self.globaldef000140 = IT_KEY1;
-
-   }
-   if ( (self.globaldef000173 & globaldef003318) ) {
-
-      self.globaldef000140 = IT_KEY2;
+      self.items = IT_KEY1;
 
    }
-   if ( !self.globaldef000352 ) {
+   if ( (self.spawnflags & globaldef003318) ) {
 
-      self.globaldef000352 = globaldef001335;
-
-   }
-   if ( !self.globaldef000401 ) {
-
-      self.globaldef000401 = MOVETYPE_WALK;
+      self.items = IT_KEY2;
 
    }
-   if ( !self.globaldef000420 ) {
+   if ( !self.speed ) {
 
-      self.globaldef000420 = FL_CLIENT;
-
-   }
-   if ( !self.globaldef000408 ) {
-
-      self.globaldef000408 = FL_SWIM;
+      self.speed = globaldef001335;
 
    }
-   self.globaldef000422 = self.globaldef000083;
-   self.globaldef000426 = (self.globaldef000422 + (self.globaldef000180 * (fabs ((self.globaldef000180 * self.globaldef000120)) - self.globaldef000420)));
-   if ( (self.globaldef000173 & globaldef003316) ) {
+   if ( !self.wait ) {
 
-      setorigin (self,self.globaldef000426);
-      self.globaldef000426 = self.globaldef000422;
-      self.globaldef000422 = self.globaldef000083;
+      self.wait = MOVETYPE_WALK;
 
    }
-   self.globaldef000421 = STATE_BOTTOM;
-   if ( self.globaldef000130 ) {
+   if ( !self.lip ) {
 
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000350 = door_killed;
+      self.lip = FL_CLIENT;
 
    }
-   if ( self.globaldef000140 ) {
+   if ( !self.dmg ) {
 
-      self.globaldef000401 = CONTENT_EMPTY;
+      self.dmg = FL_SWIM;
 
    }
-   self.globaldef000124 = door_touch;
-   self.globaldef000531 = func002289;
-   self.globaldef000126 = LinkDoors;
-   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+   self.pos1 = self.origin;
+   self.pos2 = (self.pos1 + (self.movedir * (fabs ((self.movedir * self.size)) - self.lip)));
+   if ( (self.spawnflags & globaldef003316) ) {
+
+      setorigin (self,self.pos2);
+      self.pos2 = self.pos1;
+      self.pos1 = self.origin;
+
+   }
+   self.state = STATE_BOTTOM;
+   if ( self.health ) {
+
+      self.takedamage = DAMAGE_YES;
+      self.th_die = door_killed;
+
+   }
+   if ( self.items ) {
+
+      self.wait = CONTENT_EMPTY;
+
+   }
+   self.touch = door_touch;
+   self.field000225 = func002289;
+   self.think = LinkDoors;
+   self.nextthink = (self.ltime + globaldef001488);
 
 };
 string globaldef003381 /* = "doors/medtry.wav" */;
@@ -1433,8 +1411,6 @@ float globaldef003405 /* = 2.000 */;
 float globaldef003406 /* = 4.000 */;
 float globaldef003407 /* = 8.000 */;
 float globaldef003408 /* = 16.000 */;
-
-void () fd_secret_use;
 
 // function fd_secret_use
 // function number 550 begins at statement 15511
@@ -1548,55 +1524,55 @@ void () fd_secret_use = {
 
    local float temp;
 
-   self.globaldef000130 = globaldef002185;
-   if ( (self.globaldef000083 != self.globaldef000087) ) {
+   self.health = globaldef002185;
+   if ( (self.origin != self.oldorigin) ) {
 
       return ;
 
    }
-   self.globaldef000184 = string_null;
+   self.message = string_null;
    SUB_UseTargets ();
-   if ( !(self.globaldef000173 & globaldef003407) ) {
+   if ( !(self.spawnflags & globaldef003407) ) {
 
-      self.globaldef000349 = SUB_Null;
-      self.globaldef000141 = DAMAGE_NO;
+      self.th_pain = SUB_Null;
+      self.takedamage = DAMAGE_NO;
 
    }
-   self.globaldef000091 = VEC_ORIGIN;
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
-   temp = (TRUE - (self.globaldef000173 & globaldef003405));
-   makevectors (self.globaldef000383);
-   if ( !self.globaldef000388 ) {
+   self.velocity = VEC_ORIGIN;
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   self.nextthink = (self.ltime + globaldef001488);
+   temp = (TRUE - (self.spawnflags & globaldef003405));
+   makevectors (self.mangle);
+   if ( !self.t_width ) {
 
-      if ( (self.globaldef000173 & globaldef003406) ) {
+      if ( (self.spawnflags & globaldef003406) ) {
 
-         self.globaldef000388 = fabs ((v_up * self.globaldef000120));
+         self.t_width = fabs ((v_up * self.size));
 
       } else {
 
-         self.globaldef000388 = fabs ((v_right * self.globaldef000120));
+         self.t_width = fabs ((v_right * self.size));
 
       }
 
    }
-   if ( !self.globaldef000387 ) {
+   if ( !self.t_length ) {
 
-      self.globaldef000387 = fabs ((v_forward * self.globaldef000120));
+      self.t_length = fabs ((v_forward * self.size));
 
    }
-   if ( (self.globaldef000173 & globaldef003406) ) {
+   if ( (self.spawnflags & globaldef003406) ) {
 
-      self.globaldef000393 = (self.globaldef000083 - (v_up * self.globaldef000388));
+      self.dest1 = (self.origin - (v_up * self.t_width));
 
    } else {
 
-      self.globaldef000393 = (self.globaldef000083 + (v_right * (self.globaldef000388 * temp)));
+      self.dest1 = (self.origin + (v_right * (self.t_width * temp)));
 
    }
-   self.globaldef000397 = (self.globaldef000393 + (v_forward * self.globaldef000387));
-   SUB_CalcMove (self.globaldef000393,self.globaldef000352,fd_secret_move1);
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
+   self.dest2 = (self.dest1 + (v_forward * self.t_length));
+   SUB_CalcMove (self.dest1,self.speed,fd_secret_move1);
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
 
 };
 
@@ -1621,9 +1597,9 @@ void () fd_secret_use = {
 
 void () fd_secret_move1 = {
 
-   self.globaldef000128 = (self.globaldef000080 + TRUE);
-   self.globaldef000126 = fd_secret_move2;
-   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+   self.nextthink = (self.ltime + TRUE);
+   self.think = fd_secret_move2;
+   sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
 };
 
@@ -1648,8 +1624,8 @@ void () fd_secret_move1 = {
 
 void () fd_secret_move2 = {
 
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef000397,self.globaldef000352,fd_secret_move3);
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.dest2,self.speed,fd_secret_move3);
 
 };
 
@@ -1679,11 +1655,11 @@ void () fd_secret_move2 = {
 
 void () fd_secret_move3 = {
 
-   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
-   if ( !(self.globaldef000173 & globaldef003404) ) {
+   sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
+   if ( !(self.spawnflags & globaldef003404) ) {
 
-      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
-      self.globaldef000126 = fd_secret_move4;
+      self.nextthink = (self.ltime + self.wait);
+      self.think = fd_secret_move4;
 
    }
 
@@ -1710,8 +1686,8 @@ void () fd_secret_move3 = {
 
 void () fd_secret_move4 = {
 
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef000393,self.globaldef000352,fd_secret_move5);
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.dest1,self.speed,fd_secret_move5);
 
 };
 
@@ -1736,9 +1712,9 @@ void () fd_secret_move4 = {
 
 void () fd_secret_move5 = {
 
-   self.globaldef000128 = (self.globaldef000080 + TRUE);
-   self.globaldef000126 = fd_secret_move6;
-   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+   self.nextthink = (self.ltime + TRUE);
+   self.think = fd_secret_move6;
+   sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
 };
 
@@ -1763,8 +1739,8 @@ void () fd_secret_move5 = {
 
 void () fd_secret_move6 = {
 
-   sound (self,CHAN_VOICE,self.globaldef000188,TRUE,ATTN_NORM);
-   SUB_CalcMove (self.globaldef000087,self.globaldef000352,fd_secret_done);
+   sound (self,CHAN_VOICE,self.noise2,TRUE,ATTN_NORM);
+   SUB_CalcMove (self.oldorigin,self.speed,fd_secret_done);
 
 };
 
@@ -1795,18 +1771,16 @@ void () fd_secret_move6 = {
 
 void () fd_secret_done = {
 
-   if ( (!self.globaldef000175 || (self.globaldef000173 & globaldef003408)) ) {
+   if ( (!self.targetname || (self.spawnflags & globaldef003408)) ) {
 
-      self.globaldef000130 = globaldef002185;
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000349 = fd_secret_use;
+      self.health = globaldef002185;
+      self.takedamage = DAMAGE_YES;
+      self.th_pain = fd_secret_use;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000189,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,self.noise3,TRUE,ATTN_NORM);
 
 };
-
-void () secret_blocked;
 
 // function secret_blocked
 // function number 558 begins at statement 15723
@@ -1829,17 +1803,15 @@ void () secret_blocked;
 
 void () secret_blocked = {
 
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ;
 
    }
-   self.globaldef000361 = (time + globaldef000522);
-   T_Damage (other,self,self,self.globaldef000408);
+   self.attack_finished = (time + globaldef000522);
+   T_Damage (other,self,self,self.dmg);
 
 };
-
-void () secret_touch;
 
 // function secret_touch
 // function number 559 begins at statement 15737
@@ -1878,26 +1850,26 @@ void () secret_touch;
 
 void () secret_touch = {
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.globaldef000361 > time) ) {
+   if ( (self.attack_finished > time) ) {
 
       return ;
 
    }
-   self.globaldef000361 = (time + FL_SWIM);
-   if ( self.globaldef000184 ) {
+   self.attack_finished = (time + FL_SWIM);
+   if ( self.message ) {
 
-      if ( (other.globaldef000107 == globaldef001170) ) {
+      if ( (other.classname == globaldef001170) ) {
 
-         func000072 (other,self.globaldef000184);
+         func000072 (other,self.message);
 
       }
       sound (other,CHAN_BODY,globaldef001516,TRUE,ATTN_NORM);
@@ -1905,8 +1877,6 @@ void () secret_touch = {
    }
 
 };
-
-void () func_door_secret;
 
 // function func_door_secret
 // function number 560 begins at statement 15767
@@ -2016,67 +1986,67 @@ void () func_door_secret;
 
 void () func_door_secret = {
 
-   if ( (self.globaldef000185 == FALSE) ) {
+   if ( (self.sounds == FALSE) ) {
 
-      self.globaldef000185 = MOVETYPE_WALK;
+      self.sounds = MOVETYPE_WALK;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003414);
       precache_sound (globaldef003415);
       precache_sound (globaldef003389);
-      self.globaldef000187 = globaldef003414;
-      self.globaldef000188 = globaldef003415;
-      self.globaldef000189 = globaldef003389;
+      self.noise1 = globaldef003414;
+      self.noise2 = globaldef003415;
+      self.noise3 = globaldef003389;
 
    }
-   if ( (self.globaldef000185 == FL_SWIM) ) {
+   if ( (self.sounds == FL_SWIM) ) {
 
       precache_sound (globaldef003416);
       precache_sound (globaldef003417);
-      self.globaldef000188 = globaldef003416;
-      self.globaldef000187 = globaldef003417;
-      self.globaldef000189 = globaldef003417;
+      self.noise2 = globaldef003416;
+      self.noise1 = globaldef003417;
+      self.noise3 = globaldef003417;
 
    }
-   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+   if ( (self.sounds == MOVETYPE_WALK) ) {
 
       precache_sound (globaldef003418);
       precache_sound (globaldef003419);
-      self.globaldef000188 = globaldef003418;
-      self.globaldef000187 = globaldef003419;
-      self.globaldef000189 = globaldef003419;
+      self.noise2 = globaldef003418;
+      self.noise1 = globaldef003419;
+      self.noise3 = globaldef003419;
 
    }
-   if ( !self.globaldef000408 ) {
+   if ( !self.dmg ) {
 
-      self.globaldef000408 = FL_SWIM;
-
-   }
-   self.globaldef000383 = self.globaldef000095;
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000107 = globaldef001991;
-   setmodel (self,self.globaldef000108);
-   setorigin (self,self.globaldef000083);
-   self.globaldef000124 = secret_touch;
-   self.globaldef000531 = func002290;
-   self.globaldef000127 = secret_blocked;
-   self.globaldef000352 = globaldef001257;
-   self.globaldef000125 = fd_secret_use;
-   if ( (!self.globaldef000175 || (self.globaldef000173 & globaldef003408)) ) {
-
-      self.globaldef000130 = globaldef002185;
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000349 = fd_secret_use;
+      self.dmg = FL_SWIM;
 
    }
-   self.globaldef000087 = self.globaldef000083;
-   if ( !self.globaldef000401 ) {
+   self.mangle = self.angles;
+   self.angles = VEC_ORIGIN;
+   self.solid = SOLID_BSP;
+   self.movetype = MOVETYPE_PUSH;
+   self.classname = globaldef001991;
+   setmodel (self,self.model);
+   setorigin (self,self.origin);
+   self.touch = secret_touch;
+   self.field000225 = func002290;
+   self.blocked = secret_blocked;
+   self.speed = globaldef001257;
+   self.use = fd_secret_use;
+   if ( (!self.targetname || (self.spawnflags & globaldef003408)) ) {
 
-      self.globaldef000401 = MOVETYPE_FLY;
+      self.health = globaldef002185;
+      self.takedamage = DAMAGE_YES;
+      self.th_pain = fd_secret_use;
+
+   }
+   self.oldorigin = self.origin;
+   if ( !self.wait ) {
+
+      self.wait = MOVETYPE_FLY;
 
    }
 

@@ -1,8 +1,6 @@
 vector globaldef003564 /* = '100.000 200.000 300.000' */;
 string globaldef003565 /* = "progs/teleport.mdl" */;
 
-void () info_null;
-
 // function info_null
 // function number 620 begins at statement 17425
 /*
@@ -17,8 +15,6 @@ void () info_null = {
 
 };
 
-void () info_notnull;
-
 // function info_notnull
 // function number 621 begins at statement 17428
 /*
@@ -30,8 +26,6 @@ void () info_notnull = {
 
 };
 float globaldef003568 /* = 1.000 */;
-
-void () light_use;
 
 // function light_use
 // function number 622 begins at statement 17429
@@ -61,21 +55,19 @@ void () light_use;
 
 void () light_use = {
 
-   if ( (self.globaldef000173 & globaldef003568) ) {
+   if ( (self.spawnflags & globaldef003568) ) {
 
-      lightstyle (self.globaldef000343,globaldef002440);
-      self.globaldef000173 = (self.globaldef000173 - globaldef003568);
+      lightstyle (self.style,globaldef002440);
+      self.spawnflags = (self.spawnflags - globaldef003568);
 
    } else {
 
-      lightstyle (self.globaldef000343,globaldef002453);
-      self.globaldef000173 = (self.globaldef000173 + globaldef003568);
+      lightstyle (self.style,globaldef002453);
+      self.spawnflags = (self.spawnflags + globaldef003568);
 
    }
 
 };
-
-void () light;
 
 // function light
 // function number 623 begins at statement 17450
@@ -108,30 +100,28 @@ void () light;
 
 void () light = {
 
-   if ( !self.globaldef000175 ) {
+   if ( !self.targetname ) {
 
       remove (self);
       return ;
 
    }
-   if ( (self.globaldef000343 >= FL_MONSTER) ) {
+   if ( (self.style >= FL_MONSTER) ) {
 
-      self.globaldef000125 = light_use;
-      if ( (self.globaldef000173 & globaldef003568) ) {
+      self.use = light_use;
+      if ( (self.spawnflags & globaldef003568) ) {
 
-         lightstyle (self.globaldef000343,globaldef002453);
+         lightstyle (self.style,globaldef002453);
 
       } else {
 
-         lightstyle (self.globaldef000343,globaldef002440);
+         lightstyle (self.style,globaldef002440);
 
       }
 
    }
 
 };
-
-void () light_fluoro;
 
 // function light_fluoro
 // function number 624 begins at statement 17474
@@ -166,27 +156,25 @@ void () light_fluoro;
 
 void () light_fluoro = {
 
-   if ( (self.globaldef000343 >= FL_MONSTER) ) {
+   if ( (self.style >= FL_MONSTER) ) {
 
-      self.globaldef000125 = light_use;
-      if ( (self.globaldef000173 & globaldef003568) ) {
+      self.use = light_use;
+      if ( (self.spawnflags & globaldef003568) ) {
 
-         lightstyle (self.globaldef000343,globaldef002453);
+         lightstyle (self.style,globaldef002453);
 
       } else {
 
-         lightstyle (self.globaldef000343,globaldef002440);
+         lightstyle (self.style,globaldef002440);
 
       }
 
    }
    precache_sound (globaldef003572);
-   ambientsound (self.globaldef000083,globaldef003572,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003572,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003572 /* = "ambience/fl_hum1.wav" */;
-
-void () light_fluorospark;
 
 // function light_fluorospark
 // function number 625 begins at statement 17500
@@ -209,18 +197,16 @@ void () light_fluorospark;
 
 void () light_fluorospark = {
 
-   if ( !self.globaldef000343 ) {
+   if ( !self.style ) {
 
-      self.globaldef000343 = MOVETYPE_BOUNCE;
+      self.style = MOVETYPE_BOUNCE;
 
    }
    precache_sound (globaldef003574);
-   ambientsound (self.globaldef000083,globaldef003574,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003574,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003574 /* = "ambience/buzz1.wav" */;
-
-void () light_globe;
 
 // function light_globe
 // function number 626 begins at statement 17514
@@ -244,8 +230,6 @@ void () light_globe = {
 };
 string globaldef003576 /* = "progs/s_light.spr" */;
 
-void () FireAmbient;
-
 // function FireAmbient
 // function number 627 begins at statement 17522
 /*
@@ -263,12 +247,10 @@ void () FireAmbient;
 void () FireAmbient = {
 
    precache_sound (globaldef003578);
-   ambientsound (self.globaldef000083,globaldef003578,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003578,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003578 /* = "ambience/fire1.wav" */;
-
-void () light_torch_small_walltorch;
 
 // function light_torch_small_walltorch
 // function number 628 begins at statement 17531
@@ -294,8 +276,6 @@ void () light_torch_small_walltorch = {
 };
 string globaldef003580 /* = "progs/flame.mdl" */;
 
-void () light_flame_large_yellow;
-
 // function light_flame_large_yellow
 // function number 629 begins at statement 17540
 /*
@@ -316,14 +296,12 @@ void () light_flame_large_yellow = {
 
    precache_model (globaldef003582);
    setmodel (self,globaldef003582);
-   self.globaldef000109 = TRUE;
+   self.frame = TRUE;
    FireAmbient ();
    makestatic (self);
 
 };
 string globaldef003582 /* = "progs/flame2.mdl" */;
-
-void () light_flame_small_yellow;
 
 // function light_flame_small_yellow
 // function number 630 begins at statement 17551
@@ -347,8 +325,6 @@ void () light_flame_small_yellow = {
    makestatic (self);
 
 };
-
-void () light_flame_small_white;
 
 // function light_flame_small_white
 // function number 631 begins at statement 17560
@@ -377,8 +353,6 @@ void () fire_fly;
 
 void () fire_touch;
 
-void () misc_fireball;
-
 // function misc_fireball
 // function number 632 begins at statement 17569
 /*
@@ -404,10 +378,10 @@ void () misc_fireball;
 void () misc_fireball = {
 
    precache_model (globaldef002439);
-   self.globaldef000107 = globaldef003085;
-   self.globaldef000128 = (time + (random () * MOVETYPE_FLY));
-   self.globaldef000126 = fire_fly;
-   if ( !self.globaldef000352 ) {
+   self.classname = globaldef003085;
+   self.nextthink = (time + (random () * MOVETYPE_FLY));
+   self.think = fire_fly;
+   if ( !self.speed ) {
 
 
    }
@@ -477,21 +451,21 @@ void () fire_fly = {
    local entity fireball;
 
    fireball = spawn ();
-   fireball.globaldef000082 = SOLID_TRIGGER;
-   fireball.globaldef000081 = MOVETYPE_TOSS;
-   fireball.globaldef000091 = globaldef003589;
-   fireball.globaldef000092 = ((random () * globaldef001335) - globaldef001257);
-   fireball.globaldef000093 = ((random () * globaldef001335) - globaldef001257);
-   fireball.globaldef000094 = (self.globaldef000352 + (random () * globaldef001343));
-   fireball.globaldef000107 = globaldef003085;
+   fireball.solid = SOLID_TRIGGER;
+   fireball.movetype = MOVETYPE_TOSS;
+   fireball.velocity = globaldef003589;
+   fireball.velocity = ((random () * globaldef001335) - globaldef001257);
+   fireball.velocity_y = ((random () * globaldef001335) - globaldef001257);
+   fireball.velocity_z = (self.speed + (random () * globaldef001343));
+   fireball.classname = globaldef003085;
    setmodel (fireball,globaldef002439);
    setsize (fireball,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (fireball,self.globaldef000083);
-   fireball.globaldef000128 = (time + MOVETYPE_FLY);
-   fireball.globaldef000126 = SUB_Remove;
-   fireball.globaldef000124 = fire_touch;
-   self.globaldef000128 = ((time + (random () * MOVETYPE_FLY)) + MOVETYPE_WALK);
-   self.globaldef000126 = fire_fly;
+   setorigin (fireball,self.origin);
+   fireball.nextthink = (time + MOVETYPE_FLY);
+   fireball.think = SUB_Remove;
+   fireball.touch = fire_touch;
+   self.nextthink = ((time + (random () * MOVETYPE_FLY)) + MOVETYPE_WALK);
+   self.think = fire_fly;
 
 };
 vector globaldef003589 /* = '0.000 0.000 1000.000' */;
@@ -515,8 +489,6 @@ void () fire_touch = {
    remove (self);
 
 };
-
-void () barrel_explode;
 
 // function barrel_explode
 // function number 635 begins at statement 17647
@@ -552,18 +524,16 @@ void () barrel_explode;
 
 void () barrel_explode = {
 
-   self.globaldef000141 = DAMAGE_NO;
-   self.globaldef000107 = globaldef003078;
+   self.takedamage = DAMAGE_NO;
+   self.classname = globaldef003078;
    T_RadiusDamage (self,self,globaldef003591,world);
    sound (self,CHAN_VOICE,globaldef002012,TRUE,ATTN_NORM);
-   particle (self.globaldef000083,VEC_ORIGIN,globaldef002995,globaldef002262);
-   self.globaldef000086 = (self.globaldef000086 + FL_MONSTER);
+   particle (self.origin,VEC_ORIGIN,globaldef002995,globaldef002262);
+   self.origin_z = (self.origin_z + FL_MONSTER);
    BecomeExplosion ();
 
 };
 float globaldef003591 /* = 160.000 */;
-
-void () misc_explobox;
 
 // function misc_explobox
 // function number 636 begins at statement 17674
@@ -614,21 +584,21 @@ void () misc_explobox = {
 
    local float oldz;
 
-   self.globaldef000082 = SOLID_BBOX;
-   self.globaldef000081 = MOVETYPE_NONE;
+   self.solid = SOLID_BBOX;
+   self.movetype = MOVETYPE_NONE;
    precache_model (globaldef003594);
    setmodel (self,globaldef003594);
    precache_sound (globaldef002012);
-   self.globaldef000130 = globaldef001384;
-   self.globaldef000350 = barrel_explode;
-   self.globaldef000141 = DAMAGE_AIM;
-   self.globaldef000086 = (self.globaldef000086 + FL_SWIM);
-   oldz = self.globaldef000086;
+   self.health = globaldef001384;
+   self.th_die = barrel_explode;
+   self.takedamage = DAMAGE_AIM;
+   self.origin_z = (self.origin_z + FL_SWIM);
+   oldz = self.origin_z;
    droptofloor ();
-   if ( ((oldz - self.globaldef000086) > globaldef000721) ) {
+   if ( ((oldz - self.origin_z) > globaldef000721) ) {
 
       dprint (globaldef003595);
-      dprint (vtos (self.globaldef000083));
+      dprint (vtos (self.origin));
       dprint (globaldef001354);
       remove (self);
 
@@ -637,8 +607,6 @@ void () misc_explobox = {
 };
 string globaldef003594 /* = "maps/b_explob.bsp" */;
 string globaldef003595 /* = "item fell out of level at " */;
-
-void () misc_explobox2;
 
 // function misc_explobox2
 // function number 637 begins at statement 17714
@@ -689,21 +657,21 @@ void () misc_explobox2 = {
 
    local float oldz;
 
-   self.globaldef000082 = SOLID_BBOX;
-   self.globaldef000081 = MOVETYPE_NONE;
+   self.solid = SOLID_BBOX;
+   self.movetype = MOVETYPE_NONE;
    precache_model2 (globaldef003598);
    setmodel (self,globaldef003598);
    precache_sound (globaldef002012);
-   self.globaldef000130 = globaldef001384;
-   self.globaldef000350 = barrel_explode;
-   self.globaldef000141 = DAMAGE_AIM;
-   self.globaldef000086 = (self.globaldef000086 + FL_SWIM);
-   oldz = self.globaldef000086;
+   self.health = globaldef001384;
+   self.th_die = barrel_explode;
+   self.takedamage = DAMAGE_AIM;
+   self.origin_z = (self.origin_z + FL_SWIM);
+   oldz = self.origin_z;
    droptofloor ();
-   if ( ((oldz - self.globaldef000086) > globaldef000721) ) {
+   if ( ((oldz - self.origin_z) > globaldef000721) ) {
 
       dprint (globaldef003595);
-      dprint (vtos (self.globaldef000083));
+      dprint (vtos (self.origin));
       dprint (globaldef001354);
       remove (self);
 
@@ -715,8 +683,6 @@ float globaldef003599 /* = 1.000 */;
 float globaldef003600 /* = 2.000 */;
 
 void (vector globaldef005434, vector globaldef005438) LaunchLaser;
-
-void () func000638;
 
 // function func000638
 // function number 638 begins at statement 17754
@@ -761,19 +727,19 @@ void () func000638;
 
 void () func000638 = {
 
-   if ( (self.globaldef000173 & globaldef003600) ) {
+   if ( (self.spawnflags & globaldef003600) ) {
 
       sound (self,CHAN_VOICE,globaldef003603,TRUE,ATTN_NORM);
-      LaunchLaser (self.globaldef000083,self.globaldef000180);
+      LaunchLaser (self.origin,self.movedir);
 
    } else {
 
       sound (self,CHAN_VOICE,globaldef002019,TRUE,ATTN_NORM);
-      launch_spike (self.globaldef000083,self.globaldef000180);
-      newmis.globaldef000091 = (self.globaldef000180 * globaldef000728);
-      if ( (self.globaldef000173 & globaldef003599) ) {
+      launch_spike (self.origin,self.movedir);
+      newmis.velocity = (self.movedir * globaldef000728);
+      if ( (self.spawnflags & globaldef003599) ) {
 
-         newmis.globaldef000124 = superspike_touch;
+         newmis.touch = superspike_touch;
 
       }
 
@@ -781,8 +747,6 @@ void () func000638 = {
 
 };
 string globaldef003603 /* = "enforcer/enfire.wav" */;
-
-void () func000639;
 
 // function func000639
 // function number 639 begins at statement 17790
@@ -802,12 +766,10 @@ void () func000639;
 void () func000639 = {
 
    func000638 ();
-   self.globaldef000128 = (time + self.globaldef000401);
-   newmis.globaldef000091 = (self.globaldef000180 * globaldef000728);
+   self.nextthink = (time + self.wait);
+   newmis.velocity = (self.movedir * globaldef000728);
 
 };
-
-void () func000640;
 
 // function func000640
 // function number 640 begins at statement 17800
@@ -833,8 +795,8 @@ void () func000640;
 void () func000640 = {
 
    SetMovedir ();
-   self.globaldef000125 = func000638;
-   if ( (self.globaldef000173 & globaldef003600) ) {
+   self.use = func000638;
+   if ( (self.spawnflags & globaldef003600) ) {
 
       precache_model2 (globaldef003606);
       precache_sound2 (globaldef003603);
@@ -850,8 +812,6 @@ void () func000640 = {
 string globaldef003606 /* = "progs/laser.mdl" */;
 string globaldef003607 /* = "enforcer/enfstop.wav" */;
 
-void () trap_spikeshooter;
-
 // function trap_spikeshooter
 // function number 641 begins at statement 17816
 /*
@@ -864,8 +824,6 @@ void () trap_spikeshooter = {
    func000640 ();
 
 };
-
-void () trap_shooter;
 
 // function trap_shooter
 // function number 642 begins at statement 17818
@@ -891,21 +849,19 @@ void () trap_shooter;
 void () trap_shooter = {
 
    func000640 ();
-   if ( (self.globaldef000401 == FALSE) ) {
+   if ( (self.wait == FALSE) ) {
 
-      self.globaldef000401 = TRUE;
+      self.wait = TRUE;
 
    }
-   self.globaldef000128 = ((self.globaldef000128 + self.globaldef000401) + self.globaldef000080);
-   self.globaldef000126 = func000639;
+   self.nextthink = ((self.nextthink + self.wait) + self.ltime);
+   self.think = func000639;
 
 };
 
 void () make_bubbles;
 
 void () bubble_remove;
-
-void () air_bubbles;
 
 // function air_bubbles
 // function number 643 begins at statement 17834
@@ -933,8 +889,8 @@ void () air_bubbles = {
 
    }
    precache_model (globaldef002435);
-   self.globaldef000128 = (time + TRUE);
-   self.globaldef000126 = make_bubbles;
+   self.nextthink = (time + TRUE);
+   self.think = make_bubbles;
 
 };
 
@@ -989,23 +945,21 @@ void () make_bubbles = {
 
    bubble = spawn ();
    setmodel (bubble,globaldef002435);
-   setorigin (bubble,self.globaldef000083);
-   bubble.globaldef000081 = MOVETYPE_NOCLIP;
-   bubble.globaldef000082 = SOLID_NOT;
-   bubble.globaldef000091 = globaldef003170;
-   bubble.globaldef000128 = (time + globaldef000522);
-   bubble.globaldef000126 = bubble_bob;
-   bubble.globaldef000124 = bubble_remove;
-   bubble.globaldef000107 = globaldef003171;
-   bubble.globaldef000109 = FALSE;
-   bubble.globaldef000409 = FALSE;
+   setorigin (bubble,self.origin);
+   bubble.movetype = MOVETYPE_NOCLIP;
+   bubble.solid = SOLID_NOT;
+   bubble.velocity = globaldef003170;
+   bubble.nextthink = (time + globaldef000522);
+   bubble.think = bubble_bob;
+   bubble.touch = bubble_remove;
+   bubble.classname = globaldef003171;
+   bubble.frame = FALSE;
+   bubble.cnt = FALSE;
    setsize (bubble,globaldef001621,globaldef001622);
-   self.globaldef000128 = ((time + random ()) + globaldef000522);
-   self.globaldef000126 = make_bubbles;
+   self.nextthink = ((time + random ()) + globaldef000522);
+   self.think = make_bubbles;
 
 };
-
-void () bubble_split;
 
 // function bubble_split
 // function number 645 begins at statement 17886
@@ -1061,20 +1015,20 @@ void () bubble_split = {
 
    bubble = spawn ();
    setmodel (bubble,globaldef002435);
-   setorigin (bubble,self.globaldef000083);
-   bubble.globaldef000081 = MOVETYPE_NOCLIP;
-   bubble.globaldef000082 = SOLID_NOT;
-   bubble.globaldef000091 = self.globaldef000091;
-   bubble.globaldef000128 = (time + globaldef000522);
-   bubble.globaldef000126 = bubble_bob;
-   bubble.globaldef000124 = bubble_remove;
-   bubble.globaldef000107 = globaldef003171;
-   bubble.globaldef000109 = TRUE;
-   bubble.globaldef000409 = MOVETYPE_BOUNCE;
+   setorigin (bubble,self.origin);
+   bubble.movetype = MOVETYPE_NOCLIP;
+   bubble.solid = SOLID_NOT;
+   bubble.velocity = self.velocity;
+   bubble.nextthink = (time + globaldef000522);
+   bubble.think = bubble_bob;
+   bubble.touch = bubble_remove;
+   bubble.classname = globaldef003171;
+   bubble.frame = TRUE;
+   bubble.cnt = MOVETYPE_BOUNCE;
    setsize (bubble,globaldef001621,globaldef001622);
-   self.globaldef000109 = TRUE;
-   self.globaldef000409 = MOVETYPE_BOUNCE;
-   if ( (self.globaldef000167 != MOVETYPE_WALK) ) {
+   self.frame = TRUE;
+   self.cnt = MOVETYPE_BOUNCE;
+   if ( (self.waterlevel != MOVETYPE_WALK) ) {
 
       remove (self);
 
@@ -1097,7 +1051,7 @@ void () bubble_split = {
 
 void () bubble_remove = {
 
-   if ( (other.globaldef000107 == self.globaldef000107) ) {
+   if ( (other.classname == self.classname) ) {
 
       return ;
 
@@ -1180,20 +1134,20 @@ void () bubble_bob = {
    local vector vtmp1;
    local vector modi;
 
-   self.globaldef000409 = (self.globaldef000409 + TRUE);
-   if ( (self.globaldef000409 == MOVETYPE_STEP) ) {
+   self.cnt = (self.cnt + TRUE);
+   if ( (self.cnt == MOVETYPE_STEP) ) {
 
       bubble_split ();
 
    }
-   if ( (self.globaldef000409 == globaldef001384) ) {
+   if ( (self.cnt == globaldef001384) ) {
 
       remove (self);
 
    }
-   rnd1 = (self.globaldef000092 + (globaldef003627 + (random () * globaldef001384)));
-   rnd2 = (self.globaldef000093 + (globaldef003627 + (random () * globaldef001384)));
-   rnd3 = ((self.globaldef000094 + MOVETYPE_BOUNCE) + (random () * MOVETYPE_BOUNCE));
+   rnd1 = (self.velocity + (globaldef003627 + (random () * globaldef001384)));
+   rnd2 = (self.velocity_y + (globaldef003627 + (random () * globaldef001384)));
+   rnd3 = ((self.velocity_z + MOVETYPE_BOUNCE) + (random () * MOVETYPE_BOUNCE));
    if ( (rnd1 > MOVETYPE_BOUNCE) ) {
 
       rnd1 = MOVETYPE_FLY;
@@ -1224,16 +1178,14 @@ void () bubble_bob = {
       rnd3 = globaldef000288;
 
    }
-   self.globaldef000092 = rnd1;
-   self.globaldef000093 = rnd2;
-   self.globaldef000094 = rnd3;
-   self.globaldef000128 = (time + globaldef000522);
-   self.globaldef000126 = bubble_bob;
+   self.velocity = rnd1;
+   self.velocity_y = rnd2;
+   self.velocity_z = rnd3;
+   self.nextthink = (time + globaldef000522);
+   self.think = bubble_bob;
 
 };
 float globaldef003627 /* = -10.000 */;
-
-void () viewthing;
 
 // function viewthing
 // function number 648 begins at statement 17998
@@ -1252,14 +1204,12 @@ void () viewthing;
 
 void () viewthing = {
 
-   self.globaldef000081 = MOVETYPE_NONE;
-   self.globaldef000082 = SOLID_NOT;
+   self.movetype = MOVETYPE_NONE;
+   self.solid = SOLID_NOT;
    precache_model (globaldef002429);
    setmodel (self,globaldef002429);
 
 };
-
-void () func_wall_use;
 
 // function func_wall_use
 // function number 649 begins at statement 18008
@@ -1273,11 +1223,9 @@ void () func_wall_use;
 
 void () func_wall_use = {
 
-   self.globaldef000109 = (TRUE - self.globaldef000109);
+   self.frame = (TRUE - self.frame);
 
 };
-
-void () func_wall;
 
 // function func_wall
 // function number 650 begins at statement 18013
@@ -1299,15 +1247,13 @@ void () func_wall;
 
 void () func_wall = {
 
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000125 = func_wall_use;
-   setmodel (self,self.globaldef000108);
+   self.angles = VEC_ORIGIN;
+   self.movetype = MOVETYPE_PUSH;
+   self.solid = SOLID_BSP;
+   self.use = func_wall_use;
+   setmodel (self,self.model);
 
 };
-
-void () func_illusionary;
 
 // function func_illusionary
 // function number 651 begins at statement 18026
@@ -1329,15 +1275,13 @@ void () func_illusionary;
 
 void () func_illusionary = {
 
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000081 = MOVETYPE_NONE;
-   self.globaldef000082 = SOLID_NOT;
-   setmodel (self,self.globaldef000108);
+   self.angles = VEC_ORIGIN;
+   self.movetype = MOVETYPE_NONE;
+   self.solid = SOLID_NOT;
+   setmodel (self,self.model);
    makestatic (self);
 
 };
-
-void () func_episodegate;
 
 // function func_episodegate
 // function number 652 begins at statement 18039
@@ -1364,20 +1308,18 @@ void () func_episodegate;
 
 void () func_episodegate = {
 
-   if ( !(serverflags & self.globaldef000173) ) {
+   if ( !(serverflags & self.spawnflags) ) {
 
       return ;
 
    }
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000125 = func_wall_use;
-   setmodel (self,self.globaldef000108);
+   self.angles = VEC_ORIGIN;
+   self.movetype = MOVETYPE_PUSH;
+   self.solid = SOLID_BSP;
+   self.use = func_wall_use;
+   setmodel (self,self.model);
 
 };
-
-void () func_bossgate;
 
 // function func_bossgate
 // function number 653 begins at statement 18057
@@ -1408,15 +1350,13 @@ void () func_bossgate = {
       return ;
 
    }
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000125 = func_wall_use;
-   setmodel (self,self.globaldef000108);
+   self.angles = VEC_ORIGIN;
+   self.movetype = MOVETYPE_PUSH;
+   self.solid = SOLID_BSP;
+   self.use = func_wall_use;
+   setmodel (self,self.model);
 
 };
-
-void () ambient_suck_wind;
 
 // function ambient_suck_wind
 // function number 654 begins at statement 18074
@@ -1435,12 +1375,10 @@ void () ambient_suck_wind;
 void () ambient_suck_wind = {
 
    precache_sound (globaldef003635);
-   ambientsound (self.globaldef000083,globaldef003635,TRUE,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003635,TRUE,ATTN_STATIC);
 
 };
 string globaldef003635 /* = "ambience/suck1.wav" */;
-
-void () ambient_drone;
 
 // function ambient_drone
 // function number 655 begins at statement 18083
@@ -1459,12 +1397,10 @@ void () ambient_drone;
 void () ambient_drone = {
 
    precache_sound (globaldef003637);
-   ambientsound (self.globaldef000083,globaldef003637,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003637,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003637 /* = "ambience/drone6.wav" */;
-
-void () ambient_flouro_buzz;
 
 // function ambient_flouro_buzz
 // function number 656 begins at statement 18092
@@ -1483,11 +1419,9 @@ void () ambient_flouro_buzz;
 void () ambient_flouro_buzz = {
 
    precache_sound (globaldef003574);
-   ambientsound (self.globaldef000083,globaldef003574,TRUE,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003574,TRUE,ATTN_STATIC);
 
 };
-
-void () ambient_drip;
 
 // function ambient_drip
 // function number 657 begins at statement 18101
@@ -1506,12 +1440,10 @@ void () ambient_drip;
 void () ambient_drip = {
 
    precache_sound (globaldef003640);
-   ambientsound (self.globaldef000083,globaldef003640,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003640,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003640 /* = "ambience/drip1.wav" */;
-
-void () ambient_comp_hum;
 
 // function ambient_comp_hum
 // function number 658 begins at statement 18110
@@ -1530,12 +1462,10 @@ void () ambient_comp_hum;
 void () ambient_comp_hum = {
 
    precache_sound (globaldef003642);
-   ambientsound (self.globaldef000083,globaldef003642,TRUE,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003642,TRUE,ATTN_STATIC);
 
 };
 string globaldef003642 /* = "ambience/comp1.wav" */;
-
-void () ambient_thunder;
 
 // function ambient_thunder
 // function number 659 begins at statement 18119
@@ -1554,12 +1484,10 @@ void () ambient_thunder;
 void () ambient_thunder = {
 
    precache_sound (globaldef003644);
-   ambientsound (self.globaldef000083,globaldef003644,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003644,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003644 /* = "ambience/thunder1.wav" */;
-
-void () ambient_light_buzz;
 
 // function ambient_light_buzz
 // function number 660 begins at statement 18128
@@ -1578,11 +1506,9 @@ void () ambient_light_buzz;
 void () ambient_light_buzz = {
 
    precache_sound (globaldef003572);
-   ambientsound (self.globaldef000083,globaldef003572,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003572,globaldef000522,ATTN_STATIC);
 
 };
-
-void () ambient_swamp1;
 
 // function ambient_swamp1
 // function number 661 begins at statement 18137
@@ -1601,12 +1527,10 @@ void () ambient_swamp1;
 void () ambient_swamp1 = {
 
    precache_sound (globaldef003647);
-   ambientsound (self.globaldef000083,globaldef003647,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003647,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003647 /* = "ambience/swamp1.wav" */;
-
-void () ambient_swamp2;
 
 // function ambient_swamp2
 // function number 662 begins at statement 18146
@@ -1625,12 +1549,10 @@ void () ambient_swamp2;
 void () ambient_swamp2 = {
 
    precache_sound (globaldef003649);
-   ambientsound (self.globaldef000083,globaldef003649,globaldef000522,ATTN_STATIC);
+   ambientsound (self.origin,globaldef003649,globaldef000522,ATTN_STATIC);
 
 };
 string globaldef003649 /* = "ambience/swamp2.wav" */;
-
-void () noise_think;
 
 // function noise_think
 // function number 663 begins at statement 18155
@@ -1685,7 +1607,7 @@ void () noise_think;
 
 void () noise_think = {
 
-   self.globaldef000128 = (time + globaldef000522);
+   self.nextthink = (time + globaldef000522);
    sound (self,TRUE,globaldef003603,TRUE,ATTN_NORM);
    sound (self,FL_SWIM,globaldef003607,TRUE,ATTN_NORM);
    sound (self,MOVETYPE_WALK,globaldef001676,TRUE,ATTN_NORM);
@@ -1696,8 +1618,6 @@ void () noise_think = {
 
 };
 string globaldef003651 /* = "enforcer/pain1.wav" */;
-
-void () misc_noisemaker;
 
 // function misc_noisemaker
 // function number 664 begins at statement 18201
@@ -1744,7 +1664,7 @@ void () misc_noisemaker = {
    precache_sound2 (globaldef003653);
    precache_sound2 (globaldef003654);
    precache_sound2 (globaldef003655);
-   self.globaldef000128 = ((time + globaldef001488) + random ());
-   self.globaldef000126 = noise_think;
+   self.nextthink = ((time + globaldef001488) + random ());
+   self.think = noise_think;
 
 };

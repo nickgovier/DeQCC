@@ -1,8 +1,6 @@
 
 void () W_SetCurrentAmmo;
 
-void () SUB_regen;
-
 // function SUB_regen
 // function number 204 begins at statement 4222
 /*
@@ -26,15 +24,13 @@ void () SUB_regen;
 
 void () SUB_regen = {
 
-   self.globaldef000108 = self.globaldef000382;
-   self.globaldef000082 = SOLID_TRIGGER;
+   self.model = self.mdl;
+   self.solid = SOLID_TRIGGER;
    sound (self,CHAN_VOICE,globaldef001790,TRUE,ATTN_NORM);
-   setorigin (self,self.globaldef000083);
+   setorigin (self,self.origin);
 
 };
 string globaldef001790 /* = "items/itembk2.wav" */;
-
-void () noclass;
 
 // function noclass
 // function number 205 begins at statement 4238
@@ -56,14 +52,12 @@ void () noclass;
 void () noclass = {
 
    dprint (globaldef001792);
-   dprint (vtos (self.globaldef000083));
+   dprint (vtos (self.origin));
    dprint (globaldef001354);
    remove (self);
 
 };
 string globaldef001792 /* = "noclass spawned at" */;
-
-void () PlaceItem;
 
 // function PlaceItem
 // function number 206 begins at statement 4250
@@ -107,17 +101,17 @@ void () PlaceItem = {
 
    local float oldz;
 
-   self.globaldef000382 = self.globaldef000108;
-   self.globaldef000160 = FL_ITEM;
-   self.globaldef000082 = SOLID_TRIGGER;
-   self.globaldef000081 = MOVETYPE_TOSS;
-   self.globaldef000091 = VEC_ORIGIN;
-   self.globaldef000086 = (self.globaldef000086 + MOVETYPE_TOSS);
-   oldz = self.globaldef000086;
+   self.mdl = self.model;
+   self.flags = FL_ITEM;
+   self.solid = SOLID_TRIGGER;
+   self.movetype = MOVETYPE_TOSS;
+   self.velocity = VEC_ORIGIN;
+   self.origin_z = (self.origin_z + MOVETYPE_TOSS);
+   oldz = self.origin_z;
    if ( !droptofloor () ) {
 
       dprint (globaldef001795);
-      dprint (vtos (self.globaldef000083));
+      dprint (vtos (self.origin));
       dprint (globaldef001354);
       remove (self);
       return ;
@@ -126,8 +120,6 @@ void () PlaceItem = {
 
 };
 string globaldef001795 /* = "Bonus item fell out of level at " */;
-
-void () StartItem;
 
 // function StartItem
 // function number 207 begins at statement 4283
@@ -142,8 +134,8 @@ void () StartItem;
 
 void () StartItem = {
 
-   self.globaldef000128 = (time + globaldef001553);
-   self.globaldef000126 = PlaceItem;
+   self.nextthink = (time + globaldef001553);
+   self.think = PlaceItem;
 
 };
 
@@ -187,26 +179,26 @@ void () StartItem = {
  */
 float (entity globaldef001797, float globaldef001798, float globaldef001799) T_Heal = {
 
-   if ( (globaldef001797.globaldef000130 <= FALSE) ) {
+   if ( (globaldef001797.health <= FALSE) ) {
 
       return ( FALSE );
 
    }
-   if ( (!globaldef001799 && (globaldef001797.globaldef000130 >= other.globaldef000163)) ) {
+   if ( (!globaldef001799 && (globaldef001797.health >= other.max_health)) ) {
 
       return ( FALSE );
 
    }
    globaldef001798 = ceil (globaldef001798);
-   globaldef001797.globaldef000130 = (globaldef001797.globaldef000130 + globaldef001798);
-   if ( (!globaldef001799 && (globaldef001797.globaldef000130 >= other.globaldef000163)) ) {
+   globaldef001797.health = (globaldef001797.health + globaldef001798);
+   if ( (!globaldef001799 && (globaldef001797.health >= other.max_health)) ) {
 
-      globaldef001797.globaldef000130 = other.globaldef000163;
+      globaldef001797.health = other.max_health;
 
    }
-   if ( (globaldef001797.globaldef000130 > globaldef000721) ) {
+   if ( (globaldef001797.health > globaldef000721) ) {
 
-      globaldef001797.globaldef000130 = globaldef000721;
+      globaldef001797.health = globaldef000721;
 
    }
    return ( TRUE );
@@ -214,14 +206,12 @@ float (entity globaldef001797, float globaldef001798, float globaldef001799) T_H
 };
 float globaldef001800 /* = 1.000 */;
 float globaldef001801 /* = 2.000 */;
-.float field000340;
-.entity field000341;
+.float healamount;
+.float healtype;
 
 void () health_touch;
 
 void () item_megahealth_rot;
-
-void () item_health;
 
 // function item_health
 // function number 209 begins at statement 4323
@@ -295,40 +285,40 @@ void () item_health;
 
 void () item_health = {
 
-   self.globaldef000124 = health_touch;
-   if ( (self.globaldef000173 & globaldef001800) ) {
+   self.touch = health_touch;
+   if ( (self.spawnflags & globaldef001800) ) {
 
       precache_model (globaldef001807);
       precache_sound (globaldef001808);
       setmodel (self,globaldef001807);
-      self.globaldef000186 = globaldef001808;
-      self.globaldef001802 = globaldef000748;
-      self.globaldef001803 = FALSE;
-      self.globaldef000531 = func002299;
+      self.noise = globaldef001808;
+      self.healamount = globaldef000748;
+      self.healtype = FALSE;
+      self.field000225 = func002299;
 
    } else {
 
-      if ( (self.globaldef000173 & globaldef001801) ) {
+      if ( (self.spawnflags & globaldef001801) ) {
 
          precache_model (globaldef001809);
          precache_sound (globaldef001810);
          setmodel (self,globaldef001809);
-         self.globaldef000186 = globaldef001810;
-         self.globaldef001802 = globaldef001335;
-         self.globaldef001803 = FL_SWIM;
-         self.globaldef000531 = func002298;
-         self.globaldef000532 = func002318;
-         self.globaldef000530 = func002647;
+         self.noise = globaldef001810;
+         self.healamount = globaldef001335;
+         self.healtype = FL_SWIM;
+         self.field000225 = func002298;
+         self.field000226 = func002318;
+         self.field000224 = func002647;
 
       } else {
 
          precache_model (globaldef001811);
          precache_sound (globaldef001812);
          setmodel (self,globaldef001811);
-         self.globaldef000186 = globaldef001812;
-         self.globaldef001802 = globaldef000288;
-         self.globaldef001803 = TRUE;
-         self.globaldef000531 = func002300;
+         self.noise = globaldef001812;
+         self.healamount = globaldef000288;
+         self.healtype = TRUE;
+         self.field000225 = func002300;
 
       }
 
@@ -464,33 +454,33 @@ void () health_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
       func002686 (other,self);
 
    }
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
       func002471 (other,self);
 
    }
-   if ( (self.globaldef001803 == FL_SWIM) ) {
+   if ( (self.healtype == FL_SWIM) ) {
 
-      if ( (other.globaldef000130 >= globaldef000721) ) {
+      if ( (other.health >= globaldef000721) ) {
 
          return ;
 
       }
-      if ( !T_Heal (other,self.globaldef001802,TRUE) ) {
+      if ( !T_Heal (other,self.healamount,TRUE) ) {
 
          return ;
 
@@ -498,35 +488,35 @@ void () health_touch = {
 
    } else {
 
-      if ( !T_Heal (other,self.globaldef001802,FALSE) ) {
+      if ( !T_Heal (other,self.healamount,FALSE) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001816);
-      s = ftos (self.globaldef001802);
+      s = ftos (self.healamount);
       func000092 (other,s);
       func000092 (other,globaldef001817);
 
    }
-   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
    }
-   self.globaldef000108 = string_null;
-   self.globaldef000082 = SOLID_NOT;
-   if ( (self.globaldef001803 == FL_SWIM) ) {
+   self.model = string_null;
+   self.solid = SOLID_NOT;
+   if ( (self.healtype == FL_SWIM) ) {
 
-      other.globaldef000140 = (other.globaldef000140 | IT_SUPERHEALTH);
-      self.globaldef000128 = (time + MOVETYPE_FLY);
-      self.globaldef000126 = item_megahealth_rot;
-      self.globaldef000179 = other;
+      other.items = (other.items | IT_SUPERHEALTH);
+      self.nextthink = (time + MOVETYPE_FLY);
+      self.think = item_megahealth_rot;
+      self.owner = other;
 
    } else {
 
@@ -534,10 +524,10 @@ void () health_touch = {
 
          if ( deathmatch ) {
 
-            self.globaldef000128 = (time + globaldef001384);
+            self.nextthink = (time + globaldef001384);
 
          }
-         self.globaldef000126 = SUB_regen;
+         self.think = SUB_regen;
 
       }
 
@@ -592,31 +582,29 @@ string globaldef001818 /* = "bf\n" */;
 
 void () item_megahealth_rot = {
 
-   other = self.globaldef000179;
-   if ( (other.globaldef000130 > other.globaldef000163) ) {
+   other = self.owner;
+   if ( (other.health > other.max_health) ) {
 
-      other.globaldef000130 = (other.globaldef000130 - TRUE);
-      self.globaldef000128 = (time + TRUE);
+      other.health = (other.health - TRUE);
+      self.nextthink = (time + TRUE);
       return ;
 
    }
-   other.globaldef000140 = (other.globaldef000140 - (other.globaldef000140 & IT_SUPERHEALTH));
+   other.items = (other.items - (other.items & IT_SUPERHEALTH));
    if ( (deathmatch == TRUE) ) {
 
-      self.globaldef000128 = (time + globaldef001384);
-      self.globaldef000126 = SUB_regen;
+      self.nextthink = (time + globaldef001384);
+      self.think = SUB_regen;
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.globaldef000128 = (time + globaldef001384);
-      self.globaldef000126 = SUB_regen;
+      self.nextthink = (time + globaldef001384);
+      self.think = SUB_regen;
 
    }
 
 };
-
-void () armor_touch;
 
 // function armor_touch
 // function number 212 begins at statement 4527
@@ -740,80 +728,80 @@ void () armor_touch = {
       return ;
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
       func002686 (other,self);
 
    }
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
       func002471 (other,self);
 
    }
-   if ( (self.globaldef000107 == globaldef001823) ) {
+   if ( (self.classname == globaldef001823) ) {
 
       type = globaldef001588;
       value = globaldef001335;
       bit = IT_ARMOR1;
 
    }
-   if ( (self.globaldef000107 == globaldef001824) ) {
+   if ( (self.classname == globaldef001824) ) {
 
       type = globaldef001825;
       value = globaldef001336;
       bit = IT_ARMOR2;
 
    }
-   if ( (self.globaldef000107 == globaldef001826) ) {
+   if ( (self.classname == globaldef001826) ) {
 
       type = globaldef001827;
       value = globaldef001343;
       bit = IT_ARMOR3;
 
    }
-   if ( ((other.globaldef000165 * other.globaldef000166) >= (type * value)) ) {
+   if ( ((other.armortype * other.armorvalue) >= (type * value)) ) {
 
       return ;
 
    }
-   other.globaldef000165 = type;
-   other.globaldef000166 = value;
-   other.globaldef000140 = ((other.globaldef000140 - (other.globaldef000140 & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + bit);
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000108 = string_null;
+   other.armortype = type;
+   other.armorvalue = value;
+   other.items = ((other.items - (other.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + bit);
+   self.solid = SOLID_NOT;
+   self.model = string_null;
    if ( (deathmatch == TRUE) ) {
 
-      self.globaldef000128 = (time + globaldef001384);
+      self.nextthink = (time + globaldef001384);
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.globaldef000128 = (time + globaldef001384);
+      self.nextthink = (time + globaldef001384);
 
    }
-   self.globaldef000126 = SUB_regen;
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   self.think = SUB_regen;
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001828);
 
    }
    sound (other,CHAN_ITEM,globaldef001829,TRUE,ATTN_NORM);
-   func002453 (other,self.globaldef000083,TRUE,globaldef000743);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   func002453 (other,self.origin,TRUE,globaldef000743);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
@@ -829,8 +817,6 @@ string globaldef001826 /* = "item_armorInv" */;
 float globaldef001827 /* = 0.800 */;
 string globaldef001828 /* = "You got armor\n" */;
 string globaldef001829 /* = "items/armor1.wav" */;
-
-void () item_armor1;
 
 // function item_armor1
 // function number 213 begins at statement 4633
@@ -858,21 +844,19 @@ void () item_armor1;
 
 void () item_armor1 = {
 
-   self.globaldef000124 = armor_touch;
+   self.touch = armor_touch;
    precache_model (globaldef001831);
    setmodel (self,globaldef001831);
-   self.globaldef000110 = FALSE;
-   self.globaldef000166 = globaldef001335;
+   self.skin = FALSE;
+   self.armorvalue = globaldef001335;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002311;
+   self.field000225 = func002311;
    StartItem ();
 
 };
 string globaldef001831 /* = "progs/armor.mdl" */;
 vector globaldef001832 /* = '-16.000 -16.000 0.000' */;
 vector globaldef001833 /* = '16.000 16.000 56.000' */;
-
-void () item_armor2;
 
 // function item_armor2
 // function number 214 begins at statement 4652
@@ -904,20 +888,18 @@ void () item_armor2;
 
 void () item_armor2 = {
 
-   self.globaldef000124 = armor_touch;
+   self.touch = armor_touch;
    precache_model (globaldef001831);
    setmodel (self,globaldef001831);
-   self.globaldef000110 = TRUE;
-   self.globaldef000166 = globaldef001336;
+   self.skin = TRUE;
+   self.armorvalue = globaldef001336;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002312;
-   self.globaldef000532 = func002325;
-   self.globaldef000530 = func002646;
+   self.field000225 = func002312;
+   self.field000226 = func002325;
+   self.field000224 = func002646;
    StartItem ();
 
 };
-
-void () item_armorInv;
 
 // function item_armorInv
 // function number 215 begins at statement 4675
@@ -949,20 +931,18 @@ void () item_armorInv;
 
 void () item_armorInv = {
 
-   self.globaldef000124 = armor_touch;
+   self.touch = armor_touch;
    precache_model (globaldef001831);
    setmodel (self,globaldef001831);
-   self.globaldef000110 = FL_SWIM;
-   self.globaldef000166 = globaldef001343;
+   self.skin = FL_SWIM;
+   self.armorvalue = globaldef001343;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002313;
-   self.globaldef000532 = func002326;
-   self.globaldef000530 = func002646;
+   self.field000225 = func002313;
+   self.field000226 = func002326;
+   self.field000224 = func002646;
    StartItem ();
 
 };
-
-void () bound_other_ammo;
 
 // function bound_other_ammo
 // function number 216 begins at statement 4698
@@ -992,29 +972,28 @@ void () bound_other_ammo;
 
 void () bound_other_ammo = {
 
-   if ( (other.globaldef000136 > globaldef001335) ) {
+   if ( (other.ammo_shells > globaldef001335) ) {
 
-      other.globaldef000136 = globaldef001335;
-
-   }
-   if ( (other.globaldef000137 > globaldef001343) ) {
-
-      other.globaldef000137 = globaldef001343;
+      other.ammo_shells = globaldef001335;
 
    }
-   if ( (other.globaldef000138 > globaldef001335) ) {
+   if ( (other.ammo_nails > globaldef001343) ) {
 
-      other.globaldef000138 = globaldef001335;
+      other.ammo_nails = globaldef001343;
 
    }
-   if ( (other.globaldef000139 > globaldef001335) ) {
+   if ( (other.ammo_rockets > globaldef001335) ) {
 
-      other.globaldef000139 = globaldef001335;
+      other.ammo_rockets = globaldef001335;
+
+   }
+   if ( (other.ammo_cells > globaldef001335) ) {
+
+      other.ammo_cells = globaldef001335;
 
    }
 
 };
-float (float globaldef001838) RankForWeapon;
 
 // function RankForWeapon
 // function number 217 begins at statement 4719
@@ -1076,8 +1055,6 @@ float (float globaldef001838) RankForWeapon = {
 
 };
 
-void (float globaldef001840, float globaldef001841) Deathmatch_Weapon;
-
 // function Deathmatch_Weapon
 // function number 218 begins at statement 4739
 /*
@@ -1100,18 +1077,16 @@ void (float globaldef001840, float globaldef001841) Deathmatch_Weapon = {
    local float or;
    local float nr;
 
-   or = RankForWeapon (self.globaldef000132);
+   or = RankForWeapon (self.weapon);
    nr = RankForWeapon (globaldef001841);
    if ( (nr < or) ) {
 
-      self.globaldef000132 = globaldef001841;
+      self.weapon = globaldef001841;
 
    }
 
 };
 float () W_BestWeapon;
-
-void () weapon_touch;
 
 // function weapon_touch
 // function number 219 begins at statement 4751
@@ -1334,28 +1309,28 @@ void () weapon_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
       func002686 (other,self);
 
    }
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
       func002471 (other,self);
 
    }
    stemp = self;
    self = other;
-   if ( (self.globaldef000107 == globaldef001170) ) {
+   if ( (self.classname == globaldef001170) ) {
 
       best = W_BestWeapon ();
 
@@ -1375,81 +1350,81 @@ void () weapon_touch = {
       leave = TRUE;
 
    }
-   if ( (self.globaldef000107 == globaldef001852) ) {
+   if ( (self.classname == globaldef001852) ) {
 
-      if ( (leave && (other.globaldef000140 & IT_NAILGUN)) ) {
+      if ( (leave && (other.items & IT_NAILGUN)) ) {
 
          return ;
 
       }
-      hadammo = other.globaldef000137;
+      hadammo = other.ammo_nails;
       new = IT_NAILGUN;
-      other.globaldef000137 = (other.globaldef000137 + SVC_INTERMISSION);
+      other.ammo_nails = (other.ammo_nails + SVC_INTERMISSION);
 
    } else {
 
-      if ( (self.globaldef000107 == globaldef001853) ) {
+      if ( (self.classname == globaldef001853) ) {
 
-         if ( (leave && (other.globaldef000140 & IT_SUPER_NAILGUN)) ) {
+         if ( (leave && (other.items & IT_SUPER_NAILGUN)) ) {
 
             return ;
 
          }
-         hadammo = other.globaldef000138;
+         hadammo = other.ammo_rockets;
          new = IT_SUPER_NAILGUN;
-         other.globaldef000137 = (other.globaldef000137 + SVC_INTERMISSION);
+         other.ammo_nails = (other.ammo_nails + SVC_INTERMISSION);
 
       } else {
 
-         if ( (self.globaldef000107 == globaldef001854) ) {
+         if ( (self.classname == globaldef001854) ) {
 
-            if ( (leave && (other.globaldef000140 & IT_SUPER_SHOTGUN)) ) {
+            if ( (leave && (other.items & IT_SUPER_SHOTGUN)) ) {
 
                return ;
 
             }
-            hadammo = other.globaldef000138;
+            hadammo = other.ammo_rockets;
             new = IT_SUPER_SHOTGUN;
-            other.globaldef000136 = (other.globaldef000136 + MOVETYPE_FLY);
+            other.ammo_shells = (other.ammo_shells + MOVETYPE_FLY);
 
          } else {
 
-            if ( (self.globaldef000107 == globaldef001855) ) {
+            if ( (self.classname == globaldef001855) ) {
 
-               if ( (leave && (other.globaldef000140 & IT_ROCKET_LAUNCHER)) ) {
+               if ( (leave && (other.items & IT_ROCKET_LAUNCHER)) ) {
 
                   return ;
 
                }
-               hadammo = other.globaldef000138;
+               hadammo = other.ammo_rockets;
                new = IT_ROCKET_LAUNCHER;
-               other.globaldef000138 = (other.globaldef000138 + MOVETYPE_FLY);
+               other.ammo_rockets = (other.ammo_rockets + MOVETYPE_FLY);
 
             } else {
 
-               if ( (self.globaldef000107 == globaldef001856) ) {
+               if ( (self.classname == globaldef001856) ) {
 
-                  if ( (leave && (other.globaldef000140 & IT_GRENADE_LAUNCHER)) ) {
+                  if ( (leave && (other.items & IT_GRENADE_LAUNCHER)) ) {
 
                      return ;
 
                   }
-                  hadammo = other.globaldef000138;
+                  hadammo = other.ammo_rockets;
                   new = IT_GRENADE_LAUNCHER;
-                  other.globaldef000138 = (other.globaldef000138 + MOVETYPE_FLY);
+                  other.ammo_rockets = (other.ammo_rockets + MOVETYPE_FLY);
 
                } else {
 
-                  if ( (self.globaldef000107 == globaldef001857) ) {
+                  if ( (self.classname == globaldef001857) ) {
 
-                     if ( (leave && (other.globaldef000140 & IT_LIGHTNING)) ) {
+                     if ( (leave && (other.items & IT_LIGHTNING)) ) {
 
                         return ;
 
                      }
-                     hadammo = other.globaldef000138;
+                     hadammo = other.ammo_rockets;
                      new = IT_LIGHTNING;
-                     other.globaldef000139 = (other.globaldef000139 + globaldef000748);
+                     other.ammo_cells = (other.ammo_cells + globaldef000748);
 
                   } else {
 
@@ -1466,28 +1441,28 @@ void () weapon_touch = {
       }
 
    }
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001859);
-      func000092 (other,self.globaldef000158);
+      func000092 (other,self.netname);
       func000092 (other,globaldef001354);
 
    }
    sound (other,CHAN_ITEM,globaldef001860,TRUE,ATTN_NORM);
-   func002453 (other,self.globaldef000083,globaldef000522,globaldef000742);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   func002453 (other,self.origin,globaldef000522,globaldef000742);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
    }
    bound_other_ammo ();
-   old = other.globaldef000140;
-   other.globaldef000140 = (other.globaldef000140 | new);
+   old = other.items;
+   other.items = (other.items | new);
    stemp = self;
    self = other;
    if ( !deathmatch ) {
 
-      self.globaldef000132 = new;
+      self.weapon = new;
 
    } else {
 
@@ -1501,14 +1476,14 @@ void () weapon_touch = {
       return ;
 
    }
-   self.globaldef000108 = string_null;
-   self.globaldef000082 = SOLID_NOT;
+   self.model = string_null;
+   self.solid = SOLID_NOT;
    if ( (deathmatch == TRUE) ) {
 
-      self.globaldef000128 = (time + SVC_INTERMISSION);
+      self.nextthink = (time + SVC_INTERMISSION);
 
    }
-   self.globaldef000126 = SUB_regen;
+   self.think = SUB_regen;
    activator = other;
    SUB_UseTargets ();
 
@@ -1522,8 +1497,6 @@ string globaldef001857 /* = "weapon_lightning" */;
 string globaldef001858 /* = "weapon_touch: unknown classname" */;
 string globaldef001859 /* = "You got the " */;
 string globaldef001860 /* = "weapons/pkup.wav" */;
-
-void () weapon_supershotgun;
 
 // function weapon_supershotgun
 // function number 220 begins at statement 4953
@@ -1557,20 +1530,18 @@ void () weapon_supershotgun = {
 
    precache_model (globaldef001862);
    setmodel (self,globaldef001862);
-   self.globaldef000132 = IT_SUPER_SHOTGUN;
-   self.globaldef000158 = globaldef001863;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = IT_SUPER_SHOTGUN;
+   self.netname = globaldef001863;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002310;
-   self.globaldef000532 = func002319;
-   self.globaldef000530 = func002640;
+   self.field000225 = func002310;
+   self.field000226 = func002319;
+   self.field000224 = func002640;
    StartItem ();
 
 };
 string globaldef001862 /* = "progs/g_shot.mdl" */;
 string globaldef001863 /* = "Double-barrelled Shotgun" */;
-
-void () weapon_nailgun;
 
 // function weapon_nailgun
 // function number 221 begins at statement 4976
@@ -1604,20 +1575,18 @@ void () weapon_nailgun = {
 
    precache_model (globaldef001865);
    setmodel (self,globaldef001865);
-   self.globaldef000132 = IT_NAILGUN;
-   self.globaldef000158 = globaldef001866;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = IT_NAILGUN;
+   self.netname = globaldef001866;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002308;
-   self.globaldef000532 = func002320;
-   self.globaldef000530 = func002641;
+   self.field000225 = func002308;
+   self.field000226 = func002320;
+   self.field000224 = func002641;
    StartItem ();
 
 };
 string globaldef001865 /* = "progs/g_nail.mdl" */;
 string globaldef001866 /* = "nailgun" */;
-
-void () weapon_supernailgun;
 
 // function weapon_supernailgun
 // function number 222 begins at statement 4999
@@ -1651,20 +1620,18 @@ void () weapon_supernailgun = {
 
    precache_model (globaldef001868);
    setmodel (self,globaldef001868);
-   self.globaldef000132 = IT_SUPER_NAILGUN;
-   self.globaldef000158 = globaldef001869;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = IT_SUPER_NAILGUN;
+   self.netname = globaldef001869;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002309;
-   self.globaldef000532 = func002321;
-   self.globaldef000530 = func002642;
+   self.field000225 = func002309;
+   self.field000226 = func002321;
+   self.field000224 = func002642;
    StartItem ();
 
 };
 string globaldef001868 /* = "progs/g_nail2.mdl" */;
 string globaldef001869 /* = "Super Nailgun" */;
-
-void () weapon_grenadelauncher;
 
 // function weapon_grenadelauncher
 // function number 223 begins at statement 5022
@@ -1698,20 +1665,18 @@ void () weapon_grenadelauncher = {
 
    precache_model (globaldef001871);
    setmodel (self,globaldef001871);
-   self.globaldef000132 = MOVETYPE_WALK;
-   self.globaldef000158 = globaldef001872;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = MOVETYPE_WALK;
+   self.netname = globaldef001872;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002307;
-   self.globaldef000532 = func002322;
-   self.globaldef000530 = func002643;
+   self.field000225 = func002307;
+   self.field000226 = func002322;
+   self.field000224 = func002643;
    StartItem ();
 
 };
 string globaldef001871 /* = "progs/g_rock.mdl" */;
 string globaldef001872 /* = "Grenade Launcher" */;
-
-void () weapon_rocketlauncher;
 
 // function weapon_rocketlauncher
 // function number 224 begins at statement 5045
@@ -1745,20 +1710,18 @@ void () weapon_rocketlauncher = {
 
    precache_model (globaldef001874);
    setmodel (self,globaldef001874);
-   self.globaldef000132 = MOVETYPE_WALK;
-   self.globaldef000158 = globaldef001875;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = MOVETYPE_WALK;
+   self.netname = globaldef001875;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002305;
-   self.globaldef000532 = func002323;
-   self.globaldef000530 = func002644;
+   self.field000225 = func002305;
+   self.field000226 = func002323;
+   self.field000224 = func002644;
    StartItem ();
 
 };
 string globaldef001874 /* = "progs/g_rock2.mdl" */;
 string globaldef001875 /* = "Rocket Launcher" */;
-
-void () weapon_lightning;
 
 // function weapon_lightning
 // function number 225 begins at statement 5068
@@ -1792,20 +1755,18 @@ void () weapon_lightning = {
 
    precache_model (globaldef001877);
    setmodel (self,globaldef001877);
-   self.globaldef000132 = MOVETYPE_WALK;
-   self.globaldef000158 = globaldef001878;
-   self.globaldef000124 = weapon_touch;
+   self.weapon = MOVETYPE_WALK;
+   self.netname = globaldef001878;
+   self.touch = weapon_touch;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000531 = func002306;
-   self.globaldef000532 = func002324;
-   self.globaldef000530 = func002645;
+   self.field000225 = func002306;
+   self.field000226 = func002324;
+   self.field000224 = func002645;
    StartItem ();
 
 };
 string globaldef001877 /* = "progs/g_light.mdl" */;
 string globaldef001878 /* = "Thunderbolt" */;
-
-void () ammo_touch;
 
 // function ammo_touch
 // function number 226 begins at statement 5091
@@ -1959,21 +1920,21 @@ void () ammo_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
       func002471 (other,self);
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
@@ -1982,66 +1943,66 @@ void () ammo_touch = {
    self = other;
    best = W_BestWeapon ();
    self = stemp;
-   if ( (self.globaldef000132 == TRUE) ) {
+   if ( (self.weapon == TRUE) ) {
 
-      if ( (other.globaldef000136 >= globaldef001335) ) {
+      if ( (other.ammo_shells >= globaldef001335) ) {
 
          return ;
 
       }
-      other.globaldef000136 = (other.globaldef000136 + self.globaldef000407);
+      other.ammo_shells = (other.ammo_shells + self.aflag);
 
    }
-   if ( (self.globaldef000132 == FL_SWIM) ) {
+   if ( (self.weapon == FL_SWIM) ) {
 
-      if ( (other.globaldef000137 >= globaldef001343) ) {
+      if ( (other.ammo_nails >= globaldef001343) ) {
 
          return ;
 
       }
-      other.globaldef000137 = (other.globaldef000137 + self.globaldef000407);
+      other.ammo_nails = (other.ammo_nails + self.aflag);
 
    }
-   if ( (self.globaldef000132 == MOVETYPE_WALK) ) {
+   if ( (self.weapon == MOVETYPE_WALK) ) {
 
-      if ( (other.globaldef000138 >= globaldef001335) ) {
+      if ( (other.ammo_rockets >= globaldef001335) ) {
 
          return ;
 
       }
-      other.globaldef000138 = (other.globaldef000138 + self.globaldef000407);
+      other.ammo_rockets = (other.ammo_rockets + self.aflag);
 
    }
-   if ( (self.globaldef000132 == MOVETYPE_STEP) ) {
+   if ( (self.weapon == MOVETYPE_STEP) ) {
 
-      if ( (other.globaldef000139 >= globaldef001335) ) {
+      if ( (other.ammo_cells >= globaldef001335) ) {
 
          return ;
 
       }
-      other.globaldef000139 = (other.globaldef000139 + self.globaldef000407);
+      other.ammo_cells = (other.ammo_cells + self.aflag);
 
    }
    bound_other_ammo ();
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001859);
-      func000092 (other,self.globaldef000158);
+      func000092 (other,self.netname);
       func000092 (other,globaldef001354);
 
    }
    sound (other,CHAN_ITEM,globaldef001882,TRUE,ATTN_NORM);
-   func002453 (other,self.globaldef000083,globaldef000522,globaldef000742);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   func002453 (other,self.origin,globaldef000522,globaldef000742);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
    }
-   if ( (other.globaldef000132 == best) ) {
+   if ( (other.weapon == best) ) {
 
       stemp = self;
       self = other;
-      self.globaldef000132 = W_BestWeapon ();
+      self.weapon = W_BestWeapon ();
       W_SetCurrentAmmo ();
       self = stemp;
 
@@ -2050,27 +2011,25 @@ void () ammo_touch = {
    self = other;
    W_SetCurrentAmmo ();
    self = stemp;
-   self.globaldef000108 = string_null;
-   self.globaldef000082 = SOLID_NOT;
+   self.model = string_null;
+   self.solid = SOLID_NOT;
    if ( (deathmatch == TRUE) ) {
 
-      self.globaldef000128 = (time + SVC_INTERMISSION);
+      self.nextthink = (time + SVC_INTERMISSION);
 
    }
    if ( (deathmatch == MOVETYPE_WALK) ) {
 
-      self.globaldef000128 = (time + SVC_INTERMISSION);
+      self.nextthink = (time + SVC_INTERMISSION);
 
    }
-   self.globaldef000126 = SUB_regen;
+   self.think = SUB_regen;
    activator = other;
    SUB_UseTargets ();
 
 };
 string globaldef001882 /* = "weapons/lock4.wav" */;
 float globaldef001883 /* = 1.000 */;
-
-void () item_shells;
 
 // function item_shells
 // function number 227 begins at statement 5228
@@ -2111,32 +2070,30 @@ void () item_shells;
 
 void () item_shells = {
 
-   self.globaldef000124 = ammo_touch;
-   if ( (self.globaldef000173 & globaldef001883) ) {
+   self.touch = ammo_touch;
+   if ( (self.spawnflags & globaldef001883) ) {
 
       precache_model (globaldef001885);
       setmodel (self,globaldef001885);
-      self.globaldef000407 = globaldef000729;
+      self.aflag = globaldef000729;
 
    } else {
 
       precache_model (globaldef001886);
       setmodel (self,globaldef001886);
-      self.globaldef000407 = globaldef001384;
+      self.aflag = globaldef001384;
 
    }
-   self.globaldef000132 = TRUE;
-   self.globaldef000158 = globaldef001887;
+   self.weapon = TRUE;
+   self.netname = globaldef001887;
    setsize (self,VEC_ORIGIN,globaldef001813);
-   self.globaldef000531 = func002302;
+   self.field000225 = func002302;
    StartItem ();
 
 };
 string globaldef001885 /* = "maps/b_shell1.bsp" */;
 string globaldef001886 /* = "maps/b_shell0.bsp" */;
 string globaldef001887 /* = "shells" */;
-
-void () item_spikes;
 
 // function item_spikes
 // function number 228 begins at statement 5260
@@ -2177,32 +2134,30 @@ void () item_spikes;
 
 void () item_spikes = {
 
-   self.globaldef000124 = ammo_touch;
-   if ( (self.globaldef000173 & globaldef001883) ) {
+   self.touch = ammo_touch;
+   if ( (self.spawnflags & globaldef001883) ) {
 
       precache_model (globaldef001889);
       setmodel (self,globaldef001889);
-      self.globaldef000407 = globaldef001257;
+      self.aflag = globaldef001257;
 
    } else {
 
       precache_model (globaldef001890);
       setmodel (self,globaldef001890);
-      self.globaldef000407 = globaldef000288;
+      self.aflag = globaldef000288;
 
    }
-   self.globaldef000132 = FL_SWIM;
-   self.globaldef000158 = globaldef001891;
+   self.weapon = FL_SWIM;
+   self.netname = globaldef001891;
    setsize (self,VEC_ORIGIN,globaldef001813);
-   self.globaldef000531 = func002301;
+   self.field000225 = func002301;
    StartItem ();
 
 };
 string globaldef001889 /* = "maps/b_nail1.bsp" */;
 string globaldef001890 /* = "maps/b_nail0.bsp" */;
 string globaldef001891 /* = "nails" */;
-
-void () item_rockets;
 
 // function item_rockets
 // function number 229 begins at statement 5292
@@ -2243,32 +2198,30 @@ void () item_rockets;
 
 void () item_rockets = {
 
-   self.globaldef000124 = ammo_touch;
-   if ( (self.globaldef000173 & globaldef001883) ) {
+   self.touch = ammo_touch;
+   if ( (self.spawnflags & globaldef001883) ) {
 
       precache_model (globaldef001893);
       setmodel (self,globaldef001893);
-      self.globaldef000407 = MOVETYPE_BOUNCE;
+      self.aflag = MOVETYPE_BOUNCE;
 
    } else {
 
       precache_model (globaldef001894);
       setmodel (self,globaldef001894);
-      self.globaldef000407 = MOVETYPE_FLY;
+      self.aflag = MOVETYPE_FLY;
 
    }
-   self.globaldef000132 = MOVETYPE_WALK;
-   self.globaldef000158 = globaldef001895;
+   self.weapon = MOVETYPE_WALK;
+   self.netname = globaldef001895;
    setsize (self,VEC_ORIGIN,globaldef001813);
-   self.globaldef000531 = func002304;
+   self.field000225 = func002304;
    StartItem ();
 
 };
 string globaldef001893 /* = "maps/b_rock1.bsp" */;
 string globaldef001894 /* = "maps/b_rock0.bsp" */;
 string globaldef001895 /* = "rockets" */;
-
-void () item_cells;
 
 // function item_cells
 // function number 230 begins at statement 5324
@@ -2309,24 +2262,24 @@ void () item_cells;
 
 void () item_cells = {
 
-   self.globaldef000124 = ammo_touch;
-   if ( (self.globaldef000173 & globaldef001883) ) {
+   self.touch = ammo_touch;
+   if ( (self.spawnflags & globaldef001883) ) {
 
       precache_model (globaldef001897);
       setmodel (self,globaldef001897);
-      self.globaldef000407 = globaldef000774;
+      self.aflag = globaldef000774;
 
    } else {
 
       precache_model (globaldef001898);
       setmodel (self,globaldef001898);
-      self.globaldef000407 = MOVETYPE_TOSS;
+      self.aflag = MOVETYPE_TOSS;
 
    }
-   self.globaldef000132 = MOVETYPE_STEP;
-   self.globaldef000158 = globaldef001899;
+   self.weapon = MOVETYPE_STEP;
+   self.netname = globaldef001899;
    setsize (self,VEC_ORIGIN,globaldef001813);
-   self.globaldef000531 = func002303;
+   self.field000225 = func002303;
    StartItem ();
 
 };
@@ -2337,8 +2290,6 @@ float globaldef001900 /* = 1.000 */;
 float globaldef001901 /* = 2.000 */;
 float globaldef001902 /* = 4.000 */;
 float globaldef001903 /* = 8.000 */;
-
-void () item_weapon;
 
 // function item_weapon
 // function number 231 begins at statement 5356
@@ -2430,62 +2381,62 @@ void () item_weapon;
 
 void () item_weapon = {
 
-   self.globaldef000124 = ammo_touch;
-   if ( (self.globaldef000173 & globaldef001900) ) {
+   self.touch = ammo_touch;
+   if ( (self.spawnflags & globaldef001900) ) {
 
-      if ( (self.globaldef000173 & globaldef001903) ) {
+      if ( (self.spawnflags & globaldef001903) ) {
 
          precache_model (globaldef001885);
          setmodel (self,globaldef001885);
-         self.globaldef000407 = globaldef000729;
+         self.aflag = globaldef000729;
 
       } else {
 
          precache_model (globaldef001886);
          setmodel (self,globaldef001886);
-         self.globaldef000407 = globaldef001384;
+         self.aflag = globaldef001384;
 
       }
-      self.globaldef000132 = TRUE;
-      self.globaldef000158 = globaldef001887;
+      self.weapon = TRUE;
+      self.netname = globaldef001887;
 
    }
-   if ( (self.globaldef000173 & globaldef001902) ) {
+   if ( (self.spawnflags & globaldef001902) ) {
 
-      if ( (self.globaldef000173 & globaldef001903) ) {
+      if ( (self.spawnflags & globaldef001903) ) {
 
          precache_model (globaldef001889);
          setmodel (self,globaldef001889);
-         self.globaldef000407 = globaldef000729;
+         self.aflag = globaldef000729;
 
       } else {
 
          precache_model (globaldef001890);
          setmodel (self,globaldef001890);
-         self.globaldef000407 = globaldef001384;
+         self.aflag = globaldef001384;
 
       }
-      self.globaldef000132 = FL_SWIM;
-      self.globaldef000158 = globaldef001905;
+      self.weapon = FL_SWIM;
+      self.netname = globaldef001905;
 
    }
-   if ( (self.globaldef000173 & globaldef001901) ) {
+   if ( (self.spawnflags & globaldef001901) ) {
 
-      if ( (self.globaldef000173 & globaldef001903) ) {
+      if ( (self.spawnflags & globaldef001903) ) {
 
          precache_model (globaldef001893);
          setmodel (self,globaldef001893);
-         self.globaldef000407 = MOVETYPE_BOUNCE;
+         self.aflag = MOVETYPE_BOUNCE;
 
       } else {
 
          precache_model (globaldef001894);
          setmodel (self,globaldef001894);
-         self.globaldef000407 = MOVETYPE_FLY;
+         self.aflag = MOVETYPE_FLY;
 
       }
-      self.globaldef000132 = MOVETYPE_WALK;
-      self.globaldef000158 = globaldef001895;
+      self.weapon = MOVETYPE_WALK;
+      self.netname = globaldef001895;
 
    }
    setsize (self,VEC_ORIGIN,globaldef001813);
@@ -2493,8 +2444,6 @@ void () item_weapon = {
 
 };
 string globaldef001905 /* = "spikes" */;
-
-void () key_touch;
 
 // function key_touch
 // function number 232 begins at statement 5439
@@ -2569,51 +2518,49 @@ void () key_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000140 & self.globaldef000140) ) {
+   if ( (other.items & self.items) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001859);
-      func000092 (other,self.globaldef000158);
+      func000092 (other,self.netname);
       func000092 (other,globaldef001354);
 
    }
-   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
    }
-   other.globaldef000140 = (other.globaldef000140 | self.globaldef000140);
+   other.items = (other.items | self.items);
    if ( !coop ) {
 
-      self.globaldef000082 = SOLID_NOT;
-      self.globaldef000108 = string_null;
+      self.solid = SOLID_NOT;
+      self.model = string_null;
 
    }
    activator = other;
    SUB_UseTargets ();
 
 };
-
-void () key_setsounds;
 
 // function key_setsounds
 // function number 233 begins at statement 5497
@@ -2646,24 +2593,24 @@ void () key_setsounds;
 
 void () key_setsounds = {
 
-   if ( (world.globaldef000340 == FALSE) ) {
+   if ( (world.worldtype == FALSE) ) {
 
       precache_sound (globaldef001910);
-      self.globaldef000186 = globaldef001910;
+      self.noise = globaldef001910;
 
    } else {
 
-      if ( (world.globaldef000340 == TRUE) ) {
+      if ( (world.worldtype == TRUE) ) {
 
          precache_sound (globaldef001911);
-         self.globaldef000186 = globaldef001911;
+         self.noise = globaldef001911;
 
       } else {
 
-         if ( (world.globaldef000340 == FL_SWIM) ) {
+         if ( (world.worldtype == FL_SWIM) ) {
 
             precache_sound2 (globaldef001912);
-            self.globaldef000186 = globaldef001912;
+            self.noise = globaldef001912;
 
          }
 
@@ -2675,8 +2622,6 @@ void () key_setsounds = {
 string globaldef001910 /* = "misc/medkey.wav" */;
 string globaldef001911 /* = "misc/runekey.wav" */;
 string globaldef001912 /* = "misc/basekey.wav" */;
-
-void () item_key1;
 
 // function item_key1
 // function number 234 begins at statement 5521
@@ -2728,27 +2673,27 @@ void () item_key1;
 
 void () item_key1 = {
 
-   if ( (world.globaldef000340 == FALSE) ) {
+   if ( (world.worldtype == FALSE) ) {
 
       precache_model (globaldef001914);
       setmodel (self,globaldef001914);
-      self.globaldef000158 = globaldef001915;
+      self.netname = globaldef001915;
 
    } else {
 
-      if ( (world.globaldef000340 == TRUE) ) {
+      if ( (world.worldtype == TRUE) ) {
 
          precache_model (globaldef001916);
          setmodel (self,globaldef001916);
-         self.globaldef000158 = globaldef001917;
+         self.netname = globaldef001917;
 
       } else {
 
-         if ( (world.globaldef000340 == FL_SWIM) ) {
+         if ( (world.worldtype == FL_SWIM) ) {
 
             precache_model2 (globaldef001918);
             setmodel (self,globaldef001918);
-            self.globaldef000158 = globaldef001919;
+            self.netname = globaldef001919;
 
          }
 
@@ -2756,8 +2701,8 @@ void () item_key1 = {
 
    }
    key_setsounds ();
-   self.globaldef000124 = key_touch;
-   self.globaldef000140 = IT_KEY1;
+   self.touch = key_touch;
+   self.items = IT_KEY1;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
    StartItem ();
 
@@ -2768,8 +2713,6 @@ string globaldef001916 /* = "progs/m_s_key.mdl" */;
 string globaldef001917 /* = "silver runekey" */;
 string globaldef001918 /* = "progs/b_s_key.mdl" */;
 string globaldef001919 /* = "silver keycard" */;
-
-void () item_key2;
 
 // function item_key2
 // function number 235 begins at statement 5564
@@ -2821,27 +2764,27 @@ void () item_key2;
 
 void () item_key2 = {
 
-   if ( (world.globaldef000340 == FALSE) ) {
+   if ( (world.worldtype == FALSE) ) {
 
       precache_model (globaldef001921);
       setmodel (self,globaldef001921);
-      self.globaldef000158 = globaldef001922;
+      self.netname = globaldef001922;
 
    } else {
 
-      if ( (world.globaldef000340 == TRUE) ) {
+      if ( (world.worldtype == TRUE) ) {
 
          precache_model (globaldef001923);
          setmodel (self,globaldef001923);
-         self.globaldef000158 = globaldef001924;
+         self.netname = globaldef001924;
 
       } else {
 
-         if ( (world.globaldef000340 == FL_SWIM) ) {
+         if ( (world.worldtype == FL_SWIM) ) {
 
             precache_model2 (globaldef001925);
             setmodel (self,globaldef001925);
-            self.globaldef000158 = globaldef001926;
+            self.netname = globaldef001926;
 
          }
 
@@ -2849,8 +2792,8 @@ void () item_key2 = {
 
    }
    key_setsounds ();
-   self.globaldef000124 = key_touch;
-   self.globaldef000140 = IT_KEY2;
+   self.touch = key_touch;
+   self.items = IT_KEY2;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
    StartItem ();
 
@@ -2861,8 +2804,6 @@ string globaldef001923 /* = "progs/m_g_key.mdl" */;
 string globaldef001924 /* = "gold runekey" */;
 string globaldef001925 /* = "progs/b_g_key.mdl" */;
 string globaldef001926 /* = "gold keycard" */;
-
-void () sigil_touch;
 
 // function sigil_touch
 // function number 236 begins at statement 5607
@@ -2915,30 +2856,28 @@ void () sigil_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
    func000072 (other,globaldef001930);
-   sound (other,CHAN_ITEM,self.globaldef000186,TRUE,ATTN_NORM);
+   sound (other,CHAN_ITEM,self.noise,TRUE,ATTN_NORM);
    func000064 (other,globaldef001818);
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000108 = string_null;
-   serverflags = (serverflags | (self.globaldef000173 & globaldef000748));
-   self.globaldef000107 = globaldef001466;
+   self.solid = SOLID_NOT;
+   self.model = string_null;
+   serverflags = (serverflags | (self.spawnflags & globaldef000748));
+   self.classname = globaldef001466;
    activator = other;
    SUB_UseTargets ();
 
 };
 string globaldef001930 /* = "You got the rune!" */;
-
-void () item_sigil;
 
 // function item_sigil
 // function number 237 begins at statement 5643
@@ -2996,38 +2935,38 @@ void () item_sigil;
 
 void () item_sigil = {
 
-   if ( !self.globaldef000173 ) {
+   if ( !self.spawnflags ) {
 
       objerror (globaldef001932);
 
    }
    precache_sound (globaldef001911);
-   self.globaldef000186 = globaldef001911;
-   if ( (self.globaldef000173 & TRUE) ) {
+   self.noise = globaldef001911;
+   if ( (self.spawnflags & TRUE) ) {
 
       precache_model (globaldef001933);
       setmodel (self,globaldef001933);
 
    }
-   if ( (self.globaldef000173 & FL_SWIM) ) {
+   if ( (self.spawnflags & FL_SWIM) ) {
 
       precache_model2 (globaldef001934);
       setmodel (self,globaldef001934);
 
    }
-   if ( (self.globaldef000173 & MOVETYPE_STEP) ) {
+   if ( (self.spawnflags & MOVETYPE_STEP) ) {
 
       precache_model2 (globaldef001935);
       setmodel (self,globaldef001935);
 
    }
-   if ( (self.globaldef000173 & FL_CLIENT) ) {
+   if ( (self.spawnflags & FL_CLIENT) ) {
 
       precache_model2 (globaldef001936);
       setmodel (self,globaldef001936);
 
    }
-   self.globaldef000124 = sigil_touch;
+   self.touch = sigil_touch;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
    StartItem ();
 
@@ -3037,8 +2976,6 @@ string globaldef001933 /* = "progs/end1.mdl" */;
 string globaldef001934 /* = "progs/end2.mdl" */;
 string globaldef001935 /* = "progs/end3.mdl" */;
 string globaldef001936 /* = "progs/end4.mdl" */;
-
-void () powerup_touch;
 
 // function powerup_touch
 // function number 238 begins at statement 5692
@@ -3170,83 +3107,83 @@ void () powerup_touch = {
       return ;
 
    }
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
       func002686 (other,self);
 
    }
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
       func002471 (other,self);
 
    }
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   if ( (other.classname == globaldef001170) ) {
 
       func000092 (other,globaldef001859);
-      func000092 (other,self.globaldef000158);
+      func000092 (other,self.netname);
       func000092 (other,globaldef001354);
 
    }
    if ( deathmatch ) {
 
-      self.globaldef000382 = self.globaldef000108;
-      if ( ((self.globaldef000107 == globaldef001940) || (self.globaldef000107 == globaldef001941)) ) {
+      self.mdl = self.model;
+      if ( ((self.classname == globaldef001940) || (self.classname == globaldef001941)) ) {
 
-         self.globaldef000128 = (time + (globaldef001337 * MOVETYPE_FLY));
+         self.nextthink = (time + (globaldef001337 * MOVETYPE_FLY));
 
       } else {
 
-         self.globaldef000128 = (time + globaldef001337);
+         self.nextthink = (time + globaldef001337);
 
       }
-      self.globaldef000126 = SUB_regen;
+      self.think = SUB_regen;
 
    }
-   sound (other,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   sound (other,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
+   if ( (other.classname == globaldef001170) ) {
 
       func000064 (other,globaldef001818);
 
    }
-   self.globaldef000082 = SOLID_NOT;
-   other.globaldef000140 = (other.globaldef000140 | self.globaldef000140);
-   self.globaldef000108 = string_null;
-   if ( (self.globaldef000107 == globaldef001942) ) {
+   self.solid = SOLID_NOT;
+   other.items = (other.items | self.items);
+   self.model = string_null;
+   if ( (self.classname == globaldef001942) ) {
 
-      other.globaldef000373 = TRUE;
-      other.globaldef000366 = (time + SVC_INTERMISSION);
-
-   }
-   if ( (self.globaldef000107 == globaldef001940) ) {
-
-      other.globaldef000367 = TRUE;
-      other.globaldef000363 = (time + SVC_INTERMISSION);
+      other.rad_time = TRUE;
+      other.radsuit_finished = (time + SVC_INTERMISSION);
 
    }
-   if ( (self.globaldef000107 == globaldef001941) ) {
+   if ( (self.classname == globaldef001940) ) {
 
-      other.globaldef000369 = TRUE;
-      other.globaldef000364 = (time + SVC_INTERMISSION);
+      other.invincible_time = TRUE;
+      other.invincible_finished = (time + SVC_INTERMISSION);
 
    }
-   if ( (self.globaldef000107 == globaldef001943) ) {
+   if ( (self.classname == globaldef001941) ) {
 
-      other.globaldef000371 = TRUE;
-      other.globaldef000365 = (time + SVC_INTERMISSION);
+      other.invisible_time = TRUE;
+      other.invisible_finished = (time + SVC_INTERMISSION);
+
+   }
+   if ( (self.classname == globaldef001943) ) {
+
+      other.super_time = TRUE;
+      other.super_damage_finished = (time + SVC_INTERMISSION);
 
    }
    activator = other;
@@ -3257,8 +3194,6 @@ string globaldef001940 /* = "item_artifact_invulnerability" */;
 string globaldef001941 /* = "item_artifact_invisibility" */;
 string globaldef001942 /* = "item_artifact_envirosuit" */;
 string globaldef001943 /* = "item_artifact_super_damage" */;
-
-void () item_artifact_invulnerability;
 
 // function item_artifact_invulnerability
 // function number 239 begins at statement 5807
@@ -3298,19 +3233,19 @@ void () item_artifact_invulnerability;
 
 void () item_artifact_invulnerability = {
 
-   self.globaldef000124 = powerup_touch;
+   self.touch = powerup_touch;
    precache_model (globaldef001945);
    precache_sound (globaldef001946);
    precache_sound (globaldef001947);
    precache_sound (globaldef001771);
-   self.globaldef000186 = globaldef001946;
+   self.noise = globaldef001946;
    setmodel (self,globaldef001945);
-   self.globaldef000158 = globaldef001948;
-   self.globaldef000140 = IT_INVULNERABILITY;
+   self.netname = globaldef001948;
+   self.items = IT_INVULNERABILITY;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef000531 = func002317;
-   self.globaldef000532 = func002329;
-   self.globaldef000530 = func002647;
+   self.field000225 = func002317;
+   self.field000226 = func002329;
+   self.field000224 = func002647;
    StartItem ();
 
 };
@@ -3318,8 +3253,6 @@ string globaldef001945 /* = "progs/invulner.mdl" */;
 string globaldef001946 /* = "items/protect.wav" */;
 string globaldef001947 /* = "items/protect2.wav" */;
 string globaldef001948 /* = "Pentagram of Protection" */;
-
-void () item_artifact_envirosuit;
 
 // function item_artifact_envirosuit
 // function number 240 begins at statement 5838
@@ -3353,16 +3286,16 @@ void () item_artifact_envirosuit;
 
 void () item_artifact_envirosuit = {
 
-   self.globaldef000124 = powerup_touch;
+   self.touch = powerup_touch;
    precache_model (globaldef001950);
    precache_sound (globaldef001951);
    precache_sound (globaldef001952);
-   self.globaldef000186 = globaldef001951;
+   self.noise = globaldef001951;
    setmodel (self,globaldef001950);
-   self.globaldef000158 = globaldef001953;
-   self.globaldef000140 = IT_SUIT;
+   self.netname = globaldef001953;
+   self.items = IT_SUIT;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef000531 = func002314;
+   self.field000225 = func002314;
    StartItem ();
 
 };
@@ -3370,8 +3303,6 @@ string globaldef001950 /* = "progs/suit.mdl" */;
 string globaldef001951 /* = "items/suit.wav" */;
 string globaldef001952 /* = "items/suit2.wav" */;
 string globaldef001953 /* = "Biosuit" */;
-
-void () item_artifact_invisibility;
 
 // function item_artifact_invisibility
 // function number 241 begins at statement 5863
@@ -3411,19 +3342,19 @@ void () item_artifact_invisibility;
 
 void () item_artifact_invisibility = {
 
-   self.globaldef000124 = powerup_touch;
+   self.touch = powerup_touch;
    precache_model (globaldef001955);
    precache_sound (globaldef001956);
    precache_sound (globaldef001957);
    precache_sound (globaldef001958);
-   self.globaldef000186 = globaldef001956;
+   self.noise = globaldef001956;
    setmodel (self,globaldef001955);
-   self.globaldef000158 = globaldef001959;
-   self.globaldef000140 = IT_INVISIBILITY;
+   self.netname = globaldef001959;
+   self.items = IT_INVISIBILITY;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef000531 = func002315;
-   self.globaldef000532 = func002327;
-   self.globaldef000530 = func002647;
+   self.field000225 = func002315;
+   self.field000226 = func002327;
+   self.field000224 = func002647;
    StartItem ();
 
 };
@@ -3432,8 +3363,6 @@ string globaldef001956 /* = "items/inv1.wav" */;
 string globaldef001957 /* = "items/inv2.wav" */;
 string globaldef001958 /* = "items/inv3.wav" */;
 string globaldef001959 /* = "Ring of Shadows" */;
-
-void () item_artifact_super_damage;
 
 // function item_artifact_super_damage
 // function number 242 begins at statement 5894
@@ -3473,19 +3402,19 @@ void () item_artifact_super_damage;
 
 void () item_artifact_super_damage = {
 
-   self.globaldef000124 = powerup_touch;
+   self.touch = powerup_touch;
    precache_model (globaldef001961);
    precache_sound (globaldef001962);
    precache_sound (globaldef001963);
    precache_sound (globaldef001964);
-   self.globaldef000186 = globaldef001962;
+   self.noise = globaldef001962;
    setmodel (self,globaldef001961);
-   self.globaldef000158 = globaldef001965;
-   self.globaldef000140 = IT_QUAD;
+   self.netname = globaldef001965;
+   self.items = IT_QUAD;
    setsize (self,VEC_HULL_MIN,VEC_HULL_MAX);
-   self.globaldef000531 = func002316;
-   self.globaldef000532 = func002328;
-   self.globaldef000530 = func002647;
+   self.field000225 = func002316;
+   self.field000226 = func002328;
+   self.field000224 = func002647;
    StartItem ();
 
 };

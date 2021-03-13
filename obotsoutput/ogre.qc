@@ -2,8 +2,6 @@ string globaldef003653 /* = "enforcer/pain2.wav" */;
 string globaldef003654 /* = "enforcer/death1.wav" */;
 string globaldef003655 /* = "enforcer/idle1.wav" */;
 
-void () OgreGrenadeExplode;
-
 // function OgreGrenadeExplode
 // function number 665 begins at statement 18229
 /*
@@ -52,22 +50,20 @@ void () OgreGrenadeExplode;
 
 void () OgreGrenadeExplode = {
 
-   T_RadiusDamage (self,self.globaldef000179,globaldef000729,world);
+   T_RadiusDamage (self,self.owner,globaldef000729,world);
    sound (self,CHAN_VOICE,globaldef002012,TRUE,ATTN_NORM);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_EXPLOSION);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
-   self.globaldef000091 = VEC_ORIGIN;
-   self.globaldef000124 = SUB_Null;
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
+   self.velocity = VEC_ORIGIN;
+   self.touch = SUB_Null;
    setmodel (self,globaldef002145);
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
    s_explode1 ();
 
 };
-
-void () OgreGrenadeTouch;
 
 // function OgreGrenadeTouch
 // function number 666 begins at statement 18270
@@ -97,27 +93,25 @@ void () OgreGrenadeTouch;
 
 void () OgreGrenadeTouch = {
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000141 == DAMAGE_AIM) ) {
+   if ( (other.takedamage == DAMAGE_AIM) ) {
 
       OgreGrenadeExplode ();
       return ;
 
    }
    sound (self,CHAN_VOICE,globaldef002022,TRUE,ATTN_NORM);
-   if ( (self.globaldef000091 == VEC_ORIGIN) ) {
+   if ( (self.velocity == VEC_ORIGIN) ) {
 
-      self.globaldef000099 = VEC_ORIGIN;
+      self.avelocity = VEC_ORIGIN;
 
    }
 
 };
-
-void () OgreFireGrenade;
 
 // function OgreFireGrenade
 // function number 667 begins at statement 18291
@@ -190,28 +184,26 @@ void () OgreFireGrenade = {
    local entity missile;
    local entity mpuff;
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.effects = (self.effects | EF_MUZZLEFLASH);
    sound (self,CHAN_WEAPON,globaldef002021,TRUE,ATTN_NORM);
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000081 = MOVETYPE_BOUNCE;
-   missile.globaldef000082 = SOLID_BBOX;
-   makevectors (self.globaldef000095);
-   missile.globaldef000091 = normalize ((self.globaldef000159.globaldef000083 - self.globaldef000083));
-   missile.globaldef000091 = (missile.globaldef000091 * globaldef000723);
-   missile.globaldef000094 = globaldef001343;
-   missile.globaldef000099 = globaldef002186;
-   missile.globaldef000095 = vectoangles (missile.globaldef000091);
-   missile.globaldef000124 = OgreGrenadeTouch;
-   missile.globaldef000128 = (time + globaldef002187);
-   missile.globaldef000126 = OgreGrenadeExplode;
+   missile.owner = self;
+   missile.movetype = MOVETYPE_BOUNCE;
+   missile.solid = SOLID_BBOX;
+   makevectors (self.angles);
+   missile.velocity = normalize ((self.enemy.origin - self.origin));
+   missile.velocity = (missile.velocity * globaldef000723);
+   missile.velocity_z = globaldef001343;
+   missile.avelocity = globaldef002186;
+   missile.angles = vectoangles (missile.velocity);
+   missile.touch = OgreGrenadeTouch;
+   missile.nextthink = (time + globaldef002187);
+   missile.think = OgreGrenadeExplode;
    setmodel (missile,globaldef002188);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (missile,self.globaldef000083);
+   setorigin (missile,self.origin);
 
 };
-
-void (float globaldef003662) chainsaw;
 
 // function chainsaw
 // function number 668 begins at statement 18352
@@ -283,43 +275,41 @@ void (float globaldef003662) chainsaw = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
-   if ( !CanDamage (self.globaldef000159,self) ) {
+   if ( !CanDamage (self.enemy,self) ) {
 
       return ;
 
    }
    ai_charge (MOVETYPE_BOUNCE);
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * MOVETYPE_STEP);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
    if ( globaldef003662 ) {
 
-      makevectors (self.globaldef000095);
+      makevectors (self.angles);
       if ( (globaldef003662 == TRUE) ) {
 
-         func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
+         func000253 ((self.origin + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
 
       } else {
 
-         func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),(globaldef003662 * v_right));
+         func000253 ((self.origin + (v_forward * FL_INWATER)),(globaldef003662 * v_right));
 
       }
 
    }
 
 };
-
-void () ogre_stand1;
 
 // function ogre_stand1
 // function number 669 begins at statement 18412
@@ -335,8 +325,6 @@ void () ogre_stand1 = [ 0.000, ogre_stand2 ] {
 
 };
 
-void () ogre_stand2;
-
 // function ogre_stand2
 // function number 670 begins at statement 18415
 /*
@@ -350,8 +338,6 @@ void () ogre_stand2 = [ 1.000, ogre_stand3 ] {
    ai_stand ();
 
 };
-
-void () ogre_stand3;
 
 // function ogre_stand3
 // function number 671 begins at statement 18418
@@ -367,8 +353,6 @@ void () ogre_stand3 = [ 2.000, ogre_stand4 ] {
 
 };
 
-void () ogre_stand4;
-
 // function ogre_stand4
 // function number 672 begins at statement 18421
 /*
@@ -382,8 +366,6 @@ void () ogre_stand4 = [ 3.000, ogre_stand5 ] {
    ai_stand ();
 
 };
-
-void () ogre_stand5;
 
 // function ogre_stand5
 // function number 673 begins at statement 18424
@@ -412,8 +394,6 @@ void () ogre_stand5 = [ 4.000, ogre_stand6 ] {
    ai_stand ();
 
 };
-
-void () ogre_stand6;
 string globaldef003674 /* = "ogre/ogidle.wav" */;
 
 // function ogre_stand6
@@ -430,8 +410,6 @@ void () ogre_stand6 = [ 5.000, ogre_stand7 ] {
 
 };
 
-void () ogre_stand7;
-
 // function ogre_stand7
 // function number 675 begins at statement 18439
 /*
@@ -445,8 +423,6 @@ void () ogre_stand7 = [ 6.000, ogre_stand8 ] {
    ai_stand ();
 
 };
-
-void () ogre_stand8;
 
 // function ogre_stand8
 // function number 676 begins at statement 18442
@@ -462,8 +438,6 @@ void () ogre_stand8 = [ 7.000, ogre_stand9 ] {
 
 };
 
-void () ogre_stand9;
-
 // function ogre_stand9
 // function number 677 begins at statement 18445
 /*
@@ -477,8 +451,6 @@ void () ogre_stand9 = [ 8.000, ogre_stand1 ] {
    ai_stand ();
 
 };
-
-void () ogre_walk1;
 
 // function ogre_walk1
 // function number 678 begins at statement 18448
@@ -495,8 +467,6 @@ void () ogre_walk1 = [ 9.000, ogre_walk2 ] {
 
 };
 
-void () ogre_walk2;
-
 // function ogre_walk2
 // function number 679 begins at statement 18452
 /*
@@ -511,8 +481,6 @@ void () ogre_walk2 = [ 10.000, ogre_walk3 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () ogre_walk3;
 
 // function ogre_walk3
 // function number 680 begins at statement 18456
@@ -543,8 +511,6 @@ void () ogre_walk3 = [ 11.000, ogre_walk4 ] {
 
 };
 
-void () ogre_walk4;
-
 // function ogre_walk4
 // function number 681 begins at statement 18469
 /*
@@ -560,8 +526,6 @@ void () ogre_walk4 = [ 12.000, ogre_walk5 ] {
 
 };
 
-void () ogre_walk5;
-
 // function ogre_walk5
 // function number 682 begins at statement 18473
 /*
@@ -576,8 +540,6 @@ void () ogre_walk5 = [ 13.000, ogre_walk6 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () ogre_walk6;
 
 // function ogre_walk6
 // function number 683 begins at statement 18477
@@ -608,8 +570,6 @@ void () ogre_walk6 = [ 14.000, ogre_walk7 ] {
 
 };
 
-void () ogre_walk7;
-
 // function ogre_walk7
 // function number 684 begins at statement 18490
 /*
@@ -624,8 +584,6 @@ void () ogre_walk7 = [ 15.000, ogre_walk8 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () ogre_walk8;
 
 // function ogre_walk8
 // function number 685 begins at statement 18494
@@ -642,8 +600,6 @@ void () ogre_walk8 = [ 16.000, ogre_walk9 ] {
 
 };
 
-void () ogre_walk9;
-
 // function ogre_walk9
 // function number 686 begins at statement 18498
 /*
@@ -658,8 +614,6 @@ void () ogre_walk9 = [ 17.000, ogre_walk10 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () ogre_walk10;
 
 // function ogre_walk10
 // function number 687 begins at statement 18502
@@ -676,8 +630,6 @@ void () ogre_walk10 = [ 18.000, ogre_walk11 ] {
 
 };
 
-void () ogre_walk11;
-
 // function ogre_walk11
 // function number 688 begins at statement 18506
 /*
@@ -693,8 +645,6 @@ void () ogre_walk11 = [ 19.000, ogre_walk12 ] {
 
 };
 
-void () ogre_walk12;
-
 // function ogre_walk12
 // function number 689 begins at statement 18510
 /*
@@ -709,8 +659,6 @@ void () ogre_walk12 = [ 20.000, ogre_walk13 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () ogre_walk13;
 
 // function ogre_walk13
 // function number 690 begins at statement 18514
@@ -728,8 +676,6 @@ void () ogre_walk13 = [ 21.000, ogre_walk14 ] {
 };
 float globaldef003691 /* = 21.000 */;
 
-void () ogre_walk14;
-
 // function ogre_walk14
 // function number 691 begins at statement 18518
 /*
@@ -746,8 +692,6 @@ void () ogre_walk14 = [ 22.000, ogre_walk15 ] {
 };
 float globaldef003693 /* = 22.000 */;
 
-void () ogre_walk15;
-
 // function ogre_walk15
 // function number 692 begins at statement 18522
 /*
@@ -763,8 +707,6 @@ void () ogre_walk15 = [ 23.000, ogre_walk16 ] {
 
 };
 
-void () ogre_walk16;
-
 // function ogre_walk16
 // function number 693 begins at statement 18526
 /*
@@ -779,8 +721,6 @@ void () ogre_walk16 = [ 24.000, ogre_walk1 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () ogre_run1;
 
 // function ogre_run1
 // function number 694 begins at statement 18530
@@ -810,8 +750,6 @@ void () ogre_run1 = [ 25.000, ogre_run2 ] {
    }
 
 };
-
-void () ogre_run2;
 string globaldef003698 /* = "ogre/ogidle2.wav" */;
 
 // function ogre_run2
@@ -829,8 +767,6 @@ void () ogre_run2 = [ 26.000, ogre_run3 ] {
 
 };
 
-void () ogre_run3;
-
 // function ogre_run3
 // function number 696 begins at statement 18547
 /*
@@ -845,8 +781,6 @@ void () ogre_run3 = [ 27.000, ogre_run4 ] {
    ai_run (FL_CLIENT);
 
 };
-
-void () ogre_run4;
 
 // function ogre_run4
 // function number 697 begins at statement 18551
@@ -863,8 +797,6 @@ void () ogre_run4 = [ 28.000, ogre_run5 ] {
 
 };
 
-void () ogre_run5;
-
 // function ogre_run5
 // function number 698 begins at statement 18555
 /*
@@ -879,8 +811,6 @@ void () ogre_run5 = [ 29.000, ogre_run6 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () ogre_run6;
 
 // function ogre_run6
 // function number 699 begins at statement 18559
@@ -897,8 +827,6 @@ void () ogre_run6 = [ 30.000, ogre_run7 ] {
 
 };
 
-void () ogre_run7;
-
 // function ogre_run7
 // function number 700 begins at statement 18563
 /*
@@ -913,8 +841,6 @@ void () ogre_run7 = [ 31.000, ogre_run8 ] {
    ai_run (globaldef000775);
 
 };
-
-void () ogre_run8;
 
 // function ogre_run8
 // function number 701 begins at statement 18567
@@ -952,8 +878,6 @@ void () ogre_swing1 = [ 33.000, ogre_swing2 ] {
    sound (self,CHAN_WEAPON,globaldef003706,TRUE,ATTN_NORM);
 
 };
-
-void () ogre_swing2;
 string globaldef003706 /* = "ogre/ogsawatk.wav" */;
 
 // function ogre_swing2
@@ -971,8 +895,6 @@ void () ogre_swing2 = [ 34.000, ogre_swing3 ] {
 
 };
 
-void () ogre_swing3;
-
 // function ogre_swing3
 // function number 704 begins at statement 18585
 /*
@@ -988,8 +910,6 @@ void () ogre_swing3 = [ 35.000, ogre_swing4 ] {
 
 };
 
-void () ogre_swing4;
-
 // function ogre_swing4
 // function number 705 begins at statement 18589
 /*
@@ -1004,8 +924,6 @@ void () ogre_swing4 = [ 36.000, ogre_swing5 ] {
    ai_charge (globaldef000775);
 
 };
-
-void () ogre_swing5;
 
 // function ogre_swing5
 // function number 706 begins at statement 18593
@@ -1028,11 +946,9 @@ void () ogre_swing5 = [ 37.000, ogre_swing6 ] {
 
    ai_charge (MOVETYPE_FLYMISSILE);
    chainsaw (FALSE);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing6;
 
 // function ogre_swing6
 // function number 707 begins at statement 18605
@@ -1052,11 +968,9 @@ void () ogre_swing6;
 void () ogre_swing6 = [ 38.000, ogre_swing7 ] {
 
    chainsaw (globaldef001343);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing7;
 
 // function ogre_swing7
 // function number 708 begins at statement 18615
@@ -1076,11 +990,9 @@ void () ogre_swing7;
 void () ogre_swing7 = [ 39.000, ogre_swing8 ] {
 
    chainsaw (FALSE);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing8;
 
 // function ogre_swing8
 // function number 709 begins at statement 18625
@@ -1100,11 +1012,9 @@ void () ogre_swing8;
 void () ogre_swing8 = [ 40.000, ogre_swing9 ] {
 
    chainsaw (FALSE);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing9;
 
 // function ogre_swing9
 // function number 710 begins at statement 18635
@@ -1124,11 +1034,9 @@ void () ogre_swing9;
 void () ogre_swing9 = [ 41.000, ogre_swing10 ] {
 
    chainsaw (FALSE);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing10;
 
 // function ogre_swing10
 // function number 711 begins at statement 18645
@@ -1148,11 +1056,9 @@ void () ogre_swing10;
 void () ogre_swing10 = [ 42.000, ogre_swing11 ] {
 
    chainsaw (globaldef003183);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing11;
 
 // function ogre_swing11
 // function number 712 begins at statement 18655
@@ -1172,11 +1078,9 @@ void () ogre_swing11;
 void () ogre_swing11 = [ 43.000, ogre_swing12 ] {
 
    chainsaw (FALSE);
-   self.globaldef000097 = (self.globaldef000097 + (random () * globaldef000288));
+   self.angles_y = (self.angles_y + (random () * globaldef000288));
 
 };
-
-void () ogre_swing12;
 
 // function ogre_swing12
 // function number 713 begins at statement 18665
@@ -1193,8 +1097,6 @@ void () ogre_swing12 = [ 44.000, ogre_swing13 ] {
 
 };
 
-void () ogre_swing13;
-
 // function ogre_swing13
 // function number 714 begins at statement 18669
 /*
@@ -1209,8 +1111,6 @@ void () ogre_swing13 = [ 45.000, ogre_swing14 ] {
    ai_charge (FL_CLIENT);
 
 };
-
-void () ogre_swing14;
 
 // function ogre_swing14
 // function number 715 begins at statement 18673
@@ -1249,8 +1149,6 @@ void () ogre_smash1 = [ 47.000, ogre_smash2 ] {
 
 };
 
-void () ogre_smash2;
-
 // function ogre_smash2
 // function number 717 begins at statement 18687
 /*
@@ -1265,8 +1163,6 @@ void () ogre_smash2 = [ 48.000, ogre_smash3 ] {
    ai_charge (FALSE);
 
 };
-
-void () ogre_smash3;
 
 // function ogre_smash3
 // function number 718 begins at statement 18691
@@ -1283,8 +1179,6 @@ void () ogre_smash3 = [ 49.000, ogre_smash4 ] {
 
 };
 
-void () ogre_smash4;
-
 // function ogre_smash4
 // function number 719 begins at statement 18695
 /*
@@ -1300,8 +1194,6 @@ void () ogre_smash4 = [ 50.000, ogre_smash5 ] {
 
 };
 
-void () ogre_smash5;
-
 // function ogre_smash5
 // function number 720 begins at statement 18699
 /*
@@ -1316,8 +1208,6 @@ void () ogre_smash5 = [ 51.000, ogre_smash6 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () ogre_smash6;
 
 // function ogre_smash6
 // function number 721 begins at statement 18703
@@ -1337,8 +1227,6 @@ void () ogre_smash6 = [ 52.000, ogre_smash7 ] {
 
 };
 
-void () ogre_smash7;
-
 // function ogre_smash7
 // function number 722 begins at statement 18709
 /*
@@ -1356,8 +1244,6 @@ void () ogre_smash7 = [ 53.000, ogre_smash8 ] {
    chainsaw (FALSE);
 
 };
-
-void () ogre_smash8;
 
 // function ogre_smash8
 // function number 723 begins at statement 18715
@@ -1377,8 +1263,6 @@ void () ogre_smash8 = [ 54.000, ogre_smash9 ] {
 
 };
 
-void () ogre_smash9;
-
 // function ogre_smash9
 // function number 724 begins at statement 18721
 /*
@@ -1397,8 +1281,6 @@ void () ogre_smash9 = [ 55.000, ogre_smash10 ] {
 
 };
 
-void () ogre_smash10;
-
 // function ogre_smash10
 // function number 725 begins at statement 18727
 /*
@@ -1413,8 +1295,6 @@ void () ogre_smash10 = [ 56.000, ogre_smash11 ] {
    chainsaw (TRUE);
 
 };
-
-void () ogre_smash11;
 
 // function ogre_smash11
 // function number 726 begins at statement 18731
@@ -1437,11 +1317,9 @@ void () ogre_smash11 = [ 57.000, ogre_smash12 ] {
 
    ai_charge (FL_SWIM);
    chainsaw (FALSE);
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef001553));
+   self.nextthink = (self.nextthink + (random () * globaldef001553));
 
 };
-
-void () ogre_smash12;
 
 // function ogre_smash12
 // function number 727 begins at statement 18743
@@ -1458,8 +1336,6 @@ void () ogre_smash12 = [ 58.000, ogre_smash13 ] {
 
 };
 
-void () ogre_smash13;
-
 // function ogre_smash13
 // function number 728 begins at statement 18747
 /*
@@ -1474,8 +1350,6 @@ void () ogre_smash13 = [ 59.000, ogre_smash14 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () ogre_smash14;
 
 // function ogre_smash14
 // function number 729 begins at statement 18751
@@ -1492,8 +1366,6 @@ void () ogre_smash14 = [ 60.000, ogre_run1 ] {
 
 };
 
-void () ogre_nail1;
-
 // function ogre_nail1
 // function number 730 begins at statement 18755
 /*
@@ -1507,8 +1379,6 @@ void () ogre_nail1 = [ 61.000, ogre_nail2 ] {
    ai_face ();
 
 };
-
-void () ogre_nail2;
 
 // function ogre_nail2
 // function number 731 begins at statement 18758
@@ -1524,8 +1394,6 @@ void () ogre_nail2 = [ 62.000, ogre_nail3 ] {
 
 };
 
-void () ogre_nail3;
-
 // function ogre_nail3
 // function number 732 begins at statement 18761
 /*
@@ -1539,8 +1407,6 @@ void () ogre_nail3 = [ 62.000, ogre_nail4 ] {
    ai_face ();
 
 };
-
-void () ogre_nail4;
 
 // function ogre_nail4
 // function number 733 begins at statement 18764
@@ -1558,8 +1424,6 @@ void () ogre_nail4 = [ 63.000, ogre_nail5 ] {
 
 };
 
-void () ogre_nail5;
-
 // function ogre_nail5
 // function number 734 begins at statement 18768
 /*
@@ -1573,8 +1437,6 @@ void () ogre_nail5 = [ 64.000, ogre_nail6 ] {
    ai_face ();
 
 };
-
-void () ogre_nail6;
 
 // function ogre_nail6
 // function number 735 begins at statement 18771
@@ -1590,8 +1452,6 @@ void () ogre_nail6 = [ 65.000, ogre_nail7 ] {
 
 };
 
-void () ogre_nail7;
-
 // function ogre_nail7
 // function number 736 begins at statement 18774
 /*
@@ -1606,8 +1466,6 @@ void () ogre_nail7 = [ 66.000, ogre_run1 ] {
 
 };
 
-void () ogre_pain1;
-
 // function ogre_pain1
 // function number 737 begins at statement 18777
 /*
@@ -1619,8 +1477,6 @@ void () ogre_pain1 = [ 67.000, ogre_pain2 ] {
 
 
 };
-
-void () ogre_pain2;
 
 // function ogre_pain2
 // function number 738 begins at statement 18779
@@ -1634,8 +1490,6 @@ void () ogre_pain2 = [ 68.000, ogre_pain3 ] {
 
 };
 
-void () ogre_pain3;
-
 // function ogre_pain3
 // function number 739 begins at statement 18781
 /*
@@ -1647,8 +1501,6 @@ void () ogre_pain3 = [ 69.000, ogre_pain4 ] {
 
 
 };
-
-void () ogre_pain4;
 
 // function ogre_pain4
 // function number 740 begins at statement 18783
@@ -1662,8 +1514,6 @@ void () ogre_pain4 = [ 70.000, ogre_pain5 ] {
 
 };
 
-void () ogre_pain5;
-
 // function ogre_pain5
 // function number 741 begins at statement 18785
 /*
@@ -1675,8 +1525,6 @@ void () ogre_pain5 = [ 71.000, ogre_run1 ] {
 
 
 };
-
-void () ogre_painb1;
 
 // function ogre_painb1
 // function number 742 begins at statement 18787
@@ -1690,8 +1538,6 @@ void () ogre_painb1 = [ 72.000, ogre_painb2 ] {
 
 };
 
-void () ogre_painb2;
-
 // function ogre_painb2
 // function number 743 begins at statement 18789
 /*
@@ -1703,8 +1549,6 @@ void () ogre_painb2 = [ 73.000, ogre_painb3 ] {
 
 
 };
-
-void () ogre_painb3;
 
 // function ogre_painb3
 // function number 744 begins at statement 18791
@@ -1718,8 +1562,6 @@ void () ogre_painb3 = [ 74.000, ogre_run1 ] {
 
 };
 
-void () ogre_painc1;
-
 // function ogre_painc1
 // function number 745 begins at statement 18793
 /*
@@ -1731,8 +1573,6 @@ void () ogre_painc1 = [ 75.000, ogre_painc2 ] {
 
 
 };
-
-void () ogre_painc2;
 
 // function ogre_painc2
 // function number 746 begins at statement 18795
@@ -1746,8 +1586,6 @@ void () ogre_painc2 = [ 76.000, ogre_painc3 ] {
 
 };
 
-void () ogre_painc3;
-
 // function ogre_painc3
 // function number 747 begins at statement 18797
 /*
@@ -1759,8 +1597,6 @@ void () ogre_painc3 = [ 77.000, ogre_painc4 ] {
 
 
 };
-
-void () ogre_painc4;
 
 // function ogre_painc4
 // function number 748 begins at statement 18799
@@ -1774,8 +1610,6 @@ void () ogre_painc4 = [ 78.000, ogre_painc5 ] {
 
 };
 
-void () ogre_painc5;
-
 // function ogre_painc5
 // function number 749 begins at statement 18801
 /*
@@ -1787,8 +1621,6 @@ void () ogre_painc5 = [ 79.000, ogre_painc6 ] {
 
 
 };
-
-void () ogre_painc6;
 
 // function ogre_painc6
 // function number 750 begins at statement 18803
@@ -1802,8 +1634,6 @@ void () ogre_painc6 = [ 80.000, ogre_run1 ] {
 
 };
 
-void () ogre_paind1;
-
 // function ogre_paind1
 // function number 751 begins at statement 18805
 /*
@@ -1815,8 +1645,6 @@ void () ogre_paind1 = [ 81.000, ogre_paind2 ] {
 
 
 };
-
-void () ogre_paind2;
 
 // function ogre_paind2
 // function number 752 begins at statement 18807
@@ -1833,8 +1661,6 @@ void () ogre_paind2 = [ 82.000, ogre_paind3 ] {
 
 };
 
-void () ogre_paind3;
-
 // function ogre_paind3
 // function number 753 begins at statement 18811
 /*
@@ -1849,8 +1675,6 @@ void () ogre_paind3 = [ 83.000, ogre_paind4 ] {
    ai_pain (MOVETYPE_FLYMISSILE);
 
 };
-
-void () ogre_paind4;
 
 // function ogre_paind4
 // function number 754 begins at statement 18815
@@ -1867,8 +1691,6 @@ void () ogre_paind4 = [ 84.000, ogre_paind5 ] {
 
 };
 
-void () ogre_paind5;
-
 // function ogre_paind5
 // function number 755 begins at statement 18819
 /*
@@ -1880,8 +1702,6 @@ void () ogre_paind5 = [ 85.000, ogre_paind6 ] {
 
 
 };
-
-void () ogre_paind6;
 
 // function ogre_paind6
 // function number 756 begins at statement 18821
@@ -1895,8 +1715,6 @@ void () ogre_paind6 = [ 86.000, ogre_paind7 ] {
 
 };
 
-void () ogre_paind7;
-
 // function ogre_paind7
 // function number 757 begins at statement 18823
 /*
@@ -1908,8 +1726,6 @@ void () ogre_paind7 = [ 87.000, ogre_paind8 ] {
 
 
 };
-
-void () ogre_paind8;
 
 // function ogre_paind8
 // function number 758 begins at statement 18825
@@ -1923,8 +1739,6 @@ void () ogre_paind8 = [ 88.000, ogre_paind9 ] {
 
 };
 
-void () ogre_paind9;
-
 // function ogre_paind9
 // function number 759 begins at statement 18827
 /*
@@ -1936,8 +1750,6 @@ void () ogre_paind9 = [ 89.000, ogre_paind10 ] {
 
 
 };
-
-void () ogre_paind10;
 
 // function ogre_paind10
 // function number 760 begins at statement 18829
@@ -1951,8 +1763,6 @@ void () ogre_paind10 = [ 90.000, ogre_paind11 ] {
 
 };
 
-void () ogre_paind11;
-
 // function ogre_paind11
 // function number 761 begins at statement 18831
 /*
@@ -1964,8 +1774,6 @@ void () ogre_paind11 = [ 91.000, ogre_paind12 ] {
 
 
 };
-
-void () ogre_paind12;
 
 // function ogre_paind12
 // function number 762 begins at statement 18833
@@ -1979,8 +1787,6 @@ void () ogre_paind12 = [ 92.000, ogre_paind13 ] {
 
 };
 
-void () ogre_paind13;
-
 // function ogre_paind13
 // function number 763 begins at statement 18835
 /*
@@ -1992,8 +1798,6 @@ void () ogre_paind13 = [ 93.000, ogre_paind14 ] {
 
 
 };
-
-void () ogre_paind14;
 
 // function ogre_paind14
 // function number 764 begins at statement 18837
@@ -2007,8 +1811,6 @@ void () ogre_paind14 = [ 94.000, ogre_paind15 ] {
 
 };
 
-void () ogre_paind15;
-
 // function ogre_paind15
 // function number 765 begins at statement 18839
 /*
@@ -2020,8 +1822,6 @@ void () ogre_paind15 = [ 95.000, ogre_paind16 ] {
 
 
 };
-
-void () ogre_paind16;
 
 // function ogre_paind16
 // function number 766 begins at statement 18841
@@ -2035,8 +1835,6 @@ void () ogre_paind16 = [ 96.000, ogre_run1 ] {
 
 };
 
-void () ogre_paine1;
-
 // function ogre_paine1
 // function number 767 begins at statement 18843
 /*
@@ -2048,8 +1846,6 @@ void () ogre_paine1 = [ 97.000, ogre_paine2 ] {
 
 
 };
-
-void () ogre_paine2;
 
 // function ogre_paine2
 // function number 768 begins at statement 18845
@@ -2066,8 +1862,6 @@ void () ogre_paine2 = [ 98.000, ogre_paine3 ] {
 
 };
 
-void () ogre_paine3;
-
 // function ogre_paine3
 // function number 769 begins at statement 18849
 /*
@@ -2082,8 +1876,6 @@ void () ogre_paine3 = [ 99.000, ogre_paine4 ] {
    ai_pain (MOVETYPE_FLYMISSILE);
 
 };
-
-void () ogre_paine4;
 
 // function ogre_paine4
 // function number 770 begins at statement 18853
@@ -2100,8 +1892,6 @@ void () ogre_paine4 = [ 100.000, ogre_paine5 ] {
 
 };
 
-void () ogre_paine5;
-
 // function ogre_paine5
 // function number 771 begins at statement 18857
 /*
@@ -2113,8 +1903,6 @@ void () ogre_paine5 = [ 101.000, ogre_paine6 ] {
 
 
 };
-
-void () ogre_paine6;
 
 // function ogre_paine6
 // function number 772 begins at statement 18859
@@ -2128,8 +1916,6 @@ void () ogre_paine6 = [ 102.000, ogre_paine7 ] {
 
 };
 
-void () ogre_paine7;
-
 // function ogre_paine7
 // function number 773 begins at statement 18861
 /*
@@ -2141,8 +1927,6 @@ void () ogre_paine7 = [ 103.000, ogre_paine8 ] {
 
 
 };
-
-void () ogre_paine8;
 
 // function ogre_paine8
 // function number 774 begins at statement 18863
@@ -2156,8 +1940,6 @@ void () ogre_paine8 = [ 104.000, ogre_paine9 ] {
 
 };
 
-void () ogre_paine9;
-
 // function ogre_paine9
 // function number 775 begins at statement 18865
 /*
@@ -2169,8 +1951,6 @@ void () ogre_paine9 = [ 105.000, ogre_paine10 ] {
 
 
 };
-
-void () ogre_paine10;
 
 // function ogre_paine10
 // function number 776 begins at statement 18867
@@ -2184,8 +1964,6 @@ void () ogre_paine10 = [ 106.000, ogre_paine11 ] {
 
 };
 
-void () ogre_paine11;
-
 // function ogre_paine11
 // function number 777 begins at statement 18869
 /*
@@ -2197,8 +1975,6 @@ void () ogre_paine11 = [ 107.000, ogre_paine12 ] {
 
 
 };
-
-void () ogre_paine12;
 
 // function ogre_paine12
 // function number 778 begins at statement 18871
@@ -2212,8 +1988,6 @@ void () ogre_paine12 = [ 108.000, ogre_paine13 ] {
 
 };
 
-void () ogre_paine13;
-
 // function ogre_paine13
 // function number 779 begins at statement 18873
 /*
@@ -2225,8 +1999,6 @@ void () ogre_paine13 = [ 109.000, ogre_paine14 ] {
 
 
 };
-
-void () ogre_paine14;
 
 // function ogre_paine14
 // function number 780 begins at statement 18875
@@ -2240,8 +2012,6 @@ void () ogre_paine14 = [ 110.000, ogre_paine15 ] {
 
 };
 
-void () ogre_paine15;
-
 // function ogre_paine15
 // function number 781 begins at statement 18877
 /*
@@ -2253,8 +2023,6 @@ void () ogre_paine15 = [ 111.000, ogre_run1 ] {
 
 
 };
-
-void (entity globaldef003785, float globaldef003786) ogre_pain;
 
 // function ogre_pain
 // function number 782 begins at statement 18879
@@ -2310,7 +2078,7 @@ void (entity globaldef003785, float globaldef003786) ogre_pain = {
 
    local float r;
 
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
@@ -2320,33 +2088,33 @@ void (entity globaldef003785, float globaldef003786) ogre_pain = {
    if ( (r < globaldef002243) ) {
 
       ogre_pain1 ();
-      self.globaldef000362 = (time + TRUE);
+      self.pain_finished = (time + TRUE);
 
    } else {
 
       if ( (r < globaldef000522) ) {
 
          ogre_painb1 ();
-         self.globaldef000362 = (time + TRUE);
+         self.pain_finished = (time + TRUE);
 
       } else {
 
          if ( (r < globaldef002244) ) {
 
             ogre_painc1 ();
-            self.globaldef000362 = (time + TRUE);
+            self.pain_finished = (time + TRUE);
 
          } else {
 
             if ( (r < globaldef003789) ) {
 
                ogre_paind1 ();
-               self.globaldef000362 = (time + FL_SWIM);
+               self.pain_finished = (time + FL_SWIM);
 
             } else {
 
                ogre_paine1 ();
-               self.globaldef000362 = (time + FL_SWIM);
+               self.pain_finished = (time + FL_SWIM);
 
             }
 
@@ -2360,8 +2128,6 @@ void (entity globaldef003785, float globaldef003786) ogre_pain = {
 string globaldef003788 /* = "ogre/ogpain1.wav" */;
 float globaldef003789 /* = 0.880 */;
 
-void () func000783;
-
 // function func000783
 // function number 783 begins at statement 18924
 /*
@@ -2374,8 +2140,6 @@ void () func000783 = [ 112.000, func000784 ] {
 
 };
 
-void () func000784;
-
 // function func000784
 // function number 784 begins at statement 18926
 /*
@@ -2387,8 +2151,6 @@ void () func000784 = [ 113.000, func000785 ] {
 
 
 };
-
-void () func000785;
 
 // function func000785
 // function number 785 begins at statement 18928
@@ -2404,13 +2166,11 @@ void () func000785;
 
 void () func000785 = [ 114.000, func000786 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000138 = FL_SWIM;
+   self.solid = SOLID_NOT;
+   self.ammo_rockets = FL_SWIM;
    func000244 ();
 
 };
-
-void () func000786;
 
 // function func000786
 // function number 786 begins at statement 18935
@@ -2424,8 +2184,6 @@ void () func000786 = [ 115.000, func000787 ] {
 
 };
 
-void () func000787;
-
 // function func000787
 // function number 787 begins at statement 18937
 /*
@@ -2437,8 +2195,6 @@ void () func000787 = [ 116.000, func000788 ] {
 
 
 };
-
-void () func000788;
 
 // function func000788
 // function number 788 begins at statement 18939
@@ -2452,8 +2208,6 @@ void () func000788 = [ 117.000, func000789 ] {
 
 };
 
-void () func000789;
-
 // function func000789
 // function number 789 begins at statement 18941
 /*
@@ -2465,8 +2219,6 @@ void () func000789 = [ 118.000, func000790 ] {
 
 
 };
-
-void () func000790;
 
 // function func000790
 // function number 790 begins at statement 18943
@@ -2480,8 +2232,6 @@ void () func000790 = [ 119.000, func000791 ] {
 
 };
 
-void () func000791;
-
 // function func000791
 // function number 791 begins at statement 18945
 /*
@@ -2493,8 +2243,6 @@ void () func000791 = [ 120.000, func000792 ] {
 
 
 };
-
-void () func000792;
 
 // function func000792
 // function number 792 begins at statement 18947
@@ -2508,8 +2256,6 @@ void () func000792 = [ 121.000, func000793 ] {
 
 };
 
-void () func000793;
-
 // function func000793
 // function number 793 begins at statement 18949
 /*
@@ -2521,8 +2267,6 @@ void () func000793 = [ 122.000, func000794 ] {
 
 
 };
-
-void () func000794;
 
 // function func000794
 // function number 794 begins at statement 18951
@@ -2537,8 +2281,6 @@ void () func000794 = [ 123.000, func000795 ] {
 };
 float globaldef003802 /* = 123.000 */;
 
-void () func000795;
-
 // function func000795
 // function number 795 begins at statement 18953
 /*
@@ -2552,8 +2294,6 @@ void () func000795 = [ 124.000, func000796 ] {
 };
 float globaldef003804 /* = 124.000 */;
 
-void () func000796;
-
 // function func000796
 // function number 796 begins at statement 18955
 /*
@@ -2566,8 +2306,6 @@ void () func000796 = [ 125.000, func000796 ] {
 
 };
 
-void () func000797;
-
 // function func000797
 // function number 797 begins at statement 18957
 /*
@@ -2579,8 +2317,6 @@ void () func000797 = [ 126.000, func000798 ] {
 
 
 };
-
-void () func000798;
 
 // function func000798
 // function number 798 begins at statement 18959
@@ -2597,8 +2333,6 @@ void () func000798 = [ 127.000, func000799 ] {
 
 };
 
-void () func000799;
-
 // function func000799
 // function number 799 begins at statement 18963
 /*
@@ -2613,13 +2347,11 @@ void () func000799;
 
 void () func000799 = [ 128.000, func000800 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000138 = FL_SWIM;
+   self.solid = SOLID_NOT;
+   self.ammo_rockets = FL_SWIM;
    func000244 ();
 
 };
-
-void () func000800;
 
 // function func000800
 // function number 800 begins at statement 18970
@@ -2637,8 +2369,6 @@ void () func000800 = [ 129.000, func000801 ] {
 };
 float globaldef003810 /* = 129.000 */;
 
-void () func000801;
-
 // function func000801
 // function number 801 begins at statement 18974
 /*
@@ -2655,8 +2385,6 @@ void () func000801 = [ 130.000, func000802 ] {
 };
 float globaldef003812 /* = 130.000 */;
 
-void () func000802;
-
 // function func000802
 // function number 802 begins at statement 18978
 /*
@@ -2671,8 +2399,6 @@ void () func000802 = [ 131.000, func000803 ] {
    ai_forward (MOVETYPE_PUSH);
 
 };
-
-void () func000803;
 
 // function func000803
 // function number 803 begins at statement 18982
@@ -2689,8 +2415,6 @@ void () func000803 = [ 132.000, func000804 ] {
 
 };
 
-void () func000804;
-
 // function func000804
 // function number 804 begins at statement 18986
 /*
@@ -2702,8 +2426,6 @@ void () func000804 = [ 133.000, func000805 ] {
 
 
 };
-
-void () func000805;
 
 // function func000805
 // function number 805 begins at statement 18988
@@ -2717,8 +2439,6 @@ void () func000805 = [ 134.000, func000806 ] {
 
 };
 
-void () func000806;
-
 // function func000806
 // function number 806 begins at statement 18990
 /*
@@ -2731,8 +2451,6 @@ void () func000806 = [ 135.000, func000806 ] {
 
 };
 float globaldef003818 /* = 135.000 */;
-
-void () func000807;
 
 // function func000807
 // function number 807 begins at statement 18992
@@ -2780,13 +2498,13 @@ void () func000807;
 
 void () func000807 = {
 
-   if ( (self.globaldef000130 < globaldef003820) ) {
+   if ( (self.health < globaldef003820) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef003821,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef003821,self.health);
+      ThrowGib (globaldef002434,self.health);
+      ThrowGib (globaldef002434,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -2805,8 +2523,6 @@ void () func000807 = {
 float globaldef003820 /* = -80.000 */;
 string globaldef003821 /* = "progs/h_ogre.mdl" */;
 string globaldef003822 /* = "ogre/ogdth.wav" */;
-
-void () func000808;
 
 // function func000808
 // function number 808 begins at statement 19031
@@ -2833,8 +2549,6 @@ void () func000808 = {
    }
 
 };
-
-void () func000809;
 
 // function func000809
 // function number 809 begins at statement 19038
@@ -2912,24 +2626,22 @@ void () func000809 = {
    precache_sound (globaldef003788);
    precache_sound (globaldef003706);
    precache_sound (globaldef001657);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef003825);
    setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef000130 = globaldef001343;
-   self.globaldef000344 = ogre_stand1;
-   self.globaldef000345 = ogre_walk1;
-   self.globaldef000346 = ogre_run1;
-   self.globaldef000350 = func000807;
-   self.globaldef000348 = func000808;
-   self.globaldef000347 = ogre_nail1;
-   self.globaldef000349 = ogre_pain;
+   self.health = globaldef001343;
+   self.th_stand = ogre_stand1;
+   self.th_walk = ogre_walk1;
+   self.th_run = ogre_run1;
+   self.th_die = func000807;
+   self.th_melee = func000808;
+   self.th_missile = ogre_nail1;
+   self.th_pain = ogre_pain;
    walkmonster_start ();
 
 };
 string globaldef003825 /* = "progs/ogre.mdl" */;
-
-void () monster_ogre;
 
 // function monster_ogre
 // function number 810 begins at statement 19091
@@ -2943,8 +2655,6 @@ void () monster_ogre = {
    func000809 ();
 
 };
-
-void () monster_ogre_marksman;
 
 // function monster_ogre_marksman
 // function number 811 begins at statement 19093

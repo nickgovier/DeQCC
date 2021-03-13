@@ -2,8 +2,6 @@ string globaldef005239 /* = "progs/hknight.mdl" */;
 string globaldef005240 /* = "hknight/hit.wav" */;
 string globaldef005241 /* = "hknight/grunt.wav" */;
 
-void () f_stand1;
-
 // function f_stand1
 // function number 1921 begins at statement 25389
 /*
@@ -17,8 +15,6 @@ void () f_stand1 = [ 39.000, f_stand2 ] {
    ai_stand ();
 
 };
-
-void () f_stand2;
 
 // function f_stand2
 // function number 1922 begins at statement 25392
@@ -34,8 +30,6 @@ void () f_stand2 = [ 40.000, f_stand3 ] {
 
 };
 
-void () f_stand3;
-
 // function f_stand3
 // function number 1923 begins at statement 25395
 /*
@@ -49,8 +43,6 @@ void () f_stand3 = [ 41.000, f_stand4 ] {
    ai_stand ();
 
 };
-
-void () f_stand4;
 
 // function f_stand4
 // function number 1924 begins at statement 25398
@@ -66,8 +58,6 @@ void () f_stand4 = [ 42.000, f_stand5 ] {
 
 };
 
-void () f_stand5;
-
 // function f_stand5
 // function number 1925 begins at statement 25401
 /*
@@ -81,8 +71,6 @@ void () f_stand5 = [ 43.000, f_stand6 ] {
    ai_stand ();
 
 };
-
-void () f_stand6;
 
 // function f_stand6
 // function number 1926 begins at statement 25404
@@ -98,8 +86,6 @@ void () f_stand6 = [ 44.000, f_stand7 ] {
 
 };
 
-void () f_stand7;
-
 // function f_stand7
 // function number 1927 begins at statement 25407
 /*
@@ -113,8 +99,6 @@ void () f_stand7 = [ 45.000, f_stand8 ] {
    ai_stand ();
 
 };
-
-void () f_stand8;
 
 // function f_stand8
 // function number 1928 begins at statement 25410
@@ -130,8 +114,6 @@ void () f_stand8 = [ 46.000, f_stand9 ] {
 
 };
 
-void () f_stand9;
-
 // function f_stand9
 // function number 1929 begins at statement 25413
 /*
@@ -145,8 +127,6 @@ void () f_stand9 = [ 47.000, f_stand10 ] {
    ai_stand ();
 
 };
-
-void () f_stand10;
 
 // function f_stand10
 // function number 1930 begins at statement 25416
@@ -162,8 +142,6 @@ void () f_stand10 = [ 48.000, f_stand11 ] {
 
 };
 
-void () f_stand11;
-
 // function f_stand11
 // function number 1931 begins at statement 25419
 /*
@@ -177,8 +155,6 @@ void () f_stand11 = [ 49.000, f_stand12 ] {
    ai_stand ();
 
 };
-
-void () f_stand12;
 
 // function f_stand12
 // function number 1932 begins at statement 25422
@@ -194,8 +170,6 @@ void () f_stand12 = [ 50.000, f_stand13 ] {
 
 };
 
-void () f_stand13;
-
 // function f_stand13
 // function number 1933 begins at statement 25425
 /*
@@ -209,8 +183,6 @@ void () f_stand13 = [ 51.000, f_stand14 ] {
    ai_stand ();
 
 };
-
-void () f_stand14;
 
 // function f_stand14
 // function number 1934 begins at statement 25428
@@ -226,8 +198,6 @@ void () f_stand14 = [ 52.000, f_stand15 ] {
 
 };
 
-void () f_stand15;
-
 // function f_stand15
 // function number 1935 begins at statement 25431
 /*
@@ -241,8 +211,6 @@ void () f_stand15 = [ 53.000, f_stand16 ] {
    ai_stand ();
 
 };
-
-void () f_stand16;
 
 // function f_stand16
 // function number 1936 begins at statement 25434
@@ -258,8 +226,6 @@ void () f_stand16 = [ 54.000, f_stand17 ] {
 
 };
 
-void () f_stand17;
-
 // function f_stand17
 // function number 1937 begins at statement 25437
 /*
@@ -274,8 +240,6 @@ void () f_stand17 = [ 55.000, f_stand18 ] {
 
 };
 
-void () f_stand18;
-
 // function f_stand18
 // function number 1938 begins at statement 25440
 /*
@@ -289,8 +253,6 @@ void () f_stand18 = [ 56.000, f_stand1 ] {
    ai_stand ();
 
 };
-
-void () f_walk1;
 
 // function f_walk1
 // function number 1939 begins at statement 25443
@@ -307,8 +269,6 @@ void () f_walk1 = [ 39.000, f_walk2 ] {
 
 };
 
-void () f_walk2;
-
 // function f_walk2
 // function number 1940 begins at statement 25447
 /*
@@ -323,8 +283,6 @@ void () f_walk2 = [ 40.000, f_walk3 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk3;
 
 // function f_walk3
 // function number 1941 begins at statement 25451
@@ -341,8 +299,6 @@ void () f_walk3 = [ 41.000, f_walk4 ] {
 
 };
 
-void () f_walk4;
-
 // function f_walk4
 // function number 1942 begins at statement 25455
 /*
@@ -357,8 +313,6 @@ void () f_walk4 = [ 42.000, f_walk5 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk5;
 
 // function f_walk5
 // function number 1943 begins at statement 25459
@@ -375,8 +329,6 @@ void () f_walk5 = [ 43.000, f_walk6 ] {
 
 };
 
-void () f_walk6;
-
 // function f_walk6
 // function number 1944 begins at statement 25463
 /*
@@ -391,8 +343,6 @@ void () f_walk6 = [ 44.000, f_walk7 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk7;
 
 // function f_walk7
 // function number 1945 begins at statement 25467
@@ -409,8 +359,6 @@ void () f_walk7 = [ 45.000, f_walk8 ] {
 
 };
 
-void () f_walk8;
-
 // function f_walk8
 // function number 1946 begins at statement 25471
 /*
@@ -425,8 +373,6 @@ void () f_walk8 = [ 46.000, f_walk9 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk9;
 
 // function f_walk9
 // function number 1947 begins at statement 25475
@@ -443,8 +389,6 @@ void () f_walk9 = [ 47.000, f_walk10 ] {
 
 };
 
-void () f_walk10;
-
 // function f_walk10
 // function number 1948 begins at statement 25479
 /*
@@ -459,8 +403,6 @@ void () f_walk10 = [ 48.000, f_walk11 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk11;
 
 // function f_walk11
 // function number 1949 begins at statement 25483
@@ -477,8 +419,6 @@ void () f_walk11 = [ 49.000, f_walk12 ] {
 
 };
 
-void () f_walk12;
-
 // function f_walk12
 // function number 1950 begins at statement 25487
 /*
@@ -493,8 +433,6 @@ void () f_walk12 = [ 50.000, f_walk13 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk13;
 
 // function f_walk13
 // function number 1951 begins at statement 25491
@@ -511,8 +449,6 @@ void () f_walk13 = [ 51.000, f_walk14 ] {
 
 };
 
-void () f_walk14;
-
 // function f_walk14
 // function number 1952 begins at statement 25495
 /*
@@ -527,8 +463,6 @@ void () f_walk14 = [ 52.000, f_walk15 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk15;
 
 // function f_walk15
 // function number 1953 begins at statement 25499
@@ -545,8 +479,6 @@ void () f_walk15 = [ 53.000, f_walk16 ] {
 
 };
 
-void () f_walk16;
-
 // function f_walk16
 // function number 1954 begins at statement 25503
 /*
@@ -561,8 +493,6 @@ void () f_walk16 = [ 54.000, f_walk17 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_walk17;
 
 // function f_walk17
 // function number 1955 begins at statement 25507
@@ -579,8 +509,6 @@ void () f_walk17 = [ 55.000, f_walk18 ] {
 
 };
 
-void () f_walk18;
-
 // function f_walk18
 // function number 1956 begins at statement 25511
 /*
@@ -595,8 +523,6 @@ void () f_walk18 = [ 56.000, f_walk1 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () f_run1;
 
 // function f_run1
 // function number 1957 begins at statement 25515
@@ -626,8 +552,6 @@ void () f_run1 = [ 39.000, f_run2 ] {
    }
 
 };
-
-void () f_run2;
 string globaldef005280 /* = "fish/idle.wav" */;
 
 // function f_run2
@@ -645,8 +569,6 @@ void () f_run2 = [ 41.000, f_run3 ] {
 
 };
 
-void () f_run3;
-
 // function f_run3
 // function number 1959 begins at statement 25532
 /*
@@ -661,8 +583,6 @@ void () f_run3 = [ 43.000, f_run4 ] {
    ai_run (globaldef000774);
 
 };
-
-void () f_run4;
 
 // function f_run4
 // function number 1960 begins at statement 25536
@@ -679,8 +599,6 @@ void () f_run4 = [ 45.000, f_run5 ] {
 
 };
 
-void () f_run5;
-
 // function f_run5
 // function number 1961 begins at statement 25540
 /*
@@ -695,8 +613,6 @@ void () f_run5 = [ 47.000, f_run6 ] {
    ai_run (globaldef000774);
 
 };
-
-void () f_run6;
 
 // function f_run6
 // function number 1962 begins at statement 25544
@@ -713,8 +629,6 @@ void () f_run6 = [ 49.000, f_run7 ] {
 
 };
 
-void () f_run7;
-
 // function f_run7
 // function number 1963 begins at statement 25548
 /*
@@ -729,8 +643,6 @@ void () f_run7 = [ 51.000, f_run8 ] {
    ai_run (globaldef000774);
 
 };
-
-void () f_run8;
 
 // function f_run8
 // function number 1964 begins at statement 25552
@@ -747,8 +659,6 @@ void () f_run8 = [ 53.000, f_run9 ] {
 
 };
 
-void () f_run9;
-
 // function f_run9
 // function number 1965 begins at statement 25556
 /*
@@ -763,8 +673,6 @@ void () f_run9 = [ 55.000, f_run1 ] {
    ai_run (globaldef000774);
 
 };
-
-void () fish_melee;
 
 // function fish_melee
 // function number 1966 begins at statement 25560
@@ -808,12 +716,12 @@ void () fish_melee = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001337) ) {
 
       return ;
@@ -821,12 +729,10 @@ void () fish_melee = {
    }
    sound (self,CHAN_VOICE,globaldef005294,TRUE,ATTN_NORM);
    ldmg = ((random () + random ()) * MOVETYPE_WALK);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
 
 };
 string globaldef005294 /* = "fish/bite.wav" */;
-
-void () f_attack1;
 
 // function f_attack1
 // function number 1967 begins at statement 25592
@@ -843,8 +749,6 @@ void () f_attack1 = [ 0.000, f_attack2 ] {
 
 };
 
-void () f_attack2;
-
 // function f_attack2
 // function number 1968 begins at statement 25596
 /*
@@ -860,8 +764,6 @@ void () f_attack2 = [ 1.000, f_attack3 ] {
 
 };
 
-void () f_attack3;
-
 // function f_attack3
 // function number 1969 begins at statement 25600
 /*
@@ -875,8 +777,6 @@ void () f_attack3 = [ 2.000, f_attack4 ] {
    fish_melee ();
 
 };
-
-void () f_attack4;
 
 // function f_attack4
 // function number 1970 begins at statement 25603
@@ -893,8 +793,6 @@ void () f_attack4 = [ 3.000, f_attack5 ] {
 
 };
 
-void () f_attack5;
-
 // function f_attack5
 // function number 1971 begins at statement 25607
 /*
@@ -909,8 +807,6 @@ void () f_attack5 = [ 4.000, f_attack6 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () f_attack6;
 
 // function f_attack6
 // function number 1972 begins at statement 25611
@@ -927,8 +823,6 @@ void () f_attack6 = [ 5.000, f_attack7 ] {
 
 };
 
-void () f_attack7;
-
 // function f_attack7
 // function number 1973 begins at statement 25615
 /*
@@ -943,8 +837,6 @@ void () f_attack7 = [ 6.000, f_attack8 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () f_attack8;
 
 // function f_attack8
 // function number 1974 begins at statement 25619
@@ -961,8 +853,6 @@ void () f_attack8 = [ 7.000, f_attack9 ] {
 
 };
 
-void () f_attack9;
-
 // function f_attack9
 // function number 1975 begins at statement 25623
 /*
@@ -976,8 +866,6 @@ void () f_attack9 = [ 8.000, f_attack10 ] {
    fish_melee ();
 
 };
-
-void () f_attack10;
 
 // function f_attack10
 // function number 1976 begins at statement 25626
@@ -994,8 +882,6 @@ void () f_attack10 = [ 9.000, f_attack11 ] {
 
 };
 
-void () f_attack11;
-
 // function f_attack11
 // function number 1977 begins at statement 25630
 /*
@@ -1010,8 +896,6 @@ void () f_attack11 = [ 10.000, f_attack12 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () f_attack12;
 
 // function f_attack12
 // function number 1978 begins at statement 25634
@@ -1028,8 +912,6 @@ void () f_attack12 = [ 11.000, f_attack13 ] {
 
 };
 
-void () f_attack13;
-
 // function f_attack13
 // function number 1979 begins at statement 25638
 /*
@@ -1044,8 +926,6 @@ void () f_attack13 = [ 12.000, f_attack14 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () f_attack14;
 
 // function f_attack14
 // function number 1980 begins at statement 25642
@@ -1062,8 +942,6 @@ void () f_attack14 = [ 13.000, f_attack15 ] {
 
 };
 
-void () f_attack15;
-
 // function f_attack15
 // function number 1981 begins at statement 25646
 /*
@@ -1077,8 +955,6 @@ void () f_attack15 = [ 14.000, f_attack16 ] {
    fish_melee ();
 
 };
-
-void () f_attack16;
 
 // function f_attack16
 // function number 1982 begins at statement 25649
@@ -1095,8 +971,6 @@ void () f_attack16 = [ 15.000, f_attack17 ] {
 
 };
 
-void () f_attack17;
-
 // function f_attack17
 // function number 1983 begins at statement 25653
 /*
@@ -1112,8 +986,6 @@ void () f_attack17 = [ 16.000, f_attack18 ] {
 
 };
 
-void () f_attack18;
-
 // function f_attack18
 // function number 1984 begins at statement 25657
 /*
@@ -1128,8 +1000,6 @@ void () f_attack18 = [ 17.000, f_run1 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () f_death1;
 
 // function f_death1
 // function number 1985 begins at statement 25661
@@ -1149,8 +1019,6 @@ void () f_death1 = [ 18.000, f_death2 ] {
    sound (self,CHAN_VOICE,globaldef005315,TRUE,ATTN_NORM);
 
 };
-
-void () f_death2;
 string globaldef005315 /* = "fish/death.wav" */;
 
 // function f_death2
@@ -1165,8 +1033,6 @@ void () f_death2 = [ 19.000, f_death3 ] {
 
 };
 
-void () f_death3;
-
 // function f_death3
 // function number 1987 begins at statement 25671
 /*
@@ -1178,8 +1044,6 @@ void () f_death3 = [ 20.000, f_death4 ] {
 
 
 };
-
-void () f_death4;
 
 // function f_death4
 // function number 1988 begins at statement 25673
@@ -1193,8 +1057,6 @@ void () f_death4 = [ 21.000, f_death5 ] {
 
 };
 
-void () f_death5;
-
 // function f_death5
 // function number 1989 begins at statement 25675
 /*
@@ -1206,8 +1068,6 @@ void () f_death5 = [ 22.000, f_death6 ] {
 
 
 };
-
-void () f_death6;
 
 // function f_death6
 // function number 1990 begins at statement 25677
@@ -1221,8 +1081,6 @@ void () f_death6 = [ 23.000, f_death7 ] {
 
 };
 
-void () f_death7;
-
 // function f_death7
 // function number 1991 begins at statement 25679
 /*
@@ -1234,8 +1092,6 @@ void () f_death7 = [ 24.000, f_death8 ] {
 
 
 };
-
-void () f_death8;
 
 // function f_death8
 // function number 1992 begins at statement 25681
@@ -1249,8 +1105,6 @@ void () f_death8 = [ 25.000, f_death9 ] {
 
 };
 
-void () f_death9;
-
 // function f_death9
 // function number 1993 begins at statement 25683
 /*
@@ -1262,8 +1116,6 @@ void () f_death9 = [ 26.000, f_death10 ] {
 
 
 };
-
-void () f_death10;
 
 // function f_death10
 // function number 1994 begins at statement 25685
@@ -1277,8 +1129,6 @@ void () f_death10 = [ 27.000, f_death11 ] {
 
 };
 
-void () f_death11;
-
 // function f_death11
 // function number 1995 begins at statement 25687
 /*
@@ -1290,8 +1140,6 @@ void () f_death11 = [ 28.000, f_death12 ] {
 
 
 };
-
-void () f_death12;
 
 // function f_death12
 // function number 1996 begins at statement 25689
@@ -1305,8 +1153,6 @@ void () f_death12 = [ 29.000, f_death13 ] {
 
 };
 
-void () f_death13;
-
 // function f_death13
 // function number 1997 begins at statement 25691
 /*
@@ -1318,8 +1164,6 @@ void () f_death13 = [ 30.000, f_death14 ] {
 
 
 };
-
-void () f_death14;
 
 // function f_death14
 // function number 1998 begins at statement 25693
@@ -1333,8 +1177,6 @@ void () f_death14 = [ 31.000, f_death15 ] {
 
 };
 
-void () f_death15;
-
 // function f_death15
 // function number 1999 begins at statement 25695
 /*
@@ -1346,8 +1188,6 @@ void () f_death15 = [ 32.000, f_death16 ] {
 
 
 };
-
-void () f_death16;
 
 // function f_death16
 // function number 2000 begins at statement 25697
@@ -1361,8 +1201,6 @@ void () f_death16 = [ 33.000, f_death17 ] {
 
 };
 
-void () f_death17;
-
 // function f_death17
 // function number 2001 begins at statement 25699
 /*
@@ -1374,8 +1212,6 @@ void () f_death17 = [ 34.000, f_death18 ] {
 
 
 };
-
-void () f_death18;
 
 // function f_death18
 // function number 2002 begins at statement 25701
@@ -1389,8 +1225,6 @@ void () f_death18 = [ 35.000, f_death19 ] {
 
 };
 
-void () f_death19;
-
 // function f_death19
 // function number 2003 begins at statement 25703
 /*
@@ -1402,8 +1236,6 @@ void () f_death19 = [ 36.000, f_death20 ] {
 
 
 };
-
-void () f_death20;
 
 // function f_death20
 // function number 2004 begins at statement 25705
@@ -1417,8 +1249,6 @@ void () f_death20 = [ 37.000, f_death21 ] {
 
 };
 
-void () f_death21;
-
 // function f_death21
 // function number 2005 begins at statement 25707
 /*
@@ -1430,11 +1260,9 @@ void () f_death21;
 
 void () f_death21 = [ 38.000, f_death21 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () f_pain1;
 
 // function f_pain1
 // function number 2006 begins at statement 25711
@@ -1447,8 +1275,6 @@ void () f_pain1 = [ 57.000, f_pain2 ] {
 
 
 };
-
-void () f_pain2;
 
 // function f_pain2
 // function number 2007 begins at statement 25713
@@ -1465,8 +1291,6 @@ void () f_pain2 = [ 58.000, f_pain3 ] {
 
 };
 
-void () f_pain3;
-
 // function f_pain3
 // function number 2008 begins at statement 25717
 /*
@@ -1481,8 +1305,6 @@ void () f_pain3 = [ 59.000, f_pain4 ] {
    ai_pain (MOVETYPE_TOSS);
 
 };
-
-void () f_pain4;
 
 // function f_pain4
 // function number 2009 begins at statement 25721
@@ -1499,8 +1321,6 @@ void () f_pain4 = [ 60.000, f_pain5 ] {
 
 };
 
-void () f_pain5;
-
 // function f_pain5
 // function number 2010 begins at statement 25725
 /*
@@ -1515,8 +1335,6 @@ void () f_pain5 = [ 61.000, f_pain6 ] {
    ai_pain (MOVETYPE_TOSS);
 
 };
-
-void () f_pain6;
 
 // function f_pain6
 // function number 2011 begins at statement 25729
@@ -1533,8 +1351,6 @@ void () f_pain6 = [ 62.000, f_pain7 ] {
 
 };
 
-void () f_pain7;
-
 // function f_pain7
 // function number 2012 begins at statement 25733
 /*
@@ -1549,8 +1365,6 @@ void () f_pain7 = [ 63.000, f_pain8 ] {
    ai_pain (MOVETYPE_TOSS);
 
 };
-
-void () f_pain8;
 
 // function f_pain8
 // function number 2013 begins at statement 25737
@@ -1567,8 +1381,6 @@ void () f_pain8 = [ 64.000, f_pain9 ] {
 
 };
 
-void () f_pain9;
-
 // function f_pain9
 // function number 2014 begins at statement 25741
 /*
@@ -1584,8 +1396,6 @@ void () f_pain9 = [ 65.000, f_run1 ] {
 
 };
 
-void (entity globaldef005345, float globaldef005346) fish_pain;
-
 // function fish_pain
 // function number 2015 begins at statement 25745
 /*
@@ -1598,8 +1408,6 @@ void (entity globaldef005345, float globaldef005346) fish_pain = {
    f_pain1 ();
 
 };
-
-void () monster_fish;
 
 // function monster_fish
 // function number 2016 begins at statement 25747
@@ -1657,17 +1465,17 @@ void () monster_fish = {
    precache_sound2 (globaldef005315);
    precache_sound2 (globaldef005294);
    precache_sound2 (globaldef005280);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005348);
    setsize (self,VEC_HULL_MIN,globaldef005349);
-   self.globaldef000130 = globaldef000288;
-   self.globaldef000344 = f_stand1;
-   self.globaldef000345 = f_walk1;
-   self.globaldef000346 = f_run1;
-   self.globaldef000350 = f_death1;
-   self.globaldef000349 = fish_pain;
-   self.globaldef000348 = f_attack1;
+   self.health = globaldef000288;
+   self.th_stand = f_stand1;
+   self.th_walk = f_walk1;
+   self.th_run = f_run1;
+   self.th_die = f_death1;
+   self.th_pain = fish_pain;
+   self.th_melee = f_attack1;
    swimmonster_start ();
 
 };

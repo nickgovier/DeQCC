@@ -25,8 +25,6 @@ float globaldef001535 /* = 0.000 */;
 float globaldef001536 /* = 0.000 */;
 float globaldef001537 /* = 0.000 */;
 
-void () knight_attack;
-
 // function knight_attack
 // function number 163 begins at statement 2712
 /*
@@ -54,7 +52,7 @@ void () knight_attack = {
 
    local float len;
 
-   len = vlen (((self.globaldef000159.globaldef000083 + self.globaldef000159.globaldef000144) - (self.globaldef000083 + self.globaldef000144)));
+   len = vlen (((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs)));
    if ( (len < globaldef001439) ) {
 
       knight_atk1 ();
@@ -66,7 +64,6 @@ void () knight_attack = {
    }
 
 };
-float () CheckAttack;
 
 // function CheckAttack
 // function number 164 begins at statement 2730
@@ -158,9 +155,9 @@ float () CheckAttack = {
    local entity targ;
    local float chance;
 
-   targ = self.globaldef000159;
-   spot1 = (self.globaldef000083 + self.globaldef000144);
-   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   targ = self.enemy;
+   spot1 = (self.origin + self.view_ofs);
+   spot2 = (targ.origin + targ.view_ofs);
    traceline (spot1,spot2,FALSE,self);
    if ( (trace_ent != targ) ) {
 
@@ -174,15 +171,15 @@ float () CheckAttack = {
    }
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( self.globaldef000348 ) {
+      if ( self.th_melee ) {
 
-         if ( (self.globaldef000107 == globaldef001551) ) {
+         if ( (self.classname == globaldef001551) ) {
 
             knight_attack ();
 
          } else {
 
-            self.globaldef000348 ();
+            self.th_melee ();
 
          }
          return ( TRUE );
@@ -190,12 +187,12 @@ float () CheckAttack = {
       }
 
    }
-   if ( !self.globaldef000347 ) {
+   if ( !self.th_missile ) {
 
       return ( FALSE );
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -208,13 +205,13 @@ float () CheckAttack = {
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
       chance = globaldef001552;
-      self.globaldef000361 = FALSE;
+      self.attack_finished = FALSE;
 
    } else {
 
       if ( (globaldef001536 == RANGE_NEAR) ) {
 
-         if ( self.globaldef000348 ) {
+         if ( self.th_melee ) {
 
             chance = globaldef001553;
 
@@ -228,7 +225,7 @@ float () CheckAttack = {
 
          if ( (globaldef001536 == RANGE_MID) ) {
 
-            if ( self.globaldef000348 ) {
+            if ( self.th_melee ) {
 
                chance = globaldef001554;
 
@@ -249,7 +246,7 @@ float () CheckAttack = {
    }
    if ( (random () < chance) ) {
 
-      self.globaldef000347 ();
+      self.th_missile ();
       SUB_AttackFinished ((FL_SWIM * random ()));
       return ( TRUE );
 
@@ -279,14 +276,12 @@ float globaldef001554 /* = 0.050 */;
 
 void () ai_face = {
 
-   self.globaldef000169 = vectoyaw ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   self.ideal_yaw = vectoyaw ((self.enemy.origin - self.origin));
    ChangeYaw ();
 
 };
 float (entity globaldef001648) infront;
 float (entity globaldef001628) range;
-
-void (float globaldef001558) ai_charge;
 
 // function ai_charge
 // function number 166 begins at statement 2819
@@ -303,8 +298,6 @@ void (float globaldef001558) ai_charge = {
    movetogoal (globaldef001558);
 
 };
-
-void () ai_charge_side;
 
 // function ai_charge_side
 // function number 167 begins at statement 2823
@@ -342,16 +335,14 @@ void () ai_charge_side = {
    local vector dtemp;
    local float heading;
 
-   self.globaldef000169 = vectoyaw ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   self.ideal_yaw = vectoyaw ((self.enemy.origin - self.origin));
    ChangeYaw ();
-   makevectors (self.globaldef000095);
-   dtemp = (self.globaldef000159.globaldef000083 - (SVC_INTERMISSION * v_right));
-   heading = vectoyaw ((dtemp - self.globaldef000083));
+   makevectors (self.angles);
+   dtemp = (self.enemy.origin - (SVC_INTERMISSION * v_right));
+   heading = vectoyaw ((dtemp - self.origin));
    walkmove (heading,globaldef001384);
 
 };
-
-void () ai_melee;
 
 // function ai_melee
 // function number 168 begins at statement 2849
@@ -391,23 +382,21 @@ void () ai_melee = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001337) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * MOVETYPE_WALK);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
 
 };
-
-void () ai_melee_side;
 
 // function ai_melee_side
 // function number 169 begins at statement 2877
@@ -455,28 +444,27 @@ void () ai_melee_side = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
    ai_charge_side ();
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001337) ) {
 
       return ;
 
    }
-   if ( !CanDamage (self.globaldef000159,self) ) {
+   if ( !CanDamage (self.enemy,self) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * MOVETYPE_WALK);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
 
 };
-float () SoldierCheckAttack;
 
 // function SoldierCheckAttack
 // function number 170 begins at statement 2913
@@ -549,9 +537,9 @@ float () SoldierCheckAttack = {
    local entity targ;
    local float chance;
 
-   targ = self.globaldef000159;
-   spot1 = (self.globaldef000083 + self.globaldef000144);
-   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   targ = self.enemy;
+   spot1 = (self.origin + self.view_ofs);
+   spot2 = (targ.origin + targ.view_ofs);
    traceline (spot1,spot2,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
@@ -563,7 +551,7 @@ float () SoldierCheckAttack = {
       return ( FALSE );
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -600,11 +588,11 @@ float () SoldierCheckAttack = {
    }
    if ( (random () < chance) ) {
 
-      self.globaldef000347 ();
+      self.th_missile ();
       SUB_AttackFinished ((TRUE + random ()));
       if ( (random () < globaldef001588) ) {
 
-         self.globaldef000353 = !self.globaldef000353;
+         self.lefty = !self.lefty;
 
       }
       return ( TRUE );
@@ -614,7 +602,6 @@ float () SoldierCheckAttack = {
 
 };
 float globaldef001588 /* = 0.300 */;
-float () ShamCheckAttack;
 
 // function ShamCheckAttack
 // function number 171 begins at statement 2973
@@ -685,15 +672,15 @@ float () ShamCheckAttack = {
 
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( CanDamage (self.globaldef000159,self) ) {
+      if ( CanDamage (self.enemy,self) ) {
 
-         self.globaldef000355 = AS_MELEE;
+         self.attack_state = AS_MELEE;
          return ( TRUE );
 
       }
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -703,9 +690,9 @@ float () ShamCheckAttack = {
       return ( FALSE );
 
    }
-   targ = self.globaldef000159;
-   spot1 = (self.globaldef000083 + self.globaldef000144);
-   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   targ = self.enemy;
+   spot1 = (self.origin + self.view_ofs);
+   spot2 = (targ.origin + targ.view_ofs);
    if ( (vlen ((spot1 - spot2)) > globaldef000723) ) {
 
       return ( FALSE );
@@ -727,12 +714,11 @@ float () ShamCheckAttack = {
       return ( FALSE );
 
    }
-   self.globaldef000355 = AS_MISSILE;
+   self.attack_state = AS_MISSILE;
    SUB_AttackFinished ((FL_SWIM + (FL_SWIM * random ())));
    return ( TRUE );
 
 };
-float () OgreCheckAttack;
 
 // function OgreCheckAttack
 // function number 172 begins at statement 3029
@@ -811,15 +797,15 @@ float () OgreCheckAttack = {
 
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      if ( CanDamage (self.globaldef000159,self) ) {
+      if ( CanDamage (self.enemy,self) ) {
 
-         self.globaldef000355 = AS_MELEE;
+         self.attack_state = AS_MELEE;
          return ( TRUE );
 
       }
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -829,9 +815,9 @@ float () OgreCheckAttack = {
       return ( FALSE );
 
    }
-   targ = self.globaldef000159;
-   spot1 = (self.globaldef000083 + self.globaldef000144);
-   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   targ = self.enemy;
+   spot1 = (self.origin + self.view_ofs);
+   spot2 = (targ.origin + targ.view_ofs);
    traceline (spot1,spot2,FALSE,self);
    if ( (trace_inopen && trace_inwater) ) {
 
@@ -843,7 +829,7 @@ float () OgreCheckAttack = {
       return ( FALSE );
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -873,7 +859,7 @@ float () OgreCheckAttack = {
       }
 
    }
-   self.globaldef000355 = AS_MISSILE;
+   self.attack_state = AS_MISSILE;
    SUB_AttackFinished ((TRUE + (FL_SWIM * random ())));
    return ( TRUE );
 

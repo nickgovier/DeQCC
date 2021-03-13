@@ -2316,7 +2316,7 @@ namespace DeQcc
 
             #endregion Defs
 
-            #region Obot immediates
+            #region Obot
 
             //globaldef000592 - likely .float botnumber
 
@@ -3031,7 +3031,7 @@ namespace DeQcc
             nameMap.Add("globaldef006493", "IMMEDIATE");
             nameMap.Add("globaldef006494", "IMMEDIATE");
 
-            #endregion Obot immediates
+            #endregion Obot
 
             // fileMap runs AFTER nameMap changes function names
 

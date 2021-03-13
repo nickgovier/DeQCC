@@ -13,8 +13,6 @@ void () plat_go_down;
 void () plat_crush;
 float globaldef003524 /* = 1.000 */;
 
-void () plat_spawn_inside_trigger;
-
 // function plat_spawn_inside_trigger
 // function number 602 begins at statement 16876
 /*
@@ -79,27 +77,27 @@ void () plat_spawn_inside_trigger = {
    local vector tmax;
 
    trigger = spawn ();
-   trigger.globaldef000124 = plat_center_touch;
-   trigger.globaldef000081 = MOVETYPE_NONE;
-   trigger.globaldef000082 = SOLID_TRIGGER;
-   trigger.globaldef000159 = self;
-   tmin = (self.globaldef000112 + globaldef003535);
-   tmax = (self.globaldef000116 - globaldef003536);
-   globaldef003530 = (globaldef003534 - ((self.globaldef000425 - self.globaldef000429) + FL_CLIENT));
-   if ( (self.globaldef000173 & globaldef003524) ) {
+   trigger.touch = plat_center_touch;
+   trigger.movetype = MOVETYPE_NONE;
+   trigger.solid = SOLID_TRIGGER;
+   trigger.enemy = self;
+   tmin = (self.mins + globaldef003535);
+   tmax = (self.maxs - globaldef003536);
+   globaldef003530 = (globaldef003534 - ((self.pos1_z - self.pos2_z) + FL_CLIENT));
+   if ( (self.spawnflags & globaldef003524) ) {
 
       globaldef003534 = (globaldef003530 + FL_CLIENT);
 
    }
-   if ( (self.globaldef000121 <= globaldef001257) ) {
+   if ( (self.size <= globaldef001257) ) {
 
-      tmin_x = ((self.globaldef000113 + self.globaldef000117) / FL_SWIM);
+      tmin_x = ((self.mins + self.maxs) / FL_SWIM);
       tmax_x = (tmin_x + TRUE);
 
    }
-   if ( (self.globaldef000122 <= globaldef001257) ) {
+   if ( (self.size_y <= globaldef001257) ) {
 
-      globaldef003529 = ((self.globaldef000114 + self.globaldef000118) / FL_SWIM);
+      globaldef003529 = ((self.mins_y + self.maxs_y) / FL_SWIM);
       globaldef003533 = (globaldef003529 + TRUE);
 
    }
@@ -108,8 +106,6 @@ void () plat_spawn_inside_trigger = {
 };
 vector globaldef003535 /* = '25.000 25.000 0.000' */;
 vector globaldef003536 /* = '25.000 25.000 -8.000' */;
-
-void () plat_hit_top;
 
 // function plat_hit_top
 // function number 603 begins at statement 16928
@@ -134,14 +130,12 @@ void () plat_hit_top;
 
 void () plat_hit_top = {
 
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_TOP;
-   self.globaldef000126 = plat_go_down;
-   self.globaldef000128 = (self.globaldef000080 + MOVETYPE_WALK);
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   self.state = STATE_TOP;
+   self.think = plat_go_down;
+   self.nextthink = (self.ltime + MOVETYPE_WALK);
 
 };
-
-void () plat_hit_bottom;
 
 // function plat_hit_bottom
 // function number 604 begins at statement 16944
@@ -160,8 +154,8 @@ void () plat_hit_bottom;
 
 void () plat_hit_bottom = {
 
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_BOTTOM;
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   self.state = STATE_BOTTOM;
 
 };
 
@@ -188,9 +182,9 @@ void () plat_hit_bottom = {
 
 void () plat_go_down = {
 
-   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef000426,self.globaldef000352,plat_hit_bottom);
+   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
+   self.state = STATE_DOWN;
+   SUB_CalcMove (self.pos2,self.speed,plat_hit_bottom);
 
 };
 
@@ -217,9 +211,9 @@ void () plat_go_down = {
 
 void () plat_go_up = {
 
-   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_UP;
-   SUB_CalcMove (self.globaldef000422,self.globaldef000352,plat_hit_top);
+   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
+   self.state = STATE_UP;
+   SUB_CalcMove (self.pos1,self.speed,plat_hit_top);
 
 };
 
@@ -282,49 +276,49 @@ void () plat_go_up = {
 
 void () plat_center_touch = {
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   self = self.globaldef000159;
-   if ( (self.globaldef000421 == STATE_BOTTOM) ) {
+   self = self.enemy;
+   if ( (self.state == STATE_BOTTOM) ) {
 
       plat_go_up ();
 
    } else {
 
-      if ( (self.globaldef000421 == STATE_TOP) ) {
+      if ( (self.state == STATE_TOP) ) {
 
-         self.globaldef000128 = (self.globaldef000080 + TRUE);
+         self.nextthink = (self.ltime + TRUE);
 
       }
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
-      if ( !self.globaldef000605 ) {
+      if ( !self.field000299 ) {
 
          func002677 (other,self);
 
       }
 
    }
-   if ( ((other.globaldef000172.globaldef000172 == self) || (other.globaldef000172.globaldef000172 == self.globaldef000605)) ) {
+   if ( ((other.goalentity.goalentity == self) || (other.goalentity.goalentity == self.field000299)) ) {
 
-      other.globaldef000354 = (time - TRUE);
-      if ( self.globaldef000605 ) {
+      other.search_time = (time - TRUE);
+      if ( self.field000299 ) {
 
-         other.globaldef000569 = self.globaldef000605;
+         other.field000263 = self.field000299;
 
       }
 
@@ -357,22 +351,22 @@ void () plat_center_touch = {
 
 void () plat_outside_touch = {
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (other.globaldef000130 <= FALSE) ) {
+   if ( (other.health <= FALSE) ) {
 
       return ;
 
    }
-   self = self.globaldef000159;
-   if ( (self.globaldef000421 == STATE_TOP) ) {
+   self = self.enemy;
+   if ( (self.state == STATE_TOP) ) {
 
       plat_go_down ();
 
@@ -392,7 +386,7 @@ void () plat_outside_touch = {
 
 void () plat_trigger_use = {
 
-   if ( self.globaldef000126 ) {
+   if ( self.think ) {
 
       return ;
 
@@ -427,13 +421,13 @@ void () plat_trigger_use = {
 void () plat_crush = {
 
    T_Damage (other,self,self,TRUE);
-   if ( (self.globaldef000421 == STATE_UP) ) {
+   if ( (self.state == STATE_UP) ) {
 
       plat_go_down ();
 
    } else {
 
-      if ( (self.globaldef000421 == STATE_DOWN) ) {
+      if ( (self.state == STATE_DOWN) ) {
 
          plat_go_up ();
 
@@ -447,8 +441,6 @@ void () plat_crush = {
 
 };
 string globaldef003539 /* = "plat_crush: bad self.state\n" */;
-
-void () plat_use;
 
 // function plat_use
 // function number 611 begins at statement 17079
@@ -466,8 +458,8 @@ void () plat_use;
 
 void () plat_use = {
 
-   self.globaldef000125 = SUB_Null;
-   if ( (self.globaldef000421 != STATE_UP) ) {
+   self.use = SUB_Null;
+   if ( (self.state != STATE_UP) ) {
 
       objerror (globaldef003541);
 
@@ -476,8 +468,6 @@ void () plat_use = {
 
 };
 string globaldef003541 /* = "plat_use: not in up state" */;
-
-void () func_plat;
 
 // function func_plat
 // function number 612 begins at statement 17088
@@ -596,74 +586,74 @@ void () func_plat = {
 
    local entity t;
 
-   if ( !self.globaldef000387 ) {
+   if ( !self.t_length ) {
 
-      self.globaldef000387 = globaldef001439;
-
-   }
-   if ( !self.globaldef000388 ) {
-
-      self.globaldef000388 = MOVETYPE_BOUNCE;
+      self.t_length = globaldef001439;
 
    }
-   if ( (self.globaldef000185 == FALSE) ) {
+   if ( !self.t_width ) {
 
-      self.globaldef000185 = FL_SWIM;
+      self.t_width = MOVETYPE_BOUNCE;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == FALSE) ) {
+
+      self.sounds = FL_SWIM;
+
+   }
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003544);
       precache_sound (globaldef003545);
-      self.globaldef000186 = globaldef003544;
-      self.globaldef000187 = globaldef003545;
+      self.noise = globaldef003544;
+      self.noise1 = globaldef003545;
 
    }
-   if ( (self.globaldef000185 == FL_SWIM) ) {
+   if ( (self.sounds == FL_SWIM) ) {
 
       precache_sound (globaldef003546);
       precache_sound (globaldef003547);
-      self.globaldef000186 = globaldef003546;
-      self.globaldef000187 = globaldef003547;
+      self.noise = globaldef003546;
+      self.noise1 = globaldef003547;
 
    }
-   self.globaldef000383 = self.globaldef000095;
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000107 = globaldef003548;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   setorigin (self,self.globaldef000083);
-   setmodel (self,self.globaldef000108);
-   setsize (self,self.globaldef000112,self.globaldef000116);
-   self.globaldef000127 = plat_crush;
-   if ( !self.globaldef000352 ) {
+   self.mangle = self.angles;
+   self.angles = VEC_ORIGIN;
+   self.classname = globaldef003548;
+   self.solid = SOLID_BSP;
+   self.movetype = MOVETYPE_PUSH;
+   setorigin (self,self.origin);
+   setmodel (self,self.model);
+   setsize (self,self.mins,self.maxs);
+   self.blocked = plat_crush;
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef001336;
+      self.speed = globaldef001336;
 
    }
-   self.globaldef000531 = func002292;
-   self.globaldef000422 = self.globaldef000083;
-   self.globaldef000426 = self.globaldef000083;
-   if ( self.globaldef000430 ) {
+   self.field000225 = func002292;
+   self.pos1 = self.origin;
+   self.pos2 = self.origin;
+   if ( self.height ) {
 
-      self.globaldef000429 = (self.globaldef000086 - self.globaldef000430);
+      self.pos2_z = (self.origin_z - self.height);
 
    } else {
 
-      self.globaldef000429 = ((self.globaldef000086 - self.globaldef000123) + FL_CLIENT);
+      self.pos2_z = ((self.origin_z - self.size_z) + FL_CLIENT);
 
    }
-   self.globaldef000125 = plat_trigger_use;
+   self.use = plat_trigger_use;
    plat_spawn_inside_trigger ();
-   if ( self.globaldef000175 ) {
+   if ( self.targetname ) {
 
-      self.globaldef000421 = STATE_UP;
-      self.globaldef000125 = plat_use;
+      self.state = STATE_UP;
+      self.use = plat_use;
 
    } else {
 
-      setorigin (self,self.globaldef000426);
-      self.globaldef000421 = STATE_BOTTOM;
+      setorigin (self,self.pos2);
+      self.state = STATE_BOTTOM;
 
    }
 
@@ -677,8 +667,6 @@ string globaldef003548 /* = "plat" */;
 void () train_next;
 
 void () func_train_find;
-
-void () train_blocked;
 
 // function train_blocked
 // function number 613 begins at statement 17196
@@ -701,17 +689,15 @@ void () train_blocked;
 
 void () train_blocked = {
 
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ;
 
    }
-   self.globaldef000361 = (time + globaldef000522);
-   T_Damage (other,self,self,self.globaldef000408);
+   self.attack_finished = (time + globaldef000522);
+   T_Damage (other,self,self,self.dmg);
 
 };
-
-void () train_use;
 
 // function train_use
 // function number 614 begins at statement 17210
@@ -726,7 +712,7 @@ void () train_use;
 
 void () train_use = {
 
-   if ( (self.globaldef000126 != func_train_find) ) {
+   if ( (self.think != func_train_find) ) {
 
       return ;
 
@@ -734,8 +720,6 @@ void () train_use = {
    train_next ();
 
 };
-
-void () train_wait;
 
 // function train_wait
 // function number 615 begins at statement 17216
@@ -766,17 +750,17 @@ void () train_wait;
 
 void () train_wait = {
 
-   if ( self.globaldef000401 ) {
+   if ( self.wait ) {
 
-      self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
-      sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+      self.nextthink = (self.ltime + self.wait);
+      sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
 
    } else {
 
-      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
+      self.nextthink = (self.ltime + globaldef001488);
 
    }
-   self.globaldef000126 = train_next;
+   self.think = train_next;
 
 };
 
@@ -828,24 +812,24 @@ void () train_next = {
    local entity globaldef003554;
    local float globaldef003555;
 
-   globaldef003554 = find (world,globaldef000175,self.globaldef000174);
-   self.globaldef000174 = globaldef003554.globaldef000174;
-   if ( !self.globaldef000174 ) {
+   globaldef003554 = find (world,targetname,self.target);
+   self.target = globaldef003554.target;
+   if ( !self.target ) {
 
       objerror (globaldef003556);
 
    }
-   if ( globaldef003554.globaldef000401 ) {
+   if ( globaldef003554.wait ) {
 
-      self.globaldef000401 = globaldef003554.globaldef000401;
+      self.wait = globaldef003554.wait;
 
    } else {
 
-      self.globaldef000401 = FALSE;
+      self.wait = FALSE;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000187,TRUE,ATTN_NORM);
-   SUB_CalcMove ((globaldef003554.globaldef000083 - self.globaldef000112),self.globaldef000352,train_wait);
+   sound (self,CHAN_VOICE,self.noise1,TRUE,ATTN_NORM);
+   SUB_CalcMove ((globaldef003554.origin - self.mins),self.speed,train_wait);
 
 };
 string globaldef003556 /* = "train_next: no next target" */;
@@ -884,19 +868,17 @@ void () func_train_find = {
 
    local entity targ;
 
-   targ = find (world,globaldef000175,self.globaldef000174);
-   self.globaldef000174 = targ.globaldef000174;
-   setorigin (self,(targ.globaldef000083 - self.globaldef000112));
-   if ( !self.globaldef000175 ) {
+   targ = find (world,targetname,self.target);
+   self.target = targ.target;
+   setorigin (self,(targ.origin - self.mins));
+   if ( !self.targetname ) {
 
-      self.globaldef000128 = (self.globaldef000080 + globaldef001488);
-      self.globaldef000126 = train_next;
+      self.nextthink = (self.ltime + globaldef001488);
+      self.think = train_next;
 
    }
 
 };
-
-void () func_train;
 
 // function func_train
 // function number 618 begins at statement 17301
@@ -977,57 +959,55 @@ void () func_train;
 
 void () func_train = {
 
-   if ( !self.globaldef000352 ) {
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef001335;
+      self.speed = globaldef001335;
 
    }
-   if ( !self.globaldef000174 ) {
+   if ( !self.target ) {
 
       objerror (globaldef003559);
 
    }
-   if ( !self.globaldef000408 ) {
+   if ( !self.dmg ) {
 
-      self.globaldef000408 = FL_SWIM;
-
-   }
-   if ( (self.globaldef000185 == FALSE) ) {
-
-      self.globaldef000186 = globaldef003388;
-      precache_sound (globaldef003388);
-      self.globaldef000187 = globaldef003388;
-      precache_sound (globaldef003388);
+      self.dmg = FL_SWIM;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == FALSE) ) {
 
-      self.globaldef000186 = globaldef003560;
+      self.noise = globaldef003388;
+      precache_sound (globaldef003388);
+      self.noise1 = globaldef003388;
+      precache_sound (globaldef003388);
+
+   }
+   if ( (self.sounds == TRUE) ) {
+
+      self.noise = globaldef003560;
       precache_sound (globaldef003560);
-      self.globaldef000187 = globaldef003561;
+      self.noise1 = globaldef003561;
       precache_sound (globaldef003561);
 
    }
-   self.globaldef000409 = TRUE;
-   self.globaldef000082 = SOLID_BSP;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000127 = train_blocked;
-   self.globaldef000125 = train_use;
-   self.globaldef000107 = globaldef003562;
-   self.globaldef000531 = func002293;
-   setmodel (self,self.globaldef000108);
-   setsize (self,self.globaldef000112,self.globaldef000116);
-   setorigin (self,self.globaldef000083);
-   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
-   self.globaldef000126 = func_train_find;
+   self.cnt = TRUE;
+   self.solid = SOLID_BSP;
+   self.movetype = MOVETYPE_PUSH;
+   self.blocked = train_blocked;
+   self.use = train_use;
+   self.classname = globaldef003562;
+   self.field000225 = func002293;
+   setmodel (self,self.model);
+   setsize (self,self.mins,self.maxs);
+   setorigin (self,self.origin);
+   self.nextthink = (self.ltime + globaldef001488);
+   self.think = func_train_find;
 
 };
 string globaldef003559 /* = "func_train without a target" */;
 string globaldef003560 /* = "plats/train2.wav" */;
 string globaldef003561 /* = "plats/train1.wav" */;
 string globaldef003562 /* = "train" */;
-
-void () misc_teleporttrain;
 
 // function misc_teleporttrain
 // function number 619 begins at statement 17373
@@ -1088,31 +1068,31 @@ void () misc_teleporttrain;
 
 void () misc_teleporttrain = {
 
-   if ( !self.globaldef000352 ) {
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef001335;
+      self.speed = globaldef001335;
 
    }
-   if ( !self.globaldef000174 ) {
+   if ( !self.target ) {
 
       objerror (globaldef003559);
 
    }
-   self.globaldef000409 = TRUE;
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000127 = train_blocked;
-   self.globaldef000125 = train_use;
-   self.globaldef000099 = globaldef003564;
-   self.globaldef000186 = globaldef003388;
+   self.cnt = TRUE;
+   self.solid = SOLID_NOT;
+   self.movetype = MOVETYPE_PUSH;
+   self.blocked = train_blocked;
+   self.use = train_use;
+   self.avelocity = globaldef003564;
+   self.noise = globaldef003388;
    precache_sound (globaldef003388);
-   self.globaldef000187 = globaldef003388;
+   self.noise1 = globaldef003388;
    precache_sound (globaldef003388);
    precache_model2 (globaldef003565);
    setmodel (self,globaldef003565);
-   setsize (self,self.globaldef000112,self.globaldef000116);
-   setorigin (self,self.globaldef000083);
-   self.globaldef000128 = (self.globaldef000080 + globaldef001488);
-   self.globaldef000126 = func_train_find;
+   setsize (self,self.mins,self.maxs);
+   setorigin (self,self.origin);
+   self.nextthink = (self.ltime + globaldef001488);
+   self.think = func_train_find;
 
 };

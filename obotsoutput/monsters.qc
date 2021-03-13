@@ -1,7 +1,5 @@
 float globaldef003295 /* = 49.000 */;
 
-void () monster_use;
-
 // function monster_use
 // function number 528 begins at statement 14481
 /*
@@ -36,34 +34,34 @@ void () monster_use;
 
 void () monster_use = {
 
-   if ( self.globaldef000159 ) {
+   if ( self.enemy ) {
 
       return ;
 
    }
-   if ( (self.globaldef000130 <= FALSE) ) {
+   if ( (self.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( (activator.globaldef000140 & IT_INVISIBILITY) ) {
+   if ( (activator.items & IT_INVISIBILITY) ) {
 
       return ;
 
    }
-   if ( (activator.globaldef000160 & FL_NOTARGET) ) {
+   if ( (activator.flags & FL_NOTARGET) ) {
 
       return ;
 
    }
-   if ( (activator.globaldef000107 != globaldef001170) ) {
+   if ( (activator.classname != globaldef001170) ) {
 
       return ;
 
    }
-   self.globaldef000159 = activator;
-   self.globaldef000128 = (time + globaldef001488);
-   self.globaldef000126 = FoundTarget;
+   self.enemy = activator;
+   self.nextthink = (time + globaldef001488);
+   self.think = FoundTarget;
 
 };
 
@@ -100,27 +98,25 @@ void () monster_death_use = {
    local entity otemp;
    local entity stemp;
 
-   if ( (self.globaldef000160 & FL_FLY) ) {
+   if ( (self.flags & FL_FLY) ) {
 
-      self.globaldef000160 = (self.globaldef000160 - FL_FLY);
-
-   }
-   if ( (self.globaldef000160 & FL_SWIM) ) {
-
-      self.globaldef000160 = (self.globaldef000160 - FL_SWIM);
+      self.flags = (self.flags - FL_FLY);
 
    }
-   if ( !self.globaldef000174 ) {
+   if ( (self.flags & FL_SWIM) ) {
+
+      self.flags = (self.flags - FL_SWIM);
+
+   }
+   if ( !self.target ) {
 
       return ;
 
    }
-   activator = self.globaldef000159;
+   activator = self.enemy;
    SUB_UseTargets ();
 
 };
-
-void () walkmonster_start_go;
 
 // function walkmonster_start_go
 // function number 530 begins at statement 14530
@@ -224,55 +220,55 @@ void () walkmonster_start_go = {
    local string stemp;
    local entity etemp;
 
-   self.globaldef000086 = (self.globaldef000086 + TRUE);
+   self.origin_z = (self.origin_z + TRUE);
    droptofloor ();
    if ( !walkmove (FALSE,FALSE) ) {
 
       dprint (globaldef003303);
-      dprint (vtos (self.globaldef000083));
+      dprint (vtos (self.origin));
       dprint (globaldef001354);
 
    }
-   self.globaldef000141 = DAMAGE_AIM;
-   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
-   if ( !self.globaldef000170 ) {
+   self.takedamage = DAMAGE_AIM;
+   self.ideal_yaw = (self.angles * globaldef003304);
+   if ( !self.yaw_speed ) {
 
-      self.globaldef000170 = globaldef001384;
+      self.yaw_speed = globaldef001384;
 
    }
-   self.globaldef000144 = globaldef003305;
-   self.globaldef000125 = monster_use;
-   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
-   if ( self.globaldef000174 ) {
+   self.view_ofs = globaldef003305;
+   self.use = monster_use;
+   self.flags = (self.flags | FL_MONSTER);
+   if ( self.target ) {
 
-      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
-      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
-      self.globaldef000169 = vectoyaw ((self.globaldef000172.globaldef000083 - self.globaldef000083));
-      if ( !self.globaldef000406 ) {
+      self.movetarget = find (world,targetname,self.target);
+      self.goalentity = find (world,targetname,self.target);
+      self.ideal_yaw = vectoyaw ((self.goalentity.origin - self.origin));
+      if ( !self.movetarget ) {
 
          dprint (globaldef003306);
-         dprint (vtos (self.globaldef000083));
+         dprint (vtos (self.origin));
          dprint (globaldef001354);
 
       }
-      if ( (self.globaldef000406.globaldef000107 == globaldef003307) ) {
+      if ( (self.movetarget.classname == globaldef003307) ) {
 
-         self.globaldef000345 ();
+         self.th_walk ();
 
       } else {
 
-         self.globaldef000405 = globaldef003308;
+         self.pausetime = globaldef003308;
 
       }
-      self.globaldef000344 ();
+      self.th_stand ();
 
    } else {
 
-      self.globaldef000405 = globaldef003308;
-      self.globaldef000344 ();
+      self.pausetime = globaldef003308;
+      self.th_stand ();
 
    }
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
+   self.nextthink = (self.nextthink + (random () * globaldef000522));
 
 };
 string globaldef003303 /* = "walkmonster in wall at: " */;
@@ -281,8 +277,6 @@ vector globaldef003305 /* = '0.000 0.000 25.000' */;
 string globaldef003306 /* = "Monster can't find target at " */;
 string globaldef003307 /* = "path_corner" */;
 float globaldef003308 /* = 100000000.000 */;
-
-void () walkmonster_start;
 
 // function walkmonster_start
 // function number 531 begins at statement 14622
@@ -302,13 +296,11 @@ void () walkmonster_start;
 
 void () walkmonster_start = {
 
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
-   self.globaldef000126 = walkmonster_start_go;
+   self.nextthink = (self.nextthink + (random () * globaldef000522));
+   self.think = walkmonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };
-
-void () flymonster_start_go;
 
 // function flymonster_start_go
 // function number 532 begins at statement 14633
@@ -394,57 +386,55 @@ void () flymonster_start_go;
 
 void () flymonster_start_go = {
 
-   self.globaldef000141 = DAMAGE_AIM;
-   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
-   if ( !self.globaldef000170 ) {
+   self.takedamage = DAMAGE_AIM;
+   self.ideal_yaw = (self.angles * globaldef003304);
+   if ( !self.yaw_speed ) {
 
-      self.globaldef000170 = MOVETYPE_BOUNCE;
+      self.yaw_speed = MOVETYPE_BOUNCE;
 
    }
-   self.globaldef000144 = globaldef003305;
-   self.globaldef000125 = monster_use;
-   self.globaldef000160 = (self.globaldef000160 | FL_FLY);
-   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
+   self.view_ofs = globaldef003305;
+   self.use = monster_use;
+   self.flags = (self.flags | FL_FLY);
+   self.flags = (self.flags | FL_MONSTER);
    if ( !walkmove (FALSE,FALSE) ) {
 
       dprint (globaldef003311);
-      dprint (vtos (self.globaldef000083));
+      dprint (vtos (self.origin));
       dprint (globaldef001354);
 
    }
-   if ( self.globaldef000174 ) {
+   if ( self.target ) {
 
-      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
-      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
-      if ( !self.globaldef000406 ) {
+      self.movetarget = find (world,targetname,self.target);
+      self.goalentity = find (world,targetname,self.target);
+      if ( !self.movetarget ) {
 
          dprint (globaldef003306);
-         dprint (vtos (self.globaldef000083));
+         dprint (vtos (self.origin));
          dprint (globaldef001354);
 
       }
-      if ( (self.globaldef000406.globaldef000107 == globaldef003307) ) {
+      if ( (self.movetarget.classname == globaldef003307) ) {
 
-         self.globaldef000345 ();
+         self.th_walk ();
 
       } else {
 
-         self.globaldef000405 = globaldef003308;
+         self.pausetime = globaldef003308;
 
       }
-      self.globaldef000344 ();
+      self.th_stand ();
 
    } else {
 
-      self.globaldef000405 = globaldef003308;
-      self.globaldef000344 ();
+      self.pausetime = globaldef003308;
+      self.th_stand ();
 
    }
 
 };
 string globaldef003311 /* = "flymonster in wall at: " */;
-
-void () flymonster_start;
 
 // function flymonster_start
 // function number 533 begins at statement 14710
@@ -464,13 +454,11 @@ void () flymonster_start;
 
 void () flymonster_start = {
 
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
-   self.globaldef000126 = flymonster_start_go;
+   self.nextthink = (self.nextthink + (random () * globaldef000522));
+   self.think = flymonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };
-
-void () swimmonster_start_go;
 
 // function swimmonster_start_go
 // function number 534 begins at statement 14721
@@ -559,44 +547,42 @@ void () swimmonster_start_go = {
       return ;
 
    }
-   self.globaldef000141 = DAMAGE_AIM;
+   self.takedamage = DAMAGE_AIM;
    total_monsters = (total_monsters + TRUE);
-   self.globaldef000169 = (self.globaldef000095 * globaldef003304);
-   if ( !self.globaldef000170 ) {
+   self.ideal_yaw = (self.angles * globaldef003304);
+   if ( !self.yaw_speed ) {
 
-      self.globaldef000170 = MOVETYPE_BOUNCE;
+      self.yaw_speed = MOVETYPE_BOUNCE;
 
    }
-   self.globaldef000144 = globaldef003314;
-   self.globaldef000125 = monster_use;
-   self.globaldef000160 = (self.globaldef000160 | FL_SWIM);
-   self.globaldef000160 = (self.globaldef000160 | FL_MONSTER);
-   if ( self.globaldef000174 ) {
+   self.view_ofs = globaldef003314;
+   self.use = monster_use;
+   self.flags = (self.flags | FL_SWIM);
+   self.flags = (self.flags | FL_MONSTER);
+   if ( self.target ) {
 
-      self.globaldef000406 = find (world,globaldef000175,self.globaldef000174);
-      self.globaldef000172 = find (world,globaldef000175,self.globaldef000174);
-      if ( !self.globaldef000406 ) {
+      self.movetarget = find (world,targetname,self.target);
+      self.goalentity = find (world,targetname,self.target);
+      if ( !self.movetarget ) {
 
          dprint (globaldef003306);
-         dprint (vtos (self.globaldef000083));
+         dprint (vtos (self.origin));
          dprint (globaldef001354);
 
       }
-      self.globaldef000169 = vectoyaw ((self.globaldef000172.globaldef000083 - self.globaldef000083));
-      self.globaldef000345 ();
+      self.ideal_yaw = vectoyaw ((self.goalentity.origin - self.origin));
+      self.th_walk ();
 
    } else {
 
-      self.globaldef000405 = globaldef003308;
-      self.globaldef000344 ();
+      self.pausetime = globaldef003308;
+      self.th_stand ();
 
    }
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
+   self.nextthink = (self.nextthink + (random () * globaldef000522));
 
 };
 vector globaldef003314 /* = '0.000 0.000 10.000' */;
-
-void () swimmonster_start;
 
 // function swimmonster_start
 // function number 535 begins at statement 14795
@@ -616,8 +602,8 @@ void () swimmonster_start;
 
 void () swimmonster_start = {
 
-   self.globaldef000128 = (self.globaldef000128 + (random () * globaldef000522));
-   self.globaldef000126 = swimmonster_start_go;
+   self.nextthink = (self.nextthink + (random () * globaldef000522));
+   self.think = swimmonster_start_go;
    total_monsters = (total_monsters + TRUE);
 
 };

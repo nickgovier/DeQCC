@@ -2,8 +2,6 @@ string globaldef004806 /* = "progs/zombie.mdl" */;
 
 void (vector globaldef004925) boss_missile;
 
-void () boss_face;
-
 // function boss_face
 // function number 1563 begins at statement 23452
 /*
@@ -37,12 +35,12 @@ void () boss_face;
 
 void () boss_face = {
 
-   if ( ((self.globaldef000159.globaldef000130 <= FALSE) || (random () < globaldef002083)) ) {
+   if ( ((self.enemy.health <= FALSE) || (random () < globaldef002083)) ) {
 
-      self.globaldef000159 = find (self.globaldef000159,globaldef000107,globaldef001170);
-      if ( !self.globaldef000159 ) {
+      self.enemy = find (self.enemy,classname,globaldef001170);
+      if ( !self.enemy ) {
 
-         self.globaldef000159 = find (self.globaldef000159,globaldef000107,globaldef001170);
+         self.enemy = find (self.enemy,classname,globaldef001170);
 
       }
 
@@ -50,8 +48,6 @@ void () boss_face = {
    ai_face ();
 
 };
-
-void () boss_rise1;
 
 // function boss_rise1
 // function number 1564 begins at statement 23478
@@ -71,8 +67,6 @@ void () boss_rise1 = [ 0.000, boss_rise2 ] {
    sound (self,CHAN_WEAPON,globaldef004811,TRUE,ATTN_NORM);
 
 };
-
-void () boss_rise2;
 string globaldef004811 /* = "boss1/out1.wav" */;
 
 // function boss_rise2
@@ -93,8 +87,6 @@ void () boss_rise2 = [ 1.000, boss_rise3 ] {
    sound (self,CHAN_VOICE,globaldef004813,TRUE,ATTN_NORM);
 
 };
-
-void () boss_rise3;
 string globaldef004813 /* = "boss1/sight1.wav" */;
 
 // function boss_rise3
@@ -109,8 +101,6 @@ void () boss_rise3 = [ 2.000, boss_rise4 ] {
 
 };
 
-void () boss_rise4;
-
 // function boss_rise4
 // function number 1567 begins at statement 23496
 /*
@@ -122,8 +112,6 @@ void () boss_rise4 = [ 3.000, boss_rise5 ] {
 
 
 };
-
-void () boss_rise5;
 
 // function boss_rise5
 // function number 1568 begins at statement 23498
@@ -137,8 +125,6 @@ void () boss_rise5 = [ 4.000, boss_rise6 ] {
 
 };
 
-void () boss_rise6;
-
 // function boss_rise6
 // function number 1569 begins at statement 23500
 /*
@@ -150,8 +136,6 @@ void () boss_rise6 = [ 5.000, boss_rise7 ] {
 
 
 };
-
-void () boss_rise7;
 
 // function boss_rise7
 // function number 1570 begins at statement 23502
@@ -165,8 +149,6 @@ void () boss_rise7 = [ 6.000, boss_rise8 ] {
 
 };
 
-void () boss_rise8;
-
 // function boss_rise8
 // function number 1571 begins at statement 23504
 /*
@@ -178,8 +160,6 @@ void () boss_rise8 = [ 7.000, boss_rise9 ] {
 
 
 };
-
-void () boss_rise9;
 
 // function boss_rise9
 // function number 1572 begins at statement 23506
@@ -193,8 +173,6 @@ void () boss_rise9 = [ 8.000, boss_rise10 ] {
 
 };
 
-void () boss_rise10;
-
 // function boss_rise10
 // function number 1573 begins at statement 23508
 /*
@@ -206,8 +184,6 @@ void () boss_rise10 = [ 9.000, boss_rise11 ] {
 
 
 };
-
-void () boss_rise11;
 
 // function boss_rise11
 // function number 1574 begins at statement 23510
@@ -221,8 +197,6 @@ void () boss_rise11 = [ 10.000, boss_rise12 ] {
 
 };
 
-void () boss_rise12;
-
 // function boss_rise12
 // function number 1575 begins at statement 23512
 /*
@@ -234,8 +208,6 @@ void () boss_rise12 = [ 11.000, boss_rise13 ] {
 
 
 };
-
-void () boss_rise13;
 
 // function boss_rise13
 // function number 1576 begins at statement 23514
@@ -249,8 +221,6 @@ void () boss_rise13 = [ 12.000, boss_rise14 ] {
 
 };
 
-void () boss_rise14;
-
 // function boss_rise14
 // function number 1577 begins at statement 23516
 /*
@@ -262,8 +232,6 @@ void () boss_rise14 = [ 13.000, boss_rise15 ] {
 
 
 };
-
-void () boss_rise15;
 
 // function boss_rise15
 // function number 1578 begins at statement 23518
@@ -277,8 +245,6 @@ void () boss_rise15 = [ 14.000, boss_rise16 ] {
 
 };
 
-void () boss_rise16;
-
 // function boss_rise16
 // function number 1579 begins at statement 23520
 /*
@@ -290,8 +256,6 @@ void () boss_rise16 = [ 15.000, boss_rise17 ] {
 
 
 };
-
-void () boss_rise17;
 
 // function boss_rise17
 // function number 1580 begins at statement 23522
@@ -307,8 +271,6 @@ void () boss_rise17 = [ 16.000, boss_missile1 ] {
 
 void () boss_missile1;
 
-void () boss_idle1;
-
 // function boss_idle1
 // function number 1581 begins at statement 23524
 /*
@@ -320,8 +282,6 @@ void () boss_idle1 = [ 17.000, boss_idle2 ] {
 
 
 };
-
-void () boss_idle2;
 
 // function boss_idle2
 // function number 1582 begins at statement 23526
@@ -337,8 +297,6 @@ void () boss_idle2 = [ 18.000, boss_idle3 ] {
 
 };
 
-void () boss_idle3;
-
 // function boss_idle3
 // function number 1583 begins at statement 23529
 /*
@@ -352,8 +310,6 @@ void () boss_idle3 = [ 19.000, boss_idle4 ] {
    boss_face ();
 
 };
-
-void () boss_idle4;
 
 // function boss_idle4
 // function number 1584 begins at statement 23532
@@ -369,8 +325,6 @@ void () boss_idle4 = [ 20.000, boss_idle5 ] {
 
 };
 
-void () boss_idle5;
-
 // function boss_idle5
 // function number 1585 begins at statement 23535
 /*
@@ -384,8 +338,6 @@ void () boss_idle5 = [ 21.000, boss_idle6 ] {
    boss_face ();
 
 };
-
-void () boss_idle6;
 
 // function boss_idle6
 // function number 1586 begins at statement 23538
@@ -401,8 +353,6 @@ void () boss_idle6 = [ 22.000, boss_idle7 ] {
 
 };
 
-void () boss_idle7;
-
 // function boss_idle7
 // function number 1587 begins at statement 23541
 /*
@@ -416,8 +366,6 @@ void () boss_idle7 = [ 23.000, boss_idle8 ] {
    boss_face ();
 
 };
-
-void () boss_idle8;
 
 // function boss_idle8
 // function number 1588 begins at statement 23544
@@ -433,8 +381,6 @@ void () boss_idle8 = [ 24.000, boss_idle9 ] {
 
 };
 
-void () boss_idle9;
-
 // function boss_idle9
 // function number 1589 begins at statement 23547
 /*
@@ -448,8 +394,6 @@ void () boss_idle9 = [ 25.000, boss_idle10 ] {
    boss_face ();
 
 };
-
-void () boss_idle10;
 
 // function boss_idle10
 // function number 1590 begins at statement 23550
@@ -465,8 +409,6 @@ void () boss_idle10 = [ 26.000, boss_idle11 ] {
 
 };
 
-void () boss_idle11;
-
 // function boss_idle11
 // function number 1591 begins at statement 23553
 /*
@@ -480,8 +422,6 @@ void () boss_idle11 = [ 27.000, boss_idle12 ] {
    boss_face ();
 
 };
-
-void () boss_idle12;
 
 // function boss_idle12
 // function number 1592 begins at statement 23556
@@ -497,8 +437,6 @@ void () boss_idle12 = [ 28.000, boss_idle13 ] {
 
 };
 
-void () boss_idle13;
-
 // function boss_idle13
 // function number 1593 begins at statement 23559
 /*
@@ -512,8 +450,6 @@ void () boss_idle13 = [ 29.000, boss_idle14 ] {
    boss_face ();
 
 };
-
-void () boss_idle14;
 
 // function boss_idle14
 // function number 1594 begins at statement 23562
@@ -529,8 +465,6 @@ void () boss_idle14 = [ 30.000, boss_idle15 ] {
 
 };
 
-void () boss_idle15;
-
 // function boss_idle15
 // function number 1595 begins at statement 23565
 /*
@@ -544,8 +478,6 @@ void () boss_idle15 = [ 31.000, boss_idle16 ] {
    boss_face ();
 
 };
-
-void () boss_idle16;
 
 // function boss_idle16
 // function number 1596 begins at statement 23568
@@ -561,8 +493,6 @@ void () boss_idle16 = [ 32.000, boss_idle17 ] {
 
 };
 
-void () boss_idle17;
-
 // function boss_idle17
 // function number 1597 begins at statement 23571
 /*
@@ -576,8 +506,6 @@ void () boss_idle17 = [ 33.000, boss_idle18 ] {
    boss_face ();
 
 };
-
-void () boss_idle18;
 
 // function boss_idle18
 // function number 1598 begins at statement 23574
@@ -593,8 +521,6 @@ void () boss_idle18 = [ 34.000, boss_idle19 ] {
 
 };
 
-void () boss_idle19;
-
 // function boss_idle19
 // function number 1599 begins at statement 23577
 /*
@@ -608,8 +534,6 @@ void () boss_idle19 = [ 35.000, boss_idle20 ] {
    boss_face ();
 
 };
-
-void () boss_idle20;
 
 // function boss_idle20
 // function number 1600 begins at statement 23580
@@ -625,8 +549,6 @@ void () boss_idle20 = [ 36.000, boss_idle21 ] {
 
 };
 
-void () boss_idle21;
-
 // function boss_idle21
 // function number 1601 begins at statement 23583
 /*
@@ -640,8 +562,6 @@ void () boss_idle21 = [ 37.000, boss_idle22 ] {
    boss_face ();
 
 };
-
-void () boss_idle22;
 
 // function boss_idle22
 // function number 1602 begins at statement 23586
@@ -657,8 +577,6 @@ void () boss_idle22 = [ 38.000, boss_idle23 ] {
 
 };
 
-void () boss_idle23;
-
 // function boss_idle23
 // function number 1603 begins at statement 23589
 /*
@@ -672,8 +590,6 @@ void () boss_idle23 = [ 39.000, boss_idle24 ] {
    boss_face ();
 
 };
-
-void () boss_idle24;
 
 // function boss_idle24
 // function number 1604 begins at statement 23592
@@ -689,8 +605,6 @@ void () boss_idle24 = [ 40.000, boss_idle25 ] {
 
 };
 
-void () boss_idle25;
-
 // function boss_idle25
 // function number 1605 begins at statement 23595
 /*
@@ -704,8 +618,6 @@ void () boss_idle25 = [ 41.000, boss_idle26 ] {
    boss_face ();
 
 };
-
-void () boss_idle26;
 
 // function boss_idle26
 // function number 1606 begins at statement 23598
@@ -721,8 +633,6 @@ void () boss_idle26 = [ 42.000, boss_idle27 ] {
 
 };
 
-void () boss_idle27;
-
 // function boss_idle27
 // function number 1607 begins at statement 23601
 /*
@@ -736,8 +646,6 @@ void () boss_idle27 = [ 43.000, boss_idle28 ] {
    boss_face ();
 
 };
-
-void () boss_idle28;
 
 // function boss_idle28
 // function number 1608 begins at statement 23604
@@ -753,8 +661,6 @@ void () boss_idle28 = [ 44.000, boss_idle29 ] {
 
 };
 
-void () boss_idle29;
-
 // function boss_idle29
 // function number 1609 begins at statement 23607
 /*
@@ -769,8 +675,6 @@ void () boss_idle29 = [ 45.000, boss_idle30 ] {
 
 };
 
-void () boss_idle30;
-
 // function boss_idle30
 // function number 1610 begins at statement 23610
 /*
@@ -784,8 +688,6 @@ void () boss_idle30 = [ 46.000, boss_idle31 ] {
    boss_face ();
 
 };
-
-void () boss_idle31;
 
 // function boss_idle31
 // function number 1611 begins at statement 23613
@@ -815,8 +717,6 @@ void () boss_missile1 = [ 57.000, boss_missile2 ] {
 
 };
 
-void () boss_missile2;
-
 // function boss_missile2
 // function number 1613 begins at statement 23619
 /*
@@ -830,8 +730,6 @@ void () boss_missile2 = [ 58.000, boss_missile3 ] {
    boss_face ();
 
 };
-
-void () boss_missile3;
 
 // function boss_missile3
 // function number 1614 begins at statement 23622
@@ -847,8 +745,6 @@ void () boss_missile3 = [ 59.000, boss_missile4 ] {
 
 };
 
-void () boss_missile4;
-
 // function boss_missile4
 // function number 1615 begins at statement 23625
 /*
@@ -862,8 +758,6 @@ void () boss_missile4 = [ 60.000, boss_missile5 ] {
    boss_face ();
 
 };
-
-void () boss_missile5;
 
 // function boss_missile5
 // function number 1616 begins at statement 23628
@@ -879,8 +773,6 @@ void () boss_missile5 = [ 61.000, boss_missile6 ] {
 
 };
 
-void () boss_missile6;
-
 // function boss_missile6
 // function number 1617 begins at statement 23631
 /*
@@ -894,8 +786,6 @@ void () boss_missile6 = [ 62.000, boss_missile7 ] {
    boss_face ();
 
 };
-
-void () boss_missile7;
 
 // function boss_missile7
 // function number 1618 begins at statement 23634
@@ -911,8 +801,6 @@ void () boss_missile7 = [ 63.000, boss_missile8 ] {
 
 };
 
-void () boss_missile8;
-
 // function boss_missile8
 // function number 1619 begins at statement 23637
 /*
@@ -926,8 +814,6 @@ void () boss_missile8 = [ 64.000, boss_missile9 ] {
    boss_face ();
 
 };
-
-void () boss_missile9;
 
 // function boss_missile9
 // function number 1620 begins at statement 23640
@@ -943,8 +829,6 @@ void () boss_missile9 = [ 65.000, boss_missile10 ] {
    boss_missile (globaldef004869);
 
 };
-
-void () boss_missile10;
 vector globaldef004869 /* = '100.000 100.000 200.000' */;
 
 // function boss_missile10
@@ -961,8 +845,6 @@ void () boss_missile10 = [ 66.000, boss_missile11 ] {
 
 };
 
-void () boss_missile11;
-
 // function boss_missile11
 // function number 1622 begins at statement 23647
 /*
@@ -976,8 +858,6 @@ void () boss_missile11 = [ 67.000, boss_missile12 ] {
    boss_face ();
 
 };
-
-void () boss_missile12;
 
 // function boss_missile12
 // function number 1623 begins at statement 23650
@@ -993,8 +873,6 @@ void () boss_missile12 = [ 68.000, boss_missile13 ] {
 
 };
 
-void () boss_missile13;
-
 // function boss_missile13
 // function number 1624 begins at statement 23653
 /*
@@ -1008,8 +886,6 @@ void () boss_missile13 = [ 69.000, boss_missile14 ] {
    boss_face ();
 
 };
-
-void () boss_missile14;
 
 // function boss_missile14
 // function number 1625 begins at statement 23656
@@ -1025,8 +901,6 @@ void () boss_missile14 = [ 70.000, boss_missile15 ] {
 
 };
 
-void () boss_missile15;
-
 // function boss_missile15
 // function number 1626 begins at statement 23659
 /*
@@ -1040,8 +914,6 @@ void () boss_missile15 = [ 71.000, boss_missile16 ] {
    boss_face ();
 
 };
-
-void () boss_missile16;
 
 // function boss_missile16
 // function number 1627 begins at statement 23662
@@ -1057,8 +929,6 @@ void () boss_missile16 = [ 72.000, boss_missile17 ] {
 
 };
 
-void () boss_missile17;
-
 // function boss_missile17
 // function number 1628 begins at statement 23665
 /*
@@ -1072,8 +942,6 @@ void () boss_missile17 = [ 73.000, boss_missile18 ] {
    boss_face ();
 
 };
-
-void () boss_missile18;
 
 // function boss_missile18
 // function number 1629 begins at statement 23668
@@ -1089,8 +957,6 @@ void () boss_missile18 = [ 74.000, boss_missile19 ] {
 
 };
 
-void () boss_missile19;
-
 // function boss_missile19
 // function number 1630 begins at statement 23671
 /*
@@ -1104,8 +970,6 @@ void () boss_missile19 = [ 75.000, boss_missile20 ] {
    boss_face ();
 
 };
-
-void () boss_missile20;
 
 // function boss_missile20
 // function number 1631 begins at statement 23674
@@ -1121,8 +985,6 @@ void () boss_missile20 = [ 76.000, boss_missile21 ] {
    boss_missile (globaldef004881);
 
 };
-
-void () boss_missile21;
 vector globaldef004881 /* = '100.000 -100.000 200.000' */;
 
 // function boss_missile21
@@ -1139,8 +1001,6 @@ void () boss_missile21 = [ 77.000, boss_missile22 ] {
 
 };
 
-void () boss_missile22;
-
 // function boss_missile22
 // function number 1633 begins at statement 23681
 /*
@@ -1154,8 +1014,6 @@ void () boss_missile22 = [ 78.000, boss_missile23 ] {
    boss_face ();
 
 };
-
-void () boss_missile23;
 
 // function boss_missile23
 // function number 1634 begins at statement 23684
@@ -1171,8 +1029,6 @@ void () boss_missile23 = [ 79.000, boss_missile1 ] {
 
 };
 
-void () boss_shocka1;
-
 // function boss_shocka1
 // function number 1635 begins at statement 23687
 /*
@@ -1184,8 +1040,6 @@ void () boss_shocka1 = [ 80.000, boss_shocka2 ] {
 
 
 };
-
-void () boss_shocka2;
 
 // function boss_shocka2
 // function number 1636 begins at statement 23689
@@ -1199,8 +1053,6 @@ void () boss_shocka2 = [ 81.000, boss_shocka3 ] {
 
 };
 
-void () boss_shocka3;
-
 // function boss_shocka3
 // function number 1637 begins at statement 23691
 /*
@@ -1212,8 +1064,6 @@ void () boss_shocka3 = [ 82.000, boss_shocka4 ] {
 
 
 };
-
-void () boss_shocka4;
 
 // function boss_shocka4
 // function number 1638 begins at statement 23693
@@ -1227,8 +1077,6 @@ void () boss_shocka4 = [ 83.000, boss_shocka5 ] {
 
 };
 
-void () boss_shocka5;
-
 // function boss_shocka5
 // function number 1639 begins at statement 23695
 /*
@@ -1240,8 +1088,6 @@ void () boss_shocka5 = [ 84.000, boss_shocka6 ] {
 
 
 };
-
-void () boss_shocka6;
 
 // function boss_shocka6
 // function number 1640 begins at statement 23697
@@ -1255,8 +1101,6 @@ void () boss_shocka6 = [ 85.000, boss_shocka7 ] {
 
 };
 
-void () boss_shocka7;
-
 // function boss_shocka7
 // function number 1641 begins at statement 23699
 /*
@@ -1268,8 +1112,6 @@ void () boss_shocka7 = [ 86.000, boss_shocka8 ] {
 
 
 };
-
-void () boss_shocka8;
 
 // function boss_shocka8
 // function number 1642 begins at statement 23701
@@ -1283,8 +1125,6 @@ void () boss_shocka8 = [ 87.000, boss_shocka9 ] {
 
 };
 
-void () boss_shocka9;
-
 // function boss_shocka9
 // function number 1643 begins at statement 23703
 /*
@@ -1296,8 +1136,6 @@ void () boss_shocka9 = [ 88.000, boss_shocka10 ] {
 
 
 };
-
-void () boss_shocka10;
 
 // function boss_shocka10
 // function number 1644 begins at statement 23705
@@ -1311,8 +1149,6 @@ void () boss_shocka10 = [ 89.000, boss_missile1 ] {
 
 };
 
-void () boss_shockb1;
-
 // function boss_shockb1
 // function number 1645 begins at statement 23707
 /*
@@ -1324,8 +1160,6 @@ void () boss_shockb1 = [ 90.000, boss_shockb2 ] {
 
 
 };
-
-void () boss_shockb2;
 
 // function boss_shockb2
 // function number 1646 begins at statement 23709
@@ -1339,8 +1173,6 @@ void () boss_shockb2 = [ 91.000, boss_shockb3 ] {
 
 };
 
-void () boss_shockb3;
-
 // function boss_shockb3
 // function number 1647 begins at statement 23711
 /*
@@ -1352,8 +1184,6 @@ void () boss_shockb3 = [ 92.000, boss_shockb4 ] {
 
 
 };
-
-void () boss_shockb4;
 
 // function boss_shockb4
 // function number 1648 begins at statement 23713
@@ -1367,8 +1197,6 @@ void () boss_shockb4 = [ 93.000, boss_shockb5 ] {
 
 };
 
-void () boss_shockb5;
-
 // function boss_shockb5
 // function number 1649 begins at statement 23715
 /*
@@ -1380,8 +1208,6 @@ void () boss_shockb5 = [ 94.000, boss_shockb6 ] {
 
 
 };
-
-void () boss_shockb6;
 
 // function boss_shockb6
 // function number 1650 begins at statement 23717
@@ -1395,8 +1221,6 @@ void () boss_shockb6 = [ 95.000, boss_shockb7 ] {
 
 };
 
-void () boss_shockb7;
-
 // function boss_shockb7
 // function number 1651 begins at statement 23719
 /*
@@ -1408,8 +1232,6 @@ void () boss_shockb7 = [ 90.000, boss_shockb8 ] {
 
 
 };
-
-void () boss_shockb8;
 
 // function boss_shockb8
 // function number 1652 begins at statement 23721
@@ -1423,8 +1245,6 @@ void () boss_shockb8 = [ 91.000, boss_shockb9 ] {
 
 };
 
-void () boss_shockb9;
-
 // function boss_shockb9
 // function number 1653 begins at statement 23723
 /*
@@ -1436,8 +1256,6 @@ void () boss_shockb9 = [ 92.000, boss_shockb10 ] {
 
 
 };
-
-void () boss_shockb10;
 
 // function boss_shockb10
 // function number 1654 begins at statement 23725
@@ -1451,8 +1269,6 @@ void () boss_shockb10 = [ 93.000, boss_missile1 ] {
 
 };
 
-void () boss_shockc1;
-
 // function boss_shockc1
 // function number 1655 begins at statement 23727
 /*
@@ -1464,8 +1280,6 @@ void () boss_shockc1 = [ 96.000, boss_shockc2 ] {
 
 
 };
-
-void () boss_shockc2;
 
 // function boss_shockc2
 // function number 1656 begins at statement 23729
@@ -1479,8 +1293,6 @@ void () boss_shockc2 = [ 97.000, boss_shockc3 ] {
 
 };
 
-void () boss_shockc3;
-
 // function boss_shockc3
 // function number 1657 begins at statement 23731
 /*
@@ -1492,8 +1304,6 @@ void () boss_shockc3 = [ 98.000, boss_shockc4 ] {
 
 
 };
-
-void () boss_shockc4;
 
 // function boss_shockc4
 // function number 1658 begins at statement 23733
@@ -1507,8 +1317,6 @@ void () boss_shockc4 = [ 99.000, boss_shockc5 ] {
 
 };
 
-void () boss_shockc5;
-
 // function boss_shockc5
 // function number 1659 begins at statement 23735
 /*
@@ -1520,8 +1328,6 @@ void () boss_shockc5 = [ 100.000, boss_shockc6 ] {
 
 
 };
-
-void () boss_shockc6;
 
 // function boss_shockc6
 // function number 1660 begins at statement 23737
@@ -1535,8 +1341,6 @@ void () boss_shockc6 = [ 101.000, boss_shockc7 ] {
 
 };
 
-void () boss_shockc7;
-
 // function boss_shockc7
 // function number 1661 begins at statement 23739
 /*
@@ -1548,8 +1352,6 @@ void () boss_shockc7 = [ 102.000, boss_shockc8 ] {
 
 
 };
-
-void () boss_shockc8;
 
 // function boss_shockc8
 // function number 1662 begins at statement 23741
@@ -1563,8 +1365,6 @@ void () boss_shockc8 = [ 103.000, boss_shockc9 ] {
 
 };
 
-void () boss_shockc9;
-
 // function boss_shockc9
 // function number 1663 begins at statement 23743
 /*
@@ -1577,8 +1377,6 @@ void () boss_shockc9 = [ 104.000, boss_shockc10 ] {
 
 };
 
-void () boss_shockc10;
-
 // function boss_shockc10
 // function number 1664 begins at statement 23745
 /*
@@ -1590,8 +1388,6 @@ void () boss_shockc10 = [ 105.000, boss_death1 ] {
 
 
 };
-
-void () boss_death1;
 
 // function boss_death1
 // function number 1665 begins at statement 23747
@@ -1611,8 +1407,6 @@ void () boss_death1 = [ 48.000, boss_death2 ] {
    sound (self,CHAN_VOICE,globaldef004916,TRUE,ATTN_NORM);
 
 };
-
-void () boss_death2;
 string globaldef004916 /* = "boss1/death.wav" */;
 
 // function boss_death2
@@ -1627,8 +1421,6 @@ void () boss_death2 = [ 49.000, boss_death3 ] {
 
 };
 
-void () boss_death3;
-
 // function boss_death3
 // function number 1667 begins at statement 23757
 /*
@@ -1640,8 +1432,6 @@ void () boss_death3 = [ 50.000, boss_death4 ] {
 
 
 };
-
-void () boss_death4;
 
 // function boss_death4
 // function number 1668 begins at statement 23759
@@ -1655,8 +1445,6 @@ void () boss_death4 = [ 51.000, boss_death5 ] {
 
 };
 
-void () boss_death5;
-
 // function boss_death5
 // function number 1669 begins at statement 23761
 /*
@@ -1668,8 +1456,6 @@ void () boss_death5 = [ 52.000, boss_death6 ] {
 
 
 };
-
-void () boss_death6;
 
 // function boss_death6
 // function number 1670 begins at statement 23763
@@ -1683,8 +1469,6 @@ void () boss_death6 = [ 53.000, boss_death7 ] {
 
 };
 
-void () boss_death7;
-
 // function boss_death7
 // function number 1671 begins at statement 23765
 /*
@@ -1697,8 +1481,6 @@ void () boss_death7 = [ 54.000, boss_death8 ] {
 
 };
 
-void () boss_death8;
-
 // function boss_death8
 // function number 1672 begins at statement 23767
 /*
@@ -1710,8 +1492,6 @@ void () boss_death8 = [ 55.000, boss_death9 ] {
 
 
 };
-
-void () boss_death9;
 
 // function boss_death9
 // function number 1673 begins at statement 23769
@@ -1749,13 +1529,11 @@ void () boss_death9 = [ 56.000, boss_death10 ] {
    sound (self,CHAN_BODY,globaldef004811,TRUE,ATTN_NORM);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_LAVASPLASH);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
 
 };
-
-void () boss_death10;
 
 // function boss_death10
 // function number 1674 begins at statement 23795
@@ -1866,30 +1644,30 @@ void (vector globaldef004925) boss_missile = {
    local vector d;
    local float t;
 
-   offang = vectoangles ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   offang = vectoangles ((self.enemy.origin - self.origin));
    makevectors (offang);
-   org = (((self.globaldef000083 + (globaldef004925_x * v_forward)) + (globaldef004927 * v_right)) + (globaldef004928 * globaldef001462));
+   org = (((self.origin + (globaldef004925_x * v_forward)) + (globaldef004927 * v_right)) + (globaldef004928 * globaldef001462));
    if ( (skill > TRUE) ) {
 
-      t = (vlen ((self.globaldef000159.globaldef000083 - org)) / globaldef000523);
-      vec = self.globaldef000159.globaldef000091;
+      t = (vlen ((self.enemy.origin - org)) / globaldef000523);
+      vec = self.enemy.velocity;
       globaldef004940 = FALSE;
-      d = (self.globaldef000159.globaldef000083 + (t * vec));
+      d = (self.enemy.origin + (t * vec));
 
    } else {
 
-      d = self.globaldef000159.globaldef000083;
+      d = self.enemy.origin;
 
    }
    vec = normalize ((d - org));
    launch_spike (org,vec);
    setmodel (newmis,globaldef002439);
-   newmis.globaldef000099 = globaldef004946;
+   newmis.avelocity = globaldef004946;
    setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   newmis.globaldef000091 = (vec * globaldef000523);
-   newmis.globaldef000124 = T_MissileTouch;
+   newmis.velocity = (vec * globaldef000523);
+   newmis.touch = T_MissileTouch;
    sound (self,CHAN_WEAPON,globaldef004947,TRUE,ATTN_NORM);
-   if ( (self.globaldef000159.globaldef000130 <= FALSE) ) {
+   if ( (self.enemy.health <= FALSE) ) {
 
       boss_idle1 ();
 
@@ -1898,8 +1676,6 @@ void (vector globaldef004925) boss_missile = {
 };
 vector globaldef004946 /* = '200.000 100.000 300.000' */;
 string globaldef004947 /* = "boss1/throw.wav" */;
-
-void () boss_awake;
 
 // function boss_awake
 // function number 1676 begins at statement 23877
@@ -1952,35 +1728,33 @@ void () boss_awake;
 
 void () boss_awake = {
 
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
-   self.globaldef000141 = DAMAGE_NO;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
+   self.takedamage = DAMAGE_NO;
    setmodel (self,globaldef004949);
    setsize (self,globaldef004950,globaldef004951);
    if ( (skill == FALSE) ) {
 
-      self.globaldef000130 = TRUE;
+      self.health = TRUE;
 
    } else {
 
-      self.globaldef000130 = MOVETYPE_WALK;
+      self.health = MOVETYPE_WALK;
 
    }
-   self.globaldef000159 = activator;
+   self.enemy = activator;
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_LAVASPLASH);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
-   self.globaldef000170 = globaldef001384;
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
+   self.yaw_speed = globaldef001384;
    boss_rise1 ();
 
 };
 string globaldef004949 /* = "progs/boss.mdl" */;
 vector globaldef004950 /* = '-128.000 -128.000 -24.000' */;
 vector globaldef004951 /* = '128.000 128.000 256.000' */;
-
-void () monster_boss;
 
 // function monster_boss
 // function number 1677 begins at statement 23921
@@ -2032,15 +1806,13 @@ void () monster_boss = {
    precache_sound (globaldef004953);
    precache_sound (globaldef004916);
    total_monsters = (total_monsters + TRUE);
-   self.globaldef000125 = boss_awake;
+   self.use = boss_awake;
 
 };
 string globaldef004953 /* = "boss1/pain.wav" */;
 entity globaldef004954;
 entity globaldef004955;
 float globaldef004956 /* = 0.000 */;
-
-void () lightning_fire;
 
 // function lightning_fire
 // function number 1678 begins at statement 23948
@@ -2123,13 +1895,13 @@ void () lightning_fire = {
       return ;
 
    }
-   p1 = ((globaldef004954.globaldef000112 + globaldef004954.globaldef000116) * globaldef000522);
-   globaldef004961 = (globaldef004954.globaldef000075 - FL_INWATER);
-   p2 = ((globaldef004955.globaldef000112 + globaldef004955.globaldef000116) * globaldef000522);
-   globaldef004965 = (globaldef004955.globaldef000075 - FL_INWATER);
+   p1 = ((globaldef004954.mins + globaldef004954.maxs) * globaldef000522);
+   globaldef004961 = (globaldef004954.absmin_z - FL_INWATER);
+   p2 = ((globaldef004955.mins + globaldef004955.maxs) * globaldef000522);
+   globaldef004965 = (globaldef004955.absmin_z - FL_INWATER);
    p2 = (p2 - (normalize ((p2 - p1)) * globaldef001335));
-   self.globaldef000128 = (time + globaldef001488);
-   self.globaldef000126 = lightning_fire;
+   self.nextthink = (time + globaldef001488);
+   self.think = lightning_fire;
    WriteByte (MSG_ALL,globaldef000287);
    WriteByte (MSG_ALL,TE_LIGHTNING3);
    WriteEntity (MSG_ALL,world);
@@ -2141,8 +1913,6 @@ void () lightning_fire = {
    WriteCoord (MSG_ALL,globaldef004965);
 
 };
-
-void () lightning_use;
 
 // function lightning_use
 // function number 1679 begins at statement 24010
@@ -2248,48 +2018,48 @@ void () lightning_use = {
       return ;
 
    }
-   globaldef004954 = find (world,globaldef000174,globaldef004967);
-   globaldef004955 = find (globaldef004954,globaldef000174,globaldef004967);
+   globaldef004954 = find (world,target,globaldef004967);
+   globaldef004955 = find (globaldef004954,target,globaldef004967);
    if ( (!globaldef004954 || !globaldef004955) ) {
 
       dprint (globaldef004968);
       return ;
 
    }
-   if ( ((((globaldef004954.globaldef000421 != STATE_TOP) && (globaldef004954.globaldef000421 != STATE_BOTTOM)) || ((globaldef004955.globaldef000421 != STATE_TOP) && (globaldef004955.globaldef000421 != STATE_BOTTOM))) || (globaldef004954.globaldef000421 != globaldef004955.globaldef000421)) ) {
+   if ( ((((globaldef004954.state != STATE_TOP) && (globaldef004954.state != STATE_BOTTOM)) || ((globaldef004955.state != STATE_TOP) && (globaldef004955.state != STATE_BOTTOM))) || (globaldef004954.state != globaldef004955.state)) ) {
 
       return ;
 
    }
-   globaldef004954.globaldef000128 = CONTENT_EMPTY;
-   globaldef004955.globaldef000128 = CONTENT_EMPTY;
+   globaldef004954.nextthink = CONTENT_EMPTY;
+   globaldef004955.nextthink = CONTENT_EMPTY;
    globaldef004956 = (time + TRUE);
    sound (self,CHAN_VOICE,globaldef002404,TRUE,ATTN_NORM);
    lightning_fire ();
-   self = find (world,globaldef000107,globaldef004969);
+   self = find (world,classname,globaldef004969);
    if ( !self ) {
 
       return ;
 
    }
-   self.globaldef000159 = activator;
-   if ( ((globaldef004954.globaldef000421 == STATE_TOP) && (self.globaldef000130 > FALSE)) ) {
+   self.enemy = activator;
+   if ( ((globaldef004954.state == STATE_TOP) && (self.health > FALSE)) ) {
 
       sound (self,CHAN_VOICE,globaldef004953,TRUE,ATTN_NORM);
-      self.globaldef000130 = (self.globaldef000130 - TRUE);
-      if ( (self.globaldef000130 >= FL_SWIM) ) {
+      self.health = (self.health - TRUE);
+      if ( (self.health >= FL_SWIM) ) {
 
          boss_shocka1 ();
 
       } else {
 
-         if ( (self.globaldef000130 == TRUE) ) {
+         if ( (self.health == TRUE) ) {
 
             boss_shockb1 ();
 
          } else {
 
-            if ( (self.globaldef000130 == FALSE) ) {
+            if ( (self.health == FALSE) ) {
 
                boss_shockc1 ();
 
@@ -2306,8 +2076,6 @@ string globaldef004967 /* = "lightning" */;
 string globaldef004968 /* = "missing lightning targets\n" */;
 string globaldef004969 /* = "monster_boss" */;
 
-void () event_lightning;
-
 // function event_lightning
 // function number 1680 begins at statement 24102
 /*
@@ -2318,6 +2086,6 @@ void () event_lightning;
 
 void () event_lightning = {
 
-   self.globaldef000125 = lightning_use;
+   self.use = lightning_use;
 
 };

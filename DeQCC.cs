@@ -180,6 +180,7 @@ namespace DeQcc
         List<Def> globals = new List<Def>();
         Dictionary<int, int> globalsOffsetMap = new Dictionary<int, int>();  // to look up global by offset
         List<Def> fields = new List<Def>();
+        Dictionary<int, int> fieldsOffsetMap = new Dictionary<int, int>();  // to look up field by offset
 
         StreamWriter qcOutputFile;
         StreamWriter progsSrcOutputFile;
@@ -446,26 +447,6 @@ namespace DeQcc
                 functions.Add(f);
             }
 
-            h.BaseStream.Seek(ofs_globaldefs, SeekOrigin.Begin);
-            for (int i = 0; i < numglobaldefs; i++)
-            {
-                Def g = new Def();
-                g.type = h.ReadUInt16();
-                g.ofs = h.ReadUInt16();
-                g.s_name = h.ReadInt32();
-
-                // set strings
-                if (g.s_name > 0) { g.name = strings[stringOffsetMap[g.s_name]]; }
-                else { g.name = "globaldef" + i.ToString("D6"); }
-                if (nameMap.ContainsKey(g.name)) { g.name = nameMap[g.name]; }
-
-                globals.Add(g);
-                if (!globalsOffsetMap.ContainsKey(g.ofs))   // for vectors, var and var_x are separate globals with same offset
-                {
-                    globalsOffsetMap.Add(g.ofs, i);
-                }
-            }
-
             h.BaseStream.Seek(ofs_fielddefs, SeekOrigin.Begin);
             for (int i = 0; i < numfielddefs; i++)
             {
@@ -480,12 +461,66 @@ namespace DeQcc
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 fields.Add(f);
+                if (i > 0)  // don't add the null field
+                {
+                    if (!fieldsOffsetMap.ContainsKey(f.ofs))   // for vectors, var and var_x are separate globals with same offset
+                    {
+                        fieldsOffsetMap.Add(f.ofs, i);
+                    }
+                }
             }
 
             h.BaseStream.Seek(ofs_globals, SeekOrigin.Begin);
             for (int i = 0; i < numglobals; i++)
             {
                 pr_globals.Add(h.ReadSingle());     // Read these as floats for now, will need to bitconvert some to ints later
+            }
+
+            h.BaseStream.Seek(ofs_globaldefs, SeekOrigin.Begin);
+            for (int i = 0; i < numglobaldefs; i++)
+            {
+                Def g = new Def();
+                g.type = h.ReadUInt16();
+                g.ofs = h.ReadUInt16();
+                g.s_name = h.ReadInt32();
+
+                // set strings
+                if (g.s_name > 0)
+                {
+                    g.name = strings[stringOffsetMap[g.s_name]];
+                }
+                else
+                {
+                    // if function, link through to the underlying function name
+                    if (g.type == ((ushort)(Types.ev_function)))
+                    {
+                        int funcIndex = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[g.ofs]));
+                        g.name = functions[funcIndex].name;
+                    }
+                    else if (g.type == ((ushort)(Types.ev_field)))
+                    {
+                        int fieldOffset = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[g.ofs]));
+                        g.name = fields[fieldsOffsetMap[fieldOffset]].name;
+                    }
+                    else
+                    {
+                        g.name = "globaldef" + i.ToString("D6");
+                    }
+                }
+
+                if (nameMap.ContainsKey(g.name))
+                {
+                    g.name = nameMap[g.name];
+                }
+
+                globals.Add(g);
+                if (i > 0)  // don't add the null globaldef
+                {
+                    if (!globalsOffsetMap.ContainsKey(g.ofs))   // for vectors, var and var_x are separate globals with same offset
+                    {
+                        globalsOffsetMap.Add(g.ofs, i);
+                    }
+                }
             }
         }
 
@@ -875,9 +910,7 @@ namespace DeQcc
                             if (par.type == (ushort)Types.ev_field)
                             {
                                 int intVal = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[par.ofs]));
-                                ef = fields[intVal];
-
-                                if (ef is null) { throw new Exception("Could not locate a field named \"" + par.name + "\""); } // TODO
+                                ef = fields[fieldsOffsetMap[intVal]];
 
                                 if (ef.type == (ushort)Types.ev_vector)
                                 {
@@ -1114,27 +1147,12 @@ namespace DeQcc
                 }
                 else
                 {
-                    // NG added - if function, link through to the underlying function name
-                    if (def.type == ((ushort)(Types.ev_function)))
-                    {
-                        int funcIndex = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[def.ofs]));
-                        if (funcIndex > 0)
-                        {
-                            line = functions[funcIndex].name;
-                        }
-                        else
-                        {
-                            line = def.name;
-                        }
-                    }
-                    else
-                    {
                         line = def.name;
                         if (def.type == ((ushort)(Types.ev_vector)) && req_t == Types.ev_float)
                         {
                             line += "_x";
                         }
-                    }
+//                    }
                 }
                 return line;
             }

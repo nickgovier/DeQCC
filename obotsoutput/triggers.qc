@@ -7,8 +7,6 @@ entity globaldef003440;
 entity globaldef003441;
 entity globaldef003442;
 
-void () trigger_reactivate;
-
 // function trigger_reactivate
 // function number 570 begins at statement 16056
 /*
@@ -19,13 +17,11 @@ void () trigger_reactivate;
 
 void () trigger_reactivate = {
 
-   self.globaldef000082 = SOLID_TRIGGER;
+   self.solid = SOLID_TRIGGER;
 
 };
 float globaldef003444 /* = 1.000 */;
 float globaldef003445 /* = 1.000 */;
-
-void () func000571;
 
 // function func000571
 // function number 571 begins at statement 16059
@@ -44,17 +40,15 @@ void () func000571;
 
 void () func000571 = {
 
-   if ( self.globaldef000163 ) {
+   if ( self.max_health ) {
 
-      self.globaldef000130 = self.globaldef000163;
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000082 = SOLID_BBOX;
+      self.health = self.max_health;
+      self.takedamage = DAMAGE_YES;
+      self.solid = SOLID_BBOX;
 
    }
 
 };
-
-void () func000572;
 
 // function func000572
 // function number 572 begins at statement 16069
@@ -122,16 +116,16 @@ void () func000572;
 
 void () func000572 = {
 
-   if ( (self.globaldef000128 > time) ) {
+   if ( (self.nextthink > time) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000107 == globaldef003448) ) {
+   if ( (self.classname == globaldef003448) ) {
 
-      if ( (self.globaldef000159.globaldef000107 != globaldef001170) ) {
+      if ( (self.enemy.classname != globaldef001170) ) {
 
-         if ( (self.globaldef000159.globaldef000107 != globaldef001171) ) {
+         if ( (self.enemy.classname != globaldef001171) ) {
 
             return ;
 
@@ -142,36 +136,34 @@ void () func000572 = {
       WriteByte (MSG_ALL,SVC_FOUNDSECRET);
 
    }
-   if ( self.globaldef000186 ) {
+   if ( self.noise ) {
 
-      sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+      sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
 
    }
-   self.globaldef000141 = DAMAGE_NO;
-   activator = self.globaldef000159;
-   if ( (activator.globaldef000107 == globaldef001171) ) {
+   self.takedamage = DAMAGE_NO;
+   activator = self.enemy;
+   if ( (activator.classname == globaldef001171) ) {
 
       func002472 (activator,self);
 
    }
    SUB_UseTargets ();
-   if ( (self.globaldef000401 > FALSE) ) {
+   if ( (self.wait > FALSE) ) {
 
-      self.globaldef000126 = func000571;
-      self.globaldef000128 = (time + self.globaldef000401);
+      self.think = func000571;
+      self.nextthink = (time + self.wait);
 
    } else {
 
-      self.globaldef000124 = SUB_Null;
-      self.globaldef000128 = (time + globaldef001488);
-      self.globaldef000126 = SUB_Remove;
+      self.touch = SUB_Null;
+      self.nextthink = (time + globaldef001488);
+      self.think = SUB_Remove;
 
    }
 
 };
 string globaldef003448 /* = "trigger_secret" */;
-
-void () func000573;
 
 // function func000573
 // function number 573 begins at statement 16128
@@ -184,12 +176,10 @@ void () func000573;
 
 void () func000573 = {
 
-   self.globaldef000159 = damage_attacker;
+   self.enemy = damage_attacker;
    func000572 ();
 
 };
-
-void () func000574;
 
 // function func000574
 // function number 574 begins at statement 16132
@@ -202,12 +192,10 @@ void () func000574;
 
 void () func000574 = {
 
-   self.globaldef000159 = activator;
+   self.enemy = activator;
    func000572 ();
 
 };
-
-void () func000575;
 
 // function func000575
 // function number 575 begins at statement 16136
@@ -238,31 +226,29 @@ void () func000575;
 
 void () func000575 = {
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
-
-         return ;
-
-      }
-
-   }
-   if ( (self.globaldef000180 != VEC_ORIGIN) ) {
-
-      makevectors (other.globaldef000095);
-      if ( ((v_forward * self.globaldef000180) < FALSE) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   self.globaldef000159 = other;
+   if ( (self.movedir != VEC_ORIGIN) ) {
+
+      makevectors (other.angles);
+      if ( ((v_forward * self.movedir) < FALSE) ) {
+
+         return ;
+
+      }
+
+   }
+   self.enemy = other;
    func000572 ();
 
 };
-
-void () func000576;
 
 // function func000576
 // function number 576 begins at statement 16158
@@ -330,55 +316,55 @@ void () func000576;
 
 void () func000576 = {
 
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003453);
-      self.globaldef000186 = globaldef003453;
+      self.noise = globaldef003453;
 
    } else {
 
-      if ( (self.globaldef000185 == FL_SWIM) ) {
+      if ( (self.sounds == FL_SWIM) ) {
 
          precache_sound (globaldef001516);
-         self.globaldef000186 = globaldef001516;
+         self.noise = globaldef001516;
 
       } else {
 
-         if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+         if ( (self.sounds == MOVETYPE_WALK) ) {
 
             precache_sound (globaldef003454);
-            self.globaldef000186 = globaldef003454;
+            self.noise = globaldef003454;
 
          }
 
       }
 
    }
-   if ( !self.globaldef000401 ) {
+   if ( !self.wait ) {
 
-      self.globaldef000401 = globaldef001553;
+      self.wait = globaldef001553;
 
    }
-   self.globaldef000125 = func000574;
+   self.use = func000574;
    InitTrigger ();
-   if ( self.globaldef000130 ) {
+   if ( self.health ) {
 
-      if ( (self.globaldef000173 & globaldef003445) ) {
+      if ( (self.spawnflags & globaldef003445) ) {
 
          objerror (globaldef003455);
 
       }
-      self.globaldef000163 = self.globaldef000130;
-      self.globaldef000350 = func000573;
-      self.globaldef000141 = DAMAGE_YES;
-      self.globaldef000082 = SOLID_BBOX;
-      setorigin (self,self.globaldef000083);
+      self.max_health = self.health;
+      self.th_die = func000573;
+      self.takedamage = DAMAGE_YES;
+      self.solid = SOLID_BBOX;
+      setorigin (self,self.origin);
 
    } else {
 
-      if ( !(self.globaldef000173 & globaldef003445) ) {
+      if ( !(self.spawnflags & globaldef003445) ) {
 
-         self.globaldef000124 = func000575;
+         self.touch = func000575;
 
       }
 
@@ -388,8 +374,6 @@ void () func000576 = {
 string globaldef003453 /* = "misc/secret.wav" */;
 string globaldef003454 /* = "misc/trigger1.wav" */;
 string globaldef003455 /* = "health and notouch don't make sense\n" */;
-
-void () trigger_multiple;
 
 // function trigger_multiple
 // function number 577 begins at statement 16217
@@ -404,8 +388,6 @@ void () trigger_multiple = {
 
 };
 
-void () trigger_once;
-
 // function trigger_once
 // function number 578 begins at statement 16219
 /*
@@ -417,12 +399,10 @@ void () trigger_once;
 
 void () trigger_once = {
 
-   self.globaldef000401 = CONTENT_EMPTY;
+   self.wait = CONTENT_EMPTY;
    func000576 ();
 
 };
-
-void () trigger_relay;
 
 // function trigger_relay
 // function number 579 begins at statement 16223
@@ -434,11 +414,9 @@ void () trigger_relay;
 
 void () trigger_relay = {
 
-   self.globaldef000125 = SUB_UseTargets;
+   self.use = SUB_UseTargets;
 
 };
-
-void () trigger_secret;
 
 // function trigger_secret
 // function number 580 begins at statement 16226
@@ -485,28 +463,28 @@ void () trigger_secret = {
       total_secrets = (total_secrets + TRUE);
 
    }
-   self.globaldef000401 = CONTENT_EMPTY;
-   if ( !self.globaldef000184 ) {
+   self.wait = CONTENT_EMPTY;
+   if ( !self.message ) {
 
-      self.globaldef000184 = globaldef003460;
-
-   }
-   if ( !self.globaldef000185 ) {
-
-      self.globaldef000185 = TRUE;
+      self.message = globaldef003460;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( !self.sounds ) {
+
+      self.sounds = TRUE;
+
+   }
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003453);
-      self.globaldef000186 = globaldef003453;
+      self.noise = globaldef003453;
 
    } else {
 
-      if ( (self.globaldef000185 == FL_SWIM) ) {
+      if ( (self.sounds == FL_SWIM) ) {
 
          precache_sound (globaldef001516);
-         self.globaldef000186 = globaldef001516;
+         self.noise = globaldef001516;
 
       }
 
@@ -515,8 +493,6 @@ void () trigger_secret = {
 
 };
 string globaldef003460 /* = "You found a secret area!" */;
-
-void () counter_use;
 
 // function counter_use
 // function number 581 begins at statement 16259
@@ -584,29 +560,29 @@ void () counter_use = {
 
    local string junk;
 
-   self.globaldef000419 = (self.globaldef000419 - TRUE);
-   if ( (self.globaldef000419 < FALSE) ) {
+   self.count = (self.count - TRUE);
+   if ( (self.count < FALSE) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000419 != FALSE) ) {
+   if ( (self.count != FALSE) ) {
 
-      if ( ((activator.globaldef000107 == globaldef001170) && ((self.globaldef000173 & globaldef003444) == FALSE)) ) {
+      if ( ((activator.classname == globaldef001170) && ((self.spawnflags & globaldef003444) == FALSE)) ) {
 
-         if ( (self.globaldef000419 >= MOVETYPE_STEP) ) {
+         if ( (self.count >= MOVETYPE_STEP) ) {
 
             func000072 (activator,globaldef003463);
 
          } else {
 
-            if ( (self.globaldef000419 == MOVETYPE_WALK) ) {
+            if ( (self.count == MOVETYPE_WALK) ) {
 
                func000072 (activator,globaldef003464);
 
             } else {
 
-               if ( (self.globaldef000419 == FL_SWIM) ) {
+               if ( (self.count == FL_SWIM) ) {
 
                   func000072 (activator,globaldef003465);
 
@@ -624,12 +600,12 @@ void () counter_use = {
       return ;
 
    }
-   if ( ((activator.globaldef000107 == globaldef001170) && ((self.globaldef000173 & globaldef003444) == FALSE)) ) {
+   if ( ((activator.classname == globaldef001170) && ((self.spawnflags & globaldef003444) == FALSE)) ) {
 
       func000072 (activator,globaldef003467);
 
    }
-   self.globaldef000159 = activator;
+   self.enemy = activator;
    func000572 ();
 
 };
@@ -638,8 +614,6 @@ string globaldef003464 /* = "Only 3 more to go..." */;
 string globaldef003465 /* = "Only 2 more to go..." */;
 string globaldef003466 /* = "Only 1 more to go..." */;
 string globaldef003467 /* = "Sequence completed!" */;
-
-void () trigger_counter;
 
 // function trigger_counter
 // function number 582 begins at statement 16316
@@ -658,19 +632,17 @@ void () trigger_counter;
 
 void () trigger_counter = {
 
-   self.globaldef000401 = CONTENT_EMPTY;
-   if ( !self.globaldef000419 ) {
+   self.wait = CONTENT_EMPTY;
+   if ( !self.count ) {
 
-      self.globaldef000419 = FL_SWIM;
+      self.count = FL_SWIM;
 
    }
-   self.globaldef000125 = counter_use;
+   self.use = counter_use;
 
 };
 float globaldef003469 /* = 1.000 */;
 float globaldef003470 /* = 2.000 */;
-
-void () play_teleport;
 
 // function play_teleport
 // function number 583 begins at statement 16326
@@ -783,9 +755,9 @@ void () play_teleport = {
 void (vector globaldef003474) spawn_tfog = {
 
    globaldef003441 = spawn ();
-   globaldef003441.globaldef000083 = globaldef003474;
-   globaldef003441.globaldef000128 = (time + globaldef001553);
-   globaldef003441.globaldef000126 = play_teleport;
+   globaldef003441.origin = globaldef003474;
+   globaldef003441.nextthink = (time + globaldef001553);
+   globaldef003441.think = play_teleport;
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_TELEPORT);
    WriteCoord (MSG_BROADCAST,globaldef003474);
@@ -793,8 +765,6 @@ void (vector globaldef003474) spawn_tfog = {
    WriteCoord (MSG_BROADCAST,globaldef003477);
 
 };
-
-void () tdeath_touch;
 
 // function tdeath_touch
 // function number 585 begins at statement 16380
@@ -841,23 +811,23 @@ void () tdeath_touch;
 
 void () tdeath_touch = {
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( ((other.globaldef000107 == globaldef001170) || (other.globaldef000107 == globaldef001171)) ) {
+   if ( ((other.classname == globaldef001170) || (other.classname == globaldef001171)) ) {
 
-      if ( (other.globaldef000363 > time) ) {
+      if ( (other.invincible_finished > time) ) {
 
-         self.globaldef000107 = globaldef003000;
+         self.classname = globaldef003000;
 
       }
-      if ( (self.globaldef000179.globaldef000107 != globaldef001170) ) {
+      if ( (self.owner.classname != globaldef001170) ) {
 
-         if ( (self.globaldef000179.globaldef000107 != globaldef001171) ) {
+         if ( (self.owner.classname != globaldef001171) ) {
 
-            T_Damage (self.globaldef000179,self,self,globaldef002886);
+            T_Damage (self.owner,self,self,globaldef002886);
             return ;
 
          }
@@ -865,7 +835,7 @@ void () tdeath_touch = {
       }
 
    }
-   if ( other.globaldef000130 ) {
+   if ( other.health ) {
 
       T_Damage (other,self,self,globaldef002886);
 
@@ -915,22 +885,20 @@ void (vector globaldef003479, entity globaldef003483) spawn_tdeath = {
    local entity death;
 
    death = spawn ();
-   death.globaldef000107 = globaldef002997;
-   death.globaldef000081 = MOVETYPE_NONE;
-   death.globaldef000082 = SOLID_TRIGGER;
-   death.globaldef000095 = VEC_ORIGIN;
-   setsize (death,(globaldef003483.globaldef000112 - globaldef003485),(globaldef003483.globaldef000116 + globaldef003485));
+   death.classname = globaldef002997;
+   death.movetype = MOVETYPE_NONE;
+   death.solid = SOLID_TRIGGER;
+   death.angles = VEC_ORIGIN;
+   setsize (death,(globaldef003483.mins - globaldef003485),(globaldef003483.maxs + globaldef003485));
    setorigin (death,globaldef003479);
-   death.globaldef000124 = tdeath_touch;
-   death.globaldef000128 = (time + globaldef001553);
-   death.globaldef000126 = SUB_Remove;
-   death.globaldef000179 = globaldef003483;
+   death.touch = tdeath_touch;
+   death.nextthink = (time + globaldef001553);
+   death.think = SUB_Remove;
+   death.owner = globaldef003483;
    force_retouch = FL_SWIM;
 
 };
 vector globaldef003485 /* = '1.000 1.000 1.000' */;
-
-void () teleport_touch;
 
 // function teleport_touch
 // function number 587 begins at statement 16450
@@ -1109,20 +1077,20 @@ void () teleport_touch = {
       }
 
    }
-   if ( self.globaldef000175 ) {
+   if ( self.targetname ) {
 
-      if ( (self.globaldef000128 < time) ) {
+      if ( (self.nextthink < time) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.globaldef000173 & globaldef003469) ) {
+   if ( (self.spawnflags & globaldef003469) ) {
 
-      if ( (other.globaldef000107 != globaldef001170) ) {
+      if ( (other.classname != globaldef001170) ) {
 
-         if ( (other.globaldef000107 != globaldef001171) ) {
+         if ( (other.classname != globaldef001171) ) {
 
             return ;
 
@@ -1131,75 +1099,73 @@ void () teleport_touch = {
       }
 
    }
-   if ( ((other.globaldef000130 <= FALSE) || (other.globaldef000082 != SOLID_SLIDEBOX)) ) {
+   if ( ((other.health <= FALSE) || (other.solid != SOLID_SLIDEBOX)) ) {
 
       return ;
 
    }
    SUB_UseTargets ();
-   spawn_tfog (other.globaldef000083);
-   t = find (world,globaldef000175,self.globaldef000174);
+   spawn_tfog (other.origin);
+   t = find (world,targetname,self.target);
    if ( !t ) {
 
       objerror (globaldef003492);
 
    }
-   makevectors (t.globaldef000383);
-   org = (t.globaldef000083 + (FL_MONSTER * v_forward));
+   makevectors (t.mangle);
+   org = (t.origin + (FL_MONSTER * v_forward));
    spawn_tfog (org);
-   spawn_tdeath (t.globaldef000083,other);
-   func002453 (other,other.globaldef000083,TRUE,globaldef000740);
+   spawn_tdeath (t.origin,other);
+   func002453 (other,other.origin,TRUE,globaldef000740);
    func002453 (other,org,TRUE,globaldef000740);
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   if ( (other.classname == globaldef001171) ) {
 
-      other.globaldef000581 = (time - TRUE);
-      other.globaldef000354 = (time - TRUE);
-      other.globaldef000153 = t.globaldef000383;
-      other.globaldef000169 = t.globaldef000385;
-      other.globaldef000594 = t.globaldef000384;
-      other.globaldef000091 = (v_forward * globaldef000523);
-      other.globaldef000164 = (time + globaldef001300);
-      other.globaldef000361 = (time + globaldef000522);
+      other.field000275 = (time - TRUE);
+      other.search_time = (time - TRUE);
+      other.v_angle = t.mangle;
+      other.ideal_yaw = t.mangle_y;
+      other.field000288 = t.mangle;
+      other.velocity = (v_forward * globaldef000523);
+      other.teleport_time = (time + globaldef001300);
+      other.attack_finished = (time + globaldef000522);
 
    }
-   if ( (other.globaldef000558 & globaldef000686) ) {
+   if ( (other.field000252 & globaldef000686) ) {
 
-      if ( !self.globaldef000605 ) {
+      if ( !self.field000299 ) {
 
          func002676 (other,self);
 
       }
-      func002685 (other.globaldef000605,self.globaldef000605);
-      other.globaldef000605 = self.globaldef000605;
+      func002685 (other.field000299,self.field000299);
+      other.field000299 = self.field000299;
 
    }
-   if ( !other.globaldef000130 ) {
+   if ( !other.health ) {
 
-      other.globaldef000083 = t.globaldef000083;
-      other.globaldef000091 = ((v_forward * other.globaldef000092) + (v_forward * other.globaldef000093));
+      other.origin = t.origin;
+      other.velocity = ((v_forward * other.velocity) + (v_forward * other.velocity_y));
       return ;
 
    }
-   setorigin (other,t.globaldef000083);
-   other.globaldef000095 = t.globaldef000383;
-   if ( (other.globaldef000107 == globaldef001170) ) {
+   setorigin (other,t.origin);
+   other.angles = t.mangle;
+   if ( (other.classname == globaldef001170) ) {
 
-      other.globaldef000152 = TRUE;
-      other.globaldef000164 = (time + globaldef002123);
-      if ( (other.globaldef000160 & FL_ONGROUND) ) {
+      other.fixangle = TRUE;
+      other.teleport_time = (time + globaldef002123);
+      if ( (other.flags & FL_ONGROUND) ) {
 
-         other.globaldef000160 = (other.globaldef000160 - FL_ONGROUND);
+         other.flags = (other.flags - FL_ONGROUND);
 
       }
-      other.globaldef000091 = (v_forward * globaldef000523);
+      other.velocity = (v_forward * globaldef000523);
 
    }
-   other.globaldef000160 = (other.globaldef000160 - (other.globaldef000160 & FL_ONGROUND));
+   other.flags = (other.flags - (other.flags & FL_ONGROUND));
 
 };
 string globaldef003492 /* = "couldn't find teleporter target\n" */;
-
-void () info_teleport_destination;
 
 // function info_teleport_destination
 // function number 588 begins at statement 16608
@@ -1225,11 +1191,11 @@ void () info_teleport_destination;
 
 void () info_teleport_destination = {
 
-   self.globaldef000383 = self.globaldef000095;
-   self.globaldef000095 = VEC_ORIGIN;
-   self.globaldef000108 = globaldef001466;
-   self.globaldef000083 = (self.globaldef000083 + globaldef003494);
-   if ( !self.globaldef000175 ) {
+   self.mangle = self.angles;
+   self.angles = VEC_ORIGIN;
+   self.model = globaldef001466;
+   self.origin = (self.origin + globaldef003494);
+   if ( !self.targetname ) {
 
       objerror (globaldef003495);
 
@@ -1238,8 +1204,6 @@ void () info_teleport_destination = {
 };
 vector globaldef003494 /* = '0.000 0.000 27.000' */;
 string globaldef003495 /* = "no targetname" */;
-
-void () teleport_use;
 
 // function teleport_use
 // function number 589 begins at statement 16625
@@ -1255,13 +1219,11 @@ void () teleport_use;
 
 void () teleport_use = {
 
-   self.globaldef000128 = (time + globaldef001553);
+   self.nextthink = (time + globaldef001553);
    force_retouch = FL_SWIM;
-   self.globaldef000126 = SUB_Null;
+   self.think = SUB_Null;
 
 };
-
-void () trigger_teleport;
 
 // function trigger_teleport
 // function number 590 begins at statement 16632
@@ -1302,18 +1264,18 @@ void () trigger_teleport = {
    local vector o;
 
    InitTrigger ();
-   self.globaldef000124 = teleport_touch;
-   self.globaldef000531 = func002294;
-   if ( !self.globaldef000174 ) {
+   self.touch = teleport_touch;
+   self.field000225 = func002294;
+   if ( !self.target ) {
 
       objerror (globaldef003502);
 
    }
-   self.globaldef000125 = teleport_use;
-   if ( !(self.globaldef000173 & globaldef003470) ) {
+   self.use = teleport_use;
+   if ( !(self.spawnflags & globaldef003470) ) {
 
       precache_sound (globaldef003503);
-      o = ((self.globaldef000112 + self.globaldef000116) * globaldef000522);
+      o = ((self.mins + self.maxs) * globaldef000522);
       ambientsound (o,globaldef003503,globaldef000522,ATTN_STATIC);
 
    }
@@ -1321,8 +1283,6 @@ void () trigger_teleport = {
 };
 string globaldef003502 /* = "no target" */;
 string globaldef003503 /* = "ambience/hum1.wav" */;
-
-void () trigger_skill_touch;
 
 // function trigger_skill_touch
 // function number 591 begins at statement 16661
@@ -1338,11 +1298,9 @@ void () trigger_skill_touch;
 void () trigger_skill_touch = {
 
    return ;
-   cvar_set (globaldef002458,self.globaldef000184);
+   cvar_set (globaldef002458,self.message);
 
 };
-
-void () trigger_setskill;
 
 // function trigger_setskill
 // function number 592 begins at statement 16667
@@ -1356,11 +1314,9 @@ void () trigger_setskill;
 void () trigger_setskill = {
 
    InitTrigger ();
-   self.globaldef000124 = trigger_skill_touch;
+   self.touch = trigger_skill_touch;
 
 };
-
-void () trigger_onlyregistered_touch;
 
 // function trigger_onlyregistered_touch
 // function number 593 begins at statement 16671
@@ -1409,34 +1365,34 @@ void () trigger_onlyregistered_touch;
 
 void () trigger_onlyregistered_touch = {
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   if ( (self.globaldef000361 > time) ) {
+   if ( (self.attack_finished > time) ) {
 
       return ;
 
    }
-   self.globaldef000361 = (time + FL_SWIM);
+   self.attack_finished = (time + FL_SWIM);
    if ( cvar (globaldef002383) ) {
 
-      self.globaldef000184 = globaldef001466;
+      self.message = globaldef001466;
       SUB_UseTargets ();
       remove (self);
 
    } else {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
-         if ( (self.globaldef000184 != globaldef001466) ) {
+         if ( (self.message != globaldef001466) ) {
 
-            func000072 (other,self.globaldef000184);
+            func000072 (other,self.message);
             sound (other,CHAN_BODY,globaldef001516,TRUE,ATTN_NORM);
 
          }
@@ -1446,8 +1402,6 @@ void () trigger_onlyregistered_touch = {
    }
 
 };
-
-void () trigger_onlyregistered;
 
 // function trigger_onlyregistered
 // function number 594 begins at statement 16711
@@ -1466,12 +1420,10 @@ void () trigger_onlyregistered = {
 
    precache_sound (globaldef001516);
    InitTrigger ();
-   self.globaldef000124 = trigger_onlyregistered_touch;
-   self.globaldef000531 = func002296;
+   self.touch = trigger_onlyregistered_touch;
+   self.field000225 = func002296;
 
 };
-
-void () hurt_on;
 
 // function hurt_on
 // function number 595 begins at statement 16719
@@ -1485,12 +1437,10 @@ void () hurt_on;
 
 void () hurt_on = {
 
-   self.globaldef000082 = SOLID_TRIGGER;
-   self.globaldef000128 = CONTENT_EMPTY;
+   self.solid = SOLID_TRIGGER;
+   self.nextthink = CONTENT_EMPTY;
 
 };
-
-void () hurt_touch;
 
 // function hurt_touch
 // function number 596 begins at statement 16724
@@ -1516,19 +1466,17 @@ void () hurt_touch;
 
 void () hurt_touch = {
 
-   if ( other.globaldef000141 ) {
+   if ( other.takedamage ) {
 
-      self.globaldef000082 = SOLID_NOT;
-      T_Damage (other,self,self,self.globaldef000408);
-      self.globaldef000126 = hurt_on;
-      self.globaldef000128 = (time + TRUE);
+      self.solid = SOLID_NOT;
+      T_Damage (other,self,self,self.dmg);
+      self.think = hurt_on;
+      self.nextthink = (time + TRUE);
 
    }
    return ;
 
 };
-
-void () trigger_hurt;
 
 // function trigger_hurt
 // function number 597 begins at statement 16741
@@ -1547,17 +1495,15 @@ void () trigger_hurt;
 void () trigger_hurt = {
 
    InitTrigger ();
-   self.globaldef000124 = hurt_touch;
-   if ( !self.globaldef000408 ) {
+   self.touch = hurt_touch;
+   if ( !self.dmg ) {
 
-      self.globaldef000408 = MOVETYPE_FLY;
+      self.dmg = MOVETYPE_FLY;
 
    }
 
 };
 float globaldef003511 /* = 1.000 */;
-
-void () trigger_push_touch;
 
 // function trigger_push_touch
 // function number 598 begins at statement 16750
@@ -1630,31 +1576,31 @@ void () trigger_push_touch;
 
 void () trigger_push_touch = {
 
-   if ( (other.globaldef000107 == globaldef002184) ) {
+   if ( (other.classname == globaldef002184) ) {
 
-      other.globaldef000091 = ((self.globaldef000352 * self.globaldef000180) * MOVETYPE_BOUNCE);
+      other.velocity = ((self.speed * self.movedir) * MOVETYPE_BOUNCE);
 
    } else {
 
-      if ( (other.globaldef000130 > FALSE) ) {
+      if ( (other.health > FALSE) ) {
 
-         other.globaldef000091 = ((self.globaldef000352 * self.globaldef000180) * MOVETYPE_BOUNCE);
-         if ( ((other.globaldef000107 == globaldef001170) || (other.globaldef000107 == globaldef001171)) ) {
+         other.velocity = ((self.speed * self.movedir) * MOVETYPE_BOUNCE);
+         if ( ((other.classname == globaldef001170) || (other.classname == globaldef001171)) ) {
 
-            if ( (other.globaldef000374 < time) ) {
+            if ( (other.fly_sound < time) ) {
 
-               other.globaldef000374 = (time + globaldef001303);
+               other.fly_sound = (time + globaldef001303);
                sound (other,CHAN_AUTO,globaldef003513,TRUE,ATTN_NORM);
 
             }
 
          }
-         if ( (other.globaldef000107 == globaldef001171) ) {
+         if ( (other.classname == globaldef001171) ) {
 
-            if ( ((self.globaldef000181 < globaldef001488) && (self.globaldef000182 < globaldef001488)) ) {
+            if ( ((self.movedir < globaldef001488) && (self.movedir_y < globaldef001488)) ) {
 
-               other.globaldef000092 = (other.globaldef000092 + (globaldef000729 * func000249 ()));
-               other.globaldef000093 = (other.globaldef000093 + (globaldef000729 * func000249 ()));
+               other.velocity = (other.velocity + (globaldef000729 * func000249 ()));
+               other.velocity_y = (other.velocity_y + (globaldef000729 * func000249 ()));
 
             }
 
@@ -1663,7 +1609,7 @@ void () trigger_push_touch = {
       }
 
    }
-   if ( (self.globaldef000173 & globaldef003511) ) {
+   if ( (self.spawnflags & globaldef003511) ) {
 
       remove (self);
 
@@ -1671,8 +1617,6 @@ void () trigger_push_touch = {
 
 };
 string globaldef003513 /* = "ambience/windfly.wav" */;
-
-void () trigger_push;
 
 // function trigger_push
 // function number 599 begins at statement 16814
@@ -1696,17 +1640,15 @@ void () trigger_push = {
 
    InitTrigger ();
    precache_sound (globaldef003513);
-   self.globaldef000124 = trigger_push_touch;
-   self.globaldef000531 = func002295;
-   if ( !self.globaldef000352 ) {
+   self.touch = trigger_push_touch;
+   self.field000225 = func002295;
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef001302;
+      self.speed = globaldef001302;
 
    }
 
 };
-
-void () trigger_monsterjump_touch;
 
 // function trigger_monsterjump_touch
 // function number 600 begins at statement 16827
@@ -1745,24 +1687,22 @@ void () trigger_monsterjump_touch;
 
 void () trigger_monsterjump_touch = {
 
-   if ( ((other.globaldef000160 & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER) ) {
+   if ( ((other.flags & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER) ) {
 
       return ;
 
    }
-   other.globaldef000092 = (self.globaldef000181 * self.globaldef000352);
-   other.globaldef000093 = (self.globaldef000182 * self.globaldef000352);
-   if ( !(other.globaldef000160 & FL_ONGROUND) ) {
+   other.velocity = (self.movedir * self.speed);
+   other.velocity_y = (self.movedir_y * self.speed);
+   if ( !(other.flags & FL_ONGROUND) ) {
 
       return ;
 
    }
-   other.globaldef000160 = (other.globaldef000160 - FL_ONGROUND);
-   other.globaldef000094 = self.globaldef000430;
+   other.flags = (other.flags - FL_ONGROUND);
+   other.velocity_z = self.height;
 
 };
-
-void () trigger_monsterjump;
 
 // function trigger_monsterjump
 // function number 601 begins at statement 16857
@@ -1790,22 +1730,22 @@ void () trigger_monsterjump;
 
 void () trigger_monsterjump = {
 
-   if ( !self.globaldef000352 ) {
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef001343;
-
-   }
-   if ( !self.globaldef000430 ) {
-
-      self.globaldef000430 = globaldef001343;
+      self.speed = globaldef001343;
 
    }
-   if ( (self.globaldef000095 == VEC_ORIGIN) ) {
+   if ( !self.height ) {
 
-      self.globaldef000095 = globaldef003517;
+      self.height = globaldef001343;
+
+   }
+   if ( (self.angles == VEC_ORIGIN) ) {
+
+      self.angles = globaldef003517;
 
    }
    InitTrigger ();
-   self.globaldef000124 = trigger_monsterjump_touch;
+   self.touch = trigger_monsterjump_touch;
 
 };

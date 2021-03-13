@@ -1,8 +1,6 @@
 
 void () Demon_JumpTouch;
 
-void () demon1_stand1;
-
 // function demon1_stand1
 // function number 812 begins at statement 19095
 /*
@@ -16,8 +14,6 @@ void () demon1_stand1 = [ 0.000, demon1_stand2 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand2;
 
 // function demon1_stand2
 // function number 813 begins at statement 19098
@@ -33,8 +29,6 @@ void () demon1_stand2 = [ 1.000, demon1_stand3 ] {
 
 };
 
-void () demon1_stand3;
-
 // function demon1_stand3
 // function number 814 begins at statement 19101
 /*
@@ -48,8 +42,6 @@ void () demon1_stand3 = [ 2.000, demon1_stand4 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand4;
 
 // function demon1_stand4
 // function number 815 begins at statement 19104
@@ -65,8 +57,6 @@ void () demon1_stand4 = [ 3.000, demon1_stand5 ] {
 
 };
 
-void () demon1_stand5;
-
 // function demon1_stand5
 // function number 816 begins at statement 19107
 /*
@@ -80,8 +70,6 @@ void () demon1_stand5 = [ 4.000, demon1_stand6 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand6;
 
 // function demon1_stand6
 // function number 817 begins at statement 19110
@@ -97,8 +85,6 @@ void () demon1_stand6 = [ 5.000, demon1_stand7 ] {
 
 };
 
-void () demon1_stand7;
-
 // function demon1_stand7
 // function number 818 begins at statement 19113
 /*
@@ -112,8 +98,6 @@ void () demon1_stand7 = [ 6.000, demon1_stand8 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand8;
 
 // function demon1_stand8
 // function number 819 begins at statement 19116
@@ -129,8 +113,6 @@ void () demon1_stand8 = [ 7.000, demon1_stand9 ] {
 
 };
 
-void () demon1_stand9;
-
 // function demon1_stand9
 // function number 820 begins at statement 19119
 /*
@@ -144,8 +126,6 @@ void () demon1_stand9 = [ 8.000, demon1_stand10 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand10;
 
 // function demon1_stand10
 // function number 821 begins at statement 19122
@@ -161,8 +141,6 @@ void () demon1_stand10 = [ 9.000, demon1_stand11 ] {
 
 };
 
-void () demon1_stand11;
-
 // function demon1_stand11
 // function number 822 begins at statement 19125
 /*
@@ -176,8 +154,6 @@ void () demon1_stand11 = [ 10.000, demon1_stand12 ] {
    ai_stand ();
 
 };
-
-void () demon1_stand12;
 
 // function demon1_stand12
 // function number 823 begins at statement 19128
@@ -193,8 +169,6 @@ void () demon1_stand12 = [ 11.000, demon1_stand13 ] {
 
 };
 
-void () demon1_stand13;
-
 // function demon1_stand13
 // function number 824 begins at statement 19131
 /*
@@ -208,8 +182,6 @@ void () demon1_stand13 = [ 12.000, demon1_stand1 ] {
    ai_stand ();
 
 };
-
-void () demon1_walk1;
 
 // function demon1_walk1
 // function number 825 begins at statement 19134
@@ -239,8 +211,6 @@ void () demon1_walk1 = [ 13.000, demon1_walk2 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () demon1_walk2;
 string globaldef003844 /* = "demon/idle1.wav" */;
 
 // function demon1_walk2
@@ -258,8 +228,6 @@ void () demon1_walk2 = [ 14.000, demon1_walk3 ] {
 
 };
 
-void () demon1_walk3;
-
 // function demon1_walk3
 // function number 827 begins at statement 19151
 /*
@@ -274,8 +242,6 @@ void () demon1_walk3 = [ 15.000, demon1_walk4 ] {
    ai_walk (MOVETYPE_TOSS);
 
 };
-
-void () demon1_walk4;
 
 // function demon1_walk4
 // function number 828 begins at statement 19155
@@ -292,8 +258,6 @@ void () demon1_walk4 = [ 16.000, demon1_walk5 ] {
 
 };
 
-void () demon1_walk5;
-
 // function demon1_walk5
 // function number 829 begins at statement 19159
 /*
@@ -308,8 +272,6 @@ void () demon1_walk5 = [ 17.000, demon1_walk6 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () demon1_walk6;
 
 // function demon1_walk6
 // function number 830 begins at statement 19163
@@ -326,8 +288,6 @@ void () demon1_walk6 = [ 18.000, demon1_walk7 ] {
 
 };
 
-void () demon1_walk7;
-
 // function demon1_walk7
 // function number 831 begins at statement 19167
 /*
@@ -343,8 +303,6 @@ void () demon1_walk7 = [ 19.000, demon1_walk8 ] {
 
 };
 
-void () demon1_walk8;
-
 // function demon1_walk8
 // function number 832 begins at statement 19171
 /*
@@ -359,8 +317,6 @@ void () demon1_walk8 = [ 20.000, demon1_walk1 ] {
    ai_walk (MOVETYPE_BOUNCE);
 
 };
-
-void () demon1_run1;
 
 // function demon1_run1
 // function number 833 begins at statement 19175
@@ -391,8 +347,6 @@ void () demon1_run1 = [ 21.000, demon1_run2 ] {
 
 };
 
-void () demon1_run2;
-
 // function demon1_run2
 // function number 834 begins at statement 19188
 /*
@@ -407,8 +361,6 @@ void () demon1_run2 = [ 22.000, demon1_run3 ] {
    ai_run (globaldef000748);
 
 };
-
-void () demon1_run3;
 
 // function demon1_run3
 // function number 835 begins at statement 19192
@@ -425,8 +377,6 @@ void () demon1_run3 = [ 23.000, demon1_run4 ] {
 
 };
 
-void () demon1_run4;
-
 // function demon1_run4
 // function number 836 begins at statement 19196
 /*
@@ -441,8 +391,6 @@ void () demon1_run4 = [ 24.000, demon1_run5 ] {
    ai_run (globaldef001384);
 
 };
-
-void () demon1_run5;
 
 // function demon1_run5
 // function number 837 begins at statement 19200
@@ -459,8 +407,6 @@ void () demon1_run5 = [ 25.000, demon1_run6 ] {
 
 };
 
-void () demon1_run6;
-
 // function demon1_run6
 // function number 838 begins at statement 19204
 /*
@@ -476,8 +422,6 @@ void () demon1_run6 = [ 26.000, demon1_run1 ] {
 
 };
 
-void () demon1_jump1;
-
 // function demon1_jump1
 // function number 839 begins at statement 19208
 /*
@@ -491,8 +435,6 @@ void () demon1_jump1 = [ 27.000, demon1_jump2 ] {
    ai_face ();
 
 };
-
-void () demon1_jump2;
 
 // function demon1_jump2
 // function number 840 begins at statement 19211
@@ -508,8 +450,6 @@ void () demon1_jump2 = [ 28.000, demon1_jump3 ] {
 
 };
 
-void () demon1_jump3;
-
 // function demon1_jump3
 // function number 841 begins at statement 19214
 /*
@@ -523,8 +463,6 @@ void () demon1_jump3 = [ 29.000, demon1_jump4 ] {
    ai_face ();
 
 };
-
-void () demon1_jump4;
 
 // function demon1_jump4
 // function number 842 begins at statement 19217
@@ -557,19 +495,17 @@ void () demon1_jump4;
 void () demon1_jump4 = [ 30.000, demon1_jump5 ] {
 
    ai_face ();
-   self.globaldef000124 = Demon_JumpTouch;
-   makevectors (self.globaldef000095);
-   self.globaldef000086 = (self.globaldef000086 + TRUE);
-   self.globaldef000091 = ((v_forward * globaldef000723) + globaldef003862);
-   if ( (self.globaldef000160 & FL_ONGROUND) ) {
+   self.touch = Demon_JumpTouch;
+   makevectors (self.angles);
+   self.origin_z = (self.origin_z + TRUE);
+   self.velocity = ((v_forward * globaldef000723) + globaldef003862);
+   if ( (self.flags & FL_ONGROUND) ) {
 
-      self.globaldef000160 = (self.globaldef000160 - FL_ONGROUND);
+      self.flags = (self.flags - FL_ONGROUND);
 
    }
 
 };
-
-void () demon1_jump5;
 vector globaldef003862 /* = '0.000 0.000 250.000' */;
 
 // function demon1_jump5
@@ -584,8 +520,6 @@ void () demon1_jump5 = [ 31.000, demon1_jump6 ] {
 
 };
 
-void () demon1_jump6;
-
 // function demon1_jump6
 // function number 844 begins at statement 19242
 /*
@@ -597,8 +531,6 @@ void () demon1_jump6 = [ 32.000, demon1_jump7 ] {
 
 
 };
-
-void () demon1_jump7;
 
 // function demon1_jump7
 // function number 845 begins at statement 19244
@@ -612,8 +544,6 @@ void () demon1_jump7 = [ 33.000, demon1_jump8 ] {
 
 };
 
-void () demon1_jump8;
-
 // function demon1_jump8
 // function number 846 begins at statement 19246
 /*
@@ -625,8 +555,6 @@ void () demon1_jump8 = [ 34.000, demon1_jump9 ] {
 
 
 };
-
-void () demon1_jump9;
 
 // function demon1_jump9
 // function number 847 begins at statement 19248
@@ -640,8 +568,6 @@ void () demon1_jump9 = [ 35.000, demon1_jump10 ] {
 
 };
 
-void () demon1_jump10;
-
 // function demon1_jump10
 // function number 848 begins at statement 19250
 /*
@@ -654,11 +580,9 @@ void () demon1_jump10;
 
 void () demon1_jump10 = [ 36.000, demon1_jump1 ] {
 
-   self.globaldef000128 = (time + MOVETYPE_WALK);
+   self.nextthink = (time + MOVETYPE_WALK);
 
 };
-
-void () demon1_jump11;
 
 // function demon1_jump11
 // function number 849 begins at statement 19255
@@ -672,8 +596,6 @@ void () demon1_jump11 = [ 37.000, demon1_jump12 ] {
 
 };
 
-void () demon1_jump12;
-
 // function demon1_jump12
 // function number 850 begins at statement 19257
 /*
@@ -685,8 +607,6 @@ void () demon1_jump12 = [ 38.000, demon1_run1 ] {
 
 
 };
-
-void () demon1_atta1;
 
 // function demon1_atta1
 // function number 851 begins at statement 19259
@@ -703,8 +623,6 @@ void () demon1_atta1 = [ 54.000, demon1_atta2 ] {
 
 };
 
-void () demon1_atta2;
-
 // function demon1_atta2
 // function number 852 begins at statement 19263
 /*
@@ -719,8 +637,6 @@ void () demon1_atta2 = [ 55.000, demon1_atta3 ] {
    ai_charge (FALSE);
 
 };
-
-void () demon1_atta3;
 
 // function demon1_atta3
 // function number 853 begins at statement 19267
@@ -737,8 +653,6 @@ void () demon1_atta3 = [ 56.000, demon1_atta4 ] {
 
 };
 
-void () demon1_atta4;
-
 // function demon1_atta4
 // function number 854 begins at statement 19271
 /*
@@ -753,8 +667,6 @@ void () demon1_atta4 = [ 57.000, demon1_atta5 ] {
    ai_charge (TRUE);
 
 };
-
-void () demon1_atta5;
 
 // function demon1_atta5
 // function number 855 begins at statement 19275
@@ -774,8 +686,6 @@ void () demon1_atta5 = [ 58.000, demon1_atta6 ] {
 
 };
 
-void () demon1_atta6;
-
 // function demon1_atta6
 // function number 856 begins at statement 19281
 /*
@@ -790,8 +700,6 @@ void () demon1_atta6 = [ 59.000, demon1_atta7 ] {
    ai_charge (TRUE);
 
 };
-
-void () demon1_atta7;
 
 // function demon1_atta7
 // function number 857 begins at statement 19285
@@ -808,8 +716,6 @@ void () demon1_atta7 = [ 60.000, demon1_atta8 ] {
 
 };
 
-void () demon1_atta8;
-
 // function demon1_atta8
 // function number 858 begins at statement 19289
 /*
@@ -824,8 +730,6 @@ void () demon1_atta8 = [ 61.000, demon1_atta9 ] {
    ai_charge (FL_CLIENT);
 
 };
-
-void () demon1_atta9;
 
 // function demon1_atta9
 // function number 859 begins at statement 19293
@@ -842,8 +746,6 @@ void () demon1_atta9 = [ 62.000, demon1_atta10 ] {
 
 };
 
-void () demon1_atta10;
-
 // function demon1_atta10
 // function number 860 begins at statement 19297
 /*
@@ -858,8 +760,6 @@ void () demon1_atta10 = [ 63.000, demon1_atta11 ] {
    ai_charge (FL_SWIM);
 
 };
-
-void () demon1_atta11;
 
 // function demon1_atta11
 // function number 861 begins at statement 19301
@@ -876,8 +776,6 @@ void () demon1_atta11 = [ 64.000, demon1_atta12 ] {
 
 };
 
-void () demon1_atta12;
-
 // function demon1_atta12
 // function number 862 begins at statement 19305
 /*
@@ -892,8 +790,6 @@ void () demon1_atta12 = [ 65.000, demon1_atta13 ] {
    ai_charge (MOVETYPE_FLY);
 
 };
-
-void () demon1_atta13;
 
 // function demon1_atta13
 // function number 863 begins at statement 19309
@@ -910,8 +806,6 @@ void () demon1_atta13 = [ 66.000, demon1_atta14 ] {
 
 };
 
-void () demon1_atta14;
-
 // function demon1_atta14
 // function number 864 begins at statement 19313
 /*
@@ -926,8 +820,6 @@ void () demon1_atta14 = [ 67.000, demon1_atta15 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () demon1_atta15;
 
 // function demon1_atta15
 // function number 865 begins at statement 19317
@@ -944,8 +836,6 @@ void () demon1_atta15 = [ 68.000, demon1_run1 ] {
 
 };
 
-void () demon1_pain1;
-
 // function demon1_pain1
 // function number 866 begins at statement 19321
 /*
@@ -957,8 +847,6 @@ void () demon1_pain1 = [ 39.000, demon1_pain2 ] {
 
 
 };
-
-void () demon1_pain2;
 
 // function demon1_pain2
 // function number 867 begins at statement 19323
@@ -972,8 +860,6 @@ void () demon1_pain2 = [ 40.000, demon1_pain3 ] {
 
 };
 
-void () demon1_pain3;
-
 // function demon1_pain3
 // function number 868 begins at statement 19325
 /*
@@ -985,8 +871,6 @@ void () demon1_pain3 = [ 41.000, demon1_pain4 ] {
 
 
 };
-
-void () demon1_pain4;
 
 // function demon1_pain4
 // function number 869 begins at statement 19327
@@ -1000,8 +884,6 @@ void () demon1_pain4 = [ 42.000, demon1_pain5 ] {
 
 };
 
-void () demon1_pain5;
-
 // function demon1_pain5
 // function number 870 begins at statement 19329
 /*
@@ -1014,8 +896,6 @@ void () demon1_pain5 = [ 43.000, demon1_pain6 ] {
 
 };
 
-void () demon1_pain6;
-
 // function demon1_pain6
 // function number 871 begins at statement 19331
 /*
@@ -1027,8 +907,6 @@ void () demon1_pain6 = [ 44.000, demon1_run1 ] {
 
 
 };
-
-void (entity globaldef003892, float globaldef003893) demon1_pain;
 
 // function demon1_pain
 // function number 872 begins at statement 19333
@@ -1061,17 +939,17 @@ void (entity globaldef003892, float globaldef003893) demon1_pain;
 
 void (entity globaldef003892, float globaldef003893) demon1_pain = {
 
-   if ( (self.globaldef000124 == Demon_JumpTouch) ) {
+   if ( (self.touch == Demon_JumpTouch) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
    }
-   self.globaldef000362 = (time + TRUE);
+   self.pain_finished = (time + TRUE);
    sound (self,CHAN_VOICE,globaldef003894,TRUE,ATTN_NORM);
    if ( ((random () * globaldef001343) > globaldef003893) ) {
 
@@ -1082,8 +960,6 @@ void (entity globaldef003892, float globaldef003893) demon1_pain = {
 
 };
 string globaldef003894 /* = "demon/dpain1.wav" */;
-
-void () demon1_die1;
 
 // function demon1_die1
 // function number 873 begins at statement 19357
@@ -1103,8 +979,6 @@ void () demon1_die1 = [ 45.000, demon1_die2 ] {
    sound (self,CHAN_VOICE,globaldef003897,TRUE,ATTN_NORM);
 
 };
-
-void () demon1_die2;
 string globaldef003897 /* = "demon/ddeath.wav" */;
 
 // function demon1_die2
@@ -1119,8 +993,6 @@ void () demon1_die2 = [ 46.000, demon1_die3 ] {
 
 };
 
-void () demon1_die3;
-
 // function demon1_die3
 // function number 875 begins at statement 19367
 /*
@@ -1132,8 +1004,6 @@ void () demon1_die3 = [ 47.000, demon1_die4 ] {
 
 
 };
-
-void () demon1_die4;
 
 // function demon1_die4
 // function number 876 begins at statement 19369
@@ -1147,8 +1017,6 @@ void () demon1_die4 = [ 48.000, demon1_die5 ] {
 
 };
 
-void () demon1_die5;
-
 // function demon1_die5
 // function number 877 begins at statement 19371
 /*
@@ -1161,8 +1029,6 @@ void () demon1_die5 = [ 49.000, demon1_die6 ] {
 
 };
 
-void () demon1_die6;
-
 // function demon1_die6
 // function number 878 begins at statement 19373
 /*
@@ -1174,11 +1040,9 @@ void () demon1_die6;
 
 void () demon1_die6 = [ 50.000, demon1_die7 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () demon1_die7;
 
 // function demon1_die7
 // function number 879 begins at statement 19377
@@ -1192,8 +1056,6 @@ void () demon1_die7 = [ 51.000, demon1_die8 ] {
 
 };
 
-void () demon1_die8;
-
 // function demon1_die8
 // function number 880 begins at statement 19379
 /*
@@ -1206,8 +1068,6 @@ void () demon1_die8 = [ 52.000, demon1_die9 ] {
 
 };
 
-void () demon1_die9;
-
 // function demon1_die9
 // function number 881 begins at statement 19381
 /*
@@ -1219,8 +1079,6 @@ void () demon1_die9 = [ 53.000, demon1_die9 ] {
 
 
 };
-
-void () demon_die;
 
 // function demon_die
 // function number 882 begins at statement 19383
@@ -1257,13 +1115,13 @@ void () demon_die;
 
 void () demon_die = {
 
-   if ( (self.globaldef000130 < globaldef003820) ) {
+   if ( (self.health < globaldef003820) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef003906,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
+      ThrowHead (globaldef003906,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002432,self.health);
       return ;
 
    }
@@ -1271,8 +1129,6 @@ void () demon_die = {
 
 };
 string globaldef003906 /* = "progs/h_demon.mdl" */;
-
-void () Demon_MeleeAttack;
 
 // function Demon_MeleeAttack
 // function number 883 begins at statement 19411
@@ -1286,8 +1142,6 @@ void () Demon_MeleeAttack = {
    demon1_atta1 ();
 
 };
-
-void () monster_demon1;
 
 // function monster_demon1
 // function number 884 begins at statement 19413
@@ -1359,25 +1213,24 @@ void () monster_demon1 = {
    precache_sound (globaldef003894);
    precache_sound (globaldef003844);
    precache_sound (globaldef001662);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef003909);
    setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef000130 = globaldef000523;
-   self.globaldef000344 = demon1_stand1;
-   self.globaldef000345 = demon1_walk1;
-   self.globaldef000346 = demon1_run1;
-   self.globaldef000350 = demon_die;
-   self.globaldef000348 = Demon_MeleeAttack;
-   self.globaldef000347 = demon1_jump1;
-   self.globaldef000349 = demon1_pain;
+   self.health = globaldef000523;
+   self.th_stand = demon1_stand1;
+   self.th_walk = demon1_walk1;
+   self.th_run = demon1_run1;
+   self.th_die = demon_die;
+   self.th_melee = Demon_MeleeAttack;
+   self.th_missile = demon1_jump1;
+   self.th_pain = demon1_pain;
    walkmonster_start ();
 
 };
 string globaldef003909 /* = "progs/demon.mdl" */;
 string globaldef003910 /* = "demon/dhit2.wav" */;
 string globaldef003911 /* = "demon/djump.wav" */;
-float () CheckDemonMelee;
 
 // function CheckDemonMelee
 // function number 885 begins at statement 19462
@@ -1394,14 +1247,13 @@ float () CheckDemonMelee = {
 
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      self.globaldef000355 = AS_MELEE;
+      self.attack_state = AS_MELEE;
       return ( TRUE );
 
    }
    return ( FALSE );
 
 };
-float () CheckDemonJump;
 
 // function CheckDemonJump
 // function number 886 begins at statement 19469
@@ -1462,17 +1314,17 @@ float () CheckDemonJump = {
    local vector dist;
    local float d;
 
-   if ( ((self.globaldef000086 + self.globaldef000115) > ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002244 * self.globaldef000159.globaldef000123))) ) {
+   if ( ((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (globaldef002244 * self.enemy.size_z))) ) {
 
       return ( FALSE );
 
    }
-   if ( ((self.globaldef000086 + self.globaldef000119) < ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002243 * self.globaldef000159.globaldef000123))) ) {
+   if ( ((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (globaldef002243 * self.enemy.size_z))) ) {
 
       return ( FALSE );
 
    }
-   dist = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   dist = (self.enemy.origin - self.origin);
    globaldef003917 = FALSE;
    d = vlen (dist);
    if ( (d < globaldef001335) ) {
@@ -1521,13 +1373,13 @@ float () DemonCheckAttack = {
 
    if ( CheckDemonMelee () ) {
 
-      self.globaldef000355 = AS_MELEE;
+      self.attack_state = AS_MELEE;
       return ( TRUE );
 
    }
    if ( CheckDemonJump () ) {
 
-      self.globaldef000355 = AS_MISSILE;
+      self.attack_state = AS_MISSILE;
       sound (self,CHAN_VOICE,globaldef003911,TRUE,ATTN_NORM);
       return ( TRUE );
 
@@ -1596,23 +1448,23 @@ void (float globaldef003923) Demon_Melee = {
    local vector delta;
 
    ai_face ();
-   walkmove (self.globaldef000169,globaldef000774);
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   walkmove (self.ideal_yaw,globaldef000774);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
-   if ( !CanDamage (self.globaldef000159,self) ) {
+   if ( !CanDamage (self.enemy,self) ) {
 
       return ;
 
    }
    sound (self,CHAN_WEAPON,globaldef003910,TRUE,ATTN_NORM);
    ldmg = (MOVETYPE_BOUNCE + (MOVETYPE_FLY * random ()));
-   T_Damage (self.globaldef000159,self,self,ldmg);
-   makevectors (self.globaldef000095);
-   func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),(globaldef003923 * v_right));
+   T_Damage (self.enemy,self,self,ldmg);
+   makevectors (self.angles);
+   func000253 ((self.origin + (v_forward * FL_INWATER)),(globaldef003923 * v_right));
 
 };
 
@@ -1668,14 +1520,14 @@ void () Demon_JumpTouch = {
 
    local float ldmg;
 
-   if ( (self.globaldef000130 <= FALSE) ) {
+   if ( (self.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( other.globaldef000141 ) {
+   if ( other.takedamage ) {
 
-      if ( (vlen (self.globaldef000091) > globaldef002007) ) {
+      if ( (vlen (self.velocity) > globaldef002007) ) {
 
          ldmg = (globaldef000729 + (MOVETYPE_BOUNCE * random ()));
          T_Damage (other,self,self,ldmg);
@@ -1685,18 +1537,18 @@ void () Demon_JumpTouch = {
    }
    if ( !checkbottom (self) ) {
 
-      if ( (self.globaldef000160 & FL_ONGROUND) ) {
+      if ( (self.flags & FL_ONGROUND) ) {
 
-         self.globaldef000124 = SUB_Null;
-         self.globaldef000126 = demon1_jump1;
-         self.globaldef000128 = (time + globaldef001488);
+         self.touch = SUB_Null;
+         self.think = demon1_jump1;
+         self.nextthink = (time + globaldef001488);
 
       }
       return ;
 
    }
-   self.globaldef000124 = SUB_Null;
-   self.globaldef000126 = demon1_jump11;
-   self.globaldef000128 = (time + globaldef001488);
+   self.touch = SUB_Null;
+   self.think = demon1_jump11;
+   self.nextthink = (time + globaldef001488);
 
 };

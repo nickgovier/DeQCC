@@ -9,8 +9,6 @@ void () finale_3;
 void () finale_4;
 entity globaldef005566;
 
-void () old_idle1;
-
 // function old_idle1
 // function number 2183 begins at statement 26829
 /*
@@ -22,8 +20,6 @@ void () old_idle1 = [ 0.000, old_idle2 ] {
 
 
 };
-
-void () old_idle2;
 
 // function old_idle2
 // function number 2184 begins at statement 26831
@@ -37,8 +33,6 @@ void () old_idle2 = [ 1.000, old_idle3 ] {
 
 };
 
-void () old_idle3;
-
 // function old_idle3
 // function number 2185 begins at statement 26833
 /*
@@ -50,8 +44,6 @@ void () old_idle3 = [ 2.000, old_idle4 ] {
 
 
 };
-
-void () old_idle4;
 
 // function old_idle4
 // function number 2186 begins at statement 26835
@@ -65,8 +57,6 @@ void () old_idle4 = [ 3.000, old_idle5 ] {
 
 };
 
-void () old_idle5;
-
 // function old_idle5
 // function number 2187 begins at statement 26837
 /*
@@ -78,8 +68,6 @@ void () old_idle5 = [ 4.000, old_idle6 ] {
 
 
 };
-
-void () old_idle6;
 
 // function old_idle6
 // function number 2188 begins at statement 26839
@@ -93,8 +81,6 @@ void () old_idle6 = [ 5.000, old_idle7 ] {
 
 };
 
-void () old_idle7;
-
 // function old_idle7
 // function number 2189 begins at statement 26841
 /*
@@ -106,8 +92,6 @@ void () old_idle7 = [ 6.000, old_idle8 ] {
 
 
 };
-
-void () old_idle8;
 
 // function old_idle8
 // function number 2190 begins at statement 26843
@@ -121,8 +105,6 @@ void () old_idle8 = [ 7.000, old_idle9 ] {
 
 };
 
-void () old_idle9;
-
 // function old_idle9
 // function number 2191 begins at statement 26845
 /*
@@ -134,8 +116,6 @@ void () old_idle9 = [ 8.000, old_idle10 ] {
 
 
 };
-
-void () old_idle10;
 
 // function old_idle10
 // function number 2192 begins at statement 26847
@@ -149,8 +129,6 @@ void () old_idle10 = [ 9.000, old_idle11 ] {
 
 };
 
-void () old_idle11;
-
 // function old_idle11
 // function number 2193 begins at statement 26849
 /*
@@ -162,8 +140,6 @@ void () old_idle11 = [ 10.000, old_idle12 ] {
 
 
 };
-
-void () old_idle12;
 
 // function old_idle12
 // function number 2194 begins at statement 26851
@@ -177,8 +153,6 @@ void () old_idle12 = [ 11.000, old_idle13 ] {
 
 };
 
-void () old_idle13;
-
 // function old_idle13
 // function number 2195 begins at statement 26853
 /*
@@ -190,8 +164,6 @@ void () old_idle13 = [ 12.000, old_idle14 ] {
 
 
 };
-
-void () old_idle14;
 
 // function old_idle14
 // function number 2196 begins at statement 26855
@@ -205,8 +177,6 @@ void () old_idle14 = [ 13.000, old_idle15 ] {
 
 };
 
-void () old_idle15;
-
 // function old_idle15
 // function number 2197 begins at statement 26857
 /*
@@ -218,8 +188,6 @@ void () old_idle15 = [ 14.000, old_idle16 ] {
 
 
 };
-
-void () old_idle16;
 
 // function old_idle16
 // function number 2198 begins at statement 26859
@@ -233,8 +201,6 @@ void () old_idle16 = [ 15.000, old_idle17 ] {
 
 };
 
-void () old_idle17;
-
 // function old_idle17
 // function number 2199 begins at statement 26861
 /*
@@ -246,8 +212,6 @@ void () old_idle17 = [ 16.000, old_idle18 ] {
 
 
 };
-
-void () old_idle18;
 
 // function old_idle18
 // function number 2200 begins at statement 26863
@@ -261,8 +225,6 @@ void () old_idle18 = [ 17.000, old_idle19 ] {
 
 };
 
-void () old_idle19;
-
 // function old_idle19
 // function number 2201 begins at statement 26865
 /*
@@ -274,8 +236,6 @@ void () old_idle19 = [ 18.000, old_idle20 ] {
 
 
 };
-
-void () old_idle20;
 
 // function old_idle20
 // function number 2202 begins at statement 26867
@@ -289,8 +249,6 @@ void () old_idle20 = [ 19.000, old_idle21 ] {
 
 };
 
-void () old_idle21;
-
 // function old_idle21
 // function number 2203 begins at statement 26869
 /*
@@ -302,8 +260,6 @@ void () old_idle21 = [ 20.000, old_idle22 ] {
 
 
 };
-
-void () old_idle22;
 
 // function old_idle22
 // function number 2204 begins at statement 26871
@@ -317,8 +273,6 @@ void () old_idle22 = [ 21.000, old_idle23 ] {
 
 };
 
-void () old_idle23;
-
 // function old_idle23
 // function number 2205 begins at statement 26873
 /*
@@ -330,8 +284,6 @@ void () old_idle23 = [ 22.000, old_idle24 ] {
 
 
 };
-
-void () old_idle24;
 
 // function old_idle24
 // function number 2206 begins at statement 26875
@@ -345,8 +297,6 @@ void () old_idle24 = [ 23.000, old_idle25 ] {
 
 };
 
-void () old_idle25;
-
 // function old_idle25
 // function number 2207 begins at statement 26877
 /*
@@ -358,8 +308,6 @@ void () old_idle25 = [ 24.000, old_idle26 ] {
 
 
 };
-
-void () old_idle26;
 
 // function old_idle26
 // function number 2208 begins at statement 26879
@@ -373,8 +321,6 @@ void () old_idle26 = [ 25.000, old_idle27 ] {
 
 };
 
-void () old_idle27;
-
 // function old_idle27
 // function number 2209 begins at statement 26881
 /*
@@ -386,8 +332,6 @@ void () old_idle27 = [ 26.000, old_idle28 ] {
 
 
 };
-
-void () old_idle28;
 
 // function old_idle28
 // function number 2210 begins at statement 26883
@@ -401,8 +345,6 @@ void () old_idle28 = [ 27.000, old_idle29 ] {
 
 };
 
-void () old_idle29;
-
 // function old_idle29
 // function number 2211 begins at statement 26885
 /*
@@ -414,8 +356,6 @@ void () old_idle29 = [ 28.000, old_idle30 ] {
 
 
 };
-
-void () old_idle30;
 
 // function old_idle30
 // function number 2212 begins at statement 26887
@@ -429,8 +369,6 @@ void () old_idle30 = [ 29.000, old_idle31 ] {
 
 };
 
-void () old_idle31;
-
 // function old_idle31
 // function number 2213 begins at statement 26889
 /*
@@ -442,8 +380,6 @@ void () old_idle31 = [ 30.000, old_idle32 ] {
 
 
 };
-
-void () old_idle32;
 
 // function old_idle32
 // function number 2214 begins at statement 26891
@@ -457,8 +393,6 @@ void () old_idle32 = [ 31.000, old_idle33 ] {
 
 };
 
-void () old_idle33;
-
 // function old_idle33
 // function number 2215 begins at statement 26893
 /*
@@ -470,8 +404,6 @@ void () old_idle33 = [ 32.000, old_idle34 ] {
 
 
 };
-
-void () old_idle34;
 
 // function old_idle34
 // function number 2216 begins at statement 26895
@@ -485,8 +417,6 @@ void () old_idle34 = [ 33.000, old_idle35 ] {
 
 };
 
-void () old_idle35;
-
 // function old_idle35
 // function number 2217 begins at statement 26897
 /*
@@ -498,8 +428,6 @@ void () old_idle35 = [ 34.000, old_idle36 ] {
 
 
 };
-
-void () old_idle36;
 
 // function old_idle36
 // function number 2218 begins at statement 26899
@@ -513,8 +441,6 @@ void () old_idle36 = [ 35.000, old_idle37 ] {
 
 };
 
-void () old_idle37;
-
 // function old_idle37
 // function number 2219 begins at statement 26901
 /*
@@ -526,8 +452,6 @@ void () old_idle37 = [ 36.000, old_idle38 ] {
 
 
 };
-
-void () old_idle38;
 
 // function old_idle38
 // function number 2220 begins at statement 26903
@@ -541,8 +465,6 @@ void () old_idle38 = [ 37.000, old_idle39 ] {
 
 };
 
-void () old_idle39;
-
 // function old_idle39
 // function number 2221 begins at statement 26905
 /*
@@ -554,8 +476,6 @@ void () old_idle39 = [ 38.000, old_idle40 ] {
 
 
 };
-
-void () old_idle40;
 
 // function old_idle40
 // function number 2222 begins at statement 26907
@@ -569,8 +489,6 @@ void () old_idle40 = [ 39.000, old_idle41 ] {
 
 };
 
-void () old_idle41;
-
 // function old_idle41
 // function number 2223 begins at statement 26909
 /*
@@ -582,8 +500,6 @@ void () old_idle41 = [ 40.000, old_idle42 ] {
 
 
 };
-
-void () old_idle42;
 
 // function old_idle42
 // function number 2224 begins at statement 26911
@@ -597,8 +513,6 @@ void () old_idle42 = [ 41.000, old_idle43 ] {
 
 };
 
-void () old_idle43;
-
 // function old_idle43
 // function number 2225 begins at statement 26913
 /*
@@ -610,8 +524,6 @@ void () old_idle43 = [ 42.000, old_idle44 ] {
 
 
 };
-
-void () old_idle44;
 
 // function old_idle44
 // function number 2226 begins at statement 26915
@@ -625,8 +537,6 @@ void () old_idle44 = [ 43.000, old_idle45 ] {
 
 };
 
-void () old_idle45;
-
 // function old_idle45
 // function number 2227 begins at statement 26917
 /*
@@ -639,8 +549,6 @@ void () old_idle45 = [ 44.000, old_idle46 ] {
 
 };
 
-void () old_idle46;
-
 // function old_idle46
 // function number 2228 begins at statement 26919
 /*
@@ -652,8 +560,6 @@ void () old_idle46 = [ 45.000, old_idle1 ] {
 
 
 };
-
-void () old_thrash1;
 
 // function old_thrash1
 // function number 2229 begins at statement 26921
@@ -671,8 +577,6 @@ void () old_thrash1 = [ 46.000, old_thrash2 ] {
 
 };
 
-void () old_thrash2;
-
 // function old_thrash2
 // function number 2230 begins at statement 26926
 /*
@@ -688,8 +592,6 @@ void () old_thrash2 = [ 47.000, old_thrash3 ] {
    lightstyle (FALSE,globaldef005616);
 
 };
-
-void () old_thrash3;
 string globaldef005616 /* = "k" */;
 
 // function old_thrash3
@@ -708,8 +610,6 @@ void () old_thrash3 = [ 48.000, old_thrash4 ] {
 
 };
 
-void () old_thrash4;
-
 // function old_thrash4
 // function number 2232 begins at statement 26936
 /*
@@ -725,8 +625,6 @@ void () old_thrash4 = [ 49.000, old_thrash5 ] {
    lightstyle (FALSE,globaldef005619);
 
 };
-
-void () old_thrash5;
 string globaldef005619 /* = "i" */;
 
 // function old_thrash5
@@ -744,8 +642,6 @@ void () old_thrash5 = [ 50.000, old_thrash6 ] {
    lightstyle (FALSE,globaldef005621);
 
 };
-
-void () old_thrash6;
 string globaldef005621 /* = "g" */;
 
 // function old_thrash6
@@ -763,8 +659,6 @@ void () old_thrash6 = [ 51.000, old_thrash7 ] {
    lightstyle (FALSE,globaldef005623);
 
 };
-
-void () old_thrash7;
 string globaldef005623 /* = "e" */;
 
 // function old_thrash7
@@ -782,8 +676,6 @@ void () old_thrash7 = [ 52.000, old_thrash8 ] {
    lightstyle (FALSE,globaldef005625);
 
 };
-
-void () old_thrash8;
 string globaldef005625 /* = "c" */;
 
 // function old_thrash8
@@ -802,8 +694,6 @@ void () old_thrash8 = [ 53.000, old_thrash9 ] {
 
 };
 
-void () old_thrash9;
-
 // function old_thrash9
 // function number 2237 begins at statement 26961
 /*
@@ -819,8 +709,6 @@ void () old_thrash9 = [ 54.000, old_thrash10 ] {
    lightstyle (FALSE,globaldef005625);
 
 };
-
-void () old_thrash10;
 
 // function old_thrash10
 // function number 2238 begins at statement 26966
@@ -838,8 +726,6 @@ void () old_thrash10 = [ 55.000, old_thrash11 ] {
 
 };
 
-void () old_thrash11;
-
 // function old_thrash11
 // function number 2239 begins at statement 26971
 /*
@@ -855,8 +741,6 @@ void () old_thrash11 = [ 56.000, old_thrash12 ] {
    lightstyle (FALSE,globaldef005621);
 
 };
-
-void () old_thrash12;
 
 // function old_thrash12
 // function number 2240 begins at statement 26976
@@ -874,8 +758,6 @@ void () old_thrash12 = [ 57.000, old_thrash13 ] {
 
 };
 
-void () old_thrash13;
-
 // function old_thrash13
 // function number 2241 begins at statement 26981
 /*
@@ -892,8 +774,6 @@ void () old_thrash13 = [ 59.000, old_thrash14 ] {
 
 };
 
-void () old_thrash14;
-
 // function old_thrash14
 // function number 2242 begins at statement 26986
 /*
@@ -909,8 +789,6 @@ void () old_thrash14 = [ 60.000, old_thrash15 ] {
    lightstyle (FALSE,globaldef002440);
 
 };
-
-void () old_thrash15;
 
 // function old_thrash15
 // function number 2243 begins at statement 26991
@@ -934,16 +812,14 @@ void () old_thrash15;
 void () old_thrash15 = [ 61.000, old_thrash16 ] {
 
    lightstyle (FALSE,globaldef002440);
-   self.globaldef000409 = (self.globaldef000409 + TRUE);
-   if ( (self.globaldef000409 != MOVETYPE_WALK) ) {
+   self.cnt = (self.cnt + TRUE);
+   if ( (self.cnt != MOVETYPE_WALK) ) {
 
-      self.globaldef000126 = old_thrash1;
+      self.think = old_thrash1;
 
    }
 
 };
-
-void () old_thrash16;
 
 // function old_thrash16
 // function number 2244 begins at statement 27005
@@ -961,8 +837,6 @@ void () old_thrash16 = [ 62.000, old_thrash17 ] {
 
 };
 
-void () old_thrash17;
-
 // function old_thrash17
 // function number 2245 begins at statement 27010
 /*
@@ -979,8 +853,6 @@ void () old_thrash17 = [ 63.000, old_thrash18 ] {
 
 };
 
-void () old_thrash18;
-
 // function old_thrash18
 // function number 2246 begins at statement 27015
 /*
@@ -996,8 +868,6 @@ void () old_thrash18 = [ 64.000, old_thrash19 ] {
    lightstyle (FALSE,globaldef005637);
 
 };
-
-void () old_thrash19;
 string globaldef005637 /* = "b" */;
 
 // function old_thrash19
@@ -1015,8 +885,6 @@ void () old_thrash19 = [ 65.000, old_thrash20 ] {
    lightstyle (FALSE,globaldef002453);
 
 };
-
-void () old_thrash20;
 
 // function old_thrash20
 // function number 2248 begins at statement 27025
@@ -1122,13 +990,13 @@ void () finale_1 = {
 
    globaldef002864 = (time + globaldef005642);
    globaldef002863 = TRUE;
-   pos = find (world,globaldef000107,globaldef002869);
+   pos = find (world,classname,globaldef002869);
    if ( !pos ) {
 
       error (globaldef005643);
 
    }
-   pl = find (world,globaldef000107,globaldef005644);
+   pl = find (world,classname,globaldef005644);
    if ( !pl ) {
 
       error (globaldef005645);
@@ -1137,26 +1005,26 @@ void () finale_1 = {
    remove (pl);
    WriteByte (MSG_ALL,SVC_FINALE);
    WriteString (MSG_ALL,globaldef001466);
-   pl = find (world,globaldef000107,globaldef001170);
+   pl = find (world,classname,globaldef001170);
    while ( (pl != world) ) {
 
-      pl.globaldef000144 = VEC_ORIGIN;
-      other.globaldef000153 = pos.globaldef000383;
-      pl.globaldef000095 = pos.globaldef000383;
-      pl.globaldef000152 = TRUE;
-      pl.globaldef000339 = self.globaldef000339;
-      pl.globaldef000128 = (time + globaldef000522);
-      pl.globaldef000141 = DAMAGE_NO;
-      pl.globaldef000082 = SOLID_NOT;
-      pl.globaldef000081 = MOVETYPE_NONE;
-      pl.globaldef000071 = FALSE;
-      setorigin (pl,pos.globaldef000083);
-      pl = find (pl,globaldef000107,globaldef001170);
+      pl.view_ofs = VEC_ORIGIN;
+      other.v_angle = pos.mangle;
+      pl.angles = pos.mangle;
+      pl.fixangle = TRUE;
+      pl.map = self.map;
+      pl.nextthink = (time + globaldef000522);
+      pl.takedamage = DAMAGE_NO;
+      pl.solid = SOLID_NOT;
+      pl.movetype = MOVETYPE_NONE;
+      pl.modelindex = FALSE;
+      setorigin (pl,pos.origin);
+      pl = find (pl,classname,globaldef001170);
 
    }
    timer = spawn ();
-   timer.globaldef000128 = (time + TRUE);
-   timer.globaldef000126 = finale_2;
+   timer.nextthink = (time + TRUE);
+   timer.think = finale_2;
 
 };
 float globaldef005642 /* = 10000000.000 */;
@@ -1203,15 +1071,15 @@ void () finale_2 = {
 
    local vector o;
 
-   o = (globaldef005566.globaldef000083 - globaldef005650);
+   o = (globaldef005566.origin - globaldef005650);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_TELEPORT);
    WriteCoord (MSG_BROADCAST,o);
    WriteCoord (MSG_BROADCAST,globaldef005648);
    WriteCoord (MSG_BROADCAST,globaldef005649);
    sound (globaldef005566,CHAN_VOICE,globaldef002399,TRUE,ATTN_NORM);
-   self.globaldef000128 = (time + FL_SWIM);
-   self.globaldef000126 = finale_3;
+   self.nextthink = (time + FL_SWIM);
+   self.think = finale_3;
 
 };
 vector globaldef005650 /* = '0.000 100.000 0.000' */;
@@ -1235,7 +1103,7 @@ vector globaldef005650 /* = '0.000 100.000 0.000' */;
 
 void () finale_3 = {
 
-   globaldef005566.globaldef000126 = old_thrash1;
+   globaldef005566.think = old_thrash1;
    sound (globaldef005566,CHAN_VOICE,globaldef005651,TRUE,ATTN_NORM);
    lightstyle (FALSE,globaldef005652);
 
@@ -1345,7 +1213,7 @@ void () finale_4 = {
    local entity n;
 
    sound (self,CHAN_VOICE,globaldef005662,TRUE,ATTN_NORM);
-   oldo = self.globaldef000083;
+   oldo = self.origin;
    z = FL_INWATER;
    while ( (z <= globaldef004712) ) {
 
@@ -1355,9 +1223,9 @@ void () finale_4 = {
          y = globaldef005663;
          while ( (y <= FL_GODMODE) ) {
 
-            self.globaldef000084 = (oldo_x + x);
-            self.globaldef000085 = (globaldef005655 + y);
-            self.globaldef000086 = (globaldef005656 + z);
+            self.origin = (oldo_x + x);
+            self.origin_y = (globaldef005655 + y);
+            self.origin_z = (globaldef005656 + z);
             r = random ();
             if ( (r < globaldef001588) ) {
 
@@ -1391,8 +1259,8 @@ void () finale_4 = {
    setmodel (n,globaldef002429);
    oldo = (oldo - globaldef005666);
    setorigin (n,oldo);
-   n.globaldef000095 = globaldef005667;
-   n.globaldef000109 = TRUE;
+   n.angles = globaldef005667;
+   n.frame = TRUE;
    remove (self);
    WriteByte (MSG_ALL,SVC_CDTRACK);
    WriteByte (MSG_ALL,MOVETYPE_WALK);
@@ -1407,8 +1275,6 @@ string globaldef005665 /* = "Congratulations and well done! You have\nbeaten the
 vector globaldef005666 /* = '32.000 264.000 0.000' */;
 vector globaldef005667 /* = '0.000 290.000 0.000' */;
 
-void () nopain;
-
 // function nopain
 // function number 2253 begins at statement 27234
 /*
@@ -1419,12 +1285,10 @@ void () nopain;
 
 void () nopain = {
 
-   self.globaldef000130 = globaldef005669;
+   self.health = globaldef005669;
 
 };
 float globaldef005669 /* = 40000.000 */;
-
-void () monster_oldone;
 
 // function monster_oldone
 // function number 2254 begins at statement 27237
@@ -1486,16 +1350,16 @@ void () monster_oldone = {
    precache_sound2 (globaldef005672);
    precache_sound2 (globaldef005673);
    precache_sound2 (globaldef005662);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005671);
    setsize (self,globaldef005674,globaldef005675);
-   self.globaldef000130 = globaldef005669;
-   self.globaldef000126 = old_idle1;
-   self.globaldef000128 = (time + globaldef001488);
-   self.globaldef000141 = DAMAGE_YES;
-   self.globaldef000349 = nopain;
-   self.globaldef000350 = finale_1;
+   self.health = globaldef005669;
+   self.think = old_idle1;
+   self.nextthink = (time + globaldef001488);
+   self.takedamage = DAMAGE_YES;
+   self.th_pain = nopain;
+   self.th_die = finale_1;
    globaldef005566 = self;
    total_monsters = (total_monsters + TRUE);
 

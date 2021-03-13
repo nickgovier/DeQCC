@@ -6,8 +6,6 @@ void () hknight_run1;
 
 void () hk_idle_sound;
 
-void (float globaldef005046) hknight_shot;
-
 // function hknight_shot
 // function number 1747 begins at statement 24496
 /*
@@ -71,24 +69,22 @@ void (float globaldef005046) hknight_shot = {
    local vector org;
    local vector vec;
 
-   offang = vectoangles ((self.globaldef000159.globaldef000083 - self.globaldef000083));
+   offang = vectoangles ((self.enemy.origin - self.origin));
    globaldef005049 = (globaldef005049 + (globaldef005046 * MOVETYPE_TOSS));
    makevectors (offang);
-   org = (((self.globaldef000083 + self.globaldef000112) + (self.globaldef000120 * globaldef000522)) + (v_forward * globaldef001384));
+   org = (((self.origin + self.mins) + (self.size * globaldef000522)) + (v_forward * globaldef001384));
    vec = normalize (v_forward);
    globaldef005058 = ((FALSE - globaldef005058) + ((random () - globaldef000522) * globaldef001488));
    launch_spike (org,vec);
-   newmis.globaldef000107 = globaldef002219;
+   newmis.classname = globaldef002219;
    setmodel (newmis,globaldef005059);
    setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   newmis.globaldef000091 = (vec * globaldef000523);
+   newmis.velocity = (vec * globaldef000523);
    sound (self,CHAN_WEAPON,globaldef005060,TRUE,ATTN_NORM);
 
 };
 string globaldef005059 /* = "progs/k_spike.mdl" */;
 string globaldef005060 /* = "hknight/attack1.wav" */;
-
-void () CheckForCharge;
 
 // function CheckForCharge
 // function number 1748 begins at statement 24548
@@ -131,17 +127,17 @@ void () CheckForCharge = {
       return ;
 
    }
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ;
 
    }
-   if ( (fabs ((self.globaldef000086 - self.globaldef000159.globaldef000086)) > globaldef001384) ) {
+   if ( (fabs ((self.origin_z - self.enemy.origin_z)) > globaldef001384) ) {
 
       return ;
 
    }
-   if ( (vlen ((self.globaldef000083 - self.globaldef000159.globaldef000083)) < globaldef001439) ) {
+   if ( (vlen ((self.origin - self.enemy.origin)) < globaldef001439) ) {
 
       return ;
 
@@ -150,8 +146,6 @@ void () CheckForCharge = {
    hknight_char_a1 ();
 
 };
-
-void () CheckContinueCharge;
 
 // function CheckContinueCharge
 // function number 1749 begins at statement 24577
@@ -184,7 +178,7 @@ void () CheckContinueCharge;
 
 void () CheckContinueCharge = {
 
-   if ( (time > self.globaldef000361) ) {
+   if ( (time > self.attack_finished) ) {
 
       SUB_AttackFinished (MOVETYPE_WALK);
       hknight_run1 ();
@@ -203,8 +197,6 @@ void () CheckContinueCharge = {
 
 };
 
-void () hknight_stand1;
-
 // function hknight_stand1
 // function number 1750 begins at statement 24601
 /*
@@ -218,8 +210,6 @@ void () hknight_stand1 = [ 0.000, hknight_stand2 ] {
    ai_stand ();
 
 };
-
-void () hknight_stand2;
 
 // function hknight_stand2
 // function number 1751 begins at statement 24604
@@ -235,8 +225,6 @@ void () hknight_stand2 = [ 1.000, hknight_stand3 ] {
 
 };
 
-void () hknight_stand3;
-
 // function hknight_stand3
 // function number 1752 begins at statement 24607
 /*
@@ -250,8 +238,6 @@ void () hknight_stand3 = [ 2.000, hknight_stand4 ] {
    ai_stand ();
 
 };
-
-void () hknight_stand4;
 
 // function hknight_stand4
 // function number 1753 begins at statement 24610
@@ -267,8 +253,6 @@ void () hknight_stand4 = [ 3.000, hknight_stand5 ] {
 
 };
 
-void () hknight_stand5;
-
 // function hknight_stand5
 // function number 1754 begins at statement 24613
 /*
@@ -282,8 +266,6 @@ void () hknight_stand5 = [ 4.000, hknight_stand6 ] {
    ai_stand ();
 
 };
-
-void () hknight_stand6;
 
 // function hknight_stand6
 // function number 1755 begins at statement 24616
@@ -299,8 +281,6 @@ void () hknight_stand6 = [ 5.000, hknight_stand7 ] {
 
 };
 
-void () hknight_stand7;
-
 // function hknight_stand7
 // function number 1756 begins at statement 24619
 /*
@@ -314,8 +294,6 @@ void () hknight_stand7 = [ 6.000, hknight_stand8 ] {
    ai_stand ();
 
 };
-
-void () hknight_stand8;
 
 // function hknight_stand8
 // function number 1757 begins at statement 24622
@@ -331,8 +309,6 @@ void () hknight_stand8 = [ 7.000, hknight_stand9 ] {
 
 };
 
-void () hknight_stand9;
-
 // function hknight_stand9
 // function number 1758 begins at statement 24625
 /*
@@ -346,8 +322,6 @@ void () hknight_stand9 = [ 8.000, hknight_stand1 ] {
    ai_stand ();
 
 };
-
-void () hknight_walk1;
 
 // function hknight_walk1
 // function number 1759 begins at statement 24628
@@ -366,8 +340,6 @@ void () hknight_walk1 = [ 9.000, hknight_walk2 ] {
 
 };
 
-void () hknight_walk2;
-
 // function hknight_walk2
 // function number 1760 begins at statement 24633
 /*
@@ -382,8 +354,6 @@ void () hknight_walk2 = [ 10.000, hknight_walk3 ] {
    ai_walk (MOVETYPE_FLY);
 
 };
-
-void () hknight_walk3;
 
 // function hknight_walk3
 // function number 1761 begins at statement 24637
@@ -400,8 +370,6 @@ void () hknight_walk3 = [ 11.000, hknight_walk4 ] {
 
 };
 
-void () hknight_walk4;
-
 // function hknight_walk4
 // function number 1762 begins at statement 24641
 /*
@@ -416,8 +384,6 @@ void () hknight_walk4 = [ 12.000, hknight_walk5 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () hknight_walk5;
 
 // function hknight_walk5
 // function number 1763 begins at statement 24645
@@ -434,8 +400,6 @@ void () hknight_walk5 = [ 13.000, hknight_walk6 ] {
 
 };
 
-void () hknight_walk6;
-
 // function hknight_walk6
 // function number 1764 begins at statement 24649
 /*
@@ -450,8 +414,6 @@ void () hknight_walk6 = [ 14.000, hknight_walk7 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () hknight_walk7;
 
 // function hknight_walk7
 // function number 1765 begins at statement 24653
@@ -468,8 +430,6 @@ void () hknight_walk7 = [ 15.000, hknight_walk8 ] {
 
 };
 
-void () hknight_walk8;
-
 // function hknight_walk8
 // function number 1766 begins at statement 24657
 /*
@@ -484,8 +444,6 @@ void () hknight_walk8 = [ 16.000, hknight_walk9 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () hknight_walk9;
 
 // function hknight_walk9
 // function number 1767 begins at statement 24661
@@ -502,8 +460,6 @@ void () hknight_walk9 = [ 17.000, hknight_walk10 ] {
 
 };
 
-void () hknight_walk10;
-
 // function hknight_walk10
 // function number 1768 begins at statement 24665
 /*
@@ -518,8 +474,6 @@ void () hknight_walk10 = [ 18.000, hknight_walk11 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () hknight_walk11;
 
 // function hknight_walk11
 // function number 1769 begins at statement 24669
@@ -536,8 +490,6 @@ void () hknight_walk11 = [ 19.000, hknight_walk12 ] {
 
 };
 
-void () hknight_walk12;
-
 // function hknight_walk12
 // function number 1770 begins at statement 24673
 /*
@@ -552,8 +504,6 @@ void () hknight_walk12 = [ 20.000, hknight_walk13 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () hknight_walk13;
 
 // function hknight_walk13
 // function number 1771 begins at statement 24677
@@ -570,8 +520,6 @@ void () hknight_walk13 = [ 21.000, hknight_walk14 ] {
 
 };
 
-void () hknight_walk14;
-
 // function hknight_walk14
 // function number 1772 begins at statement 24681
 /*
@@ -586,8 +534,6 @@ void () hknight_walk14 = [ 22.000, hknight_walk15 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () hknight_walk15;
 
 // function hknight_walk15
 // function number 1773 begins at statement 24685
@@ -604,8 +550,6 @@ void () hknight_walk15 = [ 23.000, hknight_walk16 ] {
 
 };
 
-void () hknight_walk16;
-
 // function hknight_walk16
 // function number 1774 begins at statement 24689
 /*
@@ -620,8 +564,6 @@ void () hknight_walk16 = [ 24.000, hknight_walk17 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () hknight_walk17;
 
 // function hknight_walk17
 // function number 1775 begins at statement 24693
@@ -638,8 +580,6 @@ void () hknight_walk17 = [ 25.000, hknight_walk18 ] {
 
 };
 
-void () hknight_walk18;
-
 // function hknight_walk18
 // function number 1776 begins at statement 24697
 /*
@@ -655,8 +595,6 @@ void () hknight_walk18 = [ 26.000, hknight_walk19 ] {
 
 };
 
-void () hknight_walk19;
-
 // function hknight_walk19
 // function number 1777 begins at statement 24701
 /*
@@ -671,8 +609,6 @@ void () hknight_walk19 = [ 27.000, hknight_walk20 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () hknight_walk20;
 
 // function hknight_walk20
 // function number 1778 begins at statement 24705
@@ -708,8 +644,6 @@ void () hknight_run1 = [ 29.000, hknight_run2 ] {
 
 };
 
-void () hknight_run2;
-
 // function hknight_run2
 // function number 1780 begins at statement 24715
 /*
@@ -724,8 +658,6 @@ void () hknight_run2 = [ 30.000, hknight_run3 ] {
    ai_run (globaldef000288);
 
 };
-
-void () hknight_run3;
 
 // function hknight_run3
 // function number 1781 begins at statement 24719
@@ -742,8 +674,6 @@ void () hknight_run3 = [ 31.000, hknight_run4 ] {
 
 };
 
-void () hknight_run4;
-
 // function hknight_run4
 // function number 1782 begins at statement 24723
 /*
@@ -758,8 +688,6 @@ void () hknight_run4 = [ 32.000, hknight_run5 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () hknight_run5;
 
 // function hknight_run5
 // function number 1783 begins at statement 24727
@@ -776,8 +704,6 @@ void () hknight_run5 = [ 33.000, hknight_run6 ] {
 
 };
 
-void () hknight_run6;
-
 // function hknight_run6
 // function number 1784 begins at statement 24731
 /*
@@ -792,8 +718,6 @@ void () hknight_run6 = [ 34.000, hknight_run7 ] {
    ai_run (globaldef000288);
 
 };
-
-void () hknight_run7;
 
 // function hknight_run7
 // function number 1785 begins at statement 24735
@@ -810,8 +734,6 @@ void () hknight_run7 = [ 35.000, hknight_run8 ] {
 
 };
 
-void () hknight_run8;
-
 // function hknight_run8
 // function number 1786 begins at statement 24739
 /*
@@ -826,8 +748,6 @@ void () hknight_run8 = [ 36.000, hknight_run1 ] {
    ai_run (globaldef000775);
 
 };
-
-void () hknight_pain1;
 
 // function hknight_pain1
 // function number 1787 begins at statement 24743
@@ -847,8 +767,6 @@ void () hknight_pain1 = [ 37.000, hknight_pain2 ] {
    sound (self,CHAN_VOICE,globaldef005101,TRUE,ATTN_NORM);
 
 };
-
-void () hknight_pain2;
 string globaldef005101 /* = "hknight/pain1.wav" */;
 
 // function hknight_pain2
@@ -863,8 +781,6 @@ void () hknight_pain2 = [ 38.000, hknight_pain3 ] {
 
 };
 
-void () hknight_pain3;
-
 // function hknight_pain3
 // function number 1789 begins at statement 24753
 /*
@@ -876,8 +792,6 @@ void () hknight_pain3 = [ 39.000, hknight_pain4 ] {
 
 
 };
-
-void () hknight_pain4;
 
 // function hknight_pain4
 // function number 1790 begins at statement 24755
@@ -891,8 +805,6 @@ void () hknight_pain4 = [ 40.000, hknight_pain5 ] {
 
 };
 
-void () hknight_pain5;
-
 // function hknight_pain5
 // function number 1791 begins at statement 24757
 /*
@@ -904,8 +816,6 @@ void () hknight_pain5 = [ 41.000, hknight_run1 ] {
 
 
 };
-
-void () hknight_die1;
 
 // function hknight_die1
 // function number 1792 begins at statement 24759
@@ -922,8 +832,6 @@ void () hknight_die1 = [ 42.000, hknight_die2 ] {
 
 };
 
-void () hknight_die2;
-
 // function hknight_die2
 // function number 1793 begins at statement 24763
 /*
@@ -939,8 +847,6 @@ void () hknight_die2 = [ 43.000, hknight_die3 ] {
 
 };
 
-void () hknight_die3;
-
 // function hknight_die3
 // function number 1794 begins at statement 24767
 /*
@@ -954,12 +860,10 @@ void () hknight_die3;
 
 void () hknight_die3 = [ 44.000, hknight_die4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
    ai_forward (MOVETYPE_PUSH);
 
 };
-
-void () hknight_die4;
 
 // function hknight_die4
 // function number 1795 begins at statement 24773
@@ -973,8 +877,6 @@ void () hknight_die4 = [ 45.000, hknight_die5 ] {
 
 };
 
-void () hknight_die5;
-
 // function hknight_die5
 // function number 1796 begins at statement 24775
 /*
@@ -986,8 +888,6 @@ void () hknight_die5 = [ 46.000, hknight_die6 ] {
 
 
 };
-
-void () hknight_die6;
 
 // function hknight_die6
 // function number 1797 begins at statement 24777
@@ -1001,8 +901,6 @@ void () hknight_die6 = [ 47.000, hknight_die7 ] {
 
 };
 
-void () hknight_die7;
-
 // function hknight_die7
 // function number 1798 begins at statement 24779
 /*
@@ -1014,8 +912,6 @@ void () hknight_die7 = [ 48.000, hknight_die8 ] {
 
 
 };
-
-void () hknight_die8;
 
 // function hknight_die8
 // function number 1799 begins at statement 24781
@@ -1032,8 +928,6 @@ void () hknight_die8 = [ 49.000, hknight_die9 ] {
 
 };
 
-void () hknight_die9;
-
 // function hknight_die9
 // function number 1800 begins at statement 24785
 /*
@@ -1049,8 +943,6 @@ void () hknight_die9 = [ 50.000, hknight_die10 ] {
 
 };
 
-void () hknight_die10;
-
 // function hknight_die10
 // function number 1801 begins at statement 24789
 /*
@@ -1062,8 +954,6 @@ void () hknight_die10 = [ 51.000, hknight_die11 ] {
 
 
 };
-
-void () hknight_die11;
 
 // function hknight_die11
 // function number 1802 begins at statement 24791
@@ -1077,8 +967,6 @@ void () hknight_die11 = [ 52.000, hknight_die12 ] {
 
 };
 
-void () hknight_die12;
-
 // function hknight_die12
 // function number 1803 begins at statement 24793
 /*
@@ -1090,8 +978,6 @@ void () hknight_die12 = [ 53.000, hknight_die12 ] {
 
 
 };
-
-void () hknight_dieb1;
 
 // function hknight_dieb1
 // function number 1804 begins at statement 24795
@@ -1105,8 +991,6 @@ void () hknight_dieb1 = [ 54.000, hknight_dieb2 ] {
 
 };
 
-void () hknight_dieb2;
-
 // function hknight_dieb2
 // function number 1805 begins at statement 24797
 /*
@@ -1119,8 +1003,6 @@ void () hknight_dieb2 = [ 55.000, hknight_dieb3 ] {
 
 };
 
-void () hknight_dieb3;
-
 // function hknight_dieb3
 // function number 1806 begins at statement 24799
 /*
@@ -1132,11 +1014,9 @@ void () hknight_dieb3;
 
 void () hknight_dieb3 = [ 56.000, hknight_dieb4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () hknight_dieb4;
 
 // function hknight_dieb4
 // function number 1807 begins at statement 24803
@@ -1150,8 +1030,6 @@ void () hknight_dieb4 = [ 57.000, hknight_dieb5 ] {
 
 };
 
-void () hknight_dieb5;
-
 // function hknight_dieb5
 // function number 1808 begins at statement 24805
 /*
@@ -1163,8 +1041,6 @@ void () hknight_dieb5 = [ 58.000, hknight_dieb6 ] {
 
 
 };
-
-void () hknight_dieb6;
 
 // function hknight_dieb6
 // function number 1809 begins at statement 24807
@@ -1178,8 +1054,6 @@ void () hknight_dieb6 = [ 59.000, hknight_dieb7 ] {
 
 };
 
-void () hknight_dieb7;
-
 // function hknight_dieb7
 // function number 1810 begins at statement 24809
 /*
@@ -1191,8 +1065,6 @@ void () hknight_dieb7 = [ 60.000, hknight_dieb8 ] {
 
 
 };
-
-void () hknight_dieb8;
 
 // function hknight_dieb8
 // function number 1811 begins at statement 24811
@@ -1206,8 +1078,6 @@ void () hknight_dieb8 = [ 61.000, hknight_dieb9 ] {
 
 };
 
-void () hknight_dieb9;
-
 // function hknight_dieb9
 // function number 1812 begins at statement 24813
 /*
@@ -1219,8 +1089,6 @@ void () hknight_dieb9 = [ 62.000, hknight_dieb9 ] {
 
 
 };
-
-void () hknight_die;
 
 // function hknight_die
 // function number 1813 begins at statement 24815
@@ -1268,13 +1136,13 @@ void () hknight_die;
 
 void () hknight_die = {
 
-   if ( (self.globaldef000130 < globaldef003008) ) {
+   if ( (self.health < globaldef003008) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef005127,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef005127,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -1293,8 +1161,6 @@ void () hknight_die = {
 string globaldef005127 /* = "progs/h_hellkn.mdl" */;
 string globaldef005128 /* = "hknight/death1.wav" */;
 
-void () hknight_magica1;
-
 // function hknight_magica1
 // function number 1814 begins at statement 24854
 /*
@@ -1308,8 +1174,6 @@ void () hknight_magica1 = [ 79.000, hknight_magica2 ] {
    ai_face ();
 
 };
-
-void () hknight_magica2;
 
 // function hknight_magica2
 // function number 1815 begins at statement 24857
@@ -1325,8 +1189,6 @@ void () hknight_magica2 = [ 80.000, hknight_magica3 ] {
 
 };
 
-void () hknight_magica3;
-
 // function hknight_magica3
 // function number 1816 begins at statement 24860
 /*
@@ -1340,8 +1202,6 @@ void () hknight_magica3 = [ 81.000, hknight_magica4 ] {
    ai_face ();
 
 };
-
-void () hknight_magica4;
 
 // function hknight_magica4
 // function number 1817 begins at statement 24863
@@ -1357,8 +1217,6 @@ void () hknight_magica4 = [ 82.000, hknight_magica5 ] {
 
 };
 
-void () hknight_magica5;
-
 // function hknight_magica5
 // function number 1818 begins at statement 24866
 /*
@@ -1373,8 +1231,6 @@ void () hknight_magica5 = [ 83.000, hknight_magica6 ] {
 
 };
 
-void () hknight_magica6;
-
 // function hknight_magica6
 // function number 1819 begins at statement 24869
 /*
@@ -1388,8 +1244,6 @@ void () hknight_magica6 = [ 84.000, hknight_magica7 ] {
    ai_face ();
 
 };
-
-void () hknight_magica7;
 
 // function hknight_magica7
 // function number 1820 begins at statement 24872
@@ -1406,8 +1260,6 @@ void () hknight_magica7 = [ 85.000, hknight_magica8 ] {
 
 };
 
-void () hknight_magica8;
-
 // function hknight_magica8
 // function number 1821 begins at statement 24876
 /*
@@ -1422,8 +1274,6 @@ void () hknight_magica8 = [ 86.000, hknight_magica9 ] {
    hknight_shot (CONTENT_EMPTY);
 
 };
-
-void () hknight_magica9;
 
 // function hknight_magica9
 // function number 1822 begins at statement 24880
@@ -1440,8 +1290,6 @@ void () hknight_magica9 = [ 87.000, hknight_magica10 ] {
 
 };
 
-void () hknight_magica10;
-
 // function hknight_magica10
 // function number 1823 begins at statement 24884
 /*
@@ -1456,8 +1304,6 @@ void () hknight_magica10 = [ 88.000, hknight_magica11 ] {
    hknight_shot (TRUE);
 
 };
-
-void () hknight_magica11;
 
 // function hknight_magica11
 // function number 1824 begins at statement 24888
@@ -1474,8 +1320,6 @@ void () hknight_magica11 = [ 89.000, hknight_magica12 ] {
 
 };
 
-void () hknight_magica12;
-
 // function hknight_magica12
 // function number 1825 begins at statement 24892
 /*
@@ -1491,8 +1335,6 @@ void () hknight_magica12 = [ 90.000, hknight_magica13 ] {
 
 };
 
-void () hknight_magica13;
-
 // function hknight_magica13
 // function number 1826 begins at statement 24896
 /*
@@ -1506,8 +1348,6 @@ void () hknight_magica13 = [ 91.000, hknight_magica14 ] {
    ai_face ();
 
 };
-
-void () hknight_magica14;
 
 // function hknight_magica14
 // function number 1827 begins at statement 24899
@@ -1523,8 +1363,6 @@ void () hknight_magica14 = [ 92.000, hknight_run1 ] {
 
 };
 
-void () hknight_magicb1;
-
 // function hknight_magicb1
 // function number 1828 begins at statement 24902
 /*
@@ -1538,8 +1376,6 @@ void () hknight_magicb1 = [ 93.000, hknight_magicb2 ] {
    ai_face ();
 
 };
-
-void () hknight_magicb2;
 
 // function hknight_magicb2
 // function number 1829 begins at statement 24905
@@ -1555,8 +1391,6 @@ void () hknight_magicb2 = [ 94.000, hknight_magicb3 ] {
 
 };
 
-void () hknight_magicb3;
-
 // function hknight_magicb3
 // function number 1830 begins at statement 24908
 /*
@@ -1570,8 +1404,6 @@ void () hknight_magicb3 = [ 95.000, hknight_magicb4 ] {
    ai_face ();
 
 };
-
-void () hknight_magicb4;
 
 // function hknight_magicb4
 // function number 1831 begins at statement 24911
@@ -1587,8 +1419,6 @@ void () hknight_magicb4 = [ 96.000, hknight_magicb5 ] {
 
 };
 
-void () hknight_magicb5;
-
 // function hknight_magicb5
 // function number 1832 begins at statement 24914
 /*
@@ -1603,8 +1433,6 @@ void () hknight_magicb5 = [ 97.000, hknight_magicb6 ] {
 
 };
 
-void () hknight_magicb6;
-
 // function hknight_magicb6
 // function number 1833 begins at statement 24917
 /*
@@ -1618,8 +1446,6 @@ void () hknight_magicb6 = [ 98.000, hknight_magicb7 ] {
    ai_face ();
 
 };
-
-void () hknight_magicb7;
 
 // function hknight_magicb7
 // function number 1834 begins at statement 24920
@@ -1636,8 +1462,6 @@ void () hknight_magicb7 = [ 99.000, hknight_magicb8 ] {
 
 };
 
-void () hknight_magicb8;
-
 // function hknight_magicb8
 // function number 1835 begins at statement 24924
 /*
@@ -1652,8 +1476,6 @@ void () hknight_magicb8 = [ 100.000, hknight_magicb9 ] {
    hknight_shot (CONTENT_EMPTY);
 
 };
-
-void () hknight_magicb9;
 
 // function hknight_magicb9
 // function number 1836 begins at statement 24928
@@ -1670,8 +1492,6 @@ void () hknight_magicb9 = [ 101.000, hknight_magicb10 ] {
 
 };
 
-void () hknight_magicb10;
-
 // function hknight_magicb10
 // function number 1837 begins at statement 24932
 /*
@@ -1686,8 +1506,6 @@ void () hknight_magicb10 = [ 102.000, hknight_magicb11 ] {
    hknight_shot (TRUE);
 
 };
-
-void () hknight_magicb11;
 
 // function hknight_magicb11
 // function number 1838 begins at statement 24936
@@ -1704,8 +1522,6 @@ void () hknight_magicb11 = [ 103.000, hknight_magicb12 ] {
 
 };
 
-void () hknight_magicb12;
-
 // function hknight_magicb12
 // function number 1839 begins at statement 24940
 /*
@@ -1721,8 +1537,6 @@ void () hknight_magicb12 = [ 104.000, hknight_magicb13 ] {
 
 };
 
-void () hknight_magicb13;
-
 // function hknight_magicb13
 // function number 1840 begins at statement 24944
 /*
@@ -1736,8 +1550,6 @@ void () hknight_magicb13 = [ 105.000, hknight_run1 ] {
    ai_face ();
 
 };
-
-void () hknight_magicc1;
 
 // function hknight_magicc1
 // function number 1841 begins at statement 24947
@@ -1753,8 +1565,6 @@ void () hknight_magicc1 = [ 155.000, hknight_magicc2 ] {
 
 };
 
-void () hknight_magicc2;
-
 // function hknight_magicc2
 // function number 1842 begins at statement 24950
 /*
@@ -1768,8 +1578,6 @@ void () hknight_magicc2 = [ 156.000, hknight_magicc3 ] {
    ai_face ();
 
 };
-
-void () hknight_magicc3;
 
 // function hknight_magicc3
 // function number 1843 begins at statement 24953
@@ -1785,8 +1593,6 @@ void () hknight_magicc3 = [ 157.000, hknight_magicc4 ] {
 
 };
 
-void () hknight_magicc4;
-
 // function hknight_magicc4
 // function number 1844 begins at statement 24956
 /*
@@ -1801,8 +1607,6 @@ void () hknight_magicc4 = [ 158.000, hknight_magicc5 ] {
 
 };
 
-void () hknight_magicc5;
-
 // function hknight_magicc5
 // function number 1845 begins at statement 24959
 /*
@@ -1816,8 +1620,6 @@ void () hknight_magicc5 = [ 159.000, hknight_magicc6 ] {
    ai_face ();
 
 };
-
-void () hknight_magicc6;
 
 // function hknight_magicc6
 // function number 1846 begins at statement 24962
@@ -1834,8 +1636,6 @@ void () hknight_magicc6 = [ 160.000, hknight_magicc7 ] {
 
 };
 
-void () hknight_magicc7;
-
 // function hknight_magicc7
 // function number 1847 begins at statement 24966
 /*
@@ -1850,8 +1650,6 @@ void () hknight_magicc7 = [ 161.000, hknight_magicc8 ] {
    hknight_shot (CONTENT_EMPTY);
 
 };
-
-void () hknight_magicc8;
 
 // function hknight_magicc8
 // function number 1848 begins at statement 24970
@@ -1868,8 +1666,6 @@ void () hknight_magicc8 = [ 162.000, hknight_magicc9 ] {
 
 };
 
-void () hknight_magicc9;
-
 // function hknight_magicc9
 // function number 1849 begins at statement 24974
 /*
@@ -1885,8 +1681,6 @@ void () hknight_magicc9 = [ 163.000, hknight_magicc10 ] {
 
 };
 
-void () hknight_magicc10;
-
 // function hknight_magicc10
 // function number 1850 begins at statement 24978
 /*
@@ -1901,8 +1695,6 @@ void () hknight_magicc10 = [ 164.000, hknight_magicc11 ] {
    hknight_shot (FL_SWIM);
 
 };
-
-void () hknight_magicc11;
 
 // function hknight_magicc11
 // function number 1851 begins at statement 24982
@@ -1934,8 +1726,6 @@ void () hknight_char_a1 = [ 63.000, hknight_char_a2 ] {
 
 };
 
-void () hknight_char_a2;
-
 // function hknight_char_a2
 // function number 1853 begins at statement 24990
 /*
@@ -1950,8 +1740,6 @@ void () hknight_char_a2 = [ 64.000, hknight_char_a3 ] {
    ai_charge (globaldef000288);
 
 };
-
-void () hknight_char_a3;
 
 // function hknight_char_a3
 // function number 1854 begins at statement 24994
@@ -1968,8 +1756,6 @@ void () hknight_char_a3 = [ 65.000, hknight_char_a4 ] {
 
 };
 
-void () hknight_char_a4;
-
 // function hknight_char_a4
 // function number 1855 begins at statement 24998
 /*
@@ -1985,8 +1771,6 @@ void () hknight_char_a4 = [ 66.000, hknight_char_a5 ] {
 
 };
 
-void () hknight_char_a5;
-
 // function hknight_char_a5
 // function number 1856 begins at statement 25002
 /*
@@ -2001,8 +1785,6 @@ void () hknight_char_a5 = [ 67.000, hknight_char_a6 ] {
    ai_charge (globaldef002136);
 
 };
-
-void () hknight_char_a6;
 
 // function hknight_char_a6
 // function number 1857 begins at statement 25006
@@ -2021,8 +1803,6 @@ void () hknight_char_a6 = [ 68.000, hknight_char_a7 ] {
 
 };
 
-void () hknight_char_a7;
-
 // function hknight_char_a7
 // function number 1858 begins at statement 25011
 /*
@@ -2039,8 +1819,6 @@ void () hknight_char_a7 = [ 69.000, hknight_char_a8 ] {
    ai_melee ();
 
 };
-
-void () hknight_char_a8;
 
 // function hknight_char_a8
 // function number 1859 begins at statement 25016
@@ -2059,8 +1837,6 @@ void () hknight_char_a8 = [ 70.000, hknight_char_a9 ] {
 
 };
 
-void () hknight_char_a9;
-
 // function hknight_char_a9
 // function number 1860 begins at statement 25021
 /*
@@ -2077,8 +1853,6 @@ void () hknight_char_a9 = [ 71.000, hknight_char_a10 ] {
    ai_melee ();
 
 };
-
-void () hknight_char_a10;
 
 // function hknight_char_a10
 // function number 1861 begins at statement 25026
@@ -2097,8 +1871,6 @@ void () hknight_char_a10 = [ 72.000, hknight_char_a11 ] {
 
 };
 
-void () hknight_char_a11;
-
 // function hknight_char_a11
 // function number 1862 begins at statement 25031
 /*
@@ -2116,8 +1888,6 @@ void () hknight_char_a11 = [ 73.000, hknight_char_a12 ] {
 
 };
 
-void () hknight_char_a12;
-
 // function hknight_char_a12
 // function number 1863 begins at statement 25036
 /*
@@ -2132,8 +1902,6 @@ void () hknight_char_a12 = [ 74.000, hknight_char_a13 ] {
    ai_charge (FL_INWATER);
 
 };
-
-void () hknight_char_a13;
 
 // function hknight_char_a13
 // function number 1864 begins at statement 25040
@@ -2150,8 +1918,6 @@ void () hknight_char_a13 = [ 75.000, hknight_char_a14 ] {
 
 };
 
-void () hknight_char_a14;
-
 // function hknight_char_a14
 // function number 1865 begins at statement 25044
 /*
@@ -2166,8 +1932,6 @@ void () hknight_char_a14 = [ 76.000, hknight_char_a15 ] {
    ai_charge (globaldef000288);
 
 };
-
-void () hknight_char_a15;
 
 // function hknight_char_a15
 // function number 1866 begins at statement 25048
@@ -2184,8 +1948,6 @@ void () hknight_char_a15 = [ 77.000, hknight_char_a16 ] {
 
 };
 
-void () hknight_char_a16;
-
 // function hknight_char_a16
 // function number 1867 begins at statement 25052
 /*
@@ -2200,8 +1962,6 @@ void () hknight_char_a16 = [ 78.000, hknight_run1 ] {
    ai_charge (globaldef000775);
 
 };
-
-void () hknight_char_b1;
 
 // function hknight_char_b1
 // function number 1868 begins at statement 25056
@@ -2222,8 +1982,6 @@ void () hknight_char_b1 = [ 106.000, hknight_char_b2 ] {
 
 };
 
-void () hknight_char_b2;
-
 // function hknight_char_b2
 // function number 1869 begins at statement 25062
 /*
@@ -2240,8 +1998,6 @@ void () hknight_char_b2 = [ 107.000, hknight_char_b3 ] {
    ai_melee ();
 
 };
-
-void () hknight_char_b3;
 
 // function hknight_char_b3
 // function number 1870 begins at statement 25067
@@ -2260,8 +2016,6 @@ void () hknight_char_b3 = [ 108.000, hknight_char_b4 ] {
 
 };
 
-void () hknight_char_b4;
-
 // function hknight_char_b4
 // function number 1871 begins at statement 25072
 /*
@@ -2278,8 +2032,6 @@ void () hknight_char_b4 = [ 109.000, hknight_char_b5 ] {
    ai_melee ();
 
 };
-
-void () hknight_char_b5;
 
 // function hknight_char_b5
 // function number 1872 begins at statement 25077
@@ -2298,8 +2050,6 @@ void () hknight_char_b5 = [ 110.000, hknight_char_b6 ] {
 
 };
 
-void () hknight_char_b6;
-
 // function hknight_char_b6
 // function number 1873 begins at statement 25082
 /*
@@ -2317,8 +2067,6 @@ void () hknight_char_b6 = [ 111.000, hknight_char_b1 ] {
 
 };
 
-void () hknight_slice1;
-
 // function hknight_slice1
 // function number 1874 begins at statement 25087
 /*
@@ -2333,8 +2081,6 @@ void () hknight_slice1 = [ 112.000, hknight_slice2 ] {
    ai_charge (MOVETYPE_FLYMISSILE);
 
 };
-
-void () hknight_slice2;
 
 // function hknight_slice2
 // function number 1875 begins at statement 25091
@@ -2351,8 +2097,6 @@ void () hknight_slice2 = [ 113.000, hknight_slice3 ] {
 
 };
 
-void () hknight_slice3;
-
 // function hknight_slice3
 // function number 1876 begins at statement 25095
 /*
@@ -2368,8 +2112,6 @@ void () hknight_slice3 = [ 114.000, hknight_slice4 ] {
 
 };
 
-void () hknight_slice4;
-
 // function hknight_slice4
 // function number 1877 begins at statement 25099
 /*
@@ -2384,8 +2126,6 @@ void () hknight_slice4 = [ 115.000, hknight_slice5 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () hknight_slice5;
 
 // function hknight_slice5
 // function number 1878 begins at statement 25103
@@ -2404,8 +2144,6 @@ void () hknight_slice5 = [ 116.000, hknight_slice6 ] {
 
 };
 
-void () hknight_slice6;
-
 // function hknight_slice6
 // function number 1879 begins at statement 25108
 /*
@@ -2422,8 +2160,6 @@ void () hknight_slice6 = [ 117.000, hknight_slice7 ] {
    ai_melee ();
 
 };
-
-void () hknight_slice7;
 
 // function hknight_slice7
 // function number 1880 begins at statement 25113
@@ -2442,8 +2178,6 @@ void () hknight_slice7 = [ 118.000, hknight_slice8 ] {
 
 };
 
-void () hknight_slice8;
-
 // function hknight_slice8
 // function number 1881 begins at statement 25118
 /*
@@ -2461,8 +2195,6 @@ void () hknight_slice8 = [ 119.000, hknight_slice9 ] {
 
 };
 
-void () hknight_slice9;
-
 // function hknight_slice9
 // function number 1882 begins at statement 25123
 /*
@@ -2476,8 +2208,6 @@ void () hknight_slice9 = [ 120.000, hknight_slice10 ] {
    ai_melee ();
 
 };
-
-void () hknight_slice10;
 
 // function hknight_slice10
 // function number 1883 begins at statement 25126
@@ -2494,8 +2224,6 @@ void () hknight_slice10 = [ 121.000, hknight_run1 ] {
 
 };
 
-void () hknight_smash1;
-
 // function hknight_smash1
 // function number 1884 begins at statement 25130
 /*
@@ -2510,8 +2238,6 @@ void () hknight_smash1 = [ 122.000, hknight_smash2 ] {
    ai_charge (TRUE);
 
 };
-
-void () hknight_smash2;
 
 // function hknight_smash2
 // function number 1885 begins at statement 25134
@@ -2528,8 +2254,6 @@ void () hknight_smash2 = [ 123.000, hknight_smash3 ] {
 
 };
 
-void () hknight_smash3;
-
 // function hknight_smash3
 // function number 1886 begins at statement 25138
 /*
@@ -2545,8 +2269,6 @@ void () hknight_smash3 = [ 124.000, hknight_smash4 ] {
 
 };
 
-void () hknight_smash4;
-
 // function hknight_smash4
 // function number 1887 begins at statement 25142
 /*
@@ -2561,8 +2283,6 @@ void () hknight_smash4 = [ 125.000, hknight_smash5 ] {
    ai_charge (MOVETYPE_BOUNCEMISSILE);
 
 };
-
-void () hknight_smash5;
 
 // function hknight_smash5
 // function number 1888 begins at statement 25146
@@ -2581,8 +2301,6 @@ void () hknight_smash5 = [ 126.000, hknight_smash6 ] {
 
 };
 
-void () hknight_smash6;
-
 // function hknight_smash6
 // function number 1889 begins at statement 25151
 /*
@@ -2599,8 +2317,6 @@ void () hknight_smash6 = [ 127.000, hknight_smash7 ] {
    ai_melee ();
 
 };
-
-void () hknight_smash7;
 
 // function hknight_smash7
 // function number 1890 begins at statement 25156
@@ -2619,8 +2335,6 @@ void () hknight_smash7 = [ 128.000, hknight_smash8 ] {
 
 };
 
-void () hknight_smash8;
-
 // function hknight_smash8
 // function number 1891 begins at statement 25161
 /*
@@ -2637,8 +2351,6 @@ void () hknight_smash8 = [ 129.000, hknight_smash9 ] {
    ai_melee ();
 
 };
-
-void () hknight_smash9;
 
 // function hknight_smash9
 // function number 1892 begins at statement 25166
@@ -2657,8 +2369,6 @@ void () hknight_smash9 = [ 130.000, hknight_smash10 ] {
 
 };
 
-void () hknight_smash10;
-
 // function hknight_smash10
 // function number 1893 begins at statement 25171
 /*
@@ -2673,8 +2383,6 @@ void () hknight_smash10 = [ 131.000, hknight_smash11 ] {
    ai_charge (FALSE);
 
 };
-
-void () hknight_smash11;
 
 // function hknight_smash11
 // function number 1894 begins at statement 25175
@@ -2691,8 +2399,6 @@ void () hknight_smash11 = [ 132.000, hknight_run1 ] {
 
 };
 
-void () hknight_watk1;
-
 // function hknight_watk1
 // function number 1895 begins at statement 25179
 /*
@@ -2707,8 +2413,6 @@ void () hknight_watk1 = [ 133.000, hknight_watk2 ] {
    ai_charge (FL_SWIM);
 
 };
-
-void () hknight_watk2;
 
 // function hknight_watk2
 // function number 1896 begins at statement 25183
@@ -2725,8 +2429,6 @@ void () hknight_watk2 = [ 134.000, hknight_watk3 ] {
 
 };
 
-void () hknight_watk3;
-
 // function hknight_watk3
 // function number 1897 begins at statement 25187
 /*
@@ -2742,8 +2444,6 @@ void () hknight_watk3 = [ 135.000, hknight_watk4 ] {
 
 };
 
-void () hknight_watk4;
-
 // function hknight_watk4
 // function number 1898 begins at statement 25191
 /*
@@ -2757,8 +2457,6 @@ void () hknight_watk4 = [ 136.000, hknight_watk5 ] {
    ai_melee ();
 
 };
-
-void () hknight_watk5;
 
 // function hknight_watk5
 // function number 1899 begins at statement 25194
@@ -2774,8 +2472,6 @@ void () hknight_watk5 = [ 137.000, hknight_watk6 ] {
 
 };
 
-void () hknight_watk6;
-
 // function hknight_watk6
 // function number 1900 begins at statement 25197
 /*
@@ -2789,8 +2485,6 @@ void () hknight_watk6 = [ 138.000, hknight_watk7 ] {
    ai_melee ();
 
 };
-
-void () hknight_watk7;
 
 // function hknight_watk7
 // function number 1901 begins at statement 25200
@@ -2807,8 +2501,6 @@ void () hknight_watk7 = [ 139.000, hknight_watk8 ] {
 
 };
 
-void () hknight_watk8;
-
 // function hknight_watk8
 // function number 1902 begins at statement 25204
 /*
@@ -2824,8 +2516,6 @@ void () hknight_watk8 = [ 140.000, hknight_watk9 ] {
 
 };
 
-void () hknight_watk9;
-
 // function hknight_watk9
 // function number 1903 begins at statement 25208
 /*
@@ -2840,8 +2530,6 @@ void () hknight_watk9 = [ 141.000, hknight_watk10 ] {
    ai_charge (MOVETYPE_FLY);
 
 };
-
-void () hknight_watk10;
 
 // function hknight_watk10
 // function number 1904 begins at statement 25212
@@ -2860,8 +2548,6 @@ void () hknight_watk10 = [ 142.000, hknight_watk11 ] {
 
 };
 
-void () hknight_watk11;
-
 // function hknight_watk11
 // function number 1905 begins at statement 25217
 /*
@@ -2878,8 +2564,6 @@ void () hknight_watk11 = [ 143.000, hknight_watk12 ] {
    ai_melee ();
 
 };
-
-void () hknight_watk12;
 
 // function hknight_watk12
 // function number 1906 begins at statement 25222
@@ -2898,8 +2582,6 @@ void () hknight_watk12 = [ 144.000, hknight_watk13 ] {
 
 };
 
-void () hknight_watk13;
-
 // function hknight_watk13
 // function number 1907 begins at statement 25227
 /*
@@ -2914,8 +2596,6 @@ void () hknight_watk13 = [ 145.000, hknight_watk14 ] {
    ai_charge (FALSE);
 
 };
-
-void () hknight_watk14;
 
 // function hknight_watk14
 // function number 1908 begins at statement 25231
@@ -2932,8 +2612,6 @@ void () hknight_watk14 = [ 146.000, hknight_watk15 ] {
 
 };
 
-void () hknight_watk15;
-
 // function hknight_watk15
 // function number 1909 begins at statement 25235
 /*
@@ -2949,8 +2627,6 @@ void () hknight_watk15 = [ 147.000, hknight_watk16 ] {
 
 };
 
-void () hknight_watk16;
-
 // function hknight_watk16
 // function number 1910 begins at statement 25239
 /*
@@ -2965,8 +2641,6 @@ void () hknight_watk16 = [ 148.000, hknight_watk17 ] {
    ai_charge (TRUE);
 
 };
-
-void () hknight_watk17;
 
 // function hknight_watk17
 // function number 1911 begins at statement 25243
@@ -2985,8 +2659,6 @@ void () hknight_watk17 = [ 149.000, hknight_watk18 ] {
 
 };
 
-void () hknight_watk18;
-
 // function hknight_watk18
 // function number 1912 begins at statement 25248
 /*
@@ -3003,8 +2675,6 @@ void () hknight_watk18 = [ 150.000, hknight_watk19 ] {
    ai_melee ();
 
 };
-
-void () hknight_watk19;
 
 // function hknight_watk19
 // function number 1913 begins at statement 25253
@@ -3023,8 +2693,6 @@ void () hknight_watk19 = [ 151.000, hknight_watk20 ] {
 
 };
 
-void () hknight_watk20;
-
 // function hknight_watk20
 // function number 1914 begins at statement 25258
 /*
@@ -3040,8 +2708,6 @@ void () hknight_watk20 = [ 152.000, hknight_watk21 ] {
 
 };
 
-void () hknight_watk21;
-
 // function hknight_watk21
 // function number 1915 begins at statement 25262
 /*
@@ -3056,8 +2722,6 @@ void () hknight_watk21 = [ 153.000, hknight_watk22 ] {
    ai_charge (MOVETYPE_PUSH);
 
 };
-
-void () hknight_watk22;
 
 // function hknight_watk22
 // function number 1916 begins at statement 25266
@@ -3100,8 +2764,6 @@ void () hk_idle_sound = {
 };
 string globaldef005231 /* = "hknight/idle.wav" */;
 
-void (entity globaldef005233, float globaldef005234) hknight_pain;
-
 // function hknight_pain
 // function number 1918 begins at statement 25280
 /*
@@ -3138,16 +2800,16 @@ void (entity globaldef005233, float globaldef005234) hknight_pain;
 
 void (entity globaldef005233, float globaldef005234) hknight_pain = {
 
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
    }
    sound (self,CHAN_VOICE,globaldef005101,TRUE,ATTN_NORM);
-   if ( ((time - self.globaldef000362) > MOVETYPE_FLY) ) {
+   if ( ((time - self.pain_finished) > MOVETYPE_FLY) ) {
 
       hknight_pain1 ();
-      self.globaldef000362 = (time + TRUE);
+      self.pain_finished = (time + TRUE);
       return ;
 
    }
@@ -3156,13 +2818,11 @@ void (entity globaldef005233, float globaldef005234) hknight_pain = {
       return ;
 
    }
-   self.globaldef000362 = (time + TRUE);
+   self.pain_finished = (time + TRUE);
    hknight_pain1 ();
 
 };
 float globaldef005235 /* = 0.000 */;
-
-void () hknight_melee;
 
 // function hknight_melee
 // function number 1919 begins at statement 25309
@@ -3219,8 +2879,6 @@ void () hknight_melee = {
 
 };
 string globaldef005237 /* = "hknight/slash1.wav" */;
-
-void () monster_hell_knight;
 
 // function monster_hell_knight
 // function number 1920 begins at statement 25330
@@ -3307,18 +2965,18 @@ void () monster_hell_knight = {
    precache_sound2 (globaldef005241);
    precache_sound (globaldef004094);
    precache_sound (globaldef004093);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005239);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = globaldef000721;
-   self.globaldef000344 = hknight_stand1;
-   self.globaldef000345 = hknight_walk1;
-   self.globaldef000346 = hknight_run1;
-   self.globaldef000348 = hknight_melee;
-   self.globaldef000347 = hknight_magicc1;
-   self.globaldef000349 = hknight_pain;
-   self.globaldef000350 = hknight_die;
+   self.health = globaldef000721;
+   self.th_stand = hknight_stand1;
+   self.th_walk = hknight_walk1;
+   self.th_run = hknight_run1;
+   self.th_melee = hknight_melee;
+   self.th_missile = hknight_magicc1;
+   self.th_pain = hknight_pain;
+   self.th_die = hknight_die;
    walkmonster_start ();
 
 };

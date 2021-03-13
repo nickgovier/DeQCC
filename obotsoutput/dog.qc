@@ -5,8 +5,6 @@ void () dog_leap1;
 
 void () dog_run1;
 
-void () dog_bite;
-
 // function dog_bite
 // function number 1265 begins at statement 21949
 /*
@@ -54,29 +52,27 @@ void () dog_bite = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
    ai_charge (MOVETYPE_BOUNCE);
-   if ( !CanDamage (self.globaldef000159,self) ) {
+   if ( !CanDamage (self.enemy,self) ) {
 
       return ;
 
    }
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * FL_CLIENT);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
 
 };
-
-void () Dog_JumpTouch;
 
 // function Dog_JumpTouch
 // function number 1266 begins at statement 21986
@@ -130,14 +126,14 @@ void () Dog_JumpTouch = {
 
    local float ldmg;
 
-   if ( (self.globaldef000130 <= FALSE) ) {
+   if ( (self.health <= FALSE) ) {
 
       return ;
 
    }
-   if ( other.globaldef000141 ) {
+   if ( other.takedamage ) {
 
-      if ( (vlen (self.globaldef000091) > globaldef000523) ) {
+      if ( (vlen (self.velocity) > globaldef000523) ) {
 
          ldmg = (MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * random ()));
          T_Damage (other,self,self,ldmg);
@@ -147,23 +143,21 @@ void () Dog_JumpTouch = {
    }
    if ( !checkbottom (self) ) {
 
-      if ( (self.globaldef000160 & FL_ONGROUND) ) {
+      if ( (self.flags & FL_ONGROUND) ) {
 
-         self.globaldef000124 = SUB_Null;
-         self.globaldef000126 = dog_leap1;
-         self.globaldef000128 = (time + globaldef001488);
+         self.touch = SUB_Null;
+         self.think = dog_leap1;
+         self.nextthink = (time + globaldef001488);
 
       }
       return ;
 
    }
-   self.globaldef000124 = SUB_Null;
-   self.globaldef000126 = dog_run1;
-   self.globaldef000128 = (time + globaldef001488);
+   self.touch = SUB_Null;
+   self.think = dog_run1;
+   self.nextthink = (time + globaldef001488);
 
 };
-
-void () dog_stand1;
 
 // function dog_stand1
 // function number 1267 begins at statement 22029
@@ -179,8 +173,6 @@ void () dog_stand1 = [ 69.000, dog_stand2 ] {
 
 };
 
-void () dog_stand2;
-
 // function dog_stand2
 // function number 1268 begins at statement 22032
 /*
@@ -194,8 +186,6 @@ void () dog_stand2 = [ 70.000, dog_stand3 ] {
    ai_stand ();
 
 };
-
-void () dog_stand3;
 
 // function dog_stand3
 // function number 1269 begins at statement 22035
@@ -211,8 +201,6 @@ void () dog_stand3 = [ 71.000, dog_stand4 ] {
 
 };
 
-void () dog_stand4;
-
 // function dog_stand4
 // function number 1270 begins at statement 22038
 /*
@@ -226,8 +214,6 @@ void () dog_stand4 = [ 72.000, dog_stand5 ] {
    ai_stand ();
 
 };
-
-void () dog_stand5;
 
 // function dog_stand5
 // function number 1271 begins at statement 22041
@@ -243,8 +229,6 @@ void () dog_stand5 = [ 73.000, dog_stand6 ] {
 
 };
 
-void () dog_stand6;
-
 // function dog_stand6
 // function number 1272 begins at statement 22044
 /*
@@ -258,8 +242,6 @@ void () dog_stand6 = [ 74.000, dog_stand7 ] {
    ai_stand ();
 
 };
-
-void () dog_stand7;
 
 // function dog_stand7
 // function number 1273 begins at statement 22047
@@ -275,8 +257,6 @@ void () dog_stand7 = [ 75.000, dog_stand8 ] {
 
 };
 
-void () dog_stand8;
-
 // function dog_stand8
 // function number 1274 begins at statement 22050
 /*
@@ -291,8 +271,6 @@ void () dog_stand8 = [ 76.000, dog_stand9 ] {
 
 };
 
-void () dog_stand9;
-
 // function dog_stand9
 // function number 1275 begins at statement 22053
 /*
@@ -306,8 +284,6 @@ void () dog_stand9 = [ 77.000, dog_stand1 ] {
    ai_stand ();
 
 };
-
-void () dog_walk1;
 
 // function dog_walk1
 // function number 1276 begins at statement 22056
@@ -337,8 +313,6 @@ void () dog_walk1 = [ 78.000, dog_walk2 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () dog_walk2;
 string globaldef004429 /* = "dog/idle.wav" */;
 
 // function dog_walk2
@@ -356,8 +330,6 @@ void () dog_walk2 = [ 79.000, dog_walk3 ] {
 
 };
 
-void () dog_walk3;
-
 // function dog_walk3
 // function number 1278 begins at statement 22073
 /*
@@ -372,8 +344,6 @@ void () dog_walk3 = [ 80.000, dog_walk4 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () dog_walk4;
 
 // function dog_walk4
 // function number 1279 begins at statement 22077
@@ -390,8 +360,6 @@ void () dog_walk4 = [ 81.000, dog_walk5 ] {
 
 };
 
-void () dog_walk5;
-
 // function dog_walk5
 // function number 1280 begins at statement 22081
 /*
@@ -406,8 +374,6 @@ void () dog_walk5 = [ 82.000, dog_walk6 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () dog_walk6;
 
 // function dog_walk6
 // function number 1281 begins at statement 22085
@@ -424,8 +390,6 @@ void () dog_walk6 = [ 83.000, dog_walk7 ] {
 
 };
 
-void () dog_walk7;
-
 // function dog_walk7
 // function number 1282 begins at statement 22089
 /*
@@ -440,8 +404,6 @@ void () dog_walk7 = [ 84.000, dog_walk8 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () dog_walk8;
 
 // function dog_walk8
 // function number 1283 begins at statement 22093
@@ -487,8 +449,6 @@ void () dog_run1 = [ 48.000, dog_run2 ] {
 
 };
 
-void () dog_run2;
-
 // function dog_run2
 // function number 1285 begins at statement 22110
 /*
@@ -503,8 +463,6 @@ void () dog_run2 = [ 49.000, dog_run3 ] {
    ai_run (FL_MONSTER);
 
 };
-
-void () dog_run3;
 
 // function dog_run3
 // function number 1286 begins at statement 22114
@@ -521,8 +479,6 @@ void () dog_run3 = [ 50.000, dog_run4 ] {
 
 };
 
-void () dog_run4;
-
 // function dog_run4
 // function number 1287 begins at statement 22118
 /*
@@ -537,8 +493,6 @@ void () dog_run4 = [ 51.000, dog_run5 ] {
    ai_run (globaldef001384);
 
 };
-
-void () dog_run5;
 
 // function dog_run5
 // function number 1288 begins at statement 22122
@@ -555,8 +509,6 @@ void () dog_run5 = [ 52.000, dog_run6 ] {
 
 };
 
-void () dog_run6;
-
 // function dog_run6
 // function number 1289 begins at statement 22126
 /*
@@ -571,8 +523,6 @@ void () dog_run6 = [ 53.000, dog_run7 ] {
    ai_run (FL_MONSTER);
 
 };
-
-void () dog_run7;
 
 // function dog_run7
 // function number 1290 begins at statement 22130
@@ -589,8 +539,6 @@ void () dog_run7 = [ 54.000, dog_run8 ] {
 
 };
 
-void () dog_run8;
-
 // function dog_run8
 // function number 1291 begins at statement 22134
 /*
@@ -605,8 +553,6 @@ void () dog_run8 = [ 55.000, dog_run9 ] {
    ai_run (FL_MONSTER);
 
 };
-
-void () dog_run9;
 
 // function dog_run9
 // function number 1292 begins at statement 22138
@@ -623,8 +569,6 @@ void () dog_run9 = [ 56.000, dog_run10 ] {
 
 };
 
-void () dog_run10;
-
 // function dog_run10
 // function number 1293 begins at statement 22142
 /*
@@ -639,8 +583,6 @@ void () dog_run10 = [ 57.000, dog_run11 ] {
    ai_run (globaldef001384);
 
 };
-
-void () dog_run11;
 
 // function dog_run11
 // function number 1294 begins at statement 22146
@@ -657,8 +599,6 @@ void () dog_run11 = [ 58.000, dog_run12 ] {
 
 };
 
-void () dog_run12;
-
 // function dog_run12
 // function number 1295 begins at statement 22150
 /*
@@ -673,8 +613,6 @@ void () dog_run12 = [ 59.000, dog_run1 ] {
    ai_run (FL_MONSTER);
 
 };
-
-void () dog_atta1;
 
 // function dog_atta1
 // function number 1296 begins at statement 22154
@@ -691,8 +629,6 @@ void () dog_atta1 = [ 0.000, dog_atta2 ] {
 
 };
 
-void () dog_atta2;
-
 // function dog_atta2
 // function number 1297 begins at statement 22158
 /*
@@ -708,8 +644,6 @@ void () dog_atta2 = [ 1.000, dog_atta3 ] {
 
 };
 
-void () dog_atta3;
-
 // function dog_atta3
 // function number 1298 begins at statement 22162
 /*
@@ -724,8 +658,6 @@ void () dog_atta3 = [ 2.000, dog_atta4 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () dog_atta4;
 
 // function dog_atta4
 // function number 1299 begins at statement 22166
@@ -747,8 +679,6 @@ void () dog_atta4 = [ 3.000, dog_atta5 ] {
    dog_bite ();
 
 };
-
-void () dog_atta5;
 string globaldef004452 /* = "dog/dattack1.wav" */;
 
 // function dog_atta5
@@ -766,8 +696,6 @@ void () dog_atta5 = [ 4.000, dog_atta6 ] {
 
 };
 
-void () dog_atta6;
-
 // function dog_atta6
 // function number 1301 begins at statement 22179
 /*
@@ -783,8 +711,6 @@ void () dog_atta6 = [ 5.000, dog_atta7 ] {
 
 };
 
-void () dog_atta7;
-
 // function dog_atta7
 // function number 1302 begins at statement 22183
 /*
@@ -799,8 +725,6 @@ void () dog_atta7 = [ 6.000, dog_atta8 ] {
    ai_charge (MOVETYPE_BOUNCE);
 
 };
-
-void () dog_atta8;
 
 // function dog_atta8
 // function number 1303 begins at statement 22187
@@ -830,8 +754,6 @@ void () dog_leap1 = [ 60.000, dog_leap2 ] {
    ai_face ();
 
 };
-
-void () dog_leap2;
 
 // function dog_leap2
 // function number 1305 begins at statement 22194
@@ -864,19 +786,17 @@ void () dog_leap2;
 void () dog_leap2 = [ 61.000, dog_leap3 ] {
 
    ai_face ();
-   self.globaldef000124 = Dog_JumpTouch;
-   makevectors (self.globaldef000095);
-   self.globaldef000086 = (self.globaldef000086 + TRUE);
-   self.globaldef000091 = ((v_forward * globaldef000523) + globaldef004458);
-   if ( (self.globaldef000160 & FL_ONGROUND) ) {
+   self.touch = Dog_JumpTouch;
+   makevectors (self.angles);
+   self.origin_z = (self.origin_z + TRUE);
+   self.velocity = ((v_forward * globaldef000523) + globaldef004458);
+   if ( (self.flags & FL_ONGROUND) ) {
 
-      self.globaldef000160 = (self.globaldef000160 - FL_ONGROUND);
+      self.flags = (self.flags - FL_ONGROUND);
 
    }
 
 };
-
-void () dog_leap3;
 vector globaldef004458 /* = '0.000 0.000 200.000' */;
 
 // function dog_leap3
@@ -891,8 +811,6 @@ void () dog_leap3 = [ 62.000, dog_leap4 ] {
 
 };
 
-void () dog_leap4;
-
 // function dog_leap4
 // function number 1307 begins at statement 22219
 /*
@@ -904,8 +822,6 @@ void () dog_leap4 = [ 63.000, dog_leap5 ] {
 
 
 };
-
-void () dog_leap5;
 
 // function dog_leap5
 // function number 1308 begins at statement 22221
@@ -919,8 +835,6 @@ void () dog_leap5 = [ 64.000, dog_leap6 ] {
 
 };
 
-void () dog_leap6;
-
 // function dog_leap6
 // function number 1309 begins at statement 22223
 /*
@@ -932,8 +846,6 @@ void () dog_leap6 = [ 65.000, dog_leap7 ] {
 
 
 };
-
-void () dog_leap7;
 
 // function dog_leap7
 // function number 1310 begins at statement 22225
@@ -947,8 +859,6 @@ void () dog_leap7 = [ 66.000, dog_leap8 ] {
 
 };
 
-void () dog_leap8;
-
 // function dog_leap8
 // function number 1311 begins at statement 22227
 /*
@@ -960,8 +870,6 @@ void () dog_leap8 = [ 67.000, dog_leap9 ] {
 
 
 };
-
-void () dog_leap9;
 
 // function dog_leap9
 // function number 1312 begins at statement 22229
@@ -975,8 +883,6 @@ void () dog_leap9 = [ 68.000, dog_leap9 ] {
 
 };
 
-void () dog_pain1;
-
 // function dog_pain1
 // function number 1313 begins at statement 22231
 /*
@@ -988,8 +894,6 @@ void () dog_pain1 = [ 26.000, dog_pain2 ] {
 
 
 };
-
-void () dog_pain2;
 
 // function dog_pain2
 // function number 1314 begins at statement 22233
@@ -1003,8 +907,6 @@ void () dog_pain2 = [ 27.000, dog_pain3 ] {
 
 };
 
-void () dog_pain3;
-
 // function dog_pain3
 // function number 1315 begins at statement 22235
 /*
@@ -1016,8 +918,6 @@ void () dog_pain3 = [ 28.000, dog_pain4 ] {
 
 
 };
-
-void () dog_pain4;
 
 // function dog_pain4
 // function number 1316 begins at statement 22237
@@ -1031,8 +931,6 @@ void () dog_pain4 = [ 29.000, dog_pain5 ] {
 
 };
 
-void () dog_pain5;
-
 // function dog_pain5
 // function number 1317 begins at statement 22239
 /*
@@ -1044,8 +942,6 @@ void () dog_pain5 = [ 30.000, dog_pain6 ] {
 
 
 };
-
-void () dog_pain6;
 
 // function dog_pain6
 // function number 1318 begins at statement 22241
@@ -1059,8 +955,6 @@ void () dog_pain6 = [ 31.000, dog_run1 ] {
 
 };
 
-void () dog_painb1;
-
 // function dog_painb1
 // function number 1319 begins at statement 22243
 /*
@@ -1073,8 +967,6 @@ void () dog_painb1 = [ 32.000, dog_painb2 ] {
 
 };
 
-void () dog_painb2;
-
 // function dog_painb2
 // function number 1320 begins at statement 22245
 /*
@@ -1086,8 +978,6 @@ void () dog_painb2 = [ 33.000, dog_painb3 ] {
 
 
 };
-
-void () dog_painb3;
 
 // function dog_painb3
 // function number 1321 begins at statement 22247
@@ -1104,8 +994,6 @@ void () dog_painb3 = [ 34.000, dog_painb4 ] {
 
 };
 
-void () dog_painb4;
-
 // function dog_painb4
 // function number 1322 begins at statement 22251
 /*
@@ -1120,8 +1008,6 @@ void () dog_painb4 = [ 35.000, dog_painb5 ] {
    ai_pain (globaldef000774);
 
 };
-
-void () dog_painb5;
 
 // function dog_painb5
 // function number 1323 begins at statement 22255
@@ -1138,8 +1024,6 @@ void () dog_painb5 = [ 36.000, dog_painb6 ] {
 
 };
 
-void () dog_painb6;
-
 // function dog_painb6
 // function number 1324 begins at statement 22259
 /*
@@ -1155,8 +1039,6 @@ void () dog_painb6 = [ 37.000, dog_painb7 ] {
 
 };
 
-void () dog_painb7;
-
 // function dog_painb7
 // function number 1325 begins at statement 22263
 /*
@@ -1168,8 +1050,6 @@ void () dog_painb7 = [ 38.000, dog_painb8 ] {
 
 
 };
-
-void () dog_painb8;
 
 // function dog_painb8
 // function number 1326 begins at statement 22265
@@ -1186,8 +1066,6 @@ void () dog_painb8 = [ 39.000, dog_painb9 ] {
 
 };
 
-void () dog_painb9;
-
 // function dog_painb9
 // function number 1327 begins at statement 22269
 /*
@@ -1199,8 +1077,6 @@ void () dog_painb9 = [ 40.000, dog_painb10 ] {
 
 
 };
-
-void () dog_painb10;
 
 // function dog_painb10
 // function number 1328 begins at statement 22271
@@ -1217,8 +1093,6 @@ void () dog_painb10 = [ 41.000, dog_painb11 ] {
 
 };
 
-void () dog_painb11;
-
 // function dog_painb11
 // function number 1329 begins at statement 22275
 /*
@@ -1230,8 +1104,6 @@ void () dog_painb11 = [ 42.000, dog_painb12 ] {
 
 
 };
-
-void () dog_painb12;
 
 // function dog_painb12
 // function number 1330 begins at statement 22277
@@ -1245,8 +1117,6 @@ void () dog_painb12 = [ 43.000, dog_painb13 ] {
 
 };
 
-void () dog_painb13;
-
 // function dog_painb13
 // function number 1331 begins at statement 22279
 /*
@@ -1258,8 +1128,6 @@ void () dog_painb13 = [ 44.000, dog_painb14 ] {
 
 
 };
-
-void () dog_painb14;
 
 // function dog_painb14
 // function number 1332 begins at statement 22281
@@ -1273,8 +1141,6 @@ void () dog_painb14 = [ 45.000, dog_painb15 ] {
 
 };
 
-void () dog_painb15;
-
 // function dog_painb15
 // function number 1333 begins at statement 22283
 /*
@@ -1287,8 +1153,6 @@ void () dog_painb15 = [ 46.000, dog_painb16 ] {
 
 };
 
-void () dog_painb16;
-
 // function dog_painb16
 // function number 1334 begins at statement 22285
 /*
@@ -1300,8 +1164,6 @@ void () dog_painb16 = [ 47.000, dog_run1 ] {
 
 
 };
-
-void () dog_pain;
 
 // function dog_pain
 // function number 1335 begins at statement 22287
@@ -1337,8 +1199,6 @@ void () dog_pain = {
 };
 string globaldef004488 /* = "dog/dpain1.wav" */;
 
-void () dog_die1;
-
 // function dog_die1
 // function number 1336 begins at statement 22300
 /*
@@ -1350,8 +1210,6 @@ void () dog_die1 = [ 8.000, dog_die2 ] {
 
 
 };
-
-void () dog_die2;
 
 // function dog_die2
 // function number 1337 begins at statement 22302
@@ -1365,8 +1223,6 @@ void () dog_die2 = [ 9.000, dog_die3 ] {
 
 };
 
-void () dog_die3;
-
 // function dog_die3
 // function number 1338 begins at statement 22304
 /*
@@ -1378,8 +1234,6 @@ void () dog_die3 = [ 10.000, dog_die4 ] {
 
 
 };
-
-void () dog_die4;
 
 // function dog_die4
 // function number 1339 begins at statement 22306
@@ -1393,8 +1247,6 @@ void () dog_die4 = [ 11.000, dog_die5 ] {
 
 };
 
-void () dog_die5;
-
 // function dog_die5
 // function number 1340 begins at statement 22308
 /*
@@ -1406,8 +1258,6 @@ void () dog_die5 = [ 12.000, dog_die6 ] {
 
 
 };
-
-void () dog_die6;
 
 // function dog_die6
 // function number 1341 begins at statement 22310
@@ -1421,8 +1271,6 @@ void () dog_die6 = [ 13.000, dog_die7 ] {
 
 };
 
-void () dog_die7;
-
 // function dog_die7
 // function number 1342 begins at statement 22312
 /*
@@ -1434,8 +1282,6 @@ void () dog_die7 = [ 14.000, dog_die8 ] {
 
 
 };
-
-void () dog_die8;
 
 // function dog_die8
 // function number 1343 begins at statement 22314
@@ -1449,8 +1295,6 @@ void () dog_die8 = [ 15.000, dog_die9 ] {
 
 };
 
-void () dog_die9;
-
 // function dog_die9
 // function number 1344 begins at statement 22316
 /*
@@ -1462,8 +1306,6 @@ void () dog_die9 = [ 16.000, dog_die9 ] {
 
 
 };
-
-void () dog_dieb1;
 
 // function dog_dieb1
 // function number 1345 begins at statement 22318
@@ -1477,8 +1319,6 @@ void () dog_dieb1 = [ 17.000, dog_dieb2 ] {
 
 };
 
-void () dog_dieb2;
-
 // function dog_dieb2
 // function number 1346 begins at statement 22320
 /*
@@ -1490,8 +1330,6 @@ void () dog_dieb2 = [ 18.000, dog_dieb3 ] {
 
 
 };
-
-void () dog_dieb3;
 
 // function dog_dieb3
 // function number 1347 begins at statement 22322
@@ -1505,8 +1343,6 @@ void () dog_dieb3 = [ 19.000, dog_dieb4 ] {
 
 };
 
-void () dog_dieb4;
-
 // function dog_dieb4
 // function number 1348 begins at statement 22324
 /*
@@ -1518,8 +1354,6 @@ void () dog_dieb4 = [ 20.000, dog_dieb5 ] {
 
 
 };
-
-void () dog_dieb5;
 
 // function dog_dieb5
 // function number 1349 begins at statement 22326
@@ -1533,8 +1367,6 @@ void () dog_dieb5 = [ 21.000, dog_dieb6 ] {
 
 };
 
-void () dog_dieb6;
-
 // function dog_dieb6
 // function number 1350 begins at statement 22328
 /*
@@ -1546,8 +1378,6 @@ void () dog_dieb6 = [ 22.000, dog_dieb7 ] {
 
 
 };
-
-void () dog_dieb7;
 
 // function dog_dieb7
 // function number 1351 begins at statement 22330
@@ -1561,8 +1391,6 @@ void () dog_dieb7 = [ 23.000, dog_dieb8 ] {
 
 };
 
-void () dog_dieb8;
-
 // function dog_dieb8
 // function number 1352 begins at statement 22332
 /*
@@ -1575,8 +1403,6 @@ void () dog_dieb8 = [ 24.000, dog_dieb9 ] {
 
 };
 
-void () dog_dieb9;
-
 // function dog_dieb9
 // function number 1353 begins at statement 22334
 /*
@@ -1588,8 +1414,6 @@ void () dog_dieb9 = [ 25.000, dog_dieb9 ] {
 
 
 };
-
-void () dog_die;
 
 // function dog_die
 // function number 1354 begins at statement 22336
@@ -1639,18 +1463,18 @@ void () dog_die;
 
 void () dog_die = {
 
-   if ( (self.globaldef000130 < globaldef004288) ) {
+   if ( (self.health < globaldef004288) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowGib (globaldef002434,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
-      ThrowHead (globaldef004508,self.globaldef000130);
+      ThrowGib (globaldef002434,self.health);
+      ThrowGib (globaldef002434,self.health);
+      ThrowGib (globaldef002434,self.health);
+      ThrowHead (globaldef004508,self.health);
       return ;
 
    }
    sound (self,CHAN_VOICE,globaldef004509,TRUE,ATTN_NORM);
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
    if ( (random () > globaldef000522) ) {
 
       dog_die1 ();
@@ -1664,7 +1488,6 @@ void () dog_die = {
 };
 string globaldef004508 /* = "progs/h_dog.mdl" */;
 string globaldef004509 /* = "dog/ddeath.wav" */;
-float () CheckDogMelee;
 
 // function CheckDogMelee
 // function number 1355 begins at statement 22377
@@ -1681,14 +1504,13 @@ float () CheckDogMelee = {
 
    if ( (globaldef001536 == RANGE_MELEE) ) {
 
-      self.globaldef000355 = AS_MELEE;
+      self.attack_state = AS_MELEE;
       return ( TRUE );
 
    }
    return ( FALSE );
 
 };
-float () CheckDogJump;
 
 // function CheckDogJump
 // function number 1356 begins at statement 22384
@@ -1746,17 +1568,17 @@ float () CheckDogJump = {
    local vector dist;
    local float d;
 
-   if ( ((self.globaldef000086 + self.globaldef000115) > ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002244 * self.globaldef000159.globaldef000123))) ) {
+   if ( ((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (globaldef002244 * self.enemy.size_z))) ) {
 
       return ( FALSE );
 
    }
-   if ( ((self.globaldef000086 + self.globaldef000119) < ((self.globaldef000159.globaldef000086 + self.globaldef000159.globaldef000115) + (globaldef002243 * self.globaldef000159.globaldef000123))) ) {
+   if ( ((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (globaldef002243 * self.enemy.size_z))) ) {
 
       return ( FALSE );
 
    }
-   dist = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   dist = (self.enemy.origin - self.origin);
    globaldef004515 = FALSE;
    d = vlen (dist);
    if ( (d < globaldef001439) ) {
@@ -1795,21 +1617,19 @@ float () DogCheckAttack = {
 
    if ( CheckDogMelee () ) {
 
-      self.globaldef000355 = AS_MELEE;
+      self.attack_state = AS_MELEE;
       return ( TRUE );
 
    }
    if ( CheckDogJump () ) {
 
-      self.globaldef000355 = AS_MISSILE;
+      self.attack_state = AS_MISSILE;
       return ( TRUE );
 
    }
    return ( FALSE );
 
 };
-
-void () monster_dog;
 
 // function monster_dog
 // function number 1358 begins at statement 22443
@@ -1878,18 +1698,18 @@ void () monster_dog = {
    precache_sound (globaldef004488);
    precache_sound (globaldef001668);
    precache_sound (globaldef004429);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef004522);
    setsize (self,VEC_HULL2_MIN,globaldef004523);
-   self.globaldef000130 = globaldef000288;
-   self.globaldef000344 = dog_stand1;
-   self.globaldef000345 = dog_walk1;
-   self.globaldef000346 = dog_run1;
-   self.globaldef000349 = dog_pain;
-   self.globaldef000350 = dog_die;
-   self.globaldef000348 = dog_atta1;
-   self.globaldef000347 = dog_leap1;
+   self.health = globaldef000288;
+   self.th_stand = dog_stand1;
+   self.th_walk = dog_walk1;
+   self.th_run = dog_run1;
+   self.th_pain = dog_pain;
+   self.th_die = dog_die;
+   self.th_melee = dog_atta1;
+   self.th_missile = dog_leap1;
    walkmonster_start ();
 
 };

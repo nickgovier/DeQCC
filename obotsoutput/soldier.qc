@@ -3,8 +3,6 @@ vector globaldef004167 /* = '16.000 16.000 40.000' */;
 
 void () army_fire;
 
-void () army_stand1;
-
 // function army_stand1
 // function number 1088 begins at statement 20804
 /*
@@ -18,8 +16,6 @@ void () army_stand1 = [ 0.000, army_stand2 ] {
    ai_stand ();
 
 };
-
-void () army_stand2;
 
 // function army_stand2
 // function number 1089 begins at statement 20807
@@ -35,8 +31,6 @@ void () army_stand2 = [ 1.000, army_stand3 ] {
 
 };
 
-void () army_stand3;
-
 // function army_stand3
 // function number 1090 begins at statement 20810
 /*
@@ -50,8 +44,6 @@ void () army_stand3 = [ 2.000, army_stand4 ] {
    ai_stand ();
 
 };
-
-void () army_stand4;
 
 // function army_stand4
 // function number 1091 begins at statement 20813
@@ -67,8 +59,6 @@ void () army_stand4 = [ 3.000, army_stand5 ] {
 
 };
 
-void () army_stand5;
-
 // function army_stand5
 // function number 1092 begins at statement 20816
 /*
@@ -82,8 +72,6 @@ void () army_stand5 = [ 4.000, army_stand6 ] {
    ai_stand ();
 
 };
-
-void () army_stand6;
 
 // function army_stand6
 // function number 1093 begins at statement 20819
@@ -99,8 +87,6 @@ void () army_stand6 = [ 5.000, army_stand7 ] {
 
 };
 
-void () army_stand7;
-
 // function army_stand7
 // function number 1094 begins at statement 20822
 /*
@@ -115,8 +101,6 @@ void () army_stand7 = [ 6.000, army_stand8 ] {
 
 };
 
-void () army_stand8;
-
 // function army_stand8
 // function number 1095 begins at statement 20825
 /*
@@ -130,8 +114,6 @@ void () army_stand8 = [ 7.000, army_stand1 ] {
    ai_stand ();
 
 };
-
-void () army_walk1;
 
 // function army_walk1
 // function number 1096 begins at statement 20828
@@ -161,8 +143,6 @@ void () army_walk1 = [ 90.000, army_walk2 ] {
    ai_walk (TRUE);
 
 };
-
-void () army_walk2;
 string globaldef004179 /* = "soldier/idle.wav" */;
 
 // function army_walk2
@@ -180,8 +160,6 @@ void () army_walk2 = [ 91.000, army_walk3 ] {
 
 };
 
-void () army_walk3;
-
 // function army_walk3
 // function number 1098 begins at statement 20845
 /*
@@ -196,8 +174,6 @@ void () army_walk3 = [ 92.000, army_walk4 ] {
    ai_walk (TRUE);
 
 };
-
-void () army_walk4;
 
 // function army_walk4
 // function number 1099 begins at statement 20849
@@ -214,8 +190,6 @@ void () army_walk4 = [ 93.000, army_walk5 ] {
 
 };
 
-void () army_walk5;
-
 // function army_walk5
 // function number 1100 begins at statement 20853
 /*
@@ -230,8 +204,6 @@ void () army_walk5 = [ 94.000, army_walk6 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () army_walk6;
 
 // function army_walk6
 // function number 1101 begins at statement 20857
@@ -248,8 +220,6 @@ void () army_walk6 = [ 95.000, army_walk7 ] {
 
 };
 
-void () army_walk7;
-
 // function army_walk7
 // function number 1102 begins at statement 20861
 /*
@@ -264,8 +234,6 @@ void () army_walk7 = [ 96.000, army_walk8 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () army_walk8;
 
 // function army_walk8
 // function number 1103 begins at statement 20865
@@ -282,8 +250,6 @@ void () army_walk8 = [ 97.000, army_walk9 ] {
 
 };
 
-void () army_walk9;
-
 // function army_walk9
 // function number 1104 begins at statement 20869
 /*
@@ -298,8 +264,6 @@ void () army_walk9 = [ 98.000, army_walk10 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () army_walk10;
 
 // function army_walk10
 // function number 1105 begins at statement 20873
@@ -316,8 +280,6 @@ void () army_walk10 = [ 99.000, army_walk11 ] {
 
 };
 
-void () army_walk11;
-
 // function army_walk11
 // function number 1106 begins at statement 20877
 /*
@@ -332,8 +294,6 @@ void () army_walk11 = [ 100.000, army_walk12 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () army_walk12;
 
 // function army_walk12
 // function number 1107 begins at statement 20881
@@ -350,8 +310,6 @@ void () army_walk12 = [ 101.000, army_walk13 ] {
 
 };
 
-void () army_walk13;
-
 // function army_walk13
 // function number 1108 begins at statement 20885
 /*
@@ -366,8 +324,6 @@ void () army_walk13 = [ 102.000, army_walk14 ] {
    ai_walk (FALSE);
 
 };
-
-void () army_walk14;
 
 // function army_walk14
 // function number 1109 begins at statement 20889
@@ -384,8 +340,6 @@ void () army_walk14 = [ 103.000, army_walk15 ] {
 
 };
 
-void () army_walk15;
-
 // function army_walk15
 // function number 1110 begins at statement 20893
 /*
@@ -400,8 +354,6 @@ void () army_walk15 = [ 104.000, army_walk16 ] {
    ai_walk (TRUE);
 
 };
-
-void () army_walk16;
 
 // function army_walk16
 // function number 1111 begins at statement 20897
@@ -418,8 +370,6 @@ void () army_walk16 = [ 105.000, army_walk17 ] {
 
 };
 
-void () army_walk17;
-
 // function army_walk17
 // function number 1112 begins at statement 20901
 /*
@@ -434,8 +384,6 @@ void () army_walk17 = [ 106.000, army_walk18 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () army_walk18;
 
 // function army_walk18
 // function number 1113 begins at statement 20905
@@ -452,8 +400,6 @@ void () army_walk18 = [ 107.000, army_walk19 ] {
 
 };
 
-void () army_walk19;
-
 // function army_walk19
 // function number 1114 begins at statement 20909
 /*
@@ -468,8 +414,6 @@ void () army_walk19 = [ 108.000, army_walk20 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () army_walk20;
 
 // function army_walk20
 // function number 1115 begins at statement 20913
@@ -486,8 +430,6 @@ void () army_walk20 = [ 109.000, army_walk21 ] {
 
 };
 
-void () army_walk21;
-
 // function army_walk21
 // function number 1116 begins at statement 20917
 /*
@@ -502,8 +444,6 @@ void () army_walk21 = [ 110.000, army_walk22 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () army_walk22;
 
 // function army_walk22
 // function number 1117 begins at statement 20921
@@ -520,8 +460,6 @@ void () army_walk22 = [ 111.000, army_walk23 ] {
 
 };
 
-void () army_walk23;
-
 // function army_walk23
 // function number 1118 begins at statement 20925
 /*
@@ -537,8 +475,6 @@ void () army_walk23 = [ 112.000, army_walk24 ] {
 
 };
 
-void () army_walk24;
-
 // function army_walk24
 // function number 1119 begins at statement 20929
 /*
@@ -553,8 +489,6 @@ void () army_walk24 = [ 113.000, army_walk1 ] {
    ai_walk (TRUE);
 
 };
-
-void () army_run1;
 
 // function army_run1
 // function number 1120 begins at statement 20933
@@ -585,8 +519,6 @@ void () army_run1 = [ 73.000, army_run2 ] {
 
 };
 
-void () army_run2;
-
 // function army_run2
 // function number 1121 begins at statement 20946
 /*
@@ -601,8 +533,6 @@ void () army_run2 = [ 74.000, army_run3 ] {
    ai_run (globaldef000748);
 
 };
-
-void () army_run3;
 
 // function army_run3
 // function number 1122 begins at statement 20950
@@ -619,8 +549,6 @@ void () army_run3 = [ 75.000, army_run4 ] {
 
 };
 
-void () army_run4;
-
 // function army_run4
 // function number 1123 begins at statement 20954
 /*
@@ -635,8 +563,6 @@ void () army_run4 = [ 76.000, army_run5 ] {
    ai_run (MOVETYPE_BOUNCE);
 
 };
-
-void () army_run5;
 
 // function army_run5
 // function number 1124 begins at statement 20958
@@ -653,8 +579,6 @@ void () army_run5 = [ 77.000, army_run6 ] {
 
 };
 
-void () army_run6;
-
 // function army_run6
 // function number 1125 begins at statement 20962
 /*
@@ -669,8 +593,6 @@ void () army_run6 = [ 78.000, army_run7 ] {
    ai_run (globaldef000748);
 
 };
-
-void () army_run7;
 
 // function army_run7
 // function number 1126 begins at statement 20966
@@ -687,8 +609,6 @@ void () army_run7 = [ 79.000, army_run8 ] {
 
 };
 
-void () army_run8;
-
 // function army_run8
 // function number 1127 begins at statement 20970
 /*
@@ -704,8 +624,6 @@ void () army_run8 = [ 80.000, army_run1 ] {
 
 };
 
-void () army_atk1;
-
 // function army_atk1
 // function number 1128 begins at statement 20974
 /*
@@ -719,8 +637,6 @@ void () army_atk1 = [ 81.000, army_atk2 ] {
    ai_face ();
 
 };
-
-void () army_atk2;
 
 // function army_atk2
 // function number 1129 begins at statement 20977
@@ -736,8 +652,6 @@ void () army_atk2 = [ 82.000, army_atk3 ] {
 
 };
 
-void () army_atk3;
-
 // function army_atk3
 // function number 1130 begins at statement 20980
 /*
@@ -752,8 +666,6 @@ void () army_atk3 = [ 83.000, army_atk4 ] {
 
 };
 
-void () army_atk4;
-
 // function army_atk4
 // function number 1131 begins at statement 20983
 /*
@@ -767,8 +679,6 @@ void () army_atk4 = [ 84.000, army_atk5 ] {
    ai_face ();
 
 };
-
-void () army_atk5;
 
 // function army_atk5
 // function number 1132 begins at statement 20986
@@ -787,11 +697,9 @@ void () army_atk5 = [ 85.000, army_atk6 ] {
 
    ai_face ();
    army_fire ();
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.effects = (self.effects | EF_MUZZLEFLASH);
 
 };
-
-void () army_atk6;
 
 // function army_atk6
 // function number 1133 begins at statement 20994
@@ -806,8 +714,6 @@ void () army_atk6 = [ 86.000, army_atk7 ] {
    ai_face ();
 
 };
-
-void () army_atk7;
 
 // function army_atk7
 // function number 1134 begins at statement 20997
@@ -826,8 +732,6 @@ void () army_atk7 = [ 87.000, army_atk8 ] {
 
 };
 
-void () army_atk8;
-
 // function army_atk8
 // function number 1135 begins at statement 21002
 /*
@@ -841,8 +745,6 @@ void () army_atk8 = [ 88.000, army_atk9 ] {
    ai_face ();
 
 };
-
-void () army_atk9;
 
 // function army_atk9
 // function number 1136 begins at statement 21005
@@ -858,8 +760,6 @@ void () army_atk9 = [ 89.000, army_run1 ] {
 
 };
 
-void () army_pain1;
-
 // function army_pain1
 // function number 1137 begins at statement 21008
 /*
@@ -871,8 +771,6 @@ void () army_pain1 = [ 40.000, army_pain2 ] {
 
 
 };
-
-void () army_pain2;
 
 // function army_pain2
 // function number 1138 begins at statement 21010
@@ -886,8 +784,6 @@ void () army_pain2 = [ 41.000, army_pain3 ] {
 
 };
 
-void () army_pain3;
-
 // function army_pain3
 // function number 1139 begins at statement 21012
 /*
@@ -899,8 +795,6 @@ void () army_pain3 = [ 42.000, army_pain4 ] {
 
 
 };
-
-void () army_pain4;
 
 // function army_pain4
 // function number 1140 begins at statement 21014
@@ -914,8 +808,6 @@ void () army_pain4 = [ 43.000, army_pain5 ] {
 
 };
 
-void () army_pain5;
-
 // function army_pain5
 // function number 1141 begins at statement 21016
 /*
@@ -927,8 +819,6 @@ void () army_pain5 = [ 44.000, army_pain6 ] {
 
 
 };
-
-void () army_pain6;
 
 // function army_pain6
 // function number 1142 begins at statement 21018
@@ -945,8 +835,6 @@ void () army_pain6 = [ 45.000, army_run1 ] {
 
 };
 
-void () army_painb1;
-
 // function army_painb1
 // function number 1143 begins at statement 21022
 /*
@@ -958,8 +846,6 @@ void () army_painb1 = [ 46.000, army_painb2 ] {
 
 
 };
-
-void () army_painb2;
 
 // function army_painb2
 // function number 1144 begins at statement 21024
@@ -976,8 +862,6 @@ void () army_painb2 = [ 47.000, army_painb3 ] {
 
 };
 
-void () army_painb3;
-
 // function army_painb3
 // function number 1145 begins at statement 21028
 /*
@@ -993,8 +877,6 @@ void () army_painb3 = [ 48.000, army_painb4 ] {
 
 };
 
-void () army_painb4;
-
 // function army_painb4
 // function number 1146 begins at statement 21032
 /*
@@ -1006,8 +888,6 @@ void () army_painb4 = [ 49.000, army_painb5 ] {
 
 
 };
-
-void () army_painb5;
 
 // function army_painb5
 // function number 1147 begins at statement 21034
@@ -1021,8 +901,6 @@ void () army_painb5 = [ 50.000, army_painb6 ] {
 
 };
 
-void () army_painb6;
-
 // function army_painb6
 // function number 1148 begins at statement 21036
 /*
@@ -1034,8 +912,6 @@ void () army_painb6 = [ 51.000, army_painb7 ] {
 
 
 };
-
-void () army_painb7;
 
 // function army_painb7
 // function number 1149 begins at statement 21038
@@ -1049,8 +925,6 @@ void () army_painb7 = [ 52.000, army_painb8 ] {
 
 };
 
-void () army_painb8;
-
 // function army_painb8
 // function number 1150 begins at statement 21040
 /*
@@ -1062,8 +936,6 @@ void () army_painb8 = [ 53.000, army_painb9 ] {
 
 
 };
-
-void () army_painb9;
 
 // function army_painb9
 // function number 1151 begins at statement 21042
@@ -1077,8 +949,6 @@ void () army_painb9 = [ 54.000, army_painb10 ] {
 
 };
 
-void () army_painb10;
-
 // function army_painb10
 // function number 1152 begins at statement 21044
 /*
@@ -1091,8 +961,6 @@ void () army_painb10 = [ 55.000, army_painb11 ] {
 
 };
 
-void () army_painb11;
-
 // function army_painb11
 // function number 1153 begins at statement 21046
 /*
@@ -1104,8 +972,6 @@ void () army_painb11 = [ 56.000, army_painb12 ] {
 
 
 };
-
-void () army_painb12;
 
 // function army_painb12
 // function number 1154 begins at statement 21048
@@ -1122,8 +988,6 @@ void () army_painb12 = [ 57.000, army_painb13 ] {
 
 };
 
-void () army_painb13;
-
 // function army_painb13
 // function number 1155 begins at statement 21052
 /*
@@ -1135,8 +999,6 @@ void () army_painb13 = [ 58.000, army_painb14 ] {
 
 
 };
-
-void () army_painb14;
 
 // function army_painb14
 // function number 1156 begins at statement 21054
@@ -1150,8 +1012,6 @@ void () army_painb14 = [ 59.000, army_run1 ] {
 
 };
 
-void () army_painc1;
-
 // function army_painc1
 // function number 1157 begins at statement 21056
 /*
@@ -1163,8 +1023,6 @@ void () army_painc1 = [ 60.000, army_painc2 ] {
 
 
 };
-
-void () army_painc2;
 
 // function army_painc2
 // function number 1158 begins at statement 21058
@@ -1181,8 +1039,6 @@ void () army_painc2 = [ 61.000, army_painc3 ] {
 
 };
 
-void () army_painc3;
-
 // function army_painc3
 // function number 1159 begins at statement 21062
 /*
@@ -1195,8 +1051,6 @@ void () army_painc3 = [ 62.000, army_painc4 ] {
 
 };
 
-void () army_painc4;
-
 // function army_painc4
 // function number 1160 begins at statement 21064
 /*
@@ -1208,8 +1062,6 @@ void () army_painc4 = [ 63.000, army_painc5 ] {
 
 
 };
-
-void () army_painc5;
 
 // function army_painc5
 // function number 1161 begins at statement 21066
@@ -1226,8 +1078,6 @@ void () army_painc5 = [ 64.000, army_painc6 ] {
 
 };
 
-void () army_painc6;
-
 // function army_painc6
 // function number 1162 begins at statement 21070
 /*
@@ -1243,8 +1093,6 @@ void () army_painc6 = [ 65.000, army_painc7 ] {
 
 };
 
-void () army_painc7;
-
 // function army_painc7
 // function number 1163 begins at statement 21074
 /*
@@ -1256,8 +1104,6 @@ void () army_painc7 = [ 66.000, army_painc8 ] {
 
 
 };
-
-void () army_painc8;
 
 // function army_painc8
 // function number 1164 begins at statement 21076
@@ -1274,8 +1120,6 @@ void () army_painc8 = [ 67.000, army_painc9 ] {
 
 };
 
-void () army_painc9;
-
 // function army_painc9
 // function number 1165 begins at statement 21080
 /*
@@ -1290,8 +1134,6 @@ void () army_painc9 = [ 68.000, army_painc10 ] {
    ai_painforward (MOVETYPE_STEP);
 
 };
-
-void () army_painc10;
 
 // function army_painc10
 // function number 1166 begins at statement 21084
@@ -1308,8 +1150,6 @@ void () army_painc10 = [ 69.000, army_painc11 ] {
 
 };
 
-void () army_painc11;
-
 // function army_painc11
 // function number 1167 begins at statement 21088
 /*
@@ -1324,8 +1164,6 @@ void () army_painc11 = [ 70.000, army_painc12 ] {
    ai_painforward (MOVETYPE_TOSS);
 
 };
-
-void () army_painc12;
 
 // function army_painc12
 // function number 1168 begins at statement 21092
@@ -1342,8 +1180,6 @@ void () army_painc12 = [ 71.000, army_painc13 ] {
 
 };
 
-void () army_painc13;
-
 // function army_painc13
 // function number 1169 begins at statement 21096
 /*
@@ -1355,8 +1191,6 @@ void () army_painc13 = [ 72.000, army_run1 ] {
 
 
 };
-
-void (entity globaldef004253, float globaldef004254) army_pain;
 
 // function army_pain
 // function number 1170 begins at statement 21098
@@ -1410,7 +1244,7 @@ void (entity globaldef004253, float globaldef004254) army_pain = {
 
    local float r;
 
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
@@ -1418,7 +1252,7 @@ void (entity globaldef004253, float globaldef004254) army_pain = {
    r = random ();
    if ( (r < globaldef001553) ) {
 
-      self.globaldef000362 = (time + globaldef001825);
+      self.pain_finished = (time + globaldef001825);
       army_pain1 ();
       sound (self,CHAN_VOICE,globaldef004256,TRUE,ATTN_NORM);
 
@@ -1426,13 +1260,13 @@ void (entity globaldef004253, float globaldef004254) army_pain = {
 
       if ( (r < globaldef001825) ) {
 
-         self.globaldef000362 = (time + globaldef004257);
+         self.pain_finished = (time + globaldef004257);
          army_painb1 ();
          sound (self,CHAN_VOICE,globaldef004258,TRUE,ATTN_NORM);
 
       } else {
 
-         self.globaldef000362 = (time + globaldef004257);
+         self.pain_finished = (time + globaldef004257);
          army_painc1 ();
          sound (self,CHAN_VOICE,globaldef004258,TRUE,ATTN_NORM);
 
@@ -1481,16 +1315,14 @@ void () army_fire = {
 
    ai_face ();
    sound (self,CHAN_WEAPON,globaldef004264,TRUE,ATTN_NORM);
-   en = self.globaldef000159;
-   dir = (en.globaldef000083 - (en.globaldef000091 * globaldef001553));
-   dir = normalize ((dir - self.globaldef000083));
+   en = self.enemy;
+   dir = (en.origin - (en.velocity * globaldef001553));
+   dir = normalize ((dir - self.origin));
    FireBullets (MOVETYPE_STEP,dir,globaldef004265);
 
 };
 string globaldef004264 /* = "soldier/sattck1.wav" */;
 vector globaldef004265 /* = '0.100 0.100 0.000' */;
-
-void () army_die1;
 
 // function army_die1
 // function number 1172 begins at statement 21165
@@ -1504,8 +1336,6 @@ void () army_die1 = [ 8.000, army_die2 ] {
 
 };
 
-void () army_die2;
-
 // function army_die2
 // function number 1173 begins at statement 21167
 /*
@@ -1517,8 +1347,6 @@ void () army_die2 = [ 9.000, army_die3 ] {
 
 
 };
-
-void () army_die3;
 
 // function army_die3
 // function number 1174 begins at statement 21169
@@ -1534,13 +1362,11 @@ void () army_die3;
 
 void () army_die3 = [ 10.000, army_die4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000136 = MOVETYPE_FLY;
+   self.solid = SOLID_NOT;
+   self.ammo_shells = MOVETYPE_FLY;
    func000244 ();
 
 };
-
-void () army_die4;
 
 // function army_die4
 // function number 1175 begins at statement 21176
@@ -1554,8 +1380,6 @@ void () army_die4 = [ 11.000, army_die5 ] {
 
 };
 
-void () army_die5;
-
 // function army_die5
 // function number 1176 begins at statement 21178
 /*
@@ -1567,8 +1391,6 @@ void () army_die5 = [ 12.000, army_die6 ] {
 
 
 };
-
-void () army_die6;
 
 // function army_die6
 // function number 1177 begins at statement 21180
@@ -1582,8 +1404,6 @@ void () army_die6 = [ 13.000, army_die7 ] {
 
 };
 
-void () army_die7;
-
 // function army_die7
 // function number 1178 begins at statement 21182
 /*
@@ -1595,8 +1415,6 @@ void () army_die7 = [ 14.000, army_die8 ] {
 
 
 };
-
-void () army_die8;
 
 // function army_die8
 // function number 1179 begins at statement 21184
@@ -1610,8 +1428,6 @@ void () army_die8 = [ 15.000, army_die9 ] {
 
 };
 
-void () army_die9;
-
 // function army_die9
 // function number 1180 begins at statement 21186
 /*
@@ -1623,8 +1439,6 @@ void () army_die9 = [ 16.000, army_die10 ] {
 
 
 };
-
-void () army_die10;
 
 // function army_die10
 // function number 1181 begins at statement 21188
@@ -1638,8 +1452,6 @@ void () army_die10 = [ 17.000, army_die10 ] {
 
 };
 
-void () army_cdie1;
-
 // function army_cdie1
 // function number 1182 begins at statement 21190
 /*
@@ -1651,8 +1463,6 @@ void () army_cdie1 = [ 18.000, army_cdie2 ] {
 
 
 };
-
-void () army_cdie2;
 
 // function army_cdie2
 // function number 1183 begins at statement 21192
@@ -1668,8 +1478,6 @@ void () army_cdie2 = [ 19.000, army_cdie3 ] {
    ai_back (MOVETYPE_FLY);
 
 };
-
-void () army_cdie3;
 
 // function army_cdie3
 // function number 1184 begins at statement 21196
@@ -1687,14 +1495,12 @@ void () army_cdie3;
 
 void () army_cdie3 = [ 20.000, army_cdie4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000136 = MOVETYPE_FLY;
+   self.solid = SOLID_NOT;
+   self.ammo_shells = MOVETYPE_FLY;
    func000244 ();
    ai_back (MOVETYPE_STEP);
 
 };
-
-void () army_cdie4;
 
 // function army_cdie4
 // function number 1185 begins at statement 21205
@@ -1711,8 +1517,6 @@ void () army_cdie4 = [ 21.000, army_cdie5 ] {
 
 };
 
-void () army_cdie5;
-
 // function army_cdie5
 // function number 1186 begins at statement 21209
 /*
@@ -1727,8 +1531,6 @@ void () army_cdie5 = [ 22.000, army_cdie6 ] {
    ai_back (MOVETYPE_WALK);
 
 };
-
-void () army_cdie6;
 
 // function army_cdie6
 // function number 1187 begins at statement 21213
@@ -1745,8 +1547,6 @@ void () army_cdie6 = [ 23.000, army_cdie7 ] {
 
 };
 
-void () army_cdie7;
-
 // function army_cdie7
 // function number 1188 begins at statement 21217
 /*
@@ -1758,8 +1558,6 @@ void () army_cdie7 = [ 24.000, army_cdie8 ] {
 
 
 };
-
-void () army_cdie8;
 
 // function army_cdie8
 // function number 1189 begins at statement 21219
@@ -1773,8 +1571,6 @@ void () army_cdie8 = [ 25.000, army_cdie9 ] {
 
 };
 
-void () army_cdie9;
-
 // function army_cdie9
 // function number 1190 begins at statement 21221
 /*
@@ -1786,8 +1582,6 @@ void () army_cdie9 = [ 26.000, army_cdie10 ] {
 
 
 };
-
-void () army_cdie10;
 
 // function army_cdie10
 // function number 1191 begins at statement 21223
@@ -1801,8 +1595,6 @@ void () army_cdie10 = [ 27.000, army_cdie11 ] {
 
 };
 
-void () army_cdie11;
-
 // function army_cdie11
 // function number 1192 begins at statement 21225
 /*
@@ -1814,8 +1606,6 @@ void () army_cdie11 = [ 28.000, army_cdie11 ] {
 
 
 };
-
-void () army_die;
 
 // function army_die
 // function number 1193 begins at statement 21227
@@ -1863,13 +1653,13 @@ void () army_die;
 
 void () army_die = {
 
-   if ( (self.globaldef000130 < globaldef004288) ) {
+   if ( (self.health < globaldef004288) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef004289,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef004289,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -1888,8 +1678,6 @@ void () army_die = {
 float globaldef004288 /* = -35.000 */;
 string globaldef004289 /* = "progs/h_guard.mdl" */;
 string globaldef004290 /* = "soldier/death1.wav" */;
-
-void () monster_army;
 
 // function monster_army
 // function number 1194 begins at statement 21266
@@ -1971,17 +1759,17 @@ void () monster_army = {
    precache_sound (globaldef004264);
    precache_sound (globaldef001681);
    precache_sound (globaldef002406);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef004292);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = SVC_INTERMISSION;
-   self.globaldef000344 = army_stand1;
-   self.globaldef000345 = army_walk1;
-   self.globaldef000346 = army_run1;
-   self.globaldef000347 = army_atk1;
-   self.globaldef000349 = army_pain;
-   self.globaldef000350 = army_die;
+   self.health = SVC_INTERMISSION;
+   self.th_stand = army_stand1;
+   self.th_walk = army_walk1;
+   self.th_run = army_run1;
+   self.th_missile = army_atk1;
+   self.th_pain = army_pain;
+   self.th_die = army_die;
    walkmonster_start ();
 
 };

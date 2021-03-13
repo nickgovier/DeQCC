@@ -1,7 +1,5 @@
 string globaldef004292 /* = "progs/soldier.mdl" */;
 
-void (entity globaldef004294, float globaldef004295, float globaldef004296) LaunchMissile;
-
 // function LaunchMissile
 // function number 1195 begins at statement 21321
 /*
@@ -69,19 +67,19 @@ void (entity globaldef004294, float globaldef004295, float globaldef004296) Laun
    local vector move;
    local float fly;
 
-   makevectors (self.globaldef000095);
-   vec = (((self.globaldef000159.globaldef000083 + self.globaldef000159.globaldef000112) + (self.globaldef000159.globaldef000120 * globaldef002123)) - globaldef004294.globaldef000083);
+   makevectors (self.angles);
+   vec = (((self.enemy.origin + self.enemy.mins) + (self.enemy.size * globaldef002123)) - globaldef004294.origin);
    fly = (vlen (vec) / globaldef004295);
-   move = self.globaldef000159.globaldef000091;
+   move = self.enemy.velocity;
    globaldef004304 = FALSE;
    vec = (vec + (move * fly));
    vec = normalize (vec);
    vec = ((vec + ((globaldef004296 * v_up) * (random () - globaldef000522))) + ((globaldef004296 * v_right) * (random () - globaldef000522)));
-   globaldef004294.globaldef000091 = (vec * globaldef004295);
-   globaldef004294.globaldef000095 = VEC_ORIGIN;
-   globaldef004294.globaldef000097 = vectoyaw (globaldef004294.globaldef000091);
-   globaldef004294.globaldef000128 = (time + MOVETYPE_FLY);
-   globaldef004294.globaldef000126 = SUB_Remove;
+   globaldef004294.velocity = (vec * globaldef004295);
+   globaldef004294.angles = VEC_ORIGIN;
+   globaldef004294.angles_y = vectoyaw (globaldef004294.velocity);
+   globaldef004294.nextthink = (time + MOVETYPE_FLY);
+   globaldef004294.think = SUB_Remove;
 
 };
 
@@ -176,7 +174,7 @@ float () WizardCheckAttack = {
    local entity targ;
    local float chance;
 
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ( FALSE );
 
@@ -188,24 +186,24 @@ float () WizardCheckAttack = {
    }
    if ( (globaldef001536 == RANGE_FAR) ) {
 
-      if ( (self.globaldef000355 != AS_STRAIGHT) ) {
+      if ( (self.attack_state != AS_STRAIGHT) ) {
 
-         self.globaldef000355 = AS_STRAIGHT;
+         self.attack_state = AS_STRAIGHT;
          wiz_run1 ();
 
       }
       return ( FALSE );
 
    }
-   targ = self.globaldef000159;
-   spot1 = (self.globaldef000083 + self.globaldef000144);
-   spot2 = (targ.globaldef000083 + targ.globaldef000144);
+   targ = self.enemy;
+   spot1 = (self.origin + self.view_ofs);
+   spot2 = (targ.origin + targ.view_ofs);
    traceline (spot1,spot2,FALSE,self);
    if ( (trace_ent != targ) ) {
 
-      if ( (self.globaldef000355 != AS_STRAIGHT) ) {
+      if ( (self.attack_state != AS_STRAIGHT) ) {
 
-         self.globaldef000355 = AS_STRAIGHT;
+         self.attack_state = AS_STRAIGHT;
          wiz_run1 ();
 
       }
@@ -239,24 +237,24 @@ float () WizardCheckAttack = {
    }
    if ( (random () < chance) ) {
 
-      self.globaldef000355 = AS_MISSILE;
+      self.attack_state = AS_MISSILE;
       return ( TRUE );
 
    }
    if ( (globaldef001536 == RANGE_MID) ) {
 
-      if ( (self.globaldef000355 != AS_STRAIGHT) ) {
+      if ( (self.attack_state != AS_STRAIGHT) ) {
 
-         self.globaldef000355 = AS_STRAIGHT;
+         self.attack_state = AS_STRAIGHT;
          wiz_run1 ();
 
       }
 
    } else {
 
-      if ( (self.globaldef000355 != AS_SLIDING) ) {
+      if ( (self.attack_state != AS_SLIDING) ) {
 
-         self.globaldef000355 = AS_SLIDING;
+         self.attack_state = AS_SLIDING;
          wiz_side1 ();
 
       }
@@ -265,8 +263,6 @@ float () WizardCheckAttack = {
    return ( FALSE );
 
 };
-
-void () WizardAttackFinished;
 
 // function WizardAttackFinished
 // function number 1197 begins at statement 21453
@@ -291,19 +287,17 @@ void () WizardAttackFinished = {
 
    if ( ((globaldef001536 >= RANGE_MID) || !globaldef001534) ) {
 
-      self.globaldef000355 = AS_STRAIGHT;
-      self.globaldef000126 = wiz_run1;
+      self.attack_state = AS_STRAIGHT;
+      self.think = wiz_run1;
 
    } else {
 
-      self.globaldef000355 = AS_SLIDING;
-      self.globaldef000126 = wiz_side1;
+      self.attack_state = AS_SLIDING;
+      self.think = wiz_side1;
 
    }
 
 };
-
-void () Wiz_FastFire;
 
 // function Wiz_FastFire
 // function number 1198 begins at statement 21467
@@ -368,17 +362,17 @@ void () Wiz_FastFire = {
    local vector vec;
    local vector dst;
 
-   if ( (self.globaldef000179.globaldef000130 > FALSE) ) {
+   if ( (self.owner.health > FALSE) ) {
 
-      self.globaldef000179.globaldef000111 = (self.globaldef000179.globaldef000111 | EF_MUZZLEFLASH);
-      makevectors (self.globaldef000159.globaldef000095);
-      dst = (self.globaldef000159.globaldef000083 - (globaldef000775 * self.globaldef000180));
-      vec = normalize ((dst - self.globaldef000083));
+      self.owner.effects = (self.owner.effects | EF_MUZZLEFLASH);
+      makevectors (self.enemy.angles);
+      dst = (self.enemy.origin - (globaldef000775 * self.movedir));
+      vec = normalize ((dst - self.origin));
       sound (self,CHAN_WEAPON,globaldef004328,TRUE,ATTN_NORM);
-      launch_spike (self.globaldef000083,vec);
-      newmis.globaldef000091 = (vec * globaldef000723);
-      newmis.globaldef000179 = self.globaldef000179;
-      newmis.globaldef000107 = globaldef002218;
+      launch_spike (self.origin,vec);
+      newmis.velocity = (vec * globaldef000723);
+      newmis.owner = self.owner;
+      newmis.classname = globaldef002218;
       setmodel (newmis,globaldef004329);
       setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
 
@@ -388,8 +382,6 @@ void () Wiz_FastFire = {
 };
 string globaldef004328 /* = "wizard/wattack.wav" */;
 string globaldef004329 /* = "progs/w_spike.mdl" */;
-
-void () Wiz_StartFast;
 
 // function Wiz_StartFast
 // function number 1199 begins at statement 21520
@@ -475,32 +467,30 @@ void () Wiz_StartFast = {
    local entity missile;
 
    sound (self,CHAN_WEAPON,globaldef004328,TRUE,ATTN_NORM);
-   self.globaldef000153 = self.globaldef000095;
-   makevectors (self.globaldef000095);
+   self.v_angle = self.angles;
+   makevectors (self.angles);
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000128 = (time + globaldef001825);
+   missile.owner = self;
+   missile.nextthink = (time + globaldef001825);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (missile,(((self.globaldef000083 + globaldef004332) + (v_forward * globaldef002136)) + (v_right * globaldef002136)));
-   missile.globaldef000159 = self.globaldef000159;
-   missile.globaldef000128 = (time + globaldef001827);
-   missile.globaldef000126 = Wiz_FastFire;
-   missile.globaldef000180 = v_right;
+   setorigin (missile,(((self.origin + globaldef004332) + (v_forward * globaldef002136)) + (v_right * globaldef002136)));
+   missile.enemy = self.enemy;
+   missile.nextthink = (time + globaldef001827);
+   missile.think = Wiz_FastFire;
+   missile.movedir = v_right;
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000128 = (time + TRUE);
+   missile.owner = self;
+   missile.nextthink = (time + TRUE);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (missile,(((self.globaldef000083 + globaldef004332) + (v_forward * globaldef002136)) + (v_right * globaldef004333)));
-   missile.globaldef000159 = self.globaldef000159;
-   missile.globaldef000128 = (time + globaldef001588);
-   missile.globaldef000126 = Wiz_FastFire;
-   missile.globaldef000180 = (VEC_ORIGIN - v_right);
+   setorigin (missile,(((self.origin + globaldef004332) + (v_forward * globaldef002136)) + (v_right * globaldef004333)));
+   missile.enemy = self.enemy;
+   missile.nextthink = (time + globaldef001588);
+   missile.think = Wiz_FastFire;
+   missile.movedir = (VEC_ORIGIN - v_right);
 
 };
 vector globaldef004332 /* = '0.000 0.000 30.000' */;
 float globaldef004333 /* = -14.000 */;
-
-void () Wiz_idlesound;
 
 // function Wiz_idlesound
 // function number 1200 begins at statement 21594
@@ -539,9 +529,9 @@ void () Wiz_idlesound = {
    local float wr;
 
    wr = (random () * MOVETYPE_FLY);
-   if ( (self.globaldef000431 < time) ) {
+   if ( (self.waitmin < time) ) {
 
-      self.globaldef000431 = (time + FL_SWIM);
+      self.waitmin = (time + FL_SWIM);
       if ( (wr > globaldef004336) ) {
 
          sound (self,CHAN_VOICE,globaldef004337,TRUE,ATTN_IDLE);
@@ -561,8 +551,6 @@ float globaldef004336 /* = 4.500 */;
 string globaldef004337 /* = "wizard/widle1.wav" */;
 string globaldef004338 /* = "wizard/widle2.wav" */;
 
-void () wiz_stand1;
-
 // function wiz_stand1
 // function number 1201 begins at statement 21621
 /*
@@ -576,8 +564,6 @@ void () wiz_stand1 = [ 0.000, wiz_stand2 ] {
    ai_stand ();
 
 };
-
-void () wiz_stand2;
 
 // function wiz_stand2
 // function number 1202 begins at statement 21624
@@ -593,8 +579,6 @@ void () wiz_stand2 = [ 1.000, wiz_stand3 ] {
 
 };
 
-void () wiz_stand3;
-
 // function wiz_stand3
 // function number 1203 begins at statement 21627
 /*
@@ -608,8 +592,6 @@ void () wiz_stand3 = [ 2.000, wiz_stand4 ] {
    ai_stand ();
 
 };
-
-void () wiz_stand4;
 
 // function wiz_stand4
 // function number 1204 begins at statement 21630
@@ -625,8 +607,6 @@ void () wiz_stand4 = [ 3.000, wiz_stand5 ] {
 
 };
 
-void () wiz_stand5;
-
 // function wiz_stand5
 // function number 1205 begins at statement 21633
 /*
@@ -640,8 +620,6 @@ void () wiz_stand5 = [ 4.000, wiz_stand6 ] {
    ai_stand ();
 
 };
-
-void () wiz_stand6;
 
 // function wiz_stand6
 // function number 1206 begins at statement 21636
@@ -657,8 +635,6 @@ void () wiz_stand6 = [ 5.000, wiz_stand7 ] {
 
 };
 
-void () wiz_stand7;
-
 // function wiz_stand7
 // function number 1207 begins at statement 21639
 /*
@@ -673,8 +649,6 @@ void () wiz_stand7 = [ 6.000, wiz_stand8 ] {
 
 };
 
-void () wiz_stand8;
-
 // function wiz_stand8
 // function number 1208 begins at statement 21642
 /*
@@ -688,8 +662,6 @@ void () wiz_stand8 = [ 7.000, wiz_stand1 ] {
    ai_stand ();
 
 };
-
-void () wiz_walk1;
 
 // function wiz_walk1
 // function number 1209 begins at statement 21645
@@ -708,8 +680,6 @@ void () wiz_walk1 = [ 0.000, wiz_walk2 ] {
 
 };
 
-void () wiz_walk2;
-
 // function wiz_walk2
 // function number 1210 begins at statement 21650
 /*
@@ -724,8 +694,6 @@ void () wiz_walk2 = [ 1.000, wiz_walk3 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () wiz_walk3;
 
 // function wiz_walk3
 // function number 1211 begins at statement 21654
@@ -742,8 +710,6 @@ void () wiz_walk3 = [ 2.000, wiz_walk4 ] {
 
 };
 
-void () wiz_walk4;
-
 // function wiz_walk4
 // function number 1212 begins at statement 21658
 /*
@@ -758,8 +724,6 @@ void () wiz_walk4 = [ 3.000, wiz_walk5 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () wiz_walk5;
 
 // function wiz_walk5
 // function number 1213 begins at statement 21662
@@ -776,8 +740,6 @@ void () wiz_walk5 = [ 4.000, wiz_walk6 ] {
 
 };
 
-void () wiz_walk6;
-
 // function wiz_walk6
 // function number 1214 begins at statement 21666
 /*
@@ -793,8 +755,6 @@ void () wiz_walk6 = [ 5.000, wiz_walk7 ] {
 
 };
 
-void () wiz_walk7;
-
 // function wiz_walk7
 // function number 1215 begins at statement 21670
 /*
@@ -809,8 +769,6 @@ void () wiz_walk7 = [ 6.000, wiz_walk8 ] {
    ai_walk (FL_CLIENT);
 
 };
-
-void () wiz_walk8;
 
 // function wiz_walk8
 // function number 1216 begins at statement 21674
@@ -844,8 +802,6 @@ void () wiz_side1 = [ 0.000, wiz_side2 ] {
 
 };
 
-void () wiz_side2;
-
 // function wiz_side2
 // function number 1218 begins at statement 21683
 /*
@@ -860,8 +816,6 @@ void () wiz_side2 = [ 1.000, wiz_side3 ] {
    ai_run (FL_CLIENT);
 
 };
-
-void () wiz_side3;
 
 // function wiz_side3
 // function number 1219 begins at statement 21687
@@ -878,8 +832,6 @@ void () wiz_side3 = [ 2.000, wiz_side4 ] {
 
 };
 
-void () wiz_side4;
-
 // function wiz_side4
 // function number 1220 begins at statement 21691
 /*
@@ -894,8 +846,6 @@ void () wiz_side4 = [ 3.000, wiz_side5 ] {
    ai_run (FL_CLIENT);
 
 };
-
-void () wiz_side5;
 
 // function wiz_side5
 // function number 1221 begins at statement 21695
@@ -912,8 +862,6 @@ void () wiz_side5 = [ 4.000, wiz_side6 ] {
 
 };
 
-void () wiz_side6;
-
 // function wiz_side6
 // function number 1222 begins at statement 21699
 /*
@@ -929,8 +877,6 @@ void () wiz_side6 = [ 5.000, wiz_side7 ] {
 
 };
 
-void () wiz_side7;
-
 // function wiz_side7
 // function number 1223 begins at statement 21703
 /*
@@ -945,8 +891,6 @@ void () wiz_side7 = [ 6.000, wiz_side8 ] {
    ai_run (FL_CLIENT);
 
 };
-
-void () wiz_side8;
 
 // function wiz_side8
 // function number 1224 begins at statement 21707
@@ -980,8 +924,6 @@ void () wiz_run1 = [ 15.000, wiz_run2 ] {
 
 };
 
-void () wiz_run2;
-
 // function wiz_run2
 // function number 1226 begins at statement 21716
 /*
@@ -996,8 +938,6 @@ void () wiz_run2 = [ 16.000, wiz_run3 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run3;
 
 // function wiz_run3
 // function number 1227 begins at statement 21720
@@ -1014,8 +954,6 @@ void () wiz_run3 = [ 17.000, wiz_run4 ] {
 
 };
 
-void () wiz_run4;
-
 // function wiz_run4
 // function number 1228 begins at statement 21724
 /*
@@ -1030,8 +968,6 @@ void () wiz_run4 = [ 18.000, wiz_run5 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run5;
 
 // function wiz_run5
 // function number 1229 begins at statement 21728
@@ -1048,8 +984,6 @@ void () wiz_run5 = [ 19.000, wiz_run6 ] {
 
 };
 
-void () wiz_run6;
-
 // function wiz_run6
 // function number 1230 begins at statement 21732
 /*
@@ -1064,8 +998,6 @@ void () wiz_run6 = [ 20.000, wiz_run7 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run7;
 
 // function wiz_run7
 // function number 1231 begins at statement 21736
@@ -1082,8 +1014,6 @@ void () wiz_run7 = [ 21.000, wiz_run8 ] {
 
 };
 
-void () wiz_run8;
-
 // function wiz_run8
 // function number 1232 begins at statement 21740
 /*
@@ -1098,8 +1028,6 @@ void () wiz_run8 = [ 22.000, wiz_run9 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run9;
 
 // function wiz_run9
 // function number 1233 begins at statement 21744
@@ -1116,8 +1044,6 @@ void () wiz_run9 = [ 23.000, wiz_run10 ] {
 
 };
 
-void () wiz_run10;
-
 // function wiz_run10
 // function number 1234 begins at statement 21748
 /*
@@ -1132,8 +1058,6 @@ void () wiz_run10 = [ 24.000, wiz_run11 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run11;
 
 // function wiz_run11
 // function number 1235 begins at statement 21752
@@ -1150,8 +1074,6 @@ void () wiz_run11 = [ 25.000, wiz_run12 ] {
 
 };
 
-void () wiz_run12;
-
 // function wiz_run12
 // function number 1236 begins at statement 21756
 /*
@@ -1166,8 +1088,6 @@ void () wiz_run12 = [ 26.000, wiz_run13 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_run13;
 
 // function wiz_run13
 // function number 1237 begins at statement 21760
@@ -1184,8 +1104,6 @@ void () wiz_run13 = [ 27.000, wiz_run14 ] {
 
 };
 
-void () wiz_run14;
-
 // function wiz_run14
 // function number 1238 begins at statement 21764
 /*
@@ -1200,8 +1118,6 @@ void () wiz_run14 = [ 28.000, wiz_run1 ] {
    ai_run (FL_INWATER);
 
 };
-
-void () wiz_fast1;
 
 // function wiz_fast1
 // function number 1239 begins at statement 21768
@@ -1219,8 +1135,6 @@ void () wiz_fast1 = [ 29.000, wiz_fast2 ] {
 
 };
 
-void () wiz_fast2;
-
 // function wiz_fast2
 // function number 1240 begins at statement 21772
 /*
@@ -1234,8 +1148,6 @@ void () wiz_fast2 = [ 30.000, wiz_fast3 ] {
    ai_face ();
 
 };
-
-void () wiz_fast3;
 
 // function wiz_fast3
 // function number 1241 begins at statement 21775
@@ -1251,8 +1163,6 @@ void () wiz_fast3 = [ 31.000, wiz_fast4 ] {
 
 };
 
-void () wiz_fast4;
-
 // function wiz_fast4
 // function number 1242 begins at statement 21778
 /*
@@ -1266,8 +1176,6 @@ void () wiz_fast4 = [ 32.000, wiz_fast5 ] {
    ai_face ();
 
 };
-
-void () wiz_fast5;
 
 // function wiz_fast5
 // function number 1243 begins at statement 21781
@@ -1283,8 +1191,6 @@ void () wiz_fast5 = [ 33.000, wiz_fast6 ] {
 
 };
 
-void () wiz_fast6;
-
 // function wiz_fast6
 // function number 1244 begins at statement 21784
 /*
@@ -1298,8 +1204,6 @@ void () wiz_fast6 = [ 34.000, wiz_fast7 ] {
    ai_face ();
 
 };
-
-void () wiz_fast7;
 
 // function wiz_fast7
 // function number 1245 begins at statement 21787
@@ -1315,8 +1219,6 @@ void () wiz_fast7 = [ 33.000, wiz_fast8 ] {
 
 };
 
-void () wiz_fast8;
-
 // function wiz_fast8
 // function number 1246 begins at statement 21790
 /*
@@ -1331,8 +1233,6 @@ void () wiz_fast8 = [ 32.000, wiz_fast9 ] {
 
 };
 
-void () wiz_fast9;
-
 // function wiz_fast9
 // function number 1247 begins at statement 21793
 /*
@@ -1346,8 +1246,6 @@ void () wiz_fast9 = [ 31.000, wiz_fast10 ] {
    ai_face ();
 
 };
-
-void () wiz_fast10;
 
 // function wiz_fast10
 // function number 1248 begins at statement 21796
@@ -1368,8 +1266,6 @@ void () wiz_fast10 = [ 30.000, wiz_run1 ] {
 
 };
 
-void () wiz_pain1;
-
 // function wiz_pain1
 // function number 1249 begins at statement 21802
 /*
@@ -1381,8 +1277,6 @@ void () wiz_pain1 = [ 42.000, wiz_pain2 ] {
 
 
 };
-
-void () wiz_pain2;
 
 // function wiz_pain2
 // function number 1250 begins at statement 21804
@@ -1396,8 +1290,6 @@ void () wiz_pain2 = [ 43.000, wiz_pain3 ] {
 
 };
 
-void () wiz_pain3;
-
 // function wiz_pain3
 // function number 1251 begins at statement 21806
 /*
@@ -1410,8 +1302,6 @@ void () wiz_pain3 = [ 44.000, wiz_pain4 ] {
 
 };
 
-void () wiz_pain4;
-
 // function wiz_pain4
 // function number 1252 begins at statement 21808
 /*
@@ -1423,8 +1313,6 @@ void () wiz_pain4 = [ 45.000, wiz_run1 ] {
 
 
 };
-
-void () wiz_death1;
 
 // function wiz_death1
 // function number 1253 begins at statement 21810
@@ -1462,15 +1350,13 @@ void () wiz_death1;
 
 void () wiz_death1 = [ 46.000, wiz_death2 ] {
 
-   self.globaldef000092 = (globaldef003183 + (globaldef002007 * random ()));
-   self.globaldef000093 = (globaldef003183 + (globaldef002007 * random ()));
-   self.globaldef000094 = (globaldef001335 + (globaldef001335 * random ()));
-   self.globaldef000160 = (self.globaldef000160 - (self.globaldef000160 & FL_ONGROUND));
+   self.velocity = (globaldef003183 + (globaldef002007 * random ()));
+   self.velocity_y = (globaldef003183 + (globaldef002007 * random ()));
+   self.velocity_z = (globaldef001335 + (globaldef001335 * random ()));
+   self.flags = (self.flags - (self.flags & FL_ONGROUND));
    sound (self,CHAN_VOICE,globaldef004391,TRUE,ATTN_NORM);
 
 };
-
-void () wiz_death2;
 string globaldef004391 /* = "wizard/wdeath.wav" */;
 
 // function wiz_death2
@@ -1485,8 +1371,6 @@ void () wiz_death2 = [ 47.000, wiz_death3 ] {
 
 };
 
-void () wiz_death3;
-
 // function wiz_death3
 // function number 1255 begins at statement 21841
 /*
@@ -1498,11 +1382,9 @@ void () wiz_death3;
 
 void () wiz_death3 = [ 48.000, wiz_death4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () wiz_death4;
 
 // function wiz_death4
 // function number 1256 begins at statement 21845
@@ -1516,8 +1398,6 @@ void () wiz_death4 = [ 49.000, wiz_death5 ] {
 
 };
 
-void () wiz_death5;
-
 // function wiz_death5
 // function number 1257 begins at statement 21847
 /*
@@ -1529,8 +1409,6 @@ void () wiz_death5 = [ 50.000, wiz_death6 ] {
 
 
 };
-
-void () wiz_death6;
 
 // function wiz_death6
 // function number 1258 begins at statement 21849
@@ -1544,8 +1422,6 @@ void () wiz_death6 = [ 51.000, wiz_death7 ] {
 
 };
 
-void () wiz_death7;
-
 // function wiz_death7
 // function number 1259 begins at statement 21851
 /*
@@ -1558,8 +1434,6 @@ void () wiz_death7 = [ 52.000, wiz_death8 ] {
 
 };
 
-void () wiz_death8;
-
 // function wiz_death8
 // function number 1260 begins at statement 21853
 /*
@@ -1571,8 +1445,6 @@ void () wiz_death8 = [ 53.000, wiz_death8 ] {
 
 
 };
-
-void () wiz_die;
 
 // function wiz_die
 // function number 1261 begins at statement 21855
@@ -1609,13 +1481,13 @@ void () wiz_die;
 
 void () wiz_die = {
 
-   if ( (self.globaldef000130 < globaldef003008) ) {
+   if ( (self.health < globaldef003008) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef004399,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
+      ThrowHead (globaldef004399,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002433,self.health);
       return ;
 
    }
@@ -1623,8 +1495,6 @@ void () wiz_die = {
 
 };
 string globaldef004399 /* = "progs/h_wizard.mdl" */;
-
-void (entity globaldef004401, float globaldef004402) Wiz_Pain;
 
 // function Wiz_Pain
 // function number 1262 begins at statement 21883
@@ -1657,8 +1527,6 @@ void (entity globaldef004401, float globaldef004402) Wiz_Pain = {
 };
 string globaldef004403 /* = "wizard/wpain.wav" */;
 
-void () Wiz_Missile;
-
 // function Wiz_Missile
 // function number 1263 begins at statement 21896
 /*
@@ -1671,8 +1539,6 @@ void () Wiz_Missile = {
    wiz_fast1 ();
 
 };
-
-void () monster_wizard;
 
 // function monster_wizard
 // function number 1264 begins at statement 21898
@@ -1748,17 +1614,17 @@ void () monster_wizard = {
    precache_sound (globaldef004338);
    precache_sound (globaldef004403);
    precache_sound (globaldef001664);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef004406);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = globaldef001439;
-   self.globaldef000344 = wiz_stand1;
-   self.globaldef000345 = wiz_walk1;
-   self.globaldef000346 = wiz_run1;
-   self.globaldef000347 = Wiz_Missile;
-   self.globaldef000349 = Wiz_Pain;
-   self.globaldef000350 = wiz_die;
+   self.health = globaldef001439;
+   self.th_stand = wiz_stand1;
+   self.th_walk = wiz_walk1;
+   self.th_run = wiz_run1;
+   self.th_missile = Wiz_Missile;
+   self.th_pain = Wiz_Pain;
+   self.th_die = wiz_die;
    flymonster_start ();
 
 };

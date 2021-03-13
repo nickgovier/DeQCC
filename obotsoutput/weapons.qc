@@ -1,7 +1,5 @@
 float globaldef002073 /* = 0.010 */;
 
-void (vector globaldef002075, vector globaldef002079) SpawnChunk;
-
 // function SpawnChunk
 // function number 256 begins at statement 6577
 /*
@@ -23,8 +21,6 @@ float globaldef002083 /* = 0.020 */;
 entity globaldef002084;
 float globaldef002085 /* = 0.000 */;
 
-void () ClearMultiDamage;
-
 // function ClearMultiDamage
 // function number 257 begins at statement 6584
 /*
@@ -39,8 +35,6 @@ void () ClearMultiDamage = {
    globaldef002085 = FALSE;
 
 };
-
-void () ApplyMultiDamage;
 
 // function ApplyMultiDamage
 // function number 258 begins at statement 6587
@@ -66,8 +60,6 @@ void () ApplyMultiDamage = {
    T_Damage (globaldef002084,self,self,globaldef002085);
 
 };
-
-void (entity globaldef002089, float globaldef002090) AddMultiDamage;
 
 // function AddMultiDamage
 // function number 259 begins at statement 6596
@@ -106,8 +98,6 @@ void (entity globaldef002089, float globaldef002090) AddMultiDamage = {
    }
 
 };
-
-void (float globaldef002092, vector globaldef002093) TraceAttack;
 
 // function TraceAttack
 // function number 260 begins at statement 6608
@@ -167,7 +157,7 @@ void (float globaldef002092, vector globaldef002093) TraceAttack = {
    vel = (vel + (FL_SWIM * trace_plane_normal));
    vel = (vel * globaldef001343);
    org = (trace_endpos - (globaldef002093 * MOVETYPE_STEP));
-   if ( trace_ent.globaldef000141 ) {
+   if ( trace_ent.takedamage ) {
 
       func000254 (org,(vel * globaldef001553),globaldef002092);
       AddMultiDamage (trace_ent,globaldef002092);
@@ -183,8 +173,6 @@ void (float globaldef002092, vector globaldef002093) TraceAttack = {
    }
 
 };
-
-void (float globaldef002106, vector globaldef002107, vector globaldef002111) FireBullets;
 
 // function FireBullets
 // function number 261 begins at statement 6652
@@ -237,9 +225,9 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) Fir
    local vector direction;
    local vector src;
 
-   makevectors (self.globaldef000153);
-   src = (self.globaldef000083 + (v_forward * MOVETYPE_BOUNCE));
-   globaldef002122 = (self.globaldef000075 + (self.globaldef000123 * globaldef002123));
+   makevectors (self.v_angle);
+   src = (self.origin + (v_forward * MOVETYPE_BOUNCE));
+   globaldef002122 = (self.absmin_z + (self.size_z * globaldef002123));
    ClearMultiDamage ();
    while ( (globaldef002106 > FALSE) ) {
 
@@ -257,8 +245,6 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) Fir
 
 };
 float globaldef002123 /* = 0.700 */;
-
-void () W_FireShotgun;
 
 // function W_FireShotgun
 // function number 262 begins at statement 6693
@@ -306,19 +292,17 @@ void () W_FireShotgun = {
    local vector dir;
 
    sound (self,CHAN_WEAPON,globaldef002015,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,TRUE,globaldef000741);
-   self.globaldef000104 = CONTENT_SOLID;
-   self.globaldef000136 = (self.globaldef000136 - TRUE);
-   self.globaldef000135 = (self.globaldef000136 - TRUE);
+   func002453 (self,self.origin,TRUE,globaldef000741);
+   self.punchangle = CONTENT_SOLID;
+   self.ammo_shells = (self.ammo_shells - TRUE);
+   self.currentammo = (self.ammo_shells - TRUE);
    dir = func000250 (self,globaldef001350);
-   func000247 (((self.globaldef000083 + globaldef002129) + (v_forward * FL_INWATER)),dir);
+   func000247 (((self.origin + globaldef002129) + (v_forward * FL_INWATER)),dir);
    FireBullets (MOVETYPE_TOSS,dir,globaldef002130);
 
 };
 vector globaldef002129 /* = '0.000 0.000 12.000' */;
 vector globaldef002130 /* = '0.040 0.040 0.000' */;
-
-void () W_FireSuperShotgun;
 
 // function W_FireSuperShotgun
 // function number 263 begins at statement 6729
@@ -377,27 +361,25 @@ void () W_FireSuperShotgun = {
 
    local vector dir;
 
-   if ( (self.globaldef000135 == TRUE) ) {
+   if ( (self.currentammo == TRUE) ) {
 
       W_FireShotgun ();
       return ;
 
    }
    sound (self,CHAN_WEAPON,globaldef002023,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,TRUE,globaldef000741);
-   self.globaldef000104 = CONTENT_SLIME;
-   self.globaldef000136 = (self.globaldef000136 - FL_SWIM);
-   self.globaldef000135 = (self.globaldef000136 - FL_SWIM);
+   func002453 (self,self.origin,TRUE,globaldef000741);
+   self.punchangle = CONTENT_SLIME;
+   self.ammo_shells = (self.ammo_shells - FL_SWIM);
+   self.currentammo = (self.ammo_shells - FL_SWIM);
    dir = func000250 (self,globaldef001350);
-   func000247 (((self.globaldef000083 + globaldef002129) + (v_forward * FL_INWATER)),dir);
-   func000247 (((self.globaldef000083 + globaldef002129) + (v_forward * FL_INWATER)),dir);
+   func000247 (((self.origin + globaldef002129) + (v_forward * FL_INWATER)),dir);
+   func000247 (((self.origin + globaldef002129) + (v_forward * FL_INWATER)),dir);
    FireBullets (globaldef002136,dir,globaldef002137);
 
 };
 float globaldef002136 /* = 14.000 */;
 vector globaldef002137 /* = '0.140 0.080 0.000' */;
-
-void () s_explode1;
 
 // function s_explode1
 // function number 264 begins at statement 6777
@@ -411,8 +393,6 @@ void () s_explode1 = [ 0.000, s_explode2 ] {
 
 };
 
-void () s_explode2;
-
 // function s_explode2
 // function number 265 begins at statement 6779
 /*
@@ -424,8 +404,6 @@ void () s_explode2 = [ 1.000, s_explode3 ] {
 
 
 };
-
-void () s_explode3;
 
 // function s_explode3
 // function number 266 begins at statement 6781
@@ -439,8 +417,6 @@ void () s_explode3 = [ 2.000, s_explode4 ] {
 
 };
 
-void () s_explode4;
-
 // function s_explode4
 // function number 267 begins at statement 6783
 /*
@@ -452,8 +428,6 @@ void () s_explode4 = [ 3.000, s_explode5 ] {
 
 
 };
-
-void () s_explode5;
 
 // function s_explode5
 // function number 268 begins at statement 6785
@@ -467,8 +441,6 @@ void () s_explode5 = [ 4.000, s_explode6 ] {
 
 };
 
-void () s_explode6;
-
 // function s_explode6
 // function number 269 begins at statement 6787
 /*
@@ -480,8 +452,6 @@ void () s_explode6 = [ 5.000, SUB_Remove ] {
 
 
 };
-
-void () BecomeExplosion;
 
 // function BecomeExplosion
 // function number 270 begins at statement 6789
@@ -503,11 +473,11 @@ void () BecomeExplosion;
 
 void () BecomeExplosion = {
 
-   self.globaldef000081 = MOVETYPE_NONE;
-   self.globaldef000091 = VEC_ORIGIN;
-   self.globaldef000124 = SUB_Null;
+   self.movetype = MOVETYPE_NONE;
+   self.velocity = VEC_ORIGIN;
+   self.touch = SUB_Null;
    setmodel (self,globaldef002145);
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
    s_explode1 ();
 
 };
@@ -592,41 +562,39 @@ void () T_MissileTouch = {
 
    local float damg;
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (pointcontents (self.globaldef000083) == CONTENT_SKY) ) {
+   if ( (pointcontents (self.origin) == CONTENT_SKY) ) {
 
       remove (self);
       return ;
 
    }
    damg = (globaldef001335 + (random () * globaldef001384));
-   if ( other.globaldef000130 ) {
+   if ( other.health ) {
 
-      if ( (other.globaldef000107 == globaldef001659) ) {
+      if ( (other.classname == globaldef001659) ) {
 
          damg = (damg * globaldef000522);
 
       }
-      T_Damage (other,self,self.globaldef000179,damg);
+      T_Damage (other,self,self.owner,damg);
 
    }
-   T_RadiusDamage (self,self.globaldef000179,globaldef001638,other);
-   func002453 (self.globaldef000179,self.globaldef000083,TRUE,globaldef000741);
-   self.globaldef000083 = (self.globaldef000083 - (FL_CLIENT * normalize (self.globaldef000091)));
+   T_RadiusDamage (self,self.owner,globaldef001638,other);
+   func002453 (self.owner,self.origin,TRUE,globaldef000741);
+   self.origin = (self.origin - (FL_CLIENT * normalize (self.velocity)));
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_EXPLOSION);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
    BecomeExplosion ();
 
 };
-
-void () W_FireRocket;
 
 // function W_FireRocket
 // function number 272 begins at statement 6872
@@ -707,32 +675,30 @@ void () W_FireRocket = {
    local entity missile;
    local entity mpuff;
 
-   self.globaldef000138 = (self.globaldef000138 - TRUE);
-   self.globaldef000135 = (self.globaldef000138 - TRUE);
+   self.ammo_rockets = (self.ammo_rockets - TRUE);
+   self.currentammo = (self.ammo_rockets - TRUE);
    sound (self,CHAN_WEAPON,globaldef002014,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,TRUE,globaldef000741);
-   self.globaldef000104 = CONTENT_SOLID;
+   func002453 (self,self.origin,TRUE,globaldef000741);
+   self.punchangle = CONTENT_SOLID;
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000081 = MOVETYPE_FLYMISSILE;
-   missile.globaldef000082 = SOLID_BBOX;
-   missile.globaldef000107 = globaldef002150;
-   makevectors (self.globaldef000153);
-   missile.globaldef000091 = func000250 (self,globaldef001302);
-   missile.globaldef000091 = (missile.globaldef000091 * globaldef001302);
-   missile.globaldef000095 = vectoangles (missile.globaldef000091);
-   missile.globaldef000124 = T_MissileTouch;
-   missile.globaldef000128 = (time + MOVETYPE_FLY);
-   missile.globaldef000126 = SUB_Remove;
+   missile.owner = self;
+   missile.movetype = MOVETYPE_FLYMISSILE;
+   missile.solid = SOLID_BBOX;
+   missile.classname = globaldef002150;
+   makevectors (self.v_angle);
+   missile.velocity = func000250 (self,globaldef001302);
+   missile.velocity = (missile.velocity * globaldef001302);
+   missile.angles = vectoangles (missile.velocity);
+   missile.touch = T_MissileTouch;
+   missile.nextthink = (time + MOVETYPE_FLY);
+   missile.think = SUB_Remove;
    setmodel (missile,globaldef002151);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (missile,((self.globaldef000083 + (v_forward * FL_CLIENT)) + globaldef002037));
+   setorigin (missile,((self.origin + (v_forward * FL_CLIENT)) + globaldef002037));
 
 };
 string globaldef002150 /* = "missile" */;
 string globaldef002151 /* = "progs/missile.mdl" */;
-
-void (vector globaldef002153, vector globaldef002157, entity globaldef002161, float globaldef002162) LightningDamage;
 
 // function LightningDamage
 // function number 273 begins at statement 6941
@@ -849,15 +815,15 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
    e1 = world;
    e2 = world;
    traceline (globaldef002153,globaldef002157,FALSE,self);
-   if ( trace_ent.globaldef000141 ) {
+   if ( trace_ent.takedamage ) {
 
       particle (trace_endpos,globaldef002169,globaldef002170,(globaldef002162 * MOVETYPE_STEP));
       T_Damage (trace_ent,globaldef002161,globaldef002161,globaldef002162);
-      if ( ((self.globaldef000107 == globaldef001170) || (self.globaldef000107 == globaldef001171)) ) {
+      if ( ((self.classname == globaldef001170) || (self.classname == globaldef001171)) ) {
 
-         if ( ((other.globaldef000107 == globaldef001170) || (other.globaldef000107 == globaldef001171)) ) {
+         if ( ((other.classname == globaldef001170) || (other.classname == globaldef001171)) ) {
 
-            trace_ent.globaldef000094 = (trace_ent.globaldef000094 + globaldef002007);
+            trace_ent.velocity_z = (trace_ent.velocity_z + globaldef002007);
 
          }
 
@@ -866,7 +832,7 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
    }
    e1 = trace_ent;
    traceline ((globaldef002153 + f),(globaldef002157 + f),FALSE,self);
-   if ( ((trace_ent != e1) && trace_ent.globaldef000141) ) {
+   if ( ((trace_ent != e1) && trace_ent.takedamage) ) {
 
       particle (trace_endpos,globaldef002169,globaldef002170,(globaldef002162 * MOVETYPE_STEP));
       T_Damage (trace_ent,globaldef002161,globaldef002161,globaldef002162);
@@ -874,7 +840,7 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
    }
    e2 = trace_ent;
    traceline ((globaldef002153 - f),(globaldef002157 - f),FALSE,self);
-   if ( (((trace_ent != e1) && (trace_ent != e2)) && trace_ent.globaldef000141) ) {
+   if ( (((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage) ) {
 
       particle (trace_endpos,globaldef002169,globaldef002170,(globaldef002162 * MOVETYPE_STEP));
       T_Damage (trace_ent,globaldef002161,globaldef002161,globaldef002162);
@@ -884,8 +850,6 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
 };
 vector globaldef002169 /* = '0.000 0.000 100.000' */;
 float globaldef002170 /* = 225.000 */;
-
-void () W_FireLightning;
 
 // function W_FireLightning
 // function number 274 begins at statement 7036
@@ -997,39 +961,39 @@ void () W_FireLightning = {
    local vector org;
    local float cells;
 
-   if ( (self.globaldef000139 < TRUE) ) {
+   if ( (self.ammo_cells < TRUE) ) {
 
-      self.globaldef000132 = W_BestWeapon ();
+      self.weapon = W_BestWeapon ();
       W_SetCurrentAmmo ();
       return ;
 
    }
-   if ( (self.globaldef000167 > TRUE) ) {
+   if ( (self.waterlevel > TRUE) ) {
 
       if ( (globaldef000804 & globaldef000750) ) {
 
-         self.globaldef000139 = FALSE;
+         self.ammo_cells = FALSE;
          return ;
 
       }
-      cells = self.globaldef000139;
-      self.globaldef000139 = FALSE;
+      cells = self.ammo_cells;
+      self.ammo_cells = FALSE;
       W_SetCurrentAmmo ();
       T_RadiusDamage (self,self,(globaldef002177 * cells),world);
       return ;
 
    }
-   if ( (self.globaldef000388 < time) ) {
+   if ( (self.t_width < time) ) {
 
       sound (self,CHAN_WEAPON,globaldef002178,TRUE,ATTN_NORM);
-      func002453 (self,self.globaldef000083,globaldef001488,globaldef000741);
-      self.globaldef000388 = (time + globaldef001825);
+      func002453 (self,self.origin,globaldef001488,globaldef000741);
+      self.t_width = (time + globaldef001825);
 
    }
-   self.globaldef000104 = CONTENT_SOLID;
-   self.globaldef000139 = (self.globaldef000139 - TRUE);
-   self.globaldef000135 = (self.globaldef000139 - TRUE);
-   org = (self.globaldef000083 + globaldef002037);
+   self.punchangle = CONTENT_SOLID;
+   self.ammo_cells = (self.ammo_cells - TRUE);
+   self.currentammo = (self.ammo_cells - TRUE);
+   org = (self.origin + globaldef002037);
    traceline (org,(org + (v_forward * globaldef000723)),TRUE,self);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_LIGHTNING2);
@@ -1040,13 +1004,11 @@ void () W_FireLightning = {
    WriteCoord (MSG_BROADCAST,trace_endpos);
    WriteCoord (MSG_BROADCAST,globaldef000049);
    WriteCoord (MSG_BROADCAST,globaldef000050);
-   LightningDamage (self.globaldef000083,(trace_endpos + (v_forward * MOVETYPE_STEP)),self,SVC_INTERMISSION);
+   LightningDamage (self.origin,(trace_endpos + (v_forward * MOVETYPE_STEP)),self,SVC_INTERMISSION);
 
 };
 float globaldef002177 /* = 35.000 */;
 string globaldef002178 /* = "weapons/lhit.wav" */;
-
-void () GrenadeExplode;
 
 // function GrenadeExplode
 // function number 275 begins at statement 7136
@@ -1081,17 +1043,15 @@ void () GrenadeExplode;
 
 void () GrenadeExplode = {
 
-   T_RadiusDamage (self,self.globaldef000179,globaldef001638,world);
+   T_RadiusDamage (self,self.owner,globaldef001638,world);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_EXPLOSION);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
    BecomeExplosion ();
 
 };
-
-void () GrenadeTouch;
 
 // function GrenadeTouch
 // function number 276 begins at statement 7162
@@ -1121,27 +1081,25 @@ void () GrenadeTouch;
 
 void () GrenadeTouch = {
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000141 == DAMAGE_AIM) ) {
+   if ( (other.takedamage == DAMAGE_AIM) ) {
 
       GrenadeExplode ();
       return ;
 
    }
    sound (self,CHAN_WEAPON,globaldef002022,TRUE,ATTN_NORM);
-   if ( (self.globaldef000091 == VEC_ORIGIN) ) {
+   if ( (self.velocity == VEC_ORIGIN) ) {
 
-      self.globaldef000099 = VEC_ORIGIN;
+      self.avelocity = VEC_ORIGIN;
 
    }
 
 };
-
-void () W_FireGrenade;
 
 // function W_FireGrenade
 // function number 277 begins at statement 7183
@@ -1239,36 +1197,36 @@ void () W_FireGrenade = {
    local entity missile;
    local entity mpuff;
 
-   self.globaldef000138 = (self.globaldef000138 - TRUE);
-   self.globaldef000135 = (self.globaldef000138 - TRUE);
+   self.ammo_rockets = (self.ammo_rockets - TRUE);
+   self.currentammo = (self.ammo_rockets - TRUE);
    sound (self,CHAN_WEAPON,globaldef002021,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,TRUE,globaldef000741);
-   self.globaldef000104 = CONTENT_SOLID;
+   func002453 (self,self.origin,TRUE,globaldef000741);
+   self.punchangle = CONTENT_SOLID;
    missile = spawn ();
-   missile.globaldef000179 = self;
-   missile.globaldef000081 = MOVETYPE_BOUNCE;
-   missile.globaldef000082 = SOLID_BBOX;
-   missile.globaldef000107 = globaldef002184;
-   makevectors (self.globaldef000153);
-   if ( self.globaldef000154 ) {
+   missile.owner = self;
+   missile.movetype = MOVETYPE_BOUNCE;
+   missile.solid = SOLID_BBOX;
+   missile.classname = globaldef002184;
+   makevectors (self.v_angle);
+   if ( self.v_angle ) {
 
-      missile.globaldef000091 = ((((v_forward * globaldef000723) + (v_up * globaldef001343)) + ((func000249 () * v_right) * MOVETYPE_BOUNCE)) + ((func000249 () * v_up) * MOVETYPE_BOUNCE));
+      missile.velocity = ((((v_forward * globaldef000723) + (v_up * globaldef001343)) + ((func000249 () * v_right) * MOVETYPE_BOUNCE)) + ((func000249 () * v_up) * MOVETYPE_BOUNCE));
 
    } else {
 
-      missile.globaldef000091 = func000250 (self,globaldef002185);
-      missile.globaldef000091 = (missile.globaldef000091 * globaldef000723);
-      missile.globaldef000094 = globaldef001343;
+      missile.velocity = func000250 (self,globaldef002185);
+      missile.velocity = (missile.velocity * globaldef000723);
+      missile.velocity_z = globaldef001343;
 
    }
-   missile.globaldef000099 = globaldef002186;
-   missile.globaldef000095 = vectoangles (missile.globaldef000091);
-   missile.globaldef000124 = GrenadeTouch;
-   missile.globaldef000128 = (time + globaldef002187);
-   missile.globaldef000126 = GrenadeExplode;
+   missile.avelocity = globaldef002186;
+   missile.angles = vectoangles (missile.velocity);
+   missile.touch = GrenadeTouch;
+   missile.nextthink = (time + globaldef002187);
+   missile.think = GrenadeExplode;
    setmodel (missile,globaldef002188);
    setsize (missile,VEC_ORIGIN,VEC_ORIGIN);
-   setorigin (missile,self.globaldef000083);
+   setorigin (missile,self.origin);
 
 };
 string globaldef002184 /* = "grenade" */;
@@ -1280,8 +1238,6 @@ string globaldef002188 /* = "progs/grenade.mdl" */;
 void () spike_touch;
 
 void () superspike_touch;
-
-void (vector globaldef002192, vector globaldef002196) launch_spike;
 
 // function launch_spike
 // function number 278 begins at statement 7269
@@ -1326,24 +1282,22 @@ void (vector globaldef002192, vector globaldef002196) launch_spike;
 void (vector globaldef002192, vector globaldef002196) launch_spike = {
 
    newmis = spawn ();
-   newmis.globaldef000179 = self;
-   newmis.globaldef000081 = MOVETYPE_FLYMISSILE;
-   newmis.globaldef000082 = SOLID_BBOX;
-   newmis.globaldef000095 = vectoangles (globaldef002196);
-   newmis.globaldef000124 = spike_touch;
-   newmis.globaldef000107 = globaldef002200;
-   newmis.globaldef000126 = SUB_Remove;
-   newmis.globaldef000128 = (time + MOVETYPE_TOSS);
+   newmis.owner = self;
+   newmis.movetype = MOVETYPE_FLYMISSILE;
+   newmis.solid = SOLID_BBOX;
+   newmis.angles = vectoangles (globaldef002196);
+   newmis.touch = spike_touch;
+   newmis.classname = globaldef002200;
+   newmis.think = SUB_Remove;
+   newmis.nextthink = (time + MOVETYPE_TOSS);
    setmodel (newmis,globaldef002201);
    setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
    setorigin (newmis,globaldef002192);
-   newmis.globaldef000091 = (globaldef002196 * globaldef001302);
+   newmis.velocity = (globaldef002196 * globaldef001302);
 
 };
 string globaldef002200 /* = "spike" */;
 string globaldef002201 /* = "progs/spike.mdl" */;
-
-void () W_FireSuperSpikes;
 
 // function W_FireSuperSpikes
 // function number 279 begins at statement 7304
@@ -1395,20 +1349,18 @@ void () W_FireSuperSpikes = {
    local entity old;
 
    sound (self,CHAN_WEAPON,globaldef002019,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,globaldef001488,globaldef000741);
-   self.globaldef000137 = (self.globaldef000137 - FL_SWIM);
-   self.globaldef000135 = (self.globaldef000137 - FL_SWIM);
+   func002453 (self,self.origin,globaldef001488,globaldef000741);
+   self.ammo_nails = (self.ammo_nails - FL_SWIM);
+   self.currentammo = (self.ammo_nails - FL_SWIM);
    dir = func000250 (self,globaldef001302);
-   launch_spike ((self.globaldef000083 + globaldef002037),dir);
-   newmis.globaldef000124 = superspike_touch;
+   launch_spike ((self.origin + globaldef002037),dir);
+   newmis.touch = superspike_touch;
    setmodel (newmis,globaldef002208);
    setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
-   self.globaldef000104 = CONTENT_SOLID;
+   self.punchangle = CONTENT_SOLID;
 
 };
 string globaldef002208 /* = "progs/s_spike.mdl" */;
-
-void (float globaldef002210) W_FireSpikes;
 
 // function W_FireSpikes
 // function number 280 begins at statement 7343
@@ -1471,30 +1423,30 @@ void (float globaldef002210) W_FireSpikes = {
    local vector dir;
    local entity old;
 
-   makevectors (self.globaldef000153);
-   if ( ((self.globaldef000137 >= FL_SWIM) && (self.globaldef000132 == IT_SUPER_NAILGUN)) ) {
+   makevectors (self.v_angle);
+   if ( ((self.ammo_nails >= FL_SWIM) && (self.weapon == IT_SUPER_NAILGUN)) ) {
 
       W_FireSuperSpikes ();
       return ;
 
    }
-   if ( (self.globaldef000137 < TRUE) ) {
+   if ( (self.ammo_nails < TRUE) ) {
 
-      self.globaldef000132 = W_BestWeapon ();
+      self.weapon = W_BestWeapon ();
       W_SetCurrentAmmo ();
       return ;
 
    }
    sound (self,CHAN_WEAPON,globaldef002013,TRUE,ATTN_NORM);
-   func002453 (self,self.globaldef000083,globaldef001488,globaldef000741);
-   self.globaldef000137 = (self.globaldef000137 - TRUE);
-   self.globaldef000135 = (self.globaldef000137 - TRUE);
+   func002453 (self,self.origin,globaldef001488,globaldef000741);
+   self.ammo_nails = (self.ammo_nails - TRUE);
+   self.currentammo = (self.ammo_nails - TRUE);
    dir = func000250 (self,globaldef001302);
-   launch_spike (((self.globaldef000083 + globaldef002037) + (v_right * globaldef002210)),dir);
-   self.globaldef000104 = CONTENT_SOLID;
+   launch_spike (((self.origin + globaldef002037) + (v_right * globaldef002210)),dir);
+   self.punchangle = CONTENT_SOLID;
 
 };
-.float field000342;
+.float hit_z;
 
 // function spike_touch
 // function number 281 begins at statement 7394
@@ -1567,37 +1519,37 @@ void () spike_touch = {
 
    local float rand;
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000082 == SOLID_TRIGGER) ) {
+   if ( (other.solid == SOLID_TRIGGER) ) {
 
       return ;
 
    }
-   if ( (pointcontents (self.globaldef000083) == CONTENT_SKY) ) {
+   if ( (pointcontents (self.origin) == CONTENT_SKY) ) {
 
       remove (self);
       return ;
 
    }
-   if ( other.globaldef000141 ) {
+   if ( other.takedamage ) {
 
       func000255 (MOVETYPE_FLYMISSILE);
-      T_Damage (other,self,self.globaldef000179,MOVETYPE_FLYMISSILE);
+      T_Damage (other,self,self.owner,MOVETYPE_FLYMISSILE);
 
    } else {
 
       WriteByte (MSG_BROADCAST,globaldef000287);
-      if ( (self.globaldef000107 == globaldef002218) ) {
+      if ( (self.classname == globaldef002218) ) {
 
          WriteByte (MSG_BROADCAST,TE_WIZSPIKE);
 
       } else {
 
-         if ( (self.globaldef000107 == globaldef002219) ) {
+         if ( (self.classname == globaldef002219) ) {
 
             WriteByte (MSG_BROADCAST,TE_KNIGHTSPIKE);
 
@@ -1608,9 +1560,9 @@ void () spike_touch = {
          }
 
       }
-      WriteCoord (MSG_BROADCAST,self.globaldef000084);
-      WriteCoord (MSG_BROADCAST,self.globaldef000085);
-      WriteCoord (MSG_BROADCAST,self.globaldef000086);
+      WriteCoord (MSG_BROADCAST,self.origin);
+      WriteCoord (MSG_BROADCAST,self.origin_y);
+      WriteCoord (MSG_BROADCAST,self.origin_z);
 
    }
    remove (self);
@@ -1676,34 +1628,34 @@ void () superspike_touch = {
 
    local float rand;
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (other.globaldef000082 == SOLID_TRIGGER) ) {
+   if ( (other.solid == SOLID_TRIGGER) ) {
 
       return ;
 
    }
-   if ( (pointcontents (self.globaldef000083) == CONTENT_SKY) ) {
+   if ( (pointcontents (self.origin) == CONTENT_SKY) ) {
 
       remove (self);
       return ;
 
    }
-   if ( other.globaldef000141 ) {
+   if ( other.takedamage ) {
 
       func000255 (globaldef002221);
-      T_Damage (other,self,self.globaldef000179,globaldef002221);
+      T_Damage (other,self,self.owner,globaldef002221);
 
    } else {
 
       WriteByte (MSG_BROADCAST,globaldef000287);
       WriteByte (MSG_BROADCAST,TE_SUPERSPIKE);
-      WriteCoord (MSG_BROADCAST,self.globaldef000084);
-      WriteCoord (MSG_BROADCAST,self.globaldef000085);
-      WriteCoord (MSG_BROADCAST,self.globaldef000086);
+      WriteCoord (MSG_BROADCAST,self.origin);
+      WriteCoord (MSG_BROADCAST,self.origin_y);
+      WriteCoord (MSG_BROADCAST,self.origin_z);
 
    }
    remove (self);
@@ -1853,86 +1805,86 @@ float globaldef002221 /* = 18.000 */;
 
 void () W_SetCurrentAmmo = {
 
-   if ( (self.globaldef000107 == globaldef001170) ) {
+   if ( (self.classname == globaldef001170) ) {
 
       player_run ();
 
    }
-   self.globaldef000140 = (self.globaldef000140 - (self.globaldef000140 & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS)));
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   self.items = (self.items - (self.items & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS)));
+   if ( (self.weapon == IT_AXE) ) {
 
-      self.globaldef000135 = FALSE;
-      self.globaldef000133 = globaldef002222;
-      self.globaldef000134 = FALSE;
+      self.currentammo = FALSE;
+      self.weaponmodel = globaldef002222;
+      self.weaponframe = FALSE;
 
    } else {
 
-      if ( (self.globaldef000132 == IT_SHOTGUN) ) {
+      if ( (self.weapon == IT_SHOTGUN) ) {
 
-         self.globaldef000135 = self.globaldef000136;
-         self.globaldef000133 = globaldef002223;
-         self.globaldef000134 = FALSE;
-         self.globaldef000140 = (self.globaldef000140 | IT_SHELLS);
+         self.currentammo = self.ammo_shells;
+         self.weaponmodel = globaldef002223;
+         self.weaponframe = FALSE;
+         self.items = (self.items | IT_SHELLS);
 
       } else {
 
-         if ( (self.globaldef000132 == IT_SUPER_SHOTGUN) ) {
+         if ( (self.weapon == IT_SUPER_SHOTGUN) ) {
 
-            self.globaldef000135 = self.globaldef000136;
-            self.globaldef000133 = globaldef002224;
-            self.globaldef000134 = FALSE;
-            self.globaldef000140 = (self.globaldef000140 | IT_SHELLS);
+            self.currentammo = self.ammo_shells;
+            self.weaponmodel = globaldef002224;
+            self.weaponframe = FALSE;
+            self.items = (self.items | IT_SHELLS);
 
          } else {
 
-            if ( (self.globaldef000132 == IT_NAILGUN) ) {
+            if ( (self.weapon == IT_NAILGUN) ) {
 
-               self.globaldef000135 = self.globaldef000137;
-               self.globaldef000133 = globaldef002225;
-               self.globaldef000134 = FALSE;
-               self.globaldef000140 = (self.globaldef000140 | IT_NAILS);
+               self.currentammo = self.ammo_nails;
+               self.weaponmodel = globaldef002225;
+               self.weaponframe = FALSE;
+               self.items = (self.items | IT_NAILS);
 
             } else {
 
-               if ( (self.globaldef000132 == IT_SUPER_NAILGUN) ) {
+               if ( (self.weapon == IT_SUPER_NAILGUN) ) {
 
-                  self.globaldef000135 = self.globaldef000137;
-                  self.globaldef000133 = globaldef002226;
-                  self.globaldef000134 = FALSE;
-                  self.globaldef000140 = (self.globaldef000140 | IT_NAILS);
+                  self.currentammo = self.ammo_nails;
+                  self.weaponmodel = globaldef002226;
+                  self.weaponframe = FALSE;
+                  self.items = (self.items | IT_NAILS);
 
                } else {
 
-                  if ( (self.globaldef000132 == IT_GRENADE_LAUNCHER) ) {
+                  if ( (self.weapon == IT_GRENADE_LAUNCHER) ) {
 
-                     self.globaldef000135 = self.globaldef000138;
-                     self.globaldef000133 = globaldef002227;
-                     self.globaldef000134 = FALSE;
-                     self.globaldef000140 = (self.globaldef000140 | IT_ROCKETS);
+                     self.currentammo = self.ammo_rockets;
+                     self.weaponmodel = globaldef002227;
+                     self.weaponframe = FALSE;
+                     self.items = (self.items | IT_ROCKETS);
 
                   } else {
 
-                     if ( (self.globaldef000132 == IT_ROCKET_LAUNCHER) ) {
+                     if ( (self.weapon == IT_ROCKET_LAUNCHER) ) {
 
-                        self.globaldef000135 = self.globaldef000138;
-                        self.globaldef000133 = globaldef002228;
-                        self.globaldef000134 = FALSE;
-                        self.globaldef000140 = (self.globaldef000140 | IT_ROCKETS);
+                        self.currentammo = self.ammo_rockets;
+                        self.weaponmodel = globaldef002228;
+                        self.weaponframe = FALSE;
+                        self.items = (self.items | IT_ROCKETS);
 
                      } else {
 
-                        if ( (self.globaldef000132 == IT_LIGHTNING) ) {
+                        if ( (self.weapon == IT_LIGHTNING) ) {
 
-                           self.globaldef000135 = self.globaldef000139;
-                           self.globaldef000133 = globaldef002229;
-                           self.globaldef000134 = FALSE;
-                           self.globaldef000140 = (self.globaldef000140 | IT_CELLS);
+                           self.currentammo = self.ammo_cells;
+                           self.weaponmodel = globaldef002229;
+                           self.weaponframe = FALSE;
+                           self.items = (self.items | IT_CELLS);
 
                         } else {
 
-                           self.globaldef000135 = FALSE;
-                           self.globaldef000133 = globaldef001466;
-                           self.globaldef000134 = FALSE;
+                           self.currentammo = FALSE;
+                           self.weaponmodel = globaldef001466;
+                           self.weaponframe = FALSE;
 
                         }
 
@@ -2005,28 +1957,28 @@ float () W_BestWeapon = {
 
    local float it;
 
-   it = self.globaldef000140;
-   if ( (((self.globaldef000167 <= TRUE) && (self.globaldef000139 >= TRUE)) && (it & IT_LIGHTNING)) ) {
+   it = self.items;
+   if ( (((self.waterlevel <= TRUE) && (self.ammo_cells >= TRUE)) && (it & IT_LIGHTNING)) ) {
 
       return ( IT_LIGHTNING );
 
    }
-   if ( ((self.globaldef000137 >= FL_SWIM) && (it & IT_SUPER_NAILGUN)) ) {
+   if ( ((self.ammo_nails >= FL_SWIM) && (it & IT_SUPER_NAILGUN)) ) {
 
       return ( IT_SUPER_NAILGUN );
 
    }
-   if ( ((self.globaldef000136 >= FL_SWIM) && (it & IT_SUPER_SHOTGUN)) ) {
+   if ( ((self.ammo_shells >= FL_SWIM) && (it & IT_SUPER_SHOTGUN)) ) {
 
       return ( IT_SUPER_SHOTGUN );
 
    }
-   if ( ((self.globaldef000137 >= TRUE) && (it & IT_NAILGUN)) ) {
+   if ( ((self.ammo_nails >= TRUE) && (it & IT_NAILGUN)) ) {
 
       return ( IT_NAILGUN );
 
    }
-   if ( ((self.globaldef000136 >= TRUE) && (it & IT_SHOTGUN)) ) {
+   if ( ((self.ammo_shells >= TRUE) && (it & IT_SHOTGUN)) ) {
 
       return ( IT_SHOTGUN );
 
@@ -2034,7 +1986,6 @@ float () W_BestWeapon = {
    return ( IT_AXE );
 
 };
-float () W_CheckNoAmmo;
 
 // function W_CheckNoAmmo
 // function number 285 begins at statement 7676
@@ -2056,17 +2007,17 @@ float () W_CheckNoAmmo;
  */
 float () W_CheckNoAmmo = {
 
-   if ( (self.globaldef000135 > FALSE) ) {
+   if ( (self.currentammo > FALSE) ) {
 
       return ( TRUE );
 
    }
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   if ( (self.weapon == IT_AXE) ) {
 
       return ( TRUE );
 
    }
-   self.globaldef000132 = W_BestWeapon ();
+   self.weapon = W_BestWeapon ();
    W_SetCurrentAmmo ();
    return ( FALSE );
 
@@ -2087,8 +2038,6 @@ void () player_nail1;
 void () player_light1;
 
 void () player_rocket1;
-
-void () W_Attack;
 
 // function W_Attack
 // function number 286 begins at statement 7690
@@ -2202,9 +2151,9 @@ void () W_Attack = {
       return ;
 
    }
-   makevectors (self.globaldef000153);
-   self.globaldef000376 = (time + TRUE);
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   makevectors (self.v_angle);
+   self.show_hostile = (time + TRUE);
+   if ( (self.weapon == IT_AXE) ) {
 
       sound (self,CHAN_WEAPON,globaldef002242,TRUE,ATTN_NORM);
       r = random ();
@@ -2233,58 +2182,58 @@ void () W_Attack = {
          }
 
       }
-      self.globaldef000361 = (time + globaldef000522);
+      self.attack_finished = (time + globaldef000522);
 
    } else {
 
-      if ( (self.globaldef000132 == IT_SHOTGUN) ) {
+      if ( (self.weapon == IT_SHOTGUN) ) {
 
          player_shot1 ();
          W_FireShotgun ();
-         self.globaldef000361 = (time + globaldef000522);
+         self.attack_finished = (time + globaldef000522);
 
       } else {
 
-         if ( (self.globaldef000132 == IT_SUPER_SHOTGUN) ) {
+         if ( (self.weapon == IT_SUPER_SHOTGUN) ) {
 
             player_shot1 ();
             W_FireSuperShotgun ();
-            self.globaldef000361 = (time + globaldef002123);
+            self.attack_finished = (time + globaldef002123);
 
          } else {
 
-            if ( (self.globaldef000132 == IT_NAILGUN) ) {
+            if ( (self.weapon == IT_NAILGUN) ) {
 
                player_nail1 ();
 
             } else {
 
-               if ( (self.globaldef000132 == IT_SUPER_NAILGUN) ) {
+               if ( (self.weapon == IT_SUPER_NAILGUN) ) {
 
                   player_nail1 ();
 
                } else {
 
-                  if ( (self.globaldef000132 == IT_GRENADE_LAUNCHER) ) {
+                  if ( (self.weapon == IT_GRENADE_LAUNCHER) ) {
 
                      player_rocket1 ();
                      W_FireGrenade ();
-                     self.globaldef000361 = (time + globaldef001825);
+                     self.attack_finished = (time + globaldef001825);
 
                   } else {
 
-                     if ( (self.globaldef000132 == IT_ROCKET_LAUNCHER) ) {
+                     if ( (self.weapon == IT_ROCKET_LAUNCHER) ) {
 
                         player_rocket1 ();
                         W_FireRocket ();
-                        self.globaldef000361 = (time + globaldef001827);
+                        self.attack_finished = (time + globaldef001827);
 
                      } else {
 
-                        if ( (self.globaldef000132 == IT_LIGHTNING) ) {
+                        if ( (self.weapon == IT_LIGHTNING) ) {
 
                            player_light1 ();
-                           self.globaldef000361 = (time + globaldef001488);
+                           self.attack_finished = (time + globaldef001488);
                            sound (self,CHAN_AUTO,globaldef002245,TRUE,ATTN_NORM);
 
                         }
@@ -2308,8 +2257,6 @@ string globaldef002242 /* = "weapons/ax1.wav" */;
 float globaldef002243 /* = 0.250 */;
 float globaldef002244 /* = 0.750 */;
 string globaldef002245 /* = "weapons/lstart.wav" */;
-
-void () W_ChangeWeapon;
 
 // function W_ChangeWeapon
 // function number 287 begins at statement 7788
@@ -2411,18 +2358,18 @@ void () W_ChangeWeapon = {
    local float am;
    local float fl;
 
-   it = self.globaldef000140;
+   it = self.items;
    am = FALSE;
-   if ( (self.globaldef000151 == TRUE) ) {
+   if ( (self.impulse == TRUE) ) {
 
       fl = IT_AXE;
 
    } else {
 
-      if ( (self.globaldef000151 == FL_SWIM) ) {
+      if ( (self.impulse == FL_SWIM) ) {
 
          fl = IT_SHOTGUN;
-         if ( (self.globaldef000136 < TRUE) ) {
+         if ( (self.ammo_shells < TRUE) ) {
 
             am = TRUE;
 
@@ -2430,10 +2377,10 @@ void () W_ChangeWeapon = {
 
       } else {
 
-         if ( (self.globaldef000151 == MOVETYPE_WALK) ) {
+         if ( (self.impulse == MOVETYPE_WALK) ) {
 
             fl = IT_SUPER_SHOTGUN;
-            if ( (self.globaldef000136 < FL_SWIM) ) {
+            if ( (self.ammo_shells < FL_SWIM) ) {
 
                am = TRUE;
 
@@ -2441,10 +2388,10 @@ void () W_ChangeWeapon = {
 
          } else {
 
-            if ( (self.globaldef000151 == MOVETYPE_STEP) ) {
+            if ( (self.impulse == MOVETYPE_STEP) ) {
 
                fl = IT_NAILGUN;
-               if ( (self.globaldef000137 < TRUE) ) {
+               if ( (self.ammo_nails < TRUE) ) {
 
                   am = TRUE;
 
@@ -2452,10 +2399,10 @@ void () W_ChangeWeapon = {
 
             } else {
 
-               if ( (self.globaldef000151 == MOVETYPE_FLY) ) {
+               if ( (self.impulse == MOVETYPE_FLY) ) {
 
                   fl = IT_SUPER_NAILGUN;
-                  if ( (self.globaldef000137 < FL_SWIM) ) {
+                  if ( (self.ammo_nails < FL_SWIM) ) {
 
                      am = TRUE;
 
@@ -2463,10 +2410,10 @@ void () W_ChangeWeapon = {
 
                } else {
 
-                  if ( (self.globaldef000151 == MOVETYPE_TOSS) ) {
+                  if ( (self.impulse == MOVETYPE_TOSS) ) {
 
                      fl = IT_GRENADE_LAUNCHER;
-                     if ( (self.globaldef000138 < TRUE) ) {
+                     if ( (self.ammo_rockets < TRUE) ) {
 
                         am = TRUE;
 
@@ -2474,10 +2421,10 @@ void () W_ChangeWeapon = {
 
                   } else {
 
-                     if ( (self.globaldef000151 == MOVETYPE_PUSH) ) {
+                     if ( (self.impulse == MOVETYPE_PUSH) ) {
 
                         fl = IT_ROCKET_LAUNCHER;
-                        if ( (self.globaldef000138 < TRUE) ) {
+                        if ( (self.ammo_rockets < TRUE) ) {
 
                            am = TRUE;
 
@@ -2485,10 +2432,10 @@ void () W_ChangeWeapon = {
 
                      } else {
 
-                        if ( (self.globaldef000151 == FL_CLIENT) ) {
+                        if ( (self.impulse == FL_CLIENT) ) {
 
                            fl = IT_LIGHTNING;
-                           if ( (self.globaldef000139 < TRUE) ) {
+                           if ( (self.ammo_cells < TRUE) ) {
 
                               am = TRUE;
 
@@ -2509,8 +2456,8 @@ void () W_ChangeWeapon = {
       }
 
    }
-   self.globaldef000151 = FALSE;
-   if ( !(self.globaldef000140 & fl) ) {
+   self.impulse = FALSE;
+   if ( !(self.items & fl) ) {
 
       func000092 (self,globaldef002250);
       return ;
@@ -2522,14 +2469,12 @@ void () W_ChangeWeapon = {
       return ;
 
    }
-   self.globaldef000132 = fl;
+   self.weapon = fl;
    W_SetCurrentAmmo ();
 
 };
 string globaldef002250 /* = "no weapon.\n" */;
 string globaldef002251 /* = "not enough ammo.\n" */;
-
-void () CheatCommand;
 
 // function CheatCommand
 // function number 288 begins at statement 7877
@@ -2576,19 +2521,17 @@ void () CheatCommand = {
       return ;
 
    }
-   self.globaldef000138 = globaldef001335;
-   self.globaldef000137 = globaldef001343;
-   self.globaldef000136 = globaldef001335;
-   self.globaldef000140 = (((((((((self.globaldef000140 | IT_AXE) | IT_SHOTGUN) | IT_SUPER_SHOTGUN) | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_KEY1) | IT_KEY2);
-   self.globaldef000139 = globaldef001343;
-   self.globaldef000140 = (self.globaldef000140 | IT_LIGHTNING);
-   self.globaldef000132 = IT_ROCKET_LAUNCHER;
-   self.globaldef000151 = FALSE;
+   self.ammo_rockets = globaldef001335;
+   self.ammo_nails = globaldef001343;
+   self.ammo_shells = globaldef001335;
+   self.items = (((((((((self.items | IT_AXE) | IT_SHOTGUN) | IT_SUPER_SHOTGUN) | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_KEY1) | IT_KEY2);
+   self.ammo_cells = globaldef001343;
+   self.items = (self.items | IT_LIGHTNING);
+   self.weapon = IT_ROCKET_LAUNCHER;
+   self.impulse = FALSE;
    W_SetCurrentAmmo ();
 
 };
-
-void () func000289;
 
 // function func000289
 // function number 289 begins at statement 7910
@@ -2688,20 +2631,20 @@ void () func000289 = {
 
    local float globaldef002254;
 
-   self.globaldef000151 = FALSE;
+   self.impulse = FALSE;
    while ( TRUE ) {
 
       globaldef002254 = FALSE;
-      if ( (self.globaldef000132 == IT_LIGHTNING) ) {
+      if ( (self.weapon == IT_LIGHTNING) ) {
 
-         self.globaldef000132 = IT_AXE;
+         self.weapon = IT_AXE;
 
       } else {
 
-         if ( (self.globaldef000132 == IT_AXE) ) {
+         if ( (self.weapon == IT_AXE) ) {
 
-            self.globaldef000132 = IT_SHOTGUN;
-            if ( (self.globaldef000136 < TRUE) ) {
+            self.weapon = IT_SHOTGUN;
+            if ( (self.ammo_shells < TRUE) ) {
 
                globaldef002254 = TRUE;
 
@@ -2709,10 +2652,10 @@ void () func000289 = {
 
          } else {
 
-            if ( (self.globaldef000132 == IT_SHOTGUN) ) {
+            if ( (self.weapon == IT_SHOTGUN) ) {
 
-               self.globaldef000132 = IT_SUPER_SHOTGUN;
-               if ( (self.globaldef000136 < FL_SWIM) ) {
+               self.weapon = IT_SUPER_SHOTGUN;
+               if ( (self.ammo_shells < FL_SWIM) ) {
 
                   globaldef002254 = TRUE;
 
@@ -2720,10 +2663,10 @@ void () func000289 = {
 
             } else {
 
-               if ( (self.globaldef000132 == IT_SUPER_SHOTGUN) ) {
+               if ( (self.weapon == IT_SUPER_SHOTGUN) ) {
 
-                  self.globaldef000132 = IT_NAILGUN;
-                  if ( (self.globaldef000137 < TRUE) ) {
+                  self.weapon = IT_NAILGUN;
+                  if ( (self.ammo_nails < TRUE) ) {
 
                      globaldef002254 = TRUE;
 
@@ -2731,10 +2674,10 @@ void () func000289 = {
 
                } else {
 
-                  if ( (self.globaldef000132 == IT_NAILGUN) ) {
+                  if ( (self.weapon == IT_NAILGUN) ) {
 
-                     self.globaldef000132 = IT_SUPER_NAILGUN;
-                     if ( (self.globaldef000137 < FL_SWIM) ) {
+                     self.weapon = IT_SUPER_NAILGUN;
+                     if ( (self.ammo_nails < FL_SWIM) ) {
 
                         globaldef002254 = TRUE;
 
@@ -2742,10 +2685,10 @@ void () func000289 = {
 
                   } else {
 
-                     if ( (self.globaldef000132 == IT_SUPER_NAILGUN) ) {
+                     if ( (self.weapon == IT_SUPER_NAILGUN) ) {
 
-                        self.globaldef000132 = IT_GRENADE_LAUNCHER;
-                        if ( (self.globaldef000138 < TRUE) ) {
+                        self.weapon = IT_GRENADE_LAUNCHER;
+                        if ( (self.ammo_rockets < TRUE) ) {
 
                            globaldef002254 = TRUE;
 
@@ -2753,10 +2696,10 @@ void () func000289 = {
 
                      } else {
 
-                        if ( (self.globaldef000132 == IT_GRENADE_LAUNCHER) ) {
+                        if ( (self.weapon == IT_GRENADE_LAUNCHER) ) {
 
-                           self.globaldef000132 = IT_ROCKET_LAUNCHER;
-                           if ( (self.globaldef000138 < TRUE) ) {
+                           self.weapon = IT_ROCKET_LAUNCHER;
+                           if ( (self.ammo_rockets < TRUE) ) {
 
                               globaldef002254 = TRUE;
 
@@ -2764,10 +2707,10 @@ void () func000289 = {
 
                         } else {
 
-                           if ( (self.globaldef000132 == IT_ROCKET_LAUNCHER) ) {
+                           if ( (self.weapon == IT_ROCKET_LAUNCHER) ) {
 
-                              self.globaldef000132 = IT_LIGHTNING;
-                              if ( (self.globaldef000139 < TRUE) ) {
+                              self.weapon = IT_LIGHTNING;
+                              if ( (self.ammo_cells < TRUE) ) {
 
                                  globaldef002254 = TRUE;
 
@@ -2788,7 +2731,7 @@ void () func000289 = {
          }
 
       }
-      if ( ((self.globaldef000140 & self.globaldef000132) && (globaldef002254 == FALSE)) ) {
+      if ( ((self.items & self.weapon) && (globaldef002254 == FALSE)) ) {
 
          W_SetCurrentAmmo ();
          return ;
@@ -2798,8 +2741,6 @@ void () func000289 = {
    }
 
 };
-
-void () CycleWeaponReverseCommand;
 
 // function CycleWeaponReverseCommand
 // function number 290 begins at statement 7999
@@ -2900,14 +2841,14 @@ void () CycleWeaponReverseCommand = {
    local float it;
    local float am;
 
-   self.globaldef000151 = FALSE;
+   self.impulse = FALSE;
    while ( TRUE ) {
 
       am = FALSE;
-      if ( (self.globaldef000132 == IT_LIGHTNING) ) {
+      if ( (self.weapon == IT_LIGHTNING) ) {
 
-         self.globaldef000132 = IT_ROCKET_LAUNCHER;
-         if ( (self.globaldef000138 < TRUE) ) {
+         self.weapon = IT_ROCKET_LAUNCHER;
+         if ( (self.ammo_rockets < TRUE) ) {
 
             am = TRUE;
 
@@ -2915,10 +2856,10 @@ void () CycleWeaponReverseCommand = {
 
       } else {
 
-         if ( (self.globaldef000132 == IT_ROCKET_LAUNCHER) ) {
+         if ( (self.weapon == IT_ROCKET_LAUNCHER) ) {
 
-            self.globaldef000132 = IT_GRENADE_LAUNCHER;
-            if ( (self.globaldef000138 < TRUE) ) {
+            self.weapon = IT_GRENADE_LAUNCHER;
+            if ( (self.ammo_rockets < TRUE) ) {
 
                am = TRUE;
 
@@ -2926,10 +2867,10 @@ void () CycleWeaponReverseCommand = {
 
          } else {
 
-            if ( (self.globaldef000132 == IT_GRENADE_LAUNCHER) ) {
+            if ( (self.weapon == IT_GRENADE_LAUNCHER) ) {
 
-               self.globaldef000132 = IT_SUPER_NAILGUN;
-               if ( (self.globaldef000137 < FL_SWIM) ) {
+               self.weapon = IT_SUPER_NAILGUN;
+               if ( (self.ammo_nails < FL_SWIM) ) {
 
                   am = TRUE;
 
@@ -2937,10 +2878,10 @@ void () CycleWeaponReverseCommand = {
 
             } else {
 
-               if ( (self.globaldef000132 == IT_SUPER_NAILGUN) ) {
+               if ( (self.weapon == IT_SUPER_NAILGUN) ) {
 
-                  self.globaldef000132 = IT_NAILGUN;
-                  if ( (self.globaldef000137 < TRUE) ) {
+                  self.weapon = IT_NAILGUN;
+                  if ( (self.ammo_nails < TRUE) ) {
 
                      am = TRUE;
 
@@ -2948,10 +2889,10 @@ void () CycleWeaponReverseCommand = {
 
                } else {
 
-                  if ( (self.globaldef000132 == IT_NAILGUN) ) {
+                  if ( (self.weapon == IT_NAILGUN) ) {
 
-                     self.globaldef000132 = IT_SUPER_SHOTGUN;
-                     if ( (self.globaldef000136 < FL_SWIM) ) {
+                     self.weapon = IT_SUPER_SHOTGUN;
+                     if ( (self.ammo_shells < FL_SWIM) ) {
 
                         am = TRUE;
 
@@ -2959,10 +2900,10 @@ void () CycleWeaponReverseCommand = {
 
                   } else {
 
-                     if ( (self.globaldef000132 == IT_SUPER_SHOTGUN) ) {
+                     if ( (self.weapon == IT_SUPER_SHOTGUN) ) {
 
-                        self.globaldef000132 = IT_SHOTGUN;
-                        if ( (self.globaldef000136 < TRUE) ) {
+                        self.weapon = IT_SHOTGUN;
+                        if ( (self.ammo_shells < TRUE) ) {
 
                            am = TRUE;
 
@@ -2970,16 +2911,16 @@ void () CycleWeaponReverseCommand = {
 
                      } else {
 
-                        if ( (self.globaldef000132 == IT_SHOTGUN) ) {
+                        if ( (self.weapon == IT_SHOTGUN) ) {
 
-                           self.globaldef000132 = IT_AXE;
+                           self.weapon = IT_AXE;
 
                         } else {
 
-                           if ( (self.globaldef000132 == IT_AXE) ) {
+                           if ( (self.weapon == IT_AXE) ) {
 
-                              self.globaldef000132 = IT_LIGHTNING;
-                              if ( (self.globaldef000139 < TRUE) ) {
+                              self.weapon = IT_LIGHTNING;
+                              if ( (self.ammo_cells < TRUE) ) {
 
                                  am = TRUE;
 
@@ -3000,7 +2941,7 @@ void () CycleWeaponReverseCommand = {
          }
 
       }
-      if ( ((self.globaldef000140 & self.globaldef000132) && (am == FALSE)) ) {
+      if ( ((self.items & self.weapon) && (am == FALSE)) ) {
 
          W_SetCurrentAmmo ();
          return ;
@@ -3010,8 +2951,6 @@ void () CycleWeaponReverseCommand = {
    }
 
 };
-
-void () ServerflagsCommand;
 
 // function ServerflagsCommand
 // function number 291 begins at statement 8088
@@ -3027,8 +2966,6 @@ void () ServerflagsCommand = {
    serverflags = ((serverflags * FL_SWIM) + TRUE);
 
 };
-
-void () QuadCheat;
 
 // function QuadCheat
 // function number 292 begins at statement 8092
@@ -3057,15 +2994,13 @@ void () QuadCheat = {
       return ;
 
    }
-   self.globaldef000371 = TRUE;
-   self.globaldef000365 = (time + SVC_INTERMISSION);
-   self.globaldef000140 = (self.globaldef000140 | IT_QUAD);
+   self.super_time = TRUE;
+   self.super_damage_finished = (time + SVC_INTERMISSION);
+   self.items = (self.items | IT_QUAD);
    dprint (globaldef002260);
 
 };
 string globaldef002260 /* = "quad cheat\n" */;
-
-void () ImpulseCommands;
 
 // function ImpulseCommands
 // function number 293 begins at statement 8107
@@ -3109,31 +3044,31 @@ void () ImpulseCommands;
 
 void () ImpulseCommands = {
 
-   if ( ((self.globaldef000151 >= TRUE) && (self.globaldef000151 <= FL_CLIENT)) ) {
+   if ( ((self.impulse >= TRUE) && (self.impulse <= FL_CLIENT)) ) {
 
       W_ChangeWeapon ();
 
    } else {
 
-      if ( (self.globaldef000151 == MOVETYPE_FLYMISSILE) ) {
+      if ( (self.impulse == MOVETYPE_FLYMISSILE) ) {
 
          CheatCommand ();
 
       } else {
 
-         if ( (self.globaldef000151 == MOVETYPE_BOUNCE) ) {
+         if ( (self.impulse == MOVETYPE_BOUNCE) ) {
 
             func000289 ();
 
          } else {
 
-            if ( (self.globaldef000151 == globaldef000774) ) {
+            if ( (self.impulse == globaldef000774) ) {
 
                CycleWeaponReverseCommand ();
 
             } else {
 
-               if ( (self.globaldef000151 == globaldef002262) ) {
+               if ( (self.impulse == globaldef002262) ) {
 
                   QuadCheat ();
 
@@ -3146,18 +3081,16 @@ void () ImpulseCommands = {
       }
 
    }
-   if ( (self.globaldef000151 == globaldef000721) ) {
+   if ( (self.impulse == globaldef000721) ) {
 
       func000145 ();
 
    }
    func000372 ();
-   self.globaldef000151 = FALSE;
+   self.impulse = FALSE;
 
 };
 float globaldef002262 /* = 255.000 */;
-
-void () W_WeaponFrame;
 
 // function W_WeaponFrame
 // function number 294 begins at statement 8142
@@ -3185,7 +3118,7 @@ void () W_WeaponFrame;
 
 void () W_WeaponFrame = {
 
-   if ( (time < self.globaldef000361) ) {
+   if ( (time < self.attack_finished) ) {
 
       return ;
 
@@ -3205,7 +3138,7 @@ void () W_WeaponFrame = {
       }
 
    }
-   if ( self.globaldef000148 ) {
+   if ( self.button0 ) {
 
       SuperDamageSound ();
       W_Attack ();
@@ -3238,11 +3171,11 @@ void () W_WeaponFrame = {
 
 void () SuperDamageSound = {
 
-   if ( (self.globaldef000365 > time) ) {
+   if ( (self.super_damage_finished > time) ) {
 
-      if ( (self.globaldef000372 < time) ) {
+      if ( (self.super_sound < time) ) {
 
-         self.globaldef000372 = (time + TRUE);
+         self.super_sound = (time + TRUE);
          sound (self,CHAN_BODY,globaldef001964,TRUE,ATTN_NORM);
 
       }

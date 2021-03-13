@@ -127,34 +127,34 @@ void () bubble_bob;
 
 void () player_stand1 = [ 17.000, player_stand1 ] {
 
-   self.globaldef000134 = FALSE;
-   if ( (self.globaldef000092 || self.globaldef000093) ) {
+   self.weaponframe = FALSE;
+   if ( (self.velocity || self.velocity_y) ) {
 
-      self.globaldef000360 = FALSE;
+      self.walkframe = FALSE;
       player_run ();
       return ;
 
    }
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   if ( (self.weapon == IT_AXE) ) {
 
-      if ( (self.globaldef000360 >= globaldef000774) ) {
+      if ( (self.walkframe >= globaldef000774) ) {
 
-         self.globaldef000360 = FALSE;
+         self.walkframe = FALSE;
 
       }
-      self.globaldef000109 = (globaldef002519 + self.globaldef000360);
+      self.frame = (globaldef002519 + self.walkframe);
 
    } else {
 
-      if ( (self.globaldef000360 >= MOVETYPE_FLY) ) {
+      if ( (self.walkframe >= MOVETYPE_FLY) ) {
 
-         self.globaldef000360 = FALSE;
+         self.walkframe = FALSE;
 
       }
-      self.globaldef000109 = (globaldef000774 + self.globaldef000360);
+      self.frame = (globaldef000774 + self.walkframe);
 
    }
-   self.globaldef000360 = (self.globaldef000360 + TRUE);
+   self.walkframe = (self.walkframe + TRUE);
 
 };
 
@@ -206,34 +206,34 @@ void () player_stand1 = [ 17.000, player_stand1 ] {
 
 void () player_run = [ 6.000, player_run ] {
 
-   self.globaldef000134 = FALSE;
-   if ( (!self.globaldef000092 && !self.globaldef000093) ) {
+   self.weaponframe = FALSE;
+   if ( (!self.velocity && !self.velocity_y) ) {
 
-      self.globaldef000360 = FALSE;
+      self.walkframe = FALSE;
       player_stand1 ();
       return ;
 
    }
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   if ( (self.weapon == IT_AXE) ) {
 
-      if ( (self.globaldef000360 == MOVETYPE_TOSS) ) {
+      if ( (self.walkframe == MOVETYPE_TOSS) ) {
 
-         self.globaldef000360 = FALSE;
+         self.walkframe = FALSE;
 
       }
-      self.globaldef000109 = (FALSE + self.globaldef000360);
+      self.frame = (FALSE + self.walkframe);
 
    } else {
 
-      if ( (self.globaldef000360 == MOVETYPE_TOSS) ) {
+      if ( (self.walkframe == MOVETYPE_TOSS) ) {
 
-         self.globaldef000360 = FALSE;
+         self.walkframe = FALSE;
 
       }
-      self.globaldef000109 = (self.globaldef000109 + self.globaldef000360);
+      self.frame = (self.frame + self.walkframe);
 
    }
-   self.globaldef000360 = (self.globaldef000360 + TRUE);
+   self.walkframe = (self.walkframe + TRUE);
 
 };
 
@@ -252,13 +252,11 @@ void () player_run = [ 6.000, player_run ] {
 
 void () player_shot1 = [ 113.000, player_shot2 ] {
 
-   self.globaldef000134 = TRUE;
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.weaponframe = TRUE;
+   self.effects = (self.effects | EF_MUZZLEFLASH);
 
 };
 float globaldef003090 /* = 113.000 */;
-
-void () player_shot2;
 
 // function player_shot2
 // function number 410 begins at statement 13527
@@ -271,12 +269,10 @@ void () player_shot2;
 
 void () player_shot2 = [ 114.000, player_shot3 ] {
 
-   self.globaldef000134 = FL_SWIM;
+   self.weaponframe = FL_SWIM;
 
 };
 float globaldef003092 /* = 114.000 */;
-
-void () player_shot3;
 
 // function player_shot3
 // function number 411 begins at statement 13531
@@ -289,12 +285,10 @@ void () player_shot3;
 
 void () player_shot3 = [ 115.000, player_shot4 ] {
 
-   self.globaldef000134 = MOVETYPE_WALK;
+   self.weaponframe = MOVETYPE_WALK;
 
 };
 float globaldef003094 /* = 115.000 */;
-
-void () player_shot4;
 
 // function player_shot4
 // function number 412 begins at statement 13535
@@ -307,12 +301,10 @@ void () player_shot4;
 
 void () player_shot4 = [ 116.000, player_shot5 ] {
 
-   self.globaldef000134 = MOVETYPE_STEP;
+   self.weaponframe = MOVETYPE_STEP;
 
 };
 float globaldef003096 /* = 116.000 */;
-
-void () player_shot5;
 
 // function player_shot5
 // function number 413 begins at statement 13539
@@ -325,12 +317,10 @@ void () player_shot5;
 
 void () player_shot5 = [ 117.000, player_shot6 ] {
 
-   self.globaldef000134 = MOVETYPE_FLY;
+   self.weaponframe = MOVETYPE_FLY;
 
 };
 float globaldef003098 /* = 117.000 */;
-
-void () player_shot6;
 
 // function player_shot6
 // function number 414 begins at statement 13543
@@ -343,7 +333,7 @@ void () player_shot6;
 
 void () player_shot6 = [ 118.000, player_run ] {
 
-   self.globaldef000134 = MOVETYPE_TOSS;
+   self.weaponframe = MOVETYPE_TOSS;
 
 };
 float globaldef003100 /* = 118.000 */;
@@ -359,12 +349,10 @@ float globaldef003100 /* = 118.000 */;
 
 void () player_axe1 = [ 119.000, player_axe2 ] {
 
-   self.globaldef000134 = TRUE;
+   self.weaponframe = TRUE;
 
 };
 float globaldef003101 /* = 119.000 */;
-
-void () player_axe2;
 
 // function player_axe2
 // function number 416 begins at statement 13551
@@ -377,11 +365,9 @@ void () player_axe2;
 
 void () player_axe2 = [ 120.000, player_axe3 ] {
 
-   self.globaldef000134 = FL_SWIM;
+   self.weaponframe = FL_SWIM;
 
 };
-
-void () player_axe3;
 
 // function player_axe3
 // function number 417 begins at statement 13555
@@ -395,13 +381,11 @@ void () player_axe3;
 
 void () player_axe3 = [ 121.000, player_axe4 ] {
 
-   self.globaldef000134 = MOVETYPE_WALK;
+   self.weaponframe = MOVETYPE_WALK;
    func000251 ();
 
 };
 float globaldef003104 /* = 121.000 */;
-
-void () player_axe4;
 
 // function player_axe4
 // function number 418 begins at statement 13560
@@ -414,7 +398,7 @@ void () player_axe4;
 
 void () player_axe4 = [ 122.000, player_run ] {
 
-   self.globaldef000134 = MOVETYPE_STEP;
+   self.weaponframe = MOVETYPE_STEP;
 
 };
 float globaldef003106 /* = 122.000 */;
@@ -430,12 +414,10 @@ float globaldef003106 /* = 122.000 */;
 
 void () player_axeb1 = [ 125.000, player_axeb2 ] {
 
-   self.globaldef000134 = MOVETYPE_FLY;
+   self.weaponframe = MOVETYPE_FLY;
 
 };
 float globaldef003107 /* = 125.000 */;
-
-void () player_axeb2;
 
 // function player_axeb2
 // function number 420 begins at statement 13568
@@ -448,12 +430,10 @@ void () player_axeb2;
 
 void () player_axeb2 = [ 126.000, player_axeb3 ] {
 
-   self.globaldef000134 = MOVETYPE_TOSS;
+   self.weaponframe = MOVETYPE_TOSS;
 
 };
 float globaldef003109 /* = 126.000 */;
-
-void () player_axeb3;
 
 // function player_axeb3
 // function number 421 begins at statement 13572
@@ -467,13 +447,11 @@ void () player_axeb3;
 
 void () player_axeb3 = [ 127.000, player_axeb4 ] {
 
-   self.globaldef000134 = MOVETYPE_PUSH;
+   self.weaponframe = MOVETYPE_PUSH;
    func000251 ();
 
 };
 float globaldef003111 /* = 127.000 */;
-
-void () player_axeb4;
 
 // function player_axeb4
 // function number 422 begins at statement 13577
@@ -486,7 +464,7 @@ void () player_axeb4;
 
 void () player_axeb4 = [ 128.000, player_run ] {
 
-   self.globaldef000134 = FL_CLIENT;
+   self.weaponframe = FL_CLIENT;
 
 };
 
@@ -501,12 +479,10 @@ void () player_axeb4 = [ 128.000, player_run ] {
 
 void () player_axec1 = [ 131.000, player_axec2 ] {
 
-   self.globaldef000134 = TRUE;
+   self.weaponframe = TRUE;
 
 };
 float globaldef003113 /* = 131.000 */;
-
-void () player_axec2;
 
 // function player_axec2
 // function number 424 begins at statement 13585
@@ -519,12 +495,10 @@ void () player_axec2;
 
 void () player_axec2 = [ 132.000, player_axec3 ] {
 
-   self.globaldef000134 = FL_SWIM;
+   self.weaponframe = FL_SWIM;
 
 };
 float globaldef003115 /* = 132.000 */;
-
-void () player_axec3;
 
 // function player_axec3
 // function number 425 begins at statement 13589
@@ -538,13 +512,11 @@ void () player_axec3;
 
 void () player_axec3 = [ 133.000, player_axec4 ] {
 
-   self.globaldef000134 = MOVETYPE_WALK;
+   self.weaponframe = MOVETYPE_WALK;
    func000251 ();
 
 };
 float globaldef003117 /* = 133.000 */;
-
-void () player_axec4;
 
 // function player_axec4
 // function number 426 begins at statement 13594
@@ -557,7 +529,7 @@ void () player_axec4;
 
 void () player_axec4 = [ 134.000, player_run ] {
 
-   self.globaldef000134 = MOVETYPE_STEP;
+   self.weaponframe = MOVETYPE_STEP;
 
 };
 float globaldef003119 /* = 134.000 */;
@@ -573,12 +545,10 @@ float globaldef003119 /* = 134.000 */;
 
 void () player_axed1 = [ 137.000, player_axed2 ] {
 
-   self.globaldef000134 = MOVETYPE_FLY;
+   self.weaponframe = MOVETYPE_FLY;
 
 };
 float globaldef003120 /* = 137.000 */;
-
-void () player_axed2;
 
 // function player_axed2
 // function number 428 begins at statement 13602
@@ -591,12 +561,10 @@ void () player_axed2;
 
 void () player_axed2 = [ 138.000, player_axed3 ] {
 
-   self.globaldef000134 = MOVETYPE_TOSS;
+   self.weaponframe = MOVETYPE_TOSS;
 
 };
 float globaldef003122 /* = 138.000 */;
-
-void () player_axed3;
 
 // function player_axed3
 // function number 429 begins at statement 13606
@@ -610,13 +578,11 @@ void () player_axed3;
 
 void () player_axed3 = [ 139.000, player_axed4 ] {
 
-   self.globaldef000134 = MOVETYPE_PUSH;
+   self.weaponframe = MOVETYPE_PUSH;
    func000251 ();
 
 };
 float globaldef003124 /* = 139.000 */;
-
-void () player_axed4;
 
 // function player_axed4
 // function number 430 begins at statement 13611
@@ -629,7 +595,7 @@ void () player_axed4;
 
 void () player_axed4 = [ 140.000, player_run ] {
 
-   self.globaldef000134 = FL_CLIENT;
+   self.weaponframe = FL_CLIENT;
 
 };
 float globaldef003126 /* = 140.000 */;
@@ -667,26 +633,24 @@ float globaldef003126 /* = 140.000 */;
 
 void () player_nail1 = [ 103.000, player_nail2 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   if ( !self.globaldef000148 ) {
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   if ( !self.button0 ) {
 
       player_run ();
       return ;
 
    }
-   self.globaldef000134 = (self.globaldef000134 + TRUE);
-   if ( (self.globaldef000134 == MOVETYPE_FLYMISSILE) ) {
+   self.weaponframe = (self.weaponframe + TRUE);
+   if ( (self.weaponframe == MOVETYPE_FLYMISSILE) ) {
 
-      self.globaldef000134 = TRUE;
+      self.weaponframe = TRUE;
 
    }
    SuperDamageSound ();
    W_FireSpikes (MOVETYPE_STEP);
-   self.globaldef000361 = (time + globaldef001553);
+   self.attack_finished = (time + globaldef001553);
 
 };
-
-void () player_nail2;
 
 // function player_nail2
 // function number 432 begins at statement 13641
@@ -721,22 +685,22 @@ void () player_nail2;
 
 void () player_nail2 = [ 104.000, player_nail1 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   if ( !self.globaldef000148 ) {
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   if ( !self.button0 ) {
 
       player_run ();
       return ;
 
    }
-   self.globaldef000134 = (self.globaldef000134 + TRUE);
-   if ( (self.globaldef000134 == MOVETYPE_FLYMISSILE) ) {
+   self.weaponframe = (self.weaponframe + TRUE);
+   if ( (self.weaponframe == MOVETYPE_FLYMISSILE) ) {
 
-      self.globaldef000134 = TRUE;
+      self.weaponframe = TRUE;
 
    }
    SuperDamageSound ();
    W_FireSpikes (CONTENT_SLIME);
-   self.globaldef000361 = (time + globaldef001553);
+   self.attack_finished = (time + globaldef001553);
 
 };
 
@@ -772,27 +736,25 @@ void () player_nail2 = [ 104.000, player_nail1 ] {
 
 void () player_light1 = [ 105.000, player_light2 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   if ( !self.globaldef000148 ) {
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   if ( !self.button0 ) {
 
       player_run ();
       return ;
 
    }
-   self.globaldef000134 = (self.globaldef000134 + TRUE);
-   if ( (self.globaldef000134 == MOVETYPE_FLY) ) {
+   self.weaponframe = (self.weaponframe + TRUE);
+   if ( (self.weaponframe == MOVETYPE_FLY) ) {
 
-      self.globaldef000134 = TRUE;
+      self.weaponframe = TRUE;
 
    }
    SuperDamageSound ();
    W_FireLightning ();
-   self.globaldef000361 = (time + globaldef001553);
+   self.attack_finished = (time + globaldef001553);
 
 };
 float globaldef003128 /* = 105.000 */;
-
-void () player_light2;
 
 // function player_light2
 // function number 434 begins at statement 13692
@@ -826,22 +788,22 @@ void () player_light2;
 
 void () player_light2 = [ 106.000, player_light1 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   if ( !self.globaldef000148 ) {
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   if ( !self.button0 ) {
 
       player_run ();
       return ;
 
    }
-   self.globaldef000134 = (self.globaldef000134 + TRUE);
-   if ( (self.globaldef000134 == MOVETYPE_FLY) ) {
+   self.weaponframe = (self.weaponframe + TRUE);
+   if ( (self.weaponframe == MOVETYPE_FLY) ) {
 
-      self.globaldef000134 = TRUE;
+      self.weaponframe = TRUE;
 
    }
    SuperDamageSound ();
    W_FireLightning ();
-   self.globaldef000361 = (time + globaldef001553);
+   self.attack_finished = (time + globaldef001553);
 
 };
 float globaldef003130 /* = 106.000 */;
@@ -861,13 +823,11 @@ float globaldef003130 /* = 106.000 */;
 
 void () player_rocket1 = [ 107.000, player_rocket2 ] {
 
-   self.globaldef000134 = TRUE;
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.weaponframe = TRUE;
+   self.effects = (self.effects | EF_MUZZLEFLASH);
 
 };
 float globaldef003131 /* = 107.000 */;
-
-void () player_rocket2;
 
 // function player_rocket2
 // function number 436 begins at statement 13725
@@ -880,12 +840,10 @@ void () player_rocket2;
 
 void () player_rocket2 = [ 108.000, player_rocket3 ] {
 
-   self.globaldef000134 = FL_SWIM;
+   self.weaponframe = FL_SWIM;
 
 };
 float globaldef003133 /* = 108.000 */;
-
-void () player_rocket3;
 
 // function player_rocket3
 // function number 437 begins at statement 13729
@@ -898,12 +856,10 @@ void () player_rocket3;
 
 void () player_rocket3 = [ 109.000, player_rocket4 ] {
 
-   self.globaldef000134 = MOVETYPE_WALK;
+   self.weaponframe = MOVETYPE_WALK;
 
 };
 float globaldef003135 /* = 109.000 */;
-
-void () player_rocket4;
 
 // function player_rocket4
 // function number 438 begins at statement 13733
@@ -916,12 +872,10 @@ void () player_rocket4;
 
 void () player_rocket4 = [ 110.000, player_rocket5 ] {
 
-   self.globaldef000134 = MOVETYPE_STEP;
+   self.weaponframe = MOVETYPE_STEP;
 
 };
 float globaldef003137 /* = 110.000 */;
-
-void () player_rocket5;
 
 // function player_rocket5
 // function number 439 begins at statement 13737
@@ -934,11 +888,9 @@ void () player_rocket5;
 
 void () player_rocket5 = [ 111.000, player_rocket6 ] {
 
-   self.globaldef000134 = MOVETYPE_FLY;
+   self.weaponframe = MOVETYPE_FLY;
 
 };
-
-void () player_rocket6;
 
 // function player_rocket6
 // function number 440 begins at statement 13741
@@ -951,14 +903,12 @@ void () player_rocket6;
 
 void () player_rocket6 = [ 112.000, player_run ] {
 
-   self.globaldef000134 = MOVETYPE_TOSS;
+   self.weaponframe = MOVETYPE_TOSS;
 
 };
 float globaldef003140 /* = 112.000 */;
 
 void (float globaldef003172) DeathBubbles;
-
-void () PainSound;
 
 // function PainSound
 // function number 441 begins at statement 13745
@@ -1113,18 +1063,18 @@ void () PainSound = {
 
    local float rs;
 
-   if ( (self.globaldef000130 < FALSE) ) {
+   if ( (self.health < FALSE) ) {
 
       return ;
 
    }
-   if ( (damage_attacker.globaldef000107 == globaldef002997) ) {
+   if ( (damage_attacker.classname == globaldef002997) ) {
 
       sound (self,CHAN_VOICE,globaldef002398,TRUE,ATTN_NONE);
       return ;
 
    }
-   if ( ((self.globaldef000168 == CONTENT_WATER) && (self.globaldef000167 == MOVETYPE_WALK)) ) {
+   if ( ((self.watertype == CONTENT_WATER) && (self.waterlevel == MOVETYPE_WALK)) ) {
 
       DeathBubbles (TRUE);
       if ( (random () > globaldef000522) ) {
@@ -1139,7 +1089,7 @@ void () PainSound = {
       return ;
 
    }
-   if ( (self.globaldef000168 == CONTENT_SLIME) ) {
+   if ( (self.watertype == CONTENT_SLIME) ) {
 
       if ( (random () > globaldef000522) ) {
 
@@ -1153,7 +1103,7 @@ void () PainSound = {
       return ;
 
    }
-   if ( (self.globaldef000168 == CONTENT_LAVA) ) {
+   if ( (self.watertype == CONTENT_LAVA) ) {
 
       if ( (random () > globaldef000522) ) {
 
@@ -1167,53 +1117,53 @@ void () PainSound = {
       return ;
 
    }
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
-      self.globaldef000375 = FALSE;
+      self.axhitme = FALSE;
       return ;
 
    }
-   self.globaldef000362 = (time + globaldef000522);
-   if ( (self.globaldef000375 == TRUE) ) {
+   self.pain_finished = (time + globaldef000522);
+   if ( (self.axhitme == TRUE) ) {
 
-      self.globaldef000375 = FALSE;
+      self.axhitme = FALSE;
       sound (self,CHAN_VOICE,globaldef002419,TRUE,ATTN_NORM);
       return ;
 
    }
    rs = rint (((random () * MOVETYPE_FLY) + TRUE));
-   self.globaldef000186 = globaldef001466;
+   self.noise = globaldef001466;
    if ( (rs == TRUE) ) {
 
-      self.globaldef000186 = globaldef002408;
+      self.noise = globaldef002408;
 
    } else {
 
       if ( (rs == FL_SWIM) ) {
 
-         self.globaldef000186 = globaldef002409;
+         self.noise = globaldef002409;
 
       } else {
 
          if ( (rs == MOVETYPE_WALK) ) {
 
-            self.globaldef000186 = globaldef002410;
+            self.noise = globaldef002410;
 
          } else {
 
             if ( (rs == MOVETYPE_STEP) ) {
 
-               self.globaldef000186 = globaldef002411;
+               self.noise = globaldef002411;
 
             } else {
 
                if ( (rs == MOVETYPE_FLY) ) {
 
-                  self.globaldef000186 = globaldef002412;
+                  self.noise = globaldef002412;
 
                } else {
 
-                  self.globaldef000186 = globaldef002413;
+                  self.noise = globaldef002413;
 
                }
 
@@ -1224,12 +1174,10 @@ void () PainSound = {
       }
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
+   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
    return ;
 
 };
-
-void () player_pain1;
 
 // function player_pain1
 // function number 442 begins at statement 13889
@@ -1244,11 +1192,9 @@ void () player_pain1;
 void () player_pain1 = [ 35.000, player_pain2 ] {
 
    PainSound ();
-   self.globaldef000134 = FALSE;
+   self.weaponframe = FALSE;
 
 };
-
-void () player_pain2;
 
 // function player_pain2
 // function number 443 begins at statement 13894
@@ -1263,8 +1209,6 @@ void () player_pain2 = [ 36.000, player_pain3 ] {
 };
 float globaldef003146 /* = 36.000 */;
 
-void () player_pain3;
-
 // function player_pain3
 // function number 444 begins at statement 13896
 /*
@@ -1277,8 +1221,6 @@ void () player_pain3 = [ 37.000, player_pain4 ] {
 
 };
 float globaldef003148 /* = 37.000 */;
-
-void () player_pain4;
 
 // function player_pain4
 // function number 445 begins at statement 13898
@@ -1293,8 +1235,6 @@ void () player_pain4 = [ 38.000, player_pain5 ] {
 };
 float globaldef003150 /* = 38.000 */;
 
-void () player_pain5;
-
 // function player_pain5
 // function number 446 begins at statement 13900
 /*
@@ -1308,8 +1248,6 @@ void () player_pain5 = [ 39.000, player_pain6 ] {
 };
 float globaldef003152 /* = 39.000 */;
 
-void () player_pain6;
-
 // function player_pain6
 // function number 447 begins at statement 13902
 /*
@@ -1321,8 +1259,6 @@ void () player_pain6 = [ 40.000, player_run ] {
 
 
 };
-
-void () player_axpain1;
 
 // function player_axpain1
 // function number 448 begins at statement 13904
@@ -1337,12 +1273,10 @@ void () player_axpain1;
 void () player_axpain1 = [ 29.000, player_axpain2 ] {
 
    PainSound ();
-   self.globaldef000134 = FALSE;
+   self.weaponframe = FALSE;
 
 };
 float globaldef003155 /* = 29.000 */;
-
-void () player_axpain2;
 
 // function player_axpain2
 // function number 449 begins at statement 13909
@@ -1356,8 +1290,6 @@ void () player_axpain2 = [ 30.000, player_axpain3 ] {
 
 };
 
-void () player_axpain3;
-
 // function player_axpain3
 // function number 450 begins at statement 13911
 /*
@@ -1369,8 +1301,6 @@ void () player_axpain3 = [ 31.000, player_axpain4 ] {
 
 
 };
-
-void () player_axpain4;
 
 // function player_axpain4
 // function number 451 begins at statement 13913
@@ -1384,8 +1314,6 @@ void () player_axpain4 = [ 32.000, player_axpain5 ] {
 
 };
 
-void () player_axpain5;
-
 // function player_axpain5
 // function number 452 begins at statement 13915
 /*
@@ -1397,8 +1325,6 @@ void () player_axpain5 = [ 33.000, player_axpain6 ] {
 
 
 };
-
-void () player_axpain6;
 
 // function player_axpain6
 // function number 453 begins at statement 13917
@@ -1434,17 +1360,17 @@ float globaldef003161 /* = 34.000 */;
 
 void () player_pain = {
 
-   if ( self.globaldef000134 ) {
+   if ( self.weaponframe ) {
 
       return ;
 
    }
-   if ( (self.globaldef000364 > time) ) {
+   if ( (self.invisible_finished > time) ) {
 
       return ;
 
    }
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   if ( (self.weapon == IT_AXE) ) {
 
       player_axpain1 ();
 
@@ -1467,8 +1393,6 @@ void () player_died1;
 void () player_diee1;
 
 void () player_die_ax1;
-
-void () DeathBubblesSpawn;
 
 // function DeathBubblesSpawn
 // function number 455 begins at statement 13933
@@ -1528,20 +1452,20 @@ void () DeathBubblesSpawn = {
 
    bubble = spawn ();
    setmodel (bubble,globaldef002435);
-   setorigin (bubble,(self.globaldef000083 + globaldef001982));
-   bubble.globaldef000081 = MOVETYPE_NOCLIP;
-   bubble.globaldef000082 = SOLID_NOT;
-   bubble.globaldef000091 = globaldef003170;
-   bubble.globaldef000128 = (time + globaldef000522);
-   bubble.globaldef000126 = bubble_bob;
-   bubble.globaldef000107 = globaldef003171;
-   bubble.globaldef000109 = FALSE;
-   bubble.globaldef000409 = FALSE;
+   setorigin (bubble,(self.origin + globaldef001982));
+   bubble.movetype = MOVETYPE_NOCLIP;
+   bubble.solid = SOLID_NOT;
+   bubble.velocity = globaldef003170;
+   bubble.nextthink = (time + globaldef000522);
+   bubble.think = bubble_bob;
+   bubble.classname = globaldef003171;
+   bubble.frame = FALSE;
+   bubble.cnt = FALSE;
    setsize (bubble,globaldef001621,globaldef001622);
-   self.globaldef000128 = (time + globaldef001488);
-   self.globaldef000126 = DeathBubblesSpawn;
-   self.globaldef000379 = (self.globaldef000379 + TRUE);
-   if ( (self.globaldef000379 >= self.globaldef000380) ) {
+   self.nextthink = (time + globaldef001488);
+   self.think = DeathBubblesSpawn;
+   self.air_finished = (self.air_finished + TRUE);
+   if ( (self.air_finished >= self.bubble_count) ) {
 
       remove (self);
 
@@ -1584,19 +1508,17 @@ void (float globaldef003172) DeathBubbles = {
    local entity bubble_spawner;
 
    bubble_spawner = spawn ();
-   setorigin (bubble_spawner,self.globaldef000083);
-   bubble_spawner.globaldef000081 = MOVETYPE_NONE;
-   bubble_spawner.globaldef000082 = SOLID_NOT;
-   bubble_spawner.globaldef000128 = (time + globaldef001488);
-   bubble_spawner.globaldef000126 = DeathBubblesSpawn;
-   bubble_spawner.globaldef000379 = FALSE;
-   bubble_spawner.globaldef000179 = self;
-   bubble_spawner.globaldef000380 = globaldef003172;
+   setorigin (bubble_spawner,self.origin);
+   bubble_spawner.movetype = MOVETYPE_NONE;
+   bubble_spawner.solid = SOLID_NOT;
+   bubble_spawner.nextthink = (time + globaldef001488);
+   bubble_spawner.think = DeathBubblesSpawn;
+   bubble_spawner.air_finished = FALSE;
+   bubble_spawner.owner = self;
+   bubble_spawner.bubble_count = globaldef003172;
    return ;
 
 };
-
-void () DeathSound;
 
 // function DeathSound
 // function number 457 begins at statement 14003
@@ -1654,7 +1576,7 @@ void () DeathSound = {
 
    local float rs;
 
-   if ( (self.globaldef000167 == MOVETYPE_WALK) ) {
+   if ( (self.waterlevel == MOVETYPE_WALK) ) {
 
       DeathBubbles (globaldef001384);
       sound (self,CHAN_VOICE,globaldef002397,TRUE,ATTN_NONE);
@@ -1664,35 +1586,33 @@ void () DeathSound = {
    rs = rint (((random () * MOVETYPE_STEP) + TRUE));
    if ( (rs == TRUE) ) {
 
-      self.globaldef000186 = globaldef002414;
+      self.noise = globaldef002414;
 
    }
    if ( (rs == FL_SWIM) ) {
 
-      self.globaldef000186 = globaldef002415;
+      self.noise = globaldef002415;
 
    }
    if ( (rs == MOVETYPE_WALK) ) {
 
-      self.globaldef000186 = globaldef002416;
+      self.noise = globaldef002416;
 
    }
    if ( (rs == MOVETYPE_STEP) ) {
 
-      self.globaldef000186 = globaldef002417;
+      self.noise = globaldef002417;
 
    }
    if ( (rs == MOVETYPE_FLY) ) {
 
-      self.globaldef000186 = globaldef002418;
+      self.noise = globaldef002418;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NONE);
+   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NONE);
    return ;
 
 };
-
-void () PlayerDead;
 
 // function PlayerDead
 // function number 458 begins at statement 14050
@@ -1706,11 +1626,10 @@ void () PlayerDead;
 
 void () PlayerDead = {
 
-   self.globaldef000128 = CONTENT_EMPTY;
-   self.globaldef000143 = DEAD_DEAD;
+   self.nextthink = CONTENT_EMPTY;
+   self.deadflag = DEAD_DEAD;
 
 };
-vector (float globaldef003178) VelocityForDamage;
 
 // function VelocityForDamage
 // function number 459 begins at statement 14055
@@ -1769,8 +1688,6 @@ vector (float globaldef003178) VelocityForDamage = {
 };
 float globaldef003183 /* = -200.000 */;
 
-void () func000460;
-
 // function func000460
 // function number 460 begins at statement 14079
 /*
@@ -1787,8 +1704,6 @@ void () func000460 = {
    remove (self);
 
 };
-
-void (string globaldef003186, float globaldef003187) ThrowGib;
 
 // function ThrowGib
 // function number 461 begins at statement 14084
@@ -1858,24 +1773,22 @@ void (string globaldef003186, float globaldef003187) ThrowGib = {
    }
    globaldef000784 = (globaldef000784 + TRUE);
    new = spawn ();
-   new.globaldef000083 = self.globaldef000083;
+   new.origin = self.origin;
    setmodel (new,globaldef003186);
    setsize (new,VEC_ORIGIN,VEC_ORIGIN);
-   new.globaldef000091 = VelocityForDamage (globaldef003187);
-   new.globaldef000081 = MOVETYPE_BOUNCE;
-   new.globaldef000082 = SOLID_NOT;
-   new.globaldef000100 = (random () * globaldef000723);
-   new.globaldef000101 = (random () * globaldef000723);
-   new.globaldef000102 = (random () * globaldef000723);
-   new.globaldef000126 = func000460;
-   new.globaldef000080 = time;
-   new.globaldef000128 = ((time + MOVETYPE_BOUNCE) + (random () * MOVETYPE_BOUNCE));
-   new.globaldef000109 = FALSE;
-   new.globaldef000160 = FALSE;
+   new.velocity = VelocityForDamage (globaldef003187);
+   new.movetype = MOVETYPE_BOUNCE;
+   new.solid = SOLID_NOT;
+   new.avelocity = (random () * globaldef000723);
+   new.avelocity_y = (random () * globaldef000723);
+   new.avelocity_z = (random () * globaldef000723);
+   new.think = func000460;
+   new.ltime = time;
+   new.nextthink = ((time + MOVETYPE_BOUNCE) + (random () * MOVETYPE_BOUNCE));
+   new.frame = FALSE;
+   new.flags = FALSE;
 
 };
-
-void (string globaldef003190, float globaldef003191) ThrowHead;
 
 // function ThrowHead
 // function number 462 begins at statement 14136
@@ -1933,31 +1846,29 @@ void (string globaldef003190, float globaldef003191) ThrowHead = {
 
    if ( ((globaldef003190 == globaldef002431) && (globaldef000804 & globaldef000760)) ) {
 
-      self.globaldef000557 = FALSE;
-      self.globaldef000556 = globaldef000510;
+      self.field000251 = FALSE;
+      self.field000250 = globaldef000510;
 
    } else {
 
       setmodel (self,globaldef003190);
 
    }
-   self.globaldef000109 = FALSE;
-   self.globaldef000128 = CONTENT_EMPTY;
-   self.globaldef000081 = MOVETYPE_BOUNCE;
-   self.globaldef000141 = DAMAGE_NO;
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000144 = globaldef003192;
+   self.frame = FALSE;
+   self.nextthink = CONTENT_EMPTY;
+   self.movetype = MOVETYPE_BOUNCE;
+   self.takedamage = DAMAGE_NO;
+   self.solid = SOLID_NOT;
+   self.view_ofs = globaldef003192;
    setsize (self,globaldef001832,globaldef001833);
-   self.globaldef000091 = VelocityForDamage (globaldef003191);
-   self.globaldef000086 = (self.globaldef000086 - globaldef000719);
-   self.globaldef000160 = (self.globaldef000160 - (self.globaldef000160 & FL_ONGROUND));
-   self.globaldef000099 = (func000249 () * globaldef003193);
+   self.velocity = VelocityForDamage (globaldef003191);
+   self.origin_z = (self.origin_z - globaldef000719);
+   self.flags = (self.flags - (self.flags & FL_ONGROUND));
+   self.avelocity = (func000249 () * globaldef003193);
 
 };
 vector globaldef003192 /* = '0.000 0.000 8.000' */;
 vector globaldef003193 /* = '0.000 600.000 0.000' */;
-
-void () GibPlayer;
 
 // function GibPlayer
 // function number 463 begins at statement 14183
@@ -2021,18 +1932,18 @@ void () GibPlayer;
 
 void () GibPlayer = {
 
-   ThrowHead (globaldef002431,self.globaldef000130);
-   ThrowGib (globaldef002432,self.globaldef000130);
-   ThrowGib (globaldef002433,self.globaldef000130);
-   ThrowGib (globaldef002434,self.globaldef000130);
-   self.globaldef000143 = DEAD_DEAD;
-   if ( (damage_attacker.globaldef000107 == globaldef002997) ) {
+   ThrowHead (globaldef002431,self.health);
+   ThrowGib (globaldef002432,self.health);
+   ThrowGib (globaldef002433,self.health);
+   ThrowGib (globaldef002434,self.health);
+   self.deadflag = DEAD_DEAD;
+   if ( (damage_attacker.classname == globaldef002997) ) {
 
       sound (self,CHAN_VOICE,globaldef002398,TRUE,ATTN_NONE);
       return ;
 
    }
-   if ( (damage_attacker.globaldef000107 == globaldef003000) ) {
+   if ( (damage_attacker.classname == globaldef003000) ) {
 
       sound (self,CHAN_VOICE,globaldef002398,TRUE,ATTN_NONE);
       return ;
@@ -2157,19 +2068,19 @@ void () PlayerDie = {
 
    local float i;
 
-   self.globaldef000140 = (self.globaldef000140 - (self.globaldef000140 & IT_INVISIBILITY));
-   self.globaldef000364 = FALSE;
-   self.globaldef000363 = FALSE;
-   self.globaldef000365 = FALSE;
-   self.globaldef000366 = FALSE;
+   self.items = (self.items - (self.items & IT_INVISIBILITY));
+   self.invisible_finished = FALSE;
+   self.invincible_finished = FALSE;
+   self.super_damage_finished = FALSE;
+   self.radsuit_finished = FALSE;
    if ( (globaldef000804 & globaldef000760) ) {
 
-      self.globaldef000557 = self.globaldef000555;
-      self.globaldef000556 = globaldef000509;
+      self.field000251 = self.field000249;
+      self.field000250 = globaldef000509;
 
    } else {
 
-      self.globaldef000071 = globaldef000509;
+      self.modelindex = globaldef000509;
 
    }
    if ( (deathmatch || coop) ) {
@@ -2177,18 +2088,18 @@ void () PlayerDie = {
       func000244 ();
 
    }
-   self.globaldef000133 = globaldef001466;
-   self.globaldef000144 = globaldef003196;
-   self.globaldef000143 = DEAD_DYING;
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000160 = (self.globaldef000160 - (self.globaldef000160 & FL_ONGROUND));
-   self.globaldef000081 = MOVETYPE_TOSS;
-   if ( (self.globaldef000094 < MOVETYPE_BOUNCE) ) {
+   self.weaponmodel = globaldef001466;
+   self.view_ofs = globaldef003196;
+   self.deadflag = DEAD_DYING;
+   self.solid = SOLID_NOT;
+   self.flags = (self.flags - (self.flags & FL_ONGROUND));
+   self.movetype = MOVETYPE_TOSS;
+   if ( (self.velocity_z < MOVETYPE_BOUNCE) ) {
 
-      self.globaldef000094 = (self.globaldef000094 + (random () * globaldef000523));
+      self.velocity_z = (self.velocity_z + (random () * globaldef000523));
 
    }
-   if ( (self.globaldef000130 < globaldef003008) ) {
+   if ( (self.health < globaldef003008) ) {
 
       GibPlayer ();
       return ;
@@ -2201,9 +2112,9 @@ void () PlayerDie = {
 
    }
    DeathSound ();
-   self.globaldef000096 = FALSE;
-   self.globaldef000098 = FALSE;
-   if ( (self.globaldef000132 == IT_AXE) ) {
+   self.angles = FALSE;
+   self.angles_z = FALSE;
+   if ( (self.weapon == IT_AXE) ) {
 
       player_die_ax1 ();
       return ;
@@ -2274,16 +2185,16 @@ vector globaldef003196 /* = '0.000 0.000 -8.000' */;
 
 void () set_suicide_frame = {
 
-   if ( (self.globaldef000108 != globaldef002429) ) {
+   if ( (self.model != globaldef002429) ) {
 
       return ;
 
    }
-   self.globaldef000109 = globaldef001337;
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000081 = MOVETYPE_TOSS;
-   self.globaldef000143 = DEAD_DEAD;
-   self.globaldef000128 = CONTENT_EMPTY;
+   self.frame = globaldef001337;
+   self.solid = SOLID_NOT;
+   self.movetype = MOVETYPE_TOSS;
+   self.deadflag = DEAD_DEAD;
+   self.nextthink = CONTENT_EMPTY;
 
 };
 
@@ -2299,8 +2210,6 @@ void () player_diea1 = [ 50.000, player_diea2 ] {
 
 };
 
-void () player_diea2;
-
 // function player_diea2
 // function number 467 begins at statement 14353
 /*
@@ -2313,8 +2222,6 @@ void () player_diea2 = [ 51.000, player_diea3 ] {
 
 };
 float globaldef003198 /* = 51.000 */;
-
-void () player_diea3;
 
 // function player_diea3
 // function number 468 begins at statement 14355
@@ -2329,8 +2236,6 @@ void () player_diea3 = [ 52.000, player_diea4 ] {
 };
 float globaldef003200 /* = 52.000 */;
 
-void () player_diea4;
-
 // function player_diea4
 // function number 469 begins at statement 14357
 /*
@@ -2343,8 +2248,6 @@ void () player_diea4 = [ 53.000, player_diea5 ] {
 
 };
 float globaldef003202 /* = 53.000 */;
-
-void () player_diea5;
 
 // function player_diea5
 // function number 470 begins at statement 14359
@@ -2359,8 +2262,6 @@ void () player_diea5 = [ 54.000, player_diea6 ] {
 };
 float globaldef003204 /* = 54.000 */;
 
-void () player_diea6;
-
 // function player_diea6
 // function number 471 begins at statement 14361
 /*
@@ -2373,8 +2274,6 @@ void () player_diea6 = [ 55.000, player_diea7 ] {
 
 };
 float globaldef003206 /* = 55.000 */;
-
-void () player_diea7;
 
 // function player_diea7
 // function number 472 begins at statement 14363
@@ -2389,8 +2288,6 @@ void () player_diea7 = [ 56.000, player_diea8 ] {
 };
 float globaldef003208 /* = 56.000 */;
 
-void () player_diea8;
-
 // function player_diea8
 // function number 473 begins at statement 14365
 /*
@@ -2403,8 +2300,6 @@ void () player_diea8 = [ 57.000, player_diea9 ] {
 
 };
 float globaldef003210 /* = 57.000 */;
-
-void () player_diea9;
 
 // function player_diea9
 // function number 474 begins at statement 14367
@@ -2419,8 +2314,6 @@ void () player_diea9 = [ 58.000, player_diea10 ] {
 };
 float globaldef003212 /* = 58.000 */;
 
-void () player_diea10;
-
 // function player_diea10
 // function number 475 begins at statement 14369
 /*
@@ -2432,8 +2325,6 @@ void () player_diea10 = [ 59.000, player_diea11 ] {
 
 
 };
-
-void () player_diea11;
 
 // function player_diea11
 // function number 476 begins at statement 14371
@@ -2462,8 +2353,6 @@ void () player_dieb1 = [ 61.000, player_dieb2 ] {
 };
 float globaldef003215 /* = 61.000 */;
 
-void () player_dieb2;
-
 // function player_dieb2
 // function number 478 begins at statement 14376
 /*
@@ -2477,8 +2366,6 @@ void () player_dieb2 = [ 62.000, player_dieb3 ] {
 };
 float globaldef003217 /* = 62.000 */;
 
-void () player_dieb3;
-
 // function player_dieb3
 // function number 479 begins at statement 14378
 /*
@@ -2491,8 +2378,6 @@ void () player_dieb3 = [ 63.000, player_dieb4 ] {
 
 };
 
-void () player_dieb4;
-
 // function player_dieb4
 // function number 480 begins at statement 14380
 /*
@@ -2504,8 +2389,6 @@ void () player_dieb4 = [ 64.000, player_dieb5 ] {
 
 
 };
-
-void () player_dieb5;
 
 // function player_dieb5
 // function number 481 begins at statement 14382
@@ -2520,8 +2403,6 @@ void () player_dieb5 = [ 65.000, player_dieb6 ] {
 };
 float globaldef003221 /* = 65.000 */;
 
-void () player_dieb6;
-
 // function player_dieb6
 // function number 482 begins at statement 14384
 /*
@@ -2534,8 +2415,6 @@ void () player_dieb6 = [ 66.000, player_dieb7 ] {
 
 };
 float globaldef003223 /* = 66.000 */;
-
-void () player_dieb7;
 
 // function player_dieb7
 // function number 483 begins at statement 14386
@@ -2550,8 +2429,6 @@ void () player_dieb7 = [ 67.000, player_dieb8 ] {
 };
 float globaldef003225 /* = 67.000 */;
 
-void () player_dieb8;
-
 // function player_dieb8
 // function number 484 begins at statement 14388
 /*
@@ -2563,8 +2440,6 @@ void () player_dieb8 = [ 68.000, player_dieb9 ] {
 
 
 };
-
-void () player_dieb9;
 
 // function player_dieb9
 // function number 485 begins at statement 14390
@@ -2592,8 +2467,6 @@ void () player_diec1 = [ 70.000, player_diec2 ] {
 
 };
 
-void () player_diec2;
-
 // function player_diec2
 // function number 487 begins at statement 14395
 /*
@@ -2605,8 +2478,6 @@ void () player_diec2 = [ 71.000, player_diec3 ] {
 
 
 };
-
-void () player_diec3;
 
 // function player_diec3
 // function number 488 begins at statement 14397
@@ -2621,8 +2492,6 @@ void () player_diec3 = [ 72.000, player_diec4 ] {
 };
 float globaldef003230 /* = 72.000 */;
 
-void () player_diec4;
-
 // function player_diec4
 // function number 489 begins at statement 14399
 /*
@@ -2634,8 +2503,6 @@ void () player_diec4 = [ 73.000, player_diec5 ] {
 
 
 };
-
-void () player_diec5;
 
 // function player_diec5
 // function number 490 begins at statement 14401
@@ -2650,8 +2517,6 @@ void () player_diec5 = [ 74.000, player_diec6 ] {
 };
 float globaldef003233 /* = 74.000 */;
 
-void () player_diec6;
-
 // function player_diec6
 // function number 491 begins at statement 14403
 /*
@@ -2663,8 +2528,6 @@ void () player_diec6 = [ 75.000, player_diec7 ] {
 
 
 };
-
-void () player_diec7;
 
 // function player_diec7
 // function number 492 begins at statement 14405
@@ -2679,8 +2542,6 @@ void () player_diec7 = [ 76.000, player_diec8 ] {
 };
 float globaldef003236 /* = 76.000 */;
 
-void () player_diec8;
-
 // function player_diec8
 // function number 493 begins at statement 14407
 /*
@@ -2693,8 +2554,6 @@ void () player_diec8 = [ 77.000, player_diec9 ] {
 
 };
 float globaldef003238 /* = 77.000 */;
-
-void () player_diec9;
 
 // function player_diec9
 // function number 494 begins at statement 14409
@@ -2709,8 +2568,6 @@ void () player_diec9 = [ 78.000, player_diec10 ] {
 };
 float globaldef003240 /* = 78.000 */;
 
-void () player_diec10;
-
 // function player_diec10
 // function number 495 begins at statement 14411
 /*
@@ -2724,8 +2581,6 @@ void () player_diec10 = [ 79.000, player_diec11 ] {
 };
 float globaldef003242 /* = 79.000 */;
 
-void () player_diec11;
-
 // function player_diec11
 // function number 496 begins at statement 14413
 /*
@@ -2738,8 +2593,6 @@ void () player_diec11 = [ 80.000, player_diec12 ] {
 
 };
 
-void () player_diec12;
-
 // function player_diec12
 // function number 497 begins at statement 14415
 /*
@@ -2751,8 +2604,6 @@ void () player_diec12 = [ 81.000, player_diec13 ] {
 
 
 };
-
-void () player_diec13;
 
 // function player_diec13
 // function number 498 begins at statement 14417
@@ -2767,8 +2618,6 @@ void () player_diec13 = [ 82.000, player_diec14 ] {
 };
 float globaldef003246 /* = 82.000 */;
 
-void () player_diec14;
-
 // function player_diec14
 // function number 499 begins at statement 14419
 /*
@@ -2781,8 +2630,6 @@ void () player_diec14 = [ 83.000, player_diec15 ] {
 
 };
 float globaldef003248 /* = 83.000 */;
-
-void () player_diec15;
 
 // function player_diec15
 // function number 500 begins at statement 14421
@@ -2811,8 +2658,6 @@ void () player_died1 = [ 85.000, player_died2 ] {
 };
 float globaldef003250 /* = 85.000 */;
 
-void () player_died2;
-
 // function player_died2
 // function number 502 begins at statement 14426
 /*
@@ -2825,8 +2670,6 @@ void () player_died2 = [ 86.000, player_died3 ] {
 
 };
 float globaldef003252 /* = 86.000 */;
-
-void () player_died3;
 
 // function player_died3
 // function number 503 begins at statement 14428
@@ -2841,8 +2684,6 @@ void () player_died3 = [ 87.000, player_died4 ] {
 };
 float globaldef003254 /* = 87.000 */;
 
-void () player_died4;
-
 // function player_died4
 // function number 504 begins at statement 14430
 /*
@@ -2855,8 +2696,6 @@ void () player_died4 = [ 88.000, player_died5 ] {
 
 };
 float globaldef003256 /* = 88.000 */;
-
-void () player_died5;
 
 // function player_died5
 // function number 505 begins at statement 14432
@@ -2871,8 +2710,6 @@ void () player_died5 = [ 89.000, player_died6 ] {
 };
 float globaldef003258 /* = 89.000 */;
 
-void () player_died6;
-
 // function player_died6
 // function number 506 begins at statement 14434
 /*
@@ -2884,8 +2721,6 @@ void () player_died6 = [ 90.000, player_died7 ] {
 
 
 };
-
-void () player_died7;
 
 // function player_died7
 // function number 507 begins at statement 14436
@@ -2900,8 +2735,6 @@ void () player_died7 = [ 91.000, player_died8 ] {
 };
 float globaldef003261 /* = 91.000 */;
 
-void () player_died8;
-
 // function player_died8
 // function number 508 begins at statement 14438
 /*
@@ -2914,8 +2747,6 @@ void () player_died8 = [ 92.000, player_died9 ] {
 
 };
 float globaldef003263 /* = 92.000 */;
-
-void () player_died9;
 
 // function player_died9
 // function number 509 begins at statement 14440
@@ -2945,8 +2776,6 @@ void () player_diee1 = [ 94.000, player_diee2 ] {
 };
 float globaldef003266 /* = 94.000 */;
 
-void () player_diee2;
-
 // function player_diee2
 // function number 511 begins at statement 14445
 /*
@@ -2959,8 +2788,6 @@ void () player_diee2 = [ 95.000, player_diee3 ] {
 
 };
 float globaldef003268 /* = 95.000 */;
-
-void () player_diee3;
 
 // function player_diee3
 // function number 512 begins at statement 14447
@@ -2975,8 +2802,6 @@ void () player_diee3 = [ 96.000, player_diee4 ] {
 };
 float globaldef003270 /* = 96.000 */;
 
-void () player_diee4;
-
 // function player_diee4
 // function number 513 begins at statement 14449
 /*
@@ -2989,8 +2814,6 @@ void () player_diee4 = [ 97.000, player_diee5 ] {
 
 };
 float globaldef003272 /* = 97.000 */;
-
-void () player_diee5;
 
 // function player_diee5
 // function number 514 begins at statement 14451
@@ -3005,8 +2828,6 @@ void () player_diee5 = [ 98.000, player_diee6 ] {
 };
 float globaldef003274 /* = 98.000 */;
 
-void () player_diee6;
-
 // function player_diee6
 // function number 515 begins at statement 14453
 /*
@@ -3020,8 +2841,6 @@ void () player_diee6 = [ 99.000, player_diee7 ] {
 };
 float globaldef003276 /* = 99.000 */;
 
-void () player_diee7;
-
 // function player_diee7
 // function number 516 begins at statement 14455
 /*
@@ -3034,8 +2853,6 @@ void () player_diee7 = [ 100.000, player_diee8 ] {
 
 };
 
-void () player_diee8;
-
 // function player_diee8
 // function number 517 begins at statement 14457
 /*
@@ -3047,8 +2864,6 @@ void () player_diee8 = [ 101.000, player_diee9 ] {
 
 
 };
-
-void () player_diee9;
 
 // function player_diee9
 // function number 518 begins at statement 14459
@@ -3077,8 +2892,6 @@ void () player_die_ax1 = [ 41.000, player_die_ax2 ] {
 };
 float globaldef003280 /* = 41.000 */;
 
-void () player_die_ax2;
-
 // function player_die_ax2
 // function number 520 begins at statement 14464
 /*
@@ -3091,8 +2904,6 @@ void () player_die_ax2 = [ 42.000, player_die_ax3 ] {
 
 };
 float globaldef003282 /* = 42.000 */;
-
-void () player_die_ax3;
 
 // function player_die_ax3
 // function number 521 begins at statement 14466
@@ -3107,8 +2918,6 @@ void () player_die_ax3 = [ 43.000, player_die_ax4 ] {
 };
 float globaldef003284 /* = 43.000 */;
 
-void () player_die_ax4;
-
 // function player_die_ax4
 // function number 522 begins at statement 14468
 /*
@@ -3122,8 +2931,6 @@ void () player_die_ax4 = [ 44.000, player_die_ax5 ] {
 };
 float globaldef003286 /* = 44.000 */;
 
-void () player_die_ax5;
-
 // function player_die_ax5
 // function number 523 begins at statement 14470
 /*
@@ -3135,8 +2942,6 @@ void () player_die_ax5 = [ 45.000, player_die_ax6 ] {
 
 
 };
-
-void () player_die_ax6;
 
 // function player_die_ax6
 // function number 524 begins at statement 14472
@@ -3151,8 +2956,6 @@ void () player_die_ax6 = [ 46.000, player_die_ax7 ] {
 };
 float globaldef003289 /* = 46.000 */;
 
-void () player_die_ax7;
-
 // function player_die_ax7
 // function number 525 begins at statement 14474
 /*
@@ -3166,8 +2969,6 @@ void () player_die_ax7 = [ 47.000, player_die_ax8 ] {
 };
 float globaldef003291 /* = 47.000 */;
 
-void () player_die_ax8;
-
 // function player_die_ax8
 // function number 526 begins at statement 14476
 /*
@@ -3180,8 +2981,6 @@ void () player_die_ax8 = [ 48.000, player_die_ax9 ] {
 
 };
 float globaldef003293 /* = 48.000 */;
-
-void () player_die_ax9;
 
 // function player_die_ax9
 // function number 527 begins at statement 14478

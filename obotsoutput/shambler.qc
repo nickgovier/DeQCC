@@ -1,6 +1,4 @@
 
-void () sham_stand1;
-
 // function sham_stand1
 // function number 890 begins at statement 19629
 /*
@@ -14,8 +12,6 @@ void () sham_stand1 = [ 0.000, sham_stand2 ] {
    ai_stand ();
 
 };
-
-void () sham_stand2;
 
 // function sham_stand2
 // function number 891 begins at statement 19632
@@ -31,8 +27,6 @@ void () sham_stand2 = [ 1.000, sham_stand3 ] {
 
 };
 
-void () sham_stand3;
-
 // function sham_stand3
 // function number 892 begins at statement 19635
 /*
@@ -46,8 +40,6 @@ void () sham_stand3 = [ 2.000, sham_stand4 ] {
    ai_stand ();
 
 };
-
-void () sham_stand4;
 
 // function sham_stand4
 // function number 893 begins at statement 19638
@@ -63,8 +55,6 @@ void () sham_stand4 = [ 3.000, sham_stand5 ] {
 
 };
 
-void () sham_stand5;
-
 // function sham_stand5
 // function number 894 begins at statement 19641
 /*
@@ -78,8 +68,6 @@ void () sham_stand5 = [ 4.000, sham_stand6 ] {
    ai_stand ();
 
 };
-
-void () sham_stand6;
 
 // function sham_stand6
 // function number 895 begins at statement 19644
@@ -95,8 +83,6 @@ void () sham_stand6 = [ 5.000, sham_stand7 ] {
 
 };
 
-void () sham_stand7;
-
 // function sham_stand7
 // function number 896 begins at statement 19647
 /*
@@ -110,8 +96,6 @@ void () sham_stand7 = [ 6.000, sham_stand8 ] {
    ai_stand ();
 
 };
-
-void () sham_stand8;
 
 // function sham_stand8
 // function number 897 begins at statement 19650
@@ -127,8 +111,6 @@ void () sham_stand8 = [ 7.000, sham_stand9 ] {
 
 };
 
-void () sham_stand9;
-
 // function sham_stand9
 // function number 898 begins at statement 19653
 /*
@@ -142,8 +124,6 @@ void () sham_stand9 = [ 8.000, sham_stand10 ] {
    ai_stand ();
 
 };
-
-void () sham_stand10;
 
 // function sham_stand10
 // function number 899 begins at statement 19656
@@ -159,8 +139,6 @@ void () sham_stand10 = [ 9.000, sham_stand11 ] {
 
 };
 
-void () sham_stand11;
-
 // function sham_stand11
 // function number 900 begins at statement 19659
 /*
@@ -174,8 +152,6 @@ void () sham_stand11 = [ 10.000, sham_stand12 ] {
    ai_stand ();
 
 };
-
-void () sham_stand12;
 
 // function sham_stand12
 // function number 901 begins at statement 19662
@@ -191,8 +167,6 @@ void () sham_stand12 = [ 11.000, sham_stand13 ] {
 
 };
 
-void () sham_stand13;
-
 // function sham_stand13
 // function number 902 begins at statement 19665
 /*
@@ -206,8 +180,6 @@ void () sham_stand13 = [ 12.000, sham_stand14 ] {
    ai_stand ();
 
 };
-
-void () sham_stand14;
 
 // function sham_stand14
 // function number 903 begins at statement 19668
@@ -223,8 +195,6 @@ void () sham_stand14 = [ 13.000, sham_stand15 ] {
 
 };
 
-void () sham_stand15;
-
 // function sham_stand15
 // function number 904 begins at statement 19671
 /*
@@ -238,8 +208,6 @@ void () sham_stand15 = [ 14.000, sham_stand16 ] {
    ai_stand ();
 
 };
-
-void () sham_stand16;
 
 // function sham_stand16
 // function number 905 begins at statement 19674
@@ -255,8 +223,6 @@ void () sham_stand16 = [ 15.000, sham_stand17 ] {
 
 };
 
-void () sham_stand17;
-
 // function sham_stand17
 // function number 906 begins at statement 19677
 /*
@@ -270,8 +236,6 @@ void () sham_stand17 = [ 16.000, sham_stand1 ] {
    ai_stand ();
 
 };
-
-void () sham_walk1;
 
 // function sham_walk1
 // function number 907 begins at statement 19680
@@ -288,8 +252,6 @@ void () sham_walk1 = [ 17.000, sham_walk2 ] {
 
 };
 
-void () sham_walk2;
-
 // function sham_walk2
 // function number 908 begins at statement 19684
 /*
@@ -304,8 +266,6 @@ void () sham_walk2 = [ 18.000, sham_walk3 ] {
    ai_walk (MOVETYPE_FLYMISSILE);
 
 };
-
-void () sham_walk3;
 
 // function sham_walk3
 // function number 909 begins at statement 19688
@@ -322,8 +282,6 @@ void () sham_walk3 = [ 19.000, sham_walk4 ] {
 
 };
 
-void () sham_walk4;
-
 // function sham_walk4
 // function number 910 begins at statement 19692
 /*
@@ -338,8 +296,6 @@ void () sham_walk4 = [ 20.000, sham_walk5 ] {
    ai_walk (MOVETYPE_FLY);
 
 };
-
-void () sham_walk5;
 
 // function sham_walk5
 // function number 911 begins at statement 19696
@@ -356,8 +312,6 @@ void () sham_walk5 = [ 21.000, sham_walk6 ] {
 
 };
 
-void () sham_walk6;
-
 // function sham_walk6
 // function number 912 begins at statement 19700
 /*
@@ -372,8 +326,6 @@ void () sham_walk6 = [ 22.000, sham_walk7 ] {
    ai_walk (globaldef000774);
 
 };
-
-void () sham_walk7;
 
 // function sham_walk7
 // function number 913 begins at statement 19704
@@ -390,8 +342,6 @@ void () sham_walk7 = [ 23.000, sham_walk8 ] {
 
 };
 
-void () sham_walk8;
-
 // function sham_walk8
 // function number 914 begins at statement 19708
 /*
@@ -406,8 +356,6 @@ void () sham_walk8 = [ 24.000, sham_walk9 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () sham_walk9;
 
 // function sham_walk9
 // function number 915 begins at statement 19712
@@ -424,8 +372,6 @@ void () sham_walk9 = [ 25.000, sham_walk10 ] {
 
 };
 
-void () sham_walk10;
-
 // function sham_walk10
 // function number 916 begins at statement 19716
 /*
@@ -441,8 +387,6 @@ void () sham_walk10 = [ 26.000, sham_walk11 ] {
 
 };
 
-void () sham_walk11;
-
 // function sham_walk11
 // function number 917 begins at statement 19720
 /*
@@ -457,8 +401,6 @@ void () sham_walk11 = [ 27.000, sham_walk12 ] {
    ai_walk (MOVETYPE_PUSH);
 
 };
-
-void () sham_walk12;
 
 // function sham_walk12
 // function number 918 begins at statement 19724
@@ -490,8 +432,6 @@ void () sham_walk12 = [ 28.000, sham_walk1 ] {
 };
 string globaldef003959 /* = "shambler/sidle.wav" */;
 
-void () sham_run1;
-
 // function sham_run1
 // function number 919 begins at statement 19737
 /*
@@ -506,8 +446,6 @@ void () sham_run1 = [ 29.000, sham_run2 ] {
    ai_run (globaldef001384);
 
 };
-
-void () sham_run2;
 
 // function sham_run2
 // function number 920 begins at statement 19741
@@ -524,8 +462,6 @@ void () sham_run2 = [ 30.000, sham_run3 ] {
 
 };
 
-void () sham_run3;
-
 // function sham_run3
 // function number 921 begins at statement 19745
 /*
@@ -540,8 +476,6 @@ void () sham_run3 = [ 31.000, sham_run4 ] {
    ai_run (globaldef001384);
 
 };
-
-void () sham_run4;
 
 // function sham_run4
 // function number 922 begins at statement 19749
@@ -558,8 +492,6 @@ void () sham_run4 = [ 32.000, sham_run5 ] {
 
 };
 
-void () sham_run5;
-
 // function sham_run5
 // function number 923 begins at statement 19753
 /*
@@ -574,8 +506,6 @@ void () sham_run5 = [ 33.000, sham_run6 ] {
    ai_run (globaldef000719);
 
 };
-
-void () sham_run6;
 
 // function sham_run6
 // function number 924 begins at statement 19757
@@ -627,8 +557,6 @@ void () sham_smash1 = [ 35.000, sham_smash2 ] {
    ai_charge (FL_SWIM);
 
 };
-
-void () sham_smash2;
 string globaldef003967 /* = "shambler/melee1.wav" */;
 
 // function sham_smash2
@@ -646,8 +574,6 @@ void () sham_smash2 = [ 36.000, sham_smash3 ] {
 
 };
 
-void () sham_smash3;
-
 // function sham_smash3
 // function number 927 begins at statement 19784
 /*
@@ -662,8 +588,6 @@ void () sham_smash3 = [ 37.000, sham_smash4 ] {
    ai_charge (MOVETYPE_TOSS);
 
 };
-
-void () sham_smash4;
 
 // function sham_smash4
 // function number 928 begins at statement 19788
@@ -680,8 +604,6 @@ void () sham_smash4 = [ 38.000, sham_smash5 ] {
 
 };
 
-void () sham_smash5;
-
 // function sham_smash5
 // function number 929 begins at statement 19792
 /*
@@ -696,8 +618,6 @@ void () sham_smash5 = [ 39.000, sham_smash6 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () sham_smash6;
 
 // function sham_smash6
 // function number 930 begins at statement 19796
@@ -714,8 +634,6 @@ void () sham_smash6 = [ 40.000, sham_smash7 ] {
 
 };
 
-void () sham_smash7;
-
 // function sham_smash7
 // function number 931 begins at statement 19800
 /*
@@ -730,8 +648,6 @@ void () sham_smash7 = [ 41.000, sham_smash8 ] {
    ai_charge (FALSE);
 
 };
-
-void () sham_smash8;
 
 // function sham_smash8
 // function number 932 begins at statement 19804
@@ -748,8 +664,6 @@ void () sham_smash8 = [ 42.000, sham_smash9 ] {
 
 };
 
-void () sham_smash9;
-
 // function sham_smash9
 // function number 933 begins at statement 19808
 /*
@@ -764,8 +678,6 @@ void () sham_smash9 = [ 43.000, sham_smash10 ] {
    ai_charge (FALSE);
 
 };
-
-void () sham_smash10;
 
 // function sham_smash10
 // function number 934 begins at statement 19812
@@ -840,28 +752,28 @@ void () sham_smash10 = [ 44.000, sham_smash11 ] {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
    ai_charge (FALSE);
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
-   if ( !CanDamage (self.globaldef000159,self) ) {
+   if ( !CanDamage (self.enemy,self) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * globaldef000729);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
    sound (self,CHAN_VOICE,globaldef003982,TRUE,ATTN_NORM);
-   func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
-   func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
+   func000253 ((self.origin + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
+   func000253 ((self.origin + (v_forward * FL_INWATER)),((func000249 () * globaldef001335) * v_right));
 
 };
 string globaldef003982 /* = "shambler/smack.wav" */;
@@ -881,8 +793,6 @@ void () sham_smash11 = [ 45.000, sham_smash12 ] {
 
 };
 
-void () sham_smash12;
-
 // function sham_smash12
 // function number 936 begins at statement 19878
 /*
@@ -897,8 +807,6 @@ void () sham_smash12 = [ 46.000, sham_run1 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void (float globaldef003985) ShamClaw;
 
 // function ShamClaw
 // function number 937 begins at statement 19882
@@ -957,25 +865,25 @@ void (float globaldef003985) ShamClaw = {
    local vector delta;
    local float ldmg;
 
-   if ( !self.globaldef000159 ) {
+   if ( !self.enemy ) {
 
       return ;
 
    }
    ai_charge (MOVETYPE_BOUNCE);
-   delta = (self.globaldef000159.globaldef000083 - self.globaldef000083);
+   delta = (self.enemy.origin - self.origin);
    if ( (vlen (delta) > globaldef001335) ) {
 
       return ;
 
    }
    ldmg = (((random () + random ()) + random ()) * globaldef001384);
-   T_Damage (self.globaldef000159,self,self,ldmg);
+   T_Damage (self.enemy,self,self,ldmg);
    sound (self,CHAN_VOICE,globaldef003982,TRUE,ATTN_NORM);
    if ( globaldef003985 ) {
 
-      makevectors (self.globaldef000095);
-      func000253 ((self.globaldef000083 + (v_forward * FL_INWATER)),(globaldef003985 * v_right));
+      makevectors (self.angles);
+      func000253 ((self.origin + (v_forward * FL_INWATER)),(globaldef003985 * v_right));
 
    }
 
@@ -1002,8 +910,6 @@ void () sham_swingl1 = [ 56.000, sham_swingl2 ] {
    ai_charge (MOVETYPE_FLY);
 
 };
-
-void () sham_swingl2;
 string globaldef003992 /* = "shambler/melee2.wav" */;
 
 // function sham_swingl2
@@ -1021,8 +927,6 @@ void () sham_swingl2 = [ 57.000, sham_swingl3 ] {
 
 };
 
-void () sham_swingl3;
-
 // function sham_swingl3
 // function number 940 begins at statement 19943
 /*
@@ -1037,8 +941,6 @@ void () sham_swingl3 = [ 58.000, sham_swingl4 ] {
    ai_charge (MOVETYPE_PUSH);
 
 };
-
-void () sham_swingl4;
 
 // function sham_swingl4
 // function number 941 begins at statement 19947
@@ -1055,8 +957,6 @@ void () sham_swingl4 = [ 59.000, sham_swingl5 ] {
 
 };
 
-void () sham_swingl5;
-
 // function sham_swingl5
 // function number 942 begins at statement 19951
 /*
@@ -1072,8 +972,6 @@ void () sham_swingl5 = [ 60.000, sham_swingl6 ] {
 
 };
 
-void () sham_swingl6;
-
 // function sham_swingl6
 // function number 943 begins at statement 19955
 /*
@@ -1088,8 +986,6 @@ void () sham_swingl6 = [ 61.000, sham_swingl7 ] {
    ai_charge (MOVETYPE_FLYMISSILE);
 
 };
-
-void () sham_swingl7;
 
 // function sham_swingl7
 // function number 944 begins at statement 19959
@@ -1109,8 +1005,6 @@ void () sham_swingl7 = [ 62.000, sham_swingl8 ] {
 
 };
 
-void () sham_swingl8;
-
 // function sham_swingl8
 // function number 945 begins at statement 19965
 /*
@@ -1125,8 +1019,6 @@ void () sham_swingl8 = [ 63.000, sham_swingl9 ] {
    ai_charge (MOVETYPE_STEP);
 
 };
-
-void () sham_swingl9;
 
 // function sham_swingl9
 // function number 946 begins at statement 19969
@@ -1147,7 +1039,7 @@ void () sham_swingl9 = [ 64.000, sham_run1 ] {
    ai_charge (FL_CLIENT);
    if ( (random () < globaldef000522) ) {
 
-      self.globaldef000126 = sham_swingr1;
+      self.think = sham_swingr1;
 
    }
 
@@ -1175,8 +1067,6 @@ void () sham_swingr1 = [ 47.000, sham_swingr2 ] {
 
 };
 
-void () sham_swingr2;
-
 // function sham_swingr2
 // function number 948 begins at statement 19988
 /*
@@ -1191,8 +1081,6 @@ void () sham_swingr2 = [ 48.000, sham_swingr3 ] {
    ai_charge (FL_CLIENT);
 
 };
-
-void () sham_swingr3;
 
 // function sham_swingr3
 // function number 949 begins at statement 19992
@@ -1209,8 +1097,6 @@ void () sham_swingr3 = [ 49.000, sham_swingr4 ] {
 
 };
 
-void () sham_swingr4;
-
 // function sham_swingr4
 // function number 950 begins at statement 19996
 /*
@@ -1225,8 +1111,6 @@ void () sham_swingr4 = [ 50.000, sham_swingr5 ] {
    ai_charge (MOVETYPE_PUSH);
 
 };
-
-void () sham_swingr5;
 
 // function sham_swingr5
 // function number 951 begins at statement 20000
@@ -1243,8 +1127,6 @@ void () sham_swingr5 = [ 51.000, sham_swingr6 ] {
 
 };
 
-void () sham_swingr6;
-
 // function sham_swingr6
 // function number 952 begins at statement 20004
 /*
@@ -1259,8 +1141,6 @@ void () sham_swingr6 = [ 52.000, sham_swingr7 ] {
    ai_charge (MOVETYPE_TOSS);
 
 };
-
-void () sham_swingr7;
 
 // function sham_swingr7
 // function number 953 begins at statement 20008
@@ -1279,8 +1159,6 @@ void () sham_swingr7 = [ 53.000, sham_swingr8 ] {
    ShamClaw (globaldef004007);
 
 };
-
-void () sham_swingr8;
 float globaldef004007 /* = -250.000 */;
 
 // function sham_swingr8
@@ -1297,8 +1175,6 @@ void () sham_swingr8 = [ 54.000, sham_swingr9 ] {
    ai_charge (MOVETYPE_WALK);
 
 };
-
-void () sham_swingr9;
 
 // function sham_swingr9
 // function number 955 begins at statement 20018
@@ -1322,13 +1198,11 @@ void () sham_swingr9 = [ 55.000, sham_run1 ] {
    ai_charge (MOVETYPE_BOUNCE);
    if ( (random () < globaldef000522) ) {
 
-      self.globaldef000126 = sham_swingl1;
+      self.think = sham_swingl1;
 
    }
 
 };
-
-void () sham_melee;
 
 // function sham_melee
 // function number 956 begins at statement 20029
@@ -1355,7 +1229,7 @@ void () sham_melee = {
    local float chance;
 
    chance = random ();
-   if ( ((chance > globaldef001825) || (self.globaldef000130 == globaldef000723)) ) {
+   if ( ((chance > globaldef001825) || (self.health == globaldef000723)) ) {
 
       sham_smash1 ();
 
@@ -1374,8 +1248,6 @@ void () sham_melee = {
    }
 
 };
-
-void () CastLightning;
 
 // function CastLightning
 // function number 957 begins at statement 20044
@@ -1444,12 +1316,12 @@ void () CastLightning = {
    local vector org;
    local vector dir;
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.effects = (self.effects | EF_MUZZLEFLASH);
    ai_face ();
-   org = (self.globaldef000083 + globaldef002913);
-   dir = ((self.globaldef000159.globaldef000083 + globaldef002037) - org);
+   org = (self.origin + globaldef002913);
+   dir = ((self.enemy.origin + globaldef002037) - org);
    dir = normalize (dir);
-   traceline (org,(self.globaldef000083 + (dir * globaldef000723)),TRUE,self);
+   traceline (org,(self.origin + (dir * globaldef000723)),TRUE,self);
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_LIGHTNING1);
    WriteEntity (MSG_BROADCAST,self);
@@ -1462,8 +1334,6 @@ void () CastLightning = {
    LightningDamage (org,trace_endpos,self,MOVETYPE_BOUNCE);
 
 };
-
-void () sham_magic1;
 
 // function sham_magic1
 // function number 958 begins at statement 20101
@@ -1485,8 +1355,6 @@ void () sham_magic1 = [ 65.000, sham_magic2 ] {
    sound (self,CHAN_WEAPON,globaldef004022,TRUE,ATTN_NORM);
 
 };
-
-void () sham_magic2;
 string globaldef004022 /* = "shambler/sattck1.wav" */;
 
 // function sham_magic2
@@ -1502,8 +1370,6 @@ void () sham_magic2 = [ 66.000, sham_magic3 ] {
    ai_face ();
 
 };
-
-void () sham_magic3;
 
 // function sham_magic3
 // function number 960 begins at statement 20113
@@ -1551,16 +1417,16 @@ void () sham_magic3 = [ 67.000, sham_magic4 ] {
    local entity o;
 
    ai_face ();
-   self.globaldef000128 = (self.globaldef000128 + globaldef001553);
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
+   self.nextthink = (self.nextthink + globaldef001553);
+   self.effects = (self.effects | EF_MUZZLEFLASH);
    ai_face ();
-   self.globaldef000179 = spawn ();
-   o = self.globaldef000179;
+   self.owner = spawn ();
+   o = self.owner;
    setmodel (o,globaldef004026);
-   setorigin (o,self.globaldef000083);
-   o.globaldef000095 = self.globaldef000095;
-   o.globaldef000128 = (time + globaldef002123);
-   o.globaldef000126 = SUB_Remove;
+   setorigin (o,self.origin);
+   o.angles = self.angles;
+   o.nextthink = (time + globaldef002123);
+   o.think = SUB_Remove;
 
 };
 string globaldef004026 /* = "progs/s_light.mdl" */;
@@ -1581,12 +1447,10 @@ string globaldef004026 /* = "progs/s_light.mdl" */;
 
 void () sham_magic4 = [ 68.000, sham_magic5 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   self.globaldef000179.globaldef000109 = TRUE;
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   self.owner.frame = TRUE;
 
 };
-
-void () sham_magic5;
 
 // function sham_magic5
 // function number 962 begins at statement 20154
@@ -1604,12 +1468,10 @@ void () sham_magic5;
 
 void () sham_magic5 = [ 69.000, sham_magic6 ] {
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   self.globaldef000179.globaldef000109 = FL_SWIM;
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   self.owner.frame = FL_SWIM;
 
 };
-
-void () sham_magic6;
 
 // function sham_magic6
 // function number 963 begins at statement 20163
@@ -1630,13 +1492,11 @@ void () sham_magic6;
 
 void () sham_magic6 = [ 70.000, sham_magic9 ] {
 
-   remove (self.globaldef000179);
+   remove (self.owner);
    CastLightning ();
    sound (self,CHAN_WEAPON,globaldef004030,TRUE,ATTN_NORM);
 
 };
-
-void () sham_magic9;
 string globaldef004030 /* = "shambler/sboom.wav" */;
 
 // function sham_magic9
@@ -1653,8 +1513,6 @@ void () sham_magic9 = [ 73.000, sham_magic10 ] {
 
 };
 
-void () sham_magic10;
-
 // function sham_magic10
 // function number 965 begins at statement 20178
 /*
@@ -1668,8 +1526,6 @@ void () sham_magic10 = [ 74.000, sham_magic11 ] {
    CastLightning ();
 
 };
-
-void () sham_magic11;
 
 // function sham_magic11
 // function number 966 begins at statement 20181
@@ -1691,8 +1547,6 @@ void () sham_magic11 = [ 75.000, sham_magic12 ] {
 
 };
 
-void () sham_magic12;
-
 // function sham_magic12
 // function number 967 begins at statement 20186
 /*
@@ -1704,8 +1558,6 @@ void () sham_magic12 = [ 76.000, sham_run1 ] {
 
 
 };
-
-void () sham_pain1;
 
 // function sham_pain1
 // function number 968 begins at statement 20188
@@ -1719,8 +1571,6 @@ void () sham_pain1 = [ 77.000, sham_pain2 ] {
 
 };
 
-void () sham_pain2;
-
 // function sham_pain2
 // function number 969 begins at statement 20190
 /*
@@ -1732,8 +1582,6 @@ void () sham_pain2 = [ 78.000, sham_pain3 ] {
 
 
 };
-
-void () sham_pain3;
 
 // function sham_pain3
 // function number 970 begins at statement 20192
@@ -1747,8 +1595,6 @@ void () sham_pain3 = [ 79.000, sham_pain4 ] {
 
 };
 
-void () sham_pain4;
-
 // function sham_pain4
 // function number 971 begins at statement 20194
 /*
@@ -1760,8 +1606,6 @@ void () sham_pain4 = [ 80.000, sham_pain5 ] {
 
 
 };
-
-void () sham_pain5;
 
 // function sham_pain5
 // function number 972 begins at statement 20196
@@ -1775,8 +1619,6 @@ void () sham_pain5 = [ 81.000, sham_pain6 ] {
 
 };
 
-void () sham_pain6;
-
 // function sham_pain6
 // function number 973 begins at statement 20198
 /*
@@ -1788,8 +1630,6 @@ void () sham_pain6 = [ 82.000, sham_run1 ] {
 
 
 };
-
-void (entity globaldef004041, float globaldef004042) sham_pain;
 
 // function sham_pain
 // function number 974 begins at statement 20200
@@ -1823,7 +1663,7 @@ void (entity globaldef004041, float globaldef004042) sham_pain;
 void (entity globaldef004041, float globaldef004042) sham_pain = {
 
    sound (self,CHAN_VOICE,globaldef004043,TRUE,ATTN_NORM);
-   if ( (self.globaldef000130 <= FALSE) ) {
+   if ( (self.health <= FALSE) ) {
 
       return ;
 
@@ -1833,18 +1673,16 @@ void (entity globaldef004041, float globaldef004042) sham_pain = {
       return ;
 
    }
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
    }
-   self.globaldef000362 = (time + FL_SWIM);
+   self.pain_finished = (time + FL_SWIM);
    sham_pain1 ();
 
 };
 string globaldef004043 /* = "shambler/shurt2.wav" */;
-
-void () sham_death1;
 
 // function sham_death1
 // function number 975 begins at statement 20224
@@ -1858,8 +1696,6 @@ void () sham_death1 = [ 83.000, sham_death2 ] {
 
 };
 
-void () sham_death2;
-
 // function sham_death2
 // function number 976 begins at statement 20226
 /*
@@ -1872,8 +1708,6 @@ void () sham_death2 = [ 84.000, sham_death3 ] {
 
 };
 
-void () sham_death3;
-
 // function sham_death3
 // function number 977 begins at statement 20228
 /*
@@ -1885,11 +1719,9 @@ void () sham_death3;
 
 void () sham_death3 = [ 85.000, sham_death4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
+   self.solid = SOLID_NOT;
 
 };
-
-void () sham_death4;
 
 // function sham_death4
 // function number 978 begins at statement 20232
@@ -1903,8 +1735,6 @@ void () sham_death4 = [ 86.000, sham_death5 ] {
 
 };
 
-void () sham_death5;
-
 // function sham_death5
 // function number 979 begins at statement 20234
 /*
@@ -1916,8 +1746,6 @@ void () sham_death5 = [ 87.000, sham_death6 ] {
 
 
 };
-
-void () sham_death6;
 
 // function sham_death6
 // function number 980 begins at statement 20236
@@ -1931,8 +1759,6 @@ void () sham_death6 = [ 88.000, sham_death7 ] {
 
 };
 
-void () sham_death7;
-
 // function sham_death7
 // function number 981 begins at statement 20238
 /*
@@ -1944,8 +1770,6 @@ void () sham_death7 = [ 89.000, sham_death8 ] {
 
 
 };
-
-void () sham_death8;
 
 // function sham_death8
 // function number 982 begins at statement 20240
@@ -1959,8 +1783,6 @@ void () sham_death8 = [ 90.000, sham_death9 ] {
 
 };
 
-void () sham_death9;
-
 // function sham_death9
 // function number 983 begins at statement 20242
 /*
@@ -1972,8 +1794,6 @@ void () sham_death9 = [ 91.000, sham_death10 ] {
 
 
 };
-
-void () sham_death10;
 
 // function sham_death10
 // function number 984 begins at statement 20244
@@ -1987,8 +1807,6 @@ void () sham_death10 = [ 92.000, sham_death11 ] {
 
 };
 
-void () sham_death11;
-
 // function sham_death11
 // function number 985 begins at statement 20246
 /*
@@ -2000,8 +1818,6 @@ void () sham_death11 = [ 93.000, sham_death11 ] {
 
 
 };
-
-void () sham_die;
 
 // function sham_die
 // function number 986 begins at statement 20248
@@ -2044,13 +1860,13 @@ void () sham_die;
 
 void () sham_die = {
 
-   if ( (self.globaldef000130 < globaldef004056) ) {
+   if ( (self.health < globaldef004056) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef004057,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef004057,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -2061,8 +1877,6 @@ void () sham_die = {
 float globaldef004056 /* = -60.000 */;
 string globaldef004057 /* = "progs/h_shams.mdl" */;
 string globaldef004058 /* = "shambler/sdeath.wav" */;
-
-void () monster_shambler;
 
 // function monster_shambler
 // function number 987 begins at statement 20282
@@ -2149,18 +1963,18 @@ void () monster_shambler = {
    precache_sound (globaldef003967);
    precache_sound (globaldef003992);
    precache_sound (globaldef003982);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef004060);
    setsize (self,VEC_HULL2_MIN,VEC_HULL2_MAX);
-   self.globaldef000130 = globaldef000723;
-   self.globaldef000344 = sham_stand1;
-   self.globaldef000345 = sham_walk1;
-   self.globaldef000346 = sham_run1;
-   self.globaldef000350 = sham_die;
-   self.globaldef000348 = sham_melee;
-   self.globaldef000347 = sham_magic1;
-   self.globaldef000349 = sham_pain;
+   self.health = globaldef000723;
+   self.th_stand = sham_stand1;
+   self.th_walk = sham_walk1;
+   self.th_run = sham_run1;
+   self.th_die = sham_die;
+   self.th_melee = sham_melee;
+   self.th_missile = sham_magic1;
+   self.th_pain = sham_pain;
    walkmonster_start ();
 
 };

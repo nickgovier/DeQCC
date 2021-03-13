@@ -1,6 +1,4 @@
 
-void () tbaby_stand1;
-
 // function tbaby_stand1
 // function number 1681 begins at statement 24105
 /*
@@ -14,8 +12,6 @@ void () tbaby_stand1 = [ 0.000, tbaby_stand1 ] {
    ai_stand ();
 
 };
-
-void () tbaby_hang1;
 
 // function tbaby_hang1
 // function number 1682 begins at statement 24108
@@ -31,8 +27,6 @@ void () tbaby_hang1 = [ 0.000, tbaby_hang1 ] {
 
 };
 
-void () tbaby_walk1;
-
 // function tbaby_walk1
 // function number 1683 begins at statement 24111
 /*
@@ -46,8 +40,6 @@ void () tbaby_walk1 = [ 0.000, tbaby_walk2 ] {
    ai_turn ();
 
 };
-
-void () tbaby_walk2;
 
 // function tbaby_walk2
 // function number 1684 begins at statement 24114
@@ -63,8 +55,6 @@ void () tbaby_walk2 = [ 1.000, tbaby_walk3 ] {
 
 };
 
-void () tbaby_walk3;
-
 // function tbaby_walk3
 // function number 1685 begins at statement 24117
 /*
@@ -78,8 +68,6 @@ void () tbaby_walk3 = [ 2.000, tbaby_walk4 ] {
    ai_turn ();
 
 };
-
-void () tbaby_walk4;
 
 // function tbaby_walk4
 // function number 1686 begins at statement 24120
@@ -95,8 +83,6 @@ void () tbaby_walk4 = [ 3.000, tbaby_walk5 ] {
 
 };
 
-void () tbaby_walk5;
-
 // function tbaby_walk5
 // function number 1687 begins at statement 24123
 /*
@@ -110,8 +96,6 @@ void () tbaby_walk5 = [ 4.000, tbaby_walk6 ] {
    ai_turn ();
 
 };
-
-void () tbaby_walk6;
 
 // function tbaby_walk6
 // function number 1688 begins at statement 24126
@@ -127,8 +111,6 @@ void () tbaby_walk6 = [ 5.000, tbaby_walk7 ] {
 
 };
 
-void () tbaby_walk7;
-
 // function tbaby_walk7
 // function number 1689 begins at statement 24129
 /*
@@ -142,8 +124,6 @@ void () tbaby_walk7 = [ 6.000, tbaby_walk8 ] {
    ai_turn ();
 
 };
-
-void () tbaby_walk8;
 
 // function tbaby_walk8
 // function number 1690 begins at statement 24132
@@ -159,8 +139,6 @@ void () tbaby_walk8 = [ 7.000, tbaby_walk9 ] {
 
 };
 
-void () tbaby_walk9;
-
 // function tbaby_walk9
 // function number 1691 begins at statement 24135
 /*
@@ -175,8 +153,6 @@ void () tbaby_walk9 = [ 8.000, tbaby_walk10 ] {
 
 };
 
-void () tbaby_walk10;
-
 // function tbaby_walk10
 // function number 1692 begins at statement 24138
 /*
@@ -190,8 +166,6 @@ void () tbaby_walk10 = [ 9.000, tbaby_walk11 ] {
    ai_turn ();
 
 };
-
-void () tbaby_walk11;
 
 // function tbaby_walk11
 // function number 1693 begins at statement 24141
@@ -208,8 +182,6 @@ void () tbaby_walk11 = [ 10.000, tbaby_walk12 ] {
 
 };
 
-void () tbaby_walk12;
-
 // function tbaby_walk12
 // function number 1694 begins at statement 24145
 /*
@@ -224,8 +196,6 @@ void () tbaby_walk12 = [ 11.000, tbaby_walk13 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk13;
 
 // function tbaby_walk13
 // function number 1695 begins at statement 24149
@@ -242,8 +212,6 @@ void () tbaby_walk13 = [ 12.000, tbaby_walk14 ] {
 
 };
 
-void () tbaby_walk14;
-
 // function tbaby_walk14
 // function number 1696 begins at statement 24153
 /*
@@ -258,8 +226,6 @@ void () tbaby_walk14 = [ 13.000, tbaby_walk15 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk15;
 
 // function tbaby_walk15
 // function number 1697 begins at statement 24157
@@ -276,8 +242,6 @@ void () tbaby_walk15 = [ 14.000, tbaby_walk16 ] {
 
 };
 
-void () tbaby_walk16;
-
 // function tbaby_walk16
 // function number 1698 begins at statement 24161
 /*
@@ -292,8 +256,6 @@ void () tbaby_walk16 = [ 15.000, tbaby_walk17 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk17;
 
 // function tbaby_walk17
 // function number 1699 begins at statement 24165
@@ -310,8 +272,6 @@ void () tbaby_walk17 = [ 16.000, tbaby_walk18 ] {
 
 };
 
-void () tbaby_walk18;
-
 // function tbaby_walk18
 // function number 1700 begins at statement 24169
 /*
@@ -326,8 +286,6 @@ void () tbaby_walk18 = [ 17.000, tbaby_walk19 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk19;
 
 // function tbaby_walk19
 // function number 1701 begins at statement 24173
@@ -344,8 +302,6 @@ void () tbaby_walk19 = [ 18.000, tbaby_walk20 ] {
 
 };
 
-void () tbaby_walk20;
-
 // function tbaby_walk20
 // function number 1702 begins at statement 24177
 /*
@@ -360,8 +316,6 @@ void () tbaby_walk20 = [ 19.000, tbaby_walk21 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk21;
 
 // function tbaby_walk21
 // function number 1703 begins at statement 24181
@@ -378,8 +332,6 @@ void () tbaby_walk21 = [ 20.000, tbaby_walk22 ] {
 
 };
 
-void () tbaby_walk22;
-
 // function tbaby_walk22
 // function number 1704 begins at statement 24185
 /*
@@ -394,8 +346,6 @@ void () tbaby_walk22 = [ 21.000, tbaby_walk23 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk23;
 
 // function tbaby_walk23
 // function number 1705 begins at statement 24189
@@ -412,8 +362,6 @@ void () tbaby_walk23 = [ 22.000, tbaby_walk24 ] {
 
 };
 
-void () tbaby_walk24;
-
 // function tbaby_walk24
 // function number 1706 begins at statement 24193
 /*
@@ -428,8 +376,6 @@ void () tbaby_walk24 = [ 23.000, tbaby_walk25 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () tbaby_walk25;
 
 // function tbaby_walk25
 // function number 1707 begins at statement 24197
@@ -446,8 +392,6 @@ void () tbaby_walk25 = [ 24.000, tbaby_walk1 ] {
 
 };
 
-void () tbaby_run1;
-
 // function tbaby_run1
 // function number 1708 begins at statement 24201
 /*
@@ -461,8 +405,6 @@ void () tbaby_run1 = [ 25.000, tbaby_run2 ] {
    ai_face ();
 
 };
-
-void () tbaby_run2;
 
 // function tbaby_run2
 // function number 1709 begins at statement 24204
@@ -478,8 +420,6 @@ void () tbaby_run2 = [ 26.000, tbaby_run3 ] {
 
 };
 
-void () tbaby_run3;
-
 // function tbaby_run3
 // function number 1710 begins at statement 24207
 /*
@@ -493,8 +433,6 @@ void () tbaby_run3 = [ 27.000, tbaby_run4 ] {
    ai_face ();
 
 };
-
-void () tbaby_run4;
 
 // function tbaby_run4
 // function number 1711 begins at statement 24210
@@ -510,8 +448,6 @@ void () tbaby_run4 = [ 28.000, tbaby_run5 ] {
 
 };
 
-void () tbaby_run5;
-
 // function tbaby_run5
 // function number 1712 begins at statement 24213
 /*
@@ -525,8 +461,6 @@ void () tbaby_run5 = [ 29.000, tbaby_run6 ] {
    ai_face ();
 
 };
-
-void () tbaby_run6;
 
 // function tbaby_run6
 // function number 1713 begins at statement 24216
@@ -542,8 +476,6 @@ void () tbaby_run6 = [ 30.000, tbaby_run7 ] {
 
 };
 
-void () tbaby_run7;
-
 // function tbaby_run7
 // function number 1714 begins at statement 24219
 /*
@@ -557,8 +489,6 @@ void () tbaby_run7 = [ 31.000, tbaby_run8 ] {
    ai_face ();
 
 };
-
-void () tbaby_run8;
 
 // function tbaby_run8
 // function number 1715 begins at statement 24222
@@ -574,8 +504,6 @@ void () tbaby_run8 = [ 32.000, tbaby_run9 ] {
 
 };
 
-void () tbaby_run9;
-
 // function tbaby_run9
 // function number 1716 begins at statement 24225
 /*
@@ -590,8 +518,6 @@ void () tbaby_run9 = [ 33.000, tbaby_run10 ] {
 
 };
 
-void () tbaby_run10;
-
 // function tbaby_run10
 // function number 1717 begins at statement 24228
 /*
@@ -605,8 +531,6 @@ void () tbaby_run10 = [ 34.000, tbaby_run11 ] {
    ai_face ();
 
 };
-
-void () tbaby_run11;
 
 // function tbaby_run11
 // function number 1718 begins at statement 24231
@@ -623,8 +547,6 @@ void () tbaby_run11 = [ 35.000, tbaby_run12 ] {
 
 };
 
-void () tbaby_run12;
-
 // function tbaby_run12
 // function number 1719 begins at statement 24235
 /*
@@ -639,8 +561,6 @@ void () tbaby_run12 = [ 36.000, tbaby_run13 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run13;
 
 // function tbaby_run13
 // function number 1720 begins at statement 24239
@@ -657,8 +577,6 @@ void () tbaby_run13 = [ 37.000, tbaby_run14 ] {
 
 };
 
-void () tbaby_run14;
-
 // function tbaby_run14
 // function number 1721 begins at statement 24243
 /*
@@ -673,8 +591,6 @@ void () tbaby_run14 = [ 38.000, tbaby_run15 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run15;
 
 // function tbaby_run15
 // function number 1722 begins at statement 24247
@@ -691,8 +607,6 @@ void () tbaby_run15 = [ 39.000, tbaby_run16 ] {
 
 };
 
-void () tbaby_run16;
-
 // function tbaby_run16
 // function number 1723 begins at statement 24251
 /*
@@ -707,8 +621,6 @@ void () tbaby_run16 = [ 40.000, tbaby_run17 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run17;
 
 // function tbaby_run17
 // function number 1724 begins at statement 24255
@@ -725,8 +637,6 @@ void () tbaby_run17 = [ 41.000, tbaby_run18 ] {
 
 };
 
-void () tbaby_run18;
-
 // function tbaby_run18
 // function number 1725 begins at statement 24259
 /*
@@ -741,8 +651,6 @@ void () tbaby_run18 = [ 42.000, tbaby_run19 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run19;
 
 // function tbaby_run19
 // function number 1726 begins at statement 24263
@@ -759,8 +667,6 @@ void () tbaby_run19 = [ 43.000, tbaby_run20 ] {
 
 };
 
-void () tbaby_run20;
-
 // function tbaby_run20
 // function number 1727 begins at statement 24267
 /*
@@ -775,8 +681,6 @@ void () tbaby_run20 = [ 44.000, tbaby_run21 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run21;
 
 // function tbaby_run21
 // function number 1728 begins at statement 24271
@@ -793,8 +697,6 @@ void () tbaby_run21 = [ 45.000, tbaby_run22 ] {
 
 };
 
-void () tbaby_run22;
-
 // function tbaby_run22
 // function number 1729 begins at statement 24275
 /*
@@ -809,8 +711,6 @@ void () tbaby_run22 = [ 46.000, tbaby_run23 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run23;
 
 // function tbaby_run23
 // function number 1730 begins at statement 24279
@@ -827,8 +727,6 @@ void () tbaby_run23 = [ 47.000, tbaby_run24 ] {
 
 };
 
-void () tbaby_run24;
-
 // function tbaby_run24
 // function number 1731 begins at statement 24283
 /*
@@ -843,8 +741,6 @@ void () tbaby_run24 = [ 48.000, tbaby_run25 ] {
    ai_run (FL_SWIM);
 
 };
-
-void () tbaby_run25;
 
 // function tbaby_run25
 // function number 1732 begins at statement 24287
@@ -862,8 +758,6 @@ void () tbaby_run25 = [ 49.000, tbaby_run1 ] {
 };
 
 void () tbaby_jump1;
-
-void () Tar_JumpTouch;
 
 // function Tar_JumpTouch
 // function number 1733 begins at statement 24291
@@ -932,9 +826,9 @@ void () Tar_JumpTouch = {
 
    local float ldmg;
 
-   if ( (other.globaldef000141 && (other.globaldef000107 != self.globaldef000107)) ) {
+   if ( (other.takedamage && (other.classname != self.classname)) ) {
 
-      if ( (vlen (self.globaldef000091) > globaldef002007) ) {
+      if ( (vlen (self.velocity) > globaldef002007) ) {
 
          ldmg = (MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * random ()));
          T_Damage (other,self,self,ldmg);
@@ -949,28 +843,26 @@ void () Tar_JumpTouch = {
    }
    if ( !checkbottom (self) ) {
 
-      if ( (self.globaldef000160 & FL_ONGROUND) ) {
+      if ( (self.flags & FL_ONGROUND) ) {
 
-         self.globaldef000124 = SUB_Null;
-         self.globaldef000126 = tbaby_run1;
-         self.globaldef000081 = MOVETYPE_STEP;
-         self.globaldef000128 = (time + globaldef001488);
+         self.touch = SUB_Null;
+         self.think = tbaby_run1;
+         self.movetype = MOVETYPE_STEP;
+         self.nextthink = (time + globaldef001488);
 
       }
       return ;
 
    }
-   self.globaldef000124 = SUB_Null;
-   self.globaldef000126 = tbaby_jump1;
-   self.globaldef000128 = (time + globaldef001488);
+   self.touch = SUB_Null;
+   self.think = tbaby_jump1;
+   self.nextthink = (time + globaldef001488);
 
 };
 string globaldef005026 /* = "blob/hit1.wav" */;
 string globaldef005027 /* = "blob/land1.wav" */;
 
 void () tbaby_jump5;
-
-void () tbaby_fly1;
 
 // function tbaby_fly1
 // function number 1734 begins at statement 24349
@@ -984,8 +876,6 @@ void () tbaby_fly1 = [ 56.000, tbaby_fly2 ] {
 
 };
 
-void () tbaby_fly2;
-
 // function tbaby_fly2
 // function number 1735 begins at statement 24351
 /*
@@ -998,8 +888,6 @@ void () tbaby_fly2 = [ 57.000, tbaby_fly3 ] {
 
 };
 
-void () tbaby_fly3;
-
 // function tbaby_fly3
 // function number 1736 begins at statement 24353
 /*
@@ -1011,8 +899,6 @@ void () tbaby_fly3 = [ 58.000, tbaby_fly4 ] {
 
 
 };
-
-void () tbaby_fly4;
 
 // function tbaby_fly4
 // function number 1737 begins at statement 24355
@@ -1031,8 +917,8 @@ void () tbaby_fly4;
 
 void () tbaby_fly4 = [ 59.000, tbaby_fly1 ] {
 
-   self.globaldef000409 = (self.globaldef000409 + TRUE);
-   if ( (self.globaldef000409 == MOVETYPE_STEP) ) {
+   self.cnt = (self.cnt + TRUE);
+   if ( (self.cnt == MOVETYPE_STEP) ) {
 
       tbaby_jump5 ();
 
@@ -1054,8 +940,6 @@ void () tbaby_jump1 = [ 50.000, tbaby_jump2 ] {
 
 };
 
-void () tbaby_jump2;
-
 // function tbaby_jump2
 // function number 1739 begins at statement 24368
 /*
@@ -1070,8 +954,6 @@ void () tbaby_jump2 = [ 51.000, tbaby_jump3 ] {
 
 };
 
-void () tbaby_jump3;
-
 // function tbaby_jump3
 // function number 1740 begins at statement 24371
 /*
@@ -1085,8 +967,6 @@ void () tbaby_jump3 = [ 52.000, tbaby_jump4 ] {
    ai_face ();
 
 };
-
-void () tbaby_jump4;
 
 // function tbaby_jump4
 // function number 1741 begins at statement 24374
@@ -1141,22 +1021,20 @@ void () tbaby_jump4 = [ 53.000, tbaby_jump5 ] {
 
 void () tbaby_jump5 = [ 54.000, tbaby_jump6 ] {
 
-   self.globaldef000081 = MOVETYPE_BOUNCE;
-   self.globaldef000124 = Tar_JumpTouch;
-   makevectors (self.globaldef000095);
-   self.globaldef000086 = (self.globaldef000086 + TRUE);
-   self.globaldef000091 = ((v_forward * globaldef000723) + globaldef004458);
-   self.globaldef000094 = (self.globaldef000094 + (random () * globaldef001336));
-   if ( (self.globaldef000160 & FL_ONGROUND) ) {
+   self.movetype = MOVETYPE_BOUNCE;
+   self.touch = Tar_JumpTouch;
+   makevectors (self.angles);
+   self.origin_z = (self.origin_z + TRUE);
+   self.velocity = ((v_forward * globaldef000723) + globaldef004458);
+   self.velocity_z = (self.velocity_z + (random () * globaldef001336));
+   if ( (self.flags & FL_ONGROUND) ) {
 
-      self.globaldef000160 = (self.globaldef000160 - FL_ONGROUND);
+      self.flags = (self.flags - FL_ONGROUND);
 
    }
-   self.globaldef000409 = FALSE;
+   self.cnt = FALSE;
 
 };
-
-void () tbaby_jump6;
 
 // function tbaby_jump6
 // function number 1743 begins at statement 24409
@@ -1170,8 +1048,6 @@ void () tbaby_jump6 = [ 55.000, tbaby_fly1 ] {
 
 };
 
-void () tbaby_die1;
-
 // function tbaby_die1
 // function number 1744 begins at statement 24411
 /*
@@ -1183,11 +1059,9 @@ void () tbaby_die1;
 
 void () tbaby_die1 = [ 60.000, tbaby_die2 ] {
 
-   self.globaldef000141 = DAMAGE_NO;
+   self.takedamage = DAMAGE_NO;
 
 };
-
-void () tbaby_die2;
 
 // function tbaby_die2
 // function number 1745 begins at statement 24415
@@ -1238,18 +1112,16 @@ void () tbaby_die2 = [ 60.000, tbaby_run1 ] {
 
    T_RadiusDamage (self,self,globaldef001638,world);
    sound (self,CHAN_VOICE,globaldef005039,TRUE,ATTN_NORM);
-   self.globaldef000083 = (self.globaldef000083 - (FL_CLIENT * normalize (self.globaldef000091)));
+   self.origin = (self.origin - (FL_CLIENT * normalize (self.velocity)));
    WriteByte (MSG_BROADCAST,globaldef000287);
    WriteByte (MSG_BROADCAST,TE_TAREXPLOSION);
-   WriteCoord (MSG_BROADCAST,self.globaldef000084);
-   WriteCoord (MSG_BROADCAST,self.globaldef000085);
-   WriteCoord (MSG_BROADCAST,self.globaldef000086);
+   WriteCoord (MSG_BROADCAST,self.origin);
+   WriteCoord (MSG_BROADCAST,self.origin_y);
+   WriteCoord (MSG_BROADCAST,self.origin_z);
    BecomeExplosion ();
 
 };
 string globaldef005039 /* = "blob/death1.wav" */;
-
-void () monster_tarbaby;
 
 // function monster_tarbaby
 // function number 1746 begins at statement 24455
@@ -1310,17 +1182,17 @@ void () monster_tarbaby = {
    precache_sound2 (globaldef005026);
    precache_sound2 (globaldef005027);
    precache_sound2 (globaldef001672);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005041);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = globaldef001439;
-   self.globaldef000344 = tbaby_stand1;
-   self.globaldef000345 = tbaby_walk1;
-   self.globaldef000346 = tbaby_run1;
-   self.globaldef000347 = tbaby_jump1;
-   self.globaldef000348 = tbaby_jump1;
-   self.globaldef000350 = tbaby_die1;
+   self.health = globaldef001439;
+   self.th_stand = tbaby_stand1;
+   self.th_walk = tbaby_walk1;
+   self.th_run = tbaby_run1;
+   self.th_missile = tbaby_jump1;
+   self.th_melee = tbaby_jump1;
+   self.th_die = tbaby_die1;
    walkmonster_start ();
 
 };

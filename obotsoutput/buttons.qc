@@ -7,8 +7,6 @@ string globaldef003419 /* = "doors/basesec2.wav" */;
 
 void () button_return;
 
-void () button_wait;
-
 // function button_wait
 // function number 561 begins at statement 15868
 /*
@@ -31,16 +29,14 @@ void () button_wait;
 
 void () button_wait = {
 
-   self.globaldef000421 = STATE_TOP;
-   self.globaldef000128 = (self.globaldef000080 + self.globaldef000401);
-   self.globaldef000126 = button_return;
-   activator = self.globaldef000159;
+   self.state = STATE_TOP;
+   self.nextthink = (self.ltime + self.wait);
+   self.think = button_return;
+   activator = self.enemy;
    SUB_UseTargets ();
-   self.globaldef000109 = TRUE;
+   self.frame = TRUE;
 
 };
-
-void () button_done;
 
 // function button_done
 // function number 562 begins at statement 15883
@@ -52,7 +48,7 @@ void () button_done;
 
 void () button_done = {
 
-   self.globaldef000421 = STATE_BOTTOM;
+   self.state = STATE_BOTTOM;
 
 };
 
@@ -78,18 +74,16 @@ void () button_done = {
 
 void () button_return = {
 
-   self.globaldef000421 = STATE_DOWN;
-   SUB_CalcMove (self.globaldef000422,self.globaldef000352,button_done);
-   self.globaldef000109 = FALSE;
-   if ( self.globaldef000130 ) {
+   self.state = STATE_DOWN;
+   SUB_CalcMove (self.pos1,self.speed,button_done);
+   self.frame = FALSE;
+   if ( self.health ) {
 
-      self.globaldef000141 = DAMAGE_YES;
+      self.takedamage = DAMAGE_YES;
 
    }
 
 };
-
-void () button_blocked;
 
 // function button_blocked
 // function number 564 begins at statement 15901
@@ -101,8 +95,6 @@ void () button_blocked = {
 
 
 };
-
-void () button_fire;
 
 // function button_fire
 // function number 565 begins at statement 15902
@@ -134,18 +126,16 @@ void () button_fire;
 
 void () button_fire = {
 
-   if ( ((self.globaldef000421 == STATE_UP) || (self.globaldef000421 == STATE_TOP)) ) {
+   if ( ((self.state == STATE_UP) || (self.state == STATE_TOP)) ) {
 
       return ;
 
    }
-   sound (self,CHAN_VOICE,self.globaldef000186,TRUE,ATTN_NORM);
-   self.globaldef000421 = STATE_UP;
-   SUB_CalcMove (self.globaldef000426,self.globaldef000352,button_wait);
+   sound (self,CHAN_VOICE,self.noise,TRUE,ATTN_NORM);
+   self.state = STATE_UP;
+   SUB_CalcMove (self.pos2,self.speed,button_wait);
 
 };
-
-void () button_use;
 
 // function button_use
 // function number 566 begins at statement 15925
@@ -164,8 +154,8 @@ void () button_use;
 
 void () button_use = {
 
-   self.globaldef000159 = activator;
-   if ( (activator.globaldef000107 == globaldef001171) ) {
+   self.enemy = activator;
+   if ( (activator.classname == globaldef001171) ) {
 
       func002472 (activator,self);
 
@@ -173,8 +163,6 @@ void () button_use = {
    button_fire ();
 
 };
-
-void () button_touch;
 
 // function button_touch
 // function number 567 begins at statement 15935
@@ -202,17 +190,17 @@ void () button_touch = {
 
    local vector globaldef003427;
 
-   if ( (other.globaldef000107 != globaldef001170) ) {
+   if ( (other.classname != globaldef001170) ) {
 
-      if ( (other.globaldef000107 != globaldef001171) ) {
+      if ( (other.classname != globaldef001171) ) {
 
          return ;
 
       }
 
    }
-   self.globaldef000159 = other;
-   if ( (other.globaldef000107 == globaldef001171) ) {
+   self.enemy = other;
+   if ( (other.classname == globaldef001171) ) {
 
       func002472 (other,self);
 
@@ -220,8 +208,6 @@ void () button_touch = {
    button_fire ();
 
 };
-
-void () button_killed;
 
 // function button_killed
 // function number 568 begins at statement 15952
@@ -245,10 +231,10 @@ void () button_killed;
 
 void () button_killed = {
 
-   self.globaldef000159 = damage_attacker;
-   self.globaldef000130 = self.globaldef000163;
-   self.globaldef000141 = DAMAGE_NO;
-   if ( (damage_attacker.globaldef000107 == globaldef001171) ) {
+   self.enemy = damage_attacker;
+   self.health = self.max_health;
+   self.takedamage = DAMAGE_NO;
+   if ( (damage_attacker.classname == globaldef001171) ) {
 
       func002472 (damage_attacker,self);
 
@@ -256,8 +242,6 @@ void () button_killed = {
    button_fire ();
 
 };
-
-void () func_button;
 
 // function func_button
 // function number 569 begins at statement 15967
@@ -358,65 +342,65 @@ void () func_button = {
    local float gtemp;
    local float ftemp;
 
-   if ( (self.globaldef000185 == FALSE) ) {
+   if ( (self.sounds == FALSE) ) {
 
       precache_sound (globaldef003435);
-      self.globaldef000186 = globaldef003435;
+      self.noise = globaldef003435;
 
    }
-   if ( (self.globaldef000185 == TRUE) ) {
+   if ( (self.sounds == TRUE) ) {
 
       precache_sound (globaldef003436);
-      self.globaldef000186 = globaldef003436;
+      self.noise = globaldef003436;
 
    }
-   if ( (self.globaldef000185 == FL_SWIM) ) {
+   if ( (self.sounds == FL_SWIM) ) {
 
       precache_sound (globaldef003437);
-      self.globaldef000186 = globaldef003437;
+      self.noise = globaldef003437;
 
    }
-   if ( (self.globaldef000185 == MOVETYPE_WALK) ) {
+   if ( (self.sounds == MOVETYPE_WALK) ) {
 
       precache_sound (globaldef003438);
-      self.globaldef000186 = globaldef003438;
+      self.noise = globaldef003438;
 
    }
    SetMovedir ();
-   self.globaldef000081 = MOVETYPE_PUSH;
-   self.globaldef000082 = SOLID_BSP;
-   setmodel (self,self.globaldef000108);
-   self.globaldef000127 = button_blocked;
-   self.globaldef000125 = button_use;
-   self.globaldef000531 = func002291;
-   if ( self.globaldef000130 ) {
+   self.movetype = MOVETYPE_PUSH;
+   self.solid = SOLID_BSP;
+   setmodel (self,self.model);
+   self.blocked = button_blocked;
+   self.use = button_use;
+   self.field000225 = func002291;
+   if ( self.health ) {
 
-      self.globaldef000163 = self.globaldef000130;
-      self.globaldef000350 = button_killed;
-      self.globaldef000141 = DAMAGE_YES;
+      self.max_health = self.health;
+      self.th_die = button_killed;
+      self.takedamage = DAMAGE_YES;
 
    } else {
 
-      self.globaldef000124 = button_touch;
+      self.touch = button_touch;
 
    }
-   if ( !self.globaldef000352 ) {
+   if ( !self.speed ) {
 
-      self.globaldef000352 = globaldef000729;
-
-   }
-   if ( !self.globaldef000401 ) {
-
-      self.globaldef000401 = TRUE;
+      self.speed = globaldef000729;
 
    }
-   if ( !self.globaldef000420 ) {
+   if ( !self.wait ) {
 
-      self.globaldef000420 = MOVETYPE_STEP;
+      self.wait = TRUE;
 
    }
-   self.globaldef000421 = STATE_BOTTOM;
-   self.globaldef000422 = self.globaldef000083;
-   self.globaldef000426 = (self.globaldef000422 + (self.globaldef000180 * (fabs ((self.globaldef000180 * self.globaldef000120)) - self.globaldef000420)));
+   if ( !self.lip ) {
+
+      self.lip = MOVETYPE_STEP;
+
+   }
+   self.state = STATE_BOTTOM;
+   self.pos1 = self.origin;
+   self.pos2 = (self.pos1 + (self.movedir * (fabs ((self.movedir * self.size)) - self.lip)));
 
 };

@@ -456,8 +456,6 @@ string globaldef002373 /* = "maps/dm5.bsp" */;
 string globaldef002374 /* = "maps/dm6.bsp" */;
 entity globaldef002375;
 
-void () worldspawn;
-
 // function worldspawn
 // function number 297 begins at statement 8401
 /*
@@ -720,19 +718,19 @@ void () worldspawn = {
    func002255 ();
    func000146 ();
    InitBodyQue ();
-   if ( (self.globaldef000108 == globaldef002345) ) {
+   if ( (self.model == globaldef002345) ) {
 
       cvar_set (globaldef002377,globaldef002378);
 
    } else {
 
-      if ( (self.globaldef000108 == globaldef002379) ) {
+      if ( (self.model == globaldef002379) ) {
 
          cvar_set (globaldef002377,globaldef002380);
 
       } else {
 
-         if ( (self.globaldef000108 == globaldef002381) ) {
+         if ( (self.model == globaldef002381) ) {
 
             cvar_set (globaldef002377,globaldef002380);
 
@@ -1144,9 +1142,9 @@ void () StartFrame = {
                globaldef002456 = globaldef000816;
                while ( globaldef002456 ) {
 
-                  func002426 (globaldef002456,globaldef002456.globaldef000590);
-                  func002264 (globaldef002456.globaldef000591,globaldef002456.globaldef000593);
-                  globaldef002456 = globaldef002456.globaldef000603;
+                  func002426 (globaldef002456,globaldef002456.field000284);
+                  func002264 (globaldef002456.field000285,globaldef002456.field000287);
+                  globaldef002456 = globaldef002456.field000297;
 
                }
                cvar_set (globaldef002464,globaldef002465);
@@ -1177,8 +1175,6 @@ string globaldef002463 /* = "sv_maxspeed" */;
 string globaldef002464 /* = "temp1" */;
 string globaldef002465 /* = "0" */;
 entity globaldef002466;
-
-void () bodyque;
 
 // function bodyque
 // function number 299 begins at statement 8778
@@ -1235,18 +1231,16 @@ void () InitBodyQue = {
    local entity e;
 
    globaldef002466 = spawn ();
-   globaldef002466.globaldef000107 = globaldef001364;
-   globaldef002466.globaldef000179 = spawn ();
-   globaldef002466.globaldef000179.globaldef000107 = globaldef001364;
-   globaldef002466.globaldef000179.globaldef000179 = spawn ();
-   globaldef002466.globaldef000179.globaldef000179.globaldef000107 = globaldef001364;
-   globaldef002466.globaldef000179.globaldef000179.globaldef000179 = spawn ();
-   globaldef002466.globaldef000179.globaldef000179.globaldef000179.globaldef000107 = globaldef001364;
-   globaldef002466.globaldef000179.globaldef000179.globaldef000179.globaldef000179 = globaldef002466;
+   globaldef002466.classname = globaldef001364;
+   globaldef002466.owner = spawn ();
+   globaldef002466.owner.classname = globaldef001364;
+   globaldef002466.owner.owner = spawn ();
+   globaldef002466.owner.owner.classname = globaldef001364;
+   globaldef002466.owner.owner.owner = spawn ();
+   globaldef002466.owner.owner.owner.classname = globaldef001364;
+   globaldef002466.owner.owner.owner.owner = globaldef002466;
 
 };
-
-void (entity globaldef002470) CopyToBodyQue;
 
 // function CopyToBodyQue
 // function number 301 begins at statement 8813
@@ -1312,28 +1306,28 @@ void (entity globaldef002470) CopyToBodyQue;
 
 void (entity globaldef002470) CopyToBodyQue = {
 
-   globaldef002466.globaldef000095 = globaldef002470.globaldef000095;
-   if ( ((globaldef002470.globaldef000107 == globaldef001170) || (globaldef002470.globaldef000107 == globaldef001171)) ) {
+   globaldef002466.angles = globaldef002470.angles;
+   if ( ((globaldef002470.classname == globaldef001170) || (globaldef002470.classname == globaldef001171)) ) {
 
-      globaldef002466.globaldef000110 = globaldef002470.globaldef000557;
-      globaldef002466.globaldef000071 = globaldef002470.globaldef000556;
-      globaldef002466.globaldef000108 = globaldef002471;
+      globaldef002466.skin = globaldef002470.field000251;
+      globaldef002466.modelindex = globaldef002470.field000250;
+      globaldef002466.model = globaldef002471;
 
    } else {
 
-      globaldef002466.globaldef000110 = globaldef002470.globaldef000110;
-      globaldef002466.globaldef000108 = globaldef002470.globaldef000108;
-      globaldef002466.globaldef000071 = globaldef002470.globaldef000071;
+      globaldef002466.skin = globaldef002470.skin;
+      globaldef002466.model = globaldef002470.model;
+      globaldef002466.modelindex = globaldef002470.modelindex;
 
    }
-   globaldef002466.globaldef000109 = globaldef002470.globaldef000109;
-   globaldef002466.globaldef000161 = globaldef002470.globaldef000161;
-   globaldef002466.globaldef000081 = globaldef002470.globaldef000081;
-   globaldef002466.globaldef000091 = globaldef002470.globaldef000091;
-   globaldef002466.globaldef000160 = FALSE;
-   setorigin (globaldef002466,globaldef002470.globaldef000083);
-   setsize (globaldef002466,globaldef002470.globaldef000112,globaldef002470.globaldef000116);
+   globaldef002466.frame = globaldef002470.frame;
+   globaldef002466.colormap = globaldef002470.colormap;
+   globaldef002466.movetype = globaldef002470.movetype;
+   globaldef002466.velocity = globaldef002470.velocity;
+   globaldef002466.flags = FALSE;
+   setorigin (globaldef002466,globaldef002470.origin);
+   setsize (globaldef002466,globaldef002470.mins,globaldef002470.maxs);
    func000148 (globaldef002470,globaldef002466);
-   globaldef002466 = globaldef002466.globaldef000179;
+   globaldef002466 = globaldef002466.owner;
 
 };

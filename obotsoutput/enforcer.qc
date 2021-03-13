@@ -1,7 +1,5 @@
 string globaldef005428 /* = "progs/shalrath.mdl" */;
 
-void () Laser_Touch;
-
 // function Laser_Touch
 // function number 2071 begins at statement 26221
 /*
@@ -69,23 +67,23 @@ void () Laser_Touch = {
 
    local vector org;
 
-   if ( (other == self.globaldef000179) ) {
+   if ( (other == self.owner) ) {
 
       return ;
 
    }
-   if ( (pointcontents (self.globaldef000083) == CONTENT_SKY) ) {
+   if ( (pointcontents (self.origin) == CONTENT_SKY) ) {
 
       remove (self);
       return ;
 
    }
    sound (self,CHAN_WEAPON,globaldef003607,TRUE,ATTN_STATIC);
-   org = (self.globaldef000083 - (FL_CLIENT * normalize (self.globaldef000091)));
-   if ( other.globaldef000130 ) {
+   org = (self.origin - (FL_CLIENT * normalize (self.velocity)));
+   if ( other.health ) {
 
-      func000254 (org,(self.globaldef000091 * globaldef001553),globaldef000748);
-      T_Damage (other,self,self.globaldef000179,globaldef000748);
+      func000254 (org,(self.velocity * globaldef001553),globaldef000748);
+      T_Damage (other,self,self.owner,globaldef000748);
 
    } else {
 
@@ -155,29 +153,27 @@ void () Laser_Touch = {
 
 void (vector globaldef005434, vector globaldef005438) LaunchLaser = {
 
-   if ( (self.globaldef000107 == globaldef001675) ) {
+   if ( (self.classname == globaldef001675) ) {
 
       sound (self,CHAN_WEAPON,globaldef003603,TRUE,ATTN_NORM);
 
    }
    globaldef005438 = normalize (globaldef005438);
    newmis = spawn ();
-   newmis.globaldef000179 = self;
-   newmis.globaldef000081 = MOVETYPE_FLY;
-   newmis.globaldef000082 = SOLID_BBOX;
-   newmis.globaldef000111 = EF_DIMLIGHT;
+   newmis.owner = self;
+   newmis.movetype = MOVETYPE_FLY;
+   newmis.solid = SOLID_BBOX;
+   newmis.effects = EF_DIMLIGHT;
    setmodel (newmis,globaldef003606);
    setsize (newmis,VEC_ORIGIN,VEC_ORIGIN);
    setorigin (newmis,globaldef005434);
-   newmis.globaldef000091 = (globaldef005438 * globaldef000723);
-   newmis.globaldef000095 = vectoangles (newmis.globaldef000091);
-   newmis.globaldef000128 = (time + MOVETYPE_FLY);
-   newmis.globaldef000126 = SUB_Remove;
-   newmis.globaldef000124 = Laser_Touch;
+   newmis.velocity = (globaldef005438 * globaldef000723);
+   newmis.angles = vectoangles (newmis.velocity);
+   newmis.nextthink = (time + MOVETYPE_FLY);
+   newmis.think = SUB_Remove;
+   newmis.touch = Laser_Touch;
 
 };
-
-void () enforcer_fire;
 
 // function enforcer_fire
 // function number 2073 begins at statement 26327
@@ -210,15 +206,13 @@ void () enforcer_fire = {
 
    local vector org;
 
-   self.globaldef000111 = (self.globaldef000111 | EF_MUZZLEFLASH);
-   makevectors (self.globaldef000095);
-   org = (((self.globaldef000083 + (v_forward * SVC_INTERMISSION)) + (v_right * globaldef005447)) + globaldef002037);
-   LaunchLaser (org,(self.globaldef000159.globaldef000083 - self.globaldef000083));
+   self.effects = (self.effects | EF_MUZZLEFLASH);
+   makevectors (self.angles);
+   org = (((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * globaldef005447)) + globaldef002037);
+   LaunchLaser (org,(self.enemy.origin - self.origin));
 
 };
 float globaldef005447 /* = 8.500 */;
-
-void () enf_stand1;
 
 // function enf_stand1
 // function number 2074 begins at statement 26349
@@ -234,8 +228,6 @@ void () enf_stand1 = [ 0.000, enf_stand2 ] {
 
 };
 
-void () enf_stand2;
-
 // function enf_stand2
 // function number 2075 begins at statement 26352
 /*
@@ -249,8 +241,6 @@ void () enf_stand2 = [ 1.000, enf_stand3 ] {
    ai_stand ();
 
 };
-
-void () enf_stand3;
 
 // function enf_stand3
 // function number 2076 begins at statement 26355
@@ -266,8 +256,6 @@ void () enf_stand3 = [ 2.000, enf_stand4 ] {
 
 };
 
-void () enf_stand4;
-
 // function enf_stand4
 // function number 2077 begins at statement 26358
 /*
@@ -281,8 +269,6 @@ void () enf_stand4 = [ 3.000, enf_stand5 ] {
    ai_stand ();
 
 };
-
-void () enf_stand5;
 
 // function enf_stand5
 // function number 2078 begins at statement 26361
@@ -298,8 +284,6 @@ void () enf_stand5 = [ 4.000, enf_stand6 ] {
 
 };
 
-void () enf_stand6;
-
 // function enf_stand6
 // function number 2079 begins at statement 26364
 /*
@@ -314,8 +298,6 @@ void () enf_stand6 = [ 5.000, enf_stand7 ] {
 
 };
 
-void () enf_stand7;
-
 // function enf_stand7
 // function number 2080 begins at statement 26367
 /*
@@ -329,8 +311,6 @@ void () enf_stand7 = [ 6.000, enf_stand1 ] {
    ai_stand ();
 
 };
-
-void () enf_walk1;
 
 // function enf_walk1
 // function number 2081 begins at statement 26370
@@ -361,8 +341,6 @@ void () enf_walk1 = [ 7.000, enf_walk2 ] {
 
 };
 
-void () enf_walk2;
-
 // function enf_walk2
 // function number 2082 begins at statement 26383
 /*
@@ -377,8 +355,6 @@ void () enf_walk2 = [ 8.000, enf_walk3 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () enf_walk3;
 
 // function enf_walk3
 // function number 2083 begins at statement 26387
@@ -395,8 +371,6 @@ void () enf_walk3 = [ 9.000, enf_walk4 ] {
 
 };
 
-void () enf_walk4;
-
 // function enf_walk4
 // function number 2084 begins at statement 26391
 /*
@@ -411,8 +385,6 @@ void () enf_walk4 = [ 10.000, enf_walk5 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () enf_walk5;
 
 // function enf_walk5
 // function number 2085 begins at statement 26395
@@ -429,8 +401,6 @@ void () enf_walk5 = [ 11.000, enf_walk6 ] {
 
 };
 
-void () enf_walk6;
-
 // function enf_walk6
 // function number 2086 begins at statement 26399
 /*
@@ -445,8 +415,6 @@ void () enf_walk6 = [ 12.000, enf_walk7 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () enf_walk7;
 
 // function enf_walk7
 // function number 2087 begins at statement 26403
@@ -463,8 +431,6 @@ void () enf_walk7 = [ 13.000, enf_walk8 ] {
 
 };
 
-void () enf_walk8;
-
 // function enf_walk8
 // function number 2088 begins at statement 26407
 /*
@@ -479,8 +445,6 @@ void () enf_walk8 = [ 14.000, enf_walk9 ] {
    ai_walk (TRUE);
 
 };
-
-void () enf_walk9;
 
 // function enf_walk9
 // function number 2089 begins at statement 26411
@@ -497,8 +461,6 @@ void () enf_walk9 = [ 15.000, enf_walk10 ] {
 
 };
 
-void () enf_walk10;
-
 // function enf_walk10
 // function number 2090 begins at statement 26415
 /*
@@ -513,8 +475,6 @@ void () enf_walk10 = [ 16.000, enf_walk11 ] {
    ai_walk (MOVETYPE_STEP);
 
 };
-
-void () enf_walk11;
 
 // function enf_walk11
 // function number 2091 begins at statement 26419
@@ -531,8 +491,6 @@ void () enf_walk11 = [ 17.000, enf_walk12 ] {
 
 };
 
-void () enf_walk12;
-
 // function enf_walk12
 // function number 2092 begins at statement 26423
 /*
@@ -547,8 +505,6 @@ void () enf_walk12 = [ 18.000, enf_walk13 ] {
    ai_walk (TRUE);
 
 };
-
-void () enf_walk13;
 
 // function enf_walk13
 // function number 2093 begins at statement 26427
@@ -565,8 +521,6 @@ void () enf_walk13 = [ 19.000, enf_walk14 ] {
 
 };
 
-void () enf_walk14;
-
 // function enf_walk14
 // function number 2094 begins at statement 26431
 /*
@@ -581,8 +535,6 @@ void () enf_walk14 = [ 20.000, enf_walk15 ] {
    ai_walk (MOVETYPE_WALK);
 
 };
-
-void () enf_walk15;
 
 // function enf_walk15
 // function number 2095 begins at statement 26435
@@ -599,8 +551,6 @@ void () enf_walk15 = [ 21.000, enf_walk16 ] {
 
 };
 
-void () enf_walk16;
-
 // function enf_walk16
 // function number 2096 begins at statement 26439
 /*
@@ -615,8 +565,6 @@ void () enf_walk16 = [ 22.000, enf_walk1 ] {
    ai_walk (FL_SWIM);
 
 };
-
-void () enf_run1;
 
 // function enf_run1
 // function number 2097 begins at statement 26443
@@ -647,8 +595,6 @@ void () enf_run1 = [ 23.000, enf_run2 ] {
 
 };
 
-void () enf_run2;
-
 // function enf_run2
 // function number 2098 begins at statement 26456
 /*
@@ -663,8 +609,6 @@ void () enf_run2 = [ 24.000, enf_run3 ] {
    ai_run (globaldef002136);
 
 };
-
-void () enf_run3;
 
 // function enf_run3
 // function number 2099 begins at statement 26460
@@ -681,8 +625,6 @@ void () enf_run3 = [ 25.000, enf_run4 ] {
 
 };
 
-void () enf_run4;
-
 // function enf_run4
 // function number 2100 begins at statement 26464
 /*
@@ -697,8 +639,6 @@ void () enf_run4 = [ 26.000, enf_run5 ] {
    ai_run (globaldef000774);
 
 };
-
-void () enf_run5;
 
 // function enf_run5
 // function number 2101 begins at statement 26468
@@ -715,8 +655,6 @@ void () enf_run5 = [ 27.000, enf_run6 ] {
 
 };
 
-void () enf_run6;
-
 // function enf_run6
 // function number 2102 begins at statement 26472
 /*
@@ -731,8 +669,6 @@ void () enf_run6 = [ 28.000, enf_run7 ] {
    ai_run (globaldef002136);
 
 };
-
-void () enf_run7;
 
 // function enf_run7
 // function number 2103 begins at statement 26476
@@ -749,8 +685,6 @@ void () enf_run7 = [ 29.000, enf_run8 ] {
 
 };
 
-void () enf_run8;
-
 // function enf_run8
 // function number 2104 begins at statement 26480
 /*
@@ -766,8 +700,6 @@ void () enf_run8 = [ 30.000, enf_run1 ] {
 
 };
 
-void () enf_atk1;
-
 // function enf_atk1
 // function number 2105 begins at statement 26484
 /*
@@ -781,8 +713,6 @@ void () enf_atk1 = [ 31.000, enf_atk2 ] {
    ai_face ();
 
 };
-
-void () enf_atk2;
 
 // function enf_atk2
 // function number 2106 begins at statement 26487
@@ -798,8 +728,6 @@ void () enf_atk2 = [ 32.000, enf_atk3 ] {
 
 };
 
-void () enf_atk3;
-
 // function enf_atk3
 // function number 2107 begins at statement 26490
 /*
@@ -813,8 +741,6 @@ void () enf_atk3 = [ 33.000, enf_atk4 ] {
    ai_face ();
 
 };
-
-void () enf_atk4;
 
 // function enf_atk4
 // function number 2108 begins at statement 26493
@@ -830,8 +756,6 @@ void () enf_atk4 = [ 34.000, enf_atk5 ] {
 
 };
 
-void () enf_atk5;
-
 // function enf_atk5
 // function number 2109 begins at statement 26496
 /*
@@ -845,8 +769,6 @@ void () enf_atk5 = [ 35.000, enf_atk6 ] {
    ai_face ();
 
 };
-
-void () enf_atk6;
 
 // function enf_atk6
 // function number 2110 begins at statement 26499
@@ -862,8 +784,6 @@ void () enf_atk6 = [ 36.000, enf_atk7 ] {
 
 };
 
-void () enf_atk7;
-
 // function enf_atk7
 // function number 2111 begins at statement 26502
 /*
@@ -877,8 +797,6 @@ void () enf_atk7 = [ 37.000, enf_atk8 ] {
    ai_face ();
 
 };
-
-void () enf_atk8;
 
 // function enf_atk8
 // function number 2112 begins at statement 26505
@@ -894,8 +812,6 @@ void () enf_atk8 = [ 38.000, enf_atk9 ] {
 
 };
 
-void () enf_atk9;
-
 // function enf_atk9
 // function number 2113 begins at statement 26508
 /*
@@ -909,8 +825,6 @@ void () enf_atk9 = [ 35.000, enf_atk10 ] {
    ai_face ();
 
 };
-
-void () enf_atk10;
 
 // function enf_atk10
 // function number 2114 begins at statement 26511
@@ -926,8 +840,6 @@ void () enf_atk10 = [ 36.000, enf_atk11 ] {
 
 };
 
-void () enf_atk11;
-
 // function enf_atk11
 // function number 2115 begins at statement 26514
 /*
@@ -941,8 +853,6 @@ void () enf_atk11 = [ 37.000, enf_atk12 ] {
    ai_face ();
 
 };
-
-void () enf_atk12;
 
 // function enf_atk12
 // function number 2116 begins at statement 26517
@@ -958,8 +868,6 @@ void () enf_atk12 = [ 38.000, enf_atk13 ] {
 
 };
 
-void () enf_atk13;
-
 // function enf_atk13
 // function number 2117 begins at statement 26520
 /*
@@ -973,8 +881,6 @@ void () enf_atk13 = [ 39.000, enf_atk14 ] {
    ai_face ();
 
 };
-
-void () enf_atk14;
 
 // function enf_atk14
 // function number 2118 begins at statement 26523
@@ -993,8 +899,6 @@ void () enf_atk14 = [ 40.000, enf_run1 ] {
 
 };
 
-void () enf_paina1;
-
 // function enf_paina1
 // function number 2119 begins at statement 26528
 /*
@@ -1006,8 +910,6 @@ void () enf_paina1 = [ 66.000, enf_paina2 ] {
 
 
 };
-
-void () enf_paina2;
 
 // function enf_paina2
 // function number 2120 begins at statement 26530
@@ -1021,8 +923,6 @@ void () enf_paina2 = [ 67.000, enf_paina3 ] {
 
 };
 
-void () enf_paina3;
-
 // function enf_paina3
 // function number 2121 begins at statement 26532
 /*
@@ -1034,8 +934,6 @@ void () enf_paina3 = [ 68.000, enf_paina4 ] {
 
 
 };
-
-void () enf_paina4;
 
 // function enf_paina4
 // function number 2122 begins at statement 26534
@@ -1049,8 +947,6 @@ void () enf_paina4 = [ 69.000, enf_run1 ] {
 
 };
 
-void () enf_painb1;
-
 // function enf_painb1
 // function number 2123 begins at statement 26536
 /*
@@ -1062,8 +958,6 @@ void () enf_painb1 = [ 70.000, enf_painb2 ] {
 
 
 };
-
-void () enf_painb2;
 
 // function enf_painb2
 // function number 2124 begins at statement 26538
@@ -1077,8 +971,6 @@ void () enf_painb2 = [ 71.000, enf_painb3 ] {
 
 };
 
-void () enf_painb3;
-
 // function enf_painb3
 // function number 2125 begins at statement 26540
 /*
@@ -1090,8 +982,6 @@ void () enf_painb3 = [ 72.000, enf_painb4 ] {
 
 
 };
-
-void () enf_painb4;
 
 // function enf_painb4
 // function number 2126 begins at statement 26542
@@ -1105,8 +995,6 @@ void () enf_painb4 = [ 73.000, enf_painb5 ] {
 
 };
 
-void () enf_painb5;
-
 // function enf_painb5
 // function number 2127 begins at statement 26544
 /*
@@ -1118,8 +1006,6 @@ void () enf_painb5 = [ 74.000, enf_run1 ] {
 
 
 };
-
-void () enf_painc1;
 
 // function enf_painc1
 // function number 2128 begins at statement 26546
@@ -1133,8 +1019,6 @@ void () enf_painc1 = [ 75.000, enf_painc2 ] {
 
 };
 
-void () enf_painc2;
-
 // function enf_painc2
 // function number 2129 begins at statement 26548
 /*
@@ -1146,8 +1030,6 @@ void () enf_painc2 = [ 76.000, enf_painc3 ] {
 
 
 };
-
-void () enf_painc3;
 
 // function enf_painc3
 // function number 2130 begins at statement 26550
@@ -1161,8 +1043,6 @@ void () enf_painc3 = [ 77.000, enf_painc4 ] {
 
 };
 
-void () enf_painc4;
-
 // function enf_painc4
 // function number 2131 begins at statement 26552
 /*
@@ -1174,8 +1054,6 @@ void () enf_painc4 = [ 78.000, enf_painc5 ] {
 
 
 };
-
-void () enf_painc5;
 
 // function enf_painc5
 // function number 2132 begins at statement 26554
@@ -1189,8 +1067,6 @@ void () enf_painc5 = [ 79.000, enf_painc6 ] {
 
 };
 
-void () enf_painc6;
-
 // function enf_painc6
 // function number 2133 begins at statement 26556
 /*
@@ -1202,8 +1078,6 @@ void () enf_painc6 = [ 80.000, enf_painc7 ] {
 
 
 };
-
-void () enf_painc7;
 
 // function enf_painc7
 // function number 2134 begins at statement 26558
@@ -1217,8 +1091,6 @@ void () enf_painc7 = [ 81.000, enf_painc8 ] {
 
 };
 
-void () enf_painc8;
-
 // function enf_painc8
 // function number 2135 begins at statement 26560
 /*
@@ -1230,8 +1102,6 @@ void () enf_painc8 = [ 82.000, enf_run1 ] {
 
 
 };
-
-void () enf_paind1;
 
 // function enf_paind1
 // function number 2136 begins at statement 26562
@@ -1245,8 +1115,6 @@ void () enf_paind1 = [ 83.000, enf_paind2 ] {
 
 };
 
-void () enf_paind2;
-
 // function enf_paind2
 // function number 2137 begins at statement 26564
 /*
@@ -1259,8 +1127,6 @@ void () enf_paind2 = [ 84.000, enf_paind3 ] {
 
 };
 
-void () enf_paind3;
-
 // function enf_paind3
 // function number 2138 begins at statement 26566
 /*
@@ -1272,8 +1138,6 @@ void () enf_paind3 = [ 85.000, enf_paind4 ] {
 
 
 };
-
-void () enf_paind4;
 
 // function enf_paind4
 // function number 2139 begins at statement 26568
@@ -1290,8 +1154,6 @@ void () enf_paind4 = [ 86.000, enf_paind5 ] {
 
 };
 
-void () enf_paind5;
-
 // function enf_paind5
 // function number 2140 begins at statement 26572
 /*
@@ -1307,8 +1169,6 @@ void () enf_paind5 = [ 87.000, enf_paind6 ] {
 
 };
 
-void () enf_paind6;
-
 // function enf_paind6
 // function number 2141 begins at statement 26576
 /*
@@ -1320,8 +1180,6 @@ void () enf_paind6 = [ 88.000, enf_paind7 ] {
 
 
 };
-
-void () enf_paind7;
 
 // function enf_paind7
 // function number 2142 begins at statement 26578
@@ -1335,8 +1193,6 @@ void () enf_paind7 = [ 89.000, enf_paind8 ] {
 
 };
 
-void () enf_paind8;
-
 // function enf_paind8
 // function number 2143 begins at statement 26580
 /*
@@ -1348,8 +1204,6 @@ void () enf_paind8 = [ 90.000, enf_paind9 ] {
 
 
 };
-
-void () enf_paind9;
 
 // function enf_paind9
 // function number 2144 begins at statement 26582
@@ -1363,8 +1217,6 @@ void () enf_paind9 = [ 91.000, enf_paind10 ] {
 
 };
 
-void () enf_paind10;
-
 // function enf_paind10
 // function number 2145 begins at statement 26584
 /*
@@ -1376,8 +1228,6 @@ void () enf_paind10 = [ 92.000, enf_paind11 ] {
 
 
 };
-
-void () enf_paind11;
 
 // function enf_paind11
 // function number 2146 begins at statement 26586
@@ -1394,8 +1244,6 @@ void () enf_paind11 = [ 93.000, enf_paind12 ] {
 
 };
 
-void () enf_paind12;
-
 // function enf_paind12
 // function number 2147 begins at statement 26590
 /*
@@ -1410,8 +1258,6 @@ void () enf_paind12 = [ 94.000, enf_paind13 ] {
    ai_painforward (TRUE);
 
 };
-
-void () enf_paind13;
 
 // function enf_paind13
 // function number 2148 begins at statement 26594
@@ -1428,8 +1274,6 @@ void () enf_paind13 = [ 95.000, enf_paind14 ] {
 
 };
 
-void () enf_paind14;
-
 // function enf_paind14
 // function number 2149 begins at statement 26598
 /*
@@ -1442,8 +1286,6 @@ void () enf_paind14 = [ 96.000, enf_paind15 ] {
 
 };
 
-void () enf_paind15;
-
 // function enf_paind15
 // function number 2150 begins at statement 26600
 /*
@@ -1455,8 +1297,6 @@ void () enf_paind15 = [ 97.000, enf_paind16 ] {
 
 
 };
-
-void () enf_paind16;
 
 // function enf_paind16
 // function number 2151 begins at statement 26602
@@ -1473,8 +1313,6 @@ void () enf_paind16 = [ 98.000, enf_paind17 ] {
 
 };
 
-void () enf_paind17;
-
 // function enf_paind17
 // function number 2152 begins at statement 26606
 /*
@@ -1490,8 +1328,6 @@ void () enf_paind17 = [ 99.000, enf_paind18 ] {
 
 };
 
-void () enf_paind18;
-
 // function enf_paind18
 // function number 2153 begins at statement 26610
 /*
@@ -1504,8 +1340,6 @@ void () enf_paind18 = [ 100.000, enf_paind19 ] {
 
 };
 
-void () enf_paind19;
-
 // function enf_paind19
 // function number 2154 begins at statement 26612
 /*
@@ -1517,8 +1351,6 @@ void () enf_paind19 = [ 101.000, enf_run1 ] {
 
 
 };
-
-void (entity globaldef005530, float globaldef005531) enf_pain;
 
 // function enf_pain
 // function number 2155 begins at statement 26614
@@ -1577,7 +1409,7 @@ void (entity globaldef005530, float globaldef005531) enf_pain = {
    local float r;
 
    r = random ();
-   if ( (self.globaldef000362 > time) ) {
+   if ( (self.pain_finished > time) ) {
 
       return ;
 
@@ -1593,26 +1425,26 @@ void (entity globaldef005530, float globaldef005531) enf_pain = {
    }
    if ( (r < globaldef001553) ) {
 
-      self.globaldef000362 = (time + TRUE);
+      self.pain_finished = (time + TRUE);
       enf_paina1 ();
 
    } else {
 
       if ( (r < globaldef001300) ) {
 
-         self.globaldef000362 = (time + TRUE);
+         self.pain_finished = (time + TRUE);
          enf_painb1 ();
 
       } else {
 
          if ( (r < globaldef002123) ) {
 
-            self.globaldef000362 = (time + TRUE);
+            self.pain_finished = (time + TRUE);
             enf_painc1 ();
 
          } else {
 
-            self.globaldef000362 = (time + FL_SWIM);
+            self.pain_finished = (time + FL_SWIM);
             enf_paind1 ();
 
          }
@@ -1622,8 +1454,6 @@ void (entity globaldef005530, float globaldef005531) enf_pain = {
    }
 
 };
-
-void () enf_die1;
 
 // function enf_die1
 // function number 2156 begins at statement 26661
@@ -1637,8 +1467,6 @@ void () enf_die1 = [ 41.000, enf_die2 ] {
 
 };
 
-void () enf_die2;
-
 // function enf_die2
 // function number 2157 begins at statement 26663
 /*
@@ -1650,8 +1478,6 @@ void () enf_die2 = [ 42.000, enf_die3 ] {
 
 
 };
-
-void () enf_die3;
 
 // function enf_die3
 // function number 2158 begins at statement 26665
@@ -1667,13 +1493,11 @@ void () enf_die3;
 
 void () enf_die3 = [ 43.000, enf_die4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000139 = MOVETYPE_FLY;
+   self.solid = SOLID_NOT;
+   self.ammo_cells = MOVETYPE_FLY;
    func000244 ();
 
 };
-
-void () enf_die4;
 
 // function enf_die4
 // function number 2159 begins at statement 26672
@@ -1690,8 +1514,6 @@ void () enf_die4 = [ 44.000, enf_die5 ] {
 
 };
 
-void () enf_die5;
-
 // function enf_die5
 // function number 2160 begins at statement 26676
 /*
@@ -1707,8 +1529,6 @@ void () enf_die5 = [ 45.000, enf_die6 ] {
 
 };
 
-void () enf_die6;
-
 // function enf_die6
 // function number 2161 begins at statement 26680
 /*
@@ -1720,8 +1540,6 @@ void () enf_die6 = [ 46.000, enf_die7 ] {
 
 
 };
-
-void () enf_die7;
 
 // function enf_die7
 // function number 2162 begins at statement 26682
@@ -1735,8 +1553,6 @@ void () enf_die7 = [ 47.000, enf_die8 ] {
 
 };
 
-void () enf_die8;
-
 // function enf_die8
 // function number 2163 begins at statement 26684
 /*
@@ -1748,8 +1564,6 @@ void () enf_die8 = [ 48.000, enf_die9 ] {
 
 
 };
-
-void () enf_die9;
 
 // function enf_die9
 // function number 2164 begins at statement 26686
@@ -1766,8 +1580,6 @@ void () enf_die9 = [ 49.000, enf_die10 ] {
 
 };
 
-void () enf_die10;
-
 // function enf_die10
 // function number 2165 begins at statement 26690
 /*
@@ -1782,8 +1594,6 @@ void () enf_die10 = [ 50.000, enf_die11 ] {
    ai_forward (MOVETYPE_FLY);
 
 };
-
-void () enf_die11;
 
 // function enf_die11
 // function number 2166 begins at statement 26694
@@ -1800,8 +1610,6 @@ void () enf_die11 = [ 51.000, enf_die12 ] {
 
 };
 
-void () enf_die12;
-
 // function enf_die12
 // function number 2167 begins at statement 26698
 /*
@@ -1817,8 +1625,6 @@ void () enf_die12 = [ 52.000, enf_die13 ] {
 
 };
 
-void () enf_die13;
-
 // function enf_die13
 // function number 2168 begins at statement 26702
 /*
@@ -1830,8 +1636,6 @@ void () enf_die13 = [ 53.000, enf_die14 ] {
 
 
 };
-
-void () enf_die14;
 
 // function enf_die14
 // function number 2169 begins at statement 26704
@@ -1845,8 +1649,6 @@ void () enf_die14 = [ 54.000, enf_die14 ] {
 
 };
 
-void () enf_fdie1;
-
 // function enf_fdie1
 // function number 2170 begins at statement 26706
 /*
@@ -1859,8 +1661,6 @@ void () enf_fdie1 = [ 55.000, enf_fdie2 ] {
 
 };
 
-void () enf_fdie2;
-
 // function enf_fdie2
 // function number 2171 begins at statement 26708
 /*
@@ -1872,8 +1672,6 @@ void () enf_fdie2 = [ 56.000, enf_fdie3 ] {
 
 
 };
-
-void () enf_fdie3;
 
 // function enf_fdie3
 // function number 2172 begins at statement 26710
@@ -1889,13 +1687,11 @@ void () enf_fdie3;
 
 void () enf_fdie3 = [ 57.000, enf_fdie4 ] {
 
-   self.globaldef000082 = SOLID_NOT;
-   self.globaldef000139 = MOVETYPE_FLY;
+   self.solid = SOLID_NOT;
+   self.ammo_cells = MOVETYPE_FLY;
    func000244 ();
 
 };
-
-void () enf_fdie4;
 
 // function enf_fdie4
 // function number 2173 begins at statement 26717
@@ -1909,8 +1705,6 @@ void () enf_fdie4 = [ 58.000, enf_fdie5 ] {
 
 };
 
-void () enf_fdie5;
-
 // function enf_fdie5
 // function number 2174 begins at statement 26719
 /*
@@ -1922,8 +1716,6 @@ void () enf_fdie5 = [ 59.000, enf_fdie6 ] {
 
 
 };
-
-void () enf_fdie6;
 
 // function enf_fdie6
 // function number 2175 begins at statement 26721
@@ -1937,8 +1729,6 @@ void () enf_fdie6 = [ 60.000, enf_fdie7 ] {
 
 };
 
-void () enf_fdie7;
-
 // function enf_fdie7
 // function number 2176 begins at statement 26723
 /*
@@ -1950,8 +1740,6 @@ void () enf_fdie7 = [ 61.000, enf_fdie8 ] {
 
 
 };
-
-void () enf_fdie8;
 
 // function enf_fdie8
 // function number 2177 begins at statement 26725
@@ -1965,8 +1753,6 @@ void () enf_fdie8 = [ 62.000, enf_fdie9 ] {
 
 };
 
-void () enf_fdie9;
-
 // function enf_fdie9
 // function number 2178 begins at statement 26727
 /*
@@ -1978,8 +1764,6 @@ void () enf_fdie9 = [ 63.000, enf_fdie10 ] {
 
 
 };
-
-void () enf_fdie10;
 
 // function enf_fdie10
 // function number 2179 begins at statement 26729
@@ -1993,8 +1777,6 @@ void () enf_fdie10 = [ 64.000, enf_fdie11 ] {
 
 };
 
-void () enf_fdie11;
-
 // function enf_fdie11
 // function number 2180 begins at statement 26731
 /*
@@ -2006,8 +1788,6 @@ void () enf_fdie11 = [ 65.000, enf_fdie11 ] {
 
 
 };
-
-void () enf_die;
 
 // function enf_die
 // function number 2181 begins at statement 26733
@@ -2055,13 +1835,13 @@ void () enf_die;
 
 void () enf_die = {
 
-   if ( (self.globaldef000130 < globaldef004288) ) {
+   if ( (self.health < globaldef004288) ) {
 
       sound (self,CHAN_VOICE,globaldef002406,TRUE,ATTN_NORM);
-      ThrowHead (globaldef005559,self.globaldef000130);
-      ThrowGib (globaldef002432,self.globaldef000130);
-      ThrowGib (globaldef002433,self.globaldef000130);
-      ThrowGib (globaldef002434,self.globaldef000130);
+      ThrowHead (globaldef005559,self.health);
+      ThrowGib (globaldef002432,self.health);
+      ThrowGib (globaldef002433,self.health);
+      ThrowGib (globaldef002434,self.health);
       return ;
 
    }
@@ -2078,8 +1858,6 @@ void () enf_die = {
 
 };
 string globaldef005559 /* = "progs/h_mega.mdl" */;
-
-void () monster_enforcer;
 
 // function monster_enforcer
 // function number 2182 begins at statement 26772
@@ -2164,17 +1942,17 @@ void () monster_enforcer = {
    precache_sound2 (globaldef001677);
    precache_sound2 (globaldef001678);
    precache_sound2 (globaldef001679);
-   self.globaldef000082 = SOLID_SLIDEBOX;
-   self.globaldef000081 = MOVETYPE_STEP;
+   self.solid = SOLID_SLIDEBOX;
+   self.movetype = MOVETYPE_STEP;
    setmodel (self,globaldef005561);
    setsize (self,VEC_HULL_MIN,globaldef004167);
-   self.globaldef000130 = globaldef001439;
-   self.globaldef000344 = enf_stand1;
-   self.globaldef000345 = enf_walk1;
-   self.globaldef000346 = enf_run1;
-   self.globaldef000349 = enf_pain;
-   self.globaldef000350 = enf_die;
-   self.globaldef000347 = enf_atk1;
+   self.health = globaldef001439;
+   self.th_stand = enf_stand1;
+   self.th_walk = enf_walk1;
+   self.th_run = enf_run1;
+   self.th_pain = enf_pain;
+   self.th_die = enf_die;
+   self.th_missile = enf_atk1;
    walkmonster_start ();
 
 };

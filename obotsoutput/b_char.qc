@@ -1321,7 +1321,7 @@ void (entity e) BotChooseExitMessage = {
    local float choice;
 
    choice = random ();
-   if ( (e.globaldef000592 == 23.000) ) {
+   if ( (e.field000286 == 23.000) ) {
 
       choice = floor ((choice * TRUE));
       if ( (choice <= FALSE) ) {
@@ -1332,7 +1332,7 @@ void (entity e) BotChooseExitMessage = {
 
    } else {
 
-      if ( (e.globaldef000592 == 1.000) ) {
+      if ( (e.field000286 == 1.000) ) {
 
          choice = floor ((choice * TRUE));
          if ( (choice <= FALSE) ) {
@@ -1343,7 +1343,7 @@ void (entity e) BotChooseExitMessage = {
 
       } else {
 
-         if ( (e.globaldef000592 == 2.000) ) {
+         if ( (e.field000286 == 2.000) ) {
 
             choice = floor ((choice * TRUE));
             if ( (choice <= FALSE) ) {
@@ -1354,7 +1354,7 @@ void (entity e) BotChooseExitMessage = {
 
          } else {
 
-            if ( (e.globaldef000592 == 3.000) ) {
+            if ( (e.field000286 == 3.000) ) {
 
                choice = floor ((choice * TRUE));
                if ( (choice <= FALSE) ) {
@@ -1365,7 +1365,7 @@ void (entity e) BotChooseExitMessage = {
 
             } else {
 
-               if ( (e.globaldef000592 == 4.000) ) {
+               if ( (e.field000286 == 4.000) ) {
 
                   choice = floor ((choice * TRUE));
                   if ( (choice <= FALSE) ) {
@@ -1376,7 +1376,7 @@ void (entity e) BotChooseExitMessage = {
 
                } else {
 
-                  if ( (e.globaldef000592 == 5.000) ) {
+                  if ( (e.field000286 == 5.000) ) {
 
                      choice = floor ((choice * TRUE));
                      if ( (choice <= FALSE) ) {
@@ -1387,7 +1387,7 @@ void (entity e) BotChooseExitMessage = {
 
                   } else {
 
-                     if ( (e.globaldef000592 == 6.000) ) {
+                     if ( (e.field000286 == 6.000) ) {
 
                         choice = floor ((choice * TRUE));
                         if ( (choice <= FALSE) ) {
@@ -1398,7 +1398,7 @@ void (entity e) BotChooseExitMessage = {
 
                      } else {
 
-                        if ( (e.globaldef000592 == 7.000) ) {
+                        if ( (e.field000286 == 7.000) ) {
 
                            choice = floor ((choice * TRUE));
                            if ( (choice <= FALSE) ) {
@@ -1409,7 +1409,7 @@ void (entity e) BotChooseExitMessage = {
 
                         } else {
 
-                           if ( (e.globaldef000592 == 8.000) ) {
+                           if ( (e.field000286 == 8.000) ) {
 
                               choice = floor ((choice * TRUE));
                               if ( (choice <= FALSE) ) {
@@ -1420,7 +1420,7 @@ void (entity e) BotChooseExitMessage = {
 
                            } else {
 
-                              if ( (e.globaldef000592 == 9.000) ) {
+                              if ( (e.field000286 == 9.000) ) {
 
                                  choice = floor ((choice * TRUE));
                                  if ( (choice <= FALSE) ) {
@@ -1431,7 +1431,7 @@ void (entity e) BotChooseExitMessage = {
 
                               } else {
 
-                                 if ( (e.globaldef000592 == 10.000) ) {
+                                 if ( (e.field000286 == 10.000) ) {
 
                                     choice = floor ((choice * TRUE));
                                     if ( (choice <= FALSE) ) {
@@ -1442,7 +1442,7 @@ void (entity e) BotChooseExitMessage = {
 
                                  } else {
 
-                                    if ( (e.globaldef000592 == 11.000) ) {
+                                    if ( (e.field000286 == 11.000) ) {
 
                                        choice = floor ((choice * TRUE));
                                        if ( (choice <= FALSE) ) {
@@ -1453,7 +1453,7 @@ void (entity e) BotChooseExitMessage = {
 
                                     } else {
 
-                                       if ( (e.globaldef000592 == 12.000) ) {
+                                       if ( (e.field000286 == 12.000) ) {
 
                                           choice = floor ((choice * TRUE));
                                           if ( (choice <= FALSE) ) {
@@ -1464,7 +1464,7 @@ void (entity e) BotChooseExitMessage = {
 
                                        } else {
 
-                                          if ( (e.globaldef000592 == 13.000) ) {
+                                          if ( (e.field000286 == 13.000) ) {
 
                                              choice = floor ((choice * TRUE));
                                              if ( (choice <= FALSE) ) {
@@ -1475,7 +1475,7 @@ void (entity e) BotChooseExitMessage = {
 
                                           } else {
 
-                                             if ( (e.globaldef000592 == 14.000) ) {
+                                             if ( (e.field000286 == 14.000) ) {
 
                                                 choice = floor ((choice * TRUE));
                                                 if ( (choice <= FALSE) ) {
@@ -1486,7 +1486,7 @@ void (entity e) BotChooseExitMessage = {
 
                                              } else {
 
-                                                if ( (e.globaldef000592 == 15.000) ) {
+                                                if ( (e.field000286 == 15.000) ) {
 
                                                    choice = floor ((choice * TRUE));
                                                    if ( (choice <= FALSE) ) {
@@ -1497,7 +1497,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                 } else {
 
-                                                   if ( (e.globaldef000592 == 16.000) ) {
+                                                   if ( (e.field000286 == 16.000) ) {
 
                                                       choice = floor ((choice * TRUE));
                                                       if ( (choice <= MOVETYPE_FLY) ) {
@@ -1508,7 +1508,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                    } else {
 
-                                                      if ( (e.globaldef000592 == 17.000) ) {
+                                                      if ( (e.field000286 == 17.000) ) {
 
                                                          choice = floor ((choice * TRUE));
                                                          if ( (choice <= FALSE) ) {
@@ -1519,7 +1519,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                       } else {
 
-                                                         if ( (e.globaldef000592 == 18.000) ) {
+                                                         if ( (e.field000286 == 18.000) ) {
 
                                                             choice = floor ((choice * TRUE));
                                                             if ( (choice <= FALSE) ) {
@@ -1530,7 +1530,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                          } else {
 
-                                                            if ( (e.globaldef000592 == 19.000) ) {
+                                                            if ( (e.field000286 == 19.000) ) {
 
                                                                choice = floor ((choice * TRUE));
                                                                if ( (choice <= FALSE) ) {
@@ -1541,7 +1541,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                             } else {
 
-                                                               if ( (e.globaldef000592 == 20.000) ) {
+                                                               if ( (e.field000286 == 20.000) ) {
 
                                                                   choice = floor ((choice * TRUE));
                                                                   if ( (choice <= FALSE) ) {
@@ -1552,7 +1552,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                                } else {
 
-                                                                  if ( (e.globaldef000592 == 21.000) ) {
+                                                                  if ( (e.field000286 == 21.000) ) {
 
                                                                      choice = floor ((choice * TRUE));
                                                                      if ( (choice <= FALSE) ) {
@@ -1563,7 +1563,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                                   } else {
 
-                                                                     if ( (e.globaldef000592 == 22.000) ) {
+                                                                     if ( (e.field000286 == 22.000) ) {
 
                                                                         choice = floor ((choice * TRUE));
                                                                         if ( (choice <= FALSE) ) {
@@ -1574,7 +1574,7 @@ void (entity e) BotChooseExitMessage = {
 
                                                                      } else {
 
-                                                                        if ( (e.globaldef000592 == 0.000) ) {
+                                                                        if ( (e.field000286 == 0.000) ) {
 
                                                                            choice = floor ((choice * TRUE));
                                                                            if ( (choice <= FALSE) ) {
@@ -2755,9 +2755,9 @@ void (entity e) BotChooseKillMessage = {
    local float choice;
    local string globaldef005900;
 
-   globaldef005900 = e.globaldef000601.globaldef000158;
+   globaldef005900 = e.field000295.netname;
    choice = random ();
-   if ( (e.globaldef000592 == 23.000) ) {
+   if ( (e.field000286 == 23.000) ) {
 
       choice = floor ((choice * MOVETYPE_FLY));
       if ( (choice <= FALSE) ) {
@@ -2800,7 +2800,7 @@ void (entity e) BotChooseKillMessage = {
 
    } else {
 
-      if ( (e.globaldef000592 == 1.000) ) {
+      if ( (e.field000286 == 1.000) ) {
 
          choice = floor ((choice * MOVETYPE_FLY));
          if ( (choice <= FALSE) ) {
@@ -2843,7 +2843,7 @@ void (entity e) BotChooseKillMessage = {
 
       } else {
 
-         if ( (e.globaldef000592 == 2.000) ) {
+         if ( (e.field000286 == 2.000) ) {
 
             choice = floor ((choice * MOVETYPE_FLY));
             if ( (choice <= FALSE) ) {
@@ -2886,7 +2886,7 @@ void (entity e) BotChooseKillMessage = {
 
          } else {
 
-            if ( (e.globaldef000592 == 3.000) ) {
+            if ( (e.field000286 == 3.000) ) {
 
                choice = floor ((choice * MOVETYPE_FLY));
                if ( (choice <= FALSE) ) {
@@ -2929,7 +2929,7 @@ void (entity e) BotChooseKillMessage = {
 
             } else {
 
-               if ( (e.globaldef000592 == 4.000) ) {
+               if ( (e.field000286 == 4.000) ) {
 
                   choice = floor ((choice * MOVETYPE_STEP));
                   if ( (choice <= FALSE) ) {
@@ -2964,7 +2964,7 @@ void (entity e) BotChooseKillMessage = {
 
                } else {
 
-                  if ( (e.globaldef000592 == 5.000) ) {
+                  if ( (e.field000286 == 5.000) ) {
 
                      choice = floor ((choice * MOVETYPE_TOSS));
                      if ( (choice <= FALSE) ) {
@@ -3015,7 +3015,7 @@ void (entity e) BotChooseKillMessage = {
 
                   } else {
 
-                     if ( (e.globaldef000592 == 6.000) ) {
+                     if ( (e.field000286 == 6.000) ) {
 
                         choice = floor ((choice * MOVETYPE_FLY));
                         if ( (choice <= FALSE) ) {
@@ -3058,7 +3058,7 @@ void (entity e) BotChooseKillMessage = {
 
                      } else {
 
-                        if ( (e.globaldef000592 == 7.000) ) {
+                        if ( (e.field000286 == 7.000) ) {
 
                            choice = floor ((choice * MOVETYPE_FLY));
                            if ( (choice <= FALSE) ) {
@@ -3101,7 +3101,7 @@ void (entity e) BotChooseKillMessage = {
 
                         } else {
 
-                           if ( (e.globaldef000592 == 8.000) ) {
+                           if ( (e.field000286 == 8.000) ) {
 
                               choice = floor ((choice * MOVETYPE_FLY));
                               if ( (choice <= FALSE) ) {
@@ -3144,7 +3144,7 @@ void (entity e) BotChooseKillMessage = {
 
                            } else {
 
-                              if ( (e.globaldef000592 == 9.000) ) {
+                              if ( (e.field000286 == 9.000) ) {
 
                                  choice = floor ((choice * MOVETYPE_FLY));
                                  if ( (choice <= FALSE) ) {
@@ -3187,7 +3187,7 @@ void (entity e) BotChooseKillMessage = {
 
                               } else {
 
-                                 if ( (e.globaldef000592 == 10.000) ) {
+                                 if ( (e.field000286 == 10.000) ) {
 
                                     choice = floor ((choice * MOVETYPE_FLY));
                                     if ( (choice <= FALSE) ) {
@@ -3230,7 +3230,7 @@ void (entity e) BotChooseKillMessage = {
 
                                  } else {
 
-                                    if ( (e.globaldef000592 == 11.000) ) {
+                                    if ( (e.field000286 == 11.000) ) {
 
                                        choice = floor ((choice * FL_SWIM));
                                        if ( (choice <= FALSE) ) {
@@ -3249,7 +3249,7 @@ void (entity e) BotChooseKillMessage = {
 
                                     } else {
 
-                                       if ( (e.globaldef000592 == 12.000) ) {
+                                       if ( (e.field000286 == 12.000) ) {
 
                                           choice = floor ((choice * FL_SWIM));
                                           if ( (choice <= FALSE) ) {
@@ -3268,7 +3268,7 @@ void (entity e) BotChooseKillMessage = {
 
                                        } else {
 
-                                          if ( (e.globaldef000592 == 13.000) ) {
+                                          if ( (e.field000286 == 13.000) ) {
 
                                              choice = floor ((choice * MOVETYPE_FLY));
                                              if ( (choice <= FALSE) ) {
@@ -3311,7 +3311,7 @@ void (entity e) BotChooseKillMessage = {
 
                                           } else {
 
-                                             if ( (e.globaldef000592 == 14.000) ) {
+                                             if ( (e.field000286 == 14.000) ) {
 
                                                 choice = floor ((choice * MOVETYPE_FLY));
                                                 if ( (choice <= FALSE) ) {
@@ -3354,7 +3354,7 @@ void (entity e) BotChooseKillMessage = {
 
                                              } else {
 
-                                                if ( (e.globaldef000592 == 15.000) ) {
+                                                if ( (e.field000286 == 15.000) ) {
 
                                                    choice = floor ((choice * MOVETYPE_PUSH));
                                                    if ( (choice <= FALSE) ) {
@@ -3413,7 +3413,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                 } else {
 
-                                                   if ( (e.globaldef000592 == 16.000) ) {
+                                                   if ( (e.field000286 == 16.000) ) {
 
                                                       choice = floor ((choice * MOVETYPE_TOSS));
                                                       if ( (choice <= FALSE) ) {
@@ -3464,7 +3464,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                    } else {
 
-                                                      if ( (e.globaldef000592 == 17.000) ) {
+                                                      if ( (e.field000286 == 17.000) ) {
 
                                                          choice = floor ((choice * MOVETYPE_FLY));
                                                          if ( (choice <= FALSE) ) {
@@ -3507,7 +3507,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                       } else {
 
-                                                         if ( (e.globaldef000592 == 18.000) ) {
+                                                         if ( (e.field000286 == 18.000) ) {
 
                                                             choice = floor ((choice * MOVETYPE_FLY));
                                                             if ( (choice <= FALSE) ) {
@@ -3550,7 +3550,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                          } else {
 
-                                                            if ( (e.globaldef000592 == 19.000) ) {
+                                                            if ( (e.field000286 == 19.000) ) {
 
                                                                choice = floor ((choice * MOVETYPE_WALK));
                                                                if ( (choice <= FALSE) ) {
@@ -3577,7 +3577,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                             } else {
 
-                                                               if ( (e.globaldef000592 == 20.000) ) {
+                                                               if ( (e.field000286 == 20.000) ) {
 
                                                                   choice = floor ((choice * MOVETYPE_FLY));
                                                                   if ( (choice <= FALSE) ) {
@@ -3620,7 +3620,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                                } else {
 
-                                                                  if ( (e.globaldef000592 == 21.000) ) {
+                                                                  if ( (e.field000286 == 21.000) ) {
 
                                                                      choice = floor ((choice * MOVETYPE_FLY));
                                                                      if ( (choice <= FALSE) ) {
@@ -3663,7 +3663,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                                   } else {
 
-                                                                     if ( (e.globaldef000592 == 22.000) ) {
+                                                                     if ( (e.field000286 == 22.000) ) {
 
                                                                         choice = floor ((choice * MOVETYPE_FLY));
                                                                         if ( (choice <= FALSE) ) {
@@ -3706,7 +3706,7 @@ void (entity e) BotChooseKillMessage = {
 
                                                                      } else {
 
-                                                                        if ( (e.globaldef000592 == 0.000) ) {
+                                                                        if ( (e.field000286 == 0.000) ) {
 
                                                                            choice = floor ((choice * MOVETYPE_FLY));
                                                                            if ( (choice <= FALSE) ) {
@@ -4979,9 +4979,9 @@ void (entity e) BotChooseDeathMessage = {
    local float choice;
    local string globaldef006022;
 
-   globaldef006022 = e.globaldef000602.globaldef000158;
+   globaldef006022 = e.field000296.netname;
    choice = random ();
-   if ( (e.globaldef000592 == 23.000) ) {
+   if ( (e.field000286 == 23.000) ) {
 
       choice = floor ((choice * MOVETYPE_TOSS));
       if ( (choice <= FALSE) ) {
@@ -5032,7 +5032,7 @@ void (entity e) BotChooseDeathMessage = {
 
    } else {
 
-      if ( (e.globaldef000592 == 1.000) ) {
+      if ( (e.field000286 == 1.000) ) {
 
          choice = floor ((choice * MOVETYPE_TOSS));
          if ( (choice <= FALSE) ) {
@@ -5083,7 +5083,7 @@ void (entity e) BotChooseDeathMessage = {
 
       } else {
 
-         if ( (e.globaldef000592 == 2.000) ) {
+         if ( (e.field000286 == 2.000) ) {
 
             choice = floor ((choice * MOVETYPE_FLY));
             if ( (choice <= FALSE) ) {
@@ -5126,7 +5126,7 @@ void (entity e) BotChooseDeathMessage = {
 
          } else {
 
-            if ( (e.globaldef000592 == 3.000) ) {
+            if ( (e.field000286 == 3.000) ) {
 
                choice = floor ((choice * MOVETYPE_FLY));
                if ( (choice <= FALSE) ) {
@@ -5169,7 +5169,7 @@ void (entity e) BotChooseDeathMessage = {
 
             } else {
 
-               if ( (e.globaldef000592 == 4.000) ) {
+               if ( (e.field000286 == 4.000) ) {
 
                   choice = floor ((choice * MOVETYPE_FLY));
                   if ( (choice <= FALSE) ) {
@@ -5212,7 +5212,7 @@ void (entity e) BotChooseDeathMessage = {
 
                } else {
 
-                  if ( (e.globaldef000592 == 5.000) ) {
+                  if ( (e.field000286 == 5.000) ) {
 
                      choice = floor ((choice * MOVETYPE_FLY));
                      if ( (choice <= FALSE) ) {
@@ -5255,7 +5255,7 @@ void (entity e) BotChooseDeathMessage = {
 
                   } else {
 
-                     if ( (e.globaldef000592 == 6.000) ) {
+                     if ( (e.field000286 == 6.000) ) {
 
                         choice = floor ((choice * MOVETYPE_FLY));
                         if ( (choice <= FALSE) ) {
@@ -5298,7 +5298,7 @@ void (entity e) BotChooseDeathMessage = {
 
                      } else {
 
-                        if ( (e.globaldef000592 == 7.000) ) {
+                        if ( (e.field000286 == 7.000) ) {
 
                            choice = floor ((choice * MOVETYPE_FLY));
                            if ( (choice <= FALSE) ) {
@@ -5341,7 +5341,7 @@ void (entity e) BotChooseDeathMessage = {
 
                         } else {
 
-                           if ( (e.globaldef000592 == 8.000) ) {
+                           if ( (e.field000286 == 8.000) ) {
 
                               choice = floor ((choice * MOVETYPE_FLY));
                               if ( (choice <= FALSE) ) {
@@ -5384,7 +5384,7 @@ void (entity e) BotChooseDeathMessage = {
 
                            } else {
 
-                              if ( (e.globaldef000592 == 9.000) ) {
+                              if ( (e.field000286 == 9.000) ) {
 
                                  choice = floor ((choice * MOVETYPE_TOSS));
                                  if ( (choice <= FALSE) ) {
@@ -5435,7 +5435,7 @@ void (entity e) BotChooseDeathMessage = {
 
                               } else {
 
-                                 if ( (e.globaldef000592 == 10.000) ) {
+                                 if ( (e.field000286 == 10.000) ) {
 
                                     choice = floor ((choice * MOVETYPE_FLY));
                                     if ( (choice <= FALSE) ) {
@@ -5478,7 +5478,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                  } else {
 
-                                    if ( (e.globaldef000592 == 11.000) ) {
+                                    if ( (e.field000286 == 11.000) ) {
 
                                        choice = floor ((choice * MOVETYPE_FLY));
                                        if ( (choice <= FALSE) ) {
@@ -5521,7 +5521,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                     } else {
 
-                                       if ( (e.globaldef000592 == 12.000) ) {
+                                       if ( (e.field000286 == 12.000) ) {
 
                                           choice = floor ((choice * MOVETYPE_FLY));
                                           if ( (choice <= FALSE) ) {
@@ -5564,7 +5564,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                        } else {
 
-                                          if ( (e.globaldef000592 == 13.000) ) {
+                                          if ( (e.field000286 == 13.000) ) {
 
                                              choice = floor ((choice * MOVETYPE_FLY));
                                              if ( (choice <= FALSE) ) {
@@ -5607,7 +5607,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                           } else {
 
-                                             if ( (e.globaldef000592 == 14.000) ) {
+                                             if ( (e.field000286 == 14.000) ) {
 
                                                 choice = floor ((choice * MOVETYPE_FLY));
                                                 if ( (choice <= FALSE) ) {
@@ -5650,7 +5650,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                              } else {
 
-                                                if ( (e.globaldef000592 == 15.000) ) {
+                                                if ( (e.field000286 == 15.000) ) {
 
                                                    choice = floor ((choice * MOVETYPE_FLY));
                                                    if ( (choice <= FALSE) ) {
@@ -5693,7 +5693,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                 } else {
 
-                                                   if ( (e.globaldef000592 == 16.000) ) {
+                                                   if ( (e.field000286 == 16.000) ) {
 
                                                       choice = floor ((choice * MOVETYPE_FLY));
                                                       if ( (choice <= FALSE) ) {
@@ -5736,7 +5736,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                    } else {
 
-                                                      if ( (e.globaldef000592 == 17.000) ) {
+                                                      if ( (e.field000286 == 17.000) ) {
 
                                                          choice = floor ((choice * MOVETYPE_FLY));
                                                          if ( (choice <= FALSE) ) {
@@ -5779,7 +5779,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                       } else {
 
-                                                         if ( (e.globaldef000592 == 18.000) ) {
+                                                         if ( (e.field000286 == 18.000) ) {
 
                                                             choice = floor ((choice * FL_SWIM));
                                                             if ( (choice <= FALSE) ) {
@@ -5798,7 +5798,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                          } else {
 
-                                                            if ( (e.globaldef000592 == 19.000) ) {
+                                                            if ( (e.field000286 == 19.000) ) {
 
                                                                choice = floor ((choice * MOVETYPE_FLY));
                                                                if ( (choice <= FALSE) ) {
@@ -5841,7 +5841,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                             } else {
 
-                                                               if ( (e.globaldef000592 == 20.000) ) {
+                                                               if ( (e.field000286 == 20.000) ) {
 
                                                                   choice = floor ((choice * MOVETYPE_FLY));
                                                                   if ( (choice <= FALSE) ) {
@@ -5884,7 +5884,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                                } else {
 
-                                                                  if ( (e.globaldef000592 == 21.000) ) {
+                                                                  if ( (e.field000286 == 21.000) ) {
 
                                                                      choice = floor ((choice * MOVETYPE_FLY));
                                                                      if ( (choice <= FALSE) ) {
@@ -5927,7 +5927,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                                   } else {
 
-                                                                     if ( (e.globaldef000592 == 22.000) ) {
+                                                                     if ( (e.field000286 == 22.000) ) {
 
                                                                         choice = floor ((choice * FL_CLIENT));
                                                                         if ( (choice <= FALSE) ) {
@@ -5994,7 +5994,7 @@ void (entity e) BotChooseDeathMessage = {
 
                                                                      } else {
 
-                                                                        if ( (e.globaldef000592 == 0.000) ) {
+                                                                        if ( (e.field000286 == 0.000) ) {
 
                                                                            choice = floor ((choice * MOVETYPE_FLY));
                                                                            if ( (choice <= FALSE) ) {
@@ -8942,7 +8942,7 @@ void (entity e) func002284 = {
 
    } else {
 
-      if ( (e.globaldef000592 == FALSE) ) {
+      if ( (e.field000286 == FALSE) ) {
 
          globaldef006146 = 1.000;
 
@@ -8985,7 +8985,7 @@ void (entity e) func002284 = {
    choice = random ();
    if ( (globaldef006146 == 0.000) ) {
 
-      globaldef006147 = globaldef000813.globaldef000158;
+      globaldef006147 = globaldef000813.netname;
       choice = floor ((choice * FL_CLIENT));
       if ( (choice <= FALSE) ) {
 
@@ -8993,7 +8993,7 @@ void (entity e) func002284 = {
 
       } else {
 
-         if ( ((choice <= TRUE) && (e.globaldef000592 != 2.000)) ) {
+         if ( ((choice <= TRUE) && (e.field000286 != 2.000)) ) {
 
             func002369 (e,"Dogs crawl under Gates, software crawls under Windows",7.000,FL_SWIM);
 
@@ -9379,7 +9379,7 @@ void (entity e) func002284 = {
 
             if ( (globaldef006146 == 1.000) ) {
 
-               if ( (e.globaldef000592 == 23.000) ) {
+               if ( (e.field000286 == 23.000) ) {
 
                   choice = floor ((choice * FL_INWATER));
                   if ( (choice <= FALSE) ) {
@@ -9510,7 +9510,7 @@ void (entity e) func002284 = {
 
                } else {
 
-                  if ( (e.globaldef000592 == 1.000) ) {
+                  if ( (e.field000286 == 1.000) ) {
 
                      choice = floor ((choice * MOVETYPE_BOUNCE));
                      if ( (choice <= FALSE) ) {
@@ -9593,7 +9593,7 @@ void (entity e) func002284 = {
 
                   } else {
 
-                     if ( (e.globaldef000592 == 2.000) ) {
+                     if ( (e.field000286 == 2.000) ) {
 
                         choice = floor ((choice * MOVETYPE_BOUNCEMISSILE));
                         if ( (choice <= FALSE) ) {
@@ -9684,7 +9684,7 @@ void (entity e) func002284 = {
 
                      } else {
 
-                        if ( (e.globaldef000592 == 3.000) ) {
+                        if ( (e.field000286 == 3.000) ) {
 
                            choice = floor ((choice * globaldef000775));
                            if ( (choice <= FALSE) ) {
@@ -9791,7 +9791,7 @@ void (entity e) func002284 = {
 
                         } else {
 
-                           if ( (e.globaldef000592 == 4.000) ) {
+                           if ( (e.field000286 == 4.000) ) {
 
                               choice = floor ((choice * MOVETYPE_BOUNCE));
                               if ( (choice <= FALSE) ) {
@@ -9874,7 +9874,7 @@ void (entity e) func002284 = {
 
                            } else {
 
-                              if ( (e.globaldef000592 == 5.000) ) {
+                              if ( (e.field000286 == 5.000) ) {
 
                                  choice = floor ((choice * MOVETYPE_BOUNCE));
                                  if ( (choice <= FALSE) ) {
@@ -9957,7 +9957,7 @@ void (entity e) func002284 = {
 
                               } else {
 
-                                 if ( (e.globaldef000592 == 6.000) ) {
+                                 if ( (e.field000286 == 6.000) ) {
 
                                     choice = floor ((choice * MOVETYPE_BOUNCE));
                                     if ( (choice <= FALSE) ) {
@@ -10040,7 +10040,7 @@ void (entity e) func002284 = {
 
                                  } else {
 
-                                    if ( (e.globaldef000592 == 7.000) ) {
+                                    if ( (e.field000286 == 7.000) ) {
 
                                        choice = floor ((choice * globaldef002136));
                                        if ( (choice <= FALSE) ) {
@@ -10155,7 +10155,7 @@ void (entity e) func002284 = {
 
                                     } else {
 
-                                       if ( (e.globaldef000592 == 8.000) ) {
+                                       if ( (e.field000286 == 8.000) ) {
 
                                           choice = floor ((choice * FL_CLIENT));
                                           if ( (choice <= FALSE) ) {
@@ -10222,7 +10222,7 @@ void (entity e) func002284 = {
 
                                        } else {
 
-                                          if ( (e.globaldef000592 == 9.000) ) {
+                                          if ( (e.field000286 == 9.000) ) {
 
                                              choice = floor ((choice * globaldef002136));
                                              if ( (choice <= FALSE) ) {
@@ -10337,7 +10337,7 @@ void (entity e) func002284 = {
 
                                           } else {
 
-                                             if ( (e.globaldef000592 == 10.000) ) {
+                                             if ( (e.field000286 == 10.000) ) {
 
                                                 choice = floor ((choice * MOVETYPE_BOUNCE));
                                                 if ( (choice <= FALSE) ) {
@@ -10420,7 +10420,7 @@ void (entity e) func002284 = {
 
                                              } else {
 
-                                                if ( (e.globaldef000592 == 11.000) ) {
+                                                if ( (e.field000286 == 11.000) ) {
 
                                                    choice = floor ((choice * MOVETYPE_BOUNCE));
                                                    if ( (choice <= FALSE) ) {
@@ -10503,7 +10503,7 @@ void (entity e) func002284 = {
 
                                                 } else {
 
-                                                   if ( (e.globaldef000592 == 12.000) ) {
+                                                   if ( (e.field000286 == 12.000) ) {
 
                                                       choice = floor ((choice * MOVETYPE_BOUNCE));
                                                       if ( (choice <= FALSE) ) {
@@ -10586,7 +10586,7 @@ void (entity e) func002284 = {
 
                                                    } else {
 
-                                                      if ( (e.globaldef000592 == 13.000) ) {
+                                                      if ( (e.field000286 == 13.000) ) {
 
                                                          choice = floor ((choice * MOVETYPE_BOUNCEMISSILE));
                                                          if ( (choice <= FALSE) ) {
@@ -10677,7 +10677,7 @@ void (entity e) func002284 = {
 
                                                       } else {
 
-                                                         if ( (e.globaldef000592 == 14.000) ) {
+                                                         if ( (e.field000286 == 14.000) ) {
 
                                                             choice = floor ((choice * MOVETYPE_BOUNCEMISSILE));
                                                             if ( (choice <= FALSE) ) {
@@ -10768,7 +10768,7 @@ void (entity e) func002284 = {
 
                                                          } else {
 
-                                                            if ( (e.globaldef000592 == 15.000) ) {
+                                                            if ( (e.field000286 == 15.000) ) {
 
                                                                choice = floor ((choice * MOVETYPE_BOUNCEMISSILE));
                                                                if ( (choice <= FALSE) ) {
@@ -10851,7 +10851,7 @@ void (entity e) func002284 = {
 
                                                             } else {
 
-                                                               if ( (e.globaldef000592 == 16.000) ) {
+                                                               if ( (e.field000286 == 16.000) ) {
 
                                                                   choice = floor ((choice * MOVETYPE_BOUNCE));
                                                                   if ( (choice <= FALSE) ) {
@@ -10934,7 +10934,7 @@ void (entity e) func002284 = {
 
                                                                } else {
 
-                                                                  if ( (e.globaldef000592 == 17.000) ) {
+                                                                  if ( (e.field000286 == 17.000) ) {
 
                                                                      choice = floor ((choice * MOVETYPE_BOUNCE));
                                                                      if ( (choice <= FALSE) ) {
@@ -11017,7 +11017,7 @@ void (entity e) func002284 = {
 
                                                                   } else {
 
-                                                                     if ( (e.globaldef000592 == 18.000) ) {
+                                                                     if ( (e.field000286 == 18.000) ) {
 
                                                                         choice = floor ((choice * MOVETYPE_BOUNCEMISSILE));
                                                                         if ( (choice <= FALSE) ) {
@@ -11100,7 +11100,7 @@ void (entity e) func002284 = {
 
                                                                      } else {
 
-                                                                        if ( (e.globaldef000592 == 19.000) ) {
+                                                                        if ( (e.field000286 == 19.000) ) {
 
                                                                            choice = floor ((choice * MOVETYPE_BOUNCE));
                                                                            if ( (choice <= FALSE) ) {
@@ -11183,7 +11183,7 @@ void (entity e) func002284 = {
 
                                                                         } else {
 
-                                                                           if ( (e.globaldef000592 == 20.000) ) {
+                                                                           if ( (e.field000286 == 20.000) ) {
 
                                                                               choice = floor ((choice * globaldef000748));
                                                                               if ( (choice <= FALSE) ) {
@@ -11306,7 +11306,7 @@ void (entity e) func002284 = {
 
                                                                            } else {
 
-                                                                              if ( (e.globaldef000592 == 21.000) ) {
+                                                                              if ( (e.field000286 == 21.000) ) {
 
                                                                                  choice = floor ((choice * MOVETYPE_FLYMISSILE));
                                                                                  if ( (choice <= FALSE) ) {
@@ -11381,7 +11381,7 @@ void (entity e) func002284 = {
 
                                                                               } else {
 
-                                                                                 if ( (e.globaldef000592 == 22.000) ) {
+                                                                                 if ( (e.field000286 == 22.000) ) {
 
                                                                                     choice = floor ((choice * MOVETYPE_BOUNCE));
                                                                                     if ( (choice <= FALSE) ) {
@@ -11464,7 +11464,7 @@ void (entity e) func002284 = {
 
                                                                                  } else {
 
-                                                                                    if ( (e.globaldef000592 == 0.000) ) {
+                                                                                    if ( (e.field000286 == 0.000) ) {
 
                                                                                        choice = floor ((choice * MOVETYPE_BOUNCE));
                                                                                        if ( (choice <= FALSE) ) {
