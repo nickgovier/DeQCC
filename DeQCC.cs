@@ -99,7 +99,7 @@ namespace DeQcc
             get { return (Opcodes)(op % 100); }
         }
 
-        public override string ToString()
+        public override string ToString()   // used to write out the bytecode at the head of every function
         {
             return Opcode.ToString() + "\t" + a.ToString() + "\t" + b.ToString() + "\t" + c.ToString();
         }
@@ -529,7 +529,7 @@ namespace DeQcc
             int i;
             StreamWriter outfile;
 
-            outfile = new StreamWriter(folder + "strings.csv", false);
+            outfile = new StreamWriter(folder + "_strings.csv", false);
             outfile.WriteLine("row,offset,id,string");
             i = 0;
             foreach(KeyValuePair<int,int> kvp in stringOffsetMap)
@@ -538,7 +538,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(folder + "statements.csv", false);
+            outfile = new StreamWriter(folder + "_statements.csv", false);
             outfile.WriteLine("row,opcode,op,a,b,c");
             i = 0;
             foreach (Statement s in statements)
@@ -547,7 +547,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(folder + "functions.csv", false);
+            outfile = new StreamWriter(folder + "_functions.csv", false);
             outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
             i = 0;
             foreach (Function f in functions)
@@ -561,7 +561,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(folder + "globaldefs.csv", false);
+            outfile = new StreamWriter(folder + "_globaldefs.csv", false);
             outfile.WriteLine("row,name,s_name,ofs,type,typename");
             i = 0;
             foreach (Def g in globals)
@@ -572,7 +572,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(folder + "fields.csv", false);
+            outfile = new StreamWriter(folder + "_fields.csv", false);
             outfile.WriteLine("row,name,s_name,ofs,type,typename");
             i = 0;
             foreach (Def g in fields)
@@ -583,7 +583,7 @@ namespace DeQcc
             }
             outfile.Close();
 
-            outfile = new StreamWriter(folder + "globals.csv", false);
+            outfile = new StreamWriter(folder + "_globals.csv", false);
             outfile.WriteLine("row,floatVal,intVal");
             i = 0;
             foreach (float f in pr_globals)
@@ -851,7 +851,12 @@ namespace DeQcc
             df = functions[funcIndex];
             findex = funcIndex;
 
-            // Check ''local globals'' 
+            if(df.name == "SUB_CalcMove")
+            {
+                Console.WriteLine("BREAKPOINT");
+            }
+
+            // Capture any information (function defs, globals etc) between the previous function and this one
             dfpred = functions[findex - 1];
 
             for (int i = 0; i < dfpred.numparms; i++)
@@ -951,15 +956,16 @@ namespace DeQcc
                 }
             }
 
-            // Check ''local globals'' 
+            // if it's a builtin function, write it out
             if (df.first_statement <= 0)
             {
                 qcOutputFile.WriteLine(DecompileProfiles[findex] + " = #" + (-df.first_statement) + ";");
                 return;
             }
+
+            // Calculate indentation
             dsIndex = df.first_statement;
             ds = statements[dsIndex];
-
             while (true)
             {
                 dom = (ushort)((ds.op) % 100);
@@ -1050,7 +1056,7 @@ namespace DeQcc
             // print the prototype 
             qcOutputFile.Write(DecompileProfiles[findex]);
 
-            // handle state functions 
+            // handle state functions e.g. animation frames for monsters
             dsIndex = df.first_statement;
             ds = statements[dsIndex];
 
@@ -1071,9 +1077,7 @@ namespace DeQcc
             qcOutputFile.WriteLine(" {");
             qcOutputFile.WriteLine();
 
-            /*
-            * calculate the parameter size 
-            */
+            // calculate the parameter size 
             paramSize = 0;
             for (int i = 0; i < df.numparms; i++)
             {
@@ -1115,8 +1119,8 @@ namespace DeQcc
                 }
             }
 
-            // do the hard work 
-            DecompileFunction(df);
+            // decompile the statements
+            DecompileFunctionStatements(df);
 
             qcOutputFile.WriteLine();
             qcOutputFile.WriteLine("};");
@@ -1206,7 +1210,7 @@ namespace DeQcc
             return nofs;
         }
 
-        void DecompileFunction(Function df)
+        void DecompileFunctionStatements(Function df)
         {
             // Initialize 
             Immediate(df, 0, 0, null);

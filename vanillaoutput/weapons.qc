@@ -1641,7 +1641,7 @@ void (float ox) W_FireSpikes = {
    self.punchangle_x = CONTENT_SOLID;
 
 };
-.float finaldest_z;
+.float hit_z;
 
 // function spike_touch
 // function number 193 begins at statement 4315

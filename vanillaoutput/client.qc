@@ -1701,7 +1701,7 @@ void () PlayerJump = {
    self.velocity_z = (self.velocity_z + 270.000);
 
 };
-.vector finalangle;
+.float dmgtime;
 
 // function WaterMove
 // function number 239 begins at statement 6413

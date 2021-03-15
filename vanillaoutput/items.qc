@@ -203,8 +203,8 @@ float (entity e, float healamount, float ignore) T_Heal = {
 };
 float H_ROTTEN = 1.000;
 float H_MEGA = 2.000;
-.float finaldest_x;
-.float finaldest_y;
+.float healamount;
+.float healtype;
 
 void () health_touch;
 

@@ -1,5 +1,5 @@
 float SPAWN_CRUCIFIED = 1.000;
-.float finalangle_x;
+.float inpain;
 
 // function zombie_stand1
 // function number 1195 begins at statement 16194
