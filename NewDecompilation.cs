@@ -1,0 +1,573 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace DeQcc
+{
+
+    enum GlobalKind
+    {
+        Reserved,
+        Function,
+        Field,
+        Immediate,
+        Local,
+        Parameter,
+        Anonymous,
+        Globaldef   // e.g. actual global defined in defs.qc
+    }
+    
+    class Global
+    {
+        public GlobalKind Kind;
+
+        public int id;
+        public float FloatVal;
+        public ushort? IntVal
+        {
+            get {
+                // TODO better way to do this?
+                int intVal = BitConverter.ToInt32(BitConverter.GetBytes(FloatVal));
+                if (intVal < (1<<16))    // ints seem to be the first 16 bits, 0-65536 - and only used as offsets(?)
+                {
+                    return (ushort)intVal;
+                }
+                return null;
+            }
+        }
+
+        public ushort? _globaldef_type;
+        public int? _globaldef_s_name;
+        private string? _globaldef_name_overwrite;
+
+        private int DEF_SAVEGLOBAL = (1 << 15);
+        public bool SaveGlobal  // we don't actually need this info, but it helps in the Type property later
+        {
+            get
+            {
+                if (_globaldef_type == null)
+                {
+                    return false;
+                }
+                int bitCheck = (ushort)_globaldef_type & DEF_SAVEGLOBAL;    // check if DEF_SAVEGLOBAL bit is set
+                if (bitCheck == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public Types? Type
+        {
+            get
+            {
+                if(_globaldef_type == null)
+                {
+                    return null;
+                }
+                if(SaveGlobal)
+                {
+                    return (Types)(_globaldef_type - DEF_SAVEGLOBAL);
+                }
+                return (Types)(_globaldef_type);
+            }
+        }
+
+        public string TypeCodeOutput
+        {
+            get
+            {
+                if (Type is null)
+                {
+                    return "/* ERROR: NULL TYPE */";
+                }
+                switch (Type)
+                {
+                    case Types.ev_void:
+                        return "void";
+                    case Types.ev_string:
+                        return "string";
+                    case Types.ev_float:
+                        return "float";
+                    case Types.ev_vector:
+                        return "vector";
+                    case Types.ev_entity:
+                        return "entity";
+                    case Types.ev_function:
+                        return "void()";
+                    case Types.ev_field:
+                        return "/* TYPE: EV_FIELD */";
+                    case Types.ev_pointer:
+                        return "/* TYPE: EV_POINTER */";
+                    default:
+                        return "/* ERROR: UNKNOWN TYPE */";
+                }
+            }
+        }
+
+        public static List<string> strings;
+        public static Dictionary<int, int> stringOffsetMap;
+
+        public string? GlobaldefName
+        {
+            set // Overwrite with a custom name
+            {
+                _globaldef_name_overwrite = value;
+            }
+        }
+
+        // If this global is an offset to a function
+        public int? FunctionNumber;
+        public string? FunctionName;
+
+        // If this global is an offset to a field
+        public int? FieldNumber;
+        public string? FieldName;
+        public ushort? _fields_type;
+        public Types? FieldType
+        {
+            get
+            {
+                if (_fields_type == null)
+                {
+                    return null;
+                }
+                return (Types)(_fields_type);
+            }
+        }
+
+        public string? ValueSource; // the source code for the source of the value being stored in this global
+
+        public string? Name
+        {
+            get
+            {
+                if(FunctionNumber > 0 && FunctionName != null)
+                {
+                    return FunctionName;
+                }
+                if(FieldNumber > 0 && FieldName != null)
+                {
+                    return FieldName;
+                }
+                if (_globaldef_name_overwrite != null)
+                {
+                    return _globaldef_name_overwrite;
+                }
+                if (_globaldef_s_name is null || _globaldef_s_name == 0)
+                {
+                    return null;
+                }
+                return strings[stringOffsetMap[(int)_globaldef_s_name]];
+            }
+        }
+
+        // if this is an immediate string, get the string pointed to and escape special chars before returning
+        private string CleanseString()
+        {
+            StringBuilder buf = new StringBuilder();
+            buf.Append('"');
+            foreach (char chr in strings[stringOffsetMap[(int)IntVal]])
+            {
+                if (chr == '\n')
+                {
+                    buf.Append('\\');
+                    buf.Append('n');
+                }
+                else if (chr == '"')
+                {
+                    buf.Append('\\');
+                    buf.Append('"');
+                }
+                else
+                {
+                    buf.Append(chr);
+                }
+            }
+            buf.Append('"');
+            return buf.ToString();
+        }
+
+        public static List<Global> globalList;
+
+        public string ImmediateValue
+        {
+            get
+            {
+                switch (Type)
+                {
+                    case Types.ev_string:
+                        return CleanseString();
+                    case Types.ev_void:
+                        return "void";
+                    case Types.ev_float:
+                        return FloatVal.ToString("F3");
+                    case Types.ev_vector:
+                        return "'" + FloatVal.ToString("F3") + " " + (globalList[id + 1].FloatVal).ToString("F3") + " " + (globalList[id + 2].FloatVal).ToString("F3") + "'";
+                    default:
+                        return "bad type " + Type;
+                }
+            }
+        }
+
+        // If this globaldef is being assigned to something else
+        public string ValueToAssign
+        {
+            get
+            {
+                if (Kind == GlobalKind.Anonymous || Kind == GlobalKind.Immediate || Kind == GlobalKind.Reserved)
+                {
+                    // TODO check this more robustly
+                    if (ValueSource.Contains('+') || ValueSource.Contains('-') || ValueSource.Contains('*') || ValueSource.Contains('/'))
+                    {
+                        return "(" + ValueSource + ")";
+                    }
+                    return ValueSource;
+                }
+                else
+                {
+                    return Name;
+                }
+            }
+        }
+    }
+
+    partial class DeQCC
+    {
+        public int highestGlobalAccessed;
+        //Dictionary<int, string> globalMap = new Dictionary<int, string>();
+        List<Global> globalList = new List<Global>();
+        ushort indent = 0;
+
+        public void NewDecompilation(string name, string outputfolder)
+        {
+            InitStaticData(name);
+            int highestGlobalAccessed = 0;
+            ReadData(name);
+            InitGlobalList();
+
+            DecompileFunctions(outputfolder);
+        }
+
+        void InitGlobalList()
+        {
+            // Get all of the possible information for a given global
+
+            // Allow the globals to access the strings data, and other globals
+            Global.strings = strings;
+            Global.stringOffsetMap = stringOffsetMap;
+            Global.globalList = globalList;
+
+            // Get the value
+            int id = 0;
+            foreach(float f in pr_globals)
+            {
+                Global g = new Global();
+                g.id = id++;
+                g.FloatVal = f;
+                g._globaldef_type = null;
+                g._globaldef_s_name = null;
+                g.FunctionNumber = null;
+                g.FunctionName = null;
+                g.FieldNumber = null;
+                g.FieldName = null;
+                g._fields_type = null;
+                g.ValueSource = null;
+                globalList.Add(g);
+            }
+
+            // Reserved offsets
+            globalList[OFS_NULL].GlobaldefName = "OFS_NULL";
+            globalList[OFS_RETURN].GlobaldefName = "OFS_RETURN";
+            globalList[OFS_RETURN+1].GlobaldefName = "OFS_RETURN_y";
+            globalList[OFS_RETURN+2].GlobaldefName = "OFS_RETURN_z";
+            globalList[OFS_PARM0].GlobaldefName = "OFS_PARM0";
+            globalList[OFS_PARM0+1].GlobaldefName = "OFS_PARM0_y";
+            globalList[OFS_PARM0+2].GlobaldefName = "OFS_PARM0_z";
+            globalList[OFS_PARM1].GlobaldefName = "OFS_PARM1";
+            globalList[OFS_PARM1+1].GlobaldefName = "OFS_PARM1_y";
+            globalList[OFS_PARM1+2].GlobaldefName = "OFS_PARM1_z";
+            globalList[OFS_PARM2].GlobaldefName = "OFS_PARM2";
+            globalList[OFS_PARM2+1].GlobaldefName = "OFS_PARM2_y";
+            globalList[OFS_PARM2+2].GlobaldefName = "OFS_PARM2_z";
+            globalList[OFS_PARM3].GlobaldefName = "OFS_PARM3";
+            globalList[OFS_PARM3+1].GlobaldefName = "OFS_PARM3_y";
+            globalList[OFS_PARM3+2].GlobaldefName = "OFS_PARM3_z";
+            globalList[OFS_PARM4].GlobaldefName = "OFS_PARM4";
+            globalList[OFS_PARM4+1].GlobaldefName = "OFS_PARM4_y";
+            globalList[OFS_PARM4+2].GlobaldefName = "OFS_PARM4_z";
+            globalList[OFS_PARM5].GlobaldefName = "OFS_PARM5";
+            globalList[OFS_PARM5+1].GlobaldefName = "OFS_PARM5_y";
+            globalList[OFS_PARM5+2].GlobaldefName = "OFS_PARM5_z";
+            globalList[OFS_PARM6].GlobaldefName = "OFS_PARM6";
+            globalList[OFS_PARM6+1].GlobaldefName = "OFS_PARM6_y";
+            globalList[OFS_PARM6+2].GlobaldefName = "OFS_PARM6_z";
+            globalList[OFS_PARM7].GlobaldefName = "OFS_PARM7";
+            globalList[OFS_PARM7+1].GlobaldefName = "OFS_PARM7_y";
+            globalList[OFS_PARM7+2].GlobaldefName = "OFS_PARM7_z";
+            for(int i = 0; i < RESERVED_OFS; i++)
+            {
+                globalList[i].Kind = GlobalKind.Reserved;
+            }
+
+            // Match the globaldefs
+            for (int i = 1; i < globals.Count; i++)
+            {
+                Def gd = globals[i];
+                globalList[gd.ofs]._globaldef_type = gd.type;
+                globalList[gd.ofs]._globaldef_s_name = gd.s_name;
+                globalList[gd.ofs].Kind = GlobalKind.Globaldef;
+                if(globalList[gd.ofs].Type == Types.ev_vector)
+                {
+                    // Skip the following _x which has the same offset
+                    i++;
+                }
+            }
+
+            // Links by offset
+            foreach (Global g in globalList)
+            {
+                // If the globaldef is a function
+                if (g.Type == Types.ev_function)
+                {
+                    g.Kind = GlobalKind.Function;
+                    g.FunctionNumber = g.IntVal;
+                    g.FunctionName = functions[(int)g.FunctionNumber].name;
+                }
+
+                // If the globaldef is a field
+                if(g.Type == Types.ev_field)
+                {
+                    g.Kind = GlobalKind.Field;
+                    g.FieldNumber = g.IntVal;
+                    g.FieldName = fields[fieldsOffsetMap[(int)g.FieldNumber]].name;
+                    g._fields_type = fields[fieldsOffsetMap[(int)g.FieldNumber]].type;
+                }
+            }
+        }
+
+        void Print(string output)
+        {
+            for(int i = 0; i < indent; i++)
+            {
+                qcOutputFile.Write("    ");
+            }
+            qcOutputFile.Write(output);
+
+        }
+
+        void PrintLine(string output)
+        {
+            Print(output);
+            qcOutputFile.WriteLine("");
+        }
+
+        void DecompileFunctions(string folder)
+        {
+            qcOutputFile = new StreamWriter(folder + "newdecompilation.qc", false);    // overwrite
+            qcOutputFile.AutoFlush = true;
+
+            DecompileFunction(functions[66]);   // SUB_Null
+            DecompileFunction(functions[67]);   // SUB_Remove
+            DecompileFunction(functions[71]);   // SUB_CalcMove
+        }
+
+        Global GetGlobal(int offset)
+        {
+            if (offset > highestGlobalAccessed)
+            {
+                // this is a never-before-seen offset, must either be:
+                // immediate (if has globaldef info)
+                // anonymous store of value (if no globaldef info)
+                Global g = globalList[offset];
+                if(g.Name != null)
+                {
+                    // overwrite it with its value
+                    g.Kind = GlobalKind.Immediate;
+                    g.ValueSource = g.ImmediateValue;
+                }
+                else
+                {
+                    g.Kind = GlobalKind.Anonymous;
+                }
+            }
+            return globalList[offset];
+        }
+
+        void DecompileFunction(Function f)
+        {
+            // Return type
+            Print("voidTODO" + " ");
+
+            // Set the highestGlobalAccessed to the end of params and locals
+            // Otherwise it will trigger as an immediate when we process them
+            highestGlobalAccessed = f.parm_start + f.locals - 1;
+
+            // Parameters
+            int currentParmOffset = f.parm_start;
+            Print("( ");
+            for (int i = 0; i < f.numparms; i++)
+            {
+                Global parm = GetGlobal(currentParmOffset);
+                parm.Kind = GlobalKind.Parameter;
+                Print(parm.TypeCodeOutput + " " + parm.Name);
+                if (i < f.numparms - 1) { Print(", "); }
+
+                if (parm.Type == Types.ev_vector) { currentParmOffset += 3; }
+                else { currentParmOffset++; }
+            }
+            Print(" ) ");
+            Print(f.name);
+            PrintLine(" =");
+            PrintLine("{");
+            indent++;
+
+            // Locals
+            while ((currentParmOffset - f.parm_start) < f.locals)
+            {
+                Global local = GetGlobal(currentParmOffset);
+                local.Kind = GlobalKind.Local;
+                PrintLine("local " + local.TypeCodeOutput + " " + local.Name + ";");
+
+                if (local.Type == Types.ev_vector) { currentParmOffset += 3; }
+                else { currentParmOffset++; }
+            }
+
+            int sIndex = f.first_statement;
+            while (true)
+            {
+                DecompileStatementNew(f, sIndex);
+                if (statements[sIndex].op == 0)
+                    break;
+                sIndex++;
+            }
+
+            indent--;
+            PrintLine("};");
+            PrintLine("");
+        }
+
+        List<int> endofBlock = new List<int>(); // used to set statement numbers where indentation should be reduced
+
+        void DecompileStatementNew(Function f, int sIndex)
+        {
+            // If we have reached the end of an indentation block, undo it
+            if(endofBlock.Contains(sIndex))
+            {
+                indent--;
+                PrintLine("}");
+                PrintLine("");
+                endofBlock.Remove(sIndex);
+            }
+
+            Statement s = statements[sIndex];
+            Global a = GetGlobal(s.a);
+            Global b = GetGlobal(s.b);
+            Global c = GetGlobal(s.c);
+
+            switch (s.Opcode)
+            {
+
+                case Opcodes.OP_DONE:
+                    // end of function
+                    break;
+                case Opcodes.OP_RETURN:
+                    PrintLine("return; /* TODO retvalue? */");
+                    return;
+                case Opcodes.OP_CALL1:
+                    // call function a with pre-saved args in reserved globals
+                    string args = globalList[OFS_PARM0].ValueSource;
+                    if (statements[sIndex + 1].a != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
+                    {
+                        PrintLine(a.FunctionName + " ( " + args + " );");
+                    }
+                    else
+                    {
+                        // Otherwise save it for the next assignment to use
+                        globalList[OFS_RETURN].ValueSource = a.FunctionName + " ( " + args + " )";
+                    }
+                    break;
+                case Opcodes.OP_NOT_F:
+                    // c = !a
+                    if(c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
+                    {
+                        c.ValueSource = "!" + a.ValueToAssign;
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+                    }
+                    else
+                    {
+                        PrintLine(c.Name + " = !" + a.ValueToAssign + ";");
+                    }
+                    break;
+                case Opcodes.OP_EQ_V:
+                case Opcodes.OP_ADD_F:
+                case Opcodes.OP_SUB_V:
+                case Opcodes.OP_DIV_F:
+                case Opcodes.OP_MUL_VF:
+                case Opcodes.OP_LT:
+                    // c = a <operator> b
+                    string oper = pr_opcodes[s.op].name;
+                    if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
+                    {
+                        c.ValueSource = a.ValueToAssign + " " + oper + " " + b.ValueToAssign;
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+                    }
+                    else
+                    {
+                        PrintLine(c.Name + " = " + a.ValueToAssign + " " + oper + " " + b.ValueToAssign + ";");
+                    }
+                    break;
+                case Opcodes.OP_STORE_V:
+                case Opcodes.OP_STOREP_FNC:
+                case Opcodes.OP_STOREP_V:
+                case Opcodes.OP_STOREP_F:
+                case Opcodes.OP_STORE_F:
+                    // b = a
+                    if ((b.Kind == GlobalKind.Anonymous && b.ValueSource is null) || b.Kind == GlobalKind.Reserved)
+                    {
+                        b.ValueSource = a.ValueToAssign;
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
+                    }
+                    else
+                    {
+                        if (b.Kind == GlobalKind.Anonymous && b.ValueSource != null)
+                        {
+                            PrintLine(b.ValueSource + " = " + a.ValueToAssign + ";");
+                        }
+                        else
+                        {
+                            PrintLine(b.Name + " = " + a.ValueToAssign + ";");
+                        }
+                    }
+                    break;
+                case Opcodes.OP_IFNOT:
+                    PrintLine("");
+                    PrintLine("if ( " + a.ValueToAssign + " )");
+                    PrintLine("{");
+                    indent++;
+                    endofBlock.Add(sIndex + s.b);
+                    break;
+                case Opcodes.OP_ADDRESS:
+                case Opcodes.OP_LOAD_V:
+                case Opcodes.OP_LOAD_F:
+                    // c = a.b
+                    if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
+                    {
+                        c.ValueSource = a.ValueToAssign + "." + b.ValueToAssign;
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+                    }
+                    else
+                    {
+                        PrintLine(c.Name + " = " + a.ValueToAssign + "." + b.ValueToAssign + ";");
+                    }
+                    break;
+                default:
+                    PrintLine("// *** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
+                    break;
+            }
+
+        }
+    }
+}

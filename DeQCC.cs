@@ -166,6 +166,9 @@ namespace DeQcc
         const int OFS_PARM2 = 10;
         const int OFS_PARM3 = 13;
         const int OFS_PARM4 = 16;
+        const int OFS_PARM5 = 19;
+        const int OFS_PARM6 = 22;
+        const int OFS_PARM7 = 25;
         const int RESERVED_OFS = 28;
 
         List<Opcode> pr_opcodes = new List<Opcode>();
@@ -588,7 +591,7 @@ namespace DeQcc
             i = 0;
             foreach (float f in pr_globals)
             {
-                outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)));
+                outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)) + "," + BitConverter.ToString(BitConverter.GetBytes(f)));
             }
             outfile.Close();
         }
@@ -850,11 +853,6 @@ namespace DeQcc
 
             df = functions[funcIndex];
             findex = funcIndex;
-
-            if(df.name == "SUB_CalcMove")
-            {
-                Console.WriteLine("BREAKPOINT");
-            }
 
             // Capture any information (function defs, globals etc) between the previous function and this one
             dfpred = functions[findex - 1];
@@ -1128,7 +1126,7 @@ namespace DeQcc
 
         string? Get(Function df, int ofs, Types? req_t)
         {
-            string arg1 = Global(ofs, req_t);
+            string arg1 = GlobalVal(ofs, req_t);
             if (arg1 == null)
             {
                 arg1 = Immediate(df, ofs, 2, null);
@@ -1136,7 +1134,7 @@ namespace DeQcc
             return arg1;
         }
 
-        string? Global(int ofs, Types? req_t)
+        string? GlobalVal(int ofs, Types? req_t)
         {
             Def? def = null;
             string line = "";
@@ -1305,7 +1303,7 @@ namespace DeQcc
             {
                 arg1 = Get(df, s.a, typ1);
                 arg2 = Get(df, s.b, typ2);
-                arg3 = Global(s.c, typ3);
+                arg3 = GlobalVal(s.c, typ3);
 
                 if (arg3 != null)
                 {
@@ -1322,7 +1320,7 @@ namespace DeQcc
             {
                 arg1 = Get(df, s.a, typ1);
                 arg2 = Get(df, s.b, typ2);
-                arg3 = Global(s.c, typ3);
+                arg3 = GlobalVal(s.c, typ3);
 
                 if (arg3 != null)
                 {
@@ -1338,7 +1336,7 @@ namespace DeQcc
             else if ((ushort)Opcodes.OP_STORE_F <= s.op && s.op <= (ushort)Opcodes.OP_STORE_FNC)
             {
                 arg1 = Get(df, s.a, typ1);
-                arg3 = Global(s.b, typ2);
+                arg3 = GlobalVal(s.b, typ2);
 
                 if (arg3 != null)
                 {
@@ -1410,7 +1408,7 @@ namespace DeQcc
             else if (s.op == (ushort)Opcodes.OP_IF || s.op == (ushort)Opcodes.OP_IFNOT)
             {
                 arg1 = Get(df, s.a, null);
-                arg2 = Global(s.a, null);
+                arg2 = GlobalVal(s.a, null);
 
                 if (s.op == (ushort)Opcodes.OP_IFNOT)
                 {

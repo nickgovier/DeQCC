@@ -10,9 +10,11 @@ namespace DeQcc
         static void Main(string[] args)
         {
             DeQCC p = new DeQCC();
-            p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\vanillaoutput\\");
-            p = new DeQCC();
-            p.DecompileProgsDat("obots102progs.dat", Directory.GetCurrentDirectory() + "\\obotsoutput\\");
+            //p.DecompileProgsDat("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\vanillaoutput\\");
+            p.NewDecompilation("vanillaprogs.dat", Directory.GetCurrentDirectory() + "\\vanillaoutput\\");
+            //p = new DeQCC();
+            //p.DecompileProgsDat("obots102progs.dat", Directory.GetCurrentDirectory() + "\\obotsoutput\\");
+            
         }
     }
 }
