@@ -4,7 +4,6 @@ voidTODO () SUB_Null =
 
 voidTODO () SUB_Remove =
 {
-    // OP_STORE_V 28 4 0 => 4 = self
     remove(self);
 };
 
@@ -16,7 +15,6 @@ voidTODO (vector tdest, float tspeed, void() func) SUB_CalcMove =
     
     if(!tspeed)
     {
-        // OP_STORE_V 588 4 0 => 4 = "No speed is defined!"
         objerror("No speed is defined!");
     }
     
@@ -32,7 +30,6 @@ voidTODO (vector tdest, float tspeed, void() func) SUB_CalcMove =
     }
     
     vdestdelta = tdest - self.origin;
-    // OP_STORE_V 582 4 0 => 4 = vdestdelta
     len = vlen(vdestdelta);
     traveltime = len / tspeed;
     
@@ -55,11 +52,6 @@ voidTODO () finale_4 =
     local float z;
     local float r;
     local entity n;
-    // OP_STORE_V 28 4 0 => 4 = self
-    // OP_STORE_V 322 7 0 => 7 = CHAN_VOICE
-    // OP_STORE_V 11462 10 0 => 10 = "boss2/pop2.wav"
-    // OP_STORE_V 9491 13 0 => 13 = 
-    // OP_STORE_V 326 16 0 => 16 = ATTN_NORM
     sound(self, CHAN_VOICE, "boss2/pop2.wav", , ATTN_NORM);
     oldo = self.origin;
     z = SECRET_YES_SHOOT;
@@ -80,20 +72,14 @@ voidTODO () finale_4 =
                 r = random();
                 if(r < IMMEDIATE)
                 {
-                    // OP_STORE_V 3852 4 0 => 4 = IMMEDIATE
-                    // OP_STORE_V 11477 7 0 => 7 = -999.000
                     ThrowGib(IMMEDIATE, -999.000);
                 }
                 else if(r < IMMEDIATE)
                 {
-                    // OP_STORE_V 3853 4 0 => 4 = IMMEDIATE
-                    // OP_STORE_V 11477 7 0 => 7 = -999.000
                     ThrowGib(IMMEDIATE, -999.000);
                 }
                 else                
                 {
-                    // OP_STORE_V 3854 4 0 => 4 = IMMEDIATE
-                    // OP_STORE_V 11477 7 0 => 7 = -999.000
                     ThrowGib(IMMEDIATE, -999.000);
                 }
                 
@@ -106,35 +92,63 @@ voidTODO () finale_4 =
         z = z + IMMEDIATE;
     }
     
-    // OP_STORE_V 339 4 0 => 4 = MSG_ALL
-    // OP_STORE_V 305 7 0 => 7 = SVC_FINALE
     WriteByte(MSG_ALL, SVC_FINALE);
-    // OP_STORE_V 339 4 0 => 4 = MSG_ALL
-    // OP_STORE_V 11482 7 0 => 7 = "Congratulations and well done! You have\nbeaten the hideous Shub-Niggurath, and\nher hundreds of ugly changelings and\nmonsters. You have proven that your\nskill and your cunning are greater than\nall the powers of Quake. You are the\nmaster now. Id Software salutes you."
     WriteString(MSG_ALL, "Congratulations and well done! You have\nbeaten the hideous Shub-Niggurath, and\nher hundreds of ugly changelings and\nmonsters. You have proven that your\nskill and your cunning are greater than\nall the powers of Quake. You are the\nmaster now. Id Software salutes you.");
-    // *** UNPROCESSED OPCODE OP_STORE_ENT 1 11461 0
-    // OP_STORE_V 11461 4 0 => 4 = n
-    // OP_STORE_V 3849 7 0 => 7 = IMMEDIATE
+    n = spawn();
     setmodel(n, IMMEDIATE);
     oldo = oldo - '32.000 264.000 0.000';
-    // OP_STORE_V 11461 4 0 => 4 = n
-    // OP_STORE_V 11454 7 0 => 7 = oldo
     setorigin(n, oldo);
     n.angles = ;
     n.frame = ;
-    // OP_STORE_V 28 4 0 => 4 = self
     remove(self);
-    // OP_STORE_V 339 4 0 => 4 = MSG_ALL
-    // OP_STORE_V 306 7 0 => 7 = SVC_CDTRACK
     WriteByte(MSG_ALL, SVC_CDTRACK);
-    // OP_STORE_V 339 4 0 => 4 = MSG_ALL
-    // OP_STORE_V 370 7 0 => 7 = AS_MELEE
     WriteByte(MSG_ALL, AS_MELEE);
-    // OP_STORE_V 339 4 0 => 4 = MSG_ALL
-    // OP_STORE_V 370 7 0 => 7 = AS_MELEE
     WriteByte(MSG_ALL, AS_MELEE);
-    // OP_STORE_V 337 4 0 => 4 = MSG_BROADCAST
-    // OP_STORE_V 3860 7 0 => 7 = IMMEDIATE
     lightstyle(MSG_BROADCAST, IMMEDIATE);
+};
+
+voidTODO () door_fire =
+{
+    local entity oself;
+    local entity starte;
+    
+    if(self.owner != self)
+    {
+        objerror("door_fire: self.owner != self");
+    }
+    
+    
+    if(self.items)
+    {
+        sound(self, CHAN_ITEM, self.noise4, DOOR_START_OPEN, ATTN_NORM);
+    }
+    
+    self.message = string_null;
+    oself = self;
+    
+    if(self.spawnflags & DOOR_TOGGLE)
+    {
+        
+        if((self.state == STATE_UP) || (self.state == STATE_TOP))
+        {
+            starte = self;
+            do
+            {
+                door_go_down();
+                self = self.enemy;
+            } while ((self != starte) && (self != world));
+            self = oself;
+            return; /* TODO retvalue? */
+        }
+        
+    }
+    
+    starte = self;
+    do
+    {
+        door_go_up();
+        self = self.enemy;
+    } while ((self != starte) && (self != world));
+    self = oself;
 };
 

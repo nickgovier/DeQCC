@@ -399,6 +399,10 @@ namespace DeQcc
             DecompileFunction(functions[67]);   // subs.qc SUB_Remove
             DecompileFunction(functions[71]);   // subs.qc SUB_CalcMove
             DecompileFunction(functions[2088]); // oldone.qc finale_4
+
+            DecompileFunction(functions[380]); // doors.qc DoorFire
+            //DecompileFunction(functions[77]); // subs.qc SUB_UseTargets
+            //DecompileFunction(functions[387]); // doors.qc LinkDoors
         }
 
         Global GetGlobal(int offset)
@@ -425,8 +429,27 @@ namespace DeQcc
             return globalList[offset];
         }
 
+        List<int> startOfDoLoop = new List<int>();
+
         void DecompileFunction(Function f)
         {
+            //  Check for OP_IF codes which encode do while loops
+            startOfDoLoop.Clear();
+            int sIndex = f.first_statement;
+            while (true)
+            {
+                if (statements[sIndex].Opcode == Opcodes.OP_IF)
+                {
+                    // store the start statement of the do loop
+                    startOfDoLoop.Add(sIndex + statements[sIndex].b);
+                }
+                if (statements[sIndex].Opcode == Opcodes.OP_DONE)
+                {
+                    break;
+                }
+                sIndex++;
+            }
+
             // Return type
             Print("voidTODO" + " ");
 
@@ -464,7 +487,7 @@ namespace DeQcc
                 else { currentParmOffset++; }
             }
 
-            int sIndex = f.first_statement;
+            sIndex = f.first_statement;
             while (true)
             {
                 DecompileStatementNew(f, sIndex);
@@ -483,12 +506,19 @@ namespace DeQcc
         void DecompileStatementNew(Function f, int sIndex)
         {
             // If we have reached the end of an indentation block, undo it
-            if(endofBlock.Contains(sIndex))
+            while(endofBlock.Contains(sIndex))  // while as there might be more than one block ending on this statement
             {
                 indent--;
                 PrintLine("}");
                 PrintLine("");
                 endofBlock.Remove(sIndex);
+            }
+
+            while(startOfDoLoop.Contains(sIndex))   // probably only one do loop starting here, but while just in case...
+            {
+                PrintLine("do");
+                PrintLine("{");
+                indent++;
             }
 
             Statement s = statements[sIndex];
@@ -553,6 +583,11 @@ namespace DeQcc
                 case Opcodes.OP_MUL_VF:
                 case Opcodes.OP_LT:
                 case Opcodes.OP_LE:
+                case Opcodes.OP_NE_E:
+                case Opcodes.OP_BITAND:
+                case Opcodes.OP_EQ_F:
+                case Opcodes.OP_OR:
+                case Opcodes.OP_AND:
                     // c = a <operator> b
                     string oper = pr_opcodes[s.op].name;
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
@@ -570,11 +605,13 @@ namespace DeQcc
                 case Opcodes.OP_STOREP_V:
                 case Opcodes.OP_STOREP_F:
                 case Opcodes.OP_STORE_F:
+                case Opcodes.OP_STOREP_S:
+                case Opcodes.OP_STORE_ENT:
                     // b = a
                     if ((b.Kind == GlobalKind.Anonymous && b.ValueSource is null) || b.Kind == GlobalKind.Reserved)
                     {
                         b.ValueSource = a.ValueToAssign;
-                        PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
                     }
                     else
                     {
@@ -665,9 +702,16 @@ namespace DeQcc
                         PrintLine("");
                     }
                     break;
+                case Opcodes.OP_IF:
+                    // end of a do loop
+                    indent--;
+                    PrintLine("} while (" + a.ValueToAssign + ");");
+                    break;
                 case Opcodes.OP_ADDRESS:
                 case Opcodes.OP_LOAD_V:
                 case Opcodes.OP_LOAD_F:
+                case Opcodes.OP_LOAD_ENT:
+                case Opcodes.OP_LOAD_S:
                     // c = a.b
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
