@@ -395,14 +395,21 @@ namespace DeQcc
             qcOutputFile = new StreamWriter(folder + "newdecompilation.qc", false);    // overwrite
             qcOutputFile.AutoFlush = true;
 
+            for(int i = 66; i < functions.Count; i++)
+            {
+                DecompileFunction(functions[i]);
+            }
+            /*
             DecompileFunction(functions[66]);   // subs.qc SUB_Null
             DecompileFunction(functions[67]);   // subs.qc SUB_Remove
             DecompileFunction(functions[71]);   // subs.qc SUB_CalcMove
-            DecompileFunction(functions[2088]); // oldone.qc finale_4
 
             DecompileFunction(functions[380]); // doors.qc DoorFire
             //DecompileFunction(functions[77]); // subs.qc SUB_UseTargets
             //DecompileFunction(functions[387]); // doors.qc LinkDoors
+
+            DecompileFunction(functions[2088]); // oldone.qc finale_4
+            */
         }
 
         Global GetGlobal(int offset)
@@ -433,7 +440,7 @@ namespace DeQcc
 
         void DecompileFunction(Function f)
         {
-            //  Check for OP_IF codes which encode do while loops
+            //  Check for OP_IF codes in this function, which encode do while loops
             startOfDoLoop.Clear();
             int sIndex = f.first_statement;
             while (true)
@@ -443,6 +450,20 @@ namespace DeQcc
                     // store the start statement of the do loop
                     startOfDoLoop.Add(sIndex + statements[sIndex].b);
                 }
+                if (statements[sIndex].Opcode == Opcodes.OP_DONE)
+                {
+                    break;
+                }
+                sIndex++;
+            }
+
+            // Print the bytecode
+            PrintLine("// " + f.name);
+            PrintLine("// function begins at statement " + f.first_statement);
+            sIndex = f.first_statement;
+            while (true)
+            {
+                PrintLine(statements[sIndex].ToString());
                 if (statements[sIndex].Opcode == Opcodes.OP_DONE)
                 {
                     break;
@@ -511,14 +532,16 @@ namespace DeQcc
                 indent--;
                 PrintLine("}");
                 PrintLine("");
-                endofBlock.Remove(sIndex);
+                endofBlock.Remove(sIndex);  // Removes first occurrence
             }
 
+            // If we are beginning a do while loop
             while(startOfDoLoop.Contains(sIndex))   // probably only one do loop starting here, but while just in case...
             {
                 PrintLine("do");
                 PrintLine("{");
                 indent++;
+                startOfDoLoop.Remove(sIndex);   // Removes first occurrence
             }
 
             Statement s = statements[sIndex];
@@ -588,6 +611,7 @@ namespace DeQcc
                 case Opcodes.OP_EQ_F:
                 case Opcodes.OP_OR:
                 case Opcodes.OP_AND:
+                case Opcodes.OP_NE_V:
                     // c = a <operator> b
                     string oper = pr_opcodes[s.op].name;
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
@@ -607,6 +631,7 @@ namespace DeQcc
                 case Opcodes.OP_STORE_F:
                 case Opcodes.OP_STOREP_S:
                 case Opcodes.OP_STORE_ENT:
+                case Opcodes.OP_STOREP_ENT:
                     // b = a
                     if ((b.Kind == GlobalKind.Anonymous && b.ValueSource is null) || b.Kind == GlobalKind.Reserved)
                     {
@@ -712,6 +737,7 @@ namespace DeQcc
                 case Opcodes.OP_LOAD_F:
                 case Opcodes.OP_LOAD_ENT:
                 case Opcodes.OP_LOAD_S:
+                case Opcodes.OP_LOAD_FNC:
                     // c = a.b
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
