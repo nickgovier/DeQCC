@@ -589,35 +589,40 @@ namespace DeQcc
                     }
                     break;
                 case Opcodes.OP_IFNOT:
-                    // while
+                    // Check for a while loop
                     if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a == -s.b)
                     {
+                        // while loops jump forward to just after a GOTO which jumps back to the statement before this IFNOT
                         // this IFNOT jumps to just beyond a GOTO, which jumps back to just before the IFNOT, i.e. to the comparator => while loop
                         PrintLine("");
                         PrintLine("while(" + a.ValueToAssign + ")");
-                        statements[sIndex + s.b - 1].gotoType = GotoType.EndWhile;
+                        statements[sIndex + s.b - 1].gotoType = GotoType.EndWhile;  // Inform the future that the GOTO is the end of this while loop
                     }
-                    // if/else/else if
+                    // Must be an if block
                     else
                     {
-                        // Set the desination info corrently
+                        // IFNOTs that jump just beyond a GOTO have a subsequent else if/else (which the GOTO skips over), otherwise it's an if with no else
+
+                        // Set the desination info correctly:
                         if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a >= 0)
                         {
                             // this IFNOT jumps to just beyond a GOTO, which jumps forward, i.e. over an else/else if term
+                            // the GOTO will handle the indendation
                             statements[sIndex + s.b - 1].gotoType = GotoType.EndIf;
                         }
                         else
                         {
-                            // there is no subsequent block, so register the end of block to undo the indentation
+                            // there is no subsequent block, so remember to undo the indentation at the end of the block
                             PrintLine("");
                             endofBlock.Add(sIndex + s.b);   // Note when to undo the if indentation, as we don't have a goto to do it
                         }
 
-                        // Now decide what to print
+                        // Now decide what to print for this if
                         if (statements[sIndex - 2].Opcode == Opcodes.OP_GOTO)
                         {
-                            // If we have just come from a goto, must be an else if
-                            // the "else" will be printed by the GOTO
+                            // If we have just come from a GOTO, this must be an else if
+                            // the "else" will have been printed by the GOTO, so just append the " if"
+                            // temporarily remove the indentation to avoid extra whitespace
                             ushort saveIndent = indent;
                             indent = 0;
                             PrintLine(" if(" + a.ValueToAssign + ")");
@@ -625,6 +630,7 @@ namespace DeQcc
                         }
                         else
                         {
+                            // There is no preceeding GOTO (i.e. previous part of an if block), so start one
                             PrintLine("if(" + a.ValueToAssign + ")");
                         }
                     }
@@ -632,25 +638,30 @@ namespace DeQcc
                     indent++;
                     break;
                 case Opcodes.OP_GOTO:
+                    // GOTO might be the end of a while or the end of a if/else if
+                    // Close the current scope
                     indent--;
                     PrintLine("}");
                     if (s.gotoType == GotoType.EndIf)
                     {
+                        // This GOTO is part of an if block, and only exists if there is an else block
                         Print("else");
                         if (statements[sIndex + 2].Opcode == Opcodes.OP_IFNOT)
                         {
-                            // Goes straight into another if, i.e. this is an else if
-                            // the rest of the block will be printed by the IFNOT
+                            // Goes straight into another if, i.e. this is the start of an else if block
+                            // the rest of the block will be printed by the subsequent IFNOT
                         }
                         else
                         {
+                            // this is the final block, just an else, not an else if
                             PrintLine("");
                             PrintLine("{");
                             indent++;
-                            endofBlock.Add(sIndex + s.a);
+                            endofBlock.Add(sIndex + s.a);   // make sure we unwind this block as there will be no IFNOT or GOTO to do so
                         }
                     } else if(s.gotoType == GotoType.EndWhile)
                     {
+                        // Newline after the while block just for clarity
                         PrintLine("");
                     }
                     break;
