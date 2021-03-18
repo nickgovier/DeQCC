@@ -89,7 +89,7 @@ namespace DeQcc
         OP_BITOR
     }
 
-    class Statement
+    partial class Statement
     {
         public ushort op;
         public short a, b, c;

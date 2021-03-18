@@ -5,6 +5,11 @@ using System.Text;
 
 namespace DeQcc
 {
+    enum GotoType { None, EndWhile, EndIf }
+    partial class Statement
+    {
+        public GotoType gotoType;   // Just used for GOTOs to properly process the end of IFNOT blocks
+    }
 
     enum GlobalKind
     {
@@ -37,6 +42,7 @@ namespace DeQcc
             }
         }
 
+        // Kind.Globaldef
         public ushort? _globaldef_type;
         public int? _globaldef_s_name;
         private string? _globaldef_name_overwrite;
@@ -118,10 +124,12 @@ namespace DeQcc
             }
         }
 
+        // Kind.Function
         // If this global is an offset to a function
         public int? FunctionNumber;
         public string? FunctionName;
 
+        // Kind.Field
         // If this global is an offset to a field
         public int? FieldNumber;
         public string? FieldName;
@@ -144,13 +152,15 @@ namespace DeQcc
         {
             get
             {
-                if(FunctionNumber > 0 && FunctionName != null)
+                if (Kind == GlobalKind.Function)
                 {
-                    return FunctionName;
+                    if (FunctionNumber > 0) { return FunctionName; }
+                    return null;
                 }
-                if(FieldNumber > 0 && FieldName != null)
+                if (Kind == GlobalKind.Field)
                 {
-                    return FieldName;
+                    if (FieldNumber > 0) { return FieldName; }
+                    return null;
                 }
                 if (_globaldef_name_overwrite != null)
                 {
@@ -165,29 +175,22 @@ namespace DeQcc
         }
 
         // if this is an immediate string, get the string pointed to and escape special chars before returning
-        private string CleanseString()
+        private string CleanseImmediateString()
         {
-            StringBuilder buf = new StringBuilder();
-            buf.Append('"');
-            foreach (char chr in strings[stringOffsetMap[(int)IntVal]])
+            string stringToCleanse = strings[stringOffsetMap[(int)IntVal]];
+            for(int i = 0; i < stringToCleanse.Length; i++)
             {
-                if (chr == '\n')
+                // Can't use string.Replace as need to replace char with string
+                if(stringToCleanse[i] == '\n')
                 {
-                    buf.Append('\\');
-                    buf.Append('n');
+                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\n" + stringToCleanse.Substring(i + 1);
                 }
-                else if (chr == '"')
+                if(stringToCleanse[i] == '\"')
                 {
-                    buf.Append('\\');
-                    buf.Append('"');
-                }
-                else
-                {
-                    buf.Append(chr);
+                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\" + '"' + stringToCleanse.Substring(i + 1);
                 }
             }
-            buf.Append('"');
-            return buf.ToString();
+            return '"' + stringToCleanse + '"';
         }
 
         public static List<Global> globalList;
@@ -199,7 +202,7 @@ namespace DeQcc
                 switch (Type)
                 {
                     case Types.ev_string:
-                        return CleanseString();
+                        return CleanseImmediateString();
                     case Types.ev_void:
                         return "void";
                     case Types.ev_float:
@@ -207,7 +210,7 @@ namespace DeQcc
                     case Types.ev_vector:
                         return "'" + FloatVal.ToString("F3") + " " + (globalList[id + 1].FloatVal).ToString("F3") + " " + (globalList[id + 2].FloatVal).ToString("F3") + "'";
                     default:
-                        return "bad type " + Type;
+                        return "/* ERROR ImmediateValue for " + Type + " */";
                 }
             }
         }
@@ -219,11 +222,6 @@ namespace DeQcc
             {
                 if (Kind == GlobalKind.Anonymous || Kind == GlobalKind.Immediate || Kind == GlobalKind.Reserved)
                 {
-                    // TODO check this more robustly
-                    if (ValueSource.Contains('+') || ValueSource.Contains('-') || ValueSource.Contains('*') || ValueSource.Contains('/'))
-                    {
-                        return "(" + ValueSource + ")";
-                    }
                     return ValueSource;
                 }
                 else
@@ -240,6 +238,34 @@ namespace DeQcc
         //Dictionary<int, string> globalMap = new Dictionary<int, string>();
         List<Global> globalList = new List<Global>();
         ushort indent = 0;
+
+        // Check for presence of operators in the string, and if so, bracket it
+        // used when combining two potential calculations, e.g. a + b
+        // to check whether a or b need brackets
+        // Note this doesn't actually check for precedence, it just brackets
+        // operations in the order they were performed in bytecode (thus
+        // preserving the original precedence from the source file)
+        string CheckPrecedence(string input)
+        {
+            if(input.Contains("+") ||
+                input.Contains("-") ||
+                input.Contains("*") ||
+                input.Contains("/") ||
+                input.Contains("==") ||
+                input.Contains("!=") ||
+                input.Contains("<=") ||
+                input.Contains(">=") ||
+                input.Contains("<") ||
+                input.Contains(">") ||
+                input.Contains("&&") ||
+                input.Contains("||") ||
+                input.Contains("&") ||
+                input.Contains("|"))
+            {
+                return "(" + input + ")";
+            }
+            return input;
+        }
 
         public void NewDecompilation(string name, string outputfolder)
         {
@@ -369,20 +395,23 @@ namespace DeQcc
             qcOutputFile = new StreamWriter(folder + "newdecompilation.qc", false);    // overwrite
             qcOutputFile.AutoFlush = true;
 
-            DecompileFunction(functions[66]);   // SUB_Null
-            DecompileFunction(functions[67]);   // SUB_Remove
-            DecompileFunction(functions[71]);   // SUB_CalcMove
+            DecompileFunction(functions[66]);   // subs.qc SUB_Null
+            DecompileFunction(functions[67]);   // subs.qc SUB_Remove
+            DecompileFunction(functions[71]);   // subs.qc SUB_CalcMove
+            DecompileFunction(functions[2088]); // oldone.qc finale_4
         }
 
         Global GetGlobal(int offset)
         {
+            if(offset < 0) { return null; } // e.g. OP_GOTO which jumps backwards has negative s.a
+
             if (offset > highestGlobalAccessed)
             {
                 // this is a never-before-seen offset, must either be:
                 // immediate (if has globaldef info)
                 // anonymous store of value (if no globaldef info)
                 Global g = globalList[offset];
-                if(g.Name != null)
+                if(g.Kind == GlobalKind.Globaldef)  // was listed in globaldefs, must be immediate
                 {
                     // overwrite it with its value
                     g.Kind = GlobalKind.Immediate;
@@ -407,7 +436,7 @@ namespace DeQcc
 
             // Parameters
             int currentParmOffset = f.parm_start;
-            Print("( ");
+            Print("(");
             for (int i = 0; i < f.numparms; i++)
             {
                 Global parm = GetGlobal(currentParmOffset);
@@ -418,7 +447,7 @@ namespace DeQcc
                 if (parm.Type == Types.ev_vector) { currentParmOffset += 3; }
                 else { currentParmOffset++; }
             }
-            Print(" ) ");
+            Print(") ");
             Print(f.name);
             PrintLine(" =");
             PrintLine("{");
@@ -476,29 +505,45 @@ namespace DeQcc
                 case Opcodes.OP_RETURN:
                     PrintLine("return; /* TODO retvalue? */");
                     return;
+                case Opcodes.OP_CALL0:
                 case Opcodes.OP_CALL1:
+                case Opcodes.OP_CALL2:
+                case Opcodes.OP_CALL3:
+                case Opcodes.OP_CALL4:
+                case Opcodes.OP_CALL5:
+                case Opcodes.OP_CALL6:
+                case Opcodes.OP_CALL7:
+                case Opcodes.OP_CALL8:
+                    // Get the args
+                    int numargs = s.Opcode - Opcodes.OP_CALL0;
+                    string args = "";
+                    for(int i = 0; i < numargs; i++)
+                    {
+                        args += globalList[OFS_PARM0 + 3*i].ValueSource;
+                        if(i < numargs - 1) { args += ", "; }
+                    }
+
                     // call function a with pre-saved args in reserved globals
-                    string args = globalList[OFS_PARM0].ValueSource;
                     if (statements[sIndex + 1].a != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
                     {
-                        PrintLine(a.FunctionName + " ( " + args + " );");
+                        PrintLine(a.FunctionName + "(" + args + ");");
                     }
                     else
                     {
                         // Otherwise save it for the next assignment to use
-                        globalList[OFS_RETURN].ValueSource = a.FunctionName + " ( " + args + " )";
+                        globalList[OFS_RETURN].ValueSource = a.FunctionName + "(" + args + ")";
                     }
                     break;
                 case Opcodes.OP_NOT_F:
                     // c = !a
                     if(c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
-                        c.ValueSource = "!" + a.ValueToAssign;
+                        c.ValueSource = "!" + CheckPrecedence(a.ValueToAssign);
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
                     }
                     else
                     {
-                        PrintLine(c.Name + " = !" + a.ValueToAssign + ";");
+                        PrintLine(c.Name + " = !" + CheckPrecedence(a.ValueToAssign) + ";");
                     }
                     break;
                 case Opcodes.OP_EQ_V:
@@ -507,16 +552,17 @@ namespace DeQcc
                 case Opcodes.OP_DIV_F:
                 case Opcodes.OP_MUL_VF:
                 case Opcodes.OP_LT:
+                case Opcodes.OP_LE:
                     // c = a <operator> b
                     string oper = pr_opcodes[s.op].name;
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
-                        c.ValueSource = a.ValueToAssign + " " + oper + " " + b.ValueToAssign;
+                        c.ValueSource = CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign);
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
                     }
                     else
                     {
-                        PrintLine(c.Name + " = " + a.ValueToAssign + " " + oper + " " + b.ValueToAssign + ";");
+                        PrintLine(c.Name + " = " + CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign) + ";");
                     }
                     break;
                 case Opcodes.OP_STORE_V:
@@ -528,7 +574,7 @@ namespace DeQcc
                     if ((b.Kind == GlobalKind.Anonymous && b.ValueSource is null) || b.Kind == GlobalKind.Reserved)
                     {
                         b.ValueSource = a.ValueToAssign;
-                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
+                        PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
                     }
                     else
                     {
@@ -543,11 +589,70 @@ namespace DeQcc
                     }
                     break;
                 case Opcodes.OP_IFNOT:
-                    PrintLine("");
-                    PrintLine("if ( " + a.ValueToAssign + " )");
+                    // while
+                    if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a == -s.b)
+                    {
+                        // this IFNOT jumps to just beyond a GOTO, which jumps back to just before the IFNOT, i.e. to the comparator => while loop
+                        PrintLine("");
+                        PrintLine("while(" + a.ValueToAssign + ")");
+                        statements[sIndex + s.b - 1].gotoType = GotoType.EndWhile;
+                    }
+                    // if/else/else if
+                    else
+                    {
+                        // Set the desination info corrently
+                        if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a >= 0)
+                        {
+                            // this IFNOT jumps to just beyond a GOTO, which jumps forward, i.e. over an else/else if term
+                            statements[sIndex + s.b - 1].gotoType = GotoType.EndIf;
+                        }
+                        else
+                        {
+                            // there is no subsequent block, so register the end of block to undo the indentation
+                            PrintLine("");
+                            endofBlock.Add(sIndex + s.b);   // Note when to undo the if indentation, as we don't have a goto to do it
+                        }
+
+                        // Now decide what to print
+                        if (statements[sIndex - 2].Opcode == Opcodes.OP_GOTO)
+                        {
+                            // If we have just come from a goto, must be an else if
+                            // the "else" will be printed by the GOTO
+                            ushort saveIndent = indent;
+                            indent = 0;
+                            PrintLine(" if(" + a.ValueToAssign + ")");
+                            indent = saveIndent;
+                        }
+                        else
+                        {
+                            PrintLine("if(" + a.ValueToAssign + ")");
+                        }
+                    }
                     PrintLine("{");
                     indent++;
-                    endofBlock.Add(sIndex + s.b);
+                    break;
+                case Opcodes.OP_GOTO:
+                    indent--;
+                    PrintLine("}");
+                    if (s.gotoType == GotoType.EndIf)
+                    {
+                        Print("else");
+                        if (statements[sIndex + 2].Opcode == Opcodes.OP_IFNOT)
+                        {
+                            // Goes straight into another if, i.e. this is an else if
+                            // the rest of the block will be printed by the IFNOT
+                        }
+                        else
+                        {
+                            PrintLine("");
+                            PrintLine("{");
+                            indent++;
+                            endofBlock.Add(sIndex + s.a);
+                        }
+                    } else if(s.gotoType == GotoType.EndWhile)
+                    {
+                        PrintLine("");
+                    }
                     break;
                 case Opcodes.OP_ADDRESS:
                 case Opcodes.OP_LOAD_V:
