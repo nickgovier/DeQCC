@@ -2,7 +2,6 @@ void() player_run;
 void() SpawnBlood;
 void() SuperDamageSound;
 void() W_Precache;
-string IMMEDIATE;
 // W_Precache
 // function begins at statement 3409
 OP_STORE_V	2616	4	0
@@ -47,7 +46,6 @@ voidTODO () W_Precache =
 };
 
 void() crandom;
-/* ERROR: NULL TYPE */ ;
 // crandom
 // function begins at statement 3434
 OP_CALL0	452	0	0
@@ -63,7 +61,6 @@ voidTODO () crandom =
 };
 
 void() W_FireAxe;
-vector source;
 // W_FireAxe
 // function begins at statement 3439
 OP_LOAD_V	28	175	2638
@@ -156,7 +153,6 @@ voidTODO () W_FireAxe =
 };
 
 void() wall_velocity;
-vector vel;
 // wall_velocity
 // function begins at statement 3494
 OP_LOAD_V	28	113	2670
@@ -200,7 +196,6 @@ voidTODO () wall_velocity =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() SpawnMeatSpray;
-vector org;
 // SpawnMeatSpray
 // function begins at statement 3516
 OP_CALL0	459	0	0
@@ -262,7 +257,6 @@ voidTODO (vector org, vector vel) SpawnMeatSpray =
     setorigin(missile, org);
 };
 
-vector org;
 // SpawnBlood
 // function begins at statement 3554
 OP_MUL_VF	2732	603	2736
@@ -280,7 +274,6 @@ voidTODO (vector org, vector vel, float damage) SpawnBlood =
 };
 
 void() spawn_touchblood;
-float damage;
 // spawn_touchblood
 // function begins at statement 3562
 OP_CALL0	2666	0	0
@@ -305,7 +298,6 @@ voidTODO (float damage) spawn_touchblood =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() SpawnChunk;
-vector org;
 // SpawnChunk
 // function begins at statement 3573
 OP_MUL_VF	2763	2766	2767
@@ -325,7 +317,6 @@ voidTODO (vector org, vector vel) SpawnChunk =
 entity multi_ent;
 float multi_damage;
 void() ClearMultiDamage;
-void() ApplyMultiDamage;
 // ClearMultiDamage
 // function begins at statement 3580
 OP_STORE_ENT	30	2770	0
@@ -337,7 +328,7 @@ voidTODO () ClearMultiDamage =
     multi_damage = 0.000;
 };
 
-/* ERROR: NULL TYPE */ ;
+void() ApplyMultiDamage;
 // ApplyMultiDamage
 // function begins at statement 3583
 OP_NOT_ENT	2770	0	2774
@@ -362,7 +353,6 @@ voidTODO () ApplyMultiDamage =
 };
 
 void() AddMultiDamage;
-entity hit;
 // AddMultiDamage
 // function begins at statement 3592
 OP_NOT_ENT	2776	0	2778
@@ -400,7 +390,6 @@ voidTODO (entity hit, float damage) AddMultiDamage =
 };
 
 void() TraceAttack;
-float damage;
 // TraceAttack
 // function begins at statement 3604
 OP_CALL0	2628	0	0
@@ -480,7 +469,6 @@ voidTODO (float damage, vector dir) TraceAttack =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() FireBullets;
-float shotcount;
 // FireBullets
 // function begins at statement 3648
 OP_LOAD_V	28	175	2837
@@ -562,7 +550,6 @@ voidTODO (float shotcount, vector dir, vector spread) FireBullets =
 };
 
 void() W_FireShotgun;
-vector dir;
 // W_FireShotgun
 // function begins at statement 3689
 OP_STORE_V	28	4	0
@@ -603,7 +590,6 @@ voidTODO () W_FireShotgun =
 /* ERROR: NULL TYPE */  = 0.04;
 /* ERROR: NULL TYPE */ ;
 void() W_FireSuperShotgun;
-vector dir;
 // W_FireSuperShotgun
 // function begins at statement 3712
 OP_LOAD_F	28	157	2894
@@ -656,7 +642,6 @@ voidTODO () W_FireSuperShotgun =
 /* ERROR: NULL TYPE */  = 0.08;
 /* ERROR: NULL TYPE */ ;
 void() s_explode1;
-void() s_explode2;
 // s_explode1
 // function begins at statement 3740
 OP_STATE	337	2906	0
@@ -666,7 +651,6 @@ voidTODO () s_explode1 =
     // *** UNPROCESSED OPCODE OP_STATE 337 2906 0
 };
 
-void() s_explode3;
 // s_explode2
 // function begins at statement 3742
 OP_STATE	2256	2907	0
@@ -676,7 +660,6 @@ voidTODO () s_explode2 =
     // *** UNPROCESSED OPCODE OP_STATE 2256 2907 0
 };
 
-void() s_explode4;
 // s_explode3
 // function begins at statement 3744
 OP_STATE	2257	2908	0
@@ -686,7 +669,6 @@ voidTODO () s_explode3 =
     // *** UNPROCESSED OPCODE OP_STATE 2257 2908 0
 };
 
-void() s_explode5;
 // s_explode4
 // function begins at statement 3746
 OP_STATE	370	2909	0
@@ -696,7 +678,6 @@ voidTODO () s_explode4 =
     // *** UNPROCESSED OPCODE OP_STATE 370 2909 0
 };
 
-void() s_explode6;
 // s_explode5
 // function begins at statement 3748
 OP_STATE	2258	2910	0
@@ -706,7 +687,6 @@ voidTODO () s_explode5 =
     // *** UNPROCESSED OPCODE OP_STATE 2258 2910 0
 };
 
-void() BecomeExplosion;
 // s_explode6
 // function begins at statement 3750
 OP_STATE	313	519	0
@@ -716,7 +696,7 @@ voidTODO () s_explode6 =
     // *** UNPROCESSED OPCODE OP_STATE 313 519 0
 };
 
-/* ERROR: NULL TYPE */ ;
+void() BecomeExplosion;
 // BecomeExplosion
 // function begins at statement 3752
 OP_ADDRESS	28	103	2912
@@ -742,7 +722,6 @@ voidTODO () BecomeExplosion =
     s_explode1();
 };
 
-float damg;
 // T_MissileTouch
 // function begins at statement 3765
 OP_LOAD_ENT	28	201	2920
@@ -854,7 +833,6 @@ voidTODO () T_MissileTouch =
 };
 
 void() W_FireRocket;
-entity missile;
 // W_FireRocket
 // function begins at statement 3828
 OP_ADDRESS	28	157	2955
@@ -951,7 +929,6 @@ voidTODO () W_FireRocket =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() LightningDamage;
-vector p1;
 // LightningDamage
 // function begins at statement 3891
 OP_SUB_V	3007	3004	3017
@@ -1104,7 +1081,6 @@ voidTODO (vector p1, vector p2, entity from, float damage) LightningDamage =
 };
 
 void() W_FireLightning;
-vector org;
 // W_FireLightning
 // function begins at statement 3980
 OP_LOAD_F	28	161	3065
@@ -1251,7 +1227,6 @@ voidTODO () W_FireLightning =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() GrenadeExplode;
-/* ERROR: NULL TYPE */ ;
 // GrenadeExplode
 // function begins at statement 4069
 OP_LOAD_ENT	28	201	3106
@@ -1292,7 +1267,6 @@ voidTODO () GrenadeExplode =
 };
 
 void() GrenadeTouch;
-/* ERROR: NULL TYPE */ ;
 // GrenadeTouch
 // function begins at statement 4095
 OP_LOAD_ENT	28	201	3111
@@ -1344,7 +1318,6 @@ voidTODO () GrenadeTouch =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() W_FireGrenade;
-entity missile;
 // W_FireGrenade
 // function begins at statement 4116
 OP_ADDRESS	28	157	3125
@@ -1473,7 +1446,6 @@ voidTODO () W_FireGrenade =
 void() spike_touch;
 void() superspike_touch;
 void() launch_spike;
-vector org;
 // launch_spike
 // function begins at statement 4196
 OP_CALL0	459	0	0
@@ -1531,7 +1503,6 @@ voidTODO (vector org, vector dir) launch_spike =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() W_FireSuperSpikes;
-vector dir;
 // W_FireSuperSpikes
 // function begins at statement 4231
 OP_STORE_V	28	4	0
@@ -1589,7 +1560,6 @@ voidTODO () W_FireSuperSpikes =
 };
 
 void() W_FireSpikes;
-float ox;
 // W_FireSpikes
 // function begins at statement 4267
 OP_LOAD_V	28	175	3258
@@ -1673,8 +1643,7 @@ voidTODO (float ox) W_FireSpikes =
     self.punchangle = -2.000;
 };
 
-/* TYPE: EV_FIELD */ hit_z;
-float rand;
+.float hit_z;
 // spike_touch
 // function begins at statement 4315
 OP_LOAD_ENT	28	201	3290
@@ -1797,7 +1766,6 @@ voidTODO () spike_touch =
     remove(self);
 };
 
-float rand;
 // superspike_touch
 // function begins at statement 4377
 OP_LOAD_ENT	28	201	3310
@@ -1888,7 +1856,6 @@ voidTODO () superspike_touch =
     remove(self);
 };
 
-/* ERROR: NULL TYPE */ ;
 // W_SetCurrentAmmo
 // function begins at statement 4425
 OP_CALL0	2612	0	0
@@ -2130,7 +2097,6 @@ voidTODO () W_SetCurrentAmmo =
     
 };
 
-float it;
 // W_BestWeapon
 // function begins at statement 4557
 OP_LOAD_F	28	162	3412
@@ -2213,7 +2179,6 @@ voidTODO () W_BestWeapon =
 };
 
 void() W_CheckNoAmmo;
-/* ERROR: NULL TYPE */ ;
 // W_CheckNoAmmo
 // function begins at statement 4594
 OP_LOAD_F	28	157	3437
@@ -2259,7 +2224,6 @@ void() player_nail1;
 void() player_light1;
 void() player_rocket1;
 void() W_Attack;
-float r;
 // W_Attack
 // function begins at statement 4608
 OP_CALL0	3436	0	0
@@ -2465,7 +2429,6 @@ voidTODO () W_Attack =
 };
 
 void() W_ChangeWeapon;
-float it;
 // W_ChangeWeapon
 // function begins at statement 4706
 OP_LOAD_F	28	162	3497
@@ -2688,7 +2651,6 @@ voidTODO () W_ChangeWeapon =
 };
 
 void() CheatCommand;
-/* ERROR: NULL TYPE */ ;
 // CheatCommand
 // function begins at statement 4795
 OP_IFNOT	35	2	0
@@ -2753,7 +2715,6 @@ voidTODO () CheatCommand =
 };
 
 void() CycleWeaponCommand;
-float it;
 // CycleWeaponCommand
 // function begins at statement 4827
 OP_LOAD_F	28	162	3559
@@ -2974,7 +2935,6 @@ voidTODO () CycleWeaponCommand =
 
 /* ERROR INDENTATION */
 void() CycleWeaponReverseCommand;
-float it;
 // CycleWeaponReverseCommand
 // function begins at statement 4917
 OP_LOAD_F	28	162	3606
@@ -3195,7 +3155,6 @@ voidTODO () CycleWeaponReverseCommand =
 
 /* ERROR INDENTATION */
 void() ServerflagsCommand;
-/* ERROR: NULL TYPE */ ;
 // ServerflagsCommand
 // function begins at statement 5007
 OP_IFNOT	35	2	0
@@ -3217,7 +3176,6 @@ voidTODO () ServerflagsCommand =
 };
 
 void() QuadCheat;
-/* ERROR: NULL TYPE */ ;
 // QuadCheat
 // function begins at statement 5013
 OP_IFNOT	35	2	0
@@ -3250,7 +3208,6 @@ voidTODO () QuadCheat =
 };
 
 void() ImpulseCommands;
-/* ERROR: NULL TYPE */ ;
 // ImpulseCommands
 // function begins at statement 5027
 OP_LOAD_F	28	173	3662
@@ -3326,7 +3283,6 @@ voidTODO () ImpulseCommands =
 };
 
 void() W_WeaponFrame;
-/* ERROR: NULL TYPE */ ;
 // W_WeaponFrame
 // function begins at statement 5057
 OP_LOAD_F	28	373	3680
@@ -3364,7 +3320,6 @@ voidTODO () W_WeaponFrame =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // SuperDamageSound
 // function begins at statement 5069
 OP_LOAD_F	28	377	3684

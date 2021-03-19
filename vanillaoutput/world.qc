@@ -1,5 +1,4 @@
 void() InitBodyQue;
-string IMMEDIATE;
 // main
 // function begins at statement 5086
 OP_STORE_V	3691	4	0
@@ -342,7 +341,6 @@ voidTODO () main =
 
 entity lastspawn;
 void() worldspawn;
-/* ERROR: NULL TYPE */ ;
 // worldspawn
 // function begins at statement 5309
 OP_STORE_ENT	30	3801	0
@@ -659,7 +657,6 @@ voidTODO () worldspawn =
     lightstyle(63.000, "IMMEDIATE");
 };
 
-string IMMEDIATE;
 // StartFrame
 // function begins at statement 5516
 OP_STORE_V	3874	4	0
@@ -680,7 +677,6 @@ voidTODO () StartFrame =
 
 entity bodyque_head;
 void() bodyque;
-entity e;
 // bodyque
 // function begins at statement 5525
 OP_DONE	0	0	0
@@ -739,7 +735,6 @@ voidTODO () InitBodyQue =
 };
 
 void() CopyToBodyQue;
-entity ent;
 // CopyToBodyQue
 // function begins at statement 5560
 OP_ADDRESS	3877	117	3903

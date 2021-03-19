@@ -63,125 +63,125 @@ void() ClientDisconnect;
 void() SetNewParms;
 void() SetChangeParms;
 void end_sys_globals;
-/* TYPE: EV_FIELD */ modelindex;
-/* TYPE: EV_FIELD */ absmin;
-/* TYPE: EV_FIELD */ absmin;
-/* TYPE: EV_FIELD */ absmin_y;
-/* TYPE: EV_FIELD */ absmin_z;
-/* TYPE: EV_FIELD */ absmax;
-/* TYPE: EV_FIELD */ absmax;
-/* TYPE: EV_FIELD */ absmax_y;
-/* TYPE: EV_FIELD */ absmax_z;
-/* TYPE: EV_FIELD */ ltime;
-/* TYPE: EV_FIELD */ movetype;
-/* TYPE: EV_FIELD */ solid;
-/* TYPE: EV_FIELD */ origin;
-/* TYPE: EV_FIELD */ origin;
-/* TYPE: EV_FIELD */ origin_y;
-/* TYPE: EV_FIELD */ origin_z;
-/* TYPE: EV_FIELD */ oldorigin;
-/* TYPE: EV_FIELD */ oldorigin;
-/* TYPE: EV_FIELD */ oldorigin_y;
-/* TYPE: EV_FIELD */ oldorigin_z;
-/* TYPE: EV_FIELD */ velocity;
-/* TYPE: EV_FIELD */ velocity;
-/* TYPE: EV_FIELD */ velocity_y;
-/* TYPE: EV_FIELD */ velocity_z;
-/* TYPE: EV_FIELD */ angles;
-/* TYPE: EV_FIELD */ angles;
-/* TYPE: EV_FIELD */ angles_y;
-/* TYPE: EV_FIELD */ angles_z;
-/* TYPE: EV_FIELD */ avelocity;
-/* TYPE: EV_FIELD */ avelocity;
-/* TYPE: EV_FIELD */ avelocity_y;
-/* TYPE: EV_FIELD */ avelocity_z;
-/* TYPE: EV_FIELD */ punchangle;
-/* TYPE: EV_FIELD */ punchangle;
-/* TYPE: EV_FIELD */ punchangle_y;
-/* TYPE: EV_FIELD */ punchangle_z;
-/* TYPE: EV_FIELD */ classname;
-/* TYPE: EV_FIELD */ model;
-/* TYPE: EV_FIELD */ frame;
-/* TYPE: EV_FIELD */ skin;
-/* TYPE: EV_FIELD */ effects;
-/* TYPE: EV_FIELD */ mins;
-/* TYPE: EV_FIELD */ mins;
-/* TYPE: EV_FIELD */ mins_y;
-/* TYPE: EV_FIELD */ mins_z;
-/* TYPE: EV_FIELD */ maxs;
-/* TYPE: EV_FIELD */ maxs;
-/* TYPE: EV_FIELD */ maxs_y;
-/* TYPE: EV_FIELD */ maxs_z;
-/* TYPE: EV_FIELD */ size;
-/* TYPE: EV_FIELD */ size;
-/* TYPE: EV_FIELD */ size_y;
-/* TYPE: EV_FIELD */ size_z;
-/* TYPE: EV_FIELD */ touch;
-/* TYPE: EV_FIELD */ use;
-/* TYPE: EV_FIELD */ think;
-/* TYPE: EV_FIELD */ blocked;
-/* TYPE: EV_FIELD */ nextthink;
-/* TYPE: EV_FIELD */ groundentity;
-/* TYPE: EV_FIELD */ health;
-/* TYPE: EV_FIELD */ frags;
-/* TYPE: EV_FIELD */ weapon;
-/* TYPE: EV_FIELD */ weaponmodel;
-/* TYPE: EV_FIELD */ weaponframe;
-/* TYPE: EV_FIELD */ currentammo;
-/* TYPE: EV_FIELD */ ammo_shells;
-/* TYPE: EV_FIELD */ ammo_nails;
-/* TYPE: EV_FIELD */ ammo_rockets;
-/* TYPE: EV_FIELD */ ammo_cells;
-/* TYPE: EV_FIELD */ items;
-/* TYPE: EV_FIELD */ takedamage;
-/* TYPE: EV_FIELD */ chain;
-/* TYPE: EV_FIELD */ deadflag;
-/* TYPE: EV_FIELD */ view_ofs;
-/* TYPE: EV_FIELD */ view_ofs;
-/* TYPE: EV_FIELD */ view_ofs_y;
-/* TYPE: EV_FIELD */ view_ofs_z;
-/* TYPE: EV_FIELD */ button0;
-/* TYPE: EV_FIELD */ button1;
-/* TYPE: EV_FIELD */ button2;
-/* TYPE: EV_FIELD */ impulse;
-/* TYPE: EV_FIELD */ fixangle;
-/* TYPE: EV_FIELD */ v_angle;
-/* TYPE: EV_FIELD */ v_angle;
-/* TYPE: EV_FIELD */ v_angle_y;
-/* TYPE: EV_FIELD */ v_angle_z;
-/* TYPE: EV_FIELD */ idealpitch;
-/* TYPE: EV_FIELD */ netname;
-/* TYPE: EV_FIELD */ enemy;
-/* TYPE: EV_FIELD */ flags;
-/* TYPE: EV_FIELD */ colormap;
-/* TYPE: EV_FIELD */ team;
-/* TYPE: EV_FIELD */ max_health;
-/* TYPE: EV_FIELD */ teleport_time;
-/* TYPE: EV_FIELD */ armortype;
-/* TYPE: EV_FIELD */ armorvalue;
-/* TYPE: EV_FIELD */ waterlevel;
-/* TYPE: EV_FIELD */ watertype;
-/* TYPE: EV_FIELD */ ideal_yaw;
-/* TYPE: EV_FIELD */ yaw_speed;
-/* TYPE: EV_FIELD */ aiment;
-/* TYPE: EV_FIELD */ goalentity;
-/* TYPE: EV_FIELD */ spawnflags;
-/* TYPE: EV_FIELD */ target;
-/* TYPE: EV_FIELD */ targetname;
-/* TYPE: EV_FIELD */ dmg_take;
-/* TYPE: EV_FIELD */ dmg_save;
-/* TYPE: EV_FIELD */ dmg_inflictor;
-/* TYPE: EV_FIELD */ owner;
-/* TYPE: EV_FIELD */ movedir;
-/* TYPE: EV_FIELD */ movedir;
-/* TYPE: EV_FIELD */ movedir_y;
-/* TYPE: EV_FIELD */ movedir_z;
-/* TYPE: EV_FIELD */ message;
-/* TYPE: EV_FIELD */ sounds;
-/* TYPE: EV_FIELD */ noise;
-/* TYPE: EV_FIELD */ noise1;
-/* TYPE: EV_FIELD */ noise2;
-/* TYPE: EV_FIELD */ noise3;
+.float modelindex;
+.vector absmin;
+.vector absmin;
+.float absmin_y;
+.float absmin_z;
+.vector absmax;
+.vector absmax;
+.float absmax_y;
+.float absmax_z;
+.float ltime;
+.float movetype;
+.float solid;
+.vector origin;
+.vector origin;
+.float origin_y;
+.float origin_z;
+.vector oldorigin;
+.vector oldorigin;
+.float oldorigin_y;
+.float oldorigin_z;
+.vector velocity;
+.vector velocity;
+.float velocity_y;
+.float velocity_z;
+.vector angles;
+.vector angles;
+.float angles_y;
+.float angles_z;
+.vector avelocity;
+.vector avelocity;
+.float avelocity_y;
+.float avelocity_z;
+.vector punchangle;
+.vector punchangle;
+.float punchangle_y;
+.float punchangle_z;
+.string classname;
+.string model;
+.float frame;
+.float skin;
+.float effects;
+.vector mins;
+.vector mins;
+.float mins_y;
+.float mins_z;
+.vector maxs;
+.vector maxs;
+.float maxs_y;
+.float maxs_z;
+.vector size;
+.vector size;
+.float size_y;
+.float size_z;
+.void() touch;
+.void() use;
+.void() think;
+.void() blocked;
+.float nextthink;
+.entity groundentity;
+.float health;
+.float frags;
+.float weapon;
+.string weaponmodel;
+.float weaponframe;
+.float currentammo;
+.float ammo_shells;
+.float ammo_nails;
+.float ammo_rockets;
+.float ammo_cells;
+.float items;
+.float takedamage;
+.entity chain;
+.float deadflag;
+.vector view_ofs;
+.vector view_ofs;
+.float view_ofs_y;
+.float view_ofs_z;
+.float button0;
+.float button1;
+.float button2;
+.float impulse;
+.float fixangle;
+.vector v_angle;
+.vector v_angle;
+.float v_angle_y;
+.float v_angle_z;
+.float idealpitch;
+.string netname;
+.entity enemy;
+.float flags;
+.float colormap;
+.float team;
+.float max_health;
+.float teleport_time;
+.float armortype;
+.float armorvalue;
+.float waterlevel;
+.float watertype;
+.float ideal_yaw;
+.float yaw_speed;
+.entity aiment;
+.entity goalentity;
+.float spawnflags;
+.string target;
+.string targetname;
+.float dmg_take;
+.float dmg_save;
+.entity dmg_inflictor;
+.entity owner;
+.vector movedir;
+.vector movedir;
+.float movedir_y;
+.float movedir_z;
+.string message;
+.float sounds;
+.string noise;
+.string noise1;
+.string noise2;
+.string noise3;
 void end_sys_fields;
 float FALSE;
 float TRUE = 1;
@@ -320,231 +320,165 @@ entity activator;
 entity damage_attacker;
 float framecount;
 float skill;
-/* TYPE: EV_FIELD */ wad;
-/* TYPE: EV_FIELD */ map;
-/* TYPE: EV_FIELD */ worldtype;
-/* TYPE: EV_FIELD */ killtarget;
-/* TYPE: EV_FIELD */ light_lev;
-/* TYPE: EV_FIELD */ style;
-/* TYPE: EV_FIELD */ th_stand;
-/* TYPE: EV_FIELD */ th_walk;
-/* TYPE: EV_FIELD */ th_run;
-/* TYPE: EV_FIELD */ th_missile;
-/* TYPE: EV_FIELD */ th_melee;
-/* TYPE: EV_FIELD */ th_pain;
-/* TYPE: EV_FIELD */ th_die;
-/* TYPE: EV_FIELD */ oldenemy;
-/* TYPE: EV_FIELD */ speed;
-/* TYPE: EV_FIELD */ lefty;
-/* TYPE: EV_FIELD */ search_time;
-/* TYPE: EV_FIELD */ attack_state;
+.string wad;
+.string map;
+.float worldtype;
+.string killtarget;
+.float light_lev;
+.float style;
+.void() th_stand;
+.void() th_walk;
+.void() th_run;
+.void() th_missile;
+.void() th_melee;
+.void() th_pain;
+.void() th_die;
+.entity oldenemy;
+.float speed;
+.float lefty;
+.float search_time;
+.float attack_state;
 float AS_STRAIGHT = 1;
 float AS_SLIDING = 2;
 float AS_MELEE = 3;
 float AS_MISSILE = 4;
-/* TYPE: EV_FIELD */ walkframe;
-/* TYPE: EV_FIELD */ attack_finished;
-/* TYPE: EV_FIELD */ pain_finished;
-/* TYPE: EV_FIELD */ invincible_finished;
-/* TYPE: EV_FIELD */ invisible_finished;
-/* TYPE: EV_FIELD */ super_damage_finished;
-/* TYPE: EV_FIELD */ radsuit_finished;
-/* TYPE: EV_FIELD */ invincible_time;
-/* TYPE: EV_FIELD */ invincible_sound;
-/* TYPE: EV_FIELD */ invisible_time;
-/* TYPE: EV_FIELD */ invisible_sound;
-/* TYPE: EV_FIELD */ super_time;
-/* TYPE: EV_FIELD */ super_sound;
-/* TYPE: EV_FIELD */ rad_time;
-/* TYPE: EV_FIELD */ fly_sound;
-/* TYPE: EV_FIELD */ axhitme;
-/* TYPE: EV_FIELD */ show_hostile;
-/* TYPE: EV_FIELD */ jump_flag;
-/* TYPE: EV_FIELD */ swim_flag;
-/* TYPE: EV_FIELD */ air_finished;
-/* TYPE: EV_FIELD */ bubble_count;
-/* TYPE: EV_FIELD */ deathtype;
-/* TYPE: EV_FIELD */ mdl;
-/* TYPE: EV_FIELD */ mangle;
-/* TYPE: EV_FIELD */ mangle;
-/* TYPE: EV_FIELD */ mangle_y;
-/* TYPE: EV_FIELD */ mangle_z;
-/* TYPE: EV_FIELD */ t_length;
-/* TYPE: EV_FIELD */ t_width;
-/* TYPE: EV_FIELD */ dest;
-/* TYPE: EV_FIELD */ dest;
-/* TYPE: EV_FIELD */ dest_y;
-/* TYPE: EV_FIELD */ dest_z;
-/* TYPE: EV_FIELD */ dest1;
-/* TYPE: EV_FIELD */ dest1;
-/* TYPE: EV_FIELD */ dest1_y;
-/* TYPE: EV_FIELD */ dest1_z;
-/* TYPE: EV_FIELD */ dest2;
-/* TYPE: EV_FIELD */ dest2;
-/* TYPE: EV_FIELD */ dest2_y;
-/* TYPE: EV_FIELD */ dest2_z;
-/* TYPE: EV_FIELD */ wait;
-/* TYPE: EV_FIELD */ delay;
-/* TYPE: EV_FIELD */ trigger_field;
-/* TYPE: EV_FIELD */ noise4;
-/* TYPE: EV_FIELD */ pausetime;
-/* TYPE: EV_FIELD */ movetarget;
-/* TYPE: EV_FIELD */ aflag;
-/* TYPE: EV_FIELD */ dmg;
-/* TYPE: EV_FIELD */ cnt;
-/* TYPE: EV_FIELD */ think1;
-/* TYPE: EV_FIELD */ finaldest;
-/* TYPE: EV_FIELD */ finaldest;
-/* TYPE: EV_FIELD */ finaldest_y;
-/* TYPE: EV_FIELD */ finaldest_z;
-/* TYPE: EV_FIELD */ finalangle;
-/* TYPE: EV_FIELD */ finalangle;
-/* TYPE: EV_FIELD */ finalangle_y;
-/* TYPE: EV_FIELD */ finalangle_z;
-/* TYPE: EV_FIELD */ count;
-/* TYPE: EV_FIELD */ lip;
-/* TYPE: EV_FIELD */ state;
-/* TYPE: EV_FIELD */ pos1;
-/* TYPE: EV_FIELD */ pos1;
-/* TYPE: EV_FIELD */ pos1_y;
-/* TYPE: EV_FIELD */ pos1_z;
-/* TYPE: EV_FIELD */ pos2;
-/* TYPE: EV_FIELD */ pos2;
-/* TYPE: EV_FIELD */ pos2_y;
-/* TYPE: EV_FIELD */ pos2_z;
-/* TYPE: EV_FIELD */ height;
-/* TYPE: EV_FIELD */ waitmin;
-/* TYPE: EV_FIELD */ waitmax;
-/* TYPE: EV_FIELD */ distance;
-/* TYPE: EV_FIELD */ volume;
-void() makevectors;
-void() setorigin;
-// TODO Builtin function
-void() setmodel;
-// TODO Builtin function
-void() setsize;
-// TODO Builtin function
-void() break;
-// TODO Builtin function
-void() random;
-// TODO Builtin function
-void() sound;
-// TODO Builtin function
-void() normalize;
-// TODO Builtin function
-void() error;
-// TODO Builtin function
-void() objerror;
-// TODO Builtin function
-void() vlen;
-// TODO Builtin function
-void() vectoyaw;
-// TODO Builtin function
-void() spawn;
-// TODO Builtin function
-void() remove;
-// TODO Builtin function
-void() traceline;
-// TODO Builtin function
-void() checkclient;
-// TODO Builtin function
-void() find;
-// TODO Builtin function
-void() precache_sound;
-// TODO Builtin function
-void() precache_model;
-// TODO Builtin function
-void() stuffcmd;
-// TODO Builtin function
-void() findradius;
-// TODO Builtin function
-void() bprint;
-// TODO Builtin function
-void() sprint;
-// TODO Builtin function
-void() dprint;
-// TODO Builtin function
-void() ftos;
-// TODO Builtin function
-void() vtos;
-// TODO Builtin function
-void() coredump;
-// TODO Builtin function
-void() traceon;
-// TODO Builtin function
-void() traceoff;
-// TODO Builtin function
-void() eprint;
-// TODO Builtin function
-void() walkmove;
-// TODO Builtin function
-void() droptofloor;
-// TODO Builtin function
-void() lightstyle;
-// TODO Builtin function
-void() rint;
-// TODO Builtin function
-void() floor;
-// TODO Builtin function
-void() ceil;
-// TODO Builtin function
-void() checkbottom;
-// TODO Builtin function
-void() pointcontents;
-// TODO Builtin function
-void() fabs;
-// TODO Builtin function
-void() aim;
-// TODO Builtin function
-void() cvar;
-// TODO Builtin function
-void() localcmd;
-// TODO Builtin function
-void() nextent;
-// TODO Builtin function
-void() particle;
-// TODO Builtin function
-void() ChangeYaw;
-// TODO Builtin function
-void() vectoangles;
-// TODO Builtin function
-void() WriteByte;
-// TODO Builtin function
-void() WriteChar;
-// TODO Builtin function
-void() WriteShort;
-// TODO Builtin function
-void() WriteLong;
-// TODO Builtin function
-void() WriteCoord;
-// TODO Builtin function
-void() WriteAngle;
-// TODO Builtin function
-void() WriteString;
-// TODO Builtin function
-void() WriteEntity;
-// TODO Builtin function
-void() movetogoal;
-// TODO Builtin function
-void() precache_file;
-// TODO Builtin function
-void() makestatic;
-// TODO Builtin function
-void() changelevel;
-// TODO Builtin function
-void() cvar_set;
-// TODO Builtin function
-void() centerprint;
-// TODO Builtin function
-void() ambientsound;
-// TODO Builtin function
-void() precache_model2;
-// TODO Builtin function
-void() precache_sound2;
-// TODO Builtin function
-void() precache_file2;
-// TODO Builtin function
-void() setspawnparms;
-// TODO Builtin function
-void() SUB_CalcMove;
-// TODO Builtin function
+.float walkframe;
+.float attack_finished;
+.float pain_finished;
+.float invincible_finished;
+.float invisible_finished;
+.float super_damage_finished;
+.float radsuit_finished;
+.float invincible_time;
+.float invincible_sound;
+.float invisible_time;
+.float invisible_sound;
+.float super_time;
+.float super_sound;
+.float rad_time;
+.float fly_sound;
+.float axhitme;
+.float show_hostile;
+.float jump_flag;
+.float swim_flag;
+.float air_finished;
+.float bubble_count;
+.string deathtype;
+.string mdl;
+.vector mangle;
+.vector mangle;
+.float mangle_y;
+.float mangle_z;
+.float t_length;
+.float t_width;
+.vector dest;
+.vector dest;
+.float dest_y;
+.float dest_z;
+.vector dest1;
+.vector dest1;
+.float dest1_y;
+.float dest1_z;
+.vector dest2;
+.vector dest2;
+.float dest2_y;
+.float dest2_z;
+.float wait;
+.float delay;
+.entity trigger_field;
+.string noise4;
+.float pausetime;
+.entity movetarget;
+.float aflag;
+.float dmg;
+.float cnt;
+.void() think1;
+.vector finaldest;
+.vector finaldest;
+.float finaldest_y;
+.float finaldest_z;
+.vector finalangle;
+.vector finalangle;
+.float finalangle_y;
+.float finalangle_z;
+.float count;
+.float lip;
+.float state;
+.vector pos1;
+.vector pos1;
+.float pos1_y;
+.float pos1_z;
+.vector pos2;
+.vector pos2;
+.float pos2_y;
+.float pos2_z;
+.float height;
+.float waitmin;
+.float waitmax;
+.float distance;
+.float volume;
+void (vector ang) makevectors = #1
+void (entity e, vector o) setorigin = #2
+void (entity e, string m) setmodel = #3
+void (entity e, vector min, vector max) setsize = #4
+void () break = #6
+float () random = #7
+void (entity e, float chan, string samp, float vol, float atten) sound = #8
+vector (vector v) normalize = #9
+void (string e) error = #10
+void (string e) objerror = #11
+float (vector v) vlen = #12
+float (vector v) vectoyaw = #13
+entity () spawn = #14
+void (entity e) remove = #15
+void (vector v1, vector v2, float nomonsters, entity forent) traceline = #16
+entity () checkclient = #17
+entity (entity start, .string fld, string match) find = #18
+string (string s) precache_sound = #19
+string (string s) precache_model = #20
+void (entity client, string s) stuffcmd = #21
+entity (vector org, float rad) findradius = #22
+void (string s) bprint = #23
+void (entity client, string s) sprint = #24
+void (string s) dprint = #25
+string (float f) ftos = #26
+string (vector v) vtos = #27
+void () coredump = #28
+void () traceon = #29
+void () traceoff = #30
+void (entity e) eprint = #31
+float (float yaw, float dist) walkmove = #32
+float (float yaw, float dist) droptofloor = #34
+void (float style, string value) lightstyle = #35
+float (float v) rint = #36
+float (float v) floor = #37
+float (float v) ceil = #38
+float (entity e) checkbottom = #40
+float (vector v) pointcontents = #41
+float (float f) fabs = #43
+vector (entity e, float speed) aim = #44
+float (string s) cvar = #45
+void (string s) localcmd = #46
+entity (entity e) nextent = #47
+void (vector o, vector d, float color, float count) particle = #48
+void () ChangeYaw = #49
+vector (vector v) vectoangles = #51
+void (float to, float f) WriteByte = #52
+void (float to, float f) WriteChar = #53
+void (float to, float f) WriteShort = #54
+void (float to, float f) WriteLong = #55
+void (float to, float f) WriteCoord = #56
+void (float to, float f) WriteAngle = #57
+void (float to, string s) WriteString = #58
+void (float to, entity s) WriteEntity = #59
+void (float step) movetogoal = #67
+string (string s) precache_file = #68
+void (entity e) makestatic = #69
+void (string s) changelevel = #70
+void (string var, string val) cvar_set = #72
+void (entity client, string s) centerprint = #73
+void (vector pos, string samp, float vol, float atten) ambientsound = #74
+string (string s) precache_model2 = #75
+string (string s) precache_sound2 = #76
+string (string s) precache_file2 = #77
+void (entity e) setspawnparms = #78

@@ -4,7 +4,6 @@ void() finale_3;
 void() finale_4;
 entity shub;
 void() old_idle1;
-void() old_idle2;
 // old_idle1
 // function begins at statement 20534
 OP_STATE	337	11320	0
@@ -14,7 +13,6 @@ voidTODO () old_idle1 =
     // *** UNPROCESSED OPCODE OP_STATE 337 11320 0
 };
 
-void() old_idle3;
 // old_idle2
 // function begins at statement 20536
 OP_STATE	9491	11321	0
@@ -24,7 +22,6 @@ voidTODO () old_idle2 =
     // *** UNPROCESSED OPCODE OP_STATE 9491 11321 0
 };
 
-void() old_idle4;
 // old_idle3
 // function begins at statement 20538
 OP_STATE	7369	11322	0
@@ -34,7 +31,6 @@ voidTODO () old_idle3 =
     // *** UNPROCESSED OPCODE OP_STATE 7369 11322 0
 };
 
-void() old_idle5;
 // old_idle4
 // function begins at statement 20540
 OP_STATE	370	11323	0
@@ -44,7 +40,6 @@ voidTODO () old_idle4 =
     // *** UNPROCESSED OPCODE OP_STATE 370 11323 0
 };
 
-void() old_idle6;
 // old_idle5
 // function begins at statement 20542
 OP_STATE	6076	11324	0
@@ -54,7 +49,6 @@ voidTODO () old_idle5 =
     // *** UNPROCESSED OPCODE OP_STATE 6076 11324 0
 };
 
-void() old_idle7;
 // old_idle6
 // function begins at statement 20544
 OP_STATE	313	11325	0
@@ -64,7 +58,6 @@ voidTODO () old_idle6 =
     // *** UNPROCESSED OPCODE OP_STATE 313 11325 0
 };
 
-void() old_idle8;
 // old_idle7
 // function begins at statement 20546
 OP_STATE	314	11326	0
@@ -74,7 +67,6 @@ voidTODO () old_idle7 =
     // *** UNPROCESSED OPCODE OP_STATE 314 11326 0
 };
 
-void() old_idle9;
 // old_idle8
 // function begins at statement 20548
 OP_STATE	315	11327	0
@@ -84,7 +76,6 @@ voidTODO () old_idle8 =
     // *** UNPROCESSED OPCODE OP_STATE 315 11327 0
 };
 
-void() old_idle10;
 // old_idle9
 // function begins at statement 20550
 OP_STATE	6077	11328	0
@@ -94,7 +85,6 @@ voidTODO () old_idle9 =
     // *** UNPROCESSED OPCODE OP_STATE 6077 11328 0
 };
 
-void() old_idle11;
 // old_idle10
 // function begins at statement 20552
 OP_STATE	317	11329	0
@@ -104,7 +94,6 @@ voidTODO () old_idle10 =
     // *** UNPROCESSED OPCODE OP_STATE 317 11329 0
 };
 
-void() old_idle12;
 // old_idle11
 // function begins at statement 20554
 OP_STATE	318	11330	0
@@ -114,7 +103,6 @@ voidTODO () old_idle11 =
     // *** UNPROCESSED OPCODE OP_STATE 318 11330 0
 };
 
-void() old_idle13;
 // old_idle12
 // function begins at statement 20556
 OP_STATE	319	11331	0
@@ -124,7 +112,6 @@ voidTODO () old_idle12 =
     // *** UNPROCESSED OPCODE OP_STATE 319 11331 0
 };
 
-void() old_idle14;
 // old_idle13
 // function begins at statement 20558
 OP_STATE	2250	11332	0
@@ -134,7 +121,6 @@ voidTODO () old_idle13 =
     // *** UNPROCESSED OPCODE OP_STATE 2250 11332 0
 };
 
-void() old_idle15;
 // old_idle14
 // function begins at statement 20560
 OP_STATE	7768	11333	0
@@ -144,7 +130,6 @@ voidTODO () old_idle14 =
     // *** UNPROCESSED OPCODE OP_STATE 7768 11333 0
 };
 
-void() old_idle16;
 // old_idle15
 // function begins at statement 20562
 OP_STATE	2901	11334	0
@@ -154,7 +139,6 @@ voidTODO () old_idle15 =
     // *** UNPROCESSED OPCODE OP_STATE 2901 11334 0
 };
 
-void() old_idle17;
 // old_idle16
 // function begins at statement 20564
 OP_STATE	1876	11335	0
@@ -164,7 +148,6 @@ voidTODO () old_idle16 =
     // *** UNPROCESSED OPCODE OP_STATE 1876 11335 0
 };
 
-void() old_idle18;
 // old_idle17
 // function begins at statement 20566
 OP_STATE	6078	11336	0
@@ -174,7 +157,6 @@ voidTODO () old_idle17 =
     // *** UNPROCESSED OPCODE OP_STATE 6078 11336 0
 };
 
-void() old_idle19;
 // old_idle18
 // function begins at statement 20568
 OP_STATE	4861	11337	0
@@ -184,7 +166,6 @@ voidTODO () old_idle18 =
     // *** UNPROCESSED OPCODE OP_STATE 4861 11337 0
 };
 
-void() old_idle20;
 // old_idle19
 // function begins at statement 20570
 OP_STATE	3319	11338	0
@@ -194,7 +175,6 @@ voidTODO () old_idle19 =
     // *** UNPROCESSED OPCODE OP_STATE 3319 11338 0
 };
 
-void() old_idle21;
 // old_idle20
 // function begins at statement 20572
 OP_STATE	7776	11339	0
@@ -204,7 +184,6 @@ voidTODO () old_idle20 =
     // *** UNPROCESSED OPCODE OP_STATE 7776 11339 0
 };
 
-void() old_idle22;
 // old_idle21
 // function begins at statement 20574
 OP_STATE	894	11340	0
@@ -214,7 +193,6 @@ voidTODO () old_idle21 =
     // *** UNPROCESSED OPCODE OP_STATE 894 11340 0
 };
 
-void() old_idle23;
 // old_idle22
 // function begins at statement 20576
 OP_STATE	7779	11341	0
@@ -224,7 +202,6 @@ voidTODO () old_idle22 =
     // *** UNPROCESSED OPCODE OP_STATE 7779 11341 0
 };
 
-void() old_idle24;
 // old_idle23
 // function begins at statement 20578
 OP_STATE	7781	11342	0
@@ -234,7 +211,6 @@ voidTODO () old_idle23 =
     // *** UNPROCESSED OPCODE OP_STATE 7781 11342 0
 };
 
-void() old_idle25;
 // old_idle24
 // function begins at statement 20580
 OP_STATE	301	11343	0
@@ -244,7 +220,6 @@ voidTODO () old_idle24 =
     // *** UNPROCESSED OPCODE OP_STATE 301 11343 0
 };
 
-void() old_idle26;
 // old_idle25
 // function begins at statement 20582
 OP_STATE	4437	11344	0
@@ -254,7 +229,6 @@ voidTODO () old_idle25 =
     // *** UNPROCESSED OPCODE OP_STATE 4437 11344 0
 };
 
-void() old_idle27;
 // old_idle26
 // function begins at statement 20584
 OP_STATE	1890	11345	0
@@ -264,7 +238,6 @@ voidTODO () old_idle26 =
     // *** UNPROCESSED OPCODE OP_STATE 1890 11345 0
 };
 
-void() old_idle28;
 // old_idle27
 // function begins at statement 20586
 OP_STATE	7788	11346	0
@@ -274,7 +247,6 @@ voidTODO () old_idle27 =
     // *** UNPROCESSED OPCODE OP_STATE 7788 11346 0
 };
 
-void() old_idle29;
 // old_idle28
 // function begins at statement 20588
 OP_STATE	302	11347	0
@@ -284,7 +256,6 @@ voidTODO () old_idle28 =
     // *** UNPROCESSED OPCODE OP_STATE 302 11347 0
 };
 
-void() old_idle30;
 // old_idle29
 // function begins at statement 20590
 OP_STATE	303	11348	0
@@ -294,7 +265,6 @@ voidTODO () old_idle29 =
     // *** UNPROCESSED OPCODE OP_STATE 303 11348 0
 };
 
-void() old_idle31;
 // old_idle30
 // function begins at statement 20592
 OP_STATE	5105	11349	0
@@ -304,7 +274,6 @@ voidTODO () old_idle30 =
     // *** UNPROCESSED OPCODE OP_STATE 5105 11349 0
 };
 
-void() old_idle32;
 // old_idle31
 // function begins at statement 20594
 OP_STATE	304	11350	0
@@ -314,7 +283,6 @@ voidTODO () old_idle31 =
     // *** UNPROCESSED OPCODE OP_STATE 304 11350 0
 };
 
-void() old_idle33;
 // old_idle32
 // function begins at statement 20596
 OP_STATE	305	11351	0
@@ -324,7 +292,6 @@ voidTODO () old_idle32 =
     // *** UNPROCESSED OPCODE OP_STATE 305 11351 0
 };
 
-void() old_idle34;
 // old_idle33
 // function begins at statement 20598
 OP_STATE	5674	11352	0
@@ -334,7 +301,6 @@ voidTODO () old_idle33 =
     // *** UNPROCESSED OPCODE OP_STATE 5674 11352 0
 };
 
-void() old_idle35;
 // old_idle34
 // function begins at statement 20600
 OP_STATE	307	11353	0
@@ -344,7 +310,6 @@ voidTODO () old_idle34 =
     // *** UNPROCESSED OPCODE OP_STATE 307 11353 0
 };
 
-void() old_idle36;
 // old_idle35
 // function begins at statement 20602
 OP_STATE	5112	11354	0
@@ -354,7 +319,6 @@ voidTODO () old_idle35 =
     // *** UNPROCESSED OPCODE OP_STATE 5112 11354 0
 };
 
-void() old_idle37;
 // old_idle36
 // function begins at statement 20604
 OP_STATE	3072	11355	0
@@ -364,7 +328,6 @@ voidTODO () old_idle36 =
     // *** UNPROCESSED OPCODE OP_STATE 3072 11355 0
 };
 
-void() old_idle38;
 // old_idle37
 // function begins at statement 20606
 OP_STATE	5096	11356	0
@@ -374,7 +337,6 @@ voidTODO () old_idle37 =
     // *** UNPROCESSED OPCODE OP_STATE 5096 11356 0
 };
 
-void() old_idle39;
 // old_idle38
 // function begins at statement 20608
 OP_STATE	5098	11357	0
@@ -384,7 +346,6 @@ voidTODO () old_idle38 =
     // *** UNPROCESSED OPCODE OP_STATE 5098 11357 0
 };
 
-void() old_idle40;
 // old_idle39
 // function begins at statement 20610
 OP_STATE	5100	11358	0
@@ -394,7 +355,6 @@ voidTODO () old_idle39 =
     // *** UNPROCESSED OPCODE OP_STATE 5100 11358 0
 };
 
-void() old_idle41;
 // old_idle40
 // function begins at statement 20612
 OP_STATE	5102	11359	0
@@ -404,7 +364,6 @@ voidTODO () old_idle40 =
     // *** UNPROCESSED OPCODE OP_STATE 5102 11359 0
 };
 
-void() old_idle42;
 // old_idle41
 // function begins at statement 20614
 OP_STATE	1733	11360	0
@@ -414,7 +373,6 @@ voidTODO () old_idle41 =
     // *** UNPROCESSED OPCODE OP_STATE 1733 11360 0
 };
 
-void() old_idle43;
 // old_idle42
 // function begins at statement 20616
 OP_STATE	5443	11361	0
@@ -424,7 +382,6 @@ voidTODO () old_idle42 =
     // *** UNPROCESSED OPCODE OP_STATE 5443 11361 0
 };
 
-void() old_idle44;
 // old_idle43
 // function begins at statement 20618
 OP_STATE	5445	11362	0
@@ -434,7 +391,6 @@ voidTODO () old_idle43 =
     // *** UNPROCESSED OPCODE OP_STATE 5445 11362 0
 };
 
-void() old_idle45;
 // old_idle44
 // function begins at statement 20620
 OP_STATE	5447	11363	0
@@ -444,7 +400,6 @@ voidTODO () old_idle44 =
     // *** UNPROCESSED OPCODE OP_STATE 5447 11363 0
 };
 
-void() old_idle46;
 // old_idle45
 // function begins at statement 20622
 OP_STATE	5449	11364	0
@@ -454,7 +409,6 @@ voidTODO () old_idle45 =
     // *** UNPROCESSED OPCODE OP_STATE 5449 11364 0
 };
 
-void() old_thrash1;
 // old_idle46
 // function begins at statement 20624
 OP_STATE	1390	11319	0
@@ -464,7 +418,7 @@ voidTODO () old_idle46 =
     // *** UNPROCESSED OPCODE OP_STATE 1390 11319 0
 };
 
-void() old_thrash2;
+void() old_thrash1;
 // old_thrash1
 // function begins at statement 20626
 OP_STATE	5452	11366	0
@@ -478,7 +432,6 @@ voidTODO () old_thrash1 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash3;
 // old_thrash2
 // function begins at statement 20631
 OP_STATE	5454	11367	0
@@ -492,7 +445,6 @@ voidTODO () old_thrash2 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash4;
 // old_thrash3
 // function begins at statement 20636
 OP_STATE	5456	11369	0
@@ -506,7 +458,6 @@ voidTODO () old_thrash3 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash5;
 // old_thrash4
 // function begins at statement 20641
 OP_STATE	5458	11370	0
@@ -520,7 +471,6 @@ voidTODO () old_thrash4 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash6;
 // old_thrash5
 // function begins at statement 20646
 OP_STATE	2227	11372	0
@@ -534,7 +484,6 @@ voidTODO () old_thrash5 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash7;
 // old_thrash6
 // function begins at statement 20651
 OP_STATE	5351	11374	0
@@ -548,7 +497,6 @@ voidTODO () old_thrash6 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash8;
 // old_thrash7
 // function begins at statement 20656
 OP_STATE	5353	11376	0
@@ -562,7 +510,6 @@ voidTODO () old_thrash7 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash9;
 // old_thrash8
 // function begins at statement 20661
 OP_STATE	5355	11378	0
@@ -576,7 +523,6 @@ voidTODO () old_thrash8 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash10;
 // old_thrash9
 // function begins at statement 20666
 OP_STATE	5357	11379	0
@@ -590,7 +536,6 @@ voidTODO () old_thrash9 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash11;
 // old_thrash10
 // function begins at statement 20671
 OP_STATE	5359	11380	0
@@ -604,7 +549,6 @@ voidTODO () old_thrash10 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash12;
 // old_thrash11
 // function begins at statement 20676
 OP_STATE	5361	11381	0
@@ -618,7 +562,6 @@ voidTODO () old_thrash11 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash13;
 // old_thrash12
 // function begins at statement 20681
 OP_STATE	5365	11382	0
@@ -632,7 +575,6 @@ voidTODO () old_thrash12 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash14;
 // old_thrash13
 // function begins at statement 20686
 OP_STATE	5367	11383	0
@@ -646,7 +588,6 @@ voidTODO () old_thrash13 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash15;
 // old_thrash14
 // function begins at statement 20691
 OP_STATE	912	11384	0
@@ -660,7 +601,6 @@ voidTODO () old_thrash14 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash16;
 // old_thrash15
 // function begins at statement 20696
 OP_STATE	5369	11385	0
@@ -691,7 +631,6 @@ voidTODO () old_thrash15 =
     
 };
 
-void() old_thrash17;
 // old_thrash16
 // function begins at statement 20710
 OP_STATE	5371	11392	0
@@ -705,7 +644,6 @@ voidTODO () old_thrash16 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash18;
 // old_thrash17
 // function begins at statement 20715
 OP_STATE	3872	11393	0
@@ -719,7 +657,6 @@ voidTODO () old_thrash17 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash19;
 // old_thrash18
 // function begins at statement 20720
 OP_STATE	260	11394	0
@@ -733,7 +670,6 @@ voidTODO () old_thrash18 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-void() old_thrash20;
 // old_thrash19
 // function begins at statement 20725
 OP_STATE	5375	11396	0
@@ -747,7 +683,6 @@ voidTODO () old_thrash19 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-entity pos;
 // old_thrash20
 // function begins at statement 20730
 OP_STATE	5377	11396	0
@@ -894,7 +829,6 @@ voidTODO () finale_1 =
     timer.think = finale_2;
 };
 
-vector o;
 // finale_2
 // function begins at statement 20815
 OP_LOAD_V	11318	105	11439
@@ -941,7 +875,6 @@ voidTODO () finale_2 =
     self.think = finale_3;
 };
 
-/* ERROR: NULL TYPE */ ;
 // finale_3
 // function begins at statement 20845
 OP_ADDRESS	11318	148	11451
@@ -963,7 +896,6 @@ voidTODO () finale_3 =
     lightstyle(0.000, "IMMEDIATE");
 };
 
-vector oldo;
 // finale_4
 // function begins at statement 20857
 OP_STORE_V	28	4	0
@@ -1117,7 +1049,6 @@ voidTODO () finale_4 =
 };
 
 void() nopain;
-/* ERROR: NULL TYPE */ ;
 // nopain
 // function begins at statement 20944
 OP_ADDRESS	28	152	11497
@@ -1129,7 +1060,6 @@ voidTODO () nopain =
 };
 
 void() monster_oldone;
-string IMMEDIATE;
 // monster_oldone
 // function begins at statement 20947
 OP_IFNOT	35	4	0

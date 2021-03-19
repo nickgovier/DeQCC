@@ -1,5 +1,4 @@
 void() LaunchMissile;
-entity missile;
 // LaunchMissile
 // function begins at statement 15024
 OP_LOAD_V	28	117	8870
@@ -89,7 +88,6 @@ voidTODO (entity missile, float mspeed, float accuracy) LaunchMissile =
 
 void() wiz_run1;
 void() wiz_side1;
-vector spot1;
 // WizardCheckAttack
 // function begins at statement 15080
 OP_LOAD_F	28	373	8957
@@ -271,7 +269,6 @@ voidTODO () WizardCheckAttack =
 };
 
 void() WizardAttackFinished;
-/* ERROR: NULL TYPE */ ;
 // WizardAttackFinished
 // function begins at statement 15156
 OP_GE	761	244	9000
@@ -305,7 +302,6 @@ voidTODO () WizardAttackFinished =
 };
 
 void() Wiz_FastFire;
-vector vec;
 // Wiz_FastFire
 // function begins at statement 15170
 OP_LOAD_ENT	28	201	9014
@@ -388,7 +384,6 @@ voidTODO () Wiz_FastFire =
 };
 
 void() Wiz_StartFast;
-entity missile;
 // Wiz_StartFast
 // function begins at statement 15223
 OP_STORE_V	28	4	0
@@ -500,7 +495,6 @@ voidTODO () Wiz_StartFast =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() Wiz_idlesound;
-float wr;
 // Wiz_idlesound
 // function begins at statement 15297
 OP_CALL0	452	0	0
@@ -558,7 +552,6 @@ voidTODO () Wiz_idlesound =
 };
 
 void() wiz_stand1;
-void() wiz_stand2;
 // wiz_stand1
 // function begins at statement 15324
 OP_STATE	337	9148	0
@@ -570,7 +563,6 @@ voidTODO () wiz_stand1 =
     ai_stand();
 };
 
-void() wiz_stand3;
 // wiz_stand2
 // function begins at statement 15327
 OP_STATE	7368	9149	0
@@ -582,7 +574,6 @@ voidTODO () wiz_stand2 =
     ai_stand();
 };
 
-void() wiz_stand4;
 // wiz_stand3
 // function begins at statement 15330
 OP_STATE	7369	9150	0
@@ -594,7 +585,6 @@ voidTODO () wiz_stand3 =
     ai_stand();
 };
 
-void() wiz_stand5;
 // wiz_stand4
 // function begins at statement 15333
 OP_STATE	370	9151	0
@@ -606,7 +596,6 @@ voidTODO () wiz_stand4 =
     ai_stand();
 };
 
-void() wiz_stand6;
 // wiz_stand5
 // function begins at statement 15336
 OP_STATE	6076	9152	0
@@ -618,7 +607,6 @@ voidTODO () wiz_stand5 =
     ai_stand();
 };
 
-void() wiz_stand7;
 // wiz_stand6
 // function begins at statement 15339
 OP_STATE	313	9153	0
@@ -630,7 +618,6 @@ voidTODO () wiz_stand6 =
     ai_stand();
 };
 
-void() wiz_stand8;
 // wiz_stand7
 // function begins at statement 15342
 OP_STATE	314	9154	0
@@ -642,7 +629,6 @@ voidTODO () wiz_stand7 =
     ai_stand();
 };
 
-void() wiz_walk1;
 // wiz_stand8
 // function begins at statement 15345
 OP_STATE	315	9147	0
@@ -654,7 +640,7 @@ voidTODO () wiz_stand8 =
     ai_stand();
 };
 
-void() wiz_walk2;
+void() wiz_walk1;
 // wiz_walk1
 // function begins at statement 15348
 OP_STATE	337	9156	0
@@ -669,7 +655,6 @@ voidTODO () wiz_walk1 =
     Wiz_idlesound();
 };
 
-void() wiz_walk3;
 // wiz_walk2
 // function begins at statement 15353
 OP_STATE	7368	9157	0
@@ -682,7 +667,6 @@ voidTODO () wiz_walk2 =
     ai_walk(8.000);
 };
 
-void() wiz_walk4;
 // wiz_walk3
 // function begins at statement 15357
 OP_STATE	7369	9158	0
@@ -695,7 +679,6 @@ voidTODO () wiz_walk3 =
     ai_walk(8.000);
 };
 
-void() wiz_walk5;
 // wiz_walk4
 // function begins at statement 15361
 OP_STATE	370	9159	0
@@ -708,7 +691,6 @@ voidTODO () wiz_walk4 =
     ai_walk(8.000);
 };
 
-void() wiz_walk6;
 // wiz_walk5
 // function begins at statement 15365
 OP_STATE	6076	9160	0
@@ -721,7 +703,6 @@ voidTODO () wiz_walk5 =
     ai_walk(8.000);
 };
 
-void() wiz_walk7;
 // wiz_walk6
 // function begins at statement 15369
 OP_STATE	313	9161	0
@@ -734,7 +715,6 @@ voidTODO () wiz_walk6 =
     ai_walk(8.000);
 };
 
-void() wiz_walk8;
 // wiz_walk7
 // function begins at statement 15373
 OP_STATE	314	9162	0
@@ -747,7 +727,6 @@ voidTODO () wiz_walk7 =
     ai_walk(8.000);
 };
 
-void() wiz_side2;
 // wiz_walk8
 // function begins at statement 15377
 OP_STATE	315	9155	0
@@ -774,7 +753,6 @@ voidTODO () wiz_side1 =
     Wiz_idlesound();
 };
 
-void() wiz_side3;
 // wiz_side2
 // function begins at statement 15386
 OP_STATE	7368	9164	0
@@ -787,7 +765,6 @@ voidTODO () wiz_side2 =
     ai_run(8.000);
 };
 
-void() wiz_side4;
 // wiz_side3
 // function begins at statement 15390
 OP_STATE	7369	9165	0
@@ -800,7 +777,6 @@ voidTODO () wiz_side3 =
     ai_run(8.000);
 };
 
-void() wiz_side5;
 // wiz_side4
 // function begins at statement 15394
 OP_STATE	370	9166	0
@@ -813,7 +789,6 @@ voidTODO () wiz_side4 =
     ai_run(8.000);
 };
 
-void() wiz_side6;
 // wiz_side5
 // function begins at statement 15398
 OP_STATE	6076	9167	0
@@ -826,7 +801,6 @@ voidTODO () wiz_side5 =
     ai_run(8.000);
 };
 
-void() wiz_side7;
 // wiz_side6
 // function begins at statement 15402
 OP_STATE	313	9168	0
@@ -839,7 +813,6 @@ voidTODO () wiz_side6 =
     ai_run(8.000);
 };
 
-void() wiz_side8;
 // wiz_side7
 // function begins at statement 15406
 OP_STATE	314	9169	0
@@ -852,7 +825,6 @@ voidTODO () wiz_side7 =
     ai_run(8.000);
 };
 
-void() wiz_run2;
 // wiz_side8
 // function begins at statement 15410
 OP_STATE	315	8948	0
@@ -879,7 +851,6 @@ voidTODO () wiz_run1 =
     Wiz_idlesound();
 };
 
-void() wiz_run3;
 // wiz_run2
 // function begins at statement 15419
 OP_STATE	6078	9171	0
@@ -892,7 +863,6 @@ voidTODO () wiz_run2 =
     ai_run(16.000);
 };
 
-void() wiz_run4;
 // wiz_run3
 // function begins at statement 15423
 OP_STATE	4861	9172	0
@@ -905,7 +875,6 @@ voidTODO () wiz_run3 =
     ai_run(16.000);
 };
 
-void() wiz_run5;
 // wiz_run4
 // function begins at statement 15427
 OP_STATE	3319	9173	0
@@ -918,7 +887,6 @@ voidTODO () wiz_run4 =
     ai_run(16.000);
 };
 
-void() wiz_run6;
 // wiz_run5
 // function begins at statement 15431
 OP_STATE	7776	9174	0
@@ -931,7 +899,6 @@ voidTODO () wiz_run5 =
     ai_run(16.000);
 };
 
-void() wiz_run7;
 // wiz_run6
 // function begins at statement 15435
 OP_STATE	894	9175	0
@@ -944,7 +911,6 @@ voidTODO () wiz_run6 =
     ai_run(16.000);
 };
 
-void() wiz_run8;
 // wiz_run7
 // function begins at statement 15439
 OP_STATE	7779	9176	0
@@ -957,7 +923,6 @@ voidTODO () wiz_run7 =
     ai_run(16.000);
 };
 
-void() wiz_run9;
 // wiz_run8
 // function begins at statement 15443
 OP_STATE	7781	9177	0
@@ -970,7 +935,6 @@ voidTODO () wiz_run8 =
     ai_run(16.000);
 };
 
-void() wiz_run10;
 // wiz_run9
 // function begins at statement 15447
 OP_STATE	301	9178	0
@@ -983,7 +947,6 @@ voidTODO () wiz_run9 =
     ai_run(16.000);
 };
 
-void() wiz_run11;
 // wiz_run10
 // function begins at statement 15451
 OP_STATE	4437	9179	0
@@ -996,7 +959,6 @@ voidTODO () wiz_run10 =
     ai_run(16.000);
 };
 
-void() wiz_run12;
 // wiz_run11
 // function begins at statement 15455
 OP_STATE	1890	9180	0
@@ -1009,7 +971,6 @@ voidTODO () wiz_run11 =
     ai_run(16.000);
 };
 
-void() wiz_run13;
 // wiz_run12
 // function begins at statement 15459
 OP_STATE	7788	9181	0
@@ -1022,7 +983,6 @@ voidTODO () wiz_run12 =
     ai_run(16.000);
 };
 
-void() wiz_run14;
 // wiz_run13
 // function begins at statement 15463
 OP_STATE	302	9182	0
@@ -1035,7 +995,6 @@ voidTODO () wiz_run13 =
     ai_run(16.000);
 };
 
-void() wiz_fast1;
 // wiz_run14
 // function begins at statement 15467
 OP_STATE	303	8947	0
@@ -1048,7 +1007,7 @@ voidTODO () wiz_run14 =
     ai_run(16.000);
 };
 
-void() wiz_fast2;
+void() wiz_fast1;
 // wiz_fast1
 // function begins at statement 15471
 OP_STATE	5105	9184	0
@@ -1062,7 +1021,6 @@ voidTODO () wiz_fast1 =
     Wiz_StartFast();
 };
 
-void() wiz_fast3;
 // wiz_fast2
 // function begins at statement 15475
 OP_STATE	304	9185	0
@@ -1074,7 +1032,6 @@ voidTODO () wiz_fast2 =
     ai_face();
 };
 
-void() wiz_fast4;
 // wiz_fast3
 // function begins at statement 15478
 OP_STATE	305	9186	0
@@ -1086,7 +1043,6 @@ voidTODO () wiz_fast3 =
     ai_face();
 };
 
-void() wiz_fast5;
 // wiz_fast4
 // function begins at statement 15481
 OP_STATE	5674	9187	0
@@ -1098,7 +1054,6 @@ voidTODO () wiz_fast4 =
     ai_face();
 };
 
-void() wiz_fast6;
 // wiz_fast5
 // function begins at statement 15484
 OP_STATE	307	9188	0
@@ -1110,7 +1065,6 @@ voidTODO () wiz_fast5 =
     ai_face();
 };
 
-void() wiz_fast7;
 // wiz_fast6
 // function begins at statement 15487
 OP_STATE	5112	9189	0
@@ -1122,7 +1076,6 @@ voidTODO () wiz_fast6 =
     ai_face();
 };
 
-void() wiz_fast8;
 // wiz_fast7
 // function begins at statement 15490
 OP_STATE	307	9190	0
@@ -1134,7 +1087,6 @@ voidTODO () wiz_fast7 =
     ai_face();
 };
 
-void() wiz_fast9;
 // wiz_fast8
 // function begins at statement 15493
 OP_STATE	5674	9191	0
@@ -1146,7 +1098,6 @@ voidTODO () wiz_fast8 =
     ai_face();
 };
 
-void() wiz_fast10;
 // wiz_fast9
 // function begins at statement 15496
 OP_STATE	305	9192	0
@@ -1158,7 +1109,6 @@ voidTODO () wiz_fast9 =
     ai_face();
 };
 
-void() wiz_pain1;
 // wiz_fast10
 // function begins at statement 15499
 OP_STATE	304	8947	0
@@ -1175,7 +1125,7 @@ voidTODO () wiz_fast10 =
     WizardAttackFinished();
 };
 
-void() wiz_pain2;
+void() wiz_pain1;
 // wiz_pain1
 // function begins at statement 15505
 OP_STATE	5445	9194	0
@@ -1185,7 +1135,6 @@ voidTODO () wiz_pain1 =
     // *** UNPROCESSED OPCODE OP_STATE 5445 9194 0
 };
 
-void() wiz_pain3;
 // wiz_pain2
 // function begins at statement 15507
 OP_STATE	5447	9195	0
@@ -1195,7 +1144,6 @@ voidTODO () wiz_pain2 =
     // *** UNPROCESSED OPCODE OP_STATE 5447 9195 0
 };
 
-void() wiz_pain4;
 // wiz_pain3
 // function begins at statement 15509
 OP_STATE	5449	9196	0
@@ -1205,7 +1153,6 @@ voidTODO () wiz_pain3 =
     // *** UNPROCESSED OPCODE OP_STATE 5449 9196 0
 };
 
-void() wiz_death1;
 // wiz_pain4
 // function begins at statement 15511
 OP_STATE	1390	8947	0
@@ -1215,7 +1162,7 @@ voidTODO () wiz_pain4 =
     // *** UNPROCESSED OPCODE OP_STATE 1390 8947 0
 };
 
-void() wiz_death2;
+void() wiz_death1;
 // wiz_death1
 // function begins at statement 15513
 OP_STATE	5452	9198	0
@@ -1264,7 +1211,6 @@ voidTODO () wiz_death1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() wiz_death3;
 // wiz_death2
 // function begins at statement 15542
 OP_STATE	5454	9214	0
@@ -1274,7 +1220,6 @@ voidTODO () wiz_death2 =
     // *** UNPROCESSED OPCODE OP_STATE 5454 9214 0
 };
 
-void() wiz_death4;
 // wiz_death3
 // function begins at statement 15544
 OP_STATE	5456	9215	0
@@ -1287,7 +1232,6 @@ voidTODO () wiz_death3 =
     self.solid = 0.000;
 };
 
-void() wiz_death5;
 // wiz_death4
 // function begins at statement 15548
 OP_STATE	5458	9217	0
@@ -1297,7 +1241,6 @@ voidTODO () wiz_death4 =
     // *** UNPROCESSED OPCODE OP_STATE 5458 9217 0
 };
 
-void() wiz_death6;
 // wiz_death5
 // function begins at statement 15550
 OP_STATE	2227	9218	0
@@ -1307,7 +1250,6 @@ voidTODO () wiz_death5 =
     // *** UNPROCESSED OPCODE OP_STATE 2227 9218 0
 };
 
-void() wiz_death7;
 // wiz_death6
 // function begins at statement 15552
 OP_STATE	5351	9219	0
@@ -1317,7 +1259,6 @@ voidTODO () wiz_death6 =
     // *** UNPROCESSED OPCODE OP_STATE 5351 9219 0
 };
 
-void() wiz_death8;
 // wiz_death7
 // function begins at statement 15554
 OP_STATE	5353	9220	0
@@ -1327,7 +1268,6 @@ voidTODO () wiz_death7 =
     // *** UNPROCESSED OPCODE OP_STATE 5353 9220 0
 };
 
-void() wiz_die;
 // wiz_death8
 // function begins at statement 15556
 OP_STATE	5355	9220	0
@@ -1337,7 +1277,7 @@ voidTODO () wiz_death8 =
     // *** UNPROCESSED OPCODE OP_STATE 5355 9220 0
 };
 
-/* ERROR: NULL TYPE */ ;
+void() wiz_die;
 // wiz_die
 // function begins at statement 15558
 OP_LOAD_F	28	152	9222
@@ -1385,7 +1325,6 @@ voidTODO () wiz_die =
 };
 
 void() Wiz_Pain;
-entity attacker;
 // Wiz_Pain
 // function begins at statement 15586
 OP_STORE_V	28	4	0
@@ -1416,7 +1355,6 @@ voidTODO (entity attacker, float damage) Wiz_Pain =
 };
 
 void() Wiz_Missile;
-void() monster_wizard;
 // Wiz_Missile
 // function begins at statement 15599
 OP_CALL0	9183	0	0
@@ -1426,7 +1364,7 @@ voidTODO () Wiz_Missile =
     wiz_fast1();
 };
 
-string IMMEDIATE;
+void() monster_wizard;
 // monster_wizard
 // function begins at statement 15601
 OP_IFNOT	35	4	0

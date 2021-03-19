@@ -93,27 +93,11 @@ namespace DeQcc
                 {
                     return "/* ERROR: NULL TYPE */";
                 }
-                switch (Type)
+                if (Type == Types.ev_field)
                 {
-                    case Types.ev_void:
-                        return "void";
-                    case Types.ev_string:
-                        return "string";
-                    case Types.ev_float:
-                        return "float";
-                    case Types.ev_vector:
-                        return "vector";
-                    case Types.ev_entity:
-                        return "entity";
-                    case Types.ev_function:
-                        return "void()";
-                    case Types.ev_field:
-                        return "/* TYPE: EV_FIELD */";
-                    case Types.ev_pointer:
-                        return "/* TYPE: EV_POINTER */";
-                    default:
-                        return "/* ERROR: UNKNOWN TYPE */";
+                    return "." + TypeCode(FieldType);       // e.g. in defs.qc, starting with "." denotes field
                 }
+                return TypeCode(Type);
             }
         }
 
@@ -213,6 +197,18 @@ namespace DeQcc
             }
         }
 
+        public bool FunctionIsBuiltin
+        {
+            get
+            {
+                if(Kind == GlobalKind.Function && functions[(int)IntVal].first_statement < 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
         public ushort GlobaldefType
         {
             set
@@ -240,6 +236,35 @@ namespace DeQcc
         #endregion Properties
 
         #region Private functions
+
+        private string TypeCode(Types? input)
+        {
+            if(input is null)
+            {
+                return null;
+            }
+
+            switch (input)
+            {
+                case Types.ev_void:
+                    return "void";
+                case Types.ev_string:
+                    return "string";
+                case Types.ev_float:
+                    return "float";
+                case Types.ev_vector:
+                    return "vector";
+                case Types.ev_entity:
+                    return "entity";
+                case Types.ev_function:
+                    return "void()";
+                case Types.ev_field:
+                    return "/* TYPE: EV_FIELD */";
+                case Types.ev_pointer:
+                    return "/* TYPE: EV_POINTER */";
+            }
+            return "/* ERROR: UNKNOWN TYPE */";
+        }
 
         // if this is an immediate string, get the string pointed to and escape special chars before returning
         private string CleanseImmediateString()
@@ -486,12 +511,18 @@ namespace DeQcc
 
         void DecompileFunction(Function f)
         {
+            int sIndex;
+
             // Process any unprocessed globals following the previous function
-            while (highestGlobalAccessed < f.parm_start)
+            while (highestGlobalAccessed < f.parm_start - 1)
             {
                 Global g = GetGlobal(highestGlobalAccessed + 1);
+                if(g.Kind == GlobalKind.Function && g.FunctionIsBuiltin)
+                {
+                    continue;   // It will be printed lower down
+                }
                 Print(g.TypeCodeOutput + " " + g.Name);
-                if(g.FloatVal > 0 && g.IntVal is null)
+                if(g.FloatVal > 0 && g.IntVal is null)  // Incredibly tiny positive FloatVals are actually IntVals (indices), so exclude these too
                 {
                     Print(" = " + g.FloatVal);
                 }
@@ -501,25 +532,8 @@ namespace DeQcc
             // Check for builtin functions
             if(f.first_statement < 0)
             {
-                PrintLine("// TODO Builtin function");
+                PrintLine(builtins[-f.first_statement] + " " + f.name + " = #" + (-f.first_statement));
                 return;
-            }
-
-            //  Check for OP_IF codes in this function, which encode do while loops
-            startOfDoLoop.Clear();
-            int sIndex = f.first_statement;
-            while (true)
-            {
-                if (statements[sIndex].Opcode == Opcodes.OP_IF)
-                {
-                    // store the start statement of the do loop
-                    startOfDoLoop.Add(sIndex + statements[sIndex].b);
-                }
-                if (statements[sIndex].Opcode == Opcodes.OP_DONE)
-                {
-                    break;
-                }
-                sIndex++;
             }
 
             // Print the bytecode
@@ -539,10 +553,6 @@ namespace DeQcc
             // Return type
             Print("voidTODO" + " ");
 
-            // Set the highestGlobalAccessed to the end of params and locals
-            // Otherwise it will trigger as an immediate when we process them
-            //highestGlobalAccessed = f.parm_start + f.locals - 1;
-
             // Parameters
             int currentParmOffset = f.parm_start;
             Print("(");
@@ -556,9 +566,7 @@ namespace DeQcc
                 if (parm.Type == Types.ev_vector) { currentParmOffset += 3; }
                 else { currentParmOffset++; }
             }
-            Print(") ");
-            Print(f.name);
-            PrintLine(" =");
+            PrintLine(") " + f.name + " =");
             PrintLine("{");
             indent++;
 
@@ -573,6 +581,24 @@ namespace DeQcc
                 else { currentParmOffset++; }
             }
 
+            //  Check for OP_IF codes in this function, which encode do while loops
+            startOfDoLoop.Clear();
+            sIndex = f.first_statement;
+            while (true)
+            {
+                if (statements[sIndex].Opcode == Opcodes.OP_IF)
+                {
+                    // store the start statement of the do loop
+                    startOfDoLoop.Add(sIndex + statements[sIndex].b);
+                }
+                if (statements[sIndex].Opcode == Opcodes.OP_DONE)
+                {
+                    break;
+                }
+                sIndex++;
+            }
+
+            // Decompile the function statements
             sIndex = f.first_statement;
             while (true)
             {
@@ -582,6 +608,7 @@ namespace DeQcc
                 sIndex++;
             }
 
+            // End the function
             indent--;
             PrintLine("};");
             PrintLine("");

@@ -1,5 +1,4 @@
 void() info_null;
-void() info_notnull;
 // info_null
 // function begins at statement 11129
 OP_STORE_V	28	4	0
@@ -10,7 +9,7 @@ voidTODO () info_null =
     remove(self);
 };
 
-float START_OFF = 1;
+void() info_notnull;
 // info_notnull
 // function begins at statement 11132
 OP_DONE	0	0	0
@@ -18,8 +17,8 @@ voidTODO () info_notnull =
 {
 };
 
+float START_OFF = 1;
 void() light_use;
-/* ERROR: NULL TYPE */ ;
 // light_use
 // function begins at statement 11133
 OP_LOAD_F	28	195	7224
@@ -60,7 +59,6 @@ voidTODO () light_use =
 };
 
 void() light;
-/* ERROR: NULL TYPE */ ;
 // light
 // function begins at statement 11154
 OP_LOAD_S	28	197	7235
@@ -116,7 +114,6 @@ voidTODO () light =
 };
 
 void() light_fluoro;
-/* ERROR: NULL TYPE */ ;
 // light_fluoro
 // function begins at statement 11178
 OP_LOAD_F	28	355	7245
@@ -170,7 +167,6 @@ voidTODO () light_fluoro =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() light_fluorospark;
-/* ERROR: NULL TYPE */ ;
 // light_fluorospark
 // function begins at statement 11204
 OP_LOAD_F	28	355	7257
@@ -202,7 +198,6 @@ voidTODO () light_fluorospark =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() light_globe;
-string IMMEDIATE;
 // light_globe
 // function begins at statement 11218
 OP_STORE_V	7265	4	0
@@ -221,7 +216,6 @@ voidTODO () light_globe =
 };
 
 void() FireAmbient;
-string IMMEDIATE;
 // FireAmbient
 // function begins at statement 11226
 OP_STORE_V	7267	4	0
@@ -242,7 +236,6 @@ voidTODO () FireAmbient =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() light_torch_small_walltorch;
-string IMMEDIATE;
 // light_torch_small_walltorch
 // function begins at statement 11235
 OP_STORE_V	7272	4	0
@@ -263,7 +256,6 @@ voidTODO () light_torch_small_walltorch =
 };
 
 void() light_flame_large_yellow;
-string IMMEDIATE;
 // light_flame_large_yellow
 // function begins at statement 11244
 OP_STORE_V	7274	4	0
@@ -287,7 +279,6 @@ voidTODO () light_flame_large_yellow =
 };
 
 void() light_flame_small_yellow;
-void() light_flame_small_white;
 // light_flame_small_yellow
 // function begins at statement 11255
 OP_STORE_V	7274	4	0
@@ -307,7 +298,7 @@ voidTODO () light_flame_small_yellow =
     makestatic(self);
 };
 
-void() fire_fly;
+void() light_flame_small_white;
 // light_flame_small_white
 // function begins at statement 11264
 OP_STORE_V	7274	4	0
@@ -327,9 +318,9 @@ voidTODO () light_flame_small_white =
     makestatic(self);
 };
 
+void() fire_fly;
 void() fire_touch;
 void() misc_fireball;
-/* ERROR: NULL TYPE */ ;
 // misc_fireball
 // function begins at statement 11273
 OP_STORE_V	3859	4	0
@@ -364,7 +355,6 @@ voidTODO () misc_fireball =
     
 };
 
-entity fireball;
 // fire_fly
 // function begins at statement 11290
 OP_CALL0	459	0	0
@@ -447,7 +437,6 @@ voidTODO () fire_fly =
     self.think = fire_fly;
 };
 
-void() barrel_explode;
 // fire_touch
 // function begins at statement 11343
 OP_STORE_V	29	4	0
@@ -464,7 +453,7 @@ voidTODO () fire_touch =
     remove(self);
 };
 
-/* ERROR: NULL TYPE */ ;
+void() barrel_explode;
 // barrel_explode
 // function begins at statement 11351
 OP_ADDRESS	28	163	7322
@@ -506,7 +495,6 @@ voidTODO () barrel_explode =
 };
 
 void() misc_explobox;
-float oldz;
 // misc_explobox
 // function begins at statement 11378
 OP_ADDRESS	28	104	7333
@@ -579,7 +567,6 @@ voidTODO () misc_explobox =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() misc_explobox2;
-float oldz;
 // misc_explobox2
 // function begins at statement 11418
 OP_ADDRESS	28	104	7352
@@ -655,7 +642,6 @@ float SPAWNFLAG_SUPERSPIKE = 1;
 float SPAWNFLAG_LASER = 2;
 void() LaunchLaser;
 void() spikeshooter_use;
-/* ERROR: NULL TYPE */ ;
 // spikeshooter_use
 // function begins at statement 11458
 OP_LOAD_F	28	195	7372
@@ -717,7 +703,6 @@ voidTODO () spikeshooter_use =
 };
 
 void() shooter_think;
-/* ERROR: NULL TYPE */ ;
 // shooter_think
 // function begins at statement 11494
 OP_CALL0	7371	0	0
@@ -740,7 +725,6 @@ voidTODO () shooter_think =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() trap_spikeshooter;
-/* ERROR: NULL TYPE */ ;
 // trap_spikeshooter
 // function begins at statement 11504
 OP_CALL0	523	0	0
@@ -777,7 +761,6 @@ voidTODO () trap_spikeshooter =
 };
 
 void() trap_shooter;
-/* ERROR: NULL TYPE */ ;
 // trap_shooter
 // function begins at statement 11520
 OP_CALL0	7412	0	0
@@ -812,7 +795,6 @@ voidTODO () trap_shooter =
 void() make_bubbles;
 void() bubble_remove;
 void() air_bubbles;
-/* ERROR: NULL TYPE */ ;
 // air_bubbles
 // function begins at statement 11536
 OP_IFNOT	35	4	0
@@ -841,7 +823,6 @@ voidTODO () air_bubbles =
     self.think = make_bubbles;
 };
 
-entity bubble;
 // make_bubbles
 // function begins at statement 11548
 OP_CALL0	459	0	0
@@ -906,7 +887,6 @@ voidTODO () make_bubbles =
 };
 
 void() bubble_split;
-entity bubble;
 // bubble_split
 // function begins at statement 11588
 OP_CALL0	459	0	0
@@ -979,7 +959,6 @@ voidTODO () bubble_split =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // bubble_remove
 // function begins at statement 11631
 OP_LOAD_S	29	129	7479
@@ -1002,7 +981,6 @@ voidTODO () bubble_remove =
     remove(self);
 };
 
-float rnd1;
 // bubble_bob
 // function begins at statement 11639
 OP_ADDRESS	28	421	7491
@@ -1139,7 +1117,6 @@ voidTODO () bubble_bob =
 };
 
 void() viewthing;
-/* ERROR: NULL TYPE */ ;
 // viewthing
 // function begins at statement 11700
 OP_ADDRESS	28	103	7524
@@ -1161,7 +1138,6 @@ voidTODO () viewthing =
 };
 
 void() func_wall_use;
-/* ERROR: NULL TYPE */ ;
 // func_wall_use
 // function begins at statement 11710
 OP_ADDRESS	28	131	7527
@@ -1176,7 +1152,6 @@ voidTODO () func_wall_use =
 };
 
 void() func_wall;
-/* ERROR: NULL TYPE */ ;
 // func_wall
 // function begins at statement 11715
 OP_ADDRESS	28	117	7531
@@ -1202,7 +1177,6 @@ voidTODO () func_wall =
 };
 
 void() func_illusionary;
-/* ERROR: NULL TYPE */ ;
 // func_illusionary
 // function begins at statement 11728
 OP_ADDRESS	28	117	7539
@@ -1228,7 +1202,6 @@ voidTODO () func_illusionary =
 };
 
 void() func_episodegate;
-/* ERROR: NULL TYPE */ ;
 // func_episodegate
 // function begins at statement 11741
 OP_LOAD_F	28	195	7546
@@ -1265,7 +1238,6 @@ voidTODO () func_episodegate =
 };
 
 void() func_bossgate;
-/* ERROR: NULL TYPE */ ;
 // func_bossgate
 // function begins at statement 11759
 OP_BITAND	38	1876	7557
@@ -1301,7 +1273,6 @@ voidTODO () func_bossgate =
 };
 
 void() ambient_suck_wind;
-string IMMEDIATE;
 // ambient_suck_wind
 // function begins at statement 11776
 OP_STORE_V	7567	4	0
@@ -1322,7 +1293,6 @@ voidTODO () ambient_suck_wind =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_drone;
-string IMMEDIATE;
 // ambient_drone
 // function begins at statement 11785
 OP_STORE_V	7572	4	0
@@ -1343,7 +1313,6 @@ voidTODO () ambient_drone =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_flouro_buzz;
-/* ERROR: NULL TYPE */ ;
 // ambient_flouro_buzz
 // function begins at statement 11794
 OP_STORE_V	7260	4	0
@@ -1364,7 +1333,6 @@ voidTODO () ambient_flouro_buzz =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_drip;
-string IMMEDIATE;
 // ambient_drip
 // function begins at statement 11803
 OP_STORE_V	7581	4	0
@@ -1385,7 +1353,6 @@ voidTODO () ambient_drip =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_comp_hum;
-string IMMEDIATE;
 // ambient_comp_hum
 // function begins at statement 11812
 OP_STORE_V	7586	4	0
@@ -1406,7 +1373,6 @@ voidTODO () ambient_comp_hum =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_thunder;
-string IMMEDIATE;
 // ambient_thunder
 // function begins at statement 11821
 OP_STORE_V	7591	4	0
@@ -1427,7 +1393,6 @@ voidTODO () ambient_thunder =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_light_buzz;
-/* ERROR: NULL TYPE */ ;
 // ambient_light_buzz
 // function begins at statement 11830
 OP_STORE_V	7252	4	0
@@ -1448,7 +1413,6 @@ voidTODO () ambient_light_buzz =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_swamp1;
-string IMMEDIATE;
 // ambient_swamp1
 // function begins at statement 11839
 OP_STORE_V	7600	4	0
@@ -1469,7 +1433,6 @@ voidTODO () ambient_swamp1 =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ambient_swamp2;
-string IMMEDIATE;
 // ambient_swamp2
 // function begins at statement 11848
 OP_STORE_V	7605	4	0
@@ -1490,7 +1453,6 @@ voidTODO () ambient_swamp2 =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() noise_think;
-/* ERROR: NULL TYPE */ ;
 // noise_think
 // function begins at statement 11857
 OP_ADDRESS	28	150	7610
@@ -1552,7 +1514,6 @@ voidTODO () noise_think =
 };
 
 void() misc_noisemaker;
-string IMMEDIATE;
 // misc_noisemaker
 // function begins at statement 11903
 OP_STORE_V	7374	4	0

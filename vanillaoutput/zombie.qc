@@ -1,7 +1,6 @@
 float SPAWN_CRUCIFIED = 1;
-/* TYPE: EV_FIELD */ inpain;
+.float inpain;
 void() zombie_stand1;
-void() zombie_stand2;
 // zombie_stand1
 // function begins at statement 16194
 OP_STATE	337	9494	0
@@ -13,7 +12,6 @@ voidTODO () zombie_stand1 =
     ai_stand();
 };
 
-void() zombie_stand3;
 // zombie_stand2
 // function begins at statement 16197
 OP_STATE	9491	9495	0
@@ -25,7 +23,6 @@ voidTODO () zombie_stand2 =
     ai_stand();
 };
 
-void() zombie_stand4;
 // zombie_stand3
 // function begins at statement 16200
 OP_STATE	7369	9496	0
@@ -37,7 +34,6 @@ voidTODO () zombie_stand3 =
     ai_stand();
 };
 
-void() zombie_stand5;
 // zombie_stand4
 // function begins at statement 16203
 OP_STATE	370	9497	0
@@ -49,7 +45,6 @@ voidTODO () zombie_stand4 =
     ai_stand();
 };
 
-void() zombie_stand6;
 // zombie_stand5
 // function begins at statement 16206
 OP_STATE	6076	9498	0
@@ -61,7 +56,6 @@ voidTODO () zombie_stand5 =
     ai_stand();
 };
 
-void() zombie_stand7;
 // zombie_stand6
 // function begins at statement 16209
 OP_STATE	313	9499	0
@@ -73,7 +67,6 @@ voidTODO () zombie_stand6 =
     ai_stand();
 };
 
-void() zombie_stand8;
 // zombie_stand7
 // function begins at statement 16212
 OP_STATE	314	9500	0
@@ -85,7 +78,6 @@ voidTODO () zombie_stand7 =
     ai_stand();
 };
 
-void() zombie_stand9;
 // zombie_stand8
 // function begins at statement 16215
 OP_STATE	315	9501	0
@@ -97,7 +89,6 @@ voidTODO () zombie_stand8 =
     ai_stand();
 };
 
-void() zombie_stand10;
 // zombie_stand9
 // function begins at statement 16218
 OP_STATE	6077	9502	0
@@ -109,7 +100,6 @@ voidTODO () zombie_stand9 =
     ai_stand();
 };
 
-void() zombie_stand11;
 // zombie_stand10
 // function begins at statement 16221
 OP_STATE	317	9503	0
@@ -121,7 +111,6 @@ voidTODO () zombie_stand10 =
     ai_stand();
 };
 
-void() zombie_stand12;
 // zombie_stand11
 // function begins at statement 16224
 OP_STATE	318	9504	0
@@ -133,7 +122,6 @@ voidTODO () zombie_stand11 =
     ai_stand();
 };
 
-void() zombie_stand13;
 // zombie_stand12
 // function begins at statement 16227
 OP_STATE	319	9505	0
@@ -145,7 +133,6 @@ voidTODO () zombie_stand12 =
     ai_stand();
 };
 
-void() zombie_stand14;
 // zombie_stand13
 // function begins at statement 16230
 OP_STATE	2250	9506	0
@@ -157,7 +144,6 @@ voidTODO () zombie_stand13 =
     ai_stand();
 };
 
-void() zombie_stand15;
 // zombie_stand14
 // function begins at statement 16233
 OP_STATE	7768	9507	0
@@ -169,7 +155,6 @@ voidTODO () zombie_stand14 =
     ai_stand();
 };
 
-void() zombie_cruc1;
 // zombie_stand15
 // function begins at statement 16236
 OP_STATE	2901	9493	0
@@ -181,7 +166,7 @@ voidTODO () zombie_stand15 =
     ai_stand();
 };
 
-float IMMEDIATE = 192;
+void() zombie_cruc1;
 // zombie_cruc1
 // function begins at statement 16239
 OP_STATE	9509	9510	0
@@ -206,7 +191,6 @@ voidTODO () zombie_cruc1 =
     
 };
 
-float IMMEDIATE = 193;
 // zombie_cruc2
 // function begins at statement 16250
 OP_STATE	9513	9514	0
@@ -224,7 +208,6 @@ voidTODO () zombie_cruc2 =
     self.nextthink = (0.000 + 0.100) + ;
 };
 
-float IMMEDIATE = 194;
 // zombie_cruc3
 // function begins at statement 16258
 OP_STATE	9519	9520	0
@@ -242,7 +225,6 @@ voidTODO () zombie_cruc3 =
     self.nextthink = (0.000 + 0.100) + ;
 };
 
-float IMMEDIATE = 195;
 // zombie_cruc4
 // function begins at statement 16266
 OP_STATE	9525	9526	0
@@ -260,7 +242,6 @@ voidTODO () zombie_cruc4 =
     self.nextthink = (0.000 + 0.100) + ;
 };
 
-float IMMEDIATE = 196;
 // zombie_cruc5
 // function begins at statement 16274
 OP_STATE	9531	9532	0
@@ -278,7 +259,6 @@ voidTODO () zombie_cruc5 =
     self.nextthink = (0.000 + 0.100) + ;
 };
 
-float IMMEDIATE = 197;
 // zombie_cruc6
 // function begins at statement 16282
 OP_STATE	9537	9508	0
@@ -297,7 +277,6 @@ voidTODO () zombie_cruc6 =
 };
 
 void() zombie_walk1;
-void() zombie_walk2;
 // zombie_walk1
 // function begins at statement 16290
 OP_STATE	1876	9543	0
@@ -310,7 +289,6 @@ voidTODO () zombie_walk1 =
     ai_walk(0.000);
 };
 
-void() zombie_walk3;
 // zombie_walk2
 // function begins at statement 16294
 OP_STATE	6078	9544	0
@@ -323,7 +301,6 @@ voidTODO () zombie_walk2 =
     ai_walk(2.000);
 };
 
-void() zombie_walk4;
 // zombie_walk3
 // function begins at statement 16298
 OP_STATE	4861	9545	0
@@ -336,7 +313,6 @@ voidTODO () zombie_walk3 =
     ai_walk(3.000);
 };
 
-void() zombie_walk5;
 // zombie_walk4
 // function begins at statement 16302
 OP_STATE	3319	9546	0
@@ -349,7 +325,6 @@ voidTODO () zombie_walk4 =
     ai_walk(2.000);
 };
 
-void() zombie_walk6;
 // zombie_walk5
 // function begins at statement 16306
 OP_STATE	7776	9547	0
@@ -362,7 +337,6 @@ voidTODO () zombie_walk5 =
     ai_walk(1.000);
 };
 
-void() zombie_walk7;
 // zombie_walk6
 // function begins at statement 16310
 OP_STATE	894	9548	0
@@ -375,7 +349,6 @@ voidTODO () zombie_walk6 =
     ai_walk(0.000);
 };
 
-void() zombie_walk8;
 // zombie_walk7
 // function begins at statement 16314
 OP_STATE	7779	9549	0
@@ -388,7 +361,6 @@ voidTODO () zombie_walk7 =
     ai_walk(0.000);
 };
 
-void() zombie_walk9;
 // zombie_walk8
 // function begins at statement 16318
 OP_STATE	7781	9550	0
@@ -401,7 +373,6 @@ voidTODO () zombie_walk8 =
     ai_walk(0.000);
 };
 
-void() zombie_walk10;
 // zombie_walk9
 // function begins at statement 16322
 OP_STATE	301	9551	0
@@ -414,7 +385,6 @@ voidTODO () zombie_walk9 =
     ai_walk(0.000);
 };
 
-void() zombie_walk11;
 // zombie_walk10
 // function begins at statement 16326
 OP_STATE	4437	9552	0
@@ -427,7 +397,6 @@ voidTODO () zombie_walk10 =
     ai_walk(0.000);
 };
 
-void() zombie_walk12;
 // zombie_walk11
 // function begins at statement 16330
 OP_STATE	1890	9553	0
@@ -440,7 +409,6 @@ voidTODO () zombie_walk11 =
     ai_walk(2.000);
 };
 
-void() zombie_walk13;
 // zombie_walk12
 // function begins at statement 16334
 OP_STATE	7788	9554	0
@@ -453,7 +421,6 @@ voidTODO () zombie_walk12 =
     ai_walk(2.000);
 };
 
-void() zombie_walk14;
 // zombie_walk13
 // function begins at statement 16338
 OP_STATE	302	9555	0
@@ -466,7 +433,6 @@ voidTODO () zombie_walk13 =
     ai_walk(1.000);
 };
 
-void() zombie_walk15;
 // zombie_walk14
 // function begins at statement 16342
 OP_STATE	303	9556	0
@@ -479,7 +445,6 @@ voidTODO () zombie_walk14 =
     ai_walk(0.000);
 };
 
-void() zombie_walk16;
 // zombie_walk15
 // function begins at statement 16346
 OP_STATE	5105	9557	0
@@ -492,7 +457,6 @@ voidTODO () zombie_walk15 =
     ai_walk(0.000);
 };
 
-void() zombie_walk17;
 // zombie_walk16
 // function begins at statement 16350
 OP_STATE	304	9558	0
@@ -505,7 +469,6 @@ voidTODO () zombie_walk16 =
     ai_walk(0.000);
 };
 
-void() zombie_walk18;
 // zombie_walk17
 // function begins at statement 16354
 OP_STATE	305	9559	0
@@ -518,7 +481,6 @@ voidTODO () zombie_walk17 =
     ai_walk(0.000);
 };
 
-void() zombie_walk19;
 // zombie_walk18
 // function begins at statement 16358
 OP_STATE	5674	9560	0
@@ -531,7 +493,6 @@ voidTODO () zombie_walk18 =
     ai_walk(0.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // zombie_walk19
 // function begins at statement 16362
 OP_STATE	307	9542	0
@@ -560,7 +521,6 @@ voidTODO () zombie_walk19 =
 };
 
 void() zombie_run1;
-void() zombie_run2;
 // zombie_run1
 // function begins at statement 16375
 OP_STATE	5112	9563	0
@@ -576,7 +536,6 @@ voidTODO () zombie_run1 =
     self.inpain = 0.000;
 };
 
-void() zombie_run3;
 // zombie_run2
 // function begins at statement 16381
 OP_STATE	3072	9565	0
@@ -589,7 +548,6 @@ voidTODO () zombie_run2 =
     ai_run(1.000);
 };
 
-void() zombie_run4;
 // zombie_run3
 // function begins at statement 16385
 OP_STATE	5096	9566	0
@@ -602,7 +560,6 @@ voidTODO () zombie_run3 =
     ai_run(0.000);
 };
 
-void() zombie_run5;
 // zombie_run4
 // function begins at statement 16389
 OP_STATE	5098	9567	0
@@ -615,7 +572,6 @@ voidTODO () zombie_run4 =
     ai_run(1.000);
 };
 
-void() zombie_run6;
 // zombie_run5
 // function begins at statement 16393
 OP_STATE	5100	9568	0
@@ -628,7 +584,6 @@ voidTODO () zombie_run5 =
     ai_run(2.000);
 };
 
-void() zombie_run7;
 // zombie_run6
 // function begins at statement 16397
 OP_STATE	5102	9569	0
@@ -641,7 +596,6 @@ voidTODO () zombie_run6 =
     ai_run(3.000);
 };
 
-void() zombie_run8;
 // zombie_run7
 // function begins at statement 16401
 OP_STATE	1733	9570	0
@@ -654,7 +608,6 @@ voidTODO () zombie_run7 =
     ai_run(4.000);
 };
 
-void() zombie_run9;
 // zombie_run8
 // function begins at statement 16405
 OP_STATE	5443	9571	0
@@ -667,7 +620,6 @@ voidTODO () zombie_run8 =
     ai_run(4.000);
 };
 
-void() zombie_run10;
 // zombie_run9
 // function begins at statement 16409
 OP_STATE	5445	9572	0
@@ -680,7 +632,6 @@ voidTODO () zombie_run9 =
     ai_run(2.000);
 };
 
-void() zombie_run11;
 // zombie_run10
 // function begins at statement 16413
 OP_STATE	5447	9573	0
@@ -693,7 +644,6 @@ voidTODO () zombie_run10 =
     ai_run(0.000);
 };
 
-void() zombie_run12;
 // zombie_run11
 // function begins at statement 16417
 OP_STATE	5449	9574	0
@@ -706,7 +656,6 @@ voidTODO () zombie_run11 =
     ai_run(0.000);
 };
 
-void() zombie_run13;
 // zombie_run12
 // function begins at statement 16421
 OP_STATE	1390	9575	0
@@ -719,7 +668,6 @@ voidTODO () zombie_run12 =
     ai_run(0.000);
 };
 
-void() zombie_run14;
 // zombie_run13
 // function begins at statement 16425
 OP_STATE	5452	9576	0
@@ -732,7 +680,6 @@ voidTODO () zombie_run13 =
     ai_run(2.000);
 };
 
-void() zombie_run15;
 // zombie_run14
 // function begins at statement 16429
 OP_STATE	5454	9577	0
@@ -745,7 +692,6 @@ voidTODO () zombie_run14 =
     ai_run(4.000);
 };
 
-void() zombie_run16;
 // zombie_run15
 // function begins at statement 16433
 OP_STATE	5456	9578	0
@@ -758,7 +704,6 @@ voidTODO () zombie_run15 =
     ai_run(6.000);
 };
 
-void() zombie_run17;
 // zombie_run16
 // function begins at statement 16437
 OP_STATE	5458	9579	0
@@ -771,7 +716,6 @@ voidTODO () zombie_run16 =
     ai_run(7.000);
 };
 
-void() zombie_run18;
 // zombie_run17
 // function begins at statement 16441
 OP_STATE	2227	9580	0
@@ -784,7 +728,6 @@ voidTODO () zombie_run17 =
     ai_run(3.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // zombie_run18
 // function begins at statement 16445
 OP_STATE	5351	9562	0
@@ -829,7 +772,6 @@ voidTODO () zombie_run18 =
 };
 
 void() ZombieGrenadeTouch;
-/* ERROR: NULL TYPE */ ;
 // ZombieGrenadeTouch
 // function begins at statement 16467
 OP_LOAD_ENT	28	201	9585
@@ -891,7 +833,6 @@ voidTODO () ZombieGrenadeTouch =
 };
 
 void() ZombieFireGrenade;
-vector st;
 // ZombieFireGrenade
 // function begins at statement 16501
 OP_STORE_V	28	4	0
@@ -985,7 +926,6 @@ voidTODO (vector st) ZombieFireGrenade =
 };
 
 void() zombie_atta1;
-void() zombie_atta2;
 // zombie_atta1
 // function begins at statement 16560
 OP_STATE	5353	9664	0
@@ -997,7 +937,6 @@ voidTODO () zombie_atta1 =
     ai_face();
 };
 
-void() zombie_atta3;
 // zombie_atta2
 // function begins at statement 16563
 OP_STATE	5355	9665	0
@@ -1009,7 +948,6 @@ voidTODO () zombie_atta2 =
     ai_face();
 };
 
-void() zombie_atta4;
 // zombie_atta3
 // function begins at statement 16566
 OP_STATE	5357	9666	0
@@ -1021,7 +959,6 @@ voidTODO () zombie_atta3 =
     ai_face();
 };
 
-void() zombie_atta5;
 // zombie_atta4
 // function begins at statement 16569
 OP_STATE	5359	9667	0
@@ -1033,7 +970,6 @@ voidTODO () zombie_atta4 =
     ai_face();
 };
 
-void() zombie_atta6;
 // zombie_atta5
 // function begins at statement 16572
 OP_STATE	5361	9668	0
@@ -1045,7 +981,6 @@ voidTODO () zombie_atta5 =
     ai_face();
 };
 
-void() zombie_atta7;
 // zombie_atta6
 // function begins at statement 16575
 OP_STATE	5363	9669	0
@@ -1057,7 +992,6 @@ voidTODO () zombie_atta6 =
     ai_face();
 };
 
-void() zombie_atta8;
 // zombie_atta7
 // function begins at statement 16578
 OP_STATE	5365	9670	0
@@ -1069,7 +1003,6 @@ voidTODO () zombie_atta7 =
     ai_face();
 };
 
-void() zombie_atta9;
 // zombie_atta8
 // function begins at statement 16581
 OP_STATE	5367	9671	0
@@ -1081,7 +1014,6 @@ voidTODO () zombie_atta8 =
     ai_face();
 };
 
-void() zombie_atta10;
 // zombie_atta9
 // function begins at statement 16584
 OP_STATE	912	9672	0
@@ -1093,7 +1025,6 @@ voidTODO () zombie_atta9 =
     ai_face();
 };
 
-void() zombie_atta11;
 // zombie_atta10
 // function begins at statement 16587
 OP_STATE	5369	9673	0
@@ -1105,7 +1036,6 @@ voidTODO () zombie_atta10 =
     ai_face();
 };
 
-void() zombie_atta12;
 // zombie_atta11
 // function begins at statement 16590
 OP_STATE	5371	9674	0
@@ -1117,7 +1047,6 @@ voidTODO () zombie_atta11 =
     ai_face();
 };
 
-void() zombie_atta13;
 // zombie_atta12
 // function begins at statement 16593
 OP_STATE	3872	9675	0
@@ -1129,7 +1058,6 @@ voidTODO () zombie_atta12 =
     ai_face();
 };
 
-vector IMMEDIATE;
 // zombie_atta13
 // function begins at statement 16596
 OP_STATE	260	9562	0
@@ -1147,7 +1075,6 @@ voidTODO () zombie_atta13 =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */  = 30;
 void() zombie_attb1;
-void() zombie_attb2;
 // zombie_attb1
 // function begins at statement 16601
 OP_STATE	5375	9680	0
@@ -1159,7 +1086,6 @@ voidTODO () zombie_attb1 =
     ai_face();
 };
 
-void() zombie_attb3;
 // zombie_attb2
 // function begins at statement 16604
 OP_STATE	5377	9681	0
@@ -1171,7 +1097,6 @@ voidTODO () zombie_attb2 =
     ai_face();
 };
 
-void() zombie_attb4;
 // zombie_attb3
 // function begins at statement 16607
 OP_STATE	5379	9682	0
@@ -1183,7 +1108,6 @@ voidTODO () zombie_attb3 =
     ai_face();
 };
 
-void() zombie_attb5;
 // zombie_attb4
 // function begins at statement 16610
 OP_STATE	5381	9683	0
@@ -1195,7 +1119,6 @@ voidTODO () zombie_attb4 =
     ai_face();
 };
 
-void() zombie_attb6;
 // zombie_attb5
 // function begins at statement 16613
 OP_STATE	5383	9684	0
@@ -1207,7 +1130,6 @@ voidTODO () zombie_attb5 =
     ai_face();
 };
 
-void() zombie_attb7;
 // zombie_attb6
 // function begins at statement 16616
 OP_STATE	5384	9685	0
@@ -1219,7 +1141,6 @@ voidTODO () zombie_attb6 =
     ai_face();
 };
 
-void() zombie_attb8;
 // zombie_attb7
 // function begins at statement 16619
 OP_STATE	5386	9686	0
@@ -1231,7 +1152,6 @@ voidTODO () zombie_attb7 =
     ai_face();
 };
 
-void() zombie_attb9;
 // zombie_attb8
 // function begins at statement 16622
 OP_STATE	5388	9687	0
@@ -1243,7 +1163,6 @@ voidTODO () zombie_attb8 =
     ai_face();
 };
 
-void() zombie_attb10;
 // zombie_attb9
 // function begins at statement 16625
 OP_STATE	2739	9688	0
@@ -1255,7 +1174,6 @@ voidTODO () zombie_attb9 =
     ai_face();
 };
 
-void() zombie_attb11;
 // zombie_attb10
 // function begins at statement 16628
 OP_STATE	5391	9689	0
@@ -1267,7 +1185,6 @@ voidTODO () zombie_attb10 =
     ai_face();
 };
 
-void() zombie_attb12;
 // zombie_attb11
 // function begins at statement 16631
 OP_STATE	5393	9690	0
@@ -1279,7 +1196,6 @@ voidTODO () zombie_attb11 =
     ai_face();
 };
 
-void() zombie_attb13;
 // zombie_attb12
 // function begins at statement 16634
 OP_STATE	5395	9691	0
@@ -1291,7 +1207,6 @@ voidTODO () zombie_attb12 =
     ai_face();
 };
 
-void() zombie_attb14;
 // zombie_attb13
 // function begins at statement 16637
 OP_STATE	5397	9692	0
@@ -1303,7 +1218,6 @@ voidTODO () zombie_attb13 =
     ai_face();
 };
 
-vector IMMEDIATE;
 // zombie_attb14
 // function begins at statement 16640
 OP_STATE	5397	9562	0
@@ -1321,7 +1235,6 @@ voidTODO () zombie_attb14 =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */  = 29;
 void() zombie_attc1;
-void() zombie_attc2;
 // zombie_attc1
 // function begins at statement 16645
 OP_STATE	5401	9697	0
@@ -1333,7 +1246,6 @@ voidTODO () zombie_attc1 =
     ai_face();
 };
 
-void() zombie_attc3;
 // zombie_attc2
 // function begins at statement 16648
 OP_STATE	788	9698	0
@@ -1345,7 +1257,6 @@ voidTODO () zombie_attc2 =
     ai_face();
 };
 
-void() zombie_attc4;
 // zombie_attc3
 // function begins at statement 16651
 OP_STATE	5404	9699	0
@@ -1357,7 +1268,6 @@ voidTODO () zombie_attc3 =
     ai_face();
 };
 
-void() zombie_attc5;
 // zombie_attc4
 // function begins at statement 16654
 OP_STATE	5406	9700	0
@@ -1369,7 +1279,6 @@ voidTODO () zombie_attc4 =
     ai_face();
 };
 
-void() zombie_attc6;
 // zombie_attc5
 // function begins at statement 16657
 OP_STATE	5408	9701	0
@@ -1381,7 +1290,6 @@ voidTODO () zombie_attc5 =
     ai_face();
 };
 
-void() zombie_attc7;
 // zombie_attc6
 // function begins at statement 16660
 OP_STATE	5410	9702	0
@@ -1393,7 +1301,6 @@ voidTODO () zombie_attc6 =
     ai_face();
 };
 
-void() zombie_attc8;
 // zombie_attc7
 // function begins at statement 16663
 OP_STATE	5411	9703	0
@@ -1405,7 +1312,6 @@ voidTODO () zombie_attc7 =
     ai_face();
 };
 
-void() zombie_attc9;
 // zombie_attc8
 // function begins at statement 16666
 OP_STATE	5413	9704	0
@@ -1417,7 +1323,6 @@ voidTODO () zombie_attc8 =
     ai_face();
 };
 
-void() zombie_attc10;
 // zombie_attc9
 // function begins at statement 16669
 OP_STATE	5415	9705	0
@@ -1429,7 +1334,6 @@ voidTODO () zombie_attc9 =
     ai_face();
 };
 
-void() zombie_attc11;
 // zombie_attc10
 // function begins at statement 16672
 OP_STATE	5417	9706	0
@@ -1441,7 +1345,6 @@ voidTODO () zombie_attc10 =
     ai_face();
 };
 
-void() zombie_attc12;
 // zombie_attc11
 // function begins at statement 16675
 OP_STATE	5419	9707	0
@@ -1453,7 +1356,6 @@ voidTODO () zombie_attc11 =
     ai_face();
 };
 
-vector IMMEDIATE;
 // zombie_attc12
 // function begins at statement 16678
 OP_STATE	1423	9562	0
@@ -1471,7 +1373,6 @@ voidTODO () zombie_attc12 =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */  = 29;
 void() zombie_missile;
-float r;
 // zombie_missile
 // function begins at statement 16683
 OP_CALL0	452	0	0
@@ -1506,7 +1407,6 @@ voidTODO () zombie_missile =
 };
 
 void() zombie_paina1;
-void() zombie_paina2;
 // zombie_paina1
 // function begins at statement 16695
 OP_STATE	5422	9716	0
@@ -1523,7 +1423,6 @@ voidTODO () zombie_paina1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() zombie_paina3;
 // zombie_paina2
 // function begins at statement 16703
 OP_STATE	5424	9718	0
@@ -1536,7 +1435,6 @@ voidTODO () zombie_paina2 =
     ai_painforward(3.000);
 };
 
-void() zombie_paina4;
 // zombie_paina3
 // function begins at statement 16707
 OP_STATE	5426	9719	0
@@ -1549,7 +1447,6 @@ voidTODO () zombie_paina3 =
     ai_painforward(1.000);
 };
 
-void() zombie_paina5;
 // zombie_paina4
 // function begins at statement 16711
 OP_STATE	5427	9720	0
@@ -1562,7 +1459,6 @@ voidTODO () zombie_paina4 =
     ai_pain(1.000);
 };
 
-void() zombie_paina6;
 // zombie_paina5
 // function begins at statement 16715
 OP_STATE	5429	9721	0
@@ -1575,7 +1471,6 @@ voidTODO () zombie_paina5 =
     ai_pain(3.000);
 };
 
-void() zombie_paina7;
 // zombie_paina6
 // function begins at statement 16719
 OP_STATE	5431	9722	0
@@ -1588,7 +1483,6 @@ voidTODO () zombie_paina6 =
     ai_pain(1.000);
 };
 
-void() zombie_paina8;
 // zombie_paina7
 // function begins at statement 16723
 OP_STATE	5433	9723	0
@@ -1598,7 +1492,6 @@ voidTODO () zombie_paina7 =
     // *** UNPROCESSED OPCODE OP_STATE 5433 9723 0
 };
 
-void() zombie_paina9;
 // zombie_paina8
 // function begins at statement 16725
 OP_STATE	5435	9724	0
@@ -1608,7 +1501,6 @@ voidTODO () zombie_paina8 =
     // *** UNPROCESSED OPCODE OP_STATE 5435 9724 0
 };
 
-void() zombie_paina10;
 // zombie_paina9
 // function begins at statement 16727
 OP_STATE	5437	9725	0
@@ -1618,7 +1510,6 @@ voidTODO () zombie_paina9 =
     // *** UNPROCESSED OPCODE OP_STATE 5437 9725 0
 };
 
-void() zombie_paina11;
 // zombie_paina10
 // function begins at statement 16729
 OP_STATE	1884	9726	0
@@ -1628,7 +1519,6 @@ voidTODO () zombie_paina10 =
     // *** UNPROCESSED OPCODE OP_STATE 1884 9726 0
 };
 
-void() zombie_paina12;
 // zombie_paina11
 // function begins at statement 16731
 OP_STATE	5440	9727	0
@@ -1638,7 +1528,6 @@ voidTODO () zombie_paina11 =
     // *** UNPROCESSED OPCODE OP_STATE 5440 9727 0
 };
 
-void() zombie_painb1;
 // zombie_paina12
 // function begins at statement 16733
 OP_STATE	5442	9562	0
@@ -1648,7 +1537,7 @@ voidTODO () zombie_paina12 =
     // *** UNPROCESSED OPCODE OP_STATE 5442 9562 0
 };
 
-void() zombie_painb2;
+void() zombie_painb1;
 // zombie_painb1
 // function begins at statement 16735
 OP_STATE	4971	9729	0
@@ -1665,7 +1554,6 @@ voidTODO () zombie_painb1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() zombie_painb3;
 // zombie_painb2
 // function begins at statement 16743
 OP_STATE	4986	9731	0
@@ -1678,7 +1566,6 @@ voidTODO () zombie_painb2 =
     ai_pain(2.000);
 };
 
-void() zombie_painb4;
 // zombie_painb3
 // function begins at statement 16747
 OP_STATE	5000	9732	0
@@ -1691,7 +1578,6 @@ voidTODO () zombie_painb3 =
     ai_pain(8.000);
 };
 
-void() zombie_painb5;
 // zombie_painb4
 // function begins at statement 16751
 OP_STATE	5015	9733	0
@@ -1704,7 +1590,6 @@ voidTODO () zombie_painb4 =
     ai_pain(6.000);
 };
 
-void() zombie_painb6;
 // zombie_painb5
 // function begins at statement 16755
 OP_STATE	5029	9734	0
@@ -1717,7 +1602,6 @@ voidTODO () zombie_painb5 =
     ai_pain(2.000);
 };
 
-void() zombie_painb7;
 // zombie_painb6
 // function begins at statement 16759
 OP_STATE	5035	9735	0
@@ -1727,7 +1611,6 @@ voidTODO () zombie_painb6 =
     // *** UNPROCESSED OPCODE OP_STATE 5035 9735 0
 };
 
-void() zombie_painb8;
 // zombie_painb7
 // function begins at statement 16761
 OP_STATE	5038	9736	0
@@ -1737,7 +1620,6 @@ voidTODO () zombie_painb7 =
     // *** UNPROCESSED OPCODE OP_STATE 5038 9736 0
 };
 
-void() zombie_painb9;
 // zombie_painb8
 // function begins at statement 16763
 OP_STATE	5041	9737	0
@@ -1747,7 +1629,6 @@ voidTODO () zombie_painb8 =
     // *** UNPROCESSED OPCODE OP_STATE 5041 9737 0
 };
 
-void() zombie_painb10;
 // zombie_painb9
 // function begins at statement 16765
 OP_STATE	5044	9738	0
@@ -1764,7 +1645,6 @@ voidTODO () zombie_painb9 =
     sound(self, 4.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() zombie_painb11;
 // zombie_painb10
 // function begins at statement 16773
 OP_STATE	5047	9740	0
@@ -1774,7 +1654,6 @@ voidTODO () zombie_painb10 =
     // *** UNPROCESSED OPCODE OP_STATE 5047 9740 0
 };
 
-void() zombie_painb12;
 // zombie_painb11
 // function begins at statement 16775
 OP_STATE	4909	9741	0
@@ -1784,7 +1663,6 @@ voidTODO () zombie_painb11 =
     // *** UNPROCESSED OPCODE OP_STATE 4909 9741 0
 };
 
-void() zombie_painb13;
 // zombie_painb12
 // function begins at statement 16777
 OP_STATE	4915	9742	0
@@ -1794,7 +1672,6 @@ voidTODO () zombie_painb12 =
     // *** UNPROCESSED OPCODE OP_STATE 4915 9742 0
 };
 
-void() zombie_painb14;
 // zombie_painb13
 // function begins at statement 16779
 OP_STATE	4918	9743	0
@@ -1804,7 +1681,6 @@ voidTODO () zombie_painb13 =
     // *** UNPROCESSED OPCODE OP_STATE 4918 9743 0
 };
 
-void() zombie_painb15;
 // zombie_painb14
 // function begins at statement 16781
 OP_STATE	4921	9744	0
@@ -1814,7 +1690,6 @@ voidTODO () zombie_painb14 =
     // *** UNPROCESSED OPCODE OP_STATE 4921 9744 0
 };
 
-void() zombie_painb16;
 // zombie_painb15
 // function begins at statement 16783
 OP_STATE	4924	9745	0
@@ -1824,7 +1699,6 @@ voidTODO () zombie_painb15 =
     // *** UNPROCESSED OPCODE OP_STATE 4924 9745 0
 };
 
-void() zombie_painb17;
 // zombie_painb16
 // function begins at statement 16785
 OP_STATE	4927	9746	0
@@ -1834,7 +1708,6 @@ voidTODO () zombie_painb16 =
     // *** UNPROCESSED OPCODE OP_STATE 4927 9746 0
 };
 
-void() zombie_painb18;
 // zombie_painb17
 // function begins at statement 16787
 OP_STATE	4929	9747	0
@@ -1844,7 +1717,6 @@ voidTODO () zombie_painb17 =
     // *** UNPROCESSED OPCODE OP_STATE 4929 9747 0
 };
 
-void() zombie_painb19;
 // zombie_painb18
 // function begins at statement 16789
 OP_STATE	1164	9748	0
@@ -1854,7 +1726,6 @@ voidTODO () zombie_painb18 =
     // *** UNPROCESSED OPCODE OP_STATE 1164 9748 0
 };
 
-void() zombie_painb20;
 // zombie_painb19
 // function begins at statement 16791
 OP_STATE	4934	9749	0
@@ -1864,7 +1735,6 @@ voidTODO () zombie_painb19 =
     // *** UNPROCESSED OPCODE OP_STATE 4934 9749 0
 };
 
-void() zombie_painb21;
 // zombie_painb20
 // function begins at statement 16793
 OP_STATE	4937	9750	0
@@ -1874,7 +1744,6 @@ voidTODO () zombie_painb20 =
     // *** UNPROCESSED OPCODE OP_STATE 4937 9750 0
 };
 
-void() zombie_painb22;
 // zombie_painb21
 // function begins at statement 16795
 OP_STATE	7942	9751	0
@@ -1884,7 +1753,6 @@ voidTODO () zombie_painb21 =
     // *** UNPROCESSED OPCODE OP_STATE 7942 9751 0
 };
 
-void() zombie_painb23;
 // zombie_painb22
 // function begins at statement 16797
 OP_STATE	7944	9752	0
@@ -1894,7 +1762,6 @@ voidTODO () zombie_painb22 =
     // *** UNPROCESSED OPCODE OP_STATE 7944 9752 0
 };
 
-void() zombie_painb24;
 // zombie_painb23
 // function begins at statement 16799
 OP_STATE	4939	9753	0
@@ -1904,7 +1771,6 @@ voidTODO () zombie_painb23 =
     // *** UNPROCESSED OPCODE OP_STATE 4939 9753 0
 };
 
-void() zombie_painb25;
 // zombie_painb24
 // function begins at statement 16801
 OP_STATE	4942	9754	0
@@ -1914,7 +1780,6 @@ voidTODO () zombie_painb24 =
     // *** UNPROCESSED OPCODE OP_STATE 4942 9754 0
 };
 
-void() zombie_painb26;
 // zombie_painb25
 // function begins at statement 16803
 OP_STATE	4945	9755	0
@@ -1927,7 +1792,6 @@ voidTODO () zombie_painb25 =
     ai_painforward(1.000);
 };
 
-void() zombie_painb27;
 // zombie_painb26
 // function begins at statement 16807
 OP_STATE	261	9756	0
@@ -1937,7 +1801,6 @@ voidTODO () zombie_painb26 =
     // *** UNPROCESSED OPCODE OP_STATE 261 9756 0
 };
 
-void() zombie_painb28;
 // zombie_painb27
 // function begins at statement 16809
 OP_STATE	7952	9757	0
@@ -1947,7 +1810,6 @@ voidTODO () zombie_painb27 =
     // *** UNPROCESSED OPCODE OP_STATE 7952 9757 0
 };
 
-void() zombie_painc1;
 // zombie_painb28
 // function begins at statement 16811
 OP_STATE	7954	9562	0
@@ -1957,7 +1819,7 @@ voidTODO () zombie_painb28 =
     // *** UNPROCESSED OPCODE OP_STATE 7954 9562 0
 };
 
-void() zombie_painc2;
+void() zombie_painc1;
 // zombie_painc1
 // function begins at statement 16813
 OP_STATE	4949	9759	0
@@ -1974,7 +1836,6 @@ voidTODO () zombie_painc1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() zombie_painc3;
 // zombie_painc2
 // function begins at statement 16821
 OP_STATE	4952	9760	0
@@ -1984,7 +1845,6 @@ voidTODO () zombie_painc2 =
     // *** UNPROCESSED OPCODE OP_STATE 4952 9760 0
 };
 
-void() zombie_painc4;
 // zombie_painc3
 // function begins at statement 16823
 OP_STATE	4955	9761	0
@@ -1997,7 +1857,6 @@ voidTODO () zombie_painc3 =
     ai_pain(3.000);
 };
 
-void() zombie_painc5;
 // zombie_painc4
 // function begins at statement 16827
 OP_STATE	4958	9762	0
@@ -2010,7 +1869,6 @@ voidTODO () zombie_painc4 =
     ai_pain(1.000);
 };
 
-void() zombie_painc6;
 // zombie_painc5
 // function begins at statement 16831
 OP_STATE	7960	9763	0
@@ -2020,7 +1878,6 @@ voidTODO () zombie_painc5 =
     // *** UNPROCESSED OPCODE OP_STATE 7960 9763 0
 };
 
-float IMMEDIATE = 136;
 // zombie_painc6
 // function begins at statement 16833
 OP_STATE	9764	9765	0
@@ -2030,7 +1887,6 @@ voidTODO () zombie_painc6 =
     // *** UNPROCESSED OPCODE OP_STATE 9764 9765 0
 };
 
-void() zombie_painc8;
 // zombie_painc7
 // function begins at statement 16835
 OP_STATE	4960	9766	0
@@ -2040,7 +1896,6 @@ voidTODO () zombie_painc7 =
     // *** UNPROCESSED OPCODE OP_STATE 4960 9766 0
 };
 
-void() zombie_painc9;
 // zombie_painc8
 // function begins at statement 16837
 OP_STATE	4963	9767	0
@@ -2050,7 +1905,6 @@ voidTODO () zombie_painc8 =
     // *** UNPROCESSED OPCODE OP_STATE 4963 9767 0
 };
 
-void() zombie_painc10;
 // zombie_painc9
 // function begins at statement 16839
 OP_STATE	4966	9768	0
@@ -2060,7 +1914,6 @@ voidTODO () zombie_painc9 =
     // *** UNPROCESSED OPCODE OP_STATE 4966 9768 0
 };
 
-void() zombie_painc11;
 // zombie_painc10
 // function begins at statement 16841
 OP_STATE	4969	9769	0
@@ -2070,7 +1923,6 @@ voidTODO () zombie_painc10 =
     // *** UNPROCESSED OPCODE OP_STATE 4969 9769 0
 };
 
-float IMMEDIATE = 141;
 // zombie_painc11
 // function begins at statement 16843
 OP_STATE	9770	9771	0
@@ -2083,7 +1935,6 @@ voidTODO () zombie_painc11 =
     ai_painforward(1.000);
 };
 
-float IMMEDIATE = 142;
 // zombie_painc12
 // function begins at statement 16847
 OP_STATE	9772	9773	0
@@ -2096,7 +1947,6 @@ voidTODO () zombie_painc12 =
     ai_painforward(1.000);
 };
 
-float IMMEDIATE = 143;
 // zombie_painc13
 // function begins at statement 16851
 OP_STATE	9774	9775	0
@@ -2106,7 +1956,6 @@ voidTODO () zombie_painc13 =
     // *** UNPROCESSED OPCODE OP_STATE 9774 9775 0
 };
 
-float IMMEDIATE = 144;
 // zombie_painc14
 // function begins at statement 16853
 OP_STATE	9776	9777	0
@@ -2116,7 +1965,6 @@ voidTODO () zombie_painc14 =
     // *** UNPROCESSED OPCODE OP_STATE 9776 9777 0
 };
 
-float IMMEDIATE = 145;
 // zombie_painc15
 // function begins at statement 16855
 OP_STATE	9778	9779	0
@@ -2126,7 +1974,6 @@ voidTODO () zombie_painc15 =
     // *** UNPROCESSED OPCODE OP_STATE 9778 9779 0
 };
 
-float IMMEDIATE = 146;
 // zombie_painc16
 // function begins at statement 16857
 OP_STATE	9780	9781	0
@@ -2136,7 +1983,6 @@ voidTODO () zombie_painc16 =
     // *** UNPROCESSED OPCODE OP_STATE 9780 9781 0
 };
 
-float IMMEDIATE = 147;
 // zombie_painc17
 // function begins at statement 16859
 OP_STATE	9782	9783	0
@@ -2146,7 +1992,6 @@ voidTODO () zombie_painc17 =
     // *** UNPROCESSED OPCODE OP_STATE 9782 9783 0
 };
 
-float IMMEDIATE = 148;
 // zombie_painc18
 // function begins at statement 16861
 OP_STATE	9784	9562	0
@@ -2157,7 +2002,6 @@ voidTODO () zombie_painc18 =
 };
 
 void() zombie_paind1;
-float IMMEDIATE = 149;
 // zombie_paind1
 // function begins at statement 16863
 OP_STATE	9786	9787	0
@@ -2174,7 +2018,6 @@ voidTODO () zombie_paind1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() zombie_paind3;
 // zombie_paind2
 // function begins at statement 16871
 OP_STATE	1960	9788	0
@@ -2184,7 +2027,6 @@ voidTODO () zombie_paind2 =
     // *** UNPROCESSED OPCODE OP_STATE 1960 9788 0
 };
 
-float IMMEDIATE = 151;
 // zombie_paind3
 // function begins at statement 16873
 OP_STATE	9789	9790	0
@@ -2194,7 +2036,6 @@ voidTODO () zombie_paind3 =
     // *** UNPROCESSED OPCODE OP_STATE 9789 9790 0
 };
 
-float IMMEDIATE = 152;
 // zombie_paind4
 // function begins at statement 16875
 OP_STATE	9791	9792	0
@@ -2204,7 +2045,6 @@ voidTODO () zombie_paind4 =
     // *** UNPROCESSED OPCODE OP_STATE 9791 9792 0
 };
 
-float IMMEDIATE = 153;
 // zombie_paind5
 // function begins at statement 16877
 OP_STATE	9793	9794	0
@@ -2214,7 +2054,6 @@ voidTODO () zombie_paind5 =
     // *** UNPROCESSED OPCODE OP_STATE 9793 9794 0
 };
 
-float IMMEDIATE = 154;
 // zombie_paind6
 // function begins at statement 16879
 OP_STATE	9795	9796	0
@@ -2224,7 +2063,6 @@ voidTODO () zombie_paind6 =
     // *** UNPROCESSED OPCODE OP_STATE 9795 9796 0
 };
 
-float IMMEDIATE = 155;
 // zombie_paind7
 // function begins at statement 16881
 OP_STATE	9797	9798	0
@@ -2234,7 +2072,6 @@ voidTODO () zombie_paind7 =
     // *** UNPROCESSED OPCODE OP_STATE 9797 9798 0
 };
 
-float IMMEDIATE = 156;
 // zombie_paind8
 // function begins at statement 16883
 OP_STATE	9799	9800	0
@@ -2244,7 +2081,6 @@ voidTODO () zombie_paind8 =
     // *** UNPROCESSED OPCODE OP_STATE 9799 9800 0
 };
 
-float IMMEDIATE = 157;
 // zombie_paind9
 // function begins at statement 16885
 OP_STATE	9801	9802	0
@@ -2257,7 +2093,6 @@ voidTODO () zombie_paind9 =
     ai_pain(1.000);
 };
 
-float IMMEDIATE = 158;
 // zombie_paind10
 // function begins at statement 16889
 OP_STATE	9803	9804	0
@@ -2267,7 +2102,6 @@ voidTODO () zombie_paind10 =
     // *** UNPROCESSED OPCODE OP_STATE 9803 9804 0
 };
 
-float IMMEDIATE = 159;
 // zombie_paind11
 // function begins at statement 16891
 OP_STATE	9805	9806	0
@@ -2277,7 +2111,6 @@ voidTODO () zombie_paind11 =
     // *** UNPROCESSED OPCODE OP_STATE 9805 9806 0
 };
 
-void() zombie_paind13;
 // zombie_paind12
 // function begins at statement 16893
 OP_STATE	7324	9807	0
@@ -2287,7 +2120,6 @@ voidTODO () zombie_paind12 =
     // *** UNPROCESSED OPCODE OP_STATE 7324 9807 0
 };
 
-float IMMEDIATE = 161;
 // zombie_paind13
 // function begins at statement 16895
 OP_STATE	9808	9562	0
@@ -2298,7 +2130,6 @@ voidTODO () zombie_paind13 =
 };
 
 void() zombie_paine1;
-float IMMEDIATE = 162;
 // zombie_paine1
 // function begins at statement 16897
 OP_STATE	9810	9811	0
@@ -2318,7 +2149,6 @@ voidTODO () zombie_paine1 =
     self.health = 60.000;
 };
 
-float IMMEDIATE = 163;
 // zombie_paine2
 // function begins at statement 16907
 OP_STATE	9813	9814	0
@@ -2331,7 +2161,6 @@ voidTODO () zombie_paine2 =
     ai_pain(8.000);
 };
 
-float IMMEDIATE = 164;
 // zombie_paine3
 // function begins at statement 16911
 OP_STATE	9815	9816	0
@@ -2344,7 +2173,6 @@ voidTODO () zombie_paine3 =
     ai_pain(5.000);
 };
 
-float IMMEDIATE = 165;
 // zombie_paine4
 // function begins at statement 16915
 OP_STATE	9817	9818	0
@@ -2357,7 +2185,6 @@ voidTODO () zombie_paine4 =
     ai_pain(3.000);
 };
 
-float IMMEDIATE = 166;
 // zombie_paine5
 // function begins at statement 16919
 OP_STATE	9819	9820	0
@@ -2370,7 +2197,6 @@ voidTODO () zombie_paine5 =
     ai_pain(1.000);
 };
 
-float IMMEDIATE = 167;
 // zombie_paine6
 // function begins at statement 16923
 OP_STATE	9821	9822	0
@@ -2383,7 +2209,6 @@ voidTODO () zombie_paine6 =
     ai_pain(2.000);
 };
 
-float IMMEDIATE = 168;
 // zombie_paine7
 // function begins at statement 16927
 OP_STATE	9823	9824	0
@@ -2396,7 +2221,6 @@ voidTODO () zombie_paine7 =
     ai_pain(1.000);
 };
 
-float IMMEDIATE = 169;
 // zombie_paine8
 // function begins at statement 16931
 OP_STATE	9825	9826	0
@@ -2409,7 +2233,6 @@ voidTODO () zombie_paine8 =
     ai_pain(1.000);
 };
 
-float IMMEDIATE = 170;
 // zombie_paine9
 // function begins at statement 16935
 OP_STATE	9827	9828	0
@@ -2422,7 +2245,6 @@ voidTODO () zombie_paine9 =
     ai_pain(2.000);
 };
 
-float IMMEDIATE = 171;
 // zombie_paine10
 // function begins at statement 16939
 OP_STATE	9829	9830	0
@@ -2442,7 +2264,6 @@ voidTODO () zombie_paine10 =
     self.solid = 0.000;
 };
 
-float IMMEDIATE = 172;
 // zombie_paine11
 // function begins at statement 16949
 OP_STATE	9832	9833	0
@@ -2460,7 +2281,6 @@ voidTODO () zombie_paine11 =
     self.health = 60.000;
 };
 
-float IMMEDIATE = 173;
 // zombie_paine12
 // function begins at statement 16957
 OP_STATE	9838	9839	0
@@ -2501,7 +2321,6 @@ voidTODO () zombie_paine12 =
     
 };
 
-float IMMEDIATE = 174;
 // zombie_paine13
 // function begins at statement 16979
 OP_STATE	9845	9846	0
@@ -2511,7 +2330,6 @@ voidTODO () zombie_paine13 =
     // *** UNPROCESSED OPCODE OP_STATE 9845 9846 0
 };
 
-float IMMEDIATE = 175;
 // zombie_paine14
 // function begins at statement 16981
 OP_STATE	9847	9848	0
@@ -2521,7 +2339,6 @@ voidTODO () zombie_paine14 =
     // *** UNPROCESSED OPCODE OP_STATE 9847 9848 0
 };
 
-float IMMEDIATE = 176;
 // zombie_paine15
 // function begins at statement 16983
 OP_STATE	9849	9850	0
@@ -2531,7 +2348,6 @@ voidTODO () zombie_paine15 =
     // *** UNPROCESSED OPCODE OP_STATE 9849 9850 0
 };
 
-float IMMEDIATE = 177;
 // zombie_paine16
 // function begins at statement 16985
 OP_STATE	9851	9852	0
@@ -2541,7 +2357,6 @@ voidTODO () zombie_paine16 =
     // *** UNPROCESSED OPCODE OP_STATE 9851 9852 0
 };
 
-float IMMEDIATE = 178;
 // zombie_paine17
 // function begins at statement 16987
 OP_STATE	9853	9854	0
@@ -2551,7 +2366,6 @@ voidTODO () zombie_paine17 =
     // *** UNPROCESSED OPCODE OP_STATE 9853 9854 0
 };
 
-float IMMEDIATE = 179;
 // zombie_paine18
 // function begins at statement 16989
 OP_STATE	9855	9856	0
@@ -2561,7 +2375,6 @@ voidTODO () zombie_paine18 =
     // *** UNPROCESSED OPCODE OP_STATE 9855 9856 0
 };
 
-void() zombie_paine20;
 // zombie_paine19
 // function begins at statement 16991
 OP_STATE	1344	9857	0
@@ -2571,7 +2384,6 @@ voidTODO () zombie_paine19 =
     // *** UNPROCESSED OPCODE OP_STATE 1344 9857 0
 };
 
-float IMMEDIATE = 181;
 // zombie_paine20
 // function begins at statement 16993
 OP_STATE	9858	9859	0
@@ -2581,7 +2393,6 @@ voidTODO () zombie_paine20 =
     // *** UNPROCESSED OPCODE OP_STATE 9858 9859 0
 };
 
-float IMMEDIATE = 182;
 // zombie_paine21
 // function begins at statement 16995
 OP_STATE	9860	9861	0
@@ -2591,7 +2402,6 @@ voidTODO () zombie_paine21 =
     // *** UNPROCESSED OPCODE OP_STATE 9860 9861 0
 };
 
-float IMMEDIATE = 183;
 // zombie_paine22
 // function begins at statement 16997
 OP_STATE	9862	9863	0
@@ -2601,7 +2411,6 @@ voidTODO () zombie_paine22 =
     // *** UNPROCESSED OPCODE OP_STATE 9862 9863 0
 };
 
-float IMMEDIATE = 184;
 // zombie_paine23
 // function begins at statement 16999
 OP_STATE	9864	9865	0
@@ -2611,7 +2420,6 @@ voidTODO () zombie_paine23 =
     // *** UNPROCESSED OPCODE OP_STATE 9864 9865 0
 };
 
-float IMMEDIATE = 185;
 // zombie_paine24
 // function begins at statement 17001
 OP_STATE	9866	9867	0
@@ -2621,7 +2429,6 @@ voidTODO () zombie_paine24 =
     // *** UNPROCESSED OPCODE OP_STATE 9866 9867 0
 };
 
-float IMMEDIATE = 186;
 // zombie_paine25
 // function begins at statement 17003
 OP_STATE	9868	9869	0
@@ -2634,7 +2441,6 @@ voidTODO () zombie_paine25 =
     ai_painforward(5.000);
 };
 
-float IMMEDIATE = 187;
 // zombie_paine26
 // function begins at statement 17007
 OP_STATE	9870	9871	0
@@ -2647,7 +2453,6 @@ voidTODO () zombie_paine26 =
     ai_painforward(3.000);
 };
 
-float IMMEDIATE = 188;
 // zombie_paine27
 // function begins at statement 17011
 OP_STATE	9872	9873	0
@@ -2660,7 +2465,6 @@ voidTODO () zombie_paine27 =
     ai_painforward(1.000);
 };
 
-float IMMEDIATE = 189;
 // zombie_paine28
 // function begins at statement 17015
 OP_STATE	9874	9875	0
@@ -2673,7 +2477,6 @@ voidTODO () zombie_paine28 =
     ai_pain(1.000);
 };
 
-float IMMEDIATE = 190;
 // zombie_paine29
 // function begins at statement 17019
 OP_STATE	9876	9877	0
@@ -2683,7 +2486,6 @@ voidTODO () zombie_paine29 =
     // *** UNPROCESSED OPCODE OP_STATE 9876 9877 0
 };
 
-float IMMEDIATE = 191;
 // zombie_paine30
 // function begins at statement 17021
 OP_STATE	9878	9562	0
@@ -2694,7 +2496,6 @@ voidTODO () zombie_paine30 =
 };
 
 void() zombie_die;
-string IMMEDIATE;
 // zombie_die
 // function begins at statement 17023
 OP_STORE_V	28	4	0
@@ -2730,7 +2531,6 @@ voidTODO () zombie_die =
 };
 
 void() zombie_pain;
-entity attacker;
 // zombie_pain
 // function begins at statement 17046
 OP_ADDRESS	28	152	9890
@@ -2842,7 +2642,6 @@ voidTODO (entity attacker, float take) zombie_pain =
 };
 
 void() monster_zombie;
-string IMMEDIATE;
 // monster_zombie
 // function begins at statement 17092
 OP_IFNOT	35	4	0

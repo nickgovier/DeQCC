@@ -6,7 +6,6 @@ void() knight_bow1;
 float current_yaw;
 entity sight_entity;
 float sight_entity_time;
-float v;
 // anglemod
 // function begins at statement 658
 OP_GE	1089	1090	1091
@@ -40,7 +39,6 @@ voidTODO (float v) anglemod =
     return; /* TODO retvalue? */
 };
 
-/* ERROR: NULL TYPE */ ;
 // movetarget_f
 // function begins at statement 670
 OP_LOAD_S	28	197	1095
@@ -74,7 +72,6 @@ voidTODO () movetarget_f =
 /* ERROR: NULL TYPE */  = 8;
 /* ERROR: NULL TYPE */  = 8;
 void() path_corner;
-entity temp;
 // path_corner
 // function begins at statement 684
 OP_CALL0	1081	0	0
@@ -171,7 +168,6 @@ voidTODO () t_movetarget =
     
 };
 
-entity targ;
 // range
 // function begins at statement 732
 OP_LOAD_V	28	105	1143
@@ -228,7 +224,6 @@ voidTODO (entity targ) range =
     return; /* TODO retvalue? */
 };
 
-entity targ;
 // visible
 // function begins at statement 755
 OP_LOAD_V	28	105	1177
@@ -276,7 +271,6 @@ voidTODO (entity targ) visible =
     return; /* TODO retvalue? */
 };
 
-entity targ;
 // infront
 // function begins at statement 776
 OP_LOAD_V	28	117	1202
@@ -314,7 +308,6 @@ voidTODO (entity targ) infront =
 };
 
 void() HuntTarget;
-/* ERROR: NULL TYPE */ ;
 // HuntTarget
 // function begins at statement 792
 OP_ADDRESS	28	194	1217
@@ -347,7 +340,6 @@ voidTODO () HuntTarget =
 };
 
 void() SightSound;
-float rsnd;
 // SightSound
 // function begins at statement 812
 OP_LOAD_S	28	129	1236
@@ -651,7 +643,6 @@ voidTODO () SightSound =
 };
 
 void() FoundTarget;
-/* ERROR: NULL TYPE */ ;
 // FoundTarget
 // function begins at statement 974
 OP_LOAD_ENT	28	181	1294
@@ -682,7 +673,6 @@ voidTODO () FoundTarget =
 };
 
 void() FindTarget;
-entity client;
 // FindTarget
 // function begins at statement 986
 OP_SUB_F	31	603	1302
@@ -867,7 +857,6 @@ voidTODO () FindTarget =
 };
 
 void() ai_forward;
-float dist;
 // ai_forward
 // function begins at statement 1066
 OP_LOAD_F	28	119	1340
@@ -881,7 +870,6 @@ voidTODO (float dist) ai_forward =
 };
 
 void() ai_back;
-float dist;
 // ai_back
 // function begins at statement 1071
 OP_LOAD_F	28	119	1343
@@ -896,7 +884,6 @@ voidTODO (float dist) ai_back =
 };
 
 void() ai_pain;
-float dist;
 // ai_pain
 // function begins at statement 1077
 OP_STORE_V	1347	4	0
@@ -908,7 +895,6 @@ voidTODO (float dist) ai_pain =
 };
 
 void() ai_painforward;
-float dist;
 // ai_painforward
 // function begins at statement 1080
 OP_LOAD_F	28	191	1350
@@ -922,7 +908,6 @@ voidTODO (float dist) ai_painforward =
 };
 
 void() ai_walk;
-float dist;
 // ai_walk
 // function begins at statement 1085
 OP_STORE_F	1352	341	0
@@ -960,7 +945,6 @@ voidTODO (float dist) ai_walk =
 };
 
 void() ai_stand;
-/* ERROR: NULL TYPE */ ;
 // ai_stand
 // function begins at statement 1098
 OP_CALL0	1299	0	0
@@ -992,7 +976,6 @@ voidTODO () ai_stand =
 };
 
 void() ai_turn;
-vector dest3;
 // ai_turn
 // function begins at statement 1108
 OP_CALL0	1299	0	0
@@ -1065,7 +1048,6 @@ voidTODO (vector dest3) ChooseTurn =
 };
 
 void() FacingIdeal;
-float delta;
 // FacingIdeal
 // function begins at statement 1136
 OP_LOAD_F	28	119	1387
@@ -1099,7 +1081,6 @@ voidTODO () FacingIdeal =
 void() WizardCheckAttack;
 void() DogCheckAttack;
 void() CheckAnyAttack;
-/* ERROR: NULL TYPE */ ;
 // CheckAnyAttack
 // function begins at statement 1149
 OP_NOT_F	759	0	1398
@@ -1192,7 +1173,6 @@ voidTODO () CheckAnyAttack =
 };
 
 void() ai_run_melee;
-/* ERROR: NULL TYPE */ ;
 // ai_run_melee
 // function begins at statement 1185
 OP_ADDRESS	28	191	1412
@@ -1219,7 +1199,6 @@ voidTODO () ai_run_melee =
 };
 
 void() ai_run_missile;
-/* ERROR: NULL TYPE */ ;
 // ai_run_missile
 // function begins at statement 1195
 OP_ADDRESS	28	191	1416
@@ -1246,7 +1225,6 @@ voidTODO () ai_run_missile =
 };
 
 void() ai_run_slide;
-float ofs;
 // ai_run_slide
 // function begins at statement 1205
 OP_ADDRESS	28	191	1421
@@ -1301,7 +1279,6 @@ voidTODO () ai_run_slide =
 };
 
 void() ai_run;
-float dist;
 // ai_run
 // function begins at statement 1230
 OP_STORE_F	1433	341	0

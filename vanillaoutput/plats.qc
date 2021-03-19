@@ -6,7 +6,6 @@ void() plat_go_down;
 void() plat_crush;
 float PLAT_LOW_TRIGGER = 1;
 void() plat_spawn_inside_trigger;
-entity trigger;
 // plat_spawn_inside_trigger
 // function begins at statement 10616
 OP_CALL0	459	0	0
@@ -101,7 +100,6 @@ voidTODO () plat_spawn_inside_trigger =
 };
 
 void() plat_hit_top;
-/* ERROR: NULL TYPE */ ;
 // plat_hit_top
 // function begins at statement 10668
 OP_LOAD_S	28	209	6952
@@ -129,7 +127,6 @@ voidTODO () plat_hit_top =
 };
 
 void() plat_hit_bottom;
-/* ERROR: NULL TYPE */ ;
 // plat_hit_bottom
 // function begins at statement 10684
 OP_LOAD_S	28	209	6959
@@ -148,7 +145,6 @@ voidTODO () plat_hit_bottom =
     self.state = 1.000;
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_go_down
 // function begins at statement 10694
 OP_LOAD_S	28	208	6961
@@ -174,7 +170,6 @@ voidTODO () plat_go_down =
     SUB_CalcMove(self.pos2, self.speed, plat_hit_bottom);
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_go_up
 // function begins at statement 10710
 OP_LOAD_S	28	208	6967
@@ -200,7 +195,6 @@ voidTODO () plat_go_up =
     SUB_CalcMove(self.pos1, self.speed, plat_hit_top);
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_center_touch
 // function begins at statement 10726
 OP_LOAD_S	29	129	6973
@@ -258,7 +252,6 @@ voidTODO () plat_center_touch =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_outside_touch
 // function begins at statement 10749
 OP_LOAD_S	29	129	6985
@@ -300,7 +293,6 @@ voidTODO () plat_outside_touch =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_trigger_use
 // function begins at statement 10764
 OP_LOAD_FNC	28	148	6992
@@ -319,7 +311,6 @@ voidTODO () plat_trigger_use =
     plat_go_down();
 };
 
-/* ERROR: NULL TYPE */ ;
 // plat_crush
 // function begins at statement 10769
 OP_STORE_V	29	4	0
@@ -363,7 +354,6 @@ voidTODO () plat_crush =
 };
 
 void() plat_use;
-/* ERROR: NULL TYPE */ ;
 // plat_use
 // function begins at statement 10787
 OP_ADDRESS	28	147	6999
@@ -389,7 +379,6 @@ voidTODO () plat_use =
 };
 
 void() func_plat;
-entity t;
 // func_plat
 // function begins at statement 10796
 OP_LOAD_F	28	399	7005
@@ -583,7 +572,6 @@ voidTODO () func_plat =
 void() train_next;
 void() func_train_find;
 void() train_blocked;
-/* ERROR: NULL TYPE */ ;
 // train_blocked
 // function begins at statement 10902
 OP_LOAD_F	28	373	7086
@@ -613,7 +601,6 @@ voidTODO () train_blocked =
 };
 
 void() train_use;
-/* ERROR: NULL TYPE */ ;
 // train_use
 // function begins at statement 10916
 OP_LOAD_FNC	28	148	7092
@@ -635,7 +622,6 @@ voidTODO () train_use =
 };
 
 void() train_wait;
-/* ERROR: NULL TYPE */ ;
 // train_wait
 // function begins at statement 10922
 OP_LOAD_F	28	413	7095
@@ -675,7 +661,6 @@ voidTODO () train_wait =
     self.think = train_next;
 };
 
-entity targ;
 // train_next
 // function begins at statement 10944
 OP_LOAD_S	28	196	7106
@@ -741,7 +726,6 @@ voidTODO () train_next =
     SUB_CalcMove(targ.origin - self.mins, self.speed, train_wait);
 };
 
-entity targ;
 // func_train_find
 // function begins at statement 10982
 OP_LOAD_S	28	196	7128
@@ -786,7 +770,6 @@ voidTODO () func_train_find =
 };
 
 void() func_train;
-/* ERROR: NULL TYPE */ ;
 // func_train
 // function begins at statement 11007
 OP_LOAD_F	28	364	7147
@@ -912,7 +895,6 @@ voidTODO () func_train =
 };
 
 void() misc_teleporttrain;
-/* ERROR: NULL TYPE */ ;
 // misc_teleporttrain
 // function begins at statement 11077
 OP_LOAD_F	28	364	7188

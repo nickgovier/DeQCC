@@ -5,7 +5,6 @@ entity otemp;
 entity s;
 entity old;
 void() trigger_reactivate;
-/* ERROR: NULL TYPE */ ;
 // trigger_reactivate
 // function begins at statement 9918
 OP_ADDRESS	28	104	6419
@@ -19,7 +18,6 @@ voidTODO () trigger_reactivate =
 float SPAWNFLAG_NOMESSAGE = 1;
 float SPAWNFLAG_NOTOUCH = 1;
 void() multi_wait;
-/* ERROR: NULL TYPE */ ;
 // multi_wait
 // function begins at statement 9921
 OP_LOAD_F	28	185	6423
@@ -45,7 +43,6 @@ voidTODO () multi_wait =
 };
 
 void() multi_trigger;
-/* ERROR: NULL TYPE */ ;
 // multi_trigger
 // function begins at statement 9931
 OP_LOAD_F	28	150	6429
@@ -146,7 +143,6 @@ voidTODO () multi_trigger =
 };
 
 void() multi_killed;
-/* ERROR: NULL TYPE */ ;
 // multi_killed
 // function begins at statement 9980
 OP_ADDRESS	28	181	6453
@@ -160,7 +156,6 @@ voidTODO () multi_killed =
 };
 
 void() multi_use;
-/* ERROR: NULL TYPE */ ;
 // multi_use
 // function begins at statement 9984
 OP_ADDRESS	28	181	6455
@@ -174,7 +169,6 @@ voidTODO () multi_use =
 };
 
 void() multi_touch;
-/* ERROR: NULL TYPE */ ;
 // multi_touch
 // function begins at statement 9988
 OP_LOAD_S	29	129	6457
@@ -223,7 +217,6 @@ voidTODO () multi_touch =
 };
 
 void() trigger_multiple;
-/* ERROR: NULL TYPE */ ;
 // trigger_multiple
 // function begins at statement 10007
 OP_LOAD_F	28	207	6473
@@ -347,7 +340,6 @@ voidTODO () trigger_multiple =
 };
 
 void() trigger_once;
-/* ERROR: NULL TYPE */ ;
 // trigger_once
 // function begins at statement 10066
 OP_ADDRESS	28	413	6505
@@ -361,7 +353,6 @@ voidTODO () trigger_once =
 };
 
 void() trigger_relay;
-/* ERROR: NULL TYPE */ ;
 // trigger_relay
 // function begins at statement 10070
 OP_ADDRESS	28	147	6507
@@ -373,7 +364,6 @@ voidTODO () trigger_relay =
 };
 
 void() trigger_secret;
-/* ERROR: NULL TYPE */ ;
 // trigger_secret
 // function begins at statement 10073
 OP_ADD_F	39	6421	6509
@@ -444,7 +434,6 @@ voidTODO () trigger_secret =
 };
 
 void() counter_use;
-string junk;
 // counter_use
 // function begins at statement 10104
 OP_ADDRESS	28	431	6526
@@ -566,7 +555,6 @@ voidTODO () counter_use =
 };
 
 void() trigger_counter;
-/* ERROR: NULL TYPE */ ;
 // trigger_counter
 // function begins at statement 10161
 OP_ADDRESS	28	413	6558
@@ -594,7 +582,6 @@ voidTODO () trigger_counter =
 float PLAYER_ONLY = 1;
 float SILENT = 2;
 void() play_teleport;
-float v;
 // play_teleport
 // function begins at statement 10171
 OP_CALL0	452	0	0
@@ -657,7 +644,6 @@ voidTODO () play_teleport =
     remove(self);
 };
 
-vector org;
 // spawn_tfog
 // function begins at statement 10200
 OP_CALL0	459	0	0
@@ -699,7 +685,6 @@ voidTODO (vector org) spawn_tfog =
 };
 
 void() tdeath_touch;
-/* ERROR: NULL TYPE */ ;
 // tdeath_touch
 // function begins at statement 10225
 OP_LOAD_ENT	28	201	6583
@@ -771,7 +756,6 @@ voidTODO () tdeath_touch =
     
 };
 
-vector org;
 // spawn_tdeath
 // function begins at statement 10256
 OP_CALL0	459	0	0
@@ -825,7 +809,6 @@ voidTODO (vector org, entity death_owner) spawn_tdeath =
 };
 
 void() teleport_touch;
-entity t;
 // teleport_touch
 // function begins at statement 10288
 OP_LOAD_S	28	197	6631
@@ -1003,7 +986,6 @@ voidTODO () teleport_touch =
 };
 
 void() info_teleport_destination;
-/* ERROR: NULL TYPE */ ;
 // info_teleport_destination
 // function begins at statement 10381
 OP_ADDRESS	28	395	6717
@@ -1040,7 +1022,6 @@ voidTODO () info_teleport_destination =
 };
 
 void() teleport_use;
-/* ERROR: NULL TYPE */ ;
 // teleport_use
 // function begins at statement 10398
 OP_ADDRESS	28	150	6743
@@ -1058,7 +1039,6 @@ voidTODO () teleport_use =
 };
 
 void() trigger_teleport;
-vector o;
 // trigger_teleport
 // function begins at statement 10405
 OP_CALL0	559	0	0
@@ -1115,7 +1095,6 @@ voidTODO () trigger_teleport =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() trigger_skill_touch;
-/* ERROR: NULL TYPE */ ;
 // trigger_skill_touch
 // function begins at statement 10432
 OP_LOAD_S	29	129	6772
@@ -1140,7 +1119,6 @@ voidTODO () trigger_skill_touch =
 };
 
 void() trigger_setskill;
-/* ERROR: NULL TYPE */ ;
 // trigger_setskill
 // function begins at statement 10441
 OP_CALL0	559	0	0
@@ -1154,7 +1132,6 @@ voidTODO () trigger_setskill =
 };
 
 void() trigger_onlyregistered_touch;
-/* ERROR: NULL TYPE */ ;
 // trigger_onlyregistered_touch
 // function begins at statement 10445
 OP_LOAD_S	29	129	6778
@@ -1229,7 +1206,6 @@ voidTODO () trigger_onlyregistered_touch =
 };
 
 void() trigger_onlyregistered;
-/* ERROR: NULL TYPE */ ;
 // trigger_onlyregistered
 // function begins at statement 10479
 OP_STORE_V	720	4	0
@@ -1246,7 +1222,6 @@ voidTODO () trigger_onlyregistered =
 };
 
 void() hurt_on;
-/* ERROR: NULL TYPE */ ;
 // hurt_on
 // function begins at statement 10485
 OP_ADDRESS	28	104	6791
@@ -1261,7 +1236,6 @@ voidTODO () hurt_on =
 };
 
 void() hurt_touch;
-/* ERROR: NULL TYPE */ ;
 // hurt_touch
 // function begins at statement 10490
 OP_LOAD_F	29	163	6794
@@ -1296,7 +1270,6 @@ voidTODO () hurt_touch =
 };
 
 void() trigger_hurt;
-/* ERROR: NULL TYPE */ ;
 // trigger_hurt
 // function begins at statement 10507
 OP_CALL0	559	0	0
@@ -1322,7 +1295,6 @@ voidTODO () trigger_hurt =
 
 float PUSH_ONCE = 1;
 void() trigger_push_touch;
-/* ERROR: NULL TYPE */ ;
 // trigger_push_touch
 // function begins at statement 10516
 OP_LOAD_S	29	129	6807
@@ -1407,7 +1379,6 @@ voidTODO () trigger_push_touch =
 };
 
 void() trigger_push;
-/* ERROR: NULL TYPE */ ;
 // trigger_push
 // function begins at statement 10556
 OP_CALL0	559	0	0
@@ -1435,7 +1406,6 @@ voidTODO () trigger_push =
 };
 
 void() trigger_monsterjump_touch;
-/* ERROR: NULL TYPE */ ;
 // trigger_monsterjump_touch
 // function begins at statement 10567
 OP_LOAD_F	29	182	6853
@@ -1495,7 +1465,6 @@ voidTODO () trigger_monsterjump_touch =
 };
 
 void() trigger_monsterjump;
-/* ERROR: NULL TYPE */ ;
 // trigger_monsterjump
 // function begins at statement 10597
 OP_LOAD_F	28	364	6875

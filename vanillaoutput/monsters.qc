@@ -1,5 +1,4 @@
 void() monster_use;
-/* ERROR: NULL TYPE */ ;
 // monster_use
 // function begins at statement 8399
 OP_LOAD_ENT	28	181	5460
@@ -67,7 +66,6 @@ voidTODO () monster_use =
     self.think = FoundTarget;
 };
 
-entity ent;
 // monster_death_use
 // function begins at statement 8426
 OP_LOAD_F	28	182	5476
@@ -123,7 +121,6 @@ voidTODO () monster_death_use =
 };
 
 void() walkmonster_start_go;
-string stemp;
 // walkmonster_start_go
 // function begins at statement 8448
 OP_ADDRESS	28	108	5492
@@ -282,7 +279,6 @@ voidTODO () walkmonster_start_go =
 };
 
 void() walkmonster_start;
-/* ERROR: NULL TYPE */ ;
 // walkmonster_start
 // function begins at statement 8540
 OP_ADDRESS	28	150	5558
@@ -305,7 +301,6 @@ voidTODO () walkmonster_start =
 };
 
 void() flymonster_start_go;
-/* ERROR: NULL TYPE */ ;
 // flymonster_start_go
 // function begins at statement 8551
 OP_ADDRESS	28	163	5565
@@ -444,7 +439,6 @@ voidTODO () flymonster_start_go =
 };
 
 void() flymonster_start;
-/* ERROR: NULL TYPE */ ;
 // flymonster_start
 // function begins at statement 8628
 OP_ADDRESS	28	150	5607
@@ -467,7 +461,6 @@ voidTODO () flymonster_start =
 };
 
 void() swimmonster_start_go;
-/* ERROR: NULL TYPE */ ;
 // swimmonster_start_go
 // function begins at statement 8639
 OP_IFNOT	35	4	0
@@ -593,7 +586,6 @@ voidTODO () swimmonster_start_go =
 };
 
 void() swimmonster_start;
-/* ERROR: NULL TYPE */ ;
 // swimmonster_start
 // function begins at statement 8711
 OP_ADDRESS	28	150	5664

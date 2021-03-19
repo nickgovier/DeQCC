@@ -1,5 +1,4 @@
 void() sham_stand1;
-void() sham_stand2;
 // sham_stand1
 // function begins at statement 13330
 OP_STATE	337	8234	0
@@ -11,7 +10,6 @@ voidTODO () sham_stand1 =
     ai_stand();
 };
 
-void() sham_stand3;
 // sham_stand2
 // function begins at statement 13333
 OP_STATE	7368	8235	0
@@ -23,7 +21,6 @@ voidTODO () sham_stand2 =
     ai_stand();
 };
 
-void() sham_stand4;
 // sham_stand3
 // function begins at statement 13336
 OP_STATE	7369	8236	0
@@ -35,7 +32,6 @@ voidTODO () sham_stand3 =
     ai_stand();
 };
 
-void() sham_stand5;
 // sham_stand4
 // function begins at statement 13339
 OP_STATE	370	8237	0
@@ -47,7 +43,6 @@ voidTODO () sham_stand4 =
     ai_stand();
 };
 
-void() sham_stand6;
 // sham_stand5
 // function begins at statement 13342
 OP_STATE	6076	8238	0
@@ -59,7 +54,6 @@ voidTODO () sham_stand5 =
     ai_stand();
 };
 
-void() sham_stand7;
 // sham_stand6
 // function begins at statement 13345
 OP_STATE	313	8239	0
@@ -71,7 +65,6 @@ voidTODO () sham_stand6 =
     ai_stand();
 };
 
-void() sham_stand8;
 // sham_stand7
 // function begins at statement 13348
 OP_STATE	314	8240	0
@@ -83,7 +76,6 @@ voidTODO () sham_stand7 =
     ai_stand();
 };
 
-void() sham_stand9;
 // sham_stand8
 // function begins at statement 13351
 OP_STATE	315	8241	0
@@ -95,7 +87,6 @@ voidTODO () sham_stand8 =
     ai_stand();
 };
 
-void() sham_stand10;
 // sham_stand9
 // function begins at statement 13354
 OP_STATE	6077	8242	0
@@ -107,7 +98,6 @@ voidTODO () sham_stand9 =
     ai_stand();
 };
 
-void() sham_stand11;
 // sham_stand10
 // function begins at statement 13357
 OP_STATE	317	8243	0
@@ -119,7 +109,6 @@ voidTODO () sham_stand10 =
     ai_stand();
 };
 
-void() sham_stand12;
 // sham_stand11
 // function begins at statement 13360
 OP_STATE	318	8244	0
@@ -131,7 +120,6 @@ voidTODO () sham_stand11 =
     ai_stand();
 };
 
-void() sham_stand13;
 // sham_stand12
 // function begins at statement 13363
 OP_STATE	319	8245	0
@@ -143,7 +131,6 @@ voidTODO () sham_stand12 =
     ai_stand();
 };
 
-void() sham_stand14;
 // sham_stand13
 // function begins at statement 13366
 OP_STATE	2250	8246	0
@@ -155,7 +142,6 @@ voidTODO () sham_stand13 =
     ai_stand();
 };
 
-void() sham_stand15;
 // sham_stand14
 // function begins at statement 13369
 OP_STATE	7768	8247	0
@@ -167,7 +153,6 @@ voidTODO () sham_stand14 =
     ai_stand();
 };
 
-void() sham_stand16;
 // sham_stand15
 // function begins at statement 13372
 OP_STATE	2901	8248	0
@@ -179,7 +164,6 @@ voidTODO () sham_stand15 =
     ai_stand();
 };
 
-void() sham_stand17;
 // sham_stand16
 // function begins at statement 13375
 OP_STATE	1876	8249	0
@@ -191,7 +175,6 @@ voidTODO () sham_stand16 =
     ai_stand();
 };
 
-void() sham_walk1;
 // sham_stand17
 // function begins at statement 13378
 OP_STATE	6078	8233	0
@@ -203,7 +186,7 @@ voidTODO () sham_stand17 =
     ai_stand();
 };
 
-void() sham_walk2;
+void() sham_walk1;
 // sham_walk1
 // function begins at statement 13381
 OP_STATE	4861	8251	0
@@ -216,7 +199,6 @@ voidTODO () sham_walk1 =
     ai_walk(10.000);
 };
 
-void() sham_walk3;
 // sham_walk2
 // function begins at statement 13385
 OP_STATE	3319	8252	0
@@ -229,7 +211,6 @@ voidTODO () sham_walk2 =
     ai_walk(9.000);
 };
 
-void() sham_walk4;
 // sham_walk3
 // function begins at statement 13389
 OP_STATE	7776	8253	0
@@ -242,7 +223,6 @@ voidTODO () sham_walk3 =
     ai_walk(9.000);
 };
 
-void() sham_walk5;
 // sham_walk4
 // function begins at statement 13393
 OP_STATE	894	8254	0
@@ -255,7 +235,6 @@ voidTODO () sham_walk4 =
     ai_walk(5.000);
 };
 
-void() sham_walk6;
 // sham_walk5
 // function begins at statement 13397
 OP_STATE	7779	8255	0
@@ -268,7 +247,6 @@ voidTODO () sham_walk5 =
     ai_walk(6.000);
 };
 
-void() sham_walk7;
 // sham_walk6
 // function begins at statement 13401
 OP_STATE	7781	8256	0
@@ -281,7 +259,6 @@ voidTODO () sham_walk6 =
     ai_walk(12.000);
 };
 
-void() sham_walk8;
 // sham_walk7
 // function begins at statement 13405
 OP_STATE	301	8257	0
@@ -294,7 +271,6 @@ voidTODO () sham_walk7 =
     ai_walk(8.000);
 };
 
-void() sham_walk9;
 // sham_walk8
 // function begins at statement 13409
 OP_STATE	4437	8258	0
@@ -307,7 +283,6 @@ voidTODO () sham_walk8 =
     ai_walk(3.000);
 };
 
-void() sham_walk10;
 // sham_walk9
 // function begins at statement 13413
 OP_STATE	1890	8259	0
@@ -320,7 +295,6 @@ voidTODO () sham_walk9 =
     ai_walk(13.000);
 };
 
-void() sham_walk11;
 // sham_walk10
 // function begins at statement 13417
 OP_STATE	7788	8260	0
@@ -333,7 +307,6 @@ voidTODO () sham_walk10 =
     ai_walk(9.000);
 };
 
-void() sham_walk12;
 // sham_walk11
 // function begins at statement 13421
 OP_STATE	302	8261	0
@@ -346,7 +319,6 @@ voidTODO () sham_walk11 =
     ai_walk(7.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // sham_walk12
 // function begins at statement 13425
 OP_STATE	303	8250	0
@@ -376,7 +348,6 @@ voidTODO () sham_walk12 =
 };
 
 void() sham_run1;
-void() sham_run2;
 // sham_run1
 // function begins at statement 13438
 OP_STATE	5105	8265	0
@@ -389,7 +360,6 @@ voidTODO () sham_run1 =
     ai_run(20.000);
 };
 
-void() sham_run3;
 // sham_run2
 // function begins at statement 13442
 OP_STATE	304	8266	0
@@ -402,7 +372,6 @@ voidTODO () sham_run2 =
     ai_run(24.000);
 };
 
-void() sham_run4;
 // sham_run3
 // function begins at statement 13446
 OP_STATE	305	8267	0
@@ -415,7 +384,6 @@ voidTODO () sham_run3 =
     ai_run(20.000);
 };
 
-void() sham_run5;
 // sham_run4
 // function begins at statement 13450
 OP_STATE	5674	8268	0
@@ -428,7 +396,6 @@ voidTODO () sham_run4 =
     ai_run(20.000);
 };
 
-void() sham_run6;
 // sham_run5
 // function begins at statement 13454
 OP_STATE	307	8269	0
@@ -441,7 +408,6 @@ voidTODO () sham_run5 =
     ai_run(24.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // sham_run6
 // function begins at statement 13458
 OP_STATE	5112	8264	0
@@ -470,7 +436,6 @@ voidTODO () sham_run6 =
     
 };
 
-void() sham_smash2;
 // sham_smash1
 // function begins at statement 13471
 OP_STATE	3072	8271	0
@@ -490,7 +455,6 @@ voidTODO () sham_smash1 =
     ai_charge(2.000);
 };
 
-void() sham_smash3;
 // sham_smash2
 // function begins at statement 13481
 OP_STATE	5096	8273	0
@@ -503,7 +467,6 @@ voidTODO () sham_smash2 =
     ai_charge(6.000);
 };
 
-void() sham_smash4;
 // sham_smash3
 // function begins at statement 13485
 OP_STATE	5098	8274	0
@@ -516,7 +479,6 @@ voidTODO () sham_smash3 =
     ai_charge(6.000);
 };
 
-void() sham_smash5;
 // sham_smash4
 // function begins at statement 13489
 OP_STATE	5100	8275	0
@@ -529,7 +491,6 @@ voidTODO () sham_smash4 =
     ai_charge(5.000);
 };
 
-void() sham_smash6;
 // sham_smash5
 // function begins at statement 13493
 OP_STATE	5102	8276	0
@@ -542,7 +503,6 @@ voidTODO () sham_smash5 =
     ai_charge(4.000);
 };
 
-void() sham_smash7;
 // sham_smash6
 // function begins at statement 13497
 OP_STATE	1733	8277	0
@@ -555,7 +515,6 @@ voidTODO () sham_smash6 =
     ai_charge(1.000);
 };
 
-void() sham_smash8;
 // sham_smash7
 // function begins at statement 13501
 OP_STATE	5443	8278	0
@@ -568,7 +527,6 @@ voidTODO () sham_smash7 =
     ai_charge(0.000);
 };
 
-void() sham_smash9;
 // sham_smash8
 // function begins at statement 13505
 OP_STATE	5445	8279	0
@@ -581,7 +539,6 @@ voidTODO () sham_smash8 =
     ai_charge(0.000);
 };
 
-void() sham_smash10;
 // sham_smash9
 // function begins at statement 13509
 OP_STATE	5447	8280	0
@@ -594,7 +551,6 @@ voidTODO () sham_smash9 =
     ai_charge(0.000);
 };
 
-void() sham_smash11;
 // sham_smash10
 // function begins at statement 13513
 OP_STATE	5449	8281	0
@@ -706,7 +662,6 @@ voidTODO () sham_smash10 =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-void() sham_smash12;
 // sham_smash11
 // function begins at statement 13576
 OP_STATE	1390	8335	0
@@ -719,7 +674,6 @@ voidTODO () sham_smash11 =
     ai_charge(5.000);
 };
 
-void() ShamClaw;
 // sham_smash12
 // function begins at statement 13580
 OP_STATE	5452	8264	0
@@ -732,7 +686,7 @@ voidTODO () sham_smash12 =
     ai_charge(4.000);
 };
 
-float side;
+void() ShamClaw;
 // ShamClaw
 // function begins at statement 13584
 OP_LOAD_ENT	28	181	8342
@@ -822,7 +776,6 @@ voidTODO (float side) ShamClaw =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-void() sham_swingl2;
 // sham_swingl1
 // function begins at statement 13632
 OP_STATE	5361	8377	0
@@ -842,7 +795,6 @@ voidTODO () sham_swingl1 =
     ai_charge(5.000);
 };
 
-void() sham_swingl3;
 // sham_swingl2
 // function begins at statement 13642
 OP_STATE	5363	8379	0
@@ -855,7 +807,6 @@ voidTODO () sham_swingl2 =
     ai_charge(3.000);
 };
 
-void() sham_swingl4;
 // sham_swingl3
 // function begins at statement 13646
 OP_STATE	5365	8380	0
@@ -868,7 +819,6 @@ voidTODO () sham_swingl3 =
     ai_charge(7.000);
 };
 
-void() sham_swingl5;
 // sham_swingl4
 // function begins at statement 13650
 OP_STATE	5367	8381	0
@@ -881,7 +831,6 @@ voidTODO () sham_swingl4 =
     ai_charge(3.000);
 };
 
-void() sham_swingl6;
 // sham_swingl5
 // function begins at statement 13654
 OP_STATE	912	8382	0
@@ -894,7 +843,6 @@ voidTODO () sham_swingl5 =
     ai_charge(7.000);
 };
 
-void() sham_swingl7;
 // sham_swingl6
 // function begins at statement 13658
 OP_STATE	5369	8383	0
@@ -907,7 +855,6 @@ voidTODO () sham_swingl6 =
     ai_charge(9.000);
 };
 
-void() sham_swingl8;
 // sham_swingl7
 // function begins at statement 13662
 OP_STATE	5371	8384	0
@@ -923,7 +870,6 @@ voidTODO () sham_swingl7 =
     ShamClaw(250.000);
 };
 
-void() sham_swingl9;
 // sham_swingl8
 // function begins at statement 13668
 OP_STATE	3872	8385	0
@@ -936,7 +882,6 @@ voidTODO () sham_swingl8 =
     ai_charge(4.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // sham_swingl9
 // function begins at statement 13672
 OP_STATE	260	8264	0
@@ -960,7 +905,6 @@ voidTODO () sham_swingl9 =
     
 };
 
-void() sham_swingr2;
 // sham_swingr1
 // function begins at statement 13681
 OP_STATE	5454	8388	0
@@ -980,7 +924,6 @@ voidTODO () sham_swingr1 =
     ai_charge(1.000);
 };
 
-void() sham_swingr3;
 // sham_swingr2
 // function begins at statement 13691
 OP_STATE	5456	8389	0
@@ -993,7 +936,6 @@ voidTODO () sham_swingr2 =
     ai_charge(8.000);
 };
 
-void() sham_swingr4;
 // sham_swingr3
 // function begins at statement 13695
 OP_STATE	5458	8390	0
@@ -1006,7 +948,6 @@ voidTODO () sham_swingr3 =
     ai_charge(14.000);
 };
 
-void() sham_swingr5;
 // sham_swingr4
 // function begins at statement 13699
 OP_STATE	2227	8391	0
@@ -1019,7 +960,6 @@ voidTODO () sham_swingr4 =
     ai_charge(7.000);
 };
 
-void() sham_swingr6;
 // sham_swingr5
 // function begins at statement 13703
 OP_STATE	5351	8392	0
@@ -1032,7 +972,6 @@ voidTODO () sham_swingr5 =
     ai_charge(3.000);
 };
 
-void() sham_swingr7;
 // sham_swingr6
 // function begins at statement 13707
 OP_STATE	5353	8393	0
@@ -1045,7 +984,6 @@ voidTODO () sham_swingr6 =
     ai_charge(6.000);
 };
 
-void() sham_swingr8;
 // sham_swingr7
 // function begins at statement 13711
 OP_STATE	5355	8394	0
@@ -1061,7 +999,6 @@ voidTODO () sham_swingr7 =
     ShamClaw(-250.000);
 };
 
-void() sham_swingr9;
 // sham_swingr8
 // function begins at statement 13717
 OP_STATE	5357	8396	0
@@ -1074,7 +1011,6 @@ voidTODO () sham_swingr8 =
     ai_charge(3.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // sham_swingr9
 // function begins at statement 13721
 OP_STATE	5359	8264	0
@@ -1102,7 +1038,6 @@ voidTODO () sham_swingr9 =
 };
 
 void() sham_melee;
-float chance;
 // sham_melee
 // function begins at statement 13732
 OP_CALL0	452	0	0
@@ -1142,7 +1077,6 @@ voidTODO () sham_melee =
 };
 
 void() CastLightning;
-vector org;
 // CastLightning
 // function begins at statement 13747
 OP_ADDRESS	28	133	8413
@@ -1231,7 +1165,6 @@ voidTODO () CastLightning =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() sham_magic1;
-void() sham_magic2;
 // sham_magic1
 // function begins at statement 13804
 OP_STATE	5375	8445	0
@@ -1250,7 +1183,6 @@ voidTODO () sham_magic1 =
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() sham_magic3;
 // sham_magic2
 // function begins at statement 13813
 OP_STATE	5377	8447	0
@@ -1262,7 +1194,6 @@ voidTODO () sham_magic2 =
     ai_face();
 };
 
-void() sham_magic4;
 // sham_magic3
 // function begins at statement 13816
 OP_STATE	5379	8448	0
@@ -1322,7 +1253,6 @@ voidTODO () sham_magic3 =
     o.think = SUB_Remove;
 };
 
-void() sham_magic5;
 // sham_magic4
 // function begins at statement 13848
 OP_STATE	5381	8471	0
@@ -1342,7 +1272,6 @@ voidTODO () sham_magic4 =
     self.owner.frame = 1.000;
 };
 
-void() sham_magic6;
 // sham_magic5
 // function begins at statement 13857
 OP_STATE	5383	8477	0
@@ -1362,7 +1291,6 @@ voidTODO () sham_magic5 =
     self.owner.frame = 2.000;
 };
 
-void() sham_magic9;
 // sham_magic6
 // function begins at statement 13866
 OP_STATE	5384	8483	0
@@ -1385,7 +1313,6 @@ voidTODO () sham_magic6 =
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() sham_magic10;
 // sham_magic9
 // function begins at statement 13878
 OP_STATE	2739	8486	0
@@ -1397,7 +1324,6 @@ voidTODO () sham_magic9 =
     CastLightning();
 };
 
-void() sham_magic11;
 // sham_magic10
 // function begins at statement 13881
 OP_STATE	5391	8487	0
@@ -1409,7 +1335,6 @@ voidTODO () sham_magic10 =
     CastLightning();
 };
 
-void() sham_magic12;
 // sham_magic11
 // function begins at statement 13884
 OP_STATE	5393	8488	0
@@ -1428,7 +1353,6 @@ voidTODO () sham_magic11 =
     
 };
 
-void() sham_pain1;
 // sham_magic12
 // function begins at statement 13889
 OP_STATE	5395	8264	0
@@ -1438,7 +1362,7 @@ voidTODO () sham_magic12 =
     // *** UNPROCESSED OPCODE OP_STATE 5395 8264 0
 };
 
-void() sham_pain2;
+void() sham_pain1;
 // sham_pain1
 // function begins at statement 13891
 OP_STATE	5397	8491	0
@@ -1448,7 +1372,6 @@ voidTODO () sham_pain1 =
     // *** UNPROCESSED OPCODE OP_STATE 5397 8491 0
 };
 
-void() sham_pain3;
 // sham_pain2
 // function begins at statement 13893
 OP_STATE	5399	8492	0
@@ -1458,7 +1381,6 @@ voidTODO () sham_pain2 =
     // *** UNPROCESSED OPCODE OP_STATE 5399 8492 0
 };
 
-void() sham_pain4;
 // sham_pain3
 // function begins at statement 13895
 OP_STATE	5401	8493	0
@@ -1468,7 +1390,6 @@ voidTODO () sham_pain3 =
     // *** UNPROCESSED OPCODE OP_STATE 5401 8493 0
 };
 
-void() sham_pain5;
 // sham_pain4
 // function begins at statement 13897
 OP_STATE	788	8494	0
@@ -1478,7 +1399,6 @@ voidTODO () sham_pain4 =
     // *** UNPROCESSED OPCODE OP_STATE 788 8494 0
 };
 
-void() sham_pain6;
 // sham_pain5
 // function begins at statement 13899
 OP_STATE	5404	8495	0
@@ -1488,7 +1408,6 @@ voidTODO () sham_pain5 =
     // *** UNPROCESSED OPCODE OP_STATE 5404 8495 0
 };
 
-void() sham_pain;
 // sham_pain6
 // function begins at statement 13901
 OP_STATE	5406	8264	0
@@ -1498,7 +1417,7 @@ voidTODO () sham_pain6 =
     // *** UNPROCESSED OPCODE OP_STATE 5406 8264 0
 };
 
-entity attacker;
+void() sham_pain;
 // sham_pain
 // function begins at statement 13903
 OP_STORE_V	28	4	0
@@ -1554,7 +1473,6 @@ voidTODO (entity attacker, float damage) sham_pain =
 };
 
 void() sham_death1;
-void() sham_death2;
 // sham_death1
 // function begins at statement 13927
 OP_STATE	5408	8509	0
@@ -1564,7 +1482,6 @@ voidTODO () sham_death1 =
     // *** UNPROCESSED OPCODE OP_STATE 5408 8509 0
 };
 
-void() sham_death3;
 // sham_death2
 // function begins at statement 13929
 OP_STATE	5410	8510	0
@@ -1574,7 +1491,6 @@ voidTODO () sham_death2 =
     // *** UNPROCESSED OPCODE OP_STATE 5410 8510 0
 };
 
-void() sham_death4;
 // sham_death3
 // function begins at statement 13931
 OP_STATE	5411	8511	0
@@ -1587,7 +1503,6 @@ voidTODO () sham_death3 =
     self.solid = 0.000;
 };
 
-void() sham_death5;
 // sham_death4
 // function begins at statement 13935
 OP_STATE	5413	8513	0
@@ -1597,7 +1512,6 @@ voidTODO () sham_death4 =
     // *** UNPROCESSED OPCODE OP_STATE 5413 8513 0
 };
 
-void() sham_death6;
 // sham_death5
 // function begins at statement 13937
 OP_STATE	5415	8514	0
@@ -1607,7 +1521,6 @@ voidTODO () sham_death5 =
     // *** UNPROCESSED OPCODE OP_STATE 5415 8514 0
 };
 
-void() sham_death7;
 // sham_death6
 // function begins at statement 13939
 OP_STATE	5417	8515	0
@@ -1617,7 +1530,6 @@ voidTODO () sham_death6 =
     // *** UNPROCESSED OPCODE OP_STATE 5417 8515 0
 };
 
-void() sham_death8;
 // sham_death7
 // function begins at statement 13941
 OP_STATE	5419	8516	0
@@ -1627,7 +1539,6 @@ voidTODO () sham_death7 =
     // *** UNPROCESSED OPCODE OP_STATE 5419 8516 0
 };
 
-void() sham_death9;
 // sham_death8
 // function begins at statement 13943
 OP_STATE	1423	8517	0
@@ -1637,7 +1548,6 @@ voidTODO () sham_death8 =
     // *** UNPROCESSED OPCODE OP_STATE 1423 8517 0
 };
 
-void() sham_death10;
 // sham_death9
 // function begins at statement 13945
 OP_STATE	5422	8518	0
@@ -1647,7 +1557,6 @@ voidTODO () sham_death9 =
     // *** UNPROCESSED OPCODE OP_STATE 5422 8518 0
 };
 
-void() sham_death11;
 // sham_death10
 // function begins at statement 13947
 OP_STATE	5424	8519	0
@@ -1657,7 +1566,6 @@ voidTODO () sham_death10 =
     // *** UNPROCESSED OPCODE OP_STATE 5424 8519 0
 };
 
-void() sham_die;
 // sham_death11
 // function begins at statement 13949
 OP_STATE	5426	8519	0
@@ -1667,7 +1575,7 @@ voidTODO () sham_death11 =
     // *** UNPROCESSED OPCODE OP_STATE 5426 8519 0
 };
 
-/* ERROR: NULL TYPE */ ;
+void() sham_die;
 // sham_die
 // function begins at statement 13951
 OP_LOAD_F	28	152	8521
@@ -1722,7 +1630,6 @@ voidTODO () sham_die =
 };
 
 void() monster_shambler;
-string IMMEDIATE;
 // monster_shambler
 // function begins at statement 13985
 OP_IFNOT	35	4	0

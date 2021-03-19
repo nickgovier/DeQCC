@@ -1,6 +1,5 @@
 void() W_SetCurrentAmmo;
 void() SUB_regen;
-/* ERROR: NULL TYPE */ ;
 // SUB_regen
 // function begins at statement 1694
 OP_ADDRESS	28	130	1802
@@ -30,7 +29,6 @@ voidTODO () SUB_regen =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() noclass;
-string IMMEDIATE;
 // noclass
 // function begins at statement 1710
 OP_STORE_V	1810	4	0
@@ -54,7 +52,6 @@ voidTODO () noclass =
 };
 
 void() PlaceItem;
-float oldz;
 // PlaceItem
 // function begins at statement 1722
 OP_ADDRESS	28	394	1817
@@ -115,7 +112,6 @@ voidTODO () PlaceItem =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() StartItem;
-/* ERROR: NULL TYPE */ ;
 // StartItem
 // function begins at statement 1755
 OP_ADDRESS	28	150	1835
@@ -130,7 +126,6 @@ voidTODO () StartItem =
     self.think = PlaceItem;
 };
 
-entity e;
 // T_Heal
 // function begins at statement 1761
 OP_LOAD_F	1838	152	1841
@@ -203,12 +198,11 @@ voidTODO (entity e, float healamount, float ignore) T_Heal =
 
 float H_ROTTEN = 1;
 float H_MEGA = 2;
-/* TYPE: EV_FIELD */ healamount;
-/* TYPE: EV_FIELD */ healtype;
+.float healamount;
+.float healtype;
 void() health_touch;
 void() item_megahealth_rot;
 void() item_health;
-/* ERROR: NULL TYPE */ ;
 // item_health
 // function begins at statement 1795
 OP_ADDRESS	28	146	1869
@@ -307,7 +301,6 @@ voidTODO () item_health =
 
 /* ERROR: NULL TYPE */  = 32;
 /* ERROR: NULL TYPE */  = 56;
-float amount;
 // health_touch
 // function begins at statement 1850
 OP_LOAD_S	29	129	1897
@@ -461,7 +454,6 @@ voidTODO () health_touch =
     SUB_UseTargets();
 };
 
-/* ERROR: NULL TYPE */ ;
 // item_megahealth_rot
 // function begins at statement 1931
 OP_LOAD_ENT	28	201	1927
@@ -517,7 +509,6 @@ voidTODO () item_megahealth_rot =
 };
 
 void() armor_touch;
-float type;
 // armor_touch
 // function begins at statement 1959
 OP_LOAD_F	29	152	1949
@@ -669,7 +660,6 @@ voidTODO () armor_touch =
 };
 
 void() item_armor1;
-/* ERROR: NULL TYPE */ ;
 // item_armor1
 // function begins at statement 2031
 OP_ADDRESS	28	146	1990
@@ -700,7 +690,6 @@ voidTODO () item_armor1 =
 /* ERROR: NULL TYPE */  = 16;
 /* ERROR: NULL TYPE */  = 56;
 void() item_armor2;
-/* ERROR: NULL TYPE */ ;
 // item_armor2
 // function begins at statement 2046
 OP_ADDRESS	28	146	2000
@@ -729,7 +718,6 @@ voidTODO () item_armor2 =
 };
 
 void() item_armorInv;
-/* ERROR: NULL TYPE */ ;
 // item_armorInv
 // function begins at statement 2061
 OP_ADDRESS	28	146	2003
@@ -758,7 +746,6 @@ voidTODO () item_armorInv =
 };
 
 void() bound_other_ammo;
-/* ERROR: NULL TYPE */ ;
 // bound_other_ammo
 // function begins at statement 2076
 OP_LOAD_F	29	158	2006
@@ -815,7 +802,6 @@ voidTODO () bound_other_ammo =
 };
 
 void() RankForWeapon;
-float w;
 // RankForWeapon
 // function begins at statement 2097
 OP_EQ_F	2019	260	2020
@@ -880,7 +866,6 @@ voidTODO (float w) RankForWeapon =
 };
 
 void() Deathmatch_Weapon;
-float old;
 // Deathmatch_Weapon
 // function begins at statement 2117
 OP_LOAD_F	28	154	2031
@@ -911,7 +896,6 @@ voidTODO (float old, float new) Deathmatch_Weapon =
 
 void() W_BestWeapon;
 void() weapon_touch;
-float hadammo;
 // weapon_touch
 // function begins at statement 2129
 OP_LOAD_F	29	182	2042
@@ -1254,7 +1238,6 @@ voidTODO () weapon_touch =
 };
 
 void() weapon_supershotgun;
-string IMMEDIATE;
 // weapon_supershotgun
 // function begins at statement 2297
 OP_STORE_V	2124	4	0
@@ -1286,7 +1269,6 @@ voidTODO () weapon_supershotgun =
 };
 
 void() weapon_nailgun;
-string IMMEDIATE;
 // weapon_nailgun
 // function begins at statement 2314
 OP_STORE_V	2130	4	0
@@ -1318,7 +1300,6 @@ voidTODO () weapon_nailgun =
 };
 
 void() weapon_supernailgun;
-string IMMEDIATE;
 // weapon_supernailgun
 // function begins at statement 2331
 OP_STORE_V	2136	4	0
@@ -1350,7 +1331,6 @@ voidTODO () weapon_supernailgun =
 };
 
 void() weapon_grenadelauncher;
-string IMMEDIATE;
 // weapon_grenadelauncher
 // function begins at statement 2348
 OP_STORE_V	2142	4	0
@@ -1382,7 +1362,6 @@ voidTODO () weapon_grenadelauncher =
 };
 
 void() weapon_rocketlauncher;
-string IMMEDIATE;
 // weapon_rocketlauncher
 // function begins at statement 2365
 OP_STORE_V	2148	4	0
@@ -1414,7 +1393,6 @@ voidTODO () weapon_rocketlauncher =
 };
 
 void() weapon_lightning;
-string IMMEDIATE;
 // weapon_lightning
 // function begins at statement 2382
 OP_STORE_V	2154	4	0
@@ -1446,7 +1424,6 @@ voidTODO () weapon_lightning =
 };
 
 void() ammo_touch;
-entity stemp;
 // ammo_touch
 // function begins at statement 2399
 OP_LOAD_S	29	129	2162
@@ -1666,7 +1643,6 @@ voidTODO () ammo_touch =
 
 float WEAPON_BIG2 = 1;
 void() item_shells;
-/* ERROR: NULL TYPE */ ;
 // item_shells
 // function begins at statement 2508
 OP_ADDRESS	28	146	2211
@@ -1722,7 +1698,6 @@ voidTODO () item_shells =
 };
 
 void() item_spikes;
-/* ERROR: NULL TYPE */ ;
 // item_spikes
 // function begins at statement 2538
 OP_ADDRESS	28	146	2222
@@ -1778,7 +1753,6 @@ voidTODO () item_spikes =
 };
 
 void() item_rockets;
-/* ERROR: NULL TYPE */ ;
 // item_rockets
 // function begins at statement 2568
 OP_ADDRESS	28	146	2234
@@ -1834,7 +1808,6 @@ voidTODO () item_rockets =
 };
 
 void() item_cells;
-/* ERROR: NULL TYPE */ ;
 // item_cells
 // function begins at statement 2598
 OP_ADDRESS	28	146	2245
@@ -1894,7 +1867,6 @@ float WEAPON_ROCKET = 2;
 float WEAPON_SPIKES = 4;
 float WEAPON_BIG = 8;
 void() item_weapon;
-/* ERROR: NULL TYPE */ ;
 // item_weapon
 // function begins at statement 2628
 OP_ADDRESS	28	146	2261
@@ -2048,7 +2020,6 @@ voidTODO () item_weapon =
 };
 
 void() key_touch;
-entity stemp;
 // key_touch
 // function begins at statement 2711
 OP_LOAD_S	29	129	2290
@@ -2140,7 +2111,6 @@ voidTODO () key_touch =
 };
 
 void() key_setsounds;
-/* ERROR: NULL TYPE */ ;
 // key_setsounds
 // function begins at statement 2758
 OP_LOAD_F	30	352	2307
@@ -2191,7 +2161,6 @@ voidTODO () key_setsounds =
 };
 
 void() item_key1;
-/* ERROR: NULL TYPE */ ;
 // item_key1
 // function begins at statement 2780
 OP_LOAD_F	30	352	2320
@@ -2275,7 +2244,6 @@ voidTODO () item_key1 =
 };
 
 void() item_key2;
-/* ERROR: NULL TYPE */ ;
 // item_key2
 // function begins at statement 2823
 OP_LOAD_F	30	352	2338
@@ -2353,7 +2321,6 @@ voidTODO () item_key2 =
 };
 
 void() sigil_touch;
-entity stemp;
 // sigil_touch
 // function begins at statement 2864
 OP_LOAD_S	29	129	2358
@@ -2420,7 +2387,6 @@ voidTODO () sigil_touch =
 };
 
 void() item_sigil;
-/* ERROR: NULL TYPE */ ;
 // item_sigil
 // function begins at statement 2898
 OP_LOAD_F	28	195	2371
@@ -2516,7 +2482,6 @@ voidTODO () item_sigil =
 };
 
 void() powerup_touch;
-entity stemp;
 // powerup_touch
 // function begins at statement 2947
 OP_LOAD_S	29	129	2391
@@ -2693,7 +2658,6 @@ voidTODO () powerup_touch =
 };
 
 void() item_artifact_invulnerability;
-/* ERROR: NULL TYPE */ ;
 // item_artifact_invulnerability
 // function begins at statement 3039
 OP_ADDRESS	28	146	2441
@@ -2737,7 +2701,6 @@ voidTODO () item_artifact_invulnerability =
 };
 
 void() item_artifact_envirosuit;
-/* ERROR: NULL TYPE */ ;
 // item_artifact_envirosuit
 // function begins at statement 3064
 OP_ADDRESS	28	146	2450
@@ -2778,7 +2741,6 @@ voidTODO () item_artifact_envirosuit =
 };
 
 void() item_artifact_invisibility;
-/* ERROR: NULL TYPE */ ;
 // item_artifact_invisibility
 // function begins at statement 3087
 OP_ADDRESS	28	146	2459
@@ -2822,7 +2784,6 @@ voidTODO () item_artifact_invisibility =
 };
 
 void() item_artifact_super_damage;
-/* ERROR: NULL TYPE */ ;
 // item_artifact_super_damage
 // function begins at statement 3112
 OP_ADDRESS	28	146	2469
@@ -2866,7 +2827,6 @@ voidTODO () item_artifact_super_damage =
 };
 
 void() BackpackTouch;
-string s;
 // BackpackTouch
 // function begins at statement 3137
 OP_LOAD_S	29	129	2485
@@ -3160,7 +3120,6 @@ voidTODO () BackpackTouch =
 };
 
 void() DropBackpack;
-entity item;
 // DropBackpack
 // function begins at statement 3295
 OP_LOAD_F	28	158	2537

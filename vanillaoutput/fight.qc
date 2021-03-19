@@ -15,7 +15,6 @@ float enemy_infront;
 float enemy_range;
 float enemy_yaw;
 void() knight_attack;
-float len;
 // knight_attack
 // function begins at statement 275
 OP_LOAD_ENT	28	181	765
@@ -54,7 +53,6 @@ voidTODO () knight_attack =
 };
 
 void() CheckAttack;
-vector spot1;
 // CheckAttack
 // function begins at statement 293
 OP_LOAD_ENT	28	181	799
@@ -247,7 +245,6 @@ voidTODO () CheckAttack =
     return; /* TODO retvalue? */
 };
 
-/* ERROR: NULL TYPE */ ;
 // ai_face
 // function begins at statement 372
 OP_ADDRESS	28	191	844
@@ -271,7 +268,6 @@ voidTODO () ai_face =
 void() infront;
 void() range;
 void() ai_charge;
-float d;
 // ai_charge
 // function begins at statement 382
 OP_CALL0	758	0	0
@@ -285,7 +281,6 @@ voidTODO (float d) ai_charge =
 };
 
 void() ai_charge_side;
-vector dtemp;
 // ai_charge_side
 // function begins at statement 386
 OP_ADDRESS	28	191	864
@@ -328,7 +323,6 @@ voidTODO () ai_charge_side =
 };
 
 void() ai_melee;
-vector delta;
 // ai_melee
 // function begins at statement 412
 OP_LOAD_ENT	28	181	900
@@ -387,7 +381,6 @@ voidTODO () ai_melee =
 };
 
 void() ai_melee_side;
-vector delta;
 // ai_melee_side
 // function begins at statement 441
 OP_LOAD_ENT	28	181	926
@@ -461,7 +454,6 @@ voidTODO () ai_melee_side =
 };
 
 void() SoldierCheckAttack;
-vector spot1;
 // SoldierCheckAttack
 // function begins at statement 478
 OP_LOAD_ENT	28	181	957
@@ -596,7 +588,6 @@ voidTODO () SoldierCheckAttack =
 };
 
 void() ShamCheckAttack;
-vector spot1;
 // ShamCheckAttack
 // function begins at statement 538
 OP_EQ_F	761	242	1001
@@ -724,7 +715,6 @@ voidTODO () ShamCheckAttack =
 };
 
 void() OgreCheckAttack;
-vector spot1;
 // OgreCheckAttack
 // function begins at statement 594
 OP_EQ_F	761	242	1046

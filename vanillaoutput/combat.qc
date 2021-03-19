@@ -2,7 +2,6 @@ void() T_MissileTouch;
 void() info_player_start;
 void() ClientObituary;
 void() monster_death_use;
-entity targ;
 // CanDamage
 // function begins at statement 1308
 OP_LOAD_F	1484	103	1486
@@ -148,7 +147,6 @@ voidTODO (entity targ, entity inflictor) CanDamage =
 };
 
 void() Killed;
-entity targ;
 // Killed
 // function begins at statement 1384
 OP_STORE_ENT	28	1568	0
@@ -225,7 +223,6 @@ voidTODO (entity targ, entity attacker) Killed =
     self = oself;
 };
 
-entity targ;
 // T_Damage
 // function begins at statement 1423
 OP_LOAD_F	1586	163	1596
@@ -530,7 +527,6 @@ voidTODO (entity targ, entity inflictor, entity attacker, float damage) T_Damage
 };
 
 void() T_RadiusDamage;
-entity inflictor;
 // T_RadiusDamage
 // function begins at statement 1586
 OP_LOAD_V	1721	105	1730
@@ -662,7 +658,6 @@ voidTODO (entity inflictor, entity attacker, float damage, entity ignore) T_Radi
 
 /* ERROR INDENTATION */
 void() T_BeamDamage;
-entity attacker;
 // T_BeamDamage
 // function begins at statement 1644
 OP_LOAD_V	1772	105	1776

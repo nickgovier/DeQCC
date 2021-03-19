@@ -1,5 +1,4 @@
 void() tbaby_stand1;
-void() tbaby_hang1;
 // tbaby_stand1
 // function begins at statement 17809
 OP_STATE	337	10270	0
@@ -11,7 +10,7 @@ voidTODO () tbaby_stand1 =
     ai_stand();
 };
 
-void() tbaby_walk1;
+void() tbaby_hang1;
 // tbaby_hang1
 // function begins at statement 17812
 OP_STATE	337	10271	0
@@ -23,7 +22,7 @@ voidTODO () tbaby_hang1 =
     ai_stand();
 };
 
-void() tbaby_walk2;
+void() tbaby_walk1;
 // tbaby_walk1
 // function begins at statement 17815
 OP_STATE	337	10273	0
@@ -35,7 +34,6 @@ voidTODO () tbaby_walk1 =
     ai_turn();
 };
 
-void() tbaby_walk3;
 // tbaby_walk2
 // function begins at statement 17818
 OP_STATE	9491	10274	0
@@ -47,7 +45,6 @@ voidTODO () tbaby_walk2 =
     ai_turn();
 };
 
-void() tbaby_walk4;
 // tbaby_walk3
 // function begins at statement 17821
 OP_STATE	7369	10275	0
@@ -59,7 +56,6 @@ voidTODO () tbaby_walk3 =
     ai_turn();
 };
 
-void() tbaby_walk5;
 // tbaby_walk4
 // function begins at statement 17824
 OP_STATE	370	10276	0
@@ -71,7 +67,6 @@ voidTODO () tbaby_walk4 =
     ai_turn();
 };
 
-void() tbaby_walk6;
 // tbaby_walk5
 // function begins at statement 17827
 OP_STATE	6076	10277	0
@@ -83,7 +78,6 @@ voidTODO () tbaby_walk5 =
     ai_turn();
 };
 
-void() tbaby_walk7;
 // tbaby_walk6
 // function begins at statement 17830
 OP_STATE	313	10278	0
@@ -95,7 +89,6 @@ voidTODO () tbaby_walk6 =
     ai_turn();
 };
 
-void() tbaby_walk8;
 // tbaby_walk7
 // function begins at statement 17833
 OP_STATE	314	10279	0
@@ -107,7 +100,6 @@ voidTODO () tbaby_walk7 =
     ai_turn();
 };
 
-void() tbaby_walk9;
 // tbaby_walk8
 // function begins at statement 17836
 OP_STATE	315	10280	0
@@ -119,7 +111,6 @@ voidTODO () tbaby_walk8 =
     ai_turn();
 };
 
-void() tbaby_walk10;
 // tbaby_walk9
 // function begins at statement 17839
 OP_STATE	6077	10281	0
@@ -131,7 +122,6 @@ voidTODO () tbaby_walk9 =
     ai_turn();
 };
 
-void() tbaby_walk11;
 // tbaby_walk10
 // function begins at statement 17842
 OP_STATE	317	10282	0
@@ -143,7 +133,6 @@ voidTODO () tbaby_walk10 =
     ai_turn();
 };
 
-void() tbaby_walk12;
 // tbaby_walk11
 // function begins at statement 17845
 OP_STATE	318	10283	0
@@ -156,7 +145,6 @@ voidTODO () tbaby_walk11 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk13;
 // tbaby_walk12
 // function begins at statement 17849
 OP_STATE	319	10284	0
@@ -169,7 +157,6 @@ voidTODO () tbaby_walk12 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk14;
 // tbaby_walk13
 // function begins at statement 17853
 OP_STATE	2250	10285	0
@@ -182,7 +169,6 @@ voidTODO () tbaby_walk13 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk15;
 // tbaby_walk14
 // function begins at statement 17857
 OP_STATE	7768	10286	0
@@ -195,7 +181,6 @@ voidTODO () tbaby_walk14 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk16;
 // tbaby_walk15
 // function begins at statement 17861
 OP_STATE	2901	10287	0
@@ -208,7 +193,6 @@ voidTODO () tbaby_walk15 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk17;
 // tbaby_walk16
 // function begins at statement 17865
 OP_STATE	1876	10288	0
@@ -221,7 +205,6 @@ voidTODO () tbaby_walk16 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk18;
 // tbaby_walk17
 // function begins at statement 17869
 OP_STATE	6078	10289	0
@@ -234,7 +217,6 @@ voidTODO () tbaby_walk17 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk19;
 // tbaby_walk18
 // function begins at statement 17873
 OP_STATE	4861	10290	0
@@ -247,7 +229,6 @@ voidTODO () tbaby_walk18 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk20;
 // tbaby_walk19
 // function begins at statement 17877
 OP_STATE	3319	10291	0
@@ -260,7 +241,6 @@ voidTODO () tbaby_walk19 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk21;
 // tbaby_walk20
 // function begins at statement 17881
 OP_STATE	7776	10292	0
@@ -273,7 +253,6 @@ voidTODO () tbaby_walk20 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk22;
 // tbaby_walk21
 // function begins at statement 17885
 OP_STATE	894	10293	0
@@ -286,7 +265,6 @@ voidTODO () tbaby_walk21 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk23;
 // tbaby_walk22
 // function begins at statement 17889
 OP_STATE	7779	10294	0
@@ -299,7 +277,6 @@ voidTODO () tbaby_walk22 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk24;
 // tbaby_walk23
 // function begins at statement 17893
 OP_STATE	7781	10295	0
@@ -312,7 +289,6 @@ voidTODO () tbaby_walk23 =
     ai_walk(2.000);
 };
 
-void() tbaby_walk25;
 // tbaby_walk24
 // function begins at statement 17897
 OP_STATE	301	10296	0
@@ -325,7 +301,6 @@ voidTODO () tbaby_walk24 =
     ai_walk(2.000);
 };
 
-void() tbaby_run1;
 // tbaby_walk25
 // function begins at statement 17901
 OP_STATE	4437	10272	0
@@ -338,7 +313,7 @@ voidTODO () tbaby_walk25 =
     ai_walk(2.000);
 };
 
-void() tbaby_run2;
+void() tbaby_run1;
 // tbaby_run1
 // function begins at statement 17905
 OP_STATE	1890	10298	0
@@ -350,7 +325,6 @@ voidTODO () tbaby_run1 =
     ai_face();
 };
 
-void() tbaby_run3;
 // tbaby_run2
 // function begins at statement 17908
 OP_STATE	7788	10299	0
@@ -362,7 +336,6 @@ voidTODO () tbaby_run2 =
     ai_face();
 };
 
-void() tbaby_run4;
 // tbaby_run3
 // function begins at statement 17911
 OP_STATE	302	10300	0
@@ -374,7 +347,6 @@ voidTODO () tbaby_run3 =
     ai_face();
 };
 
-void() tbaby_run5;
 // tbaby_run4
 // function begins at statement 17914
 OP_STATE	303	10301	0
@@ -386,7 +358,6 @@ voidTODO () tbaby_run4 =
     ai_face();
 };
 
-void() tbaby_run6;
 // tbaby_run5
 // function begins at statement 17917
 OP_STATE	5105	10302	0
@@ -398,7 +369,6 @@ voidTODO () tbaby_run5 =
     ai_face();
 };
 
-void() tbaby_run7;
 // tbaby_run6
 // function begins at statement 17920
 OP_STATE	304	10303	0
@@ -410,7 +380,6 @@ voidTODO () tbaby_run6 =
     ai_face();
 };
 
-void() tbaby_run8;
 // tbaby_run7
 // function begins at statement 17923
 OP_STATE	305	10304	0
@@ -422,7 +391,6 @@ voidTODO () tbaby_run7 =
     ai_face();
 };
 
-void() tbaby_run9;
 // tbaby_run8
 // function begins at statement 17926
 OP_STATE	5674	10305	0
@@ -434,7 +402,6 @@ voidTODO () tbaby_run8 =
     ai_face();
 };
 
-void() tbaby_run10;
 // tbaby_run9
 // function begins at statement 17929
 OP_STATE	307	10306	0
@@ -446,7 +413,6 @@ voidTODO () tbaby_run9 =
     ai_face();
 };
 
-void() tbaby_run11;
 // tbaby_run10
 // function begins at statement 17932
 OP_STATE	5112	10307	0
@@ -458,7 +424,6 @@ voidTODO () tbaby_run10 =
     ai_face();
 };
 
-void() tbaby_run12;
 // tbaby_run11
 // function begins at statement 17935
 OP_STATE	3072	10308	0
@@ -471,7 +436,6 @@ voidTODO () tbaby_run11 =
     ai_run(2.000);
 };
 
-void() tbaby_run13;
 // tbaby_run12
 // function begins at statement 17939
 OP_STATE	5096	10309	0
@@ -484,7 +448,6 @@ voidTODO () tbaby_run12 =
     ai_run(2.000);
 };
 
-void() tbaby_run14;
 // tbaby_run13
 // function begins at statement 17943
 OP_STATE	5098	10310	0
@@ -497,7 +460,6 @@ voidTODO () tbaby_run13 =
     ai_run(2.000);
 };
 
-void() tbaby_run15;
 // tbaby_run14
 // function begins at statement 17947
 OP_STATE	5100	10311	0
@@ -510,7 +472,6 @@ voidTODO () tbaby_run14 =
     ai_run(2.000);
 };
 
-void() tbaby_run16;
 // tbaby_run15
 // function begins at statement 17951
 OP_STATE	5102	10312	0
@@ -523,7 +484,6 @@ voidTODO () tbaby_run15 =
     ai_run(2.000);
 };
 
-void() tbaby_run17;
 // tbaby_run16
 // function begins at statement 17955
 OP_STATE	1733	10313	0
@@ -536,7 +496,6 @@ voidTODO () tbaby_run16 =
     ai_run(2.000);
 };
 
-void() tbaby_run18;
 // tbaby_run17
 // function begins at statement 17959
 OP_STATE	5443	10314	0
@@ -549,7 +508,6 @@ voidTODO () tbaby_run17 =
     ai_run(2.000);
 };
 
-void() tbaby_run19;
 // tbaby_run18
 // function begins at statement 17963
 OP_STATE	5445	10315	0
@@ -562,7 +520,6 @@ voidTODO () tbaby_run18 =
     ai_run(2.000);
 };
 
-void() tbaby_run20;
 // tbaby_run19
 // function begins at statement 17967
 OP_STATE	5447	10316	0
@@ -575,7 +532,6 @@ voidTODO () tbaby_run19 =
     ai_run(2.000);
 };
 
-void() tbaby_run21;
 // tbaby_run20
 // function begins at statement 17971
 OP_STATE	5449	10317	0
@@ -588,7 +544,6 @@ voidTODO () tbaby_run20 =
     ai_run(2.000);
 };
 
-void() tbaby_run22;
 // tbaby_run21
 // function begins at statement 17975
 OP_STATE	1390	10318	0
@@ -601,7 +556,6 @@ voidTODO () tbaby_run21 =
     ai_run(2.000);
 };
 
-void() tbaby_run23;
 // tbaby_run22
 // function begins at statement 17979
 OP_STATE	5452	10319	0
@@ -614,7 +568,6 @@ voidTODO () tbaby_run22 =
     ai_run(2.000);
 };
 
-void() tbaby_run24;
 // tbaby_run23
 // function begins at statement 17983
 OP_STATE	5454	10320	0
@@ -627,7 +580,6 @@ voidTODO () tbaby_run23 =
     ai_run(2.000);
 };
 
-void() tbaby_run25;
 // tbaby_run24
 // function begins at statement 17987
 OP_STATE	5456	10321	0
@@ -640,7 +592,6 @@ voidTODO () tbaby_run24 =
     ai_run(2.000);
 };
 
-void() tbaby_jump1;
 // tbaby_run25
 // function begins at statement 17991
 OP_STATE	5458	10297	0
@@ -653,8 +604,8 @@ voidTODO () tbaby_run25 =
     ai_run(2.000);
 };
 
+void() tbaby_jump1;
 void() Tar_JumpTouch;
-float ldmg;
 // Tar_JumpTouch
 // function begins at statement 17995
 OP_LOAD_F	29	163	10325
@@ -760,7 +711,6 @@ voidTODO () Tar_JumpTouch =
 
 void() tbaby_jump5;
 void() tbaby_fly1;
-void() tbaby_fly2;
 // tbaby_fly1
 // function begins at statement 18053
 OP_STATE	5361	10352	0
@@ -770,7 +720,6 @@ voidTODO () tbaby_fly1 =
     // *** UNPROCESSED OPCODE OP_STATE 5361 10352 0
 };
 
-void() tbaby_fly3;
 // tbaby_fly2
 // function begins at statement 18055
 OP_STATE	5363	10353	0
@@ -780,7 +729,6 @@ voidTODO () tbaby_fly2 =
     // *** UNPROCESSED OPCODE OP_STATE 5363 10353 0
 };
 
-void() tbaby_fly4;
 // tbaby_fly3
 // function begins at statement 18057
 OP_STATE	5365	10354	0
@@ -790,7 +738,6 @@ voidTODO () tbaby_fly3 =
     // *** UNPROCESSED OPCODE OP_STATE 5365 10354 0
 };
 
-/* ERROR: NULL TYPE */ ;
 // tbaby_fly4
 // function begins at statement 18059
 OP_STATE	5367	10351	0
@@ -815,7 +762,6 @@ voidTODO () tbaby_fly4 =
     
 };
 
-void() tbaby_jump2;
 // tbaby_jump1
 // function begins at statement 18069
 OP_STATE	2227	10360	0
@@ -827,7 +773,6 @@ voidTODO () tbaby_jump1 =
     ai_face();
 };
 
-void() tbaby_jump3;
 // tbaby_jump2
 // function begins at statement 18072
 OP_STATE	5351	10361	0
@@ -839,7 +784,6 @@ voidTODO () tbaby_jump2 =
     ai_face();
 };
 
-void() tbaby_jump4;
 // tbaby_jump3
 // function begins at statement 18075
 OP_STATE	5353	10362	0
@@ -851,7 +795,6 @@ voidTODO () tbaby_jump3 =
     ai_face();
 };
 
-void() tbaby_jump6;
 // tbaby_jump4
 // function begins at statement 18078
 OP_STATE	5355	10350	0
@@ -918,7 +861,6 @@ voidTODO () tbaby_jump5 =
     self.cnt = 0.000;
 };
 
-void() tbaby_die1;
 // tbaby_jump6
 // function begins at statement 18113
 OP_STATE	5359	10351	0
@@ -928,7 +870,7 @@ voidTODO () tbaby_jump6 =
     // *** UNPROCESSED OPCODE OP_STATE 5359 10351 0
 };
 
-void() tbaby_die2;
+void() tbaby_die1;
 // tbaby_die1
 // function begins at statement 18115
 OP_STATE	912	10392	0
@@ -941,7 +883,6 @@ voidTODO () tbaby_die1 =
     self.takedamage = 0.000;
 };
 
-string IMMEDIATE;
 // tbaby_die2
 // function begins at statement 18119
 OP_STATE	912	10297	0
@@ -1001,7 +942,6 @@ voidTODO () tbaby_die2 =
 };
 
 void() monster_tarbaby;
-string IMMEDIATE;
 // monster_tarbaby
 // function begins at statement 18159
 OP_IFNOT	35	4	0

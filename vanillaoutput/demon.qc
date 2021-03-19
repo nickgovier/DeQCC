@@ -1,5 +1,5 @@
+void() Demon_JumpTouch;
 void() demon1_stand1;
-void() demon1_stand2;
 // demon1_stand1
 // function begins at statement 12796
 OP_STATE	337	7989	0
@@ -11,7 +11,6 @@ voidTODO () demon1_stand1 =
     ai_stand();
 };
 
-void() demon1_stand3;
 // demon1_stand2
 // function begins at statement 12799
 OP_STATE	7368	7990	0
@@ -23,7 +22,6 @@ voidTODO () demon1_stand2 =
     ai_stand();
 };
 
-void() demon1_stand4;
 // demon1_stand3
 // function begins at statement 12802
 OP_STATE	7369	7991	0
@@ -35,7 +33,6 @@ voidTODO () demon1_stand3 =
     ai_stand();
 };
 
-void() demon1_stand5;
 // demon1_stand4
 // function begins at statement 12805
 OP_STATE	370	7992	0
@@ -47,7 +44,6 @@ voidTODO () demon1_stand4 =
     ai_stand();
 };
 
-void() demon1_stand6;
 // demon1_stand5
 // function begins at statement 12808
 OP_STATE	6076	7993	0
@@ -59,7 +55,6 @@ voidTODO () demon1_stand5 =
     ai_stand();
 };
 
-void() demon1_stand7;
 // demon1_stand6
 // function begins at statement 12811
 OP_STATE	313	7994	0
@@ -71,7 +66,6 @@ voidTODO () demon1_stand6 =
     ai_stand();
 };
 
-void() demon1_stand8;
 // demon1_stand7
 // function begins at statement 12814
 OP_STATE	314	7995	0
@@ -83,7 +77,6 @@ voidTODO () demon1_stand7 =
     ai_stand();
 };
 
-void() demon1_stand9;
 // demon1_stand8
 // function begins at statement 12817
 OP_STATE	315	7996	0
@@ -95,7 +88,6 @@ voidTODO () demon1_stand8 =
     ai_stand();
 };
 
-void() demon1_stand10;
 // demon1_stand9
 // function begins at statement 12820
 OP_STATE	6077	7997	0
@@ -107,7 +99,6 @@ voidTODO () demon1_stand9 =
     ai_stand();
 };
 
-void() demon1_stand11;
 // demon1_stand10
 // function begins at statement 12823
 OP_STATE	317	7998	0
@@ -119,7 +110,6 @@ voidTODO () demon1_stand10 =
     ai_stand();
 };
 
-void() demon1_stand12;
 // demon1_stand11
 // function begins at statement 12826
 OP_STATE	318	7999	0
@@ -131,7 +121,6 @@ voidTODO () demon1_stand11 =
     ai_stand();
 };
 
-void() demon1_stand13;
 // demon1_stand12
 // function begins at statement 12829
 OP_STATE	319	8000	0
@@ -143,7 +132,6 @@ voidTODO () demon1_stand12 =
     ai_stand();
 };
 
-void() demon1_walk1;
 // demon1_stand13
 // function begins at statement 12832
 OP_STATE	2250	7988	0
@@ -155,7 +143,7 @@ voidTODO () demon1_stand13 =
     ai_stand();
 };
 
-void() demon1_walk2;
+void() demon1_walk1;
 // demon1_walk1
 // function begins at statement 12835
 OP_STATE	7768	8002	0
@@ -183,7 +171,6 @@ voidTODO () demon1_walk1 =
     ai_walk(8.000);
 };
 
-void() demon1_walk3;
 // demon1_walk2
 // function begins at statement 12848
 OP_STATE	2901	8005	0
@@ -196,7 +183,6 @@ voidTODO () demon1_walk2 =
     ai_walk(6.000);
 };
 
-void() demon1_walk4;
 // demon1_walk3
 // function begins at statement 12852
 OP_STATE	1876	8006	0
@@ -209,7 +195,6 @@ voidTODO () demon1_walk3 =
     ai_walk(6.000);
 };
 
-void() demon1_walk5;
 // demon1_walk4
 // function begins at statement 12856
 OP_STATE	6078	8007	0
@@ -222,7 +207,6 @@ voidTODO () demon1_walk4 =
     ai_walk(7.000);
 };
 
-void() demon1_walk6;
 // demon1_walk5
 // function begins at statement 12860
 OP_STATE	4861	8008	0
@@ -235,7 +219,6 @@ voidTODO () demon1_walk5 =
     ai_walk(4.000);
 };
 
-void() demon1_walk7;
 // demon1_walk6
 // function begins at statement 12864
 OP_STATE	3319	8009	0
@@ -248,7 +231,6 @@ voidTODO () demon1_walk6 =
     ai_walk(6.000);
 };
 
-void() demon1_walk8;
 // demon1_walk7
 // function begins at statement 12868
 OP_STATE	7776	8010	0
@@ -261,7 +243,6 @@ voidTODO () demon1_walk7 =
     ai_walk(10.000);
 };
 
-void() demon1_run1;
 // demon1_walk8
 // function begins at statement 12872
 OP_STATE	894	8001	0
@@ -274,7 +255,7 @@ voidTODO () demon1_walk8 =
     ai_walk(10.000);
 };
 
-void() demon1_run2;
+void() demon1_run1;
 // demon1_run1
 // function begins at statement 12876
 OP_STATE	7779	8012	0
@@ -302,7 +283,6 @@ voidTODO () demon1_run1 =
     ai_run(20.000);
 };
 
-void() demon1_run3;
 // demon1_run2
 // function begins at statement 12889
 OP_STATE	7781	8014	0
@@ -315,7 +295,6 @@ voidTODO () demon1_run2 =
     ai_run(15.000);
 };
 
-void() demon1_run4;
 // demon1_run3
 // function begins at statement 12893
 OP_STATE	301	8015	0
@@ -328,7 +307,6 @@ voidTODO () demon1_run3 =
     ai_run(36.000);
 };
 
-void() demon1_run5;
 // demon1_run4
 // function begins at statement 12897
 OP_STATE	4437	8016	0
@@ -341,7 +319,6 @@ voidTODO () demon1_run4 =
     ai_run(20.000);
 };
 
-void() demon1_run6;
 // demon1_run5
 // function begins at statement 12901
 OP_STATE	1890	8017	0
@@ -354,7 +331,6 @@ voidTODO () demon1_run5 =
     ai_run(15.000);
 };
 
-void() demon1_jump1;
 // demon1_run6
 // function begins at statement 12905
 OP_STATE	7788	8011	0
@@ -367,7 +343,7 @@ voidTODO () demon1_run6 =
     ai_run(36.000);
 };
 
-void() demon1_jump2;
+void() demon1_jump1;
 // demon1_jump1
 // function begins at statement 12909
 OP_STATE	302	8019	0
@@ -379,7 +355,6 @@ voidTODO () demon1_jump1 =
     ai_face();
 };
 
-void() demon1_jump3;
 // demon1_jump2
 // function begins at statement 12912
 OP_STATE	303	8020	0
@@ -391,7 +366,6 @@ voidTODO () demon1_jump2 =
     ai_face();
 };
 
-void() demon1_jump4;
 // demon1_jump3
 // function begins at statement 12915
 OP_STATE	5105	8021	0
@@ -403,7 +377,6 @@ voidTODO () demon1_jump3 =
     ai_face();
 };
 
-void() demon1_jump5;
 // demon1_jump4
 // function begins at statement 12918
 OP_STATE	304	8022	0
@@ -447,7 +420,6 @@ voidTODO () demon1_jump4 =
     
 };
 
-void() demon1_jump6;
 // demon1_jump5
 // function begins at statement 12941
 OP_STATE	305	8047	0
@@ -457,7 +429,6 @@ voidTODO () demon1_jump5 =
     // *** UNPROCESSED OPCODE OP_STATE 305 8047 0
 };
 
-void() demon1_jump7;
 // demon1_jump6
 // function begins at statement 12943
 OP_STATE	5674	8048	0
@@ -467,7 +438,6 @@ voidTODO () demon1_jump6 =
     // *** UNPROCESSED OPCODE OP_STATE 5674 8048 0
 };
 
-void() demon1_jump8;
 // demon1_jump7
 // function begins at statement 12945
 OP_STATE	307	8049	0
@@ -477,7 +447,6 @@ voidTODO () demon1_jump7 =
     // *** UNPROCESSED OPCODE OP_STATE 307 8049 0
 };
 
-void() demon1_jump9;
 // demon1_jump8
 // function begins at statement 12947
 OP_STATE	5112	8050	0
@@ -487,7 +456,6 @@ voidTODO () demon1_jump8 =
     // *** UNPROCESSED OPCODE OP_STATE 5112 8050 0
 };
 
-void() demon1_jump10;
 // demon1_jump9
 // function begins at statement 12949
 OP_STATE	3072	8051	0
@@ -497,7 +465,6 @@ voidTODO () demon1_jump9 =
     // *** UNPROCESSED OPCODE OP_STATE 3072 8051 0
 };
 
-/* ERROR: NULL TYPE */ ;
 // demon1_jump10
 // function begins at statement 12951
 OP_STATE	5096	8018	0
@@ -512,7 +479,6 @@ voidTODO () demon1_jump10 =
 };
 
 void() demon1_jump11;
-void() demon1_jump12;
 // demon1_jump11
 // function begins at statement 12956
 OP_STATE	5098	8055	0
@@ -522,7 +488,6 @@ voidTODO () demon1_jump11 =
     // *** UNPROCESSED OPCODE OP_STATE 5098 8055 0
 };
 
-void() demon1_atta1;
 // demon1_jump12
 // function begins at statement 12958
 OP_STATE	5100	8011	0
@@ -532,7 +497,7 @@ voidTODO () demon1_jump12 =
     // *** UNPROCESSED OPCODE OP_STATE 5100 8011 0
 };
 
-void() demon1_atta2;
+void() demon1_atta1;
 // demon1_atta1
 // function begins at statement 12960
 OP_STATE	5357	8057	0
@@ -545,7 +510,6 @@ voidTODO () demon1_atta1 =
     ai_charge(4.000);
 };
 
-void() demon1_atta3;
 // demon1_atta2
 // function begins at statement 12964
 OP_STATE	5359	8058	0
@@ -558,7 +522,6 @@ voidTODO () demon1_atta2 =
     ai_charge(0.000);
 };
 
-void() demon1_atta4;
 // demon1_atta3
 // function begins at statement 12968
 OP_STATE	5361	8059	0
@@ -571,7 +534,6 @@ voidTODO () demon1_atta3 =
     ai_charge(0.000);
 };
 
-void() demon1_atta5;
 // demon1_atta4
 // function begins at statement 12972
 OP_STATE	5363	8060	0
@@ -584,7 +546,6 @@ voidTODO () demon1_atta4 =
     ai_charge(1.000);
 };
 
-void() demon1_atta6;
 // demon1_atta5
 // function begins at statement 12976
 OP_STATE	5365	8061	0
@@ -600,7 +561,6 @@ voidTODO () demon1_atta5 =
     Demon_Melee(200.000);
 };
 
-void() demon1_atta7;
 // demon1_atta6
 // function begins at statement 12982
 OP_STATE	5367	8062	0
@@ -613,7 +573,6 @@ voidTODO () demon1_atta6 =
     ai_charge(1.000);
 };
 
-void() demon1_atta8;
 // demon1_atta7
 // function begins at statement 12986
 OP_STATE	912	8063	0
@@ -626,7 +585,6 @@ voidTODO () demon1_atta7 =
     ai_charge(6.000);
 };
 
-void() demon1_atta9;
 // demon1_atta8
 // function begins at statement 12990
 OP_STATE	5369	8064	0
@@ -639,7 +597,6 @@ voidTODO () demon1_atta8 =
     ai_charge(8.000);
 };
 
-void() demon1_atta10;
 // demon1_atta9
 // function begins at statement 12994
 OP_STATE	5371	8065	0
@@ -652,7 +609,6 @@ voidTODO () demon1_atta9 =
     ai_charge(4.000);
 };
 
-void() demon1_atta11;
 // demon1_atta10
 // function begins at statement 12998
 OP_STATE	3872	8066	0
@@ -665,7 +621,6 @@ voidTODO () demon1_atta10 =
     ai_charge(2.000);
 };
 
-void() demon1_atta12;
 // demon1_atta11
 // function begins at statement 13002
 OP_STATE	260	8067	0
@@ -678,7 +633,6 @@ voidTODO () demon1_atta11 =
     Demon_Melee(-200.000);
 };
 
-void() demon1_atta13;
 // demon1_atta12
 // function begins at statement 13006
 OP_STATE	5375	8068	0
@@ -691,7 +645,6 @@ voidTODO () demon1_atta12 =
     ai_charge(5.000);
 };
 
-void() demon1_atta14;
 // demon1_atta13
 // function begins at statement 13010
 OP_STATE	5377	8069	0
@@ -704,7 +657,6 @@ voidTODO () demon1_atta13 =
     ai_charge(8.000);
 };
 
-void() demon1_atta15;
 // demon1_atta14
 // function begins at statement 13014
 OP_STATE	5379	8070	0
@@ -717,7 +669,6 @@ voidTODO () demon1_atta14 =
     ai_charge(4.000);
 };
 
-void() demon1_pain1;
 // demon1_atta15
 // function begins at statement 13018
 OP_STATE	5381	8011	0
@@ -730,7 +681,7 @@ voidTODO () demon1_atta15 =
     ai_charge(4.000);
 };
 
-void() demon1_pain2;
+void() demon1_pain1;
 // demon1_pain1
 // function begins at statement 13022
 OP_STATE	5102	8072	0
@@ -740,7 +691,6 @@ voidTODO () demon1_pain1 =
     // *** UNPROCESSED OPCODE OP_STATE 5102 8072 0
 };
 
-void() demon1_pain3;
 // demon1_pain2
 // function begins at statement 13024
 OP_STATE	1733	8073	0
@@ -750,7 +700,6 @@ voidTODO () demon1_pain2 =
     // *** UNPROCESSED OPCODE OP_STATE 1733 8073 0
 };
 
-void() demon1_pain4;
 // demon1_pain3
 // function begins at statement 13026
 OP_STATE	5443	8074	0
@@ -760,7 +709,6 @@ voidTODO () demon1_pain3 =
     // *** UNPROCESSED OPCODE OP_STATE 5443 8074 0
 };
 
-void() demon1_pain5;
 // demon1_pain4
 // function begins at statement 13028
 OP_STATE	5445	8075	0
@@ -770,7 +718,6 @@ voidTODO () demon1_pain4 =
     // *** UNPROCESSED OPCODE OP_STATE 5445 8075 0
 };
 
-void() demon1_pain6;
 // demon1_pain5
 // function begins at statement 13030
 OP_STATE	5447	8076	0
@@ -780,7 +727,6 @@ voidTODO () demon1_pain5 =
     // *** UNPROCESSED OPCODE OP_STATE 5447 8076 0
 };
 
-void() demon1_pain;
 // demon1_pain6
 // function begins at statement 13032
 OP_STATE	5449	8011	0
@@ -790,7 +736,7 @@ voidTODO () demon1_pain6 =
     // *** UNPROCESSED OPCODE OP_STATE 5449 8011 0
 };
 
-entity attacker;
+void() demon1_pain;
 // demon1_pain
 // function begins at statement 13034
 OP_LOAD_FNC	28	146	8080
@@ -847,7 +793,6 @@ voidTODO (entity attacker, float damage) demon1_pain =
 };
 
 void() demon1_die1;
-void() demon1_die2;
 // demon1_die1
 // function begins at statement 13058
 OP_STATE	1390	8090	0
@@ -864,7 +809,6 @@ voidTODO () demon1_die1 =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
 };
 
-void() demon1_die3;
 // demon1_die2
 // function begins at statement 13066
 OP_STATE	5452	8092	0
@@ -874,7 +818,6 @@ voidTODO () demon1_die2 =
     // *** UNPROCESSED OPCODE OP_STATE 5452 8092 0
 };
 
-void() demon1_die4;
 // demon1_die3
 // function begins at statement 13068
 OP_STATE	5454	8093	0
@@ -884,7 +827,6 @@ voidTODO () demon1_die3 =
     // *** UNPROCESSED OPCODE OP_STATE 5454 8093 0
 };
 
-void() demon1_die5;
 // demon1_die4
 // function begins at statement 13070
 OP_STATE	5456	8094	0
@@ -894,7 +836,6 @@ voidTODO () demon1_die4 =
     // *** UNPROCESSED OPCODE OP_STATE 5456 8094 0
 };
 
-void() demon1_die6;
 // demon1_die5
 // function begins at statement 13072
 OP_STATE	5458	8095	0
@@ -904,7 +845,6 @@ voidTODO () demon1_die5 =
     // *** UNPROCESSED OPCODE OP_STATE 5458 8095 0
 };
 
-void() demon1_die7;
 // demon1_die6
 // function begins at statement 13074
 OP_STATE	2227	8096	0
@@ -917,7 +857,6 @@ voidTODO () demon1_die6 =
     self.solid = 0.000;
 };
 
-void() demon1_die8;
 // demon1_die7
 // function begins at statement 13078
 OP_STATE	5351	8098	0
@@ -927,7 +866,6 @@ voidTODO () demon1_die7 =
     // *** UNPROCESSED OPCODE OP_STATE 5351 8098 0
 };
 
-void() demon1_die9;
 // demon1_die8
 // function begins at statement 13080
 OP_STATE	5353	8099	0
@@ -937,7 +875,6 @@ voidTODO () demon1_die8 =
     // *** UNPROCESSED OPCODE OP_STATE 5353 8099 0
 };
 
-void() demon_die;
 // demon1_die9
 // function begins at statement 13082
 OP_STATE	5355	8099	0
@@ -947,7 +884,7 @@ voidTODO () demon1_die9 =
     // *** UNPROCESSED OPCODE OP_STATE 5355 8099 0
 };
 
-/* ERROR: NULL TYPE */ ;
+void() demon_die;
 // demon_die
 // function begins at statement 13084
 OP_LOAD_F	28	152	8101
@@ -995,7 +932,6 @@ voidTODO () demon_die =
 };
 
 void() Demon_MeleeAttack;
-void() monster_demon1;
 // Demon_MeleeAttack
 // function begins at statement 13112
 OP_CALL0	8056	0	0
@@ -1005,7 +941,7 @@ voidTODO () Demon_MeleeAttack =
     demon1_atta1();
 };
 
-string IMMEDIATE;
+void() monster_demon1;
 // monster_demon1
 // function begins at statement 13114
 OP_IFNOT	35	4	0
@@ -1090,7 +1026,6 @@ voidTODO () monster_demon1 =
 };
 
 void() CheckDemonMelee;
-/* ERROR: NULL TYPE */ ;
 // CheckDemonMelee
 // function begins at statement 13163
 OP_EQ_F	761	242	8124
@@ -1113,7 +1048,6 @@ voidTODO () CheckDemonMelee =
 };
 
 void() CheckDemonJump;
-vector dist;
 // CheckDemonJump
 // function begins at statement 13170
 OP_LOAD_F	28	108	8131
@@ -1209,7 +1143,6 @@ voidTODO () CheckDemonJump =
     return; /* TODO retvalue? */
 };
 
-vector vec;
 // DemonCheckAttack
 // function begins at statement 13220
 OP_CALL0	8123	0	0
@@ -1251,7 +1184,6 @@ voidTODO () DemonCheckAttack =
     return; /* TODO retvalue? */
 };
 
-float side;
 // Demon_Melee
 // function begins at statement 13238
 OP_CALL0	758	0	0
@@ -1336,7 +1268,6 @@ voidTODO (float side) Demon_Melee =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-float ldmg;
 // Demon_JumpTouch
 // function begins at statement 13287
 OP_LOAD_F	28	152	8213

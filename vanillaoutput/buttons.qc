@@ -1,6 +1,5 @@
 void() button_wait;
 void() button_return;
-/* ERROR: NULL TYPE */ ;
 // button_wait
 // function begins at statement 9753
 OP_ADDRESS	28	433	6302
@@ -29,7 +28,6 @@ voidTODO () button_wait =
 };
 
 void() button_done;
-/* ERROR: NULL TYPE */ ;
 // button_done
 // function begins at statement 9768
 OP_ADDRESS	28	433	6311
@@ -40,7 +38,6 @@ voidTODO () button_done =
     self.state = 1.000;
 };
 
-/* ERROR: NULL TYPE */ ;
 // button_return
 // function begins at statement 9771
 OP_ADDRESS	28	433	6312
@@ -72,7 +69,6 @@ voidTODO () button_return =
 };
 
 void() button_blocked;
-void() button_fire;
 // button_blocked
 // function begins at statement 9786
 OP_DONE	0	0	0
@@ -80,7 +76,7 @@ voidTODO () button_blocked =
 {
 };
 
-/* ERROR: NULL TYPE */ ;
+void() button_fire;
 // button_fire
 // function begins at statement 9787
 OP_LOAD_F	28	433	6322
@@ -120,7 +116,6 @@ voidTODO () button_fire =
 };
 
 void() button_use;
-/* ERROR: NULL TYPE */ ;
 // button_use
 // function begins at statement 9810
 OP_ADDRESS	28	181	6334
@@ -134,7 +129,6 @@ voidTODO () button_use =
 };
 
 void() button_touch;
-/* ERROR: NULL TYPE */ ;
 // button_touch
 // function begins at statement 9814
 OP_LOAD_S	29	129	6336
@@ -159,7 +153,6 @@ voidTODO () button_touch =
 };
 
 void() button_killed;
-/* ERROR: NULL TYPE */ ;
 // button_killed
 // function begins at statement 9822
 OP_ADDRESS	28	181	6340
@@ -180,7 +173,6 @@ voidTODO () button_killed =
 };
 
 void() func_button;
-float gtemp;
 // func_button
 // function begins at statement 9831
 OP_LOAD_F	28	207	6347

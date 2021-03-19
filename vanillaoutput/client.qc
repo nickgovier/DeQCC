@@ -7,7 +7,6 @@ float modelindex_player;
 float intermission_running;
 float intermission_exittime;
 void() info_intermission;
-/* ERROR: NULL TYPE */ ;
 // info_intermission
 // function begins at statement 5596
 OP_DONE	0	0	0
@@ -117,7 +116,6 @@ voidTODO () SetChangeParms =
     parm9 = ;
 };
 
-/* ERROR: NULL TYPE */ ;
 // SetNewParms
 // function begins at statement 5648
 OP_BITOR	254	253	3975
@@ -146,7 +144,6 @@ voidTODO () SetNewParms =
 };
 
 void() DecodeLevelParms;
-/* ERROR: NULL TYPE */ ;
 // DecodeLevelParms
 // function begins at statement 5659
 OP_NOT_F	35	0	3977
@@ -202,7 +199,6 @@ voidTODO () DecodeLevelParms =
 };
 
 void() FindIntermission;
-entity spot;
 // FindIntermission
 // function begins at statement 5685
 OP_STORE_V	30	4	0
@@ -299,7 +295,6 @@ voidTODO () FindIntermission =
 
 string nextmap;
 void() GotoNextMap;
-string IMMEDIATE;
 // GotoNextMap
 // function begins at statement 5730
 OP_STORE_V	4003	4	0
@@ -325,7 +320,6 @@ voidTODO () GotoNextMap =
 };
 
 void() ExitIntermission;
-/* ERROR: NULL TYPE */ ;
 // ExitIntermission
 // function begins at statement 5739
 OP_IFNOT	35	3	0
@@ -554,7 +548,6 @@ voidTODO () ExitIntermission =
 };
 
 void() IntermissionThink;
-/* ERROR: NULL TYPE */ ;
 // IntermissionThink
 // function begins at statement 5861
 OP_LT	31	3943	4029
@@ -590,7 +583,6 @@ voidTODO () IntermissionThink =
 };
 
 void() execute_changelevel;
-entity pos;
 // execute_changelevel
 // function begins at statement 5876
 OP_STORE_F	2256	3942	0
@@ -692,7 +684,6 @@ voidTODO () execute_changelevel =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() changelevel_touch;
-entity pos;
 // changelevel_touch
 // function begins at statement 5935
 OP_LOAD_S	29	129	4067
@@ -780,7 +771,6 @@ voidTODO () changelevel_touch =
 };
 
 void() trigger_changelevel;
-/* ERROR: NULL TYPE */ ;
 // trigger_changelevel
 // function begins at statement 5980
 OP_LOAD_S	28	351	4090
@@ -807,7 +797,6 @@ voidTODO () trigger_changelevel =
 
 void() set_suicide_frame;
 void() respawn;
-string IMMEDIATE;
 // respawn
 // function begins at statement 5989
 OP_IFNOT	36	7	0
@@ -851,7 +840,6 @@ voidTODO () respawn =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // ClientKill
 // function begins at statement 6005
 OP_OR	36	35	4097
@@ -890,7 +878,6 @@ voidTODO () ClientKill =
 };
 
 void() CheckSpawnPoint;
-vector v;
 // CheckSpawnPoint
 // function begins at statement 6023
 OP_RETURN	213	0	0
@@ -903,7 +890,6 @@ voidTODO (vector v) CheckSpawnPoint =
 float v_y;
 float v_z;
 void() SelectSpawnPoint;
-entity spot;
 // SelectSpawnPoint
 // function begins at statement 6025
 OP_STORE_V	30	4	0
@@ -1088,7 +1074,6 @@ return; /* TODO retvalue? */
 
 /* ERROR INDENTATION */
 void() PlayerDie;
-entity spot;
 // PutClientInServer
 // function begins at statement 6101
 OP_CALL0	4109	0	0
@@ -1236,7 +1221,6 @@ voidTODO () PutClientInServer =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-void() info_player_start2;
 // info_player_start
 // function begins at statement 6193
 OP_DONE	0	0	0
@@ -1244,7 +1228,7 @@ voidTODO () info_player_start =
 {
 };
 
-void() testplayerstart;
+void() info_player_start2;
 // info_player_start2
 // function begins at statement 6194
 OP_DONE	0	0	0
@@ -1252,7 +1236,7 @@ voidTODO () info_player_start2 =
 {
 };
 
-void() info_player_deathmatch;
+void() testplayerstart;
 // testplayerstart
 // function begins at statement 6195
 OP_DONE	0	0	0
@@ -1260,7 +1244,7 @@ voidTODO () testplayerstart =
 {
 };
 
-void() info_player_coop;
+void() info_player_deathmatch;
 // info_player_deathmatch
 // function begins at statement 6196
 OP_DONE	0	0	0
@@ -1268,7 +1252,7 @@ voidTODO () info_player_deathmatch =
 {
 };
 
-void() NextLevel;
+void() info_player_coop;
 // info_player_coop
 // function begins at statement 6197
 OP_DONE	0	0	0
@@ -1276,7 +1260,7 @@ voidTODO () info_player_coop =
 {
 };
 
-entity o;
+void() NextLevel;
 // NextLevel
 // function begins at statement 6198
 OP_EQ_S	34	4072	4206
@@ -1424,7 +1408,6 @@ voidTODO () NextLevel =
 };
 
 void() CheckRules;
-float timelimit;
 // CheckRules
 // function begins at statement 6262
 OP_IFNOT	342	2	0
@@ -1482,7 +1465,6 @@ voidTODO () CheckRules =
 };
 
 void() PlayerDeathThink;
-entity old_self;
 // PlayerDeathThink
 // function begins at statement 6285
 OP_LOAD_F	28	182	4250
@@ -1585,7 +1567,6 @@ voidTODO () PlayerDeathThink =
 };
 
 void() PlayerJump;
-vector start;
 // PlayerJump
 // function begins at statement 6336
 OP_LOAD_F	28	182	4295
@@ -1735,9 +1716,8 @@ voidTODO () PlayerJump =
     self.velocity_z = self.velocity_z + 270.000;
 };
 
-/* TYPE: EV_FIELD */ dmgtime;
+.float dmgtime;
 void() WaterMove;
-/* ERROR: NULL TYPE */ ;
 // WaterMove
 // function begins at statement 6413
 OP_LOAD_F	28	103	4332
@@ -2060,7 +2040,6 @@ voidTODO () WaterMove =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() CheckWaterJump;
-vector start;
 // CheckWaterJump
 // function begins at statement 6585
 OP_LOAD_V	28	117	4430
@@ -2154,7 +2133,6 @@ voidTODO () CheckWaterJump =
     
 };
 
-float mspeed;
 // PlayerPreThink
 // function begins at statement 6639
 OP_IFNOT	3942	3	0
@@ -2278,7 +2256,6 @@ voidTODO () PlayerPreThink =
 };
 
 void() CheckPowerups;
-/* ERROR: NULL TYPE */ ;
 // CheckPowerups
 // function begins at statement 6691
 OP_LOAD_F	28	152	4508
@@ -2703,7 +2680,6 @@ voidTODO () CheckPowerups =
     
 };
 
-float mspeed;
 // PlayerPostThink
 // function begins at statement 6925
 OP_LOAD_V	28	166	4624
@@ -2820,7 +2796,6 @@ voidTODO () PlayerPostThink =
     CheckPowerups();
 };
 
-/* ERROR: NULL TYPE */ ;
 // ClientConnect
 // function begins at statement 6986
 OP_LOAD_S	28	180	4651
@@ -2843,7 +2818,6 @@ voidTODO () ClientConnect =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // ClientDisconnect
 // function begins at statement 6994
 OP_IFNOT	342	2	0
@@ -2884,7 +2858,6 @@ voidTODO () ClientDisconnect =
     set_suicide_frame();
 };
 
-entity targ;
 // ClientObituary
 // function begins at statement 7016
 OP_CALL0	452	0	0

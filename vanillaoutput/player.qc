@@ -1,5 +1,4 @@
 void() bubble_bob;
-float IMMEDIATE = 17;
 // player_stand1
 // function begins at statement 7366
 OP_STATE	4861	3937	0
@@ -78,7 +77,6 @@ voidTODO () player_stand1 =
     self.walkframe = self.walkframe + 1.000;
 };
 
-/* ERROR: NULL TYPE */ ;
 // player_run
 // function begins at statement 7404
 OP_STATE	314	2612	0
@@ -158,7 +156,6 @@ voidTODO () player_run =
     self.walkframe = self.walkframe + 1.000;
 };
 
-float IMMEDIATE = 113;
 // player_shot1
 // function begins at statement 7445
 OP_STATE	4909	4910	0
@@ -177,7 +174,6 @@ voidTODO () player_shot1 =
     self.effects = ;
 };
 
-float IMMEDIATE = 114;
 // player_shot2
 // function begins at statement 7453
 OP_STATE	4915	4916	0
@@ -190,7 +186,6 @@ voidTODO () player_shot2 =
     self.weaponframe = 2.000;
 };
 
-float IMMEDIATE = 115;
 // player_shot3
 // function begins at statement 7457
 OP_STATE	4918	4919	0
@@ -203,7 +198,6 @@ voidTODO () player_shot3 =
     self.weaponframe = 3.000;
 };
 
-float IMMEDIATE = 116;
 // player_shot4
 // function begins at statement 7461
 OP_STATE	4921	4922	0
@@ -216,7 +210,6 @@ voidTODO () player_shot4 =
     self.weaponframe = 4.000;
 };
 
-float IMMEDIATE = 117;
 // player_shot5
 // function begins at statement 7465
 OP_STATE	4924	4925	0
@@ -229,7 +222,6 @@ voidTODO () player_shot5 =
     self.weaponframe = 5.000;
 };
 
-float IMMEDIATE = 118;
 // player_shot6
 // function begins at statement 7469
 OP_STATE	4927	2612	0
@@ -242,7 +234,6 @@ voidTODO () player_shot6 =
     self.weaponframe = 6.000;
 };
 
-float IMMEDIATE = 119;
 // player_axe1
 // function begins at statement 7473
 OP_STATE	4929	4930	0
@@ -255,7 +246,6 @@ voidTODO () player_axe1 =
     self.weaponframe = 1.000;
 };
 
-void() player_axe3;
 // player_axe2
 // function begins at statement 7477
 OP_STATE	1164	4932	0
@@ -268,7 +258,6 @@ voidTODO () player_axe2 =
     self.weaponframe = 2.000;
 };
 
-float IMMEDIATE = 121;
 // player_axe3
 // function begins at statement 7481
 OP_STATE	4934	4935	0
@@ -283,7 +272,6 @@ voidTODO () player_axe3 =
     W_FireAxe();
 };
 
-float IMMEDIATE = 122;
 // player_axe4
 // function begins at statement 7486
 OP_STATE	4937	2612	0
@@ -296,7 +284,6 @@ voidTODO () player_axe4 =
     self.weaponframe = 4.000;
 };
 
-float IMMEDIATE = 125;
 // player_axeb1
 // function begins at statement 7490
 OP_STATE	4939	4940	0
@@ -309,7 +296,6 @@ voidTODO () player_axeb1 =
     self.weaponframe = 5.000;
 };
 
-float IMMEDIATE = 126;
 // player_axeb2
 // function begins at statement 7494
 OP_STATE	4942	4943	0
@@ -322,7 +308,6 @@ voidTODO () player_axeb2 =
     self.weaponframe = 6.000;
 };
 
-float IMMEDIATE = 127;
 // player_axeb3
 // function begins at statement 7498
 OP_STATE	4945	4946	0
@@ -337,7 +322,6 @@ voidTODO () player_axeb3 =
     W_FireAxe();
 };
 
-/* ERROR: NULL TYPE */ ;
 // player_axeb4
 // function begins at statement 7503
 OP_STATE	261	2612	0
@@ -350,7 +334,6 @@ voidTODO () player_axeb4 =
     self.weaponframe = 8.000;
 };
 
-float IMMEDIATE = 131;
 // player_axec1
 // function begins at statement 7507
 OP_STATE	4949	4950	0
@@ -363,7 +346,6 @@ voidTODO () player_axec1 =
     self.weaponframe = 1.000;
 };
 
-float IMMEDIATE = 132;
 // player_axec2
 // function begins at statement 7511
 OP_STATE	4952	4953	0
@@ -376,7 +358,6 @@ voidTODO () player_axec2 =
     self.weaponframe = 2.000;
 };
 
-float IMMEDIATE = 133;
 // player_axec3
 // function begins at statement 7515
 OP_STATE	4955	4956	0
@@ -391,7 +372,6 @@ voidTODO () player_axec3 =
     W_FireAxe();
 };
 
-float IMMEDIATE = 134;
 // player_axec4
 // function begins at statement 7520
 OP_STATE	4958	2612	0
@@ -404,7 +384,6 @@ voidTODO () player_axec4 =
     self.weaponframe = 4.000;
 };
 
-float IMMEDIATE = 137;
 // player_axed1
 // function begins at statement 7524
 OP_STATE	4960	4961	0
@@ -417,7 +396,6 @@ voidTODO () player_axed1 =
     self.weaponframe = 5.000;
 };
 
-float IMMEDIATE = 138;
 // player_axed2
 // function begins at statement 7528
 OP_STATE	4963	4964	0
@@ -430,7 +408,6 @@ voidTODO () player_axed2 =
     self.weaponframe = 6.000;
 };
 
-float IMMEDIATE = 139;
 // player_axed3
 // function begins at statement 7532
 OP_STATE	4966	4967	0
@@ -445,7 +422,6 @@ voidTODO () player_axed3 =
     W_FireAxe();
 };
 
-float IMMEDIATE = 140;
 // player_axed4
 // function begins at statement 7537
 OP_STATE	4969	2612	0
@@ -458,7 +434,6 @@ voidTODO () player_axed4 =
     self.weaponframe = 8.000;
 };
 
-float IMMEDIATE = 103;
 // player_nail1
 // function begins at statement 7541
 OP_STATE	4971	4972	0
@@ -511,7 +486,6 @@ voidTODO () player_nail1 =
     self.attack_finished = 0.000 + 0.200;
 };
 
-float IMMEDIATE = 104;
 // player_nail2
 // function begins at statement 7567
 OP_STATE	4986	3447	0
@@ -564,7 +538,6 @@ voidTODO () player_nail2 =
     self.attack_finished = 0.000 + 0.200;
 };
 
-float IMMEDIATE = 105;
 // player_light1
 // function begins at statement 7593
 OP_STATE	5000	5001	0
@@ -616,7 +589,6 @@ voidTODO () player_light1 =
     self.attack_finished = 0.000 + 0.200;
 };
 
-float IMMEDIATE = 106;
 // player_light2
 // function begins at statement 7618
 OP_STATE	5015	3448	0
@@ -668,7 +640,6 @@ voidTODO () player_light2 =
     self.attack_finished = 0.000 + 0.200;
 };
 
-float IMMEDIATE = 107;
 // player_rocket1
 // function begins at statement 7643
 OP_STATE	5029	5030	0
@@ -687,7 +658,6 @@ voidTODO () player_rocket1 =
     self.effects = ;
 };
 
-float IMMEDIATE = 108;
 // player_rocket2
 // function begins at statement 7651
 OP_STATE	5035	5036	0
@@ -700,7 +670,6 @@ voidTODO () player_rocket2 =
     self.weaponframe = 2.000;
 };
 
-float IMMEDIATE = 109;
 // player_rocket3
 // function begins at statement 7655
 OP_STATE	5038	5039	0
@@ -713,7 +682,6 @@ voidTODO () player_rocket3 =
     self.weaponframe = 3.000;
 };
 
-float IMMEDIATE = 110;
 // player_rocket4
 // function begins at statement 7659
 OP_STATE	5041	5042	0
@@ -726,7 +694,6 @@ voidTODO () player_rocket4 =
     self.weaponframe = 4.000;
 };
 
-float IMMEDIATE = 111;
 // player_rocket5
 // function begins at statement 7663
 OP_STATE	5044	5045	0
@@ -739,7 +706,6 @@ voidTODO () player_rocket5 =
     self.weaponframe = 5.000;
 };
 
-float IMMEDIATE = 112;
 // player_rocket6
 // function begins at statement 7667
 OP_STATE	5047	2612	0
@@ -754,7 +720,6 @@ voidTODO () player_rocket6 =
 
 void() DeathBubbles;
 void() PainSound;
-float rs;
 // PainSound
 // function begins at statement 7671
 OP_LOAD_F	28	152	5052
@@ -1028,7 +993,6 @@ voidTODO () PainSound =
 };
 
 void() player_pain1;
-void() player_pain2;
 // player_pain1
 // function begins at statement 7820
 OP_STATE	3072	5094	0
@@ -1043,7 +1007,6 @@ voidTODO () player_pain1 =
     self.weaponframe = 0.000;
 };
 
-float IMMEDIATE = 36;
 // player_pain2
 // function begins at statement 7825
 OP_STATE	5096	5097	0
@@ -1053,7 +1016,6 @@ voidTODO () player_pain2 =
     // *** UNPROCESSED OPCODE OP_STATE 5096 5097 0
 };
 
-float IMMEDIATE = 37;
 // player_pain3
 // function begins at statement 7827
 OP_STATE	5098	5099	0
@@ -1063,7 +1025,6 @@ voidTODO () player_pain3 =
     // *** UNPROCESSED OPCODE OP_STATE 5098 5099 0
 };
 
-float IMMEDIATE = 38;
 // player_pain4
 // function begins at statement 7829
 OP_STATE	5100	5101	0
@@ -1073,7 +1034,6 @@ voidTODO () player_pain4 =
     // *** UNPROCESSED OPCODE OP_STATE 5100 5101 0
 };
 
-float IMMEDIATE = 39;
 // player_pain5
 // function begins at statement 7831
 OP_STATE	5102	5103	0
@@ -1083,7 +1043,6 @@ voidTODO () player_pain5 =
     // *** UNPROCESSED OPCODE OP_STATE 5102 5103 0
 };
 
-void() player_axpain1;
 // player_pain6
 // function begins at statement 7833
 OP_STATE	1733	2612	0
@@ -1093,7 +1052,7 @@ voidTODO () player_pain6 =
     // *** UNPROCESSED OPCODE OP_STATE 1733 2612 0
 };
 
-float IMMEDIATE = 29;
+void() player_axpain1;
 // player_axpain1
 // function begins at statement 7835
 OP_STATE	5105	5106	0
@@ -1108,7 +1067,6 @@ voidTODO () player_axpain1 =
     self.weaponframe = 0.000;
 };
 
-void() player_axpain3;
 // player_axpain2
 // function begins at statement 7840
 OP_STATE	304	5108	0
@@ -1118,7 +1076,6 @@ voidTODO () player_axpain2 =
     // *** UNPROCESSED OPCODE OP_STATE 304 5108 0
 };
 
-void() player_axpain4;
 // player_axpain3
 // function begins at statement 7842
 OP_STATE	305	5109	0
@@ -1128,7 +1085,6 @@ voidTODO () player_axpain3 =
     // *** UNPROCESSED OPCODE OP_STATE 305 5109 0
 };
 
-void() player_axpain5;
 // player_axpain4
 // function begins at statement 7844
 OP_STATE	306	5110	0
@@ -1138,7 +1094,6 @@ voidTODO () player_axpain4 =
     // *** UNPROCESSED OPCODE OP_STATE 306 5110 0
 };
 
-void() player_axpain6;
 // player_axpain5
 // function begins at statement 7846
 OP_STATE	307	5111	0
@@ -1148,7 +1103,6 @@ voidTODO () player_axpain5 =
     // *** UNPROCESSED OPCODE OP_STATE 307 5111 0
 };
 
-float IMMEDIATE = 34;
 // player_axpain6
 // function begins at statement 7848
 OP_STATE	5112	2612	0
@@ -1158,7 +1112,6 @@ voidTODO () player_axpain6 =
     // *** UNPROCESSED OPCODE OP_STATE 5112 2612 0
 };
 
-/* ERROR: NULL TYPE */ ;
 // player_pain
 // function begins at statement 7850
 OP_LOAD_F	28	156	5113
@@ -1208,7 +1161,6 @@ void() player_died1;
 void() player_diee1;
 void() player_die_ax1;
 void() DeathBubblesSpawn;
-entity bubble;
 // DeathBubblesSpawn
 // function begins at statement 7864
 OP_LOAD_ENT	28	201	5126
@@ -1307,7 +1259,6 @@ voidTODO () DeathBubblesSpawn =
     
 };
 
-float num_bubbles;
 // DeathBubbles
 // function begins at statement 7923
 OP_CALL0	459	0	0
@@ -1347,7 +1298,6 @@ voidTODO (float num_bubbles) DeathBubbles =
 };
 
 void() DeathSound;
-float rs;
 // DeathSound
 // function begins at statement 7945
 OP_LOAD_F	28	189	5179
@@ -1445,7 +1395,6 @@ voidTODO () DeathSound =
 };
 
 void() PlayerDead;
-/* ERROR: NULL TYPE */ ;
 // PlayerDead
 // function begins at statement 7992
 OP_ADDRESS	28	150	5195
@@ -1460,7 +1409,6 @@ voidTODO () PlayerDead =
 };
 
 void() VelocityForDamage;
-float dm;
 // VelocityForDamage
 // function begins at statement 7997
 OP_CALL0	2628	0	0
@@ -1520,7 +1468,6 @@ voidTODO (float dm) VelocityForDamage =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() ThrowGib;
-string gibname;
 // ThrowGib
 // function begins at statement 8021
 OP_CALL0	459	0	0
@@ -1595,7 +1542,6 @@ voidTODO (string gibname, float dm) ThrowGib =
 };
 
 void() ThrowHead;
-string gibname;
 // ThrowHead
 // function begins at statement 8068
 OP_STORE_V	28	4	0
@@ -1658,7 +1604,6 @@ voidTODO (string gibname, float dm) ThrowHead =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() GibPlayer;
-/* ERROR: NULL TYPE */ ;
 // GibPlayer
 // function begins at statement 8106
 OP_LOAD_F	28	152	5282
@@ -1750,7 +1695,6 @@ voidTODO () GibPlayer =
     
 };
 
-float i;
 // PlayerDie
 // function begins at statement 8161
 OP_ADDRESS	28	162	5293
@@ -1929,7 +1873,6 @@ voidTODO () PlayerDie =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // set_suicide_frame
 // function begins at statement 8254
 OP_LOAD_S	28	130	5343
@@ -1963,7 +1906,6 @@ voidTODO () set_suicide_frame =
     self.nextthink = -1.000;
 };
 
-void() player_diea2;
 // player_diea1
 // function begins at statement 8269
 OP_STATE	2227	5350	0
@@ -1973,7 +1915,6 @@ voidTODO () player_diea1 =
     // *** UNPROCESSED OPCODE OP_STATE 2227 5350 0
 };
 
-float IMMEDIATE = 51;
 // player_diea2
 // function begins at statement 8271
 OP_STATE	5351	5352	0
@@ -1983,7 +1924,6 @@ voidTODO () player_diea2 =
     // *** UNPROCESSED OPCODE OP_STATE 5351 5352 0
 };
 
-float IMMEDIATE = 52;
 // player_diea3
 // function begins at statement 8273
 OP_STATE	5353	5354	0
@@ -1993,7 +1933,6 @@ voidTODO () player_diea3 =
     // *** UNPROCESSED OPCODE OP_STATE 5353 5354 0
 };
 
-float IMMEDIATE = 53;
 // player_diea4
 // function begins at statement 8275
 OP_STATE	5355	5356	0
@@ -2003,7 +1942,6 @@ voidTODO () player_diea4 =
     // *** UNPROCESSED OPCODE OP_STATE 5355 5356 0
 };
 
-float IMMEDIATE = 54;
 // player_diea5
 // function begins at statement 8277
 OP_STATE	5357	5358	0
@@ -2013,7 +1951,6 @@ voidTODO () player_diea5 =
     // *** UNPROCESSED OPCODE OP_STATE 5357 5358 0
 };
 
-float IMMEDIATE = 55;
 // player_diea6
 // function begins at statement 8279
 OP_STATE	5359	5360	0
@@ -2023,7 +1960,6 @@ voidTODO () player_diea6 =
     // *** UNPROCESSED OPCODE OP_STATE 5359 5360 0
 };
 
-float IMMEDIATE = 56;
 // player_diea7
 // function begins at statement 8281
 OP_STATE	5361	5362	0
@@ -2033,7 +1969,6 @@ voidTODO () player_diea7 =
     // *** UNPROCESSED OPCODE OP_STATE 5361 5362 0
 };
 
-float IMMEDIATE = 57;
 // player_diea8
 // function begins at statement 8283
 OP_STATE	5363	5364	0
@@ -2043,7 +1978,6 @@ voidTODO () player_diea8 =
     // *** UNPROCESSED OPCODE OP_STATE 5363 5364 0
 };
 
-float IMMEDIATE = 58;
 // player_diea9
 // function begins at statement 8285
 OP_STATE	5365	5366	0
@@ -2053,7 +1987,6 @@ voidTODO () player_diea9 =
     // *** UNPROCESSED OPCODE OP_STATE 5365 5366 0
 };
 
-float IMMEDIATE = 59;
 // player_diea10
 // function begins at statement 8287
 OP_STATE	5367	5368	0
@@ -2063,7 +1996,6 @@ voidTODO () player_diea10 =
     // *** UNPROCESSED OPCODE OP_STATE 5367 5368 0
 };
 
-float IMMEDIATE = 61;
 // player_diea11
 // function begins at statement 8289
 OP_STATE	912	5368	0
@@ -2084,7 +2016,6 @@ voidTODO () player_dieb1 =
     // *** UNPROCESSED OPCODE OP_STATE 5369 5370 0
 };
 
-float IMMEDIATE = 62;
 // player_dieb2
 // function begins at statement 8294
 OP_STATE	5371	5372	0
@@ -2094,7 +2025,6 @@ voidTODO () player_dieb2 =
     // *** UNPROCESSED OPCODE OP_STATE 5371 5372 0
 };
 
-void() player_dieb4;
 // player_dieb3
 // function begins at statement 8296
 OP_STATE	3872	5373	0
@@ -2104,7 +2034,6 @@ voidTODO () player_dieb3 =
     // *** UNPROCESSED OPCODE OP_STATE 3872 5373 0
 };
 
-void() player_dieb5;
 // player_dieb4
 // function begins at statement 8298
 OP_STATE	260	5374	0
@@ -2114,7 +2043,6 @@ voidTODO () player_dieb4 =
     // *** UNPROCESSED OPCODE OP_STATE 260 5374 0
 };
 
-float IMMEDIATE = 65;
 // player_dieb5
 // function begins at statement 8300
 OP_STATE	5375	5376	0
@@ -2124,7 +2052,6 @@ voidTODO () player_dieb5 =
     // *** UNPROCESSED OPCODE OP_STATE 5375 5376 0
 };
 
-float IMMEDIATE = 66;
 // player_dieb6
 // function begins at statement 8302
 OP_STATE	5377	5378	0
@@ -2134,7 +2061,6 @@ voidTODO () player_dieb6 =
     // *** UNPROCESSED OPCODE OP_STATE 5377 5378 0
 };
 
-float IMMEDIATE = 67;
 // player_dieb7
 // function begins at statement 8304
 OP_STATE	5379	5380	0
@@ -2144,7 +2070,6 @@ voidTODO () player_dieb7 =
     // *** UNPROCESSED OPCODE OP_STATE 5379 5380 0
 };
 
-float IMMEDIATE = 68;
 // player_dieb8
 // function begins at statement 8306
 OP_STATE	5381	5382	0
@@ -2154,7 +2079,6 @@ voidTODO () player_dieb8 =
     // *** UNPROCESSED OPCODE OP_STATE 5381 5382 0
 };
 
-float IMMEDIATE = 69;
 // player_dieb9
 // function begins at statement 8308
 OP_STATE	5383	5382	0
@@ -2166,7 +2090,6 @@ voidTODO () player_dieb9 =
     PlayerDead();
 };
 
-float IMMEDIATE = 70;
 // player_diec1
 // function begins at statement 8311
 OP_STATE	5384	5385	0
@@ -2176,7 +2099,6 @@ voidTODO () player_diec1 =
     // *** UNPROCESSED OPCODE OP_STATE 5384 5385 0
 };
 
-float IMMEDIATE = 71;
 // player_diec2
 // function begins at statement 8313
 OP_STATE	5386	5387	0
@@ -2186,7 +2108,6 @@ voidTODO () player_diec2 =
     // *** UNPROCESSED OPCODE OP_STATE 5386 5387 0
 };
 
-float IMMEDIATE = 72;
 // player_diec3
 // function begins at statement 8315
 OP_STATE	5388	5389	0
@@ -2196,7 +2117,6 @@ voidTODO () player_diec3 =
     // *** UNPROCESSED OPCODE OP_STATE 5388 5389 0
 };
 
-void() player_diec5;
 // player_diec4
 // function begins at statement 8317
 OP_STATE	2739	5390	0
@@ -2206,7 +2126,6 @@ voidTODO () player_diec4 =
     // *** UNPROCESSED OPCODE OP_STATE 2739 5390 0
 };
 
-float IMMEDIATE = 74;
 // player_diec5
 // function begins at statement 8319
 OP_STATE	5391	5392	0
@@ -2216,7 +2135,6 @@ voidTODO () player_diec5 =
     // *** UNPROCESSED OPCODE OP_STATE 5391 5392 0
 };
 
-float IMMEDIATE = 75;
 // player_diec6
 // function begins at statement 8321
 OP_STATE	5393	5394	0
@@ -2226,7 +2144,6 @@ voidTODO () player_diec6 =
     // *** UNPROCESSED OPCODE OP_STATE 5393 5394 0
 };
 
-float IMMEDIATE = 76;
 // player_diec7
 // function begins at statement 8323
 OP_STATE	5395	5396	0
@@ -2236,7 +2153,6 @@ voidTODO () player_diec7 =
     // *** UNPROCESSED OPCODE OP_STATE 5395 5396 0
 };
 
-float IMMEDIATE = 77;
 // player_diec8
 // function begins at statement 8325
 OP_STATE	5397	5398	0
@@ -2246,7 +2162,6 @@ voidTODO () player_diec8 =
     // *** UNPROCESSED OPCODE OP_STATE 5397 5398 0
 };
 
-float IMMEDIATE = 78;
 // player_diec9
 // function begins at statement 8327
 OP_STATE	5399	5400	0
@@ -2256,7 +2171,6 @@ voidTODO () player_diec9 =
     // *** UNPROCESSED OPCODE OP_STATE 5399 5400 0
 };
 
-float IMMEDIATE = 79;
 // player_diec10
 // function begins at statement 8329
 OP_STATE	5401	5402	0
@@ -2266,7 +2180,6 @@ voidTODO () player_diec10 =
     // *** UNPROCESSED OPCODE OP_STATE 5401 5402 0
 };
 
-void() player_diec12;
 // player_diec11
 // function begins at statement 8331
 OP_STATE	788	5403	0
@@ -2276,7 +2189,6 @@ voidTODO () player_diec11 =
     // *** UNPROCESSED OPCODE OP_STATE 788 5403 0
 };
 
-float IMMEDIATE = 81;
 // player_diec12
 // function begins at statement 8333
 OP_STATE	5404	5405	0
@@ -2286,7 +2198,6 @@ voidTODO () player_diec12 =
     // *** UNPROCESSED OPCODE OP_STATE 5404 5405 0
 };
 
-float IMMEDIATE = 82;
 // player_diec13
 // function begins at statement 8335
 OP_STATE	5406	5407	0
@@ -2296,7 +2207,6 @@ voidTODO () player_diec13 =
     // *** UNPROCESSED OPCODE OP_STATE 5406 5407 0
 };
 
-float IMMEDIATE = 83;
 // player_diec14
 // function begins at statement 8337
 OP_STATE	5408	5409	0
@@ -2306,7 +2216,6 @@ voidTODO () player_diec14 =
     // *** UNPROCESSED OPCODE OP_STATE 5408 5409 0
 };
 
-float IMMEDIATE = 84;
 // player_diec15
 // function begins at statement 8339
 OP_STATE	5410	5409	0
@@ -2318,7 +2227,6 @@ voidTODO () player_diec15 =
     PlayerDead();
 };
 
-float IMMEDIATE = 85;
 // player_died1
 // function begins at statement 8342
 OP_STATE	5411	5412	0
@@ -2328,7 +2236,6 @@ voidTODO () player_died1 =
     // *** UNPROCESSED OPCODE OP_STATE 5411 5412 0
 };
 
-float IMMEDIATE = 86;
 // player_died2
 // function begins at statement 8344
 OP_STATE	5413	5414	0
@@ -2338,7 +2245,6 @@ voidTODO () player_died2 =
     // *** UNPROCESSED OPCODE OP_STATE 5413 5414 0
 };
 
-float IMMEDIATE = 87;
 // player_died3
 // function begins at statement 8346
 OP_STATE	5415	5416	0
@@ -2348,7 +2254,6 @@ voidTODO () player_died3 =
     // *** UNPROCESSED OPCODE OP_STATE 5415 5416 0
 };
 
-float IMMEDIATE = 88;
 // player_died4
 // function begins at statement 8348
 OP_STATE	5417	5418	0
@@ -2358,7 +2263,6 @@ voidTODO () player_died4 =
     // *** UNPROCESSED OPCODE OP_STATE 5417 5418 0
 };
 
-float IMMEDIATE = 89;
 // player_died5
 // function begins at statement 8350
 OP_STATE	5419	5420	0
@@ -2368,7 +2272,6 @@ voidTODO () player_died5 =
     // *** UNPROCESSED OPCODE OP_STATE 5419 5420 0
 };
 
-void() player_died7;
 // player_died6
 // function begins at statement 8352
 OP_STATE	1423	5421	0
@@ -2378,7 +2281,6 @@ voidTODO () player_died6 =
     // *** UNPROCESSED OPCODE OP_STATE 1423 5421 0
 };
 
-float IMMEDIATE = 91;
 // player_died7
 // function begins at statement 8354
 OP_STATE	5422	5423	0
@@ -2388,7 +2290,6 @@ voidTODO () player_died7 =
     // *** UNPROCESSED OPCODE OP_STATE 5422 5423 0
 };
 
-float IMMEDIATE = 92;
 // player_died8
 // function begins at statement 8356
 OP_STATE	5424	5425	0
@@ -2398,7 +2299,6 @@ voidTODO () player_died8 =
     // *** UNPROCESSED OPCODE OP_STATE 5424 5425 0
 };
 
-float IMMEDIATE = 93;
 // player_died9
 // function begins at statement 8358
 OP_STATE	5426	5425	0
@@ -2410,7 +2310,6 @@ voidTODO () player_died9 =
     PlayerDead();
 };
 
-float IMMEDIATE = 94;
 // player_diee1
 // function begins at statement 8361
 OP_STATE	5427	5428	0
@@ -2420,7 +2319,6 @@ voidTODO () player_diee1 =
     // *** UNPROCESSED OPCODE OP_STATE 5427 5428 0
 };
 
-float IMMEDIATE = 95;
 // player_diee2
 // function begins at statement 8363
 OP_STATE	5429	5430	0
@@ -2430,7 +2328,6 @@ voidTODO () player_diee2 =
     // *** UNPROCESSED OPCODE OP_STATE 5429 5430 0
 };
 
-float IMMEDIATE = 96;
 // player_diee3
 // function begins at statement 8365
 OP_STATE	5431	5432	0
@@ -2440,7 +2337,6 @@ voidTODO () player_diee3 =
     // *** UNPROCESSED OPCODE OP_STATE 5431 5432 0
 };
 
-float IMMEDIATE = 97;
 // player_diee4
 // function begins at statement 8367
 OP_STATE	5433	5434	0
@@ -2450,7 +2346,6 @@ voidTODO () player_diee4 =
     // *** UNPROCESSED OPCODE OP_STATE 5433 5434 0
 };
 
-float IMMEDIATE = 98;
 // player_diee5
 // function begins at statement 8369
 OP_STATE	5435	5436	0
@@ -2460,7 +2355,6 @@ voidTODO () player_diee5 =
     // *** UNPROCESSED OPCODE OP_STATE 5435 5436 0
 };
 
-float IMMEDIATE = 99;
 // player_diee6
 // function begins at statement 8371
 OP_STATE	5437	5438	0
@@ -2470,7 +2364,6 @@ voidTODO () player_diee6 =
     // *** UNPROCESSED OPCODE OP_STATE 5437 5438 0
 };
 
-void() player_diee8;
 // player_diee7
 // function begins at statement 8373
 OP_STATE	1884	5439	0
@@ -2480,7 +2373,6 @@ voidTODO () player_diee7 =
     // *** UNPROCESSED OPCODE OP_STATE 1884 5439 0
 };
 
-float IMMEDIATE = 101;
 // player_diee8
 // function begins at statement 8375
 OP_STATE	5440	5441	0
@@ -2490,7 +2382,6 @@ voidTODO () player_diee8 =
     // *** UNPROCESSED OPCODE OP_STATE 5440 5441 0
 };
 
-float IMMEDIATE = 102;
 // player_diee9
 // function begins at statement 8377
 OP_STATE	5442	5441	0
@@ -2502,7 +2393,6 @@ voidTODO () player_diee9 =
     PlayerDead();
 };
 
-float IMMEDIATE = 41;
 // player_die_ax1
 // function begins at statement 8380
 OP_STATE	5443	5444	0
@@ -2512,7 +2402,6 @@ voidTODO () player_die_ax1 =
     // *** UNPROCESSED OPCODE OP_STATE 5443 5444 0
 };
 
-float IMMEDIATE = 42;
 // player_die_ax2
 // function begins at statement 8382
 OP_STATE	5445	5446	0
@@ -2522,7 +2411,6 @@ voidTODO () player_die_ax2 =
     // *** UNPROCESSED OPCODE OP_STATE 5445 5446 0
 };
 
-float IMMEDIATE = 43;
 // player_die_ax3
 // function begins at statement 8384
 OP_STATE	5447	5448	0
@@ -2532,7 +2420,6 @@ voidTODO () player_die_ax3 =
     // *** UNPROCESSED OPCODE OP_STATE 5447 5448 0
 };
 
-float IMMEDIATE = 44;
 // player_die_ax4
 // function begins at statement 8386
 OP_STATE	5449	5450	0
@@ -2542,7 +2429,6 @@ voidTODO () player_die_ax4 =
     // *** UNPROCESSED OPCODE OP_STATE 5449 5450 0
 };
 
-void() player_die_ax6;
 // player_die_ax5
 // function begins at statement 8388
 OP_STATE	1390	5451	0
@@ -2552,7 +2438,6 @@ voidTODO () player_die_ax5 =
     // *** UNPROCESSED OPCODE OP_STATE 1390 5451 0
 };
 
-float IMMEDIATE = 46;
 // player_die_ax6
 // function begins at statement 8390
 OP_STATE	5452	5453	0
@@ -2562,7 +2447,6 @@ voidTODO () player_die_ax6 =
     // *** UNPROCESSED OPCODE OP_STATE 5452 5453 0
 };
 
-float IMMEDIATE = 47;
 // player_die_ax7
 // function begins at statement 8392
 OP_STATE	5454	5455	0
@@ -2572,7 +2456,6 @@ voidTODO () player_die_ax7 =
     // *** UNPROCESSED OPCODE OP_STATE 5454 5455 0
 };
 
-float IMMEDIATE = 48;
 // player_die_ax8
 // function begins at statement 8394
 OP_STATE	5456	5457	0
@@ -2582,7 +2465,6 @@ voidTODO () player_die_ax8 =
     // *** UNPROCESSED OPCODE OP_STATE 5456 5457 0
 };
 
-float IMMEDIATE = 49;
 // player_die_ax9
 // function begins at statement 8396
 OP_STATE	5458	5457	0

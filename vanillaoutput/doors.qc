@@ -6,7 +6,6 @@ float DOOR_TOGGLE = 32;
 void() door_go_down;
 void() door_go_up;
 void() door_blocked;
-/* ERROR: NULL TYPE */ ;
 // door_blocked
 // function begins at statement 8722
 OP_LOAD_F	28	420	5678
@@ -46,7 +45,6 @@ voidTODO () door_blocked =
 };
 
 void() door_hit_top;
-/* ERROR: NULL TYPE */ ;
 // door_hit_top
 // function begins at statement 8738
 OP_LOAD_S	28	209	5684
@@ -85,7 +83,6 @@ voidTODO () door_hit_top =
 };
 
 void() door_hit_bottom;
-/* ERROR: NULL TYPE */ ;
 // door_hit_bottom
 // function begins at statement 8759
 OP_LOAD_S	28	209	5694
@@ -104,7 +101,6 @@ voidTODO () door_hit_bottom =
     self.state = 1.000;
 };
 
-/* ERROR: NULL TYPE */ ;
 // door_go_down
 // function begins at statement 8769
 OP_LOAD_S	28	210	5696
@@ -144,7 +140,6 @@ voidTODO () door_go_down =
     SUB_CalcMove(self.pos1, self.speed, door_hit_bottom);
 };
 
-/* ERROR: NULL TYPE */ ;
 // door_go_up
 // function begins at statement 8792
 OP_LOAD_F	28	433	5706
@@ -199,7 +194,6 @@ voidTODO () door_go_up =
 };
 
 void() door_fire;
-entity oself;
 // door_fire
 // function begins at statement 8822
 OP_LOAD_ENT	28	201	5723
@@ -294,7 +288,6 @@ voidTODO () door_fire =
 };
 
 void() door_use;
-entity oself;
 // door_use
 // function begins at statement 8868
 OP_ADDRESS	28	206	5746
@@ -324,7 +317,6 @@ voidTODO () door_use =
 };
 
 void() door_trigger_touch;
-/* ERROR: NULL TYPE */ ;
 // door_trigger_touch
 // function begins at statement 8882
 OP_LOAD_F	29	152	5753
@@ -364,7 +356,6 @@ voidTODO () door_trigger_touch =
 };
 
 void() door_killed;
-entity oself;
 // door_killed
 // function begins at statement 8898
 OP_STORE_ENT	28	5761	0
@@ -390,7 +381,6 @@ voidTODO () door_killed =
 };
 
 void() door_touch;
-/* ERROR: NULL TYPE */ ;
 // door_touch
 // function begins at statement 8909
 OP_LOAD_S	29	129	5767
@@ -641,7 +631,6 @@ voidTODO () door_touch =
 };
 
 void() spawn_field;
-vector fmins;
 // spawn_field
 // function begins at statement 9049
 OP_CALL0	459	0	0
@@ -684,7 +673,6 @@ voidTODO (vector fmins, vector fmaxs) spawn_field =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() EntitiesTouching;
-entity e1;
 // EntitiesTouching
 // function begins at statement 9069
 OP_LOAD_F	5850	135	5852
@@ -764,7 +752,6 @@ voidTODO (entity e1, entity e2) EntitiesTouching =
 };
 
 void() LinkDoors;
-entity t;
 // LinkDoors
 // function begins at statement 9101
 OP_LOAD_ENT	28	181	5879
@@ -1004,7 +991,6 @@ voidTODO () LinkDoors =
 };
 
 void() func_door;
-/* ERROR: NULL TYPE */ ;
 // func_door
 // function begins at statement 9207
 OP_LOAD_F	30	352	5932
@@ -1374,7 +1360,6 @@ float SECRET_1ST_DOWN = 4;
 float SECRET_NO_SHOOT = 8;
 float SECRET_YES_SHOOT = 16;
 void() fd_secret_use;
-float temp;
 // fd_secret_use
 // function begins at statement 9402
 OP_ADDRESS	28	152	6081
@@ -1545,7 +1530,6 @@ voidTODO () fd_secret_use =
     sound(self, 2.000, self.noise2, 1.000, 1.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move1
 // function begins at statement 9505
 OP_ADDRESS	28	150	6176
@@ -1569,7 +1553,6 @@ voidTODO () fd_secret_move1 =
     sound(self, 2.000, self.noise3, 1.000, 1.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move2
 // function begins at statement 9519
 OP_LOAD_S	28	210	6181
@@ -1592,7 +1575,6 @@ voidTODO () fd_secret_move2 =
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move3
 // function begins at statement 9533
 OP_LOAD_S	28	211	6186
@@ -1626,7 +1608,6 @@ voidTODO () fd_secret_move3 =
     
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move4
 // function begins at statement 9552
 OP_LOAD_S	28	210	6195
@@ -1649,7 +1630,6 @@ voidTODO () fd_secret_move4 =
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move5
 // function begins at statement 9566
 OP_ADDRESS	28	150	6200
@@ -1673,7 +1653,6 @@ voidTODO () fd_secret_move5 =
     sound(self, 2.000, self.noise3, 1.000, 1.000);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_move6
 // function begins at statement 9580
 OP_LOAD_S	28	210	6205
@@ -1696,7 +1675,6 @@ voidTODO () fd_secret_move6 =
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
 };
 
-/* ERROR: NULL TYPE */ ;
 // fd_secret_done
 // function begins at statement 9594
 OP_LOAD_S	28	197	6210
@@ -1734,7 +1712,6 @@ voidTODO () fd_secret_done =
 };
 
 void() secret_blocked;
-/* ERROR: NULL TYPE */ ;
 // secret_blocked
 // function begins at statement 9614
 OP_LOAD_F	28	373	6220
@@ -1764,7 +1741,6 @@ voidTODO () secret_blocked =
 };
 
 void() secret_touch;
-/* ERROR: NULL TYPE */ ;
 // secret_touch
 // function begins at statement 9628
 OP_LOAD_S	29	129	6226
@@ -1818,7 +1794,6 @@ voidTODO () secret_touch =
 };
 
 void() func_door_secret;
-/* ERROR: NULL TYPE */ ;
 // func_door_secret
 // function begins at statement 9652
 OP_LOAD_F	28	207	6235

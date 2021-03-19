@@ -1,3 +1,4 @@
+void() SUB_CalcMove;
 void() SUB_CalcMoveEnt;
 void() SUB_CalcAngleMove;
 void() SUB_CalcMoveDone;
@@ -8,7 +9,6 @@ void() SUB_Remove;
 void() T_Damage;
 void() T_Heal;
 void() CanDamage;
-void() SetMovedir;
 // SUB_Null
 // function begins at statement 1
 OP_DONE	0	0	0
@@ -26,7 +26,7 @@ voidTODO () SUB_Remove =
     remove(self);
 };
 
-/* ERROR: NULL TYPE */ ;
+void() SetMovedir;
 // SetMovedir
 // function begins at statement 5
 OP_LOAD_V	28	117	524
@@ -75,7 +75,6 @@ voidTODO () SetMovedir =
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() InitTrigger;
-/* ERROR: NULL TYPE */ ;
 // InitTrigger
 // function begins at statement 25
 OP_LOAD_V	28	117	560
@@ -110,7 +109,6 @@ voidTODO () InitTrigger =
     self.model = "IMMEDIATE";
 };
 
-entity ent;
 // SUB_CalcMoveEnt
 // function begins at statement 42
 OP_STORE_ENT	28	576	0
@@ -130,7 +128,6 @@ voidTODO (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
     self = stemp;
 };
 
-vector tdest;
 // SUB_CalcMove
 // function begins at statement 50
 OP_NOT_F	580	0	587
@@ -218,7 +215,6 @@ voidTODO (vector tdest, float tspeed, void() func) SUB_CalcMove =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */ ;
 // SUB_CalcMoveDone
 // function begins at statement 96
 OP_LOAD_V	28	423	629
@@ -248,7 +244,6 @@ voidTODO () SUB_CalcMoveDone =
 };
 
 void() SUB_CalcAngleMoveEnt;
-entity ent;
 // SUB_CalcAngleMoveEnt
 // function begins at statement 109
 OP_STORE_ENT	28	645	0
@@ -268,7 +263,6 @@ voidTODO (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngle
     self = stemp;
 };
 
-vector destangle;
 // SUB_CalcAngleMove
 // function begins at statement 117
 OP_NOT_F	649	0	656
@@ -319,7 +313,6 @@ voidTODO (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
     self.think = SUB_CalcAngleMoveDone;
 };
 
-/* ERROR: NULL TYPE */ ;
 // SUB_CalcAngleMoveDone
 // function begins at statement 144
 OP_ADDRESS	28	117	679
@@ -348,7 +341,6 @@ voidTODO () SUB_CalcAngleMoveDone =
 };
 
 void() DelayThink;
-/* ERROR: NULL TYPE */ ;
 // DelayThink
 // function begins at statement 156
 OP_LOAD_ENT	28	181	692
@@ -364,7 +356,6 @@ voidTODO () DelayThink =
     remove(self);
 };
 
-entity t;
 // SUB_UseTargets
 // function begins at statement 162
 OP_LOAD_F	28	414	697
@@ -547,7 +538,6 @@ voidTODO () SUB_UseTargets =
 };
 
 void() SUB_AttackFinished;
-float normal;
 // SUB_AttackFinished
 // function begins at statement 249
 OP_ADDRESS	28	421	733
@@ -572,7 +562,6 @@ voidTODO (float normal) SUB_AttackFinished =
 
 void() visible;
 void() SUB_CheckRefire;
-void() func000000;
 // SUB_CheckRefire
 // function begins at statement 257
 OP_NE_F	349	370	740
