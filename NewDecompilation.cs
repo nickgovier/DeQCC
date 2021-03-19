@@ -6,6 +6,7 @@ using System.Text;
 namespace DeQcc
 {
     enum GotoType { None, EndWhile, EndIf }
+
     partial class Statement
     {
         public GotoType gotoType;   // Just used for GOTOs to properly process the end of IFNOT blocks
@@ -13,6 +14,7 @@ namespace DeQcc
 
     enum GlobalKind
     {
+        Unknown,
         Reserved,
         Function,
         Field,
@@ -25,59 +27,61 @@ namespace DeQcc
     
     class Global
     {
-        public GlobalKind Kind;
+        #region Statics
 
-        public int id;
+        public static List<Global> globalList;
+        public static List<Function> functions;
+        public static List<Def> fields;
+        public static Dictionary<int, int> fieldsOffsetMap;  // to look up field by offset
+
+        private static int DEF_SAVEGLOBAL = (1 << 15);
+
+        #endregion Statics
+
+        #region Constructor
+
+        public Global(int id, float f)
+        {
+            _id = id;
+            _name = null;
+            _globaldef_type = null;
+
+            Kind = GlobalKind.Unknown;
+            FloatVal = f;
+            ValueSource = null;
+        }
+
+        #endregion Constructor
+
+        #region Private variables
+
+        private int _id;
+        private string _name;
+        private ushort? _globaldef_type;    // original - may have DEF_SAVEGLOBAL bit set
+
+        #endregion Private variables
+
+        #region Public Variables
+
+        public GlobalKind Kind;
         public float FloatVal;
+        public string? ValueSource; // the source of the value being stored in this global
+
+        #endregion Public Variables
+
+        #region Properties
+
         public ushort? IntVal
         {
-            get {
+            get
+            {
                 // TODO better way to do this?
                 int intVal = BitConverter.ToInt32(BitConverter.GetBytes(FloatVal));
-                if (intVal < (1<<16))    // ints seem to be the first 16 bits, 0-65536 - and only used as offsets(?)
+                if (intVal < (1 << 16))    // ints seem to be the first 16 bits, 0-65536 - and only used as offsets(?)
                 {
                     return (ushort)intVal;
                 }
                 return null;
-            }
-        }
-
-        // Kind.Globaldef
-        public ushort? _globaldef_type;
-        public int? _globaldef_s_name;
-        private string? _globaldef_name_overwrite;
-
-        private int DEF_SAVEGLOBAL = (1 << 15);
-        public bool SaveGlobal  // we don't actually need this info, but it helps in the Type property later
-        {
-            get
-            {
-                if (_globaldef_type == null)
-                {
-                    return false;
-                }
-                int bitCheck = (ushort)_globaldef_type & DEF_SAVEGLOBAL;    // check if DEF_SAVEGLOBAL bit is set
-                if (bitCheck == 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-
-        public Types? Type
-        {
-            get
-            {
-                if(_globaldef_type == null)
-                {
-                    return null;
-                }
-                if(SaveGlobal)
-                {
-                    return (Types)(_globaldef_type - DEF_SAVEGLOBAL);
-                }
-                return (Types)(_globaldef_type);
             }
         }
 
@@ -113,87 +117,25 @@ namespace DeQcc
             }
         }
 
-        public static List<string> strings;
-        public static Dictionary<int, int> stringOffsetMap;
-
-        public string? GlobaldefName
-        {
-            set // Overwrite with a custom name
-            {
-                _globaldef_name_overwrite = value;
-            }
-        }
-
-        // Kind.Function
-        // If this global is an offset to a function
-        public int? FunctionNumber;
-        public string? FunctionName;
-
-        // Kind.Field
-        // If this global is an offset to a field
-        public int? FieldNumber;
-        public string? FieldName;
-        public ushort? _fields_type;
-        public Types? FieldType
-        {
-            get
-            {
-                if (_fields_type == null)
-                {
-                    return null;
-                }
-                return (Types)(_fields_type);
-            }
-        }
-
-        public string? ValueSource; // the source code for the source of the value being stored in this global
-
         public string? Name
         {
             get
             {
                 if (Kind == GlobalKind.Function)
                 {
-                    if (FunctionNumber > 0) { return FunctionName; }
-                    return null;
+                    return FunctionName;
                 }
                 if (Kind == GlobalKind.Field)
                 {
-                    if (FieldNumber > 0) { return FieldName; }
-                    return null;
+                    return FieldName;
                 }
-                if (_globaldef_name_overwrite != null)
-                {
-                    return _globaldef_name_overwrite;
-                }
-                if (_globaldef_s_name is null || _globaldef_s_name == 0)
-                {
-                    return null;
-                }
-                return strings[stringOffsetMap[(int)_globaldef_s_name]];
+                return _name;
             }
-        }
-
-        // if this is an immediate string, get the string pointed to and escape special chars before returning
-        private string CleanseImmediateString()
-        {
-            string stringToCleanse = strings[stringOffsetMap[(int)IntVal]];
-            for(int i = 0; i < stringToCleanse.Length; i++)
+            set
             {
-                // Can't use string.Replace as need to replace char with string
-                if(stringToCleanse[i] == '\n')
-                {
-                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\n" + stringToCleanse.Substring(i + 1);
-                }
-                if(stringToCleanse[i] == '\"')
-                {
-                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\" + '"' + stringToCleanse.Substring(i + 1);
-                }
+                _name = value;
             }
-            return '"' + stringToCleanse + '"';
         }
-
-        public static List<Global> globalList;
 
         public string ImmediateValue
         {
@@ -208,15 +150,14 @@ namespace DeQcc
                     case Types.ev_float:
                         return FloatVal.ToString("F3");
                     case Types.ev_vector:
-                        return "'" + FloatVal.ToString("F3") + " " + (globalList[id + 1].FloatVal).ToString("F3") + " " + (globalList[id + 2].FloatVal).ToString("F3") + "'";
+                        return "'" + FloatVal.ToString("F3") + " " + (globalList[_id + 1].FloatVal).ToString("F3") + " " + (globalList[_id + 2].FloatVal).ToString("F3") + "'";
                     default:
                         return "/* ERROR ImmediateValue for " + Type + " */";
                 }
             }
         }
 
-        // If this globaldef is being assigned to something else
-        public string ValueToAssign
+        public string ValueToAssign // If this globaldef is being assigned to something else
         {
             get
             {
@@ -230,6 +171,96 @@ namespace DeQcc
                 }
             }
         }
+
+        public bool SaveGlobal  // we don't actually need this info, but it helps in the Type property later
+        {
+            get
+            {
+                if (_globaldef_type == null)
+                {
+                    return false;
+                }
+                int bitCheck = (ushort)_globaldef_type & DEF_SAVEGLOBAL;    // check if DEF_SAVEGLOBAL bit is set
+                if (bitCheck == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public string? FieldName    // If this global is an offset to a field
+        {
+            get
+            {
+                return fields[fieldsOffsetMap[(int)IntVal]].name;
+            }
+        }
+
+        public Types? FieldType
+        {
+            get
+            {
+                return (Types)(fields[fieldsOffsetMap[(int)IntVal]].type);
+            }
+        }
+
+        public string? FunctionName // If this global is an offset to a function
+        {
+            get
+            {
+                return functions[(int)IntVal].name;
+            }
+        }
+
+        public ushort GlobaldefType
+        {
+            set
+            {
+                _globaldef_type = value;
+            }
+        }
+
+        public Types? Type
+        {
+            get
+            {
+                if (_globaldef_type == null)
+                {
+                    return null;
+                }
+                if (SaveGlobal)
+                {
+                    return (Types)(_globaldef_type - DEF_SAVEGLOBAL);
+                }
+                return (Types)(_globaldef_type);
+            }
+        }
+
+        #endregion Properties
+
+        #region Private functions
+
+        // if this is an immediate string, get the string pointed to and escape special chars before returning
+        private string CleanseImmediateString()
+        {
+            string stringToCleanse = _name;
+            for (int i = 0; i < stringToCleanse.Length; i++)
+            {
+                // Can't use string.Replace as need to replace char with string
+                if (stringToCleanse[i] == '\n')
+                {
+                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\n" + stringToCleanse.Substring(i + 1);
+                }
+                if (stringToCleanse[i] == '\"')
+                {
+                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\" + '"' + stringToCleanse.Substring(i + 1);
+                }
+            }
+            return '"' + stringToCleanse + '"';
+        }
+
+        #endregion Private functions
     }
 
     partial class DeQCC
@@ -237,7 +268,11 @@ namespace DeQcc
         public int highestGlobalAccessed;
         //Dictionary<int, string> globalMap = new Dictionary<int, string>();
         List<Global> globalList = new List<Global>();
-        ushort indent = 0;
+        int indent = 0;
+
+        // Store statement numbers where we have to remember to do something
+        List<int> startOfDoLoop = new List<int>();  // begin an upcoming do while loop
+        List<int> endofBlock = new List<int>(); // reduce indentation
 
         // Check for presence of operators in the string, and if so, bracket it
         // used when combining two potential calculations, e.g. a + b
@@ -247,6 +282,8 @@ namespace DeQcc
         // preserving the original precedence from the source file)
         string CheckPrecedence(string input)
         {
+            if (input is null) return null;
+
             if(input.Contains("+") ||
                 input.Contains("-") ||
                 input.Contains("*") ||
@@ -270,7 +307,7 @@ namespace DeQcc
         public void NewDecompilation(string name, string outputfolder)
         {
             InitStaticData(name);
-            int highestGlobalAccessed = 0;
+            highestGlobalAccessed = RESERVED_OFS - 1;
             ReadData(name);
             InitGlobalList();
 
@@ -281,98 +318,56 @@ namespace DeQcc
         {
             // Get all of the possible information for a given global
 
-            // Allow the globals to access the strings data, and other globals
-            Global.strings = strings;
-            Global.stringOffsetMap = stringOffsetMap;
+            // Allow the globals to access the other relevant data from the progs.dat
             Global.globalList = globalList;
+            Global.functions = functions;
+            Global.fields = fields;
+            Global.fieldsOffsetMap = fieldsOffsetMap;
 
-            // Get the value
+            // Set the value
             int id = 0;
-            foreach(float f in pr_globals)
+            foreach (float f in pr_globals)
             {
-                Global g = new Global();
-                g.id = id++;
-                g.FloatVal = f;
-                g._globaldef_type = null;
-                g._globaldef_s_name = null;
-                g.FunctionNumber = null;
-                g.FunctionName = null;
-                g.FieldNumber = null;
-                g.FieldName = null;
-                g._fields_type = null;
-                g.ValueSource = null;
+                Global g = new Global(id++, f);
                 globalList.Add(g);
             }
 
             // Reserved offsets
-            globalList[OFS_NULL].GlobaldefName = "OFS_NULL";
-            globalList[OFS_RETURN].GlobaldefName = "OFS_RETURN";
-            globalList[OFS_RETURN+1].GlobaldefName = "OFS_RETURN_y";
-            globalList[OFS_RETURN+2].GlobaldefName = "OFS_RETURN_z";
-            globalList[OFS_PARM0].GlobaldefName = "OFS_PARM0";
-            globalList[OFS_PARM0+1].GlobaldefName = "OFS_PARM0_y";
-            globalList[OFS_PARM0+2].GlobaldefName = "OFS_PARM0_z";
-            globalList[OFS_PARM1].GlobaldefName = "OFS_PARM1";
-            globalList[OFS_PARM1+1].GlobaldefName = "OFS_PARM1_y";
-            globalList[OFS_PARM1+2].GlobaldefName = "OFS_PARM1_z";
-            globalList[OFS_PARM2].GlobaldefName = "OFS_PARM2";
-            globalList[OFS_PARM2+1].GlobaldefName = "OFS_PARM2_y";
-            globalList[OFS_PARM2+2].GlobaldefName = "OFS_PARM2_z";
-            globalList[OFS_PARM3].GlobaldefName = "OFS_PARM3";
-            globalList[OFS_PARM3+1].GlobaldefName = "OFS_PARM3_y";
-            globalList[OFS_PARM3+2].GlobaldefName = "OFS_PARM3_z";
-            globalList[OFS_PARM4].GlobaldefName = "OFS_PARM4";
-            globalList[OFS_PARM4+1].GlobaldefName = "OFS_PARM4_y";
-            globalList[OFS_PARM4+2].GlobaldefName = "OFS_PARM4_z";
-            globalList[OFS_PARM5].GlobaldefName = "OFS_PARM5";
-            globalList[OFS_PARM5+1].GlobaldefName = "OFS_PARM5_y";
-            globalList[OFS_PARM5+2].GlobaldefName = "OFS_PARM5_z";
-            globalList[OFS_PARM6].GlobaldefName = "OFS_PARM6";
-            globalList[OFS_PARM6+1].GlobaldefName = "OFS_PARM6_y";
-            globalList[OFS_PARM6+2].GlobaldefName = "OFS_PARM6_z";
-            globalList[OFS_PARM7].GlobaldefName = "OFS_PARM7";
-            globalList[OFS_PARM7+1].GlobaldefName = "OFS_PARM7_y";
-            globalList[OFS_PARM7+2].GlobaldefName = "OFS_PARM7_z";
-            for(int i = 0; i < RESERVED_OFS; i++)
+            globalList[OFS_NULL].Name = "OFS_NULL";
+            globalList[OFS_RETURN].Name = "OFS_RETURN";
+            globalList[OFS_RETURN + 1].Name = "OFS_RETURN_y";
+            globalList[OFS_RETURN + 2].Name = "OFS_RETURN_z";
+            globalList[OFS_PARM0].Name = "OFS_PARM0";
+            globalList[OFS_PARM0 + 1].Name = "OFS_PARM0_y";
+            globalList[OFS_PARM0 + 2].Name = "OFS_PARM0_z";
+            globalList[OFS_PARM1].Name = "OFS_PARM1";
+            globalList[OFS_PARM1 + 1].Name = "OFS_PARM1_y";
+            globalList[OFS_PARM1 + 2].Name = "OFS_PARM1_z";
+            globalList[OFS_PARM2].Name = "OFS_PARM2";
+            globalList[OFS_PARM2 + 1].Name = "OFS_PARM2_y";
+            globalList[OFS_PARM2 + 2].Name = "OFS_PARM2_z";
+            globalList[OFS_PARM3].Name = "OFS_PARM3";
+            globalList[OFS_PARM3 + 1].Name = "OFS_PARM3_y";
+            globalList[OFS_PARM3 + 2].Name = "OFS_PARM3_z";
+            globalList[OFS_PARM4].Name = "OFS_PARM4";
+            globalList[OFS_PARM4 + 1].Name = "OFS_PARM4_y";
+            globalList[OFS_PARM4 + 2].Name = "OFS_PARM4_z";
+            globalList[OFS_PARM5].Name = "OFS_PARM5";
+            globalList[OFS_PARM5 + 1].Name = "OFS_PARM5_y";
+            globalList[OFS_PARM5 + 2].Name = "OFS_PARM5_z";
+            globalList[OFS_PARM6].Name = "OFS_PARM6";
+            globalList[OFS_PARM6 + 1].Name = "OFS_PARM6_y";
+            globalList[OFS_PARM6 + 2].Name = "OFS_PARM6_z";
+            globalList[OFS_PARM7].Name = "OFS_PARM7";
+            globalList[OFS_PARM7 + 1].Name = "OFS_PARM7_y";
+            globalList[OFS_PARM7 + 2].Name = "OFS_PARM7_z";
+            for (int i = 0; i < RESERVED_OFS; i++)
             {
                 globalList[i].Kind = GlobalKind.Reserved;
             }
-
-            // Match the globaldefs
-            for (int i = 1; i < globals.Count; i++)
-            {
-                Def gd = globals[i];
-                globalList[gd.ofs]._globaldef_type = gd.type;
-                globalList[gd.ofs]._globaldef_s_name = gd.s_name;
-                globalList[gd.ofs].Kind = GlobalKind.Globaldef;
-                if(globalList[gd.ofs].Type == Types.ev_vector)
-                {
-                    // Skip the following _x which has the same offset
-                    i++;
-                }
-            }
-
-            // Links by offset
-            foreach (Global g in globalList)
-            {
-                // If the globaldef is a function
-                if (g.Type == Types.ev_function)
-                {
-                    g.Kind = GlobalKind.Function;
-                    g.FunctionNumber = g.IntVal;
-                    g.FunctionName = functions[(int)g.FunctionNumber].name;
-                }
-
-                // If the globaldef is a field
-                if(g.Type == Types.ev_field)
-                {
-                    g.Kind = GlobalKind.Field;
-                    g.FieldNumber = g.IntVal;
-                    g.FieldName = fields[fieldsOffsetMap[(int)g.FieldNumber]].name;
-                    g._fields_type = fields[fieldsOffsetMap[(int)g.FieldNumber]].type;
-                }
-            }
         }
+
+        #region Print
 
         void Print(string output)
         {
@@ -390,56 +385,126 @@ namespace DeQcc
             qcOutputFile.WriteLine("");
         }
 
+        #endregion Print
+
         void DecompileFunctions(string folder)
         {
+            progsSrcOutputFile = new StreamWriter(folder + "progs.src", false);     // overwrite
+            progsSrcOutputFile.AutoFlush = true;
+            progsSrcOutputFile.WriteLine("./progs.dat");
+            progsSrcOutputFile.WriteLine();
+
+            StreamWriter f;
+            for (int i = 1; i < functions.Count; i++)
+            {
+                string filename = functions[i].file;
+
+                if (AlreadySeen(filename) == false)
+                {
+                    progsSrcOutputFile.WriteLine(filename);
+                    f = new StreamWriter(folder + filename, false);    // overwrite
+                }
+                else
+                {
+                    f = new StreamWriter(folder + filename, true);     // append
+                }
+
+                qcOutputFile = f;
+                qcOutputFile.AutoFlush = true;
+
+                DecompileFunction(functions[i]);
+
+                f.Close();
+            }
+
+            progsSrcOutputFile.Close();
+
+
             qcOutputFile = new StreamWriter(folder + "newdecompilation.qc", false);    // overwrite
             qcOutputFile.AutoFlush = true;
-
-            for(int i = 66; i < functions.Count; i++)
-            {
-                DecompileFunction(functions[i]);
-            }
-            /*
-            DecompileFunction(functions[66]);   // subs.qc SUB_Null
-            DecompileFunction(functions[67]);   // subs.qc SUB_Remove
-            DecompileFunction(functions[71]);   // subs.qc SUB_CalcMove
-
-            DecompileFunction(functions[380]); // doors.qc DoorFire
-            //DecompileFunction(functions[77]); // subs.qc SUB_UseTargets
-            //DecompileFunction(functions[387]); // doors.qc LinkDoors
-
-            DecompileFunction(functions[2088]); // oldone.qc finale_4
-            */
         }
 
         Global GetGlobal(int offset)
         {
-            if(offset < 0) { return null; } // e.g. OP_GOTO which jumps backwards has negative s.a
-
-            if (offset > highestGlobalAccessed)
+            if(offset == 524)
             {
-                // this is a never-before-seen offset, must either be:
-                // immediate (if has globaldef info)
-                // anonymous store of value (if no globaldef info)
-                Global g = globalList[offset];
-                if(g.Kind == GlobalKind.Globaldef)  // was listed in globaldefs, must be immediate
-                {
-                    // overwrite it with its value
-                    g.Kind = GlobalKind.Immediate;
-                    g.ValueSource = g.ImmediateValue;
-                }
-                else
-                {
-                    g.Kind = GlobalKind.Anonymous;
-                }
+                Console.Out.WriteLine("BREAKPOINT");
             }
-            return globalList[offset];
-        }
 
-        List<int> startOfDoLoop = new List<int>();
+            if(offset <= 0)
+            {
+                // some ops e.g. OP_GOTO where the parameters are actually backwards jumps have negative "offsets"
+                // because they aren't really offsets, just instruction pointer deltas, so don't bother returning anything (it will be ignored)
+                return null;
+            }
+
+            Global g = globalList[offset];
+
+            if (offset <= highestGlobalAccessed)
+            {
+                // We've encountered this offset before so just return it
+                return g;
+            }
+
+            // remember this as once a function is finished decompilation, there might be more globals
+            // to process (e.g. function defs) before the next function's parm_start
+            highestGlobalAccessed = offset;
+
+            if (!globalsOffsetMap.ContainsKey(offset))
+            {
+                // There is no globaldef for this so assume it is anonymous and return it
+                g.Kind = GlobalKind.Anonymous;
+                return g;
+            }
+
+            Def gd = globals[globalsOffsetMap[offset]];
+
+            g.GlobaldefType = gd.type;
+            g.Name = strings[stringOffsetMap[gd.s_name]];
+
+            if (g.Type == Types.ev_function)
+            {
+                g.Kind = GlobalKind.Function;
+            }
+            else if (g.Type == Types.ev_field)
+            {
+                g.Kind = GlobalKind.Field;
+            }
+            else if (g.Type == Types.ev_entity || g.Type == Types.ev_pointer || g.Type == Types.ev_void)
+            {
+                g.Kind = GlobalKind.Globaldef;
+            }
+            else
+            { 
+                // Calling code might overwrite this if it knows it is a parameter or local
+                g.Kind = GlobalKind.Immediate;
+                g.ValueSource = g.ImmediateValue;
+            }
+            
+            return g;
+        }
 
         void DecompileFunction(Function f)
         {
+            // Process any unprocessed globals following the previous function
+            while (highestGlobalAccessed < f.parm_start)
+            {
+                Global g = GetGlobal(highestGlobalAccessed + 1);
+                Print(g.TypeCodeOutput + " " + g.Name);
+                if(g.FloatVal > 0 && g.IntVal is null)
+                {
+                    Print(" = " + g.FloatVal);
+                }
+                PrintLine(";");
+            }
+
+            // Check for builtin functions
+            if(f.first_statement < 0)
+            {
+                PrintLine("// TODO Builtin function");
+                return;
+            }
+
             //  Check for OP_IF codes in this function, which encode do while loops
             startOfDoLoop.Clear();
             int sIndex = f.first_statement;
@@ -476,7 +541,7 @@ namespace DeQcc
 
             // Set the highestGlobalAccessed to the end of params and locals
             // Otherwise it will trigger as an immediate when we process them
-            highestGlobalAccessed = f.parm_start + f.locals - 1;
+            //highestGlobalAccessed = f.parm_start + f.locals - 1;
 
             // Parameters
             int currentParmOffset = f.parm_start;
@@ -511,7 +576,7 @@ namespace DeQcc
             sIndex = f.first_statement;
             while (true)
             {
-                DecompileStatementNew(f, sIndex);
+                DecompileStatement(f, sIndex);
                 if (statements[sIndex].op == 0)
                     break;
                 sIndex++;
@@ -520,11 +585,15 @@ namespace DeQcc
             indent--;
             PrintLine("};");
             PrintLine("");
+
+            if(indent != 0)
+            {
+                indent = 0;
+                PrintLine("/* ERROR INDENTATION */");
+            }
         }
 
-        List<int> endofBlock = new List<int>(); // used to set statement numbers where indentation should be reduced
-
-        void DecompileStatementNew(Function f, int sIndex)
+        void DecompileStatement(Function f, int sIndex)
         {
             // If we have reached the end of an indentation block, undo it
             while(endofBlock.Contains(sIndex))  // while as there might be more than one block ending on this statement
@@ -685,7 +754,7 @@ namespace DeQcc
                             // If we have just come from a GOTO, this must be an else if
                             // the "else" will have been printed by the GOTO, so just append the " if"
                             // temporarily remove the indentation to avoid extra whitespace
-                            ushort saveIndent = indent;
+                            int saveIndent = indent;
                             indent = 0;
                             PrintLine(" if(" + a.ValueToAssign + ")");
                             indent = saveIndent;

@@ -114,6 +114,11 @@ namespace DeQcc
         public int s_name;
 
         public string name;
+
+        public override string ToString()
+        {
+            return "Ofs: " + ofs + " name: " + name + " (" + s_name + ")";
+        }
     }
 
     class Function
@@ -1218,7 +1223,7 @@ namespace DeQcc
             int dsIndex = df.first_statement;
             while (true)
             {
-                DecompileStatement(df, dsIndex, ref indent);
+                DecompileStatementOld(df, dsIndex, ref indent);
                 if (statements[dsIndex].op == 0)
                     break;
                 dsIndex++;
@@ -1240,7 +1245,7 @@ namespace DeQcc
             }
         }
 
-        void DecompileStatement(Function df, int sIndex, ref int indent)
+        void DecompileStatementOld(Function df, int sIndex, ref int indent)
         {
             Statement s = statements[sIndex];
             Statement t;
