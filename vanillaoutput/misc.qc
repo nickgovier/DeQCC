@@ -17,7 +17,7 @@ voidTODO () info_notnull =
 {
 };
 
-float START_OFF = 1;
+float START_OFF = 1.000;
 void() light_use;
 // light_use
 // function begins at statement 11133
@@ -419,12 +419,12 @@ voidTODO () fire_fly =
     fireball.velocity = '0.000 0.000 1000.000';
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 7299
     // *** UNPROCESSED OPCODE OP_SUB_F 7299 2227 7300
-    fireball.velocity = ;
+    fireball. = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 7302
     // *** UNPROCESSED OPCODE OP_SUB_F 7302 2227 7303
-    fireball.velocity_y = ;
+    fireball. = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 7306
-    fireball.velocity_z = self.speed + ;
+    fireball. = self.speed + ;
     fireball.classname = "IMMEDIATE";
     setmodel(fireball, "IMMEDIATE");
     setsize(fireball, '0.000 0.000 0.000', '0.000 0.000 0.000');
@@ -490,7 +490,7 @@ voidTODO () barrel_explode =
     T_RadiusDamage(self, self, 160.000, world);
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
     particle(self.origin, '0.000 0.000 0.000', 75.000, 255.000);
-    self.origin_z = self.origin_z + 32.000;
+    self. = self. + 32.000;
     BecomeExplosion();
 };
 
@@ -548,8 +548,8 @@ voidTODO () misc_explobox =
     self.health = 20.000;
     self.th_die = barrel_explode;
     self.takedamage = 2.000;
-    self.origin_z = self.origin_z + 2.000;
-    oldz = self.origin_z;
+    self. = self. + 2.000;
+    oldz = self.;
     droptofloor();
     // *** UNPROCESSED OPCODE OP_SUB_F 7332 7343 7344
     // *** UNPROCESSED OPCODE OP_GT 7344 1859 7345
@@ -620,8 +620,8 @@ voidTODO () misc_explobox2 =
     self.health = 20.000;
     self.th_die = barrel_explode;
     self.takedamage = 2.000;
-    self.origin_z = self.origin_z + 2.000;
-    oldz = self.origin_z;
+    self. = self. + 2.000;
+    oldz = self.;
     droptofloor();
     // *** UNPROCESSED OPCODE OP_SUB_F 7351 7362 7363
     // *** UNPROCESSED OPCODE OP_GT 7363 1859 7364
@@ -638,8 +638,8 @@ voidTODO () misc_explobox2 =
 
 /* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
-float SPAWNFLAG_SUPERSPIKE = 1;
-float SPAWNFLAG_LASER = 2;
+float SPAWNFLAG_SUPERSPIKE = 1.000;
+float SPAWNFLAG_LASER = 2.000;
 void() LaunchLaser;
 void() spikeshooter_use;
 // spikeshooter_use
@@ -1065,11 +1065,11 @@ voidTODO () bubble_bob =
     }
     
     // *** UNPROCESSED OPCODE OP_MUL_F 1 894 7500
-    rnd1 = self.velocity + ( + );
+    rnd1 = self. + ( + );
     // *** UNPROCESSED OPCODE OP_MUL_F 1 894 7504
-    rnd2 = self.velocity_y + ( + );
+    rnd2 = self. + ( + );
     // *** UNPROCESSED OPCODE OP_MUL_F 1 318 7509
-    rnd3 = (self.velocity_z + 10.000) + ;
+    rnd3 = (self. + 10.000) + ;
     // *** UNPROCESSED OPCODE OP_GT 7482 318 7511
     
     if()
@@ -1109,9 +1109,9 @@ voidTODO () bubble_bob =
         rnd3 = 25.000;
     }
     
-    self.velocity = rnd1;
-    self.velocity_y = rnd2;
-    self.velocity_z = rnd3;
+    self. = rnd1;
+    self. = rnd2;
+    self. = rnd3;
     self.nextthink = 0.000 + ;
     self.think = bubble_bob;
 };

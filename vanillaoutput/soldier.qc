@@ -1067,7 +1067,7 @@ voidTODO () army_fire =
     FireBullets(4.000, dir, '0.100 0.100 0.000');
 };
 
-/* ERROR: NULL TYPE */  = 0.1;
+/* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() army_die1;
 // army_die1

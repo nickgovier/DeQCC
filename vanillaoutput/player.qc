@@ -44,7 +44,7 @@ voidTODO () player_stand1 =
     // *** UNPROCESSED OPCODE OP_STATE 4861 3937 0
     self.weaponframe = 0.000;
     
-    if(self.velocity || self.velocity_y)
+    if(self. || self.)
     {
         self.walkframe = 0.000;
         player_run();
@@ -125,7 +125,7 @@ voidTODO () player_run =
     // *** UNPROCESSED OPCODE OP_STATE 314 2612 0
     self.weaponframe = 0.000;
     
-    if(!self.velocity && !self.velocity_y)
+    if(!self. && !self.)
     {
         self.walkframe = 0.000;
         player_stand1();
@@ -1528,11 +1528,11 @@ voidTODO (string gibname, float dm) ThrowGib =
     new.movetype = 10.000;
     new.solid = 0.000;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5234
-    new.avelocity = ;
+    new. = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5236
-    new.avelocity_y = ;
+    new. = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5238
-    new.avelocity_z = ;
+    new. = ;
     new.think = SUB_Remove;
     new.ltime = 0.000;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 318 5243
@@ -1594,7 +1594,7 @@ voidTODO (string gibname, float dm) ThrowHead =
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     self.velocity = VelocityForDamage(dm);
     // *** UNPROCESSED OPCODE OP_SUB_F 5265 4437 5266
-    self.origin_z = ;
+    self. = ;
     // *** UNPROCESSED OPCODE OP_SUB_F 5268 5270 5271
     self.flags = ;
     // *** UNPROCESSED OPCODE OP_MUL_FV 1 5275 5278
@@ -1818,10 +1818,10 @@ voidTODO () PlayerDie =
     self.flags = ;
     self.movetype = 6.000;
     
-    if(self.velocity_z < 10.000)
+    if(self. < 10.000)
     {
         // *** UNPROCESSED OPCODE OP_MUL_F 1 2596 5327
-        self.velocity_z = self.velocity_z + ;
+        self. = self. + ;
     }
     
     
@@ -1832,8 +1832,8 @@ voidTODO () PlayerDie =
     }
     
     DeathSound();
-    self.angles = 0.000;
-    self.angles_z = 0.000;
+    self. = 0.000;
+    self. = 0.000;
     
     if(self.weapon == 4096.000)
     {

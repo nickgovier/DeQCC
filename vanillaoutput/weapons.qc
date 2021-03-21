@@ -248,7 +248,7 @@ voidTODO (vector org, vector vel) SpawnMeatSpray =
     missile.velocity = vel;
     random();
     // *** UNPROCESSED OPCODE OP_MUL_F 2227 1 2717
-    missile.velocity_z = (missile.velocity_z + 250.000) + ;
+    missile. = (missile. + 250.000) + ;
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.nextthink = 0.000 + 1.000;
     missile.think = SUB_Remove;
@@ -520,7 +520,7 @@ voidTODO (float shotcount, vector dir, vector spread) FireBullets =
     // *** UNPROCESSED OPCODE OP_ADD_V 2840 2843 2846
     src = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 2850 2851 2852
-     = self.absmin_z + ;
+     = self. + ;
     ClearMultiDamage();
     // *** UNPROCESSED OPCODE OP_GT 2824 337 2854
     
@@ -579,7 +579,7 @@ voidTODO () W_FireShotgun =
 {
     local vector dir;
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
-    self.punchangle = -2.000;
+    self. = -2.000;
     // *** UNPROCESSED OPCODE OP_SUB_F 2884 2256 2885
     self.ammo_shells = ;
     self.currentammo = ;
@@ -587,7 +587,7 @@ voidTODO () W_FireShotgun =
     FireBullets(6.000, dir, '0.040 0.040 0.000');
 };
 
-/* ERROR: NULL TYPE */  = 0.04;
+/* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() W_FireSuperShotgun;
 // W_FireSuperShotgun
@@ -631,7 +631,7 @@ voidTODO () W_FireSuperShotgun =
     }
     
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
-    self.punchangle = -4.000;
+    self. = -4.000;
     // *** UNPROCESSED OPCODE OP_SUB_F 2899 2257 2900
     self.ammo_shells = ;
     self.currentammo = ;
@@ -639,7 +639,7 @@ voidTODO () W_FireSuperShotgun =
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
 
-/* ERROR: NULL TYPE */  = 0.08;
+/* ERROR: NULL TYPE */ ;
 /* ERROR: NULL TYPE */ ;
 void() s_explode1;
 // s_explode1
@@ -826,9 +826,9 @@ voidTODO () T_MissileTouch =
     self.origin = self.origin - ;
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 3.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     BecomeExplosion();
 };
 
@@ -906,7 +906,7 @@ voidTODO () W_FireRocket =
     self.ammo_rockets = ;
     self.currentammo = ;
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
-    self.punchangle = -2.000;
+    self. = -2.000;
     missile = spawn();
     missile.owner = self;
     missile.movetype = 9.000;
@@ -1049,7 +1049,7 @@ voidTODO (vector p1, vector p2, entity from, float damage) LightningDamage =
             
             if()
             {
-                trace_ent.velocity_z = trace_ent.velocity_z + 400.000;
+                trace_ent. = trace_ent. + 400.000;
             }
             
         }
@@ -1203,7 +1203,7 @@ voidTODO () W_FireLightning =
         self.t_width = 0.000 + 0.600;
     }
     
-    self.punchangle = -2.000;
+    self. = -2.000;
     // *** UNPROCESSED OPCODE OP_SUB_F 3082 2256 3083
     self.ammo_cells = ;
     self.currentammo = ;
@@ -1218,8 +1218,8 @@ voidTODO () W_FireLightning =
     WriteCoord(0.000, );
     WriteCoord(0.000, );
     WriteCoord(0.000, '0.000 0.000 0.000');
-    WriteCoord(0.000, 0.000);
-    WriteCoord(0.000, 0.000);
+    WriteCoord(0.000, );
+    WriteCoord(0.000, );
     // *** UNPROCESSED OPCODE OP_ADD_V 71 3099 3102
     LightningDamage(self.origin, , self, 30.000);
 };
@@ -1260,9 +1260,9 @@ voidTODO () GrenadeExplode =
     T_RadiusDamage(self, self.owner, 120.000, world);
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 3.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     BecomeExplosion();
 };
 
@@ -1408,14 +1408,14 @@ voidTODO () W_FireGrenade =
     self.ammo_rockets = ;
     self.currentammo = ;
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
-    self.punchangle = -2.000;
+    self. = -2.000;
     missile = spawn();
     missile.owner = self;
     missile.movetype = 10.000;
     missile.solid = 2.000;
     missile.classname = "IMMEDIATE";
     makevectors(self.v_angle);
-    if(self.v_angle)
+    if(self.)
     {
         // *** UNPROCESSED OPCODE OP_ADD_V 3142 3145 3148
         // *** UNPROCESSED OPCODE OP_MUL_FV 1 65 3151
@@ -1428,7 +1428,7 @@ voidTODO () W_FireGrenade =
     {
         missile.velocity = aim(self, 10000.000);
         missile.velocity = missile.velocity * 600.000;
-        missile.velocity_z = 200.000;
+        missile. = 200.000;
     }
     
     missile.avelocity = '300.000 300.000 300.000';
@@ -1556,7 +1556,7 @@ voidTODO () W_FireSuperSpikes =
     newmis.touch = superspike_touch;
     setmodel(newmis, "IMMEDIATE");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    self.punchangle = -2.000;
+    self. = -2.000;
 };
 
 void() W_FireSpikes;
@@ -1640,7 +1640,7 @@ voidTODO (float ox) W_FireSpikes =
     // *** UNPROCESSED OPCODE OP_ADD_V 3275 2644 3278
     // *** UNPROCESSED OPCODE OP_ADD_V 3278 3281 3284
     launch_spike(, dir);
-    self.punchangle = -2.000;
+    self. = -2.000;
 };
 
 .float hit_z;
@@ -1758,9 +1758,9 @@ voidTODO () spike_touch =
             
         }
         
-        WriteCoord(0.000, self.origin);
-        WriteCoord(0.000, self.origin_y);
-        WriteCoord(0.000, self.origin_z);
+        WriteCoord(0.000, self.);
+        WriteCoord(0.000, self.);
+        WriteCoord(0.000, self.);
     }
     
     remove(self);
@@ -1848,9 +1848,9 @@ voidTODO () superspike_touch =
     {
         WriteByte(0.000, 23.000);
         WriteByte(0.000, 1.000);
-        WriteCoord(0.000, self.origin);
-        WriteCoord(0.000, self.origin_y);
-        WriteCoord(0.000, self.origin_z);
+        WriteCoord(0.000, self.);
+        WriteCoord(0.000, self.);
+        WriteCoord(0.000, self.);
     }
     
     remove(self);

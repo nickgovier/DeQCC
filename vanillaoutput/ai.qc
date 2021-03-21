@@ -69,8 +69,8 @@ voidTODO () movetarget_f =
     setsize(self, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
 };
 
-/* ERROR: NULL TYPE */  = 8;
-/* ERROR: NULL TYPE */  = 8;
+/* ERROR: NULL TYPE */ ;
+/* ERROR: NULL TYPE */ ;
 void() path_corner;
 // path_corner
 // function begins at statement 684
@@ -866,7 +866,7 @@ OP_CALL2	477	0	0
 OP_DONE	0	0	0
 voidTODO (float dist) ai_forward =
 {
-    walkmove(self.angles_y, dist);
+    walkmove(self., dist);
 };
 
 void() ai_back;
@@ -880,7 +880,7 @@ OP_CALL2	477	0	0
 OP_DONE	0	0	0
 voidTODO (float dist) ai_back =
 {
-    walkmove(self.angles_y + 180.000, dist);
+    walkmove(self. + 180.000, dist);
 };
 
 void() ai_pain;
@@ -1024,7 +1024,7 @@ voidTODO (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir = 0.000;
+    newdir = ;
     // *** UNPROCESSED OPCODE OP_SUB_F 337 74 1379
      = ;
      = 0.000;
@@ -1038,7 +1038,7 @@ voidTODO (vector dest3) ChooseTurn =
     }
     else    
     {
-        dir = 0.000;
+        dir = ;
         // *** UNPROCESSED OPCODE OP_SUB_F 337 74 1383
          = ;
     }

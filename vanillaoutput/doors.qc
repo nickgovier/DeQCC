@@ -1,8 +1,8 @@
-float DOOR_START_OPEN = 1;
-float DOOR_DONT_LINK = 4;
-float DOOR_GOLD_KEY = 8;
-float DOOR_SILVER_KEY = 16;
-float DOOR_TOGGLE = 32;
+float DOOR_START_OPEN = 1.000;
+float DOOR_DONT_LINK = 4.000;
+float DOOR_GOLD_KEY = 8.000;
+float DOOR_SILVER_KEY = 16.000;
+float DOOR_TOGGLE = 32.000;
 void() door_go_down;
 void() door_go_up;
 void() door_blocked;
@@ -731,19 +731,19 @@ voidTODO (entity e1, entity e2) EntitiesTouching =
     }
     
     
-    if(e1.maxs < e2.mins)
+    if(e1. < e2.)
     {
         return; /* TODO retvalue? */
     }
     
     
-    if(e1.maxs_y < e2.mins_y)
+    if(e1. < e2.)
     {
         return; /* TODO retvalue? */
     }
     
     
-    if(e1.maxs_z < e2.mins_z)
+    if(e1. < e2.)
     {
         return; /* TODO retvalue? */
     }
@@ -947,42 +947,42 @@ voidTODO () LinkDoors =
             self.enemy = t;
             self = t;
             
-            if(t.mins < cmins)
+            if(t. < cmins)
             {
-                cmins = t.mins;
+                cmins = t.;
             }
             
             
-            if(t.mins_y < )
+            if(t. < )
             {
-                 = t.mins_y;
+                 = t.;
             }
             
             
-            if(t.mins_z < )
+            if(t. < )
             {
-                 = t.mins_z;
+                 = t.;
             }
             
             // *** UNPROCESSED OPCODE OP_GT 5922 5876 5923
             
             if()
             {
-                cmaxs = t.maxs;
+                cmaxs = t.;
             }
             
             // *** UNPROCESSED OPCODE OP_GT 5925 5877 5926
             
             if()
             {
-                 = t.maxs_y;
+                 = t.;
             }
             
             // *** UNPROCESSED OPCODE OP_GT 5928 5878 5929
             
             if()
             {
-                 = t.maxs_z;
+                 = t.;
             }
             
         }
@@ -1354,11 +1354,11 @@ void() fd_secret_move4;
 void() fd_secret_move5;
 void() fd_secret_move6;
 void() fd_secret_done;
-float SECRET_OPEN_ONCE = 1;
-float SECRET_1ST_LEFT = 2;
-float SECRET_1ST_DOWN = 4;
-float SECRET_NO_SHOOT = 8;
-float SECRET_YES_SHOOT = 16;
+float SECRET_OPEN_ONCE = 1.000;
+float SECRET_1ST_LEFT = 2.000;
+float SECRET_1ST_DOWN = 4.000;
+float SECRET_NO_SHOOT = 8.000;
+float SECRET_YES_SHOOT = 16.000;
 void() fd_secret_use;
 // fd_secret_use
 // function begins at statement 9402

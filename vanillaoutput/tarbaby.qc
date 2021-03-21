@@ -846,11 +846,11 @@ voidTODO () tbaby_jump5 =
     self.movetype = 10.000;
     self.touch = Tar_JumpTouch;
     makevectors(self.angles);
-    self.origin_z = self.origin_z + 1.000;
+    self. = self. + 1.000;
     // *** UNPROCESSED OPCODE OP_ADD_V 10375 9354 10378
     self.velocity = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1960 10383
-    self.velocity_z = self.velocity_z + ;
+    self. = self. + ;
     
     if(self.flags & 512.000)
     {
@@ -935,9 +935,9 @@ voidTODO () tbaby_die2 =
     self.origin = self.origin - ;
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 4.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     BecomeExplosion();
 };
 

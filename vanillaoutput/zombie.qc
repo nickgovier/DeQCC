@@ -1,4 +1,4 @@
-float SPAWN_CRUCIFIED = 1;
+float SPAWN_CRUCIFIED = 1.000;
 .float inpain;
 void() zombie_stand1;
 // zombie_stand1
@@ -915,7 +915,7 @@ voidTODO (vector st) ZombieFireGrenade =
     makevectors(self.angles);
     missile.velocity = normalize(self.enemy.origin - org);
     missile.velocity = missile.velocity * 600.000;
-    missile.velocity_z = 200.000;
+    missile. = 200.000;
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.touch = ZombieGrenadeTouch;
     missile.nextthink = 0.000 + 2.500;
@@ -1073,7 +1073,7 @@ voidTODO () zombie_atta13 =
 };
 
 /* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */  = 30;
+/* ERROR: NULL TYPE */ ;
 void() zombie_attb1;
 // zombie_attb1
 // function begins at statement 16601
@@ -1233,7 +1233,7 @@ voidTODO () zombie_attb14 =
 };
 
 /* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */  = 29;
+/* ERROR: NULL TYPE */ ;
 void() zombie_attc1;
 // zombie_attc1
 // function begins at statement 16645
@@ -1371,7 +1371,7 @@ voidTODO () zombie_attc12 =
 };
 
 /* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */  = 29;
+/* ERROR: NULL TYPE */ ;
 void() zombie_missile;
 // zombie_missile
 // function begins at statement 16683

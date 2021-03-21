@@ -1157,8 +1157,8 @@ voidTODO () CastLightning =
     WriteCoord(0.000, );
     WriteCoord(0.000, );
     WriteCoord(0.000, '0.000 0.000 0.000');
-    WriteCoord(0.000, 0.000);
-    WriteCoord(0.000, 0.000);
+    WriteCoord(0.000, );
+    WriteCoord(0.000, );
     LightningDamage(org, '0.000 0.000 0.000', self, 10.000);
 };
 

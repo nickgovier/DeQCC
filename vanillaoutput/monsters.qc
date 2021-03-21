@@ -219,7 +219,7 @@ voidTODO () walkmonster_start_go =
 {
     local string stemp;
     local entity etemp;
-    self.origin_z = self.origin_z + 1.000;
+    self. = self. + 1.000;
     droptofloor();
     
     if(!walkmove(0.000, 0.000))

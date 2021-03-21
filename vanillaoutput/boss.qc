@@ -654,8 +654,8 @@ voidTODO () boss_missile9 =
     boss_missile('100.000 100.000 200.000');
 };
 
-/* ERROR: NULL TYPE */  = 100;
-/* ERROR: NULL TYPE */  = 200;
+/* ERROR: NULL TYPE */ ;
+/* ERROR: NULL TYPE */ ;
 // boss_missile10
 // function begins at statement 17348
 OP_STATE	5377	9996	0
@@ -779,7 +779,7 @@ voidTODO () boss_missile20 =
 };
 
 /* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */  = 200;
+/* ERROR: NULL TYPE */ ;
 // boss_missile21
 // function begins at statement 17382
 OP_STATE	5397	10010	0
@@ -1199,9 +1199,9 @@ voidTODO () boss_death9 =
     sound(self, 4.000, "IMMEDIATE", 1.000, 1.000);
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 10.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
 };
 
 // boss_death10
@@ -1412,9 +1412,9 @@ voidTODO () boss_awake =
     self.enemy = activator;
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 10.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     self.yaw_speed = 20.000;
     boss_rise1();
 };

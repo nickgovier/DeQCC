@@ -48,9 +48,9 @@ voidTODO () OgreGrenadeExplode =
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 3.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     self.velocity = '0.000 0.000 0.000';
     self.touch = SUB_Null;
     setmodel(self, "IMMEDIATE");
@@ -187,7 +187,7 @@ voidTODO () OgreFireGrenade =
     makevectors(self.angles);
     missile.velocity = normalize(self.enemy.origin - self.origin);
     missile.velocity = missile.velocity * 600.000;
-    missile.velocity_z = 200.000;
+    missile. = 200.000;
     missile.avelocity = '300.000 300.000 300.000';
     missile.angles = vectoangles(missile.velocity);
     missile.touch = OgreGrenadeTouch;
@@ -844,7 +844,7 @@ voidTODO () ogre_swing5 =
     ai_charge(9.000);
     chainsaw(0.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7803
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing6
@@ -864,7 +864,7 @@ voidTODO () ogre_swing6 =
     // *** UNPROCESSED OPCODE OP_STATE 5100 7805 0
     chainsaw(200.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7808
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing7
@@ -884,7 +884,7 @@ voidTODO () ogre_swing7 =
     // *** UNPROCESSED OPCODE OP_STATE 5102 7810 0
     chainsaw(0.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7813
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing8
@@ -904,7 +904,7 @@ voidTODO () ogre_swing8 =
     // *** UNPROCESSED OPCODE OP_STATE 1733 7815 0
     chainsaw(0.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7818
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing9
@@ -924,7 +924,7 @@ voidTODO () ogre_swing9 =
     // *** UNPROCESSED OPCODE OP_STATE 5443 7820 0
     chainsaw(0.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7823
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing10
@@ -944,7 +944,7 @@ voidTODO () ogre_swing10 =
     // *** UNPROCESSED OPCODE OP_STATE 5445 7825 0
     chainsaw(-200.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7828
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing11
@@ -964,7 +964,7 @@ voidTODO () ogre_swing11 =
     // *** UNPROCESSED OPCODE OP_STATE 5447 7830 0
     chainsaw(0.000);
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7833
-    self.angles_y = self.angles_y + ;
+    self. = self. + ;
 };
 
 // ogre_swing12

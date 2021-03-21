@@ -95,8 +95,8 @@ voidTODO () PlaceItem =
     self.solid = 1.000;
     self.movetype = 6.000;
     self.velocity = '0.000 0.000 0.000';
-    self.origin_z = self.origin_z + 6.000;
-    oldz = self.origin_z;
+    self. = self. + 6.000;
+    oldz = self.;
     
     if(!droptofloor())
     {
@@ -196,8 +196,8 @@ voidTODO (entity e, float healamount, float ignore) T_Heal =
     return; /* TODO retvalue? */
 };
 
-float H_ROTTEN = 1;
-float H_MEGA = 2;
+float H_ROTTEN = 1.000;
+float H_MEGA = 2.000;
 .float healamount;
 .float healtype;
 void() health_touch;
@@ -299,8 +299,8 @@ voidTODO () item_health =
     StartItem();
 };
 
-/* ERROR: NULL TYPE */  = 32;
-/* ERROR: NULL TYPE */  = 56;
+/* ERROR: NULL TYPE */ ;
+/* ERROR: NULL TYPE */ ;
 // health_touch
 // function begins at statement 1850
 OP_LOAD_S	29	129	1897
@@ -687,8 +687,8 @@ voidTODO () item_armor1 =
     StartItem();
 };
 
-/* ERROR: NULL TYPE */  = 16;
-/* ERROR: NULL TYPE */  = 56;
+/* ERROR: NULL TYPE */ ;
+/* ERROR: NULL TYPE */ ;
 void() item_armor2;
 // item_armor2
 // function begins at statement 2046
@@ -1641,7 +1641,7 @@ voidTODO () ammo_touch =
     SUB_UseTargets();
 };
 
-float WEAPON_BIG2 = 1;
+float WEAPON_BIG2 = 1.000;
 void() item_shells;
 // item_shells
 // function begins at statement 2508
@@ -1862,10 +1862,10 @@ voidTODO () item_cells =
     StartItem();
 };
 
-float WEAPON_SHOTGUN = 1;
-float WEAPON_ROCKET = 2;
-float WEAPON_SPIKES = 4;
-float WEAPON_BIG = 8;
+float WEAPON_SHOTGUN = 1.000;
+float WEAPON_ROCKET = 2.000;
+float WEAPON_SPIKES = 4.000;
+float WEAPON_BIG = 8.000;
 void() item_weapon;
 // item_weapon
 // function begins at statement 2628
@@ -3317,11 +3317,11 @@ voidTODO () DropBackpack =
     item.ammo_nails = self.ammo_nails;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
-    item.velocity_z = 300.000;
+    item. = 300.000;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 2599
-    item.velocity =  + ;
+    item. =  + ;
     // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 2602
-    item.velocity_y =  + ;
+    item. =  + ;
     item.flags = 256.000;
     item.solid = 1.000;
     item.movetype = 6.000;

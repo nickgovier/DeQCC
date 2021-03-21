@@ -408,7 +408,7 @@ voidTODO () demon1_jump4 =
     ai_face();
     self.touch = Demon_JumpTouch;
     makevectors(self.angles);
-    self.origin_z = self.origin_z + 1.000;
+    self. = self. + 1.000;
     // *** UNPROCESSED OPCODE OP_ADD_V 8033 8036 8039
     self.velocity = ;
     
@@ -1114,7 +1114,7 @@ voidTODO () CheckDemonJump =
     
     // *** UNPROCESSED OPCODE OP_MUL_F 3461 8153 8154
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + ))
+    if((self. + self.) < ((self.enemy. + self.enemy.) + ))
     {
         return; /* TODO retvalue? */
     }

@@ -15,8 +15,8 @@ voidTODO () trigger_reactivate =
     self.solid = 1.000;
 };
 
-float SPAWNFLAG_NOMESSAGE = 1;
-float SPAWNFLAG_NOTOUCH = 1;
+float SPAWNFLAG_NOMESSAGE = 1.000;
+float SPAWNFLAG_NOTOUCH = 1.000;
 void() multi_wait;
 // multi_wait
 // function begins at statement 9921
@@ -579,8 +579,8 @@ voidTODO () trigger_counter =
     self.use = counter_use;
 };
 
-float PLAYER_ONLY = 1;
-float SILENT = 2;
+float PLAYER_ONLY = 1.000;
+float SILENT = 2.000;
 void() play_teleport;
 // play_teleport
 // function begins at statement 10171
@@ -1293,7 +1293,7 @@ voidTODO () trigger_hurt =
     
 };
 
-float PUSH_ONCE = 1;
+float PUSH_ONCE = 1.000;
 void() trigger_push_touch;
 // trigger_push_touch
 // function begins at statement 10516
@@ -1450,9 +1450,9 @@ voidTODO () trigger_monsterjump_touch =
     }
     
     // *** UNPROCESSED OPCODE OP_MUL_F 6859 6860 6861
-    other.velocity = ;
+    other. = ;
     // *** UNPROCESSED OPCODE OP_MUL_F 6863 6864 6865
-    other.velocity_y = ;
+    other. = ;
     
     if(!(other.flags & 512.000))
     {
@@ -1461,7 +1461,7 @@ voidTODO () trigger_monsterjump_touch =
     
     // *** UNPROCESSED OPCODE OP_SUB_F 6870 223 6871
     other.flags = ;
-    other.velocity_z = self.height;
+    other. = self.height;
 };
 
 void() trigger_monsterjump;

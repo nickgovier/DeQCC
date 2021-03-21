@@ -1662,17 +1662,17 @@ voidTODO () PlayerJump =
     {
         if(self.watertype == (-3.000))
         {
-            self.velocity_z = 100.000;
+            self. = 100.000;
         }
         else        
         {
             if(self.watertype == (-4.000))
             {
-                self.velocity_z = 80.000;
+                self. = 80.000;
             }
             else            
             {
-                self.velocity_z = 50.000;
+                self. = 50.000;
             }
             
         }
@@ -1713,7 +1713,7 @@ voidTODO () PlayerJump =
     self.flags = ;
     self.button2 = 0.000;
     sound(self, 4.000, "IMMEDIATE", 1.000, 1.000);
-    self.velocity_z = self.velocity_z + 270.000;
+    self. = self. + 270.000;
 };
 
 .float dmgtime;
@@ -2103,7 +2103,7 @@ voidTODO () CheckWaterJump =
     makevectors(self.angles);
     start = self.origin;
      =  + 8.000;
-    v_forward_z = 0.000;
+     = 0.000;
     normalize('0.000 0.000 0.000');
     // *** UNPROCESSED OPCODE OP_ADD_V 4424 4438 4441
     end = ;
@@ -2122,7 +2122,7 @@ voidTODO () CheckWaterJump =
         {
             // *** UNPROCESSED OPCODE OP_BITOR 4463 225 4464
             self.flags = ;
-            self.velocity_z = ;
+            self. = ;
             // *** UNPROCESSED OPCODE OP_SUB_F 4467 4469 4470
             self.flags = ;
             self.teleport_time = 0.000 + 2.000;
@@ -2790,7 +2790,7 @@ voidTODO () PlayerPostThink =
     
     if(!(self.flags & 512.000))
     {
-        self.jump_flag = self.velocity_z;
+        self.jump_flag = self.;
     }
     
     CheckPowerups();

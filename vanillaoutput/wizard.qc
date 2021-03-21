@@ -81,7 +81,7 @@ voidTODO (entity missile, float mspeed, float accuracy) LaunchMissile =
     vec = ;
     missile.velocity = vec * mspeed;
     missile.angles = '0.000 0.000 0.000';
-    missile.angles_y = vectoyaw(missile.velocity);
+    missile. = vectoyaw(missile.velocity);
     missile.nextthink = 0.000 + 5.000;
     missile.think = SUB_Remove;
 };
@@ -1199,13 +1199,13 @@ voidTODO () wiz_death1 =
     // *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
     random();
     // *** UNPROCESSED OPCODE OP_MUL_F 3036 1 9200
-    self.velocity = (-200.000) + ;
+    self. = (-200.000) + ;
     random();
     // *** UNPROCESSED OPCODE OP_MUL_F 3036 1 9203
-    self.velocity_y = (-200.000) + ;
+    self. = (-200.000) + ;
     random();
     // *** UNPROCESSED OPCODE OP_MUL_F 1884 1 9206
-    self.velocity_z = 100.000 + ;
+    self. = 100.000 + ;
     // *** UNPROCESSED OPCODE OP_SUB_F 9209 9211 9212
     self.flags = ;
     sound(self, 2.000, "IMMEDIATE", 1.000, 1.000);

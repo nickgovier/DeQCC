@@ -897,9 +897,9 @@ voidTODO () ShalMissileTouch =
     sound(self, 1.000, "IMMEDIATE", 1.000, 1.000);
     WriteByte(0.000, 23.000);
     WriteByte(0.000, 3.000);
-    WriteCoord(0.000, self.origin);
-    WriteCoord(0.000, self.origin_y);
-    WriteCoord(0.000, self.origin_z);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
+    WriteCoord(0.000, self.);
     self.velocity = '0.000 0.000 0.000';
     self.touch = SUB_Null;
     setmodel(self, "IMMEDIATE");

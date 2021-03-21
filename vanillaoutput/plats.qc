@@ -4,7 +4,7 @@ void() plat_trigger_use;
 void() plat_go_up;
 void() plat_go_down;
 void() plat_crush;
-float PLAT_LOW_TRIGGER = 1;
+float PLAT_LOW_TRIGGER = 1.000;
 void() plat_spawn_inside_trigger;
 // plat_spawn_inside_trigger
 // function begins at statement 10616
@@ -83,16 +83,16 @@ voidTODO () plat_spawn_inside_trigger =
     }
     
     
-    if(self.size <= 50.000)
+    if(self. <= 50.000)
     {
-        tmin = (self.mins + self.maxs) / 2.000;
+        tmin = (self. + self.) / 2.000;
         tmax = tmin + 1.000;
     }
     
     
-    if(self.size_y <= 50.000)
+    if(self. <= 50.000)
     {
-         = (self.mins_y + self.maxs_y) / 2.000;
+         = (self. + self.) / 2.000;
          =  + 1.000;
     }
     
@@ -546,12 +546,12 @@ voidTODO () func_plat =
     if(self.height)
     {
         // *** UNPROCESSED OPCODE OP_SUB_F 7067 7068 7069
-        self.pos2_z = ;
+        self. = ;
     }
     else    
     {
         // *** UNPROCESSED OPCODE OP_SUB_F 7071 7072 7073
-        self.pos2_z =  + 8.000;
+        self. =  + 8.000;
     }
     
     self.use = plat_trigger_use;

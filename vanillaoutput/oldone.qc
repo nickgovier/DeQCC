@@ -1007,9 +1007,9 @@ voidTODO () finale_4 =
             
             while(y <= 64.000)
             {
-                self.origin = oldo + x;
-                self.origin_y =  + y;
-                self.origin_z =  + z;
+                self. = oldo + x;
+                self. =  + y;
+                self. =  + z;
                 r = random();
                 if(r < 0.300)
                 {

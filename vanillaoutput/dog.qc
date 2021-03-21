@@ -679,7 +679,7 @@ voidTODO () dog_leap2 =
     ai_face();
     self.touch = Dog_JumpTouch;
     makevectors(self.angles);
-    self.origin_z = self.origin_z + 1.000;
+    self. = self. + 1.000;
     // *** UNPROCESSED OPCODE OP_ADD_V 9351 9354 9357
     self.velocity = ;
     
@@ -1324,7 +1324,7 @@ voidTODO () CheckDogJump =
     
     // *** UNPROCESSED OPCODE OP_MUL_F 3461 9455 9456
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + ))
+    if((self. + self.) < ((self.enemy. + self.enemy.) + ))
     {
         return; /* TODO retvalue? */
     }

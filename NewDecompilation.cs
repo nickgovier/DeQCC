@@ -286,6 +286,21 @@ namespace DeQcc
         }
 
         #endregion Private functions
+
+        public bool IsConstant()   // constants defined outside of functions (e.g. in defs.qc have their value printed after
+        {
+            if(Name is null)
+            {
+                return false;
+            }
+            // TODO assumes constants are all caps (true for defs.qc, is this true in all cases?)
+            for (int i = 0; i < Name.Length; i++)
+            {
+                if (Char.IsLetter(Name[i]) && !Char.IsUpper(Name[i]))
+                    return false;
+            }
+            return true;
+        }
     }
 
     partial class DeQCC
@@ -522,11 +537,22 @@ namespace DeQcc
                     continue;   // It will be printed lower down
                 }
                 Print(g.TypeCodeOutput + " " + g.Name);
-                if(g.FloatVal > 0 && g.IntVal is null)  // Incredibly tiny positive FloatVals are actually IntVals (indices), so exclude these too
+                if(g.IsConstant())  // Incredibly tiny positive FloatVals are actually IntVals (indices), so exclude these too
                 {
-                    Print(" = " + g.FloatVal);
+                    Print(" = " + g.ImmediateValue);
                 }
                 PrintLine(";");
+
+                if(g.Type == Types.ev_vector)
+                {
+                    // skip the _y and _z
+                    highestGlobalAccessed += 2;
+                }
+                if(g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
+                {
+                    // skip the _x, _y, and _z
+                    highestGlobalAccessed += 3;
+                }
             }
 
             // Check for builtin functions
