@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace DeQcc
@@ -10,6 +11,22 @@ namespace DeQcc
     partial class Statement
     {
         public GotoType gotoType;   // Just used for GOTOs to properly process the end of IFNOT blocks
+
+        public int BelongsToFunction;
+    }
+
+    partial class Function
+    {
+        public string declaration;   // The return type, arguments, and function name
+        public List<string> localDefs = new List<string>(); // store the locals code to be written out at the top of the function definition
+
+        public bool IsBuiltin   // is this function a builtin?
+        {
+            get
+            {
+                return first_statement < 0;
+            }
+        }
     }
 
     enum GlobalKind
@@ -33,6 +50,8 @@ namespace DeQcc
         public static List<Function> functions;
         public static List<Def> fields;
         public static Dictionary<int, int> fieldsOffsetMap;  // to look up field by offset
+        public static List<string> strings;
+        public static Dictionary<int, int> stringOffsetMap;
 
         private static int DEF_SAVEGLOBAL = (1 << 15);
 
@@ -67,9 +86,21 @@ namespace DeQcc
         public float FloatVal;
         public string? ValueSource; // the source of the value being stored in this global
 
+        public List<int> writtenBy = new List<int>();   // statements on which this global is wrtten to
+        public List<int> readBy = new List<int>();      // statements on which this global is read by
+        public bool IsSingleFunction;    // is this global only ever accessed from a single function?
+
         #endregion Public Variables
 
         #region Properties
+
+        public bool IsWritten   // is this global ever written to?
+        {
+            get
+            {
+                return writtenBy.Count > 0;
+            }
+        }
 
         public ushort? IntVal
         {
@@ -145,7 +176,11 @@ namespace DeQcc
         {
             get
             {
-                if (Kind == GlobalKind.Anonymous || Kind == GlobalKind.Immediate || Kind == GlobalKind.Reserved)
+                if (Kind == GlobalKind.Immediate)
+                {
+                    return ImmediateValue;
+                }
+                else if (Kind == GlobalKind.Anonymous || Kind == GlobalKind.Reserved)
                 {
                     return ValueSource;
                 }
@@ -201,7 +236,7 @@ namespace DeQcc
         {
             get
             {
-                if(Kind == GlobalKind.Function && functions[(int)IntVal].first_statement < 0)
+                if(Kind == GlobalKind.Function && functions[(int)IntVal].IsBuiltin)
                 {
                     return true;
                 }
@@ -269,7 +304,7 @@ namespace DeQcc
         // if this is an immediate string, get the string pointed to and escape special chars before returning
         private string CleanseImmediateString()
         {
-            string stringToCleanse = _name;
+            string stringToCleanse = strings[stringOffsetMap[(int)IntVal]];
             for (int i = 0; i < stringToCleanse.Length; i++)
             {
                 // Can't use string.Replace as need to replace char with string
@@ -301,11 +336,16 @@ namespace DeQcc
             }
             return true;
         }
+
+        public override string ToString()
+        {
+            return Kind + " " + TypeCodeOutput + " " + Name;
+        }
     }
 
     partial class DeQCC
     {
-        public int highestGlobalAccessed;
+        public int nextGlobal;
         //Dictionary<int, string> globalMap = new Dictionary<int, string>();
         List<Global> globalList = new List<Global>();
         int indent = 0;
@@ -324,20 +364,20 @@ namespace DeQcc
         {
             if (input is null) return null;
 
-            if(input.Contains("+") ||
-                input.Contains("-") ||
-                input.Contains("*") ||
-                input.Contains("/") ||
-                input.Contains("==") ||
-                input.Contains("!=") ||
-                input.Contains("<=") ||
-                input.Contains(">=") ||
-                input.Contains("<") ||
-                input.Contains(">") ||
-                input.Contains("&&") ||
-                input.Contains("||") ||
-                input.Contains("&") ||
-                input.Contains("|"))
+            if(input.Contains(" + ") ||
+                input.Contains(" - ") ||
+                input.Contains(" * ") ||
+                input.Contains(" / ") ||
+                input.Contains(" == ") ||
+                input.Contains(" != ") ||
+                input.Contains(" <= ") ||
+                input.Contains(" >= ") ||
+                input.Contains(" < ") ||
+                input.Contains(" > ") ||
+                input.Contains(" && ") ||
+                input.Contains(" || ") ||
+                input.Contains(" & ") ||
+                input.Contains(" | "))
             {
                 return "(" + input + ")";
             }
@@ -347,24 +387,23 @@ namespace DeQcc
         public void NewDecompilation(string name, string outputfolder)
         {
             InitStaticData(name);
-            highestGlobalAccessed = RESERVED_OFS - 1;
             ReadData(name);
-            InitGlobalList();
-
+            Preprocess();
             DecompileFunctions(outputfolder);
         }
 
-        void InitGlobalList()
+        void Preprocess()
         {
-            // Get all of the possible information for a given global
-
-            // Allow the globals to access the other relevant data from the progs.dat
+            // Statics - allow the globals to access the other relevant data from the progs.dat
             Global.globalList = globalList;
             Global.functions = functions;
             Global.fields = fields;
             Global.fieldsOffsetMap = fieldsOffsetMap;
+            Global.strings = strings;
+            Global.stringOffsetMap = stringOffsetMap;
 
-            // Set the value
+            #region Set the value of each global
+
             int id = 0;
             foreach (float f in pr_globals)
             {
@@ -372,7 +411,10 @@ namespace DeQcc
                 globalList.Add(g);
             }
 
-            // Reserved offsets
+            #endregion
+
+            #region Set up the reserved offsets
+
             globalList[OFS_NULL].Name = "OFS_NULL";
             globalList[OFS_RETURN].Name = "OFS_RETURN";
             globalList[OFS_RETURN + 1].Name = "OFS_RETURN_y";
@@ -405,6 +447,375 @@ namespace DeQcc
             {
                 globalList[i].Kind = GlobalKind.Reserved;
             }
+
+            #endregion
+
+            #region Get info from globaldefs
+
+            for(int i = 1; i < globals.Count; i++)
+            {
+                if(globals[i].ofs == globals[i-1].ofs)
+                {
+                    // Vector and float _x component of vector have the same offset
+                    // so avoid the latter overwriting the former
+                    continue;
+                }
+
+                Def gd = globals[i];
+                globalList[gd.ofs].GlobaldefType = gd.type;
+                globalList[gd.ofs].Name = strings[stringOffsetMap[gd.s_name]];
+
+                if (globalList[gd.ofs].Type == Types.ev_function)
+                {
+                    globalList[gd.ofs].Kind = GlobalKind.Function;
+                }
+                else if (globalList[gd.ofs].Type == Types.ev_field)
+                {
+                    globalList[gd.ofs].Kind = GlobalKind.Field;
+                }
+                else
+                {
+                    globalList[gd.ofs].Kind = GlobalKind.Globaldef;
+                }
+            }
+
+            #endregion
+
+            nextGlobal = RESERVED_OFS;  // index to the next global to process
+
+            for (int fIndex = 1; fIndex < functions.Count; fIndex++)
+            {
+                Function f = functions[fIndex];
+
+                // Any globals not yet processed up until the start of this one are Globaldefs
+                // e.g. perhaps the previous function ended but there are some defs before this one begins
+                while(nextGlobal < f.parm_start)
+                {
+                    globalList[nextGlobal].Kind = GlobalKind.Globaldef;
+                    nextGlobal++;
+                }
+
+                // Skip builtins
+                if(f.IsBuiltin)
+                {
+                    continue;
+                }
+
+                // Calculate function declaration
+
+                // Return type
+                f.declaration = "%%RETURNTYPE%% ";  // will be filled in later
+
+                // Parameters
+                nextGlobal = f.parm_start;
+                f.declaration += "(";
+                for (int parmIndex = 0; parmIndex < f.numparms; parmIndex++)
+                {
+                    Global parm = GetGlobal(nextGlobal);
+                    parm.Kind = GlobalKind.Parameter;
+                    f.declaration += parm.TypeCodeOutput + " " + parm.Name;
+                    if (parmIndex < f.numparms - 1) { f.declaration += ", "; }
+
+                    if (parm.Type == Types.ev_vector)
+                    {
+                        Global parm_y = GetGlobal(nextGlobal + 1);
+                        Global parm_z = GetGlobal(nextGlobal + 2);
+                        parm_y.Kind = parm_z.Kind = GlobalKind.Parameter;
+                        parm_y.Name = parm.Name + "_y"; parm_z.Name = parm.Name + "_z";
+                        nextGlobal += 3;
+                    }
+                    else { nextGlobal++; }
+                }
+                f.declaration += ") " + f.name;
+
+                // Locals
+                while ((nextGlobal - f.parm_start) < f.locals)
+                {
+                    Global local = GetGlobal(nextGlobal);
+                    local.Kind = GlobalKind.Local;
+                    f.localDefs.Add("local " + local.TypeCodeOutput + " " + local.Name + ";");
+
+                    if (local.Type == Types.ev_vector)
+                    {
+                        Global local_y = GetGlobal(nextGlobal + 1);
+                        Global local_z = GetGlobal(nextGlobal + 2);
+                        local_y.Kind = local_z.Kind = GlobalKind.Local;
+                        local_y.Name = local.Name + "_y"; local_z.Name = local.Name + "_z";
+                        nextGlobal += 3;
+                    }
+                    else { nextGlobal++; }
+                }
+
+                // Loop through the statements of this function
+                int statementIndex = f.first_statement;
+                while(statements[statementIndex].Opcode != Opcodes.OP_DONE)
+                {
+                    Statement s = statements[statementIndex];
+
+                    // Check for do while loops
+                    if (s.Opcode == Opcodes.OP_IF)
+                    {
+                        // OP_IF codes in the statements encode do while loops
+                        // store the start statement of the do loop, as we will encounter it
+                        // before the OP_IF, which encodes the end of the loop
+                        startOfDoLoop.Add(statementIndex + s.b);
+                    }
+
+                    // We wiil set the readBy/writtenBy properties for each global based on the type of statement
+                    // so each global will have a list of statements where it is accessed (read or write)
+
+                    Global a = GetGlobal(s.a);
+                    Global b = GetGlobal(s.b);
+                    Global c = GetGlobal(s.c);
+
+                    // Process any new globals
+                    if(s.a >= nextGlobal)
+                    {
+                        if(a.Kind == GlobalKind.Globaldef)
+                        {
+                            a.Kind = GlobalKind.Immediate;
+                        }
+                        else
+                        {
+                            a.Kind = GlobalKind.Anonymous;
+                        }
+                        if(a.Type == Types.ev_vector)
+                        {
+                            Global y = GetGlobal(s.a + 1);
+                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Name = a.Name + "_y";
+                            y.Kind = a.Kind;
+                            Global z = GetGlobal(s.a + 2);
+                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Name = a.Name + "_z";
+                            z.Kind = a.Kind;
+                        }
+                    }
+                    if(s.b >= nextGlobal)
+                    {
+                        if (b.Kind == GlobalKind.Globaldef)
+                        {
+                            b.Kind = GlobalKind.Immediate;
+                        }
+                        else
+                        {
+                            b.Kind = GlobalKind.Anonymous;
+                        }
+                        if (b.Type == Types.ev_vector)
+                        {
+                            Global y = GetGlobal(s.b + 1);
+                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Name = b.Name + "_y";
+                            y.Kind = b.Kind;
+                            Global z = GetGlobal(s.b + 2);
+                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Name = b.Name + "_z";
+                            z.Kind = b.Kind;
+                        }
+                    }
+                    if(s.c >= nextGlobal)
+                    {
+                        if (c.Kind == GlobalKind.Globaldef)
+                        {
+                            c.Kind = GlobalKind.Immediate;
+                        }
+                        else
+                        {
+                            c.Kind = GlobalKind.Anonymous;
+                        }
+                        if (c.Type == Types.ev_vector)
+                        {
+                            Global y = GetGlobal(s.c + 1);
+                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Name = c.Name + "_y";
+                            y.Kind = c.Kind;
+                            Global z = GetGlobal(s.c + 2);
+                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Name = c.Name + "_z";
+                            z.Kind = c.Kind;
+                        }
+                    }
+                    nextGlobal = Math.Max(nextGlobal, Math.Max(s.a + 1, Math.Max(s.b + 1, s.c + 1)));
+
+                    switch (s.Opcode)
+                    {
+                        case Opcodes.OP_IF:
+                        case Opcodes.OP_IFNOT:
+                        case Opcodes.OP_CALL0:
+                        case Opcodes.OP_CALL1:
+                        case Opcodes.OP_CALL2:
+                        case Opcodes.OP_CALL3:
+                        case Opcodes.OP_CALL4:
+                        case Opcodes.OP_CALL5:
+                        case Opcodes.OP_CALL6:
+                        case Opcodes.OP_CALL7:
+                        case Opcodes.OP_CALL8:
+                            a.readBy.Add(statementIndex);
+                            break;
+                        case Opcodes.OP_DONE:
+                        case Opcodes.OP_RETURN:
+                            if (a != null)
+                            {
+                                a.readBy.Add(statementIndex);
+                            }
+                            break;
+                        case Opcodes.OP_STATE:
+                            a.readBy.Add(statementIndex); b.readBy.Add(statementIndex);
+                            break;
+                        case Opcodes.OP_ADD_F:
+                        case Opcodes.OP_ADD_V:
+                        case Opcodes.OP_SUB_F:
+                        case Opcodes.OP_SUB_V:
+                        case Opcodes.OP_MUL_F:
+                        case Opcodes.OP_MUL_V:
+                        case Opcodes.OP_MUL_FV:
+                        case Opcodes.OP_MUL_VF:
+                        case Opcodes.OP_DIV_F:
+                        case Opcodes.OP_BITAND:
+                        case Opcodes.OP_BITOR:
+                        case Opcodes.OP_GE:
+                        case Opcodes.OP_LE:
+                        case Opcodes.OP_GT:
+                        case Opcodes.OP_LT:
+                        case Opcodes.OP_AND:
+                        case Opcodes.OP_OR:
+                        case Opcodes.OP_EQ_F:
+                        case Opcodes.OP_EQ_V:
+                        case Opcodes.OP_EQ_S:
+                        case Opcodes.OP_EQ_E:
+                        case Opcodes.OP_EQ_FNC:
+                        case Opcodes.OP_NE_F:
+                        case Opcodes.OP_NE_V:
+                        case Opcodes.OP_NE_S:
+                        case Opcodes.OP_NE_E:
+                        case Opcodes.OP_NE_FNC:
+                        case Opcodes.OP_ADDRESS:
+                        case Opcodes.OP_LOAD_F:
+                        case Opcodes.OP_LOAD_FLD:
+                        case Opcodes.OP_LOAD_ENT:
+                        case Opcodes.OP_LOAD_S:
+                        case Opcodes.OP_LOAD_FNC:
+                        case Opcodes.OP_LOAD_V:
+                            a.readBy.Add(statementIndex); b.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
+                            if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
+                            break;
+                        case Opcodes.OP_NOT_F:
+                        case Opcodes.OP_NOT_V:
+                        case Opcodes.OP_NOT_S:
+                        case Opcodes.OP_NOT_FNC:
+                        case Opcodes.OP_NOT_ENT:
+                            a.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
+                            if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
+                            break;
+                        case Opcodes.OP_STORE_F:
+                        case Opcodes.OP_STORE_ENT:
+                        case Opcodes.OP_STORE_FLD:
+                        case Opcodes.OP_STORE_S:
+                        case Opcodes.OP_STORE_FNC:
+                        case Opcodes.OP_STORE_V:
+                        case Opcodes.OP_STOREP_F:
+                        case Opcodes.OP_STOREP_ENT:
+                        case Opcodes.OP_STOREP_FLD:
+                        case Opcodes.OP_STOREP_S:
+                        case Opcodes.OP_STOREP_FNC:
+                        case Opcodes.OP_STOREP_V:
+                            a.readBy.Add(statementIndex); b.writtenBy.Add(statementIndex);
+                            if (b.Type == null) { b.GlobaldefType = (ushort)pr_opcodes[s.op].type_b; }
+                            break;
+                        case Opcodes.OP_GOTO:
+                            break;
+                        default:
+                            throw new Exception("Unknown Opcode in Preprocess()");
+                    }
+
+                    statementIndex++;
+                }
+            }
+
+
+            //#region Link statements to functions
+
+            //// for each function
+            //for(int i = 0; i < functions.Count; i++)
+            //{
+            //    // skip builtins
+            //    if(functions[i].IsBuiltin)
+            //    {
+            //        continue;
+            //    }
+
+            //    // Get next valid (non-builtin) function
+            //    Function nextFunc = null;   // null means there isn't one
+            //    if (i < functions.Count - 1)    // otherwise it's the final function, leave nextFunc null
+            //    {
+            //        for (int j = i + 1; j < functions.Count; j++)
+            //        {
+            //            if(!functions[j].IsBuiltin)
+            //            {
+            //                nextFunc = functions[j];
+            //                break;
+            //            }
+            //        }
+            //    }
+
+            //    // Get nextFunc first statement
+            //    int functionEndingStatement = statements.Count - 1;
+            //    if(nextFunc != null)
+            //    {
+            //        functionEndingStatement = nextFunc.first_statement - 1;
+            //    }
+
+            //    // Set all the statements
+            //    for(int j = functions[i].first_statement; j <= functionEndingStatement; j++)
+            //    {
+            //        statements[j].BelongsToFunction = i;
+            //    }
+            //}
+
+            //#endregion
+
+
+            // Set IsSingleFunction
+            //foreach(Global g in globalList)
+            //{
+            //    g.IsSingleFunction = false;
+
+            //    int minStatement = statements.Count - 1;    // set min to highest
+            //    int maxStatement = 0;                       // set max to lowest
+            //    foreach(int readStatement in g.readBy)
+            //    {
+            //        if(readStatement < minStatement) { minStatement = readStatement; }
+            //        if(readStatement > maxStatement) { maxStatement = readStatement; }
+            //    }
+            //    foreach (int writeStatement in g.writtenBy)
+            //    {
+            //        if (writeStatement < minStatement) { minStatement = writeStatement; }
+            //        if (writeStatement > maxStatement) { maxStatement = writeStatement; }
+            //    }
+            //    if (statements[minStatement].BelongsToFunction == statements[maxStatement].BelongsToFunction)
+            //    {
+            //        g.IsSingleFunction = true;
+            //    }
+            //}
+
+            //// Set Anonymous and Immediate
+            //foreach(Global g in globalList)
+            //{
+            //    if (g.Kind == GlobalKind.Unknown)
+            //    {
+            //        // Anonymous globals are written in a single function only
+            //        if(g.IsSingleFunction && g.IsWritten)
+            //        {
+            //            g.Kind = GlobalKind.Anonymous;
+            //        }
+
+            //        // Immediates are never written
+            //        if (!g.IsWritten)
+            //        {
+            //            g.Kind = GlobalKind.Immediate;
+            //        }
+            //    }
+            //}
         }
 
         #region Print
@@ -434,6 +845,7 @@ namespace DeQcc
             progsSrcOutputFile.WriteLine("./progs.dat");
             progsSrcOutputFile.WriteLine();
 
+            nextGlobal = RESERVED_OFS;
             StreamWriter f;
             for (int i = 1; i < functions.Count; i++)
             {
@@ -466,11 +878,6 @@ namespace DeQcc
 
         Global GetGlobal(int offset)
         {
-            if(offset == 524)
-            {
-                Console.Out.WriteLine("BREAKPOINT");
-            }
-
             if(offset <= 0)
             {
                 // some ops e.g. OP_GOTO where the parameters are actually backwards jumps have negative "offsets"
@@ -478,50 +885,7 @@ namespace DeQcc
                 return null;
             }
 
-            Global g = globalList[offset];
-
-            if (offset <= highestGlobalAccessed)
-            {
-                // We've encountered this offset before so just return it
-                return g;
-            }
-
-            // remember this as once a function is finished decompilation, there might be more globals
-            // to process (e.g. function defs) before the next function's parm_start
-            highestGlobalAccessed = offset;
-
-            if (!globalsOffsetMap.ContainsKey(offset))
-            {
-                // There is no globaldef for this so assume it is anonymous and return it
-                g.Kind = GlobalKind.Anonymous;
-                return g;
-            }
-
-            Def gd = globals[globalsOffsetMap[offset]];
-
-            g.GlobaldefType = gd.type;
-            g.Name = strings[stringOffsetMap[gd.s_name]];
-
-            if (g.Type == Types.ev_function)
-            {
-                g.Kind = GlobalKind.Function;
-            }
-            else if (g.Type == Types.ev_field)
-            {
-                g.Kind = GlobalKind.Field;
-            }
-            else if (g.Type == Types.ev_entity || g.Type == Types.ev_pointer || g.Type == Types.ev_void)
-            {
-                g.Kind = GlobalKind.Globaldef;
-            }
-            else
-            { 
-                // Calling code might overwrite this if it knows it is a parameter or local
-                g.Kind = GlobalKind.Immediate;
-                g.ValueSource = g.ImmediateValue;
-            }
-            
-            return g;
+            return globalList[offset];
         }
 
         void DecompileFunction(Function f)
@@ -529,9 +893,9 @@ namespace DeQcc
             int sIndex;
 
             // Process any unprocessed globals following the previous function
-            while (highestGlobalAccessed < f.parm_start - 1)
+            while (nextGlobal < f.parm_start)
             {
-                Global g = GetGlobal(highestGlobalAccessed + 1);
+                Global g = GetGlobal(nextGlobal);
                 if(g.Kind == GlobalKind.Function && g.FunctionIsBuiltin)
                 {
                     continue;   // It will be printed lower down
@@ -545,18 +909,24 @@ namespace DeQcc
 
                 if(g.Type == Types.ev_vector)
                 {
+                    // Vectors share the x component but are followed by the y and z components
                     // skip the _y and _z
-                    highestGlobalAccessed += 2;
+                    nextGlobal += 3;
                 }
-                if(g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
+                else if(g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
                 {
+                    // Fields are followed by all three components
                     // skip the _x, _y, and _z
-                    highestGlobalAccessed += 3;
+                    nextGlobal += 4;
+                }
+                else
+                {
+                    nextGlobal++;
                 }
             }
 
             // Check for builtin functions
-            if(f.first_statement < 0)
+            if(f.IsBuiltin)
             {
                 PrintLine(builtins[-f.first_statement] + " " + f.name + " = #" + (-f.first_statement));
                 return;
@@ -568,7 +938,7 @@ namespace DeQcc
             sIndex = f.first_statement;
             while (true)
             {
-                PrintLine(statements[sIndex].ToString());
+                PrintLine("// " + statements[sIndex].ToString());
                 if (statements[sIndex].Opcode == Opcodes.OP_DONE)
                 {
                     break;
@@ -576,52 +946,15 @@ namespace DeQcc
                 sIndex++;
             }
 
-            // Return type
-            Print("voidTODO" + " ");
-
-            // Parameters
-            int currentParmOffset = f.parm_start;
-            Print("(");
-            for (int i = 0; i < f.numparms; i++)
-            {
-                Global parm = GetGlobal(currentParmOffset);
-                parm.Kind = GlobalKind.Parameter;
-                Print(parm.TypeCodeOutput + " " + parm.Name);
-                if (i < f.numparms - 1) { Print(", "); }
-
-                if (parm.Type == Types.ev_vector) { currentParmOffset += 3; }
-                else { currentParmOffset++; }
-            }
-            PrintLine(") " + f.name + " =");
+            // Print the declaration
+            PrintLine(f.declaration + " =");
             PrintLine("{");
             indent++;
 
-            // Locals
-            while ((currentParmOffset - f.parm_start) < f.locals)
+            // Print the locals
+            foreach(string l in f.localDefs)
             {
-                Global local = GetGlobal(currentParmOffset);
-                local.Kind = GlobalKind.Local;
-                PrintLine("local " + local.TypeCodeOutput + " " + local.Name + ";");
-
-                if (local.Type == Types.ev_vector) { currentParmOffset += 3; }
-                else { currentParmOffset++; }
-            }
-
-            //  Check for OP_IF codes in this function, which encode do while loops
-            startOfDoLoop.Clear();
-            sIndex = f.first_statement;
-            while (true)
-            {
-                if (statements[sIndex].Opcode == Opcodes.OP_IF)
-                {
-                    // store the start statement of the do loop
-                    startOfDoLoop.Add(sIndex + statements[sIndex].b);
-                }
-                if (statements[sIndex].Opcode == Opcodes.OP_DONE)
-                {
-                    break;
-                }
-                sIndex++;
+                PrintLine(l);
             }
 
             // Decompile the function statements
@@ -639,6 +972,7 @@ namespace DeQcc
             PrintLine("};");
             PrintLine("");
 
+            // Should never happen
             if(indent != 0)
             {
                 indent = 0;
@@ -670,6 +1004,8 @@ namespace DeQcc
             Global a = GetGlobal(s.a);
             Global b = GetGlobal(s.b);
             Global c = GetGlobal(s.c);
+
+            nextGlobal = Math.Max(nextGlobal, Math.Max(s.a, Math.Max(s.b, s.c)));
 
             switch (s.Opcode)
             {

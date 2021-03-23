@@ -121,7 +121,7 @@ namespace DeQcc
         }
     }
 
-    class Function
+    partial class Function
     {
         public int first_statement;    // negative numbers are builtins
 
