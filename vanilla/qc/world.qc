@@ -1,5 +1,4 @@
-float ;
-void() InitBodyQue;
+void () InitBodyQue;
 // main
 // function begins at statement 5086
 // OP_STORE_V	3691	4	0
@@ -225,7 +224,7 @@ void() InitBodyQue;
 // OP_STORE_V	3800	4	0
 // OP_CALL1	510	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () main =
+void () main =
 {
     dprint("main function\n");
     precache_file("progs.dat");
@@ -340,9 +339,7 @@ void() InitBodyQue;
     precache_file2("maps/dm6.bsp");
 };
 
-string IMMEDIATE = "maps/dm6.bsp";
 entity lastspawn;
-void() worldspawn;
 // worldspawn
 // function begins at statement 5309
 // OP_STORE_ENT	30	3801	0
@@ -552,7 +549,7 @@ void() worldspawn;
 // OP_STORE_V	3873	7	0
 // OP_CALL2	479	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () worldspawn =
+void () worldspawn =
 {
     lastspawn = world;
     InitBodyQue();
@@ -658,7 +655,6 @@ void() worldspawn;
     lightstyle(63.000, "a");
 };
 
-string IMMEDIATE = "a";
 // StartFrame
 // function begins at statement 5516
 // OP_STORE_V	3874	4	0
@@ -670,20 +666,18 @@ string IMMEDIATE = "a";
 // OP_ADD_F	348	2256	3876
 // OP_STORE_F	3876	348	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () StartFrame =
+void () StartFrame =
 {
     teamplay = cvar("teamplay");
     skill = cvar("skill");
     framecount = framecount + WEAPON_SHOTGUN;
 };
 
-float ;
 entity bodyque_head;
-void() bodyque;
 // bodyque
 // function begins at statement 5525
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () bodyque =
+void () bodyque =
 {
 };
 
@@ -723,7 +717,7 @@ void() bodyque;
 // OP_ADDRESS	3899	201	3900
 // OP_STOREP_ENT	3877	3900	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () InitBodyQue =
+void () InitBodyQue =
 {
     local entity e;
     bodyque_head = spawn();
@@ -737,8 +731,6 @@ void() bodyque;
     bodyque_head.owner.owner.owner.owner = bodyque_head;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() CopyToBodyQue;
 // CopyToBodyQue
 // function begins at statement 5560
 // OP_ADDRESS	3877	117	3903
@@ -777,7 +769,7 @@ void() CopyToBodyQue;
 // OP_LOAD_ENT	3877	201	3935
 // OP_STORE_ENT	3935	3877	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity ent) CopyToBodyQue =
+void (entity ent) CopyToBodyQue =
 {
     bodyque_head.angles = ent.angles;
     bodyque_head.model = ent.model;

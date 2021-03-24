@@ -1,8 +1,7 @@
-float ;
-void() T_MissileTouch;
-void() info_player_start;
-void() ClientObituary;
-void() monster_death_use;
+void () T_MissileTouch;
+void () info_player_start;
+void (entity targ, entity attacker) ClientObituary;
+void () monster_death_use;
 // CanDamage
 // function begins at statement 1308
 // OP_LOAD_F	1484	103	1486
@@ -81,7 +80,7 @@ void() monster_death_use;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ, entity inflictor) CanDamage =
+float (entity targ, entity inflictor) CanDamage =
 {
     
     if(targ.movetype == MOVETYPE_PUSH)
@@ -90,58 +89,56 @@ void() monster_death_use;
         
         if(trace_fraction == AS_STRAIGHT)
         {
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
         
         if(trace_ent == targ)
         {
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     traceline(inflictor.origin, targ.origin, TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-float ;
-void() Killed;
 // Killed
 // function begins at statement 1384
 // OP_STORE_ENT	28	1568	0
@@ -183,7 +180,7 @@ void() Killed;
 // OP_CALL0	1585	0	0
 // OP_STORE_ENT	1568	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ, entity attacker) Killed =
+void (entity targ, entity attacker) Killed =
 {
     local entity oself;
     oself = self;
@@ -197,9 +194,9 @@ void() Killed;
     
     if((self.movetype == MOVETYPE_PUSH) || (self.movetype == MOVETYPE_NONE))
     {
-        func000000();
+        self.th_die();
         self = oself;
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.enemy = attacker;
@@ -214,11 +211,10 @@ void() Killed;
     self.takedamage = DAMAGE_NO;
     self.touch = SUB_Null;
     monster_death_use();
-    func000000();
+    self.th_die();
     self = oself;
 };
 
-void() ;
 // T_Damage
 // function begins at statement 1423
 // OP_LOAD_F	1586	163	1596
@@ -384,7 +380,7 @@ void() ;
 // OP_STOREP_F	1719	1718	0
 // OP_STORE_ENT	1593	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
+void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 {
     local vector dir;
     local entity oldself;
@@ -393,7 +389,7 @@ void() ;
     
     if(!targ.takedamage)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     damage_attacker = attacker;
@@ -433,7 +429,7 @@ void() ;
     
     if(targ.flags & FL_GODMODE)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -446,13 +442,13 @@ void() ;
             self.invincible_sound = time + AS_SLIDING;
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((((((teamplay == AS_STRAIGHT) && (targ.team > MSG_BROADCAST)) && (targ.team == attacker.team)) && (targ != attacker)) && (attacker.classname == "player")) && (inflictor.classname != "door"))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     targ.health = targ.health - take;
@@ -460,7 +456,7 @@ void() ;
     if(targ.health <= MSG_BROADCAST)
     {
         Killed(targ, attacker);
-        return; /* TODO retvalue? */
+        return;
     }
     
     oldself = self;
@@ -491,7 +487,7 @@ void() ;
     
     if(self.th_pain)
     {
-        func000000(attacker, take);
+        self.th_pain(attacker, take);
         
         if(skill == AS_MELEE)
         {
@@ -503,8 +499,6 @@ void() ;
     self = oldself;
 };
 
-float ;
-void() T_RadiusDamage;
 // T_RadiusDamage
 // function begins at statement 1586
 // OP_LOAD_V	1721	105	1730
@@ -565,7 +559,7 @@ void() T_RadiusDamage;
 // OP_STORE_ENT	1770	1726	0
 // OP_GOTO	-50	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
+void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
 {
     local float points;
     local entity head;
@@ -626,8 +620,6 @@ void() T_RadiusDamage;
 };
 
 /* ERROR INDENTATION */
-entity ;
-void() T_BeamDamage;
 // T_BeamDamage
 // function begins at statement 1644
 // OP_LOAD_V	1772	105	1776
@@ -680,7 +672,7 @@ void() T_BeamDamage;
 // OP_STORE_ENT	1799	1775	0
 // OP_GOTO	-42	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity attacker, float damage) T_BeamDamage =
+void (entity attacker, float damage) T_BeamDamage =
 {
     local float points;
     local entity head;

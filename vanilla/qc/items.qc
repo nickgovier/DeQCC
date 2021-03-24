@@ -1,6 +1,4 @@
-entity ;
-void() W_SetCurrentAmmo;
-void() SUB_regen;
+void () W_SetCurrentAmmo;
 // SUB_regen
 // function begins at statement 1694
 // OP_ADDRESS	28	130	1802
@@ -19,7 +17,7 @@ void() SUB_regen;
 // OP_STORE_V	1806	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_regen =
+void () SUB_regen =
 {
     self.model = self.mdl;
     self.solid = SOLID_TRIGGER;
@@ -27,8 +25,6 @@ void() SUB_regen;
     setorigin(self, self.origin);
 };
 
-vector ;
-void() noclass;
 // noclass
 // function begins at statement 1710
 // OP_STORE_V	1810	4	0
@@ -43,7 +39,7 @@ void() noclass;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () noclass =
+void () noclass =
 {
     dprint("noclass spawned at");
     dprint(vtos(self.origin));
@@ -51,8 +47,6 @@ void() noclass;
     remove(self);
 };
 
-string IMMEDIATE = "\n";
-void() PlaceItem;
 // PlaceItem
 // function begins at statement 1722
 // OP_ADDRESS	28	394	1817
@@ -88,7 +82,7 @@ void() PlaceItem;
 // OP_CALL1	460	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlaceItem =
+void () PlaceItem =
 {
     local float oldz;
     self.mdl = self.model;
@@ -105,13 +99,11 @@ void() PlaceItem;
         dprint(vtos(self.origin));
         dprint("\n");
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
 };
 
-vector ;
-void() StartItem;
 // StartItem
 // function begins at statement 1755
 // OP_ADDRESS	28	150	1835
@@ -120,13 +112,12 @@ void() StartItem;
 // OP_ADDRESS	28	148	1837
 // OP_STOREP_FNC	1815	1837	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () StartItem =
+void () StartItem =
 {
     self.nextthink = time + 0.200;
     self.think = PlaceItem;
 };
 
-/* TYPE: EV_POINTER */ ;
 // T_Heal
 // function begins at statement 1761
 // OP_LOAD_F	1838	152	1841
@@ -163,18 +154,18 @@ void() StartItem;
 // OP_STOREP_F	1859	1861	0
 // OP_RETURN	368	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity e, float healamount, float ignore) T_Heal =
+float (entity e, float healamount, float ignore) T_Heal =
 {
     
     if(e.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return MSG_BROADCAST;
     }
     
     
     if(!ignore && (e.health >= other.max_health))
     {
-        return; /* TODO retvalue? */
+        return MSG_BROADCAST;
     }
     
     healamount = ceil(healamount);
@@ -191,17 +182,15 @@ void() StartItem;
         e.health = 250.000;
     }
     
-    return; /* TODO retvalue? */
+    return AS_STRAIGHT;
 };
 
-/* TYPE: EV_POINTER */ ;
 float H_ROTTEN = 1.000;
 float H_MEGA = 2.000;
 .float healamount;
 .float healtype;
-void() health_touch;
-void() item_megahealth_rot;
-void() item_health;
+void () health_touch;
+void () item_megahealth_rot;
 // item_health
 // function begins at statement 1795
 // OP_ADDRESS	28	146	1869
@@ -259,7 +248,7 @@ void() item_health;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_health =
+void () item_health =
 {
     self.touch = health_touch;
     if(self.spawnflags & H_ROTTEN)
@@ -298,7 +287,6 @@ void() item_health;
     StartItem();
 };
 
-vector IMMEDIATE = '32.000 32.000 56.000';
 // health_touch
 // function begins at statement 1850
 // OP_LOAD_S	29	129	1897
@@ -382,14 +370,14 @@ vector IMMEDIATE = '32.000 32.000 56.000';
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () health_touch =
+void () health_touch =
 {
     local float amount;
     local string s;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.healtype == H_MEGA)
@@ -397,13 +385,13 @@ vector IMMEDIATE = '32.000 32.000 56.000';
         
         if(other.health >= 250.000)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         
         if(!T_Heal(other, self.healamount, H_ROTTEN))
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -412,7 +400,7 @@ vector IMMEDIATE = '32.000 32.000 56.000';
         
         if(!T_Heal(other, self.healamount, MSG_BROADCAST))
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -448,7 +436,6 @@ vector IMMEDIATE = '32.000 32.000 56.000';
     SUB_UseTargets();
 };
 
-/* TYPE: EV_POINTER */ ;
 // item_megahealth_rot
 // function begins at statement 1931
 // OP_LOAD_ENT	28	201	1927
@@ -479,7 +466,7 @@ vector IMMEDIATE = '32.000 32.000 56.000';
 // OP_ADDRESS	28	148	1944
 // OP_STOREP_FNC	1801	1944	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_megahealth_rot =
+void () item_megahealth_rot =
 {
     other = self.owner;
     
@@ -487,7 +474,7 @@ vector IMMEDIATE = '32.000 32.000 56.000';
     {
         other.health = other.health - H_ROTTEN;
         self.nextthink = time + H_ROTTEN;
-        return; /* TODO retvalue? */
+        return;
     }
     
     other.items = other.items - (other.items & IT_SUPERHEALTH);
@@ -500,8 +487,6 @@ vector IMMEDIATE = '32.000 32.000 56.000';
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() armor_touch;
 // armor_touch
 // function begins at statement 1959
 // OP_LOAD_F	29	152	1949
@@ -576,7 +561,7 @@ void() armor_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () armor_touch =
+void () armor_touch =
 {
     local float type;
     local float value;
@@ -584,13 +569,13 @@ void() armor_touch;
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -620,7 +605,7 @@ void() armor_touch;
     
     if((other.armortype * other.armorvalue) >= (type * value))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     other.armortype = type;
@@ -642,8 +627,6 @@ void() armor_touch;
     SUB_UseTargets();
 };
 
-string IMMEDIATE = "items/armor1.wav";
-void() item_armor1;
 // item_armor1
 // function begins at statement 2031
 // OP_ADDRESS	28	146	1990
@@ -661,7 +644,7 @@ void() item_armor1;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_armor1 =
+void () item_armor1 =
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -671,8 +654,6 @@ void() item_armor1;
     StartItem();
 };
 
-vector IMMEDIATE = '16.000 16.000 56.000';
-void() item_armor2;
 // item_armor2
 // function begins at statement 2046
 // OP_ADDRESS	28	146	2000
@@ -690,7 +671,7 @@ void() item_armor2;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_armor2 =
+void () item_armor2 =
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -700,8 +681,6 @@ void() item_armor2;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_armorInv;
 // item_armorInv
 // function begins at statement 2061
 // OP_ADDRESS	28	146	2003
@@ -719,7 +698,7 @@ void() item_armorInv;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_armorInv =
+void () item_armorInv =
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -729,8 +708,6 @@ void() item_armorInv;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() bound_other_ammo;
 // bound_other_ammo
 // function begins at statement 2076
 // OP_LOAD_F	29	158	2006
@@ -754,7 +731,7 @@ void() bound_other_ammo;
 // OP_ADDRESS	29	161	2017
 // OP_STOREP_F	1884	2017	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () bound_other_ammo =
+void () bound_other_ammo =
 {
     
     if(other.ammo_shells > 100.000)
@@ -782,8 +759,6 @@ void() bound_other_ammo;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() RankForWeapon;
 // RankForWeapon
 // function begins at statement 2097
 // OP_EQ_F	2019	260	2020
@@ -806,49 +781,47 @@ void() RankForWeapon;
 // OP_RETURN	314	0	0
 // OP_RETURN	315	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float w) RankForWeapon =
+float (float w) RankForWeapon =
 {
     
     if(w == IT_LIGHTNING)
     {
-        return; /* TODO retvalue? */
+        return H_ROTTEN;
     }
     
     
     if(w == IT_ROCKET_LAUNCHER)
     {
-        return; /* TODO retvalue? */
+        return H_MEGA;
     }
     
     
     if(w == IT_SUPER_NAILGUN)
     {
-        return; /* TODO retvalue? */
+        return AS_MELEE;
     }
     
     
     if(w == IT_GRENADE_LAUNCHER)
     {
-        return; /* TODO retvalue? */
+        return AS_MISSILE;
     }
     
     
     if(w == IT_SUPER_SHOTGUN)
     {
-        return; /* TODO retvalue? */
+        return TE_LIGHTNING1;
     }
     
     
     if(w == IT_NAILGUN)
     {
-        return; /* TODO retvalue? */
+        return TE_LIGHTNING2;
     }
     
-    return; /* TODO retvalue? */
+    return TE_WIZSPIKE;
 };
 
-float ;
-void() Deathmatch_Weapon;
 // Deathmatch_Weapon
 // function begins at statement 2117
 // OP_LOAD_F	28	154	2031
@@ -863,7 +836,7 @@ void() Deathmatch_Weapon;
 // OP_ADDRESS	28	154	2033
 // OP_STOREP_F	2028	2033	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float old, float new) Deathmatch_Weapon =
+void (float old, float new) Deathmatch_Weapon =
 {
     local float or;
     local float nr;
@@ -877,9 +850,7 @@ void() Deathmatch_Weapon;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() W_BestWeapon;
-void() weapon_touch;
+float () W_BestWeapon;
 // weapon_touch
 // function begins at statement 2129
 // OP_LOAD_F	29	182	2042
@@ -1050,7 +1021,7 @@ void() weapon_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_touch =
+void () weapon_touch =
 {
     local float hadammo;
     local float best;
@@ -1061,7 +1032,7 @@ void() weapon_touch;
     
     if(!(other.flags & FL_CLIENT))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     stemp = self;
@@ -1082,7 +1053,7 @@ void() weapon_touch;
         
         if(leave && (other.items & IT_NAILGUN))
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         hadammo = other.ammo_nails;
@@ -1096,7 +1067,7 @@ void() weapon_touch;
             
             if(leave && (other.items & IT_SUPER_NAILGUN))
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             hadammo = other.ammo_rockets;
@@ -1110,7 +1081,7 @@ void() weapon_touch;
                 
                 if(leave && (other.items & IT_SUPER_SHOTGUN))
                 {
-                    return; /* TODO retvalue? */
+                    return;
                 }
                 
                 hadammo = other.ammo_rockets;
@@ -1124,7 +1095,7 @@ void() weapon_touch;
                     
                     if(leave && (other.items & IT_ROCKET_LAUNCHER))
                     {
-                        return; /* TODO retvalue? */
+                        return;
                     }
                     
                     hadammo = other.ammo_rockets;
@@ -1138,7 +1109,7 @@ void() weapon_touch;
                         
                         if(leave && (other.items & IT_GRENADE_LAUNCHER))
                         {
-                            return; /* TODO retvalue? */
+                            return;
                         }
                         
                         hadammo = other.ammo_rockets;
@@ -1152,7 +1123,7 @@ void() weapon_touch;
                             
                             if(leave && (other.items & IT_LIGHTNING))
                             {
-                                return; /* TODO retvalue? */
+                                return;
                             }
                             
                             hadammo = other.ammo_rockets;
@@ -1198,7 +1169,7 @@ void() weapon_touch;
     
     if(leave)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.model = string_null;
@@ -1214,8 +1185,6 @@ void() weapon_touch;
     SUB_UseTargets();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_supershotgun;
 // weapon_supershotgun
 // function begins at statement 2297
 // OP_STORE_V	2124	4	0
@@ -1235,7 +1204,7 @@ void() weapon_supershotgun;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_supershotgun =
+void () weapon_supershotgun =
 {
     precache_model("progs/g_shot.mdl");
     setmodel(self, "progs/g_shot.mdl");
@@ -1246,8 +1215,6 @@ void() weapon_supershotgun;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_nailgun;
 // weapon_nailgun
 // function begins at statement 2314
 // OP_STORE_V	2130	4	0
@@ -1267,7 +1234,7 @@ void() weapon_nailgun;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_nailgun =
+void () weapon_nailgun =
 {
     precache_model("progs/g_nail.mdl");
     setmodel(self, "progs/g_nail.mdl");
@@ -1278,8 +1245,6 @@ void() weapon_nailgun;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_supernailgun;
 // weapon_supernailgun
 // function begins at statement 2331
 // OP_STORE_V	2136	4	0
@@ -1299,7 +1264,7 @@ void() weapon_supernailgun;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_supernailgun =
+void () weapon_supernailgun =
 {
     precache_model("progs/g_nail2.mdl");
     setmodel(self, "progs/g_nail2.mdl");
@@ -1310,8 +1275,6 @@ void() weapon_supernailgun;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_grenadelauncher;
 // weapon_grenadelauncher
 // function begins at statement 2348
 // OP_STORE_V	2142	4	0
@@ -1331,7 +1294,7 @@ void() weapon_grenadelauncher;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_grenadelauncher =
+void () weapon_grenadelauncher =
 {
     precache_model("progs/g_rock.mdl");
     setmodel(self, "progs/g_rock.mdl");
@@ -1342,8 +1305,6 @@ void() weapon_grenadelauncher;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_rocketlauncher;
 // weapon_rocketlauncher
 // function begins at statement 2365
 // OP_STORE_V	2148	4	0
@@ -1363,7 +1324,7 @@ void() weapon_rocketlauncher;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_rocketlauncher =
+void () weapon_rocketlauncher =
 {
     precache_model("progs/g_rock2.mdl");
     setmodel(self, "progs/g_rock2.mdl");
@@ -1374,8 +1335,6 @@ void() weapon_rocketlauncher;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() weapon_lightning;
 // weapon_lightning
 // function begins at statement 2382
 // OP_STORE_V	2154	4	0
@@ -1395,7 +1354,7 @@ void() weapon_lightning;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () weapon_lightning =
+void () weapon_lightning =
 {
     precache_model("progs/g_light.mdl");
     setmodel(self, "progs/g_light.mdl");
@@ -1406,8 +1365,6 @@ void() weapon_lightning;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() ammo_touch;
 // ammo_touch
 // function begins at statement 2399
 // OP_LOAD_S	29	129	2162
@@ -1519,20 +1476,20 @@ void() ammo_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ammo_touch =
+void () ammo_touch =
 {
     local entity stemp;
     local float best;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     stemp = self;
@@ -1545,7 +1502,7 @@ void() ammo_touch;
         
         if(other.ammo_shells >= 100.000)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         other.ammo_shells = other.ammo_shells + self.aflag;
@@ -1557,7 +1514,7 @@ void() ammo_touch;
         
         if(other.ammo_nails >= 200.000)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         other.ammo_nails = other.ammo_nails + self.aflag;
@@ -1569,7 +1526,7 @@ void() ammo_touch;
         
         if(other.ammo_rockets >= 100.000)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         other.ammo_rockets = other.ammo_rockets + self.aflag;
@@ -1581,7 +1538,7 @@ void() ammo_touch;
         
         if(other.ammo_cells >= 100.000)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         other.ammo_cells = other.ammo_cells + self.aflag;
@@ -1620,9 +1577,7 @@ void() ammo_touch;
     SUB_UseTargets();
 };
 
-/* TYPE: EV_POINTER */ ;
 float WEAPON_BIG2 = 1.000;
-void() item_shells;
 // item_shells
 // function begins at statement 2508
 // OP_ADDRESS	28	146	2211
@@ -1655,7 +1610,7 @@ void() item_shells;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_shells =
+void () item_shells =
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1677,8 +1632,6 @@ void() item_shells;
     StartItem();
 };
 
-string IMMEDIATE = "shells";
-void() item_spikes;
 // item_spikes
 // function begins at statement 2538
 // OP_ADDRESS	28	146	2222
@@ -1711,7 +1664,7 @@ void() item_spikes;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_spikes =
+void () item_spikes =
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1733,8 +1686,6 @@ void() item_spikes;
     StartItem();
 };
 
-string IMMEDIATE = "nails";
-void() item_rockets;
 // item_rockets
 // function begins at statement 2568
 // OP_ADDRESS	28	146	2234
@@ -1767,7 +1718,7 @@ void() item_rockets;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_rockets =
+void () item_rockets =
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1789,8 +1740,6 @@ void() item_rockets;
     StartItem();
 };
 
-string IMMEDIATE = "rockets";
-void() item_cells;
 // item_cells
 // function begins at statement 2598
 // OP_ADDRESS	28	146	2245
@@ -1823,7 +1772,7 @@ void() item_cells;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_cells =
+void () item_cells =
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1845,12 +1794,10 @@ void() item_cells;
     StartItem();
 };
 
-string IMMEDIATE = "cells";
 float WEAPON_SHOTGUN = 1.000;
 float WEAPON_ROCKET = 2.000;
 float WEAPON_SPIKES = 4.000;
 float WEAPON_BIG = 8.000;
-void() item_weapon;
 // item_weapon
 // function begins at statement 2628
 // OP_ADDRESS	28	146	2261
@@ -1936,7 +1883,7 @@ void() item_weapon;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_weapon =
+void () item_weapon =
 {
     self.touch = ammo_touch;
     
@@ -2003,8 +1950,6 @@ void() item_weapon;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() key_touch;
 // key_touch
 // function begins at statement 2711
 // OP_LOAD_S	29	129	2290
@@ -2054,26 +1999,26 @@ void() key_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () key_touch =
+void () key_touch =
 {
     local entity stemp;
     local float best;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.items & self.items)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     sprint(other, "You got the ");
@@ -2093,8 +2038,6 @@ void() key_touch;
     SUB_UseTargets();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() key_setsounds;
 // key_setsounds
 // function begins at statement 2758
 // OP_LOAD_F	30	352	2307
@@ -2119,7 +2062,7 @@ void() key_setsounds;
 // OP_ADDRESS	28	208	2318
 // OP_STOREP_S	2317	2318	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () key_setsounds =
+void () key_setsounds =
 {
     
     if(world.worldtype == MSG_BROADCAST)
@@ -2144,8 +2087,6 @@ void() key_setsounds;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_key1;
 // item_key1
 // function begins at statement 2780
 // OP_LOAD_F	30	352	2320
@@ -2191,7 +2132,7 @@ void() item_key1;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_key1 =
+void () item_key1 =
 {
     if(world.worldtype == MSG_BROADCAST)
     {
@@ -2228,8 +2169,6 @@ void() item_key1;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_key2;
 // item_key2
 // function begins at statement 2823
 // OP_LOAD_F	30	352	2338
@@ -2273,7 +2212,7 @@ void() item_key2;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_key2 =
+void () item_key2 =
 {
     
     if(world.worldtype == MSG_BROADCAST)
@@ -2306,8 +2245,6 @@ void() item_key2;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() sigil_touch;
 // sigil_touch
 // function begins at statement 2864
 // OP_LOAD_S	29	129	2358
@@ -2344,20 +2281,20 @@ void() sigil_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sigil_touch =
+void () sigil_touch =
 {
     local entity stemp;
     local float best;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     centerprint(other, "You got the rune!");
@@ -2371,8 +2308,6 @@ void() sigil_touch;
     SUB_UseTargets();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_sigil;
 // item_sigil
 // function begins at statement 2898
 // OP_LOAD_F	28	195	2371
@@ -2424,7 +2359,7 @@ void() item_sigil;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_sigil =
+void () item_sigil =
 {
     
     if(!self.spawnflags)
@@ -2467,8 +2402,6 @@ void() item_sigil;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() powerup_touch;
 // powerup_touch
 // function begins at statement 2947
 // OP_LOAD_S	29	129	2391
@@ -2563,20 +2496,20 @@ void() powerup_touch;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () powerup_touch =
+void () powerup_touch =
 {
     local entity stemp;
     local float best;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     sprint(other, "You got the ");
@@ -2635,8 +2568,6 @@ void() powerup_touch;
     SUB_UseTargets();
 };
 
-float ;
-void() item_artifact_invulnerability;
 // item_artifact_invulnerability
 // function begins at statement 3039
 // OP_ADDRESS	28	146	2441
@@ -2664,7 +2595,7 @@ void() item_artifact_invulnerability;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_artifact_invulnerability =
+void () item_artifact_invulnerability =
 {
     self.touch = powerup_touch;
     precache_model("progs/invulner.mdl");
@@ -2679,8 +2610,6 @@ void() item_artifact_invulnerability;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_artifact_envirosuit;
 // item_artifact_envirosuit
 // function begins at statement 3064
 // OP_ADDRESS	28	146	2450
@@ -2706,7 +2635,7 @@ void() item_artifact_envirosuit;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_artifact_envirosuit =
+void () item_artifact_envirosuit =
 {
     self.touch = powerup_touch;
     precache_model("progs/suit.mdl");
@@ -2720,8 +2649,6 @@ void() item_artifact_envirosuit;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_artifact_invisibility;
 // item_artifact_invisibility
 // function begins at statement 3087
 // OP_ADDRESS	28	146	2459
@@ -2749,7 +2676,7 @@ void() item_artifact_invisibility;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_artifact_invisibility =
+void () item_artifact_invisibility =
 {
     self.touch = powerup_touch;
     precache_model("progs/invisibl.mdl");
@@ -2764,8 +2691,6 @@ void() item_artifact_invisibility;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() item_artifact_super_damage;
 // item_artifact_super_damage
 // function begins at statement 3112
 // OP_ADDRESS	28	146	2469
@@ -2793,7 +2718,7 @@ void() item_artifact_super_damage;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () item_artifact_super_damage =
+void () item_artifact_super_damage =
 {
     self.touch = powerup_touch;
     precache_model("progs/quaddama.mdl");
@@ -2808,8 +2733,6 @@ void() item_artifact_super_damage;
     StartItem();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() BackpackTouch;
 // BackpackTouch
 // function begins at statement 3137
 // OP_LOAD_S	29	129	2485
@@ -2970,7 +2893,7 @@ void() BackpackTouch;
 // OP_CALL2	2026	0	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () BackpackTouch =
+void () BackpackTouch =
 {
     local string s;
     local float best;
@@ -2981,13 +2904,13 @@ void() BackpackTouch;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     acount = MSG_BROADCAST;
@@ -3100,8 +3023,6 @@ void() BackpackTouch;
     W_SetCurrentAmmo();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() DropBackpack;
 // DropBackpack
 // function begins at statement 3295
 // OP_LOAD_F	28	158	2537
@@ -3218,13 +3139,13 @@ void() DropBackpack;
 // OP_ADDRESS	2536	148	2611
 // OP_STOREP_FNC	519	2611	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () DropBackpack =
+void () DropBackpack =
 {
     local entity item;
     
     if(!(((self.ammo_shells + self.ammo_nails) + self.ammo_rockets) + self.ammo_cells))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     item = spawn();

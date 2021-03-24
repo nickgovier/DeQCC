@@ -1,352 +1,322 @@
-float ;
-void() sham_stand1;
 // sham_stand1
 // function begins at statement 13330
 // OP_STATE	337	8234	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand1 =
+void () sham_stand1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 8234 0
+    *** UNPROCESSED OPCODE OP_STATE 337 8234 0
     ai_stand();
 };
 
-void() sham_stand2;
 // sham_stand2
 // function begins at statement 13333
 // OP_STATE	7368	8235	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand2 =
+void () sham_stand2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7368 8235 0
+    *** UNPROCESSED OPCODE OP_STATE 7368 8235 0
     ai_stand();
 };
 
-void() sham_stand3;
 // sham_stand3
 // function begins at statement 13336
 // OP_STATE	7369	8236	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand3 =
+void () sham_stand3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7369 8236 0
+    *** UNPROCESSED OPCODE OP_STATE 7369 8236 0
     ai_stand();
 };
 
-void() sham_stand4;
 // sham_stand4
 // function begins at statement 13339
 // OP_STATE	370	8237	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand4 =
+void () sham_stand4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 8237 0
+    *** UNPROCESSED OPCODE OP_STATE 370 8237 0
     ai_stand();
 };
 
-void() sham_stand5;
 // sham_stand5
 // function begins at statement 13342
 // OP_STATE	6076	8238	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand5 =
+void () sham_stand5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6076 8238 0
+    *** UNPROCESSED OPCODE OP_STATE 6076 8238 0
     ai_stand();
 };
 
-void() sham_stand6;
 // sham_stand6
 // function begins at statement 13345
 // OP_STATE	313	8239	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand6 =
+void () sham_stand6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 8239 0
+    *** UNPROCESSED OPCODE OP_STATE 313 8239 0
     ai_stand();
 };
 
-void() sham_stand7;
 // sham_stand7
 // function begins at statement 13348
 // OP_STATE	314	8240	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand7 =
+void () sham_stand7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 8240 0
+    *** UNPROCESSED OPCODE OP_STATE 314 8240 0
     ai_stand();
 };
 
-void() sham_stand8;
 // sham_stand8
 // function begins at statement 13351
 // OP_STATE	315	8241	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand8 =
+void () sham_stand8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 315 8241 0
+    *** UNPROCESSED OPCODE OP_STATE 315 8241 0
     ai_stand();
 };
 
-void() sham_stand9;
 // sham_stand9
 // function begins at statement 13354
 // OP_STATE	6077	8242	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand9 =
+void () sham_stand9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6077 8242 0
+    *** UNPROCESSED OPCODE OP_STATE 6077 8242 0
     ai_stand();
 };
 
-void() sham_stand10;
 // sham_stand10
 // function begins at statement 13357
 // OP_STATE	317	8243	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand10 =
+void () sham_stand10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 317 8243 0
+    *** UNPROCESSED OPCODE OP_STATE 317 8243 0
     ai_stand();
 };
 
-void() sham_stand11;
 // sham_stand11
 // function begins at statement 13360
 // OP_STATE	318	8244	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand11 =
+void () sham_stand11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 318 8244 0
+    *** UNPROCESSED OPCODE OP_STATE 318 8244 0
     ai_stand();
 };
 
-void() sham_stand12;
 // sham_stand12
 // function begins at statement 13363
 // OP_STATE	319	8245	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand12 =
+void () sham_stand12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 319 8245 0
+    *** UNPROCESSED OPCODE OP_STATE 319 8245 0
     ai_stand();
 };
 
-void() sham_stand13;
 // sham_stand13
 // function begins at statement 13366
 // OP_STATE	2250	8246	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand13 =
+void () sham_stand13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2250 8246 0
+    *** UNPROCESSED OPCODE OP_STATE 2250 8246 0
     ai_stand();
 };
 
-void() sham_stand14;
 // sham_stand14
 // function begins at statement 13369
 // OP_STATE	7768	8247	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand14 =
+void () sham_stand14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7768 8247 0
+    *** UNPROCESSED OPCODE OP_STATE 7768 8247 0
     ai_stand();
 };
 
-void() sham_stand15;
 // sham_stand15
 // function begins at statement 13372
 // OP_STATE	2901	8248	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand15 =
+void () sham_stand15 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2901 8248 0
+    *** UNPROCESSED OPCODE OP_STATE 2901 8248 0
     ai_stand();
 };
 
-void() sham_stand16;
 // sham_stand16
 // function begins at statement 13375
 // OP_STATE	1876	8249	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand16 =
+void () sham_stand16 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1876 8249 0
+    *** UNPROCESSED OPCODE OP_STATE 1876 8249 0
     ai_stand();
 };
 
-void() sham_stand17;
 // sham_stand17
 // function begins at statement 13378
 // OP_STATE	6078	8233	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_stand17 =
+void () sham_stand17 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6078 8233 0
+    *** UNPROCESSED OPCODE OP_STATE 6078 8233 0
     ai_stand();
 };
 
-void() sham_walk1;
 // sham_walk1
 // function begins at statement 13381
 // OP_STATE	4861	8251	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk1 =
+void () sham_walk1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4861 8251 0
+    *** UNPROCESSED OPCODE OP_STATE 4861 8251 0
     ai_walk(TE_LAVASPLASH);
 };
 
-void() sham_walk2;
 // sham_walk2
 // function begins at statement 13385
 // OP_STATE	3319	8252	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk2 =
+void () sham_walk2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3319 8252 0
+    *** UNPROCESSED OPCODE OP_STATE 3319 8252 0
     ai_walk(TE_LIGHTNING3);
 };
 
-void() sham_walk3;
 // sham_walk3
 // function begins at statement 13389
 // OP_STATE	7776	8253	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk3 =
+void () sham_walk3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7776 8253 0
+    *** UNPROCESSED OPCODE OP_STATE 7776 8253 0
     ai_walk(TE_LIGHTNING3);
 };
 
-void() sham_walk4;
 // sham_walk4
 // function begins at statement 13393
 // OP_STATE	894	8254	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk4 =
+void () sham_walk4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 894 8254 0
+    *** UNPROCESSED OPCODE OP_STATE 894 8254 0
     ai_walk(TE_LIGHTNING1);
 };
 
-void() sham_walk5;
 // sham_walk5
 // function begins at statement 13397
 // OP_STATE	7779	8255	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk5 =
+void () sham_walk5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7779 8255 0
+    *** UNPROCESSED OPCODE OP_STATE 7779 8255 0
     ai_walk(TE_LIGHTNING2);
 };
 
-void() sham_walk6;
 // sham_walk6
 // function begins at statement 13401
 // OP_STATE	7781	8256	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk6 =
+void () sham_walk6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7781 8256 0
+    *** UNPROCESSED OPCODE OP_STATE 7781 8256 0
     ai_walk(12.000);
 };
 
-void() sham_walk7;
 // sham_walk7
 // function begins at statement 13405
 // OP_STATE	301	8257	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk7 =
+void () sham_walk7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 301 8257 0
+    *** UNPROCESSED OPCODE OP_STATE 301 8257 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() sham_walk8;
 // sham_walk8
 // function begins at statement 13409
 // OP_STATE	4437	8258	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk8 =
+void () sham_walk8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4437 8258 0
+    *** UNPROCESSED OPCODE OP_STATE 4437 8258 0
     ai_walk(AS_MELEE);
 };
 
-void() sham_walk9;
 // sham_walk9
 // function begins at statement 13413
 // OP_STATE	1890	8259	0
 // OP_STORE_V	7768	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk9 =
+void () sham_walk9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1890 8259 0
+    *** UNPROCESSED OPCODE OP_STATE 1890 8259 0
     ai_walk(13.000);
 };
 
-void() sham_walk10;
 // sham_walk10
 // function begins at statement 13417
 // OP_STATE	7788	8260	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk10 =
+void () sham_walk10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7788 8260 0
+    *** UNPROCESSED OPCODE OP_STATE 7788 8260 0
     ai_walk(TE_LIGHTNING3);
 };
 
-void() sham_walk11;
 // sham_walk11
 // function begins at statement 13421
 // OP_STATE	302	8261	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk11 =
+void () sham_walk11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 302 8261 0
+    *** UNPROCESSED OPCODE OP_STATE 302 8261 0
     ai_walk(TE_WIZSPIKE);
 };
 
-void() sham_walk12;
 // sham_walk12
 // function begins at statement 13425
 // OP_STATE	303	8250	0
@@ -362,9 +332,9 @@ void() sham_walk12;
 // OP_STORE_V	327	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_walk12 =
+void () sham_walk12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 303 8250 0
+    *** UNPROCESSED OPCODE OP_STATE 303 8250 0
     ai_walk(TE_WIZSPIKE);
     
     if(random() > 0.800)
@@ -374,73 +344,66 @@ void() sham_walk12;
     
 };
 
-string IMMEDIATE = "shambler/sidle.wav";
-void() sham_run1;
 // sham_run1
 // function begins at statement 13438
 // OP_STATE	5105	8265	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run1 =
+void () sham_run1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5105 8265 0
+    *** UNPROCESSED OPCODE OP_STATE 5105 8265 0
     ai_run(20.000);
 };
 
-void() sham_run2;
 // sham_run2
 // function begins at statement 13442
 // OP_STATE	304	8266	0
 // OP_STORE_V	4437	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run2 =
+void () sham_run2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 304 8266 0
+    *** UNPROCESSED OPCODE OP_STATE 304 8266 0
     ai_run(24.000);
 };
 
-void() sham_run3;
 // sham_run3
 // function begins at statement 13446
 // OP_STATE	305	8267	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run3 =
+void () sham_run3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 305 8267 0
+    *** UNPROCESSED OPCODE OP_STATE 305 8267 0
     ai_run(20.000);
 };
 
-void() sham_run4;
 // sham_run4
 // function begins at statement 13450
 // OP_STATE	5674	8268	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run4 =
+void () sham_run4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5674 8268 0
+    *** UNPROCESSED OPCODE OP_STATE 5674 8268 0
     ai_run(20.000);
 };
 
-void() sham_run5;
 // sham_run5
 // function begins at statement 13454
 // OP_STATE	307	8269	0
 // OP_STORE_V	4437	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run5 =
+void () sham_run5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 307 8269 0
+    *** UNPROCESSED OPCODE OP_STATE 307 8269 0
     ai_run(24.000);
 };
 
-void() sham_run6;
 // sham_run6
 // function begins at statement 13458
 // OP_STATE	5112	8264	0
@@ -456,9 +419,9 @@ void() sham_run6;
 // OP_STORE_V	327	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_run6 =
+void () sham_run6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5112 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 5112 8264 0
     ai_run(20.000);
     
     if(random() > 0.800)
@@ -468,7 +431,6 @@ void() sham_run6;
     
 };
 
-float ;
 // sham_smash1
 // function begins at statement 13471
 // OP_STATE	3072	8271	0
@@ -481,118 +443,109 @@ float ;
 // OP_STORE_V	7369	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash1 =
+void () sham_smash1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3072 8271 0
+    *** UNPROCESSED OPCODE OP_STATE 3072 8271 0
     sound(self, CHAN_VOICE, "shambler/melee1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     ai_charge(SPAWNFLAG_LASER);
 };
 
-string IMMEDIATE = "shambler/melee1.wav";
 // sham_smash2
 // function begins at statement 13481
 // OP_STATE	5096	8273	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash2 =
+void () sham_smash2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5096 8273 0
+    *** UNPROCESSED OPCODE OP_STATE 5096 8273 0
     ai_charge(TE_LIGHTNING2);
 };
 
-void() sham_smash3;
 // sham_smash3
 // function begins at statement 13485
 // OP_STATE	5098	8274	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash3 =
+void () sham_smash3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5098 8274 0
+    *** UNPROCESSED OPCODE OP_STATE 5098 8274 0
     ai_charge(TE_LIGHTNING2);
 };
 
-void() sham_smash4;
 // sham_smash4
 // function begins at statement 13489
 // OP_STATE	5100	8275	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash4 =
+void () sham_smash4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5100 8275 0
+    *** UNPROCESSED OPCODE OP_STATE 5100 8275 0
     ai_charge(TE_LIGHTNING1);
 };
 
-void() sham_smash5;
 // sham_smash5
 // function begins at statement 13493
 // OP_STATE	5102	8276	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash5 =
+void () sham_smash5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5102 8276 0
+    *** UNPROCESSED OPCODE OP_STATE 5102 8276 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
-void() sham_smash6;
 // sham_smash6
 // function begins at statement 13497
 // OP_STATE	1733	8277	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash6 =
+void () sham_smash6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1733 8277 0
+    *** UNPROCESSED OPCODE OP_STATE 1733 8277 0
     ai_charge(SPAWNFLAG_SUPERSPIKE);
 };
 
-void() sham_smash7;
 // sham_smash7
 // function begins at statement 13501
 // OP_STATE	5443	8278	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash7 =
+void () sham_smash7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5443 8278 0
+    *** UNPROCESSED OPCODE OP_STATE 5443 8278 0
     ai_charge(MSG_BROADCAST);
 };
 
-void() sham_smash8;
 // sham_smash8
 // function begins at statement 13505
 // OP_STATE	5445	8279	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash8 =
+void () sham_smash8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5445 8279 0
+    *** UNPROCESSED OPCODE OP_STATE 5445 8279 0
     ai_charge(MSG_BROADCAST);
 };
 
-void() sham_smash9;
 // sham_smash9
 // function begins at statement 13509
 // OP_STATE	5447	8280	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash9 =
+void () sham_smash9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5447 8280 0
+    *** UNPROCESSED OPCODE OP_STATE 5447 8280 0
     ai_charge(MSG_BROADCAST);
 };
 
-void() sham_smash10;
 // sham_smash10
 // function begins at statement 13513
 // OP_STATE	5449	8281	0
@@ -658,16 +611,16 @@ void() sham_smash10;
 // OP_STORE_V	8332	7	0
 // OP_CALL2	2696	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash10 =
+void () sham_smash10 =
 {
     local void() sham_smash11;
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_STATE 5449 8281 0
+    *** UNPROCESSED OPCODE OP_STATE 5449 8281 0
     
     if(!self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     ai_charge(MSG_BROADCAST);
@@ -675,13 +628,13 @@ void() sham_smash10;
     
     if(vlen(delta) > 100.000)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(!CanDamage(self.enemy, self))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     random();
@@ -693,33 +646,30 @@ void() sham_smash10;
     SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
 };
 
-vector ;
 // sham_smash11
 // function begins at statement 13576
 // OP_STATE	1390	8335	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash11 =
+void () sham_smash11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1390 8335 0
+    *** UNPROCESSED OPCODE OP_STATE 1390 8335 0
     ai_charge(TE_LIGHTNING1);
 };
 
-void() sham_smash12;
 // sham_smash12
 // function begins at statement 13580
 // OP_STATE	5452	8264	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_smash12 =
+void () sham_smash12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5452 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 5452 8264 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
-void() ShamClaw;
 // ShamClaw
 // function begins at statement 13584
 // OP_LOAD_ENT	28	181	8342
@@ -770,14 +720,14 @@ void() ShamClaw;
 // OP_STORE_V	8374	7	0
 // OP_CALL2	2696	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float side) ShamClaw =
+void (float side) ShamClaw =
 {
     local vector delta;
     local float ldmg;
     
     if(!self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     ai_charge(TE_LAVASPLASH);
@@ -785,7 +735,7 @@ void() ShamClaw;
     
     if(vlen(delta) > 100.000)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     random();
@@ -802,7 +752,6 @@ void() ShamClaw;
     
 };
 
-vector ;
 // sham_swingl1
 // function begins at statement 13632
 // OP_STATE	5361	8377	0
@@ -815,79 +764,73 @@ vector ;
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl1 =
+void () sham_swingl1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5361 8377 0
+    *** UNPROCESSED OPCODE OP_STATE 5361 8377 0
     sound(self, CHAN_VOICE, "shambler/melee2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     ai_charge(TE_LIGHTNING1);
 };
 
-string IMMEDIATE = "shambler/melee2.wav";
 // sham_swingl2
 // function begins at statement 13642
 // OP_STATE	5363	8379	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl2 =
+void () sham_swingl2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5363 8379 0
+    *** UNPROCESSED OPCODE OP_STATE 5363 8379 0
     ai_charge(AS_MELEE);
 };
 
-void() sham_swingl3;
 // sham_swingl3
 // function begins at statement 13646
 // OP_STATE	5365	8380	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl3 =
+void () sham_swingl3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5365 8380 0
+    *** UNPROCESSED OPCODE OP_STATE 5365 8380 0
     ai_charge(TE_WIZSPIKE);
 };
 
-void() sham_swingl4;
 // sham_swingl4
 // function begins at statement 13650
 // OP_STATE	5367	8381	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl4 =
+void () sham_swingl4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5367 8381 0
+    *** UNPROCESSED OPCODE OP_STATE 5367 8381 0
     ai_charge(AS_MELEE);
 };
 
-void() sham_swingl5;
 // sham_swingl5
 // function begins at statement 13654
 // OP_STATE	912	8382	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl5 =
+void () sham_swingl5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 912 8382 0
+    *** UNPROCESSED OPCODE OP_STATE 912 8382 0
     ai_charge(TE_WIZSPIKE);
 };
 
-void() sham_swingl6;
 // sham_swingl6
 // function begins at statement 13658
 // OP_STATE	5369	8383	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl6 =
+void () sham_swingl6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5369 8383 0
+    *** UNPROCESSED OPCODE OP_STATE 5369 8383 0
     ai_charge(TE_LIGHTNING3);
 };
 
-void() sham_swingl7;
 // sham_swingl7
 // function begins at statement 13662
 // OP_STATE	5371	8384	0
@@ -896,27 +839,25 @@ void() sham_swingl7;
 // OP_STORE_V	1859	4	0
 // OP_CALL1	8336	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl7 =
+void () sham_swingl7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5371 8384 0
+    *** UNPROCESSED OPCODE OP_STATE 5371 8384 0
     ai_charge(TE_LIGHTNING1);
     ShamClaw(250.000);
 };
 
-void() sham_swingl8;
 // sham_swingl8
 // function begins at statement 13668
 // OP_STATE	3872	8385	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl8 =
+void () sham_swingl8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3872 8385 0
+    *** UNPROCESSED OPCODE OP_STATE 3872 8385 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
-void() sham_swingl9;
 // sham_swingl9
 // function begins at statement 13672
 // OP_STATE	260	8264	0
@@ -928,9 +869,9 @@ void() sham_swingl9;
 // OP_ADDRESS	28	148	8387
 // OP_STOREP_FNC	753	8387	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingl9 =
+void () sham_swingl9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 260 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 260 8264 0
     ai_charge(SECRET_NO_SHOOT);
     
     if(random() < IMMEDIATE)
@@ -940,7 +881,6 @@ void() sham_swingl9;
     
 };
 
-/* TYPE: EV_POINTER */ ;
 // sham_swingr1
 // function begins at statement 13681
 // OP_STATE	5454	8388	0
@@ -953,79 +893,73 @@ void() sham_swingl9;
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr1 =
+void () sham_swingr1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5454 8388 0
+    *** UNPROCESSED OPCODE OP_STATE 5454 8388 0
     sound(self, CHAN_VOICE, "shambler/melee1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     ai_charge(SPAWNFLAG_SUPERSPIKE);
 };
 
-void() sham_swingr2;
 // sham_swingr2
 // function begins at statement 13691
 // OP_STATE	5456	8389	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr2 =
+void () sham_swingr2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5456 8389 0
+    *** UNPROCESSED OPCODE OP_STATE 5456 8389 0
     ai_charge(SECRET_NO_SHOOT);
 };
 
-void() sham_swingr3;
 // sham_swingr3
 // function begins at statement 13695
 // OP_STATE	5458	8390	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr3 =
+void () sham_swingr3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5458 8390 0
+    *** UNPROCESSED OPCODE OP_STATE 5458 8390 0
     ai_charge(14.000);
 };
 
-void() sham_swingr4;
 // sham_swingr4
 // function begins at statement 13699
 // OP_STATE	2227	8391	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr4 =
+void () sham_swingr4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2227 8391 0
+    *** UNPROCESSED OPCODE OP_STATE 2227 8391 0
     ai_charge(TE_WIZSPIKE);
 };
 
-void() sham_swingr5;
 // sham_swingr5
 // function begins at statement 13703
 // OP_STATE	5351	8392	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr5 =
+void () sham_swingr5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5351 8392 0
+    *** UNPROCESSED OPCODE OP_STATE 5351 8392 0
     ai_charge(AS_MELEE);
 };
 
-void() sham_swingr6;
 // sham_swingr6
 // function begins at statement 13707
 // OP_STATE	5353	8393	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr6 =
+void () sham_swingr6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5353 8393 0
+    *** UNPROCESSED OPCODE OP_STATE 5353 8393 0
     ai_charge(TE_LIGHTNING2);
 };
 
-void() sham_swingr7;
 // sham_swingr7
 // function begins at statement 13711
 // OP_STATE	5355	8394	0
@@ -1034,27 +968,25 @@ void() sham_swingr7;
 // OP_STORE_V	8395	4	0
 // OP_CALL1	8336	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr7 =
+void () sham_swingr7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5355 8394 0
+    *** UNPROCESSED OPCODE OP_STATE 5355 8394 0
     ai_charge(TE_LIGHTNING2);
     ShamClaw(-250.000);
 };
 
-float IMMEDIATE = -250.000;
 // sham_swingr8
 // function begins at statement 13717
 // OP_STATE	5357	8396	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr8 =
+void () sham_swingr8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5357 8396 0
+    *** UNPROCESSED OPCODE OP_STATE 5357 8396 0
     ai_charge(AS_MELEE);
 };
 
-void() sham_swingr9;
 // sham_swingr9
 // function begins at statement 13721
 // OP_STATE	5359	8264	0
@@ -1068,9 +1000,9 @@ void() sham_swingr9;
 // OP_ADDRESS	28	148	8398
 // OP_STOREP_FNC	754	8398	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_swingr9 =
+void () sham_swingr9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5359 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 5359 8264 0
     ai_charge(SPAWNFLAG_SUPERSPIKE);
     ai_charge(TE_LAVASPLASH);
     
@@ -1081,8 +1013,6 @@ void() sham_swingr9;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() sham_melee;
 // sham_melee
 // function begins at statement 13732
 // OP_CALL0	452	0	0
@@ -1100,7 +1030,7 @@ void() sham_melee;
 // OP_GOTO	2	0	0
 // OP_CALL0	754	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_melee =
+void () sham_melee =
 {
     local float chance;
     chance = random();
@@ -1119,8 +1049,6 @@ void() sham_melee;
     
 };
 
-float ;
-void() CastLightning;
 // CastLightning
 // function begins at statement 13747
 // OP_ADDRESS	28	133	8413
@@ -1180,7 +1108,7 @@ void() CastLightning;
 // OP_STORE_V	318	13	0
 // OP_CALL4	3003	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CastLightning =
+void () CastLightning =
 {
     local vector org;
     local vector dir;
@@ -1202,8 +1130,6 @@ void() CastLightning;
     LightningDamage(org, trace_endpos, self, TE_LAVASPLASH);
 };
 
-vector ;
-void() sham_magic1;
 // sham_magic1
 // function begins at statement 13804
 // OP_STATE	5375	8445	0
@@ -1215,26 +1141,24 @@ void() sham_magic1;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic1 =
+void () sham_magic1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5375 8445 0
+    *** UNPROCESSED OPCODE OP_STATE 5375 8445 0
     ai_face();
     sound(self, CHAN_WEAPON, "shambler/sattck1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
 };
 
-string IMMEDIATE = "shambler/sattck1.wav";
 // sham_magic2
 // function begins at statement 13813
 // OP_STATE	5377	8447	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic2 =
+void () sham_magic2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5377 8447 0
+    *** UNPROCESSED OPCODE OP_STATE 5377 8447 0
     ai_face();
 };
 
-void() sham_magic3;
 // sham_magic3
 // function begins at statement 13816
 // OP_STATE	5379	8448	0
@@ -1269,14 +1193,14 @@ void() sham_magic3;
 // OP_ADDRESS	8452	148	8470
 // OP_STOREP_FNC	519	8470	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic3 =
+void () sham_magic3 =
 {
     local void() sham_magic4;
     local /* ERROR: NULL TYPE */ ;
     local /* ERROR: NULL TYPE */ ;
     local /* ERROR: NULL TYPE */ ;
     local entity o;
-    // *** UNPROCESSED OPCODE OP_STATE 5379 8448 0
+    *** UNPROCESSED OPCODE OP_STATE 5379 8448 0
     ai_face();
      = self.nextthink;
      = self.nextthink;
@@ -1293,7 +1217,6 @@ void() sham_magic3;
     o.think = SUB_Remove;
 };
 
-/* TYPE: EV_POINTER */ ;
 // sham_magic4
 // function begins at statement 13848
 // OP_STATE	5381	8471	0
@@ -1305,14 +1228,13 @@ void() sham_magic3;
 // OP_ADDRESS	8475	131	8476
 // OP_STOREP_F	7368	8476	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic4 =
+void () sham_magic4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5381 8471 0
+    *** UNPROCESSED OPCODE OP_STATE 5381 8471 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.owner.frame = SPAWNFLAG_SUPERSPIKE;
 };
 
-/* TYPE: EV_POINTER */ ;
 // sham_magic5
 // function begins at statement 13857
 // OP_STATE	5383	8477	0
@@ -1324,14 +1246,13 @@ void() sham_magic3;
 // OP_ADDRESS	8481	131	8482
 // OP_STOREP_F	7369	8482	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic5 =
+void () sham_magic5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5383 8477 0
+    *** UNPROCESSED OPCODE OP_STATE 5383 8477 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.owner.frame = SPAWNFLAG_LASER;
 };
 
-/* TYPE: EV_POINTER */ ;
 // sham_magic6
 // function begins at statement 13866
 // OP_STATE	5384	8483	0
@@ -1346,39 +1267,36 @@ void() sham_magic3;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic6 =
+void () sham_magic6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5384 8483 0
+    *** UNPROCESSED OPCODE OP_STATE 5384 8483 0
     remove(self.owner);
     CastLightning();
     sound(self, CHAN_WEAPON, "shambler/sboom.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
 };
 
-string IMMEDIATE = "shambler/sboom.wav";
 // sham_magic9
 // function begins at statement 13878
 // OP_STATE	2739	8486	0
 // OP_CALL0	8406	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic9 =
+void () sham_magic9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2739 8486 0
+    *** UNPROCESSED OPCODE OP_STATE 2739 8486 0
     CastLightning();
 };
 
-void() sham_magic10;
 // sham_magic10
 // function begins at statement 13881
 // OP_STATE	5391	8487	0
 // OP_CALL0	8406	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic10 =
+void () sham_magic10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5391 8487 0
+    *** UNPROCESSED OPCODE OP_STATE 5391 8487 0
     CastLightning();
 };
 
-void() sham_magic11;
 // sham_magic11
 // function begins at statement 13884
 // OP_STATE	5393	8488	0
@@ -1386,9 +1304,9 @@ void() sham_magic11;
 // OP_IFNOT	8489	2	0
 // OP_CALL0	8406	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic11 =
+void () sham_magic11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5393 8488 0
+    *** UNPROCESSED OPCODE OP_STATE 5393 8488 0
     
     if(skill == AS_MELEE)
     {
@@ -1397,77 +1315,69 @@ void() sham_magic11;
     
 };
 
-float ;
 // sham_magic12
 // function begins at statement 13889
 // OP_STATE	5395	8264	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_magic12 =
+void () sham_magic12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5395 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 5395 8264 0
 };
 
-void() sham_pain1;
 // sham_pain1
 // function begins at statement 13891
 // OP_STATE	5397	8491	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain1 =
+void () sham_pain1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5397 8491 0
+    *** UNPROCESSED OPCODE OP_STATE 5397 8491 0
 };
 
-void() sham_pain2;
 // sham_pain2
 // function begins at statement 13893
 // OP_STATE	5399	8492	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain2 =
+void () sham_pain2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5399 8492 0
+    *** UNPROCESSED OPCODE OP_STATE 5399 8492 0
 };
 
-void() sham_pain3;
 // sham_pain3
 // function begins at statement 13895
 // OP_STATE	5401	8493	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain3 =
+void () sham_pain3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5401 8493 0
+    *** UNPROCESSED OPCODE OP_STATE 5401 8493 0
 };
 
-void() sham_pain4;
 // sham_pain4
 // function begins at statement 13897
 // OP_STATE	788	8494	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain4 =
+void () sham_pain4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 788 8494 0
+    *** UNPROCESSED OPCODE OP_STATE 788 8494 0
 };
 
-void() sham_pain5;
 // sham_pain5
 // function begins at statement 13899
 // OP_STATE	5404	8495	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain5 =
+void () sham_pain5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5404 8495 0
+    *** UNPROCESSED OPCODE OP_STATE 5404 8495 0
 };
 
-void() sham_pain6;
 // sham_pain6
 // function begins at statement 13901
 // OP_STATE	5406	8264	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_pain6 =
+void () sham_pain6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5406 8264 0
+    *** UNPROCESSED OPCODE OP_STATE 5406 8264 0
 };
 
-void() sham_pain;
 // sham_pain
 // function begins at statement 13903
 // OP_STORE_V	28	4	0
@@ -1494,146 +1404,133 @@ void() sham_pain;
 // OP_STOREP_F	8507	8506	0
 // OP_CALL0	8490	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity attacker, float damage) sham_pain =
+void (entity attacker, float damage) sham_pain =
 {
     sound(self, CHAN_VOICE, "shambler/shurt2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     
     if(self.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((random() * 400.000) > damage)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.pain_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.pain_finished = time + SPAWNFLAG_LASER;
     sham_pain1();
 };
 
-float ;
-void() sham_death1;
 // sham_death1
 // function begins at statement 13927
 // OP_STATE	5408	8509	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death1 =
+void () sham_death1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5408 8509 0
+    *** UNPROCESSED OPCODE OP_STATE 5408 8509 0
 };
 
-void() sham_death2;
 // sham_death2
 // function begins at statement 13929
 // OP_STATE	5410	8510	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death2 =
+void () sham_death2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5410 8510 0
+    *** UNPROCESSED OPCODE OP_STATE 5410 8510 0
 };
 
-void() sham_death3;
 // sham_death3
 // function begins at statement 13931
 // OP_STATE	5411	8511	0
 // OP_ADDRESS	28	104	8512
 // OP_STOREP_F	237	8512	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death3 =
+void () sham_death3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5411 8511 0
+    *** UNPROCESSED OPCODE OP_STATE 5411 8511 0
     self.solid = SOLID_NOT;
 };
 
-/* TYPE: EV_POINTER */ ;
 // sham_death4
 // function begins at statement 13935
 // OP_STATE	5413	8513	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death4 =
+void () sham_death4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5413 8513 0
+    *** UNPROCESSED OPCODE OP_STATE 5413 8513 0
 };
 
-void() sham_death5;
 // sham_death5
 // function begins at statement 13937
 // OP_STATE	5415	8514	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death5 =
+void () sham_death5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5415 8514 0
+    *** UNPROCESSED OPCODE OP_STATE 5415 8514 0
 };
 
-void() sham_death6;
 // sham_death6
 // function begins at statement 13939
 // OP_STATE	5417	8515	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death6 =
+void () sham_death6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5417 8515 0
+    *** UNPROCESSED OPCODE OP_STATE 5417 8515 0
 };
 
-void() sham_death7;
 // sham_death7
 // function begins at statement 13941
 // OP_STATE	5419	8516	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death7 =
+void () sham_death7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5419 8516 0
+    *** UNPROCESSED OPCODE OP_STATE 5419 8516 0
 };
 
-void() sham_death8;
 // sham_death8
 // function begins at statement 13943
 // OP_STATE	1423	8517	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death8 =
+void () sham_death8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1423 8517 0
+    *** UNPROCESSED OPCODE OP_STATE 1423 8517 0
 };
 
-void() sham_death9;
 // sham_death9
 // function begins at statement 13945
 // OP_STATE	5422	8518	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death9 =
+void () sham_death9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5422 8518 0
+    *** UNPROCESSED OPCODE OP_STATE 5422 8518 0
 };
 
-void() sham_death10;
 // sham_death10
 // function begins at statement 13947
 // OP_STATE	5424	8519	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death10 =
+void () sham_death10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5424 8519 0
+    *** UNPROCESSED OPCODE OP_STATE 5424 8519 0
 };
 
-void() sham_death11;
 // sham_death11
 // function begins at statement 13949
 // OP_STATE	5426	8519	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_death11 =
+void () sham_death11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5426 8519 0
+    *** UNPROCESSED OPCODE OP_STATE 5426 8519 0
 };
 
-void() sham_die;
 // sham_die
 // function begins at statement 13951
 // OP_LOAD_F	28	152	8521
@@ -1670,7 +1567,7 @@ void() sham_die;
 // OP_CALL5	453	0	0
 // OP_CALL0	8508	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () sham_die =
+void () sham_die =
 {
     
     if(self.health < -60.000)
@@ -1680,15 +1577,13 @@ void() sham_die;
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_VOICE, "shambler/sdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     sham_death1();
 };
 
-string IMMEDIATE = "shambler/sdeath.wav";
-void() monster_shambler;
 // monster_shambler
 // function begins at statement 13985
 // OP_IFNOT	35	4	0
@@ -1750,13 +1645,13 @@ void() monster_shambler;
 // OP_STOREP_FNC	8496	8541	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () monster_shambler =
+void () monster_shambler =
 {
     
     if(deathmatch)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     precache_model("progs/shambler.mdl");

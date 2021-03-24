@@ -1,18 +1,17 @@
-void() SUB_CalcMove;
-void() SUB_CalcMoveEnt;
-void() SUB_CalcAngleMove;
-void() SUB_CalcMoveDone;
-void() SUB_CalcAngleMoveDone;
-void() SUB_Null;
-void() SUB_UseTargets;
-void() SUB_Remove;
-void() T_Damage;
-void() T_Heal;
-void() CanDamage;
+void (vector tdest, float tspeed, void() func) SUB_CalcMove;
+void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt;
+void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove;
+void () SUB_CalcMoveDone;
+void () SUB_CalcAngleMoveDone;
+void () SUB_UseTargets;
+void () SUB_Remove;
+void (entity targ, entity inflictor, entity attacker, float damage) T_Damage;
+float (entity e, float healamount, float ignore) T_Heal;
+float (entity targ, entity inflictor) CanDamage;
 // SUB_Null
 // function begins at statement 1
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_Null =
+void () SUB_Null =
 {
 };
 
@@ -21,12 +20,11 @@ void() CanDamage;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_Remove =
+void () SUB_Remove =
 {
     remove(self);
 };
 
-void() SetMovedir;
 // SetMovedir
 // function begins at statement 5
 // OP_LOAD_V	28	117	524
@@ -49,7 +47,7 @@ void() SetMovedir;
 // OP_ADDRESS	28	117	556
 // OP_STOREP_V	286	556	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SetMovedir =
+void () SetMovedir =
 {
     if(self.angles == '0.000 -1.000 0.000')
     {
@@ -72,10 +70,6 @@ void() SetMovedir;
     self.angles = VEC_ORIGIN;
 };
 
-/* TYPE: EV_POINTER */ ;
-/* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */ ;
-void() InitTrigger;
 // InitTrigger
 // function begins at statement 25
 // OP_LOAD_V	28	117	560
@@ -95,7 +89,7 @@ void() InitTrigger;
 // OP_ADDRESS	28	130	568
 // OP_STOREP_S	569	568	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () InitTrigger =
+void () InitTrigger =
 {
     
     if(self.angles != VEC_ORIGIN)
@@ -110,7 +104,6 @@ void() InitTrigger;
     self.model = "";
 };
 
-string IMMEDIATE = "";
 // SUB_CalcMoveEnt
 // function begins at statement 42
 // OP_STORE_ENT	28	576	0
@@ -121,7 +114,7 @@ string IMMEDIATE = "";
 // OP_CALL3	512	0	0
 // OP_STORE_ENT	576	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
+void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
 {
     local entity stemp;
     stemp = self;
@@ -130,7 +123,6 @@ string IMMEDIATE = "";
     self = stemp;
 };
 
-entity stemp;
 // SUB_CalcMove
 // function begins at statement 50
 // OP_NOT_F	580	0	587
@@ -179,7 +171,7 @@ entity stemp;
 // OP_MUL_VF	582	625	626
 // OP_STOREP_V	626	622	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector tdest, float tspeed, void() func) SUB_CalcMove =
+void (vector tdest, float tspeed, void() func) SUB_CalcMove =
 {
     local vector vdestdelta;
     local float len;
@@ -198,7 +190,7 @@ entity stemp;
     {
         self.velocity = VEC_ORIGIN;
         self.nextthink = self.ltime + 0.100;
-        return; /* TODO retvalue? */
+        return;
     }
     
     vdestdelta = tdest - self.origin;
@@ -209,14 +201,13 @@ entity stemp;
     {
         self.velocity = VEC_ORIGIN;
         self.nextthink = self.ltime + 0.100;
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.nextthink = self.ltime + traveltime;
     self.velocity = vdestdelta * (AS_STRAIGHT / traveltime);
 };
 
-vector ;
 // SUB_CalcMoveDone
 // function begins at statement 96
 // OP_LOAD_V	28	423	629
@@ -232,7 +223,7 @@ vector ;
 // OP_LOAD_FNC	28	422	637
 // OP_CALL0	637	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_CalcMoveDone =
+void () SUB_CalcMoveDone =
 {
     setorigin(self, self.finaldest);
     self.velocity = VEC_ORIGIN;
@@ -240,13 +231,11 @@ vector ;
     
     if(self.think1)
     {
-        func000000();
+        self.think1();
     }
     
 };
 
-void() ;
-void() SUB_CalcAngleMoveEnt;
 // SUB_CalcAngleMoveEnt
 // function begins at statement 109
 // OP_STORE_ENT	28	645	0
@@ -257,7 +246,7 @@ void() SUB_CalcAngleMoveEnt;
 // OP_CALL3	514	0	0
 // OP_STORE_ENT	645	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMoveEnt =
+void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMoveEnt =
 {
     local entity stemp;
     stemp = self;
@@ -266,7 +255,6 @@ void() SUB_CalcAngleMoveEnt;
     self = stemp;
 };
 
-entity stemp;
 // SUB_CalcAngleMove
 // function begins at statement 117
 // OP_NOT_F	649	0	656
@@ -296,7 +284,7 @@ entity stemp;
 // OP_ADDRESS	28	148	678
 // OP_STOREP_FNC	516	678	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
+void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
 {
     local vector destdelta;
     local float len;
@@ -317,7 +305,6 @@ entity stemp;
     self.think = SUB_CalcAngleMoveDone;
 };
 
-/* TYPE: EV_POINTER */ ;
 // SUB_CalcAngleMoveDone
 // function begins at statement 144
 // OP_ADDRESS	28	117	679
@@ -332,7 +319,7 @@ entity stemp;
 // OP_LOAD_FNC	28	422	690
 // OP_CALL0	690	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_CalcAngleMoveDone =
+void () SUB_CalcAngleMoveDone =
 {
     self.angles = self.finalangle;
     self.avelocity = VEC_ORIGIN;
@@ -340,13 +327,11 @@ entity stemp;
     
     if(self.think1)
     {
-        func000000();
+        self.think1();
     }
     
 };
 
-void() ;
-void() DelayThink;
 // DelayThink
 // function begins at statement 156
 // OP_LOAD_ENT	28	181	692
@@ -355,14 +340,13 @@ void() DelayThink;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () DelayThink =
+void () DelayThink =
 {
     activator = self.enemy;
     SUB_UseTargets();
     remove(self);
 };
 
-entity ;
 // SUB_UseTargets
 // function begins at statement 162
 // OP_LOAD_F	28	414	697
@@ -452,7 +436,7 @@ entity ;
 // OP_STORE_ENT	696	346	0
 // OP_IF	368	-23	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SUB_UseTargets =
+void () SUB_UseTargets =
 {
     local entity t;
     local entity stemp;
@@ -469,7 +453,7 @@ entity ;
         t.message = self.message;
         t.killtarget = self.killtarget;
         t.target = self.target;
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -494,7 +478,7 @@ entity ;
             
             if(!t)
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             remove(t);
@@ -512,7 +496,7 @@ entity ;
             
             if(!t)
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             stemp = self;
@@ -525,7 +509,7 @@ entity ;
                 
                 if(self.use)
                 {
-                    func000000();
+                    self.use();
                 }
                 
             }
@@ -538,8 +522,6 @@ entity ;
     
 };
 
-void() ;
-void() SUB_AttackFinished;
 // SUB_AttackFinished
 // function begins at statement 249
 // OP_ADDRESS	28	421	733
@@ -550,7 +532,7 @@ void() SUB_AttackFinished;
 // OP_ADD_F	31	732	736
 // OP_STOREP_F	736	735	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float normal) SUB_AttackFinished =
+void (float normal) SUB_AttackFinished =
 {
     self.cnt = MSG_BROADCAST;
     
@@ -561,9 +543,7 @@ void() SUB_AttackFinished;
     
 };
 
-float ;
-void() visible;
-void() SUB_CheckRefire;
+float (entity targ) visible;
 // SUB_CheckRefire
 // function begins at statement 257
 // OP_NE_F	349	370	740
@@ -584,24 +564,24 @@ void() SUB_CheckRefire;
 // OP_ADDRESS	28	148	746
 // OP_STOREP_FNC	739	746	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (void() thinkst) SUB_CheckRefire =
+void (void() thinkst) SUB_CheckRefire =
 {
     
     if(skill != AS_MELEE)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.cnt == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(!visible(self.enemy))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.cnt = AS_STRAIGHT;

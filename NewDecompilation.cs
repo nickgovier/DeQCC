@@ -11,8 +11,6 @@ namespace DeQcc
     partial class Statement
     {
         public GotoType gotoType;   // Just used for GOTOs to properly process the end of IFNOT blocks
-
-        public int BelongsToFunction;
     }
 
     partial class Function
@@ -88,7 +86,8 @@ namespace DeQcc
 
         public List<int> writtenBy = new List<int>();   // statements on which this global is wrtten to
         public List<int> readBy = new List<int>();      // statements on which this global is read by
-        public bool IsSingleFunction;    // is this global only ever accessed from a single function?
+
+        public Types? TypePointedTo;    // if this global is a pointer, this has the type of the thing it is pointing to
 
         #endregion Public Variables
 
@@ -203,7 +202,22 @@ namespace DeQcc
         {
             get
             {
-                return functions[(int)IntVal].name;
+                if (IntVal > 0)
+                {
+                    return functions[(int)IntVal].name;
+                }
+                else
+                {
+                    return ValueSource;
+                }
+            }
+        }
+
+        public string? FunctionDeclaration  // If this global is an offset to a function
+        {
+            get
+            {
+                return functions[(int)IntVal].declaration;
             }
         }
 
@@ -530,6 +544,8 @@ namespace DeQcc
                     else { nextGlobal++; }
                 }
 
+                Types returnType = Types.ev_void;
+
                 // Loop through the statements of this function
                 int statementIndex = f.first_statement;
                 while(statements[statementIndex].Opcode != Opcodes.OP_DONE)
@@ -552,75 +568,6 @@ namespace DeQcc
                     Global b = GetGlobal(s.b);
                     Global c = GetGlobal(s.c);
 
-                    // Process any new globals
-                    if(s.a >= nextGlobal)
-                    {
-                        if(a.Kind == GlobalKind.Globaldef)
-                        {
-                            a.Kind = GlobalKind.Immediate;
-                        }
-                        else
-                        {
-                            a.Kind = GlobalKind.Anonymous;
-                        }
-                        if(a.Type == Types.ev_vector)
-                        {
-                            Global y = GetGlobal(s.a + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = a.Name + "_y";
-                            y.Kind = a.Kind;
-                            Global z = GetGlobal(s.a + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = a.Name + "_z";
-                            z.Kind = a.Kind;
-                        }
-                    }
-                    if(s.b >= nextGlobal)
-                    {
-                        if (b.Kind == GlobalKind.Globaldef)
-                        {
-                            b.Kind = GlobalKind.Immediate;
-                        }
-                        else
-                        {
-                            b.Kind = GlobalKind.Anonymous;
-                        }
-                        if (b.Type == Types.ev_vector)
-                        {
-                            Global y = GetGlobal(s.b + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = b.Name + "_y";
-                            y.Kind = b.Kind;
-                            Global z = GetGlobal(s.b + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = b.Name + "_z";
-                            z.Kind = b.Kind;
-                        }
-                    }
-                    if(s.c >= nextGlobal)
-                    {
-                        if (c.Kind == GlobalKind.Globaldef)
-                        {
-                            c.Kind = GlobalKind.Immediate;
-                        }
-                        else
-                        {
-                            c.Kind = GlobalKind.Anonymous;
-                        }
-                        if (c.Type == Types.ev_vector)
-                        {
-                            Global y = GetGlobal(s.c + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = c.Name + "_y";
-                            y.Kind = c.Kind;
-                            Global z = GetGlobal(s.c + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = c.Name + "_z";
-                            z.Kind = c.Kind;
-                        }
-                    }
-                    nextGlobal = Math.Max(nextGlobal, Math.Max(s.a + 1, Math.Max(s.b + 1, s.c + 1)));
-
                     switch (s.Opcode)
                     {
                         case Opcodes.OP_IF: case Opcodes.OP_IFNOT: case Opcodes.OP_CALL0:
@@ -628,7 +575,7 @@ namespace DeQcc
                         case Opcodes.OP_CALL5: case Opcodes.OP_CALL6: case Opcodes.OP_CALL7: case Opcodes.OP_CALL8:
                             a.readBy.Add(statementIndex);
                             break;
-                        case Opcodes.OP_DONE: case Opcodes.OP_RETURN:
+                        case Opcodes.OP_RETURN:
                             if (a != null)
                             {
                                 a.readBy.Add(statementIndex);
@@ -656,101 +603,89 @@ namespace DeQcc
                         case Opcodes.OP_STOREP_F: case Opcodes.OP_STOREP_ENT: case Opcodes.OP_STOREP_FLD: case Opcodes.OP_STOREP_S: case Opcodes.OP_STOREP_FNC: case Opcodes.OP_STOREP_V:
                             a.readBy.Add(statementIndex); b.writtenBy.Add(statementIndex);
                             if (b.Type == null) { b.Type = pr_opcodes[s.op].type_b; }
+                            if(b.Type == Types.ev_pointer) { b.TypePointedTo = a.Type; }
                             break;
-                        case Opcodes.OP_GOTO:
+                        case Opcodes.OP_DONE: case Opcodes.OP_GOTO:
                             break;
                         default:
                             throw new Exception("Unknown Opcode in Preprocess()");
                     }
 
+                    // Process any new globals
+                    if (s.a >= nextGlobal)
+                    {
+                        if (a.Kind == GlobalKind.Globaldef) { a.Kind = GlobalKind.Immediate; }
+                        else { a.Kind = GlobalKind.Anonymous; }
+                        if (a.Type == Types.ev_vector || (a.Type == Types.ev_pointer && a.TypePointedTo == Types.ev_vector))
+                        {
+                            Global y = GetGlobal(s.a + 1);
+                            y.Type = Types.ev_float;
+                            y.Name = a.Name + "_y";
+                            y.Kind = a.Kind;
+                            Global z = GetGlobal(s.a + 2);
+                            z.Type = Types.ev_float;
+                            z.Name = a.Name + "_z";
+                            z.Kind = a.Kind;
+                            nextGlobal += 3;
+                        }
+                        else { nextGlobal++; }
+                    }
+                    if (s.b >= nextGlobal)
+                    {
+                        if (b.Kind == GlobalKind.Globaldef) { b.Kind = GlobalKind.Immediate; }
+                        else { b.Kind = GlobalKind.Anonymous; }
+                        if (b.Type == Types.ev_vector || (b.Type == Types.ev_pointer && b.TypePointedTo == Types.ev_vector))
+                        {
+                            Global y = GetGlobal(s.b + 1);
+                            y.Type = Types.ev_float;
+                            y.Name = b.Name + "_y";
+                            y.Kind = b.Kind;
+                            Global z = GetGlobal(s.b + 2);
+                            z.Type = Types.ev_float;
+                            z.Name = b.Name + "_z";
+                            z.Kind = b.Kind;
+                            nextGlobal += 3;
+                        }
+                        else { nextGlobal++; }
+                    }
+                    if (s.c >= nextGlobal)
+                    {
+                        if (c.Kind == GlobalKind.Globaldef) { c.Kind = GlobalKind.Immediate; }
+                        else { c.Kind = GlobalKind.Anonymous; }
+                        if (c.Type == Types.ev_vector || (c.Type == Types.ev_pointer && c.TypePointedTo == Types.ev_vector))
+                        {
+                            Global y = GetGlobal(s.c + 1);
+                            y.Type = Types.ev_float;
+                            y.Name = c.Name + "_y";
+                            y.Kind = c.Kind;
+                            Global z = GetGlobal(s.c + 2);
+                            z.Type = Types.ev_float;
+                            z.Name = c.Name + "_z";
+                            z.Kind = c.Kind;
+                            nextGlobal += 3;
+                        }
+                        else { nextGlobal++; }
+                    }
+
+                    // Check for return and set the type if found
+                    if (s.Opcode == Opcodes.OP_RETURN)
+                    {
+                        if (a != null && a.Type != null)
+                        {
+                            returnType = (Types)a.Type;
+                        }
+                        else
+                        {
+                            returnType = Types.ev_void;
+                        }
+                    }
+
                     statementIndex++;
                 }
+
+                // Set the return type
+                f.declaration = f.declaration.Replace("%%RETURNTYPE%%", type_names[(int)returnType]);
             }
-
-
-            //#region Link statements to functions
-
-            //// for each function
-            //for(int i = 0; i < functions.Count; i++)
-            //{
-            //    // skip builtins
-            //    if(functions[i].IsBuiltin)
-            //    {
-            //        continue;
-            //    }
-
-            //    // Get next valid (non-builtin) function
-            //    Function nextFunc = null;   // null means there isn't one
-            //    if (i < functions.Count - 1)    // otherwise it's the final function, leave nextFunc null
-            //    {
-            //        for (int j = i + 1; j < functions.Count; j++)
-            //        {
-            //            if(!functions[j].IsBuiltin)
-            //            {
-            //                nextFunc = functions[j];
-            //                break;
-            //            }
-            //        }
-            //    }
-
-            //    // Get nextFunc first statement
-            //    int functionEndingStatement = statements.Count - 1;
-            //    if(nextFunc != null)
-            //    {
-            //        functionEndingStatement = nextFunc.first_statement - 1;
-            //    }
-
-            //    // Set all the statements
-            //    for(int j = functions[i].first_statement; j <= functionEndingStatement; j++)
-            //    {
-            //        statements[j].BelongsToFunction = i;
-            //    }
-            //}
-
-            //#endregion
-
-
-            // Set IsSingleFunction
-            //foreach(Global g in globalList)
-            //{
-            //    g.IsSingleFunction = false;
-
-            //    int minStatement = statements.Count - 1;    // set min to highest
-            //    int maxStatement = 0;                       // set max to lowest
-            //    foreach(int readStatement in g.readBy)
-            //    {
-            //        if(readStatement < minStatement) { minStatement = readStatement; }
-            //        if(readStatement > maxStatement) { maxStatement = readStatement; }
-            //    }
-            //    foreach (int writeStatement in g.writtenBy)
-            //    {
-            //        if (writeStatement < minStatement) { minStatement = writeStatement; }
-            //        if (writeStatement > maxStatement) { maxStatement = writeStatement; }
-            //    }
-            //    if (statements[minStatement].BelongsToFunction == statements[maxStatement].BelongsToFunction)
-            //    {
-            //        g.IsSingleFunction = true;
-            //    }
-            //}
-
-            //// Set Anonymous and Immediate
-            //foreach(Global g in globalList)
-            //{
-            //    if (g.Kind == GlobalKind.Unknown)
-            //    {
-            //        // Anonymous globals are written in a single function only
-            //        if(g.IsSingleFunction && g.IsWritten)
-            //        {
-            //            g.Kind = GlobalKind.Anonymous;
-            //        }
-
-            //        // Immediates are never written
-            //        if (!g.IsWritten)
-            //        {
-            //            g.Kind = GlobalKind.Immediate;
-            //        }
-            //    }
-            //}
         }
 
         #region Print
@@ -806,10 +741,6 @@ namespace DeQcc
             }
 
             progsSrcOutputFile.Close();
-
-
-            qcOutputFile = new StreamWriter(folder + "newdecompilation.qc", false);    // overwrite
-            qcOutputFile.AutoFlush = true;
         }
 
         Global GetGlobal(int offset)
@@ -827,20 +758,31 @@ namespace DeQcc
         void DecompileFunction(Function f)
         {
             int sIndex;
+            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " nextGlobal:" + nextGlobal);
 
             // Process any unprocessed globals following the previous function
             while (nextGlobal < f.parm_start)
             {
                 Global g = GetGlobal(nextGlobal);
-                if(g.Kind == GlobalKind.Function && g.FunctionIsBuiltin)
+                if (g.Kind == GlobalKind.Function)
                 {
-                    nextGlobal++;
-                    continue;   // It will be printed lower down
+                    if (g.FunctionName == f.name)   // if it's this function
+                    {
+                        nextGlobal++;
+                        continue;   // do nothing, the definition will be output below
+                    }
+                    else
+                    {
+                        Print(g.FunctionDeclaration);
+                    }
                 }
-                Print(g.TypeCodeOutput + " " + g.Name);
-                if(g.IsConstant())  // Incredibly tiny positive FloatVals are actually IntVals (indices), so exclude these too
+                else
                 {
-                    Print(" = " + g.ImmediateValue);
+                    Print(g.TypeCodeOutput + " " + g.Name);
+                    if (g.IsConstant())  // Incredibly tiny positive FloatVals are actually IntVals (indices), so exclude these too
+                    {
+                        Print(" = " + g.ImmediateValue);
+                    }
                 }
                 PrintLine(";");
 
@@ -894,6 +836,8 @@ namespace DeQcc
                 PrintLine(l);
             }
 
+            nextGlobal += f.locals;
+
             // Decompile the function statements
             sIndex = f.first_statement;
             while (true)
@@ -942,7 +886,39 @@ namespace DeQcc
             Global b = GetGlobal(s.b);
             Global c = GetGlobal(s.c);
 
-            nextGlobal = Math.Max(nextGlobal, Math.Max(s.a, Math.Max(s.b, s.c)));
+            if (s.a >= nextGlobal)
+            {
+                if (a.Type == Types.ev_vector || (a.Type == Types.ev_pointer && a.TypePointedTo == Types.ev_vector))
+                {
+                    nextGlobal += 3;
+                }
+                else
+                {
+                    nextGlobal++;
+                }
+            }
+            if (s.b >= nextGlobal)
+            {
+                if (b.Type == Types.ev_vector || (b.Type == Types.ev_pointer && b.TypePointedTo == Types.ev_vector))
+                {
+                    nextGlobal += 3;
+                }
+                else
+                {
+                    nextGlobal++;
+                }
+            }
+            if (s.c >= nextGlobal)
+            {
+                if (c.Type == Types.ev_vector || (c.Type == Types.ev_pointer && c.TypePointedTo == Types.ev_vector))
+                {
+                    nextGlobal += 3;
+                }
+                else
+                {
+                    nextGlobal++;
+                }
+            }
 
             // Process the opcode
             switch(s.Opcode)
@@ -951,10 +927,11 @@ namespace DeQcc
                     // end of function, do nothing
                     break;
                 case Opcodes.OP_RETURN:
-                    PrintLine("return; /* TODO retvalue? */");
-                    return;
+                    if (a != null) { PrintLine("return " + a.ValueToAssign + ";"); }
+                    else { PrintLine("return;"); }
+                    break;
                 case Opcodes.OP_STATE:
-                    PrintLine("// *** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
+                    PrintLine("*** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
                     break;
                 case Opcodes.OP_MUL_F: case Opcodes.OP_MUL_V: case Opcodes.OP_MUL_FV: case Opcodes.OP_MUL_VF: case Opcodes.OP_DIV_F:
                 case Opcodes.OP_ADD_F: case Opcodes.OP_ADD_V: case Opcodes.OP_SUB_F: case Opcodes.OP_SUB_V:
@@ -964,6 +941,7 @@ namespace DeQcc
                 case Opcodes.OP_AND: case Opcodes.OP_OR: case Opcodes.OP_BITAND: case Opcodes.OP_BITOR:
                     // c = a <operator> b
                     string oper = pr_opcodes[s.op].name;
+
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
                         c.ValueSource = CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign);

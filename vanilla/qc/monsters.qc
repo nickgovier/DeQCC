@@ -1,5 +1,3 @@
-float IMMEDIATE = 49.000;
-void() monster_use;
 // monster_use
 // function begins at statement 8399
 // OP_LOAD_ENT	28	181	5460
@@ -29,36 +27,36 @@ void() monster_use;
 // OP_ADDRESS	28	148	5472
 // OP_STOREP_FNC	1293	5472	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () monster_use =
+void () monster_use =
 {
     
     if(self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(activator.items & IT_INVISIBILITY)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(activator.flags & FL_NOTARGET)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(activator.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.enemy = activator;
@@ -66,7 +64,6 @@ void() monster_use;
     self.think = FoundTarget;
 };
 
-/* TYPE: EV_POINTER */ ;
 // monster_death_use
 // function begins at statement 8426
 // OP_LOAD_F	28	182	5476
@@ -91,7 +88,7 @@ void() monster_use;
 // OP_STORE_ENT	5488	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () monster_death_use =
+void () monster_death_use =
 {
     local entity ent;
     local entity otemp;
@@ -111,15 +108,13 @@ void() monster_use;
     
     if(!self.target)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     activator = self.enemy;
     SUB_UseTargets();
 };
 
-entity ;
-void() walkmonster_start_go;
 // walkmonster_start_go
 // function begins at statement 8448
 // OP_ADDRESS	28	108	5492
@@ -214,7 +209,7 @@ void() walkmonster_start_go;
 // OP_ADD_F	5554	5555	5556
 // OP_STOREP_F	5556	5553	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () walkmonster_start_go =
+void () walkmonster_start_go =
 {
     local string stemp;
     local entity etemp;
@@ -254,26 +249,24 @@ void() walkmonster_start_go;
         
         if(self.movetarget.classname == "path_corner")
         {
-            func000000();
+            self.th_walk();
         }
         else        
         {
             self.pausetime = 100000000.000;
         }
         
-        func000000();
+        self.th_stand();
     }
     else    
     {
         self.pausetime = 100000000.000;
-        func000000();
+        self.th_stand();
     }
     
     self.nextthink = self.nextthink + (random() * IMMEDIATE);
 };
 
-float ;
-void() walkmonster_start;
 // walkmonster_start
 // function begins at statement 8540
 // OP_ADDRESS	28	150	5558
@@ -287,15 +280,13 @@ void() walkmonster_start;
 // OP_ADD_F	40	2256	5563
 // OP_STORE_F	5563	40	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () walkmonster_start =
+void () walkmonster_start =
 {
     self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = walkmonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
 
-float ;
-void() flymonster_start_go;
 // flymonster_start_go
 // function begins at statement 8551
 // OP_ADDRESS	28	163	5565
@@ -375,7 +366,7 @@ void() flymonster_start_go;
 // OP_LOAD_FNC	28	356	5605
 // OP_CALL0	5605	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () flymonster_start_go =
+void () flymonster_start_go =
 {
     self.takedamage = DAMAGE_AIM;
     self.ideal_yaw = self.angles * '0.000 1.000 0.000';
@@ -411,25 +402,23 @@ void() flymonster_start_go;
         
         if(self.movetarget.classname == "path_corner")
         {
-            func000000();
+            self.th_walk();
         }
         else        
         {
             self.pausetime = 100000000.000;
         }
         
-        func000000();
+        self.th_stand();
     }
     else    
     {
         self.pausetime = 100000000.000;
-        func000000();
+        self.th_stand();
     }
     
 };
 
-void() ;
-void() flymonster_start;
 // flymonster_start
 // function begins at statement 8628
 // OP_ADDRESS	28	150	5607
@@ -443,15 +432,13 @@ void() flymonster_start;
 // OP_ADD_F	40	2256	5612
 // OP_STORE_F	5612	40	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () flymonster_start =
+void () flymonster_start =
 {
     self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = flymonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
 
-float ;
-void() swimmonster_start_go;
 // swimmonster_start_go
 // function begins at statement 8639
 // OP_IFNOT	35	4	0
@@ -526,13 +513,13 @@ void() swimmonster_start_go;
 // OP_ADD_F	5660	5661	5662
 // OP_STOREP_F	5662	5659	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () swimmonster_start_go =
+void () swimmonster_start_go =
 {
     
     if(deathmatch)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.takedamage = DAMAGE_AIM;
@@ -560,19 +547,17 @@ void() swimmonster_start_go;
         }
         
         self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
-        func000000();
+        self.th_walk();
     }
     else    
     {
         self.pausetime = 100000000.000;
-        func000000();
+        self.th_stand();
     }
     
     self.nextthink = self.nextthink + (random() * IMMEDIATE);
 };
 
-float ;
-void() swimmonster_start;
 // swimmonster_start
 // function begins at statement 8711
 // OP_ADDRESS	28	150	5664
@@ -586,7 +571,7 @@ void() swimmonster_start;
 // OP_ADD_F	40	2256	5669
 // OP_STORE_F	5669	40	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () swimmonster_start =
+void () swimmonster_start =
 {
     self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = swimmonster_start_go;

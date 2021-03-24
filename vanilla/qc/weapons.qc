@@ -1,8 +1,6 @@
-/* TYPE: EV_POINTER */ ;
-void() player_run;
-void() SpawnBlood;
-void() SuperDamageSound;
-void() W_Precache;
+void () player_run;
+void (vector org, vector vel, float damage) SpawnBlood;
+void () SuperDamageSound;
 // W_Precache
 // function begins at statement 3409
 // OP_STORE_V	2616	4	0
@@ -30,7 +28,7 @@ void() W_Precache;
 // OP_STORE_V	2627	4	0
 // OP_CALL1	464	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_Precache =
+void () W_Precache =
 {
     precache_sound("weapons/r_exp3.wav");
     precache_sound("weapons/rocket1i.wav");
@@ -46,8 +44,6 @@ void() W_Precache;
     precache_sound("weapons/shotgn2.wav");
 };
 
-string IMMEDIATE = "weapons/shotgn2.wav";
-void() crandom;
 // crandom
 // function begins at statement 3434
 // OP_CALL0	452	0	0
@@ -55,13 +51,11 @@ void() crandom;
 // OP_MUL_F	2257	2629	2630
 // OP_RETURN	2630	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () crandom =
+float () crandom =
 {
-    return; /* TODO retvalue? */
+    return WEAPON_ROCKET * (random() - IMMEDIATE);
 };
 
-float ;
-void() W_FireAxe;
 // W_FireAxe
 // function begins at statement 3439
 // OP_LOAD_V	28	175	2638
@@ -119,7 +113,7 @@ void() W_FireAxe;
 // OP_STORE_V	2637	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireAxe =
+void () W_FireAxe =
 {
     local vector source;
     local vector org;
@@ -129,7 +123,7 @@ void() W_FireAxe;
     
     if(trace_fraction == WEAPON_SHOTGUN)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     org = trace_endpos - (v_forward * WEAPON_SPIKES);
@@ -151,8 +145,6 @@ void() W_FireAxe;
     
 };
 
-string IMMEDIATE = "player/axhit2.wav";
-void() wall_velocity;
 // wall_velocity
 // function begins at statement 3494
 // OP_LOAD_V	28	113	2670
@@ -177,18 +169,16 @@ void() wall_velocity;
 // OP_STORE_V	2693	2667	0
 // OP_RETURN	2667	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wall_velocity =
+vector () wall_velocity =
 {
     local vector vel;
     vel = normalize(self.velocity);
     vel = normalize((vel + (v_up * (random() - IMMEDIATE))) + (v_right * (random() - IMMEDIATE)));
     vel = vel + (WEAPON_ROCKET * trace_plane_normal);
     vel = vel * 200.000;
-    return; /* TODO retvalue? */
+    return vel;
 };
 
-vector ;
-void() SpawnMeatSpray;
 // SpawnMeatSpray
 // function begins at statement 3516
 // OP_CALL0	459	0	0
@@ -229,7 +219,7 @@ void() SpawnMeatSpray;
 // OP_STORE_V	2697	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, vector vel) SpawnMeatSpray =
+void (vector org, vector vel) SpawnMeatSpray =
 {
     local entity missile;
     local entity mpuff;
@@ -249,7 +239,6 @@ void() SpawnMeatSpray;
     setorigin(missile, org);
 };
 
-string IMMEDIATE = "progs/zom_gib.mdl";
 // SpawnBlood
 // function begins at statement 3554
 // OP_MUL_VF	2732	603	2736
@@ -260,13 +249,13 @@ string IMMEDIATE = "progs/zom_gib.mdl";
 // OP_STORE_V	2740	13	0
 // OP_CALL4	490	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, vector vel, float damage) SpawnBlood =
+void (vector org, vector vel, float damage) SpawnBlood =
 {
     particle(org, vel * 0.100, IMMEDIATE, damage * WEAPON_ROCKET);
 };
 
+float IMMEDIATE = 73.000;
 float ;
-void() spawn_touchblood;
 // spawn_touchblood
 // function begins at statement 3562
 // OP_CALL0	2666	0	0
@@ -280,15 +269,13 @@ void() spawn_touchblood;
 // OP_STORE_V	2742	10	0
 // OP_CALL3	2613	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float damage) spawn_touchblood =
+void (float damage) spawn_touchblood =
 {
     local vector vel;
     vel = wall_velocity() * 0.200;
     SpawnBlood(self.origin + (vel * 0.010), vel, damage);
 };
 
-vector ;
-void() SpawnChunk;
 // SpawnChunk
 // function begins at statement 3573
 // OP_MUL_VF	2763	2766	2767
@@ -298,27 +285,24 @@ void() SpawnChunk;
 // OP_STORE_V	318	13	0
 // OP_CALL4	490	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, vector vel) SpawnChunk =
+void (vector org, vector vel) SpawnChunk =
 {
     particle(org, vel * 0.020, MSG_BROADCAST, TE_LAVASPLASH);
 };
 
-vector ;
 entity multi_ent;
 float multi_damage;
-void() ClearMultiDamage;
 // ClearMultiDamage
 // function begins at statement 3580
 // OP_STORE_ENT	30	2770	0
 // OP_STORE_F	337	2771	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ClearMultiDamage =
+void () ClearMultiDamage =
 {
     multi_ent = world;
     multi_damage = MSG_BROADCAST;
 };
 
-void() ApplyMultiDamage;
 // ApplyMultiDamage
 // function begins at statement 3583
 // OP_NOT_ENT	2770	0	2774
@@ -330,19 +314,17 @@ void() ApplyMultiDamage;
 // OP_STORE_V	2771	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ApplyMultiDamage =
+void () ApplyMultiDamage =
 {
     
     if(!multi_ent)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     T_Damage(multi_ent, self, self, multi_damage);
 };
 
-float ;
-void() AddMultiDamage;
 // AddMultiDamage
 // function begins at statement 3592
 // OP_NOT_ENT	2776	0	2778
@@ -357,12 +339,12 @@ void() AddMultiDamage;
 // OP_ADD_F	2771	2777	2780
 // OP_STORE_F	2780	2771	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity hit, float damage) AddMultiDamage =
+void (entity hit, float damage) AddMultiDamage =
 {
     
     if(!hit)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(hit != multi_ent)
@@ -378,8 +360,6 @@ void() AddMultiDamage;
     
 };
 
-float ;
-void() TraceAttack;
 // TraceAttack
 // function begins at statement 3604
 // OP_CALL0	2628	0	0
@@ -426,7 +406,7 @@ void() TraceAttack;
 // OP_STORE_V	2791	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float damage, vector dir) TraceAttack =
+void (float damage, vector dir) TraceAttack =
 {
     local vector vel;
     local vector org;
@@ -452,8 +432,6 @@ void() TraceAttack;
     
 };
 
-vector ;
-void() FireBullets;
 // FireBullets
 // function begins at statement 3648
 // OP_LOAD_V	28	175	2837
@@ -497,7 +475,7 @@ void() FireBullets;
 // OP_GOTO	-25	0	0
 // OP_CALL0	2773	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float shotcount, vector dir, vector spread) FireBullets =
+void (float shotcount, vector dir, vector spread) FireBullets =
 {
     local vector direction;
     local vector src;
@@ -522,8 +500,6 @@ void() FireBullets;
     ApplyMultiDamage();
 };
 
-float ;
-void() W_FireShotgun;
 // W_FireShotgun
 // function begins at statement 3689
 // OP_STORE_V	28	4	0
@@ -549,7 +525,7 @@ void() W_FireShotgun;
 // OP_STORE_V	2887	10	0
 // OP_CALL3	2823	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireShotgun =
+void () W_FireShotgun =
 {
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -560,8 +536,6 @@ void() W_FireShotgun;
     FireBullets(TE_LIGHTNING2, dir, '0.040 0.040 0.000');
 };
 
-vector IMMEDIATE = '0.040 0.040 0.000';
-void() W_FireSuperShotgun;
 // W_FireSuperShotgun
 // function begins at statement 3712
 // OP_LOAD_F	28	157	2894
@@ -592,14 +566,14 @@ void() W_FireSuperShotgun;
 // OP_STORE_V	2902	10	0
 // OP_CALL3	2823	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireSuperShotgun =
+void () W_FireSuperShotgun =
 {
     local vector dir;
     
     if(self.currentammo == WEAPON_SHOTGUN)
     {
         W_FireShotgun();
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -610,68 +584,60 @@ void() W_FireSuperShotgun;
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
 
-vector IMMEDIATE = '0.140 0.080 0.000';
-void() s_explode1;
 // s_explode1
 // function begins at statement 3740
 // OP_STATE	337	2906	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode1 =
+void () s_explode1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 2906 0
+    *** UNPROCESSED OPCODE OP_STATE 337 2906 0
 };
 
-void() s_explode2;
 // s_explode2
 // function begins at statement 3742
 // OP_STATE	2256	2907	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode2 =
+void () s_explode2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2256 2907 0
+    *** UNPROCESSED OPCODE OP_STATE 2256 2907 0
 };
 
-void() s_explode3;
 // s_explode3
 // function begins at statement 3744
 // OP_STATE	2257	2908	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode3 =
+void () s_explode3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2257 2908 0
+    *** UNPROCESSED OPCODE OP_STATE 2257 2908 0
 };
 
-void() s_explode4;
 // s_explode4
 // function begins at statement 3746
 // OP_STATE	370	2909	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode4 =
+void () s_explode4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 2909 0
+    *** UNPROCESSED OPCODE OP_STATE 370 2909 0
 };
 
-void() s_explode5;
 // s_explode5
 // function begins at statement 3748
 // OP_STATE	2258	2910	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode5 =
+void () s_explode5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2258 2910 0
+    *** UNPROCESSED OPCODE OP_STATE 2258 2910 0
 };
 
-void() s_explode6;
 // s_explode6
 // function begins at statement 3750
 // OP_STATE	313	519	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () s_explode6 =
+void () s_explode6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 519 0
+    *** UNPROCESSED OPCODE OP_STATE 313 519 0
 };
 
-void() BecomeExplosion;
 // BecomeExplosion
 // function begins at statement 3752
 // OP_ADDRESS	28	103	2912
@@ -687,7 +653,7 @@ void() BecomeExplosion;
 // OP_STOREP_F	237	2918	0
 // OP_CALL0	2905	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () BecomeExplosion =
+void () BecomeExplosion =
 {
     self.movetype = MOVETYPE_NONE;
     self.velocity = VEC_ORIGIN;
@@ -697,7 +663,6 @@ void() BecomeExplosion;
     s_explode1();
 };
 
-/* TYPE: EV_POINTER */ ;
 // T_MissileTouch
 // function begins at statement 3765
 // OP_LOAD_ENT	28	201	2920
@@ -763,20 +728,20 @@ void() BecomeExplosion;
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () T_MissileTouch =
+void () T_MissileTouch =
 {
     local float damg;
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(pointcontents(self.origin) == CONTENT_SKY)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     damg = 100.000 + (random() * 20.000);
@@ -803,8 +768,6 @@ void() BecomeExplosion;
     BecomeExplosion();
 };
 
-float ;
-void() W_FireRocket;
 // W_FireRocket
 // function begins at statement 3828
 // OP_ADDRESS	28	157	2955
@@ -870,7 +833,7 @@ void() W_FireRocket;
 // OP_STORE_V	3000	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireRocket =
+void () W_FireRocket =
 {
     local entity missile;
     local entity mpuff;
@@ -895,8 +858,6 @@ void() W_FireRocket;
     setorigin(missile, (self.origin + (v_forward * WEAPON_BIG)) + '0.000 0.000 16.000');
 };
 
-vector ;
-void() LightningDamage;
 // LightningDamage
 // function begins at statement 3891
 // OP_SUB_V	3007	3004	3017
@@ -988,7 +949,7 @@ void() LightningDamage;
 // OP_STORE_V	3011	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector p1, vector p2, entity from, float damage) LightningDamage =
+void (vector p1, vector p2, entity from, float damage) LightningDamage =
 {
     local entity e1;
     local entity e2;
@@ -1005,7 +966,7 @@ void() LightningDamage;
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -1025,7 +986,7 @@ void() LightningDamage;
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1034,14 +995,12 @@ void() LightningDamage;
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
 };
 
-float ;
-void() W_FireLightning;
 // W_FireLightning
 // function begins at statement 3980
 // OP_LOAD_F	28	161	3065
@@ -1133,7 +1092,7 @@ void() W_FireLightning;
 // OP_STORE_V	304	13	0
 // OP_CALL4	3003	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireLightning =
+void () W_FireLightning =
 {
     local vector org;
     local float cells;
@@ -1142,7 +1101,7 @@ void() W_FireLightning;
     {
         self.weapon = W_BestWeapon();
         W_SetCurrentAmmo();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -1152,7 +1111,7 @@ void() W_FireLightning;
         self.ammo_cells = MSG_BROADCAST;
         W_SetCurrentAmmo();
         T_RadiusDamage(self, self, 35.000 * cells, world);
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -1179,8 +1138,6 @@ void() W_FireLightning;
     LightningDamage(self.origin, trace_endpos + (v_forward * WEAPON_SPIKES), self, SVC_INTERMISSION);
 };
 
-vector ;
-void() GrenadeExplode;
 // GrenadeExplode
 // function begins at statement 4069
 // OP_LOAD_ENT	28	201	3106
@@ -1209,7 +1166,7 @@ void() GrenadeExplode;
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () GrenadeExplode =
+void () GrenadeExplode =
 {
     T_RadiusDamage(self, self.owner, 120.000, world);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -1220,8 +1177,6 @@ void() GrenadeExplode;
     BecomeExplosion();
 };
 
-float ;
-void() GrenadeTouch;
 // GrenadeTouch
 // function begins at statement 4095
 // OP_LOAD_ENT	28	201	3111
@@ -1245,19 +1200,19 @@ void() GrenadeTouch;
 // OP_ADDRESS	28	121	3119
 // OP_STOREP_V	286	3119	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () GrenadeTouch =
+void () GrenadeTouch =
 {
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.takedamage == DAMAGE_AIM)
     {
         GrenadeExplode();
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_WEAPON, "weapons/bounce.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -1269,10 +1224,6 @@ void() GrenadeTouch;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-/* ERROR: NULL TYPE */ ;
-/* ERROR: NULL TYPE */ ;
-void() W_FireGrenade;
 // W_FireGrenade
 // function begins at statement 4116
 // OP_ADDRESS	28	157	3125
@@ -1355,7 +1306,7 @@ void() W_FireGrenade;
 // OP_STORE_V	3201	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireGrenade =
+void () W_FireGrenade =
 {
     local entity missile;
     local entity mpuff;
@@ -1390,10 +1341,8 @@ void() W_FireGrenade;
     setorigin(missile, self.origin);
 };
 
-vector ;
-void() spike_touch;
-void() superspike_touch;
-void() launch_spike;
+void () spike_touch;
+void () superspike_touch;
 // launch_spike
 // function begins at statement 4196
 // OP_CALL0	459	0	0
@@ -1431,7 +1380,7 @@ void() launch_spike;
 // OP_MUL_VF	3210	1168	3229
 // OP_STOREP_V	3229	3226	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, vector dir) launch_spike =
+void (vector org, vector dir) launch_spike =
 {
     newmis = spawn();
     newmis.owner = self;
@@ -1448,8 +1397,6 @@ void() launch_spike;
     newmis.velocity = dir * 1000.000;
 };
 
-vector ;
-void() W_FireSuperSpikes;
 // W_FireSuperSpikes
 // function begins at statement 4231
 // OP_STORE_V	28	4	0
@@ -1488,7 +1435,7 @@ void() W_FireSuperSpikes;
 // OP_ADDRESS	28	126	3251
 // OP_STOREP_F	277	3251	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_FireSuperSpikes =
+void () W_FireSuperSpikes =
 {
     local vector dir;
     local entity old;
@@ -1504,8 +1451,6 @@ void() W_FireSuperSpikes;
     self.punchangle = CONTENT_SOLID;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() W_FireSpikes;
 // W_FireSpikes
 // function begins at statement 4267
 // OP_LOAD_V	28	175	3258
@@ -1556,7 +1501,7 @@ void() W_FireSpikes;
 // OP_ADDRESS	28	126	3287
 // OP_STOREP_F	277	3287	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float ox) W_FireSpikes =
+void (float ox) W_FireSpikes =
 {
     local vector dir;
     local entity old;
@@ -1565,7 +1510,7 @@ void() W_FireSpikes;
     if((self.ammo_nails >= WEAPON_ROCKET) && (self.weapon == IT_SUPER_NAILGUN))
     {
         W_FireSuperSpikes();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -1573,7 +1518,7 @@ void() W_FireSpikes;
     {
         self.weapon = W_BestWeapon();
         W_SetCurrentAmmo();
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -1585,7 +1530,6 @@ void() W_FireSpikes;
     self.punchangle = CONTENT_SOLID;
 };
 
-/* TYPE: EV_POINTER */ ;
 .float hit_z;
 // spike_touch
 // function begins at statement 4315
@@ -1651,26 +1595,26 @@ void() W_FireSpikes;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () spike_touch =
+void () spike_touch =
 {
     local float rand;
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.solid == SOLID_TRIGGER)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(pointcontents(self.origin) == CONTENT_SKY)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(other.takedamage)
@@ -1706,7 +1650,6 @@ void() W_FireSpikes;
     remove(self);
 };
 
-float ;
 // superspike_touch
 // function begins at statement 4377
 // OP_LOAD_ENT	28	201	3310
@@ -1757,26 +1700,26 @@ float ;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () superspike_touch =
+void () superspike_touch =
 {
     local float rand;
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.solid == SOLID_TRIGGER)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(pointcontents(self.origin) == CONTENT_SKY)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(other.takedamage)
@@ -1796,7 +1739,6 @@ float ;
     remove(self);
 };
 
-float ;
 // W_SetCurrentAmmo
 // function begins at statement 4425
 // OP_CALL0	2612	0	0
@@ -1931,7 +1873,7 @@ float ;
 // OP_ADDRESS	28	156	3410
 // OP_STOREP_F	337	3410	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_SetCurrentAmmo =
+void () W_SetCurrentAmmo =
 {
     player_run();
     self.items = self.items - (self.items & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS));
@@ -2027,7 +1969,6 @@ float ;
     
 };
 
-/* TYPE: EV_POINTER */ ;
 // W_BestWeapon
 // function begins at statement 4557
 // OP_LOAD_F	28	162	3412
@@ -2067,45 +2008,43 @@ float ;
 // OP_RETURN	254	0	0
 // OP_RETURN	253	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_BestWeapon =
+float () W_BestWeapon =
 {
     local float it;
     it = self.items;
     
     if(((self.waterlevel <= WEAPON_SHOTGUN) && (self.ammo_cells >= WEAPON_SHOTGUN)) && (it & IT_LIGHTNING))
     {
-        return; /* TODO retvalue? */
+        return IT_LIGHTNING;
     }
     
     
     if((self.ammo_nails >= WEAPON_ROCKET) && (it & IT_SUPER_NAILGUN))
     {
-        return; /* TODO retvalue? */
+        return IT_SUPER_NAILGUN;
     }
     
     
     if((self.ammo_shells >= WEAPON_ROCKET) && (it & IT_SUPER_SHOTGUN))
     {
-        return; /* TODO retvalue? */
+        return IT_SUPER_SHOTGUN;
     }
     
     
     if((self.ammo_nails >= WEAPON_SHOTGUN) && (it & IT_NAILGUN))
     {
-        return; /* TODO retvalue? */
+        return IT_NAILGUN;
     }
     
     
     if((self.ammo_shells >= WEAPON_SHOTGUN) && (it & IT_SHOTGUN))
     {
-        return; /* TODO retvalue? */
+        return IT_SHOTGUN;
     }
     
-    return; /* TODO retvalue? */
+    return IT_AXE;
 };
 
-float ;
-void() W_CheckNoAmmo;
 // W_CheckNoAmmo
 // function begins at statement 4594
 // OP_LOAD_F	28	157	3437
@@ -2122,35 +2061,33 @@ void() W_CheckNoAmmo;
 // OP_CALL0	1800	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_CheckNoAmmo =
+float () W_CheckNoAmmo =
 {
     
     if(self.currentammo > MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     
     if(self.weapon == IT_AXE)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     self.weapon = W_BestWeapon();
     W_SetCurrentAmmo();
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() player_axe1;
-void() player_axeb1;
-void() player_axec1;
-void() player_axed1;
-void() player_shot1;
-void() player_nail1;
-void() player_light1;
-void() player_rocket1;
-void() W_Attack;
+void () player_axe1;
+void () player_axeb1;
+void () player_axec1;
+void () player_axed1;
+void () player_shot1;
+void () player_nail1;
+void () player_light1;
+void () player_rocket1;
 // W_Attack
 // function begins at statement 4608
 // OP_CALL0	3436	0	0
@@ -2251,13 +2188,13 @@ void() W_Attack;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_Attack =
+void () W_Attack =
 {
     local float r;
     
     if(!W_CheckNoAmmo())
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     makevectors(self.v_angle);
@@ -2355,8 +2292,6 @@ void() W_Attack;
     
 };
 
-string IMMEDIATE = "weapons/lstart.wav";
-void() W_ChangeWeapon;
 // W_ChangeWeapon
 // function begins at statement 4706
 // OP_LOAD_F	28	162	3497
@@ -2448,7 +2383,7 @@ void() W_ChangeWeapon;
 // OP_STOREP_F	3496	3534	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_ChangeWeapon =
+void () W_ChangeWeapon =
 {
     local float it;
     local float am;
@@ -2564,22 +2499,20 @@ void() W_ChangeWeapon;
     if(!(self.items & fl))
     {
         sprint(self, "no weapon.\n");
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(am)
     {
         sprint(self, "not enough ammo.\n");
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.weapon = fl;
     W_SetCurrentAmmo();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() CheatCommand;
 // CheatCommand
 // function begins at statement 4795
 // OP_IFNOT	35	2	0
@@ -2614,12 +2547,12 @@ void() CheatCommand;
 // OP_STOREP_F	337	3555	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheatCommand =
+void () CheatCommand =
 {
     
     if(deathmatch)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.ammo_rockets = 100.000;
@@ -2633,8 +2566,6 @@ void() CheatCommand;
     W_SetCurrentAmmo();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() CycleWeaponCommand;
 // CycleWeaponCommand
 // function begins at statement 4827
 // OP_LOAD_F	28	162	3559
@@ -2727,7 +2658,7 @@ void() CycleWeaponCommand;
 // OP_RETURN	0	0	0
 // OP_GOTO	-84	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CycleWeaponCommand =
+void () CycleWeaponCommand =
 {
     local float it;
     local float am;
@@ -2845,7 +2776,7 @@ void() CycleWeaponCommand;
         if((it & self.weapon) && (am == MSG_BROADCAST))
         {
             W_SetCurrentAmmo();
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -2854,8 +2785,6 @@ void() CycleWeaponCommand;
 };
 
 /* ERROR INDENTATION */
-float ;
-void() CycleWeaponReverseCommand;
 // CycleWeaponReverseCommand
 // function begins at statement 4917
 // OP_LOAD_F	28	162	3606
@@ -2948,7 +2877,7 @@ void() CycleWeaponReverseCommand;
 // OP_RETURN	0	0	0
 // OP_GOTO	-84	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CycleWeaponReverseCommand =
+void () CycleWeaponReverseCommand =
 {
     local float it;
     local float am;
@@ -3066,7 +2995,7 @@ void() CycleWeaponReverseCommand;
         if((it & self.weapon) && (am == MSG_BROADCAST))
         {
             W_SetCurrentAmmo();
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -3075,8 +3004,6 @@ void() CycleWeaponReverseCommand;
 };
 
 /* ERROR INDENTATION */
-float ;
-void() ServerflagsCommand;
 // ServerflagsCommand
 // function begins at statement 5007
 // OP_IFNOT	35	2	0
@@ -3085,19 +3012,17 @@ void() ServerflagsCommand;
 // OP_ADD_F	3651	2256	3652
 // OP_STORE_F	3652	38	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ServerflagsCommand =
+void () ServerflagsCommand =
 {
     
  if(deathmatch)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     serverflags = (serverflags * WEAPON_ROCKET) + WEAPON_SHOTGUN;
 };
 
-float ;
-void() QuadCheat;
 // QuadCheat
 // function begins at statement 5013
 // OP_IFNOT	35	2	0
@@ -3114,12 +3039,12 @@ void() QuadCheat;
 // OP_STORE_V	3660	4	0
 // OP_CALL1	470	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () QuadCheat =
+void () QuadCheat =
 {
     
     if(deathmatch)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.super_time = WEAPON_SHOTGUN;
@@ -3128,8 +3053,6 @@ void() QuadCheat;
     dprint("quad cheat\n");
 };
 
-string IMMEDIATE = "quad cheat\n";
-void() ImpulseCommands;
 // ImpulseCommands
 // function begins at statement 5027
 // OP_LOAD_F	28	173	3662
@@ -3162,7 +3085,7 @@ void() ImpulseCommands;
 // OP_ADDRESS	28	173	3678
 // OP_STOREP_F	337	3678	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ImpulseCommands =
+void () ImpulseCommands =
 {
     
     if((self.impulse >= WEAPON_SHOTGUN) && (self.impulse <= WEAPON_BIG))
@@ -3203,8 +3126,6 @@ void() ImpulseCommands;
     self.impulse = MSG_BROADCAST;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() W_WeaponFrame;
 // W_WeaponFrame
 // function begins at statement 5057
 // OP_LOAD_F	28	373	3680
@@ -3219,12 +3140,12 @@ void() W_WeaponFrame;
 // OP_CALL0	2614	0	0
 // OP_CALL0	3450	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () W_WeaponFrame =
+void () W_WeaponFrame =
 {
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -3242,7 +3163,6 @@ void() W_WeaponFrame;
     
 };
 
-float ;
 // SuperDamageSound
 // function begins at statement 5069
 // OP_LOAD_F	28	377	3684
@@ -3262,7 +3182,7 @@ float ;
 // OP_CALL5	453	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SuperDamageSound =
+void () SuperDamageSound =
 {
     
     if(self.super_damage_finished > time)
@@ -3276,6 +3196,6 @@ float ;
         
     }
     
-    return; /* TODO retvalue? */
+    return;
 };
 

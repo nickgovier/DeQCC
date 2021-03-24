@@ -1,5 +1,4 @@
-string IMMEDIATE = " died\n";
-void() bubble_bob;
+void () bubble_bob;
 // player_stand1
 // function begins at statement 7366
 // OP_STATE	4861	3937	0
@@ -40,16 +39,16 @@ void() bubble_bob;
 // OP_ADD_F	4882	2256	4883
 // OP_STOREP_F	4883	4881	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_stand1 =
+void () player_stand1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4861 3937 0
+    *** UNPROCESSED OPCODE OP_STATE 4861 3937 0
     self.weaponframe = MSG_BROADCAST;
     
     if(self.velocity || self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_run();
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.weapon == IT_AXE)
@@ -76,7 +75,6 @@ void() bubble_bob;
     self.walkframe = self.walkframe + WEAPON_SHOTGUN;
 };
 
-float ;
 // player_run
 // function begins at statement 7404
 // OP_STATE	314	2612	0
@@ -120,16 +118,16 @@ float ;
 // OP_ADD_F	4907	2256	4908
 // OP_STOREP_F	4908	4906	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_run =
+void () player_run =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 314 2612 0
     self.weaponframe = MSG_BROADCAST;
     
     if(!self.velocity && !self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_stand1();
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.weapon == IT_AXE)
@@ -156,7 +154,6 @@ float ;
     self.walkframe = self.walkframe + WEAPON_SHOTGUN;
 };
 
-float ;
 // player_shot1
 // function begins at statement 7445
 // OP_STATE	4909	4910	0
@@ -167,105 +164,97 @@ float ;
 // OP_BITOR	4913	334	4914
 // OP_STOREP_F	4914	4912	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot1 =
+void () player_shot1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4909 4910 0
+    *** UNPROCESSED OPCODE OP_STATE 4909 4910 0
     self.weaponframe = WEAPON_SHOTGUN;
     self.effects = self.effects | EF_MUZZLEFLASH;
 };
 
-float ;
 // player_shot2
 // function begins at statement 7453
 // OP_STATE	4915	4916	0
 // OP_ADDRESS	28	156	4917
 // OP_STOREP_F	2257	4917	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot2 =
+void () player_shot2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4915 4916 0
+    *** UNPROCESSED OPCODE OP_STATE 4915 4916 0
     self.weaponframe = WEAPON_ROCKET;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_shot3
 // function begins at statement 7457
 // OP_STATE	4918	4919	0
 // OP_ADDRESS	28	156	4920
 // OP_STOREP_F	370	4920	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot3 =
+void () player_shot3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4918 4919 0
+    *** UNPROCESSED OPCODE OP_STATE 4918 4919 0
     self.weaponframe = AS_MELEE;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_shot4
 // function begins at statement 7461
 // OP_STATE	4921	4922	0
 // OP_ADDRESS	28	156	4923
 // OP_STOREP_F	2258	4923	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot4 =
+void () player_shot4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4921 4922 0
+    *** UNPROCESSED OPCODE OP_STATE 4921 4922 0
     self.weaponframe = WEAPON_SPIKES;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_shot5
 // function begins at statement 7465
 // OP_STATE	4924	4925	0
 // OP_ADDRESS	28	156	4926
 // OP_STOREP_F	313	4926	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot5 =
+void () player_shot5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4924 4925 0
+    *** UNPROCESSED OPCODE OP_STATE 4924 4925 0
     self.weaponframe = TE_LIGHTNING1;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_shot6
 // function begins at statement 7469
 // OP_STATE	4927	2612	0
 // OP_ADDRESS	28	156	4928
 // OP_STOREP_F	314	4928	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_shot6 =
+void () player_shot6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4927 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 4927 2612 0
     self.weaponframe = TE_LIGHTNING2;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axe1
 // function begins at statement 7473
 // OP_STATE	4929	4930	0
 // OP_ADDRESS	28	156	4931
 // OP_STOREP_F	2256	4931	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axe1 =
+void () player_axe1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4929 4930 0
+    *** UNPROCESSED OPCODE OP_STATE 4929 4930 0
     self.weaponframe = WEAPON_SHOTGUN;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axe2
 // function begins at statement 7477
 // OP_STATE	1164	4932	0
 // OP_ADDRESS	28	156	4933
 // OP_STOREP_F	2257	4933	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axe2 =
+void () player_axe2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1164 4932 0
+    *** UNPROCESSED OPCODE OP_STATE 1164 4932 0
     self.weaponframe = WEAPON_ROCKET;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axe3
 // function begins at statement 7481
 // OP_STATE	4934	4935	0
@@ -273,53 +262,49 @@ float ;
 // OP_STOREP_F	370	4936	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axe3 =
+void () player_axe3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4934 4935 0
+    *** UNPROCESSED OPCODE OP_STATE 4934 4935 0
     self.weaponframe = AS_MELEE;
     W_FireAxe();
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axe4
 // function begins at statement 7486
 // OP_STATE	4937	2612	0
 // OP_ADDRESS	28	156	4938
 // OP_STOREP_F	2258	4938	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axe4 =
+void () player_axe4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4937 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 4937 2612 0
     self.weaponframe = WEAPON_SPIKES;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axeb1
 // function begins at statement 7490
 // OP_STATE	4939	4940	0
 // OP_ADDRESS	28	156	4941
 // OP_STOREP_F	313	4941	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axeb1 =
+void () player_axeb1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4939 4940 0
+    *** UNPROCESSED OPCODE OP_STATE 4939 4940 0
     self.weaponframe = TE_LIGHTNING1;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axeb2
 // function begins at statement 7494
 // OP_STATE	4942	4943	0
 // OP_ADDRESS	28	156	4944
 // OP_STOREP_F	314	4944	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axeb2 =
+void () player_axeb2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4942 4943 0
+    *** UNPROCESSED OPCODE OP_STATE 4942 4943 0
     self.weaponframe = TE_LIGHTNING2;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axeb3
 // function begins at statement 7498
 // OP_STATE	4945	4946	0
@@ -327,53 +312,49 @@ float ;
 // OP_STOREP_F	315	4947	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axeb3 =
+void () player_axeb3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4945 4946 0
+    *** UNPROCESSED OPCODE OP_STATE 4945 4946 0
     self.weaponframe = TE_WIZSPIKE;
     W_FireAxe();
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axeb4
 // function begins at statement 7503
 // OP_STATE	261	2612	0
 // OP_ADDRESS	28	156	4948
 // OP_STOREP_F	2259	4948	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axeb4 =
+void () player_axeb4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 261 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 261 2612 0
     self.weaponframe = WEAPON_BIG;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axec1
 // function begins at statement 7507
 // OP_STATE	4949	4950	0
 // OP_ADDRESS	28	156	4951
 // OP_STOREP_F	2256	4951	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axec1 =
+void () player_axec1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4949 4950 0
+    *** UNPROCESSED OPCODE OP_STATE 4949 4950 0
     self.weaponframe = WEAPON_SHOTGUN;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axec2
 // function begins at statement 7511
 // OP_STATE	4952	4953	0
 // OP_ADDRESS	28	156	4954
 // OP_STOREP_F	2257	4954	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axec2 =
+void () player_axec2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4952 4953 0
+    *** UNPROCESSED OPCODE OP_STATE 4952 4953 0
     self.weaponframe = WEAPON_ROCKET;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axec3
 // function begins at statement 7515
 // OP_STATE	4955	4956	0
@@ -381,53 +362,49 @@ float ;
 // OP_STOREP_F	370	4957	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axec3 =
+void () player_axec3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4955 4956 0
+    *** UNPROCESSED OPCODE OP_STATE 4955 4956 0
     self.weaponframe = AS_MELEE;
     W_FireAxe();
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axec4
 // function begins at statement 7520
 // OP_STATE	4958	2612	0
 // OP_ADDRESS	28	156	4959
 // OP_STOREP_F	2258	4959	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axec4 =
+void () player_axec4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4958 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 4958 2612 0
     self.weaponframe = WEAPON_SPIKES;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axed1
 // function begins at statement 7524
 // OP_STATE	4960	4961	0
 // OP_ADDRESS	28	156	4962
 // OP_STOREP_F	313	4962	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axed1 =
+void () player_axed1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4960 4961 0
+    *** UNPROCESSED OPCODE OP_STATE 4960 4961 0
     self.weaponframe = TE_LIGHTNING1;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axed2
 // function begins at statement 7528
 // OP_STATE	4963	4964	0
 // OP_ADDRESS	28	156	4965
 // OP_STOREP_F	314	4965	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axed2 =
+void () player_axed2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4963 4964 0
+    *** UNPROCESSED OPCODE OP_STATE 4963 4964 0
     self.weaponframe = TE_LIGHTNING2;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axed3
 // function begins at statement 7532
 // OP_STATE	4966	4967	0
@@ -435,27 +412,25 @@ float ;
 // OP_STOREP_F	315	4968	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axed3 =
+void () player_axed3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4966 4967 0
+    *** UNPROCESSED OPCODE OP_STATE 4966 4967 0
     self.weaponframe = TE_WIZSPIKE;
     W_FireAxe();
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axed4
 // function begins at statement 7537
 // OP_STATE	4969	2612	0
 // OP_ADDRESS	28	156	4970
 // OP_STOREP_F	2259	4970	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axed4 =
+void () player_axed4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4969 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 4969 2612 0
     self.weaponframe = WEAPON_BIG;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_nail1
 // function begins at statement 7541
 // OP_STATE	4971	4972	0
@@ -484,15 +459,15 @@ float ;
 // OP_ADD_F	31	836	4985
 // OP_STOREP_F	4985	4984	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_nail1 =
+void () player_nail1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4971 4972 0
+    *** UNPROCESSED OPCODE OP_STATE 4971 4972 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
         player_run();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.weaponframe = self.weaponframe + WEAPON_SHOTGUN;
@@ -507,7 +482,6 @@ float ;
     self.attack_finished = time + 0.200;
 };
 
-float ;
 // player_nail2
 // function begins at statement 7567
 // OP_STATE	4986	3447	0
@@ -536,15 +510,15 @@ float ;
 // OP_ADD_F	31	836	4999
 // OP_STOREP_F	4999	4998	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_nail2 =
+void () player_nail2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4986 3447 0
+    *** UNPROCESSED OPCODE OP_STATE 4986 3447 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
         player_run();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.weaponframe = self.weaponframe + WEAPON_SHOTGUN;
@@ -559,7 +533,6 @@ float ;
     self.attack_finished = time + 0.200;
 };
 
-float ;
 // player_light1
 // function begins at statement 7593
 // OP_STATE	5000	5001	0
@@ -587,15 +560,15 @@ float ;
 // OP_ADD_F	31	836	5014
 // OP_STOREP_F	5014	5013	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_light1 =
+void () player_light1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5000 5001 0
+    *** UNPROCESSED OPCODE OP_STATE 5000 5001 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
         player_run();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.weaponframe = self.weaponframe + WEAPON_SHOTGUN;
@@ -610,7 +583,6 @@ float ;
     self.attack_finished = time + 0.200;
 };
 
-float ;
 // player_light2
 // function begins at statement 7618
 // OP_STATE	5015	3448	0
@@ -638,15 +610,15 @@ float ;
 // OP_ADD_F	31	836	5028
 // OP_STOREP_F	5028	5027	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_light2 =
+void () player_light2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5015 3448 0
+    *** UNPROCESSED OPCODE OP_STATE 5015 3448 0
     self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
         player_run();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.weaponframe = self.weaponframe + WEAPON_SHOTGUN;
@@ -661,7 +633,6 @@ float ;
     self.attack_finished = time + 0.200;
 };
 
-float ;
 // player_rocket1
 // function begins at statement 7643
 // OP_STATE	5029	5030	0
@@ -672,81 +643,74 @@ float ;
 // OP_BITOR	5033	334	5034
 // OP_STOREP_F	5034	5032	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket1 =
+void () player_rocket1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5029 5030 0
+    *** UNPROCESSED OPCODE OP_STATE 5029 5030 0
     self.weaponframe = WEAPON_SHOTGUN;
     self.effects = self.effects | EF_MUZZLEFLASH;
 };
 
-float ;
 // player_rocket2
 // function begins at statement 7651
 // OP_STATE	5035	5036	0
 // OP_ADDRESS	28	156	5037
 // OP_STOREP_F	2257	5037	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket2 =
+void () player_rocket2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5035 5036 0
+    *** UNPROCESSED OPCODE OP_STATE 5035 5036 0
     self.weaponframe = WEAPON_ROCKET;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_rocket3
 // function begins at statement 7655
 // OP_STATE	5038	5039	0
 // OP_ADDRESS	28	156	5040
 // OP_STOREP_F	370	5040	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket3 =
+void () player_rocket3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5038 5039 0
+    *** UNPROCESSED OPCODE OP_STATE 5038 5039 0
     self.weaponframe = AS_MELEE;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_rocket4
 // function begins at statement 7659
 // OP_STATE	5041	5042	0
 // OP_ADDRESS	28	156	5043
 // OP_STOREP_F	2258	5043	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket4 =
+void () player_rocket4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5041 5042 0
+    *** UNPROCESSED OPCODE OP_STATE 5041 5042 0
     self.weaponframe = WEAPON_SPIKES;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_rocket5
 // function begins at statement 7663
 // OP_STATE	5044	5045	0
 // OP_ADDRESS	28	156	5046
 // OP_STOREP_F	313	5046	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket5 =
+void () player_rocket5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5044 5045 0
+    *** UNPROCESSED OPCODE OP_STATE 5044 5045 0
     self.weaponframe = TE_LIGHTNING1;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_rocket6
 // function begins at statement 7667
 // OP_STATE	5047	2612	0
 // OP_ADDRESS	28	156	5048
 // OP_STOREP_F	314	5048	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_rocket6 =
+void () player_rocket6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5047 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 5047 2612 0
     self.weaponframe = TE_LIGHTNING2;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() DeathBubbles;
-void() PainSound;
+void (float num_bubbles) DeathBubbles;
 // PainSound
 // function begins at statement 7671
 // OP_LOAD_F	28	152	5052
@@ -898,20 +862,20 @@ void() PainSound;
 // OP_CALL5	453	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PainSound =
+void () PainSound =
 {
     local float rs;
     
     if(self.health < MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -927,7 +891,7 @@ void() PainSound;
             sound(self, CHAN_VOICE, "player/drown2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -948,7 +912,7 @@ void() PainSound;
             sound(self, CHAN_VOICE, "player/lburn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -963,14 +927,14 @@ void() PainSound;
             sound(self, CHAN_VOICE, "player/lburn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.pain_finished > time)
     {
         self.axhitme = MSG_BROADCAST;
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.pain_finished = time + IMMEDIATE;
@@ -979,7 +943,7 @@ void() PainSound;
     {
         self.axhitme = MSG_BROADCAST;
         sound(self, CHAN_VOICE, "player/axhit1.wav", WEAPON_SHOTGUN, ATTN_NORM);
-        return; /* TODO retvalue? */
+        return;
     }
     
     rs = rint((random() * TE_LIGHTNING1) + WEAPON_SHOTGUN);
@@ -1010,11 +974,9 @@ void() PainSound;
     }
     
     sound(self, CHAN_VOICE, self.noise, WEAPON_SHOTGUN, ATTN_NORM);
-    return; /* TODO retvalue? */
+    return;
 };
 
-string ;
-void() player_pain1;
 // player_pain1
 // function begins at statement 7820
 // OP_STATE	3072	5094	0
@@ -1022,64 +984,58 @@ void() player_pain1;
 // OP_ADDRESS	28	156	5095
 // OP_STOREP_F	337	5095	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain1 =
+void () player_pain1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3072 5094 0
+    *** UNPROCESSED OPCODE OP_STATE 3072 5094 0
     PainSound();
     self.weaponframe = MSG_BROADCAST;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_pain2
 // function begins at statement 7825
 // OP_STATE	5096	5097	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain2 =
+void () player_pain2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5096 5097 0
+    *** UNPROCESSED OPCODE OP_STATE 5096 5097 0
 };
 
-void() player_pain3;
 // player_pain3
 // function begins at statement 7827
 // OP_STATE	5098	5099	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain3 =
+void () player_pain3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5098 5099 0
+    *** UNPROCESSED OPCODE OP_STATE 5098 5099 0
 };
 
-void() player_pain4;
 // player_pain4
 // function begins at statement 7829
 // OP_STATE	5100	5101	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain4 =
+void () player_pain4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5100 5101 0
+    *** UNPROCESSED OPCODE OP_STATE 5100 5101 0
 };
 
-void() player_pain5;
 // player_pain5
 // function begins at statement 7831
 // OP_STATE	5102	5103	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain5 =
+void () player_pain5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5102 5103 0
+    *** UNPROCESSED OPCODE OP_STATE 5102 5103 0
 };
 
-void() player_pain6;
 // player_pain6
 // function begins at statement 7833
 // OP_STATE	1733	2612	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain6 =
+void () player_pain6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1733 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 1733 2612 0
 };
 
-void() player_axpain1;
 // player_axpain1
 // function begins at statement 7835
 // OP_STATE	5105	5106	0
@@ -1087,64 +1043,58 @@ void() player_axpain1;
 // OP_ADDRESS	28	156	5107
 // OP_STOREP_F	337	5107	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain1 =
+void () player_axpain1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5105 5106 0
+    *** UNPROCESSED OPCODE OP_STATE 5105 5106 0
     PainSound();
     self.weaponframe = MSG_BROADCAST;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_axpain2
 // function begins at statement 7840
 // OP_STATE	304	5108	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain2 =
+void () player_axpain2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 304 5108 0
+    *** UNPROCESSED OPCODE OP_STATE 304 5108 0
 };
 
-void() player_axpain3;
 // player_axpain3
 // function begins at statement 7842
 // OP_STATE	305	5109	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain3 =
+void () player_axpain3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 305 5109 0
+    *** UNPROCESSED OPCODE OP_STATE 305 5109 0
 };
 
-void() player_axpain4;
 // player_axpain4
 // function begins at statement 7844
 // OP_STATE	306	5110	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain4 =
+void () player_axpain4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 306 5110 0
+    *** UNPROCESSED OPCODE OP_STATE 306 5110 0
 };
 
-void() player_axpain5;
 // player_axpain5
 // function begins at statement 7846
 // OP_STATE	307	5111	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain5 =
+void () player_axpain5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 307 5111 0
+    *** UNPROCESSED OPCODE OP_STATE 307 5111 0
 };
 
-void() player_axpain6;
 // player_axpain6
 // function begins at statement 7848
 // OP_STATE	5112	2612	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_axpain6 =
+void () player_axpain6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5112 2612 0
+    *** UNPROCESSED OPCODE OP_STATE 5112 2612 0
 };
 
-float IMMEDIATE = 34.000;
 // player_pain
 // function begins at statement 7850
 // OP_LOAD_F	28	156	5113
@@ -1161,18 +1111,18 @@ float IMMEDIATE = 34.000;
 // OP_GOTO	2	0	0
 // OP_CALL0	5093	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_pain =
+void () player_pain =
 {
     
     if(self.weaponframe)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.invisible_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.weapon == IT_AXE)
@@ -1186,14 +1136,12 @@ float IMMEDIATE = 34.000;
     
 };
 
-float ;
-void() player_diea1;
-void() player_dieb1;
-void() player_diec1;
-void() player_died1;
-void() player_diee1;
-void() player_die_ax1;
-void() DeathBubblesSpawn;
+void () player_diea1;
+void () player_dieb1;
+void () player_diec1;
+void () player_died1;
+void () player_diee1;
+void () player_die_ax1;
 // DeathBubblesSpawn
 // function begins at statement 7864
 // OP_LOAD_ENT	28	201	5126
@@ -1255,14 +1203,14 @@ void() DeathBubblesSpawn;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () DeathBubblesSpawn =
+void () DeathBubblesSpawn =
 {
     local entity bubble;
     
     if((self.owner.waterlevel != AS_MELEE) && (self.owner.health > MSG_BROADCAST))
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     bubble = spawn();
@@ -1288,7 +1236,6 @@ void() DeathBubblesSpawn;
     
 };
 
-float ;
 // DeathBubbles
 // function begins at statement 7923
 // OP_CALL0	459	0	0
@@ -1313,7 +1260,7 @@ float ;
 // OP_ADDRESS	5165	392	5176
 // OP_STOREP_F	5164	5176	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float num_bubbles) DeathBubbles =
+void (float num_bubbles) DeathBubbles =
 {
     local entity bubble_spawner;
     bubble_spawner = spawn();
@@ -1327,8 +1274,6 @@ float ;
     bubble_spawner.bubble_count = num_bubbles;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() DeathSound;
 // DeathSound
 // function begins at statement 7945
 // OP_LOAD_F	28	189	5179
@@ -1378,7 +1323,7 @@ void() DeathSound;
 // OP_CALL5	453	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () DeathSound =
+void () DeathSound =
 {
     local float rs;
     
@@ -1386,7 +1331,7 @@ void() DeathSound;
     {
         DeathBubbles(20.000);
         sound(self, CHAN_VOICE, "player/h2odeath.wav", WEAPON_SHOTGUN, ATTN_NONE);
-        return; /* TODO retvalue? */
+        return;
     }
     
     rs = rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN);
@@ -1421,11 +1366,9 @@ void() DeathSound;
     }
     
     sound(self, CHAN_VOICE, self.noise, WEAPON_SHOTGUN, ATTN_NONE);
-    return; /* TODO retvalue? */
+    return;
 };
 
-string ;
-void() PlayerDead;
 // PlayerDead
 // function begins at statement 7992
 // OP_ADDRESS	28	150	5195
@@ -1433,14 +1376,12 @@ void() PlayerDead;
 // OP_ADDRESS	28	165	5196
 // OP_STOREP_F	248	5196	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerDead =
+void () PlayerDead =
 {
     self.nextthink = CONTENT_EMPTY;
     self.deadflag = DEAD_DEAD;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() VelocityForDamage;
 // VelocityForDamage
 // function begins at statement 7997
 // OP_CALL0	2628	0	0
@@ -1467,7 +1408,7 @@ void() VelocityForDamage;
 // OP_STORE_V	5215	5199	0
 // OP_RETURN	5199	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dm) VelocityForDamage =
+vector (float dm) VelocityForDamage =
 {
     local vector v;
     crandom();
@@ -1489,11 +1430,9 @@ void() VelocityForDamage;
         v = v * TE_LAVASPLASH;
     }
     
-    return; /* TODO retvalue? */
+    return v;
 };
 
-vector ;
-void() ThrowGib;
 // ThrowGib
 // function begins at statement 8021
 // OP_CALL0	459	0	0
@@ -1543,7 +1482,7 @@ void() ThrowGib;
 // OP_ADDRESS	5221	182	5246
 // OP_STOREP_F	337	5246	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (string gibname, float dm) ThrowGib =
+void (string gibname, float dm) ThrowGib =
 {
     local entity new;
     new = spawn();
@@ -1563,8 +1502,6 @@ void() ThrowGib;
     new.flags = MSG_BROADCAST;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() ThrowHead;
 // ThrowHead
 // function begins at statement 8068
 // OP_STORE_V	28	4	0
@@ -1605,7 +1542,7 @@ void() ThrowHead;
 // OP_MUL_FV	1	5275	5278
 // OP_STOREP_V	5278	5272	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (string gibname, float dm) ThrowHead =
+void (string gibname, float dm) ThrowHead =
 {
     setmodel(self, gibname);
     self.frame = MSG_BROADCAST;
@@ -1621,8 +1558,6 @@ void() ThrowHead;
     self.avelocity = crandom() * '0.000 600.000 0.000';
 };
 
-vector ;
-void() GibPlayer;
 // GibPlayer
 // function begins at statement 8106
 // OP_LOAD_F	28	152	5282
@@ -1680,7 +1615,7 @@ void() GibPlayer;
 // OP_STORE_V	325	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () GibPlayer =
+void () GibPlayer =
 {
     ThrowHead("progs/h_player.mdl", self.health);
     ThrowGib("progs/gib1.mdl", self.health);
@@ -1691,14 +1626,14 @@ void() GibPlayer;
     if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(damage_attacker.classname == "teledeath2")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(random() < IMMEDIATE)
@@ -1712,7 +1647,6 @@ void() GibPlayer;
     
 };
 
-float ;
 // PlayerDie
 // function begins at statement 8161
 // OP_ADDRESS	28	162	5293
@@ -1808,7 +1742,7 @@ float ;
 // OP_GOTO	2	0	0
 // OP_CALL0	5122	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerDie =
+void () PlayerDie =
 {
     local float i;
     self.items = self.items - (self.items & (((IT_INVISIBILITY | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
@@ -1840,7 +1774,7 @@ float ;
     if(self.health < -40.000)
     {
         GibPlayer();
-        return; /* TODO retvalue? */
+        return;
     }
     
     DeathSound();
@@ -1850,7 +1784,7 @@ float ;
     if(self.weapon == IT_AXE)
     {
         player_die_ax1();
-        return; /* TODO retvalue? */
+        return;
     }
     
     i = cvar("temp1");
@@ -1884,7 +1818,6 @@ float ;
     
 };
 
-float ;
 // set_suicide_frame
 // function begins at statement 8254
 // OP_LOAD_S	28	130	5343
@@ -1902,12 +1835,12 @@ float ;
 // OP_ADDRESS	28	150	5349
 // OP_STOREP_F	276	5349	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () set_suicide_frame =
+void () set_suicide_frame =
 {
     
     if(self.model != "progs/player.mdl")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.frame = 60.000;
@@ -1917,115 +1850,104 @@ float ;
     self.nextthink = CONTENT_EMPTY;
 };
 
-/* TYPE: EV_POINTER */ ;
 // player_diea1
 // function begins at statement 8269
 // OP_STATE	2227	5350	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea1 =
+void () player_diea1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2227 5350 0
+    *** UNPROCESSED OPCODE OP_STATE 2227 5350 0
 };
 
-void() player_diea2;
 // player_diea2
 // function begins at statement 8271
 // OP_STATE	5351	5352	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea2 =
+void () player_diea2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5351 5352 0
+    *** UNPROCESSED OPCODE OP_STATE 5351 5352 0
 };
 
-void() player_diea3;
 // player_diea3
 // function begins at statement 8273
 // OP_STATE	5353	5354	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea3 =
+void () player_diea3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5353 5354 0
+    *** UNPROCESSED OPCODE OP_STATE 5353 5354 0
 };
 
-void() player_diea4;
 // player_diea4
 // function begins at statement 8275
 // OP_STATE	5355	5356	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea4 =
+void () player_diea4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5355 5356 0
+    *** UNPROCESSED OPCODE OP_STATE 5355 5356 0
 };
 
-void() player_diea5;
 // player_diea5
 // function begins at statement 8277
 // OP_STATE	5357	5358	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea5 =
+void () player_diea5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5357 5358 0
+    *** UNPROCESSED OPCODE OP_STATE 5357 5358 0
 };
 
-void() player_diea6;
 // player_diea6
 // function begins at statement 8279
 // OP_STATE	5359	5360	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea6 =
+void () player_diea6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5359 5360 0
+    *** UNPROCESSED OPCODE OP_STATE 5359 5360 0
 };
 
-void() player_diea7;
 // player_diea7
 // function begins at statement 8281
 // OP_STATE	5361	5362	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea7 =
+void () player_diea7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5361 5362 0
+    *** UNPROCESSED OPCODE OP_STATE 5361 5362 0
 };
 
-void() player_diea8;
 // player_diea8
 // function begins at statement 8283
 // OP_STATE	5363	5364	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea8 =
+void () player_diea8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5363 5364 0
+    *** UNPROCESSED OPCODE OP_STATE 5363 5364 0
 };
 
-void() player_diea9;
 // player_diea9
 // function begins at statement 8285
 // OP_STATE	5365	5366	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea9 =
+void () player_diea9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5365 5366 0
+    *** UNPROCESSED OPCODE OP_STATE 5365 5366 0
 };
 
-void() player_diea10;
 // player_diea10
 // function begins at statement 8287
 // OP_STATE	5367	5368	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea10 =
+void () player_diea10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5367 5368 0
+    *** UNPROCESSED OPCODE OP_STATE 5367 5368 0
 };
 
-void() player_diea11;
 // player_diea11
 // function begins at statement 8289
 // OP_STATE	912	5368	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diea11 =
+void () player_diea11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 912 5368 0
+    *** UNPROCESSED OPCODE OP_STATE 912 5368 0
     PlayerDead();
 };
 
@@ -2033,518 +1955,468 @@ void() player_diea11;
 // function begins at statement 8292
 // OP_STATE	5369	5370	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb1 =
+void () player_dieb1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5369 5370 0
+    *** UNPROCESSED OPCODE OP_STATE 5369 5370 0
 };
 
-void() player_dieb2;
 // player_dieb2
 // function begins at statement 8294
 // OP_STATE	5371	5372	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb2 =
+void () player_dieb2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5371 5372 0
+    *** UNPROCESSED OPCODE OP_STATE 5371 5372 0
 };
 
-void() player_dieb3;
 // player_dieb3
 // function begins at statement 8296
 // OP_STATE	3872	5373	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb3 =
+void () player_dieb3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3872 5373 0
+    *** UNPROCESSED OPCODE OP_STATE 3872 5373 0
 };
 
-void() player_dieb4;
 // player_dieb4
 // function begins at statement 8298
 // OP_STATE	260	5374	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb4 =
+void () player_dieb4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 260 5374 0
+    *** UNPROCESSED OPCODE OP_STATE 260 5374 0
 };
 
-void() player_dieb5;
 // player_dieb5
 // function begins at statement 8300
 // OP_STATE	5375	5376	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb5 =
+void () player_dieb5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5375 5376 0
+    *** UNPROCESSED OPCODE OP_STATE 5375 5376 0
 };
 
-void() player_dieb6;
 // player_dieb6
 // function begins at statement 8302
 // OP_STATE	5377	5378	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb6 =
+void () player_dieb6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5377 5378 0
+    *** UNPROCESSED OPCODE OP_STATE 5377 5378 0
 };
 
-void() player_dieb7;
 // player_dieb7
 // function begins at statement 8304
 // OP_STATE	5379	5380	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb7 =
+void () player_dieb7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5379 5380 0
+    *** UNPROCESSED OPCODE OP_STATE 5379 5380 0
 };
 
-void() player_dieb8;
 // player_dieb8
 // function begins at statement 8306
 // OP_STATE	5381	5382	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb8 =
+void () player_dieb8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5381 5382 0
+    *** UNPROCESSED OPCODE OP_STATE 5381 5382 0
 };
 
-void() player_dieb9;
 // player_dieb9
 // function begins at statement 8308
 // OP_STATE	5383	5382	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_dieb9 =
+void () player_dieb9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5383 5382 0
+    *** UNPROCESSED OPCODE OP_STATE 5383 5382 0
     PlayerDead();
 };
 
-float IMMEDIATE = 69.000;
 // player_diec1
 // function begins at statement 8311
 // OP_STATE	5384	5385	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec1 =
+void () player_diec1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5384 5385 0
+    *** UNPROCESSED OPCODE OP_STATE 5384 5385 0
 };
 
-void() player_diec2;
 // player_diec2
 // function begins at statement 8313
 // OP_STATE	5386	5387	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec2 =
+void () player_diec2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5386 5387 0
+    *** UNPROCESSED OPCODE OP_STATE 5386 5387 0
 };
 
-void() player_diec3;
 // player_diec3
 // function begins at statement 8315
 // OP_STATE	5388	5389	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec3 =
+void () player_diec3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5388 5389 0
+    *** UNPROCESSED OPCODE OP_STATE 5388 5389 0
 };
 
-void() player_diec4;
 // player_diec4
 // function begins at statement 8317
 // OP_STATE	2739	5390	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec4 =
+void () player_diec4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2739 5390 0
+    *** UNPROCESSED OPCODE OP_STATE 2739 5390 0
 };
 
-void() player_diec5;
 // player_diec5
 // function begins at statement 8319
 // OP_STATE	5391	5392	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec5 =
+void () player_diec5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5391 5392 0
+    *** UNPROCESSED OPCODE OP_STATE 5391 5392 0
 };
 
-void() player_diec6;
 // player_diec6
 // function begins at statement 8321
 // OP_STATE	5393	5394	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec6 =
+void () player_diec6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5393 5394 0
+    *** UNPROCESSED OPCODE OP_STATE 5393 5394 0
 };
 
-void() player_diec7;
 // player_diec7
 // function begins at statement 8323
 // OP_STATE	5395	5396	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec7 =
+void () player_diec7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5395 5396 0
+    *** UNPROCESSED OPCODE OP_STATE 5395 5396 0
 };
 
-void() player_diec8;
 // player_diec8
 // function begins at statement 8325
 // OP_STATE	5397	5398	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec8 =
+void () player_diec8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5397 5398 0
+    *** UNPROCESSED OPCODE OP_STATE 5397 5398 0
 };
 
-void() player_diec9;
 // player_diec9
 // function begins at statement 8327
 // OP_STATE	5399	5400	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec9 =
+void () player_diec9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5399 5400 0
+    *** UNPROCESSED OPCODE OP_STATE 5399 5400 0
 };
 
-void() player_diec10;
 // player_diec10
 // function begins at statement 8329
 // OP_STATE	5401	5402	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec10 =
+void () player_diec10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5401 5402 0
+    *** UNPROCESSED OPCODE OP_STATE 5401 5402 0
 };
 
-void() player_diec11;
 // player_diec11
 // function begins at statement 8331
 // OP_STATE	788	5403	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec11 =
+void () player_diec11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 788 5403 0
+    *** UNPROCESSED OPCODE OP_STATE 788 5403 0
 };
 
-void() player_diec12;
 // player_diec12
 // function begins at statement 8333
 // OP_STATE	5404	5405	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec12 =
+void () player_diec12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5404 5405 0
+    *** UNPROCESSED OPCODE OP_STATE 5404 5405 0
 };
 
-void() player_diec13;
 // player_diec13
 // function begins at statement 8335
 // OP_STATE	5406	5407	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec13 =
+void () player_diec13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5406 5407 0
+    *** UNPROCESSED OPCODE OP_STATE 5406 5407 0
 };
 
-void() player_diec14;
 // player_diec14
 // function begins at statement 8337
 // OP_STATE	5408	5409	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec14 =
+void () player_diec14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5408 5409 0
+    *** UNPROCESSED OPCODE OP_STATE 5408 5409 0
 };
 
-void() player_diec15;
 // player_diec15
 // function begins at statement 8339
 // OP_STATE	5410	5409	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diec15 =
+void () player_diec15 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5410 5409 0
+    *** UNPROCESSED OPCODE OP_STATE 5410 5409 0
     PlayerDead();
 };
 
-float IMMEDIATE = 84.000;
 // player_died1
 // function begins at statement 8342
 // OP_STATE	5411	5412	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died1 =
+void () player_died1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5411 5412 0
+    *** UNPROCESSED OPCODE OP_STATE 5411 5412 0
 };
 
-void() player_died2;
 // player_died2
 // function begins at statement 8344
 // OP_STATE	5413	5414	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died2 =
+void () player_died2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5413 5414 0
+    *** UNPROCESSED OPCODE OP_STATE 5413 5414 0
 };
 
-void() player_died3;
 // player_died3
 // function begins at statement 8346
 // OP_STATE	5415	5416	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died3 =
+void () player_died3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5415 5416 0
+    *** UNPROCESSED OPCODE OP_STATE 5415 5416 0
 };
 
-void() player_died4;
 // player_died4
 // function begins at statement 8348
 // OP_STATE	5417	5418	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died4 =
+void () player_died4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5417 5418 0
+    *** UNPROCESSED OPCODE OP_STATE 5417 5418 0
 };
 
-void() player_died5;
 // player_died5
 // function begins at statement 8350
 // OP_STATE	5419	5420	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died5 =
+void () player_died5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5419 5420 0
+    *** UNPROCESSED OPCODE OP_STATE 5419 5420 0
 };
 
-void() player_died6;
 // player_died6
 // function begins at statement 8352
 // OP_STATE	1423	5421	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died6 =
+void () player_died6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1423 5421 0
+    *** UNPROCESSED OPCODE OP_STATE 1423 5421 0
 };
 
-void() player_died7;
 // player_died7
 // function begins at statement 8354
 // OP_STATE	5422	5423	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died7 =
+void () player_died7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5422 5423 0
+    *** UNPROCESSED OPCODE OP_STATE 5422 5423 0
 };
 
-void() player_died8;
 // player_died8
 // function begins at statement 8356
 // OP_STATE	5424	5425	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died8 =
+void () player_died8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5424 5425 0
+    *** UNPROCESSED OPCODE OP_STATE 5424 5425 0
 };
 
-void() player_died9;
 // player_died9
 // function begins at statement 8358
 // OP_STATE	5426	5425	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_died9 =
+void () player_died9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5426 5425 0
+    *** UNPROCESSED OPCODE OP_STATE 5426 5425 0
     PlayerDead();
 };
 
-float IMMEDIATE = 93.000;
 // player_diee1
 // function begins at statement 8361
 // OP_STATE	5427	5428	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee1 =
+void () player_diee1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5427 5428 0
+    *** UNPROCESSED OPCODE OP_STATE 5427 5428 0
 };
 
-void() player_diee2;
 // player_diee2
 // function begins at statement 8363
 // OP_STATE	5429	5430	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee2 =
+void () player_diee2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5429 5430 0
+    *** UNPROCESSED OPCODE OP_STATE 5429 5430 0
 };
 
-void() player_diee3;
 // player_diee3
 // function begins at statement 8365
 // OP_STATE	5431	5432	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee3 =
+void () player_diee3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5431 5432 0
+    *** UNPROCESSED OPCODE OP_STATE 5431 5432 0
 };
 
-void() player_diee4;
 // player_diee4
 // function begins at statement 8367
 // OP_STATE	5433	5434	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee4 =
+void () player_diee4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5433 5434 0
+    *** UNPROCESSED OPCODE OP_STATE 5433 5434 0
 };
 
-void() player_diee5;
 // player_diee5
 // function begins at statement 8369
 // OP_STATE	5435	5436	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee5 =
+void () player_diee5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5435 5436 0
+    *** UNPROCESSED OPCODE OP_STATE 5435 5436 0
 };
 
-void() player_diee6;
 // player_diee6
 // function begins at statement 8371
 // OP_STATE	5437	5438	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee6 =
+void () player_diee6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5437 5438 0
+    *** UNPROCESSED OPCODE OP_STATE 5437 5438 0
 };
 
-void() player_diee7;
 // player_diee7
 // function begins at statement 8373
 // OP_STATE	1884	5439	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee7 =
+void () player_diee7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1884 5439 0
+    *** UNPROCESSED OPCODE OP_STATE 1884 5439 0
 };
 
-void() player_diee8;
 // player_diee8
 // function begins at statement 8375
 // OP_STATE	5440	5441	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee8 =
+void () player_diee8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5440 5441 0
+    *** UNPROCESSED OPCODE OP_STATE 5440 5441 0
 };
 
-void() player_diee9;
 // player_diee9
 // function begins at statement 8377
 // OP_STATE	5442	5441	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_diee9 =
+void () player_diee9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5442 5441 0
+    *** UNPROCESSED OPCODE OP_STATE 5442 5441 0
     PlayerDead();
 };
 
-float IMMEDIATE = 102.000;
 // player_die_ax1
 // function begins at statement 8380
 // OP_STATE	5443	5444	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax1 =
+void () player_die_ax1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5443 5444 0
+    *** UNPROCESSED OPCODE OP_STATE 5443 5444 0
 };
 
-void() player_die_ax2;
 // player_die_ax2
 // function begins at statement 8382
 // OP_STATE	5445	5446	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax2 =
+void () player_die_ax2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5445 5446 0
+    *** UNPROCESSED OPCODE OP_STATE 5445 5446 0
 };
 
-void() player_die_ax3;
 // player_die_ax3
 // function begins at statement 8384
 // OP_STATE	5447	5448	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax3 =
+void () player_die_ax3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5447 5448 0
+    *** UNPROCESSED OPCODE OP_STATE 5447 5448 0
 };
 
-void() player_die_ax4;
 // player_die_ax4
 // function begins at statement 8386
 // OP_STATE	5449	5450	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax4 =
+void () player_die_ax4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5449 5450 0
+    *** UNPROCESSED OPCODE OP_STATE 5449 5450 0
 };
 
-void() player_die_ax5;
 // player_die_ax5
 // function begins at statement 8388
 // OP_STATE	1390	5451	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax5 =
+void () player_die_ax5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1390 5451 0
+    *** UNPROCESSED OPCODE OP_STATE 1390 5451 0
 };
 
-void() player_die_ax6;
 // player_die_ax6
 // function begins at statement 8390
 // OP_STATE	5452	5453	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax6 =
+void () player_die_ax6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5452 5453 0
+    *** UNPROCESSED OPCODE OP_STATE 5452 5453 0
 };
 
-void() player_die_ax7;
 // player_die_ax7
 // function begins at statement 8392
 // OP_STATE	5454	5455	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax7 =
+void () player_die_ax7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5454 5455 0
+    *** UNPROCESSED OPCODE OP_STATE 5454 5455 0
 };
 
-void() player_die_ax8;
 // player_die_ax8
 // function begins at statement 8394
 // OP_STATE	5456	5457	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax8 =
+void () player_die_ax8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5456 5457 0
+    *** UNPROCESSED OPCODE OP_STATE 5456 5457 0
 };
 
-void() player_die_ax9;
 // player_die_ax9
 // function begins at statement 8396
 // OP_STATE	5458	5457	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () player_die_ax9 =
+void () player_die_ax9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5458 5457 0
+    *** UNPROCESSED OPCODE OP_STATE 5458 5457 0
     PlayerDead();
 };
 

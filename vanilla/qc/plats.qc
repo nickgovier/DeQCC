@@ -1,12 +1,10 @@
-/* TYPE: EV_POINTER */ ;
-void() plat_center_touch;
-void() plat_outside_touch;
-void() plat_trigger_use;
-void() plat_go_up;
-void() plat_go_down;
-void() plat_crush;
+void () plat_center_touch;
+void () plat_outside_touch;
+void () plat_trigger_use;
+void () plat_go_up;
+void () plat_go_down;
+void () plat_crush;
 float PLAT_LOW_TRIGGER = 1.000;
-void() plat_spawn_inside_trigger;
 // plat_spawn_inside_trigger
 // function begins at statement 10616
 // OP_CALL0	459	0	0
@@ -61,7 +59,7 @@ void() plat_spawn_inside_trigger;
 // OP_STORE_V	6904	10	0
 // OP_CALL3	450	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_spawn_inside_trigger =
+void () plat_spawn_inside_trigger =
 {
     local entity trigger;
     local vector tmin;
@@ -97,8 +95,6 @@ void() plat_spawn_inside_trigger;
     setsize(trigger, tmin, tmax);
 };
 
-float ;
-void() plat_hit_top;
 // plat_hit_top
 // function begins at statement 10668
 // OP_LOAD_S	28	209	6952
@@ -117,7 +113,7 @@ void() plat_hit_top;
 // OP_ADD_F	6956	370	6957
 // OP_STOREP_F	6957	6955	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_hit_top =
+void () plat_hit_top =
 {
     sound(self, CHAN_VOICE, self.noise1, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_TOP;
@@ -125,8 +121,6 @@ void() plat_hit_top;
     self.nextthink = self.ltime + AS_MELEE;
 };
 
-float ;
-void() plat_hit_bottom;
 // plat_hit_bottom
 // function begins at statement 10684
 // OP_LOAD_S	28	209	6959
@@ -139,13 +133,12 @@ void() plat_hit_bottom;
 // OP_ADDRESS	28	433	6960
 // OP_STOREP_F	283	6960	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_hit_bottom =
+void () plat_hit_bottom =
 {
     sound(self, CHAN_VOICE, self.noise1, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_BOTTOM;
 };
 
-/* TYPE: EV_POINTER */ ;
 // plat_go_down
 // function begins at statement 10694
 // OP_LOAD_S	28	208	6961
@@ -164,14 +157,13 @@ void() plat_hit_bottom;
 // OP_STORE_V	6958	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_go_down =
+void () plat_go_down =
 {
     sound(self, CHAN_VOICE, self.noise, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_DOWN;
     SUB_CalcMove(self.pos2, self.speed, plat_hit_bottom);
 };
 
-float ;
 // plat_go_up
 // function begins at statement 10710
 // OP_LOAD_S	28	208	6967
@@ -190,14 +182,13 @@ float ;
 // OP_STORE_V	6951	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_go_up =
+void () plat_go_up =
 {
     sound(self, CHAN_VOICE, self.noise, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_UP;
     SUB_CalcMove(self.pos1, self.speed, plat_hit_top);
 };
 
-float ;
 // plat_center_touch
 // function begins at statement 10726
 // OP_LOAD_S	29	129	6973
@@ -223,18 +214,18 @@ float ;
 // OP_ADD_F	6983	6898	6984
 // OP_STOREP_F	6984	6982	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_center_touch =
+void () plat_center_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self = self.enemy;
@@ -254,7 +245,6 @@ float ;
     
 };
 
-float ;
 // plat_outside_touch
 // function begins at statement 10749
 // OP_LOAD_S	29	129	6985
@@ -272,18 +262,18 @@ float ;
 // OP_IFNOT	6991	2	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_outside_touch =
+void () plat_outside_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self = self.enemy;
@@ -295,7 +285,6 @@ float ;
     
 };
 
-float ;
 // plat_trigger_use
 // function begins at statement 10764
 // OP_LOAD_FNC	28	148	6992
@@ -303,18 +292,17 @@ float ;
 // OP_RETURN	0	0	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_trigger_use =
+void () plat_trigger_use =
 {
     
     if(self.think)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     plat_go_down();
 };
 
-void() ;
 // plat_crush
 // function begins at statement 10769
 // OP_STORE_V	29	4	0
@@ -335,7 +323,7 @@ void() ;
 // OP_STORE_V	6997	4	0
 // OP_CALL1	456	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_crush =
+void () plat_crush =
 {
     T_Damage(other, self, self, PLAT_LOW_TRIGGER);
     if(self.state == STATE_UP)
@@ -357,8 +345,6 @@ void() ;
     
 };
 
-string IMMEDIATE = "plat_crush: bad self.state\n";
-void() plat_use;
 // plat_use
 // function begins at statement 10787
 // OP_ADDRESS	28	147	6999
@@ -370,7 +356,7 @@ void() plat_use;
 // OP_CALL1	456	0	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () plat_use =
+void () plat_use =
 {
     self.use = SUB_Null;
     
@@ -382,8 +368,6 @@ void() plat_use;
     plat_go_down();
 };
 
-string IMMEDIATE = "plat_use: not in up state";
-void() func_plat;
 // func_plat
 // function begins at statement 10796
 // OP_LOAD_F	28	399	7005
@@ -492,7 +476,7 @@ void() func_plat;
 // OP_ADDRESS	28	433	7082
 // OP_STOREP_F	283	7082	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () func_plat =
+void () func_plat =
 {
     local entity t;
     
@@ -572,10 +556,8 @@ void() func_plat;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() train_next;
-void() func_train_find;
-void() train_blocked;
+void () train_next;
+void () func_train_find;
 // train_blocked
 // function begins at statement 10902
 // OP_LOAD_F	28	373	7086
@@ -592,20 +574,18 @@ void() train_blocked;
 // OP_STORE_V	7090	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () train_blocked =
+void () train_blocked =
 {
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.attack_finished = time + IMMEDIATE;
     T_Damage(other, self, self, self.dmg);
 };
 
-float ;
-void() train_use;
 // train_use
 // function begins at statement 10916
 // OP_LOAD_FNC	28	148	7092
@@ -614,19 +594,17 @@ void() train_use;
 // OP_RETURN	0	0	0
 // OP_CALL0	7083	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () train_use =
+void () train_use =
 {
     
     if(self.think != func_train_find)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     train_next();
 };
 
-float ;
-void() train_wait;
 // train_wait
 // function begins at statement 10922
 // OP_LOAD_F	28	413	7095
@@ -651,7 +629,7 @@ void() train_wait;
 // OP_ADDRESS	28	148	7104
 // OP_STOREP_FNC	7083	7104	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () train_wait =
+void () train_wait =
 {
     if(self.wait)
     {
@@ -666,7 +644,6 @@ void() train_wait;
     self.think = train_next;
 };
 
-/* TYPE: EV_POINTER */ ;
 // train_next
 // function begins at statement 10944
 // OP_LOAD_S	28	196	7106
@@ -707,7 +684,7 @@ void() train_wait;
 // OP_STORE_V	7094	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () train_next =
+void () train_next =
 {
     local entity targ;
     targ = find(world, targetname, self.target);
@@ -731,7 +708,6 @@ void() train_wait;
     SUB_CalcMove(targ.origin - self.mins, self.speed, train_wait);
 };
 
-float ;
 // func_train_find
 // function begins at statement 10982
 // OP_LOAD_S	28	196	7128
@@ -759,7 +735,7 @@ float ;
 // OP_ADDRESS	28	148	7145
 // OP_STOREP_FNC	7083	7145	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () func_train_find =
+void () func_train_find =
 {
     local entity targ;
     targ = find(world, targetname, self.target);
@@ -774,8 +750,6 @@ float ;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() func_train;
 // func_train
 // function begins at statement 11007
 // OP_LOAD_F	28	364	7147
@@ -848,7 +822,7 @@ void() func_train;
 // OP_ADDRESS	28	148	7186
 // OP_STOREP_FNC	7084	7186	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () func_train =
+void () func_train =
 {
     
     if(!self.speed)
@@ -899,8 +873,6 @@ void() func_train;
     self.think = func_train_find;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() misc_teleporttrain;
 // misc_teleporttrain
 // function begins at statement 11077
 // OP_LOAD_F	28	364	7188
@@ -955,7 +927,7 @@ void() misc_teleporttrain;
 // OP_ADDRESS	28	148	7219
 // OP_STOREP_FNC	7084	7219	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () misc_teleporttrain =
+void () misc_teleporttrain =
 {
     
     if(!self.speed)

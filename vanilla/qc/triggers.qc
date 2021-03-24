@@ -1,23 +1,19 @@
-vector ;
 entity stemp;
 entity otemp;
 entity s;
 entity old;
-void() trigger_reactivate;
 // trigger_reactivate
 // function begins at statement 9918
 // OP_ADDRESS	28	104	6419
 // OP_STOREP_F	238	6419	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_reactivate =
+void () trigger_reactivate =
 {
     self.solid = SOLID_TRIGGER;
 };
 
-/* TYPE: EV_POINTER */ ;
 float SPAWNFLAG_NOMESSAGE = 1.000;
 float SPAWNFLAG_NOTOUCH = 1.000;
-void() multi_wait;
 // multi_wait
 // function begins at statement 9921
 // OP_LOAD_F	28	185	6423
@@ -30,7 +26,7 @@ void() multi_wait;
 // OP_ADDRESS	28	104	6427
 // OP_STOREP_F	239	6427	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () multi_wait =
+void () multi_wait =
 {
     
     if(self.max_health)
@@ -42,8 +38,6 @@ void() multi_wait;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() multi_trigger;
 // multi_trigger
 // function begins at statement 9931
 // OP_LOAD_F	28	150	6429
@@ -95,12 +89,12 @@ void() multi_trigger;
 // OP_ADDRESS	28	148	6451
 // OP_STOREP_FNC	519	6451	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () multi_trigger =
+void () multi_trigger =
 {
     
     if(self.nextthink > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -109,7 +103,7 @@ void() multi_trigger;
         
         if(self.enemy.classname != "player")
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         found_secrets = found_secrets + SPAWNFLAG_NOTOUCH;
@@ -139,36 +133,30 @@ void() multi_trigger;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() multi_killed;
 // multi_killed
 // function begins at statement 9980
 // OP_ADDRESS	28	181	6453
 // OP_STOREP_ENT	347	6453	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () multi_killed =
+void () multi_killed =
 {
     self.enemy = damage_attacker;
     multi_trigger();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() multi_use;
 // multi_use
 // function begins at statement 9984
 // OP_ADDRESS	28	181	6455
 // OP_STOREP_ENT	346	6455	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () multi_use =
+void () multi_use =
 {
     self.enemy = activator;
     multi_trigger();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() multi_touch;
 // multi_touch
 // function begins at statement 9988
 // OP_LOAD_S	29	129	6457
@@ -190,12 +178,12 @@ void() multi_touch;
 // OP_STOREP_ENT	29	6471	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () multi_touch =
+void () multi_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -205,7 +193,7 @@ void() multi_touch;
         
         if((v_forward * self.movedir) < MSG_BROADCAST)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -214,8 +202,6 @@ void() multi_touch;
     multi_trigger();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_multiple;
 // trigger_multiple
 // function begins at statement 10007
 // OP_LOAD_F	28	207	6473
@@ -277,7 +263,7 @@ void() trigger_multiple;
 // OP_ADDRESS	28	146	6503
 // OP_STOREP_FNC	6456	6503	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_multiple =
+void () trigger_multiple =
 {
     if(self.sounds == SPAWNFLAG_NOTOUCH)
     {
@@ -338,34 +324,28 @@ void() trigger_multiple;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_once;
 // trigger_once
 // function begins at statement 10066
 // OP_ADDRESS	28	413	6505
 // OP_STOREP_F	276	6505	0
 // OP_CALL0	6472	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_once =
+void () trigger_once =
 {
     self.wait = CONTENT_EMPTY;
     trigger_multiple();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_relay;
 // trigger_relay
 // function begins at statement 10070
 // OP_ADDRESS	28	147	6507
 // OP_STOREP_FNC	518	6507	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_relay =
+void () trigger_relay =
 {
     self.use = SUB_UseTargets;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_secret;
 // trigger_secret
 // function begins at statement 10073
 // OP_ADD_F	39	6421	6509
@@ -399,7 +379,7 @@ void() trigger_secret;
 // OP_STOREP_S	720	6523	0
 // OP_CALL0	6472	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_secret =
+void () trigger_secret =
 {
     total_secrets = total_secrets + SPAWNFLAG_NOTOUCH;
     self.wait = CONTENT_EMPTY;
@@ -434,8 +414,6 @@ void() trigger_secret;
     trigger_multiple();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() counter_use;
 // counter_use
 // function begins at statement 10104
 // OP_ADDRESS	28	431	6526
@@ -495,14 +473,14 @@ void() counter_use;
 // OP_STOREP_ENT	346	6556	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () counter_use =
+void () counter_use =
 {
     local string junk;
     self.count = self.count - SPAWNFLAG_NOTOUCH;
     
     if(self.count < MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -538,7 +516,7 @@ void() counter_use;
             
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -551,8 +529,6 @@ void() counter_use;
     multi_trigger();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_counter;
 // trigger_counter
 // function begins at statement 10161
 // OP_ADDRESS	28	413	6558
@@ -565,7 +541,7 @@ void() trigger_counter;
 // OP_ADDRESS	28	147	6562
 // OP_STOREP_FNC	6524	6562	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_counter =
+void () trigger_counter =
 {
     self.wait = CONTENT_EMPTY;
     
@@ -577,10 +553,8 @@ void() trigger_counter;
     self.use = counter_use;
 };
 
-/* TYPE: EV_POINTER */ ;
 float PLAYER_ONLY = 1.000;
 float SILENT = 2.000;
-void() play_teleport;
 // play_teleport
 // function begins at statement 10171
 // OP_CALL0	452	0	0
@@ -612,7 +586,7 @@ void() play_teleport;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () play_teleport =
+void () play_teleport =
 {
     local float v;
     local string tmpstr;
@@ -642,7 +616,6 @@ void() play_teleport;
     remove(self);
 };
 
-float ;
 // spawn_tfog
 // function begins at statement 10200
 // OP_CALL0	459	0	0
@@ -670,7 +643,7 @@ float ;
 // OP_STORE_V	6575	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org) spawn_tfog =
+void (vector org) spawn_tfog =
 {
     s = spawn();
     s.origin = org;
@@ -683,8 +656,6 @@ float ;
     WriteCoord(MSG_BROADCAST, org_z);
 };
 
-/* TYPE: EV_POINTER */ ;
-void() tdeath_touch;
 // tdeath_touch
 // function begins at statement 10225
 // OP_LOAD_ENT	28	201	6583
@@ -718,12 +689,12 @@ void() tdeath_touch;
 // OP_STORE_V	4076	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () tdeath_touch =
+void () tdeath_touch =
 {
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -739,7 +710,7 @@ void() tdeath_touch;
         if(self.owner.classname != "player")
         {
             T_Damage(self.owner, self, self, 50000.000);
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -752,7 +723,6 @@ void() tdeath_touch;
     
 };
 
-float ;
 // spawn_tdeath
 // function begins at statement 10256
 // OP_CALL0	459	0	0
@@ -787,7 +757,7 @@ float ;
 // OP_STOREP_ENT	6598	6625	0
 // OP_STORE_F	6564	33	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, entity death_owner) spawn_tdeath =
+void (vector org, entity death_owner) spawn_tdeath =
 {
     local entity death;
     death = spawn();
@@ -804,8 +774,6 @@ float ;
     force_retouch = SILENT;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() teleport_touch;
 // teleport_touch
 // function begins at statement 10288
 // OP_LOAD_S	28	197	6631
@@ -901,7 +869,7 @@ void() teleport_touch;
 // OP_SUB_F	6712	6714	6715
 // OP_STOREP_F	6715	6711	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () teleport_touch =
+void () teleport_touch =
 {
     local entity t;
     local vector org;
@@ -911,7 +879,7 @@ void() teleport_touch;
         
         if(self.nextthink < time)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -922,7 +890,7 @@ void() teleport_touch;
         
         if(other.classname != "player")
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -930,7 +898,7 @@ void() teleport_touch;
     
     if((other.health <= MSG_BROADCAST) || (other.solid != SOLID_SLIDEBOX))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     SUB_UseTargets();
@@ -951,7 +919,7 @@ void() teleport_touch;
     {
         other.origin = t.origin;
         other.velocity = (v_forward * other.velocity) + (v_forward * other.velocity_y);
-        return; /* TODO retvalue? */
+        return;
     }
     
     setorigin(other, t.origin);
@@ -973,8 +941,6 @@ void() teleport_touch;
     other.flags = other.flags - (other.flags & FL_ONGROUND);
 };
 
-float ;
-void() info_teleport_destination;
 // info_teleport_destination
 // function begins at statement 10381
 // OP_ADDRESS	28	395	6717
@@ -994,7 +960,7 @@ void() info_teleport_destination;
 // OP_STORE_V	6741	4	0
 // OP_CALL1	456	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_teleport_destination =
+void () info_teleport_destination =
 {
     self.mangle = self.angles;
     self.angles = VEC_ORIGIN;
@@ -1008,8 +974,6 @@ void() info_teleport_destination;
     
 };
 
-string IMMEDIATE = "no targetname";
-void() teleport_use;
 // teleport_use
 // function begins at statement 10398
 // OP_ADDRESS	28	150	6743
@@ -1019,15 +983,13 @@ void() teleport_use;
 // OP_ADDRESS	28	148	6745
 // OP_STOREP_FNC	517	6745	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () teleport_use =
+void () teleport_use =
 {
     self.nextthink = time + 0.200;
     force_retouch = SILENT;
     self.think = SUB_Null;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_teleport;
 // trigger_teleport
 // function begins at statement 10405
 // OP_CALL0	559	0	0
@@ -1057,7 +1019,7 @@ void() trigger_teleport;
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_teleport =
+void () trigger_teleport =
 {
     local vector o;
     InitTrigger();
@@ -1079,8 +1041,6 @@ void() trigger_teleport;
     
 };
 
-vector ;
-void() trigger_skill_touch;
 // trigger_skill_touch
 // function begins at statement 10432
 // OP_LOAD_S	29	129	6772
@@ -1092,33 +1052,29 @@ void() trigger_skill_touch;
 // OP_STORE_V	6774	7	0
 // OP_CALL2	505	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_skill_touch =
+void () trigger_skill_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     cvar_set("skill", self.message);
 };
 
-string ;
-void() trigger_setskill;
 // trigger_setskill
 // function begins at statement 10441
 // OP_CALL0	559	0	0
 // OP_ADDRESS	28	146	6776
 // OP_STOREP_FNC	6771	6776	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_setskill =
+void () trigger_setskill =
 {
     InitTrigger();
     self.touch = trigger_skill_touch;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_onlyregistered_touch;
 // trigger_onlyregistered_touch
 // function begins at statement 10445
 // OP_LOAD_S	29	129	6778
@@ -1155,18 +1111,18 @@ void() trigger_onlyregistered_touch;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_onlyregistered_touch =
+void () trigger_onlyregistered_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.attack_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.attack_finished = time + SILENT;
@@ -1189,8 +1145,6 @@ void() trigger_onlyregistered_touch;
     
 };
 
-string ;
-void() trigger_onlyregistered;
 // trigger_onlyregistered
 // function begins at statement 10479
 // OP_STORE_V	720	4	0
@@ -1199,15 +1153,13 @@ void() trigger_onlyregistered;
 // OP_ADDRESS	28	146	6789
 // OP_STOREP_FNC	6777	6789	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_onlyregistered =
+void () trigger_onlyregistered =
 {
     precache_sound("misc/talk.wav");
     InitTrigger();
     self.touch = trigger_onlyregistered_touch;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() hurt_on;
 // hurt_on
 // function begins at statement 10485
 // OP_ADDRESS	28	104	6791
@@ -1215,14 +1167,12 @@ void() hurt_on;
 // OP_ADDRESS	28	150	6792
 // OP_STOREP_F	276	6792	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () hurt_on =
+void () hurt_on =
 {
     self.solid = SOLID_TRIGGER;
     self.nextthink = CONTENT_EMPTY;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() hurt_touch;
 // hurt_touch
 // function begins at statement 10490
 // OP_LOAD_F	29	163	6794
@@ -1242,7 +1192,7 @@ void() hurt_touch;
 // OP_STOREP_F	6799	6798	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () hurt_touch =
+void () hurt_touch =
 {
     
     if(other.takedamage)
@@ -1253,11 +1203,9 @@ void() hurt_touch;
         self.nextthink = time + PLAYER_ONLY;
     }
     
-    return; /* TODO retvalue? */
+    return;
 };
 
-float ;
-void() trigger_hurt;
 // trigger_hurt
 // function begins at statement 10507
 // OP_CALL0	559	0	0
@@ -1269,7 +1217,7 @@ void() trigger_hurt;
 // OP_ADDRESS	28	420	6804
 // OP_STOREP_F	313	6804	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_hurt =
+void () trigger_hurt =
 {
     InitTrigger();
     self.touch = hurt_touch;
@@ -1281,9 +1229,7 @@ void() trigger_hurt;
     
 };
 
-/* TYPE: EV_POINTER */ ;
 float PUSH_ONCE = 1.000;
-void() trigger_push_touch;
 // trigger_push_touch
 // function begins at statement 10516
 // OP_LOAD_S	29	129	6807
@@ -1326,7 +1272,7 @@ void() trigger_push_touch;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_push_touch =
+void () trigger_push_touch =
 {
     if(other.classname == "grenade")
     {
@@ -1362,8 +1308,6 @@ void() trigger_push_touch;
     
 };
 
-float ;
-void() trigger_push;
 // trigger_push
 // function begins at statement 10556
 // OP_CALL0	559	0	0
@@ -1377,7 +1321,7 @@ void() trigger_push;
 // OP_ADDRESS	28	364	6851
 // OP_STOREP_F	1168	6851	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_push =
+void () trigger_push =
 {
     InitTrigger();
     precache_sound("ambience/windfly.wav");
@@ -1390,8 +1334,6 @@ void() trigger_push;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() trigger_monsterjump_touch;
 // trigger_monsterjump_touch
 // function begins at statement 10567
 // OP_LOAD_F	29	182	6853
@@ -1424,12 +1366,12 @@ void() trigger_monsterjump_touch;
 // OP_LOAD_F	28	442	6873
 // OP_STOREP_F	6873	6872	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_monsterjump_touch =
+void () trigger_monsterjump_touch =
 {
     
     if((other.flags & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     other.velocity = self.movedir * self.speed;
@@ -1437,15 +1379,13 @@ void() trigger_monsterjump_touch;
     
     if(!(other.flags & FL_ONGROUND))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     other.flags = other.flags - FL_ONGROUND;
     other.velocity_z = self.height;
 };
 
-float ;
-void() trigger_monsterjump;
 // trigger_monsterjump
 // function begins at statement 10597
 // OP_LOAD_F	28	364	6875
@@ -1467,7 +1407,7 @@ void() trigger_monsterjump;
 // OP_ADDRESS	28	146	6891
 // OP_STOREP_FNC	6852	6891	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_monsterjump =
+void () trigger_monsterjump =
 {
     
     if(!self.speed)

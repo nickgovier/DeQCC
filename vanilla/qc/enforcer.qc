@@ -1,5 +1,3 @@
-float ;
-void() Laser_Touch;
 // Laser_Touch
 // function begins at statement 19926
 // OP_LOAD_ENT	28	201	11071
@@ -60,20 +58,20 @@ void() Laser_Touch;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () Laser_Touch =
+void () Laser_Touch =
 {
     local vector org;
     
     if(other == self.owner)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(pointcontents(self.origin) == CONTENT_SKY)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", SPAWN_CRUCIFIED, ATTN_STATIC);
@@ -96,7 +94,6 @@ void() Laser_Touch;
     remove(self);
 };
 
-entity ;
 // LaunchLaser
 // function begins at statement 19984
 // OP_LOAD_S	28	129	11103
@@ -147,7 +144,7 @@ entity ;
 // OP_ADDRESS	345	146	11124
 // OP_STOREP_FNC	11067	11124	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector org, vector vec) LaunchLaser =
+void (vector org, vector vec) LaunchLaser =
 {
     
     if(self.classname == "monster_enforcer")
@@ -171,8 +168,6 @@ entity ;
     newmis.touch = Laser_Touch;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() enforcer_fire;
 // enforcer_fire
 // function begins at statement 20032
 // OP_ADDRESS	28	133	11129
@@ -197,7 +192,7 @@ void() enforcer_fire;
 // OP_STORE_V	11161	7	0
 // OP_CALL2	7370	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enforcer_fire =
+void () enforcer_fire =
 {
     local vector org;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -206,92 +201,83 @@ void() enforcer_fire;
     LaunchLaser(org, self.enemy.origin - self.origin);
 };
 
-vector ;
-void() enf_stand1;
 // enf_stand1
 // function begins at statement 20054
 // OP_STATE	337	11165	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand1 =
+void () enf_stand1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 11165 0
+    *** UNPROCESSED OPCODE OP_STATE 337 11165 0
     ai_stand();
 };
 
-void() enf_stand2;
 // enf_stand2
 // function begins at statement 20057
 // OP_STATE	9491	11166	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand2 =
+void () enf_stand2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 9491 11166 0
+    *** UNPROCESSED OPCODE OP_STATE 9491 11166 0
     ai_stand();
 };
 
-void() enf_stand3;
 // enf_stand3
 // function begins at statement 20060
 // OP_STATE	7369	11167	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand3 =
+void () enf_stand3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7369 11167 0
+    *** UNPROCESSED OPCODE OP_STATE 7369 11167 0
     ai_stand();
 };
 
-void() enf_stand4;
 // enf_stand4
 // function begins at statement 20063
 // OP_STATE	370	11168	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand4 =
+void () enf_stand4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 11168 0
+    *** UNPROCESSED OPCODE OP_STATE 370 11168 0
     ai_stand();
 };
 
-void() enf_stand5;
 // enf_stand5
 // function begins at statement 20066
 // OP_STATE	6076	11169	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand5 =
+void () enf_stand5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6076 11169 0
+    *** UNPROCESSED OPCODE OP_STATE 6076 11169 0
     ai_stand();
 };
 
-void() enf_stand6;
 // enf_stand6
 // function begins at statement 20069
 // OP_STATE	313	11170	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand6 =
+void () enf_stand6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 11170 0
+    *** UNPROCESSED OPCODE OP_STATE 313 11170 0
     ai_stand();
 };
 
-void() enf_stand7;
 // enf_stand7
 // function begins at statement 20072
 // OP_STATE	314	11164	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_stand7 =
+void () enf_stand7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 11164 0
+    *** UNPROCESSED OPCODE OP_STATE 314 11164 0
     ai_stand();
 };
 
-void() enf_walk1;
 // enf_walk1
 // function begins at statement 20075
 // OP_STATE	315	11172	0
@@ -307,9 +293,9 @@ void() enf_walk1;
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk1 =
+void () enf_walk1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 315 11172 0
+    *** UNPROCESSED OPCODE OP_STATE 315 11172 0
     
     if(random() < 0.200)
     {
@@ -319,202 +305,186 @@ void() enf_walk1;
     ai_walk(SPAWNFLAG_LASER);
 };
 
-float ;
 // enf_walk2
 // function begins at statement 20088
 // OP_STATE	6077	11174	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk2 =
+void () enf_walk2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6077 11174 0
+    *** UNPROCESSED OPCODE OP_STATE 6077 11174 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
-void() enf_walk3;
 // enf_walk3
 // function begins at statement 20092
 // OP_STATE	317	11175	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk3 =
+void () enf_walk3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 317 11175 0
+    *** UNPROCESSED OPCODE OP_STATE 317 11175 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
-void() enf_walk4;
 // enf_walk4
 // function begins at statement 20096
 // OP_STATE	318	11176	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk4 =
+void () enf_walk4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 318 11176 0
+    *** UNPROCESSED OPCODE OP_STATE 318 11176 0
     ai_walk(AS_MELEE);
 };
 
-void() enf_walk5;
 // enf_walk5
 // function begins at statement 20100
 // OP_STATE	319	11177	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk5 =
+void () enf_walk5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 319 11177 0
+    *** UNPROCESSED OPCODE OP_STATE 319 11177 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
-void() enf_walk6;
 // enf_walk6
 // function begins at statement 20104
 // OP_STATE	2250	11178	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk6 =
+void () enf_walk6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2250 11178 0
+    *** UNPROCESSED OPCODE OP_STATE 2250 11178 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
-void() enf_walk7;
 // enf_walk7
 // function begins at statement 20108
 // OP_STATE	7768	11179	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk7 =
+void () enf_walk7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7768 11179 0
+    *** UNPROCESSED OPCODE OP_STATE 7768 11179 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
-void() enf_walk8;
 // enf_walk8
 // function begins at statement 20112
 // OP_STATE	2901	11180	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk8 =
+void () enf_walk8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2901 11180 0
+    *** UNPROCESSED OPCODE OP_STATE 2901 11180 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
-void() enf_walk9;
 // enf_walk9
 // function begins at statement 20116
 // OP_STATE	1876	11181	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk9 =
+void () enf_walk9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1876 11181 0
+    *** UNPROCESSED OPCODE OP_STATE 1876 11181 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
-void() enf_walk10;
 // enf_walk10
 // function begins at statement 20120
 // OP_STATE	6078	11182	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk10 =
+void () enf_walk10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6078 11182 0
+    *** UNPROCESSED OPCODE OP_STATE 6078 11182 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
-void() enf_walk11;
 // enf_walk11
 // function begins at statement 20124
 // OP_STATE	4861	11183	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk11 =
+void () enf_walk11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4861 11183 0
+    *** UNPROCESSED OPCODE OP_STATE 4861 11183 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
-void() enf_walk12;
 // enf_walk12
 // function begins at statement 20128
 // OP_STATE	3319	11184	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk12 =
+void () enf_walk12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3319 11184 0
+    *** UNPROCESSED OPCODE OP_STATE 3319 11184 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
-void() enf_walk13;
 // enf_walk13
 // function begins at statement 20132
 // OP_STATE	7776	11185	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk13 =
+void () enf_walk13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7776 11185 0
+    *** UNPROCESSED OPCODE OP_STATE 7776 11185 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
-void() enf_walk14;
 // enf_walk14
 // function begins at statement 20136
 // OP_STATE	894	11186	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk14 =
+void () enf_walk14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 894 11186 0
+    *** UNPROCESSED OPCODE OP_STATE 894 11186 0
     ai_walk(AS_MELEE);
 };
 
-void() enf_walk15;
 // enf_walk15
 // function begins at statement 20140
 // OP_STATE	7779	11187	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk15 =
+void () enf_walk15 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7779 11187 0
+    *** UNPROCESSED OPCODE OP_STATE 7779 11187 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
-void() enf_walk16;
 // enf_walk16
 // function begins at statement 20144
 // OP_STATE	7781	11171	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_walk16 =
+void () enf_walk16 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7781 11171 0
+    *** UNPROCESSED OPCODE OP_STATE 7781 11171 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
-void() enf_run1;
 // enf_run1
 // function begins at statement 20148
 // OP_STATE	301	11189	0
@@ -530,9 +500,9 @@ void() enf_run1;
 // OP_STORE_V	3319	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run1 =
+void () enf_run1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 301 11189 0
+    *** UNPROCESSED OPCODE OP_STATE 301 11189 0
     
     if(random() < 0.200)
     {
@@ -542,254 +512,233 @@ void() enf_run1;
     ai_run(18.000);
 };
 
-float ;
 // enf_run2
 // function begins at statement 20161
 // OP_STATE	4437	11191	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run2 =
+void () enf_run2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4437 11191 0
+    *** UNPROCESSED OPCODE OP_STATE 4437 11191 0
     ai_run(14.000);
 };
 
-void() enf_run3;
 // enf_run3
 // function begins at statement 20165
 // OP_STATE	1890	11192	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run3 =
+void () enf_run3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1890 11192 0
+    *** UNPROCESSED OPCODE OP_STATE 1890 11192 0
     ai_run(TE_WIZSPIKE);
 };
 
-void() enf_run4;
 // enf_run4
 // function begins at statement 20169
 // OP_STATE	7788	11193	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run4 =
+void () enf_run4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7788 11193 0
+    *** UNPROCESSED OPCODE OP_STATE 7788 11193 0
     ai_run(12.000);
 };
 
-void() enf_run5;
 // enf_run5
 // function begins at statement 20173
 // OP_STATE	302	11194	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run5 =
+void () enf_run5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 302 11194 0
+    *** UNPROCESSED OPCODE OP_STATE 302 11194 0
     ai_run(14.000);
 };
 
-void() enf_run6;
 // enf_run6
 // function begins at statement 20177
 // OP_STATE	303	11195	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run6 =
+void () enf_run6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 303 11195 0
+    *** UNPROCESSED OPCODE OP_STATE 303 11195 0
     ai_run(14.000);
 };
 
-void() enf_run7;
 // enf_run7
 // function begins at statement 20181
 // OP_STATE	5105	11196	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run7 =
+void () enf_run7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5105 11196 0
+    *** UNPROCESSED OPCODE OP_STATE 5105 11196 0
     ai_run(TE_WIZSPIKE);
 };
 
-void() enf_run8;
 // enf_run8
 // function begins at statement 20185
 // OP_STATE	304	11188	0
 // OP_STORE_V	319	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_run8 =
+void () enf_run8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 304 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 304 11188 0
     ai_run(TE_TELEPORT);
 };
 
-void() enf_atk1;
 // enf_atk1
 // function begins at statement 20189
 // OP_STATE	305	11198	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk1 =
+void () enf_atk1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 305 11198 0
+    *** UNPROCESSED OPCODE OP_STATE 305 11198 0
     ai_face();
 };
 
-void() enf_atk2;
 // enf_atk2
 // function begins at statement 20192
 // OP_STATE	5674	11199	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk2 =
+void () enf_atk2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5674 11199 0
+    *** UNPROCESSED OPCODE OP_STATE 5674 11199 0
     ai_face();
 };
 
-void() enf_atk3;
 // enf_atk3
 // function begins at statement 20195
 // OP_STATE	307	11200	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk3 =
+void () enf_atk3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 307 11200 0
+    *** UNPROCESSED OPCODE OP_STATE 307 11200 0
     ai_face();
 };
 
-void() enf_atk4;
 // enf_atk4
 // function begins at statement 20198
 // OP_STATE	5112	11201	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk4 =
+void () enf_atk4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5112 11201 0
+    *** UNPROCESSED OPCODE OP_STATE 5112 11201 0
     ai_face();
 };
 
-void() enf_atk5;
 // enf_atk5
 // function begins at statement 20201
 // OP_STATE	3072	11202	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk5 =
+void () enf_atk5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3072 11202 0
+    *** UNPROCESSED OPCODE OP_STATE 3072 11202 0
     ai_face();
 };
 
-void() enf_atk6;
 // enf_atk6
 // function begins at statement 20204
 // OP_STATE	5096	11203	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk6 =
+void () enf_atk6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5096 11203 0
+    *** UNPROCESSED OPCODE OP_STATE 5096 11203 0
     enforcer_fire();
 };
 
-void() enf_atk7;
 // enf_atk7
 // function begins at statement 20207
 // OP_STATE	5098	11204	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk7 =
+void () enf_atk7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5098 11204 0
+    *** UNPROCESSED OPCODE OP_STATE 5098 11204 0
     ai_face();
 };
 
-void() enf_atk8;
 // enf_atk8
 // function begins at statement 20210
 // OP_STATE	5100	11205	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk8 =
+void () enf_atk8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5100 11205 0
+    *** UNPROCESSED OPCODE OP_STATE 5100 11205 0
     ai_face();
 };
 
-void() enf_atk9;
 // enf_atk9
 // function begins at statement 20213
 // OP_STATE	3072	11206	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk9 =
+void () enf_atk9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3072 11206 0
+    *** UNPROCESSED OPCODE OP_STATE 3072 11206 0
     ai_face();
 };
 
-void() enf_atk10;
 // enf_atk10
 // function begins at statement 20216
 // OP_STATE	5096	11207	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk10 =
+void () enf_atk10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5096 11207 0
+    *** UNPROCESSED OPCODE OP_STATE 5096 11207 0
     enforcer_fire();
 };
 
-void() enf_atk11;
 // enf_atk11
 // function begins at statement 20219
 // OP_STATE	5098	11208	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk11 =
+void () enf_atk11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5098 11208 0
+    *** UNPROCESSED OPCODE OP_STATE 5098 11208 0
     ai_face();
 };
 
-void() enf_atk12;
 // enf_atk12
 // function begins at statement 20222
 // OP_STATE	5100	11209	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk12 =
+void () enf_atk12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5100 11209 0
+    *** UNPROCESSED OPCODE OP_STATE 5100 11209 0
     ai_face();
 };
 
-void() enf_atk13;
 // enf_atk13
 // function begins at statement 20225
 // OP_STATE	5102	11210	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk13 =
+void () enf_atk13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5102 11210 0
+    *** UNPROCESSED OPCODE OP_STATE 5102 11210 0
     ai_face();
 };
 
-void() enf_atk14;
 // enf_atk14
 // function begins at statement 20228
 // OP_STATE	1733	11188	0
@@ -797,395 +746,358 @@ void() enf_atk14;
 // OP_STORE_V	11197	4	0
 // OP_CALL1	738	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_atk14 =
+void () enf_atk14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1733 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 1733 11188 0
     ai_face();
     SUB_CheckRefire(enf_atk1);
 };
 
-void() enf_paina1;
 // enf_paina1
 // function begins at statement 20233
 // OP_STATE	5377	11212	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paina1 =
+void () enf_paina1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5377 11212 0
+    *** UNPROCESSED OPCODE OP_STATE 5377 11212 0
 };
 
-void() enf_paina2;
 // enf_paina2
 // function begins at statement 20235
 // OP_STATE	5379	11213	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paina2 =
+void () enf_paina2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5379 11213 0
+    *** UNPROCESSED OPCODE OP_STATE 5379 11213 0
 };
 
-void() enf_paina3;
 // enf_paina3
 // function begins at statement 20237
 // OP_STATE	5381	11214	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paina3 =
+void () enf_paina3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5381 11214 0
+    *** UNPROCESSED OPCODE OP_STATE 5381 11214 0
 };
 
-void() enf_paina4;
 // enf_paina4
 // function begins at statement 20239
 // OP_STATE	5383	11188	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paina4 =
+void () enf_paina4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5383 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 5383 11188 0
 };
 
-void() enf_painb1;
 // enf_painb1
 // function begins at statement 20241
 // OP_STATE	5384	11216	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painb1 =
+void () enf_painb1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5384 11216 0
+    *** UNPROCESSED OPCODE OP_STATE 5384 11216 0
 };
 
-void() enf_painb2;
 // enf_painb2
 // function begins at statement 20243
 // OP_STATE	5386	11217	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painb2 =
+void () enf_painb2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5386 11217 0
+    *** UNPROCESSED OPCODE OP_STATE 5386 11217 0
 };
 
-void() enf_painb3;
 // enf_painb3
 // function begins at statement 20245
 // OP_STATE	5388	11218	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painb3 =
+void () enf_painb3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5388 11218 0
+    *** UNPROCESSED OPCODE OP_STATE 5388 11218 0
 };
 
-void() enf_painb4;
 // enf_painb4
 // function begins at statement 20247
 // OP_STATE	2739	11219	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painb4 =
+void () enf_painb4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2739 11219 0
+    *** UNPROCESSED OPCODE OP_STATE 2739 11219 0
 };
 
-void() enf_painb5;
 // enf_painb5
 // function begins at statement 20249
 // OP_STATE	5391	11188	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painb5 =
+void () enf_painb5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5391 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 5391 11188 0
 };
 
-void() enf_painc1;
 // enf_painc1
 // function begins at statement 20251
 // OP_STATE	5393	11221	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc1 =
+void () enf_painc1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5393 11221 0
+    *** UNPROCESSED OPCODE OP_STATE 5393 11221 0
 };
 
-void() enf_painc2;
 // enf_painc2
 // function begins at statement 20253
 // OP_STATE	5395	11222	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc2 =
+void () enf_painc2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5395 11222 0
+    *** UNPROCESSED OPCODE OP_STATE 5395 11222 0
 };
 
-void() enf_painc3;
 // enf_painc3
 // function begins at statement 20255
 // OP_STATE	5397	11223	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc3 =
+void () enf_painc3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5397 11223 0
+    *** UNPROCESSED OPCODE OP_STATE 5397 11223 0
 };
 
-void() enf_painc4;
 // enf_painc4
 // function begins at statement 20257
 // OP_STATE	5399	11224	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc4 =
+void () enf_painc4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5399 11224 0
+    *** UNPROCESSED OPCODE OP_STATE 5399 11224 0
 };
 
-void() enf_painc5;
 // enf_painc5
 // function begins at statement 20259
 // OP_STATE	5401	11225	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc5 =
+void () enf_painc5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5401 11225 0
+    *** UNPROCESSED OPCODE OP_STATE 5401 11225 0
 };
 
-void() enf_painc6;
 // enf_painc6
 // function begins at statement 20261
 // OP_STATE	788	11226	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc6 =
+void () enf_painc6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 788 11226 0
+    *** UNPROCESSED OPCODE OP_STATE 788 11226 0
 };
 
-void() enf_painc7;
 // enf_painc7
 // function begins at statement 20263
 // OP_STATE	5404	11227	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc7 =
+void () enf_painc7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5404 11227 0
+    *** UNPROCESSED OPCODE OP_STATE 5404 11227 0
 };
 
-void() enf_painc8;
 // enf_painc8
 // function begins at statement 20265
 // OP_STATE	5406	11188	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_painc8 =
+void () enf_painc8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5406 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 5406 11188 0
 };
 
-void() enf_paind1;
 // enf_paind1
 // function begins at statement 20267
 // OP_STATE	5408	11229	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind1 =
+void () enf_paind1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5408 11229 0
+    *** UNPROCESSED OPCODE OP_STATE 5408 11229 0
 };
 
-void() enf_paind2;
 // enf_paind2
 // function begins at statement 20269
 // OP_STATE	5410	11230	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind2 =
+void () enf_paind2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5410 11230 0
+    *** UNPROCESSED OPCODE OP_STATE 5410 11230 0
 };
 
-void() enf_paind3;
 // enf_paind3
 // function begins at statement 20271
 // OP_STATE	5411	11231	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind3 =
+void () enf_paind3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5411 11231 0
+    *** UNPROCESSED OPCODE OP_STATE 5411 11231 0
 };
 
-void() enf_paind4;
 // enf_paind4
 // function begins at statement 20273
 // OP_STATE	5413	11232	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind4 =
+void () enf_paind4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5413 11232 0
+    *** UNPROCESSED OPCODE OP_STATE 5413 11232 0
     ai_painforward(SPAWNFLAG_LASER);
 };
 
-void() enf_paind5;
 // enf_paind5
 // function begins at statement 20277
 // OP_STATE	5415	11233	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind5 =
+void () enf_paind5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5415 11233 0
+    *** UNPROCESSED OPCODE OP_STATE 5415 11233 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind6;
 // enf_paind6
 // function begins at statement 20281
 // OP_STATE	5417	11234	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind6 =
+void () enf_paind6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5417 11234 0
+    *** UNPROCESSED OPCODE OP_STATE 5417 11234 0
 };
 
-void() enf_paind7;
 // enf_paind7
 // function begins at statement 20283
 // OP_STATE	5419	11235	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind7 =
+void () enf_paind7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5419 11235 0
+    *** UNPROCESSED OPCODE OP_STATE 5419 11235 0
 };
 
-void() enf_paind8;
 // enf_paind8
 // function begins at statement 20285
 // OP_STATE	1423	11236	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind8 =
+void () enf_paind8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1423 11236 0
+    *** UNPROCESSED OPCODE OP_STATE 1423 11236 0
 };
 
-void() enf_paind9;
 // enf_paind9
 // function begins at statement 20287
 // OP_STATE	5422	11237	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind9 =
+void () enf_paind9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5422 11237 0
+    *** UNPROCESSED OPCODE OP_STATE 5422 11237 0
 };
 
-void() enf_paind10;
 // enf_paind10
 // function begins at statement 20289
 // OP_STATE	5424	11238	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind10 =
+void () enf_paind10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5424 11238 0
+    *** UNPROCESSED OPCODE OP_STATE 5424 11238 0
 };
 
-void() enf_paind11;
 // enf_paind11
 // function begins at statement 20291
 // OP_STATE	5426	11239	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind11 =
+void () enf_paind11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5426 11239 0
+    *** UNPROCESSED OPCODE OP_STATE 5426 11239 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind12;
 // enf_paind12
 // function begins at statement 20295
 // OP_STATE	5427	11240	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind12 =
+void () enf_paind12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5427 11240 0
+    *** UNPROCESSED OPCODE OP_STATE 5427 11240 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind13;
 // enf_paind13
 // function begins at statement 20299
 // OP_STATE	5429	11241	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind13 =
+void () enf_paind13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5429 11241 0
+    *** UNPROCESSED OPCODE OP_STATE 5429 11241 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind14;
 // enf_paind14
 // function begins at statement 20303
 // OP_STATE	5431	11242	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind14 =
+void () enf_paind14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5431 11242 0
+    *** UNPROCESSED OPCODE OP_STATE 5431 11242 0
 };
 
-void() enf_paind15;
 // enf_paind15
 // function begins at statement 20305
 // OP_STATE	5433	11243	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind15 =
+void () enf_paind15 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5433 11243 0
+    *** UNPROCESSED OPCODE OP_STATE 5433 11243 0
 };
 
-void() enf_paind16;
 // enf_paind16
 // function begins at statement 20307
 // OP_STATE	5435	11244	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind16 =
+void () enf_paind16 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5435 11244 0
+    *** UNPROCESSED OPCODE OP_STATE 5435 11244 0
     ai_pain(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind17;
 // enf_paind17
 // function begins at statement 20311
 // OP_STATE	5437	11245	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind17 =
+void () enf_paind17 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5437 11245 0
+    *** UNPROCESSED OPCODE OP_STATE 5437 11245 0
     ai_pain(SPAWN_CRUCIFIED);
 };
 
-void() enf_paind18;
 // enf_paind18
 // function begins at statement 20315
 // OP_STATE	1884	11246	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind18 =
+void () enf_paind18 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1884 11246 0
+    *** UNPROCESSED OPCODE OP_STATE 1884 11246 0
 };
 
-void() enf_paind19;
 // enf_paind19
 // function begins at statement 20317
 // OP_STATE	5440	11188	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_paind19 =
+void () enf_paind19 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5440 11188 0
+    *** UNPROCESSED OPCODE OP_STATE 5440 11188 0
 };
 
-void() enf_pain;
 // enf_pain
 // function begins at statement 20319
 // OP_CALL0	452	0	0
@@ -1235,14 +1147,14 @@ void() enf_pain;
 // OP_STOREP_F	11264	11263	0
 // OP_CALL0	11228	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity attacker, float damage) enf_pain =
+void (entity attacker, float damage) enf_pain =
 {
     local float r;
     r = random();
     
     if(self.pain_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(r < IMMEDIATE)
@@ -1277,28 +1189,24 @@ void() enf_pain;
     
 };
 
-float ;
-void() enf_die1;
 // enf_die1
 // function begins at statement 20366
 // OP_STATE	5443	11266	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die1 =
+void () enf_die1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5443 11266 0
+    *** UNPROCESSED OPCODE OP_STATE 5443 11266 0
 };
 
-void() enf_die2;
 // enf_die2
 // function begins at statement 20368
 // OP_STATE	5445	11267	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die2 =
+void () enf_die2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5445 11267 0
+    *** UNPROCESSED OPCODE OP_STATE 5445 11267 0
 };
 
-void() enf_die3;
 // enf_die3
 // function begins at statement 20370
 // OP_STATE	5447	11268	0
@@ -1308,163 +1216,149 @@ void() enf_die3;
 // OP_STOREP_F	313	11270	0
 // OP_CALL0	2535	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die3 =
+void () enf_die3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5447 11268 0
+    *** UNPROCESSED OPCODE OP_STATE 5447 11268 0
     self.solid = SOLID_NOT;
     self.ammo_cells = TE_LIGHTNING1;
     DropBackpack();
 };
 
-/* TYPE: EV_POINTER */ ;
 // enf_die4
 // function begins at statement 20377
 // OP_STATE	5449	11271	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die4 =
+void () enf_die4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5449 11271 0
+    *** UNPROCESSED OPCODE OP_STATE 5449 11271 0
     ai_forward(14.000);
 };
 
-void() enf_die5;
 // enf_die5
 // function begins at statement 20381
 // OP_STATE	1390	11272	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die5 =
+void () enf_die5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1390 11272 0
+    *** UNPROCESSED OPCODE OP_STATE 1390 11272 0
     ai_forward(SPAWNFLAG_LASER);
 };
 
-void() enf_die6;
 // enf_die6
 // function begins at statement 20385
 // OP_STATE	5452	11273	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die6 =
+void () enf_die6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5452 11273 0
+    *** UNPROCESSED OPCODE OP_STATE 5452 11273 0
 };
 
-void() enf_die7;
 // enf_die7
 // function begins at statement 20387
 // OP_STATE	5454	11274	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die7 =
+void () enf_die7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5454 11274 0
+    *** UNPROCESSED OPCODE OP_STATE 5454 11274 0
 };
 
-void() enf_die8;
 // enf_die8
 // function begins at statement 20389
 // OP_STATE	5456	11275	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die8 =
+void () enf_die8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5456 11275 0
+    *** UNPROCESSED OPCODE OP_STATE 5456 11275 0
 };
 
-void() enf_die9;
 // enf_die9
 // function begins at statement 20391
 // OP_STATE	5458	11276	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die9 =
+void () enf_die9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5458 11276 0
+    *** UNPROCESSED OPCODE OP_STATE 5458 11276 0
     ai_forward(AS_MELEE);
 };
 
-void() enf_die10;
 // enf_die10
 // function begins at statement 20395
 // OP_STATE	2227	11277	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die10 =
+void () enf_die10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2227 11277 0
+    *** UNPROCESSED OPCODE OP_STATE 2227 11277 0
     ai_forward(TE_LIGHTNING1);
 };
 
-void() enf_die11;
 // enf_die11
 // function begins at statement 20399
 // OP_STATE	5351	11278	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die11 =
+void () enf_die11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5351 11278 0
+    *** UNPROCESSED OPCODE OP_STATE 5351 11278 0
     ai_forward(TE_LIGHTNING1);
 };
 
-void() enf_die12;
 // enf_die12
 // function begins at statement 20403
 // OP_STATE	5353	11279	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die12 =
+void () enf_die12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5353 11279 0
+    *** UNPROCESSED OPCODE OP_STATE 5353 11279 0
     ai_forward(TE_LIGHTNING1);
 };
 
-void() enf_die13;
 // enf_die13
 // function begins at statement 20407
 // OP_STATE	5355	11280	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die13 =
+void () enf_die13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5355 11280 0
+    *** UNPROCESSED OPCODE OP_STATE 5355 11280 0
 };
 
-void() enf_die14;
 // enf_die14
 // function begins at statement 20409
 // OP_STATE	5357	11280	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die14 =
+void () enf_die14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5357 11280 0
+    *** UNPROCESSED OPCODE OP_STATE 5357 11280 0
 };
 
-void() enf_fdie1;
 // enf_fdie1
 // function begins at statement 20411
 // OP_STATE	5359	11282	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie1 =
+void () enf_fdie1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5359 11282 0
+    *** UNPROCESSED OPCODE OP_STATE 5359 11282 0
 };
 
-void() enf_fdie2;
 // enf_fdie2
 // function begins at statement 20413
 // OP_STATE	5361	11283	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie2 =
+void () enf_fdie2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5361 11283 0
+    *** UNPROCESSED OPCODE OP_STATE 5361 11283 0
 };
 
-void() enf_fdie3;
 // enf_fdie3
 // function begins at statement 20415
 // OP_STATE	5363	11284	0
@@ -1474,95 +1368,86 @@ void() enf_fdie3;
 // OP_STOREP_F	313	11286	0
 // OP_CALL0	2535	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie3 =
+void () enf_fdie3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5363 11284 0
+    *** UNPROCESSED OPCODE OP_STATE 5363 11284 0
     self.solid = SOLID_NOT;
     self.ammo_cells = TE_LIGHTNING1;
     DropBackpack();
 };
 
-/* TYPE: EV_POINTER */ ;
 // enf_fdie4
 // function begins at statement 20422
 // OP_STATE	5365	11287	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie4 =
+void () enf_fdie4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5365 11287 0
+    *** UNPROCESSED OPCODE OP_STATE 5365 11287 0
 };
 
-void() enf_fdie5;
 // enf_fdie5
 // function begins at statement 20424
 // OP_STATE	5367	11288	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie5 =
+void () enf_fdie5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5367 11288 0
+    *** UNPROCESSED OPCODE OP_STATE 5367 11288 0
 };
 
-void() enf_fdie6;
 // enf_fdie6
 // function begins at statement 20426
 // OP_STATE	912	11289	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie6 =
+void () enf_fdie6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 912 11289 0
+    *** UNPROCESSED OPCODE OP_STATE 912 11289 0
 };
 
-void() enf_fdie7;
 // enf_fdie7
 // function begins at statement 20428
 // OP_STATE	5369	11290	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie7 =
+void () enf_fdie7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5369 11290 0
+    *** UNPROCESSED OPCODE OP_STATE 5369 11290 0
 };
 
-void() enf_fdie8;
 // enf_fdie8
 // function begins at statement 20430
 // OP_STATE	5371	11291	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie8 =
+void () enf_fdie8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5371 11291 0
+    *** UNPROCESSED OPCODE OP_STATE 5371 11291 0
 };
 
-void() enf_fdie9;
 // enf_fdie9
 // function begins at statement 20432
 // OP_STATE	3872	11292	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie9 =
+void () enf_fdie9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3872 11292 0
+    *** UNPROCESSED OPCODE OP_STATE 3872 11292 0
 };
 
-void() enf_fdie10;
 // enf_fdie10
 // function begins at statement 20434
 // OP_STATE	260	11293	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie10 =
+void () enf_fdie10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 260 11293 0
+    *** UNPROCESSED OPCODE OP_STATE 260 11293 0
 };
 
-void() enf_fdie11;
 // enf_fdie11
 // function begins at statement 20436
 // OP_STATE	5375	11293	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_fdie11 =
+void () enf_fdie11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5375 11293 0
+    *** UNPROCESSED OPCODE OP_STATE 5375 11293 0
 };
 
-void() enf_die;
 // enf_die
 // function begins at statement 20438
 // OP_LOAD_F	28	152	11295
@@ -1604,7 +1489,7 @@ void() enf_die;
 // OP_GOTO	2	0	0
 // OP_CALL0	11281	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () enf_die =
+void () enf_die =
 {
     
     if(self.health < -35.000)
@@ -1614,7 +1499,7 @@ void() enf_die;
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_VOICE, "enforcer/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
@@ -1629,8 +1514,6 @@ void() enf_die;
     
 };
 
-float ;
-void() monster_enforcer;
 // monster_enforcer
 // function begins at statement 20477
 // OP_IFNOT	35	4	0
@@ -1690,13 +1573,13 @@ void() monster_enforcer;
 // OP_STOREP_FNC	11197	11313	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () monster_enforcer =
+void () monster_enforcer =
 {
     
     if(deathmatch)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     precache_model2("progs/enforcer.mdl");

@@ -1,5 +1,3 @@
-/* TYPE: EV_POINTER */ ;
-void() LaunchMissile;
 // LaunchMissile
 // function begins at statement 15024
 // OP_LOAD_V	28	117	8870
@@ -58,7 +56,7 @@ void() LaunchMissile;
 // OP_ADDRESS	8860	148	8946
 // OP_STOREP_FNC	519	8946	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity missile, float mspeed, float accuracy) LaunchMissile =
+void (entity missile, float mspeed, float accuracy) LaunchMissile =
 {
     local vector vec;
     local vector move;
@@ -78,9 +76,8 @@ void() LaunchMissile;
     missile.think = SUB_Remove;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() wiz_run1;
-void() wiz_side1;
+void () wiz_run1;
+void () wiz_side1;
 // WizardCheckAttack
 // function begins at statement 15080
 // OP_LOAD_F	28	373	8957
@@ -159,7 +156,7 @@ void() wiz_side1;
 // OP_CALL0	8948	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () WizardCheckAttack =
+float () WizardCheckAttack =
 {
     local vector spot1;
     local vector spot2;
@@ -168,13 +165,13 @@ void() wiz_side1;
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(!enemy_vis)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
@@ -187,7 +184,7 @@ void() wiz_side1;
             wiz_run1();
         }
         
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     targ = self.enemy;
@@ -204,7 +201,7 @@ void() wiz_side1;
             wiz_run1();
         }
         
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     if(enemy_range == RANGE_MELEE)
@@ -228,7 +225,7 @@ void() wiz_side1;
     if(random() < chance)
     {
         self.attack_state = AS_MISSILE;
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
     if(enemy_range == RANGE_MID)
@@ -252,11 +249,9 @@ void() wiz_side1;
         
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() WizardAttackFinished;
 // WizardAttackFinished
 // function begins at statement 15156
 // OP_GE	761	244	9000
@@ -273,7 +268,7 @@ void() WizardAttackFinished;
 // OP_ADDRESS	28	148	9006
 // OP_STOREP_FNC	8948	9006	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () WizardAttackFinished =
+void () WizardAttackFinished =
 {
     if((enemy_range >= RANGE_MID) || !enemy_vis)
     {
@@ -288,8 +283,6 @@ void() WizardAttackFinished;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() Wiz_FastFire;
 // Wiz_FastFire
 // function begins at statement 15170
 // OP_LOAD_ENT	28	201	9014
@@ -345,7 +338,7 @@ void() Wiz_FastFire;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () Wiz_FastFire =
+void () Wiz_FastFire =
 {
     local vector vec;
     local vector dst;
@@ -368,8 +361,6 @@ void() Wiz_FastFire;
     remove(self);
 };
 
-string IMMEDIATE = "progs/w_spike.mdl";
-void() Wiz_StartFast;
 // Wiz_StartFast
 // function begins at statement 15223
 // OP_STORE_V	28	4	0
@@ -446,7 +437,7 @@ void() Wiz_StartFast;
 // OP_SUB_V	286	65	9132
 // OP_STOREP_V	9132	9129	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () Wiz_StartFast =
+void () Wiz_StartFast =
 {
     local entity missile;
     sound(self, CHAN_WEAPON, "wizard/wattack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
@@ -472,8 +463,6 @@ void() Wiz_StartFast;
     missile.movedir = VEC_ORIGIN - v_right;
 };
 
-vector ;
-void() Wiz_idlesound;
 // Wiz_idlesound
 // function begins at statement 15297
 // OP_CALL0	452	0	0
@@ -503,7 +492,7 @@ void() Wiz_idlesound;
 // OP_CALL5	453	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () Wiz_idlesound =
+void () Wiz_idlesound =
 {
     local float wr;
     wr = random() * TE_LIGHTNING1;
@@ -525,107 +514,97 @@ void() Wiz_idlesound;
         
     }
     
-    return; /* TODO retvalue? */
+    return;
 };
 
-string IMMEDIATE = "wizard/widle2.wav";
-void() wiz_stand1;
 // wiz_stand1
 // function begins at statement 15324
 // OP_STATE	337	9148	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand1 =
+void () wiz_stand1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 9148 0
+    *** UNPROCESSED OPCODE OP_STATE 337 9148 0
     ai_stand();
 };
 
-void() wiz_stand2;
 // wiz_stand2
 // function begins at statement 15327
 // OP_STATE	7368	9149	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand2 =
+void () wiz_stand2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7368 9149 0
+    *** UNPROCESSED OPCODE OP_STATE 7368 9149 0
     ai_stand();
 };
 
-void() wiz_stand3;
 // wiz_stand3
 // function begins at statement 15330
 // OP_STATE	7369	9150	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand3 =
+void () wiz_stand3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7369 9150 0
+    *** UNPROCESSED OPCODE OP_STATE 7369 9150 0
     ai_stand();
 };
 
-void() wiz_stand4;
 // wiz_stand4
 // function begins at statement 15333
 // OP_STATE	370	9151	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand4 =
+void () wiz_stand4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 9151 0
+    *** UNPROCESSED OPCODE OP_STATE 370 9151 0
     ai_stand();
 };
 
-void() wiz_stand5;
 // wiz_stand5
 // function begins at statement 15336
 // OP_STATE	6076	9152	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand5 =
+void () wiz_stand5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6076 9152 0
+    *** UNPROCESSED OPCODE OP_STATE 6076 9152 0
     ai_stand();
 };
 
-void() wiz_stand6;
 // wiz_stand6
 // function begins at statement 15339
 // OP_STATE	313	9153	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand6 =
+void () wiz_stand6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 9153 0
+    *** UNPROCESSED OPCODE OP_STATE 313 9153 0
     ai_stand();
 };
 
-void() wiz_stand7;
 // wiz_stand7
 // function begins at statement 15342
 // OP_STATE	314	9154	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand7 =
+void () wiz_stand7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 9154 0
+    *** UNPROCESSED OPCODE OP_STATE 314 9154 0
     ai_stand();
 };
 
-void() wiz_stand8;
 // wiz_stand8
 // function begins at statement 15345
 // OP_STATE	315	9147	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_stand8 =
+void () wiz_stand8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 315 9147 0
+    *** UNPROCESSED OPCODE OP_STATE 315 9147 0
     ai_stand();
 };
 
-void() wiz_walk1;
 // wiz_walk1
 // function begins at statement 15348
 // OP_STATE	337	9156	0
@@ -633,101 +612,94 @@ void() wiz_walk1;
 // OP_CALL1	1351	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk1 =
+void () wiz_walk1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 9156 0
+    *** UNPROCESSED OPCODE OP_STATE 337 9156 0
     ai_walk(SECRET_NO_SHOOT);
     Wiz_idlesound();
 };
 
-void() wiz_walk2;
 // wiz_walk2
 // function begins at statement 15353
 // OP_STATE	7368	9157	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk2 =
+void () wiz_walk2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7368 9157 0
+    *** UNPROCESSED OPCODE OP_STATE 7368 9157 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk3;
 // wiz_walk3
 // function begins at statement 15357
 // OP_STATE	7369	9158	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk3 =
+void () wiz_walk3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7369 9158 0
+    *** UNPROCESSED OPCODE OP_STATE 7369 9158 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk4;
 // wiz_walk4
 // function begins at statement 15361
 // OP_STATE	370	9159	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk4 =
+void () wiz_walk4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 9159 0
+    *** UNPROCESSED OPCODE OP_STATE 370 9159 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk5;
 // wiz_walk5
 // function begins at statement 15365
 // OP_STATE	6076	9160	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk5 =
+void () wiz_walk5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6076 9160 0
+    *** UNPROCESSED OPCODE OP_STATE 6076 9160 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk6;
 // wiz_walk6
 // function begins at statement 15369
 // OP_STATE	313	9161	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk6 =
+void () wiz_walk6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 9161 0
+    *** UNPROCESSED OPCODE OP_STATE 313 9161 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk7;
 // wiz_walk7
 // function begins at statement 15373
 // OP_STATE	314	9162	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk7 =
+void () wiz_walk7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 9162 0
+    *** UNPROCESSED OPCODE OP_STATE 314 9162 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
-void() wiz_walk8;
 // wiz_walk8
 // function begins at statement 15377
 // OP_STATE	315	9155	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_walk8 =
+void () wiz_walk8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 315 9155 0
+    *** UNPROCESSED OPCODE OP_STATE 315 9155 0
     ai_walk(SECRET_NO_SHOOT);
 };
 
@@ -738,101 +710,94 @@ void() wiz_walk8;
 // OP_CALL1	1432	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side1 =
+void () wiz_side1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 337 9163 0
+    *** UNPROCESSED OPCODE OP_STATE 337 9163 0
     ai_run(SECRET_NO_SHOOT);
     Wiz_idlesound();
 };
 
-void() wiz_side2;
 // wiz_side2
 // function begins at statement 15386
 // OP_STATE	7368	9164	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side2 =
+void () wiz_side2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7368 9164 0
+    *** UNPROCESSED OPCODE OP_STATE 7368 9164 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side3;
 // wiz_side3
 // function begins at statement 15390
 // OP_STATE	7369	9165	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side3 =
+void () wiz_side3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7369 9165 0
+    *** UNPROCESSED OPCODE OP_STATE 7369 9165 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side4;
 // wiz_side4
 // function begins at statement 15394
 // OP_STATE	370	9166	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side4 =
+void () wiz_side4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 370 9166 0
+    *** UNPROCESSED OPCODE OP_STATE 370 9166 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side5;
 // wiz_side5
 // function begins at statement 15398
 // OP_STATE	6076	9167	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side5 =
+void () wiz_side5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6076 9167 0
+    *** UNPROCESSED OPCODE OP_STATE 6076 9167 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side6;
 // wiz_side6
 // function begins at statement 15402
 // OP_STATE	313	9168	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side6 =
+void () wiz_side6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 313 9168 0
+    *** UNPROCESSED OPCODE OP_STATE 313 9168 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side7;
 // wiz_side7
 // function begins at statement 15406
 // OP_STATE	314	9169	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side7 =
+void () wiz_side7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 314 9169 0
+    *** UNPROCESSED OPCODE OP_STATE 314 9169 0
     ai_run(SECRET_NO_SHOOT);
 };
 
-void() wiz_side8;
 // wiz_side8
 // function begins at statement 15410
 // OP_STATE	315	8948	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_side8 =
+void () wiz_side8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 315 8948 0
+    *** UNPROCESSED OPCODE OP_STATE 315 8948 0
     ai_run(SECRET_NO_SHOOT);
 };
 
@@ -843,293 +808,270 @@ void() wiz_side8;
 // OP_CALL1	1432	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run1 =
+void () wiz_run1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1876 9170 0
+    *** UNPROCESSED OPCODE OP_STATE 1876 9170 0
     ai_run(SECRET_YES_SHOOT);
     Wiz_idlesound();
 };
 
-void() wiz_run2;
 // wiz_run2
 // function begins at statement 15419
 // OP_STATE	6078	9171	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run2 =
+void () wiz_run2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 6078 9171 0
+    *** UNPROCESSED OPCODE OP_STATE 6078 9171 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run3;
 // wiz_run3
 // function begins at statement 15423
 // OP_STATE	4861	9172	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run3 =
+void () wiz_run3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4861 9172 0
+    *** UNPROCESSED OPCODE OP_STATE 4861 9172 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run4;
 // wiz_run4
 // function begins at statement 15427
 // OP_STATE	3319	9173	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run4 =
+void () wiz_run4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 3319 9173 0
+    *** UNPROCESSED OPCODE OP_STATE 3319 9173 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run5;
 // wiz_run5
 // function begins at statement 15431
 // OP_STATE	7776	9174	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run5 =
+void () wiz_run5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7776 9174 0
+    *** UNPROCESSED OPCODE OP_STATE 7776 9174 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run6;
 // wiz_run6
 // function begins at statement 15435
 // OP_STATE	894	9175	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run6 =
+void () wiz_run6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 894 9175 0
+    *** UNPROCESSED OPCODE OP_STATE 894 9175 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run7;
 // wiz_run7
 // function begins at statement 15439
 // OP_STATE	7779	9176	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run7 =
+void () wiz_run7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7779 9176 0
+    *** UNPROCESSED OPCODE OP_STATE 7779 9176 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run8;
 // wiz_run8
 // function begins at statement 15443
 // OP_STATE	7781	9177	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run8 =
+void () wiz_run8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7781 9177 0
+    *** UNPROCESSED OPCODE OP_STATE 7781 9177 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run9;
 // wiz_run9
 // function begins at statement 15447
 // OP_STATE	301	9178	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run9 =
+void () wiz_run9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 301 9178 0
+    *** UNPROCESSED OPCODE OP_STATE 301 9178 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run10;
 // wiz_run10
 // function begins at statement 15451
 // OP_STATE	4437	9179	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run10 =
+void () wiz_run10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 4437 9179 0
+    *** UNPROCESSED OPCODE OP_STATE 4437 9179 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run11;
 // wiz_run11
 // function begins at statement 15455
 // OP_STATE	1890	9180	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run11 =
+void () wiz_run11 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1890 9180 0
+    *** UNPROCESSED OPCODE OP_STATE 1890 9180 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run12;
 // wiz_run12
 // function begins at statement 15459
 // OP_STATE	7788	9181	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run12 =
+void () wiz_run12 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 7788 9181 0
+    *** UNPROCESSED OPCODE OP_STATE 7788 9181 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run13;
 // wiz_run13
 // function begins at statement 15463
 // OP_STATE	302	9182	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run13 =
+void () wiz_run13 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 302 9182 0
+    *** UNPROCESSED OPCODE OP_STATE 302 9182 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_run14;
 // wiz_run14
 // function begins at statement 15467
 // OP_STATE	303	8947	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_run14 =
+void () wiz_run14 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 303 8947 0
+    *** UNPROCESSED OPCODE OP_STATE 303 8947 0
     ai_run(SECRET_YES_SHOOT);
 };
 
-void() wiz_fast1;
 // wiz_fast1
 // function begins at statement 15471
 // OP_STATE	5105	9184	0
 // OP_CALL0	758	0	0
 // OP_CALL0	9059	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast1 =
+void () wiz_fast1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5105 9184 0
+    *** UNPROCESSED OPCODE OP_STATE 5105 9184 0
     ai_face();
     Wiz_StartFast();
 };
 
-void() wiz_fast2;
 // wiz_fast2
 // function begins at statement 15475
 // OP_STATE	304	9185	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast2 =
+void () wiz_fast2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 304 9185 0
+    *** UNPROCESSED OPCODE OP_STATE 304 9185 0
     ai_face();
 };
 
-void() wiz_fast3;
 // wiz_fast3
 // function begins at statement 15478
 // OP_STATE	305	9186	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast3 =
+void () wiz_fast3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 305 9186 0
+    *** UNPROCESSED OPCODE OP_STATE 305 9186 0
     ai_face();
 };
 
-void() wiz_fast4;
 // wiz_fast4
 // function begins at statement 15481
 // OP_STATE	5674	9187	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast4 =
+void () wiz_fast4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5674 9187 0
+    *** UNPROCESSED OPCODE OP_STATE 5674 9187 0
     ai_face();
 };
 
-void() wiz_fast5;
 // wiz_fast5
 // function begins at statement 15484
 // OP_STATE	307	9188	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast5 =
+void () wiz_fast5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 307 9188 0
+    *** UNPROCESSED OPCODE OP_STATE 307 9188 0
     ai_face();
 };
 
-void() wiz_fast6;
 // wiz_fast6
 // function begins at statement 15487
 // OP_STATE	5112	9189	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast6 =
+void () wiz_fast6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5112 9189 0
+    *** UNPROCESSED OPCODE OP_STATE 5112 9189 0
     ai_face();
 };
 
-void() wiz_fast7;
 // wiz_fast7
 // function begins at statement 15490
 // OP_STATE	307	9190	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast7 =
+void () wiz_fast7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 307 9190 0
+    *** UNPROCESSED OPCODE OP_STATE 307 9190 0
     ai_face();
 };
 
-void() wiz_fast8;
 // wiz_fast8
 // function begins at statement 15493
 // OP_STATE	5674	9191	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast8 =
+void () wiz_fast8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5674 9191 0
+    *** UNPROCESSED OPCODE OP_STATE 5674 9191 0
     ai_face();
 };
 
-void() wiz_fast9;
 // wiz_fast9
 // function begins at statement 15496
 // OP_STATE	305	9192	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast9 =
+void () wiz_fast9 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 305 9192 0
+    *** UNPROCESSED OPCODE OP_STATE 305 9192 0
     ai_face();
 };
 
-void() wiz_fast10;
 // wiz_fast10
 // function begins at statement 15499
 // OP_STATE	304	8947	0
@@ -1138,55 +1080,50 @@ void() wiz_fast10;
 // OP_CALL1	731	0	0
 // OP_CALL0	8999	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_fast10 =
+void () wiz_fast10 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 304 8947 0
+    *** UNPROCESSED OPCODE OP_STATE 304 8947 0
     ai_face();
     SUB_AttackFinished(SPAWNFLAG_LASER);
     WizardAttackFinished();
 };
 
-void() wiz_pain1;
 // wiz_pain1
 // function begins at statement 15505
 // OP_STATE	5445	9194	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_pain1 =
+void () wiz_pain1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5445 9194 0
+    *** UNPROCESSED OPCODE OP_STATE 5445 9194 0
 };
 
-void() wiz_pain2;
 // wiz_pain2
 // function begins at statement 15507
 // OP_STATE	5447	9195	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_pain2 =
+void () wiz_pain2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5447 9195 0
+    *** UNPROCESSED OPCODE OP_STATE 5447 9195 0
 };
 
-void() wiz_pain3;
 // wiz_pain3
 // function begins at statement 15509
 // OP_STATE	5449	9196	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_pain3 =
+void () wiz_pain3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5449 9196 0
+    *** UNPROCESSED OPCODE OP_STATE 5449 9196 0
 };
 
-void() wiz_pain4;
 // wiz_pain4
 // function begins at statement 15511
 // OP_STATE	1390	8947	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_pain4 =
+void () wiz_pain4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 1390 8947 0
+    *** UNPROCESSED OPCODE OP_STATE 1390 8947 0
 };
 
-void() wiz_death1;
 // wiz_death1
 // function begins at statement 15513
 // OP_STATE	5452	9198	0
@@ -1218,9 +1155,9 @@ void() wiz_death1;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death1 =
+void () wiz_death1 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
+    *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
     random();
     self.velocity = -200.000 + (400.000 * random());
     random();
@@ -1231,80 +1168,72 @@ void() wiz_death1;
     sound(self, CHAN_VOICE, "wizard/wdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
 };
 
-string IMMEDIATE = "wizard/wdeath.wav";
 // wiz_death2
 // function begins at statement 15542
 // OP_STATE	5454	9214	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death2 =
+void () wiz_death2 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5454 9214 0
+    *** UNPROCESSED OPCODE OP_STATE 5454 9214 0
 };
 
-void() wiz_death3;
 // wiz_death3
 // function begins at statement 15544
 // OP_STATE	5456	9215	0
 // OP_ADDRESS	28	104	9216
 // OP_STOREP_F	237	9216	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death3 =
+void () wiz_death3 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5456 9215 0
+    *** UNPROCESSED OPCODE OP_STATE 5456 9215 0
     self.solid = SOLID_NOT;
 };
 
-/* TYPE: EV_POINTER */ ;
 // wiz_death4
 // function begins at statement 15548
 // OP_STATE	5458	9217	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death4 =
+void () wiz_death4 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5458 9217 0
+    *** UNPROCESSED OPCODE OP_STATE 5458 9217 0
 };
 
-void() wiz_death5;
 // wiz_death5
 // function begins at statement 15550
 // OP_STATE	2227	9218	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death5 =
+void () wiz_death5 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 2227 9218 0
+    *** UNPROCESSED OPCODE OP_STATE 2227 9218 0
 };
 
-void() wiz_death6;
 // wiz_death6
 // function begins at statement 15552
 // OP_STATE	5351	9219	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death6 =
+void () wiz_death6 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5351 9219 0
+    *** UNPROCESSED OPCODE OP_STATE 5351 9219 0
 };
 
-void() wiz_death7;
 // wiz_death7
 // function begins at statement 15554
 // OP_STATE	5353	9220	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death7 =
+void () wiz_death7 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5353 9220 0
+    *** UNPROCESSED OPCODE OP_STATE 5353 9220 0
 };
 
-void() wiz_death8;
 // wiz_death8
 // function begins at statement 15556
 // OP_STATE	5355	9220	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_death8 =
+void () wiz_death8 =
 {
-    // *** UNPROCESSED OPCODE OP_STATE 5355 9220 0
+    *** UNPROCESSED OPCODE OP_STATE 5355 9220 0
 };
 
-void() wiz_die;
 // wiz_die
 // function begins at statement 15558
 // OP_LOAD_F	28	152	9222
@@ -1335,7 +1264,7 @@ void() wiz_die;
 // OP_RETURN	0	0	0
 // OP_CALL0	9197	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () wiz_die =
+void () wiz_die =
 {
     
     if(self.health < -40.000)
@@ -1345,14 +1274,12 @@ void() wiz_die;
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
-        return; /* TODO retvalue? */
+        return;
     }
     
     wiz_death1();
 };
 
-float ;
-void() Wiz_Pain;
 // Wiz_Pain
 // function begins at statement 15586
 // OP_STORE_V	28	4	0
@@ -1368,30 +1295,27 @@ void() Wiz_Pain;
 // OP_RETURN	0	0	0
 // OP_CALL0	9193	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity attacker, float damage) Wiz_Pain =
+void (entity attacker, float damage) Wiz_Pain =
 {
     sound(self, CHAN_VOICE, "wizard/wpain.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     
     if((random() * 70.000) > damage)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     wiz_pain1();
 };
 
-float ;
-void() Wiz_Missile;
 // Wiz_Missile
 // function begins at statement 15599
 // OP_CALL0	9183	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () Wiz_Missile =
+void () Wiz_Missile =
 {
     wiz_fast1();
 };
 
-void() monster_wizard;
 // monster_wizard
 // function begins at statement 15601
 // OP_IFNOT	35	4	0
@@ -1445,13 +1369,13 @@ void() monster_wizard;
 // OP_STOREP_FNC	9221	9247	0
 // OP_CALL0	5606	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () monster_wizard =
+void () monster_wizard =
 {
     
     if(deathmatch)
     {
         remove(self);
-        return; /* TODO retvalue? */
+        return;
     }
     
     precache_model("progs/wizard.mdl");

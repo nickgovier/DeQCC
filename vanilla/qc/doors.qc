@@ -1,12 +1,10 @@
-float ;
 float DOOR_START_OPEN = 1.000;
 float DOOR_DONT_LINK = 4.000;
 float DOOR_GOLD_KEY = 8.000;
 float DOOR_SILVER_KEY = 16.000;
 float DOOR_TOGGLE = 32.000;
-void() door_go_down;
-void() door_go_up;
-void() door_blocked;
+void () door_go_down;
+void () door_go_up;
 // door_blocked
 // function begins at statement 8722
 // OP_LOAD_F	28	420	5678
@@ -25,7 +23,7 @@ void() door_blocked;
 // OP_GOTO	2	0	0
 // OP_CALL0	5675	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_blocked =
+void () door_blocked =
 {
     T_Damage(other, self, self, self.dmg);
     
@@ -44,8 +42,6 @@ void() door_blocked;
     
 };
 
-float ;
-void() door_hit_top;
 // door_hit_top
 // function begins at statement 8738
 // OP_LOAD_S	28	209	5684
@@ -69,22 +65,20 @@ void() door_hit_top;
 // OP_ADD_F	5690	5691	5692
 // OP_STOREP_F	5692	5689	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_hit_top =
+void () door_hit_top =
 {
     sound(self, CHAN_VOICE, self.noise1, DOOR_START_OPEN, ATTN_NORM);
     self.state = STATE_TOP;
     
     if(self.spawnflags & DOOR_TOGGLE)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.think = door_go_down;
     self.nextthink = self.ltime + self.wait;
 };
 
-float ;
-void() door_hit_bottom;
 // door_hit_bottom
 // function begins at statement 8759
 // OP_LOAD_S	28	209	5694
@@ -97,13 +91,12 @@ void() door_hit_bottom;
 // OP_ADDRESS	28	433	5695
 // OP_STOREP_F	283	5695	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_hit_bottom =
+void () door_hit_bottom =
 {
     sound(self, CHAN_VOICE, self.noise1, DOOR_START_OPEN, ATTN_NORM);
     self.state = STATE_BOTTOM;
 };
 
-/* TYPE: EV_POINTER */ ;
 // door_go_down
 // function begins at statement 8769
 // OP_LOAD_S	28	210	5696
@@ -129,7 +122,7 @@ void() door_hit_bottom;
 // OP_STORE_V	5693	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_go_down =
+void () door_go_down =
 {
     sound(self, CHAN_VOICE, self.noise2, DOOR_START_OPEN, ATTN_NORM);
     
@@ -143,7 +136,6 @@ void() door_hit_bottom;
     SUB_CalcMove(self.pos1, self.speed, door_hit_bottom);
 };
 
-float ;
 // door_go_up
 // function begins at statement 8792
 // OP_LOAD_F	28	433	5706
@@ -176,19 +168,19 @@ float ;
 // OP_CALL3	512	0	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_go_up =
+void () door_go_up =
 {
     
     if(self.state == STATE_UP)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.state == STATE_TOP)
     {
         self.nextthink = self.ltime + self.wait;
-        return; /* TODO retvalue? */
+        return;
     }
     
     sound(self, CHAN_VOICE, self.noise2, DOOR_START_OPEN, ATTN_NORM);
@@ -197,8 +189,6 @@ float ;
     SUB_UseTargets();
 };
 
-float ;
-void() door_fire;
 // door_fire
 // function begins at statement 8822
 // OP_LOAD_ENT	28	201	5723
@@ -247,7 +237,7 @@ void() door_fire;
 // OP_IF	5743	-6	0
 // OP_STORE_ENT	5721	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_fire =
+void () door_fire =
 {
     local entity oself;
     local entity starte;
@@ -278,7 +268,7 @@ void() door_fire;
                 self = self.enemy;
             } while ((self != starte) && (self != world));
             self = oself;
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -292,8 +282,6 @@ void() door_fire;
     self = oself;
 };
 
-float ;
-void() door_use;
 // door_use
 // function begins at statement 8868
 // OP_ADDRESS	28	206	5746
@@ -310,7 +298,7 @@ void() door_use;
 // OP_CALL0	5720	0	0
 // OP_STORE_ENT	5745	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_use =
+void () door_use =
 {
     local entity oself;
     self.message = "";
@@ -322,8 +310,6 @@ void() door_use;
     self = oself;
 };
 
-entity ;
-void() door_trigger_touch;
 // door_trigger_touch
 // function begins at statement 8882
 // OP_LOAD_F	29	152	5753
@@ -342,18 +328,18 @@ void() door_trigger_touch;
 // OP_STORE_ENT	5759	28	0
 // OP_CALL0	5744	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_trigger_touch =
+void () door_trigger_touch =
 {
     
     if(other.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.attack_finished = time + DOOR_START_OPEN;
@@ -362,8 +348,6 @@ void() door_trigger_touch;
     door_use();
 };
 
-entity ;
-void() door_killed;
 // door_killed
 // function begins at statement 8898
 // OP_STORE_ENT	28	5761	0
@@ -377,7 +361,7 @@ void() door_killed;
 // OP_CALL0	5744	0	0
 // OP_STORE_ENT	5761	28	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_killed =
+void () door_killed =
 {
     local entity oself;
     oself = self;
@@ -388,8 +372,6 @@ void() door_killed;
     self = oself;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() door_touch;
 // door_touch
 // function begins at statement 8909
 // OP_LOAD_S	29	129	5767
@@ -532,18 +514,18 @@ void() door_touch;
 // OP_STOREP_FNC	517	5821	0
 // OP_CALL0	5744	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () door_touch =
+void () door_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.owner.attack_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.owner.attack_finished = time + WEAPON_ROCKET;
@@ -557,7 +539,7 @@ void() door_touch;
     
     if(!self.items)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -620,7 +602,7 @@ void() door_touch;
             
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     other.items = other.items - self.items;
@@ -634,8 +616,6 @@ void() door_touch;
     door_use();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() spawn_field;
 // spawn_field
 // function begins at statement 9049
 // OP_CALL0	459	0	0
@@ -658,7 +638,7 @@ void() spawn_field;
 // OP_CALL3	450	0	0
 // OP_RETURN	5829	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector fmins, vector fmaxs) spawn_field =
+entity (vector fmins, vector fmaxs) spawn_field =
 {
     local entity trigger;
     local vector t1;
@@ -671,11 +651,9 @@ void() spawn_field;
     t1 = fmins;
     t2 = fmaxs;
     setsize(trigger, t1 - '60.000 60.000 8.000', t2 + '60.000 60.000 8.000');
-    return; /* TODO retvalue? */
+    return trigger;
 };
 
-vector ;
-void() EntitiesTouching;
 // EntitiesTouching
 // function begins at statement 9069
 // OP_LOAD_F	5850	135	5852
@@ -710,49 +688,47 @@ void() EntitiesTouching;
 // OP_RETURN	213	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity e1, entity e2) EntitiesTouching =
+float (entity e1, entity e2) EntitiesTouching =
 {
     
     if(e1.mins > e2.maxs)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(e1.mins_y > e2.maxs_y)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(e1.mins_z > e2.maxs_z)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(e1.maxs < e2.mins)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(e1.maxs_y < e2.mins_y)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(e1.maxs_z < e2.mins_z)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
-    return; /* TODO retvalue? */
+    return TRUE;
 };
 
-float ;
-void() LinkDoors;
 // LinkDoors
 // function begins at statement 9101
 // OP_LOAD_ENT	28	181	5879
@@ -861,7 +837,7 @@ void() LinkDoors;
 // OP_STORE_F	5930	5878	0
 // OP_IF	5670	-87	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () LinkDoors =
+void () LinkDoors =
 {
     local entity t;
     local entity starte;
@@ -870,7 +846,7 @@ void() LinkDoors;
     
     if(self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -878,7 +854,7 @@ void() LinkDoors;
     {
         self.enemy = self;
         self.owner = self;
-        return; /* TODO retvalue? */
+        return;
     }
     
     cmins = self.mins;
@@ -915,23 +891,23 @@ void() LinkDoors;
             
             if(self.health)
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if(self.targetname)
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if(self.items)
             {
-                return; /* TODO retvalue? */
+                return;
             }
             
             self.owner.trigger_field = spawn_field(cmins, cmaxs);
-            return; /* TODO retvalue? */
+            return;
         }
         
         
@@ -986,8 +962,6 @@ void() LinkDoors;
     } while (DOOR_START_OPEN);
 };
 
-float ;
-void() func_door;
 // func_door
 // function begins at statement 9207
 // OP_LOAD_F	30	352	5932
@@ -1185,7 +1159,7 @@ void() func_door;
 // OP_ADD_F	6065	603	6066
 // OP_STOREP_F	6066	6064	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () func_door =
+void () func_door =
 {
     if(world.worldtype == MSG_BROADCAST)
     {
@@ -1341,20 +1315,18 @@ void() func_door;
     self.nextthink = self.ltime + 0.100;
 };
 
-float ;
-void() fd_secret_move1;
-void() fd_secret_move2;
-void() fd_secret_move3;
-void() fd_secret_move4;
-void() fd_secret_move5;
-void() fd_secret_move6;
-void() fd_secret_done;
+void () fd_secret_move1;
+void () fd_secret_move2;
+void () fd_secret_move3;
+void () fd_secret_move4;
+void () fd_secret_move5;
+void () fd_secret_move6;
+void () fd_secret_done;
 float SECRET_OPEN_ONCE = 1.000;
 float SECRET_1ST_LEFT = 2.000;
 float SECRET_1ST_DOWN = 4.000;
 float SECRET_NO_SHOOT = 8.000;
 float SECRET_YES_SHOOT = 16.000;
-void() fd_secret_use;
 // fd_secret_use
 // function begins at statement 9402
 // OP_ADDRESS	28	152	6081
@@ -1460,14 +1432,14 @@ void() fd_secret_use;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_use =
+void () fd_secret_use =
 {
     local float temp;
     self.health = 10000.000;
     
     if(self.origin != self.oldorigin)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.message = string_null;
@@ -1518,7 +1490,6 @@ void() fd_secret_use;
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
 };
 
-string ;
 // fd_secret_move1
 // function begins at statement 9505
 // OP_ADDRESS	28	150	6176
@@ -1535,14 +1506,13 @@ string ;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move1 =
+void () fd_secret_move1 =
 {
     self.nextthink = self.ltime + SECRET_OPEN_ONCE;
     self.think = fd_secret_move2;
     sound(self, CHAN_VOICE, self.noise3, SECRET_OPEN_ONCE, ATTN_NORM);
 };
 
-string ;
 // fd_secret_move2
 // function begins at statement 9519
 // OP_LOAD_S	28	210	6181
@@ -1559,13 +1529,12 @@ string ;
 // OP_STORE_V	6069	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move2 =
+void () fd_secret_move2 =
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
 };
 
-float ;
 // fd_secret_move3
 // function begins at statement 9533
 // OP_LOAD_S	28	211	6186
@@ -1587,7 +1556,7 @@ float ;
 // OP_ADDRESS	28	148	6194
 // OP_STOREP_FNC	6070	6194	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move3 =
+void () fd_secret_move3 =
 {
     sound(self, CHAN_VOICE, self.noise3, SECRET_OPEN_ONCE, ATTN_NORM);
     
@@ -1599,7 +1568,6 @@ float ;
     
 };
 
-/* TYPE: EV_POINTER */ ;
 // fd_secret_move4
 // function begins at statement 9552
 // OP_LOAD_S	28	210	6195
@@ -1616,13 +1584,12 @@ float ;
 // OP_STORE_V	6071	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move4 =
+void () fd_secret_move4 =
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
 };
 
-float ;
 // fd_secret_move5
 // function begins at statement 9566
 // OP_ADDRESS	28	150	6200
@@ -1639,14 +1606,13 @@ float ;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move5 =
+void () fd_secret_move5 =
 {
     self.nextthink = self.ltime + SECRET_OPEN_ONCE;
     self.think = fd_secret_move6;
     sound(self, CHAN_VOICE, self.noise3, SECRET_OPEN_ONCE, ATTN_NORM);
 };
 
-string ;
 // fd_secret_move6
 // function begins at statement 9580
 // OP_LOAD_S	28	210	6205
@@ -1663,13 +1629,12 @@ string ;
 // OP_STORE_V	6073	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_move6 =
+void () fd_secret_move6 =
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
 };
 
-float ;
 // fd_secret_done
 // function begins at statement 9594
 // OP_LOAD_S	28	197	6210
@@ -1692,7 +1657,7 @@ float ;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () fd_secret_done =
+void () fd_secret_done =
 {
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
@@ -1705,8 +1670,6 @@ float ;
     sound(self, CHAN_VOICE, self.noise3, SECRET_OPEN_ONCE, ATTN_NORM);
 };
 
-string ;
-void() secret_blocked;
 // secret_blocked
 // function begins at statement 9614
 // OP_LOAD_F	28	373	6220
@@ -1723,20 +1686,18 @@ void() secret_blocked;
 // OP_STORE_V	6224	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () secret_blocked =
+void () secret_blocked =
 {
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.attack_finished = time + IMMEDIATE;
     T_Damage(other, self, self, self.dmg);
 };
 
-float ;
-void() secret_touch;
 // secret_touch
 // function begins at statement 9628
 // OP_LOAD_S	29	129	6226
@@ -1763,18 +1724,18 @@ void() secret_touch;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () secret_touch =
+void () secret_touch =
 {
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.attack_finished > time)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.attack_finished = time + SECRET_1ST_LEFT;
@@ -1787,8 +1748,6 @@ void() secret_touch;
     
 };
 
-string ;
-void() func_door_secret;
 // func_door_secret
 // function begins at statement 9652
 // OP_LOAD_F	28	207	6235
@@ -1892,7 +1851,7 @@ void() func_door_secret;
 // OP_ADDRESS	28	413	6299
 // OP_STOREP_F	313	6299	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () func_door_secret =
+void () func_door_secret =
 {
     
     if(self.sounds == MSG_BROADCAST)

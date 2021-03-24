@@ -1,21 +1,19 @@
-/* TYPE: EV_POINTER */ ;
-void() anglemod;
-void() knight_atk1;
-void() knight_runatk1;
-void() ogre_smash1;
-void() ogre_swing1;
-void() sham_smash1;
-void() sham_swingr1;
-void() sham_swingl1;
-void() DemonCheckAttack;
-void() Demon_Melee;
-void() ChooseTurn;
-void() ai_face;
+float (float v) anglemod;
+void () knight_atk1;
+void () knight_runatk1;
+void () ogre_smash1;
+void () ogre_swing1;
+void () sham_smash1;
+void () sham_swingr1;
+void () sham_swingl1;
+float () DemonCheckAttack;
+void (float side) Demon_Melee;
+void (vector dest3) ChooseTurn;
+void () ai_face;
 float enemy_vis;
 float enemy_infront;
 float enemy_range;
 float enemy_yaw;
-void() knight_attack;
 // knight_attack
 // function begins at statement 275
 // OP_LOAD_ENT	28	181	765
@@ -36,7 +34,7 @@ void() knight_attack;
 // OP_GOTO	2	0	0
 // OP_CALL0	749	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () knight_attack =
+void () knight_attack =
 {
     local float len;
     len = vlen((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs));
@@ -51,8 +49,6 @@ void() knight_attack;
     
 };
 
-float ;
-void() CheckAttack;
 // CheckAttack
 // function begins at statement 293
 // OP_LOAD_ENT	28	181	799
@@ -134,7 +130,7 @@ void() CheckAttack;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheckAttack =
+float () CheckAttack =
 {
     local vector spot1;
     local vector spot2;
@@ -147,13 +143,13 @@ void() CheckAttack;
     
     if(trace_ent != targ)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(trace_inopen && trace_inwater)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
@@ -168,10 +164,10 @@ void() CheckAttack;
             }
             else            
             {
-                func000000();
+                self.th_melee();
             }
             
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
     }
@@ -179,19 +175,19 @@ void() CheckAttack;
     
     if(!self.th_missile)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(enemy_range == RANGE_FAR)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     if(enemy_range == RANGE_MELEE)
@@ -231,16 +227,15 @@ void() CheckAttack;
     
     if(random() < chance)
     {
-        func000000();
+        self.th_missile();
         random();
         SUB_AttackFinished(AS_SLIDING * random());
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-float ;
 // ai_face
 // function begins at statement 372
 // OP_ADDRESS	28	191	844
@@ -253,30 +248,26 @@ float ;
 // OP_STOREP_F	1	844	0
 // OP_CALL0	491	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_face =
+void () ai_face =
 {
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
 };
 
-vector ;
-void() infront;
-void() range;
-void() ai_charge;
+float (entity targ) infront;
+float (entity targ) range;
 // ai_charge
 // function begins at statement 382
 // OP_CALL0	758	0	0
 // OP_STORE_V	858	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float d) ai_charge =
+void (float d) ai_charge =
 {
     ai_face();
     movetogoal(d);
 };
 
-float d;
-void() ai_charge_side;
 // ai_charge_side
 // function begins at statement 386
 // OP_ADDRESS	28	191	864
@@ -305,7 +296,7 @@ void() ai_charge_side;
 // OP_STORE_V	894	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_charge_side =
+void () ai_charge_side =
 {
     local vector dtemp;
     local float heading;
@@ -317,8 +308,6 @@ void() ai_charge_side;
     walkmove(heading, 20.000);
 };
 
-float IMMEDIATE = 20.000;
-void() ai_melee;
 // ai_melee
 // function begins at statement 412
 // OP_LOAD_ENT	28	181	900
@@ -350,21 +339,21 @@ void() ai_melee;
 // OP_STORE_V	899	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_melee =
+void () ai_melee =
 {
     local vector delta;
     local float ldmg;
     
     if(!self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     delta = self.enemy.origin - self.origin;
     
     if(vlen(delta) > 60.000)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     random();
@@ -373,8 +362,6 @@ void() ai_melee;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
-entity ;
-void() ai_melee_side;
 // ai_melee_side
 // function begins at statement 441
 // OP_LOAD_ENT	28	181	926
@@ -414,14 +401,14 @@ void() ai_melee_side;
 // OP_STORE_V	925	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_melee_side =
+void () ai_melee_side =
 {
     local vector delta;
     local float ldmg;
     
     if(!self.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     ai_charge_side();
@@ -429,13 +416,13 @@ void() ai_melee_side;
     
     if(vlen(delta) > 60.000)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(!CanDamage(self.enemy, self))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     random();
@@ -444,8 +431,6 @@ void() ai_melee_side;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
-entity ;
-void() SoldierCheckAttack;
 // SoldierCheckAttack
 // function begins at statement 478
 // OP_LOAD_ENT	28	181	957
@@ -508,7 +493,7 @@ void() SoldierCheckAttack;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SoldierCheckAttack =
+float () SoldierCheckAttack =
 {
     local vector spot1;
     local vector spot2;
@@ -521,25 +506,25 @@ void() SoldierCheckAttack;
     
     if(trace_inopen && trace_inwater)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(trace_ent != targ)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(enemy_range == RANGE_FAR)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     if(enemy_range == RANGE_MELEE)
@@ -562,7 +547,7 @@ void() SoldierCheckAttack;
     
     if(random() < chance)
     {
-        func000000();
+        self.th_missile();
         random();
         SUB_AttackFinished(AS_STRAIGHT + random());
         
@@ -571,14 +556,12 @@ void() SoldierCheckAttack;
             self.lefty = !self.lefty;
         }
         
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-float ;
-void() ShamCheckAttack;
 // ShamCheckAttack
 // function begins at statement 538
 // OP_EQ_F	761	242	1001
@@ -637,7 +620,7 @@ void() ShamCheckAttack;
 // OP_CALL1	731	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ShamCheckAttack =
+float () ShamCheckAttack =
 {
     local vector spot1;
     local vector spot2;
@@ -650,7 +633,7 @@ void() ShamCheckAttack;
         if(CanDamage(self.enemy, self))
         {
             self.attack_state = AS_MELEE;
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
     }
@@ -658,13 +641,13 @@ void() ShamCheckAttack;
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(!enemy_vis)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     targ = self.enemy;
@@ -673,36 +656,34 @@ void() ShamCheckAttack;
     
     if((vlen(spot1 - spot2)) > 600.000)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     traceline(spot1, spot2, FALSE, self);
     
     if(trace_inopen && trace_inwater)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(trace_ent != targ)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(enemy_range == RANGE_FAR)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     self.attack_state = AS_MISSILE;
     random();
     SUB_AttackFinished(AS_SLIDING + (AS_SLIDING * (vlen(spot1 - spot2))));
-    return; /* TODO retvalue? */
+    return TRUE;
 };
 
-float ;
-void() OgreCheckAttack;
 // OgreCheckAttack
 // function begins at statement 594
 // OP_EQ_F	761	242	1046
@@ -769,7 +750,7 @@ void() OgreCheckAttack;
 // OP_CALL1	731	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () OgreCheckAttack =
+float () OgreCheckAttack =
 {
     local vector spot1;
     local vector spot2;
@@ -782,7 +763,7 @@ void() OgreCheckAttack;
         if(CanDamage(self.enemy, self))
         {
             self.attack_state = AS_MELEE;
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
     }
@@ -790,13 +771,13 @@ void() OgreCheckAttack;
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(!enemy_vis)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     targ = self.enemy;
@@ -806,24 +787,24 @@ void() OgreCheckAttack;
     
     if(trace_inopen && trace_inwater)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(trace_ent != targ)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(time < self.attack_finished)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     if(enemy_range == RANGE_FAR)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     else if(enemy_range == RANGE_NEAR)
     {
@@ -841,6 +822,6 @@ void() OgreCheckAttack;
     self.attack_state = AS_MISSILE;
     random();
     SUB_AttackFinished(AS_STRAIGHT + (AS_SLIDING * CanDamage(self.enemy, self)));
-    return; /* TODO retvalue? */
+    return TRUE;
 };
 

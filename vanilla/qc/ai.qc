@@ -1,9 +1,8 @@
-float ;
-void() movetarget_f;
-void() t_movetarget;
-void() knight_walk1;
-void() knight_bow6;
-void() knight_bow1;
+void () movetarget_f;
+void () t_movetarget;
+void () knight_walk1;
+void () knight_bow6;
+void () knight_bow1;
 float current_yaw;
 entity sight_entity;
 float sight_entity_time;
@@ -21,7 +20,7 @@ float sight_entity_time;
 // OP_GOTO	-4	0	0
 // OP_RETURN	1089	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float v) anglemod =
+float (float v) anglemod =
 {
     
     while(v >= 360.000)
@@ -35,10 +34,9 @@ float sight_entity_time;
         v = v + 360.000;
     }
     
-    return; /* TODO retvalue? */
+    return v;
 };
 
-float ;
 // movetarget_f
 // function begins at statement 670
 // OP_LOAD_S	28	197	1095
@@ -55,7 +53,7 @@ float ;
 // OP_STORE_V	1103	10	0
 // OP_CALL3	450	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () movetarget_f =
+void () movetarget_f =
 {
     
     if(!self.targetname)
@@ -68,13 +66,11 @@ float ;
     setsize(self, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
 };
 
-vector IMMEDIATE = '8.000 8.000 8.000';
-void() path_corner;
 // path_corner
 // function begins at statement 684
 // OP_CALL0	1081	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () path_corner =
+void () path_corner =
 {
     movetarget_f();
 };
@@ -127,19 +123,19 @@ void() path_corner;
 // OP_CALL0	1134	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () t_movetarget =
+void () t_movetarget =
 {
     local entity temp;
     
     if(other.movetarget != self)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(other.enemy)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     temp = self;
@@ -158,13 +154,12 @@ void() path_corner;
     if(!self.movetarget)
     {
         self.pausetime = time + 999999.000;
-        func000000();
-        return; /* TODO retvalue? */
+        self.th_stand();
+        return;
     }
     
 };
 
-void() ;
 // range
 // function begins at statement 732
 // OP_LOAD_V	28	105	1143
@@ -190,7 +185,7 @@ void() ;
 // OP_RETURN	244	0	0
 // OP_RETURN	245	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ) range =
+float (entity targ) range =
 {
     local vector spot1;
     local vector spot2;
@@ -201,25 +196,24 @@ void() ;
     
     if(r < 120.000)
     {
-        return; /* TODO retvalue? */
+        return RANGE_MELEE;
     }
     
     
     if(r < 500.000)
     {
-        return; /* TODO retvalue? */
+        return RANGE_NEAR;
     }
     
     
     if(r < 1000.000)
     {
-        return; /* TODO retvalue? */
+        return RANGE_MID;
     }
     
-    return; /* TODO retvalue? */
+    return RANGE_FAR;
 };
 
-float ;
 // visible
 // function begins at statement 755
 // OP_LOAD_V	28	105	1177
@@ -243,7 +237,7 @@ float ;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ) visible =
+float (entity targ) visible =
 {
     local vector spot1;
     local vector spot2;
@@ -253,19 +247,18 @@ float ;
     
     if(trace_inopen && trace_inwater)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(trace_fraction == AS_STRAIGHT)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-float ;
 // infront
 // function begins at statement 776
 // OP_LOAD_V	28	117	1202
@@ -284,7 +277,7 @@ float ;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ) infront =
+float (entity targ) infront =
 {
     local vector vec;
     local float dot;
@@ -294,14 +287,12 @@ float ;
     
     if(dot > 0.300)
     {
-        return; /* TODO retvalue? */
+        return TRUE;
     }
     
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
-float ;
-void() HuntTarget;
 // HuntTarget
 // function begins at statement 792
 // OP_ADDRESS	28	194	1217
@@ -324,7 +315,7 @@ void() HuntTarget;
 // OP_STORE_V	368	4	0
 // OP_CALL1	731	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () HuntTarget =
+void () HuntTarget =
 {
     self.goalentity = self.enemy;
     self.think = self.th_run;
@@ -333,8 +324,6 @@ void() HuntTarget;
     SUB_AttackFinished(AS_STRAIGHT);
 };
 
-float ;
-void() SightSound;
 // SightSound
 // function begins at statement 812
 // OP_LOAD_S	28	129	1236
@@ -499,7 +488,7 @@ void() SightSound;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SightSound =
+void () SightSound =
 {
     local float rsnd;
     if(self.classname == "monster_ogre")
@@ -623,8 +612,6 @@ void() SightSound;
     
 };
 
-string IMMEDIATE = "shalrath/sight.wav";
-void() FoundTarget;
 // FoundTarget
 // function begins at statement 974
 // OP_LOAD_ENT	28	181	1294
@@ -639,7 +626,7 @@ void() FoundTarget;
 // OP_CALL0	1234	0	0
 // OP_CALL0	1216	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () FoundTarget =
+void () FoundTarget =
 {
     
     if(self.enemy.classname == "player")
@@ -653,8 +640,6 @@ void() FoundTarget;
     HuntTarget();
 };
 
-float ;
-void() FindTarget;
 // FindTarget
 // function begins at statement 986
 // OP_SUB_F	31	603	1302
@@ -737,7 +722,7 @@ void() FindTarget;
 // OP_CALL0	1293	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () FindTarget =
+float () FindTarget =
 {
     local entity client;
     local float r;
@@ -747,7 +732,7 @@ void() FindTarget;
         
         if(client.enemy == self.enemy)
         {
-            return; /* TODO retvalue? */
+            return TRUE;
         }
         
     }
@@ -757,7 +742,7 @@ void() FindTarget;
         
         if(!client)
         {
-            return; /* TODO retvalue? */
+            return FALSE;
         }
         
     }
@@ -765,32 +750,32 @@ void() FindTarget;
     
     if(client == self.enemy)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(client.flags & FL_NOTARGET)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(client.items & IT_INVISIBILITY)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     r = range(client);
     
     if(r == RANGE_FAR)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(!visible(client))
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     if(r == RANGE_NEAR)
@@ -798,7 +783,7 @@ void() FindTarget;
         
         if((client.show_hostile < time) && !infront(client))
         {
-            return; /* TODO retvalue? */
+            return FALSE;
         }
         
     }
@@ -808,7 +793,7 @@ void() FindTarget;
         
         if(!infront(client))
         {
-            return; /* TODO retvalue? */
+            return FALSE;
         }
         
     }
@@ -822,17 +807,15 @@ void() FindTarget;
         if(self.enemy.classname != "player")
         {
             self.enemy = world;
-            return; /* TODO retvalue? */
+            return FALSE;
         }
         
     }
     
     FoundTarget();
-    return; /* TODO retvalue? */
+    return TRUE;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() ai_forward;
 // ai_forward
 // function begins at statement 1066
 // OP_LOAD_F	28	119	1340
@@ -840,13 +823,11 @@ void() ai_forward;
 // OP_STORE_V	1339	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_forward =
+void (float dist) ai_forward =
 {
     walkmove(self.angles_y, dist);
 };
 
-float ;
-void() ai_back;
 // ai_back
 // function begins at statement 1071
 // OP_LOAD_F	28	119	1343
@@ -855,25 +836,21 @@ void() ai_back;
 // OP_STORE_V	1342	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_back =
+void (float dist) ai_back =
 {
     walkmove(self.angles_y + 180.000, dist);
 };
 
-float ;
-void() ai_pain;
 // ai_pain
 // function begins at statement 1077
 // OP_STORE_V	1347	4	0
 // OP_CALL1	1341	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_pain =
+void (float dist) ai_pain =
 {
     ai_back(dist);
 };
 
-float dist;
-void() ai_painforward;
 // ai_painforward
 // function begins at statement 1080
 // OP_LOAD_F	28	191	1350
@@ -881,13 +858,11 @@ void() ai_painforward;
 // OP_STORE_V	1349	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_painforward =
+void (float dist) ai_painforward =
 {
     walkmove(self.ideal_yaw, dist);
 };
 
-float ;
-void() ai_walk;
 // ai_walk
 // function begins at statement 1085
 // OP_STORE_F	1352	341	0
@@ -903,7 +878,7 @@ void() ai_walk;
 // OP_STORE_V	1352	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_walk =
+void (float dist) ai_walk =
 {
     local vector mtemp;
     movedist = dist;
@@ -911,20 +886,18 @@ void() ai_walk;
     if(self.classname == "monster_dragon")
     {
         movetogoal(dist);
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(FindTarget())
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     movetogoal(dist);
 };
 
-float ;
-void() ai_stand;
 // ai_stand
 // function begins at statement 1098
 // OP_CALL0	1299	0	0
@@ -937,25 +910,23 @@ void() ai_stand;
 // OP_CALL0	1362	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_stand =
+void () ai_stand =
 {
     
     if(FindTarget())
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(time > self.pausetime)
     {
-        func000000();
-        return; /* TODO retvalue? */
+        self.th_walk();
+        return;
     }
     
 };
 
-void() ;
-void() ai_turn;
 // ai_turn
 // function begins at statement 1108
 // OP_CALL0	1299	0	0
@@ -963,12 +934,12 @@ void() ai_turn;
 // OP_RETURN	0	0	0
 // OP_CALL0	491	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_turn =
+void () ai_turn =
 {
     
     if(FindTarget())
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     ChangeYaw();
@@ -999,7 +970,7 @@ void() ai_turn;
 // OP_CALL1	458	0	0
 // OP_STOREP_F	1	1384	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector dest3) ChooseTurn =
+void (vector dest3) ChooseTurn =
 {
     local vector dir;
     local vector newdir;
@@ -1022,8 +993,6 @@ void() ai_turn;
     self.ideal_yaw = vectoyaw(dir);
 };
 
-/* TYPE: EV_POINTER */ ;
-void() FacingIdeal;
 // FacingIdeal
 // function begins at statement 1136
 // OP_LOAD_F	28	119	1387
@@ -1039,23 +1008,21 @@ void() FacingIdeal;
 // OP_RETURN	213	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () FacingIdeal =
+float () FacingIdeal =
 {
     local float delta;
     delta = anglemod(self.angles_y - self.ideal_yaw);
     
     if((delta > 45.000) && (delta < 315.000))
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
-    return; /* TODO retvalue? */
+    return TRUE;
 };
 
-float ;
-void() WizardCheckAttack;
-void() DogCheckAttack;
-void() CheckAnyAttack;
+float () WizardCheckAttack;
+float () DogCheckAttack;
 // CheckAnyAttack
 // function begins at statement 1149
 // OP_NOT_F	759	0	1398
@@ -1094,55 +1061,53 @@ void() CheckAnyAttack;
 // OP_CALL0	790	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheckAnyAttack =
+void () CheckAnyAttack =
 {
     
     if(!enemy_vis)
     {
-        return; /* TODO retvalue? */
+        return FALSE;
     }
     
     
     if(self.classname == "monster_army")
     {
-        return; /* TODO retvalue? */
+        return SoldierCheckAttack();
     }
     
     
     if(self.classname == "monster_ogre")
     {
-        return; /* TODO retvalue? */
+        return OgreCheckAttack();
     }
     
     
     if(self.classname == "monster_shambler")
     {
-        return; /* TODO retvalue? */
+        return ShamCheckAttack();
     }
     
     
     if(self.classname == "monster_demon1")
     {
-        return; /* TODO retvalue? */
+        return DemonCheckAttack();
     }
     
     
     if(self.classname == "monster_dog")
     {
-        return; /* TODO retvalue? */
+        return DogCheckAttack();
     }
     
     
     if(self.classname == "monster_wizard")
     {
-        return; /* TODO retvalue? */
+        return WizardCheckAttack();
     }
     
-    return; /* TODO retvalue? */
+    return CheckAttack();
 };
 
-float ;
-void() ai_run_melee;
 // ai_run_melee
 // function begins at statement 1185
 // OP_ADDRESS	28	191	1412
@@ -1155,21 +1120,19 @@ void() ai_run_melee;
 // OP_ADDRESS	28	367	1414
 // OP_STOREP_F	368	1414	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_run_melee =
+void () ai_run_melee =
 {
     self.ideal_yaw = enemy_yaw;
     ChangeYaw();
     
     if(FacingIdeal())
     {
-        func000000();
+        self.th_melee();
         self.attack_state = AS_STRAIGHT;
     }
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() ai_run_missile;
 // ai_run_missile
 // function begins at statement 1195
 // OP_ADDRESS	28	191	1416
@@ -1182,21 +1145,19 @@ void() ai_run_missile;
 // OP_ADDRESS	28	367	1418
 // OP_STOREP_F	368	1418	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_run_missile =
+void () ai_run_missile =
 {
     self.ideal_yaw = enemy_yaw;
     ChangeYaw();
     
     if(FacingIdeal())
     {
-        func000000();
+        self.th_missile();
         self.attack_state = AS_STRAIGHT;
     }
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() ai_run_slide;
 // ai_run_slide
 // function begins at statement 1205
 // OP_ADDRESS	28	191	1421
@@ -1224,7 +1185,7 @@ void() ai_run_slide;
 // OP_STORE_V	341	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ai_run_slide =
+void () ai_run_slide =
 {
     local float ofs;
     self.ideal_yaw = enemy_yaw;
@@ -1241,15 +1202,13 @@ void() ai_run_slide;
     
     if(walkmove(self.ideal_yaw + ofs, movedist))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.lefty = AS_STRAIGHT - self.lefty;
     walkmove(self.ideal_yaw - ofs, movedist);
 };
 
-float ;
-void() ai_run;
 // ai_run
 // function begins at statement 1230
 // OP_STORE_F	1433	341	0
@@ -1330,7 +1289,7 @@ void() ai_run;
 // OP_STORE_V	1433	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (float dist) ai_run =
+void (float dist) ai_run =
 {
     local vector delta;
     local float axis;
@@ -1350,14 +1309,14 @@ void() ai_run;
         }
         else if(self.movetarget)
         {
-            func000000();
+            self.th_walk();
         }
         else        
         {
-            func000000();
+            self.th_stand();
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.show_hostile = time + AS_STRAIGHT;
@@ -1374,7 +1333,7 @@ void() ai_run;
         
         if(FindTarget())
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -1386,27 +1345,27 @@ void() ai_run;
     if(self.attack_state == AS_MISSILE)
     {
         ai_run_missile();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.attack_state == AS_MELEE)
     {
         ai_run_melee();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(CheckAnyAttack())
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.attack_state == AS_SLIDING)
     {
         ai_run_slide();
-        return; /* TODO retvalue? */
+        return;
     }
     
     movetogoal(dist);

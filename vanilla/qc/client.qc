@@ -1,17 +1,15 @@
-entity ;
-void() player_pain;
-void() player_stand1;
-void() spawn_tfog;
-void() spawn_tdeath;
+void () player_pain;
+void () player_stand1;
+void (vector org) spawn_tfog;
+void (vector org, entity death_owner) spawn_tdeath;
 float modelindex_eyes;
 float modelindex_player;
 float intermission_running;
 float intermission_exittime;
-void() info_intermission;
 // info_intermission
 // function begins at statement 5596
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_intermission =
+void () info_intermission =
 {
 };
 
@@ -68,13 +66,13 @@ void() info_intermission;
 // OP_MUL_F	3973	1884	3974
 // OP_STORE_F	3974	51	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SetChangeParms =
+void () SetChangeParms =
 {
     
     if(self.health <= MSG_BROADCAST)
     {
         SetNewParms();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.items = self.items - (self.items & (((((IT_KEY1 | IT_KEY2) | IT_INVISIBILITY) | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
@@ -109,7 +107,6 @@ void() info_intermission;
     parm9 = self.armortype * 100.000;
 };
 
-float ;
 // SetNewParms
 // function begins at statement 5648
 // OP_BITOR	254	253	3975
@@ -123,7 +120,7 @@ float ;
 // OP_STORE_F	2256	50	0
 // OP_STORE_F	337	51	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SetNewParms =
+void () SetNewParms =
 {
     parm1 = IT_SHOTGUN | IT_AXE;
     parm2 = 100.000;
@@ -136,8 +133,6 @@ float ;
     parm9 = MSG_BROADCAST;
 };
 
-float ;
-void() DecodeLevelParms;
 // DecodeLevelParms
 // function begins at statement 5659
 // OP_NOT_F	35	0	3977
@@ -166,7 +161,7 @@ void() DecodeLevelParms;
 // OP_MUL_F	51	2752	3989
 // OP_STOREP_F	3989	3988	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () DecodeLevelParms =
+void () DecodeLevelParms =
 {
     
     if(!deathmatch)
@@ -190,8 +185,6 @@ void() DecodeLevelParms;
     self.armortype = parm9 * 0.010;
 };
 
-float ;
-void() FindIntermission;
 // FindIntermission
 // function begins at statement 5685
 // OP_STORE_V	30	4	0
@@ -239,7 +232,7 @@ void() FindIntermission;
 // OP_CALL1	456	0	0
 // OP_RETURN	30	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () FindIntermission =
+entity () FindIntermission =
 {
     local entity spot;
     local float cyc;
@@ -261,30 +254,28 @@ void() FindIntermission;
             cyc = cyc - WEAPON_SHOTGUN;
         }
         
-        return; /* TODO retvalue? */
+        return spot;
     }
     
     spot = find(world, classname, "info_player_start");
     
     if(spot)
     {
-        return; /* TODO retvalue? */
+        return spot;
     }
     
     spot = find(world, classname, "testplayerstart");
     
     if(spot)
     {
-        return; /* TODO retvalue? */
+        return spot;
     }
     
     objerror("FindIntermission: no spot");
-    return; /* TODO retvalue? */
+    return world;
 };
 
-string IMMEDIATE = "FindIntermission: no spot";
 string nextmap;
-void() GotoNextMap;
 // GotoNextMap
 // function begins at statement 5730
 // OP_STORE_V	4003	4	0
@@ -296,7 +287,7 @@ void() GotoNextMap;
 // OP_STORE_V	4001	4	0
 // OP_CALL1	504	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () GotoNextMap =
+void () GotoNextMap =
 {
     if(cvar("samelevel"))
     {
@@ -309,8 +300,6 @@ void() GotoNextMap;
     
 };
 
-string IMMEDIATE = "samelevel";
-void() ExitIntermission;
 // ExitIntermission
 // function begins at statement 5739
 // OP_IFNOT	35	3	0
@@ -435,13 +424,13 @@ void() ExitIntermission;
 // OP_RETURN	0	0	0
 // OP_CALL0	4002	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ExitIntermission =
+void () ExitIntermission =
 {
     
     if(deathmatch)
     {
         GotoNextMap();
-        return; /* TODO retvalue? */
+        return;
     }
     
     intermission_exittime = time + WEAPON_SHOTGUN;
@@ -465,7 +454,7 @@ void() ExitIntermission;
                 WriteString(MSG_ALL, "As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task. A Rune of magic\npower lies at the end of each haunted\nland of Quake. Go forth, seek the\ntotality of the four Runes!");
             }
             
-            return; /* TODO retvalue? */
+            return;
         }
         else        
         {
@@ -476,7 +465,7 @@ void() ExitIntermission;
                 WriteByte(MSG_ALL, AS_MELEE);
                 WriteByte(MSG_ALL, SVC_FINALE);
                 WriteString(MSG_ALL, "The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; Shub-Niggurath!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death and horror. But she is not\ninviolate! Armed with this Rune, you\nrealize that once all four Runes are\ncombined, the gate to Shub-Niggurath's\nPit will open, and you can face the\nWitch-Goddess herself in her frightful\notherworld cathedral.");
-                return; /* TODO retvalue? */
+                return;
             }
             else            
             {
@@ -487,7 +476,7 @@ void() ExitIntermission;
                     WriteByte(MSG_ALL, AS_MELEE);
                     WriteByte(MSG_ALL, SVC_FINALE);
                     WriteString(MSG_ALL, "The charred viscera of diabolic horrors\nbubble viscously as you seize the Rune\nof Hell Magic. Its heat scorches your\nhand, and its terrible secrets blight\nyour mind. Gathering the shreds of your\ncourage, you shake the devil's shackles\nfrom your soul, and become ever more\nhard and determined to destroy the\nhideous creatures whose mere existence\nthreatens the souls and psyches of all\nthe population of Earth.");
-                    return; /* TODO retvalue? */
+                    return;
                 }
                 else                
                 {
@@ -499,7 +488,7 @@ void() ExitIntermission;
                         WriteByte(MSG_ALL, AS_MELEE);
                         WriteByte(MSG_ALL, SVC_FINALE);
                         WriteString(MSG_ALL, "Despite the awful might of the Elder\nWorld, you have achieved the Rune of\nElder Magic, capstone of all types of\narcane wisdom. Beyond good and evil,\nbeyond life and death, the Rune\npulsates, heavy with import. Patient and\npotent, the Elder Being Shub-Niggurath\nweaves her dire plans to clear off all\nlife from the Earth, and bring her own\nfoul offspring to our world! For all the\ndwellers in these nightmare dimensions\nare her descendants! Once all Runes of\nmagic power are united, the energy\nbehind them will blast open the Gateway\nto Shub-Niggurath, and you can travel\nthere to foil the Hell-Mother's plots\nin person.");
-                        return; /* TODO retvalue? */
+                        return;
                     }
                     
                 }
@@ -518,7 +507,7 @@ void() ExitIntermission;
         if(!cvar("registered"))
         {
             WriteByte(MSG_ALL, SVC_SELLSCREEN);
-            return; /* TODO retvalue? */
+            return;
         }
         
         
@@ -526,7 +515,7 @@ void() ExitIntermission;
         {
             WriteByte(MSG_ALL, SVC_FINALE);
             WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born.");
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
@@ -534,8 +523,6 @@ void() ExitIntermission;
     GotoNextMap();
 };
 
-string IMMEDIATE = "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born.";
-void() IntermissionThink;
 // IntermissionThink
 // function begins at statement 5861
 // OP_LT	31	3943	4029
@@ -553,25 +540,23 @@ void() IntermissionThink;
 // OP_RETURN	0	0	0
 // OP_CALL0	4004	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () IntermissionThink =
+void () IntermissionThink =
 {
     
     if(time < intermission_exittime)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((!self.button0 && !self.button1) && !self.button2)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     ExitIntermission();
 };
 
-float ;
-void() execute_changelevel;
 // execute_changelevel
 // function begins at statement 5876
 // OP_STORE_F	2256	3942	0
@@ -633,7 +618,7 @@ void() execute_changelevel;
 // OP_STORE_V	304	7	0
 // OP_CALL2	493	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () execute_changelevel =
+void () execute_changelevel =
 {
     local entity pos;
     intermission_running = WEAPON_SHOTGUN;
@@ -670,8 +655,6 @@ void() execute_changelevel;
     WriteByte(MSG_ALL, SVC_INTERMISSION);
 };
 
-vector ;
-void() changelevel_touch;
 // changelevel_touch
 // function begins at statement 5935
 // OP_LOAD_S	29	129	4067
@@ -719,20 +702,20 @@ void() changelevel_touch;
 // OP_ADD_F	31	603	4088
 // OP_STOREP_F	4088	4087	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () changelevel_touch =
+void () changelevel_touch =
 {
     local entity pos;
     
     if(other.classname != "player")
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((cvar("noexit") == WEAPON_SHOTGUN) || ((cvar("noexit") == WEAPON_ROCKET) && (mapname != "start")))
     {
         T_Damage(other, self, self, 50000.000);
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -748,7 +731,7 @@ void() changelevel_touch;
     if((self.spawnflags & WEAPON_SHOTGUN) && (deathmatch == MSG_BROADCAST))
     {
         GotoNextMap();
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.touch = SUB_Null;
@@ -756,8 +739,6 @@ void() changelevel_touch;
     self.nextthink = time + 0.100;
 };
 
-float ;
-void() trigger_changelevel;
 // trigger_changelevel
 // function begins at statement 5980
 // OP_LOAD_S	28	351	4090
@@ -769,7 +750,7 @@ void() trigger_changelevel;
 // OP_ADDRESS	28	146	4093
 // OP_STOREP_FNC	4065	4093	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () trigger_changelevel =
+void () trigger_changelevel =
 {
     
     if(!self.map)
@@ -781,9 +762,7 @@ void() trigger_changelevel;
     self.touch = changelevel_touch;
 };
 
-/* TYPE: EV_POINTER */ ;
-void() set_suicide_frame;
-void() respawn;
+void () set_suicide_frame;
 // respawn
 // function begins at statement 5989
 // OP_IFNOT	36	7	0
@@ -802,7 +781,7 @@ void() respawn;
 // OP_STORE_V	4096	4	0
 // OP_CALL1	488	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () respawn =
+void () respawn =
 {
     if(coop)
     {
@@ -827,7 +806,6 @@ void() respawn;
     
 };
 
-string IMMEDIATE = "restart\n";
 // ClientKill
 // function begins at statement 6005
 // OP_OR	36	35	4097
@@ -848,12 +826,12 @@ string IMMEDIATE = "restart\n";
 // OP_STOREP_F	4104	4102	0
 // OP_CALL0	4095	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ClientKill =
+void () ClientKill =
 {
     
     if(intermission_running && (coop || deathmatch))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     bprint(self.netname);
@@ -864,19 +842,16 @@ string IMMEDIATE = "restart\n";
     respawn();
 };
 
-float ;
-void() CheckSpawnPoint;
 // CheckSpawnPoint
 // function begins at statement 6023
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (vector v) CheckSpawnPoint =
+float (vector v) CheckSpawnPoint =
 {
-    return; /* TODO retvalue? */
+    return FALSE;
 };
 
 vector v;
-void() SelectSpawnPoint;
 // SelectSpawnPoint
 // function begins at statement 6025
 // OP_STORE_V	30	4	0
@@ -955,7 +930,7 @@ void() SelectSpawnPoint;
 // OP_CALL1	455	0	0
 // OP_RETURN	4110	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () SelectSpawnPoint =
+entity () SelectSpawnPoint =
 {
     local entity spot;
     local entity thing;
@@ -964,7 +939,7 @@ void() SelectSpawnPoint;
     
     if(spot)
     {
-        return; /* TODO retvalue? */
+        return spot;
     }
     
     if(coop)
@@ -979,7 +954,7 @@ void() SelectSpawnPoint;
         
         if(lastspawn != world)
         {
-            return; /* TODO retvalue? */
+            return lastspawn;
         }
         
     }
@@ -999,7 +974,7 @@ void() SelectSpawnPoint;
                     
                     if(spot == lastspawn)
                     {
-                        return; /* TODO retvalue? */
+                        return lastspawn;
                     }
                     
                     pcount = MSG_BROADCAST;
@@ -1021,7 +996,7 @@ void() SelectSpawnPoint;
  if(pcount == MSG_BROADCAST)
                 {
                     lastspawn = spot;
-                    return; /* TODO retvalue? */
+                    return spot;
                 }
                 
             }
@@ -1040,7 +1015,7 @@ spot = find(world, classname, "info_player_start2");
 
 if(spot)
 {
-    return; /* TODO retvalue? */
+    return spot;
 }
 
 }
@@ -1052,12 +1027,11 @@ if(!spot)
 error("PutClientInServer: no info_player_start on level");
 }
 
-return; /* TODO retvalue? */
+return spot;
 };
 
 /* ERROR INDENTATION */
-string IMMEDIATE = "PutClientInServer: no info_player_start on level";
-void() PlayerDie;
+void () PlayerDie;
 // PutClientInServer
 // function begins at statement 6101
 // OP_CALL0	4109	0	0
@@ -1152,7 +1126,7 @@ void() PlayerDie;
 // OP_STORE_V	28	7	0
 // OP_CALL2	3939	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PutClientInServer =
+void () PutClientInServer =
 {
     local entity spot;
     spot = SelectSpawnPoint();
@@ -1201,47 +1175,41 @@ void() PlayerDie;
     spawn_tdeath(self.origin, self);
 };
 
-vector ;
 // info_player_start
 // function begins at statement 6193
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_player_start =
+void () info_player_start =
 {
 };
 
-void() info_player_start2;
 // info_player_start2
 // function begins at statement 6194
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_player_start2 =
+void () info_player_start2 =
 {
 };
 
-void() testplayerstart;
 // testplayerstart
 // function begins at statement 6195
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () testplayerstart =
+void () testplayerstart =
 {
 };
 
-void() info_player_deathmatch;
 // info_player_deathmatch
 // function begins at statement 6196
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_player_deathmatch =
+void () info_player_deathmatch =
 {
 };
 
-void() info_player_coop;
 // info_player_coop
 // function begins at statement 6197
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () info_player_coop =
+void () info_player_coop =
 {
 };
 
-void() NextLevel;
 // NextLevel
 // function begins at statement 6198
 // OP_EQ_S	34	4072	4206
@@ -1308,7 +1276,7 @@ void() NextLevel;
 // OP_ADD_F	31	603	4233
 // OP_STOREP_F	4233	4232	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () NextLevel =
+void () NextLevel =
 {
     local entity o;
     if(mapname == "start")
@@ -1382,8 +1350,6 @@ void() NextLevel;
     
 };
 
-float ;
-void() CheckRules;
 // CheckRules
 // function begins at statement 6262
 // OP_IFNOT	342	2	0
@@ -1409,14 +1375,14 @@ void() CheckRules;
 // OP_CALL0	4204	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheckRules =
+void () CheckRules =
 {
     local float timelimit;
     local float fraglimit;
     
     if(gameover)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     timelimit = cvar("timelimit") * 60.000;
@@ -1425,20 +1391,18 @@ void() CheckRules;
     if((deathmatch && timelimit) && (time >= timelimit))
     {
         NextLevel();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((deathmatch && fraglimit) && (self.frags >= fraglimit))
     {
         NextLevel();
-        return; /* TODO retvalue? */
+        return;
     }
     
 };
 
-float ;
-void() PlayerDeathThink;
 // PlayerDeathThink
 // function begins at statement 6285
 // OP_LOAD_F	28	182	4250
@@ -1492,7 +1456,7 @@ void() PlayerDeathThink;
 // OP_STOREP_F	337	4287	0
 // OP_CALL0	4095	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerDeathThink =
+void () PlayerDeathThink =
 {
     local entity old_self;
     local float forward;
@@ -1519,17 +1483,17 @@ void() PlayerDeathThink;
         
         if((self.button2 || self.button1) || self.button0)
         {
-            return; /* TODO retvalue? */
+            return;
         }
         
         self.deadflag = DEAD_RESPAWNABLE;
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if((!self.button2 && !self.button1) && !self.button0)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.button0 = MSG_BROADCAST;
@@ -1538,8 +1502,6 @@ void() PlayerDeathThink;
     respawn();
 };
 
-/* TYPE: EV_POINTER */ ;
-void() PlayerJump;
 // PlayerJump
 // function begins at statement 6336
 // OP_LOAD_F	28	182	4295
@@ -1619,14 +1581,14 @@ void() PlayerJump;
 // OP_ADD_F	4327	4328	4329
 // OP_STOREP_F	4329	4326	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerJump =
+void () PlayerJump =
 {
     local vector start;
     local vector end;
     
     if(self.flags & FL_WATERJUMP)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
@@ -1664,19 +1626,19 @@ void() PlayerJump;
             
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(!(self.flags & FL_ONGROUND))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(!(self.flags & FL_JUMPRELEASED))
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
@@ -1686,9 +1648,7 @@ void() PlayerJump;
     self.velocity_z = self.velocity_z + 270.000;
 };
 
-float ;
 .float dmgtime;
-void() WaterMove;
 // WaterMove
 // function begins at statement 6413
 // OP_LOAD_F	28	103	4332
@@ -1863,18 +1823,18 @@ void() WaterMove;
 // OP_SUB_V	4408	4417	4420
 // OP_STOREP_V	4420	4405	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () WaterMove =
+void () WaterMove =
 {
     
     if(self.movetype == MOVETYPE_NOCLIP)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.health < MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.waterlevel != AS_MELEE)
@@ -1929,7 +1889,7 @@ void() WaterMove;
             self.flags = self.flags - FL_INWATER;
         }
         
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.watertype == CONTENT_LAVA)
@@ -1999,8 +1959,6 @@ void() WaterMove;
     
 };
 
-vector ;
-void() CheckWaterJump;
 // CheckWaterJump
 // function begins at statement 6585
 // OP_LOAD_V	28	117	4430
@@ -2057,7 +2015,7 @@ void() CheckWaterJump;
 // OP_STOREP_F	4472	4471	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheckWaterJump =
+void () CheckWaterJump =
 {
     local vector start;
     local vector end;
@@ -2079,17 +2037,16 @@ void() CheckWaterJump;
         if(trace_fraction == WEAPON_SHOTGUN)
         {
             self.flags = self.flags | FL_WATERJUMP;
-            self.velocity_z = IMMEDIATE;
+            self.velocity_z = 225.000;
             self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
             self.teleport_time = time + WEAPON_ROCKET;
-            return; /* TODO retvalue? */
+            return;
         }
         
     }
     
 };
 
-float ;
 // PlayerPreThink
 // function begins at statement 6639
 // OP_IFNOT	3942	3	0
@@ -2144,7 +2101,7 @@ float ;
 // OP_STOREP_F	1	4506	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerPreThink =
+void () PlayerPreThink =
 {
     local float mspeed;
     local float aspeed;
@@ -2153,13 +2110,13 @@ float ;
     if(intermission_running)
     {
         IntermissionThink();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.view_ofs == VEC_ORIGIN)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     makevectors(self.v_angle);
@@ -2175,13 +2132,13 @@ float ;
     if(self.deadflag >= DEAD_DEAD)
     {
         PlayerDeathThink();
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.deadflag == DEAD_DYING)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.button2)
@@ -2208,8 +2165,6 @@ float ;
     
 };
 
-/* TYPE: EV_POINTER */ ;
-void() CheckPowerups;
 // CheckPowerups
 // function begins at statement 6691
 // OP_LOAD_F	28	152	4508
@@ -2446,12 +2401,12 @@ void() CheckPowerups;
 // OP_ADDRESS	28	378	4620
 // OP_STOREP_F	337	4620	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () CheckPowerups =
+void () CheckPowerups =
 {
     
     if(self.health <= MSG_BROADCAST)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     if(self.invisible_finished)
@@ -2623,7 +2578,6 @@ void() CheckPowerups;
     
 };
 
-/* TYPE: EV_POINTER */ ;
 // PlayerPostThink
 // function begins at statement 6925
 // OP_LOAD_V	28	166	4624
@@ -2687,7 +2641,7 @@ void() CheckPowerups;
 // OP_STOREP_F	4650	4649	0
 // OP_CALL0	4507	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () PlayerPostThink =
+void () PlayerPostThink =
 {
     local float mspeed;
     local float aspeed;
@@ -2695,13 +2649,13 @@ void() CheckPowerups;
     
     if(self.view_ofs == VEC_ORIGIN)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     
     if(self.deadflag)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     W_WeaponFrame();
@@ -2739,7 +2693,6 @@ void() CheckPowerups;
     CheckPowerups();
 };
 
-float ;
 // ClientConnect
 // function begins at statement 6986
 // OP_LOAD_S	28	180	4651
@@ -2750,7 +2703,7 @@ float ;
 // OP_IFNOT	3942	2	0
 // OP_CALL0	4004	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ClientConnect =
+void () ClientConnect =
 {
     bprint(self.netname);
     bprint(" entered the game\n");
@@ -2762,7 +2715,6 @@ float ;
     
 };
 
-string IMMEDIATE = " entered the game\n";
 // ClientDisconnect
 // function begins at statement 6994
 // OP_IFNOT	342	2	0
@@ -2787,12 +2739,12 @@ string IMMEDIATE = " entered the game\n";
 // OP_CALL5	453	0	0
 // OP_CALL0	4094	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% () ClientDisconnect =
+void () ClientDisconnect =
 {
     
     if(gameover)
     {
-        return; /* TODO retvalue? */
+        return;
     }
     
     bprint(self.netname);
@@ -2803,7 +2755,6 @@ string IMMEDIATE = " entered the game\n";
     set_suicide_frame();
 };
 
-string IMMEDIATE = " frags\n";
 // ClientObituary
 // function begins at statement 7016
 // OP_CALL0	452	0	0
@@ -3156,7 +3107,7 @@ string IMMEDIATE = " frags\n";
 // OP_STORE_V	4859	4	0
 // OP_CALL1	468	0	0
 // OP_DONE	0	0	0
-%%RETURNTYPE%% (entity targ, entity attacker) ClientObituary =
+void (entity targ, entity attacker) ClientObituary =
 {
     local float rnum;
     local string deathstring;
@@ -3173,7 +3124,7 @@ string IMMEDIATE = " frags\n";
             bprint(attacker.owner.netname);
             bprint("\n");
             attacker.owner.frags = attacker.owner.frags + WEAPON_SHOTGUN;
-            return; /* TODO retvalue? */
+            return;
         }
         
         
@@ -3183,7 +3134,7 @@ string IMMEDIATE = " frags\n";
             bprint(targ.netname);
             bprint("'s telefrag\n");
             targ.frags = targ.frags - WEAPON_SHOTGUN;
-            return; /* TODO retvalue? */
+            return;
         }
         
         if(attacker.classname == "player")
@@ -3196,7 +3147,7 @@ string IMMEDIATE = " frags\n";
                 if((targ.weapon == IT_LIGHTNING) && (targ.waterlevel > WEAPON_SHOTGUN))
                 {
                     bprint(" discharges into the water.\n");
-                    return; /* TODO retvalue? */
+                    return;
                 }
                 
                 if(targ.weapon == IT_GRENADE_LAUNCHER)
@@ -3208,7 +3159,7 @@ string IMMEDIATE = " frags\n";
                     bprint(" becomes bored with life\n");
                 }
                 
-                return; /* TODO retvalue? */
+                return;
             }
             else            
             {
@@ -3234,7 +3185,7 @@ string IMMEDIATE = " frags\n";
                     bprint(attacker.netname);
                     bprint(deathstring);
                     attacker.frags = attacker.frags - WEAPON_SHOTGUN;
-                    return; /* TODO retvalue? */
+                    return;
                 }
                 else                
                 {
@@ -3326,7 +3277,7 @@ string IMMEDIATE = " frags\n";
                 
             }
             
-            return; /* TODO retvalue? */
+            return;
         }
         else        
         {
@@ -3431,42 +3382,42 @@ string IMMEDIATE = " frags\n";
                     bprint(" joins the Zombies\n");
                 }
                 
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if(attacker.classname == "explo_box")
             {
                 bprint(" blew up\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if((attacker.solid == SOLID_BSP) && (attacker != world))
             {
                 bprint(" was squished\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if((attacker.classname == "trap_shooter") || (attacker.classname == "trap_spikeshooter"))
             {
                 bprint(" was spiked\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if(attacker.classname == "fireball")
             {
                 bprint(" ate a lavaball\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             
             if(attacker.classname == "trigger_changelevel")
             {
                 bprint(" tried to leave\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             rnum = targ.watertype;
@@ -3481,7 +3432,7 @@ string IMMEDIATE = " frags\n";
                     bprint(" sucks it down\n");
                 }
                 
-                return; /* TODO retvalue? */
+                return;
             }
             else if(rnum == CONTENT_SLIME)
             {
@@ -3494,7 +3445,7 @@ string IMMEDIATE = " frags\n";
                     bprint(" can't exist on slime alone\n");
                 }
                 
-                return; /* TODO retvalue? */
+                return;
             }
             else            
  if(rnum == CONTENT_LAVA)
@@ -3503,7 +3454,7 @@ string IMMEDIATE = " frags\n";
                 if(targ.health < -15.000)
                 {
                     bprint(" burst into flames\n");
-                    return; /* TODO retvalue? */
+                    return;
                 }
                 
                 if(random() < IMMEDIATE)
@@ -3515,7 +3466,7 @@ string IMMEDIATE = " frags\n";
                     bprint(" visits the Volcano God\n");
                 }
                 
-                return; /* TODO retvalue? */
+                return;
             }
             
             
@@ -3523,7 +3474,7 @@ string IMMEDIATE = " frags\n";
             {
                 targ.deathtype = "";
                 bprint(" fell to his death\n");
-                return; /* TODO retvalue? */
+                return;
             }
             
             bprint(" died\n");
