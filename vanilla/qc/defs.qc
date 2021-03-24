@@ -55,57 +55,24 @@ void() SetChangeParms;
 void end_sys_globals;
 .float modelindex;
 .vector absmin;
-.vector absmin_x;
-.float absmin_y;
-.float absmin_z;
 .vector absmax;
-.vector absmax_x;
-.float absmax_y;
-.float absmax_z;
 .float ltime;
 .float movetype;
 .float solid;
 .vector origin;
-.vector origin_x;
-.float origin_y;
-.float origin_z;
 .vector oldorigin;
-.vector oldorigin_x;
-.float oldorigin_y;
-.float oldorigin_z;
 .vector velocity;
-.vector velocity_x;
-.float velocity_y;
-.float velocity_z;
 .vector angles;
-.vector angles_x;
-.float angles_y;
-.float angles_z;
 .vector avelocity;
-.vector avelocity_x;
-.float avelocity_y;
-.float avelocity_z;
 .vector punchangle;
-.vector punchangle_x;
-.float punchangle_y;
-.float punchangle_z;
 .string classname;
 .string model;
 .float frame;
 .float skin;
 .float effects;
 .vector mins;
-.vector mins_x;
-.float mins_y;
-.float mins_z;
 .vector maxs;
-.vector maxs_x;
-.float maxs_y;
-.float maxs_z;
 .vector size;
-.vector size_x;
-.float size_y;
-.float size_z;
 .void() touch;
 .void() use;
 .void() think;
@@ -127,18 +94,12 @@ void end_sys_globals;
 .entity chain;
 .float deadflag;
 .vector view_ofs;
-.vector view_ofs_x;
-.float view_ofs_y;
-.float view_ofs_z;
 .float button0;
 .float button1;
 .float button2;
 .float impulse;
 .float fixangle;
 .vector v_angle;
-.vector v_angle_x;
-.float v_angle_y;
-.float v_angle_z;
 .float idealpitch;
 .string netname;
 .entity enemy;
@@ -163,9 +124,6 @@ void end_sys_globals;
 .entity dmg_inflictor;
 .entity owner;
 .vector movedir;
-.vector movedir_x;
-.float movedir_y;
-.float movedir_z;
 .string message;
 .float sounds;
 .string noise;
@@ -346,23 +304,11 @@ float AS_MISSILE = 4.000;
 .string deathtype;
 .string mdl;
 .vector mangle;
-.vector mangle_x;
-.float mangle_y;
-.float mangle_z;
 .float t_length;
 .float t_width;
 .vector dest;
-.vector dest_x;
-.float dest_y;
-.float dest_z;
 .vector dest1;
-.vector dest1_x;
-.float dest1_y;
-.float dest1_z;
 .vector dest2;
-.vector dest2_x;
-.float dest2_y;
-.float dest2_z;
 .float wait;
 .float delay;
 .entity trigger_field;
@@ -374,156 +320,79 @@ float AS_MISSILE = 4.000;
 .float cnt;
 .void() think1;
 .vector finaldest;
-.vector finaldest_x;
-.float finaldest_y;
-.float finaldest_z;
 .vector finalangle;
-.vector finalangle_x;
-.float finalangle_y;
-.float finalangle_z;
 .float count;
 .float lip;
 .float state;
 .vector pos1;
-.vector pos1_x;
-.float pos1_y;
-.float pos1_z;
 .vector pos2;
-.vector pos2_x;
-.float pos2_y;
-.float pos2_z;
 .float height;
 .float waitmin;
 .float waitmax;
 .float distance;
 .float volume;
-void() makevectors;
-void (vector ang) makevectors = #1
-void() setorigin;
-void (entity e, vector o) setorigin = #2
-void() setmodel;
-void (entity e, string m) setmodel = #3
-void() setsize;
-void (entity e, vector min, vector max) setsize = #4
-void() break;
-void () break = #6
-void() random;
-float () random = #7
-void() sound;
-void (entity e, float chan, string samp, float vol, float atten) sound = #8
-void() normalize;
-vector (vector v) normalize = #9
-void() error;
-void (string e) error = #10
-void() objerror;
-void (string e) objerror = #11
-void() vlen;
-float (vector v) vlen = #12
-void() vectoyaw;
-float (vector v) vectoyaw = #13
-void() spawn;
-entity () spawn = #14
-void() remove;
-void (entity e) remove = #15
-void() traceline;
-void (vector v1, vector v2, float nomonsters, entity forent) traceline = #16
-void() checkclient;
-entity () checkclient = #17
-void() find;
-entity (entity start, .string fld, string match) find = #18
-void() precache_sound;
-string (string s) precache_sound = #19
-void() precache_model;
-string (string s) precache_model = #20
-void() stuffcmd;
-void (entity client, string s) stuffcmd = #21
-void() findradius;
-entity (vector org, float rad) findradius = #22
-void() bprint;
-void (string s) bprint = #23
-void() sprint;
-void (entity client, string s) sprint = #24
-void() dprint;
-void (string s) dprint = #25
-void() ftos;
-string (float f) ftos = #26
-void() vtos;
-string (vector v) vtos = #27
-void() coredump;
-void () coredump = #28
-void() traceon;
-void () traceon = #29
-void() traceoff;
-void () traceoff = #30
-void() eprint;
-void (entity e) eprint = #31
-void() walkmove;
-float (float yaw, float dist) walkmove = #32
-void() droptofloor;
-float (float yaw, float dist) droptofloor = #34
-void() lightstyle;
-void (float style, string value) lightstyle = #35
-void() rint;
-float (float v) rint = #36
-void() floor;
-float (float v) floor = #37
-void() ceil;
-float (float v) ceil = #38
-void() checkbottom;
-float (entity e) checkbottom = #40
-void() pointcontents;
-float (vector v) pointcontents = #41
-void() fabs;
-float (float f) fabs = #43
-void() aim;
-vector (entity e, float speed) aim = #44
-void() cvar;
-float (string s) cvar = #45
-void() localcmd;
-void (string s) localcmd = #46
-void() nextent;
-entity (entity e) nextent = #47
-void() particle;
-void (vector o, vector d, float color, float count) particle = #48
-void() ChangeYaw;
-void () ChangeYaw = #49
-void() vectoangles;
-vector (vector v) vectoangles = #51
-void() WriteByte;
-void (float to, float f) WriteByte = #52
-void() WriteChar;
-void (float to, float f) WriteChar = #53
-void() WriteShort;
-void (float to, float f) WriteShort = #54
-void() WriteLong;
-void (float to, float f) WriteLong = #55
-void() WriteCoord;
-void (float to, float f) WriteCoord = #56
-void() WriteAngle;
-void (float to, float f) WriteAngle = #57
-void() WriteString;
-void (float to, string s) WriteString = #58
-void() WriteEntity;
-void (float to, entity s) WriteEntity = #59
-void() movetogoal;
-void (float step) movetogoal = #67
-void() precache_file;
-string (string s) precache_file = #68
-void() makestatic;
-void (entity e) makestatic = #69
-void() changelevel;
-void (string s) changelevel = #70
-void() cvar_set;
-void (string var, string val) cvar_set = #72
-void() centerprint;
-void (entity client, string s) centerprint = #73
-void() ambientsound;
-void (vector pos, string samp, float vol, float atten) ambientsound = #74
-void() precache_model2;
-string (string s) precache_model2 = #75
-void() precache_sound2;
-string (string s) precache_sound2 = #76
-void() precache_file2;
-string (string s) precache_file2 = #77
-void() setspawnparms;
-void (entity e) setspawnparms = #78
+void (vector ang) makevectors = #1;
+void (entity e, vector o) setorigin = #2;
+void (entity e, string m) setmodel = #3;
+void (entity e, vector min, vector max) setsize = #4;
+void () break = #6;
+float () random = #7;
+void (entity e, float chan, string samp, float vol, float atten) sound = #8;
+vector (vector v) normalize = #9;
+void (string e) error = #10;
+void (string e) objerror = #11;
+float (vector v) vlen = #12;
+float (vector v) vectoyaw = #13;
+entity () spawn = #14;
+void (entity e) remove = #15;
+void (vector v1, vector v2, float nomonsters, entity forent) traceline = #16;
+entity () checkclient = #17;
+entity (entity start, .string fld, string match) find = #18;
+string (string s) precache_sound = #19;
+string (string s) precache_model = #20;
+void (entity client, string s) stuffcmd = #21;
+entity (vector org, float rad) findradius = #22;
+void (string s) bprint = #23;
+void (entity client, string s) sprint = #24;
+void (string s) dprint = #25;
+string (float f) ftos = #26;
+string (vector v) vtos = #27;
+void () coredump = #28;
+void () traceon = #29;
+void () traceoff = #30;
+void (entity e) eprint = #31;
+float (float yaw, float dist) walkmove = #32;
+float (float yaw, float dist) droptofloor = #34;
+void (float style, string value) lightstyle = #35;
+float (float v) rint = #36;
+float (float v) floor = #37;
+float (float v) ceil = #38;
+float (entity e) checkbottom = #40;
+float (vector v) pointcontents = #41;
+float (float f) fabs = #43;
+vector (entity e, float speed) aim = #44;
+float (string s) cvar = #45;
+void (string s) localcmd = #46;
+entity (entity e) nextent = #47;
+void (vector o, vector d, float color, float count) particle = #48;
+void () ChangeYaw = #49;
+vector (vector v) vectoangles = #51;
+void (float to, float f) WriteByte = #52;
+void (float to, float f) WriteChar = #53;
+void (float to, float f) WriteShort = #54;
+void (float to, float f) WriteLong = #55;
+void (float to, float f) WriteCoord = #56;
+void (float to, float f) WriteAngle = #57;
+void (float to, string s) WriteString = #58;
+void (float to, entity s) WriteEntity = #59;
+void (float step) movetogoal = #67;
+string (string s) precache_file = #68;
+void (entity e) makestatic = #69;
+void (string s) changelevel = #70;
+void (string var, string val) cvar_set = #72;
+void (entity client, string s) centerprint = #73;
+void (vector pos, string samp, float vol, float atten) ambientsound = #74;
+string (string s) precache_model2 = #75;
+string (string s) precache_sound2 = #76;
+string (string s) precache_file2 = #77;
+void (entity e) setspawnparms = #78;

@@ -950,7 +950,7 @@ void() teleport_touch;
     if(!other.health)
     {
         other.origin = t.origin;
-        other.velocity = (v_forward * other.velocity_x) + (v_forward * other.velocity_y);
+        other.velocity = (v_forward * other.velocity) + (v_forward * other.velocity_y);
         return; /* TODO retvalue? */
     }
     
@@ -1432,7 +1432,7 @@ void() trigger_monsterjump_touch;
         return; /* TODO retvalue? */
     }
     
-    other.velocity_x = self.movedir_x * self.speed;
+    other.velocity = self.movedir * self.speed;
     other.velocity_y = self.movedir_y * self.speed;
     
     if(!(other.flags & FL_ONGROUND))

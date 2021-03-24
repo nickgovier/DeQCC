@@ -191,23 +191,6 @@ namespace DeQcc
             }
         }
 
-        public bool SaveGlobal  // we don't actually need this info, but it helps in the Type property later
-        {
-            get
-            {
-                if (_globaldef_type == null)
-                {
-                    return false;
-                }
-                int bitCheck = (ushort)_globaldef_type & DEF_SAVEGLOBAL;    // check if DEF_SAVEGLOBAL bit is set
-                if (bitCheck == 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-
         public Types? FieldType
         {
             get
@@ -236,14 +219,6 @@ namespace DeQcc
             }
         }
 
-        public ushort GlobaldefType
-        {
-            set
-            {
-                _globaldef_type = value;
-            }
-        }
-
         public Types? Type
         {
             get
@@ -252,11 +227,15 @@ namespace DeQcc
                 {
                     return null;
                 }
-                if (SaveGlobal)
+                if ((_globaldef_type & DEF_SAVEGLOBAL) != 0)
                 {
                     return (Types)(_globaldef_type - DEF_SAVEGLOBAL);
                 }
                 return (Types)(_globaldef_type);
+            }
+            set
+            {
+                _globaldef_type = (ushort)value;
             }
         }
 
@@ -447,6 +426,7 @@ namespace DeQcc
             for (int i = 0; i < RESERVED_OFS; i++)
             {
                 globalList[i].Kind = GlobalKind.Reserved;
+                globalList[i].Type = Types.ev_void;    // don't know
             }
 
             #endregion
@@ -463,7 +443,7 @@ namespace DeQcc
                 }
 
                 Def gd = globals[i];
-                globalList[gd.ofs].GlobaldefType = gd.type;
+                globalList[gd.ofs].Type = (Types)gd.type;
                 globalList[gd.ofs].Name = strings[stringOffsetMap[gd.s_name]];
 
                 if (globalList[gd.ofs].Type == Types.ev_function)
@@ -492,7 +472,10 @@ namespace DeQcc
                 // e.g. perhaps the previous function ended but there are some defs before this one begins
                 while(nextGlobal < f.parm_start)
                 {
-                    globalList[nextGlobal].Kind = GlobalKind.Globaldef;
+                    if (globalList[nextGlobal].Kind == GlobalKind.Unknown)
+                    {
+                        globalList[nextGlobal].Kind = GlobalKind.Globaldef;
+                    }
                     nextGlobal++;
                 }
 
@@ -583,11 +566,11 @@ namespace DeQcc
                         if(a.Type == Types.ev_vector)
                         {
                             Global y = GetGlobal(s.a + 1);
-                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Type = Types.ev_float;
                             y.Name = a.Name + "_y";
                             y.Kind = a.Kind;
                             Global z = GetGlobal(s.a + 2);
-                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Type = Types.ev_float;
                             z.Name = a.Name + "_z";
                             z.Kind = a.Kind;
                         }
@@ -605,11 +588,11 @@ namespace DeQcc
                         if (b.Type == Types.ev_vector)
                         {
                             Global y = GetGlobal(s.b + 1);
-                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Type = Types.ev_float;
                             y.Name = b.Name + "_y";
                             y.Kind = b.Kind;
                             Global z = GetGlobal(s.b + 2);
-                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Type = Types.ev_float;
                             z.Name = b.Name + "_z";
                             z.Kind = b.Kind;
                         }
@@ -627,11 +610,11 @@ namespace DeQcc
                         if (c.Type == Types.ev_vector)
                         {
                             Global y = GetGlobal(s.c + 1);
-                            y.GlobaldefType = (ushort)Types.ev_float;
+                            y.Type = Types.ev_float;
                             y.Name = c.Name + "_y";
                             y.Kind = c.Kind;
                             Global z = GetGlobal(s.c + 2);
-                            z.GlobaldefType = (ushort)Types.ev_float;
+                            z.Type = Types.ev_float;
                             z.Name = c.Name + "_z";
                             z.Kind = c.Kind;
                         }
@@ -663,16 +646,16 @@ namespace DeQcc
                         case Opcodes.OP_ADDRESS: case Opcodes.OP_LOAD_F: case Opcodes.OP_LOAD_V: case Opcodes.OP_LOAD_S:
                         case Opcodes.OP_LOAD_ENT: case Opcodes.OP_LOAD_FLD: case Opcodes.OP_LOAD_FNC:
                             a.readBy.Add(statementIndex); b.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
-                            if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
+                            if (c.Type == null) { c.Type = pr_opcodes[s.op].type_c; }
                             break;
                         case Opcodes.OP_NOT_F: case Opcodes.OP_NOT_V: case Opcodes.OP_NOT_S: case Opcodes.OP_NOT_FNC: case Opcodes.OP_NOT_ENT:
                             a.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
-                            if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
+                            if (c.Type == null) { c.Type = pr_opcodes[s.op].type_c; }
                             break;
                         case Opcodes.OP_STORE_F: case Opcodes.OP_STORE_ENT: case Opcodes.OP_STORE_FLD: case Opcodes.OP_STORE_S: case Opcodes.OP_STORE_FNC: case Opcodes.OP_STORE_V:
                         case Opcodes.OP_STOREP_F: case Opcodes.OP_STOREP_ENT: case Opcodes.OP_STOREP_FLD: case Opcodes.OP_STOREP_S: case Opcodes.OP_STOREP_FNC: case Opcodes.OP_STOREP_V:
                             a.readBy.Add(statementIndex); b.writtenBy.Add(statementIndex);
-                            if (b.Type == null) { b.GlobaldefType = (ushort)pr_opcodes[s.op].type_b; }
+                            if (b.Type == null) { b.Type = pr_opcodes[s.op].type_b; }
                             break;
                         case Opcodes.OP_GOTO:
                             break;
@@ -851,6 +834,7 @@ namespace DeQcc
                 Global g = GetGlobal(nextGlobal);
                 if(g.Kind == GlobalKind.Function && g.FunctionIsBuiltin)
                 {
+                    nextGlobal++;
                     continue;   // It will be printed lower down
                 }
                 Print(g.TypeCodeOutput + " " + g.Name);
@@ -881,7 +865,7 @@ namespace DeQcc
             // Check for builtin functions
             if(f.IsBuiltin)
             {
-                PrintLine(builtins[-f.first_statement] + " " + f.name + " = #" + (-f.first_statement));
+                PrintLine(builtins[-f.first_statement] + " " + f.name + " = #" + (-f.first_statement) + ";");
                 return;
             }
 

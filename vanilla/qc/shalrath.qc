@@ -936,7 +936,7 @@ void() ShalHome;
     sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
-    WriteCoord(MSG_BROADCAST, self.origin_x);
+    WriteCoord(MSG_BROADCAST, self.origin);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     self.velocity = VEC_ORIGIN;

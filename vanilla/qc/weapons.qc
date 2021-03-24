@@ -553,7 +553,7 @@ void() W_FireShotgun;
 {
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", WEAPON_SHOTGUN, ATTN_NORM);
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
     self.ammo_shells = self.ammo_shells - WEAPON_SHOTGUN;
     self.currentammo = self.ammo_shells - WEAPON_SHOTGUN;
     dir = aim(self, 100000.000);
@@ -603,7 +603,7 @@ void() W_FireSuperShotgun;
     }
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
-    self.punchangle_x = CONTENT_SLIME;
+    self.punchangle = CONTENT_SLIME;
     self.ammo_shells = self.ammo_shells - WEAPON_ROCKET;
     self.currentammo = self.ammo_shells - WEAPON_ROCKET;
     dir = aim(self, 100000.000);
@@ -797,7 +797,7 @@ void() BecomeExplosion;
     self.origin = self.origin - (WEAPON_BIG * random());
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
-    WriteCoord(MSG_BROADCAST, self.origin_x);
+    WriteCoord(MSG_BROADCAST, self.origin);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     BecomeExplosion();
@@ -877,7 +877,7 @@ void() W_FireRocket;
     self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
     self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", WEAPON_SHOTGUN, ATTN_NORM);
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
     missile = spawn();
     missile.owner = self;
     missile.movetype = MOVETYPE_FLYMISSILE;
@@ -1162,7 +1162,7 @@ void() W_FireLightning;
         self.t_width = time + 0.600;
     }
     
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
     self.ammo_cells = self.ammo_cells - WEAPON_SHOTGUN;
     self.currentammo = self.ammo_cells - WEAPON_SHOTGUN;
     org = self.origin + '0.000 0.000 16.000';
@@ -1214,7 +1214,7 @@ void() GrenadeExplode;
     T_RadiusDamage(self, self.owner, 120.000, world);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
-    WriteCoord(MSG_BROADCAST, self.origin_x);
+    WriteCoord(MSG_BROADCAST, self.origin);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     BecomeExplosion();
@@ -1362,14 +1362,14 @@ void() W_FireGrenade;
     self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
     self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", WEAPON_SHOTGUN, ATTN_NORM);
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
     missile = spawn();
     missile.owner = self;
     missile.movetype = MOVETYPE_BOUNCE;
     missile.solid = SOLID_BBOX;
     missile.classname = "grenade";
     makevectors(self.v_angle);
-    if(self.v_angle_x)
+    if(self.v_angle)
     {
         missile.velocity = (((v_forward * 600.000) + (v_up * 200.000)) + ((crandom() * v_right) * TE_LAVASPLASH)) + ((crandom() * v_up) * TE_LAVASPLASH);
     }
@@ -1501,7 +1501,7 @@ void() W_FireSuperSpikes;
     newmis.touch = superspike_touch;
     setmodel(newmis, "progs/s_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
 };
 
 /* TYPE: EV_POINTER */ ;
@@ -1582,7 +1582,7 @@ void() W_FireSpikes;
     self.currentammo = self.ammo_nails - WEAPON_SHOTGUN;
     dir = aim(self, 1000.000);
     launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
-    self.punchangle_x = CONTENT_SOLID;
+    self.punchangle = CONTENT_SOLID;
 };
 
 /* TYPE: EV_POINTER */ ;
@@ -1698,7 +1698,7 @@ void() W_FireSpikes;
             
         }
         
-        WriteCoord(MSG_BROADCAST, self.origin_x);
+        WriteCoord(MSG_BROADCAST, self.origin);
         WriteCoord(MSG_BROADCAST, self.origin_y);
         WriteCoord(MSG_BROADCAST, self.origin_z);
     }
@@ -1788,7 +1788,7 @@ float ;
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_SUPERSPIKE);
-        WriteCoord(MSG_BROADCAST, self.origin_x);
+        WriteCoord(MSG_BROADCAST, self.origin);
         WriteCoord(MSG_BROADCAST, self.origin_y);
         WriteCoord(MSG_BROADCAST, self.origin_z);
     }

@@ -1072,7 +1072,7 @@ string IMMEDIATE = "abcdefghijklmlkjihgfedcb";
             
             while(y <= IT_LIGHTNING)
             {
-                self.origin_x = oldo + x;
+                self.origin = oldo + x;
                 self.origin_y = oldo_y + y;
                 self.origin_z = oldo_z + z;
                 r = random();

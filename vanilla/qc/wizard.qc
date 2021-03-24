@@ -1222,7 +1222,7 @@ void() wiz_death1;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
     random();
-    self.velocity_x = -200.000 + (400.000 * random());
+    self.velocity = -200.000 + (400.000 * random());
     random();
     self.velocity_y = -200.000 + (400.000 * random());
     random();

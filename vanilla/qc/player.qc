@@ -45,7 +45,7 @@ void() bubble_bob;
     // *** UNPROCESSED OPCODE OP_STATE 4861 3937 0
     self.weaponframe = MSG_BROADCAST;
     
-    if(self.velocity_x || self.velocity_y)
+    if(self.velocity || self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_run();
@@ -125,7 +125,7 @@ float ;
     // *** UNPROCESSED OPCODE OP_STATE 314 2612 0
     self.weaponframe = MSG_BROADCAST;
     
-    if(!self.velocity_x && !self.velocity_y)
+    if(!self.velocity && !self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_stand1();
@@ -1553,7 +1553,7 @@ void() ThrowGib;
     new.velocity = VelocityForDamage(dm);
     new.movetype = MOVETYPE_BOUNCE;
     new.solid = SOLID_NOT;
-    new.avelocity_x = random() * 600.000;
+    new.avelocity = random() * 600.000;
     new.avelocity_y = random() * 600.000;
     new.avelocity_z = random() * 600.000;
     new.think = SUB_Remove;
@@ -1844,7 +1844,7 @@ float ;
     }
     
     DeathSound();
-    self.angles_x = MSG_BROADCAST;
+    self.angles = MSG_BROADCAST;
     self.angles_z = MSG_BROADCAST;
     
     if(self.weapon == IT_AXE)

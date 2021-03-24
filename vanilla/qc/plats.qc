@@ -81,9 +81,9 @@ void() plat_spawn_inside_trigger;
     }
     
     
-    if(self.size_x <= 50.000)
+    if(self.size <= 50.000)
     {
-        tmin = (self.mins_x + self.maxs_x) / SILENT;
+        tmin = (self.mins + self.maxs) / SILENT;
         tmax = tmin + PLAT_LOW_TRIGGER;
     }
     

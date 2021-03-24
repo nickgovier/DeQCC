@@ -713,7 +713,7 @@ void() EntitiesTouching;
 %%RETURNTYPE%% (entity e1, entity e2) EntitiesTouching =
 {
     
-    if(e1.mins_x > e2.maxs_x)
+    if(e1.mins > e2.maxs)
     {
         return; /* TODO retvalue? */
     }
@@ -731,7 +731,7 @@ void() EntitiesTouching;
     }
     
     
-    if(e1.maxs_x < e2.mins_x)
+    if(e1.maxs < e2.mins)
     {
         return; /* TODO retvalue? */
     }
@@ -946,9 +946,9 @@ void() LinkDoors;
             self.enemy = t;
             self = t;
             
-            if(t.mins_x < cmins)
+            if(t.mins < cmins)
             {
-                cmins = t.mins_x;
+                cmins = t.mins;
             }
             
             
@@ -964,9 +964,9 @@ void() LinkDoors;
             }
             
             
-            if(t.maxs_x > cmaxs)
+            if(t.maxs > cmaxs)
             {
-                cmaxs = t.maxs_x;
+                cmaxs = t.maxs;
             }
             
             

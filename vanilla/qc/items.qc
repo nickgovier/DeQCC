@@ -3300,7 +3300,7 @@ void() DropBackpack;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
     item.velocity_z = 300.000;
-    item.velocity_x = IMMEDIATE + (random() * 200.000);
+    item.velocity = IMMEDIATE + (random() * 200.000);
     item.velocity_y = IMMEDIATE + (random() * 200.000);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;
