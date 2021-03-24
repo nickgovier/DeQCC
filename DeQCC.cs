@@ -204,9 +204,9 @@ namespace DeQcc
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
         Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
 
-        void InitStaticData(string progsName)
+        void InitStaticData(string outputfolder)
         {
-            if(progsName == "obots102progs.dat")
+            if(outputfolder == "obots")
             {
                 InitObotMaps();
             }
@@ -377,9 +377,9 @@ namespace DeQcc
             Decompile(outputfolder);
         }
 
-        void ReadData(string srcfile)
+        void ReadData(string outputfolder)
         {
-            BinaryReader h = new BinaryReader(File.Open(srcfile, FileMode.Open), Encoding.ASCII);
+            BinaryReader h = new BinaryReader(File.Open(outputfolder + "inputprogs.dat", FileMode.Open), Encoding.ASCII);
             int version = h.ReadInt32();
             int crc = h.ReadInt32();
             int ofs_statements = h.ReadInt32();

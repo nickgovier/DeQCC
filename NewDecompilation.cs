@@ -384,10 +384,19 @@ namespace DeQcc
             return input;
         }
 
-        public void NewDecompilation(string name, string outputfolder)
+        public void NewDecompilation(string outputfolder)
         {
-            InitStaticData(name);
-            ReadData(name);
+            // Output folder structure:
+            // /outputfolder/
+            // /outputfolder/inputprogs.dat <- will be read
+            // /outputfolder/qc/ <- decompilation will be output here
+            // /outputfolder/qcc.bat <- will compile the results of the decompilation
+            // /outputfolder/progs.dat <- output of qcc.bat, to be compared with inputprogs.dat
+
+            outputfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
+            InitStaticData(outputfolder);
+            ReadData(outputfolder);
+            WriteProgsData(outputfolder);
             Preprocess();
             DecompileFunctions(outputfolder);
         }
@@ -840,6 +849,7 @@ namespace DeQcc
 
         void DecompileFunctions(string folder)
         {
+            folder = folder + "qc\\";
             progsSrcOutputFile = new StreamWriter(folder + "progs.src", false);     // overwrite
             progsSrcOutputFile.AutoFlush = true;
             progsSrcOutputFile.WriteLine("./progs.dat");
