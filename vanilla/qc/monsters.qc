@@ -55,9 +55,8 @@ void() monster_use;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_S 5467 712 5468
     
-    if()
+    if(activator.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -100,20 +99,17 @@ void() monster_use;
     
     if(self.flags & FL_FLY)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 5479 215 5480
-        self.flags = ;
+        self.flags = self.flags - FL_FLY;
     }
     
     
     if(self.flags & FL_SWIM)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 5484 216 5485
-        self.flags = ;
+        self.flags = self.flags - FL_SWIM;
     }
     
-    // *** UNPROCESSED OPCODE OP_NOT_S 5486 0 5487
     
-    if()
+    if(!self.target)
     {
         return; /* TODO retvalue? */
     }
@@ -233,8 +229,7 @@ void() walkmonster_start_go;
     }
     
     self.takedamage = DAMAGE_AIM;
-    // *** UNPROCESSED OPCODE OP_MUL_V 5502 5505 5508
-    self.ideal_yaw = ;
+    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
     
     if(!self.yaw_speed)
     {
@@ -243,24 +238,21 @@ void() walkmonster_start_go;
     
     self.view_ofs = '0.000 0.000 25.000';
     self.use = monster_use;
-    // *** UNPROCESSED OPCODE OP_BITOR 5520 219 5521
-    self.flags = ;
+    self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
         self.movetarget = find(world, targetname, self.target);
         self.goalentity = find(world, targetname, self.target);
         self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 5537 0 5538
         
-        if()
+        if(!self.movetarget)
         {
             dprint("Monster can't find target at ");
             dprint(vtos(self.origin));
             dprint("\n");
         }
         
-        // *** UNPROCESSED OPCODE OP_EQ_S 5544 5545 5546
-        if()
+        if(self.movetarget.classname == "path_corner")
         {
             func000000();
         }
@@ -277,8 +269,7 @@ void() walkmonster_start_go;
         func000000();
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1491 5555
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * IMMEDIATE);
 };
 
 float ;
@@ -298,8 +289,7 @@ void() walkmonster_start;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () walkmonster_start =
 {
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1491 5560
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = walkmonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
@@ -388,8 +378,7 @@ void() flymonster_start_go;
 %%RETURNTYPE%% () flymonster_start_go =
 {
     self.takedamage = DAMAGE_AIM;
-    // *** UNPROCESSED OPCODE OP_MUL_V 5567 5505 5570
-    self.ideal_yaw = ;
+    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
     
     if(!self.yaw_speed)
     {
@@ -398,10 +387,8 @@ void() flymonster_start_go;
     
     self.view_ofs = '0.000 0.000 25.000';
     self.use = monster_use;
-    // *** UNPROCESSED OPCODE OP_BITOR 5579 215 5580
-    self.flags = ;
-    // *** UNPROCESSED OPCODE OP_BITOR 5582 219 5583
-    self.flags = ;
+    self.flags = self.flags | FL_FLY;
+    self.flags = self.flags | FL_MONSTER;
     
     if(!walkmove(MSG_BROADCAST, MSG_BROADCAST))
     {
@@ -414,17 +401,15 @@ void() flymonster_start_go;
     {
         self.movetarget = find(world, targetname, self.target);
         self.goalentity = find(world, targetname, self.target);
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 5593 0 5594
         
-        if()
+        if(!self.movetarget)
         {
             dprint("Monster can't find target at ");
             dprint(vtos(self.origin));
             dprint("\n");
         }
         
-        // *** UNPROCESSED OPCODE OP_EQ_S 5599 5545 5600
-        if()
+        if(self.movetarget.classname == "path_corner")
         {
             func000000();
         }
@@ -460,8 +445,7 @@ void() flymonster_start;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () flymonster_start =
 {
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1491 5609
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = flymonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
@@ -552,8 +536,7 @@ void() swimmonster_start_go;
     }
     
     self.takedamage = DAMAGE_AIM;
-    // *** UNPROCESSED OPCODE OP_MUL_V 5616 5505 5619
-    self.ideal_yaw = ;
+    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
     
     if(!self.yaw_speed)
     {
@@ -562,17 +545,14 @@ void() swimmonster_start_go;
     
     self.view_ofs = '0.000 0.000 10.000';
     self.use = monster_use;
-    // *** UNPROCESSED OPCODE OP_BITOR 5631 216 5632
-    self.flags = ;
-    // *** UNPROCESSED OPCODE OP_BITOR 5634 219 5635
-    self.flags = ;
+    self.flags = self.flags | FL_SWIM;
+    self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
         self.movetarget = find(world, targetname, self.target);
         self.goalentity = find(world, targetname, self.target);
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 5640 0 5641
         
-        if()
+        if(!self.movetarget)
         {
             dprint("Monster can't find target at ");
             dprint(vtos(self.origin));
@@ -588,8 +568,7 @@ void() swimmonster_start_go;
         func000000();
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1491 5661
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * IMMEDIATE);
 };
 
 float ;
@@ -609,8 +588,7 @@ void() swimmonster_start;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () swimmonster_start =
 {
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1491 5666
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * IMMEDIATE);
     self.think = swimmonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };

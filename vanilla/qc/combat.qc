@@ -86,18 +86,15 @@ void() monster_death_use;
     
     if(targ.movetype == MOVETYPE_PUSH)
     {
-        // *** UNPROCESSED OPCODE OP_ADD_V 1492 1495 1498
-        // *** UNPROCESSED OPCODE OP_MUL_FV 1491 1498 1501
-        traceline(inflictor.origin, , TRUE, self);
+        traceline(inflictor.origin, IMMEDIATE * (targ.absmin + targ.absmax), TRUE, self);
         
         if(trace_fraction == AS_STRAIGHT)
         {
             return; /* TODO retvalue? */
         }
         
-        // *** UNPROCESSED OPCODE OP_EQ_E 78 1484 1505
         
-        if()
+        if(trace_ent == targ)
         {
             return; /* TODO retvalue? */
         }
@@ -112,32 +109,28 @@ void() monster_death_use;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 1516 1519 1522
-    traceline(inflictor.origin, , TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 1529 1532 1535
-    traceline(inflictor.origin, , TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 1542 1545 1548
-    traceline(inflictor.origin, , TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 1555 1558 1561
-    traceline(inflictor.origin, , TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
     
     if(trace_fraction == AS_STRAIGHT)
     {
@@ -404,32 +397,23 @@ void() ;
     }
     
     damage_attacker = attacker;
-    // *** UNPROCESSED OPCODE OP_GT 1598 31 1599
     
-    if()
+    if(attacker.super_damage_finished > time)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1589 371 1600
-        damage = ;
+        damage = damage * AS_MISSILE;
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1601 1589 1602
-    save = ceil();
-    // *** UNPROCESSED OPCODE OP_GE 1594 1603 1604
+    save = ceil(targ.armortype * damage);
     
-    if()
+    if(save >= targ.armorvalue)
     {
         save = targ.armorvalue;
         targ.armortype = MSG_BROADCAST;
-        // *** UNPROCESSED OPCODE OP_BITOR 266 267 1610
-        // *** UNPROCESSED OPCODE OP_BITOR 1610 268 1611
-        // *** UNPROCESSED OPCODE OP_SUB_F 1608 1612 1613
-        targ.items = ;
+        targ.items = targ.items - (targ.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3));
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 1615 1594 1616
-    targ.armorvalue = ;
-    // *** UNPROCESSED OPCODE OP_SUB_F 1589 1594 1617
-    take = ceil();
+    targ.armorvalue = targ.armorvalue - save;
+    take = ceil(damage - save);
     
     if(targ.flags & FL_CLIENT)
     {
@@ -441,11 +425,9 @@ void() ;
     
     if((inflictor != world) && (targ.movetype == MOVETYPE_WALK))
     {
-        // *** UNPROCESSED OPCODE OP_ADD_V 1634 1637 1640
-        dir = targ.origin - ( * IMMEDIATE);
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * IMMEDIATE);
         dir = normalize(dir);
-        // *** UNPROCESSED OPCODE OP_ADD_V 1652 1658 1661
-        targ.velocity = ;
+        targ.velocity = targ.velocity + ((dir * damage) * EF_DIMLIGHT);
     }
     
     
@@ -454,9 +436,8 @@ void() ;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 1666 31 1667
     
-    if()
+    if(targ.invincible_finished >= time)
     {
         
         if(self.invincible_sound < time)
@@ -468,17 +449,13 @@ void() ;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 1674 337 1675
-    // *** UNPROCESSED OPCODE OP_EQ_S 1683 712 1684
-    // *** UNPROCESSED OPCODE OP_NE_S 1686 1687 1688
     
-    if((((((teamplay == AS_STRAIGHT) && ) && (targ.team == attacker.team)) && (targ != attacker)) && ) && )
+    if((((((teamplay == AS_STRAIGHT) && (targ.team > MSG_BROADCAST)) && (targ.team == attacker.team)) && (targ != attacker)) && (attacker.classname == "player")) && (inflictor.classname != "door"))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 1691 1595 1692
-    targ.health = ;
+    targ.health = targ.health - take;
     
     if(targ.health <= MSG_BROADCAST)
     {
@@ -494,14 +471,11 @@ void() ;
         
         if((self != attacker) && (attacker != self.enemy))
         {
-            // *** UNPROCESSED OPCODE OP_NE_S 1703 1704 1705
-            // *** UNPROCESSED OPCODE OP_EQ_S 1706 1286 1707
             
-            if( || )
+            if((self.classname != attacker.classname) || (self.classname == "monster_army"))
             {
-                // *** UNPROCESSED OPCODE OP_EQ_S 1710 712 1711
                 
-                if()
+                if(self.enemy.classname == "player")
                 {
                     self.oldenemy = self.enemy;
                 }
@@ -606,40 +580,31 @@ void() T_RadiusDamage;
             
             if(head.takedamage)
             {
-                // *** UNPROCESSED OPCODE OP_ADD_V 1740 1743 1746
-                // *** UNPROCESSED OPCODE OP_ADD_V 1737 1749 1752
-                org = ;
+                org = head.origin + ((head.mins + head.maxs) * IMMEDIATE);
                 vlen(inflictor.origin - org);
-                // *** UNPROCESSED OPCODE OP_MUL_F 1491 1 1761
-                points = ;
+                points = IMMEDIATE * (findradius(inflictor.origin, damage + 40.000));
                 
                 if(points < MSG_BROADCAST)
                 {
                     points = MSG_BROADCAST;
                 }
                 
-                // *** UNPROCESSED OPCODE OP_SUB_F 1723 1725 1763
-                points = ;
-                // *** UNPROCESSED OPCODE OP_EQ_E 1726 1722 1764
+                points = damage - points;
                 
-                if()
+                if(head == attacker)
                 {
-                    // *** UNPROCESSED OPCODE OP_MUL_F 1725 1491 1765
-                    points = ;
+                    points = points * IMMEDIATE;
                 }
                 
-                // *** UNPROCESSED OPCODE OP_GT 1725 337 1766
                 
-                if()
+                if(points > MSG_BROADCAST)
                 {
                     
                     if(CanDamage(head, inflictor))
                     {
-                        // *** UNPROCESSED OPCODE OP_EQ_S 1767 1243 1768
-                        if()
+                        if(head.classname == "monster_shambler")
                         {
-                            // *** UNPROCESSED OPCODE OP_MUL_F 1725 1491 1769
-                            T_Damage(head, inflictor, attacker, );
+                            T_Damage(head, inflictor, attacker, points * IMMEDIATE);
                         }
                         else                        
                         {
@@ -727,36 +692,29 @@ void() T_BeamDamage;
         if(head.takedamage)
         {
             vlen(attacker.origin - head.origin);
-            // *** UNPROCESSED OPCODE OP_MUL_F 1491 1 1790
-            points = ;
+            points = IMMEDIATE * (findradius(attacker.origin, damage + 40.000));
             
             if(points < MSG_BROADCAST)
             {
                 points = MSG_BROADCAST;
             }
             
-            // *** UNPROCESSED OPCODE OP_SUB_F 1773 1774 1792
-            points = ;
-            // *** UNPROCESSED OPCODE OP_EQ_E 1775 1772 1793
+            points = damage - points;
             
-            if()
+            if(head == attacker)
             {
-                // *** UNPROCESSED OPCODE OP_MUL_F 1774 1491 1794
-                points = ;
+                points = points * IMMEDIATE;
             }
             
-            // *** UNPROCESSED OPCODE OP_GT 1774 337 1795
             
-            if()
+            if(points > MSG_BROADCAST)
             {
                 
                 if(CanDamage(head, attacker))
                 {
-                    // *** UNPROCESSED OPCODE OP_EQ_S 1796 1243 1797
-                    if()
+                    if(head.classname == "monster_shambler")
                     {
-                        // *** UNPROCESSED OPCODE OP_MUL_F 1774 1491 1798
-                        T_Damage(head, attacker, attacker, );
+                        T_Damage(head, attacker, attacker, points * IMMEDIATE);
                     }
                     else                    
                     {

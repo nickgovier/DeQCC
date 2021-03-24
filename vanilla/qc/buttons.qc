@@ -147,9 +147,8 @@ void() button_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () button_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6336 712 6337
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -339,10 +338,7 @@ void() func_button;
     
     self.state = STATE_BOTTOM;
     self.pos1 = self.origin;
-    // *** UNPROCESSED OPCODE OP_MUL_V 6399 6402 6405
-    fabs();
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 6406 6407
-    // *** UNPROCESSED OPCODE OP_ADD_V 6393 6408 6411
-    self.pos2 = ;
+    fabs(self.movedir * self.size);
+    self.pos2 = self.pos1 + (self.movedir * ((fabs(v_forward * self.size)) - self.lip));
 };
 

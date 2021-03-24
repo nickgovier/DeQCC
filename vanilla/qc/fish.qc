@@ -621,25 +621,22 @@ void() fish_melee;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 10777 0 10778
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
     
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 912 10789
     
-    if()
+    if(vlen(delta) > 60.000)
     {
         return; /* TODO retvalue? */
     }
     
     sound(self, CHAN_VOICE, "fish/bite.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 10794 370 10795
-    ldmg = ;
+    ldmg = (random() + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };
 

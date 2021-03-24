@@ -57,8 +57,6 @@ void() crandom;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () crandom =
 {
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 2629
-    // *** UNPROCESSED OPCODE OP_MUL_F 2257 2629 2630
     return; /* TODO retvalue? */
 };
 
@@ -126,10 +124,8 @@ void() W_FireAxe;
     local vector source;
     local vector org;
     makevectors(self.v_angle);
-    // *** UNPROCESSED OPCODE OP_ADD_V 2641 2644 2647
-    source = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 2632 2650 2653
-    traceline(source, , FALSE, self);
+    source = self.origin + '0.000 0.000 16.000';
+    traceline(source, source + (v_forward * IT_LIGHTNING), FALSE, self);
     
     if(trace_fraction == WEAPON_SHOTGUN)
     {
@@ -185,14 +181,8 @@ void() wall_velocity;
 {
     local vector vel;
     vel = normalize(self.velocity);
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 2673
-    // *** UNPROCESSED OPCODE OP_ADD_V 2667 2674 2677
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 2680
-    // *** UNPROCESSED OPCODE OP_ADD_V 2677 2681 2684
-    vel = normalize();
-    // *** UNPROCESSED OPCODE OP_MUL_FV 2257 74 2687
-    // *** UNPROCESSED OPCODE OP_ADD_V 2667 2687 2690
-    vel = ;
+    vel = normalize((vel + (v_up * (random() - IMMEDIATE))) + (v_right * (random() - IMMEDIATE)));
+    vel = vel + (WEAPON_ROCKET * trace_plane_normal);
     vel = vel * 200.000;
     return; /* TODO retvalue? */
 };
@@ -250,8 +240,7 @@ void() SpawnMeatSpray;
     makevectors(self.angles);
     missile.velocity = vel;
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 2227 1 2717
-    missile.velocity_z = (missile.velocity_z + 250.000) + ;
+    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * spawn());
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.nextthink = time + WEAPON_SHOTGUN;
     missile.think = SUB_Remove;
@@ -273,8 +262,7 @@ string IMMEDIATE = "progs/zom_gib.mdl";
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (vector org, vector vel, float damage) SpawnBlood =
 {
-    // *** UNPROCESSED OPCODE OP_MUL_F 2735 2257 2740
-    particle(org, vel * 0.100, IMMEDIATE, );
+    particle(org, vel * 0.100, IMMEDIATE, damage * WEAPON_ROCKET);
 };
 
 float ;
@@ -296,8 +284,7 @@ void() spawn_touchblood;
 {
     local vector vel;
     vel = wall_velocity() * 0.200;
-    // *** UNPROCESSED OPCODE OP_ADD_V 2749 2753 2756
-    SpawnBlood(, vel, damage);
+    SpawnBlood(self.origin + (vel * 0.010), vel, damage);
 };
 
 vector ;
@@ -345,9 +332,8 @@ void() ApplyMultiDamage;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () ApplyMultiDamage =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 2770 0 2774
     
-    if()
+    if(!multi_ent)
     {
         return; /* TODO retvalue? */
     }
@@ -373,9 +359,8 @@ void() AddMultiDamage;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (entity hit, float damage) AddMultiDamage =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 2776 0 2778
     
-    if()
+    if(!hit)
     {
         return; /* TODO retvalue? */
     }
@@ -446,13 +431,9 @@ void() TraceAttack;
     local vector vel;
     local vector org;
     crandom();
-    // *** UNPROCESSED OPCODE OP_ADD_V 2783 2792 2795
     crandom();
-    // *** UNPROCESSED OPCODE OP_ADD_V 2795 2798 2801
-    vel = normalize();
-    // *** UNPROCESSED OPCODE OP_MUL_FV 2257 74 2804
-    // *** UNPROCESSED OPCODE OP_ADD_V 2786 2804 2807
-    vel = ;
+    vel = normalize((dir + (v_up * wall_velocity())) + (v_right * wall_velocity()));
+    vel = vel + (WEAPON_ROCKET * trace_plane_normal);
     vel = vel * 200.000;
     org = trace_endpos - (dir * WEAPON_SPIKES);
     if(trace_ent.takedamage)
@@ -521,33 +502,21 @@ void() FireBullets;
     local vector direction;
     local vector src;
     makevectors(self.v_angle);
-    // *** UNPROCESSED OPCODE OP_ADD_V 2840 2843 2846
-    src = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 2850 2851 2852
-    src_z = self.absmin_z + ;
+    src = self.origin + (v_forward * TE_LAVASPLASH);
+    src_z = self.absmin_z + (self.size_z * 0.700);
     ClearMultiDamage();
-    // *** UNPROCESSED OPCODE OP_GT 2824 337 2854
     
-    while()
+    while(shotcount > MSG_BROADCAST)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1 2828 2855
-        // *** UNPROCESSED OPCODE OP_MUL_FV 2855 65 2856
-        // *** UNPROCESSED OPCODE OP_ADD_V 2825 2856 2859
-        // *** UNPROCESSED OPCODE OP_MUL_F 1 2829 2862
-        // *** UNPROCESSED OPCODE OP_MUL_FV 2862 62 2863
-        // *** UNPROCESSED OPCODE OP_ADD_V 2859 2863 2866
-        direction = ;
-        // *** UNPROCESSED OPCODE OP_ADD_V 2834 2869 2872
-        traceline(src, , FALSE, self);
-        // *** UNPROCESSED OPCODE OP_NE_F 70 2256 2875
+        direction = (dir + ((crandom() * spread) * v_right)) + ((crandom() * spread_y) * v_up);
+        traceline(src, src + (direction * IT_CELLS), FALSE, self);
         
-        if()
+        if(trace_fraction != WEAPON_SHOTGUN)
         {
             TraceAttack(WEAPON_SPIKES, direction);
         }
         
-        // *** UNPROCESSED OPCODE OP_SUB_F 2824 2256 2876
-        shotcount = ;
+        shotcount = shotcount - WEAPON_SHOTGUN;
     }
     
     ApplyMultiDamage();
@@ -585,9 +554,8 @@ void() W_FireShotgun;
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
-    // *** UNPROCESSED OPCODE OP_SUB_F 2884 2256 2885
-    self.ammo_shells = ;
-    self.currentammo = ;
+    self.ammo_shells = self.ammo_shells - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_shells - WEAPON_SHOTGUN;
     dir = aim(self, 100000.000);
     FireBullets(TE_LIGHTNING2, dir, '0.040 0.040 0.000');
 };
@@ -636,9 +604,8 @@ void() W_FireSuperShotgun;
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SLIME;
-    // *** UNPROCESSED OPCODE OP_SUB_F 2899 2257 2900
-    self.ammo_shells = ;
-    self.currentammo = ;
+    self.ammo_shells = self.ammo_shells - WEAPON_ROCKET;
+    self.currentammo = self.ammo_shells - WEAPON_ROCKET;
     dir = aim(self, 100000.000);
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
@@ -799,9 +766,8 @@ void() BecomeExplosion;
 %%RETURNTYPE%% () T_MissileTouch =
 {
     local float damg;
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 2920 2921
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -813,17 +779,14 @@ void() BecomeExplosion;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 894 2926
-    damg = 100.000 + ;
+    damg = 100.000 + (random() * 20.000);
     
     if(other.health)
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 2929 1243 2930
         
-        if()
+        if(other.classname == "monster_shambler")
         {
-            // *** UNPROCESSED OPCODE OP_MUL_F 2919 1491 2931
-            damg = ;
+            damg = damg * IMMEDIATE;
         }
         
         T_Damage(other, self, self.owner, damg);
@@ -831,8 +794,7 @@ void() BecomeExplosion;
     
     T_RadiusDamage(self, self.owner, 120.000, other);
     normalize(self.velocity);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 2259 1 2943
-    self.origin = self.origin - ;
+    self.origin = self.origin - (WEAPON_BIG * random());
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
@@ -912,9 +874,8 @@ void() W_FireRocket;
 {
     local entity missile;
     local entity mpuff;
-    // *** UNPROCESSED OPCODE OP_SUB_F 2957 2256 2958
-    self.ammo_rockets = ;
-    self.currentammo = ;
+    self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -931,9 +892,7 @@ void() W_FireRocket;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/missile.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    // *** UNPROCESSED OPCODE OP_ADD_V 2991 2994 2997
-    // *** UNPROCESSED OPCODE OP_ADD_V 2997 2644 3000
-    setorigin(missile, );
+    setorigin(missile, (self.origin + (v_forward * WEAPON_BIG)) + '0.000 0.000 16.000');
 };
 
 vector ;
@@ -1036,8 +995,7 @@ void() LightningDamage;
     local vector f;
     f = p2 - p1;
     normalize(f);
-    // *** UNPROCESSED OPCODE OP_SUB_F 337 3015 3020
-    f = ;
+    f = MSG_BROADCAST - f_y;
     f_y = f;
     f_z = MSG_BROADCAST;
     f = f * IT_GRENADE_LAUNCHER;
@@ -1047,16 +1005,13 @@ void() LightningDamage;
     
     if(trace_ent.takedamage)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 3011 2258 3029
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, );
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
-        // *** UNPROCESSED OPCODE OP_EQ_S 3030 712 3031
         
-        if()
+        if(self.classname == "player")
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 3032 712 3033
             
-            if()
+            if(other.classname == "player")
             {
                 trace_ent.velocity_z = trace_ent.velocity_z + 400.000;
             }
@@ -1066,14 +1021,11 @@ void() LightningDamage;
     }
     
     e1 = trace_ent;
-    // *** UNPROCESSED OPCODE OP_ADD_V 3004 3014 3038
-    // *** UNPROCESSED OPCODE OP_ADD_V 3007 3014 3041
-    traceline(, , FALSE, self);
+    traceline(p1 + f, p2 + f, FALSE, self);
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 3011 2258 3047
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, );
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1082,8 +1034,7 @@ void() LightningDamage;
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 3011 2258 3059
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, );
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1194,15 +1145,13 @@ void() W_FireLightning;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 3068 2256 3069
     
-    if()
+    if(self.waterlevel > WEAPON_SHOTGUN)
     {
         cells = self.ammo_cells;
         self.ammo_cells = MSG_BROADCAST;
         W_SetCurrentAmmo();
-        // *** UNPROCESSED OPCODE OP_MUL_F 3072 3064 3073
-        T_RadiusDamage(self, self, , world);
+        T_RadiusDamage(self, self, 35.000 * cells, world);
         return; /* TODO retvalue? */
     }
     
@@ -1214,13 +1163,10 @@ void() W_FireLightning;
     }
     
     self.punchangle_x = CONTENT_SOLID;
-    // *** UNPROCESSED OPCODE OP_SUB_F 3082 2256 3083
-    self.ammo_cells = ;
-    self.currentammo = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 3084 2644 3087
-    org = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 3061 3090 3093
-    traceline(org, , TRUE, self);
+    self.ammo_cells = self.ammo_cells - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_cells - WEAPON_SHOTGUN;
+    org = self.origin + '0.000 0.000 16.000';
+    traceline(org, org + (v_forward * 600.000), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
@@ -1230,8 +1176,7 @@ void() W_FireLightning;
     WriteCoord(MSG_BROADCAST, trace_endpos);
     WriteCoord(MSG_BROADCAST, trace_endpos_y);
     WriteCoord(MSG_BROADCAST, trace_endpos_z);
-    // *** UNPROCESSED OPCODE OP_ADD_V 71 3099 3102
-    LightningDamage(self.origin, , self, SVC_INTERMISSION);
+    LightningDamage(self.origin, trace_endpos + (v_forward * WEAPON_SPIKES), self, SVC_INTERMISSION);
 };
 
 vector ;
@@ -1302,9 +1247,8 @@ void() GrenadeTouch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () GrenadeTouch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 3111 3112
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -1415,9 +1359,8 @@ void() W_FireGrenade;
 {
     local entity missile;
     local entity mpuff;
-    // *** UNPROCESSED OPCODE OP_SUB_F 3127 2256 3128
-    self.ammo_rockets = ;
-    self.currentammo = ;
+    self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -1428,12 +1371,7 @@ void() W_FireGrenade;
     makevectors(self.v_angle);
     if(self.v_angle_x)
     {
-        // *** UNPROCESSED OPCODE OP_ADD_V 3142 3145 3148
-        // *** UNPROCESSED OPCODE OP_MUL_FV 1 65 3151
-        // *** UNPROCESSED OPCODE OP_ADD_V 3148 3154 3157
-        // *** UNPROCESSED OPCODE OP_MUL_FV 1 62 3160
-        // *** UNPROCESSED OPCODE OP_ADD_V 3157 3163 3166
-        missile.velocity = ;
+        missile.velocity = (((v_forward * 600.000) + (v_up * 200.000)) + ((crandom() * v_right) * TE_LAVASPLASH)) + ((crandom() * v_up) * TE_LAVASPLASH);
     }
     else    
     {
@@ -1556,12 +1494,10 @@ void() W_FireSuperSpikes;
     local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    // *** UNPROCESSED OPCODE OP_SUB_F 3241 2257 3242
-    self.ammo_nails = ;
-    self.currentammo = ;
+    self.ammo_nails = self.ammo_nails - WEAPON_ROCKET;
+    self.currentammo = self.ammo_nails - WEAPON_ROCKET;
     dir = aim(self, 1000.000);
-    // *** UNPROCESSED OPCODE OP_ADD_V 3243 2644 3246
-    launch_spike(, dir);
+    launch_spike(self.origin + '0.000 0.000 16.000', dir);
     newmis.touch = superspike_touch;
     setmodel(newmis, "progs/s_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
@@ -1625,9 +1561,8 @@ void() W_FireSpikes;
     local vector dir;
     local entity old;
     makevectors(self.v_angle);
-    // *** UNPROCESSED OPCODE OP_GE 3261 2257 3262
     
-    if( && (self.weapon == IT_SUPER_NAILGUN))
+    if((self.ammo_nails >= WEAPON_ROCKET) && (self.weapon == IT_SUPER_NAILGUN))
     {
         W_FireSuperSpikes();
         return; /* TODO retvalue? */
@@ -1643,13 +1578,10 @@ void() W_FireSpikes;
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    // *** UNPROCESSED OPCODE OP_SUB_F 3273 2256 3274
-    self.ammo_nails = ;
-    self.currentammo = ;
+    self.ammo_nails = self.ammo_nails - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_nails - WEAPON_SHOTGUN;
     dir = aim(self, 1000.000);
-    // *** UNPROCESSED OPCODE OP_ADD_V 3275 2644 3278
-    // *** UNPROCESSED OPCODE OP_ADD_V 3278 3281 3284
-    launch_spike(, dir);
+    launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 
@@ -1722,9 +1654,8 @@ void() W_FireSpikes;
 %%RETURNTYPE%% () spike_touch =
 {
     local float rand;
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 3290 3291
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -1750,15 +1681,13 @@ void() W_FireSpikes;
     else    
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
-        // *** UNPROCESSED OPCODE OP_EQ_S 3300 3301 3302
-        if()
+        if(self.classname == "wizspike")
         {
             WriteByte(MSG_BROADCAST, TE_WIZSPIKE);
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 3303 3304 3305
-            if()
+            if(self.classname == "knightspike")
             {
                 WriteByte(MSG_BROADCAST, TE_KNIGHTSPIKE);
             }
@@ -1831,9 +1760,8 @@ float ;
 %%RETURNTYPE%% () superspike_touch =
 {
     local float rand;
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 3310 3311
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -2006,11 +1934,7 @@ float ;
 %%RETURNTYPE%% () W_SetCurrentAmmo =
 {
     player_run();
-    // *** UNPROCESSED OPCODE OP_BITOR 262 263 3327
-    // *** UNPROCESSED OPCODE OP_BITOR 3327 264 3328
-    // *** UNPROCESSED OPCODE OP_BITOR 3328 265 3329
-    // *** UNPROCESSED OPCODE OP_SUB_F 3325 3330 3331
-    self.items = ;
+    self.items = self.items - (self.items & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS));
     if(self.weapon == IT_AXE)
     {
         self.currentammo = MSG_BROADCAST;
@@ -2024,8 +1948,7 @@ float ;
             self.currentammo = self.ammo_shells;
             self.weaponmodel = "progs/v_shot.mdl";
             self.weaponframe = MSG_BROADCAST;
-            // *** UNPROCESSED OPCODE OP_BITOR 3346 262 3347
-            self.items = ;
+            self.items = self.items | IT_SHELLS;
         }
         else        
         {
@@ -2034,8 +1957,7 @@ float ;
                 self.currentammo = self.ammo_shells;
                 self.weaponmodel = "progs/v_shot2.mdl";
                 self.weaponframe = MSG_BROADCAST;
-                // *** UNPROCESSED OPCODE OP_BITOR 3356 262 3357
-                self.items = ;
+                self.items = self.items | IT_SHELLS;
             }
             else            
             {
@@ -2044,8 +1966,7 @@ float ;
                     self.currentammo = self.ammo_nails;
                     self.weaponmodel = "progs/v_nail.mdl";
                     self.weaponframe = MSG_BROADCAST;
-                    // *** UNPROCESSED OPCODE OP_BITOR 3366 263 3367
-                    self.items = ;
+                    self.items = self.items | IT_NAILS;
                 }
                 else                
                 {
@@ -2054,8 +1975,7 @@ float ;
                         self.currentammo = self.ammo_nails;
                         self.weaponmodel = "progs/v_nail2.mdl";
                         self.weaponframe = MSG_BROADCAST;
-                        // *** UNPROCESSED OPCODE OP_BITOR 3376 263 3377
-                        self.items = ;
+                        self.items = self.items | IT_NAILS;
                     }
                     else                    
                     {
@@ -2064,8 +1984,7 @@ float ;
                             self.currentammo = self.ammo_rockets;
                             self.weaponmodel = "progs/v_rock.mdl";
                             self.weaponframe = MSG_BROADCAST;
-                            // *** UNPROCESSED OPCODE OP_BITOR 3386 264 3387
-                            self.items = ;
+                            self.items = self.items | IT_ROCKETS;
                         }
                         else                        
                         {
@@ -2074,8 +1993,7 @@ float ;
                                 self.currentammo = self.ammo_rockets;
                                 self.weaponmodel = "progs/v_rock2.mdl";
                                 self.weaponframe = MSG_BROADCAST;
-                                // *** UNPROCESSED OPCODE OP_BITOR 3396 264 3397
-                                self.items = ;
+                                self.items = self.items | IT_ROCKETS;
                             }
                             else                            
                             {
@@ -2084,8 +2002,7 @@ float ;
                                     self.currentammo = self.ammo_cells;
                                     self.weaponmodel = "progs/v_light.mdl";
                                     self.weaponframe = MSG_BROADCAST;
-                                    // *** UNPROCESSED OPCODE OP_BITOR 3406 265 3407
-                                    self.items = ;
+                                    self.items = self.items | IT_CELLS;
                                 }
                                 else                                
                                 {
@@ -2154,37 +2071,32 @@ float ;
 {
     local float it;
     it = self.items;
-    // *** UNPROCESSED OPCODE OP_GE 3415 2256 3416
     
-    if(((self.waterlevel <= WEAPON_SHOTGUN) && ) && (it & IT_LIGHTNING))
+    if(((self.waterlevel <= WEAPON_SHOTGUN) && (self.ammo_cells >= WEAPON_SHOTGUN)) && (it & IT_LIGHTNING))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 3420 2257 3421
     
-    if( && (it & IT_SUPER_NAILGUN))
+    if((self.ammo_nails >= WEAPON_ROCKET) && (it & IT_SUPER_NAILGUN))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 3424 2257 3425
     
-    if( && (it & IT_SUPER_SHOTGUN))
+    if((self.ammo_shells >= WEAPON_ROCKET) && (it & IT_SUPER_SHOTGUN))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 3428 2256 3429
     
-    if( && (it & IT_NAILGUN))
+    if((self.ammo_nails >= WEAPON_SHOTGUN) && (it & IT_NAILGUN))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 3432 2256 3433
     
-    if( && (it & IT_SHOTGUN))
+    if((self.ammo_shells >= WEAPON_SHOTGUN) && (it & IT_SHOTGUN))
     {
         return; /* TODO retvalue? */
     }
@@ -2212,9 +2124,8 @@ void() W_CheckNoAmmo;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () W_CheckNoAmmo =
 {
-    // *** UNPROCESSED OPCODE OP_GT 3437 337 3438
     
-    if()
+    if(self.currentammo > MSG_BROADCAST)
     {
         return; /* TODO retvalue? */
     }
@@ -2714,19 +2625,9 @@ void() CheatCommand;
     self.ammo_rockets = 100.000;
     self.ammo_nails = 200.000;
     self.ammo_shells = 100.000;
-    // *** UNPROCESSED OPCODE OP_BITOR 3540 253 3541
-    // *** UNPROCESSED OPCODE OP_BITOR 3541 254 3542
-    // *** UNPROCESSED OPCODE OP_BITOR 3542 255 3543
-    // *** UNPROCESSED OPCODE OP_BITOR 3543 256 3544
-    // *** UNPROCESSED OPCODE OP_BITOR 3544 257 3545
-    // *** UNPROCESSED OPCODE OP_BITOR 3545 258 3546
-    // *** UNPROCESSED OPCODE OP_BITOR 3546 259 3547
-    // *** UNPROCESSED OPCODE OP_BITOR 3547 270 3548
-    // *** UNPROCESSED OPCODE OP_BITOR 3548 271 3549
-    self.items = ;
+    self.items = ((((((((self.items | IT_AXE) | IT_SHOTGUN) | IT_SUPER_SHOTGUN) | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_KEY1) | IT_KEY2;
     self.ammo_cells = 200.000;
-    // *** UNPROCESSED OPCODE OP_BITOR 3552 260 3553
-    self.items = ;
+    self.items = self.items | IT_LIGHTNING;
     self.weapon = IT_ROCKET_LAUNCHER;
     self.impulse = MSG_BROADCAST;
     W_SetCurrentAmmo();
@@ -3192,8 +3093,7 @@ void() ServerflagsCommand;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 38 2257 3651
-    serverflags =  + WEAPON_SHOTGUN;
+    serverflags = (serverflags * WEAPON_ROCKET) + WEAPON_SHOTGUN;
 };
 
 float ;
@@ -3224,8 +3124,7 @@ void() QuadCheat;
     
     self.super_time = WEAPON_SHOTGUN;
     self.super_damage_finished = time + SVC_INTERMISSION;
-    // *** UNPROCESSED OPCODE OP_BITOR 3658 275 3659
-    self.items = ;
+    self.items = self.items | IT_QUAD;
     dprint("quad cheat\n");
 };
 
@@ -3265,9 +3164,8 @@ void() ImpulseCommands;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () ImpulseCommands =
 {
-    // *** UNPROCESSED OPCODE OP_GE 3662 2256 3663
     
-    if( && (self.impulse <= WEAPON_BIG))
+    if((self.impulse >= WEAPON_SHOTGUN) && (self.impulse <= WEAPON_BIG))
     {
         W_ChangeWeapon();
     }
@@ -3366,9 +3264,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () SuperDamageSound =
 {
-    // *** UNPROCESSED OPCODE OP_GT 3684 31 3685
     
-    if()
+    if(self.super_damage_finished > time)
     {
         
         if(self.super_sound < time)

@@ -71,12 +71,9 @@ void() plat_spawn_inside_trigger;
     trigger.movetype = MOVETYPE_NONE;
     trigger.solid = SOLID_TRIGGER;
     trigger.enemy = self;
-    // *** UNPROCESSED OPCODE OP_ADD_V 6911 6914 6917
-    tmin = ;
+    tmin = self.mins + '25.000 25.000 0.000';
     tmax = self.maxs - '25.000 25.000 -8.000';
-    // *** UNPROCESSED OPCODE OP_SUB_F 6929 6930 6931
-    // *** UNPROCESSED OPCODE OP_SUB_F 6906 6932 6933
-    tmin_z = ;
+    tmin_z = tmax_z - ((self.pos1_z - self.pos2_z) + SECRET_NO_SHOOT);
     
     if(self.spawnflags & PLAT_LOW_TRIGGER)
     {
@@ -228,9 +225,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () plat_center_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6973 712 6974
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -278,9 +274,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () plat_outside_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6985 712 6986
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -378,9 +373,8 @@ void() plat_use;
 %%RETURNTYPE%% () plat_use =
 {
     self.use = SUB_Null;
-    // *** UNPROCESSED OPCODE OP_NE_F 7000 284 7001
     
-    if()
+    if(self.state != STATE_UP)
     {
         objerror("plat_use: not in up state");
     }
@@ -556,13 +550,11 @@ void() func_plat;
     self.pos2 = self.origin;
     if(self.height)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 7067 7068 7069
-        self.pos2_z = ;
+        self.pos2_z = self.origin_z - self.height;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 7071 7072 7073
-        self.pos2_z =  + SECRET_NO_SHOOT;
+        self.pos2_z = (self.origin_z - self.size_z) + SECRET_NO_SHOOT;
     }
     
     self.use = plat_trigger_use;
@@ -624,9 +616,8 @@ void() train_use;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () train_use =
 {
-    // *** UNPROCESSED OPCODE OP_NE_FNC 7092 7084 7093
     
-    if()
+    if(self.think != func_train_find)
     {
         return; /* TODO retvalue? */
     }
@@ -721,9 +712,8 @@ void() train_wait;
     local entity targ;
     targ = find(world, targetname, self.target);
     self.target = targ.target;
-    // *** UNPROCESSED OPCODE OP_NOT_S 7109 0 7110
     
-    if()
+    if(!self.target)
     {
         objerror("train_next: no next target");
     }
@@ -775,9 +765,8 @@ float ;
     targ = find(world, targetname, self.target);
     self.target = targ.target;
     setorigin(self, targ.origin - self.mins);
-    // *** UNPROCESSED OPCODE OP_NOT_S 7140 0 7141
     
-    if()
+    if(!self.targetname)
     {
         self.nextthink = self.ltime + 0.100;
         self.think = train_next;
@@ -867,9 +856,8 @@ void() func_train;
         self.speed = 100.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_NOT_S 7150 0 7151
     
-    if()
+    if(!self.target)
     {
         objerror("func_train without a target");
     }
@@ -975,9 +963,8 @@ void() misc_teleporttrain;
         self.speed = 100.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_NOT_S 7191 0 7192
     
-    if()
+    if(!self.target)
     {
         objerror("func_train without a target");
     }

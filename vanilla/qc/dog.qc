@@ -46,9 +46,8 @@ void() dog_bite;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 9255 0 9256
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
@@ -61,17 +60,15 @@ void() dog_bite;
     }
     
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 1884 9269
     
-    if()
+    if(vlen(delta) > 100.000)
     {
         return; /* TODO retvalue? */
     }
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 9274 6077 9275
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * SECRET_NO_SHOOT;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -134,13 +131,11 @@ void() Dog_JumpTouch;
     
     if(other.takedamage)
     {
-        // *** UNPROCESSED OPCODE OP_GT 1 2596 9285
         
-        if()
+        if(vlen(self.velocity) > 300.000)
         {
             random();
-            // *** UNPROCESSED OPCODE OP_MUL_F 318 1 9286
-            ldmg = TE_LAVASPLASH + ;
+            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * vlen(self.velocity));
             T_Damage(other, self, self, ldmg);
         }
         
@@ -717,13 +712,11 @@ void() dog_leap2;
     self.touch = Dog_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWNFLAG_SUPERSPIKE;
-    // *** UNPROCESSED OPCODE OP_ADD_V 9351 9354 9357
-    self.velocity = ;
+    self.velocity = (v_forward * 300.000) + '0.000 0.000 200.000';
     
     if(self.flags & FL_ONGROUND)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 9363 223 9364
-        self.flags = ;
+        self.flags = self.flags - FL_ONGROUND;
     }
     
 };
@@ -1055,8 +1048,7 @@ void() dog_pain;
 %%RETURNTYPE%% () dog_pain =
 {
     sound(self, CHAN_VOICE, "dog/dpain1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 9395
-    if()
+    if(random() > IMMEDIATE)
     {
         dog_pain1();
     }
@@ -1307,8 +1299,7 @@ void() dog_die;
     
     sound(self, CHAN_VOICE, "dog/ddeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     self.solid = SOLID_NOT;
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 9424
-    if()
+    if(random() > IMMEDIATE)
     {
         dog_die1();
     }
@@ -1397,17 +1388,14 @@ void() CheckDogJump;
 {
     local vector dist;
     local float d;
-    // *** UNPROCESSED OPCODE OP_MUL_F 3464 9442 9443
-    // *** UNPROCESSED OPCODE OP_GT 9435 9444 9445
     
-    if()
+    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.750 * self.enemy.size_z)))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 3461 9455 9456
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + ))
+    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.250 * self.enemy.size_z)))
     {
         return; /* TODO retvalue? */
     }
@@ -1421,9 +1409,8 @@ void() CheckDogJump;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 9432 1960 9470
     
-    if()
+    if(d > 150.000)
     {
         return; /* TODO retvalue? */
     }

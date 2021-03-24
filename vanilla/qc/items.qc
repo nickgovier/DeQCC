@@ -171,25 +171,22 @@ void() StartItem;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 1844 1845 1846
     
-    if(!ignore && )
+    if(!ignore && (e.health >= other.max_health))
     {
         return; /* TODO retvalue? */
     }
     
     healamount = ceil(healamount);
     e.health = e.health + healamount;
-    // *** UNPROCESSED OPCODE OP_GE 1852 1853 1854
     
-    if(!ignore && )
+    if(!ignore && (e.health >= other.max_health))
     {
         e.health = other.max_health;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 1858 1859 1860
     
-    if()
+    if(e.health > 250.000)
     {
         e.health = 250.000;
     }
@@ -389,18 +386,16 @@ vector IMMEDIATE = '32.000 32.000 56.000';
 {
     local float amount;
     local string s;
-    // *** UNPROCESSED OPCODE OP_NE_S 1897 712 1898
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
     if(self.healtype == H_MEGA)
     {
-        // *** UNPROCESSED OPCODE OP_GE 1901 1859 1902
         
-        if()
+        if(other.health >= 250.000)
         {
             return; /* TODO retvalue? */
         }
@@ -423,7 +418,7 @@ vector IMMEDIATE = '32.000 32.000 56.000';
     }
     
     sprint(other, "You receive ");
-    // *** UNPROCESSED OPCODE OP_STORE_S 1 1896 0
+    s = ftos(self.healamount);
     sprint(other, s);
     sprint(other, " health\n");
     sound(other, CHAN_ITEM, self.noise, H_ROTTEN, ATTN_NORM);
@@ -432,15 +427,13 @@ vector IMMEDIATE = '32.000 32.000 56.000';
     self.solid = SOLID_NOT;
     if(self.healtype == H_MEGA)
     {
-        // *** UNPROCESSED OPCODE OP_BITOR 1917 269 1918
-        other.items = ;
+        other.items = other.items | IT_SUPERHEALTH;
         self.nextthink = time + TE_LIGHTNING1;
         self.think = item_megahealth_rot;
         self.owner = other;
     }
-    else    // *** UNPROCESSED OPCODE OP_NE_F 35 1863 1923
-    
- if()
+    else    
+ if(deathmatch != H_MEGA)
     {
         
         if(deathmatch)
@@ -489,18 +482,15 @@ vector IMMEDIATE = '32.000 32.000 56.000';
 %%RETURNTYPE%% () item_megahealth_rot =
 {
     other = self.owner;
-    // *** UNPROCESSED OPCODE OP_GT 1928 1929 1930
     
-    if()
+    if(other.health > other.max_health)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 1932 1862 1933
-        other.health = ;
+        other.health = other.health - H_ROTTEN;
         self.nextthink = time + H_ROTTEN;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 1937 1939 1940
-    other.items = ;
+    other.items = other.items - (other.items & IT_SUPERHEALTH);
     
     if(deathmatch == H_ROTTEN)
     {
@@ -597,55 +587,45 @@ void() armor_touch;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_S 1951 712 1952
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1953 1954 1955
     
-    if()
+    if(self.classname == "item_armor1")
     {
         type = 0.300;
         value = 100.000;
         bit = IT_ARMOR1;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1956 1957 1958
     
-    if()
+    if(self.classname == "item_armor2")
     {
         type = 0.600;
         value = 150.000;
         bit = IT_ARMOR2;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1961 1962 1963
     
-    if()
+    if(self.classname == "item_armorInv")
     {
         type = 0.800;
         value = 200.000;
         bit = IT_ARMOR3;
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1966 1967 1968
-    // *** UNPROCESSED OPCODE OP_MUL_F 1946 1947 1969
-    // *** UNPROCESSED OPCODE OP_GE 1968 1969 1970
     
-    if()
+    if((other.armortype * other.armorvalue) >= (type * value))
     {
         return; /* TODO retvalue? */
     }
     
     other.armortype = type;
     other.armorvalue = value;
-    // *** UNPROCESSED OPCODE OP_BITOR 266 267 1976
-    // *** UNPROCESSED OPCODE OP_BITOR 1976 268 1977
-    // *** UNPROCESSED OPCODE OP_SUB_F 1974 1978 1979
-    other.items =  + bit;
+    other.items = (other.items - (other.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + bit;
     self.solid = SOLID_NOT;
     self.model = string_null;
     
@@ -776,30 +756,26 @@ void() bound_other_ammo;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () bound_other_ammo =
 {
-    // *** UNPROCESSED OPCODE OP_GT 2006 1884 2007
     
-    if()
+    if(other.ammo_shells > 100.000)
     {
         other.ammo_shells = 100.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 2009 1965 2010
     
-    if()
+    if(other.ammo_nails > 200.000)
     {
         other.ammo_nails = 200.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 2012 1884 2013
     
-    if()
+    if(other.ammo_rockets > 100.000)
     {
         other.ammo_rockets = 100.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 2015 1884 2016
     
-    if()
+    if(other.ammo_cells > 100.000)
     {
         other.ammo_cells = 100.000;
     }
@@ -1101,8 +1077,7 @@ void() weapon_touch;
         leave = MSG_BROADCAST;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 2047 2048 2049
-    if()
+    if(self.classname == "weapon_nailgun")
     {
         
         if(leave && (other.items & IT_NAILGUN))
@@ -1116,8 +1091,7 @@ void() weapon_touch;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 2057 2058 2059
-        if()
+        if(self.classname == "weapon_supernailgun")
         {
             
             if(leave && (other.items & IT_SUPER_NAILGUN))
@@ -1131,8 +1105,7 @@ void() weapon_touch;
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 2067 2068 2069
-            if()
+            if(self.classname == "weapon_supershotgun")
             {
                 
                 if(leave && (other.items & IT_SUPER_SHOTGUN))
@@ -1146,8 +1119,7 @@ void() weapon_touch;
             }
             else            
             {
-                // *** UNPROCESSED OPCODE OP_EQ_S 2077 2078 2079
-                if()
+                if(self.classname == "weapon_rocketlauncher")
                 {
                     
                     if(leave && (other.items & IT_ROCKET_LAUNCHER))
@@ -1161,8 +1133,7 @@ void() weapon_touch;
                 }
                 else                
                 {
-                    // *** UNPROCESSED OPCODE OP_EQ_S 2087 2088 2089
-                    if()
+                    if(self.classname == "weapon_grenadelauncher")
                     {
                         
                         if(leave && (other.items & IT_GRENADE_LAUNCHER))
@@ -1176,8 +1147,7 @@ void() weapon_touch;
                     }
                     else                    
                     {
-                        // *** UNPROCESSED OPCODE OP_EQ_S 2097 2098 2099
-                        if()
+                        if(self.classname == "weapon_lightning")
                         {
                             
                             if(leave && (other.items & IT_LIGHTNING))
@@ -1211,8 +1181,7 @@ void() weapon_touch;
     stuffcmd(other, "bf\n");
     bound_other_ammo();
     old = other.items;
-    // *** UNPROCESSED OPCODE OP_BITOR 2113 2038 2114
-    other.items = ;
+    other.items = other.items | new;
     stemp = self;
     self = other;
     if(!deathmatch)
@@ -1554,9 +1523,8 @@ void() ammo_touch;
 {
     local entity stemp;
     local float best;
-    // *** UNPROCESSED OPCODE OP_NE_S 2162 712 2163
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -1574,9 +1542,8 @@ void() ammo_touch;
     
     if(self.weapon == H_ROTTEN)
     {
-        // *** UNPROCESSED OPCODE OP_GE 2168 1884 2169
         
-        if()
+        if(other.ammo_shells >= 100.000)
         {
             return; /* TODO retvalue? */
         }
@@ -1587,9 +1554,8 @@ void() ammo_touch;
     
     if(self.weapon == H_MEGA)
     {
-        // *** UNPROCESSED OPCODE OP_GE 2176 1965 2177
         
-        if()
+        if(other.ammo_nails >= 200.000)
         {
             return; /* TODO retvalue? */
         }
@@ -1600,9 +1566,8 @@ void() ammo_touch;
     
     if(self.weapon == AS_MELEE)
     {
-        // *** UNPROCESSED OPCODE OP_GE 2184 1884 2185
         
-        if()
+        if(other.ammo_rockets >= 100.000)
         {
             return; /* TODO retvalue? */
         }
@@ -1613,9 +1578,8 @@ void() ammo_touch;
     
     if(self.weapon == AS_MISSILE)
     {
-        // *** UNPROCESSED OPCODE OP_GE 2192 1884 2193
         
-        if()
+        if(other.ammo_cells >= 100.000)
         {
             return; /* TODO retvalue? */
         }
@@ -2094,9 +2058,8 @@ void() key_touch;
 {
     local entity stemp;
     local float best;
-    // *** UNPROCESSED OPCODE OP_NE_S 2290 712 2291
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -2118,8 +2081,7 @@ void() key_touch;
     sprint(other, "\n");
     sound(other, CHAN_ITEM, self.noise, WEAPON_SHOTGUN, ATTN_NORM);
     stuffcmd(other, "bf\n");
-    // *** UNPROCESSED OPCODE OP_BITOR 2300 2301 2302
-    other.items = ;
+    other.items = other.items | self.items;
     
     if(!coop)
     {
@@ -2386,9 +2348,8 @@ void() sigil_touch;
 {
     local entity stemp;
     local float best;
-    // *** UNPROCESSED OPCODE OP_NE_S 2358 712 2359
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -2404,8 +2365,7 @@ void() sigil_touch;
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    // *** UNPROCESSED OPCODE OP_BITOR 38 2367 2368
-    serverflags = ;
+    serverflags = serverflags | (self.spawnflags & 15.000);
     self.classname = "";
     activator = other;
     SUB_UseTargets();
@@ -2607,9 +2567,8 @@ void() powerup_touch;
 {
     local entity stemp;
     local float best;
-    // *** UNPROCESSED OPCODE OP_NE_S 2391 712 2392
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -2627,12 +2586,9 @@ void() powerup_touch;
     if(deathmatch)
     {
         self.mdl = self.model;
-        // *** UNPROCESSED OPCODE OP_EQ_S 2398 2399 2400
-        // *** UNPROCESSED OPCODE OP_EQ_S 2401 2402 2403
-        if( || )
+        if((self.classname == "item_artifact_invulnerability") || (self.classname == "item_artifact_invisibility"))
         {
-            // *** UNPROCESSED OPCODE OP_MUL_F 912 313 2406
-            self.nextthink = time + ;
+            self.nextthink = time + (60.000 * TE_LIGHTNING1);
         }
         else        
         {
@@ -2645,36 +2601,31 @@ void() powerup_touch;
     sound(other, CHAN_VOICE, self.noise, WEAPON_SHOTGUN, ATTN_NORM);
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
-    // *** UNPROCESSED OPCODE OP_BITOR 2414 2415 2416
-    other.items = ;
+    other.items = other.items | self.items;
     self.model = string_null;
-    // *** UNPROCESSED OPCODE OP_EQ_S 2418 2419 2420
     
-    if()
+    if(self.classname == "item_artifact_envirosuit")
     {
         other.rad_time = WEAPON_SHOTGUN;
         other.radsuit_finished = time + SVC_INTERMISSION;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 2424 2399 2425
     
-    if()
+    if(self.classname == "item_artifact_invulnerability")
     {
         other.invincible_time = WEAPON_SHOTGUN;
         other.invincible_finished = time + SVC_INTERMISSION;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 2429 2402 2430
     
-    if()
+    if(self.classname == "item_artifact_invisibility")
     {
         other.invisible_time = WEAPON_SHOTGUN;
         other.invisible_finished = time + SVC_INTERMISSION;
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 2434 2435 2436
     
-    if()
+    if(self.classname == "item_artifact_super_damage")
     {
         other.super_time = WEAPON_SHOTGUN;
         other.super_damage_finished = time + SVC_INTERMISSION;
@@ -3027,9 +2978,8 @@ void() BackpackTouch;
     local float new;
     local entity stemp;
     local float acount;
-    // *** UNPROCESSED OPCODE OP_NE_S 2485 712 2486
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -3071,8 +3021,7 @@ void() BackpackTouch;
     }
     
     old = other.items;
-    // *** UNPROCESSED OPCODE OP_BITOR 2518 2482 2519
-    other.items = ;
+    other.items = other.items | new;
     bound_other_ammo();
     
     if(self.ammo_shells)
@@ -3084,7 +3033,7 @@ void() BackpackTouch;
         }
         
         acount = WEAPON_SHOTGUN;
-        // *** UNPROCESSED OPCODE OP_STORE_S 1 2479 0
+        s = ftos(self.ammo_shells);
         sprint(other, s);
         sprint(other, " shells");
     }
@@ -3099,7 +3048,7 @@ void() BackpackTouch;
         }
         
         acount = WEAPON_SHOTGUN;
-        // *** UNPROCESSED OPCODE OP_STORE_S 1 2479 0
+        s = ftos(self.ammo_nails);
         sprint(other, s);
         sprint(other, " nails");
     }
@@ -3114,7 +3063,7 @@ void() BackpackTouch;
         }
         
         acount = WEAPON_SHOTGUN;
-        // *** UNPROCESSED OPCODE OP_STORE_S 1 2479 0
+        s = ftos(self.ammo_rockets);
         sprint(other, s);
         sprint(other, " rockets");
     }
@@ -3129,7 +3078,7 @@ void() BackpackTouch;
         }
         
         acount = WEAPON_SHOTGUN;
-        // *** UNPROCESSED OPCODE OP_STORE_S 1 2479 0
+        s = ftos(self.ammo_cells);
         sprint(other, s);
         sprint(other, " cells");
     }
@@ -3351,10 +3300,8 @@ void() DropBackpack;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
     item.velocity_z = 300.000;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 2599
-    item.velocity_x = IMMEDIATE + ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 2602
-    item.velocity_y = IMMEDIATE + ;
+    item.velocity_x = IMMEDIATE + (random() * 200.000);
+    item.velocity_y = IMMEDIATE + (random() * 200.000);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;

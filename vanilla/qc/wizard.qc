@@ -64,22 +64,13 @@ void() LaunchMissile;
     local vector move;
     local float fly;
     makevectors(self.angles);
-    // *** UNPROCESSED OPCODE OP_ADD_V 8874 8878 8881
-    // *** UNPROCESSED OPCODE OP_ADD_V 8881 8888 8891
-    vec =  - missile.origin;
+    vec = ((self.enemy.origin + self.enemy.mins) + (self.enemy.size * 0.700)) - missile.origin;
     fly = vlen(vec) / mspeed;
     move = self.enemy.velocity;
     move_z = MSG_BROADCAST;
-    // *** UNPROCESSED OPCODE OP_ADD_V 8863 8905 8908
-    vec = ;
+    vec = vec + (move * fly);
     vec = normalize(vec);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 8862 62 8911
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 8914
-    // *** UNPROCESSED OPCODE OP_ADD_V 8863 8915 8918
-    // *** UNPROCESSED OPCODE OP_MUL_FV 8862 65 8921
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 8924
-    // *** UNPROCESSED OPCODE OP_ADD_V 8918 8925 8928
-    vec = ;
+    vec = (vec + ((accuracy * v_up) * (random() - IMMEDIATE))) + ((accuracy * v_right) * (random() - IMMEDIATE));
     missile.velocity = vec * mspeed;
     missile.angles = VEC_ORIGIN;
     missile.angles_y = vectoyaw(missile.velocity);
@@ -189,9 +180,8 @@ void() wiz_side1;
     
     if(enemy_range == RANGE_FAR)
     {
-        // *** UNPROCESSED OPCODE OP_NE_F 8961 368 8962
         
-        if()
+        if(self.attack_state != AS_STRAIGHT)
         {
             self.attack_state = AS_STRAIGHT;
             wiz_run1();
@@ -201,17 +191,14 @@ void() wiz_side1;
     }
     
     targ = self.enemy;
-    // *** UNPROCESSED OPCODE OP_ADD_V 8965 8968 8971
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 8974 8977 8980
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     traceline(spot1, spot2, FALSE, self);
     
     if(trace_ent != targ)
     {
-        // *** UNPROCESSED OPCODE OP_NE_F 8984 368 8985
         
-        if()
+        if(self.attack_state != AS_STRAIGHT)
         {
             self.attack_state = AS_STRAIGHT;
             wiz_run1();
@@ -246,9 +233,8 @@ void() wiz_side1;
     
     if(enemy_range == RANGE_MID)
     {
-        // *** UNPROCESSED OPCODE OP_NE_F 8993 368 8994
         
-        if()
+        if(self.attack_state != AS_STRAIGHT)
         {
             self.attack_state = AS_STRAIGHT;
             wiz_run1();
@@ -257,9 +243,8 @@ void() wiz_side1;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_NE_F 8996 369 8997
         
-        if()
+        if(self.attack_state != AS_SLIDING)
         {
             self.attack_state = AS_SLIDING;
             wiz_side1();
@@ -290,8 +275,7 @@ void() WizardAttackFinished;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () WizardAttackFinished =
 {
-    // *** UNPROCESSED OPCODE OP_GE 761 244 9000
-    if( || !enemy_vis)
+    if((enemy_range >= RANGE_MID) || !enemy_vis)
     {
         self.attack_state = AS_STRAIGHT;
         self.think = wiz_run1;
@@ -365,15 +349,12 @@ void() Wiz_FastFire;
 {
     local vector vec;
     local vector dst;
-    // *** UNPROCESSED OPCODE OP_GT 9015 337 9016
     
-    if()
+    if(self.owner.health > MSG_BROADCAST)
     {
-        // *** UNPROCESSED OPCODE OP_BITOR 9020 334 9021
-        self.owner.effects = ;
+        self.owner.effects = self.owner.effects | EF_MUZZLEFLASH;
         makevectors(self.enemy.angles);
-        // *** UNPROCESSED OPCODE OP_MUL_FV 7768 9030 9033
-        dst = self.enemy.origin - ;
+        dst = self.enemy.origin - (13.000 * self.movedir);
         vec = normalize(dst - self.origin);
         sound(self, CHAN_WEAPON, "wizard/wattack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         launch_spike(self.origin, vec);
@@ -475,10 +456,7 @@ void() Wiz_StartFast;
     missile.owner = self;
     missile.nextthink = time + 0.600;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    // *** UNPROCESSED OPCODE OP_ADD_V 9073 9076 9079
-    // *** UNPROCESSED OPCODE OP_ADD_V 9079 9082 9085
-    // *** UNPROCESSED OPCODE OP_ADD_V 9085 9088 9091
-    setorigin(missile, );
+    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * 14.000));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.800;
     missile.think = Wiz_FastFire;
@@ -487,10 +465,7 @@ void() Wiz_StartFast;
     missile.owner = self;
     missile.nextthink = time + SPAWNFLAG_SUPERSPIKE;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    // *** UNPROCESSED OPCODE OP_ADD_V 9105 9076 9108
-    // *** UNPROCESSED OPCODE OP_ADD_V 9108 9111 9114
-    // *** UNPROCESSED OPCODE OP_ADD_V 9114 9118 9121
-    setorigin(missile, );
+    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * -14.000));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.300;
     missile.think = Wiz_FastFire;
@@ -531,15 +506,13 @@ void() Wiz_idlesound;
 %%RETURNTYPE%% () Wiz_idlesound =
 {
     local float wr;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 313 9137
-    wr = ;
+    wr = random() * TE_LIGHTNING1;
     
     if(self.waitmin < time)
     {
         self.waitmin = time + SPAWNFLAG_LASER;
-        // *** UNPROCESSED OPCODE OP_GT 9136 9142 9143
         
-        if()
+        if(wr > 4.500)
         {
             sound(self, CHAN_VOICE, "wizard/widle1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_IDLE);
         }
@@ -1249,16 +1222,12 @@ void() wiz_death1;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 3036 1 9200
-    self.velocity_x = -200.000 + ;
+    self.velocity_x = -200.000 + (400.000 * random());
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 3036 1 9203
-    self.velocity_y = -200.000 + ;
+    self.velocity_y = -200.000 + (400.000 * random());
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 1884 1 9206
-    self.velocity_z = 100.000 + ;
-    // *** UNPROCESSED OPCODE OP_SUB_F 9209 9211 9212
-    self.flags = ;
+    self.velocity_z = 100.000 + (100.000 * random());
+    self.flags = self.flags - (self.flags & FL_ONGROUND);
     sound(self, CHAN_VOICE, "wizard/wdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
 };
 
@@ -1402,10 +1371,8 @@ void() Wiz_Pain;
 %%RETURNTYPE%% (entity attacker, float damage) Wiz_Pain =
 {
     sound(self, CHAN_VOICE, "wizard/wpain.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 5384 9233
-    // *** UNPROCESSED OPCODE OP_GT 9233 9231 9234
     
-    if()
+    if((random() * 70.000) > damage)
     {
         return; /* TODO retvalue? */
     }

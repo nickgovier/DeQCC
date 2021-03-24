@@ -220,8 +220,7 @@ string IMMEDIATE = "zombie/idle_w2.wav";
 %%RETURNTYPE%% () zombie_cruc2 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 9513 9514 0
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 9517
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 
 float ;
@@ -238,8 +237,7 @@ float ;
 %%RETURNTYPE%% () zombie_cruc3 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 9519 9520 0
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 9523
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 
 float ;
@@ -256,8 +254,7 @@ float ;
 %%RETURNTYPE%% () zombie_cruc4 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 9525 9526 0
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 9529
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 
 float ;
@@ -274,8 +271,7 @@ float ;
 %%RETURNTYPE%% () zombie_cruc5 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 9531 9532 0
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 9535
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 
 float ;
@@ -292,8 +288,7 @@ float ;
 %%RETURNTYPE%% () zombie_cruc6 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 9537 9508 0
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 9540
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 
 float ;
@@ -819,9 +814,8 @@ void() zombie_run18;
         sound(self, CHAN_VOICE, "zombie/z_idle.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 1 1964 9582
     
-    if()
+    if(random() > 0.800)
     {
         sound(self, CHAN_VOICE, "zombie/z_idle1.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     }
@@ -868,9 +862,8 @@ void() ZombieGrenadeTouch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () ZombieGrenadeTouch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 9585 9586
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -963,14 +956,7 @@ void() ZombieFireGrenade;
     missile.owner = self;
     missile.movetype = MOVETYPE_BOUNCE;
     missile.solid = SOLID_BBOX;
-    // *** UNPROCESSED OPCODE OP_MUL_FV 9599 59 9614
-    // *** UNPROCESSED OPCODE OP_ADD_V 9611 9614 9617
-    // *** UNPROCESSED OPCODE OP_MUL_FV 9600 65 9620
-    // *** UNPROCESSED OPCODE OP_ADD_V 9617 9620 9623
-    // *** UNPROCESSED OPCODE OP_SUB_F 9601 4437 9626
-    // *** UNPROCESSED OPCODE OP_MUL_FV 9626 62 9627
-    // *** UNPROCESSED OPCODE OP_ADD_V 9623 9627 9630
-    org = ;
+    org = ((self.origin + (st * v_forward)) + (st_y * v_right)) + ((st_z - 24.000) * v_up);
     makevectors(self.angles);
     missile.velocity = normalize(self.enemy.origin - org);
     missile.velocity = missile.velocity * 600.000;
@@ -2789,9 +2775,8 @@ void() zombie_pain;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 9888 1890 9894
     
-    if()
+    if(take >= 25.000)
     {
         self.inpain = SPAWNFLAG_LASER;
         zombie_paine1();
@@ -2805,9 +2790,8 @@ void() zombie_pain;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 9899 31 9900
     
-    if()
+    if(self.pain_finished > time)
     {
         self.inpain = SPAWNFLAG_LASER;
         zombie_paine1();

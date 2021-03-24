@@ -537,68 +537,93 @@ namespace DeQcc
             int i;
             StreamWriter outfile;
 
-            outfile = new StreamWriter(folder + "_strings.csv", false);
-            outfile.WriteLine("row,offset,id,string");
-            i = 0;
-            foreach(KeyValuePair<int,int> kvp in stringOffsetMap)
+            // Try catch blocks here allow the code to skip writing a file if it is open (e.g. in Excel)
+            try
             {
-                outfile.WriteLine((i++) + "," + kvp.Key + "," + kvp.Value + "," + CleanseString(strings[kvp.Value]));
-            }
-            outfile.Close();
-
-            outfile = new StreamWriter(folder + "_statements.csv", false);
-            outfile.WriteLine("row,opcode,op,a,b,c");
-            i = 0;
-            foreach (Statement s in statements)
-            {
-                outfile.WriteLine((i++) + "," + s.Opcode + "," + s.op + "," + s.a + "," + s.b + "," + s.c);
-            }
-            outfile.Close();
-
-            outfile = new StreamWriter(folder + "_functions.csv", false);
-            outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
-            i = 0;
-            foreach (Function f in functions)
-            {
-                string parm_sizes = "";
-                for(int j = 0; j < 8; j++)
+                outfile = new StreamWriter(folder + "_strings.csv", false);
+                outfile.WriteLine("row,offset,id,string");
+                i = 0;
+                foreach (KeyValuePair<int, int> kvp in stringOffsetMap)
                 {
-                    parm_sizes += f.parm_size[j];
+                    outfile.WriteLine((i++) + "," + kvp.Key + "," + kvp.Value + "," + CleanseString(strings[kvp.Value]));
                 }
-                outfile.WriteLine((i++) + "," + f.file + "," + f.s_file + "," + f.name + "," + f.s_name + "," + f.profile + "," + f.first_statement + "," + f.locals + "," + f.numparms + "," + f.parm_start + "," + parm_sizes);
+                outfile.Close();
             }
-            outfile.Close();
+            catch { }
 
-            outfile = new StreamWriter(folder + "_globaldefs.csv", false);
-            outfile.WriteLine("row,name,s_name,ofs,type,typename");
-            i = 0;
-            foreach (Def g in globals)
+            try
             {
-                string typename = "";
-                if (g.type < 8) { typename = type_names[g.type]; }
-                outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+                outfile = new StreamWriter(folder + "_statements.csv", false);
+                outfile.WriteLine("row,opcode,op,a,b,c");
+                i = 0;
+                foreach (Statement s in statements)
+                {
+                    outfile.WriteLine((i++) + "," + s.Opcode + "," + s.op + "," + s.a + "," + s.b + "," + s.c);
+                }
+                outfile.Close();
             }
-            outfile.Close();
+            catch { }
 
-            outfile = new StreamWriter(folder + "_fields.csv", false);
-            outfile.WriteLine("row,name,s_name,ofs,type,typename");
-            i = 0;
-            foreach (Def g in fields)
+            try
             {
-                string typename = "";
-                if (g.type < 8) { typename = type_names[g.type]; }
-                outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+                outfile = new StreamWriter(folder + "_functions.csv", false);
+                outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
+                i = 0;
+                foreach (Function f in functions)
+                {
+                    string parm_sizes = "";
+                    for (int j = 0; j < 8; j++)
+                    {
+                        parm_sizes += f.parm_size[j];
+                    }
+                    outfile.WriteLine((i++) + "," + f.file + "," + f.s_file + "," + f.name + "," + f.s_name + "," + f.profile + "," + f.first_statement + "," + f.locals + "," + f.numparms + "," + f.parm_start + "," + parm_sizes);
+                }
+                outfile.Close();
             }
-            outfile.Close();
+            catch { }
 
-            outfile = new StreamWriter(folder + "_globals.csv", false);
-            outfile.WriteLine("row,floatVal,intVal");
-            i = 0;
-            foreach (float f in pr_globals)
+            try
             {
-                outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)) + "," + BitConverter.ToString(BitConverter.GetBytes(f)));
+                outfile = new StreamWriter(folder + "_globaldefs.csv", false);
+                outfile.WriteLine("row,name,s_name,ofs,type,typename");
+                i = 0;
+                foreach (Def g in globals)
+                {
+                    string typename = "";
+                    if (g.type < 8) { typename = type_names[g.type]; }
+                    outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+                }
+                outfile.Close();
             }
-            outfile.Close();
+            catch { }
+
+            try
+            {
+                outfile = new StreamWriter(folder + "_fields.csv", false);
+                outfile.WriteLine("row,name,s_name,ofs,type,typename");
+                i = 0;
+                foreach (Def g in fields)
+                {
+                    string typename = "";
+                    if (g.type < 8) { typename = type_names[g.type]; }
+                    outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
+                }
+                outfile.Close();
+            }
+            catch { }
+
+            try
+            {
+                outfile = new StreamWriter(folder + "_globals.csv", false);
+                outfile.WriteLine("row,floatVal,intVal");
+                i = 0;
+                foreach (float f in pr_globals)
+                {
+                    outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)) + "," + BitConverter.ToString(BitConverter.GetBytes(f)));
+                }
+                outfile.Close();
+            }
+            catch { }
         }
 
         // works with obots

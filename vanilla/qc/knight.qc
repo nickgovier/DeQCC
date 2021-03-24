@@ -447,8 +447,7 @@ void() knight_run8;
 %%RETURNTYPE%% () knight_runatk1 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 4861 8575 0
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 8576
-    if()
+    if(random() > IMMEDIATE)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     }
@@ -917,9 +916,8 @@ void() knight_pain;
 %%RETURNTYPE%% (entity attacker, float damage) knight_pain =
 {
     local float r;
-    // *** UNPROCESSED OPCODE OP_GT 8615 31 8616
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }

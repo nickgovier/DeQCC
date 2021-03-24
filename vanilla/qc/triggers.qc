@@ -97,20 +97,17 @@ void() multi_trigger;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () multi_trigger =
 {
-    // *** UNPROCESSED OPCODE OP_GT 6429 31 6430
     
-    if()
+    if(self.nextthink > time)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 6431 6432 6433
     
-    if()
+    if(self.classname == "trigger_secret")
     {
-        // *** UNPROCESSED OPCODE OP_NE_S 6435 712 6436
         
-        if()
+        if(self.enemy.classname != "player")
         {
             return; /* TODO retvalue? */
         }
@@ -128,8 +125,7 @@ void() multi_trigger;
     self.takedamage = DAMAGE_NO;
     activator = self.enemy;
     SUB_UseTargets();
-    // *** UNPROCESSED OPCODE OP_GT 6442 337 6443
-    if()
+    if(self.wait > MSG_BROADCAST)
     {
         self.think = multi_wait;
         self.nextthink = time + self.wait;
@@ -196,9 +192,8 @@ void() multi_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () multi_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6457 712 6458
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -207,9 +202,8 @@ void() multi_touch;
     if(self.movedir != VEC_ORIGIN)
     {
         makevectors(other.angles);
-        // *** UNPROCESSED OPCODE OP_MUL_V 59 6466 6469
         
-        if( < MSG_BROADCAST)
+        if((v_forward * self.movedir) < MSG_BROADCAST)
         {
             return; /* TODO retvalue? */
         }
@@ -409,9 +403,8 @@ void() trigger_secret;
 {
     total_secrets = total_secrets + SPAWNFLAG_NOTOUCH;
     self.wait = CONTENT_EMPTY;
-    // *** UNPROCESSED OPCODE OP_NOT_S 6511 0 6512
     
-    if()
+    if(!self.message)
     {
         self.message = "You found a secret area!";
     }
@@ -505,24 +498,20 @@ void() counter_use;
 %%RETURNTYPE%% () counter_use =
 {
     local string junk;
-    // *** UNPROCESSED OPCODE OP_SUB_F 6527 6421 6528
-    self.count = ;
+    self.count = self.count - SPAWNFLAG_NOTOUCH;
     
     if(self.count < MSG_BROADCAST)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_F 6531 337 6532
     
-    if()
+    if(self.count != MSG_BROADCAST)
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 6533 712 6534
         
-        if( && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == MSG_BROADCAST))
+        if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == MSG_BROADCAST))
         {
-            // *** UNPROCESSED OPCODE OP_GE 6539 6076 6540
-            if()
+            if(self.count >= SECRET_1ST_DOWN)
             {
                 centerprint(activator, "There are more to go...");
             }
@@ -552,9 +541,8 @@ void() counter_use;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 6549 712 6550
     
-    if( && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == MSG_BROADCAST))
+    if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == MSG_BROADCAST))
     {
         centerprint(activator, "Sequence completed!");
     }
@@ -628,27 +616,26 @@ void() play_teleport;
 {
     local float v;
     local string tmpstr;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 313 6568
-    v = ;
+    v = random() * TE_LIGHTNING1;
     if(v < PLAYER_ONLY)
     {
-        // *** UNPROCESSED OPCODE OP_STORE_S 3819 6567 0
+        tmpstr = "misc/r_tele1.wav";
     }
     else if(v < SILENT)
     {
-        // *** UNPROCESSED OPCODE OP_STORE_S 3820 6567 0
+        tmpstr = "misc/r_tele2.wav";
     }
     else if(v < AS_MELEE)
     {
-        // *** UNPROCESSED OPCODE OP_STORE_S 3821 6567 0
+        tmpstr = "misc/r_tele3.wav";
     }
     else if(v < SECRET_1ST_DOWN)
     {
-        // *** UNPROCESSED OPCODE OP_STORE_S 3822 6567 0
+        tmpstr = "misc/r_tele4.wav";
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_STORE_S 3823 6567 0
+        tmpstr = "misc/r_tele5.wav";
     }
     
     sound(self, CHAN_VOICE, tmpstr, PLAYER_ONLY, ATTN_NORM);
@@ -733,27 +720,23 @@ void() tdeath_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () tdeath_touch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 6583 6584
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 6585 712 6586
     
-    if()
+    if(other.classname == "player")
     {
-        // *** UNPROCESSED OPCODE OP_GT 6587 31 6588
         
-        if()
+        if(other.invincible_finished > time)
         {
             self.classname = "teledeath2";
         }
         
-        // *** UNPROCESSED OPCODE OP_NE_S 6591 712 6592
         
-        if()
+        if(self.owner.classname != "player")
         {
             T_Damage(self.owner, self, self, 50000.000);
             return; /* TODO retvalue? */
@@ -812,8 +795,7 @@ float ;
     death.movetype = MOVETYPE_NONE;
     death.solid = SOLID_TRIGGER;
     death.angles = VEC_ORIGIN;
-    // *** UNPROCESSED OPCODE OP_ADD_V 6615 6609 6618
-    setsize(death, death_owner.mins - '1.000 1.000 1.000', );
+    setsize(death, death_owner.mins - '1.000 1.000 1.000', death_owner.maxs + '1.000 1.000 1.000');
     setorigin(death, org);
     death.touch = tdeath_touch;
     death.nextthink = time + 0.200;
@@ -937,18 +919,16 @@ void() teleport_touch;
     
     if(self.spawnflags & PLAYER_ONLY)
     {
-        // *** UNPROCESSED OPCODE OP_NE_S 6636 712 6637
         
-        if()
+        if(other.classname != "player")
         {
             return; /* TODO retvalue? */
         }
         
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_F 6640 240 6641
     
-    if((other.health <= MSG_BROADCAST) || )
+    if((other.health <= MSG_BROADCAST) || (other.solid != SOLID_SLIDEBOX))
     {
         return; /* TODO retvalue? */
     }
@@ -956,48 +936,41 @@ void() teleport_touch;
     SUB_UseTargets();
     spawn_tfog(other.origin);
     t = find(world, targetname, self.target);
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 6627 0 6647
     
-    if()
+    if(!t)
     {
         objerror("couldn't find target");
     }
     
     makevectors(t.mangle);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 5674 59 6655
-    // *** UNPROCESSED OPCODE OP_ADD_V 6652 6655 6658
-    org = ;
+    org = t.origin + (DOOR_TOGGLE * v_forward);
     spawn_tfog(org);
     spawn_tdeath(t.origin, other);
     
     if(!other.health)
     {
         other.origin = t.origin;
-        // *** UNPROCESSED OPCODE OP_ADD_V 6676 6680 6683
-        other.velocity = ;
+        other.velocity = (v_forward * other.velocity_x) + (v_forward * other.velocity_y);
         return; /* TODO retvalue? */
     }
     
     setorigin(other, t.origin);
     other.angles = t.mangle;
-    // *** UNPROCESSED OPCODE OP_EQ_S 6695 712 6696
     
-    if()
+    if(other.classname == "player")
     {
         other.fixangle = PLAYER_ONLY;
         other.teleport_time = time + 0.700;
         
         if(other.flags & FL_ONGROUND)
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 6703 223 6704
-            other.flags = ;
+            other.flags = other.flags - FL_ONGROUND;
         }
         
         other.velocity = v_forward * 300.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 6712 6714 6715
-    other.flags = ;
+    other.flags = other.flags - (other.flags & FL_ONGROUND);
 };
 
 float ;
@@ -1026,11 +999,9 @@ void() info_teleport_destination;
     self.mangle = self.angles;
     self.angles = VEC_ORIGIN;
     self.model = "";
-    // *** UNPROCESSED OPCODE OP_ADD_V 6730 6733 6736
-    self.origin = ;
-    // *** UNPROCESSED OPCODE OP_NOT_S 6739 0 6740
+    self.origin = self.origin + '0.000 0.000 27.000';
     
-    if()
+    if(!self.targetname)
     {
         objerror("no targetname");
     }
@@ -1091,9 +1062,8 @@ void() trigger_teleport;
     local vector o;
     InitTrigger();
     self.touch = teleport_touch;
-    // *** UNPROCESSED OPCODE OP_NOT_S 6751 0 6752
     
-    if()
+    if(!self.target)
     {
         objerror("no target");
     }
@@ -1103,8 +1073,7 @@ void() trigger_teleport;
     if(!(self.spawnflags & SILENT))
     {
         precache_sound("ambience/hum1.wav");
-        // *** UNPROCESSED OPCODE OP_ADD_V 6759 6762 6765
-        o =  * IMMEDIATE;
+        o = (self.mins + self.maxs) * IMMEDIATE;
         ambientsound(o, "ambience/hum1.wav", IMMEDIATE, ATTN_STATIC);
     }
     
@@ -1125,9 +1094,8 @@ void() trigger_skill_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () trigger_skill_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6772 712 6773
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
@@ -1189,16 +1157,14 @@ void() trigger_onlyregistered_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () trigger_onlyregistered_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6778 712 6779
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 6780 31 6781
     
-    if()
+    if(self.attack_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -1212,9 +1178,8 @@ void() trigger_onlyregistered_touch;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_NE_S 6785 569 6786
         
-        if()
+        if(self.message != "")
         {
             centerprint(other, self.message);
             sound(other, CHAN_BODY, "misc/talk.wav", PLAYER_ONLY, ATTN_NORM);
@@ -1363,23 +1328,18 @@ void() trigger_push_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () trigger_push_touch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_S 6807 3134 6808
-    if()
+    if(other.classname == "grenade")
     {
-        // *** UNPROCESSED OPCODE OP_MUL_FV 6812 6813 6816
-        other.velocity =  * TE_LAVASPLASH;
+        other.velocity = (self.speed * self.movedir) * TE_LAVASPLASH;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_GT 6822 337 6823
         
-        if()
+        if(other.health > MSG_BROADCAST)
         {
-            // *** UNPROCESSED OPCODE OP_MUL_FV 6827 6828 6831
-            other.velocity =  * TE_LAVASPLASH;
-            // *** UNPROCESSED OPCODE OP_EQ_S 6837 712 6838
+            other.velocity = (self.speed * self.movedir) * TE_LAVASPLASH;
             
-            if()
+            if(other.classname == "player")
             {
                 
                 if(other.fly_sound < time)
@@ -1466,27 +1426,21 @@ void() trigger_monsterjump_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () trigger_monsterjump_touch =
 {
-    // *** UNPROCESSED OPCODE OP_BITOR 219 215 6854
-    // *** UNPROCESSED OPCODE OP_BITOR 6854 216 6855
-    // *** UNPROCESSED OPCODE OP_NE_F 6856 219 6857
     
-    if()
+    if((other.flags & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 6859 6860 6861
-    other.velocity_x = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 6863 6864 6865
-    other.velocity_y = ;
+    other.velocity_x = self.movedir_x * self.speed;
+    other.velocity_y = self.movedir_y * self.speed;
     
     if(!(other.flags & FL_ONGROUND))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 6870 223 6871
-    other.flags = ;
+    other.flags = other.flags - FL_ONGROUND;
     other.velocity_z = self.height;
 };
 

@@ -23,12 +23,10 @@ float sight_entity_time;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (float v) anglemod =
 {
-    // *** UNPROCESSED OPCODE OP_GE 1089 1090 1091
     
-    while()
+    while(v >= 360.000)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 1089 1090 1092
-        v = ;
+        v = v - 360.000;
     }
     
     
@@ -59,9 +57,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () movetarget_f =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_S 1095 0 1096
     
-    if()
+    if(!self.targetname)
     {
         objerror("monster_movetarget: no targetname");
     }
@@ -148,9 +145,8 @@ void() path_corner;
     temp = self;
     self = other;
     other = temp;
-    // *** UNPROCESSED OPCODE OP_EQ_S 1111 1112 1113
     
-    if()
+    if(self.classname == "monster_ogre")
     {
         sound(self, CHAN_VOICE, "ogre/ogdrag.wav", AS_STRAIGHT, ATTN_IDLE);
     }
@@ -158,9 +154,8 @@ void() path_corner;
     self.movetarget = find(world, targetname, other.target);
     self.goalentity = find(world, targetname, other.target);
     self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 1129 0 1130
     
-    if()
+    if(!self.movetarget)
     {
         self.pausetime = time + 999999.000;
         func000000();
@@ -200,10 +195,8 @@ void() ;
     local vector spot1;
     local vector spot2;
     local float r;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1143 1146 1149
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1152 1155 1158
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     r = vlen(spot1 - spot2);
     
     if(r < 120.000)
@@ -254,10 +247,8 @@ float ;
 {
     local vector spot1;
     local vector spot2;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1177 1180 1183
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1186 1189 1192
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     traceline(spot1, spot2, TRUE, self);
     
     if(trace_inopen && trace_inwater)
@@ -299,11 +290,9 @@ float ;
     local float dot;
     makevectors(self.angles);
     vec = normalize(targ.origin - self.origin);
-    // *** UNPROCESSED OPCODE OP_MUL_V 1198 59 1214
-    dot = ;
-    // *** UNPROCESSED OPCODE OP_GT 1201 987 1215
+    dot = vec * v_forward;
     
-    if()
+    if(dot > 0.300)
     {
         return; /* TODO retvalue? */
     }
@@ -513,81 +502,69 @@ void() SightSound;
 %%RETURNTYPE%% () SightSound =
 {
     local float rsnd;
-    // *** UNPROCESSED OPCODE OP_EQ_S 1236 1112 1237
-    if()
+    if(self.classname == "monster_ogre")
     {
         sound(self, CHAN_VOICE, "ogre/ogwake.wav", AS_STRAIGHT, ATTN_NORM);
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 1239 823 1240
-        if()
+        if(self.classname == "monster_knight")
         {
             sound(self, CHAN_VOICE, "knight/ksight.wav", AS_STRAIGHT, ATTN_NORM);
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 1242 1243 1244
-            if()
+            if(self.classname == "monster_shambler")
             {
                 sound(self, CHAN_VOICE, "shambler/ssight.wav", AS_STRAIGHT, ATTN_NORM);
             }
             else            
             {
-                // *** UNPROCESSED OPCODE OP_EQ_S 1246 1247 1248
-                if()
+                if(self.classname == "monster_demon1")
                 {
                     sound(self, CHAN_VOICE, "demon/sight2.wav", AS_STRAIGHT, ATTN_NORM);
                 }
                 else                
                 {
-                    // *** UNPROCESSED OPCODE OP_EQ_S 1250 1251 1252
-                    if()
+                    if(self.classname == "monster_wizard")
                     {
                         sound(self, CHAN_VOICE, "wizard/wsight.wav", AS_STRAIGHT, ATTN_NORM);
                     }
                     else                    
                     {
-                        // *** UNPROCESSED OPCODE OP_EQ_S 1254 1255 1256
-                        if()
+                        if(self.classname == "monster_zombie")
                         {
                             sound(self, CHAN_VOICE, "zombie/z_idle.wav", AS_STRAIGHT, ATTN_NORM);
                         }
                         else                        
                         {
-                            // *** UNPROCESSED OPCODE OP_EQ_S 1258 1259 1260
-                            if()
+                            if(self.classname == "monster_dog")
                             {
                                 sound(self, CHAN_VOICE, "dog/dsight.wav", AS_STRAIGHT, ATTN_NORM);
                             }
                             else                            
                             {
-                                // *** UNPROCESSED OPCODE OP_EQ_S 1262 1263 1264
-                                if()
+                                if(self.classname == "monster_hell_knight")
                                 {
                                     sound(self, CHAN_VOICE, "hknight/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                 }
                                 else                                
                                 {
-                                    // *** UNPROCESSED OPCODE OP_EQ_S 1266 1267 1268
-                                    if()
+                                    if(self.classname == "monster_tarbaby")
                                     {
                                         sound(self, CHAN_VOICE, "blob/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                     }
                                     else                                    
                                     {
-                                        // *** UNPROCESSED OPCODE OP_EQ_S 1270 1271 1272
-                                        if()
+                                        if(self.classname == "monster_vomit")
                                         {
                                             sound(self, CHAN_VOICE, "vomitus/v_sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                         }
                                         else                                        
                                         {
-                                            // *** UNPROCESSED OPCODE OP_EQ_S 1274 1275 1276
-                                            if()
+                                            if(self.classname == "monster_enforcer")
                                             {
-                                                // *** UNPROCESSED OPCODE OP_MUL_F 1 370 1277
-                                                rsnd = rint();
+                                                rsnd = rint(random() * AS_MELEE);
                                                 if(rsnd == AS_STRAIGHT)
                                                 {
                                                     sound(self, CHAN_VOICE, "enforcer/sight1.wav", AS_STRAIGHT, ATTN_NORM);
@@ -608,16 +585,14 @@ void() SightSound;
                                             }
                                             else                                            
                                             {
-                                                // *** UNPROCESSED OPCODE OP_EQ_S 1285 1286 1287
-                                                if()
+                                                if(self.classname == "monster_army")
                                                 {
                                                     sound(self, CHAN_VOICE, "soldier/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                                 }
                                                 else                                                
                                                 {
-                                                    // *** UNPROCESSED OPCODE OP_EQ_S 1289 1290 1291
                                                     
-                                                    if()
+                                                    if(self.classname == "monster_shalrath")
                                                     {
                                                         sound(self, CHAN_VOICE, "shalrath/sight.wav", AS_STRAIGHT, ATTN_NORM);
                                                     }
@@ -666,9 +641,8 @@ void() FoundTarget;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () FoundTarget =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_S 1295 712 1296
     
-    if()
+    if(self.enemy.classname == "player")
     {
         sight_entity = self;
         sight_entity_time = time;
@@ -767,14 +741,11 @@ void() FindTarget;
 {
     local entity client;
     local float r;
-    // *** UNPROCESSED OPCODE OP_SUB_F 31 603 1302
-    // *** UNPROCESSED OPCODE OP_GE 1088 1302 1303
-    if( && (!(self.spawnflags & AS_MELEE)))
+    if((sight_entity_time >= (time - 0.100)) && (!(self.spawnflags & AS_MELEE)))
     {
         client = sight_entity;
-        // *** UNPROCESSED OPCODE OP_EQ_E 1308 1309 1310
         
-        if()
+        if(client.enemy == self.enemy)
         {
             return; /* TODO retvalue? */
         }
@@ -783,18 +754,16 @@ void() FindTarget;
     else    
     {
         client = checkclient();
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 1300 0 1311
         
-        if()
+        if(!client)
         {
             return; /* TODO retvalue? */
         }
         
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_E 1300 1312 1313
     
-    if()
+    if(client == self.enemy)
     {
         return; /* TODO retvalue? */
     }
@@ -845,14 +814,12 @@ void() FindTarget;
     }
     
     self.enemy = client;
-    // *** UNPROCESSED OPCODE OP_NE_S 1329 712 1330
     
-    if()
+    if(self.enemy.classname != "player")
     {
         self.enemy = self.enemy.enemy;
-        // *** UNPROCESSED OPCODE OP_NE_S 1335 712 1336
         
-        if()
+        if(self.enemy.classname != "player")
         {
             self.enemy = world;
             return; /* TODO retvalue? */
@@ -940,9 +907,8 @@ void() ai_walk;
 {
     local vector mtemp;
     movedist = dist;
-    // *** UNPROCESSED OPCODE OP_EQ_S 1356 1357 1358
     
-    if()
+    if(self.classname == "monster_dragon")
     {
         movetogoal(dist);
         return; /* TODO retvalue? */
@@ -979,9 +945,8 @@ void() ai_stand;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 31 1360 1361
     
-    if()
+    if(time > self.pausetime)
     {
         func000000();
         return; /* TODO retvalue? */
@@ -1040,22 +1005,17 @@ void() ai_turn;
     local vector newdir;
     dir = self.origin - dest3;
     newdir = trace_plane_normal_y;
-    // *** UNPROCESSED OPCODE OP_SUB_F 337 74 1379
-    newdir_y = ;
+    newdir_y = MSG_BROADCAST - trace_plane_normal;
     newdir_z = MSG_BROADCAST;
-    // *** UNPROCESSED OPCODE OP_MUL_V 1367 1370 1380
-    // *** UNPROCESSED OPCODE OP_GT 1380 337 1381
-    if()
+    if((dir * newdir) > MSG_BROADCAST)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 337 75 1382
-        dir = ;
+        dir = MSG_BROADCAST - trace_plane_normal_y;
         dir_y = trace_plane_normal;
     }
     else    
     {
         dir = trace_plane_normal_y;
-        // *** UNPROCESSED OPCODE OP_SUB_F 337 74 1383
-        dir_y = ;
+        dir_y = MSG_BROADCAST - trace_plane_normal;
     }
     
     dir_z = MSG_BROADCAST;
@@ -1082,11 +1042,9 @@ void() FacingIdeal;
 %%RETURNTYPE%% () FacingIdeal =
 {
     local float delta;
-    // *** UNPROCESSED OPCODE OP_SUB_F 1387 1388 1389
-    delta = anglemod();
-    // *** UNPROCESSED OPCODE OP_GT 1386 1390 1391
+    delta = anglemod(self.angles_y - self.ideal_yaw);
     
-    if( && (delta < 315.000))
+    if((delta > 45.000) && (delta < 315.000))
     {
         return; /* TODO retvalue? */
     }
@@ -1144,44 +1102,38 @@ void() CheckAnyAttack;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1399 1286 1400
     
-    if()
+    if(self.classname == "monster_army")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1401 1112 1402
     
-    if()
+    if(self.classname == "monster_ogre")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1403 1243 1404
     
-    if()
+    if(self.classname == "monster_shambler")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1405 1247 1406
     
-    if()
+    if(self.classname == "monster_demon1")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1407 1259 1408
     
-    if()
+    if(self.classname == "monster_dog")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 1409 1251 1410
     
-    if()
+    if(self.classname == "monster_wizard")
     {
         return; /* TODO retvalue? */
     }
@@ -1292,10 +1244,8 @@ void() ai_run_slide;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 368 1428 1429
-    self.lefty = ;
-    // *** UNPROCESSED OPCODE OP_SUB_F 1430 1420 1431
-    walkmove(, movedist);
+    self.lefty = AS_STRAIGHT - self.lefty;
+    walkmove(self.ideal_yaw - ofs, movedist);
 };
 
 float ;
@@ -1393,8 +1343,7 @@ void() ai_run;
     if(self.enemy.health <= MSG_BROADCAST)
     {
         self.enemy = world;
-        // *** UNPROCESSED OPCODE OP_GT 1447 337 1448
-        if()
+        if(self.oldenemy.health > MSG_BROADCAST)
         {
             self.enemy = self.oldenemy;
             HuntTarget();

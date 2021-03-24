@@ -472,15 +472,12 @@ entity ;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 711 712 713
-    // *** UNPROCESSED OPCODE OP_NE_S 714 569 715
     
-    if( && )
+    if((activator.classname == "player") && (self.message != ""))
     {
         centerprint(activator, self.message);
-        // *** UNPROCESSED OPCODE OP_NOT_S 718 0 719
         
-        if()
+        if(!self.noise)
         {
             sound(activator, CHAN_VOICE, "misc/talk.wav", AS_STRAIGHT, ATTN_NORM);
         }
@@ -494,9 +491,8 @@ entity ;
         do
         {
             t = find(t, targetname, self.killtarget);
-            // *** UNPROCESSED OPCODE OP_NOT_ENT 693 0 723
             
-            if()
+            if(!t)
             {
                 return; /* TODO retvalue? */
             }
@@ -513,9 +509,8 @@ entity ;
         do
         {
             t = find(t, targetname, self.target);
-            // *** UNPROCESSED OPCODE OP_NOT_ENT 693 0 726
             
-            if()
+            if(!t)
             {
                 return; /* TODO retvalue? */
             }
@@ -524,9 +519,8 @@ entity ;
             otemp = other;
             self = t;
             other = stemp;
-            // *** UNPROCESSED OPCODE OP_NE_FNC 727 517 728
             
-            if()
+            if(self.use != SUB_Null)
             {
                 
                 if(self.use)
@@ -559,9 +553,8 @@ void() SUB_AttackFinished;
 %%RETURNTYPE%% (float normal) SUB_AttackFinished =
 {
     self.cnt = MSG_BROADCAST;
-    // *** UNPROCESSED OPCODE OP_NE_F 349 370 734
     
-    if()
+    if(skill != AS_MELEE)
     {
         self.attack_finished = time + normal;
     }
@@ -593,9 +586,8 @@ void() SUB_CheckRefire;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (void() thinkst) SUB_CheckRefire =
 {
-    // *** UNPROCESSED OPCODE OP_NE_F 349 370 740
     
-    if()
+    if(skill != AS_MELEE)
     {
         return; /* TODO retvalue? */
     }

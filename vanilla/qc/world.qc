@@ -556,8 +556,7 @@ void() worldspawn;
 {
     lastspawn = world;
     InitBodyQue();
-    // *** UNPROCESSED OPCODE OP_EQ_S 3803 3771 3804
-    if()
+    if(self.model == "maps/e1m8.bsp")
     {
         cvar_set("sv_gravity", "100");
     }

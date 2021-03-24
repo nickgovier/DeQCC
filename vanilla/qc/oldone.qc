@@ -682,9 +682,8 @@ void() old_thrash15;
     // *** UNPROCESSED OPCODE OP_STATE 5369 11385 0
     lightstyle(MSG_BROADCAST, "m");
     self.cnt = self.cnt + SPAWN_CRUCIFIED;
-    // *** UNPROCESSED OPCODE OP_NE_F 11389 370 11390
     
-    if()
+    if(self.cnt != AS_MELEE)
     {
         self.think = old_thrash1;
     }
@@ -853,17 +852,15 @@ void() old_thrash20;
     intermission_exittime = time + 10000000.000;
     intermission_running = SPAWN_CRUCIFIED;
     pos = find(world, classname, "info_intermission");
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 11397 0 11403
     
-    if()
+    if(!pos)
     {
         error("no info_intermission");
     }
     
     pl = find(world, classname, "misc_teleporttrain");
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 11398 0 11406
     
-    if()
+    if(!pl)
     {
         error("no teleporttrain");
     }

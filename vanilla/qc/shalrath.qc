@@ -631,9 +631,8 @@ void() shal_death7;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () shalrath_pain =
 {
-    // *** UNPROCESSED OPCODE OP_GT 10918 31 10919
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -777,19 +776,16 @@ void() ShalHome;
     local vector dir;
     local float dist;
     local float flytime;
-    // *** UNPROCESSED OPCODE OP_ADD_V 10942 5626 10945
-    dir = normalize( - self.origin);
+    dir = normalize((self.enemy.origin + '0.000 0.000 10.000') - self.origin);
     dist = vlen(self.enemy.origin - self.origin);
-    // *** UNPROCESSED OPCODE OP_MUL_F 10939 10964 10965
-    flytime = ;
+    flytime = dist * 0.002;
     
     if(flytime < 0.100)
     {
         flytime = 0.100;
     }
     
-    // *** UNPROCESSED OPCODE OP_BITOR 10968 334 10969
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     sound(self, CHAN_WEAPON, "shalrath/attack2.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     missile = spawn();
     missile.owner = self;
@@ -797,8 +793,7 @@ void() ShalHome;
     missile.movetype = MOVETYPE_FLYMISSILE;
     setmodel(missile, "progs/v_spike.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    // *** UNPROCESSED OPCODE OP_ADD_V 10978 5626 10981
-    missile.origin = ;
+    missile.origin = self.origin + '0.000 0.000 10.000';
     missile.velocity = dir * 400.000;
     missile.avelocity = '300.000 300.000 300.000';
     missile.nextthink = flytime + time;
@@ -845,8 +840,7 @@ void() ShalHome;
 {
     local vector dir;
     local vector vtemp;
-    // *** UNPROCESSED OPCODE OP_ADD_V 11006 5626 11009
-    vtemp = ;
+    vtemp = self.enemy.origin + '0.000 0.000 10.000';
     
     if(self.enemy.health < SPAWN_CRUCIFIED)
     {
@@ -926,16 +920,14 @@ void() ShalHome;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () ShalMissileTouch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 11038 11039
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 11040 1255 11041
     
-    if()
+    if(other.classname == "monster_zombie")
     {
         T_Damage(other, self, self, 110.000);
     }
@@ -1044,7 +1036,6 @@ void() monster_shalrath;
     self.th_pain = shalrath_pain;
     self.th_missile = shal_attack1;
     self.think = walkmonster_start;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 603 11065
-    self.nextthink = (time + 0.100) + ;
+    self.nextthink = (time + 0.100) + (random() * 0.100);
 };
 

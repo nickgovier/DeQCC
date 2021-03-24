@@ -35,9 +35,8 @@ void() boss_face;
     if((self.enemy.health <= MSG_BROADCAST) || (random() < 0.020))
     {
         self.enemy = find(self.enemy, classname, "player");
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 9929 0 9930
         
-        if()
+        if(!self.enemy)
         {
             self.enemy = find(self.enemy, classname, "player");
         }
@@ -1413,22 +1412,13 @@ float ;
     local float t;
     offang = vectoangles(self.enemy.origin - self.origin);
     makevectors(offang);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 10057 59 10086
-    // *** UNPROCESSED OPCODE OP_ADD_V 10083 10086 10089
-    // *** UNPROCESSED OPCODE OP_MUL_FV 10058 65 10092
-    // *** UNPROCESSED OPCODE OP_ADD_V 10089 10092 10095
-    // *** UNPROCESSED OPCODE OP_MUL_FV 10059 534 10098
-    // *** UNPROCESSED OPCODE OP_ADD_V 10095 10098 10101
-    org = ;
-    // *** UNPROCESSED OPCODE OP_GT 349 9491 10104
-    if()
+    org = ((self.origin + (p * v_forward)) + (p_y * v_right)) + (p_z * '0.000 0.000 1.000');
+    if(skill > SPAWN_CRUCIFIED)
     {
         t = (vlen(self.enemy.origin - org)) / 300.000;
         vec = self.enemy.velocity;
         vec_z = MSG_BROADCAST;
-        // *** UNPROCESSED OPCODE OP_MUL_FV 10072 10066 10121
-        // *** UNPROCESSED OPCODE OP_ADD_V 10118 10121 10124
-        d = ;
+        d = self.enemy.origin + (t * vec);
     }
     else    
     {
@@ -1651,9 +1641,8 @@ void() lightning_fire;
 {
     local vector p1;
     local vector p2;
-    // *** UNPROCESSED OPCODE OP_GE 31 10176 10184
     
-    if()
+    if(time >= lightning_end)
     {
         self = le1;
         door_go_down();
@@ -1662,14 +1651,10 @@ void() lightning_fire;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 10185 10188 10191
-    p1 =  * IMMEDIATE;
-    // *** UNPROCESSED OPCODE OP_SUB_F 10197 6078 10198
-    p1_z = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 10199 10202 10205
-    p2 =  * IMMEDIATE;
-    // *** UNPROCESSED OPCODE OP_SUB_F 10211 6078 10212
-    p2_z = ;
+    p1 = (le1.mins + le1.maxs) * IMMEDIATE;
+    p1_z = le1.absmin_z - SECRET_YES_SHOOT;
+    p2 = (le2.mins + le2.maxs) * IMMEDIATE;
+    p2_z = le2.absmin_z - SECRET_YES_SHOOT;
     p2 = p2 - ((normalize(p2 - p1)) * 100.000);
     self.nextthink = time + 0.100;
     self.think = lightning_fire;
@@ -1782,31 +1767,23 @@ void() lightning_use;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () lightning_use =
 {
-    // *** UNPROCESSED OPCODE OP_GE 10176 10226 10227
     
-    if()
+    if(lightning_end >= (time + SPAWN_CRUCIFIED))
     {
         return; /* TODO retvalue? */
     }
     
     le1 = find(world, target, "lightning");
     le2 = find(le1, target, "lightning");
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 10174 0 10229
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 10175 0 10230
     
-    if( || )
+    if(!le1 || !le2)
     {
         dprint("missing lightning targets\n");
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_F 10233 282 10234
-    // *** UNPROCESSED OPCODE OP_NE_F 10235 283 10236
-    // *** UNPROCESSED OPCODE OP_NE_F 10238 282 10239
-    // *** UNPROCESSED OPCODE OP_NE_F 10240 283 10241
-    // *** UNPROCESSED OPCODE OP_NE_F 10244 10245 10246
     
-    if((( && ) || ( && )) || )
+    if((((le1.state != STATE_TOP) && (le1.state != STATE_BOTTOM)) || ((le2.state != STATE_TOP) && (le2.state != STATE_BOTTOM))) || (le1.state != le2.state))
     {
         return; /* TODO retvalue? */
     }
@@ -1817,23 +1794,19 @@ void() lightning_use;
     sound(self, CHAN_VOICE, "misc/power.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     lightning_fire();
     self = find(world, classname, "monster_boss");
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 28 0 10252
     
-    if()
+    if(!self)
     {
         return; /* TODO retvalue? */
     }
     
     self.enemy = activator;
-    // *** UNPROCESSED OPCODE OP_GT 10256 337 10257
     
-    if((le1.state == STATE_TOP) && )
+    if((le1.state == STATE_TOP) && (self.health > MSG_BROADCAST))
     {
         sound(self, CHAN_VOICE, "boss1/pain.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-        // *** UNPROCESSED OPCODE OP_SUB_F 10260 9491 10261
-        self.health = ;
-        // *** UNPROCESSED OPCODE OP_GE 10262 7369 10263
-        if()
+        self.health = self.health - SPAWN_CRUCIFIED;
+        if(self.health >= SPAWNFLAG_LASER)
         {
             boss_shocka1();
         }

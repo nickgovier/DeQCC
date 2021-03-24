@@ -142,7 +142,7 @@ namespace DeQcc
                 }
                 if (Kind == GlobalKind.Field)
                 {
-                    return FieldName;
+                    return fields[fieldsOffsetMap[(int)IntVal]].name;
                 }
                 return _name;
             }
@@ -205,14 +205,6 @@ namespace DeQcc
                     return false;
                 }
                 return true;
-            }
-        }
-
-        public string? FieldName    // If this global is an offset to a field
-        {
-            get
-            {
-                return fields[fieldsOffsetMap[(int)IntVal]].name;
             }
         }
 
@@ -648,21 +640,12 @@ namespace DeQcc
 
                     switch (s.Opcode)
                     {
-                        case Opcodes.OP_IF:
-                        case Opcodes.OP_IFNOT:
-                        case Opcodes.OP_CALL0:
-                        case Opcodes.OP_CALL1:
-                        case Opcodes.OP_CALL2:
-                        case Opcodes.OP_CALL3:
-                        case Opcodes.OP_CALL4:
-                        case Opcodes.OP_CALL5:
-                        case Opcodes.OP_CALL6:
-                        case Opcodes.OP_CALL7:
-                        case Opcodes.OP_CALL8:
+                        case Opcodes.OP_IF: case Opcodes.OP_IFNOT: case Opcodes.OP_CALL0:
+                        case Opcodes.OP_CALL1: case Opcodes.OP_CALL2: case Opcodes.OP_CALL3: case Opcodes.OP_CALL4:
+                        case Opcodes.OP_CALL5: case Opcodes.OP_CALL6: case Opcodes.OP_CALL7: case Opcodes.OP_CALL8:
                             a.readBy.Add(statementIndex);
                             break;
-                        case Opcodes.OP_DONE:
-                        case Opcodes.OP_RETURN:
+                        case Opcodes.OP_DONE: case Opcodes.OP_RETURN:
                             if (a != null)
                             {
                                 a.readBy.Add(statementIndex);
@@ -671,63 +654,23 @@ namespace DeQcc
                         case Opcodes.OP_STATE:
                             a.readBy.Add(statementIndex); b.readBy.Add(statementIndex);
                             break;
-                        case Opcodes.OP_ADD_F:
-                        case Opcodes.OP_ADD_V:
-                        case Opcodes.OP_SUB_F:
-                        case Opcodes.OP_SUB_V:
-                        case Opcodes.OP_MUL_F:
-                        case Opcodes.OP_MUL_V:
-                        case Opcodes.OP_MUL_FV:
-                        case Opcodes.OP_MUL_VF:
-                        case Opcodes.OP_DIV_F:
-                        case Opcodes.OP_BITAND:
-                        case Opcodes.OP_BITOR:
-                        case Opcodes.OP_GE:
-                        case Opcodes.OP_LE:
-                        case Opcodes.OP_GT:
-                        case Opcodes.OP_LT:
-                        case Opcodes.OP_AND:
-                        case Opcodes.OP_OR:
-                        case Opcodes.OP_EQ_F:
-                        case Opcodes.OP_EQ_V:
-                        case Opcodes.OP_EQ_S:
-                        case Opcodes.OP_EQ_E:
-                        case Opcodes.OP_EQ_FNC:
-                        case Opcodes.OP_NE_F:
-                        case Opcodes.OP_NE_V:
-                        case Opcodes.OP_NE_S:
-                        case Opcodes.OP_NE_E:
-                        case Opcodes.OP_NE_FNC:
-                        case Opcodes.OP_ADDRESS:
-                        case Opcodes.OP_LOAD_F:
-                        case Opcodes.OP_LOAD_FLD:
-                        case Opcodes.OP_LOAD_ENT:
-                        case Opcodes.OP_LOAD_S:
-                        case Opcodes.OP_LOAD_FNC:
-                        case Opcodes.OP_LOAD_V:
+                        case Opcodes.OP_ADD_F: case Opcodes.OP_ADD_V: case Opcodes.OP_SUB_F: case Opcodes.OP_SUB_V:
+                        case Opcodes.OP_MUL_F: case Opcodes.OP_MUL_V: case Opcodes.OP_MUL_FV: case Opcodes.OP_MUL_VF: case Opcodes.OP_DIV_F:
+                        case Opcodes.OP_BITAND: case Opcodes.OP_BITOR: case Opcodes.OP_AND: case Opcodes.OP_OR:
+                        case Opcodes.OP_GE: case Opcodes.OP_LE: case Opcodes.OP_GT: case Opcodes.OP_LT:
+                        case Opcodes.OP_EQ_F: case Opcodes.OP_EQ_V: case Opcodes.OP_EQ_S: case Opcodes.OP_EQ_E: case Opcodes.OP_EQ_FNC:
+                        case Opcodes.OP_NE_F: case Opcodes.OP_NE_V: case Opcodes.OP_NE_S: case Opcodes.OP_NE_E: case Opcodes.OP_NE_FNC:
+                        case Opcodes.OP_ADDRESS: case Opcodes.OP_LOAD_F: case Opcodes.OP_LOAD_V: case Opcodes.OP_LOAD_S:
+                        case Opcodes.OP_LOAD_ENT: case Opcodes.OP_LOAD_FLD: case Opcodes.OP_LOAD_FNC:
                             a.readBy.Add(statementIndex); b.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
                             if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
                             break;
-                        case Opcodes.OP_NOT_F:
-                        case Opcodes.OP_NOT_V:
-                        case Opcodes.OP_NOT_S:
-                        case Opcodes.OP_NOT_FNC:
-                        case Opcodes.OP_NOT_ENT:
+                        case Opcodes.OP_NOT_F: case Opcodes.OP_NOT_V: case Opcodes.OP_NOT_S: case Opcodes.OP_NOT_FNC: case Opcodes.OP_NOT_ENT:
                             a.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
                             if (c.Type == null) { c.GlobaldefType = (ushort)pr_opcodes[s.op].type_c; }
                             break;
-                        case Opcodes.OP_STORE_F:
-                        case Opcodes.OP_STORE_ENT:
-                        case Opcodes.OP_STORE_FLD:
-                        case Opcodes.OP_STORE_S:
-                        case Opcodes.OP_STORE_FNC:
-                        case Opcodes.OP_STORE_V:
-                        case Opcodes.OP_STOREP_F:
-                        case Opcodes.OP_STOREP_ENT:
-                        case Opcodes.OP_STOREP_FLD:
-                        case Opcodes.OP_STOREP_S:
-                        case Opcodes.OP_STOREP_FNC:
-                        case Opcodes.OP_STOREP_V:
+                        case Opcodes.OP_STORE_F: case Opcodes.OP_STORE_ENT: case Opcodes.OP_STORE_FLD: case Opcodes.OP_STORE_S: case Opcodes.OP_STORE_FNC: case Opcodes.OP_STORE_V:
+                        case Opcodes.OP_STOREP_F: case Opcodes.OP_STOREP_ENT: case Opcodes.OP_STOREP_FLD: case Opcodes.OP_STOREP_S: case Opcodes.OP_STOREP_FNC: case Opcodes.OP_STOREP_V:
                             a.readBy.Add(statementIndex); b.writtenBy.Add(statementIndex);
                             if (b.Type == null) { b.GlobaldefType = (ushort)pr_opcodes[s.op].type_b; }
                             break;
@@ -1017,69 +960,24 @@ namespace DeQcc
 
             nextGlobal = Math.Max(nextGlobal, Math.Max(s.a, Math.Max(s.b, s.c)));
 
-            switch (s.Opcode)
+            // Process the opcode
+            switch(s.Opcode)
             {
-
                 case Opcodes.OP_DONE:
-                    // end of function
+                    // end of function, do nothing
                     break;
                 case Opcodes.OP_RETURN:
                     PrintLine("return; /* TODO retvalue? */");
                     return;
-                case Opcodes.OP_CALL0:
-                case Opcodes.OP_CALL1:
-                case Opcodes.OP_CALL2:
-                case Opcodes.OP_CALL3:
-                case Opcodes.OP_CALL4:
-                case Opcodes.OP_CALL5:
-                case Opcodes.OP_CALL6:
-                case Opcodes.OP_CALL7:
-                case Opcodes.OP_CALL8:
-                    // Get the args
-                    int numargs = s.Opcode - Opcodes.OP_CALL0;
-                    string args = "";
-                    for(int i = 0; i < numargs; i++)
-                    {
-                        args += globalList[OFS_PARM0 + 3*i].ValueSource;
-                        if(i < numargs - 1) { args += ", "; }
-                    }
-
-                    // call function a with pre-saved args in reserved globals
-                    if (statements[sIndex + 1].a != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
-                    {
-                        PrintLine(a.FunctionName + "(" + args + ");");
-                    }
-                    else
-                    {
-                        // Otherwise save it for the next assignment to use
-                        globalList[OFS_RETURN].ValueSource = a.FunctionName + "(" + args + ")";
-                    }
+                case Opcodes.OP_STATE:
+                    PrintLine("// *** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
                     break;
-                case Opcodes.OP_NOT_F:
-                    // c = !a
-                    if(c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
-                    {
-                        c.ValueSource = "!" + CheckPrecedence(a.ValueToAssign);
-                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
-                    }
-                    else
-                    {
-                        PrintLine(c.Name + " = !" + CheckPrecedence(a.ValueToAssign) + ";");
-                    }
-                    break;
-                case Opcodes.OP_EQ_V:
-                case Opcodes.OP_ADD_F:
-                case Opcodes.OP_SUB_V:
-                case Opcodes.OP_DIV_F:
-                case Opcodes.OP_MUL_VF:
-                case Opcodes.OP_LT:
-                case Opcodes.OP_LE:
-                case Opcodes.OP_NE_E:
-                case Opcodes.OP_BITAND:
-                case Opcodes.OP_EQ_F:
-                case Opcodes.OP_OR:
-                case Opcodes.OP_AND:
-                case Opcodes.OP_NE_V:
+                case Opcodes.OP_MUL_F: case Opcodes.OP_MUL_V: case Opcodes.OP_MUL_FV: case Opcodes.OP_MUL_VF: case Opcodes.OP_DIV_F:
+                case Opcodes.OP_ADD_F: case Opcodes.OP_ADD_V: case Opcodes.OP_SUB_F: case Opcodes.OP_SUB_V:
+                case Opcodes.OP_EQ_F: case Opcodes.OP_EQ_V: case Opcodes.OP_EQ_S: case Opcodes.OP_EQ_E: case Opcodes.OP_EQ_FNC:
+                case Opcodes.OP_NE_F: case Opcodes.OP_NE_V: case Opcodes.OP_NE_S: case Opcodes.OP_NE_E: case Opcodes.OP_NE_FNC:
+                case Opcodes.OP_LE: case Opcodes.OP_GE: case Opcodes.OP_LT: case Opcodes.OP_GT:
+                case Opcodes.OP_AND: case Opcodes.OP_OR: case Opcodes.OP_BITAND: case Opcodes.OP_BITOR:
                     // c = a <operator> b
                     string oper = pr_opcodes[s.op].name;
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
@@ -1092,14 +990,32 @@ namespace DeQcc
                         PrintLine(c.Name + " = " + CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign) + ";");
                     }
                     break;
-                case Opcodes.OP_STORE_V:
-                case Opcodes.OP_STOREP_FNC:
-                case Opcodes.OP_STOREP_V:
-                case Opcodes.OP_STOREP_F:
-                case Opcodes.OP_STORE_F:
-                case Opcodes.OP_STOREP_S:
-                case Opcodes.OP_STORE_ENT:
-                case Opcodes.OP_STOREP_ENT:
+                case Opcodes.OP_NOT_F: case Opcodes.OP_NOT_V: case Opcodes.OP_NOT_S: case Opcodes.OP_NOT_ENT: case Opcodes.OP_NOT_FNC:
+                    // c = !a
+                    if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
+                    {
+                        c.ValueSource = "!" + CheckPrecedence(a.ValueToAssign);
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+                    }
+                    else
+                    {
+                        PrintLine(c.Name + " = !" + CheckPrecedence(a.ValueToAssign) + ";");
+                    }
+                    break;
+                case Opcodes.OP_LOAD_F: case Opcodes.OP_LOAD_V: case Opcodes.OP_LOAD_S: case Opcodes.OP_LOAD_ENT: case Opcodes.OP_LOAD_FLD: case Opcodes.OP_LOAD_FNC: case Opcodes.OP_ADDRESS:
+                    // c = a.b
+                    if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
+                    {
+                        c.ValueSource = a.ValueToAssign + "." + b.ValueToAssign;
+                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+                    }
+                    else
+                    {
+                        PrintLine(c.Name + " = " + a.ValueToAssign + "." + b.ValueToAssign + ";");
+                    }
+                    break;
+                case Opcodes.OP_STORE_F: case Opcodes.OP_STORE_V: case Opcodes.OP_STORE_S: case Opcodes.OP_STORE_ENT: case Opcodes.OP_STORE_FLD: case Opcodes.OP_STORE_FNC:
+                case Opcodes.OP_STOREP_F: case Opcodes.OP_STOREP_V: case Opcodes.OP_STOREP_S: case Opcodes.OP_STOREP_ENT: case Opcodes.OP_STOREP_FLD: case Opcodes.OP_STOREP_FNC:
                     // b = a
                     if ((b.Kind == GlobalKind.Anonymous && b.ValueSource is null) || b.Kind == GlobalKind.Reserved)
                     {
@@ -1117,6 +1033,32 @@ namespace DeQcc
                             PrintLine(b.Name + " = " + a.ValueToAssign + ";");
                         }
                     }
+                    break;
+                case Opcodes.OP_CALL0: case Opcodes.OP_CALL1: case Opcodes.OP_CALL2: case Opcodes.OP_CALL3: case Opcodes.OP_CALL4: case Opcodes.OP_CALL5: case Opcodes.OP_CALL6: case Opcodes.OP_CALL7: case Opcodes.OP_CALL8:
+                    // Get the args
+                    int numargs = s.Opcode - Opcodes.OP_CALL0;
+                    string args = "";
+                    for (int i = 0; i < numargs; i++)
+                    {
+                        args += globalList[OFS_PARM0 + 3 * i].ValueSource;
+                        if (i < numargs - 1) { args += ", "; }
+                    }
+
+                    // call function a with pre-saved args in reserved globals
+                    if (statements[sIndex + 1].a != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
+                    {
+                        PrintLine(a.FunctionName + "(" + args + ");");
+                    }
+                    else
+                    {
+                        // Otherwise save it for the next assignment to use
+                        globalList[OFS_RETURN].ValueSource = a.FunctionName + "(" + args + ")";
+                    }
+                    break;
+                case Opcodes.OP_IF:
+                    // end of a do loop
+                    indent--;
+                    PrintLine("} while (" + a.ValueToAssign + ");");
                     break;
                 case Opcodes.OP_IFNOT:
                     // Check for a while loop
@@ -1189,39 +1131,16 @@ namespace DeQcc
                             indent++;
                             endofBlock.Add(sIndex + s.a);   // make sure we unwind this block as there will be no IFNOT or GOTO to do so
                         }
-                    } else if(s.gotoType == GotoType.EndWhile)
+                    }
+                    else if (s.gotoType == GotoType.EndWhile)
                     {
                         // Newline after the while block just for clarity
                         PrintLine("");
                     }
                     break;
-                case Opcodes.OP_IF:
-                    // end of a do loop
-                    indent--;
-                    PrintLine("} while (" + a.ValueToAssign + ");");
-                    break;
-                case Opcodes.OP_ADDRESS:
-                case Opcodes.OP_LOAD_V:
-                case Opcodes.OP_LOAD_F:
-                case Opcodes.OP_LOAD_ENT:
-                case Opcodes.OP_LOAD_S:
-                case Opcodes.OP_LOAD_FNC:
-                    // c = a.b
-                    if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
-                    {
-                        c.ValueSource = a.ValueToAssign + "." + b.ValueToAssign;
-                        //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
-                    }
-                    else
-                    {
-                        PrintLine(c.Name + " = " + a.ValueToAssign + "." + b.ValueToAssign + ";");
-                    }
-                    break;
                 default:
-                    PrintLine("// *** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
-                    break;
+                    throw new Exception("Unprocessed opcode " + s.Opcode + " " + " at statement " + sIndex);
             }
-
         }
     }
 }

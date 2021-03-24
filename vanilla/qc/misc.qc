@@ -48,8 +48,7 @@ void() light_use;
     if(self.spawnflags & START_OFF)
     {
         lightstyle(self.style, "m");
-        // *** UNPROCESSED OPCODE OP_SUB_F 7228 7222 7229
-        self.spawnflags = ;
+        self.spawnflags = self.spawnflags - START_OFF;
     }
     else    
     {
@@ -89,17 +88,15 @@ void() light;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () light =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_S 7235 0 7236
     
-    if()
+    if(!self.targetname)
     {
         remove(self);
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 7237 5674 7238
     
-    if()
+    if(self.style >= DOOR_TOGGLE)
     {
         self.use = light_use;
         if(self.spawnflags & START_OFF)
@@ -147,9 +144,8 @@ void() light_fluoro;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () light_fluoro =
 {
-    // *** UNPROCESSED OPCODE OP_GE 7245 5674 7246
     
-    if()
+    if(self.style >= DOOR_TOGGLE)
     {
         self.use = light_use;
         if(self.spawnflags & START_OFF)
@@ -347,8 +343,7 @@ void() misc_fireball;
 {
     precache_model("progs/lavaball.mdl");
     self.classname = "fireball";
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 313 7283
-    self.nextthink = time + ;
+    self.nextthink = time + (random() * TE_LIGHTNING1);
     self.think = fire_fly;
     
     if(!self.speed)
@@ -421,14 +416,9 @@ void() misc_fireball;
     fireball.solid = SOLID_TRIGGER;
     fireball.movetype = MOVETYPE_TOSS;
     fireball.velocity = '0.000 0.000 1000.000';
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 7299
-    // *** UNPROCESSED OPCODE OP_SUB_F 7299 2227 7300
-    fireball.velocity_x = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 7302
-    // *** UNPROCESSED OPCODE OP_SUB_F 7302 2227 7303
-    fireball.velocity_y = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 7306
-    fireball.velocity_z = self.speed + ;
+    fireball.velocity_x = (random() * 100.000) - 50.000;
+    fireball.velocity_y = (random() * 100.000) - 50.000;
+    fireball.velocity_z = self.speed + (random() * 200.000);
     fireball.classname = "fireball";
     setmodel(fireball, "progs/lavaball.mdl");
     setsize(fireball, VEC_ORIGIN, VEC_ORIGIN);
@@ -436,8 +426,7 @@ void() misc_fireball;
     fireball.nextthink = time + TE_LIGHTNING1;
     fireball.think = SUB_Remove;
     fireball.touch = fire_touch;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 313 7317
-    self.nextthink = (time + ) + AS_MELEE;
+    self.nextthink = (time + (random() * TE_LIGHTNING1)) + AS_MELEE;
     self.think = fire_fly;
 };
 
@@ -557,10 +546,8 @@ void() misc_explobox;
     self.origin_z = self.origin_z + SILENT;
     oldz = self.origin_z;
     droptofloor();
-    // *** UNPROCESSED OPCODE OP_SUB_F 7332 7343 7344
-    // *** UNPROCESSED OPCODE OP_GT 7344 1859 7345
     
-    if()
+    if((oldz - self.origin_z) > 250.000)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -628,10 +615,8 @@ void() misc_explobox2;
     self.origin_z = self.origin_z + SILENT;
     oldz = self.origin_z;
     droptofloor();
-    // *** UNPROCESSED OPCODE OP_SUB_F 7351 7362 7363
-    // *** UNPROCESSED OPCODE OP_GT 7363 1859 7364
     
-    if()
+    if((oldz - self.origin_z) > 250.000)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -958,9 +943,8 @@ void() bubble_split;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
     self.frame = SPAWNFLAG_SUPERSPIKE;
     self.cnt = TE_LAVASPLASH;
-    // *** UNPROCESSED OPCODE OP_NE_F 7477 370 7478
     
-    if()
+    if(self.waterlevel != AS_MELEE)
     {
         remove(self);
     }
@@ -980,9 +964,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () bubble_remove =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_S 7479 7480 7481
     
-    if()
+    if(other.classname == self.classname)
     {
         return; /* TODO retvalue? */
     }
@@ -1074,15 +1057,11 @@ float ;
         remove(self);
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 894 7500
-    rnd1 = self.velocity_x + (IMMEDIATE + );
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 894 7504
-    rnd2 = self.velocity_y + (IMMEDIATE + );
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 318 7509
-    rnd3 = (self.velocity_z + TE_LAVASPLASH) + ;
-    // *** UNPROCESSED OPCODE OP_GT 7482 318 7511
+    rnd1 = self.velocity_x + (IMMEDIATE + (random() * 20.000));
+    rnd2 = self.velocity_y + (IMMEDIATE + (random() * 20.000));
+    rnd3 = (self.velocity_z + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     
-    if()
+    if(rnd1 > TE_LAVASPLASH)
     {
         rnd1 = TE_LIGHTNING1;
     }
@@ -1093,9 +1072,8 @@ float ;
         rnd1 = CONTENT_LAVA;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 7483 318 7513
     
-    if()
+    if(rnd2 > TE_LAVASPLASH)
     {
         rnd2 = TE_LIGHTNING1;
     }
@@ -1112,9 +1090,8 @@ float ;
         rnd3 = 15.000;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 7484 304 7516
     
-    if()
+    if(rnd3 > SVC_INTERMISSION)
     {
         rnd3 = 25.000;
     }
@@ -1159,8 +1136,7 @@ void() func_wall_use;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () func_wall_use =
 {
-    // *** UNPROCESSED OPCODE OP_SUB_F 7368 7528 7529
-    self.frame = ;
+    self.frame = SPAWNFLAG_SUPERSPIKE - self.frame;
 };
 
 float ;

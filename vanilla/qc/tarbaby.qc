@@ -718,16 +718,13 @@ void() Tar_JumpTouch;
 %%RETURNTYPE%% () Tar_JumpTouch =
 {
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NE_S 10326 10327 10328
-    if(other.takedamage && )
+    if(other.takedamage && (other.classname != self.classname))
     {
-        // *** UNPROCESSED OPCODE OP_GT 1 3036 10333
         
-        if()
+        if(vlen(self.velocity) > 400.000)
         {
             random();
-            // *** UNPROCESSED OPCODE OP_MUL_F 318 1 10334
-            ldmg = TE_LAVASPLASH + ;
+            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * vlen(self.velocity));
             T_Damage(other, self, self, ldmg);
             sound(self, CHAN_WEAPON, "blob/hit1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
         }
@@ -904,15 +901,12 @@ void() tbaby_jump4;
     self.touch = Tar_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWN_CRUCIFIED;
-    // *** UNPROCESSED OPCODE OP_ADD_V 10375 9354 10378
-    self.velocity = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1960 10383
-    self.velocity_z = self.velocity_z + ;
+    self.velocity = (v_forward * 600.000) + '0.000 0.000 200.000';
+    self.velocity_z = self.velocity_z + (random() * 150.000);
     
     if(self.flags & FL_ONGROUND)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 10388 223 10389
-        self.flags = ;
+        self.flags = self.flags - FL_ONGROUND;
     }
     
     self.cnt = MSG_BROADCAST;
@@ -990,8 +984,7 @@ void() tbaby_die1;
     T_RadiusDamage(self, self, 120.000, world);
     sound(self, CHAN_VOICE, "blob/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     normalize(self.velocity);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 6077 1 10404
-    self.origin = self.origin - ;
+    self.origin = self.origin - (SECRET_NO_SHOOT * random());
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TAREXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);

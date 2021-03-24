@@ -86,9 +86,8 @@ void() OgreGrenadeTouch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () OgreGrenadeTouch =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 7632 7633
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -180,8 +179,7 @@ void() OgreFireGrenade;
 {
     local entity missile;
     local entity mpuff;
-    // *** UNPROCESSED OPCODE OP_BITOR 7647 334 7648
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     missile = spawn();
     missile.owner = self;
@@ -270,9 +268,8 @@ void() chainsaw;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 7700 0 7701
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
@@ -285,17 +282,15 @@ void() chainsaw;
     
     ai_charge(TE_LAVASPLASH);
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 1884 7714
     
-    if()
+    if(vlen(delta) > 100.000)
     {
         return; /* TODO retvalue? */
     }
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 7719 6076 7720
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * SECRET_1ST_DOWN;
     T_Damage(self.enemy, self, self, ldmg);
     
     if(side)
@@ -303,16 +298,11 @@ void() chainsaw;
         makevectors(self.angles);
         if(side == SPAWNFLAG_SUPERSPIKE)
         {
-            // *** UNPROCESSED OPCODE OP_ADD_V 7726 7729 7732
-            // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 7735
-            // *** UNPROCESSED OPCODE OP_MUL_FV 7735 65 7736
-            SpawnMeatSpray(, );
+            SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_ADD_V 7739 7742 7745
-            // *** UNPROCESSED OPCODE OP_MUL_FV 7695 65 7748
-            SpawnMeatSpray(, );
+            SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), side * v_right);
         }
         
     }
@@ -878,8 +868,7 @@ void() ogre_swing5;
     // *** UNPROCESSED OPCODE OP_STATE 5098 7800 0
     ai_charge(TE_LIGHTNING3);
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7803
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -899,8 +888,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5100 7805 0
     chainsaw(200.000);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7808
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -920,8 +908,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5102 7810 0
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7813
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -941,8 +928,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 1733 7815 0
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7818
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -962,8 +948,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5443 7820 0
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7823
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -983,8 +968,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5445 7825 0
     chainsaw(-200.000);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7828
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -1004,8 +988,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5447 7830 0
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1890 7833
-    self.angles_y = self.angles_y + ;
+    self.angles_y = self.angles_y + (random() * 25.000);
 };
 
 float ;
@@ -1215,8 +1198,7 @@ void() ogre_smash11;
     // *** UNPROCESSED OPCODE OP_STATE 5363 7847 0
     ai_charge(SPAWNFLAG_LASER);
     chainsaw(MSG_BROADCAST);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 836 7850
-    self.nextthink = self.nextthink + ;
+    self.nextthink = self.nextthink + (random() * 0.200);
 };
 
 float ;
@@ -1863,9 +1845,8 @@ void() ogre_pain;
 %%RETURNTYPE%% (entity attacker, float damage) ogre_pain =
 {
     local float r;
-    // *** UNPROCESSED OPCODE OP_GT 7910 31 7911
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -2253,8 +2234,7 @@ void() ogre_melee;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () ogre_melee =
 {
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 7973
-    if()
+    if(random() > IMMEDIATE)
     {
         ogre_smash1();
     }

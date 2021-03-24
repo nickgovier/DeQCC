@@ -39,9 +39,7 @@ void() knight_attack;
 %%RETURNTYPE%% () knight_attack =
 {
     local float len;
-    // *** UNPROCESSED OPCODE OP_ADD_V 766 770 773
-    // *** UNPROCESSED OPCODE OP_ADD_V 776 779 782
-    len = vlen( - );
+    len = vlen((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs));
     if(len < 80.000)
     {
         knight_atk1();
@@ -143,10 +141,8 @@ void() CheckAttack;
     local entity targ;
     local float chance;
     targ = self.enemy;
-    // *** UNPROCESSED OPCODE OP_ADD_V 800 803 806
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 809 812 815
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     traceline(spot1, spot2, FALSE, self);
     
     if(trace_ent != targ)
@@ -166,8 +162,7 @@ void() CheckAttack;
         
         if(self.th_melee)
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 822 823 824
-            if()
+            if(self.classname == "monster_knight")
             {
                 knight_attack();
             }
@@ -181,9 +176,8 @@ void() CheckAttack;
         
     }
     
-    // *** UNPROCESSED OPCODE OP_NOT_FNC 826 0 827
     
-    if()
+    if(!self.th_missile)
     {
         return; /* TODO retvalue? */
     }
@@ -239,8 +233,7 @@ void() CheckAttack;
     {
         func000000();
         random();
-        // *** UNPROCESSED OPCODE OP_MUL_F 369 1 843
-        SUB_AttackFinished();
+        SUB_AttackFinished(AS_SLIDING * random());
         return; /* TODO retvalue? */
     }
     
@@ -319,8 +312,7 @@ void() ai_charge_side;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
     makevectors(self.angles);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 304 65 882
-    dtemp = self.enemy.origin - ;
+    dtemp = self.enemy.origin - (SVC_INTERMISSION * v_right);
     heading = vectoyaw(dtemp - self.origin);
     walkmove(heading, 20.000);
 };
@@ -362,25 +354,22 @@ void() ai_melee;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 900 0 901
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
     
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 912 913
     
-    if()
+    if(vlen(delta) > 60.000)
     {
         return; /* TODO retvalue? */
     }
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 918 370 919
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -429,18 +418,16 @@ void() ai_melee_side;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 926 0 927
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
     
     ai_charge_side();
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 912 938
     
-    if()
+    if(vlen(delta) > 60.000)
     {
         return; /* TODO retvalue? */
     }
@@ -453,8 +440,7 @@ void() ai_melee_side;
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 945 370 946
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -529,10 +515,8 @@ void() SoldierCheckAttack;
     local entity targ;
     local float chance;
     targ = self.enemy;
-    // *** UNPROCESSED OPCODE OP_ADD_V 958 961 964
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 967 970 973
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     traceline(spot1, spot2, FALSE, self);
     
     if(trace_inopen && trace_inwater)
@@ -684,13 +668,10 @@ void() ShamCheckAttack;
     }
     
     targ = self.enemy;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1008 1011 1014
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1017 1020 1023
-    spot2 = ;
-    // *** UNPROCESSED OPCODE OP_GT 1 1029 1030
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     
-    if()
+    if((vlen(spot1 - spot2)) > 600.000)
     {
         return; /* TODO retvalue? */
     }
@@ -716,8 +697,7 @@ void() ShamCheckAttack;
     
     self.attack_state = AS_MISSILE;
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 369 1 1035
-    SUB_AttackFinished(AS_SLIDING + );
+    SUB_AttackFinished(AS_SLIDING + (AS_SLIDING * (vlen(spot1 - spot2))));
     return; /* TODO retvalue? */
 };
 
@@ -820,10 +800,8 @@ void() OgreCheckAttack;
     }
     
     targ = self.enemy;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1053 1056 1059
-    spot1 = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 1062 1065 1068
-    spot2 = ;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
     traceline(spot1, spot2, FALSE, self);
     
     if(trace_inopen && trace_inwater)
@@ -862,8 +840,7 @@ void() OgreCheckAttack;
     
     self.attack_state = AS_MISSILE;
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 369 1 1079
-    SUB_AttackFinished(AS_STRAIGHT + );
+    SUB_AttackFinished(AS_STRAIGHT + (AS_SLIDING * CanDamage(self.enemy, self)));
     return; /* TODO retvalue? */
 };
 

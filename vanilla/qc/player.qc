@@ -54,9 +54,8 @@ void() bubble_bob;
     
     if(self.weapon == IT_AXE)
     {
-        // *** UNPROCESSED OPCODE OP_GE 4869 2250 4870
         
-        if()
+        if(self.walkframe >= 12.000)
         {
             self.walkframe = MSG_BROADCAST;
         }
@@ -65,9 +64,8 @@ void() bubble_bob;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_GE 4875 313 4876
         
-        if()
+        if(self.walkframe >= TE_LIGHTNING1)
         {
             self.walkframe = MSG_BROADCAST;
         }
@@ -173,8 +171,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 4909 4910 0
     self.weaponframe = WEAPON_SHOTGUN;
-    // *** UNPROCESSED OPCODE OP_BITOR 4913 334 4914
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
 };
 
 float ;
@@ -490,8 +487,7 @@ float ;
 %%RETURNTYPE%% () player_nail1 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 4971 4972 0
-    // *** UNPROCESSED OPCODE OP_BITOR 4974 334 4975
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
@@ -543,8 +539,7 @@ float ;
 %%RETURNTYPE%% () player_nail2 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 4986 3447 0
-    // *** UNPROCESSED OPCODE OP_BITOR 4988 334 4989
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
@@ -595,8 +590,7 @@ float ;
 %%RETURNTYPE%% () player_light1 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 5000 5001 0
-    // *** UNPROCESSED OPCODE OP_BITOR 5003 334 5004
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
@@ -647,8 +641,7 @@ float ;
 %%RETURNTYPE%% () player_light2 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 5015 3448 0
-    // *** UNPROCESSED OPCODE OP_BITOR 5017 334 5018
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     
     if(!self.button0)
     {
@@ -683,8 +676,7 @@ float ;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5029 5030 0
     self.weaponframe = WEAPON_SHOTGUN;
-    // *** UNPROCESSED OPCODE OP_BITOR 5033 334 5034
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
 };
 
 float ;
@@ -915,9 +907,8 @@ void() PainSound;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 5054 4665 5055
     
-    if()
+    if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
         return; /* TODO retvalue? */
@@ -927,8 +918,7 @@ void() PainSound;
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == AS_MELEE))
     {
         DeathBubbles(WEAPON_SHOTGUN);
-        // *** UNPROCESSED OPCODE OP_GT 1 1491 5061
-        if()
+        if(random() > IMMEDIATE)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -949,8 +939,7 @@ void() PainSound;
             DeathBubbles(WEAPON_SHOTGUN);
         }
         
-        // *** UNPROCESSED OPCODE OP_GT 1 1491 5066
-        if()
+        if(random() > IMMEDIATE)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -965,8 +954,7 @@ void() PainSound;
     
     if(self.watertype == CONTENT_LAVA)
     {
-        // *** UNPROCESSED OPCODE OP_GT 1 1491 5069
-        if()
+        if(random() > IMMEDIATE)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -978,9 +966,8 @@ void() PainSound;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 5070 31 5071
     
-    if()
+    if(self.pain_finished > time)
     {
         self.axhitme = MSG_BROADCAST;
         return; /* TODO retvalue? */
@@ -995,8 +982,7 @@ void() PainSound;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 313 5078
-    rs = rint( + WEAPON_SHOTGUN);
+    rs = rint((random() * TE_LIGHTNING1) + WEAPON_SHOTGUN);
     self.noise = "";
     if(rs == WEAPON_SHOTGUN)
     {
@@ -1183,9 +1169,8 @@ float IMMEDIATE = 34.000;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 5114 31 5115
     
-    if()
+    if(self.invisible_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -1273,10 +1258,8 @@ void() DeathBubblesSpawn;
 %%RETURNTYPE%% () DeathBubblesSpawn =
 {
     local entity bubble;
-    // *** UNPROCESSED OPCODE OP_NE_F 5127 370 5128
-    // *** UNPROCESSED OPCODE OP_GT 5130 337 5131
     
-    if( && )
+    if((self.owner.waterlevel != AS_MELEE) && (self.owner.health > MSG_BROADCAST))
     {
         remove(self);
         return; /* TODO retvalue? */
@@ -1284,8 +1267,7 @@ void() DeathBubblesSpawn;
     
     bubble = spawn();
     setmodel(bubble, "progs/s_bubble.spr");
-    // *** UNPROCESSED OPCODE OP_ADD_V 5134 2551 5137
-    setorigin(bubble, );
+    setorigin(bubble, self.owner.origin + '0.000 0.000 24.000');
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = '0.000 0.000 15.000';
@@ -1298,9 +1280,8 @@ void() DeathBubblesSpawn;
     self.nextthink = time + 0.010;
     self.think = DeathBubblesSpawn;
     self.air_finished = self.air_finished + WEAPON_SHOTGUN;
-    // *** UNPROCESSED OPCODE OP_GE 5161 5162 5163
     
-    if()
+    if(self.air_finished >= self.bubble_count)
     {
         remove(self);
     }
@@ -1408,8 +1389,7 @@ void() DeathSound;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 2258 5181
-    rs = rint( + WEAPON_SHOTGUN);
+    rs = rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN);
     
     if(rs == WEAPON_SHOTGUN)
     {
@@ -1491,21 +1471,16 @@ void() VelocityForDamage;
 {
     local vector v;
     crandom();
-    // *** UNPROCESSED OPCODE OP_MUL_F 1884 1 5202
-    v = ;
+    v = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
     crandom();
-    // *** UNPROCESSED OPCODE OP_MUL_F 1884 1 5203
-    v_y = ;
+    v_y = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 1884 1 5204
-    v_z = 200.000 + ;
-    // *** UNPROCESSED OPCODE OP_GT 5198 4457 5206
-    if()
+    v_z = 200.000 + (100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN)));
+    if(dm > -50.000)
     {
         v = v * 0.700;
     }
-    else    // *** UNPROCESSED OPCODE OP_GT 5198 5210 5211
- if()
+    else if(dm > -200.000)
     {
         v = v * WEAPON_ROCKET;
     }
@@ -1578,16 +1553,12 @@ void() ThrowGib;
     new.velocity = VelocityForDamage(dm);
     new.movetype = MOVETYPE_BOUNCE;
     new.solid = SOLID_NOT;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5234
-    new.avelocity_x = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5236
-    new.avelocity_y = ;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1029 5238
-    new.avelocity_z = ;
+    new.avelocity_x = random() * 600.000;
+    new.avelocity_y = random() * 600.000;
+    new.avelocity_z = random() * 600.000;
     new.think = SUB_Remove;
     new.ltime = time;
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 318 5243
-    new.nextthink = (time + TE_LAVASPLASH) + ;
+    new.nextthink = (time + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     new.frame = MSG_BROADCAST;
     new.flags = MSG_BROADCAST;
 };
@@ -1645,12 +1616,9 @@ void() ThrowHead;
     self.view_ofs = '0.000 0.000 8.000';
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     self.velocity = VelocityForDamage(dm);
-    // *** UNPROCESSED OPCODE OP_SUB_F 5265 4437 5266
-    self.origin_z = ;
-    // *** UNPROCESSED OPCODE OP_SUB_F 5268 5270 5271
-    self.flags = ;
-    // *** UNPROCESSED OPCODE OP_MUL_FV 1 5275 5278
-    self.avelocity = ;
+    self.origin_z = self.origin_z - 24.000;
+    self.flags = self.flags - (self.flags & FL_ONGROUND);
+    self.avelocity = crandom() * '0.000 600.000 0.000';
 };
 
 vector ;
@@ -1719,17 +1687,15 @@ void() GibPlayer;
     ThrowGib("progs/gib2.mdl", self.health);
     ThrowGib("progs/gib3.mdl", self.health);
     self.deadflag = DEAD_DEAD;
-    // *** UNPROCESSED OPCODE OP_EQ_S 5287 4665 5288
     
-    if()
+    if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_EQ_S 5289 4677 5290
     
-    if()
+    if(damage_attacker.classname == "teledeath2")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", WEAPON_SHOTGUN, ATTN_NONE);
         return; /* TODO retvalue? */
@@ -1845,11 +1811,7 @@ float ;
 %%RETURNTYPE%% () PlayerDie =
 {
     local float i;
-    // *** UNPROCESSED OPCODE OP_BITOR 272 273 5296
-    // *** UNPROCESSED OPCODE OP_BITOR 5296 274 5297
-    // *** UNPROCESSED OPCODE OP_BITOR 5297 275 5298
-    // *** UNPROCESSED OPCODE OP_SUB_F 5294 5299 5300
-    self.items = ;
+    self.items = self.items - (self.items & (((IT_INVISIBILITY | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
     self.invisible_finished = MSG_BROADCAST;
     self.invincible_finished = MSG_BROADCAST;
     self.super_damage_finished = MSG_BROADCAST;
@@ -1866,14 +1828,12 @@ float ;
     self.view_ofs = '0.000 0.000 -8.000';
     self.deadflag = DEAD_DYING;
     self.solid = SOLID_NOT;
-    // *** UNPROCESSED OPCODE OP_SUB_F 5318 5320 5321
-    self.flags = ;
+    self.flags = self.flags - (self.flags & FL_ONGROUND);
     self.movetype = MOVETYPE_TOSS;
     
     if(self.velocity_z < TE_LAVASPLASH)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1 2596 5327
-        self.velocity_z = self.velocity_z + ;
+        self.velocity_z = self.velocity_z + (random() * 300.000);
     }
     
     
@@ -1897,8 +1857,7 @@ float ;
     
     if(!i)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1 314 5337
-        floor();
+        floor(random() * TE_LIGHTNING2);
         i = WEAPON_SHOTGUN + random();
     }
     
@@ -1945,9 +1904,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () set_suicide_frame =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 5343 3849 5344
     
-    if()
+    if(self.model != "progs/player.mdl")
     {
         return; /* TODO retvalue? */
     }

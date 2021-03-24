@@ -436,13 +436,11 @@ void() demon1_jump4;
     self.touch = Demon_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWNFLAG_SUPERSPIKE;
-    // *** UNPROCESSED OPCODE OP_ADD_V 8033 8036 8039
-    self.velocity = ;
+    self.velocity = (v_forward * 600.000) + '0.000 0.000 250.000';
     
     if(self.flags & FL_ONGROUND)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 8045 223 8046
-        self.flags = ;
+        self.flags = self.flags - FL_ONGROUND;
     }
     
 };
@@ -819,26 +817,22 @@ void() demon1_pain;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (entity attacker, float damage) demon1_pain =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_FNC 8080 7987 8081
     
-    if()
+    if(self.touch == Demon_JumpTouch)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 8082 31 8083
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }
     
     self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
     sound(self, CHAN_VOICE, "demon/dpain1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1965 8087
-    // *** UNPROCESSED OPCODE OP_GT 8087 8079 8088
     
-    if()
+    if((random() * 200.000) > damage)
     {
         return; /* TODO retvalue? */
     }
@@ -1170,17 +1164,14 @@ void() CheckDemonJump;
 {
     local vector dist;
     local float d;
-    // *** UNPROCESSED OPCODE OP_MUL_F 3464 8140 8141
-    // *** UNPROCESSED OPCODE OP_GT 8133 8142 8143
     
-    if()
+    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.750 * self.enemy.size_z)))
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 3461 8153 8154
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + ))
+    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.250 * self.enemy.size_z)))
     {
         return; /* TODO retvalue? */
     }
@@ -1194,9 +1185,8 @@ void() CheckDemonJump;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 8130 1965 8168
     
-    if()
+    if(d > 200.000)
     {
         
         if(random() < 0.900)
@@ -1310,9 +1300,8 @@ float ;
     ai_face();
     walkmove(self.ideal_yaw, 12.000);
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 1884 8191
     
-    if()
+    if(vlen(delta) > 100.000)
     {
         return; /* TODO retvalue? */
     }
@@ -1325,13 +1314,10 @@ float ;
     
     sound(self, CHAN_WEAPON, "demon/dhit2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 313 1 8194
-    ldmg = TE_LAVASPLASH + ;
+    ldmg = TE_LAVASPLASH + (TE_LIGHTNING1 * CanDamage(self.enemy, self));
     T_Damage(self.enemy, self, self, ldmg);
     makevectors(self.angles);
-    // *** UNPROCESSED OPCODE OP_ADD_V 8200 8203 8206
-    // *** UNPROCESSED OPCODE OP_MUL_FV 8175 65 8209
-    SpawnMeatSpray(, );
+    SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), side * v_right);
 };
 
 vector ;
@@ -1392,13 +1378,11 @@ vector ;
     
     if(other.takedamage)
     {
-        // *** UNPROCESSED OPCODE OP_GT 1 3036 8219
         
-        if()
+        if(vlen(self.velocity) > 400.000)
         {
             random();
-            // *** UNPROCESSED OPCODE OP_MUL_F 318 1 8220
-            ldmg = 40.000 + ;
+            ldmg = 40.000 + (TE_LAVASPLASH * vlen(self.velocity));
             T_Damage(other, self, self, ldmg);
         }
         

@@ -366,9 +366,8 @@ void() sham_walk12;
 {
     // *** UNPROCESSED OPCODE OP_STATE 303 8250 0
     ai_walk(TE_WIZSPIKE);
-    // *** UNPROCESSED OPCODE OP_GT 1 1964 8262
     
-    if()
+    if(random() > 0.800)
     {
         sound(self, CHAN_VOICE, "shambler/sidle.wav", SPAWNFLAG_SUPERSPIKE, ATTN_IDLE);
     }
@@ -461,9 +460,8 @@ void() sham_run6;
 {
     // *** UNPROCESSED OPCODE OP_STATE 5112 8264 0
     ai_run(20.000);
-    // *** UNPROCESSED OPCODE OP_GT 1 1964 8270
     
-    if()
+    if(random() > 0.800)
     {
         sound(self, CHAN_VOICE, "shambler/sidle.wav", SPAWNFLAG_SUPERSPIKE, ATTN_IDLE);
     }
@@ -666,18 +664,16 @@ void() sham_smash10;
     local vector delta;
     local float ldmg;
     // *** UNPROCESSED OPCODE OP_STATE 5449 8281 0
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 8286 0 8287
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
     
     ai_charge(MSG_BROADCAST);
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 1884 8298
     
-    if()
+    if(vlen(delta) > 100.000)
     {
         return; /* TODO retvalue? */
     }
@@ -690,18 +686,11 @@ void() sham_smash10;
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 8305 1733 8306
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * 40.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_ADD_V 8309 8312 8315
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 8318
-    // *** UNPROCESSED OPCODE OP_MUL_FV 8318 65 8319
-    SpawnMeatSpray(, );
-    // *** UNPROCESSED OPCODE OP_ADD_V 8322 8325 8328
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 1884 8331
-    // *** UNPROCESSED OPCODE OP_MUL_FV 8331 65 8332
-    SpawnMeatSpray(, );
+    SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
+    SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
 };
 
 vector ;
@@ -785,35 +774,30 @@ void() ShamClaw;
 {
     local vector delta;
     local float ldmg;
-    // *** UNPROCESSED OPCODE OP_NOT_ENT 8342 0 8343
     
-    if()
+    if(!self.enemy)
     {
         return; /* TODO retvalue? */
     }
     
     ai_charge(TE_LAVASPLASH);
     delta = self.enemy.origin - self.origin;
-    // *** UNPROCESSED OPCODE OP_GT 1 1884 8354
     
-    if()
+    if(vlen(delta) > 100.000)
     {
         return; /* TODO retvalue? */
     }
     
     random();
     random();
-    // *** UNPROCESSED OPCODE OP_MUL_F 8359 894 8360
-    ldmg = ;
+    ldmg = ((random() + random()) + random()) * 20.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     
     if(side)
     {
         makevectors(self.angles);
-        // *** UNPROCESSED OPCODE OP_ADD_V 8365 8368 8371
-        // *** UNPROCESSED OPCODE OP_MUL_FV 8337 65 8374
-        SpawnMeatSpray(, );
+        SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), side * v_right);
     }
     
 };
@@ -1120,13 +1104,11 @@ void() sham_melee;
 {
     local float chance;
     chance = random();
-    // *** UNPROCESSED OPCODE OP_GT 8400 1959 8401
-    if( || (self.health == 600.000))
+    if((chance > 0.600) || (self.health == 600.000))
     {
         sham_smash1();
     }
-    else    // *** UNPROCESSED OPCODE OP_GT 8400 987 8405
- if()
+    else if(chance > 0.300)
     {
         sham_swingr1();
     }
@@ -1202,16 +1184,12 @@ void() CastLightning;
 {
     local vector org;
     local vector dir;
-    // *** UNPROCESSED OPCODE OP_BITOR 8414 334 8415
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     ai_face();
-    // *** UNPROCESSED OPCODE OP_ADD_V 8416 8419 8422
-    org = ;
-    // *** UNPROCESSED OPCODE OP_ADD_V 8426 2644 8429
-    dir =  - org;
+    org = self.origin + '0.000 0.000 40.000';
+    dir = (self.enemy.origin + '0.000 0.000 16.000') - org;
     dir = normalize(dir);
-    // *** UNPROCESSED OPCODE OP_ADD_V 8435 8438 8441
-    traceline(org, , TRUE, self);
+    traceline(org, self.origin + (dir * 600.000), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING1);
     WriteEntity(MSG_BROADCAST, self);
@@ -1304,8 +1282,7 @@ void() sham_magic3;
      = self.nextthink;
      =  + 0.200;
      = ;
-    // *** UNPROCESSED OPCODE OP_BITOR 8454 334 8455
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     ai_face();
     self.owner = spawn();
     o = self.owner;
@@ -1331,8 +1308,7 @@ void() sham_magic3;
 %%RETURNTYPE%% () sham_magic4 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 5381 8471 0
-    // *** UNPROCESSED OPCODE OP_BITOR 8473 334 8474
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     self.owner.frame = SPAWNFLAG_SUPERSPIKE;
 };
 
@@ -1351,8 +1327,7 @@ void() sham_magic3;
 %%RETURNTYPE%% () sham_magic5 =
 {
     // *** UNPROCESSED OPCODE OP_STATE 5383 8477 0
-    // *** UNPROCESSED OPCODE OP_BITOR 8479 334 8480
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     self.owner.frame = SPAWNFLAG_LASER;
 };
 
@@ -1528,17 +1503,14 @@ void() sham_pain;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 3036 8502
-    // *** UNPROCESSED OPCODE OP_GT 8502 8498 8503
     
-    if()
+    if((random() * 400.000) > damage)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 8504 31 8505
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }

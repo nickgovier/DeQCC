@@ -63,9 +63,8 @@ void() Laser_Touch;
 %%RETURNTYPE%% () Laser_Touch =
 {
     local vector org;
-    // *** UNPROCESSED OPCODE OP_EQ_E 29 11071 11072
     
-    if()
+    if(other == self.owner)
     {
         return; /* TODO retvalue? */
     }
@@ -79,8 +78,7 @@ void() Laser_Touch;
     
     sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", SPAWN_CRUCIFIED, ATTN_STATIC);
     normalize(self.velocity);
-    // *** UNPROCESSED OPCODE OP_MUL_FV 6077 1 11083
-    org = self.origin - ;
+    org = self.origin - (SECRET_NO_SHOOT * pointcontents(self.origin));
     if(other.health)
     {
         SpawnBlood(org, self.velocity * 0.200, 15.000);
@@ -151,9 +149,8 @@ entity ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (vector org, vector vec) LaunchLaser =
 {
-    // *** UNPROCESSED OPCODE OP_EQ_S 11103 1275 11104
     
-    if()
+    if(self.classname == "monster_enforcer")
     {
         sound(self, CHAN_WEAPON, "enforcer/enfire.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -203,13 +200,9 @@ void() enforcer_fire;
 %%RETURNTYPE%% () enforcer_fire =
 {
     local vector org;
-    // *** UNPROCESSED OPCODE OP_BITOR 11130 334 11131
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
     makevectors(self.angles);
-    // *** UNPROCESSED OPCODE OP_ADD_V 11135 11138 11141
-    // *** UNPROCESSED OPCODE OP_ADD_V 11141 11145 11148
-    // *** UNPROCESSED OPCODE OP_ADD_V 11148 2644 11151
-    org = ;
+    org = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.500)) + '0.000 0.000 16.000';
     LaunchLaser(org, self.enemy.origin - self.origin);
 };
 
@@ -1246,9 +1239,8 @@ void() enf_pain;
 {
     local float r;
     r = random();
-    // *** UNPROCESSED OPCODE OP_GT 11251 31 11252
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -1626,8 +1618,7 @@ void() enf_die;
     }
     
     sound(self, CHAN_VOICE, "enforcer/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 11302
-    if()
+    if(random() > IMMEDIATE)
     {
         enf_die1();
     }

@@ -606,8 +606,7 @@ void() army_atk5;
     // *** UNPROCESSED OPCODE OP_STATE 5411 8728 0
     ai_face();
     army_fire();
-    // *** UNPROCESSED OPCODE OP_BITOR 8730 334 8731
-    self.effects = ;
+    self.effects = self.effects | EF_MUZZLEFLASH;
 };
 
 float ;
@@ -1076,9 +1075,8 @@ void() army_pain;
 %%RETURNTYPE%% (entity attacker, float damage) army_pain =
 {
     local float r;
-    // *** UNPROCESSED OPCODE OP_GT 8772 31 8773
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }

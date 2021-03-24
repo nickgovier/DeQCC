@@ -28,9 +28,8 @@ void() door_blocked;
 %%RETURNTYPE%% () door_blocked =
 {
     T_Damage(other, self, self, self.dmg);
-    // *** UNPROCESSED OPCODE OP_GE 5679 337 5680
     
-    if()
+    if(self.wait >= MSG_BROADCAST)
     {
         if(self.state == STATE_DOWN)
         {
@@ -535,24 +534,21 @@ void() door_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () door_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 5767 712 5768
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 5770 31 5771
     
-    if()
+    if(self.owner.attack_finished > time)
     {
         return; /* TODO retvalue? */
     }
     
     self.owner.attack_finished = time + WEAPON_ROCKET;
-    // *** UNPROCESSED OPCODE OP_NE_S 5776 569 5777
     
-    if()
+    if(self.owner.message != "")
     {
         centerprint(other, self.owner.message);
         sound(other, CHAN_VOICE, "misc/talk.wav", DOOR_START_OPEN, ATTN_NORM);
@@ -564,9 +560,8 @@ void() door_touch;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_F 5784 5785 5786
     
-    if()
+    if((self.items & other.items) != self.items)
     {
         if(self.owner.items == IT_KEY1)
         {
@@ -628,8 +623,7 @@ void() door_touch;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 5815 5816 5817
-    other.items = ;
+    other.items = other.items - self.items;
     self.touch = SUB_Null;
     
     if(self.enemy)
@@ -676,8 +670,7 @@ void() spawn_field;
     trigger.touch = door_trigger_touch;
     t1 = fmins;
     t2 = fmaxs;
-    // *** UNPROCESSED OPCODE OP_ADD_V 5833 5840 5846
-    setsize(trigger, t1 - '60.000 60.000 8.000', );
+    setsize(trigger, t1 - '60.000 60.000 8.000', t2 + '60.000 60.000 8.000');
     return; /* TODO retvalue? */
 };
 
@@ -719,23 +712,20 @@ void() EntitiesTouching;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (entity e1, entity e2) EntitiesTouching =
 {
-    // *** UNPROCESSED OPCODE OP_GT 5852 5853 5854
     
-    if()
+    if(e1.mins_x > e2.maxs_x)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 5855 5856 5857
     
-    if()
+    if(e1.mins_y > e2.maxs_y)
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 5858 5859 5860
     
-    if()
+    if(e1.mins_z > e2.maxs_z)
     {
         return; /* TODO retvalue? */
     }
@@ -910,17 +900,15 @@ void() LinkDoors;
             starte.targetname = self.targetname;
         }
         
-        // *** UNPROCESSED OPCODE OP_NE_S 5897 569 5898
         
-        if()
+        if(self.message != "")
         {
             starte.message = self.message;
         }
         
         t = find(t, classname, self.classname);
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 5871 0 5902
         
-        if()
+        if(!t)
         {
             self.enemy = starte;
             self = self.owner;
@@ -975,23 +963,20 @@ void() LinkDoors;
                 cmins_z = t.mins_z;
             }
             
-            // *** UNPROCESSED OPCODE OP_GT 5922 5876 5923
             
-            if()
+            if(t.maxs_x > cmaxs)
             {
                 cmaxs = t.maxs_x;
             }
             
-            // *** UNPROCESSED OPCODE OP_GT 5925 5877 5926
             
-            if()
+            if(t.maxs_y > cmaxs_y)
             {
                 cmaxs_y = t.maxs_y;
             }
             
-            // *** UNPROCESSED OPCODE OP_GT 5928 5878 5929
             
-            if()
+            if(t.maxs_z > cmaxs_z)
             {
                 cmaxs_z = t.maxs_z;
             }
@@ -1327,11 +1312,8 @@ void() func_door;
     }
     
     self.pos1 = self.origin;
-    // *** UNPROCESSED OPCODE OP_MUL_V 6024 6027 6030
-    fabs();
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 6031 6032
-    // *** UNPROCESSED OPCODE OP_ADD_V 6018 6033 6036
-    self.pos2 = ;
+    fabs(self.movedir * self.size);
+    self.pos2 = self.pos1 + (self.movedir * (EntitiesTouching(self, t) - self.lip));
     
     if(self.spawnflags & DOOR_START_OPEN)
     {
@@ -1500,21 +1482,18 @@ void() fd_secret_use;
     self.velocity = VEC_ORIGIN;
     sound(self, CHAN_VOICE, self.noise1, SECRET_OPEN_ONCE, ATTN_NORM);
     self.nextthink = self.ltime + 0.100;
-    // *** UNPROCESSED OPCODE OP_SUB_F 6074 6103 6104
-    temp = ;
+    temp = SECRET_OPEN_ONCE - (self.spawnflags & SECRET_1ST_LEFT);
     makevectors(self.mangle);
     
     if(!self.t_width)
     {
         if(self.spawnflags & SECRET_1ST_DOWN)
         {
-            // *** UNPROCESSED OPCODE OP_MUL_V 62 6113 6116
-            self.t_width = fabs();
+            self.t_width = fabs(v_up * self.size);
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_MUL_V 65 6118 6121
-            self.t_width = fabs();
+            self.t_width = fabs(v_right * self.size);
         }
         
     }
@@ -1522,8 +1501,7 @@ void() fd_secret_use;
     
     if(!self.t_length)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_V 59 6125 6128
-        self.t_length = fabs();
+        self.t_length = fabs(v_forward * self.size);
     }
     
     if(self.spawnflags & SECRET_1ST_DOWN)
@@ -1532,13 +1510,10 @@ void() fd_secret_use;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 6150 6080 6151
-        // *** UNPROCESSED OPCODE OP_ADD_V 6147 6152 6155
-        self.dest1 = ;
+        self.dest1 = self.origin + (v_right * (self.t_width * temp));
     }
     
-    // *** UNPROCESSED OPCODE OP_ADD_V 6161 6165 6168
-    self.dest2 = ;
+    self.dest2 = self.dest1 + (v_forward * self.t_length);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move1);
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
 };
@@ -1719,9 +1694,8 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () fd_secret_done =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_S 6210 0 6211
     
-    if( || (self.spawnflags & SECRET_YES_SHOOT))
+    if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
         self.health = 10000.000;
         self.takedamage = DAMAGE_YES;
@@ -1791,16 +1765,14 @@ void() secret_touch;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () secret_touch =
 {
-    // *** UNPROCESSED OPCODE OP_NE_S 6226 712 6227
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 6228 31 6229
     
-    if()
+    if(self.attack_finished > time)
     {
         return; /* TODO retvalue? */
     }
@@ -1976,9 +1948,8 @@ void() func_door_secret;
     self.blocked = secret_blocked;
     self.speed = 50.000;
     self.use = fd_secret_use;
-    // *** UNPROCESSED OPCODE OP_NOT_S 6282 0 6283
     
-    if( || (self.spawnflags & SECRET_YES_SHOOT))
+    if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
         self.health = 10000.000;
         self.takedamage = DAMAGE_YES;

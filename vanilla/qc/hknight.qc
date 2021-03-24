@@ -63,18 +63,11 @@ void() hknight_shot;
     local vector org;
     local vector vec;
     offang = vectoangles(self.enemy.origin - self.origin);
-    // *** UNPROCESSED OPCODE OP_MUL_F 10428 314 10448
-    offang_y = offang_y + ;
+    offang_y = offang_y + (offset * TE_LIGHTNING2);
     makevectors(offang);
-    // *** UNPROCESSED OPCODE OP_ADD_V 10450 10453 10456
-    // *** UNPROCESSED OPCODE OP_ADD_V 10456 10462 10465
-    // *** UNPROCESSED OPCODE OP_ADD_V 10465 10468 10471
-    org = ;
+    org = ((self.origin + self.mins) + (self.size * IMMEDIATE)) + (v_forward * 20.000);
     vec = normalize(v_forward);
-    // *** UNPROCESSED OPCODE OP_SUB_F 337 10437 10474
-    // *** UNPROCESSED OPCODE OP_SUB_F 1 1491 10475
-    // *** UNPROCESSED OPCODE OP_MUL_F 10475 603 10476
-    vec_z =  + ;
+    vec_z = (MSG_BROADCAST - vec_z) + ((random() - IMMEDIATE) * 0.100);
     launch_spike(org, vec);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
@@ -130,10 +123,8 @@ void() CheckForCharge;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 10491 10493 10494
-    // *** UNPROCESSED OPCODE OP_GT 1 894 10495
     
-    if()
+    if((fabs(self.origin_z - self.enemy.origin_z)) > 20.000)
     {
         return; /* TODO retvalue? */
     }
@@ -178,17 +169,15 @@ void() CheckContinueCharge;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () CheckContinueCharge =
 {
-    // *** UNPROCESSED OPCODE OP_GT 31 10508 10509
     
-    if()
+    if(time > self.attack_finished)
     {
         SUB_AttackFinished(AS_MELEE);
         hknight_run1();
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 10510
-    if()
+    if(random() > IMMEDIATE)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -1021,8 +1010,7 @@ void() hknight_die;
     }
     
     sound(self, CHAN_VOICE, "hknight/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_GT 1 1491 10585
-    if()
+    if(random() > IMMEDIATE)
     {
         hknight_die1();
     }
@@ -2461,28 +2449,23 @@ void() hknight_pain;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% (entity attacker, float damage) hknight_pain =
 {
-    // *** UNPROCESSED OPCODE OP_GT 10693 31 10694
     
-    if()
+    if(self.pain_finished > time)
     {
         return; /* TODO retvalue? */
     }
     
     sound(self, CHAN_VOICE, "hknight/pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    // *** UNPROCESSED OPCODE OP_SUB_F 31 10695 10696
-    // *** UNPROCESSED OPCODE OP_GT 10696 313 10697
     
-    if()
+    if((time - self.pain_finished) > TE_LIGHTNING1)
     {
         hknight_pain1();
         self.pain_finished = time + SPAWN_CRUCIFIED;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 304 10700
-    // *** UNPROCESSED OPCODE OP_GT 10700 10692 10701
     
-    if()
+    if((random() * SVC_INTERMISSION) > damage)
     {
         return; /* TODO retvalue? */
     }

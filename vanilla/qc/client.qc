@@ -77,16 +77,9 @@ void() info_intermission;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_BITOR 270 271 3950
-    // *** UNPROCESSED OPCODE OP_BITOR 3950 272 3951
-    // *** UNPROCESSED OPCODE OP_BITOR 3951 273 3952
-    // *** UNPROCESSED OPCODE OP_BITOR 3952 274 3953
-    // *** UNPROCESSED OPCODE OP_BITOR 3953 275 3954
-    // *** UNPROCESSED OPCODE OP_SUB_F 3948 3955 3956
-    self.items = ;
-    // *** UNPROCESSED OPCODE OP_GT 3957 1884 3958
+    self.items = self.items - (self.items & (((((IT_KEY1 | IT_KEY2) | IT_INVISIBILITY) | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
     
-    if()
+    if(self.health > 100.000)
     {
         self.health = 100.000;
     }
@@ -113,8 +106,7 @@ void() info_intermission;
     parm6 = self.ammo_rockets;
     parm7 = self.ammo_cells;
     parm8 = self.weapon;
-    // *** UNPROCESSED OPCODE OP_MUL_F 3973 1884 3974
-    parm9 = ;
+    parm9 = self.armortype * 100.000;
 };
 
 float ;
@@ -133,8 +125,7 @@ float ;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () SetNewParms =
 {
-    // *** UNPROCESSED OPCODE OP_BITOR 254 253 3975
-    parm1 = ;
+    parm1 = IT_SHOTGUN | IT_AXE;
     parm2 = 100.000;
     parm3 = MSG_BROADCAST;
     parm4 = 25.000;
@@ -180,9 +171,8 @@ void() DecodeLevelParms;
     
     if(!deathmatch)
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 3978 3763 3979
         
-        if()
+        if(world.model == "maps/start.bsp")
         {
             SetNewParms();
         }
@@ -197,8 +187,7 @@ void() DecodeLevelParms;
     self.ammo_rockets = parm6;
     self.ammo_cells = parm7;
     self.weapon = parm8;
-    // *** UNPROCESSED OPCODE OP_MUL_F 51 2752 3989
-    self.armortype = ;
+    self.armortype = parm9 * 0.010;
 };
 
 float ;
@@ -258,22 +247,18 @@ void() FindIntermission;
     
     if(spot)
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1 2258 3994
-        cyc = ;
-        // *** UNPROCESSED OPCODE OP_GT 3992 2256 3995
+        cyc = random() * WEAPON_SPIKES;
         
-        while()
+        while(cyc > WEAPON_SHOTGUN)
         {
             spot = find(spot, classname, "info_intermission");
-            // *** UNPROCESSED OPCODE OP_NOT_ENT 3991 0 3996
             
-            if()
+            if(!spot)
             {
                 spot = find(spot, classname, "info_intermission");
             }
             
-            // *** UNPROCESSED OPCODE OP_SUB_F 3992 2256 3997
-            cyc = ;
+            cyc = cyc - WEAPON_SHOTGUN;
         }
         
         return; /* TODO retvalue? */
@@ -464,8 +449,7 @@ void() ExitIntermission;
     
     if(intermission_running == WEAPON_ROCKET)
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 4008 3770 4009
-        if()
+        if(world.model == "maps/e1m7.bsp")
         {
             WriteByte(MSG_ALL, SVC_CDTRACK);
             WriteByte(MSG_ALL, WEAPON_ROCKET);
@@ -485,8 +469,7 @@ void() ExitIntermission;
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_EQ_S 4014 3777 4015
-            if()
+            if(world.model == "maps/e2m6.bsp")
             {
                 WriteByte(MSG_ALL, SVC_CDTRACK);
                 WriteByte(MSG_ALL, WEAPON_ROCKET);
@@ -497,8 +480,7 @@ void() ExitIntermission;
             }
             else            
             {
-                // *** UNPROCESSED OPCODE OP_EQ_S 4017 3784 4018
-                if()
+                if(world.model == "maps/e3m6.bsp")
                 {
                     WriteByte(MSG_ALL, SVC_CDTRACK);
                     WriteByte(MSG_ALL, WEAPON_ROCKET);
@@ -509,9 +491,8 @@ void() ExitIntermission;
                 }
                 else                
                 {
-                    // *** UNPROCESSED OPCODE OP_EQ_S 4020 3792 4021
                     
-                    if()
+                    if(world.model == "maps/e4m7.bsp")
                     {
                         WriteByte(MSG_ALL, SVC_CDTRACK);
                         WriteByte(MSG_ALL, WEAPON_ROCKET);
@@ -741,16 +722,14 @@ void() changelevel_touch;
 %%RETURNTYPE%% () changelevel_touch =
 {
     local entity pos;
-    // *** UNPROCESSED OPCODE OP_NE_S 4067 712 4068
     
-    if()
+    if(other.classname != "player")
     {
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_S 34 4072 4073
     
-    if((cvar("noexit") == WEAPON_SHOTGUN) || ((cvar("noexit") == WEAPON_ROCKET) && ))
+    if((cvar("noexit") == WEAPON_SHOTGUN) || ((cvar("noexit") == WEAPON_ROCKET) && (mapname != "start")))
     {
         T_Damage(other, self, self, 50000.000);
         return; /* TODO retvalue? */
@@ -763,7 +742,7 @@ void() changelevel_touch;
         bprint(" exited the level\n");
     }
     
-    // *** UNPROCESSED OPCODE OP_STORE_S 4080 4001 0
+    nextmap = self.map;
     SUB_UseTargets();
     
     if((self.spawnflags & WEAPON_SHOTGUN) && (deathmatch == MSG_BROADCAST))
@@ -792,9 +771,8 @@ void() trigger_changelevel;
 // OP_DONE	0	0	0
 %%RETURNTYPE%% () trigger_changelevel =
 {
-    // *** UNPROCESSED OPCODE OP_NOT_S 4090 0 4091
     
-    if()
+    if(!self.map)
     {
         objerror("changelevel trigger doesn't have map");
     }
@@ -882,8 +860,7 @@ string IMMEDIATE = "restart\n";
     bprint(" suicides\n");
     set_suicide_frame();
     self.modelindex = modelindex_player;
-    // *** UNPROCESSED OPCODE OP_SUB_F 4103 2257 4104
-    self.frags = ;
+    self.frags = self.frags - WEAPON_ROCKET;
     respawn();
 };
 
@@ -993,9 +970,8 @@ void() SelectSpawnPoint;
     if(coop)
     {
         lastspawn = find(lastspawn, classname, "info_player_coop");
-        // *** UNPROCESSED OPCODE OP_EQ_E 3801 30 4114
         
-        if()
+        if(lastspawn == world)
         {
             lastspawn = find(lastspawn, classname, "info_player_start");
         }
@@ -1020,9 +996,8 @@ void() SelectSpawnPoint;
                 
                 if(spot != world)
                 {
-                    // *** UNPROCESSED OPCODE OP_EQ_E 4110 3801 4118
                     
-                    if()
+                    if(spot == lastspawn)
                     {
                         return; /* TODO retvalue? */
                     }
@@ -1032,9 +1007,8 @@ void() SelectSpawnPoint;
                     
                     if(thing)
                     {
-                        // *** UNPROCESSED OPCODE OP_EQ_S 4122 712 4123
                         
-                        if()
+                        if(thing.classname == "player")
                         {
                             pcount = pcount + WEAPON_SHOTGUN;
                         }
@@ -1072,9 +1046,8 @@ if(spot)
 }
 
 spot = find(world, classname, "info_player_start");
-// *** UNPROCESSED OPCODE OP_NOT_ENT 4110 0 4128
 
-if()
+if(!spot)
 {
 error("PutClientInServer: no info_player_start on level");
 }
@@ -1206,9 +1179,8 @@ void() PlayerDie;
     self.th_die = PlayerDie;
     self.deadflag = DEAD_NO;
     self.pausetime = MSG_BROADCAST;
-    // *** UNPROCESSED OPCODE OP_ADD_V 4160 534 4163
-    self.oldorigin = ;
-    self.origin = ;
+    self.oldorigin = spot.origin + '0.000 0.000 1.000';
+    self.origin = spot.origin + '0.000 0.000 1.000';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setmodel(self, "progs/eyes.mdl");
@@ -1223,8 +1195,7 @@ void() PlayerDie;
     if(deathmatch || coop)
     {
         makevectors(self.angles);
-        // *** UNPROCESSED OPCODE OP_ADD_V 4188 4191 4194
-        spawn_tfog();
+        spawn_tfog(self.origin + (v_forward * 20.000));
     }
     
     spawn_tdeath(self.origin, self);
@@ -1340,45 +1311,40 @@ void() NextLevel;
 %%RETURNTYPE%% () NextLevel =
 {
     local entity o;
-    // *** UNPROCESSED OPCODE OP_EQ_S 34 4072 4206
-    if()
+    if(mapname == "start")
     {
         if(!cvar("registered"))
         {
-            // *** UNPROCESSED OPCODE OP_STORE_S 4208 34 0
+            mapname = "e1m1";
         }
         else        
         {
             if(!(serverflags & WEAPON_SHOTGUN))
             {
-                // *** UNPROCESSED OPCODE OP_STORE_S 4208 34 0
-                // *** UNPROCESSED OPCODE OP_BITOR 38 2256 4211
-                serverflags = ;
+                mapname = "e1m1";
+                serverflags = serverflags | WEAPON_SHOTGUN;
             }
             else            
             {
                 if(!(serverflags & WEAPON_ROCKET))
                 {
-                    // *** UNPROCESSED OPCODE OP_STORE_S 4214 34 0
-                    // *** UNPROCESSED OPCODE OP_BITOR 38 2257 4215
-                    serverflags = ;
+                    mapname = "e2m1";
+                    serverflags = serverflags | WEAPON_ROCKET;
                 }
                 else                
                 {
                     if(!(serverflags & WEAPON_SPIKES))
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4218 34 0
-                        // *** UNPROCESSED OPCODE OP_BITOR 38 2258 4219
-                        serverflags = ;
+                        mapname = "e3m1";
+                        serverflags = serverflags | WEAPON_SPIKES;
                     }
                     else                    
                     {
                         
                         if(!(serverflags & WEAPON_BIG))
                         {
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4222 34 0
-                            // *** UNPROCESSED OPCODE OP_SUB_F 38 315 4223
-                            serverflags = ;
+                            mapname = "e4m1";
+                            serverflags = serverflags - TE_WIZSPIKE;
                         }
                         
                     }
@@ -1395,18 +1361,17 @@ void() NextLevel;
     else    
     {
         o = find(world, classname, "trigger_changelevel");
-        // *** UNPROCESSED OPCODE OP_NOT_ENT 4205 0 4226
         
-        if()
+        if(!o)
         {
-            // *** UNPROCESSED OPCODE OP_STORE_S 4072 34 0
+            mapname = "start";
             o = spawn();
             o.map = mapname;
         }
         
     }
     
-    // *** UNPROCESSED OPCODE OP_STORE_S 4228 4001 0
+    nextmap = o.map;
     gameover = TRUE;
     
     if(o.nextthink < time)
@@ -1454,20 +1419,17 @@ void() CheckRules;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_MUL_F 1 912 4238
-    timelimit = ;
+    timelimit = cvar("timelimit") * 60.000;
     fraglimit = cvar("fraglimit");
-    // *** UNPROCESSED OPCODE OP_GE 31 4235 4241
     
-    if((deathmatch && timelimit) && )
+    if((deathmatch && timelimit) && (time >= timelimit))
     {
         NextLevel();
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 4244 4236 4245
     
-    if((deathmatch && fraglimit) && )
+    if((deathmatch && fraglimit) && (self.frags >= fraglimit))
     {
         NextLevel();
         return; /* TODO retvalue? */
@@ -1538,8 +1500,7 @@ void() PlayerDeathThink;
     if(self.flags & FL_ONGROUND)
     {
         forward = vlen(self.velocity);
-        // *** UNPROCESSED OPCODE OP_SUB_F 4249 894 4255
-        forward = ;
+        forward = forward - 20.000;
         if(forward <= MSG_BROADCAST)
         {
             self.velocity = VEC_ORIGIN;
@@ -1547,8 +1508,7 @@ void() PlayerDeathThink;
         else        
         {
             normalize(self.velocity);
-            // *** UNPROCESSED OPCODE OP_MUL_FV 4249 1 4266
-            self.velocity = ;
+            self.velocity = forward * vlen(self.velocity);
         }
         
     }
@@ -1669,9 +1629,8 @@ void() PlayerJump;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 4297 2257 4298
     
-    if()
+    if(self.waterlevel >= WEAPON_ROCKET)
     {
         if(self.watertype == CONTENT_WATER)
         {
@@ -1720,10 +1679,8 @@ void() PlayerJump;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_SUB_F 4318 4320 4321
-    self.flags = ;
-    // *** UNPROCESSED OPCODE OP_SUB_F 4323 223 4324
-    self.flags = ;
+    self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
+    self.flags = self.flags - FL_ONGROUND;
     self.button2 = MSG_BROADCAST;
     sound(self, CHAN_BODY, "player/plyrjmp8.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.velocity_z = self.velocity_z + 270.000;
@@ -1920,8 +1877,7 @@ void() WaterMove;
         return; /* TODO retvalue? */
     }
     
-    // *** UNPROCESSED OPCODE OP_NE_F 4336 370 4337
-    if()
+    if(self.waterlevel != AS_MELEE)
     {
         if(self.air_finished < time)
         {
@@ -1949,9 +1905,8 @@ void() WaterMove;
             if(self.pain_finished < time)
             {
                 self.dmg = self.dmg + WEAPON_ROCKET;
-                // *** UNPROCESSED OPCODE OP_GT 4353 1876 4354
                 
-                if()
+                if(self.dmg > 15.000)
                 {
                     self.dmg = TE_LAVASPLASH;
                 }
@@ -1971,8 +1926,7 @@ void() WaterMove;
         if(self.flags & FL_INWATER)
         {
             sound(self, CHAN_BODY, "misc/outwater.wav", WEAPON_SHOTGUN, ATTN_NORM);
-            // *** UNPROCESSED OPCODE OP_SUB_F 4364 218 4365
-            self.flags = ;
+            self.flags = self.flags - FL_INWATER;
         }
         
         return; /* TODO retvalue? */
@@ -1983,8 +1937,7 @@ void() WaterMove;
         
         if(self.dmgtime < time)
         {
-            // *** UNPROCESSED OPCODE OP_GT 4370 31 4371
-            if()
+            if(self.radsuit_finished > time)
             {
                 self.dmgtime = time + WEAPON_SHOTGUN;
             }
@@ -1993,8 +1946,7 @@ void() WaterMove;
                 self.dmgtime = time + 0.200;
             }
             
-            // *** UNPROCESSED OPCODE OP_MUL_F 318 4376 4377
-            T_Damage(self, world, world, );
+            T_Damage(self, world, world, TE_LAVASPLASH * self.waterlevel);
         }
         
     }
@@ -2007,8 +1959,7 @@ void() WaterMove;
             if((self.dmgtime < time) && (self.radsuit_finished < time))
             {
                 self.dmgtime = time + WEAPON_SHOTGUN;
-                // *** UNPROCESSED OPCODE OP_MUL_F 2258 4387 4388
-                T_Damage(self, world, world, );
+                T_Damage(self, world, world, WEAPON_SPIKES * self.waterlevel);
             }
             
         }
@@ -2043,10 +1994,7 @@ void() WaterMove;
     
     if(!(self.flags & FL_WATERJUMP))
     {
-        // *** UNPROCESSED OPCODE OP_MUL_F 1964 4411 4412
-        // *** UNPROCESSED OPCODE OP_MUL_F 4412 32 4413
-        // *** UNPROCESSED OPCODE OP_MUL_FV 4413 4414 4417
-        self.velocity = self.velocity - ;
+        self.velocity = self.velocity - (((0.800 * self.waterlevel) * frametime) * self.velocity);
     }
     
 };
@@ -2118,26 +2066,21 @@ void() CheckWaterJump;
     start_z = start_z + WEAPON_BIG;
     v_forward_z = MSG_BROADCAST;
     normalize(v_forward);
-    // *** UNPROCESSED OPCODE OP_ADD_V 4424 4438 4441
-    end = ;
+    end = start + (v_forward * 24.000);
     traceline(start, end, TRUE, self);
     
     if(trace_fraction < WEAPON_SHOTGUN)
     {
-        // *** UNPROCESSED OPCODE OP_SUB_F 4446 2259 4447
-        start_z = ;
-        // *** UNPROCESSED OPCODE OP_ADD_V 4424 4448 4451
-        end = ;
+        start_z = (start_z + self.maxs_z) - WEAPON_BIG;
+        end = start + (v_forward * 24.000);
         self.movedir = trace_plane_normal * -50.000;
         traceline(start, end, TRUE, self);
         
         if(trace_fraction == WEAPON_SHOTGUN)
         {
-            // *** UNPROCESSED OPCODE OP_BITOR 4463 225 4464
-            self.flags = ;
+            self.flags = self.flags | FL_WATERJUMP;
             self.velocity_z = IMMEDIATE;
-            // *** UNPROCESSED OPCODE OP_SUB_F 4467 4469 4470
-            self.flags = ;
+            self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
             self.teleport_time = time + WEAPON_ROCKET;
             return; /* TODO retvalue? */
         }
@@ -2228,9 +2171,8 @@ float ;
         CheckWaterJump();
     }
     
-    // *** UNPROCESSED OPCODE OP_GE 4485 248 4486
     
-    if()
+    if(self.deadflag >= DEAD_DEAD)
     {
         PlayerDeathThink();
         return; /* TODO retvalue? */
@@ -2248,8 +2190,7 @@ float ;
     }
     else    
     {
-        // *** UNPROCESSED OPCODE OP_BITOR 4491 226 4492
-        self.flags = ;
+        self.flags = self.flags | FL_JUMPRELEASED;
     }
     
     
@@ -2258,10 +2199,8 @@ float ;
         self.velocity = VEC_ORIGIN;
     }
     
-    // *** UNPROCESSED OPCODE OP_GT 31 4498 4499
-    // *** UNPROCESSED OPCODE OP_NE_F 4503 253 4504
     
-    if(( && (self.currentammo == MSG_BROADCAST)) && )
+    if(((time > self.attack_finished) && (self.currentammo == MSG_BROADCAST)) && (self.weapon != IT_AXE))
     {
         self.weapon = W_BestWeapon();
         W_SetCurrentAmmo();
@@ -2521,8 +2460,7 @@ void() CheckPowerups;
         if(self.invisible_sound < time)
         {
             sound(self, CHAN_AUTO, "items/inv3.wav", IMMEDIATE, ATTN_IDLE);
-            // *** UNPROCESSED OPCODE OP_MUL_F 1 370 4514
-            self.invisible_sound = time + ( + WEAPON_SHOTGUN);
+            self.invisible_sound = time + ((random() * AS_MELEE) + WEAPON_SHOTGUN);
         }
         
         
@@ -2549,8 +2487,7 @@ void() CheckPowerups;
         
         if(self.invisible_finished < time)
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4532 272 4533
-            self.items = ;
+            self.items = self.items - IT_INVISIBILITY;
             self.invisible_finished = MSG_BROADCAST;
             self.invisible_time = MSG_BROADCAST;
         }
@@ -2590,22 +2527,18 @@ void() CheckPowerups;
         
         if(self.invincible_finished < time)
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4555 273 4556
-            self.items = ;
+            self.items = self.items - IT_INVULNERABILITY;
             self.invincible_time = MSG_BROADCAST;
             self.invincible_finished = MSG_BROADCAST;
         }
         
-        // *** UNPROCESSED OPCODE OP_GT 4559 31 4560
-        if()
+        if(self.invincible_finished > time)
         {
-            // *** UNPROCESSED OPCODE OP_BITOR 4562 336 4563
-            self.effects = ;
+            self.effects = self.effects | EF_DIMLIGHT;
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4565 4567 4568
-            self.effects = ;
+            self.effects = self.effects - (self.effects & EF_DIMLIGHT);
         }
         
     }
@@ -2637,22 +2570,18 @@ void() CheckPowerups;
         
         if(self.super_damage_finished < time)
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4585 275 4586
-            self.items = ;
+            self.items = self.items - IT_QUAD;
             self.super_damage_finished = MSG_BROADCAST;
             self.super_time = MSG_BROADCAST;
         }
         
-        // *** UNPROCESSED OPCODE OP_GT 4589 31 4590
-        if()
+        if(self.super_damage_finished > time)
         {
-            // *** UNPROCESSED OPCODE OP_BITOR 4592 336 4593
-            self.effects = ;
+            self.effects = self.effects | EF_DIMLIGHT;
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4595 4597 4598
-            self.effects = ;
+            self.effects = self.effects - (self.effects & EF_DIMLIGHT);
         }
         
     }
@@ -2685,8 +2614,7 @@ void() CheckPowerups;
         
         if(self.radsuit_finished < time)
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4617 274 4618
-            self.items = ;
+            self.items = self.items - IT_SUIT;
             self.rad_time = MSG_BROADCAST;
             self.radsuit_finished = MSG_BROADCAST;
         }
@@ -2777,9 +2705,8 @@ void() CheckPowerups;
     }
     
     W_WeaponFrame();
-    // *** UNPROCESSED OPCODE OP_GT 4635 337 4636
     
-    if(((self.jump_flag < -300.000) && (self.flags & FL_ONGROUND)) && )
+    if(((self.jump_flag < -300.000) && (self.flags & FL_ONGROUND)) && (self.health > MSG_BROADCAST))
     {
         if(self.watertype == CONTENT_WATER)
         {
@@ -3235,13 +3162,11 @@ string IMMEDIATE = " frags\n";
     local string deathstring;
     local string deathstring2;
     rnum = random();
-    // *** UNPROCESSED OPCODE OP_EQ_S 4662 712 4663
     
-    if()
+    if(targ.classname == "player")
     {
-        // *** UNPROCESSED OPCODE OP_EQ_S 4664 4665 4666
         
-        if()
+        if(attacker.classname == "teledeath")
         {
             bprint(targ.netname);
             bprint(" was telefragged by ");
@@ -3251,30 +3176,24 @@ string IMMEDIATE = " frags\n";
             return; /* TODO retvalue? */
         }
         
-        // *** UNPROCESSED OPCODE OP_EQ_S 4676 4677 4678
         
-        if()
+        if(attacker.classname == "teledeath2")
         {
             bprint("Satan's power deflects ");
             bprint(targ.netname);
             bprint("'s telefrag\n");
-            // *** UNPROCESSED OPCODE OP_SUB_F 4683 2256 4684
-            targ.frags = ;
+            targ.frags = targ.frags - WEAPON_SHOTGUN;
             return; /* TODO retvalue? */
         }
         
-        // *** UNPROCESSED OPCODE OP_EQ_S 4685 712 4686
-        if()
+        if(attacker.classname == "player")
         {
-            // *** UNPROCESSED OPCODE OP_EQ_E 4657 4658 4687
-            if()
+            if(targ == attacker)
             {
-                // *** UNPROCESSED OPCODE OP_SUB_F 4689 2256 4690
-                attacker.frags = ;
+                attacker.frags = attacker.frags - WEAPON_SHOTGUN;
                 bprint(targ.netname);
-                // *** UNPROCESSED OPCODE OP_GT 4694 2256 4695
                 
-                if((targ.weapon == IT_LIGHTNING) && )
+                if((targ.weapon == IT_LIGHTNING) && (targ.waterlevel > WEAPON_SHOTGUN))
                 {
                     bprint(" discharges into the water.\n");
                     return; /* TODO retvalue? */
@@ -3293,30 +3212,28 @@ string IMMEDIATE = " frags\n";
             }
             else            
             {
-                // *** UNPROCESSED OPCODE OP_GT 4703 337 4704
-                if(((teamplay == WEAPON_ROCKET) && ) && (targ.team == attacker.team))
+                if(((teamplay == WEAPON_ROCKET) && (targ.team > MSG_BROADCAST)) && (targ.team == attacker.team))
                 {
                     if(rnum < 0.250)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4711 4660 0
+                        deathstring = " mows down a teammate\n";
                     }
                     else if(rnum < IMMEDIATE)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4713 4660 0
+                        deathstring = " checks his glasses\n";
                     }
                     else if(rnum < 0.750)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4715 4660 0
+                        deathstring = " gets a frag for the other team\n";
                     }
                     else                    
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4716 4660 0
+                        deathstring = " loses another friend\n";
                     }
                     
                     bprint(attacker.netname);
                     bprint(deathstring);
-                    // *** UNPROCESSED OPCODE OP_SUB_F 4719 2256 4720
-                    attacker.frags = ;
+                    attacker.frags = attacker.frags - WEAPON_SHOTGUN;
                     return; /* TODO retvalue? */
                 }
                 else                
@@ -3326,48 +3243,48 @@ string IMMEDIATE = " frags\n";
                     
                     if(rnum == IT_AXE)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4726 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 1814 4661 0
+                        deathstring = " was ax-murdered by ";
+                        deathstring2 = "\n";
                     }
                     
                     
                     if(rnum == IT_SHOTGUN)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4728 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4729 4661 0
+                        deathstring = " chewed on ";
+                        deathstring2 = "'s boomstick\n";
                     }
                     
                     
                     if(rnum == IT_SUPER_SHOTGUN)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4731 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4732 4661 0
+                        deathstring = " ate 2 loads of ";
+                        deathstring2 = "'s buckshot\n";
                     }
                     
                     
                     if(rnum == IT_NAILGUN)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4734 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 1814 4661 0
+                        deathstring = " was nailed by ";
+                        deathstring2 = "\n";
                     }
                     
                     
                     if(rnum == IT_SUPER_NAILGUN)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4736 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 1814 4661 0
+                        deathstring = " was punctured by ";
+                        deathstring2 = "\n";
                     }
                     
                     
                     if(rnum == IT_GRENADE_LAUNCHER)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4738 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4739 4661 0
+                        deathstring = " eats ";
+                        deathstring2 = "'s pineapple\n";
                         
                         if(targ.health < -40.000)
                         {
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4743 4660 0
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4744 4661 0
+                            deathstring = " was gibbed by ";
+                            deathstring2 = "'s grenade\n";
                         }
                         
                     }
@@ -3375,13 +3292,13 @@ string IMMEDIATE = " frags\n";
                     
                     if(rnum == IT_ROCKET_LAUNCHER)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4746 4660 0
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4747 4661 0
+                        deathstring = " rides ";
+                        deathstring2 = "'s rocket\n";
                         
                         if(targ.health < -40.000)
                         {
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4743 4660 0
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4747 4661 0
+                            deathstring = " was gibbed by ";
+                            deathstring2 = "'s rocket\n";
                         }
                         
                     }
@@ -3389,15 +3306,14 @@ string IMMEDIATE = " frags\n";
                     
                     if(rnum == IT_LIGHTNING)
                     {
-                        // *** UNPROCESSED OPCODE OP_STORE_S 4751 4660 0
-                        // *** UNPROCESSED OPCODE OP_GT 4752 2256 4753
-                        if()
+                        deathstring = " accepts ";
+                        if(attacker.waterlevel > WEAPON_SHOTGUN)
                         {
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4754 4661 0
+                            deathstring2 = "'s discharge\n";
                         }
                         else                        
                         {
-                            // *** UNPROCESSED OPCODE OP_STORE_S 4755 4661 0
+                            deathstring2 = "'s shaft\n";
                         }
                         
                     }
@@ -3414,120 +3330,103 @@ string IMMEDIATE = " frags\n";
         }
         else        
         {
-            // *** UNPROCESSED OPCODE OP_SUB_F 4759 2256 4760
-            targ.frags = ;
+            targ.frags = targ.frags - WEAPON_SHOTGUN;
             bprint(targ.netname);
             
             if(attacker.flags & FL_MONSTER)
             {
-                // *** UNPROCESSED OPCODE OP_EQ_S 4764 1286 4765
                 
-                if()
+                if(attacker.classname == "monster_army")
                 {
                     bprint(" was shot by a Grunt\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4767 1247 4768
                 
-                if()
+                if(attacker.classname == "monster_demon1")
                 {
                     bprint(" was eviscerated by a Fiend\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4770 1259 4771
                 
-                if()
+                if(attacker.classname == "monster_dog")
                 {
                     bprint(" was mauled by a Rottweiler\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4773 1357 4774
                 
-                if()
+                if(attacker.classname == "monster_dragon")
                 {
                     bprint(" was fried by a Dragon\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4776 1275 4777
                 
-                if()
+                if(attacker.classname == "monster_enforcer")
                 {
                     bprint(" was blasted by an Enforcer\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4779 4780 4781
                 
-                if()
+                if(attacker.classname == "monster_fish")
                 {
                     bprint(" was fed to the Rotfish\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4783 1263 4784
                 
-                if()
+                if(attacker.classname == "monster_hell_knight")
                 {
                     bprint(" was slain by a Death Knight\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4786 823 4787
                 
-                if()
+                if(attacker.classname == "monster_knight")
                 {
                     bprint(" was slashed by a Knight\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4789 1112 4790
                 
-                if()
+                if(attacker.classname == "monster_ogre")
                 {
                     bprint(" was destroyed by an Ogre\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4792 4793 4794
                 
-                if()
+                if(attacker.classname == "monster_oldone")
                 {
                     bprint(" became one with Shub-Niggurath\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4796 1290 4797
                 
-                if()
+                if(attacker.classname == "monster_shalrath")
                 {
                     bprint(" was exploded by a Vore\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4799 1243 4800
                 
-                if()
+                if(attacker.classname == "monster_shambler")
                 {
                     bprint(" was smashed by a Shambler\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4802 1267 4803
                 
-                if()
+                if(attacker.classname == "monster_tarbaby")
                 {
                     bprint(" was slimed by a Spawn\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4805 1271 4806
                 
-                if()
+                if(attacker.classname == "monster_vomit")
                 {
                     bprint(" was vomited on by a Vomitus\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4808 1251 4809
                 
-                if()
+                if(attacker.classname == "monster_wizard")
                 {
                     bprint(" was scragged by a Scrag\n");
                 }
                 
-                // *** UNPROCESSED OPCODE OP_EQ_S 4811 1255 4812
                 
-                if()
+                if(attacker.classname == "monster_zombie")
                 {
                     bprint(" joins the Zombies\n");
                 }
@@ -3535,9 +3434,8 @@ string IMMEDIATE = " frags\n";
                 return; /* TODO retvalue? */
             }
             
-            // *** UNPROCESSED OPCODE OP_EQ_S 4814 4815 4816
             
-            if()
+            if(attacker.classname == "explo_box")
             {
                 bprint(" blew up\n");
                 return; /* TODO retvalue? */
@@ -3550,26 +3448,22 @@ string IMMEDIATE = " frags\n";
                 return; /* TODO retvalue? */
             }
             
-            // *** UNPROCESSED OPCODE OP_EQ_S 4823 4824 4825
-            // *** UNPROCESSED OPCODE OP_EQ_S 4826 4827 4828
             
-            if( || )
+            if((attacker.classname == "trap_shooter") || (attacker.classname == "trap_spikeshooter"))
             {
                 bprint(" was spiked\n");
                 return; /* TODO retvalue? */
             }
             
-            // *** UNPROCESSED OPCODE OP_EQ_S 4831 4832 4833
             
-            if()
+            if(attacker.classname == "fireball")
             {
                 bprint(" ate a lavaball\n");
                 return; /* TODO retvalue? */
             }
             
-            // *** UNPROCESSED OPCODE OP_EQ_S 4835 4225 4836
             
-            if()
+            if(attacker.classname == "trigger_changelevel")
             {
                 bprint(" tried to leave\n");
                 return; /* TODO retvalue? */
@@ -3624,9 +3518,8 @@ string IMMEDIATE = " frags\n";
                 return; /* TODO retvalue? */
             }
             
-            // *** UNPROCESSED OPCODE OP_EQ_S 4855 4644 4856
             
-            if()
+            if(targ.deathtype == "falling")
             {
                 targ.deathtype = "";
                 bprint(" fell to his death\n");
