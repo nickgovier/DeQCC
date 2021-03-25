@@ -213,7 +213,11 @@ namespace DeQcc
             {
                 if (IntVal > 0)
                 {
-                    return functions[(int)IntVal].name;
+                    if (Type == Types.ev_function)
+                    {
+                        return functions[(int)IntVal].name;
+                    }
+                    return null;
                 }
                 else
                 {
@@ -226,7 +230,11 @@ namespace DeQcc
         {
             get
             {
-                return functions[(int)IntVal].declaration;
+                if (Type == Types.ev_function)
+                {
+                    return functions[(int)IntVal].declaration;
+                }
+                return null;
             }
         }
 
