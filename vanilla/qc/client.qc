@@ -7,14 +7,14 @@ float modelindex_player;
 float intermission_running;
 float intermission_exittime;
 // info_intermission
-// function begins at statement 5596
+// function begins at statement 5596, parm_start=3945
 // OP_DONE	0	0	0
 void () info_intermission =
 {
 };
 
 // SetChangeParms
-// function begins at statement 5597
+// function begins at statement 5597, parm_start=3945
 // OP_LOAD_F	28	152	3945
 // OP_LE	3945	337	3946
 // OP_IFNOT	3946	3	0
@@ -108,7 +108,7 @@ void () SetChangeParms =
 };
 
 // SetNewParms
-// function begins at statement 5648
+// function begins at statement 5648, parm_start=3975
 // OP_BITOR	254	253	3975
 // OP_STORE_F	3975	43	0
 // OP_STORE_F	1884	44	0
@@ -134,7 +134,7 @@ void () SetNewParms =
 };
 
 // DecodeLevelParms
-// function begins at statement 5659
+// function begins at statement 5659, parm_start=3977
 // OP_NOT_F	35	0	3977
 // OP_IFNOT	3977	5	0
 // OP_LOAD_S	30	130	3978
@@ -186,7 +186,7 @@ void () DecodeLevelParms =
 };
 
 // FindIntermission
-// function begins at statement 5685
+// function begins at statement 5685, parm_start=3991
 // OP_STORE_V	30	4	0
 // OP_STORE_V	129	7	0
 // OP_STORE_V	3993	10	0
@@ -277,7 +277,7 @@ entity () FindIntermission =
 
 string nextmap;
 // GotoNextMap
-// function begins at statement 5730
+// function begins at statement 5730, parm_start=4003
 // OP_STORE_V	4003	4	0
 // OP_CALL1	487	0	0
 // OP_IFNOT	1	4	0
@@ -301,7 +301,7 @@ void () GotoNextMap =
 };
 
 // ExitIntermission
-// function begins at statement 5739
+// function begins at statement 5739, parm_start=4005
 // OP_IFNOT	35	3	0
 // OP_CALL0	4002	0	0
 // OP_RETURN	0	0	0
@@ -524,7 +524,7 @@ void () ExitIntermission =
 };
 
 // IntermissionThink
-// function begins at statement 5861
+// function begins at statement 5861, parm_start=4029
 // OP_LT	31	3943	4029
 // OP_IFNOT	4029	2	0
 // OP_RETURN	0	0	0
@@ -558,7 +558,7 @@ void () IntermissionThink =
 };
 
 // execute_changelevel
-// function begins at statement 5876
+// function begins at statement 5876, parm_start=4039
 // OP_STORE_F	2256	3942	0
 // OP_IFNOT	35	4	0
 // OP_ADD_F	31	313	4040
@@ -656,7 +656,7 @@ void () execute_changelevel =
 };
 
 // changelevel_touch
-// function begins at statement 5935
+// function begins at statement 5935, parm_start=4066
 // OP_LOAD_S	29	129	4067
 // OP_NE_S	4067	712	4068
 // OP_IFNOT	4068	2	0
@@ -740,7 +740,7 @@ void () changelevel_touch =
 };
 
 // trigger_changelevel
-// function begins at statement 5980
+// function begins at statement 5980, parm_start=4090
 // OP_LOAD_S	28	351	4090
 // OP_NOT_S	4090	0	4091
 // OP_IFNOT	4091	3	0
@@ -764,7 +764,7 @@ void () trigger_changelevel =
 
 void () set_suicide_frame;
 // respawn
-// function begins at statement 5989
+// function begins at statement 5989, parm_start=4096
 // OP_IFNOT	36	7	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	3901	0	0
@@ -807,7 +807,7 @@ void () respawn =
 };
 
 // ClientKill
-// function begins at statement 6005
+// function begins at statement 6005, parm_start=4097
 // OP_OR	36	35	4097
 // OP_AND	3942	4097	4098
 // OP_IFNOT	4098	2	0
@@ -843,7 +843,7 @@ void () ClientKill =
 };
 
 // CheckSpawnPoint
-// function begins at statement 6023
+// function begins at statement 6023, parm_start=4106
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
 float (vector v) CheckSpawnPoint =
@@ -853,7 +853,7 @@ float (vector v) CheckSpawnPoint =
 
 vector v;
 // SelectSpawnPoint
-// function begins at statement 6025
+// function begins at statement 6025, parm_start=4110
 // OP_STORE_V	30	4	0
 // OP_STORE_V	129	7	0
 // OP_STORE_V	3999	10	0
@@ -1033,7 +1033,7 @@ return spot;
 /* ERROR INDENTATION */
 void () PlayerDie;
 // PutClientInServer
-// function begins at statement 6101
+// function begins at statement 6101, parm_start=4131
 // OP_CALL0	4109	0	0
 // OP_STORE_ENT	1	4131	0
 // OP_ADDRESS	28	129	4132
@@ -1176,42 +1176,42 @@ void () PutClientInServer =
 };
 
 // info_player_start
-// function begins at statement 6193
+// function begins at statement 6193, parm_start=4200
 // OP_DONE	0	0	0
 void () info_player_start =
 {
 };
 
 // info_player_start2
-// function begins at statement 6194
+// function begins at statement 6194, parm_start=4201
 // OP_DONE	0	0	0
 void () info_player_start2 =
 {
 };
 
 // testplayerstart
-// function begins at statement 6195
+// function begins at statement 6195, parm_start=4202
 // OP_DONE	0	0	0
 void () testplayerstart =
 {
 };
 
 // info_player_deathmatch
-// function begins at statement 6196
+// function begins at statement 6196, parm_start=4203
 // OP_DONE	0	0	0
 void () info_player_deathmatch =
 {
 };
 
 // info_player_coop
-// function begins at statement 6197
+// function begins at statement 6197, parm_start=4204
 // OP_DONE	0	0	0
 void () info_player_coop =
 {
 };
 
 // NextLevel
-// function begins at statement 6198
+// function begins at statement 6198, parm_start=4205
 // OP_EQ_S	34	4072	4206
 // OP_IFNOT	4206	39	0
 // OP_STORE_V	4010	4	0
@@ -1351,7 +1351,7 @@ void () NextLevel =
 };
 
 // CheckRules
-// function begins at statement 6262
+// function begins at statement 6262, parm_start=4235
 // OP_IFNOT	342	2	0
 // OP_RETURN	0	0	0
 // OP_STORE_V	4237	4	0
@@ -1404,7 +1404,7 @@ void () CheckRules =
 };
 
 // PlayerDeathThink
-// function begins at statement 6285
+// function begins at statement 6285, parm_start=4248
 // OP_LOAD_F	28	182	4250
 // OP_BITAND	4250	223	4251
 // OP_IFNOT	4251	18	0
@@ -1503,7 +1503,7 @@ void () PlayerDeathThink =
 };
 
 // PlayerJump
-// function begins at statement 6336
+// function begins at statement 6336, parm_start=4289
 // OP_LOAD_F	28	182	4295
 // OP_BITAND	4295	225	4296
 // OP_IFNOT	4296	2	0
@@ -1650,7 +1650,7 @@ void () PlayerJump =
 
 .float dmgtime;
 // WaterMove
-// function begins at statement 6413
+// function begins at statement 6413, parm_start=4332
 // OP_LOAD_F	28	103	4332
 // OP_EQ_F	4332	233	4333
 // OP_IFNOT	4333	2	0
@@ -1960,7 +1960,7 @@ void () WaterMove =
 };
 
 // CheckWaterJump
-// function begins at statement 6585
+// function begins at statement 6585, parm_start=4424
 // OP_LOAD_V	28	117	4430
 // OP_STORE_V	4430	4	0
 // OP_CALL1	447	0	0
@@ -2037,7 +2037,7 @@ void () CheckWaterJump =
         if(trace_fraction == WEAPON_SHOTGUN)
         {
             self.flags = self.flags | FL_WATERJUMP;
-            self.velocity_z = 225.000;
+            self.velocity_z = IMMEDIATE;
             self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
             self.teleport_time = time + WEAPON_ROCKET;
             return;
@@ -2048,7 +2048,7 @@ void () CheckWaterJump =
 };
 
 // PlayerPreThink
-// function begins at statement 6639
+// function begins at statement 6639, parm_start=4473
 // OP_IFNOT	3942	3	0
 // OP_CALL0	4028	0	0
 // OP_RETURN	0	0	0
@@ -2166,7 +2166,7 @@ void () PlayerPreThink =
 };
 
 // CheckPowerups
-// function begins at statement 6691
+// function begins at statement 6691, parm_start=4508
 // OP_LOAD_F	28	152	4508
 // OP_LE	4508	337	4509
 // OP_IFNOT	4509	2	0
@@ -2579,7 +2579,7 @@ void () CheckPowerups =
 };
 
 // PlayerPostThink
-// function begins at statement 6925
+// function begins at statement 6925, parm_start=4621
 // OP_LOAD_V	28	166	4624
 // OP_EQ_V	4624	286	4627
 // OP_IFNOT	4627	2	0
@@ -2694,7 +2694,7 @@ void () PlayerPostThink =
 };
 
 // ClientConnect
-// function begins at statement 6986
+// function begins at statement 6986, parm_start=4651
 // OP_LOAD_S	28	180	4651
 // OP_STORE_V	4651	4	0
 // OP_CALL1	468	0	0
@@ -2716,7 +2716,7 @@ void () ClientConnect =
 };
 
 // ClientDisconnect
-// function begins at statement 6994
+// function begins at statement 6994, parm_start=4653
 // OP_IFNOT	342	2	0
 // OP_RETURN	0	0	0
 // OP_LOAD_S	28	180	4653
@@ -2756,7 +2756,7 @@ void () ClientDisconnect =
 };
 
 // ClientObituary
-// function begins at statement 7016
+// function begins at statement 7016, parm_start=4657
 // OP_CALL0	452	0	0
 // OP_STORE_F	1	4659	0
 // OP_LOAD_S	4657	129	4662

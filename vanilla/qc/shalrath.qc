@@ -1,7 +1,7 @@
 void () shalrath_pain;
 void () ShalMissile;
 // shal_stand
-// function begins at statement 19491
+// function begins at statement 19491, parm_start=10867
 // OP_STATE	301	10866	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -12,7 +12,7 @@ void () shal_stand =
 };
 
 // shal_walk1
-// function begins at statement 19494
+// function begins at statement 19494, parm_start=10868
 // OP_STATE	4437	10868	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	10869
@@ -39,7 +39,7 @@ void () shal_walk1 =
 };
 
 // shal_walk2
-// function begins at statement 19507
+// function begins at statement 19507, parm_start=10871
 // OP_STATE	1890	10871	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -51,7 +51,7 @@ void () shal_walk2 =
 };
 
 // shal_walk3
-// function begins at statement 19511
+// function begins at statement 19511, parm_start=10872
 // OP_STATE	7788	10872	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
@@ -63,7 +63,7 @@ void () shal_walk3 =
 };
 
 // shal_walk4
-// function begins at statement 19515
+// function begins at statement 19515, parm_start=10873
 // OP_STATE	302	10873	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
@@ -75,7 +75,7 @@ void () shal_walk4 =
 };
 
 // shal_walk5
-// function begins at statement 19519
+// function begins at statement 19519, parm_start=10874
 // OP_STATE	303	10874	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
@@ -87,7 +87,7 @@ void () shal_walk5 =
 };
 
 // shal_walk6
-// function begins at statement 19523
+// function begins at statement 19523, parm_start=10875
 // OP_STATE	5105	10875	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
@@ -99,7 +99,7 @@ void () shal_walk6 =
 };
 
 // shal_walk7
-// function begins at statement 19527
+// function begins at statement 19527, parm_start=10876
 // OP_STATE	304	10876	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
@@ -111,7 +111,7 @@ void () shal_walk7 =
 };
 
 // shal_walk8
-// function begins at statement 19531
+// function begins at statement 19531, parm_start=10877
 // OP_STATE	305	10877	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
@@ -123,7 +123,7 @@ void () shal_walk8 =
 };
 
 // shal_walk9
-// function begins at statement 19535
+// function begins at statement 19535, parm_start=10878
 // OP_STATE	5674	10878	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
@@ -135,7 +135,7 @@ void () shal_walk9 =
 };
 
 // shal_walk10
-// function begins at statement 19539
+// function begins at statement 19539, parm_start=10879
 // OP_STATE	307	10879	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
@@ -147,7 +147,7 @@ void () shal_walk10 =
 };
 
 // shal_walk11
-// function begins at statement 19543
+// function begins at statement 19543, parm_start=10880
 // OP_STATE	5112	10880	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -159,7 +159,7 @@ void () shal_walk11 =
 };
 
 // shal_walk12
-// function begins at statement 19547
+// function begins at statement 19547, parm_start=10881
 // OP_STATE	301	10867	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
@@ -171,7 +171,7 @@ void () shal_walk12 =
 };
 
 // shal_run1
-// function begins at statement 19551
+// function begins at statement 19551, parm_start=10882
 // OP_STATE	4437	10882	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	10883
@@ -198,7 +198,7 @@ void () shal_run1 =
 };
 
 // shal_run2
-// function begins at statement 19564
+// function begins at statement 19564, parm_start=10884
 // OP_STATE	1890	10884	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
@@ -210,7 +210,7 @@ void () shal_run2 =
 };
 
 // shal_run3
-// function begins at statement 19568
+// function begins at statement 19568, parm_start=10885
 // OP_STATE	7788	10885	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
@@ -222,7 +222,7 @@ void () shal_run3 =
 };
 
 // shal_run4
-// function begins at statement 19572
+// function begins at statement 19572, parm_start=10886
 // OP_STATE	302	10886	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
@@ -234,7 +234,7 @@ void () shal_run4 =
 };
 
 // shal_run5
-// function begins at statement 19576
+// function begins at statement 19576, parm_start=10887
 // OP_STATE	303	10887	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
@@ -246,7 +246,7 @@ void () shal_run5 =
 };
 
 // shal_run6
-// function begins at statement 19580
+// function begins at statement 19580, parm_start=10888
 // OP_STATE	5105	10888	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
@@ -258,7 +258,7 @@ void () shal_run6 =
 };
 
 // shal_run7
-// function begins at statement 19584
+// function begins at statement 19584, parm_start=10889
 // OP_STATE	304	10889	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
@@ -270,7 +270,7 @@ void () shal_run7 =
 };
 
 // shal_run8
-// function begins at statement 19588
+// function begins at statement 19588, parm_start=10890
 // OP_STATE	305	10890	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1432	0	0
@@ -282,7 +282,7 @@ void () shal_run8 =
 };
 
 // shal_run9
-// function begins at statement 19592
+// function begins at statement 19592, parm_start=10891
 // OP_STATE	5674	10891	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
@@ -294,7 +294,7 @@ void () shal_run9 =
 };
 
 // shal_run10
-// function begins at statement 19596
+// function begins at statement 19596, parm_start=10892
 // OP_STATE	307	10892	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
@@ -306,7 +306,7 @@ void () shal_run10 =
 };
 
 // shal_run11
-// function begins at statement 19600
+// function begins at statement 19600, parm_start=10893
 // OP_STATE	5112	10893	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
@@ -318,7 +318,7 @@ void () shal_run11 =
 };
 
 // shal_run12
-// function begins at statement 19604
+// function begins at statement 19604, parm_start=10894
 // OP_STATE	301	10881	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
@@ -330,7 +330,7 @@ void () shal_run12 =
 };
 
 // shal_attack1
-// function begins at statement 19608
+// function begins at statement 19608, parm_start=10895
 // OP_STATE	337	10895	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -348,7 +348,7 @@ void () shal_attack1 =
 };
 
 // shal_attack2
-// function begins at statement 19617
+// function begins at statement 19617, parm_start=10897
 // OP_STATE	9491	10897	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -359,7 +359,7 @@ void () shal_attack2 =
 };
 
 // shal_attack3
-// function begins at statement 19620
+// function begins at statement 19620, parm_start=10898
 // OP_STATE	7369	10898	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -370,7 +370,7 @@ void () shal_attack3 =
 };
 
 // shal_attack4
-// function begins at statement 19623
+// function begins at statement 19623, parm_start=10899
 // OP_STATE	370	10899	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -381,7 +381,7 @@ void () shal_attack4 =
 };
 
 // shal_attack5
-// function begins at statement 19626
+// function begins at statement 19626, parm_start=10900
 // OP_STATE	6076	10900	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -392,7 +392,7 @@ void () shal_attack5 =
 };
 
 // shal_attack6
-// function begins at statement 19629
+// function begins at statement 19629, parm_start=10901
 // OP_STATE	313	10901	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -403,7 +403,7 @@ void () shal_attack6 =
 };
 
 // shal_attack7
-// function begins at statement 19632
+// function begins at statement 19632, parm_start=10902
 // OP_STATE	314	10902	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -414,7 +414,7 @@ void () shal_attack7 =
 };
 
 // shal_attack8
-// function begins at statement 19635
+// function begins at statement 19635, parm_start=10903
 // OP_STATE	315	10903	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -425,7 +425,7 @@ void () shal_attack8 =
 };
 
 // shal_attack9
-// function begins at statement 19638
+// function begins at statement 19638, parm_start=10904
 // OP_STATE	6077	10904	0
 // OP_CALL0	10865	0	0
 // OP_DONE	0	0	0
@@ -436,7 +436,7 @@ void () shal_attack9 =
 };
 
 // shal_attack10
-// function begins at statement 19641
+// function begins at statement 19641, parm_start=10905
 // OP_STATE	317	10905	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -447,7 +447,7 @@ void () shal_attack10 =
 };
 
 // shal_attack11
-// function begins at statement 19644
+// function begins at statement 19644, parm_start=10906
 // OP_STATE	318	10881	0
 // OP_DONE	0	0	0
 void () shal_attack11 =
@@ -456,7 +456,7 @@ void () shal_attack11 =
 };
 
 // shal_pain1
-// function begins at statement 19646
+// function begins at statement 19646, parm_start=10907
 // OP_STATE	319	10907	0
 // OP_DONE	0	0	0
 void () shal_pain1 =
@@ -465,7 +465,7 @@ void () shal_pain1 =
 };
 
 // shal_pain2
-// function begins at statement 19648
+// function begins at statement 19648, parm_start=10908
 // OP_STATE	2250	10908	0
 // OP_DONE	0	0	0
 void () shal_pain2 =
@@ -474,7 +474,7 @@ void () shal_pain2 =
 };
 
 // shal_pain3
-// function begins at statement 19650
+// function begins at statement 19650, parm_start=10909
 // OP_STATE	7768	10909	0
 // OP_DONE	0	0	0
 void () shal_pain3 =
@@ -483,7 +483,7 @@ void () shal_pain3 =
 };
 
 // shal_pain4
-// function begins at statement 19652
+// function begins at statement 19652, parm_start=10910
 // OP_STATE	2901	10910	0
 // OP_DONE	0	0	0
 void () shal_pain4 =
@@ -492,7 +492,7 @@ void () shal_pain4 =
 };
 
 // shal_pain5
-// function begins at statement 19654
+// function begins at statement 19654, parm_start=10911
 // OP_STATE	1876	10881	0
 // OP_DONE	0	0	0
 void () shal_pain5 =
@@ -501,7 +501,7 @@ void () shal_pain5 =
 };
 
 // shal_death1
-// function begins at statement 19656
+// function begins at statement 19656, parm_start=10912
 // OP_STATE	6078	10912	0
 // OP_DONE	0	0	0
 void () shal_death1 =
@@ -510,7 +510,7 @@ void () shal_death1 =
 };
 
 // shal_death2
-// function begins at statement 19658
+// function begins at statement 19658, parm_start=10913
 // OP_STATE	4861	10913	0
 // OP_DONE	0	0	0
 void () shal_death2 =
@@ -519,7 +519,7 @@ void () shal_death2 =
 };
 
 // shal_death3
-// function begins at statement 19660
+// function begins at statement 19660, parm_start=10914
 // OP_STATE	3319	10914	0
 // OP_DONE	0	0	0
 void () shal_death3 =
@@ -528,7 +528,7 @@ void () shal_death3 =
 };
 
 // shal_death4
-// function begins at statement 19662
+// function begins at statement 19662, parm_start=10915
 // OP_STATE	7776	10915	0
 // OP_DONE	0	0	0
 void () shal_death4 =
@@ -537,7 +537,7 @@ void () shal_death4 =
 };
 
 // shal_death5
-// function begins at statement 19664
+// function begins at statement 19664, parm_start=10916
 // OP_STATE	894	10916	0
 // OP_DONE	0	0	0
 void () shal_death5 =
@@ -546,7 +546,7 @@ void () shal_death5 =
 };
 
 // shal_death6
-// function begins at statement 19666
+// function begins at statement 19666, parm_start=10917
 // OP_STATE	7779	10917	0
 // OP_DONE	0	0	0
 void () shal_death6 =
@@ -555,7 +555,7 @@ void () shal_death6 =
 };
 
 // shal_death7
-// function begins at statement 19668
+// function begins at statement 19668, parm_start=10918
 // OP_STATE	7781	10917	0
 // OP_DONE	0	0	0
 void () shal_death7 =
@@ -564,7 +564,7 @@ void () shal_death7 =
 };
 
 // shalrath_pain
-// function begins at statement 19670
+// function begins at statement 19670, parm_start=10918
 // OP_LOAD_F	28	374	10918
 // OP_GT	10918	31	10919
 // OP_IFNOT	10919	2	0
@@ -594,7 +594,7 @@ void () shalrath_pain =
 };
 
 // shalrath_die
-// function begins at statement 19685
+// function begins at statement 19685, parm_start=10924
 // OP_LOAD_F	28	152	10924
 // OP_LT	10924	1424	10925
 // OP_IFNOT	10925	24	0
@@ -652,7 +652,7 @@ void () shalrath_die =
 void () ShalMissileTouch;
 void () ShalHome;
 // ShalMissile
-// function begins at statement 19721
+// function begins at statement 19721, parm_start=10935
 // OP_LOAD_ENT	28	181	10941
 // OP_LOAD_V	10941	105	10942
 // OP_ADD_V	10942	5626	10945
@@ -751,7 +751,7 @@ void () ShalMissile =
 };
 
 // ShalHome
-// function begins at statement 19786
+// function begins at statement 19786, parm_start=10999
 // OP_LOAD_ENT	28	181	11005
 // OP_LOAD_V	11005	105	11006
 // OP_ADD_V	11006	5626	11009
@@ -810,7 +810,7 @@ void () ShalHome =
 };
 
 // ShalMissileTouch
-// function begins at statement 19817
+// function begins at statement 19817, parm_start=11038
 // OP_LOAD_ENT	28	201	11038
 // OP_EQ_E	29	11038	11039
 // OP_IFNOT	11039	2	0
@@ -893,7 +893,7 @@ void () ShalMissileTouch =
 };
 
 // monster_shalrath
-// function begins at statement 19870
+// function begins at statement 19870, parm_start=11052
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0

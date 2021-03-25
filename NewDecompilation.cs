@@ -88,6 +88,7 @@ namespace DeQcc
         public List<int> readBy = new List<int>();      // statements on which this global is read by
 
         public Types? TypePointedTo;    // if this global is a pointer, this has the type of the thing it is pointing to
+        public Types ExpectedType;     // temporary setting of what type this global is expected to be - used to determine whether to return vector vec or float vec_x
 
         #endregion Public Variables
 
@@ -142,6 +143,12 @@ namespace DeQcc
                 if (Kind == GlobalKind.Field)
                 {
                     return fields[fieldsOffsetMap[(int)IntVal]].name;
+                }
+                if(ExpectedType == Types.ev_float && Type == Types.ev_vector)
+                {
+                    // we are trying to access a vector expecting a float type
+                    // so we are trying to specifically get the _x term
+                    return _name + "_x";
                 }
                 return _name;
             }
@@ -330,8 +337,7 @@ namespace DeQcc
 
     partial class DeQCC
     {
-        public int nextGlobal;
-        //Dictionary<int, string> globalMap = new Dictionary<int, string>();
+        int highestGlobalAccessed;  // highest global processed so far in decompilation (used to detect globals between functions)
         List<Global> globalList = new List<Global>();
         int indent = 0;
 
@@ -476,7 +482,7 @@ namespace DeQcc
 
             #endregion
 
-            nextGlobal = RESERVED_OFS;  // index to the next global to process
+            highestGlobalAccessed = RESERVED_OFS - 1;  // index to the next global to process
 
             for (int fIndex = 1; fIndex < functions.Count; fIndex++)
             {
@@ -484,13 +490,13 @@ namespace DeQcc
 
                 // Any globals not yet processed up until the start of this one are Globaldefs
                 // e.g. perhaps the previous function ended but there are some defs before this one begins
-                while(nextGlobal < f.parm_start)
+                while(highestGlobalAccessed < (f.parm_start - 1))
                 {
-                    if (globalList[nextGlobal].Kind == GlobalKind.Unknown)
+                    Global g = GetGlobal(highestGlobalAccessed + 1, false);
+                    if (g.Kind == GlobalKind.Unknown)
                     {
-                        globalList[nextGlobal].Kind = GlobalKind.Globaldef;
+                        g.Kind = GlobalKind.Globaldef;
                     }
-                    nextGlobal++;
                 }
 
                 // Skip builtins
@@ -505,43 +511,21 @@ namespace DeQcc
                 f.declaration = "%%RETURNTYPE%% ";  // will be filled in later
 
                 // Parameters
-                nextGlobal = f.parm_start;
+                //highestGlobalAccessed = f.parm_start - 1;
                 f.declaration += "(";
                 for (int parmIndex = 0; parmIndex < f.numparms; parmIndex++)
                 {
-                    Global parm = GetGlobal(nextGlobal);
-                    parm.Kind = GlobalKind.Parameter;
+                    Global parm = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Parameter);
                     f.declaration += parm.TypeCodeOutput + " " + parm.Name;
                     if (parmIndex < f.numparms - 1) { f.declaration += ", "; }
-
-                    if (parm.Type == Types.ev_vector)
-                    {
-                        Global parm_y = GetGlobal(nextGlobal + 1);
-                        Global parm_z = GetGlobal(nextGlobal + 2);
-                        parm_y.Kind = parm_z.Kind = GlobalKind.Parameter;
-                        parm_y.Name = parm.Name + "_y"; parm_z.Name = parm.Name + "_z";
-                        nextGlobal += 3;
-                    }
-                    else { nextGlobal++; }
                 }
                 f.declaration += ") " + f.name;
 
                 // Locals
-                while ((nextGlobal - f.parm_start) < f.locals)
+                while ((highestGlobalAccessed - f.parm_start) < (f.locals - 1))
                 {
-                    Global local = GetGlobal(nextGlobal);
-                    local.Kind = GlobalKind.Local;
+                    Global local = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Local);
                     f.localDefs.Add("local " + local.TypeCodeOutput + " " + local.Name + ";");
-
-                    if (local.Type == Types.ev_vector)
-                    {
-                        Global local_y = GetGlobal(nextGlobal + 1);
-                        Global local_z = GetGlobal(nextGlobal + 2);
-                        local_y.Kind = local_z.Kind = GlobalKind.Local;
-                        local_y.Name = local.Name + "_y"; local_z.Name = local.Name + "_z";
-                        nextGlobal += 3;
-                    }
-                    else { nextGlobal++; }
                 }
 
                 Types returnType = Types.ev_void;
@@ -564,9 +548,9 @@ namespace DeQcc
                     // We wiil set the readBy/writtenBy properties for each global based on the type of statement
                     // so each global will have a list of statements where it is accessed (read or write)
 
-                    Global a = GetGlobal(s.a);
-                    Global b = GetGlobal(s.b);
-                    Global c = GetGlobal(s.c);
+                    Global a = GetGlobal(s.a, true);
+                    Global b = GetGlobal(s.b, true);
+                    Global c = GetGlobal(s.c, true);
 
                     switch (s.Opcode)
                     {
@@ -609,62 +593,6 @@ namespace DeQcc
                             break;
                         default:
                             throw new Exception("Unknown Opcode in Preprocess()");
-                    }
-
-                    // Process any new globals
-                    if (s.a >= nextGlobal)
-                    {
-                        if (a.Kind == GlobalKind.Globaldef) { a.Kind = GlobalKind.Immediate; }
-                        else { a.Kind = GlobalKind.Anonymous; }
-                        if (a.Type == Types.ev_vector || (a.Type == Types.ev_pointer && a.TypePointedTo == Types.ev_vector))
-                        {
-                            Global y = GetGlobal(s.a + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = a.Name + "_y";
-                            y.Kind = a.Kind;
-                            Global z = GetGlobal(s.a + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = a.Name + "_z";
-                            z.Kind = a.Kind;
-                            nextGlobal += 3;
-                        }
-                        else { nextGlobal++; }
-                    }
-                    if (s.b >= nextGlobal)
-                    {
-                        if (b.Kind == GlobalKind.Globaldef) { b.Kind = GlobalKind.Immediate; }
-                        else { b.Kind = GlobalKind.Anonymous; }
-                        if (b.Type == Types.ev_vector || (b.Type == Types.ev_pointer && b.TypePointedTo == Types.ev_vector))
-                        {
-                            Global y = GetGlobal(s.b + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = b.Name + "_y";
-                            y.Kind = b.Kind;
-                            Global z = GetGlobal(s.b + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = b.Name + "_z";
-                            z.Kind = b.Kind;
-                            nextGlobal += 3;
-                        }
-                        else { nextGlobal++; }
-                    }
-                    if (s.c >= nextGlobal)
-                    {
-                        if (c.Kind == GlobalKind.Globaldef) { c.Kind = GlobalKind.Immediate; }
-                        else { c.Kind = GlobalKind.Anonymous; }
-                        if (c.Type == Types.ev_vector || (c.Type == Types.ev_pointer && c.TypePointedTo == Types.ev_vector))
-                        {
-                            Global y = GetGlobal(s.c + 1);
-                            y.Type = Types.ev_float;
-                            y.Name = c.Name + "_y";
-                            y.Kind = c.Kind;
-                            Global z = GetGlobal(s.c + 2);
-                            z.Type = Types.ev_float;
-                            z.Name = c.Name + "_z";
-                            z.Kind = c.Kind;
-                            nextGlobal += 3;
-                        }
-                        else { nextGlobal++; }
                     }
 
                     // Check for return and set the type if found
@@ -716,7 +644,7 @@ namespace DeQcc
             progsSrcOutputFile.WriteLine("./progs.dat");
             progsSrcOutputFile.WriteLine();
 
-            nextGlobal = RESERVED_OFS;
+            highestGlobalAccessed = RESERVED_OFS - 1;
             StreamWriter f;
             for (int i = 1; i < functions.Count; i++)
             {
@@ -743,7 +671,11 @@ namespace DeQcc
             progsSrcOutputFile.Close();
         }
 
-        Global GetGlobal(int offset)
+        // calledFromFunction - are we getting this globaldef while we are processing a function (true) or is it outside of a function (false)
+        //                    - note that this is only true if we are processing a function's statements (i.e. params and locals should set this false)
+        // setKind - tell it to set the kind if we know what it should be from the calling context
+        // expectedType - tell it what type we are expecting it to be (e.g. we want a float but this is a vector, so return the _x component)
+        Global GetGlobal(int offset, bool calledFromFunction, GlobalKind? setKind = null, Types expectedType = Types.ev_void)
         {
             if(offset <= 0)
             {
@@ -752,23 +684,73 @@ namespace DeQcc
                 return null;
             }
 
-            return globalList[offset];
+            Global g = globalList[offset];
+            g.ExpectedType = expectedType;
+
+            if (setKind != null)
+            {
+                g.Kind = (GlobalKind)setKind;
+            }
+
+            // if this is a newly accessed global
+            if (offset > highestGlobalAccessed)
+            {
+                if (calledFromFunction)
+                {
+                    // if we are calling this from inside a function and we haven't seen it before
+                    // it must either be immediate (if it had a globaldef) or anonymous (if it didn't)
+                    // anything else would be already seen by this point (fields, params, locals etc)
+                    if (g.Kind == GlobalKind.Globaldef) { g.Kind = GlobalKind.Immediate; }
+                    else if (g.Kind == GlobalKind.Unknown) { g.Kind = GlobalKind.Anonymous; }
+                }
+
+                if (g.Type == Types.ev_vector || (g.Type == Types.ev_pointer && g.TypePointedTo == Types.ev_vector))
+                {
+                    // set the next two globals to floats for _y and _z
+                    Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
+                    y.Type = Types.ev_float;
+                    y.Name = g.Name + "_y";
+                    Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
+                    z.Type = Types.ev_float;
+                    z.Name = g.Name + "_z";
+                }
+            }
+
+            // Track if this is the highest global accessed so far
+            // only used in decompilation, not preprocessing
+            if (g.Type == Types.ev_vector || (g.Type == Types.ev_pointer && g.TypePointedTo == Types.ev_vector))
+            {
+                // Vectors share the x component but are followed by the y and z components
+                // account for the _y and _z
+                highestGlobalAccessed = Math.Max(highestGlobalAccessed, offset + 2);
+            }
+            else if (g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
+            {
+                // Fields are followed by all three components
+                // account for the _x, _y, and _z
+                highestGlobalAccessed = Math.Max(highestGlobalAccessed, offset + 3);
+            }
+            else
+            {
+                highestGlobalAccessed = Math.Max(highestGlobalAccessed, offset);
+            }
+
+            return g;
         }
 
         void DecompileFunction(Function f)
         {
             int sIndex;
-            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " nextGlobal:" + nextGlobal);
+            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
 
             // Process any unprocessed globals following the previous function
-            while (nextGlobal < f.parm_start)
+            while (highestGlobalAccessed < (f.parm_start - 1))    // ends when highestGlobalAccessed == f.parm_start - 1
             {
-                Global g = GetGlobal(nextGlobal);
+                Global g = GetGlobal(highestGlobalAccessed + 1, false);
                 if (g.Kind == GlobalKind.Function)
                 {
                     if (g.FunctionName == f.name)   // if it's this function
                     {
-                        nextGlobal++;
                         continue;   // do nothing, the definition will be output below
                     }
                     else
@@ -785,23 +767,6 @@ namespace DeQcc
                     }
                 }
                 PrintLine(";");
-
-                if(g.Type == Types.ev_vector)
-                {
-                    // Vectors share the x component but are followed by the y and z components
-                    // skip the _y and _z
-                    nextGlobal += 3;
-                }
-                else if(g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
-                {
-                    // Fields are followed by all three components
-                    // skip the _x, _y, and _z
-                    nextGlobal += 4;
-                }
-                else
-                {
-                    nextGlobal++;
-                }
             }
 
             // Check for builtin functions
@@ -813,7 +778,7 @@ namespace DeQcc
 
             // Print the bytecode
             PrintLine("// " + f.name);
-            PrintLine("// function begins at statement " + f.first_statement);
+            PrintLine("// function begins at statement " + f.first_statement + ", parm_start=" + f.parm_start);
             sIndex = f.first_statement;
             while (true)
             {
@@ -836,7 +801,7 @@ namespace DeQcc
                 PrintLine(l);
             }
 
-            nextGlobal += f.locals;
+            highestGlobalAccessed += f.locals;  // we don't access these globals here (already done when calcuating the function declaration) so account for them
 
             // Decompile the function statements
             sIndex = f.first_statement;
@@ -882,43 +847,9 @@ namespace DeQcc
             }
 
             Statement s = statements[sIndex];
-            Global a = GetGlobal(s.a);
-            Global b = GetGlobal(s.b);
-            Global c = GetGlobal(s.c);
-
-            if (s.a >= nextGlobal)
-            {
-                if (a.Type == Types.ev_vector || (a.Type == Types.ev_pointer && a.TypePointedTo == Types.ev_vector))
-                {
-                    nextGlobal += 3;
-                }
-                else
-                {
-                    nextGlobal++;
-                }
-            }
-            if (s.b >= nextGlobal)
-            {
-                if (b.Type == Types.ev_vector || (b.Type == Types.ev_pointer && b.TypePointedTo == Types.ev_vector))
-                {
-                    nextGlobal += 3;
-                }
-                else
-                {
-                    nextGlobal++;
-                }
-            }
-            if (s.c >= nextGlobal)
-            {
-                if (c.Type == Types.ev_vector || (c.Type == Types.ev_pointer && c.TypePointedTo == Types.ev_vector))
-                {
-                    nextGlobal += 3;
-                }
-                else
-                {
-                    nextGlobal++;
-                }
-            }
+            Global a = GetGlobal(s.a, true, null, pr_opcodes[s.op].type_a);
+            Global b = GetGlobal(s.b, true, null, pr_opcodes[s.op].type_b);
+            Global c = GetGlobal(s.c, true, null, pr_opcodes[s.op].type_c);
 
             // Process the opcode
             switch(s.Opcode)

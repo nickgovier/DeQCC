@@ -1,5 +1,5 @@
 // monster_use
-// function begins at statement 8399
+// function begins at statement 8399, parm_start=5460
 // OP_LOAD_ENT	28	181	5460
 // OP_IFNOT	5460	2	0
 // OP_RETURN	0	0	0
@@ -65,7 +65,7 @@ void () monster_use =
 };
 
 // monster_death_use
-// function begins at statement 8426
+// function begins at statement 8426, parm_start=5473
 // OP_LOAD_F	28	182	5476
 // OP_BITAND	5476	215	5477
 // OP_IFNOT	5477	5	0
@@ -116,7 +116,7 @@ void () monster_death_use =
 };
 
 // walkmonster_start_go
-// function begins at statement 8448
+// function begins at statement 8448, parm_start=5490
 // OP_ADDRESS	28	108	5492
 // OP_LOAD_F	28	108	5493
 // OP_ADD_F	5493	2256	5494
@@ -268,7 +268,7 @@ void () walkmonster_start_go =
 };
 
 // walkmonster_start
-// function begins at statement 8540
+// function begins at statement 8540, parm_start=5558
 // OP_ADDRESS	28	150	5558
 // OP_LOAD_F	28	150	5559
 // OP_CALL0	452	0	0
@@ -288,7 +288,7 @@ void () walkmonster_start =
 };
 
 // flymonster_start_go
-// function begins at statement 8551
+// function begins at statement 8551, parm_start=5565
 // OP_ADDRESS	28	163	5565
 // OP_STOREP_F	252	5565	0
 // OP_ADDRESS	28	191	5566
@@ -420,7 +420,7 @@ void () flymonster_start_go =
 };
 
 // flymonster_start
-// function begins at statement 8628
+// function begins at statement 8628, parm_start=5607
 // OP_ADDRESS	28	150	5607
 // OP_LOAD_F	28	150	5608
 // OP_CALL0	452	0	0
@@ -440,7 +440,7 @@ void () flymonster_start =
 };
 
 // swimmonster_start_go
-// function begins at statement 8639
+// function begins at statement 8639, parm_start=5614
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
@@ -559,7 +559,7 @@ void () swimmonster_start_go =
 };
 
 // swimmonster_start
-// function begins at statement 8711
+// function begins at statement 8711, parm_start=5664
 // OP_ADDRESS	28	150	5664
 // OP_LOAD_F	28	150	5665
 // OP_CALL0	452	0	0

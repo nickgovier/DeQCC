@@ -1,5 +1,5 @@
 // sham_stand1
-// function begins at statement 13330
+// function begins at statement 13330, parm_start=8234
 // OP_STATE	337	8234	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -10,7 +10,7 @@ void () sham_stand1 =
 };
 
 // sham_stand2
-// function begins at statement 13333
+// function begins at statement 13333, parm_start=8235
 // OP_STATE	7368	8235	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -21,7 +21,7 @@ void () sham_stand2 =
 };
 
 // sham_stand3
-// function begins at statement 13336
+// function begins at statement 13336, parm_start=8236
 // OP_STATE	7369	8236	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -32,7 +32,7 @@ void () sham_stand3 =
 };
 
 // sham_stand4
-// function begins at statement 13339
+// function begins at statement 13339, parm_start=8237
 // OP_STATE	370	8237	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -43,7 +43,7 @@ void () sham_stand4 =
 };
 
 // sham_stand5
-// function begins at statement 13342
+// function begins at statement 13342, parm_start=8238
 // OP_STATE	6076	8238	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -54,7 +54,7 @@ void () sham_stand5 =
 };
 
 // sham_stand6
-// function begins at statement 13345
+// function begins at statement 13345, parm_start=8239
 // OP_STATE	313	8239	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -65,7 +65,7 @@ void () sham_stand6 =
 };
 
 // sham_stand7
-// function begins at statement 13348
+// function begins at statement 13348, parm_start=8240
 // OP_STATE	314	8240	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -76,7 +76,7 @@ void () sham_stand7 =
 };
 
 // sham_stand8
-// function begins at statement 13351
+// function begins at statement 13351, parm_start=8241
 // OP_STATE	315	8241	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -87,7 +87,7 @@ void () sham_stand8 =
 };
 
 // sham_stand9
-// function begins at statement 13354
+// function begins at statement 13354, parm_start=8242
 // OP_STATE	6077	8242	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -98,7 +98,7 @@ void () sham_stand9 =
 };
 
 // sham_stand10
-// function begins at statement 13357
+// function begins at statement 13357, parm_start=8243
 // OP_STATE	317	8243	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -109,7 +109,7 @@ void () sham_stand10 =
 };
 
 // sham_stand11
-// function begins at statement 13360
+// function begins at statement 13360, parm_start=8244
 // OP_STATE	318	8244	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -120,7 +120,7 @@ void () sham_stand11 =
 };
 
 // sham_stand12
-// function begins at statement 13363
+// function begins at statement 13363, parm_start=8245
 // OP_STATE	319	8245	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -131,7 +131,7 @@ void () sham_stand12 =
 };
 
 // sham_stand13
-// function begins at statement 13366
+// function begins at statement 13366, parm_start=8246
 // OP_STATE	2250	8246	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -142,7 +142,7 @@ void () sham_stand13 =
 };
 
 // sham_stand14
-// function begins at statement 13369
+// function begins at statement 13369, parm_start=8247
 // OP_STATE	7768	8247	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -153,7 +153,7 @@ void () sham_stand14 =
 };
 
 // sham_stand15
-// function begins at statement 13372
+// function begins at statement 13372, parm_start=8248
 // OP_STATE	2901	8248	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -164,7 +164,7 @@ void () sham_stand15 =
 };
 
 // sham_stand16
-// function begins at statement 13375
+// function begins at statement 13375, parm_start=8249
 // OP_STATE	1876	8249	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -175,7 +175,7 @@ void () sham_stand16 =
 };
 
 // sham_stand17
-// function begins at statement 13378
+// function begins at statement 13378, parm_start=8250
 // OP_STATE	6078	8233	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -186,7 +186,7 @@ void () sham_stand17 =
 };
 
 // sham_walk1
-// function begins at statement 13381
+// function begins at statement 13381, parm_start=8251
 // OP_STATE	4861	8251	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1351	0	0
@@ -198,7 +198,7 @@ void () sham_walk1 =
 };
 
 // sham_walk2
-// function begins at statement 13385
+// function begins at statement 13385, parm_start=8252
 // OP_STATE	3319	8252	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
@@ -210,7 +210,7 @@ void () sham_walk2 =
 };
 
 // sham_walk3
-// function begins at statement 13389
+// function begins at statement 13389, parm_start=8253
 // OP_STATE	7776	8253	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
@@ -222,7 +222,7 @@ void () sham_walk3 =
 };
 
 // sham_walk4
-// function begins at statement 13393
+// function begins at statement 13393, parm_start=8254
 // OP_STATE	894	8254	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
@@ -234,7 +234,7 @@ void () sham_walk4 =
 };
 
 // sham_walk5
-// function begins at statement 13397
+// function begins at statement 13397, parm_start=8255
 // OP_STATE	7779	8255	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
@@ -246,7 +246,7 @@ void () sham_walk5 =
 };
 
 // sham_walk6
-// function begins at statement 13401
+// function begins at statement 13401, parm_start=8256
 // OP_STATE	7781	8256	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1351	0	0
@@ -258,7 +258,7 @@ void () sham_walk6 =
 };
 
 // sham_walk7
-// function begins at statement 13405
+// function begins at statement 13405, parm_start=8257
 // OP_STATE	301	8257	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -270,7 +270,7 @@ void () sham_walk7 =
 };
 
 // sham_walk8
-// function begins at statement 13409
+// function begins at statement 13409, parm_start=8258
 // OP_STATE	4437	8258	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -282,7 +282,7 @@ void () sham_walk8 =
 };
 
 // sham_walk9
-// function begins at statement 13413
+// function begins at statement 13413, parm_start=8259
 // OP_STATE	1890	8259	0
 // OP_STORE_V	7768	4	0
 // OP_CALL1	1351	0	0
@@ -294,7 +294,7 @@ void () sham_walk9 =
 };
 
 // sham_walk10
-// function begins at statement 13417
+// function begins at statement 13417, parm_start=8260
 // OP_STATE	7788	8260	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1351	0	0
@@ -306,7 +306,7 @@ void () sham_walk10 =
 };
 
 // sham_walk11
-// function begins at statement 13421
+// function begins at statement 13421, parm_start=8261
 // OP_STATE	302	8261	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1351	0	0
@@ -318,7 +318,7 @@ void () sham_walk11 =
 };
 
 // sham_walk12
-// function begins at statement 13425
+// function begins at statement 13425, parm_start=8262
 // OP_STATE	303	8250	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1351	0	0
@@ -345,7 +345,7 @@ void () sham_walk12 =
 };
 
 // sham_run1
-// function begins at statement 13438
+// function begins at statement 13438, parm_start=8265
 // OP_STATE	5105	8265	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -357,7 +357,7 @@ void () sham_run1 =
 };
 
 // sham_run2
-// function begins at statement 13442
+// function begins at statement 13442, parm_start=8266
 // OP_STATE	304	8266	0
 // OP_STORE_V	4437	4	0
 // OP_CALL1	1432	0	0
@@ -369,7 +369,7 @@ void () sham_run2 =
 };
 
 // sham_run3
-// function begins at statement 13446
+// function begins at statement 13446, parm_start=8267
 // OP_STATE	305	8267	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -381,7 +381,7 @@ void () sham_run3 =
 };
 
 // sham_run4
-// function begins at statement 13450
+// function begins at statement 13450, parm_start=8268
 // OP_STATE	5674	8268	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -393,7 +393,7 @@ void () sham_run4 =
 };
 
 // sham_run5
-// function begins at statement 13454
+// function begins at statement 13454, parm_start=8269
 // OP_STATE	307	8269	0
 // OP_STORE_V	4437	4	0
 // OP_CALL1	1432	0	0
@@ -405,7 +405,7 @@ void () sham_run5 =
 };
 
 // sham_run6
-// function begins at statement 13458
+// function begins at statement 13458, parm_start=8270
 // OP_STATE	5112	8264	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -432,7 +432,7 @@ void () sham_run6 =
 };
 
 // sham_smash1
-// function begins at statement 13471
+// function begins at statement 13471, parm_start=8271
 // OP_STATE	3072	8271	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -451,7 +451,7 @@ void () sham_smash1 =
 };
 
 // sham_smash2
-// function begins at statement 13481
+// function begins at statement 13481, parm_start=8273
 // OP_STATE	5096	8273	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -463,7 +463,7 @@ void () sham_smash2 =
 };
 
 // sham_smash3
-// function begins at statement 13485
+// function begins at statement 13485, parm_start=8274
 // OP_STATE	5098	8274	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -475,7 +475,7 @@ void () sham_smash3 =
 };
 
 // sham_smash4
-// function begins at statement 13489
+// function begins at statement 13489, parm_start=8275
 // OP_STATE	5100	8275	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
@@ -487,7 +487,7 @@ void () sham_smash4 =
 };
 
 // sham_smash5
-// function begins at statement 13493
+// function begins at statement 13493, parm_start=8276
 // OP_STATE	5102	8276	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -499,7 +499,7 @@ void () sham_smash5 =
 };
 
 // sham_smash6
-// function begins at statement 13497
+// function begins at statement 13497, parm_start=8277
 // OP_STATE	1733	8277	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -511,7 +511,7 @@ void () sham_smash6 =
 };
 
 // sham_smash7
-// function begins at statement 13501
+// function begins at statement 13501, parm_start=8278
 // OP_STATE	5443	8278	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -523,7 +523,7 @@ void () sham_smash7 =
 };
 
 // sham_smash8
-// function begins at statement 13505
+// function begins at statement 13505, parm_start=8279
 // OP_STATE	5445	8279	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -535,7 +535,7 @@ void () sham_smash8 =
 };
 
 // sham_smash9
-// function begins at statement 13509
+// function begins at statement 13509, parm_start=8280
 // OP_STATE	5447	8280	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -547,7 +547,7 @@ void () sham_smash9 =
 };
 
 // sham_smash10
-// function begins at statement 13513
+// function begins at statement 13513, parm_start=8281
 // OP_STATE	5449	8281	0
 // OP_LOAD_ENT	28	181	8286
 // OP_NOT_ENT	8286	0	8287
@@ -647,7 +647,7 @@ void () sham_smash10 =
 };
 
 // sham_smash11
-// function begins at statement 13576
+// function begins at statement 13576, parm_start=8335
 // OP_STATE	1390	8335	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
@@ -659,7 +659,7 @@ void () sham_smash11 =
 };
 
 // sham_smash12
-// function begins at statement 13580
+// function begins at statement 13580, parm_start=8336
 // OP_STATE	5452	8264	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -671,7 +671,7 @@ void () sham_smash12 =
 };
 
 // ShamClaw
-// function begins at statement 13584
+// function begins at statement 13584, parm_start=8337
 // OP_LOAD_ENT	28	181	8342
 // OP_NOT_ENT	8342	0	8343
 // OP_IFNOT	8343	2	0
@@ -753,7 +753,7 @@ void (float side) ShamClaw =
 };
 
 // sham_swingl1
-// function begins at statement 13632
+// function begins at statement 13632, parm_start=8377
 // OP_STATE	5361	8377	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -772,7 +772,7 @@ void () sham_swingl1 =
 };
 
 // sham_swingl2
-// function begins at statement 13642
+// function begins at statement 13642, parm_start=8379
 // OP_STATE	5363	8379	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
@@ -784,7 +784,7 @@ void () sham_swingl2 =
 };
 
 // sham_swingl3
-// function begins at statement 13646
+// function begins at statement 13646, parm_start=8380
 // OP_STATE	5365	8380	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
@@ -796,7 +796,7 @@ void () sham_swingl3 =
 };
 
 // sham_swingl4
-// function begins at statement 13650
+// function begins at statement 13650, parm_start=8381
 // OP_STATE	5367	8381	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
@@ -808,7 +808,7 @@ void () sham_swingl4 =
 };
 
 // sham_swingl5
-// function begins at statement 13654
+// function begins at statement 13654, parm_start=8382
 // OP_STATE	912	8382	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
@@ -820,7 +820,7 @@ void () sham_swingl5 =
 };
 
 // sham_swingl6
-// function begins at statement 13658
+// function begins at statement 13658, parm_start=8383
 // OP_STATE	5369	8383	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
@@ -832,7 +832,7 @@ void () sham_swingl6 =
 };
 
 // sham_swingl7
-// function begins at statement 13662
+// function begins at statement 13662, parm_start=8384
 // OP_STATE	5371	8384	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
@@ -847,7 +847,7 @@ void () sham_swingl7 =
 };
 
 // sham_swingl8
-// function begins at statement 13668
+// function begins at statement 13668, parm_start=8385
 // OP_STATE	3872	8385	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -859,7 +859,7 @@ void () sham_swingl8 =
 };
 
 // sham_swingl9
-// function begins at statement 13672
+// function begins at statement 13672, parm_start=8386
 // OP_STATE	260	8264	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
@@ -882,7 +882,7 @@ void () sham_swingl9 =
 };
 
 // sham_swingr1
-// function begins at statement 13681
+// function begins at statement 13681, parm_start=8388
 // OP_STATE	5454	8388	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -901,7 +901,7 @@ void () sham_swingr1 =
 };
 
 // sham_swingr2
-// function begins at statement 13691
+// function begins at statement 13691, parm_start=8389
 // OP_STATE	5456	8389	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
@@ -913,7 +913,7 @@ void () sham_swingr2 =
 };
 
 // sham_swingr3
-// function begins at statement 13695
+// function begins at statement 13695, parm_start=8390
 // OP_STATE	5458	8390	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	857	0	0
@@ -925,7 +925,7 @@ void () sham_swingr3 =
 };
 
 // sham_swingr4
-// function begins at statement 13699
+// function begins at statement 13699, parm_start=8391
 // OP_STATE	2227	8391	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
@@ -937,7 +937,7 @@ void () sham_swingr4 =
 };
 
 // sham_swingr5
-// function begins at statement 13703
+// function begins at statement 13703, parm_start=8392
 // OP_STATE	5351	8392	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
@@ -949,7 +949,7 @@ void () sham_swingr5 =
 };
 
 // sham_swingr6
-// function begins at statement 13707
+// function begins at statement 13707, parm_start=8393
 // OP_STATE	5353	8393	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -961,7 +961,7 @@ void () sham_swingr6 =
 };
 
 // sham_swingr7
-// function begins at statement 13711
+// function begins at statement 13711, parm_start=8394
 // OP_STATE	5355	8394	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -976,7 +976,7 @@ void () sham_swingr7 =
 };
 
 // sham_swingr8
-// function begins at statement 13717
+// function begins at statement 13717, parm_start=8396
 // OP_STATE	5357	8396	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
@@ -988,7 +988,7 @@ void () sham_swingr8 =
 };
 
 // sham_swingr9
-// function begins at statement 13721
+// function begins at statement 13721, parm_start=8397
 // OP_STATE	5359	8264	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -1014,7 +1014,7 @@ void () sham_swingr9 =
 };
 
 // sham_melee
-// function begins at statement 13732
+// function begins at statement 13732, parm_start=8400
 // OP_CALL0	452	0	0
 // OP_STORE_F	1	8400	0
 // OP_GT	8400	1959	8401
@@ -1050,7 +1050,7 @@ void () sham_melee =
 };
 
 // CastLightning
-// function begins at statement 13747
+// function begins at statement 13747, parm_start=8407
 // OP_ADDRESS	28	133	8413
 // OP_LOAD_F	28	133	8414
 // OP_BITOR	8414	334	8415
@@ -1131,7 +1131,7 @@ void () CastLightning =
 };
 
 // sham_magic1
-// function begins at statement 13804
+// function begins at statement 13804, parm_start=8445
 // OP_STATE	5375	8445	0
 // OP_CALL0	758	0	0
 // OP_STORE_V	28	4	0
@@ -1149,7 +1149,7 @@ void () sham_magic1 =
 };
 
 // sham_magic2
-// function begins at statement 13813
+// function begins at statement 13813, parm_start=8447
 // OP_STATE	5377	8447	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1160,7 +1160,7 @@ void () sham_magic2 =
 };
 
 // sham_magic3
-// function begins at statement 13816
+// function begins at statement 13816, parm_start=8448
 // OP_STATE	5379	8448	0
 // OP_CALL0	758	0	0
 // OP_ADDRESS	28	150	8449
@@ -1218,7 +1218,7 @@ void () sham_magic3 =
 };
 
 // sham_magic4
-// function begins at statement 13848
+// function begins at statement 13848, parm_start=8471
 // OP_STATE	5381	8471	0
 // OP_ADDRESS	28	133	8472
 // OP_LOAD_F	28	133	8473
@@ -1236,7 +1236,7 @@ void () sham_magic4 =
 };
 
 // sham_magic5
-// function begins at statement 13857
+// function begins at statement 13857, parm_start=8477
 // OP_STATE	5383	8477	0
 // OP_ADDRESS	28	133	8478
 // OP_LOAD_F	28	133	8479
@@ -1254,7 +1254,7 @@ void () sham_magic5 =
 };
 
 // sham_magic6
-// function begins at statement 13866
+// function begins at statement 13866, parm_start=8483
 // OP_STATE	5384	8483	0
 // OP_LOAD_ENT	28	201	8484
 // OP_STORE_V	8484	4	0
@@ -1276,7 +1276,7 @@ void () sham_magic6 =
 };
 
 // sham_magic9
-// function begins at statement 13878
+// function begins at statement 13878, parm_start=8486
 // OP_STATE	2739	8486	0
 // OP_CALL0	8406	0	0
 // OP_DONE	0	0	0
@@ -1287,7 +1287,7 @@ void () sham_magic9 =
 };
 
 // sham_magic10
-// function begins at statement 13881
+// function begins at statement 13881, parm_start=8487
 // OP_STATE	5391	8487	0
 // OP_CALL0	8406	0	0
 // OP_DONE	0	0	0
@@ -1298,7 +1298,7 @@ void () sham_magic10 =
 };
 
 // sham_magic11
-// function begins at statement 13884
+// function begins at statement 13884, parm_start=8488
 // OP_STATE	5393	8488	0
 // OP_EQ_F	349	370	8489
 // OP_IFNOT	8489	2	0
@@ -1316,7 +1316,7 @@ void () sham_magic11 =
 };
 
 // sham_magic12
-// function begins at statement 13889
+// function begins at statement 13889, parm_start=8490
 // OP_STATE	5395	8264	0
 // OP_DONE	0	0	0
 void () sham_magic12 =
@@ -1325,7 +1325,7 @@ void () sham_magic12 =
 };
 
 // sham_pain1
-// function begins at statement 13891
+// function begins at statement 13891, parm_start=8491
 // OP_STATE	5397	8491	0
 // OP_DONE	0	0	0
 void () sham_pain1 =
@@ -1334,7 +1334,7 @@ void () sham_pain1 =
 };
 
 // sham_pain2
-// function begins at statement 13893
+// function begins at statement 13893, parm_start=8492
 // OP_STATE	5399	8492	0
 // OP_DONE	0	0	0
 void () sham_pain2 =
@@ -1343,7 +1343,7 @@ void () sham_pain2 =
 };
 
 // sham_pain3
-// function begins at statement 13895
+// function begins at statement 13895, parm_start=8493
 // OP_STATE	5401	8493	0
 // OP_DONE	0	0	0
 void () sham_pain3 =
@@ -1352,7 +1352,7 @@ void () sham_pain3 =
 };
 
 // sham_pain4
-// function begins at statement 13897
+// function begins at statement 13897, parm_start=8494
 // OP_STATE	788	8494	0
 // OP_DONE	0	0	0
 void () sham_pain4 =
@@ -1361,7 +1361,7 @@ void () sham_pain4 =
 };
 
 // sham_pain5
-// function begins at statement 13899
+// function begins at statement 13899, parm_start=8495
 // OP_STATE	5404	8495	0
 // OP_DONE	0	0	0
 void () sham_pain5 =
@@ -1370,7 +1370,7 @@ void () sham_pain5 =
 };
 
 // sham_pain6
-// function begins at statement 13901
+// function begins at statement 13901, parm_start=8496
 // OP_STATE	5406	8264	0
 // OP_DONE	0	0	0
 void () sham_pain6 =
@@ -1379,7 +1379,7 @@ void () sham_pain6 =
 };
 
 // sham_pain
-// function begins at statement 13903
+// function begins at statement 13903, parm_start=8497
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
 // OP_STORE_V	8499	10	0
@@ -1430,7 +1430,7 @@ void (entity attacker, float damage) sham_pain =
 };
 
 // sham_death1
-// function begins at statement 13927
+// function begins at statement 13927, parm_start=8509
 // OP_STATE	5408	8509	0
 // OP_DONE	0	0	0
 void () sham_death1 =
@@ -1439,7 +1439,7 @@ void () sham_death1 =
 };
 
 // sham_death2
-// function begins at statement 13929
+// function begins at statement 13929, parm_start=8510
 // OP_STATE	5410	8510	0
 // OP_DONE	0	0	0
 void () sham_death2 =
@@ -1448,7 +1448,7 @@ void () sham_death2 =
 };
 
 // sham_death3
-// function begins at statement 13931
+// function begins at statement 13931, parm_start=8511
 // OP_STATE	5411	8511	0
 // OP_ADDRESS	28	104	8512
 // OP_STOREP_F	237	8512	0
@@ -1460,7 +1460,7 @@ void () sham_death3 =
 };
 
 // sham_death4
-// function begins at statement 13935
+// function begins at statement 13935, parm_start=8513
 // OP_STATE	5413	8513	0
 // OP_DONE	0	0	0
 void () sham_death4 =
@@ -1469,7 +1469,7 @@ void () sham_death4 =
 };
 
 // sham_death5
-// function begins at statement 13937
+// function begins at statement 13937, parm_start=8514
 // OP_STATE	5415	8514	0
 // OP_DONE	0	0	0
 void () sham_death5 =
@@ -1478,7 +1478,7 @@ void () sham_death5 =
 };
 
 // sham_death6
-// function begins at statement 13939
+// function begins at statement 13939, parm_start=8515
 // OP_STATE	5417	8515	0
 // OP_DONE	0	0	0
 void () sham_death6 =
@@ -1487,7 +1487,7 @@ void () sham_death6 =
 };
 
 // sham_death7
-// function begins at statement 13941
+// function begins at statement 13941, parm_start=8516
 // OP_STATE	5419	8516	0
 // OP_DONE	0	0	0
 void () sham_death7 =
@@ -1496,7 +1496,7 @@ void () sham_death7 =
 };
 
 // sham_death8
-// function begins at statement 13943
+// function begins at statement 13943, parm_start=8517
 // OP_STATE	1423	8517	0
 // OP_DONE	0	0	0
 void () sham_death8 =
@@ -1505,7 +1505,7 @@ void () sham_death8 =
 };
 
 // sham_death9
-// function begins at statement 13945
+// function begins at statement 13945, parm_start=8518
 // OP_STATE	5422	8518	0
 // OP_DONE	0	0	0
 void () sham_death9 =
@@ -1514,7 +1514,7 @@ void () sham_death9 =
 };
 
 // sham_death10
-// function begins at statement 13947
+// function begins at statement 13947, parm_start=8519
 // OP_STATE	5424	8519	0
 // OP_DONE	0	0	0
 void () sham_death10 =
@@ -1523,7 +1523,7 @@ void () sham_death10 =
 };
 
 // sham_death11
-// function begins at statement 13949
+// function begins at statement 13949, parm_start=8520
 // OP_STATE	5426	8519	0
 // OP_DONE	0	0	0
 void () sham_death11 =
@@ -1532,7 +1532,7 @@ void () sham_death11 =
 };
 
 // sham_die
-// function begins at statement 13951
+// function begins at statement 13951, parm_start=8521
 // OP_LOAD_F	28	152	8521
 // OP_LT	8521	8522	8523
 // OP_IFNOT	8523	24	0
@@ -1585,7 +1585,7 @@ void () sham_die =
 };
 
 // monster_shambler
-// function begins at statement 13985
+// function begins at statement 13985, parm_start=8531
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0

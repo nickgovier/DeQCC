@@ -3,7 +3,7 @@ entity otemp;
 entity s;
 entity old;
 // trigger_reactivate
-// function begins at statement 9918
+// function begins at statement 9918, parm_start=6419
 // OP_ADDRESS	28	104	6419
 // OP_STOREP_F	238	6419	0
 // OP_DONE	0	0	0
@@ -15,7 +15,7 @@ void () trigger_reactivate =
 float SPAWNFLAG_NOMESSAGE = 1.000;
 float SPAWNFLAG_NOTOUCH = 1.000;
 // multi_wait
-// function begins at statement 9921
+// function begins at statement 9921, parm_start=6423
 // OP_LOAD_F	28	185	6423
 // OP_IFNOT	6423	8	0
 // OP_ADDRESS	28	152	6424
@@ -39,7 +39,7 @@ void () multi_wait =
 };
 
 // multi_trigger
-// function begins at statement 9931
+// function begins at statement 9931, parm_start=6429
 // OP_LOAD_F	28	150	6429
 // OP_GT	6429	31	6430
 // OP_IFNOT	6430	2	0
@@ -134,7 +134,7 @@ void () multi_trigger =
 };
 
 // multi_killed
-// function begins at statement 9980
+// function begins at statement 9980, parm_start=6453
 // OP_ADDRESS	28	181	6453
 // OP_STOREP_ENT	347	6453	0
 // OP_CALL0	6428	0	0
@@ -146,7 +146,7 @@ void () multi_killed =
 };
 
 // multi_use
-// function begins at statement 9984
+// function begins at statement 9984, parm_start=6455
 // OP_ADDRESS	28	181	6455
 // OP_STOREP_ENT	346	6455	0
 // OP_CALL0	6428	0	0
@@ -158,7 +158,7 @@ void () multi_use =
 };
 
 // multi_touch
-// function begins at statement 9988
+// function begins at statement 9988, parm_start=6457
 // OP_LOAD_S	29	129	6457
 // OP_NE_S	6457	712	6458
 // OP_IFNOT	6458	2	0
@@ -203,7 +203,7 @@ void () multi_touch =
 };
 
 // trigger_multiple
-// function begins at statement 10007
+// function begins at statement 10007, parm_start=6473
 // OP_LOAD_F	28	207	6473
 // OP_EQ_F	6473	6421	6474
 // OP_IFNOT	6474	6	0
@@ -325,7 +325,7 @@ void () trigger_multiple =
 };
 
 // trigger_once
-// function begins at statement 10066
+// function begins at statement 10066, parm_start=6505
 // OP_ADDRESS	28	413	6505
 // OP_STOREP_F	276	6505	0
 // OP_CALL0	6472	0	0
@@ -337,7 +337,7 @@ void () trigger_once =
 };
 
 // trigger_relay
-// function begins at statement 10070
+// function begins at statement 10070, parm_start=6507
 // OP_ADDRESS	28	147	6507
 // OP_STOREP_FNC	518	6507	0
 // OP_DONE	0	0	0
@@ -347,7 +347,7 @@ void () trigger_relay =
 };
 
 // trigger_secret
-// function begins at statement 10073
+// function begins at statement 10073, parm_start=6509
 // OP_ADD_F	39	6421	6509
 // OP_STORE_F	6509	39	0
 // OP_ADDRESS	28	413	6510
@@ -415,7 +415,7 @@ void () trigger_secret =
 };
 
 // counter_use
-// function begins at statement 10104
+// function begins at statement 10104, parm_start=6525
 // OP_ADDRESS	28	431	6526
 // OP_LOAD_F	28	431	6527
 // OP_SUB_F	6527	6421	6528
@@ -530,7 +530,7 @@ void () counter_use =
 };
 
 // trigger_counter
-// function begins at statement 10161
+// function begins at statement 10161, parm_start=6558
 // OP_ADDRESS	28	413	6558
 // OP_STOREP_F	276	6558	0
 // OP_LOAD_F	28	431	6559
@@ -556,7 +556,7 @@ void () trigger_counter =
 float PLAYER_ONLY = 1.000;
 float SILENT = 2.000;
 // play_teleport
-// function begins at statement 10171
+// function begins at statement 10171, parm_start=6566
 // OP_CALL0	452	0	0
 // OP_MUL_F	1	313	6568
 // OP_STORE_F	6568	6566	0
@@ -617,7 +617,7 @@ void () play_teleport =
 };
 
 // spawn_tfog
-// function begins at statement 10200
+// function begins at statement 10200, parm_start=6573
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	6416	0
 // OP_ADDRESS	6416	105	6576
@@ -657,7 +657,7 @@ void (vector org) spawn_tfog =
 };
 
 // tdeath_touch
-// function begins at statement 10225
+// function begins at statement 10225, parm_start=6583
 // OP_LOAD_ENT	28	201	6583
 // OP_EQ_E	29	6583	6584
 // OP_IFNOT	6584	2	0
@@ -724,7 +724,7 @@ void () tdeath_touch =
 };
 
 // spawn_tdeath
-// function begins at statement 10256
+// function begins at statement 10256, parm_start=6595
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	6599	0
 // OP_ADDRESS	6599	129	6600
@@ -775,7 +775,7 @@ void (vector org, entity death_owner) spawn_tdeath =
 };
 
 // teleport_touch
-// function begins at statement 10288
+// function begins at statement 10288, parm_start=6627
 // OP_LOAD_S	28	197	6631
 // OP_IFNOT	6631	5	0
 // OP_LOAD_F	28	150	6632
@@ -942,7 +942,7 @@ void () teleport_touch =
 };
 
 // info_teleport_destination
-// function begins at statement 10381
+// function begins at statement 10381, parm_start=6717
 // OP_ADDRESS	28	395	6717
 // OP_LOAD_V	28	117	6720
 // OP_STOREP_V	6720	6717	0
@@ -975,7 +975,7 @@ void () info_teleport_destination =
 };
 
 // teleport_use
-// function begins at statement 10398
+// function begins at statement 10398, parm_start=6743
 // OP_ADDRESS	28	150	6743
 // OP_ADD_F	31	836	6744
 // OP_STOREP_F	6744	6743	0
@@ -991,7 +991,7 @@ void () teleport_use =
 };
 
 // trigger_teleport
-// function begins at statement 10405
+// function begins at statement 10405, parm_start=6747
 // OP_CALL0	559	0	0
 // OP_ADDRESS	28	146	6750
 // OP_STOREP_FNC	6626	6750	0
@@ -1042,7 +1042,7 @@ void () trigger_teleport =
 };
 
 // trigger_skill_touch
-// function begins at statement 10432
+// function begins at statement 10432, parm_start=6772
 // OP_LOAD_S	29	129	6772
 // OP_NE_S	6772	712	6773
 // OP_IFNOT	6773	2	0
@@ -1064,7 +1064,7 @@ void () trigger_skill_touch =
 };
 
 // trigger_setskill
-// function begins at statement 10441
+// function begins at statement 10441, parm_start=6776
 // OP_CALL0	559	0	0
 // OP_ADDRESS	28	146	6776
 // OP_STOREP_FNC	6771	6776	0
@@ -1076,7 +1076,7 @@ void () trigger_setskill =
 };
 
 // trigger_onlyregistered_touch
-// function begins at statement 10445
+// function begins at statement 10445, parm_start=6778
 // OP_LOAD_S	29	129	6778
 // OP_NE_S	6778	712	6779
 // OP_IFNOT	6779	2	0
@@ -1146,7 +1146,7 @@ void () trigger_onlyregistered_touch =
 };
 
 // trigger_onlyregistered
-// function begins at statement 10479
+// function begins at statement 10479, parm_start=6789
 // OP_STORE_V	720	4	0
 // OP_CALL1	464	0	0
 // OP_CALL0	559	0	0
@@ -1161,7 +1161,7 @@ void () trigger_onlyregistered =
 };
 
 // hurt_on
-// function begins at statement 10485
+// function begins at statement 10485, parm_start=6791
 // OP_ADDRESS	28	104	6791
 // OP_STOREP_F	238	6791	0
 // OP_ADDRESS	28	150	6792
@@ -1174,7 +1174,7 @@ void () hurt_on =
 };
 
 // hurt_touch
-// function begins at statement 10490
+// function begins at statement 10490, parm_start=6794
 // OP_LOAD_F	29	163	6794
 // OP_IFNOT	6794	14	0
 // OP_ADDRESS	28	104	6795
@@ -1207,7 +1207,7 @@ void () hurt_touch =
 };
 
 // trigger_hurt
-// function begins at statement 10507
+// function begins at statement 10507, parm_start=6801
 // OP_CALL0	559	0	0
 // OP_ADDRESS	28	146	6801
 // OP_STOREP_FNC	6793	6801	0
@@ -1231,7 +1231,7 @@ void () trigger_hurt =
 
 float PUSH_ONCE = 1.000;
 // trigger_push_touch
-// function begins at statement 10516
+// function begins at statement 10516, parm_start=6807
 // OP_LOAD_S	29	129	6807
 // OP_EQ_S	6807	3134	6808
 // OP_IFNOT	6808	8	0
@@ -1309,7 +1309,7 @@ void () trigger_push_touch =
 };
 
 // trigger_push
-// function begins at statement 10556
+// function begins at statement 10556, parm_start=6848
 // OP_CALL0	559	0	0
 // OP_STORE_V	6844	4	0
 // OP_CALL1	464	0	0
@@ -1335,7 +1335,7 @@ void () trigger_push =
 };
 
 // trigger_monsterjump_touch
-// function begins at statement 10567
+// function begins at statement 10567, parm_start=6853
 // OP_LOAD_F	29	182	6853
 // OP_BITOR	219	215	6854
 // OP_BITOR	6854	216	6855
@@ -1387,7 +1387,7 @@ void () trigger_monsterjump_touch =
 };
 
 // trigger_monsterjump
-// function begins at statement 10597
+// function begins at statement 10597, parm_start=6875
 // OP_LOAD_F	28	364	6875
 // OP_NOT_F	6875	0	6876
 // OP_IFNOT	6876	3	0

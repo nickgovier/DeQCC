@@ -1,5 +1,5 @@
 // Laser_Touch
-// function begins at statement 19926
+// function begins at statement 19926, parm_start=11068
 // OP_LOAD_ENT	28	201	11071
 // OP_EQ_E	29	11071	11072
 // OP_IFNOT	11072	2	0
@@ -95,7 +95,7 @@ void () Laser_Touch =
 };
 
 // LaunchLaser
-// function begins at statement 19984
+// function begins at statement 19984, parm_start=11097
 // OP_LOAD_S	28	129	11103
 // OP_EQ_S	11103	1275	11104
 // OP_IFNOT	11104	7	0
@@ -169,7 +169,7 @@ void (vector org, vector vec) LaunchLaser =
 };
 
 // enforcer_fire
-// function begins at statement 20032
+// function begins at statement 20032, parm_start=11126
 // OP_ADDRESS	28	133	11129
 // OP_LOAD_F	28	133	11130
 // OP_BITOR	11130	334	11131
@@ -202,7 +202,7 @@ void () enforcer_fire =
 };
 
 // enf_stand1
-// function begins at statement 20054
+// function begins at statement 20054, parm_start=11165
 // OP_STATE	337	11165	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -213,7 +213,7 @@ void () enf_stand1 =
 };
 
 // enf_stand2
-// function begins at statement 20057
+// function begins at statement 20057, parm_start=11166
 // OP_STATE	9491	11166	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -224,7 +224,7 @@ void () enf_stand2 =
 };
 
 // enf_stand3
-// function begins at statement 20060
+// function begins at statement 20060, parm_start=11167
 // OP_STATE	7369	11167	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -235,7 +235,7 @@ void () enf_stand3 =
 };
 
 // enf_stand4
-// function begins at statement 20063
+// function begins at statement 20063, parm_start=11168
 // OP_STATE	370	11168	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -246,7 +246,7 @@ void () enf_stand4 =
 };
 
 // enf_stand5
-// function begins at statement 20066
+// function begins at statement 20066, parm_start=11169
 // OP_STATE	6076	11169	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -257,7 +257,7 @@ void () enf_stand5 =
 };
 
 // enf_stand6
-// function begins at statement 20069
+// function begins at statement 20069, parm_start=11170
 // OP_STATE	313	11170	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -268,7 +268,7 @@ void () enf_stand6 =
 };
 
 // enf_stand7
-// function begins at statement 20072
+// function begins at statement 20072, parm_start=11171
 // OP_STATE	314	11164	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -279,7 +279,7 @@ void () enf_stand7 =
 };
 
 // enf_walk1
-// function begins at statement 20075
+// function begins at statement 20075, parm_start=11172
 // OP_STATE	315	11172	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	11173
@@ -306,7 +306,7 @@ void () enf_walk1 =
 };
 
 // enf_walk2
-// function begins at statement 20088
+// function begins at statement 20088, parm_start=11174
 // OP_STATE	6077	11174	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -318,7 +318,7 @@ void () enf_walk2 =
 };
 
 // enf_walk3
-// function begins at statement 20092
+// function begins at statement 20092, parm_start=11175
 // OP_STATE	317	11175	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -330,7 +330,7 @@ void () enf_walk3 =
 };
 
 // enf_walk4
-// function begins at statement 20096
+// function begins at statement 20096, parm_start=11176
 // OP_STATE	318	11176	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -342,7 +342,7 @@ void () enf_walk4 =
 };
 
 // enf_walk5
-// function begins at statement 20100
+// function begins at statement 20100, parm_start=11177
 // OP_STATE	319	11177	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
@@ -354,7 +354,7 @@ void () enf_walk5 =
 };
 
 // enf_walk6
-// function begins at statement 20104
+// function begins at statement 20104, parm_start=11178
 // OP_STATE	2250	11178	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -366,7 +366,7 @@ void () enf_walk6 =
 };
 
 // enf_walk7
-// function begins at statement 20108
+// function begins at statement 20108, parm_start=11179
 // OP_STATE	7768	11179	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -378,7 +378,7 @@ void () enf_walk7 =
 };
 
 // enf_walk8
-// function begins at statement 20112
+// function begins at statement 20112, parm_start=11180
 // OP_STATE	2901	11180	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
@@ -390,7 +390,7 @@ void () enf_walk8 =
 };
 
 // enf_walk9
-// function begins at statement 20116
+// function begins at statement 20116, parm_start=11181
 // OP_STATE	1876	11181	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -402,7 +402,7 @@ void () enf_walk9 =
 };
 
 // enf_walk10
-// function begins at statement 20120
+// function begins at statement 20120, parm_start=11182
 // OP_STATE	6078	11182	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -414,7 +414,7 @@ void () enf_walk10 =
 };
 
 // enf_walk11
-// function begins at statement 20124
+// function begins at statement 20124, parm_start=11183
 // OP_STATE	4861	11183	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -426,7 +426,7 @@ void () enf_walk11 =
 };
 
 // enf_walk12
-// function begins at statement 20128
+// function begins at statement 20128, parm_start=11184
 // OP_STATE	3319	11184	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
@@ -438,7 +438,7 @@ void () enf_walk12 =
 };
 
 // enf_walk13
-// function begins at statement 20132
+// function begins at statement 20132, parm_start=11185
 // OP_STATE	7776	11185	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -450,7 +450,7 @@ void () enf_walk13 =
 };
 
 // enf_walk14
-// function begins at statement 20136
+// function begins at statement 20136, parm_start=11186
 // OP_STATE	894	11186	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -462,7 +462,7 @@ void () enf_walk14 =
 };
 
 // enf_walk15
-// function begins at statement 20140
+// function begins at statement 20140, parm_start=11187
 // OP_STATE	7779	11187	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -474,7 +474,7 @@ void () enf_walk15 =
 };
 
 // enf_walk16
-// function begins at statement 20144
+// function begins at statement 20144, parm_start=11188
 // OP_STATE	7781	11171	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -486,7 +486,7 @@ void () enf_walk16 =
 };
 
 // enf_run1
-// function begins at statement 20148
+// function begins at statement 20148, parm_start=11189
 // OP_STATE	301	11189	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	11190
@@ -513,7 +513,7 @@ void () enf_run1 =
 };
 
 // enf_run2
-// function begins at statement 20161
+// function begins at statement 20161, parm_start=11191
 // OP_STATE	4437	11191	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
@@ -525,7 +525,7 @@ void () enf_run2 =
 };
 
 // enf_run3
-// function begins at statement 20165
+// function begins at statement 20165, parm_start=11192
 // OP_STATE	1890	11192	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
@@ -537,7 +537,7 @@ void () enf_run3 =
 };
 
 // enf_run4
-// function begins at statement 20169
+// function begins at statement 20169, parm_start=11193
 // OP_STATE	7788	11193	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1432	0	0
@@ -549,7 +549,7 @@ void () enf_run4 =
 };
 
 // enf_run5
-// function begins at statement 20173
+// function begins at statement 20173, parm_start=11194
 // OP_STATE	302	11194	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
@@ -561,7 +561,7 @@ void () enf_run5 =
 };
 
 // enf_run6
-// function begins at statement 20177
+// function begins at statement 20177, parm_start=11195
 // OP_STATE	303	11195	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
@@ -573,7 +573,7 @@ void () enf_run6 =
 };
 
 // enf_run7
-// function begins at statement 20181
+// function begins at statement 20181, parm_start=11196
 // OP_STATE	5105	11196	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
@@ -585,7 +585,7 @@ void () enf_run7 =
 };
 
 // enf_run8
-// function begins at statement 20185
+// function begins at statement 20185, parm_start=11197
 // OP_STATE	304	11188	0
 // OP_STORE_V	319	4	0
 // OP_CALL1	1432	0	0
@@ -597,7 +597,7 @@ void () enf_run8 =
 };
 
 // enf_atk1
-// function begins at statement 20189
+// function begins at statement 20189, parm_start=11198
 // OP_STATE	305	11198	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -608,7 +608,7 @@ void () enf_atk1 =
 };
 
 // enf_atk2
-// function begins at statement 20192
+// function begins at statement 20192, parm_start=11199
 // OP_STATE	5674	11199	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -619,7 +619,7 @@ void () enf_atk2 =
 };
 
 // enf_atk3
-// function begins at statement 20195
+// function begins at statement 20195, parm_start=11200
 // OP_STATE	307	11200	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -630,7 +630,7 @@ void () enf_atk3 =
 };
 
 // enf_atk4
-// function begins at statement 20198
+// function begins at statement 20198, parm_start=11201
 // OP_STATE	5112	11201	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -641,7 +641,7 @@ void () enf_atk4 =
 };
 
 // enf_atk5
-// function begins at statement 20201
+// function begins at statement 20201, parm_start=11202
 // OP_STATE	3072	11202	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -652,7 +652,7 @@ void () enf_atk5 =
 };
 
 // enf_atk6
-// function begins at statement 20204
+// function begins at statement 20204, parm_start=11203
 // OP_STATE	5096	11203	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
@@ -663,7 +663,7 @@ void () enf_atk6 =
 };
 
 // enf_atk7
-// function begins at statement 20207
+// function begins at statement 20207, parm_start=11204
 // OP_STATE	5098	11204	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -674,7 +674,7 @@ void () enf_atk7 =
 };
 
 // enf_atk8
-// function begins at statement 20210
+// function begins at statement 20210, parm_start=11205
 // OP_STATE	5100	11205	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -685,7 +685,7 @@ void () enf_atk8 =
 };
 
 // enf_atk9
-// function begins at statement 20213
+// function begins at statement 20213, parm_start=11206
 // OP_STATE	3072	11206	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -696,7 +696,7 @@ void () enf_atk9 =
 };
 
 // enf_atk10
-// function begins at statement 20216
+// function begins at statement 20216, parm_start=11207
 // OP_STATE	5096	11207	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
@@ -707,7 +707,7 @@ void () enf_atk10 =
 };
 
 // enf_atk11
-// function begins at statement 20219
+// function begins at statement 20219, parm_start=11208
 // OP_STATE	5098	11208	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -718,7 +718,7 @@ void () enf_atk11 =
 };
 
 // enf_atk12
-// function begins at statement 20222
+// function begins at statement 20222, parm_start=11209
 // OP_STATE	5100	11209	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -729,7 +729,7 @@ void () enf_atk12 =
 };
 
 // enf_atk13
-// function begins at statement 20225
+// function begins at statement 20225, parm_start=11210
 // OP_STATE	5102	11210	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -740,7 +740,7 @@ void () enf_atk13 =
 };
 
 // enf_atk14
-// function begins at statement 20228
+// function begins at statement 20228, parm_start=11211
 // OP_STATE	1733	11188	0
 // OP_CALL0	758	0	0
 // OP_STORE_V	11197	4	0
@@ -754,7 +754,7 @@ void () enf_atk14 =
 };
 
 // enf_paina1
-// function begins at statement 20233
+// function begins at statement 20233, parm_start=11212
 // OP_STATE	5377	11212	0
 // OP_DONE	0	0	0
 void () enf_paina1 =
@@ -763,7 +763,7 @@ void () enf_paina1 =
 };
 
 // enf_paina2
-// function begins at statement 20235
+// function begins at statement 20235, parm_start=11213
 // OP_STATE	5379	11213	0
 // OP_DONE	0	0	0
 void () enf_paina2 =
@@ -772,7 +772,7 @@ void () enf_paina2 =
 };
 
 // enf_paina3
-// function begins at statement 20237
+// function begins at statement 20237, parm_start=11214
 // OP_STATE	5381	11214	0
 // OP_DONE	0	0	0
 void () enf_paina3 =
@@ -781,7 +781,7 @@ void () enf_paina3 =
 };
 
 // enf_paina4
-// function begins at statement 20239
+// function begins at statement 20239, parm_start=11215
 // OP_STATE	5383	11188	0
 // OP_DONE	0	0	0
 void () enf_paina4 =
@@ -790,7 +790,7 @@ void () enf_paina4 =
 };
 
 // enf_painb1
-// function begins at statement 20241
+// function begins at statement 20241, parm_start=11216
 // OP_STATE	5384	11216	0
 // OP_DONE	0	0	0
 void () enf_painb1 =
@@ -799,7 +799,7 @@ void () enf_painb1 =
 };
 
 // enf_painb2
-// function begins at statement 20243
+// function begins at statement 20243, parm_start=11217
 // OP_STATE	5386	11217	0
 // OP_DONE	0	0	0
 void () enf_painb2 =
@@ -808,7 +808,7 @@ void () enf_painb2 =
 };
 
 // enf_painb3
-// function begins at statement 20245
+// function begins at statement 20245, parm_start=11218
 // OP_STATE	5388	11218	0
 // OP_DONE	0	0	0
 void () enf_painb3 =
@@ -817,7 +817,7 @@ void () enf_painb3 =
 };
 
 // enf_painb4
-// function begins at statement 20247
+// function begins at statement 20247, parm_start=11219
 // OP_STATE	2739	11219	0
 // OP_DONE	0	0	0
 void () enf_painb4 =
@@ -826,7 +826,7 @@ void () enf_painb4 =
 };
 
 // enf_painb5
-// function begins at statement 20249
+// function begins at statement 20249, parm_start=11220
 // OP_STATE	5391	11188	0
 // OP_DONE	0	0	0
 void () enf_painb5 =
@@ -835,7 +835,7 @@ void () enf_painb5 =
 };
 
 // enf_painc1
-// function begins at statement 20251
+// function begins at statement 20251, parm_start=11221
 // OP_STATE	5393	11221	0
 // OP_DONE	0	0	0
 void () enf_painc1 =
@@ -844,7 +844,7 @@ void () enf_painc1 =
 };
 
 // enf_painc2
-// function begins at statement 20253
+// function begins at statement 20253, parm_start=11222
 // OP_STATE	5395	11222	0
 // OP_DONE	0	0	0
 void () enf_painc2 =
@@ -853,7 +853,7 @@ void () enf_painc2 =
 };
 
 // enf_painc3
-// function begins at statement 20255
+// function begins at statement 20255, parm_start=11223
 // OP_STATE	5397	11223	0
 // OP_DONE	0	0	0
 void () enf_painc3 =
@@ -862,7 +862,7 @@ void () enf_painc3 =
 };
 
 // enf_painc4
-// function begins at statement 20257
+// function begins at statement 20257, parm_start=11224
 // OP_STATE	5399	11224	0
 // OP_DONE	0	0	0
 void () enf_painc4 =
@@ -871,7 +871,7 @@ void () enf_painc4 =
 };
 
 // enf_painc5
-// function begins at statement 20259
+// function begins at statement 20259, parm_start=11225
 // OP_STATE	5401	11225	0
 // OP_DONE	0	0	0
 void () enf_painc5 =
@@ -880,7 +880,7 @@ void () enf_painc5 =
 };
 
 // enf_painc6
-// function begins at statement 20261
+// function begins at statement 20261, parm_start=11226
 // OP_STATE	788	11226	0
 // OP_DONE	0	0	0
 void () enf_painc6 =
@@ -889,7 +889,7 @@ void () enf_painc6 =
 };
 
 // enf_painc7
-// function begins at statement 20263
+// function begins at statement 20263, parm_start=11227
 // OP_STATE	5404	11227	0
 // OP_DONE	0	0	0
 void () enf_painc7 =
@@ -898,7 +898,7 @@ void () enf_painc7 =
 };
 
 // enf_painc8
-// function begins at statement 20265
+// function begins at statement 20265, parm_start=11228
 // OP_STATE	5406	11188	0
 // OP_DONE	0	0	0
 void () enf_painc8 =
@@ -907,7 +907,7 @@ void () enf_painc8 =
 };
 
 // enf_paind1
-// function begins at statement 20267
+// function begins at statement 20267, parm_start=11229
 // OP_STATE	5408	11229	0
 // OP_DONE	0	0	0
 void () enf_paind1 =
@@ -916,7 +916,7 @@ void () enf_paind1 =
 };
 
 // enf_paind2
-// function begins at statement 20269
+// function begins at statement 20269, parm_start=11230
 // OP_STATE	5410	11230	0
 // OP_DONE	0	0	0
 void () enf_paind2 =
@@ -925,7 +925,7 @@ void () enf_paind2 =
 };
 
 // enf_paind3
-// function begins at statement 20271
+// function begins at statement 20271, parm_start=11231
 // OP_STATE	5411	11231	0
 // OP_DONE	0	0	0
 void () enf_paind3 =
@@ -934,7 +934,7 @@ void () enf_paind3 =
 };
 
 // enf_paind4
-// function begins at statement 20273
+// function begins at statement 20273, parm_start=11232
 // OP_STATE	5413	11232	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1348	0	0
@@ -946,7 +946,7 @@ void () enf_paind4 =
 };
 
 // enf_paind5
-// function begins at statement 20277
+// function begins at statement 20277, parm_start=11233
 // OP_STATE	5415	11233	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
@@ -958,7 +958,7 @@ void () enf_paind5 =
 };
 
 // enf_paind6
-// function begins at statement 20281
+// function begins at statement 20281, parm_start=11234
 // OP_STATE	5417	11234	0
 // OP_DONE	0	0	0
 void () enf_paind6 =
@@ -967,7 +967,7 @@ void () enf_paind6 =
 };
 
 // enf_paind7
-// function begins at statement 20283
+// function begins at statement 20283, parm_start=11235
 // OP_STATE	5419	11235	0
 // OP_DONE	0	0	0
 void () enf_paind7 =
@@ -976,7 +976,7 @@ void () enf_paind7 =
 };
 
 // enf_paind8
-// function begins at statement 20285
+// function begins at statement 20285, parm_start=11236
 // OP_STATE	1423	11236	0
 // OP_DONE	0	0	0
 void () enf_paind8 =
@@ -985,7 +985,7 @@ void () enf_paind8 =
 };
 
 // enf_paind9
-// function begins at statement 20287
+// function begins at statement 20287, parm_start=11237
 // OP_STATE	5422	11237	0
 // OP_DONE	0	0	0
 void () enf_paind9 =
@@ -994,7 +994,7 @@ void () enf_paind9 =
 };
 
 // enf_paind10
-// function begins at statement 20289
+// function begins at statement 20289, parm_start=11238
 // OP_STATE	5424	11238	0
 // OP_DONE	0	0	0
 void () enf_paind10 =
@@ -1003,7 +1003,7 @@ void () enf_paind10 =
 };
 
 // enf_paind11
-// function begins at statement 20291
+// function begins at statement 20291, parm_start=11239
 // OP_STATE	5426	11239	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
@@ -1015,7 +1015,7 @@ void () enf_paind11 =
 };
 
 // enf_paind12
-// function begins at statement 20295
+// function begins at statement 20295, parm_start=11240
 // OP_STATE	5427	11240	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
@@ -1027,7 +1027,7 @@ void () enf_paind12 =
 };
 
 // enf_paind13
-// function begins at statement 20299
+// function begins at statement 20299, parm_start=11241
 // OP_STATE	5429	11241	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
@@ -1039,7 +1039,7 @@ void () enf_paind13 =
 };
 
 // enf_paind14
-// function begins at statement 20303
+// function begins at statement 20303, parm_start=11242
 // OP_STATE	5431	11242	0
 // OP_DONE	0	0	0
 void () enf_paind14 =
@@ -1048,7 +1048,7 @@ void () enf_paind14 =
 };
 
 // enf_paind15
-// function begins at statement 20305
+// function begins at statement 20305, parm_start=11243
 // OP_STATE	5433	11243	0
 // OP_DONE	0	0	0
 void () enf_paind15 =
@@ -1057,7 +1057,7 @@ void () enf_paind15 =
 };
 
 // enf_paind16
-// function begins at statement 20307
+// function begins at statement 20307, parm_start=11244
 // OP_STATE	5435	11244	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
@@ -1069,7 +1069,7 @@ void () enf_paind16 =
 };
 
 // enf_paind17
-// function begins at statement 20311
+// function begins at statement 20311, parm_start=11245
 // OP_STATE	5437	11245	0
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
@@ -1081,7 +1081,7 @@ void () enf_paind17 =
 };
 
 // enf_paind18
-// function begins at statement 20315
+// function begins at statement 20315, parm_start=11246
 // OP_STATE	1884	11246	0
 // OP_DONE	0	0	0
 void () enf_paind18 =
@@ -1090,7 +1090,7 @@ void () enf_paind18 =
 };
 
 // enf_paind19
-// function begins at statement 20317
+// function begins at statement 20317, parm_start=11247
 // OP_STATE	5440	11188	0
 // OP_DONE	0	0	0
 void () enf_paind19 =
@@ -1099,7 +1099,7 @@ void () enf_paind19 =
 };
 
 // enf_pain
-// function begins at statement 20319
+// function begins at statement 20319, parm_start=11248
 // OP_CALL0	452	0	0
 // OP_STORE_F	1	11250	0
 // OP_LOAD_F	28	374	11251
@@ -1190,7 +1190,7 @@ void (entity attacker, float damage) enf_pain =
 };
 
 // enf_die1
-// function begins at statement 20366
+// function begins at statement 20366, parm_start=11266
 // OP_STATE	5443	11266	0
 // OP_DONE	0	0	0
 void () enf_die1 =
@@ -1199,7 +1199,7 @@ void () enf_die1 =
 };
 
 // enf_die2
-// function begins at statement 20368
+// function begins at statement 20368, parm_start=11267
 // OP_STATE	5445	11267	0
 // OP_DONE	0	0	0
 void () enf_die2 =
@@ -1208,7 +1208,7 @@ void () enf_die2 =
 };
 
 // enf_die3
-// function begins at statement 20370
+// function begins at statement 20370, parm_start=11268
 // OP_STATE	5447	11268	0
 // OP_ADDRESS	28	104	11269
 // OP_STOREP_F	237	11269	0
@@ -1225,7 +1225,7 @@ void () enf_die3 =
 };
 
 // enf_die4
-// function begins at statement 20377
+// function begins at statement 20377, parm_start=11271
 // OP_STATE	5449	11271	0
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1338	0	0
@@ -1237,7 +1237,7 @@ void () enf_die4 =
 };
 
 // enf_die5
-// function begins at statement 20381
+// function begins at statement 20381, parm_start=11272
 // OP_STATE	1390	11272	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1338	0	0
@@ -1249,7 +1249,7 @@ void () enf_die5 =
 };
 
 // enf_die6
-// function begins at statement 20385
+// function begins at statement 20385, parm_start=11273
 // OP_STATE	5452	11273	0
 // OP_DONE	0	0	0
 void () enf_die6 =
@@ -1258,7 +1258,7 @@ void () enf_die6 =
 };
 
 // enf_die7
-// function begins at statement 20387
+// function begins at statement 20387, parm_start=11274
 // OP_STATE	5454	11274	0
 // OP_DONE	0	0	0
 void () enf_die7 =
@@ -1267,7 +1267,7 @@ void () enf_die7 =
 };
 
 // enf_die8
-// function begins at statement 20389
+// function begins at statement 20389, parm_start=11275
 // OP_STATE	5456	11275	0
 // OP_DONE	0	0	0
 void () enf_die8 =
@@ -1276,7 +1276,7 @@ void () enf_die8 =
 };
 
 // enf_die9
-// function begins at statement 20391
+// function begins at statement 20391, parm_start=11276
 // OP_STATE	5458	11276	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1338	0	0
@@ -1288,7 +1288,7 @@ void () enf_die9 =
 };
 
 // enf_die10
-// function begins at statement 20395
+// function begins at statement 20395, parm_start=11277
 // OP_STATE	2227	11277	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
@@ -1300,7 +1300,7 @@ void () enf_die10 =
 };
 
 // enf_die11
-// function begins at statement 20399
+// function begins at statement 20399, parm_start=11278
 // OP_STATE	5351	11278	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
@@ -1312,7 +1312,7 @@ void () enf_die11 =
 };
 
 // enf_die12
-// function begins at statement 20403
+// function begins at statement 20403, parm_start=11279
 // OP_STATE	5353	11279	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
@@ -1324,7 +1324,7 @@ void () enf_die12 =
 };
 
 // enf_die13
-// function begins at statement 20407
+// function begins at statement 20407, parm_start=11280
 // OP_STATE	5355	11280	0
 // OP_DONE	0	0	0
 void () enf_die13 =
@@ -1333,7 +1333,7 @@ void () enf_die13 =
 };
 
 // enf_die14
-// function begins at statement 20409
+// function begins at statement 20409, parm_start=11281
 // OP_STATE	5357	11280	0
 // OP_DONE	0	0	0
 void () enf_die14 =
@@ -1342,7 +1342,7 @@ void () enf_die14 =
 };
 
 // enf_fdie1
-// function begins at statement 20411
+// function begins at statement 20411, parm_start=11282
 // OP_STATE	5359	11282	0
 // OP_DONE	0	0	0
 void () enf_fdie1 =
@@ -1351,7 +1351,7 @@ void () enf_fdie1 =
 };
 
 // enf_fdie2
-// function begins at statement 20413
+// function begins at statement 20413, parm_start=11283
 // OP_STATE	5361	11283	0
 // OP_DONE	0	0	0
 void () enf_fdie2 =
@@ -1360,7 +1360,7 @@ void () enf_fdie2 =
 };
 
 // enf_fdie3
-// function begins at statement 20415
+// function begins at statement 20415, parm_start=11284
 // OP_STATE	5363	11284	0
 // OP_ADDRESS	28	104	11285
 // OP_STOREP_F	237	11285	0
@@ -1377,7 +1377,7 @@ void () enf_fdie3 =
 };
 
 // enf_fdie4
-// function begins at statement 20422
+// function begins at statement 20422, parm_start=11287
 // OP_STATE	5365	11287	0
 // OP_DONE	0	0	0
 void () enf_fdie4 =
@@ -1386,7 +1386,7 @@ void () enf_fdie4 =
 };
 
 // enf_fdie5
-// function begins at statement 20424
+// function begins at statement 20424, parm_start=11288
 // OP_STATE	5367	11288	0
 // OP_DONE	0	0	0
 void () enf_fdie5 =
@@ -1395,7 +1395,7 @@ void () enf_fdie5 =
 };
 
 // enf_fdie6
-// function begins at statement 20426
+// function begins at statement 20426, parm_start=11289
 // OP_STATE	912	11289	0
 // OP_DONE	0	0	0
 void () enf_fdie6 =
@@ -1404,7 +1404,7 @@ void () enf_fdie6 =
 };
 
 // enf_fdie7
-// function begins at statement 20428
+// function begins at statement 20428, parm_start=11290
 // OP_STATE	5369	11290	0
 // OP_DONE	0	0	0
 void () enf_fdie7 =
@@ -1413,7 +1413,7 @@ void () enf_fdie7 =
 };
 
 // enf_fdie8
-// function begins at statement 20430
+// function begins at statement 20430, parm_start=11291
 // OP_STATE	5371	11291	0
 // OP_DONE	0	0	0
 void () enf_fdie8 =
@@ -1422,7 +1422,7 @@ void () enf_fdie8 =
 };
 
 // enf_fdie9
-// function begins at statement 20432
+// function begins at statement 20432, parm_start=11292
 // OP_STATE	3872	11292	0
 // OP_DONE	0	0	0
 void () enf_fdie9 =
@@ -1431,7 +1431,7 @@ void () enf_fdie9 =
 };
 
 // enf_fdie10
-// function begins at statement 20434
+// function begins at statement 20434, parm_start=11293
 // OP_STATE	260	11293	0
 // OP_DONE	0	0	0
 void () enf_fdie10 =
@@ -1440,7 +1440,7 @@ void () enf_fdie10 =
 };
 
 // enf_fdie11
-// function begins at statement 20436
+// function begins at statement 20436, parm_start=11294
 // OP_STATE	5375	11293	0
 // OP_DONE	0	0	0
 void () enf_fdie11 =
@@ -1449,7 +1449,7 @@ void () enf_fdie11 =
 };
 
 // enf_die
-// function begins at statement 20438
+// function begins at statement 20438, parm_start=11295
 // OP_LOAD_F	28	152	11295
 // OP_LT	11295	8839	11296
 // OP_IFNOT	11296	24	0
@@ -1515,7 +1515,7 @@ void () enf_die =
 };
 
 // monster_enforcer
-// function begins at statement 20477
+// function begins at statement 20477, parm_start=11304
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0

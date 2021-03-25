@@ -6,7 +6,7 @@ float DOOR_TOGGLE = 32.000;
 void () door_go_down;
 void () door_go_up;
 // door_blocked
-// function begins at statement 8722
+// function begins at statement 8722, parm_start=5678
 // OP_LOAD_F	28	420	5678
 // OP_STORE_V	29	4	0
 // OP_STORE_V	28	7	0
@@ -43,7 +43,7 @@ void () door_blocked =
 };
 
 // door_hit_top
-// function begins at statement 8738
+// function begins at statement 8738, parm_start=5684
 // OP_LOAD_S	28	209	5684
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -80,7 +80,7 @@ void () door_hit_top =
 };
 
 // door_hit_bottom
-// function begins at statement 8759
+// function begins at statement 8759, parm_start=5694
 // OP_LOAD_S	28	209	5694
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -98,7 +98,7 @@ void () door_hit_bottom =
 };
 
 // door_go_down
-// function begins at statement 8769
+// function begins at statement 8769, parm_start=5696
 // OP_LOAD_S	28	210	5696
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -137,7 +137,7 @@ void () door_go_down =
 };
 
 // door_go_up
-// function begins at statement 8792
+// function begins at statement 8792, parm_start=5706
 // OP_LOAD_F	28	433	5706
 // OP_EQ_F	5706	284	5707
 // OP_IFNOT	5707	2	0
@@ -190,7 +190,7 @@ void () door_go_up =
 };
 
 // door_fire
-// function begins at statement 8822
+// function begins at statement 8822, parm_start=5721
 // OP_LOAD_ENT	28	201	5723
 // OP_NE_E	5723	28	5724
 // OP_IFNOT	5724	3	0
@@ -283,7 +283,7 @@ void () door_fire =
 };
 
 // door_use
-// function begins at statement 8868
+// function begins at statement 8868, parm_start=5745
 // OP_ADDRESS	28	206	5746
 // OP_STOREP_S	569	5746	0
 // OP_LOAD_ENT	28	201	5747
@@ -311,7 +311,7 @@ void () door_use =
 };
 
 // door_trigger_touch
-// function begins at statement 8882
+// function begins at statement 8882, parm_start=5753
 // OP_LOAD_F	29	152	5753
 // OP_LE	5753	337	5754
 // OP_IFNOT	5754	2	0
@@ -349,7 +349,7 @@ void () door_trigger_touch =
 };
 
 // door_killed
-// function begins at statement 8898
+// function begins at statement 8898, parm_start=5761
 // OP_STORE_ENT	28	5761	0
 // OP_LOAD_ENT	28	201	5762
 // OP_STORE_ENT	5762	28	0
@@ -373,7 +373,7 @@ void () door_killed =
 };
 
 // door_touch
-// function begins at statement 8909
+// function begins at statement 8909, parm_start=5767
 // OP_LOAD_S	29	129	5767
 // OP_NE_S	5767	712	5768
 // OP_IFNOT	5768	2	0
@@ -617,7 +617,7 @@ void () door_touch =
 };
 
 // spawn_field
-// function begins at statement 9049
+// function begins at statement 9049, parm_start=5823
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	5829	0
 // OP_ADDRESS	5829	103	5836
@@ -655,7 +655,7 @@ entity (vector fmins, vector fmaxs) spawn_field =
 };
 
 // EntitiesTouching
-// function begins at statement 9069
+// function begins at statement 9069, parm_start=5850
 // OP_LOAD_F	5850	135	5852
 // OP_LOAD_F	5851	139	5853
 // OP_GT	5852	5853	5854
@@ -730,7 +730,7 @@ float (entity e1, entity e2) EntitiesTouching =
 };
 
 // LinkDoors
-// function begins at statement 9101
+// function begins at statement 9101, parm_start=5871
 // OP_LOAD_ENT	28	181	5879
 // OP_IFNOT	5879	2	0
 // OP_RETURN	0	0	0
@@ -922,9 +922,9 @@ void () LinkDoors =
             self.enemy = t;
             self = t;
             
-            if(t.mins < cmins)
+            if(t.mins < cmins_x)
             {
-                cmins = t.mins;
+                cmins_x = t.mins;
             }
             
             
@@ -940,9 +940,9 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs > cmaxs)
+            if(t.maxs > cmaxs_x)
             {
-                cmaxs = t.maxs;
+                cmaxs_x = t.maxs;
             }
             
             
@@ -963,7 +963,7 @@ void () LinkDoors =
 };
 
 // func_door
-// function begins at statement 9207
+// function begins at statement 9207, parm_start=5932
 // OP_LOAD_F	30	352	5932
 // OP_EQ_F	5932	337	5933
 // OP_IFNOT	5933	10	0
@@ -1328,7 +1328,7 @@ float SECRET_1ST_DOWN = 4.000;
 float SECRET_NO_SHOOT = 8.000;
 float SECRET_YES_SHOOT = 16.000;
 // fd_secret_use
-// function begins at statement 9402
+// function begins at statement 9402, parm_start=6080
 // OP_ADDRESS	28	152	6081
 // OP_STOREP_F	3172	6081	0
 // OP_LOAD_V	28	105	6082
@@ -1491,7 +1491,7 @@ void () fd_secret_use =
 };
 
 // fd_secret_move1
-// function begins at statement 9505
+// function begins at statement 9505, parm_start=6176
 // OP_ADDRESS	28	150	6176
 // OP_LOAD_F	28	102	6177
 // OP_ADD_F	6177	6074	6178
@@ -1514,7 +1514,7 @@ void () fd_secret_move1 =
 };
 
 // fd_secret_move2
-// function begins at statement 9519
+// function begins at statement 9519, parm_start=6181
 // OP_LOAD_S	28	210	6181
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -1536,7 +1536,7 @@ void () fd_secret_move2 =
 };
 
 // fd_secret_move3
-// function begins at statement 9533
+// function begins at statement 9533, parm_start=6186
 // OP_LOAD_S	28	211	6186
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -1569,7 +1569,7 @@ void () fd_secret_move3 =
 };
 
 // fd_secret_move4
-// function begins at statement 9552
+// function begins at statement 9552, parm_start=6195
 // OP_LOAD_S	28	210	6195
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -1591,7 +1591,7 @@ void () fd_secret_move4 =
 };
 
 // fd_secret_move5
-// function begins at statement 9566
+// function begins at statement 9566, parm_start=6200
 // OP_ADDRESS	28	150	6200
 // OP_LOAD_F	28	102	6201
 // OP_ADD_F	6201	6074	6202
@@ -1614,7 +1614,7 @@ void () fd_secret_move5 =
 };
 
 // fd_secret_move6
-// function begins at statement 9580
+// function begins at statement 9580, parm_start=6205
 // OP_LOAD_S	28	210	6205
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -1636,7 +1636,7 @@ void () fd_secret_move6 =
 };
 
 // fd_secret_done
-// function begins at statement 9594
+// function begins at statement 9594, parm_start=6210
 // OP_LOAD_S	28	197	6210
 // OP_NOT_S	6210	0	6211
 // OP_LOAD_F	28	195	6212
@@ -1671,7 +1671,7 @@ void () fd_secret_done =
 };
 
 // secret_blocked
-// function begins at statement 9614
+// function begins at statement 9614, parm_start=6220
 // OP_LOAD_F	28	373	6220
 // OP_LT	31	6220	6221
 // OP_IFNOT	6221	2	0
@@ -1699,7 +1699,7 @@ void () secret_blocked =
 };
 
 // secret_touch
-// function begins at statement 9628
+// function begins at statement 9628, parm_start=6226
 // OP_LOAD_S	29	129	6226
 // OP_NE_S	6226	712	6227
 // OP_IFNOT	6227	2	0
@@ -1749,7 +1749,7 @@ void () secret_touch =
 };
 
 // func_door_secret
-// function begins at statement 9652
+// function begins at statement 9652, parm_start=6235
 // OP_LOAD_F	28	207	6235
 // OP_EQ_F	6235	337	6236
 // OP_IFNOT	6236	3	0

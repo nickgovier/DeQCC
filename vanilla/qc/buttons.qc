@@ -1,6 +1,6 @@
 void () button_return;
 // button_wait
-// function begins at statement 9753
+// function begins at statement 9753, parm_start=6302
 // OP_ADDRESS	28	433	6302
 // OP_STOREP_F	282	6302	0
 // OP_ADDRESS	28	150	6303
@@ -27,7 +27,7 @@ void () button_wait =
 };
 
 // button_done
-// function begins at statement 9768
+// function begins at statement 9768, parm_start=6311
 // OP_ADDRESS	28	433	6311
 // OP_STOREP_F	283	6311	0
 // OP_DONE	0	0	0
@@ -37,7 +37,7 @@ void () button_done =
 };
 
 // button_return
-// function begins at statement 9771
+// function begins at statement 9771, parm_start=6312
 // OP_ADDRESS	28	433	6312
 // OP_STOREP_F	285	6312	0
 // OP_LOAD_V	28	434	6313
@@ -67,14 +67,14 @@ void () button_return =
 };
 
 // button_blocked
-// function begins at statement 9786
+// function begins at statement 9786, parm_start=6321
 // OP_DONE	0	0	0
 void () button_blocked =
 {
 };
 
 // button_fire
-// function begins at statement 9787
+// function begins at statement 9787, parm_start=6322
 // OP_LOAD_F	28	433	6322
 // OP_EQ_F	6322	284	6323
 // OP_LOAD_F	28	433	6324
@@ -112,7 +112,7 @@ void () button_fire =
 };
 
 // button_use
-// function begins at statement 9810
+// function begins at statement 9810, parm_start=6334
 // OP_ADDRESS	28	181	6334
 // OP_STOREP_ENT	346	6334	0
 // OP_CALL0	6321	0	0
@@ -124,7 +124,7 @@ void () button_use =
 };
 
 // button_touch
-// function begins at statement 9814
+// function begins at statement 9814, parm_start=6336
 // OP_LOAD_S	29	129	6336
 // OP_NE_S	6336	712	6337
 // OP_IFNOT	6337	2	0
@@ -146,7 +146,7 @@ void () button_touch =
 };
 
 // button_killed
-// function begins at statement 9822
+// function begins at statement 9822, parm_start=6340
 // OP_ADDRESS	28	181	6340
 // OP_STOREP_ENT	347	6340	0
 // OP_ADDRESS	28	152	6341
@@ -165,7 +165,7 @@ void () button_killed =
 };
 
 // func_button
-// function begins at statement 9831
+// function begins at statement 9831, parm_start=6345
 // OP_LOAD_F	28	207	6347
 // OP_EQ_F	6347	337	6348
 // OP_IFNOT	6348	5	0

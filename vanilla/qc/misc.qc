@@ -1,5 +1,5 @@
 // info_null
-// function begins at statement 11129
+// function begins at statement 11129, parm_start=7221
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
@@ -9,7 +9,7 @@ void () info_null =
 };
 
 // info_notnull
-// function begins at statement 11132
+// function begins at statement 11132, parm_start=7222
 // OP_DONE	0	0	0
 void () info_notnull =
 {
@@ -17,7 +17,7 @@ void () info_notnull =
 
 float START_OFF = 1.000;
 // light_use
-// function begins at statement 11133
+// function begins at statement 11133, parm_start=7224
 // OP_LOAD_F	28	195	7224
 // OP_BITAND	7224	7222	7225
 // OP_IFNOT	7225	10	0
@@ -55,7 +55,7 @@ void () light_use =
 };
 
 // light
-// function begins at statement 11154
+// function begins at statement 11154, parm_start=7235
 // OP_LOAD_S	28	197	7235
 // OP_NOT_S	7235	0	7236
 // OP_IFNOT	7236	4	0
@@ -107,7 +107,7 @@ void () light =
 };
 
 // light_fluoro
-// function begins at statement 11178
+// function begins at statement 11178, parm_start=7245
 // OP_LOAD_F	28	355	7245
 // OP_GE	7245	5674	7246
 // OP_IFNOT	7246	15	0
@@ -156,7 +156,7 @@ void () light_fluoro =
 };
 
 // light_fluorospark
-// function begins at statement 11204
+// function begins at statement 11204, parm_start=7257
 // OP_LOAD_F	28	355	7257
 // OP_NOT_F	7257	0	7258
 // OP_IFNOT	7258	3	0
@@ -184,7 +184,7 @@ void () light_fluorospark =
 };
 
 // light_globe
-// function begins at statement 11218
+// function begins at statement 11218, parm_start=7265
 // OP_STORE_V	7265	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -201,7 +201,7 @@ void () light_globe =
 };
 
 // FireAmbient
-// function begins at statement 11226
+// function begins at statement 11226, parm_start=7267
 // OP_STORE_V	7267	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7268
@@ -218,7 +218,7 @@ void () FireAmbient =
 };
 
 // light_torch_small_walltorch
-// function begins at statement 11235
+// function begins at statement 11235, parm_start=7272
 // OP_STORE_V	7272	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -237,7 +237,7 @@ void () light_torch_small_walltorch =
 };
 
 // light_flame_large_yellow
-// function begins at statement 11244
+// function begins at statement 11244, parm_start=7274
 // OP_STORE_V	7274	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -259,7 +259,7 @@ void () light_flame_large_yellow =
 };
 
 // light_flame_small_yellow
-// function begins at statement 11255
+// function begins at statement 11255, parm_start=7277
 // OP_STORE_V	7274	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -278,7 +278,7 @@ void () light_flame_small_yellow =
 };
 
 // light_flame_small_white
-// function begins at statement 11264
+// function begins at statement 11264, parm_start=7278
 // OP_STORE_V	7274	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -299,7 +299,7 @@ void () light_flame_small_white =
 void () fire_fly;
 void () fire_touch;
 // misc_fireball
-// function begins at statement 11273
+// function begins at statement 11273, parm_start=7281
 // OP_STORE_V	3859	4	0
 // OP_CALL1	465	0	0
 // OP_ADDRESS	28	129	7281
@@ -332,7 +332,7 @@ void () misc_fireball =
 };
 
 // fire_fly
-// function begins at statement 11290
+// function begins at statement 11290, parm_start=7289
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	7289	0
 // OP_ADDRESS	7289	104	7290
@@ -408,7 +408,7 @@ void () fire_fly =
 };
 
 // fire_touch
-// function begins at statement 11343
+// function begins at statement 11343, parm_start=7321
 // OP_STORE_V	29	4	0
 // OP_STORE_V	28	7	0
 // OP_STORE_V	28	10	0
@@ -424,7 +424,7 @@ void () fire_touch =
 };
 
 // barrel_explode
-// function begins at statement 11351
+// function begins at statement 11351, parm_start=7322
 // OP_ADDRESS	28	163	7322
 // OP_STOREP_F	250	7322	0
 // OP_ADDRESS	28	129	7323
@@ -464,7 +464,7 @@ void () barrel_explode =
 };
 
 // misc_explobox
-// function begins at statement 11378
+// function begins at statement 11378, parm_start=7332
 // OP_ADDRESS	28	104	7333
 // OP_STOREP_F	239	7333	0
 // OP_ADDRESS	28	103	7334
@@ -531,7 +531,7 @@ void () misc_explobox =
 };
 
 // misc_explobox2
-// function begins at statement 11418
+// function begins at statement 11418, parm_start=7351
 // OP_ADDRESS	28	104	7352
 // OP_STOREP_F	239	7352	0
 // OP_ADDRESS	28	103	7353
@@ -601,7 +601,7 @@ float SPAWNFLAG_SUPERSPIKE = 1.000;
 float SPAWNFLAG_LASER = 2.000;
 void (vector org, vector vec) LaunchLaser;
 // spikeshooter_use
-// function begins at statement 11458
+// function begins at statement 11458, parm_start=7372
 // OP_LOAD_F	28	195	7372
 // OP_BITAND	7372	7369	7373
 // OP_IFNOT	7373	13	0
@@ -661,7 +661,7 @@ void () spikeshooter_use =
 };
 
 // shooter_think
-// function begins at statement 11494
+// function begins at statement 11494, parm_start=7400
 // OP_CALL0	7371	0	0
 // OP_ADDRESS	28	150	7400
 // OP_LOAD_F	28	413	7401
@@ -680,7 +680,7 @@ void () shooter_think =
 };
 
 // trap_spikeshooter
-// function begins at statement 11504
+// function begins at statement 11504, parm_start=7413
 // OP_CALL0	523	0	0
 // OP_ADDRESS	28	147	7413
 // OP_STOREP_FNC	7371	7413	0
@@ -715,7 +715,7 @@ void () trap_spikeshooter =
 };
 
 // trap_shooter
-// function begins at statement 11520
+// function begins at statement 11520, parm_start=7419
 // OP_CALL0	7412	0	0
 // OP_LOAD_F	28	413	7419
 // OP_EQ_F	7419	337	7420
@@ -748,7 +748,7 @@ void () trap_shooter =
 void () make_bubbles;
 void () bubble_remove;
 // air_bubbles
-// function begins at statement 11536
+// function begins at statement 11536, parm_start=7432
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
@@ -776,7 +776,7 @@ void () air_bubbles =
 };
 
 // make_bubbles
-// function begins at statement 11548
+// function begins at statement 11548, parm_start=7435
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	7435	0
 // OP_STORE_V	7435	4	0
@@ -839,7 +839,7 @@ void () make_bubbles =
 };
 
 // bubble_split
-// function begins at statement 11588
+// function begins at statement 11588, parm_start=7456
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	7456	0
 // OP_STORE_V	7456	4	0
@@ -910,7 +910,7 @@ void () bubble_split =
 };
 
 // bubble_remove
-// function begins at statement 11631
+// function begins at statement 11631, parm_start=7479
 // OP_LOAD_S	29	129	7479
 // OP_LOAD_S	28	129	7480
 // OP_EQ_S	7479	7480	7481
@@ -931,7 +931,7 @@ void () bubble_remove =
 };
 
 // bubble_bob
-// function begins at statement 11639
+// function begins at statement 11639, parm_start=7482
 // OP_ADDRESS	28	421	7491
 // OP_LOAD_F	28	421	7492
 // OP_ADD_F	7492	7368	7493
@@ -1060,7 +1060,7 @@ void () bubble_bob =
 };
 
 // viewthing
-// function begins at statement 11700
+// function begins at statement 11700, parm_start=7524
 // OP_ADDRESS	28	103	7524
 // OP_STOREP_F	227	7524	0
 // OP_ADDRESS	28	104	7525
@@ -1080,7 +1080,7 @@ void () viewthing =
 };
 
 // func_wall_use
-// function begins at statement 11710
+// function begins at statement 11710, parm_start=7527
 // OP_ADDRESS	28	131	7527
 // OP_LOAD_F	28	131	7528
 // OP_SUB_F	7368	7528	7529
@@ -1092,7 +1092,7 @@ void () func_wall_use =
 };
 
 // func_wall
-// function begins at statement 11715
+// function begins at statement 11715, parm_start=7531
 // OP_ADDRESS	28	117	7531
 // OP_STOREP_V	286	7531	0
 // OP_ADDRESS	28	103	7534
@@ -1116,7 +1116,7 @@ void () func_wall =
 };
 
 // func_illusionary
-// function begins at statement 11728
+// function begins at statement 11728, parm_start=7539
 // OP_ADDRESS	28	117	7539
 // OP_STOREP_V	286	7539	0
 // OP_ADDRESS	28	103	7542
@@ -1140,7 +1140,7 @@ void () func_illusionary =
 };
 
 // func_episodegate
-// function begins at statement 11741
+// function begins at statement 11741, parm_start=7546
 // OP_LOAD_F	28	195	7546
 // OP_BITAND	38	7546	7547
 // OP_NOT_F	7547	0	7548
@@ -1175,7 +1175,7 @@ void () func_episodegate =
 };
 
 // func_bossgate
-// function begins at statement 11759
+// function begins at statement 11759, parm_start=7557
 // OP_BITAND	38	1876	7557
 // OP_EQ_F	7557	1876	7558
 // OP_IFNOT	7558	2	0
@@ -1209,7 +1209,7 @@ void () func_bossgate =
 };
 
 // ambient_suck_wind
-// function begins at statement 11776
+// function begins at statement 11776, parm_start=7567
 // OP_STORE_V	7567	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7568
@@ -1226,7 +1226,7 @@ void () ambient_suck_wind =
 };
 
 // ambient_drone
-// function begins at statement 11785
+// function begins at statement 11785, parm_start=7572
 // OP_STORE_V	7572	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7573
@@ -1243,7 +1243,7 @@ void () ambient_drone =
 };
 
 // ambient_flouro_buzz
-// function begins at statement 11794
+// function begins at statement 11794, parm_start=7577
 // OP_STORE_V	7260	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7577
@@ -1260,7 +1260,7 @@ void () ambient_flouro_buzz =
 };
 
 // ambient_drip
-// function begins at statement 11803
+// function begins at statement 11803, parm_start=7581
 // OP_STORE_V	7581	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7582
@@ -1277,7 +1277,7 @@ void () ambient_drip =
 };
 
 // ambient_comp_hum
-// function begins at statement 11812
+// function begins at statement 11812, parm_start=7586
 // OP_STORE_V	7586	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7587
@@ -1294,7 +1294,7 @@ void () ambient_comp_hum =
 };
 
 // ambient_thunder
-// function begins at statement 11821
+// function begins at statement 11821, parm_start=7591
 // OP_STORE_V	7591	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7592
@@ -1311,7 +1311,7 @@ void () ambient_thunder =
 };
 
 // ambient_light_buzz
-// function begins at statement 11830
+// function begins at statement 11830, parm_start=7596
 // OP_STORE_V	7252	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7596
@@ -1328,7 +1328,7 @@ void () ambient_light_buzz =
 };
 
 // ambient_swamp1
-// function begins at statement 11839
+// function begins at statement 11839, parm_start=7600
 // OP_STORE_V	7600	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7601
@@ -1345,7 +1345,7 @@ void () ambient_swamp1 =
 };
 
 // ambient_swamp2
-// function begins at statement 11848
+// function begins at statement 11848, parm_start=7605
 // OP_STORE_V	7605	4	0
 // OP_CALL1	464	0	0
 // OP_LOAD_V	28	105	7606
@@ -1362,7 +1362,7 @@ void () ambient_swamp2 =
 };
 
 // noise_think
-// function begins at statement 11857
+// function begins at statement 11857, parm_start=7610
 // OP_ADDRESS	28	150	7610
 // OP_ADD_F	31	1491	7611
 // OP_STOREP_F	7611	7610	0
@@ -1422,7 +1422,7 @@ void () noise_think =
 };
 
 // misc_noisemaker
-// function begins at statement 11903
+// function begins at statement 11903, parm_start=7614
 // OP_STORE_V	7374	4	0
 // OP_CALL1	509	0	0
 // OP_STORE_V	7417	4	0

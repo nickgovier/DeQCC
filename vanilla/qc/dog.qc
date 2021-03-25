@@ -1,7 +1,7 @@
 void () dog_leap1;
 void () dog_run1;
 // dog_bite
-// function begins at statement 15652
+// function begins at statement 15652, parm_start=9251
 // OP_LOAD_ENT	28	181	9255
 // OP_NOT_ENT	9255	0	9256
 // OP_IFNOT	9256	2	0
@@ -71,7 +71,7 @@ void () dog_bite =
 };
 
 // Dog_JumpTouch
-// function begins at statement 15690
+// function begins at statement 15690, parm_start=9278
 // OP_LOAD_F	28	152	9279
 // OP_LE	9279	337	9280
 // OP_IFNOT	9280	2	0
@@ -157,7 +157,7 @@ void () Dog_JumpTouch =
 };
 
 // dog_stand1
-// function begins at statement 15733
+// function begins at statement 15733, parm_start=9300
 // OP_STATE	5383	9300	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -168,7 +168,7 @@ void () dog_stand1 =
 };
 
 // dog_stand2
-// function begins at statement 15736
+// function begins at statement 15736, parm_start=9301
 // OP_STATE	5384	9301	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -179,7 +179,7 @@ void () dog_stand2 =
 };
 
 // dog_stand3
-// function begins at statement 15739
+// function begins at statement 15739, parm_start=9302
 // OP_STATE	5386	9302	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -190,7 +190,7 @@ void () dog_stand3 =
 };
 
 // dog_stand4
-// function begins at statement 15742
+// function begins at statement 15742, parm_start=9303
 // OP_STATE	5388	9303	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -201,7 +201,7 @@ void () dog_stand4 =
 };
 
 // dog_stand5
-// function begins at statement 15745
+// function begins at statement 15745, parm_start=9304
 // OP_STATE	2739	9304	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -212,7 +212,7 @@ void () dog_stand5 =
 };
 
 // dog_stand6
-// function begins at statement 15748
+// function begins at statement 15748, parm_start=9305
 // OP_STATE	5391	9305	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -223,7 +223,7 @@ void () dog_stand6 =
 };
 
 // dog_stand7
-// function begins at statement 15751
+// function begins at statement 15751, parm_start=9306
 // OP_STATE	5393	9306	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -234,7 +234,7 @@ void () dog_stand7 =
 };
 
 // dog_stand8
-// function begins at statement 15754
+// function begins at statement 15754, parm_start=9307
 // OP_STATE	5395	9307	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -245,7 +245,7 @@ void () dog_stand8 =
 };
 
 // dog_stand9
-// function begins at statement 15757
+// function begins at statement 15757, parm_start=9308
 // OP_STATE	5397	9299	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -256,7 +256,7 @@ void () dog_stand9 =
 };
 
 // dog_walk1
-// function begins at statement 15760
+// function begins at statement 15760, parm_start=9309
 // OP_STATE	5399	9309	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	9310
@@ -283,7 +283,7 @@ void () dog_walk1 =
 };
 
 // dog_walk2
-// function begins at statement 15773
+// function begins at statement 15773, parm_start=9312
 // OP_STATE	5401	9312	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -295,7 +295,7 @@ void () dog_walk2 =
 };
 
 // dog_walk3
-// function begins at statement 15777
+// function begins at statement 15777, parm_start=9313
 // OP_STATE	788	9313	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -307,7 +307,7 @@ void () dog_walk3 =
 };
 
 // dog_walk4
-// function begins at statement 15781
+// function begins at statement 15781, parm_start=9314
 // OP_STATE	5404	9314	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -319,7 +319,7 @@ void () dog_walk4 =
 };
 
 // dog_walk5
-// function begins at statement 15785
+// function begins at statement 15785, parm_start=9315
 // OP_STATE	5406	9315	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -331,7 +331,7 @@ void () dog_walk5 =
 };
 
 // dog_walk6
-// function begins at statement 15789
+// function begins at statement 15789, parm_start=9316
 // OP_STATE	5408	9316	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -343,7 +343,7 @@ void () dog_walk6 =
 };
 
 // dog_walk7
-// function begins at statement 15793
+// function begins at statement 15793, parm_start=9317
 // OP_STATE	5410	9317	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -355,7 +355,7 @@ void () dog_walk7 =
 };
 
 // dog_walk8
-// function begins at statement 15797
+// function begins at statement 15797, parm_start=9318
 // OP_STATE	5411	9308	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
@@ -367,7 +367,7 @@ void () dog_walk8 =
 };
 
 // dog_run1
-// function begins at statement 15801
+// function begins at statement 15801, parm_start=9318
 // OP_STATE	5456	9318	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	9319
@@ -394,7 +394,7 @@ void () dog_run1 =
 };
 
 // dog_run2
-// function begins at statement 15814
+// function begins at statement 15814, parm_start=9320
 // OP_STATE	5458	9320	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -406,7 +406,7 @@ void () dog_run2 =
 };
 
 // dog_run3
-// function begins at statement 15818
+// function begins at statement 15818, parm_start=9321
 // OP_STATE	2227	9321	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -418,7 +418,7 @@ void () dog_run3 =
 };
 
 // dog_run4
-// function begins at statement 15822
+// function begins at statement 15822, parm_start=9322
 // OP_STATE	5351	9322	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -430,7 +430,7 @@ void () dog_run4 =
 };
 
 // dog_run5
-// function begins at statement 15826
+// function begins at statement 15826, parm_start=9323
 // OP_STATE	5353	9323	0
 // OP_STORE_V	260	4	0
 // OP_CALL1	1432	0	0
@@ -442,7 +442,7 @@ void () dog_run5 =
 };
 
 // dog_run6
-// function begins at statement 15830
+// function begins at statement 15830, parm_start=9324
 // OP_STATE	5355	9324	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -454,7 +454,7 @@ void () dog_run6 =
 };
 
 // dog_run7
-// function begins at statement 15834
+// function begins at statement 15834, parm_start=9325
 // OP_STATE	5357	9325	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
@@ -466,7 +466,7 @@ void () dog_run7 =
 };
 
 // dog_run8
-// function begins at statement 15838
+// function begins at statement 15838, parm_start=9326
 // OP_STATE	5359	9326	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -478,7 +478,7 @@ void () dog_run8 =
 };
 
 // dog_run9
-// function begins at statement 15842
+// function begins at statement 15842, parm_start=9327
 // OP_STATE	5361	9327	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -490,7 +490,7 @@ void () dog_run9 =
 };
 
 // dog_run10
-// function begins at statement 15846
+// function begins at statement 15846, parm_start=9328
 // OP_STATE	5363	9328	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -502,7 +502,7 @@ void () dog_run10 =
 };
 
 // dog_run11
-// function begins at statement 15850
+// function begins at statement 15850, parm_start=9329
 // OP_STATE	5365	9329	0
 // OP_STORE_V	260	4	0
 // OP_CALL1	1432	0	0
@@ -514,7 +514,7 @@ void () dog_run11 =
 };
 
 // dog_run12
-// function begins at statement 15854
+// function begins at statement 15854, parm_start=9330
 // OP_STATE	5367	9249	0
 // OP_STORE_V	5674	4	0
 // OP_CALL1	1432	0	0
@@ -526,7 +526,7 @@ void () dog_run12 =
 };
 
 // dog_atta1
-// function begins at statement 15858
+// function begins at statement 15858, parm_start=9331
 // OP_STATE	337	9331	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -538,7 +538,7 @@ void () dog_atta1 =
 };
 
 // dog_atta2
-// function begins at statement 15862
+// function begins at statement 15862, parm_start=9332
 // OP_STATE	7368	9332	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -550,7 +550,7 @@ void () dog_atta2 =
 };
 
 // dog_atta3
-// function begins at statement 15866
+// function begins at statement 15866, parm_start=9333
 // OP_STATE	7369	9333	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -562,7 +562,7 @@ void () dog_atta3 =
 };
 
 // dog_atta4
-// function begins at statement 15870
+// function begins at statement 15870, parm_start=9334
 // OP_STATE	370	9334	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -580,7 +580,7 @@ void () dog_atta4 =
 };
 
 // dog_atta5
-// function begins at statement 15879
+// function begins at statement 15879, parm_start=9336
 // OP_STATE	6076	9336	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -592,7 +592,7 @@ void () dog_atta5 =
 };
 
 // dog_atta6
-// function begins at statement 15883
+// function begins at statement 15883, parm_start=9337
 // OP_STATE	313	9337	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -604,7 +604,7 @@ void () dog_atta6 =
 };
 
 // dog_atta7
-// function begins at statement 15887
+// function begins at statement 15887, parm_start=9338
 // OP_STATE	314	9338	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -616,7 +616,7 @@ void () dog_atta7 =
 };
 
 // dog_atta8
-// function begins at statement 15891
+// function begins at statement 15891, parm_start=9339
 // OP_STATE	315	9249	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -628,7 +628,7 @@ void () dog_atta8 =
 };
 
 // dog_leap1
-// function begins at statement 15895
+// function begins at statement 15895, parm_start=9339
 // OP_STATE	912	9339	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -639,7 +639,7 @@ void () dog_leap1 =
 };
 
 // dog_leap2
-// function begins at statement 15898
+// function begins at statement 15898, parm_start=9340
 // OP_STATE	5369	9340	0
 // OP_CALL0	758	0	0
 // OP_ADDRESS	28	146	9341
@@ -680,7 +680,7 @@ void () dog_leap2 =
 };
 
 // dog_leap3
-// function begins at statement 15921
+// function begins at statement 15921, parm_start=9365
 // OP_STATE	5371	9365	0
 // OP_DONE	0	0	0
 void () dog_leap3 =
@@ -689,7 +689,7 @@ void () dog_leap3 =
 };
 
 // dog_leap4
-// function begins at statement 15923
+// function begins at statement 15923, parm_start=9366
 // OP_STATE	3872	9366	0
 // OP_DONE	0	0	0
 void () dog_leap4 =
@@ -698,7 +698,7 @@ void () dog_leap4 =
 };
 
 // dog_leap5
-// function begins at statement 15925
+// function begins at statement 15925, parm_start=9367
 // OP_STATE	260	9367	0
 // OP_DONE	0	0	0
 void () dog_leap5 =
@@ -707,7 +707,7 @@ void () dog_leap5 =
 };
 
 // dog_leap6
-// function begins at statement 15927
+// function begins at statement 15927, parm_start=9368
 // OP_STATE	5375	9368	0
 // OP_DONE	0	0	0
 void () dog_leap6 =
@@ -716,7 +716,7 @@ void () dog_leap6 =
 };
 
 // dog_leap7
-// function begins at statement 15929
+// function begins at statement 15929, parm_start=9369
 // OP_STATE	5377	9369	0
 // OP_DONE	0	0	0
 void () dog_leap7 =
@@ -725,7 +725,7 @@ void () dog_leap7 =
 };
 
 // dog_leap8
-// function begins at statement 15931
+// function begins at statement 15931, parm_start=9370
 // OP_STATE	5379	9370	0
 // OP_DONE	0	0	0
 void () dog_leap8 =
@@ -734,7 +734,7 @@ void () dog_leap8 =
 };
 
 // dog_leap9
-// function begins at statement 15933
+// function begins at statement 15933, parm_start=9371
 // OP_STATE	5381	9370	0
 // OP_DONE	0	0	0
 void () dog_leap9 =
@@ -743,7 +743,7 @@ void () dog_leap9 =
 };
 
 // dog_pain1
-// function begins at statement 15935
+// function begins at statement 15935, parm_start=9372
 // OP_STATE	7788	9372	0
 // OP_DONE	0	0	0
 void () dog_pain1 =
@@ -752,7 +752,7 @@ void () dog_pain1 =
 };
 
 // dog_pain2
-// function begins at statement 15937
+// function begins at statement 15937, parm_start=9373
 // OP_STATE	302	9373	0
 // OP_DONE	0	0	0
 void () dog_pain2 =
@@ -761,7 +761,7 @@ void () dog_pain2 =
 };
 
 // dog_pain3
-// function begins at statement 15939
+// function begins at statement 15939, parm_start=9374
 // OP_STATE	303	9374	0
 // OP_DONE	0	0	0
 void () dog_pain3 =
@@ -770,7 +770,7 @@ void () dog_pain3 =
 };
 
 // dog_pain4
-// function begins at statement 15941
+// function begins at statement 15941, parm_start=9375
 // OP_STATE	5105	9375	0
 // OP_DONE	0	0	0
 void () dog_pain4 =
@@ -779,7 +779,7 @@ void () dog_pain4 =
 };
 
 // dog_pain5
-// function begins at statement 15943
+// function begins at statement 15943, parm_start=9376
 // OP_STATE	304	9376	0
 // OP_DONE	0	0	0
 void () dog_pain5 =
@@ -788,7 +788,7 @@ void () dog_pain5 =
 };
 
 // dog_pain6
-// function begins at statement 15945
+// function begins at statement 15945, parm_start=9377
 // OP_STATE	305	9249	0
 // OP_DONE	0	0	0
 void () dog_pain6 =
@@ -797,7 +797,7 @@ void () dog_pain6 =
 };
 
 // dog_painb1
-// function begins at statement 15947
+// function begins at statement 15947, parm_start=9378
 // OP_STATE	5674	9378	0
 // OP_DONE	0	0	0
 void () dog_painb1 =
@@ -806,7 +806,7 @@ void () dog_painb1 =
 };
 
 // dog_painb2
-// function begins at statement 15949
+// function begins at statement 15949, parm_start=9379
 // OP_STATE	307	9379	0
 // OP_DONE	0	0	0
 void () dog_painb2 =
@@ -815,7 +815,7 @@ void () dog_painb2 =
 };
 
 // dog_painb3
-// function begins at statement 15951
+// function begins at statement 15951, parm_start=9380
 // OP_STATE	5112	9380	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1346	0	0
@@ -827,7 +827,7 @@ void () dog_painb3 =
 };
 
 // dog_painb4
-// function begins at statement 15955
+// function begins at statement 15955, parm_start=9381
 // OP_STATE	3072	9381	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1346	0	0
@@ -839,7 +839,7 @@ void () dog_painb4 =
 };
 
 // dog_painb5
-// function begins at statement 15959
+// function begins at statement 15959, parm_start=9382
 // OP_STATE	5096	9382	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1346	0	0
@@ -851,7 +851,7 @@ void () dog_painb5 =
 };
 
 // dog_painb6
-// function begins at statement 15963
+// function begins at statement 15963, parm_start=9383
 // OP_STATE	5098	9383	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1346	0	0
@@ -863,7 +863,7 @@ void () dog_painb6 =
 };
 
 // dog_painb7
-// function begins at statement 15967
+// function begins at statement 15967, parm_start=9384
 // OP_STATE	5100	9384	0
 // OP_DONE	0	0	0
 void () dog_painb7 =
@@ -872,7 +872,7 @@ void () dog_painb7 =
 };
 
 // dog_painb8
-// function begins at statement 15969
+// function begins at statement 15969, parm_start=9385
 // OP_STATE	5102	9385	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1346	0	0
@@ -884,7 +884,7 @@ void () dog_painb8 =
 };
 
 // dog_painb9
-// function begins at statement 15973
+// function begins at statement 15973, parm_start=9386
 // OP_STATE	1733	9386	0
 // OP_DONE	0	0	0
 void () dog_painb9 =
@@ -893,7 +893,7 @@ void () dog_painb9 =
 };
 
 // dog_painb10
-// function begins at statement 15975
+// function begins at statement 15975, parm_start=9387
 // OP_STATE	5443	9387	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1346	0	0
@@ -905,7 +905,7 @@ void () dog_painb10 =
 };
 
 // dog_painb11
-// function begins at statement 15979
+// function begins at statement 15979, parm_start=9388
 // OP_STATE	5445	9388	0
 // OP_DONE	0	0	0
 void () dog_painb11 =
@@ -914,7 +914,7 @@ void () dog_painb11 =
 };
 
 // dog_painb12
-// function begins at statement 15981
+// function begins at statement 15981, parm_start=9389
 // OP_STATE	5447	9389	0
 // OP_DONE	0	0	0
 void () dog_painb12 =
@@ -923,7 +923,7 @@ void () dog_painb12 =
 };
 
 // dog_painb13
-// function begins at statement 15983
+// function begins at statement 15983, parm_start=9390
 // OP_STATE	5449	9390	0
 // OP_DONE	0	0	0
 void () dog_painb13 =
@@ -932,7 +932,7 @@ void () dog_painb13 =
 };
 
 // dog_painb14
-// function begins at statement 15985
+// function begins at statement 15985, parm_start=9391
 // OP_STATE	1390	9391	0
 // OP_DONE	0	0	0
 void () dog_painb14 =
@@ -941,7 +941,7 @@ void () dog_painb14 =
 };
 
 // dog_painb15
-// function begins at statement 15987
+// function begins at statement 15987, parm_start=9392
 // OP_STATE	5452	9392	0
 // OP_DONE	0	0	0
 void () dog_painb15 =
@@ -950,7 +950,7 @@ void () dog_painb15 =
 };
 
 // dog_painb16
-// function begins at statement 15989
+// function begins at statement 15989, parm_start=9393
 // OP_STATE	5454	9249	0
 // OP_DONE	0	0	0
 void () dog_painb16 =
@@ -959,7 +959,7 @@ void () dog_painb16 =
 };
 
 // dog_pain
-// function begins at statement 15991
+// function begins at statement 15991, parm_start=9394
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
 // OP_STORE_V	9394	10	0
@@ -988,7 +988,7 @@ void () dog_pain =
 };
 
 // dog_die1
-// function begins at statement 16004
+// function begins at statement 16004, parm_start=9397
 // OP_STATE	6077	9397	0
 // OP_DONE	0	0	0
 void () dog_die1 =
@@ -997,7 +997,7 @@ void () dog_die1 =
 };
 
 // dog_die2
-// function begins at statement 16006
+// function begins at statement 16006, parm_start=9398
 // OP_STATE	317	9398	0
 // OP_DONE	0	0	0
 void () dog_die2 =
@@ -1006,7 +1006,7 @@ void () dog_die2 =
 };
 
 // dog_die3
-// function begins at statement 16008
+// function begins at statement 16008, parm_start=9399
 // OP_STATE	318	9399	0
 // OP_DONE	0	0	0
 void () dog_die3 =
@@ -1015,7 +1015,7 @@ void () dog_die3 =
 };
 
 // dog_die4
-// function begins at statement 16010
+// function begins at statement 16010, parm_start=9400
 // OP_STATE	319	9400	0
 // OP_DONE	0	0	0
 void () dog_die4 =
@@ -1024,7 +1024,7 @@ void () dog_die4 =
 };
 
 // dog_die5
-// function begins at statement 16012
+// function begins at statement 16012, parm_start=9401
 // OP_STATE	2250	9401	0
 // OP_DONE	0	0	0
 void () dog_die5 =
@@ -1033,7 +1033,7 @@ void () dog_die5 =
 };
 
 // dog_die6
-// function begins at statement 16014
+// function begins at statement 16014, parm_start=9402
 // OP_STATE	7768	9402	0
 // OP_DONE	0	0	0
 void () dog_die6 =
@@ -1042,7 +1042,7 @@ void () dog_die6 =
 };
 
 // dog_die7
-// function begins at statement 16016
+// function begins at statement 16016, parm_start=9403
 // OP_STATE	2901	9403	0
 // OP_DONE	0	0	0
 void () dog_die7 =
@@ -1051,7 +1051,7 @@ void () dog_die7 =
 };
 
 // dog_die8
-// function begins at statement 16018
+// function begins at statement 16018, parm_start=9404
 // OP_STATE	1876	9404	0
 // OP_DONE	0	0	0
 void () dog_die8 =
@@ -1060,7 +1060,7 @@ void () dog_die8 =
 };
 
 // dog_die9
-// function begins at statement 16020
+// function begins at statement 16020, parm_start=9405
 // OP_STATE	6078	9404	0
 // OP_DONE	0	0	0
 void () dog_die9 =
@@ -1069,7 +1069,7 @@ void () dog_die9 =
 };
 
 // dog_dieb1
-// function begins at statement 16022
+// function begins at statement 16022, parm_start=9406
 // OP_STATE	4861	9406	0
 // OP_DONE	0	0	0
 void () dog_dieb1 =
@@ -1078,7 +1078,7 @@ void () dog_dieb1 =
 };
 
 // dog_dieb2
-// function begins at statement 16024
+// function begins at statement 16024, parm_start=9407
 // OP_STATE	3319	9407	0
 // OP_DONE	0	0	0
 void () dog_dieb2 =
@@ -1087,7 +1087,7 @@ void () dog_dieb2 =
 };
 
 // dog_dieb3
-// function begins at statement 16026
+// function begins at statement 16026, parm_start=9408
 // OP_STATE	7776	9408	0
 // OP_DONE	0	0	0
 void () dog_dieb3 =
@@ -1096,7 +1096,7 @@ void () dog_dieb3 =
 };
 
 // dog_dieb4
-// function begins at statement 16028
+// function begins at statement 16028, parm_start=9409
 // OP_STATE	894	9409	0
 // OP_DONE	0	0	0
 void () dog_dieb4 =
@@ -1105,7 +1105,7 @@ void () dog_dieb4 =
 };
 
 // dog_dieb5
-// function begins at statement 16030
+// function begins at statement 16030, parm_start=9410
 // OP_STATE	7779	9410	0
 // OP_DONE	0	0	0
 void () dog_dieb5 =
@@ -1114,7 +1114,7 @@ void () dog_dieb5 =
 };
 
 // dog_dieb6
-// function begins at statement 16032
+// function begins at statement 16032, parm_start=9411
 // OP_STATE	7781	9411	0
 // OP_DONE	0	0	0
 void () dog_dieb6 =
@@ -1123,7 +1123,7 @@ void () dog_dieb6 =
 };
 
 // dog_dieb7
-// function begins at statement 16034
+// function begins at statement 16034, parm_start=9412
 // OP_STATE	301	9412	0
 // OP_DONE	0	0	0
 void () dog_dieb7 =
@@ -1132,7 +1132,7 @@ void () dog_dieb7 =
 };
 
 // dog_dieb8
-// function begins at statement 16036
+// function begins at statement 16036, parm_start=9413
 // OP_STATE	4437	9413	0
 // OP_DONE	0	0	0
 void () dog_dieb8 =
@@ -1141,7 +1141,7 @@ void () dog_dieb8 =
 };
 
 // dog_dieb9
-// function begins at statement 16038
+// function begins at statement 16038, parm_start=9414
 // OP_STATE	1890	9413	0
 // OP_DONE	0	0	0
 void () dog_dieb9 =
@@ -1150,7 +1150,7 @@ void () dog_dieb9 =
 };
 
 // dog_die
-// function begins at statement 16040
+// function begins at statement 16040, parm_start=9415
 // OP_LOAD_F	28	152	9415
 // OP_LT	9415	8839	9416
 // OP_IFNOT	9416	24	0
@@ -1219,7 +1219,7 @@ void () dog_die =
 };
 
 // CheckDogMelee
-// function begins at statement 16081
+// function begins at statement 16081, parm_start=9426
 // OP_EQ_F	761	242	9426
 // OP_IFNOT	9426	4	0
 // OP_ADDRESS	28	367	9427
@@ -1240,7 +1240,7 @@ float () CheckDogMelee =
 };
 
 // CheckDogJump
-// function begins at statement 16088
+// function begins at statement 16088, parm_start=9429
 // OP_LOAD_F	28	108	9433
 // OP_LOAD_F	28	137	9434
 // OP_ADD_F	9433	9434	9435
@@ -1323,7 +1323,7 @@ float () CheckDogJump =
 };
 
 // DogCheckAttack
-// function begins at statement 16135
+// function begins at statement 16135, parm_start=9471
 // OP_CALL0	9425	0	0
 // OP_IFNOT	1	4	0
 // OP_ADDRESS	28	367	9474
@@ -1357,7 +1357,7 @@ float () DogCheckAttack =
 };
 
 // monster_dog
-// function begins at statement 16147
+// function begins at statement 16147, parm_start=9477
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0

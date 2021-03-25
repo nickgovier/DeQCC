@@ -1,6 +1,6 @@
 void () bubble_bob;
 // player_stand1
-// function begins at statement 7366
+// function begins at statement 7366, parm_start=4861
 // OP_STATE	4861	3937	0
 // OP_ADDRESS	28	156	4862
 // OP_STOREP_F	337	4862	0
@@ -76,7 +76,7 @@ void () player_stand1 =
 };
 
 // player_run
-// function begins at statement 7404
+// function begins at statement 7404, parm_start=4884
 // OP_STATE	314	2612	0
 // OP_ADDRESS	28	156	4884
 // OP_STOREP_F	337	4884	0
@@ -155,7 +155,7 @@ void () player_run =
 };
 
 // player_shot1
-// function begins at statement 7445
+// function begins at statement 7445, parm_start=4909
 // OP_STATE	4909	4910	0
 // OP_ADDRESS	28	156	4911
 // OP_STOREP_F	2256	4911	0
@@ -172,7 +172,7 @@ void () player_shot1 =
 };
 
 // player_shot2
-// function begins at statement 7453
+// function begins at statement 7453, parm_start=4915
 // OP_STATE	4915	4916	0
 // OP_ADDRESS	28	156	4917
 // OP_STOREP_F	2257	4917	0
@@ -184,7 +184,7 @@ void () player_shot2 =
 };
 
 // player_shot3
-// function begins at statement 7457
+// function begins at statement 7457, parm_start=4918
 // OP_STATE	4918	4919	0
 // OP_ADDRESS	28	156	4920
 // OP_STOREP_F	370	4920	0
@@ -196,7 +196,7 @@ void () player_shot3 =
 };
 
 // player_shot4
-// function begins at statement 7461
+// function begins at statement 7461, parm_start=4921
 // OP_STATE	4921	4922	0
 // OP_ADDRESS	28	156	4923
 // OP_STOREP_F	2258	4923	0
@@ -208,7 +208,7 @@ void () player_shot4 =
 };
 
 // player_shot5
-// function begins at statement 7465
+// function begins at statement 7465, parm_start=4924
 // OP_STATE	4924	4925	0
 // OP_ADDRESS	28	156	4926
 // OP_STOREP_F	313	4926	0
@@ -220,7 +220,7 @@ void () player_shot5 =
 };
 
 // player_shot6
-// function begins at statement 7469
+// function begins at statement 7469, parm_start=4927
 // OP_STATE	4927	2612	0
 // OP_ADDRESS	28	156	4928
 // OP_STOREP_F	314	4928	0
@@ -232,7 +232,7 @@ void () player_shot6 =
 };
 
 // player_axe1
-// function begins at statement 7473
+// function begins at statement 7473, parm_start=4929
 // OP_STATE	4929	4930	0
 // OP_ADDRESS	28	156	4931
 // OP_STOREP_F	2256	4931	0
@@ -244,7 +244,7 @@ void () player_axe1 =
 };
 
 // player_axe2
-// function begins at statement 7477
+// function begins at statement 7477, parm_start=4932
 // OP_STATE	1164	4932	0
 // OP_ADDRESS	28	156	4933
 // OP_STOREP_F	2257	4933	0
@@ -256,7 +256,7 @@ void () player_axe2 =
 };
 
 // player_axe3
-// function begins at statement 7481
+// function begins at statement 7481, parm_start=4934
 // OP_STATE	4934	4935	0
 // OP_ADDRESS	28	156	4936
 // OP_STOREP_F	370	4936	0
@@ -270,7 +270,7 @@ void () player_axe3 =
 };
 
 // player_axe4
-// function begins at statement 7486
+// function begins at statement 7486, parm_start=4937
 // OP_STATE	4937	2612	0
 // OP_ADDRESS	28	156	4938
 // OP_STOREP_F	2258	4938	0
@@ -282,7 +282,7 @@ void () player_axe4 =
 };
 
 // player_axeb1
-// function begins at statement 7490
+// function begins at statement 7490, parm_start=4939
 // OP_STATE	4939	4940	0
 // OP_ADDRESS	28	156	4941
 // OP_STOREP_F	313	4941	0
@@ -294,7 +294,7 @@ void () player_axeb1 =
 };
 
 // player_axeb2
-// function begins at statement 7494
+// function begins at statement 7494, parm_start=4942
 // OP_STATE	4942	4943	0
 // OP_ADDRESS	28	156	4944
 // OP_STOREP_F	314	4944	0
@@ -306,7 +306,7 @@ void () player_axeb2 =
 };
 
 // player_axeb3
-// function begins at statement 7498
+// function begins at statement 7498, parm_start=4945
 // OP_STATE	4945	4946	0
 // OP_ADDRESS	28	156	4947
 // OP_STOREP_F	315	4947	0
@@ -320,7 +320,7 @@ void () player_axeb3 =
 };
 
 // player_axeb4
-// function begins at statement 7503
+// function begins at statement 7503, parm_start=4948
 // OP_STATE	261	2612	0
 // OP_ADDRESS	28	156	4948
 // OP_STOREP_F	2259	4948	0
@@ -332,7 +332,7 @@ void () player_axeb4 =
 };
 
 // player_axec1
-// function begins at statement 7507
+// function begins at statement 7507, parm_start=4949
 // OP_STATE	4949	4950	0
 // OP_ADDRESS	28	156	4951
 // OP_STOREP_F	2256	4951	0
@@ -344,7 +344,7 @@ void () player_axec1 =
 };
 
 // player_axec2
-// function begins at statement 7511
+// function begins at statement 7511, parm_start=4952
 // OP_STATE	4952	4953	0
 // OP_ADDRESS	28	156	4954
 // OP_STOREP_F	2257	4954	0
@@ -356,7 +356,7 @@ void () player_axec2 =
 };
 
 // player_axec3
-// function begins at statement 7515
+// function begins at statement 7515, parm_start=4955
 // OP_STATE	4955	4956	0
 // OP_ADDRESS	28	156	4957
 // OP_STOREP_F	370	4957	0
@@ -370,7 +370,7 @@ void () player_axec3 =
 };
 
 // player_axec4
-// function begins at statement 7520
+// function begins at statement 7520, parm_start=4958
 // OP_STATE	4958	2612	0
 // OP_ADDRESS	28	156	4959
 // OP_STOREP_F	2258	4959	0
@@ -382,7 +382,7 @@ void () player_axec4 =
 };
 
 // player_axed1
-// function begins at statement 7524
+// function begins at statement 7524, parm_start=4960
 // OP_STATE	4960	4961	0
 // OP_ADDRESS	28	156	4962
 // OP_STOREP_F	313	4962	0
@@ -394,7 +394,7 @@ void () player_axed1 =
 };
 
 // player_axed2
-// function begins at statement 7528
+// function begins at statement 7528, parm_start=4963
 // OP_STATE	4963	4964	0
 // OP_ADDRESS	28	156	4965
 // OP_STOREP_F	314	4965	0
@@ -406,7 +406,7 @@ void () player_axed2 =
 };
 
 // player_axed3
-// function begins at statement 7532
+// function begins at statement 7532, parm_start=4966
 // OP_STATE	4966	4967	0
 // OP_ADDRESS	28	156	4968
 // OP_STOREP_F	315	4968	0
@@ -420,7 +420,7 @@ void () player_axed3 =
 };
 
 // player_axed4
-// function begins at statement 7537
+// function begins at statement 7537, parm_start=4969
 // OP_STATE	4969	2612	0
 // OP_ADDRESS	28	156	4970
 // OP_STOREP_F	2259	4970	0
@@ -432,7 +432,7 @@ void () player_axed4 =
 };
 
 // player_nail1
-// function begins at statement 7541
+// function begins at statement 7541, parm_start=4971
 // OP_STATE	4971	4972	0
 // OP_ADDRESS	28	133	4973
 // OP_LOAD_F	28	133	4974
@@ -483,7 +483,7 @@ void () player_nail1 =
 };
 
 // player_nail2
-// function begins at statement 7567
+// function begins at statement 7567, parm_start=4986
 // OP_STATE	4986	3447	0
 // OP_ADDRESS	28	133	4987
 // OP_LOAD_F	28	133	4988
@@ -534,7 +534,7 @@ void () player_nail2 =
 };
 
 // player_light1
-// function begins at statement 7593
+// function begins at statement 7593, parm_start=5000
 // OP_STATE	5000	5001	0
 // OP_ADDRESS	28	133	5002
 // OP_LOAD_F	28	133	5003
@@ -584,7 +584,7 @@ void () player_light1 =
 };
 
 // player_light2
-// function begins at statement 7618
+// function begins at statement 7618, parm_start=5015
 // OP_STATE	5015	3448	0
 // OP_ADDRESS	28	133	5016
 // OP_LOAD_F	28	133	5017
@@ -634,7 +634,7 @@ void () player_light2 =
 };
 
 // player_rocket1
-// function begins at statement 7643
+// function begins at statement 7643, parm_start=5029
 // OP_STATE	5029	5030	0
 // OP_ADDRESS	28	156	5031
 // OP_STOREP_F	2256	5031	0
@@ -651,7 +651,7 @@ void () player_rocket1 =
 };
 
 // player_rocket2
-// function begins at statement 7651
+// function begins at statement 7651, parm_start=5035
 // OP_STATE	5035	5036	0
 // OP_ADDRESS	28	156	5037
 // OP_STOREP_F	2257	5037	0
@@ -663,7 +663,7 @@ void () player_rocket2 =
 };
 
 // player_rocket3
-// function begins at statement 7655
+// function begins at statement 7655, parm_start=5038
 // OP_STATE	5038	5039	0
 // OP_ADDRESS	28	156	5040
 // OP_STOREP_F	370	5040	0
@@ -675,7 +675,7 @@ void () player_rocket3 =
 };
 
 // player_rocket4
-// function begins at statement 7659
+// function begins at statement 7659, parm_start=5041
 // OP_STATE	5041	5042	0
 // OP_ADDRESS	28	156	5043
 // OP_STOREP_F	2258	5043	0
@@ -687,7 +687,7 @@ void () player_rocket4 =
 };
 
 // player_rocket5
-// function begins at statement 7663
+// function begins at statement 7663, parm_start=5044
 // OP_STATE	5044	5045	0
 // OP_ADDRESS	28	156	5046
 // OP_STOREP_F	313	5046	0
@@ -699,7 +699,7 @@ void () player_rocket5 =
 };
 
 // player_rocket6
-// function begins at statement 7667
+// function begins at statement 7667, parm_start=5047
 // OP_STATE	5047	2612	0
 // OP_ADDRESS	28	156	5048
 // OP_STOREP_F	314	5048	0
@@ -712,7 +712,7 @@ void () player_rocket6 =
 
 void (float num_bubbles) DeathBubbles;
 // PainSound
-// function begins at statement 7671
+// function begins at statement 7671, parm_start=5051
 // OP_LOAD_F	28	152	5052
 // OP_LT	5052	337	5053
 // OP_IFNOT	5053	2	0
@@ -978,7 +978,7 @@ void () PainSound =
 };
 
 // player_pain1
-// function begins at statement 7820
+// function begins at statement 7820, parm_start=5094
 // OP_STATE	3072	5094	0
 // OP_CALL0	5050	0	0
 // OP_ADDRESS	28	156	5095
@@ -992,7 +992,7 @@ void () player_pain1 =
 };
 
 // player_pain2
-// function begins at statement 7825
+// function begins at statement 7825, parm_start=5096
 // OP_STATE	5096	5097	0
 // OP_DONE	0	0	0
 void () player_pain2 =
@@ -1001,7 +1001,7 @@ void () player_pain2 =
 };
 
 // player_pain3
-// function begins at statement 7827
+// function begins at statement 7827, parm_start=5098
 // OP_STATE	5098	5099	0
 // OP_DONE	0	0	0
 void () player_pain3 =
@@ -1010,7 +1010,7 @@ void () player_pain3 =
 };
 
 // player_pain4
-// function begins at statement 7829
+// function begins at statement 7829, parm_start=5100
 // OP_STATE	5100	5101	0
 // OP_DONE	0	0	0
 void () player_pain4 =
@@ -1019,7 +1019,7 @@ void () player_pain4 =
 };
 
 // player_pain5
-// function begins at statement 7831
+// function begins at statement 7831, parm_start=5102
 // OP_STATE	5102	5103	0
 // OP_DONE	0	0	0
 void () player_pain5 =
@@ -1028,7 +1028,7 @@ void () player_pain5 =
 };
 
 // player_pain6
-// function begins at statement 7833
+// function begins at statement 7833, parm_start=5104
 // OP_STATE	1733	2612	0
 // OP_DONE	0	0	0
 void () player_pain6 =
@@ -1037,7 +1037,7 @@ void () player_pain6 =
 };
 
 // player_axpain1
-// function begins at statement 7835
+// function begins at statement 7835, parm_start=5105
 // OP_STATE	5105	5106	0
 // OP_CALL0	5050	0	0
 // OP_ADDRESS	28	156	5107
@@ -1051,7 +1051,7 @@ void () player_axpain1 =
 };
 
 // player_axpain2
-// function begins at statement 7840
+// function begins at statement 7840, parm_start=5108
 // OP_STATE	304	5108	0
 // OP_DONE	0	0	0
 void () player_axpain2 =
@@ -1060,7 +1060,7 @@ void () player_axpain2 =
 };
 
 // player_axpain3
-// function begins at statement 7842
+// function begins at statement 7842, parm_start=5109
 // OP_STATE	305	5109	0
 // OP_DONE	0	0	0
 void () player_axpain3 =
@@ -1069,7 +1069,7 @@ void () player_axpain3 =
 };
 
 // player_axpain4
-// function begins at statement 7844
+// function begins at statement 7844, parm_start=5110
 // OP_STATE	306	5110	0
 // OP_DONE	0	0	0
 void () player_axpain4 =
@@ -1078,7 +1078,7 @@ void () player_axpain4 =
 };
 
 // player_axpain5
-// function begins at statement 7846
+// function begins at statement 7846, parm_start=5111
 // OP_STATE	307	5111	0
 // OP_DONE	0	0	0
 void () player_axpain5 =
@@ -1087,7 +1087,7 @@ void () player_axpain5 =
 };
 
 // player_axpain6
-// function begins at statement 7848
+// function begins at statement 7848, parm_start=5112
 // OP_STATE	5112	2612	0
 // OP_DONE	0	0	0
 void () player_axpain6 =
@@ -1096,7 +1096,7 @@ void () player_axpain6 =
 };
 
 // player_pain
-// function begins at statement 7850
+// function begins at statement 7850, parm_start=5113
 // OP_LOAD_F	28	156	5113
 // OP_IFNOT	5113	2	0
 // OP_RETURN	0	0	0
@@ -1143,7 +1143,7 @@ void () player_died1;
 void () player_diee1;
 void () player_die_ax1;
 // DeathBubblesSpawn
-// function begins at statement 7864
+// function begins at statement 7864, parm_start=5125
 // OP_LOAD_ENT	28	201	5126
 // OP_LOAD_F	5126	189	5127
 // OP_NE_F	5127	370	5128
@@ -1237,7 +1237,7 @@ void () DeathBubblesSpawn =
 };
 
 // DeathBubbles
-// function begins at statement 7923
+// function begins at statement 7923, parm_start=5164
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	5165	0
 // OP_LOAD_V	28	105	5166
@@ -1275,7 +1275,7 @@ void (float num_bubbles) DeathBubbles =
 };
 
 // DeathSound
-// function begins at statement 7945
+// function begins at statement 7945, parm_start=5178
 // OP_LOAD_F	28	189	5179
 // OP_EQ_F	5179	370	5180
 // OP_IFNOT	5180	10	0
@@ -1370,7 +1370,7 @@ void () DeathSound =
 };
 
 // PlayerDead
-// function begins at statement 7992
+// function begins at statement 7992, parm_start=5195
 // OP_ADDRESS	28	150	5195
 // OP_STOREP_F	276	5195	0
 // OP_ADDRESS	28	165	5196
@@ -1383,7 +1383,7 @@ void () PlayerDead =
 };
 
 // VelocityForDamage
-// function begins at statement 7997
+// function begins at statement 7997, parm_start=5198
 // OP_CALL0	2628	0	0
 // OP_MUL_F	1884	1	5202
 // OP_STORE_F	5202	5199	0
@@ -1412,7 +1412,7 @@ vector (float dm) VelocityForDamage =
 {
     local vector v;
     crandom();
-    v = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
+    v_x = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
     crandom();
     v_y = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
     random();
@@ -1434,7 +1434,7 @@ vector (float dm) VelocityForDamage =
 };
 
 // ThrowGib
-// function begins at statement 8021
+// function begins at statement 8021, parm_start=5219
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	5221	0
 // OP_ADDRESS	5221	105	5222
@@ -1503,7 +1503,7 @@ void (string gibname, float dm) ThrowGib =
 };
 
 // ThrowHead
-// function begins at statement 8068
+// function begins at statement 8068, parm_start=5248
 // OP_STORE_V	28	4	0
 // OP_STORE_V	5248	7	0
 // OP_CALL2	449	0	0
@@ -1559,7 +1559,7 @@ void (string gibname, float dm) ThrowHead =
 };
 
 // GibPlayer
-// function begins at statement 8106
+// function begins at statement 8106, parm_start=5282
 // OP_LOAD_F	28	152	5282
 // OP_STORE_V	3851	4	0
 // OP_STORE_V	5282	7	0
@@ -1648,7 +1648,7 @@ void () GibPlayer =
 };
 
 // PlayerDie
-// function begins at statement 8161
+// function begins at statement 8161, parm_start=5292
 // OP_ADDRESS	28	162	5293
 // OP_LOAD_F	28	162	5294
 // OP_LOAD_F	28	162	5295
@@ -1819,7 +1819,7 @@ void () PlayerDie =
 };
 
 // set_suicide_frame
-// function begins at statement 8254
+// function begins at statement 8254, parm_start=5343
 // OP_LOAD_S	28	130	5343
 // OP_NE_S	5343	3849	5344
 // OP_IFNOT	5344	2	0
@@ -1851,7 +1851,7 @@ void () set_suicide_frame =
 };
 
 // player_diea1
-// function begins at statement 8269
+// function begins at statement 8269, parm_start=5350
 // OP_STATE	2227	5350	0
 // OP_DONE	0	0	0
 void () player_diea1 =
@@ -1860,7 +1860,7 @@ void () player_diea1 =
 };
 
 // player_diea2
-// function begins at statement 8271
+// function begins at statement 8271, parm_start=5351
 // OP_STATE	5351	5352	0
 // OP_DONE	0	0	0
 void () player_diea2 =
@@ -1869,7 +1869,7 @@ void () player_diea2 =
 };
 
 // player_diea3
-// function begins at statement 8273
+// function begins at statement 8273, parm_start=5353
 // OP_STATE	5353	5354	0
 // OP_DONE	0	0	0
 void () player_diea3 =
@@ -1878,7 +1878,7 @@ void () player_diea3 =
 };
 
 // player_diea4
-// function begins at statement 8275
+// function begins at statement 8275, parm_start=5355
 // OP_STATE	5355	5356	0
 // OP_DONE	0	0	0
 void () player_diea4 =
@@ -1887,7 +1887,7 @@ void () player_diea4 =
 };
 
 // player_diea5
-// function begins at statement 8277
+// function begins at statement 8277, parm_start=5357
 // OP_STATE	5357	5358	0
 // OP_DONE	0	0	0
 void () player_diea5 =
@@ -1896,7 +1896,7 @@ void () player_diea5 =
 };
 
 // player_diea6
-// function begins at statement 8279
+// function begins at statement 8279, parm_start=5359
 // OP_STATE	5359	5360	0
 // OP_DONE	0	0	0
 void () player_diea6 =
@@ -1905,7 +1905,7 @@ void () player_diea6 =
 };
 
 // player_diea7
-// function begins at statement 8281
+// function begins at statement 8281, parm_start=5361
 // OP_STATE	5361	5362	0
 // OP_DONE	0	0	0
 void () player_diea7 =
@@ -1914,7 +1914,7 @@ void () player_diea7 =
 };
 
 // player_diea8
-// function begins at statement 8283
+// function begins at statement 8283, parm_start=5363
 // OP_STATE	5363	5364	0
 // OP_DONE	0	0	0
 void () player_diea8 =
@@ -1923,7 +1923,7 @@ void () player_diea8 =
 };
 
 // player_diea9
-// function begins at statement 8285
+// function begins at statement 8285, parm_start=5365
 // OP_STATE	5365	5366	0
 // OP_DONE	0	0	0
 void () player_diea9 =
@@ -1932,7 +1932,7 @@ void () player_diea9 =
 };
 
 // player_diea10
-// function begins at statement 8287
+// function begins at statement 8287, parm_start=5367
 // OP_STATE	5367	5368	0
 // OP_DONE	0	0	0
 void () player_diea10 =
@@ -1941,7 +1941,7 @@ void () player_diea10 =
 };
 
 // player_diea11
-// function begins at statement 8289
+// function begins at statement 8289, parm_start=5369
 // OP_STATE	912	5368	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
@@ -1952,7 +1952,7 @@ void () player_diea11 =
 };
 
 // player_dieb1
-// function begins at statement 8292
+// function begins at statement 8292, parm_start=5369
 // OP_STATE	5369	5370	0
 // OP_DONE	0	0	0
 void () player_dieb1 =
@@ -1961,7 +1961,7 @@ void () player_dieb1 =
 };
 
 // player_dieb2
-// function begins at statement 8294
+// function begins at statement 8294, parm_start=5371
 // OP_STATE	5371	5372	0
 // OP_DONE	0	0	0
 void () player_dieb2 =
@@ -1970,7 +1970,7 @@ void () player_dieb2 =
 };
 
 // player_dieb3
-// function begins at statement 8296
+// function begins at statement 8296, parm_start=5373
 // OP_STATE	3872	5373	0
 // OP_DONE	0	0	0
 void () player_dieb3 =
@@ -1979,7 +1979,7 @@ void () player_dieb3 =
 };
 
 // player_dieb4
-// function begins at statement 8298
+// function begins at statement 8298, parm_start=5374
 // OP_STATE	260	5374	0
 // OP_DONE	0	0	0
 void () player_dieb4 =
@@ -1988,7 +1988,7 @@ void () player_dieb4 =
 };
 
 // player_dieb5
-// function begins at statement 8300
+// function begins at statement 8300, parm_start=5375
 // OP_STATE	5375	5376	0
 // OP_DONE	0	0	0
 void () player_dieb5 =
@@ -1997,7 +1997,7 @@ void () player_dieb5 =
 };
 
 // player_dieb6
-// function begins at statement 8302
+// function begins at statement 8302, parm_start=5377
 // OP_STATE	5377	5378	0
 // OP_DONE	0	0	0
 void () player_dieb6 =
@@ -2006,7 +2006,7 @@ void () player_dieb6 =
 };
 
 // player_dieb7
-// function begins at statement 8304
+// function begins at statement 8304, parm_start=5379
 // OP_STATE	5379	5380	0
 // OP_DONE	0	0	0
 void () player_dieb7 =
@@ -2015,7 +2015,7 @@ void () player_dieb7 =
 };
 
 // player_dieb8
-// function begins at statement 8306
+// function begins at statement 8306, parm_start=5381
 // OP_STATE	5381	5382	0
 // OP_DONE	0	0	0
 void () player_dieb8 =
@@ -2024,7 +2024,7 @@ void () player_dieb8 =
 };
 
 // player_dieb9
-// function begins at statement 8308
+// function begins at statement 8308, parm_start=5383
 // OP_STATE	5383	5382	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
@@ -2035,7 +2035,7 @@ void () player_dieb9 =
 };
 
 // player_diec1
-// function begins at statement 8311
+// function begins at statement 8311, parm_start=5384
 // OP_STATE	5384	5385	0
 // OP_DONE	0	0	0
 void () player_diec1 =
@@ -2044,7 +2044,7 @@ void () player_diec1 =
 };
 
 // player_diec2
-// function begins at statement 8313
+// function begins at statement 8313, parm_start=5386
 // OP_STATE	5386	5387	0
 // OP_DONE	0	0	0
 void () player_diec2 =
@@ -2053,7 +2053,7 @@ void () player_diec2 =
 };
 
 // player_diec3
-// function begins at statement 8315
+// function begins at statement 8315, parm_start=5388
 // OP_STATE	5388	5389	0
 // OP_DONE	0	0	0
 void () player_diec3 =
@@ -2062,7 +2062,7 @@ void () player_diec3 =
 };
 
 // player_diec4
-// function begins at statement 8317
+// function begins at statement 8317, parm_start=5390
 // OP_STATE	2739	5390	0
 // OP_DONE	0	0	0
 void () player_diec4 =
@@ -2071,7 +2071,7 @@ void () player_diec4 =
 };
 
 // player_diec5
-// function begins at statement 8319
+// function begins at statement 8319, parm_start=5391
 // OP_STATE	5391	5392	0
 // OP_DONE	0	0	0
 void () player_diec5 =
@@ -2080,7 +2080,7 @@ void () player_diec5 =
 };
 
 // player_diec6
-// function begins at statement 8321
+// function begins at statement 8321, parm_start=5393
 // OP_STATE	5393	5394	0
 // OP_DONE	0	0	0
 void () player_diec6 =
@@ -2089,7 +2089,7 @@ void () player_diec6 =
 };
 
 // player_diec7
-// function begins at statement 8323
+// function begins at statement 8323, parm_start=5395
 // OP_STATE	5395	5396	0
 // OP_DONE	0	0	0
 void () player_diec7 =
@@ -2098,7 +2098,7 @@ void () player_diec7 =
 };
 
 // player_diec8
-// function begins at statement 8325
+// function begins at statement 8325, parm_start=5397
 // OP_STATE	5397	5398	0
 // OP_DONE	0	0	0
 void () player_diec8 =
@@ -2107,7 +2107,7 @@ void () player_diec8 =
 };
 
 // player_diec9
-// function begins at statement 8327
+// function begins at statement 8327, parm_start=5399
 // OP_STATE	5399	5400	0
 // OP_DONE	0	0	0
 void () player_diec9 =
@@ -2116,7 +2116,7 @@ void () player_diec9 =
 };
 
 // player_diec10
-// function begins at statement 8329
+// function begins at statement 8329, parm_start=5401
 // OP_STATE	5401	5402	0
 // OP_DONE	0	0	0
 void () player_diec10 =
@@ -2125,7 +2125,7 @@ void () player_diec10 =
 };
 
 // player_diec11
-// function begins at statement 8331
+// function begins at statement 8331, parm_start=5403
 // OP_STATE	788	5403	0
 // OP_DONE	0	0	0
 void () player_diec11 =
@@ -2134,7 +2134,7 @@ void () player_diec11 =
 };
 
 // player_diec12
-// function begins at statement 8333
+// function begins at statement 8333, parm_start=5404
 // OP_STATE	5404	5405	0
 // OP_DONE	0	0	0
 void () player_diec12 =
@@ -2143,7 +2143,7 @@ void () player_diec12 =
 };
 
 // player_diec13
-// function begins at statement 8335
+// function begins at statement 8335, parm_start=5406
 // OP_STATE	5406	5407	0
 // OP_DONE	0	0	0
 void () player_diec13 =
@@ -2152,7 +2152,7 @@ void () player_diec13 =
 };
 
 // player_diec14
-// function begins at statement 8337
+// function begins at statement 8337, parm_start=5408
 // OP_STATE	5408	5409	0
 // OP_DONE	0	0	0
 void () player_diec14 =
@@ -2161,7 +2161,7 @@ void () player_diec14 =
 };
 
 // player_diec15
-// function begins at statement 8339
+// function begins at statement 8339, parm_start=5410
 // OP_STATE	5410	5409	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
@@ -2172,7 +2172,7 @@ void () player_diec15 =
 };
 
 // player_died1
-// function begins at statement 8342
+// function begins at statement 8342, parm_start=5411
 // OP_STATE	5411	5412	0
 // OP_DONE	0	0	0
 void () player_died1 =
@@ -2181,7 +2181,7 @@ void () player_died1 =
 };
 
 // player_died2
-// function begins at statement 8344
+// function begins at statement 8344, parm_start=5413
 // OP_STATE	5413	5414	0
 // OP_DONE	0	0	0
 void () player_died2 =
@@ -2190,7 +2190,7 @@ void () player_died2 =
 };
 
 // player_died3
-// function begins at statement 8346
+// function begins at statement 8346, parm_start=5415
 // OP_STATE	5415	5416	0
 // OP_DONE	0	0	0
 void () player_died3 =
@@ -2199,7 +2199,7 @@ void () player_died3 =
 };
 
 // player_died4
-// function begins at statement 8348
+// function begins at statement 8348, parm_start=5417
 // OP_STATE	5417	5418	0
 // OP_DONE	0	0	0
 void () player_died4 =
@@ -2208,7 +2208,7 @@ void () player_died4 =
 };
 
 // player_died5
-// function begins at statement 8350
+// function begins at statement 8350, parm_start=5419
 // OP_STATE	5419	5420	0
 // OP_DONE	0	0	0
 void () player_died5 =
@@ -2217,7 +2217,7 @@ void () player_died5 =
 };
 
 // player_died6
-// function begins at statement 8352
+// function begins at statement 8352, parm_start=5421
 // OP_STATE	1423	5421	0
 // OP_DONE	0	0	0
 void () player_died6 =
@@ -2226,7 +2226,7 @@ void () player_died6 =
 };
 
 // player_died7
-// function begins at statement 8354
+// function begins at statement 8354, parm_start=5422
 // OP_STATE	5422	5423	0
 // OP_DONE	0	0	0
 void () player_died7 =
@@ -2235,7 +2235,7 @@ void () player_died7 =
 };
 
 // player_died8
-// function begins at statement 8356
+// function begins at statement 8356, parm_start=5424
 // OP_STATE	5424	5425	0
 // OP_DONE	0	0	0
 void () player_died8 =
@@ -2244,7 +2244,7 @@ void () player_died8 =
 };
 
 // player_died9
-// function begins at statement 8358
+// function begins at statement 8358, parm_start=5426
 // OP_STATE	5426	5425	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
@@ -2255,7 +2255,7 @@ void () player_died9 =
 };
 
 // player_diee1
-// function begins at statement 8361
+// function begins at statement 8361, parm_start=5427
 // OP_STATE	5427	5428	0
 // OP_DONE	0	0	0
 void () player_diee1 =
@@ -2264,7 +2264,7 @@ void () player_diee1 =
 };
 
 // player_diee2
-// function begins at statement 8363
+// function begins at statement 8363, parm_start=5429
 // OP_STATE	5429	5430	0
 // OP_DONE	0	0	0
 void () player_diee2 =
@@ -2273,7 +2273,7 @@ void () player_diee2 =
 };
 
 // player_diee3
-// function begins at statement 8365
+// function begins at statement 8365, parm_start=5431
 // OP_STATE	5431	5432	0
 // OP_DONE	0	0	0
 void () player_diee3 =
@@ -2282,7 +2282,7 @@ void () player_diee3 =
 };
 
 // player_diee4
-// function begins at statement 8367
+// function begins at statement 8367, parm_start=5433
 // OP_STATE	5433	5434	0
 // OP_DONE	0	0	0
 void () player_diee4 =
@@ -2291,7 +2291,7 @@ void () player_diee4 =
 };
 
 // player_diee5
-// function begins at statement 8369
+// function begins at statement 8369, parm_start=5435
 // OP_STATE	5435	5436	0
 // OP_DONE	0	0	0
 void () player_diee5 =
@@ -2300,7 +2300,7 @@ void () player_diee5 =
 };
 
 // player_diee6
-// function begins at statement 8371
+// function begins at statement 8371, parm_start=5437
 // OP_STATE	5437	5438	0
 // OP_DONE	0	0	0
 void () player_diee6 =
@@ -2309,7 +2309,7 @@ void () player_diee6 =
 };
 
 // player_diee7
-// function begins at statement 8373
+// function begins at statement 8373, parm_start=5439
 // OP_STATE	1884	5439	0
 // OP_DONE	0	0	0
 void () player_diee7 =
@@ -2318,7 +2318,7 @@ void () player_diee7 =
 };
 
 // player_diee8
-// function begins at statement 8375
+// function begins at statement 8375, parm_start=5440
 // OP_STATE	5440	5441	0
 // OP_DONE	0	0	0
 void () player_diee8 =
@@ -2327,7 +2327,7 @@ void () player_diee8 =
 };
 
 // player_diee9
-// function begins at statement 8377
+// function begins at statement 8377, parm_start=5442
 // OP_STATE	5442	5441	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
@@ -2338,7 +2338,7 @@ void () player_diee9 =
 };
 
 // player_die_ax1
-// function begins at statement 8380
+// function begins at statement 8380, parm_start=5443
 // OP_STATE	5443	5444	0
 // OP_DONE	0	0	0
 void () player_die_ax1 =
@@ -2347,7 +2347,7 @@ void () player_die_ax1 =
 };
 
 // player_die_ax2
-// function begins at statement 8382
+// function begins at statement 8382, parm_start=5445
 // OP_STATE	5445	5446	0
 // OP_DONE	0	0	0
 void () player_die_ax2 =
@@ -2356,7 +2356,7 @@ void () player_die_ax2 =
 };
 
 // player_die_ax3
-// function begins at statement 8384
+// function begins at statement 8384, parm_start=5447
 // OP_STATE	5447	5448	0
 // OP_DONE	0	0	0
 void () player_die_ax3 =
@@ -2365,7 +2365,7 @@ void () player_die_ax3 =
 };
 
 // player_die_ax4
-// function begins at statement 8386
+// function begins at statement 8386, parm_start=5449
 // OP_STATE	5449	5450	0
 // OP_DONE	0	0	0
 void () player_die_ax4 =
@@ -2374,7 +2374,7 @@ void () player_die_ax4 =
 };
 
 // player_die_ax5
-// function begins at statement 8388
+// function begins at statement 8388, parm_start=5451
 // OP_STATE	1390	5451	0
 // OP_DONE	0	0	0
 void () player_die_ax5 =
@@ -2383,7 +2383,7 @@ void () player_die_ax5 =
 };
 
 // player_die_ax6
-// function begins at statement 8390
+// function begins at statement 8390, parm_start=5452
 // OP_STATE	5452	5453	0
 // OP_DONE	0	0	0
 void () player_die_ax6 =
@@ -2392,7 +2392,7 @@ void () player_die_ax6 =
 };
 
 // player_die_ax7
-// function begins at statement 8392
+// function begins at statement 8392, parm_start=5454
 // OP_STATE	5454	5455	0
 // OP_DONE	0	0	0
 void () player_die_ax7 =
@@ -2401,7 +2401,7 @@ void () player_die_ax7 =
 };
 
 // player_die_ax8
-// function begins at statement 8394
+// function begins at statement 8394, parm_start=5456
 // OP_STATE	5456	5457	0
 // OP_DONE	0	0	0
 void () player_die_ax8 =
@@ -2410,7 +2410,7 @@ void () player_die_ax8 =
 };
 
 // player_die_ax9
-// function begins at statement 8396
+// function begins at statement 8396, parm_start=5458
 // OP_STATE	5458	5457	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0

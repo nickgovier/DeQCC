@@ -7,7 +7,7 @@ float current_yaw;
 entity sight_entity;
 float sight_entity_time;
 // anglemod
-// function begins at statement 658
+// function begins at statement 658, parm_start=1089
 // OP_GE	1089	1090	1091
 // OP_IFNOT	1091	4	0
 // OP_SUB_F	1089	1090	1092
@@ -38,7 +38,7 @@ float (float v) anglemod =
 };
 
 // movetarget_f
-// function begins at statement 670
+// function begins at statement 670, parm_start=1095
 // OP_LOAD_S	28	197	1095
 // OP_NOT_S	1095	0	1096
 // OP_IFNOT	1096	3	0
@@ -67,7 +67,7 @@ void () movetarget_f =
 };
 
 // path_corner
-// function begins at statement 684
+// function begins at statement 684, parm_start=1107
 // OP_CALL0	1081	0	0
 // OP_DONE	0	0	0
 void () path_corner =
@@ -76,7 +76,7 @@ void () path_corner =
 };
 
 // t_movetarget
-// function begins at statement 686
+// function begins at statement 686, parm_start=1107
 // OP_LOAD_ENT	29	418	1108
 // OP_NE_E	1108	28	1109
 // OP_IFNOT	1109	2	0
@@ -161,7 +161,7 @@ void () t_movetarget =
 };
 
 // range
-// function begins at statement 732
+// function begins at statement 732, parm_start=1135
 // OP_LOAD_V	28	105	1143
 // OP_LOAD_V	28	166	1146
 // OP_ADD_V	1143	1146	1149
@@ -215,7 +215,7 @@ float (entity targ) range =
 };
 
 // visible
-// function begins at statement 755
+// function begins at statement 755, parm_start=1170
 // OP_LOAD_V	28	105	1177
 // OP_LOAD_V	28	166	1180
 // OP_ADD_V	1177	1180	1183
@@ -260,7 +260,7 @@ float (entity targ) visible =
 };
 
 // infront
-// function begins at statement 776
+// function begins at statement 776, parm_start=1197
 // OP_LOAD_V	28	117	1202
 // OP_STORE_V	1202	4	0
 // OP_CALL1	447	0	0
@@ -294,7 +294,7 @@ float (entity targ) infront =
 };
 
 // HuntTarget
-// function begins at statement 792
+// function begins at statement 792, parm_start=1217
 // OP_ADDRESS	28	194	1217
 // OP_LOAD_ENT	28	181	1218
 // OP_STOREP_ENT	1218	1217	0
@@ -325,7 +325,7 @@ void () HuntTarget =
 };
 
 // SightSound
-// function begins at statement 812
+// function begins at statement 812, parm_start=1235
 // OP_LOAD_S	28	129	1236
 // OP_EQ_S	1236	1112	1237
 // OP_IFNOT	1237	8	0
@@ -613,7 +613,7 @@ void () SightSound =
 };
 
 // FoundTarget
-// function begins at statement 974
+// function begins at statement 974, parm_start=1294
 // OP_LOAD_ENT	28	181	1294
 // OP_LOAD_S	1294	129	1295
 // OP_EQ_S	1295	712	1296
@@ -641,7 +641,7 @@ void () FoundTarget =
 };
 
 // FindTarget
-// function begins at statement 986
+// function begins at statement 986, parm_start=1300
 // OP_SUB_F	31	603	1302
 // OP_GE	1088	1302	1303
 // OP_LOAD_F	28	195	1304
@@ -817,7 +817,7 @@ float () FindTarget =
 };
 
 // ai_forward
-// function begins at statement 1066
+// function begins at statement 1066, parm_start=1339
 // OP_LOAD_F	28	119	1340
 // OP_STORE_V	1340	4	0
 // OP_STORE_V	1339	7	0
@@ -829,7 +829,7 @@ void (float dist) ai_forward =
 };
 
 // ai_back
-// function begins at statement 1071
+// function begins at statement 1071, parm_start=1342
 // OP_LOAD_F	28	119	1343
 // OP_ADD_F	1343	1344	1345
 // OP_STORE_V	1345	4	0
@@ -842,7 +842,7 @@ void (float dist) ai_back =
 };
 
 // ai_pain
-// function begins at statement 1077
+// function begins at statement 1077, parm_start=1347
 // OP_STORE_V	1347	4	0
 // OP_CALL1	1341	0	0
 // OP_DONE	0	0	0
@@ -852,7 +852,7 @@ void (float dist) ai_pain =
 };
 
 // ai_painforward
-// function begins at statement 1080
+// function begins at statement 1080, parm_start=1349
 // OP_LOAD_F	28	191	1350
 // OP_STORE_V	1350	4	0
 // OP_STORE_V	1349	7	0
@@ -864,7 +864,7 @@ void (float dist) ai_painforward =
 };
 
 // ai_walk
-// function begins at statement 1085
+// function begins at statement 1085, parm_start=1352
 // OP_STORE_F	1352	341	0
 // OP_LOAD_S	28	129	1356
 // OP_EQ_S	1356	1357	1358
@@ -899,7 +899,7 @@ void (float dist) ai_walk =
 };
 
 // ai_stand
-// function begins at statement 1098
+// function begins at statement 1098, parm_start=1360
 // OP_CALL0	1299	0	0
 // OP_IFNOT	1	2	0
 // OP_RETURN	0	0	0
@@ -928,7 +928,7 @@ void () ai_stand =
 };
 
 // ai_turn
-// function begins at statement 1108
+// function begins at statement 1108, parm_start=1364
 // OP_CALL0	1299	0	0
 // OP_IFNOT	1	2	0
 // OP_RETURN	0	0	0
@@ -946,7 +946,7 @@ void () ai_turn =
 };
 
 // ChooseTurn
-// function begins at statement 1113
+// function begins at statement 1113, parm_start=1364
 // OP_LOAD_V	28	105	1373
 // OP_SUB_V	1373	1364	1376
 // OP_STORE_V	1376	1367	0
@@ -975,18 +975,18 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir = trace_plane_normal_y;
-    newdir_y = MSG_BROADCAST - trace_plane_normal;
+    newdir_x = trace_plane_normal_y;
+    newdir_y = MSG_BROADCAST - trace_plane_normal_x;
     newdir_z = MSG_BROADCAST;
     if((dir * newdir) > MSG_BROADCAST)
     {
-        dir = MSG_BROADCAST - trace_plane_normal_y;
-        dir_y = trace_plane_normal;
+        dir_x = MSG_BROADCAST - trace_plane_normal_y;
+        dir_y = trace_plane_normal_x;
     }
     else    
     {
-        dir = trace_plane_normal_y;
-        dir_y = MSG_BROADCAST - trace_plane_normal;
+        dir_x = trace_plane_normal_y;
+        dir_y = MSG_BROADCAST - trace_plane_normal_x;
     }
     
     dir_z = MSG_BROADCAST;
@@ -994,7 +994,7 @@ void (vector dest3) ChooseTurn =
 };
 
 // FacingIdeal
-// function begins at statement 1136
+// function begins at statement 1136, parm_start=1386
 // OP_LOAD_F	28	119	1387
 // OP_LOAD_F	28	191	1388
 // OP_SUB_F	1387	1388	1389
@@ -1024,7 +1024,7 @@ float () FacingIdeal =
 float () WizardCheckAttack;
 float () DogCheckAttack;
 // CheckAnyAttack
-// function begins at statement 1149
+// function begins at statement 1149, parm_start=1398
 // OP_NOT_F	759	0	1398
 // OP_IFNOT	1398	2	0
 // OP_RETURN	213	0	0
@@ -1109,7 +1109,7 @@ void () CheckAnyAttack =
 };
 
 // ai_run_melee
-// function begins at statement 1185
+// function begins at statement 1185, parm_start=1412
 // OP_ADDRESS	28	191	1412
 // OP_STOREP_F	762	1412	0
 // OP_CALL0	491	0	0
@@ -1134,7 +1134,7 @@ void () ai_run_melee =
 };
 
 // ai_run_missile
-// function begins at statement 1195
+// function begins at statement 1195, parm_start=1416
 // OP_ADDRESS	28	191	1416
 // OP_STOREP_F	762	1416	0
 // OP_CALL0	491	0	0
@@ -1159,7 +1159,7 @@ void () ai_run_missile =
 };
 
 // ai_run_slide
-// function begins at statement 1205
+// function begins at statement 1205, parm_start=1420
 // OP_ADDRESS	28	191	1421
 // OP_STOREP_F	762	1421	0
 // OP_CALL0	491	0	0
@@ -1210,7 +1210,7 @@ void () ai_run_slide =
 };
 
 // ai_run
-// function begins at statement 1230
+// function begins at statement 1230, parm_start=1433
 // OP_STORE_F	1433	341	0
 // OP_LOAD_ENT	28	181	1442
 // OP_LOAD_F	1442	152	1443

@@ -1,6 +1,6 @@
 void () Demon_JumpTouch;
 // demon1_stand1
-// function begins at statement 12796
+// function begins at statement 12796, parm_start=7989
 // OP_STATE	337	7989	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -11,7 +11,7 @@ void () demon1_stand1 =
 };
 
 // demon1_stand2
-// function begins at statement 12799
+// function begins at statement 12799, parm_start=7990
 // OP_STATE	7368	7990	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -22,7 +22,7 @@ void () demon1_stand2 =
 };
 
 // demon1_stand3
-// function begins at statement 12802
+// function begins at statement 12802, parm_start=7991
 // OP_STATE	7369	7991	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -33,7 +33,7 @@ void () demon1_stand3 =
 };
 
 // demon1_stand4
-// function begins at statement 12805
+// function begins at statement 12805, parm_start=7992
 // OP_STATE	370	7992	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -44,7 +44,7 @@ void () demon1_stand4 =
 };
 
 // demon1_stand5
-// function begins at statement 12808
+// function begins at statement 12808, parm_start=7993
 // OP_STATE	6076	7993	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -55,7 +55,7 @@ void () demon1_stand5 =
 };
 
 // demon1_stand6
-// function begins at statement 12811
+// function begins at statement 12811, parm_start=7994
 // OP_STATE	313	7994	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -66,7 +66,7 @@ void () demon1_stand6 =
 };
 
 // demon1_stand7
-// function begins at statement 12814
+// function begins at statement 12814, parm_start=7995
 // OP_STATE	314	7995	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -77,7 +77,7 @@ void () demon1_stand7 =
 };
 
 // demon1_stand8
-// function begins at statement 12817
+// function begins at statement 12817, parm_start=7996
 // OP_STATE	315	7996	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -88,7 +88,7 @@ void () demon1_stand8 =
 };
 
 // demon1_stand9
-// function begins at statement 12820
+// function begins at statement 12820, parm_start=7997
 // OP_STATE	6077	7997	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -99,7 +99,7 @@ void () demon1_stand9 =
 };
 
 // demon1_stand10
-// function begins at statement 12823
+// function begins at statement 12823, parm_start=7998
 // OP_STATE	317	7998	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -110,7 +110,7 @@ void () demon1_stand10 =
 };
 
 // demon1_stand11
-// function begins at statement 12826
+// function begins at statement 12826, parm_start=7999
 // OP_STATE	318	7999	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -121,7 +121,7 @@ void () demon1_stand11 =
 };
 
 // demon1_stand12
-// function begins at statement 12829
+// function begins at statement 12829, parm_start=8000
 // OP_STATE	319	8000	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -132,7 +132,7 @@ void () demon1_stand12 =
 };
 
 // demon1_stand13
-// function begins at statement 12832
+// function begins at statement 12832, parm_start=8001
 // OP_STATE	2250	7988	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -143,7 +143,7 @@ void () demon1_stand13 =
 };
 
 // demon1_walk1
-// function begins at statement 12835
+// function begins at statement 12835, parm_start=8002
 // OP_STATE	7768	8002	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	8003
@@ -170,7 +170,7 @@ void () demon1_walk1 =
 };
 
 // demon1_walk2
-// function begins at statement 12848
+// function begins at statement 12848, parm_start=8005
 // OP_STATE	2901	8005	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
@@ -182,7 +182,7 @@ void () demon1_walk2 =
 };
 
 // demon1_walk3
-// function begins at statement 12852
+// function begins at statement 12852, parm_start=8006
 // OP_STATE	1876	8006	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
@@ -194,7 +194,7 @@ void () demon1_walk3 =
 };
 
 // demon1_walk4
-// function begins at statement 12856
+// function begins at statement 12856, parm_start=8007
 // OP_STATE	6078	8007	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1351	0	0
@@ -206,7 +206,7 @@ void () demon1_walk4 =
 };
 
 // demon1_walk5
-// function begins at statement 12860
+// function begins at statement 12860, parm_start=8008
 // OP_STATE	4861	8008	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -218,7 +218,7 @@ void () demon1_walk5 =
 };
 
 // demon1_walk6
-// function begins at statement 12864
+// function begins at statement 12864, parm_start=8009
 // OP_STATE	3319	8009	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
@@ -230,7 +230,7 @@ void () demon1_walk6 =
 };
 
 // demon1_walk7
-// function begins at statement 12868
+// function begins at statement 12868, parm_start=8010
 // OP_STATE	7776	8010	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1351	0	0
@@ -242,7 +242,7 @@ void () demon1_walk7 =
 };
 
 // demon1_walk8
-// function begins at statement 12872
+// function begins at statement 12872, parm_start=8011
 // OP_STATE	894	8001	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1351	0	0
@@ -254,7 +254,7 @@ void () demon1_walk8 =
 };
 
 // demon1_run1
-// function begins at statement 12876
+// function begins at statement 12876, parm_start=8012
 // OP_STATE	7779	8012	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	8013
@@ -281,7 +281,7 @@ void () demon1_run1 =
 };
 
 // demon1_run2
-// function begins at statement 12889
+// function begins at statement 12889, parm_start=8014
 // OP_STATE	7781	8014	0
 // OP_STORE_V	1876	4	0
 // OP_CALL1	1432	0	0
@@ -293,7 +293,7 @@ void () demon1_run2 =
 };
 
 // demon1_run3
-// function begins at statement 12893
+// function begins at statement 12893, parm_start=8015
 // OP_STATE	301	8015	0
 // OP_STORE_V	5096	4	0
 // OP_CALL1	1432	0	0
@@ -305,7 +305,7 @@ void () demon1_run3 =
 };
 
 // demon1_run4
-// function begins at statement 12897
+// function begins at statement 12897, parm_start=8016
 // OP_STATE	4437	8016	0
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
@@ -317,7 +317,7 @@ void () demon1_run4 =
 };
 
 // demon1_run5
-// function begins at statement 12901
+// function begins at statement 12901, parm_start=8017
 // OP_STATE	1890	8017	0
 // OP_STORE_V	1876	4	0
 // OP_CALL1	1432	0	0
@@ -329,7 +329,7 @@ void () demon1_run5 =
 };
 
 // demon1_run6
-// function begins at statement 12905
+// function begins at statement 12905, parm_start=8018
 // OP_STATE	7788	8011	0
 // OP_STORE_V	5096	4	0
 // OP_CALL1	1432	0	0
@@ -341,7 +341,7 @@ void () demon1_run6 =
 };
 
 // demon1_jump1
-// function begins at statement 12909
+// function begins at statement 12909, parm_start=8019
 // OP_STATE	302	8019	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -352,7 +352,7 @@ void () demon1_jump1 =
 };
 
 // demon1_jump2
-// function begins at statement 12912
+// function begins at statement 12912, parm_start=8020
 // OP_STATE	303	8020	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -363,7 +363,7 @@ void () demon1_jump2 =
 };
 
 // demon1_jump3
-// function begins at statement 12915
+// function begins at statement 12915, parm_start=8021
 // OP_STATE	5105	8021	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -374,7 +374,7 @@ void () demon1_jump3 =
 };
 
 // demon1_jump4
-// function begins at statement 12918
+// function begins at statement 12918, parm_start=8022
 // OP_STATE	304	8022	0
 // OP_CALL0	758	0	0
 // OP_ADDRESS	28	146	8023
@@ -415,7 +415,7 @@ void () demon1_jump4 =
 };
 
 // demon1_jump5
-// function begins at statement 12941
+// function begins at statement 12941, parm_start=8047
 // OP_STATE	305	8047	0
 // OP_DONE	0	0	0
 void () demon1_jump5 =
@@ -424,7 +424,7 @@ void () demon1_jump5 =
 };
 
 // demon1_jump6
-// function begins at statement 12943
+// function begins at statement 12943, parm_start=8048
 // OP_STATE	5674	8048	0
 // OP_DONE	0	0	0
 void () demon1_jump6 =
@@ -433,7 +433,7 @@ void () demon1_jump6 =
 };
 
 // demon1_jump7
-// function begins at statement 12945
+// function begins at statement 12945, parm_start=8049
 // OP_STATE	307	8049	0
 // OP_DONE	0	0	0
 void () demon1_jump7 =
@@ -442,7 +442,7 @@ void () demon1_jump7 =
 };
 
 // demon1_jump8
-// function begins at statement 12947
+// function begins at statement 12947, parm_start=8050
 // OP_STATE	5112	8050	0
 // OP_DONE	0	0	0
 void () demon1_jump8 =
@@ -451,7 +451,7 @@ void () demon1_jump8 =
 };
 
 // demon1_jump9
-// function begins at statement 12949
+// function begins at statement 12949, parm_start=8051
 // OP_STATE	3072	8051	0
 // OP_DONE	0	0	0
 void () demon1_jump9 =
@@ -460,7 +460,7 @@ void () demon1_jump9 =
 };
 
 // demon1_jump10
-// function begins at statement 12951
+// function begins at statement 12951, parm_start=8052
 // OP_STATE	5096	8018	0
 // OP_ADDRESS	28	150	8052
 // OP_ADD_F	31	370	8053
@@ -473,7 +473,7 @@ void () demon1_jump10 =
 };
 
 // demon1_jump11
-// function begins at statement 12956
+// function begins at statement 12956, parm_start=8055
 // OP_STATE	5098	8055	0
 // OP_DONE	0	0	0
 void () demon1_jump11 =
@@ -482,7 +482,7 @@ void () demon1_jump11 =
 };
 
 // demon1_jump12
-// function begins at statement 12958
+// function begins at statement 12958, parm_start=8056
 // OP_STATE	5100	8011	0
 // OP_DONE	0	0	0
 void () demon1_jump12 =
@@ -491,7 +491,7 @@ void () demon1_jump12 =
 };
 
 // demon1_atta1
-// function begins at statement 12960
+// function begins at statement 12960, parm_start=8057
 // OP_STATE	5357	8057	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -503,7 +503,7 @@ void () demon1_atta1 =
 };
 
 // demon1_atta2
-// function begins at statement 12964
+// function begins at statement 12964, parm_start=8058
 // OP_STATE	5359	8058	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -515,7 +515,7 @@ void () demon1_atta2 =
 };
 
 // demon1_atta3
-// function begins at statement 12968
+// function begins at statement 12968, parm_start=8059
 // OP_STATE	5361	8059	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -527,7 +527,7 @@ void () demon1_atta3 =
 };
 
 // demon1_atta4
-// function begins at statement 12972
+// function begins at statement 12972, parm_start=8060
 // OP_STATE	5363	8060	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -539,7 +539,7 @@ void () demon1_atta4 =
 };
 
 // demon1_atta5
-// function begins at statement 12976
+// function begins at statement 12976, parm_start=8061
 // OP_STATE	5365	8061	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	857	0	0
@@ -554,7 +554,7 @@ void () demon1_atta5 =
 };
 
 // demon1_atta6
-// function begins at statement 12982
+// function begins at statement 12982, parm_start=8062
 // OP_STATE	5367	8062	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -566,7 +566,7 @@ void () demon1_atta6 =
 };
 
 // demon1_atta7
-// function begins at statement 12986
+// function begins at statement 12986, parm_start=8063
 // OP_STATE	912	8063	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -578,7 +578,7 @@ void () demon1_atta7 =
 };
 
 // demon1_atta8
-// function begins at statement 12990
+// function begins at statement 12990, parm_start=8064
 // OP_STATE	5369	8064	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
@@ -590,7 +590,7 @@ void () demon1_atta8 =
 };
 
 // demon1_atta9
-// function begins at statement 12994
+// function begins at statement 12994, parm_start=8065
 // OP_STATE	5371	8065	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -602,7 +602,7 @@ void () demon1_atta9 =
 };
 
 // demon1_atta10
-// function begins at statement 12998
+// function begins at statement 12998, parm_start=8066
 // OP_STATE	3872	8066	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	857	0	0
@@ -614,7 +614,7 @@ void () demon1_atta10 =
 };
 
 // demon1_atta11
-// function begins at statement 13002
+// function begins at statement 13002, parm_start=8067
 // OP_STATE	260	8067	0
 // OP_STORE_V	5210	4	0
 // OP_CALL1	756	0	0
@@ -626,7 +626,7 @@ void () demon1_atta11 =
 };
 
 // demon1_atta12
-// function begins at statement 13006
+// function begins at statement 13006, parm_start=8068
 // OP_STATE	5375	8068	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
@@ -638,7 +638,7 @@ void () demon1_atta12 =
 };
 
 // demon1_atta13
-// function begins at statement 13010
+// function begins at statement 13010, parm_start=8069
 // OP_STATE	5377	8069	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
@@ -650,7 +650,7 @@ void () demon1_atta13 =
 };
 
 // demon1_atta14
-// function begins at statement 13014
+// function begins at statement 13014, parm_start=8070
 // OP_STATE	5379	8070	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -662,7 +662,7 @@ void () demon1_atta14 =
 };
 
 // demon1_atta15
-// function begins at statement 13018
+// function begins at statement 13018, parm_start=8071
 // OP_STATE	5381	8011	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -674,7 +674,7 @@ void () demon1_atta15 =
 };
 
 // demon1_pain1
-// function begins at statement 13022
+// function begins at statement 13022, parm_start=8072
 // OP_STATE	5102	8072	0
 // OP_DONE	0	0	0
 void () demon1_pain1 =
@@ -683,7 +683,7 @@ void () demon1_pain1 =
 };
 
 // demon1_pain2
-// function begins at statement 13024
+// function begins at statement 13024, parm_start=8073
 // OP_STATE	1733	8073	0
 // OP_DONE	0	0	0
 void () demon1_pain2 =
@@ -692,7 +692,7 @@ void () demon1_pain2 =
 };
 
 // demon1_pain3
-// function begins at statement 13026
+// function begins at statement 13026, parm_start=8074
 // OP_STATE	5443	8074	0
 // OP_DONE	0	0	0
 void () demon1_pain3 =
@@ -701,7 +701,7 @@ void () demon1_pain3 =
 };
 
 // demon1_pain4
-// function begins at statement 13028
+// function begins at statement 13028, parm_start=8075
 // OP_STATE	5445	8075	0
 // OP_DONE	0	0	0
 void () demon1_pain4 =
@@ -710,7 +710,7 @@ void () demon1_pain4 =
 };
 
 // demon1_pain5
-// function begins at statement 13030
+// function begins at statement 13030, parm_start=8076
 // OP_STATE	5447	8076	0
 // OP_DONE	0	0	0
 void () demon1_pain5 =
@@ -719,7 +719,7 @@ void () demon1_pain5 =
 };
 
 // demon1_pain6
-// function begins at statement 13032
+// function begins at statement 13032, parm_start=8077
 // OP_STATE	5449	8011	0
 // OP_DONE	0	0	0
 void () demon1_pain6 =
@@ -728,7 +728,7 @@ void () demon1_pain6 =
 };
 
 // demon1_pain
-// function begins at statement 13034
+// function begins at statement 13034, parm_start=8078
 // OP_LOAD_FNC	28	146	8080
 // OP_EQ_FNC	8080	7987	8081
 // OP_IFNOT	8081	2	0
@@ -779,7 +779,7 @@ void (entity attacker, float damage) demon1_pain =
 };
 
 // demon1_die1
-// function begins at statement 13058
+// function begins at statement 13058, parm_start=8090
 // OP_STATE	1390	8090	0
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -795,7 +795,7 @@ void () demon1_die1 =
 };
 
 // demon1_die2
-// function begins at statement 13066
+// function begins at statement 13066, parm_start=8092
 // OP_STATE	5452	8092	0
 // OP_DONE	0	0	0
 void () demon1_die2 =
@@ -804,7 +804,7 @@ void () demon1_die2 =
 };
 
 // demon1_die3
-// function begins at statement 13068
+// function begins at statement 13068, parm_start=8093
 // OP_STATE	5454	8093	0
 // OP_DONE	0	0	0
 void () demon1_die3 =
@@ -813,7 +813,7 @@ void () demon1_die3 =
 };
 
 // demon1_die4
-// function begins at statement 13070
+// function begins at statement 13070, parm_start=8094
 // OP_STATE	5456	8094	0
 // OP_DONE	0	0	0
 void () demon1_die4 =
@@ -822,7 +822,7 @@ void () demon1_die4 =
 };
 
 // demon1_die5
-// function begins at statement 13072
+// function begins at statement 13072, parm_start=8095
 // OP_STATE	5458	8095	0
 // OP_DONE	0	0	0
 void () demon1_die5 =
@@ -831,7 +831,7 @@ void () demon1_die5 =
 };
 
 // demon1_die6
-// function begins at statement 13074
+// function begins at statement 13074, parm_start=8096
 // OP_STATE	2227	8096	0
 // OP_ADDRESS	28	104	8097
 // OP_STOREP_F	237	8097	0
@@ -843,7 +843,7 @@ void () demon1_die6 =
 };
 
 // demon1_die7
-// function begins at statement 13078
+// function begins at statement 13078, parm_start=8098
 // OP_STATE	5351	8098	0
 // OP_DONE	0	0	0
 void () demon1_die7 =
@@ -852,7 +852,7 @@ void () demon1_die7 =
 };
 
 // demon1_die8
-// function begins at statement 13080
+// function begins at statement 13080, parm_start=8099
 // OP_STATE	5353	8099	0
 // OP_DONE	0	0	0
 void () demon1_die8 =
@@ -861,7 +861,7 @@ void () demon1_die8 =
 };
 
 // demon1_die9
-// function begins at statement 13082
+// function begins at statement 13082, parm_start=8100
 // OP_STATE	5355	8099	0
 // OP_DONE	0	0	0
 void () demon1_die9 =
@@ -870,7 +870,7 @@ void () demon1_die9 =
 };
 
 // demon_die
-// function begins at statement 13084
+// function begins at statement 13084, parm_start=8101
 // OP_LOAD_F	28	152	8101
 // OP_LT	8101	7963	8102
 // OP_IFNOT	8102	24	0
@@ -916,7 +916,7 @@ void () demon_die =
 };
 
 // Demon_MeleeAttack
-// function begins at statement 13112
+// function begins at statement 13112, parm_start=8109
 // OP_CALL0	8056	0	0
 // OP_DONE	0	0	0
 void () Demon_MeleeAttack =
@@ -925,7 +925,7 @@ void () Demon_MeleeAttack =
 };
 
 // monster_demon1
-// function begins at statement 13114
+// function begins at statement 13114, parm_start=8110
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
@@ -1008,7 +1008,7 @@ void () monster_demon1 =
 };
 
 // CheckDemonMelee
-// function begins at statement 13163
+// function begins at statement 13163, parm_start=8124
 // OP_EQ_F	761	242	8124
 // OP_IFNOT	8124	4	0
 // OP_ADDRESS	28	367	8125
@@ -1029,7 +1029,7 @@ float () CheckDemonMelee =
 };
 
 // CheckDemonJump
-// function begins at statement 13170
+// function begins at statement 13170, parm_start=8127
 // OP_LOAD_F	28	108	8131
 // OP_LOAD_F	28	137	8132
 // OP_ADD_F	8131	8132	8133
@@ -1120,7 +1120,7 @@ float () CheckDemonJump =
 };
 
 // DemonCheckAttack
-// function begins at statement 13220
+// function begins at statement 13220, parm_start=8170
 // OP_CALL0	8123	0	0
 // OP_IFNOT	1	4	0
 // OP_ADDRESS	28	367	8173
@@ -1161,7 +1161,7 @@ float () DemonCheckAttack =
 };
 
 // Demon_Melee
-// function begins at statement 13238
+// function begins at statement 13238, parm_start=8175
 // OP_CALL0	758	0	0
 // OP_LOAD_F	28	191	8180
 // OP_STORE_V	8180	4	0
@@ -1239,7 +1239,7 @@ void (float side) Demon_Melee =
 };
 
 // Demon_JumpTouch
-// function begins at statement 13287
+// function begins at statement 13287, parm_start=8212
 // OP_LOAD_F	28	152	8213
 // OP_LE	8213	337	8214
 // OP_IFNOT	8214	2	0

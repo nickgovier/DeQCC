@@ -1,6 +1,6 @@
 void () InitBodyQue;
 // main
-// function begins at statement 5086
+// function begins at statement 5086, parm_start=3691
 // OP_STORE_V	3691	4	0
 // OP_CALL1	470	0	0
 // OP_STORE_V	3692	4	0
@@ -341,7 +341,7 @@ void () main =
 
 entity lastspawn;
 // worldspawn
-// function begins at statement 5309
+// function begins at statement 5309, parm_start=3803
 // OP_STORE_ENT	30	3801	0
 // OP_CALL0	3690	0	0
 // OP_LOAD_S	28	130	3803
@@ -656,7 +656,7 @@ void () worldspawn =
 };
 
 // StartFrame
-// function begins at statement 5516
+// function begins at statement 5516, parm_start=3874
 // OP_STORE_V	3874	4	0
 // OP_CALL1	487	0	0
 // OP_STORE_F	1	37	0
@@ -675,14 +675,14 @@ void () StartFrame =
 
 entity bodyque_head;
 // bodyque
-// function begins at statement 5525
+// function begins at statement 5525, parm_start=3879
 // OP_DONE	0	0	0
 void () bodyque =
 {
 };
 
 // InitBodyQue
-// function begins at statement 5526
+// function begins at statement 5526, parm_start=3879
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	3877	0
 // OP_ADDRESS	3877	129	3880
@@ -732,7 +732,7 @@ void () InitBodyQue =
 };
 
 // CopyToBodyQue
-// function begins at statement 5560
+// function begins at statement 5560, parm_start=3902
 // OP_ADDRESS	3877	117	3903
 // OP_LOAD_V	3902	117	3906
 // OP_STOREP_V	3906	3903	0

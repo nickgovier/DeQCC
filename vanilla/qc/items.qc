@@ -1,6 +1,6 @@
 void () W_SetCurrentAmmo;
 // SUB_regen
-// function begins at statement 1694
+// function begins at statement 1694, parm_start=1802
 // OP_ADDRESS	28	130	1802
 // OP_LOAD_S	28	394	1803
 // OP_STOREP_S	1803	1802	0
@@ -26,7 +26,7 @@ void () SUB_regen =
 };
 
 // noclass
-// function begins at statement 1710
+// function begins at statement 1710, parm_start=1810
 // OP_STORE_V	1810	4	0
 // OP_CALL1	470	0	0
 // OP_LOAD_V	28	105	1811
@@ -48,7 +48,7 @@ void () noclass =
 };
 
 // PlaceItem
-// function begins at statement 1722
+// function begins at statement 1722, parm_start=1816
 // OP_ADDRESS	28	394	1817
 // OP_LOAD_S	28	130	1818
 // OP_STOREP_S	1818	1817	0
@@ -105,7 +105,7 @@ void () PlaceItem =
 };
 
 // StartItem
-// function begins at statement 1755
+// function begins at statement 1755, parm_start=1835
 // OP_ADDRESS	28	150	1835
 // OP_ADD_F	31	836	1836
 // OP_STOREP_F	1836	1835	0
@@ -119,7 +119,7 @@ void () StartItem =
 };
 
 // T_Heal
-// function begins at statement 1761
+// function begins at statement 1761, parm_start=1838
 // OP_LOAD_F	1838	152	1841
 // OP_LE	1841	337	1842
 // OP_IFNOT	1842	2	0
@@ -192,7 +192,7 @@ float H_MEGA = 2.000;
 void () health_touch;
 void () item_megahealth_rot;
 // item_health
-// function begins at statement 1795
+// function begins at statement 1795, parm_start=1869
 // OP_ADDRESS	28	146	1869
 // OP_STOREP_FNC	1866	1869	0
 // OP_LOAD_F	28	195	1870
@@ -288,7 +288,7 @@ void () item_health =
 };
 
 // health_touch
-// function begins at statement 1850
+// function begins at statement 1850, parm_start=1895
 // OP_LOAD_S	29	129	1897
 // OP_NE_S	1897	712	1898
 // OP_IFNOT	1898	2	0
@@ -437,7 +437,7 @@ void () health_touch =
 };
 
 // item_megahealth_rot
-// function begins at statement 1931
+// function begins at statement 1931, parm_start=1927
 // OP_LOAD_ENT	28	201	1927
 // OP_STORE_ENT	1927	29	0
 // OP_LOAD_F	29	152	1928
@@ -488,7 +488,7 @@ void () item_megahealth_rot =
 };
 
 // armor_touch
-// function begins at statement 1959
+// function begins at statement 1959, parm_start=1946
 // OP_LOAD_F	29	152	1949
 // OP_LE	1949	337	1950
 // OP_IFNOT	1950	2	0
@@ -628,7 +628,7 @@ void () armor_touch =
 };
 
 // item_armor1
-// function begins at statement 2031
+// function begins at statement 2031, parm_start=1990
 // OP_ADDRESS	28	146	1990
 // OP_STOREP_FNC	1945	1990	0
 // OP_STORE_V	1991	4	0
@@ -655,7 +655,7 @@ void () item_armor1 =
 };
 
 // item_armor2
-// function begins at statement 2046
+// function begins at statement 2046, parm_start=2000
 // OP_ADDRESS	28	146	2000
 // OP_STOREP_FNC	1945	2000	0
 // OP_STORE_V	1991	4	0
@@ -682,7 +682,7 @@ void () item_armor2 =
 };
 
 // item_armorInv
-// function begins at statement 2061
+// function begins at statement 2061, parm_start=2003
 // OP_ADDRESS	28	146	2003
 // OP_STOREP_FNC	1945	2003	0
 // OP_STORE_V	1991	4	0
@@ -709,7 +709,7 @@ void () item_armorInv =
 };
 
 // bound_other_ammo
-// function begins at statement 2076
+// function begins at statement 2076, parm_start=2006
 // OP_LOAD_F	29	158	2006
 // OP_GT	2006	1884	2007
 // OP_IFNOT	2007	3	0
@@ -760,7 +760,7 @@ void () bound_other_ammo =
 };
 
 // RankForWeapon
-// function begins at statement 2097
+// function begins at statement 2097, parm_start=2019
 // OP_EQ_F	2019	260	2020
 // OP_IFNOT	2020	2	0
 // OP_RETURN	1862	0	0
@@ -823,7 +823,7 @@ float (float w) RankForWeapon =
 };
 
 // Deathmatch_Weapon
-// function begins at statement 2117
+// function begins at statement 2117, parm_start=2027
 // OP_LOAD_F	28	154	2031
 // OP_STORE_V	2031	4	0
 // OP_CALL1	2018	0	0
@@ -852,7 +852,7 @@ void (float old, float new) Deathmatch_Weapon =
 
 float () W_BestWeapon;
 // weapon_touch
-// function begins at statement 2129
+// function begins at statement 2129, parm_start=2036
 // OP_LOAD_F	29	182	2042
 // OP_BITAND	2042	217	2043
 // OP_NOT_F	2043	0	2044
@@ -1186,7 +1186,7 @@ void () weapon_touch =
 };
 
 // weapon_supershotgun
-// function begins at statement 2297
+// function begins at statement 2297, parm_start=2124
 // OP_STORE_V	2124	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1216,7 +1216,7 @@ void () weapon_supershotgun =
 };
 
 // weapon_nailgun
-// function begins at statement 2314
+// function begins at statement 2314, parm_start=2130
 // OP_STORE_V	2130	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1246,7 +1246,7 @@ void () weapon_nailgun =
 };
 
 // weapon_supernailgun
-// function begins at statement 2331
+// function begins at statement 2331, parm_start=2136
 // OP_STORE_V	2136	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1276,7 +1276,7 @@ void () weapon_supernailgun =
 };
 
 // weapon_grenadelauncher
-// function begins at statement 2348
+// function begins at statement 2348, parm_start=2142
 // OP_STORE_V	2142	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1306,7 +1306,7 @@ void () weapon_grenadelauncher =
 };
 
 // weapon_rocketlauncher
-// function begins at statement 2365
+// function begins at statement 2365, parm_start=2148
 // OP_STORE_V	2148	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1336,7 +1336,7 @@ void () weapon_rocketlauncher =
 };
 
 // weapon_lightning
-// function begins at statement 2382
+// function begins at statement 2382, parm_start=2154
 // OP_STORE_V	2154	4	0
 // OP_CALL1	465	0	0
 // OP_STORE_V	28	4	0
@@ -1366,7 +1366,7 @@ void () weapon_lightning =
 };
 
 // ammo_touch
-// function begins at statement 2399
+// function begins at statement 2399, parm_start=2160
 // OP_LOAD_S	29	129	2162
 // OP_NE_S	2162	712	2163
 // OP_IFNOT	2163	2	0
@@ -1579,7 +1579,7 @@ void () ammo_touch =
 
 float WEAPON_BIG2 = 1.000;
 // item_shells
-// function begins at statement 2508
+// function begins at statement 2508, parm_start=2211
 // OP_ADDRESS	28	146	2211
 // OP_STOREP_FNC	2159	2211	0
 // OP_LOAD_F	28	195	2212
@@ -1633,7 +1633,7 @@ void () item_shells =
 };
 
 // item_spikes
-// function begins at statement 2538
+// function begins at statement 2538, parm_start=2222
 // OP_ADDRESS	28	146	2222
 // OP_STOREP_FNC	2159	2222	0
 // OP_LOAD_F	28	195	2223
@@ -1687,7 +1687,7 @@ void () item_spikes =
 };
 
 // item_rockets
-// function begins at statement 2568
+// function begins at statement 2568, parm_start=2234
 // OP_ADDRESS	28	146	2234
 // OP_STOREP_FNC	2159	2234	0
 // OP_LOAD_F	28	195	2235
@@ -1741,7 +1741,7 @@ void () item_rockets =
 };
 
 // item_cells
-// function begins at statement 2598
+// function begins at statement 2598, parm_start=2245
 // OP_ADDRESS	28	146	2245
 // OP_STOREP_FNC	2159	2245	0
 // OP_LOAD_F	28	195	2246
@@ -1799,7 +1799,7 @@ float WEAPON_ROCKET = 2.000;
 float WEAPON_SPIKES = 4.000;
 float WEAPON_BIG = 8.000;
 // item_weapon
-// function begins at statement 2628
+// function begins at statement 2628, parm_start=2261
 // OP_ADDRESS	28	146	2261
 // OP_STOREP_FNC	2159	2261	0
 // OP_LOAD_F	28	195	2262
@@ -1951,7 +1951,7 @@ void () item_weapon =
 };
 
 // key_touch
-// function begins at statement 2711
+// function begins at statement 2711, parm_start=2288
 // OP_LOAD_S	29	129	2290
 // OP_NE_S	2290	712	2291
 // OP_IFNOT	2291	2	0
@@ -2039,7 +2039,7 @@ void () key_touch =
 };
 
 // key_setsounds
-// function begins at statement 2758
+// function begins at statement 2758, parm_start=2307
 // OP_LOAD_F	30	352	2307
 // OP_EQ_F	2307	337	2308
 // OP_IFNOT	2308	5	0
@@ -2088,7 +2088,7 @@ void () key_setsounds =
 };
 
 // item_key1
-// function begins at statement 2780
+// function begins at statement 2780, parm_start=2320
 // OP_LOAD_F	30	352	2320
 // OP_EQ_F	2320	337	2321
 // OP_IFNOT	2321	9	0
@@ -2170,7 +2170,7 @@ void () item_key1 =
 };
 
 // item_key2
-// function begins at statement 2823
+// function begins at statement 2823, parm_start=2338
 // OP_LOAD_F	30	352	2338
 // OP_EQ_F	2338	337	2339
 // OP_IFNOT	2339	8	0
@@ -2246,7 +2246,7 @@ void () item_key2 =
 };
 
 // sigil_touch
-// function begins at statement 2864
+// function begins at statement 2864, parm_start=2356
 // OP_LOAD_S	29	129	2358
 // OP_NE_S	2358	712	2359
 // OP_IFNOT	2359	2	0
@@ -2309,7 +2309,7 @@ void () sigil_touch =
 };
 
 // item_sigil
-// function begins at statement 2898
+// function begins at statement 2898, parm_start=2371
 // OP_LOAD_F	28	195	2371
 // OP_NOT_F	2371	0	2372
 // OP_IFNOT	2372	3	0
@@ -2403,7 +2403,7 @@ void () item_sigil =
 };
 
 // powerup_touch
-// function begins at statement 2947
+// function begins at statement 2947, parm_start=2389
 // OP_LOAD_S	29	129	2391
 // OP_NE_S	2391	712	2392
 // OP_IFNOT	2392	2	0
@@ -2569,7 +2569,7 @@ void () powerup_touch =
 };
 
 // item_artifact_invulnerability
-// function begins at statement 3039
+// function begins at statement 3039, parm_start=2441
 // OP_ADDRESS	28	146	2441
 // OP_STOREP_FNC	2388	2441	0
 // OP_STORE_V	2442	4	0
@@ -2611,7 +2611,7 @@ void () item_artifact_invulnerability =
 };
 
 // item_artifact_envirosuit
-// function begins at statement 3064
+// function begins at statement 3064, parm_start=2450
 // OP_ADDRESS	28	146	2450
 // OP_STOREP_FNC	2388	2450	0
 // OP_STORE_V	2451	4	0
@@ -2650,7 +2650,7 @@ void () item_artifact_envirosuit =
 };
 
 // item_artifact_invisibility
-// function begins at statement 3087
+// function begins at statement 3087, parm_start=2459
 // OP_ADDRESS	28	146	2459
 // OP_STOREP_FNC	2388	2459	0
 // OP_STORE_V	2460	4	0
@@ -2692,7 +2692,7 @@ void () item_artifact_invisibility =
 };
 
 // item_artifact_super_damage
-// function begins at statement 3112
+// function begins at statement 3112, parm_start=2469
 // OP_ADDRESS	28	146	2469
 // OP_STOREP_FNC	2388	2469	0
 // OP_STORE_V	2470	4	0
@@ -2734,7 +2734,7 @@ void () item_artifact_super_damage =
 };
 
 // BackpackTouch
-// function begins at statement 3137
+// function begins at statement 3137, parm_start=2479
 // OP_LOAD_S	29	129	2485
 // OP_NE_S	2485	712	2486
 // OP_IFNOT	2486	2	0
@@ -3024,7 +3024,7 @@ void () BackpackTouch =
 };
 
 // DropBackpack
-// function begins at statement 3295
+// function begins at statement 3295, parm_start=2536
 // OP_LOAD_F	28	158	2537
 // OP_LOAD_F	28	159	2538
 // OP_ADD_F	2537	2538	2539

@@ -6,7 +6,7 @@ void () plat_go_down;
 void () plat_crush;
 float PLAT_LOW_TRIGGER = 1.000;
 // plat_spawn_inside_trigger
-// function begins at statement 10616
+// function begins at statement 10616, parm_start=6900
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	6900	0
 // OP_ADDRESS	6900	146	6907
@@ -81,8 +81,8 @@ void () plat_spawn_inside_trigger =
     
     if(self.size <= 50.000)
     {
-        tmin = (self.mins + self.maxs) / SILENT;
-        tmax = tmin + PLAT_LOW_TRIGGER;
+        tmin_x = (self.mins + self.maxs) / SILENT;
+        tmax_x = tmin_x + PLAT_LOW_TRIGGER;
     }
     
     
@@ -96,7 +96,7 @@ void () plat_spawn_inside_trigger =
 };
 
 // plat_hit_top
-// function begins at statement 10668
+// function begins at statement 10668, parm_start=6952
 // OP_LOAD_S	28	209	6952
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -122,7 +122,7 @@ void () plat_hit_top =
 };
 
 // plat_hit_bottom
-// function begins at statement 10684
+// function begins at statement 10684, parm_start=6959
 // OP_LOAD_S	28	209	6959
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -140,7 +140,7 @@ void () plat_hit_bottom =
 };
 
 // plat_go_down
-// function begins at statement 10694
+// function begins at statement 10694, parm_start=6961
 // OP_LOAD_S	28	208	6961
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -165,7 +165,7 @@ void () plat_go_down =
 };
 
 // plat_go_up
-// function begins at statement 10710
+// function begins at statement 10710, parm_start=6967
 // OP_LOAD_S	28	208	6967
 // OP_STORE_V	28	4	0
 // OP_STORE_V	322	7	0
@@ -190,7 +190,7 @@ void () plat_go_up =
 };
 
 // plat_center_touch
-// function begins at statement 10726
+// function begins at statement 10726, parm_start=6973
 // OP_LOAD_S	29	129	6973
 // OP_NE_S	6973	712	6974
 // OP_IFNOT	6974	2	0
@@ -246,7 +246,7 @@ void () plat_center_touch =
 };
 
 // plat_outside_touch
-// function begins at statement 10749
+// function begins at statement 10749, parm_start=6985
 // OP_LOAD_S	29	129	6985
 // OP_NE_S	6985	712	6986
 // OP_IFNOT	6986	2	0
@@ -286,7 +286,7 @@ void () plat_outside_touch =
 };
 
 // plat_trigger_use
-// function begins at statement 10764
+// function begins at statement 10764, parm_start=6992
 // OP_LOAD_FNC	28	148	6992
 // OP_IFNOT	6992	2	0
 // OP_RETURN	0	0	0
@@ -304,7 +304,7 @@ void () plat_trigger_use =
 };
 
 // plat_crush
-// function begins at statement 10769
+// function begins at statement 10769, parm_start=6993
 // OP_STORE_V	29	4	0
 // OP_STORE_V	28	7	0
 // OP_STORE_V	28	10	0
@@ -346,7 +346,7 @@ void () plat_crush =
 };
 
 // plat_use
-// function begins at statement 10787
+// function begins at statement 10787, parm_start=6999
 // OP_ADDRESS	28	147	6999
 // OP_STOREP_FNC	517	6999	0
 // OP_LOAD_F	28	433	7000
@@ -369,7 +369,7 @@ void () plat_use =
 };
 
 // func_plat
-// function begins at statement 10796
+// function begins at statement 10796, parm_start=7004
 // OP_LOAD_F	28	399	7005
 // OP_NOT_F	7005	0	7006
 // OP_IFNOT	7006	3	0
@@ -559,7 +559,7 @@ void () func_plat =
 void () train_next;
 void () func_train_find;
 // train_blocked
-// function begins at statement 10902
+// function begins at statement 10902, parm_start=7086
 // OP_LOAD_F	28	373	7086
 // OP_LT	31	7086	7087
 // OP_IFNOT	7087	2	0
@@ -587,7 +587,7 @@ void () train_blocked =
 };
 
 // train_use
-// function begins at statement 10916
+// function begins at statement 10916, parm_start=7092
 // OP_LOAD_FNC	28	148	7092
 // OP_NE_FNC	7092	7084	7093
 // OP_IFNOT	7093	2	0
@@ -606,7 +606,7 @@ void () train_use =
 };
 
 // train_wait
-// function begins at statement 10922
+// function begins at statement 10922, parm_start=7095
 // OP_LOAD_F	28	413	7095
 // OP_IFNOT	7095	14	0
 // OP_ADDRESS	28	150	7096
@@ -645,7 +645,7 @@ void () train_wait =
 };
 
 // train_next
-// function begins at statement 10944
+// function begins at statement 10944, parm_start=7105
 // OP_LOAD_S	28	196	7106
 // OP_STORE_V	30	4	0
 // OP_STORE_V	197	7	0
@@ -709,7 +709,7 @@ void () train_next =
 };
 
 // func_train_find
-// function begins at statement 10982
+// function begins at statement 10982, parm_start=7127
 // OP_LOAD_S	28	196	7128
 // OP_STORE_V	30	4	0
 // OP_STORE_V	197	7	0
@@ -751,7 +751,7 @@ void () func_train_find =
 };
 
 // func_train
-// function begins at statement 11007
+// function begins at statement 11007, parm_start=7147
 // OP_LOAD_F	28	364	7147
 // OP_NOT_F	7147	0	7148
 // OP_IFNOT	7148	3	0
@@ -874,7 +874,7 @@ void () func_train =
 };
 
 // misc_teleporttrain
-// function begins at statement 11077
+// function begins at statement 11077, parm_start=7188
 // OP_LOAD_F	28	364	7188
 // OP_NOT_F	7188	0	7189
 // OP_IFNOT	7189	3	0

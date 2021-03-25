@@ -1,5 +1,5 @@
 // OgreGrenadeExplode
-// function begins at statement 11931
+// function begins at statement 11931, parm_start=7622
 // OP_LOAD_ENT	28	201	7622
 // OP_STORE_V	28	4	0
 // OP_STORE_V	7622	7	0
@@ -58,7 +58,7 @@ void () OgreGrenadeExplode =
 };
 
 // OgreGrenadeTouch
-// function begins at statement 11972
+// function begins at statement 11972, parm_start=7632
 // OP_LOAD_ENT	28	201	7632
 // OP_EQ_E	29	7632	7633
 // OP_IFNOT	7633	2	0
@@ -105,7 +105,7 @@ void () OgreGrenadeTouch =
 };
 
 // OgreFireGrenade
-// function begins at statement 11993
+// function begins at statement 11993, parm_start=7644
 // OP_ADDRESS	28	133	7646
 // OP_LOAD_F	28	133	7647
 // OP_BITOR	7647	334	7648
@@ -192,7 +192,7 @@ void () OgreFireGrenade =
 };
 
 // chainsaw
-// function begins at statement 12054
+// function begins at statement 12054, parm_start=7695
 // OP_LOAD_ENT	28	181	7700
 // OP_NOT_ENT	7700	0	7701
 // OP_IFNOT	7701	2	0
@@ -300,7 +300,7 @@ void (float side) chainsaw =
 };
 
 // ogre_stand1
-// function begins at statement 12115
+// function begins at statement 12115, parm_start=7752
 // OP_STATE	337	7752	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -311,7 +311,7 @@ void () ogre_stand1 =
 };
 
 // ogre_stand2
-// function begins at statement 12118
+// function begins at statement 12118, parm_start=7753
 // OP_STATE	7368	7753	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -322,7 +322,7 @@ void () ogre_stand2 =
 };
 
 // ogre_stand3
-// function begins at statement 12121
+// function begins at statement 12121, parm_start=7754
 // OP_STATE	7369	7754	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -333,7 +333,7 @@ void () ogre_stand3 =
 };
 
 // ogre_stand4
-// function begins at statement 12124
+// function begins at statement 12124, parm_start=7755
 // OP_STATE	370	7755	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -344,7 +344,7 @@ void () ogre_stand4 =
 };
 
 // ogre_stand5
-// function begins at statement 12127
+// function begins at statement 12127, parm_start=7756
 // OP_STATE	6076	7756	0
 // OP_CALL0	452	0	0
 // OP_LT	1	836	7757
@@ -370,7 +370,7 @@ void () ogre_stand5 =
 };
 
 // ogre_stand6
-// function begins at statement 12139
+// function begins at statement 12139, parm_start=7759
 // OP_STATE	313	7759	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -381,7 +381,7 @@ void () ogre_stand6 =
 };
 
 // ogre_stand7
-// function begins at statement 12142
+// function begins at statement 12142, parm_start=7760
 // OP_STATE	314	7760	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -392,7 +392,7 @@ void () ogre_stand7 =
 };
 
 // ogre_stand8
-// function begins at statement 12145
+// function begins at statement 12145, parm_start=7761
 // OP_STATE	315	7761	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -403,7 +403,7 @@ void () ogre_stand8 =
 };
 
 // ogre_stand9
-// function begins at statement 12148
+// function begins at statement 12148, parm_start=7762
 // OP_STATE	6077	7751	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
@@ -414,7 +414,7 @@ void () ogre_stand9 =
 };
 
 // ogre_walk1
-// function begins at statement 12151
+// function begins at statement 12151, parm_start=7763
 // OP_STATE	317	7763	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -426,7 +426,7 @@ void () ogre_walk1 =
 };
 
 // ogre_walk2
-// function begins at statement 12155
+// function begins at statement 12155, parm_start=7764
 // OP_STATE	318	7764	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -438,7 +438,7 @@ void () ogre_walk2 =
 };
 
 // ogre_walk3
-// function begins at statement 12159
+// function begins at statement 12159, parm_start=7765
 // OP_STATE	319	7765	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -465,7 +465,7 @@ void () ogre_walk3 =
 };
 
 // ogre_walk4
-// function begins at statement 12172
+// function begins at statement 12172, parm_start=7767
 // OP_STATE	2250	7767	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -477,7 +477,7 @@ void () ogre_walk4 =
 };
 
 // ogre_walk5
-// function begins at statement 12176
+// function begins at statement 12176, parm_start=7768
 // OP_STATE	7768	7769	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -489,7 +489,7 @@ void () ogre_walk5 =
 };
 
 // ogre_walk6
-// function begins at statement 12180
+// function begins at statement 12180, parm_start=7770
 // OP_STATE	2901	7770	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
@@ -516,7 +516,7 @@ void () ogre_walk6 =
 };
 
 // ogre_walk7
-// function begins at statement 12193
+// function begins at statement 12193, parm_start=7772
 // OP_STATE	1876	7772	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -528,7 +528,7 @@ void () ogre_walk7 =
 };
 
 // ogre_walk8
-// function begins at statement 12197
+// function begins at statement 12197, parm_start=7773
 // OP_STATE	6078	7773	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -540,7 +540,7 @@ void () ogre_walk8 =
 };
 
 // ogre_walk9
-// function begins at statement 12201
+// function begins at statement 12201, parm_start=7774
 // OP_STATE	4861	7774	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -552,7 +552,7 @@ void () ogre_walk9 =
 };
 
 // ogre_walk10
-// function begins at statement 12205
+// function begins at statement 12205, parm_start=7775
 // OP_STATE	3319	7775	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	1351	0	0
@@ -564,7 +564,7 @@ void () ogre_walk10 =
 };
 
 // ogre_walk11
-// function begins at statement 12209
+// function begins at statement 12209, parm_start=7776
 // OP_STATE	7776	7777	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
@@ -576,7 +576,7 @@ void () ogre_walk11 =
 };
 
 // ogre_walk12
-// function begins at statement 12213
+// function begins at statement 12213, parm_start=7778
 // OP_STATE	894	7778	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -588,7 +588,7 @@ void () ogre_walk12 =
 };
 
 // ogre_walk13
-// function begins at statement 12217
+// function begins at statement 12217, parm_start=7779
 // OP_STATE	7779	7780	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -600,7 +600,7 @@ void () ogre_walk13 =
 };
 
 // ogre_walk14
-// function begins at statement 12221
+// function begins at statement 12221, parm_start=7781
 // OP_STATE	7781	7782	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -612,7 +612,7 @@ void () ogre_walk14 =
 };
 
 // ogre_walk15
-// function begins at statement 12225
+// function begins at statement 12225, parm_start=7783
 // OP_STATE	301	7783	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
@@ -624,7 +624,7 @@ void () ogre_walk15 =
 };
 
 // ogre_walk16
-// function begins at statement 12229
+// function begins at statement 12229, parm_start=7784
 // OP_STATE	4437	7762	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
@@ -636,7 +636,7 @@ void () ogre_walk16 =
 };
 
 // ogre_run1
-// function begins at statement 12233
+// function begins at statement 12233, parm_start=7785
 // OP_STATE	1890	7785	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1432	0	0
@@ -663,7 +663,7 @@ void () ogre_run1 =
 };
 
 // ogre_run2
-// function begins at statement 12246
+// function begins at statement 12246, parm_start=7788
 // OP_STATE	7788	7789	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1432	0	0
@@ -675,7 +675,7 @@ void () ogre_run2 =
 };
 
 // ogre_run3
-// function begins at statement 12250
+// function begins at statement 12250, parm_start=7790
 // OP_STATE	302	7790	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
@@ -687,7 +687,7 @@ void () ogre_run3 =
 };
 
 // ogre_run4
-// function begins at statement 12254
+// function begins at statement 12254, parm_start=7791
 // OP_STATE	303	7791	0
 // OP_STORE_V	7781	4	0
 // OP_CALL1	1432	0	0
@@ -699,7 +699,7 @@ void () ogre_run4 =
 };
 
 // ogre_run5
-// function begins at statement 12258
+// function begins at statement 12258, parm_start=7792
 // OP_STATE	5105	7792	0
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
@@ -711,7 +711,7 @@ void () ogre_run5 =
 };
 
 // ogre_run6
-// function begins at statement 12262
+// function begins at statement 12262, parm_start=7793
 // OP_STATE	304	7793	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
@@ -723,7 +723,7 @@ void () ogre_run6 =
 };
 
 // ogre_run7
-// function begins at statement 12266
+// function begins at statement 12266, parm_start=7794
 // OP_STATE	305	7794	0
 // OP_STORE_V	7768	4	0
 // OP_CALL1	1432	0	0
@@ -735,7 +735,7 @@ void () ogre_run7 =
 };
 
 // ogre_run8
-// function begins at statement 12270
+// function begins at statement 12270, parm_start=7795
 // OP_STATE	5674	7784	0
 // OP_STORE_V	4437	4	0
 // OP_CALL1	1432	0	0
@@ -747,7 +747,7 @@ void () ogre_run8 =
 };
 
 // ogre_swing1
-// function begins at statement 12274
+// function begins at statement 12274, parm_start=7795
 // OP_STATE	307	7795	0
 // OP_STORE_V	319	4	0
 // OP_CALL1	857	0	0
@@ -766,7 +766,7 @@ void () ogre_swing1 =
 };
 
 // ogre_swing2
-// function begins at statement 12284
+// function begins at statement 12284, parm_start=7797
 // OP_STATE	5112	7797	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -778,7 +778,7 @@ void () ogre_swing2 =
 };
 
 // ogre_swing3
-// function begins at statement 12288
+// function begins at statement 12288, parm_start=7798
 // OP_STATE	3072	7798	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -790,7 +790,7 @@ void () ogre_swing3 =
 };
 
 // ogre_swing4
-// function begins at statement 12292
+// function begins at statement 12292, parm_start=7799
 // OP_STATE	5096	7799	0
 // OP_STORE_V	7768	4	0
 // OP_CALL1	857	0	0
@@ -802,7 +802,7 @@ void () ogre_swing4 =
 };
 
 // ogre_swing5
-// function begins at statement 12296
+// function begins at statement 12296, parm_start=7800
 // OP_STATE	5098	7800	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
@@ -824,7 +824,7 @@ void () ogre_swing5 =
 };
 
 // ogre_swing6
-// function begins at statement 12308
+// function begins at statement 12308, parm_start=7805
 // OP_STATE	5100	7805	0
 // OP_STORE_V	1965	4	0
 // OP_CALL1	7694	0	0
@@ -843,7 +843,7 @@ void () ogre_swing6 =
 };
 
 // ogre_swing7
-// function begins at statement 12318
+// function begins at statement 12318, parm_start=7810
 // OP_STATE	5102	7810	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	7694	0	0
@@ -862,7 +862,7 @@ void () ogre_swing7 =
 };
 
 // ogre_swing8
-// function begins at statement 12328
+// function begins at statement 12328, parm_start=7815
 // OP_STATE	1733	7815	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	7694	0	0
@@ -881,7 +881,7 @@ void () ogre_swing8 =
 };
 
 // ogre_swing9
-// function begins at statement 12338
+// function begins at statement 12338, parm_start=7820
 // OP_STATE	5443	7820	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	7694	0	0
@@ -900,7 +900,7 @@ void () ogre_swing9 =
 };
 
 // ogre_swing10
-// function begins at statement 12348
+// function begins at statement 12348, parm_start=7825
 // OP_STATE	5445	7825	0
 // OP_STORE_V	5210	4	0
 // OP_CALL1	7694	0	0
@@ -919,7 +919,7 @@ void () ogre_swing10 =
 };
 
 // ogre_swing11
-// function begins at statement 12358
+// function begins at statement 12358, parm_start=7830
 // OP_STATE	5447	7830	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	7694	0	0
@@ -938,7 +938,7 @@ void () ogre_swing11 =
 };
 
 // ogre_swing12
-// function begins at statement 12368
+// function begins at statement 12368, parm_start=7835
 // OP_STATE	5449	7835	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
@@ -950,7 +950,7 @@ void () ogre_swing12 =
 };
 
 // ogre_swing13
-// function begins at statement 12372
+// function begins at statement 12372, parm_start=7836
 // OP_STATE	1390	7836	0
 // OP_STORE_V	6077	4	0
 // OP_CALL1	857	0	0
@@ -962,7 +962,7 @@ void () ogre_swing13 =
 };
 
 // ogre_swing14
-// function begins at statement 12376
+// function begins at statement 12376, parm_start=7837
 // OP_STATE	5452	7784	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
@@ -974,7 +974,7 @@ void () ogre_swing14 =
 };
 
 // ogre_smash1
-// function begins at statement 12380
+// function begins at statement 12380, parm_start=7837
 // OP_STATE	5454	7837	0
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
@@ -993,7 +993,7 @@ void () ogre_smash1 =
 };
 
 // ogre_smash2
-// function begins at statement 12390
+// function begins at statement 12390, parm_start=7838
 // OP_STATE	5456	7838	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -1005,7 +1005,7 @@ void () ogre_smash2 =
 };
 
 // ogre_smash3
-// function begins at statement 12394
+// function begins at statement 12394, parm_start=7839
 // OP_STATE	5458	7839	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -1017,7 +1017,7 @@ void () ogre_smash3 =
 };
 
 // ogre_smash4
-// function begins at statement 12398
+// function begins at statement 12398, parm_start=7840
 // OP_STATE	2227	7840	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
@@ -1029,7 +1029,7 @@ void () ogre_smash4 =
 };
 
 // ogre_smash5
-// function begins at statement 12402
+// function begins at statement 12402, parm_start=7841
 // OP_STATE	5351	7841	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -1041,7 +1041,7 @@ void () ogre_smash5 =
 };
 
 // ogre_smash6
-// function begins at statement 12406
+// function begins at statement 12406, parm_start=7842
 // OP_STATE	5353	7842	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -1056,7 +1056,7 @@ void () ogre_smash6 =
 };
 
 // ogre_smash7
-// function begins at statement 12412
+// function begins at statement 12412, parm_start=7843
 // OP_STATE	5355	7843	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -1071,7 +1071,7 @@ void () ogre_smash7 =
 };
 
 // ogre_smash8
-// function begins at statement 12418
+// function begins at statement 12418, parm_start=7844
 // OP_STATE	5357	7844	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
@@ -1086,7 +1086,7 @@ void () ogre_smash8 =
 };
 
 // ogre_smash9
-// function begins at statement 12424
+// function begins at statement 12424, parm_start=7845
 // OP_STATE	5359	7845	0
 // OP_STORE_V	7768	4	0
 // OP_CALL1	857	0	0
@@ -1101,7 +1101,7 @@ void () ogre_smash9 =
 };
 
 // ogre_smash10
-// function begins at statement 12430
+// function begins at statement 12430, parm_start=7846
 // OP_STATE	5361	7846	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	7694	0	0
@@ -1113,7 +1113,7 @@ void () ogre_smash10 =
 };
 
 // ogre_smash11
-// function begins at statement 12434
+// function begins at statement 12434, parm_start=7847
 // OP_STATE	5363	7847	0
 // OP_STORE_V	7369	4	0
 // OP_CALL1	857	0	0
@@ -1135,7 +1135,7 @@ void () ogre_smash11 =
 };
 
 // ogre_smash12
-// function begins at statement 12446
+// function begins at statement 12446, parm_start=7852
 // OP_STATE	5365	7852	0
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
@@ -1147,7 +1147,7 @@ void () ogre_smash12 =
 };
 
 // ogre_smash13
-// function begins at statement 12450
+// function begins at statement 12450, parm_start=7853
 // OP_STATE	5367	7853	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
@@ -1159,7 +1159,7 @@ void () ogre_smash13 =
 };
 
 // ogre_smash14
-// function begins at statement 12454
+// function begins at statement 12454, parm_start=7854
 // OP_STATE	912	7784	0
 // OP_STORE_V	2250	4	0
 // OP_CALL1	857	0	0
@@ -1171,7 +1171,7 @@ void () ogre_smash14 =
 };
 
 // ogre_nail1
-// function begins at statement 12458
+// function begins at statement 12458, parm_start=7855
 // OP_STATE	5369	7855	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1182,7 +1182,7 @@ void () ogre_nail1 =
 };
 
 // ogre_nail2
-// function begins at statement 12461
+// function begins at statement 12461, parm_start=7856
 // OP_STATE	5371	7856	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1193,7 +1193,7 @@ void () ogre_nail2 =
 };
 
 // ogre_nail3
-// function begins at statement 12464
+// function begins at statement 12464, parm_start=7857
 // OP_STATE	5371	7857	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1204,7 +1204,7 @@ void () ogre_nail3 =
 };
 
 // ogre_nail4
-// function begins at statement 12467
+// function begins at statement 12467, parm_start=7858
 // OP_STATE	3872	7858	0
 // OP_CALL0	758	0	0
 // OP_CALL0	7643	0	0
@@ -1217,7 +1217,7 @@ void () ogre_nail4 =
 };
 
 // ogre_nail5
-// function begins at statement 12471
+// function begins at statement 12471, parm_start=7859
 // OP_STATE	260	7859	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1228,7 +1228,7 @@ void () ogre_nail5 =
 };
 
 // ogre_nail6
-// function begins at statement 12474
+// function begins at statement 12474, parm_start=7860
 // OP_STATE	5375	7860	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1239,7 +1239,7 @@ void () ogre_nail6 =
 };
 
 // ogre_nail7
-// function begins at statement 12477
+// function begins at statement 12477, parm_start=7861
 // OP_STATE	5377	7784	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
@@ -1250,7 +1250,7 @@ void () ogre_nail7 =
 };
 
 // ogre_pain1
-// function begins at statement 12480
+// function begins at statement 12480, parm_start=7862
 // OP_STATE	5379	7862	0
 // OP_DONE	0	0	0
 void () ogre_pain1 =
@@ -1259,7 +1259,7 @@ void () ogre_pain1 =
 };
 
 // ogre_pain2
-// function begins at statement 12482
+// function begins at statement 12482, parm_start=7863
 // OP_STATE	5381	7863	0
 // OP_DONE	0	0	0
 void () ogre_pain2 =
@@ -1268,7 +1268,7 @@ void () ogre_pain2 =
 };
 
 // ogre_pain3
-// function begins at statement 12484
+// function begins at statement 12484, parm_start=7864
 // OP_STATE	5383	7864	0
 // OP_DONE	0	0	0
 void () ogre_pain3 =
@@ -1277,7 +1277,7 @@ void () ogre_pain3 =
 };
 
 // ogre_pain4
-// function begins at statement 12486
+// function begins at statement 12486, parm_start=7865
 // OP_STATE	5384	7865	0
 // OP_DONE	0	0	0
 void () ogre_pain4 =
@@ -1286,7 +1286,7 @@ void () ogre_pain4 =
 };
 
 // ogre_pain5
-// function begins at statement 12488
+// function begins at statement 12488, parm_start=7866
 // OP_STATE	5386	7784	0
 // OP_DONE	0	0	0
 void () ogre_pain5 =
@@ -1295,7 +1295,7 @@ void () ogre_pain5 =
 };
 
 // ogre_painb1
-// function begins at statement 12490
+// function begins at statement 12490, parm_start=7867
 // OP_STATE	5388	7867	0
 // OP_DONE	0	0	0
 void () ogre_painb1 =
@@ -1304,7 +1304,7 @@ void () ogre_painb1 =
 };
 
 // ogre_painb2
-// function begins at statement 12492
+// function begins at statement 12492, parm_start=7868
 // OP_STATE	2739	7868	0
 // OP_DONE	0	0	0
 void () ogre_painb2 =
@@ -1313,7 +1313,7 @@ void () ogre_painb2 =
 };
 
 // ogre_painb3
-// function begins at statement 12494
+// function begins at statement 12494, parm_start=7869
 // OP_STATE	5391	7784	0
 // OP_DONE	0	0	0
 void () ogre_painb3 =
@@ -1322,7 +1322,7 @@ void () ogre_painb3 =
 };
 
 // ogre_painc1
-// function begins at statement 12496
+// function begins at statement 12496, parm_start=7870
 // OP_STATE	5393	7870	0
 // OP_DONE	0	0	0
 void () ogre_painc1 =
@@ -1331,7 +1331,7 @@ void () ogre_painc1 =
 };
 
 // ogre_painc2
-// function begins at statement 12498
+// function begins at statement 12498, parm_start=7871
 // OP_STATE	5395	7871	0
 // OP_DONE	0	0	0
 void () ogre_painc2 =
@@ -1340,7 +1340,7 @@ void () ogre_painc2 =
 };
 
 // ogre_painc3
-// function begins at statement 12500
+// function begins at statement 12500, parm_start=7872
 // OP_STATE	5397	7872	0
 // OP_DONE	0	0	0
 void () ogre_painc3 =
@@ -1349,7 +1349,7 @@ void () ogre_painc3 =
 };
 
 // ogre_painc4
-// function begins at statement 12502
+// function begins at statement 12502, parm_start=7873
 // OP_STATE	5399	7873	0
 // OP_DONE	0	0	0
 void () ogre_painc4 =
@@ -1358,7 +1358,7 @@ void () ogre_painc4 =
 };
 
 // ogre_painc5
-// function begins at statement 12504
+// function begins at statement 12504, parm_start=7874
 // OP_STATE	5401	7874	0
 // OP_DONE	0	0	0
 void () ogre_painc5 =
@@ -1367,7 +1367,7 @@ void () ogre_painc5 =
 };
 
 // ogre_painc6
-// function begins at statement 12506
+// function begins at statement 12506, parm_start=7875
 // OP_STATE	788	7784	0
 // OP_DONE	0	0	0
 void () ogre_painc6 =
@@ -1376,7 +1376,7 @@ void () ogre_painc6 =
 };
 
 // ogre_paind1
-// function begins at statement 12508
+// function begins at statement 12508, parm_start=7876
 // OP_STATE	5404	7876	0
 // OP_DONE	0	0	0
 void () ogre_paind1 =
@@ -1385,7 +1385,7 @@ void () ogre_paind1 =
 };
 
 // ogre_paind2
-// function begins at statement 12510
+// function begins at statement 12510, parm_start=7877
 // OP_STATE	5406	7877	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1346	0	0
@@ -1397,7 +1397,7 @@ void () ogre_paind2 =
 };
 
 // ogre_paind3
-// function begins at statement 12514
+// function begins at statement 12514, parm_start=7878
 // OP_STATE	5408	7878	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1346	0	0
@@ -1409,7 +1409,7 @@ void () ogre_paind3 =
 };
 
 // ogre_paind4
-// function begins at statement 12518
+// function begins at statement 12518, parm_start=7879
 // OP_STATE	5410	7879	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1346	0	0
@@ -1421,7 +1421,7 @@ void () ogre_paind4 =
 };
 
 // ogre_paind5
-// function begins at statement 12522
+// function begins at statement 12522, parm_start=7880
 // OP_STATE	5411	7880	0
 // OP_DONE	0	0	0
 void () ogre_paind5 =
@@ -1430,7 +1430,7 @@ void () ogre_paind5 =
 };
 
 // ogre_paind6
-// function begins at statement 12524
+// function begins at statement 12524, parm_start=7881
 // OP_STATE	5413	7881	0
 // OP_DONE	0	0	0
 void () ogre_paind6 =
@@ -1439,7 +1439,7 @@ void () ogre_paind6 =
 };
 
 // ogre_paind7
-// function begins at statement 12526
+// function begins at statement 12526, parm_start=7882
 // OP_STATE	5415	7882	0
 // OP_DONE	0	0	0
 void () ogre_paind7 =
@@ -1448,7 +1448,7 @@ void () ogre_paind7 =
 };
 
 // ogre_paind8
-// function begins at statement 12528
+// function begins at statement 12528, parm_start=7883
 // OP_STATE	5417	7883	0
 // OP_DONE	0	0	0
 void () ogre_paind8 =
@@ -1457,7 +1457,7 @@ void () ogre_paind8 =
 };
 
 // ogre_paind9
-// function begins at statement 12530
+// function begins at statement 12530, parm_start=7884
 // OP_STATE	5419	7884	0
 // OP_DONE	0	0	0
 void () ogre_paind9 =
@@ -1466,7 +1466,7 @@ void () ogre_paind9 =
 };
 
 // ogre_paind10
-// function begins at statement 12532
+// function begins at statement 12532, parm_start=7885
 // OP_STATE	1423	7885	0
 // OP_DONE	0	0	0
 void () ogre_paind10 =
@@ -1475,7 +1475,7 @@ void () ogre_paind10 =
 };
 
 // ogre_paind11
-// function begins at statement 12534
+// function begins at statement 12534, parm_start=7886
 // OP_STATE	5422	7886	0
 // OP_DONE	0	0	0
 void () ogre_paind11 =
@@ -1484,7 +1484,7 @@ void () ogre_paind11 =
 };
 
 // ogre_paind12
-// function begins at statement 12536
+// function begins at statement 12536, parm_start=7887
 // OP_STATE	5424	7887	0
 // OP_DONE	0	0	0
 void () ogre_paind12 =
@@ -1493,7 +1493,7 @@ void () ogre_paind12 =
 };
 
 // ogre_paind13
-// function begins at statement 12538
+// function begins at statement 12538, parm_start=7888
 // OP_STATE	5426	7888	0
 // OP_DONE	0	0	0
 void () ogre_paind13 =
@@ -1502,7 +1502,7 @@ void () ogre_paind13 =
 };
 
 // ogre_paind14
-// function begins at statement 12540
+// function begins at statement 12540, parm_start=7889
 // OP_STATE	5427	7889	0
 // OP_DONE	0	0	0
 void () ogre_paind14 =
@@ -1511,7 +1511,7 @@ void () ogre_paind14 =
 };
 
 // ogre_paind15
-// function begins at statement 12542
+// function begins at statement 12542, parm_start=7890
 // OP_STATE	5429	7890	0
 // OP_DONE	0	0	0
 void () ogre_paind15 =
@@ -1520,7 +1520,7 @@ void () ogre_paind15 =
 };
 
 // ogre_paind16
-// function begins at statement 12544
+// function begins at statement 12544, parm_start=7891
 // OP_STATE	5431	7784	0
 // OP_DONE	0	0	0
 void () ogre_paind16 =
@@ -1529,7 +1529,7 @@ void () ogre_paind16 =
 };
 
 // ogre_paine1
-// function begins at statement 12546
+// function begins at statement 12546, parm_start=7892
 // OP_STATE	5433	7892	0
 // OP_DONE	0	0	0
 void () ogre_paine1 =
@@ -1538,7 +1538,7 @@ void () ogre_paine1 =
 };
 
 // ogre_paine2
-// function begins at statement 12548
+// function begins at statement 12548, parm_start=7893
 // OP_STATE	5435	7893	0
 // OP_STORE_V	318	4	0
 // OP_CALL1	1346	0	0
@@ -1550,7 +1550,7 @@ void () ogre_paine2 =
 };
 
 // ogre_paine3
-// function begins at statement 12552
+// function begins at statement 12552, parm_start=7894
 // OP_STATE	5437	7894	0
 // OP_STORE_V	317	4	0
 // OP_CALL1	1346	0	0
@@ -1562,7 +1562,7 @@ void () ogre_paine3 =
 };
 
 // ogre_paine4
-// function begins at statement 12556
+// function begins at statement 12556, parm_start=7895
 // OP_STATE	1884	7895	0
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1346	0	0
@@ -1574,7 +1574,7 @@ void () ogre_paine4 =
 };
 
 // ogre_paine5
-// function begins at statement 12560
+// function begins at statement 12560, parm_start=7896
 // OP_STATE	5440	7896	0
 // OP_DONE	0	0	0
 void () ogre_paine5 =
@@ -1583,7 +1583,7 @@ void () ogre_paine5 =
 };
 
 // ogre_paine6
-// function begins at statement 12562
+// function begins at statement 12562, parm_start=7897
 // OP_STATE	5442	7897	0
 // OP_DONE	0	0	0
 void () ogre_paine6 =
@@ -1592,7 +1592,7 @@ void () ogre_paine6 =
 };
 
 // ogre_paine7
-// function begins at statement 12564
+// function begins at statement 12564, parm_start=7898
 // OP_STATE	4971	7898	0
 // OP_DONE	0	0	0
 void () ogre_paine7 =
@@ -1601,7 +1601,7 @@ void () ogre_paine7 =
 };
 
 // ogre_paine8
-// function begins at statement 12566
+// function begins at statement 12566, parm_start=7899
 // OP_STATE	4986	7899	0
 // OP_DONE	0	0	0
 void () ogre_paine8 =
@@ -1610,7 +1610,7 @@ void () ogre_paine8 =
 };
 
 // ogre_paine9
-// function begins at statement 12568
+// function begins at statement 12568, parm_start=7900
 // OP_STATE	5000	7900	0
 // OP_DONE	0	0	0
 void () ogre_paine9 =
@@ -1619,7 +1619,7 @@ void () ogre_paine9 =
 };
 
 // ogre_paine10
-// function begins at statement 12570
+// function begins at statement 12570, parm_start=7901
 // OP_STATE	5015	7901	0
 // OP_DONE	0	0	0
 void () ogre_paine10 =
@@ -1628,7 +1628,7 @@ void () ogre_paine10 =
 };
 
 // ogre_paine11
-// function begins at statement 12572
+// function begins at statement 12572, parm_start=7902
 // OP_STATE	5029	7902	0
 // OP_DONE	0	0	0
 void () ogre_paine11 =
@@ -1637,7 +1637,7 @@ void () ogre_paine11 =
 };
 
 // ogre_paine12
-// function begins at statement 12574
+// function begins at statement 12574, parm_start=7903
 // OP_STATE	5035	7903	0
 // OP_DONE	0	0	0
 void () ogre_paine12 =
@@ -1646,7 +1646,7 @@ void () ogre_paine12 =
 };
 
 // ogre_paine13
-// function begins at statement 12576
+// function begins at statement 12576, parm_start=7904
 // OP_STATE	5038	7904	0
 // OP_DONE	0	0	0
 void () ogre_paine13 =
@@ -1655,7 +1655,7 @@ void () ogre_paine13 =
 };
 
 // ogre_paine14
-// function begins at statement 12578
+// function begins at statement 12578, parm_start=7905
 // OP_STATE	5041	7905	0
 // OP_DONE	0	0	0
 void () ogre_paine14 =
@@ -1664,7 +1664,7 @@ void () ogre_paine14 =
 };
 
 // ogre_paine15
-// function begins at statement 12580
+// function begins at statement 12580, parm_start=7906
 // OP_STATE	5044	7784	0
 // OP_DONE	0	0	0
 void () ogre_paine15 =
@@ -1673,7 +1673,7 @@ void () ogre_paine15 =
 };
 
 // ogre_pain
-// function begins at statement 12582
+// function begins at statement 12582, parm_start=7907
 // OP_LOAD_F	28	374	7910
 // OP_GT	7910	31	7911
 // OP_IFNOT	7911	2	0
@@ -1759,7 +1759,7 @@ void (entity attacker, float damage) ogre_pain =
 };
 
 // ogre_die1
-// function begins at statement 12627
+// function begins at statement 12627, parm_start=7929
 // OP_STATE	5047	7929	0
 // OP_DONE	0	0	0
 void () ogre_die1 =
@@ -1768,7 +1768,7 @@ void () ogre_die1 =
 };
 
 // ogre_die2
-// function begins at statement 12629
+// function begins at statement 12629, parm_start=7930
 // OP_STATE	4909	7930	0
 // OP_DONE	0	0	0
 void () ogre_die2 =
@@ -1777,7 +1777,7 @@ void () ogre_die2 =
 };
 
 // ogre_die3
-// function begins at statement 12631
+// function begins at statement 12631, parm_start=7931
 // OP_STATE	4915	7931	0
 // OP_ADDRESS	28	104	7932
 // OP_STOREP_F	237	7932	0
@@ -1794,7 +1794,7 @@ void () ogre_die3 =
 };
 
 // ogre_die4
-// function begins at statement 12638
+// function begins at statement 12638, parm_start=7934
 // OP_STATE	4918	7934	0
 // OP_DONE	0	0	0
 void () ogre_die4 =
@@ -1803,7 +1803,7 @@ void () ogre_die4 =
 };
 
 // ogre_die5
-// function begins at statement 12640
+// function begins at statement 12640, parm_start=7935
 // OP_STATE	4921	7935	0
 // OP_DONE	0	0	0
 void () ogre_die5 =
@@ -1812,7 +1812,7 @@ void () ogre_die5 =
 };
 
 // ogre_die6
-// function begins at statement 12642
+// function begins at statement 12642, parm_start=7936
 // OP_STATE	4924	7936	0
 // OP_DONE	0	0	0
 void () ogre_die6 =
@@ -1821,7 +1821,7 @@ void () ogre_die6 =
 };
 
 // ogre_die7
-// function begins at statement 12644
+// function begins at statement 12644, parm_start=7937
 // OP_STATE	4927	7937	0
 // OP_DONE	0	0	0
 void () ogre_die7 =
@@ -1830,7 +1830,7 @@ void () ogre_die7 =
 };
 
 // ogre_die8
-// function begins at statement 12646
+// function begins at statement 12646, parm_start=7938
 // OP_STATE	4929	7938	0
 // OP_DONE	0	0	0
 void () ogre_die8 =
@@ -1839,7 +1839,7 @@ void () ogre_die8 =
 };
 
 // ogre_die9
-// function begins at statement 12648
+// function begins at statement 12648, parm_start=7939
 // OP_STATE	1164	7939	0
 // OP_DONE	0	0	0
 void () ogre_die9 =
@@ -1848,7 +1848,7 @@ void () ogre_die9 =
 };
 
 // ogre_die10
-// function begins at statement 12650
+// function begins at statement 12650, parm_start=7940
 // OP_STATE	4934	7940	0
 // OP_DONE	0	0	0
 void () ogre_die10 =
@@ -1857,7 +1857,7 @@ void () ogre_die10 =
 };
 
 // ogre_die11
-// function begins at statement 12652
+// function begins at statement 12652, parm_start=7941
 // OP_STATE	4937	7941	0
 // OP_DONE	0	0	0
 void () ogre_die11 =
@@ -1866,7 +1866,7 @@ void () ogre_die11 =
 };
 
 // ogre_die12
-// function begins at statement 12654
+// function begins at statement 12654, parm_start=7942
 // OP_STATE	7942	7943	0
 // OP_DONE	0	0	0
 void () ogre_die12 =
@@ -1875,7 +1875,7 @@ void () ogre_die12 =
 };
 
 // ogre_die13
-// function begins at statement 12656
+// function begins at statement 12656, parm_start=7944
 // OP_STATE	7944	7945	0
 // OP_DONE	0	0	0
 void () ogre_die13 =
@@ -1884,7 +1884,7 @@ void () ogre_die13 =
 };
 
 // ogre_die14
-// function begins at statement 12658
+// function begins at statement 12658, parm_start=7946
 // OP_STATE	4939	7945	0
 // OP_DONE	0	0	0
 void () ogre_die14 =
@@ -1893,7 +1893,7 @@ void () ogre_die14 =
 };
 
 // ogre_bdie1
-// function begins at statement 12660
+// function begins at statement 12660, parm_start=7947
 // OP_STATE	4942	7947	0
 // OP_DONE	0	0	0
 void () ogre_bdie1 =
@@ -1902,7 +1902,7 @@ void () ogre_bdie1 =
 };
 
 // ogre_bdie2
-// function begins at statement 12662
+// function begins at statement 12662, parm_start=7948
 // OP_STATE	4945	7948	0
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
@@ -1914,7 +1914,7 @@ void () ogre_bdie2 =
 };
 
 // ogre_bdie3
-// function begins at statement 12666
+// function begins at statement 12666, parm_start=7949
 // OP_STATE	261	7949	0
 // OP_ADDRESS	28	104	7950
 // OP_STOREP_F	237	7950	0
@@ -1931,7 +1931,7 @@ void () ogre_bdie3 =
 };
 
 // ogre_bdie4
-// function begins at statement 12673
+// function begins at statement 12673, parm_start=7952
 // OP_STATE	7952	7953	0
 // OP_STORE_V	7368	4	0
 // OP_CALL1	1338	0	0
@@ -1943,7 +1943,7 @@ void () ogre_bdie4 =
 };
 
 // ogre_bdie5
-// function begins at statement 12677
+// function begins at statement 12677, parm_start=7954
 // OP_STATE	7954	7955	0
 // OP_STORE_V	370	4	0
 // OP_CALL1	1338	0	0
@@ -1955,7 +1955,7 @@ void () ogre_bdie5 =
 };
 
 // ogre_bdie6
-// function begins at statement 12681
+// function begins at statement 12681, parm_start=7956
 // OP_STATE	4949	7956	0
 // OP_STORE_V	315	4	0
 // OP_CALL1	1338	0	0
@@ -1967,7 +1967,7 @@ void () ogre_bdie6 =
 };
 
 // ogre_bdie7
-// function begins at statement 12685
+// function begins at statement 12685, parm_start=7957
 // OP_STATE	4952	7957	0
 // OP_STORE_V	1890	4	0
 // OP_CALL1	1338	0	0
@@ -1979,7 +1979,7 @@ void () ogre_bdie7 =
 };
 
 // ogre_bdie8
-// function begins at statement 12689
+// function begins at statement 12689, parm_start=7958
 // OP_STATE	4955	7958	0
 // OP_DONE	0	0	0
 void () ogre_bdie8 =
@@ -1988,7 +1988,7 @@ void () ogre_bdie8 =
 };
 
 // ogre_bdie9
-// function begins at statement 12691
+// function begins at statement 12691, parm_start=7959
 // OP_STATE	4958	7959	0
 // OP_DONE	0	0	0
 void () ogre_bdie9 =
@@ -1997,7 +1997,7 @@ void () ogre_bdie9 =
 };
 
 // ogre_bdie10
-// function begins at statement 12693
+// function begins at statement 12693, parm_start=7960
 // OP_STATE	7960	7959	0
 // OP_DONE	0	0	0
 void () ogre_bdie10 =
@@ -2006,7 +2006,7 @@ void () ogre_bdie10 =
 };
 
 // ogre_die
-// function begins at statement 12695
+// function begins at statement 12695, parm_start=7962
 // OP_LOAD_F	28	152	7962
 // OP_LT	7962	7963	7964
 // OP_IFNOT	7964	24	0
@@ -2072,7 +2072,7 @@ void () ogre_die =
 };
 
 // ogre_melee
-// function begins at statement 12734
+// function begins at statement 12734, parm_start=7973
 // OP_CALL0	452	0	0
 // OP_GT	1	1491	7973
 // OP_IFNOT	7973	3	0
@@ -2094,7 +2094,7 @@ void () ogre_melee =
 };
 
 // monster_ogre
-// function begins at statement 12741
+// function begins at statement 12741, parm_start=7975
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
@@ -2183,7 +2183,7 @@ void () monster_ogre =
 };
 
 // monster_ogre_marksman
-// function begins at statement 12794
+// function begins at statement 12794, parm_start=7987
 // OP_CALL0	7974	0	0
 // OP_DONE	0	0	0
 void () monster_ogre_marksman =

@@ -15,7 +15,7 @@ float enemy_infront;
 float enemy_range;
 float enemy_yaw;
 // knight_attack
-// function begins at statement 275
+// function begins at statement 275, parm_start=764
 // OP_LOAD_ENT	28	181	765
 // OP_LOAD_V	765	105	766
 // OP_LOAD_ENT	28	181	769
@@ -50,7 +50,7 @@ void () knight_attack =
 };
 
 // CheckAttack
-// function begins at statement 293
+// function begins at statement 293, parm_start=791
 // OP_LOAD_ENT	28	181	799
 // OP_STORE_ENT	799	797	0
 // OP_LOAD_V	28	105	800
@@ -237,7 +237,7 @@ float () CheckAttack =
 };
 
 // ai_face
-// function begins at statement 372
+// function begins at statement 372, parm_start=844
 // OP_ADDRESS	28	191	844
 // OP_LOAD_ENT	28	181	845
 // OP_LOAD_V	845	105	846
@@ -257,7 +257,7 @@ void () ai_face =
 float (entity targ) infront;
 float (entity targ) range;
 // ai_charge
-// function begins at statement 382
+// function begins at statement 382, parm_start=858
 // OP_CALL0	758	0	0
 // OP_STORE_V	858	4	0
 // OP_CALL1	501	0	0
@@ -269,7 +269,7 @@ void (float d) ai_charge =
 };
 
 // ai_charge_side
-// function begins at statement 386
+// function begins at statement 386, parm_start=860
 // OP_ADDRESS	28	191	864
 // OP_LOAD_ENT	28	181	865
 // OP_LOAD_V	865	105	866
@@ -309,7 +309,7 @@ void () ai_charge_side =
 };
 
 // ai_melee
-// function begins at statement 412
+// function begins at statement 412, parm_start=896
 // OP_LOAD_ENT	28	181	900
 // OP_NOT_ENT	900	0	901
 // OP_IFNOT	901	2	0
@@ -363,7 +363,7 @@ void () ai_melee =
 };
 
 // ai_melee_side
-// function begins at statement 441
+// function begins at statement 441, parm_start=922
 // OP_LOAD_ENT	28	181	926
 // OP_NOT_ENT	926	0	927
 // OP_IFNOT	927	2	0
@@ -432,7 +432,7 @@ void () ai_melee_side =
 };
 
 // SoldierCheckAttack
-// function begins at statement 478
+// function begins at statement 478, parm_start=949
 // OP_LOAD_ENT	28	181	957
 // OP_STORE_ENT	957	955	0
 // OP_LOAD_V	28	105	958
@@ -563,7 +563,7 @@ float () SoldierCheckAttack =
 };
 
 // ShamCheckAttack
-// function begins at statement 538
+// function begins at statement 538, parm_start=993
 // OP_EQ_F	761	242	1001
 // OP_IFNOT	1001	9	0
 // OP_LOAD_ENT	28	181	1002
@@ -685,7 +685,7 @@ float () ShamCheckAttack =
 };
 
 // OgreCheckAttack
-// function begins at statement 594
+// function begins at statement 594, parm_start=1038
 // OP_EQ_F	761	242	1046
 // OP_IFNOT	1046	9	0
 // OP_LOAD_ENT	28	181	1047

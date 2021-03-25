@@ -9,14 +9,14 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage;
 float (entity e, float healamount, float ignore) T_Heal;
 float (entity targ, entity inflictor) CanDamage;
 // SUB_Null
-// function begins at statement 1
+// function begins at statement 1, parm_start=523
 // OP_DONE	0	0	0
 void () SUB_Null =
 {
 };
 
 // SUB_Remove
-// function begins at statement 2
+// function begins at statement 2, parm_start=523
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
@@ -26,7 +26,7 @@ void () SUB_Remove =
 };
 
 // SetMovedir
-// function begins at statement 5
+// function begins at statement 5, parm_start=524
 // OP_LOAD_V	28	117	524
 // OP_EQ_V	524	527	530
 // OP_IFNOT	530	4	0
@@ -71,7 +71,7 @@ void () SetMovedir =
 };
 
 // InitTrigger
-// function begins at statement 25
+// function begins at statement 25, parm_start=560
 // OP_LOAD_V	28	117	560
 // OP_NE_V	560	286	563
 // OP_IFNOT	563	2	0
@@ -105,7 +105,7 @@ void () InitTrigger =
 };
 
 // SUB_CalcMoveEnt
-// function begins at statement 42
+// function begins at statement 42, parm_start=570
 // OP_STORE_ENT	28	576	0
 // OP_STORE_ENT	570	28	0
 // OP_STORE_V	571	4	0
@@ -124,7 +124,7 @@ void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
 };
 
 // SUB_CalcMove
-// function begins at statement 50
+// function begins at statement 50, parm_start=577
 // OP_NOT_F	580	0	587
 // OP_IFNOT	587	3	0
 // OP_STORE_V	588	4	0
@@ -209,7 +209,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
 };
 
 // SUB_CalcMoveDone
-// function begins at statement 96
+// function begins at statement 96, parm_start=629
 // OP_LOAD_V	28	423	629
 // OP_STORE_V	28	4	0
 // OP_STORE_V	629	7	0
@@ -237,7 +237,7 @@ void () SUB_CalcMoveDone =
 };
 
 // SUB_CalcAngleMoveEnt
-// function begins at statement 109
+// function begins at statement 109, parm_start=639
 // OP_STORE_ENT	28	645	0
 // OP_STORE_ENT	639	28	0
 // OP_STORE_V	640	4	0
@@ -256,7 +256,7 @@ void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMove
 };
 
 // SUB_CalcAngleMove
-// function begins at statement 117
+// function begins at statement 117, parm_start=646
 // OP_NOT_F	649	0	656
 // OP_IFNOT	656	3	0
 // OP_STORE_V	588	4	0
@@ -306,7 +306,7 @@ void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
 };
 
 // SUB_CalcAngleMoveDone
-// function begins at statement 144
+// function begins at statement 144, parm_start=679
 // OP_ADDRESS	28	117	679
 // OP_LOAD_V	28	427	682
 // OP_STOREP_V	682	679	0
@@ -333,7 +333,7 @@ void () SUB_CalcAngleMoveDone =
 };
 
 // DelayThink
-// function begins at statement 156
+// function begins at statement 156, parm_start=692
 // OP_LOAD_ENT	28	181	692
 // OP_STORE_ENT	692	346	0
 // OP_CALL0	518	0	0
@@ -348,7 +348,7 @@ void () DelayThink =
 };
 
 // SUB_UseTargets
-// function begins at statement 162
+// function begins at statement 162, parm_start=693
 // OP_LOAD_F	28	414	697
 // OP_IFNOT	697	23	0
 // OP_CALL0	459	0	0
@@ -523,7 +523,7 @@ void () SUB_UseTargets =
 };
 
 // SUB_AttackFinished
-// function begins at statement 249
+// function begins at statement 249, parm_start=732
 // OP_ADDRESS	28	421	733
 // OP_STOREP_F	337	733	0
 // OP_NE_F	349	370	734
@@ -545,7 +545,7 @@ void (float normal) SUB_AttackFinished =
 
 float (entity targ) visible;
 // SUB_CheckRefire
-// function begins at statement 257
+// function begins at statement 257, parm_start=739
 // OP_NE_F	349	370	740
 // OP_IFNOT	740	2	0
 // OP_RETURN	0	0	0

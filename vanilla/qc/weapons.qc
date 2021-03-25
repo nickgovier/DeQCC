@@ -2,7 +2,7 @@ void () player_run;
 void (vector org, vector vel, float damage) SpawnBlood;
 void () SuperDamageSound;
 // W_Precache
-// function begins at statement 3409
+// function begins at statement 3409, parm_start=2616
 // OP_STORE_V	2616	4	0
 // OP_CALL1	464	0	0
 // OP_STORE_V	2617	4	0
@@ -45,7 +45,7 @@ void () W_Precache =
 };
 
 // crandom
-// function begins at statement 3434
+// function begins at statement 3434, parm_start=2629
 // OP_CALL0	452	0	0
 // OP_SUB_F	1	1491	2629
 // OP_MUL_F	2257	2629	2630
@@ -57,7 +57,7 @@ float () crandom =
 };
 
 // W_FireAxe
-// function begins at statement 3439
+// function begins at statement 3439, parm_start=2632
 // OP_LOAD_V	28	175	2638
 // OP_STORE_V	2638	4	0
 // OP_CALL1	447	0	0
@@ -146,7 +146,7 @@ void () W_FireAxe =
 };
 
 // wall_velocity
-// function begins at statement 3494
+// function begins at statement 3494, parm_start=2667
 // OP_LOAD_V	28	113	2670
 // OP_STORE_V	2670	4	0
 // OP_CALL1	454	0	0
@@ -180,7 +180,7 @@ vector () wall_velocity =
 };
 
 // SpawnMeatSpray
-// function begins at statement 3516
+// function begins at statement 3516, parm_start=2697
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	2703	0
 // OP_ADDRESS	2703	201	2705
@@ -240,7 +240,7 @@ void (vector org, vector vel) SpawnMeatSpray =
 };
 
 // SpawnBlood
-// function begins at statement 3554
+// function begins at statement 3554, parm_start=2729
 // OP_MUL_VF	2732	603	2736
 // OP_MUL_F	2735	2257	2740
 // OP_STORE_V	2729	4	0
@@ -254,10 +254,8 @@ void (vector org, vector vel, float damage) SpawnBlood =
     particle(org, vel * 0.100, IMMEDIATE, damage * WEAPON_ROCKET);
 };
 
-float IMMEDIATE = 73.000;
-float ;
 // spawn_touchblood
-// function begins at statement 3562
+// function begins at statement 3562, parm_start=2742
 // OP_CALL0	2666	0	0
 // OP_MUL_VF	1	836	2746
 // OP_STORE_V	2746	2743	0
@@ -277,7 +275,7 @@ void (float damage) spawn_touchblood =
 };
 
 // SpawnChunk
-// function begins at statement 3573
+// function begins at statement 3573, parm_start=2760
 // OP_MUL_VF	2763	2766	2767
 // OP_STORE_V	2760	4	0
 // OP_STORE_V	2767	7	0
@@ -293,7 +291,7 @@ void (vector org, vector vel) SpawnChunk =
 entity multi_ent;
 float multi_damage;
 // ClearMultiDamage
-// function begins at statement 3580
+// function begins at statement 3580, parm_start=2773
 // OP_STORE_ENT	30	2770	0
 // OP_STORE_F	337	2771	0
 // OP_DONE	0	0	0
@@ -304,7 +302,7 @@ void () ClearMultiDamage =
 };
 
 // ApplyMultiDamage
-// function begins at statement 3583
+// function begins at statement 3583, parm_start=2774
 // OP_NOT_ENT	2770	0	2774
 // OP_IFNOT	2774	2	0
 // OP_RETURN	0	0	0
@@ -326,7 +324,7 @@ void () ApplyMultiDamage =
 };
 
 // AddMultiDamage
-// function begins at statement 3592
+// function begins at statement 3592, parm_start=2776
 // OP_NOT_ENT	2776	0	2778
 // OP_IFNOT	2778	2	0
 // OP_RETURN	0	0	0
@@ -361,7 +359,7 @@ void (entity hit, float damage) AddMultiDamage =
 };
 
 // TraceAttack
-// function begins at statement 3604
+// function begins at statement 3604, parm_start=2782
 // OP_CALL0	2628	0	0
 // OP_MUL_VF	62	1	2792
 // OP_ADD_V	2783	2792	2795
@@ -433,7 +431,7 @@ void (float damage, vector dir) TraceAttack =
 };
 
 // FireBullets
-// function begins at statement 3648
+// function begins at statement 3648, parm_start=2824
 // OP_LOAD_V	28	175	2837
 // OP_STORE_V	2837	4	0
 // OP_CALL1	447	0	0
@@ -486,7 +484,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
     
     while(shotcount > MSG_BROADCAST)
     {
-        direction = (dir + ((crandom() * spread) * v_right)) + ((crandom() * spread_y) * v_up);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * spread_y) * v_up);
         traceline(src, src + (direction * IT_CELLS), FALSE, self);
         
         if(trace_fraction != WEAPON_SHOTGUN)
@@ -501,7 +499,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
 };
 
 // W_FireShotgun
-// function begins at statement 3689
+// function begins at statement 3689, parm_start=2878
 // OP_STORE_V	28	4	0
 // OP_STORE_V	321	7	0
 // OP_STORE_V	2619	10	0
@@ -537,7 +535,7 @@ void () W_FireShotgun =
 };
 
 // W_FireSuperShotgun
-// function begins at statement 3712
+// function begins at statement 3712, parm_start=2891
 // OP_LOAD_F	28	157	2894
 // OP_EQ_F	2894	2256	2895
 // OP_IFNOT	2895	3	0
@@ -585,7 +583,7 @@ void () W_FireSuperShotgun =
 };
 
 // s_explode1
-// function begins at statement 3740
+// function begins at statement 3740, parm_start=2906
 // OP_STATE	337	2906	0
 // OP_DONE	0	0	0
 void () s_explode1 =
@@ -594,7 +592,7 @@ void () s_explode1 =
 };
 
 // s_explode2
-// function begins at statement 3742
+// function begins at statement 3742, parm_start=2907
 // OP_STATE	2256	2907	0
 // OP_DONE	0	0	0
 void () s_explode2 =
@@ -603,7 +601,7 @@ void () s_explode2 =
 };
 
 // s_explode3
-// function begins at statement 3744
+// function begins at statement 3744, parm_start=2908
 // OP_STATE	2257	2908	0
 // OP_DONE	0	0	0
 void () s_explode3 =
@@ -612,7 +610,7 @@ void () s_explode3 =
 };
 
 // s_explode4
-// function begins at statement 3746
+// function begins at statement 3746, parm_start=2909
 // OP_STATE	370	2909	0
 // OP_DONE	0	0	0
 void () s_explode4 =
@@ -621,7 +619,7 @@ void () s_explode4 =
 };
 
 // s_explode5
-// function begins at statement 3748
+// function begins at statement 3748, parm_start=2910
 // OP_STATE	2258	2910	0
 // OP_DONE	0	0	0
 void () s_explode5 =
@@ -630,7 +628,7 @@ void () s_explode5 =
 };
 
 // s_explode6
-// function begins at statement 3750
+// function begins at statement 3750, parm_start=2911
 // OP_STATE	313	519	0
 // OP_DONE	0	0	0
 void () s_explode6 =
@@ -639,7 +637,7 @@ void () s_explode6 =
 };
 
 // BecomeExplosion
-// function begins at statement 3752
+// function begins at statement 3752, parm_start=2912
 // OP_ADDRESS	28	103	2912
 // OP_STOREP_F	227	2912	0
 // OP_ADDRESS	28	113	2913
@@ -664,7 +662,7 @@ void () BecomeExplosion =
 };
 
 // T_MissileTouch
-// function begins at statement 3765
+// function begins at statement 3765, parm_start=2919
 // OP_LOAD_ENT	28	201	2920
 // OP_EQ_E	29	2920	2921
 // OP_IFNOT	2921	2	0
@@ -769,7 +767,7 @@ void () T_MissileTouch =
 };
 
 // W_FireRocket
-// function begins at statement 3828
+// function begins at statement 3828, parm_start=2953
 // OP_ADDRESS	28	157	2955
 // OP_ADDRESS	28	160	2956
 // OP_LOAD_F	28	160	2957
@@ -859,7 +857,7 @@ void () W_FireRocket =
 };
 
 // LightningDamage
-// function begins at statement 3891
+// function begins at statement 3891, parm_start=3004
 // OP_SUB_V	3007	3004	3017
 // OP_STORE_V	3017	3014	0
 // OP_STORE_V	3014	4	0
@@ -956,8 +954,8 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f = MSG_BROADCAST - f_y;
-    f_y = f;
+    f_x = MSG_BROADCAST - f_y;
+    f_y = f_x;
     f_z = MSG_BROADCAST;
     f = f * IT_GRENADE_LAUNCHER;
     e2 = world;
@@ -966,7 +964,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -986,7 +984,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -995,14 +993,14 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, 225.000, damage * WEAPON_SPIKES);
+        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
 };
 
 // W_FireLightning
-// function begins at statement 3980
+// function begins at statement 3980, parm_start=3061
 // OP_LOAD_F	28	161	3065
 // OP_LT	3065	2256	3066
 // OP_IFNOT	3066	6	0
@@ -1139,7 +1137,7 @@ void () W_FireLightning =
 };
 
 // GrenadeExplode
-// function begins at statement 4069
+// function begins at statement 4069, parm_start=3106
 // OP_LOAD_ENT	28	201	3106
 // OP_STORE_V	28	4	0
 // OP_STORE_V	3106	7	0
@@ -1178,7 +1176,7 @@ void () GrenadeExplode =
 };
 
 // GrenadeTouch
-// function begins at statement 4095
+// function begins at statement 4095, parm_start=3111
 // OP_LOAD_ENT	28	201	3111
 // OP_EQ_E	29	3111	3112
 // OP_IFNOT	3112	2	0
@@ -1225,7 +1223,7 @@ void () GrenadeTouch =
 };
 
 // W_FireGrenade
-// function begins at statement 4116
+// function begins at statement 4116, parm_start=3123
 // OP_ADDRESS	28	157	3125
 // OP_ADDRESS	28	160	3126
 // OP_LOAD_F	28	160	3127
@@ -1344,7 +1342,7 @@ void () W_FireGrenade =
 void () spike_touch;
 void () superspike_touch;
 // launch_spike
-// function begins at statement 4196
+// function begins at statement 4196, parm_start=3207
 // OP_CALL0	459	0	0
 // OP_STORE_ENT	1	345	0
 // OP_ADDRESS	345	201	3213
@@ -1398,7 +1396,7 @@ void (vector org, vector dir) launch_spike =
 };
 
 // W_FireSuperSpikes
-// function begins at statement 4231
+// function begins at statement 4231, parm_start=3233
 // OP_STORE_V	28	4	0
 // OP_STORE_V	321	7	0
 // OP_STORE_V	2623	10	0
@@ -1452,7 +1450,7 @@ void () W_FireSuperSpikes =
 };
 
 // W_FireSpikes
-// function begins at statement 4267
+// function begins at statement 4267, parm_start=3253
 // OP_LOAD_V	28	175	3258
 // OP_STORE_V	3258	4	0
 // OP_CALL1	447	0	0
@@ -1532,7 +1530,7 @@ void (float ox) W_FireSpikes =
 
 .float hit_z;
 // spike_touch
-// function begins at statement 4315
+// function begins at statement 4315, parm_start=3289
 // OP_LOAD_ENT	28	201	3290
 // OP_EQ_E	29	3290	3291
 // OP_IFNOT	3291	2	0
@@ -1651,7 +1649,7 @@ void () spike_touch =
 };
 
 // superspike_touch
-// function begins at statement 4377
+// function begins at statement 4377, parm_start=3309
 // OP_LOAD_ENT	28	201	3310
 // OP_EQ_E	29	3310	3311
 // OP_IFNOT	3311	2	0
@@ -1740,7 +1738,7 @@ void () superspike_touch =
 };
 
 // W_SetCurrentAmmo
-// function begins at statement 4425
+// function begins at statement 4425, parm_start=3324
 // OP_CALL0	2612	0	0
 // OP_ADDRESS	28	162	3324
 // OP_LOAD_F	28	162	3325
@@ -1970,7 +1968,7 @@ void () W_SetCurrentAmmo =
 };
 
 // W_BestWeapon
-// function begins at statement 4557
+// function begins at statement 4557, parm_start=3411
 // OP_LOAD_F	28	162	3412
 // OP_STORE_F	3412	3411	0
 // OP_LOAD_F	28	189	3413
@@ -2046,7 +2044,7 @@ float () W_BestWeapon =
 };
 
 // W_CheckNoAmmo
-// function begins at statement 4594
+// function begins at statement 4594, parm_start=3437
 // OP_LOAD_F	28	157	3437
 // OP_GT	3437	337	3438
 // OP_IFNOT	3438	2	0
@@ -2089,7 +2087,7 @@ void () player_nail1;
 void () player_light1;
 void () player_rocket1;
 // W_Attack
-// function begins at statement 4608
+// function begins at statement 4608, parm_start=3451
 // OP_CALL0	3436	0	0
 // OP_NOT_F	1	0	3452
 // OP_IFNOT	3452	2	0
@@ -2293,7 +2291,7 @@ void () W_Attack =
 };
 
 // W_ChangeWeapon
-// function begins at statement 4706
+// function begins at statement 4706, parm_start=3494
 // OP_LOAD_F	28	162	3497
 // OP_STORE_F	3497	3494	0
 // OP_STORE_F	337	3495	0
@@ -2514,7 +2512,7 @@ void () W_ChangeWeapon =
 };
 
 // CheatCommand
-// function begins at statement 4795
+// function begins at statement 4795, parm_start=3536
 // OP_IFNOT	35	2	0
 // OP_RETURN	0	0	0
 // OP_ADDRESS	28	160	3536
@@ -2567,7 +2565,7 @@ void () CheatCommand =
 };
 
 // CycleWeaponCommand
-// function begins at statement 4827
+// function begins at statement 4827, parm_start=3557
 // OP_LOAD_F	28	162	3559
 // OP_STORE_F	3559	3557	0
 // OP_ADDRESS	28	173	3560
@@ -2786,7 +2784,7 @@ void () CycleWeaponCommand =
 
 /* ERROR INDENTATION */
 // CycleWeaponReverseCommand
-// function begins at statement 4917
+// function begins at statement 4917, parm_start=3604
 // OP_LOAD_F	28	162	3606
 // OP_STORE_F	3606	3604	0
 // OP_ADDRESS	28	173	3607
@@ -3005,7 +3003,7 @@ void () CycleWeaponReverseCommand =
 
 /* ERROR INDENTATION */
 // ServerflagsCommand
-// function begins at statement 5007
+// function begins at statement 5007, parm_start=3651
 // OP_IFNOT	35	2	0
 // OP_RETURN	0	0	0
 // OP_MUL_F	38	2257	3651
@@ -3024,7 +3022,7 @@ void () ServerflagsCommand =
 };
 
 // QuadCheat
-// function begins at statement 5013
+// function begins at statement 5013, parm_start=3654
 // OP_IFNOT	35	2	0
 // OP_RETURN	0	0	0
 // OP_ADDRESS	28	383	3654
@@ -3054,7 +3052,7 @@ void () QuadCheat =
 };
 
 // ImpulseCommands
-// function begins at statement 5027
+// function begins at statement 5027, parm_start=3662
 // OP_LOAD_F	28	173	3662
 // OP_GE	3662	2256	3663
 // OP_LOAD_F	28	173	3664
@@ -3127,7 +3125,7 @@ void () ImpulseCommands =
 };
 
 // W_WeaponFrame
-// function begins at statement 5057
+// function begins at statement 5057, parm_start=3680
 // OP_LOAD_F	28	373	3680
 // OP_LT	31	3680	3681
 // OP_IFNOT	3681	2	0
@@ -3164,7 +3162,7 @@ void () W_WeaponFrame =
 };
 
 // SuperDamageSound
-// function begins at statement 5069
+// function begins at statement 5069, parm_start=3684
 // OP_LOAD_F	28	377	3684
 // OP_GT	3684	31	3685
 // OP_IFNOT	3685	13	0
