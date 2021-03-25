@@ -1035,8 +1035,8 @@ void () trigger_teleport =
     if(!(self.spawnflags & SILENT))
     {
         precache_sound("ambience/hum1.wav");
-        o = (self.mins + self.maxs) * IMMEDIATE;
-        ambientsound(o, "ambience/hum1.wav", IMMEDIATE, ATTN_STATIC);
+        o = (self.mins + self.maxs) * 0.500;
+        ambientsound(o, "ambience/hum1.wav", 0.500, ATTN_STATIC);
     }
     
 };

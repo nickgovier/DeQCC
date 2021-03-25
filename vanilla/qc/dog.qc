@@ -976,7 +976,7 @@ void () dog_painb16 =
 void () dog_pain =
 {
     sound(self, CHAN_VOICE, "dog/dpain1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         dog_pain1();
     }
@@ -1201,13 +1201,13 @@ void () dog_die =
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_dog.mdl", self.health);
         return;
     }
     
     sound(self, CHAN_VOICE, "dog/ddeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     self.solid = SOLID_NOT;
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         dog_die1();
     }
@@ -1414,7 +1414,7 @@ void () monster_dog =
         return;
     }
     
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_dog.mdl");
     precache_model("progs/dog.mdl");
     precache_sound("dog/dattack1.wav");
     precache_sound("dog/ddeath.wav");

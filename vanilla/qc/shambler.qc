@@ -874,7 +874,7 @@ void () sham_swingl9 =
     *** UNPROCESSED OPCODE OP_STATE 260 8264 0
     ai_charge(SECRET_NO_SHOOT);
     
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         self.think = sham_swingr1;
     }
@@ -1006,7 +1006,7 @@ void () sham_swingr9 =
     ai_charge(SPAWNFLAG_SUPERSPIKE);
     ai_charge(TE_LAVASPLASH);
     
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         self.think = sham_swingl1;
     }
@@ -1573,7 +1573,7 @@ void () sham_die =
     if(self.health < -60.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_shams.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -1656,7 +1656,7 @@ void () monster_shambler =
     
     precache_model("progs/shambler.mdl");
     precache_model("progs/s_light.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_shams.mdl");
     precache_model("progs/bolt.mdl");
     precache_sound("shambler/sattck1.wav");
     precache_sound("shambler/sboom.wav");

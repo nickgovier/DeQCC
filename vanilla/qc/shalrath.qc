@@ -637,7 +637,7 @@ void () shalrath_die =
     if(self.health < -90.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_shal.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -960,7 +960,7 @@ void () monster_shalrath =
     }
     
     precache_model2("progs/shalrath.mdl");
-    precache_model2(IMMEDIATE);
+    precache_model2("progs/h_shal.mdl");
     precache_model2("progs/v_spike.mdl");
     precache_sound2("shalrath/attack.wav");
     precache_sound2("shalrath/attack2.wav");

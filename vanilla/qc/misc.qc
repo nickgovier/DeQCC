@@ -152,7 +152,7 @@ void () light_fluoro =
     }
     
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.500, ATTN_STATIC);
 };
 
 // light_fluorospark
@@ -180,7 +180,7 @@ void () light_fluorospark =
     }
     
     precache_sound("ambience/buzz1.wav");
-    ambientsound(self.origin, "ambience/buzz1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/buzz1.wav", 0.500, ATTN_STATIC);
 };
 
 // light_globe
@@ -214,7 +214,7 @@ void () light_globe =
 void () FireAmbient =
 {
     precache_sound("ambience/fire1.wav");
-    ambientsound(self.origin, "ambience/fire1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fire1.wav", 0.500, ATTN_STATIC);
 };
 
 // light_torch_small_walltorch
@@ -826,7 +826,7 @@ void () make_bubbles =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = '0.000 0.000 15.000';
-    bubble.nextthink = time + IMMEDIATE;
+    bubble.nextthink = time + 0.500;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
@@ -834,7 +834,7 @@ void () make_bubbles =
     bubble.cnt = MSG_BROADCAST;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
     random();
-    self.nextthink = (time + spawn()) + IMMEDIATE;
+    self.nextthink = (time + spawn()) + 0.500;
     self.think = make_bubbles;
 };
 
@@ -892,7 +892,7 @@ void () bubble_split =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = self.velocity;
-    bubble.nextthink = time + IMMEDIATE;
+    bubble.nextthink = time + 0.500;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
@@ -1013,8 +1013,8 @@ void () bubble_bob =
         remove(self);
     }
     
-    rnd1 = self.velocity + (IMMEDIATE + (random() * 20.000));
-    rnd2 = self.velocity_y + (IMMEDIATE + (random() * 20.000));
+    rnd1 = self.velocity + (-10.000 + (random() * 20.000));
+    rnd2 = self.velocity_y + (-10.000 + (random() * 20.000));
     rnd3 = (self.velocity_z + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     
     if(rnd1 > TE_LAVASPLASH)
@@ -1023,7 +1023,7 @@ void () bubble_bob =
     }
     
     
-    if(rnd1 < IMMEDIATE)
+    if(rnd1 < -10.000)
     {
         rnd1 = CONTENT_LAVA;
     }
@@ -1035,7 +1035,7 @@ void () bubble_bob =
     }
     
     
-    if(rnd2 < IMMEDIATE)
+    if(rnd2 < -10.000)
     {
         rnd2 = CONTENT_LAVA;
     }
@@ -1055,7 +1055,7 @@ void () bubble_bob =
     self.velocity = rnd1;
     self.velocity_y = rnd2;
     self.velocity_z = rnd3;
-    self.nextthink = time + IMMEDIATE;
+    self.nextthink = time + 0.500;
     self.think = bubble_bob;
 };
 
@@ -1239,7 +1239,7 @@ void () ambient_suck_wind =
 void () ambient_drone =
 {
     precache_sound("ambience/drone6.wav");
-    ambientsound(self.origin, "ambience/drone6.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drone6.wav", 0.500, ATTN_STATIC);
 };
 
 // ambient_flouro_buzz
@@ -1273,7 +1273,7 @@ void () ambient_flouro_buzz =
 void () ambient_drip =
 {
     precache_sound("ambience/drip1.wav");
-    ambientsound(self.origin, "ambience/drip1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drip1.wav", 0.500, ATTN_STATIC);
 };
 
 // ambient_comp_hum
@@ -1307,7 +1307,7 @@ void () ambient_comp_hum =
 void () ambient_thunder =
 {
     precache_sound("ambience/thunder1.wav");
-    ambientsound(self.origin, "ambience/thunder1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/thunder1.wav", 0.500, ATTN_STATIC);
 };
 
 // ambient_light_buzz
@@ -1324,7 +1324,7 @@ void () ambient_thunder =
 void () ambient_light_buzz =
 {
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.500, ATTN_STATIC);
 };
 
 // ambient_swamp1
@@ -1341,7 +1341,7 @@ void () ambient_light_buzz =
 void () ambient_swamp1 =
 {
     precache_sound("ambience/swamp1.wav");
-    ambientsound(self.origin, "ambience/swamp1.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp1.wav", 0.500, ATTN_STATIC);
 };
 
 // ambient_swamp2
@@ -1358,7 +1358,7 @@ void () ambient_swamp1 =
 void () ambient_swamp2 =
 {
     precache_sound("ambience/swamp2.wav");
-    ambientsound(self.origin, "ambience/swamp2.wav", IMMEDIATE, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp2.wav", 0.500, ATTN_STATIC);
 };
 
 // noise_think
@@ -1411,7 +1411,7 @@ void () ambient_swamp2 =
 // OP_DONE	0	0	0
 void () noise_think =
 {
-    self.nextthink = time + IMMEDIATE;
+    self.nextthink = time + 0.500;
     sound(self, SPAWNFLAG_SUPERSPIKE, "enforcer/enfire.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     sound(self, SPAWNFLAG_LASER, "enforcer/enfstop.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     sound(self, AS_MELEE, "enforcer/sight1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);

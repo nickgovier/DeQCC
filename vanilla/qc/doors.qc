@@ -1694,7 +1694,7 @@ void () secret_blocked =
         return;
     }
     
-    self.attack_finished = time + IMMEDIATE;
+    self.attack_finished = time + 0.500;
     T_Damage(other, self, self, self.dmg);
 };
 

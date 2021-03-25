@@ -432,7 +432,7 @@ void () f_run1 =
     *** UNPROCESSED OPCODE OP_STATE 5102 10762 0
     ai_run(12.000);
     
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         sound(self, CHAN_VOICE, "fish/idle.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }

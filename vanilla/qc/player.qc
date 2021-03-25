@@ -882,7 +882,7 @@ void () PainSound =
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == AS_MELEE))
     {
         DeathBubbles(WEAPON_SHOTGUN);
-        if(random() > IMMEDIATE)
+        if(random() > 0.500)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -903,7 +903,7 @@ void () PainSound =
             DeathBubbles(WEAPON_SHOTGUN);
         }
         
-        if(random() > IMMEDIATE)
+        if(random() > 0.500)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -918,7 +918,7 @@ void () PainSound =
     
     if(self.watertype == CONTENT_LAVA)
     {
-        if(random() > IMMEDIATE)
+        if(random() > 0.500)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -937,7 +937,7 @@ void () PainSound =
         return;
     }
     
-    self.pain_finished = time + IMMEDIATE;
+    self.pain_finished = time + 0.500;
     
     if(self.axhitme == WEAPON_SHOTGUN)
     {
@@ -1219,7 +1219,7 @@ void () DeathBubblesSpawn =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = '0.000 0.000 15.000';
-    bubble.nextthink = time + IMMEDIATE;
+    bubble.nextthink = time + 0.500;
     bubble.think = bubble_bob;
     bubble.classname = "bubble";
     bubble.frame = MSG_BROADCAST;
@@ -1636,7 +1636,7 @@ void () GibPlayer =
         return;
     }
     
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         sound(self, CHAN_VOICE, "player/gib.wav", WEAPON_SHOTGUN, ATTN_NONE);
     }

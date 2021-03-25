@@ -63,9 +63,9 @@ void (float offset) hknight_shot =
     offang = vectoangles(self.enemy.origin - self.origin);
     offang_y = offang_y + (offset * TE_LIGHTNING2);
     makevectors(offang);
-    org = ((self.origin + self.mins) + (self.size * IMMEDIATE)) + (v_forward * 20.000);
+    org = ((self.origin + self.mins) + (self.size * 0.500)) + (v_forward * 20.000);
     vec = normalize(v_forward);
-    vec_z = (MSG_BROADCAST - vec_z) + ((random() - IMMEDIATE) * 0.100);
+    vec_z = (MSG_BROADCAST - vec_z) + ((random() - 0.500) * 0.100);
     launch_spike(org, vec);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
@@ -171,7 +171,7 @@ void () CheckContinueCharge =
         return;
     }
     
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -932,7 +932,7 @@ void () hknight_die =
     if(self.health < -40.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_hellkn.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -940,7 +940,7 @@ void () hknight_die =
     }
     
     sound(self, CHAN_VOICE, "hknight/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         hknight_die1();
     }
@@ -2416,7 +2416,7 @@ void () monster_hell_knight =
     
     precache_model2("progs/hknight.mdl");
     precache_model2("progs/k_spike.mdl");
-    precache_model2(IMMEDIATE);
+    precache_model2("progs/h_hellkn.mdl");
     precache_sound2("hknight/attack1.wav");
     precache_sound2("hknight/death1.wav");
     precache_sound2("hknight/pain1.wav");

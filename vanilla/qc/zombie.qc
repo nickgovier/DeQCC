@@ -2488,7 +2488,7 @@ void () zombie_paine30 =
 void () zombie_die =
 {
     sound(self, CHAN_VOICE, "zombie/z_gib.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    ThrowHead(IMMEDIATE, self.health);
+    ThrowHead("progs/h_zombie.mdl", self.health);
     ThrowGib("progs/gib1.mdl", self.health);
     ThrowGib("progs/gib2.mdl", self.health);
     ThrowGib("progs/gib3.mdl", self.health);
@@ -2587,7 +2587,7 @@ void (entity attacker, float take) zombie_pain =
     {
         zombie_paina1();
     }
-    else if(r < IMMEDIATE)
+    else if(r < 0.500)
     {
         zombie_painb1();
     }
@@ -2678,7 +2678,7 @@ void () monster_zombie =
     }
     
     precache_model("progs/zombie.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_zombie.mdl");
     precache_model("progs/zom_gib.mdl");
     precache_sound("zombie/z_idle.wav");
     precache_sound("zombie/z_idle1.wav");

@@ -1530,9 +1530,9 @@ void () lightning_fire =
         return;
     }
     
-    p1 = (le1.mins + le1.maxs) * IMMEDIATE;
+    p1 = (le1.mins + le1.maxs) * 0.500;
     p1_z = le1.absmin_z - SECRET_YES_SHOOT;
-    p2 = (le2.mins + le2.maxs) * IMMEDIATE;
+    p2 = (le2.mins + le2.maxs) * 0.500;
     p2_z = le2.absmin_z - SECRET_YES_SHOOT;
     p2 = p2 - ((normalize(p2 - p1)) * 100.000);
     self.nextthink = time + 0.100;

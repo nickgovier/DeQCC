@@ -643,7 +643,7 @@ void () execute_changelevel =
         other.v_angle = pos.mangle;
         other.angles = pos.mangle;
         other.fixangle = TRUE;
-        other.nextthink = time + IMMEDIATE;
+        other.nextthink = time + 0.500;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
         other.movetype = MOVETYPE_NONE;
@@ -1615,7 +1615,7 @@ void () PlayerJump =
         if(self.swim_flag < time)
         {
             self.swim_flag = time + WEAPON_SHOTGUN;
-            if(random() < IMMEDIATE)
+            if(random() < 0.500)
             {
                 sound(self, CHAN_BODY, "misc/water1.wav", WEAPON_SHOTGUN, ATTN_NORM);
             }
@@ -2037,7 +2037,7 @@ void () CheckWaterJump =
         if(trace_fraction == WEAPON_SHOTGUN)
         {
             self.flags = self.flags | FL_WATERJUMP;
-            self.velocity_z = IMMEDIATE;
+            self.velocity_z = 225.000;
             self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
             self.teleport_time = time + WEAPON_ROCKET;
             return;
@@ -2414,7 +2414,7 @@ void () CheckPowerups =
         
         if(self.invisible_sound < time)
         {
-            sound(self, CHAN_AUTO, "items/inv3.wav", IMMEDIATE, ATTN_IDLE);
+            sound(self, CHAN_AUTO, "items/inv3.wav", 0.500, ATTN_IDLE);
             self.invisible_sound = time + ((random() * AS_MELEE) + WEAPON_SHOTGUN);
         }
         
@@ -3169,7 +3169,7 @@ void (entity targ, entity attacker) ClientObituary =
                     {
                         deathstring = " mows down a teammate\n";
                     }
-                    else if(rnum < IMMEDIATE)
+                    else if(rnum < 0.500)
                     {
                         deathstring = " checks his glasses\n";
                     }
@@ -3423,7 +3423,7 @@ void (entity targ, entity attacker) ClientObituary =
             rnum = targ.watertype;
             if(rnum == CONTENT_WATER)
             {
-                if(random() < IMMEDIATE)
+                if(random() < 0.500)
                 {
                     bprint(" sleeps with the fishes\n");
                 }
@@ -3436,7 +3436,7 @@ void (entity targ, entity attacker) ClientObituary =
             }
             else if(rnum == CONTENT_SLIME)
             {
-                if(random() < IMMEDIATE)
+                if(random() < 0.500)
                 {
                     bprint(" gulped a load of slime\n");
                 }
@@ -3457,7 +3457,7 @@ void (entity targ, entity attacker) ClientObituary =
                     return;
                 }
                 
-                if(random() < IMMEDIATE)
+                if(random() < 0.500)
                 {
                     bprint(" turned into hot slag\n");
                 }

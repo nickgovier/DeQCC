@@ -90,6 +90,8 @@ namespace DeQcc
         public Types? TypePointedTo;    // if this global is a pointer, this has the type of the thing it is pointing to
         public Types ExpectedType;     // temporary setting of what type this global is expected to be - used to determine whether to return vector vec or float vec_x
 
+        public bool accessed;   // False if this global hasn't been accessed in the decompilation process yet
+
         #endregion Public Variables
 
         #region Properties
@@ -644,7 +646,10 @@ namespace DeQcc
             progsSrcOutputFile.WriteLine("./progs.dat");
             progsSrcOutputFile.WriteLine();
 
+            // Prepare Globals for decompilation
             highestGlobalAccessed = RESERVED_OFS - 1;
+            foreach(Global g in globalList) { g.accessed = false; }
+
             StreamWriter f;
             for (int i = 1; i < functions.Count; i++)
             {
@@ -693,7 +698,7 @@ namespace DeQcc
             }
 
             // if this is a newly accessed global
-            if (offset > highestGlobalAccessed)
+            if (!g.accessed)
             {
                 if (calledFromFunction)
                 {
@@ -706,14 +711,19 @@ namespace DeQcc
 
                 if (g.Type == Types.ev_vector || (g.Type == Types.ev_pointer && g.TypePointedTo == Types.ev_vector))
                 {
+                    string name = "";
+                    if (g.Name != null) { name = g.Name.Replace("_x", ""); } // strip off _x if it exists
+
                     // set the next two globals to floats for _y and _z
                     Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
                     y.Type = Types.ev_float;
-                    y.Name = g.Name + "_y";
+                    y.Name = name + "_y";
                     Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
                     z.Type = Types.ev_float;
-                    z.Name = g.Name + "_z";
+                    z.Name = name + "_z";
                 }
+
+                g.accessed = true;
             }
 
             // Track if this is the highest global accessed so far

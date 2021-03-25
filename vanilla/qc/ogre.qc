@@ -1735,7 +1735,7 @@ void (entity attacker, float damage) ogre_pain =
         ogre_pain1();
         self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
     }
-    else if(r < IMMEDIATE)
+    else if(r < 0.500)
     {
         ogre_painb1();
         self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
@@ -2052,7 +2052,7 @@ void () ogre_die =
     if(self.health < -80.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_ogre.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -2060,7 +2060,7 @@ void () ogre_die =
     }
     
     sound(self, CHAN_VOICE, "ogre/ogdth.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         ogre_die1();
     }
@@ -2082,7 +2082,7 @@ void () ogre_die =
 // OP_DONE	0	0	0
 void () ogre_melee =
 {
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         ogre_smash1();
     }
@@ -2158,7 +2158,7 @@ void () monster_ogre =
     }
     
     precache_model("progs/ogre.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_ogre.mdl");
     precache_model("progs/grenade.mdl");
     precache_sound("ogre/ogdrag.wav");
     precache_sound("ogre/ogdth.wav");

@@ -1157,7 +1157,7 @@ void (entity attacker, float damage) enf_pain =
         return;
     }
     
-    if(r < IMMEDIATE)
+    if(r < 0.500)
     {
         sound(self, CHAN_VOICE, "enforcer/pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -1495,7 +1495,7 @@ void () enf_die =
     if(self.health < -35.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_mega.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -1503,7 +1503,7 @@ void () enf_die =
     }
     
     sound(self, CHAN_VOICE, "enforcer/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         enf_die1();
     }
@@ -1583,7 +1583,7 @@ void () monster_enforcer =
     }
     
     precache_model2("progs/enforcer.mdl");
-    precache_model2(IMMEDIATE);
+    precache_model2("progs/h_mega.mdl");
     precache_model2("progs/laser.mdl");
     precache_sound2("enforcer/death1.wav");
     precache_sound2("enforcer/enfire.wav");

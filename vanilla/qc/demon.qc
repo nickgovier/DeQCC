@@ -905,7 +905,7 @@ void () demon_die =
     if(self.health < -80.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_demon.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
@@ -985,7 +985,7 @@ void () monster_demon1 =
     }
     
     precache_model("progs/demon.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_demon.mdl");
     precache_sound("demon/ddeath.wav");
     precache_sound("demon/dhit2.wav");
     precache_sound("demon/djump.wav");

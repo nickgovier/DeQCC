@@ -53,7 +53,7 @@ void () W_Precache =
 // OP_DONE	0	0	0
 float () crandom =
 {
-    return WEAPON_ROCKET * (random() - IMMEDIATE);
+    return WEAPON_ROCKET * (random() - 0.500);
 };
 
 // W_FireAxe
@@ -173,7 +173,7 @@ vector () wall_velocity =
 {
     local vector vel;
     vel = normalize(self.velocity);
-    vel = normalize((vel + (v_up * (random() - IMMEDIATE))) + (v_right * (random() - IMMEDIATE)));
+    vel = normalize((vel + (v_up * (random() - 0.500))) + (v_right * (random() - 0.500)));
     vel = vel + (WEAPON_ROCKET * trace_plane_normal);
     vel = vel * 200.000;
     return vel;
@@ -251,7 +251,7 @@ void (vector org, vector vel) SpawnMeatSpray =
 // OP_DONE	0	0	0
 void (vector org, vector vel, float damage) SpawnBlood =
 {
-    particle(org, vel * 0.100, IMMEDIATE, damage * WEAPON_ROCKET);
+    particle(org, vel * 0.100, 73.000, damage * WEAPON_ROCKET);
 };
 
 // spawn_touchblood
@@ -749,7 +749,7 @@ void () T_MissileTouch =
         
         if(other.classname == "monster_shambler")
         {
-            damg = damg * IMMEDIATE;
+            damg = damg * 0.500;
         }
         
         T_Damage(other, self, self.owner, damg);
@@ -964,7 +964,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -984,7 +984,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -993,7 +993,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, IMMEDIATE, IMMEDIATE, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -2205,7 +2205,7 @@ void () W_Attack =
         {
             player_axe1();
         }
-        else if(r < IMMEDIATE)
+        else if(r < 0.500)
         {
             player_axeb1();
         }
@@ -2218,7 +2218,7 @@ void () W_Attack =
             player_axed1();
         }
         
-        self.attack_finished = time + IMMEDIATE;
+        self.attack_finished = time + 0.500;
     }
     else    
     {
@@ -2226,7 +2226,7 @@ void () W_Attack =
         {
             player_shot1();
             W_FireShotgun();
-            self.attack_finished = time + IMMEDIATE;
+            self.attack_finished = time + 0.500;
         }
         else        
         {

@@ -1324,7 +1324,7 @@ void () army_die =
     if(self.health < -35.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_guard.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -1332,7 +1332,7 @@ void () army_die =
     }
     
     sound(self, CHAN_VOICE, "soldier/death1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         army_die1();
     }
@@ -1410,7 +1410,7 @@ void () monster_army =
     }
     
     precache_model("progs/soldier.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_guard.mdl");
     precache_model("progs/gib1.mdl");
     precache_model("progs/gib2.mdl");
     precache_model("progs/gib3.mdl");

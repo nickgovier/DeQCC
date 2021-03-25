@@ -264,7 +264,7 @@ void () walkmonster_start_go =
         self.th_stand();
     }
     
-    self.nextthink = self.nextthink + (random() * IMMEDIATE);
+    self.nextthink = self.nextthink + (random() * 0.500);
 };
 
 // walkmonster_start
@@ -282,7 +282,7 @@ void () walkmonster_start_go =
 // OP_DONE	0	0	0
 void () walkmonster_start =
 {
-    self.nextthink = self.nextthink + (random() * IMMEDIATE);
+    self.nextthink = self.nextthink + (random() * 0.500);
     self.think = walkmonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
@@ -434,7 +434,7 @@ void () flymonster_start_go =
 // OP_DONE	0	0	0
 void () flymonster_start =
 {
-    self.nextthink = self.nextthink + (random() * IMMEDIATE);
+    self.nextthink = self.nextthink + (random() * 0.500);
     self.think = flymonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };
@@ -555,7 +555,7 @@ void () swimmonster_start_go =
         self.th_stand();
     }
     
-    self.nextthink = self.nextthink + (random() * IMMEDIATE);
+    self.nextthink = self.nextthink + (random() * 0.500);
 };
 
 // swimmonster_start
@@ -573,7 +573,7 @@ void () swimmonster_start_go =
 // OP_DONE	0	0	0
 void () swimmonster_start =
 {
-    self.nextthink = self.nextthink + (random() * IMMEDIATE);
+    self.nextthink = self.nextthink + (random() * 0.500);
     self.think = swimmonster_start_go;
     total_monsters = total_monsters + WEAPON_SHOTGUN;
 };

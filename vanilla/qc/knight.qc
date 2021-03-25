@@ -416,7 +416,7 @@ void () knight_run8 =
 void () knight_runatk1 =
 {
     *** UNPROCESSED OPCODE OP_STATE 4861 8575 0
-    if(random() > IMMEDIATE)
+    if(random() > 0.500)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     }
@@ -1224,7 +1224,7 @@ void () knight_die =
     if(self.health < -40.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_knight.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -1232,7 +1232,7 @@ void () knight_die =
     }
     
     sound(self, CHAN_VOICE, "knight/kdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    if(random() < IMMEDIATE)
+    if(random() < 0.500)
     {
         knight_die1();
     }
@@ -1302,7 +1302,7 @@ void () monster_knight =
     }
     
     precache_model("progs/knight.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_knight.mdl");
     precache_sound("knight/kdeath.wav");
     precache_sound("knight/khurt.wav");
     precache_sound("knight/ksight.wav");

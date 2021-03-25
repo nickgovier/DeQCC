@@ -68,7 +68,7 @@ void (entity missile, float mspeed, float accuracy) LaunchMissile =
     move_z = MSG_BROADCAST;
     vec = vec + (move * fly);
     vec = normalize(vec);
-    vec = (vec + ((accuracy * v_up) * (random() - IMMEDIATE))) + ((accuracy * v_right) * (random() - IMMEDIATE));
+    vec = (vec + ((accuracy * v_up) * (random() - 0.500))) + ((accuracy * v_right) * (random() - 0.500));
     missile.velocity = vec * mspeed;
     missile.angles = VEC_ORIGIN;
     missile.angles_y = vectoyaw(missile.velocity);
@@ -1270,7 +1270,7 @@ void () wiz_die =
     if(self.health < -40.000)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-        ThrowHead(IMMEDIATE, self.health);
+        ThrowHead("progs/h_wizard.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
@@ -1379,7 +1379,7 @@ void () monster_wizard =
     }
     
     precache_model("progs/wizard.mdl");
-    precache_model(IMMEDIATE);
+    precache_model("progs/h_wizard.mdl");
     precache_model("progs/w_spike.mdl");
     precache_sound("wizard/hit.wav");
     precache_sound("wizard/wattack.wav");
