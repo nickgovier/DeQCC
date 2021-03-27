@@ -5,131 +5,6 @@ using System.Text;
 
 namespace DeQcc
 {
-    enum Opcodes
-    {
-        OP_DONE,
-        OP_MUL_F,
-        OP_MUL_V,
-        OP_MUL_FV,
-        OP_MUL_VF,
-        OP_DIV_F,
-        OP_ADD_F,
-        OP_ADD_V,
-        OP_SUB_F,
-        OP_SUB_V,
-
-        OP_EQ_F,
-        OP_EQ_V,
-        OP_EQ_S,
-        OP_EQ_E,
-        OP_EQ_FNC,
-
-        OP_NE_F,
-        OP_NE_V,
-        OP_NE_S,
-        OP_NE_E,
-        OP_NE_FNC,
-
-        OP_LE,
-        OP_GE,
-        OP_LT,
-        OP_GT,
-
-        OP_LOAD_F,
-        OP_LOAD_V,
-        OP_LOAD_S,
-        OP_LOAD_ENT,
-        OP_LOAD_FLD,
-        OP_LOAD_FNC,
-
-        OP_ADDRESS,
-
-        OP_STORE_F,
-        OP_STORE_V,
-        OP_STORE_S,
-        OP_STORE_ENT,
-        OP_STORE_FLD,
-        OP_STORE_FNC,
-
-        OP_STOREP_F,
-        OP_STOREP_V,
-        OP_STOREP_S,
-        OP_STOREP_ENT,
-        OP_STOREP_FLD,
-        OP_STOREP_FNC,
-
-        OP_RETURN,
-        OP_NOT_F,
-        OP_NOT_V,
-        OP_NOT_S,
-        OP_NOT_ENT,
-        OP_NOT_FNC,
-        OP_IF,
-        OP_IFNOT,
-        OP_CALL0,
-        OP_CALL1,
-        OP_CALL2,
-        OP_CALL3,
-        OP_CALL4,
-        OP_CALL5,
-        OP_CALL6,
-        OP_CALL7,
-        OP_CALL8,
-        OP_STATE,
-        OP_GOTO,
-        OP_AND,
-        OP_OR,
-
-        OP_BITAND,
-        OP_BITOR
-    }
-
-    class Def
-    {
-        public ushort type;	// if DEF_SAVEGLOBGAL bit is set
-        // the variable needs to be saved in savegames
-
-        public Types Type
-        {
-            get
-            {
-                return (Types)type;
-            }
-        }
-
-        public ushort ofs;
-        public int s_name;
-
-        public string name;
-
-        public override string ToString()
-        {
-            return "Ofs: " + ofs + " name: " + name + " (" + s_name + ")";
-        }
-    }
-
-    class Opcode
-    {
-        public string name;
-        public string opname;
-        public int priority;
-        public bool right_associative;
-        public Types type_a;
-        public Types type_b;
-        public Types type_c;
-
-        public Opcode(string _name, string _opname, int _priority, bool _right_associative, Types _type_a, Types _type_b, Types _type_c)
-        {
-            name = _name;
-            opname = _opname;
-            priority = _priority;
-            right_associative = _right_associative;
-            type_a = _type_a;
-            type_b = _type_b;
-            type_c = _type_c;
-        }
-    }
-
     partial class DeQCC
     {
         const int OFS_NULL = 0;
@@ -145,9 +20,7 @@ namespace DeQcc
         const int RESERVED_OFS = 28;
 
         List<Opcode> pr_opcodes = new List<Opcode>();
-
         List<float> pr_globals = new List<float>();
-
 
         List<Statement> statements = new List<Statement>();
         List<Function> functions = new List<Function>();
@@ -176,12 +49,6 @@ namespace DeQcc
             Def par;
             string arg2;
             ushort dom, tom;
-
-            int start, end;
-            Function dfpred;
-            Def ef;
-
-            string line;
 
             int kIndex;
             Statement k;
