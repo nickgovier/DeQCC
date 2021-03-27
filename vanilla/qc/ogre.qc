@@ -278,8 +278,6 @@ void (float side) chainsaw =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * SECRET_1ST_DOWN;
     T_Damage(self.enemy, self, self, ldmg);
     

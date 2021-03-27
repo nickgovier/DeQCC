@@ -669,8 +669,7 @@ void () Tar_JumpTouch =
         
         if(vlen(self.velocity) > 400.000)
         {
-            random();
-            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * vlen(self.velocity));
+            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * random());
             T_Damage(other, self, self, ldmg);
             sound(self, CHAN_WEAPON, "blob/hit1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
         }
@@ -917,8 +916,7 @@ void () tbaby_die2 =
     *** UNPROCESSED OPCODE OP_STATE 912 10297 0
     T_RadiusDamage(self, self, 120.000, world);
     sound(self, CHAN_VOICE, "blob/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    normalize(self.velocity);
-    self.origin = self.origin - (SECRET_NO_SHOOT * random());
+    self.origin = self.origin - (SECRET_NO_SHOOT * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TAREXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin);

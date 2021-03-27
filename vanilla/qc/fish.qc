@@ -588,7 +588,6 @@ void () fish_melee =
     }
     
     sound(self, CHAN_VOICE, "fish/bite.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    random();
     ldmg = (random() + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };

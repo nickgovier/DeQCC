@@ -1158,11 +1158,8 @@ void () wiz_pain4 =
 void () wiz_death1 =
 {
     *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
-    random();
     self.velocity = -200.000 + (400.000 * random());
-    random();
     self.velocity_y = -200.000 + (400.000 * random());
-    random();
     self.velocity_z = 100.000 + (100.000 * random());
     self.flags = self.flags - (self.flags & FL_ONGROUND);
     sound(self, CHAN_VOICE, "wizard/wdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);

@@ -75,8 +75,7 @@ void () Laser_Touch =
     }
     
     sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", SPAWN_CRUCIFIED, ATTN_STATIC);
-    normalize(self.velocity);
-    org = self.origin - (SECRET_NO_SHOOT * pointcontents(self.origin));
+    org = self.origin - (SECRET_NO_SHOOT * normalize(self.velocity));
     if(other.health)
     {
         SpawnBlood(org, self.velocity * 0.200, 15.000);

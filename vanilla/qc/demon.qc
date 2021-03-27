@@ -1231,8 +1231,7 @@ void (float side) Demon_Melee =
     }
     
     sound(self, CHAN_WEAPON, "demon/dhit2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    random();
-    ldmg = TE_LAVASPLASH + (TE_LIGHTNING1 * CanDamage(self.enemy, self));
+    ldmg = TE_LAVASPLASH + (TE_LIGHTNING1 * random());
     T_Damage(self.enemy, self, self, ldmg);
     makevectors(self.angles);
     SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), side * v_right);
@@ -1298,8 +1297,7 @@ void () Demon_JumpTouch =
         
         if(vlen(self.velocity) > 400.000)
         {
-            random();
-            ldmg = 40.000 + (TE_LAVASPLASH * vlen(self.velocity));
+            ldmg = 40.000 + (TE_LAVASPLASH * random());
             T_Damage(other, self, self, ldmg);
         }
         

@@ -833,8 +833,7 @@ void () make_bubbles =
     bubble.frame = MSG_BROADCAST;
     bubble.cnt = MSG_BROADCAST;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
-    random();
-    self.nextthink = (time + spawn()) + 0.500;
+    self.nextthink = (time + random()) + 0.500;
     self.think = make_bubbles;
 };
 
@@ -1463,7 +1462,6 @@ void () misc_noisemaker =
     precache_sound2("enforcer/pain2.wav");
     precache_sound2("enforcer/death1.wav");
     precache_sound2("enforcer/idle1.wav");
-    random();
     self.nextthink = (time + 0.100) + random();
     self.think = noise_think;
 };

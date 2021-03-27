@@ -575,8 +575,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
             if(head.takedamage)
             {
                 org = head.origin + ((head.mins + head.maxs) * 0.500);
-                vlen(inflictor.origin - org);
-                points = 0.500 * (findradius(inflictor.origin, damage + 40.000));
+                points = 0.500 * (vlen(inflictor.origin - org));
                 
                 if(points < MSG_BROADCAST)
                 {
@@ -683,8 +682,7 @@ void (entity attacker, float damage) T_BeamDamage =
         
         if(head.takedamage)
         {
-            vlen(attacker.origin - head.origin);
-            points = 0.500 * (findradius(attacker.origin, damage + 40.000));
+            points = 0.500 * (vlen(attacker.origin - head.origin));
             
             if(points < MSG_BROADCAST)
             {

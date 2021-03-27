@@ -1411,12 +1411,9 @@ void () PlayerDead =
 vector (float dm) VelocityForDamage =
 {
     local vector v;
-    crandom();
-    v_x = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
-    crandom();
-    v_y = 100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN));
-    random();
-    v_z = 200.000 + (100.000 * (rint((random() * WEAPON_SPIKES) + WEAPON_SHOTGUN)));
+    v_x = 100.000 * crandom();
+    v_y = 100.000 * crandom();
+    v_z = 200.000 + (100.000 * random());
     if(dm > -50.000)
     {
         v = v * 0.700;
@@ -1791,8 +1788,7 @@ void () PlayerDie =
     
     if(!i)
     {
-        floor(random() * TE_LIGHTNING2);
-        i = WEAPON_SHOTGUN + random();
+        i = WEAPON_SHOTGUN + (floor(random() * TE_LIGHTNING2));
     }
     
     if(i == WEAPON_SHOTGUN)

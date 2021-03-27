@@ -5,11 +5,6 @@ using System.Text;
 
 namespace DeQcc
 {
-    enum Types
-    {
-        ev_void, ev_string, ev_float, ev_vector, ev_entity, ev_field, ev_function, ev_pointer
-    }
-
     enum Opcodes
     {
         OP_DONE,
@@ -89,26 +84,18 @@ namespace DeQcc
         OP_BITOR
     }
 
-    partial class Statement
-    {
-        public ushort op;
-        public short a, b, c;
-
-        public Opcodes Opcode
-        {
-            get { return (Opcodes)(op % 100); }
-        }
-
-        public override string ToString()   // used to write out the bytecode at the head of every function
-        {
-            return Opcode.ToString() + "\t" + a.ToString() + "\t" + b.ToString() + "\t" + c.ToString();
-        }
-    }
-
     class Def
     {
         public ushort type;	// if DEF_SAVEGLOBGAL bit is set
         // the variable needs to be saved in savegames
+
+        public Types Type
+        {
+            get
+            {
+                return (Types)type;
+            }
+        }
 
         public ushort ofs;
         public int s_name;
@@ -119,25 +106,6 @@ namespace DeQcc
         {
             return "Ofs: " + ofs + " name: " + name + " (" + s_name + ")";
         }
-    }
-
-    partial class Function
-    {
-        public int first_statement;    // negative numbers are builtins
-
-        public int parm_start;
-        public int locals;         // total ints of parms + locals
-
-        public int profile;        // runtime
-
-        public int s_name;
-        public int s_file;         // source file defined in
-
-        public int numparms;
-        public byte[] parm_size = new byte[8];
-
-        public string name;
-        public string file;
     }
 
     class Opcode
@@ -180,8 +148,6 @@ namespace DeQcc
 
         List<float> pr_globals = new List<float>();
 
-        List<string> strings = new List<string>();
-        public Dictionary<int, int> stringOffsetMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
 
         List<Statement> statements = new List<Statement>();
         List<Function> functions = new List<Function>();
@@ -192,439 +158,14 @@ namespace DeQcc
 
         StreamWriter qcOutputFile;
         StreamWriter progsSrcOutputFile;
-        StreamWriter metaOutputFile;
-        List<string> DecompileFilesSeen = new List<string>();
         Dictionary<int,string> DecompileProfiles = new Dictionary<int, string>();
 
-        List<string> type_names = new List<string>();
-        List<string> builtins = new List<string>();
+        Dictionary<int, string> builtins = new Dictionary<int, string>();
         Dictionary<int, string> immediates = new Dictionary<int, string>();   // used in DecompileImmediate()
 
         // Maps for obfuscated progs.dat files
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
         Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
-
-        void InitStaticData(string outputfolder)
-        {
-            if(outputfolder == "obots")
-            {
-                InitObotMaps();
-            }
-
-            type_names.Clear();
-            type_names.Add("void");
-            type_names.Add("string");
-            type_names.Add("float");
-            type_names.Add("vector");
-            type_names.Add("entity");
-            type_names.Add("ev_field");
-            type_names.Add("void()");
-            type_names.Add("ev_pointer");
-
-            builtins.Clear();
-            builtins.Add("");
-            builtins.Add("void (vector ang)");
-            builtins.Add("void (entity e, vector o)");
-            builtins.Add("void (entity e, string m)");
-            builtins.Add("void (entity e, vector min, vector max)");
-            builtins.Add("");
-            builtins.Add("void ()");
-            builtins.Add("float ()");
-            builtins.Add("void (entity e, float chan, string samp, float vol, float atten)");
-            builtins.Add("vector (vector v)");
-            builtins.Add("void (string e)");
-            builtins.Add("void (string e)");
-            builtins.Add("float (vector v)");
-            builtins.Add("float (vector v)");
-            builtins.Add("entity ()");
-            builtins.Add("void (entity e)");
-            builtins.Add("void (vector v1, vector v2, float nomonsters, entity forent)");
-            builtins.Add("entity ()");
-            builtins.Add("entity (entity start, .string fld, string match)");
-            builtins.Add("string (string s)");
-            builtins.Add("string (string s)");
-            builtins.Add("void (entity client, string s)");
-            builtins.Add("entity (vector org, float rad)");
-            builtins.Add("void (string s)");
-            builtins.Add("void (entity client, string s)");
-            builtins.Add("void (string s)");
-            builtins.Add("string (float f)");
-            builtins.Add("string (vector v)");
-            builtins.Add("void ()");
-            builtins.Add("void ()");
-            builtins.Add("void ()");
-            builtins.Add("void (entity e)");
-            builtins.Add("float (float yaw, float dist)");
-            builtins.Add("");
-            builtins.Add("float (float yaw, float dist)");
-            builtins.Add("void (float style, string value)");
-            builtins.Add("float (float v)");
-            builtins.Add("float (float v)");
-            builtins.Add("float (float v)");
-            builtins.Add("");
-            builtins.Add("float (entity e)");
-            builtins.Add("float (vector v)");
-            builtins.Add("");
-            builtins.Add("float (float f)");
-            builtins.Add("vector (entity e, float speed)");
-            builtins.Add("float (string s)");
-            builtins.Add("void (string s)");
-            builtins.Add("entity (entity e)");
-            builtins.Add("void (vector o, vector d, float color, float count)");
-            builtins.Add("void ()");
-            builtins.Add("");
-            builtins.Add("vector (vector v)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, float f)");
-            builtins.Add("void (float to, string s)");
-            builtins.Add("void (float to, entity s)");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("");
-            builtins.Add("void (float step)");
-            builtins.Add("string (string s)");
-            builtins.Add("void (entity e)");
-            builtins.Add("void (string s)");
-            builtins.Add("");
-            builtins.Add("void (string var, string val)");
-            builtins.Add("void (entity client, string s)");
-            builtins.Add("void (vector pos, string samp, float vol, float atten)");
-            builtins.Add("string (string s)");
-            builtins.Add("string (string s)");
-            builtins.Add("string (string s)");
-            builtins.Add("void (entity e)");
-
-            pr_opcodes.Add(new Opcode("<DONE>", "DONE", -1, false, Types.ev_entity, Types.ev_field, Types.ev_void));
-            pr_opcodes.Add(new Opcode("*", "MUL_F", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("*", "MUL_V", 2, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
-            pr_opcodes.Add(new Opcode("*", "MUL_FV", 2, false, Types.ev_float, Types.ev_vector, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("*", "MUL_VF", 2, false, Types.ev_vector, Types.ev_float, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("/", "DIV", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("+", "ADD_F", 3, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("+", "ADD_V", 3, false, Types.ev_vector, Types.ev_vector, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("-", "SUB_F", 3, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("-", "SUB_V", 3, false, Types.ev_vector, Types.ev_vector, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("==", "EQ_F", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("==", "EQ_V", 4, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
-            pr_opcodes.Add(new Opcode("==", "EQ_S", 4, false, Types.ev_string, Types.ev_string, Types.ev_float));
-            pr_opcodes.Add(new Opcode("==", "EQ_E", 4, false, Types.ev_entity, Types.ev_entity, Types.ev_float));
-            pr_opcodes.Add(new Opcode("==", "EQ_FNC", 4, false, Types.ev_function, Types.ev_function, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!=", "NE_F", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!=", "NE_V", 4, false, Types.ev_vector, Types.ev_vector, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!=", "NE_S", 4, false, Types.ev_string, Types.ev_string, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!=", "NE_E", 4, false, Types.ev_entity, Types.ev_entity, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!=", "NE_FNC", 4, false, Types.ev_function, Types.ev_function, Types.ev_float));
-            pr_opcodes.Add(new Opcode("<=", "LE", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode(">=", "GE", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("<", "LT", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode(">", "GT", 4, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_float));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_vector));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_string));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_entity));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_field));
-            pr_opcodes.Add(new Opcode(".", "INDIRECT", 1, false, Types.ev_entity, Types.ev_field, Types.ev_function));
-            pr_opcodes.Add(new Opcode(".", "ADDRESS", 1, false, Types.ev_entity, Types.ev_field, Types.ev_pointer));
-            pr_opcodes.Add(new Opcode("=", "STORE_F", 5, true, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("=", "STORE_V", 5, true, Types.ev_vector, Types.ev_vector, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("=", "STORE_S", 5, true, Types.ev_string, Types.ev_string, Types.ev_string));
-            pr_opcodes.Add(new Opcode("=", "STORE_ENT", 5, true, Types.ev_entity, Types.ev_entity, Types.ev_entity));
-            pr_opcodes.Add(new Opcode("=", "STORE_FLD", 5, true, Types.ev_field, Types.ev_field, Types.ev_field));
-            pr_opcodes.Add(new Opcode("=", "STORE_FNC", 5, true, Types.ev_function, Types.ev_function, Types.ev_function));
-            pr_opcodes.Add(new Opcode("=", "STOREP_F", 5, true, Types.ev_pointer, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("=", "STOREP_V", 5, true, Types.ev_pointer, Types.ev_vector, Types.ev_vector));
-            pr_opcodes.Add(new Opcode("=", "STOREP_S", 5, true, Types.ev_pointer, Types.ev_string, Types.ev_string));
-            pr_opcodes.Add(new Opcode("=", "STOREP_ENT", 5, true, Types.ev_pointer, Types.ev_entity, Types.ev_entity));
-            pr_opcodes.Add(new Opcode("=", "STOREP_FLD", 5, true, Types.ev_pointer, Types.ev_field, Types.ev_field));
-            pr_opcodes.Add(new Opcode("=", "STOREP_FNC", 5, true, Types.ev_pointer, Types.ev_function, Types.ev_function));
-            pr_opcodes.Add(new Opcode("<RETURN>", "RETURN", -1, false, Types.ev_void, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("!", "NOT_F", -1, false, Types.ev_float, Types.ev_void, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!", "NOT_V", -1, false, Types.ev_vector, Types.ev_void, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!", "NOT_S", -1, false, Types.ev_vector, Types.ev_void, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!", "NOT_ENT", -1, false, Types.ev_entity, Types.ev_void, Types.ev_float));
-            pr_opcodes.Add(new Opcode("!", "NOT_FNC", -1, false, Types.ev_function, Types.ev_void, Types.ev_float));
-            pr_opcodes.Add(new Opcode("<IF>", "IF", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<IFNOT>", "IFNOT", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL0>", "CALL0", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL1>", "CALL1", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL2>", "CALL2", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL3>", "CALL3", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL4>", "CALL4", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL5>", "CALL5", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL6>", "CALL6", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL7>", "CALL7", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<CALL8>", "CALL8", -1, false, Types.ev_function, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<STATE>", "STATE", -1, false, Types.ev_float, Types.ev_float, Types.ev_void));
-            pr_opcodes.Add(new Opcode("<GOTO>", "GOTO", -1, false, Types.ev_float, Types.ev_void, Types.ev_void));
-            pr_opcodes.Add(new Opcode("&&", "AND", 6, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("||", "OR", 6, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("&", "BITAND", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
-            pr_opcodes.Add(new Opcode("|", "BITOR", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
-        }
-
-        public void DecompileProgsDat(string name, string outputfolder)
-        {
-            InitStaticData(name);
-            ReadData(name);
-            Decompile(outputfolder);
-        }
-
-        void ReadData(string outputfolder)
-        {
-            BinaryReader h = new BinaryReader(File.Open(outputfolder + "inputprogs.dat", FileMode.Open), Encoding.ASCII);
-            int version = h.ReadInt32();
-            int crc = h.ReadInt32();
-            int ofs_statements = h.ReadInt32();
-            int numstatements = h.ReadInt32();
-            int ofs_globaldefs = h.ReadInt32();
-            int numglobaldefs = h.ReadInt32();
-            int ofs_fielddefs = h.ReadInt32();
-            int numfielddefs = h.ReadInt32();
-            int ofs_functions = h.ReadInt32();
-            int numfunctions = h.ReadInt32();
-            int ofs_strings = h.ReadInt32();
-            int numstrings = h.ReadInt32();
-            int ofs_globals = h.ReadInt32();
-            int numglobals = h.ReadInt32();
-            int entityfields = h.ReadInt32();
-
-            // strings are now referenced by strings[stringIndexMap[offset]]
-            h.BaseStream.Seek(ofs_strings, SeekOrigin.Begin);
-            StringBuilder sb = new StringBuilder();
-            stringOffsetMap.Add(0, 0); // offset 0 is string 0
-            for (int i = 0; i < numstrings; i++)  // actually numchars not numstrings
-            {
-                char nextChar = h.ReadChar();
-                if (nextChar == '\0')
-                {
-                    strings.Add(sb.ToString());
-                    if (i < numstrings - 1)   // still have more chars to process
-                    {
-                        sb = new StringBuilder();
-                        stringOffsetMap.Add(i + 1, strings.Count);    // next string offset (i+1) will be string Count in List
-                    }
-                }
-                else
-                {
-                    sb.Append(nextChar);
-                }
-            }
-
-            h.BaseStream.Seek(ofs_statements, SeekOrigin.Begin);
-            for (int i = 0; i < numstatements; i++)
-            {
-                Statement s = new Statement();
-                s.op = h.ReadUInt16();
-                s.a = h.ReadInt16();
-                s.b = h.ReadInt16();
-                s.c = h.ReadInt16();
-                statements.Add(s);
-            }
-
-            h.BaseStream.Seek(ofs_functions, SeekOrigin.Begin);
-            for (int i = 0; i < numfunctions; i++)
-            {
-                Function f = new Function();
-                f.first_statement = h.ReadInt32();
-                f.parm_start = h.ReadInt32();
-                f.locals = h.ReadInt32();
-                f.profile = h.ReadInt32();
-                f.s_name = h.ReadInt32();
-                f.s_file = h.ReadInt32();
-                f.numparms = h.ReadInt32();
-                for (int j = 0; j < 8; j++)
-                    f.parm_size[j] = h.ReadByte();
-
-                // set strings
-                if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "func" + i.ToString("D6"); }
-                if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
-
-                if (f.s_file > 0) { f.file = strings[stringOffsetMap[f.s_file]]; }
-                else if (fileMap.ContainsKey(f.name)) { f.file = fileMap[f.name]; }
-                else { f.file = "unknown.qc"; }
-
-                functions.Add(f);
-            }
-
-            h.BaseStream.Seek(ofs_fielddefs, SeekOrigin.Begin);
-            for (int i = 0; i < numfielddefs; i++)
-            {
-                Def f = new Def();
-                f.type = h.ReadUInt16();
-                f.ofs = h.ReadUInt16();
-                f.s_name = h.ReadInt32();
-
-                // set strings
-                if (f.s_name > 0) { f.name = strings[stringOffsetMap[f.s_name]]; }
-                else { f.name = "field" + i.ToString("D6"); }
-                if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
-
-                fields.Add(f);
-                if (i > 0)  // don't add the null field
-                {
-                    if (!fieldsOffsetMap.ContainsKey(f.ofs))   // for vectors, var and var_x are separate globals with same offset
-                    {
-                        fieldsOffsetMap.Add(f.ofs, i);
-                    }
-                }
-            }
-
-            h.BaseStream.Seek(ofs_globals, SeekOrigin.Begin);
-            for (int i = 0; i < numglobals; i++)
-            {
-                pr_globals.Add(h.ReadSingle());     // Read these as floats for now, will need to bitconvert some to ints later
-            }
-
-            h.BaseStream.Seek(ofs_globaldefs, SeekOrigin.Begin);
-            for (int i = 0; i < numglobaldefs; i++)
-            {
-                Def g = new Def();
-                g.type = h.ReadUInt16();
-                g.ofs = h.ReadUInt16();
-                g.s_name = h.ReadInt32();
-
-                // set strings
-                if (g.s_name > 0)
-                {
-                    g.name = strings[stringOffsetMap[g.s_name]];
-                }
-                else
-                {
-                    // if function, link through to the underlying function name
-                    if (g.type == ((ushort)(Types.ev_function)))
-                    {
-                        int funcIndex = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[g.ofs]));
-                        g.name = functions[funcIndex].name;
-                    }
-                    else if (g.type == ((ushort)(Types.ev_field)))
-                    {
-                        int fieldOffset = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[g.ofs]));
-                        g.name = fields[fieldsOffsetMap[fieldOffset]].name;
-                    }
-                    else
-                    {
-                        g.name = "globaldef" + i.ToString("D6");
-                    }
-                }
-
-                if (nameMap.ContainsKey(g.name))
-                {
-                    g.name = nameMap[g.name];
-                }
-
-                globals.Add(g);
-                if (i > 0)  // don't add the null globaldef
-                {
-                    if (!globalsOffsetMap.ContainsKey(g.ofs))   // for vectors, var and var_x are separate globals with same offset
-                    {
-                        globalsOffsetMap.Add(g.ofs, i);
-                    }
-                }
-            }
-        }
-
-        void WriteProgsData(string folder)
-        {
-            int i;
-            StreamWriter outfile;
-
-            // Try catch blocks here allow the code to skip writing a file if it is open (e.g. in Excel)
-            try
-            {
-                outfile = new StreamWriter(folder + "_strings.csv", false);
-                outfile.WriteLine("row,offset,id,string");
-                i = 0;
-                foreach (KeyValuePair<int, int> kvp in stringOffsetMap)
-                {
-                    outfile.WriteLine((i++) + "," + kvp.Key + "," + kvp.Value + "," + CleanseString(strings[kvp.Value]));
-                }
-                outfile.Close();
-            }
-            catch { }
-
-            try
-            {
-                outfile = new StreamWriter(folder + "_statements.csv", false);
-                outfile.WriteLine("row,opcode,op,a,b,c");
-                i = 0;
-                foreach (Statement s in statements)
-                {
-                    outfile.WriteLine((i++) + "," + s.Opcode + "," + s.op + "," + s.a + "," + s.b + "," + s.c);
-                }
-                outfile.Close();
-            }
-            catch { }
-
-            try
-            {
-                outfile = new StreamWriter(folder + "_functions.csv", false);
-                outfile.WriteLine("row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,parm_size");
-                i = 0;
-                foreach (Function f in functions)
-                {
-                    string parm_sizes = "";
-                    for (int j = 0; j < 8; j++)
-                    {
-                        parm_sizes += f.parm_size[j];
-                    }
-                    outfile.WriteLine((i++) + "," + f.file + "," + f.s_file + "," + f.name + "," + f.s_name + "," + f.profile + "," + f.first_statement + "," + f.locals + "," + f.numparms + "," + f.parm_start + "," + parm_sizes);
-                }
-                outfile.Close();
-            }
-            catch { }
-
-            try
-            {
-                outfile = new StreamWriter(folder + "_globaldefs.csv", false);
-                outfile.WriteLine("row,name,s_name,ofs,type,typename");
-                i = 0;
-                foreach (Def g in globals)
-                {
-                    string typename = "";
-                    if (g.type < 8) { typename = type_names[g.type]; }
-                    outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
-                }
-                outfile.Close();
-            }
-            catch { }
-
-            try
-            {
-                outfile = new StreamWriter(folder + "_fields.csv", false);
-                outfile.WriteLine("row,name,s_name,ofs,type,typename");
-                i = 0;
-                foreach (Def g in fields)
-                {
-                    string typename = "";
-                    if (g.type < 8) { typename = type_names[g.type]; }
-                    outfile.WriteLine((i++) + "," + g.name + "," + g.s_name + "," + g.ofs + "," + g.type + "," + typename);
-                }
-                outfile.Close();
-            }
-            catch { }
-
-            try
-            {
-                outfile = new StreamWriter(folder + "_globals.csv", false);
-                outfile.WriteLine("row,floatVal,intVal");
-                i = 0;
-                foreach (float f in pr_globals)
-                {
-                    outfile.WriteLine((i++) + "," + f + "," + BitConverter.ToInt32(BitConverter.GetBytes(f)) + "," + BitConverter.ToString(BitConverter.GetBytes(f)));
-                }
-                outfile.Close();
-            }
-            catch { }
-        }
 
         // works with obots
         void CalcProfiles()
@@ -673,7 +214,7 @@ namespace DeQcc
 
                         if (par != null && par.type >= 0 && par.type < 8)   // NG TODO some par.types are 5 figures?!
                         {
-                            fname = type_names[par.type] + " ";
+                            fname = DeQCC.GetTypeString(par.Type) + " ";
                         }
                         else
                         {
@@ -735,7 +276,7 @@ namespace DeQcc
             }
             else
             {
-                line = type_names[def.type] + " " + def.name;
+                line = DeQCC.GetTypeString(def.Type) + " " + def.name;
             }
 
             return line;
@@ -749,7 +290,7 @@ namespace DeQcc
             {
                 case Types.ev_string:
                     int intVal = BitConverter.ToInt32(BitConverter.GetBytes(pr_globals[pr_globals_offset]));
-                    line = CleanseString(strings[stringOffsetMap[intVal]]);
+                    line = CleanseString(Strings.GetString(intVal));
                     break;
                 case Types.ev_void:
                     line = "void";
@@ -768,35 +309,6 @@ namespace DeQcc
             return line;
         }
 
-        string CleanseString(string stringToDecompile)
-        {
-            // doesn't escape newlines - see ending message in oldone.qc
-            //stringToDecompile.Replace('"', '\"');
-            //return "\"" + stringToDecompile + "\"";
-
-            StringBuilder buf = new StringBuilder();
-            buf.Append('"');
-            foreach(char chr in stringToDecompile)
-            {
-                if (chr == '\n')
-                {
-                    buf.Append('\\');
-                    buf.Append('n');
-                }
-                else if (chr == '"')
-                {
-                    buf.Append('\\');
-                    buf.Append('"');
-                }
-                else
-                {
-                    buf.Append(chr);
-                }
-            }
-            buf.Append('"');
-            return buf.ToString();
-        }
-
         Def? GetGlobalByOffset(int ofs)
         {
             if (globalsOffsetMap.ContainsKey(ofs))
@@ -806,16 +318,7 @@ namespace DeQcc
             return null;
         }
 
-        bool AlreadySeen(string fname)
-        {
-            if(DecompileFilesSeen.Contains(fname))
-            {
-                return true;
-            }
-            DecompileFilesSeen.Add(fname);
-            return false;
-        }
-
+        /*
         void Decompile(string folder)
         {
             int i;
@@ -860,6 +363,7 @@ namespace DeQcc
 
             progsSrcOutputFile.Close();
         }
+        */
 
         void DecompileFunctionDef(int funcIndex)
         {
@@ -950,7 +454,7 @@ namespace DeQcc
                                     i += 3;
                                 }
 
-                                qcOutputFile.WriteLine("." + type_names[ef.type] + " " + ef.name + ";");
+                                qcOutputFile.WriteLine("." + DeQCC.GetTypeString(ef.Type) + " " + ef.name + ";");
                             }
                             else
                             {
@@ -961,7 +465,7 @@ namespace DeQcc
 
                                 if (par.type == (ushort)Types.ev_entity || par.type == (ushort)Types.ev_void)
                                 {
-                                    qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + ";");
+                                    qcOutputFile.WriteLine(DeQCC.GetTypeString(par.Type) + " " + par.name + ";");
                                 }
                                 else
                                 {
@@ -971,11 +475,11 @@ namespace DeQcc
                                         Char.IsUpper((par.name)[0]) &&
                                         (Char.IsUpper((par.name)[1]) || (par.name)[1] == '_'))  // TODO
                                     {
-                                        qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + " = " + line + ";");
+                                        qcOutputFile.WriteLine(DeQCC.GetTypeString(par.Type) + " " + par.name + " = " + line + ";");
                                     }
                                     else
                                     {
-                                        qcOutputFile.WriteLine(type_names[par.type] + " " + par.name + " /* = " + line + " */;");
+                                        qcOutputFile.WriteLine(DeQCC.GetTypeString(par.Type) + " " + par.name + " /* = " + line + " */;");
                                     }
                                 }
                             }
@@ -1134,7 +638,6 @@ namespace DeQcc
                             else
                             {
                                 qcOutputFile.WriteLine("   local " + PrintParameter(par) + ";");
-                                metaOutputFile.WriteLine(PrintParameter(par));
                             }
 
                             if (par.type == (ushort)Types.ev_vector)

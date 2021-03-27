@@ -637,8 +637,6 @@ void () sham_smash10 =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * 40.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
@@ -738,8 +736,6 @@ void (float side) ShamClaw =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * 20.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);

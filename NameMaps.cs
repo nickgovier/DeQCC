@@ -8,6 +8,8 @@ namespace DeQcc
     {
         void InitObotMaps()
         {
+            return; // disabled for now
+
             #region Function names
             nameMap.Add("func000149", "SUB_Null");
             nameMap.Add("func000150", "SUB_Remove");

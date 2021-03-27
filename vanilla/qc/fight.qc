@@ -228,7 +228,6 @@ float () CheckAttack =
     if(random() < chance)
     {
         self.th_missile();
-        random();
         SUB_AttackFinished(AS_SLIDING * random());
         return TRUE;
     }
@@ -356,8 +355,6 @@ void () ai_melee =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };
@@ -425,8 +422,6 @@ void () ai_melee_side =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * AS_MELEE;
     T_Damage(self.enemy, self, self, ldmg);
 };
@@ -548,7 +543,6 @@ float () SoldierCheckAttack =
     if(random() < chance)
     {
         self.th_missile();
-        random();
         SUB_AttackFinished(AS_STRAIGHT + random());
         
         if(random() < 0.300)
@@ -679,8 +673,7 @@ float () ShamCheckAttack =
     }
     
     self.attack_state = AS_MISSILE;
-    random();
-    SUB_AttackFinished(AS_SLIDING + (AS_SLIDING * (vlen(spot1 - spot2))));
+    SUB_AttackFinished(AS_SLIDING + (AS_SLIDING * random()));
     return TRUE;
 };
 
@@ -820,8 +813,7 @@ float () OgreCheckAttack =
     }
     
     self.attack_state = AS_MISSILE;
-    random();
-    SUB_AttackFinished(AS_STRAIGHT + (AS_SLIDING * CanDamage(self.enemy, self)));
+    SUB_AttackFinished(AS_STRAIGHT + (AS_SLIDING * random()));
     return TRUE;
 };
 

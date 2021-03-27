@@ -64,8 +64,6 @@ void () dog_bite =
         return;
     }
     
-    random();
-    random();
     ldmg = ((random() + random()) + random()) * SECRET_NO_SHOOT;
     T_Damage(self.enemy, self, self, ldmg);
 };
@@ -130,8 +128,7 @@ void () Dog_JumpTouch =
         
         if(vlen(self.velocity) > 300.000)
         {
-            random();
-            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * vlen(self.velocity));
+            ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * random());
             T_Damage(other, self, self, ldmg);
         }
         

@@ -1471,8 +1471,7 @@ void () PlayerDeathThink =
         }
         else        
         {
-            normalize(self.velocity);
-            self.velocity = forward * vlen(self.velocity);
+            self.velocity = forward * normalize(self.velocity);
         }
         
     }

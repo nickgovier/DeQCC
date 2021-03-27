@@ -1,350 +1,15 @@
-﻿using System;
+﻿// TODO
+// GetGlobal overload with one param which just does the negative check but no other processing
+// IFNOT
+// get rid of all ushort casts for types
+// Print/PrintLine indentation - check negative indent, also whether print it best place to indent if used sequentially on the same line
+
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace DeQcc
 {
-    enum GotoType { None, EndWhile, EndIf }
-
-    partial class Statement
-    {
-        public GotoType gotoType;   // Just used for GOTOs to properly process the end of IFNOT blocks
-    }
-
-    partial class Function
-    {
-        public string declaration;   // The return type, arguments, and function name
-        public List<string> localDefs = new List<string>(); // store the locals code to be written out at the top of the function definition
-
-        public bool IsBuiltin   // is this function a builtin?
-        {
-            get
-            {
-                return first_statement < 0;
-            }
-        }
-    }
-
-    enum GlobalKind
-    {
-        Unknown,
-        Reserved,
-        Function,
-        Field,
-        Immediate,
-        Local,
-        Parameter,
-        Anonymous,
-        Globaldef   // e.g. actual global defined in defs.qc
-    }
-    
-    class Global
-    {
-        #region Statics
-
-        public static List<Global> globalList;
-        public static List<Function> functions;
-        public static List<Def> fields;
-        public static Dictionary<int, int> fieldsOffsetMap;  // to look up field by offset
-        public static List<string> strings;
-        public static Dictionary<int, int> stringOffsetMap;
-
-        private static int DEF_SAVEGLOBAL = (1 << 15);
-
-        #endregion Statics
-
-        #region Constructor
-
-        public Global(int id, float f)
-        {
-            _id = id;
-            _name = null;
-            _globaldef_type = null;
-
-            Kind = GlobalKind.Unknown;
-            FloatVal = f;
-            ValueSource = null;
-        }
-
-        #endregion Constructor
-
-        #region Private variables
-
-        private int _id;
-        private string _name;
-        private ushort? _globaldef_type;    // original - may have DEF_SAVEGLOBAL bit set
-
-        #endregion Private variables
-
-        #region Public Variables
-
-        public GlobalKind Kind;
-        public float FloatVal;
-        public string? ValueSource; // the source of the value being stored in this global
-
-        public List<int> writtenBy = new List<int>();   // statements on which this global is wrtten to
-        public List<int> readBy = new List<int>();      // statements on which this global is read by
-
-        public Types? TypePointedTo;    // if this global is a pointer, this has the type of the thing it is pointing to
-        public Types ExpectedType;     // temporary setting of what type this global is expected to be - used to determine whether to return vector vec or float vec_x
-
-        public bool accessed;   // False if this global hasn't been accessed in the decompilation process yet
-
-        #endregion Public Variables
-
-        #region Properties
-
-        public bool IsWritten   // is this global ever written to?
-        {
-            get
-            {
-                return writtenBy.Count > 0;
-            }
-        }
-
-        public ushort? IntVal
-        {
-            get
-            {
-                // TODO better way to do this?
-                int intVal = BitConverter.ToInt32(BitConverter.GetBytes(FloatVal));
-                if (intVal < (1 << 16))    // ints seem to be the first 16 bits, 0-65536 - and only used as offsets(?)
-                {
-                    return (ushort)intVal;
-                }
-                return null;
-            }
-        }
-
-        public string TypeCodeOutput
-        {
-            get
-            {
-                if (Type is null)
-                {
-                    return "/* ERROR: NULL TYPE */";
-                }
-                if (Type == Types.ev_field)
-                {
-                    return "." + TypeCode(FieldType);       // e.g. in defs.qc, starting with "." denotes field
-                }
-                return TypeCode(Type);
-            }
-        }
-
-        public string? Name
-        {
-            get
-            {
-                if (Kind == GlobalKind.Function)
-                {
-                    return FunctionName;
-                }
-                if (Kind == GlobalKind.Field)
-                {
-                    return fields[fieldsOffsetMap[(int)IntVal]].name;
-                }
-                if(ExpectedType == Types.ev_float && Type == Types.ev_vector)
-                {
-                    // we are trying to access a vector expecting a float type
-                    // so we are trying to specifically get the _x term
-                    return _name + "_x";
-                }
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-
-        public string ImmediateValue
-        {
-            get
-            {
-                switch (Type)
-                {
-                    case Types.ev_string:
-                        return CleanseImmediateString();
-                    case Types.ev_void:
-                        return "void";
-                    case Types.ev_float:
-                        return FloatVal.ToString("F3");
-                    case Types.ev_vector:
-                        return "'" + FloatVal.ToString("F3") + " " + (globalList[_id + 1].FloatVal).ToString("F3") + " " + (globalList[_id + 2].FloatVal).ToString("F3") + "'";
-                    default:
-                        return "/* ERROR ImmediateValue for " + Type + " */";
-                }
-            }
-        }
-
-        public string ValueToAssign // If this globaldef is being assigned to something else
-        {
-            get
-            {
-                if (Kind == GlobalKind.Immediate)
-                {
-                    return ImmediateValue;
-                }
-                else if (Kind == GlobalKind.Anonymous || Kind == GlobalKind.Reserved)
-                {
-                    return ValueSource;
-                }
-                else
-                {
-                    return Name;
-                }
-            }
-        }
-
-        public Types? FieldType
-        {
-            get
-            {
-                return (Types)(fields[fieldsOffsetMap[(int)IntVal]].type);
-            }
-        }
-
-        public string? FunctionName // If this global is an offset to a function
-        {
-            get
-            {
-                if (IntVal > 0)
-                {
-                    if (Type == Types.ev_function)
-                    {
-                        return functions[(int)IntVal].name;
-                    }
-                    return null;
-                }
-                else
-                {
-                    return ValueSource;
-                }
-            }
-        }
-
-        public string? FunctionDeclaration  // If this global is an offset to a function
-        {
-            get
-            {
-                if (Type == Types.ev_function)
-                {
-                    return functions[(int)IntVal].declaration;
-                }
-                return null;
-            }
-        }
-
-        public bool FunctionIsBuiltin
-        {
-            get
-            {
-                if(Kind == GlobalKind.Function && functions[(int)IntVal].IsBuiltin)
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        public Types? Type
-        {
-            get
-            {
-                if (_globaldef_type == null)
-                {
-                    return null;
-                }
-                if ((_globaldef_type & DEF_SAVEGLOBAL) != 0)
-                {
-                    return (Types)(_globaldef_type - DEF_SAVEGLOBAL);
-                }
-                return (Types)(_globaldef_type);
-            }
-            set
-            {
-                _globaldef_type = (ushort)value;
-            }
-        }
-
-        #endregion Properties
-
-        #region Private functions
-
-        private string TypeCode(Types? input)
-        {
-            if(input is null)
-            {
-                return null;
-            }
-
-            switch (input)
-            {
-                case Types.ev_void:
-                    return "void";
-                case Types.ev_string:
-                    return "string";
-                case Types.ev_float:
-                    return "float";
-                case Types.ev_vector:
-                    return "vector";
-                case Types.ev_entity:
-                    return "entity";
-                case Types.ev_function:
-                    return "void()";
-                case Types.ev_field:
-                    return "/* TYPE: EV_FIELD */";
-                case Types.ev_pointer:
-                    return "/* TYPE: EV_POINTER */";
-            }
-            return "/* ERROR: UNKNOWN TYPE */";
-        }
-
-        // if this is an immediate string, get the string pointed to and escape special chars before returning
-        private string CleanseImmediateString()
-        {
-            string stringToCleanse = strings[stringOffsetMap[(int)IntVal]];
-            for (int i = 0; i < stringToCleanse.Length; i++)
-            {
-                // Can't use string.Replace as need to replace char with string
-                if (stringToCleanse[i] == '\n')
-                {
-                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\n" + stringToCleanse.Substring(i + 1);
-                }
-                if (stringToCleanse[i] == '\"')
-                {
-                    stringToCleanse = stringToCleanse.Substring(0, i) + "\\" + '"' + stringToCleanse.Substring(i + 1);
-                }
-            }
-            return '"' + stringToCleanse + '"';
-        }
-
-        #endregion Private functions
-
-        public bool IsConstant()   // constants defined outside of functions (e.g. in defs.qc have their value printed after
-        {
-            if(Name is null)
-            {
-                return false;
-            }
-            // TODO assumes constants are all caps (true for defs.qc, is this true in all cases?)
-            for (int i = 0; i < Name.Length; i++)
-            {
-                if (Char.IsLetter(Name[i]) && !Char.IsUpper(Name[i]))
-                    return false;
-            }
-            return true;
-        }
-
-        public override string ToString()
-        {
-            return Kind + " " + TypeCodeOutput + " " + Name;
-        }
-    }
-
     partial class DeQCC
     {
         int highestGlobalAccessed;  // highest global processed so far in decompilation (used to detect globals between functions)
@@ -355,37 +20,7 @@ namespace DeQcc
         List<int> startOfDoLoop = new List<int>();  // begin an upcoming do while loop
         List<int> endofBlock = new List<int>(); // reduce indentation
 
-        // Check for presence of operators in the string, and if so, bracket it
-        // used when combining two potential calculations, e.g. a + b
-        // to check whether a or b need brackets
-        // Note this doesn't actually check for precedence, it just brackets
-        // operations in the order they were performed in bytecode (thus
-        // preserving the original precedence from the source file)
-        string CheckPrecedence(string input)
-        {
-            if (input is null) return null;
-
-            if(input.Contains(" + ") ||
-                input.Contains(" - ") ||
-                input.Contains(" * ") ||
-                input.Contains(" / ") ||
-                input.Contains(" == ") ||
-                input.Contains(" != ") ||
-                input.Contains(" <= ") ||
-                input.Contains(" >= ") ||
-                input.Contains(" < ") ||
-                input.Contains(" > ") ||
-                input.Contains(" && ") ||
-                input.Contains(" || ") ||
-                input.Contains(" & ") ||
-                input.Contains(" | "))
-            {
-                return "(" + input + ")";
-            }
-            return input;
-        }
-
-        public void NewDecompilation(string outputfolder)
+        public void Decompile(string outputfolder)
         {
             // Output folder structure:
             // /outputfolder/
@@ -396,8 +31,8 @@ namespace DeQcc
 
             outputfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
             InitStaticData(outputfolder);
-            ReadData(outputfolder);
-            WriteProgsData(outputfolder);
+            ReadProgsData(outputfolder);
+            WriteProgsDataToCSV(outputfolder);
             Preprocess();
             DecompileFunctions(outputfolder);
         }
@@ -409,8 +44,6 @@ namespace DeQcc
             Global.functions = functions;
             Global.fields = fields;
             Global.fieldsOffsetMap = fieldsOffsetMap;
-            Global.strings = strings;
-            Global.stringOffsetMap = stringOffsetMap;
 
             #region Set the value of each global
 
@@ -474,7 +107,7 @@ namespace DeQcc
 
                 Def gd = globals[i];
                 globalList[gd.ofs].Type = (Types)gd.type;
-                globalList[gd.ofs].Name = strings[stringOffsetMap[gd.s_name]];
+                globalList[gd.ofs].Name = Strings.GetString(gd.s_name);
 
                 if (globalList[gd.ofs].Type == Types.ev_function)
                 {
@@ -540,7 +173,7 @@ namespace DeQcc
 
                 Types returnType = Types.ev_void;
 
-                // Loop through the statements of this function
+                // Loop through the statements of this function to find the return value
                 int statementIndex = f.first_statement;
                 while(statements[statementIndex].Opcode != Opcodes.OP_DONE)
                 {
@@ -557,52 +190,95 @@ namespace DeQcc
 
                     // We wiil set the readBy/writtenBy properties for each global based on the type of statement
                     // so each global will have a list of statements where it is accessed (read or write)
-
                     Global a = GetGlobal(s.a, true);
                     Global b = GetGlobal(s.b, true);
                     Global c = GetGlobal(s.c, true);
 
                     switch (s.Opcode)
                     {
-                        case Opcodes.OP_IF: case Opcodes.OP_IFNOT: case Opcodes.OP_CALL0:
-                        case Opcodes.OP_CALL1: case Opcodes.OP_CALL2: case Opcodes.OP_CALL3: case Opcodes.OP_CALL4:
-                        case Opcodes.OP_CALL5: case Opcodes.OP_CALL6: case Opcodes.OP_CALL7: case Opcodes.OP_CALL8:
+                        case Opcodes.OP_IF:
+                        case Opcodes.OP_IFNOT:
+                        case Opcodes.OP_CALL0:
+                        case Opcodes.OP_CALL1:
+                        case Opcodes.OP_CALL2:
+                        case Opcodes.OP_CALL3:
+                        case Opcodes.OP_CALL4:
+                        case Opcodes.OP_CALL5:
+                        case Opcodes.OP_CALL6:
+                        case Opcodes.OP_CALL7:
+                        case Opcodes.OP_CALL8:
                             a.readBy.Add(statementIndex);
                             break;
                         case Opcodes.OP_RETURN:
-                            if (a != null)
-                            {
-                                a.readBy.Add(statementIndex);
-                            }
+                            if (a != null) { a.readBy.Add(statementIndex); }    // might be null if function doesn't return anything
                             break;
                         case Opcodes.OP_STATE:
                             a.readBy.Add(statementIndex); b.readBy.Add(statementIndex);
                             break;
-                        case Opcodes.OP_ADD_F: case Opcodes.OP_ADD_V: case Opcodes.OP_SUB_F: case Opcodes.OP_SUB_V:
-                        case Opcodes.OP_MUL_F: case Opcodes.OP_MUL_V: case Opcodes.OP_MUL_FV: case Opcodes.OP_MUL_VF: case Opcodes.OP_DIV_F:
-                        case Opcodes.OP_BITAND: case Opcodes.OP_BITOR: case Opcodes.OP_AND: case Opcodes.OP_OR:
-                        case Opcodes.OP_GE: case Opcodes.OP_LE: case Opcodes.OP_GT: case Opcodes.OP_LT:
-                        case Opcodes.OP_EQ_F: case Opcodes.OP_EQ_V: case Opcodes.OP_EQ_S: case Opcodes.OP_EQ_E: case Opcodes.OP_EQ_FNC:
-                        case Opcodes.OP_NE_F: case Opcodes.OP_NE_V: case Opcodes.OP_NE_S: case Opcodes.OP_NE_E: case Opcodes.OP_NE_FNC:
-                        case Opcodes.OP_ADDRESS: case Opcodes.OP_LOAD_F: case Opcodes.OP_LOAD_V: case Opcodes.OP_LOAD_S:
-                        case Opcodes.OP_LOAD_ENT: case Opcodes.OP_LOAD_FLD: case Opcodes.OP_LOAD_FNC:
+                        case Opcodes.OP_ADD_F:
+                        case Opcodes.OP_ADD_V:
+                        case Opcodes.OP_SUB_F:
+                        case Opcodes.OP_SUB_V:
+                        case Opcodes.OP_MUL_F:
+                        case Opcodes.OP_MUL_V:
+                        case Opcodes.OP_MUL_FV:
+                        case Opcodes.OP_MUL_VF:
+                        case Opcodes.OP_DIV_F:
+                        case Opcodes.OP_BITAND:
+                        case Opcodes.OP_BITOR:
+                        case Opcodes.OP_AND:
+                        case Opcodes.OP_OR:
+                        case Opcodes.OP_GE:
+                        case Opcodes.OP_LE:
+                        case Opcodes.OP_GT:
+                        case Opcodes.OP_LT:
+                        case Opcodes.OP_EQ_F:
+                        case Opcodes.OP_EQ_V:
+                        case Opcodes.OP_EQ_S:
+                        case Opcodes.OP_EQ_E:
+                        case Opcodes.OP_EQ_FNC:
+                        case Opcodes.OP_NE_F:
+                        case Opcodes.OP_NE_V:
+                        case Opcodes.OP_NE_S:
+                        case Opcodes.OP_NE_E:
+                        case Opcodes.OP_NE_FNC:
+                        case Opcodes.OP_ADDRESS:
+                        case Opcodes.OP_LOAD_F:
+                        case Opcodes.OP_LOAD_V:
+                        case Opcodes.OP_LOAD_S:
+                        case Opcodes.OP_LOAD_ENT:
+                        case Opcodes.OP_LOAD_FLD:
+                        case Opcodes.OP_LOAD_FNC:
                             a.readBy.Add(statementIndex); b.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
                             if (c.Type == null) { c.Type = pr_opcodes[s.op].type_c; }
                             break;
-                        case Opcodes.OP_NOT_F: case Opcodes.OP_NOT_V: case Opcodes.OP_NOT_S: case Opcodes.OP_NOT_FNC: case Opcodes.OP_NOT_ENT:
+                        case Opcodes.OP_NOT_F:
+                        case Opcodes.OP_NOT_V:
+                        case Opcodes.OP_NOT_S:
+                        case Opcodes.OP_NOT_FNC:
+                        case Opcodes.OP_NOT_ENT:
                             a.readBy.Add(statementIndex); c.writtenBy.Add(statementIndex);
                             if (c.Type == null) { c.Type = pr_opcodes[s.op].type_c; }
                             break;
-                        case Opcodes.OP_STORE_F: case Opcodes.OP_STORE_ENT: case Opcodes.OP_STORE_FLD: case Opcodes.OP_STORE_S: case Opcodes.OP_STORE_FNC: case Opcodes.OP_STORE_V:
-                        case Opcodes.OP_STOREP_F: case Opcodes.OP_STOREP_ENT: case Opcodes.OP_STOREP_FLD: case Opcodes.OP_STOREP_S: case Opcodes.OP_STOREP_FNC: case Opcodes.OP_STOREP_V:
+                        case Opcodes.OP_STORE_F:
+                        case Opcodes.OP_STORE_ENT:
+                        case Opcodes.OP_STORE_FLD:
+                        case Opcodes.OP_STORE_S:
+                        case Opcodes.OP_STORE_FNC:
+                        case Opcodes.OP_STORE_V:
+                        case Opcodes.OP_STOREP_F:
+                        case Opcodes.OP_STOREP_ENT:
+                        case Opcodes.OP_STOREP_FLD:
+                        case Opcodes.OP_STOREP_S:
+                        case Opcodes.OP_STOREP_FNC:
+                        case Opcodes.OP_STOREP_V:
                             a.readBy.Add(statementIndex); b.writtenBy.Add(statementIndex);
                             if (b.Type == null) { b.Type = pr_opcodes[s.op].type_b; }
-                            if(b.Type == Types.ev_pointer) { b.TypePointedTo = a.Type; }
+                            if (b.Type == Types.ev_pointer) { b.TypePointedTo = a.Type; }
                             break;
-                        case Opcodes.OP_DONE: case Opcodes.OP_GOTO:
+                        case Opcodes.OP_DONE:
+                        case Opcodes.OP_GOTO:
                             break;
-                        default:
-                            throw new Exception("Unknown Opcode in Preprocess()");
                     }
 
                     // Check for return and set the type if found
@@ -617,12 +293,82 @@ namespace DeQcc
                             returnType = Types.ev_void;
                         }
                     }
-
                     statementIndex++;
                 }
 
                 // Set the return type
-                f.declaration = f.declaration.Replace("%%RETURNTYPE%%", type_names[(int)returnType]);
+                f.declaration = f.declaration.Replace("%%RETURNTYPE%%", DeQCC.GetTypeString(returnType));
+            }
+
+            // Check for fields which are functions
+            // e.g. th_pain takes two arguments, from the original QC source we can see these are entity attacker, float damage
+            // but there's no direct way to determine this from the field declaration itself (we only know th_pain is of type function)
+            // this means if we decompile, then recompile, the compilation will fail when QuakeC tries to call th_pain with 2 arguments
+            // when the field declaration has none.  This would be an easy manual fix, or even just hardcode the th_pain declaration
+            // in the decompilation code to fix this specific problem, but what if a mod adds another function field which takes arguments?
+            // This code detects whenever a field function is called from elseqehere in QuakeC, and if so, gets the types of the arguments
+            // supplied so the function declaration can be correctly decompiled.
+            // Algorithm
+            // 1. find whenever a field function is assigned to a global
+            // 2. see if that global is ever used in a CALL op (i.e. the field function is being called)
+            // 3. detect the arguments of that call
+            // 4. construct the field function declaration from the types of those arguments
+            foreach (Global g in globalList)
+            {
+                if (g.Type == Types.ev_field && g.FieldType == Types.ev_function)   // this is a field function (e.g. th_pain)
+                {
+                    foreach (int readStatement in g.readBy) // for every statement reading this field function
+                    {
+                        // Should only be read in s.b of a LOAD or ADDRESS op, which saves the reference to s.c
+                        Global c = globalList[statements[readStatement].c];
+
+                        foreach(int callStatement in c.readBy) // Each statment which reads our field function reference
+                        {
+                            if(statements[callStatement].Opcode >= Opcodes.OP_CALL0 && statements[callStatement].Opcode <= Opcodes.OP_CALL8)
+                            {
+                                string declaration = ".";   // as it's a field
+
+                                // does it return anything (i.e. does the next statement read from the return value?)
+                                if (statements[callStatement + 1].a == OFS_RETURN)
+                                {
+                                    // get the return type
+                                    declaration += DeQCC.GetTypeString(pr_opcodes[statements[callStatement + 1].op].type_a);
+                                }
+                                else
+                                {
+                                    // doesn't return anything
+                                    declaration += "void";
+                                }
+
+                                // calc the args
+                                int numargs = statements[callStatement].Opcode - Opcodes.OP_CALL0;
+                                string args = "";
+                                for (int i = 0; i < numargs; i++)
+                                {
+                                    // look backwards to find the most recent setting of this arg, and pluck the name and type from that setting
+                                    int argStatement = callStatement - 1;  // the statement before the call
+                                    while(true)
+                                    {
+                                        if(statements[argStatement].b == OFS_PARM0 + 3 * i)
+                                        {
+                                            Global arg = globalList[statements[argStatement].a];
+                                            args += DeQCC.GetTypeString(arg.Type) + " " + arg.Name;
+                                            break;
+                                        }
+                                        argStatement--;
+                                    }
+                                    if (i < numargs - 1) { args += ", "; }
+                                }
+
+                                // append the function name
+                                declaration += "(" + args +") " + g.Name;
+                                g.FieldFunctionDeclaration = declaration;
+                                break;
+                            }
+                        }
+                        if(g.FieldFunctionDeclaration != null) { break; }
+                    }
+                }
             }
         }
 
@@ -776,6 +522,12 @@ namespace DeQcc
                         Print(g.FunctionDeclaration);
                     }
                 }
+                else if (g.Kind == GlobalKind.Field && g.FieldType == Types.ev_function && g.FieldFunctionDeclaration != null)
+                {
+                    // if its a field that is a function and we managed to construct a fieldfunctiondefinition
+                    // otherwise just print the default (which will be ".void () functionname")
+                    Print(g.FieldFunctionDeclaration);
+                }
                 else
                 {
                     Print(g.TypeCodeOutput + " " + g.Name);
@@ -790,7 +542,7 @@ namespace DeQcc
             // Check for builtin functions
             if(f.IsBuiltin)
             {
-                PrintLine(builtins[-f.first_statement] + " " + f.name + " = #" + (-f.first_statement) + ";");
+                PrintLine(builtins[-f.first_statement]);
                 return;
             }
 
@@ -955,8 +707,7 @@ namespace DeQcc
                         if (i < numargs - 1) { args += ", "; }
                     }
 
-                    // call function a with pre-saved args in reserved globals
-                    if (statements[sIndex + 1].a != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
+                    if (statements[sIndex + 1].a != OFS_RETURN && statements[sIndex + 1].b != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
                     {
                         PrintLine(a.FunctionName + "(" + args + ");");
                     }

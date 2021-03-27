@@ -229,8 +229,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     missile.solid = SOLID_NOT;
     makevectors(self.angles);
     missile.velocity = vel;
-    random();
-    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * spawn());
+    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * random());
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.nextthink = time + WEAPON_SHOTGUN;
     missile.think = SUB_Remove;
@@ -408,9 +407,7 @@ void (float damage, vector dir) TraceAttack =
 {
     local vector vel;
     local vector org;
-    crandom();
-    crandom();
-    vel = normalize((dir + (v_up * wall_velocity())) + (v_right * wall_velocity()));
+    vel = normalize((dir + (v_up * crandom())) + (v_right * crandom()));
     vel = vel + (WEAPON_ROCKET * trace_plane_normal);
     vel = vel * 200.000;
     org = trace_endpos - (dir * WEAPON_SPIKES);
@@ -756,8 +753,7 @@ void () T_MissileTouch =
     }
     
     T_RadiusDamage(self, self.owner, 120.000, other);
-    normalize(self.velocity);
-    self.origin = self.origin - (WEAPON_BIG * random());
+    self.origin = self.origin - (WEAPON_BIG * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin);
