@@ -12,6 +12,23 @@ namespace DeQcc
 {
     partial class DeQCC
     {
+        List<Opcode> pr_opcodes = new List<Opcode>();
+        List<float> pr_globals = new List<float>();
+
+        List<Statement> statements = new List<Statement>();
+        List<Function> functions = new List<Function>();
+        List<Def> globals = new List<Def>();
+        Dictionary<int, int> globalsOffsetMap = new Dictionary<int, int>();  // to look up global by offset
+        List<Def> fields = new List<Def>();
+        Dictionary<int, int> fieldsOffsetMap = new Dictionary<int, int>();  // to look up field by offset
+
+        StreamWriter qcOutputFile;
+        StreamWriter progsSrcOutputFile;
+
+        // Maps for obfuscated progs.dat files
+        Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
+        Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
+
         int highestGlobalAccessed;  // highest global processed so far in decompilation (used to detect globals between functions)
         List<Global> globalList = new List<Global>();
         int indent = 0;
