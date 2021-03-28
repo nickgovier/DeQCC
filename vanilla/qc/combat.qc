@@ -194,7 +194,7 @@ void (entity targ, entity attacker) Killed =
     
     if((self.movetype == MOVETYPE_PUSH) || (self.movetype == MOVETYPE_NONE))
     {
-        func000000();
+        self.th_die();
         self = oself;
         return;
     }
@@ -211,7 +211,7 @@ void (entity targ, entity attacker) Killed =
     self.takedamage = DAMAGE_NO;
     self.touch = SUB_Null;
     monster_death_use();
-    func000000();
+    self.th_die();
     self = oself;
 };
 
@@ -487,3 +487,236 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     if(self.th_pain)
     {
+        self.th_pain(attacker, take);
+        
+        if(skill == AS_MELEE)
+        {
+            self.pain_finished = time + TE_LIGHTNING1;
+        }
+        
+    }
+    
+    self = oldself;
+};
+
+// T_RadiusDamage
+// function begins at statement 1586, parm_start=1721
+// OP_LOAD_V	1721	105	1730
+// OP_ADD_F	1723	1733	1734
+// OP_STORE_V	1730	4	0
+// OP_STORE_V	1734	7	0
+// OP_CALL2	467	0	0
+// OP_STORE_ENT	1	1726	0
+// OP_IFNOT	1726	51	0
+// OP_NE_E	1726	1724	1735
+// OP_IFNOT	1735	46	0
+// OP_LOAD_F	1726	163	1736
+// OP_IFNOT	1736	44	0
+// OP_LOAD_V	1726	105	1737
+// OP_LOAD_V	1726	134	1740
+// OP_LOAD_V	1726	138	1743
+// OP_ADD_V	1740	1743	1746
+// OP_MUL_VF	1746	1491	1749
+// OP_ADD_V	1737	1749	1752
+// OP_STORE_V	1752	1727	0
+// OP_LOAD_V	1721	105	1755
+// OP_SUB_V	1755	1727	1758
+// OP_STORE_V	1758	4	0
+// OP_CALL1	457	0	0
+// OP_MUL_F	1491	1	1761
+// OP_STORE_F	1761	1725	0
+// OP_LT	1725	337	1762
+// OP_IFNOT	1762	2	0
+// OP_STORE_F	337	1725	0
+// OP_SUB_F	1723	1725	1763
+// OP_STORE_F	1763	1725	0
+// OP_EQ_E	1726	1722	1764
+// OP_IFNOT	1764	3	0
+// OP_MUL_F	1725	1491	1765
+// OP_STORE_F	1765	1725	0
+// OP_GT	1725	337	1766
+// OP_IFNOT	1766	20	0
+// OP_STORE_V	1726	4	0
+// OP_STORE_V	1721	7	0
+// OP_CALL2	522	0	0
+// OP_IFNOT	1	16	0
+// OP_LOAD_S	1726	129	1767
+// OP_EQ_S	1767	1243	1768
+// OP_IFNOT	1768	8	0
+// OP_MUL_F	1725	1491	1769
+// OP_STORE_V	1726	4	0
+// OP_STORE_V	1721	7	0
+// OP_STORE_V	1722	10	0
+// OP_STORE_V	1769	13	0
+// OP_CALL4	520	0	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	1726	4	0
+// OP_STORE_V	1721	7	0
+// OP_STORE_V	1722	10	0
+// OP_STORE_V	1725	13	0
+// OP_CALL4	520	0	0
+// OP_LOAD_ENT	1726	164	1770
+// OP_STORE_ENT	1770	1726	0
+// OP_GOTO	-50	0	0
+// OP_DONE	0	0	0
+void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
+{
+    local float points;
+    local entity head;
+    local vector org;
+    head = findradius(inflictor.origin, damage + 40.000);
+    
+    while(head)
+    {
+        
+        if(head != ignore)
+        {
+            
+            if(head.takedamage)
+            {
+                org = head.origin + ((head.mins + head.maxs) * 0.500);
+                points = 0.500 * (vlen(inflictor.origin - org));
+                
+                if(points < MSG_BROADCAST)
+                {
+                    points = MSG_BROADCAST;
+                }
+                
+                points = damage - points;
+                
+                if(head == attacker)
+                {
+                    points = points * 0.500;
+                }
+                
+                
+                if(points > MSG_BROADCAST)
+                {
+                    
+                    if(CanDamage(head, inflictor))
+                    {
+                        if(head.classname == "monster_shambler")
+                        {
+                            T_Damage(head, inflictor, attacker, points * 0.500);
+                        }
+                        else
+                        {
+                            T_Damage(head, inflictor, attacker, points);
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        head = head.chain;
+    }
+    
+};
+
+// T_BeamDamage
+// function begins at statement 1644, parm_start=1772
+// OP_LOAD_V	1772	105	1776
+// OP_ADD_F	1773	1733	1779
+// OP_STORE_V	1776	4	0
+// OP_STORE_V	1779	7	0
+// OP_CALL2	467	0	0
+// OP_STORE_ENT	1	1775	0
+// OP_IFNOT	1775	43	0
+// OP_LOAD_F	1775	163	1780
+// OP_IFNOT	1780	38	0
+// OP_LOAD_V	1772	105	1781
+// OP_LOAD_V	1775	105	1784
+// OP_SUB_V	1781	1784	1787
+// OP_STORE_V	1787	4	0
+// OP_CALL1	457	0	0
+// OP_MUL_F	1491	1	1790
+// OP_STORE_F	1790	1774	0
+// OP_LT	1774	337	1791
+// OP_IFNOT	1791	2	0
+// OP_STORE_F	337	1774	0
+// OP_SUB_F	1773	1774	1792
+// OP_STORE_F	1792	1774	0
+// OP_EQ_E	1775	1772	1793
+// OP_IFNOT	1793	3	0
+// OP_MUL_F	1774	1491	1794
+// OP_STORE_F	1794	1774	0
+// OP_GT	1774	337	1795
+// OP_IFNOT	1795	20	0
+// OP_STORE_V	1775	4	0
+// OP_STORE_V	1772	7	0
+// OP_CALL2	522	0	0
+// OP_IFNOT	1	16	0
+// OP_LOAD_S	1775	129	1796
+// OP_EQ_S	1796	1243	1797
+// OP_IFNOT	1797	8	0
+// OP_MUL_F	1774	1491	1798
+// OP_STORE_V	1775	4	0
+// OP_STORE_V	1772	7	0
+// OP_STORE_V	1772	10	0
+// OP_STORE_V	1798	13	0
+// OP_CALL4	520	0	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	1775	4	0
+// OP_STORE_V	1772	7	0
+// OP_STORE_V	1772	10	0
+// OP_STORE_V	1774	13	0
+// OP_CALL4	520	0	0
+// OP_LOAD_ENT	1775	164	1799
+// OP_STORE_ENT	1799	1775	0
+// OP_GOTO	-42	0	0
+// OP_DONE	0	0	0
+void (entity attacker, float damage) T_BeamDamage =
+{
+    local float points;
+    local entity head;
+    head = findradius(attacker.origin, damage + 40.000);
+    
+    while(head)
+    {
+        
+        if(head.takedamage)
+        {
+            points = 0.500 * (vlen(attacker.origin - head.origin));
+            
+            if(points < MSG_BROADCAST)
+            {
+                points = MSG_BROADCAST;
+            }
+            
+            points = damage - points;
+            
+            if(head == attacker)
+            {
+                points = points * 0.500;
+            }
+            
+            
+            if(points > MSG_BROADCAST)
+            {
+                
+                if(CanDamage(head, attacker))
+                {
+                    if(head.classname == "monster_shambler")
+                    {
+                        T_Damage(head, attacker, attacker, points * 0.500);
+                    }
+                    else
+                    {
+                        T_Damage(head, attacker, attacker, points);
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        head = head.chain;
+    }
+    
+};
+

@@ -862,7 +862,7 @@ void () finale_2 =
     o = shub.origin - '0.000 100.000 0.000';
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
-    WriteCoord(MSG_BROADCAST, o);
+    WriteCoord(MSG_BROADCAST, o_x);
     WriteCoord(MSG_BROADCAST, o_y);
     WriteCoord(MSG_BROADCAST, o_z);
     sound(shub, CHAN_VOICE, "misc/r_tele1.wav", SPAWN_CRUCIFIED, ATTN_NORM);

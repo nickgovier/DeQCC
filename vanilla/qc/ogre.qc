@@ -47,7 +47,7 @@ void () OgreGrenadeExplode =
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
-    WriteCoord(MSG_BROADCAST, self.origin);
+    WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     self.velocity = VEC_ORIGIN;

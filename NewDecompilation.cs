@@ -677,7 +677,14 @@ namespace DeQcc
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
                         c.ValueSource = a.ValueToAssign + "." + b.ValueToAssign;
-                        c.Type = b.FieldType;   // store the type in case this is a vector and we later meant to refer only to the float _x component
+                        // store the type for later reference
+                        // in particular in case this is a vector and we later meant to refer only to the float _x component
+                        c.Type = b.FieldType;
+                        if (b.FieldType == Types.ev_function)
+                        {
+                            // if it's a function, also send across the arg types
+                            c.FieldFunctionArgTypes = b.FieldFunctionArgTypes;
+                        }
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
                     }
                     else
@@ -725,9 +732,8 @@ namespace DeQcc
                     for (int i = 0; i < numargs; i++)
                     {
                         List<Types> argTypes;
-                        if(a.Function.first_statement == 0)
+                        if(a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
                         {
-                            // this is a field function (it points to the null function (bit of a hack TODO better way?)
                             argTypes = a.FieldFunctionArgTypes;
                         }
                         else
@@ -741,7 +747,16 @@ namespace DeQcc
 
                     if (statements[sIndex + 1].a != OFS_RETURN && statements[sIndex + 1].b != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
                     {
-                        PrintLine(a.Function.name + "(" + args + ");");
+                        string name;
+                        if(a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
+                        {
+                            name = a.ValueSource;
+                        }
+                        else
+                        {
+                            name = a.Function.name;
+                        }
+                        PrintLine(name + "(" + args + ");");
                     }
                     else
                     {

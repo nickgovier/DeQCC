@@ -231,7 +231,7 @@ void () SUB_CalcMoveDone =
     
     if(self.think1)
     {
-        func000000();
+        self.think1();
     }
     
 };
@@ -327,7 +327,7 @@ void () SUB_CalcAngleMoveDone =
     
     if(self.think1)
     {
-        func000000();
+        self.think1();
     }
     
 };
@@ -509,7 +509,7 @@ void () SUB_UseTargets =
                 
                 if(self.use)
                 {
-                    func000000();
+                    self.use();
                 }
                 
             }

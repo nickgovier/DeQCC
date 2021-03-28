@@ -154,7 +154,7 @@ void () t_movetarget =
     if(!self.movetarget)
     {
         self.pausetime = time + 999999.000;
-        func000000();
+        self.th_stand();
         return;
     }
     
@@ -933,7 +933,7 @@ void () ai_stand =
     
     if(time > self.pausetime)
     {
-        func000000();
+        self.th_walk();
         return;
     }
     
@@ -1139,7 +1139,7 @@ void () ai_run_melee =
     
     if(FacingIdeal())
     {
-        func000000();
+        self.th_melee();
         self.attack_state = AS_STRAIGHT;
     }
     
@@ -1164,7 +1164,7 @@ void () ai_run_missile =
     
     if(FacingIdeal())
     {
-        func000000();
+        self.th_missile();
         self.attack_state = AS_STRAIGHT;
     }
     
@@ -1323,11 +1323,11 @@ void (float dist) ai_run =
         {
             if(self.movetarget)
             {
-                func000000();
+                self.th_walk();
             }
             else
             {
-                func000000();
+                self.th_stand();
             }
             
             return;

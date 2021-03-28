@@ -164,7 +164,7 @@ float () CheckAttack =
             }
             else
             {
-                func000000();
+                self.th_melee();
             }
             
             return TRUE;
@@ -235,7 +235,7 @@ float () CheckAttack =
     
     if(random() < chance)
     {
-        func000000();
+        self.th_missile();
         SUB_AttackFinished(AS_SLIDING * random());
         return TRUE;
     }
@@ -558,7 +558,7 @@ float () SoldierCheckAttack =
     
     if(random() < chance)
     {
-        func000000();
+        self.th_missile();
         SUB_AttackFinished(AS_STRAIGHT + random());
         
         if(random() < 0.300)

@@ -1188,7 +1188,7 @@ void () boss_death9 =
     sound(self, CHAN_BODY, "boss1/out1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LAVASPLASH);
-    WriteCoord(MSG_BROADCAST, self.origin);
+    WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
 };
@@ -1391,7 +1391,7 @@ void () boss_awake =
     self.enemy = activator;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LAVASPLASH);
-    WriteCoord(MSG_BROADCAST, self.origin);
+    WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     self.yaw_speed = 20.000;
@@ -1540,10 +1540,10 @@ void () lightning_fire =
     WriteByte(MSG_ALL, SVC_TEMPENTITY);
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
-    WriteCoord(MSG_ALL, p1);
+    WriteCoord(MSG_ALL, p1_x);
     WriteCoord(MSG_ALL, p1_y);
     WriteCoord(MSG_ALL, p1_z);
-    WriteCoord(MSG_ALL, p2);
+    WriteCoord(MSG_ALL, p2_x);
     WriteCoord(MSG_ALL, p2_y);
     WriteCoord(MSG_ALL, p2_z);
 };
