@@ -621,6 +621,7 @@ namespace DeQcc
             // Should never happen
             if(indent != 0)
             {
+                throw new Exception("INDENT");
                 indent = 0;
                 PrintLine("/* ERROR INDENTATION */");
             }
@@ -822,7 +823,7 @@ namespace DeQcc
                         // Set the desination info correctly:
                         if (oneBeforeTarget.Opcode != Opcodes.OP_GOTO || (oneBeforeTarget.Opcode == Opcodes.OP_GOTO && oneBeforeTarget.a < 0))
                         {
-                            // there is no subsequent block, so remember to undo the indentation at the end of the block
+                            // there is no subsequent if block, so remember to undo the indentation at the end of the block
                             PrintLine("");
                             endofBlock.Add(sIndex + s.b);   // Note when to undo the if indentation, as we don't have a goto to do it
                         }
