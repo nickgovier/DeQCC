@@ -7,18 +7,6 @@ namespace DeQcc
 {
     partial class DeQCC
     {
-        const int OFS_NULL = 0;
-        const int OFS_RETURN = 1;
-        const int OFS_PARM0 = 4;    // leave 3 ofs for each parm to hold vectors
-        const int OFS_PARM1 = 7;
-        const int OFS_PARM2 = 10;
-        const int OFS_PARM3 = 13;
-        const int OFS_PARM4 = 16;
-        const int OFS_PARM5 = 19;
-        const int OFS_PARM6 = 22;
-        const int OFS_PARM7 = 25;
-        const int RESERVED_OFS = 28;
-
         List<Opcode> pr_opcodes = new List<Opcode>();
         List<float> pr_globals = new List<float>();
 
@@ -32,7 +20,6 @@ namespace DeQcc
         StreamWriter qcOutputFile;
         StreamWriter progsSrcOutputFile;
 
-        Dictionary<int, string> builtins = new Dictionary<int, string>();
 
         // Maps for obfuscated progs.dat files
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
@@ -157,25 +144,10 @@ namespace DeQcc
             // PRINT LOCALS
 
             // decompile the statements
-            TODELETEDecompileFunctionStatements(df);
         }
 
         string? TODELETEGet(Function df, int ofs, Types? req_t) { return null; }
         string? TODELETEGlobalVal(int ofs, Types? req_t) { return null; }
-
-        void TODELETEDecompileFunctionStatements(Function df)
-        {
-            int indent = 1;
-
-            while (true)
-            {
-                    break;
-            }
-
-            if (indent != 1)
-                qcOutputFile.WriteLine("/* Warning : Indentiation structure corrupt */");
-
-        }
 
         void TODELETEIndent(int c){}
 
@@ -194,24 +166,8 @@ namespace DeQcc
 
             ushort dom = s.op;
 
-            ushort doc = (ushort)(dom / 10000);
-            ushort ifc = (ushort)((dom % 10000) / 100);
-
-            // use program flow information 
-            for (int i = 0; i < ifc; i++)
-            {
-                indent--;
-                qcOutputFile.WriteLine();
-                TODELETEIndent(indent);
-                qcOutputFile.WriteLine("}");
-            }
-            for (int i = 0; i < doc; i++)
-            {
-                TODELETEIndent(indent);
-                qcOutputFile.WriteLine("do {");
-                qcOutputFile.WriteLine();
-                indent++;
-            }
+            ushort doc = (ushort)(dom / 10000);             // start of do
+            ushort ifc = (ushort)((dom % 10000) / 100);     // end of block
 
             // remove all program flow information 
             s.op %= 100;
@@ -221,16 +177,15 @@ namespace DeQcc
             typ3 = pr_opcodes[s.op].type_c;
 
             // states are handled at top level 
-            if (s.op == (ushort)Opcodes.OP_IF || s.op == (ushort)Opcodes.OP_IFNOT)
+
+
+            if (s.op == (ushort)Opcodes.OP_IFNOT)
             {
                 arg1 = TODELETEGet(df, s.a, null);
                 arg2 = TODELETEGlobalVal(s.a, null);
 
                 if (s.op == (ushort)Opcodes.OP_IFNOT)
                 {
-                    if (s.b < 1)
-                        throw new Exception("Found a negative IFNOT jump.");
-
                     // get instruction right before the target 
                     int tIndex = sIndex + s.b - 1;
                     t = statements[tIndex];
@@ -239,7 +194,7 @@ namespace DeQcc
                     if (tom != (ushort)Opcodes.OP_GOTO)
                     {
                         // pure if 
-                        TODELETEIndent(indent);
+                        // PRINT IF STATEMENT
                         qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
                         qcOutputFile.WriteLine();
                         indent++;
@@ -249,7 +204,7 @@ namespace DeQcc
                         if (t.a > 0)
                         {
                             // if-then-else
-                            TODELETEIndent(indent);
+                            // PRINT IF STATEMENT
                             qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
                             qcOutputFile.WriteLine();
                             indent++;
@@ -259,7 +214,7 @@ namespace DeQcc
                             if ((t.a + s.b) > 1)
                             {
                                 // pure if
-                                TODELETEIndent(indent);
+                                // PRINT IF STATEMENT
                                 qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
                                 qcOutputFile.WriteLine();
                                 indent++;
@@ -276,7 +231,6 @@ namespace DeQcc
                                 if (dum != 0)
                                 {
                                     // while
-                                    TODELETEIndent(indent);
                                     qcOutputFile.WriteLine("while ( " + arg1 + " ) {");
                                     qcOutputFile.WriteLine();
                                     indent++;
@@ -284,7 +238,7 @@ namespace DeQcc
                                 else
                                 {
                                     // pure if
-                                    TODELETEIndent(indent);
+                                    // PRINT IF STATEMENT
                                     qcOutputFile.WriteLine("if ( " + arg1 + " ) {");
                                     qcOutputFile.WriteLine();
                                     indent++;
@@ -292,14 +246,6 @@ namespace DeQcc
                             }
                         }
                     }
-                }
-                else
-                {
-                    // do ... while 
-                    indent--;
-                    qcOutputFile.WriteLine();
-                    TODELETEIndent(indent);
-                    qcOutputFile.WriteLine("} while ( " + arg1 + " );");
                 }
             }
             else if (s.op == (ushort)Opcodes.OP_GOTO)
@@ -326,5 +272,6 @@ namespace DeQcc
 
             return;
         }
+
     }
 }

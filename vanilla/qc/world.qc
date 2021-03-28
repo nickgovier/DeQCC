@@ -557,7 +557,7 @@ void () worldspawn =
     {
         cvar_set("sv_gravity", "100");
     }
-    else    
+    else
     {
         cvar_set("sv_gravity", "800");
     }

@@ -1002,7 +1002,7 @@ void () finale_4 =
             
             while(y <= IT_LIGHTNING)
             {
-                self.origin = oldo_x + x;
+                self.origin_x = oldo_x + x;
                 self.origin_y = oldo_y + y;
                 self.origin_z = oldo_z + z;
                 r = random();
@@ -1010,13 +1010,17 @@ void () finale_4 =
                 {
                     ThrowGib("progs/gib1.mdl", -999.000);
                 }
-                else if(r < 0.600)
+                else
                 {
-                    ThrowGib("progs/gib2.mdl", -999.000);
-                }
-                else                
-                {
-                    ThrowGib("progs/gib3.mdl", -999.000);
+                    if(r < 0.600)
+                    {
+                        ThrowGib("progs/gib2.mdl", -999.000);
+                    }
+                    else
+                    {
+                        ThrowGib("progs/gib3.mdl", -999.000);
+                    }
+                    
                 }
                 
                 y = y + DOOR_TOGGLE;

@@ -420,7 +420,7 @@ void () knight_runatk1 =
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     }
-    else    
+    else
     {
         sound(self, CHAN_WEAPON, "knight/sword1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     }
@@ -864,7 +864,7 @@ void (entity attacker, float damage) knight_pain =
         knight_pain1();
         self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
     }
-    else    
+    else
     {
         knight_painb1();
         self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
@@ -1236,7 +1236,7 @@ void () knight_die =
     {
         knight_die1();
     }
-    else    
+    else
     {
         knight_dieb1();
     }

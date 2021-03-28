@@ -154,7 +154,7 @@ void () t_movetarget =
     if(!self.movetarget)
     {
         self.pausetime = time + 999999.000;
-        self.th_stand();
+        func000000();
         return;
     }
     
@@ -495,61 +495,61 @@ void () SightSound =
     {
         sound(self, CHAN_VOICE, "ogre/ogwake.wav", AS_STRAIGHT, ATTN_NORM);
     }
-    else    
+    else
     {
         if(self.classname == "monster_knight")
         {
             sound(self, CHAN_VOICE, "knight/ksight.wav", AS_STRAIGHT, ATTN_NORM);
         }
-        else        
+        else
         {
             if(self.classname == "monster_shambler")
             {
                 sound(self, CHAN_VOICE, "shambler/ssight.wav", AS_STRAIGHT, ATTN_NORM);
             }
-            else            
+            else
             {
                 if(self.classname == "monster_demon1")
                 {
                     sound(self, CHAN_VOICE, "demon/sight2.wav", AS_STRAIGHT, ATTN_NORM);
                 }
-                else                
+                else
                 {
                     if(self.classname == "monster_wizard")
                     {
                         sound(self, CHAN_VOICE, "wizard/wsight.wav", AS_STRAIGHT, ATTN_NORM);
                     }
-                    else                    
+                    else
                     {
                         if(self.classname == "monster_zombie")
                         {
                             sound(self, CHAN_VOICE, "zombie/z_idle.wav", AS_STRAIGHT, ATTN_NORM);
                         }
-                        else                        
+                        else
                         {
                             if(self.classname == "monster_dog")
                             {
                                 sound(self, CHAN_VOICE, "dog/dsight.wav", AS_STRAIGHT, ATTN_NORM);
                             }
-                            else                            
+                            else
                             {
                                 if(self.classname == "monster_hell_knight")
                                 {
                                     sound(self, CHAN_VOICE, "hknight/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                 }
-                                else                                
+                                else
                                 {
                                     if(self.classname == "monster_tarbaby")
                                     {
                                         sound(self, CHAN_VOICE, "blob/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                     }
-                                    else                                    
+                                    else
                                     {
                                         if(self.classname == "monster_vomit")
                                         {
                                             sound(self, CHAN_VOICE, "vomitus/v_sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                         }
-                                        else                                        
+                                        else
                                         {
                                             if(self.classname == "monster_enforcer")
                                             {
@@ -558,27 +558,35 @@ void () SightSound =
                                                 {
                                                     sound(self, CHAN_VOICE, "enforcer/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                                 }
-                                                else if(rsnd == AS_SLIDING)
+                                                else
                                                 {
-                                                    sound(self, CHAN_VOICE, "enforcer/sight2.wav", AS_STRAIGHT, ATTN_NORM);
-                                                }
-                                                else if(rsnd == MSG_BROADCAST)
-                                                {
-                                                    sound(self, CHAN_VOICE, "enforcer/sight3.wav", AS_STRAIGHT, ATTN_NORM);
-                                                }
-                                                else                                                
-                                                {
-                                                    sound(self, CHAN_VOICE, "enforcer/sight4.wav", AS_STRAIGHT, ATTN_NORM);
+                                                    if(rsnd == AS_SLIDING)
+                                                    {
+                                                        sound(self, CHAN_VOICE, "enforcer/sight2.wav", AS_STRAIGHT, ATTN_NORM);
+                                                    }
+                                                    else
+                                                    {
+                                                        if(rsnd == MSG_BROADCAST)
+                                                        {
+                                                            sound(self, CHAN_VOICE, "enforcer/sight3.wav", AS_STRAIGHT, ATTN_NORM);
+                                                        }
+                                                        else
+                                                        {
+                                                            sound(self, CHAN_VOICE, "enforcer/sight4.wav", AS_STRAIGHT, ATTN_NORM);
+                                                        }
+                                                        
+                                                    }
+                                                    
                                                 }
                                                 
                                             }
-                                            else                                            
+                                            else
                                             {
                                                 if(self.classname == "monster_army")
                                                 {
                                                     sound(self, CHAN_VOICE, "soldier/sight1.wav", AS_STRAIGHT, ATTN_NORM);
                                                 }
-                                                else                                                
+                                                else
                                                 {
                                                     
                                                     if(self.classname == "monster_shalrath")
@@ -736,7 +744,7 @@ float () FindTarget =
         }
         
     }
-    else    
+    else
     {
         client = checkclient();
         
@@ -787,13 +795,17 @@ float () FindTarget =
         }
         
     }
-    else    
- if(r == RANGE_MID)
+    else
     {
         
-        if(!infront(client))
+        if(r == RANGE_MID)
         {
-            return FALSE;
+            
+            if(!infront(client))
+            {
+                return FALSE;
+            }
+            
         }
         
     }
@@ -921,7 +933,7 @@ void () ai_stand =
     
     if(time > self.pausetime)
     {
-        self.th_walk();
+        func000000();
         return;
     }
     
@@ -983,7 +995,7 @@ void (vector dest3) ChooseTurn =
         dir_x = MSG_BROADCAST - trace_plane_normal_y;
         dir_y = trace_plane_normal_x;
     }
-    else    
+    else
     {
         dir_x = trace_plane_normal_y;
         dir_y = MSG_BROADCAST - trace_plane_normal_x;
@@ -1127,7 +1139,7 @@ void () ai_run_melee =
     
     if(FacingIdeal())
     {
-        self.th_melee();
+        func000000();
         self.attack_state = AS_STRAIGHT;
     }
     
@@ -1152,7 +1164,7 @@ void () ai_run_missile =
     
     if(FacingIdeal())
     {
-        self.th_missile();
+        func000000();
         self.attack_state = AS_STRAIGHT;
     }
     
@@ -1194,7 +1206,7 @@ void () ai_run_slide =
     {
         ofs = 90.000;
     }
-    else    
+    else
     {
         ofs = -90.000;
     }
@@ -1307,16 +1319,20 @@ void (float dist) ai_run =
             self.enemy = self.oldenemy;
             HuntTarget();
         }
-        else if(self.movetarget)
+        else
         {
-            self.th_walk();
-        }
-        else        
-        {
-            self.th_stand();
+            if(self.movetarget)
+            {
+                func000000();
+            }
+            else
+            {
+                func000000();
+            }
+            
+            return;
         }
         
-        return;
     }
     
     self.show_hostile = time + AS_STRAIGHT;

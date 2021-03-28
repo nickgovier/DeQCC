@@ -46,7 +46,7 @@ void () light_use =
         lightstyle(self.style, "m");
         self.spawnflags = self.spawnflags - START_OFF;
     }
-    else    
+    else
     {
         lightstyle(self.style, "a");
         self.spawnflags = self.spawnflags + START_OFF;
@@ -97,7 +97,7 @@ void () light =
         {
             lightstyle(self.style, "a");
         }
-        else        
+        else
         {
             lightstyle(self.style, "m");
         }
@@ -144,7 +144,7 @@ void () light_fluoro =
         {
             lightstyle(self.style, "a");
         }
-        else        
+        else
         {
             lightstyle(self.style, "m");
         }
@@ -393,7 +393,7 @@ void () fire_fly =
     fireball.solid = SOLID_TRIGGER;
     fireball.movetype = MOVETYPE_TOSS;
     fireball.velocity = '0.000 0.000 1000.000';
-    fireball.velocity = (random() * 100.000) - 50.000;
+    fireball.velocity_x = (random() * 100.000) - 50.000;
     fireball.velocity_y = (random() * 100.000) - 50.000;
     fireball.velocity_z = self.speed + (random() * 200.000);
     fireball.classname = "fireball";
@@ -645,7 +645,7 @@ void () spikeshooter_use =
         sound(self, CHAN_VOICE, "enforcer/enfire.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         LaunchLaser(self.origin, self.movedir);
     }
-    else    
+    else
     {
         sound(self, CHAN_VOICE, "weapons/spike2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         launch_spike(self.origin, self.movedir);
@@ -707,7 +707,7 @@ void () trap_spikeshooter =
         precache_sound2("enforcer/enfire.wav");
         precache_sound2("enforcer/enfstop.wav");
     }
-    else    
+    else
     {
         precache_sound("weapons/spike2.wav");
     }
@@ -1012,7 +1012,7 @@ void () bubble_bob =
         remove(self);
     }
     
-    rnd1 = self.velocity + (-10.000 + (random() * 20.000));
+    rnd1 = self.velocity_x + (-10.000 + (random() * 20.000));
     rnd2 = self.velocity_y + (-10.000 + (random() * 20.000));
     rnd3 = (self.velocity_z + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     
@@ -1051,7 +1051,7 @@ void () bubble_bob =
         rnd3 = 25.000;
     }
     
-    self.velocity = rnd1;
+    self.velocity_x = rnd1;
     self.velocity_y = rnd2;
     self.velocity_z = rnd3;
     self.nextthink = time + 0.500;

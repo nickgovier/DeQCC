@@ -175,7 +175,7 @@ void () CheckContinueCharge =
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
-    else    
+    else
     {
         sound(self, CHAN_WEAPON, "knight/sword1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -944,7 +944,7 @@ void () hknight_die =
     {
         hknight_die1();
     }
-    else    
+    else
     {
         hknight_dieb1();
     }
@@ -2331,15 +2331,23 @@ void () hknight_melee =
     {
         hknight_slice1();
     }
-    else if(hknight_type == SPAWNFLAG_LASER)
+    else
     {
-        hknight_smash1();
-    }
-    else    
- if(hknight_type == AS_MELEE)
-    {
-        hknight_watk1();
-        hknight_type = MSG_BROADCAST;
+        if(hknight_type == SPAWNFLAG_LASER)
+        {
+            hknight_smash1();
+        }
+        else
+        {
+            
+            if(hknight_type == AS_MELEE)
+            {
+                hknight_watk1();
+                hknight_type = MSG_BROADCAST;
+            }
+            
+        }
+        
     }
     
 };

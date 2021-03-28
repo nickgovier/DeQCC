@@ -62,7 +62,7 @@ namespace DeQcc
 
         public GlobalKind Kind;
         public float FloatVal;
-        public string? ValueSource; // the source of the value being stored in this global
+        public string? _valueSource; // the source of the value being stored in this global
 
         public List<int> writtenBy = new List<int>();   // statements on which this global is wrtten to
         public List<int> readBy = new List<int>();      // statements on which this global is read by
@@ -73,6 +73,7 @@ namespace DeQcc
         public bool accessed;   // False if this global hasn't been accessed in the decompilation process yet
 
         public string? FieldFunctionDeclaration;
+        public List<Types> FieldFunctionArgTypes;
 
         #endregion Public Variables
 
@@ -122,7 +123,7 @@ namespace DeQcc
             {
                 if (Kind == GlobalKind.Function)
                 {
-                    return FunctionName;
+                    return Function.name;
                 }
                 if (Kind == GlobalKind.Field)
                 {
@@ -139,6 +140,24 @@ namespace DeQcc
             set
             {
                 _name = value;
+            }
+        }
+
+        public string? ValueSource
+        {
+            get
+            {
+                if (ExpectedType == Types.ev_float && Type == Types.ev_vector)
+                {
+                    // we are trying to access a vector expecting a float type
+                    // so we are trying to specifically get the _x term
+                    return _valueSource + "_x";
+                }
+                return _valueSource;
+            }
+            set
+            {
+                _valueSource = value;
             }
         }
 
@@ -189,46 +208,15 @@ namespace DeQcc
             }
         }
 
-        public string? FunctionName // If this global is an offset to a function
-        {
-            get
-            {
-                if (IntVal > 0)
-                {
-                    if (Type == Types.ev_function)
-                    {
-                        return functions[(int)IntVal].name;
-                    }
-                    return null;
-                }
-                else
-                {
-                    return ValueSource;
-                }
-            }
-        }
-
-        public string? FunctionDeclaration  // If this global is an offset to a function
+        public Function? Function // if this global is an offset to a function
         {
             get
             {
                 if (Type == Types.ev_function)
                 {
-                    return functions[(int)IntVal].declaration;
+                    return functions[(int)IntVal];
                 }
                 return null;
-            }
-        }
-
-        public bool FunctionIsBuiltin
-        {
-            get
-            {
-                if (Kind == GlobalKind.Function && functions[(int)IntVal].IsBuiltin)
-                {
-                    return true;
-                }
-                return false;
             }
         }
 

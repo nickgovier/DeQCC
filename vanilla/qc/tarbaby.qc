@@ -675,7 +675,7 @@ void () Tar_JumpTouch =
         }
         
     }
-    else    
+    else
     {
         sound(self, CHAN_WEAPON, "blob/land1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }

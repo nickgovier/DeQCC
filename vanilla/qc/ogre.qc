@@ -288,7 +288,7 @@ void (float side) chainsaw =
         {
             SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
         }
-        else        
+        else
         {
             SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), side * v_right);
         }
@@ -1733,25 +1733,37 @@ void (entity attacker, float damage) ogre_pain =
         ogre_pain1();
         self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
     }
-    else if(r < 0.500)
+    else
     {
-        ogre_painb1();
-        self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
-    }
-    else if(r < 0.750)
-    {
-        ogre_painc1();
-        self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
-    }
-    else if(r < 0.880)
-    {
-        ogre_paind1();
-        self.pain_finished = time + SPAWNFLAG_LASER;
-    }
-    else    
-    {
-        ogre_paine1();
-        self.pain_finished = time + SPAWNFLAG_LASER;
+        if(r < 0.500)
+        {
+            ogre_painb1();
+            self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
+        }
+        else
+        {
+            if(r < 0.750)
+            {
+                ogre_painc1();
+                self.pain_finished = time + SPAWNFLAG_SUPERSPIKE;
+            }
+            else
+            {
+                if(r < 0.880)
+                {
+                    ogre_paind1();
+                    self.pain_finished = time + SPAWNFLAG_LASER;
+                }
+                else
+                {
+                    ogre_paine1();
+                    self.pain_finished = time + SPAWNFLAG_LASER;
+                }
+                
+            }
+            
+        }
+        
     }
     
 };
@@ -2062,7 +2074,7 @@ void () ogre_die =
     {
         ogre_die1();
     }
-    else    
+    else
     {
         ogre_bdie1();
     }
@@ -2084,7 +2096,7 @@ void () ogre_melee =
     {
         ogre_smash1();
     }
-    else    
+    else
     {
         ogre_swing1();
     }

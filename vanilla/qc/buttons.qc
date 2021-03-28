@@ -297,7 +297,7 @@ void () func_button =
         self.th_die = button_killed;
         self.takedamage = DAMAGE_YES;
     }
-    else    
+    else
     {
         self.touch = button_touch;
     }

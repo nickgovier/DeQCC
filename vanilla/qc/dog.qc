@@ -977,7 +977,7 @@ void () dog_pain =
     {
         dog_pain1();
     }
-    else    
+    else
     {
         dog_painb1();
     }
@@ -1208,7 +1208,7 @@ void () dog_die =
     {
         dog_die1();
     }
-    else    
+    else
     {
         dog_dieb1();
     }

@@ -1004,17 +1004,21 @@ void (entity attacker, float damage) army_pain =
         army_pain1();
         sound(self, CHAN_VOICE, "soldier/pain1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     }
-    else if(r < 0.600)
+    else
     {
-        self.pain_finished = time + 1.100;
-        army_painb1();
-        sound(self, CHAN_VOICE, "soldier/pain2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
-    }
-    else    
-    {
-        self.pain_finished = time + 1.100;
-        army_painc1();
-        sound(self, CHAN_VOICE, "soldier/pain2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
+        if(r < 0.600)
+        {
+            self.pain_finished = time + 1.100;
+            army_painb1();
+            sound(self, CHAN_VOICE, "soldier/pain2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
+        }
+        else
+        {
+            self.pain_finished = time + 1.100;
+            army_painc1();
+            sound(self, CHAN_VOICE, "soldier/pain2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
+        }
+        
     }
     
 };
@@ -1336,7 +1340,7 @@ void () army_die =
     {
         army_die1();
     }
-    else    
+    else
     {
         army_cdie1();
     }

@@ -124,7 +124,7 @@ void () multi_trigger =
         self.think = multi_wait;
         self.nextthink = time + self.wait;
     }
-    else    
+    else
     {
         self.touch = SUB_Null;
         self.nextthink = time + 0.100;
@@ -270,14 +270,14 @@ void () trigger_multiple =
         precache_sound("misc/secret.wav");
         self.noise = "misc/secret.wav";
     }
-    else    
+    else
     {
         if(self.sounds == SECRET_1ST_LEFT)
         {
             precache_sound("misc/talk.wav");
             self.noise = "misc/talk.wav";
         }
-        else        
+        else
         {
             
             if(self.sounds == AS_MELEE)
@@ -312,7 +312,7 @@ void () trigger_multiple =
         self.solid = SOLID_BBOX;
         setorigin(self, self.origin);
     }
-    else    
+    else
     {
         
         if(!(self.spawnflags & SPAWNFLAG_NOTOUCH))
@@ -400,7 +400,7 @@ void () trigger_secret =
         precache_sound("misc/secret.wav");
         self.noise = "misc/secret.wav";
     }
-    else    
+    else
     {
         
         if(self.sounds == SECRET_1ST_LEFT)
@@ -493,19 +493,19 @@ void () counter_use =
             {
                 centerprint(activator, "There are more to go...");
             }
-            else            
+            else
             {
                 if(self.count == AS_MELEE)
                 {
                     centerprint(activator, "Only 3 more to go...");
                 }
-                else                
+                else
                 {
                     if(self.count == SECRET_1ST_LEFT)
                     {
                         centerprint(activator, "Only 2 more to go...");
                     }
-                    else                    
+                    else
                     {
                         centerprint(activator, "Only 1 more to go...");
                     }
@@ -595,21 +595,33 @@ void () play_teleport =
     {
         tmpstr = "misc/r_tele1.wav";
     }
-    else if(v < SILENT)
+    else
     {
-        tmpstr = "misc/r_tele2.wav";
-    }
-    else if(v < AS_MELEE)
-    {
-        tmpstr = "misc/r_tele3.wav";
-    }
-    else if(v < SECRET_1ST_DOWN)
-    {
-        tmpstr = "misc/r_tele4.wav";
-    }
-    else    
-    {
-        tmpstr = "misc/r_tele5.wav";
+        if(v < SILENT)
+        {
+            tmpstr = "misc/r_tele2.wav";
+        }
+        else
+        {
+            if(v < AS_MELEE)
+            {
+                tmpstr = "misc/r_tele3.wav";
+            }
+            else
+            {
+                if(v < SECRET_1ST_DOWN)
+                {
+                    tmpstr = "misc/r_tele4.wav";
+                }
+                else
+                {
+                    tmpstr = "misc/r_tele5.wav";
+                }
+                
+            }
+            
+        }
+        
     }
     
     sound(self, CHAN_VOICE, tmpstr, PLAYER_ONLY, ATTN_NORM);
@@ -918,7 +930,7 @@ void () teleport_touch =
     if(!other.health)
     {
         other.origin = t.origin;
-        other.velocity = (v_forward * other.velocity) + (v_forward * other.velocity_y);
+        other.velocity = (v_forward * other.velocity_x) + (v_forward * other.velocity_y);
         return;
     }
     
@@ -1132,7 +1144,7 @@ void () trigger_onlyregistered_touch =
         SUB_UseTargets();
         remove(self);
     }
-    else    
+    else
     {
         
         if(self.message != "")
@@ -1278,7 +1290,7 @@ void () trigger_push_touch =
     {
         other.velocity = (self.speed * self.movedir) * TE_LAVASPLASH;
     }
-    else    
+    else
     {
         
         if(other.health > MSG_BROADCAST)
@@ -1374,7 +1386,7 @@ void () trigger_monsterjump_touch =
         return;
     }
     
-    other.velocity = self.movedir * self.speed;
+    other.velocity_x = self.movedir_x * self.speed;
     other.velocity_y = self.movedir_y * self.speed;
     
     if(!(other.flags & FL_ONGROUND))

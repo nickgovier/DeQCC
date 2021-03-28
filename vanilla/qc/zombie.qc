@@ -1365,13 +1365,17 @@ void () zombie_missile =
     {
         zombie_atta1();
     }
-    else if(r < 0.600)
+    else
     {
-        zombie_attb1();
-    }
-    else    
-    {
-        zombie_attc1();
+        if(r < 0.600)
+        {
+            zombie_attb1();
+        }
+        else
+        {
+            zombie_attc1();
+        }
+        
     }
     
 };
@@ -2587,17 +2591,25 @@ void (entity attacker, float take) zombie_pain =
     {
         zombie_paina1();
     }
-    else if(r < 0.500)
+    else
     {
-        zombie_painb1();
-    }
-    else if(r < 0.750)
-    {
-        zombie_painc1();
-    }
-    else    
-    {
-        zombie_paind1();
+        if(r < 0.500)
+        {
+            zombie_painb1();
+        }
+        else
+        {
+            if(r < 0.750)
+            {
+                zombie_painc1();
+            }
+            else
+            {
+                zombie_paind1();
+            }
+            
+        }
+        
     }
     
 };
@@ -2706,7 +2718,7 @@ void () monster_zombie =
         self.movetype = MOVETYPE_NONE;
         zombie_cruc1();
     }
-    else    
+    else
     {
         walkmonster_start();
     }

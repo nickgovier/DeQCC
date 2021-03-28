@@ -260,7 +260,7 @@ void () item_health =
         self.healamount = 15.000;
         self.healtype = MSG_BROADCAST;
     }
-    else    
+    else
     {
         if(self.spawnflags & H_MEGA)
         {
@@ -271,7 +271,7 @@ void () item_health =
             self.healamount = 100.000;
             self.healtype = H_MEGA;
         }
-        else        
+        else
         {
             precache_model("maps/b_bh25.bsp");
             precache_sound("items/health1.wav");
@@ -395,7 +395,7 @@ void () health_touch =
         }
         
     }
-    else    
+    else
     {
         
         if(!T_Heal(other, self.healamount, MSG_BROADCAST))
@@ -420,16 +420,20 @@ void () health_touch =
         self.think = item_megahealth_rot;
         self.owner = other;
     }
-    else    
- if(deathmatch != H_MEGA)
+    else
     {
         
-        if(deathmatch)
+        if(deathmatch != H_MEGA)
         {
-            self.nextthink = time + 20.000;
+            
+            if(deathmatch)
+            {
+                self.nextthink = time + 20.000;
+            }
+            
+            self.think = SUB_regen;
         }
         
-        self.think = SUB_regen;
     }
     
     activator = other;
@@ -1043,7 +1047,7 @@ void () weapon_touch =
     {
         leave = H_ROTTEN;
     }
-    else    
+    else
     {
         leave = MSG_BROADCAST;
     }
@@ -1060,7 +1064,7 @@ void () weapon_touch =
         new = IT_NAILGUN;
         other.ammo_nails = other.ammo_nails + SVC_INTERMISSION;
     }
-    else    
+    else
     {
         if(self.classname == "weapon_supernailgun")
         {
@@ -1074,7 +1078,7 @@ void () weapon_touch =
             new = IT_SUPER_NAILGUN;
             other.ammo_nails = other.ammo_nails + SVC_INTERMISSION;
         }
-        else        
+        else
         {
             if(self.classname == "weapon_supershotgun")
             {
@@ -1088,7 +1092,7 @@ void () weapon_touch =
                 new = IT_SUPER_SHOTGUN;
                 other.ammo_shells = other.ammo_shells + TE_LIGHTNING1;
             }
-            else            
+            else
             {
                 if(self.classname == "weapon_rocketlauncher")
                 {
@@ -1102,7 +1106,7 @@ void () weapon_touch =
                     new = IT_ROCKET_LAUNCHER;
                     other.ammo_rockets = other.ammo_rockets + TE_LIGHTNING1;
                 }
-                else                
+                else
                 {
                     if(self.classname == "weapon_grenadelauncher")
                     {
@@ -1116,7 +1120,7 @@ void () weapon_touch =
                         new = IT_GRENADE_LAUNCHER;
                         other.ammo_rockets = other.ammo_rockets + TE_LIGHTNING1;
                     }
-                    else                    
+                    else
                     {
                         if(self.classname == "weapon_lightning")
                         {
@@ -1130,7 +1134,7 @@ void () weapon_touch =
                             new = IT_LIGHTNING;
                             other.ammo_cells = other.ammo_cells + 15.000;
                         }
-                        else                        
+                        else
                         {
                             objerror("weapon_touch: unknown classname");
                         }
@@ -1159,7 +1163,7 @@ void () weapon_touch =
     {
         self.weapon = new;
     }
-    else    
+    else
     {
         Deathmatch_Weapon(old, new);
     }
@@ -1619,7 +1623,7 @@ void () item_shells =
         setmodel(self, "maps/b_shell1.bsp");
         self.aflag = 40.000;
     }
-    else    
+    else
     {
         precache_model("maps/b_shell0.bsp");
         setmodel(self, "maps/b_shell0.bsp");
@@ -1673,7 +1677,7 @@ void () item_spikes =
         setmodel(self, "maps/b_nail1.bsp");
         self.aflag = 50.000;
     }
-    else    
+    else
     {
         precache_model("maps/b_nail0.bsp");
         setmodel(self, "maps/b_nail0.bsp");
@@ -1727,7 +1731,7 @@ void () item_rockets =
         setmodel(self, "maps/b_rock1.bsp");
         self.aflag = TE_LAVASPLASH;
     }
-    else    
+    else
     {
         precache_model("maps/b_rock0.bsp");
         setmodel(self, "maps/b_rock0.bsp");
@@ -1781,7 +1785,7 @@ void () item_cells =
         setmodel(self, "maps/b_batt1.bsp");
         self.aflag = 12.000;
     }
-    else    
+    else
     {
         precache_model("maps/b_batt0.bsp");
         setmodel(self, "maps/b_batt0.bsp");
@@ -1895,7 +1899,7 @@ void () item_weapon =
             setmodel(self, "maps/b_shell1.bsp");
             self.aflag = 40.000;
         }
-        else        
+        else
         {
             precache_model("maps/b_shell0.bsp");
             setmodel(self, "maps/b_shell0.bsp");
@@ -1915,7 +1919,7 @@ void () item_weapon =
             setmodel(self, "maps/b_nail1.bsp");
             self.aflag = 40.000;
         }
-        else        
+        else
         {
             precache_model("maps/b_nail0.bsp");
             setmodel(self, "maps/b_nail0.bsp");
@@ -1935,7 +1939,7 @@ void () item_weapon =
             setmodel(self, "maps/b_rock1.bsp");
             self.aflag = TE_LAVASPLASH;
         }
-        else        
+        else
         {
             precache_model("maps/b_rock0.bsp");
             setmodel(self, "maps/b_rock0.bsp");
@@ -2140,7 +2144,7 @@ void () item_key1 =
         setmodel(self, "progs/w_s_key.mdl");
         self.netname = "silver key";
     }
-    else    
+    else
     {
         if(world.worldtype == WEAPON_SHOTGUN)
         {
@@ -2148,7 +2152,7 @@ void () item_key1 =
             setmodel(self, "progs/m_s_key.mdl");
             self.netname = "silver runekey";
         }
-        else        
+        else
         {
             
             if(world.worldtype == WEAPON_ROCKET)
@@ -2523,7 +2527,7 @@ void () powerup_touch =
         {
             self.nextthink = time + (60.000 * TE_LIGHTNING1);
         }
-        else        
+        else
         {
             self.nextthink = time + 60.000;
         }
@@ -3015,7 +3019,7 @@ void () BackpackTouch =
     {
         self.weapon = new;
     }
-    else    
+    else
     {
         Deathmatch_Weapon(old, new);
     }
@@ -3155,49 +3159,49 @@ void () DropBackpack =
     {
         item.netname = "Axe";
     }
-    else    
+    else
     {
         if(item.items == IT_SHOTGUN)
         {
             item.netname = "Shotgun";
         }
-        else        
+        else
         {
             if(item.items == IT_SUPER_SHOTGUN)
             {
                 item.netname = "Double-barrelled Shotgun";
             }
-            else            
+            else
             {
                 if(item.items == IT_NAILGUN)
                 {
                     item.netname = "Nailgun";
                 }
-                else                
+                else
                 {
                     if(item.items == IT_SUPER_NAILGUN)
                     {
                         item.netname = "Super Nailgun";
                     }
-                    else                    
+                    else
                     {
                         if(item.items == IT_GRENADE_LAUNCHER)
                         {
                             item.netname = "Grenade Launcher";
                         }
-                        else                        
+                        else
                         {
                             if(item.items == IT_ROCKET_LAUNCHER)
                             {
                                 item.netname = "Rocket Launcher";
                             }
-                            else                            
+                            else
                             {
                                 if(item.items == IT_LIGHTNING)
                                 {
                                     item.netname = "Thunderbolt";
                                 }
-                                else                                
+                                else
                                 {
                                     item.netname = "";
                                 }
@@ -3221,7 +3225,7 @@ void () DropBackpack =
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
     item.velocity_z = 300.000;
-    item.velocity = -100.000 + (random() * 200.000);
+    item.velocity_x = -100.000 + (random() * 200.000);
     item.velocity_y = -100.000 + (random() * 200.000);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;

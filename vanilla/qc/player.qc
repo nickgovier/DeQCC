@@ -44,7 +44,7 @@ void () player_stand1 =
     *** UNPROCESSED OPCODE OP_STATE 4861 3937 0
     self.weaponframe = MSG_BROADCAST;
     
-    if(self.velocity || self.velocity_y)
+    if(self.velocity_x || self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_run();
@@ -61,7 +61,7 @@ void () player_stand1 =
         
         self.frame = 17.000 + self.walkframe;
     }
-    else    
+    else
     {
         
         if(self.walkframe >= TE_LIGHTNING1)
@@ -123,7 +123,7 @@ void () player_run =
     *** UNPROCESSED OPCODE OP_STATE 314 2612 0
     self.weaponframe = MSG_BROADCAST;
     
-    if(!self.velocity && !self.velocity_y)
+    if(!self.velocity_x && !self.velocity_y)
     {
         self.walkframe = MSG_BROADCAST;
         player_stand1();
@@ -140,7 +140,7 @@ void () player_run =
         
         self.frame = MSG_BROADCAST + self.walkframe;
     }
-    else    
+    else
     {
         
         if(self.walkframe == TE_LIGHTNING2)
@@ -886,7 +886,7 @@ void () PainSound =
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
-        else        
+        else
         {
             sound(self, CHAN_VOICE, "player/drown2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -907,7 +907,7 @@ void () PainSound =
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
-        else        
+        else
         {
             sound(self, CHAN_VOICE, "player/lburn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -922,7 +922,7 @@ void () PainSound =
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
-        else        
+        else
         {
             sound(self, CHAN_VOICE, "player/lburn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -952,25 +952,41 @@ void () PainSound =
     {
         self.noise = "player/pain1.wav";
     }
-    else if(rs == WEAPON_ROCKET)
+    else
     {
-        self.noise = "player/pain2.wav";
-    }
-    else if(rs == AS_MELEE)
-    {
-        self.noise = "player/pain3.wav";
-    }
-    else if(rs == WEAPON_SPIKES)
-    {
-        self.noise = "player/pain4.wav";
-    }
-    else if(rs == TE_LIGHTNING1)
-    {
-        self.noise = "player/pain5.wav";
-    }
-    else    
-    {
-        self.noise = "player/pain6.wav";
+        if(rs == WEAPON_ROCKET)
+        {
+            self.noise = "player/pain2.wav";
+        }
+        else
+        {
+            if(rs == AS_MELEE)
+            {
+                self.noise = "player/pain3.wav";
+            }
+            else
+            {
+                if(rs == WEAPON_SPIKES)
+                {
+                    self.noise = "player/pain4.wav";
+                }
+                else
+                {
+                    if(rs == TE_LIGHTNING1)
+                    {
+                        self.noise = "player/pain5.wav";
+                    }
+                    else
+                    {
+                        self.noise = "player/pain6.wav";
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
     }
     
     sound(self, CHAN_VOICE, self.noise, WEAPON_SHOTGUN, ATTN_NORM);
@@ -1129,7 +1145,7 @@ void () player_pain =
     {
         player_axpain1();
     }
-    else    
+    else
     {
         player_pain1();
     }
@@ -1418,13 +1434,17 @@ vector (float dm) VelocityForDamage =
     {
         v = v * 0.700;
     }
-    else if(dm > -200.000)
+    else
     {
-        v = v * WEAPON_ROCKET;
-    }
-    else    
-    {
-        v = v * TE_LAVASPLASH;
+        if(dm > -200.000)
+        {
+            v = v * WEAPON_ROCKET;
+        }
+        else
+        {
+            v = v * TE_LAVASPLASH;
+        }
+        
     }
     
     return v;
@@ -1489,7 +1509,7 @@ void (string gibname, float dm) ThrowGib =
     new.velocity = VelocityForDamage(dm);
     new.movetype = MOVETYPE_BOUNCE;
     new.solid = SOLID_NOT;
-    new.avelocity = random() * 600.000;
+    new.avelocity_x = random() * 600.000;
     new.avelocity_y = random() * 600.000;
     new.avelocity_z = random() * 600.000;
     new.think = SUB_Remove;
@@ -1637,7 +1657,7 @@ void () GibPlayer =
     {
         sound(self, CHAN_VOICE, "player/gib.wav", WEAPON_SHOTGUN, ATTN_NONE);
     }
-    else    
+    else
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", WEAPON_SHOTGUN, ATTN_NONE);
     }
@@ -1775,7 +1795,7 @@ void () PlayerDie =
     }
     
     DeathSound();
-    self.angles = MSG_BROADCAST;
+    self.angles_x = MSG_BROADCAST;
     self.angles_z = MSG_BROADCAST;
     
     if(self.weapon == IT_AXE)
@@ -1795,21 +1815,33 @@ void () PlayerDie =
     {
         player_diea1();
     }
-    else if(i == WEAPON_ROCKET)
+    else
     {
-        player_dieb1();
-    }
-    else if(i == AS_MELEE)
-    {
-        player_diec1();
-    }
-    else if(i == WEAPON_SPIKES)
-    {
-        player_died1();
-    }
-    else    
-    {
-        player_diee1();
+        if(i == WEAPON_ROCKET)
+        {
+            player_dieb1();
+        }
+        else
+        {
+            if(i == AS_MELEE)
+            {
+                player_diec1();
+            }
+            else
+            {
+                if(i == WEAPON_SPIKES)
+                {
+                    player_died1();
+                }
+                else
+                {
+                    player_diee1();
+                }
+                
+            }
+            
+        }
+        
     }
     
 };

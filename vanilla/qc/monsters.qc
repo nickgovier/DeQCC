@@ -251,14 +251,14 @@ void () walkmonster_start_go =
         {
             self.th_walk();
         }
-        else        
+        else
         {
             self.pausetime = 100000000.000;
         }
         
         self.th_stand();
     }
-    else    
+    else
     {
         self.pausetime = 100000000.000;
         self.th_stand();
@@ -404,14 +404,14 @@ void () flymonster_start_go =
         {
             self.th_walk();
         }
-        else        
+        else
         {
             self.pausetime = 100000000.000;
         }
         
         self.th_stand();
     }
-    else    
+    else
     {
         self.pausetime = 100000000.000;
         self.th_stand();
@@ -549,7 +549,7 @@ void () swimmonster_start_go =
         self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
         self.th_walk();
     }
-    else    
+    else
     {
         self.pausetime = 100000000.000;
         self.th_stand();

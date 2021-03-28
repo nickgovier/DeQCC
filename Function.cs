@@ -32,5 +32,7 @@ namespace DeQcc
                 return first_statement < 0;
             }
         }
+
+        public List<Types> parm_types = new List<Types>();  // store the type of each parameter
     }
 }

@@ -800,7 +800,7 @@ void () ShalHome =
     {
         self.velocity = dir * 350.000;
     }
-    else    
+    else
     {
         self.velocity = dir * 250.000;
     }

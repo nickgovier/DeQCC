@@ -33,7 +33,7 @@ void () door_blocked =
         {
             door_go_up();
         }
-        else        
+        else
         {
             door_go_down();
         }
@@ -552,14 +552,14 @@ void () door_touch =
                 centerprint(other, "You need the silver keycard");
                 sound(self, CHAN_VOICE, self.noise3, DOOR_START_OPEN, ATTN_NORM);
             }
-            else            
+            else
             {
                 if(world.worldtype == DOOR_START_OPEN)
                 {
                     centerprint(other, "You need the silver runekey");
                     sound(self, CHAN_VOICE, self.noise3, DOOR_START_OPEN, ATTN_NORM);
                 }
-                else                
+                else
                 {
                     
                     if(world.worldtype == MSG_BROADCAST)
@@ -573,21 +573,21 @@ void () door_touch =
             }
             
         }
-        else        
+        else
         {
             if(world.worldtype == WEAPON_ROCKET)
             {
                 centerprint(other, "You need the gold keycard");
                 sound(self, CHAN_VOICE, self.noise3, DOOR_START_OPEN, ATTN_NORM);
             }
-            else            
+            else
             {
                 if(world.worldtype == DOOR_START_OPEN)
                 {
                     centerprint(other, "You need the gold runekey");
                     sound(self, CHAN_VOICE, self.noise3, DOOR_START_OPEN, ATTN_NORM);
                 }
-                else                
+                else
                 {
                     
                     if(world.worldtype == MSG_BROADCAST)
@@ -691,7 +691,7 @@ entity (vector fmins, vector fmaxs) spawn_field =
 float (entity e1, entity e2) EntitiesTouching =
 {
     
-    if(e1.mins > e2.maxs)
+    if(e1.mins_x > e2.maxs_x)
     {
         return FALSE;
     }
@@ -709,7 +709,7 @@ float (entity e1, entity e2) EntitiesTouching =
     }
     
     
-    if(e1.maxs < e2.mins)
+    if(e1.maxs_x < e2.mins_x)
     {
         return FALSE;
     }
@@ -922,9 +922,9 @@ void () LinkDoors =
             self.enemy = t;
             self = t;
             
-            if(t.mins < cmins_x)
+            if(t.mins_x < cmins_x)
             {
-                cmins_x = t.mins;
+                cmins_x = t.mins_x;
             }
             
             
@@ -940,9 +940,9 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs > cmaxs_x)
+            if(t.maxs_x > cmaxs_x)
             {
-                cmaxs_x = t.maxs;
+                cmaxs_x = t.maxs_x;
             }
             
             
@@ -1168,7 +1168,7 @@ void () func_door =
         self.noise3 = "doors/medtry.wav";
         self.noise4 = "doors/meduse.wav";
     }
-    else    
+    else
     {
         if(world.worldtype == DOOR_START_OPEN)
         {
@@ -1177,7 +1177,7 @@ void () func_door =
             self.noise3 = "doors/runetry.wav";
             self.noise4 = "doors/runeuse.wav";
         }
-        else        
+        else
         {
             if(world.worldtype == WEAPON_ROCKET)
             {
@@ -1186,7 +1186,7 @@ void () func_door =
                 self.noise3 = "doors/basetry.wav";
                 self.noise4 = "doors/baseuse.wav";
             }
-            else            
+            else
             {
                 dprint("no worldtype set!\n");
             }
@@ -1463,7 +1463,7 @@ void () fd_secret_use =
         {
             self.t_width = fabs(v_up * self.size);
         }
-        else        
+        else
         {
             self.t_width = fabs(v_right * self.size);
         }
@@ -1480,7 +1480,7 @@ void () fd_secret_use =
     {
         self.dest1 = self.origin - (v_up * self.t_width);
     }
-    else    
+    else
     {
         self.dest1 = self.origin + (v_right * (self.t_width * temp));
     }

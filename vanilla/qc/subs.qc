@@ -53,13 +53,13 @@ void () SetMovedir =
     {
         self.movedir = '0.000 0.000 1.000';
     }
-    else    
+    else
     {
         if(self.angles == '0.000 -2.000 0.000')
         {
             self.movedir = '0.000 0.000 -1.000';
         }
-        else        
+        else
         {
             makevectors(self.angles);
             self.movedir = v_forward;
@@ -231,7 +231,7 @@ void () SUB_CalcMoveDone =
     
     if(self.think1)
     {
-        self.think1();
+        func000000();
     }
     
 };
@@ -327,7 +327,7 @@ void () SUB_CalcAngleMoveDone =
     
     if(self.think1)
     {
-        self.think1();
+        func000000();
     }
     
 };
@@ -509,7 +509,7 @@ void () SUB_UseTargets =
                 
                 if(self.use)
                 {
-                    self.use();
+                    func000000();
                 }
                 
             }

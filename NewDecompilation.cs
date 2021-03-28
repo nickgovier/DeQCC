@@ -20,6 +20,8 @@ namespace DeQcc
         List<int> startOfDoLoop = new List<int>();  // begin an upcoming do while loop
         List<int> endofBlock = new List<int>(); // reduce indentation
 
+        List<int> IFNOTisWhile = new List<int> { 659, 664, 5695, 5900, 6051, 6068, 1592, 1650, 20773, 20867, 20870, 20873, 3662, 4831, 4921 };  // all the IFNOT statements which are while loops
+
         public void Decompile(string outputfolder)
         {
             // Output folder structure:
@@ -30,9 +32,9 @@ namespace DeQcc
             // /outputfolder/progs.dat <- output of qcc.bat, to be compared with inputprogs.dat
 
             outputfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
-            InitStaticData(outputfolder);
             ReadProgsData(outputfolder);
             WriteProgsDataToCSV(outputfolder);
+            InitStaticData(outputfolder);   // do this after reading the data so the base data exists
             Preprocess();
             DecompileFunctions(outputfolder);
         }
@@ -145,6 +147,7 @@ namespace DeQcc
                 // Skip builtins
                 if(f.IsBuiltin)
                 {
+                    f.parm_types = builtinsParms[-f.first_statement];
                     continue;
                 }
 
@@ -160,6 +163,7 @@ namespace DeQcc
                 {
                     Global parm = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Parameter);
                     f.declaration += parm.TypeCodeOutput + " " + parm.Name;
+                    f.parm_types.Add((Types)parm.Type);    // save the type for type checking when we proces an OP_CALL statement
                     if (parmIndex < f.numparms - 1) { f.declaration += ", "; }
                 }
                 f.declaration += ") " + f.name;
@@ -342,6 +346,7 @@ namespace DeQcc
 
                                 // calc the args
                                 int numargs = statements[callStatement].Opcode - Opcodes.OP_CALL0;
+                                List<Types> argTypes = new List<Types>();
                                 string args = "";
                                 for (int i = 0; i < numargs; i++)
                                 {
@@ -352,6 +357,7 @@ namespace DeQcc
                                         if(statements[argStatement].b == OFS_PARM0 + 3 * i)
                                         {
                                             Global arg = globalList[statements[argStatement].a];
+                                            argTypes.Add((Types)arg.Type);
                                             args += DeQCC.GetTypeString(arg.Type) + " " + arg.Name;
                                             break;
                                         }
@@ -363,6 +369,7 @@ namespace DeQcc
                                 // append the function name
                                 declaration += "(" + args +") " + g.Name;
                                 g.FieldFunctionDeclaration = declaration;
+                                g.FieldFunctionArgTypes = argTypes;
                                 break;
                             }
                         }
@@ -505,7 +512,7 @@ namespace DeQcc
         void DecompileFunction(Function f)
         {
             int sIndex;
-            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
+            //Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
 
             // Process any unprocessed globals following the previous function
             while (highestGlobalAccessed < (f.parm_start - 1))    // ends when highestGlobalAccessed == f.parm_start - 1
@@ -513,13 +520,13 @@ namespace DeQcc
                 Global g = GetGlobal(highestGlobalAccessed + 1, false);
                 if (g.Kind == GlobalKind.Function)
                 {
-                    if (g.FunctionName == f.name)   // if it's this function
+                    if (g.Function.name == f.name)   // if it's this function
                     {
                         continue;   // do nothing, the definition will be output below
                     }
                     else
                     {
-                        Print(g.FunctionDeclaration);
+                        Print(g.Function.declaration);
                     }
                 }
                 else if (g.Kind == GlobalKind.Field && g.FieldType == Types.ev_function && g.FieldFunctionDeclaration != null)
@@ -670,6 +677,7 @@ namespace DeQcc
                     if (c.Kind == GlobalKind.Anonymous || c.Kind == GlobalKind.Reserved)
                     {
                         c.ValueSource = a.ValueToAssign + "." + b.ValueToAssign;
+                        c.Type = b.FieldType;   // store the type in case this is a vector and we later meant to refer only to the float _x component
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
                     }
                     else
@@ -684,6 +692,19 @@ namespace DeQcc
                     {
                         b.ValueSource = a.ValueToAssign;
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
+                        if(s.a == 1)
+                        {
+                            // if we are assigning the return value from a function call, overwrite the type
+                            // e.g. bytecode might call OP_STORE_V for a function which actually returns a float
+                            // this can happen e.g. if random() is being used in an operation, e.g.
+                            // fight.qc ai_melee, where random() calls are chained together, it can start appending _x to the function name
+                            // if it thinks it was returning a vector and later we try to access it as a float
+                            b.Type = Types.ev_function;    
+                        }
+                        else
+                        {
+                            b.Type = a.Type;
+                        }
                     }
                     else
                     {
@@ -703,18 +724,29 @@ namespace DeQcc
                     string args = "";
                     for (int i = 0; i < numargs; i++)
                     {
+                        List<Types> argTypes;
+                        if(a.Function.first_statement == 0)
+                        {
+                            // this is a field function (it points to the null function (bit of a hack TODO better way?)
+                            argTypes = a.FieldFunctionArgTypes;
+                        }
+                        else
+                        {
+                            argTypes = a.Function.parm_types;
+                        }
+                        globalList[OFS_PARM0 + 3 * i].ExpectedType = argTypes[i];   // set the expected type of the argument before we access it
                         args += globalList[OFS_PARM0 + 3 * i].ValueSource;
                         if (i < numargs - 1) { args += ", "; }
                     }
 
                     if (statements[sIndex + 1].a != OFS_RETURN && statements[sIndex + 1].b != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
                     {
-                        PrintLine(a.FunctionName + "(" + args + ");");
+                        PrintLine(a.Function.name + "(" + args + ");");
                     }
                     else
                     {
                         // Otherwise save it for the next assignment to use
-                        globalList[OFS_RETURN].ValueSource = a.FunctionName + "(" + args + ")";
+                        globalList[OFS_RETURN].ValueSource = a.Function.name + "(" + args + ")";
                     }
                     break;
                 case Opcodes.OP_IF:
@@ -723,14 +755,26 @@ namespace DeQcc
                     PrintLine("} while (" + a.ValueToAssign + ");");
                     break;
                 case Opcodes.OP_IFNOT:
+                    // Get statement immediately before the target of this jump
+                    Statement oneBeforeTarget = statements[sIndex + s.b - 1];
+
                     // Check for a while loop
-                    if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a == -s.b)
+                    if (oneBeforeTarget.Opcode == Opcodes.OP_GOTO && (-oneBeforeTarget.a == s.b || -oneBeforeTarget.a == (s.b - 1)))
                     {
-                        // while loops jump forward to just after a GOTO which jumps back to the statement before this IFNOT
-                        // this IFNOT jumps to just beyond a GOTO, which jumps back to just before the IFNOT, i.e. to the comparator => while loop
+                        // while loops jump forward to the statement after a GOTO which jumps back to either the statement before this IFNOT
+                        // if there is a check to do (e.g. while(x == y), i.e. -a == s.b ), or to this actual statement if there is no check
+                        // (e.g. while(1), i.e. -a == s.b - 1).
                         PrintLine("");
                         PrintLine("while(" + a.ValueToAssign + ")");
-                        statements[sIndex + s.b - 1].gotoType = GotoType.EndWhile;  // Inform the future that the GOTO is the end of this while loop
+
+                        if(IFNOTisWhile.Contains(sIndex))
+                        {
+                            Console.Out.WriteLine("Correctly found while loop in " + f.name + " at " + sIndex);
+                        }
+                        else
+                        {
+                            Console.Out.WriteLine("ERROR I found a while loop that should really be an IF in " + f.name + " at " + sIndex);
+                        }
                     }
                     // Must be an if block
                     else
@@ -738,13 +782,7 @@ namespace DeQcc
                         // IFNOTs that jump just beyond a GOTO have a subsequent else if/else (which the GOTO skips over), otherwise it's an if with no else
 
                         // Set the desination info correctly:
-                        if (statements[sIndex + s.b - 1].Opcode == Opcodes.OP_GOTO && statements[sIndex + s.b - 1].a >= 0)
-                        {
-                            // this IFNOT jumps to just beyond a GOTO, which jumps forward, i.e. over an else/else if term
-                            // the GOTO will handle the indendation
-                            statements[sIndex + s.b - 1].gotoType = GotoType.EndIf;
-                        }
-                        else
+                        if (oneBeforeTarget.Opcode != Opcodes.OP_GOTO)
                         {
                             // there is no subsequent block, so remember to undo the indentation at the end of the block
                             PrintLine("");
@@ -752,20 +790,28 @@ namespace DeQcc
                         }
 
                         // Now decide what to print for this if
-                        if (statements[sIndex - 2].Opcode == Opcodes.OP_GOTO)
+                        //if (statements[sIndex - 2].Opcode == Opcodes.OP_GOTO)
+                        //{
+                        //    // If we have just come from a GOTO, this must be an else if
+                        //    // the "else" will have been printed by the GOTO, so just append the " if"
+                        //    // temporarily remove the indentation to avoid extra whitespace
+                        //    int saveIndent = indent;
+                        //    indent = 0;
+                        //    PrintLine(" if(" + a.ValueToAssign + ")");
+                        //    indent = saveIndent;
+                        //}
+                        //else
+                        //{
+                            // There is no preceeding GOTO (i.e. previous part of an if block), so start one
+                            PrintLine("if(" + a.ValueToAssign + ")");
+                        //}
+                        if (IFNOTisWhile.Contains(sIndex))
                         {
-                            // If we have just come from a GOTO, this must be an else if
-                            // the "else" will have been printed by the GOTO, so just append the " if"
-                            // temporarily remove the indentation to avoid extra whitespace
-                            int saveIndent = indent;
-                            indent = 0;
-                            PrintLine(" if(" + a.ValueToAssign + ")");
-                            indent = saveIndent;
+                            Console.Out.WriteLine("ERROR I found an if block that should really be a WHILE in " + f.name + " at " + sIndex);
                         }
                         else
                         {
-                            // There is no preceeding GOTO (i.e. previous part of an if block), so start one
-                            PrintLine("if(" + a.ValueToAssign + ")");
+                            //Console.Out.WriteLine("Correctly found if block in " + f.name + " at " + sIndex);
                         }
                     }
                     PrintLine("{");
@@ -776,28 +822,19 @@ namespace DeQcc
                     // Close the current scope
                     indent--;
                     PrintLine("}");
-                    if (s.gotoType == GotoType.EndIf)
+                    if(s.a < 0)
                     {
-                        // This GOTO is part of an if block, and only exists if there is an else block
-                        Print("else");
-                        if (statements[sIndex + 2].Opcode == Opcodes.OP_IFNOT)
-                        {
-                            // Goes straight into another if, i.e. this is the start of an else if block
-                            // the rest of the block will be printed by the subsequent IFNOT
-                        }
-                        else
-                        {
-                            // this is the final block, just an else, not an else if
-                            PrintLine("");
-                            PrintLine("{");
-                            indent++;
-                            endofBlock.Add(sIndex + s.a);   // make sure we unwind this block as there will be no IFNOT or GOTO to do so
-                        }
-                    }
-                    else if (s.gotoType == GotoType.EndWhile)
-                    {
+                        // End of a while loop
                         // Newline after the while block just for clarity
                         PrintLine("");
+                    }
+                    else
+                    {
+                        // This GOTO is part of an if block, and only exists if there is an else block
+                        PrintLine("else");
+                        PrintLine("{");
+                        indent++;
+                        endofBlock.Add(sIndex + s.a);   // make sure we unwind this block as there will be no IFNOT or GOTO to do so
                     }
                     break;
                 default:

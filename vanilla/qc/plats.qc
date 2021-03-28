@@ -79,9 +79,9 @@ void () plat_spawn_inside_trigger =
     }
     
     
-    if(self.size <= 50.000)
+    if(self.size_x <= 50.000)
     {
-        tmin_x = (self.mins + self.maxs) / SILENT;
+        tmin_x = (self.mins_x + self.maxs_x) / SILENT;
         tmax_x = tmin_x + PLAT_LOW_TRIGGER;
     }
     
@@ -233,7 +233,7 @@ void () plat_center_touch =
     {
         plat_go_up();
     }
-    else    
+    else
     {
         
         if(self.state == STATE_TOP)
@@ -330,13 +330,13 @@ void () plat_crush =
     {
         plat_go_down();
     }
-    else    
+    else
     {
         if(self.state == STATE_DOWN)
         {
             plat_go_up();
         }
-        else        
+        else
         {
             objerror("plat_crush: bad self.state\n");
         }
@@ -536,7 +536,7 @@ void () func_plat =
     {
         self.pos2_z = self.origin_z - self.height;
     }
-    else    
+    else
     {
         self.pos2_z = (self.origin_z - self.size_z) + SECRET_NO_SHOOT;
     }
@@ -548,7 +548,7 @@ void () func_plat =
         self.state = STATE_UP;
         self.use = plat_use;
     }
-    else    
+    else
     {
         setorigin(self, self.pos2);
         self.state = STATE_BOTTOM;
@@ -636,7 +636,7 @@ void () train_wait =
         self.nextthink = self.ltime + self.wait;
         sound(self, CHAN_VOICE, self.noise, PLAT_LOW_TRIGGER, ATTN_NORM);
     }
-    else    
+    else
     {
         self.nextthink = self.ltime + 0.100;
     }
@@ -699,7 +699,7 @@ void () train_next =
     {
         self.wait = targ.wait;
     }
-    else    
+    else
     {
         self.wait = MSG_BROADCAST;
     }

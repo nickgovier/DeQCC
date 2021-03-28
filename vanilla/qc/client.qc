@@ -95,7 +95,7 @@ void () SetChangeParms =
     {
         parm4 = 25.000;
     }
-    else    
+    else
     {
         parm4 = self.ammo_shells;
     }
@@ -293,7 +293,7 @@ void () GotoNextMap =
     {
         changelevel(mapname);
     }
-    else    
+    else
     {
         changelevel(nextmap);
     }
@@ -448,7 +448,7 @@ void () ExitIntermission =
                 WriteByte(MSG_ALL, SVC_FINALE);
                 WriteString(MSG_ALL, "As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task in the other three\nhaunted lands of Quake. Or are you? If\nyou don't register Quake, you'll never\nknow what awaits you in the Realm of\nBlack Magic, the Netherworld, and the\nElder World!");
             }
-            else            
+            else
             {
                 WriteByte(MSG_ALL, SVC_FINALE);
                 WriteString(MSG_ALL, "As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task. A Rune of magic\npower lies at the end of each haunted\nland of Quake. Go forth, seek the\ntotality of the four Runes!");
@@ -456,7 +456,7 @@ void () ExitIntermission =
             
             return;
         }
-        else        
+        else
         {
             if(world.model == "maps/e2m6.bsp")
             {
@@ -467,7 +467,7 @@ void () ExitIntermission =
                 WriteString(MSG_ALL, "The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; Shub-Niggurath!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death and horror. But she is not\ninviolate! Armed with this Rune, you\nrealize that once all four Runes are\ncombined, the gate to Shub-Niggurath's\nPit will open, and you can face the\nWitch-Goddess herself in her frightful\notherworld cathedral.");
                 return;
             }
-            else            
+            else
             {
                 if(world.model == "maps/e3m6.bsp")
                 {
@@ -478,7 +478,7 @@ void () ExitIntermission =
                     WriteString(MSG_ALL, "The charred viscera of diabolic horrors\nbubble viscously as you seize the Rune\nof Hell Magic. Its heat scorches your\nhand, and its terrible secrets blight\nyour mind. Gathering the shreds of your\ncourage, you shake the devil's shackles\nfrom your soul, and become ever more\nhard and determined to destroy the\nhideous creatures whose mere existence\nthreatens the souls and psyches of all\nthe population of Earth.");
                     return;
                 }
-                else                
+                else
                 {
                     
                     if(world.model == "maps/e4m7.bsp")
@@ -626,7 +626,7 @@ void () execute_changelevel =
     {
         intermission_exittime = time + TE_LIGHTNING1;
     }
-    else    
+    else
     {
         intermission_exittime = time + WEAPON_ROCKET;
     }
@@ -789,7 +789,7 @@ void () respawn =
         setspawnparms(self);
         PutClientInServer();
     }
-    else    
+    else
     {
         if(deathmatch)
         {
@@ -797,7 +797,7 @@ void () respawn =
             SetNewParms();
             PutClientInServer();
         }
-        else        
+        else
         {
             localcmd("restart\n");
         }
@@ -958,14 +958,13 @@ entity () SelectSpawnPoint =
         }
         
     }
-    else    
+    else
     {
-        
         if(deathmatch)
         {
             spot = lastspawn;
             
-            if(WEAPON_SHOTGUN)
+            while(WEAPON_SHOTGUN)
             {
                 spot = find(spot, classname, "info_player_deathmatch");
                 
@@ -980,7 +979,7 @@ entity () SelectSpawnPoint =
                     pcount = MSG_BROADCAST;
                     thing = findradius(spot.origin, SVC_CDTRACK);
                     
-                    if(thing)
+                    while(thing)
                     {
                         
                         if(thing.classname == "player")
@@ -990,46 +989,42 @@ entity () SelectSpawnPoint =
                         
                         thing = thing.chain;
                     }
-                }
-                
-                
- if(pcount == MSG_BROADCAST)
-                {
-                    lastspawn = spot;
-                    return spot;
+                    
+                    
+                    if(pcount == MSG_BROADCAST)
+                    {
+                        lastspawn = spot;
+                        return spot;
+                    }
+                    
                 }
                 
             }
             
         }
-    }
+        
+        
+        if(serverflags)
+        {
+            spot = find(world, classname, "info_player_start2");
+            
+            if(spot)
+            {
+                return spot;
+            }
+            
+        }
+        
+        spot = find(world, classname, "info_player_start");
+        
+        if(!spot)
+        {
+            error("PutClientInServer: no info_player_start on level");
+        }
+        
+        return spot;
+    };
     
-}
-
-}
-
-
-if(serverflags)
-{
-spot = find(world, classname, "info_player_start2");
-
-if(spot)
-{
-    return spot;
-}
-
-}
-
-spot = find(world, classname, "info_player_start");
-
-if(!spot)
-{
-error("PutClientInServer: no info_player_start on level");
-}
-
-return spot;
-};
-
 /* ERROR INDENTATION */
 void () PlayerDie;
 // PutClientInServer
@@ -1285,28 +1280,28 @@ void () NextLevel =
         {
             mapname = "e1m1";
         }
-        else        
+        else
         {
             if(!(serverflags & WEAPON_SHOTGUN))
             {
                 mapname = "e1m1";
                 serverflags = serverflags | WEAPON_SHOTGUN;
             }
-            else            
+            else
             {
                 if(!(serverflags & WEAPON_ROCKET))
                 {
                     mapname = "e2m1";
                     serverflags = serverflags | WEAPON_ROCKET;
                 }
-                else                
+                else
                 {
                     if(!(serverflags & WEAPON_SPIKES))
                     {
                         mapname = "e3m1";
                         serverflags = serverflags | WEAPON_SPIKES;
                     }
-                    else                    
+                    else
                     {
                         
                         if(!(serverflags & WEAPON_BIG))
@@ -1326,7 +1321,7 @@ void () NextLevel =
         o = spawn();
         o.map = mapname;
     }
-    else    
+    else
     {
         o = find(world, classname, "trigger_changelevel");
         
@@ -1469,7 +1464,7 @@ void () PlayerDeathThink =
         {
             self.velocity = VEC_ORIGIN;
         }
-        else        
+        else
         {
             self.velocity = forward * normalize(self.velocity);
         }
@@ -1597,13 +1592,13 @@ void () PlayerJump =
         {
             self.velocity_z = 100.000;
         }
-        else        
+        else
         {
             if(self.watertype == CONTENT_SLIME)
             {
                 self.velocity_z = 80.000;
             }
-            else            
+            else
             {
                 self.velocity_z = 50.000;
             }
@@ -1618,7 +1613,7 @@ void () PlayerJump =
             {
                 sound(self, CHAN_BODY, "misc/water1.wav", WEAPON_SHOTGUN, ATTN_NORM);
             }
-            else            
+            else
             {
                 sound(self, CHAN_BODY, "misc/water2.wav", WEAPON_SHOTGUN, ATTN_NORM);
             }
@@ -1842,7 +1837,7 @@ void () WaterMove =
         {
             sound(self, CHAN_VOICE, "player/gasp2.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
-        else        
+        else
         {
             
             if(self.air_finished < (time + TE_LIGHTNING3))
@@ -1855,7 +1850,7 @@ void () WaterMove =
         self.air_finished = time + 12.000;
         self.dmg = WEAPON_ROCKET;
     }
-    else    
+    else
     {
         
         if(self.air_finished < time)
@@ -1900,7 +1895,7 @@ void () WaterMove =
             {
                 self.dmgtime = time + WEAPON_SHOTGUN;
             }
-            else            
+            else
             {
                 self.dmgtime = time + 0.200;
             }
@@ -1909,7 +1904,7 @@ void () WaterMove =
         }
         
     }
-    else    
+    else
     {
         
         if(self.watertype == CONTENT_SLIME)
@@ -2144,7 +2139,7 @@ void () PlayerPreThink =
     {
         PlayerJump();
     }
-    else    
+    else
     {
         self.flags = self.flags | FL_JUMPRELEASED;
     }
@@ -2449,7 +2444,7 @@ void () CheckPowerups =
         self.frame = MSG_BROADCAST;
         self.modelindex = modelindex_eyes;
     }
-    else    
+    else
     {
         self.modelindex = modelindex_player;
     }
@@ -2490,7 +2485,7 @@ void () CheckPowerups =
         {
             self.effects = self.effects | EF_DIMLIGHT;
         }
-        else        
+        else
         {
             self.effects = self.effects - (self.effects & EF_DIMLIGHT);
         }
@@ -2533,7 +2528,7 @@ void () CheckPowerups =
         {
             self.effects = self.effects | EF_DIMLIGHT;
         }
-        else        
+        else
         {
             self.effects = self.effects - (self.effects & EF_DIMLIGHT);
         }
@@ -2665,7 +2660,7 @@ void () PlayerPostThink =
         {
             sound(self, CHAN_BODY, "player/h2ojump.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
-        else        
+        else
         {
             if(self.jump_flag < -650.000)
             {
@@ -2673,7 +2668,7 @@ void () PlayerPostThink =
                 sound(self, CHAN_VOICE, "player/land2.wav", WEAPON_SHOTGUN, ATTN_NORM);
                 self.deathtype = "falling";
             }
-            else            
+            else
             {
                 sound(self, CHAN_VOICE, "player/land.wav", WEAPON_SHOTGUN, ATTN_NORM);
             }
@@ -3153,14 +3148,14 @@ void (entity targ, entity attacker) ClientObituary =
                 {
                     bprint(" tries to put the pin back in\n");
                 }
-                else                
+                else
                 {
                     bprint(" becomes bored with life\n");
                 }
                 
                 return;
             }
-            else            
+            else
             {
                 if(((teamplay == WEAPON_ROCKET) && (targ.team > MSG_BROADCAST)) && (targ.team == attacker.team))
                 {
@@ -3168,17 +3163,25 @@ void (entity targ, entity attacker) ClientObituary =
                     {
                         deathstring = " mows down a teammate\n";
                     }
-                    else if(rnum < 0.500)
+                    else
                     {
-                        deathstring = " checks his glasses\n";
-                    }
-                    else if(rnum < 0.750)
-                    {
-                        deathstring = " gets a frag for the other team\n";
-                    }
-                    else                    
-                    {
-                        deathstring = " loses another friend\n";
+                        if(rnum < 0.500)
+                        {
+                            deathstring = " checks his glasses\n";
+                        }
+                        else
+                        {
+                            if(rnum < 0.750)
+                            {
+                                deathstring = " gets a frag for the other team\n";
+                            }
+                            else
+                            {
+                                deathstring = " loses another friend\n";
+                            }
+                            
+                        }
+                        
                     }
                     
                     bprint(attacker.netname);
@@ -3186,7 +3189,7 @@ void (entity targ, entity attacker) ClientObituary =
                     attacker.frags = attacker.frags - WEAPON_SHOTGUN;
                     return;
                 }
-                else                
+                else
                 {
                     attacker.frags = attacker.frags + WEAPON_SHOTGUN;
                     rnum = attacker.weapon;
@@ -3261,7 +3264,7 @@ void (entity targ, entity attacker) ClientObituary =
                         {
                             deathstring2 = "'s discharge\n";
                         }
-                        else                        
+                        else
                         {
                             deathstring2 = "'s shaft\n";
                         }
@@ -3278,7 +3281,7 @@ void (entity targ, entity attacker) ClientObituary =
             
             return;
         }
-        else        
+        else
         {
             targ.frags = targ.frags - WEAPON_SHOTGUN;
             bprint(targ.netname);
@@ -3426,46 +3429,54 @@ void (entity targ, entity attacker) ClientObituary =
                 {
                     bprint(" sleeps with the fishes\n");
                 }
-                else                
+                else
                 {
                     bprint(" sucks it down\n");
                 }
                 
                 return;
             }
-            else if(rnum == CONTENT_SLIME)
+            else
             {
-                if(random() < 0.500)
+                if(rnum == CONTENT_SLIME)
                 {
-                    bprint(" gulped a load of slime\n");
-                }
-                else                
-                {
-                    bprint(" can't exist on slime alone\n");
-                }
-                
-                return;
-            }
-            else            
- if(rnum == CONTENT_LAVA)
-            {
-                
-                if(targ.health < -15.000)
-                {
-                    bprint(" burst into flames\n");
+                    if(random() < 0.500)
+                    {
+                        bprint(" gulped a load of slime\n");
+                    }
+                    else
+                    {
+                        bprint(" can't exist on slime alone\n");
+                    }
+                    
                     return;
                 }
-                
-                if(random() < 0.500)
+                else
                 {
-                    bprint(" turned into hot slag\n");
-                }
-                else                
-                {
-                    bprint(" visits the Volcano God\n");
+                    
+                    if(rnum == CONTENT_LAVA)
+                    {
+                        
+                        if(targ.health < -15.000)
+                        {
+                            bprint(" burst into flames\n");
+                            return;
+                        }
+                        
+                        if(random() < 0.500)
+                        {
+                            bprint(" turned into hot slag\n");
+                        }
+                        else
+                        {
+                            bprint(" visits the Volcano God\n");
+                        }
+                        
+                        return;
+                    }
+                    
                 }
                 
-                return;
             }
             
             

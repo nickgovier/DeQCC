@@ -1034,13 +1034,17 @@ void () sham_melee =
     {
         sham_smash1();
     }
-    else if(chance > 0.300)
+    else
     {
-        sham_swingr1();
-    }
-    else    
-    {
-        sham_swingl1();
+        if(chance > 0.300)
+        {
+            sham_swingr1();
+        }
+        else
+        {
+            sham_swingl1();
+        }
+        
     }
     
 };

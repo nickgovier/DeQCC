@@ -42,7 +42,7 @@ void () knight_attack =
     {
         knight_atk1();
     }
-    else    
+    else
     {
         knight_runatk1();
     }
@@ -162,9 +162,9 @@ float () CheckAttack =
             {
                 knight_attack();
             }
-            else            
+            else
             {
-                self.th_melee();
+                func000000();
             }
             
             return TRUE;
@@ -195,39 +195,47 @@ float () CheckAttack =
         chance = 0.900;
         self.attack_finished = MSG_BROADCAST;
     }
-    else if(enemy_range == RANGE_NEAR)
+    else
     {
-        if(self.th_melee)
+        if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.200;
+            if(self.th_melee)
+            {
+                chance = 0.200;
+            }
+            else
+            {
+                chance = 0.400;
+            }
+            
         }
-        else        
+        else
         {
-            chance = 0.400;
+            if(enemy_range == RANGE_MID)
+            {
+                if(self.th_melee)
+                {
+                    chance = 0.050;
+                }
+                else
+                {
+                    chance = 0.100;
+                }
+                
+            }
+            else
+            {
+                chance = MSG_BROADCAST;
+            }
+            
         }
         
-    }
-    else if(enemy_range == RANGE_MID)
-    {
-        if(self.th_melee)
-        {
-            chance = 0.050;
-        }
-        else        
-        {
-            chance = 0.100;
-        }
-        
-    }
-    else    
-    {
-        chance = MSG_BROADCAST;
     }
     
     
     if(random() < chance)
     {
-        self.th_missile();
+        func000000();
         SUB_AttackFinished(AS_SLIDING * random());
         return TRUE;
     }
@@ -526,23 +534,31 @@ float () SoldierCheckAttack =
     {
         chance = 0.900;
     }
-    else if(enemy_range == RANGE_NEAR)
+    else
     {
-        chance = 0.400;
-    }
-    else if(enemy_range == RANGE_MID)
-    {
-        chance = 0.050;
-    }
-    else    
-    {
-        chance = MSG_BROADCAST;
+        if(enemy_range == RANGE_NEAR)
+        {
+            chance = 0.400;
+        }
+        else
+        {
+            if(enemy_range == RANGE_MID)
+            {
+                chance = 0.050;
+            }
+            else
+            {
+                chance = MSG_BROADCAST;
+            }
+            
+        }
+        
     }
     
     
     if(random() < chance)
     {
-        self.th_missile();
+        func000000();
         SUB_AttackFinished(AS_STRAIGHT + random());
         
         if(random() < 0.300)
@@ -799,17 +815,25 @@ float () OgreCheckAttack =
     {
         return FALSE;
     }
-    else if(enemy_range == RANGE_NEAR)
+    else
     {
-        chance = 0.100;
-    }
-    else if(enemy_range == RANGE_MID)
-    {
-        chance = 0.050;
-    }
-    else    
-    {
-        chance = MSG_BROADCAST;
+        if(enemy_range == RANGE_NEAR)
+        {
+            chance = 0.100;
+        }
+        else
+        {
+            if(enemy_range == RANGE_MID)
+            {
+                chance = 0.050;
+            }
+            else
+            {
+                chance = MSG_BROADCAST;
+            }
+            
+        }
+        
     }
     
     self.attack_state = AS_MISSILE;

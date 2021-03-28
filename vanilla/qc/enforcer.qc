@@ -81,7 +81,7 @@ void () Laser_Touch =
         SpawnBlood(org, self.velocity * 0.200, 15.000);
         T_Damage(other, self, self.owner, 15.000);
     }
-    else    
+    else
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
@@ -1160,7 +1160,7 @@ void (entity attacker, float damage) enf_pain =
     {
         sound(self, CHAN_VOICE, "enforcer/pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
-    else    
+    else
     {
         sound(self, CHAN_VOICE, "enforcer/pain2.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     }
@@ -1170,20 +1170,28 @@ void (entity attacker, float damage) enf_pain =
         self.pain_finished = time + SPAWN_CRUCIFIED;
         enf_paina1();
     }
-    else if(r < 0.400)
+    else
     {
-        self.pain_finished = time + SPAWN_CRUCIFIED;
-        enf_painb1();
-    }
-    else if(r < 0.700)
-    {
-        self.pain_finished = time + SPAWN_CRUCIFIED;
-        enf_painc1();
-    }
-    else    
-    {
-        self.pain_finished = time + SPAWNFLAG_LASER;
-        enf_paind1();
+        if(r < 0.400)
+        {
+            self.pain_finished = time + SPAWN_CRUCIFIED;
+            enf_painb1();
+        }
+        else
+        {
+            if(r < 0.700)
+            {
+                self.pain_finished = time + SPAWN_CRUCIFIED;
+                enf_painc1();
+            }
+            else
+            {
+                self.pain_finished = time + SPAWNFLAG_LASER;
+                enf_paind1();
+            }
+            
+        }
+        
     }
     
 };
@@ -1506,7 +1514,7 @@ void () enf_die =
     {
         enf_die1();
     }
-    else    
+    else
     {
         enf_fdie1();
     }

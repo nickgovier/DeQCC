@@ -208,17 +208,25 @@ float () WizardCheckAttack =
     {
         chance = 0.900;
     }
-    else if(enemy_range == RANGE_NEAR)
+    else
     {
-        chance = 0.600;
-    }
-    else if(enemy_range == RANGE_MID)
-    {
-        chance = 0.200;
-    }
-    else    
-    {
-        chance = MSG_BROADCAST;
+        if(enemy_range == RANGE_NEAR)
+        {
+            chance = 0.600;
+        }
+        else
+        {
+            if(enemy_range == RANGE_MID)
+            {
+                chance = 0.200;
+            }
+            else
+            {
+                chance = MSG_BROADCAST;
+            }
+            
+        }
+        
     }
     
     
@@ -238,7 +246,7 @@ float () WizardCheckAttack =
         }
         
     }
-    else    
+    else
     {
         
         if(self.attack_state != AS_SLIDING)
@@ -275,7 +283,7 @@ void () WizardAttackFinished =
         self.attack_state = AS_STRAIGHT;
         self.think = wiz_run1;
     }
-    else    
+    else
     {
         self.attack_state = AS_SLIDING;
         self.think = wiz_side1;
@@ -1158,7 +1166,7 @@ void () wiz_pain4 =
 void () wiz_death1 =
 {
     *** UNPROCESSED OPCODE OP_STATE 5452 9198 0
-    self.velocity = -200.000 + (400.000 * random());
+    self.velocity_x = -200.000 + (400.000 * random());
     self.velocity_y = -200.000 + (400.000 * random());
     self.velocity_z = 100.000 + (100.000 * random());
     self.flags = self.flags - (self.flags & FL_ONGROUND);

@@ -1305,7 +1305,7 @@ void (vector p) boss_missile =
         vec_z = MSG_BROADCAST;
         d = self.enemy.origin + (t * vec);
     }
-    else    
+    else
     {
         d = self.enemy.origin;
     }
@@ -1383,7 +1383,7 @@ void () boss_awake =
     {
         self.health = SPAWN_CRUCIFIED;
     }
-    else    
+    else
     {
         self.health = AS_MELEE;
     }
@@ -1687,13 +1687,13 @@ void () lightning_use =
         {
             boss_shocka1();
         }
-        else        
+        else
         {
             if(self.health == SPAWN_CRUCIFIED)
             {
                 boss_shockb1();
             }
-            else            
+            else
             {
                 
                 if(self.health == MSG_BROADCAST)
