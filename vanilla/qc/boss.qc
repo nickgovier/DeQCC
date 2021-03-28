@@ -27,7 +27,7 @@ void (vector p) boss_missile;
 // OP_STOREP_ENT	1	9931	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () boss_face =
+void () boss_face = 
 {
     
     if((self.enemy.health <= MSG_BROADCAST) || (random() < 0.020))
@@ -54,9 +54,8 @@ void () boss_face =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () boss_rise1 =
+void () boss_rise1 = [0.000, boss_rise2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 9934 0
     sound(self, CHAN_WEAPON, "boss1/out1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
 
@@ -70,9 +69,8 @@ void () boss_rise1 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () boss_rise2 =
+void () boss_rise2 = [1.000, boss_rise3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9491 9936 0
     sound(self, CHAN_VOICE, "boss1/sight1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
 
@@ -80,144 +78,128 @@ void () boss_rise2 =
 // function begins at statement 17198, parm_start=9938
 // OP_STATE	7369	9938	0
 // OP_DONE	0	0	0
-void () boss_rise3 =
+void () boss_rise3 = [2.000, boss_rise4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 9938 0
 };
 
 // boss_rise4
 // function begins at statement 17200, parm_start=9939
 // OP_STATE	370	9939	0
 // OP_DONE	0	0	0
-void () boss_rise4 =
+void () boss_rise4 = [3.000, boss_rise5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 9939 0
 };
 
 // boss_rise5
 // function begins at statement 17202, parm_start=9940
 // OP_STATE	6076	9940	0
 // OP_DONE	0	0	0
-void () boss_rise5 =
+void () boss_rise5 = [4.000, boss_rise6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 9940 0
 };
 
 // boss_rise6
 // function begins at statement 17204, parm_start=9941
 // OP_STATE	313	9941	0
 // OP_DONE	0	0	0
-void () boss_rise6 =
+void () boss_rise6 = [5.000, boss_rise7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 9941 0
 };
 
 // boss_rise7
 // function begins at statement 17206, parm_start=9942
 // OP_STATE	314	9942	0
 // OP_DONE	0	0	0
-void () boss_rise7 =
+void () boss_rise7 = [6.000, boss_rise8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 9942 0
 };
 
 // boss_rise8
 // function begins at statement 17208, parm_start=9943
 // OP_STATE	315	9943	0
 // OP_DONE	0	0	0
-void () boss_rise8 =
+void () boss_rise8 = [7.000, boss_rise9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 9943 0
 };
 
 // boss_rise9
 // function begins at statement 17210, parm_start=9944
 // OP_STATE	6077	9944	0
 // OP_DONE	0	0	0
-void () boss_rise9 =
+void () boss_rise9 = [8.000, boss_rise10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 9944 0
 };
 
 // boss_rise10
 // function begins at statement 17212, parm_start=9945
 // OP_STATE	317	9945	0
 // OP_DONE	0	0	0
-void () boss_rise10 =
+void () boss_rise10 = [9.000, boss_rise11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 9945 0
 };
 
 // boss_rise11
 // function begins at statement 17214, parm_start=9946
 // OP_STATE	318	9946	0
 // OP_DONE	0	0	0
-void () boss_rise11 =
+void () boss_rise11 = [10.000, boss_rise12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 9946 0
 };
 
 // boss_rise12
 // function begins at statement 17216, parm_start=9947
 // OP_STATE	319	9947	0
 // OP_DONE	0	0	0
-void () boss_rise12 =
+void () boss_rise12 = [11.000, boss_rise13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 9947 0
 };
 
 // boss_rise13
 // function begins at statement 17218, parm_start=9948
 // OP_STATE	2250	9948	0
 // OP_DONE	0	0	0
-void () boss_rise13 =
+void () boss_rise13 = [12.000, boss_rise14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 9948 0
 };
 
 // boss_rise14
 // function begins at statement 17220, parm_start=9949
 // OP_STATE	7768	9949	0
 // OP_DONE	0	0	0
-void () boss_rise14 =
+void () boss_rise14 = [13.000, boss_rise15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 9949 0
 };
 
 // boss_rise15
 // function begins at statement 17222, parm_start=9950
 // OP_STATE	2901	9950	0
 // OP_DONE	0	0	0
-void () boss_rise15 =
+void () boss_rise15 = [14.000, boss_rise16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 9950 0
 };
 
 // boss_rise16
 // function begins at statement 17224, parm_start=9951
 // OP_STATE	1876	9951	0
 // OP_DONE	0	0	0
-void () boss_rise16 =
+void () boss_rise16 = [15.000, boss_rise17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 9951 0
 };
 
 // boss_rise17
 // function begins at statement 17226, parm_start=9952
 // OP_STATE	6078	9952	0
 // OP_DONE	0	0	0
-void () boss_rise17 =
+void () boss_rise17 = [16.000, boss_missile1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 9952 0
 };
 
 // boss_idle1
 // function begins at statement 17228, parm_start=9954
 // OP_STATE	4861	9954	0
 // OP_DONE	0	0	0
-void () boss_idle1 =
+void () boss_idle1 = [17.000, boss_idle2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 9954 0
 };
 
 // boss_idle2
@@ -225,9 +207,8 @@ void () boss_idle1 =
 // OP_STATE	3319	9955	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle2 =
+void () boss_idle2 = [18.000, boss_idle3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 9955 0
     boss_face();
 };
 
@@ -236,9 +217,8 @@ void () boss_idle2 =
 // OP_STATE	7776	9956	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle3 =
+void () boss_idle3 = [19.000, boss_idle4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 9956 0
     boss_face();
 };
 
@@ -247,9 +227,8 @@ void () boss_idle3 =
 // OP_STATE	894	9957	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle4 =
+void () boss_idle4 = [20.000, boss_idle5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 9957 0
     boss_face();
 };
 
@@ -258,9 +237,8 @@ void () boss_idle4 =
 // OP_STATE	7779	9958	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle5 =
+void () boss_idle5 = [21.000, boss_idle6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 9958 0
     boss_face();
 };
 
@@ -269,9 +247,8 @@ void () boss_idle5 =
 // OP_STATE	7781	9959	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle6 =
+void () boss_idle6 = [22.000, boss_idle7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 9959 0
     boss_face();
 };
 
@@ -280,9 +257,8 @@ void () boss_idle6 =
 // OP_STATE	301	9960	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle7 =
+void () boss_idle7 = [23.000, boss_idle8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 9960 0
     boss_face();
 };
 
@@ -291,9 +267,8 @@ void () boss_idle7 =
 // OP_STATE	4437	9961	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle8 =
+void () boss_idle8 = [24.000, boss_idle9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 9961 0
     boss_face();
 };
 
@@ -302,9 +277,8 @@ void () boss_idle8 =
 // OP_STATE	1890	9962	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle9 =
+void () boss_idle9 = [25.000, boss_idle10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 9962 0
     boss_face();
 };
 
@@ -313,9 +287,8 @@ void () boss_idle9 =
 // OP_STATE	7788	9963	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle10 =
+void () boss_idle10 = [26.000, boss_idle11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 9963 0
     boss_face();
 };
 
@@ -324,9 +297,8 @@ void () boss_idle10 =
 // OP_STATE	302	9964	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle11 =
+void () boss_idle11 = [27.000, boss_idle12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 9964 0
     boss_face();
 };
 
@@ -335,9 +307,8 @@ void () boss_idle11 =
 // OP_STATE	303	9965	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle12 =
+void () boss_idle12 = [28.000, boss_idle13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 9965 0
     boss_face();
 };
 
@@ -346,9 +317,8 @@ void () boss_idle12 =
 // OP_STATE	5105	9966	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle13 =
+void () boss_idle13 = [29.000, boss_idle14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 9966 0
     boss_face();
 };
 
@@ -357,9 +327,8 @@ void () boss_idle13 =
 // OP_STATE	304	9967	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle14 =
+void () boss_idle14 = [30.000, boss_idle15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 9967 0
     boss_face();
 };
 
@@ -368,9 +337,8 @@ void () boss_idle14 =
 // OP_STATE	305	9968	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle15 =
+void () boss_idle15 = [31.000, boss_idle16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 9968 0
     boss_face();
 };
 
@@ -379,9 +347,8 @@ void () boss_idle15 =
 // OP_STATE	5674	9969	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle16 =
+void () boss_idle16 = [32.000, boss_idle17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 9969 0
     boss_face();
 };
 
@@ -390,9 +357,8 @@ void () boss_idle16 =
 // OP_STATE	307	9970	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle17 =
+void () boss_idle17 = [33.000, boss_idle18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 9970 0
     boss_face();
 };
 
@@ -401,9 +367,8 @@ void () boss_idle17 =
 // OP_STATE	5112	9971	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle18 =
+void () boss_idle18 = [34.000, boss_idle19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 9971 0
     boss_face();
 };
 
@@ -412,9 +377,8 @@ void () boss_idle18 =
 // OP_STATE	3072	9972	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle19 =
+void () boss_idle19 = [35.000, boss_idle20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 9972 0
     boss_face();
 };
 
@@ -423,9 +387,8 @@ void () boss_idle19 =
 // OP_STATE	5096	9973	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle20 =
+void () boss_idle20 = [36.000, boss_idle21]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 9973 0
     boss_face();
 };
 
@@ -434,9 +397,8 @@ void () boss_idle20 =
 // OP_STATE	5098	9974	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle21 =
+void () boss_idle21 = [37.000, boss_idle22]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 9974 0
     boss_face();
 };
 
@@ -445,9 +407,8 @@ void () boss_idle21 =
 // OP_STATE	5100	9975	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle22 =
+void () boss_idle22 = [38.000, boss_idle23]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 9975 0
     boss_face();
 };
 
@@ -456,9 +417,8 @@ void () boss_idle22 =
 // OP_STATE	5102	9976	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle23 =
+void () boss_idle23 = [39.000, boss_idle24]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5102 9976 0
     boss_face();
 };
 
@@ -467,9 +427,8 @@ void () boss_idle23 =
 // OP_STATE	1733	9977	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle24 =
+void () boss_idle24 = [40.000, boss_idle25]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1733 9977 0
     boss_face();
 };
 
@@ -478,9 +437,8 @@ void () boss_idle24 =
 // OP_STATE	5443	9978	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle25 =
+void () boss_idle25 = [41.000, boss_idle26]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5443 9978 0
     boss_face();
 };
 
@@ -489,9 +447,8 @@ void () boss_idle25 =
 // OP_STATE	5445	9979	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle26 =
+void () boss_idle26 = [42.000, boss_idle27]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5445 9979 0
     boss_face();
 };
 
@@ -500,9 +457,8 @@ void () boss_idle26 =
 // OP_STATE	5447	9980	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle27 =
+void () boss_idle27 = [43.000, boss_idle28]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5447 9980 0
     boss_face();
 };
 
@@ -511,9 +467,8 @@ void () boss_idle27 =
 // OP_STATE	5449	9981	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle28 =
+void () boss_idle28 = [44.000, boss_idle29]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5449 9981 0
     boss_face();
 };
 
@@ -522,9 +477,8 @@ void () boss_idle28 =
 // OP_STATE	1390	9982	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle29 =
+void () boss_idle29 = [45.000, boss_idle30]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1390 9982 0
     boss_face();
 };
 
@@ -533,9 +487,8 @@ void () boss_idle29 =
 // OP_STATE	5452	9983	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle30 =
+void () boss_idle30 = [46.000, boss_idle31]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5452 9983 0
     boss_face();
 };
 
@@ -544,9 +497,8 @@ void () boss_idle30 =
 // OP_STATE	5454	9953	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_idle31 =
+void () boss_idle31 = [47.000, boss_idle1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5454 9953 0
     boss_face();
 };
 
@@ -555,9 +507,8 @@ void () boss_idle31 =
 // OP_STATE	5363	9984	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile1 =
+void () boss_missile1 = [57.000, boss_missile2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5363 9984 0
     boss_face();
 };
 
@@ -566,9 +517,8 @@ void () boss_missile1 =
 // OP_STATE	5365	9985	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile2 =
+void () boss_missile2 = [58.000, boss_missile3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5365 9985 0
     boss_face();
 };
 
@@ -577,9 +527,8 @@ void () boss_missile2 =
 // OP_STATE	5367	9986	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile3 =
+void () boss_missile3 = [59.000, boss_missile4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5367 9986 0
     boss_face();
 };
 
@@ -588,9 +537,8 @@ void () boss_missile3 =
 // OP_STATE	912	9987	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile4 =
+void () boss_missile4 = [60.000, boss_missile5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 9987 0
     boss_face();
 };
 
@@ -599,9 +547,8 @@ void () boss_missile4 =
 // OP_STATE	5369	9988	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile5 =
+void () boss_missile5 = [61.000, boss_missile6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5369 9988 0
     boss_face();
 };
 
@@ -610,9 +557,8 @@ void () boss_missile5 =
 // OP_STATE	5371	9989	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile6 =
+void () boss_missile6 = [62.000, boss_missile7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5371 9989 0
     boss_face();
 };
 
@@ -621,9 +567,8 @@ void () boss_missile6 =
 // OP_STATE	3872	9990	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile7 =
+void () boss_missile7 = [63.000, boss_missile8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3872 9990 0
     boss_face();
 };
 
@@ -632,9 +577,8 @@ void () boss_missile7 =
 // OP_STATE	260	9991	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile8 =
+void () boss_missile8 = [64.000, boss_missile9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 260 9991 0
     boss_face();
 };
 
@@ -644,9 +588,8 @@ void () boss_missile8 =
 // OP_STORE_V	9993	4	0
 // OP_CALL1	9920	0	0
 // OP_DONE	0	0	0
-void () boss_missile9 =
+void () boss_missile9 = [65.000, boss_missile10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5375 9992 0
     boss_missile('100.000 100.000 200.000');
 };
 
@@ -655,9 +598,8 @@ void () boss_missile9 =
 // OP_STATE	5377	9996	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile10 =
+void () boss_missile10 = [66.000, boss_missile11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5377 9996 0
     boss_face();
 };
 
@@ -666,9 +608,8 @@ void () boss_missile10 =
 // OP_STATE	5379	9997	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile11 =
+void () boss_missile11 = [67.000, boss_missile12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5379 9997 0
     boss_face();
 };
 
@@ -677,9 +618,8 @@ void () boss_missile11 =
 // OP_STATE	5381	9998	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile12 =
+void () boss_missile12 = [68.000, boss_missile13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5381 9998 0
     boss_face();
 };
 
@@ -688,9 +628,8 @@ void () boss_missile12 =
 // OP_STATE	5383	9999	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile13 =
+void () boss_missile13 = [69.000, boss_missile14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5383 9999 0
     boss_face();
 };
 
@@ -699,9 +638,8 @@ void () boss_missile13 =
 // OP_STATE	5384	10000	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile14 =
+void () boss_missile14 = [70.000, boss_missile15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5384 10000 0
     boss_face();
 };
 
@@ -710,9 +648,8 @@ void () boss_missile14 =
 // OP_STATE	5386	10001	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile15 =
+void () boss_missile15 = [71.000, boss_missile16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5386 10001 0
     boss_face();
 };
 
@@ -721,9 +658,8 @@ void () boss_missile15 =
 // OP_STATE	5388	10002	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile16 =
+void () boss_missile16 = [72.000, boss_missile17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5388 10002 0
     boss_face();
 };
 
@@ -732,9 +668,8 @@ void () boss_missile16 =
 // OP_STATE	2739	10003	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile17 =
+void () boss_missile17 = [73.000, boss_missile18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2739 10003 0
     boss_face();
 };
 
@@ -743,9 +678,8 @@ void () boss_missile17 =
 // OP_STATE	5391	10004	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile18 =
+void () boss_missile18 = [74.000, boss_missile19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5391 10004 0
     boss_face();
 };
 
@@ -754,9 +688,8 @@ void () boss_missile18 =
 // OP_STATE	5393	10005	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile19 =
+void () boss_missile19 = [75.000, boss_missile20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5393 10005 0
     boss_face();
 };
 
@@ -766,9 +699,8 @@ void () boss_missile19 =
 // OP_STORE_V	10007	4	0
 // OP_CALL1	9920	0	0
 // OP_DONE	0	0	0
-void () boss_missile20 =
+void () boss_missile20 = [76.000, boss_missile21]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5395 10006 0
     boss_missile('100.000 -100.000 200.000');
 };
 
@@ -777,9 +709,8 @@ void () boss_missile20 =
 // OP_STATE	5397	10010	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile21 =
+void () boss_missile21 = [77.000, boss_missile22]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5397 10010 0
     boss_face();
 };
 
@@ -788,9 +719,8 @@ void () boss_missile21 =
 // OP_STATE	5399	10011	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile22 =
+void () boss_missile22 = [78.000, boss_missile23]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5399 10011 0
     boss_face();
 };
 
@@ -799,9 +729,8 @@ void () boss_missile22 =
 // OP_STATE	5401	9952	0
 // OP_CALL0	9921	0	0
 // OP_DONE	0	0	0
-void () boss_missile23 =
+void () boss_missile23 = [79.000, boss_missile1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5401 9952 0
     boss_face();
 };
 
@@ -809,270 +738,240 @@ void () boss_missile23 =
 // function begins at statement 17391, parm_start=10013
 // OP_STATE	788	10013	0
 // OP_DONE	0	0	0
-void () boss_shocka1 =
+void () boss_shocka1 = [80.000, boss_shocka2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 788 10013 0
 };
 
 // boss_shocka2
 // function begins at statement 17393, parm_start=10014
 // OP_STATE	5404	10014	0
 // OP_DONE	0	0	0
-void () boss_shocka2 =
+void () boss_shocka2 = [81.000, boss_shocka3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5404 10014 0
 };
 
 // boss_shocka3
 // function begins at statement 17395, parm_start=10015
 // OP_STATE	5406	10015	0
 // OP_DONE	0	0	0
-void () boss_shocka3 =
+void () boss_shocka3 = [82.000, boss_shocka4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5406 10015 0
 };
 
 // boss_shocka4
 // function begins at statement 17397, parm_start=10016
 // OP_STATE	5408	10016	0
 // OP_DONE	0	0	0
-void () boss_shocka4 =
+void () boss_shocka4 = [83.000, boss_shocka5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5408 10016 0
 };
 
 // boss_shocka5
 // function begins at statement 17399, parm_start=10017
 // OP_STATE	5410	10017	0
 // OP_DONE	0	0	0
-void () boss_shocka5 =
+void () boss_shocka5 = [84.000, boss_shocka6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5410 10017 0
 };
 
 // boss_shocka6
 // function begins at statement 17401, parm_start=10018
 // OP_STATE	5411	10018	0
 // OP_DONE	0	0	0
-void () boss_shocka6 =
+void () boss_shocka6 = [85.000, boss_shocka7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5411 10018 0
 };
 
 // boss_shocka7
 // function begins at statement 17403, parm_start=10019
 // OP_STATE	5413	10019	0
 // OP_DONE	0	0	0
-void () boss_shocka7 =
+void () boss_shocka7 = [86.000, boss_shocka8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5413 10019 0
 };
 
 // boss_shocka8
 // function begins at statement 17405, parm_start=10020
 // OP_STATE	5415	10020	0
 // OP_DONE	0	0	0
-void () boss_shocka8 =
+void () boss_shocka8 = [87.000, boss_shocka9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5415 10020 0
 };
 
 // boss_shocka9
 // function begins at statement 17407, parm_start=10021
 // OP_STATE	5417	10021	0
 // OP_DONE	0	0	0
-void () boss_shocka9 =
+void () boss_shocka9 = [88.000, boss_shocka10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5417 10021 0
 };
 
 // boss_shocka10
 // function begins at statement 17409, parm_start=10022
 // OP_STATE	5419	9952	0
 // OP_DONE	0	0	0
-void () boss_shocka10 =
+void () boss_shocka10 = [89.000, boss_missile1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5419 9952 0
 };
 
 // boss_shockb1
 // function begins at statement 17411, parm_start=10023
 // OP_STATE	1423	10023	0
 // OP_DONE	0	0	0
-void () boss_shockb1 =
+void () boss_shockb1 = [90.000, boss_shockb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1423 10023 0
 };
 
 // boss_shockb2
 // function begins at statement 17413, parm_start=10024
 // OP_STATE	5422	10024	0
 // OP_DONE	0	0	0
-void () boss_shockb2 =
+void () boss_shockb2 = [91.000, boss_shockb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5422 10024 0
 };
 
 // boss_shockb3
 // function begins at statement 17415, parm_start=10025
 // OP_STATE	5424	10025	0
 // OP_DONE	0	0	0
-void () boss_shockb3 =
+void () boss_shockb3 = [92.000, boss_shockb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5424 10025 0
 };
 
 // boss_shockb4
 // function begins at statement 17417, parm_start=10026
 // OP_STATE	5426	10026	0
 // OP_DONE	0	0	0
-void () boss_shockb4 =
+void () boss_shockb4 = [93.000, boss_shockb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5426 10026 0
 };
 
 // boss_shockb5
 // function begins at statement 17419, parm_start=10027
 // OP_STATE	5427	10027	0
 // OP_DONE	0	0	0
-void () boss_shockb5 =
+void () boss_shockb5 = [94.000, boss_shockb6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5427 10027 0
 };
 
 // boss_shockb6
 // function begins at statement 17421, parm_start=10028
 // OP_STATE	5429	10028	0
 // OP_DONE	0	0	0
-void () boss_shockb6 =
+void () boss_shockb6 = [95.000, boss_shockb7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5429 10028 0
 };
 
 // boss_shockb7
 // function begins at statement 17423, parm_start=10029
 // OP_STATE	1423	10029	0
 // OP_DONE	0	0	0
-void () boss_shockb7 =
+void () boss_shockb7 = [90.000, boss_shockb8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1423 10029 0
 };
 
 // boss_shockb8
 // function begins at statement 17425, parm_start=10030
 // OP_STATE	5422	10030	0
 // OP_DONE	0	0	0
-void () boss_shockb8 =
+void () boss_shockb8 = [91.000, boss_shockb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5422 10030 0
 };
 
 // boss_shockb9
 // function begins at statement 17427, parm_start=10031
 // OP_STATE	5424	10031	0
 // OP_DONE	0	0	0
-void () boss_shockb9 =
+void () boss_shockb9 = [92.000, boss_shockb10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5424 10031 0
 };
 
 // boss_shockb10
 // function begins at statement 17429, parm_start=10032
 // OP_STATE	5426	9952	0
 // OP_DONE	0	0	0
-void () boss_shockb10 =
+void () boss_shockb10 = [93.000, boss_missile1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5426 9952 0
 };
 
 // boss_shockc1
 // function begins at statement 17431, parm_start=10033
 // OP_STATE	5431	10033	0
 // OP_DONE	0	0	0
-void () boss_shockc1 =
+void () boss_shockc1 = [96.000, boss_shockc2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5431 10033 0
 };
 
 // boss_shockc2
 // function begins at statement 17433, parm_start=10034
 // OP_STATE	5433	10034	0
 // OP_DONE	0	0	0
-void () boss_shockc2 =
+void () boss_shockc2 = [97.000, boss_shockc3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5433 10034 0
 };
 
 // boss_shockc3
 // function begins at statement 17435, parm_start=10035
 // OP_STATE	5435	10035	0
 // OP_DONE	0	0	0
-void () boss_shockc3 =
+void () boss_shockc3 = [98.000, boss_shockc4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5435 10035 0
 };
 
 // boss_shockc4
 // function begins at statement 17437, parm_start=10036
 // OP_STATE	5437	10036	0
 // OP_DONE	0	0	0
-void () boss_shockc4 =
+void () boss_shockc4 = [99.000, boss_shockc5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5437 10036 0
 };
 
 // boss_shockc5
 // function begins at statement 17439, parm_start=10037
 // OP_STATE	1884	10037	0
 // OP_DONE	0	0	0
-void () boss_shockc5 =
+void () boss_shockc5 = [100.000, boss_shockc6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1884 10037 0
 };
 
 // boss_shockc6
 // function begins at statement 17441, parm_start=10038
 // OP_STATE	5440	10038	0
 // OP_DONE	0	0	0
-void () boss_shockc6 =
+void () boss_shockc6 = [101.000, boss_shockc7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5440 10038 0
 };
 
 // boss_shockc7
 // function begins at statement 17443, parm_start=10039
 // OP_STATE	5442	10039	0
 // OP_DONE	0	0	0
-void () boss_shockc7 =
+void () boss_shockc7 = [102.000, boss_shockc8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5442 10039 0
 };
 
 // boss_shockc8
 // function begins at statement 17445, parm_start=10040
 // OP_STATE	4971	10040	0
 // OP_DONE	0	0	0
-void () boss_shockc8 =
+void () boss_shockc8 = [103.000, boss_shockc9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4971 10040 0
 };
 
 // boss_shockc9
 // function begins at statement 17447, parm_start=10041
 // OP_STATE	4986	10041	0
 // OP_DONE	0	0	0
-void () boss_shockc9 =
+void () boss_shockc9 = [104.000, boss_shockc10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4986 10041 0
 };
 
 // boss_shockc10
 // function begins at statement 17449, parm_start=10042
 // OP_STATE	5000	10042	0
 // OP_DONE	0	0	0
-void () boss_shockc10 =
+void () boss_shockc10 = [105.000, boss_death1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5000 10042 0
 };
 
 // boss_death1
@@ -1085,9 +984,8 @@ void () boss_shockc10 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () boss_death1 =
+void () boss_death1 = [48.000, boss_death2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5456 10043 0
     sound(self, CHAN_VOICE, "boss1/death.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
 
@@ -1095,63 +993,56 @@ void () boss_death1 =
 // function begins at statement 17459, parm_start=10045
 // OP_STATE	5458	10045	0
 // OP_DONE	0	0	0
-void () boss_death2 =
+void () boss_death2 = [49.000, boss_death3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5458 10045 0
 };
 
 // boss_death3
 // function begins at statement 17461, parm_start=10046
 // OP_STATE	2227	10046	0
 // OP_DONE	0	0	0
-void () boss_death3 =
+void () boss_death3 = [50.000, boss_death4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2227 10046 0
 };
 
 // boss_death4
 // function begins at statement 17463, parm_start=10047
 // OP_STATE	5351	10047	0
 // OP_DONE	0	0	0
-void () boss_death4 =
+void () boss_death4 = [51.000, boss_death5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5351 10047 0
 };
 
 // boss_death5
 // function begins at statement 17465, parm_start=10048
 // OP_STATE	5353	10048	0
 // OP_DONE	0	0	0
-void () boss_death5 =
+void () boss_death5 = [52.000, boss_death6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5353 10048 0
 };
 
 // boss_death6
 // function begins at statement 17467, parm_start=10049
 // OP_STATE	5355	10049	0
 // OP_DONE	0	0	0
-void () boss_death6 =
+void () boss_death6 = [53.000, boss_death7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 10049 0
 };
 
 // boss_death7
 // function begins at statement 17469, parm_start=10050
 // OP_STATE	5357	10050	0
 // OP_DONE	0	0	0
-void () boss_death7 =
+void () boss_death7 = [54.000, boss_death8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5357 10050 0
 };
 
 // boss_death8
 // function begins at statement 17471, parm_start=10051
 // OP_STATE	5359	10051	0
 // OP_DONE	0	0	0
-void () boss_death8 =
+void () boss_death8 = [55.000, boss_death9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5359 10051 0
 };
 
 // boss_death9
@@ -1182,9 +1073,8 @@ void () boss_death8 =
 // OP_STORE_V	10055	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-void () boss_death9 =
+void () boss_death9 = [56.000, boss_death10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 10052 0
     sound(self, CHAN_BODY, "boss1/out1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LAVASPLASH);
@@ -1205,9 +1095,8 @@ void () boss_death9 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () boss_death10 =
+void () boss_death10 = [56.000, boss_death10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 10052 0
     killed_monsters = killed_monsters + SPAWN_CRUCIFIED;
     WriteByte(MSG_ALL, SVC_KILLEDMONSTER);
     SUB_UseTargets();
@@ -1288,7 +1177,7 @@ void () boss_death10 =
 // OP_IFNOT	10150	2	0
 // OP_CALL0	9953	0	0
 // OP_DONE	0	0	0
-void (vector p) boss_missile =
+void (vector p) boss_missile = 
 {
     local vector offang;
     local vector org;
@@ -1372,7 +1261,7 @@ void (vector p) boss_missile =
 // OP_STOREP_F	894	10169	0
 // OP_CALL0	9933	0	0
 // OP_DONE	0	0	0
-void () boss_awake =
+void () boss_awake = 
 {
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
@@ -1427,7 +1316,7 @@ void () boss_awake =
 // OP_ADDRESS	28	147	10173
 // OP_STOREP_FNC	10151	10173	0
 // OP_DONE	0	0	0
-void () monster_boss =
+void () monster_boss = 
 {
     
     if(deathmatch)
@@ -1516,7 +1405,7 @@ float lightning_end;
 // OP_STORE_V	10183	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-void () lightning_fire =
+void () lightning_fire = 
 {
     local vector p1;
     local vector p2;
@@ -1642,7 +1531,7 @@ void () lightning_fire =
 // OP_IFNOT	10267	2	0
 // OP_CALL0	10032	0	0
 // OP_DONE	0	0	0
-void () lightning_use =
+void () lightning_use = 
 {
     
     if(lightning_end >= (time + SPAWN_CRUCIFIED))
@@ -1714,7 +1603,7 @@ void () lightning_use =
 // OP_ADDRESS	28	147	10269
 // OP_STOREP_FNC	10225	10269	0
 // OP_DONE	0	0	0
-void () event_lightning =
+void () event_lightning = 
 {
     self.use = lightning_use;
 };

@@ -5,9 +5,8 @@ void () ShalMissile;
 // OP_STATE	301	10866	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () shal_stand =
+void () shal_stand = [23.000, shal_stand]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 10866 0
     ai_stand();
 };
 
@@ -26,9 +25,8 @@ void () shal_stand =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk1 =
+void () shal_walk1 = [24.000, shal_walk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 10868 0
     
     if(random() < 0.200)
     {
@@ -44,9 +42,8 @@ void () shal_walk1 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk2 =
+void () shal_walk2 = [25.000, shal_walk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 10871 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -56,9 +53,8 @@ void () shal_walk2 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk3 =
+void () shal_walk3 = [26.000, shal_walk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 10872 0
     ai_walk(MSG_BROADCAST);
 };
 
@@ -68,9 +64,8 @@ void () shal_walk3 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk4 =
+void () shal_walk4 = [27.000, shal_walk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 10873 0
     ai_walk(MSG_BROADCAST);
 };
 
@@ -80,9 +75,8 @@ void () shal_walk4 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk5 =
+void () shal_walk5 = [28.000, shal_walk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 10874 0
     ai_walk(MSG_BROADCAST);
 };
 
@@ -92,9 +86,8 @@ void () shal_walk5 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk6 =
+void () shal_walk6 = [29.000, shal_walk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 10875 0
     ai_walk(MSG_BROADCAST);
 };
 
@@ -104,9 +97,8 @@ void () shal_walk6 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk7 =
+void () shal_walk7 = [30.000, shal_walk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 10876 0
     ai_walk(TE_LIGHTNING1);
 };
 
@@ -116,9 +108,8 @@ void () shal_walk7 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk8 =
+void () shal_walk8 = [31.000, shal_walk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 10877 0
     ai_walk(TE_LIGHTNING2);
 };
 
@@ -128,9 +119,8 @@ void () shal_walk8 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk9 =
+void () shal_walk9 = [32.000, shal_walk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 10878 0
     ai_walk(TE_LIGHTNING1);
 };
 
@@ -140,9 +130,8 @@ void () shal_walk9 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk10 =
+void () shal_walk10 = [33.000, shal_walk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 10879 0
     ai_walk(MSG_BROADCAST);
 };
 
@@ -152,9 +141,8 @@ void () shal_walk10 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk11 =
+void () shal_walk11 = [34.000, shal_walk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 10880 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -164,9 +152,8 @@ void () shal_walk11 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () shal_walk12 =
+void () shal_walk12 = [23.000, shal_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 10867 0
     ai_walk(TE_LIGHTNING1);
 };
 
@@ -185,9 +172,8 @@ void () shal_walk12 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run1 =
+void () shal_run1 = [24.000, shal_run2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 10882 0
     
     if(random() < 0.200)
     {
@@ -203,9 +189,8 @@ void () shal_run1 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run2 =
+void () shal_run2 = [25.000, shal_run3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 10884 0
     ai_run(SECRET_1ST_DOWN);
 };
 
@@ -215,9 +200,8 @@ void () shal_run2 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run3 =
+void () shal_run3 = [26.000, shal_run4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 10885 0
     ai_run(MSG_BROADCAST);
 };
 
@@ -227,9 +211,8 @@ void () shal_run3 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run4 =
+void () shal_run4 = [27.000, shal_run5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 10886 0
     ai_run(MSG_BROADCAST);
 };
 
@@ -239,9 +222,8 @@ void () shal_run4 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run5 =
+void () shal_run5 = [28.000, shal_run6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 10887 0
     ai_run(MSG_BROADCAST);
 };
 
@@ -251,9 +233,8 @@ void () shal_run5 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run6 =
+void () shal_run6 = [29.000, shal_run7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 10888 0
     ai_run(MSG_BROADCAST);
 };
 
@@ -263,9 +244,8 @@ void () shal_run6 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run7 =
+void () shal_run7 = [30.000, shal_run8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 10889 0
     ai_run(TE_LIGHTNING1);
 };
 
@@ -275,9 +255,8 @@ void () shal_run7 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run8 =
+void () shal_run8 = [31.000, shal_run9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 10890 0
     ai_run(TE_LIGHTNING2);
 };
 
@@ -287,9 +266,8 @@ void () shal_run8 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run9 =
+void () shal_run9 = [32.000, shal_run10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 10891 0
     ai_run(TE_LIGHTNING1);
 };
 
@@ -299,9 +277,8 @@ void () shal_run9 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run10 =
+void () shal_run10 = [33.000, shal_run11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 10892 0
     ai_run(MSG_BROADCAST);
 };
 
@@ -311,9 +288,8 @@ void () shal_run10 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run11 =
+void () shal_run11 = [34.000, shal_run12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 10893 0
     ai_run(SECRET_1ST_DOWN);
 };
 
@@ -323,9 +299,8 @@ void () shal_run11 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () shal_run12 =
+void () shal_run12 = [23.000, shal_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 10881 0
     ai_run(TE_LIGHTNING1);
 };
 
@@ -340,9 +315,8 @@ void () shal_run12 =
 // OP_CALL5	453	0	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack1 =
+void () shal_attack1 = [0.000, shal_attack2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 10895 0
     sound(self, CHAN_VOICE, "shalrath/attack.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     ai_face();
 };
@@ -352,9 +326,8 @@ void () shal_attack1 =
 // OP_STATE	9491	10897	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack2 =
+void () shal_attack2 = [1.000, shal_attack3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9491 10897 0
     ai_face();
 };
 
@@ -363,9 +336,8 @@ void () shal_attack2 =
 // OP_STATE	7369	10898	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack3 =
+void () shal_attack3 = [2.000, shal_attack4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 10898 0
     ai_face();
 };
 
@@ -374,9 +346,8 @@ void () shal_attack3 =
 // OP_STATE	370	10899	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack4 =
+void () shal_attack4 = [3.000, shal_attack5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 10899 0
     ai_face();
 };
 
@@ -385,9 +356,8 @@ void () shal_attack4 =
 // OP_STATE	6076	10900	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack5 =
+void () shal_attack5 = [4.000, shal_attack6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 10900 0
     ai_face();
 };
 
@@ -396,9 +366,8 @@ void () shal_attack5 =
 // OP_STATE	313	10901	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack6 =
+void () shal_attack6 = [5.000, shal_attack7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 10901 0
     ai_face();
 };
 
@@ -407,9 +376,8 @@ void () shal_attack6 =
 // OP_STATE	314	10902	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack7 =
+void () shal_attack7 = [6.000, shal_attack8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 10902 0
     ai_face();
 };
 
@@ -418,9 +386,8 @@ void () shal_attack7 =
 // OP_STATE	315	10903	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack8 =
+void () shal_attack8 = [7.000, shal_attack9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 10903 0
     ai_face();
 };
 
@@ -429,9 +396,8 @@ void () shal_attack8 =
 // OP_STATE	6077	10904	0
 // OP_CALL0	10865	0	0
 // OP_DONE	0	0	0
-void () shal_attack9 =
+void () shal_attack9 = [8.000, shal_attack10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 10904 0
     ShalMissile();
 };
 
@@ -440,9 +406,8 @@ void () shal_attack9 =
 // OP_STATE	317	10905	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () shal_attack10 =
+void () shal_attack10 = [9.000, shal_attack11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 10905 0
     ai_face();
 };
 
@@ -450,117 +415,104 @@ void () shal_attack10 =
 // function begins at statement 19644, parm_start=10906
 // OP_STATE	318	10881	0
 // OP_DONE	0	0	0
-void () shal_attack11 =
+void () shal_attack11 = [10.000, shal_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 10881 0
 };
 
 // shal_pain1
 // function begins at statement 19646, parm_start=10907
 // OP_STATE	319	10907	0
 // OP_DONE	0	0	0
-void () shal_pain1 =
+void () shal_pain1 = [11.000, shal_pain2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 10907 0
 };
 
 // shal_pain2
 // function begins at statement 19648, parm_start=10908
 // OP_STATE	2250	10908	0
 // OP_DONE	0	0	0
-void () shal_pain2 =
+void () shal_pain2 = [12.000, shal_pain3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 10908 0
 };
 
 // shal_pain3
 // function begins at statement 19650, parm_start=10909
 // OP_STATE	7768	10909	0
 // OP_DONE	0	0	0
-void () shal_pain3 =
+void () shal_pain3 = [13.000, shal_pain4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 10909 0
 };
 
 // shal_pain4
 // function begins at statement 19652, parm_start=10910
 // OP_STATE	2901	10910	0
 // OP_DONE	0	0	0
-void () shal_pain4 =
+void () shal_pain4 = [14.000, shal_pain5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 10910 0
 };
 
 // shal_pain5
 // function begins at statement 19654, parm_start=10911
 // OP_STATE	1876	10881	0
 // OP_DONE	0	0	0
-void () shal_pain5 =
+void () shal_pain5 = [15.000, shal_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 10881 0
 };
 
 // shal_death1
 // function begins at statement 19656, parm_start=10912
 // OP_STATE	6078	10912	0
 // OP_DONE	0	0	0
-void () shal_death1 =
+void () shal_death1 = [16.000, shal_death2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 10912 0
 };
 
 // shal_death2
 // function begins at statement 19658, parm_start=10913
 // OP_STATE	4861	10913	0
 // OP_DONE	0	0	0
-void () shal_death2 =
+void () shal_death2 = [17.000, shal_death3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 10913 0
 };
 
 // shal_death3
 // function begins at statement 19660, parm_start=10914
 // OP_STATE	3319	10914	0
 // OP_DONE	0	0	0
-void () shal_death3 =
+void () shal_death3 = [18.000, shal_death4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 10914 0
 };
 
 // shal_death4
 // function begins at statement 19662, parm_start=10915
 // OP_STATE	7776	10915	0
 // OP_DONE	0	0	0
-void () shal_death4 =
+void () shal_death4 = [19.000, shal_death5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 10915 0
 };
 
 // shal_death5
 // function begins at statement 19664, parm_start=10916
 // OP_STATE	894	10916	0
 // OP_DONE	0	0	0
-void () shal_death5 =
+void () shal_death5 = [20.000, shal_death6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 10916 0
 };
 
 // shal_death6
 // function begins at statement 19666, parm_start=10917
 // OP_STATE	7779	10917	0
 // OP_DONE	0	0	0
-void () shal_death6 =
+void () shal_death6 = [21.000, shal_death7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 10917 0
 };
 
 // shal_death7
 // function begins at statement 19668, parm_start=10918
 // OP_STATE	7781	10917	0
 // OP_DONE	0	0	0
-void () shal_death7 =
+void () shal_death7 = [22.000, shal_death7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 10917 0
 };
 
 // shalrath_pain
@@ -580,7 +532,7 @@ void () shal_death7 =
 // OP_ADD_F	31	370	10922
 // OP_STOREP_F	10922	10921	0
 // OP_DONE	0	0	0
-void () shalrath_pain =
+void () shalrath_pain = 
 {
     
     if(self.pain_finished > time)
@@ -631,7 +583,7 @@ void () shalrath_pain =
 // OP_ADDRESS	28	104	10932
 // OP_STOREP_F	237	10932	0
 // OP_DONE	0	0	0
-void () shalrath_die =
+void () shalrath_die = 
 {
     
     if(self.health < -90.000)
@@ -718,7 +670,7 @@ void () ShalHome;
 // OP_ADDRESS	10935	146	10998
 // OP_STOREP_FNC	10933	10998	0
 // OP_DONE	0	0	0
-void () ShalMissile =
+void () ShalMissile = 
 {
     local entity missile;
     local vector dir;
@@ -783,7 +735,7 @@ void () ShalMissile =
 // OP_ADDRESS	28	148	11037
 // OP_STOREP_FNC	10934	11037	0
 // OP_DONE	0	0	0
-void () ShalHome =
+void () ShalHome = 
 {
     local vector dir;
     local vector vtemp;
@@ -864,7 +816,7 @@ void () ShalHome =
 // OP_STOREP_F	237	11050	0
 // OP_CALL0	2905	0	0
 // OP_DONE	0	0	0
-void () ShalMissileTouch =
+void () ShalMissileTouch = 
 {
     
     if(other == self.owner)
@@ -950,7 +902,7 @@ void () ShalMissileTouch =
 // OP_ADD_F	11064	11065	11066
 // OP_STOREP_F	11066	11063	0
 // OP_DONE	0	0	0
-void () monster_shalrath =
+void () monster_shalrath = 
 {
     
     if(deathmatch)

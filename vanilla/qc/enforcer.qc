@@ -58,7 +58,7 @@
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () Laser_Touch =
+void () Laser_Touch = 
 {
     local vector org;
     
@@ -143,7 +143,7 @@ void () Laser_Touch =
 // OP_ADDRESS	345	146	11124
 // OP_STOREP_FNC	11067	11124	0
 // OP_DONE	0	0	0
-void (vector org, vector vec) LaunchLaser =
+void (vector org, vector vec) LaunchLaser = 
 {
     
     if(self.classname == "monster_enforcer")
@@ -191,7 +191,7 @@ void (vector org, vector vec) LaunchLaser =
 // OP_STORE_V	11161	7	0
 // OP_CALL2	7370	0	0
 // OP_DONE	0	0	0
-void () enforcer_fire =
+void () enforcer_fire = 
 {
     local vector org;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -205,9 +205,8 @@ void () enforcer_fire =
 // OP_STATE	337	11165	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand1 =
+void () enf_stand1 = [0.000, enf_stand2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 11165 0
     ai_stand();
 };
 
@@ -216,9 +215,8 @@ void () enf_stand1 =
 // OP_STATE	9491	11166	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand2 =
+void () enf_stand2 = [1.000, enf_stand3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9491 11166 0
     ai_stand();
 };
 
@@ -227,9 +225,8 @@ void () enf_stand2 =
 // OP_STATE	7369	11167	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand3 =
+void () enf_stand3 = [2.000, enf_stand4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 11167 0
     ai_stand();
 };
 
@@ -238,9 +235,8 @@ void () enf_stand3 =
 // OP_STATE	370	11168	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand4 =
+void () enf_stand4 = [3.000, enf_stand5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 11168 0
     ai_stand();
 };
 
@@ -249,9 +245,8 @@ void () enf_stand4 =
 // OP_STATE	6076	11169	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand5 =
+void () enf_stand5 = [4.000, enf_stand6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 11169 0
     ai_stand();
 };
 
@@ -260,9 +255,8 @@ void () enf_stand5 =
 // OP_STATE	313	11170	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand6 =
+void () enf_stand6 = [5.000, enf_stand7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 11170 0
     ai_stand();
 };
 
@@ -271,9 +265,8 @@ void () enf_stand6 =
 // OP_STATE	314	11164	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () enf_stand7 =
+void () enf_stand7 = [6.000, enf_stand1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 11164 0
     ai_stand();
 };
 
@@ -292,9 +285,8 @@ void () enf_stand7 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk1 =
+void () enf_walk1 = [7.000, enf_walk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 11172 0
     
     if(random() < 0.200)
     {
@@ -310,9 +302,8 @@ void () enf_walk1 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk2 =
+void () enf_walk2 = [8.000, enf_walk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 11174 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -322,9 +313,8 @@ void () enf_walk2 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk3 =
+void () enf_walk3 = [9.000, enf_walk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 11175 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -334,9 +324,8 @@ void () enf_walk3 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk4 =
+void () enf_walk4 = [10.000, enf_walk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 11176 0
     ai_walk(AS_MELEE);
 };
 
@@ -346,9 +335,8 @@ void () enf_walk4 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk5 =
+void () enf_walk5 = [11.000, enf_walk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 11177 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
@@ -358,9 +346,8 @@ void () enf_walk5 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk6 =
+void () enf_walk6 = [12.000, enf_walk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 11178 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -370,9 +357,8 @@ void () enf_walk6 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk7 =
+void () enf_walk7 = [13.000, enf_walk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 11179 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -382,9 +368,8 @@ void () enf_walk7 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk8 =
+void () enf_walk8 = [14.000, enf_walk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 11180 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
@@ -394,9 +379,8 @@ void () enf_walk8 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk9 =
+void () enf_walk9 = [15.000, enf_walk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 11181 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -406,9 +390,8 @@ void () enf_walk9 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk10 =
+void () enf_walk10 = [16.000, enf_walk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 11182 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -418,9 +401,8 @@ void () enf_walk10 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk11 =
+void () enf_walk11 = [17.000, enf_walk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 11183 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -430,9 +412,8 @@ void () enf_walk11 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk12 =
+void () enf_walk12 = [18.000, enf_walk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 11184 0
     ai_walk(SPAWN_CRUCIFIED);
 };
 
@@ -442,9 +423,8 @@ void () enf_walk12 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk13 =
+void () enf_walk13 = [19.000, enf_walk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 11185 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -454,9 +434,8 @@ void () enf_walk13 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk14 =
+void () enf_walk14 = [20.000, enf_walk15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 11186 0
     ai_walk(AS_MELEE);
 };
 
@@ -466,9 +445,8 @@ void () enf_walk14 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk15 =
+void () enf_walk15 = [21.000, enf_walk16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 11187 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -478,9 +456,8 @@ void () enf_walk15 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () enf_walk16 =
+void () enf_walk16 = [22.000, enf_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 11171 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -499,9 +476,8 @@ void () enf_walk16 =
 // OP_STORE_V	3319	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run1 =
+void () enf_run1 = [23.000, enf_run2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 11189 0
     
     if(random() < 0.200)
     {
@@ -517,9 +493,8 @@ void () enf_run1 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run2 =
+void () enf_run2 = [24.000, enf_run3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 11191 0
     ai_run(14.000);
 };
 
@@ -529,9 +504,8 @@ void () enf_run2 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run3 =
+void () enf_run3 = [25.000, enf_run4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 11192 0
     ai_run(TE_WIZSPIKE);
 };
 
@@ -541,9 +515,8 @@ void () enf_run3 =
 // OP_STORE_V	2250	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run4 =
+void () enf_run4 = [26.000, enf_run5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 11193 0
     ai_run(12.000);
 };
 
@@ -553,9 +526,8 @@ void () enf_run4 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run5 =
+void () enf_run5 = [27.000, enf_run6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 11194 0
     ai_run(14.000);
 };
 
@@ -565,9 +537,8 @@ void () enf_run5 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run6 =
+void () enf_run6 = [28.000, enf_run7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 11195 0
     ai_run(14.000);
 };
 
@@ -577,9 +548,8 @@ void () enf_run6 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run7 =
+void () enf_run7 = [29.000, enf_run8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 11196 0
     ai_run(TE_WIZSPIKE);
 };
 
@@ -589,9 +559,8 @@ void () enf_run7 =
 // OP_STORE_V	319	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () enf_run8 =
+void () enf_run8 = [30.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 11188 0
     ai_run(TE_TELEPORT);
 };
 
@@ -600,9 +569,8 @@ void () enf_run8 =
 // OP_STATE	305	11198	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk1 =
+void () enf_atk1 = [31.000, enf_atk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 11198 0
     ai_face();
 };
 
@@ -611,9 +579,8 @@ void () enf_atk1 =
 // OP_STATE	5674	11199	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk2 =
+void () enf_atk2 = [32.000, enf_atk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 11199 0
     ai_face();
 };
 
@@ -622,9 +589,8 @@ void () enf_atk2 =
 // OP_STATE	307	11200	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk3 =
+void () enf_atk3 = [33.000, enf_atk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 11200 0
     ai_face();
 };
 
@@ -633,9 +599,8 @@ void () enf_atk3 =
 // OP_STATE	5112	11201	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk4 =
+void () enf_atk4 = [34.000, enf_atk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 11201 0
     ai_face();
 };
 
@@ -644,9 +609,8 @@ void () enf_atk4 =
 // OP_STATE	3072	11202	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk5 =
+void () enf_atk5 = [35.000, enf_atk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 11202 0
     ai_face();
 };
 
@@ -655,9 +619,8 @@ void () enf_atk5 =
 // OP_STATE	5096	11203	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
-void () enf_atk6 =
+void () enf_atk6 = [36.000, enf_atk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 11203 0
     enforcer_fire();
 };
 
@@ -666,9 +629,8 @@ void () enf_atk6 =
 // OP_STATE	5098	11204	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk7 =
+void () enf_atk7 = [37.000, enf_atk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 11204 0
     ai_face();
 };
 
@@ -677,9 +639,8 @@ void () enf_atk7 =
 // OP_STATE	5100	11205	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk8 =
+void () enf_atk8 = [38.000, enf_atk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 11205 0
     ai_face();
 };
 
@@ -688,9 +649,8 @@ void () enf_atk8 =
 // OP_STATE	3072	11206	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk9 =
+void () enf_atk9 = [35.000, enf_atk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 11206 0
     ai_face();
 };
 
@@ -699,9 +659,8 @@ void () enf_atk9 =
 // OP_STATE	5096	11207	0
 // OP_CALL0	11125	0	0
 // OP_DONE	0	0	0
-void () enf_atk10 =
+void () enf_atk10 = [36.000, enf_atk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 11207 0
     enforcer_fire();
 };
 
@@ -710,9 +669,8 @@ void () enf_atk10 =
 // OP_STATE	5098	11208	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk11 =
+void () enf_atk11 = [37.000, enf_atk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 11208 0
     ai_face();
 };
 
@@ -721,9 +679,8 @@ void () enf_atk11 =
 // OP_STATE	5100	11209	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk12 =
+void () enf_atk12 = [38.000, enf_atk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 11209 0
     ai_face();
 };
 
@@ -732,9 +689,8 @@ void () enf_atk12 =
 // OP_STATE	5102	11210	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () enf_atk13 =
+void () enf_atk13 = [39.000, enf_atk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5102 11210 0
     ai_face();
 };
 
@@ -745,9 +701,8 @@ void () enf_atk13 =
 // OP_STORE_V	11197	4	0
 // OP_CALL1	738	0	0
 // OP_DONE	0	0	0
-void () enf_atk14 =
+void () enf_atk14 = [40.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1733 11188 0
     ai_face();
     SUB_CheckRefire(enf_atk1);
 };
@@ -756,180 +711,160 @@ void () enf_atk14 =
 // function begins at statement 20233, parm_start=11212
 // OP_STATE	5377	11212	0
 // OP_DONE	0	0	0
-void () enf_paina1 =
+void () enf_paina1 = [66.000, enf_paina2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5377 11212 0
 };
 
 // enf_paina2
 // function begins at statement 20235, parm_start=11213
 // OP_STATE	5379	11213	0
 // OP_DONE	0	0	0
-void () enf_paina2 =
+void () enf_paina2 = [67.000, enf_paina3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5379 11213 0
 };
 
 // enf_paina3
 // function begins at statement 20237, parm_start=11214
 // OP_STATE	5381	11214	0
 // OP_DONE	0	0	0
-void () enf_paina3 =
+void () enf_paina3 = [68.000, enf_paina4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5381 11214 0
 };
 
 // enf_paina4
 // function begins at statement 20239, parm_start=11215
 // OP_STATE	5383	11188	0
 // OP_DONE	0	0	0
-void () enf_paina4 =
+void () enf_paina4 = [69.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5383 11188 0
 };
 
 // enf_painb1
 // function begins at statement 20241, parm_start=11216
 // OP_STATE	5384	11216	0
 // OP_DONE	0	0	0
-void () enf_painb1 =
+void () enf_painb1 = [70.000, enf_painb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5384 11216 0
 };
 
 // enf_painb2
 // function begins at statement 20243, parm_start=11217
 // OP_STATE	5386	11217	0
 // OP_DONE	0	0	0
-void () enf_painb2 =
+void () enf_painb2 = [71.000, enf_painb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5386 11217 0
 };
 
 // enf_painb3
 // function begins at statement 20245, parm_start=11218
 // OP_STATE	5388	11218	0
 // OP_DONE	0	0	0
-void () enf_painb3 =
+void () enf_painb3 = [72.000, enf_painb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5388 11218 0
 };
 
 // enf_painb4
 // function begins at statement 20247, parm_start=11219
 // OP_STATE	2739	11219	0
 // OP_DONE	0	0	0
-void () enf_painb4 =
+void () enf_painb4 = [73.000, enf_painb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2739 11219 0
 };
 
 // enf_painb5
 // function begins at statement 20249, parm_start=11220
 // OP_STATE	5391	11188	0
 // OP_DONE	0	0	0
-void () enf_painb5 =
+void () enf_painb5 = [74.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5391 11188 0
 };
 
 // enf_painc1
 // function begins at statement 20251, parm_start=11221
 // OP_STATE	5393	11221	0
 // OP_DONE	0	0	0
-void () enf_painc1 =
+void () enf_painc1 = [75.000, enf_painc2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5393 11221 0
 };
 
 // enf_painc2
 // function begins at statement 20253, parm_start=11222
 // OP_STATE	5395	11222	0
 // OP_DONE	0	0	0
-void () enf_painc2 =
+void () enf_painc2 = [76.000, enf_painc3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5395 11222 0
 };
 
 // enf_painc3
 // function begins at statement 20255, parm_start=11223
 // OP_STATE	5397	11223	0
 // OP_DONE	0	0	0
-void () enf_painc3 =
+void () enf_painc3 = [77.000, enf_painc4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5397 11223 0
 };
 
 // enf_painc4
 // function begins at statement 20257, parm_start=11224
 // OP_STATE	5399	11224	0
 // OP_DONE	0	0	0
-void () enf_painc4 =
+void () enf_painc4 = [78.000, enf_painc5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5399 11224 0
 };
 
 // enf_painc5
 // function begins at statement 20259, parm_start=11225
 // OP_STATE	5401	11225	0
 // OP_DONE	0	0	0
-void () enf_painc5 =
+void () enf_painc5 = [79.000, enf_painc6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5401 11225 0
 };
 
 // enf_painc6
 // function begins at statement 20261, parm_start=11226
 // OP_STATE	788	11226	0
 // OP_DONE	0	0	0
-void () enf_painc6 =
+void () enf_painc6 = [80.000, enf_painc7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 788 11226 0
 };
 
 // enf_painc7
 // function begins at statement 20263, parm_start=11227
 // OP_STATE	5404	11227	0
 // OP_DONE	0	0	0
-void () enf_painc7 =
+void () enf_painc7 = [81.000, enf_painc8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5404 11227 0
 };
 
 // enf_painc8
 // function begins at statement 20265, parm_start=11228
 // OP_STATE	5406	11188	0
 // OP_DONE	0	0	0
-void () enf_painc8 =
+void () enf_painc8 = [82.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5406 11188 0
 };
 
 // enf_paind1
 // function begins at statement 20267, parm_start=11229
 // OP_STATE	5408	11229	0
 // OP_DONE	0	0	0
-void () enf_paind1 =
+void () enf_paind1 = [83.000, enf_paind2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5408 11229 0
 };
 
 // enf_paind2
 // function begins at statement 20269, parm_start=11230
 // OP_STATE	5410	11230	0
 // OP_DONE	0	0	0
-void () enf_paind2 =
+void () enf_paind2 = [84.000, enf_paind3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5410 11230 0
 };
 
 // enf_paind3
 // function begins at statement 20271, parm_start=11231
 // OP_STATE	5411	11231	0
 // OP_DONE	0	0	0
-void () enf_paind3 =
+void () enf_paind3 = [85.000, enf_paind4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5411 11231 0
 };
 
 // enf_paind4
@@ -938,9 +873,8 @@ void () enf_paind3 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () enf_paind4 =
+void () enf_paind4 = [86.000, enf_paind5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5413 11232 0
     ai_painforward(SPAWNFLAG_LASER);
 };
 
@@ -950,9 +884,8 @@ void () enf_paind4 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () enf_paind5 =
+void () enf_paind5 = [87.000, enf_paind6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5415 11233 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
@@ -960,45 +893,40 @@ void () enf_paind5 =
 // function begins at statement 20281, parm_start=11234
 // OP_STATE	5417	11234	0
 // OP_DONE	0	0	0
-void () enf_paind6 =
+void () enf_paind6 = [88.000, enf_paind7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5417 11234 0
 };
 
 // enf_paind7
 // function begins at statement 20283, parm_start=11235
 // OP_STATE	5419	11235	0
 // OP_DONE	0	0	0
-void () enf_paind7 =
+void () enf_paind7 = [89.000, enf_paind8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5419 11235 0
 };
 
 // enf_paind8
 // function begins at statement 20285, parm_start=11236
 // OP_STATE	1423	11236	0
 // OP_DONE	0	0	0
-void () enf_paind8 =
+void () enf_paind8 = [90.000, enf_paind9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1423 11236 0
 };
 
 // enf_paind9
 // function begins at statement 20287, parm_start=11237
 // OP_STATE	5422	11237	0
 // OP_DONE	0	0	0
-void () enf_paind9 =
+void () enf_paind9 = [91.000, enf_paind10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5422 11237 0
 };
 
 // enf_paind10
 // function begins at statement 20289, parm_start=11238
 // OP_STATE	5424	11238	0
 // OP_DONE	0	0	0
-void () enf_paind10 =
+void () enf_paind10 = [92.000, enf_paind11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5424 11238 0
 };
 
 // enf_paind11
@@ -1007,9 +935,8 @@ void () enf_paind10 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () enf_paind11 =
+void () enf_paind11 = [93.000, enf_paind12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5426 11239 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
@@ -1019,9 +946,8 @@ void () enf_paind11 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () enf_paind12 =
+void () enf_paind12 = [94.000, enf_paind13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5427 11240 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
@@ -1031,9 +957,8 @@ void () enf_paind12 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () enf_paind13 =
+void () enf_paind13 = [95.000, enf_paind14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5429 11241 0
     ai_painforward(SPAWN_CRUCIFIED);
 };
 
@@ -1041,18 +966,16 @@ void () enf_paind13 =
 // function begins at statement 20303, parm_start=11242
 // OP_STATE	5431	11242	0
 // OP_DONE	0	0	0
-void () enf_paind14 =
+void () enf_paind14 = [96.000, enf_paind15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5431 11242 0
 };
 
 // enf_paind15
 // function begins at statement 20305, parm_start=11243
 // OP_STATE	5433	11243	0
 // OP_DONE	0	0	0
-void () enf_paind15 =
+void () enf_paind15 = [97.000, enf_paind16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5433 11243 0
 };
 
 // enf_paind16
@@ -1061,9 +984,8 @@ void () enf_paind15 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () enf_paind16 =
+void () enf_paind16 = [98.000, enf_paind17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5435 11244 0
     ai_pain(SPAWN_CRUCIFIED);
 };
 
@@ -1073,9 +995,8 @@ void () enf_paind16 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () enf_paind17 =
+void () enf_paind17 = [99.000, enf_paind18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5437 11245 0
     ai_pain(SPAWN_CRUCIFIED);
 };
 
@@ -1083,18 +1004,16 @@ void () enf_paind17 =
 // function begins at statement 20315, parm_start=11246
 // OP_STATE	1884	11246	0
 // OP_DONE	0	0	0
-void () enf_paind18 =
+void () enf_paind18 = [100.000, enf_paind19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1884 11246 0
 };
 
 // enf_paind19
 // function begins at statement 20317, parm_start=11247
 // OP_STATE	5440	11188	0
 // OP_DONE	0	0	0
-void () enf_paind19 =
+void () enf_paind19 = [101.000, enf_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5440 11188 0
 };
 
 // enf_pain
@@ -1146,7 +1065,7 @@ void () enf_paind19 =
 // OP_STOREP_F	11264	11263	0
 // OP_CALL0	11228	0	0
 // OP_DONE	0	0	0
-void (entity attacker, float damage) enf_pain =
+void (entity attacker, float damage) enf_pain = 
 {
     local float r;
     r = random();
@@ -1200,18 +1119,16 @@ void (entity attacker, float damage) enf_pain =
 // function begins at statement 20366, parm_start=11266
 // OP_STATE	5443	11266	0
 // OP_DONE	0	0	0
-void () enf_die1 =
+void () enf_die1 = [41.000, enf_die2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5443 11266 0
 };
 
 // enf_die2
 // function begins at statement 20368, parm_start=11267
 // OP_STATE	5445	11267	0
 // OP_DONE	0	0	0
-void () enf_die2 =
+void () enf_die2 = [42.000, enf_die3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5445 11267 0
 };
 
 // enf_die3
@@ -1223,9 +1140,8 @@ void () enf_die2 =
 // OP_STOREP_F	313	11270	0
 // OP_CALL0	2535	0	0
 // OP_DONE	0	0	0
-void () enf_die3 =
+void () enf_die3 = [43.000, enf_die4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5447 11268 0
     self.solid = SOLID_NOT;
     self.ammo_cells = TE_LIGHTNING1;
     DropBackpack();
@@ -1237,9 +1153,8 @@ void () enf_die3 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die4 =
+void () enf_die4 = [44.000, enf_die5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5449 11271 0
     ai_forward(14.000);
 };
 
@@ -1249,9 +1164,8 @@ void () enf_die4 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die5 =
+void () enf_die5 = [45.000, enf_die6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1390 11272 0
     ai_forward(SPAWNFLAG_LASER);
 };
 
@@ -1259,27 +1173,24 @@ void () enf_die5 =
 // function begins at statement 20385, parm_start=11273
 // OP_STATE	5452	11273	0
 // OP_DONE	0	0	0
-void () enf_die6 =
+void () enf_die6 = [46.000, enf_die7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5452 11273 0
 };
 
 // enf_die7
 // function begins at statement 20387, parm_start=11274
 // OP_STATE	5454	11274	0
 // OP_DONE	0	0	0
-void () enf_die7 =
+void () enf_die7 = [47.000, enf_die8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5454 11274 0
 };
 
 // enf_die8
 // function begins at statement 20389, parm_start=11275
 // OP_STATE	5456	11275	0
 // OP_DONE	0	0	0
-void () enf_die8 =
+void () enf_die8 = [48.000, enf_die9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5456 11275 0
 };
 
 // enf_die9
@@ -1288,9 +1199,8 @@ void () enf_die8 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die9 =
+void () enf_die9 = [49.000, enf_die10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5458 11276 0
     ai_forward(AS_MELEE);
 };
 
@@ -1300,9 +1210,8 @@ void () enf_die9 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die10 =
+void () enf_die10 = [50.000, enf_die11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2227 11277 0
     ai_forward(TE_LIGHTNING1);
 };
 
@@ -1312,9 +1221,8 @@ void () enf_die10 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die11 =
+void () enf_die11 = [51.000, enf_die12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5351 11278 0
     ai_forward(TE_LIGHTNING1);
 };
 
@@ -1324,9 +1232,8 @@ void () enf_die11 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () enf_die12 =
+void () enf_die12 = [52.000, enf_die13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5353 11279 0
     ai_forward(TE_LIGHTNING1);
 };
 
@@ -1334,36 +1241,32 @@ void () enf_die12 =
 // function begins at statement 20407, parm_start=11280
 // OP_STATE	5355	11280	0
 // OP_DONE	0	0	0
-void () enf_die13 =
+void () enf_die13 = [53.000, enf_die14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 11280 0
 };
 
 // enf_die14
 // function begins at statement 20409, parm_start=11281
 // OP_STATE	5357	11280	0
 // OP_DONE	0	0	0
-void () enf_die14 =
+void () enf_die14 = [54.000, enf_die14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5357 11280 0
 };
 
 // enf_fdie1
 // function begins at statement 20411, parm_start=11282
 // OP_STATE	5359	11282	0
 // OP_DONE	0	0	0
-void () enf_fdie1 =
+void () enf_fdie1 = [55.000, enf_fdie2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5359 11282 0
 };
 
 // enf_fdie2
 // function begins at statement 20413, parm_start=11283
 // OP_STATE	5361	11283	0
 // OP_DONE	0	0	0
-void () enf_fdie2 =
+void () enf_fdie2 = [56.000, enf_fdie3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 11283 0
 };
 
 // enf_fdie3
@@ -1375,9 +1278,8 @@ void () enf_fdie2 =
 // OP_STOREP_F	313	11286	0
 // OP_CALL0	2535	0	0
 // OP_DONE	0	0	0
-void () enf_fdie3 =
+void () enf_fdie3 = [57.000, enf_fdie4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5363 11284 0
     self.solid = SOLID_NOT;
     self.ammo_cells = TE_LIGHTNING1;
     DropBackpack();
@@ -1387,72 +1289,64 @@ void () enf_fdie3 =
 // function begins at statement 20422, parm_start=11287
 // OP_STATE	5365	11287	0
 // OP_DONE	0	0	0
-void () enf_fdie4 =
+void () enf_fdie4 = [58.000, enf_fdie5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5365 11287 0
 };
 
 // enf_fdie5
 // function begins at statement 20424, parm_start=11288
 // OP_STATE	5367	11288	0
 // OP_DONE	0	0	0
-void () enf_fdie5 =
+void () enf_fdie5 = [59.000, enf_fdie6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5367 11288 0
 };
 
 // enf_fdie6
 // function begins at statement 20426, parm_start=11289
 // OP_STATE	912	11289	0
 // OP_DONE	0	0	0
-void () enf_fdie6 =
+void () enf_fdie6 = [60.000, enf_fdie7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 11289 0
 };
 
 // enf_fdie7
 // function begins at statement 20428, parm_start=11290
 // OP_STATE	5369	11290	0
 // OP_DONE	0	0	0
-void () enf_fdie7 =
+void () enf_fdie7 = [61.000, enf_fdie8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5369 11290 0
 };
 
 // enf_fdie8
 // function begins at statement 20430, parm_start=11291
 // OP_STATE	5371	11291	0
 // OP_DONE	0	0	0
-void () enf_fdie8 =
+void () enf_fdie8 = [62.000, enf_fdie9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5371 11291 0
 };
 
 // enf_fdie9
 // function begins at statement 20432, parm_start=11292
 // OP_STATE	3872	11292	0
 // OP_DONE	0	0	0
-void () enf_fdie9 =
+void () enf_fdie9 = [63.000, enf_fdie10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3872 11292 0
 };
 
 // enf_fdie10
 // function begins at statement 20434, parm_start=11293
 // OP_STATE	260	11293	0
 // OP_DONE	0	0	0
-void () enf_fdie10 =
+void () enf_fdie10 = [64.000, enf_fdie11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 260 11293 0
 };
 
 // enf_fdie11
 // function begins at statement 20436, parm_start=11294
 // OP_STATE	5375	11293	0
 // OP_DONE	0	0	0
-void () enf_fdie11 =
+void () enf_fdie11 = [65.000, enf_fdie11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5375 11293 0
 };
 
 // enf_die
@@ -1496,7 +1390,7 @@ void () enf_fdie11 =
 // OP_GOTO	2	0	0
 // OP_CALL0	11281	0	0
 // OP_DONE	0	0	0
-void () enf_die =
+void () enf_die = 
 {
     
     if(self.health < -35.000)
@@ -1580,7 +1474,7 @@ void () enf_die =
 // OP_STOREP_FNC	11197	11313	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-void () monster_enforcer =
+void () monster_enforcer = 
 {
     
     if(deathmatch)

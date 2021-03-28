@@ -20,7 +20,7 @@ float sight_entity_time;
 // OP_GOTO	-4	0	0
 // OP_RETURN	1089	0	0
 // OP_DONE	0	0	0
-float (float v) anglemod =
+float (float v) anglemod = 
 {
     
     while(v >= 360.000)
@@ -53,7 +53,7 @@ float (float v) anglemod =
 // OP_STORE_V	1103	10	0
 // OP_CALL3	450	0	0
 // OP_DONE	0	0	0
-void () movetarget_f =
+void () movetarget_f = 
 {
     
     if(!self.targetname)
@@ -70,7 +70,7 @@ void () movetarget_f =
 // function begins at statement 684, parm_start=1107
 // OP_CALL0	1081	0	0
 // OP_DONE	0	0	0
-void () path_corner =
+void () path_corner = 
 {
     movetarget_f();
 };
@@ -123,7 +123,7 @@ void () path_corner =
 // OP_CALL0	1134	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () t_movetarget =
+void () t_movetarget = 
 {
     local entity temp;
     
@@ -185,7 +185,7 @@ void () t_movetarget =
 // OP_RETURN	244	0	0
 // OP_RETURN	245	0	0
 // OP_DONE	0	0	0
-float (entity targ) range =
+float (entity targ) range = 
 {
     local vector spot1;
     local vector spot2;
@@ -237,7 +237,7 @@ float (entity targ) range =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity targ) visible =
+float (entity targ) visible = 
 {
     local vector spot1;
     local vector spot2;
@@ -277,7 +277,7 @@ float (entity targ) visible =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity targ) infront =
+float (entity targ) infront = 
 {
     local vector vec;
     local float dot;
@@ -315,7 +315,7 @@ float (entity targ) infront =
 // OP_STORE_V	368	4	0
 // OP_CALL1	731	0	0
 // OP_DONE	0	0	0
-void () HuntTarget =
+void () HuntTarget = 
 {
     self.goalentity = self.enemy;
     self.think = self.th_run;
@@ -488,7 +488,7 @@ void () HuntTarget =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () SightSound =
+void () SightSound = 
 {
     local float rsnd;
     if(self.classname == "monster_ogre")
@@ -634,7 +634,7 @@ void () SightSound =
 // OP_CALL0	1234	0	0
 // OP_CALL0	1216	0	0
 // OP_DONE	0	0	0
-void () FoundTarget =
+void () FoundTarget = 
 {
     
     if(self.enemy.classname == "player")
@@ -730,7 +730,7 @@ void () FoundTarget =
 // OP_CALL0	1293	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float () FindTarget =
+float () FindTarget = 
 {
     local entity client;
     local float r;
@@ -835,7 +835,7 @@ float () FindTarget =
 // OP_STORE_V	1339	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_forward =
+void (float dist) ai_forward = 
 {
     walkmove(self.angles_y, dist);
 };
@@ -848,7 +848,7 @@ void (float dist) ai_forward =
 // OP_STORE_V	1342	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_back =
+void (float dist) ai_back = 
 {
     walkmove(self.angles_y + 180.000, dist);
 };
@@ -858,7 +858,7 @@ void (float dist) ai_back =
 // OP_STORE_V	1347	4	0
 // OP_CALL1	1341	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_pain =
+void (float dist) ai_pain = 
 {
     ai_back(dist);
 };
@@ -870,7 +870,7 @@ void (float dist) ai_pain =
 // OP_STORE_V	1349	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_painforward =
+void (float dist) ai_painforward = 
 {
     walkmove(self.ideal_yaw, dist);
 };
@@ -890,7 +890,7 @@ void (float dist) ai_painforward =
 // OP_STORE_V	1352	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_walk =
+void (float dist) ai_walk = 
 {
     local vector mtemp;
     movedist = dist;
@@ -922,7 +922,7 @@ void (float dist) ai_walk =
 // OP_CALL0	1362	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () ai_stand =
+void () ai_stand = 
 {
     
     if(FindTarget())
@@ -946,7 +946,7 @@ void () ai_stand =
 // OP_RETURN	0	0	0
 // OP_CALL0	491	0	0
 // OP_DONE	0	0	0
-void () ai_turn =
+void () ai_turn = 
 {
     
     if(FindTarget())
@@ -982,7 +982,7 @@ void () ai_turn =
 // OP_CALL1	458	0	0
 // OP_STOREP_F	1	1384	0
 // OP_DONE	0	0	0
-void (vector dest3) ChooseTurn =
+void (vector dest3) ChooseTurn = 
 {
     local vector dir;
     local vector newdir;
@@ -1020,7 +1020,7 @@ void (vector dest3) ChooseTurn =
 // OP_RETURN	213	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float () FacingIdeal =
+float () FacingIdeal = 
 {
     local float delta;
     delta = anglemod(self.angles_y - self.ideal_yaw);
@@ -1073,7 +1073,7 @@ float () DogCheckAttack;
 // OP_CALL0	790	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void () CheckAnyAttack =
+void () CheckAnyAttack = 
 {
     
     if(!enemy_vis)
@@ -1132,7 +1132,7 @@ void () CheckAnyAttack =
 // OP_ADDRESS	28	367	1414
 // OP_STOREP_F	368	1414	0
 // OP_DONE	0	0	0
-void () ai_run_melee =
+void () ai_run_melee = 
 {
     self.ideal_yaw = enemy_yaw;
     ChangeYaw();
@@ -1157,7 +1157,7 @@ void () ai_run_melee =
 // OP_ADDRESS	28	367	1418
 // OP_STOREP_F	368	1418	0
 // OP_DONE	0	0	0
-void () ai_run_missile =
+void () ai_run_missile = 
 {
     self.ideal_yaw = enemy_yaw;
     ChangeYaw();
@@ -1197,7 +1197,7 @@ void () ai_run_missile =
 // OP_STORE_V	341	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-void () ai_run_slide =
+void () ai_run_slide = 
 {
     local float ofs;
     self.ideal_yaw = enemy_yaw;
@@ -1301,7 +1301,7 @@ void () ai_run_slide =
 // OP_STORE_V	1433	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-void (float dist) ai_run =
+void (float dist) ai_run = 
 {
     local vector delta;
     local float axis;

@@ -7,7 +7,7 @@ entity old;
 // OP_ADDRESS	28	104	6419
 // OP_STOREP_F	238	6419	0
 // OP_DONE	0	0	0
-void () trigger_reactivate =
+void () trigger_reactivate = 
 {
     self.solid = SOLID_TRIGGER;
 };
@@ -26,7 +26,7 @@ float SPAWNFLAG_NOTOUCH = 1.000;
 // OP_ADDRESS	28	104	6427
 // OP_STOREP_F	239	6427	0
 // OP_DONE	0	0	0
-void () multi_wait =
+void () multi_wait = 
 {
     
     if(self.max_health)
@@ -89,7 +89,7 @@ void () multi_wait =
 // OP_ADDRESS	28	148	6451
 // OP_STOREP_FNC	519	6451	0
 // OP_DONE	0	0	0
-void () multi_trigger =
+void () multi_trigger = 
 {
     
     if(self.nextthink > time)
@@ -139,7 +139,7 @@ void () multi_trigger =
 // OP_STOREP_ENT	347	6453	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-void () multi_killed =
+void () multi_killed = 
 {
     self.enemy = damage_attacker;
     multi_trigger();
@@ -151,7 +151,7 @@ void () multi_killed =
 // OP_STOREP_ENT	346	6455	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-void () multi_use =
+void () multi_use = 
 {
     self.enemy = activator;
     multi_trigger();
@@ -178,7 +178,7 @@ void () multi_use =
 // OP_STOREP_ENT	29	6471	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-void () multi_touch =
+void () multi_touch = 
 {
     
     if(other.classname != "player")
@@ -263,7 +263,7 @@ void () multi_touch =
 // OP_ADDRESS	28	146	6503
 // OP_STOREP_FNC	6456	6503	0
 // OP_DONE	0	0	0
-void () trigger_multiple =
+void () trigger_multiple = 
 {
     if(self.sounds == SPAWNFLAG_NOTOUCH)
     {
@@ -330,7 +330,7 @@ void () trigger_multiple =
 // OP_STOREP_F	276	6505	0
 // OP_CALL0	6472	0	0
 // OP_DONE	0	0	0
-void () trigger_once =
+void () trigger_once = 
 {
     self.wait = CONTENT_EMPTY;
     trigger_multiple();
@@ -341,7 +341,7 @@ void () trigger_once =
 // OP_ADDRESS	28	147	6507
 // OP_STOREP_FNC	518	6507	0
 // OP_DONE	0	0	0
-void () trigger_relay =
+void () trigger_relay = 
 {
     self.use = SUB_UseTargets;
 };
@@ -379,7 +379,7 @@ void () trigger_relay =
 // OP_STOREP_S	720	6523	0
 // OP_CALL0	6472	0	0
 // OP_DONE	0	0	0
-void () trigger_secret =
+void () trigger_secret = 
 {
     total_secrets = total_secrets + SPAWNFLAG_NOTOUCH;
     self.wait = CONTENT_EMPTY;
@@ -473,7 +473,7 @@ void () trigger_secret =
 // OP_STOREP_ENT	346	6556	0
 // OP_CALL0	6428	0	0
 // OP_DONE	0	0	0
-void () counter_use =
+void () counter_use = 
 {
     local string junk;
     self.count = self.count - SPAWNFLAG_NOTOUCH;
@@ -541,7 +541,7 @@ void () counter_use =
 // OP_ADDRESS	28	147	6562
 // OP_STOREP_FNC	6524	6562	0
 // OP_DONE	0	0	0
-void () trigger_counter =
+void () trigger_counter = 
 {
     self.wait = CONTENT_EMPTY;
     
@@ -586,7 +586,7 @@ float SILENT = 2.000;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () play_teleport =
+void () play_teleport = 
 {
     local float v;
     local string tmpstr;
@@ -655,7 +655,7 @@ void () play_teleport =
 // OP_STORE_V	6575	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-void (vector org) spawn_tfog =
+void (vector org) spawn_tfog = 
 {
     s = spawn();
     s.origin = org;
@@ -701,7 +701,7 @@ void (vector org) spawn_tfog =
 // OP_STORE_V	4076	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () tdeath_touch =
+void () tdeath_touch = 
 {
     
     if(other == self.owner)
@@ -769,7 +769,7 @@ void () tdeath_touch =
 // OP_STOREP_ENT	6598	6625	0
 // OP_STORE_F	6564	33	0
 // OP_DONE	0	0	0
-void (vector org, entity death_owner) spawn_tdeath =
+void (vector org, entity death_owner) spawn_tdeath = 
 {
     local entity death;
     death = spawn();
@@ -881,7 +881,7 @@ void (vector org, entity death_owner) spawn_tdeath =
 // OP_SUB_F	6712	6714	6715
 // OP_STOREP_F	6715	6711	0
 // OP_DONE	0	0	0
-void () teleport_touch =
+void () teleport_touch = 
 {
     local entity t;
     local vector org;
@@ -972,7 +972,7 @@ void () teleport_touch =
 // OP_STORE_V	6741	4	0
 // OP_CALL1	456	0	0
 // OP_DONE	0	0	0
-void () info_teleport_destination =
+void () info_teleport_destination = 
 {
     self.mangle = self.angles;
     self.angles = VEC_ORIGIN;
@@ -995,7 +995,7 @@ void () info_teleport_destination =
 // OP_ADDRESS	28	148	6745
 // OP_STOREP_FNC	517	6745	0
 // OP_DONE	0	0	0
-void () teleport_use =
+void () teleport_use = 
 {
     self.nextthink = time + 0.200;
     force_retouch = SILENT;
@@ -1031,7 +1031,7 @@ void () teleport_use =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () trigger_teleport =
+void () trigger_teleport = 
 {
     local vector o;
     InitTrigger();
@@ -1064,7 +1064,7 @@ void () trigger_teleport =
 // OP_STORE_V	6774	7	0
 // OP_CALL2	505	0	0
 // OP_DONE	0	0	0
-void () trigger_skill_touch =
+void () trigger_skill_touch = 
 {
     
     if(other.classname != "player")
@@ -1081,7 +1081,7 @@ void () trigger_skill_touch =
 // OP_ADDRESS	28	146	6776
 // OP_STOREP_FNC	6771	6776	0
 // OP_DONE	0	0	0
-void () trigger_setskill =
+void () trigger_setskill = 
 {
     InitTrigger();
     self.touch = trigger_skill_touch;
@@ -1123,7 +1123,7 @@ void () trigger_setskill =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () trigger_onlyregistered_touch =
+void () trigger_onlyregistered_touch = 
 {
     
     if(other.classname != "player")
@@ -1165,7 +1165,7 @@ void () trigger_onlyregistered_touch =
 // OP_ADDRESS	28	146	6789
 // OP_STOREP_FNC	6777	6789	0
 // OP_DONE	0	0	0
-void () trigger_onlyregistered =
+void () trigger_onlyregistered = 
 {
     precache_sound("misc/talk.wav");
     InitTrigger();
@@ -1179,7 +1179,7 @@ void () trigger_onlyregistered =
 // OP_ADDRESS	28	150	6792
 // OP_STOREP_F	276	6792	0
 // OP_DONE	0	0	0
-void () hurt_on =
+void () hurt_on = 
 {
     self.solid = SOLID_TRIGGER;
     self.nextthink = CONTENT_EMPTY;
@@ -1204,7 +1204,7 @@ void () hurt_on =
 // OP_STOREP_F	6799	6798	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () hurt_touch =
+void () hurt_touch = 
 {
     
     if(other.takedamage)
@@ -1229,7 +1229,7 @@ void () hurt_touch =
 // OP_ADDRESS	28	420	6804
 // OP_STOREP_F	313	6804	0
 // OP_DONE	0	0	0
-void () trigger_hurt =
+void () trigger_hurt = 
 {
     InitTrigger();
     self.touch = hurt_touch;
@@ -1284,7 +1284,7 @@ float PUSH_ONCE = 1.000;
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () trigger_push_touch =
+void () trigger_push_touch = 
 {
     if(other.classname == "grenade")
     {
@@ -1333,7 +1333,7 @@ void () trigger_push_touch =
 // OP_ADDRESS	28	364	6851
 // OP_STOREP_F	1168	6851	0
 // OP_DONE	0	0	0
-void () trigger_push =
+void () trigger_push = 
 {
     InitTrigger();
     precache_sound("ambience/windfly.wav");
@@ -1378,7 +1378,7 @@ void () trigger_push =
 // OP_LOAD_F	28	442	6873
 // OP_STOREP_F	6873	6872	0
 // OP_DONE	0	0	0
-void () trigger_monsterjump_touch =
+void () trigger_monsterjump_touch = 
 {
     
     if((other.flags & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER)
@@ -1419,7 +1419,7 @@ void () trigger_monsterjump_touch =
 // OP_ADDRESS	28	146	6891
 // OP_STOREP_FNC	6852	6891	0
 // OP_DONE	0	0	0
-void () trigger_monsterjump =
+void () trigger_monsterjump = 
 {
     
     if(!self.speed)

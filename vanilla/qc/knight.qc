@@ -3,9 +3,8 @@
 // OP_STATE	337	8543	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand1 =
+void () knight_stand1 = [0.000, knight_stand2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 8543 0
     ai_stand();
 };
 
@@ -14,9 +13,8 @@ void () knight_stand1 =
 // OP_STATE	7368	8544	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand2 =
+void () knight_stand2 = [1.000, knight_stand3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7368 8544 0
     ai_stand();
 };
 
@@ -25,9 +23,8 @@ void () knight_stand2 =
 // OP_STATE	7369	8545	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand3 =
+void () knight_stand3 = [2.000, knight_stand4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 8545 0
     ai_stand();
 };
 
@@ -36,9 +33,8 @@ void () knight_stand3 =
 // OP_STATE	370	8546	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand4 =
+void () knight_stand4 = [3.000, knight_stand5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 8546 0
     ai_stand();
 };
 
@@ -47,9 +43,8 @@ void () knight_stand4 =
 // OP_STATE	6076	8547	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand5 =
+void () knight_stand5 = [4.000, knight_stand6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 8547 0
     ai_stand();
 };
 
@@ -58,9 +53,8 @@ void () knight_stand5 =
 // OP_STATE	313	8548	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand6 =
+void () knight_stand6 = [5.000, knight_stand7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 8548 0
     ai_stand();
 };
 
@@ -69,9 +63,8 @@ void () knight_stand6 =
 // OP_STATE	314	8549	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand7 =
+void () knight_stand7 = [6.000, knight_stand8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 8549 0
     ai_stand();
 };
 
@@ -80,9 +73,8 @@ void () knight_stand7 =
 // OP_STATE	315	8550	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand8 =
+void () knight_stand8 = [7.000, knight_stand9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 8550 0
     ai_stand();
 };
 
@@ -91,9 +83,8 @@ void () knight_stand8 =
 // OP_STATE	6077	8542	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () knight_stand9 =
+void () knight_stand9 = [8.000, knight_stand1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 8542 0
     ai_stand();
 };
 
@@ -112,9 +103,8 @@ void () knight_stand9 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk1 =
+void () knight_walk1 = [53.000, knight_walk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 8551 0
     
     if(random() < 0.200)
     {
@@ -130,9 +120,8 @@ void () knight_walk1 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk2 =
+void () knight_walk2 = [54.000, knight_walk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5357 8554 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -142,9 +131,8 @@ void () knight_walk2 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk3 =
+void () knight_walk3 = [55.000, knight_walk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5359 8555 0
     ai_walk(AS_MELEE);
 };
 
@@ -154,9 +142,8 @@ void () knight_walk3 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk4 =
+void () knight_walk4 = [56.000, knight_walk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 8556 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -166,9 +153,8 @@ void () knight_walk4 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk5 =
+void () knight_walk5 = [57.000, knight_walk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5363 8557 0
     ai_walk(AS_MELEE);
 };
 
@@ -178,9 +164,8 @@ void () knight_walk5 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk6 =
+void () knight_walk6 = [58.000, knight_walk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5365 8558 0
     ai_walk(AS_MELEE);
 };
 
@@ -190,9 +175,8 @@ void () knight_walk6 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk7 =
+void () knight_walk7 = [59.000, knight_walk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5367 8559 0
     ai_walk(AS_MELEE);
 };
 
@@ -202,9 +186,8 @@ void () knight_walk7 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk8 =
+void () knight_walk8 = [60.000, knight_walk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 8560 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -214,9 +197,8 @@ void () knight_walk8 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk9 =
+void () knight_walk9 = [61.000, knight_walk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5369 8561 0
     ai_walk(AS_MELEE);
 };
 
@@ -226,9 +208,8 @@ void () knight_walk9 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk10 =
+void () knight_walk10 = [62.000, knight_walk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5371 8562 0
     ai_walk(AS_MELEE);
 };
 
@@ -238,9 +219,8 @@ void () knight_walk10 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk11 =
+void () knight_walk11 = [63.000, knight_walk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3872 8563 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -250,9 +230,8 @@ void () knight_walk11 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk12 =
+void () knight_walk12 = [64.000, knight_walk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 260 8564 0
     ai_walk(AS_MELEE);
 };
 
@@ -262,9 +241,8 @@ void () knight_walk12 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk13 =
+void () knight_walk13 = [65.000, knight_walk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5375 8565 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -274,9 +252,8 @@ void () knight_walk13 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () knight_walk14 =
+void () knight_walk14 = [66.000, knight_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5377 1083 0
     ai_walk(AS_MELEE);
 };
 
@@ -295,9 +272,8 @@ void () knight_walk14 =
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run1 =
+void () knight_run1 = [9.000, knight_run2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 8567 0
     
     if(random() < 0.200)
     {
@@ -313,9 +289,8 @@ void () knight_run1 =
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run2 =
+void () knight_run2 = [10.000, knight_run3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 8569 0
     ai_run(20.000);
 };
 
@@ -325,9 +300,8 @@ void () knight_run2 =
 // OP_STORE_V	7768	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run3 =
+void () knight_run3 = [11.000, knight_run4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 8570 0
     ai_run(13.000);
 };
 
@@ -337,9 +311,8 @@ void () knight_run3 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run4 =
+void () knight_run4 = [12.000, knight_run5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 8571 0
     ai_run(TE_WIZSPIKE);
 };
 
@@ -349,9 +322,8 @@ void () knight_run4 =
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run5 =
+void () knight_run5 = [13.000, knight_run6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 8572 0
     ai_run(SECRET_YES_SHOOT);
 };
 
@@ -361,9 +333,8 @@ void () knight_run5 =
 // OP_STORE_V	894	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run6 =
+void () knight_run6 = [14.000, knight_run7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 8573 0
     ai_run(20.000);
 };
 
@@ -373,9 +344,8 @@ void () knight_run6 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run7 =
+void () knight_run7 = [15.000, knight_run8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 8574 0
     ai_run(14.000);
 };
 
@@ -385,9 +355,8 @@ void () knight_run7 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () knight_run8 =
+void () knight_run8 = [16.000, knight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 8566 0
     ai_run(TE_LIGHTNING2);
 };
 
@@ -413,9 +382,8 @@ void () knight_run8 =
 // OP_STORE_V	894	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_runatk1 =
+void () knight_runatk1 = [17.000, knight_runatk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 8575 0
     if(random() > 0.500)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
@@ -433,9 +401,8 @@ void () knight_runatk1 =
 // OP_STATE	3319	8579	0
 // OP_CALL0	859	0	0
 // OP_DONE	0	0	0
-void () knight_runatk2 =
+void () knight_runatk2 = [18.000, knight_runatk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 8579 0
     ai_charge_side();
 };
 
@@ -444,9 +411,8 @@ void () knight_runatk2 =
 // OP_STATE	7776	8580	0
 // OP_CALL0	859	0	0
 // OP_DONE	0	0	0
-void () knight_runatk3 =
+void () knight_runatk3 = [19.000, knight_runatk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 8580 0
     ai_charge_side();
 };
 
@@ -455,9 +421,8 @@ void () knight_runatk3 =
 // OP_STATE	894	8581	0
 // OP_CALL0	859	0	0
 // OP_DONE	0	0	0
-void () knight_runatk4 =
+void () knight_runatk4 = [20.000, knight_runatk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 8581 0
     ai_charge_side();
 };
 
@@ -466,9 +431,8 @@ void () knight_runatk4 =
 // OP_STATE	7779	8582	0
 // OP_CALL0	921	0	0
 // OP_DONE	0	0	0
-void () knight_runatk5 =
+void () knight_runatk5 = [21.000, knight_runatk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 8582 0
     ai_melee_side();
 };
 
@@ -477,9 +441,8 @@ void () knight_runatk5 =
 // OP_STATE	7781	8583	0
 // OP_CALL0	921	0	0
 // OP_DONE	0	0	0
-void () knight_runatk6 =
+void () knight_runatk6 = [22.000, knight_runatk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 8583 0
     ai_melee_side();
 };
 
@@ -488,9 +451,8 @@ void () knight_runatk6 =
 // OP_STATE	301	8584	0
 // OP_CALL0	921	0	0
 // OP_DONE	0	0	0
-void () knight_runatk7 =
+void () knight_runatk7 = [23.000, knight_runatk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 8584 0
     ai_melee_side();
 };
 
@@ -499,9 +461,8 @@ void () knight_runatk7 =
 // OP_STATE	4437	8585	0
 // OP_CALL0	921	0	0
 // OP_DONE	0	0	0
-void () knight_runatk8 =
+void () knight_runatk8 = [24.000, knight_runatk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 8585 0
     ai_melee_side();
 };
 
@@ -510,9 +471,8 @@ void () knight_runatk8 =
 // OP_STATE	1890	8586	0
 // OP_CALL0	921	0	0
 // OP_DONE	0	0	0
-void () knight_runatk9 =
+void () knight_runatk9 = [25.000, knight_runatk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 8586 0
     ai_melee_side();
 };
 
@@ -521,9 +481,8 @@ void () knight_runatk9 =
 // OP_STATE	7788	8587	0
 // OP_CALL0	859	0	0
 // OP_DONE	0	0	0
-void () knight_runatk10 =
+void () knight_runatk10 = [26.000, knight_runatk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 8587 0
     ai_charge_side();
 };
 
@@ -533,9 +492,8 @@ void () knight_runatk10 =
 // OP_STORE_V	318	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_runatk11 =
+void () knight_runatk11 = [27.000, knight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 8566 0
     ai_charge(TE_LAVASPLASH);
 };
 
@@ -551,9 +509,8 @@ void () knight_runatk11 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk1 =
+void () knight_atk1 = [43.000, knight_atk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5447 8588 0
     sound(self, CHAN_WEAPON, "knight/sword1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     ai_charge(MSG_BROADCAST);
 };
@@ -564,9 +521,8 @@ void () knight_atk1 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk2 =
+void () knight_atk2 = [44.000, knight_atk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5449 8589 0
     ai_charge(TE_WIZSPIKE);
 };
 
@@ -576,9 +532,8 @@ void () knight_atk2 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk3 =
+void () knight_atk3 = [45.000, knight_atk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1390 8590 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
@@ -588,9 +543,8 @@ void () knight_atk3 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk4 =
+void () knight_atk4 = [46.000, knight_atk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5452 8591 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -600,9 +554,8 @@ void () knight_atk4 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk5 =
+void () knight_atk5 = [47.000, knight_atk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5454 8592 0
     ai_charge(AS_MELEE);
 };
 
@@ -613,9 +566,8 @@ void () knight_atk5 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () knight_atk6 =
+void () knight_atk6 = [48.000, knight_atk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5456 8593 0
     ai_charge(SECRET_1ST_DOWN);
     ai_melee();
 };
@@ -627,9 +579,8 @@ void () knight_atk6 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () knight_atk7 =
+void () knight_atk7 = [49.000, knight_atk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5458 8594 0
     ai_charge(SPAWNFLAG_SUPERSPIKE);
     ai_melee();
 };
@@ -641,9 +592,8 @@ void () knight_atk7 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () knight_atk8 =
+void () knight_atk8 = [50.000, knight_atk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2227 8595 0
     ai_charge(AS_MELEE);
     ai_melee();
 };
@@ -654,9 +604,8 @@ void () knight_atk8 =
 // OP_STORE_V	7368	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk9 =
+void () knight_atk9 = [51.000, knight_atk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5351 8596 0
     ai_charge(SPAWNFLAG_SUPERSPIKE);
 };
 
@@ -666,9 +615,8 @@ void () knight_atk9 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () knight_atk10 =
+void () knight_atk10 = [52.000, knight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5353 8566 0
     ai_charge(TE_LIGHTNING1);
 };
 
@@ -676,27 +624,24 @@ void () knight_atk10 =
 // function begins at statement 14277, parm_start=8598
 // OP_STATE	303	8598	0
 // OP_DONE	0	0	0
-void () knight_pain1 =
+void () knight_pain1 = [28.000, knight_pain2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 8598 0
 };
 
 // knight_pain2
 // function begins at statement 14279, parm_start=8599
 // OP_STATE	5105	8599	0
 // OP_DONE	0	0	0
-void () knight_pain2 =
+void () knight_pain2 = [29.000, knight_pain3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 8599 0
 };
 
 // knight_pain3
 // function begins at statement 14281, parm_start=8600
 // OP_STATE	304	8566	0
 // OP_DONE	0	0	0
-void () knight_pain3 =
+void () knight_pain3 = [30.000, knight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 8566 0
 };
 
 // knight_painb1
@@ -705,9 +650,8 @@ void () knight_pain3 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb1 =
+void () knight_painb1 = [31.000, knight_painb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 8601 0
     ai_painforward(MSG_BROADCAST);
 };
 
@@ -717,9 +661,8 @@ void () knight_painb1 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb2 =
+void () knight_painb2 = [32.000, knight_painb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 8602 0
     ai_painforward(AS_MELEE);
 };
 
@@ -727,18 +670,16 @@ void () knight_painb2 =
 // function begins at statement 14291, parm_start=8603
 // OP_STATE	307	8603	0
 // OP_DONE	0	0	0
-void () knight_painb3 =
+void () knight_painb3 = [33.000, knight_painb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 8603 0
 };
 
 // knight_painb4
 // function begins at statement 14293, parm_start=8604
 // OP_STATE	5112	8604	0
 // OP_DONE	0	0	0
-void () knight_painb4 =
+void () knight_painb4 = [34.000, knight_painb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 8604 0
 };
 
 // knight_painb5
@@ -747,9 +688,8 @@ void () knight_painb4 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb5 =
+void () knight_painb5 = [35.000, knight_painb6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 8605 0
     ai_painforward(SPAWNFLAG_LASER);
 };
 
@@ -759,9 +699,8 @@ void () knight_painb5 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb6 =
+void () knight_painb6 = [36.000, knight_painb7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 8606 0
     ai_painforward(SECRET_1ST_DOWN);
 };
 
@@ -771,9 +710,8 @@ void () knight_painb6 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb7 =
+void () knight_painb7 = [37.000, knight_painb8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 8607 0
     ai_painforward(SPAWNFLAG_LASER);
 };
 
@@ -783,9 +721,8 @@ void () knight_painb7 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb8 =
+void () knight_painb8 = [38.000, knight_painb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 8608 0
     ai_painforward(TE_LIGHTNING1);
 };
 
@@ -795,9 +732,8 @@ void () knight_painb8 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb9 =
+void () knight_painb9 = [39.000, knight_painb10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5102 8609 0
     ai_painforward(TE_LIGHTNING1);
 };
 
@@ -807,9 +743,8 @@ void () knight_painb9 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () knight_painb10 =
+void () knight_painb10 = [40.000, knight_painb11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1733 8610 0
     ai_painforward(MSG_BROADCAST);
 };
 
@@ -817,9 +752,8 @@ void () knight_painb10 =
 // function begins at statement 14319, parm_start=8611
 // OP_STATE	5443	8566	0
 // OP_DONE	0	0	0
-void () knight_painb11 =
+void () knight_painb11 = [41.000, knight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5443 8566 0
 };
 
 // knight_pain
@@ -848,7 +782,7 @@ void () knight_painb11 =
 // OP_ADD_F	31	7368	8623
 // OP_STOREP_F	8623	8622	0
 // OP_DONE	0	0	0
-void (entity attacker, float damage) knight_pain =
+void (entity attacker, float damage) knight_pain = 
 {
     local float r;
     
@@ -877,9 +811,8 @@ void (entity attacker, float damage) knight_pain =
 // OP_STATE	5379	8624	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow1 =
+void () knight_bow1 = [67.000, knight_bow2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5379 8624 0
     ai_turn();
 };
 
@@ -888,9 +821,8 @@ void () knight_bow1 =
 // OP_STATE	5381	8625	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow2 =
+void () knight_bow2 = [68.000, knight_bow3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5381 8625 0
     ai_turn();
 };
 
@@ -899,9 +831,8 @@ void () knight_bow2 =
 // OP_STATE	5383	8626	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow3 =
+void () knight_bow3 = [69.000, knight_bow4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5383 8626 0
     ai_turn();
 };
 
@@ -910,9 +841,8 @@ void () knight_bow3 =
 // OP_STATE	5384	8627	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow4 =
+void () knight_bow4 = [70.000, knight_bow5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5384 8627 0
     ai_turn();
 };
 
@@ -921,9 +851,8 @@ void () knight_bow4 =
 // OP_STATE	5386	8627	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow5 =
+void () knight_bow5 = [71.000, knight_bow5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5386 8627 0
     ai_turn();
 };
 
@@ -932,9 +861,8 @@ void () knight_bow5 =
 // OP_STATE	5384	8628	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow6 =
+void () knight_bow6 = [70.000, knight_bow7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5384 8628 0
     ai_turn();
 };
 
@@ -943,9 +871,8 @@ void () knight_bow6 =
 // OP_STATE	5383	8629	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow7 =
+void () knight_bow7 = [69.000, knight_bow8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5383 8629 0
     ai_turn();
 };
 
@@ -954,9 +881,8 @@ void () knight_bow7 =
 // OP_STATE	5381	8630	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow8 =
+void () knight_bow8 = [68.000, knight_bow9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5381 8630 0
     ai_turn();
 };
 
@@ -965,9 +891,8 @@ void () knight_bow8 =
 // OP_STATE	5379	8631	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow9 =
+void () knight_bow9 = [67.000, knight_bow10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5379 8631 0
     ai_turn();
 };
 
@@ -976,9 +901,8 @@ void () knight_bow9 =
 // OP_STATE	5355	1083	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () knight_bow10 =
+void () knight_bow10 = [53.000, knight_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 1083 0
     ai_turn();
 };
 
@@ -986,18 +910,16 @@ void () knight_bow10 =
 // function begins at statement 14375, parm_start=8633
 // OP_STATE	5395	8633	0
 // OP_DONE	0	0	0
-void () knight_die1 =
+void () knight_die1 = [76.000, knight_die2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5395 8633 0
 };
 
 // knight_die2
 // function begins at statement 14377, parm_start=8634
 // OP_STATE	5397	8634	0
 // OP_DONE	0	0	0
-void () knight_die2 =
+void () knight_die2 = [77.000, knight_die3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5397 8634 0
 };
 
 // knight_die3
@@ -1006,9 +928,8 @@ void () knight_die2 =
 // OP_ADDRESS	28	104	8636
 // OP_STOREP_F	237	8636	0
 // OP_DONE	0	0	0
-void () knight_die3 =
+void () knight_die3 = [78.000, knight_die4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5399 8635 0
     self.solid = SOLID_NOT;
 };
 
@@ -1016,81 +937,72 @@ void () knight_die3 =
 // function begins at statement 14383, parm_start=8637
 // OP_STATE	5401	8637	0
 // OP_DONE	0	0	0
-void () knight_die4 =
+void () knight_die4 = [79.000, knight_die5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5401 8637 0
 };
 
 // knight_die5
 // function begins at statement 14385, parm_start=8638
 // OP_STATE	788	8638	0
 // OP_DONE	0	0	0
-void () knight_die5 =
+void () knight_die5 = [80.000, knight_die6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 788 8638 0
 };
 
 // knight_die6
 // function begins at statement 14387, parm_start=8639
 // OP_STATE	5404	8639	0
 // OP_DONE	0	0	0
-void () knight_die6 =
+void () knight_die6 = [81.000, knight_die7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5404 8639 0
 };
 
 // knight_die7
 // function begins at statement 14389, parm_start=8640
 // OP_STATE	5406	8640	0
 // OP_DONE	0	0	0
-void () knight_die7 =
+void () knight_die7 = [82.000, knight_die8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5406 8640 0
 };
 
 // knight_die8
 // function begins at statement 14391, parm_start=8641
 // OP_STATE	5408	8641	0
 // OP_DONE	0	0	0
-void () knight_die8 =
+void () knight_die8 = [83.000, knight_die9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5408 8641 0
 };
 
 // knight_die9
 // function begins at statement 14393, parm_start=8642
 // OP_STATE	5410	8642	0
 // OP_DONE	0	0	0
-void () knight_die9 =
+void () knight_die9 = [84.000, knight_die10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5410 8642 0
 };
 
 // knight_die10
 // function begins at statement 14395, parm_start=8643
 // OP_STATE	5411	8642	0
 // OP_DONE	0	0	0
-void () knight_die10 =
+void () knight_die10 = [85.000, knight_die10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5411 8642 0
 };
 
 // knight_dieb1
 // function begins at statement 14397, parm_start=8644
 // OP_STATE	5413	8644	0
 // OP_DONE	0	0	0
-void () knight_dieb1 =
+void () knight_dieb1 = [86.000, knight_dieb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5413 8644 0
 };
 
 // knight_dieb2
 // function begins at statement 14399, parm_start=8645
 // OP_STATE	5415	8645	0
 // OP_DONE	0	0	0
-void () knight_dieb2 =
+void () knight_dieb2 = [87.000, knight_dieb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5415 8645 0
 };
 
 // knight_dieb3
@@ -1099,9 +1011,8 @@ void () knight_dieb2 =
 // OP_ADDRESS	28	104	8647
 // OP_STOREP_F	237	8647	0
 // OP_DONE	0	0	0
-void () knight_dieb3 =
+void () knight_dieb3 = [88.000, knight_dieb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5417 8646 0
     self.solid = SOLID_NOT;
 };
 
@@ -1109,72 +1020,64 @@ void () knight_dieb3 =
 // function begins at statement 14405, parm_start=8648
 // OP_STATE	5419	8648	0
 // OP_DONE	0	0	0
-void () knight_dieb4 =
+void () knight_dieb4 = [89.000, knight_dieb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5419 8648 0
 };
 
 // knight_dieb5
 // function begins at statement 14407, parm_start=8649
 // OP_STATE	1423	8649	0
 // OP_DONE	0	0	0
-void () knight_dieb5 =
+void () knight_dieb5 = [90.000, knight_dieb6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1423 8649 0
 };
 
 // knight_dieb6
 // function begins at statement 14409, parm_start=8650
 // OP_STATE	5422	8650	0
 // OP_DONE	0	0	0
-void () knight_dieb6 =
+void () knight_dieb6 = [91.000, knight_dieb7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5422 8650 0
 };
 
 // knight_dieb7
 // function begins at statement 14411, parm_start=8651
 // OP_STATE	5424	8651	0
 // OP_DONE	0	0	0
-void () knight_dieb7 =
+void () knight_dieb7 = [92.000, knight_dieb8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5424 8651 0
 };
 
 // knight_dieb8
 // function begins at statement 14413, parm_start=8652
 // OP_STATE	5426	8652	0
 // OP_DONE	0	0	0
-void () knight_dieb8 =
+void () knight_dieb8 = [93.000, knight_dieb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5426 8652 0
 };
 
 // knight_dieb9
 // function begins at statement 14415, parm_start=8653
 // OP_STATE	5427	8653	0
 // OP_DONE	0	0	0
-void () knight_dieb9 =
+void () knight_dieb9 = [94.000, knight_dieb10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5427 8653 0
 };
 
 // knight_dieb10
 // function begins at statement 14417, parm_start=8654
 // OP_STATE	5429	8654	0
 // OP_DONE	0	0	0
-void () knight_dieb10 =
+void () knight_dieb10 = [95.000, knight_dieb11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5429 8654 0
 };
 
 // knight_dieb11
 // function begins at statement 14419, parm_start=8655
 // OP_STATE	5431	8654	0
 // OP_DONE	0	0	0
-void () knight_dieb11 =
+void () knight_dieb11 = [96.000, knight_dieb11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5431 8654 0
 };
 
 // knight_die
@@ -1218,7 +1121,7 @@ void () knight_dieb11 =
 // OP_GOTO	2	0	0
 // OP_CALL0	8643	0	0
 // OP_DONE	0	0	0
-void () knight_die =
+void () knight_die = 
 {
     
     if(self.health < -40.000)
@@ -1292,7 +1195,7 @@ void () knight_die =
 // OP_STOREP_FNC	8655	8678	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-void () monster_knight =
+void () monster_knight = 
 {
     
     if(deathmatch)

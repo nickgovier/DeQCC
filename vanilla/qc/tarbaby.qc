@@ -3,9 +3,8 @@
 // OP_STATE	337	10270	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () tbaby_stand1 =
+void () tbaby_stand1 = [0.000, tbaby_stand1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 10270 0
     ai_stand();
 };
 
@@ -14,9 +13,8 @@ void () tbaby_stand1 =
 // OP_STATE	337	10271	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () tbaby_hang1 =
+void () tbaby_hang1 = [0.000, tbaby_hang1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 10271 0
     ai_stand();
 };
 
@@ -25,9 +23,8 @@ void () tbaby_hang1 =
 // OP_STATE	337	10273	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk1 =
+void () tbaby_walk1 = [0.000, tbaby_walk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 10273 0
     ai_turn();
 };
 
@@ -36,9 +33,8 @@ void () tbaby_walk1 =
 // OP_STATE	9491	10274	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk2 =
+void () tbaby_walk2 = [1.000, tbaby_walk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9491 10274 0
     ai_turn();
 };
 
@@ -47,9 +43,8 @@ void () tbaby_walk2 =
 // OP_STATE	7369	10275	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk3 =
+void () tbaby_walk3 = [2.000, tbaby_walk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 10275 0
     ai_turn();
 };
 
@@ -58,9 +53,8 @@ void () tbaby_walk3 =
 // OP_STATE	370	10276	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk4 =
+void () tbaby_walk4 = [3.000, tbaby_walk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 10276 0
     ai_turn();
 };
 
@@ -69,9 +63,8 @@ void () tbaby_walk4 =
 // OP_STATE	6076	10277	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk5 =
+void () tbaby_walk5 = [4.000, tbaby_walk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 10277 0
     ai_turn();
 };
 
@@ -80,9 +73,8 @@ void () tbaby_walk5 =
 // OP_STATE	313	10278	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk6 =
+void () tbaby_walk6 = [5.000, tbaby_walk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 10278 0
     ai_turn();
 };
 
@@ -91,9 +83,8 @@ void () tbaby_walk6 =
 // OP_STATE	314	10279	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk7 =
+void () tbaby_walk7 = [6.000, tbaby_walk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 10279 0
     ai_turn();
 };
 
@@ -102,9 +93,8 @@ void () tbaby_walk7 =
 // OP_STATE	315	10280	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk8 =
+void () tbaby_walk8 = [7.000, tbaby_walk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 10280 0
     ai_turn();
 };
 
@@ -113,9 +103,8 @@ void () tbaby_walk8 =
 // OP_STATE	6077	10281	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk9 =
+void () tbaby_walk9 = [8.000, tbaby_walk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 10281 0
     ai_turn();
 };
 
@@ -124,9 +113,8 @@ void () tbaby_walk9 =
 // OP_STATE	317	10282	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk10 =
+void () tbaby_walk10 = [9.000, tbaby_walk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 10282 0
     ai_turn();
 };
 
@@ -136,9 +124,8 @@ void () tbaby_walk10 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk11 =
+void () tbaby_walk11 = [10.000, tbaby_walk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 10283 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -148,9 +135,8 @@ void () tbaby_walk11 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk12 =
+void () tbaby_walk12 = [11.000, tbaby_walk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 10284 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -160,9 +146,8 @@ void () tbaby_walk12 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk13 =
+void () tbaby_walk13 = [12.000, tbaby_walk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 10285 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -172,9 +157,8 @@ void () tbaby_walk13 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk14 =
+void () tbaby_walk14 = [13.000, tbaby_walk15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 10286 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -184,9 +168,8 @@ void () tbaby_walk14 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk15 =
+void () tbaby_walk15 = [14.000, tbaby_walk16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 10287 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -196,9 +179,8 @@ void () tbaby_walk15 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk16 =
+void () tbaby_walk16 = [15.000, tbaby_walk17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 10288 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -208,9 +190,8 @@ void () tbaby_walk16 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk17 =
+void () tbaby_walk17 = [16.000, tbaby_walk18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 10289 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -220,9 +201,8 @@ void () tbaby_walk17 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk18 =
+void () tbaby_walk18 = [17.000, tbaby_walk19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 10290 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -232,9 +212,8 @@ void () tbaby_walk18 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk19 =
+void () tbaby_walk19 = [18.000, tbaby_walk20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 10291 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -244,9 +223,8 @@ void () tbaby_walk19 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk20 =
+void () tbaby_walk20 = [19.000, tbaby_walk21]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 10292 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -256,9 +234,8 @@ void () tbaby_walk20 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk21 =
+void () tbaby_walk21 = [20.000, tbaby_walk22]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 10293 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -268,9 +245,8 @@ void () tbaby_walk21 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk22 =
+void () tbaby_walk22 = [21.000, tbaby_walk23]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 10294 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -280,9 +256,8 @@ void () tbaby_walk22 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk23 =
+void () tbaby_walk23 = [22.000, tbaby_walk24]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 10295 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -292,9 +267,8 @@ void () tbaby_walk23 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk24 =
+void () tbaby_walk24 = [23.000, tbaby_walk25]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 10296 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -304,9 +278,8 @@ void () tbaby_walk24 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk25 =
+void () tbaby_walk25 = [24.000, tbaby_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 10272 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -315,9 +288,8 @@ void () tbaby_walk25 =
 // OP_STATE	1890	10298	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run1 =
+void () tbaby_run1 = [25.000, tbaby_run2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 10298 0
     ai_face();
 };
 
@@ -326,9 +298,8 @@ void () tbaby_run1 =
 // OP_STATE	7788	10299	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run2 =
+void () tbaby_run2 = [26.000, tbaby_run3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 10299 0
     ai_face();
 };
 
@@ -337,9 +308,8 @@ void () tbaby_run2 =
 // OP_STATE	302	10300	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run3 =
+void () tbaby_run3 = [27.000, tbaby_run4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 10300 0
     ai_face();
 };
 
@@ -348,9 +318,8 @@ void () tbaby_run3 =
 // OP_STATE	303	10301	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run4 =
+void () tbaby_run4 = [28.000, tbaby_run5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 10301 0
     ai_face();
 };
 
@@ -359,9 +328,8 @@ void () tbaby_run4 =
 // OP_STATE	5105	10302	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run5 =
+void () tbaby_run5 = [29.000, tbaby_run6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 10302 0
     ai_face();
 };
 
@@ -370,9 +338,8 @@ void () tbaby_run5 =
 // OP_STATE	304	10303	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run6 =
+void () tbaby_run6 = [30.000, tbaby_run7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 10303 0
     ai_face();
 };
 
@@ -381,9 +348,8 @@ void () tbaby_run6 =
 // OP_STATE	305	10304	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run7 =
+void () tbaby_run7 = [31.000, tbaby_run8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 10304 0
     ai_face();
 };
 
@@ -392,9 +358,8 @@ void () tbaby_run7 =
 // OP_STATE	5674	10305	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run8 =
+void () tbaby_run8 = [32.000, tbaby_run9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 10305 0
     ai_face();
 };
 
@@ -403,9 +368,8 @@ void () tbaby_run8 =
 // OP_STATE	307	10306	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run9 =
+void () tbaby_run9 = [33.000, tbaby_run10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 10306 0
     ai_face();
 };
 
@@ -414,9 +378,8 @@ void () tbaby_run9 =
 // OP_STATE	5112	10307	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run10 =
+void () tbaby_run10 = [34.000, tbaby_run11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 10307 0
     ai_face();
 };
 
@@ -426,9 +389,8 @@ void () tbaby_run10 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run11 =
+void () tbaby_run11 = [35.000, tbaby_run12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 10308 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -438,9 +400,8 @@ void () tbaby_run11 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run12 =
+void () tbaby_run12 = [36.000, tbaby_run13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 10309 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -450,9 +411,8 @@ void () tbaby_run12 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run13 =
+void () tbaby_run13 = [37.000, tbaby_run14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 10310 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -462,9 +422,8 @@ void () tbaby_run13 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run14 =
+void () tbaby_run14 = [38.000, tbaby_run15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 10311 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -474,9 +433,8 @@ void () tbaby_run14 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run15 =
+void () tbaby_run15 = [39.000, tbaby_run16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5102 10312 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -486,9 +444,8 @@ void () tbaby_run15 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run16 =
+void () tbaby_run16 = [40.000, tbaby_run17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1733 10313 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -498,9 +455,8 @@ void () tbaby_run16 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run17 =
+void () tbaby_run17 = [41.000, tbaby_run18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5443 10314 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -510,9 +466,8 @@ void () tbaby_run17 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run18 =
+void () tbaby_run18 = [42.000, tbaby_run19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5445 10315 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -522,9 +477,8 @@ void () tbaby_run18 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run19 =
+void () tbaby_run19 = [43.000, tbaby_run20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5447 10316 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -534,9 +488,8 @@ void () tbaby_run19 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run20 =
+void () tbaby_run20 = [44.000, tbaby_run21]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5449 10317 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -546,9 +499,8 @@ void () tbaby_run20 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run21 =
+void () tbaby_run21 = [45.000, tbaby_run22]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1390 10318 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -558,9 +510,8 @@ void () tbaby_run21 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run22 =
+void () tbaby_run22 = [46.000, tbaby_run23]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5452 10319 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -570,9 +521,8 @@ void () tbaby_run22 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run23 =
+void () tbaby_run23 = [47.000, tbaby_run24]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5454 10320 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -582,9 +532,8 @@ void () tbaby_run23 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run24 =
+void () tbaby_run24 = [48.000, tbaby_run25]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5456 10321 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -594,9 +543,8 @@ void () tbaby_run24 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run25 =
+void () tbaby_run25 = [49.000, tbaby_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5458 10297 0
     ai_run(SPAWNFLAG_LASER);
 };
 
@@ -661,7 +609,7 @@ void () tbaby_jump1;
 // OP_ADD_F	31	603	10349
 // OP_STOREP_F	10349	10348	0
 // OP_DONE	0	0	0
-void () Tar_JumpTouch =
+void () Tar_JumpTouch = 
 {
     local float ldmg;
     if(other.takedamage && (other.classname != self.classname))
@@ -705,27 +653,24 @@ void () tbaby_jump5;
 // function begins at statement 18053, parm_start=10352
 // OP_STATE	5361	10352	0
 // OP_DONE	0	0	0
-void () tbaby_fly1 =
+void () tbaby_fly1 = [56.000, tbaby_fly2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 10352 0
 };
 
 // tbaby_fly2
 // function begins at statement 18055, parm_start=10353
 // OP_STATE	5363	10353	0
 // OP_DONE	0	0	0
-void () tbaby_fly2 =
+void () tbaby_fly2 = [57.000, tbaby_fly3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5363 10353 0
 };
 
 // tbaby_fly3
 // function begins at statement 18057, parm_start=10354
 // OP_STATE	5365	10354	0
 // OP_DONE	0	0	0
-void () tbaby_fly3 =
+void () tbaby_fly3 = [58.000, tbaby_fly4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5365 10354 0
 };
 
 // tbaby_fly4
@@ -740,9 +685,8 @@ void () tbaby_fly3 =
 // OP_IFNOT	10359	2	0
 // OP_CALL0	10350	0	0
 // OP_DONE	0	0	0
-void () tbaby_fly4 =
+void () tbaby_fly4 = [59.000, tbaby_fly1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5367 10351 0
     self.cnt = self.cnt + SPAWN_CRUCIFIED;
     
     if(self.cnt == SECRET_1ST_DOWN)
@@ -757,9 +701,8 @@ void () tbaby_fly4 =
 // OP_STATE	2227	10360	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump1 =
+void () tbaby_jump1 = [50.000, tbaby_jump2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2227 10360 0
     ai_face();
 };
 
@@ -768,9 +711,8 @@ void () tbaby_jump1 =
 // OP_STATE	5351	10361	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump2 =
+void () tbaby_jump2 = [51.000, tbaby_jump3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5351 10361 0
     ai_face();
 };
 
@@ -779,9 +721,8 @@ void () tbaby_jump2 =
 // OP_STATE	5353	10362	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump3 =
+void () tbaby_jump3 = [52.000, tbaby_jump4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5353 10362 0
     ai_face();
 };
 
@@ -790,9 +731,8 @@ void () tbaby_jump3 =
 // OP_STATE	5355	10350	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump4 =
+void () tbaby_jump4 = [53.000, tbaby_jump5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 10350 0
     ai_face();
 };
 
@@ -830,9 +770,8 @@ void () tbaby_jump4 =
 // OP_ADDRESS	28	421	10390
 // OP_STOREP_F	337	10390	0
 // OP_DONE	0	0	0
-void () tbaby_jump5 =
+void () tbaby_jump5 = [54.000, tbaby_jump6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5357 10363 0
     self.movetype = MOVETYPE_BOUNCE;
     self.touch = Tar_JumpTouch;
     makevectors(self.angles);
@@ -852,9 +791,8 @@ void () tbaby_jump5 =
 // function begins at statement 18113, parm_start=10391
 // OP_STATE	5359	10351	0
 // OP_DONE	0	0	0
-void () tbaby_jump6 =
+void () tbaby_jump6 = [55.000, tbaby_fly1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5359 10351 0
 };
 
 // tbaby_die1
@@ -863,9 +801,8 @@ void () tbaby_jump6 =
 // OP_ADDRESS	28	163	10393
 // OP_STOREP_F	250	10393	0
 // OP_DONE	0	0	0
-void () tbaby_die1 =
+void () tbaby_die1 = [60.000, tbaby_die2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 10392 0
     self.takedamage = DAMAGE_NO;
 };
 
@@ -911,9 +848,8 @@ void () tbaby_die1 =
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-void () tbaby_die2 =
+void () tbaby_die2 = [60.000, tbaby_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 10297 0
     T_RadiusDamage(self, self, 120.000, world);
     sound(self, CHAN_VOICE, "blob/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     self.origin = self.origin - (SECRET_NO_SHOOT * normalize(self.velocity));
@@ -968,7 +904,7 @@ void () tbaby_die2 =
 // OP_STOREP_FNC	10391	10423	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-void () monster_tarbaby =
+void () monster_tarbaby = 
 {
     
     if(deathmatch)

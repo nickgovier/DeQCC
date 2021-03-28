@@ -9,7 +9,7 @@ float intermission_exittime;
 // info_intermission
 // function begins at statement 5596, parm_start=3945
 // OP_DONE	0	0	0
-void () info_intermission =
+void () info_intermission = 
 {
 };
 
@@ -66,7 +66,7 @@ void () info_intermission =
 // OP_MUL_F	3973	1884	3974
 // OP_STORE_F	3974	51	0
 // OP_DONE	0	0	0
-void () SetChangeParms =
+void () SetChangeParms = 
 {
     
     if(self.health <= MSG_BROADCAST)
@@ -120,7 +120,7 @@ void () SetChangeParms =
 // OP_STORE_F	2256	50	0
 // OP_STORE_F	337	51	0
 // OP_DONE	0	0	0
-void () SetNewParms =
+void () SetNewParms = 
 {
     parm1 = IT_SHOTGUN | IT_AXE;
     parm2 = 100.000;
@@ -161,7 +161,7 @@ void () SetNewParms =
 // OP_MUL_F	51	2752	3989
 // OP_STOREP_F	3989	3988	0
 // OP_DONE	0	0	0
-void () DecodeLevelParms =
+void () DecodeLevelParms = 
 {
     
     if(!deathmatch)
@@ -232,7 +232,7 @@ void () DecodeLevelParms =
 // OP_CALL1	456	0	0
 // OP_RETURN	30	0	0
 // OP_DONE	0	0	0
-entity () FindIntermission =
+entity () FindIntermission = 
 {
     local entity spot;
     local float cyc;
@@ -287,7 +287,7 @@ string nextmap;
 // OP_STORE_V	4001	4	0
 // OP_CALL1	504	0	0
 // OP_DONE	0	0	0
-void () GotoNextMap =
+void () GotoNextMap = 
 {
     if(cvar("samelevel"))
     {
@@ -424,7 +424,7 @@ void () GotoNextMap =
 // OP_RETURN	0	0	0
 // OP_CALL0	4002	0	0
 // OP_DONE	0	0	0
-void () ExitIntermission =
+void () ExitIntermission = 
 {
     
     if(deathmatch)
@@ -540,7 +540,7 @@ void () ExitIntermission =
 // OP_RETURN	0	0	0
 // OP_CALL0	4004	0	0
 // OP_DONE	0	0	0
-void () IntermissionThink =
+void () IntermissionThink = 
 {
     
     if(time < intermission_exittime)
@@ -618,7 +618,7 @@ void () IntermissionThink =
 // OP_STORE_V	304	7	0
 // OP_CALL2	493	0	0
 // OP_DONE	0	0	0
-void () execute_changelevel =
+void () execute_changelevel = 
 {
     local entity pos;
     intermission_running = WEAPON_SHOTGUN;
@@ -702,7 +702,7 @@ void () execute_changelevel =
 // OP_ADD_F	31	603	4088
 // OP_STOREP_F	4088	4087	0
 // OP_DONE	0	0	0
-void () changelevel_touch =
+void () changelevel_touch = 
 {
     local entity pos;
     
@@ -750,7 +750,7 @@ void () changelevel_touch =
 // OP_ADDRESS	28	146	4093
 // OP_STOREP_FNC	4065	4093	0
 // OP_DONE	0	0	0
-void () trigger_changelevel =
+void () trigger_changelevel = 
 {
     
     if(!self.map)
@@ -781,7 +781,7 @@ void () set_suicide_frame;
 // OP_STORE_V	4096	4	0
 // OP_CALL1	488	0	0
 // OP_DONE	0	0	0
-void () respawn =
+void () respawn = 
 {
     if(coop)
     {
@@ -826,7 +826,7 @@ void () respawn =
 // OP_STOREP_F	4104	4102	0
 // OP_CALL0	4095	0	0
 // OP_DONE	0	0	0
-void () ClientKill =
+void () ClientKill = 
 {
     
     if(intermission_running && (coop || deathmatch))
@@ -846,7 +846,7 @@ void () ClientKill =
 // function begins at statement 6023, parm_start=4106
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (vector v) CheckSpawnPoint =
+float (vector v) CheckSpawnPoint = 
 {
     return FALSE;
 };
@@ -930,7 +930,7 @@ vector v;
 // OP_CALL1	455	0	0
 // OP_RETURN	4110	0	0
 // OP_DONE	0	0	0
-entity () SelectSpawnPoint =
+entity () SelectSpawnPoint = 
 {
     local entity spot;
     local entity thing;
@@ -1121,7 +1121,7 @@ void () PlayerDie;
 // OP_STORE_V	28	7	0
 // OP_CALL2	3939	0	0
 // OP_DONE	0	0	0
-void () PutClientInServer =
+void () PutClientInServer = 
 {
     local entity spot;
     spot = SelectSpawnPoint();
@@ -1173,35 +1173,35 @@ void () PutClientInServer =
 // info_player_start
 // function begins at statement 6193, parm_start=4200
 // OP_DONE	0	0	0
-void () info_player_start =
+void () info_player_start = 
 {
 };
 
 // info_player_start2
 // function begins at statement 6194, parm_start=4201
 // OP_DONE	0	0	0
-void () info_player_start2 =
+void () info_player_start2 = 
 {
 };
 
 // testplayerstart
 // function begins at statement 6195, parm_start=4202
 // OP_DONE	0	0	0
-void () testplayerstart =
+void () testplayerstart = 
 {
 };
 
 // info_player_deathmatch
 // function begins at statement 6196, parm_start=4203
 // OP_DONE	0	0	0
-void () info_player_deathmatch =
+void () info_player_deathmatch = 
 {
 };
 
 // info_player_coop
 // function begins at statement 6197, parm_start=4204
 // OP_DONE	0	0	0
-void () info_player_coop =
+void () info_player_coop = 
 {
 };
 
@@ -1271,7 +1271,7 @@ void () info_player_coop =
 // OP_ADD_F	31	603	4233
 // OP_STOREP_F	4233	4232	0
 // OP_DONE	0	0	0
-void () NextLevel =
+void () NextLevel = 
 {
     local entity o;
     if(mapname == "start")
@@ -1370,7 +1370,7 @@ void () NextLevel =
 // OP_CALL0	4204	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () CheckRules =
+void () CheckRules = 
 {
     local float timelimit;
     local float fraglimit;
@@ -1451,7 +1451,7 @@ void () CheckRules =
 // OP_STOREP_F	337	4287	0
 // OP_CALL0	4095	0	0
 // OP_DONE	0	0	0
-void () PlayerDeathThink =
+void () PlayerDeathThink = 
 {
     local entity old_self;
     local float forward;
@@ -1575,7 +1575,7 @@ void () PlayerDeathThink =
 // OP_ADD_F	4327	4328	4329
 // OP_STOREP_F	4329	4326	0
 // OP_DONE	0	0	0
-void () PlayerJump =
+void () PlayerJump = 
 {
     local vector start;
     local vector end;
@@ -1817,7 +1817,7 @@ void () PlayerJump =
 // OP_SUB_V	4408	4417	4420
 // OP_STOREP_V	4420	4405	0
 // OP_DONE	0	0	0
-void () WaterMove =
+void () WaterMove = 
 {
     
     if(self.movetype == MOVETYPE_NOCLIP)
@@ -2009,7 +2009,7 @@ void () WaterMove =
 // OP_STOREP_F	4472	4471	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () CheckWaterJump =
+void () CheckWaterJump = 
 {
     local vector start;
     local vector end;
@@ -2095,7 +2095,7 @@ void () CheckWaterJump =
 // OP_STOREP_F	1	4506	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-void () PlayerPreThink =
+void () PlayerPreThink = 
 {
     local float mspeed;
     local float aspeed;
@@ -2395,7 +2395,7 @@ void () PlayerPreThink =
 // OP_ADDRESS	28	378	4620
 // OP_STOREP_F	337	4620	0
 // OP_DONE	0	0	0
-void () CheckPowerups =
+void () CheckPowerups = 
 {
     
     if(self.health <= MSG_BROADCAST)
@@ -2635,7 +2635,7 @@ void () CheckPowerups =
 // OP_STOREP_F	4650	4649	0
 // OP_CALL0	4507	0	0
 // OP_DONE	0	0	0
-void () PlayerPostThink =
+void () PlayerPostThink = 
 {
     local float mspeed;
     local float aspeed;
@@ -2697,7 +2697,7 @@ void () PlayerPostThink =
 // OP_IFNOT	3942	2	0
 // OP_CALL0	4004	0	0
 // OP_DONE	0	0	0
-void () ClientConnect =
+void () ClientConnect = 
 {
     bprint(self.netname);
     bprint(" entered the game\n");
@@ -2733,7 +2733,7 @@ void () ClientConnect =
 // OP_CALL5	453	0	0
 // OP_CALL0	4094	0	0
 // OP_DONE	0	0	0
-void () ClientDisconnect =
+void () ClientDisconnect = 
 {
     
     if(gameover)
@@ -3101,7 +3101,7 @@ void () ClientDisconnect =
 // OP_STORE_V	4859	4	0
 // OP_CALL1	468	0	0
 // OP_DONE	0	0	0
-void (entity targ, entity attacker) ClientObituary =
+void (entity targ, entity attacker) ClientObituary = 
 {
     local float rnum;
     local string deathstring;

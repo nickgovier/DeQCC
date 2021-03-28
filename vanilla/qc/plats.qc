@@ -59,7 +59,7 @@ float PLAT_LOW_TRIGGER = 1.000;
 // OP_STORE_V	6904	10	0
 // OP_CALL3	450	0	0
 // OP_DONE	0	0	0
-void () plat_spawn_inside_trigger =
+void () plat_spawn_inside_trigger = 
 {
     local entity trigger;
     local vector tmin;
@@ -113,7 +113,7 @@ void () plat_spawn_inside_trigger =
 // OP_ADD_F	6956	370	6957
 // OP_STOREP_F	6957	6955	0
 // OP_DONE	0	0	0
-void () plat_hit_top =
+void () plat_hit_top = 
 {
     sound(self, CHAN_VOICE, self.noise1, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_TOP;
@@ -133,7 +133,7 @@ void () plat_hit_top =
 // OP_ADDRESS	28	433	6960
 // OP_STOREP_F	283	6960	0
 // OP_DONE	0	0	0
-void () plat_hit_bottom =
+void () plat_hit_bottom = 
 {
     sound(self, CHAN_VOICE, self.noise1, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_BOTTOM;
@@ -157,7 +157,7 @@ void () plat_hit_bottom =
 // OP_STORE_V	6958	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () plat_go_down =
+void () plat_go_down = 
 {
     sound(self, CHAN_VOICE, self.noise, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_DOWN;
@@ -182,7 +182,7 @@ void () plat_go_down =
 // OP_STORE_V	6951	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () plat_go_up =
+void () plat_go_up = 
 {
     sound(self, CHAN_VOICE, self.noise, PLAT_LOW_TRIGGER, ATTN_NORM);
     self.state = STATE_UP;
@@ -214,7 +214,7 @@ void () plat_go_up =
 // OP_ADD_F	6983	6898	6984
 // OP_STOREP_F	6984	6982	0
 // OP_DONE	0	0	0
-void () plat_center_touch =
+void () plat_center_touch = 
 {
     
     if(other.classname != "player")
@@ -262,7 +262,7 @@ void () plat_center_touch =
 // OP_IFNOT	6991	2	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-void () plat_outside_touch =
+void () plat_outside_touch = 
 {
     
     if(other.classname != "player")
@@ -292,7 +292,7 @@ void () plat_outside_touch =
 // OP_RETURN	0	0	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-void () plat_trigger_use =
+void () plat_trigger_use = 
 {
     
     if(self.think)
@@ -323,7 +323,7 @@ void () plat_trigger_use =
 // OP_STORE_V	6997	4	0
 // OP_CALL1	456	0	0
 // OP_DONE	0	0	0
-void () plat_crush =
+void () plat_crush = 
 {
     T_Damage(other, self, self, PLAT_LOW_TRIGGER);
     if(self.state == STATE_UP)
@@ -356,7 +356,7 @@ void () plat_crush =
 // OP_CALL1	456	0	0
 // OP_CALL0	6896	0	0
 // OP_DONE	0	0	0
-void () plat_use =
+void () plat_use = 
 {
     self.use = SUB_Null;
     
@@ -476,7 +476,7 @@ void () plat_use =
 // OP_ADDRESS	28	433	7082
 // OP_STOREP_F	283	7082	0
 // OP_DONE	0	0	0
-void () func_plat =
+void () func_plat = 
 {
     local entity t;
     
@@ -574,7 +574,7 @@ void () func_train_find;
 // OP_STORE_V	7090	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () train_blocked =
+void () train_blocked = 
 {
     
     if(time < self.attack_finished)
@@ -594,7 +594,7 @@ void () train_blocked =
 // OP_RETURN	0	0	0
 // OP_CALL0	7083	0	0
 // OP_DONE	0	0	0
-void () train_use =
+void () train_use = 
 {
     
     if(self.think != func_train_find)
@@ -629,7 +629,7 @@ void () train_use =
 // OP_ADDRESS	28	148	7104
 // OP_STOREP_FNC	7083	7104	0
 // OP_DONE	0	0	0
-void () train_wait =
+void () train_wait = 
 {
     if(self.wait)
     {
@@ -684,7 +684,7 @@ void () train_wait =
 // OP_STORE_V	7094	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () train_next =
+void () train_next = 
 {
     local entity targ;
     targ = find(world, targetname, self.target);
@@ -735,7 +735,7 @@ void () train_next =
 // OP_ADDRESS	28	148	7145
 // OP_STOREP_FNC	7083	7145	0
 // OP_DONE	0	0	0
-void () func_train_find =
+void () func_train_find = 
 {
     local entity targ;
     targ = find(world, targetname, self.target);
@@ -822,7 +822,7 @@ void () func_train_find =
 // OP_ADDRESS	28	148	7186
 // OP_STOREP_FNC	7084	7186	0
 // OP_DONE	0	0	0
-void () func_train =
+void () func_train = 
 {
     
     if(!self.speed)
@@ -927,7 +927,7 @@ void () func_train =
 // OP_ADDRESS	28	148	7219
 // OP_STOREP_FNC	7084	7219	0
 // OP_DONE	0	0	0
-void () misc_teleporttrain =
+void () misc_teleporttrain = 
 {
     
     if(!self.speed)

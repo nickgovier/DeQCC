@@ -3,7 +3,7 @@
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () info_null =
+void () info_null = 
 {
     remove(self);
 };
@@ -11,7 +11,7 @@ void () info_null =
 // info_notnull
 // function begins at statement 11132, parm_start=7222
 // OP_DONE	0	0	0
-void () info_notnull =
+void () info_notnull = 
 {
 };
 
@@ -39,7 +39,7 @@ float START_OFF = 1.000;
 // OP_ADD_F	7232	7222	7233
 // OP_STOREP_F	7233	7231	0
 // OP_DONE	0	0	0
-void () light_use =
+void () light_use = 
 {
     if(self.spawnflags & START_OFF)
     {
@@ -80,7 +80,7 @@ void () light_use =
 // OP_STORE_V	3860	7	0
 // OP_CALL2	479	0	0
 // OP_DONE	0	0	0
-void () light =
+void () light = 
 {
     
     if(!self.targetname)
@@ -134,7 +134,7 @@ void () light =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () light_fluoro =
+void () light_fluoro = 
 {
     
     if(self.style >= DOOR_TOGGLE)
@@ -171,7 +171,7 @@ void () light_fluoro =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () light_fluorospark =
+void () light_fluorospark = 
 {
     
     if(!self.style)
@@ -193,7 +193,7 @@ void () light_fluorospark =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () light_globe =
+void () light_globe = 
 {
     precache_model("progs/s_light.spr");
     setmodel(self, "progs/s_light.spr");
@@ -211,7 +211,7 @@ void () light_globe =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () FireAmbient =
+void () FireAmbient = 
 {
     precache_sound("ambience/fire1.wav");
     ambientsound(self.origin, "ambience/fire1.wav", 0.500, ATTN_STATIC);
@@ -228,7 +228,7 @@ void () FireAmbient =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () light_torch_small_walltorch =
+void () light_torch_small_walltorch = 
 {
     precache_model("progs/flame.mdl");
     setmodel(self, "progs/flame.mdl");
@@ -249,7 +249,7 @@ void () light_torch_small_walltorch =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () light_flame_large_yellow =
+void () light_flame_large_yellow = 
 {
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
@@ -269,7 +269,7 @@ void () light_flame_large_yellow =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () light_flame_small_yellow =
+void () light_flame_small_yellow = 
 {
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
@@ -288,7 +288,7 @@ void () light_flame_small_yellow =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () light_flame_small_white =
+void () light_flame_small_white = 
 {
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
@@ -317,7 +317,7 @@ void () fire_touch;
 // OP_ADDRESS	28	364	7288
 // OP_STOREP_F	1168	7288	0
 // OP_DONE	0	0	0
-void () misc_fireball =
+void () misc_fireball = 
 {
     precache_model("progs/lavaball.mdl");
     self.classname = "fireball";
@@ -386,7 +386,7 @@ void () misc_fireball =
 // OP_ADDRESS	28	148	7320
 // OP_STOREP_FNC	7278	7320	0
 // OP_DONE	0	0	0
-void () fire_fly =
+void () fire_fly = 
 {
     local entity fireball;
     fireball = spawn();
@@ -417,7 +417,7 @@ void () fire_fly =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () fire_touch =
+void () fire_touch = 
 {
     T_Damage(other, self, self, 20.000);
     remove(self);
@@ -452,7 +452,7 @@ void () fire_touch =
 // OP_STOREP_F	7330	7328	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-void () barrel_explode =
+void () barrel_explode = 
 {
     self.takedamage = DAMAGE_NO;
     self.classname = "explo_box";
@@ -505,7 +505,7 @@ void () barrel_explode =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () misc_explobox =
+void () misc_explobox = 
 {
     local float oldz;
     self.solid = SOLID_BBOX;
@@ -572,7 +572,7 @@ void () misc_explobox =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () misc_explobox2 =
+void () misc_explobox2 = 
 {
     local float oldz;
     self.solid = SOLID_BBOX;
@@ -638,7 +638,7 @@ void (vector org, vector vec) LaunchLaser;
 // OP_ADDRESS	345	146	7398
 // OP_STOREP_FNC	3205	7398	0
 // OP_DONE	0	0	0
-void () spikeshooter_use =
+void () spikeshooter_use = 
 {
     if(self.spawnflags & SPAWNFLAG_LASER)
     {
@@ -672,7 +672,7 @@ void () spikeshooter_use =
 // OP_MUL_VF	7406	1166	7409
 // OP_STOREP_V	7409	7403	0
 // OP_DONE	0	0	0
-void () shooter_think =
+void () shooter_think = 
 {
     spikeshooter_use();
     self.nextthink = time + self.wait;
@@ -697,7 +697,7 @@ void () shooter_think =
 // OP_STORE_V	2623	4	0
 // OP_CALL1	464	0	0
 // OP_DONE	0	0	0
-void () trap_spikeshooter =
+void () trap_spikeshooter = 
 {
     SetMovedir();
     self.use = spikeshooter_use;
@@ -732,7 +732,7 @@ void () trap_spikeshooter =
 // OP_ADDRESS	28	148	7428
 // OP_STOREP_FNC	7399	7428	0
 // OP_DONE	0	0	0
-void () trap_shooter =
+void () trap_shooter = 
 {
     trap_spikeshooter();
     
@@ -761,7 +761,7 @@ void () bubble_remove;
 // OP_ADDRESS	28	148	7434
 // OP_STOREP_FNC	7429	7434	0
 // OP_DONE	0	0	0
-void () air_bubbles =
+void () air_bubbles = 
 {
     
     if(deathmatch)
@@ -817,7 +817,7 @@ void () air_bubbles =
 // OP_ADDRESS	28	148	7454
 // OP_STOREP_FNC	7429	7454	0
 // OP_DONE	0	0	0
-void () make_bubbles =
+void () make_bubbles = 
 {
     local entity bubble;
     bubble = spawn();
@@ -882,7 +882,7 @@ void () make_bubbles =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () bubble_split =
+void () bubble_split = 
 {
     local entity bubble;
     bubble = spawn();
@@ -918,7 +918,7 @@ void () bubble_split =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () bubble_remove =
+void () bubble_remove = 
 {
     
     if(other.classname == self.classname)
@@ -992,7 +992,7 @@ void () bubble_remove =
 // OP_ADDRESS	28	148	7522
 // OP_STOREP_FNC	4860	7522	0
 // OP_DONE	0	0	0
-void () bubble_bob =
+void () bubble_bob = 
 {
     local float rnd1;
     local float rnd2;
@@ -1070,7 +1070,7 @@ void () bubble_bob =
 // OP_STORE_V	3849	7	0
 // OP_CALL2	449	0	0
 // OP_DONE	0	0	0
-void () viewthing =
+void () viewthing = 
 {
     self.movetype = MOVETYPE_NONE;
     self.solid = SOLID_NOT;
@@ -1085,7 +1085,7 @@ void () viewthing =
 // OP_SUB_F	7368	7528	7529
 // OP_STOREP_F	7529	7527	0
 // OP_DONE	0	0	0
-void () func_wall_use =
+void () func_wall_use = 
 {
     self.frame = SPAWNFLAG_SUPERSPIKE - self.frame;
 };
@@ -1105,7 +1105,7 @@ void () func_wall_use =
 // OP_STORE_V	7537	7	0
 // OP_CALL2	449	0	0
 // OP_DONE	0	0	0
-void () func_wall =
+void () func_wall = 
 {
     self.angles = VEC_ORIGIN;
     self.movetype = MOVETYPE_PUSH;
@@ -1129,7 +1129,7 @@ void () func_wall =
 // OP_STORE_V	28	4	0
 // OP_CALL1	503	0	0
 // OP_DONE	0	0	0
-void () func_illusionary =
+void () func_illusionary = 
 {
     self.angles = VEC_ORIGIN;
     self.movetype = MOVETYPE_NONE;
@@ -1158,7 +1158,7 @@ void () func_illusionary =
 // OP_STORE_V	7555	7	0
 // OP_CALL2	449	0	0
 // OP_DONE	0	0	0
-void () func_episodegate =
+void () func_episodegate = 
 {
     
     if(!(serverflags & self.spawnflags))
@@ -1192,7 +1192,7 @@ void () func_episodegate =
 // OP_STORE_V	7565	7	0
 // OP_CALL2	449	0	0
 // OP_DONE	0	0	0
-void () func_bossgate =
+void () func_bossgate = 
 {
     
     if((serverflags & 15.000) == 15.000)
@@ -1218,7 +1218,7 @@ void () func_bossgate =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_suck_wind =
+void () ambient_suck_wind = 
 {
     precache_sound("ambience/suck1.wav");
     ambientsound(self.origin, "ambience/suck1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_STATIC);
@@ -1235,7 +1235,7 @@ void () ambient_suck_wind =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_drone =
+void () ambient_drone = 
 {
     precache_sound("ambience/drone6.wav");
     ambientsound(self.origin, "ambience/drone6.wav", 0.500, ATTN_STATIC);
@@ -1252,7 +1252,7 @@ void () ambient_drone =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_flouro_buzz =
+void () ambient_flouro_buzz = 
 {
     precache_sound("ambience/buzz1.wav");
     ambientsound(self.origin, "ambience/buzz1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_STATIC);
@@ -1269,7 +1269,7 @@ void () ambient_flouro_buzz =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_drip =
+void () ambient_drip = 
 {
     precache_sound("ambience/drip1.wav");
     ambientsound(self.origin, "ambience/drip1.wav", 0.500, ATTN_STATIC);
@@ -1286,7 +1286,7 @@ void () ambient_drip =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_comp_hum =
+void () ambient_comp_hum = 
 {
     precache_sound("ambience/comp1.wav");
     ambientsound(self.origin, "ambience/comp1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_STATIC);
@@ -1303,7 +1303,7 @@ void () ambient_comp_hum =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_thunder =
+void () ambient_thunder = 
 {
     precache_sound("ambience/thunder1.wav");
     ambientsound(self.origin, "ambience/thunder1.wav", 0.500, ATTN_STATIC);
@@ -1320,7 +1320,7 @@ void () ambient_thunder =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_light_buzz =
+void () ambient_light_buzz = 
 {
     precache_sound("ambience/fl_hum1.wav");
     ambientsound(self.origin, "ambience/fl_hum1.wav", 0.500, ATTN_STATIC);
@@ -1337,7 +1337,7 @@ void () ambient_light_buzz =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_swamp1 =
+void () ambient_swamp1 = 
 {
     precache_sound("ambience/swamp1.wav");
     ambientsound(self.origin, "ambience/swamp1.wav", 0.500, ATTN_STATIC);
@@ -1354,7 +1354,7 @@ void () ambient_swamp1 =
 // OP_STORE_V	328	13	0
 // OP_CALL4	507	0	0
 // OP_DONE	0	0	0
-void () ambient_swamp2 =
+void () ambient_swamp2 = 
 {
     precache_sound("ambience/swamp2.wav");
     ambientsound(self.origin, "ambience/swamp2.wav", 0.500, ATTN_STATIC);
@@ -1408,7 +1408,7 @@ void () ambient_swamp2 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () noise_think =
+void () noise_think = 
 {
     self.nextthink = time + 0.500;
     sound(self, SPAWNFLAG_SUPERSPIKE, "enforcer/enfire.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
@@ -1450,7 +1450,7 @@ void () noise_think =
 // OP_ADDRESS	28	148	7620
 // OP_STOREP_FNC	7609	7620	0
 // OP_DONE	0	0	0
-void () misc_noisemaker =
+void () misc_noisemaker = 
 {
     precache_sound2("enforcer/enfire.wav");
     precache_sound2("enforcer/enfstop.wav");

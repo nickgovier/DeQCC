@@ -34,7 +34,7 @@ float enemy_yaw;
 // OP_GOTO	2	0	0
 // OP_CALL0	749	0	0
 // OP_DONE	0	0	0
-void () knight_attack =
+void () knight_attack = 
 {
     local float len;
     len = vlen((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs));
@@ -130,7 +130,7 @@ void () knight_attack =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float () CheckAttack =
+float () CheckAttack = 
 {
     local vector spot1;
     local vector spot2;
@@ -255,7 +255,7 @@ float () CheckAttack =
 // OP_STOREP_F	1	844	0
 // OP_CALL0	491	0	0
 // OP_DONE	0	0	0
-void () ai_face =
+void () ai_face = 
 {
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
@@ -269,7 +269,7 @@ float (entity targ) range;
 // OP_STORE_V	858	4	0
 // OP_CALL1	501	0	0
 // OP_DONE	0	0	0
-void (float d) ai_charge =
+void (float d) ai_charge = 
 {
     ai_face();
     movetogoal(d);
@@ -303,7 +303,7 @@ void (float d) ai_charge =
 // OP_STORE_V	894	7	0
 // OP_CALL2	477	0	0
 // OP_DONE	0	0	0
-void () ai_charge_side =
+void () ai_charge_side = 
 {
     local vector dtemp;
     local float heading;
@@ -346,7 +346,7 @@ void () ai_charge_side =
 // OP_STORE_V	899	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () ai_melee =
+void () ai_melee = 
 {
     local vector delta;
     local float ldmg;
@@ -406,7 +406,7 @@ void () ai_melee =
 // OP_STORE_V	925	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () ai_melee_side =
+void () ai_melee_side = 
 {
     local vector delta;
     local float ldmg;
@@ -496,7 +496,7 @@ void () ai_melee_side =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float () SoldierCheckAttack =
+float () SoldierCheckAttack = 
 {
     local vector spot1;
     local vector spot2;
@@ -630,7 +630,7 @@ float () SoldierCheckAttack =
 // OP_CALL1	731	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float () ShamCheckAttack =
+float () ShamCheckAttack = 
 {
     local vector spot1;
     local vector spot2;
@@ -759,7 +759,7 @@ float () ShamCheckAttack =
 // OP_CALL1	731	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float () OgreCheckAttack =
+float () OgreCheckAttack = 
 {
     local vector spot1;
     local vector spot2;

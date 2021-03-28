@@ -27,7 +27,7 @@
 // OP_ADDRESS	28	148	5472
 // OP_STOREP_FNC	1293	5472	0
 // OP_DONE	0	0	0
-void () monster_use =
+void () monster_use = 
 {
     
     if(self.enemy)
@@ -88,7 +88,7 @@ void () monster_use =
 // OP_STORE_ENT	5488	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () monster_death_use =
+void () monster_death_use = 
 {
     local entity ent;
     local entity otemp;
@@ -209,7 +209,7 @@ void () monster_death_use =
 // OP_ADD_F	5554	5555	5556
 // OP_STOREP_F	5556	5553	0
 // OP_DONE	0	0	0
-void () walkmonster_start_go =
+void () walkmonster_start_go = 
 {
     local string stemp;
     local entity etemp;
@@ -280,7 +280,7 @@ void () walkmonster_start_go =
 // OP_ADD_F	40	2256	5563
 // OP_STORE_F	5563	40	0
 // OP_DONE	0	0	0
-void () walkmonster_start =
+void () walkmonster_start = 
 {
     self.nextthink = self.nextthink + (random() * 0.500);
     self.think = walkmonster_start_go;
@@ -366,7 +366,7 @@ void () walkmonster_start =
 // OP_LOAD_FNC	28	356	5605
 // OP_CALL0	5605	0	0
 // OP_DONE	0	0	0
-void () flymonster_start_go =
+void () flymonster_start_go = 
 {
     self.takedamage = DAMAGE_AIM;
     self.ideal_yaw = self.angles * '0.000 1.000 0.000';
@@ -432,7 +432,7 @@ void () flymonster_start_go =
 // OP_ADD_F	40	2256	5612
 // OP_STORE_F	5612	40	0
 // OP_DONE	0	0	0
-void () flymonster_start =
+void () flymonster_start = 
 {
     self.nextthink = self.nextthink + (random() * 0.500);
     self.think = flymonster_start_go;
@@ -513,7 +513,7 @@ void () flymonster_start =
 // OP_ADD_F	5660	5661	5662
 // OP_STOREP_F	5662	5659	0
 // OP_DONE	0	0	0
-void () swimmonster_start_go =
+void () swimmonster_start_go = 
 {
     
     if(deathmatch)
@@ -571,7 +571,7 @@ void () swimmonster_start_go =
 // OP_ADD_F	40	2256	5669
 // OP_STORE_F	5669	40	0
 // OP_DONE	0	0	0
-void () swimmonster_start =
+void () swimmonster_start = 
 {
     self.nextthink = self.nextthink + (random() * 0.500);
     self.think = swimmonster_start_go;

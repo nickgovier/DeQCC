@@ -224,7 +224,7 @@ void () InitBodyQue;
 // OP_STORE_V	3800	4	0
 // OP_CALL1	510	0	0
 // OP_DONE	0	0	0
-void () main =
+void () main = 
 {
     dprint("main function\n");
     precache_file("progs.dat");
@@ -549,7 +549,7 @@ entity lastspawn;
 // OP_STORE_V	3873	7	0
 // OP_CALL2	479	0	0
 // OP_DONE	0	0	0
-void () worldspawn =
+void () worldspawn = 
 {
     lastspawn = world;
     InitBodyQue();
@@ -666,7 +666,7 @@ void () worldspawn =
 // OP_ADD_F	348	2256	3876
 // OP_STORE_F	3876	348	0
 // OP_DONE	0	0	0
-void () StartFrame =
+void () StartFrame = 
 {
     teamplay = cvar("teamplay");
     skill = cvar("skill");
@@ -677,7 +677,7 @@ entity bodyque_head;
 // bodyque
 // function begins at statement 5525, parm_start=3879
 // OP_DONE	0	0	0
-void () bodyque =
+void () bodyque = 
 {
 };
 
@@ -717,7 +717,7 @@ void () bodyque =
 // OP_ADDRESS	3899	201	3900
 // OP_STOREP_ENT	3877	3900	0
 // OP_DONE	0	0	0
-void () InitBodyQue =
+void () InitBodyQue = 
 {
     local entity e;
     bodyque_head = spawn();
@@ -769,7 +769,7 @@ void () InitBodyQue =
 // OP_LOAD_ENT	3877	201	3935
 // OP_STORE_ENT	3935	3877	0
 // OP_DONE	0	0	0
-void (entity ent) CopyToBodyQue =
+void (entity ent) CopyToBodyQue = 
 {
     bodyque_head.angles = ent.angles;
     bodyque_head.model = ent.model;

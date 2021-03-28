@@ -80,7 +80,7 @@ void () monster_death_use;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity targ, entity inflictor) CanDamage =
+float (entity targ, entity inflictor) CanDamage = 
 {
     
     if(targ.movetype == MOVETYPE_PUSH)
@@ -180,7 +180,7 @@ float (entity targ, entity inflictor) CanDamage =
 // OP_CALL0	1585	0	0
 // OP_STORE_ENT	1568	28	0
 // OP_DONE	0	0	0
-void (entity targ, entity attacker) Killed =
+void (entity targ, entity attacker) Killed = 
 {
     local entity oself;
     oself = self;
@@ -380,7 +380,7 @@ void (entity targ, entity attacker) Killed =
 // OP_STOREP_F	1719	1718	0
 // OP_STORE_ENT	1593	28	0
 // OP_DONE	0	0	0
-void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
+void (entity targ, entity inflictor, entity attacker, float damage) T_Damage = 
 {
     local vector dir;
     local entity oldself;
@@ -559,7 +559,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 // OP_STORE_ENT	1770	1726	0
 // OP_GOTO	-50	0	0
 // OP_DONE	0	0	0
-void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
+void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage = 
 {
     local float points;
     local entity head;
@@ -669,7 +669,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
 // OP_STORE_ENT	1799	1775	0
 // OP_GOTO	-42	0	0
 // OP_DONE	0	0	0
-void (entity attacker, float damage) T_BeamDamage =
+void (entity attacker, float damage) T_BeamDamage = 
 {
     local float points;
     local entity head;

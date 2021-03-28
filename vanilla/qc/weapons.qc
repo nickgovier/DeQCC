@@ -28,7 +28,7 @@ void () SuperDamageSound;
 // OP_STORE_V	2627	4	0
 // OP_CALL1	464	0	0
 // OP_DONE	0	0	0
-void () W_Precache =
+void () W_Precache = 
 {
     precache_sound("weapons/r_exp3.wav");
     precache_sound("weapons/rocket1i.wav");
@@ -51,7 +51,7 @@ void () W_Precache =
 // OP_MUL_F	2257	2629	2630
 // OP_RETURN	2630	0	0
 // OP_DONE	0	0	0
-float () crandom =
+float () crandom = 
 {
     return WEAPON_ROCKET * (random() - 0.500);
 };
@@ -113,7 +113,7 @@ float () crandom =
 // OP_STORE_V	2637	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-void () W_FireAxe =
+void () W_FireAxe = 
 {
     local vector source;
     local vector org;
@@ -169,7 +169,7 @@ void () W_FireAxe =
 // OP_STORE_V	2693	2667	0
 // OP_RETURN	2667	0	0
 // OP_DONE	0	0	0
-vector () wall_velocity =
+vector () wall_velocity = 
 {
     local vector vel;
     vel = normalize(self.velocity);
@@ -219,7 +219,7 @@ vector () wall_velocity =
 // OP_STORE_V	2697	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-void (vector org, vector vel) SpawnMeatSpray =
+void (vector org, vector vel) SpawnMeatSpray = 
 {
     local entity missile;
     local entity mpuff;
@@ -248,7 +248,7 @@ void (vector org, vector vel) SpawnMeatSpray =
 // OP_STORE_V	2740	13	0
 // OP_CALL4	490	0	0
 // OP_DONE	0	0	0
-void (vector org, vector vel, float damage) SpawnBlood =
+void (vector org, vector vel, float damage) SpawnBlood = 
 {
     particle(org, vel * 0.100, 73.000, damage * WEAPON_ROCKET);
 };
@@ -266,7 +266,7 @@ void (vector org, vector vel, float damage) SpawnBlood =
 // OP_STORE_V	2742	10	0
 // OP_CALL3	2613	0	0
 // OP_DONE	0	0	0
-void (float damage) spawn_touchblood =
+void (float damage) spawn_touchblood = 
 {
     local vector vel;
     vel = wall_velocity() * 0.200;
@@ -282,7 +282,7 @@ void (float damage) spawn_touchblood =
 // OP_STORE_V	318	13	0
 // OP_CALL4	490	0	0
 // OP_DONE	0	0	0
-void (vector org, vector vel) SpawnChunk =
+void (vector org, vector vel) SpawnChunk = 
 {
     particle(org, vel * 0.020, MSG_BROADCAST, TE_LAVASPLASH);
 };
@@ -294,7 +294,7 @@ float multi_damage;
 // OP_STORE_ENT	30	2770	0
 // OP_STORE_F	337	2771	0
 // OP_DONE	0	0	0
-void () ClearMultiDamage =
+void () ClearMultiDamage = 
 {
     multi_ent = world;
     multi_damage = MSG_BROADCAST;
@@ -311,7 +311,7 @@ void () ClearMultiDamage =
 // OP_STORE_V	2771	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () ApplyMultiDamage =
+void () ApplyMultiDamage = 
 {
     
     if(!multi_ent)
@@ -336,7 +336,7 @@ void () ApplyMultiDamage =
 // OP_ADD_F	2771	2777	2780
 // OP_STORE_F	2780	2771	0
 // OP_DONE	0	0	0
-void (entity hit, float damage) AddMultiDamage =
+void (entity hit, float damage) AddMultiDamage = 
 {
     
     if(!hit)
@@ -403,7 +403,7 @@ void (entity hit, float damage) AddMultiDamage =
 // OP_STORE_V	2791	7	0
 // OP_CALL2	497	0	0
 // OP_DONE	0	0	0
-void (float damage, vector dir) TraceAttack =
+void (float damage, vector dir) TraceAttack = 
 {
     local vector vel;
     local vector org;
@@ -470,7 +470,7 @@ void (float damage, vector dir) TraceAttack =
 // OP_GOTO	-25	0	0
 // OP_CALL0	2773	0	0
 // OP_DONE	0	0	0
-void (float shotcount, vector dir, vector spread) FireBullets =
+void (float shotcount, vector dir, vector spread) FireBullets = 
 {
     local vector direction;
     local vector src;
@@ -520,7 +520,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
 // OP_STORE_V	2887	10	0
 // OP_CALL3	2823	0	0
 // OP_DONE	0	0	0
-void () W_FireShotgun =
+void () W_FireShotgun = 
 {
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -561,7 +561,7 @@ void () W_FireShotgun =
 // OP_STORE_V	2902	10	0
 // OP_CALL3	2823	0	0
 // OP_DONE	0	0	0
-void () W_FireSuperShotgun =
+void () W_FireSuperShotgun = 
 {
     local vector dir;
     
@@ -583,54 +583,48 @@ void () W_FireSuperShotgun =
 // function begins at statement 3740, parm_start=2906
 // OP_STATE	337	2906	0
 // OP_DONE	0	0	0
-void () s_explode1 =
+void () s_explode1 = [0.000, s_explode2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 2906 0
 };
 
 // s_explode2
 // function begins at statement 3742, parm_start=2907
 // OP_STATE	2256	2907	0
 // OP_DONE	0	0	0
-void () s_explode2 =
+void () s_explode2 = [1.000, s_explode3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2256 2907 0
 };
 
 // s_explode3
 // function begins at statement 3744, parm_start=2908
 // OP_STATE	2257	2908	0
 // OP_DONE	0	0	0
-void () s_explode3 =
+void () s_explode3 = [2.000, s_explode4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2257 2908 0
 };
 
 // s_explode4
 // function begins at statement 3746, parm_start=2909
 // OP_STATE	370	2909	0
 // OP_DONE	0	0	0
-void () s_explode4 =
+void () s_explode4 = [3.000, s_explode5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 2909 0
 };
 
 // s_explode5
 // function begins at statement 3748, parm_start=2910
 // OP_STATE	2258	2910	0
 // OP_DONE	0	0	0
-void () s_explode5 =
+void () s_explode5 = [4.000, s_explode6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2258 2910 0
 };
 
 // s_explode6
 // function begins at statement 3750, parm_start=2911
 // OP_STATE	313	519	0
 // OP_DONE	0	0	0
-void () s_explode6 =
+void () s_explode6 = [5.000, SUB_Remove]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 519 0
 };
 
 // BecomeExplosion
@@ -648,7 +642,7 @@ void () s_explode6 =
 // OP_STOREP_F	237	2918	0
 // OP_CALL0	2905	0	0
 // OP_DONE	0	0	0
-void () BecomeExplosion =
+void () BecomeExplosion = 
 {
     self.movetype = MOVETYPE_NONE;
     self.velocity = VEC_ORIGIN;
@@ -723,7 +717,7 @@ void () BecomeExplosion =
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-void () T_MissileTouch =
+void () T_MissileTouch = 
 {
     local float damg;
     
@@ -827,7 +821,7 @@ void () T_MissileTouch =
 // OP_STORE_V	3000	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-void () W_FireRocket =
+void () W_FireRocket = 
 {
     local entity missile;
     local entity mpuff;
@@ -943,7 +937,7 @@ void () W_FireRocket =
 // OP_STORE_V	3011	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void (vector p1, vector p2, entity from, float damage) LightningDamage =
+void (vector p1, vector p2, entity from, float damage) LightningDamage = 
 {
     local entity e1;
     local entity e2;
@@ -1086,7 +1080,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
 // OP_STORE_V	304	13	0
 // OP_CALL4	3003	0	0
 // OP_DONE	0	0	0
-void () W_FireLightning =
+void () W_FireLightning = 
 {
     local vector org;
     local float cells;
@@ -1160,7 +1154,7 @@ void () W_FireLightning =
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-void () GrenadeExplode =
+void () GrenadeExplode = 
 {
     T_RadiusDamage(self, self.owner, 120.000, world);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -1194,7 +1188,7 @@ void () GrenadeExplode =
 // OP_ADDRESS	28	121	3119
 // OP_STOREP_V	286	3119	0
 // OP_DONE	0	0	0
-void () GrenadeTouch =
+void () GrenadeTouch = 
 {
     
     if(other == self.owner)
@@ -1300,7 +1294,7 @@ void () GrenadeTouch =
 // OP_STORE_V	3201	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-void () W_FireGrenade =
+void () W_FireGrenade = 
 {
     local entity missile;
     local entity mpuff;
@@ -1374,7 +1368,7 @@ void () superspike_touch;
 // OP_MUL_VF	3210	1168	3229
 // OP_STOREP_V	3229	3226	0
 // OP_DONE	0	0	0
-void (vector org, vector dir) launch_spike =
+void (vector org, vector dir) launch_spike = 
 {
     newmis = spawn();
     newmis.owner = self;
@@ -1429,7 +1423,7 @@ void (vector org, vector dir) launch_spike =
 // OP_ADDRESS	28	126	3251
 // OP_STOREP_F	277	3251	0
 // OP_DONE	0	0	0
-void () W_FireSuperSpikes =
+void () W_FireSuperSpikes = 
 {
     local vector dir;
     local entity old;
@@ -1495,7 +1489,7 @@ void () W_FireSuperSpikes =
 // OP_ADDRESS	28	126	3287
 // OP_STOREP_F	277	3287	0
 // OP_DONE	0	0	0
-void (float ox) W_FireSpikes =
+void (float ox) W_FireSpikes = 
 {
     local vector dir;
     local entity old;
@@ -1588,7 +1582,7 @@ void (float ox) W_FireSpikes =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () spike_touch =
+void () spike_touch = 
 {
     local float rand;
     
@@ -1693,7 +1687,7 @@ void () spike_touch =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () superspike_touch =
+void () superspike_touch = 
 {
     local float rand;
     
@@ -1866,7 +1860,7 @@ void () superspike_touch =
 // OP_ADDRESS	28	156	3410
 // OP_STOREP_F	337	3410	0
 // OP_DONE	0	0	0
-void () W_SetCurrentAmmo =
+void () W_SetCurrentAmmo = 
 {
     player_run();
     self.items = self.items - (self.items & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS));
@@ -2001,7 +1995,7 @@ void () W_SetCurrentAmmo =
 // OP_RETURN	254	0	0
 // OP_RETURN	253	0	0
 // OP_DONE	0	0	0
-float () W_BestWeapon =
+float () W_BestWeapon = 
 {
     local float it;
     it = self.items;
@@ -2054,7 +2048,7 @@ float () W_BestWeapon =
 // OP_CALL0	1800	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float () W_CheckNoAmmo =
+float () W_CheckNoAmmo = 
 {
     
     if(self.currentammo > MSG_BROADCAST)
@@ -2181,7 +2175,7 @@ void () player_rocket1;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () W_Attack =
+void () W_Attack = 
 {
     local float r;
     
@@ -2384,7 +2378,7 @@ void () W_Attack =
 // OP_STOREP_F	3496	3534	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-void () W_ChangeWeapon =
+void () W_ChangeWeapon = 
 {
     local float it;
     local float am;
@@ -2548,7 +2542,7 @@ void () W_ChangeWeapon =
 // OP_STOREP_F	337	3555	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-void () CheatCommand =
+void () CheatCommand = 
 {
     
     if(deathmatch)
@@ -2659,7 +2653,7 @@ void () CheatCommand =
 // OP_RETURN	0	0	0
 // OP_GOTO	-84	0	0
 // OP_DONE	0	0	0
-void () CycleWeaponCommand =
+void () CycleWeaponCommand = 
 {
     local float it;
     local float am;
@@ -2876,7 +2870,7 @@ void () CycleWeaponCommand =
 // OP_RETURN	0	0	0
 // OP_GOTO	-84	0	0
 // OP_DONE	0	0	0
-void () CycleWeaponReverseCommand =
+void () CycleWeaponReverseCommand = 
 {
     local float it;
     local float am;
@@ -3009,7 +3003,7 @@ void () CycleWeaponReverseCommand =
 // OP_ADD_F	3651	2256	3652
 // OP_STORE_F	3652	38	0
 // OP_DONE	0	0	0
-void () ServerflagsCommand =
+void () ServerflagsCommand = 
 {
     
     if(deathmatch)
@@ -3036,7 +3030,7 @@ void () ServerflagsCommand =
 // OP_STORE_V	3660	4	0
 // OP_CALL1	470	0	0
 // OP_DONE	0	0	0
-void () QuadCheat =
+void () QuadCheat = 
 {
     
     if(deathmatch)
@@ -3082,7 +3076,7 @@ void () QuadCheat =
 // OP_ADDRESS	28	173	3678
 // OP_STOREP_F	337	3678	0
 // OP_DONE	0	0	0
-void () ImpulseCommands =
+void () ImpulseCommands = 
 {
     
     if((self.impulse >= WEAPON_SHOTGUN) && (self.impulse <= WEAPON_BIG))
@@ -3137,7 +3131,7 @@ void () ImpulseCommands =
 // OP_CALL0	2614	0	0
 // OP_CALL0	3450	0	0
 // OP_DONE	0	0	0
-void () W_WeaponFrame =
+void () W_WeaponFrame = 
 {
     
     if(time < self.attack_finished)
@@ -3179,7 +3173,7 @@ void () W_WeaponFrame =
 // OP_CALL5	453	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () SuperDamageSound =
+void () SuperDamageSound = 
 {
     
     if(self.super_damage_finished > time)

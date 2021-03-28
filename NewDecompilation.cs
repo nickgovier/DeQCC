@@ -298,6 +298,12 @@ namespace DeQcc
                         }
                     }
                     statementIndex++;
+
+                    // Check for OP_STATE shorthand function and unpack it
+                    if (s.Opcode == Opcodes.OP_STATE)
+                    {
+                        f.state = "[" + a.ImmediateValue + ", " + b.ValueToAssign + "]";
+                    }
                 }
 
                 // Set the return type
@@ -568,7 +574,7 @@ namespace DeQcc
             }
 
             // Print the declaration
-            PrintLine(f.declaration + " =");
+            PrintLine(f.declaration + " = " + f.state);
             PrintLine("{");
             indent++;
 
@@ -639,7 +645,7 @@ namespace DeQcc
                     else { PrintLine("return;"); }
                     break;
                 case Opcodes.OP_STATE:
-                    PrintLine("*** UNPROCESSED OPCODE " + s.Opcode + " " + s.a + " " + s.b + " " + s.c);
+                    // already processed as part of the function declaration
                     break;
                 case Opcodes.OP_MUL_F: case Opcodes.OP_MUL_V: case Opcodes.OP_MUL_FV: case Opcodes.OP_MUL_VF: case Opcodes.OP_DIV_F:
                 case Opcodes.OP_ADD_F: case Opcodes.OP_ADD_V: case Opcodes.OP_SUB_F: case Opcodes.OP_SUB_V:

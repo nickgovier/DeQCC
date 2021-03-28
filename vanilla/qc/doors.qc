@@ -23,7 +23,7 @@ void () door_go_up;
 // OP_GOTO	2	0	0
 // OP_CALL0	5675	0	0
 // OP_DONE	0	0	0
-void () door_blocked =
+void () door_blocked = 
 {
     T_Damage(other, self, self, self.dmg);
     
@@ -65,7 +65,7 @@ void () door_blocked =
 // OP_ADD_F	5690	5691	5692
 // OP_STOREP_F	5692	5689	0
 // OP_DONE	0	0	0
-void () door_hit_top =
+void () door_hit_top = 
 {
     sound(self, CHAN_VOICE, self.noise1, DOOR_START_OPEN, ATTN_NORM);
     self.state = STATE_TOP;
@@ -91,7 +91,7 @@ void () door_hit_top =
 // OP_ADDRESS	28	433	5695
 // OP_STOREP_F	283	5695	0
 // OP_DONE	0	0	0
-void () door_hit_bottom =
+void () door_hit_bottom = 
 {
     sound(self, CHAN_VOICE, self.noise1, DOOR_START_OPEN, ATTN_NORM);
     self.state = STATE_BOTTOM;
@@ -122,7 +122,7 @@ void () door_hit_bottom =
 // OP_STORE_V	5693	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () door_go_down =
+void () door_go_down = 
 {
     sound(self, CHAN_VOICE, self.noise2, DOOR_START_OPEN, ATTN_NORM);
     
@@ -168,7 +168,7 @@ void () door_go_down =
 // OP_CALL3	512	0	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () door_go_up =
+void () door_go_up = 
 {
     
     if(self.state == STATE_UP)
@@ -237,7 +237,7 @@ void () door_go_up =
 // OP_IF	5743	-6	0
 // OP_STORE_ENT	5721	28	0
 // OP_DONE	0	0	0
-void () door_fire =
+void () door_fire = 
 {
     local entity oself;
     local entity starte;
@@ -298,7 +298,7 @@ void () door_fire =
 // OP_CALL0	5720	0	0
 // OP_STORE_ENT	5745	28	0
 // OP_DONE	0	0	0
-void () door_use =
+void () door_use = 
 {
     local entity oself;
     self.message = "";
@@ -328,7 +328,7 @@ void () door_use =
 // OP_STORE_ENT	5759	28	0
 // OP_CALL0	5744	0	0
 // OP_DONE	0	0	0
-void () door_trigger_touch =
+void () door_trigger_touch = 
 {
     
     if(other.health <= MSG_BROADCAST)
@@ -361,7 +361,7 @@ void () door_trigger_touch =
 // OP_CALL0	5744	0	0
 // OP_STORE_ENT	5761	28	0
 // OP_DONE	0	0	0
-void () door_killed =
+void () door_killed = 
 {
     local entity oself;
     oself = self;
@@ -514,7 +514,7 @@ void () door_killed =
 // OP_STOREP_FNC	517	5821	0
 // OP_CALL0	5744	0	0
 // OP_DONE	0	0	0
-void () door_touch =
+void () door_touch = 
 {
     
     if(other.classname != "player")
@@ -638,7 +638,7 @@ void () door_touch =
 // OP_CALL3	450	0	0
 // OP_RETURN	5829	0	0
 // OP_DONE	0	0	0
-entity (vector fmins, vector fmaxs) spawn_field =
+entity (vector fmins, vector fmaxs) spawn_field = 
 {
     local entity trigger;
     local vector t1;
@@ -688,7 +688,7 @@ entity (vector fmins, vector fmaxs) spawn_field =
 // OP_RETURN	213	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float (entity e1, entity e2) EntitiesTouching =
+float (entity e1, entity e2) EntitiesTouching = 
 {
     
     if(e1.mins_x > e2.maxs_x)
@@ -837,7 +837,7 @@ float (entity e1, entity e2) EntitiesTouching =
 // OP_STORE_F	5930	5878	0
 // OP_IF	5670	-87	0
 // OP_DONE	0	0	0
-void () LinkDoors =
+void () LinkDoors = 
 {
     local entity t;
     local entity starte;
@@ -1159,7 +1159,7 @@ void () LinkDoors =
 // OP_ADD_F	6065	603	6066
 // OP_STOREP_F	6066	6064	0
 // OP_DONE	0	0	0
-void () func_door =
+void () func_door = 
 {
     if(world.worldtype == MSG_BROADCAST)
     {
@@ -1432,7 +1432,7 @@ float SECRET_YES_SHOOT = 16.000;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () fd_secret_use =
+void () fd_secret_use = 
 {
     local float temp;
     self.health = 10000.000;
@@ -1506,7 +1506,7 @@ void () fd_secret_use =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () fd_secret_move1 =
+void () fd_secret_move1 = 
 {
     self.nextthink = self.ltime + SECRET_OPEN_ONCE;
     self.think = fd_secret_move2;
@@ -1529,7 +1529,7 @@ void () fd_secret_move1 =
 // OP_STORE_V	6069	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () fd_secret_move2 =
+void () fd_secret_move2 = 
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
@@ -1556,7 +1556,7 @@ void () fd_secret_move2 =
 // OP_ADDRESS	28	148	6194
 // OP_STOREP_FNC	6070	6194	0
 // OP_DONE	0	0	0
-void () fd_secret_move3 =
+void () fd_secret_move3 = 
 {
     sound(self, CHAN_VOICE, self.noise3, SECRET_OPEN_ONCE, ATTN_NORM);
     
@@ -1584,7 +1584,7 @@ void () fd_secret_move3 =
 // OP_STORE_V	6071	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () fd_secret_move4 =
+void () fd_secret_move4 = 
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
@@ -1606,7 +1606,7 @@ void () fd_secret_move4 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () fd_secret_move5 =
+void () fd_secret_move5 = 
 {
     self.nextthink = self.ltime + SECRET_OPEN_ONCE;
     self.think = fd_secret_move6;
@@ -1629,7 +1629,7 @@ void () fd_secret_move5 =
 // OP_STORE_V	6073	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () fd_secret_move6 =
+void () fd_secret_move6 = 
 {
     sound(self, CHAN_VOICE, self.noise2, SECRET_OPEN_ONCE, ATTN_NORM);
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
@@ -1657,7 +1657,7 @@ void () fd_secret_move6 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () fd_secret_done =
+void () fd_secret_done = 
 {
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
@@ -1686,7 +1686,7 @@ void () fd_secret_done =
 // OP_STORE_V	6224	13	0
 // OP_CALL4	520	0	0
 // OP_DONE	0	0	0
-void () secret_blocked =
+void () secret_blocked = 
 {
     
     if(time < self.attack_finished)
@@ -1724,7 +1724,7 @@ void () secret_blocked =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () secret_touch =
+void () secret_touch = 
 {
     
     if(other.classname != "player")
@@ -1851,7 +1851,7 @@ void () secret_touch =
 // OP_ADDRESS	28	413	6299
 // OP_STOREP_F	313	6299	0
 // OP_DONE	0	0	0
-void () func_door_secret =
+void () func_door_secret = 
 {
     
     if(self.sounds == MSG_BROADCAST)

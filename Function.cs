@@ -23,6 +23,8 @@ namespace DeQcc
         public string file;
 
         public string declaration;   // The return type, arguments, and function name
+        public string? state;        // The unpacked contents of the OP_STATE instruction if this function has one
+
         public List<string> localDefs = new List<string>(); // store the locals code to be written out at the top of the function definition
 
         public bool IsBuiltin   // is this function a builtin?

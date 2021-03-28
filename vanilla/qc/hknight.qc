@@ -55,7 +55,7 @@ void () hk_idle_sound;
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void (float offset) hknight_shot =
+void (float offset) hknight_shot = 
 {
     local vector offang;
     local vector org;
@@ -105,7 +105,7 @@ void (float offset) hknight_shot =
 // OP_CALL1	731	0	0
 // OP_CALL0	10424	0	0
 // OP_DONE	0	0	0
-void () CheckForCharge =
+void () CheckForCharge = 
 {
     
     if(!enemy_vis)
@@ -161,7 +161,7 @@ void () CheckForCharge =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () CheckContinueCharge =
+void () CheckContinueCharge = 
 {
     
     if(time > self.attack_finished)
@@ -187,9 +187,8 @@ void () CheckContinueCharge =
 // OP_STATE	337	10512	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand1 =
+void () hknight_stand1 = [0.000, hknight_stand2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 337 10512 0
     ai_stand();
 };
 
@@ -198,9 +197,8 @@ void () hknight_stand1 =
 // OP_STATE	9491	10513	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand2 =
+void () hknight_stand2 = [1.000, hknight_stand3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9491 10513 0
     ai_stand();
 };
 
@@ -209,9 +207,8 @@ void () hknight_stand2 =
 // OP_STATE	7369	10514	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand3 =
+void () hknight_stand3 = [2.000, hknight_stand4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7369 10514 0
     ai_stand();
 };
 
@@ -220,9 +217,8 @@ void () hknight_stand3 =
 // OP_STATE	370	10515	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand4 =
+void () hknight_stand4 = [3.000, hknight_stand5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 370 10515 0
     ai_stand();
 };
 
@@ -231,9 +227,8 @@ void () hknight_stand4 =
 // OP_STATE	6076	10516	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand5 =
+void () hknight_stand5 = [4.000, hknight_stand6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6076 10516 0
     ai_stand();
 };
 
@@ -242,9 +237,8 @@ void () hknight_stand5 =
 // OP_STATE	313	10517	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand6 =
+void () hknight_stand6 = [5.000, hknight_stand7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 313 10517 0
     ai_stand();
 };
 
@@ -253,9 +247,8 @@ void () hknight_stand6 =
 // OP_STATE	314	10518	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand7 =
+void () hknight_stand7 = [6.000, hknight_stand8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 314 10518 0
     ai_stand();
 };
 
@@ -264,9 +257,8 @@ void () hknight_stand7 =
 // OP_STATE	315	10519	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand8 =
+void () hknight_stand8 = [7.000, hknight_stand9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 315 10519 0
     ai_stand();
 };
 
@@ -275,9 +267,8 @@ void () hknight_stand8 =
 // OP_STATE	6077	10511	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () hknight_stand9 =
+void () hknight_stand9 = [8.000, hknight_stand1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6077 10511 0
     ai_stand();
 };
 
@@ -288,9 +279,8 @@ void () hknight_stand9 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk1 =
+void () hknight_walk1 = [9.000, hknight_walk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 317 10521 0
     hk_idle_sound();
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -301,9 +291,8 @@ void () hknight_walk1 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk2 =
+void () hknight_walk2 = [10.000, hknight_walk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 318 10522 0
     ai_walk(TE_LIGHTNING1);
 };
 
@@ -313,9 +302,8 @@ void () hknight_walk2 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk3 =
+void () hknight_walk3 = [11.000, hknight_walk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 319 10523 0
     ai_walk(TE_LIGHTNING1);
 };
 
@@ -325,9 +313,8 @@ void () hknight_walk3 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk4 =
+void () hknight_walk4 = [12.000, hknight_walk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2250 10524 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -337,9 +324,8 @@ void () hknight_walk4 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk5 =
+void () hknight_walk5 = [13.000, hknight_walk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7768 10525 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -349,9 +335,8 @@ void () hknight_walk5 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk6 =
+void () hknight_walk6 = [14.000, hknight_walk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2901 10526 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -361,9 +346,8 @@ void () hknight_walk6 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk7 =
+void () hknight_walk7 = [15.000, hknight_walk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1876 10527 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -373,9 +357,8 @@ void () hknight_walk7 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk8 =
+void () hknight_walk8 = [16.000, hknight_walk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 6078 10528 0
     ai_walk(AS_MELEE);
 };
 
@@ -385,9 +368,8 @@ void () hknight_walk8 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk9 =
+void () hknight_walk9 = [17.000, hknight_walk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4861 10529 0
     ai_walk(AS_MELEE);
 };
 
@@ -397,9 +379,8 @@ void () hknight_walk9 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk10 =
+void () hknight_walk10 = [18.000, hknight_walk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3319 10530 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -409,9 +390,8 @@ void () hknight_walk10 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk11 =
+void () hknight_walk11 = [19.000, hknight_walk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7776 10531 0
     ai_walk(AS_MELEE);
 };
 
@@ -421,9 +401,8 @@ void () hknight_walk11 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk12 =
+void () hknight_walk12 = [20.000, hknight_walk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 894 10532 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -433,9 +412,8 @@ void () hknight_walk12 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk13 =
+void () hknight_walk13 = [21.000, hknight_walk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7779 10533 0
     ai_walk(TE_LIGHTNING2);
 };
 
@@ -445,9 +423,8 @@ void () hknight_walk13 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk14 =
+void () hknight_walk14 = [22.000, hknight_walk15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7781 10534 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -457,9 +434,8 @@ void () hknight_walk14 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk15 =
+void () hknight_walk15 = [23.000, hknight_walk16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 301 10535 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -469,9 +445,8 @@ void () hknight_walk15 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk16 =
+void () hknight_walk16 = [24.000, hknight_walk17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4437 10536 0
     ai_walk(SECRET_1ST_DOWN);
 };
 
@@ -481,9 +456,8 @@ void () hknight_walk16 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk17 =
+void () hknight_walk17 = [25.000, hknight_walk18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1890 10537 0
     ai_walk(AS_MELEE);
 };
 
@@ -493,9 +467,8 @@ void () hknight_walk17 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk18 =
+void () hknight_walk18 = [26.000, hknight_walk19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7788 10538 0
     ai_walk(AS_MELEE);
 };
 
@@ -505,9 +478,8 @@ void () hknight_walk18 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk19 =
+void () hknight_walk19 = [27.000, hknight_walk20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 302 10539 0
     ai_walk(AS_MELEE);
 };
 
@@ -517,9 +489,8 @@ void () hknight_walk19 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () hknight_walk20 =
+void () hknight_walk20 = [28.000, hknight_walk1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 303 10520 0
     ai_walk(SPAWNFLAG_LASER);
 };
 
@@ -531,9 +502,8 @@ void () hknight_walk20 =
 // OP_CALL1	1432	0	0
 // OP_CALL0	10487	0	0
 // OP_DONE	0	0	0
-void () hknight_run1 =
+void () hknight_run1 = [29.000, hknight_run2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5105 10540 0
     hk_idle_sound();
     ai_run(20.000);
     CheckForCharge();
@@ -545,9 +515,8 @@ void () hknight_run1 =
 // OP_STORE_V	1890	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run2 =
+void () hknight_run2 = [30.000, hknight_run3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 304 10541 0
     ai_run(25.000);
 };
 
@@ -557,9 +526,8 @@ void () hknight_run2 =
 // OP_STORE_V	3319	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run3 =
+void () hknight_run3 = [31.000, hknight_run4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 305 10542 0
     ai_run(18.000);
 };
 
@@ -569,9 +537,8 @@ void () hknight_run3 =
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run4 =
+void () hknight_run4 = [32.000, hknight_run5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5674 10543 0
     ai_run(SECRET_YES_SHOOT);
 };
 
@@ -581,9 +548,8 @@ void () hknight_run4 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run5 =
+void () hknight_run5 = [33.000, hknight_run6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 307 10544 0
     ai_run(14.000);
 };
 
@@ -593,9 +559,8 @@ void () hknight_run5 =
 // OP_STORE_V	1890	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run6 =
+void () hknight_run6 = [34.000, hknight_run7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5112 10545 0
     ai_run(25.000);
 };
 
@@ -605,9 +570,8 @@ void () hknight_run6 =
 // OP_STORE_V	7779	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run7 =
+void () hknight_run7 = [35.000, hknight_run8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3072 10546 0
     ai_run(21.000);
 };
 
@@ -617,9 +581,8 @@ void () hknight_run7 =
 // OP_STORE_V	7768	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () hknight_run8 =
+void () hknight_run8 = [36.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5096 10425 0
     ai_run(13.000);
 };
 
@@ -633,9 +596,8 @@ void () hknight_run8 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () hknight_pain1 =
+void () hknight_pain1 = [37.000, hknight_pain2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5098 10548 0
     sound(self, CHAN_VOICE, "hknight/pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
 
@@ -643,36 +605,32 @@ void () hknight_pain1 =
 // function begins at statement 18455, parm_start=10550
 // OP_STATE	5100	10550	0
 // OP_DONE	0	0	0
-void () hknight_pain2 =
+void () hknight_pain2 = [38.000, hknight_pain3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5100 10550 0
 };
 
 // hknight_pain3
 // function begins at statement 18457, parm_start=10551
 // OP_STATE	5102	10551	0
 // OP_DONE	0	0	0
-void () hknight_pain3 =
+void () hknight_pain3 = [39.000, hknight_pain4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5102 10551 0
 };
 
 // hknight_pain4
 // function begins at statement 18459, parm_start=10552
 // OP_STATE	1733	10552	0
 // OP_DONE	0	0	0
-void () hknight_pain4 =
+void () hknight_pain4 = [40.000, hknight_pain5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1733 10552 0
 };
 
 // hknight_pain5
 // function begins at statement 18461, parm_start=10553
 // OP_STATE	5443	10425	0
 // OP_DONE	0	0	0
-void () hknight_pain5 =
+void () hknight_pain5 = [41.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5443 10425 0
 };
 
 // hknight_die1
@@ -681,9 +639,8 @@ void () hknight_pain5 =
 // OP_STORE_V	318	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () hknight_die1 =
+void () hknight_die1 = [42.000, hknight_die2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5445 10554 0
     ai_forward(TE_LAVASPLASH);
 };
 
@@ -693,9 +650,8 @@ void () hknight_die1 =
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () hknight_die2 =
+void () hknight_die2 = [43.000, hknight_die3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5447 10555 0
     ai_forward(SECRET_NO_SHOOT);
 };
 
@@ -707,9 +663,8 @@ void () hknight_die2 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () hknight_die3 =
+void () hknight_die3 = [44.000, hknight_die4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5449 10556 0
     self.solid = SOLID_NOT;
     ai_forward(TE_WIZSPIKE);
 };
@@ -718,36 +673,32 @@ void () hknight_die3 =
 // function begins at statement 18477, parm_start=10558
 // OP_STATE	1390	10558	0
 // OP_DONE	0	0	0
-void () hknight_die4 =
+void () hknight_die4 = [45.000, hknight_die5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1390 10558 0
 };
 
 // hknight_die5
 // function begins at statement 18479, parm_start=10559
 // OP_STATE	5452	10559	0
 // OP_DONE	0	0	0
-void () hknight_die5 =
+void () hknight_die5 = [46.000, hknight_die6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5452 10559 0
 };
 
 // hknight_die6
 // function begins at statement 18481, parm_start=10560
 // OP_STATE	5454	10560	0
 // OP_DONE	0	0	0
-void () hknight_die6 =
+void () hknight_die6 = [47.000, hknight_die7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5454 10560 0
 };
 
 // hknight_die7
 // function begins at statement 18483, parm_start=10561
 // OP_STATE	5456	10561	0
 // OP_DONE	0	0	0
-void () hknight_die7 =
+void () hknight_die7 = [48.000, hknight_die8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5456 10561 0
 };
 
 // hknight_die8
@@ -756,9 +707,8 @@ void () hknight_die7 =
 // OP_STORE_V	318	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () hknight_die8 =
+void () hknight_die8 = [49.000, hknight_die9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5458 10562 0
     ai_forward(TE_LAVASPLASH);
 };
 
@@ -768,9 +718,8 @@ void () hknight_die8 =
 // OP_STORE_V	319	4	0
 // OP_CALL1	1338	0	0
 // OP_DONE	0	0	0
-void () hknight_die9 =
+void () hknight_die9 = [50.000, hknight_die10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2227 10563 0
     ai_forward(TE_TELEPORT);
 };
 
@@ -778,45 +727,40 @@ void () hknight_die9 =
 // function begins at statement 18493, parm_start=10564
 // OP_STATE	5351	10564	0
 // OP_DONE	0	0	0
-void () hknight_die10 =
+void () hknight_die10 = [51.000, hknight_die11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5351 10564 0
 };
 
 // hknight_die11
 // function begins at statement 18495, parm_start=10565
 // OP_STATE	5353	10565	0
 // OP_DONE	0	0	0
-void () hknight_die11 =
+void () hknight_die11 = [52.000, hknight_die12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5353 10565 0
 };
 
 // hknight_die12
 // function begins at statement 18497, parm_start=10566
 // OP_STATE	5355	10565	0
 // OP_DONE	0	0	0
-void () hknight_die12 =
+void () hknight_die12 = [53.000, hknight_die12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5355 10565 0
 };
 
 // hknight_dieb1
 // function begins at statement 18499, parm_start=10567
 // OP_STATE	5357	10567	0
 // OP_DONE	0	0	0
-void () hknight_dieb1 =
+void () hknight_dieb1 = [54.000, hknight_dieb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5357 10567 0
 };
 
 // hknight_dieb2
 // function begins at statement 18501, parm_start=10568
 // OP_STATE	5359	10568	0
 // OP_DONE	0	0	0
-void () hknight_dieb2 =
+void () hknight_dieb2 = [55.000, hknight_dieb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5359 10568 0
 };
 
 // hknight_dieb3
@@ -825,9 +769,8 @@ void () hknight_dieb2 =
 // OP_ADDRESS	28	104	10570
 // OP_STOREP_F	237	10570	0
 // OP_DONE	0	0	0
-void () hknight_dieb3 =
+void () hknight_dieb3 = [56.000, hknight_dieb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5361 10569 0
     self.solid = SOLID_NOT;
 };
 
@@ -835,54 +778,48 @@ void () hknight_dieb3 =
 // function begins at statement 18507, parm_start=10571
 // OP_STATE	5363	10571	0
 // OP_DONE	0	0	0
-void () hknight_dieb4 =
+void () hknight_dieb4 = [57.000, hknight_dieb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5363 10571 0
 };
 
 // hknight_dieb5
 // function begins at statement 18509, parm_start=10572
 // OP_STATE	5365	10572	0
 // OP_DONE	0	0	0
-void () hknight_dieb5 =
+void () hknight_dieb5 = [58.000, hknight_dieb6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5365 10572 0
 };
 
 // hknight_dieb6
 // function begins at statement 18511, parm_start=10573
 // OP_STATE	5367	10573	0
 // OP_DONE	0	0	0
-void () hknight_dieb6 =
+void () hknight_dieb6 = [59.000, hknight_dieb7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5367 10573 0
 };
 
 // hknight_dieb7
 // function begins at statement 18513, parm_start=10574
 // OP_STATE	912	10574	0
 // OP_DONE	0	0	0
-void () hknight_dieb7 =
+void () hknight_dieb7 = [60.000, hknight_dieb8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 912 10574 0
 };
 
 // hknight_dieb8
 // function begins at statement 18515, parm_start=10575
 // OP_STATE	5369	10575	0
 // OP_DONE	0	0	0
-void () hknight_dieb8 =
+void () hknight_dieb8 = [61.000, hknight_dieb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5369 10575 0
 };
 
 // hknight_dieb9
 // function begins at statement 18517, parm_start=10576
 // OP_STATE	5371	10575	0
 // OP_DONE	0	0	0
-void () hknight_dieb9 =
+void () hknight_dieb9 = [62.000, hknight_dieb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5371 10575 0
 };
 
 // hknight_die
@@ -926,7 +863,7 @@ void () hknight_dieb9 =
 // OP_GOTO	2	0	0
 // OP_CALL0	10566	0	0
 // OP_DONE	0	0	0
-void () hknight_die =
+void () hknight_die = 
 {
     
     if(self.health < -40.000)
@@ -956,9 +893,8 @@ void () hknight_die =
 // OP_STATE	5401	10587	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica1 =
+void () hknight_magica1 = [79.000, hknight_magica2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5401 10587 0
     ai_face();
 };
 
@@ -967,9 +903,8 @@ void () hknight_magica1 =
 // OP_STATE	788	10588	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica2 =
+void () hknight_magica2 = [80.000, hknight_magica3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 788 10588 0
     ai_face();
 };
 
@@ -978,9 +913,8 @@ void () hknight_magica2 =
 // OP_STATE	5404	10589	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica3 =
+void () hknight_magica3 = [81.000, hknight_magica4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5404 10589 0
     ai_face();
 };
 
@@ -989,9 +923,8 @@ void () hknight_magica3 =
 // OP_STATE	5406	10590	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica4 =
+void () hknight_magica4 = [82.000, hknight_magica5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5406 10590 0
     ai_face();
 };
 
@@ -1000,9 +933,8 @@ void () hknight_magica4 =
 // OP_STATE	5408	10591	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica5 =
+void () hknight_magica5 = [83.000, hknight_magica6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5408 10591 0
     ai_face();
 };
 
@@ -1011,9 +943,8 @@ void () hknight_magica5 =
 // OP_STATE	5410	10592	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica6 =
+void () hknight_magica6 = [84.000, hknight_magica7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5410 10592 0
     ai_face();
 };
 
@@ -1023,9 +954,8 @@ void () hknight_magica6 =
 // OP_STORE_V	277	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica7 =
+void () hknight_magica7 = [85.000, hknight_magica8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5411 10593 0
     hknight_shot(CONTENT_SOLID);
 };
 
@@ -1035,9 +965,8 @@ void () hknight_magica7 =
 // OP_STORE_V	276	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica8 =
+void () hknight_magica8 = [86.000, hknight_magica9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5413 10594 0
     hknight_shot(CONTENT_EMPTY);
 };
 
@@ -1047,9 +976,8 @@ void () hknight_magica8 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica9 =
+void () hknight_magica9 = [87.000, hknight_magica10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5415 10595 0
     hknight_shot(MSG_BROADCAST);
 };
 
@@ -1059,9 +987,8 @@ void () hknight_magica9 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica10 =
+void () hknight_magica10 = [88.000, hknight_magica11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5417 10596 0
     hknight_shot(SPAWN_CRUCIFIED);
 };
 
@@ -1071,9 +998,8 @@ void () hknight_magica10 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica11 =
+void () hknight_magica11 = [89.000, hknight_magica12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5419 10597 0
     hknight_shot(SPAWNFLAG_LASER);
 };
 
@@ -1083,9 +1009,8 @@ void () hknight_magica11 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magica12 =
+void () hknight_magica12 = [90.000, hknight_magica13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1423 10598 0
     hknight_shot(AS_MELEE);
 };
 
@@ -1094,9 +1019,8 @@ void () hknight_magica12 =
 // OP_STATE	5422	10599	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica13 =
+void () hknight_magica13 = [91.000, hknight_magica14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5422 10599 0
     ai_face();
 };
 
@@ -1105,9 +1029,8 @@ void () hknight_magica13 =
 // OP_STATE	5424	10425	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magica14 =
+void () hknight_magica14 = [92.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5424 10425 0
     ai_face();
 };
 
@@ -1116,9 +1039,8 @@ void () hknight_magica14 =
 // OP_STATE	5426	10601	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb1 =
+void () hknight_magicb1 = [93.000, hknight_magicb2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5426 10601 0
     ai_face();
 };
 
@@ -1127,9 +1049,8 @@ void () hknight_magicb1 =
 // OP_STATE	5427	10602	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb2 =
+void () hknight_magicb2 = [94.000, hknight_magicb3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5427 10602 0
     ai_face();
 };
 
@@ -1138,9 +1059,8 @@ void () hknight_magicb2 =
 // OP_STATE	5429	10603	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb3 =
+void () hknight_magicb3 = [95.000, hknight_magicb4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5429 10603 0
     ai_face();
 };
 
@@ -1149,9 +1069,8 @@ void () hknight_magicb3 =
 // OP_STATE	5431	10604	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb4 =
+void () hknight_magicb4 = [96.000, hknight_magicb5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5431 10604 0
     ai_face();
 };
 
@@ -1160,9 +1079,8 @@ void () hknight_magicb4 =
 // OP_STATE	5433	10605	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb5 =
+void () hknight_magicb5 = [97.000, hknight_magicb6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5433 10605 0
     ai_face();
 };
 
@@ -1171,9 +1089,8 @@ void () hknight_magicb5 =
 // OP_STATE	5435	10606	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb6 =
+void () hknight_magicb6 = [98.000, hknight_magicb7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5435 10606 0
     ai_face();
 };
 
@@ -1183,9 +1100,8 @@ void () hknight_magicb6 =
 // OP_STORE_V	277	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb7 =
+void () hknight_magicb7 = [99.000, hknight_magicb8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5437 10607 0
     hknight_shot(CONTENT_SOLID);
 };
 
@@ -1195,9 +1111,8 @@ void () hknight_magicb7 =
 // OP_STORE_V	276	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb8 =
+void () hknight_magicb8 = [100.000, hknight_magicb9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1884 10608 0
     hknight_shot(CONTENT_EMPTY);
 };
 
@@ -1207,9 +1122,8 @@ void () hknight_magicb8 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb9 =
+void () hknight_magicb9 = [101.000, hknight_magicb10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5440 10609 0
     hknight_shot(MSG_BROADCAST);
 };
 
@@ -1219,9 +1133,8 @@ void () hknight_magicb9 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb10 =
+void () hknight_magicb10 = [102.000, hknight_magicb11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5442 10610 0
     hknight_shot(SPAWN_CRUCIFIED);
 };
 
@@ -1231,9 +1144,8 @@ void () hknight_magicb10 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb11 =
+void () hknight_magicb11 = [103.000, hknight_magicb12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4971 10611 0
     hknight_shot(SPAWNFLAG_LASER);
 };
 
@@ -1243,9 +1155,8 @@ void () hknight_magicb11 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb12 =
+void () hknight_magicb12 = [104.000, hknight_magicb13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4986 10612 0
     hknight_shot(AS_MELEE);
 };
 
@@ -1254,9 +1165,8 @@ void () hknight_magicb12 =
 // OP_STATE	5000	10425	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb13 =
+void () hknight_magicb13 = [105.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5000 10425 0
     ai_face();
 };
 
@@ -1265,9 +1175,8 @@ void () hknight_magicb13 =
 // OP_STATE	9797	10614	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc1 =
+void () hknight_magicc1 = [155.000, hknight_magicc2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9797 10614 0
     ai_face();
 };
 
@@ -1276,9 +1185,8 @@ void () hknight_magicc1 =
 // OP_STATE	9799	10615	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc2 =
+void () hknight_magicc2 = [156.000, hknight_magicc3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9799 10615 0
     ai_face();
 };
 
@@ -1287,9 +1195,8 @@ void () hknight_magicc2 =
 // OP_STATE	9801	10616	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc3 =
+void () hknight_magicc3 = [157.000, hknight_magicc4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9801 10616 0
     ai_face();
 };
 
@@ -1298,9 +1205,8 @@ void () hknight_magicc3 =
 // OP_STATE	9803	10617	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc4 =
+void () hknight_magicc4 = [158.000, hknight_magicc5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9803 10617 0
     ai_face();
 };
 
@@ -1309,9 +1215,8 @@ void () hknight_magicc4 =
 // OP_STATE	9805	10618	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc5 =
+void () hknight_magicc5 = [159.000, hknight_magicc6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9805 10618 0
     ai_face();
 };
 
@@ -1321,9 +1226,8 @@ void () hknight_magicc5 =
 // OP_STORE_V	277	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc6 =
+void () hknight_magicc6 = [160.000, hknight_magicc7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7324 10619 0
     hknight_shot(CONTENT_SOLID);
 };
 
@@ -1333,9 +1237,8 @@ void () hknight_magicc6 =
 // OP_STORE_V	276	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc7 =
+void () hknight_magicc7 = [161.000, hknight_magicc8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9808 10620 0
     hknight_shot(CONTENT_EMPTY);
 };
 
@@ -1345,9 +1248,8 @@ void () hknight_magicc7 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc8 =
+void () hknight_magicc8 = [162.000, hknight_magicc9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9810 10621 0
     hknight_shot(MSG_BROADCAST);
 };
 
@@ -1357,9 +1259,8 @@ void () hknight_magicc8 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc9 =
+void () hknight_magicc9 = [163.000, hknight_magicc10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9813 10622 0
     hknight_shot(SPAWN_CRUCIFIED);
 };
 
@@ -1369,9 +1270,8 @@ void () hknight_magicc9 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc10 =
+void () hknight_magicc10 = [164.000, hknight_magicc11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9815 10623 0
     hknight_shot(SPAWNFLAG_LASER);
 };
 
@@ -1381,9 +1281,8 @@ void () hknight_magicc10 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	10427	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc11 =
+void () hknight_magicc11 = [165.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9817 10425 0
     hknight_shot(AS_MELEE);
 };
 
@@ -1393,9 +1292,8 @@ void () hknight_magicc11 =
 // OP_STORE_V	894	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a1 =
+void () hknight_char_a1 = [63.000, hknight_char_a2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 3872 10624 0
     ai_charge(20.000);
 };
 
@@ -1405,9 +1303,8 @@ void () hknight_char_a1 =
 // OP_STORE_V	1890	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a2 =
+void () hknight_char_a2 = [64.000, hknight_char_a3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 260 10625 0
     ai_charge(25.000);
 };
 
@@ -1417,9 +1314,8 @@ void () hknight_char_a2 =
 // OP_STORE_V	3319	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a3 =
+void () hknight_char_a3 = [65.000, hknight_char_a4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5375 10626 0
     ai_charge(18.000);
 };
 
@@ -1429,9 +1325,8 @@ void () hknight_char_a3 =
 // OP_STORE_V	6078	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a4 =
+void () hknight_char_a4 = [66.000, hknight_char_a5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5377 10627 0
     ai_charge(SECRET_YES_SHOOT);
 };
 
@@ -1441,9 +1336,8 @@ void () hknight_char_a4 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a5 =
+void () hknight_char_a5 = [67.000, hknight_char_a6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5379 10628 0
     ai_charge(14.000);
 };
 
@@ -1454,9 +1348,8 @@ void () hknight_char_a5 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a6 =
+void () hknight_char_a6 = [68.000, hknight_char_a7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5381 10629 0
     ai_charge(20.000);
     ai_melee();
 };
@@ -1468,9 +1361,8 @@ void () hknight_char_a6 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a7 =
+void () hknight_char_a7 = [69.000, hknight_char_a8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5383 10630 0
     ai_charge(21.000);
     ai_melee();
 };
@@ -1482,9 +1374,8 @@ void () hknight_char_a7 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a8 =
+void () hknight_char_a8 = [70.000, hknight_char_a9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5384 10631 0
     ai_charge(13.000);
     ai_melee();
 };
@@ -1496,9 +1387,8 @@ void () hknight_char_a8 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a9 =
+void () hknight_char_a9 = [71.000, hknight_char_a10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5386 10632 0
     ai_charge(20.000);
     ai_melee();
 };
@@ -1510,9 +1400,8 @@ void () hknight_char_a9 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a10 =
+void () hknight_char_a10 = [72.000, hknight_char_a11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5388 10633 0
     ai_charge(20.000);
     ai_melee();
 };
@@ -1524,9 +1413,8 @@ void () hknight_char_a10 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a11 =
+void () hknight_char_a11 = [73.000, hknight_char_a12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 2739 10634 0
     ai_charge(18.000);
     ai_melee();
 };
@@ -1537,9 +1425,8 @@ void () hknight_char_a11 =
 // OP_STORE_V	6078	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a12 =
+void () hknight_char_a12 = [74.000, hknight_char_a13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5391 10635 0
     ai_charge(SECRET_YES_SHOOT);
 };
 
@@ -1549,9 +1436,8 @@ void () hknight_char_a12 =
 // OP_STORE_V	2901	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a13 =
+void () hknight_char_a13 = [75.000, hknight_char_a14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5393 10636 0
     ai_charge(14.000);
 };
 
@@ -1561,9 +1447,8 @@ void () hknight_char_a13 =
 // OP_STORE_V	1890	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a14 =
+void () hknight_char_a14 = [76.000, hknight_char_a15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5395 10637 0
     ai_charge(25.000);
 };
 
@@ -1573,9 +1458,8 @@ void () hknight_char_a14 =
 // OP_STORE_V	7779	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a15 =
+void () hknight_char_a15 = [77.000, hknight_char_a16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5397 10638 0
     ai_charge(21.000);
 };
 
@@ -1585,9 +1469,8 @@ void () hknight_char_a15 =
 // OP_STORE_V	7768	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a16 =
+void () hknight_char_a16 = [78.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5399 10425 0
     ai_charge(13.000);
 };
 
@@ -1599,9 +1482,8 @@ void () hknight_char_a16 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b1 =
+void () hknight_char_b1 = [106.000, hknight_char_b2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5015 10640 0
     CheckContinueCharge();
     ai_charge(SVC_TEMPENTITY);
     ai_melee();
@@ -1614,9 +1496,8 @@ void () hknight_char_b1 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b2 =
+void () hknight_char_b2 = [107.000, hknight_char_b3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5029 10641 0
     ai_charge(17.000);
     ai_melee();
 };
@@ -1628,9 +1509,8 @@ void () hknight_char_b2 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b3 =
+void () hknight_char_b3 = [108.000, hknight_char_b4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5035 10642 0
     ai_charge(12.000);
     ai_melee();
 };
@@ -1642,9 +1522,8 @@ void () hknight_char_b3 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b4 =
+void () hknight_char_b4 = [109.000, hknight_char_b5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5038 10643 0
     ai_charge(22.000);
     ai_melee();
 };
@@ -1656,9 +1535,8 @@ void () hknight_char_b4 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b5 =
+void () hknight_char_b5 = [110.000, hknight_char_b6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5041 10644 0
     ai_charge(18.000);
     ai_melee();
 };
@@ -1670,9 +1548,8 @@ void () hknight_char_b5 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b6 =
+void () hknight_char_b6 = [111.000, hknight_char_b1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5044 10639 0
     ai_charge(SECRET_NO_SHOOT);
     ai_melee();
 };
@@ -1683,9 +1560,8 @@ void () hknight_char_b6 =
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_slice1 =
+void () hknight_slice1 = [112.000, hknight_slice2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 5047 10646 0
     ai_charge(TE_LIGHTNING3);
 };
 
@@ -1695,9 +1571,8 @@ void () hknight_slice1 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_slice2 =
+void () hknight_slice2 = [113.000, hknight_slice3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4909 10647 0
     ai_charge(TE_LIGHTNING2);
 };
 
@@ -1707,9 +1582,8 @@ void () hknight_slice2 =
 // OP_STORE_V	7768	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_slice3 =
+void () hknight_slice3 = [114.000, hknight_slice4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4915 10648 0
     ai_charge(13.000);
 };
 
@@ -1719,9 +1593,8 @@ void () hknight_slice3 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_slice4 =
+void () hknight_slice4 = [115.000, hknight_slice5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4918 10649 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
@@ -1732,9 +1605,8 @@ void () hknight_slice4 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_slice5 =
+void () hknight_slice5 = [116.000, hknight_slice6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4921 10650 0
     ai_charge(TE_WIZSPIKE);
     ai_melee();
 };
@@ -1746,9 +1618,8 @@ void () hknight_slice5 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_slice6 =
+void () hknight_slice6 = [117.000, hknight_slice7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4924 10651 0
     ai_charge(15.000);
     ai_melee();
 };
@@ -1760,9 +1631,8 @@ void () hknight_slice6 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_slice7 =
+void () hknight_slice7 = [118.000, hknight_slice8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4927 10652 0
     ai_charge(SECRET_NO_SHOOT);
     ai_melee();
 };
@@ -1774,9 +1644,8 @@ void () hknight_slice7 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_slice8 =
+void () hknight_slice8 = [119.000, hknight_slice9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4929 10653 0
     ai_charge(SPAWNFLAG_LASER);
     ai_melee();
 };
@@ -1786,9 +1655,8 @@ void () hknight_slice8 =
 // OP_STATE	1164	10654	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_slice9 =
+void () hknight_slice9 = [120.000, hknight_slice10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1164 10654 0
     ai_melee();
 };
 
@@ -1798,9 +1666,8 @@ void () hknight_slice9 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_slice10 =
+void () hknight_slice10 = [121.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4934 10425 0
     ai_charge(AS_MELEE);
 };
 
@@ -1810,9 +1677,8 @@ void () hknight_slice10 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash1 =
+void () hknight_smash1 = [122.000, hknight_smash2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4937 10656 0
     ai_charge(SPAWN_CRUCIFIED);
 };
 
@@ -1822,9 +1688,8 @@ void () hknight_smash1 =
 // OP_STORE_V	7768	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash2 =
+void () hknight_smash2 = [123.000, hknight_smash3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7942 10657 0
     ai_charge(13.000);
 };
 
@@ -1834,9 +1699,8 @@ void () hknight_smash2 =
 // OP_STORE_V	317	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash3 =
+void () hknight_smash3 = [124.000, hknight_smash4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7944 10658 0
     ai_charge(TE_LIGHTNING3);
 };
 
@@ -1846,9 +1710,8 @@ void () hknight_smash3 =
 // OP_STORE_V	319	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash4 =
+void () hknight_smash4 = [125.000, hknight_smash5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4939 10659 0
     ai_charge(TE_TELEPORT);
 };
 
@@ -1859,9 +1722,8 @@ void () hknight_smash4 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_smash5 =
+void () hknight_smash5 = [126.000, hknight_smash6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4942 10660 0
     ai_charge(TE_LAVASPLASH);
     ai_melee();
 };
@@ -1873,9 +1735,8 @@ void () hknight_smash5 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_smash6 =
+void () hknight_smash6 = [127.000, hknight_smash7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4945 10661 0
     ai_charge(TE_WIZSPIKE);
     ai_melee();
 };
@@ -1887,9 +1748,8 @@ void () hknight_smash6 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_smash7 =
+void () hknight_smash7 = [128.000, hknight_smash8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 261 10662 0
     ai_charge(12.000);
     ai_melee();
 };
@@ -1901,9 +1761,8 @@ void () hknight_smash7 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_smash8 =
+void () hknight_smash8 = [129.000, hknight_smash9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7952 10663 0
     ai_charge(SPAWNFLAG_LASER);
     ai_melee();
 };
@@ -1915,9 +1774,8 @@ void () hknight_smash8 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_smash9 =
+void () hknight_smash9 = [130.000, hknight_smash10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7954 10664 0
     ai_charge(AS_MELEE);
     ai_melee();
 };
@@ -1928,9 +1786,8 @@ void () hknight_smash9 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash10 =
+void () hknight_smash10 = [131.000, hknight_smash11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4949 10665 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -1940,9 +1797,8 @@ void () hknight_smash10 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_smash11 =
+void () hknight_smash11 = [132.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4952 10425 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -1952,9 +1808,8 @@ void () hknight_smash11 =
 // OP_STORE_V	7369	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk1 =
+void () hknight_watk1 = [133.000, hknight_watk2]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4955 10667 0
     ai_charge(SPAWNFLAG_LASER);
 };
 
@@ -1964,9 +1819,8 @@ void () hknight_watk1 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk2 =
+void () hknight_watk2 = [134.000, hknight_watk3]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4958 10668 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -1976,9 +1830,8 @@ void () hknight_watk2 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk3 =
+void () hknight_watk3 = [135.000, hknight_watk4]
 {
-    *** UNPROCESSED OPCODE OP_STATE 7960 10669 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -1987,9 +1840,8 @@ void () hknight_watk3 =
 // OP_STATE	9764	10670	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk4 =
+void () hknight_watk4 = [136.000, hknight_watk5]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9764 10670 0
     ai_melee();
 };
 
@@ -1998,9 +1850,8 @@ void () hknight_watk4 =
 // OP_STATE	4960	10671	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk5 =
+void () hknight_watk5 = [137.000, hknight_watk6]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4960 10671 0
     ai_melee();
 };
 
@@ -2009,9 +1860,8 @@ void () hknight_watk5 =
 // OP_STATE	4963	10672	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk6 =
+void () hknight_watk6 = [138.000, hknight_watk7]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4963 10672 0
     ai_melee();
 };
 
@@ -2021,9 +1871,8 @@ void () hknight_watk6 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk7 =
+void () hknight_watk7 = [139.000, hknight_watk8]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4966 10673 0
     ai_charge(SPAWN_CRUCIFIED);
 };
 
@@ -2033,9 +1882,8 @@ void () hknight_watk7 =
 // OP_STORE_V	6076	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk8 =
+void () hknight_watk8 = [140.000, hknight_watk9]
 {
-    *** UNPROCESSED OPCODE OP_STATE 4969 10674 0
     ai_charge(SECRET_1ST_DOWN);
 };
 
@@ -2045,9 +1893,8 @@ void () hknight_watk8 =
 // OP_STORE_V	313	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk9 =
+void () hknight_watk9 = [141.000, hknight_watk10]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9770 10675 0
     ai_charge(TE_LIGHTNING1);
 };
 
@@ -2058,9 +1905,8 @@ void () hknight_watk9 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk10 =
+void () hknight_watk10 = [142.000, hknight_watk11]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9772 10676 0
     ai_charge(AS_MELEE);
     ai_melee();
 };
@@ -2072,9 +1918,8 @@ void () hknight_watk10 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk11 =
+void () hknight_watk11 = [143.000, hknight_watk12]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9774 10677 0
     ai_charge(SPAWNFLAG_LASER);
     ai_melee();
 };
@@ -2086,9 +1931,8 @@ void () hknight_watk11 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk12 =
+void () hknight_watk12 = [144.000, hknight_watk13]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9776 10678 0
     ai_charge(SPAWNFLAG_LASER);
     ai_melee();
 };
@@ -2099,9 +1943,8 @@ void () hknight_watk12 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk13 =
+void () hknight_watk13 = [145.000, hknight_watk14]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9778 10679 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -2111,9 +1954,8 @@ void () hknight_watk13 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk14 =
+void () hknight_watk14 = [146.000, hknight_watk15]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9780 10680 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -2123,9 +1965,8 @@ void () hknight_watk14 =
 // OP_STORE_V	337	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk15 =
+void () hknight_watk15 = [147.000, hknight_watk16]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9782 10681 0
     ai_charge(MSG_BROADCAST);
 };
 
@@ -2135,9 +1976,8 @@ void () hknight_watk15 =
 // OP_STORE_V	9491	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk16 =
+void () hknight_watk16 = [148.000, hknight_watk17]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9784 10682 0
     ai_charge(SPAWN_CRUCIFIED);
 };
 
@@ -2148,9 +1988,8 @@ void () hknight_watk16 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk17 =
+void () hknight_watk17 = [149.000, hknight_watk18]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9786 10683 0
     ai_charge(SPAWN_CRUCIFIED);
     ai_melee();
 };
@@ -2162,9 +2001,8 @@ void () hknight_watk17 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk18 =
+void () hknight_watk18 = [150.000, hknight_watk19]
 {
-    *** UNPROCESSED OPCODE OP_STATE 1960 10684 0
     ai_charge(AS_MELEE);
     ai_melee();
 };
@@ -2176,9 +2014,8 @@ void () hknight_watk18 =
 // OP_CALL1	857	0	0
 // OP_CALL0	895	0	0
 // OP_DONE	0	0	0
-void () hknight_watk19 =
+void () hknight_watk19 = [151.000, hknight_watk20]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9789 10685 0
     ai_charge(SECRET_1ST_DOWN);
     ai_melee();
 };
@@ -2189,9 +2026,8 @@ void () hknight_watk19 =
 // OP_STORE_V	314	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk20 =
+void () hknight_watk20 = [152.000, hknight_watk21]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9791 10686 0
     ai_charge(TE_LIGHTNING2);
 };
 
@@ -2201,9 +2037,8 @@ void () hknight_watk20 =
 // OP_STORE_V	315	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk21 =
+void () hknight_watk21 = [153.000, hknight_watk22]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9793 10687 0
     ai_charge(TE_WIZSPIKE);
 };
 
@@ -2213,9 +2048,8 @@ void () hknight_watk21 =
 // OP_STORE_V	370	4	0
 // OP_CALL1	857	0	0
 // OP_DONE	0	0	0
-void () hknight_watk22 =
+void () hknight_watk22 = [154.000, hknight_run1]
 {
-    *** UNPROCESSED OPCODE OP_STATE 9795 10425 0
     ai_charge(AS_MELEE);
 };
 
@@ -2231,7 +2065,7 @@ void () hknight_watk22 =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () hk_idle_sound =
+void () hk_idle_sound = 
 {
     
     if(random() < 0.200)
@@ -2272,7 +2106,7 @@ void () hk_idle_sound =
 // OP_STOREP_F	10703	10702	0
 // OP_CALL0	10547	0	0
 // OP_DONE	0	0	0
-void (entity attacker, float damage) hknight_pain =
+void (entity attacker, float damage) hknight_pain = 
 {
     
     if(self.pain_finished > time)
@@ -2323,7 +2157,7 @@ float hknight_type;
 // OP_CALL0	10666	0	0
 // OP_STORE_F	337	10704	0
 // OP_DONE	0	0	0
-void () hknight_melee =
+void () hknight_melee = 
 {
     hknight_type = hknight_type + SPAWN_CRUCIFIED;
     sound(self, CHAN_WEAPON, "hknight/slash1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
@@ -2413,7 +2247,7 @@ void () hknight_melee =
 // OP_STOREP_FNC	10576	10724	0
 // OP_CALL0	5557	0	0
 // OP_DONE	0	0	0
-void () monster_hell_knight =
+void () monster_hell_knight = 
 {
     
     if(deathmatch)

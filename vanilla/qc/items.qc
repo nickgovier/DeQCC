@@ -17,7 +17,7 @@ void () W_SetCurrentAmmo;
 // OP_STORE_V	1806	7	0
 // OP_CALL2	448	0	0
 // OP_DONE	0	0	0
-void () SUB_regen =
+void () SUB_regen = 
 {
     self.model = self.mdl;
     self.solid = SOLID_TRIGGER;
@@ -39,7 +39,7 @@ void () SUB_regen =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () noclass =
+void () noclass = 
 {
     dprint("noclass spawned at");
     dprint(vtos(self.origin));
@@ -82,7 +82,7 @@ void () noclass =
 // OP_CALL1	460	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () PlaceItem =
+void () PlaceItem = 
 {
     local float oldz;
     self.mdl = self.model;
@@ -112,7 +112,7 @@ void () PlaceItem =
 // OP_ADDRESS	28	148	1837
 // OP_STOREP_FNC	1815	1837	0
 // OP_DONE	0	0	0
-void () StartItem =
+void () StartItem = 
 {
     self.nextthink = time + 0.200;
     self.think = PlaceItem;
@@ -154,7 +154,7 @@ void () StartItem =
 // OP_STOREP_F	1859	1861	0
 // OP_RETURN	368	0	0
 // OP_DONE	0	0	0
-float (entity e, float healamount, float ignore) T_Heal =
+float (entity e, float healamount, float ignore) T_Heal = 
 {
     
     if(e.health <= MSG_BROADCAST)
@@ -248,7 +248,7 @@ void () item_megahealth_rot;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_health =
+void () item_health = 
 {
     self.touch = health_touch;
     if(self.spawnflags & H_ROTTEN)
@@ -370,7 +370,7 @@ void () item_health =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () health_touch =
+void () health_touch = 
 {
     local float amount;
     local string s;
@@ -470,7 +470,7 @@ void () health_touch =
 // OP_ADDRESS	28	148	1944
 // OP_STOREP_FNC	1801	1944	0
 // OP_DONE	0	0	0
-void () item_megahealth_rot =
+void () item_megahealth_rot = 
 {
     other = self.owner;
     
@@ -565,7 +565,7 @@ void () item_megahealth_rot =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () armor_touch =
+void () armor_touch = 
 {
     local float type;
     local float value;
@@ -648,7 +648,7 @@ void () armor_touch =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_armor1 =
+void () item_armor1 = 
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -675,7 +675,7 @@ void () item_armor1 =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_armor2 =
+void () item_armor2 = 
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -702,7 +702,7 @@ void () item_armor2 =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_armorInv =
+void () item_armorInv = 
 {
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
@@ -735,7 +735,7 @@ void () item_armorInv =
 // OP_ADDRESS	29	161	2017
 // OP_STOREP_F	1884	2017	0
 // OP_DONE	0	0	0
-void () bound_other_ammo =
+void () bound_other_ammo = 
 {
     
     if(other.ammo_shells > 100.000)
@@ -785,7 +785,7 @@ void () bound_other_ammo =
 // OP_RETURN	314	0	0
 // OP_RETURN	315	0	0
 // OP_DONE	0	0	0
-float (float w) RankForWeapon =
+float (float w) RankForWeapon = 
 {
     
     if(w == IT_LIGHTNING)
@@ -840,7 +840,7 @@ float (float w) RankForWeapon =
 // OP_ADDRESS	28	154	2033
 // OP_STOREP_F	2028	2033	0
 // OP_DONE	0	0	0
-void (float old, float new) Deathmatch_Weapon =
+void (float old, float new) Deathmatch_Weapon = 
 {
     local float or;
     local float nr;
@@ -1025,7 +1025,7 @@ float () W_BestWeapon;
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () weapon_touch =
+void () weapon_touch = 
 {
     local float hadammo;
     local float best;
@@ -1208,7 +1208,7 @@ void () weapon_touch =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_supershotgun =
+void () weapon_supershotgun = 
 {
     precache_model("progs/g_shot.mdl");
     setmodel(self, "progs/g_shot.mdl");
@@ -1238,7 +1238,7 @@ void () weapon_supershotgun =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_nailgun =
+void () weapon_nailgun = 
 {
     precache_model("progs/g_nail.mdl");
     setmodel(self, "progs/g_nail.mdl");
@@ -1268,7 +1268,7 @@ void () weapon_nailgun =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_supernailgun =
+void () weapon_supernailgun = 
 {
     precache_model("progs/g_nail2.mdl");
     setmodel(self, "progs/g_nail2.mdl");
@@ -1298,7 +1298,7 @@ void () weapon_supernailgun =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_grenadelauncher =
+void () weapon_grenadelauncher = 
 {
     precache_model("progs/g_rock.mdl");
     setmodel(self, "progs/g_rock.mdl");
@@ -1328,7 +1328,7 @@ void () weapon_grenadelauncher =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_rocketlauncher =
+void () weapon_rocketlauncher = 
 {
     precache_model("progs/g_rock2.mdl");
     setmodel(self, "progs/g_rock2.mdl");
@@ -1358,7 +1358,7 @@ void () weapon_rocketlauncher =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () weapon_lightning =
+void () weapon_lightning = 
 {
     precache_model("progs/g_light.mdl");
     setmodel(self, "progs/g_light.mdl");
@@ -1480,7 +1480,7 @@ void () weapon_lightning =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () ammo_touch =
+void () ammo_touch = 
 {
     local entity stemp;
     local float best;
@@ -1614,7 +1614,7 @@ float WEAPON_BIG2 = 1.000;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_shells =
+void () item_shells = 
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1668,7 +1668,7 @@ void () item_shells =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_spikes =
+void () item_spikes = 
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1722,7 +1722,7 @@ void () item_spikes =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_rockets =
+void () item_rockets = 
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1776,7 +1776,7 @@ void () item_rockets =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_cells =
+void () item_cells = 
 {
     self.touch = ammo_touch;
     if(self.spawnflags & WEAPON_BIG2)
@@ -1887,7 +1887,7 @@ float WEAPON_BIG = 8.000;
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_weapon =
+void () item_weapon = 
 {
     self.touch = ammo_touch;
     
@@ -2003,7 +2003,7 @@ void () item_weapon =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () key_touch =
+void () key_touch = 
 {
     local entity stemp;
     local float best;
@@ -2066,7 +2066,7 @@ void () key_touch =
 // OP_ADDRESS	28	208	2318
 // OP_STOREP_S	2317	2318	0
 // OP_DONE	0	0	0
-void () key_setsounds =
+void () key_setsounds = 
 {
     
     if(world.worldtype == MSG_BROADCAST)
@@ -2136,7 +2136,7 @@ void () key_setsounds =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_key1 =
+void () item_key1 = 
 {
     if(world.worldtype == MSG_BROADCAST)
     {
@@ -2216,7 +2216,7 @@ void () item_key1 =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_key2 =
+void () item_key2 = 
 {
     
     if(world.worldtype == MSG_BROADCAST)
@@ -2285,7 +2285,7 @@ void () item_key2 =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () sigil_touch =
+void () sigil_touch = 
 {
     local entity stemp;
     local float best;
@@ -2363,7 +2363,7 @@ void () sigil_touch =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_sigil =
+void () item_sigil = 
 {
     
     if(!self.spawnflags)
@@ -2500,7 +2500,7 @@ void () item_sigil =
 // OP_STORE_ENT	29	346	0
 // OP_CALL0	518	0	0
 // OP_DONE	0	0	0
-void () powerup_touch =
+void () powerup_touch = 
 {
     local entity stemp;
     local float best;
@@ -2599,7 +2599,7 @@ void () powerup_touch =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_artifact_invulnerability =
+void () item_artifact_invulnerability = 
 {
     self.touch = powerup_touch;
     precache_model("progs/invulner.mdl");
@@ -2639,7 +2639,7 @@ void () item_artifact_invulnerability =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_artifact_envirosuit =
+void () item_artifact_envirosuit = 
 {
     self.touch = powerup_touch;
     precache_model("progs/suit.mdl");
@@ -2680,7 +2680,7 @@ void () item_artifact_envirosuit =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_artifact_invisibility =
+void () item_artifact_invisibility = 
 {
     self.touch = powerup_touch;
     precache_model("progs/invisibl.mdl");
@@ -2722,7 +2722,7 @@ void () item_artifact_invisibility =
 // OP_CALL3	450	0	0
 // OP_CALL0	1834	0	0
 // OP_DONE	0	0	0
-void () item_artifact_super_damage =
+void () item_artifact_super_damage = 
 {
     self.touch = powerup_touch;
     precache_model("progs/quaddama.mdl");
@@ -2897,7 +2897,7 @@ void () item_artifact_super_damage =
 // OP_CALL2	2026	0	0
 // OP_CALL0	1800	0	0
 // OP_DONE	0	0	0
-void () BackpackTouch =
+void () BackpackTouch = 
 {
     local string s;
     local float best;
@@ -3143,7 +3143,7 @@ void () BackpackTouch =
 // OP_ADDRESS	2536	148	2611
 // OP_STOREP_FNC	519	2611	0
 // OP_DONE	0	0	0
-void () DropBackpack =
+void () DropBackpack = 
 {
     local entity item;
     

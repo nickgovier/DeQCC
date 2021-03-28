@@ -11,7 +11,7 @@ float (entity targ, entity inflictor) CanDamage;
 // SUB_Null
 // function begins at statement 1, parm_start=523
 // OP_DONE	0	0	0
-void () SUB_Null =
+void () SUB_Null = 
 {
 };
 
@@ -20,7 +20,7 @@ void () SUB_Null =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () SUB_Remove =
+void () SUB_Remove = 
 {
     remove(self);
 };
@@ -47,7 +47,7 @@ void () SUB_Remove =
 // OP_ADDRESS	28	117	556
 // OP_STOREP_V	286	556	0
 // OP_DONE	0	0	0
-void () SetMovedir =
+void () SetMovedir = 
 {
     if(self.angles == '0.000 -1.000 0.000')
     {
@@ -89,7 +89,7 @@ void () SetMovedir =
 // OP_ADDRESS	28	130	568
 // OP_STOREP_S	569	568	0
 // OP_DONE	0	0	0
-void () InitTrigger =
+void () InitTrigger = 
 {
     
     if(self.angles != VEC_ORIGIN)
@@ -114,7 +114,7 @@ void () InitTrigger =
 // OP_CALL3	512	0	0
 // OP_STORE_ENT	576	28	0
 // OP_DONE	0	0	0
-void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
+void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt = 
 {
     local entity stemp;
     stemp = self;
@@ -171,7 +171,7 @@ void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
 // OP_MUL_VF	582	625	626
 // OP_STOREP_V	626	622	0
 // OP_DONE	0	0	0
-void (vector tdest, float tspeed, void() func) SUB_CalcMove =
+void (vector tdest, float tspeed, void() func) SUB_CalcMove = 
 {
     local vector vdestdelta;
     local float len;
@@ -223,7 +223,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
 // OP_LOAD_FNC	28	422	637
 // OP_CALL0	637	0	0
 // OP_DONE	0	0	0
-void () SUB_CalcMoveDone =
+void () SUB_CalcMoveDone = 
 {
     setorigin(self, self.finaldest);
     self.velocity = VEC_ORIGIN;
@@ -246,7 +246,7 @@ void () SUB_CalcMoveDone =
 // OP_CALL3	514	0	0
 // OP_STORE_ENT	645	28	0
 // OP_DONE	0	0	0
-void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMoveEnt =
+void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMoveEnt = 
 {
     local entity stemp;
     stemp = self;
@@ -284,7 +284,7 @@ void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMove
 // OP_ADDRESS	28	148	678
 // OP_STOREP_FNC	516	678	0
 // OP_DONE	0	0	0
-void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
+void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove = 
 {
     local vector destdelta;
     local float len;
@@ -319,7 +319,7 @@ void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
 // OP_LOAD_FNC	28	422	690
 // OP_CALL0	690	0	0
 // OP_DONE	0	0	0
-void () SUB_CalcAngleMoveDone =
+void () SUB_CalcAngleMoveDone = 
 {
     self.angles = self.finalangle;
     self.avelocity = VEC_ORIGIN;
@@ -340,7 +340,7 @@ void () SUB_CalcAngleMoveDone =
 // OP_STORE_V	28	4	0
 // OP_CALL1	460	0	0
 // OP_DONE	0	0	0
-void () DelayThink =
+void () DelayThink = 
 {
     activator = self.enemy;
     SUB_UseTargets();
@@ -436,7 +436,7 @@ void () DelayThink =
 // OP_STORE_ENT	696	346	0
 // OP_IF	368	-23	0
 // OP_DONE	0	0	0
-void () SUB_UseTargets =
+void () SUB_UseTargets = 
 {
     local entity t;
     local entity stemp;
@@ -532,7 +532,7 @@ void () SUB_UseTargets =
 // OP_ADD_F	31	732	736
 // OP_STOREP_F	736	735	0
 // OP_DONE	0	0	0
-void (float normal) SUB_AttackFinished =
+void (float normal) SUB_AttackFinished = 
 {
     self.cnt = MSG_BROADCAST;
     
@@ -564,7 +564,7 @@ float (entity targ) visible;
 // OP_ADDRESS	28	148	746
 // OP_STOREP_FNC	739	746	0
 // OP_DONE	0	0	0
-void (void() thinkst) SUB_CheckRefire =
+void (void() thinkst) SUB_CheckRefire = 
 {
     
     if(skill != AS_MELEE)

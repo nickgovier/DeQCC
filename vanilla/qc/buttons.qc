@@ -16,7 +16,7 @@ void () button_return;
 // OP_ADDRESS	28	131	6309
 // OP_STOREP_F	6074	6309	0
 // OP_DONE	0	0	0
-void () button_wait =
+void () button_wait = 
 {
     self.state = STATE_TOP;
     self.nextthink = self.ltime + self.wait;
@@ -31,7 +31,7 @@ void () button_wait =
 // OP_ADDRESS	28	433	6311
 // OP_STOREP_F	283	6311	0
 // OP_DONE	0	0	0
-void () button_done =
+void () button_done = 
 {
     self.state = STATE_BOTTOM;
 };
@@ -53,7 +53,7 @@ void () button_done =
 // OP_ADDRESS	28	163	6319
 // OP_STOREP_F	251	6319	0
 // OP_DONE	0	0	0
-void () button_return =
+void () button_return = 
 {
     self.state = STATE_DOWN;
     SUB_CalcMove(self.pos1, self.speed, button_done);
@@ -69,7 +69,7 @@ void () button_return =
 // button_blocked
 // function begins at statement 9786, parm_start=6321
 // OP_DONE	0	0	0
-void () button_blocked =
+void () button_blocked = 
 {
 };
 
@@ -98,7 +98,7 @@ void () button_blocked =
 // OP_STORE_V	6300	10	0
 // OP_CALL3	512	0	0
 // OP_DONE	0	0	0
-void () button_fire =
+void () button_fire = 
 {
     
     if((self.state == STATE_UP) || (self.state == STATE_TOP))
@@ -117,7 +117,7 @@ void () button_fire =
 // OP_STOREP_ENT	346	6334	0
 // OP_CALL0	6321	0	0
 // OP_DONE	0	0	0
-void () button_use =
+void () button_use = 
 {
     self.enemy = activator;
     button_fire();
@@ -133,7 +133,7 @@ void () button_use =
 // OP_STOREP_ENT	29	6338	0
 // OP_CALL0	6321	0	0
 // OP_DONE	0	0	0
-void () button_touch =
+void () button_touch = 
 {
     
     if(other.classname != "player")
@@ -156,7 +156,7 @@ void () button_touch =
 // OP_STOREP_F	250	6343	0
 // OP_CALL0	6321	0	0
 // OP_DONE	0	0	0
-void () button_killed =
+void () button_killed = 
 {
     self.enemy = damage_attacker;
     self.health = self.max_health;
@@ -253,7 +253,7 @@ void () button_killed =
 // OP_ADD_V	6393	6408	6411
 // OP_STOREP_V	6411	6390	0
 // OP_DONE	0	0	0
-void () func_button =
+void () func_button = 
 {
     local float gtemp;
     local float ftemp;
