@@ -652,7 +652,7 @@ namespace DeQcc
             Global c = GetGlobal(s.c, true, null, pr_opcodes[s.op].type_c);
 
             // Process the opcode
-            switch(s.Opcode)
+            switch (s.Opcode)
             {
                 case Opcodes.OP_DONE:
                     // end of function, do nothing
@@ -722,14 +722,14 @@ namespace DeQcc
                     {
                         b.ValueSource = a.ValueToAssign;
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.b + " = " + b.ValueSource);
-                        if(s.a == 1)
+                        if (s.a == 1)
                         {
                             // if we are assigning the return value from a function call, overwrite the type
                             // e.g. bytecode might call OP_STORE_V for a function which actually returns a float
                             // this can happen e.g. if random() is being used in an operation, e.g.
                             // fight.qc ai_melee, where random() calls are chained together, it can start appending _x to the function name
                             // if it thinks it was returning a vector and later we try to access it as a float
-                            b.Type = Types.ev_function;    
+                            b.Type = Types.ev_function;
                         }
                         else
                         {
@@ -755,7 +755,7 @@ namespace DeQcc
                     for (int i = 0; i < numargs; i++)
                     {
                         List<Types> argTypes;
-                        if(a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
+                        if (a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
                         {
                             argTypes = a.FieldFunctionArgTypes;
                         }
@@ -771,7 +771,7 @@ namespace DeQcc
                     if (statements[sIndex + 1].a != OFS_RETURN && statements[sIndex + 1].b != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
                     {
                         string name;
-                        if(a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
+                        if (a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
                         {
                             name = a.ValueSource;
                         }
@@ -805,7 +805,7 @@ namespace DeQcc
                         PrintLine("");
                         PrintLine("while(" + a.ValueToAssign + ")");
 
-                        if(IFNOTisWhile.Contains(sIndex))
+                        if (IFNOTisWhile.Contains(sIndex))
                         {
                             Console.Out.WriteLine("Correctly found while loop in " + f.name + " at " + sIndex);
                         }
@@ -820,29 +820,14 @@ namespace DeQcc
                         // IFNOTs that jump just beyond a GOTO have a subsequent else if/else (which the GOTO skips over), otherwise it's an if with no else
 
                         // Set the desination info correctly:
-                        if (oneBeforeTarget.Opcode != Opcodes.OP_GOTO)
+                        if (oneBeforeTarget.Opcode != Opcodes.OP_GOTO || (oneBeforeTarget.Opcode == Opcodes.OP_GOTO && oneBeforeTarget.a < 0))
                         {
                             // there is no subsequent block, so remember to undo the indentation at the end of the block
                             PrintLine("");
                             endofBlock.Add(sIndex + s.b);   // Note when to undo the if indentation, as we don't have a goto to do it
                         }
+                        PrintLine("if(" + a.ValueToAssign + ")");
 
-                        // Now decide what to print for this if
-                        //if (statements[sIndex - 2].Opcode == Opcodes.OP_GOTO)
-                        //{
-                        //    // If we have just come from a GOTO, this must be an else if
-                        //    // the "else" will have been printed by the GOTO, so just append the " if"
-                        //    // temporarily remove the indentation to avoid extra whitespace
-                        //    int saveIndent = indent;
-                        //    indent = 0;
-                        //    PrintLine(" if(" + a.ValueToAssign + ")");
-                        //    indent = saveIndent;
-                        //}
-                        //else
-                        //{
-                            // There is no preceeding GOTO (i.e. previous part of an if block), so start one
-                            PrintLine("if(" + a.ValueToAssign + ")");
-                        //}
                         if (IFNOTisWhile.Contains(sIndex))
                         {
                             Console.Out.WriteLine("ERROR I found an if block that should really be a WHILE in " + f.name + " at " + sIndex);

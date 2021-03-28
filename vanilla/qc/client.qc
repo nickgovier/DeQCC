@@ -960,6 +960,7 @@ entity () SelectSpawnPoint =
     }
     else
     {
+        
         if(deathmatch)
         {
             spot = lastspawn;
@@ -1003,29 +1004,30 @@ entity () SelectSpawnPoint =
             
         }
         
-        
-        if(serverflags)
-        {
-            spot = find(world, classname, "info_player_start2");
-            
-            if(spot)
-            {
-                return spot;
-            }
-            
-        }
-        
-        spot = find(world, classname, "info_player_start");
-        
-        if(!spot)
-        {
-            error("PutClientInServer: no info_player_start on level");
-        }
-        
-        return spot;
-    };
+    }
     
-/* ERROR INDENTATION */
+    
+    if(serverflags)
+    {
+        spot = find(world, classname, "info_player_start2");
+        
+        if(spot)
+        {
+            return spot;
+        }
+        
+    }
+    
+    spot = find(world, classname, "info_player_start");
+    
+    if(!spot)
+    {
+        error("PutClientInServer: no info_player_start on level");
+    }
+    
+    return spot;
+};
+
 void () PlayerDie;
 // PutClientInServer
 // function begins at statement 6101, parm_start=4131
