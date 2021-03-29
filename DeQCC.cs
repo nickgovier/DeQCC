@@ -769,23 +769,47 @@ namespace DeQcc
                         if (i < numargs - 1) { args += ", "; }
                     }
 
-                    if (statements[sIndex + 1].a != OFS_RETURN && statements[sIndex + 1].b != OFS_RETURN)     // if the next statement does not assign the return value, just print the function call
+                    // get the correct function name
+                    string name;
+                    if (a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
                     {
-                        string name;
-                        if (a.Type == Types.ev_function && a.IntVal == 0)    // it's actually a field
+                        name = a.ValueSource;
+                    }
+                    else
+                    {
+                        name = a.Function.name;
+                    }
+
+                    // Check to see if the return value is used before the next call statement (or end of function)
+                    bool returnUsed = false;
+                    int nextStatement = sIndex + 1;
+                    while(statements[nextStatement].Opcode != Opcodes.OP_DONE &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL0 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL1 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL2 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL3 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL4 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL5 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL6 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL7 &&
+                        statements[nextStatement].Opcode != Opcodes.OP_CALL8)
+                    {
+                        if(statements[nextStatement].a == OFS_RETURN || statements[nextStatement].b == OFS_RETURN)
                         {
-                            name = a.ValueSource;
+                            returnUsed = true;
+                            break;
                         }
-                        else
-                        {
-                            name = a.Function.name;
-                        }
-                        PrintLine(name + "(" + args + ");");
+                        nextStatement++;
+                    }
+
+                    if (!returnUsed)
+                    {
+                        PrintLine(name + "(" + args + ");");    // it's a standalone function call
                     }
                     else
                     {
                         // Otherwise save it for the next assignment to use
-                        globalList[OFS_RETURN].ValueSource = a.Function.name + "(" + args + ")";
+                        globalList[OFS_RETURN].ValueSource = name + "(" + args + ")";
                     }
                     break;
                 case Opcodes.OP_IF:

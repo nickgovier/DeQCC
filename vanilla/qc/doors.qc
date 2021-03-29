@@ -1286,8 +1286,7 @@ void () func_door =
     }
     
     self.pos1 = self.origin;
-    fabs(self.movedir * self.size);
-    self.pos2 = self.pos1 + (self.movedir * (EntitiesTouching(self, t) - self.lip));
+    self.pos2 = self.pos1 + (self.movedir * ((fabs(self.movedir * self.size)) - self.lip));
     
     if(self.spawnflags & DOOR_START_OPEN)
     {
