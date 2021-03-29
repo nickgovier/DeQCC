@@ -601,8 +601,21 @@ namespace DeQcc
                 PrintLine(l);
             }
 
-            highestGlobalAccessed += f.locals;  // we don't access these globals here (already done when calcuating the function declaration) so account for them
-
+            // we don't access the parm/local globals here (already done when calcuating the function declaration) so account for them
+            if (f.locals == 0 && f.numparms > 0)
+            {
+                // if there are no locals, locals=0, if there are, locals = locals+parms
+                int parmsize = 0;
+                for(int i = 0; i < f.numparms; i++)
+                {
+                    parmsize += f.parm_size[i];
+                }
+                highestGlobalAccessed += parmsize;
+            }
+            else
+            {
+                highestGlobalAccessed += f.locals;  
+            }
             // Decompile the function statements
             sIndex = f.first_statement;
             while (true)

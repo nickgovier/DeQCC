@@ -851,7 +851,6 @@ float (vector v) CheckSpawnPoint =
     return FALSE;
 };
 
-vector v;
 // SelectSpawnPoint
 // function begins at statement 6025, parm_start=4110
 // OP_STORE_V	30	4	0

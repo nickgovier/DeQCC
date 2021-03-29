@@ -1025,8 +1025,6 @@ void (entity attacker, float damage) fish_pain =
     f_pain1();
 };
 
-entity attacker;
-float damage;
 // monster_fish
 // function begins at statement 19452, parm_start=10851
 // OP_IFNOT	35	4	0
