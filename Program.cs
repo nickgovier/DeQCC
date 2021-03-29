@@ -11,6 +11,7 @@ namespace DeQcc
         {
             DeQCC p = new DeQCC();
             p.Decompile("vanilla");
+            //p.Decompile("obots");
         }
     }
 }

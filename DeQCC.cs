@@ -37,7 +37,7 @@ namespace DeQcc
         List<int> startOfDoLoop = new List<int>();  // begin an upcoming do while loop
         List<int> endofBlock = new List<int>(); // reduce indentation
 
-        List<int> IFNOTisWhile = new List<int> { 659, 664, 5695, 5900, 6051, 6068, 1592, 1650, 20773, 20867, 20870, 20873, 3662, 4831, 4921 };  // all the IFNOT statements which are while loops
+        //List<int> IFNOTisWhile = new List<int> { 659, 664, 5695, 5900, 6051, 6068, 1592, 1650, 20773, 20867, 20870, 20873, 3662, 4831, 4921 };  // all the IFNOT statements which are while loops
 
         public void Decompile(string outputfolder)
         {
@@ -535,7 +535,7 @@ namespace DeQcc
         void DecompileFunction(Function f)
         {
             int sIndex;
-            //Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
+            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
 
             // Process any unprocessed globals following the previous function
             while (highestGlobalAccessed < (f.parm_start - 1))    // ends when highestGlobalAccessed == f.parm_start - 1
@@ -843,14 +843,14 @@ namespace DeQcc
                         PrintLine("");
                         PrintLine("while(" + a.ValueToAssign + ")");
 
-                        if (IFNOTisWhile.Contains(sIndex))
-                        {
-                            Console.Out.WriteLine("Correctly found while loop in " + f.name + " at " + sIndex);
-                        }
-                        else
-                        {
-                            Console.Out.WriteLine("ERROR I found a while loop that should really be an IF in " + f.name + " at " + sIndex);
-                        }
+                        //if (IFNOTisWhile.Contains(sIndex))
+                        //{
+                        //    Console.Out.WriteLine("Correctly found while loop in " + f.name + " at " + sIndex);
+                        //}
+                        //else
+                        //{
+                        //    Console.Out.WriteLine("ERROR I found a while loop that should really be an IF in " + f.name + " at " + sIndex);
+                        //}
                     }
                     // Must be an if block
                     else
@@ -866,14 +866,14 @@ namespace DeQcc
                         }
                         PrintLine("if(" + a.ValueToAssign + ")");
 
-                        if (IFNOTisWhile.Contains(sIndex))
-                        {
-                            Console.Out.WriteLine("ERROR I found an if block that should really be a WHILE in " + f.name + " at " + sIndex);
-                        }
-                        else
-                        {
-                            //Console.Out.WriteLine("Correctly found if block in " + f.name + " at " + sIndex);
-                        }
+                        //if (IFNOTisWhile.Contains(sIndex))
+                        //{
+                        //    Console.Out.WriteLine("ERROR I found an if block that should really be a WHILE in " + f.name + " at " + sIndex);
+                        //}
+                        //else
+                        //{
+                        //    //Console.Out.WriteLine("Correctly found if block in " + f.name + " at " + sIndex);
+                        //}
                     }
                     PrintLine("{");
                     indent++;

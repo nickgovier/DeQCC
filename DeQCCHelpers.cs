@@ -375,10 +375,12 @@ namespace DeQcc
                 if (stringToCleanse[i] == '\n')
                 {
                     stringToCleanse = stringToCleanse.Substring(0, i) + "\\n" + stringToCleanse.Substring(i + 1);
+                    i++;    // we added a character
                 }
                 if (stringToCleanse[i] == '\"')
                 {
                     stringToCleanse = stringToCleanse.Substring(0, i) + "\\" + '"' + stringToCleanse.Substring(i + 1);
+                    i++;    // we added a character
                 }
             }
             return '"' + stringToCleanse + '"';
