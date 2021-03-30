@@ -205,6 +205,7 @@ namespace DeQcc
                 {
                     Global local = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Local);
                     if(local.Type == Types.ev_function) { continue; } // OP_STATE functions can otherwise appear to have the next state function as a local
+                    if(local.Type == null) { continue; }    // this was code ahead of the locals in the function definition
                     f.localDefs.Add("local " + local.TypeCodeOutput + " " + local.Name + ";");
                 }
 
@@ -490,6 +491,17 @@ namespace DeQcc
             }
 
             Global g = globalList[offset];
+
+            if (setKind == GlobalKind.Local && g.Type == null)
+            {
+                // we are expecting a local but there wasn't a globaldef representing the type of this local
+                // so it's actually due to code sitting ahead of the locals within a function.
+                // e.g. shambler.qc sham_magic3()
+                // Assume they are Anonymous variables and proceed on that basis
+                setKind = null;
+                calledFromFunction = true;
+            }
+
             g.ExpectedType = expectedType;
 
             if (setKind != null)

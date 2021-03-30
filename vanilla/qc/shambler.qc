@@ -1127,15 +1127,9 @@ void () sham_magic2 = [66.000, sham_magic3]
 // OP_DONE	0	0	0
 void () sham_magic3 = [67.000, sham_magic4]
 {
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local entity o;
     ai_face();
-     = self.nextthink;
-     = self.nextthink;
-     =  + 0.200;
-     = ;
+    self.nextthink = self.nextthink + 0.200;
     self.effects = self.effects | EF_MUZZLEFLASH;
     ai_face();
     self.owner = spawn();
