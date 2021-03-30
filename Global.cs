@@ -5,7 +5,8 @@ namespace DeQcc
 {
     enum Types
     {
-        ev_void, ev_string, ev_float, ev_vector, ev_entity, ev_field, ev_function, ev_pointer
+        ev_void, ev_string, ev_float, ev_vector, ev_entity, ev_field, ev_function, ev_pointer,
+        ev_fieldstring  // field that points to a string
     }
 
     enum GlobalKind

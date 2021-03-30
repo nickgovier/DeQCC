@@ -126,7 +126,7 @@ namespace DeQcc
 
                 Def gd = globals[i];
                 globalList[gd.ofs].Type = (Types)gd.type;
-                globalList[gd.ofs].Name = Strings.GetString(gd.s_name);
+                globalList[gd.ofs].Name = gd.name; // name is already set by this point
 
                 if (globalList[gd.ofs].Type == Types.ev_function)
                 {
@@ -164,7 +164,22 @@ namespace DeQcc
                 // Skip builtins
                 if(f.IsBuiltin)
                 {
-                    f.parm_types = builtinsParms[-f.first_statement];
+                    int builtin = -f.first_statement;
+                    // return type
+                    f.declaration = DeQCC.GetTypeString(builtinsReturns[builtin]) + "(";
+                    // args
+                    for(int i = 0; i < f.numparms; i++)
+                    {
+                        f.declaration += DeQCC.GetTypeString(builtinsParms[builtin][i]) + " " + builtinsParmNames[builtin][i];
+                        if(i < f.numparms - 1)
+                        {
+                            f.declaration += ", ";
+                        }
+                    }
+                    // name
+                    f.declaration += ") " + f.name + " = #" + builtin + ";";
+                    // store the parm types
+                    f.parm_types = builtinsParms[builtin];
                     continue;
                 }
 
@@ -572,7 +587,7 @@ namespace DeQcc
             // Check for builtin functions
             if(f.IsBuiltin)
             {
-                PrintLine(builtins[-f.first_statement]);
+                PrintLine(f.declaration);
                 return;
             }
 
@@ -634,7 +649,7 @@ namespace DeQcc
             // Should never happen
             if(indent != 0)
             {
-                throw new Exception("INDENT");
+                //throw new Exception("INDENT");
                 indent = 0;
                 PrintLine("/* ERROR INDENTATION */");
             }

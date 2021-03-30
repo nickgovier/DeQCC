@@ -20,8 +20,10 @@ namespace DeQcc
         const int OFS_PARM7 = 25;
         const int RESERVED_OFS = 28;
 
-        Dictionary<int, string> builtins = new Dictionary<int, string>();
+        //Dictionary<int, string> builtins = new Dictionary<int, string>();
+        Dictionary<int, Types> builtinsReturns = new Dictionary<int, Types>();
         Dictionary<int, List<Types>> builtinsParms = new Dictionary<int, List<Types>>();
+        Dictionary<int, List<string>> builtinsParmNames = new Dictionary<int, List<string>>();
         
         private List<string> _decompileFilesSeen = new List<string>();   // have we already seen this file during decompilation
 
@@ -34,240 +36,398 @@ namespace DeQcc
 
             // There is no way to reconstruct these from the progs.dat, and they are built in to the Quake engine
             // so we replicate the original v106qc declarations here as they will be the same in every progs.dat
-            builtins.Clear();
-            builtins.Add(1, "void(vector ang) makevectors = #1; // sets v_forward, etc globals");
+            //builtins.Clear();
+            builtinsParms.Clear();
+            builtinsParmNames.Clear();
+            //builtins.Add(1, "void(vector ang) makevectors = #1; // sets v_forward, etc globals");
+            builtinsReturns.Add(1, Types.ev_void);
             builtinsParms.Add(1, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(1, new List<string> { "ang" });
 
-            builtins.Add(2, "void(entity e, vector o) setorigin = #2;");
+            //builtins.Add(2, "void(entity e, vector o) setorigin = #2;");
+            builtinsReturns.Add(2, Types.ev_void);
             builtinsParms.Add(2, new List<Types> { Types.ev_entity, Types.ev_vector });
+            builtinsParmNames.Add(2, new List<string> { "e", "o" });
 
-            builtins.Add(3, "void(entity e, string m) setmodel	= #3; // set movetype and solid first");
+            //builtins.Add(3, "void(entity e, string m) setmodel	= #3; // set movetype and solid first");
+            builtinsReturns.Add(3, Types.ev_void);
             builtinsParms.Add(3, new List<Types> { Types.ev_entity, Types.ev_string });
+            builtinsParmNames.Add(3, new List<string> { "e", "m" });
 
-            builtins.Add(4, "void(entity e, vector min, vector max) setsize = #4;");
+            //builtins.Add(4, "void(entity e, vector min, vector max) setsize = #4;");
+            builtinsReturns.Add(4, Types.ev_void);
             builtinsParms.Add(4, new List<Types> { Types.ev_entity, Types.ev_vector, Types.ev_vector });
+            builtinsParmNames.Add(4, new List<string> { "e", "min", "max" });
 
-            builtins.Add(5, "// #5 was removed");
+            //builtins.Add(5, "// #5 was removed");
+            builtinsReturns.Add(5, Types.ev_void);
             builtinsParms.Add(5, new List<Types>());
+            builtinsParmNames.Add(5, new List<string>());
 
-            builtins.Add(6, "void() break = #6;");
+            //builtins.Add(6, "void() break = #6;");
+            builtinsReturns.Add(6, Types.ev_void);
             builtinsParms.Add(6, new List<Types>());
+            builtinsParmNames.Add(6, new List<string>());
 
-            builtins.Add(7, "float() random = #7; // returns 0 - 1");
+            //builtins.Add(7, "float() random = #7; // returns 0 - 1");
+            builtinsReturns.Add(7, Types.ev_float);
             builtinsParms.Add(7, new List<Types>());
+            builtinsParmNames.Add(7, new List<string>());
 
-            builtins.Add(8, "void(entity e, float chan, string samp, float vol, float atten) sound = #8;");
+            //builtins.Add(8, "void(entity e, float chan, string samp, float vol, float atten) sound = #8;");
+            builtinsReturns.Add(8, Types.ev_void);
             builtinsParms.Add(8, new List<Types> { Types.ev_entity, Types.ev_float, Types.ev_string, Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(8, new List<string> { "e", "chan", "samp", "vol", "atten" });
 
-            builtins.Add(9, "vector(vector v) normalize = #9;");
+            //builtins.Add(9, "vector(vector v) normalize = #9;");
+            builtinsReturns.Add(9, Types.ev_vector);
             builtinsParms.Add(9, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(9, new List<string> { "v" });
 
-            builtins.Add(10, "void(string e) error = #10;");
+            //builtins.Add(10, "void(string e) error = #10;");
+            builtinsReturns.Add(10, Types.ev_void);
             builtinsParms.Add(10, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(10, new List<string> { "e" });
 
-            builtins.Add(11, "void(string e) objerror = #11;");
-            builtinsParms.Add(11, new List<Types> { Types.ev_string });
+            //builtins.Add(11, "void(string e) objerror = #11;");
+            builtinsReturns.Add(11, Types.ev_void);
+            builtinsParms.Add(11, new List<Types> { Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string });  // can be overloaded with multiple strings
+            builtinsParmNames.Add(11, new List<string> { "e", "e2", "e3", "e4", "e5", "e6", "e7", "e8" });
 
-            builtins.Add(12, "float(vector v) vlen = #12;");
+            //builtins.Add(12, "float(vector v) vlen = #12;");
+            builtinsReturns.Add(12, Types.ev_float);
             builtinsParms.Add(12, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(12, new List<string> { "v" });
 
-            builtins.Add(13, "float(vector v) vectoyaw = #13;");
+            //builtins.Add(13, "float(vector v) vectoyaw = #13;");
+            builtinsReturns.Add(13, Types.ev_float);
             builtinsParms.Add(13, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(13, new List<string> { "v" });
 
-            builtins.Add(14, "entity() spawn = #14;");
+            //builtins.Add(14, "entity() spawn = #14;");
+            builtinsReturns.Add(14, Types.ev_entity);
             builtinsParms.Add(14, new List<Types>());
+            builtinsParmNames.Add(14, new List<string>());
 
-            builtins.Add(15, "void(entity e) remove = #15;");
+            //builtins.Add(15, "void(entity e) remove = #15;");
+            builtinsReturns.Add(15, Types.ev_void);
             builtinsParms.Add(15, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(15, new List<string> { "e" });
 
-            builtins.Add(16, "void(vector v1, vector v2, float nomonsters, entity forent) traceline = #16;");
+            //builtins.Add(16, "void(vector v1, vector v2, float nomonsters, entity forent) traceline = #16;");
+            builtinsReturns.Add(16, Types.ev_void);
             builtinsParms.Add(16, new List<Types> { Types.ev_vector, Types.ev_vector, Types.ev_float, Types.ev_entity });
+            builtinsParmNames.Add(16, new List<string> { "v1", "v2", "nomonsters", "forent" });
 
-            builtins.Add(17, "entity() checkclient = #17;	// returns a client to look for");
+            //builtins.Add(17, "entity() checkclient = #17;	// returns a client to look for");
+            builtinsReturns.Add(17, Types.ev_entity);
             builtinsParms.Add(17, new List<Types>());
+            builtinsParmNames.Add(17, new List<string>());
 
-            builtins.Add(18, "entity(entity start, .string fld, string match) find = #18;");
-            builtinsParms.Add(18, new List<Types> { Types.ev_entity, Types.ev_string, Types.ev_string });
+            //builtins.Add(18, "entity(entity start, .string fld, string match) find = #18;");
+            builtinsReturns.Add(18, Types.ev_entity);
+            builtinsParms.Add(18, new List<Types> { Types.ev_entity, Types.ev_fieldstring, Types.ev_string });
+            builtinsParmNames.Add(18, new List<string> { "start", "fld", "match" });
 
-            builtins.Add(19, "string(string s) precache_sound = #19;");
+            //builtins.Add(19, "string(string s) precache_sound = #19;");
+            builtinsReturns.Add(19, Types.ev_string);
             builtinsParms.Add(19, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(19, new List<string> { "s" });
 
-            builtins.Add(20, "string(string s) precache_model = #20;");
+            //builtins.Add(20, "string(string s) precache_model = #20;");
+            builtinsReturns.Add(20, Types.ev_string);
             builtinsParms.Add(20, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(20, new List<string> { "s" });
 
-            builtins.Add(21, "void(entity client, string s) stuffcmd = #21;");
+            //builtins.Add(21, "void(entity client, string s) stuffcmd = #21;");
+            builtinsReturns.Add(21, Types.ev_void);
             builtinsParms.Add(21, new List<Types> { Types.ev_entity, Types.ev_string });
+            builtinsParmNames.Add(21, new List<string> { "client", "s" });
 
-            builtins.Add(22, "entity(vector org, float rad) findradius = #22;");
+            //builtins.Add(22, "entity(vector org, float rad) findradius = #22;");
+            builtinsReturns.Add(22, Types.ev_entity);
             builtinsParms.Add(22, new List<Types> { Types.ev_vector, Types.ev_float });
+            builtinsParmNames.Add(22, new List<string> { "org", "rad" });
 
-            builtins.Add(23, "void(string s) bprint = #23;");
-            builtinsParms.Add(23, new List<Types> { Types.ev_string });
+            //builtins.Add(23, "void(string s) bprint = #23;");
+            builtinsReturns.Add(23, Types.ev_void);
+            builtinsParms.Add(23, new List<Types> { Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string });  // can be overloaded with multiple strings
+            builtinsParmNames.Add(23, new List<string> { "s", "s2", "s3", "s4", "s5", "s6", "s7", "s8" });
 
-            builtins.Add(24, "void(entity client, string s) sprint = #24;");
-            builtinsParms.Add(24, new List<Types> { Types.ev_entity, Types.ev_string });
+            //builtins.Add(24, "void(entity client, string s) sprint = #24;");
+            builtinsReturns.Add(24, Types.ev_void);
+            builtinsParms.Add(24, new List<Types> { Types.ev_entity, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string });  // can be overloaded with multiple strings
+            builtinsParmNames.Add(24, new List<string> { "client", "s", "s2", "s3", "s4", "s5", "s6", "s7" });
 
-            builtins.Add(25, "void(string s) dprint = #25;");
+            //builtins.Add(25, "void(string s) dprint = #25;");
+            builtinsReturns.Add(25, Types.ev_void);
             builtinsParms.Add(25, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(25, new List<string> { "s" });
 
-            builtins.Add(26, "string(float f) ftos = #26;");
+            //builtins.Add(26, "string(float f) ftos = #26;");
+            builtinsReturns.Add(26, Types.ev_string);
             builtinsParms.Add(26, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(26, new List<string> { "f" });
 
-            builtins.Add(27, "string(vector v) vtos = #27;");
+            //builtins.Add(27, "string(vector v) vtos = #27;");
+            builtinsReturns.Add(27, Types.ev_string);
             builtinsParms.Add(27, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(27, new List<string> { "v" });
 
-            builtins.Add(28, "void() coredump = #28;		// prints all edicts");
+            //builtins.Add(28, "void() coredump = #28;		// prints all edicts");
+            builtinsReturns.Add(28, Types.ev_void);
             builtinsParms.Add(28, new List<Types>());
+            builtinsParmNames.Add(28, new List<string>());
 
-            builtins.Add(29, "void() traceon = #29;		// turns statment trace on");
+            //builtins.Add(29, "void() traceon = #29;		// turns statment trace on");
+            builtinsReturns.Add(29, Types.ev_void);
             builtinsParms.Add(29, new List<Types>());
+            builtinsParmNames.Add(29, new List<string>());
 
-            builtins.Add(30, "void() traceoff = #30;");
+            //builtins.Add(30, "void() traceoff = #30;");
+            builtinsReturns.Add(30, Types.ev_void);
             builtinsParms.Add(30, new List<Types>());
+            builtinsParmNames.Add(30, new List<string>());
 
-            builtins.Add(31, "void(entity e) eprint = #31;		// prints an entire edict");
+            //builtins.Add(31, "void(entity e) eprint = #31;		// prints an entire edict");
+            builtinsReturns.Add(31, Types.ev_void);
             builtinsParms.Add(31, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(31, new List<string> { "e" });
 
-            builtins.Add(32, "float(float yaw, float dist) walkmove	= #32;	// returns TRUE or FALSE");
+            //builtins.Add(32, "float(float yaw, float dist) walkmove	= #32;	// returns TRUE or FALSE");
+            builtinsReturns.Add(32, Types.ev_float);
             builtinsParms.Add(32, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(32, new List<string> { "yaw", "dist" });
 
-            builtins.Add(33, "// #33 was removed");
+            //builtins.Add(33, "// #33 was removed");
+            builtinsReturns.Add(33, Types.ev_void);
             builtinsParms.Add(33, new List<Types>());
+            builtinsParmNames.Add(33, new List<string>());
 
-            builtins.Add(34, "float() droptofloor = #34; // TRUE if landed on floor");
+            //builtins.Add(34, "float() droptofloor = #34; // TRUE if landed on floor");
+            builtinsReturns.Add(34, Types.ev_float);
             builtinsParms.Add(34, new List<Types>());
+            builtinsParmNames.Add(34, new List<string>());
 
-            builtins.Add(35, "void(float style, string value) lightstyle = #35;");
+            //builtins.Add(35, "void(float style, string value) lightstyle = #35;");
+            builtinsReturns.Add(35, Types.ev_void);
             builtinsParms.Add(35, new List<Types> { Types.ev_float, Types.ev_string });
+            builtinsParmNames.Add(35, new List<string> { "style", "value" });
 
-            builtins.Add(36, "float(float v) rint = #36; // round to nearest int");
+            //builtins.Add(36, "float(float v) rint = #36; // round to nearest int");
+            builtinsReturns.Add(36, Types.ev_float);
             builtinsParms.Add(36, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(36, new List<string> { "v" });
 
-            builtins.Add(37, "float(float v) floor = #37; // largest integer <= v");
+            //builtins.Add(37, "float(float v) floor = #37; // largest integer <= v");
+            builtinsReturns.Add(37, Types.ev_float);
             builtinsParms.Add(37, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(37, new List<string> { "v" });
 
-            builtins.Add(38, "float(float v) ceil = #38; // smallest integer >= v");
+            //builtins.Add(38, "float(float v) ceil = #38; // smallest integer >= v");
+            builtinsReturns.Add(38, Types.ev_float);
             builtinsParms.Add(38, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(38, new List<string> { "v" });
 
-            builtins.Add(39, "// #39 was removed");
+            //builtins.Add(39, "// #39 was removed");
+            builtinsReturns.Add(39, Types.ev_void);
             builtinsParms.Add(39, new List<Types>());
+            builtinsParmNames.Add(39, new List<string>());
 
-            builtins.Add(40, "float(entity e) checkbottom = #40; // true if self is on ground");
+            //builtins.Add(40, "float(entity e) checkbottom = #40; // true if self is on ground");
+            builtinsReturns.Add(40, Types.ev_float);
             builtinsParms.Add(40, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(40, new List<string> { "e" });
 
-            builtins.Add(41, "float(vector v) pointcontents = #41; // returns a CONTENT_*");
+            //builtins.Add(41, "float(vector v) pointcontents = #41; // returns a CONTENT_*");
+            builtinsReturns.Add(41, Types.ev_float);
             builtinsParms.Add(41, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(41, new List<string> { "v" });
 
-            builtins.Add(42, "// #42 was removed");
+            //builtins.Add(42, "// #42 was removed");
+            builtinsReturns.Add(42, Types.ev_void);
             builtinsParms.Add(42, new List<Types>());
+            builtinsParmNames.Add(42, new List<string>());
 
-            builtins.Add(43, "float(float f) fabs = #43;");
+            //builtins.Add(43, "float(float f) fabs = #43;");
+            builtinsReturns.Add(43, Types.ev_float);
             builtinsParms.Add(43, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(43, new List<string> { "f" });
 
-            builtins.Add(44, "vector(entity e, float speed) aim = #44; // returns the shooting vector");
+            //builtins.Add(44, "vector(entity e, float speed) aim = #44; // returns the shooting vector");
+            builtinsReturns.Add(44, Types.ev_vector);
             builtinsParms.Add(44, new List<Types> { Types.ev_entity, Types.ev_float });
+            builtinsParmNames.Add(44, new List<string> { "e", "speed" });
 
-            builtins.Add(45, "float(string s) cvar = #45; // return cvar.value");
+            //builtins.Add(45, "float(string s) cvar = #45; // return cvar.value");
+            builtinsReturns.Add(45, Types.ev_float);
             builtinsParms.Add(45, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(45, new List<string> { "s" });
 
-            builtins.Add(46, "void(string s) localcmd = #46; // put string into local que");
+            //builtins.Add(46, "void(string s) localcmd = #46; // put string into local que");
+            builtinsReturns.Add(46, Types.ev_void);
             builtinsParms.Add(46, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(46, new List<string> { "s" });
 
-            builtins.Add(47, "entity(entity e) nextent = #47; // for looping through all ents");
+            //builtins.Add(47, "entity(entity e) nextent = #47; // for looping through all ents");
+            builtinsReturns.Add(47, Types.ev_entity);
             builtinsParms.Add(47, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(47, new List<string> { "e" });
 
-            builtins.Add(48, "void(vector o, vector d, float color, float count) particle = #48; // start a particle effect");
+            //builtins.Add(48, "void(vector o, vector d, float color, float count) particle = #48; // start a particle effect");
+            builtinsReturns.Add(48, Types.ev_void);
             builtinsParms.Add(48, new List<Types> { Types.ev_vector, Types.ev_vector, Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(48, new List<string> { "o", "d", "color", "count" });
 
-            builtins.Add(49, "void() ChangeYaw = #49; // turn towards self.ideal_yaw at self.yaw_speed");
+            //builtins.Add(49, "void() ChangeYaw = #49; // turn towards self.ideal_yaw at self.yaw_speed");
+            builtinsReturns.Add(49, Types.ev_void);
             builtinsParms.Add(49, new List<Types>());
+            builtinsParmNames.Add(49, new List<string>());
 
-            builtins.Add(50, "// #50 was removed");
+            //builtins.Add(50, "// #50 was removed");
+            builtinsReturns.Add(50, Types.ev_void);
             builtinsParms.Add(50, new List<Types>());
+            builtinsParmNames.Add(50, new List<string>());
 
-            builtins.Add(51, "vector(vector v) vectoangles = #51;");
+            //builtins.Add(51, "vector(vector v) vectoangles = #51;");
+            builtinsReturns.Add(51, Types.ev_vector);
             builtinsParms.Add(51, new List<Types> { Types.ev_vector });
+            builtinsParmNames.Add(51, new List<string> { "v" });
 
-            builtins.Add(52, "void(float to, float f) WriteByte = #52;");
+            //builtins.Add(52, "void(float to, float f) WriteByte = #52;");
+            builtinsReturns.Add(52, Types.ev_void);
             builtinsParms.Add(52, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(52, new List<string> { "to", "f" });
 
-            builtins.Add(53, "void(float to, float f) WriteChar = #53;");
+            //builtins.Add(53, "void(float to, float f) WriteChar = #53;");
+            builtinsReturns.Add(53, Types.ev_void);
             builtinsParms.Add(53, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(53, new List<string> { "to", "f" });
 
-            builtins.Add(54, "void(float to, float f) WriteShort = #54;");
+            //builtins.Add(54, "void(float to, float f) WriteShort = #54;");
+            builtinsReturns.Add(54, Types.ev_void);
             builtinsParms.Add(54, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(54, new List<string> { "to", "f" });
 
-            builtins.Add(55, "void(float to, float f) WriteLong	= #55;");
+            //builtins.Add(55, "void(float to, float f) WriteLong	= #55;");
+            builtinsReturns.Add(55, Types.ev_void);
             builtinsParms.Add(55, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(55, new List<string> { "to", "f" });
 
-            builtins.Add(56, "void(float to, float f) WriteCoord = #56;");
+            //builtins.Add(56, "void(float to, float f) WriteCoord = #56;");
+            builtinsReturns.Add(56, Types.ev_void);
             builtinsParms.Add(56, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(56, new List<string> { "to", "f" });
 
-            builtins.Add(57, "void(float to, float f) WriteAngle = #57;");
+            //builtins.Add(57, "void(float to, float f) WriteAngle = #57;");
+            builtinsReturns.Add(57, Types.ev_void);
             builtinsParms.Add(57, new List<Types> { Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(57, new List<string> { "to", "f" });
 
-            builtins.Add(58, "void(float to, string s) WriteString = #58;");
+            //builtins.Add(58, "void(float to, string s) WriteString = #58;");
+            builtinsReturns.Add(58, Types.ev_void);
             builtinsParms.Add(58, new List<Types> { Types.ev_float, Types.ev_string });
+            builtinsParmNames.Add(58, new List<string> {"to", "s" });
 
-            builtins.Add(59, "void(float to, entity s) WriteEntity = #59;");
-            builtinsParms.Add(59, new List<Types> { Types.ev_float, Types.ev_string });
+            //builtins.Add(59, "void(float to, entity s) WriteEntity = #59;");
+            builtinsReturns.Add(59, Types.ev_void);
+            builtinsParms.Add(59, new List<Types> { Types.ev_float, Types.ev_entity });
+            builtinsParmNames.Add(59, new List<string> { "to", "s" });
 
-            builtins.Add(60, "// #60 was removed");
+            //builtins.Add(60, "// #60 was removed");
+            builtinsReturns.Add(60, Types.ev_void);
             builtinsParms.Add(60, new List<Types>());
+            builtinsParmNames.Add(60, new List<string>());
 
-            builtins.Add(61, "// #61 was removed");
+            //builtins.Add(61, "// #61 was removed");
+            builtinsReturns.Add(61, Types.ev_void);
             builtinsParms.Add(61, new List<Types>());
+            builtinsParmNames.Add(61, new List<string>());
 
-            builtins.Add(62, "// #62 was removed");
+            //builtins.Add(62, "// #62 was removed");
+            builtinsReturns.Add(62, Types.ev_void);
             builtinsParms.Add(62, new List<Types>());
+            builtinsParmNames.Add(62, new List<string>());
 
-            builtins.Add(63, "// #63 was removed");
+            //builtins.Add(63, "// #63 was removed");
+            builtinsReturns.Add(63, Types.ev_void);
             builtinsParms.Add(63, new List<Types>());
+            builtinsParmNames.Add(63, new List<string>());
 
-            builtins.Add(64, "// #64 was removed");
+            //builtins.Add(64, "// #64 was removed");
+            builtinsReturns.Add(64, Types.ev_void);
             builtinsParms.Add(64, new List<Types>());
+            builtinsParmNames.Add(64, new List<string>());
 
-            builtins.Add(65, "// #65 was removed");
+            //builtins.Add(65, "// #65 was removed");
+            builtinsReturns.Add(65, Types.ev_void);
             builtinsParms.Add(65, new List<Types>());
+            builtinsParmNames.Add(65, new List<string>());
 
-            builtins.Add(66, "// #66 was removed");
+            //builtins.Add(66, "// #66 was removed");
+            builtinsReturns.Add(66, Types.ev_void);
             builtinsParms.Add(66, new List<Types>());
+            builtinsParmNames.Add(66, new List<string>());
 
-            builtins.Add(67, "void(float step) movetogoal = #67;");
+            //builtins.Add(67, "void(float step) movetogoal = #67;");
+            builtinsReturns.Add(67, Types.ev_void);
             builtinsParms.Add(67, new List<Types> { Types.ev_float });
+            builtinsParmNames.Add(67, new List<string> { "step" });
 
-            builtins.Add(68, "string(string s) precache_file = #68;	// no effect except for -copy");
+            //builtins.Add(68, "string(string s) precache_file = #68;	// no effect except for -copy");
+            builtinsReturns.Add(68, Types.ev_string);
             builtinsParms.Add(68, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(68, new List<string> { "s" });
 
-            builtins.Add(69, "void(entity e) makestatic = #69;");
+            //builtins.Add(69, "void(entity e) makestatic = #69;");
+            builtinsReturns.Add(69, Types.ev_void);
             builtinsParms.Add(69, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(69, new List<string> { "e" });
 
-            builtins.Add(70, "void(string s) changelevel = #70;");
+            //builtins.Add(70, "void(string s) changelevel = #70;");
+            builtinsReturns.Add(70, Types.ev_void);
             builtinsParms.Add(70, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(70, new List<string> { "s" });
 
-            builtins.Add(71, "// #71 was removed");
+            //builtins.Add(71, "// #71 was removed");
+            builtinsReturns.Add(71, Types.ev_void);
             builtinsParms.Add(71, new List<Types>());
+            builtinsParmNames.Add(71, new List<string>());
 
-            builtins.Add(72, "void(string var, string val) cvar_set = #72; // sets cvar.value");
+            //builtins.Add(72, "void(string var, string val) cvar_set = #72; // sets cvar.value");
+            builtinsReturns.Add(72, Types.ev_void);
             builtinsParms.Add(72, new List<Types> { Types.ev_string, Types.ev_string });
+            builtinsParmNames.Add(72, new List<string> { "var", "val" });
 
-            builtins.Add(73, "void(entity client, string s) centerprint = #73; // sprint, but in middle");
-            builtinsParms.Add(73, new List<Types> { Types.ev_entity, Types.ev_string });
+            //builtins.Add(73, "void(entity client, string s) centerprint = #73; // sprint, but in middle");
+            builtinsReturns.Add(73, Types.ev_void);
+            builtinsParms.Add(73, new List<Types> { Types.ev_entity, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string, Types.ev_string });  // can be overloaded with multiple strings
+            builtinsParmNames.Add(73, new List<string> { "client", "s", "s2", "s3", "s4", "s5", "s6", "s7" });
 
-            builtins.Add(74, "void(vector pos, string samp, float vol, float atten) ambientsound = #74;");
+            //builtins.Add(74, "void(vector pos, string samp, float vol, float atten) ambientsound = #74;");
+            builtinsReturns.Add(74, Types.ev_void);
             builtinsParms.Add(74, new List<Types> { Types.ev_vector, Types.ev_string, Types.ev_float, Types.ev_float });
+            builtinsParmNames.Add(74, new List<string> { "pos", "samp", "vol", "atten" });
 
-            builtins.Add(75, "string(string s) precache_model2 = #75; // registered version only");
+            //builtins.Add(75, "string(string s) precache_model2 = #75; // registered version only");
+            builtinsReturns.Add(75, Types.ev_string);
             builtinsParms.Add(75, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(75, new List<string> { "s" });
 
-            builtins.Add(76, "string(string s) precache_sound2 = #76; // registered version only");
+            //builtins.Add(76, "string(string s) precache_sound2 = #76; // registered version only");
+            builtinsReturns.Add(76, Types.ev_string);
             builtinsParms.Add(76, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(76, new List<string> { "s" });
 
-            builtins.Add(77, "string(string s) precache_file2 = #77; // registered version only");
+            //builtins.Add(77, "string(string s) precache_file2 = #77; // registered version only");
+            builtinsReturns.Add(77, Types.ev_string);
             builtinsParms.Add(77, new List<Types> { Types.ev_string });
+            builtinsParmNames.Add(77, new List<string> { "s" });
 
-            builtins.Add(78, "void(entity e) setspawnparms = #78; // set parm1... to the values at level start for coop respawn");
+            //builtins.Add(78, "void(entity e) setspawnparms = #78; // set parm1... to the values at level start for coop respawn");
+            builtinsReturns.Add(78, Types.ev_void);
             builtinsParms.Add(78, new List<Types> { Types.ev_entity });
+            builtinsParmNames.Add(78, new List<string> { "e" });
 
             pr_opcodes.Add(new Opcode("<DONE>", "DONE", -1, false, Types.ev_entity, Types.ev_field, Types.ev_void));
             pr_opcodes.Add(new Opcode("*", "MUL_F", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
@@ -411,6 +571,8 @@ namespace DeQcc
                     return "ev_field";
                 case Types.ev_pointer:
                     return "ev_pointer";
+                case Types.ev_fieldstring:
+                    return ".string";
             }
             return "/* ERROR: Unknown type in GetTypeString() */";
         }
