@@ -569,7 +569,6 @@ void () sham_smash9 = [43.000, sham_smash10]
 // OP_DONE	0	0	0
 void () sham_smash10 = [44.000, sham_smash11]
 {
-    local void() sham_smash11;
     local vector delta;
     local float ldmg;
     
@@ -1128,7 +1127,6 @@ void () sham_magic2 = [66.000, sham_magic3]
 // OP_DONE	0	0	0
 void () sham_magic3 = [67.000, sham_magic4]
 {
-    local void() sham_magic4;
     local /* ERROR: NULL TYPE */ ;
     local /* ERROR: NULL TYPE */ ;
     local /* ERROR: NULL TYPE */ ;

@@ -161,7 +161,7 @@ namespace DeQcc
                     }
                 }
 
-                // Skip builtins
+                // Process builtins
                 if(f.IsBuiltin)
                 {
                     int builtin = -f.first_statement;
@@ -201,9 +201,10 @@ namespace DeQcc
                 f.declaration += ") " + f.name;
 
                 // Locals
-                while ((highestGlobalAccessed - f.parm_start) < (f.locals - 1))
+                while (highestGlobalAccessed < (f.parm_start + f.locals - 1))
                 {
                     Global local = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Local);
+                    if(local.Type == Types.ev_function) { continue; } // OP_STATE functions can otherwise appear to have the next state function as a local
                     f.localDefs.Add("local " + local.TypeCodeOutput + " " + local.Name + ";");
                 }
 
