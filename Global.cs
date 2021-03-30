@@ -88,15 +88,15 @@ namespace DeQcc
             }
         }
 
-        public ushort? IntVal
+        public int? IntVal
         {
             get
             {
                 // TODO better way to do this?
                 int intVal = BitConverter.ToInt32(BitConverter.GetBytes(FloatVal));
-                if (intVal < (1 << 16))    // ints seem to be the first 16 bits, 0-65536 - and only used as offsets(?)
+                if (intVal < (1 << 17))    // ints seem to be the first 17 bits, 0-131071 - and only used as offsets(?)
                 {
-                    return (ushort)intVal;
+                    return intVal;
                 }
                 return null;
             }

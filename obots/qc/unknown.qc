@@ -17746,18 +17746,14 @@ void () StartFrame =
     local entity globaldef002456;
     local string globaldef002457;
     local string globaldef002458;
-    local /* ERROR: NULL TYPE */ ;
     local float globaldef002459;
     local string globaldef002460;
-    local /* ERROR: NULL TYPE */ ;
     local float globaldef002461;
     globaldef000010 = cvar(globaldef002457);
     globaldef000337 = cvar(globaldef002458);
-     = globaldef000336 + globaldef000192;
-    globaldef000336 = ;
-     = globaldef000008 != cvar(globaldef002460);
+    globaldef000336 = globaldef000336 + globaldef000192;
     
-    if()
+    if(globaldef000008 != cvar(globaldef002460))
     {
         globaldef000008 = cvar(globaldef002460);
         func002708();
@@ -25596,59 +25592,31 @@ void () ClientConnect =
 void () ClientDisconnect = 
 {
     local float globaldef002970;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local float globaldef002971;
     func000334(globaldef000001);
     func002364(globaldef000001);
-     = globaldef000001.field000285;
-    func002262(, "");
-     = globaldef000001.field000285;
-    func002260();
+    func002262(globaldef000001.field000285, "");
+    func002260(globaldef000001.field000285);
     func002739(globaldef000001);
-     = globaldef000001.field000297;
     
-    if()
+    if(globaldef000001.field000297)
     {
-         = globaldef000001.field000297;
-         = .field000298;
-         = globaldef000001.field000298;
-         = ;
+        globaldef000001.field000297.field000298 = globaldef000001.field000298;
     }
     
-     = globaldef000001.field000298;
-    if()
+    if(globaldef000001.field000298)
     {
-         = globaldef000001.field000298;
-         = .field000297;
-         = globaldef000001.field000297;
-         = ;
+        globaldef000001.field000298.field000297 = globaldef000001.field000297;
     }
     else
     {
-         = globaldef000001.field000297;
-        globaldef000816 = ;
+        globaldef000816 = globaldef000001.field000297;
     }
     
-     = globaldef000001.field000252;
-     =  & globaldef000686;
     
-    if()
+    if(globaldef000001.field000252 & globaldef000686)
     {
-         = globaldef000785 - globaldef000192;
-        globaldef000785 = ;
+        globaldef000785 = globaldef000785 - globaldef000192;
     }
     
     
@@ -26291,286 +26259,120 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
     local float globaldef002980;
     local float globaldef002981;
     local string globaldef002982;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002983;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002984;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002985;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002986;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002987;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002988;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002989;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002990;
     local string globaldef002991;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002992;
     local string globaldef002993;
     local string globaldef002994;
     local float globaldef002995;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002996;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002997;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002998;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef002999;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef003000;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef003001;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef003002;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef003003;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef003004;
     local string globaldef003005;
     local string globaldef003006;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local float globaldef003007;
     globaldef002977 = random();
-     = globaldef002975.classname;
-     =  == "player";
-     = globaldef002975.classname;
-     =  == "bot";
-     =  || ;
     
-    if()
+    if((globaldef002975.classname == "player") || (globaldef002975.classname == "bot"))
     {
-         = globaldef000804 & globaldef000750;
         
-        if()
+        if(globaldef000804 & globaldef000750)
         {
-             = globaldef000525.classname;
-             =  == "player";
-             = globaldef000525.classname;
-             =  == "bot";
-             =  || ;
             
-            if()
+            if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))
             {
-                 = globaldef000525.takedamage;
-                 = globaldef000228;
+                globaldef000525.takedamage = globaldef000228;
                 func000064(globaldef000525, globaldef002983);
-                 = globaldef000525.enemy;
-                 = globaldef000003;
+                globaldef000525.enemy = globaldef000003;
             }
             
-             = globaldef000524.classname;
-             =  == "player";
-             = globaldef000524.classname;
-             =  == "bot";
-             =  || ;
             
-            if()
+            if((globaldef000524.classname == "player") || (globaldef000524.classname == "bot"))
             {
-                 = globaldef000524.takedamage;
-                 = globaldef000228;
+                globaldef000524.takedamage = globaldef000228;
                 func000064(globaldef000524, globaldef002983);
-                 = globaldef000524.enemy;
-                 = globaldef000003;
+                globaldef000524.enemy = globaldef000003;
             }
             
-             = globaldef002976 != globaldef002975;
             
-            if()
+            if(globaldef002976 != globaldef002975)
             {
-                 = globaldef002976.health;
-                globaldef002980 = ;
-                 = globaldef002976.armorvalue;
-                globaldef002981 = ;
+                globaldef002980 = globaldef002976.health;
+                globaldef002981 = globaldef002976.armorvalue;
             }
             
-             = globaldef002975 == globaldef000524;
             
-            if()
+            if(globaldef002975 == globaldef000524)
             {
-                 = globaldef000524.loses;
-                 = globaldef000524.loses;
-                 =  + globaldef000192;
-                 = ;
-                 = globaldef000525.wins;
-                 = globaldef000525.wins;
-                 =  + globaldef000192;
-                 = ;
+                globaldef000524.loses = globaldef000524.loses + globaldef000192;
+                globaldef000525.wins = globaldef000525.wins + globaldef000192;
                 bprint(globaldef002984);
-                 = globaldef000524.netname;
-                bprint();
+                bprint(globaldef000524.netname);
                 bprint(globaldef002985);
-                 = globaldef002975 == globaldef002976;
                 
-                if()
+                if(globaldef002975 == globaldef002976)
                 {
                     bprint(globaldef002986);
-                     = globaldef002976.frags;
-                     = globaldef002976.frags;
-                     =  - globaldef000192;
-                     = ;
+                    globaldef002976.frags = globaldef002976.frags - globaldef000192;
                 }
                 
                 globaldef000524 = globaldef000525;
-                 = globaldef000524.classname;
-                 =  == "player";
                 
-                if()
+                if(globaldef000524.classname == "player")
                 {
                     bprint("The new winner is ");
-                     = globaldef000524.netname;
-                    bprint();
+                    bprint(globaldef000524.netname);
                     bprint("\n");
                 }
                 
                 func000362();
             }
             
-             = globaldef002975 == globaldef000525;
             
-            if()
+            if(globaldef002975 == globaldef000525)
             {
-                 = globaldef000525.loses;
-                 = globaldef000525.loses;
-                 =  + globaldef000192;
-                 = ;
-                 = globaldef000524.wins;
-                 = globaldef000524.wins;
-                 =  + globaldef000192;
-                 = ;
+                globaldef000525.loses = globaldef000525.loses + globaldef000192;
+                globaldef000524.wins = globaldef000524.wins + globaldef000192;
                 bprint(globaldef002987);
-                 = globaldef000525.netname;
-                bprint();
+                bprint(globaldef000525.netname);
                 bprint(globaldef002988);
-                 = globaldef002975 == globaldef002976;
                 
-                if()
+                if(globaldef002975 == globaldef002976)
                 {
                     bprint(globaldef002989);
-                     = globaldef002976.frags;
-                     = globaldef002976.frags;
-                     =  - globaldef000192;
-                     = ;
+                    globaldef002976.frags = globaldef002976.frags - globaldef000192;
                 }
                 
                 func000362();
             }
             
-             = globaldef002976.classname;
-             =  == "player";
-             = globaldef002976.classname;
-             =  == "bot";
-             =  || ;
             
-            if()
+            if((globaldef002976.classname == "player") || (globaldef002976.classname == "bot"))
             {
-                 = globaldef002976 != globaldef002975;
                 
-                if()
+                if(globaldef002976 != globaldef002975)
                 {
-                     = globaldef002980 == 100.000;
-                     = globaldef002981 == 200.000;
-                     =  && ;
-                    if()
+                    if((globaldef002980 == 100.000) && (globaldef002981 == 200.000))
                     {
                         bprint(globaldef002990);
                         func000356(globaldef002991);
                     }
                     else
                     {
-                         = globaldef002976.netname;
-                        bprint();
+                        bprint(globaldef002976.netname);
                         bprint(globaldef002992);
                         globaldef002982 = ftos(globaldef002980);
                         bprint(globaldef002982);
@@ -26578,21 +26380,15 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
                         globaldef002982 = ftos(globaldef002981);
                         bprint(globaldef002982);
                         bprint(globaldef002994);
-                         = globaldef002980 >= globaldef002995;
-                         = globaldef002981 >= 100.000;
-                         =  && ;
                         
-                        if()
+                        if((globaldef002980 >= globaldef002995) && (globaldef002981 >= 100.000))
                         {
                             func000356(globaldef002996);
                         }
                         
                     }
                     
-                     = globaldef002976.frags;
-                     = globaldef002976.frags;
-                     =  + globaldef000192;
-                     = ;
+                    globaldef002976.frags = globaldef002976.frags + globaldef000192;
                 }
                 
             }
@@ -26600,91 +26396,55 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             return;
         }
         
-         = globaldef002976.classname;
-         =  == globaldef002997;
         
-        if()
+        if(globaldef002976.classname == globaldef002997)
         {
-             = globaldef002975.netname;
-            bprint();
+            bprint(globaldef002975.netname);
             bprint(globaldef002998);
-             = globaldef002976.owner;
-             = .netname;
-            bprint();
+            bprint(globaldef002976.owner.netname);
             
             if(globaldef000010)
             {
                 bprint(globaldef002999);
-                 = globaldef002976.owner;
-                 = .field000283;
-                bprint();
+                bprint(globaldef002976.owner.field000283);
             }
             
             bprint("\n");
-             = globaldef002976.owner;
-             = .frags;
-             = globaldef002976.owner;
-             = .frags;
-             =  + globaldef000192;
-             = ;
+            globaldef002976.owner.frags = globaldef002976.owner.frags + globaldef000192;
             return;
         }
         
-         = globaldef002976.classname;
-         =  == globaldef003000;
         
-        if()
+        if(globaldef002976.classname == globaldef003000)
         {
             bprint(globaldef003001);
-             = globaldef002975.netname;
-            bprint();
+            bprint(globaldef002975.netname);
             
             if(globaldef000010)
             {
                 bprint(globaldef002999);
-                 = globaldef002975.field000283;
-                bprint();
+                bprint(globaldef002975.field000283);
             }
             
             bprint(globaldef003002);
-             = globaldef002975.frags;
-             = globaldef002975.frags;
-             =  - globaldef000192;
-             = ;
+            globaldef002975.frags = globaldef002975.frags - globaldef000192;
             return;
         }
         
-         = globaldef002976.classname;
-         =  == "player";
-         = globaldef002976.classname;
-         =  == "bot";
-         =  || ;
-        if()
+        if((globaldef002976.classname == "player") || (globaldef002976.classname == "bot"))
         {
-             = globaldef002975 == globaldef002976;
-            if()
+            if(globaldef002975 == globaldef002976)
             {
-                 = globaldef002976.frags;
-                 = globaldef002976.frags;
-                 =  - globaldef000192;
-                 = ;
-                 = globaldef002975.netname;
-                bprint();
-                 = globaldef002975.weapon;
-                 =  == globaldef000198;
-                 = globaldef002975.waterlevel;
-                 =  > globaldef000192;
-                 =  && ;
+                globaldef002976.frags = globaldef002976.frags - globaldef000192;
+                bprint(globaldef002975.netname);
                 
-                if()
+                if((globaldef002975.weapon == globaldef000198) && (globaldef002975.waterlevel > globaldef000192))
                 {
                     bprint(globaldef003003);
                     return;
                 }
                 
-                 = globaldef002975.weapon;
-                 =  == globaldef000196;
-                if()
+                if(globaldef002975.weapon == globaldef000196)
                 {
                     bprint(globaldef003004);
                 }
@@ -26705,11 +26465,7 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             }
             else
             {
-                 = globaldef002976.field000284;
-                 = globaldef002975.field000284;
-                 =  == ;
-                 = globaldef000010 && ;
-                if()
+                if(globaldef000010 && (globaldef002976.field000284 == globaldef002975.field000284))
                 {
                     globaldef002976.frags = globaldef002976.frags - globaldef000192;
                     globaldef003007 = random();
@@ -40571,7 +40327,6 @@ void () func000933 = [43.000, func000934]
 // OP_DONE	0	0	0
 void () func000934 = [44.000, func000935]
 {
-    local void() func000935;
     local vector globaldef003977;
     local float globaldef003981;
     
@@ -41131,16 +40886,9 @@ void () func000959 = [66.000, func000960]
 // OP_DONE	0	0	0
 void () func000960 = [67.000, func000961]
 {
-    local void() func000961;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local entity globaldef004025;
     func000165();
-     = globaldef000001.nextthink;
-     = globaldef000001.nextthink;
-     =  + 0.200;
-     = ;
+    globaldef000001.nextthink = globaldef000001.nextthink + 0.200;
     globaldef000001.effects = globaldef000001.effects | globaldef000322;
     func000165();
     globaldef000001.owner = spawn();
@@ -74706,38 +74454,6 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     local entity globaldef006630;
     local vector globaldef006631;
     local vector globaldef006635;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local float globaldef006639;
     local float globaldef006640;
     local float globaldef006641;
@@ -74746,57 +74462,15 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     local vector globaldef006644;
     local vector globaldef006648;
     local entity globaldef006652;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local vector globaldef006653;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local vector globaldef006654;
-    local /* ERROR: NULL TYPE */ ;
     local vector globaldef006655;
-     = globaldef006628.owner;
-    globaldef006629 = ;
-    globaldef006630 = ;
+    globaldef006629 = globaldef006628.owner;
+    globaldef006630 = globaldef006628.owner;
     if(globaldef006630)
     {
-         = globaldef006630.absmin;
-        globaldef006631 = ;
-         = globaldef006630.absmax;
-        globaldef006635 = ;
+        globaldef006631 = globaldef006630.absmin;
+        globaldef006635 = globaldef006630.absmax;
     }
     else
     {
@@ -74804,79 +74478,54 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
         globaldef006631 = globaldef000264;
     }
     
-     = globaldef006631 != globaldef006635;
-    if()
+    if(globaldef006631 != globaldef006635)
     {
-         = globaldef006630.state;
-         =  != globaldef000261;
         
-        if()
+        if(globaldef006630.state != globaldef000261)
         {
             return;
         }
         
         do
         {
-             = globaldef006629.absmin;
-             =  < globaldef006631_x;
             
-            if()
+            if(globaldef006629.absmin_x < globaldef006631_x)
             {
-                 = globaldef006629.absmin;
-                globaldef006631_x = ;
+                globaldef006631_x = globaldef006629.absmin_x;
             }
             
-             = globaldef006629.absmax;
-             =  > globaldef006635_x;
             
-            if()
+            if(globaldef006629.absmax_x > globaldef006635_x)
             {
-                 = globaldef006629.absmax;
-                globaldef006635_x = ;
+                globaldef006635_x = globaldef006629.absmax_x;
             }
             
-             = globaldef006629.absmin_y;
-             =  < globaldef006631_y;
             
-            if()
+            if(globaldef006629.absmin_y < globaldef006631_y)
             {
-                 = globaldef006629.absmin_y;
-                globaldef006631_y = ;
+                globaldef006631_y = globaldef006629.absmin_y;
             }
             
-             = globaldef006629.absmax_y;
-             =  > globaldef006635_y;
             
-            if()
+            if(globaldef006629.absmax_y > globaldef006635_y)
             {
-                 = globaldef006629.absmax_y;
-                globaldef006635_y = ;
+                globaldef006635_y = globaldef006629.absmax_y;
             }
             
-             = globaldef006629.absmin_z;
-             =  < globaldef006631_z;
             
-            if()
+            if(globaldef006629.absmin_z < globaldef006631_z)
             {
-                 = globaldef006629.absmin_z;
-                globaldef006631_z = ;
+                globaldef006631_z = globaldef006629.absmin_z;
             }
             
-             = globaldef006629.absmax_z;
-             =  > globaldef006635_z;
             
-            if()
+            if(globaldef006629.absmax_z > globaldef006635_z)
             {
-                 = globaldef006629.absmax_z;
-                globaldef006635_z = ;
+                globaldef006635_z = globaldef006629.absmax_z;
             }
             
-             = globaldef006629.enemy;
-            globaldef006629 = ;
-             = globaldef006629 != globaldef006630;
-             = globaldef006629 != globaldef000003;
-             =  && ;
-        } while ();
+            globaldef006629 = globaldef006629.enemy;
+        } while ((globaldef006629 != globaldef006630) && (globaldef006629 != globaldef000003));
     }
     else
     {
@@ -74887,66 +74536,39 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     globaldef006640 = globaldef000191;
     globaldef006639 = globaldef000191;
     globaldef006642 = globaldef000191;
-     = globaldef006627.origin;
-    globaldef006648 = ;
-     = globaldef006631_x + globaldef000191;
-     = globaldef006627.absmin;
-     =  < ;
-     = globaldef006627.absmax;
-     = globaldef006635_x - globaldef000191;
-     =  < ;
-     =  && ;
+    globaldef006648 = globaldef006627.origin;
     
-    if()
+    if(((globaldef006631_x + globaldef000191) < globaldef006627.absmin_x) && (globaldef006627.absmax_x < (globaldef006635_x - globaldef000191)))
     {
         globaldef006639 = globaldef000192;
     }
     
-     = globaldef006631_y + globaldef000191;
-     = globaldef006627.absmin_y;
-     =  < ;
-     = globaldef006627.absmax_y;
-     = globaldef006635_y - globaldef000191;
-     =  < ;
-     =  && ;
     
-    if()
+    if(((globaldef006631_y + globaldef000191) < globaldef006627.absmin_y) && (globaldef006627.absmax_y < (globaldef006635_y - globaldef000191)))
     {
         globaldef006640 = globaldef000192;
     }
     
-     = globaldef006631_z + globaldef000191;
-     = globaldef006627.absmin_z;
-     =  < ;
-     = globaldef006627.absmax_z;
-     = globaldef006635_z - globaldef000191;
-     =  < ;
-     =  && ;
     
-    if()
+    if(((globaldef006631_z + globaldef000191) < globaldef006627.absmin_z) && (globaldef006627.absmax_z < (globaldef006635_z - globaldef000191)))
     {
         globaldef006641 = globaldef000192;
     }
     
-     = globaldef006639 && globaldef006640;
-    if()
+    if(globaldef006639 && globaldef006640)
     {
-         = globaldef006648_z < globaldef006631_z;
-        if()
+        if(globaldef006648_z < globaldef006631_z)
         {
             globaldef006644 = '0.000 0.000 1.000';
-             = globaldef006635_z + globaldef000288;
-            globaldef006648_z = ;
+            globaldef006648_z = globaldef006635_z + globaldef000288;
         }
         else
         {
-             = globaldef006648_z > globaldef006635_z;
             
-            if()
+            if(globaldef006648_z > globaldef006635_z)
             {
                 globaldef006644 = '0.000 0.000 -1.000';
-                 = globaldef006631_z - globaldef000288;
-                globaldef006648_z = ;
+                globaldef006648_z = globaldef006631_z - globaldef000288;
             }
             
         }
@@ -74955,25 +74577,20 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     }
     else
     {
-         = globaldef006639 && globaldef006641;
-        if()
+        if(globaldef006639 && globaldef006641)
         {
-             = globaldef006648_y < globaldef006631_y;
-            if()
+            if(globaldef006648_y < globaldef006631_y)
             {
                 globaldef006644 = '0.000 1.000 0.000';
-                 = globaldef006635_y + globaldef000288;
-                globaldef006648_y = ;
+                globaldef006648_y = globaldef006635_y + globaldef000288;
             }
             else
             {
-                 = globaldef006648_y > globaldef006635_y;
                 
-                if()
+                if(globaldef006648_y > globaldef006635_y)
                 {
                     globaldef006644 = '0.000 -1.000 0.000';
-                     = globaldef006631_y - globaldef000288;
-                    globaldef006648_y = ;
+                    globaldef006648_y = globaldef006631_y - globaldef000288;
                 }
                 
             }
@@ -74982,26 +74599,21 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
         }
         else
         {
-             = globaldef006640 && globaldef006641;
             
-            if()
+            if(globaldef006640 && globaldef006641)
             {
-                 = globaldef006648_x < globaldef006631_x;
-                if()
+                if(globaldef006648_x < globaldef006631_x)
                 {
                     globaldef006644 = globaldef006653;
-                     = globaldef006635_x + globaldef000288;
-                    globaldef006648_x = ;
+                    globaldef006648_x = globaldef006635_x + globaldef000288;
                 }
                 else
                 {
-                     = globaldef006648_x > globaldef006635_x;
                     
-                    if()
+                    if(globaldef006648_x > globaldef006635_x)
                     {
                         globaldef006644 = globaldef006654;
-                         = globaldef006631_x - globaldef000288;
-                        globaldef006648_x = ;
+                        globaldef006648_x = globaldef006631_x - globaldef000288;
                     }
                     
                 }
@@ -75757,75 +75369,21 @@ void (entity globaldef006741) func002354 =
 {
     local vector globaldef006742;
     local float globaldef006746;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local entity globaldef006747;
-     = globaldef006741.modelindex;
-     = globaldef000191;
-     = globaldef006741.angles;
-     = globaldef006741.field000344;
-     = .angles;
-     = ;
-     = globaldef006741.field000344;
-     = .classname;
-     =  == "bot";
-    if()
+    globaldef006741.modelindex = globaldef000191;
+    globaldef006741.angles = globaldef006741.field000344.angles;
+    if(globaldef006741.field000344.classname == "bot")
     {
-         = globaldef006741.v_angle;
-         = globaldef006741.field000344;
-         = .v_angle;
-         = globaldef006741.field000357;
-        globaldef006742 = func002352(, , );
-         = globaldef006741.field000357;
-         = globaldef000004;
+        globaldef006742 = func002352(globaldef006741.v_angle, globaldef006741.field000344.v_angle, globaldef006741.field000357);
+        globaldef006741.field000357 = globaldef000004;
     }
     else
     {
-         = globaldef006741.field000344;
-         = .v_angle;
-        globaldef006742 = ;
+        globaldef006742 = globaldef006741.field000344.v_angle;
     }
     
-     = globaldef006741.field000344;
-     = .origin;
-    setorigin(globaldef006741, );
-     = globaldef006741.view_ofs;
-     = globaldef006741.field000344;
-     = .view_ofs;
-     = ;
+    setorigin(globaldef006741, globaldef006741.field000344.origin);
+    globaldef006741.view_ofs = globaldef006741.field000344.view_ofs;
     if((globaldef006741.field000344.classname == "bot") && (globaldef000804 & globaldef000760))
     {
         globaldef006747 = func002266(globaldef006741.field000344.field000285);
@@ -85139,138 +84697,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     local float globaldef007542;
     local float globaldef007543;
     local string globaldef007544;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local string globaldef007545;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
-    local /* ERROR: NULL TYPE */ ;
     local vector globaldef007546;
     local vector globaldef007550;
     local vector globaldef007554;
@@ -85279,34 +84706,23 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     local float globaldef007563;
     local float globaldef007564;
     local float globaldef007565;
-     = globaldef007502.field000278;
-     =  > globaldef000004;
     
-    if()
+    if(globaldef007502.field000278 > globaldef000004)
     {
         return globaldef000711;
     }
     
-     = globaldef007502.flags;
-     =  & globaldef000201;
-     = !;
     
-    if()
+    if(!(globaldef007502.flags & globaldef000201))
     {
-         = globaldef007502.field000252;
-         =  & globaldef000684;
-         = !;
         
-        if()
+        if(!(globaldef007502.field000252 & globaldef000684))
         {
-             = globaldef007502.velocity;
             
-            if(func002439(globaldef007502, , globaldef000191))
+            if(func002439(globaldef007502, globaldef007502.velocity, globaldef000191))
             {
-                 = globaldef007502.velocity;
-                 = globaldef000191;
-                 = globaldef007502.velocity_y;
-                 = globaldef000191;
+                globaldef007502.velocity_x = globaldef000191;
+                globaldef007502.velocity_y = globaldef000191;
             }
             
         }
@@ -85314,112 +84730,59 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         return globaldef000711;
     }
     
-     = globaldef007503 == globaldef000264;
-    if()
+    if(globaldef007503 == globaldef000264)
     {
-         = globaldef007502.goalentity;
-         = .origin;
-        globaldef007523 = ;
-         = globaldef007502.origin_z;
-        globaldef007523_z = ;
-         = globaldef007502.origin;
-         = globaldef007523 - ;
-        globaldef007519 = ;
+        globaldef007523 = globaldef007502.goalentity.origin;
+        globaldef007523_z = globaldef007502.origin_z;
+        globaldef007519 = globaldef007523 - globaldef007502.origin;
         globaldef007539 = vlen(globaldef007519);
     }
     else
     {
-         = globaldef007502.goalentity;
-         = .origin;
-        globaldef007523 = ;
+        globaldef007523 = globaldef007502.goalentity.origin;
         globaldef007519 = globaldef007503;
         globaldef007539 = globaldef007507;
     }
     
-     = globaldef007502.field000252;
-     = globaldef007502.field000252;
-     = globaldef007502.field000252;
-     =  & globaldef000684;
-     =  - ;
-     = ;
-     = globaldef007502.field000252;
-     =  & globaldef000691;
+    globaldef007502.field000252 = globaldef007502.field000252 - (globaldef007502.field000252 & globaldef000684);
     
-    if()
+    if(globaldef007502.field000252 & globaldef000691)
     {
-         = globaldef007502.field000252;
-         = globaldef007502.field000252;
-         =  - globaldef000691;
-         = ;
-         = globaldef007503 == globaldef000264;
+        globaldef007502.field000252 = globaldef007502.field000252 - globaldef000691;
         
-        if()
+        if(globaldef007503 == globaldef000264)
         {
             return func002438(globaldef007502);
         }
         
     }
     
-     = globaldef007503 == globaldef000264;
     
-    if()
+    if(globaldef007503 == globaldef000264)
     {
-         = globaldef007502.goalentity;
-         = .goalentity;
-        globaldef007510 = ;
-         = globaldef007510.classname;
-         =  == globaldef007545;
+        globaldef007510 = globaldef007502.goalentity.goalentity;
         
-        if()
+        if(globaldef007510.classname == globaldef007545)
         {
-             = globaldef007502.origin;
-             = globaldef007510.origin;
-             = globaldef007510.maxs;
-             =  + ;
-             =  < ;
             
-            if()
+            if(globaldef007502.origin_x < (globaldef007510.origin_x + globaldef007510.maxs_x))
             {
-                 = globaldef007502.origin;
-                 = globaldef007510.origin;
-                 = globaldef007510.mins;
-                 =  + ;
-                 =  > ;
                 
-                if()
+                if(globaldef007502.origin_x > (globaldef007510.origin_x + globaldef007510.mins_x))
                 {
-                     = globaldef007502.origin_y;
-                     = globaldef007510.origin_y;
-                     = globaldef007510.maxs_y;
-                     =  + ;
-                     =  < ;
                     
-                    if()
+                    if(globaldef007502.origin_y < (globaldef007510.origin_y + globaldef007510.maxs_y))
                     {
-                         = globaldef007502.origin_y;
-                         = globaldef007510.origin_y;
-                         = globaldef007510.mins_y;
-                         =  + ;
-                         =  > ;
                         
-                        if()
+                        if(globaldef007502.origin_y > (globaldef007510.origin_y + globaldef007510.mins_y))
                         {
-                             = globaldef007510.absmax;
-                             = globaldef007510.absmin;
-                             =  + ;
-                             =  * globaldef000522;
-                            globaldef007531 = ;
-                             = globaldef007502.origin_z;
-                             = globaldef007531_z > ;
+                            globaldef007531 = (globaldef007510.absmax + globaldef007510.absmin) * globaldef000522;
                             
-                            if()
+                            if(globaldef007531_z > globaldef007502.origin_z)
                             {
-                                 = globaldef007502.origin;
-                                 = globaldef007531 - ;
-                                globaldef007519 = ;
+                                globaldef007519 = globaldef007531 - globaldef007502.origin;
                                 globaldef007519_z = globaldef000191;
-                                 = globaldef000783 * normalize(globaldef007519);
-                                globaldef007519 = ;
+                                globaldef007519 = globaldef000783 * normalize(globaldef007519);
                                 globaldef007519_z = globaldef000717;
                                 func002431(globaldef007502, globaldef007519);
                                 return globaldef000711;
@@ -85441,25 +84804,16 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     
     if(globaldef007510)
     {
-         = globaldef007539 > globaldef000197;
         
-        if()
+        if(globaldef007539 > globaldef000197)
         {
             globaldef007539 = globaldef000197;
         }
         
         globaldef007519_z = globaldef000191;
-         = globaldef007502.velocity;
-         = globaldef007510.velocity;
-         = normalize(globaldef007519) * globaldef007539;
-         =  * globaldef000208;
-         =  + ;
-         = ;
-         = globaldef007502.goalentity;
-         = .goalentity;
-         =  != globaldef007510;
+        globaldef007502.velocity = globaldef007510.velocity + ((normalize(globaldef007519) * globaldef007539) * globaldef000208);
         
-        if()
+        if(globaldef007502.goalentity.goalentity != globaldef007510)
         {
             func002437(globaldef007502, globaldef007503, globaldef007507);
         }
@@ -85467,29 +84821,20 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         return globaldef000711;
     }
     
-     = globaldef007503 == globaldef000264;
     
-    if()
+    if(globaldef007503 == globaldef000264)
     {
-         = globaldef007502.absmax;
-         = globaldef007523_x < ;
         
-        if()
+        if(globaldef007523_x < globaldef007502.absmax_x)
         {
-             = globaldef007502.absmin;
-             = globaldef007523_x > ;
             
-            if()
+            if(globaldef007523_x > globaldef007502.absmin_x)
             {
-                 = globaldef007502.absmax_y;
-                 = globaldef007523_y < ;
                 
-                if()
+                if(globaldef007523_y < globaldef007502.absmax_y)
                 {
-                     = globaldef007502.absmin_y;
-                     = globaldef007523_y > ;
                     
-                    if()
+                    if(globaldef007523_y > globaldef007502.absmin_y)
                     {
                         return globaldef000716;
                     }
@@ -85502,27 +84847,17 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         
     }
     
-     = globaldef007502.waterlevel;
-     =  <= globaldef000194;
     
-    if()
+    if(globaldef007502.waterlevel <= globaldef000194)
     {
-         = globaldef007502.origin;
-        globaldef007515 = ;
-         = globaldef007502.mins_z;
-         = globaldef007515_z + ;
-         =  + globaldef000194;
-        globaldef007515_z = ;
+        globaldef007515 = globaldef007502.origin;
+        globaldef007515_z = (globaldef007515_z + globaldef007502.mins_z) + globaldef000194;
         globaldef007540 = pointcontents(globaldef007515);
-         = globaldef007540 == globaldef000258;
-         = globaldef007540 == globaldef000257;
-         =  || ;
         
-        if()
+        if((globaldef007540 == globaldef000258) || (globaldef007540 == globaldef000257))
         {
-             = func002437(globaldef007502, globaldef007503, globaldef007507) != globaldef000716;
             
-            if()
+            if(func002437(globaldef007502, globaldef007503, globaldef007507) != globaldef000716)
             {
                 return globaldef000711;
             }
@@ -85537,8 +84872,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         return globaldef000711;
     }
     
-     = globaldef007502.velocity;
-     = globaldef000264;
+    globaldef007502.velocity = globaldef000264;
     globaldef007527 = vectoangles(globaldef007519);
     makevectors(globaldef007527);
     globaldef007564 = globaldef007539 * 2.500;
@@ -103815,3 +103149,12925 @@ void () func002638 =
         func002669(22.000, 21.000, globaldef000287, globaldef000191, globaldef000191);
         func002668('-560.000 1384.000 2.000', 21.000, globaldef000208, "weapon_nailgun");
         func002669(21.000, globaldef000194, 22.000, globaldef000191, globaldef000191);
+        func002668('456.000 824.000 2.000', 20.000, globaldef000208, "item_health");
+        func002669(20.000, globaldef000774, 65.000, globaldef000191, globaldef000191);
+        func002668('1091.900 1197.800 50.000', 19.000, globaldef000206, "");
+        func002669(19.000, 18.000, 45.000, globaldef000191, globaldef000191);
+        func002668('1093.400 951.900 50.000', 18.000, globaldef000206, "");
+        func002669(18.000, 17.000, 19.000, globaldef000191, globaldef000191);
+        func002668('1088.000 704.000 50.000', 17.000, globaldef000208, "weapon_nailgun");
+        func002669(17.000, globaldef000196, 18.000, globaldef000191, globaldef000191);
+        func002668('911.500 742.600 38.000', globaldef000196, globaldef000206, "");
+        func002669(globaldef000196, globaldef000748, 17.000, 18.000, globaldef000191);
+        func002668('878.900 743.400 26.000', globaldef000748, globaldef000206, "");
+        func002669(globaldef000748, 14.000, globaldef000196, globaldef000191, globaldef000191);
+        func002668('829.700 744.600 14.000', 14.000, globaldef000206, "");
+        func002669(14.000, globaldef000775, globaldef000748, globaldef000196, globaldef000191);
+        func002668('583.800 729.600 2.000', globaldef000775, globaldef000206, "");
+        func002669(globaldef000775, globaldef000774, 14.000, globaldef000191, globaldef000191);
+        func002668('511.300 592.000 2.000', globaldef000774, globaldef000206, "");
+        func002669(globaldef000774, globaldef000214, globaldef000775, 20.000, globaldef000191);
+        func002668('265.300 577.300 2.000', globaldef000214, globaldef000206, "");
+        func002669(globaldef000214, globaldef000213, globaldef000774, globaldef000191, globaldef000191);
+        func002668('54.500 708.400 2.000', globaldef000213, globaldef000206, "");
+        func002669(globaldef000213, globaldef000212, globaldef000214, 67.000, globaldef000191);
+        func002668('-190.500 749.100 2.000', globaldef000212, globaldef000206, "");
+        func002669(globaldef000212, globaldef000195, globaldef000213, globaldef000191, globaldef000191);
+        func002668('-430.900 771.900 2.000', globaldef000195, globaldef000206, "");
+        func002669(globaldef000195, globaldef000210, globaldef000212, globaldef000191, globaldef000191);
+        func002668('-525.400 904.300 2.000', globaldef000210, globaldef000206, "");
+        func002669(globaldef000210, globaldef000192, globaldef000195, globaldef000191, globaldef000191);
+        func002668('-312.000 1088.000 50.000', globaldef000209, globaldef000208, "weapon_grenadelauncher");
+        func002669(globaldef000209, globaldef000208, globaldef000191, globaldef000191, globaldef000191);
+        func002668('-272.000 1233.600 50.000', globaldef000208, globaldef000206, "");
+        func002669(globaldef000208, globaldef000207, globaldef000209, globaldef000191, globaldef000191);
+        func002668('-377.700 1249.200 34.000', globaldef000207, globaldef000206, "");
+        func002669(globaldef000207, globaldef000206, globaldef000208, globaldef000191, globaldef000191);
+        func002668('-427.200 1248.200 18.000', globaldef000206, globaldef000206, "");
+        func002669(globaldef000206, globaldef000194, globaldef000207, globaldef000191, globaldef000191);
+        func002668('-670.500 1221.900 2.000', globaldef000194, globaldef000206, "");
+        func002669(globaldef000194, globaldef000192, globaldef000206, 21.000, globaldef000191);
+        func002668('-656.000 976.000 2.000', globaldef000192, globaldef000206, "");
+        func002669(globaldef000192, globaldef000194, globaldef000210, globaldef000191, globaldef000191);
+    }
+    else
+    {
+        if(globaldef000003.model == "maps/dm2.bsp")
+        {
+            func002668('2851.400 -44.900 -93.900', 133.000, globaldef000206, "");
+            func002669(133.000, globaldef000210, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2617.700 21.100 -93.900', 132.000, globaldef000206, "");
+            func002669(132.000, globaldef000209, 112.000, globaldef000192, globaldef000191);
+            func002668('2158.200 196.800 2.000', 131.000, globaldef000206, "");
+            func002669(131.000, 110.000, 109.000, globaldef000191, globaldef000191);
+            func002668('2509.200 -862.500 98.000', 130.000, globaldef000206, "");
+            func002669(130.000, 90.000, 89.000, globaldef000191, globaldef000191);
+            func002668('1702.700 -516.800 2.000', 129.000, globaldef000206, "");
+            func002669(129.000, 107.000, 21.000, globaldef000191, globaldef000191);
+            func002668('1793.600 -371.200 162.000', globaldef000199, globaldef000206, "");
+            func002669(globaldef000199, 19.000, 20.000, 122.000, globaldef000191);
+            func002668('1326.300 -425.400 162.000', 127.000, globaldef000206, "");
+            func002669(127.000, globaldef000748, 18.000, globaldef000196, 14.000);
+            func002668('2544.000 -32.000 -85.900', globaldef000192, globaldef000206, "");
+            func002669(globaldef000192, globaldef000208, 112.000, 132.000, globaldef000191);
+            func002668('2301.100 -35.400 -141.800', globaldef000194, globaldef000206, "");
+            func002669(globaldef000194, globaldef000192, globaldef000206, globaldef000207, globaldef000191);
+            func002668('2347.600 -39.200 -125.900', globaldef000206, globaldef000206, "");
+            func002669(globaldef000206, globaldef000194, globaldef000207, globaldef000191, globaldef000191);
+            func002668('2377.800 -40.700 -109.900', globaldef000207, globaldef000206, "");
+            func002669(globaldef000207, globaldef000206, globaldef000208, globaldef000194, globaldef000191);
+            func002668('2488.000 -43.400 -93.900', globaldef000208, globaldef000206, "");
+            func002669(globaldef000208, globaldef000207, globaldef000192, globaldef000191, globaldef000191);
+            func002668('2800.000 -32.000 -93.900', globaldef000209, globaldef000208, "item_armor2");
+            func002669(globaldef000209, globaldef000192, 121.000, globaldef000191, globaldef000191);
+            func002668('2888.000 -32.000 -93.900', globaldef000210, globaldef000207, "");
+            func002669(globaldef000210, globaldef000209, 121.000, 133.000, globaldef000191);
+            func002668('1943.500 -1024.600 322.000', globaldef000195, globaldef000206, "");
+            func002669(globaldef000195, globaldef000212, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2056.000 -976.000 322.000', globaldef000212, globaldef000208, "item_health");
+            func002669(globaldef000212, globaldef000195, globaldef000213, globaldef000191, globaldef000191);
+            func002668('2056.000 -936.000 322.000', globaldef000213, globaldef000208, "weapon_grenadelauncher");
+            func002669(globaldef000213, globaldef000212, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1414.600 -1023.000 322.000', globaldef000214, globaldef000206, "");
+            func002669(globaldef000214, globaldef000774, globaldef000210, globaldef000191, globaldef000191);
+            func002668('1316.500 -799.400 322.000', globaldef000774, globaldef000206, "");
+            func002669(globaldef000774, globaldef000214, 14.000, globaldef000191, globaldef000191);
+            func002668('1320.000 -656.000 170.000', globaldef000775, globaldef000195, "");
+            func002669(globaldef000775, globaldef000774, globaldef000748, globaldef000191, globaldef000191);
+            func002668('1320.000 -656.000 322.000', 14.000, globaldef000194, "");
+            func002669(14.000, globaldef000775, globaldef000774, globaldef000191, globaldef000191);
+            func002668('1305.800 -569.900 162.000', globaldef000748, globaldef000206, "");
+            func002669(globaldef000748, 14.000, globaldef000196, 18.000, 127.000);
+            func002670(globaldef000748, globaldef000775, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1466.000 -575.200 162.000', globaldef000196, globaldef000206, "");
+            func002669(globaldef000196, globaldef000748, 17.000, 127.000, globaldef000191);
+            func002668('1472.000 -704.000 162.000', 17.000, globaldef000208, "weapon_rocketlauncher");
+            func002669(17.000, globaldef000196, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1405.000 -348.200 162.000', 18.000, globaldef000206, "");
+            func002669(18.000, globaldef000748, 19.000, 127.000, globaldef000191);
+            func002668('1650.600 -360.300 162.000', 19.000, globaldef000206, "");
+            func002669(19.000, 18.000, 20.000, globaldef000199, globaldef000191);
+            func002668('1843.300 -436.000 162.000', 20.000, globaldef000206, "");
+            func002669(20.000, 19.000, 122.000, globaldef000199, globaldef000191);
+            func002668('1847.600 -464.000 34.000', 21.000, globaldef000206, "");
+            func002669(21.000, 20.000, 22.000, 107.000, globaldef000288);
+            func002670(21.000, globaldef000287, 129.000, globaldef000191, globaldef000191);
+            func002668('1898.600 -503.300 50.000', 22.000, globaldef000206, "");
+            func002669(22.000, 21.000, globaldef000287, globaldef000191, globaldef000191);
+            func002668('1931.300 -506.200 66.000', globaldef000287, globaldef000206, "");
+            func002669(globaldef000287, 22.000, globaldef000719, 124.000, globaldef000191);
+            func002668('2031.300 -494.200 82.000', globaldef000719, globaldef000206, "");
+            func002669(globaldef000719, globaldef000287, 120.000, 124.000, globaldef000191);
+            func002668('1693.400 -653.900 2.000', globaldef000288, globaldef000206, "");
+            func002669(globaldef000288, 21.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1617.100 -1356.300 10.000', globaldef000289, globaldef000206, "");
+            func002669(globaldef000289, globaldef000290, 41.000, globaldef000293, globaldef000191);
+            func002668('1584.000 -1354.000 18.000', globaldef000290, globaldef000206, "");
+            func002669(globaldef000290, globaldef000289, 41.000, globaldef000291, globaldef000191);
+            func002668('1557.000 -1352.500 34.000', globaldef000291, globaldef000206, "");
+            func002669(globaldef000291, globaldef000290, 29.000, globaldef000191, globaldef000191);
+            func002668('1524.900 -1351.000 50.000', 29.000, globaldef000206, "");
+            func002669(29.000, globaldef000291, globaldef000292, globaldef000191, globaldef000191);
+            func002668('1494.000 -1350.000 66.000', globaldef000292, globaldef000206, "");
+            func002669(globaldef000292, 29.000, globaldef000293, globaldef000191, globaldef000191);
+            func002668('1456.600 -1348.600 82.000', globaldef000293, globaldef000206, "");
+            func002669(globaldef000293, globaldef000292, globaldef000197, globaldef000191, globaldef000191);
+            func002668('1392.800 -1345.600 98.000', globaldef000197, globaldef000206, "");
+            func002669(globaldef000197, globaldef000293, globaldef000295, globaldef000191, globaldef000191);
+            func002668('1360.500 -1343.800 114.000', globaldef000295, globaldef000206, "");
+            func002669(globaldef000295, globaldef000197, 86.000, 35.000, globaldef000191);
+            func002668('1306.500 -1200.500 130.000', 34.000, globaldef000206, "");
+            func002669(34.000, globaldef000295, 35.000, globaldef000191, globaldef000191);
+            func002668('1307.000 -1175.800 146.000', 35.000, globaldef000206, "");
+            func002669(35.000, 34.000, 36.000, globaldef000191, globaldef000191);
+            func002668('1308.500 -1136.000 162.000', 36.000, globaldef000206, "");
+            func002669(36.000, 35.000, 37.000, globaldef000191, globaldef000191);
+            func002668('1311.500 -1058.500 178.000', 37.000, globaldef000206, "");
+            func002669(37.000, 36.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1308.800 -951.700 10.000', 38.000, globaldef000206, "");
+            func002669(38.000, 37.000, 39.000, globaldef000191, globaldef000191);
+            func002668('1363.900 -952.000 10.000', 39.000, globaldef000208, "item_armor2");
+            func002669(39.000, 38.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1312.000 -1056.000 2.000', globaldef000729, globaldef000207, "");
+            func002669(globaldef000729, 38.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1768.600 -1340.100 10.000', 41.000, globaldef000206, "");
+            func002669(41.000, globaldef000729, 42.000, globaldef000191, globaldef000191);
+            func002668('1831.100 -1344.400 34.000', 42.000, globaldef000206, "");
+            func002669(42.000, globaldef000290, 41.000, 43.000, globaldef000191);
+            func002668('1870.500 -1347.000 50.000', 43.000, globaldef000206, "");
+            func002669(43.000, 42.000, 44.000, globaldef000191, globaldef000191);
+            func002668('1903.500 -1348.400 66.000', 44.000, globaldef000206, "");
+            func002669(44.000, 43.000, 45.000, globaldef000191, globaldef000191);
+            func002668('1935.300 -1348.800 82.000', 45.000, globaldef000206, "");
+            func002669(45.000, 44.000, 46.000, globaldef000191, globaldef000191);
+            func002668('1961.600 -1348.500 98.000', 46.000, globaldef000206, "");
+            func002669(46.000, 45.000, 47.000, globaldef000191, globaldef000191);
+            func002668('2037.900 -1236.000 114.000', 47.000, globaldef000206, "");
+            func002669(47.000, 46.000, 48.000, globaldef000191, globaldef000191);
+            func002668('2038.900 -1201.400 130.000', 48.000, globaldef000206, "");
+            func002669(48.000, 47.000, 49.000, globaldef000191, globaldef000191);
+            func002668('2039.300 -1176.000 146.000', 49.000, globaldef000206, "");
+            func002669(49.000, 48.000, 50.000, globaldef000191, globaldef000191);
+            func002668('2039.300 -1140.500 162.000', 50.000, globaldef000206, "");
+            func002669(50.000, 49.000, 51.000, globaldef000191, globaldef000191);
+            func002668('2038.600 -1038.400 178.000', 51.000, globaldef000206, "");
+            func002669(51.000, 50.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2041.800 -992.400 10.000', 52.000, globaldef000206, "");
+            func002669(52.000, 51.000, 53.000, globaldef000191, globaldef000191);
+            func002668('1996.000 -936.000 10.000', 53.000, globaldef000208, "item_armor2");
+            func002669(53.000, 52.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2048.000 -1048.000 2.000', 54.000, globaldef000207, "");
+            func002669(54.000, 52.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1693.000 -1418.600 2.000', 55.000, globaldef000206, "");
+            func002669(55.000, 54.000, globaldef000289, 56.000, globaldef000191);
+            func002668('1669.900 -1659.000 2.000', 56.000, globaldef000206, "");
+            func002669(56.000, 55.000, 57.000, globaldef000191, globaldef000191);
+            func002668('2142.600 -1695.500 2.000', 57.000, globaldef000206, "");
+            func002669(57.000, 56.000, 58.000, globaldef000191, globaldef000191);
+            func002668('2391.300 -1695.600 2.000', 58.000, globaldef000206, "");
+            func002669(58.000, 57.000, 59.000, 66.000, globaldef000191);
+            func002668('2480.000 -1712.000 2.000', 59.000, globaldef000208, "weapon_rocketlauncher");
+            func002669(59.000, 58.000, 60.000, 66.000, globaldef000191);
+            func002668('2280.300 -1857.000 2.000', 60.000, globaldef000206, "");
+            func002669(60.000, 59.000, 61.000, globaldef000191, globaldef000191);
+            func002668('2191.100 -1933.500 18.000', 61.000, globaldef000206, "");
+            func002669(61.000, 60.000, 62.000, globaldef000191, globaldef000191);
+            func002668('2189.600 -1965.400 34.000', 62.000, globaldef000206, "");
+            func002669(62.000, 61.000, 63.000, 126.000, globaldef000191);
+            func002668('2188.500 -1999.100 50.000', 63.000, globaldef000206, "");
+            func002669(63.000, 62.000, globaldef000198, 126.000, globaldef000191);
+            func002668('2187.100 -2082.300 66.000', globaldef000198, globaldef000206, "");
+            func002669(globaldef000198, 63.000, 65.000, 126.000, globaldef000191);
+            func002668('2183.600 -2266.300 62.000', 65.000, globaldef000206, "");
+            func002669(65.000, globaldef000198, 126.000, globaldef000191, globaldef000191);
+            func002668('2452.100 -1458.800 2.000', 66.000, globaldef000206, "");
+            func002669(66.000, 58.000, 59.000, 87.000, 67.000);
+            func002668('2683.500 -1369.100 2.000', 67.000, globaldef000206, "");
+            func002669(67.000, 66.000, 68.000, globaldef000191, globaldef000191);
+            func002668('2715.100 -1482.500 18.000', 68.000, globaldef000206, "");
+            func002669(68.000, 67.000, 69.000, 66.000, 71.000);
+            func002668('2716.000 -1512.600 34.000', 69.000, globaldef000206, "");
+            func002669(69.000, 68.000, 70.000, globaldef000191, globaldef000191);
+            func002668('2717.100 -1550.100 50.000', 70.000, globaldef000206, "");
+            func002669(70.000, 69.000, 71.000, globaldef000191, globaldef000191);
+            func002668('2718.300 -1580.900 66.000', 71.000, globaldef000206, "");
+            func002669(71.000, 70.000, 72.000, globaldef000191, globaldef000191);
+            func002668('2719.600 -1611.300 82.000', 72.000, globaldef000206, "");
+            func002669(72.000, 71.000, 73.000, globaldef000191, globaldef000191);
+            func002668('2721.800 -1714.300 98.000', 73.000, globaldef000206, "");
+            func002669(73.000, 72.000, 74.000, globaldef000191, globaldef000191);
+            func002668('2826.100 -1846.900 98.000', 74.000, globaldef000206, "");
+            func002669(74.000, 73.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2870.300 -2029.000 98.000', globaldef002995, globaldef000206, "");
+            func002669(globaldef002995, 74.000, 76.000, globaldef000191, globaldef000191);
+            func002668('2723.600 -2150.800 98.300', 76.000, globaldef000206, "");
+            func002669(76.000, globaldef002995, 77.000, globaldef000191, globaldef000191);
+            func002668('2736.000 -2304.000 98.000', 77.000, globaldef000208, "weapon_supershotgun");
+            func002669(77.000, 76.000, 78.000, globaldef000191, globaldef000191);
+            func002668('2494.100 -2308.600 98.000', 78.000, globaldef000206, "");
+            func002669(78.000, 77.000, 82.000, globaldef000191, globaldef000191);
+            func002668('2400.000 -1976.000 98.000', 79.000, globaldef000208, "item_health");
+            func002669(79.000, 78.000, 80.000, globaldef000191, globaldef000191);
+            func002668('2480.000 -1992.000 98.000', 80.000, globaldef000208, "item_armorInv");
+            func002669(80.000, 79.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2416.100 -2252.600 98.000', 81.000, globaldef000206, "");
+            func002669(81.000, 79.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2357.800 -2465.800 114.000', 82.000, globaldef000206, "");
+            func002669(82.000, 81.000, 78.000, 83.000, globaldef000191);
+            func002668('2326.100 -2466.100 130.000', 83.000, globaldef000206, "");
+            func002669(83.000, 82.000, 84.000, globaldef000191, globaldef000191);
+            func002668('2294.100 -2466.300 146.000', 84.000, globaldef000206, "");
+            func002669(84.000, 83.000, 85.000, globaldef000191, globaldef000191);
+            func002668('2262.000 -2466.500 162.000', 85.000, globaldef000206, "");
+            func002669(85.000, 84.000, 125.000, globaldef000191, globaldef000191);
+            func002668('2432.000 -2540.000 98.000', 86.000, globaldef000207, "");
+            func002669(86.000, 78.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2495.100 -1215.400 2.000', 87.000, globaldef000206, "");
+            func002669(87.000, 66.000, 89.000, globaldef000191, globaldef000191);
+            func002668('2496.000 -960.000 10.000', 88.000, globaldef000195, "");
+            func002669(88.000, 87.000, 89.000, globaldef000191, globaldef000191);
+            func002668('2496.000 -960.000 98.000', 89.000, globaldef000194, "");
+            func002669(89.000, 88.000, 90.000, 130.000, globaldef000191);
+            func002668('2611.600 -739.500 98.000', 90.000, globaldef000206, "");
+            func002669(90.000, 89.000, 91.000, 130.000, globaldef000191);
+            func002668('2598.300 -492.500 98.000', 91.000, globaldef000206, "");
+            func002669(91.000, 90.000, 106.000, globaldef000191, globaldef000191);
+            func002668('2403.000 -833.900 98.000', 92.000, globaldef000206, "");
+            func002669(92.000, 90.000, 93.000, globaldef000191, globaldef000191);
+            func002668('2386.000 -708.500 34.000', 93.000, globaldef000206, "");
+            func002669(93.000, 92.000, 94.000, globaldef000191, globaldef000191);
+            func002668('2392.000 -648.000 34.000', 94.000, globaldef000208, "item_armorInv");
+            func002669(94.000, 93.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2419.500 -498.800 -13.800', 95.000, globaldef000206, "");
+            func002669(95.000, 94.000, 96.000, globaldef000191, globaldef000191);
+            func002668('2228.300 -349.000 -13.800', 96.000, globaldef000206, "");
+            func002669(96.000, 95.000, 97.000, globaldef000191, globaldef000191);
+            func002668('2114.800 -183.100 2.000', 97.000, globaldef000206, "");
+            func002669(97.000, 96.000, 98.000, 108.000, 109.000);
+            func002670(97.000, 100.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2363.300 -190.000 2.000', 98.000, globaldef000206, "");
+            func002669(98.000, 97.000, 99.000, globaldef000191, globaldef000191);
+            func002668('2480.000 -192.000 2.000', 99.000, globaldef000208, "weapon_nailgun");
+            func002669(99.000, 98.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2314.600 -37.000 18.000', 100.000, globaldef000206, "");
+            func002669(100.000, 97.000, 101.000, 109.000, globaldef000191);
+            func002668('2346.800 -33.500 34.000', 101.000, globaldef000206, "");
+            func002669(101.000, 100.000, 102.000, globaldef000191, globaldef000191);
+            func002668('2382.300 -30.200 50.000', 102.000, globaldef000206, "");
+            func002669(102.000, 101.000, 103.000, 100.000, 104.000);
+            func002668('2410.300 -28.100 66.000', 103.000, globaldef000206, "");
+            func002669(103.000, 102.000, 104.000, 101.000, globaldef000191);
+            func002668('2443.100 -25.800 82.000', 104.000, globaldef000206, "");
+            func002669(104.000, 103.000, 105.000, 102.000, globaldef000191);
+            func002668('2546.100 -20.500 98.000', 105.000, globaldef000206, "");
+            func002669(105.000, 104.000, 106.000, globaldef000191, globaldef000191);
+            func002668('2609.100 -252.800 98.000', 106.000, globaldef000206, "");
+            func002669(106.000, 105.000, 91.000, globaldef000191, globaldef000191);
+            func002668('1599.000 -531.900 2.000', 107.000, globaldef000206, "");
+            func002669(107.000, globaldef000288, globaldef000196, globaldef000191, globaldef000191);
+            func002668('2003.300 -186.800 2.500', 108.000, globaldef000206, "");
+            func002669(108.000, globaldef000719, 97.000, 118.000, 119.000);
+            func002670(108.000, 116.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2168.300 53.900 2.000', 109.000, globaldef000206, "");
+            func002669(109.000, 97.000, 110.000, 131.000, 108.000);
+            func002668('2249.300 281.200 2.000', 110.000, globaldef000206, "");
+            func002669(110.000, 109.000, 115.000, 131.000, globaldef000191);
+            func002668('2405.300 290.600 -45.700', 111.000, globaldef000206, "");
+            func002669(111.000, 110.000, 113.000, 114.000, 115.000);
+            func002668('2620.100 178.800 -93.900', 112.000, globaldef000206, "");
+            func002669(112.000, 111.000, globaldef000192, 113.000, 132.000);
+            func002668('2448.100 284.200 -77.900', 113.000, globaldef000206, "");
+            func002669(113.000, 112.000, 111.000, 115.000, globaldef000191);
+            func002668('2352.500 286.200 -29.800', 114.000, globaldef000206, "");
+            func002669(114.000, 111.000, 115.000, globaldef000191, globaldef000191);
+            func002668('2322.800 286.500 -13.800', 115.000, globaldef000206, "");
+            func002669(115.000, 114.000, 110.000, globaldef000191, globaldef000191);
+            func002668('2018.500 -270.000 18.000', 116.000, globaldef000206, "");
+            func002669(116.000, 108.000, 119.000, 97.000, 117.000);
+            func002668('2018.500 -302.500 34.000', 117.000, globaldef000206, "");
+            func002669(117.000, 116.000, 119.000, 118.000, globaldef000191);
+            func002668('2019.000 -335.000 50.000', 118.000, globaldef000206, "");
+            func002669(118.000, 117.000, 119.000, 116.000, globaldef000191);
+            func002668('2019.500 -367.300 66.000', 119.000, globaldef000206, "");
+            func002669(119.000, 118.000, 120.000, 117.000, 124.000);
+            func002668('2020.800 -447.200 82.000', 120.000, globaldef000206, "");
+            func002669(120.000, 119.000, globaldef000719, 124.000, globaldef000191);
+            func002668('2847.000 -36.500 -93.900', 121.000, globaldef000206, "");
+            func002669(121.000, globaldef000210, globaldef000209, globaldef000191, globaldef000191);
+            func002668('1888.300 -644.900 162.500', 122.000, globaldef000206, "");
+            func002669(122.000, 20.000, 123.000, globaldef000191, globaldef000191);
+            func002668('1920.000 -704.000 162.000', 123.000, globaldef000208, "item_artifact_super_damage");
+            func002669(123.000, 122.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('1982.500 -515.700 82.000', 124.000, globaldef000206, "");
+            func002669(124.000, 20.000, globaldef000719, globaldef000287, 120.000);
+            func002668('2152.600 -2467.800 178.000', 125.000, globaldef000206, "");
+            func002669(125.000, 85.000, globaldef000191, globaldef000191, globaldef000191);
+            func002668('2181.500 -2181.800 62.000', 126.000, globaldef000206, "");
+            func002669(126.000, 125.000, 65.000, globaldef000198, globaldef000191);
+        }
+        else
+        {
+            if(globaldef000003.model == "maps/dm3.bsp")
+            {
+                func002668('353.200 -764.100 242.000', 236.000, globaldef000206, "");
+                func002669(236.000, 235.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-229.700 -599.300 130.000', 235.000, globaldef000206, "");
+                func002669(235.000, 54.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1472.000 -928.000 -45.900', globaldef000192, globaldef000206, "");
+                func002669(globaldef000192, globaldef000194, 34.000, globaldef000191, globaldef000191);
+                func002668('1602.600 -718.700 -45.900', globaldef000194, globaldef000206, "");
+                func002669(globaldef000194, globaldef000192, globaldef000206, 34.000, globaldef000191);
+                func002668('1776.000 -656.000 -45.900', globaldef000206, globaldef000208, "weapon_supershotgun");
+                func002669(globaldef000206, globaldef000194, globaldef000207, globaldef000191, globaldef000191);
+                func002668('1828.900 -897.900 -45.900', globaldef000207, globaldef000206, "");
+                func002669(globaldef000207, globaldef000206, globaldef000208, globaldef000191, globaldef000191);
+                func002668('1730.400 -898.900 -29.800', globaldef000208, globaldef000206, "");
+                func002669(globaldef000208, globaldef000207, globaldef000209, globaldef000191, globaldef000191);
+                func002668('1701.100 -898.900 -13.800', globaldef000209, globaldef000206, "");
+                func002669(globaldef000209, globaldef000208, globaldef000210, globaldef000191, globaldef000191);
+                func002668('1665.500 -898.700 2.000', globaldef000210, globaldef000206, "");
+                func002669(globaldef000210, globaldef000209, globaldef000195, globaldef000191, globaldef000191);
+                func002668('1634.500 -898.700 18.000', globaldef000195, globaldef000206, "");
+                func002669(globaldef000195, globaldef000210, globaldef000212, globaldef000191, globaldef000191);
+                func002668('1606.300 -898.700 34.000', globaldef000212, globaldef000206, "");
+                func002669(globaldef000212, globaldef000195, globaldef000213, globaldef000191, globaldef000191);
+                func002668('1570.800 -898.700 50.000', globaldef000213, globaldef000206, "");
+                func002669(globaldef000213, globaldef000212, globaldef000214, globaldef000191, globaldef000191);
+                func002668('1391.000 -898.700 66.000', globaldef000214, globaldef000206, "");
+                func002669(globaldef000214, globaldef000213, globaldef000774, globaldef000191, globaldef000191);
+                func002668('1143.000 -896.700 66.000', globaldef000774, globaldef000206, "");
+                func002669(globaldef000774, globaldef000214, globaldef000775, globaldef000191, globaldef000191);
+                func002668('939.000 -755.200 66.000', globaldef000775, globaldef000206, "");
+                func002669(globaldef000775, globaldef000774, 14.000, globaldef000191, globaldef000191);
+                func002668('718.500 -644.700 66.000', 14.000, globaldef000206, "");
+                func002669(14.000, globaldef000775, globaldef000295, globaldef000191, globaldef000191);
+                func002668('644.400 -405.000 50.000', globaldef000748, globaldef000206, "");
+                func002669(globaldef000748, 14.000, globaldef000196, globaldef000295, globaldef000191);
+                func002668('839.500 -260.600 34.000', globaldef000196, globaldef000206, "");
+                func002669(globaldef000196, globaldef000748, 17.000, 231.000, globaldef000191);
+                func002668('937.200 -39.700 34.000', 17.000, globaldef000206, "");
+                func002669(17.000, globaldef000196, 18.000, globaldef000191, globaldef000191);
+                func002668('955.400 209.300 34.000', 18.000, globaldef000206, "");
+                func002669(18.000, 17.000, 19.000, globaldef000191, globaldef000191);
+                func002668('952.000 296.000 34.000', 19.000, globaldef000208, "item_artifact_super_damage");
+                func002669(19.000, 18.000, 20.000, globaldef000191, globaldef000191);
+                func002668('706.200 267.200 34.000', 20.000, globaldef000206, "");
+                func002669(20.000, 19.000, 21.000, 141.000, 18.000);
+                func002668('655.900 388.600 34.000', 21.000, globaldef000206, "");
+                func002669(21.000, 20.000, 22.000, globaldef000191, globaldef000191);
+                func002668('876.500 478.000 34.000', 22.000, globaldef000206, "");
+                func002669(22.000, 21.000, globaldef000287, globaldef000191, globaldef000191);
+                func002668('1119.800 522.500 34.000', globaldef000287, globaldef000206, "");
+                func002669(globaldef000287, 22.000, globaldef000719, globaldef000191, globaldef000191);
+                func002668('1335.000 398.100 34.000', globaldef000719, globaldef000206, "");
+                func002669(globaldef000719, globaldef000287, globaldef000197, 39.000, globaldef000191);
+                func002668('1333.300 108.000 -45.900', globaldef000288, globaldef000206, "");
+                func002669(globaldef000288, globaldef000719, globaldef000289, 29.000, globaldef000191);
+                func002668('1356.600 -135.100 -45.900', globaldef000289, globaldef000206, "");
+                func002669(globaldef000289, globaldef000288, globaldef000290, globaldef000191, globaldef000191);
+                func002668('1358.400 -375.500 -45.900', globaldef000290, globaldef000206, "");
+                func002669(globaldef000290, globaldef000289, globaldef000291, 36.000, globaldef000191);
+                func002668('1207.300 -566.700 -45.900', globaldef000291, globaldef000206, "");
+                func002669(globaldef000291, globaldef000290, 35.000, 34.000, globaldef000191);
+                func002668('1367.100 170.500 -29.800', 29.000, globaldef000206, "");
+                func002669(29.000, globaldef000288, globaldef000292, globaldef000191, globaldef000191);
+                func002668('1365.800 201.600 -13.800', globaldef000292, globaldef000206, "");
+                func002669(globaldef000292, 29.000, globaldef000293, globaldef000197, globaldef000191);
+                func002668('1364.000 237.100 2.000', globaldef000293, globaldef000206, "");
+                func002669(globaldef000293, globaldef000292, globaldef000197, globaldef000191, globaldef000191);
+                func002668('1362.800 263.800 18.000', globaldef000197, globaldef000206, "");
+                func002669(globaldef000197, globaldef000293, globaldef000719, globaldef000191, globaldef000191);
+                func002668('652.700 -584.200 66.000', globaldef000295, globaldef000206, "");
+                func002669(globaldef000295, globaldef000748, 14.000, globaldef000191, globaldef000191);
+                func002668('1358.300 -783.500 -45.900', 34.000, globaldef000206, "");
+                func002669(34.000, globaldef000192, globaldef000291, 35.000, globaldef000194);
+                func002668('1114.100 -742.400 -45.900', 35.000, globaldef000206, "");
+                func002669(35.000, 34.000, globaldef000291, globaldef000191, globaldef000191);
+                func002668('1595.100 -440.700 -45.900', 36.000, globaldef000206, "");
+                func002669(36.000, globaldef000290, 37.000, globaldef000191, globaldef000191);
+                func002668('1840.500 -452.800 -45.900', 37.000, globaldef000206, "");
+                func002669(37.000, 36.000, 159.000, globaldef000191, globaldef000191);
+                func002668('1232.000 -904.000 -45.900', 38.000, globaldef000208, "item_armor2");
+                func002669(38.000, globaldef000192, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1180.000 -904.000 -29.800', 39.000, globaldef000207, "");
+                func002669(39.000, 38.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('486.700 -207.800 34.000', globaldef000729, globaldef000206, "");
+                func002669(globaldef000729, globaldef000196, 230.000, globaldef000191, globaldef000191);
+                func002668('246.800 -263.700 34.000', 41.000, globaldef000206, "");
+                func002669(41.000, globaldef000729, 44.000, 45.000, 42.000);
+                func002670(41.000, 183.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('181.800 -25.300 34.000', 42.000, globaldef000206, "");
+                func002669(42.000, 41.000, 43.000, 44.000, 229.000);
+                func002668('245.800 213.300 34.000', 43.000, globaldef000206, "");
+                func002669(43.000, 42.000, 135.000, 229.000, globaldef000191);
+                func002668('240.000 -32.000 34.000', 44.000, globaldef000208, "item_artifact_invisibility");
+                func002669(44.000, 43.000, 42.000, 41.000, 229.000);
+                func002670(44.000, 230.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('462.700 -387.100 34.000', 45.000, globaldef000206, "");
+                func002669(45.000, 41.000, 46.000, globaldef000191, globaldef000191);
+                func002668('495.500 -632.900 34.000', 46.000, globaldef000206, "");
+                func002669(46.000, 45.000, 47.000, 73.000, globaldef000191);
+                func002668('336.500 -549.200 34.000', 47.000, globaldef000206, "");
+                func002669(47.000, 46.000, 48.000, globaldef000191, globaldef000191);
+                func002668('309.100 -548.000 50.000', 48.000, globaldef000206, "");
+                func002669(48.000, 47.000, 49.000, globaldef000191, globaldef000191);
+                func002668('276.300 -547.400 66.000', 49.000, globaldef000206, "");
+                func002669(49.000, 48.000, 50.000, globaldef000191, globaldef000191);
+                func002668('243.600 -547.500 82.000', 50.000, globaldef000206, "");
+                func002669(50.000, 49.000, 51.000, globaldef000191, globaldef000191);
+                func002668('214.300 -541.900 98.000', 51.000, globaldef000206, "");
+                func002669(51.000, 50.000, 52.000, globaldef000191, globaldef000191);
+                func002668('178.300 -532.000 114.000', 52.000, globaldef000206, "");
+                func002669(52.000, 51.000, 53.000, globaldef000191, globaldef000191);
+                func002668('87.600 -528.500 130.000', 53.000, globaldef000206, "");
+                func002669(53.000, 52.000, 54.000, globaldef000191, globaldef000191);
+                func002668('-156.600 -537.500 130.000', 54.000, globaldef000206, "");
+                func002669(54.000, 53.000, 55.000, globaldef000191, globaldef000191);
+                func002668('-220.800 -743.000 130.000', 55.000, globaldef000206, "");
+                func002669(55.000, 54.000, 56.000, globaldef000191, globaldef000191);
+                func002668('-92.600 -871.900 130.000', 56.000, globaldef000206, "");
+                func002669(56.000, 55.000, 57.000, globaldef000191, globaldef000191);
+                func002668('75.600 -874.000 146.000', 57.000, globaldef000206, "");
+                func002669(57.000, 56.000, 58.000, globaldef000191, globaldef000191);
+                func002668('108.400 -874.000 162.000', 58.000, globaldef000206, "");
+                func002669(58.000, 57.000, 59.000, globaldef000191, globaldef000191);
+                func002668('140.300 -873.700 178.000', 59.000, globaldef000206, "");
+                func002669(59.000, 58.000, 60.000, globaldef000191, globaldef000191);
+                func002668('171.600 -873.200 194.000', 60.000, globaldef000206, "");
+                func002669(60.000, 59.000, 61.000, 62.000, globaldef000191);
+                func002668('207.800 -872.700 210.000', 61.000, globaldef000206, "");
+                func002669(61.000, 60.000, 62.000, globaldef000191, globaldef000191);
+                func002668('237.500 -872.000 226.000', 62.000, globaldef000206, "");
+                func002669(62.000, 61.000, 63.000, globaldef000191, globaldef000191);
+                func002668('328.200 -870.000 242.000', 63.000, globaldef000206, "");
+                func002669(63.000, 62.000, globaldef000198, globaldef000191, globaldef000191);
+                func002668('345.700 -628.900 242.000', globaldef000198, globaldef000206, "");
+                func002669(globaldef000198, 63.000, 65.000, globaldef000191, globaldef000191);
+                func002668('169.300 -541.200 242.000', 65.000, globaldef000206, "");
+                func002669(65.000, globaldef000198, 66.000, 68.000, globaldef000191);
+                func002668('117.500 -543.700 258.000', 66.000, globaldef000206, "");
+                func002669(66.000, 65.000, 67.000, 68.000, globaldef000191);
+                func002668('86.000 -545.200 274.000', 67.000, globaldef000206, "");
+                func002669(67.000, 66.000, 68.000, globaldef000191, globaldef000191);
+                func002668('53.500 -544.400 290.000', 68.000, globaldef000206, "");
+                func002669(68.000, 67.000, 69.000, globaldef000191, globaldef000191);
+                func002668('-53.700 -529.000 306.000', 69.000, globaldef000206, "");
+                func002669(69.000, 68.000, 70.000, globaldef000191, globaldef000191);
+                func002668('-157.800 -679.000 306.000', 70.000, globaldef000206, "");
+                func002669(70.000, 69.000, 71.000, globaldef000191, globaldef000191);
+                func002668('90.500 -695.200 306.000', 71.000, globaldef000206, "");
+                func002669(71.000, 70.000, 72.000, globaldef000191, globaldef000191);
+                func002668('256.000 -704.000 306.000', 72.000, globaldef000208, "item_armorInv");
+                func002669(72.000, 71.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('461.500 -879.900 34.000', 73.000, globaldef000206, "");
+                func002669(73.000, 46.000, 80.000, globaldef000191, globaldef000191);
+                func002668('198.300 -862.500 2.000', 74.000, globaldef000206, "");
+                func002669(74.000, 73.000, 79.000, 80.000, globaldef000191);
+                func002668('-75.400 -879.900 -37.500', globaldef002995, globaldef000206, "");
+                func002669(globaldef002995, 74.000, 77.000, 76.000, globaldef000191);
+                func002668('-64.000 -704.000 -37.900', 76.000, globaldef000208, "weapon_nailgun");
+                func002669(76.000, globaldef002995, 79.000, 81.000, 182.000);
+                func002670(76.000, 77.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('166.100 -781.500 -37.900', 77.000, globaldef000206, "");
+                func002669(77.000, 76.000, 78.000, globaldef000191, globaldef000191);
+                func002668('344.500 -720.500 -37.900', 78.000, globaldef000206, "");
+                func002669(78.000, 77.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('44.900 -870.500 -21.800', 79.000, globaldef000206, "");
+                func002669(79.000, globaldef002995, 74.000, 76.000, globaldef000191);
+                func002668('361.700 -875.500 18.000', 80.000, globaldef000206, "");
+                func002669(80.000, 74.000, 73.000, globaldef000191, globaldef000191);
+                func002668('-237.600 -529.200 -37.900', 81.000, globaldef000206, "");
+                func002669(81.000, 76.000, 82.000, globaldef000191, globaldef000191);
+                func002668('-284.700 -723.900 -37.900', 82.000, globaldef000206, "");
+                func002669(82.000, 81.000, 83.000, globaldef000191, globaldef000191);
+                func002668('-529.000 -735.500 -37.900', 83.000, globaldef000206, "");
+                func002669(83.000, 82.000, 84.000, globaldef000191, globaldef000191);
+                func002668('-636.900 -517.700 -37.900', 84.000, globaldef000206, "");
+                func002669(84.000, 83.000, 85.000, globaldef000191, globaldef000191);
+                func002668('-621.500 -270.300 -37.900', 85.000, globaldef000206, "");
+                func002669(85.000, 84.000, 86.000, globaldef000191, globaldef000191);
+                func002668('-866.400 -277.600 -37.900', 86.000, globaldef000206, "");
+                func002669(86.000, 85.000, 87.000, globaldef000191, globaldef000191);
+                func002668('-940.000 -45.700 -37.900', 87.000, globaldef000206, "");
+                func002669(87.000, 86.000, 88.000, 122.000, globaldef000191);
+                func002668('-937.900 76.300 -29.800', 88.000, globaldef000206, "");
+                func002669(88.000, 87.000, 89.000, globaldef000191, globaldef000191);
+                func002668('-937.200 106.100 -13.800', 89.000, globaldef000206, "");
+                func002669(89.000, 88.000, 90.000, globaldef000191, globaldef000191);
+                func002668('-936.900 143.100 2.000', 90.000, globaldef000206, "");
+                func002669(90.000, 89.000, 91.000, globaldef000191, globaldef000191);
+                func002668('-936.700 172.300 18.000', 91.000, globaldef000206, "");
+                func002669(91.000, 90.000, 92.000, globaldef000191, globaldef000191);
+                func002668('-936.500 207.500 34.000', 92.000, globaldef000206, "");
+                func002669(92.000, 91.000, 93.000, globaldef000191, globaldef000191);
+                func002668('-936.500 235.600 50.000', 93.000, globaldef000206, "");
+                func002669(93.000, 92.000, 94.000, 95.000, globaldef000191);
+                func002668('-936.400 271.800 66.000', 94.000, globaldef000206, "");
+                func002669(94.000, 93.000, 95.000, globaldef000191, globaldef000191);
+                func002668('-936.400 300.100 82.000', 95.000, globaldef000206, "");
+                func002669(95.000, 94.000, 96.000, globaldef000191, globaldef000191);
+                func002668('-936.200 397.100 98.000', 96.000, globaldef000206, "");
+                func002669(96.000, 95.000, 97.000, globaldef000191, globaldef000191);
+                func002668('-935.500 646.500 98.000', 97.000, globaldef000206, "");
+                func002669(97.000, 96.000, 98.000, globaldef000191, globaldef000191);
+                func002668('-823.200 842.000 98.000', 98.000, globaldef000206, "");
+                func002669(98.000, 97.000, 99.000, globaldef000191, globaldef000191);
+                func002668('-580.500 864.000 98.000', 99.000, globaldef000206, "");
+                func002669(99.000, 98.000, 100.000, globaldef000191, globaldef000191);
+                func002668('-335.100 875.500 98.000', 100.000, globaldef000206, "");
+                func002669(100.000, 99.000, 119.000, globaldef000191, globaldef000191);
+                func002668('-528.000 572.700 98.000', 101.000, globaldef000206, "");
+                func002669(101.000, 99.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-512.000 448.000 98.000', 102.000, globaldef000208, "weapon_supernailgun");
+                func002669(102.000, 101.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-463.200 291.700 122.000', 103.000, globaldef000206, "");
+                func002669(103.000, 102.000, 104.000, globaldef000191, globaldef000191);
+                func002668('-471.300 262.300 154.000', 104.000, globaldef000206, "");
+                func002669(104.000, 103.000, 105.000, globaldef000191, globaldef000191);
+                func002668('-717.500 239.300 162.000', 105.000, globaldef000206, "");
+                func002669(105.000, 104.000, 108.000, globaldef000191, globaldef000191);
+                func002668('-800.000 93.000 162.000', 106.000, globaldef000206, "");
+                func002669(106.000, 105.000, 107.000, globaldef000191, globaldef000191);
+                func002668('-704.000 96.000 162.000', 107.000, globaldef000208, "item_health");
+                func002669(107.000, 106.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-852.500 277.000 162.600', 108.000, globaldef000206, "");
+                func002669(108.000, 106.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-291.800 232.300 -37.900', 109.000, globaldef000206, "");
+                func002669(109.000, 103.000, 110.000, globaldef000191, globaldef000191);
+                func002668('-248.100 473.100 -37.900', 110.000, globaldef000206, "");
+                func002669(110.000, 109.000, 113.000, globaldef000191, globaldef000191);
+                func002668('-193.300 502.700 -29.800', 111.000, globaldef000206, "");
+                func002669(111.000, 110.000, 112.000, globaldef000191, globaldef000191);
+                func002668('-142.100 525.400 -13.800', 112.000, globaldef000206, "");
+                func002669(112.000, 111.000, 133.000, 113.000, globaldef000191);
+                func002668('-81.000 547.700 2.000', 113.000, globaldef000206, "");
+                func002669(113.000, 112.000, 114.000, globaldef000191, globaldef000191);
+                func002668('-0.900 570.000 18.000', 114.000, globaldef000206, "");
+                func002669(114.000, 113.000, 115.000, 120.000, 139.000);
+                func002668('-9.800 686.900 34.000', 115.000, globaldef000206, "");
+                func002669(115.000, 114.000, 116.000, 120.000, 139.000);
+                func002670(115.000, 118.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-37.200 714.000 50.000', 116.000, globaldef000206, "");
+                func002669(116.000, 115.000, 118.000, 117.000, globaldef000191);
+                func002668('-60.500 736.900 66.000', 117.000, globaldef000206, "");
+                func002669(117.000, 116.000, 118.000, globaldef000191, globaldef000191);
+                func002668('-83.300 762.500 82.000', 118.000, globaldef000206, "");
+                func002669(118.000, 117.000, 119.000, globaldef000191, globaldef000191);
+                func002668('-173.100 843.500 98.000', 119.000, globaldef000206, "");
+                func002669(119.000, 118.000, 100.000, globaldef000191, globaldef000191);
+                func002668('183.800 539.200 34.000', 120.000, globaldef000206, "");
+                func002669(120.000, 115.000, 121.000, globaldef000191, globaldef000191);
+                func002668('431.200 556.000 34.000', 121.000, globaldef000206, "");
+                func002669(121.000, 120.000, 135.000, 140.000, 226.000);
+                func002668('-837.000 171.300 -37.900', 122.000, globaldef000206, "");
+                func002669(122.000, 87.000, 123.000, globaldef000191, globaldef000191);
+                func002668('-798.500 415.000 -37.900', 123.000, globaldef000206, "");
+                func002669(123.000, 122.000, 124.000, globaldef000191, globaldef000191);
+                func002668('-804.000 661.700 -37.900', 124.000, globaldef000206, "");
+                func002669(124.000, 123.000, 125.000, globaldef000191, globaldef000191);
+                func002668('-587.900 783.900 -37.900', 125.000, globaldef000206, "");
+                func002669(125.000, 124.000, 126.000, globaldef000191, globaldef000191);
+                func002668('-577.700 540.000 -37.900', 126.000, globaldef000206, "");
+                func002669(126.000, 125.000, 127.000, 134.000, globaldef000191);
+                func002668('-681.200 320.800 -37.900', 127.000, globaldef000206, "");
+                func002669(127.000, 126.000, globaldef000199, globaldef000191, globaldef000191);
+                func002668('-534.900 233.500 -37.900', globaldef000199, globaldef000206, "");
+                func002669(globaldef000199, 127.000, 129.000, globaldef000191, globaldef000191);
+                func002668('-543.900 294.000 -37.900', 129.000, globaldef000206, "");
+                func002669(129.000, 126.000, globaldef000199, globaldef000191, globaldef000191);
+                func002668('-470.700 388.100 -37.900', 130.000, globaldef000206, "");
+                func002669(130.000, 129.000, 131.000, globaldef000191, globaldef000191);
+                func002668('-412.700 622.000 -37.900', 131.000, globaldef000206, "");
+                func002669(131.000, 130.000, 132.000, globaldef000191, globaldef000191);
+                func002668('-379.600 783.000 -37.900', 132.000, globaldef000206, "");
+                func002669(132.000, 131.000, 133.000, globaldef000191, globaldef000191);
+                func002668('-196.300 678.500 -29.800', 133.000, globaldef000206, "");
+                func002669(133.000, 132.000, 111.000, 114.000, globaldef000191);
+                func002668('-599.200 445.300 -37.900', 134.000, globaldef000206, "");
+                func002669(134.000, 130.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('472.700 315.300 34.000', 135.000, globaldef000206, "");
+                func002669(135.000, 43.000, 121.000, globaldef000191, globaldef000191);
+                func002668('-193.600 351.700 -29.800', 136.000, globaldef000206, "");
+                func002669(136.000, 109.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-141.600 398.800 -13.800', 137.000, globaldef000206, "");
+                func002669(137.000, 136.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-87.900 418.600 2.000', 138.000, globaldef000206, "");
+                func002669(138.000, 137.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('26.600 506.600 18.000', 139.000, globaldef000206, "");
+                func002669(139.000, 138.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('214.100 667.000 34.000', 140.000, globaldef000206, "");
+                func002669(140.000, 114.000, 120.000, globaldef000191, globaldef000191);
+                func002668('685.000 143.800 34.000', 141.000, globaldef000206, "");
+                func002669(141.000, 135.000, 227.000, globaldef000191, globaldef000191);
+                func002668('1582.800 -32.500 -189.800', 142.000, globaldef000206, "");
+                func002669(142.000, globaldef000289, 143.000, 160.000, globaldef000191);
+                func002668('1826.900 -24.300 -189.800', 143.000, globaldef000206, "");
+                func002669(143.000, 142.000, 152.000, 144.000, globaldef000191);
+                func002668('1989.400 77.300 -173.800', 144.000, globaldef000206, "");
+                func002669(144.000, 143.000, 145.000, 152.000, globaldef000191);
+                func002668('1988.600 104.600 -157.800', 145.000, globaldef000206, "");
+                func002669(145.000, 144.000, 146.000, globaldef000191, globaldef000191);
+                func002668('1987.800 140.500 -141.800', 146.000, globaldef000206, "");
+                func002669(146.000, 145.000, 147.000, globaldef000191, globaldef000191);
+                func002668('1987.000 175.100 -125.900', 147.000, globaldef000206, "");
+                func002669(147.000, 146.000, 148.000, globaldef000191, globaldef000191);
+                func002668('1986.300 256.000 -109.900', 148.000, globaldef000206, "");
+                func002669(148.000, 147.000, 149.000, globaldef000191, globaldef000191);
+                func002668('1913.100 489.700 -109.900', 149.000, globaldef000206, "");
+                func002669(149.000, 148.000, 150.000, globaldef000191, globaldef000191);
+                func002668('1666.500 505.800 -109.900', 150.000, globaldef000206, "");
+                func002669(150.000, 149.000, 151.000, globaldef000191, globaldef000191);
+                func002668('1520.000 496.000 -109.900', 151.000, globaldef000208, "weapon_rocketlauncher");
+                func002669(151.000, 150.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1987.500 -166.600 -157.800', 152.000, globaldef000206, "");
+                func002669(152.000, 144.000, 153.000, 143.000, globaldef000191);
+                func002668('1989.500 -202.100 -141.800', 153.000, globaldef000206, "");
+                func002669(153.000, 152.000, 154.000, globaldef000191, globaldef000191);
+                func002668('1990.800 -238.600 -125.900', 154.000, globaldef000206, "");
+                func002669(154.000, 153.000, 158.000, 155.000, globaldef000191);
+                func002668('1991.500 -270.500 -109.900', 155.000, globaldef000206, "");
+                func002669(155.000, 154.000, 156.000, globaldef000191, globaldef000191);
+                func002668('1992.000 -302.200 -93.900', 156.000, globaldef000206, "");
+                func002669(156.000, 155.000, 157.000, globaldef000191, globaldef000191);
+                func002668('1992.300 -334.800 -77.900', 157.000, globaldef000206, "");
+                func002669(157.000, 156.000, 158.000, globaldef000191, globaldef000191);
+                func002668('1992.100 -367.500 -61.900', 158.000, globaldef000206, "");
+                func002669(158.000, 157.000, 37.000, globaldef000191, globaldef000191);
+                func002668('1983.500 -442.100 -45.900', 159.000, globaldef000206, "");
+                func002669(159.000, 158.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1333.400 -37.900 -189.800', 160.000, globaldef000206, "");
+                func002669(160.000, 142.000, 161.000, globaldef000191, globaldef000191);
+                func002668('1086.500 -38.200 -189.800', 161.000, globaldef000206, "");
+                func002669(161.000, 160.000, 162.000, 167.000, globaldef000191);
+                func002668('922.700 -131.000 -205.800', 162.000, globaldef000206, "");
+                func002669(162.000, 161.000, 167.000, 163.000, globaldef000191);
+                func002668('736.000 -256.700 -221.800', 163.000, globaldef000206, "");
+                func002669(163.000, 162.000, 164.000, globaldef000191, globaldef000191);
+                func002668('578.400 -125.000 -205.000', 164.000, globaldef000206, "");
+                func002669(164.000, 163.000, 165.000, 184.000, globaldef000191);
+                func002668('580.000 -32.000 -189.800', 165.000, globaldef000208, "item_health");
+                func002669(165.000, 164.000, 168.000, 43.000, 184.000);
+                func002668('701.000 183.600 -221.800', 166.000, globaldef000206, "");
+                func002669(166.000, 165.000, 167.000, 168.000, globaldef000191);
+                func002668('916.200 95.500 -205.800', 167.000, globaldef000206, "");
+                func002669(167.000, 166.000, 162.000, globaldef000191, globaldef000191);
+                func002668('604.200 67.100 -207.000', 168.000, globaldef000206, "");
+                func002669(168.000, 166.000, 165.000, 164.000, globaldef000191);
+                func002668('336.200 -22.700 -221.800', 169.000, globaldef000206, "");
+                func002669(169.000, 165.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('322.100 -23.000 -205.800', 170.000, globaldef000206, "");
+                func002669(170.000, 169.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('192.300 -150.600 -197.800', 171.000, globaldef000206, "");
+                func002669(171.000, 170.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-49.000 -198.100 -197.800', 172.000, globaldef000206, "");
+                func002669(172.000, 171.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-173.800 -285.700 -181.800', 173.000, globaldef000206, "");
+                func002669(173.000, 172.000, 174.000, globaldef000191, globaldef000191);
+                func002668('-177.800 -333.500 -165.800', 174.000, globaldef000206, "");
+                func002669(174.000, 173.000, 175.000, globaldef000191, globaldef000191);
+                func002668('-179.500 -363.200 -149.800', 175.000, globaldef000206, "");
+                func002669(175.000, 174.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('-144.600 -442.500 -133.800', 176.000, globaldef000206, "");
+                func002669(176.000, 175.000, 177.000, globaldef000191, globaldef000191);
+                func002668('-117.500 -441.700 -117.900', 177.000, globaldef000206, "");
+                func002669(177.000, 176.000, 178.000, globaldef000191, globaldef000191);
+                func002668('-84.000 -440.800 -101.900', 178.000, globaldef000206, "");
+                func002669(178.000, 177.000, 179.000, globaldef000191, globaldef000191);
+                func002668('-51.000 -439.700 -85.900', 179.000, globaldef000206, "");
+                func002669(179.000, 178.000, 180.000, globaldef000191, globaldef000191);
+                func002668('-18.600 -438.500 -69.900', 180.000, globaldef000206, "");
+                func002669(180.000, 179.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('31.700 -463.000 -53.900', 181.000, globaldef000206, "");
+                func002669(181.000, 180.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('32.700 -546.900 -37.900', 182.000, globaldef000206, "");
+                func002669(182.000, 181.000, 76.000, globaldef000191, globaldef000191);
+                func002668('-508.000 -448.000 -21.800', 183.000, globaldef000207, "");
+                func002669(183.000, 84.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('537.700 -8.300 -189.800', 184.000, globaldef000206, "");
+                func002669(184.000, 43.000, 165.000, globaldef000191, globaldef000191);
+                func002668('1513.500 -187.300 -227.600', 185.000, globaldef000206, "");
+                func002669(185.000, 142.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1544.000 -192.000 -413.800', 186.000, globaldef000208, "weapon_lightning");
+                func002669(186.000, 185.000, 215.000, globaldef000191, globaldef000191);
+                func002668('1296.500 -211.300 -413.800', 187.000, globaldef000206, "");
+                func002669(187.000, 186.000, 218.000, globaldef000191, globaldef000191);
+                func002668('1176.100 6.800 -413.800', 188.000, globaldef000206, "");
+                func002669(188.000, 187.000, 190.000, globaldef000191, globaldef000191);
+                func002668('1216.000 240.000 -413.800', 189.000, globaldef000208, "weapon_grenadelauncher");
+                func002669(189.000, 188.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1100.900 -116.400 -217.600', 190.000, globaldef000206, "");
+                func002669(190.000, 161.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1377.600 150.600 -412.500', 191.000, globaldef000206, "");
+                func002669(191.000, 188.000, 192.000, globaldef000191, globaldef000191);
+                func002668('1364.500 396.300 -413.800', 192.000, globaldef000206, "");
+                func002669(192.000, 191.000, 193.000, globaldef000191, globaldef000191);
+                func002668('1360.600 645.200 -413.800', 193.000, globaldef000206, "");
+                func002669(193.000, 192.000, 194.000, globaldef000191, globaldef000191);
+                func002668('1360.600 749.500 -365.800', 194.000, globaldef000206, "");
+                func002669(194.000, 193.000, 195.000, 196.000, globaldef000191);
+                func002668('1360.600 778.900 -349.800', 195.000, globaldef000206, "");
+                func002669(195.000, 194.000, 196.000, globaldef000191, globaldef000191);
+                func002668('1360.600 811.400 -333.800', 196.000, globaldef000206, "");
+                func002669(196.000, 195.000, 197.000, globaldef000191, globaldef000191);
+                func002668('1360.600 912.900 -317.800', 197.000, globaldef000206, "");
+                func002669(197.000, 196.000, 204.000, 210.000, globaldef000191);
+                func002668('1126.500 848.200 -317.800', 198.000, globaldef000206, "");
+                func002669(198.000, 197.000, 199.000, globaldef000191, globaldef000191);
+                func002668('1008.000 800.000 -317.800', 199.000, globaldef000208, "item_artifact_invulnerability");
+                func002669(199.000, 198.000, 233.000, 234.000, globaldef000191);
+                func002668('840.500 745.700 -302.100', 200.000, globaldef000206, "");
+                func002669(200.000, 199.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('726.000 889.000 -285.800', 201.000, globaldef000206, "");
+                func002669(201.000, 200.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('866.500 1086.900 -285.800', 202.000, globaldef000206, "");
+                func002669(202.000, 201.000, 203.000, globaldef000191, globaldef000191);
+                func002668('1106.900 1106.300 -285.800', 203.000, globaldef000206, "");
+                func002669(203.000, 202.000, 204.000, 234.000, globaldef000191);
+                func002668('1345.800 1094.800 -270.100', 204.000, globaldef000206, "");
+                func002669(204.000, 203.000, 205.000, globaldef000191, globaldef000191);
+                func002668('1462.900 1093.500 -253.600', 205.000, globaldef000206, "");
+                func002669(205.000, 204.000, 206.000, globaldef000191, globaldef000191);
+                func002668('1588.000 1082.400 -236.300', 206.000, globaldef000206, "");
+                func002669(206.000, 205.000, 207.000, globaldef000191, globaldef000191);
+                func002668('1821.300 1007.200 -234.800', 207.000, globaldef000206, "");
+                func002669(207.000, 206.000, 208.000, globaldef000191, globaldef000191);
+                func002668('1867.400 778.500 -218.100', 208.000, globaldef000206, "");
+                func002669(208.000, 207.000, 209.000, globaldef000191, globaldef000191);
+                func002668('1856.000 640.000 -201.800', 209.000, globaldef000208, "item_health");
+                func002669(209.000, 208.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1600.000 962.200 -317.800', 210.000, globaldef000206, "");
+                func002669(210.000, 197.000, 211.000, globaldef000191, globaldef000191);
+                func002668('1645.300 721.000 -317.800', 211.000, globaldef000206, "");
+                func002669(211.000, 210.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1497.500 74.000 -403.100', 212.000, globaldef000206, "");
+                func002669(212.000, 191.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1591.500 302.200 -411.200', 213.000, globaldef000206, "");
+                func002669(213.000, 212.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1837.000 316.000 -402.500', 214.000, globaldef000206, "");
+                func002669(214.000, 213.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1759.100 -211.600 -315.700', 215.000, globaldef000206, "");
+                func002668('1796.300 -443.200 -413.800', 216.000, globaldef000206, "");
+                func002669(216.000, 215.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1381.500 -360.700 -354.700', 217.000, globaldef000206, "");
+                func002669(217.000, 185.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1136.800 -348.800 -367.700', 218.000, globaldef000206, "");
+                func002669(218.000, 217.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('624.000 688.000 -282.000', 219.000, globaldef000195, "");
+                func002669(219.000, 200.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('624.000 688.000 -126.000', 220.000, globaldef000194, "");
+                func002669(220.000, 219.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('624.000 864.000 -118.000', 221.000, globaldef000195, "");
+                func002669(221.000, 220.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('624.000 864.000 2.000', 222.000, globaldef000194, "");
+                func002669(222.000, 221.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('583.000 1024.800 18.000', 223.000, globaldef000206, "");
+                func002669(223.000, 222.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('512.000 864.000 26.000', 224.000, globaldef000195, "");
+                func002669(224.000, 223.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('512.000 864.000 194.000', 225.000, globaldef000194, "");
+                func002669(225.000, 224.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('514.200 648.500 194.000', 226.000, globaldef000206, "");
+                func002669(226.000, 225.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('746.900 124.100 34.000', 227.000, globaldef000206, "");
+                func002669(227.000, 18.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('487.700 143.800 34.000', 228.000, globaldef000206, "");
+                func002669(228.000, 141.000, globaldef000191, globaldef000191, globaldef000191);
+                func002668('252.600 128.300 34.000', 229.000, globaldef000206, "");
+                func002669(229.000, 228.000, 135.000, 42.000, globaldef000191);
+                func002668('419.600 -195.000 34.000', 230.000, globaldef000206, "");
+                func002669(230.000, 41.000, 45.000, globaldef000191, globaldef000191);
+                func002668('703.400 -207.800 34.000', 231.000, globaldef000206, "");
+                func002669(231.000, globaldef000729, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1103.600 636.700 58.000', 232.000, globaldef000206, "");
+                func002669(232.000, globaldef000287, globaldef000191, globaldef000191, globaldef000191);
+                func002668('1032.600 754.500 -317.800', 233.000, globaldef000206, "");
+                func002669(233.000, 232.000, 199.000, globaldef000191, globaldef000191);
+                func002668('1005.700 1031.500 -301.300', 234.000, globaldef000206, "");
+                func002669(234.000, 198.000, 203.000, globaldef000191, globaldef000191);
+            }
+            else
+            {
+                if(globaldef000003.model == "maps/dm4.bsp")
+                {
+                    func002668('167.800 -198.200 -93.900', 78.000, globaldef000206, "");
+                    func002669(78.000, 61.000, 72.000, 59.000, globaldef000191);
+                    func002668('272.000 -952.000 2.000', globaldef000192, globaldef000206, "");
+                    func002669(globaldef000192, 50.000, globaldef000194, globaldef000191, globaldef000191);
+                    func002668('322.600 -712.700 2.000', globaldef000194, globaldef000206, "");
+                    func002669(globaldef000194, globaldef000192, globaldef000197, globaldef000206, 74.000);
+                    func002668('392.700 -506.500 2.000', globaldef000206, globaldef000206, "");
+                    func002669(globaldef000206, globaldef000194, 52.000, 74.000, globaldef000207);
+                    func002668('546.700 -391.600 2.000', globaldef000207, globaldef000206, "");
+                    func002669(globaldef000207, globaldef000206, globaldef000208, globaldef000191, globaldef000191);
+                    func002668('630.200 -180.600 2.000', globaldef000208, globaldef000206, "");
+                    func002669(globaldef000208, globaldef000207, globaldef000209, globaldef002995, globaldef000191);
+                    func002668('847.500 -230.500 2.000', globaldef000209, globaldef000206, "");
+                    func002669(globaldef000209, globaldef000208, 63.000, globaldef002995, globaldef000210);
+                    func002668('824.400 -478.700 2.000', globaldef000210, globaldef000206, "");
+                    func002669(globaldef000210, globaldef000209, globaldef000195, globaldef000191, globaldef000191);
+                    func002668('995.500 -593.700 2.000', globaldef000195, globaldef000206, "");
+                    func002669(globaldef000195, globaldef000210, globaldef000212, globaldef000191, globaldef000191);
+                    func002668('1136.000 -592.000 2.000', globaldef000212, globaldef000208, "item_armor2");
+                    func002669(globaldef000212, globaldef000195, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('1039.900 -443.000 -125.900', globaldef000213, globaldef000206, "");
+                    func002669(globaldef000213, globaldef000210, globaldef000214, globaldef000191, globaldef000191);
+                    func002668('802.500 -519.700 -125.900', globaldef000214, globaldef000206, "");
+                    func002669(globaldef000214, globaldef000213, 19.000, 66.000, globaldef000191);
+                    func002668('760.200 -771.000 -253.000', globaldef000774, globaldef000206, "");
+                    func002669(globaldef000774, globaldef000214, globaldef000775, globaldef000748, 14.000);
+                    func002668('768.000 -880.000 -253.800', globaldef000775, globaldef000208, "weapon_rocketlauncher");
+                    func002669(globaldef000775, globaldef000774, 20.000, globaldef000191, globaldef000191);
+                    func002668('777.700 -725.000 -237.800', 14.000, globaldef000206, "");
+                    func002669(14.000, globaldef000774, globaldef000748, globaldef000196, globaldef000191);
+                    func002668('778.500 -692.700 -221.800', globaldef000748, globaldef000206, "");
+                    func002669(globaldef000748, 14.000, 17.000, globaldef000196, globaldef000191);
+                    func002668('779.000 -661.200 -205.800', globaldef000196, globaldef000206, "");
+                    func002669(globaldef000196, globaldef000748, 17.000, globaldef000191, globaldef000191);
+                    func002668('779.500 -629.500 -189.800', 17.000, globaldef000206, "");
+                    func002669(17.000, globaldef000196, 18.000, globaldef000191, globaldef000191);
+                    func002668('779.700 -596.500 -173.800', 18.000, globaldef000206, "");
+                    func002669(18.000, 17.000, 19.000, globaldef000191, globaldef000191);
+                    func002668('779.700 -563.200 -157.800', 19.000, globaldef000206, "");
+                    func002669(19.000, 18.000, globaldef000214, 66.000, globaldef000191);
+                    func002668('824.000 -848.000 -253.800', 20.000, globaldef000208, "item_armorInv");
+                    func002669(20.000, 14.000, globaldef000774, globaldef000775, globaldef000748);
+                    func002668('784.000 -944.000 -253.800', 21.000, globaldef000207, "");
+                    func002669(21.000, globaldef000775, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('352.000 -8.000 -317.700', 22.000, globaldef000208, "weapon_nailgun");
+                    func002669(22.000, 21.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('289.700 -237.300 -317.700', globaldef000287, globaldef000206, "");
+                    func002669(globaldef000287, 22.000, globaldef000719, 65.000, globaldef000292);
+                    func002670(globaldef000287, 72.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('41.000 -243.300 -317.700', globaldef000719, globaldef000206, "");
+                    func002669(globaldef000719, globaldef000287, globaldef000288, 65.000, 69.000);
+                    func002668('-72.000 -105.900 -317.700', globaldef000288, globaldef000206, "");
+                    func002669(globaldef000288, globaldef000719, globaldef000289, 69.000, globaldef000191);
+                    func002668('-59.700 124.000 -317.700', globaldef000289, globaldef000206, "");
+                    func002669(globaldef000289, globaldef000288, globaldef000290, 29.000, 68.000);
+                    func002668('-74.000 373.200 -317.700', globaldef000290, globaldef000206, "");
+                    func002669(globaldef000290, globaldef000289, globaldef000291, 68.000, globaldef000191);
+                    func002668('-24.000 600.000 -317.700', globaldef000291, globaldef000208, "item_health");
+                    func002669(globaldef000291, globaldef000290, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('80.000 64.000 -317.700', 29.000, globaldef000208, "weapon_rocketlauncher");
+                    func002669(29.000, globaldef000289, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('538.500 -237.000 -317.700', globaldef000292, globaldef000206, "");
+                    func002669(globaldef000292, globaldef000287, globaldef000293, 67.000, globaldef000191);
+                    func002668('623.000 -136.500 -317.700', globaldef000293, globaldef000206, "");
+                    func002669(globaldef000293, globaldef000292, globaldef000295, 70.000, globaldef000191);
+                    func002668('624.000 144.000 -317.700', globaldef000197, globaldef000207, "");
+                    func002669(globaldef000197, globaldef000293, globaldef000295, globaldef000191, globaldef000191);
+                    func002668('496.000 -864.000 2.000', globaldef000295, globaldef000207, "");
+                    func002669(globaldef000295, globaldef000197, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('528.000 -304.000 -125.900', 34.000, globaldef000208, "weapon_lightning");
+                    func002669(34.000, globaldef000206, 35.000, 36.000, globaldef000198);
+                    func002670(34.000, globaldef000208, 74.000, globaldef000191, globaldef000191);
+                    func002668('503.700 -60.200 -125.900', 35.000, globaldef000206, "");
+                    func002669(35.000, 34.000, 71.000, globaldef000191, globaldef000191);
+                    func002668('313.200 -419.700 -125.900', 36.000, globaldef000206, "");
+                    func002669(36.000, 34.000, 37.000, 38.000, globaldef000198);
+                    func002670(36.000, 72.000, 53.000, 77.000, globaldef000191);
+                    func002668('112.000 -432.000 -125.900', 37.000, globaldef000208, "weapon_grenadelauncher");
+                    func002669(37.000, 36.000, globaldef000198, globaldef000191, globaldef000191);
+                    func002668('317.500 -668.200 -125.900', 38.000, globaldef000206, "");
+                    func002669(38.000, 36.000, 39.000, globaldef000198, 76.000);
+                    func002668('428.200 -886.000 -125.900', 39.000, globaldef000206, "");
+                    func002669(39.000, 38.000, globaldef000729, 76.000, globaldef000191);
+                    func002668('328.000 -1032.000 -125.900', globaldef000729, globaldef000208, "weapon_supershotgun");
+                    func002669(globaldef000729, 39.000, 41.000, 51.000, 42.000);
+                    func002668('169.000 -845.000 -125.900', 41.000, globaldef000206, "");
+                    func002669(41.000, globaldef000729, 51.000, 39.000, globaldef000191);
+                    func002668('99.000 -1124.500 -125.900', 42.000, globaldef000206, "");
+                    func002669(42.000, globaldef000729, 43.000, 51.000, 45.000);
+                    func002670(42.000, 44.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('170.000 -1201.400 -109.900', 43.000, globaldef000206, "");
+                    func002669(43.000, 42.000, 44.000, 45.000, globaldef000191);
+                    func002668('205.800 -1200.900 -93.900', 44.000, globaldef000206, "");
+                    func002669(44.000, 43.000, 45.000, 46.000, globaldef000191);
+                    func002668('239.600 -1200.300 -77.900', 45.000, globaldef000206, "");
+                    func002669(45.000, 44.000, 46.000, globaldef000191, globaldef000191);
+                    func002668('269.700 -1199.800 -61.900', 46.000, globaldef000206, "");
+                    func002669(46.000, 45.000, 47.000, 49.000, globaldef000191);
+                    func002668('338.200 -1172.900 -45.900', 47.000, globaldef000206, "");
+                    func002669(47.000, 46.000, 48.000, globaldef000191, globaldef000191);
+                    func002668('340.600 -1140.500 -29.700', 48.000, globaldef000206, "");
+                    func002669(48.000, 47.000, 49.000, globaldef000191, globaldef000191);
+                    func002668('343.000 -1107.500 -13.800', 49.000, globaldef000206, "");
+                    func002669(49.000, 48.000, 50.000, globaldef000191, globaldef000191);
+                    func002668('347.500 -1019.000 2.000', 50.000, globaldef000206, "");
+                    func002669(50.000, 49.000, globaldef000192, globaldef000197, globaldef000191);
+                    func002668('118.500 -883.000 -125.900', 51.000, globaldef000206, "");
+                    func002669(51.000, 42.000, 41.000, 76.000, globaldef000191);
+                    func002668('145.000 -504.200 2.000', 52.000, globaldef000206, "");
+                    func002669(52.000, globaldef000206, 58.000, 74.000, globaldef000191);
+                    func002668('135.800 -310.000 -61.900', 53.000, globaldef000206, "");
+                    func002669(53.000, 52.000, 54.000, 56.000, 61.000);
+                    func002670(53.000, 57.000, 72.000, globaldef000191, globaldef000191);
+                    func002668('0.500 -232.500 -93.900', 54.000, globaldef000206, "");
+                    func002669(54.000, 53.000, 55.000, 61.000, globaldef000191);
+                    func002668('-107.000 -320.700 -93.900', 55.000, globaldef000206, "");
+                    func002669(55.000, 54.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('136.100 -365.000 -45.900', 56.000, globaldef000206, "");
+                    func002669(56.000, 53.000, 57.000, globaldef000191, globaldef000191);
+                    func002668('136.800 -392.700 -29.700', 57.000, globaldef000206, "");
+                    func002669(57.000, 56.000, 58.000, globaldef000191, globaldef000191);
+                    func002668('137.800 -430.700 -13.800', 58.000, globaldef000206, "");
+                    func002669(58.000, 57.000, 52.000, 74.000, globaldef000191);
+                    func002668('200.000 -32.000 -125.900', 59.000, globaldef000208, "weapon_supernailgun");
+                    func002669(59.000, 53.000, 60.000, 61.000, 73.000);
+                    func002670(59.000, 71.000, 72.000, 78.000, globaldef000191);
+                    func002668('200.000 72.000 -125.900', 60.000, globaldef000208, "item_artifact_super_damage");
+                    func002669(60.000, 59.000, 78.000, globaldef000191, globaldef000191);
+                    func002668('142.100 -230.600 -93.900', 61.000, globaldef000206, "");
+                    func002669(61.000, 59.000, 53.000, 72.000, 54.000);
+                    func002670(61.000, 78.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('-121.000 -567.000 -93.900', 62.000, globaldef000206, "");
+                    func002669(62.000, 55.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('-128.000 -624.000 -93.900', 63.000, globaldef000207, "");
+                    func002669(63.000, 62.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('396.700 -419.200 -125.900', globaldef000198, globaldef000206, "");
+                    func002669(globaldef000198, globaldef000207, 38.000, 34.000, 36.000);
+                    func002668('153.500 -236.100 -317.700', 65.000, globaldef000206, "");
+                    func002669(65.000, 35.000, globaldef000719, globaldef000287, 72.000);
+                    func002668('761.700 -521.500 -125.900', 66.000, globaldef000206, "");
+                    func002669(66.000, globaldef000210, 19.000, globaldef000214, globaldef000191);
+                    func002668('640.000 -496.000 -157.800', 67.000, globaldef000207, "");
+                    func002669(67.000, 34.000, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('-81.500 240.600 -317.800', 68.000, globaldef000206, "");
+                    func002669(68.000, globaldef000290, globaldef000289, globaldef000191, globaldef000191);
+                    func002668('-27.300 -231.000 -317.800', 69.000, globaldef000206, "");
+                    func002669(69.000, globaldef000288, globaldef000719, globaldef000191, globaldef000191);
+                    func002668('616.200 -222.300 -317.800', 70.000, globaldef000206, "");
+                    func002669(70.000, globaldef000292, globaldef000191, globaldef000191, globaldef000191);
+                    func002668('423.100 -48.000 -125.900', 71.000, globaldef000206, "");
+                    func002669(71.000, 35.000, 73.000, globaldef000191, globaldef000191);
+                    func002668('197.600 -243.600 -93.900', 72.000, globaldef000206, "");
+                    func002669(72.000, 36.000, 61.000, 58.000, 74.000);
+                    func002670(72.000, 78.000, 53.000, globaldef000191, globaldef000191);
+                    func002668('233.800 -52.200 -125.900', 73.000, globaldef000206, "");
+                    func002669(73.000, 59.000, 71.000, globaldef000191, globaldef000191);
+                    func002668('332.300 -512.000 2.000', 74.000, globaldef000206, "");
+                    func002669(74.000, globaldef000194, globaldef000206, 58.000, globaldef000191);
+                    func002668('781.700 -171.300 2.000', globaldef002995, globaldef000206, "");
+                    func002669(globaldef002995, globaldef000208, globaldef000209, 63.000, globaldef000191);
+                    func002668('338.300 -777.700 -125.900', 76.000, globaldef000206, "");
+                    func002669(76.000, 51.000, 38.000, 39.000, globaldef000191);
+                    func002668('285.500 -380.100 -125.900', 77.000, globaldef000206, "");
+                    func002669(77.000, 36.000, globaldef000191, globaldef000191, globaldef000191);
+                }
+                else
+                {
+                    if(globaldef000003.model == "maps/dm5.bsp")
+                    {
+                        func002668('287.400 -746.500 98.000', 88.000, globaldef000206, "");
+                        func002669(88.000, 29.000, globaldef000295, 34.000, globaldef000191);
+                        func002668('663.800 -733.700 194.000', 87.000, globaldef000206, "");
+                        func002669(87.000, globaldef000290, globaldef000210, globaldef000191, globaldef000191);
+                        func002668('289.100 176.300 -97.300', 86.000, globaldef000206, "");
+                        func002669(86.000, 82.000, 65.000, 72.000, globaldef000191);
+                        func002668('648.000 8.000 -29.900', 85.000, globaldef000208, "item_artifact_invulnerability");
+                        func002669(85.000, 84.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('648.000 -72.000 -29.900', 84.000, globaldef000208, "weapon_lightning");
+                        func002669(84.000, 83.000, 85.000, globaldef000191, globaldef000191);
+                        func002668('591.400 -99.600 -29.900', 83.000, globaldef000206, "");
+                        func002669(83.000, 84.000, 85.000, globaldef000191, globaldef000191);
+                        func002668('288.000 -68.300 -62.500', 82.000, globaldef000206, "");
+                        func002669(82.000, 81.000, globaldef002995, 73.000, globaldef000191);
+                        func002668('384.200 -11.100 -133.900', 81.000, globaldef000206, "");
+                        func002669(81.000, 80.000, 82.000, 83.000, globaldef000191);
+                        func002668('552.300 18.300 -133.900', 80.000, globaldef000206, "");
+                        func002669(80.000, 79.000, 83.000, globaldef000191, globaldef000191);
+                        func002668('553.900 -228.900 -133.900', 79.000, globaldef000206, "");
+                        func002669(79.000, globaldef002995, 81.000, globaldef000191, globaldef000191);
+                        func002668('-7.900 -580.700 -77.100', 78.000, globaldef000206, "");
+                        func002668('230.000 -598.600 -133.900', 77.000, globaldef000206, "");
+                        func002669(77.000, 76.000, 78.000, globaldef000191, globaldef000191);
+                        func002668('467.700 -522.800 -133.900', 76.000, globaldef000206, "");
+                        func002669(76.000, globaldef002995, 77.000, globaldef000191, globaldef000191);
+                        func002668('333.900 -313.500 -133.900', globaldef002995, globaldef000206, "");
+                        func002669(globaldef002995, 73.000, 76.000, 79.000, 82.000);
+                        func002668('279.000 366.800 -69.900', 74.000, globaldef000206, "");
+                        func002669(74.000, 72.000, 65.000, 69.000, 86.000);
+                        func002670(74.000, 71.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('294.900 -70.300 -133.900', 73.000, globaldef000206, "");
+                        func002669(73.000, 72.000, globaldef002995, 81.000, 86.000);
+                        func002670(73.000, 82.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('296.200 177.800 -121.300', 72.000, globaldef000206, "");
+                        func002669(72.000, 65.000, 73.000, 74.000, 86.000);
+                        func002668('323.300 486.700 -29.900', 71.000, globaldef000206, "");
+                        func002669(71.000, 70.000, 65.000, globaldef000198, 69.000);
+                        func002668('536.000 360.000 -29.900', 70.000, globaldef000208, "weapon_nailgun");
+                        func002669(70.000, 65.000, 71.000, globaldef000191, globaldef000191);
+                        func002668('181.400 479.900 -29.900', 69.000, globaldef000206, "");
+                        func002669(69.000, 67.000, globaldef000198, 65.000, 66.000);
+                        func002670(69.000, 71.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('-90.000 240.500 18.000', 68.000, globaldef000206, "");
+                        func002669(68.000, 67.000, 46.000, 45.000, globaldef000191);
+                        func002668('12.700 300.400 2.000', 67.000, globaldef000206, "");
+                        func002669(67.000, 66.000, 68.000, 47.000, 46.000);
+                        func002668('81.600 312.400 -13.900', 66.000, globaldef000206, "");
+                        func002669(66.000, globaldef000198, 69.000, globaldef000191, globaldef000191);
+                        func002668('350.300 411.100 -45.900', 65.000, globaldef000206, "");
+                        func002669(65.000, globaldef000198, 71.000, 74.000, globaldef000191);
+                        func002668('115.400 492.000 -29.900', globaldef000198, globaldef000206, "");
+                        func002669(globaldef000198, 46.000, 65.000, 68.000, 67.000);
+                        func002670(globaldef000198, 69.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('209.200 717.100 98.000', 63.000, globaldef000206, "");
+                        func002669(63.000, 61.000, 51.000, 59.000, 52.000);
+                        func002668('288.000 1016.000 98.000', 62.000, globaldef000208, "item_health");
+                        func002669(62.000, 61.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('272.000 944.000 98.000', 61.000, globaldef000208, "weapon_rocketlauncher");
+                        func002669(61.000, 52.000, 62.000, globaldef000191, globaldef000191);
+                        func002668('280.700 337.400 98.000', 60.000, globaldef000206, "");
+                        func002669(60.000, 59.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('281.300 581.400 98.000', 59.000, globaldef000206, "");
+                        func002669(59.000, 52.000, 60.000, globaldef000191, globaldef000191);
+                        func002668('720.300 416.100 194.000', 58.000, globaldef000206, "");
+                        func002669(58.000, 57.000, 18.000, globaldef000191, globaldef000191);
+                        func002668('629.600 526.400 178.000', 57.000, globaldef000206, "");
+                        func002669(57.000, 56.000, 58.000, globaldef000191, globaldef000191);
+                        func002668('599.500 554.400 162.000', 56.000, globaldef000206, "");
+                        func002669(56.000, 55.000, 57.000, globaldef000191, globaldef000191);
+                        func002668('563.000 588.000 146.000', 55.000, globaldef000206, "");
+                        func002669(55.000, 54.000, 56.000, globaldef000191, globaldef000191);
+                        func002668('532.700 615.100 130.000', 54.000, globaldef000206, "");
+                        func002669(54.000, 53.000, 55.000, globaldef000191, globaldef000191);
+                        func002668('495.100 647.000 114.000', 53.000, globaldef000206, "");
+                        func002669(53.000, 52.000, 54.000, globaldef000191, globaldef000191);
+                        func002668('401.700 713.000 98.000', 52.000, globaldef000206, "");
+                        func002669(52.000, 51.000, 53.000, 59.000, 63.000);
+                        func002668('155.500 734.800 98.000', 51.000, globaldef000206, "");
+                        func002669(51.000, 50.000, 63.000, globaldef000191, globaldef000191);
+                        func002668('54.300 642.100 82.000', 50.000, globaldef000206, "");
+                        func002669(50.000, 49.000, 51.000, globaldef000191, globaldef000191);
+                        func002668('25.400 605.800 66.000', 49.000, globaldef000206, "");
+                        func002669(49.000, 48.000, 50.000, globaldef000191, globaldef000191);
+                        func002668('-4.600 577.500 50.000', 48.000, globaldef000206, "");
+                        func002669(48.000, 47.000, 49.000, 50.000, globaldef000191);
+                        func002668('-42.100 543.900 34.000', 47.000, globaldef000206, "");
+                        func002669(47.000, 46.000, 48.000, globaldef000191, globaldef000191);
+                        func002668('-144.900 323.000 18.000', 46.000, globaldef000206, "");
+                        func002669(46.000, 45.000, 47.000, 68.000, globaldef000191);
+                        func002668('-109.800 78.800 18.000', 45.000, globaldef000206, "");
+                        func002669(45.000, 44.000, 68.000, globaldef000191, globaldef000191);
+                        func002668('-109.300 -168.300 18.000', 44.000, globaldef000206, "");
+                        func002669(44.000, 42.000, 45.000, globaldef000191, globaldef000191);
+                        func002668('112.000 -400.000 18.000', 43.000, globaldef000208, "weapon_grenadelauncher");
+                        func002669(43.000, 42.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('5.800 -376.700 18.000', 42.000, globaldef000206, "");
+                        func002669(42.000, 41.000, 43.000, 44.000, globaldef000191);
+                        func002668('-108.800 -511.800 18.000', 41.000, globaldef000206, "");
+                        func002669(41.000, 36.000, 42.000, globaldef000191, globaldef000191);
+                        func002668('138.300 -756.500 82.000', globaldef000729, globaldef000206, "");
+                        func002669(globaldef000729, 39.000, 35.000, globaldef000191, globaldef000191);
+                        func002668('95.300 -756.200 66.000', 39.000, globaldef000206, "");
+                        func002669(39.000, 38.000, globaldef000729, 35.000, globaldef000191);
+                        func002668('43.300 -755.400 50.000', 38.000, globaldef000206, "");
+                        func002669(38.000, 37.000, 39.000, 35.000, globaldef000191);
+                        func002668('-6.500 -753.900 34.000', 37.000, globaldef000206, "");
+                        func002669(37.000, 36.000, 38.000, globaldef000191, globaldef000191);
+                        func002668('-104.100 -753.900 18.000', 36.000, globaldef000206, "");
+                        func002669(36.000, 35.000, 37.000, 41.000, globaldef000191);
+                        func002668('156.600 -794.600 98.000', 35.000, globaldef000206, "");
+                        func002669(35.000, globaldef000295, globaldef000729, 39.000, 88.000);
+                        func002668('403.600 -625.200 114.000', 34.000, globaldef000206, "");
+                        func002669(34.000, globaldef000295, globaldef000287, globaldef000191, globaldef000191);
+                        func002668('405.900 -800.200 98.000', globaldef000295, globaldef000206, "");
+                        func002669(globaldef000295, globaldef000287, 34.000, 35.000, globaldef000191);
+                        func002668('669.300 -469.300 114.000', globaldef000197, globaldef000206, "");
+                        func002669(globaldef000197, globaldef000293, globaldef000292, globaldef000191, globaldef000191);
+                        func002668('656.000 -320.000 98.000', globaldef000293, globaldef000208, "item_armor2");
+                        func002669(globaldef000293, globaldef000719, globaldef000292, globaldef000191, globaldef000191);
+                        func002668('441.400 -505.300 130.000', globaldef000292, globaldef000206, "");
+                        func002669(globaldef000292, 29.000, globaldef000291, globaldef000197, globaldef000287);
+                        func002668('359.800 -507.300 114.000', 29.000, globaldef000206, "");
+                        func002669(29.000, globaldef000291, globaldef000292, globaldef000719, globaldef000191);
+                        func002668('248.000 -411.900 98.000', globaldef000291, globaldef000206, "");
+                        func002669(globaldef000291, globaldef000287, 29.000, globaldef000191, globaldef000191);
+                        func002668('628.700 -635.800 178.000', globaldef000290, globaldef000206, "");
+                        func002669(globaldef000290, globaldef000289, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('624.200 -593.700 162.000', globaldef000289, globaldef000206, "");
+                        func002669(globaldef000289, globaldef000288, globaldef000290, globaldef000191, globaldef000191);
+                        func002668('619.100 -558.500 146.000', globaldef000288, globaldef000206, "");
+                        func002669(globaldef000288, globaldef000719, globaldef000289, 87.000, globaldef000191);
+                        func002668('606.500 -490.200 130.000', globaldef000719, globaldef000206, "");
+                        func002669(globaldef000719, globaldef000287, globaldef000288, globaldef000292, globaldef000293);
+                        func002670(globaldef000719, globaldef000197, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('447.700 -560.100 130.000', globaldef000287, globaldef000206, "");
+                        func002669(globaldef000287, globaldef000212, globaldef000719, globaldef000292, 34.000);
+                        func002668('1116.000 -768.000 210.000', 22.000, globaldef000207, "");
+                        func002669(22.000, 21.000, globaldef000191, globaldef000191, globaldef000191);
+                        func002668('1037.000 -776.500 194.000', 21.000, globaldef000206, "");
+                        func002669(21.000, 20.000, globaldef000209, 19.000, globaldef000191);
+                        func002668('791.100 -775.300 194.000', 20.000, globaldef000206, "");
+                        func002669(20.000, 19.000, globaldef000209, globaldef000210, 87.000);
+                        func002668('890.000 376.000 210.000', 19.000, globaldef000207, "");
+                        func002669(19.000, 18.000, 22.000, globaldef000191, globaldef000191);
+                        func002668('709.100 371.300 194.000', 18.000, globaldef000206, "");
+                        func002669(18.000, 17.000, 22.000, 58.000, globaldef000191);
+                        func002668('463.700 382.800 194.000', 17.000, globaldef000206, "");
+                        func002669(17.000, globaldef000196, 18.000, globaldef000191, globaldef000191);
+                        func002668('218.600 371.900 194.000', globaldef000196, globaldef000206, "");
+                        func002669(globaldef000196, globaldef000748, 17.000, globaldef000191, globaldef000191);
+                        func002668('-27.700 377.900 194.000', globaldef000748, globaldef000206, "");
+                        func002669(globaldef000748, 14.000, globaldef000196, globaldef000191, globaldef000191);
+                        func002668('-101.700 212.600 194.000', 14.000, globaldef000206, "");
+                        func002669(14.000, globaldef000775, globaldef000748, globaldef000191, globaldef000191);
+                        func002668('-101.400 -36.000 194.000', globaldef000775, globaldef000206, "");
+                        func002669(globaldef000775, globaldef000774, 14.000, globaldef000191, globaldef000191);
+                        func002668('-96.600 -282.500 194.000', globaldef000774, globaldef000206, "");
+                        func002669(globaldef000774, globaldef000214, globaldef000775, globaldef000192, globaldef000191);
+                        func002668('-92.800 -527.200 194.000', globaldef000214, globaldef000206, "");
+                        func002669(globaldef000214, globaldef000213, globaldef000774, globaldef000191, globaldef000191);
+                        func002668('-75.100 -771.700 194.000', globaldef000213, globaldef000206, "");
+                        func002669(globaldef000213, globaldef000212, globaldef000214, globaldef000191, globaldef000191);
+                        func002668('172.700 -771.700 194.000', globaldef000212, globaldef000206, "");
+                        func002669(globaldef000212, globaldef000195, globaldef000213, globaldef000191, globaldef000191);
+                        func002668('417.200 -771.700 194.000', globaldef000195, globaldef000206, "");
+                        func002669(globaldef000195, globaldef000210, globaldef000212, globaldef000191, globaldef000191);
+                        func002668('664.700 -772.200 194.000', globaldef000210, globaldef000206, "");
+                        func002669(globaldef000210, globaldef000209, 20.000, globaldef000195, 87.000);
+                        func002668('897.600 -690.400 194.000', globaldef000209, globaldef000206, "");
+                        func002669(globaldef000209, globaldef000208, 20.000, 87.000, 21.000);
+                        func002668('907.700 -443.900 194.000', globaldef000208, globaldef000206, "");
+                        func002669(globaldef000208, globaldef000207, globaldef000209, globaldef000191, globaldef000191);
+                        func002668('832.000 -208.000 194.000', globaldef000207, globaldef000208, "weapon_supernailgun");
+                        func002669(globaldef000207, globaldef000206, globaldef000208, globaldef000191, globaldef000191);
+                        func002668('653.200 -224.000 194.000', globaldef000206, globaldef000206, "");
+                        func002669(globaldef000206, globaldef000194, globaldef000207, globaldef000191, globaldef000191);
+                        func002668('404.400 -224.000 194.000', globaldef000194, globaldef000206, "");
+                        func002669(globaldef000194, globaldef000192, globaldef000206, globaldef000191, globaldef000191);
+                        func002668('160.000 -224.000 194.000', globaldef000192, globaldef000206, "");
+                        func002669(globaldef000192, globaldef000774, globaldef000194, globaldef000191, globaldef000191);
+                    }
+                    else
+                    {
+                        
+                        if(globaldef000003.model == "maps/dm6.bsp")
+                        {
+                            func002668('1535.300 -1090.500 18.000', 101.000, globaldef000206, "");
+                            func002669(101.000, 37.000, 68.000, globaldef000191, globaldef000191);
+                            func002668('967.500 -1666.000 18.000', 100.000, globaldef000206, "");
+                            func002669(100.000, globaldef000198, 63.000, globaldef002995, globaldef000191);
+                            func002668('1008.000 -477.200 18.000', 99.000, globaldef000206, "");
+                            func002669(99.000, 43.000, 44.000, globaldef000191, globaldef000191);
+                            func002668('521.700 -1066.500 234.000', 98.000, globaldef000206, "");
+                            func002669(98.000, 21.000, 22.000, globaldef000191, globaldef000191);
+                            func002668('0.000 -1088.000 242.000', globaldef000192, globaldef000206, "");
+                            func002668('200.000 -1112.000 90.000', globaldef000194, globaldef000208, "weapon_rocketlauncher");
+                            func002669(globaldef000194, globaldef000192, globaldef000206, globaldef000207, 82.000);
+                            func002668('208.000 -1248.000 90.000', globaldef000206, globaldef000208, "item_health");
+                            func002669(globaldef000206, globaldef000194, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('196.600 -936.700 106.000', globaldef000207, globaldef000206, "");
+                            func002669(globaldef000207, globaldef000194, 70.000, globaldef000191, globaldef000191);
+                            func002668('200.000 -848.000 130.000', globaldef000208, globaldef000207, "");
+                            func002669(globaldef000208, globaldef000207, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('94.800 -1701.800 18.000', globaldef000209, globaldef000206, "");
+                            func002669(globaldef000209, globaldef000208, globaldef000210, 61.000, 84.000);
+                            func002668('70.000 -1871.100 34.000', globaldef000210, globaldef000206, "");
+                            func002669(globaldef000210, globaldef000209, globaldef000195, globaldef000212, globaldef000191);
+                            func002668('64.900 -1913.100 50.000', globaldef000195, globaldef000206, "");
+                            func002669(globaldef000195, globaldef000210, globaldef000212, globaldef000191, globaldef000191);
+                            func002668('171.000 -2007.500 66.000', globaldef000212, globaldef000206, "");
+                            func002669(globaldef000212, globaldef000195, globaldef000213, globaldef000191, globaldef000191);
+                            func002668('223.100 -2009.000 82.000', globaldef000213, globaldef000206, "");
+                            func002669(globaldef000213, globaldef000212, globaldef000214, globaldef000191, globaldef000191);
+                            func002668('264.100 -2009.500 98.000', globaldef000214, globaldef000206, "");
+                            func002669(globaldef000214, globaldef000213, globaldef000774, globaldef000775, globaldef000191);
+                            func002668('318.700 -2009.500 114.000', globaldef000774, globaldef000206, "");
+                            func002669(globaldef000774, globaldef000214, globaldef000775, globaldef000191, globaldef000191);
+                            func002668('364.100 -2008.800 130.000', globaldef000775, globaldef000206, "");
+                            func002669(globaldef000775, globaldef000774, 14.000, globaldef000191, globaldef000191);
+                            func002668('424.000 -2008.000 146.000', 14.000, globaldef000208, "weapon_supernailgun");
+                            func002669(14.000, globaldef000775, globaldef000748, globaldef000191, globaldef000191);
+                            func002668('457.600 -1787.500 162.000', globaldef000748, globaldef000206, "");
+                            func002669(globaldef000748, 14.000, globaldef000196, globaldef000191, globaldef000191);
+                            func002668('455.200 -1741.600 178.000', globaldef000196, globaldef000206, "");
+                            func002669(globaldef000196, globaldef000748, 17.000, globaldef000191, globaldef000191);
+                            func002668('453.000 -1695.000 194.000', 17.000, globaldef000206, "");
+                            func002669(17.000, globaldef000196, 18.000, globaldef000191, globaldef000191);
+                            func002668('450.500 -1644.500 210.000', 18.000, globaldef000206, "");
+                            func002669(18.000, 17.000, 19.000, globaldef000191, globaldef000191);
+                            func002668('448.000 -1589.900 226.000', 19.000, globaldef000206, "");
+                            func002669(19.000, 18.000, 20.000, globaldef000191, globaldef000191);
+                            func002668('464.000 -1413.300 234.000', 20.000, globaldef000206, "");
+                            func002669(20.000, 19.000, 21.000, globaldef000191, globaldef000191);
+                            func002668('442.700 -1171.000 234.000', 21.000, globaldef000206, "");
+                            func002669(21.000, 20.000, 22.000, 98.000, globaldef000191);
+                            func002668('671.500 -1082.600 234.000', 22.000, globaldef000206, "");
+                            func002669(22.000, 21.000, globaldef000287, 60.000, 98.000);
+                            func002668('830.200 -1267.900 234.000', globaldef000287, globaldef000206, "");
+                            func002669(globaldef000287, 22.000, 60.000, globaldef000719, globaldef000191);
+                            func002668('1061.900 -1344.500 234.000', globaldef000719, globaldef000206, "");
+                            func002669(globaldef000719, globaldef000287, globaldef000288, 85.000, globaldef000191);
+                            func002668('1261.000 -1196.400 234.000', globaldef000288, globaldef000206, "");
+                            func002669(globaldef000288, globaldef000719, 56.000, 57.000, globaldef000191);
+                            func002668('1485.600 -1091.300 197.100', globaldef000289, globaldef000206, "");
+                            func002669(globaldef000289, globaldef000288, 54.000, 55.000, globaldef000191);
+                            func002668('1730.900 -1091.500 146.000', globaldef000290, globaldef000206, "");
+                            func002669(globaldef000290, globaldef000289, globaldef000291, 53.000, 54.000);
+                            func002668('1761.900 -844.500 146.000', globaldef000291, globaldef000206, "");
+                            func002669(globaldef000291, globaldef000290, 29.000, globaldef000191, globaldef000191);
+                            func002668('1772.400 -597.000 146.000', 29.000, globaldef000206, "");
+                            func002669(29.000, globaldef000291, globaldef000292, globaldef000191, globaldef000191);
+                            func002668('1736.000 -344.000 146.000', globaldef000292, globaldef000208, "item_armorInv");
+                            func002669(globaldef000292, 29.000, globaldef000293, 97.000, globaldef000191);
+                            func002668('1498.400 -278.700 146.000', globaldef000293, globaldef000206, "");
+                            func002669(globaldef000293, globaldef000292, globaldef000197, 97.000, globaldef000191);
+                            func002668('1282.500 -397.600 146.000', globaldef000197, globaldef000206, "");
+                            func002669(globaldef000197, globaldef000293, 52.000, globaldef000191, globaldef000191);
+                            func002668('1443.500 -596.700 98.000', globaldef000295, globaldef000206, "");
+                            func002669(globaldef000295, globaldef000197, 49.000, 50.000, 51.000);
+                            func002668('1680.000 -564.000 18.000', 34.000, globaldef000206, "");
+                            func002669(34.000, globaldef000295, 46.000, 35.000, 47.000);
+                            func002670(34.000, 92.000, 48.000, 29.000, globaldef000191);
+                            func002668('1695.800 -808.900 18.000', 35.000, globaldef000206, "");
+                            func002669(35.000, 34.000, 68.000, 36.000, globaldef000191);
+                            func002668('1693.900 -1056.400 18.000', 36.000, globaldef000206, "");
+                            func002669(36.000, 35.000, 68.000, globaldef000191, globaldef000191);
+                            func002668('1446.400 -1089.100 2.000', 37.000, globaldef000206, "");
+                            func002669(37.000, 36.000, 67.000, 68.000, 101.000);
+                            func002668('1224.000 -1088.000 -61.900', 38.000, globaldef000208, "weapon_nailgun");
+                            func002669(38.000, 37.000, 65.000, 71.000, 66.000);
+                            func002670(38.000, 89.000, 39.000, globaldef000191, globaldef000191);
+                            func002668('1047.900 -920.700 -45.900', 39.000, globaldef000206, "");
+                            func002669(39.000, 38.000, globaldef000729, 91.000, 41.000);
+                            func002670(39.000, 42.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('1033.000 -835.700 -29.800', globaldef000729, globaldef000206, "");
+                            func002669(globaldef000729, 39.000, 41.000, globaldef000191, globaldef000191);
+                            func002668('1027.600 -785.700 -13.800', 41.000, globaldef000206, "");
+                            func002669(41.000, globaldef000729, 42.000, globaldef000191, globaldef000191);
+                            func002668('1024.500 -740.200 2.000', 42.000, globaldef000206, "");
+                            func002669(42.000, 41.000, 43.000, globaldef000191, globaldef000191);
+                            func002668('1021.200 -641.500 18.000', 43.000, globaldef000206, "");
+                            func002669(43.000, 42.000, 44.000, 99.000, globaldef000191);
+                            func002668('1117.400 -429.100 18.000', 44.000, globaldef000206, "");
+                            func002669(44.000, 43.000, 45.000, 99.000, globaldef000191);
+                            func002668('1362.500 -427.000 18.000', 45.000, globaldef000206, "");
+                            func002669(45.000, 44.000, 46.000, 93.000, globaldef000191);
+                            func002668('1512.000 -432.000 18.000', 46.000, globaldef000208, "weapon_rocketlauncher");
+                            func002669(46.000, 45.000, 34.000, 92.000, globaldef000295);
+                            func002668('1561.000 -571.500 34.000', 47.000, globaldef000206, "");
+                            func002669(47.000, 34.000, 48.000, 92.000, globaldef000295);
+                            func002668('1526.800 -572.700 50.000', 48.000, globaldef000206, "");
+                            func002669(48.000, 47.000, 49.000, globaldef000295, globaldef000191);
+                            func002668('1500.100 -573.400 66.000', 49.000, globaldef000206, "");
+                            func002669(49.000, 48.000, globaldef000295, 47.000, globaldef000191);
+                            func002668('1397.800 -574.500 114.000', 50.000, globaldef000206, "");
+                            func002669(50.000, globaldef000295, 51.000, globaldef000191, globaldef000191);
+                            func002668('1369.300 -574.700 130.000', 51.000, globaldef000206, "");
+                            func002669(51.000, 50.000, 52.000, globaldef000197, globaldef000295);
+                            func002668('1263.500 -575.700 146.000', 52.000, globaldef000206, "");
+                            func002669(52.000, 51.000, globaldef000197, globaldef000191, globaldef000191);
+                            func002668('1600.600 -1073.600 163.500', 53.000, globaldef000206, "");
+                            func002669(53.000, globaldef000290, 54.000, globaldef000289, globaldef000291);
+                            func002668('1549.500 -1077.000 178.500', 54.000, globaldef000206, "");
+                            func002669(54.000, 53.000, globaldef000289, globaldef000191, globaldef000191);
+                            func002668('1429.600 -1084.500 213.600', 55.000, globaldef000206, "");
+                            func002669(55.000, globaldef000289, 56.000, globaldef000191, globaldef000191);
+                            func002668('1373.400 -1088.000 230.000', 56.000, globaldef000206, "");
+                            func002669(56.000, 55.000, 57.000, globaldef000288, globaldef000191);
+                            func002668('1224.000 -1088.000 234.000', 57.000, globaldef000208, "weapon_grenadelauncher");
+                            func002669(57.000, 56.000, 58.000, globaldef000288, globaldef000191);
+                            func002668('1182.000 -843.000 234.000', 58.000, globaldef000206, "");
+                            func002669(58.000, 57.000, 59.000, globaldef000191, globaldef000191);
+                            func002668('933.000 -840.400 234.000', 59.000, globaldef000206, "");
+                            func002669(59.000, 58.000, 60.000, globaldef000191, globaldef000191);
+                            func002668('786.000 -1037.800 234.000', 60.000, globaldef000206, "");
+                            func002669(60.000, 59.000, globaldef000287, 22.000, globaldef000191);
+                            func002668('337.300 -1644.000 18.000', 61.000, globaldef000206, "");
+                            func002669(61.000, globaldef000209, 62.000, 90.000, 69.000);
+                            func002670(61.000, globaldef000208, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('580.900 -1651.900 18.000', 62.000, globaldef000206, "");
+                            func002669(62.000, 61.000, globaldef000208, 63.000, globaldef000191);
+                            func002668('825.200 -1658.000 18.000', 63.000, globaldef000206, "");
+                            func002669(63.000, 62.000, globaldef000198, 100.000, globaldef000191);
+                            func002668('1064.100 -1587.900 18.000', globaldef000198, globaldef000206, "");
+                            func002669(globaldef000198, 63.000, globaldef002995, 100.000, globaldef000191);
+                            func002668('1033.600 -1220.300 -61.900', 65.000, globaldef000206, "");
+                            func002669(65.000, globaldef000198, 83.000, 38.000, 71.000);
+                            func002668('1325.500 -1085.500 -45.900', 66.000, globaldef000206, "");
+                            func002669(66.000, 38.000, 67.000, 37.000, globaldef000191);
+                            func002668('1379.500 -1083.100 -29.800', 67.000, globaldef000206, "");
+                            func002669(67.000, 66.000, 37.000, 101.000, globaldef000191);
+                            func002668('1625.600 -1077.900 18.000', 68.000, globaldef000206, "");
+                            func002669(68.000, 37.000, 36.000, 101.000, globaldef000191);
+                            func002668('1024.000 -1096.000 -29.800', 69.000, globaldef000207, "");
+                            func002669(69.000, 39.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('248.000 -1784.000 50.000', 70.000, globaldef000207, "");
+                            func002669(70.000, 69.000, globaldef000209, globaldef000191, globaldef000191);
+                            func002668('1021.700 -1292.600 -45.900', 71.000, globaldef000206, "");
+                            func002669(71.000, 65.000, 72.000, 83.000, globaldef000191);
+                            func002668('1019.900 -1343.600 -29.800', 72.000, globaldef000206, "");
+                            func002669(72.000, 71.000, 73.000, globaldef000191, globaldef000191);
+                            func002668('1019.000 -1387.300 -13.800', 73.000, globaldef000206, "");
+                            func002669(73.000, 72.000, 74.000, globaldef000191, globaldef000191);
+                            func002668('1018.500 -1436.800 2.000', 74.000, globaldef000206, "");
+                            func002669(74.000, 73.000, globaldef002995, globaldef000191, globaldef000191);
+                            func002668('1026.600 -1528.600 18.000', globaldef002995, globaldef000206, "");
+                            func002669(globaldef002995, 74.000, globaldef000198, 100.000, globaldef000191);
+                            func002668('761.200 -1100.500 -49.500', 76.000, globaldef000206, "");
+                            func002669(76.000, 39.000, 77.000, 83.000, 78.000);
+                            func002670(76.000, 91.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('744.500 -1100.400 -34.500', 77.000, globaldef000206, "");
+                            func002669(77.000, 76.000, 78.000, globaldef000191, globaldef000191);
+                            func002668('712.500 -1104.800 33.400', 78.000, globaldef000206, "");
+                            func002669(78.000, 79.000, 77.000, 80.000, 76.000);
+                            func002668('673.200 -1082.100 49.900', 79.000, globaldef000206, "");
+                            func002669(79.000, 78.000, 80.000, globaldef000191, globaldef000191);
+                            func002668('635.200 -1083.500 66.500', 80.000, globaldef000206, "");
+                            func002669(80.000, 79.000, 81.000, globaldef000191, globaldef000191);
+                            func002668('544.400 -1084.600 92.400', 81.000, globaldef000206, "");
+                            func002669(81.000, 80.000, 82.000, globaldef000191, globaldef000191);
+                            func002668('364.100 -1079.300 106.000', 82.000, globaldef000206, "");
+                            func002669(82.000, 81.000, globaldef000194, globaldef000206, globaldef000191);
+                            func002668('965.400 -1222.100 -61.900', 83.000, globaldef000206, "");
+                            func002669(83.000, 76.000, 65.000, 71.000, 72.000);
+                            func002668('129.500 -1488.300 18.000', 84.000, globaldef000206, "");
+                            func002669(84.000, globaldef000209, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('949.500 -1474.400 234.000', 85.000, globaldef000206, "");
+                            func002669(85.000, globaldef000719, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('861.900 -1090.100 -301.800', 86.000, globaldef000206, "");
+                            func002669(86.000, 83.000, 76.000, 78.000, 87.000);
+                            func002668('760.000 -1080.000 -301.800', 87.000, globaldef000208, "weapon_lightning");
+                            func002669(87.000, 86.000, 88.000, globaldef000191, globaldef000191);
+                            func002668('512.000 -1088.000 -301.800', 88.000, globaldef000208, "item_artifact_invisibility");
+                            func002669(88.000, 87.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('432.000 -1088.000 -277.800', 89.000, globaldef000207, "");
+                            func002669(89.000, 88.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('354.100 -1824.600 26.000', 90.000, globaldef000206, "");
+                            func002669(90.000, 61.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('912.200 -904.200 -61.900', 91.000, globaldef000206, "");
+                            func002669(91.000, 76.000, 39.000, globaldef000729, 41.000);
+                            func002670(91.000, 42.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('1659.900 -415.300 18.600', 92.000, globaldef000206, "");
+                            func002669(92.000, 52.000, 34.000, 46.000, 47.000);
+                            func002668('1392.000 -584.000 18.000', 93.000, globaldef000208, "weapon_supershotgun");
+                            func002669(93.000, 45.000, globaldef000191, globaldef000191, globaldef000191);
+                            func002668('1873.400 -406.700 146.000', 94.000, globaldef000206, "");
+                            func002669(94.000, globaldef000292, 95.000, globaldef000191, globaldef000191);
+                            func002668('1883.900 -159.000 146.000', 95.000, globaldef000206, "");
+                            func002669(95.000, 94.000, 96.000, globaldef000191, globaldef000191);
+                            func002668('1641.800 -173.100 146.000', 96.000, globaldef000206, "");
+                            func002669(96.000, 95.000, globaldef000293, globaldef000191, globaldef000191);
+                            func002668('1693.500 -292.800 146.000', 97.000, globaldef000206, "");
+                            func002669(97.000, 96.000, globaldef000292, globaldef000293, globaldef000191);
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+};
+
+// func002639
+// function begins at statement 53301, parm_start=28144
+// OP_STORE_ENT	833	28144	0
+// OP_IFNOT	28144	13	0
+// OP_LOAD_F	28144	575	28145
+// OP_BITAND	28145	703	28146
+// OP_IFNOT	28146	7	0
+// OP_SUB_F	802	214	28147
+// OP_STORE_F	28147	802	0
+// OP_ADDRESS	28144	575	28148
+// OP_LOAD_F	28144	575	28149
+// OP_SUB_F	28149	703	28150
+// OP_STOREP_F	28150	28148	0
+// OP_LOAD_ENT	28144	620	28151
+// OP_STORE_ENT	28151	28144	0
+// OP_GOTO	-12	0	0
+// OP_STORE_ENT	834	28144	0
+// OP_IFNOT	28144	13	0
+// OP_LOAD_F	28144	575	28152
+// OP_BITAND	28152	703	28153
+// OP_IFNOT	28153	7	0
+// OP_SUB_F	802	214	28154
+// OP_STORE_F	28154	802	0
+// OP_ADDRESS	28144	575	28155
+// OP_LOAD_F	28144	575	28156
+// OP_SUB_F	28156	703	28157
+// OP_STOREP_F	28157	28155	0
+// OP_LOAD_ENT	28144	620	28158
+// OP_STORE_ENT	28158	28144	0
+// OP_GOTO	-12	0	0
+// OP_DONE	0	0	0
+void () func002639 = 
+{
+    local entity globaldef008982;
+    globaldef008982 = globaldef000816;
+    
+    while(globaldef008982)
+    {
+        
+        if(globaldef008982.field000252 & globaldef000686)
+        {
+            globaldef000785 = globaldef000785 - globaldef000192;
+            globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
+        }
+        
+        globaldef008982 = globaldef008982.field000297;
+    }
+    
+    globaldef008982 = globaldef000817;
+    
+    while(globaldef008982)
+    {
+        
+        if(globaldef008982.field000252 & globaldef000686)
+        {
+            globaldef000785 = globaldef000785 - globaldef000192;
+            globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
+        }
+        
+        globaldef008982 = globaldef008982.field000297;
+    }
+    
+};
+
+// func002640
+// function begins at statement 53330, parm_start=28159
+// OP_LOAD_F	28159	648	28162
+// OP_GT	28162	213	28163
+// OP_IFNOT	28163	5	0
+// OP_LOAD_F	28159	648	28164
+// OP_GE	28160	28164	28165
+// OP_IFNOT	28165	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28159	648	28166
+// OP_STOREP_F	28160	28166	0
+// OP_ADDRESS	28159	638	28167
+// OP_STOREP_ENT	28161	28167	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008983, float globaldef008984, entity globaldef008985) func002640 = 
+{
+    
+    if(globaldef008983.field000325 > globaldef000191)
+    {
+        
+        if(globaldef008984 >= globaldef008983.field000325)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008983.field000325 = globaldef008984;
+    globaldef008983.field000315 = globaldef008985;
+    return globaldef000192;
+};
+
+// func002641
+// function begins at statement 53343, parm_start=28168
+// OP_LOAD_F	28168	649	28171
+// OP_GT	28171	214	28172
+// OP_IFNOT	28172	5	0
+// OP_LOAD_F	28168	649	28173
+// OP_GE	28169	28173	28174
+// OP_IFNOT	28174	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28168	649	28175
+// OP_STOREP_F	28169	28175	0
+// OP_ADDRESS	28168	639	28176
+// OP_STOREP_ENT	28170	28176	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008986, float globaldef008987, entity globaldef008988) func002641 = 
+{
+    
+    if(globaldef008986.field000326 > globaldef000192)
+    {
+        
+        if(globaldef008987 >= globaldef008986.field000326)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008986.field000326 = globaldef008987;
+    globaldef008986.field000316 = globaldef008988;
+    return globaldef000192;
+};
+
+// func002642
+// function begins at statement 53356, parm_start=28177
+// OP_LOAD_F	28177	650	28180
+// OP_GT	28180	213	28181
+// OP_IFNOT	28181	5	0
+// OP_LOAD_F	28177	650	28182
+// OP_GE	28178	28182	28183
+// OP_IFNOT	28183	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28177	650	28184
+// OP_STOREP_F	28178	28184	0
+// OP_ADDRESS	28177	640	28185
+// OP_STOREP_ENT	28179	28185	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008989, float globaldef008990, entity globaldef008991) func002642 = 
+{
+    
+    if(globaldef008989.field000327 > globaldef000191)
+    {
+        
+        if(globaldef008990 >= globaldef008989.field000327)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008989.field000327 = globaldef008990;
+    globaldef008989.field000317 = globaldef008991;
+    return globaldef000192;
+};
+
+// func002643
+// function begins at statement 53369, parm_start=28186
+// OP_LOAD_F	28186	651	28189
+// OP_GT	28189	213	28190
+// OP_IFNOT	28190	5	0
+// OP_LOAD_F	28186	651	28191
+// OP_GE	28187	28191	28192
+// OP_IFNOT	28192	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28186	651	28193
+// OP_STOREP_F	28187	28193	0
+// OP_ADDRESS	28186	641	28194
+// OP_STOREP_ENT	28188	28194	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008992, float globaldef008993, entity globaldef008994) func002643 = 
+{
+    
+    if(globaldef008992.field000328 > globaldef000191)
+    {
+        
+        if(globaldef008993 >= globaldef008992.field000328)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008992.field000328 = globaldef008993;
+    globaldef008992.field000318 = globaldef008994;
+    return globaldef000192;
+};
+
+// func002644
+// function begins at statement 53382, parm_start=28195
+// OP_LOAD_F	28195	652	28198
+// OP_GT	28198	213	28199
+// OP_IFNOT	28199	5	0
+// OP_LOAD_F	28195	652	28200
+// OP_GE	28196	28200	28201
+// OP_IFNOT	28201	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28195	652	28202
+// OP_STOREP_F	28196	28202	0
+// OP_ADDRESS	28195	642	28203
+// OP_STOREP_ENT	28197	28203	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008995, float globaldef008996, entity globaldef008997) func002644 = 
+{
+    
+    if(globaldef008995.field000329 > globaldef000191)
+    {
+        
+        if(globaldef008996 >= globaldef008995.field000329)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008995.field000329 = globaldef008996;
+    globaldef008995.field000319 = globaldef008997;
+    return globaldef000192;
+};
+
+// func002645
+// function begins at statement 53395, parm_start=28204
+// OP_LOAD_F	28204	653	28207
+// OP_GT	28207	213	28208
+// OP_IFNOT	28208	5	0
+// OP_LOAD_F	28204	653	28209
+// OP_GE	28205	28209	28210
+// OP_IFNOT	28210	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28204	653	28211
+// OP_STOREP_F	28205	28211	0
+// OP_ADDRESS	28204	643	28212
+// OP_STOREP_ENT	28206	28212	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef008998, float globaldef008999, entity globaldef009000) func002645 = 
+{
+    
+    if(globaldef008998.field000330 > globaldef000191)
+    {
+        
+        if(globaldef008999 >= globaldef008998.field000330)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef008998.field000330 = globaldef008999;
+    globaldef008998.field000320 = globaldef009000;
+    return globaldef000192;
+};
+
+// func002646
+// function begins at statement 53408, parm_start=28213
+// OP_LOAD_F	28213	654	28216
+// OP_GT	28216	213	28217
+// OP_IFNOT	28217	5	0
+// OP_LOAD_F	28213	654	28218
+// OP_GE	28214	28218	28219
+// OP_IFNOT	28219	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28213	654	28220
+// OP_STOREP_F	28214	28220	0
+// OP_ADDRESS	28213	644	28221
+// OP_STOREP_ENT	28215	28221	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009001, float globaldef009002, entity globaldef009003) func002646 = 
+{
+    
+    if(globaldef009001.field000331 > globaldef000191)
+    {
+        
+        if(globaldef009002 >= globaldef009001.field000331)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef009001.field000331 = globaldef009002;
+    globaldef009001.field000321 = globaldef009003;
+    return globaldef000192;
+};
+
+// func002647
+// function begins at statement 53421, parm_start=28222
+// OP_LOAD_F	28222	655	28225
+// OP_GT	28225	213	28226
+// OP_IFNOT	28226	5	0
+// OP_LOAD_F	28222	655	28227
+// OP_GE	28223	28227	28228
+// OP_IFNOT	28228	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28222	655	28229
+// OP_STOREP_F	28223	28229	0
+// OP_ADDRESS	28222	645	28230
+// OP_STOREP_ENT	28224	28230	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009004, float globaldef009005, entity globaldef009006) func002647 = 
+{
+    
+    if(globaldef009004.field000332 > globaldef000191)
+    {
+        
+        if(globaldef009005 >= globaldef009004.field000332)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef009004.field000332 = globaldef009005;
+    globaldef009004.field000322 = globaldef009006;
+    return globaldef000192;
+};
+
+// func002648
+// function begins at statement 53434, parm_start=28232
+// OP_LOAD_F	28232	656	28235
+// OP_GT	28235	213	28236
+// OP_IFNOT	28236	5	0
+// OP_LOAD_F	28232	656	28237
+// OP_GE	28233	28237	28238
+// OP_IFNOT	28238	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28232	656	28239
+// OP_STOREP_F	28233	28239	0
+// OP_ADDRESS	28232	646	28240
+// OP_STOREP_ENT	28234	28240	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009008, float globaldef009009, entity globaldef009010) func002648 = 
+{
+    
+    if(globaldef009008.field000333 > globaldef000191)
+    {
+        
+        if(globaldef009009 >= globaldef009008.field000333)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef009008.field000333 = globaldef009009;
+    globaldef009008.field000323 = globaldef009010;
+    return globaldef000192;
+};
+
+// update_cachex2
+// function begins at statement 53447, parm_start=28242
+// OP_LOAD_F	28242	657	28245
+// OP_GT	28245	213	28246
+// OP_IFNOT	28246	5	0
+// OP_LOAD_F	28242	657	28247
+// OP_GE	28243	28247	28248
+// OP_IFNOT	28248	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28242	657	28249
+// OP_STOREP_F	28243	28249	0
+// OP_ADDRESS	28242	647	28250
+// OP_STOREP_ENT	28244	28250	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009012, float globaldef009013, entity globaldef009014) update_cachex2 = 
+{
+    
+    if(globaldef009012.field000334 > globaldef000191)
+    {
+        
+        if(globaldef009013 >= globaldef009012.field000334)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    globaldef009012.field000334 = globaldef009013;
+    globaldef009012.field000324 = globaldef009014;
+    return globaldef000192;
+};
+
+// func002650
+// function begins at statement 53460, parm_start=28252
+// OP_NOT_F	28252	0	28254
+// OP_IFNOT	28254	2	0
+// OP_RETURN	30	0	0
+// OP_STORE_ENT	836	28253	0
+// OP_IFNOT	28253	8	0
+// OP_LOAD_F	28253	687	28255
+// OP_EQ_F	28255	28252	28256
+// OP_IFNOT	28256	2	0
+// OP_RETURN	28253	0	0
+// OP_LOAD_ENT	28253	620	28257
+// OP_STORE_ENT	28257	28253	0
+// OP_GOTO	-7	0	0
+// OP_RETURN	30	0	0
+// OP_DONE	0	0	0
+entity (float globaldef009016) func002650 = 
+{
+    local entity globaldef009017;
+    
+    if(!globaldef009016)
+    {
+        return globaldef000003;
+    }
+    
+    globaldef009017 = globaldef000819;
+    
+    while(globaldef009017)
+    {
+        
+        if(globaldef009017.waypointnumber == globaldef009016)
+        {
+            return globaldef009017;
+        }
+        
+        globaldef009017 = globaldef009017.field000297;
+    }
+    
+    return globaldef000003;
+};
+
+// func002651
+// function begins at statement 53474, parm_start=28259
+// OP_STORE_ENT	30	28260	0
+// OP_STORE_F	5347	28262	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_LOAD_S	28259	689	28268
+// OP_STORE_V	28268	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28261	0
+// OP_IFNOT	28261	25	0
+// OP_LOAD_V	28261	94	28269
+// OP_LOAD_V	28261	98	28272
+// OP_ADD_V	28269	28272	28275
+// OP_MUL_VF	28275	539	28278
+// OP_STORE_V	28278	28265	0
+// OP_LOAD_F	28261	97	28281
+// OP_ADD_F	28281	216	28282
+// OP_STORE_F	28282	28267	0
+// OP_LOAD_V	28259	105	28283
+// OP_SUB_V	28265	28283	28286
+// OP_STORE_V	28286	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28263	0
+// OP_LT	28263	28262	28289
+// OP_IFNOT	28289	3	0
+// OP_STORE_ENT	28261	28260	0
+// OP_STORE_F	28263	28262	0
+// OP_STORE_V	28261	4	0
+// OP_STORE_V	129	7	0
+// OP_LOAD_S	28259	689	28290
+// OP_STORE_V	28290	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28261	0
+// OP_GOTO	-24	0	0
+// OP_NOT_ENT	28260	0	28291
+// OP_IFNOT	28291	10	0
+// OP_LOAD_F	28259	687	28292
+// OP_STORE_V	28292	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28264	0
+// OP_STORE_V	28293	4	0
+// OP_STORE_V	28264	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_GOTO	8	0	0
+// OP_ADDRESS	28260	687	28294
+// OP_LOAD_F	28259	687	28295
+// OP_STOREP_F	28295	28294	0
+// OP_ADDRESS	28260	622	28296
+// OP_STOREP_ENT	28259	28296	0
+// OP_ADDRESS	28259	181	28297
+// OP_STOREP_ENT	28260	28297	0
+// OP_DONE	0	0	0
+void (entity globaldef009019) func002651 = 
+{
+    local entity globaldef009020;
+    local entity globaldef009021;
+    local float globaldef009022;
+    local float globaldef009023;
+    local string globaldef009024;
+    local vector globaldef009025;
+    globaldef009020 = globaldef000003;
+    globaldef009022 = 400.000;
+    globaldef009021 = find(globaldef000003, classname, globaldef009019.waypointitem);
+    
+    while(globaldef009021)
+    {
+        globaldef009025 = (globaldef009021.absmin + globaldef009021.absmax) * globaldef000522;
+        globaldef009025_z = globaldef009021.absmin_z + globaldef000194;
+        globaldef009023 = vlen(globaldef009025 - globaldef009019.origin);
+        
+        if(globaldef009023 < globaldef009022)
+        {
+            globaldef009020 = globaldef009021;
+            globaldef009022 = globaldef009023;
+        }
+        
+        globaldef009021 = find(globaldef009021, classname, globaldef009019.waypointitem);
+    }
+    
+    if(!globaldef009020)
+    {
+        globaldef009024 = ftos(globaldef009019.waypointnumber);
+        objerror3("no item near 'item' waypoint ", globaldef009024, "\n");
+    }
+    else
+    {
+        globaldef009020.waypointnumber = globaldef009019.waypointnumber;
+        globaldef009020.field000299 = globaldef009019;
+        globaldef009019.enemy = globaldef009020;
+    }
+    
+};
+
+// func002652
+// function begins at statement 53526, parm_start=28299
+// OP_STORE_ENT	30	28301	0
+// OP_STORE_F	5347	28303	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	19126	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28300	0
+// OP_IFNOT	28300	24	0
+// OP_LOAD_V	28300	94	28308
+// OP_LOAD_V	28300	98	28311
+// OP_ADD_V	28308	28311	28314
+// OP_MUL_VF	28314	539	28317
+// OP_STORE_V	28317	28305	0
+// OP_LOAD_F	28300	97	28320
+// OP_ADD_F	28320	229	28321
+// OP_STORE_F	28321	28307	0
+// OP_LOAD_V	28299	105	28322
+// OP_SUB_V	28305	28322	28325
+// OP_STORE_V	28325	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28302	0
+// OP_LT	28302	28303	28328
+// OP_IFNOT	28328	3	0
+// OP_STORE_ENT	28300	28301	0
+// OP_STORE_F	28302	28303	0
+// OP_STORE_V	28300	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	19126	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28300	0
+// OP_GOTO	-23	0	0
+// OP_NOT_ENT	28301	0	28329
+// OP_IFNOT	28329	10	0
+// OP_LOAD_F	28299	687	28330
+// OP_STORE_V	28330	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28304	0
+// OP_STORE_V	28331	4	0
+// OP_STORE_V	28304	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_GOTO	8	0	0
+// OP_ADDRESS	28301	687	28332
+// OP_LOAD_F	28299	687	28333
+// OP_STOREP_F	28333	28332	0
+// OP_ADDRESS	28301	622	28334
+// OP_STOREP_ENT	28299	28334	0
+// OP_ADDRESS	28299	181	28335
+// OP_STOREP_ENT	28301	28335	0
+// OP_DONE	0	0	0
+void (entity globaldef009031) func002652 = 
+{
+    local entity globaldef009032;
+    local entity globaldef009033;
+    local float globaldef009034;
+    local float globaldef009035;
+    local string globaldef009036;
+    local vector globaldef009037;
+    globaldef009033 = globaldef000003;
+    globaldef009035 = 400.000;
+    globaldef009032 = find(globaldef000003, classname, "trigger_teleport");
+    
+    while(globaldef009032)
+    {
+        globaldef009037 = (globaldef009032.absmin + globaldef009032.absmax) * globaldef000522;
+        globaldef009037_z = globaldef009032.absmin_z + globaldef000207;
+        globaldef009034 = vlen(globaldef009037 - globaldef009031.origin);
+        
+        if(globaldef009034 < globaldef009035)
+        {
+            globaldef009033 = globaldef009032;
+            globaldef009035 = globaldef009034;
+        }
+        
+        globaldef009032 = find(globaldef009032, classname, "trigger_teleport");
+    }
+    
+    if(!globaldef009033)
+    {
+        globaldef009036 = ftos(globaldef009031.waypointnumber);
+        objerror3("no teleporter near 'teleport' waypoint ", globaldef009036, "\n");
+    }
+    else
+    {
+        globaldef009033.waypointnumber = globaldef009031.waypointnumber;
+        globaldef009033.field000299 = globaldef009031;
+        globaldef009031.enemy = globaldef009033;
+    }
+    
+};
+
+// func002653
+// function begins at statement 53576, parm_start=28337
+// OP_STORE_ENT	30	28339	0
+// OP_STORE_F	5347	28341	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	11722	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28338	0
+// OP_IFNOT	28338	26	0
+// OP_LOAD_V	28338	443	28346
+// OP_LOAD_V	28338	134	28349
+// OP_LOAD_V	28338	138	28352
+// OP_ADD_V	28349	28352	28355
+// OP_MUL_VF	28355	539	28358
+// OP_ADD_V	28346	28358	28361
+// OP_STORE_V	28361	28343	0
+// OP_LOAD_F	28338	141	28364
+// OP_ADD_F	28364	216	28365
+// OP_STORE_F	28365	28345	0
+// OP_LOAD_V	28337	105	28366
+// OP_SUB_V	28343	28366	28369
+// OP_STORE_V	28369	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28340	0
+// OP_LT	28340	28341	28372
+// OP_IFNOT	28372	3	0
+// OP_STORE_ENT	28338	28339	0
+// OP_STORE_F	28340	28341	0
+// OP_STORE_V	28338	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	11722	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28338	0
+// OP_GOTO	-25	0	0
+// OP_NOT_ENT	28339	0	28373
+// OP_IFNOT	28373	10	0
+// OP_LOAD_F	28337	687	28374
+// OP_STORE_V	28374	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28342	0
+// OP_STORE_V	28375	4	0
+// OP_STORE_V	28342	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_GOTO	8	0	0
+// OP_ADDRESS	28339	687	28376
+// OP_LOAD_F	28337	687	28377
+// OP_STOREP_F	28377	28376	0
+// OP_ADDRESS	28339	623	28378
+// OP_STOREP_ENT	28337	28378	0
+// OP_ADDRESS	28337	181	28379
+// OP_STOREP_ENT	28339	28379	0
+// OP_DONE	0	0	0
+void (entity globaldef009043) func002653 = 
+{
+    local entity globaldef009044;
+    local entity globaldef009045;
+    local float globaldef009046;
+    local float globaldef009047;
+    local string globaldef009048;
+    local vector globaldef009049;
+    globaldef009045 = globaldef000003;
+    globaldef009047 = 400.000;
+    globaldef009044 = find(globaldef000003, classname, "plat");
+    
+    while(globaldef009044)
+    {
+        globaldef009049 = globaldef009044.pos2 + ((globaldef009044.mins + globaldef009044.maxs) * globaldef000522);
+        globaldef009049_z = globaldef009044.maxs_z + globaldef000194;
+        globaldef009046 = vlen(globaldef009049 - globaldef009043.origin);
+        
+        if(globaldef009046 < globaldef009047)
+        {
+            globaldef009045 = globaldef009044;
+            globaldef009047 = globaldef009046;
+        }
+        
+        globaldef009044 = find(globaldef009044, classname, "plat");
+    }
+    
+    if(!globaldef009045)
+    {
+        globaldef009048 = ftos(globaldef009043.waypointnumber);
+        objerror3("no plat near 'plattop' waypoint ", globaldef009048, "\n");
+    }
+    else
+    {
+        globaldef009045.waypointnumber = globaldef009043.waypointnumber;
+        globaldef009045.field000300 = globaldef009043;
+        globaldef009043.enemy = globaldef009045;
+    }
+    
+};
+
+// func002654
+// function begins at statement 53628, parm_start=28381
+// OP_STORE_ENT	30	28383	0
+// OP_STORE_F	2044	28385	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	11722	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28382	0
+// OP_IFNOT	28382	30	0
+// OP_LOAD_V	28382	443	28390
+// OP_LOAD_V	28382	134	28393
+// OP_LOAD_V	28382	138	28396
+// OP_ADD_V	28393	28396	28399
+// OP_MUL_VF	28399	539	28402
+// OP_ADD_V	28390	28402	28405
+// OP_STORE_V	28405	28387	0
+// OP_LOAD_F	28382	141	28408
+// OP_LOAD_F	28382	442	28409
+// OP_LOAD_F	28382	446	28410
+// OP_SUB_F	28409	28410	28411
+// OP_SUB_F	28408	28411	28412
+// OP_ADD_F	28412	216	28413
+// OP_STORE_F	28413	28389	0
+// OP_LOAD_V	28381	105	28414
+// OP_SUB_V	28387	28414	28417
+// OP_STORE_V	28417	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28384	0
+// OP_LT	28384	28385	28420
+// OP_IFNOT	28420	3	0
+// OP_STORE_ENT	28382	28383	0
+// OP_STORE_F	28384	28385	0
+// OP_STORE_V	28382	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	11722	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	28382	0
+// OP_GOTO	-29	0	0
+// OP_NOT_ENT	28383	0	28421
+// OP_IFNOT	28421	10	0
+// OP_LOAD_F	28381	687	28422
+// OP_STORE_V	28422	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28386	0
+// OP_STORE_V	28423	4	0
+// OP_STORE_V	28386	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_GOTO	8	0	0
+// OP_ADDRESS	28383	687	28424
+// OP_LOAD_F	28381	687	28425
+// OP_STOREP_F	28425	28424	0
+// OP_ADDRESS	28383	622	28426
+// OP_STOREP_ENT	28381	28426	0
+// OP_ADDRESS	28381	181	28427
+// OP_STOREP_ENT	28383	28427	0
+// OP_DONE	0	0	0
+void (entity globaldef009055) func002654 = 
+{
+    local entity globaldef009056;
+    local entity globaldef009057;
+    local float globaldef009058;
+    local float globaldef009059;
+    local string globaldef009060;
+    local vector globaldef009061;
+    globaldef009057 = globaldef000003;
+    globaldef009059 = 200.000;
+    globaldef009056 = find(globaldef000003, classname, "plat");
+    
+    while(globaldef009056)
+    {
+        globaldef009061 = globaldef009056.pos2 + ((globaldef009056.mins + globaldef009056.maxs) * globaldef000522);
+        globaldef009061_z = (globaldef009056.maxs_z - (globaldef009056.pos1_z - globaldef009056.pos2_z)) + globaldef000194;
+        globaldef009058 = vlen(globaldef009061 - globaldef009055.origin);
+        
+        if(globaldef009058 < globaldef009059)
+        {
+            globaldef009057 = globaldef009056;
+            globaldef009059 = globaldef009058;
+        }
+        
+        globaldef009056 = find(globaldef009056, classname, "plat");
+    }
+    
+    if(!globaldef009057)
+    {
+        globaldef009060 = ftos(globaldef009055.waypointnumber);
+        objerror3("no plat near 'platbottom' waypoint ", globaldef009060, "\n");
+    }
+    else
+    {
+        globaldef009057.waypointnumber = globaldef009055.waypointnumber;
+        globaldef009057.field000299 = globaldef009055;
+        globaldef009055.enemy = globaldef009057;
+    }
+    
+};
+
+// func002655
+// function begins at statement 53684, parm_start=28429
+// OP_NOT_ENT	28430	0	28432
+// OP_IFNOT	28432	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	28430	688	28433
+// OP_EQ_F	28433	719	28434
+// OP_IFNOT	28434	3	0
+// OP_STORE_F	1470	28431	0
+// OP_GOTO	7	0	0
+// OP_LOAD_V	28430	105	28435
+// OP_LOAD_V	28429	105	28438
+// OP_SUB_V	28435	28438	28441
+// OP_STORE_V	28441	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28431	0
+// OP_EQ_F	28431	213	28444
+// OP_IFNOT	28444	2	0
+// OP_STORE_F	3036	28431	0
+// OP_RETURN	28431	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009067, entity globaldef009068) func002655 = 
+{
+    local float globaldef009069;
+    
+    if(!globaldef009068)
+    {
+        return globaldef000191;
+    }
+    
+    if(globaldef009068.waypointtype == globaldef000702)
+    {
+        globaldef009069 = 50.000;
+    }
+    else
+    {
+        globaldef009069 = vlen(globaldef009068.origin - globaldef009067.origin);
+    }
+    
+    
+    if(globaldef009069 == globaldef000191)
+    {
+        globaldef009069 = 0.100;
+    }
+    
+    return globaldef009069;
+};
+
+// func002656
+// function begins at statement 53703, parm_start=28446
+// OP_STORE_V	30	4	0
+// OP_CALL1	492	0	0
+// OP_STORE_ENT	1	28446	0
+// OP_STORE_F	214	28447	0
+// OP_IFNOT	28446	7	0
+// OP_ADD_F	28447	214	28448
+// OP_STORE_F	28448	28447	0
+// OP_STORE_V	28446	4	0
+// OP_CALL1	492	0	0
+// OP_STORE_ENT	1	28446	0
+// OP_GOTO	-6	0	0
+// OP_SUB_F	745	28447	28449
+// OP_SUB_F	28449	743	28450
+// OP_SUB_F	28450	742	28451
+// OP_SUB_F	28451	744	28452
+// OP_SUB_F	28452	746	28453
+// OP_STORE_F	28453	804	0
+// OP_DONE	0	0	0
+void () func002656 = 
+{
+    local entity globaldef009071;
+    local float globaldef009072;
+    globaldef009071 = nextent(globaldef000003);
+    globaldef009072 = globaldef000192;
+    
+    while(globaldef009071)
+    {
+        globaldef009072 = globaldef009072 + globaldef000192;
+        globaldef009071 = nextent(globaldef009071);
+    }
+    
+    globaldef000787 = ((((globaldef000728 - globaldef009072) - globaldef000726) - globaldef000725) - globaldef000727) - globaldef000729;
+};
+
+// func002657
+// function begins at statement 53721, parm_start=28454
+// OP_EQ_F	805	724	28456
+// OP_IFNOT	28456	22	0
+// OP_NOT_F	806	0	28457
+// OP_IFNOT	28457	6	0
+// OP_CALL0	1178	0	0
+// OP_IFNOT	807	3	0
+// OP_STORE_V	28458	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	28459	4	0
+// OP_CALL1	472	0	0
+// OP_CALL0	28445	0	0
+// OP_OR	806	807	28460
+// OP_IFNOT	28460	5	0
+// OP_STORE_F	725	805	0
+// OP_BITOR	821	768	28461
+// OP_STORE_F	28461	821	0
+// OP_GOTO	4	0	0
+// OP_STORE_F	213	816	0
+// OP_STORE_F	727	805	0
+// OP_STORE_ENT	30	827	0
+// OP_RETURN	0	0	0
+// OP_GOTO	178	0	0
+// OP_EQ_F	805	725	28462
+// OP_IFNOT	28462	137	0
+// OP_NOT_ENT	827	0	28463
+// OP_IFNOT	28463	5	0
+// OP_STORE_V	28464	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_ENT	836	28454	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	827	28454	0
+// OP_STORE_V	28465	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_F	213	28455	0
+// OP_IFNOT	28454	122	0
+// OP_ADDRESS	28454	622	28466
+// OP_LOAD_F	28454	690	28467
+// OP_STORE_V	28467	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28466	0
+// OP_ADDRESS	28454	623	28468
+// OP_LOAD_F	28454	691	28469
+// OP_STORE_V	28469	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28468	0
+// OP_ADDRESS	28454	624	28470
+// OP_LOAD_F	28454	692	28471
+// OP_STORE_V	28471	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28470	0
+// OP_ADDRESS	28454	625	28472
+// OP_LOAD_F	28454	693	28473
+// OP_STORE_V	28473	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28472	0
+// OP_ADDRESS	28454	626	28474
+// OP_LOAD_F	28454	694	28475
+// OP_STORE_V	28475	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28474	0
+// OP_ADDRESS	28454	627	28476
+// OP_LOAD_F	28454	695	28477
+// OP_STORE_V	28477	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28476	0
+// OP_ADDRESS	28454	628	28478
+// OP_LOAD_F	28454	696	28479
+// OP_STORE_V	28479	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28478	0
+// OP_ADDRESS	28454	629	28480
+// OP_LOAD_F	28454	697	28481
+// OP_STORE_V	28481	4	0
+// OP_CALL1	28251	0	0
+// OP_STOREP_ENT	1	28480	0
+// OP_ADDRESS	28454	630	28482
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	622	28483
+// OP_STORE_V	28483	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28482	0
+// OP_ADDRESS	28454	631	28484
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	623	28485
+// OP_STORE_V	28485	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28484	0
+// OP_ADDRESS	28454	632	28486
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	624	28487
+// OP_STORE_V	28487	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28486	0
+// OP_ADDRESS	28454	633	28488
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	625	28489
+// OP_STORE_V	28489	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28488	0
+// OP_ADDRESS	28454	634	28490
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	626	28491
+// OP_STORE_V	28491	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28490	0
+// OP_ADDRESS	28454	635	28492
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	627	28493
+// OP_STORE_V	28493	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28492	0
+// OP_ADDRESS	28454	636	28494
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	628	28495
+// OP_STORE_V	28495	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28494	0
+// OP_ADDRESS	28454	637	28496
+// OP_STORE_V	28454	4	0
+// OP_LOAD_ENT	28454	629	28497
+// OP_STORE_V	28497	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28496	0
+// OP_LOAD_F	28454	688	28498
+// OP_EQ_F	28498	720	28499
+// OP_IFNOT	28499	4	0
+// OP_STORE_V	28454	4	0
+// OP_CALL1	28258	0	0
+// OP_GOTO	18	0	0
+// OP_LOAD_F	28454	688	28500
+// OP_EQ_F	28500	719	28501
+// OP_IFNOT	28501	4	0
+// OP_STORE_V	28454	4	0
+// OP_CALL1	28298	0	0
+// OP_GOTO	12	0	0
+// OP_LOAD_F	28454	688	28502
+// OP_EQ_F	28502	717	28503
+// OP_IFNOT	28503	4	0
+// OP_STORE_V	28454	4	0
+// OP_CALL1	28336	0	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	28454	688	28504
+// OP_EQ_F	28504	723	28505
+// OP_IFNOT	28505	3	0
+// OP_STORE_V	28454	4	0
+// OP_CALL1	28380	0	0
+// OP_LOAD_ENT	28454	620	28506
+// OP_STORE_ENT	28506	28454	0
+// OP_STORE_ENT	28454	827	0
+// OP_IFNOT	28454	6	0
+// OP_ADD_F	28455	214	28507
+// OP_STORE_F	28507	28455	0
+// OP_GT	28455	739	28508
+// OP_IFNOT	28508	2	0
+// OP_RETURN	0	0	0
+// OP_GOTO	-121	0	0
+// OP_STORE_F	726	805	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	40	0	0
+// OP_EQ_F	805	726	28509
+// OP_IFNOT	28509	38	0
+// OP_NOT_ENT	827	0	28510
+// OP_IFNOT	28510	5	0
+// OP_STORE_V	28511	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_ENT	836	28454	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	827	28454	0
+// OP_STORE_V	28465	4	0
+// OP_CALL1	472	0	0
+// OP_IFNOT	28454	23	0
+// OP_LOAD_F	28454	688	28512
+// OP_EQ_F	28512	720	28513
+// OP_IFNOT	28513	17	0
+// OP_LOAD_ENT	28454	181	28514
+// OP_LOAD_FNC	28514	547	28515
+// OP_NOT_FNC	28515	0	28516
+// OP_IFNOT	28516	3	0
+// OP_STORE_V	28517	4	0
+// OP_CALL1	461	0	0
+// OP_LOAD_ENT	28454	181	28518
+// OP_STORE_V	28518	4	0
+// OP_STORE_V	28454	7	0
+// OP_STORE_V	213	10	0
+// OP_LOAD_ENT	28454	181	28519
+// OP_STORE_V	28519	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_ENT	28454	620	28520
+// OP_STORE_ENT	28520	827	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	28454	620	28521
+// OP_STORE_ENT	28521	28454	0
+// OP_GOTO	-22	0	0
+// OP_STORE_ENT	30	827	0
+// OP_STORE_F	727	805	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_F	213	816	0
+// OP_DONE	0	0	0
+void () func002657 = 
+{
+    local entity globaldef009073;
+    local float globaldef009074;
+    if(globaldef000788 == globaldef000707)
+    {
+        if(!globaldef000789)
+        {
+            func002638();
+            
+            if(globaldef000790)
+            {
+                bprint("hard coded waypoints present\n");
+            }
+            
+        }
+        else
+        {
+            bprint("bsp waypoints present\n");
+        }
+        
+        func002656();
+        if(globaldef000789 || globaldef000790)
+        {
+            globaldef000788 = globaldef000708;
+            globaldef000804 = globaldef000804 | globaldef000751;
+        }
+        else
+        {
+            globaldef000799 = globaldef000191;
+            globaldef000788 = globaldef000710;
+            globaldef000810 = globaldef000003;
+        }
+        
+        return;
+    }
+    else
+    {
+        if(globaldef000788 == globaldef000708)
+        {
+            if(!globaldef000810)
+            {
+                bprint("setting up wpp");
+                globaldef009073 = globaldef000819;
+            }
+            else
+            {
+                globaldef009073 = globaldef000810;
+            }
+            
+            bprint(".");
+            globaldef009074 = globaldef000191;
+            
+            while(globaldef009073)
+            {
+                globaldef009073.field000299 = func002650(globaldef009073.wp0);
+                globaldef009073.field000300 = func002650(globaldef009073.wp1);
+                globaldef009073.field000301 = func002650(globaldef009073.wp2);
+                globaldef009073.field000302 = func002650(globaldef009073.wp3);
+                globaldef009073.field000303 = func002650(globaldef009073.wp4);
+                globaldef009073.field000304 = func002650(globaldef009073.wp5);
+                globaldef009073.field000305 = func002650(globaldef009073.wp6);
+                globaldef009073.field000306 = func002650(globaldef009073.wp7);
+                globaldef009073.field000307 = func002655(globaldef009073, globaldef009073.field000299);
+                globaldef009073.field000308 = func002655(globaldef009073, globaldef009073.field000300);
+                globaldef009073.field000309 = func002655(globaldef009073, globaldef009073.field000301);
+                globaldef009073.field000310 = func002655(globaldef009073, globaldef009073.field000302);
+                globaldef009073.field000311 = func002655(globaldef009073, globaldef009073.field000303);
+                globaldef009073.field000312 = func002655(globaldef009073, globaldef009073.field000304);
+                globaldef009073.field000313 = func002655(globaldef009073, globaldef009073.field000305);
+                globaldef009073.field000314 = func002655(globaldef009073, globaldef009073.field000306);
+                if(globaldef009073.waypointtype == globaldef000703)
+                {
+                    func002651(globaldef009073);
+                }
+                else
+                {
+                    if(globaldef009073.waypointtype == globaldef000702)
+                    {
+                        func002652(globaldef009073);
+                    }
+                    else
+                    {
+                        if(globaldef009073.waypointtype == globaldef000700)
+                        {
+                            func002653(globaldef009073);
+                        }
+                        else
+                        {
+                            
+                            if(globaldef009073.waypointtype == globaldef000706)
+                            {
+                                func002654(globaldef009073);
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                globaldef009073 = globaldef009073.field000297;
+                globaldef000810 = globaldef009073;
+                
+                if(globaldef009073)
+                {
+                    globaldef009074 = globaldef009074 + globaldef000192;
+                    
+                    if(globaldef009074 > globaldef000722)
+                    {
+                        return;
+                    }
+                    
+                }
+                
+            }
+            
+            globaldef000788 = globaldef000709;
+            bprint("\n");
+        }
+        else
+        {
+            
+            if(globaldef000788 == globaldef000709)
+            {
+                if(!globaldef000810)
+                {
+                    bprint("setting up wpc");
+                    globaldef009073 = globaldef000819;
+                }
+                else
+                {
+                    globaldef009073 = globaldef000810;
+                }
+                
+                bprint(".");
+                
+                while(globaldef009073)
+                {
+                    
+                    if(globaldef009073.waypointtype == globaldef000703)
+                    {
+                        
+                        if(!globaldef009073.enemy.field000224)
+                        {
+                            objerror("cached item without cache update function");
+                        }
+                        
+                        func002683(globaldef009073.enemy, globaldef009073, globaldef000191, globaldef009073.enemy);
+                        globaldef000810 = globaldef009073.field000297;
+                        return;
+                    }
+                    
+                    globaldef009073 = globaldef009073.field000297;
+                }
+                
+                globaldef000810 = globaldef000003;
+                globaldef000788 = globaldef000710;
+                bprint("\n");
+                globaldef000799 = globaldef000191;
+            }
+            
+        }
+        
+    }
+    
+};
+
+// func002658
+// function begins at statement 53922, parm_start=28523
+// OP_LT	28523	213	28527
+// OP_IFNOT	28527	4	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	2598	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	28523	4	0
+// OP_CALL1	488	0	0
+// OP_STORE_F	1	28523	0
+// OP_STORE_F	213	28526	0
+// OP_STORE_F	5984	28524	0
+// OP_GE	28524	3036	28528
+// OP_IFNOT	28528	30	0
+// OP_EQ_F	28524	3036	28529
+// OP_IFNOT	28529	4	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	10002	7	0
+// OP_CALL2	496	0	0
+// OP_DIV_F	28523	28524	28530
+// OP_STORE_V	28530	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	28525	0
+// OP_IFNOT	28526	6	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	10006	28525	28531
+// OP_STORE_V	28531	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	9	0	0
+// OP_EQ_F	28524	214	28532
+// OP_OR	28532	28525	28533
+// OP_IFNOT	28533	6	0
+// OP_STORE_F	214	28526	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	10006	28525	28534
+// OP_STORE_V	28534	7	0
+// OP_CALL2	496	0	0
+// OP_MUL_F	28525	28524	28535
+// OP_SUB_F	28523	28535	28536
+// OP_STORE_F	28536	28523	0
+// OP_MUL_F	28524	3036	28537
+// OP_STORE_F	28537	28524	0
+// OP_GOTO	-30	0	0
+// OP_DONE	0	0	0
+void (float globaldef009082) func002658 = 
+{
+    local float globaldef009083;
+    local float globaldef009084;
+    local float globaldef009085;
+    
+    if(globaldef009082 < globaldef000191)
+    {
+        WriteByte(globaldef000326, 45.000);
+    }
+    
+    globaldef009082 = fabs(globaldef009082);
+    globaldef009085 = globaldef000191;
+    globaldef009083 = 10000.000;
+    
+    while(globaldef009083 >= 0.100)
+    {
+        
+        if(globaldef009083 == 0.100)
+        {
+            WriteByte(globaldef000326, 46.000);
+        }
+        
+        globaldef009084 = floor(globaldef009082 / globaldef009083);
+        if(globaldef009085)
+        {
+            WriteByte(globaldef000326, 48.000 + globaldef009084);
+        }
+        else
+        {
+            
+            if((globaldef009083 == globaldef000192) || globaldef009084)
+            {
+                globaldef009085 = globaldef000192;
+                WriteByte(globaldef000326, 48.000 + globaldef009084);
+            }
+            
+        }
+        
+        globaldef009082 = globaldef009082 - (globaldef009084 * globaldef009083);
+        globaldef009083 = globaldef009083 * 0.100;
+    }
+    
+};
+
+// func002659
+// function begins at statement 53964, parm_start=28539
+// OP_STORE_ENT	28539	81	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	302	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	28540	4	0
+// OP_CALL1	28522	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	28541	4	0
+// OP_CALL1	28522	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	28542	4	0
+// OP_CALL1	28522	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009087, vector globaldef009088) func002659 = 
+{
+    globaldef000059 = globaldef009087;
+    WriteByte(globaldef000326, globaldef000285);
+    func002658(globaldef009088_x);
+    WriteByte(globaldef000326, globaldef000197);
+    func002658(globaldef009088_y);
+    WriteByte(globaldef000326, globaldef000197);
+    func002658(globaldef009088_z);
+    WriteByte(globaldef000326, globaldef000191);
+};
+
+// func002660
+// function begins at statement 53984, parm_start=28543
+// OP_LOAD_F	28	575	28543
+// OP_BITAND	28543	710	28544
+// OP_IFNOT	28544	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	575	28545
+// OP_LOAD_F	28	575	28546
+// OP_BITOR	28546	709	28547
+// OP_STOREP_F	28547	28545	0
+// OP_DONE	0	0	0
+void () func002660 = 
+{
+    
+    if(globaldef000001.field000252 & globaldef000693)
+    {
+        return;
+    }
+    
+    globaldef000001.field000252 = globaldef000001.field000252 | globaldef000692;
+};
+
+// func002661
+// function begins at statement 53993, parm_start=28548
+// OP_LOAD_F	28	575	28551
+// OP_BITAND	28551	709	28552
+// OP_NOT_F	28552	0	28553
+// OP_IFNOT	28553	2	0
+// OP_RETURN	0	0	0
+// OP_EQ_E	828	30	28554
+// OP_IFNOT	28554	14	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28555	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	803	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28550	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8039	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_ENT	836	828	0
+// OP_STORE_F	213	28549	0
+// OP_STORE_ENT	828	28548	0
+// OP_LT	28549	235	28556
+// OP_IFNOT	28556	196	0
+// OP_EQ_E	28548	30	28557
+// OP_IFNOT	28557	11	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28558	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	28	575	28559
+// OP_LOAD_F	28	575	28560
+// OP_LOAD_F	28	575	28561
+// OP_BITAND	28561	709	28562
+// OP_SUB_F	28560	28562	28563
+// OP_STOREP_F	28563	28559	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28548	690	28564
+// OP_LOAD_ENT	28548	622	28565
+// OP_LOAD_F	28565	687	28566
+// OP_STOREP_F	28566	28564	0
+// OP_ADDRESS	28548	691	28567
+// OP_LOAD_ENT	28548	623	28568
+// OP_LOAD_F	28568	687	28569
+// OP_STOREP_F	28569	28567	0
+// OP_ADDRESS	28548	692	28570
+// OP_LOAD_ENT	28548	624	28571
+// OP_LOAD_F	28571	687	28572
+// OP_STOREP_F	28572	28570	0
+// OP_ADDRESS	28548	693	28573
+// OP_LOAD_ENT	28548	625	28574
+// OP_LOAD_F	28574	687	28575
+// OP_STOREP_F	28575	28573	0
+// OP_ADDRESS	28548	694	28576
+// OP_LOAD_ENT	28548	626	28577
+// OP_LOAD_F	28577	687	28578
+// OP_STOREP_F	28578	28576	0
+// OP_ADDRESS	28548	695	28579
+// OP_LOAD_ENT	28548	627	28580
+// OP_LOAD_F	28580	687	28581
+// OP_STOREP_F	28581	28579	0
+// OP_ADDRESS	28548	696	28582
+// OP_LOAD_ENT	28548	628	28583
+// OP_LOAD_F	28583	687	28584
+// OP_STOREP_F	28584	28582	0
+// OP_ADDRESS	28548	697	28585
+// OP_LOAD_ENT	28548	629	28586
+// OP_LOAD_F	28586	687	28587
+// OP_STOREP_F	28587	28585	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28588	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28589	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28590	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_V	28548	105	28591
+// OP_STORE_V	28591	7	0
+// OP_CALL2	28538	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28594	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28595	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28548	687	28596
+// OP_STORE_V	28596	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28550	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28594	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28597	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28548	688	28598
+// OP_STORE_V	28598	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28550	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28594	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_S	28548	689	28599
+// OP_IFNOT	28599	11	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28600	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_S	28548	689	28601
+// OP_STORE_V	28601	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28594	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28548	690	28602
+// OP_IFNOT	28602	10	0
+// OP_LOAD_F	28548	690	28603
+// OP_STORE_V	28603	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28604	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	691	28605
+// OP_IFNOT	28605	10	0
+// OP_LOAD_F	28548	691	28606
+// OP_STORE_V	28606	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28607	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	692	28608
+// OP_IFNOT	28608	10	0
+// OP_LOAD_F	28548	692	28609
+// OP_STORE_V	28609	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28610	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	693	28611
+// OP_IFNOT	28611	10	0
+// OP_LOAD_F	28548	693	28612
+// OP_STORE_V	28612	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28613	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	694	28614
+// OP_IFNOT	28614	10	0
+// OP_LOAD_F	28548	694	28615
+// OP_STORE_V	28615	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28616	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	695	28617
+// OP_IFNOT	28617	10	0
+// OP_LOAD_F	28548	695	28618
+// OP_STORE_V	28618	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28619	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	696	28620
+// OP_IFNOT	28620	10	0
+// OP_LOAD_F	28548	696	28621
+// OP_STORE_V	28621	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28622	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28548	697	28623
+// OP_IFNOT	28623	10	0
+// OP_LOAD_F	28548	697	28624
+// OP_STORE_V	28624	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28550	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28625	7	0
+// OP_STORE_V	28550	10	0
+// OP_STORE_V	28594	13	0
+// OP_CALL4	941	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28626	7	0
+// OP_CALL2	928	0	0
+// OP_ADD_F	28549	214	28627
+// OP_STORE_F	28627	28549	0
+// OP_LOAD_ENT	28548	620	28628
+// OP_STORE_ENT	28628	28548	0
+// OP_STORE_ENT	28548	828	0
+// OP_GOTO	-196	0	0
+// OP_DONE	0	0	0
+void () func002661 = 
+{
+    local entity globaldef009092;
+    local float globaldef009093;
+    local string globaldef009094;
+    
+    if(!(globaldef000001.field000252 & globaldef000692))
+    {
+        return;
+    }
+    
+    
+    if(globaldef000811 == globaldef000003)
+    {
+        func000092(globaldef000001, "number of waypoints = ");
+        globaldef009094 = ftos(globaldef000786);
+        func000092(globaldef000001, globaldef009094);
+        func000092(globaldef000001, "\n\n");
+        globaldef000811 = globaldef000819;
+    }
+    
+    globaldef009093 = globaldef000191;
+    globaldef009092 = globaldef000811;
+    
+    while(globaldef009093 < globaldef000213)
+    {
+        
+        if(globaldef009092 == globaldef000003)
+        {
+            func000092(globaldef000001, "dumped all waypoints\n");
+            globaldef000001.field000252 = globaldef000001.field000252 - (globaldef000001.field000252 & globaldef000692);
+            return;
+        }
+        
+        globaldef009092.wp0 = globaldef009092.field000299.waypointnumber;
+        globaldef009092.wp1 = globaldef009092.field000300.waypointnumber;
+        globaldef009092.wp2 = globaldef009092.field000301.waypointnumber;
+        globaldef009092.wp3 = globaldef009092.field000302.waypointnumber;
+        globaldef009092.wp4 = globaldef009092.field000303.waypointnumber;
+        globaldef009092.wp5 = globaldef009092.field000304.waypointnumber;
+        globaldef009092.wp6 = globaldef009092.field000305.waypointnumber;
+        globaldef009092.wp7 = globaldef009092.field000306.waypointnumber;
+        func000092(globaldef000001, "{\n");
+        func000092(globaldef000001, " \"classname\" \"waypoint\"\n");
+        func000092(globaldef000001, " \"origin\" \"");
+        func002659(globaldef000001, globaldef009092.origin);
+        func000092(globaldef000001, "\"\n");
+        func000092(globaldef000001, " \"waypointnumber\" \"");
+        globaldef009094 = ftos(globaldef009092.waypointnumber);
+        func000092(globaldef000001, globaldef009094);
+        func000092(globaldef000001, "\"\n");
+        func000092(globaldef000001, " \"waypointtype\" \"");
+        globaldef009094 = ftos(globaldef009092.waypointtype);
+        func000092(globaldef000001, globaldef009094);
+        func000092(globaldef000001, "\"\n");
+        
+        if(globaldef009092.waypointitem)
+        {
+            func000092(globaldef000001, " \"waypointitem\" \"");
+            func000092(globaldef000001, globaldef009092.waypointitem);
+            func000092(globaldef000001, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp0)
+        {
+            globaldef009094 = ftos(globaldef009092.wp0);
+            func000094(globaldef000001, " \"wp0\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp1)
+        {
+            globaldef009094 = ftos(globaldef009092.wp1);
+            func000094(globaldef000001, " \"wp1\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp2)
+        {
+            globaldef009094 = ftos(globaldef009092.wp2);
+            func000094(globaldef000001, " \"wp2\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp3)
+        {
+            globaldef009094 = ftos(globaldef009092.wp3);
+            func000094(globaldef000001, " \"wp3\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp4)
+        {
+            globaldef009094 = ftos(globaldef009092.wp4);
+            func000094(globaldef000001, " \"wp4\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp5)
+        {
+            globaldef009094 = ftos(globaldef009092.wp5);
+            func000094(globaldef000001, " \"wp5\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp6)
+        {
+            globaldef009094 = ftos(globaldef009092.wp6);
+            func000094(globaldef000001, " \"wp6\" \"", globaldef009094, "\"\n");
+        }
+        
+        
+        if(globaldef009092.wp7)
+        {
+            globaldef009094 = ftos(globaldef009092.wp7);
+            func000094(globaldef000001, " \"wp7\" \"", globaldef009094, "\"\n");
+        }
+        
+        func000092(globaldef000001, "}\n");
+        globaldef009093 = globaldef009093 + globaldef000192;
+        globaldef009092 = globaldef009092.field000297;
+        globaldef000811 = globaldef009092;
+    }
+    
+};
+
+// func002662
+// function begins at statement 54213, parm_start=28629
+// OP_LOAD_F	28	575	28629
+// OP_BITAND	28629	709	28630
+// OP_IFNOT	28630	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	575	28631
+// OP_LOAD_F	28	575	28632
+// OP_BITOR	28632	710	28633
+// OP_STOREP_F	28633	28631	0
+// OP_DONE	0	0	0
+void () func002662 = 
+{
+    
+    if(globaldef000001.field000252 & globaldef000692)
+    {
+        return;
+    }
+    
+    globaldef000001.field000252 = globaldef000001.field000252 | globaldef000693;
+};
+
+// func002663
+// function begins at statement 54222, parm_start=28634
+// OP_LOAD_F	28	575	28637
+// OP_BITAND	28637	710	28638
+// OP_NOT_F	28638	0	28639
+// OP_IFNOT	28639	2	0
+// OP_RETURN	0	0	0
+// OP_EQ_E	828	30	28640
+// OP_IFNOT	28640	20	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28555	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	803	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8039	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28641	7	0
+// OP_LOAD_S	30	130	28642
+// OP_STORE_V	28642	10	0
+// OP_STORE_V	28643	13	0
+// OP_CALL4	941	0	0
+// OP_STORE_ENT	836	828	0
+// OP_STORE_F	213	28635	0
+// OP_STORE_ENT	828	28634	0
+// OP_LT	28635	235	28644
+// OP_IFNOT	28644	191	0
+// OP_EQ_E	28634	30	28645
+// OP_IFNOT	28645	14	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28646	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28558	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	28	575	28647
+// OP_LOAD_F	28	575	28648
+// OP_LOAD_F	28	575	28649
+// OP_BITAND	28649	710	28650
+// OP_SUB_F	28648	28650	28651
+// OP_STOREP_F	28651	28647	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28634	690	28652
+// OP_LOAD_ENT	28634	622	28653
+// OP_LOAD_F	28653	687	28654
+// OP_STOREP_F	28654	28652	0
+// OP_ADDRESS	28634	691	28655
+// OP_LOAD_ENT	28634	623	28656
+// OP_LOAD_F	28656	687	28657
+// OP_STOREP_F	28657	28655	0
+// OP_ADDRESS	28634	692	28658
+// OP_LOAD_ENT	28634	624	28659
+// OP_LOAD_F	28659	687	28660
+// OP_STOREP_F	28660	28658	0
+// OP_ADDRESS	28634	693	28661
+// OP_LOAD_ENT	28634	625	28662
+// OP_LOAD_F	28662	687	28663
+// OP_STOREP_F	28663	28661	0
+// OP_ADDRESS	28634	694	28664
+// OP_LOAD_ENT	28634	626	28665
+// OP_LOAD_F	28665	687	28666
+// OP_STOREP_F	28666	28664	0
+// OP_ADDRESS	28634	695	28667
+// OP_LOAD_ENT	28634	627	28668
+// OP_LOAD_F	28668	687	28669
+// OP_STOREP_F	28669	28667	0
+// OP_ADDRESS	28634	696	28670
+// OP_LOAD_ENT	28634	628	28671
+// OP_LOAD_F	28671	687	28672
+// OP_STOREP_F	28672	28670	0
+// OP_ADDRESS	28634	697	28673
+// OP_LOAD_ENT	28634	629	28674
+// OP_LOAD_F	28674	687	28675
+// OP_STOREP_F	28675	28673	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28676	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28677	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_V	28634	105	28678
+// OP_STORE_V	28678	7	0
+// OP_CALL2	28538	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28681	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28634	687	28682
+// OP_STORE_V	28682	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	688	28683
+// OP_STORE_V	28683	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28684	7	0
+// OP_LOAD_S	28634	689	28685
+// OP_STORE_V	28685	10	0
+// OP_STORE_V	28686	13	0
+// OP_CALL4	941	0	0
+// OP_LOAD_F	28634	690	28687
+// OP_LOAD_F	28634	691	28688
+// OP_OR	28687	28688	28689
+// OP_LOAD_F	28634	692	28690
+// OP_OR	28689	28690	28691
+// OP_LOAD_F	28634	693	28692
+// OP_OR	28691	28692	28693
+// OP_IFNOT	28693	44	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28694	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28634	687	28695
+// OP_STORE_V	28695	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	690	28696
+// OP_STORE_V	28696	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	691	28697
+// OP_STORE_V	28697	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	692	28698
+// OP_STORE_V	28698	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	693	28699
+// OP_STORE_V	28699	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	28700	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	694	28701
+// OP_LOAD_F	28634	695	28702
+// OP_OR	28701	28702	28703
+// OP_LOAD_F	28634	696	28704
+// OP_OR	28703	28704	28705
+// OP_LOAD_F	28634	697	28706
+// OP_OR	28705	28706	28707
+// OP_IFNOT	28707	44	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28708	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28634	687	28709
+// OP_STORE_V	28709	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	694	28710
+// OP_STORE_V	28710	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	695	28711
+// OP_STORE_V	28711	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	696	28712
+// OP_STORE_V	28712	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	5161	10	0
+// OP_CALL3	934	0	0
+// OP_LOAD_F	28634	697	28713
+// OP_STORE_V	28713	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28636	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	28636	7	0
+// OP_STORE_V	28700	10	0
+// OP_CALL3	934	0	0
+// OP_ADD_F	28635	214	28714
+// OP_STORE_F	28714	28635	0
+// OP_LOAD_ENT	28634	620	28715
+// OP_STORE_ENT	28715	28634	0
+// OP_STORE_ENT	28634	828	0
+// OP_GOTO	-191	0	0
+// OP_DONE	0	0	0
+void () func002663 = 
+{
+    local entity globaldef009113;
+    local float globaldef009114;
+    local string globaldef009115;
+    
+    if(!(globaldef000001.field000252 & globaldef000693))
+    {
+        return;
+    }
+    
+    
+    if(globaldef000811 == globaldef000003)
+    {
+        func000092(globaldef000001, "number of waypoints = ");
+        globaldef009115 = ftos(globaldef000786);
+        func000092(globaldef000001, globaldef009115);
+        func000092(globaldef000001, "\n\n");
+        func000094(globaldef000001, "	if (world.model == \"", globaldef000003.model, "\")\n	{\n");
+        globaldef000811 = globaldef000819;
+    }
+    
+    globaldef009114 = globaldef000191;
+    globaldef009113 = globaldef000811;
+    
+    while(globaldef009114 < globaldef000213)
+    {
+        
+        if(globaldef009113 == globaldef000003)
+        {
+            func000092(globaldef000001, "	}\n\n");
+            func000092(globaldef000001, "dumped all waypoints\n");
+            globaldef000001.field000252 = globaldef000001.field000252 - (globaldef000001.field000252 & globaldef000693);
+            return;
+        }
+        
+        globaldef009113.wp0 = globaldef009113.field000299.waypointnumber;
+        globaldef009113.wp1 = globaldef009113.field000300.waypointnumber;
+        globaldef009113.wp2 = globaldef009113.field000301.waypointnumber;
+        globaldef009113.wp3 = globaldef009113.field000302.waypointnumber;
+        globaldef009113.wp4 = globaldef009113.field000303.waypointnumber;
+        globaldef009113.wp5 = globaldef009113.field000304.waypointnumber;
+        globaldef009113.wp6 = globaldef009113.field000305.waypointnumber;
+        globaldef009113.wp7 = globaldef009113.field000306.waypointnumber;
+        func000092(globaldef000001, "		HCWP_Create(");
+        func000092(globaldef000001, "'");
+        func002659(globaldef000001, globaldef009113.origin);
+        func000092(globaldef000001, "', ");
+        globaldef009115 = ftos(globaldef009113.waypointnumber);
+        func000093(globaldef000001, globaldef009115, ", ");
+        globaldef009115 = ftos(globaldef009113.waypointtype);
+        func000093(globaldef000001, globaldef009115, ", ");
+        func000094(globaldef000001, "\"", globaldef009113.waypointitem, "\");\n");
+        
+        if(((globaldef009113.wp0 || globaldef009113.wp1) || globaldef009113.wp2) || globaldef009113.wp3)
+        {
+            func000092(globaldef000001, "		HCWP_SetPointers1(");
+            globaldef009115 = ftos(globaldef009113.waypointnumber);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp0);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp1);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp2);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp3);
+            func000093(globaldef000001, globaldef009115, ");\n");
+        }
+        
+        
+        if(((globaldef009113.wp4 || globaldef009113.wp5) || globaldef009113.wp6) || globaldef009113.wp7)
+        {
+            func000092(globaldef000001, "		HCWP_SetPointers2(");
+            globaldef009115 = ftos(globaldef009113.waypointnumber);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp4);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp5);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp6);
+            func000093(globaldef000001, globaldef009115, ", ");
+            globaldef009115 = ftos(globaldef009113.wp7);
+            func000093(globaldef000001, globaldef009115, ");\n");
+        }
+        
+        globaldef009114 = globaldef009114 + globaldef000192;
+        globaldef009113 = globaldef009113.field000297;
+        globaldef000811 = globaldef009113;
+    }
+    
+};
+
+// func002664
+// function begins at statement 54443, parm_start=28717
+// OP_IFNOT	836	3	0
+// OP_ADDRESS	836	621	28718
+// OP_STOREP_ENT	28717	28718	0
+// OP_ADDRESS	28717	620	28719
+// OP_STOREP_ENT	836	28719	0
+// OP_ADDRESS	28717	621	28720
+// OP_STOREP_ENT	30	28720	0
+// OP_STORE_ENT	28717	836	0
+// OP_DONE	0	0	0
+void (entity globaldef009128) func002664 = 
+{
+    
+    if(globaldef000819)
+    {
+        globaldef000819.field000298 = globaldef009128;
+    }
+    
+    globaldef009128.field000297 = globaldef000819;
+    globaldef009128.field000298 = globaldef000003;
+    globaldef000819 = globaldef009128;
+};
+
+// func002665
+// function begins at statement 54452, parm_start=28722
+// OP_LOAD_ENT	28722	620	28723
+// OP_IFNOT	28723	5	0
+// OP_LOAD_ENT	28722	620	28724
+// OP_ADDRESS	28724	621	28725
+// OP_LOAD_ENT	28722	621	28726
+// OP_STOREP_ENT	28726	28725	0
+// OP_LOAD_ENT	28722	621	28727
+// OP_IFNOT	28727	6	0
+// OP_LOAD_ENT	28722	621	28728
+// OP_ADDRESS	28728	620	28729
+// OP_LOAD_ENT	28722	620	28730
+// OP_STOREP_ENT	28730	28729	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	28722	620	28731
+// OP_STORE_ENT	28731	836	0
+// OP_DONE	0	0	0
+void (entity globaldef009130) func002665 = 
+{
+    
+    if(globaldef009130.field000297)
+    {
+        globaldef009130.field000297.field000298 = globaldef009130.field000298;
+    }
+    
+    if(globaldef009130.field000298)
+    {
+        globaldef009130.field000298.field000297 = globaldef009130.field000297;
+    }
+    else
+    {
+        globaldef000819 = globaldef009130.field000297;
+    }
+    
+};
+
+// func002666
+// function begins at statement 54468, parm_start=28733
+// OP_LOAD_S	29	129	28733
+// OP_NE_S	28733	1241	28734
+// OP_IFNOT	28734	5	0
+// OP_LOAD_S	29	129	28735
+// OP_NE_S	28735	1236	28736
+// OP_IFNOT	28736	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	29	194	28737
+// OP_LOAD_ENT	28737	194	28738
+// OP_EQ_E	28738	28	28739
+// OP_IFNOT	28739	35	0
+// OP_LOAD_F	28	688	28740
+// OP_EQ_F	28740	718	28741
+// OP_IFNOT	28741	5	0
+// OP_ADDRESS	29	371	28742
+// OP_SUB_F	31	214	28743
+// OP_STOREP_F	28743	28742	0
+// OP_GOTO	28	0	0
+// OP_LOAD_F	28	688	28744
+// OP_EQ_F	28744	720	28745
+// OP_IFNOT	28745	5	0
+// OP_ADDRESS	29	371	28746
+// OP_SUB_F	31	214	28747
+// OP_STOREP_F	28747	28746	0
+// OP_GOTO	21	0	0
+// OP_LOAD_F	28	688	28748
+// OP_EQ_F	28748	719	28749
+// OP_IFNOT	28749	5	0
+// OP_ADDRESS	29	371	28750
+// OP_SUB_F	31	214	28751
+// OP_STOREP_F	28751	28750	0
+// OP_GOTO	14	0	0
+// OP_LOAD_F	28	688	28752
+// OP_EQ_F	28752	723	28753
+// OP_IFNOT	28753	5	0
+// OP_ADDRESS	29	371	28754
+// OP_SUB_F	31	214	28755
+// OP_STOREP_F	28755	28754	0
+// OP_GOTO	7	0	0
+// OP_LOAD_F	28	688	28756
+// OP_EQ_F	28756	717	28757
+// OP_IFNOT	28757	4	0
+// OP_ADDRESS	29	371	28758
+// OP_SUB_F	31	214	28759
+// OP_STOREP_F	28759	28758	0
+// OP_ADDRESS	29	586	28760
+// OP_STOREP_ENT	28	28760	0
+// OP_LOAD_F	29	575	28761
+// OP_BITAND	28761	703	28762
+// OP_IFNOT	28762	9	0
+// OP_LOAD_ENT	29	622	28763
+// OP_IFNOT	28763	5	0
+// OP_LOAD_ENT	29	622	28764
+// OP_STORE_V	28764	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1202	0	0
+// OP_ADDRESS	29	622	28765
+// OP_STOREP_ENT	28	28765	0
+// OP_DONE	0	0	0
+void () func002666 = 
+{
+    
+    if(globaldef000002.classname != "bot")
+    {
+        
+        if(globaldef000002.classname != "player")
+        {
+            return;
+        }
+        
+    }
+    
+    
+    if(globaldef000002.goalentity.goalentity == globaldef000001)
+    {
+        if(globaldef000001.waypointtype == globaldef000701)
+        {
+            globaldef000002.search_time = globaldef000004 - globaldef000192;
+        }
+        else
+        {
+            if(globaldef000001.waypointtype == globaldef000703)
+            {
+                globaldef000002.search_time = globaldef000004 - globaldef000192;
+            }
+            else
+            {
+                if(globaldef000001.waypointtype == globaldef000702)
+                {
+                    globaldef000002.search_time = globaldef000004 - globaldef000192;
+                }
+                else
+                {
+                    if(globaldef000001.waypointtype == globaldef000706)
+                    {
+                        globaldef000002.search_time = globaldef000004 - globaldef000192;
+                    }
+                    else
+                    {
+                        
+                        if(globaldef000001.waypointtype == globaldef000700)
+                        {
+                            globaldef000002.search_time = globaldef000004 - globaldef000192;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    globaldef000002.field000263 = globaldef000001;
+    
+    if(globaldef000002.field000252 & globaldef000686)
+    {
+        
+        if(globaldef000002.field000299)
+        {
+            func002685(globaldef000002.field000299, globaldef000001);
+        }
+        
+        globaldef000002.field000299 = globaldef000001;
+    }
+    
+};
+
+// waypoint
+// function begins at statement 54527, parm_start=28767
+// OP_ADDRESS	28	104	28767
+// OP_STOREP_F	238	28767	0
+// OP_ADDRESS	28	146	28768
+// OP_STOREP_FNC	28732	28768	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	23197	7	0
+// OP_STORE_V	23200	10	0
+// OP_CALL3	455	0	0
+// OP_LOAD_F	28	687	28769
+// OP_GT	28769	803	28770
+// OP_IFNOT	28770	3	0
+// OP_LOAD_F	28	687	28771
+// OP_STORE_F	28771	803	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	28716	0	0
+// OP_STORE_F	214	806	0
+// OP_DONE	0	0	0
+void () waypoint = 
+{
+    globaldef000001.solid = globaldef000216;
+    globaldef000001.touch = func002666;
+    setsize(globaldef000001, '-4.000 -4.000 -4.000', '4.000 4.000 4.000');
+    
+    if(globaldef000001.waypointnumber > globaldef000786)
+    {
+        globaldef000786 = globaldef000001.waypointnumber;
+    }
+    
+    func002664(globaldef000001);
+    globaldef000789 = globaldef000192;
+};
+
+// func002668
+// function begins at statement 54544, parm_start=28772
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	28778	0
+// OP_ADDRESS	28778	129	28779
+// OP_STOREP_S	23508	28779	0
+// OP_ADDRESS	28778	104	28780
+// OP_STOREP_F	238	28780	0
+// OP_ADDRESS	28778	146	28781
+// OP_STOREP_FNC	28732	28781	0
+// OP_ADDRESS	28778	687	28782
+// OP_STOREP_F	28775	28782	0
+// OP_ADDRESS	28778	688	28783
+// OP_STOREP_F	28776	28783	0
+// OP_ADDRESS	28778	689	28784
+// OP_STOREP_S	28777	28784	0
+// OP_STORE_V	28778	4	0
+// OP_STORE_V	23197	7	0
+// OP_STORE_V	23200	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	28778	4	0
+// OP_STORE_V	28772	7	0
+// OP_CALL2	453	0	0
+// OP_GT	28775	803	28785
+// OP_IFNOT	28785	2	0
+// OP_STORE_F	28775	803	0
+// OP_STORE_V	28778	4	0
+// OP_CALL1	28716	0	0
+// OP_STORE_F	214	807	0
+// OP_DONE	0	0	0
+void (vector globaldef009133, float globaldef009137, float globaldef009138, string globaldef009139) func002668 = 
+{
+    local entity globaldef009140;
+    globaldef009140 = spawn();
+    globaldef009140.classname = "waypoint";
+    globaldef009140.solid = globaldef000216;
+    globaldef009140.touch = func002666;
+    globaldef009140.waypointnumber = globaldef009137;
+    globaldef009140.waypointtype = globaldef009138;
+    globaldef009140.waypointitem = globaldef009139;
+    setsize(globaldef009140, '-4.000 -4.000 -4.000', '4.000 4.000 4.000');
+    setorigin(globaldef009140, globaldef009133);
+    
+    if(globaldef009137 > globaldef000786)
+    {
+        globaldef000786 = globaldef009137;
+    }
+    
+    func002664(globaldef009140);
+    globaldef000790 = globaldef000192;
+};
+
+// func002669
+// function begins at statement 54572, parm_start=28786
+// OP_STORE_V	28786	4	0
+// OP_CALL1	28251	0	0
+// OP_STORE_ENT	1	28791	0
+// OP_NOT_ENT	28791	0	28793
+// OP_IFNOT	28793	8	0
+// OP_STORE_V	28786	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28792	0
+// OP_STORE_V	28794	4	0
+// OP_STORE_V	28792	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_ADDRESS	28791	690	28795
+// OP_STOREP_F	28787	28795	0
+// OP_ADDRESS	28791	691	28796
+// OP_STOREP_F	28788	28796	0
+// OP_ADDRESS	28791	692	28797
+// OP_STOREP_F	28789	28797	0
+// OP_ADDRESS	28791	693	28798
+// OP_STOREP_F	28790	28798	0
+// OP_DONE	0	0	0
+void (float globaldef009141, float globaldef009142, float globaldef009143, float globaldef009144, float globaldef009145) func002669 = 
+{
+    local entity globaldef009146;
+    local string globaldef009147;
+    globaldef009146 = func002650(globaldef009141);
+    
+    if(!globaldef009146)
+    {
+        globaldef009147 = ftos(globaldef009141);
+        objerror3("HCWP wpp1: no waypoint with number ", globaldef009147, "\n");
+    }
+    
+    globaldef009146.wp0 = globaldef009142;
+    globaldef009146.wp1 = globaldef009143;
+    globaldef009146.wp2 = globaldef009144;
+    globaldef009146.wp3 = globaldef009145;
+};
+
+// func002670
+// function begins at statement 54593, parm_start=28799
+// OP_STORE_V	28799	4	0
+// OP_CALL1	28251	0	0
+// OP_STORE_ENT	1	28804	0
+// OP_NOT_ENT	28804	0	28806
+// OP_IFNOT	28806	8	0
+// OP_STORE_V	28799	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	28805	0
+// OP_STORE_V	28807	4	0
+// OP_STORE_V	28805	7	0
+// OP_STORE_V	2127	10	0
+// OP_CALL3	992	0	0
+// OP_ADDRESS	28804	694	28808
+// OP_STOREP_F	28800	28808	0
+// OP_ADDRESS	28804	695	28809
+// OP_STOREP_F	28801	28809	0
+// OP_ADDRESS	28804	696	28810
+// OP_STOREP_F	28802	28810	0
+// OP_ADDRESS	28804	697	28811
+// OP_STOREP_F	28803	28811	0
+// OP_DONE	0	0	0
+void (float globaldef009149, float globaldef009150, float globaldef009151, float globaldef009152, float globaldef009153) func002670 = 
+{
+    local entity globaldef009154;
+    local string globaldef009155;
+    globaldef009154 = func002650(globaldef009149);
+    
+    if(!globaldef009154)
+    {
+        globaldef009155 = ftos(globaldef009149);
+        objerror3("HCWP p2: no waypoint with number ", globaldef009155, "\n");
+    }
+    
+    globaldef009154.wp4 = globaldef009150;
+    globaldef009154.wp5 = globaldef009151;
+    globaldef009154.wp6 = globaldef009152;
+    globaldef009154.wp7 = globaldef009153;
+};
+
+// func002671
+// function begins at statement 54614, parm_start=28813
+// OP_ADD_F	803	214	28814
+// OP_STORE_F	28814	803	0
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	28813	0
+// OP_ADDRESS	28813	129	28815
+// OP_STOREP_S	23508	28815	0
+// OP_ADDRESS	28813	104	28816
+// OP_STOREP_F	238	28816	0
+// OP_ADDRESS	28813	146	28817
+// OP_STOREP_FNC	28732	28817	0
+// OP_ADDRESS	28813	687	28818
+// OP_STOREP_F	803	28818	0
+// OP_STORE_V	28813	4	0
+// OP_STORE_V	23197	7	0
+// OP_STORE_V	23200	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	28813	4	0
+// OP_CALL1	28716	0	0
+// OP_GE	803	804	28819
+// OP_EQ_F	805	727	28820
+// OP_AND	28819	28820	28821
+// OP_IFNOT	28821	2	0
+// OP_CALL0	28143	0	0
+// OP_RETURN	28813	0	0
+// OP_DONE	0	0	0
+entity () func002671 = 
+{
+    local entity globaldef009158;
+    globaldef000786 = globaldef000786 + globaldef000192;
+    globaldef009158 = spawn();
+    globaldef009158.classname = "waypoint";
+    globaldef009158.solid = globaldef000216;
+    globaldef009158.touch = func002666;
+    globaldef009158.waypointnumber = globaldef000786;
+    setsize(globaldef009158, '-4.000 -4.000 -4.000', '4.000 4.000 4.000');
+    func002664(globaldef009158);
+    
+    if((globaldef000786 >= globaldef000787) && (globaldef000788 == globaldef000710))
+    {
+        func002639();
+    }
+    
+    return globaldef009158;
+};
+
+// DestroyWaypoint
+// function begins at statement 54639, parm_start=28823
+// OP_STORE_V	28823	4	0
+// OP_CALL1	28721	0	0
+// OP_STORE_V	28823	4	0
+// OP_CALL1	465	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009160) DestroyWaypoint = 
+{
+    func002665(globaldef009160);
+    remove(globaldef009160);
+};
+
+// func002673
+// function begins at statement 54644, parm_start=28824
+// OP_LOAD_ENT	28825	622	28826
+// OP_EQ_E	28826	28824	28827
+// OP_IFNOT	28827	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	623	28828
+// OP_EQ_E	28828	28824	28829
+// OP_IFNOT	28829	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	624	28830
+// OP_EQ_E	28830	28824	28831
+// OP_IFNOT	28831	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	625	28832
+// OP_EQ_E	28832	28824	28833
+// OP_IFNOT	28833	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	626	28834
+// OP_EQ_E	28834	28824	28835
+// OP_IFNOT	28835	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	627	28836
+// OP_EQ_E	28836	28824	28837
+// OP_IFNOT	28837	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	628	28838
+// OP_EQ_E	28838	28824	28839
+// OP_IFNOT	28839	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	28825	629	28840
+// OP_EQ_E	28840	28824	28841
+// OP_IFNOT	28841	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009161, entity globaldef009162) func002673 = 
+{
+    
+    if(globaldef009162.field000299 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000300 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000301 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000302 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000303 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000304 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000305 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009162.field000306 == globaldef009161)
+    {
+        return globaldef000192;
+    }
+    
+    return globaldef000191;
+};
+
+// func002674
+// function begins at statement 54678, parm_start=28843
+// OP_STORE_F	214	28843	0
+// OP_STORE_F	738	28844	0
+// OP_LOAD_ENT	28	622	28856
+// OP_STORE_ENT	28856	28849	0
+// OP_STORE_F	213	28846	0
+// OP_STORE_ENT	836	28847	0
+// OP_IFNOT	28847	56	0
+// OP_LOAD_F	28847	688	28857
+// OP_NE_F	28857	719	28858
+// OP_IFNOT	28858	50	0
+// OP_LOAD_V	28847	105	28859
+// OP_STORE_V	28859	28850	0
+// OP_LOAD_V	28	105	28862
+// OP_STORE_V	28862	28853	0
+// OP_SUB_F	28850	28853	28865
+// OP_STORE_V	28865	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	738	28866
+// OP_IFNOT	28866	41	0
+// OP_SUB_F	28851	28854	28867
+// OP_STORE_V	28867	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	738	28868
+// OP_IFNOT	28868	36	0
+// OP_SUB_F	28852	28855	28869
+// OP_STORE_V	28869	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	738	28870
+// OP_IFNOT	28870	31	0
+// OP_LOAD_V	28847	105	28871
+// OP_LOAD_V	28	105	28874
+// OP_SUB_V	28871	28874	28877
+// OP_STORE_V	28877	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	28845	0
+// OP_LT	28845	28844	28880
+// OP_IFNOT	28880	23	0
+// OP_STORE_V	28847	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1118	0	0
+// OP_IFNOT	1	19	0
+// OP_LOAD_ENT	28	622	28881
+// OP_IFNOT	28881	14	0
+// OP_LOAD_ENT	28	622	28882
+// OP_STORE_V	28882	4	0
+// OP_STORE_V	28847	7	0
+// OP_CALL2	1118	0	0
+// OP_IFNOT	1	8	0
+// OP_LOAD_ENT	28	622	28883
+// OP_STORE_V	28883	4	0
+// OP_STORE_V	28847	7	0
+// OP_CALL2	1202	0	0
+// OP_STORE_ENT	28847	28849	0
+// OP_STORE_F	28845	28844	0
+// OP_STORE_F	213	28843	0
+// OP_GOTO	4	0	0
+// OP_STORE_ENT	28847	28849	0
+// OP_STORE_F	28845	28844	0
+// OP_STORE_F	213	28843	0
+// OP_LOAD_ENT	28847	620	28884
+// OP_STORE_ENT	28884	28847	0
+// OP_GOTO	-55	0	0
+// OP_ADDRESS	28	622	28885
+// OP_STOREP_ENT	28849	28885	0
+// OP_RETURN	28843	0	0
+// OP_DONE	0	0	0
+float () func002674 = 
+{
+    local float globaldef009164;
+    local float globaldef009165;
+    local float globaldef009166;
+    local float globaldef009167;
+    local entity globaldef009168;
+    local entity globaldef009169;
+    local entity globaldef009170;
+    local vector globaldef009171;
+    local vector globaldef009175;
+    globaldef009164 = globaldef000192;
+    globaldef009165 = globaldef000721;
+    globaldef009170 = globaldef000001.field000299;
+    globaldef009167 = globaldef000191;
+    globaldef009168 = globaldef000819;
+    
+    while(globaldef009168)
+    {
+        
+        if(globaldef009168.waypointtype != globaldef000702)
+        {
+            globaldef009171 = globaldef009168.origin;
+            globaldef009175 = globaldef000001.origin;
+            
+            if((fabs(globaldef009171_x - globaldef009175_x)) < globaldef000721)
+            {
+                
+                if((fabs(globaldef009171_y - globaldef009175_y)) < globaldef000721)
+                {
+                    
+                    if((fabs(globaldef009171_z - globaldef009175_z)) < globaldef000721)
+                    {
+                        globaldef009166 = vlen(globaldef009168.origin - globaldef000001.origin);
+                        
+                        if(globaldef009166 < globaldef009165)
+                        {
+                            
+                            if(func002466(globaldef009168, globaldef000001))
+                            {
+                                if(globaldef000001.field000299)
+                                {
+                                    
+                                    if(func002466(globaldef000001.field000299, globaldef009168))
+                                    {
+                                        func002685(globaldef000001.field000299, globaldef009168);
+                                        globaldef009170 = globaldef009168;
+                                        globaldef009165 = globaldef009166;
+                                        globaldef009164 = globaldef000191;
+                                    }
+                                    
+                                }
+                                else
+                                {
+                                    globaldef009170 = globaldef009168;
+                                    globaldef009165 = globaldef009166;
+                                    globaldef009164 = globaldef000191;
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        globaldef009168 = globaldef009168.field000297;
+    }
+    
+    globaldef000001.field000299 = globaldef009170;
+    return globaldef009164;
+};
+
+// func002675
+// function begins at statement 54744, parm_start=28886
+// OP_NE_F	805	727	28892
+// OP_IFNOT	28892	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	28812	0	0
+// OP_STORE_ENT	1	28887	0
+// OP_LOAD_V	28886	580	28893
+// OP_STORE_V	28893	28889	0
+// OP_LOAD_F	28886	137	28896
+// OP_ADD_F	28891	28896	28897
+// OP_ADD_F	28897	216	28898
+// OP_STORE_F	28898	28891	0
+// OP_STORE_V	28887	4	0
+// OP_STORE_V	28889	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	28887	622	28899
+// OP_LOAD_ENT	28886	622	28900
+// OP_STOREP_ENT	28900	28899	0
+// OP_ADDRESS	28886	622	28901
+// OP_STOREP_ENT	28887	28901	0
+// OP_ADDRESS	28887	630	28902
+// OP_STORE_V	28887	4	0
+// OP_LOAD_ENT	28887	622	28903
+// OP_STORE_V	28903	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28902	0
+// OP_ADDRESS	28887	688	28904
+// OP_STOREP_F	718	28904	0
+// OP_DONE	0	0	0
+void (entity globaldef009179) func002675 = 
+{
+    local entity globaldef009180;
+    local float globaldef009181;
+    local vector globaldef009182;
+    
+    if(globaldef000788 != globaldef000710)
+    {
+        return;
+    }
+    
+    globaldef009180 = func002671();
+    globaldef009182 = globaldef009179.field000257;
+    globaldef009182_z = (globaldef009182_z + globaldef009179.mins_z) + globaldef000194;
+    setorigin(globaldef009180, globaldef009182);
+    globaldef009180.field000299 = globaldef009179.field000299;
+    globaldef009179.field000299 = globaldef009180;
+    globaldef009180.field000307 = func002655(globaldef009180, globaldef009180.field000299);
+    globaldef009180.waypointtype = globaldef000701;
+};
+
+// func002676
+// function begins at statement 54772, parm_start=28905
+// OP_NE_F	805	727	28911
+// OP_IFNOT	28911	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	28812	0	0
+// OP_STORE_ENT	1	28907	0
+// OP_LOAD_V	28906	94	28912
+// OP_LOAD_V	28906	98	28915
+// OP_ADD_V	28912	28915	28918
+// OP_MUL_VF	28918	539	28921
+// OP_STORE_V	28921	28908	0
+// OP_STORE_V	28908	4	0
+// OP_CALL1	1111	0	0
+// OP_ADD_F	1	216	28924
+// OP_STORE_F	28924	28910	0
+// OP_STORE_V	28907	4	0
+// OP_STORE_V	28908	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	28907	622	28925
+// OP_LOAD_ENT	28905	622	28926
+// OP_STOREP_ENT	28926	28925	0
+// OP_ADDRESS	28905	622	28927
+// OP_STOREP_ENT	28907	28927	0
+// OP_ADDRESS	28907	630	28928
+// OP_STORE_V	28907	4	0
+// OP_LOAD_ENT	28907	622	28929
+// OP_STORE_V	28929	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28928	0
+// OP_ADDRESS	28907	688	28930
+// OP_STOREP_F	719	28930	0
+// OP_ADDRESS	28906	622	28931
+// OP_STOREP_ENT	28907	28931	0
+// OP_ADDRESS	28907	181	28932
+// OP_STOREP_ENT	28906	28932	0
+// OP_DONE	0	0	0
+void (entity globaldef009186, entity globaldef009187) func002676 = 
+{
+    local entity globaldef009188;
+    local vector globaldef009189;
+    
+    if(globaldef000788 != globaldef000710)
+    {
+        return;
+    }
+    
+    globaldef009188 = func002671();
+    globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * globaldef000522;
+    globaldef009189_z = func002457(globaldef009189) + globaldef000194;
+    setorigin(globaldef009188, globaldef009189);
+    globaldef009188.field000299 = globaldef009186.field000299;
+    globaldef009186.field000299 = globaldef009188;
+    globaldef009188.field000307 = func002655(globaldef009188, globaldef009188.field000299);
+    globaldef009188.waypointtype = globaldef000702;
+    globaldef009187.field000299 = globaldef009188;
+    globaldef009188.enemy = globaldef009187;
+};
+
+// func002677
+// function begins at statement 54807, parm_start=28933
+// OP_NE_F	805	727	28940
+// OP_IFNOT	28940	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	28812	0	0
+// OP_STORE_ENT	1	28935	0
+// OP_LOAD_V	28934	443	28941
+// OP_LOAD_V	28934	134	28944
+// OP_LOAD_V	28934	138	28947
+// OP_ADD_V	28944	28947	28950
+// OP_MUL_VF	28950	539	28953
+// OP_ADD_V	28941	28953	28956
+// OP_STORE_V	28956	28937	0
+// OP_LOAD_F	28934	141	28959
+// OP_LOAD_F	28934	442	28960
+// OP_LOAD_F	28934	446	28961
+// OP_SUB_F	28960	28961	28962
+// OP_SUB_F	28959	28962	28963
+// OP_ADD_F	28963	216	28964
+// OP_STORE_F	28964	28939	0
+// OP_STORE_V	28935	4	0
+// OP_STORE_V	28937	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	28935	622	28965
+// OP_LOAD_ENT	28933	622	28966
+// OP_STOREP_ENT	28966	28965	0
+// OP_ADDRESS	28935	630	28967
+// OP_STORE_V	28935	4	0
+// OP_LOAD_ENT	28935	622	28968
+// OP_STORE_V	28968	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28967	0
+// OP_ADDRESS	28933	622	28969
+// OP_STOREP_ENT	28935	28969	0
+// OP_ADDRESS	28935	688	28970
+// OP_STOREP_F	723	28970	0
+// OP_ADDRESS	28934	622	28971
+// OP_STOREP_ENT	28935	28971	0
+// OP_ADDRESS	28935	181	28972
+// OP_STOREP_ENT	28934	28972	0
+// OP_CALL0	28812	0	0
+// OP_STORE_ENT	1	28936	0
+// OP_LOAD_V	28934	443	28973
+// OP_LOAD_V	28934	134	28976
+// OP_LOAD_V	28934	138	28979
+// OP_ADD_V	28976	28979	28982
+// OP_MUL_VF	28982	539	28985
+// OP_ADD_V	28973	28985	28988
+// OP_STORE_V	28988	28937	0
+// OP_LOAD_F	28934	141	28991
+// OP_ADD_F	28991	216	28992
+// OP_STORE_F	28992	28939	0
+// OP_STORE_V	28936	4	0
+// OP_STORE_V	28937	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	28936	622	28993
+// OP_STOREP_ENT	28935	28993	0
+// OP_ADDRESS	28936	630	28994
+// OP_STORE_V	28936	4	0
+// OP_LOAD_ENT	28936	622	28995
+// OP_STORE_V	28995	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	28994	0
+// OP_ADDRESS	28936	688	28996
+// OP_STOREP_F	717	28996	0
+// OP_ADDRESS	28934	623	28997
+// OP_STOREP_ENT	28936	28997	0
+// OP_ADDRESS	28936	181	28998
+// OP_STOREP_ENT	28934	28998	0
+// OP_DONE	0	0	0
+void (entity globaldef009193, entity globaldef009194) func002677 = 
+{
+    local entity globaldef009195;
+    local entity globaldef009196;
+    local vector globaldef009197;
+    
+    if(globaldef000788 != globaldef000710)
+    {
+        return;
+    }
+    
+    globaldef009195 = func002671();
+    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
+    globaldef009197_z = (globaldef009194.maxs_z - (globaldef009194.pos1_z - globaldef009194.pos2_z)) + globaldef000194;
+    setorigin(globaldef009195, globaldef009197);
+    globaldef009195.field000299 = globaldef009193.field000299;
+    globaldef009195.field000307 = func002655(globaldef009195, globaldef009195.field000299);
+    globaldef009193.field000299 = globaldef009195;
+    globaldef009195.waypointtype = globaldef000706;
+    globaldef009194.field000299 = globaldef009195;
+    globaldef009195.enemy = globaldef009194;
+    globaldef009196 = func002671();
+    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
+    globaldef009197_z = globaldef009194.maxs_z + globaldef000194;
+    setorigin(globaldef009196, globaldef009197);
+    globaldef009196.field000299 = globaldef009195;
+    globaldef009196.field000307 = func002655(globaldef009196, globaldef009196.field000299);
+    globaldef009196.waypointtype = globaldef000700;
+    globaldef009194.field000300 = globaldef009196;
+    globaldef009196.enemy = globaldef009194;
+};
+
+// func002678
+// function begins at statement 54876, parm_start=29000
+// OP_NE_F	805	727	29006
+// OP_IFNOT	29006	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	28812	0	0
+// OP_STORE_ENT	1	29002	0
+// OP_ADDRESS	29002	622	29007
+// OP_LOAD_ENT	29000	622	29008
+// OP_STOREP_ENT	29008	29007	0
+// OP_ADDRESS	29000	622	29009
+// OP_STOREP_ENT	29002	29009	0
+// OP_LOAD_V	29001	94	29010
+// OP_LOAD_V	29001	98	29013
+// OP_ADD_V	29010	29013	29016
+// OP_MUL_VF	29016	539	29019
+// OP_STORE_V	29019	29003	0
+// OP_LOAD_F	29001	97	29022
+// OP_ADD_F	29022	216	29023
+// OP_STORE_F	29023	29005	0
+// OP_STORE_V	29002	4	0
+// OP_STORE_V	29003	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	29002	630	29024
+// OP_STORE_V	29002	4	0
+// OP_LOAD_ENT	29002	622	29025
+// OP_STORE_V	29025	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29024	0
+// OP_ADDRESS	29002	688	29026
+// OP_STOREP_F	720	29026	0
+// OP_ADDRESS	29001	622	29027
+// OP_STOREP_ENT	29002	29027	0
+// OP_ADDRESS	29002	181	29028
+// OP_STOREP_ENT	29001	29028	0
+// OP_ADDRESS	29002	689	29029
+// OP_LOAD_S	29001	129	29030
+// OP_STOREP_S	29030	29029	0
+// OP_DONE	0	0	0
+void (entity globaldef009202, entity globaldef009203) func002678 = 
+{
+    local entity globaldef009204;
+    local vector globaldef009205;
+    
+    if(globaldef000788 != globaldef000710)
+    {
+        return;
+    }
+    
+    globaldef009204 = func002671();
+    globaldef009204.field000299 = globaldef009202.field000299;
+    globaldef009202.field000299 = globaldef009204;
+    globaldef009205 = (globaldef009203.absmin + globaldef009203.absmax) * globaldef000522;
+    globaldef009205_z = globaldef009203.absmin_z + globaldef000194;
+    setorigin(globaldef009204, globaldef009205);
+    globaldef009204.field000307 = func002655(globaldef009204, globaldef009204.field000299);
+    globaldef009204.waypointtype = globaldef000703;
+    globaldef009203.field000299 = globaldef009204;
+    globaldef009204.enemy = globaldef009203;
+    globaldef009204.waypointitem = globaldef009203.classname;
+};
+
+// func002679
+// function begins at statement 54913, parm_start=29032
+// OP_GT	803	804	29036
+// OP_IFNOT	29036	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	28	585	29037
+// OP_BITAND	29037	702	29038
+// OP_NOT_F	29038	0	29039
+// OP_LOAD_F	28	584	29040
+// OP_BITAND	29040	218	29041
+// OP_NOT_F	29041	0	29042
+// OP_AND	29039	29042	29043
+// OP_IFNOT	29043	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	28	575	29044
+// OP_BITAND	29044	702	29045
+// OP_NOT_F	29045	0	29046
+// OP_LOAD_F	28	182	29047
+// OP_BITAND	29047	218	29048
+// OP_NOT_F	29048	0	29049
+// OP_AND	29046	29049	29050
+// OP_IFNOT	29050	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	28	182	29051
+// OP_BITAND	29051	223	29052
+// OP_NOT_F	29052	0	29053
+// OP_LOAD_F	28	182	29054
+// OP_BITAND	29054	218	29055
+// OP_NOT_F	29055	0	29056
+// OP_AND	29053	29056	29057
+// OP_IFNOT	29057	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1114	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1113	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_V	28	580	29058
+// OP_STORE_V	29058	29033	0
+// OP_LOAD_F	28	137	29061
+// OP_ADD_F	29035	29061	29062
+// OP_ADD_F	29062	214	29063
+// OP_STORE_F	29063	29035	0
+// OP_STORE_V	29033	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	29032	0
+// OP_NE_F	29032	276	29064
+// OP_IFNOT	29064	4	0
+// OP_NE_F	29032	278	29065
+// OP_IFNOT	29065	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	28	186	29066
+// OP_GT	29066	31	29067
+// OP_IFNOT	29067	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	28	622	29068
+// OP_NOT_ENT	29068	0	29069
+// OP_IFNOT	29069	3	0
+// OP_CALL0	28842	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_ENT	28	622	29070
+// OP_STORE_V	29070	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1118	0	0
+// OP_NOT_F	1	0	29071
+// OP_IFNOT	29071	3	0
+// OP_CALL0	28842	0	0
+// OP_RETURN	1	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float () func002679 = 
+{
+    local float globaldef009210;
+    local vector globaldef009211;
+    
+    if(globaldef000786 > globaldef000787)
+    {
+        return globaldef000191;
+    }
+    
+    
+    if((!(globaldef000001.field000262 & globaldef000685)) && (!(globaldef000001.field000261 & globaldef000196)))
+    {
+        return globaldef000191;
+    }
+    
+    
+    if((!(globaldef000001.field000252 & globaldef000685)) && (!(globaldef000001.flags & globaldef000196)))
+    {
+        return globaldef000191;
+    }
+    
+    
+    if((!(globaldef000001.flags & globaldef000201)) && (!(globaldef000001.flags & globaldef000196)))
+    {
+        return globaldef000191;
+    }
+    
+    
+    if(func002460(globaldef000001))
+    {
+        return globaldef000191;
+    }
+    
+    
+    if(func002459(globaldef000001))
+    {
+        return globaldef000191;
+    }
+    
+    globaldef009211 = globaldef000001.field000257;
+    globaldef009211_z = (globaldef009211_z + globaldef000001.mins_z) + globaldef000192;
+    globaldef009210 = pointcontents(globaldef009211);
+    
+    if(globaldef009210 != globaldef000254)
+    {
+        
+        if(globaldef009210 != globaldef000256)
+        {
+            return globaldef000191;
+        }
+        
+    }
+    
+    
+    if(globaldef000001.teleport_time > globaldef000004)
+    {
+        return globaldef000191;
+    }
+    
+    
+    if(!globaldef000001.field000299)
+    {
+        return func002674();
+    }
+    
+    
+    if(!func002466(globaldef000001.field000299, globaldef000001))
+    {
+        return func002674();
+    }
+    
+    return globaldef000191;
+};
+
+// func002680
+// function begins at statement 54984, parm_start=29072
+// OP_NE_F	805	727	29072
+// OP_IFNOT	29072	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	29031	0	0
+// OP_IFNOT	1	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1197	0	0
+// OP_LOAD_ENT	28	622	29073
+// OP_STORE_V	29073	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1116	0	0
+// OP_NOT_F	1	0	29074
+// OP_IFNOT	29074	3	0
+// OP_ADDRESS	28	622	29075
+// OP_STOREP_ENT	30	29075	0
+// OP_DONE	0	0	0
+void () func002680 = 
+{
+    
+    if(globaldef000788 != globaldef000710)
+    {
+        return;
+    }
+    
+    
+    if(func002679())
+    {
+        func002675(globaldef000001);
+    }
+    
+    
+    if(!func002462(globaldef000001.field000299, globaldef000001))
+    {
+        globaldef000001.field000299 = globaldef000003;
+    }
+    
+};
+
+// func002681
+// function begins at statement 55000, parm_start=29077
+// OP_GE	808	741	29088
+// OP_IFNOT	29088	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_FNC	29080	547	29089
+// OP_NOT_FNC	29089	0	29090
+// OP_IFNOT	29090	3	0
+// OP_STORE_V	29091	4	0
+// OP_CALL1	461	0	0
+// OP_NOT_ENT	29078	0	29092
+// OP_IFNOT	29092	3	0
+// OP_STORE_V	29093	4	0
+// OP_CALL1	461	0	0
+// OP_STORE_V	29077	4	0
+// OP_STORE_V	29078	7	0
+// OP_CALL2	28428	0	0
+// OP_ADD_F	29079	1	29094
+// OP_STORE_F	29094	29085	0
+// OP_LOAD_FNC	29080	547	29095
+// OP_STORE_V	29078	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29095	0	0
+// OP_NOT_F	1	0	29096
+// OP_IFNOT	29096	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_ENT	836	29083	0
+// OP_IFNOT	29083	6	0
+// OP_ADDRESS	29083	661	29097
+// OP_STOREP_F	213	29097	0
+// OP_LOAD_ENT	29083	620	29098
+// OP_STORE_ENT	29098	29083	0
+// OP_GOTO	-5	0	0
+// OP_ADDRESS	29078	660	29099
+// OP_STOREP_F	29085	29099	0
+// OP_ADDRESS	29078	658	29100
+// OP_STOREP_ENT	30	29100	0
+// OP_ADDRESS	29078	659	29101
+// OP_STOREP_ENT	30	29101	0
+// OP_STORE_ENT	29078	29081	0
+// OP_STORE_ENT	29078	29082	0
+// OP_ADDRESS	29078	661	29102
+// OP_STOREP_F	214	29102	0
+// OP_STORE_F	213	29086	0
+// OP_IFNOT	29081	393	0
+// OP_STORE_ENT	29081	29083	0
+// OP_LOAD_ENT	29083	658	29103
+// OP_IFNOT	29103	5	0
+// OP_LOAD_ENT	29083	658	29104
+// OP_ADDRESS	29104	659	29105
+// OP_STOREP_ENT	30	29105	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	30	29082	0
+// OP_LOAD_ENT	29083	658	29106
+// OP_STORE_ENT	29106	29081	0
+// OP_ADDRESS	29083	658	29107
+// OP_STOREP_ENT	30	29107	0
+// OP_ADDRESS	29083	659	29108
+// OP_STOREP_ENT	30	29108	0
+// OP_ADDRESS	29083	661	29109
+// OP_STOREP_F	213	29109	0
+// OP_LOAD_ENT	29083	622	29110
+// OP_STORE_ENT	29110	29084	0
+// OP_IFNOT	29084	71	0
+// OP_LOAD_F	29083	660	29111
+// OP_LOAD_F	29083	630	29112
+// OP_ADD_F	29111	29112	29113
+// OP_STORE_F	29113	29085	0
+// OP_LOAD_FNC	29080	547	29114
+// OP_STORE_V	29084	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29114	0	0
+// OP_IFNOT	1	61	0
+// OP_ADDRESS	29084	660	29115
+// OP_STOREP_F	29085	29115	0
+// OP_LOAD_F	29084	661	29116
+// OP_IFNOT	29116	19	0
+// OP_LOAD_ENT	29084	658	29117
+// OP_IFNOT	29117	6	0
+// OP_LOAD_ENT	29084	658	29118
+// OP_ADDRESS	29118	659	29119
+// OP_LOAD_ENT	29084	659	29120
+// OP_STOREP_ENT	29120	29119	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	659	29121
+// OP_STORE_ENT	29121	29082	0
+// OP_LOAD_ENT	29084	659	29122
+// OP_IFNOT	29122	6	0
+// OP_LOAD_ENT	29084	659	29123
+// OP_ADDRESS	29123	658	29124
+// OP_LOAD_ENT	29084	658	29125
+// OP_STOREP_ENT	29125	29124	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	658	29126
+// OP_STORE_ENT	29126	29081	0
+// OP_STORE_ENT	29082	29077	0
+// OP_STORE_F	214	29087	0
+// OP_IFNOT	29077	25	0
+// OP_LOAD_F	29077	660	29127
+// OP_LOAD_F	29084	660	29128
+// OP_LT	29127	29128	29129
+// OP_IFNOT	29129	18	0
+// OP_ADDRESS	29084	658	29130
+// OP_LOAD_ENT	29077	658	29131
+// OP_STOREP_ENT	29131	29130	0
+// OP_ADDRESS	29084	659	29132
+// OP_STOREP_ENT	29077	29132	0
+// OP_LOAD_ENT	29077	658	29133
+// OP_IFNOT	29133	5	0
+// OP_LOAD_ENT	29077	658	29134
+// OP_ADDRESS	29134	659	29135
+// OP_STOREP_ENT	29084	29135	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29077	658	29136
+// OP_STOREP_ENT	29084	29136	0
+// OP_STORE_F	213	29087	0
+// OP_STORE_ENT	30	29077	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29077	659	29137
+// OP_STORE_ENT	29137	29077	0
+// OP_GOTO	-24	0	0
+// OP_IFNOT	29087	9	0
+// OP_NOT_ENT	29081	0	29138
+// OP_IFNOT	29138	2	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29084	659	29139
+// OP_STOREP_ENT	30	29139	0
+// OP_ADDRESS	29084	658	29140
+// OP_STOREP_ENT	29081	29140	0
+// OP_STORE_ENT	29084	29081	0
+// OP_ADDRESS	29084	661	29141
+// OP_STOREP_F	214	29141	0
+// OP_LOAD_ENT	29083	623	29142
+// OP_STORE_ENT	29142	29084	0
+// OP_IFNOT	29084	71	0
+// OP_LOAD_F	29083	660	29143
+// OP_LOAD_F	29083	631	29144
+// OP_ADD_F	29143	29144	29145
+// OP_STORE_F	29145	29085	0
+// OP_LOAD_FNC	29080	547	29146
+// OP_STORE_V	29084	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29146	0	0
+// OP_IFNOT	1	61	0
+// OP_ADDRESS	29084	660	29147
+// OP_STOREP_F	29085	29147	0
+// OP_LOAD_F	29084	661	29148
+// OP_IFNOT	29148	19	0
+// OP_LOAD_ENT	29084	658	29149
+// OP_IFNOT	29149	6	0
+// OP_LOAD_ENT	29084	658	29150
+// OP_ADDRESS	29150	659	29151
+// OP_LOAD_ENT	29084	659	29152
+// OP_STOREP_ENT	29152	29151	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	659	29153
+// OP_STORE_ENT	29153	29082	0
+// OP_LOAD_ENT	29084	659	29154
+// OP_IFNOT	29154	6	0
+// OP_LOAD_ENT	29084	659	29155
+// OP_ADDRESS	29155	658	29156
+// OP_LOAD_ENT	29084	658	29157
+// OP_STOREP_ENT	29157	29156	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	658	29158
+// OP_STORE_ENT	29158	29081	0
+// OP_STORE_ENT	29082	29077	0
+// OP_STORE_F	214	29087	0
+// OP_IFNOT	29077	25	0
+// OP_LOAD_F	29077	660	29159
+// OP_LOAD_F	29084	660	29160
+// OP_LT	29159	29160	29161
+// OP_IFNOT	29161	18	0
+// OP_ADDRESS	29084	658	29162
+// OP_LOAD_ENT	29077	658	29163
+// OP_STOREP_ENT	29163	29162	0
+// OP_ADDRESS	29084	659	29164
+// OP_STOREP_ENT	29077	29164	0
+// OP_LOAD_ENT	29077	658	29165
+// OP_IFNOT	29165	5	0
+// OP_LOAD_ENT	29077	658	29166
+// OP_ADDRESS	29166	659	29167
+// OP_STOREP_ENT	29084	29167	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29077	658	29168
+// OP_STOREP_ENT	29084	29168	0
+// OP_STORE_F	213	29087	0
+// OP_STORE_ENT	30	29077	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29077	659	29169
+// OP_STORE_ENT	29169	29077	0
+// OP_GOTO	-24	0	0
+// OP_IFNOT	29087	9	0
+// OP_NOT_ENT	29081	0	29170
+// OP_IFNOT	29170	2	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29084	659	29171
+// OP_STOREP_ENT	30	29171	0
+// OP_ADDRESS	29084	658	29172
+// OP_STOREP_ENT	29081	29172	0
+// OP_STORE_ENT	29084	29081	0
+// OP_ADDRESS	29084	661	29173
+// OP_STOREP_F	214	29173	0
+// OP_LOAD_ENT	29083	624	29174
+// OP_STORE_ENT	29174	29084	0
+// OP_IFNOT	29084	71	0
+// OP_LOAD_F	29083	660	29175
+// OP_LOAD_F	29083	632	29176
+// OP_ADD_F	29175	29176	29177
+// OP_STORE_F	29177	29085	0
+// OP_LOAD_FNC	29080	547	29178
+// OP_STORE_V	29084	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29178	0	0
+// OP_IFNOT	1	61	0
+// OP_ADDRESS	29084	660	29179
+// OP_STOREP_F	29085	29179	0
+// OP_LOAD_F	29084	661	29180
+// OP_IFNOT	29180	19	0
+// OP_LOAD_ENT	29084	658	29181
+// OP_IFNOT	29181	6	0
+// OP_LOAD_ENT	29084	658	29182
+// OP_ADDRESS	29182	659	29183
+// OP_LOAD_ENT	29084	659	29184
+// OP_STOREP_ENT	29184	29183	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	659	29185
+// OP_STORE_ENT	29185	29082	0
+// OP_LOAD_ENT	29084	659	29186
+// OP_IFNOT	29186	6	0
+// OP_LOAD_ENT	29084	659	29187
+// OP_ADDRESS	29187	658	29188
+// OP_LOAD_ENT	29084	658	29189
+// OP_STOREP_ENT	29189	29188	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	658	29190
+// OP_STORE_ENT	29190	29081	0
+// OP_STORE_ENT	29082	29077	0
+// OP_STORE_F	214	29087	0
+// OP_IFNOT	29077	25	0
+// OP_LOAD_F	29077	660	29191
+// OP_LOAD_F	29084	660	29192
+// OP_LT	29191	29192	29193
+// OP_IFNOT	29193	18	0
+// OP_ADDRESS	29084	658	29194
+// OP_LOAD_ENT	29077	658	29195
+// OP_STOREP_ENT	29195	29194	0
+// OP_ADDRESS	29084	659	29196
+// OP_STOREP_ENT	29077	29196	0
+// OP_LOAD_ENT	29077	658	29197
+// OP_IFNOT	29197	5	0
+// OP_LOAD_ENT	29077	658	29198
+// OP_ADDRESS	29198	659	29199
+// OP_STOREP_ENT	29084	29199	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29077	658	29200
+// OP_STOREP_ENT	29084	29200	0
+// OP_STORE_F	213	29087	0
+// OP_STORE_ENT	30	29077	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29077	659	29201
+// OP_STORE_ENT	29201	29077	0
+// OP_GOTO	-24	0	0
+// OP_IFNOT	29087	9	0
+// OP_NOT_ENT	29081	0	29202
+// OP_IFNOT	29202	2	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29084	659	29203
+// OP_STOREP_ENT	30	29203	0
+// OP_ADDRESS	29084	658	29204
+// OP_STOREP_ENT	29081	29204	0
+// OP_STORE_ENT	29084	29081	0
+// OP_ADDRESS	29084	661	29205
+// OP_STOREP_F	214	29205	0
+// OP_LOAD_ENT	29083	625	29206
+// OP_STORE_ENT	29206	29084	0
+// OP_IFNOT	29084	71	0
+// OP_LOAD_F	29083	660	29207
+// OP_LOAD_F	29083	633	29208
+// OP_ADD_F	29207	29208	29209
+// OP_STORE_F	29209	29085	0
+// OP_LOAD_FNC	29080	547	29210
+// OP_STORE_V	29084	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29210	0	0
+// OP_IFNOT	1	61	0
+// OP_ADDRESS	29084	660	29211
+// OP_STOREP_F	29085	29211	0
+// OP_LOAD_F	29084	661	29212
+// OP_IFNOT	29212	19	0
+// OP_LOAD_ENT	29084	658	29213
+// OP_IFNOT	29213	6	0
+// OP_LOAD_ENT	29084	658	29214
+// OP_ADDRESS	29214	659	29215
+// OP_LOAD_ENT	29084	659	29216
+// OP_STOREP_ENT	29216	29215	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	659	29217
+// OP_STORE_ENT	29217	29082	0
+// OP_LOAD_ENT	29084	659	29218
+// OP_IFNOT	29218	6	0
+// OP_LOAD_ENT	29084	659	29219
+// OP_ADDRESS	29219	658	29220
+// OP_LOAD_ENT	29084	658	29221
+// OP_STOREP_ENT	29221	29220	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	658	29222
+// OP_STORE_ENT	29222	29081	0
+// OP_STORE_ENT	29082	29077	0
+// OP_STORE_F	214	29087	0
+// OP_IFNOT	29077	25	0
+// OP_LOAD_F	29077	660	29223
+// OP_LOAD_F	29084	660	29224
+// OP_LT	29223	29224	29225
+// OP_IFNOT	29225	18	0
+// OP_ADDRESS	29084	658	29226
+// OP_LOAD_ENT	29077	658	29227
+// OP_STOREP_ENT	29227	29226	0
+// OP_ADDRESS	29084	659	29228
+// OP_STOREP_ENT	29077	29228	0
+// OP_LOAD_ENT	29077	658	29229
+// OP_IFNOT	29229	5	0
+// OP_LOAD_ENT	29077	658	29230
+// OP_ADDRESS	29230	659	29231
+// OP_STOREP_ENT	29084	29231	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29077	658	29232
+// OP_STOREP_ENT	29084	29232	0
+// OP_STORE_F	213	29087	0
+// OP_STORE_ENT	30	29077	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29077	659	29233
+// OP_STORE_ENT	29233	29077	0
+// OP_GOTO	-24	0	0
+// OP_IFNOT	29087	9	0
+// OP_NOT_ENT	29081	0	29234
+// OP_IFNOT	29234	2	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29084	659	29235
+// OP_STOREP_ENT	30	29235	0
+// OP_ADDRESS	29084	658	29236
+// OP_STOREP_ENT	29081	29236	0
+// OP_STORE_ENT	29084	29081	0
+// OP_ADDRESS	29084	661	29237
+// OP_STOREP_F	214	29237	0
+// OP_LOAD_ENT	29083	626	29238
+// OP_STORE_ENT	29238	29084	0
+// OP_IFNOT	29084	71	0
+// OP_LOAD_F	29083	660	29239
+// OP_LOAD_F	29083	634	29240
+// OP_ADD_F	29239	29240	29241
+// OP_STORE_F	29241	29085	0
+// OP_LOAD_FNC	29080	547	29242
+// OP_STORE_V	29084	4	0
+// OP_STORE_V	29085	7	0
+// OP_STORE_V	29080	10	0
+// OP_CALL3	29242	0	0
+// OP_IFNOT	1	61	0
+// OP_ADDRESS	29084	660	29243
+// OP_STOREP_F	29085	29243	0
+// OP_LOAD_F	29084	661	29244
+// OP_IFNOT	29244	19	0
+// OP_LOAD_ENT	29084	658	29245
+// OP_IFNOT	29245	6	0
+// OP_LOAD_ENT	29084	658	29246
+// OP_ADDRESS	29246	659	29247
+// OP_LOAD_ENT	29084	659	29248
+// OP_STOREP_ENT	29248	29247	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	659	29249
+// OP_STORE_ENT	29249	29082	0
+// OP_LOAD_ENT	29084	659	29250
+// OP_IFNOT	29250	6	0
+// OP_LOAD_ENT	29084	659	29251
+// OP_ADDRESS	29251	658	29252
+// OP_LOAD_ENT	29084	658	29253
+// OP_STOREP_ENT	29253	29252	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29084	658	29254
+// OP_STORE_ENT	29254	29081	0
+// OP_STORE_ENT	29082	29077	0
+// OP_STORE_F	214	29087	0
+// OP_IFNOT	29077	25	0
+// OP_LOAD_F	29077	660	29255
+// OP_LOAD_F	29084	660	29256
+// OP_LT	29255	29256	29257
+// OP_IFNOT	29257	18	0
+// OP_ADDRESS	29084	658	29258
+// OP_LOAD_ENT	29077	658	29259
+// OP_STOREP_ENT	29259	29258	0
+// OP_ADDRESS	29084	659	29260
+// OP_STOREP_ENT	29077	29260	0
+// OP_LOAD_ENT	29077	658	29261
+// OP_IFNOT	29261	5	0
+// OP_LOAD_ENT	29077	658	29262
+// OP_ADDRESS	29262	659	29263
+// OP_STOREP_ENT	29084	29263	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29077	658	29264
+// OP_STOREP_ENT	29084	29264	0
+// OP_STORE_F	213	29087	0
+// OP_STORE_ENT	30	29077	0
+// OP_GOTO	3	0	0
+// OP_LOAD_ENT	29077	659	29265
+// OP_STORE_ENT	29265	29077	0
+// OP_GOTO	-24	0	0
+// OP_IFNOT	29087	9	0
+// OP_NOT_ENT	29081	0	29266
+// OP_IFNOT	29266	2	0
+// OP_STORE_ENT	29084	29082	0
+// OP_ADDRESS	29084	659	29267
+// OP_STOREP_ENT	30	29267	0
+// OP_ADDRESS	29084	658	29268
+// OP_STOREP_ENT	29081	29268	0
+// OP_STORE_ENT	29084	29081	0
+// OP_ADDRESS	29084	661	29269
+// OP_STOREP_F	214	29269	0
+// OP_ADD_F	29086	214	29270
+// OP_STORE_F	29270	29086	0
+// OP_GT	29086	740	29271
+// OP_IFNOT	29271	2	0
+// OP_STORE_ENT	30	29081	0
+// OP_ADD_F	808	214	29272
+// OP_STORE_F	29272	808	0
+// OP_GT	808	741	29273
+// OP_IFNOT	29273	2	0
+// OP_STORE_ENT	30	29081	0
+// OP_GOTO	-392	0	0
+// OP_GT	29086	819	29274
+// OP_IFNOT	29274	2	0
+// OP_STORE_F	29086	819	0
+// OP_DONE	0	0	0
+void (entity globaldef009216, entity globaldef009217, float globaldef009218, entity globaldef009219) func002681 = 
+{
+    local entity globaldef009220;
+    local entity globaldef009221;
+    local entity globaldef009222;
+    local entity globaldef009223;
+    local float globaldef009224;
+    local float globaldef009225;
+    local float globaldef009226;
+    
+    if(globaldef000791 >= globaldef000724)
+    {
+        return;
+    }
+    
+    
+    if(!globaldef009219.field000224)
+    {
+        objerror("no cache update function");
+    }
+    
+    
+    if(!globaldef009217)
+    {
+        objerror("can't cache at world entity");
+    }
+    
+    globaldef009224 = globaldef009218 + func002655(globaldef009216, globaldef009217);
+    
+    if(!globaldef009219.field000224(globaldef009217, globaldef009224, globaldef009219))
+    {
+        return;
+    }
+    
+    globaldef009222 = globaldef000819;
+    
+    while(globaldef009222)
+    {
+        globaldef009222.field000338 = globaldef000191;
+        globaldef009222 = globaldef009222.field000297;
+    }
+    
+    globaldef009217.field000337 = globaldef009224;
+    globaldef009217.field000335 = globaldef000003;
+    globaldef009217.field000336 = globaldef000003;
+    globaldef009220 = globaldef009217;
+    globaldef009221 = globaldef009217;
+    globaldef009217.field000338 = globaldef000192;
+    globaldef009225 = globaldef000191;
+    
+    while(globaldef009220)
+    {
+        globaldef009222 = globaldef009220;
+        if(globaldef009222.field000335)
+        {
+            globaldef009222.field000335.field000336 = globaldef000003;
+        }
+        else
+        {
+            globaldef009221 = globaldef000003;
+        }
+        
+        globaldef009220 = globaldef009222.field000335;
+        globaldef009222.field000335 = globaldef000003;
+        globaldef009222.field000336 = globaldef000003;
+        globaldef009222.field000338 = globaldef000191;
+        globaldef009223 = globaldef009222.field000299;
+        
+        if(globaldef009223)
+        {
+            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000307;
+            
+            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            {
+                globaldef009223.field000337 = globaldef009224;
+                
+                if(globaldef009223.field000338)
+                {
+                    if(globaldef009223.field000335)
+                    {
+                        globaldef009223.field000335.field000336 = globaldef009223.field000336;
+                    }
+                    else
+                    {
+                        globaldef009221 = globaldef009223.field000336;
+                    }
+                    
+                    if(globaldef009223.field000336)
+                    {
+                        globaldef009223.field000336.field000335 = globaldef009223.field000335;
+                    }
+                    else
+                    {
+                        globaldef009220 = globaldef009223.field000335;
+                    }
+                    
+                }
+                
+                globaldef009216 = globaldef009221;
+                globaldef009226 = globaldef000192;
+                
+                while(globaldef009216)
+                {
+                    if(globaldef009216.field000337 < globaldef009223.field000337)
+                    {
+                        globaldef009223.field000335 = globaldef009216.field000335;
+                        globaldef009223.field000336 = globaldef009216;
+                        if(globaldef009216.field000335)
+                        {
+                            globaldef009216.field000335.field000336 = globaldef009223;
+                        }
+                        else
+                        {
+                            globaldef009221 = globaldef009223;
+                        }
+                        
+                        globaldef009216.field000335 = globaldef009223;
+                        globaldef009226 = globaldef000191;
+                        globaldef009216 = globaldef000003;
+                    }
+                    else
+                    {
+                        globaldef009216 = globaldef009216.field000336;
+                    }
+                    
+                }
+                
+                
+                if(globaldef009226)
+                {
+                    
+                    if(!globaldef009220)
+                    {
+                        globaldef009221 = globaldef009223;
+                    }
+                    
+                    globaldef009223.field000336 = globaldef000003;
+                    globaldef009223.field000335 = globaldef009220;
+                    globaldef009220 = globaldef009223;
+                }
+                
+                globaldef009223.field000338 = globaldef000192;
+            }
+            
+        }
+        
+        globaldef009223 = globaldef009222.field000300;
+        
+        if(globaldef009223)
+        {
+            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000308;
+            
+            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            {
+                globaldef009223.field000337 = globaldef009224;
+                
+                if(globaldef009223.field000338)
+                {
+                    if(globaldef009223.field000335)
+                    {
+                        globaldef009223.field000335.field000336 = globaldef009223.field000336;
+                    }
+                    else
+                    {
+                        globaldef009221 = globaldef009223.field000336;
+                    }
+                    
+                    if(globaldef009223.field000336)
+                    {
+                        globaldef009223.field000336.field000335 = globaldef009223.field000335;
+                    }
+                    else
+                    {
+                        globaldef009220 = globaldef009223.field000335;
+                    }
+                    
+                }
+                
+                globaldef009216 = globaldef009221;
+                globaldef009226 = globaldef000192;
+                
+                while(globaldef009216)
+                {
+                    if(globaldef009216.field000337 < globaldef009223.field000337)
+                    {
+                        globaldef009223.field000335 = globaldef009216.field000335;
+                        globaldef009223.field000336 = globaldef009216;
+                        if(globaldef009216.field000335)
+                        {
+                            globaldef009216.field000335.field000336 = globaldef009223;
+                        }
+                        else
+                        {
+                            globaldef009221 = globaldef009223;
+                        }
+                        
+                        globaldef009216.field000335 = globaldef009223;
+                        globaldef009226 = globaldef000191;
+                        globaldef009216 = globaldef000003;
+                    }
+                    else
+                    {
+                        globaldef009216 = globaldef009216.field000336;
+                    }
+                    
+                }
+                
+                
+                if(globaldef009226)
+                {
+                    
+                    if(!globaldef009220)
+                    {
+                        globaldef009221 = globaldef009223;
+                    }
+                    
+                    globaldef009223.field000336 = globaldef000003;
+                    globaldef009223.field000335 = globaldef009220;
+                    globaldef009220 = globaldef009223;
+                }
+                
+                globaldef009223.field000338 = globaldef000192;
+            }
+            
+        }
+        
+        globaldef009223 = globaldef009222.field000301;
+        
+        if(globaldef009223)
+        {
+            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000309;
+            
+            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            {
+                globaldef009223.field000337 = globaldef009224;
+                
+                if(globaldef009223.field000338)
+                {
+                    if(globaldef009223.field000335)
+                    {
+                        globaldef009223.field000335.field000336 = globaldef009223.field000336;
+                    }
+                    else
+                    {
+                        globaldef009221 = globaldef009223.field000336;
+                    }
+                    
+                    if(globaldef009223.field000336)
+                    {
+                        globaldef009223.field000336.field000335 = globaldef009223.field000335;
+                    }
+                    else
+                    {
+                        globaldef009220 = globaldef009223.field000335;
+                    }
+                    
+                }
+                
+                globaldef009216 = globaldef009221;
+                globaldef009226 = globaldef000192;
+                
+                while(globaldef009216)
+                {
+                    if(globaldef009216.field000337 < globaldef009223.field000337)
+                    {
+                        globaldef009223.field000335 = globaldef009216.field000335;
+                        globaldef009223.field000336 = globaldef009216;
+                        if(globaldef009216.field000335)
+                        {
+                            globaldef009216.field000335.field000336 = globaldef009223;
+                        }
+                        else
+                        {
+                            globaldef009221 = globaldef009223;
+                        }
+                        
+                        globaldef009216.field000335 = globaldef009223;
+                        globaldef009226 = globaldef000191;
+                        globaldef009216 = globaldef000003;
+                    }
+                    else
+                    {
+                        globaldef009216 = globaldef009216.field000336;
+                    }
+                    
+                }
+                
+                
+                if(globaldef009226)
+                {
+                    
+                    if(!globaldef009220)
+                    {
+                        globaldef009221 = globaldef009223;
+                    }
+                    
+                    globaldef009223.field000336 = globaldef000003;
+                    globaldef009223.field000335 = globaldef009220;
+                    globaldef009220 = globaldef009223;
+                }
+                
+                globaldef009223.field000338 = globaldef000192;
+            }
+            
+        }
+        
+        globaldef009223 = globaldef009222.field000302;
+        
+        if(globaldef009223)
+        {
+            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000310;
+            
+            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            {
+                globaldef009223.field000337 = globaldef009224;
+                
+                if(globaldef009223.field000338)
+                {
+                    if(globaldef009223.field000335)
+                    {
+                        globaldef009223.field000335.field000336 = globaldef009223.field000336;
+                    }
+                    else
+                    {
+                        globaldef009221 = globaldef009223.field000336;
+                    }
+                    
+                    if(globaldef009223.field000336)
+                    {
+                        globaldef009223.field000336.field000335 = globaldef009223.field000335;
+                    }
+                    else
+                    {
+                        globaldef009220 = globaldef009223.field000335;
+                    }
+                    
+                }
+                
+                globaldef009216 = globaldef009221;
+                globaldef009226 = globaldef000192;
+                
+                while(globaldef009216)
+                {
+                    if(globaldef009216.field000337 < globaldef009223.field000337)
+                    {
+                        globaldef009223.field000335 = globaldef009216.field000335;
+                        globaldef009223.field000336 = globaldef009216;
+                        if(globaldef009216.field000335)
+                        {
+                            globaldef009216.field000335.field000336 = globaldef009223;
+                        }
+                        else
+                        {
+                            globaldef009221 = globaldef009223;
+                        }
+                        
+                        globaldef009216.field000335 = globaldef009223;
+                        globaldef009226 = globaldef000191;
+                        globaldef009216 = globaldef000003;
+                    }
+                    else
+                    {
+                        globaldef009216 = globaldef009216.field000336;
+                    }
+                    
+                }
+                
+                
+                if(globaldef009226)
+                {
+                    
+                    if(!globaldef009220)
+                    {
+                        globaldef009221 = globaldef009223;
+                    }
+                    
+                    globaldef009223.field000336 = globaldef000003;
+                    globaldef009223.field000335 = globaldef009220;
+                    globaldef009220 = globaldef009223;
+                }
+                
+                globaldef009223.field000338 = globaldef000192;
+            }
+            
+        }
+        
+        globaldef009223 = globaldef009222.field000303;
+        
+        if(globaldef009223)
+        {
+            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000311;
+            
+            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            {
+                globaldef009223.field000337 = globaldef009224;
+                
+                if(globaldef009223.field000338)
+                {
+                    if(globaldef009223.field000335)
+                    {
+                        globaldef009223.field000335.field000336 = globaldef009223.field000336;
+                    }
+                    else
+                    {
+                        globaldef009221 = globaldef009223.field000336;
+                    }
+                    
+                    if(globaldef009223.field000336)
+                    {
+                        globaldef009223.field000336.field000335 = globaldef009223.field000335;
+                    }
+                    else
+                    {
+                        globaldef009220 = globaldef009223.field000335;
+                    }
+                    
+                }
+                
+                globaldef009216 = globaldef009221;
+                globaldef009226 = globaldef000192;
+                
+                while(globaldef009216)
+                {
+                    if(globaldef009216.field000337 < globaldef009223.field000337)
+                    {
+                        globaldef009223.field000335 = globaldef009216.field000335;
+                        globaldef009223.field000336 = globaldef009216;
+                        if(globaldef009216.field000335)
+                        {
+                            globaldef009216.field000335.field000336 = globaldef009223;
+                        }
+                        else
+                        {
+                            globaldef009221 = globaldef009223;
+                        }
+                        
+                        globaldef009216.field000335 = globaldef009223;
+                        globaldef009226 = globaldef000191;
+                        globaldef009216 = globaldef000003;
+                    }
+                    else
+                    {
+                        globaldef009216 = globaldef009216.field000336;
+                    }
+                    
+                }
+                
+                
+                if(globaldef009226)
+                {
+                    
+                    if(!globaldef009220)
+                    {
+                        globaldef009221 = globaldef009223;
+                    }
+                    
+                    globaldef009223.field000336 = globaldef000003;
+                    globaldef009223.field000335 = globaldef009220;
+                    globaldef009220 = globaldef009223;
+                }
+                
+                globaldef009223.field000338 = globaldef000192;
+            }
+            
+        }
+        
+        globaldef009225 = globaldef009225 + globaldef000192;
+        
+        if(globaldef009225 > globaldef000723)
+        {
+            globaldef009220 = globaldef000003;
+        }
+        
+        globaldef000791 = globaldef000791 + globaldef000192;
+        
+        if(globaldef000791 > globaldef000724)
+        {
+            globaldef009220 = globaldef000003;
+        }
+        
+    }
+    
+    
+    if(globaldef009225 > globaldef000802)
+    {
+        globaldef000802 = globaldef009225;
+    }
+    
+};
+
+// func002682
+// function begins at statement 55440, parm_start=29276
+// OP_GE	808	741	29287
+// OP_IFNOT	29287	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_FNC	29279	547	29288
+// OP_NOT_FNC	29288	0	29289
+// OP_IFNOT	29289	3	0
+// OP_STORE_V	29091	4	0
+// OP_CALL1	461	0	0
+// OP_NOT_ENT	29277	0	29290
+// OP_IFNOT	29290	3	0
+// OP_STORE_V	29093	4	0
+// OP_CALL1	461	0	0
+// OP_STORE_V	29276	4	0
+// OP_STORE_V	29277	7	0
+// OP_CALL2	28428	0	0
+// OP_ADD_F	29278	1	29291
+// OP_STORE_F	29291	29284	0
+// OP_LOAD_FNC	29279	547	29292
+// OP_STORE_V	29277	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29292	0	0
+// OP_NOT_F	1	0	29293
+// OP_IFNOT	29293	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_ENT	836	29282	0
+// OP_IFNOT	29282	6	0
+// OP_ADDRESS	29282	661	29294
+// OP_STOREP_F	213	29294	0
+// OP_LOAD_ENT	29282	620	29295
+// OP_STORE_ENT	29295	29282	0
+// OP_GOTO	-5	0	0
+// OP_ADDRESS	29277	660	29296
+// OP_STOREP_F	29284	29296	0
+// OP_ADDRESS	29277	658	29297
+// OP_STOREP_ENT	30	29297	0
+// OP_ADDRESS	29277	659	29298
+// OP_STOREP_ENT	30	29298	0
+// OP_STORE_ENT	29277	29280	0
+// OP_STORE_ENT	29277	29281	0
+// OP_ADDRESS	29277	661	29299
+// OP_STOREP_F	214	29299	0
+// OP_STORE_F	213	29285	0
+// OP_IFNOT	29280	178	0
+// OP_STORE_ENT	29280	29282	0
+// OP_LOAD_ENT	29282	658	29300
+// OP_IFNOT	29300	5	0
+// OP_LOAD_ENT	29282	658	29301
+// OP_ADDRESS	29301	659	29302
+// OP_STOREP_ENT	30	29302	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	30	29281	0
+// OP_LOAD_ENT	29282	658	29303
+// OP_STORE_ENT	29303	29280	0
+// OP_ADDRESS	29282	658	29304
+// OP_STOREP_ENT	30	29304	0
+// OP_ADDRESS	29282	659	29305
+// OP_STOREP_ENT	30	29305	0
+// OP_ADDRESS	29282	661	29306
+// OP_STOREP_F	213	29306	0
+// OP_LOAD_ENT	29282	622	29307
+// OP_STORE_ENT	29307	29283	0
+// OP_IFNOT	29283	28	0
+// OP_LOAD_F	29282	660	29308
+// OP_LOAD_F	29282	630	29309
+// OP_ADD_F	29308	29309	29310
+// OP_STORE_F	29310	29284	0
+// OP_LOAD_FNC	29279	547	29311
+// OP_STORE_V	29283	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29311	0	0
+// OP_IFNOT	1	18	0
+// OP_ADDRESS	29283	660	29312
+// OP_STOREP_F	29284	29312	0
+// OP_LOAD_F	29283	661	29313
+// OP_NOT_F	29313	0	29314
+// OP_IFNOT	29314	13	0
+// OP_IFNOT	29281	4	0
+// OP_ADDRESS	29281	658	29315
+// OP_STOREP_ENT	29283	29315	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29283	29280	0
+// OP_ADDRESS	29283	659	29316
+// OP_STOREP_ENT	29281	29316	0
+// OP_ADDRESS	29283	658	29317
+// OP_STOREP_ENT	30	29317	0
+// OP_STORE_ENT	29283	29281	0
+// OP_ADDRESS	29283	661	29318
+// OP_STOREP_F	214	29318	0
+// OP_LOAD_ENT	29282	623	29319
+// OP_STORE_ENT	29319	29283	0
+// OP_IFNOT	29283	28	0
+// OP_LOAD_F	29282	660	29320
+// OP_LOAD_F	29282	631	29321
+// OP_ADD_F	29320	29321	29322
+// OP_STORE_F	29322	29284	0
+// OP_LOAD_FNC	29279	547	29323
+// OP_STORE_V	29283	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29323	0	0
+// OP_IFNOT	1	18	0
+// OP_ADDRESS	29283	660	29324
+// OP_STOREP_F	29284	29324	0
+// OP_LOAD_F	29283	661	29325
+// OP_NOT_F	29325	0	29326
+// OP_IFNOT	29326	13	0
+// OP_IFNOT	29281	4	0
+// OP_ADDRESS	29281	658	29327
+// OP_STOREP_ENT	29283	29327	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29283	29280	0
+// OP_ADDRESS	29283	659	29328
+// OP_STOREP_ENT	29281	29328	0
+// OP_ADDRESS	29283	658	29329
+// OP_STOREP_ENT	30	29329	0
+// OP_STORE_ENT	29283	29281	0
+// OP_ADDRESS	29283	661	29330
+// OP_STOREP_F	214	29330	0
+// OP_LOAD_ENT	29282	624	29331
+// OP_STORE_ENT	29331	29283	0
+// OP_IFNOT	29283	28	0
+// OP_LOAD_F	29282	660	29332
+// OP_LOAD_F	29282	632	29333
+// OP_ADD_F	29332	29333	29334
+// OP_STORE_F	29334	29284	0
+// OP_LOAD_FNC	29279	547	29335
+// OP_STORE_V	29283	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29335	0	0
+// OP_IFNOT	1	18	0
+// OP_ADDRESS	29283	660	29336
+// OP_STOREP_F	29284	29336	0
+// OP_LOAD_F	29283	661	29337
+// OP_NOT_F	29337	0	29338
+// OP_IFNOT	29338	13	0
+// OP_IFNOT	29281	4	0
+// OP_ADDRESS	29281	658	29339
+// OP_STOREP_ENT	29283	29339	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29283	29280	0
+// OP_ADDRESS	29283	659	29340
+// OP_STOREP_ENT	29281	29340	0
+// OP_ADDRESS	29283	658	29341
+// OP_STOREP_ENT	30	29341	0
+// OP_STORE_ENT	29283	29281	0
+// OP_ADDRESS	29283	661	29342
+// OP_STOREP_F	214	29342	0
+// OP_LOAD_ENT	29282	625	29343
+// OP_STORE_ENT	29343	29283	0
+// OP_IFNOT	29283	28	0
+// OP_LOAD_F	29282	660	29344
+// OP_LOAD_F	29282	633	29345
+// OP_ADD_F	29344	29345	29346
+// OP_STORE_F	29346	29284	0
+// OP_LOAD_FNC	29279	547	29347
+// OP_STORE_V	29283	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29347	0	0
+// OP_IFNOT	1	18	0
+// OP_ADDRESS	29283	660	29348
+// OP_STOREP_F	29284	29348	0
+// OP_LOAD_F	29283	661	29349
+// OP_NOT_F	29349	0	29350
+// OP_IFNOT	29350	13	0
+// OP_IFNOT	29281	4	0
+// OP_ADDRESS	29281	658	29351
+// OP_STOREP_ENT	29283	29351	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29283	29280	0
+// OP_ADDRESS	29283	659	29352
+// OP_STOREP_ENT	29281	29352	0
+// OP_ADDRESS	29283	658	29353
+// OP_STOREP_ENT	30	29353	0
+// OP_STORE_ENT	29283	29281	0
+// OP_ADDRESS	29283	661	29354
+// OP_STOREP_F	214	29354	0
+// OP_LOAD_ENT	29282	626	29355
+// OP_STORE_ENT	29355	29283	0
+// OP_IFNOT	29283	28	0
+// OP_LOAD_F	29282	660	29356
+// OP_LOAD_F	29282	634	29357
+// OP_ADD_F	29356	29357	29358
+// OP_STORE_F	29358	29284	0
+// OP_LOAD_FNC	29279	547	29359
+// OP_STORE_V	29283	4	0
+// OP_STORE_V	29284	7	0
+// OP_STORE_V	29279	10	0
+// OP_CALL3	29359	0	0
+// OP_IFNOT	1	18	0
+// OP_ADDRESS	29283	660	29360
+// OP_STOREP_F	29284	29360	0
+// OP_LOAD_F	29283	661	29361
+// OP_NOT_F	29361	0	29362
+// OP_IFNOT	29362	13	0
+// OP_IFNOT	29281	4	0
+// OP_ADDRESS	29281	658	29363
+// OP_STOREP_ENT	29283	29363	0
+// OP_GOTO	2	0	0
+// OP_STORE_ENT	29283	29280	0
+// OP_ADDRESS	29283	659	29364
+// OP_STOREP_ENT	29281	29364	0
+// OP_ADDRESS	29283	658	29365
+// OP_STOREP_ENT	30	29365	0
+// OP_STORE_ENT	29283	29281	0
+// OP_ADDRESS	29283	661	29366
+// OP_STOREP_F	214	29366	0
+// OP_ADD_F	29285	214	29367
+// OP_STORE_F	29367	29285	0
+// OP_GT	29285	740	29368
+// OP_IFNOT	29368	2	0
+// OP_STORE_ENT	30	29280	0
+// OP_ADD_F	808	214	29369
+// OP_STORE_F	29369	808	0
+// OP_GT	808	741	29370
+// OP_IFNOT	29370	2	0
+// OP_STORE_ENT	30	29280	0
+// OP_GOTO	-177	0	0
+// OP_GT	29285	819	29371
+// OP_IFNOT	29371	2	0
+// OP_STORE_F	29285	819	0
+// OP_DONE	0	0	0
+void (entity globaldef009230, entity globaldef009231, float globaldef009232, entity globaldef009233) func002682 = 
+{
+    local entity globaldef009234;
+    local entity globaldef009235;
+    local entity globaldef009236;
+    local entity globaldef009237;
+    local float globaldef009238;
+    local float globaldef009239;
+    local float globaldef009240;
+    
+    if(globaldef000791 >= globaldef000724)
+    {
+        return;
+    }
+    
+    
+    if(!globaldef009233.field000224)
+    {
+        objerror("no cache update function");
+    }
+    
+    
+    if(!globaldef009231)
+    {
+        objerror("can't cache at world entity");
+    }
+    
+    globaldef009238 = globaldef009232 + func002655(globaldef009230, globaldef009231);
+    
+    if(!globaldef009233.field000224(globaldef009231, globaldef009238, globaldef009233))
+    {
+        return;
+    }
+    
+    globaldef009236 = globaldef000819;
+    
+    while(globaldef009236)
+    {
+        globaldef009236.field000338 = globaldef000191;
+        globaldef009236 = globaldef009236.field000297;
+    }
+    
+    globaldef009231.field000337 = globaldef009238;
+    globaldef009231.field000335 = globaldef000003;
+    globaldef009231.field000336 = globaldef000003;
+    globaldef009234 = globaldef009231;
+    globaldef009235 = globaldef009231;
+    globaldef009231.field000338 = globaldef000192;
+    globaldef009239 = globaldef000191;
+    
+    while(globaldef009234)
+    {
+        globaldef009236 = globaldef009234;
+        if(globaldef009236.field000335)
+        {
+            globaldef009236.field000335.field000336 = globaldef000003;
+        }
+        else
+        {
+            globaldef009235 = globaldef000003;
+        }
+        
+        globaldef009234 = globaldef009236.field000335;
+        globaldef009236.field000335 = globaldef000003;
+        globaldef009236.field000336 = globaldef000003;
+        globaldef009236.field000338 = globaldef000191;
+        globaldef009237 = globaldef009236.field000299;
+        
+        if(globaldef009237)
+        {
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000307;
+            
+            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            {
+                globaldef009237.field000337 = globaldef009238;
+                
+                if(!globaldef009237.field000338)
+                {
+                    if(globaldef009235)
+                    {
+                        globaldef009235.field000335 = globaldef009237;
+                    }
+                    else
+                    {
+                        globaldef009234 = globaldef009237;
+                    }
+                    
+                    globaldef009237.field000336 = globaldef009235;
+                    globaldef009237.field000335 = globaldef000003;
+                    globaldef009235 = globaldef009237;
+                    globaldef009237.field000338 = globaldef000192;
+                }
+                
+            }
+            
+        }
+        
+        globaldef009237 = globaldef009236.field000300;
+        
+        if(globaldef009237)
+        {
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000308;
+            
+            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            {
+                globaldef009237.field000337 = globaldef009238;
+                
+                if(!globaldef009237.field000338)
+                {
+                    if(globaldef009235)
+                    {
+                        globaldef009235.field000335 = globaldef009237;
+                    }
+                    else
+                    {
+                        globaldef009234 = globaldef009237;
+                    }
+                    
+                    globaldef009237.field000336 = globaldef009235;
+                    globaldef009237.field000335 = globaldef000003;
+                    globaldef009235 = globaldef009237;
+                    globaldef009237.field000338 = globaldef000192;
+                }
+                
+            }
+            
+        }
+        
+        globaldef009237 = globaldef009236.field000301;
+        
+        if(globaldef009237)
+        {
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000309;
+            
+            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            {
+                globaldef009237.field000337 = globaldef009238;
+                
+                if(!globaldef009237.field000338)
+                {
+                    if(globaldef009235)
+                    {
+                        globaldef009235.field000335 = globaldef009237;
+                    }
+                    else
+                    {
+                        globaldef009234 = globaldef009237;
+                    }
+                    
+                    globaldef009237.field000336 = globaldef009235;
+                    globaldef009237.field000335 = globaldef000003;
+                    globaldef009235 = globaldef009237;
+                    globaldef009237.field000338 = globaldef000192;
+                }
+                
+            }
+            
+        }
+        
+        globaldef009237 = globaldef009236.field000302;
+        
+        if(globaldef009237)
+        {
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000310;
+            
+            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            {
+                globaldef009237.field000337 = globaldef009238;
+                
+                if(!globaldef009237.field000338)
+                {
+                    if(globaldef009235)
+                    {
+                        globaldef009235.field000335 = globaldef009237;
+                    }
+                    else
+                    {
+                        globaldef009234 = globaldef009237;
+                    }
+                    
+                    globaldef009237.field000336 = globaldef009235;
+                    globaldef009237.field000335 = globaldef000003;
+                    globaldef009235 = globaldef009237;
+                    globaldef009237.field000338 = globaldef000192;
+                }
+                
+            }
+            
+        }
+        
+        globaldef009237 = globaldef009236.field000303;
+        
+        if(globaldef009237)
+        {
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000311;
+            
+            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            {
+                globaldef009237.field000337 = globaldef009238;
+                
+                if(!globaldef009237.field000338)
+                {
+                    if(globaldef009235)
+                    {
+                        globaldef009235.field000335 = globaldef009237;
+                    }
+                    else
+                    {
+                        globaldef009234 = globaldef009237;
+                    }
+                    
+                    globaldef009237.field000336 = globaldef009235;
+                    globaldef009237.field000335 = globaldef000003;
+                    globaldef009235 = globaldef009237;
+                    globaldef009237.field000338 = globaldef000192;
+                }
+                
+            }
+            
+        }
+        
+        globaldef009239 = globaldef009239 + globaldef000192;
+        
+        if(globaldef009239 > globaldef000723)
+        {
+            globaldef009234 = globaldef000003;
+        }
+        
+        globaldef000791 = globaldef000791 + globaldef000192;
+        
+        if(globaldef000791 > globaldef000724)
+        {
+            globaldef009234 = globaldef000003;
+        }
+        
+    }
+    
+    
+    if(globaldef009239 > globaldef000802)
+    {
+        globaldef000802 = globaldef009239;
+    }
+    
+};
+
+// func002683
+// function begins at statement 55665, parm_start=29372
+// OP_BITAND	821	766	29376
+// OP_IFNOT	29376	7	0
+// OP_STORE_V	29372	4	0
+// OP_STORE_V	29373	7	0
+// OP_STORE_V	29374	10	0
+// OP_STORE_V	29375	13	0
+// OP_CALL4	29076	0	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	29372	4	0
+// OP_STORE_V	29373	7	0
+// OP_STORE_V	29374	10	0
+// OP_STORE_V	29375	13	0
+// OP_CALL4	29275	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009241, entity globaldef009242, float globaldef009243, entity globaldef009244) func002683 = 
+{
+    if(globaldef000804 & globaldef000749)
+    {
+        func002681(globaldef009241, globaldef009242, globaldef009243, globaldef009244);
+    }
+    else
+    {
+        func002682(globaldef009241, globaldef009242, globaldef009243, globaldef009244);
+    }
+    
+};
+
+// func002684
+// function begins at statement 55679, parm_start=29378
+// OP_LOAD_F	29379	648	29380
+// OP_GT	29380	213	29381
+// OP_IFNOT	29381	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	648	29382
+// OP_STORE_V	29382	10	0
+// OP_LOAD_ENT	29379	638	29383
+// OP_STORE_V	29383	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	649	29384
+// OP_GT	29384	213	29385
+// OP_IFNOT	29385	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	649	29386
+// OP_STORE_V	29386	10	0
+// OP_LOAD_ENT	29379	639	29387
+// OP_STORE_V	29387	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	650	29388
+// OP_GT	29388	213	29389
+// OP_IFNOT	29389	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	650	29390
+// OP_STORE_V	29390	10	0
+// OP_LOAD_ENT	29379	640	29391
+// OP_STORE_V	29391	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	651	29392
+// OP_GT	29392	213	29393
+// OP_IFNOT	29393	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	651	29394
+// OP_STORE_V	29394	10	0
+// OP_LOAD_ENT	29379	641	29395
+// OP_STORE_V	29395	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	652	29396
+// OP_GT	29396	213	29397
+// OP_IFNOT	29397	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	652	29398
+// OP_STORE_V	29398	10	0
+// OP_LOAD_ENT	29379	642	29399
+// OP_STORE_V	29399	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	653	29400
+// OP_GT	29400	213	29401
+// OP_IFNOT	29401	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	653	29402
+// OP_STORE_V	29402	10	0
+// OP_LOAD_ENT	29379	643	29403
+// OP_STORE_V	29403	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	654	29404
+// OP_GT	29404	213	29405
+// OP_IFNOT	29405	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	654	29406
+// OP_STORE_V	29406	10	0
+// OP_LOAD_ENT	29379	644	29407
+// OP_STORE_V	29407	13	0
+// OP_CALL4	1201	0	0
+// OP_LOAD_F	29379	655	29408
+// OP_GT	29408	213	29409
+// OP_IFNOT	29409	8	0
+// OP_STORE_V	29379	4	0
+// OP_STORE_V	29378	7	0
+// OP_LOAD_F	29379	655	29410
+// OP_STORE_V	29410	10	0
+// OP_LOAD_ENT	29379	645	29411
+// OP_STORE_V	29411	13	0
+// OP_CALL4	1201	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009246, entity globaldef009247) func002684 = 
+{
+    
+    if(globaldef009247.field000325 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000325, globaldef009247.field000315);
+    }
+    
+    
+    if(globaldef009247.field000326 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000326, globaldef009247.field000316);
+    }
+    
+    
+    if(globaldef009247.field000327 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000327, globaldef009247.field000317);
+    }
+    
+    
+    if(globaldef009247.field000328 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000328, globaldef009247.field000318);
+    }
+    
+    
+    if(globaldef009247.field000329 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000329, globaldef009247.field000319);
+    }
+    
+    
+    if(globaldef009247.field000330 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000330, globaldef009247.field000320);
+    }
+    
+    
+    if(globaldef009247.field000331 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000331, globaldef009247.field000321);
+    }
+    
+    
+    if(globaldef009247.field000332 > globaldef000191)
+    {
+        func002683(globaldef009247, globaldef009246, globaldef009247.field000332, globaldef009247.field000322);
+    }
+    
+};
+
+// func002685
+// function begins at statement 55760, parm_start=29412
+// OP_EQ_E	29412	29413	29416
+// OP_IFNOT	29416	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	29413	622	29417
+// OP_EQ_E	29417	29412	29418
+// OP_IFNOT	29418	2	0
+// OP_RETURN	0	0	0
+// OP_NOT_ENT	29412	0	29419
+// OP_IFNOT	29419	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_F	213	29414	0
+// OP_LOAD_ENT	29413	623	29420
+// OP_EQ_E	29420	29412	29421
+// OP_IFNOT	29421	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	30	0	0
+// OP_LOAD_ENT	29413	624	29422
+// OP_EQ_E	29422	29412	29423
+// OP_IFNOT	29423	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	25	0	0
+// OP_LOAD_ENT	29413	625	29424
+// OP_EQ_E	29424	29412	29425
+// OP_IFNOT	29425	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	20	0	0
+// OP_LOAD_ENT	29413	626	29426
+// OP_EQ_E	29426	29412	29427
+// OP_IFNOT	29427	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	15	0	0
+// OP_LOAD_ENT	29413	627	29428
+// OP_EQ_E	29428	29412	29429
+// OP_IFNOT	29429	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	10	0	0
+// OP_LOAD_ENT	29413	628	29430
+// OP_EQ_E	29430	29412	29431
+// OP_IFNOT	29431	3	0
+// OP_STORE_F	214	29414	0
+// OP_GOTO	5	0	0
+// OP_LOAD_ENT	29413	629	29432
+// OP_EQ_E	29432	29412	29433
+// OP_IFNOT	29433	2	0
+// OP_STORE_F	214	29414	0
+// OP_STORE_F	214	29415	0
+// OP_NOT_F	29414	0	29434
+// OP_IFNOT	29434	90	0
+// OP_LOAD_ENT	29413	622	29435
+// OP_NOT_ENT	29435	0	29436
+// OP_IFNOT	29436	9	0
+// OP_ADDRESS	29413	622	29437
+// OP_STOREP_ENT	29412	29437	0
+// OP_ADDRESS	29413	630	29438
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29438	0
+// OP_GOTO	79	0	0
+// OP_LOAD_ENT	29413	623	29439
+// OP_NOT_ENT	29439	0	29440
+// OP_IFNOT	29440	9	0
+// OP_ADDRESS	29413	623	29441
+// OP_STOREP_ENT	29412	29441	0
+// OP_ADDRESS	29413	631	29442
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29442	0
+// OP_GOTO	68	0	0
+// OP_LOAD_ENT	29413	624	29443
+// OP_NOT_ENT	29443	0	29444
+// OP_IFNOT	29444	9	0
+// OP_ADDRESS	29413	624	29445
+// OP_STOREP_ENT	29412	29445	0
+// OP_ADDRESS	29413	632	29446
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29446	0
+// OP_GOTO	57	0	0
+// OP_LOAD_ENT	29413	625	29447
+// OP_NOT_ENT	29447	0	29448
+// OP_IFNOT	29448	9	0
+// OP_ADDRESS	29413	625	29449
+// OP_STOREP_ENT	29412	29449	0
+// OP_ADDRESS	29413	633	29450
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29450	0
+// OP_GOTO	46	0	0
+// OP_LOAD_ENT	29413	626	29451
+// OP_NOT_ENT	29451	0	29452
+// OP_IFNOT	29452	9	0
+// OP_ADDRESS	29413	626	29453
+// OP_STOREP_ENT	29412	29453	0
+// OP_ADDRESS	29413	634	29454
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29454	0
+// OP_GOTO	35	0	0
+// OP_LOAD_ENT	29413	627	29455
+// OP_NOT_ENT	29455	0	29456
+// OP_IFNOT	29456	9	0
+// OP_ADDRESS	29413	627	29457
+// OP_STOREP_ENT	29412	29457	0
+// OP_ADDRESS	29413	635	29458
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29458	0
+// OP_GOTO	24	0	0
+// OP_LOAD_ENT	29413	628	29459
+// OP_NOT_ENT	29459	0	29460
+// OP_IFNOT	29460	9	0
+// OP_ADDRESS	29413	628	29461
+// OP_STOREP_ENT	29412	29461	0
+// OP_ADDRESS	29413	636	29462
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29462	0
+// OP_GOTO	13	0	0
+// OP_LOAD_ENT	29413	629	29463
+// OP_NOT_ENT	29463	0	29464
+// OP_IFNOT	29464	9	0
+// OP_ADDRESS	29413	629	29465
+// OP_STOREP_ENT	29412	29465	0
+// OP_ADDRESS	29413	637	29466
+// OP_STORE_V	29413	4	0
+// OP_STORE_V	29412	7	0
+// OP_CALL2	28428	0	0
+// OP_STOREP_F	1	29466	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	213	29415	0
+// OP_IFNOT	29415	4	0
+// OP_STORE_V	29412	4	0
+// OP_STORE_V	29413	7	0
+// OP_CALL2	29377	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009248, entity globaldef009249) func002685 = 
+{
+    local float globaldef009250;
+    local float globaldef009251;
+    
+    if(globaldef009248 == globaldef009249)
+    {
+        return;
+    }
+    
+    
+    if(globaldef009249.field000299 == globaldef009248)
+    {
+        return;
+    }
+    
+    
+    if(!globaldef009248)
+    {
+        return;
+    }
+    
+    globaldef009250 = globaldef000191;
+    if(globaldef009249.field000300 == globaldef009248)
+    {
+        globaldef009250 = globaldef000192;
+    }
+    else
+    {
+        if(globaldef009249.field000301 == globaldef009248)
+        {
+            globaldef009250 = globaldef000192;
+        }
+        else
+        {
+            if(globaldef009249.field000302 == globaldef009248)
+            {
+                globaldef009250 = globaldef000192;
+            }
+            else
+            {
+                if(globaldef009249.field000303 == globaldef009248)
+                {
+                    globaldef009250 = globaldef000192;
+                }
+                else
+                {
+                    if(globaldef009249.field000304 == globaldef009248)
+                    {
+                        globaldef009250 = globaldef000192;
+                    }
+                    else
+                    {
+                        if(globaldef009249.field000305 == globaldef009248)
+                        {
+                            globaldef009250 = globaldef000192;
+                        }
+                        else
+                        {
+                            
+                            if(globaldef009249.field000306 == globaldef009248)
+                            {
+                                globaldef009250 = globaldef000192;
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    globaldef009251 = globaldef000192;
+    
+    if(!globaldef009250)
+    {
+        if(!globaldef009249.field000299)
+        {
+            globaldef009249.field000299 = globaldef009248;
+            globaldef009249.field000307 = func002655(globaldef009249, globaldef009248);
+        }
+        else
+        {
+            if(!globaldef009249.field000300)
+            {
+                globaldef009249.field000300 = globaldef009248;
+                globaldef009249.field000308 = func002655(globaldef009249, globaldef009248);
+            }
+            else
+            {
+                if(!globaldef009249.field000301)
+                {
+                    globaldef009249.field000301 = globaldef009248;
+                    globaldef009249.field000309 = func002655(globaldef009249, globaldef009248);
+                }
+                else
+                {
+                    if(!globaldef009249.field000302)
+                    {
+                        globaldef009249.field000302 = globaldef009248;
+                        globaldef009249.field000310 = func002655(globaldef009249, globaldef009248);
+                    }
+                    else
+                    {
+                        if(!globaldef009249.field000303)
+                        {
+                            globaldef009249.field000303 = globaldef009248;
+                            globaldef009249.field000311 = func002655(globaldef009249, globaldef009248);
+                        }
+                        else
+                        {
+                            if(!globaldef009249.field000304)
+                            {
+                                globaldef009249.field000304 = globaldef009248;
+                                globaldef009249.field000312 = func002655(globaldef009249, globaldef009248);
+                            }
+                            else
+                            {
+                                if(!globaldef009249.field000305)
+                                {
+                                    globaldef009249.field000305 = globaldef009248;
+                                    globaldef009249.field000313 = func002655(globaldef009249, globaldef009248);
+                                }
+                                else
+                                {
+                                    if(!globaldef009249.field000306)
+                                    {
+                                        globaldef009249.field000306 = globaldef009248;
+                                        globaldef009249.field000314 = func002655(globaldef009249, globaldef009248);
+                                    }
+                                    else
+                                    {
+                                        globaldef009251 = globaldef000191;
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    if(globaldef009251)
+    {
+        func002684(globaldef009248, globaldef009249);
+    }
+    
+};
+
+// func002686
+// function begins at statement 55902, parm_start=29467
+// OP_LOAD_F	29468	182	29469
+// OP_BITAND	29469	222	29470
+// OP_NOT_F	29470	0	29471
+// OP_IFNOT	29471	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_FNC	29468	547	29472
+// OP_IFNOT	29472	15	0
+// OP_LOAD_ENT	29468	622	29473
+// OP_NOT_ENT	29473	0	29474
+// OP_IFNOT	29474	4	0
+// OP_STORE_V	29467	4	0
+// OP_STORE_V	29468	7	0
+// OP_CALL2	28999	0	0
+// OP_LOAD_ENT	29467	622	29475
+// OP_IFNOT	29475	7	0
+// OP_STORE_V	29468	4	0
+// OP_LOAD_ENT	29467	622	29476
+// OP_STORE_V	29476	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	29468	13	0
+// OP_CALL4	1201	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009252, entity globaldef009253) func002686 = 
+{
+    
+    if(!(globaldef009253.flags & globaldef000200))
+    {
+        return;
+    }
+    
+    
+    if(globaldef009253.field000224)
+    {
+        
+        if(!globaldef009253.field000299)
+        {
+            func002678(globaldef009252, globaldef009253);
+        }
+        
+        
+        if(globaldef009252.field000299)
+        {
+            func002683(globaldef009253, globaldef009252.field000299, globaldef000191, globaldef009253);
+        }
+        
+    }
+    
+};
+
+// func002687
+// function begins at statement 55924, parm_start=29477
+// OP_LOAD_ENT	29477	638	29479
+// OP_EQ_E	29479	29478	29480
+// OP_IFNOT	29480	3	0
+// OP_LOAD_F	29477	648	29481
+// OP_RETURN	29481	0	0
+// OP_LOAD_ENT	29477	639	29482
+// OP_EQ_E	29482	29478	29483
+// OP_IFNOT	29483	3	0
+// OP_LOAD_F	29477	649	29484
+// OP_RETURN	29484	0	0
+// OP_LOAD_ENT	29477	640	29485
+// OP_EQ_E	29485	29478	29486
+// OP_IFNOT	29486	3	0
+// OP_LOAD_F	29477	650	29487
+// OP_RETURN	29487	0	0
+// OP_LOAD_ENT	29477	641	29488
+// OP_EQ_E	29488	29478	29489
+// OP_IFNOT	29489	3	0
+// OP_LOAD_F	29477	651	29490
+// OP_RETURN	29490	0	0
+// OP_LOAD_ENT	29477	642	29491
+// OP_EQ_E	29491	29478	29492
+// OP_IFNOT	29492	3	0
+// OP_LOAD_F	29477	652	29493
+// OP_RETURN	29493	0	0
+// OP_LOAD_ENT	29477	643	29494
+// OP_EQ_E	29494	29478	29495
+// OP_IFNOT	29495	3	0
+// OP_LOAD_F	29477	653	29496
+// OP_RETURN	29496	0	0
+// OP_LOAD_ENT	29477	644	29497
+// OP_EQ_E	29497	29478	29498
+// OP_IFNOT	29498	3	0
+// OP_LOAD_F	29477	654	29499
+// OP_RETURN	29499	0	0
+// OP_LOAD_ENT	29477	645	29500
+// OP_EQ_E	29500	29478	29501
+// OP_IFNOT	29501	3	0
+// OP_LOAD_F	29477	655	29502
+// OP_RETURN	29502	0	0
+// OP_LOAD_ENT	29477	646	29503
+// OP_EQ_E	29503	29478	29504
+// OP_IFNOT	29504	3	0
+// OP_LOAD_F	29477	656	29505
+// OP_RETURN	29505	0	0
+// OP_LOAD_ENT	29477	647	29506
+// OP_EQ_E	29506	29478	29507
+// OP_IFNOT	29507	3	0
+// OP_LOAD_F	29477	656	29508
+// OP_RETURN	29508	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009254, entity globaldef009255) func002687 = 
+{
+    
+    if(globaldef009254.field000315 == globaldef009255)
+    {
+        return globaldef009254.field000325;
+    }
+    
+    
+    if(globaldef009254.field000316 == globaldef009255)
+    {
+        return globaldef009254.field000326;
+    }
+    
+    
+    if(globaldef009254.field000317 == globaldef009255)
+    {
+        return globaldef009254.field000327;
+    }
+    
+    
+    if(globaldef009254.field000318 == globaldef009255)
+    {
+        return globaldef009254.field000328;
+    }
+    
+    
+    if(globaldef009254.field000319 == globaldef009255)
+    {
+        return globaldef009254.field000329;
+    }
+    
+    
+    if(globaldef009254.field000320 == globaldef009255)
+    {
+        return globaldef009254.field000330;
+    }
+    
+    
+    if(globaldef009254.field000321 == globaldef009255)
+    {
+        return globaldef009254.field000331;
+    }
+    
+    
+    if(globaldef009254.field000322 == globaldef009255)
+    {
+        return globaldef009254.field000332;
+    }
+    
+    
+    if(globaldef009254.field000323 == globaldef009255)
+    {
+        return globaldef009254.field000333;
+    }
+    
+    
+    if(globaldef009254.field000324 == globaldef009255)
+    {
+        return globaldef009254.field000333;
+    }
+    
+    return globaldef000191;
+};
+
+// func002688
+// function begins at statement 55976, parm_start=29509
+// OP_LOAD_ENT	29509	646	29511
+// OP_EQ_E	29511	29510	29512
+// OP_IFNOT	29512	3	0
+// OP_LOAD_F	29509	656	29513
+// OP_RETURN	29513	0	0
+// OP_LOAD_ENT	29509	647	29514
+// OP_EQ_E	29514	29510	29515
+// OP_IFNOT	29515	3	0
+// OP_LOAD_F	29509	657	29516
+// OP_RETURN	29516	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009256, entity globaldef009257) func002688 = 
+{
+    
+    if(globaldef009256.field000323 == globaldef009257)
+    {
+        return globaldef009256.field000333;
+    }
+    
+    
+    if(globaldef009256.field000324 == globaldef009257)
+    {
+        return globaldef009256.field000334;
+    }
+    
+    return globaldef000191;
+};
+
+// func002689
+// function begins at statement 55988, parm_start=29517
+// OP_LOAD_ENT	29517	638	29519
+// OP_EQ_E	29519	29518	29520
+// OP_IFNOT	29520	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	639	29521
+// OP_EQ_E	29521	29518	29522
+// OP_IFNOT	29522	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	640	29523
+// OP_EQ_E	29523	29518	29524
+// OP_IFNOT	29524	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	641	29525
+// OP_EQ_E	29525	29518	29526
+// OP_IFNOT	29526	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	642	29527
+// OP_EQ_E	29527	29518	29528
+// OP_IFNOT	29528	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	643	29529
+// OP_EQ_E	29529	29518	29530
+// OP_IFNOT	29530	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	644	29531
+// OP_EQ_E	29531	29518	29532
+// OP_IFNOT	29532	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	645	29533
+// OP_EQ_E	29533	29518	29534
+// OP_IFNOT	29534	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	646	29535
+// OP_EQ_E	29535	29518	29536
+// OP_IFNOT	29536	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29517	647	29537
+// OP_EQ_E	29537	29518	29538
+// OP_IFNOT	29538	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009258, entity globaldef009259) func002689 = 
+{
+    
+    if(globaldef009258.field000315 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000316 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000317 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000318 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000319 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000320 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000321 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000322 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000323 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009258.field000324 == globaldef009259)
+    {
+        return globaldef000192;
+    }
+    
+    return globaldef000191;
+};
+
+// MovingEntityCached
+// function begins at statement 56030, parm_start=29539
+// OP_LOAD_ENT	29539	646	29541
+// OP_EQ_E	29541	29540	29542
+// OP_IFNOT	29542	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_ENT	29539	647	29543
+// OP_EQ_E	29543	29540	29544
+// OP_IFNOT	29544	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009260, entity globaldef009261) MovingEntityCached = 
+{
+    
+    if(globaldef009260.field000323 == globaldef009261)
+    {
+        return globaldef000192;
+    }
+    
+    
+    if(globaldef009260.field000324 == globaldef009261)
+    {
+        return globaldef000192;
+    }
+    
+    return globaldef000191;
+};
+
+// func002691
+// function begins at statement 56040, parm_start=29545
+// OP_LOAD_F	29545	575	29556
+// OP_BITAND	29556	703	29557
+// OP_LOAD_ENT	29545	622	29558
+// OP_NE_E	29558	30	29559
+// OP_AND	29557	29559	29560
+// OP_IFNOT	29560	4	0
+// OP_LOAD_ENT	29545	622	29561
+// OP_RETURN	29561	0	0
+// OP_GOTO	46	0	0
+// OP_LOAD_S	29545	129	29562
+// OP_EQ_S	29562	23508	29563
+// OP_IFNOT	29563	3	0
+// OP_RETURN	29545	0	0
+// OP_GOTO	41	0	0
+// OP_STORE_F	737	29549	0
+// OP_STORE_ENT	30	29547	0
+// OP_STORE_ENT	836	29546	0
+// OP_IFNOT	29546	35	0
+// OP_LOAD_V	29545	105	29564
+// OP_STORE_V	29564	29550	0
+// OP_LOAD_V	29546	105	29567
+// OP_STORE_V	29567	29553	0
+// OP_SUB_F	29550	29553	29570
+// OP_STORE_V	29570	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	737	29571
+// OP_IFNOT	29571	23	0
+// OP_SUB_F	29551	29554	29572
+// OP_STORE_V	29572	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	737	29573
+// OP_IFNOT	29573	18	0
+// OP_SUB_F	29552	29555	29574
+// OP_STORE_V	29574	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	737	29575
+// OP_IFNOT	29575	13	0
+// OP_SUB_V	29550	29553	29576
+// OP_STORE_V	29576	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	29548	0
+// OP_LT	29548	29549	29579
+// OP_IFNOT	29579	7	0
+// OP_STORE_V	29546	4	0
+// OP_STORE_V	29545	7	0
+// OP_CALL2	1119	0	0
+// OP_IFNOT	1	3	0
+// OP_STORE_F	29548	29549	0
+// OP_STORE_ENT	29546	29547	0
+// OP_LOAD_ENT	29546	620	29580
+// OP_STORE_ENT	29580	29546	0
+// OP_GOTO	-34	0	0
+// OP_IFNOT	29547	2	0
+// OP_RETURN	29547	0	0
+// OP_RETURN	30	0	0
+// OP_DONE	0	0	0
+entity (entity globaldef009262) func002691 = 
+{
+    local entity globaldef009263;
+    local entity globaldef009264;
+    local float globaldef009265;
+    local float globaldef009266;
+    local vector globaldef009267;
+    local vector globaldef009271;
+    if((globaldef009262.field000252 & globaldef000686) && (globaldef009262.field000299 != globaldef000003))
+    {
+        return globaldef009262.field000299;
+    }
+    else
+    {
+        if(globaldef009262.classname == "waypoint")
+        {
+            return globaldef009262;
+        }
+        else
+        {
+            globaldef009266 = globaldef000720;
+            globaldef009264 = globaldef000003;
+            globaldef009263 = globaldef000819;
+            
+            while(globaldef009263)
+            {
+                globaldef009267 = globaldef009262.origin;
+                globaldef009271 = globaldef009263.origin;
+                
+                if((fabs(globaldef009267_x - globaldef009271_x)) < globaldef000720)
+                {
+                    
+                    if((fabs(globaldef009267_y - globaldef009271_y)) < globaldef000720)
+                    {
+                        
+                        if((fabs(globaldef009267_z - globaldef009271_z)) < globaldef000720)
+                        {
+                            globaldef009265 = vlen(globaldef009267 - globaldef009271);
+                            
+                            if(globaldef009265 < globaldef009266)
+                            {
+                                
+                                if(func002467(globaldef009263, globaldef009262))
+                                {
+                                    globaldef009266 = globaldef009265;
+                                    globaldef009264 = globaldef009263;
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                globaldef009263 = globaldef009263.field000297;
+            }
+            
+            
+            if(globaldef009264)
+            {
+                return globaldef009264;
+            }
+            
+        }
+        
+    }
+    
+    return globaldef000003;
+};
+
+// func002692
+// function begins at statement 56096, parm_start=29581
+// OP_NOT_ENT	29582	0	29584
+// OP_IFNOT	29584	2	0
+// OP_RETURN	0	0	0
+// OP_NOT_ENT	29581	0	29585
+// OP_IFNOT	29585	3	0
+// OP_STORE_V	29586	4	0
+// OP_CALL1	461	0	0
+// OP_ADDRESS	29581	547	29587
+// OP_STOREP_FNC	28231	29587	0
+// OP_STORE_ENT	836	29583	0
+// OP_IFNOT	29583	8	0
+// OP_ADDRESS	29583	646	29588
+// OP_STOREP_ENT	30	29588	0
+// OP_ADDRESS	29583	656	29589
+// OP_STOREP_F	213	29589	0
+// OP_LOAD_ENT	29583	620	29590
+// OP_STORE_ENT	29590	29583	0
+// OP_GOTO	-7	0	0
+// OP_STORE_V	29581	4	0
+// OP_STORE_V	29582	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	29581	13	0
+// OP_CALL4	1201	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009275, entity globaldef009276) func002692 = 
+{
+    local entity globaldef009277;
+    
+    if(!globaldef009276)
+    {
+        return;
+    }
+    
+    
+    if(!globaldef009275)
+    {
+        objerror("can't cache the world\n");
+    }
+    
+    globaldef009275.field000224 = func002648;
+    globaldef009277 = globaldef000819;
+    
+    while(globaldef009277)
+    {
+        globaldef009277.field000323 = globaldef000003;
+        globaldef009277.field000333 = globaldef000191;
+        globaldef009277 = globaldef009277.field000297;
+    }
+    
+    func002683(globaldef009275, globaldef009276, globaldef000191, globaldef009275);
+};
+
+// func002693
+// function begins at statement 56120, parm_start=29592
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29593	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29594	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29595	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29596	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29597	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29598	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29599	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29600	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29601	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29602	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29603	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29604	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29605	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29606	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29607	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29608	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29609	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29610	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29611	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29612	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29613	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29614	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29615	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29616	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29617	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29618	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29619	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29620	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29621	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29622	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29623	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29624	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29625	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29626	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29627	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29628	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29629	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29630	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29631	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29632	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29633	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29634	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29635	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29636	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29637	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29638	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29639	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29640	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29641	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29642	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29643	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29644	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29645	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29646	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29647	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29648	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29649	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29650	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29651	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29652	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29653	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29654	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29655	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29656	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29657	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29658	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29592	4	0
+// OP_STORE_V	29659	7	0
+// OP_CALL2	928	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009280) func002693 = 
+{
+    func000092(globaldef009280, "addbot");
+    func000092(globaldef009280, "           add one random bot\n");
+    func000092(globaldef009280, "admin");
+    func000092(globaldef009280, "            nominate yourself\n");
+    func000092(globaldef009280, "                 for admininistrator\n");
+    func000092(globaldef009280, "botpathing");
+    func000092(globaldef009280, "       toggle bot to learn\n");
+    func000092(globaldef009280, "                 map by itself\n");
+    func000092(globaldef009280, "botskills");
+    func000092(globaldef009280, "        show skills of bots\n");
+    func000092(globaldef009280, "bottalk");
+    func000092(globaldef009280, "          toggle bot chat\n");
+    func000092(globaldef009280, "camname");
+    func000092(globaldef009280, "          toggle observer name\n");
+    func000092(globaldef009280, "campmode");
+    func000092(globaldef009280, "         set the camping mode\n");
+    func000092(globaldef009280, "chasecam");
+    func000092(globaldef009280, "         toggle between\n");
+    func000092(globaldef009280, "                 eyecam and chasecam\n");
+    func000092(globaldef009280, "cmdlist");
+    func000092(globaldef009280, "          this list\n");
+    func000092(globaldef009280, "cyclecam");
+    func000092(globaldef009280, "         cycle observer\n");
+    func000092(globaldef009280, "                 camera\n");
+    func000092(globaldef009280, "dumpbspwaypoints");
+    func000092(globaldef009280, " dump bsp waypoints\n");
+    func000092(globaldef009280, "                 to console\n");
+    func000092(globaldef009280, "humanpathing");
+    func000092(globaldef009280, "     toggle bot to learn\n");
+    func000092(globaldef009280, "                 map from player\n");
+    func000092(globaldef009280, "menu");
+    func000092(globaldef009280, "             show administrator\n");
+    func000092(globaldef009280, "                 menu\n");
+    func000092(globaldef009280, "nogrenade");
+    func000092(globaldef009280, "        toggle grenade l.\n");
+    func000092(globaldef009280, "nolightning");
+    func000092(globaldef009280, "      toggle thunderbolt\n");
+    func000092(globaldef009280, "nopowerups");
+    func000092(globaldef009280, "       toggle powerups\n");
+    func000092(globaldef009280, "norocket");
+    func000092(globaldef009280, "         toggle rocket l.\n");
+    func000092(globaldef009280, "nosupernail");
+    func000092(globaldef009280, "      toggle super nailgun\n");
+    func000092(globaldef009280, "noweapons");
+    func000092(globaldef009280, "        toggle weapons\n");
+    func000092(globaldef009280, "observer");
+    func000092(globaldef009280, "         toggle observer mode\n");
+    func000092(globaldef009280, "observerfly");
+    func000092(globaldef009280, "      toggle observer\n");
+    func000092(globaldef009280, "                 flying or walking\n");
+    func000092(globaldef009280, "removeallbots");
+    func000092(globaldef009280, "    remove all bots\n");
+    func000092(globaldef009280, "removebot");
+    func000092(globaldef009280, "        remove one bot\n");
+    func000092(globaldef009280, "serverflags");
+    func000092(globaldef009280, "      show settings\n");
+    func000092(globaldef009280, "skinup");
+    func000092(globaldef009280, "           cycle skins upward\n");
+    func000092(globaldef009280, "skindown");
+    func000092(globaldef009280, "         cycle skins downward\n");
+    func000092(globaldef009280, "stopadmin");
+    func000092(globaldef009280, "        exit admin function\n");
+    func000092(globaldef009280, "team1 - team8");
+    func000092(globaldef009280, "    join specified team\n");
+    func000092(globaldef009280, "yes");
+    func000092(globaldef009280, "              vote yes for admin\n");
+    func000092(globaldef009280, "                 candidate\n");
+};
+
+// func002694
+// function begins at statement 56322, parm_start=29661
+// OP_STORE_F	213	29662	0
+// OP_LT	29662	736	29664
+// OP_IFNOT	29664	26	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29665	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29662	4	0
+// OP_CALL1	1086	0	0
+// OP_STORE_S	1	29663	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29663	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29666	7	0
+// OP_CALL2	839	0	0
+// OP_ADD_F	1997	29662	29667
+// OP_STORE_V	29667	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	29663	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29663	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	28594	7	0
+// OP_CALL2	839	0	0
+// OP_ADD_F	29662	214	29668
+// OP_STORE_F	29668	29662	0
+// OP_GOTO	-26	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29669	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29670	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29671	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29672	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29673	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29674	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29675	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29676	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29677	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29678	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29679	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29680	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29681	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29682	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29683	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29684	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29685	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29686	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29687	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29688	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29689	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29690	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29691	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29692	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29693	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29694	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29695	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29696	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29697	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29698	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29699	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29700	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29701	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29702	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29703	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29704	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29705	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29706	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29707	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29708	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29709	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29710	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	29661	4	0
+// OP_STORE_V	29711	7	0
+// OP_CALL2	839	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009349) func002694 = 
+{
+    local float globaldef009350;
+    local string globaldef009351;
+    globaldef009350 = globaldef000191;
+    
+    while(globaldef009350 < globaldef000719)
+    {
+        func000064(globaldef009349, "alias ");
+        globaldef009351 = func002279(globaldef009350);
+        func000064(globaldef009349, globaldef009351);
+        func000064(globaldef009349, " \"impulse ");
+        globaldef009351 = ftos(100.000 + globaldef009350);
+        func000064(globaldef009349, globaldef009351);
+        func000064(globaldef009349, "\"\n");
+        globaldef009350 = globaldef009350 + globaldef000192;
+    }
+    
+    func000064(globaldef009349, "alias nopowerups \"impulse 130\"\n");
+    func000064(globaldef009349, "alias noweapons \"impulse 131\"\n");
+    func000064(globaldef009349, "alias nolightning \"impulse 132\"\n");
+    func000064(globaldef009349, "alias norocket \"impulse 133\"\n");
+    func000064(globaldef009349, "alias nogrenade \"impulse 134\"\n");
+    func000064(globaldef009349, "alias nosupernail \"impulse 135\"\n");
+    func000064(globaldef009349, "alias noshellcases \"impulse 136\"\n");
+    func000064(globaldef009349, "alias skinup \"impulse 140\"\n");
+    func000064(globaldef009349, "alias skindown \"impulse 141\"\n");
+    func000064(globaldef009349, "alias botskills \"impulse 142\"\n");
+    func000064(globaldef009349, "alias addbot \"impulse 150\"\n");
+    func000064(globaldef009349, "alias removebot \"impulse 151\"\n");
+    func000064(globaldef009349, "alias removeallbots \"impulse 152\"\n");
+    func000064(globaldef009349, "alias serverflags \"impulse 153\"\n");
+    func000064(globaldef009349, "alias botpathing \"impulse 154\"\n");
+    func000064(globaldef009349, "alias humanpathing \"impulse 155\"\n");
+    func000064(globaldef009349, "alias campmode \"impulse 156\"\n");
+    func000064(globaldef009349, "alias bottalk \"impulse 157\"\n");
+    func000064(globaldef009349, "alias rocketarena \"impulse 158\"\n");
+    func000064(globaldef009349, "alias observer \"impulse 160\"\n");
+    func000064(globaldef009349, "alias cyclecam \"impulse 161\"\n");
+    func000064(globaldef009349, "alias observerfly \"impulse 162\"\n");
+    func000064(globaldef009349, "alias camname \"impulse 163\"\n");
+    func000064(globaldef009349, "alias observerteleport \"impulse 164\"\n");
+    func000064(globaldef009349, "alias chasecam \"impulse 165\"\n");
+    func000064(globaldef009349, "alias kascam \"impulse 166\"\n");
+    func000064(globaldef009349, "alias dumpbspwaypoints \"impulse 170\"\n");
+    func000064(globaldef009349, "alias dumphcwaypoints \"impulse 171\"\n");
+    func000064(globaldef009349, "alias bubblerouting \"impulse 172\"\n");
+    func000064(globaldef009349, "alias admin \"impulse 143\"\n");
+    func000064(globaldef009349, "alias stopadmin \"impulse 144\"\n");
+    func000064(globaldef009349, "alias yes \"impulse 145\"\n");
+    func000064(globaldef009349, "alias omicron \"impulse 146\"\n");
+    func000064(globaldef009349, "alias menu \"impulse 200\"\n");
+    func000064(globaldef009349, "alias cmdlist \"impulse 147\"\n");
+    func000064(globaldef009349, "alias team1 \"impulse 201\"\n");
+    func000064(globaldef009349, "alias team2 \"impulse 202\"\n");
+    func000064(globaldef009349, "alias team3 \"impulse 203\"\n");
+    func000064(globaldef009349, "alias team4 \"impulse 204\"\n");
+    func000064(globaldef009349, "alias team5 \"impulse 205\"\n");
+    func000064(globaldef009349, "alias team6 \"impulse 206\"\n");
+    func000064(globaldef009349, "alias team7 \"impulse 207\"\n");
+    func000064(globaldef009349, "alias team8 \"impulse 208\"\n");
+};
+
+// func002695
+// function begins at statement 56480, parm_start=29713
+// OP_EQ_E	29713	831	29714
+// OP_IFNOT	29714	2	0
+// OP_RETURN	214	0	0
+// OP_STORE_V	29713	4	0
+// OP_STORE_V	29715	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	29713	598	29716
+// OP_LOAD_F	29713	598	29717
+// OP_ADD_F	29717	214	29718
+// OP_STOREP_F	29718	29716	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef009398) func002695 = 
+{
+    
+    if(globaldef009398 == globaldef000814)
+    {
+        return globaldef000192;
+    }
+    
+    func000092(globaldef009398, "administrator command\n");
+    globaldef009398.field000275 = globaldef009398.field000275 + globaldef000192;
+    return globaldef000191;
+};
+
+// func002696
+// function begins at statement 56492, parm_start=29720
+// OP_IFNOT	822	5	0
+// OP_STORE_V	29720	4	0
+// OP_STORE_V	29722	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_IFNOT	37	5	0
+// OP_STORE_V	29720	4	0
+// OP_STORE_V	29723	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_LT	29721	213	29724
+// OP_IFNOT	29724	3	0
+// OP_SUB_F	736	214	29725
+// OP_STORE_F	29725	29721	0
+// OP_GE	29721	736	29726
+// OP_IFNOT	29726	2	0
+// OP_STORE_F	213	29721	0
+// OP_BITAND	821	777	29727
+// OP_IFNOT	29727	4	0
+// OP_ADDRESS	29720	574	29728
+// OP_STOREP_F	29721	29728	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	29720	132	29729
+// OP_STOREP_F	29721	29729	0
+// OP_ADDRESS	29720	572	29730
+// OP_STOREP_F	29721	29730	0
+// OP_LOAD_S	29720	129	29731
+// OP_EQ_S	29731	1236	29732
+// OP_IFNOT	29732	13	0
+// OP_LOAD_S	29720	180	29733
+// OP_STORE_V	29733	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29734	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_F	29720	572	29735
+// OP_STORE_V	29735	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009401, float globaldef009402) func002696 = 
+{
+    
+    if(globaldef000805)
+    {
+        func000092(globaldef009401, "can't change skin, extra models disabled\n");
+        return;
+    }
+    
+    
+    if(globaldef000010)
+    {
+        func000092(globaldef009401, "can't change skin during teamplay\n");
+        return;
+    }
+    
+    
+    if(globaldef009402 < globaldef000191)
+    {
+        globaldef009402 = globaldef000719 - globaldef000192;
+    }
+    
+    
+    if(globaldef009402 >= globaldef000719)
+    {
+        globaldef009402 = globaldef000191;
+    }
+    
+    if(globaldef000804 & globaldef000760)
+    {
+        globaldef009401.field000251 = globaldef009402;
+    }
+    else
+    {
+        globaldef009401.skin = globaldef009402;
+    }
+    
+    globaldef009401.field000249 = globaldef009402;
+    
+    if(globaldef009401.classname == "player")
+    {
+        bprint(globaldef009401.netname);
+        bprint(" changed to skin ");
+        bprint(ftos(globaldef009401.field000249));
+        bprint("\n");
+    }
+    
+};
+
+// func002697
+// function begins at statement 56534, parm_start=29737
+// OP_STORE_ENT	833	29737	0
+// OP_IFNOT	29737	21	0
+// OP_ADDRESS	29737	162	29738
+// OP_LOAD_F	29737	162	29739
+// OP_LOAD_F	29737	162	29740
+// OP_BITOR	262	263	29741
+// OP_BITOR	29741	264	29742
+// OP_BITOR	29742	265	29743
+// OP_BITAND	29740	29743	29744
+// OP_SUB_F	29739	29744	29745
+// OP_STOREP_F	29745	29738	0
+// OP_ADDRESS	29737	157	29746
+// OP_STOREP_F	213	29746	0
+// OP_ADDRESS	29737	154	29747
+// OP_STOREP_F	253	29747	0
+// OP_ADDRESS	29737	155	29748
+// OP_STOREP_S	6152	29748	0
+// OP_ADDRESS	29737	156	29749
+// OP_STOREP_F	213	29749	0
+// OP_LOAD_ENT	29737	620	29750
+// OP_STORE_ENT	29750	29737	0
+// OP_GOTO	-20	0	0
+// OP_STORE_ENT	834	29737	0
+// OP_IFNOT	29737	21	0
+// OP_ADDRESS	29737	162	29751
+// OP_LOAD_F	29737	162	29752
+// OP_LOAD_F	29737	162	29753
+// OP_BITOR	262	263	29754
+// OP_BITOR	29754	264	29755
+// OP_BITOR	29755	265	29756
+// OP_BITAND	29753	29756	29757
+// OP_SUB_F	29752	29757	29758
+// OP_STOREP_F	29758	29751	0
+// OP_ADDRESS	29737	157	29759
+// OP_STOREP_F	213	29759	0
+// OP_ADDRESS	29737	154	29760
+// OP_STOREP_F	253	29760	0
+// OP_ADDRESS	29737	155	29761
+// OP_STOREP_S	6152	29761	0
+// OP_ADDRESS	29737	156	29762
+// OP_STOREP_F	213	29762	0
+// OP_LOAD_ENT	29737	620	29763
+// OP_STORE_ENT	29763	29737	0
+// OP_GOTO	-20	0	0
+// OP_DONE	0	0	0
+void () func002697 = 
+{
+    local entity globaldef009407;
+    globaldef009407 = globaldef000816;
+    
+    while(globaldef009407)
+    {
+        globaldef009407.items = globaldef009407.items - (globaldef009407.items & (((globaldef000240 | globaldef000241) | globaldef000242) | globaldef000243));
+        globaldef009407.currentammo = globaldef000191;
+        globaldef009407.weapon = globaldef000231;
+        globaldef009407.weaponmodel = "progs/v_axe.mdl";
+        globaldef009407.weaponframe = globaldef000191;
+        globaldef009407 = globaldef009407.field000297;
+    }
+    
+    globaldef009407 = globaldef000817;
+    
+    while(globaldef009407)
+    {
+        globaldef009407.items = globaldef009407.items - (globaldef009407.items & (((globaldef000240 | globaldef000241) | globaldef000242) | globaldef000243));
+        globaldef009407.currentammo = globaldef000191;
+        globaldef009407.weapon = globaldef000231;
+        globaldef009407.weaponmodel = "progs/v_axe.mdl";
+        globaldef009407.weaponframe = globaldef000191;
+        globaldef009407 = globaldef009407.field000297;
+    }
+    
+};
+
+// func002698
+// function begins at statement 56579, parm_start=29765
+// OP_IFNOT	29765	4	0
+// OP_STORE_V	29766	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	29767	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (float globaldef009409) func002698 = 
+{
+    if(globaldef009409)
+    {
+        bprint("on\n");
+    }
+    else
+    {
+        bprint("off\n");
+    }
+    
+};
+
+// func002699
+// function begins at statement 56586, parm_start=29769
+// OP_IFNOT	29769	5	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29766	7	0
+// OP_CALL2	928	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29767	7	0
+// OP_CALL2	928	0	0
+// OP_DONE	0	0	0
+void (float globaldef009413) func002699 = 
+{
+    if(globaldef009413)
+    {
+        func000092(globaldef000001, "on\n");
+    }
+    else
+    {
+        func000092(globaldef000001, "off\n");
+    }
+    
+};
+
+// func002700
+// function begins at statement 56595, parm_start=29771
+// OP_STORE_V	29772	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	768	29773
+// OP_STORE_V	29773	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	768	29774
+// OP_IFNOT	29774	22	0
+// OP_BITAND	821	768	29775
+// OP_SUB_F	821	29775	29776
+// OP_STORE_F	29776	821	0
+// OP_LT	803	804	29777
+// OP_IFNOT	29777	16	0
+// OP_STORE_ENT	834	29771	0
+// OP_IFNOT	29771	14	0
+// OP_LOAD_F	29771	575	29778
+// OP_BITAND	29778	703	29779
+// OP_NOT_F	29779	0	29780
+// OP_IFNOT	29780	7	0
+// OP_ADDRESS	29771	575	29781
+// OP_LOAD_F	29771	575	29782
+// OP_BITOR	29782	703	29783
+// OP_STOREP_F	29783	29781	0
+// OP_ADD_F	802	214	29784
+// OP_STORE_F	29784	802	0
+// OP_LOAD_ENT	29771	620	29785
+// OP_STORE_ENT	29785	29771	0
+// OP_GOTO	-13	0	0
+// OP_GOTO	19	0	0
+// OP_BITOR	821	768	29786
+// OP_STORE_F	29786	821	0
+// OP_STORE_ENT	834	29771	0
+// OP_IFNOT	29771	15	0
+// OP_LOAD_F	29771	575	29787
+// OP_BITAND	29787	703	29788
+// OP_IFNOT	29788	9	0
+// OP_ADDRESS	29771	575	29789
+// OP_LOAD_F	29771	575	29790
+// OP_LOAD_F	29771	575	29791
+// OP_BITAND	29791	703	29792
+// OP_SUB_F	29790	29792	29793
+// OP_STOREP_F	29793	29789	0
+// OP_SUB_F	802	214	29794
+// OP_STORE_F	29794	802	0
+// OP_LOAD_ENT	29771	620	29795
+// OP_STORE_ENT	29795	29771	0
+// OP_GOTO	-14	0	0
+// OP_DONE	0	0	0
+void () func002700 = 
+{
+    local entity globaldef009415;
+    bprint("bot pathing ");
+    func002698(globaldef000804 & globaldef000751);
+    if(globaldef000804 & globaldef000751)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000751);
+        
+        if(globaldef000786 < globaldef000787)
+        {
+            globaldef009415 = globaldef000817;
+            
+            while(globaldef009415)
+            {
+                
+                if(!(globaldef009415.field000252 & globaldef000686))
+                {
+                    globaldef009415.field000252 = globaldef009415.field000252 | globaldef000686;
+                    globaldef000785 = globaldef000785 + globaldef000192;
+                }
+                
+                globaldef009415 = globaldef009415.field000297;
+            }
+            
+        }
+        
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000751;
+        globaldef009415 = globaldef000817;
+        
+        while(globaldef009415)
+        {
+            
+            if(globaldef009415.field000252 & globaldef000686)
+            {
+                globaldef009415.field000252 = globaldef009415.field000252 - (globaldef009415.field000252 & globaldef000686);
+                globaldef000785 = globaldef000785 - globaldef000192;
+            }
+            
+            globaldef009415 = globaldef009415.field000297;
+        }
+        
+    }
+    
+};
+
+// func002701
+// function begins at statement 56642, parm_start=29797
+// OP_STORE_V	29798	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	769	29799
+// OP_STORE_V	29799	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	769	29800
+// OP_IFNOT	29800	22	0
+// OP_BITAND	821	769	29801
+// OP_SUB_F	821	29801	29802
+// OP_STORE_F	29802	821	0
+// OP_LT	803	804	29803
+// OP_IFNOT	29803	16	0
+// OP_STORE_ENT	833	29797	0
+// OP_IFNOT	29797	14	0
+// OP_LOAD_F	29797	575	29804
+// OP_BITAND	29804	703	29805
+// OP_NOT_F	29805	0	29806
+// OP_IFNOT	29806	7	0
+// OP_ADDRESS	29797	575	29807
+// OP_LOAD_F	29797	575	29808
+// OP_BITOR	29808	703	29809
+// OP_STOREP_F	29809	29807	0
+// OP_ADD_F	802	214	29810
+// OP_STORE_F	29810	802	0
+// OP_LOAD_ENT	29797	620	29811
+// OP_STORE_ENT	29811	29797	0
+// OP_GOTO	-13	0	0
+// OP_GOTO	19	0	0
+// OP_BITOR	821	769	29812
+// OP_STORE_F	29812	821	0
+// OP_STORE_ENT	833	29797	0
+// OP_IFNOT	29797	15	0
+// OP_LOAD_F	29797	575	29813
+// OP_BITAND	29813	703	29814
+// OP_IFNOT	29814	9	0
+// OP_ADDRESS	29797	575	29815
+// OP_LOAD_F	29797	575	29816
+// OP_LOAD_F	29797	575	29817
+// OP_BITAND	29817	703	29818
+// OP_SUB_F	29816	29818	29819
+// OP_STOREP_F	29819	29815	0
+// OP_SUB_F	802	214	29820
+// OP_STORE_F	29820	802	0
+// OP_LOAD_ENT	29797	620	29821
+// OP_STORE_ENT	29821	29797	0
+// OP_GOTO	-14	0	0
+// OP_DONE	0	0	0
+void () func002701 = 
+{
+    local entity globaldef009418;
+    bprint("human pathing ");
+    func002698(globaldef000804 & globaldef000752);
+    if(globaldef000804 & globaldef000752)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000752);
+        
+        if(globaldef000786 < globaldef000787)
+        {
+            globaldef009418 = globaldef000816;
+            
+            while(globaldef009418)
+            {
+                
+                if(!(globaldef009418.field000252 & globaldef000686))
+                {
+                    globaldef009418.field000252 = globaldef009418.field000252 | globaldef000686;
+                    globaldef000785 = globaldef000785 + globaldef000192;
+                }
+                
+                globaldef009418 = globaldef009418.field000297;
+            }
+            
+        }
+        
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000752;
+        globaldef009418 = globaldef000816;
+        
+        while(globaldef009418)
+        {
+            
+            if(globaldef009418.field000252 & globaldef000686)
+            {
+                globaldef009418.field000252 = globaldef009418.field000252 - (globaldef009418.field000252 & globaldef000686);
+                globaldef000785 = globaldef000785 - globaldef000192;
+            }
+            
+            globaldef009418 = globaldef009418.field000297;
+        }
+        
+    }
+    
+};
+
+// func002702
+// function begins at statement 56689, parm_start=29823
+// OP_STORE_V	29823	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	770	29824
+// OP_STORE_V	29824	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	770	29825
+// OP_IFNOT	29825	5	0
+// OP_BITAND	821	770	29826
+// OP_SUB_F	821	29826	29827
+// OP_STORE_F	29827	821	0
+// OP_GOTO	3	0	0
+// OP_BITOR	821	770	29828
+// OP_STORE_F	29828	821	0
+// OP_DONE	0	0	0
+void () func002702 = 
+{
+    bprint("bottalk ");
+    func002698(globaldef000804 & globaldef000753);
+    if(globaldef000804 & globaldef000753)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000753);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000753;
+    }
+    
+};
+
+// func002703
+// function begins at statement 56703, parm_start=29830
+// OP_LOAD_F	29830	182	29831
+// OP_BITAND	29831	220	29832
+// OP_IFNOT	29832	17	0
+// OP_ADDRESS	29830	182	29833
+// OP_LOAD_F	29830	182	29834
+// OP_LOAD_F	29830	182	29835
+// OP_BITAND	29835	220	29836
+// OP_SUB_F	29834	29836	29837
+// OP_STOREP_F	29837	29833	0
+// OP_LOAD_S	29830	180	29838
+// OP_STORE_V	29838	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29839	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29840	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29841	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	14	0	0
+// OP_ADDRESS	29830	182	29842
+// OP_LOAD_F	29830	182	29843
+// OP_BITOR	29843	220	29844
+// OP_STOREP_F	29844	29842	0
+// OP_LOAD_S	29830	180	29845
+// OP_STORE_V	29845	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29846	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29847	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	29848	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009423) func002703 = 
+{
+    if(globaldef009423.flags & globaldef000198)
+    {
+        globaldef009423.flags = globaldef009423.flags - (globaldef009423.flags & globaldef000198);
+        bprint(globaldef009423.netname);
+        bprint(" became more ");
+        bprint("DEMI");
+        bprint(" than god.\n");
+    }
+    else
+    {
+        globaldef009423.flags = globaldef009423.flags | globaldef000198;
+        bprint(globaldef009423.netname);
+        bprint(" entered demi");
+        bprint("GOD");
+        bprint(" mode.\n");
+    }
+    
+};
+
+// func002704
+// function begins at statement 56736, parm_start=29849
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29849	0
+// OP_IFNOT	29849	9	0
+// OP_STORE_V	29849	4	0
+// OP_CALL1	1062	0	0
+// OP_STORE_V	29849	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29849	0
+// OP_GOTO	-8	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29849	0
+// OP_IFNOT	29849	12	0
+// OP_LOAD_F	29849	182	29850
+// OP_BITAND	29850	220	29851
+// OP_IFNOT	29851	3	0
+// OP_STORE_V	29849	4	0
+// OP_CALL1	29829	0	0
+// OP_STORE_V	29849	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29849	0
+// OP_GOTO	-11	0	0
+// OP_DONE	0	0	0
+void () func002704 = 
+{
+    local entity globaldef009430;
+    globaldef009430 = find(globaldef000003, classname, "observer");
+    
+    while(globaldef009430)
+    {
+        func002365(globaldef009430);
+        globaldef009430 = find(globaldef009430, classname, "observer");
+    }
+    
+    globaldef009430 = find(globaldef000003, classname, "player");
+    
+    while(globaldef009430)
+    {
+        
+        if(globaldef009430.flags & globaldef000198)
+        {
+            func002703(globaldef009430);
+        }
+        
+        globaldef009430 = find(globaldef009430, classname, "player");
+    }
+    
+};
+
+// func002705
+// function begins at statement 56768, parm_start=29853
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29853	7	0
+// OP_CALL2	852	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29854	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	767	29855
+// OP_IFNOT	29855	4	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29856	7	0
+// OP_CALL2	928	0	0
+// OP_CALL0	1053	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29660	0	0
+// OP_DONE	0	0	0
+void () func002705 = 
+{
+    func000072(globaldef000001, "???????? Omicron Bots v1.02 ????????");
+    func000092(globaldef000001, "\n ???????? Omicron Bots v1.02 ????????\n\n");
+    
+    if(globaldef000804 & globaldef000750)
+    {
+        func000092(globaldef000001, "\nRocket Arena Enabled\n\n");
+    }
+    
+    func002265();
+    func002694(globaldef000001);
+};
+
+// func002706
+// function begins at statement 56783, parm_start=29858
+// OP_BITAND	821	767	29858
+// OP_IFNOT	29858	11	0
+// OP_BITAND	38	767	29859
+// OP_SUB_F	38	29859	29860
+// OP_STORE_F	29860	38	0
+// OP_STORE_V	29861	4	0
+// OP_CALL1	491	0	0
+// OP_STORE_V	34	4	0
+// OP_CALL1	491	0	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	491	0	0
+// OP_GOTO	5	0	0
+// OP_BITOR	38	767	29862
+// OP_STORE_F	29862	38	0
+// OP_STORE_V	34	4	0
+// OP_CALL1	507	0	0
+// OP_DONE	0	0	0
+void () func002706 = 
+{
+    if(globaldef000804 & globaldef000750)
+    {
+        globaldef000011 = globaldef000011 - (globaldef000011 & globaldef000750);
+        localcmd("map ");
+        localcmd(globaldef000007);
+        localcmd("\n");
+    }
+    else
+    {
+        globaldef000011 = globaldef000011 | globaldef000750;
+        changelevel(globaldef000007);
+    }
+    
+};
+
+// func002707
+// function begins at statement 56800, parm_start=29864
+// OP_IFNOT	29864	18	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	29865	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29866	0
+// OP_IFNOT	29866	10	0
+// OP_ADDRESS	29866	150	29867
+// OP_SUB_F	31	214	29868
+// OP_STOREP_F	29868	29867	0
+// OP_STORE_V	29866	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	29865	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29866	0
+// OP_GOTO	-9	0	0
+// OP_RETURN	213	0	0
+// OP_GOTO	23	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	29865	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29866	0
+// OP_IFNOT	29866	16	0
+// OP_ADDRESS	29866	399	29869
+// OP_LOAD_S	29866	130	29870
+// OP_STOREP_S	29870	29869	0
+// OP_ADDRESS	29866	130	29871
+// OP_STOREP_S	348	29871	0
+// OP_ADDRESS	29866	104	29872
+// OP_STOREP_F	237	29872	0
+// OP_ADDRESS	29866	148	29873
+// OP_STOREP_FNC	4296	29873	0
+// OP_STORE_V	29866	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	29865	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29866	0
+// OP_GOTO	-15	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (float globaldef009438, string globaldef009439) func002707 = 
+{
+    local entity globaldef009440;
+    if(globaldef009438)
+    {
+        globaldef009440 = find(globaldef000003, classname, globaldef009439);
+        
+        while(globaldef009440)
+        {
+            globaldef009440.nextthink = globaldef000004 - globaldef000192;
+            globaldef009440 = find(globaldef009440, classname, globaldef009439);
+        }
+        
+        return globaldef000191;
+    }
+    else
+    {
+        globaldef009440 = find(globaldef000003, classname, globaldef009439);
+        
+        while(globaldef009440)
+        {
+            globaldef009440.mdl = globaldef009440.model;
+            globaldef009440.model = globaldef000331;
+            globaldef009440.solid = globaldef000215;
+            globaldef009440.think = func000204;
+            globaldef009440 = find(globaldef009440, classname, globaldef009439);
+        }
+        
+        return globaldef000192;
+    }
+    
+};
+
+// func002708
+// function begins at statement 56841, parm_start=29874
+// OP_STORE_V	214	4	0
+// OP_STORE_V	26148	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4469	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4472	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4476	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	29874	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	29875	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	29876	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	29877	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	29878	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4609	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4589	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4599	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4619	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4629	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4639	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	5017	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4995	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	4998	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	214	4	0
+// OP_STORE_V	5033	7	0
+// OP_CALL2	29863	0	0
+// OP_DONE	0	0	0
+void () func002708 = 
+{
+    func002707(globaldef000192, "item_health");
+    func002707(globaldef000192, "item_armor1");
+    func002707(globaldef000192, "item_armor2");
+    func002707(globaldef000192, "item_armorInv");
+    func002707(globaldef000192, "item_weapon");
+    func002707(globaldef000192, "item_shells");
+    func002707(globaldef000192, "item_spikes");
+    func002707(globaldef000192, "item_rockets");
+    func002707(globaldef000192, "item_cells");
+    func002707(globaldef000192, "weapon_supershotgun");
+    func002707(globaldef000192, "weapon_nailgun");
+    func002707(globaldef000192, "weapon_supernailgun");
+    func002707(globaldef000192, "weapon_rocketlauncher");
+    func002707(globaldef000192, "weapon_grenadelauncher");
+    func002707(globaldef000192, "weapon_lightning");
+    func002707(globaldef000192, "item_artifact_envirosuit");
+    func002707(globaldef000192, "item_artifact_invulnerability");
+    func002707(globaldef000192, "item_artifact_invisibility");
+    func002707(globaldef000192, "item_artifact_super_damage");
+};
+
+// func002709
+// function begins at statement 56899, parm_start=29880
+// OP_STORE_ENT	833	29881	0
+// OP_IFNOT	29881	10	0
+// OP_ADDRESS	29881	162	29882
+// OP_LOAD_F	29881	162	29883
+// OP_LOAD_F	29881	162	29884
+// OP_BITAND	29884	29880	29885
+// OP_SUB_F	29883	29885	29886
+// OP_STOREP_F	29886	29882	0
+// OP_LOAD_ENT	29881	620	29887
+// OP_STORE_ENT	29887	29881	0
+// OP_GOTO	-9	0	0
+// OP_STORE_ENT	834	29881	0
+// OP_IFNOT	29881	10	0
+// OP_ADDRESS	29881	162	29888
+// OP_LOAD_F	29881	162	29889
+// OP_LOAD_F	29881	162	29890
+// OP_BITAND	29890	29880	29891
+// OP_SUB_F	29889	29891	29892
+// OP_STOREP_F	29892	29888	0
+// OP_LOAD_ENT	29881	620	29893
+// OP_STORE_ENT	29893	29881	0
+// OP_GOTO	-9	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	130	7	0
+// OP_STORE_V	5247	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29881	0
+// OP_IFNOT	29881	13	0
+// OP_ADDRESS	29881	162	29894
+// OP_LOAD_F	29881	162	29895
+// OP_LOAD_F	29881	162	29896
+// OP_BITAND	29896	29880	29897
+// OP_SUB_F	29895	29897	29898
+// OP_STOREP_F	29898	29894	0
+// OP_STORE_V	29881	4	0
+// OP_STORE_V	130	7	0
+// OP_STORE_V	5247	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29881	0
+// OP_GOTO	-12	0	0
+// OP_DONE	0	0	0
+void (float globaldef009447) func002709 = 
+{
+    local entity globaldef009448;
+    globaldef009448 = globaldef000816;
+    
+    while(globaldef009448)
+    {
+        globaldef009448.items = globaldef009448.items - (globaldef009448.items & globaldef009447);
+        globaldef009448 = globaldef009448.field000297;
+    }
+    
+    globaldef009448 = globaldef000817;
+    
+    while(globaldef009448)
+    {
+        globaldef009448.items = globaldef009448.items - (globaldef009448.items & globaldef009447);
+        globaldef009448 = globaldef009448.field000297;
+    }
+    
+    globaldef009448 = find(globaldef000003, model, "progs/backpack.mdl");
+    
+    while(globaldef009448)
+    {
+        globaldef009448.items = globaldef009448.items - (globaldef009448.items & globaldef009447);
+        globaldef009448 = find(globaldef009448, model, "progs/backpack.mdl");
+    }
+    
+};
+
+// func002710
+// function begins at statement 56940, parm_start=29900
+// OP_BITAND	821	771	29901
+// OP_STORE_V	29901	4	0
+// OP_STORE_V	4995	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	771	29902
+// OP_STORE_V	29902	4	0
+// OP_STORE_V	4998	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	771	29903
+// OP_STORE_V	29903	4	0
+// OP_STORE_V	5033	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29904	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	771	29905
+// OP_STORE_V	29905	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	771	29906
+// OP_IFNOT	29906	5	0
+// OP_BITAND	821	771	29907
+// OP_SUB_F	821	29907	29908
+// OP_STORE_F	29908	821	0
+// OP_GOTO	53	0	0
+// OP_BITOR	821	771	29909
+// OP_STORE_F	29909	821	0
+// OP_STORE_ENT	833	29900	0
+// OP_IFNOT	29900	24	0
+// OP_ADDRESS	29900	162	29910
+// OP_LOAD_F	29900	162	29911
+// OP_LOAD_F	29900	162	29912
+// OP_BITOR	273	272	29913
+// OP_BITOR	29913	275	29914
+// OP_BITAND	29912	29914	29915
+// OP_SUB_F	29911	29915	29916
+// OP_STOREP_F	29916	29910	0
+// OP_ADDRESS	29900	384	29917
+// OP_STOREP_F	213	29917	0
+// OP_ADDRESS	29900	380	29918
+// OP_STOREP_F	213	29918	0
+// OP_ADDRESS	29900	381	29919
+// OP_STOREP_F	213	29919	0
+// OP_ADDRESS	29900	386	29920
+// OP_STOREP_F	213	29920	0
+// OP_ADDRESS	29900	382	29921
+// OP_STOREP_F	213	29921	0
+// OP_ADDRESS	29900	388	29922
+// OP_STOREP_F	213	29922	0
+// OP_LOAD_ENT	29900	620	29923
+// OP_STORE_ENT	29923	29900	0
+// OP_GOTO	-23	0	0
+// OP_STORE_ENT	834	29900	0
+// OP_IFNOT	29900	24	0
+// OP_ADDRESS	29900	162	29924
+// OP_LOAD_F	29900	162	29925
+// OP_LOAD_F	29900	162	29926
+// OP_BITOR	273	272	29927
+// OP_BITOR	29927	275	29928
+// OP_BITAND	29926	29928	29929
+// OP_SUB_F	29925	29929	29930
+// OP_STOREP_F	29930	29924	0
+// OP_ADDRESS	29900	384	29931
+// OP_STOREP_F	213	29931	0
+// OP_ADDRESS	29900	380	29932
+// OP_STOREP_F	213	29932	0
+// OP_ADDRESS	29900	381	29933
+// OP_STOREP_F	213	29933	0
+// OP_ADDRESS	29900	386	29934
+// OP_STOREP_F	213	29934	0
+// OP_ADDRESS	29900	382	29935
+// OP_STOREP_F	213	29935	0
+// OP_ADDRESS	29900	388	29936
+// OP_STOREP_F	213	29936	0
+// OP_LOAD_ENT	29900	620	29937
+// OP_STORE_ENT	29937	29900	0
+// OP_GOTO	-23	0	0
+// OP_DONE	0	0	0
+void () func002710 = 
+{
+    local entity globaldef009450;
+    func002707(globaldef000804 & globaldef000754, "item_artifact_invulnerability");
+    func002707(globaldef000804 & globaldef000754, "item_artifact_invisibility");
+    func002707(globaldef000804 & globaldef000754, "item_artifact_super_damage");
+    bprint("powerups ");
+    func002698(globaldef000804 & globaldef000754);
+    if(globaldef000804 & globaldef000754)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000754);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000754;
+        globaldef009450 = globaldef000816;
+        
+        while(globaldef009450)
+        {
+            globaldef009450.items = globaldef009450.items - (globaldef009450.items & ((globaldef000251 | globaldef000250) | globaldef000253));
+            globaldef009450.invincible_time = globaldef000191;
+            globaldef009450.invincible_finished = globaldef000191;
+            globaldef009450.invisible_finished = globaldef000191;
+            globaldef009450.invisible_time = globaldef000191;
+            globaldef009450.super_damage_finished = globaldef000191;
+            globaldef009450.super_time = globaldef000191;
+            globaldef009450 = globaldef009450.field000297;
+        }
+        
+        globaldef009450 = globaldef000817;
+        
+        while(globaldef009450)
+        {
+            globaldef009450.items = globaldef009450.items - (globaldef009450.items & ((globaldef000251 | globaldef000250) | globaldef000253));
+            globaldef009450.invincible_time = globaldef000191;
+            globaldef009450.invincible_finished = globaldef000191;
+            globaldef009450.invisible_finished = globaldef000191;
+            globaldef009450.invisible_time = globaldef000191;
+            globaldef009450.super_damage_finished = globaldef000191;
+            globaldef009450.super_time = globaldef000191;
+            globaldef009450 = globaldef009450.field000297;
+        }
+        
+    }
+    
+};
+
+// func002711
+// function begins at statement 57016, parm_start=29939
+// OP_BITAND	821	772	29939
+// OP_STORE_V	29939	4	0
+// OP_STORE_V	4609	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	772	29940
+// OP_STORE_V	29940	4	0
+// OP_STORE_V	4589	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	772	29941
+// OP_STORE_V	29941	4	0
+// OP_STORE_V	4599	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	772	29942
+// OP_STORE_V	29942	4	0
+// OP_STORE_V	4619	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	772	29943
+// OP_STORE_V	29943	4	0
+// OP_STORE_V	4629	7	0
+// OP_CALL2	29863	0	0
+// OP_BITAND	821	772	29944
+// OP_STORE_V	29944	4	0
+// OP_STORE_V	4639	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29945	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	772	29946
+// OP_STORE_V	29946	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	772	29947
+// OP_IFNOT	29947	5	0
+// OP_BITAND	821	772	29948
+// OP_SUB_F	821	29948	29949
+// OP_STORE_F	29949	821	0
+// OP_GOTO	11	0	0
+// OP_BITOR	821	772	29950
+// OP_STORE_F	29950	821	0
+// OP_BITOR	255	256	29951
+// OP_BITOR	29951	257	29952
+// OP_BITOR	29952	258	29953
+// OP_BITOR	29953	259	29954
+// OP_BITOR	29954	260	29955
+// OP_STORE_V	29955	4	0
+// OP_CALL1	29879	0	0
+// OP_CALL0	29736	0	0
+// OP_DONE	0	0	0
+void () func002711 = 
+{
+    func002707(globaldef000804 & globaldef000755, "weapon_supershotgun");
+    func002707(globaldef000804 & globaldef000755, "weapon_nailgun");
+    func002707(globaldef000804 & globaldef000755, "weapon_supernailgun");
+    func002707(globaldef000804 & globaldef000755, "weapon_rocketlauncher");
+    func002707(globaldef000804 & globaldef000755, "weapon_grenadelauncher");
+    func002707(globaldef000804 & globaldef000755, "weapon_lightning");
+    bprint("weapons ");
+    func002698(globaldef000804 & globaldef000755);
+    if(globaldef000804 & globaldef000755)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000755);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000755;
+        func002709(((((globaldef000233 | globaldef000234) | globaldef000235) | globaldef000236) | globaldef000237) | globaldef000238);
+        func002697();
+    }
+    
+};
+
+// func002712
+// function begins at statement 57062, parm_start=29957
+// OP_BITAND	821	773	29957
+// OP_STORE_V	29957	4	0
+// OP_STORE_V	4639	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29958	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	773	29959
+// OP_STORE_V	29959	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	773	29960
+// OP_IFNOT	29960	5	0
+// OP_BITAND	821	773	29961
+// OP_SUB_F	821	29961	29962
+// OP_STORE_F	29962	821	0
+// OP_GOTO	6	0	0
+// OP_BITOR	821	773	29963
+// OP_STORE_F	29963	821	0
+// OP_STORE_V	260	4	0
+// OP_CALL1	29879	0	0
+// OP_CALL0	29736	0	0
+// OP_DONE	0	0	0
+void () func002712 = 
+{
+    func002707(globaldef000804 & globaldef000756, "weapon_lightning");
+    bprint("lightning ");
+    func002698(globaldef000804 & globaldef000756);
+    if(globaldef000804 & globaldef000756)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000756);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000756;
+        func002709(globaldef000238);
+        func002697();
+    }
+    
+};
+
+// func002713
+// function begins at statement 57083, parm_start=29965
+// OP_BITAND	821	774	29965
+// OP_STORE_V	29965	4	0
+// OP_STORE_V	4619	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29966	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	774	29967
+// OP_STORE_V	29967	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	774	29968
+// OP_IFNOT	29968	5	0
+// OP_BITAND	821	774	29969
+// OP_SUB_F	821	29969	29970
+// OP_STORE_F	29970	821	0
+// OP_GOTO	6	0	0
+// OP_BITOR	821	774	29971
+// OP_STORE_F	29971	821	0
+// OP_STORE_V	259	4	0
+// OP_CALL1	29879	0	0
+// OP_CALL0	29736	0	0
+// OP_DONE	0	0	0
+void () func002713 = 
+{
+    func002707(globaldef000804 & globaldef000757, "weapon_rocketlauncher");
+    bprint("rocket ");
+    func002698(globaldef000804 & globaldef000757);
+    if(globaldef000804 & globaldef000757)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000757);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000757;
+        func002709(globaldef000237);
+        func002697();
+    }
+    
+};
+
+// func002714
+// function begins at statement 57104, parm_start=29973
+// OP_BITAND	821	775	29973
+// OP_STORE_V	29973	4	0
+// OP_STORE_V	4629	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29974	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	775	29975
+// OP_STORE_V	29975	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	775	29976
+// OP_IFNOT	29976	5	0
+// OP_BITAND	821	775	29977
+// OP_SUB_F	821	29977	29978
+// OP_STORE_F	29978	821	0
+// OP_GOTO	6	0	0
+// OP_BITOR	821	775	29979
+// OP_STORE_F	29979	821	0
+// OP_STORE_V	258	4	0
+// OP_CALL1	29879	0	0
+// OP_CALL0	29736	0	0
+// OP_DONE	0	0	0
+void () func002714 = 
+{
+    func002707(globaldef000804 & globaldef000758, "weapon_grenadelauncher");
+    bprint("grenade ");
+    func002698(globaldef000804 & globaldef000758);
+    if(globaldef000804 & globaldef000758)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000758);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000758;
+        func002709(globaldef000236);
+        func002697();
+    }
+    
+};
+
+// func002715
+// function begins at statement 57125, parm_start=29981
+// OP_BITAND	821	776	29981
+// OP_STORE_V	29981	4	0
+// OP_STORE_V	4599	7	0
+// OP_CALL2	29863	0	0
+// OP_STORE_V	29982	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	776	29983
+// OP_STORE_V	29983	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	776	29984
+// OP_IFNOT	29984	5	0
+// OP_BITAND	821	776	29985
+// OP_SUB_F	821	29985	29986
+// OP_STORE_F	29986	821	0
+// OP_GOTO	6	0	0
+// OP_BITOR	821	776	29987
+// OP_STORE_F	29987	821	0
+// OP_STORE_V	257	4	0
+// OP_CALL1	29879	0	0
+// OP_CALL0	29736	0	0
+// OP_DONE	0	0	0
+void () func002715 = 
+{
+    func002707(globaldef000804 & globaldef000759, "weapon_supernailgun");
+    bprint("super nail ");
+    func002698(globaldef000804 & globaldef000759);
+    if(globaldef000804 & globaldef000759)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000759);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000759;
+        func002709(globaldef000235);
+        func002697();
+    }
+    
+};
+
+// func002716
+// function begins at statement 57146, parm_start=29989
+// OP_STORE_V	29989	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	778	29990
+// OP_STORE_V	29990	4	0
+// OP_CALL1	29764	0	0
+// OP_BITAND	821	778	29991
+// OP_IFNOT	29991	5	0
+// OP_BITAND	821	778	29992
+// OP_SUB_F	821	29992	29993
+// OP_STORE_F	29993	821	0
+// OP_GOTO	3	0	0
+// OP_BITOR	821	778	29994
+// OP_STORE_F	29994	821	0
+// OP_DONE	0	0	0
+void () func002716 = 
+{
+    bprint("shell cases ");
+    func002698(globaldef000804 & globaldef000761);
+    if(globaldef000804 & globaldef000761)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000761);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000761;
+    }
+    
+};
+
+// func002717
+// function begins at statement 57160, parm_start=29996
+// OP_STORE_V	29996	4	0
+// OP_CALL1	472	0	0
+// OP_BITAND	821	766	29997
+// OP_IFNOT	29997	5	0
+// OP_BITAND	821	766	29998
+// OP_SUB_F	821	29998	29999
+// OP_STORE_F	29999	821	0
+// OP_GOTO	3	0	0
+// OP_BITOR	821	766	30000
+// OP_STORE_F	30000	821	0
+// OP_BITAND	821	766	30001
+// OP_STORE_V	30001	4	0
+// OP_CALL1	29764	0	0
+// OP_DONE	0	0	0
+void () func002717 = 
+{
+    bprint("bubble routing ");
+    if(globaldef000804 & globaldef000749)
+    {
+        globaldef000804 = globaldef000804 - (globaldef000804 & globaldef000749);
+    }
+    else
+    {
+        globaldef000804 = globaldef000804 | globaldef000749;
+    }
+    
+    func002698(globaldef000804 & globaldef000749);
+};
+
+// func002718
+// function begins at statement 57174, parm_start=30003
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30003	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	768	30004
+// OP_NOT_F	30004	0	30005
+// OP_STORE_V	30005	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30006	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	769	30007
+// OP_NOT_F	30007	0	30008
+// OP_STORE_V	30008	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30009	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	770	30010
+// OP_NOT_F	30010	0	30011
+// OP_STORE_V	30011	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30012	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	771	30013
+// OP_NOT_F	30013	0	30014
+// OP_STORE_V	30014	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30015	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	772	30016
+// OP_NOT_F	30016	0	30017
+// OP_STORE_V	30017	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30018	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	773	30019
+// OP_NOT_F	30019	0	30020
+// OP_STORE_V	30020	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30021	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	774	30022
+// OP_NOT_F	30022	0	30023
+// OP_STORE_V	30023	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30024	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	775	30025
+// OP_NOT_F	30025	0	30026
+// OP_STORE_V	30026	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30027	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	776	30028
+// OP_NOT_F	30028	0	30029
+// OP_STORE_V	30029	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30030	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	778	30031
+// OP_NOT_F	30031	0	30032
+// OP_STORE_V	30032	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30033	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	767	30034
+// OP_STORE_V	30034	4	0
+// OP_CALL1	29768	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	29996	7	0
+// OP_CALL2	928	0	0
+// OP_BITAND	821	766	30035
+// OP_STORE_V	30035	4	0
+// OP_CALL1	29768	0	0
+// OP_DONE	0	0	0
+void () func002718 = 
+{
+    func000092(globaldef000001, "bot pathing    ");
+    func002699(!(globaldef000804 & globaldef000751));
+    func000092(globaldef000001, "human pathing  ");
+    func002699(!(globaldef000804 & globaldef000752));
+    func000092(globaldef000001, "bot talk       ");
+    func002699(!(globaldef000804 & globaldef000753));
+    func000092(globaldef000001, "powerups       ");
+    func002699(!(globaldef000804 & globaldef000754));
+    func000092(globaldef000001, "weapons        ");
+    func002699(!(globaldef000804 & globaldef000755));
+    func000092(globaldef000001, "lightning      ");
+    func002699(!(globaldef000804 & globaldef000756));
+    func000092(globaldef000001, "rocket         ");
+    func002699(!(globaldef000804 & globaldef000757));
+    func000092(globaldef000001, "grenade        ");
+    func002699(!(globaldef000804 & globaldef000758));
+    func000092(globaldef000001, "super nail     ");
+    func002699(!(globaldef000804 & globaldef000759));
+    func000092(globaldef000001, "shell cases    ");
+    func002699(!(globaldef000804 & globaldef000761));
+    func000092(globaldef000001, "rocket arena   ");
+    func002699(globaldef000804 & globaldef000750);
+    func000092(globaldef000001, "bubble routing ");
+    func002699(globaldef000804 & globaldef000749);
+};
+
+// func002719
+// function begins at statement 57257, parm_start=30036
+// OP_BITAND	821	771	30036
+// OP_IFNOT	30036	4	0
+// OP_SUB_F	821	771	30037
+// OP_STORE_F	30037	821	0
+// OP_CALL0	29899	0	0
+// OP_BITAND	821	772	30038
+// OP_IFNOT	30038	5	0
+// OP_SUB_F	821	772	30039
+// OP_STORE_F	30039	821	0
+// OP_CALL0	29938	0	0
+// OP_GOTO	21	0	0
+// OP_BITAND	821	773	30040
+// OP_IFNOT	30040	4	0
+// OP_SUB_F	821	773	30041
+// OP_STORE_F	30041	821	0
+// OP_CALL0	29956	0	0
+// OP_BITAND	821	774	30042
+// OP_IFNOT	30042	4	0
+// OP_SUB_F	821	774	30043
+// OP_STORE_F	30043	821	0
+// OP_CALL0	29964	0	0
+// OP_BITAND	821	775	30044
+// OP_IFNOT	30044	4	0
+// OP_SUB_F	821	775	30045
+// OP_STORE_F	30045	821	0
+// OP_CALL0	29972	0	0
+// OP_BITAND	821	776	30046
+// OP_IFNOT	30046	4	0
+// OP_SUB_F	821	776	30047
+// OP_STORE_F	30047	821	0
+// OP_CALL0	29980	0	0
+// OP_BITAND	821	778	30048
+// OP_IFNOT	30048	4	0
+// OP_SUB_F	821	778	30049
+// OP_STORE_F	30049	821	0
+// OP_CALL0	29988	0	0
+// OP_DONE	0	0	0
+void () func002719 = 
+{
+    
+    if(globaldef000804 & globaldef000754)
+    {
+        globaldef000804 = globaldef000804 - globaldef000754;
+        func002710();
+    }
+    
+    if(globaldef000804 & globaldef000755)
+    {
+        globaldef000804 = globaldef000804 - globaldef000755;
+        func002711();
+    }
+    else
+    {
+        
+        if(globaldef000804 & globaldef000756)
+        {
+            globaldef000804 = globaldef000804 - globaldef000756;
+            func002712();
+        }
+        
+        
+        if(globaldef000804 & globaldef000757)
+        {
+            globaldef000804 = globaldef000804 - globaldef000757;
+            func002713();
+        }
+        
+        
+        if(globaldef000804 & globaldef000758)
+        {
+            globaldef000804 = globaldef000804 - globaldef000758;
+            func002714();
+        }
+        
+        
+        if(globaldef000804 & globaldef000759)
+        {
+            globaldef000804 = globaldef000804 - globaldef000759;
+            func002715();
+        }
+        
+    }
+    
+    
+    if(globaldef000804 & globaldef000761)
+    {
+        globaldef000804 = globaldef000804 - globaldef000761;
+        func002716();
+    }
+    
+};
+
+// func002720
+// function begins at statement 57294, parm_start=30051
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	30051	0
+// OP_IFNOT	30051	24	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_S	30051	180	30053
+// OP_STORE_V	30053	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30054	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	30051	588	30055
+// OP_STORE_V	30055	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30052	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30052	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	2127	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	30051	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	30051	0
+// OP_GOTO	-23	0	0
+// OP_DONE	0	0	0
+void () func002720 = 
+{
+    local entity globaldef009479;
+    local string globaldef009480;
+    globaldef009479 = find(globaldef000003, classname, "bot");
+    
+    while(globaldef009479)
+    {
+        func000092(globaldef000001, globaldef009479.netname);
+        func000092(globaldef000001, " has skill ");
+        globaldef009480 = ftos(globaldef009479.field000265);
+        func000092(globaldef000001, globaldef009480);
+        func000092(globaldef000001, "\n");
+        globaldef009479 = find(globaldef009479, classname, "bot");
+    }
+    
+};
+
+// func002721
+// function begins at statement 57324, parm_start=30057
+// OP_NOT_F	37	0	30058
+// OP_OR	30058	816	30059
+// OP_IFNOT	30059	4	0
+// OP_STORE_V	30057	4	0
+// OP_CALL1	1062	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	30057	4	0
+// OP_STORE_V	30060	7	0
+// OP_CALL2	928	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009483) func002721 = 
+{
+    if(!globaldef000010 || globaldef000799)
+    {
+        func002365(globaldef009483);
+    }
+    else
+    {
+        func000092(globaldef009483, "not allowed to toggle observer mode\n");
+    }
+    
+};
+
+// func002722
+// function begins at statement 57334, parm_start=30062
+// OP_STORE_ENT	28	30062	0
+// OP_STORE_ENT	833	28	0
+// OP_IFNOT	28	18	0
+// OP_LOAD_S	28	129	30063
+// OP_EQ_S	30063	1236	30064
+// OP_IFNOT	30064	12	0
+// OP_LOAD_F	28	607	30065
+// OP_GE	30065	214	30066
+// OP_LOAD_F	28	607	30067
+// OP_LE	30067	37	30068
+// OP_AND	30066	30068	30069
+// OP_IFNOT	30069	4	0
+// OP_CALL0	90	0	0
+// OP_CALL0	88	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1062	0	0
+// OP_LOAD_ENT	28	620	30070
+// OP_STORE_ENT	30070	28	0
+// OP_GOTO	-17	0	0
+// OP_STORE_ENT	834	28	0
+// OP_IFNOT	28	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	21038	0	0
+// OP_LOAD_ENT	28	620	30071
+// OP_STORE_ENT	30071	28	0
+// OP_GOTO	-5	0	0
+// OP_STORE_ENT	30062	28	0
+// OP_DONE	0	0	0
+void () func002722 = 
+{
+    local entity globaldef009486;
+    globaldef009486 = globaldef000001;
+    globaldef000001 = globaldef000816;
+    
+    while(globaldef000001)
+    {
+        
+        if(globaldef000001.classname == "player")
+        {
+            if((globaldef000001.field000284 >= globaldef000192) && (globaldef000001.field000284 <= globaldef000010))
+            {
+                SetNewParms();
+                PutClientInServer();
+            }
+            else
+            {
+                func002365(globaldef000001);
+            }
+            
+        }
+        
+        globaldef000001 = globaldef000001.field000297;
+    }
+    
+    globaldef000001 = globaldef000817;
+    
+    while(globaldef000001)
+    {
+        func002418(globaldef000001);
+        globaldef000001 = globaldef000001.field000297;
+    }
+    
+    globaldef000001 = globaldef009486;
+};
+
+// func002723
+// function begins at statement 57363, parm_start=30073
+// OP_STORE_ENT	833	30073	0
+// OP_IFNOT	30073	11	0
+// OP_ADDRESS	30073	153	30074
+// OP_STOREP_F	213	30074	0
+// OP_LOAD_F	30073	608	30075
+// OP_STORE_V	30075	4	0
+// OP_LOAD_F	30073	153	30076
+// OP_STORE_V	30076	7	0
+// OP_CALL2	1051	0	0
+// OP_LOAD_ENT	30073	620	30077
+// OP_STORE_ENT	30077	30073	0
+// OP_GOTO	-10	0	0
+// OP_STORE_ENT	834	30073	0
+// OP_IFNOT	30073	11	0
+// OP_ADDRESS	30073	153	30078
+// OP_STOREP_F	213	30078	0
+// OP_LOAD_F	30073	608	30079
+// OP_STORE_V	30079	4	0
+// OP_LOAD_F	30073	153	30080
+// OP_STORE_V	30080	7	0
+// OP_CALL2	1051	0	0
+// OP_LOAD_ENT	30073	620	30081
+// OP_STORE_ENT	30081	30073	0
+// OP_GOTO	-10	0	0
+// OP_DONE	0	0	0
+void () func002723 = 
+{
+    local entity globaldef009488;
+    globaldef009488 = globaldef000816;
+    
+    while(globaldef009488)
+    {
+        globaldef009488.frags = globaldef000191;
+        func002263(globaldef009488.field000285, globaldef009488.frags);
+        globaldef009488 = globaldef009488.field000297;
+    }
+    
+    globaldef009488 = globaldef000817;
+    
+    while(globaldef009488)
+    {
+        globaldef009488.frags = globaldef000191;
+        func002263(globaldef009488.field000285, globaldef009488.frags);
+        globaldef009488 = globaldef009488.field000297;
+    }
+    
+};
+
+// func002724
+// function begins at statement 57388, parm_start=30083
+// OP_LT	30084	213	30085
+// OP_IFNOT	30085	2	0
+// OP_STORE_F	213	30084	0
+// OP_GT	30084	37	30086
+// OP_IFNOT	30086	2	0
+// OP_STORE_F	213	30084	0
+// OP_ADDRESS	30083	607	30087
+// OP_STOREP_F	30084	30087	0
+// OP_DONE	0	0	0
+void (entity globaldef009490, float globaldef009491) func002724 = 
+{
+    
+    if(globaldef009491 < globaldef000191)
+    {
+        globaldef009491 = globaldef000191;
+    }
+    
+    
+    if(globaldef009491 > globaldef000010)
+    {
+        globaldef009491 = globaldef000191;
+    }
+    
+    globaldef009490.field000284 = globaldef009491;
+};
+
+// func002725
+// function begins at statement 57397, parm_start=30089
+// OP_NOT_F	37	0	30091
+// OP_IFNOT	30091	5	0
+// OP_STORE_V	30089	4	0
+// OP_STORE_V	30092	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_NOT_F	816	0	30093
+// OP_IFNOT	30093	5	0
+// OP_STORE_V	30089	4	0
+// OP_STORE_V	30094	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	30089	129	30095
+// OP_EQ_S	30095	2025	30096
+// OP_IFNOT	30096	5	0
+// OP_STORE_V	30089	4	0
+// OP_STORE_V	30097	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	30089	4	0
+// OP_STORE_V	30090	7	0
+// OP_CALL2	30082	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009493, float globaldef009494) func002725 = 
+{
+    
+    if(!globaldef000010)
+    {
+        func000092(globaldef009493, "not in teamplay mode\n");
+        return;
+    }
+    
+    
+    if(!globaldef000799)
+    {
+        func000092(globaldef009493, "can't join a team while the game is running\n");
+        return;
+    }
+    
+    
+    if(globaldef009493.classname == "observer")
+    {
+        func000092(globaldef009493, "can't join a team in observer mode\n");
+        return;
+    }
+    
+    func002724(globaldef009493, globaldef009494);
+};
+
+// func002726
+// function begins at statement 57420, parm_start=30099
+// OP_IFNOT	822	3	0
+// OP_STORE_F	213	30100	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	214	30100	0
+// OP_STORE_ENT	833	30099	0
+// OP_IFNOT	30099	12	0
+// OP_STORE_V	30099	4	0
+// OP_LOAD_F	30099	607	30101
+// OP_STORE_V	30101	7	0
+// OP_CALL2	30082	0	0
+// OP_ADDRESS	30099	132	30102
+// OP_STOREP_F	30100	30102	0
+// OP_ADDRESS	30099	572	30103
+// OP_STOREP_F	30100	30103	0
+// OP_LOAD_ENT	30099	620	30104
+// OP_STORE_ENT	30104	30099	0
+// OP_GOTO	-11	0	0
+// OP_DONE	0	0	0
+void () func002726 = 
+{
+    local entity globaldef009499;
+    local float globaldef009500;
+    if(globaldef000805)
+    {
+        globaldef009500 = globaldef000191;
+    }
+    else
+    {
+        globaldef009500 = globaldef000192;
+    }
+    
+    globaldef009499 = globaldef000816;
+    
+    while(globaldef009499)
+    {
+        func002724(globaldef009499, globaldef009499.field000284);
+        globaldef009499.skin = globaldef009500;
+        globaldef009499.field000249 = globaldef009500;
+        globaldef009499 = globaldef009499.field000297;
+    }
+    
+};
+
+// func002727
+// function begins at statement 57438, parm_start=30106
+// OP_STORE_F	213	30108	0
+// OP_STORE_ENT	833	30107	0
+// OP_IFNOT	30107	9	0
+// OP_LOAD_F	30107	607	30109
+// OP_EQ_F	30109	30106	30110
+// OP_IFNOT	30110	3	0
+// OP_ADD_F	30108	214	30111
+// OP_STORE_F	30111	30108	0
+// OP_LOAD_ENT	30107	620	30112
+// OP_STORE_ENT	30112	30107	0
+// OP_GOTO	-8	0	0
+// OP_RETURN	30108	0	0
+// OP_DONE	0	0	0
+float (float globaldef009502) func002727 = 
+{
+    local entity globaldef009503;
+    local float globaldef009504;
+    globaldef009504 = globaldef000191;
+    globaldef009503 = globaldef000816;
+    
+    while(globaldef009503)
+    {
+        
+        if(globaldef009503.field000284 == globaldef009502)
+        {
+            globaldef009504 = globaldef009504 + globaldef000192;
+        }
+        
+        globaldef009503 = globaldef009503.field000297;
+    }
+    
+    return globaldef009504;
+};
+
+// func002728
+// function begins at statement 57451, parm_start=30114
+// OP_STORE_F	213	30116	0
+// OP_STORE_ENT	834	30115	0
+// OP_IFNOT	30115	9	0
+// OP_LOAD_F	30115	607	30117
+// OP_EQ_F	30117	30114	30118
+// OP_IFNOT	30118	3	0
+// OP_ADD_F	30116	214	30119
+// OP_STORE_F	30119	30116	0
+// OP_LOAD_ENT	30115	620	30120
+// OP_STORE_ENT	30120	30115	0
+// OP_GOTO	-8	0	0
+// OP_RETURN	30116	0	0
+// OP_DONE	0	0	0
+float (float globaldef009506) func002728 = 
+{
+    local entity globaldef009507;
+    local float globaldef009508;
+    globaldef009508 = globaldef000191;
+    globaldef009507 = globaldef000817;
+    
+    while(globaldef009507)
+    {
+        
+        if(globaldef009507.field000284 == globaldef009506)
+        {
+            globaldef009508 = globaldef009508 + globaldef000192;
+        }
+        
+        globaldef009507 = globaldef009507.field000297;
+    }
+    
+    return globaldef009508;
+};
+
+// func002729
+// function begins at statement 57464, parm_start=30122
+// OP_STORE_V	30123	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30123	0
+// OP_DIV_F	30123	1997	30127
+// OP_STORE_V	30127	4	0
+// OP_CALL1	484	0	0
+// OP_MUL_F	1	1997	30128
+// OP_SUB_F	30123	30128	30129
+// OP_DIV_F	30129	235	30130
+// OP_STORE_V	30130	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30125	0
+// OP_DIV_F	30123	235	30131
+// OP_STORE_V	30131	4	0
+// OP_CALL1	484	0	0
+// OP_MUL_F	1	235	30132
+// OP_SUB_F	30123	30132	30133
+// OP_STORE_V	30133	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30126	0
+// OP_IFNOT	30125	7	0
+// OP_STORE_V	30122	4	0
+// OP_ADD_F	30125	10006	30134
+// OP_ADD_F	30134	30124	30135
+// OP_STORE_V	30135	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	30122	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30122	4	0
+// OP_ADD_F	30126	10006	30136
+// OP_ADD_F	30136	30124	30137
+// OP_STORE_V	30137	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void (float globaldef009510, float globaldef009511, float globaldef009512) func002729 = 
+{
+    local float globaldef009513;
+    local float globaldef009514;
+    globaldef009511 = floor(globaldef009511);
+    globaldef009513 = floor((globaldef009511 - ((floor(globaldef009511 / 100.000)) * 100.000)) / globaldef000213);
+    globaldef009514 = floor(globaldef009511 - ((floor(globaldef009511 / globaldef000213)) * globaldef000213));
+    if(globaldef009513)
+    {
+        WriteByte(globaldef009510, (globaldef009513 + 48.000) + globaldef009512);
+    }
+    else
+    {
+        WriteByte(globaldef009510, globaldef000197);
+    }
+    
+    WriteByte(globaldef009510, (globaldef009514 + 48.000) + globaldef009512);
+};
+
+// func002730
+// function begins at statement 57500, parm_start=30139
+// OP_STORE_V	30140	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30140	0
+// OP_DIV_F	30140	1663	30145
+// OP_STORE_V	30145	4	0
+// OP_CALL1	484	0	0
+// OP_MUL_F	1	1663	30146
+// OP_SUB_F	30140	30146	30147
+// OP_DIV_F	30147	1997	30148
+// OP_STORE_V	30148	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30142	0
+// OP_DIV_F	30140	1997	30149
+// OP_STORE_V	30149	4	0
+// OP_CALL1	484	0	0
+// OP_MUL_F	1	1997	30150
+// OP_SUB_F	30140	30150	30151
+// OP_DIV_F	30151	235	30152
+// OP_STORE_V	30152	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30143	0
+// OP_DIV_F	30140	235	30153
+// OP_STORE_V	30153	4	0
+// OP_CALL1	484	0	0
+// OP_MUL_F	1	235	30154
+// OP_SUB_F	30140	30154	30155
+// OP_STORE_V	30155	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	30144	0
+// OP_IFNOT	30142	7	0
+// OP_STORE_V	30139	4	0
+// OP_ADD_F	30142	10006	30156
+// OP_ADD_F	30156	30141	30157
+// OP_STORE_V	30157	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	30139	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_OR	30142	30143	30158
+// OP_IFNOT	30158	7	0
+// OP_STORE_V	30139	4	0
+// OP_ADD_F	30143	10006	30159
+// OP_ADD_F	30159	30141	30160
+// OP_STORE_V	30160	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	30139	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30139	4	0
+// OP_ADD_F	30144	10006	30161
+// OP_ADD_F	30161	30141	30162
+// OP_STORE_V	30162	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void (float globaldef009516, float globaldef009517, float globaldef009518) func002730 = 
+{
+    local float globaldef009519;
+    local float globaldef009520;
+    local float globaldef009521;
+    globaldef009517 = floor(globaldef009517);
+    globaldef009519 = floor((globaldef009517 - ((floor(globaldef009517 / 1000.000)) * 1000.000)) / 100.000);
+    globaldef009520 = floor((globaldef009517 - ((floor(globaldef009517 / 100.000)) * 100.000)) / globaldef000213);
+    globaldef009521 = floor(globaldef009517 - ((floor(globaldef009517 / globaldef000213)) * globaldef000213));
+    if(globaldef009519)
+    {
+        WriteByte(globaldef009516, (globaldef009519 + 48.000) + globaldef009518);
+    }
+    else
+    {
+        WriteByte(globaldef009516, globaldef000197);
+    }
+    
+    if(globaldef009519 || globaldef009520)
+    {
+        WriteByte(globaldef009516, (globaldef009520 + 48.000) + globaldef009518);
+    }
+    else
+    {
+        WriteByte(globaldef009516, globaldef000197);
+    }
+    
+    WriteByte(globaldef009516, (globaldef009521 + 48.000) + globaldef009518);
+};
+
+// func002731
+// function begins at statement 57556, parm_start=30164
+// OP_IFNOT	30165	14	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	219	30166	30167
+// OP_STORE_V	30167	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	2224	30166	30168
+// OP_STORE_V	30168	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	9603	30166	30169
+// OP_STORE_V	30169	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	13	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	2224	30166	30170
+// OP_STORE_V	30170	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	8109	30166	30171
+// OP_STORE_V	30171	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	8109	30166	30172
+// OP_STORE_V	30172	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void (float globaldef009523, float globaldef009524, float globaldef009525) func002731 = 
+{
+    if(globaldef009524)
+    {
+        WriteByte(globaldef000326, globaldef000197 + globaldef009525);
+        WriteByte(globaldef000326, 111.000 + globaldef009525);
+        WriteByte(globaldef000326, 110.000 + globaldef009525);
+    }
+    else
+    {
+        WriteByte(globaldef000326, 111.000 + globaldef009525);
+        WriteByte(globaldef000326, 102.000 + globaldef009525);
+        WriteByte(globaldef000326, 102.000 + globaldef009525);
+    }
+    
+};
+
+// func002732
+// function begins at statement 57583, parm_start=30174
+// OP_STORE_ENT	28	81	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	306	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	2129	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30174	7	0
+// OP_STORE_V	221	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30176	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30177	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14538	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30174	4	0
+// OP_CALL1	30105	0	0
+// OP_STORE_F	1	30175	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30175	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14538	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30174	4	0
+// OP_CALL1	30113	0	0
+// OP_STORE_F	1	30175	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30175	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	10008	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	1470	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30180	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9911	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26613	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void (float globaldef009527) func002732 = 
+{
+    local float globaldef009528;
+    globaldef000059 = globaldef000001;
+    WriteByte(globaldef000326, globaldef000289);
+    WriteByte(globaldef000326, 212.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 237.000);
+    func002729(globaldef000326, globaldef009527, globaldef000199);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 240.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 249.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 186.000);
+    globaldef009528 = func002727(globaldef009527);
+    func002729(globaldef000326, globaldef009528, globaldef000191);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 186.000);
+    globaldef009528 = func002728(globaldef009527);
+    func002729(globaldef000326, globaldef009528, globaldef000191);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 49.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 50.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 246.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 51.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 235.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000191);
+};
+
+// func002733
+// function begins at statement 57792, parm_start=30182
+// OP_STORE_ENT	28	81	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	306	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	2129	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30184	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30176	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_F	214	30183	0
+// OP_STORE_V	6712	4	0
+// OP_CALL1	490	0	0
+// OP_LE	30183	1	30185
+// OP_IFNOT	30185	60	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	30183	10006	30186
+// OP_STORE_V	30186	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	30183	10006	30187
+// OP_ADD_F	30187	221	30188
+// OP_STORE_V	30188	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14538	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30183	4	0
+// OP_CALL1	30105	0	0
+// OP_STORE_F	1	30182	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30182	7	0
+// OP_STORE_V	221	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	30183	4	0
+// OP_CALL1	30113	0	0
+// OP_STORE_F	1	30182	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30182	7	0
+// OP_STORE_V	221	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_ADD_F	30183	214	30189
+// OP_STORE_F	30189	30183	0
+// OP_GOTO	-62	0	0
+// OP_STORE_V	343	4	0
+// OP_ADD_F	10006	37	30190
+// OP_ADD_F	30190	214	30191
+// OP_STORE_V	30191	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26613	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void () func002733 = 
+{
+    local float globaldef009535;
+    local float globaldef009536;
+    globaldef000059 = globaldef000001;
+    WriteByte(globaldef000326, globaldef000289);
+    WriteByte(globaldef000326, 212.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 245.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 240.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009536 = globaldef000192;
+    
+    if(globaldef009536 <= cvar(globaldef002457))
+    {
+        WriteByte(globaldef000326, globaldef009536 + 48.000);
+        WriteByte(globaldef000326, globaldef000197);
+        WriteByte(globaldef000326, 244.000);
+        WriteByte(globaldef000326, 229.000);
+        WriteByte(globaldef000326, 225.000);
+        WriteByte(globaldef000326, 237.000);
+        WriteByte(globaldef000326, globaldef000197);
+        WriteByte(globaldef000326, (globaldef009536 + 48.000) + globaldef000199);
+        WriteByte(globaldef000326, 186.000);
+        WriteByte(globaldef000326, globaldef000197);
+        globaldef009535 = func002727(globaldef009536);
+        func002729(globaldef000326, globaldef009535, globaldef000199);
+        WriteByte(globaldef000326, globaldef000197);
+        WriteByte(globaldef000326, globaldef000197);
+        globaldef009535 = func002728(globaldef009536);
+        func002729(globaldef000326, globaldef009535, globaldef000199);
+        WriteByte(globaldef000326, globaldef000213);
+        globaldef009536 = globaldef009536 + globaldef000192;
+    }
+    
+}
+
+WriteByte(globaldef000326, (48.000 + globaldef000010) + globaldef000192);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, 226.000);
+WriteByte(globaldef000326, 225.000);
+WriteByte(globaldef000326, 227.000);
+WriteByte(globaldef000326, 235.000);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000197);
+WriteByte(globaldef000326, globaldef000191);
+};
+
+/* ERROR INDENTATION */
+// func002734
+// function begins at statement 58031, parm_start=30193
+// OP_STORE_ENT	28	81	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	306	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14205	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27329	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27329	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30184	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30176	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30177	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14538	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_SUB_F	814	810	30194
+// OP_SUB_F	30194	809	30195
+// OP_STORE_V	30195	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14538	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	810	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30121	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	10008	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	1470	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30180	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9911	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30180	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9913	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26613	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void () func002734 = 
+{
+    local float globaldef009539;
+    globaldef000059 = globaldef000001;
+    WriteByte(globaldef000326, globaldef000289);
+    WriteByte(globaldef000326, 196.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 232.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 232.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 245.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 240.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 249.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 186.000);
+    func002729(globaldef000326, (globaldef000797 - globaldef000793) - globaldef000792, globaldef000191);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 186.000);
+    func002729(globaldef000326, globaldef000793, globaldef000191);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 49.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 50.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 246.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 51.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 246.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 52.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 235.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000191);
+};
+
+// func002735
+// function begins at statement 58304, parm_start=30197
+// OP_STORE_ENT	28	81	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	306	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14187	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30184	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	6716	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	30197	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	10008	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27316	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27329	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27329	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_IFNOT	30197	6	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30197	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30138	0	0
+// OP_GOTO	5	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30163	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	6712	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	30197	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	1470	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30176	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30177	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_IFNOT	30197	6	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30197	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30138	0	0
+// OP_GOTO	5	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30163	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	6713	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	30197	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9911	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26613	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30197	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30138	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	6719	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	30197	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9913	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_IFNOT	30197	6	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30197	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30138	0	0
+// OP_GOTO	5	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30163	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	8562	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	30197	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9915	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19136	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19135	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26612	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19131	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_IFNOT	30197	6	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30197	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30138	0	0
+// OP_GOTO	5	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	30163	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9917	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	14193	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19135	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19134	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9919	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_IFNOT	816	32	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19137	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19135	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_GOTO	31	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30178	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30179	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19138	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	30176	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19135	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19139	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	19132	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	235	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	9921	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26980	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	5827	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	27041	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	26613	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	219	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	343	4	0
+// OP_STORE_V	213	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void () func002735 = 
+{
+    local float globaldef009541;
+    globaldef000059 = globaldef000001;
+    WriteByte(globaldef000326, globaldef000289);
+    WriteByte(globaldef000326, 193.000);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 245.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009541 = cvar(globaldef002460);
+    WriteByte(globaldef000326, 49.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 228.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 232.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 232.000);
+    WriteByte(globaldef000326, globaldef000197);
+    if(globaldef009541)
+    {
+        func002730(globaldef000326, globaldef009541, globaldef000191);
+    }
+    else
+    {
+        func002731(globaldef000326, globaldef000191, globaldef000191);
+    }
+    
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009541 = cvar(globaldef002457);
+    WriteByte(globaldef000326, 50.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 240.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 249.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    if(globaldef009541)
+    {
+        func002730(globaldef000326, globaldef009541, globaldef000191);
+    }
+    else
+    {
+        func002731(globaldef000326, globaldef000191, globaldef000191);
+    }
+    
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009541 = cvar(globaldef002458);
+    WriteByte(globaldef000326, 51.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 243.000);
+    WriteByte(globaldef000326, 235.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    func002730(globaldef000326, globaldef009541, globaldef000191);
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009541 = cvar("timelimit");
+    WriteByte(globaldef000326, 52.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    if(globaldef009541)
+    {
+        func002730(globaldef000326, globaldef009541, globaldef000191);
+    }
+    else
+    {
+        func002731(globaldef000326, globaldef000191, globaldef000191);
+    }
+    
+    WriteByte(globaldef000326, globaldef000213);
+    globaldef009541 = cvar("fraglimit");
+    WriteByte(globaldef000326, 53.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 230.000);
+    WriteByte(globaldef000326, 242.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 231.000);
+    WriteByte(globaldef000326, 236.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 233.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    if(globaldef009541)
+    {
+        func002730(globaldef000326, globaldef009541, globaldef000191);
+    }
+    else
+    {
+        func002731(globaldef000326, globaldef000191, globaldef000191);
+    }
+    
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 54.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 194.000);
+    WriteByte(globaldef000326, 239.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 231.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 237.000);
+    WriteByte(globaldef000326, 229.000);
+    WriteByte(globaldef000326, 238.000);
+    WriteByte(globaldef000326, 244.000);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 55.000);
+    WriteByte(globaldef000326, globaldef000197);
+    if(globaldef000799)
+    {
+        WriteByte(globaldef000326, 243.000);
+        WriteByte(globaldef000326, 244.000);
+        WriteByte(globaldef000326, 225.000);
+        WriteByte(globaldef000326, 242.000);
+        WriteByte(globaldef000326, 244.000);
+        WriteByte(globaldef000326, globaldef000197);
+        WriteByte(globaldef000326, 231.000);
+        WriteByte(globaldef000326, 225.000);
+        WriteByte(globaldef000326, 237.000);
+        WriteByte(globaldef000326, 229.000);
+    }
+    else
+    {
+        WriteByte(globaldef000326, 243.000);
+        WriteByte(globaldef000326, 244.000);
+        WriteByte(globaldef000326, 239.000);
+        WriteByte(globaldef000326, 240.000);
+        WriteByte(globaldef000326, globaldef000197);
+        WriteByte(globaldef000326, 231.000);
+        WriteByte(globaldef000326, 225.000);
+        WriteByte(globaldef000326, 237.000);
+        WriteByte(globaldef000326, 229.000);
+        WriteByte(globaldef000326, globaldef000197);
+    }
+    
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000213);
+    WriteByte(globaldef000326, 56.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 235.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000191);
+};
+
+// func002736
+// function begins at statement 58823, parm_start=30199
+// OP_NE_E	831	28	30202
+// OP_IFNOT	30202	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	685	30203
+// OP_LT	30203	751	30204
+// OP_IFNOT	30204	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	685	30205
+// OP_EQ_F	30205	751	30206
+// OP_IFNOT	30206	128	0
+// OP_CALL0	30196	0	0
+// OP_LOAD_F	28	173	30207
+// OP_EQ_F	30207	214	30208
+// OP_IFNOT	30208	17	0
+// OP_STORE_V	6716	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	484	0	0
+// OP_ADD_F	1	214	30209
+// OP_STORE_F	30209	30200	0
+// OP_GT	30200	229	30210
+// OP_IFNOT	30210	2	0
+// OP_STORE_F	213	30200	0
+// OP_STORE_V	30200	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30201	0
+// OP_STORE_V	6716	4	0
+// OP_STORE_V	30201	7	0
+// OP_CALL2	508	0	0
+// OP_GOTO	107	0	0
+// OP_LOAD_F	28	173	30211
+// OP_EQ_F	30211	216	30212
+// OP_IFNOT	30212	20	0
+// OP_STORE_V	6712	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	484	0	0
+// OP_ADD_F	1	214	30213
+// OP_STORE_F	30213	30200	0
+// OP_GT	30200	217	30214
+// OP_IFNOT	30214	2	0
+// OP_STORE_F	213	30200	0
+// OP_STORE_V	30200	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30201	0
+// OP_STORE_V	6712	4	0
+// OP_STORE_V	30201	7	0
+// OP_CALL2	508	0	0
+// OP_STORE_F	30200	37	0
+// OP_CALL0	1107	0	0
+// OP_CALL0	30098	0	0
+// OP_GOTO	85	0	0
+// OP_LOAD_F	28	173	30215
+// OP_EQ_F	30215	228	30216
+// OP_IFNOT	30216	18	0
+// OP_STORE_V	6713	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	484	0	0
+// OP_ADD_F	1	214	30217
+// OP_STORE_F	30217	30200	0
+// OP_GT	30200	228	30218
+// OP_IFNOT	30218	2	0
+// OP_STORE_F	213	30200	0
+// OP_STORE_V	30200	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30201	0
+// OP_STORE_V	6713	4	0
+// OP_STORE_V	30201	7	0
+// OP_CALL2	508	0	0
+// OP_STORE_F	30200	354	0
+// OP_GOTO	65	0	0
+// OP_LOAD_F	28	173	30219
+// OP_EQ_F	30219	229	30220
+// OP_IFNOT	30220	15	0
+// OP_STORE_V	6719	4	0
+// OP_CALL1	490	0	0
+// OP_ADD_F	1	230	30221
+// OP_STORE_F	30221	30200	0
+// OP_GT	30200	2019	30222
+// OP_IFNOT	30222	2	0
+// OP_STORE_F	213	30200	0
+// OP_STORE_V	30200	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30201	0
+// OP_STORE_V	6719	4	0
+// OP_STORE_V	30201	7	0
+// OP_CALL2	508	0	0
+// OP_GOTO	48	0	0
+// OP_LOAD_F	28	173	30223
+// OP_EQ_F	30223	230	30224
+// OP_IFNOT	30224	15	0
+// OP_STORE_V	8562	4	0
+// OP_CALL1	490	0	0
+// OP_ADD_F	1	235	30225
+// OP_STORE_F	30225	30200	0
+// OP_GT	30200	1997	30226
+// OP_IFNOT	30226	2	0
+// OP_STORE_F	213	30200	0
+// OP_STORE_V	30200	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	30201	0
+// OP_STORE_V	8562	4	0
+// OP_STORE_V	30201	7	0
+// OP_CALL2	508	0	0
+// OP_GOTO	31	0	0
+// OP_LOAD_F	28	173	30227
+// OP_EQ_F	30227	231	30228
+// OP_IFNOT	30228	8	0
+// OP_IFNOT	37	4	0
+// OP_ADDRESS	28	685	30229
+// OP_STOREP_F	754	30229	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	28	685	30230
+// OP_STOREP_F	752	30230	0
+// OP_GOTO	21	0	0
+// OP_LOAD_F	28	173	30231
+// OP_EQ_F	30231	232	30232
+// OP_IFNOT	30232	10	0
+// OP_NOT_F	816	0	30233
+// OP_STORE_F	30233	816	0
+// OP_IFNOT	816	3	0
+// OP_CALL0	1163	0	0
+// OP_GOTO	4	0	0
+// OP_STORE_F	31	817	0
+// OP_CALL0	30061	0	0
+// OP_CALL0	30072	0	0
+// OP_GOTO	9	0	0
+// OP_LOAD_F	28	173	30234
+// OP_EQ_F	30234	217	30235
+// OP_IFNOT	30235	6	0
+// OP_ADDRESS	28	685	30236
+// OP_STOREP_F	747	30236	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	3002	7	0
+// OP_CALL2	852	0	0
+// OP_GOTO	85	0	0
+// OP_LOAD_F	28	685	30237
+// OP_EQ_F	30237	752	30238
+// OP_IFNOT	30238	23	0
+// OP_CALL0	30192	0	0
+// OP_LOAD_F	28	173	30239
+// OP_EQ_F	30239	214	30240
+// OP_IFNOT	30240	3	0
+// OP_CALL0	1102	0	0
+// OP_GOTO	16	0	0
+// OP_LOAD_F	28	173	30241
+// OP_EQ_F	30241	216	30242
+// OP_IFNOT	30242	3	0
+// OP_CALL0	1103	0	0
+// OP_GOTO	11	0	0
+// OP_LOAD_F	28	173	30243
+// OP_EQ_F	30243	228	30244
+// OP_IFNOT	30244	3	0
+// OP_CALL0	1107	0	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	28	173	30245
+// OP_EQ_F	30245	229	30246
+// OP_IFNOT	30246	3	0
+// OP_ADDRESS	28	685	30247
+// OP_STOREP_F	751	30247	0
+// OP_GOTO	60	0	0
+// OP_LOAD_F	28	685	30248
+// OP_EQ_F	30248	753	30249
+// OP_IFNOT	30249	4	0
+// OP_ADDRESS	28	685	30250
+// OP_STOREP_F	751	30250	0
+// OP_GOTO	54	0	0
+// OP_LOAD_F	28	685	30251
+// OP_EQ_F	30251	754	30252
+// OP_IFNOT	30252	20	0
+// OP_CALL0	30181	0	0
+// OP_LOAD_F	28	173	30253
+// OP_GE	30253	214	30254
+// OP_LOAD_F	28	173	30255
+// OP_LE	30255	37	30256
+// OP_AND	30254	30256	30257
+// OP_IFNOT	30257	6	0
+// OP_ADDRESS	28	685	30258
+// OP_LOAD_F	28	173	30259
+// OP_ADD_F	754	30259	30260
+// OP_STOREP_F	30260	30258	0
+// OP_GOTO	7	0	0
+// OP_LOAD_F	28	173	30261
+// OP_ADD_F	37	214	30262
+// OP_EQ_F	30261	30262	30263
+// OP_IFNOT	30263	3	0
+// OP_ADDRESS	28	685	30264
+// OP_STOREP_F	751	30264	0
+// OP_GOTO	32	0	0
+// OP_LOAD_F	28	685	30265
+// OP_GT	30265	754	30266
+// OP_IFNOT	30266	29	0
+// OP_LOAD_F	28	685	30267
+// OP_SUB_F	30267	754	30268
+// OP_STORE_F	30268	30199	0
+// OP_GT	30199	37	30269
+// OP_IFNOT	30269	5	0
+// OP_STORE_F	37	30199	0
+// OP_ADDRESS	28	685	30270
+// OP_ADD_F	754	37	30271
+// OP_STOREP_F	30271	30270	0
+// OP_STORE_V	30199	4	0
+// OP_CALL1	30173	0	0
+// OP_LOAD_F	28	173	30272
+// OP_EQ_F	30272	214	30273
+// OP_IFNOT	30273	4	0
+// OP_STORE_V	30199	4	0
+// OP_CALL1	1105	0	0
+// OP_GOTO	12	0	0
+// OP_LOAD_F	28	173	30274
+// OP_EQ_F	30274	216	30275
+// OP_IFNOT	30275	4	0
+// OP_STORE_V	30199	4	0
+// OP_CALL1	1106	0	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	28	173	30276
+// OP_EQ_F	30276	228	30277
+// OP_IFNOT	30277	3	0
+// OP_ADDRESS	28	685	30278
+// OP_STOREP_F	754	30278	0
+// OP_LOAD_F	28	173	30279
+// OP_GE	30279	213	30280
+// OP_LOAD_F	28	173	30281
+// OP_LE	30281	234	30282
+// OP_AND	30280	30282	30283
+// OP_IFNOT	30283	3	0
+// OP_ADDRESS	28	173	30284
+// OP_STOREP_F	213	30284	0
+// OP_DONE	0	0	0
+void () func002736 = 
+{
+    local float globaldef009543;
+    local float globaldef009544;
+    local string globaldef009545;
+    
+    if(globaldef000814 != globaldef000001)
+    {
+        return;
+    }
+    
+    
+    if(globaldef000001.field000362 < globaldef000734)
+    {
+        return;
+    }
+    
+    if(globaldef000001.field000362 == globaldef000734)
+    {
+        func002735();
+        if(globaldef000001.impulse == globaldef000192)
+        {
+            globaldef009544 = floor(cvar(globaldef002460)) + globaldef000192;
+            
+            if(globaldef009544 > globaldef000207)
+            {
+                globaldef009544 = globaldef000191;
+            }
+            
+            globaldef009545 = ftos(globaldef009544);
+            cvar_set(globaldef002460, globaldef009545);
+        }
+        else
+        {
+            if(globaldef000001.impulse == globaldef000194)
+            {
+                globaldef009544 = floor(cvar(globaldef002457)) + globaldef000192;
+                
+                if(globaldef009544 > globaldef000195)
+                {
+                    globaldef009544 = globaldef000191;
+                }
+                
+                globaldef009545 = ftos(globaldef009544);
+                cvar_set(globaldef002457, globaldef009545);
+                globaldef000010 = globaldef009544;
+                func002424();
+                func002726();
+            }
+            else
+            {
+                if(globaldef000001.impulse == globaldef000206)
+                {
+                    globaldef009544 = floor(cvar(globaldef002458)) + globaldef000192;
+                    
+                    if(globaldef009544 > globaldef000206)
+                    {
+                        globaldef009544 = globaldef000191;
+                    }
+                    
+                    globaldef009545 = ftos(globaldef009544);
+                    cvar_set(globaldef002458, globaldef009545);
+                    globaldef000337 = globaldef009544;
+                }
+                else
+                {
+                    if(globaldef000001.impulse == globaldef000207)
+                    {
+                        globaldef009544 = cvar("timelimit") + globaldef000208;
+                        
+                        if(globaldef009544 > 60.000)
+                        {
+                            globaldef009544 = globaldef000191;
+                        }
+                        
+                        globaldef009545 = ftos(globaldef009544);
+                        cvar_set("timelimit", globaldef009545);
+                    }
+                    else
+                    {
+                        if(globaldef000001.impulse == globaldef000208)
+                        {
+                            globaldef009544 = cvar("fraglimit") + globaldef000213;
+                            
+                            if(globaldef009544 > 100.000)
+                            {
+                                globaldef009544 = globaldef000191;
+                            }
+                            
+                            globaldef009545 = ftos(globaldef009544);
+                            cvar_set("fraglimit", globaldef009545);
+                        }
+                        else
+                        {
+                            if(globaldef000001.impulse == globaldef000209)
+                            {
+                                if(globaldef000010)
+                                {
+                                    globaldef000001.field000362 = globaldef000737;
+                                }
+                                else
+                                {
+                                    globaldef000001.field000362 = globaldef000735;
+                                }
+                                
+                            }
+                            else
+                            {
+                                if(globaldef000001.impulse == globaldef000210)
+                                {
+                                    globaldef000799 = !globaldef000799;
+                                    if(globaldef000799)
+                                    {
+                                        func002521();
+                                    }
+                                    else
+                                    {
+                                        globaldef000800 = globaldef000004;
+                                        func002722();
+                                        func002723();
+                                    }
+                                    
+                                }
+                                else
+                                {
+                                    
+                                    if(globaldef000001.impulse == globaldef000195)
+                                    {
+                                        globaldef000001.field000362 = globaldef000730;
+                                        func000072(globaldef000001, "");
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    else
+    {
+        if(globaldef000001.field000362 == globaldef000735)
+        {
+            func002734();
+            if(globaldef000001.impulse == globaldef000192)
+            {
+                func002423();
+            }
+            else
+            {
+                if(globaldef000001.impulse == globaldef000194)
+                {
+                    func002425();
+                }
+                else
+                {
+                    if(globaldef000001.impulse == globaldef000206)
+                    {
+                        func002424();
+                    }
+                    else
+                    {
+                        
+                        if(globaldef000001.impulse == globaldef000207)
+                        {
+                            globaldef000001.field000362 = globaldef000734;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        else
+        {
+            if(globaldef000001.field000362 == globaldef000736)
+            {
+                globaldef000001.field000362 = globaldef000734;
+            }
+            else
+            {
+                if(globaldef000001.field000362 == globaldef000737)
+                {
+                    func002733();
+                    if((globaldef000001.impulse >= globaldef000192) && (globaldef000001.impulse <= globaldef000010))
+                    {
+                        globaldef000001.field000362 = globaldef000737 + globaldef000001.impulse;
+                    }
+                    else
+                    {
+                        
+                        if(globaldef000001.impulse == (globaldef000010 + globaldef000192))
+                        {
+                            globaldef000001.field000362 = globaldef000734;
+                        }
+                        
+                    }
+                    
+                }
+                else
+                {
+                    
+                    if(globaldef000001.field000362 > globaldef000737)
+                    {
+                        globaldef009543 = globaldef000001.field000362 - globaldef000737;
+                        
+                        if(globaldef009543 > globaldef000010)
+                        {
+                            globaldef009543 = globaldef000010;
+                            globaldef000001.field000362 = globaldef000737 + globaldef000010;
+                        }
+                        
+                        func002732(globaldef009543);
+                        if(globaldef000001.impulse == globaldef000192)
+                        {
+                            func002427(globaldef009543);
+                        }
+                        else
+                        {
+                            if(globaldef000001.impulse == globaldef000194)
+                            {
+                                func002428(globaldef009543);
+                            }
+                            else
+                            {
+                                
+                                if(globaldef000001.impulse == globaldef000206)
+                                {
+                                    globaldef000001.field000362 = globaldef000737;
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    if((globaldef000001.impulse >= globaldef000191) && (globaldef000001.impulse <= globaldef000212))
+    {
+        globaldef000001.impulse = globaldef000191;
+    }
+    
+};
+
+// func002737
+// function begins at statement 59053, parm_start=30286
+// OP_BITAND	821	767	30286
+// OP_IFNOT	30286	5	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30287	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_NE_E	831	28	30288
+// OP_IFNOT	30288	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	685	30289
+// OP_LT	30289	751	30290
+// OP_IFNOT	30290	4	0
+// OP_ADDRESS	28	685	30291
+// OP_STOREP_F	751	30291	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	28	685	30292
+// OP_STOREP_F	747	30292	0
+// OP_DONE	0	0	0
+void () func002737 = 
+{
+    
+    if(globaldef000804 & globaldef000750)
+    {
+        func000092(globaldef000001, "can't use menu with rocket arena\n");
+        return;
+    }
+    
+    
+    if(globaldef000814 != globaldef000001)
+    {
+        return;
+    }
+    
+    if(globaldef000001.field000362 < globaldef000734)
+    {
+        globaldef000001.field000362 = globaldef000734;
+    }
+    else
+    {
+        globaldef000001.field000362 = globaldef000730;
+    }
+    
+};
+
+// func002738
+// function begins at statement 59071, parm_start=30293
+// OP_IFNOT	831	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_ENT	30293	831	0
+// OP_STORE_ENT	30	832	0
+// OP_ADDRESS	28	685	30294
+// OP_STOREP_F	747	30294	0
+// OP_LOAD_S	30293	180	30295
+// OP_STORE_V	30295	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	30296	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009548) func002738 = 
+{
+    
+    if(globaldef000814)
+    {
+        return;
+    }
+    
+    globaldef000814 = globaldef009548;
+    globaldef000815 = globaldef000003;
+    globaldef000001.field000362 = globaldef000730;
+    bprint(globaldef009548.netname);
+    bprint(" became administrator\n");
+};
+
+// func002739
+// function begins at statement 59083, parm_start=30297
+// OP_EQ_E	831	30297	30298
+// OP_IFNOT	30298	9	0
+// OP_ADDRESS	28	685	30299
+// OP_STOREP_F	747	30299	0
+// OP_STORE_ENT	30	831	0
+// OP_LOAD_S	30297	180	30300
+// OP_STORE_V	30300	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	30301	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009550) func002739 = 
+{
+    
+    if(globaldef000814 == globaldef009550)
+    {
+        globaldef000001.field000362 = globaldef000730;
+        globaldef000814 = globaldef000003;
+        bprint(globaldef009550.netname);
+        bprint(" left the administrator job\n");
+    }
+    
+};
+
+// func002740
+// function begins at statement 59094, parm_start=30303
+// OP_STORE_ENT	833	30303	0
+// OP_IFNOT	30303	9	0
+// OP_LOAD_F	30303	685	30304
+// OP_EQ_F	30304	755	30305
+// OP_IFNOT	30305	3	0
+// OP_ADDRESS	30303	685	30306
+// OP_STOREP_F	213	30306	0
+// OP_LOAD_ENT	30303	620	30307
+// OP_STORE_ENT	30307	30303	0
+// OP_GOTO	-8	0	0
+// OP_DONE	0	0	0
+void () func002740 = 
+{
+    local entity globaldef009553;
+    globaldef009553 = globaldef000816;
+    
+    while(globaldef009553)
+    {
+        
+        if(globaldef009553.field000362 == globaldef000738)
+        {
+            globaldef009553.field000362 = globaldef000191;
+        }
+        
+        globaldef009553 = globaldef009553.field000297;
+    }
+    
+};
+
+// func002741
+// function begins at statement 59105, parm_start=30309
+// OP_EQ_E	831	30309	30311
+// OP_IFNOT	30311	5	0
+// OP_STORE_V	30309	4	0
+// OP_STORE_V	30312	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_IFNOT	831	7	0
+// OP_STORE_V	30309	4	0
+// OP_LOAD_S	831	180	30313
+// OP_STORE_V	30313	7	0
+// OP_STORE_V	30314	10	0
+// OP_CALL3	934	0	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	814	809	30315
+// OP_SUB_F	30315	810	30316
+// OP_LE	30316	214	30317
+// OP_IFNOT	30317	4	0
+// OP_STORE_V	30309	4	0
+// OP_CALL1	1209	0	0
+// OP_GOTO	19	0	0
+// OP_STORE_ENT	30309	832	0
+// OP_CALL0	30302	0	0
+// OP_ADDRESS	30309	685	30318
+// OP_STOREP_F	755	30318	0
+// OP_LOAD_S	30309	180	30319
+// OP_STORE_V	30319	4	0
+// OP_STORE_V	30320	7	0
+// OP_CALL2	915	0	0
+// OP_STORE_ENT	833	30310	0
+// OP_IFNOT	30310	9	0
+// OP_NE_E	30310	30309	30321
+// OP_IFNOT	30321	4	0
+// OP_STORE_V	30310	4	0
+// OP_STORE_V	30322	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_ENT	30310	620	30323
+// OP_STORE_ENT	30323	30310	0
+// OP_GOTO	-8	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009555) func002741 = 
+{
+    local entity globaldef009556;
+    
+    if(globaldef000814 == globaldef009555)
+    {
+        func000092(globaldef009555, "you're already administrator\n");
+        return;
+    }
+    
+    
+    if(globaldef000814)
+    {
+        func000093(globaldef009555, globaldef000814.netname, " is the administrator\n");
+        return;
+    }
+    
+    if(((globaldef000797 - globaldef000792) - globaldef000793) <= globaldef000192)
+    {
+        func002738(globaldef009555);
+    }
+    else
+    {
+        globaldef000815 = globaldef009555;
+        func002740();
+        globaldef009555.field000362 = globaldef000738;
+        bprint2(globaldef009555.netname, " wants to be the administrator\n");
+        globaldef009556 = globaldef000816;
+        
+        while(globaldef009556)
+        {
+            
+            if(globaldef009556 != globaldef009555)
+            {
+                func000092(globaldef009556, "type 'yes' on the console if you agree\n");
+            }
+            
+            globaldef009556 = globaldef009556.field000297;
+        }
+        
+    }
+    
+};
+
+// func002742
+// function begins at statement 59144, parm_start=30325
+// OP_NE_E	831	30	30329
+// OP_NOT_ENT	832	0	30330
+// OP_OR	30329	30330	30331
+// OP_IFNOT	30331	5	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30332	7	0
+// OP_CALL2	928	0	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	30325	685	30333
+// OP_STOREP_F	755	30333	0
+// OP_STORE_ENT	833	30326	0
+// OP_STORE_F	213	30328	0
+// OP_STORE_F	213	30327	0
+// OP_IFNOT	30326	11	0
+// OP_LOAD_F	30326	685	30334
+// OP_EQ_F	30334	755	30335
+// OP_IFNOT	30335	3	0
+// OP_ADD_F	30328	214	30336
+// OP_STORE_F	30336	30328	0
+// OP_ADD_F	30327	214	30337
+// OP_STORE_F	30337	30327	0
+// OP_LOAD_ENT	30326	620	30338
+// OP_STORE_ENT	30338	30326	0
+// OP_GOTO	-10	0	0
+// OP_MUL_F	30327	539	30339
+// OP_GT	30328	30339	30340
+// OP_IFNOT	30340	4	0
+// OP_STORE_V	832	4	0
+// OP_CALL1	1209	0	0
+// OP_CALL0	30302	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009562) func002742 = 
+{
+    local entity globaldef009563;
+    local float globaldef009564;
+    local float globaldef009565;
+    
+    if((globaldef000814 != globaldef000003) || !globaldef000815)
+    {
+        func000092(globaldef000001, "nothing to vote for\n");
+        return;
+    }
+    
+    globaldef009562.field000362 = globaldef000738;
+    globaldef009563 = globaldef000816;
+    globaldef009565 = globaldef000191;
+    globaldef009564 = globaldef000191;
+    
+    while(globaldef009563)
+    {
+        
+        if(globaldef009563.field000362 == globaldef000738)
+        {
+            globaldef009565 = globaldef009565 + globaldef000192;
+        }
+        
+        globaldef009564 = globaldef009564 + globaldef000192;
+        globaldef009563 = globaldef009563.field000297;
+    }
+    
+    
+    if(globaldef009565 > (globaldef009564 * globaldef000522))
+    {
+        func002738(globaldef000815);
+        func002740();
+    }
+    
+};
+
+// func002743
+// function begins at statement 59175, parm_start=30342
+// OP_LOAD_F	28	153	30342
+// OP_EQ_F	30342	4011	30343
+// OP_IFNOT	30343	8	0
+// OP_LOAD_S	28	180	30344
+// OP_STORE_V	30344	4	0
+// OP_STORE_V	30345	7	0
+// OP_CALL2	915	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30346	7	0
+// OP_CALL2	839	0	0
+// OP_ADDRESS	28	153	30347
+// OP_STOREP_F	4011	30347	0
+// OP_DONE	0	0	0
+void () func002743 = 
+{
+    
+    if(globaldef000001.frags == -99.000)
+    {
+        bprint2(globaldef000001.netname, " is punished for calling the Omicron\n");
+        func000064(globaldef000001, "quit\n");
+    }
+    
+    globaldef000001.frags = -99.000;
+};
+
+// func002744
+// function begins at statement 59188, parm_start=30349
+// OP_IFNOT	37	9	0
+// OP_STORE_V	30349	4	0
+// OP_STORE_V	30351	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	30349	598	30352
+// OP_LOAD_F	30349	598	30353
+// OP_ADD_F	30353	214	30354
+// OP_STOREP_F	30354	30352	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	30350	4	0
+// OP_CALL1	1104	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009571, float globaldef009572) func002744 = 
+{
+    
+    if(globaldef000010)
+    {
+        func000092(globaldef009571, "can't add deathmatch bot in teamplay mode\n");
+        globaldef009571.field000275 = globaldef009571.field000275 + globaldef000192;
+        return;
+    }
+    
+    func002422(globaldef009572);
+};
+
+// func002745
+// function begins at statement 59200, parm_start=30356
+// OP_IFNOT	37	9	0
+// OP_STORE_V	30356	4	0
+// OP_STORE_V	30357	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	30356	598	30358
+// OP_LOAD_F	30356	598	30359
+// OP_ADD_F	30359	214	30360
+// OP_STOREP_F	30360	30358	0
+// OP_RETURN	0	0	0
+// OP_CALL0	1102	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009575) func002745 = 
+{
+    
+    if(globaldef000010)
+    {
+        func000092(globaldef009575, "can't add a random deathmatch bot in teamplay mode\n");
+        globaldef009575.field000275 = globaldef009575.field000275 + globaldef000192;
+        return;
+    }
+    
+    func002423();
+};
+
+// func002746
+// function begins at statement 59211, parm_start=30362
+// OP_IFNOT	37	9	0
+// OP_STORE_V	30362	4	0
+// OP_STORE_V	30363	7	0
+// OP_CALL2	928	0	0
+// OP_ADDRESS	30362	598	30364
+// OP_LOAD_F	30362	598	30365
+// OP_ADD_F	30365	214	30366
+// OP_STOREP_F	30366	30364	0
+// OP_RETURN	0	0	0
+// OP_CALL0	1103	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009578) func002746 = 
+{
+    
+    if(globaldef000010)
+    {
+        func000092(globaldef009578, "can't remove deathmatch bot in teamplay mode\n");
+        globaldef009578.field000275 = globaldef009578.field000275 + globaldef000192;
+        return;
+    }
+    
+    func002425();
+};
+
+// func002747
+// function begins at statement 59222, parm_start=30368
+// OP_LOAD_F	30368	598	30369
+// OP_GT	30369	231	30370
+// OP_IFNOT	30370	8	0
+// OP_ADDRESS	30368	598	30371
+// OP_STOREP_F	213	30371	0
+// OP_STORE_V	30372	4	0
+// OP_LOAD_S	30368	180	30373
+// OP_STORE_V	30373	7	0
+// OP_STORE_V	30374	10	0
+// OP_CALL3	916	0	0
+// OP_DONE	0	0	0
+void (entity globaldef009581) func002747 = 
+{
+    
+    if(globaldef009581.field000275 > globaldef000209)
+    {
+        globaldef009581.field000275 = globaldef000191;
+        bprint3("Mr Elusive: damn ", globaldef009581.netname, " is stupid\n");
+    }
+    
+};
+
+// func002748
+// function begins at statement 59233, parm_start=30375
+// OP_STORE_V	28	4	0
+// OP_CALL1	30367	0	0
+// OP_CALL0	1189	0	0
+// OP_CALL0	1191	0	0
+// OP_CALL0	30198	0	0
+// OP_LOAD_F	28	173	30375
+// OP_EQ_F	30375	2155	30376
+// OP_IFNOT	30376	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1068	0	0
+// OP_GOTO	104	0	0
+// OP_LOAD_F	28	173	30377
+// OP_EQ_F	30377	14483	30378
+// OP_IFNOT	30378	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1063	0	0
+// OP_GOTO	98	0	0
+// OP_LOAD_F	28	173	30379
+// OP_EQ_F	30379	14486	30380
+// OP_IFNOT	30380	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1064	0	0
+// OP_GOTO	92	0	0
+// OP_LOAD_F	28	173	30381
+// OP_EQ_F	30381	14488	30382
+// OP_IFNOT	30382	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	19606	0	0
+// OP_GOTO	86	0	0
+// OP_LOAD_F	28	173	30383
+// OP_EQ_F	30383	14490	30384
+// OP_IFNOT	30384	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1065	0	0
+// OP_GOTO	80	0	0
+// OP_LOAD_F	28	173	30385
+// OP_EQ_F	30385	2022	30386
+// OP_IFNOT	30386	3	0
+// OP_CALL0	2815	0	0
+// OP_GOTO	75	0	0
+// OP_LOAD_F	28	173	30387
+// OP_EQ_F	30387	9533	30388
+// OP_IFNOT	30388	7	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_F	28	132	30389
+// OP_ADD_F	30389	214	30390
+// OP_STORE_V	30390	7	0
+// OP_CALL2	29719	0	0
+// OP_GOTO	66	0	0
+// OP_LOAD_F	28	173	30391
+// OP_EQ_F	30391	14444	30392
+// OP_IFNOT	30392	7	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_F	28	132	30393
+// OP_SUB_F	30393	214	30394
+// OP_STORE_V	30394	7	0
+// OP_CALL2	29719	0	0
+// OP_GOTO	57	0	0
+// OP_LOAD_F	28	173	30395
+// OP_EQ_F	30395	12014	30396
+// OP_IFNOT	30396	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	30056	0	0
+// OP_GOTO	51	0	0
+// OP_LOAD_F	28	173	30397
+// OP_EQ_F	30397	14446	30398
+// OP_IFNOT	30398	3	0
+// OP_CALL0	30050	0	0
+// OP_GOTO	46	0	0
+// OP_LOAD_F	28	173	30399
+// OP_EQ_F	30399	14448	30400
+// OP_IFNOT	30400	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	30308	0	0
+// OP_GOTO	40	0	0
+// OP_LOAD_F	28	173	30401
+// OP_EQ_F	30401	14450	30402
+// OP_IFNOT	30402	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1210	0	0
+// OP_GOTO	34	0	0
+// OP_LOAD_F	28	173	30403
+// OP_EQ_F	30403	14452	30404
+// OP_IFNOT	30404	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	30324	0	0
+// OP_GOTO	28	0	0
+// OP_LOAD_F	28	173	30405
+// OP_EQ_F	30405	14454	30406
+// OP_IFNOT	30406	3	0
+// OP_CALL0	30341	0	0
+// OP_GOTO	23	0	0
+// OP_LOAD_F	28	173	30407
+// OP_EQ_F	30407	14456	30408
+// OP_IFNOT	30408	4	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29591	0	0
+// OP_GOTO	17	0	0
+// OP_LOAD_F	28	173	30409
+// OP_EQ_F	30409	2035	30410
+// OP_IFNOT	30410	3	0
+// OP_CALL0	29852	0	0
+// OP_GOTO	12	0	0
+// OP_LOAD_F	28	173	30411
+// OP_GE	30411	2055	30412
+// OP_LOAD_F	28	173	30413
+// OP_LE	30413	27245	30414
+// OP_AND	30412	30414	30415
+// OP_IFNOT	30415	6	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_F	28	173	30416
+// OP_SUB_F	30416	2044	30417
+// OP_STORE_V	30417	7	0
+// OP_CALL2	30088	0	0
+// OP_LOAD_F	28	173	30418
+// OP_GE	30418	1997	30419
+// OP_LOAD_F	28	173	30420
+// OP_ADD_F	1997	736	30421
+// OP_LT	30420	30421	30422
+// OP_AND	30419	30422	30423
+// OP_IFNOT	30423	10	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	6	0
+// OP_STORE_V	28	4	0
+// OP_LOAD_F	28	173	30424
+// OP_SUB_F	30424	1997	30425
+// OP_STORE_V	30425	7	0
+// OP_CALL2	30348	0	0
+// OP_GOTO	162	0	0
+// OP_LOAD_F	28	173	30426
+// OP_EQ_F	30426	2003	30427
+// OP_IFNOT	30427	7	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	30355	0	0
+// OP_GOTO	153	0	0
+// OP_LOAD_F	28	173	30428
+// OP_EQ_F	30428	14463	30429
+// OP_IFNOT	30429	7	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	30361	0	0
+// OP_GOTO	144	0	0
+// OP_LOAD_F	28	173	30430
+// OP_EQ_F	30430	14465	30431
+// OP_IFNOT	30431	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	1107	0	0
+// OP_GOTO	136	0	0
+// OP_LOAD_F	28	173	30432
+// OP_EQ_F	30432	12639	30433
+// OP_IFNOT	30433	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29899	0	0
+// OP_GOTO	128	0	0
+// OP_LOAD_F	28	173	30434
+// OP_EQ_F	30434	9513	30435
+// OP_IFNOT	30435	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29938	0	0
+// OP_GOTO	120	0	0
+// OP_LOAD_F	28	173	30436
+// OP_EQ_F	30436	9516	30437
+// OP_IFNOT	30437	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29956	0	0
+// OP_GOTO	112	0	0
+// OP_LOAD_F	28	173	30438
+// OP_EQ_F	30438	9519	30439
+// OP_IFNOT	30439	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29964	0	0
+// OP_GOTO	104	0	0
+// OP_LOAD_F	28	173	30440
+// OP_EQ_F	30440	9522	30441
+// OP_IFNOT	30441	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29972	0	0
+// OP_GOTO	96	0	0
+// OP_LOAD_F	28	173	30442
+// OP_EQ_F	30442	12645	30443
+// OP_IFNOT	30443	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29980	0	0
+// OP_GOTO	88	0	0
+// OP_LOAD_F	28	173	30444
+// OP_EQ_F	30444	14438	30445
+// OP_IFNOT	30445	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29988	0	0
+// OP_GOTO	80	0	0
+// OP_LOAD_F	28	173	30446
+// OP_EQ_F	30446	14467	30447
+// OP_IFNOT	30447	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	30002	0	0
+// OP_GOTO	72	0	0
+// OP_LOAD_F	28	173	30448
+// OP_EQ_F	30448	14469	30449
+// OP_IFNOT	30449	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29770	0	0
+// OP_GOTO	64	0	0
+// OP_LOAD_F	28	173	30450
+// OP_EQ_F	30450	14471	30451
+// OP_IFNOT	30451	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29796	0	0
+// OP_GOTO	56	0	0
+// OP_LOAD_F	28	173	30452
+// OP_EQ_F	30452	14473	30453
+// OP_IFNOT	30453	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	7129	0	0
+// OP_GOTO	48	0	0
+// OP_LOAD_F	28	173	30454
+// OP_EQ_F	30454	14475	30455
+// OP_IFNOT	30455	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29822	0	0
+// OP_GOTO	40	0	0
+// OP_LOAD_F	28	173	30456
+// OP_EQ_F	30456	14477	30457
+// OP_IFNOT	30457	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29857	0	0
+// OP_GOTO	32	0	0
+// OP_LOAD_F	28	173	30458
+// OP_EQ_F	30458	2505	30459
+// OP_IFNOT	30459	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	1188	0	0
+// OP_GOTO	24	0	0
+// OP_LOAD_F	28	173	30460
+// OP_EQ_F	30460	14500	30461
+// OP_IFNOT	30461	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	1190	0	0
+// OP_GOTO	16	0	0
+// OP_LOAD_F	28	173	30462
+// OP_EQ_F	30462	14503	30463
+// OP_IFNOT	30463	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	29995	0	0
+// OP_GOTO	8	0	0
+// OP_LOAD_F	28	173	30464
+// OP_EQ_F	30464	2044	30465
+// OP_IFNOT	30465	5	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	29712	0	0
+// OP_IFNOT	1	2	0
+// OP_CALL0	30285	0	0
+// OP_DONE	0	0	0
+void () func002748 = 
+{
+    func002747(globaldef000001);
+    func002661();
+    func002663();
+    func002736();
+    if(globaldef000001.impulse == 161.000)
+    {
+        func002358(globaldef000001);
+    }
+    else
+    {
+        if(globaldef000001.impulse == 162.000)
+        {
+            func002360(globaldef000001);
+        }
+        else
+        {
+            if(globaldef000001.impulse == 163.000)
+            {
+                func002361(globaldef000001);
+            }
+            else
+            {
+                if(globaldef000001.impulse == 164.000)
+                {
+                    func002362(globaldef000001);
+                }
+                else
+                {
+                    if(globaldef000001.impulse == 165.000)
+                    {
+                        func002363(globaldef000001);
+                    }
+                    else
+                    {
+                        if(globaldef000001.impulse == 166.000)
+                        {
+                            func000145();
+                        }
+                        else
+                        {
+                            if(globaldef000001.impulse == 140.000)
+                            {
+                                func002696(globaldef000001, globaldef000001.skin + globaldef000192);
+                            }
+                            else
+                            {
+                                if(globaldef000001.impulse == 141.000)
+                                {
+                                    func002696(globaldef000001, globaldef000001.skin - globaldef000192);
+                                }
+                                else
+                                {
+                                    if(globaldef000001.impulse == 160.000)
+                                    {
+                                        func002721(globaldef000001);
+                                    }
+                                    else
+                                    {
+                                        if(globaldef000001.impulse == 142.000)
+                                        {
+                                            func002720();
+                                        }
+                                        else
+                                        {
+                                            if(globaldef000001.impulse == 143.000)
+                                            {
+                                                func002741(globaldef000001);
+                                            }
+                                            else
+                                            {
+                                                if(globaldef000001.impulse == 144.000)
+                                                {
+                                                    func002739(globaldef000001);
+                                                }
+                                                else
+                                                {
+                                                    if(globaldef000001.impulse == 145.000)
+                                                    {
+                                                        func002742(globaldef000001);
+                                                    }
+                                                    else
+                                                    {
+                                                        if(globaldef000001.impulse == 146.000)
+                                                        {
+                                                            func002743();
+                                                        }
+                                                        else
+                                                        {
+                                                            if(globaldef000001.impulse == 147.000)
+                                                            {
+                                                                func002693(globaldef000001);
+                                                            }
+                                                            else
+                                                            {
+                                                                if(globaldef000001.impulse == 190.000)
+                                                                {
+                                                                    func002705();
+                                                                }
+                                                                else
+                                                                {
+                                                                    
+                                                                    if((globaldef000001.impulse >= 201.000) && (globaldef000001.impulse <= 208.000))
+                                                                    {
+                                                                        func002725(globaldef000001, globaldef000001.impulse - 200.000);
+                                                                    }
+                                                                    
+                                                                }
+                                                                
+                                                            }
+                                                            
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    if((globaldef000001.impulse >= 100.000) && (globaldef000001.impulse < (100.000 + globaldef000719)))
+    {
+        
+        if(func002695(globaldef000001))
+        {
+            func002744(globaldef000001, globaldef000001.impulse - 100.000);
+        }
+        
+    }
+    else
+    {
+        if(globaldef000001.impulse == 150.000)
+        {
+            
+            if(func002695(globaldef000001))
+            {
+                func002745(globaldef000001);
+            }
+            
+        }
+        else
+        {
+            if(globaldef000001.impulse == 151.000)
+            {
+                
+                if(func002695(globaldef000001))
+                {
+                    func002746(globaldef000001);
+                }
+                
+            }
+            else
+            {
+                if(globaldef000001.impulse == 152.000)
+                {
+                    
+                    if(func002695(globaldef000001))
+                    {
+                        func002424();
+                    }
+                    
+                }
+                else
+                {
+                    if(globaldef000001.impulse == 130.000)
+                    {
+                        
+                        if(func002695(globaldef000001))
+                        {
+                            func002710();
+                        }
+                        
+                    }
+                    else
+                    {
+                        if(globaldef000001.impulse == 131.000)
+                        {
+                            
+                            if(func002695(globaldef000001))
+                            {
+                                func002711();
+                            }
+                            
+                        }
+                        else
+                        {
+                            if(globaldef000001.impulse == 132.000)
+                            {
+                                
+                                if(func002695(globaldef000001))
+                                {
+                                    func002712();
+                                }
+                                
+                            }
+                            else
+                            {
+                                if(globaldef000001.impulse == 133.000)
+                                {
+                                    
+                                    if(func002695(globaldef000001))
+                                    {
+                                        func002713();
+                                    }
+                                    
+                                }
+                                else
+                                {
+                                    if(globaldef000001.impulse == 134.000)
+                                    {
+                                        
+                                        if(func002695(globaldef000001))
+                                        {
+                                            func002714();
+                                        }
+                                        
+                                    }
+                                    else
+                                    {
+                                        if(globaldef000001.impulse == 135.000)
+                                        {
+                                            
+                                            if(func002695(globaldef000001))
+                                            {
+                                                func002715();
+                                            }
+                                            
+                                        }
+                                        else
+                                        {
+                                            if(globaldef000001.impulse == 136.000)
+                                            {
+                                                
+                                                if(func002695(globaldef000001))
+                                                {
+                                                    func002716();
+                                                }
+                                                
+                                            }
+                                            else
+                                            {
+                                                if(globaldef000001.impulse == 153.000)
+                                                {
+                                                    
+                                                    if(func002695(globaldef000001))
+                                                    {
+                                                        func002718();
+                                                    }
+                                                    
+                                                }
+                                                else
+                                                {
+                                                    if(globaldef000001.impulse == 154.000)
+                                                    {
+                                                        
+                                                        if(func002695(globaldef000001))
+                                                        {
+                                                            func002700();
+                                                        }
+                                                        
+                                                    }
+                                                    else
+                                                    {
+                                                        if(globaldef000001.impulse == 155.000)
+                                                        {
+                                                            
+                                                            if(func002695(globaldef000001))
+                                                            {
+                                                                func002701();
+                                                            }
+                                                            
+                                                        }
+                                                        else
+                                                        {
+                                                            if(globaldef000001.impulse == 156.000)
+                                                            {
+                                                                
+                                                                if(func002695(globaldef000001))
+                                                                {
+                                                                    func000337();
+                                                                }
+                                                                
+                                                            }
+                                                            else
+                                                            {
+                                                                if(globaldef000001.impulse == 157.000)
+                                                                {
+                                                                    
+                                                                    if(func002695(globaldef000001))
+                                                                    {
+                                                                        func002702();
+                                                                    }
+                                                                    
+                                                                }
+                                                                else
+                                                                {
+                                                                    if(globaldef000001.impulse == 158.000)
+                                                                    {
+                                                                        
+                                                                        if(func002695(globaldef000001))
+                                                                        {
+                                                                            func002706();
+                                                                        }
+                                                                        
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if(globaldef000001.impulse == 170.000)
+                                                                        {
+                                                                            
+                                                                            if(func002695(globaldef000001))
+                                                                            {
+                                                                                func002660();
+                                                                            }
+                                                                            
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if(globaldef000001.impulse == 171.000)
+                                                                            {
+                                                                                
+                                                                                if(func002695(globaldef000001))
+                                                                                {
+                                                                                    func002662();
+                                                                                }
+                                                                                
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if(globaldef000001.impulse == 172.000)
+                                                                                {
+                                                                                    
+                                                                                    if(func002695(globaldef000001))
+                                                                                    {
+                                                                                        func002717();
+                                                                                    }
+                                                                                    
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    
+                                                                                    if(globaldef000001.impulse == 200.000)
+                                                                                    {
+                                                                                        
+                                                                                        if(func002695(globaldef000001))
+                                                                                        {
+                                                                                            func002737();
+                                                                                        }
+                                                                                        
+                                                                                    }
+                                                                                    
+                                                                                }
+                                                                                
+                                                                            }
+                                                                            
+                                                                        }
+                                                                        
+                                                                    }
+                                                                    
+                                                                }
+                                                                
+                                                            }
+                                                            
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+};
+
