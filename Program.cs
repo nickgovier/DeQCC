@@ -10,12 +10,15 @@ namespace DeQcc
         static void Main(string[] args)
         {
             DeQCC p = new DeQCC();
-            p.Decompile("vanilla");
-            //p.Decompile("obots");
-            //p.Decompile("airquake");
-            //p.Decompile("quess");
-            //p.Decompile("rally");
-            //p.Decompile("reaper");
+            p.Decompile("vanilla", false);
+            //p.Decompile("obots", false);
+            //p.Decompile("airquake", false);
+            //p.Decompile("quess", false);
+            //p.Decompile("rally", false);
+            //p.Decompile("reaper", false);
+
+            DeQCC q = new DeQCC();
+            q.Decompile("vanilla", true);
         }
     }
 }

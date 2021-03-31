@@ -10,6 +10,12 @@ namespace DeQcc
         private static List<string> _strings = new List<string>();
         private static Dictionary<int, int> _stringOffsetMap = new Dictionary<int, int>();    // helper map to get from QC string offset to string index in "strings" List
 
+        public static void Clear()
+        {
+            _strings.Clear();
+            _stringOffsetMap.Clear();
+        }
+
         public static void AddString(string stringToAdd, int offset)
         {
             _strings.Add(stringToAdd);

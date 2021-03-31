@@ -590,9 +590,12 @@ namespace DeQcc
             return false;
         }
 
-        void ReadProgsData(string outputfolder)
+        void ReadProgsData(string outputfolder, bool check)
         {
-            BinaryReader h = new BinaryReader(File.Open(outputfolder + "inputprogs.dat", FileMode.Open), Encoding.ASCII);
+            string filename = "inputprogs.dat";
+            if(check) { filename = "progs.dat"; }   // we are checking the output
+
+            BinaryReader h = new BinaryReader(File.Open(outputfolder + filename, FileMode.Open), Encoding.ASCII);
             int version = h.ReadInt32();
             int crc = h.ReadInt32();
             int ofs_statements = h.ReadInt32();
