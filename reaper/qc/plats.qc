@@ -71,11 +71,11 @@ void () plat_spawn_inside_trigger =
     trigger.enemy = self;
     tmin = self.mins + '25.000 25.000 0.000';
     tmax = self.maxs - '25.000 25.000 -8.000';
-    tmin_z = tmax_z - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
+    tmin_z = 0.000 - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
     
     if(self.spawnflags & PLAT_LOW_TRIGGER)
     {
-        tmax_z = tmin_z + FL_CLIENT;
+        tmax_z = 0.000 + FL_CLIENT;
     }
     
     
@@ -89,7 +89,7 @@ void () plat_spawn_inside_trigger =
     if(self.size_y <= 50.000)
     {
         tmin_y = (self.mins_y + self.maxs_y) / FL_SWIM;
-        tmax_y = tmin_y + TRUE;
+        tmax_y = 0.000 + TRUE;
     }
     
     setsize(trigger, tmin, tmax);

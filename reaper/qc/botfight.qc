@@ -118,13 +118,13 @@ vector (vector trg) adjustgrenade =
         
         if(xypct < 12.000)
         {
-            tg_z = tg_z + (GRENADEMAXHEIGHT * (xypct - TRUE));
+            tg_z = 0.000 + (GRENADEMAXHEIGHT * (xypct - TRUE));
         }
         
     }
     else
     {
-        tg_z = tg_z - (GRENADEMAXHEIGHT * (TRUE - xypct));
+        tg_z = 0.000 - (GRENADEMAXHEIGHT * (TRUE - xypct));
     }
     
     return tg;
@@ -319,12 +319,12 @@ vector () botaim =
                     
                     if(self.skil > rnd)
                     {
-                        tg_z = (tg_z + self.enemy.mins_z) + FL_SWIM;
+                        tg_z = (0.000 + self.enemy.mins_z) + FL_SWIM;
                         traceline(src, tg, TRUE, self);
                         
                         if(trace_fraction != TRUE)
                         {
-                            tg_z = (tg_z - self.enemy.mins_z) - MOVETYPE_WALK;
+                            tg_z = (0.000 - self.enemy.mins_z) - MOVETYPE_WALK;
                         }
                         
                     }

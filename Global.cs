@@ -282,6 +282,12 @@ namespace DeQcc
             {
                 return false;
             }
+
+            if (Type == Types.ev_entity || Type == Types.ev_field || Type == Types.ev_function || Type == Types.ev_pointer || Type == Types.ev_void)
+            {
+                return false;
+            }
+
             // TODO assumes constants are all caps (true for defs.qc, is this true in all cases?)
             for (int i = 0; i < Name.Length; i++)
             {

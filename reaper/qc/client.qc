@@ -2270,7 +2270,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = start_z + FL_CLIENT;
+    start_z = 0.000 + FL_CLIENT;
     v_forward_z = FALSE;
     normalize(v_forward);
     end = start + (v_forward * 24.000);
@@ -2278,7 +2278,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < TRUE)
     {
-        start_z = (start_z + self.maxs_z) - FL_CLIENT;
+        start_z = (0.000 + self.maxs_z) - FL_CLIENT;
         end = start + (v_forward * 24.000);
         self.movedir = trace_plane_normal * -50.000;
         traceline(start, end, TRUE, self);

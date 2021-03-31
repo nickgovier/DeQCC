@@ -743,6 +743,12 @@ namespace DeQcc
                     {
                         c.ValueSource = CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign);
                         //PrintLine("// " + s.Opcode + " " + s.a + " " + s.b + " " + s.c + " => " + s.c + " = " + c.ValueSource);
+
+                        // fix for misc_lavaball where there is an equality inside an if block
+                        if(c.readBy.Count == 0)
+                        {
+                            PrintLine(c.ValueSource + "; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?");
+                        }
                     }
                     else
                     {
@@ -887,11 +893,13 @@ namespace DeQcc
                     Statement oneBeforeTarget = statements[sIndex + s.b - 1];
 
                     // Check for a while loop
-                    if (oneBeforeTarget.Opcode == Opcodes.OP_GOTO && (-oneBeforeTarget.a == s.b || -oneBeforeTarget.a == (s.b - 1)))
+                    if (oneBeforeTarget.Opcode == Opcodes.OP_GOTO && (-oneBeforeTarget.a >= (s.b - 1)))
                     {
-                        // while loops jump forward to the statement after a GOTO which jumps back to either the statement before this IFNOT
-                        // if there is a check to do (e.g. while(x == y), i.e. -a == s.b ), or to this actual statement if there is no check
-                        // (e.g. while(1), i.e. -a == s.b - 1).
+                        // while loops jump forward to the statement after a GOTO which jumps back to either before this IFNOT
+                        // if there is an equality to check on each loop (a jumps back by s.b or more), or the GOTO jumps back
+                        // to this actual statement if there is no check e.g. while(1) (a jumps back by (s.b - 1).
+                        // It's (s.b - 1) because s.b actually jumps to the statement AFTER the GOTO, so the GOTO jumps back s.b - 1
+                        // to get back to the IFNOT.
                         PrintLine("");
                         PrintLine("while(" + a.ValueToAssign + ")");
 

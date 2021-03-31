@@ -1562,34 +1562,31 @@ void (entity ply, float n) removeTeamBots =
     while(i > FALSE)
     {
         
-        if((e != world) && (e.team != ply.team))
+        while((e != world) && (e.team != ply.team))
         {
             e = find(e, classname, "dmbot");
         }
         
+        
+        if(!e)
+        {
+            return;
+        }
+        
+        
+        if(e.pather)
+        {
+            NUMPATHERS = NUMPATHERS - TRUE;
+        }
+        
+        remove(e.movetarget);
+        remove(e.goalentity);
+        remove(e);
+        i = i - TRUE;
     }
     
-    
-    if(!e)
-    {
-        return;
-    }
-    
-    
-    if(e.pather)
-    {
-        NUMPATHERS = NUMPATHERS - TRUE;
-    }
-    
-    remove(e.movetarget);
-    remove(e.goalentity);
-    remove(e);
-    i = i - TRUE;
-}
-
 };
 
-/* ERROR INDENTATION */
 // removeAllBots
 // function begins at statement 20581, parm_start=11901
 // OP_STORE_V	30	4	0
@@ -1705,16 +1702,13 @@ void (float n) SetMaxBots =
     serverflags = (serverflags - (serverflags & TEAMBOTS)) + (n * FL_ITEM);
     t = numplayers();
     
-    if((NUMBOTS + t) < n)
+    while((NUMBOTS + t) < n)
     {
         AddAnotherBot();
     }
     
-}
-
 };
 
-/* ERROR INDENTATION */
 // SetTeamBots
 // function begins at statement 20644, parm_start=11926
 // OP_ADDRESS	28	173	11930

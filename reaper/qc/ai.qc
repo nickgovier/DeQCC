@@ -987,17 +987,17 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = trace_plane_normal_y;
+    newdir_x = 0.000;
     newdir_y = FALSE - trace_plane_normal_x;
     newdir_z = FALSE;
     if((dir * newdir) > FALSE)
     {
-        dir_x = FALSE - trace_plane_normal_y;
+        dir_x = FALSE - 0.000;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = trace_plane_normal_y;
+        dir_x = 0.000;
         dir_y = FALSE - trace_plane_normal_x;
     }
     

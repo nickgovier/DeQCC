@@ -103,7 +103,7 @@ float RECURSEDEPTH = 0.000;
 vector REBOUNDSPOT = '0.000 0.000 0.000';
 float REBOUND = 0.000;
 float TELEFRAGFLAG = 0.000;
-entity NOISEQUEUE = /* ERROR ImmediateValue for ev_entity */;
+entity NOISEQUEUE;
 float HELPING = 0.000;
 float NAMEBOTS = 0.000;
 void (entity noisemaker, entity noiseobject) signalnoise;
@@ -331,13 +331,13 @@ float (entity e) trigpushweight =
         {
             spot_z = dropline(org);
             
-            if(self.absmin_z > spot_z)
+            if(self.absmin_z > 0.000)
             {
                 spot_z = self.absmin_z;
             }
             
             
-            if(org_z < (((self.maxs_z - self.mins_z) + spot_z) + MAXJUMP))
+            if(0.000 < (((self.maxs_z - self.mins_z) + 0.000) + MAXJUMP))
             {
                 weight = KINDA_WANT;
             }

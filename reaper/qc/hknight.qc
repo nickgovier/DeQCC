@@ -61,11 +61,11 @@ void (float offset) hknight_shot =
     local vector org;
     local vector vec;
     offang = vectoangles(self.enemy.origin - self.origin);
-    offang_y = offang_y + (offset * MOVETYPE_TOSS);
+    offang_y = 0.000 + (offset * MOVETYPE_TOSS);
     makevectors(offang);
     org = ((self.origin + self.mins) + (self.size * 0.500)) + (v_forward * KINDA_WANT);
     vec = normalize(v_forward);
-    vec_z = (FALSE - vec_z) + ((random() - 0.500) * 0.100);
+    vec_z = (FALSE - 0.000) + ((random() - 0.500) * 0.100);
     launch_spike(org, vec);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");

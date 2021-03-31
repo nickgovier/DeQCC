@@ -181,6 +181,7 @@ void (float dist) ai_botseek =
                 
                 if(botTarget.goalentity == botTarget)
                 {
+                    self.search_time == time; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
                 }
                 
             }
@@ -633,10 +634,10 @@ vector (float n) chooseRoamTarget =
             m = CONTENT_EMPTY;
         }
         
-        bestorg_y = bestorg_y + (m * ((700.000 * random()) + 50.000));
+        bestorg_y = 0.000 + (m * ((700.000 * random()) + 50.000));
     }
     
-    bestorg_z = ((bestorg_z + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
+    bestorg_z = ((0.000 + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
     traceline(self.origin, bestorg, TRUE, self);
     dir = normalize(bestorg - self.origin);
     len = vlen(bestorg - self.origin);
@@ -681,9 +682,9 @@ vector (float n) chooseRoamTarget =
     
     r = n + (random() * MOVETYPE_WALK);
     
-    if((bestorg_z > self.origin_z) || (r > MOVETYPE_FLY))
+    if((0.000 > self.origin_z) || (r > MOVETYPE_FLY))
     {
-        bestorg_z = below_z - self.mins_z;
+        bestorg_z = 0.000 - self.mins_z;
     }
     
     len = vlen(bestorg - self.origin);
@@ -1316,13 +1317,13 @@ void () goForAir =
     }
     
     bestorg = self.origin;
-    bestorg_z = bestorg_z + 800.000;
+    bestorg_z = 0.000 + 800.000;
     traceline(self.origin, bestorg, TRUE, self);
     
     if(!trace_inopen)
     {
         bestorg = chooseRoamTarget(TRUE);
-        bestorg_z = bestorg_z + 200.000;
+        bestorg_z = 0.000 + 200.000;
     }
     
     botTarget = self.goalentity;

@@ -102,11 +102,11 @@ void () lightning_fire =
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
     WriteCoord(MSG_ALL, p1_x);
-    WriteCoord(MSG_ALL, p1_y);
-    WriteCoord(MSG_ALL, p1_z);
+    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0.000);
     WriteCoord(MSG_ALL, p2_x);
-    WriteCoord(MSG_ALL, p2_y);
-    WriteCoord(MSG_ALL, p2_z);
+    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0.000);
 };
 
 // lightning_use

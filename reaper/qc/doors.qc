@@ -982,13 +982,13 @@ void () LinkDoors =
             }
             
             
-            if(t.mins_y < cmins_y)
+            if(t.mins_y < 0.000)
             {
                 cmins_y = t.mins_y;
             }
             
             
-            if(t.mins_z < cmins_z)
+            if(t.mins_z < 0.000)
             {
                 cmins_z = t.mins_z;
             }
@@ -1000,13 +1000,13 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs_y > cmaxs_y)
+            if(t.maxs_y > 0.000)
             {
                 cmaxs_y = t.maxs_y;
             }
             
             
-            if(t.maxs_z > cmaxs_z)
+            if(t.maxs_z > 0.000)
             {
                 cmaxs_z = t.maxs_z;
             }

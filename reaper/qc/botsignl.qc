@@ -660,6 +660,7 @@ void () enemy_touched =
     {
         endEnemy();
         self.search_time = time + MOVETYPE_STEP;
+        self.goalentity.goalentity == tmp; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
         
         if(self.goalentity.classname != "BotTarget")
         {

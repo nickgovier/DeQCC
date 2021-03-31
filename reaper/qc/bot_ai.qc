@@ -2276,6 +2276,7 @@ void (float dist) aibot_chase =
     if(rnd < 0.900)
     {
         enemy_vis = enemy_vis;
+        enemy_vis && infrontofbot(self.enemy); // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
     }
     
     
