@@ -201,14 +201,9 @@ namespace DeQcc
                     continue;
                 }
 
-                // Calculate function declaration
-
-                // Return type
-                f.declaration = "%%RETURNTYPE%% ";  // will be filled in later
-
                 // Parameters
                 //highestGlobalAccessed = f.parm_start - 1;
-                f.declaration += "(";
+                f.declaration = "(";
                 for (int parmIndex = 0; parmIndex < f.numparms; parmIndex++)
                 {
                     Global parm = GetGlobal(highestGlobalAccessed + 1, false, GlobalKind.Parameter);
@@ -227,7 +222,7 @@ namespace DeQcc
                     f.localDefs.Add("local " + local.TypeCodeOutput + " " + local.Name + ";");
                 }
 
-                Types returnType = Types.ev_void;
+                f.returnType = Types.ev_void;
 
                 // Loop through the statements of this function to find the return value
                 int statementIndex = f.first_statement;
@@ -340,13 +335,24 @@ namespace DeQcc
                     // Check for return and set the type if found
                     if (s.Opcode == Opcodes.OP_RETURN)
                     {
-                        if (a != null && a.Type != null)
+                        if(s.a == 1)
                         {
-                            returnType = (Types)a.Type;
+                            // this is returning the result of a function call
+                            // find the most recent call statement
+                            int prevStatement = statementIndex - 1;
+                            while(!(statements[prevStatement].Opcode >= Opcodes.OP_CALL0 && statements[prevStatement].Opcode <= Opcodes.OP_CALL8))
+                            {
+                                prevStatement--;
+                            }
+                            f.returnType = functions[(int)globalList[statements[prevStatement].a].IntVal].returnType;
+                        }
+                        else if (a != null && a.Type != null)
+                        {
+                            f.returnType = (Types)a.Type;
                         }
                         else
                         {
-                            returnType = Types.ev_void;
+                            f.returnType = Types.ev_void;
                         }
                     }
                     statementIndex++;
@@ -359,7 +365,7 @@ namespace DeQcc
                 }
 
                 // Set the return type
-                f.declaration = f.declaration.Replace("%%RETURNTYPE%%", DeQCC.GetTypeString(returnType));
+                f.declaration = DeQCC.GetTypeString(f.returnType) + " " + f.declaration;
             }
 
             // Check for fields which are functions

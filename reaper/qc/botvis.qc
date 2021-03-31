@@ -798,7 +798,7 @@ float (entity a, entity b) IsUpstream;
 // OP_CALL3	13385	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity a, entity b, float truereach) Reachable = 
+float (entity a, entity b, float truereach) Reachable = 
 {
     local vector spot1;
     local vector spot2;
@@ -985,7 +985,7 @@ void (entity a, entity b, float truereach) Reachable =
 // OP_CALL3	13485	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity a, entity b) BotReachable = 
+float (entity a, entity b) BotReachable = 
 {
     return Reachable(a, b, FALSE);
 };
@@ -998,7 +998,7 @@ void (entity a, entity b) BotReachable =
 // OP_CALL3	13485	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity b) TrueReachable = 
+float (entity b) TrueReachable = 
 {
     return Reachable(self, b, TRUE);
 };

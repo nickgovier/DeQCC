@@ -36,5 +36,6 @@ namespace DeQcc
         }
 
         public List<Types> parm_types = new List<Types>();  // store the type of each parameter
+        public Types returnType; // store the type returned from this function
     }
 }

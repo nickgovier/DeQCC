@@ -887,7 +887,7 @@ float () BotfindBot =
 // OP_CALL0	1850	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void () BotFindTarget = 
+float () BotFindTarget = 
 {
     local entity client;
     local float len;

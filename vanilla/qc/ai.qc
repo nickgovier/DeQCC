@@ -1073,7 +1073,7 @@ float () DogCheckAttack;
 // OP_CALL0	790	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void () CheckAnyAttack = 
+float () CheckAnyAttack = 
 {
     
     if(!enemy_vis)

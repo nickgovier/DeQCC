@@ -2,7 +2,7 @@ void (float dist) ai_botrun;
 void () bot_chase;
 void () bot_trigger1;
 void () aibot_chooseGoal;
-void () BotFindTarget;
+float () BotFindTarget;
 // shoottarget
 // function begins at statement 23167, parm_start=13608
 // OP_LOAD_ENT	28	194	13612

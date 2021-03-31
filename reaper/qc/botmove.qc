@@ -1168,7 +1168,7 @@ float (float dist) JumpUpToPush =
 // OP_CALL1	12468	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (float vz, float dist, float imagine) Bot_tryjump = 
+float (float vz, float dist, float imagine) Bot_tryjump = 
 {
     local float timetofloor;
     local float tvel;
