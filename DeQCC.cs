@@ -39,7 +39,7 @@ namespace DeQcc
 
         //List<int> IFNOTisWhile = new List<int> { 659, 664, 5695, 5900, 6051, 6068, 1592, 1650, 20773, 20867, 20870, 20873, 3662, 4831, 4921 };  // all the IFNOT statements which are while loops
 
-        public void Decompile(string outputfolder, bool check)
+        public void Decompile(string outputfolder, bool decompile)
         {
             string fulldirectorfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
 
@@ -52,11 +52,11 @@ namespace DeQcc
 
             Strings.Clear();
             SetUpNameMaps(outputfolder);    // do this before reading the data so the mappings exist
-            ReadProgsData(fulldirectorfolder, check);
+            ReadProgsData(fulldirectorfolder, decompile);
+            WriteProgsDataToCSV(fulldirectorfolder, decompile);
 
-            if(check) { return; }   // just load the data and return
-
-            WriteProgsDataToCSV(fulldirectorfolder);
+            if (!decompile) { return; }   // just load the data and return
+            
             InitStaticData();   // do this after reading the data so the base data exists
             Preprocess();
 

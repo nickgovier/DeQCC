@@ -9,16 +9,17 @@ namespace DeQcc
     {
         static void Main(string[] args)
         {
+            string mod = "";
+            mod = "vanilla";
+            //mod = "obots";
+            //mod = "airquake";
+            //mod = "quess";
+            //mod = "rally";
+            //mod = "reaper";
+            bool decompile = true;  // true to decompile inputprogs.dat into qc files, false to load progs.dat and output csvs only
+            
             DeQCC p = new DeQCC();
-            p.Decompile("vanilla", false);
-            //p.Decompile("obots", false);
-            //p.Decompile("airquake", false);
-            //p.Decompile("quess", false);
-            //p.Decompile("rally", false);
-            //p.Decompile("reaper", false);
-
-            DeQCC q = new DeQCC();
-            q.Decompile("vanilla", true);
+            p.Decompile(mod, decompile);
         }
     }
 }

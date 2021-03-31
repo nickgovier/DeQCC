@@ -590,10 +590,11 @@ namespace DeQcc
             return false;
         }
 
-        void ReadProgsData(string outputfolder, bool check)
+        void ReadProgsData(string outputfolder, bool decompile)
         {
-            string filename = "inputprogs.dat";
-            if(check) { filename = "progs.dat"; }   // we are checking the output
+            string filename;
+            if (decompile) { filename = "inputprogs.dat"; }
+            else { filename = "progs.dat"; }   // we are checking the output
 
             BinaryReader h = new BinaryReader(File.Open(outputfolder + filename, FileMode.Open), Encoding.ASCII);
             int version = h.ReadInt32();
@@ -751,8 +752,11 @@ namespace DeQcc
             }
         }
 
-        void WriteProgsDataToCSV(string folder)
+        void WriteProgsDataToCSV(string folder, bool decompile)
         {
+            if(decompile) { folder += "_original_progs"; }    // effectively added to the front of each file name
+            else { folder += "_decomped_progs"; }
+
             int i;
             StreamWriter outfile;
 
