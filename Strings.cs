@@ -18,6 +18,19 @@ namespace DeQcc
 
         public static string GetString(int offset)
         {
+            // hack for string offsets which start in the middle of the string
+            // corrupted progs.dat? only seems to happen for quake rally
+            if(!_stringOffsetMap.ContainsKey(offset))
+            {
+                int prevOffset = 0;
+                foreach(KeyValuePair<int, int> kvp in _stringOffsetMap)
+                {
+                    if(kvp.Key > offset) { break; }
+                    if(kvp.Key > prevOffset) { prevOffset = kvp.Key; }
+                }
+                return _strings[_stringOffsetMap[prevOffset]].Substring(offset - prevOffset);
+            }
+
             return _strings[_stringOffsetMap[offset]];
         }
 

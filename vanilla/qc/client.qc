@@ -2016,7 +2016,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = start_z + WEAPON_BIG;
+    start_z = 0.000 + WEAPON_BIG;
     v_forward_z = MSG_BROADCAST;
     normalize(v_forward);
     end = start + (v_forward * 24.000);
@@ -2024,7 +2024,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < WEAPON_SHOTGUN)
     {
-        start_z = (start_z + self.maxs_z) - WEAPON_BIG;
+        start_z = (0.000 + self.maxs_z) - WEAPON_BIG;
         end = start + (v_forward * 24.000);
         self.movedir = trace_plane_normal * -50.000;
         traceline(start, end, TRUE, self);

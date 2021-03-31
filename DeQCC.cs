@@ -41,6 +41,8 @@ namespace DeQcc
 
         public void Decompile(string outputfolder)
         {
+            string fulldirectorfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
+
             // Output folder structure:
             // /outputfolder/
             // /outputfolder/inputprogs.dat <- will be read
@@ -48,12 +50,22 @@ namespace DeQcc
             // /outputfolder/qcc.bat <- will compile the results of the decompilation
             // /outputfolder/progs.dat <- output of qcc.bat, to be compared with inputprogs.dat
 
-            outputfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
-            ReadProgsData(outputfolder);
-            WriteProgsDataToCSV(outputfolder);
-            InitStaticData(outputfolder);   // do this after reading the data so the base data exists
+            SetUpNameMaps(outputfolder);    // do this before reading the data so the mappings exist
+            ReadProgsData(fulldirectorfolder);
+            WriteProgsDataToCSV(fulldirectorfolder);
+            InitStaticData();   // do this after reading the data so the base data exists
             Preprocess();
-            DecompileFunctions(outputfolder);
+
+            // HACK ALERT
+            if (outputfolder == "rally")
+            {
+                foreach (Function f in functions)
+                {
+                    f.file = "unknown.qc"; // overwrite garbage
+                }   
+            }
+
+            DecompileFunctions(fulldirectorfolder);
         }
 
         void Preprocess()
@@ -170,6 +182,12 @@ namespace DeQcc
                     // args
                     for(int i = 0; i < f.numparms; i++)
                     {
+                        // Some older QuakeC mods have the wrong number args for builtins
+                        // e.g. droptofloor #34 takes 0 args but has 2 in old defs.qc files
+                        // which seem to be copy/pasted from walkmove #32, the builtin above it
+                        // if we are processing a builtin but the number of args is too high, skip
+                        if(f.numparms > builtinsParms[builtin].Count) { break; }
+
                         f.declaration += DeQCC.GetTypeString(builtinsParms[builtin][i]) + " " + builtinsParmNames[builtin][i];
                         if(i < f.numparms - 1)
                         {
@@ -527,12 +545,18 @@ namespace DeQcc
                     if (g.Name != null) { name = g.Name.Replace("_x", ""); } // strip off _x if it exists
 
                     // set the next two globals to floats for _y and _z
-                    Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
-                    y.Type = Types.ev_float;
-                    y.Name = name + "_y";
-                    Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
-                    z.Type = Types.ev_float;
-                    z.Name = name + "_z";
+                    if (globalList[offset + 1].Kind == GlobalKind.Unknown || globalList[offset + 1].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    {
+                        Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
+                        y.Type = Types.ev_float;
+                        y.Name = name + "_y";
+                    }
+                    if (globalList[offset + 2].Kind == GlobalKind.Unknown || globalList[offset + 2].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    {
+                        Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
+                        z.Type = Types.ev_float;
+                        z.Name = name + "_z";
+                    }
                 }
 
                 g.accessed = true;

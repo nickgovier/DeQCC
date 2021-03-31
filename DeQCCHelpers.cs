@@ -27,13 +27,16 @@ namespace DeQcc
         
         private List<string> _decompileFilesSeen = new List<string>();   // have we already seen this file during decompilation
 
-        void InitStaticData(string outputfolder)
+        void SetUpNameMaps(string outputfolder)
         {
             if (outputfolder == "obots")
             {
                 InitObotMaps();
             }
+        }
 
+        void InitStaticData()
+        {
             // There is no way to reconstruct these from the progs.dat, and they are built in to the Quake engine
             // so we replicate the original v106qc declarations here as they will be the same in every progs.dat
             //builtins.Clear();

@@ -797,8 +797,8 @@ void () finale_2 =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, o_x);
-    WriteCoord(MSG_BROADCAST, o_y);
-    WriteCoord(MSG_BROADCAST, o_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     sound(shub, CHAN_VOICE, "misc/r_tele1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     self.nextthink = time + SPAWNFLAG_LASER;
     self.think = finale_3;
@@ -937,8 +937,8 @@ void () finale_4 =
             while(y <= IT_LIGHTNING)
             {
                 self.origin_x = oldo_x + x;
-                self.origin_y = oldo_y + y;
-                self.origin_z = oldo_z + z;
+                self.origin_y = 0.000 + y;
+                self.origin_z = 0.000 + z;
                 r = random();
                 if(r < 0.300)
                 {
