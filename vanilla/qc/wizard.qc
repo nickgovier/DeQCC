@@ -62,7 +62,7 @@ void (entity missile, float mspeed, float accuracy) LaunchMissile =
     local vector move;
     local float fly;
     makevectors(self.angles);
-    vec = ((self.enemy.origin + self.enemy.mins) + (self.enemy.size * 0.700)) - missile.origin;
+    vec = (self.enemy.origin + self.enemy.mins + (self.enemy.size * 0.700)) - missile.origin;
     fly = vlen(vec) / mspeed;
     move = self.enemy.velocity;
     move_z = MSG_BROADCAST;
@@ -455,7 +455,7 @@ void () Wiz_StartFast =
     missile.owner = self;
     missile.nextthink = time + 0.600;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * 14.000));
+    setorigin(missile, (self.origin + '0.000 0.000 30.000' + (v_forward * 14.000)) + (v_right * 14.000));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.800;
     missile.think = Wiz_FastFire;
@@ -464,7 +464,7 @@ void () Wiz_StartFast =
     missile.owner = self;
     missile.nextthink = time + SPAWNFLAG_SUPERSPIKE;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * -14.000));
+    setorigin(missile, (self.origin + '0.000 0.000 30.000' + (v_forward * 14.000)) + (v_right * -14.000));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.300;
     missile.think = Wiz_FastFire;

@@ -229,7 +229,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     missile.solid = SOLID_NOT;
     makevectors(self.angles);
     missile.velocity = vel;
-    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * random());
+    missile.velocity_z = missile.velocity_z + 250.000 + (50.000 * random());
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.nextthink = time + WEAPON_SHOTGUN;
     missile.think = SUB_Remove;
@@ -525,8 +525,7 @@ void () W_FireShotgun =
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
-    self.ammo_shells = self.ammo_shells - WEAPON_SHOTGUN;
-    self.currentammo = self.ammo_shells - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_shells = self.ammo_shells - WEAPON_SHOTGUN;
     dir = aim(self, 100000.000);
     FireBullets(TE_LIGHTNING2, dir, '0.040 0.040 0.000');
 };
@@ -573,8 +572,7 @@ void () W_FireSuperShotgun =
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SLIME;
-    self.ammo_shells = self.ammo_shells - WEAPON_ROCKET;
-    self.currentammo = self.ammo_shells - WEAPON_ROCKET;
+    self.currentammo = self.ammo_shells = self.ammo_shells - WEAPON_ROCKET;
     dir = aim(self, 100000.000);
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
@@ -825,8 +823,7 @@ void () W_FireRocket =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
-    self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -948,8 +945,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     f_y = f_x;
     f_z = MSG_BROADCAST;
     f = f * IT_GRENADE_LAUNCHER;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -1110,8 +1106,7 @@ void () W_FireLightning =
     }
     
     self.punchangle_x = CONTENT_SOLID;
-    self.ammo_cells = self.ammo_cells - WEAPON_SHOTGUN;
-    self.currentammo = self.ammo_cells - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_cells = self.ammo_cells - WEAPON_SHOTGUN;
     org = self.origin + '0.000 0.000 16.000';
     traceline(org, org + (v_forward * 600.000), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -1298,8 +1293,7 @@ void () W_FireGrenade =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
-    self.currentammo = self.ammo_rockets - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - WEAPON_SHOTGUN;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -1429,8 +1423,7 @@ void () W_FireSuperSpikes =
     local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - WEAPON_ROCKET;
-    self.currentammo = self.ammo_nails - WEAPON_ROCKET;
+    self.currentammo = self.ammo_nails = self.ammo_nails - WEAPON_ROCKET;
     dir = aim(self, 1000.000);
     launch_spike(self.origin + '0.000 0.000 16.000', dir);
     newmis.touch = superspike_touch;
@@ -1511,10 +1504,9 @@ void (float ox) W_FireSpikes =
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", WEAPON_SHOTGUN, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - WEAPON_SHOTGUN;
-    self.currentammo = self.ammo_nails - WEAPON_SHOTGUN;
+    self.currentammo = self.ammo_nails = self.ammo_nails - WEAPON_SHOTGUN;
     dir = aim(self, 1000.000);
-    launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
+    launch_spike(self.origin + '0.000 0.000 16.000' + (v_right * ox), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 

@@ -508,25 +508,15 @@ namespace DeQcc
         // preserving the original precedence from the source file)
         string CheckPrecedence(string input)
         {
+            List<string> operators = new List<string> { " + ", " - " , " * ", " / " , " == ", " != ", " <= ", " >= ", " < ", " > ", " && ", " || ", " & ", " | " };
+
             if (input is null) return null;
 
-            if (input.Contains(" + ") ||
-                input.Contains(" - ") ||
-                input.Contains(" * ") ||
-                input.Contains(" / ") ||
-                input.Contains(" == ") ||
-                input.Contains(" != ") ||
-                input.Contains(" <= ") ||
-                input.Contains(" >= ") ||
-                input.Contains(" < ") ||
-                input.Contains(" > ") ||
-                input.Contains(" && ") ||
-                input.Contains(" || ") ||
-                input.Contains(" & ") ||
-                input.Contains(" | "))
+            foreach(string op in operators)
             {
-                return "(" + input + ")";
+                if(input.Contains(op)) { return "(" + input + ")"; }
             }
+
             return input;
         }
 

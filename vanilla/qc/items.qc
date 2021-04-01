@@ -3147,7 +3147,7 @@ void () DropBackpack =
 {
     local entity item;
     
-    if(!(((self.ammo_shells + self.ammo_nails) + self.ammo_rockets) + self.ammo_cells))
+    if(!(self.ammo_shells + self.ammo_nails + self.ammo_rockets + self.ammo_cells))
     {
         return;
     }

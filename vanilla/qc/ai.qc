@@ -147,8 +147,7 @@ void () t_movetarget =
         sound(self, CHAN_VOICE, "ogre/ogdrag.wav", AS_STRAIGHT, ATTN_IDLE);
     }
     
-    self.movetarget = find(world, targetname, other.target);
-    self.goalentity = find(world, targetname, other.target);
+    self.goalentity = self.movetarget = find(world, targetname, other.target);
     self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
     
     if(!self.movetarget)

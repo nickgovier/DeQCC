@@ -64,7 +64,7 @@ void () dog_bite =
         return;
     }
     
-    ldmg = ((random() + random()) + random()) * SECRET_NO_SHOOT;
+    ldmg = (random() + random() + random()) * SECRET_NO_SHOOT;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -1204,13 +1204,13 @@ float () CheckDogJump =
     local vector dist;
     local float d;
     
-    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.750 * self.enemy.size_z)))
+    if((self.origin_z + self.mins_z) > (self.enemy.origin_z + self.enemy.mins_z + (0.750 * self.enemy.size_z)))
     {
         return FALSE;
     }
     
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.250 * self.enemy.size_z)))
+    if((self.origin_z + self.maxs_z) < (self.enemy.origin_z + self.enemy.mins_z + (0.250 * self.enemy.size_z)))
     {
         return FALSE;
     }

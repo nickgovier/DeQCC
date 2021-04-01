@@ -762,7 +762,9 @@ namespace DeQcc
                     }
                     else
                     {
+
                         PrintLine(c.Name + " = " + CheckPrecedence(a.ValueToAssign) + " " + oper + " " + CheckPrecedence(b.ValueToAssign) + ";");
+                        
                     }
                     break;
                 case Opcodes.OP_NOT_F: case Opcodes.OP_NOT_V: case Opcodes.OP_NOT_S: case Opcodes.OP_NOT_ENT: case Opcodes.OP_NOT_FNC:
@@ -820,13 +822,29 @@ namespace DeQcc
                     }
                     else
                     {
+                        string output;
                         if (b.Kind == GlobalKind.Anonymous && b.ValueSource != null)
                         {
-                            PrintLine(b.ValueSource + " = " + a.ValueToAssign + ";");
+                            output = b.ValueSource + " = " + a.ValueToAssign;
                         }
                         else
                         {
-                            PrintLine(b.Name + " = " + a.ValueToAssign + ";");
+                            output = b.Name + " = " + a.ValueToAssign;
+                        }
+
+                        // fix for multiple assignments, e.g. self.currentammo = self.ammo_shells = self.ammo_shells - 1; in weapons.qc W_FireShotgun
+                        Statement nextS = statements[sIndex + 1];
+                        // if the next statement is also a store using the same value, but not as a parameter to a function call
+                        if (nextS.Opcode >= Opcodes.OP_STORE_F && nextS.Opcode <= Opcodes.OP_STOREP_FNC && nextS.a == s.a && nextS.b >= RESERVED_OFS)
+                        {
+                            // just store the assignment ready to be written in the next statement
+                            a.ValueToAssign = output;
+                        }
+                        else
+                        {
+                            PrintLine(output + ";");
+                            // clear the ValueToAssign override
+                            a.ValueToAssign = null;
                         }
                     }
                     break;

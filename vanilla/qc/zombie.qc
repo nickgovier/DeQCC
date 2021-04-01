@@ -185,7 +185,7 @@ void () zombie_cruc1 = [192.000, zombie_cruc2]
 // OP_DONE	0	0	0
 void () zombie_cruc2 = [193.000, zombie_cruc3]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = time + 0.100 + (random() * 0.100);
 };
 
 // zombie_cruc3
@@ -200,7 +200,7 @@ void () zombie_cruc2 = [193.000, zombie_cruc3]
 // OP_DONE	0	0	0
 void () zombie_cruc3 = [194.000, zombie_cruc4]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = time + 0.100 + (random() * 0.100);
 };
 
 // zombie_cruc4
@@ -215,7 +215,7 @@ void () zombie_cruc3 = [194.000, zombie_cruc4]
 // OP_DONE	0	0	0
 void () zombie_cruc4 = [195.000, zombie_cruc5]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = time + 0.100 + (random() * 0.100);
 };
 
 // zombie_cruc5
@@ -230,7 +230,7 @@ void () zombie_cruc4 = [195.000, zombie_cruc5]
 // OP_DONE	0	0	0
 void () zombie_cruc5 = [196.000, zombie_cruc6]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = time + 0.100 + (random() * 0.100);
 };
 
 // zombie_cruc6
@@ -245,7 +245,7 @@ void () zombie_cruc5 = [196.000, zombie_cruc6]
 // OP_DONE	0	0	0
 void () zombie_cruc6 = [197.000, zombie_cruc1]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = time + 0.100 + (random() * 0.100);
 };
 
 // zombie_walk1

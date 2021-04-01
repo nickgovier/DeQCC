@@ -42,6 +42,7 @@ namespace DeQcc
             _id = id;
             _name = null;
             _globaldef_type = null;
+            _valueToAssignOverride = null;
 
             Kind = GlobalKind.Unknown;
             FloatVal = f;
@@ -56,6 +57,7 @@ namespace DeQcc
         private int _id;
         private string _name;
         private ushort? _globaldef_type;    // original - may have DEF_SAVEGLOBAL bit set
+        private string? _valueToAssignOverride;
 
         #endregion Private variables
 
@@ -186,7 +188,11 @@ namespace DeQcc
         {
             get
             {
-                if (Kind == GlobalKind.Immediate)
+                if(_valueToAssignOverride != null)
+                {
+                    return _valueToAssignOverride;
+                }
+                else if (Kind == GlobalKind.Immediate)
                 {
                     return ImmediateValue;
                 }
@@ -198,6 +204,10 @@ namespace DeQcc
                 {
                     return Name;
                 }
+            }
+            set
+            {
+                _valueToAssignOverride = value;
             }
         }
 

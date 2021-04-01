@@ -126,9 +126,7 @@ void () SetNewParms =
     parm2 = 100.000;
     parm3 = MSG_BROADCAST;
     parm4 = 25.000;
-    parm5 = MSG_BROADCAST;
-    parm6 = MSG_BROADCAST;
-    parm7 = MSG_BROADCAST;
+    parm7 = parm6 = parm5 = MSG_BROADCAST;
     parm8 = WEAPON_SHOTGUN;
     parm9 = MSG_BROADCAST;
 };
@@ -640,8 +638,7 @@ void () execute_changelevel =
     while(other != world)
     {
         other.view_ofs = VEC_ORIGIN;
-        other.v_angle = pos.mangle;
-        other.angles = pos.mangle;
+        other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.nextthink = time + 0.500;
         other.takedamage = DAMAGE_NO;
@@ -1149,8 +1146,7 @@ void () PutClientInServer =
     self.th_die = PlayerDie;
     self.deadflag = DEAD_NO;
     self.pausetime = MSG_BROADCAST;
-    self.oldorigin = spot.origin + '0.000 0.000 1.000';
-    self.origin = spot.origin + '0.000 0.000 1.000';
+    self.origin = self.oldorigin = spot.origin + '0.000 0.000 1.000';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setmodel(self, "progs/eyes.mdl");
