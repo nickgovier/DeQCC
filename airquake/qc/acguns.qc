@@ -871,8 +871,8 @@ void () AClaser_touch =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, org_y);
-        WriteCoord(MSG_BROADCAST, org_z);
+        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0.000);
     }
     
     remove(self);
@@ -1580,11 +1580,11 @@ void () paveway_fly =
         v1_x = v1_x - 360.000;
     }
     
-    v1_y = anglemod(v1_y);
+    v1_y = anglemod(0.000);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
     
@@ -1600,19 +1600,19 @@ void () paveway_fly =
     }
     
     
-    if(v1_y < -50.000)
+    if(0.000 < -50.000)
     {
         v1_y = -50.000;
     }
     
     
-    if(v1_y > 50.000)
+    if(0.000 > 50.000)
     {
         v1_y = 50.000;
     }
     
     makevectors(self.angles);
-    self.speed = (self.speed - 3.000) + (v_forward_z * 10.000);
+    self.speed = (self.speed - 3.000) + (0.000 * 10.000);
     
     if(self.speed < 0.000)
     {
@@ -1626,7 +1626,7 @@ void () paveway_fly =
     }
     
     self.avelocity = v1;
-    v_forward_z = 0.000 - v_forward_z;
+    v_forward_z = 0.000 - 0.000;
     self.velocity = self.speed * v_forward;
     self.think = paveway_fly;
     self.nextthink = time + 0.100;
@@ -2378,11 +2378,11 @@ void () ACmissile_home =
     }
     
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(v0_y - self.angles_y);
+    v1_y = anglemod(0.000 - self.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
     v1_x = v0_x - self.angles_x;
@@ -2407,21 +2407,21 @@ void () ACmissile_home =
     }
     
     
-    if(v1_y < 0.000)
+    if(0.000 < 0.000)
     {
         v2_y = 0.000 - self.weapon;
     }
     
     
-    if(v1_y > 0.000)
+    if(0.000 > 0.000)
     {
         v2_y = self.weapon;
     }
     
-    if(fabs(v1_y) < (self.weapon * 0.100))
+    if(fabs(0.000) < (self.weapon * 0.100))
     {
         v2_y = 0.000;
-        self.angles_y = v0_y;
+        self.angles_y = 0.000;
     }
     else
     {
@@ -2430,9 +2430,9 @@ void () ACmissile_home =
     
     self.avelocity = v2;
     
-    if(fabs(v1_y) > 90.000)
+    if(fabs(0.000) > 90.000)
     {
-        fabs(v1_y);
+        fabs(0.000);
         
         if((fabs(self.angles_x + v0_x)) > (180.000 - (fabs(self.angles_x + v0_x))))
         {
@@ -2452,7 +2452,7 @@ void () ACmissile_home =
     
     makevectors(self.angles);
     dir = v_forward;
-    dir_z = 0.000 - dir_z;
+    dir_z = 0.000 - 0.000;
     self.velocity = dir * self.speed;
     self.nextthink = time + 0.100;
     self.think = ACmissile_home;

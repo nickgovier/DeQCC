@@ -322,11 +322,11 @@ void () ac5_steer =
     
     makevectors(stemp.angles);
     v3 = v_forward;
-    v3_z = 0.000 - v3_z;
+    v3_z = 0.000 - 0.000;
     
     if(time >= self.pausetime)
     {
-        stemp.speed = stemp.speed - (v3_z * 10.000);
+        stemp.speed = stemp.speed - (0.000 * 10.000);
     }
     
     
@@ -768,9 +768,7 @@ void () ac5_attack =
             }
             
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -791,9 +789,7 @@ void () ac5_attack =
                 AC_plasma(self.enemy.origin + (v_right * 10.000), v2, world);
                 AC_plasma(self.enemy.origin - (v_right * 10.000), v2, world);
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_cell = self.ammo_cell - 2.000;
-                self.ammo_nails = self.ammo_cell - 2.000;
-                self.currentammo = self.ammo_cell - 2.000;
+                self.currentammo = self.ammo_nails = self.ammo_cell = self.ammo_cell - 2.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -821,9 +817,7 @@ void () ac5_attack =
                     }
                     
                     self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                    self.ammo_rock = self.ammo_rock - 1.000;
-                    self.ammo_rockets = self.ammo_rock - 1.000;
-                    self.currentammo = self.ammo_rock - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_rock = self.ammo_rock - 1.000;
                     self.enemy.show_hostile = time + 1.000;
                 }
                 else
@@ -852,9 +846,7 @@ void () ac5_attack =
                         }
                         
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_amsl = self.ammo_amsl - 1.000;
-                        self.ammo_cells = self.ammo_amsl - 1.000;
-                        self.currentammo = self.ammo_amsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_amsl = self.ammo_amsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                     }
                     else
@@ -986,14 +978,10 @@ void () start_aircraft5 =
     self.th_missile = ac5_attack;
     self.th_run = ac5_steer;
     self.th_melee = ac5_currentammo;
-    self.ammo_auto = 130.000;
-    self.ammo_shells = 130.000;
-    self.ammo_cell = 40.000 * wepmulti;
-    self.ammo_nails = 40.000 * wepmulti;
-    self.ammo_rock = 8.000 * wepmulti;
-    self.ammo_rockets = 8.000 * wepmulti;
-    self.ammo_amsl = 4.000 * wepmulti;
-    self.ammo_cells = 4.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 130.000;
+    self.ammo_nails = self.ammo_cell = 40.000 * wepmulti;
+    self.ammo_rockets = self.ammo_rock = 8.000 * wepmulti;
+    self.ammo_cells = self.ammo_amsl = 4.000 * wepmulti;
     Check_startlanded();
     self.oldenemy.style = 32.000;
 };

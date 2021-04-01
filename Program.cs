@@ -16,7 +16,7 @@ namespace DeQcc
             //mod = "quess";
             //mod = "rally";
             //mod = "reaper";
-            bool decompile = false;  // true to decompile inputprogs.dat into qc files, false to load progs.dat and output csvs only
+            bool decompile = true;  // true to decompile inputprogs.dat into qc files, false to load progs.dat and output csvs only
             
             DeQCC p = new DeQCC();
             p.Decompile(mod, decompile);

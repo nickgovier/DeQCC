@@ -685,11 +685,11 @@ void () drone_fly =
         
         v0 = vectoangles(v1 - self.origin);
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(v0_y - self.angles_y);
+        v1_y = anglemod(0.000 - self.angles_y);
         
-        if(v1_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_y = v1_y - 360.000;
+            v1_y = 0.000 - 360.000;
         }
         
         v1_x = anglemod(v0_x - self.angles_x);
@@ -719,27 +719,27 @@ void () drone_fly =
             self.angles_x = v0;
         }
         
-        v2_y = v1_y * 5.000;
+        v2_y = 0.000 * 5.000;
         
-        if(v2_y < -100.000)
+        if(0.000 < -100.000)
         {
             v2_y = -100.000;
         }
         
         
-        if(v2_y > 100.000)
+        if(0.000 > 100.000)
         {
             v2_y = 100.000;
         }
         
         
-        if(fabs(v1_y) < 2.000)
+        if(fabs(0.000) < 2.000)
         {
             v2_y = 0.000;
-            self.angles_y = v0_y;
+            self.angles_y = 0.000;
         }
         
-        if(((fabs(v1_y) < 25.000) && (fabs(v1_x) < 25.000)) && (self.health < 120.000))
+        if(((fabs(0.000) < 25.000) && (fabs(v1_x) < 25.000)) && (self.health < 120.000))
         {
             ab = 1.000;
         }
@@ -748,36 +748,36 @@ void () drone_fly =
             ab = 0.000;
         }
         
-        v1_z = (0.000 - v2_y) - self.angles_z;
+        v1_z = (0.000 - 0.000) - self.angles_z;
         
-        if(v1_z < 0.000)
+        if(0.000 < 0.000)
         {
             v2_z = -200.000;
             
-            if(v2_z < (v1_z * 10.000))
+            if(0.000 < (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(v1_z > 0.000)
+        if(0.000 > 0.000)
         {
             v2_z = 200.000;
             
-            if(v2_z > (v1_z * 10.000))
+            if(0.000 > (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(fabs(v1_z) < 5.000)
+        if(fabs(0.000) < 5.000)
         {
             v2_z = 0.000;
-            self.angles_z = 0.000 - v2_y;
+            self.angles_z = 0.000 - 0.000;
         }
         
         self.avelocity = v2;
@@ -817,7 +817,7 @@ void () drone_fly =
         
         makevectors(self.angles);
         v3 = v_forward;
-        v3_z = 0.000 - v3_z;
+        v3_z = 0.000 - 0.000;
         self.thru = 4.000;
         if(!ab)
         {
@@ -913,8 +913,7 @@ void () drone_start =
     
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

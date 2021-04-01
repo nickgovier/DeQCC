@@ -470,7 +470,7 @@ void () gv1_steer =
     
     if(time >= self.pausetime)
     {
-        veh.speed = veh.speed - (v3_z * 5.000);
+        veh.speed = veh.speed - (0.000 * 5.000);
         tmp = veh.thru * 30.000;
         
         if(self.button2)
@@ -716,9 +716,7 @@ void () gv1_attack =
             makevectors(v1);
             AC_spike((self.enemy.origin + (v_forward * 10.000)) + (v_right * 16.000), v2, world);
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -747,9 +745,7 @@ void () gv1_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_amsl = self.ammo_amsl - 1.000;
-                self.ammo_nails = self.ammo_amsl - 1.000;
-                self.currentammo = self.ammo_amsl - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_amsl = self.ammo_amsl - 1.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -1022,10 +1018,8 @@ void () start_groundveh1 =
     self.th_missile = gv1_attack;
     self.th_run = gv1_steer;
     self.th_melee = gv1_currentammo;
-    self.ammo_auto = 200.000;
-    self.ammo_shells = 200.000;
-    self.ammo_amsl = 16.000 * wepmulti;
-    self.ammo_nails = 16.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 200.000;
+    self.ammo_nails = self.ammo_amsl = 16.000 * wepmulti;
     self.ammo_rockets = 0.000;
     self.ammo_cells = 0.000;
     self.items = IT_WEP1 | IT_WEP2;
@@ -1034,7 +1028,7 @@ void () start_groundveh1 =
     if(!checkbottom(self))
     {
         traceline(self.origin, self.origin + '0.000 0.000 -10000.000', TRUE, self);
-        self.origin_z = trace_endpos_z + 30.000;
+        self.origin_z = 0.000 + 30.000;
     }
     
     setorigin(self.enemy, self.origin);

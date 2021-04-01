@@ -484,8 +484,7 @@ void (float n, float t) add_allowedcraft =
         else
         {
             allowedcraft = allowedcraft | n;
-            tmp = 0.000;
-            f1 = 0.000;
+            f1 = tmp = 0.000;
             
             while(tmp < 10.000)
             {

@@ -408,11 +408,11 @@ void () ac3_steer =
     
     makevectors(stemp.angles);
     v3 = v_forward;
-    v3_z = 0.000 - v3_z;
+    v3_z = 0.000 - 0.000;
     
     if(time >= self.pausetime)
     {
-        stemp.speed = stemp.speed - (v3_z * 10.000);
+        stemp.speed = stemp.speed - (0.000 * 10.000);
         tmp = stemp.thru * 75.000;
         setplanespeed(tmp, 4.000, 4.000);
         self.pausetime = time + 0.100;
@@ -810,9 +810,7 @@ void () ac3_attack =
             }
             
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
             self.enemy.unstealth_finished = time + 0.200;
         }
@@ -841,9 +839,7 @@ void () ac3_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_amsl = self.ammo_amsl - 1.000;
-                self.ammo_nails = self.ammo_amsl - 1.000;
-                self.currentammo = self.ammo_amsl - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_amsl = self.ammo_amsl - 1.000;
                 self.enemy.show_hostile = time + 1.000;
                 self.enemy.unstealth_finished = time + 1.200;
             }
@@ -863,9 +859,7 @@ void () ac3_attack =
                     v2 = AC_aim2(0.930, 2000.000);
                     makevectors(v1);
                     AC_paveway((self.enemy.origin - (v_up * 10.000)) - (v_forward * 10.000), self.enemy.velocity, self.enemy.trigger_field);
-                    self.ammo_bomb = self.ammo_bomb - 1.000;
-                    self.ammo_rockets = self.ammo_bomb - 1.000;
-                    self.currentammo = self.ammo_bomb - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_bomb = self.ammo_bomb - 1.000;
                     self.enemy.unstealth_finished = time + 1.000;
                 }
                 else
@@ -886,9 +880,7 @@ void () ac3_attack =
                         makevectors(v1);
                         AC_maverick((self.enemy.origin - (v_up * 10.000)) - (v_forward * 10.000), v_forward, self.enemy.trigger_field);
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.ammo_cells = self.ammo_smsl - 1.000;
-                        self.currentammo = self.ammo_smsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                         self.enemy.unstealth_finished = time + 2.000;
                     }
@@ -1021,14 +1013,10 @@ void () start_aircraft3 =
     self.th_missile = ac3_attack;
     self.th_run = ac3_steer;
     self.th_melee = ac3_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_amsl = 4.000 * wepmulti;
-    self.ammo_nails = 4.000 * wepmulti;
-    self.ammo_bomb = 4.000 * wepmulti;
-    self.ammo_rockets = 4.000 * wepmulti;
-    self.ammo_smsl = 4.000 * wepmulti;
-    self.ammo_cells = 4.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_nails = self.ammo_amsl = 4.000 * wepmulti;
+    self.ammo_rockets = self.ammo_bomb = 4.000 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;
     Check_startlanded();
     self.oldenemy.style = 32.000;
 };

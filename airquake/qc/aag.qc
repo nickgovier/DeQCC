@@ -419,7 +419,7 @@ void () aag_aim =
     }
     
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = dir_y - self.angles_y;
+    vtemp_y = 0.000 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
@@ -435,15 +435,15 @@ void () aag_aim =
     }
     
     
-    if(vtemp_y < 0.000)
+    if(0.000 < 0.000)
     {
-        vtemp_y = vtemp_y + 360.000;
+        vtemp_y = 0.000 + 360.000;
     }
     
     
-    if(vtemp_y > 180.000)
+    if(0.000 > 180.000)
     {
-        vtemp_y = vtemp_y - 360.000;
+        vtemp_y = 0.000 - 360.000;
     }
     
     dir = vtemp;
@@ -460,13 +460,13 @@ void () aag_aim =
     }
     
     
-    if(dir_y < -10.000)
+    if(0.000 < -10.000)
     {
         dir_y = -10.000;
     }
     
     
-    if(dir_y > 10.000)
+    if(0.000 > 10.000)
     {
         dir_y = 10.000;
     }
@@ -501,7 +501,7 @@ void () aag_aim =
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + dir_y);
+    self.angles_y = anglemod(self.angles_y + 0.000);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -609,7 +609,7 @@ void () aag_launch =
     self.ammo_cells = self.ammo_cells - 1.000;
     makevectors(self.trigger_field.angles);
     v1 = v_forward;
-    v1_z = 0.000 - v1_z;
+    v1_z = 0.000 - 0.000;
     if(self.spawnflags & 2.000)
     {
         if(self.ammo_cells & 1.000)

@@ -394,23 +394,23 @@ void () ehmmv_walk =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(v0_y - self.angles_y);
+    v1_y = anglemod(0.000 - self.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
-    if(fabs(v1_y) > 10.000)
+    if(fabs(0.000) > 10.000)
     {
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
             self.angles_y = anglemod(self.angles_y - 10.000);
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             self.angles_y = anglemod(self.angles_y + 10.000);
         }
@@ -418,10 +418,10 @@ void () ehmmv_walk =
     }
     else
     {
-        self.angles_y = v0_y;
+        self.angles_y = 0.000;
     }
     
-    if(fabs(v1_y) < 45.000)
+    if(fabs(0.000) < 45.000)
     {
         
         if(self.speed < 160.000)
@@ -730,23 +730,23 @@ void () ehmmv_run =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(v0_y - self.angles_y);
+    v1_y = anglemod(0.000 - self.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
-    if(fabs(v1_y) > 10.000)
+    if(fabs(0.000) > 10.000)
     {
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
             self.angles_y = anglemod(self.angles_y - 10.000);
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             self.angles_y = anglemod(self.angles_y + 10.000);
         }
@@ -754,10 +754,10 @@ void () ehmmv_run =
     }
     else
     {
-        self.angles_y = v0_y;
+        self.angles_y = 0.000;
     }
     
-    if(fabs(v1_y) < 45.000)
+    if(fabs(0.000) < 45.000)
     {
         tmp = 160.000;
         dist = vlen(self.movetarget.origin - self.origin);
@@ -829,7 +829,7 @@ void () ehmmv_run =
     v0 = vectoangles(v1 - self.origin);
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0.000 - v2_z;
+    v2_z = 0.000 - 0.000;
     turn_eturret(v0, 100.000);
     v1 = self.tur2.angles;
     v1_x = 0.000 - v1_x;
@@ -974,8 +974,7 @@ void () ehmmv_start =
     setmodel(self.tur2, "progs/humtb.mdl");
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

@@ -125,9 +125,7 @@ void () SetNewParms =
     parm2 = 100.000;
     parm3 = 0.000;
     parm4 = 25.000;
-    parm5 = 0.000;
-    parm6 = 0.000;
-    parm7 = 0.000;
+    parm7 = parm6 = parm5 = 0.000;
     parm8 = 1.000;
     parm9 = 0.000;
 };
@@ -636,8 +634,7 @@ void () execute_changelevel =
     while(other != world)
     {
         other.view_ofs = '0.000 0.000 0.000';
-        other.v_angle = pos.mangle;
-        other.angles = pos.mangle;
+        other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.nextthink = time + 0.500;
         other.takedamage = DAMAGE_NO;
@@ -2182,7 +2179,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = start_z + 8.000;
+    start_z = 0.000 + 8.000;
     v_forward_z = 0.000;
     normalize(v_forward);
     end = start + (v_forward * 24.000);
@@ -2190,7 +2187,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < 1.000)
     {
-        start_z = (start_z + self.maxs_z) - 8.000;
+        start_z = (0.000 + self.maxs_z) - 8.000;
         end = start + (v_forward * 24.000);
         self.movedir = trace_plane_normal * -50.000;
         traceline(start, end, TRUE, self);

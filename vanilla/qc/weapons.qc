@@ -229,7 +229,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     missile.solid = SOLID_NOT;
     makevectors(self.angles);
     missile.velocity = vel;
-    missile.velocity_z = missile.velocity_z + 250.000 + (50.000 * random());
+    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * random());
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.nextthink = time + WEAPON_SHOTGUN;
     missile.think = SUB_Remove;
@@ -1506,10 +1506,11 @@ void (float ox) W_FireSpikes =
     self.attack_finished = time + 0.200;
     self.currentammo = self.ammo_nails = self.ammo_nails - WEAPON_SHOTGUN;
     dir = aim(self, 1000.000);
-    launch_spike(self.origin + '0.000 0.000 16.000' + (v_right * ox), dir);
+    launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 
+.float hit_z;
 // spike_touch
 // function begins at statement 4315, parm_start=3289
 // OP_LOAD_ENT	28	201	3290

@@ -346,17 +346,17 @@ void () FindLocation =
     {
         v1 = trace_endpos + '256.000 256.000 0.000';
         v1_x = v1_x / 64.000;
-        v1_y = v1_y / 64.000;
+        v1_y = 0.000 / 64.000;
         v1_z = 0.000;
-        v1_y = ceil(v1_y);
+        v1_y = ceil(0.000);
         
-        if(v1_y > 8.000)
+        if(0.000 > 8.000)
         {
             v1_y = 8.000;
         }
         
         
-        if(v1_y < 1.000)
+        if(0.000 < 1.000)
         {
             v1_y = 1.000;
         }
@@ -374,7 +374,7 @@ void () FindLocation =
             v1_x = 1.000;
         }
         
-        loc = (v1_x * 10.000) + v1_y;
+        loc = (v1_x * 10.000) + 0.000;
         current_destination = ftos(loc);
         current_dest_int = loc;
     }
@@ -513,7 +513,7 @@ void () CameraPos =
     makevectors(self.v_angle);
     ideal_pos = v_forward * -350.000;
     
-    if(ideal_pos_z < 0.000)
+    if(0.000 < 0.000)
     {
         ideal_pos_z = 0.000;
     }
@@ -1023,11 +1023,9 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
     
     if(actual_move)
     {
-        king_castle_move_flag = FALSE;
-        en_passant_flag = FALSE;
     }
     
-    valid = FALSE;
+    valid = en_passant_flag = king_castle_move_flag = FALSE;
     if(ent.classname == "chess_pawn")
     {
         if(ent.chess_team == "black")
@@ -1809,7 +1807,7 @@ vector (float loc) LocationToVector =
     dest_org_x = GetX(loc);
     dest_org_z = 0.000;
     dest_org = dest_org * 64.000;
-    dest_org = ((dest_org - '256.000 256.000 0.000') - '32.000 32.000 0.000') - (VEC_HULL_MIN_z * '0.000 0.000 1.000');
+    dest_org = ((dest_org - '256.000 256.000 0.000') - '32.000 32.000 0.000') - (-24.000 * '0.000 0.000 1.000');
     return dest_org;
 };
 
@@ -2789,34 +2787,29 @@ entity (entity monst) FindNewEnemy =
     
     trav = find(world, chess_team, other_team);
     
-    if((trav != world) && ((((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))) || (trav.enemy == world)))
+    while((trav != world) && ((((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))) || (trav.enemy == world)))
     {
         trav = find(trav, chess_team, other_team);
     }
     
-}
-
-if(trav != world)
-{
-    return trav;
-}
-else
-{
-    trav = find(world, chess_team, other_team);
-    
-    if((trav != world) && (((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))))
+    if(trav != world)
     {
-        trav = find(trav, chess_team, other_team);
+        return trav;
+    }
+    else
+    {
+        trav = find(world, chess_team, other_team);
+        
+        while((trav != world) && (((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))))
+        {
+            trav = find(trav, chess_team, other_team);
+        }
+        
+        return trav;
     }
     
-}
-
-return trav;
-}
-
 };
 
-/* ERROR INDENTATION */
 // HighlightLocation
 // function begins at statement 22969, parm_start=12973
 // OP_STORE_V	12973	4	0
@@ -2859,25 +2852,22 @@ void (float loc) HighlightLocation =
     loc_str = ftos(loc);
     trav = find(world, targetname, loc_str);
     
-    if((trav != world) && (trav.classname != "door"))
+    while((trav != world) && (trav.classname != "door"))
     {
         trav = find(trav, targetname, loc_str);
     }
     
-}
-
-
-if(trav != world)
-{
-    setorigin(trav, trav.pos2);
-    trav.pos2 = trav.pos1;
-    trav.pos1 = trav.origin;
-    last_highlight = trav;
-}
-
+    
+    if(trav != world)
+    {
+        setorigin(trav, trav.pos2);
+        trav.pos2 = trav.pos1;
+        trav.pos1 = trav.origin;
+        last_highlight = trav;
+    }
+    
 };
 
-/* ERROR INDENTATION */
 // CheckGameOver
 // function begins at statement 23002, parm_start=12996
 // OP_NOT_F	539	0	13001
@@ -3089,7 +3079,7 @@ void () CheckGameOver =
         found = FALSE;
         e1trav = find(world, chess_team, "white");
         
-        if((e1trav != world) && !found)
+        while((e1trav != world) && !found)
         {
             e1trav = find(e1trav, chess_team, "white");
             
@@ -3105,70 +3095,26 @@ void () CheckGameOver =
             
         }
         
-    }
-    
-    if(e1trav != world)
-    {
-        ent1 = e1trav;
-    }
-    else
-    {
-        return;
-    }
-    
-    found = FALSE;
-    e2trav = find(world, chess_team, "black");
-    
-    if((e2trav != world) && !found)
-    {
-        e2trav = find(e2trav, chess_team, "black");
-        
-        if(e2trav != world)
+        if(e1trav != world)
         {
-            
-            if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
-            {
-                found = TRUE;
-            }
-            
+            ent1 = e1trav;
+        }
+        else
+        {
+            return;
         }
         
-    }
-    
-}
-
-if(e2trav != world)
-{
-    ent2 = e2trav;
-}
-else
-{
-    return;
-}
-
-
-if((e1trav != world) || (e2trav != world))
-{
-    ent1.enemy = ent2;
-    ent1.think = FoundTarget;
-    ent1.nextthink = time + 0.100;
-    ent2.enemy = ent1;
-    ent2.think = FoundTarget;
-    ent2.nextthink = time + 0.100;
-    
-    if(e1trav != world)
-    {
         found = FALSE;
-        e1trav = find(e1trav, chess_team, "white");
+        e2trav = find(world, chess_team, "black");
         
-        if((e1trav != world) && !found)
+        while((e2trav != world) && !found)
         {
-            e1trav = find(e1trav, chess_team, "white");
+            e2trav = find(e2trav, chess_team, "black");
             
-            if(e1trav != world)
+            if(e2trav != world)
             {
                 
-                if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0.000)) && (e1trav.classname != "chess_king"))
+                if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
                 {
                     found = TRUE;
                 }
@@ -3177,76 +3123,109 @@ if((e1trav != world) || (e2trav != world))
             
         }
         
-    }
-    
-    
-    if(e1trav != world)
-    {
-        ent1 = e1trav;
-    }
-    
-}
-
-
-if(e2trav != world)
-{
-    found = FALSE;
-    e2trav = find(e2trav, chess_team, "black");
-    
-    if((e2trav != world) && !found)
-    {
-        e2trav = find(e2trav, chess_team, "black");
-        
         if(e2trav != world)
         {
+            ent2 = e2trav;
+        }
+        else
+        {
+            return;
+        }
+        
+        
+        while((e1trav != world) || (e2trav != world))
+        {
+            ent1.enemy = ent2;
+            ent1.think = FoundTarget;
+            ent1.nextthink = time + 0.100;
+            ent2.enemy = ent1;
+            ent2.think = FoundTarget;
+            ent2.nextthink = time + 0.100;
             
-            if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
+            if(e1trav != world)
             {
-                found = TRUE;
+                found = FALSE;
+                e1trav = find(e1trav, chess_team, "white");
+                
+                while((e1trav != world) && !found)
+                {
+                    e1trav = find(e1trav, chess_team, "white");
+                    
+                    if(e1trav != world)
+                    {
+                        
+                        if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0.000)) && (e1trav.classname != "chess_king"))
+                        {
+                            found = TRUE;
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+                if(e1trav != world)
+                {
+                    ent1 = e1trav;
+                }
+                
+            }
+            
+            
+            if(e2trav != world)
+            {
+                found = FALSE;
+                e2trav = find(e2trav, chess_team, "black");
+                
+                while((e2trav != world) && !found)
+                {
+                    e2trav = find(e2trav, chess_team, "black");
+                    
+                    if(e2trav != world)
+                    {
+                        
+                        if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
+                        {
+                            found = TRUE;
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+                if(e2trav != world)
+                {
+                    ent2 = e2trav;
+                }
+                
+            }
+            
+        }
+        
+        
+        if(teamplay > 0.000)
+        {
+            
+            if(self.owner.opponent.flags & FL_CLIENT)
+            {
+                mycentreprint(self.owner.opponent, "YOU HAVE WON!");
+                self.owner.opponent.skin = 1.000;
+            }
+            
+            
+            if(self.owner.flags & FL_CLIENT)
+            {
+                mycentreprint(self.owner, "You have lost..");
+                self.owner.opponent.skin = 0.000;
             }
             
         }
         
     }
     
-}
-
-
-if(e2trav != world)
-{
-    ent2 = e2trav;
-}
-
-}
-
-}
-
-}
-
-
-if(teamplay > 0.000)
-{
-
-if(self.owner.opponent.flags & FL_CLIENT)
-{
-mycentreprint(self.owner.opponent, "YOU HAVE WON!");
-self.owner.opponent.skin = 1.000;
-}
-
-
-if(self.owner.flags & FL_CLIENT)
-{
-mycentreprint(self.owner, "You have lost..");
-self.owner.opponent.skin = 0.000;
-}
-
-}
-
-}
-
 };
 
-/* ERROR INDENTATION */
 // UpdateMonsterColors
 // function begins at statement 23194, parm_start=13087
 // OP_STORE_V	12191	4	0

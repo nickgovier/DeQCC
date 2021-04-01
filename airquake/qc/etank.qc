@@ -428,23 +428,23 @@ void () etank_walk =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(v0_y - self.angles_y);
+    v1_y = anglemod(0.000 - self.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
-    if(fabs(v1_y) > 10.000)
+    if(fabs(0.000) > 10.000)
     {
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
             self.angles_y = anglemod(self.angles_y - 10.000);
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             self.angles_y = anglemod(self.angles_y + 10.000);
         }
@@ -452,10 +452,10 @@ void () etank_walk =
     }
     else
     {
-        self.angles_y = v0_y;
+        self.angles_y = 0.000;
     }
     
-    if(fabs(v1_y) < 45.000)
+    if(fabs(0.000) < 45.000)
     {
         
         if(self.speed < 120.000)
@@ -999,18 +999,18 @@ void () etank_run =
             
             if(range(self.goalentity) > RANGE_MELEE)
             {
-                v0_y = v0_y + (tmp * 70.000);
+                v0_y = 0.000 + (tmp * 70.000);
             }
             else
             {
-                v0_y = v0_y + (tmp * 100.000);
+                v0_y = 0.000 + (tmp * 100.000);
             }
             
         }
         
     }
     
-    makevectors(v0_y * '0.000 1.000 0.000');
+    makevectors(0.000 * '0.000 1.000 0.000');
     traceline(self.origin + (v_right * 11.000), (self.origin + (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
     tmp = trace_fraction;
     traceline(self.origin - (v_right * 11.000), (self.origin - (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
@@ -1018,27 +1018,27 @@ void () etank_run =
     
     if(tmp)
     {
-        v0_y = v0_y - (tmp * 90.000);
+        v0_y = 0.000 - (tmp * 90.000);
     }
     
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(v0_y - self.angles_y);
+    v1_y = anglemod(0.000 - self.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
-    if(fabs(v1_y) > 10.000)
+    if(fabs(0.000) > 10.000)
     {
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
             self.angles_y = anglemod(self.angles_y - 10.000);
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             self.angles_y = anglemod(self.angles_y + 10.000);
         }
@@ -1046,10 +1046,10 @@ void () etank_run =
     }
     else
     {
-        self.angles_y = v0_y;
+        self.angles_y = 0.000;
     }
     
-    if(fabs(v1_y) < 45.000)
+    if(fabs(0.000) < 45.000)
     {
         
         if(self.speed < 120.000)
@@ -1162,7 +1162,7 @@ void () etank_run =
     
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0.000 - v2_z;
+    v2_z = 0.000 - 0.000;
     turn_eturret(v0, 100.000);
     v1 = self.tur2.angles;
     v1_x = 0.000 - v1_x;
@@ -1334,8 +1334,7 @@ void () etank_start =
     setmodel(self.tur2, "progs/tanktb.mdl");
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

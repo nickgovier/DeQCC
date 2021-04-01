@@ -1468,7 +1468,7 @@ void (string gibname, float dm) ThrowGib =
     new.avelocity_z = random() * 600.000;
     new.think = SUB_Remove;
     new.ltime = time;
-    new.nextthink = time + TE_LAVASPLASH + (random() * TE_LAVASPLASH);
+    new.nextthink = (time + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     new.frame = MSG_BROADCAST;
     new.flags = MSG_BROADCAST;
 };

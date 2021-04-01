@@ -208,8 +208,8 @@ void () xwall_boom =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, v_y);
-    WriteCoord(MSG_BROADCAST, v_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     
     if(self.dmg)
     {
@@ -495,8 +495,8 @@ void () rway_die =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, v_y);
-    WriteCoord(MSG_BROADCAST, v_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     
     if(self.dmg)
     {

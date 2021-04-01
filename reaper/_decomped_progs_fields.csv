@@ -262,4 +262,5 @@ row,name,s_name,ofs,type,typename
 260,endpoint,46776,236,2,float
 261,teamname,46794,237,1,string
 262,healamount,51411,238,2,float
-263,dmgtime,58588,239,2,float
+263,hit_z,55059,239,2,float
+264,dmgtime,58600,240,2,float

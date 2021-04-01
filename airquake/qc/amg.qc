@@ -430,7 +430,7 @@ void () amg_aim =
     }
     
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = dir_y - self.angles_y;
+    vtemp_y = 0.000 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
@@ -446,15 +446,15 @@ void () amg_aim =
     }
     
     
-    if(vtemp_y < 0.000)
+    if(0.000 < 0.000)
     {
-        vtemp_y = vtemp_y + 360.000;
+        vtemp_y = 0.000 + 360.000;
     }
     
     
-    if(vtemp_y > 180.000)
+    if(0.000 > 180.000)
     {
-        vtemp_y = vtemp_y - 360.000;
+        vtemp_y = 0.000 - 360.000;
     }
     
     dir = vtemp;
@@ -471,19 +471,19 @@ void () amg_aim =
     }
     
     
-    if(dir_y < -15.000)
+    if(0.000 < -15.000)
     {
         dir_y = -15.000;
     }
     
     
-    if(dir_y > 15.000)
+    if(0.000 > 15.000)
     {
         dir_y = 15.000;
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + dir_y);
+    self.angles_y = anglemod(self.angles_y + 0.000);
     self.trigger_field.angles_y = self.angles_y;
     
     if(self.owner.classname != "player")
@@ -495,7 +495,7 @@ void () amg_aim =
             if(time > self.attack_finished)
             {
                 makevectors(self.trigger_field.angles);
-                v_forward_z = 0.000 - v_forward_z;
+                v_forward_z = 0.000 - 0.000;
                 dir = normalize(org - src);
                 
                 if((dir * v_forward) > 0.970)

@@ -346,11 +346,11 @@ void () ac2_steer =
     
     makevectors(stemp.angles);
     v3 = v_forward;
-    v3_z = 0.000 - v3_z;
+    v3_z = 0.000 - 0.000;
     
     if(time >= self.pausetime)
     {
-        stemp.speed = stemp.speed - (v3_z * 10.000);
+        stemp.speed = stemp.speed - (0.000 * 10.000);
     }
     
     
@@ -793,9 +793,7 @@ void () ac2_attack =
             }
             
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -823,9 +821,7 @@ void () ac2_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_amsl = self.ammo_amsl - 1.000;
-                self.ammo_nails = self.ammo_amsl - 1.000;
-                self.currentammo = self.ammo_amsl - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_amsl = self.ammo_amsl - 1.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -843,9 +839,7 @@ void () ac2_attack =
                 {
                     AC_bomb((self.enemy.origin - (v_up * 10.000)) - (v_right * 10.000), self.enemy.velocity - (v_right * 15.000), world);
                     AC_bomb((self.enemy.origin - (v_up * 10.000)) + (v_right * 10.000), self.enemy.velocity + (v_right * 15.000), world);
-                    self.ammo_bomb = self.ammo_bomb - 1.000;
-                    self.ammo_rockets = self.ammo_bomb - 1.000;
-                    self.currentammo = self.ammo_bomb - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_bomb = self.ammo_bomb - 1.000;
                     self.enemy.show_hostile = time + 1.000;
                 }
                 else
@@ -866,9 +860,7 @@ void () ac2_attack =
                         makevectors(v1);
                         AC_maverick((self.enemy.origin - (v_up * 10.000)) - (v_forward * 10.000), v_forward, self.enemy.trigger_field);
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.ammo_cells = self.ammo_smsl - 1.000;
-                        self.currentammo = self.ammo_smsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                     }
                     else
@@ -1000,14 +992,10 @@ void () start_aircraft2 =
     self.th_missile = ac2_attack;
     self.th_run = ac2_steer;
     self.th_melee = ac2_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_amsl = 4.000 * wepmulti;
-    self.ammo_nails = 4.000 * wepmulti;
-    self.ammo_bomb = 4.000 * wepmulti;
-    self.ammo_rockets = 4.000 * wepmulti;
-    self.ammo_smsl = 4.000 * wepmulti;
-    self.ammo_cells = 4.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_nails = self.ammo_amsl = 4.000 * wepmulti;
+    self.ammo_rockets = self.ammo_bomb = 4.000 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;
     Check_startlanded();
     self.oldenemy.style = 32.000;
 };

@@ -598,84 +598,84 @@ void () CheckAdminCmd =
         n = self.twonumbers - 1.000;
         p = find(world, classname, "player");
         
-        if((p != world) && (n > 0.000))
+        while((p != world) && (n > 0.000))
         {
             p = find(p, classname, "player");
             n = n - 1.000;
         }
         
-    }
-    
-    if(p != world)
-    {
-        sprint(p, "\n\nYou have been kicked.\nGo abuse somewhere else.\n");
-        stuffcmd(p, "disconnect\n");
-        bprint(p.netname);
-        bprint(" was kicked by ");
-        bprint(self.netname);
-        bprint("\n");
-    }
-    else
-    {
-        sprint(self, "Can't kick #");
-        st = ftos(self.twonumbers);
-        sprint(self, st);
-        sprint(self, "\n");
-    }
-    
-}
-else
-{
-    if(self.accessparm == 2.000)
-    {
-        n2 = self.twonumbers;
-        serverflags = (serverflags - (serverflags & 255.000)) + n2;
-        sprint(self, "running map cfg file..\n");
-        
-        if(n2 >= cvar("noexit"))
+        if(p != world)
         {
-            n2 = 0.000;
-        }
-        
-        localcmd("exec map");
-        n = floor(n2 * 0.100);
-        st = ftos(n);
-        localcmd(st);
-        n = n2 - (n * 10.000);
-        st = ftos(n);
-        localcmd(st);
-        localcmd(".cfg\n");
-    }
-    else
-    {
-        if(self.accessparm == 3.000)
-        {
-            st = ftos(self.twonumbers);
-            localcmd("timelimit ");
-            localcmd(st);
-            localcmd("\n");
-            sprint(self, "Timelimit set\n");
+            sprint(p, "\n\nYou have been kicked.\nGo abuse somewhere else.\n");
+            stuffcmd(p, "disconnect\n");
+            bprint(p.netname);
+            bprint(" was kicked by ");
+            bprint(self.netname);
+            bprint("\n");
         }
         else
         {
-            if(self.accessparm == 4.000)
+            sprint(self, "Can't kick #");
+            st = ftos(self.twonumbers);
+            sprint(self, st);
+            sprint(self, "\n");
+        }
+        
+    }
+    else
+    {
+        if(self.accessparm == 2.000)
+        {
+            n2 = self.twonumbers;
+            serverflags = (serverflags - (serverflags & 255.000)) + n2;
+            sprint(self, "running map cfg file..\n");
+            
+            if(n2 >= cvar("noexit"))
+            {
+                n2 = 0.000;
+            }
+            
+            localcmd("exec map");
+            n = floor(n2 * 0.100);
+            st = ftos(n);
+            localcmd(st);
+            n = n2 - (n * 10.000);
+            st = ftos(n);
+            localcmd(st);
+            localcmd(".cfg\n");
+        }
+        else
+        {
+            if(self.accessparm == 3.000)
             {
                 st = ftos(self.twonumbers);
-                localcmd("fraglimit ");
+                localcmd("timelimit ");
                 localcmd(st);
                 localcmd("\n");
-                sprint(self, "Fraglimit set\n");
+                sprint(self, "Timelimit set\n");
             }
             else
             {
-                
-                if(self.accessparm == 5.000)
+                if(self.accessparm == 4.000)
                 {
                     st = ftos(self.twonumbers);
-                    localcmd("temp1 ");
+                    localcmd("fraglimit ");
                     localcmd(st);
                     localcmd("\n");
-                    sprint(self, "Fraglimit changed.\n");
+                    sprint(self, "Fraglimit set\n");
+                }
+                else
+                {
+                    
+                    if(self.accessparm == 5.000)
+                    {
+                        st = ftos(self.twonumbers);
+                        localcmd("temp1 ");
+                        localcmd(st);
+                        localcmd("\n");
+                        sprint(self, "Fraglimit changed.\n");
+                    }
+                    
                 }
                 
             }
@@ -684,13 +684,10 @@ else
         
     }
     
-}
-
-Adminmenu();
-self.twonumbers = 0.000;
-self.accessparm = 0.000;
-self.impulse = 0.000;
-return;
+    Adminmenu();
+    self.twonumbers = 0.000;
+    self.accessparm = 0.000;
+    self.impulse = 0.000;
+    return;
 };
 
-/* ERROR INDENTATION */

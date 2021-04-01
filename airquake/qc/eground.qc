@@ -270,11 +270,11 @@ void (vector v0, float sp_x) turn_eturret =
     if(stemp.tur1)
     {
         setorigin(self.tur1, self.origin);
-        v0_y = stemp.angles_y - v0_y;
+        v0_y = stemp.angles_y - 0.000;
         
-        if(v0_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v0_y = v0_y - 360.000;
+            v0_y = 0.000 - 360.000;
         }
         
         
@@ -283,42 +283,42 @@ void (vector v0, float sp_x) turn_eturret =
             v0_y = 0.000;
         }
         
-        v1_y = v0_y - stemp.toyview;
+        v1_y = 0.000 - stemp.toyview;
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
-            v1_y = v1_y + 360.000;
+            v1_y = 0.000 + 360.000;
         }
         
         
-        if(v1_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_y = v1_y - 360.000;
+            v1_y = 0.000 - 360.000;
         }
         
         v2_y = 0.000;
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
             v2_y = 0.000 - sp_x;
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             v2_y = sp_x;
         }
         
-        f1 = fabs(v1_y);
-        f2 = fabs(v2_y) * 0.100;
+        f1 = fabs(0.000);
+        f2 = fabs(0.000) * 0.100;
         if(f1 < f2)
         {
             v2_y = 0.000;
-            stemp.toyview = v0_y;
+            stemp.toyview = 0.000;
         }
         else
         {
-            stemp.toyview = stemp.toyview + (v2_y * 0.100);
+            stemp.toyview = stemp.toyview + (0.000 * 0.100);
         }
         
         if(stemp.toyview == 0.000)
@@ -328,7 +328,7 @@ void (vector v0, float sp_x) turn_eturret =
         else
         {
             makevectors('0.000 1.000 0.000' * stemp.toyview);
-            f1 = v_forward_y;
+            f1 = 0.000;
             f2 = v_forward_x;
             v3 = stemp.angles;
             v3_x = 0.000 - v3_x;
@@ -424,7 +424,7 @@ void (vector v0, float sp_x) turn_eturret =
         }
         
         makevectors('0.000 1.000 0.000' * stemp.toyview);
-        f1 = v_forward_y;
+        f1 = 0.000;
         f2 = v_forward_x;
         v3 = stemp.angles;
         v3_x = 0.000 - v3_x;

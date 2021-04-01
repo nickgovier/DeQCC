@@ -339,11 +339,11 @@ void () ac4_steer =
     
     makevectors(stemp.angles);
     v3 = v_forward;
-    v3_z = 0.000 - v3_z;
+    v3_z = 0.000 - 0.000;
     
     if(time >= self.pausetime)
     {
-        stemp.speed = stemp.speed - (v3_z * 6.000);
+        stemp.speed = stemp.speed - (0.000 * 6.000);
     }
     
     
@@ -848,9 +848,7 @@ void () ac4_attack =
             newmis.dmg = 50.000;
             newmis.nextthink = time + 1.000;
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -878,9 +876,7 @@ void () ac4_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_amsl = self.ammo_amsl - 1.000;
-                self.ammo_nails = self.ammo_amsl - 1.000;
-                self.currentammo = self.ammo_amsl - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_amsl = self.ammo_amsl - 1.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -898,17 +894,13 @@ void () ac4_attack =
                 {
                     AC_bomb((self.enemy.origin - (v_up * 10.000)) - (v_right * 10.000), self.enemy.velocity - (v_right * 15.000), world);
                     AC_bomb((self.enemy.origin - (v_up * 10.000)) + (v_right * 10.000), self.enemy.velocity + (v_right * 15.000), world);
-                    self.ammo_bomb = self.ammo_bomb - 1.000;
-                    self.ammo_rockets = self.ammo_bomb - 1.000;
-                    self.currentammo = self.ammo_bomb - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_bomb = self.ammo_bomb - 1.000;
                     
                     if(self.currentammo >= 1.000)
                     {
                         AC_bomb((self.enemy.origin - (v_up * 10.000)) - (v_right * 20.000), self.enemy.velocity - (v_right * 45.000), world);
                         AC_bomb((self.enemy.origin - (v_up * 10.000)) + (v_right * 20.000), self.enemy.velocity + (v_right * 45.000), world);
-                        self.ammo_bomb = self.ammo_bomb - 1.000;
-                        self.ammo_rockets = self.ammo_bomb - 1.000;
-                        self.currentammo = self.ammo_bomb - 1.000;
+                        self.currentammo = self.ammo_rockets = self.ammo_bomb = self.ammo_bomb - 1.000;
                     }
                     
                     self.enemy.show_hostile = time + 1.000;
@@ -939,9 +931,7 @@ void () ac4_attack =
                         }
                         
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.ammo_cells = self.ammo_smsl - 1.000;
-                        self.currentammo = self.ammo_smsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                     }
                     else
@@ -1076,14 +1066,10 @@ void () start_aircraft4 =
     self.th_missile = ac4_attack;
     self.th_run = ac4_steer;
     self.th_melee = ac4_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_amsl = 2.000 * wepmulti;
-    self.ammo_nails = 2.000 * wepmulti;
-    self.ammo_bomb = 6.000 * wepmulti;
-    self.ammo_rockets = 6.000 * wepmulti;
-    self.ammo_smsl = 6.000 * wepmulti;
-    self.ammo_cells = 6.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_nails = self.ammo_amsl = 2.000 * wepmulti;
+    self.ammo_rockets = self.ammo_bomb = 6.000 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 6.000 * wepmulti;
     Check_startlanded();
     self.oldenemy.style = 32.000;
 };

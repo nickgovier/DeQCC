@@ -598,13 +598,12 @@ void () he1_steer =
             v1 = self.v_angle;
             v2 = stemp.angles;
             v3 = v1 - v2;
-            v3_x = 0.000;
-            v3_z = 0.000;
+            v3_z = v3_x = 0.000;
             makevectors(v3);
             tmp = v_forward_x;
             v0_x = v0_x - (40.000 * tmp);
-            tmp = v_forward_y;
-            v0_z = v0_z - (40.000 * tmp);
+            tmp = 0.000;
+            v0_z = 0.000 - (40.000 * tmp);
         }
         
         
@@ -658,11 +657,11 @@ void () he1_steer =
         }
         
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(v0_y - stemp.angles_y);
+        v1_y = anglemod(0.000 - stemp.angles_y);
         
-        if(v1_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_y = v1_y - 360.000;
+            v1_y = 0.000 - 360.000;
         }
         
         v1_x = v0_x - stemp.angles_x;
@@ -687,71 +686,71 @@ void () he1_steer =
         }
         
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
-            v2_y = ;
+            v2_y = -110.000;
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             v2_y = 110.000;
         }
         
-        if(fabs(v1_y) < (frametime * 110.000))
+        if(fabs(0.000) < (frametime * 110.000))
         {
             v2_y = 0.000;
-            stemp.angles_y = v0_y;
+            stemp.angles_y = 0.000;
         }
         else
         {
             stemp.angles_y = anglemod(stemp.angles_y);
         }
         
-        v0_z = v0_z - ((v2_y * fabs(stemp.angles_x)) * 0.010);
-        v0_z = v0_z + (45.000 * self.lefty);
+        v0_z = 0.000 - ((0.000 * fabs(stemp.angles_x)) * 0.010);
+        v0_z = 0.000 + (45.000 * self.lefty);
         
-        if(v0_z < -45.000)
+        if(0.000 < -45.000)
         {
             v0_z = -45.000;
         }
         
         
-        if(v0_z > 45.000)
+        if(0.000 > 45.000)
         {
             v0_z = 45.000;
         }
         
-        v1_z = v0_z - stemp.angles_z;
+        v1_z = 0.000 - stemp.angles_z;
         
-        if(v1_z < 0.000)
+        if(0.000 < 0.000)
         {
             v2_z = -100.000;
             
-            if(v2_z < (v1_z * 10.000))
+            if(0.000 < (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(v1_z > 0.000)
+        if(0.000 > 0.000)
         {
             v2_z = 100.000;
             
-            if(v2_z > (v1_z * 10.000))
+            if(0.000 > (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(fabs(v1_z) < (v2_z * frametime))
+        if(fabs(0.000) < (0.000 * frametime))
         {
             v2_z = 0.000;
-            stemp.angles_z = 0.000 - (v2_y * 0.300);
+            stemp.angles_z = 0.000 - (0.000 * 0.300);
         }
         
         stemp.avelocity = v2;
@@ -815,7 +814,7 @@ void () he1_steer =
     }
     else
     {
-        v3 = (v_up * ((20.000 * stemp.thru) / v_up_z)) - '0.000 0.000 40.000';
+        v3 = (v_up * ((20.000 * stemp.thru) / 0.000)) - '0.000 0.000 40.000';
     }
     
     
@@ -1187,9 +1186,7 @@ void () he1_attack =
             
             AC_spike(self.enemy.origin + (v1 * 10.000), v2, world);
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -1216,9 +1213,7 @@ void () he1_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_rock = self.ammo_rock - 1.000;
-                self.ammo_nails = self.ammo_rock - 1.000;
-                self.currentammo = self.ammo_rock - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_rock = self.ammo_rock - 1.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -1245,9 +1240,7 @@ void () he1_attack =
                     }
                     
                     self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                    self.ammo_amsl = self.ammo_amsl - 1.000;
-                    self.ammo_rockets = self.ammo_amsl - 1.000;
-                    self.currentammo = self.ammo_amsl - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_amsl = self.ammo_amsl - 1.000;
                     self.enemy.show_hostile = time + 1.000;
                 }
                 else
@@ -1267,9 +1260,7 @@ void () he1_attack =
                         v2 = AC_aim(0.930, 2000.000);
                         AC_hellfire((self.enemy.origin - (v_up * 10.000)) - (v1 * 10.000), v1, self.enemy.trigger_field);
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.ammo_cells = self.ammo_smsl - 1.000;
-                        self.currentammo = self.ammo_smsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                     }
                     else
@@ -1395,14 +1386,10 @@ void () start_helo1 =
     self.th_missile = he1_attack;
     self.th_run = he1_steer;
     self.th_melee = he1_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_rock = 16.000 * wepmulti;
-    self.ammo_nails = 16.000 * wepmulti;
-    self.ammo_amsl = 4.000 * wepmulti;
-    self.ammo_rockets = 4.000 * wepmulti;
-    self.ammo_smsl = 4.000 * wepmulti;
-    self.ammo_cells = 4.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_nails = self.ammo_rock = 16.000 * wepmulti;
+    self.ammo_rockets = self.ammo_amsl = 4.000 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;
     Check_startlanded();
 };
 

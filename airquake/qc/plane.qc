@@ -272,12 +272,12 @@ void () plane_upright =
     
     if(fabs(v1_x) > 90.000)
     {
-        v1_y = anglemod(v1_y + 180.000);
-        v1_z = anglemod(v1_z + 180.000);
+        v1_y = anglemod(0.000 + 180.000);
+        v1_z = anglemod(0.000 + 180.000);
         
-        if(v1_z > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_z = v1_z - 360.000;
+            v1_z = 0.000 - 360.000;
         }
         
         stemp.avelocity = '0.000 0.000 0.000' - stemp.avelocity;
@@ -293,15 +293,15 @@ void () plane_upright =
     }
     
     
-    if(fabs(v1_z) > 180.000)
+    if(fabs(0.000) > 180.000)
     {
-        if(v1_z > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_z = v1_z - 360.000;
+            v1_z = 0.000 - 360.000;
         }
         else
         {
-            v1_z = v1_z + 360.000;
+            v1_z = 0.000 + 360.000;
         }
         
     }
@@ -479,17 +479,17 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
     local vector v3;
     stemp = self.enemy;
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(v0_y - stemp.angles_y);
+    v1_y = anglemod(0.000 - stemp.angles_y);
     
-    if(v1_y > 180.000)
+    if(0.000 > 180.000)
     {
-        v1_y = v1_y - 360.000;
+        v1_y = 0.000 - 360.000;
     }
     
     v1_x = v0_x - stemp.angles_x;
-    fabs(v1_y);
+    fabs(0.000);
     
-    if((fabs(v1_y) > 90.000) && ((fabs(stemp.angles_x + v0_x)) > (180.000 - (fabs(stemp.angles_x + v0_x)))))
+    if((fabs(0.000) > 90.000) && ((fabs(stemp.angles_x + v0_x)) > (180.000 - (fabs(stemp.angles_x + v0_x)))))
     {
         if(v0_x >= 0.000)
         {
@@ -500,13 +500,13 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
             v0_x = -180.000 - v0_x;
         }
         
-        v0_y = anglemod(v0_y + 180.000);
+        v0_y = anglemod(0.000 + 180.000);
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(v0_y - stemp.angles_y);
+        v1_y = anglemod(0.000 - stemp.angles_y);
         
-        if(v1_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_y = v1_y - 360.000;
+            v1_y = 0.000 - 360.000;
         }
         
         v1_x = v0_x - stemp.angles_x;
@@ -532,51 +532,51 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
         stemp.angles_x = v0;
     }
     
-    v2_y = v1_y * 5.000;
+    v2_y = 0.000 * 5.000;
     
-    if(v2_y < (0.000 - sp_y))
+    if(0.000 < (0.000 - sp_y))
     {
         v2_y = 0.000 - sp_y;
     }
     
     
-    if(v2_y > sp_y)
+    if(0.000 > sp_y)
     {
         v2_y = sp_y;
     }
     
-    fabs(v1_y);
-    if(fabs(v2_y) < (frametime * fabs(v2_y)))
+    fabs(0.000);
+    if(fabs(0.000) < (frametime * fabs(0.000)))
     {
         v2_y = 0.000;
-        stemp.angles_y = v0_y;
+        stemp.angles_y = 0.000;
     }
     else
     {
         stemp.angles_y = anglemod(stemp.angles_y);
     }
     
-    v1_z = (0.000 - v2_y) - stemp.angles_z;
+    v1_z = (0.000 - 0.000) - stemp.angles_z;
     
-    if(v1_z < 0.000)
+    if(0.000 < 0.000)
     {
         v2_z = -200.000;
         
-        if(v2_z < (v1_z * 10.000))
+        if(0.000 < (0.000 * 10.000))
         {
-            v2_z = v1_z * 10.000;
+            v2_z = 0.000 * 10.000;
         }
         
     }
     
     
-    if(v1_z > 0.000)
+    if(0.000 > 0.000)
     {
         v2_z = 200.000;
         
-        if(v2_z > (v1_z * 10.000))
+        if(0.000 > (0.000 * 10.000))
         {
-            v2_z = v1_z * 10.000;
+            v2_z = 0.000 * 10.000;
         }
         
     }
@@ -587,19 +587,19 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
         v2_z = self.lefty * 200.000;
     }
     
-    fabs(v1_z);
+    fabs(0.000);
     
-    if(fabs(v2_z) < (frametime * fabs(v2_z)))
+    if(fabs(0.000) < (frametime * fabs(0.000)))
     {
         v2_z = 0.000;
-        stemp.angles_z = 0.000 - v2_y;
+        stemp.angles_z = 0.000 - 0.000;
     }
     
     
     if(self.lefty)
     {
         makevectors('0.000 -1.000 0.000' * stemp.angles_z);
-        v2_y = v_forward_y * sp_y;
+        v2_y = 0.000 * sp_y;
     }
     
     
@@ -866,8 +866,7 @@ void (float sp_x, float sp_y, float sp_st) Steer_plane =
         else
         {
             stemp.origin_z = (stemp.groundentity.origin_z + stemp.groundentity.maxs_z) + 16.000;
-            stemp.angles_x = 0.000;
-            stemp.angles_z = 0.000;
+            stemp.angles_z = stemp.angles_x = 0.000;
             stemp.velocity_z = 0.000;
             traceline(stemp.origin, stemp.origin + '0.000 0.000 -64.000', FALSE, self);
             
@@ -948,8 +947,7 @@ void () Check_startlanded =
         stemp.speed = 0.000;
         stemp.thru = 0.000;
         stemp.origin_z = (stemp.groundentity.origin_z + stemp.groundentity.maxs_z) + 16.000;
-        stemp.angles_x = 0.000;
-        stemp.angles_z = 0.000;
+        stemp.angles_z = stemp.angles_x = 0.000;
         stemp.velocity = '0.000 0.000 0.000';
     }
     

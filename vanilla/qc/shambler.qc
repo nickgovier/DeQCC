@@ -591,7 +591,7 @@ void () sham_smash10 = [44.000, sham_smash11]
         return;
     }
     
-    ldmg = (random() + random() + random()) * 40.000;
+    ldmg = ((random() + random()) + random()) * 40.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     SpawnMeatSpray(self.origin + (v_forward * SECRET_YES_SHOOT), (crandom() * 100.000) * v_right);
@@ -688,7 +688,7 @@ void (float side) ShamClaw =
         return;
     }
     
-    ldmg = (random() + random() + random()) * 20.000;
+    ldmg = ((random() + random()) + random()) * 20.000;
     T_Damage(self.enemy, self, self, ldmg);
     sound(self, CHAN_VOICE, "shambler/smack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     

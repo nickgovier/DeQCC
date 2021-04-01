@@ -112,7 +112,7 @@ vector (float minim, float maxdist) Drone_aim =
     f2 = minim;
     makevectors(self.angles);
     v1 = v_forward;
-    v1_z = 0.000 - v1_z;
+    v1_z = 0.000 - 0.000;
     e = findradius(self.origin, maxdist);
     
     while(e)
@@ -644,8 +644,7 @@ void () he_movetogoal =
                 
                 if((e.classname == "monster_helo") && (e.movetarget == self.movetarget))
                 {
-                    self.goalentity = find(world, targetname, self.goalentity.target);
-                    self.movetarget = find(world, targetname, self.goalentity.target);
+                    self.movetarget = self.goalentity = find(world, targetname, self.goalentity.target);
                 }
                 
             }
@@ -683,14 +682,12 @@ void () he_movetogoal =
             e = find(world, targetname, e.target);
             tmp = 0.000;
             
-            if((e != e2) && (tmp < 8.000))
+            while((e != e2) && (tmp < 8.000))
             {
                 tmp = tmp + 1.000;
                 if((e != world) && visible(e))
                 {
-                    self.movetarget = e;
-                    self.goalentity = e;
-                    e2 = e;
+                    e2 = self.goalentity = self.movetarget = e;
                 }
                 else
                 {
@@ -707,202 +704,197 @@ void () he_movetogoal =
             
         }
         
-    }
-    
-    
-    if(self.lefty < 0.000)
-    {
-        self.lefty = random() > 0.500;
-    }
-    
-    
-    if(time > self.search_time)
-    {
-        self.lefty = 1.000 - self.lefty;
-        self.search_time = time + 30.000;
-    }
-    
-    if(self.lefty)
-    {
-        v0_y = anglemod(v0_y + 90.000);
-    }
-    else
-    {
-        v0_y = anglemod(v0_y - 90.000);
-    }
-    
-}
-else
-{
-    self.lefty = -1.000;
-}
-
-self.thru = 2.000;
-v2 = v1 - self.origin;
-v2_z = 0.000;
-tmp2 = vlen(v2);
-
-if((self.origin_z - v1_z) > (tmp2 * 1.000))
-{
-    self.thru = 1.000;
-}
-
-
-if((v1_z - self.origin_z) > (tmp2 * 0.500))
-{
-    self.thru = 3.000;
-}
-
-
-if(((self.origin_z - v1_z) > (tmp2 * 2.000)) && ((fabs(self.origin_z - v1_z)) > 128.000))
-{
-    self.thru = 0.000;
-}
-
-
-if((v1_z - self.origin_z) > (tmp2 * 1.000))
-{
-    self.thru = 4.000;
-}
-
-v2 = v0;
-v0_x = 0.000;
-v0_z = 0.000;
-v1 = v2;
-v2 = v1 - self.angles;
-v2_x = 0.000;
-v2_z = 0.000;
-if(self.goalentity == self.enemy)
-{
-    if(tmp2 < 256.000)
-    {
-        if((fabs(self.origin_z - self.enemy.origin_z)) < (256.000 - tmp2))
+        
+        if(self.lefty < 0.000)
         {
-            if(self.origin_z > self.enemy.origin_z)
-            {
-                self.thru = 4.000;
-            }
-            else
-            {
-                self.thru = 0.000;
-            }
-            
+            self.lefty = random() > 0.500;
+        }
+        
+        
+        if(time > self.search_time)
+        {
+            self.lefty = 1.000 - self.lefty;
+            self.search_time = time + 30.000;
+        }
+        
+        if(self.lefty)
+        {
+            v0_y = anglemod(0.000 + 90.000);
         }
         else
         {
-            if(self.origin_z > self.enemy.origin_z)
-            {
-                self.thru = 0.000;
-            }
-            else
-            {
-                self.thru = 4.000;
-            }
-            
+            v0_y = anglemod(0.000 - 90.000);
         }
         
-        tmp2 = (tmp2 * 0.400) - 57.000;
     }
     else
     {
-        tmp2 = 45.000;
+        self.lefty = -1.000;
     }
     
-}
-else
-{
-    if(tmp2 < 256.000)
+    self.thru = 2.000;
+    v2 = v1 - self.origin;
+    v2_z = 0.000;
+    tmp2 = vlen(v2);
+    
+    if((self.origin_z - 0.000) > (tmp2 * 1.000))
     {
-        tmp2 = 6.000 + (tmp2 * 0.150);
+        self.thru = 1.000;
     }
-    else
+    
+    
+    if((0.000 - self.origin_z) > (tmp2 * 0.500))
     {
-        tmp2 = 45.000;
-    }
-    
-    tmp = anglemod(v0_y - self.angles_y);
-    
-    if(tmp > 180.000)
-    {
-        tmp = tmp - 360.000;
+        self.thru = 3.000;
     }
     
     
-    if(fabs(tmp) > 12.000)
-    {
-        tmp2 = 0.000;
-    }
-    
-}
-
-makevectors(v2);
-tmp = v_forward_x;
-v0_x = v0_x - (tmp2 * tmp);
-tmp = v_forward_y;
-v0_z = v0_z - (tmp2 * tmp);
-v1 = self.angles_y * '0.000 1.000 0.000';
-makevectors(v1);
-v3 = self.origin + (self.velocity * 0.800);
-if(self.goalentity == self.enemy)
-{
-    tmp = 128.000;
-}
-else
-{
-    tmp = 32.000;
-}
-
-
-if((self.goalentity == self.enemy) || ((vlen(self.goalentity.origin - self.origin)) > 64.000))
-{
-    traceline(self.origin, v3 + (v_forward * tmp), TRUE, world);
-    
-    if(trace_fraction < 1.000)
-    {
-        v0_x = 45.000;
-    }
-    
-    traceline(self.origin, v3 - (v_forward * tmp), TRUE, world);
-    
-    if(trace_fraction < 1.000)
-    {
-        v0_x = -45.000;
-    }
-    
-    traceline(self.origin, v3 + (v_right * tmp), TRUE, world);
-    
-    if(trace_fraction < 1.000)
-    {
-        v0_z = -45.000;
-    }
-    
-    traceline(self.origin, v3 - (v_right * tmp), TRUE, world);
-    
-    if(trace_fraction < 1.000)
-    {
-        v0_z = 45.000;
-    }
-    
-    traceline(self.origin, v3 + (v_up * tmp), TRUE, world);
-    
-    if(trace_fraction < 1.000)
+    if(((self.origin_z - 0.000) > (tmp2 * 2.000)) && ((fabs(self.origin_z - 0.000)) > 128.000))
     {
         self.thru = 0.000;
     }
     
-    traceline(self.origin, v3 - (v_up * tmp), TRUE, world);
     
-    if(trace_fraction < 1.000)
+    if((0.000 - self.origin_z) > (tmp2 * 1.000))
     {
         self.thru = 4.000;
     }
     
-}
-
-turn_hedrone(v0);
+    v2 = v0;
+    v0_z = v0_x = 0.000;
+    v1 = v2;
+    v2 = v1 - self.angles;
+    v2_z = v2_x = 0.000;
+    if(self.goalentity == self.enemy)
+    {
+        if(tmp2 < 256.000)
+        {
+            if((fabs(self.origin_z - self.enemy.origin_z)) < (256.000 - tmp2))
+            {
+                if(self.origin_z > self.enemy.origin_z)
+                {
+                    self.thru = 4.000;
+                }
+                else
+                {
+                    self.thru = 0.000;
+                }
+                
+            }
+            else
+            {
+                if(self.origin_z > self.enemy.origin_z)
+                {
+                    self.thru = 0.000;
+                }
+                else
+                {
+                    self.thru = 4.000;
+                }
+                
+            }
+            
+            tmp2 = (tmp2 * 0.400) - 57.000;
+        }
+        else
+        {
+            tmp2 = 45.000;
+        }
+        
+    }
+    else
+    {
+        if(tmp2 < 256.000)
+        {
+            tmp2 = 6.000 + (tmp2 * 0.150);
+        }
+        else
+        {
+            tmp2 = 45.000;
+        }
+        
+        tmp = anglemod(0.000 - self.angles_y);
+        
+        if(tmp > 180.000)
+        {
+            tmp = tmp - 360.000;
+        }
+        
+        
+        if(fabs(tmp) > 12.000)
+        {
+            tmp2 = 0.000;
+        }
+        
+    }
+    
+    makevectors(v2);
+    tmp = v_forward_x;
+    v0_x = v0_x - (tmp2 * tmp);
+    tmp = 0.000;
+    v0_z = 0.000 - (tmp2 * tmp);
+    v1 = self.angles_y * '0.000 1.000 0.000';
+    makevectors(v1);
+    v3 = self.origin + (self.velocity * 0.800);
+    if(self.goalentity == self.enemy)
+    {
+        tmp = 128.000;
+    }
+    else
+    {
+        tmp = 32.000;
+    }
+    
+    
+    if((self.goalentity == self.enemy) || ((vlen(self.goalentity.origin - self.origin)) > 64.000))
+    {
+        traceline(self.origin, v3 + (v_forward * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            v0_x = 45.000;
+        }
+        
+        traceline(self.origin, v3 - (v_forward * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            v0_x = -45.000;
+        }
+        
+        traceline(self.origin, v3 + (v_right * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            v0_z = -45.000;
+        }
+        
+        traceline(self.origin, v3 - (v_right * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            v0_z = 45.000;
+        }
+        
+        traceline(self.origin, v3 + (v_up * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            self.thru = 0.000;
+        }
+        
+        traceline(self.origin, v3 - (v_up * tmp), TRUE, world);
+        
+        if(trace_fraction < 1.000)
+        {
+            self.thru = 4.000;
+        }
+        
+    }
+    
+    turn_hedrone(v0);
 };
 
-/* ERROR INDENTATION */
 // turn_hedrone
 // function begins at statement 30398, parm_start=21071
 // OP_LOAD_F	28	177	21083
@@ -1113,11 +1105,11 @@ void (vector v0) turn_hedrone =
         }
         
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(v0_y - self.angles_y);
+        v1_y = anglemod(0.000 - self.angles_y);
         
-        if(v1_y > 180.000)
+        if(0.000 > 180.000)
         {
-            v1_y = v1_y - 360.000;
+            v1_y = 0.000 - 360.000;
         }
         
         v1_x = v0_x - self.angles_x;
@@ -1142,70 +1134,70 @@ void (vector v0) turn_hedrone =
         }
         
         
-        if(v1_y < 0.000)
+        if(0.000 < 0.000)
         {
-            v2_y = ;
+            v2_y = -110.000;
         }
         
         
-        if(v1_y > 0.000)
+        if(0.000 > 0.000)
         {
             v2_y = 110.000;
         }
         
-        if(fabs(v1_y) < 11.000)
+        if(fabs(0.000) < 11.000)
         {
             v2_y = 0.000;
-            self.angles_y = v0_y;
+            self.angles_y = 0.000;
         }
         else
         {
             self.angles_y = anglemod(self.angles_y);
         }
         
-        v0_z = v0_z - ((v2_y * fabs(self.angles_x)) * 0.010);
+        v0_z = 0.000 - ((0.000 * fabs(self.angles_x)) * 0.010);
         
-        if(v0_z < -45.000)
+        if(0.000 < -45.000)
         {
             v0_z = -45.000;
         }
         
         
-        if(v0_z > 45.000)
+        if(0.000 > 45.000)
         {
             v0_z = 45.000;
         }
         
-        v1_z = v0_z - self.angles_z;
+        v1_z = 0.000 - self.angles_z;
         
-        if(v1_z < 0.000)
+        if(0.000 < 0.000)
         {
             v2_z = -100.000;
             
-            if(v2_z < (v1_z * 10.000))
+            if(0.000 < (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(v1_z > 0.000)
+        if(0.000 > 0.000)
         {
             v2_z = 100.000;
             
-            if(v2_z > (v1_z * 10.000))
+            if(0.000 > (0.000 * 10.000))
             {
-                v2_z = v1_z * 10.000;
+                v2_z = 0.000 * 10.000;
             }
             
         }
         
         
-        if(fabs(v1_z) < (v2_z * frametime))
+        if(fabs(0.000) < (0.000 * frametime))
         {
             v2_z = 0.000;
-            self.angles_z = 0.000 - (v2_y * 0.300);
+            self.angles_z = 0.000 - (0.000 * 0.300);
         }
         
         self.avelocity = v2;
@@ -1248,7 +1240,7 @@ void (vector v0) turn_hedrone =
     }
     else
     {
-        v3 = (v_up * ((20.000 * self.thru) / v_up_z)) - '0.000 0.000 40.000';
+        v3 = (v_up * ((20.000 * self.thru) / 0.000)) - '0.000 0.000 40.000';
     }
     
     
@@ -1745,9 +1737,9 @@ void () hedrone_stand =
     traceline(self.origin, self.origin - (v_forward * 128.000), TRUE, world);
     v0_x = (v0_x - 45.000) + (trace_fraction * 45.000);
     traceline(self.origin, self.origin + (v_right * 128.000), TRUE, world);
-    v0_z = (v0_z - 45.000) + (trace_fraction * 45.000);
+    v0_z = (0.000 - 45.000) + (trace_fraction * 45.000);
     traceline(self.origin, self.origin - (v_right * 128.000), TRUE, world);
-    v0_z = (v0_z + 45.000) - (trace_fraction * 45.000);
+    v0_z = (0.000 + 45.000) - (trace_fraction * 45.000);
     traceline(self.origin, self.origin + (v_up * 128.000), TRUE, world);
     
     if((trace_fraction < 1.000) || (self.velocity_z > 40.000))
@@ -2554,8 +2546,7 @@ void () hedrone_start =
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

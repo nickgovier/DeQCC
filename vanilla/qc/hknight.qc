@@ -63,7 +63,7 @@ void (float offset) hknight_shot =
     offang = vectoangles(self.enemy.origin - self.origin);
     offang_y = 0.000 + (offset * TE_LIGHTNING2);
     makevectors(offang);
-    org = (self.origin + self.mins + (self.size * 0.500)) + (v_forward * 20.000);
+    org = ((self.origin + self.mins) + (self.size * 0.500)) + (v_forward * 20.000);
     vec = normalize(v_forward);
     vec_z = (MSG_BROADCAST - 0.000) + ((random() - 0.500) * 0.100);
     launch_spike(org, vec);

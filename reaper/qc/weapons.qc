@@ -542,8 +542,7 @@ void () W_FireShotgun =
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", TRUE, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
-    self.ammo_shells = self.ammo_shells - TRUE;
-    self.currentammo = self.ammo_shells - TRUE;
+    self.currentammo = self.ammo_shells = self.ammo_shells - TRUE;
     if(self.classname == "dmbot")
     {
         dir = botaim();
@@ -603,8 +602,7 @@ void () W_FireSuperShotgun =
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", TRUE, ATTN_NORM);
     self.punchangle_x = CONTENT_SLIME;
-    self.ammo_shells = self.ammo_shells - FL_SWIM;
-    self.currentammo = self.ammo_shells - FL_SWIM;
+    self.currentammo = self.ammo_shells = self.ammo_shells - FL_SWIM;
     dir = aim(self, 100000.000);
     
     if(self.classname == "dmbot")
@@ -881,8 +879,7 @@ void () W_FireRocket =
     local entity missile;
     local entity mpuff;
     local vector bfwd;
-    self.ammo_rockets = self.ammo_rockets - TRUE;
-    self.currentammo = self.ammo_rockets - TRUE;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", TRUE, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -1027,8 +1024,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     f_y = f_x;
     f_z = FALSE;
     f = f * FL_INWATER;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -1243,8 +1239,7 @@ void () W_FireLightning =
     }
     
     self.punchangle_x = CONTENT_SOLID;
-    self.ammo_cells = self.ammo_cells - TRUE;
-    self.currentammo = self.ammo_cells - TRUE;
+    self.currentammo = self.ammo_cells = self.ammo_cells - TRUE;
     org = self.origin + '0.000 0.000 16.000';
     dir = v_forward;
     
@@ -1453,8 +1448,7 @@ void () W_FireGrenade =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - TRUE;
-    self.currentammo = self.ammo_rockets - TRUE;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", TRUE, ATTN_NORM);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
@@ -1599,8 +1593,7 @@ void () W_FireSuperSpikes =
     local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", TRUE, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - FL_SWIM;
-    self.currentammo = self.ammo_nails - FL_SWIM;
+    self.currentammo = self.ammo_nails = self.ammo_nails - FL_SWIM;
     dir = aim(self, 1000.000);
     
     if(self.classname == "dmbot")
@@ -1704,8 +1697,7 @@ void (float ox) W_FireSpikes =
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", TRUE, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - TRUE;
-    self.currentammo = self.ammo_nails - TRUE;
+    self.currentammo = self.ammo_nails = self.ammo_nails - TRUE;
     dir = aim(self, 1000.000);
     
     if(self.classname == "dmbot")
@@ -1717,6 +1709,7 @@ void (float ox) W_FireSpikes =
     self.punchangle_x = CONTENT_SOLID;
 };
 
+.float hit_z;
 // spike_touch
 // function begins at statement 4966, parm_start=3836
 // OP_LOAD_ENT	28	201	3837

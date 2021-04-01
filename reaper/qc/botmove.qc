@@ -662,8 +662,7 @@ float (vector middle) checkLanding =
     local float goodcnt;
     local vector spot;
     local vector center;
-    center = middle;
-    spot = middle;
+    spot = center = middle;
     spot_x = spot_x + MOVETYPE_TOSS;
     
     if(pointcontents(spot) == CONTENT_SOLID)

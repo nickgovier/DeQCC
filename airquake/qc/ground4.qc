@@ -1064,9 +1064,7 @@ void () gv4_attack =
             }
             
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.ammo_auto = self.ammo_auto - 1.000;
-            self.ammo_shells = self.ammo_auto - 1.000;
-            self.currentammo = self.ammo_auto - 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
             self.enemy.show_hostile = time + 1.000;
         }
         else
@@ -1094,9 +1092,7 @@ void () gv4_attack =
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.ammo_cell = self.ammo_cell - 1.000;
-                self.ammo_nails = self.ammo_cell - 1.000;
-                self.currentammo = self.ammo_cell - 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_cell = self.ammo_cell - 1.000;
                 self.enemy.show_hostile = time + 1.000;
             }
             else
@@ -1124,9 +1120,7 @@ void () gv4_attack =
                     }
                     
                     self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                    self.ammo_rock = self.ammo_rock - 1.000;
-                    self.ammo_rockets = self.ammo_rock - 1.000;
-                    self.currentammo = self.ammo_rock - 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_rock = self.ammo_rock - 1.000;
                     self.enemy.show_hostile = time + 1.000;
                 }
                 else
@@ -1155,9 +1149,7 @@ void () gv4_attack =
                         }
                         
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.ammo_cells = self.ammo_smsl - 1.000;
-                        self.currentammo = self.ammo_smsl - 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
                         self.enemy.show_hostile = time + 1.000;
                     }
                     else
@@ -1472,20 +1464,16 @@ void () start_groundveh4 =
     self.th_missile = gv4_attack;
     self.th_run = gv4_steer;
     self.th_melee = gv4_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_cell = 40.000 * wepmulti;
-    self.ammo_nails = 40.000 * wepmulti;
-    self.ammo_rock = 10.000 * wepmulti;
-    self.ammo_rockets = 10.000 * wepmulti;
-    self.ammo_smsl = 6.000 * wepmulti;
-    self.ammo_cells = 6.000 * wepmulti;
+    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_nails = self.ammo_cell = 40.000 * wepmulti;
+    self.ammo_rockets = self.ammo_rock = 10.000 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 6.000 * wepmulti;
     droptofloor();
     
     if(!checkbottom(self))
     {
         traceline(self.origin, self.origin + '0.000 0.000 -10000.000', TRUE, self);
-        self.origin_z = trace_endpos_z + 30.000;
+        self.origin_z = 0.000 + 30.000;
     }
     
     setorigin(self.enemy, self.origin);

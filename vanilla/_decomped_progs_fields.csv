@@ -214,5 +214,6 @@ row,name,s_name,ofs,type,typename
 212,volume,47348,189,2,float
 213,healamount,51252,190,2,float
 214,healtype,51274,191,2,float
-215,dmgtime,58250,192,2,float
-216,inpain,75065,193,2,float
+215,hit_z,54919,192,2,float
+216,dmgtime,58262,193,2,float
+217,inpain,75077,194,2,float

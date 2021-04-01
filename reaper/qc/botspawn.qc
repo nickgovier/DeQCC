@@ -108,9 +108,7 @@ void () initBotLevel =
     NOISEQUEUE = noisetarget();
     num = (serverflags & BOTS) / FL_INWATER;
     serverflags = (serverflags - (serverflags & BOTS)) - INITLEVEL;
-    NUMBOTS = FALSE;
-    NUMPATHS = FALSE;
-    NUMPATHERS = FALSE;
+    NUMPATHERS = NUMPATHS = NUMBOTS = FALSE;
     offset = TRUE;
     
     while(num > FALSE)

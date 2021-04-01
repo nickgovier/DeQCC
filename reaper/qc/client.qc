@@ -173,13 +173,10 @@ void () SetChangeParms =
     }
     
     e = find(world, classname, "dmbot");
-    offset = TRUE;
-    toffset = TRUE;
-    parm10 = FALSE;
-    parm11 = FALSE;
+    toffset = offset = TRUE;
+    parm11 = parm10 = FALSE;
     team1 = MUST_HAVE;
-    nb = FALSE;
-    nt = FALSE;
+    nt = nb = FALSE;
     
     while(e)
     {
@@ -241,9 +238,7 @@ void () SetNewParms =
     parm2 = MUST_HAVE;
     parm3 = FALSE;
     parm4 = 25.000;
-    parm5 = FALSE;
-    parm6 = FALSE;
-    parm7 = FALSE;
+    parm7 = parm6 = parm5 = FALSE;
     parm8 = TRUE;
     parm9 = FALSE;
 };
@@ -761,8 +756,7 @@ void () execute_changelevel =
     while(other != world)
     {
         other.view_ofs = VEC_ORIGIN;
-        other.v_angle = pos.mangle;
-        other.angles = pos.mangle;
+        other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.nextthink = time + 0.500;
         other.takedamage = DAMAGE_NO;

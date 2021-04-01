@@ -733,8 +733,7 @@ void () finale_1 =
     while(pl != world)
     {
         pl.view_ofs = '0.000 0.000 0.000';
-        other.v_angle = pos.mangle;
-        pl.angles = pos.mangle;
+        pl.angles = other.v_angle = pos.mangle;
         pl.fixangle = TRUE;
         pl.map = self.map;
         pl.nextthink = time + 0.500;
@@ -790,8 +789,8 @@ void () finale_2 =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, o_x);
-    WriteCoord(MSG_BROADCAST, o_y);
-    WriteCoord(MSG_BROADCAST, o_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     sound(shub, CHAN_VOICE, "misc/r_tele1.wav", 1.000, ATTN_NORM);
     self.nextthink = time + 2.000;
     self.think = finale_3;
@@ -930,8 +929,8 @@ void () finale_4 =
             while(y <= 64.000)
             {
                 self.origin_x = oldo_x + x;
-                self.origin_y = oldo_y + y;
-                self.origin_z = oldo_z + z;
+                self.origin_y = 0.000 + y;
+                self.origin_z = 0.000 + z;
                 r = random();
                 if(r < 0.300)
                 {

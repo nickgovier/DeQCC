@@ -1187,8 +1187,8 @@ float (entity globaldef007692) func002460;
 entity (entity globaldef007693) func002461;
 float (entity globaldef007702, entity globaldef007703) func002462;
 float (entity globaldef007728, entity globaldef007729, entity globaldef007730) func002463;
-void (entity globaldef007841, entity globaldef007842) func002466;
-void (entity globaldef007843, entity globaldef007844) func002467;
+float (entity globaldef007841, entity globaldef007842) func002466;
+float (entity globaldef007843, entity globaldef007844) func002467;
 void (entity globaldef007646, vector globaldef007647, float globaldef007651, float globaldef007652) func002453;
 float (entity globaldef007657, entity globaldef007658) func002454;
 entity (entity globaldef007660) func002455;
@@ -1208,7 +1208,7 @@ float (entity globaldef007998, float globaldef007999) func002483;
 float (entity globaldef008024) func002489;
 entity (entity globaldef008038, entity globaldef008039) func002491;
 entity (entity globaldef008046, entity globaldef008047) func002492;
-void (entity globaldef008101) func002497;
+entity (entity globaldef008101) func002497;
 entity (entity globaldef008103) func002498;
 void (entity globaldef008110) func002499;
 void (entity globaldef008111) func002500;
@@ -1578,7 +1578,7 @@ float (vector globaldef001201) func000118 =
 // OP_CALL1	1303	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef001206) func000119 = 
+float (entity globaldef001206) func000119 = 
 {
     local vector globaldef001207;
     
@@ -1588,14 +1588,14 @@ void (entity globaldef001206) func000119 =
     }
     
     globaldef001207 = globaldef001206.origin;
-    globaldef001207_z = globaldef001206.absmin_z;
+    globaldef001210 = globaldef001206.absmin_z;
     
     if(func000118(globaldef001207))
     {
         return globaldef000192;
     }
     
-    globaldef001207_z = globaldef001206.absmax_z - globaldef000195;
+    globaldef001210 = globaldef001206.absmax_z - globaldef000195;
     return func000118(globaldef001207);
 };
 
@@ -1660,7 +1660,7 @@ entity () func000120 =
         {
             globaldef001214 = globaldef001212.origin - globaldef000001.origin;
             globaldef001214 = normalize(globaldef001214);
-            globaldef001218 = ((globaldef000032_x * globaldef001214_x) + (globaldef000032_y * globaldef001214_y)) + (globaldef000032_z * globaldef001214_z);
+            globaldef001218 = ((globaldef000032_x * globaldef001214_x) + (0.000 * 0.000)) + (0.000 * 0.000);
             
             if(globaldef001218 > globaldef001219)
             {
@@ -1859,14 +1859,13 @@ vector (float globaldef001227, float globaldef001228, float globaldef001229) fun
         }
         else
         {
-            globaldef001227 = globaldef000191;
-            globaldef001228 = globaldef000191;
+            globaldef001228 = globaldef001227 = globaldef000191;
         }
         
     }
     
     globaldef001237_x = globaldef001227;
-    globaldef001237_y = globaldef001228;
+    globaldef001239 = globaldef001228;
     return globaldef001237;
 };
 
@@ -1929,7 +1928,7 @@ void (vector globaldef001242) func000123 =
     globaldef001242 = 700.000 * globaldef001250;
     globaldef001250 = globaldef000208 * globaldef001250;
     globaldef001246 = globaldef000001.enemy.origin;
-    globaldef001246_z = globaldef000001.enemy.absmax_z - globaldef000195;
+    globaldef001249 = globaldef000001.enemy.absmax_z - globaldef000195;
     traceline(globaldef001246, globaldef001246 + globaldef001242, globaldef000191, globaldef000001.enemy);
     
     if(globaldef000056 != globaldef000003)
@@ -2092,8 +2091,7 @@ void (float globaldef001260, float globaldef001261) func000124 =
     
     if(globaldef000046 != globaldef000192)
     {
-        globaldef001260 = globaldef000191;
-        globaldef001261 = globaldef000191;
+        globaldef001261 = globaldef001260 = globaldef000191;
     }
     
     if(globaldef001260 == globaldef000191)
@@ -2121,9 +2119,9 @@ void (float globaldef001260, float globaldef001261) func000124 =
         globaldef001262 = vectoangles(globaldef000001.dest1 - globaldef000001.origin);
     }
     
-    globaldef001262_z = globaldef000191;
+    globaldef001265 = globaldef000191;
     globaldef001262_x = func000117(360.000 - globaldef001262_x);
-    globaldef001262_y = func000117(globaldef001262_y);
+    globaldef001264 = func000117(0.000);
     if(globaldef001262_x > 70.000)
     {
         globaldef001262_x = 70.000;
@@ -2146,11 +2144,11 @@ void (float globaldef001260, float globaldef001261) func000124 =
     else
     {
         globaldef001266 = func000122(globaldef000001.angles_x - globaldef001262_x, globaldef000001.mangle_x, globaldef001261);
-        globaldef000001.mangle_x = globaldef001266_y;
+        globaldef000001.mangle_x = 0.000;
         globaldef000001.angles_x = globaldef001262_x + globaldef001266_x;
-        globaldef001266 = func000122(globaldef000001.angles_y - globaldef001262_y, globaldef000001.mangle_y, globaldef001261);
-        globaldef000001.mangle_y = globaldef001266_y;
-        globaldef000001.angles_y = globaldef001262_y + globaldef001266_x;
+        globaldef001266 = func000122(globaldef000001.angles_y - 0.000, globaldef000001.mangle_y, globaldef001261);
+        globaldef000001.mangle_y = 0.000;
+        globaldef000001.angles_y = 0.000 + globaldef001266_x;
         globaldef000001.angles_x = func000117(globaldef000001.angles_x);
         globaldef000001.angles_y = func000117(globaldef000001.angles_y);
     }
@@ -2261,7 +2259,7 @@ vector (entity globaldef001278) func000128 =
 {
     local vector globaldef001279;
     globaldef001279 = globaldef001278.origin;
-    globaldef001279_z = globaldef001278.absmax_z - globaldef000195;
+    globaldef001282 = globaldef001278.absmax_z - globaldef000195;
     return globaldef001279;
 };
 
@@ -2576,8 +2574,7 @@ void (entity globaldef001284) func000129 =
     }
     
     globaldef001287 = globaldef000001.enemy.angles;
-    globaldef001287_x = globaldef000191;
-    globaldef001287_y = globaldef000191;
+    globaldef001289 = globaldef001287_x = globaldef000191;
     makevectors(globaldef001287);
     globaldef000032 = globaldef000206 * globaldef000032;
     globaldef001286 = 1000.000;
@@ -2984,18 +2981,15 @@ entity (float globaldef001322) func000133 =
     local entity globaldef001323;
     globaldef001323 = find(globaldef000003, classname, "CamSavedPos");
     
-    if((globaldef001322 > globaldef000191) && (globaldef001323 != globaldef000003))
+    while((globaldef001322 > globaldef000191) && (globaldef001323 != globaldef000003))
     {
         globaldef001323 = find(globaldef001323, classname, "CamSavedPos");
         globaldef001322 = globaldef001322 - globaldef000192;
     }
     
-}
-
-return globaldef001323;
+    return globaldef001323;
 };
 
-/* ERROR INDENTATION */
 // func000134
 // function begins at statement 1051, parm_start=1946
 // OP_STORE_V	1946	4	0
@@ -3479,8 +3473,7 @@ void () func000136 =
                                     
                                     if(globaldef001333 != globaldef000003)
                                     {
-                                        globaldef000001.enemy = globaldef001333;
-                                        globaldef000001.movetarget = globaldef001333;
+                                        globaldef000001.movetarget = globaldef000001.enemy = globaldef001333;
                                         
                                         if(globaldef000001.aflag)
                                         {
@@ -3603,46 +3596,46 @@ void () func000136 =
                                                                                 {
                                                                                     globaldef001333 = func000106(globaldef000003);
                                                                                     
-                                                                                    if((globaldef001333 != globaldef000003) && (globaldef001333 != globaldef000001.enemy))
+                                                                                    while((globaldef001333 != globaldef000003) && (globaldef001333 != globaldef000001.enemy))
                                                                                     {
                                                                                         globaldef001333 = func000106(globaldef001333);
                                                                                     }
                                                                                     
-                                                                                }
-                                                                                
-                                                                                
-                                                                                if(globaldef001333 != globaldef000003)
-                                                                                {
-                                                                                    globaldef001332 = globaldef000192;
                                                                                     
-                                                                                    while(globaldef001332)
+                                                                                    if(globaldef001333 != globaldef000003)
                                                                                     {
-                                                                                        globaldef001333 = func000106(globaldef001333);
+                                                                                        globaldef001332 = globaldef000192;
                                                                                         
-                                                                                        if(globaldef001333 == globaldef000003)
+                                                                                        while(globaldef001332)
                                                                                         {
                                                                                             globaldef001333 = func000106(globaldef001333);
-                                                                                        }
-                                                                                        
-                                                                                        if(globaldef001333 == globaldef000003)
-                                                                                        {
-                                                                                            globaldef001332 = globaldef000191;
-                                                                                        }
-                                                                                        else
-                                                                                        {
                                                                                             
-                                                                                            if(globaldef001333.deadflag == globaldef000224)
+                                                                                            if(globaldef001333 == globaldef000003)
+                                                                                            {
+                                                                                                globaldef001333 = func000106(globaldef001333);
+                                                                                            }
+                                                                                            
+                                                                                            if(globaldef001333 == globaldef000003)
+                                                                                            {
+                                                                                                globaldef001332 = globaldef000191;
+                                                                                            }
+                                                                                            else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef000001.goalentity != globaldef000003)
+                                                                                                if(globaldef001333.deadflag == globaldef000224)
                                                                                                 {
-                                                                                                    globaldef000001.goalentity = globaldef001333;
+                                                                                                    
+                                                                                                    if(globaldef000001.goalentity != globaldef000003)
+                                                                                                    {
+                                                                                                        globaldef000001.goalentity = globaldef001333;
+                                                                                                    }
+                                                                                                    
+                                                                                                    func000129(globaldef001333);
+                                                                                                    globaldef000001.delay = globaldef000004 + globaldef000213;
+                                                                                                    globaldef000001.search_time = globaldef000004 + 60.000;
+                                                                                                    globaldef001332 = globaldef000191;
                                                                                                 }
                                                                                                 
-                                                                                                func000129(globaldef001333);
-                                                                                                globaldef000001.delay = globaldef000004 + globaldef000213;
-                                                                                                globaldef000001.search_time = globaldef000004 + 60.000;
-                                                                                                globaldef001332 = globaldef000191;
                                                                                             }
                                                                                             
                                                                                         }
@@ -3689,12 +3682,9 @@ void () func000136 =
         
     }
     
-}
-
-globaldef000001.impulse = globaldef000191;
+    globaldef000001.impulse = globaldef000191;
 };
 
-/* ERROR INDENTATION */
 // func000137
 // function begins at statement 1401, parm_start=2178
 // OP_LOAD_ENT	28	181	2179
@@ -4274,14 +4264,14 @@ void () func000139 =
         traceline(globaldef000001.dest, globaldef000001.dest1, globaldef000192, globaldef000001);
         globaldef000001.dest1 = globaldef000047;
         globaldef001372_x = (globaldef000729 * random()) - 20.000;
-        globaldef001372_y = 360.000 * random();
-        globaldef001372_z = globaldef000191;
-        globaldef001382 = globaldef001372_y;
+        globaldef001374 = 360.000 * random();
+        globaldef001375 = globaldef000191;
+        globaldef001382 = 0.000;
         if(globaldef000001.origin != globaldef000001.dest)
         {
             globaldef001376 = globaldef000001.origin - globaldef000001.dest;
             globaldef001376 = vectoangles(globaldef001376);
-            globaldef001383 = globaldef001376_y;
+            globaldef001383 = 0.000;
         }
         else
         {
@@ -4568,8 +4558,7 @@ void () func000140 =
     
     if(globaldef000001.goalentity == globaldef000003)
     {
-        globaldef001386 = globaldef000191;
-        globaldef001387 = globaldef000191;
+        globaldef001387 = globaldef001386 = globaldef000191;
         
         if(globaldef000001.delay < globaldef000004)
         {
@@ -4892,7 +4881,7 @@ void () func000142 =
                 {
                     globaldef001429 = globaldef001429 + globaldef000192;
                     globaldef001405 = vectoangles(globaldef001409.origin - globaldef000001.origin);
-                    globaldef001411 = globaldef001405_y - globaldef001410;
+                    globaldef001411 = 0.000 - globaldef001410;
                     
                     while(globaldef001411 > 180.000)
                     {
@@ -4986,8 +4975,8 @@ void () func000142 =
         }
         
         globaldef001417_x = globaldef001417_x / globaldef001412;
-        globaldef001417_y = globaldef001417_y / globaldef001412;
-        globaldef001417_z = globaldef001417_z / globaldef001412;
+        globaldef001419 = 0.000 / globaldef001412;
+        globaldef001420 = 0.000 / globaldef001412;
         globaldef000001.dest1 = globaldef001417;
     }
     
@@ -7235,8 +7224,7 @@ void () func000176 =
         sound(globaldef000001, globaldef000310, "ogre/ogdrag.wav", globaldef000192, globaldef000315);
     }
     
-    globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000002.target);
-    globaldef000001.goalentity = find(globaldef000003, targetname, globaldef000002.target);
+    globaldef000001.goalentity = globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000002.target);
     globaldef000001.ideal_yaw = vectoyaw(globaldef000001.goalentity.origin - globaldef000001.origin);
     
     if(!globaldef000001.movetarget)
@@ -8156,21 +8144,21 @@ void (vector globaldef001711) ChooseTurn =
     local vector globaldef001715;
     local vector globaldef001719;
     globaldef001715 = globaldef000001.origin - globaldef001711;
-    globaldef001719_x = globaldef000051_y;
-    globaldef001719_y = globaldef000191 - globaldef000051_x;
-    globaldef001719_z = globaldef000191;
+    globaldef001719_x = 0.000;
+    globaldef001721 = globaldef000191 - globaldef000051_x;
+    globaldef001722 = globaldef000191;
     if((globaldef001715 * globaldef001719) > globaldef000191)
     {
-        globaldef001715_x = globaldef000191 - globaldef000051_y;
-        globaldef001715_y = globaldef000051_x;
+        globaldef001715_x = globaldef000191 - 0.000;
+        globaldef001717 = globaldef000051_x;
     }
     else
     {
-        globaldef001715_x = globaldef000051_y;
-        globaldef001715_y = globaldef000191 - globaldef000051_x;
+        globaldef001715_x = 0.000;
+        globaldef001717 = globaldef000191 - globaldef000051_x;
     }
     
-    globaldef001715_z = globaldef000191;
+    globaldef001718 = globaldef000191;
     globaldef000001.ideal_yaw = vectoyaw(globaldef001715);
 };
 
@@ -8242,7 +8230,7 @@ float () func001357;
 // OP_CALL0	3221	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void () func000194 = 
+float () func000194 = 
 {
     
     if(!globaldef001534)
@@ -13694,8 +13682,8 @@ void () func000251 =
         WriteByte(globaldef000325, globaldef000287);
         WriteByte(globaldef000325, globaldef000298);
         WriteCoord(globaldef000325, globaldef002033_x);
-        WriteCoord(globaldef000325, globaldef002033_y);
-        WriteCoord(globaldef000325, globaldef002033_z);
+        WriteCoord(globaldef000325, 0.000);
+        WriteCoord(globaldef000325, 0.000);
     }
     
 };
@@ -13976,8 +13964,8 @@ void (float globaldef002092, vector globaldef002093) func000260 =
         WriteByte(globaldef000325, globaldef000287);
         WriteByte(globaldef000325, globaldef000298);
         WriteCoord(globaldef000325, globaldef002101_x);
-        WriteCoord(globaldef000325, globaldef002101_y);
-        WriteCoord(globaldef000325, globaldef002101_z);
+        WriteCoord(globaldef000325, 0.000);
+        WriteCoord(globaldef000325, 0.000);
     }
     
 };
@@ -14031,12 +14019,12 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) fun
     local vector globaldef002119;
     makevectors(globaldef000001.v_angle);
     globaldef002119 = globaldef000001.origin + (globaldef000032 * globaldef000213);
-    globaldef002119_z = globaldef000001.absmin_z + (globaldef000001.size_z * 0.700);
+    globaldef002122 = globaldef000001.absmin_z + (globaldef000001.size_z * 0.700);
     func000257();
     
     while(globaldef002106 > globaldef000191)
     {
-        globaldef002115 = (globaldef002107 + ((func000249() * globaldef002111_x) * globaldef000040)) + ((func000249() * globaldef002111_y) * globaldef000036);
+        globaldef002115 = (globaldef002107 + ((func000249() * globaldef002111_x) * globaldef000040)) + ((func000249() * 0.000) * globaldef000036);
         traceline(globaldef002119, globaldef002119 + (globaldef002115 * globaldef000203), globaldef000191, globaldef000001);
         
         if(globaldef000046 != globaldef000192)
@@ -14094,8 +14082,7 @@ void () func000262 =
     sound(globaldef000001, globaldef000309, "weapons/guncock.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, globaldef000192, globaldef000741);
     globaldef000001.punchangle_x = globaldef000255;
-    globaldef000001.ammo_shells = globaldef000001.ammo_shells - globaldef000192;
-    globaldef000001.currentammo = globaldef000001.ammo_shells - globaldef000192;
+    globaldef000001.currentammo = globaldef000001.ammo_shells = globaldef000001.ammo_shells - globaldef000192;
     globaldef002125 = func000250(globaldef000001, 100000.000);
     func000247((globaldef000001.origin + '0.000 0.000 12.000') + (globaldef000032 * globaldef000196), globaldef002125);
     func000261(globaldef000209, globaldef002125, '0.040 0.040 0.000');
@@ -14164,8 +14151,7 @@ void () func000263 =
     sound(globaldef000001, globaldef000309, "weapons/shotgn2.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, globaldef000192, globaldef000741);
     globaldef000001.punchangle_x = globaldef000257;
-    globaldef000001.ammo_shells = globaldef000001.ammo_shells - globaldef000194;
-    globaldef000001.currentammo = globaldef000001.ammo_shells - globaldef000194;
+    globaldef000001.currentammo = globaldef000001.ammo_shells = globaldef000001.ammo_shells - globaldef000194;
     globaldef002132 = func000250(globaldef000001, 100000.000);
     func000247((globaldef000001.origin + '0.000 0.000 12.000') + (globaldef000032 * globaldef000196), globaldef002132);
     func000247((globaldef000001.origin + '0.000 0.000 12.000') + (globaldef000032 * globaldef000196), globaldef002132);
@@ -14432,8 +14418,7 @@ void () func000272 =
 {
     local entity globaldef002148;
     local entity globaldef002149;
-    globaldef000001.ammo_rockets = globaldef000001.ammo_rockets - globaldef000192;
-    globaldef000001.currentammo = globaldef000001.ammo_rockets - globaldef000192;
+    globaldef000001.currentammo = globaldef000001.ammo_rockets = globaldef000001.ammo_rockets - globaldef000192;
     sound(globaldef000001, globaldef000309, "weapons/sgun1.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, globaldef000192, globaldef000741);
     globaldef000001.punchangle_x = globaldef000255;
@@ -14558,12 +14543,11 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
     local vector globaldef002165;
     globaldef002165 = globaldef002157 - globaldef002153;
     normalize(globaldef002165);
-    globaldef002165_x = globaldef000191 - globaldef002165_y;
-    globaldef002165_y = globaldef002165_x;
-    globaldef002165_z = globaldef000191;
+    globaldef002165_x = globaldef000191 - 0.000;
+    globaldef002167 = globaldef002165_x;
+    globaldef002168 = globaldef000191;
     globaldef002165 = globaldef002165 * globaldef000196;
-    globaldef002163 = globaldef000003;
-    globaldef002164 = globaldef000003;
+    globaldef002164 = globaldef002163 = globaldef000003;
     traceline(globaldef002153, globaldef002157, globaldef000191, globaldef000001);
     
     if(globaldef000056.takedamage)
@@ -14743,19 +14727,18 @@ void () func000274 =
     }
     
     globaldef000001.punchangle_x = globaldef000255;
-    globaldef000001.ammo_cells = globaldef000001.ammo_cells - globaldef000192;
-    globaldef000001.currentammo = globaldef000001.ammo_cells - globaldef000192;
+    globaldef000001.currentammo = globaldef000001.ammo_cells = globaldef000001.ammo_cells - globaldef000192;
     globaldef002172 = globaldef000001.origin + '0.000 0.000 16.000';
     traceline(globaldef002172, globaldef002172 + (globaldef000032 * globaldef000723), globaldef000192, globaldef000001);
     WriteByte(globaldef000325, globaldef000287);
     WriteByte(globaldef000325, globaldef000302);
     WriteEntity(globaldef000325, globaldef000001);
     WriteCoord(globaldef000325, globaldef002172_x);
-    WriteCoord(globaldef000325, globaldef002172_y);
-    WriteCoord(globaldef000325, globaldef002172_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     WriteCoord(globaldef000325, globaldef000047_x);
-    WriteCoord(globaldef000325, globaldef000047_y);
-    WriteCoord(globaldef000325, globaldef000047_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     func000273(globaldef000001.origin, globaldef000047 + (globaldef000032 * globaldef000207), globaldef000001, globaldef000292);
 };
 
@@ -14937,8 +14920,7 @@ void () func000277 =
 {
     local entity globaldef002182;
     local entity globaldef002183;
-    globaldef000001.ammo_rockets = globaldef000001.ammo_rockets - globaldef000192;
-    globaldef000001.currentammo = globaldef000001.ammo_rockets - globaldef000192;
+    globaldef000001.currentammo = globaldef000001.ammo_rockets = globaldef000001.ammo_rockets - globaldef000192;
     sound(globaldef000001, globaldef000309, "weapons/grenade.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, globaldef000192, globaldef000741);
     globaldef000001.punchangle_x = globaldef000255;
@@ -15072,8 +15054,7 @@ void () func000279 =
     local entity globaldef002207;
     sound(globaldef000001, globaldef000309, "weapons/spike2.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, 0.100, globaldef000741);
-    globaldef000001.ammo_nails = globaldef000001.ammo_nails - globaldef000194;
-    globaldef000001.currentammo = globaldef000001.ammo_nails - globaldef000194;
+    globaldef000001.currentammo = globaldef000001.ammo_nails = globaldef000001.ammo_nails - globaldef000194;
     globaldef002203 = func000250(globaldef000001, 1000.000);
     func000278(globaldef000001.origin + '0.000 0.000 16.000', globaldef002203);
     globaldef000333.touch = func000282;
@@ -15157,13 +15138,13 @@ void (float globaldef002210) func000280 =
     
     sound(globaldef000001, globaldef000309, "weapons/rocket1i.wav", globaldef000192, globaldef000314);
     func002453(globaldef000001, globaldef000001.origin, 0.100, globaldef000741);
-    globaldef000001.ammo_nails = globaldef000001.ammo_nails - globaldef000192;
-    globaldef000001.currentammo = globaldef000001.ammo_nails - globaldef000192;
+    globaldef000001.currentammo = globaldef000001.ammo_nails = globaldef000001.ammo_nails - globaldef000192;
     globaldef002211 = func000250(globaldef000001, 1000.000);
     func000278((globaldef000001.origin + '0.000 0.000 16.000') + (globaldef000040 * globaldef002210), globaldef002211);
     globaldef000001.punchangle_x = globaldef000255;
 };
 
+.float hit_z;
 // func000281
 // function begins at statement 7394, parm_start=6103
 // OP_LOAD_ENT	28	201	6104
@@ -18038,11 +18019,11 @@ void (vector globaldef002484, vector globaldef002488, entity globaldef002492) fu
     WriteByte(globaldef000325, globaldef000302);
     WriteEntity(globaldef000325, globaldef002492);
     WriteCoord(globaldef000325, globaldef002484_x);
-    WriteCoord(globaldef000325, globaldef002484_y);
-    WriteCoord(globaldef000325, globaldef002484_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     WriteCoord(globaldef000325, globaldef002488_x);
-    WriteCoord(globaldef000325, globaldef002488_y);
-    WriteCoord(globaldef000325, globaldef002488_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
 };
 
 // func000304
@@ -18384,7 +18365,7 @@ void () func000325 =
     
     globaldef002524 = '-0.500 -0.500 -0.700';
     globaldef002524_x = globaldef002524_x + random();
-    globaldef002524_y = globaldef002524_y + random();
+    globaldef002526 = 0.000 + random();
     traceline(globaldef000001.origin, globaldef000001.origin + (globaldef002524 * globaldef002497), globaldef000192, globaldef000001);
     func000303(globaldef000001.origin, globaldef000047, globaldef000001);
     sound(globaldef000001, globaldef000309, "cloud/thunder.wav", globaldef000192, globaldef000314);
@@ -18437,7 +18418,7 @@ void (float globaldef002529, float globaldef002530, float globaldef002531) func0
     {
         globaldef002532 = globaldef000001.origin;
         globaldef002532_x = (globaldef002532_x - globaldef002529) + ((random() * globaldef002529) * globaldef000194);
-        globaldef002532_y = (globaldef002532_y - globaldef002529) + ((random() * globaldef002529) * globaldef000194);
+        globaldef002534 = (0.000 - globaldef002529) + ((random() * globaldef002529) * globaldef000194);
         func000302(globaldef002532, '0.000 0.000 -300.000', globaldef000197, globaldef002530);
         globaldef002536 = globaldef002536 - globaldef000192;
     }
@@ -18484,9 +18465,9 @@ float (entity globaldef002539) func000327 =
     local vector globaldef002540;
     local vector globaldef002544;
     globaldef002544 = globaldef002539.movetarget.origin;
-    globaldef002544_z = globaldef002544_z + globaldef000197;
+    globaldef002547 = 0.000 + globaldef000197;
     globaldef002540 = globaldef002544;
-    globaldef002540_z = globaldef002540_z + globaldef002495;
+    globaldef002543 = 0.000 + globaldef002495;
     traceline(globaldef002544, globaldef002540, globaldef000192, globaldef000001.movetarget);
     
     if(globaldef000058)
@@ -18495,9 +18476,9 @@ float (entity globaldef002539) func000327 =
     }
     
     
-    if((globaldef000046 == globaldef000192) || ((globaldef000047_z - globaldef002544_z) > globaldef002494))
+    if((globaldef000046 == globaldef000192) || ((0.000 - 0.000) > globaldef002494))
     {
-        return globaldef000047_z - globaldef002539.movetarget.origin_z;
+        return 0.000 - globaldef002539.movetarget.origin_z;
     }
     
     return globaldef000191;
@@ -18666,7 +18647,7 @@ void () func000330 =
     {
         setmodel(globaldef000001, globaldef000001.mdl);
         globaldef002558 = globaldef000001.movetarget.origin;
-        globaldef002558_z = globaldef002558_z + globaldef002557;
+        globaldef002561 = 0.000 + globaldef002557;
         setorigin(globaldef000001, globaldef002558);
         globaldef000001.angles_x = globaldef000191;
         globaldef000001.angles_y = globaldef000001.movetarget.angles_y;
@@ -18777,7 +18758,7 @@ void () func000333 =
         if(globaldef002563)
         {
             globaldef002564 = globaldef000001.movetarget.origin;
-            globaldef002564_z = globaldef002564_z + globaldef002563;
+            globaldef002567 = 0.000 + globaldef002563;
             if((vlen(globaldef002564 - globaldef000001.origin)) > globaldef002496)
             {
                 func000321();
@@ -19385,26 +19366,23 @@ void (entity globaldef002641) func000341 =
     globaldef002642 = func000387();
     globaldef002643 = globaldef000191;
     
-    if(((vlen(globaldef002642.origin - globaldef002641.field000377)) < globaldef002600) && (globaldef002643 < globaldef000208))
+    while(((vlen(globaldef002642.origin - globaldef002641.field000377)) < globaldef002600) && (globaldef002643 < globaldef000208))
     {
         globaldef002642 = func000387();
         globaldef002643 = globaldef002643 + globaldef000192;
     }
     
-}
-
-func000584(globaldef002641.origin);
-setorigin(globaldef002641, globaldef002642.origin + '0.000 0.000 1.000');
-globaldef002641.angles = globaldef002642.angles;
-globaldef002641.fixangle = globaldef000192;
-globaldef002641.velocity = globaldef000264;
-globaldef002641.flags = globaldef002641.flags - (globaldef002641.flags & globaldef000201);
-makevectors(globaldef002641.angles);
-func000584(globaldef002641.origin + (globaldef000032 * 20.000));
-func000586(globaldef002641.origin, globaldef002641);
+    func000584(globaldef002641.origin);
+    setorigin(globaldef002641, globaldef002642.origin + '0.000 0.000 1.000');
+    globaldef002641.angles = globaldef002642.angles;
+    globaldef002641.fixangle = globaldef000192;
+    globaldef002641.velocity = globaldef000264;
+    globaldef002641.flags = globaldef002641.flags - (globaldef002641.flags & globaldef000201);
+    makevectors(globaldef002641.angles);
+    func000584(globaldef002641.origin + (globaldef000032 * 20.000));
+    func000586(globaldef002641.origin, globaldef002641);
 };
 
-/* ERROR INDENTATION */
 // func000342
 // function begins at statement 9598, parm_start=7318
 // OP_LOAD_F	7318	152	7319
@@ -20226,10 +20204,10 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
         if((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x))
         {
             
-            if((globaldef002712_y <= globaldef002700_y) && (globaldef002708_y >= globaldef002704_y))
+            if((0.000 <= 0.000) && (0.000 >= 0.000))
             {
                 
-                if((globaldef002712_z <= globaldef002700_z) && (globaldef002708_z >= globaldef002704_z))
+                if((0.000 <= 0.000) && (0.000 >= 0.000))
                 {
                     return globaldef000192;
                 }
@@ -20251,10 +20229,10 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
         if((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x))
         {
             
-            if((globaldef002712_y <= globaldef002700_y) && (globaldef002708_y >= globaldef002704_y))
+            if((0.000 <= 0.000) && (0.000 >= 0.000))
             {
                 
-                if((globaldef002712_z <= globaldef002700_z) && (globaldef002708_z >= globaldef002704_z))
+                if((0.000 <= 0.000) && (0.000 >= 0.000))
                 {
                     return globaldef000192;
                 }
@@ -20497,8 +20475,7 @@ entity (string globaldef002729) func000353 =
     local float globaldef002736;
     local float globaldef002737;
     local entity globaldef002738;
-    globaldef002733 = globaldef000191;
-    globaldef002734 = globaldef000191;
+    globaldef002734 = globaldef002733 = globaldef000191;
     globaldef002730 = find(globaldef000003, classname, "testplayerstart");
     
     if(globaldef002730)
@@ -21672,8 +21649,7 @@ void (entity globaldef002797) func000365 =
             globaldef000525.takedamage = globaldef000230;
             func000072(globaldef000524, "??????");
             func000072(globaldef000525, "??????");
-            globaldef000799 = globaldef000191;
-            globaldef000527 = globaldef000191;
+            globaldef000527 = globaldef000799 = globaldef000191;
         }
         else
         {
@@ -22444,9 +22420,7 @@ void () SetNewParms =
     globaldef000017 = 100.000;
     globaldef000018 = globaldef000191;
     globaldef000019 = globaldef000288;
-    globaldef000020 = globaldef000191;
-    globaldef000021 = globaldef000191;
-    globaldef000022 = globaldef000191;
+    globaldef000022 = globaldef000021 = globaldef000020 = globaldef000191;
     globaldef000023 = globaldef001900;
     globaldef000024 = globaldef000191;
     globaldef000025 = globaldef000001.field000249;
@@ -24499,15 +24473,15 @@ void () func000400 =
     local vector globaldef002948;
     makevectors(globaldef000001.angles);
     globaldef002944 = globaldef000001.origin;
-    globaldef002944_z = globaldef002944_z + globaldef000195;
-    globaldef000032_z = globaldef000191;
+    globaldef002947 = 0.000 + globaldef000195;
+    globaldef000035 = globaldef000191;
     normalize(globaldef000032);
     globaldef002948 = globaldef002944 + (globaldef000032 * globaldef000719);
     traceline(globaldef002944, globaldef002948, globaldef000192, globaldef000001);
     
     if(globaldef000046 < globaldef000192)
     {
-        globaldef002944_z = (globaldef002944_z + globaldef000001.maxs_z) - globaldef000195;
+        globaldef002947 = (0.000 + globaldef000001.maxs_z) - globaldef000195;
         globaldef002948 = globaldef002944 + (globaldef000032 * globaldef000719);
         globaldef000001.movedir = globaldef000051 * -50.000;
         traceline(globaldef002944, globaldef002948, globaldef000192, globaldef000001);
@@ -28284,8 +28258,8 @@ vector (float globaldef003178) func000459 =
 {
     local vector globaldef003179;
     globaldef003179_x = 100.000 * func000249();
-    globaldef003179_y = 100.000 * func000249();
-    globaldef003179_z = 200.000 + (100.000 * random());
+    globaldef003181 = 100.000 * func000249();
+    globaldef003182 = 200.000 + (100.000 * random());
     if(globaldef003178 > -50.000)
     {
         globaldef003179 = globaldef003179 * 0.700;
@@ -29543,8 +29517,7 @@ void () func000530 =
     globaldef000001.flags = globaldef000001.flags | globaldef000197;
     if(globaldef000001.target)
     {
-        globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
-        globaldef000001.goalentity = find(globaldef000003, targetname, globaldef000001.target);
+        globaldef000001.goalentity = globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
         globaldef000001.ideal_yaw = vectoyaw(globaldef000001.goalentity.origin - globaldef000001.origin);
         
         if(!globaldef000001.movetarget)
@@ -29697,8 +29670,7 @@ void () func000532 =
     
     if(globaldef000001.target)
     {
-        globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
-        globaldef000001.goalentity = find(globaldef000003, targetname, globaldef000001.target);
+        globaldef000001.goalentity = globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
         
         if(!globaldef000001.movetarget)
         {
@@ -29846,8 +29818,7 @@ void () func000534 =
     globaldef000001.flags = globaldef000001.flags | globaldef000197;
     if(globaldef000001.target)
     {
-        globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
-        globaldef000001.goalentity = find(globaldef000003, targetname, globaldef000001.target);
+        globaldef000001.goalentity = globaldef000001.movetarget = find(globaldef000003, targetname, globaldef000001.target);
         
         if(!globaldef000001.movetarget)
         {
@@ -30788,15 +30759,13 @@ void () func000548 =
     
     if(globaldef000001.spawnflags & globaldef000207)
     {
-        globaldef000001.enemy = globaldef000001;
-        globaldef000001.owner = globaldef000001;
+        globaldef000001.owner = globaldef000001.enemy = globaldef000001;
         return;
     }
     
     globaldef003371 = globaldef000001.mins;
     globaldef003375 = globaldef000001.maxs;
-    globaldef003370 = globaldef000001;
-    globaldef003369 = globaldef000001;
+    globaldef003369 = globaldef003370 = globaldef000001;
     do
     {
         globaldef000001.owner = globaldef003370;
@@ -30855,8 +30824,7 @@ void () func000548 =
                 objerror("cross connected doors");
             }
             
-            globaldef000001.enemy = globaldef003369;
-            globaldef000001 = globaldef003369;
+            globaldef000001 = globaldef000001.enemy = globaldef003369;
             
             if(globaldef003369.mins_x < globaldef003371_x)
             {
@@ -30864,15 +30832,15 @@ void () func000548 =
             }
             
             
-            if(globaldef003369.mins_y < globaldef003371_y)
+            if(globaldef003369.mins_y < 0.000)
             {
-                globaldef003371_y = globaldef003369.mins_y;
+                globaldef003373 = globaldef003369.mins_y;
             }
             
             
-            if(globaldef003369.mins_z < globaldef003371_z)
+            if(globaldef003369.mins_z < 0.000)
             {
-                globaldef003371_z = globaldef003369.mins_z;
+                globaldef003374 = globaldef003369.mins_z;
             }
             
             
@@ -30882,15 +30850,15 @@ void () func000548 =
             }
             
             
-            if(globaldef003369.maxs_y > globaldef003375_y)
+            if(globaldef003369.maxs_y > 0.000)
             {
-                globaldef003375_y = globaldef003369.maxs_y;
+                globaldef003377 = globaldef003369.maxs_y;
             }
             
             
-            if(globaldef003369.maxs_z > globaldef003375_z)
+            if(globaldef003369.maxs_z > 0.000)
             {
-                globaldef003375_z = globaldef003369.maxs_z;
+                globaldef003378 = globaldef003369.maxs_z;
             }
             
         }
@@ -32965,8 +32933,8 @@ void (vector globaldef003474) func000584 =
     WriteByte(globaldef000325, globaldef000287);
     WriteByte(globaldef000325, globaldef000307);
     WriteCoord(globaldef000325, globaldef003474_x);
-    WriteCoord(globaldef000325, globaldef003474_y);
-    WriteCoord(globaldef000325, globaldef003474_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
 };
 
 // func000585
@@ -33991,11 +33959,11 @@ void () func000602 =
     globaldef003526.enemy = globaldef000001;
     globaldef003527 = globaldef000001.mins + '25.000 25.000 0.000';
     globaldef003531 = globaldef000001.maxs - '25.000 25.000 -8.000';
-    globaldef003527_z = globaldef003531_z - ((globaldef000001.pos1_z - globaldef000001.pos2_z) + globaldef000195);
+    globaldef003530 = 0.000 - ((globaldef000001.pos1_z - globaldef000001.pos2_z) + globaldef000195);
     
     if(globaldef000001.spawnflags & globaldef003524)
     {
-        globaldef003531_z = globaldef003527_z + globaldef000195;
+        globaldef003534 = 0.000 + globaldef000195;
     }
     
     
@@ -34008,8 +33976,8 @@ void () func000602 =
     
     if(globaldef000001.size_y <= 50.000)
     {
-        globaldef003527_y = (globaldef000001.mins_y + globaldef000001.maxs_y) / globaldef000194;
-        globaldef003531_y = globaldef003527_y + globaldef000192;
+        globaldef003529 = (globaldef000001.mins_y + globaldef000001.maxs_y) / globaldef000194;
+        globaldef003533 = 0.000 + globaldef000192;
     }
     
     setsize(globaldef003526, globaldef003527, globaldef003531);
@@ -35279,6 +35247,7 @@ void () misc_fireball =
     
     if(!globaldef000001.speed)
     {
+        globaldef000001.speed == 1000.000; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
     }
     
 };
@@ -39532,7 +39501,7 @@ float () func000886 =
     }
     
     globaldef003914 = globaldef000001.enemy.origin - globaldef000001.origin;
-    globaldef003914_z = globaldef000191;
+    globaldef003917 = globaldef000191;
     globaldef003918 = vlen(globaldef003914);
     
     if(globaldef003918 < 100.000)
@@ -40815,11 +40784,11 @@ void () func000957 =
     WriteByte(globaldef000325, globaldef000301);
     WriteEntity(globaldef000325, globaldef000001);
     WriteCoord(globaldef000325, globaldef004012_x);
-    WriteCoord(globaldef000325, globaldef004012_y);
-    WriteCoord(globaldef000325, globaldef004012_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     WriteCoord(globaldef000325, globaldef000047_x);
-    WriteCoord(globaldef000325, globaldef000047_y);
-    WriteCoord(globaldef000325, globaldef000047_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     func000273(globaldef004012, globaldef000047, globaldef000001, globaldef000213);
 };
 
@@ -43974,7 +43943,7 @@ void (entity globaldef004294, float globaldef004295, float globaldef004296) Laun
     globaldef004297 = ((globaldef000001.enemy.origin + globaldef000001.enemy.mins) + (globaldef000001.enemy.size * 0.700)) - globaldef004294.origin;
     globaldef004305 = vlen(globaldef004297) / globaldef004295;
     globaldef004301 = globaldef000001.enemy.velocity;
-    globaldef004301_z = globaldef000191;
+    globaldef004304 = globaldef000191;
     globaldef004297 = globaldef004297 + (globaldef004301 * globaldef004305);
     globaldef004297 = normalize(globaldef004297);
     globaldef004297 = (globaldef004297 + ((globaldef004296 * globaldef000036) * (random() - globaldef000522))) + ((globaldef004296 * globaldef000040) * (random() - globaldef000522));
@@ -46474,7 +46443,7 @@ float () func001356 =
     }
     
     globaldef004512 = globaldef000001.enemy.origin - globaldef000001.origin;
-    globaldef004512_z = globaldef000191;
+    globaldef004515 = globaldef000191;
     globaldef004516 = vlen(globaldef004512);
     
     if(globaldef004516 < 80.000)
@@ -47440,7 +47409,7 @@ void (vector globaldef004596) func001418 =
     globaldef004600.owner = globaldef000001;
     globaldef004600.movetype = globaldef000213;
     globaldef004600.solid = globaldef000217;
-    globaldef004602 = ((globaldef000001.origin + (globaldef004596_x * globaldef000032)) + (globaldef004596_y * globaldef000040)) + ((globaldef004596_z - globaldef000719) * globaldef000036);
+    globaldef004602 = ((globaldef000001.origin + (globaldef004596_x * globaldef000032)) + (0.000 * globaldef000040)) + ((0.000 - globaldef000719) * globaldef000036);
     makevectors(globaldef000001.angles);
     globaldef004600.velocity = normalize(globaldef000001.enemy.origin - globaldef004602);
     globaldef004600.velocity = globaldef004600.velocity * globaldef000723;
@@ -50322,12 +50291,12 @@ void (vector globaldef004925) func001675 =
     local float globaldef004945;
     globaldef004929 = vectoangles(globaldef000001.enemy.origin - globaldef000001.origin);
     makevectors(globaldef004929);
-    globaldef004933 = ((globaldef000001.origin + (globaldef004925_x * globaldef000032)) + (globaldef004925_y * globaldef000040)) + (globaldef004925_z * '0.000 0.000 1.000');
+    globaldef004933 = ((globaldef000001.origin + (globaldef004925_x * globaldef000032)) + (0.000 * globaldef000040)) + (0.000 * '0.000 0.000 1.000');
     if(globaldef000337 > globaldef000192)
     {
         globaldef004945 = (vlen(globaldef000001.enemy.origin - globaldef004933)) / globaldef000523;
         globaldef004937 = globaldef000001.enemy.velocity;
-        globaldef004937_z = globaldef000191;
+        globaldef004940 = globaldef000191;
         globaldef004941 = globaldef000001.enemy.origin + (globaldef004945 * globaldef004937);
     }
     else
@@ -50556,9 +50525,9 @@ void () func001678 =
     }
     
     globaldef004958 = (globaldef004954.mins + globaldef004954.maxs) * globaldef000522;
-    globaldef004958_z = globaldef004954.absmin_z - globaldef000196;
+    globaldef004961 = globaldef004954.absmin_z - globaldef000196;
     globaldef004962 = (globaldef004955.mins + globaldef004955.maxs) * globaldef000522;
-    globaldef004962_z = globaldef004955.absmin_z - globaldef000196;
+    globaldef004965 = globaldef004955.absmin_z - globaldef000196;
     globaldef004962 = globaldef004962 - ((normalize(globaldef004962 - globaldef004958)) * 100.000);
     globaldef000001.nextthink = globaldef000004 + 0.100;
     globaldef000001.think = func001678;
@@ -50566,11 +50535,11 @@ void () func001678 =
     WriteByte(globaldef000327, globaldef000305);
     WriteEntity(globaldef000327, globaldef000003);
     WriteCoord(globaldef000327, globaldef004958_x);
-    WriteCoord(globaldef000327, globaldef004958_y);
-    WriteCoord(globaldef000327, globaldef004958_z);
+    WriteCoord(globaldef000327, 0.000);
+    WriteCoord(globaldef000327, 0.000);
     WriteCoord(globaldef000327, globaldef004962_x);
-    WriteCoord(globaldef000327, globaldef004962_y);
-    WriteCoord(globaldef000327, globaldef004962_z);
+    WriteCoord(globaldef000327, 0.000);
+    WriteCoord(globaldef000327, 0.000);
 };
 
 // func001679
@@ -51741,11 +51710,11 @@ void (float globaldef005046) func001747 =
     local vector globaldef005051;
     local vector globaldef005055;
     globaldef005047 = vectoangles(globaldef000001.enemy.origin - globaldef000001.origin);
-    globaldef005047_y = globaldef005047_y + (globaldef005046 * globaldef000209);
+    globaldef005049 = 0.000 + (globaldef005046 * globaldef000209);
     makevectors(globaldef005047);
     globaldef005051 = ((globaldef000001.origin + globaldef000001.mins) + (globaldef000001.size * globaldef000522)) + (globaldef000032 * 20.000);
     globaldef005055 = normalize(globaldef000032);
-    globaldef005055_z = (globaldef000191 - globaldef005055_z) + ((random() - globaldef000522) * 0.100);
+    globaldef005058 = (globaldef000191 - 0.000) + ((random() - globaldef000522) * 0.100);
     func000278(globaldef005051, globaldef005055);
     globaldef000333.classname = "knightspike";
     setmodel(globaldef000333, "progs/k_spike.mdl");
@@ -56084,8 +56053,8 @@ void () func002071 =
         WriteByte(globaldef000325, globaldef000287);
         WriteByte(globaldef000325, globaldef000298);
         WriteCoord(globaldef000325, globaldef005430_x);
-        WriteCoord(globaldef000325, globaldef005430_y);
-        WriteCoord(globaldef000325, globaldef005430_z);
+        WriteCoord(globaldef000325, 0.000);
+        WriteCoord(globaldef000325, 0.000);
     }
     
     remove(globaldef000001);
@@ -58243,8 +58212,7 @@ void () func002249 =
     while(globaldef005640 != globaldef000003)
     {
         globaldef005640.view_ofs = globaldef000264;
-        globaldef000002.v_angle = globaldef005639.mangle;
-        globaldef005640.angles = globaldef005639.mangle;
+        globaldef005640.angles = globaldef000002.v_angle = globaldef005639.mangle;
         globaldef005640.fixangle = globaldef000192;
         globaldef005640.map = globaldef000001.map;
         globaldef005640.nextthink = globaldef000004 + globaldef000522;
@@ -58300,8 +58268,8 @@ void () func002250 =
     WriteByte(globaldef000325, globaldef000287);
     WriteByte(globaldef000325, globaldef000307);
     WriteCoord(globaldef000325, globaldef005646_x);
-    WriteCoord(globaldef000325, globaldef005646_y);
-    WriteCoord(globaldef000325, globaldef005646_z);
+    WriteCoord(globaldef000325, 0.000);
+    WriteCoord(globaldef000325, 0.000);
     sound(globaldef005566, globaldef000310, "misc/r_tele1.wav", globaldef000192, globaldef000314);
     globaldef000001.nextthink = globaldef000004 + globaldef000194;
     globaldef000001.think = func002251;
@@ -58440,8 +58408,8 @@ void () func002252 =
             while(globaldef005658 <= globaldef000198)
             {
                 globaldef000001.origin_x = globaldef005653_x + globaldef005657;
-                globaldef000001.origin_y = globaldef005653_y + globaldef005658;
-                globaldef000001.origin_z = globaldef005653_z + globaldef005659;
+                globaldef000001.origin_y = 0.000 + globaldef005658;
+                globaldef000001.origin_z = 0.000 + globaldef005659;
                 globaldef005660 = random();
                 if(globaldef005660 < 0.300)
                 {
@@ -58589,17 +58557,14 @@ void () func002255 =
     local entity globaldef005679;
     globaldef005679 = nextent(globaldef000003);
     
-    if(globaldef005679.classname != "worldspawn")
+    while(globaldef005679.classname != "worldspawn")
     {
         globaldef000796 = globaldef000796 + globaldef000192;
         globaldef005679 = nextent(globaldef005679);
     }
     
-}
-
 };
 
-/* ERROR INDENTATION */
 // func002256
 // function begins at statement 27292, parm_start=16192
 // OP_STORE_F	214	16193	0
@@ -58669,8 +58634,7 @@ float () func002258 =
 {
     local float globaldef005686;
     local float globaldef005687;
-    globaldef005687 = globaldef000191;
-    globaldef005686 = globaldef000191;
+    globaldef005686 = globaldef005687 = globaldef000191;
     
     while(globaldef005686 < globaldef000796)
     {
@@ -59064,7 +59028,7 @@ void (entity globaldef005704) func002268 =
                 globaldef005705.origin_z = globaldef005704.origin_z + globaldef005704.mins_z;
             }
             
-            globaldef005706_z = globaldef005705.origin_z + (((globaldef005704.origin_z - globaldef005705.origin_z) * globaldef000005) / 0.100);
+            globaldef005709 = globaldef005705.origin_z + (((globaldef005704.origin_z - globaldef005705.origin_z) * globaldef000005) / 0.100);
         }
         
     }
@@ -59159,7 +59123,7 @@ void (entity globaldef005720) func002271 =
     if(globaldef005720.field000252 & globaldef000683)
     {
         globaldef005726 = globaldef005720.velocity;
-        globaldef005726_z = globaldef000191;
+        globaldef005729 = globaldef000191;
         globaldef005724 = vlen(globaldef005726);
         
         if(globaldef005724)
@@ -59238,7 +59202,7 @@ void (entity globaldef005733) func002272 =
     local float globaldef005734;
     local vector globaldef005735;
     globaldef005735 = globaldef005733.origin;
-    globaldef005735_z = (globaldef005735_z + globaldef005733.mins_z) + globaldef000192;
+    globaldef005738 = (0.000 + globaldef005733.mins_z) + globaldef000192;
     globaldef005734 = pointcontents(globaldef005735);
     
     if(globaldef005734 == globaldef000254)
@@ -59250,7 +59214,7 @@ void (entity globaldef005733) func002272 =
     
     globaldef005733.watertype = globaldef005734;
     globaldef005733.waterlevel = globaldef000192;
-    globaldef005735_z = globaldef005735_z + globaldef000291;
+    globaldef005738 = 0.000 + globaldef000291;
     globaldef005734 = pointcontents(globaldef005735);
     
     if(globaldef005734 == globaldef000254)
@@ -59259,7 +59223,7 @@ void (entity globaldef005733) func002272 =
     }
     
     globaldef005733.waterlevel = globaldef000194;
-    globaldef005735_z = globaldef005735_z + 18.000;
+    globaldef005738 = 0.000 + 18.000;
     globaldef005734 = pointcontents(globaldef005735);
     
     if(globaldef005734 != globaldef000254)
@@ -59430,7 +59394,7 @@ void (entity globaldef005748) func002274 =
     local float globaldef005763;
     local float globaldef005764;
     globaldef005749 = globaldef005748.field000237;
-    globaldef005749_z = globaldef000191;
+    globaldef005752 = globaldef000191;
     globaldef005749 = normalize(globaldef005749);
     globaldef005757 = globaldef000001;
     globaldef005759 = globaldef000001.origin;
@@ -59442,7 +59406,7 @@ void (entity globaldef005748) func002274 =
     if(walkmove(globaldef005763, 0.900))
     {
         
-        if(globaldef000001.origin_z > (globaldef005759_z + 0.001))
+        if(globaldef000001.origin_z > (0.000 + 0.001))
         {
             globaldef005748.field000252 = globaldef005748.field000252 | globaldef000694;
             globaldef005748.field000241 = globaldef005748.origin;
@@ -59714,7 +59678,7 @@ void () func002276 =
             globaldef005772 = globaldef000001.origin;
             globaldef000001.origin = globaldef000001.field000241;
             globaldef005768 = (globaldef000001.field000237 * globaldef005776) - (globaldef000001.field000241 - globaldef000001.field000233);
-            globaldef005768_z = globaldef000191;
+            globaldef005771 = globaldef000191;
             globaldef005778 = vectoyaw(globaldef005768);
             globaldef005779 = vlen(globaldef005768);
             
@@ -72582,9 +72546,9 @@ float (entity globaldef006514, entity globaldef006515) func002295 =
     }
     
     globaldef006520 = (globaldef006515.absmin + globaldef006515.absmax) * globaldef000522;
-    globaldef006520_z = globaldef006515.absmin_z + globaldef000192;
+    globaldef006523 = globaldef006515.absmin_z + globaldef000192;
     globaldef006516 = globaldef006520;
-    globaldef006516_z = globaldef006514.origin_z;
+    globaldef006519 = globaldef006514.origin_z;
     traceline(globaldef006514.origin, globaldef006516, globaldef000192, globaldef000001);
     
     if(globaldef000046 == globaldef000192)
@@ -72593,15 +72557,15 @@ float (entity globaldef006514, entity globaldef006515) func002295 =
         
         if(globaldef000046 == globaldef000192)
         {
-            globaldef006516_z = func002457(globaldef006520);
+            globaldef006519 = func002457(globaldef006520);
             
-            if(globaldef000001.absmin_z > globaldef006516_z)
+            if(globaldef000001.absmin_z > 0.000)
             {
-                globaldef006516_z = globaldef006514.absmin_z;
+                globaldef006519 = globaldef006514.absmin_z;
             }
             
             
-            if(globaldef006520_z < (((globaldef006514.maxs_z - globaldef006514.mins_z) + globaldef006516_z) + globaldef000776))
+            if(0.000 < (((globaldef006514.maxs_z - globaldef006514.mins_z) + 0.000) + globaldef000776))
             {
                 return 20.000;
             }
@@ -74465,8 +74429,7 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     local vector globaldef006653;
     local vector globaldef006654;
     local vector globaldef006655;
-    globaldef006629 = globaldef006628.owner;
-    globaldef006630 = globaldef006628.owner;
+    globaldef006630 = globaldef006629 = globaldef006628.owner;
     if(globaldef006630)
     {
         globaldef006631 = globaldef006630.absmin;
@@ -74474,8 +74437,7 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     }
     else
     {
-        globaldef006635 = globaldef000264;
-        globaldef006631 = globaldef000264;
+        globaldef006631 = globaldef006635 = globaldef000264;
     }
     
     if(globaldef006631 != globaldef006635)
@@ -74501,27 +74463,27 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
             }
             
             
-            if(globaldef006629.absmin_y < globaldef006631_y)
+            if(globaldef006629.absmin_y < 0.000)
             {
-                globaldef006631_y = globaldef006629.absmin_y;
+                globaldef006633 = globaldef006629.absmin_y;
             }
             
             
-            if(globaldef006629.absmax_y > globaldef006635_y)
+            if(globaldef006629.absmax_y > 0.000)
             {
-                globaldef006635_y = globaldef006629.absmax_y;
+                globaldef006637 = globaldef006629.absmax_y;
             }
             
             
-            if(globaldef006629.absmin_z < globaldef006631_z)
+            if(globaldef006629.absmin_z < 0.000)
             {
-                globaldef006631_z = globaldef006629.absmin_z;
+                globaldef006634 = globaldef006629.absmin_z;
             }
             
             
-            if(globaldef006629.absmax_z > globaldef006635_z)
+            if(globaldef006629.absmax_z > 0.000)
             {
-                globaldef006635_z = globaldef006629.absmax_z;
+                globaldef006638 = globaldef006629.absmax_z;
             }
             
             globaldef006629 = globaldef006629.enemy;
@@ -74532,10 +74494,7 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
         return;
     }
     
-    globaldef006641 = globaldef000191;
-    globaldef006640 = globaldef000191;
-    globaldef006639 = globaldef000191;
-    globaldef006642 = globaldef000191;
+    globaldef006642 = globaldef006639 = globaldef006640 = globaldef006641 = globaldef000191;
     globaldef006648 = globaldef006627.origin;
     
     if(((globaldef006631_x + globaldef000191) < globaldef006627.absmin_x) && (globaldef006627.absmax_x < (globaldef006635_x - globaldef000191)))
@@ -74544,31 +74503,31 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     }
     
     
-    if(((globaldef006631_y + globaldef000191) < globaldef006627.absmin_y) && (globaldef006627.absmax_y < (globaldef006635_y - globaldef000191)))
+    if(((0.000 + globaldef000191) < globaldef006627.absmin_y) && (globaldef006627.absmax_y < (0.000 - globaldef000191)))
     {
         globaldef006640 = globaldef000192;
     }
     
     
-    if(((globaldef006631_z + globaldef000191) < globaldef006627.absmin_z) && (globaldef006627.absmax_z < (globaldef006635_z - globaldef000191)))
+    if(((0.000 + globaldef000191) < globaldef006627.absmin_z) && (globaldef006627.absmax_z < (0.000 - globaldef000191)))
     {
         globaldef006641 = globaldef000192;
     }
     
     if(globaldef006639 && globaldef006640)
     {
-        if(globaldef006648_z < globaldef006631_z)
+        if(0.000 < 0.000)
         {
             globaldef006644 = '0.000 0.000 1.000';
-            globaldef006648_z = globaldef006635_z + globaldef000288;
+            globaldef006651 = 0.000 + globaldef000288;
         }
         else
         {
             
-            if(globaldef006648_z > globaldef006635_z)
+            if(0.000 > 0.000)
             {
                 globaldef006644 = '0.000 0.000 -1.000';
-                globaldef006648_z = globaldef006631_z - globaldef000288;
+                globaldef006651 = 0.000 - globaldef000288;
             }
             
         }
@@ -74579,18 +74538,18 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     {
         if(globaldef006639 && globaldef006641)
         {
-            if(globaldef006648_y < globaldef006631_y)
+            if(0.000 < 0.000)
             {
                 globaldef006644 = '0.000 1.000 0.000';
-                globaldef006648_y = globaldef006635_y + globaldef000288;
+                globaldef006650 = 0.000 + globaldef000288;
             }
             else
             {
                 
-                if(globaldef006648_y > globaldef006635_y)
+                if(0.000 > 0.000)
                 {
                     globaldef006644 = '0.000 -1.000 0.000';
-                    globaldef006648_y = globaldef006631_y - globaldef000288;
+                    globaldef006650 = 0.000 - globaldef000288;
                 }
                 
             }
@@ -74641,7 +74600,7 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
         do
         {
             setorigin(globaldef000001, globaldef006648);
-            globaldef006648_z = globaldef006648_z + globaldef000195;
+            globaldef006651 = 0.000 + globaldef000195;
             globaldef006643 = globaldef006643 + globaldef000192;
         } while (!droptofloor() && (globaldef006643 < globaldef000213));
         globaldef000001 = globaldef006652;
@@ -75063,8 +75022,8 @@ void (entity globaldef006692, vector globaldef006693) func002350 =
     globaldef000059 = globaldef006692;
     WriteByte(globaldef000326, globaldef000286);
     WriteAngle(globaldef000326, globaldef006693_x);
-    WriteAngle(globaldef000326, globaldef006693_y);
-    WriteAngle(globaldef000326, globaldef006693_z);
+    WriteAngle(globaldef000326, 0.000);
+    WriteAngle(globaldef000326, 0.000);
 };
 
 // func002351
@@ -75191,8 +75150,8 @@ vector (vector globaldef006703, vector globaldef006707, float globaldef006711) f
     local float globaldef006716;
     globaldef006716 = globaldef000004 - globaldef006711;
     globaldef006712_x = func002351(globaldef006703_x, globaldef006707_x, globaldef006716);
-    globaldef006712_y = func002351(globaldef006703_y, globaldef006707_y, globaldef006716);
-    globaldef006712_z = func002351(globaldef006703_z, globaldef006707_z, globaldef006716);
+    globaldef006714 = func002351(0.000, 0.000, globaldef006716);
+    globaldef006715 = func002351(0.000, 0.000, globaldef006716);
     return globaldef006703 + globaldef006712;
 };
 
@@ -75272,8 +75231,8 @@ void (entity globaldef006718) func002353 =
     globaldef006726 = globaldef006718.velocity_z;
     globaldef006718.velocity_z = globaldef000191;
     globaldef006727_x = globaldef000032_x;
-    globaldef006727_y = globaldef000032_y;
-    globaldef006727_z = globaldef000191;
+    globaldef006729 = 0.000;
+    globaldef006730 = globaldef000191;
     globaldef006719 = vlen(globaldef006727);
     if(globaldef006719)
     {
@@ -75296,7 +75255,7 @@ void (entity globaldef006718) func002353 =
     
     globaldef006735 = globaldef006718.velocity - globaldef006731;
     globaldef006731 = globaldef000032 * (globaldef006721 * globaldef006719);
-    globaldef006731_z = globaldef006731_z + globaldef006726;
+    globaldef006734 = 0.000 + globaldef006726;
     globaldef006721 = vlen(globaldef006731);
     globaldef006722 = 320.000 - (100.000 * (globaldef000032 * '0.000 0.000 1.000'));
     
@@ -75598,16 +75557,16 @@ void (entity globaldef006749) func002355 =
     globaldef006766 = globaldef000036;
     globaldef006762 = globaldef000032;
     globaldef006770 = globaldef000040;
-    globaldef006750_y = globaldef006750_y + globaldef006749.field000360;
-    globaldef006750_y = func000173(globaldef006750_y);
+    globaldef006752 = 0.000 + globaldef006749.field000360;
+    globaldef006752 = func000173(0.000);
     globaldef006750_x = globaldef000191;
     makevectors(globaldef006750);
     globaldef006774_x = globaldef000032_x;
-    globaldef006774_y = globaldef000032_y;
-    globaldef006774_z = (globaldef000254 * ((globaldef006774_x * globaldef006766_x) + (globaldef006774_y * globaldef006766_y))) / globaldef006766_z;
+    globaldef006776 = 0.000;
+    globaldef006777 = (globaldef000254 * ((globaldef006774_x * globaldef006766_x) + (0.000 * 0.000))) / 0.000;
     globaldef006774 = normalize(globaldef006774);
     globaldef006754 = globaldef006774 * (-64.000 + globaldef006749.field000358_x);
-    globaldef006754_z = (globaldef006754_z + globaldef000719) + globaldef006749.field000361;
+    globaldef006757 = (0.000 + globaldef000719) + globaldef006749.field000361;
     globaldef006758 = globaldef006749.field000344.origin + globaldef006749.field000344.view_ofs;
     traceline(globaldef006758, globaldef006758 + globaldef006754, globaldef000192, globaldef006749.field000344);
     globaldef006749.modelindex = globaldef000509;
@@ -75637,8 +75596,7 @@ void (entity globaldef006749) func002355 =
         globaldef006749.field000361 = -64.000;
     }
     
-    globaldef006749.velocity_z = globaldef000191;
-    globaldef000032_z = globaldef000191;
+    globaldef000035 = globaldef006749.velocity_z = globaldef000191;
     globaldef006778 = globaldef006749.velocity * globaldef000032;
     
     if(globaldef006778 > globaldef000213)
@@ -75664,7 +75622,7 @@ void (entity globaldef006749) func002355 =
         globaldef006749.field000358_x = -64.000;
     }
     
-    globaldef000040_z = globaldef000191;
+    globaldef000043 = globaldef000191;
     globaldef006778 = globaldef006749.velocity * globaldef000040;
     
     if(globaldef006778 > globaldef000213)
@@ -77455,7 +77413,7 @@ vector (entity globaldef006862) func002382 =
     }
     
     globaldef006863 = globaldef006862.origin;
-    globaldef006863_z = globaldef006862.absmin_z + (globaldef006862.size_z * 0.700);
+    globaldef006866 = globaldef006862.absmin_z + (globaldef006862.size_z * 0.700);
     globaldef006867 = globaldef006862.enemy.origin;
     traceline(globaldef006863, globaldef006867, globaldef000192, globaldef006862);
     
@@ -77671,10 +77629,10 @@ vector (entity globaldef006888) func002384 =
         if(globaldef006888.field000265 > globaldef006909)
         {
             globaldef006901 = globaldef006893;
-            globaldef006901_z = (globaldef006901_z + globaldef006888.enemy.mins_z) - globaldef000208;
+            globaldef006904 = (0.000 + globaldef006888.enemy.mins_z) - globaldef000208;
             traceline(globaldef006889, globaldef006901, globaldef000192, globaldef006888);
             
-            if((fabs(globaldef000047_z - globaldef006901_z)) < 50.000)
+            if((fabs(0.000 - 0.000)) < 50.000)
             {
                 
                 if((vlen(globaldef000047 - globaldef006901)) < 100.000)
@@ -77812,22 +77770,22 @@ vector (entity globaldef006915) func002385 =
     
     globaldef006920 = globaldef006920 + ((globaldef006915.enemy.velocity * 0.001) * (vlen(globaldef006920 - globaldef006916)));
     globaldef006928 = globaldef006920;
-    globaldef006928_z = globaldef000191;
+    globaldef006931 = globaldef000191;
     globaldef006932 = globaldef006915.origin;
-    globaldef006932_z = globaldef000191;
+    globaldef006935 = globaldef000191;
     globaldef006936 = (vlen(globaldef006928 - globaldef006932)) * globaldef000781;
     if(globaldef006936 > globaldef000192)
     {
         
         if(globaldef006936 < globaldef000774)
         {
-            globaldef006920_z = globaldef006920_z + (globaldef000780 * (globaldef006936 - globaldef000192));
+            globaldef006923 = 0.000 + (globaldef000780 * (globaldef006936 - globaldef000192));
         }
         
     }
     else
     {
-        globaldef006920_z = globaldef006920_z - (globaldef000780 * (globaldef000192 - globaldef006936));
+        globaldef006923 = 0.000 - (globaldef000780 * (globaldef000192 - globaldef006936));
     }
     
     globaldef006924 = normalize(globaldef006920 - globaldef006916);
@@ -77979,7 +77937,7 @@ vector (entity globaldef006940) func002386 =
 // OP_CALL1	20208	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006958) func002387 = 
+vector (entity globaldef006958) func002387 = 
 {
     if(globaldef006958.weapon == globaldef000231)
     {
@@ -78081,7 +78039,7 @@ void (entity globaldef006959) func002388 =
     
     globaldef006960 = func002387(globaldef006959);
     globaldef006964 = vectoangles(globaldef006960);
-    globaldef006959.ideal_yaw = globaldef006964_y;
+    globaldef006959.ideal_yaw = 0.000;
     globaldef006959.field000288 = globaldef006964;
     
     if(globaldef006959.field000288 > 180.000)
@@ -78510,7 +78468,7 @@ void (entity globaldef006975) func002391 =
     }
     
     globaldef006975.field000288 = globaldef006980;
-    globaldef006975.ideal_yaw = globaldef006980_y;
+    globaldef006975.ideal_yaw = 0.000;
     makevectors(globaldef006975.v_angle);
     
     if(globaldef006975.items & globaldef000231)
@@ -78747,7 +78705,7 @@ float (entity globaldef007007, entity globaldef007008) func002394 =
     if(func002393(globaldef007013_x, globaldef000191 - globaldef007007.v_angle_x, 90.000 + (globaldef007007.field000265 * globaldef000213)))
     {
         
-        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135.000 + (globaldef007007.field000265 * globaldef000748)))
+        if(func002393(0.000, globaldef007007.v_angle_y, 135.000 + (globaldef007007.field000265 * globaldef000748)))
         {
             return globaldef000192;
         }
@@ -79665,10 +79623,10 @@ void (entity globaldef007053) func002400 =
     
     makevectors(globaldef007053.angles);
     globaldef007058 = globaldef000040;
-    globaldef007058_z = globaldef000191;
+    globaldef007061 = globaldef000191;
     globaldef007058 = normalize(globaldef007058);
     globaldef007054 = globaldef007053.origin - globaldef007053.field000257;
-    globaldef007054_z = globaldef000191;
+    globaldef007057 = globaldef000191;
     globaldef007054 = normalize(globaldef007054);
     globaldef007062 = globaldef007058 * globaldef007054;
     
@@ -81961,12 +81919,12 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
     globaldef007143.velocity = globaldef000264;
     makevectors(globaldef007164);
     
-    if(globaldef007156_x || globaldef007156_y)
+    if(globaldef007156_x || 0.000)
     {
         globaldef007188 = globaldef007143.origin;
-        globaldef007188_z = globaldef007188_z + globaldef007143.maxs_z;
+        globaldef007191 = 0.000 + globaldef007143.maxs_z;
         globaldef007192 = globaldef007143.origin;
-        globaldef007192_z = globaldef007192_z + globaldef007143.mins_z;
+        globaldef007195 = 0.000 + globaldef007143.mins_z;
         traceline(globaldef007188, globaldef007188 + (globaldef000032 * globaldef000729), globaldef000192, globaldef007143);
         
         if(globaldef000046 != globaldef000192)
@@ -82074,8 +82032,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
     globaldef007186 = globaldef000196;
     do
     {
-        globaldef007185 = globaldef000191;
-        globaldef007184 = globaldef000191;
+        globaldef007184 = globaldef007185 = globaldef000191;
         globaldef007168 = globaldef007143.origin - (globaldef000040 * globaldef007186);
         globaldef007176 = globaldef007168 + (globaldef000032 * globaldef000719);
         globaldef007172 = globaldef007143.origin + (globaldef000040 * globaldef007186);
@@ -82248,7 +82205,7 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     if(globaldef007212 == globaldef000264)
     {
         globaldef007228 = globaldef007211.goalentity.origin;
-        globaldef007228_z = globaldef007211.origin_z;
+        globaldef007231 = globaldef007211.origin_z;
         globaldef007212 = globaldef007228 - globaldef007211.origin;
     }
     
@@ -82257,7 +82214,7 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     globaldef007239 = globaldef000191;
     globaldef007216 = globaldef007211.origin;
     globaldef007224 = globaldef007212;
-    globaldef007224_z = globaldef000191;
+    globaldef007227 = globaldef000191;
     globaldef007224 = normalize(globaldef007224);
     globaldef007240 = globaldef000192;
     globaldef007241 = globaldef000001.flags;
@@ -82266,12 +82223,12 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     do
     {
         globaldef007220 = globaldef007216 + (globaldef007240 * globaldef007224);
-        globaldef007220_z = globaldef007220_z + globaldef007237;
+        globaldef007223 = 0.000 + globaldef007237;
         setorigin(globaldef000001, globaldef007220);
         if(droptofloor())
         {
             
-            if(globaldef000001.origin_z > (globaldef007216_z + globaldef007238))
+            if(globaldef000001.origin_z > (0.000 + globaldef007238))
             {
                 globaldef007239 = globaldef000192;
                 globaldef007240 = 999.000;
@@ -82292,8 +82249,8 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     {
         globaldef007211.field000252 = globaldef007211.field000252 | globaldef000697;
         globaldef007232_x = globaldef007224_x * globaldef000198;
-        globaldef007232_y = globaldef007224_y * globaldef000198;
-        globaldef007232_z = globaldef000717;
+        globaldef007234 = 0.000 * globaldef000198;
+        globaldef007235 = globaldef000717;
         func002431(globaldef007211, globaldef007232);
         return globaldef000192;
     }
@@ -82712,45 +82669,41 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
     local float globaldef007348;
     local float globaldef007349;
     globaldef007251_x = globaldef007245.maxs_x;
-    globaldef007251_y = globaldef007245.maxs_y;
-    globaldef007251_z = globaldef007245.maxs_z;
+    globaldef007253 = globaldef007245.maxs_y;
+    globaldef007254 = globaldef007245.maxs_z;
     globaldef007255_x = globaldef007245.maxs_x;
-    globaldef007255_y = globaldef007245.mins_y;
-    globaldef007255_z = globaldef007245.maxs_z;
+    globaldef007257 = globaldef007245.mins_y;
+    globaldef007258 = globaldef007245.maxs_z;
     globaldef007259_x = globaldef007245.mins_x;
-    globaldef007259_y = globaldef007245.mins_y;
-    globaldef007259_z = globaldef007245.maxs_z;
+    globaldef007261 = globaldef007245.mins_y;
+    globaldef007262 = globaldef007245.maxs_z;
     globaldef007263_x = globaldef007245.mins_x;
-    globaldef007263_y = globaldef007245.maxs_y;
-    globaldef007263_z = globaldef007245.maxs_z;
+    globaldef007265 = globaldef007245.maxs_y;
+    globaldef007266 = globaldef007245.maxs_z;
     globaldef007267_x = globaldef007245.maxs_x;
-    globaldef007267_y = globaldef007245.maxs_y;
-    globaldef007267_z = globaldef007245.mins_z;
+    globaldef007269 = globaldef007245.maxs_y;
+    globaldef007270 = globaldef007245.mins_z;
     globaldef007271_x = globaldef007245.maxs_x;
-    globaldef007271_y = globaldef007245.mins_y;
-    globaldef007271_z = globaldef007245.mins_z;
+    globaldef007273 = globaldef007245.mins_y;
+    globaldef007274 = globaldef007245.mins_z;
     globaldef007275_x = globaldef007245.mins_x;
-    globaldef007275_y = globaldef007245.mins_y;
-    globaldef007275_z = globaldef007245.mins_z;
+    globaldef007277 = globaldef007245.mins_y;
+    globaldef007278 = globaldef007245.mins_z;
     globaldef007279_x = globaldef007245.mins_x;
-    globaldef007279_y = globaldef007245.maxs_y;
-    globaldef007279_z = globaldef007245.mins_z;
+    globaldef007281 = globaldef007245.maxs_y;
+    globaldef007282 = globaldef007245.mins_z;
     globaldef007283_x = globaldef007245.maxs_x;
-    globaldef007283_y = globaldef000191;
-    globaldef007283_z = globaldef000191;
+    globaldef007286 = globaldef007285 = globaldef000191;
     globaldef007287_x = globaldef007245.mins_x;
-    globaldef007287_y = globaldef000191;
-    globaldef007287_z = globaldef000191;
-    globaldef007291_x = globaldef000191;
-    globaldef007291_y = globaldef007245.maxs_y;
-    globaldef007291_z = globaldef000191;
-    globaldef007295_x = globaldef000191;
-    globaldef007295_y = globaldef007245.mins_y;
-    globaldef007295_z = globaldef000191;
+    globaldef007291_x = globaldef007290 = globaldef007289 = globaldef000191;
+    globaldef007293 = globaldef007245.maxs_y;
+    globaldef007295_x = globaldef007294 = globaldef000191;
+    globaldef007297 = globaldef007245.mins_y;
+    globaldef007298 = globaldef000191;
     globaldef007299 = globaldef000264;
-    globaldef007299_z = globaldef007245.maxs_z - globaldef000192;
+    globaldef007302 = globaldef007245.maxs_z - globaldef000192;
     globaldef007303 = globaldef000264;
-    globaldef007303_z = globaldef007245.mins_z + globaldef000192;
+    globaldef007306 = globaldef007245.mins_z + globaldef000192;
     globaldef007345 = cvar("sv_friction");
     globaldef007346 = cvar("sv_stopspeed");
     globaldef007340 = globaldef000191;
@@ -82759,13 +82712,13 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
     globaldef007342 = globaldef000191;
     do
     {
-        globaldef007311_z = globaldef007311_z - (globaldef000782 * 0.010);
+        globaldef007314 = 0.000 - (globaldef000782 * 0.010);
         
         if(globaldef007340)
         {
             globaldef007311 = globaldef007311 * globaldef000213;
             globaldef007335 = globaldef007311;
-            globaldef007335_z = globaldef000191;
+            globaldef007338 = globaldef000191;
             globaldef007347 = vlen(globaldef007335);
             
             if(globaldef007347)
@@ -82788,7 +82741,7 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
                 
                 globaldef007349 = globaldef007349 / globaldef007347;
                 globaldef007311_x = globaldef007311_x * globaldef007349;
-                globaldef007311_y = globaldef007311_y * globaldef007349;
+                globaldef007313 = 0.000 * globaldef007349;
             }
             
             globaldef007311 = globaldef007311 * 0.100;
@@ -82898,7 +82851,7 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
                     return globaldef000191;
                 }
                 
-                if(globaldef007315_y > globaldef000191)
+                if(0.000 > globaldef000191)
                 {
                     globaldef007331 = (globaldef007307 + globaldef007315) + globaldef007291;
                 }
@@ -82922,7 +82875,7 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
                 globaldef007315 = globaldef007315 - (globaldef007323 * (globaldef007315 * globaldef007323));
                 globaldef007319 = globaldef007311;
                 globaldef007311 = globaldef007311 - (globaldef007323 * (globaldef007311 * globaldef007323));
-                if((globaldef007319_z < globaldef000191) && (globaldef007311_z >= globaldef000191))
+                if((0.000 < globaldef000191) && (0.000 >= globaldef000191))
                 {
                     if(globaldef007344 == globaldef000191)
                     {
@@ -82930,7 +82883,7 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
                         if((globaldef007323 * '0.000 0.000 1.000') > 0.800)
                         {
                             
-                            if(globaldef007319_z < -650.000)
+                            if(0.000 < -650.000)
                             {
                                 return globaldef000191;
                             }
@@ -82981,10 +82934,10 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
         }
         
         
-        if(globaldef007311_z <= globaldef000191)
+        if(0.000 <= globaldef000191)
         {
             globaldef007327 = globaldef007307;
-            globaldef007327_z = (globaldef007307_z + globaldef007245.mins_z) + globaldef000194;
+            globaldef007330 = (0.000 + globaldef007245.mins_z) + globaldef000194;
             globaldef007341 = pointcontents(globaldef007327);
             
             if((globaldef007341 == globaldef000258) || (globaldef007341 == globaldef000257))
@@ -83116,20 +83069,19 @@ float (entity globaldef007351, float globaldef007352) func002434 =
     local vector globaldef007369;
     globaldef007359 = globaldef000783;
     globaldef007365 = globaldef007351.origin + ((globaldef007351.mins + globaldef007351.maxs) * globaldef000522);
-    globaldef007365_z = globaldef007351.absmin_z;
+    globaldef007368 = globaldef007351.absmin_z;
     globaldef007369 = globaldef007351.goalentity.origin + ((globaldef007351.goalentity.mins + globaldef007351.goalentity.maxs) * globaldef000522);
-    globaldef007369_z = globaldef007351.goalentity.absmin_z;
+    globaldef007372 = globaldef007351.goalentity.absmin_z;
     globaldef007360 = ((globaldef000522 * globaldef000782) * (globaldef007352 / globaldef000782)) * (globaldef007352 / globaldef000782);
-    globaldef007353 = globaldef007365_z + globaldef007360;
-    globaldef007354 = globaldef007353 - globaldef007369_z;
+    globaldef007353 = 0.000 + globaldef007360;
+    globaldef007354 = globaldef007353 - 0.000;
     
     if(globaldef007354 < globaldef000191)
     {
         return globaldef007359;
     }
     
-    globaldef007357 = globaldef000191;
-    globaldef007355 = globaldef000191;
+    globaldef007355 = globaldef007357 = globaldef000191;
     globaldef007354 = globaldef007354 * 100.000;
     globaldef007356 = globaldef000191;
     do
@@ -83139,7 +83091,7 @@ float (entity globaldef007351, float globaldef007352) func002434 =
         globaldef007356 = globaldef007356 + globaldef000192;
     } while (globaldef007355 < globaldef007354);
     globaldef007361 = globaldef007369 - globaldef007365;
-    globaldef007361_z = globaldef000191;
+    globaldef007364 = globaldef000191;
     globaldef007358 = (vlen(globaldef007361) * 100.000) / (globaldef007356 + ((100.000 * globaldef007352) / globaldef000782));
     
     if(globaldef007358 > globaldef007359)
@@ -83222,11 +83174,11 @@ float (entity globaldef007380, vector globaldef007381, vector globaldef007385, f
         globaldef007390 = globaldef007389;
     }
     
-    globaldef007381_z = globaldef000191;
+    globaldef007384 = globaldef000191;
     globaldef007381 = normalize(globaldef007381);
     globaldef007391_x = globaldef007381_x * globaldef007390;
-    globaldef007391_y = globaldef007381_y * globaldef007390;
-    globaldef007391_z = globaldef000717 + 20.000;
+    globaldef007393 = 0.000 * globaldef007390;
+    globaldef007394 = globaldef000717 + 20.000;
     
     if(func002433(globaldef007380, globaldef007391, 50.000))
     {
@@ -83234,7 +83186,7 @@ float (entity globaldef007380, vector globaldef007381, vector globaldef007385, f
         if(globaldef007385 == globaldef000264)
         {
             
-            if(globaldef007132_z < (globaldef007380.goalentity.origin_z - globaldef000776))
+            if(0.000 < (globaldef007380.goalentity.origin_z - globaldef000776))
             {
                 return globaldef000191;
             }
@@ -83331,16 +83283,16 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
         globaldef007403 = globaldef007397;
     }
     
-    globaldef007403_z = globaldef000191;
+    globaldef007406 = globaldef000191;
     globaldef007403 = normalize(globaldef007403);
     globaldef007407_x = globaldef007403_x * globaldef007402;
-    globaldef007407_y = globaldef007403_y * globaldef007402;
-    globaldef007407_z = globaldef000717 + 20.000;
+    globaldef007409 = 0.000 * globaldef007402;
+    globaldef007410 = globaldef000717 + 20.000;
     
     if(func002433(globaldef007396, globaldef007407, 50.000))
     {
         
-        if(globaldef007132_z < (globaldef007396.goalentity.origin_z - globaldef000776))
+        if(0.000 < (globaldef007396.goalentity.origin_z - globaldef000776))
         {
             return globaldef000716;
         }
@@ -83547,7 +83499,7 @@ float (entity globaldef007412) func002438 =
     }
     
     globaldef007441 = globaldef007412.goalentity.origin - globaldef007412.origin;
-    globaldef007441_z = globaldef000191;
+    globaldef007444 = globaldef000191;
     globaldef007441 = normalize(globaldef007441);
     globaldef007429 = globaldef007412.v_angle;
     globaldef007429_x = 80.000;
@@ -83567,9 +83519,9 @@ float (entity globaldef007412) func002438 =
     globaldef007450 = 120.000 - globaldef007449;
     globaldef007450 = globaldef007450 * globaldef000522;
     globaldef007425 = ((normalize(globaldef007433 - globaldef000047)) * globaldef007450) * globaldef000195;
-    globaldef007445_z = globaldef007425_z + globaldef000717;
-    globaldef007452 = func002434(globaldef007412, globaldef007445_z);
-    globaldef007425_z = globaldef000191;
+    globaldef007448 = 0.000 + globaldef000717;
+    globaldef007452 = func002434(globaldef007412, 0.000);
+    globaldef007428 = globaldef000191;
     globaldef007437 = (globaldef007452 * globaldef007441) - globaldef007425;
     
     if(vlen(globaldef007437) > globaldef000783)
@@ -83578,19 +83530,19 @@ float (entity globaldef007412) func002438 =
     }
     
     globaldef007445_x = globaldef007437_x + globaldef007425_x;
-    globaldef007445_y = globaldef007437_y + globaldef007425_y;
+    globaldef007447 = 0.000 + 0.000;
     
     if(func002433(globaldef007412, globaldef007445, 50.000))
     {
         
-        if(globaldef007132_z < (globaldef007412.goalentity.origin_z - globaldef000776))
+        if(0.000 < (globaldef007412.goalentity.origin_z - globaldef000776))
         {
             return globaldef000716;
         }
         
         globaldef007445_x = globaldef007437_x;
-        globaldef007445_y = globaldef007437_y;
-        globaldef007445_z = globaldef000717;
+        globaldef007447 = 0.000;
+        globaldef007448 = globaldef000717;
         func002435(globaldef007412, globaldef000264);
         globaldef007412.field000279 = globaldef007445;
         globaldef007412.field000278 = globaldef000004 + globaldef000522;
@@ -84081,31 +84033,31 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
     local vector globaldef007492;
     local vector globaldef007496;
     globaldef007457 = normalize(globaldef007457);
-    globaldef007457_z = globaldef000191;
+    globaldef007460 = globaldef000191;
     globaldef007468_x = globaldef007456.maxs_x - globaldef000192;
-    globaldef007468_y = globaldef007456.maxs_y - globaldef000192;
-    globaldef007468_z = globaldef000191;
+    globaldef007470 = globaldef007456.maxs_y - globaldef000192;
+    globaldef007471 = globaldef000191;
     globaldef007472_x = globaldef007456.maxs_x - globaldef000192;
-    globaldef007472_y = globaldef007456.mins_y + globaldef000192;
-    globaldef007472_z = globaldef000191;
+    globaldef007474 = globaldef007456.mins_y + globaldef000192;
+    globaldef007475 = globaldef000191;
     globaldef007476_x = globaldef007456.mins_x + globaldef000192;
-    globaldef007476_y = globaldef007456.mins_y + globaldef000192;
-    globaldef007476_z = globaldef000191;
+    globaldef007478 = globaldef007456.mins_y + globaldef000192;
+    globaldef007479 = globaldef000191;
     globaldef007480_x = globaldef007456.mins_x + globaldef000192;
-    globaldef007480_y = globaldef007456.maxs_y - globaldef000192;
-    globaldef007480_z = globaldef000191;
+    globaldef007482 = globaldef007456.maxs_y - globaldef000192;
+    globaldef007483 = globaldef000191;
     if(!globaldef007461)
     {
         globaldef007488 = globaldef007456.origin;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007495 = 0.000 - globaldef000721;
         traceline(globaldef007488, globaldef007492, globaldef000192, globaldef007456);
-        globaldef007466 = globaldef007488_z - (globaldef000046 * globaldef000721);
+        globaldef007466 = 0.000 - (globaldef000046 * globaldef000721);
         globaldef007488 = globaldef007456.origin + globaldef007468;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007495 = 0.000 - globaldef000721;
         traceline(globaldef007488, globaldef007492, globaldef000192, globaldef007456);
-        globaldef007465 = globaldef007488_z - (globaldef000046 * globaldef000721);
+        globaldef007465 = 0.000 - (globaldef000046 * globaldef000721);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -84114,9 +84066,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007472;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007495 = 0.000 - globaldef000721;
         traceline(globaldef007488, globaldef007492, globaldef000192, globaldef007456);
-        globaldef007465 = globaldef007488_z - (globaldef000046 * globaldef000721);
+        globaldef007465 = 0.000 - (globaldef000046 * globaldef000721);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -84125,9 +84077,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007476;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007495 = 0.000 - globaldef000721;
         traceline(globaldef007488, globaldef007492, globaldef000192, globaldef007456);
-        globaldef007465 = globaldef007488_z - (globaldef000046 * globaldef000721);
+        globaldef007465 = 0.000 - (globaldef000046 * globaldef000721);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -84136,9 +84088,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007472;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007495 = 0.000 - globaldef000721;
         traceline(globaldef007488, globaldef007492, globaldef000192, globaldef007456);
-        globaldef007465 = globaldef007488_z - (globaldef000046 * globaldef000721);
+        globaldef007465 = 0.000 - (globaldef000046 * globaldef000721);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -84146,18 +84098,18 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         }
         
         globaldef007496 = globaldef007456.origin;
-        globaldef007496_z = globaldef007466 + globaldef007456.maxs_z;
+        globaldef007499 = globaldef007466 + globaldef007456.maxs_z;
     }
     else
     {
         globaldef007496 = globaldef007456.origin;
-        globaldef007496_z = globaldef007456.absmax_z;
+        globaldef007499 = globaldef007456.absmax_z;
     }
     
     globaldef007463 = (globaldef007456.size_z + globaldef000197) / 1000.000;
     globaldef007488 = globaldef007496;
     globaldef007492 = globaldef007488;
-    globaldef007492_z = globaldef007492_z - 1000.000;
+    globaldef007495 = 0.000 - 1000.000;
     if(pointcontents(globaldef007488) == globaldef000255)
     {
         globaldef000046 = globaldef000191;
@@ -84174,7 +84126,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         globaldef007463 = globaldef000046 + 0.032;
         globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - 1000.000;
+        globaldef007495 = 0.000 - 1000.000;
         if(pointcontents(globaldef007488) == globaldef000255)
         {
             globaldef000046 = globaldef000191;
@@ -84191,7 +84143,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
             globaldef007463 = globaldef000046 + 0.032;
             globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
             globaldef007492 = globaldef007488;
-            globaldef007492_z = globaldef007492_z - 1000.000;
+            globaldef007495 = 0.000 - 1000.000;
             if(pointcontents(globaldef007488) == globaldef000255)
             {
                 globaldef000046 = globaldef000191;
@@ -84208,7 +84160,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                 globaldef007463 = globaldef000046 + 0.032;
                 globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
                 globaldef007492 = globaldef007488;
-                globaldef007492_z = globaldef007492_z - 1000.000;
+                globaldef007495 = 0.000 - 1000.000;
                 if(pointcontents(globaldef007488) == globaldef000255)
                 {
                     globaldef000046 = globaldef000191;
@@ -84225,7 +84177,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                     globaldef007463 = globaldef000046 + 0.032;
                     globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
                     globaldef007492 = globaldef007488;
-                    globaldef007492_z = globaldef007492_z - 1000.000;
+                    globaldef007495 = 0.000 - 1000.000;
                     if(pointcontents(globaldef007488) == globaldef000255)
                     {
                         globaldef000046 = globaldef000191;
@@ -84250,7 +84202,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
     }
     
-    globaldef007488_z = (globaldef007488_z - globaldef007456.size_z) - globaldef000197;
+    globaldef007491 = (0.000 - globaldef007456.size_z) - globaldef000197;
     
     if(pointcontents(globaldef007488) == globaldef000256)
     {
@@ -84264,7 +84216,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         globaldef007484 = globaldef007496 + (globaldef007462 * globaldef007457);
         globaldef007488 = globaldef007484;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - 1000.000;
+        globaldef007495 = 0.000 - 1000.000;
         if(pointcontents(globaldef007488) == globaldef000255)
         {
             globaldef000046 = globaldef000191;
@@ -84276,11 +84228,11 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007464 = globaldef000046;
         globaldef007467 = pointcontents(globaldef000047 + '0.000 0.000 1.000');
-        if((((globaldef000046 > globaldef007463) || (globaldef000051_z < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
+        if((((globaldef000046 > globaldef007463) || (0.000 < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
         {
             globaldef007488 = globaldef007484 + globaldef007468;
             globaldef007492 = globaldef007488;
-            globaldef007492_z = globaldef007492_z - 1000.000;
+            globaldef007495 = 0.000 - 1000.000;
             if(pointcontents(globaldef007488) == globaldef000255)
             {
                 globaldef000046 = globaldef000191;
@@ -84297,11 +84249,11 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
             }
             
             globaldef007467 = pointcontents(globaldef000047 + '0.000 0.000 1.000');
-            if((((globaldef000046 > globaldef007463) || (globaldef000051_z < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
+            if((((globaldef000046 > globaldef007463) || (0.000 < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
             {
                 globaldef007488 = globaldef007484 + globaldef007472;
                 globaldef007492 = globaldef007488;
-                globaldef007492_z = globaldef007492_z - 1000.000;
+                globaldef007495 = 0.000 - 1000.000;
                 if(pointcontents(globaldef007488) == globaldef000255)
                 {
                     globaldef000046 = globaldef000191;
@@ -84318,11 +84270,11 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                 }
                 
                 globaldef007467 = pointcontents(globaldef000047 + '0.000 0.000 1.000');
-                if((((globaldef000046 > globaldef007463) || (globaldef000051_z < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
+                if((((globaldef000046 > globaldef007463) || (0.000 < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
                 {
                     globaldef007488 = globaldef007484 + globaldef007476;
                     globaldef007492 = globaldef007488;
-                    globaldef007492_z = globaldef007492_z - 1000.000;
+                    globaldef007495 = 0.000 - 1000.000;
                     if(pointcontents(globaldef007488) == globaldef000255)
                     {
                         globaldef000046 = globaldef000191;
@@ -84339,11 +84291,11 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                     }
                     
                     globaldef007467 = pointcontents(globaldef000047 + '0.000 0.000 1.000');
-                    if((((globaldef000046 > globaldef007463) || (globaldef000051_z < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
+                    if((((globaldef000046 > globaldef007463) || (0.000 < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
                     {
                         globaldef007488 = globaldef007484 + globaldef007480;
                         globaldef007492 = globaldef007488;
-                        globaldef007492_z = globaldef007492_z - 1000.000;
+                        globaldef007495 = 0.000 - 1000.000;
                         if(pointcontents(globaldef007488) == globaldef000255)
                         {
                             globaldef000046 = globaldef000191;
@@ -84360,7 +84312,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                         }
                         
                         globaldef007467 = pointcontents(globaldef000047 + '0.000 0.000 1.000');
-                        if((((globaldef000046 > globaldef007463) || (globaldef000051_z < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
+                        if((((globaldef000046 > globaldef007463) || (0.000 < 0.700)) || (globaldef007467 == globaldef000258)) || (globaldef007467 == globaldef000257))
                         {
                             return globaldef000192;
                         }
@@ -84733,7 +84685,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     if(globaldef007503 == globaldef000264)
     {
         globaldef007523 = globaldef007502.goalentity.origin;
-        globaldef007523_z = globaldef007502.origin_z;
+        globaldef007526 = globaldef007502.origin_z;
         globaldef007519 = globaldef007523 - globaldef007502.origin;
         globaldef007539 = vlen(globaldef007519);
     }
@@ -84778,12 +84730,12 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
                         {
                             globaldef007531 = (globaldef007510.absmax + globaldef007510.absmin) * globaldef000522;
                             
-                            if(globaldef007531_z > globaldef007502.origin_z)
+                            if(0.000 > globaldef007502.origin_z)
                             {
                                 globaldef007519 = globaldef007531 - globaldef007502.origin;
-                                globaldef007519_z = globaldef000191;
+                                globaldef007522 = globaldef000191;
                                 globaldef007519 = globaldef000783 * normalize(globaldef007519);
-                                globaldef007519_z = globaldef000717;
+                                globaldef007522 = globaldef000717;
                                 func002431(globaldef007502, globaldef007519);
                                 return globaldef000711;
                             }
@@ -84810,7 +84762,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             globaldef007539 = globaldef000197;
         }
         
-        globaldef007519_z = globaldef000191;
+        globaldef007522 = globaldef000191;
         globaldef007502.velocity = globaldef007510.velocity + ((normalize(globaldef007519) * globaldef007539) * globaldef000208);
         
         if(globaldef007502.goalentity.goalentity != globaldef007510)
@@ -84831,10 +84783,10 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             if(globaldef007523_x > globaldef007502.absmin_x)
             {
                 
-                if(globaldef007523_y < globaldef007502.absmax_y)
+                if(0.000 < globaldef007502.absmax_y)
                 {
                     
-                    if(globaldef007523_y > globaldef007502.absmin_y)
+                    if(0.000 > globaldef007502.absmin_y)
                     {
                         return globaldef000716;
                     }
@@ -84851,7 +84803,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     if(globaldef007502.waterlevel <= globaldef000194)
     {
         globaldef007515 = globaldef007502.origin;
-        globaldef007515_z = (globaldef007515_z + globaldef007502.mins_z) + globaldef000194;
+        globaldef007518 = (0.000 + globaldef007502.mins_z) + globaldef000194;
         globaldef007540 = pointcontents(globaldef007515);
         
         if((globaldef007540 == globaldef000258) || (globaldef007540 == globaldef000257))
@@ -85036,7 +84988,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
 // OP_CALL4	22626	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef007567, vector globaldef007568, float globaldef007572, float globaldef007573) func002441 = 
+float (entity globaldef007567, vector globaldef007568, float globaldef007572, float globaldef007573) func002441 = 
 {
     local vector globaldef007574;
     local string globaldef007578;
@@ -85045,7 +84997,7 @@ void (entity globaldef007567, vector globaldef007568, float globaldef007572, flo
     if((globaldef007578 == "door") || (globaldef007578 == "train"))
     {
         globaldef007574 = (globaldef007567.goalentity.goalentity.absmin + globaldef007567.goalentity.goalentity.absmax) * globaldef000522;
-        globaldef007574_z = globaldef007567.goalentity.goalentity.absmax_z + globaldef000192;
+        globaldef007577 = globaldef007567.goalentity.goalentity.absmax_z + globaldef000192;
         globaldef007574 = globaldef007574 + (globaldef007567.goalentity.goalentity.velocity * 0.200);
         setorigin(globaldef007567.goalentity, globaldef007574);
     }
@@ -85061,7 +85013,7 @@ void (entity globaldef007567, vector globaldef007568, float globaldef007572, flo
     {
         makevectors(globaldef007567.angles);
         globaldef007567.velocity_x = globaldef000032_x * globaldef000198;
-        globaldef007567.velocity_y = globaldef000032_y * globaldef000198;
+        globaldef007567.velocity_y = 0.000 * globaldef000198;
         return globaldef000711;
     }
     
@@ -85107,10 +85059,9 @@ float (entity globaldef007579, float globaldef007580) func002442 =
     
     if(globaldef007580 > globaldef000783)
     {
-        globaldef007580 = globaldef000783;
     }
     
-    globaldef007580 = globaldef000783;
+    globaldef007580 = globaldef007580 = globaldef000783;
     globaldef007581 = func002441(globaldef007579, globaldef000264, globaldef007580, globaldef000191);
     return globaldef007581;
 };
@@ -85145,10 +85096,9 @@ float (entity globaldef007582, float globaldef007583) BotJumpToGoal =
     
     if(globaldef007583 > globaldef000783)
     {
-        globaldef007583 = globaldef000783;
     }
     
-    globaldef007583 = globaldef000783;
+    globaldef007583 = globaldef007583 = globaldef000783;
     globaldef007584 = func002441(globaldef007582, globaldef000264, globaldef007583, globaldef000192);
     return globaldef007584;
 };
@@ -85192,12 +85142,11 @@ float (entity globaldef007585, float globaldef007586, float globaldef007587) fun
     
     if(globaldef007587 > globaldef000783)
     {
-        globaldef007587 = globaldef000783;
     }
     
-    globaldef007587 = globaldef000783;
+    globaldef007587 = globaldef007587 = globaldef000783;
     globaldef007588 = globaldef000264;
-    globaldef007588_y = globaldef007586;
+    globaldef007590 = globaldef007586;
     makevectors(globaldef007588);
     globaldef007592 = func002441(globaldef007585, globaldef000032, globaldef007587, globaldef000191);
     
@@ -85248,12 +85197,11 @@ float (entity globaldef007593, float globaldef007594, float globaldef007595) fun
     
     if(globaldef007595 > globaldef000783)
     {
-        globaldef007595 = globaldef000783;
     }
     
-    globaldef007595 = globaldef000783;
+    globaldef007595 = globaldef007595 = globaldef000783;
     globaldef007596 = globaldef000264;
-    globaldef007596_y = globaldef007594;
+    globaldef007598 = globaldef007594;
     makevectors(globaldef007596);
     globaldef007600 = func002441(globaldef007593, globaldef000032, globaldef007595, globaldef000192);
     
@@ -86096,7 +86044,7 @@ float (entity globaldef007667, entity globaldef007668) func002456 =
 float (vector globaldef007677) func002457 = 
 {
     traceline(globaldef007677, globaldef007677 + '0.000 0.000 -500.000', globaldef000192, globaldef000001);
-    return globaldef000047_z;
+    return 0.000;
 };
 
 // func002458
@@ -86256,43 +86204,43 @@ float (entity globaldef007683) func002459 =
     local vector globaldef007688;
     globaldef007684 = globaldef007683.origin;
     globaldef007688 = globaldef007684;
-    globaldef007688_z = globaldef007688_z - 200.000;
+    globaldef007691 = 0.000 - 200.000;
     traceline(globaldef007684, globaldef007688, globaldef000192, globaldef000001);
     
     if(((globaldef000056.classname != "plat") && (globaldef000056.classname != "door")) && (globaldef000056.classname != "train"))
     {
         globaldef007684 = globaldef007683.origin;
         globaldef007684_x = (globaldef007684_x + globaldef000001.maxs_x) - globaldef000192;
-        globaldef007684_y = (globaldef007684_y + globaldef000001.maxs_y) - globaldef000192;
+        globaldef007686 = (0.000 + globaldef000001.maxs_y) - globaldef000192;
         globaldef007688 = globaldef007684;
-        globaldef007688_z = globaldef007688_z - 200.000;
+        globaldef007691 = 0.000 - 200.000;
         traceline(globaldef007684, globaldef007688, globaldef000192, globaldef000001);
         
         if(((globaldef000056.classname != "plat") && (globaldef000056.classname != "door")) && (globaldef000056.classname != "train"))
         {
             globaldef007684 = globaldef007683.origin;
             globaldef007684_x = (globaldef007684_x + globaldef000001.maxs_x) - globaldef000192;
-            globaldef007684_y = (globaldef007684_y + globaldef000001.mins_y) + globaldef000192;
+            globaldef007686 = (0.000 + globaldef000001.mins_y) + globaldef000192;
             globaldef007688 = globaldef007684;
-            globaldef007688_z = globaldef007688_z - 200.000;
+            globaldef007691 = 0.000 - 200.000;
             traceline(globaldef007684, globaldef007688, globaldef000192, globaldef000001);
             
             if(((globaldef000056.classname != "plat") && (globaldef000056.classname != "door")) && (globaldef000056.classname != "train"))
             {
                 globaldef007684 = globaldef007683.origin;
                 globaldef007684_x = (globaldef007684_x + globaldef000001.mins_x) + globaldef000192;
-                globaldef007684_y = (globaldef007684_y + globaldef000001.mins_y) + globaldef000192;
+                globaldef007686 = (0.000 + globaldef000001.mins_y) + globaldef000192;
                 globaldef007688 = globaldef007684;
-                globaldef007688_z = globaldef007688_z - 200.000;
+                globaldef007691 = 0.000 - 200.000;
                 traceline(globaldef007684, globaldef007688, globaldef000192, globaldef000001);
                 
                 if(((globaldef000056.classname != "plat") && (globaldef000056.classname != "door")) && (globaldef000056.classname != "train"))
                 {
                     globaldef007684 = globaldef007683.origin;
                     globaldef007684_x = (globaldef007684_x + globaldef000001.mins_x) + globaldef000192;
-                    globaldef007684_y = (globaldef007684_y + globaldef000001.maxs_y) - globaldef000192;
+                    globaldef007686 = (0.000 + globaldef000001.maxs_y) - globaldef000192;
                     globaldef007688 = globaldef007684;
-                    globaldef007688_z = globaldef007688_z - 200.000;
+                    globaldef007691 = 0.000 - 200.000;
                     traceline(globaldef007684, globaldef007688, globaldef000192, globaldef000001);
                     
                     if(((globaldef000056.classname != "plat") && (globaldef000056.classname != "door")) && (globaldef000056.classname != "train"))
@@ -86439,9 +86387,9 @@ entity (entity globaldef007693) func002461 =
     }
     
     globaldef007694 = globaldef007693.origin;
-    globaldef007694_z = globaldef007694_z + globaldef007693.mins_z;
+    globaldef007697 = 0.000 + globaldef007693.mins_z;
     globaldef007698 = globaldef007694;
-    globaldef007698_z = globaldef007698_z - globaldef000213;
+    globaldef007701 = 0.000 - globaldef000213;
     traceline(globaldef007694, globaldef007698, globaldef000192, globaldef007693);
     
     if(globaldef000046 < globaldef000192)
@@ -86550,9 +86498,9 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     local float globaldef007723;
     local float globaldef007724;
     globaldef007708 = (globaldef007703.absmin + globaldef007703.absmax) * globaldef000522;
-    globaldef007708_z = globaldef007703.absmin_z + globaldef000719;
+    globaldef007711 = globaldef007703.absmin_z + globaldef000719;
     globaldef007704 = (globaldef007702.absmin + globaldef007702.absmax) * globaldef000522;
-    globaldef007704_z = globaldef007702.absmin_z + globaldef000719;
+    globaldef007707 = globaldef007702.absmin_z + globaldef000719;
     
     if(globaldef007702.classname == "waypoint")
     {
@@ -86580,7 +86528,7 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     
     globaldef007721 = ((0.750 * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782);
     
-    if(globaldef007708_z > (globaldef007704_z + globaldef007721))
+    if(0.000 > (0.000 + globaldef007721))
     {
         return globaldef000191;
     }
@@ -86819,32 +86767,32 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
     }
     
     globaldef007731 = (globaldef007729.absmin + globaldef007729.absmax) * globaldef000522;
-    globaldef007731_z = globaldef007729.absmin_z + globaldef000719;
+    globaldef007734 = globaldef007729.absmin_z + globaldef000719;
     globaldef007735 = (globaldef007730.absmin + globaldef007730.absmax) * globaldef000522;
-    globaldef007735_z = globaldef007730.absmin_z + globaldef000719;
+    globaldef007738 = globaldef007730.absmin_z + globaldef000719;
     
-    if((globaldef007731_z + (globaldef000194 * globaldef000776)) > globaldef007735_z)
+    if((0.000 + (globaldef000194 * globaldef000776)) > 0.000)
     {
         return globaldef000191;
     }
     
     
-    if((globaldef007731_z + globaldef000777) < globaldef007735_z)
+    if((0.000 + globaldef000777) < 0.000)
     {
         return globaldef000191;
     }
     
     globaldef007747 = globaldef007731;
-    globaldef007747_z = globaldef000191;
+    globaldef007750 = globaldef000191;
     globaldef007751 = globaldef007735;
-    globaldef007751_z = globaldef000191;
+    globaldef007754 = globaldef000191;
     globaldef007756 = vlen(globaldef007751 - globaldef007747);
     globaldef007756 = globaldef007756 - ((globaldef000779 * globaldef000783) * 1.500);
     
     if(globaldef007756 > globaldef000191)
     {
         globaldef007755 = globaldef000191;
-        globaldef007757 = globaldef007731_z - globaldef007735_z;
+        globaldef007757 = 0.000 - 0.000;
         
         while(globaldef007757 > globaldef000191)
         {
@@ -86864,7 +86812,7 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
     globaldef007743 = vectoangles(globaldef007735 - globaldef007731);
     makevectors(globaldef007743);
     globaldef007739 = (globaldef007731 + globaldef007735) * globaldef000522;
-    globaldef007739_z = globaldef007735_z + globaldef000776;
+    globaldef007742 = 0.000 + globaldef000776;
     traceline(globaldef007731 + (globaldef000040 * globaldef000196), globaldef007739 + (globaldef000040 * globaldef000196), globaldef000192, globaldef007728);
     
     if(globaldef000046 != globaldef000192)
@@ -87005,9 +86953,9 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
     local float globaldef007804;
     local float globaldef007805;
     globaldef007767 = (globaldef007760.absmin + globaldef007760.absmax) * globaldef000522;
-    globaldef007767_z = globaldef007760.absmin_z + globaldef000719;
+    globaldef007770 = globaldef007760.absmin_z + globaldef000719;
     globaldef007763 = (globaldef007761.absmin + globaldef007761.absmax) * globaldef000522;
-    globaldef007763_z = globaldef007761.absmin_z + globaldef000719;
+    globaldef007766 = globaldef007761.absmin_z + globaldef000719;
     globaldef007805 = globaldef000778 * (globaldef000783 * 0.650);
     globaldef007804 = (vlen(globaldef007763 - globaldef007767)) / globaldef007805;
     globaldef007779 = globaldef007767;
@@ -87016,7 +86964,7 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
     {
         globaldef007771 = globaldef007763 - globaldef007779;
         globaldef007791 = globaldef007771;
-        globaldef007791_z = globaldef000191;
+        globaldef007794 = globaldef000191;
         if(vlen(globaldef007771) > globaldef007805)
         {
             globaldef007775 = normalize(globaldef007771) * globaldef007805;
@@ -87027,11 +86975,11 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
         }
         
         globaldef007783 = globaldef007779 + globaldef007775;
-        globaldef007783_z = func002457(globaldef007783) + globaldef000719;
+        globaldef007786 = func002457(globaldef007783) + globaldef000719;
         globaldef007802 = globaldef000191;
         globaldef007795 = globaldef007779;
         
-        if((globaldef007795_z + globaldef007762) < globaldef007783_z)
+        while((0.000 + globaldef007762) < 0.000)
         {
             globaldef007802 = globaldef007802 + globaldef000192;
             
@@ -87045,34 +86993,31 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
             {
                 globaldef007801 = globaldef007801 * globaldef000522;
                 globaldef007787 = globaldef007795 + (globaldef007801 * globaldef007775);
-                globaldef007787_z = func002457(globaldef007787) + globaldef000719;
+                globaldef007790 = func002457(globaldef007787) + globaldef000719;
                 
                 if(globaldef007801 < 0.004)
                 {
                     return globaldef000191;
                 }
                 
-            } while ((globaldef007795_z + globaldef007762) < globaldef007787_z);
+            } while ((0.000 + globaldef007762) < 0.000);
             globaldef007795 = globaldef007787;
             globaldef007775 = globaldef007775 - (globaldef007801 * globaldef007775);
         }
         
+        globaldef007779 = globaldef007783;
+        globaldef007804 = globaldef007804 - globaldef000192;
     }
     
-    globaldef007779 = globaldef007783;
-    globaldef007804 = globaldef007804 - globaldef000192;
-}
-
-
-if((globaldef007779_z + globaldef007762) < globaldef007763_z)
-{
-    return globaldef000191;
-}
-
-return globaldef000192;
+    
+    if((0.000 + globaldef007762) < 0.000)
+    {
+        return globaldef000191;
+    }
+    
+    return globaldef000192;
 };
 
-/* ERROR INDENTATION */
 // func002465
 // function begins at statement 41509, parm_start=23821
 // OP_IFNOT	23823	3	0
@@ -87249,7 +87194,7 @@ return globaldef000192;
 // OP_CALL3	23710	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef007809, entity globaldef007810, float globaldef007811) func002465 = 
+float (entity globaldef007809, entity globaldef007810, float globaldef007811) func002465 = 
 {
     local vector globaldef007812;
     local vector globaldef007816;
@@ -87275,7 +87220,7 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
     }
     
     globaldef007824 = globaldef007809.origin + ((globaldef007809.mins + globaldef007809.maxs) * globaldef000522);
-    globaldef007824_z = (globaldef007809.origin_z + globaldef007809.mins_z) + globaldef000719;
+    globaldef007827 = (globaldef007809.origin_z + globaldef007809.mins_z) + globaldef000719;
     
     if(globaldef007809.classname == "waypoint")
     {
@@ -87323,7 +87268,7 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
     }
     
     globaldef007820 = globaldef007810.origin + ((globaldef007810.mins + globaldef007810.maxs) * globaldef000522);
-    globaldef007820_z = (globaldef007810.origin_z + globaldef007810.mins_z) + globaldef000719;
+    globaldef007823 = (globaldef007810.origin_z + globaldef007810.mins_z) + globaldef000719;
     globaldef007812 = globaldef007824;
     globaldef007816 = globaldef007820;
     globaldef007836 = vlen(globaldef007816 - globaldef007812);
@@ -87368,13 +87313,13 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
     if(globaldef000046 != globaldef000192)
     {
         
-        if(globaldef007812_z < globaldef007816_z)
+        if(0.000 < 0.000)
         {
             return globaldef000191;
         }
         
         globaldef007828 = globaldef007816;
-        globaldef007828_z = globaldef007812_z;
+        globaldef007831 = 0.000;
         traceline(globaldef007812, globaldef007828, globaldef000192, globaldef007809);
         
         if(globaldef000046 != globaldef000192)
@@ -87392,7 +87337,7 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
     }
     
     globaldef007812 = globaldef007824;
-    if(globaldef007816_z > (globaldef007812_z + globaldef000776))
+    if(0.000 > (0.000 + globaldef000776))
     {
         
         if(!globaldef007811)
@@ -87404,9 +87349,9 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
     else
     {
         globaldef007812 = globaldef007824;
-        globaldef007812_z = globaldef000191;
+        globaldef007815 = globaldef000191;
         globaldef007816 = globaldef007820;
-        globaldef007816_z = globaldef000191;
+        globaldef007819 = globaldef000191;
         globaldef007835 = vlen(globaldef007816 - globaldef007812);
         globaldef007835 = globaldef007835 - (globaldef000778 * globaldef000783);
         
@@ -87416,7 +87361,7 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
         }
         
         globaldef007833 = globaldef000191;
-        globaldef007834 = globaldef007824_z - globaldef007820_z;
+        globaldef007834 = 0.000 - 0.000;
         
         while(globaldef007834 > globaldef000191)
         {
@@ -87444,7 +87389,7 @@ void (entity globaldef007809, entity globaldef007810, float globaldef007811) fun
 // OP_CALL3	23820	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef007841, entity globaldef007842) func002466 = 
+float (entity globaldef007841, entity globaldef007842) func002466 = 
 {
     return func002465(globaldef007841, globaldef007842, globaldef000191);
 };
@@ -87457,7 +87402,7 @@ void (entity globaldef007841, entity globaldef007842) func002466 =
 // OP_CALL3	23820	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef007843, entity globaldef007844) func002467 = 
+float (entity globaldef007843, entity globaldef007844) func002467 = 
 {
     return func002465(globaldef007843, globaldef007844, globaldef000192);
 };
@@ -87554,8 +87499,8 @@ void (entity globaldef007845) func002468 =
         
     }
     
-    globaldef007851 = globaldef007846_y - globaldef007845.ideal_yaw;
-    if(globaldef007846_y > globaldef007845.ideal_yaw)
+    globaldef007851 = 0.000 - globaldef007845.ideal_yaw;
+    if(0.000 > globaldef007845.ideal_yaw)
     {
         
         if(globaldef007851 > 180.000)
@@ -87775,7 +87720,7 @@ void (entity globaldef007860, entity globaldef007861) func002472 =
     {
         globaldef007860.search_time = globaldef000004 + globaldef000206;
         globaldef007862 = (globaldef007866.goalentity.absmax + globaldef007866.goalentity.absmin) * globaldef000522;
-        globaldef007862_z = globaldef007866.goalentity.absmin_z + globaldef000192;
+        globaldef007865 = globaldef007866.goalentity.absmin_z + globaldef000192;
         setorigin(globaldef007866, globaldef007862);
         globaldef007866.goalentity.field000339 = globaldef007860;
         globaldef007866.goalentity.field000340 = globaldef000004;
@@ -87966,31 +87911,31 @@ vector (entity globaldef007869) func002474 =
                 globaldef007873 = globaldef000192;
             }
             
-            globaldef007884_y = globaldef007884_y + (globaldef007873 * ((700.000 * random()) + 50.000));
+            globaldef007886 = 0.000 + (globaldef007873 * ((700.000 * random()) + 50.000));
         }
         
-        globaldef007884_z = (globaldef007884_z + ((globaldef000194 * globaldef000776) * random())) - globaldef000776;
+        globaldef007887 = (0.000 + ((globaldef000194 * globaldef000776) * random())) - globaldef000776;
         traceline(globaldef007869.origin, globaldef007884, globaldef000192, globaldef007869);
         globaldef007876 = normalize(globaldef007884 - globaldef007869.origin);
         globaldef007870 = vlen(globaldef007884 - globaldef007869.origin);
         globaldef007884 = globaldef007869.origin + (globaldef007876 * ((globaldef007870 * globaldef000046) - 20.000));
         globaldef007880 = globaldef007884;
-        globaldef007880_z = func002457(globaldef007880) + globaldef000192;
+        globaldef007883 = func002457(globaldef007880) + globaldef000192;
         globaldef007875 = pointcontents(globaldef007880);
         
         if((globaldef007875 == globaldef000254) || (globaldef007875 == globaldef000256))
         {
             globaldef007880 = globaldef007884 - (globaldef000292 * globaldef007876);
-            globaldef007880_z = func002457(globaldef007880) + globaldef000192;
+            globaldef007883 = func002457(globaldef007880) + globaldef000192;
             globaldef007875 = pointcontents(globaldef007880);
             
             if((globaldef007875 == globaldef000254) || (globaldef007875 == globaldef000256))
             {
                 globaldef007871 = globaldef007874 + (random() * globaldef000206);
                 
-                if((globaldef007884_z > globaldef007869.origin_z) || (globaldef007871 > globaldef000208))
+                if((0.000 > globaldef007869.origin_z) || (globaldef007871 > globaldef000208))
                 {
-                    globaldef007884_z = globaldef007880_z - globaldef007869.mins_z;
+                    globaldef007887 = 0.000 - globaldef007869.mins_z;
                 }
                 
                 globaldef007870 = vlen(globaldef007884 - globaldef007869.origin);
@@ -88089,7 +88034,7 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
     local vector globaldef007900;
     local vector globaldef007904;
     globaldef007900 = globaldef007889.origin;
-    globaldef007900_z = globaldef007889.origin_z + globaldef007889.mins_z;
+    globaldef007903 = globaldef007889.origin_z + globaldef007889.mins_z;
     globaldef007893 = pointcontents(globaldef007900);
     
     if(globaldef007893 != globaldef007891)
@@ -88098,7 +88043,7 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
     }
     
     globaldef007896 = globaldef007900;
-    globaldef007896_z = globaldef007896_z + globaldef007890;
+    globaldef007899 = 0.000 + globaldef007890;
     globaldef007893 = pointcontents(globaldef007896);
     
     if(globaldef007893 == globaldef007891)
@@ -88110,7 +88055,7 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
     
     if(globaldef000046 < globaldef000192)
     {
-        globaldef007896_z = globaldef000047_z - globaldef000192;
+        globaldef007899 = 0.000 - globaldef000192;
         globaldef007893 = pointcontents(globaldef007896);
         
         if(globaldef007893 == globaldef007891)
@@ -88131,11 +88076,11 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
             return globaldef000191;
         }
         
-        globaldef007894 = globaldef007896_z - globaldef007900_z;
+        globaldef007894 = 0.000 - 0.000;
         
         if(globaldef007894 <= globaldef000192)
         {
-            globaldef007895 = (globaldef007896_z + globaldef007900_z) * globaldef000522;
+            globaldef007895 = (0.000 + 0.000) * globaldef000522;
             
             if(globaldef007895 == globaldef000191)
             {
@@ -88146,8 +88091,8 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
         }
         
         globaldef007904 = globaldef007896;
-        globaldef007894 = (globaldef007896_z + globaldef007900_z) * globaldef000522;
-        globaldef007896_z = globaldef007894;
+        globaldef007894 = (0.000 + 0.000) * globaldef000522;
+        globaldef007899 = globaldef007894;
         globaldef007893 = pointcontents(globaldef007896);
         
         if(globaldef007893 == globaldef007891)
@@ -88330,77 +88275,77 @@ void (entity globaldef007909) func002476 =
     local float globaldef007918;
     globaldef007910 = globaldef007909.origin;
     globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
-    globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
+    globaldef007912 = 0.000 + globaldef007909.maxs_y;
     globaldef007914 = globaldef007910;
-    globaldef007914_z = globaldef007914_z + globaldef000724;
+    globaldef007917 = 0.000 + globaldef000724;
     traceline(globaldef007910, globaldef007914, globaldef000192, globaldef007909);
     
     if(globaldef000057)
     {
         globaldef007914 = globaldef007910;
-        globaldef007914_z = (globaldef007914_z + (globaldef000046 * globaldef000724)) - globaldef000719;
+        globaldef007917 = (0.000 + (globaldef000046 * globaldef000724)) - globaldef000719;
         
         if(pointcontents(globaldef007914) == globaldef000254)
         {
             globaldef007910 = globaldef007909.origin;
             globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
-            globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
+            globaldef007912 = 0.000 + globaldef007909.mins_y;
             globaldef007914 = globaldef007910;
-            globaldef007914_z = globaldef007914_z + globaldef000724;
+            globaldef007917 = 0.000 + globaldef000724;
             traceline(globaldef007910, globaldef007914, globaldef000192, globaldef007909);
             
             if(globaldef000057)
             {
                 globaldef007914 = globaldef007910;
-                globaldef007914_z = (globaldef007914_z + (globaldef000046 * globaldef000724)) - globaldef000719;
+                globaldef007917 = (0.000 + (globaldef000046 * globaldef000724)) - globaldef000719;
                 
                 if(pointcontents(globaldef007914) == globaldef000254)
                 {
                     globaldef007910 = globaldef007909.origin;
                     globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
-                    globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
+                    globaldef007912 = 0.000 + globaldef007909.mins_y;
                     globaldef007914 = globaldef007910;
-                    globaldef007914_z = globaldef007914_z + globaldef000724;
+                    globaldef007917 = 0.000 + globaldef000724;
                     traceline(globaldef007910, globaldef007914, globaldef000192, globaldef007909);
                     
                     if(globaldef000057)
                     {
                         globaldef007914 = globaldef007910;
-                        globaldef007914_z = (globaldef007914_z + (globaldef000046 * globaldef000724)) - globaldef000719;
+                        globaldef007917 = (0.000 + (globaldef000046 * globaldef000724)) - globaldef000719;
                         
                         if(pointcontents(globaldef007914) == globaldef000254)
                         {
                             globaldef007910 = globaldef007909.origin;
                             globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
-                            globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
+                            globaldef007912 = 0.000 + globaldef007909.maxs_y;
                             globaldef007914 = globaldef007910;
-                            globaldef007914_z = globaldef007914_z + globaldef000724;
+                            globaldef007917 = 0.000 + globaldef000724;
                             traceline(globaldef007910, globaldef007914, globaldef000192, globaldef007909);
                             
                             if(globaldef000057)
                             {
                                 globaldef007914 = globaldef007910;
-                                globaldef007914_z = (globaldef007914_z + (globaldef000046 * globaldef000724)) - globaldef000719;
+                                globaldef007917 = (0.000 + (globaldef000046 * globaldef000724)) - globaldef000719;
                                 
                                 if(pointcontents(globaldef007914) == globaldef000254)
                                 {
                                     globaldef007910 = globaldef007909.origin;
                                     globaldef007914 = globaldef007910;
-                                    globaldef007914_z = globaldef007914_z + globaldef000724;
+                                    globaldef007917 = 0.000 + globaldef000724;
                                     traceline(globaldef007910, globaldef007914, globaldef000192, globaldef007909);
                                     
                                     if(globaldef000057)
                                     {
                                         globaldef007914 = globaldef007910;
-                                        globaldef007914_z = (globaldef007914_z + (globaldef000046 * globaldef000724)) - globaldef000719;
+                                        globaldef007917 = (0.000 + (globaldef000046 * globaldef000724)) - globaldef000719;
                                         
                                         if(pointcontents(globaldef007914) == globaldef000254)
                                         {
                                             globaldef007909.goalentity.goalentity = globaldef007909.goalentity;
                                             globaldef007918 = pointcontents(globaldef007909.origin);
                                             globaldef007914 = globaldef007909.origin;
-                                            globaldef007914_z = func002475(globaldef007909, (globaldef000046 * globaldef000724) - globaldef000192, globaldef007918);
-                                            globaldef007914_z = globaldef007914_z + 20.000;
+                                            globaldef007917 = func002475(globaldef007909, (globaldef000046 * globaldef000724) - globaldef000192, globaldef007918);
+                                            globaldef007917 = 0.000 + 20.000;
                                             setorigin(globaldef007909.goalentity, globaldef007914);
                                             return;
                                         }
@@ -88517,7 +88462,7 @@ void (entity globaldef007909) func002476 =
 // OP_CALL1	1129	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef007920, float globaldef007921) func002477 = 
+vector (entity globaldef007920, float globaldef007921) func002477 = 
 {
     local vector globaldef007922;
     local vector globaldef007926;
@@ -88527,16 +88472,16 @@ void (entity globaldef007920, float globaldef007921) func002477 =
     local float globaldef007939;
     local float globaldef007940;
     globaldef007922 = globaldef007920.origin;
-    globaldef007922_z = globaldef007922_z + globaldef007920.mins_z;
-    globaldef007922_z = func002475(globaldef007920, globaldef007920.size_z, globaldef007921);
+    globaldef007925 = 0.000 + globaldef007920.mins_z;
+    globaldef007925 = func002475(globaldef007920, globaldef007920.size_z, globaldef007921);
     
-    if(globaldef007922_z == globaldef000191)
+    if(0.000 == globaldef000191)
     {
         func002476(globaldef007920);
         return;
     }
     
-    globaldef007922_z = globaldef007922_z + globaldef000192;
+    globaldef007925 = 0.000 + globaldef000192;
     globaldef007940 = globaldef000723;
     globaldef007926 = globaldef000264;
     do
@@ -88548,11 +88493,11 @@ void (entity globaldef007920, float globaldef007921) func002477 =
         if(globaldef000046 != globaldef000192)
         {
             globaldef007930 = globaldef007922 + (((globaldef000723 * globaldef000046) + globaldef000213) * globaldef000032);
-            globaldef007930_z = globaldef007930_z + globaldef000197;
+            globaldef007933 = 0.000 + globaldef000197;
             
             if(pointcontents(globaldef007930) == globaldef000254)
             {
-                globaldef007930_z = func002457(globaldef007930) + globaldef000192;
+                globaldef007933 = func002457(globaldef007930) + globaldef000192;
                 globaldef007939 = vlen(globaldef007930 - globaldef007922);
                 
                 if(globaldef007939 < globaldef007940)
@@ -88560,7 +88505,7 @@ void (entity globaldef007920, float globaldef007921) func002477 =
                     traceline(globaldef007930, globaldef007930 + (globaldef000729 * globaldef000032), globaldef000192, globaldef007920);
                     globaldef007930 = globaldef007930 + ((39.000 * globaldef000046) * globaldef000032);
                     traceline(globaldef007930, globaldef007930 + '0.000 0.000 16.000', globaldef000192, globaldef007920);
-                    globaldef007930_z = globaldef007930_z + (globaldef000748 * globaldef000046);
+                    globaldef007933 = 0.000 + (globaldef000748 * globaldef000046);
                     globaldef007940 = globaldef007939;
                     globaldef007934 = globaldef007930;
                 }
@@ -88569,8 +88514,8 @@ void (entity globaldef007920, float globaldef007921) func002477 =
             
         }
         
-        globaldef007926_y = globaldef007926_y + 45.000;
-    } while (globaldef007926_y < 360.000);
+        globaldef007928 = 0.000 + 45.000;
+    } while (0.000 < 360.000);
     
     if(globaldef007940 < globaldef000723)
     {
@@ -88674,7 +88619,7 @@ float (entity globaldef007942, float globaldef007943) func002478 =
                 if(globaldef007944.field000225(globaldef007942, globaldef007944) > globaldef000191)
                 {
                     globaldef007947 = (globaldef007944.absmin + globaldef007944.absmax) * globaldef000522;
-                    globaldef007947_z = globaldef007944.absmax_z + globaldef000192;
+                    globaldef007950 = globaldef007944.absmax_z + globaldef000192;
                     globaldef007957 = pointcontents(globaldef007947);
                     
                     if(globaldef007957 == globaldef007943)
@@ -88932,7 +88877,7 @@ float (entity globaldef007970, entity globaldef007971) func002481 =
     }
     
     globaldef007974 = globaldef007971.origin;
-    globaldef007974_z = (globaldef007974_z + globaldef007971.mins_z) + globaldef000192;
+    globaldef007977 = (0.000 + globaldef007971.mins_z) + globaldef000192;
     globaldef007973 = pointcontents(globaldef007974);
     
     if((globaldef007973 == globaldef000258) || (globaldef007973 == globaldef000257))
@@ -89214,18 +89159,18 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
                 if(globaldef007989 > globaldef000191)
                 {
                     globaldef007981 = (globaldef007994.absmin + globaldef007994.absmax) * globaldef000522;
-                    globaldef007981_z = globaldef007994.absmin_z + globaldef000192;
+                    globaldef007984 = globaldef007994.absmin_z + globaldef000192;
                     
                     if((globaldef007994.classname == "plat") || (globaldef007994.classname == "train"))
                     {
-                        globaldef007981_z = globaldef007994.absmax_z + globaldef000192;
+                        globaldef007984 = globaldef007994.absmax_z + globaldef000192;
                     }
                     
                     
                     if(globaldef007993 > globaldef000191)
                     {
                         
-                        if((globaldef007978.origin_z + globaldef007978.mins_z) > (globaldef007981_z + globaldef000776))
+                        if((globaldef007978.origin_z + globaldef007978.mins_z) > (0.000 + globaldef000776))
                         {
                             
                             if(globaldef007989 < globaldef007993)
@@ -89731,7 +89676,7 @@ entity (entity globaldef008008) func002485 =
 // OP_STORE_F	24740	24724	0
 // OP_GOTO	-32	0	0
 // OP_DONE	0	0	0
-void (entity globaldef008014) func002486 = 
+entity (entity globaldef008014) func002486 = 
 {
     local float globaldef008015;
     globaldef008015 = globaldef000191;
@@ -89781,7 +89726,7 @@ void (entity globaldef008014) func002486 =
 // OP_CALL2	24655	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef008017) func002487 = 
+entity (entity globaldef008017) func002487 = 
 {
     local entity globaldef008018;
     local entity globaldef008019;
@@ -90038,10 +89983,10 @@ entity (entity globaldef008027, vector globaldef008028, float globaldef008032) f
         if((fabs(globaldef008034_x - globaldef008028_x)) < globaldef008032)
         {
             
-            if((fabs(globaldef008034_y - globaldef008028_y)) < globaldef008032)
+            if((fabs(0.000 - 0.000)) < globaldef008032)
             {
                 
-                if((fabs(globaldef008034_z - globaldef008028_z)) < globaldef008032)
+                if((fabs(0.000 - 0.000)) < globaldef008032)
                 {
                     
                     if((vlen(globaldef008034 - globaldef008028)) < globaldef008032)
@@ -90397,10 +90342,10 @@ entity (entity globaldef008054, vector globaldef008055, float globaldef008059, f
         if((fabs(globaldef008063_x - globaldef008055_x)) < globaldef008059)
         {
             
-            if((fabs(globaldef008063_y - globaldef008055_y)) < globaldef008059)
+            if((fabs(0.000 - 0.000)) < globaldef008059)
             {
                 
-                if((fabs(globaldef008063_z - globaldef008055_z)) < globaldef008059)
+                if((fabs(0.000 - 0.000)) < globaldef008059)
                 {
                     globaldef008061.distance = vlen(globaldef008063 - globaldef008055);
                     
@@ -90866,11 +90811,9 @@ entity (entity globaldef008076) func002495 =
     local entity globaldef008097;
     local entity globaldef008098;
     globaldef008077 = globaldef000191;
-    globaldef008089 = globaldef000003;
-    globaldef008090 = globaldef000003;
+    globaldef008090 = globaldef008089 = globaldef000003;
     globaldef008084 = globaldef000191;
-    globaldef008096 = globaldef000003;
-    globaldef008097 = globaldef000003;
+    globaldef008097 = globaldef008096 = globaldef000003;
     globaldef008091 = globaldef008076.field000267;
     globaldef008076.field000267 = globaldef000003;
     globaldef008076.field000269 = globaldef000191;
@@ -91170,7 +91113,7 @@ float (entity globaldef008100) func002496 =
 // OP_CALL1	24926	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef008101) func002497 = 
+entity (entity globaldef008101) func002497 = 
 {
     local entity globaldef008102;
     if(!func002496(globaldef008101))
@@ -91849,7 +91792,7 @@ void (entity globaldef008119) func002508 =
             if(globaldef008121)
             {
                 globaldef008122 = (globaldef008121.absmin + globaldef008121.absmax) * globaldef000522;
-                globaldef008122_z = globaldef008121.absmax_z + globaldef000192;
+                globaldef008125 = globaldef008121.absmax_z + globaldef000192;
                 globaldef008119.goalentity.goalentity = globaldef008121;
                 setorigin(globaldef008119.goalentity, globaldef008122);
                 globaldef008119.search_time = globaldef000004 + globaldef000522;
@@ -91859,7 +91802,7 @@ void (entity globaldef008119) func002508 =
                 if(!globaldef008119.field000270)
                 {
                     globaldef008126 = globaldef008119.velocity;
-                    globaldef008126_z = globaldef000191;
+                    globaldef008129 = globaldef000191;
                     globaldef008126 = normalize(globaldef008126);
                     traceline(globaldef008119.origin, globaldef008119.origin + (globaldef008126 * 150.000), globaldef000192, globaldef008119);
                     globaldef008122 = globaldef000047 - (globaldef008126 * globaldef000213);
@@ -105029,7 +104972,7 @@ void (entity globaldef009019) func002651 =
     while(globaldef009021)
     {
         globaldef009025 = (globaldef009021.absmin + globaldef009021.absmax) * globaldef000522;
-        globaldef009025_z = globaldef009021.absmin_z + globaldef000194;
+        globaldef009028 = globaldef009021.absmin_z + globaldef000194;
         globaldef009023 = vlen(globaldef009025 - globaldef009019.origin);
         
         if(globaldef009023 < globaldef009022)
@@ -105122,7 +105065,7 @@ void (entity globaldef009031) func002652 =
     while(globaldef009032)
     {
         globaldef009037 = (globaldef009032.absmin + globaldef009032.absmax) * globaldef000522;
-        globaldef009037_z = globaldef009032.absmin_z + globaldef000207;
+        globaldef009040 = globaldef009032.absmin_z + globaldef000207;
         globaldef009034 = vlen(globaldef009037 - globaldef009031.origin);
         
         if(globaldef009034 < globaldef009035)
@@ -105217,7 +105160,7 @@ void (entity globaldef009043) func002653 =
     while(globaldef009044)
     {
         globaldef009049 = globaldef009044.pos2 + ((globaldef009044.mins + globaldef009044.maxs) * globaldef000522);
-        globaldef009049_z = globaldef009044.maxs_z + globaldef000194;
+        globaldef009052 = globaldef009044.maxs_z + globaldef000194;
         globaldef009046 = vlen(globaldef009049 - globaldef009043.origin);
         
         if(globaldef009046 < globaldef009047)
@@ -105316,7 +105259,7 @@ void (entity globaldef009055) func002654 =
     while(globaldef009056)
     {
         globaldef009061 = globaldef009056.pos2 + ((globaldef009056.mins + globaldef009056.maxs) * globaldef000522);
-        globaldef009061_z = (globaldef009056.maxs_z - (globaldef009056.pos1_z - globaldef009056.pos2_z)) + globaldef000194;
+        globaldef009064 = (globaldef009056.maxs_z - (globaldef009056.pos1_z - globaldef009056.pos2_z)) + globaldef000194;
         globaldef009058 = vlen(globaldef009061 - globaldef009055.origin);
         
         if(globaldef009058 < globaldef009059)
@@ -105914,9 +105857,9 @@ void (entity globaldef009087, vector globaldef009088) func002659 =
     WriteByte(globaldef000326, globaldef000285);
     func002658(globaldef009088_x);
     WriteByte(globaldef000326, globaldef000197);
-    func002658(globaldef009088_y);
+    func002658(0.000);
     WriteByte(globaldef000326, globaldef000197);
-    func002658(globaldef009088_z);
+    func002658(0.000);
     WriteByte(globaldef000326, globaldef000191);
 };
 
@@ -107234,10 +107177,10 @@ float () func002674 =
             if((fabs(globaldef009171_x - globaldef009175_x)) < globaldef000721)
             {
                 
-                if((fabs(globaldef009171_y - globaldef009175_y)) < globaldef000721)
+                if((fabs(0.000 - 0.000)) < globaldef000721)
                 {
                     
-                    if((fabs(globaldef009171_z - globaldef009175_z)) < globaldef000721)
+                    if((fabs(0.000 - 0.000)) < globaldef000721)
                     {
                         globaldef009166 = vlen(globaldef009168.origin - globaldef000001.origin);
                         
@@ -107327,7 +107270,7 @@ void (entity globaldef009179) func002675 =
     
     globaldef009180 = func002671();
     globaldef009182 = globaldef009179.field000257;
-    globaldef009182_z = (globaldef009182_z + globaldef009179.mins_z) + globaldef000194;
+    globaldef009185 = (0.000 + globaldef009179.mins_z) + globaldef000194;
     setorigin(globaldef009180, globaldef009182);
     globaldef009180.field000299 = globaldef009179.field000299;
     globaldef009179.field000299 = globaldef009180;
@@ -107384,7 +107327,7 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     
     globaldef009188 = func002671();
     globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * globaldef000522;
-    globaldef009189_z = func002457(globaldef009189) + globaldef000194;
+    globaldef009192 = func002457(globaldef009189) + globaldef000194;
     setorigin(globaldef009188, globaldef009189);
     globaldef009188.field000299 = globaldef009186.field000299;
     globaldef009186.field000299 = globaldef009188;
@@ -107478,7 +107421,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     
     globaldef009195 = func002671();
     globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
-    globaldef009197_z = (globaldef009194.maxs_z - (globaldef009194.pos1_z - globaldef009194.pos2_z)) + globaldef000194;
+    globaldef009200 = (globaldef009194.maxs_z - (globaldef009194.pos1_z - globaldef009194.pos2_z)) + globaldef000194;
     setorigin(globaldef009195, globaldef009197);
     globaldef009195.field000299 = globaldef009193.field000299;
     globaldef009195.field000307 = func002655(globaldef009195, globaldef009195.field000299);
@@ -107488,7 +107431,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     globaldef009195.enemy = globaldef009194;
     globaldef009196 = func002671();
     globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
-    globaldef009197_z = globaldef009194.maxs_z + globaldef000194;
+    globaldef009200 = globaldef009194.maxs_z + globaldef000194;
     setorigin(globaldef009196, globaldef009197);
     globaldef009196.field000299 = globaldef009195;
     globaldef009196.field000307 = func002655(globaldef009196, globaldef009196.field000299);
@@ -107550,7 +107493,7 @@ void (entity globaldef009202, entity globaldef009203) func002678 =
     globaldef009204.field000299 = globaldef009202.field000299;
     globaldef009202.field000299 = globaldef009204;
     globaldef009205 = (globaldef009203.absmin + globaldef009203.absmax) * globaldef000522;
-    globaldef009205_z = globaldef009203.absmin_z + globaldef000194;
+    globaldef009208 = globaldef009203.absmin_z + globaldef000194;
     setorigin(globaldef009204, globaldef009205);
     globaldef009204.field000307 = func002655(globaldef009204, globaldef009204.field000299);
     globaldef009204.waypointtype = globaldef000703;
@@ -107673,7 +107616,7 @@ float () func002679 =
     }
     
     globaldef009211 = globaldef000001.field000257;
-    globaldef009211_z = (globaldef009211_z + globaldef000001.mins_z) + globaldef000192;
+    globaldef009214 = (0.000 + globaldef000001.mins_z) + globaldef000192;
     globaldef009210 = pointcontents(globaldef009211);
     
     if(globaldef009210 != globaldef000254)
@@ -108234,8 +108177,7 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
     globaldef009217.field000337 = globaldef009224;
     globaldef009217.field000335 = globaldef000003;
     globaldef009217.field000336 = globaldef000003;
-    globaldef009220 = globaldef009217;
-    globaldef009221 = globaldef009217;
+    globaldef009221 = globaldef009220 = globaldef009217;
     globaldef009217.field000338 = globaldef000192;
     globaldef009225 = globaldef000191;
     
@@ -108951,8 +108893,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     globaldef009231.field000337 = globaldef009238;
     globaldef009231.field000335 = globaldef000003;
     globaldef009231.field000336 = globaldef000003;
-    globaldef009234 = globaldef009231;
-    globaldef009235 = globaldef009231;
+    globaldef009235 = globaldef009234 = globaldef009231;
     globaldef009231.field000338 = globaldef000192;
     globaldef009239 = globaldef000191;
     
@@ -109521,7 +109462,6 @@ void (entity globaldef009248, entity globaldef009249) func002685 =
                             
                             if(globaldef009249.field000306 == globaldef009248)
                             {
-                                globaldef009250 = globaldef000192;
                             }
                             
                         }
@@ -109536,7 +109476,7 @@ void (entity globaldef009248, entity globaldef009249) func002685 =
         
     }
     
-    globaldef009251 = globaldef000192;
+    globaldef009251 = globaldef009250 = globaldef000192;
     
     if(!globaldef009250)
     {
@@ -110052,10 +109992,10 @@ entity (entity globaldef009262) func002691 =
                 if((fabs(globaldef009267_x - globaldef009271_x)) < globaldef000720)
                 {
                     
-                    if((fabs(globaldef009267_y - globaldef009271_y)) < globaldef000720)
+                    if((fabs(0.000 - 0.000)) < globaldef000720)
                     {
                         
-                        if((fabs(globaldef009267_z - globaldef009271_z)) < globaldef000720)
+                        if((fabs(0.000 - 0.000)) < globaldef000720)
                         {
                             globaldef009265 = vlen(globaldef009267 - globaldef009271);
                             
@@ -113309,7 +113249,7 @@ void () func002733 =
     WriteByte(globaldef000326, globaldef000213);
     globaldef009536 = globaldef000192;
     
-    if(globaldef009536 <= cvar(globaldef002457))
+    while(globaldef009536 <= cvar(globaldef002457))
     {
         WriteByte(globaldef000326, globaldef009536 + 48.000);
         WriteByte(globaldef000326, globaldef000197);
@@ -113331,28 +113271,25 @@ void () func002733 =
         globaldef009536 = globaldef009536 + globaldef000192;
     }
     
-}
-
-WriteByte(globaldef000326, (48.000 + globaldef000010) + globaldef000192);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, 226.000);
-WriteByte(globaldef000326, 225.000);
-WriteByte(globaldef000326, 227.000);
-WriteByte(globaldef000326, 235.000);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000197);
-WriteByte(globaldef000326, globaldef000191);
+    WriteByte(globaldef000326, (48.000 + globaldef000010) + globaldef000192);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, 226.000);
+    WriteByte(globaldef000326, 225.000);
+    WriteByte(globaldef000326, 227.000);
+    WriteByte(globaldef000326, 235.000);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000197);
+    WriteByte(globaldef000326, globaldef000191);
 };
 
-/* ERROR INDENTATION */
 // func002734
 // function begins at statement 58031, parm_start=30193
 // OP_STORE_ENT	28	81	0
@@ -115210,8 +115147,7 @@ void (entity globaldef009562) func002742 =
     
     globaldef009562.field000362 = globaldef000738;
     globaldef009563 = globaldef000816;
-    globaldef009565 = globaldef000191;
-    globaldef009564 = globaldef000191;
+    globaldef009564 = globaldef009565 = globaldef000191;
     
     while(globaldef009563)
     {

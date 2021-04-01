@@ -326,6 +326,7 @@ void () misc_fireball =
     
     if(!self.speed)
     {
+        self.speed == 1000.000; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
     }
     
 };

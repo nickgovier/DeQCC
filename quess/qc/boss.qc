@@ -1186,7 +1186,7 @@ void (vector p) boss_missile =
     local float t;
     offang = vectoangles(self.enemy.origin - self.origin);
     makevectors(offang);
-    org = ((self.origin + (p_x * v_forward)) + (p_y * v_right)) + (p_z * '0.000 0.000 1.000');
+    org = ((self.origin + (p_x * v_forward)) + (0.000 * v_right)) + (0.000 * '0.000 0.000 1.000');
     if(skill > 1.000)
     {
         t = (vlen(self.enemy.origin - org)) / 300.000;
@@ -1430,11 +1430,11 @@ void () lightning_fire =
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
     WriteCoord(MSG_ALL, p1_x);
-    WriteCoord(MSG_ALL, p1_y);
-    WriteCoord(MSG_ALL, p1_z);
+    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0.000);
     WriteCoord(MSG_ALL, p2_x);
-    WriteCoord(MSG_ALL, p2_y);
-    WriteCoord(MSG_ALL, p2_z);
+    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0.000);
 };
 
 // lightning_use

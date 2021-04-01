@@ -313,7 +313,7 @@ void () sam_aim =
     dist = vlen(org - self.origin);
     dir = vectoangles(org - self.origin);
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = dir_y - self.angles_y;
+    vtemp_y = 0.000 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
@@ -329,15 +329,15 @@ void () sam_aim =
     }
     
     
-    if(vtemp_y < 0.000)
+    if(0.000 < 0.000)
     {
-        vtemp_y = vtemp_y + 360.000;
+        vtemp_y = 0.000 + 360.000;
     }
     
     
-    if(vtemp_y > 180.000)
+    if(0.000 > 180.000)
     {
-        vtemp_y = vtemp_y - 360.000;
+        vtemp_y = 0.000 - 360.000;
     }
     
     dir = vtemp;
@@ -354,13 +354,13 @@ void () sam_aim =
     }
     
     
-    if(dir_y < -10.000)
+    if(0.000 < -10.000)
     {
         dir_y = -10.000;
     }
     
     
-    if(dir_y > 10.000)
+    if(0.000 > 10.000)
     {
         dir_y = 10.000;
     }
@@ -383,7 +383,7 @@ void () sam_aim =
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + dir_y);
+    self.angles_y = anglemod(self.angles_y + 0.000);
     self.trigger_field.angles_y = self.angles_y;
 };
 

@@ -139,8 +139,8 @@ void () W_FireAxe =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, org_y);
-        WriteCoord(MSG_BROADCAST, org_z);
+        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0.000);
     }
     
 };
@@ -421,8 +421,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, org_y);
-        WriteCoord(MSG_BROADCAST, org_z);
+        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0.000);
     }
     
 };
@@ -481,7 +481,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
     
     while(shotcount > 0.000)
     {
-        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * spread_y) * v_up);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * 0.000) * v_up);
         traceline(src, src + (direction * 2048.000), FALSE, self);
         
         if(trace_fraction != 1.000)
@@ -525,8 +525,7 @@ void () W_FireShotgun =
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
-    self.ammo_shells = self.ammo_shells - 1.000;
-    self.currentammo = self.ammo_shells - 1.000;
+    self.currentammo = self.ammo_shells = self.ammo_shells - 1.000;
     dir = aim(self, 100000.000);
     FireBullets(6.000, dir, '0.040 0.040 0.000');
 };
@@ -573,8 +572,7 @@ void () W_FireSuperShotgun =
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -4.000;
-    self.ammo_shells = self.ammo_shells - 2.000;
-    self.currentammo = self.ammo_shells - 2.000;
+    self.currentammo = self.ammo_shells = self.ammo_shells - 2.000;
     dir = aim(self, 100000.000);
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
@@ -825,8 +823,7 @@ void () W_FireRocket =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - 1.000;
-    self.currentammo = self.ammo_rockets - 1.000;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - 1.000;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
     missile = spawn();
@@ -944,12 +941,11 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = 0.000 - f_y;
+    f_x = 0.000 - 0.000;
     f_y = f_x;
     f_z = 0.000;
     f = f * 16.000;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -1110,19 +1106,18 @@ void () W_FireLightning =
     }
     
     self.punchangle_x = -2.000;
-    self.ammo_cells = self.ammo_cells - 1.000;
-    self.currentammo = self.ammo_cells - 1.000;
+    self.currentammo = self.ammo_cells = self.ammo_cells - 1.000;
     org = self.origin + '0.000 0.000 16.000';
     traceline(org, org + (v_forward * 600.000), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, org_y);
-    WriteCoord(MSG_BROADCAST, org_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, trace_endpos_y);
-    WriteCoord(MSG_BROADCAST, trace_endpos_z);
+    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0.000);
     LightningDamage(self.origin, trace_endpos + (v_forward * 4.000), self, 30.000);
 };
 
@@ -1298,8 +1293,7 @@ void () W_FireGrenade =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - 1.000;
-    self.currentammo = self.ammo_rockets - 1.000;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - 1.000;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
     missile = spawn();
@@ -1429,8 +1423,7 @@ void () W_FireSuperSpikes =
     local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", 1.000, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - 2.000;
-    self.currentammo = self.ammo_nails - 2.000;
+    self.currentammo = self.ammo_nails = self.ammo_nails - 2.000;
     dir = aim(self, 1000.000);
     launch_spike(self.origin + '0.000 0.000 16.000', dir);
     newmis.touch = superspike_touch;
@@ -1511,13 +1504,13 @@ void (float ox) W_FireSpikes =
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", 1.000, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - 1.000;
-    self.currentammo = self.ammo_nails - 1.000;
+    self.currentammo = self.ammo_nails = self.ammo_nails - 1.000;
     dir = aim(self, 1000.000);
     launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
     self.punchangle_x = -2.000;
 };
 
+.float hit_z;
 // spike_touch
 // function begins at statement 4406, parm_start=3543
 // OP_LOAD_ENT	28	201	3544

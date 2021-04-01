@@ -229,15 +229,15 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y < minims_y)
+        if(e.origin_y < 0.000)
         {
-            e.origin_y = minims_y;
+            e.origin_y = 0.000;
         }
         
         
-        if(e.origin_z < minims_z)
+        if(e.origin_z < 0.000)
         {
-            e.origin_z = minims_z;
+            e.origin_z = 0.000;
         }
         
     }
@@ -252,15 +252,15 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y > maxims_y)
+        if(e.origin_y > 0.000)
         {
-            e.origin_y = maxims_y;
+            e.origin_y = 0.000;
         }
         
         
-        if(e.origin_z > maxims_z)
+        if(e.origin_z > 0.000)
         {
-            e.origin_z = maxims_z;
+            e.origin_z = 0.000;
         }
         
     }
@@ -872,7 +872,7 @@ vector (float minim, float maxdist) AC_aim =
     re = world;
     makevectors(self.enemy.angles);
     v1 = v_forward;
-    v1_z = 0.000 - v1_z;
+    v1_z = 0.000 - 0.000;
     e = findradius(self.enemy.origin, maxdist);
     
     while(e)
@@ -1785,7 +1785,7 @@ void () AC_Fall =
     self.avelocity = v2;
     makevectors(self.angles);
     v3 = v_forward;
-    v3_z = 0.000 - v3_z;
+    v3_z = 0.000 - 0.000;
     self.velocity = v3 * 300.000;
     
     if(self.flags & FL_ONGROUND)

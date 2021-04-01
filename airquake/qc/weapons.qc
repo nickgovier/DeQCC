@@ -337,8 +337,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, org_y);
-        WriteCoord(MSG_BROADCAST, org_z);
+        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0.000);
     }
     
 };
@@ -397,7 +397,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
     
     while(shotcount > 0.000)
     {
-        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * spread_y) * v_up);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * 0.000) * v_up);
         traceline(src, src + (direction * 2048.000), FALSE, self);
         
         if(trace_fraction != 1.000)
@@ -686,12 +686,11 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = 0.000 - f_y;
+    f_x = 0.000 - 0.000;
     f_y = f_x;
     f_z = 0.000;
     f = f * 16.000;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -1232,8 +1231,7 @@ void () W_ChangeWeapon =
     local float am;
     local float fl;
     it = self.items;
-    am = 0.000;
-    fl = 0.000;
+    fl = am = 0.000;
     if(self.impulse == 1.000)
     {
         fl = IT_WEP1;
@@ -1902,20 +1900,20 @@ void () ImpulseCommands =
         v1_x = 0.000 - v1_x;
         if(self.toyview == 1.000)
         {
-            v1_y = anglemod(270.000 + v1_y);
+            v1_y = anglemod(270.000 + 0.000);
         }
         else
         {
             if(self.toyview == 2.000)
             {
-                v1_y = anglemod(180.000 + v1_y);
+                v1_y = anglemod(180.000 + 0.000);
             }
             else
             {
                 
                 if(self.toyview == 3.000)
                 {
-                    v1_y = anglemod(90.000 + v1_y);
+                    v1_y = anglemod(90.000 + 0.000);
                 }
                 
             }
@@ -1930,7 +1928,7 @@ void () ImpulseCommands =
             WriteEntity(MSG_ONE, self.oldenemy);
             WriteByte(MSG_ONE, 10.000);
             WriteAngle(MSG_ONE, v1_x);
-            WriteAngle(MSG_ONE, v1_y);
+            WriteAngle(MSG_ONE, 0.000);
             WriteAngle(MSG_ONE, 0.000);
         }
         

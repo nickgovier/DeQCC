@@ -510,10 +510,10 @@ vector plyr_velocity;
 .float position;
 .entity ahead;
 .entity behind;
-.float SNDLEN_ENGINE1 = /* ERROR ImmediateValue for ev_field */;
-.float SNDLEN_ENGINE2 = /* ERROR ImmediateValue for ev_field */;
-.string SAMP_ENGINE1 = /* ERROR ImmediateValue for ev_field */;
-.string SAMP_ENGINE2 = /* ERROR ImmediateValue for ev_field */;
+.float SNDLEN_ENGINE1;
+.float SNDLEN_ENGINE2;
+.string SAMP_ENGINE1;
+.string SAMP_ENGINE2;
 .entity mine_attached;
 .entity death_thinker;
 .float last_heading;
@@ -1481,7 +1481,7 @@ entity () FindFirstMarker =
     trav = world;
     trav = find(trav, classname, "rally_marker");
     
-    if(find(trav, classname, "rally_marker") != world)
+    while(find(trav, classname, "rally_marker") != world)
     {
         
         if(trav.ammo_shells == 1.000)
@@ -1491,12 +1491,9 @@ entity () FindFirstMarker =
         
     }
     
-}
-
-return world;
+    return world;
 };
 
-/* ERROR INDENTATION */
 // angle_think
 // function begins at statement 427, parm_start=1109
 // OP_LOAD_ENT	28	201	1109
@@ -2054,11 +2051,9 @@ void () CreateVehicleEntities =
         setorigin(tail, (self.origin - (v_forward * TAIL_DIST)) + '0.000 0.000 1.000');
         tail.veh_dir = '0.000 1.000 0.000';
         tail.yaw_speed = REAR_TRACTION;
-        plyrBoxMin_x = -1.000;
-        plyrBoxMin_y = -1.000;
+        plyrBoxMin_y = plyrBoxMin_x = -1.000;
         plyrBoxMin_z = -24.000;
-        plyrBoxMax_x = 1.000;
-        plyrBoxMax_y = 1.000;
+        plyrBoxMax_y = plyrBoxMax_x = 1.000;
         plyrBoxMax_z = 32.000;
         setsize(tail, plyrBoxMin, plyrBoxMax);
         tail.slide_ratio = 0.000;
@@ -2452,6 +2447,8 @@ void () BodyRoll =
     
 };
 
+vector (float dm) VelocityForDamage;
+void () MoveWheels;
 // CheckCultCars
 // function begins at statement 979, parm_start=1498
 // OP_NOT_F	689	0	1499
@@ -3292,8 +3289,7 @@ void () CarAirborne =
         if((world.model == "maps/qrally02.bsp") && (vspeed > 400.000))
         {
             self.velocity = normalize(self.velocity) * 100.000;
-            self.old_velocity = self.velocity;
-            self.last_velocity = self.velocity;
+            self.last_velocity = self.old_velocity = self.velocity;
             self.last_speed = 100.000;
         }
         else
@@ -5312,49 +5308,44 @@ void () MoveWheels =
         }
         
         
-        if(w.skin < 0.000)
+        while(w.skin < 0.000)
         {
             w.skin = w.skin + 7.000;
         }
         
+        
+        while(w.skin > 6.000)
+        {
+            w.skin = w.skin - 7.000;
+        }
+        
+        self.rwhl.skin = w.skin;
     }
     
     
-    if(w.skin > 6.000)
+    if(self.gun != world)
     {
-        w.skin = w.skin - 7.000;
+        makevectors(self.veh_body.angles);
+        if((self.car_index == 3.000) || (self.car_index == 5.000))
+        {
+            setorigin(self.gun, self.veh_body.origin + (v_up * GUN_ZOFS));
+        }
+        else
+        {
+            setorigin(self.gun, self.veh_body.origin + (v_up * (GUN_ZOFS * 0.750)));
+        }
+        
+        
+        if(self.weapon == IT_ROOBAR)
+        {
+            setorigin(self.gun, self.gun.origin - (v_up * 8.000));
+        }
+        
+        self.gun.angles = self.veh_body.angles;
     }
     
-}
-
-self.rwhl.skin = w.skin;
-}
-
-
-if(self.gun != world)
-{
-makevectors(self.veh_body.angles);
-if((self.car_index == 3.000) || (self.car_index == 5.000))
-{
-    setorigin(self.gun, self.veh_body.origin + (v_up * GUN_ZOFS));
-}
-else
-{
-    setorigin(self.gun, self.veh_body.origin + (v_up * (GUN_ZOFS * 0.750)));
-}
-
-
-if(self.weapon == IT_ROOBAR)
-{
-    setorigin(self.gun, self.gun.origin - (v_up * 8.000));
-}
-
-self.gun.angles = self.veh_body.angles;
-}
-
 };
 
-/* ERROR INDENTATION */
 // ReduceVelocity
 // function begins at statement 2770, parm_start=3113
 // OP_LOAD_V	3113	113	3116
@@ -5879,8 +5870,7 @@ float () SetSurfaceAngle =
     }
     
     veh_angle = vectoangles(self.veh_dir);
-    veh_angle_z = 0.000;
-    veh_angle_x = 0.000;
+    veh_angle_x = veh_angle_z = 0.000;
     makevectors(veh_angle);
     left = self.origin - (v_right * 14.000);
     spos = left + (48.000 * v_up);
@@ -6859,8 +6849,7 @@ void (float vel_speed) CheckForCollision =
             {
                 if((trace_ent.classname == "rally_roo") || (trace_ent.classname == "rally_dude"))
                 {
-                    oldself = self;
-                    other = self;
+                    other = oldself = self;
                     self = trace_ent;
                     self.touch();
                     self = oldself;
@@ -6882,13 +6871,11 @@ void (float vel_speed) CheckForCollision =
                     
                     if(self.ammo_roobar > (vol * 12.000))
                     {
-                        self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
-                        self.currentammo = self.ammo_roobar - (vol * 12.000);
+                        self.currentammo = self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
                     }
                     else
                     {
-                        self.ammo_roobar = 0.000;
-                        self.currentammo = 0.000;
+                        self.currentammo = self.ammo_roobar = 0.000;
                     }
                     
                 }
@@ -6957,8 +6944,7 @@ void (float vel_speed) CheckForCollision =
             {
                 if((trace_ent.classname == "rally_roo") || (trace_ent.classname == "rally_dude"))
                 {
-                    oldself = self;
-                    other = self;
+                    other = oldself = self;
                     self = trace_ent;
                     self.touch();
                     self = oldself;
@@ -6973,13 +6959,11 @@ void (float vel_speed) CheckForCollision =
                     
                     if(self.ammo_roobar > (vol * 12.000))
                     {
-                        self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
-                        self.currentammo = self.ammo_roobar - (vol * 12.000);
+                        self.currentammo = self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
                     }
                     else
                     {
-                        self.ammo_roobar = 0.000;
-                        self.currentammo = 0.000;
+                        self.currentammo = self.ammo_roobar = 0.000;
                     }
                     
                 }
@@ -7029,8 +7013,7 @@ void (float vel_speed) CheckForCollision =
             {
                 if((trace_ent.classname == "rally_roo") || (trace_ent.classname == "rally_dude"))
                 {
-                    oldself = self;
-                    other = self;
+                    other = oldself = self;
                     self = trace_ent;
                     self.touch();
                     self = oldself;
@@ -7045,13 +7028,11 @@ void (float vel_speed) CheckForCollision =
                     
                     if(self.ammo_roobar > (vol * 12.000))
                     {
-                        self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
-                        self.currentammo = self.ammo_roobar - (vol * 12.000);
+                        self.currentammo = self.ammo_roobar = self.ammo_roobar - (vol * 12.000);
                     }
                     else
                     {
-                        self.ammo_roobar = 0.000;
-                        self.currentammo = 0.000;
+                        self.currentammo = self.ammo_roobar = 0.000;
                     }
                     
                 }
@@ -8699,7 +8680,7 @@ entity (entity old_next) FindNextMarker =
     trav = world;
     trav = find(trav, classname, "rally_marker");
     
-    if(find(trav, classname, "rally_marker") != world)
+    while(find(trav, classname, "rally_marker") != world)
     {
         
         if(trav.ammo_shells == next_index)
@@ -8709,13 +8690,10 @@ entity (entity old_next) FindNextMarker =
         
     }
     
-}
-
-bprint("Unable to find next marker entity\n");
-return world;
+    bprint("Unable to find next marker entity\n");
+    return world;
 };
 
-/* ERROR INDENTATION */
 void () Keep_cam_chasing_owner;
 void () marker_touch;
 // MoveVehicle
@@ -14367,10 +14345,9 @@ void () BuildPlayerList =
         
         if(prev != world)
         {
-            prev.behind = current;
         }
         
-        prev = current;
+        prev = prev.behind = current;
         current = find(current, is_racer, "yes");
     }
     
@@ -15667,8 +15644,7 @@ void () rally_observer_cam =
         first_observer_cam = self;
     }
     
-    first_observer_cam.behind = self;
-    last_observer_cam = self;
+    last_observer_cam = first_observer_cam.behind = self;
 };
 
 // GetObserverSpot
@@ -15826,8 +15802,7 @@ void (entity plyr, float dir) SetObserverSpot =
     msg_entity = plyr;
     WriteByte(MSG_ONE, SVC_SETVIEWPORT);
     WriteEntity(MSG_ONE, plyr.chasecam);
-    plyr.v_angle = plyr.chasecam.angles;
-    plyr.angles = plyr.chasecam.angles;
+    plyr.angles = plyr.v_angle = plyr.chasecam.angles;
     plyr.fixangle = TRUE;
 };
 
@@ -22726,8 +22701,7 @@ void () W_FireShotgun =
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
-    self.ammo_shells = self.ammo_shells - 1.000;
-    self.currentammo = self.ammo_shells - 1.000;
+    self.currentammo = self.ammo_shells = self.ammo_shells - 1.000;
     dir = aim(self, 100000.000);
     FireBullets(6.000, dir, '0.040 0.040 0.000');
 };
@@ -22774,8 +22748,7 @@ void () W_FireSuperShotgun =
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -4.000;
-    self.ammo_shells = self.ammo_shells - 2.000;
-    self.currentammo = self.ammo_shells - 2.000;
+    self.currentammo = self.ammo_shells = self.ammo_shells - 2.000;
     dir = aim(self, 100000.000);
     FireBullets(14.000, dir, '0.140 0.080 0.000');
 };
@@ -23087,8 +23060,7 @@ void () W_FireRocket =
     local entity missile_enemy;
     local vector dir;
     local vector old_forward;
-    self.ammo_rockets = self.ammo_rockets - 1.000;
-    self.currentammo = self.ammo_rockets - 1.000;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - 1.000;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
     missile = spawn();
@@ -23232,8 +23204,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     f_y = f_x;
     f_z = 0.000;
     f = f * 16.000;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -23693,8 +23664,7 @@ void () W_FireGrenade =
 {
     local entity missile;
     local entity mpuff;
-    self.ammo_rockets = self.ammo_rockets - 1.000;
-    self.currentammo = self.ammo_rockets - 1.000;
+    self.currentammo = self.ammo_rockets = self.ammo_rockets - 1.000;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", 1.000, ATTN_NORM);
     self.punchangle_x = -2.000;
     missile = spawn();
@@ -24010,36 +23980,33 @@ void () MineThink =
     {
         trav = findradius(self.origin, 64.000);
         
-        if((trav != world) && (trav.takedamage != DAMAGE_AIM))
+        while((trav != world) && (trav.takedamage != DAMAGE_AIM))
         {
             trav = trav.chain;
         }
         
+        
+        if((trav != world) && (trav != self.owner))
+        {
+            other = trav;
+            MineTouch();
+            return;
+        }
+        
     }
     
-    
-    if((trav != world) && (trav != self.owner))
+    if(vlen(self.velocity) < 20.000)
     {
-        other = trav;
-        MineTouch();
-        return;
+        self.think = SUB_Remove;
+        self.nextthink = time + 5.000;
+    }
+    else
+    {
+        self.nextthink = time + 0.100;
     }
     
-}
-
-if(vlen(self.velocity) < 20.000)
-{
-    self.think = SUB_Remove;
-    self.nextthink = time + 5.000;
-}
-else
-{
-    self.nextthink = time + 0.100;
-}
-
 };
 
-/* ERROR INDENTATION */
 // W_FireMine
 // function begins at statement 12836, parm_start=9968
 // OP_LOAD_F	28	157	9970
@@ -24127,13 +24094,11 @@ void () W_FireMine =
     local entity mpuff;
     if(self.currentammo >= 3.000)
     {
-        self.ammo_rockets = self.ammo_rockets - 3.000;
-        self.currentammo = self.ammo_rockets - 3.000;
+        self.currentammo = self.ammo_rockets = self.ammo_rockets - 3.000;
     }
     else
     {
-        self.ammo_rockets = 0.000;
-        self.currentammo = 0.000;
+        self.currentammo = self.ammo_rockets = 0.000;
     }
     
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", 1.000, ATTN_NORM);
@@ -24357,13 +24322,11 @@ void () W_FireLaser =
 {
     if(self.currentammo >= 2.000)
     {
-        self.ammo_roobar = self.ammo_roobar - 2.000;
-        self.currentammo = self.ammo_roobar - 2.000;
+        self.currentammo = self.ammo_roobar = self.ammo_roobar - 2.000;
     }
     else
     {
-        self.ammo_roobar = 0.000;
-        self.currentammo = 0.000;
+        self.currentammo = self.ammo_roobar = 0.000;
     }
     
     sound(self, CHAN_WEAPON, "enforcer/enfire.wav", 1.000, ATTN_NORM);
@@ -24545,8 +24508,7 @@ void () W_FireSuperSpikes =
     
     dir_x = -1.000 * dir_x;
     makevectors(dir);
-    self.ammo_nails = self.ammo_nails - 1.000;
-    self.currentammo = self.ammo_nails - 1.000;
+    self.currentammo = self.ammo_nails = self.ammo_nails - 1.000;
     self.attack_finished = time + 0.200;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", 1.000, ATTN_NORM);
     self.attack_finished = time + 0.200;
@@ -24639,13 +24601,13 @@ void (float ox) W_FireSpikes =
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", 1.000, ATTN_NORM);
     self.attack_finished = time + 0.200;
-    self.ammo_nails = self.ammo_nails - 1.000;
-    self.currentammo = self.ammo_nails - 1.000;
+    self.currentammo = self.ammo_nails = self.ammo_nails - 1.000;
     dir = v_forward;
     launch_spike(self.veh_body.origin + (v_right * ox), dir);
     self.punchangle_x = -2.000;
 };
 
+.float hit_z;
 // spike_touch
 // function begins at statement 13208, parm_start=10244
 // OP_LOAD_ENT	28	201	10245
@@ -25783,16 +25745,13 @@ void () GiveDukesLaunchers =
     trav = world;
     trav = find(trav, classname, "rally_dude");
     
-    if(find(trav, classname, "rally_dude") != world)
+    while(find(trav, classname, "rally_dude") != world)
     {
         trav.ammo_rockets = 100.000;
     }
     
-}
-
 };
 
-/* ERROR INDENTATION */
 void () Awake_Boss;
 // CheatCommand
 // function begins at statement 13760, parm_start=10517
@@ -25965,8 +25924,7 @@ void () CycleWeaponCommand =
     }
     
     it = self.items;
-    self.impulse = 0.000;
-    i = 0.000;
+    i = self.impulse = 0.000;
     
     while(i < 10.000)
     {
@@ -28001,15 +27959,13 @@ void () ImpulseCommands =
                                                     {
                                                         if(self.impulse == 100.000)
                                                         {
-                                                            self.start_challenge = 1.000;
-                                                            challenge = 1.000;
+                                                            challenge = self.start_challenge = 1.000;
                                                         }
                                                         else
                                                         {
                                                             if(self.impulse == 101.000)
                                                             {
-                                                                self.start_challenge = 2.000;
-                                                                challenge = 2.000;
+                                                                challenge = self.start_challenge = 2.000;
                                                             }
                                                             else
                                                             {
@@ -30507,8 +30463,7 @@ void () worldspawn =
         init_done = 1.000;
     }
     
-    num_markers = 0.000;
-    num_bots = 0.000;
+    num_bots = num_markers = 0.000;
     if(self.model == "maps/e1m8.bsp")
     {
         cvar_set("sv_gravity", "100");
@@ -30857,8 +30812,7 @@ void () worldspawn =
         
     }
     
-    rally_type_index = 0.000;
-    racing_type = 0.000;
+    racing_type = rally_type_index = 0.000;
     
     if(world.model == "maps/start.bsp")
     {
@@ -31295,13 +31249,7 @@ void () SetNewParms =
     }
     
     parm2 = 100.000;
-    parm3 = 0.000;
-    parm4 = 0.000;
-    parm5 = 0.000;
-    parm6 = 0.000;
-    parm7 = 0.000;
-    parm8 = 0.000;
-    parm9 = 0.000;
+    parm9 = parm8 = parm7 = parm6 = parm5 = parm4 = parm3 = 0.000;
     parm10 = challenge;
     
     if(!deathmatch && !coop)
@@ -31417,8 +31365,7 @@ void () DecodeLevelParms =
     self.ammo_cells = parm7;
     self.weapon = parm8;
     self.armortype = parm9 * 0.010;
-    self.start_challenge = parm10;
-    challenge = parm10;
+    challenge = self.start_challenge = parm10;
     
     if(!deathmatch && !coop)
     {
@@ -32196,8 +32143,7 @@ void () changelevel_touch =
     
     if(world.model == "maps/start.bsp")
     {
-        other.start_challenge = self.start_challenge;
-        challenge = self.start_challenge;
+        challenge = other.start_challenge = self.start_challenge;
         
         if(self.map == "qrally04")
         {
@@ -32852,128 +32798,123 @@ void () PutClientInServer =
     setorigin(self, spot.origin + '0.000 0.000 16.000');
     ftemp = 0.000;
     
-    if(!area_clear() && (ftemp < 5.000))
+    while(!area_clear() && (ftemp < 5.000))
     {
         setorigin(self, self.origin + (v_forward * 48.000));
         ftemp = ftemp + 1.000;
     }
     
-}
-
-
-if(ftemp == 5.000)
-{
-    setorigin(self, spot.origin + '0.000 0.000 16.000');
-}
-
-self.angles = spot.angles;
-self.fixangle = TRUE;
-self.velocity = '0.000 0.000 0.000';
-setsize(self, VEH_MIN, VEH_MAX);
-self.view_ofs = '0.000 0.000 14.000';
-setmodel(self, "models/null.mdl");
-self.use_surface_angle = TRUE;
-if(self.veh_tail == world)
-{
-    CreateVehicleEntities();
     
-    if(!(self.speed & CHSCAM_ON))
+    if(ftemp == 5.000)
     {
-        self.speed = self.speed + CHSCAM_ON;
+        setorigin(self, spot.origin + '0.000 0.000 16.000');
     }
     
-    Start_chase_cam(self);
-    
-    if(current_leader != world)
+    self.angles = spot.angles;
+    self.fixangle = TRUE;
+    self.velocity = '0.000 0.000 0.000';
+    setsize(self, VEH_MIN, VEH_MAX);
+    self.view_ofs = '0.000 0.000 14.000';
+    setmodel(self, "models/null.mdl");
+    self.use_surface_angle = TRUE;
+    if(self.veh_tail == world)
     {
-        plyr = current_leader;
+        CreateVehicleEntities();
         
-        if(plyr.behind != world)
+        if(!(self.speed & CHSCAM_ON))
         {
-            plyr = plyr.behind;
+            self.speed = self.speed + CHSCAM_ON;
         }
         
-    }
-    
-    plyr.behind = self;
-    self.ahead = plyr;
-    self.behind = world;
-    self.last_lap_time = time;
-    self.racing_flags = self.racing_flags | QR_START_READY;
-    self.racing_flags = self.racing_flags - (self.racing_flags & QR_OBSERVER);
-}
-
-}
-else
-{
-droptofloor();
-makevectors(spot.angles);
-setorigin(self.veh_tail, self.origin - (v_forward * TAIL_DIST));
-self.veh_body.angles = '0.000 0.000 0.000';
-self.veh_body.avelocity = '0.000 0.000 0.000';
-self.veh_body.roll_velocity = '0.000 0.000 0.000';
-self.veh_body.veh_dir = '0.000 0.000 0.000';
-self.veh_tail.veh_dir = v_forward;
-self.oldorigin = self.origin;
-self.last_velocity = '0.000 0.000 0.000';
-self.body_roll = '0.000 0.000 0.000';
-plyr_angles_y = self.angles_y;
-self.racing_flags = self.racing_flags - (self.racing_flags & QR_JUST_LANDED);
-self.racing_flags = self.racing_flags | QR_RESPAWN_FLAG;
-setorigin(self.chasecam, self.origin);
-
-if(self.cam != CAM_INCAR)
-{
-    msg_entity = self;
-    WriteByte(MSG_ONE, SVC_SETVIEWANGLES);
-    if(self.cam == CAM_CHASECLOSE)
-    {
-        WriteAngle(MSG_ONE, 15.000);
+        Start_chase_cam(self);
+        
+        if(current_leader != world)
+        {
+            plyr = current_leader;
+            
+            while(plyr.behind != world)
+            {
+                plyr = plyr.behind;
+            }
+            
+            plyr.behind = self;
+            self.ahead = plyr;
+            self.behind = world;
+            self.last_lap_time = time;
+            self.racing_flags = self.racing_flags | QR_START_READY;
+            self.racing_flags = self.racing_flags - (self.racing_flags & QR_OBSERVER);
+        }
+        
     }
     else
     {
+        droptofloor();
+        makevectors(spot.angles);
+        setorigin(self.veh_tail, self.origin - (v_forward * TAIL_DIST));
+        self.veh_body.angles = '0.000 0.000 0.000';
+        self.veh_body.avelocity = '0.000 0.000 0.000';
+        self.veh_body.roll_velocity = '0.000 0.000 0.000';
+        self.veh_body.veh_dir = '0.000 0.000 0.000';
+        self.veh_tail.veh_dir = v_forward;
+        self.oldorigin = self.origin;
+        self.last_velocity = '0.000 0.000 0.000';
+        self.body_roll = '0.000 0.000 0.000';
+        plyr_angles_y = self.angles_y;
+        self.racing_flags = self.racing_flags - (self.racing_flags & QR_JUST_LANDED);
+        self.racing_flags = self.racing_flags | QR_RESPAWN_FLAG;
+        setorigin(self.chasecam, self.origin);
         
-        if(self.cam == CAM_CHASEFAR)
+        if(self.cam != CAM_INCAR)
         {
-            WriteAngle(MSG_ONE, 35.000);
+            msg_entity = self;
+            WriteByte(MSG_ONE, SVC_SETVIEWANGLES);
+            if(self.cam == CAM_CHASECLOSE)
+            {
+                WriteAngle(MSG_ONE, 15.000);
+            }
+            else
+            {
+                
+                if(self.cam == CAM_CHASEFAR)
+                {
+                    WriteAngle(MSG_ONE, 35.000);
+                }
+                
+            }
+            
+            WriteAngle(MSG_ONE, self.angles_y);
+            WriteAngle(MSG_ONE, self.angles_z);
         }
         
     }
     
-    WriteAngle(MSG_ONE, self.angles_y);
-    WriteAngle(MSG_ONE, self.angles_z);
-}
-
-}
-
-self.veh_body.last_velocity = '0.000 0.000 0.000';
-W_SetCurrentAmmo();
-self.health = 100.000;
-self.armorvalue = 0.000;
-self.last_engine_ratio = -1.000;
-self.yaw_speed = 0.000;
-
-if(!(self.racing_flags & QR_RACING))
-{
-self.last_lap = 0.000;
-self.fastest_lap = 999999.000;
-self.last_lap_time = 0.000;
-self.last_marker_num = 0.000;
-self.last_marker = world;
-self.racing_flags = self.racing_flags | QR_RACING;
-}
-
-
-if(deathmatch || coop)
-{
-makevectors(self.angles);
-spawn_tfog(self.origin + (v_forward * 20.000));
-}
-
-spawn_tdeath(self.origin, self);
+    self.veh_body.last_velocity = '0.000 0.000 0.000';
+    W_SetCurrentAmmo();
+    self.health = 100.000;
+    self.armorvalue = 0.000;
+    self.last_engine_ratio = -1.000;
+    self.yaw_speed = 0.000;
+    
+    if(!(self.racing_flags & QR_RACING))
+    {
+        self.last_lap = 0.000;
+        self.fastest_lap = 999999.000;
+        self.last_lap_time = 0.000;
+        self.last_marker_num = 0.000;
+        self.last_marker = world;
+        self.racing_flags = self.racing_flags | QR_RACING;
+    }
+    
+    
+    if(deathmatch || coop)
+    {
+        makevectors(self.angles);
+        spawn_tfog(self.origin + (v_forward * 20.000));
+    }
+    
+    spawn_tdeath(self.origin, self);
 };
 
-/* ERROR INDENTATION */
 // info_player_start
 // function begins at statement 17788, parm_start=12785
 // OP_DONE	0	0	0
@@ -34510,61 +34451,58 @@ void () PlayerPostThink =
         {
             ent = findradius(self.origin, 196.000);
             
-            if(((ent != world) && (ent.classname != "player")) && (ent.classname != "rally_bot"))
+            while(((ent != world) && (ent.classname != "player")) && (ent.classname != "rally_bot"))
             {
                 ent = ent.chain;
             }
             
-        }
-        
-        
-        if(ent != world)
-        {
-            zvel = self.velocity_z;
-            self.velocity = self.last_velocity * 0.900;
-            self.velocity_z = zvel;
+            
+            if(ent != world)
+            {
+                zvel = self.velocity_z;
+                self.velocity = self.last_velocity * 0.900;
+                self.velocity_z = zvel;
+            }
+            
         }
         
     }
     
-}
-
-
-if(hold_flag)
-{
-    setorigin(self, self.oldorigin);
-}
-
-
-if(self.classname == "player")
-{
-    self.angles_y = 0.000;
-}
-
-
-if(self.view_ofs == '0.000 0.000 0.000')
-{
-    return;
-}
-
-
-if(self.deadflag)
-{
-    return;
-}
-
-W_WeaponFrame();
-
-if(!(self.flags & FL_ONGROUND))
-{
-    self.jump_flag = self.velocity_z;
-}
-
-CheckPowerups();
-MoveVehicle();
+    
+    if(hold_flag)
+    {
+        setorigin(self, self.oldorigin);
+    }
+    
+    
+    if(self.classname == "player")
+    {
+        self.angles_y = 0.000;
+    }
+    
+    
+    if(self.view_ofs == '0.000 0.000 0.000')
+    {
+        return;
+    }
+    
+    
+    if(self.deadflag)
+    {
+        return;
+    }
+    
+    W_WeaponFrame();
+    
+    if(!(self.flags & FL_ONGROUND))
+    {
+        self.jump_flag = self.velocity_z;
+    }
+    
+    CheckPowerups();
+    MoveVehicle();
 };
 
-/* ERROR INDENTATION */
 // ClientConnect
 // function begins at statement 18613, parm_start=13270
 // OP_STORE_F	218	13274	0
@@ -34831,7 +34769,7 @@ void () ClientDisconnect =
         plyr = world;
         plyr = find(plyr, classname, "player");
         
-        if(find(plyr, classname, "player") != world)
+        while(find(plyr, classname, "player") != world)
         {
             
             if(plyr != self)
@@ -34841,48 +34779,45 @@ void () ClientDisconnect =
             
         }
         
-    }
-    
-    
-    if(!pcount)
-    {
-        restartent = spawn();
-        restartent.think = RestartMap;
-        restartent.nextthink = time + 0.200;
-        current_leader = world;
-    }
-    
-}
-
-bprint(self.netname);
-bprint(" left the game with ");
-bprint(ftos(self.frags));
-bprint(" frags\n");
-sound(self, CHAN_BODY, "player/tornoff2.wav", 1.000, ATTN_NONE);
-set_suicide_frame();
-
-if((rally_type_index <= 2.000) && (starter != world))
-{
-    plyr = find(world, classname, "player");
-    
-    while(plyr != world)
-    {
         
-        if((((plyr != self) && (!(plyr.racing_flags & QR_START_READY))) && (!(plyr.racing_flags & QR_OBSERVER))) && !plyr.deadflag)
+        if(!pcount)
         {
-            return;
+            restartent = spawn();
+            restartent.think = RestartMap;
+            restartent.nextthink = time + 0.200;
+            current_leader = world;
         }
         
-        plyr = find(plyr, classname, "player");
     }
     
-    starter.racing_flags = starter.racing_flags - (starter.racing_flags & QR_NOT_RACING);
-    starter.last_lap = 3.000;
-}
-
+    bprint(self.netname);
+    bprint(" left the game with ");
+    bprint(ftos(self.frags));
+    bprint(" frags\n");
+    sound(self, CHAN_BODY, "player/tornoff2.wav", 1.000, ATTN_NONE);
+    set_suicide_frame();
+    
+    if((rally_type_index <= 2.000) && (starter != world))
+    {
+        plyr = find(world, classname, "player");
+        
+        while(plyr != world)
+        {
+            
+            if((((plyr != self) && (!(plyr.racing_flags & QR_START_READY))) && (!(plyr.racing_flags & QR_OBSERVER))) && !plyr.deadflag)
+            {
+                return;
+            }
+            
+            plyr = find(plyr, classname, "player");
+        }
+        
+        starter.racing_flags = starter.racing_flags - (starter.racing_flags & QR_NOT_RACING);
+        starter.last_lap = 3.000;
+    }
+    
 };
 
-/* ERROR INDENTATION */
 // ClientObituary
 // function begins at statement 18775, parm_start=13349
 // OP_CALL0	466	0	0
@@ -39893,8 +39828,7 @@ void () walkmonster_start_go =
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
         
         if(!self.movetarget)
@@ -40878,15 +40812,13 @@ void () LinkDoors =
     
     if(self.spawnflags & 4.000)
     {
-        self.enemy = self;
-        self.owner = self;
+        self.owner = self.enemy = self;
         return;
     }
     
     cmins = self.mins;
     cmaxs = self.maxs;
-    starte = self;
-    t = self;
+    t = starte = self;
     do
     {
         self.owner = starte;
@@ -40945,8 +40877,7 @@ void () LinkDoors =
                 objerror("cross connected doors");
             }
             
-            self.enemy = t;
-            self = t;
+            self = self.enemy = t;
             
             if(t.mins_x < cmins_x)
             {
@@ -45190,6 +45121,7 @@ void () misc_fireball =
     
     if(!self.speed)
     {
+        self.speed == 1000.000; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
     }
     
 };
@@ -48459,7 +48391,7 @@ void () dude_run =
         {
             trav = find(world, classname, "weapon_rocketlauncher");
             
-            if(!found && (trav != world))
+            while(!found && (trav != world))
             {
                 traceline(self.origin + '0.000 0.000 8.000', trav.origin, TRUE, world);
                 if(trace_fraction == 1.000)
@@ -48475,195 +48407,187 @@ void () dude_run =
                 
             }
             
+            
+            if((!found && (self.last_guide_touch < (time - 20.000))) && (self.last_cant_walk < (time - 5.000)))
+            {
+                trav = find(world, classname, "rally_dude_guide");
+                
+                while(!found && (trav != world))
+                {
+                    traceline(self.origin + '0.000 0.000 8.000', trav.origin, TRUE, world);
+                    if(trace_fraction == 1.000)
+                    {
+                        vec = normalize(trav.origin - self.origin);
+                        self.ideal_yaw = vectoyaw(vec);
+                        found = TRUE;
+                    }
+                    else
+                    {
+                        trav = find(trav, classname, "rally_dude_guide");
+                    }
+                    
+                    
+                    if(trav == world)
+                    {
+                        self.last_cant_walk = time;
+                    }
+                    
+                }
+                
+            }
+            
         }
         
         
-        if((!found && (self.last_guide_touch < (time - 20.000))) && (self.last_cant_walk < (time - 5.000)))
+        if(!found)
         {
-            trav = find(world, classname, "rally_dude_guide");
+            look_angle = self.v_angle;
+            ideal_dist = look_heading_change = 0.000;
+            ideal_heading = self.v_angle_y;
+            org = self.origin + '0.000 0.000 16.000';
             
-            if(!found && (trav != world))
+            while(look_heading_change < 90.000)
             {
-                traceline(self.origin + '0.000 0.000 8.000', trav.origin, TRUE, world);
-                if(trace_fraction == 1.000)
+                look_angle_y = anglemod(self.v_angle_y + look_heading_change);
+                makevectors(look_angle);
+                traceline(org, org + (v_forward * 512.000), TRUE, self);
+                this_dist = vlen(org - trace_endpos);
+                
+                if(this_dist > ideal_dist)
                 {
-                    vec = normalize(trav.origin - self.origin);
-                    self.ideal_yaw = vectoyaw(vec);
-                    found = TRUE;
+                    ideal_dist = this_dist;
+                    ideal_heading = 0.000;
+                }
+                
+                if(look_heading_change <= 0.000)
+                {
+                    look_heading_change = (-1.000 * look_heading_change) + 30.000;
                 }
                 else
                 {
-                    trav = find(trav, classname, "rally_dude_guide");
+                    look_heading_change = -1.000 * look_heading_change;
                 }
                 
+            }
+            
+            self.ideal_yaw = ideal_heading;
+        }
+        
+        
+        if(!cant_fire)
+        {
+            
+            if(self.last_rev < (time - 0.500))
+            {
+                trav = findradius(self.origin, 384.000);
                 
-                if(trav == world)
+                if(trav.classname == "player")
                 {
-                    self.last_cant_walk = time;
+                    dude_fire_grenade();
+                }
+                
+                
+                while((trav != world) && (trav.classname != "player"))
+                {
+                    trav = trav.chain;
+                    
+                    if(trav.classname == "player")
+                    {
+                        dude_fire_grenade();
+                    }
+                    
+                }
+                
+                
+                if(trav.classname != "player")
+                {
+                    
+                    if(random() < 0.050)
+                    {
+                        dude_fire_grenade();
+                    }
+                    
                 }
                 
             }
             
-        }
-        
-    }
-    
-}
-
-
-if(!found)
-{
-    look_angle = self.v_angle;
-    look_heading_change = 0.000;
-    ideal_dist = 0.000;
-    ideal_heading = self.v_angle_y;
-    org = self.origin + '0.000 0.000 16.000';
-    
-    while(look_heading_change < 90.000)
-    {
-        look_angle_y = anglemod(self.v_angle_y + look_heading_change);
-        makevectors(look_angle);
-        traceline(org, org + (v_forward * 512.000), TRUE, self);
-        this_dist = vlen(org - trace_endpos);
-        
-        if(this_dist > ideal_dist)
-        {
-            ideal_dist = this_dist;
-            ideal_heading = 0.000;
-        }
-        
-        if(look_heading_change <= 0.000)
-        {
-            look_heading_change = (-1.000 * look_heading_change) + 30.000;
-        }
-        else
-        {
-            look_heading_change = -1.000 * look_heading_change;
-        }
-        
-    }
-    
-    self.ideal_yaw = ideal_heading;
-}
-
-
-if(!cant_fire)
-{
-    
-    if(self.last_rev < (time - 0.500))
-    {
-        trav = findradius(self.origin, 384.000);
-        
-        if(trav.classname == "player")
-        {
-            dude_fire_grenade();
-        }
-        
-        
-        if((trav != world) && (trav.classname != "player"))
-        {
-            trav = trav.chain;
             
-            if(trav.classname == "player")
+            if(self.ammo_rockets > 0.000)
             {
-                dude_fire_grenade();
+                
+                if(self.last_rev < (time - 1.000))
+                {
+                    makevectors(self.angles);
+                    trav = FindSightEnemy(self.origin, v_forward, 900.000, 90.000, "player", self);
+                    
+                    if(trav != world)
+                    {
+                        dude_fire_rocket(trav);
+                    }
+                    
+                }
+                
             }
             
-        }
-        
-    }
-    
-    
-    if(trav.classname != "player")
-    {
-        
-        if(random() < 0.050)
-        {
-            dude_fire_grenade();
-        }
-        
-    }
-    
-}
-
-
-if(self.ammo_rockets > 0.000)
-{
-    
-    if(self.last_rev < (time - 1.000))
-    {
-        makevectors(self.angles);
-        trav = FindSightEnemy(self.origin, v_forward, 900.000, 90.000, "player", self);
-        
-        if(trav != world)
-        {
-            dude_fire_rocket(trav);
-        }
-        
-    }
-    
-}
-
-if(self.enemy != world)
-{
-    
-    if(((self.enemy.health <= 0.000) || ((vlen(self.origin - self.enemy.origin)) > 512.000)) || (self.ammo_rockets == 0.000))
-    {
-        self.enemy = world;
-    }
-    
-}
-else
-{
-    
-    if(self.ammo_rockets > 0.000)
-    {
-        trav = findradius(self.origin, 900.000);
-        
-        while(trav != world)
-        {
-            if(trav.classname == "player")
+            if(self.enemy != world)
             {
-                self.enemy = trav;
-                trav = world;
+                
+                if(((self.enemy.health <= 0.000) || ((vlen(self.origin - self.enemy.origin)) > 512.000)) || (self.ammo_rockets == 0.000))
+                {
+                    self.enemy = world;
+                }
+                
             }
             else
             {
-                trav = trav.chain;
+                
+                if(self.ammo_rockets > 0.000)
+                {
+                    trav = findradius(self.origin, 900.000);
+                    
+                    while(trav != world)
+                    {
+                        if(trav.classname == "player")
+                        {
+                            self.enemy = trav;
+                            trav = world;
+                        }
+                        else
+                        {
+                            trav = trav.chain;
+                        }
+                        
+                    }
+                    
+                }
+                
             }
             
         }
         
     }
     
-}
-
-}
-
-}
-
-self.v_angle_y = MoveToAngle(self.v_angle_y, self.ideal_yaw, 120.000);
-if(self.enemy != world)
-{
-vec = normalize((self.enemy.origin + (self.enemy.velocity * ((vlen(self.enemy.origin - self.origin)) / 720.000))) - self.origin);
-enemy_ideal_yaw = vectoyaw(vec);
-self.angles_y = MoveToAngle(self.angles_y, enemy_ideal_yaw, 999.000);
-}
-else
-{
-self.angles_y = MoveToAngle(self.angles_y, self.ideal_yaw, 120.000);
-}
-
-self.frame = self.frame + 1.000;
-
-if(self.frame >= 6.000)
-{
-self.frame = 0.000;
-}
-
+    self.v_angle_y = MoveToAngle(self.v_angle_y, self.ideal_yaw, 120.000);
+    if(self.enemy != world)
+    {
+        vec = normalize((self.enemy.origin + (self.enemy.velocity * ((vlen(self.enemy.origin - self.origin)) / 720.000))) - self.origin);
+        enemy_ideal_yaw = vectoyaw(vec);
+        self.angles_y = MoveToAngle(self.angles_y, enemy_ideal_yaw, 999.000);
+    }
+    else
+    {
+        self.angles_y = MoveToAngle(self.angles_y, self.ideal_yaw, 120.000);
+    }
+    
+    self.frame = self.frame + 1.000;
+    
+    if(self.frame >= 6.000)
+    {
+        self.frame = 0.000;
+    }
+    
 };
 
-/* ERROR INDENTATION */
 // dude_axpain1
 // function begins at statement 25819, parm_start=17958
 // OP_STATE	3974	17958	0
@@ -48942,7 +48866,7 @@ void () replenish_dudes =
     unspawned_dudes = unspawned_dudes + 1.000;
     done = 0.000;
     
-    if((unspawned_dudes > 0.000) && !done)
+    while((unspawned_dudes > 0.000) && !done)
     {
         if(spawn_dude())
         {
@@ -48955,11 +48879,8 @@ void () replenish_dudes =
         
     }
     
-}
-
 };
 
-/* ERROR INDENTATION */
 // DudeDie
 // function begins at statement 25939, parm_start=18019
 // OP_ADDRESS	28	162	18020
@@ -49730,7 +49651,7 @@ float () spawn_dude =
         clear = 1.000;
         trav = findradius(last_dude_spawn.origin, 64.000);
         
-        if((trav != world) && clear)
+        while((trav != world) && clear)
         {
             
             if(!((trav.solid == SOLID_NOT) || (trav.solid == SOLID_TRIGGER)))
@@ -49741,22 +49662,19 @@ float () spawn_dude =
             trav = trav.chain;
         }
         
+        
+        if(!clear && (last_dude_spawn == first_spot))
+        {
+            return 0.000;
+        }
+        
     }
     
-    
-    if(!clear && (last_dude_spawn == first_spot))
-    {
-        return 0.000;
-    }
-    
-}
-
-self = last_dude_spawn;
-rally_spawn_dude();
-return 1.000;
+    self = last_dude_spawn;
+    rally_spawn_dude();
+    return 1.000;
 };
 
-/* ERROR INDENTATION */
 // ThrowDudeGib
 // function begins at statement 26211, parm_start=18143
 // OP_CALL0	473	0	0
@@ -50037,8 +49955,7 @@ void () dude_touch =
     if((other.weapon == IT_ROOBAR) && (other.ammo_roobar > 0.000))
     {
         impact = impact * 4.000;
-        other.ammo_roobar = other.ammo_roobar - 4.000;
-        other.currentammo = other.ammo_roobar - 4.000;
+        other.currentammo = other.ammo_roobar = other.ammo_roobar - 4.000;
         sound(self, CHAN_AUTO, "rally/process/elect02.wav", 1.000, ATTN_NORM);
         other.veh_body.effects = other.veh_body.effects | EF_DIMLIGHT;
         other.last_crash = time;
@@ -50872,7 +50789,7 @@ float () spawn_roo =
         clear = 1.000;
         trav = findradius(last_roo_spawn.origin, 32.000);
         
-        if((trav != world) && clear)
+        while((trav != world) && clear)
         {
             
             if(!((trav.solid == SOLID_NOT) || (trav.solid == SOLID_TRIGGER)))
@@ -50883,23 +50800,20 @@ float () spawn_roo =
             trav = trav.chain;
         }
         
+        
+        if(!clear && (first_spawn == last_roo_spawn))
+        {
+            return 0.000;
+        }
+        
     }
     
-    
-    if(!clear && (first_spawn == last_roo_spawn))
-    {
-        return 0.000;
-    }
-    
-}
-
-oself = self;
-self = last_roo_spawn;
-rally_spawn_kangaroo();
-self = oself;
+    oself = self;
+    self = last_roo_spawn;
+    rally_spawn_kangaroo();
+    self = oself;
 };
 
-/* ERROR INDENTATION */
 // spawn_nailbox
 // function begins at statement 26859, parm_start=18530
 // OP_CALL0	473	0	0
@@ -51057,7 +50971,7 @@ void () roo_die =
     unspawned_roos = unspawned_roos + 1.000;
     done = 0.000;
     
-    if((unspawned_roos > 0.000) && !done)
+    while((unspawned_roos > 0.000) && !done)
     {
         if(spawn_roo())
         {
@@ -51070,12 +50984,9 @@ void () roo_die =
         
     }
     
-}
-
-remove(self);
+    remove(self);
 };
 
-/* ERROR INDENTATION */
 // roo_touch
 // function begins at statement 26953, parm_start=18569
 // OP_LOAD_S	29	129	18570
@@ -51185,8 +51096,7 @@ void () roo_touch =
     
     if((other.weapon == IT_ROOBAR) && (other.ammo_roobar > 0.000))
     {
-        other.ammo_roobar = other.ammo_roobar - 2.000;
-        other.currentammo = other.ammo_roobar - 2.000;
+        other.currentammo = other.ammo_roobar = other.ammo_roobar - 2.000;
         sound(self, CHAN_AUTO, "rally/process/elect02.wav", 1.000, ATTN_NORM);
         other.veh_body.effects = other.veh_body.effects | EF_DIMLIGHT;
         other.last_crash = time;
@@ -51212,8 +51122,7 @@ void () roo_touch =
         else
         {
             sprint(other, "3 rockets!\n");
-            other.ammo_rockets = other.ammo_rockets + 3.000;
-            other.currentammo = other.ammo_rockets + 3.000;
+            other.currentammo = other.ammo_rockets = other.ammo_rockets + 3.000;
         }
         
     }

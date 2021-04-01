@@ -147,8 +147,7 @@ void () t_movetarget =
         sound(self, CHAN_VOICE, "ogre/ogdrag.wav", 1.000, ATTN_IDLE);
     }
     
-    self.movetarget = find(world, targetname, other.target);
-    self.goalentity = find(world, targetname, other.target);
+    self.goalentity = self.movetarget = find(world, targetname, other.target);
     self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
     
     if(!self.movetarget)
@@ -1038,8 +1037,7 @@ void (float dist) ai_walk =
     
     v1 = self.origin;
     v2 = self.goalentity.origin;
-    v1_z = 0.000;
-    v2_z = 0.000;
+    v2_z = v1_z = 0.000;
     ftemp = vlen(v1 - v2);
     move_vec = self.goalentity.origin - self.origin;
     move_vec_z = 0.000;
@@ -1162,17 +1160,17 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = trace_plane_normal_y;
+    newdir_x = 0.000;
     newdir_y = 0.000 - trace_plane_normal_x;
     newdir_z = 0.000;
     if((dir * newdir) > 0.000)
     {
-        dir_x = 0.000 - trace_plane_normal_y;
+        dir_x = 0.000 - 0.000;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = trace_plane_normal_y;
+        dir_x = 0.000;
         dir_y = 0.000 - trace_plane_normal_x;
     }
     
@@ -1248,7 +1246,7 @@ float () DogCheckAttack;
 // OP_CALL0	876	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void () CheckAnyAttack = 
+float () CheckAnyAttack = 
 {
     
     if(!enemy_vis)

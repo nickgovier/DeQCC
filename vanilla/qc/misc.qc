@@ -741,7 +741,7 @@ void () trap_shooter =
         self.wait = SPAWNFLAG_SUPERSPIKE;
     }
     
-    self.nextthink = self.nextthink + self.wait + self.ltime;
+    self.nextthink = (self.nextthink + self.wait) + self.ltime;
     self.think = shooter_think;
 };
 
@@ -833,7 +833,7 @@ void () make_bubbles =
     bubble.frame = MSG_BROADCAST;
     bubble.cnt = MSG_BROADCAST;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
-    self.nextthink = time + random() + 0.500;
+    self.nextthink = (time + random()) + 0.500;
     self.think = make_bubbles;
 };
 
@@ -1014,7 +1014,7 @@ void () bubble_bob =
     
     rnd1 = self.velocity_x + (-10.000 + (random() * 20.000));
     rnd2 = self.velocity_y + (-10.000 + (random() * 20.000));
-    rnd3 = self.velocity_z + TE_LAVASPLASH + (random() * TE_LAVASPLASH);
+    rnd3 = (self.velocity_z + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     
     if(rnd1 > TE_LAVASPLASH)
     {
@@ -1462,7 +1462,7 @@ void () misc_noisemaker =
     precache_sound2("enforcer/pain2.wav");
     precache_sound2("enforcer/death1.wav");
     precache_sound2("enforcer/idle1.wav");
-    self.nextthink = time + 0.100 + random();
+    self.nextthink = (time + 0.100) + random();
     self.think = noise_think;
 };
 

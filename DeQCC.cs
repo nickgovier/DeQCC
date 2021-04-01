@@ -574,13 +574,13 @@ namespace DeQcc
 
             // Track if this is the highest global accessed so far
             // only used in decompilation, not preprocessing
-            if (g.Type == Types.ev_vector || (g.Type == Types.ev_pointer && g.TypePointedTo == Types.ev_vector))
+            if (g.ExpectedType != Types.ev_float && (g.Type == Types.ev_vector || (g.Type == Types.ev_pointer && g.TypePointedTo == Types.ev_vector)))
             {
                 // Vectors share the x component but are followed by the y and z components
                 // account for the _y and _z
                 highestGlobalAccessed = Math.Max(highestGlobalAccessed, offset + 2);
             }
-            else if (g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector)
+            else if (g.ExpectedType != Types.ev_float && (g.Kind == GlobalKind.Field && g.FieldType == Types.ev_vector))
             {
                 // Fields are followed by all three components
                 // account for the _x, _y, and _z
