@@ -974,8 +974,7 @@ void () ehmmv_start =
     setmodel(self.tur2, "progs/humtb.mdl");
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

@@ -713,8 +713,7 @@ void () execute_changelevel =
         other.oldenemy = world;
         other.trigger_field = world;
         other.view_ofs = '0.000 0.000 0.000';
-        other.v_angle = pos.mangle;
-        other.angles = pos.mangle;
+        other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
@@ -3888,8 +3887,7 @@ void () PlayerPostThink =
         WriteAngle(MSG_ONE, 0.000);
         WriteAngle(MSG_ONE, 0.000);
         self.toyview = 0.000;
-        self.angles = v1;
-        self.v_angle = v1;
+        self.v_angle = self.angles = v1;
     }
     
     W_WeaponFrame();

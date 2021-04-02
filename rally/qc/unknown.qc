@@ -2051,9 +2051,11 @@ void () CreateVehicleEntities =
         setorigin(tail, (self.origin - (v_forward * TAIL_DIST)) + '0.000 0.000 1.000');
         tail.veh_dir = '0.000 1.000 0.000';
         tail.yaw_speed = REAR_TRACTION;
-        plyrBoxMin_y = plyrBoxMin_x = -1.000;
+        plyrBoxMin_x = -1.000;
+        plyrBoxMin_y = -1.000;
         plyrBoxMin_z = -24.000;
-        plyrBoxMax_y = plyrBoxMax_x = 1.000;
+        plyrBoxMax_x = 1.000;
+        plyrBoxMax_y = 1.000;
         plyrBoxMax_z = 32.000;
         setsize(tail, plyrBoxMin, plyrBoxMax);
         tail.slide_ratio = 0.000;
@@ -5870,7 +5872,8 @@ float () SetSurfaceAngle =
     }
     
     veh_angle = vectoangles(self.veh_dir);
-    veh_angle_x = veh_angle_z = 0.000;
+    veh_angle_z = 0.000;
+    veh_angle_x = 0.000;
     makevectors(veh_angle);
     left = self.origin - (v_right * 14.000);
     spos = left + (48.000 * v_up);
@@ -6875,7 +6878,8 @@ void (float vel_speed) CheckForCollision =
                     }
                     else
                     {
-                        self.currentammo = self.ammo_roobar = 0.000;
+                        self.ammo_roobar = 0.000;
+                        self.currentammo = 0.000;
                     }
                     
                 }
@@ -6963,7 +6967,8 @@ void (float vel_speed) CheckForCollision =
                     }
                     else
                     {
-                        self.currentammo = self.ammo_roobar = 0.000;
+                        self.ammo_roobar = 0.000;
+                        self.currentammo = 0.000;
                     }
                     
                 }
@@ -7032,7 +7037,8 @@ void (float vel_speed) CheckForCollision =
                     }
                     else
                     {
-                        self.currentammo = self.ammo_roobar = 0.000;
+                        self.ammo_roobar = 0.000;
+                        self.currentammo = 0.000;
                     }
                     
                 }
@@ -24098,7 +24104,8 @@ void () W_FireMine =
     }
     else
     {
-        self.currentammo = self.ammo_rockets = 0.000;
+        self.ammo_rockets = 0.000;
+        self.currentammo = 0.000;
     }
     
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", 1.000, ATTN_NORM);
@@ -24326,7 +24333,8 @@ void () W_FireLaser =
     }
     else
     {
-        self.currentammo = self.ammo_roobar = 0.000;
+        self.ammo_roobar = 0.000;
+        self.currentammo = 0.000;
     }
     
     sound(self, CHAN_WEAPON, "enforcer/enfire.wav", 1.000, ATTN_NORM);
@@ -25924,7 +25932,8 @@ void () CycleWeaponCommand =
     }
     
     it = self.items;
-    i = self.impulse = 0.000;
+    self.impulse = 0.000;
+    i = 0.000;
     
     while(i < 10.000)
     {
@@ -27959,13 +27968,15 @@ void () ImpulseCommands =
                                                     {
                                                         if(self.impulse == 100.000)
                                                         {
-                                                            challenge = self.start_challenge = 1.000;
+                                                            self.start_challenge = 1.000;
+                                                            challenge = 1.000;
                                                         }
                                                         else
                                                         {
                                                             if(self.impulse == 101.000)
                                                             {
-                                                                challenge = self.start_challenge = 2.000;
+                                                                self.start_challenge = 2.000;
+                                                                challenge = 2.000;
                                                             }
                                                             else
                                                             {
@@ -30463,7 +30474,8 @@ void () worldspawn =
         init_done = 1.000;
     }
     
-    num_bots = num_markers = 0.000;
+    num_markers = 0.000;
+    num_bots = 0.000;
     if(self.model == "maps/e1m8.bsp")
     {
         cvar_set("sv_gravity", "100");
@@ -30812,7 +30824,8 @@ void () worldspawn =
         
     }
     
-    racing_type = rally_type_index = 0.000;
+    rally_type_index = 0.000;
+    racing_type = 0.000;
     
     if(world.model == "maps/start.bsp")
     {
@@ -31249,7 +31262,13 @@ void () SetNewParms =
     }
     
     parm2 = 100.000;
-    parm9 = parm8 = parm7 = parm6 = parm5 = parm4 = parm3 = 0.000;
+    parm3 = 0.000;
+    parm4 = 0.000;
+    parm5 = 0.000;
+    parm6 = 0.000;
+    parm7 = 0.000;
+    parm8 = 0.000;
+    parm9 = 0.000;
     parm10 = challenge;
     
     if(!deathmatch && !coop)
@@ -48442,7 +48461,8 @@ void () dude_run =
         if(!found)
         {
             look_angle = self.v_angle;
-            ideal_dist = look_heading_change = 0.000;
+            look_heading_change = 0.000;
+            ideal_dist = 0.000;
             ideal_heading = self.v_angle_y;
             org = self.origin + '0.000 0.000 16.000';
             

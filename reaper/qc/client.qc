@@ -173,10 +173,13 @@ void () SetChangeParms =
     }
     
     e = find(world, classname, "dmbot");
-    toffset = offset = TRUE;
-    parm11 = parm10 = FALSE;
+    offset = TRUE;
+    toffset = TRUE;
+    parm10 = FALSE;
+    parm11 = FALSE;
     team1 = MUST_HAVE;
-    nt = nb = FALSE;
+    nb = FALSE;
+    nt = FALSE;
     
     while(e)
     {
@@ -238,7 +241,9 @@ void () SetNewParms =
     parm2 = MUST_HAVE;
     parm3 = FALSE;
     parm4 = 25.000;
-    parm7 = parm6 = parm5 = FALSE;
+    parm5 = FALSE;
+    parm6 = FALSE;
+    parm7 = FALSE;
     parm8 = TRUE;
     parm9 = FALSE;
 };

@@ -237,8 +237,7 @@ void () walkmonster_start_go =
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         self.ideal_yaw = vectoyaw(self.goalentity.origin - self.origin);
         
         if(!self.movetarget)
@@ -391,8 +390,7 @@ void () flymonster_start_go =
     
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {
@@ -540,8 +538,7 @@ void () swimmonster_start_go =
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

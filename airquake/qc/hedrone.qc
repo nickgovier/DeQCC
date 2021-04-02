@@ -644,8 +644,7 @@ void () he_movetogoal =
                 
                 if((e.classname == "monster_helo") && (e.movetarget == self.movetarget))
                 {
-                    self.goalentity = find(world, targetname, self.goalentity.target);
-                    self.movetarget = find(world, targetname, self.goalentity.target);
+                    self.movetarget = self.goalentity = find(world, targetname, self.goalentity.target);
                 }
                 
             }
@@ -688,9 +687,7 @@ void () he_movetogoal =
                 tmp = tmp + 1.000;
                 if((e != world) && visible(e))
                 {
-                    self.movetarget = e;
-                    self.goalentity = e;
-                    e2 = e;
+                    e2 = self.goalentity = self.movetarget = e;
                 }
                 else
                 {
@@ -2551,8 +2548,7 @@ void () hedrone_start =
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
-        self.movetarget = find(world, targetname, self.target);
-        self.goalentity = find(world, targetname, self.target);
+        self.goalentity = self.movetarget = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

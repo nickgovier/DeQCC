@@ -690,8 +690,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     f_y = f_x;
     f_z = 0.000;
     f = f * 16.000;
-    e2 = world;
-    e1 = world;
+    e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)

@@ -1919,7 +1919,7 @@ vector (float globaldef001227, float globaldef001228, float globaldef001229) fun
 // OP_CALL1	488	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (vector globaldef001242) func000123 = 
+float (vector globaldef001242) func000123 = 
 {
     local vector globaldef001246;
     local vector globaldef001250;
@@ -13590,7 +13590,7 @@ float () func000249 =
 // OP_CALL1	459	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (entity globaldef002026, float globaldef002027) func000250 = 
+vector (entity globaldef002026, float globaldef002027) func000250 = 
 {
     makevectors(globaldef002026.v_angle);
     return normalize(globaldef000032);
