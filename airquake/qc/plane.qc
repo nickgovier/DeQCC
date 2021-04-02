@@ -529,7 +529,7 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
     if(fabs(v1_x) < (frametime * sp_x))
     {
         v2_x = 0.000;
-        stemp.angles_x = v0;
+        stemp.angles_x = v0_x;
     }
     
     v2_y = 0.000 * 5.000;

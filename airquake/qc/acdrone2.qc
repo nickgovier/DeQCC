@@ -824,7 +824,7 @@ void () drone2_fly =
     if(fabs(v1_x) < (self.weapon * 0.100))
     {
         v2_x = 0.000;
-        self.angles_x = v0;
+        self.angles_x = v0_x;
     }
     
     v2_y = 0.000 * 5.000;

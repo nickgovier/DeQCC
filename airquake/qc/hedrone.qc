@@ -1132,7 +1132,7 @@ void (vector v0) turn_hedrone =
         if(fabs(v1_x) < 9.000)
         {
             v2_x = 0.000;
-            self.angles_x = v0;
+            self.angles_x = v0_x;
         }
         
         

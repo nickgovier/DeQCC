@@ -683,7 +683,7 @@ void () he1_steer =
         if(fabs(v1_x) < (frametime * 70.000))
         {
             v2_x = 0.000;
-            stemp.angles_x = v0;
+            stemp.angles_x = v0_x;
         }
         
         

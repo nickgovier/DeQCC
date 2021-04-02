@@ -409,7 +409,7 @@ void (vector v0, float sp_x) turn_eturret =
         if(f1 < f2)
         {
             v2_x = 0.000;
-            stemp.toyview = v0;
+            stemp.toyview = v0_x;
         }
         else
         {

@@ -225,7 +225,7 @@ void (entity e) Check_minsmaxs =
         
         if(e.origin_x < minims_x)
         {
-            e.origin_x = minims;
+            e.origin_x = minims_x;
         }
         
         
@@ -248,7 +248,7 @@ void (entity e) Check_minsmaxs =
         
         if(e.origin_x > maxims_x)
         {
-            e.origin_x = maxims;
+            e.origin_x = maxims_x;
         }
         
         
