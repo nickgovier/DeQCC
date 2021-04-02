@@ -27,6 +27,8 @@ namespace DeQcc
         
         private List<string> _decompileFilesSeen = new List<string>();   // have we already seen this file during decompilation
 
+        List<string> operators = new List<string> { " + ", " - ", " * ", " / ", " == ", " != ", " <= ", " >= ", " < ", " > ", " && ", " || ", " & ", " | " };
+
         void SetUpNameMaps(string outputfolder)
         {
             if (outputfolder == "obots")
@@ -500,6 +502,16 @@ namespace DeQcc
             pr_opcodes.Add(new Opcode("|", "BITOR", 2, false, Types.ev_float, Types.ev_float, Types.ev_float));
         }
 
+        // Does this string contain an operator
+        bool ContainsOperator(string input)
+        {
+            foreach (string op in operators)
+            {
+                if (input.Contains(op)) { return true; }
+            }
+            return false;
+        }
+
         // Check for presence of operators in the string, and if so, bracket it
         // used when combining two potential calculations, e.g. a + b
         // to check whether a or b need brackets
@@ -508,15 +520,8 @@ namespace DeQcc
         // preserving the original precedence from the source file)
         string CheckPrecedence(string input)
         {
-            List<string> operators = new List<string> { " + ", " - " , " * ", " / " , " == ", " != ", " <= ", " >= ", " < ", " > ", " && ", " || ", " & ", " | " };
-
-            if (input is null) return null;
-
-            foreach(string op in operators)
-            {
-                if(input.Contains(op)) { return "(" + input + ")"; }
-            }
-
+            if (input is null) { return null; }
+            if(ContainsOperator(input)) { return "(" + input + ")"; }
             return input;
         }
 

@@ -126,7 +126,9 @@ void () SetNewParms =
     parm2 = 100.000;
     parm3 = MSG_BROADCAST;
     parm4 = 25.000;
-    parm7 = parm6 = parm5 = MSG_BROADCAST;
+    parm5 = MSG_BROADCAST;
+    parm6 = MSG_BROADCAST;
+    parm7 = MSG_BROADCAST;
     parm8 = WEAPON_SHOTGUN;
     parm9 = MSG_BROADCAST;
 };

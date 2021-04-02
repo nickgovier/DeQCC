@@ -226,7 +226,7 @@ void () chess_king =
 // OP_CALL1	482	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-void (float loc) GetX = 
+float (float loc) GetX = 
 {
     return floor(loc / 10.000);
 };
@@ -1023,9 +1023,11 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
     
     if(actual_move)
     {
+        king_castle_move_flag = FALSE;
+        en_passant_flag = FALSE;
     }
     
-    valid = en_passant_flag = king_castle_move_flag = FALSE;
+    valid = FALSE;
     if(ent.classname == "chess_pawn")
     {
         if(ent.chess_team == "black")

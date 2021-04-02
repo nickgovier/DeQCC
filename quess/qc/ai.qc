@@ -1037,7 +1037,8 @@ void (float dist) ai_walk =
     
     v1 = self.origin;
     v2 = self.goalentity.origin;
-    v2_z = v1_z = 0.000;
+    v1_z = 0.000;
+    v2_z = 0.000;
     ftemp = vlen(v1 - v2);
     move_vec = self.goalentity.origin - self.origin;
     move_vec_z = 0.000;

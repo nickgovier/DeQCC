@@ -1902,11 +1902,12 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
         }
         else
         {
+            sp_x = 0.000;
         }
         
     }
     
-    lck = sp_x = 0.000;
+    lck = 0.000;
     
     if(fabs(stemp.angles_x) > 45.000)
     {

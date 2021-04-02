@@ -125,7 +125,9 @@ void () SetNewParms =
     parm2 = 100.000;
     parm3 = 0.000;
     parm4 = 25.000;
-    parm7 = parm6 = parm5 = 0.000;
+    parm5 = 0.000;
+    parm6 = 0.000;
+    parm7 = 0.000;
     parm8 = 1.000;
     parm9 = 0.000;
 };

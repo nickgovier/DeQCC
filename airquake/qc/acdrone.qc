@@ -913,7 +913,8 @@ void () drone_start =
     
     if(self.target)
     {
-        self.goalentity = self.movetarget = find(world, targetname, self.target);
+        self.movetarget = find(world, targetname, self.target);
+        self.goalentity = find(world, targetname, self.target);
         
         if(!self.movetarget)
         {

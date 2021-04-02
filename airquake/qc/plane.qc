@@ -866,7 +866,8 @@ void (float sp_x, float sp_y, float sp_st) Steer_plane =
         else
         {
             stemp.origin_z = (stemp.groundentity.origin_z + stemp.groundentity.maxs_z) + 16.000;
-            stemp.angles_z = stemp.angles_x = 0.000;
+            stemp.angles_x = 0.000;
+            stemp.angles_z = 0.000;
             stemp.velocity_z = 0.000;
             traceline(stemp.origin, stemp.origin + '0.000 0.000 -64.000', FALSE, self);
             
@@ -947,7 +948,8 @@ void () Check_startlanded =
         stemp.speed = 0.000;
         stemp.thru = 0.000;
         stemp.origin_z = (stemp.groundentity.origin_z + stemp.groundentity.maxs_z) + 16.000;
-        stemp.angles_z = stemp.angles_x = 0.000;
+        stemp.angles_x = 0.000;
+        stemp.angles_z = 0.000;
         stemp.velocity = '0.000 0.000 0.000';
     }
     

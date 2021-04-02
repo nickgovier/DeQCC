@@ -113,7 +113,11 @@ void () SetNewParms =
 {
     parm1 = ((IT_WEP1 | IT_WEP2) | IT_WEP3) | IT_WEP4;
     parm2 = 100.000;
-    parm7 = parm6 = parm5 = parm4 = parm3 = 0.000;
+    parm3 = 0.000;
+    parm4 = 0.000;
+    parm5 = 0.000;
+    parm6 = 0.000;
+    parm7 = 0.000;
     parm8 = IT_WEP1;
     parm9 = 0.000;
 };
@@ -709,7 +713,8 @@ void () execute_changelevel =
         other.oldenemy = world;
         other.trigger_field = world;
         other.view_ofs = '0.000 0.000 0.000';
-        other.angles = other.v_angle = pos.mangle;
+        other.v_angle = pos.mangle;
+        other.angles = pos.mangle;
         other.fixangle = TRUE;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
@@ -1578,7 +1583,8 @@ void () info_player_start2 =
         else
         {
             allowedcraft = allowedcraft | self.sounds;
-            f1 = tmp = 0.000;
+            tmp = 0.000;
+            f1 = 0.000;
             
             while(tmp < 10.000)
             {
@@ -2661,7 +2667,8 @@ void () PlayerDeathThink =
         
         if(!self.ts)
         {
-            tmp2 = tmp = 0.000;
+            tmp = 0.000;
+            tmp2 = 0.000;
             e = find(world, classname, "player");
             
             while(e)
@@ -3881,7 +3888,8 @@ void () PlayerPostThink =
         WriteAngle(MSG_ONE, 0.000);
         WriteAngle(MSG_ONE, 0.000);
         self.toyview = 0.000;
-        self.v_angle = self.angles = v1;
+        self.angles = v1;
+        self.v_angle = v1;
     }
     
     W_WeaponFrame();

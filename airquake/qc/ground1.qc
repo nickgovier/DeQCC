@@ -1018,7 +1018,8 @@ void () start_groundveh1 =
     self.th_missile = gv1_attack;
     self.th_run = gv1_steer;
     self.th_melee = gv1_currentammo;
-    self.ammo_shells = self.ammo_auto = 200.000;
+    self.ammo_auto = 200.000;
+    self.ammo_shells = 200.000;
     self.ammo_nails = self.ammo_amsl = 16.000 * wepmulti;
     self.ammo_rockets = 0.000;
     self.ammo_cells = 0.000;

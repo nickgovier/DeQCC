@@ -696,13 +696,15 @@ void () LinkDoors =
     
     if(self.spawnflags & 4.000)
     {
-        self.owner = self.enemy = self;
+        self.enemy = self;
+        self.owner = self;
         return;
     }
     
     cmins = self.mins;
     cmaxs = self.maxs;
-    t = starte = self;
+    starte = self;
+    t = self;
     do
     {
         self.owner = starte;
@@ -761,7 +763,8 @@ void () LinkDoors =
                 objerror("cross connected doors");
             }
             
-            self = self.enemy = t;
+            self.enemy = t;
+            self = t;
             
             if(t.mins_x < cmins_x)
             {

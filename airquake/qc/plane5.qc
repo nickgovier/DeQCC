@@ -978,7 +978,8 @@ void () start_aircraft5 =
     self.th_missile = ac5_attack;
     self.th_run = ac5_steer;
     self.th_melee = ac5_currentammo;
-    self.ammo_shells = self.ammo_auto = 130.000;
+    self.ammo_auto = 130.000;
+    self.ammo_shells = 130.000;
     self.ammo_nails = self.ammo_cell = 40.000 * wepmulti;
     self.ammo_rockets = self.ammo_rock = 8.000 * wepmulti;
     self.ammo_cells = self.ammo_amsl = 4.000 * wepmulti;

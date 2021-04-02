@@ -690,7 +690,8 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     f_y = f_x;
     f_z = 0.000;
     f = f * 16.000;
-    e1 = e2 = world;
+    e2 = world;
+    e1 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
@@ -1231,7 +1232,8 @@ void () W_ChangeWeapon =
     local float am;
     local float fl;
     it = self.items;
-    fl = am = 0.000;
+    am = 0.000;
+    fl = 0.000;
     if(self.impulse == 1.000)
     {
         fl = IT_WEP1;

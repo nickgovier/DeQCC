@@ -598,7 +598,8 @@ void () he1_steer =
             v1 = self.v_angle;
             v2 = stemp.angles;
             v3 = v1 - v2;
-            v3_z = v3_x = 0.000;
+            v3_x = 0.000;
+            v3_z = 0.000;
             makevectors(v3);
             tmp = v_forward_x;
             v0_x = v0_x - (40.000 * tmp);
@@ -1386,7 +1387,8 @@ void () start_helo1 =
     self.th_missile = he1_attack;
     self.th_run = he1_steer;
     self.th_melee = he1_currentammo;
-    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_auto = 100.000;
+    self.ammo_shells = 100.000;
     self.ammo_nails = self.ammo_rock = 16.000 * wepmulti;
     self.ammo_rockets = self.ammo_amsl = 4.000 * wepmulti;
     self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;

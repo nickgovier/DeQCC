@@ -60,7 +60,7 @@ void () CameraPos;
 void (entity plyr) AllocateMonsters;
 void () FindLocation;
 float (entity ent, float loc, float actual_move) CanMove;
-void (float loc) GetX;
+float (float loc) GetX;
 float (float loc) GetY;
 void () ProcessSelection;
 void (entity client) WalkToDest;

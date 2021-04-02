@@ -992,7 +992,8 @@ void () start_aircraft2 =
     self.th_missile = ac2_attack;
     self.th_run = ac2_steer;
     self.th_melee = ac2_currentammo;
-    self.ammo_shells = self.ammo_auto = 100.000;
+    self.ammo_auto = 100.000;
+    self.ammo_shells = 100.000;
     self.ammo_nails = self.ammo_amsl = 4.000 * wepmulti;
     self.ammo_rockets = self.ammo_bomb = 4.000 * wepmulti;
     self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;
