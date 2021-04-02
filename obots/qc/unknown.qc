@@ -33297,7 +33297,7 @@ void () func000587 =
         globaldef000002.search_time = globaldef000004 - globaldef000192;
         globaldef000002.v_angle = globaldef003487.mangle;
         globaldef000002.ideal_yaw = globaldef003487.mangle_y;
-        globaldef000002.field000288 = globaldef003487.mangle;
+        globaldef000002.field000288 = globaldef003487.mangle_x;
         globaldef000002.velocity = globaldef000032 * globaldef000523;
         globaldef000002.teleport_time = globaldef000004 + 0.400;
         globaldef000002.attack_finished = globaldef000004 + globaldef000522;
@@ -59719,7 +59719,7 @@ void () func002276 =
                 
                 if(globaldef000001.flags & globaldef000201)
                 {
-                    globaldef000001.velocity_x = globaldef000001.field000237;
+                    globaldef000001.velocity_x = globaldef000001.field000237_x;
                     globaldef000001.velocity_y = globaldef000001.field000239;
                 }
                 
@@ -59846,7 +59846,7 @@ void () func002277 =
             func002272(globaldef005781);
             if(globaldef005781.flags & globaldef000203)
             {
-                globaldef005781.velocity_x = globaldef005781.movedir;
+                globaldef005781.velocity_x = globaldef005781.movedir_x;
                 globaldef005781.velocity_y = globaldef005781.movedir_y;
                 
                 if(((globaldef005781.field000252 & globaldef000683) || (globaldef005781.waterlevel > globaldef000194)) || (globaldef005781.teleport_time < globaldef000004))
@@ -78040,7 +78040,7 @@ void (entity globaldef006959) func002388 =
     globaldef006960 = func002387(globaldef006959);
     globaldef006964 = vectoangles(globaldef006960);
     globaldef006959.ideal_yaw = 0.000;
-    globaldef006959.field000288 = globaldef006964;
+    globaldef006959.field000288 = globaldef006964_x;
     
     if(globaldef006959.field000288 > 180.000)
     {
@@ -78467,7 +78467,7 @@ void (entity globaldef006975) func002391 =
         globaldef006980_x = globaldef006980_x - 360.000;
     }
     
-    globaldef006975.field000288 = globaldef006980;
+    globaldef006975.field000288 = globaldef006980_x;
     globaldef006975.ideal_yaw = 0.000;
     makevectors(globaldef006975.v_angle);
     
