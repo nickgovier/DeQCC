@@ -15,8 +15,8 @@ namespace DeQcc
         List<Opcode> pr_opcodes = new List<Opcode>();
         List<float> pr_globals = new List<float>();
 
-        List<Statement> statements = new List<Statement>();
-        List<Function> functions = new List<Function>();
+        public List<Statement> statements = new List<Statement>();
+        public List<Function> functions = new List<Function>();
         List<Def> globals = new List<Def>();
         Dictionary<int, int> globalsOffsetMap = new Dictionary<int, int>();  // to look up global by offset
         List<Def> fields = new List<Def>();
@@ -39,7 +39,7 @@ namespace DeQcc
 
         //List<int> IFNOTisWhile = new List<int> { 659, 664, 5695, 5900, 6051, 6068, 1592, 1650, 20773, 20867, 20870, 20873, 3662, 4831, 4921 };  // all the IFNOT statements which are while loops
 
-        public void Decompile(string outputfolder, bool decompile)
+        public void Decompile(string outputfolder, string progsdatname, bool decompile)
         {
             string fulldirectorfolder = Directory.GetCurrentDirectory() + "\\" + outputfolder + "\\";
 
@@ -52,7 +52,7 @@ namespace DeQcc
 
             Strings.Clear();
             SetUpNameMaps(outputfolder);    // do this before reading the data so the mappings exist
-            ReadProgsData(fulldirectorfolder, decompile);
+            ReadProgsData(fulldirectorfolder, progsdatname, decompile);
             WriteProgsDataToCSV(fulldirectorfolder, decompile);
 
             if (!decompile) { return; }   // just load the data and return
