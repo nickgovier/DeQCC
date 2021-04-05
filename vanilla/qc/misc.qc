@@ -15,7 +15,7 @@ void () info_notnull =
 {
 };
 
-float START_OFF = 1.000;
+float START_OFF = 1;
 // light_use
 // function begins at statement 11133, parm_start=7224
 // OP_LOAD_F	28	195	7224
@@ -152,7 +152,7 @@ void () light_fluoro =
     }
     
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.5, ATTN_STATIC);
 };
 
 // light_fluorospark
@@ -180,7 +180,7 @@ void () light_fluorospark =
     }
     
     precache_sound("ambience/buzz1.wav");
-    ambientsound(self.origin, "ambience/buzz1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/buzz1.wav", 0.5, ATTN_STATIC);
 };
 
 // light_globe
@@ -214,7 +214,7 @@ void () light_globe =
 void () FireAmbient = 
 {
     precache_sound("ambience/fire1.wav");
-    ambientsound(self.origin, "ambience/fire1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fire1.wav", 0.5, ATTN_STATIC);
 };
 
 // light_torch_small_walltorch
@@ -326,7 +326,7 @@ void () misc_fireball =
     
     if(!self.speed)
     {
-        self.speed = 1000.000;
+        self.speed = 1000;
     }
     
 };
@@ -393,9 +393,9 @@ void () fire_fly =
     fireball.solid = SOLID_TRIGGER;
     fireball.movetype = MOVETYPE_TOSS;
     fireball.velocity = '0.000 0.000 1000.000';
-    fireball.velocity_x = (random() * 100.000) - 50.000;
-    fireball.velocity_y = (random() * 100.000) - 50.000;
-    fireball.velocity_z = self.speed + (random() * 200.000);
+    fireball.velocity_x = (random() * 100) - 50;
+    fireball.velocity_y = (random() * 100) - 50;
+    fireball.velocity_z = self.speed + (random() * 200);
     fireball.classname = "fireball";
     setmodel(fireball, "progs/lavaball.mdl");
     setsize(fireball, VEC_ORIGIN, VEC_ORIGIN);
@@ -419,7 +419,7 @@ void () fire_fly =
 // OP_DONE	0	0	0
 void () fire_touch = 
 {
-    T_Damage(other, self, self, 20.000);
+    T_Damage(other, self, self, 20);
     remove(self);
 };
 
@@ -456,9 +456,9 @@ void () barrel_explode =
 {
     self.takedamage = DAMAGE_NO;
     self.classname = "explo_box";
-    T_RadiusDamage(self, self, 160.000, world);
+    T_RadiusDamage(self, self, 160, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", START_OFF, ATTN_NORM);
-    particle(self.origin, VEC_ORIGIN, 75.000, 255.000);
+    particle(self.origin, VEC_ORIGIN, 75, 255);
     self.origin_z = self.origin_z + DOOR_TOGGLE;
     BecomeExplosion();
 };
@@ -513,14 +513,14 @@ void () misc_explobox =
     precache_model("maps/b_explob.bsp");
     setmodel(self, "maps/b_explob.bsp");
     precache_sound("weapons/r_exp3.wav");
-    self.health = 20.000;
+    self.health = 20;
     self.th_die = barrel_explode;
     self.takedamage = DAMAGE_AIM;
     self.origin_z = self.origin_z + SILENT;
     oldz = self.origin_z;
     droptofloor();
     
-    if((oldz - self.origin_z) > 250.000)
+    if((oldz - self.origin_z) > 250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -580,14 +580,14 @@ void () misc_explobox2 =
     precache_model2("maps/b_exbox2.bsp");
     setmodel(self, "maps/b_exbox2.bsp");
     precache_sound("weapons/r_exp3.wav");
-    self.health = 20.000;
+    self.health = 20;
     self.th_die = barrel_explode;
     self.takedamage = DAMAGE_AIM;
     self.origin_z = self.origin_z + SILENT;
     oldz = self.origin_z;
     droptofloor();
     
-    if((oldz - self.origin_z) > 250.000)
+    if((oldz - self.origin_z) > 250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -597,8 +597,8 @@ void () misc_explobox2 =
     
 };
 
-float SPAWNFLAG_SUPERSPIKE = 1.000;
-float SPAWNFLAG_LASER = 2.000;
+float SPAWNFLAG_SUPERSPIKE = 1;
+float SPAWNFLAG_LASER = 2;
 void (vector org, vector vec) LaunchLaser;
 // spikeshooter_use
 // function begins at statement 11458, parm_start=7372
@@ -649,7 +649,7 @@ void () spikeshooter_use =
     {
         sound(self, CHAN_VOICE, "weapons/spike2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         launch_spike(self.origin, self.movedir);
-        newmis.velocity = self.movedir * 500.000;
+        newmis.velocity = self.movedir * 500;
         
         if(self.spawnflags & SPAWNFLAG_SUPERSPIKE)
         {
@@ -676,7 +676,7 @@ void () shooter_think =
 {
     spikeshooter_use();
     self.nextthink = time + self.wait;
-    newmis.velocity = self.movedir * 500.000;
+    newmis.velocity = self.movedir * 500;
 };
 
 // trap_spikeshooter
@@ -826,14 +826,14 @@ void () make_bubbles =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = '0.000 0.000 15.000';
-    bubble.nextthink = time + 0.500;
+    bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
     bubble.frame = MSG_BROADCAST;
     bubble.cnt = MSG_BROADCAST;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
-    self.nextthink = (time + random()) + 0.500;
+    self.nextthink = (time + random()) + 0.5;
     self.think = make_bubbles;
 };
 
@@ -891,7 +891,7 @@ void () bubble_split =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = self.velocity;
-    bubble.nextthink = time + 0.500;
+    bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
@@ -1007,13 +1007,13 @@ void () bubble_bob =
     }
     
     
-    if(self.cnt == 20.000)
+    if(self.cnt == 20)
     {
         remove(self);
     }
     
-    rnd1 = self.velocity_x + (-10.000 + (random() * 20.000));
-    rnd2 = self.velocity_y + (-10.000 + (random() * 20.000));
+    rnd1 = self.velocity_x + (-10 + (random() * 20));
+    rnd2 = self.velocity_y + (-10 + (random() * 20));
     rnd3 = (self.velocity_z + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
     
     if(rnd1 > TE_LAVASPLASH)
@@ -1022,7 +1022,7 @@ void () bubble_bob =
     }
     
     
-    if(rnd1 < -10.000)
+    if(rnd1 < -10)
     {
         rnd1 = CONTENT_LAVA;
     }
@@ -1034,7 +1034,7 @@ void () bubble_bob =
     }
     
     
-    if(rnd2 < -10.000)
+    if(rnd2 < -10)
     {
         rnd2 = CONTENT_LAVA;
     }
@@ -1042,19 +1042,19 @@ void () bubble_bob =
     
     if(rnd3 < TE_LAVASPLASH)
     {
-        rnd3 = 15.000;
+        rnd3 = 15;
     }
     
     
     if(rnd3 > SVC_INTERMISSION)
     {
-        rnd3 = 25.000;
+        rnd3 = 25;
     }
     
     self.velocity_x = rnd1;
     self.velocity_y = rnd2;
     self.velocity_z = rnd3;
-    self.nextthink = time + 0.500;
+    self.nextthink = time + 0.5;
     self.think = bubble_bob;
 };
 
@@ -1195,7 +1195,7 @@ void () func_episodegate =
 void () func_bossgate = 
 {
     
-    if((serverflags & 15.000) == 15.000)
+    if((serverflags & 15) == 15)
     {
         return;
     }
@@ -1238,7 +1238,7 @@ void () ambient_suck_wind =
 void () ambient_drone = 
 {
     precache_sound("ambience/drone6.wav");
-    ambientsound(self.origin, "ambience/drone6.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drone6.wav", 0.5, ATTN_STATIC);
 };
 
 // ambient_flouro_buzz
@@ -1272,7 +1272,7 @@ void () ambient_flouro_buzz =
 void () ambient_drip = 
 {
     precache_sound("ambience/drip1.wav");
-    ambientsound(self.origin, "ambience/drip1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drip1.wav", 0.5, ATTN_STATIC);
 };
 
 // ambient_comp_hum
@@ -1306,7 +1306,7 @@ void () ambient_comp_hum =
 void () ambient_thunder = 
 {
     precache_sound("ambience/thunder1.wav");
-    ambientsound(self.origin, "ambience/thunder1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/thunder1.wav", 0.5, ATTN_STATIC);
 };
 
 // ambient_light_buzz
@@ -1323,7 +1323,7 @@ void () ambient_thunder =
 void () ambient_light_buzz = 
 {
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", 0.5, ATTN_STATIC);
 };
 
 // ambient_swamp1
@@ -1340,7 +1340,7 @@ void () ambient_light_buzz =
 void () ambient_swamp1 = 
 {
     precache_sound("ambience/swamp1.wav");
-    ambientsound(self.origin, "ambience/swamp1.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp1.wav", 0.5, ATTN_STATIC);
 };
 
 // ambient_swamp2
@@ -1357,7 +1357,7 @@ void () ambient_swamp1 =
 void () ambient_swamp2 = 
 {
     precache_sound("ambience/swamp2.wav");
-    ambientsound(self.origin, "ambience/swamp2.wav", 0.500, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp2.wav", 0.5, ATTN_STATIC);
 };
 
 // noise_think
@@ -1410,7 +1410,7 @@ void () ambient_swamp2 =
 // OP_DONE	0	0	0
 void () noise_think = 
 {
-    self.nextthink = time + 0.500;
+    self.nextthink = time + 0.5;
     sound(self, SPAWNFLAG_SUPERSPIKE, "enforcer/enfire.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     sound(self, SPAWNFLAG_LASER, "enforcer/enfstop.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     sound(self, AS_MELEE, "enforcer/sight1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
@@ -1462,7 +1462,7 @@ void () misc_noisemaker =
     precache_sound2("enforcer/pain2.wav");
     precache_sound2("enforcer/death1.wav");
     precache_sound2("enforcer/idle1.wav");
-    self.nextthink = (time + 0.100) + random();
+    self.nextthink = (time + 0.1) + random();
     self.think = noise_think;
 };
 

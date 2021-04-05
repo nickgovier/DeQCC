@@ -1,11 +1,11 @@
-float SPAWN_CRUCIFIED = 1.000;
+float SPAWN_CRUCIFIED = 1;
 .float inpain;
 // zombie_stand1
 // function begins at statement 16194, parm_start=9494
 // OP_STATE	337	9494	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand1 = [0.000, zombie_stand2]
+void () zombie_stand1 = [0, zombie_stand2]
 {
     ai_stand();
 };
@@ -15,7 +15,7 @@ void () zombie_stand1 = [0.000, zombie_stand2]
 // OP_STATE	9491	9495	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand2 = [1.000, zombie_stand3]
+void () zombie_stand2 = [1, zombie_stand3]
 {
     ai_stand();
 };
@@ -25,7 +25,7 @@ void () zombie_stand2 = [1.000, zombie_stand3]
 // OP_STATE	7369	9496	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand3 = [2.000, zombie_stand4]
+void () zombie_stand3 = [2, zombie_stand4]
 {
     ai_stand();
 };
@@ -35,7 +35,7 @@ void () zombie_stand3 = [2.000, zombie_stand4]
 // OP_STATE	370	9497	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand4 = [3.000, zombie_stand5]
+void () zombie_stand4 = [3, zombie_stand5]
 {
     ai_stand();
 };
@@ -45,7 +45,7 @@ void () zombie_stand4 = [3.000, zombie_stand5]
 // OP_STATE	6076	9498	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand5 = [4.000, zombie_stand6]
+void () zombie_stand5 = [4, zombie_stand6]
 {
     ai_stand();
 };
@@ -55,7 +55,7 @@ void () zombie_stand5 = [4.000, zombie_stand6]
 // OP_STATE	313	9499	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand6 = [5.000, zombie_stand7]
+void () zombie_stand6 = [5, zombie_stand7]
 {
     ai_stand();
 };
@@ -65,7 +65,7 @@ void () zombie_stand6 = [5.000, zombie_stand7]
 // OP_STATE	314	9500	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand7 = [6.000, zombie_stand8]
+void () zombie_stand7 = [6, zombie_stand8]
 {
     ai_stand();
 };
@@ -75,7 +75,7 @@ void () zombie_stand7 = [6.000, zombie_stand8]
 // OP_STATE	315	9501	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand8 = [7.000, zombie_stand9]
+void () zombie_stand8 = [7, zombie_stand9]
 {
     ai_stand();
 };
@@ -85,7 +85,7 @@ void () zombie_stand8 = [7.000, zombie_stand9]
 // OP_STATE	6077	9502	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand9 = [8.000, zombie_stand10]
+void () zombie_stand9 = [8, zombie_stand10]
 {
     ai_stand();
 };
@@ -95,7 +95,7 @@ void () zombie_stand9 = [8.000, zombie_stand10]
 // OP_STATE	317	9503	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand10 = [9.000, zombie_stand11]
+void () zombie_stand10 = [9, zombie_stand11]
 {
     ai_stand();
 };
@@ -105,7 +105,7 @@ void () zombie_stand10 = [9.000, zombie_stand11]
 // OP_STATE	318	9504	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand11 = [10.000, zombie_stand12]
+void () zombie_stand11 = [10, zombie_stand12]
 {
     ai_stand();
 };
@@ -115,7 +115,7 @@ void () zombie_stand11 = [10.000, zombie_stand12]
 // OP_STATE	319	9505	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand12 = [11.000, zombie_stand13]
+void () zombie_stand12 = [11, zombie_stand13]
 {
     ai_stand();
 };
@@ -125,7 +125,7 @@ void () zombie_stand12 = [11.000, zombie_stand13]
 // OP_STATE	2250	9506	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand13 = [12.000, zombie_stand14]
+void () zombie_stand13 = [12, zombie_stand14]
 {
     ai_stand();
 };
@@ -135,7 +135,7 @@ void () zombie_stand13 = [12.000, zombie_stand14]
 // OP_STATE	7768	9507	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand14 = [13.000, zombie_stand15]
+void () zombie_stand14 = [13, zombie_stand15]
 {
     ai_stand();
 };
@@ -145,7 +145,7 @@ void () zombie_stand14 = [13.000, zombie_stand15]
 // OP_STATE	2901	9493	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () zombie_stand15 = [14.000, zombie_stand1]
+void () zombie_stand15 = [14, zombie_stand1]
 {
     ai_stand();
 };
@@ -163,10 +163,10 @@ void () zombie_stand15 = [14.000, zombie_stand1]
 // OP_STORE_V	328	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_cruc1 = [192.000, zombie_cruc2]
+void () zombie_cruc1 = [192, zombie_cruc2]
 {
     
-    if(random() < 0.100)
+    if(random() < 0.1)
     {
         sound(self, CHAN_VOICE, "zombie/idle_w2.wav", SPAWN_CRUCIFIED, ATTN_STATIC);
     }
@@ -183,9 +183,9 @@ void () zombie_cruc1 = [192.000, zombie_cruc2]
 // OP_ADD_F	9516	9517	9518
 // OP_STOREP_F	9518	9515	0
 // OP_DONE	0	0	0
-void () zombie_cruc2 = [193.000, zombie_cruc3]
+void () zombie_cruc2 = [193, zombie_cruc3]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 
 // zombie_cruc3
@@ -198,9 +198,9 @@ void () zombie_cruc2 = [193.000, zombie_cruc3]
 // OP_ADD_F	9522	9523	9524
 // OP_STOREP_F	9524	9521	0
 // OP_DONE	0	0	0
-void () zombie_cruc3 = [194.000, zombie_cruc4]
+void () zombie_cruc3 = [194, zombie_cruc4]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 
 // zombie_cruc4
@@ -213,9 +213,9 @@ void () zombie_cruc3 = [194.000, zombie_cruc4]
 // OP_ADD_F	9528	9529	9530
 // OP_STOREP_F	9530	9527	0
 // OP_DONE	0	0	0
-void () zombie_cruc4 = [195.000, zombie_cruc5]
+void () zombie_cruc4 = [195, zombie_cruc5]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 
 // zombie_cruc5
@@ -228,9 +228,9 @@ void () zombie_cruc4 = [195.000, zombie_cruc5]
 // OP_ADD_F	9534	9535	9536
 // OP_STOREP_F	9536	9533	0
 // OP_DONE	0	0	0
-void () zombie_cruc5 = [196.000, zombie_cruc6]
+void () zombie_cruc5 = [196, zombie_cruc6]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 
 // zombie_cruc6
@@ -243,9 +243,9 @@ void () zombie_cruc5 = [196.000, zombie_cruc6]
 // OP_ADD_F	9539	9540	9541
 // OP_STOREP_F	9541	9538	0
 // OP_DONE	0	0	0
-void () zombie_cruc6 = [197.000, zombie_cruc1]
+void () zombie_cruc6 = [197, zombie_cruc1]
 {
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 
 // zombie_walk1
@@ -254,7 +254,7 @@ void () zombie_cruc6 = [197.000, zombie_cruc1]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk1 = [15.000, zombie_walk2]
+void () zombie_walk1 = [15, zombie_walk2]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -265,7 +265,7 @@ void () zombie_walk1 = [15.000, zombie_walk2]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk2 = [16.000, zombie_walk3]
+void () zombie_walk2 = [16, zombie_walk3]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -276,7 +276,7 @@ void () zombie_walk2 = [16.000, zombie_walk3]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk3 = [17.000, zombie_walk4]
+void () zombie_walk3 = [17, zombie_walk4]
 {
     ai_walk(AS_MELEE);
 };
@@ -287,7 +287,7 @@ void () zombie_walk3 = [17.000, zombie_walk4]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk4 = [18.000, zombie_walk5]
+void () zombie_walk4 = [18, zombie_walk5]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -298,7 +298,7 @@ void () zombie_walk4 = [18.000, zombie_walk5]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk5 = [19.000, zombie_walk6]
+void () zombie_walk5 = [19, zombie_walk6]
 {
     ai_walk(SPAWN_CRUCIFIED);
 };
@@ -309,7 +309,7 @@ void () zombie_walk5 = [19.000, zombie_walk6]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk6 = [20.000, zombie_walk7]
+void () zombie_walk6 = [20, zombie_walk7]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -320,7 +320,7 @@ void () zombie_walk6 = [20.000, zombie_walk7]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk7 = [21.000, zombie_walk8]
+void () zombie_walk7 = [21, zombie_walk8]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -331,7 +331,7 @@ void () zombie_walk7 = [21.000, zombie_walk8]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk8 = [22.000, zombie_walk9]
+void () zombie_walk8 = [22, zombie_walk9]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -342,7 +342,7 @@ void () zombie_walk8 = [22.000, zombie_walk9]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk9 = [23.000, zombie_walk10]
+void () zombie_walk9 = [23, zombie_walk10]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -353,7 +353,7 @@ void () zombie_walk9 = [23.000, zombie_walk10]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk10 = [24.000, zombie_walk11]
+void () zombie_walk10 = [24, zombie_walk11]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -364,7 +364,7 @@ void () zombie_walk10 = [24.000, zombie_walk11]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk11 = [25.000, zombie_walk12]
+void () zombie_walk11 = [25, zombie_walk12]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -375,7 +375,7 @@ void () zombie_walk11 = [25.000, zombie_walk12]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk12 = [26.000, zombie_walk13]
+void () zombie_walk12 = [26, zombie_walk13]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -386,7 +386,7 @@ void () zombie_walk12 = [26.000, zombie_walk13]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk13 = [27.000, zombie_walk14]
+void () zombie_walk13 = [27, zombie_walk14]
 {
     ai_walk(SPAWN_CRUCIFIED);
 };
@@ -397,7 +397,7 @@ void () zombie_walk13 = [27.000, zombie_walk14]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk14 = [28.000, zombie_walk15]
+void () zombie_walk14 = [28, zombie_walk15]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -408,7 +408,7 @@ void () zombie_walk14 = [28.000, zombie_walk15]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk15 = [29.000, zombie_walk16]
+void () zombie_walk15 = [29, zombie_walk16]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -419,7 +419,7 @@ void () zombie_walk15 = [29.000, zombie_walk16]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk16 = [30.000, zombie_walk17]
+void () zombie_walk16 = [30, zombie_walk17]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -430,7 +430,7 @@ void () zombie_walk16 = [30.000, zombie_walk17]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk17 = [31.000, zombie_walk18]
+void () zombie_walk17 = [31, zombie_walk18]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -441,7 +441,7 @@ void () zombie_walk17 = [31.000, zombie_walk18]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () zombie_walk18 = [32.000, zombie_walk19]
+void () zombie_walk18 = [32, zombie_walk19]
 {
     ai_walk(MSG_BROADCAST);
 };
@@ -461,11 +461,11 @@ void () zombie_walk18 = [32.000, zombie_walk19]
 // OP_STORE_V	327	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_walk19 = [33.000, zombie_walk1]
+void () zombie_walk19 = [33, zombie_walk1]
 {
     ai_walk(MSG_BROADCAST);
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "zombie/z_idle.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     }
@@ -480,7 +480,7 @@ void () zombie_walk19 = [33.000, zombie_walk1]
 // OP_ADDRESS	28	9492	9564
 // OP_STOREP_F	337	9564	0
 // OP_DONE	0	0	0
-void () zombie_run1 = [34.000, zombie_run2]
+void () zombie_run1 = [34, zombie_run2]
 {
     ai_run(SPAWN_CRUCIFIED);
     self.inpain = MSG_BROADCAST;
@@ -492,7 +492,7 @@ void () zombie_run1 = [34.000, zombie_run2]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run2 = [35.000, zombie_run3]
+void () zombie_run2 = [35, zombie_run3]
 {
     ai_run(SPAWN_CRUCIFIED);
 };
@@ -503,7 +503,7 @@ void () zombie_run2 = [35.000, zombie_run3]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run3 = [36.000, zombie_run4]
+void () zombie_run3 = [36, zombie_run4]
 {
     ai_run(MSG_BROADCAST);
 };
@@ -514,7 +514,7 @@ void () zombie_run3 = [36.000, zombie_run4]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run4 = [37.000, zombie_run5]
+void () zombie_run4 = [37, zombie_run5]
 {
     ai_run(SPAWN_CRUCIFIED);
 };
@@ -525,7 +525,7 @@ void () zombie_run4 = [37.000, zombie_run5]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run5 = [38.000, zombie_run6]
+void () zombie_run5 = [38, zombie_run6]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -536,7 +536,7 @@ void () zombie_run5 = [38.000, zombie_run6]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run6 = [39.000, zombie_run7]
+void () zombie_run6 = [39, zombie_run7]
 {
     ai_run(AS_MELEE);
 };
@@ -547,7 +547,7 @@ void () zombie_run6 = [39.000, zombie_run7]
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run7 = [40.000, zombie_run8]
+void () zombie_run7 = [40, zombie_run8]
 {
     ai_run(SECRET_1ST_DOWN);
 };
@@ -558,7 +558,7 @@ void () zombie_run7 = [40.000, zombie_run8]
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run8 = [41.000, zombie_run9]
+void () zombie_run8 = [41, zombie_run9]
 {
     ai_run(SECRET_1ST_DOWN);
 };
@@ -569,7 +569,7 @@ void () zombie_run8 = [41.000, zombie_run9]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run9 = [42.000, zombie_run10]
+void () zombie_run9 = [42, zombie_run10]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -580,7 +580,7 @@ void () zombie_run9 = [42.000, zombie_run10]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run10 = [43.000, zombie_run11]
+void () zombie_run10 = [43, zombie_run11]
 {
     ai_run(MSG_BROADCAST);
 };
@@ -591,7 +591,7 @@ void () zombie_run10 = [43.000, zombie_run11]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run11 = [44.000, zombie_run12]
+void () zombie_run11 = [44, zombie_run12]
 {
     ai_run(MSG_BROADCAST);
 };
@@ -602,7 +602,7 @@ void () zombie_run11 = [44.000, zombie_run12]
 // OP_STORE_V	337	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run12 = [45.000, zombie_run13]
+void () zombie_run12 = [45, zombie_run13]
 {
     ai_run(MSG_BROADCAST);
 };
@@ -613,7 +613,7 @@ void () zombie_run12 = [45.000, zombie_run13]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run13 = [46.000, zombie_run14]
+void () zombie_run13 = [46, zombie_run14]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -624,7 +624,7 @@ void () zombie_run13 = [46.000, zombie_run14]
 // OP_STORE_V	6076	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run14 = [47.000, zombie_run15]
+void () zombie_run14 = [47, zombie_run15]
 {
     ai_run(SECRET_1ST_DOWN);
 };
@@ -635,7 +635,7 @@ void () zombie_run14 = [47.000, zombie_run15]
 // OP_STORE_V	314	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run15 = [48.000, zombie_run16]
+void () zombie_run15 = [48, zombie_run16]
 {
     ai_run(TE_LIGHTNING2);
 };
@@ -646,7 +646,7 @@ void () zombie_run15 = [48.000, zombie_run16]
 // OP_STORE_V	315	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run16 = [49.000, zombie_run17]
+void () zombie_run16 = [49, zombie_run17]
 {
     ai_run(TE_WIZSPIKE);
 };
@@ -657,7 +657,7 @@ void () zombie_run16 = [49.000, zombie_run17]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () zombie_run17 = [50.000, zombie_run18]
+void () zombie_run17 = [50, zombie_run18]
 {
     ai_run(AS_MELEE);
 };
@@ -686,17 +686,17 @@ void () zombie_run17 = [50.000, zombie_run18]
 // OP_STORE_V	327	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_run18 = [51.000, zombie_run1]
+void () zombie_run18 = [51, zombie_run1]
 {
     ai_run(SECRET_NO_SHOOT);
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "zombie/z_idle.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     }
     
     
-    if(random() > 0.800)
+    if(random() > 0.8)
     {
         sound(self, CHAN_VOICE, "zombie/z_idle1.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     }
@@ -833,14 +833,14 @@ void (vector st) ZombieFireGrenade =
     missile.owner = self;
     missile.movetype = MOVETYPE_BOUNCE;
     missile.solid = SOLID_BBOX;
-    org = ((self.origin + (st_x * v_forward)) + (0.000 * v_right)) + ((0.000 - 24.000) * v_up);
+    org = ((self.origin + (st_x * v_forward)) + (0 * v_right)) + ((0 - 24) * v_up);
     makevectors(self.angles);
     missile.velocity = normalize(self.enemy.origin - org);
-    missile.velocity = missile.velocity * 600.000;
-    missile.velocity_z = 200.000;
+    missile.velocity = missile.velocity * 600;
+    missile.velocity_z = 200;
     missile.avelocity = '3000.000 1000.000 2000.000';
     missile.touch = ZombieGrenadeTouch;
-    missile.nextthink = time + 2.500;
+    missile.nextthink = time + 2.5;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/zom_gib.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
@@ -852,7 +852,7 @@ void (vector st) ZombieFireGrenade =
 // OP_STATE	5353	9664	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta1 = [52.000, zombie_atta2]
+void () zombie_atta1 = [52, zombie_atta2]
 {
     ai_face();
 };
@@ -862,7 +862,7 @@ void () zombie_atta1 = [52.000, zombie_atta2]
 // OP_STATE	5355	9665	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta2 = [53.000, zombie_atta3]
+void () zombie_atta2 = [53, zombie_atta3]
 {
     ai_face();
 };
@@ -872,7 +872,7 @@ void () zombie_atta2 = [53.000, zombie_atta3]
 // OP_STATE	5357	9666	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta3 = [54.000, zombie_atta4]
+void () zombie_atta3 = [54, zombie_atta4]
 {
     ai_face();
 };
@@ -882,7 +882,7 @@ void () zombie_atta3 = [54.000, zombie_atta4]
 // OP_STATE	5359	9667	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta4 = [55.000, zombie_atta5]
+void () zombie_atta4 = [55, zombie_atta5]
 {
     ai_face();
 };
@@ -892,7 +892,7 @@ void () zombie_atta4 = [55.000, zombie_atta5]
 // OP_STATE	5361	9668	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta5 = [56.000, zombie_atta6]
+void () zombie_atta5 = [56, zombie_atta6]
 {
     ai_face();
 };
@@ -902,7 +902,7 @@ void () zombie_atta5 = [56.000, zombie_atta6]
 // OP_STATE	5363	9669	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta6 = [57.000, zombie_atta7]
+void () zombie_atta6 = [57, zombie_atta7]
 {
     ai_face();
 };
@@ -912,7 +912,7 @@ void () zombie_atta6 = [57.000, zombie_atta7]
 // OP_STATE	5365	9670	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta7 = [58.000, zombie_atta8]
+void () zombie_atta7 = [58, zombie_atta8]
 {
     ai_face();
 };
@@ -922,7 +922,7 @@ void () zombie_atta7 = [58.000, zombie_atta8]
 // OP_STATE	5367	9671	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta8 = [59.000, zombie_atta9]
+void () zombie_atta8 = [59, zombie_atta9]
 {
     ai_face();
 };
@@ -932,7 +932,7 @@ void () zombie_atta8 = [59.000, zombie_atta9]
 // OP_STATE	912	9672	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta9 = [60.000, zombie_atta10]
+void () zombie_atta9 = [60, zombie_atta10]
 {
     ai_face();
 };
@@ -942,7 +942,7 @@ void () zombie_atta9 = [60.000, zombie_atta10]
 // OP_STATE	5369	9673	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta10 = [61.000, zombie_atta11]
+void () zombie_atta10 = [61, zombie_atta11]
 {
     ai_face();
 };
@@ -952,7 +952,7 @@ void () zombie_atta10 = [61.000, zombie_atta11]
 // OP_STATE	5371	9674	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta11 = [62.000, zombie_atta12]
+void () zombie_atta11 = [62, zombie_atta12]
 {
     ai_face();
 };
@@ -962,7 +962,7 @@ void () zombie_atta11 = [62.000, zombie_atta12]
 // OP_STATE	3872	9675	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_atta12 = [63.000, zombie_atta13]
+void () zombie_atta12 = [63, zombie_atta13]
 {
     ai_face();
 };
@@ -974,7 +974,7 @@ void () zombie_atta12 = [63.000, zombie_atta13]
 // OP_STORE_V	9676	4	0
 // OP_CALL1	9598	0	0
 // OP_DONE	0	0	0
-void () zombie_atta13 = [64.000, zombie_run1]
+void () zombie_atta13 = [64, zombie_run1]
 {
     ai_face();
     ZombieFireGrenade('-10.000 -22.000 30.000');
@@ -985,7 +985,7 @@ void () zombie_atta13 = [64.000, zombie_run1]
 // OP_STATE	5375	9680	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb1 = [65.000, zombie_attb2]
+void () zombie_attb1 = [65, zombie_attb2]
 {
     ai_face();
 };
@@ -995,7 +995,7 @@ void () zombie_attb1 = [65.000, zombie_attb2]
 // OP_STATE	5377	9681	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb2 = [66.000, zombie_attb3]
+void () zombie_attb2 = [66, zombie_attb3]
 {
     ai_face();
 };
@@ -1005,7 +1005,7 @@ void () zombie_attb2 = [66.000, zombie_attb3]
 // OP_STATE	5379	9682	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb3 = [67.000, zombie_attb4]
+void () zombie_attb3 = [67, zombie_attb4]
 {
     ai_face();
 };
@@ -1015,7 +1015,7 @@ void () zombie_attb3 = [67.000, zombie_attb4]
 // OP_STATE	5381	9683	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb4 = [68.000, zombie_attb5]
+void () zombie_attb4 = [68, zombie_attb5]
 {
     ai_face();
 };
@@ -1025,7 +1025,7 @@ void () zombie_attb4 = [68.000, zombie_attb5]
 // OP_STATE	5383	9684	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb5 = [69.000, zombie_attb6]
+void () zombie_attb5 = [69, zombie_attb6]
 {
     ai_face();
 };
@@ -1035,7 +1035,7 @@ void () zombie_attb5 = [69.000, zombie_attb6]
 // OP_STATE	5384	9685	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb6 = [70.000, zombie_attb7]
+void () zombie_attb6 = [70, zombie_attb7]
 {
     ai_face();
 };
@@ -1045,7 +1045,7 @@ void () zombie_attb6 = [70.000, zombie_attb7]
 // OP_STATE	5386	9686	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb7 = [71.000, zombie_attb8]
+void () zombie_attb7 = [71, zombie_attb8]
 {
     ai_face();
 };
@@ -1055,7 +1055,7 @@ void () zombie_attb7 = [71.000, zombie_attb8]
 // OP_STATE	5388	9687	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb8 = [72.000, zombie_attb9]
+void () zombie_attb8 = [72, zombie_attb9]
 {
     ai_face();
 };
@@ -1065,7 +1065,7 @@ void () zombie_attb8 = [72.000, zombie_attb9]
 // OP_STATE	2739	9688	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb9 = [73.000, zombie_attb10]
+void () zombie_attb9 = [73, zombie_attb10]
 {
     ai_face();
 };
@@ -1075,7 +1075,7 @@ void () zombie_attb9 = [73.000, zombie_attb10]
 // OP_STATE	5391	9689	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb10 = [74.000, zombie_attb11]
+void () zombie_attb10 = [74, zombie_attb11]
 {
     ai_face();
 };
@@ -1085,7 +1085,7 @@ void () zombie_attb10 = [74.000, zombie_attb11]
 // OP_STATE	5393	9690	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb11 = [75.000, zombie_attb12]
+void () zombie_attb11 = [75, zombie_attb12]
 {
     ai_face();
 };
@@ -1095,7 +1095,7 @@ void () zombie_attb11 = [75.000, zombie_attb12]
 // OP_STATE	5395	9691	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb12 = [76.000, zombie_attb13]
+void () zombie_attb12 = [76, zombie_attb13]
 {
     ai_face();
 };
@@ -1105,7 +1105,7 @@ void () zombie_attb12 = [76.000, zombie_attb13]
 // OP_STATE	5397	9692	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attb13 = [77.000, zombie_attb14]
+void () zombie_attb13 = [77, zombie_attb14]
 {
     ai_face();
 };
@@ -1117,7 +1117,7 @@ void () zombie_attb13 = [77.000, zombie_attb14]
 // OP_STORE_V	9693	4	0
 // OP_CALL1	9598	0	0
 // OP_DONE	0	0	0
-void () zombie_attb14 = [77.000, zombie_run1]
+void () zombie_attb14 = [77, zombie_run1]
 {
     ai_face();
     ZombieFireGrenade('-10.000 -24.000 29.000');
@@ -1128,7 +1128,7 @@ void () zombie_attb14 = [77.000, zombie_run1]
 // OP_STATE	5401	9697	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc1 = [79.000, zombie_attc2]
+void () zombie_attc1 = [79, zombie_attc2]
 {
     ai_face();
 };
@@ -1138,7 +1138,7 @@ void () zombie_attc1 = [79.000, zombie_attc2]
 // OP_STATE	788	9698	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc2 = [80.000, zombie_attc3]
+void () zombie_attc2 = [80, zombie_attc3]
 {
     ai_face();
 };
@@ -1148,7 +1148,7 @@ void () zombie_attc2 = [80.000, zombie_attc3]
 // OP_STATE	5404	9699	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc3 = [81.000, zombie_attc4]
+void () zombie_attc3 = [81, zombie_attc4]
 {
     ai_face();
 };
@@ -1158,7 +1158,7 @@ void () zombie_attc3 = [81.000, zombie_attc4]
 // OP_STATE	5406	9700	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc4 = [82.000, zombie_attc5]
+void () zombie_attc4 = [82, zombie_attc5]
 {
     ai_face();
 };
@@ -1168,7 +1168,7 @@ void () zombie_attc4 = [82.000, zombie_attc5]
 // OP_STATE	5408	9701	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc5 = [83.000, zombie_attc6]
+void () zombie_attc5 = [83, zombie_attc6]
 {
     ai_face();
 };
@@ -1178,7 +1178,7 @@ void () zombie_attc5 = [83.000, zombie_attc6]
 // OP_STATE	5410	9702	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc6 = [84.000, zombie_attc7]
+void () zombie_attc6 = [84, zombie_attc7]
 {
     ai_face();
 };
@@ -1188,7 +1188,7 @@ void () zombie_attc6 = [84.000, zombie_attc7]
 // OP_STATE	5411	9703	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc7 = [85.000, zombie_attc8]
+void () zombie_attc7 = [85, zombie_attc8]
 {
     ai_face();
 };
@@ -1198,7 +1198,7 @@ void () zombie_attc7 = [85.000, zombie_attc8]
 // OP_STATE	5413	9704	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc8 = [86.000, zombie_attc9]
+void () zombie_attc8 = [86, zombie_attc9]
 {
     ai_face();
 };
@@ -1208,7 +1208,7 @@ void () zombie_attc8 = [86.000, zombie_attc9]
 // OP_STATE	5415	9705	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc9 = [87.000, zombie_attc10]
+void () zombie_attc9 = [87, zombie_attc10]
 {
     ai_face();
 };
@@ -1218,7 +1218,7 @@ void () zombie_attc9 = [87.000, zombie_attc10]
 // OP_STATE	5417	9706	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc10 = [88.000, zombie_attc11]
+void () zombie_attc10 = [88, zombie_attc11]
 {
     ai_face();
 };
@@ -1228,7 +1228,7 @@ void () zombie_attc10 = [88.000, zombie_attc11]
 // OP_STATE	5419	9707	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () zombie_attc11 = [89.000, zombie_attc12]
+void () zombie_attc11 = [89, zombie_attc12]
 {
     ai_face();
 };
@@ -1240,7 +1240,7 @@ void () zombie_attc11 = [89.000, zombie_attc12]
 // OP_STORE_V	9708	4	0
 // OP_CALL1	9598	0	0
 // OP_DONE	0	0	0
-void () zombie_attc12 = [90.000, zombie_run1]
+void () zombie_attc12 = [90, zombie_run1]
 {
     ai_face();
     ZombieFireGrenade('-12.000 -19.000 29.000');
@@ -1264,13 +1264,13 @@ void () zombie_missile =
 {
     local float r;
     r = random();
-    if(r < 0.300)
+    if(r < 0.3)
     {
         zombie_atta1();
     }
     else
     {
-        if(r < 0.600)
+        if(r < 0.6)
         {
             zombie_attb1();
         }
@@ -1293,7 +1293,7 @@ void () zombie_missile =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_paina1 = [91.000, zombie_paina2]
+void () zombie_paina1 = [91, zombie_paina2]
 {
     sound(self, CHAN_VOICE, "zombie/z_pain.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
@@ -1304,7 +1304,7 @@ void () zombie_paina1 = [91.000, zombie_paina2]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_paina2 = [92.000, zombie_paina3]
+void () zombie_paina2 = [92, zombie_paina3]
 {
     ai_painforward(AS_MELEE);
 };
@@ -1315,7 +1315,7 @@ void () zombie_paina2 = [92.000, zombie_paina3]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_paina3 = [93.000, zombie_paina4]
+void () zombie_paina3 = [93, zombie_paina4]
 {
     ai_painforward(SPAWN_CRUCIFIED);
 };
@@ -1326,7 +1326,7 @@ void () zombie_paina3 = [93.000, zombie_paina4]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paina4 = [94.000, zombie_paina5]
+void () zombie_paina4 = [94, zombie_paina5]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -1337,7 +1337,7 @@ void () zombie_paina4 = [94.000, zombie_paina5]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paina5 = [95.000, zombie_paina6]
+void () zombie_paina5 = [95, zombie_paina6]
 {
     ai_pain(AS_MELEE);
 };
@@ -1348,7 +1348,7 @@ void () zombie_paina5 = [95.000, zombie_paina6]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paina6 = [96.000, zombie_paina7]
+void () zombie_paina6 = [96, zombie_paina7]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -1357,7 +1357,7 @@ void () zombie_paina6 = [96.000, zombie_paina7]
 // function begins at statement 16723, parm_start=9723
 // OP_STATE	5433	9723	0
 // OP_DONE	0	0	0
-void () zombie_paina7 = [97.000, zombie_paina8]
+void () zombie_paina7 = [97, zombie_paina8]
 {
 };
 
@@ -1365,7 +1365,7 @@ void () zombie_paina7 = [97.000, zombie_paina8]
 // function begins at statement 16725, parm_start=9724
 // OP_STATE	5435	9724	0
 // OP_DONE	0	0	0
-void () zombie_paina8 = [98.000, zombie_paina9]
+void () zombie_paina8 = [98, zombie_paina9]
 {
 };
 
@@ -1373,7 +1373,7 @@ void () zombie_paina8 = [98.000, zombie_paina9]
 // function begins at statement 16727, parm_start=9725
 // OP_STATE	5437	9725	0
 // OP_DONE	0	0	0
-void () zombie_paina9 = [99.000, zombie_paina10]
+void () zombie_paina9 = [99, zombie_paina10]
 {
 };
 
@@ -1381,7 +1381,7 @@ void () zombie_paina9 = [99.000, zombie_paina10]
 // function begins at statement 16729, parm_start=9726
 // OP_STATE	1884	9726	0
 // OP_DONE	0	0	0
-void () zombie_paina10 = [100.000, zombie_paina11]
+void () zombie_paina10 = [100, zombie_paina11]
 {
 };
 
@@ -1389,7 +1389,7 @@ void () zombie_paina10 = [100.000, zombie_paina11]
 // function begins at statement 16731, parm_start=9727
 // OP_STATE	5440	9727	0
 // OP_DONE	0	0	0
-void () zombie_paina11 = [101.000, zombie_paina12]
+void () zombie_paina11 = [101, zombie_paina12]
 {
 };
 
@@ -1397,7 +1397,7 @@ void () zombie_paina11 = [101.000, zombie_paina12]
 // function begins at statement 16733, parm_start=9728
 // OP_STATE	5442	9562	0
 // OP_DONE	0	0	0
-void () zombie_paina12 = [102.000, zombie_run1]
+void () zombie_paina12 = [102, zombie_run1]
 {
 };
 
@@ -1411,7 +1411,7 @@ void () zombie_paina12 = [102.000, zombie_run1]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_painb1 = [103.000, zombie_painb2]
+void () zombie_painb1 = [103, zombie_painb2]
 {
     sound(self, CHAN_VOICE, "zombie/z_pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
@@ -1422,7 +1422,7 @@ void () zombie_painb1 = [103.000, zombie_painb2]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painb2 = [104.000, zombie_painb3]
+void () zombie_painb2 = [104, zombie_painb3]
 {
     ai_pain(SPAWNFLAG_LASER);
 };
@@ -1433,7 +1433,7 @@ void () zombie_painb2 = [104.000, zombie_painb3]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painb3 = [105.000, zombie_painb4]
+void () zombie_painb3 = [105, zombie_painb4]
 {
     ai_pain(SECRET_NO_SHOOT);
 };
@@ -1444,7 +1444,7 @@ void () zombie_painb3 = [105.000, zombie_painb4]
 // OP_STORE_V	314	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painb4 = [106.000, zombie_painb5]
+void () zombie_painb4 = [106, zombie_painb5]
 {
     ai_pain(TE_LIGHTNING2);
 };
@@ -1455,7 +1455,7 @@ void () zombie_painb4 = [106.000, zombie_painb5]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painb5 = [107.000, zombie_painb6]
+void () zombie_painb5 = [107, zombie_painb6]
 {
     ai_pain(SPAWNFLAG_LASER);
 };
@@ -1464,7 +1464,7 @@ void () zombie_painb5 = [107.000, zombie_painb6]
 // function begins at statement 16759, parm_start=9735
 // OP_STATE	5035	9735	0
 // OP_DONE	0	0	0
-void () zombie_painb6 = [108.000, zombie_painb7]
+void () zombie_painb6 = [108, zombie_painb7]
 {
 };
 
@@ -1472,7 +1472,7 @@ void () zombie_painb6 = [108.000, zombie_painb7]
 // function begins at statement 16761, parm_start=9736
 // OP_STATE	5038	9736	0
 // OP_DONE	0	0	0
-void () zombie_painb7 = [109.000, zombie_painb8]
+void () zombie_painb7 = [109, zombie_painb8]
 {
 };
 
@@ -1480,7 +1480,7 @@ void () zombie_painb7 = [109.000, zombie_painb8]
 // function begins at statement 16763, parm_start=9737
 // OP_STATE	5041	9737	0
 // OP_DONE	0	0	0
-void () zombie_painb8 = [110.000, zombie_painb9]
+void () zombie_painb8 = [110, zombie_painb9]
 {
 };
 
@@ -1494,7 +1494,7 @@ void () zombie_painb8 = [110.000, zombie_painb9]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_painb9 = [111.000, zombie_painb10]
+void () zombie_painb9 = [111, zombie_painb10]
 {
     sound(self, CHAN_BODY, "zombie/z_fall.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
@@ -1503,7 +1503,7 @@ void () zombie_painb9 = [111.000, zombie_painb10]
 // function begins at statement 16773, parm_start=9740
 // OP_STATE	5047	9740	0
 // OP_DONE	0	0	0
-void () zombie_painb10 = [112.000, zombie_painb11]
+void () zombie_painb10 = [112, zombie_painb11]
 {
 };
 
@@ -1511,7 +1511,7 @@ void () zombie_painb10 = [112.000, zombie_painb11]
 // function begins at statement 16775, parm_start=9741
 // OP_STATE	4909	9741	0
 // OP_DONE	0	0	0
-void () zombie_painb11 = [113.000, zombie_painb12]
+void () zombie_painb11 = [113, zombie_painb12]
 {
 };
 
@@ -1519,7 +1519,7 @@ void () zombie_painb11 = [113.000, zombie_painb12]
 // function begins at statement 16777, parm_start=9742
 // OP_STATE	4915	9742	0
 // OP_DONE	0	0	0
-void () zombie_painb12 = [114.000, zombie_painb13]
+void () zombie_painb12 = [114, zombie_painb13]
 {
 };
 
@@ -1527,7 +1527,7 @@ void () zombie_painb12 = [114.000, zombie_painb13]
 // function begins at statement 16779, parm_start=9743
 // OP_STATE	4918	9743	0
 // OP_DONE	0	0	0
-void () zombie_painb13 = [115.000, zombie_painb14]
+void () zombie_painb13 = [115, zombie_painb14]
 {
 };
 
@@ -1535,7 +1535,7 @@ void () zombie_painb13 = [115.000, zombie_painb14]
 // function begins at statement 16781, parm_start=9744
 // OP_STATE	4921	9744	0
 // OP_DONE	0	0	0
-void () zombie_painb14 = [116.000, zombie_painb15]
+void () zombie_painb14 = [116, zombie_painb15]
 {
 };
 
@@ -1543,7 +1543,7 @@ void () zombie_painb14 = [116.000, zombie_painb15]
 // function begins at statement 16783, parm_start=9745
 // OP_STATE	4924	9745	0
 // OP_DONE	0	0	0
-void () zombie_painb15 = [117.000, zombie_painb16]
+void () zombie_painb15 = [117, zombie_painb16]
 {
 };
 
@@ -1551,7 +1551,7 @@ void () zombie_painb15 = [117.000, zombie_painb16]
 // function begins at statement 16785, parm_start=9746
 // OP_STATE	4927	9746	0
 // OP_DONE	0	0	0
-void () zombie_painb16 = [118.000, zombie_painb17]
+void () zombie_painb16 = [118, zombie_painb17]
 {
 };
 
@@ -1559,7 +1559,7 @@ void () zombie_painb16 = [118.000, zombie_painb17]
 // function begins at statement 16787, parm_start=9747
 // OP_STATE	4929	9747	0
 // OP_DONE	0	0	0
-void () zombie_painb17 = [119.000, zombie_painb18]
+void () zombie_painb17 = [119, zombie_painb18]
 {
 };
 
@@ -1567,7 +1567,7 @@ void () zombie_painb17 = [119.000, zombie_painb18]
 // function begins at statement 16789, parm_start=9748
 // OP_STATE	1164	9748	0
 // OP_DONE	0	0	0
-void () zombie_painb18 = [120.000, zombie_painb19]
+void () zombie_painb18 = [120, zombie_painb19]
 {
 };
 
@@ -1575,7 +1575,7 @@ void () zombie_painb18 = [120.000, zombie_painb19]
 // function begins at statement 16791, parm_start=9749
 // OP_STATE	4934	9749	0
 // OP_DONE	0	0	0
-void () zombie_painb19 = [121.000, zombie_painb20]
+void () zombie_painb19 = [121, zombie_painb20]
 {
 };
 
@@ -1583,7 +1583,7 @@ void () zombie_painb19 = [121.000, zombie_painb20]
 // function begins at statement 16793, parm_start=9750
 // OP_STATE	4937	9750	0
 // OP_DONE	0	0	0
-void () zombie_painb20 = [122.000, zombie_painb21]
+void () zombie_painb20 = [122, zombie_painb21]
 {
 };
 
@@ -1591,7 +1591,7 @@ void () zombie_painb20 = [122.000, zombie_painb21]
 // function begins at statement 16795, parm_start=9751
 // OP_STATE	7942	9751	0
 // OP_DONE	0	0	0
-void () zombie_painb21 = [123.000, zombie_painb22]
+void () zombie_painb21 = [123, zombie_painb22]
 {
 };
 
@@ -1599,7 +1599,7 @@ void () zombie_painb21 = [123.000, zombie_painb22]
 // function begins at statement 16797, parm_start=9752
 // OP_STATE	7944	9752	0
 // OP_DONE	0	0	0
-void () zombie_painb22 = [124.000, zombie_painb23]
+void () zombie_painb22 = [124, zombie_painb23]
 {
 };
 
@@ -1607,7 +1607,7 @@ void () zombie_painb22 = [124.000, zombie_painb23]
 // function begins at statement 16799, parm_start=9753
 // OP_STATE	4939	9753	0
 // OP_DONE	0	0	0
-void () zombie_painb23 = [125.000, zombie_painb24]
+void () zombie_painb23 = [125, zombie_painb24]
 {
 };
 
@@ -1615,7 +1615,7 @@ void () zombie_painb23 = [125.000, zombie_painb24]
 // function begins at statement 16801, parm_start=9754
 // OP_STATE	4942	9754	0
 // OP_DONE	0	0	0
-void () zombie_painb24 = [126.000, zombie_painb25]
+void () zombie_painb24 = [126, zombie_painb25]
 {
 };
 
@@ -1625,7 +1625,7 @@ void () zombie_painb24 = [126.000, zombie_painb25]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_painb25 = [127.000, zombie_painb26]
+void () zombie_painb25 = [127, zombie_painb26]
 {
     ai_painforward(SPAWN_CRUCIFIED);
 };
@@ -1634,7 +1634,7 @@ void () zombie_painb25 = [127.000, zombie_painb26]
 // function begins at statement 16807, parm_start=9756
 // OP_STATE	261	9756	0
 // OP_DONE	0	0	0
-void () zombie_painb26 = [128.000, zombie_painb27]
+void () zombie_painb26 = [128, zombie_painb27]
 {
 };
 
@@ -1642,7 +1642,7 @@ void () zombie_painb26 = [128.000, zombie_painb27]
 // function begins at statement 16809, parm_start=9757
 // OP_STATE	7952	9757	0
 // OP_DONE	0	0	0
-void () zombie_painb27 = [129.000, zombie_painb28]
+void () zombie_painb27 = [129, zombie_painb28]
 {
 };
 
@@ -1650,7 +1650,7 @@ void () zombie_painb27 = [129.000, zombie_painb28]
 // function begins at statement 16811, parm_start=9758
 // OP_STATE	7954	9562	0
 // OP_DONE	0	0	0
-void () zombie_painb28 = [130.000, zombie_run1]
+void () zombie_painb28 = [130, zombie_run1]
 {
 };
 
@@ -1664,7 +1664,7 @@ void () zombie_painb28 = [130.000, zombie_run1]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_painc1 = [131.000, zombie_painc2]
+void () zombie_painc1 = [131, zombie_painc2]
 {
     sound(self, CHAN_VOICE, "zombie/z_pain1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
@@ -1673,7 +1673,7 @@ void () zombie_painc1 = [131.000, zombie_painc2]
 // function begins at statement 16821, parm_start=9760
 // OP_STATE	4952	9760	0
 // OP_DONE	0	0	0
-void () zombie_painc2 = [132.000, zombie_painc3]
+void () zombie_painc2 = [132, zombie_painc3]
 {
 };
 
@@ -1683,7 +1683,7 @@ void () zombie_painc2 = [132.000, zombie_painc3]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painc3 = [133.000, zombie_painc4]
+void () zombie_painc3 = [133, zombie_painc4]
 {
     ai_pain(AS_MELEE);
 };
@@ -1694,7 +1694,7 @@ void () zombie_painc3 = [133.000, zombie_painc4]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_painc4 = [134.000, zombie_painc5]
+void () zombie_painc4 = [134, zombie_painc5]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -1703,7 +1703,7 @@ void () zombie_painc4 = [134.000, zombie_painc5]
 // function begins at statement 16831, parm_start=9763
 // OP_STATE	7960	9763	0
 // OP_DONE	0	0	0
-void () zombie_painc5 = [135.000, zombie_painc6]
+void () zombie_painc5 = [135, zombie_painc6]
 {
 };
 
@@ -1711,7 +1711,7 @@ void () zombie_painc5 = [135.000, zombie_painc6]
 // function begins at statement 16833, parm_start=9764
 // OP_STATE	9764	9765	0
 // OP_DONE	0	0	0
-void () zombie_painc6 = [136.000, zombie_painc7]
+void () zombie_painc6 = [136, zombie_painc7]
 {
 };
 
@@ -1719,7 +1719,7 @@ void () zombie_painc6 = [136.000, zombie_painc7]
 // function begins at statement 16835, parm_start=9766
 // OP_STATE	4960	9766	0
 // OP_DONE	0	0	0
-void () zombie_painc7 = [137.000, zombie_painc8]
+void () zombie_painc7 = [137, zombie_painc8]
 {
 };
 
@@ -1727,7 +1727,7 @@ void () zombie_painc7 = [137.000, zombie_painc8]
 // function begins at statement 16837, parm_start=9767
 // OP_STATE	4963	9767	0
 // OP_DONE	0	0	0
-void () zombie_painc8 = [138.000, zombie_painc9]
+void () zombie_painc8 = [138, zombie_painc9]
 {
 };
 
@@ -1735,7 +1735,7 @@ void () zombie_painc8 = [138.000, zombie_painc9]
 // function begins at statement 16839, parm_start=9768
 // OP_STATE	4966	9768	0
 // OP_DONE	0	0	0
-void () zombie_painc9 = [139.000, zombie_painc10]
+void () zombie_painc9 = [139, zombie_painc10]
 {
 };
 
@@ -1743,7 +1743,7 @@ void () zombie_painc9 = [139.000, zombie_painc10]
 // function begins at statement 16841, parm_start=9769
 // OP_STATE	4969	9769	0
 // OP_DONE	0	0	0
-void () zombie_painc10 = [140.000, zombie_painc11]
+void () zombie_painc10 = [140, zombie_painc11]
 {
 };
 
@@ -1753,7 +1753,7 @@ void () zombie_painc10 = [140.000, zombie_painc11]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_painc11 = [141.000, zombie_painc12]
+void () zombie_painc11 = [141, zombie_painc12]
 {
     ai_painforward(SPAWN_CRUCIFIED);
 };
@@ -1764,7 +1764,7 @@ void () zombie_painc11 = [141.000, zombie_painc12]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_painc12 = [142.000, zombie_painc13]
+void () zombie_painc12 = [142, zombie_painc13]
 {
     ai_painforward(SPAWN_CRUCIFIED);
 };
@@ -1773,7 +1773,7 @@ void () zombie_painc12 = [142.000, zombie_painc13]
 // function begins at statement 16851, parm_start=9774
 // OP_STATE	9774	9775	0
 // OP_DONE	0	0	0
-void () zombie_painc13 = [143.000, zombie_painc14]
+void () zombie_painc13 = [143, zombie_painc14]
 {
 };
 
@@ -1781,7 +1781,7 @@ void () zombie_painc13 = [143.000, zombie_painc14]
 // function begins at statement 16853, parm_start=9776
 // OP_STATE	9776	9777	0
 // OP_DONE	0	0	0
-void () zombie_painc14 = [144.000, zombie_painc15]
+void () zombie_painc14 = [144, zombie_painc15]
 {
 };
 
@@ -1789,7 +1789,7 @@ void () zombie_painc14 = [144.000, zombie_painc15]
 // function begins at statement 16855, parm_start=9778
 // OP_STATE	9778	9779	0
 // OP_DONE	0	0	0
-void () zombie_painc15 = [145.000, zombie_painc16]
+void () zombie_painc15 = [145, zombie_painc16]
 {
 };
 
@@ -1797,7 +1797,7 @@ void () zombie_painc15 = [145.000, zombie_painc16]
 // function begins at statement 16857, parm_start=9780
 // OP_STATE	9780	9781	0
 // OP_DONE	0	0	0
-void () zombie_painc16 = [146.000, zombie_painc17]
+void () zombie_painc16 = [146, zombie_painc17]
 {
 };
 
@@ -1805,7 +1805,7 @@ void () zombie_painc16 = [146.000, zombie_painc17]
 // function begins at statement 16859, parm_start=9782
 // OP_STATE	9782	9783	0
 // OP_DONE	0	0	0
-void () zombie_painc17 = [147.000, zombie_painc18]
+void () zombie_painc17 = [147, zombie_painc18]
 {
 };
 
@@ -1813,7 +1813,7 @@ void () zombie_painc17 = [147.000, zombie_painc18]
 // function begins at statement 16861, parm_start=9784
 // OP_STATE	9784	9562	0
 // OP_DONE	0	0	0
-void () zombie_painc18 = [148.000, zombie_run1]
+void () zombie_painc18 = [148, zombie_run1]
 {
 };
 
@@ -1827,7 +1827,7 @@ void () zombie_painc18 = [148.000, zombie_run1]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () zombie_paind1 = [149.000, zombie_paind2]
+void () zombie_paind1 = [149, zombie_paind2]
 {
     sound(self, CHAN_VOICE, "zombie/z_pain.wav", SPAWN_CRUCIFIED, ATTN_NORM);
 };
@@ -1836,7 +1836,7 @@ void () zombie_paind1 = [149.000, zombie_paind2]
 // function begins at statement 16871, parm_start=9788
 // OP_STATE	1960	9788	0
 // OP_DONE	0	0	0
-void () zombie_paind2 = [150.000, zombie_paind3]
+void () zombie_paind2 = [150, zombie_paind3]
 {
 };
 
@@ -1844,7 +1844,7 @@ void () zombie_paind2 = [150.000, zombie_paind3]
 // function begins at statement 16873, parm_start=9789
 // OP_STATE	9789	9790	0
 // OP_DONE	0	0	0
-void () zombie_paind3 = [151.000, zombie_paind4]
+void () zombie_paind3 = [151, zombie_paind4]
 {
 };
 
@@ -1852,7 +1852,7 @@ void () zombie_paind3 = [151.000, zombie_paind4]
 // function begins at statement 16875, parm_start=9791
 // OP_STATE	9791	9792	0
 // OP_DONE	0	0	0
-void () zombie_paind4 = [152.000, zombie_paind5]
+void () zombie_paind4 = [152, zombie_paind5]
 {
 };
 
@@ -1860,7 +1860,7 @@ void () zombie_paind4 = [152.000, zombie_paind5]
 // function begins at statement 16877, parm_start=9793
 // OP_STATE	9793	9794	0
 // OP_DONE	0	0	0
-void () zombie_paind5 = [153.000, zombie_paind6]
+void () zombie_paind5 = [153, zombie_paind6]
 {
 };
 
@@ -1868,7 +1868,7 @@ void () zombie_paind5 = [153.000, zombie_paind6]
 // function begins at statement 16879, parm_start=9795
 // OP_STATE	9795	9796	0
 // OP_DONE	0	0	0
-void () zombie_paind6 = [154.000, zombie_paind7]
+void () zombie_paind6 = [154, zombie_paind7]
 {
 };
 
@@ -1876,7 +1876,7 @@ void () zombie_paind6 = [154.000, zombie_paind7]
 // function begins at statement 16881, parm_start=9797
 // OP_STATE	9797	9798	0
 // OP_DONE	0	0	0
-void () zombie_paind7 = [155.000, zombie_paind8]
+void () zombie_paind7 = [155, zombie_paind8]
 {
 };
 
@@ -1884,7 +1884,7 @@ void () zombie_paind7 = [155.000, zombie_paind8]
 // function begins at statement 16883, parm_start=9799
 // OP_STATE	9799	9800	0
 // OP_DONE	0	0	0
-void () zombie_paind8 = [156.000, zombie_paind9]
+void () zombie_paind8 = [156, zombie_paind9]
 {
 };
 
@@ -1894,7 +1894,7 @@ void () zombie_paind8 = [156.000, zombie_paind9]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paind9 = [157.000, zombie_paind10]
+void () zombie_paind9 = [157, zombie_paind10]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -1903,7 +1903,7 @@ void () zombie_paind9 = [157.000, zombie_paind10]
 // function begins at statement 16889, parm_start=9803
 // OP_STATE	9803	9804	0
 // OP_DONE	0	0	0
-void () zombie_paind10 = [158.000, zombie_paind11]
+void () zombie_paind10 = [158, zombie_paind11]
 {
 };
 
@@ -1911,7 +1911,7 @@ void () zombie_paind10 = [158.000, zombie_paind11]
 // function begins at statement 16891, parm_start=9805
 // OP_STATE	9805	9806	0
 // OP_DONE	0	0	0
-void () zombie_paind11 = [159.000, zombie_paind12]
+void () zombie_paind11 = [159, zombie_paind12]
 {
 };
 
@@ -1919,7 +1919,7 @@ void () zombie_paind11 = [159.000, zombie_paind12]
 // function begins at statement 16893, parm_start=9807
 // OP_STATE	7324	9807	0
 // OP_DONE	0	0	0
-void () zombie_paind12 = [160.000, zombie_paind13]
+void () zombie_paind12 = [160, zombie_paind13]
 {
 };
 
@@ -1927,7 +1927,7 @@ void () zombie_paind12 = [160.000, zombie_paind13]
 // function begins at statement 16895, parm_start=9808
 // OP_STATE	9808	9562	0
 // OP_DONE	0	0	0
-void () zombie_paind13 = [161.000, zombie_run1]
+void () zombie_paind13 = [161, zombie_run1]
 {
 };
 
@@ -1943,10 +1943,10 @@ void () zombie_paind13 = [161.000, zombie_run1]
 // OP_ADDRESS	28	152	9812
 // OP_STOREP_F	912	9812	0
 // OP_DONE	0	0	0
-void () zombie_paine1 = [162.000, zombie_paine2]
+void () zombie_paine1 = [162, zombie_paine2]
 {
     sound(self, CHAN_VOICE, "zombie/z_pain.wav", SPAWN_CRUCIFIED, ATTN_NORM);
-    self.health = 60.000;
+    self.health = 60;
 };
 
 // zombie_paine2
@@ -1955,7 +1955,7 @@ void () zombie_paine1 = [162.000, zombie_paine2]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine2 = [163.000, zombie_paine3]
+void () zombie_paine2 = [163, zombie_paine3]
 {
     ai_pain(SECRET_NO_SHOOT);
 };
@@ -1966,7 +1966,7 @@ void () zombie_paine2 = [163.000, zombie_paine3]
 // OP_STORE_V	313	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine3 = [164.000, zombie_paine4]
+void () zombie_paine3 = [164, zombie_paine4]
 {
     ai_pain(TE_LIGHTNING1);
 };
@@ -1977,7 +1977,7 @@ void () zombie_paine3 = [164.000, zombie_paine4]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine4 = [165.000, zombie_paine5]
+void () zombie_paine4 = [165, zombie_paine5]
 {
     ai_pain(AS_MELEE);
 };
@@ -1988,7 +1988,7 @@ void () zombie_paine4 = [165.000, zombie_paine5]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine5 = [166.000, zombie_paine6]
+void () zombie_paine5 = [166, zombie_paine6]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -1999,7 +1999,7 @@ void () zombie_paine5 = [166.000, zombie_paine6]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine6 = [167.000, zombie_paine7]
+void () zombie_paine6 = [167, zombie_paine7]
 {
     ai_pain(SPAWNFLAG_LASER);
 };
@@ -2010,7 +2010,7 @@ void () zombie_paine6 = [167.000, zombie_paine7]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine7 = [168.000, zombie_paine8]
+void () zombie_paine7 = [168, zombie_paine8]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -2021,7 +2021,7 @@ void () zombie_paine7 = [168.000, zombie_paine8]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine8 = [169.000, zombie_paine9]
+void () zombie_paine8 = [169, zombie_paine9]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -2032,7 +2032,7 @@ void () zombie_paine8 = [169.000, zombie_paine9]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine9 = [170.000, zombie_paine10]
+void () zombie_paine9 = [170, zombie_paine10]
 {
     ai_pain(SPAWNFLAG_LASER);
 };
@@ -2049,7 +2049,7 @@ void () zombie_paine9 = [170.000, zombie_paine10]
 // OP_ADDRESS	28	104	9831
 // OP_STOREP_F	237	9831	0
 // OP_DONE	0	0	0
-void () zombie_paine10 = [171.000, zombie_paine11]
+void () zombie_paine10 = [171, zombie_paine11]
 {
     sound(self, CHAN_BODY, "zombie/z_fall.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     self.solid = SOLID_NOT;
@@ -2065,10 +2065,10 @@ void () zombie_paine10 = [171.000, zombie_paine11]
 // OP_ADDRESS	28	152	9837
 // OP_STOREP_F	912	9837	0
 // OP_DONE	0	0	0
-void () zombie_paine11 = [172.000, zombie_paine12]
+void () zombie_paine11 = [172, zombie_paine12]
 {
     self.nextthink = self.nextthink + TE_LIGHTNING1;
-    self.health = 60.000;
+    self.health = 60;
 };
 
 // zombie_paine12
@@ -2095,9 +2095,9 @@ void () zombie_paine11 = [172.000, zombie_paine12]
 // OP_STOREP_F	237	9844	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () zombie_paine12 = [173.000, zombie_paine13]
+void () zombie_paine12 = [173, zombie_paine13]
 {
-    self.health = 60.000;
+    self.health = 60;
     sound(self, CHAN_VOICE, "zombie/z_idle.wav", SPAWN_CRUCIFIED, ATTN_IDLE);
     self.solid = SOLID_SLIDEBOX;
     
@@ -2114,7 +2114,7 @@ void () zombie_paine12 = [173.000, zombie_paine13]
 // function begins at statement 16979, parm_start=9845
 // OP_STATE	9845	9846	0
 // OP_DONE	0	0	0
-void () zombie_paine13 = [174.000, zombie_paine14]
+void () zombie_paine13 = [174, zombie_paine14]
 {
 };
 
@@ -2122,7 +2122,7 @@ void () zombie_paine13 = [174.000, zombie_paine14]
 // function begins at statement 16981, parm_start=9847
 // OP_STATE	9847	9848	0
 // OP_DONE	0	0	0
-void () zombie_paine14 = [175.000, zombie_paine15]
+void () zombie_paine14 = [175, zombie_paine15]
 {
 };
 
@@ -2130,7 +2130,7 @@ void () zombie_paine14 = [175.000, zombie_paine15]
 // function begins at statement 16983, parm_start=9849
 // OP_STATE	9849	9850	0
 // OP_DONE	0	0	0
-void () zombie_paine15 = [176.000, zombie_paine16]
+void () zombie_paine15 = [176, zombie_paine16]
 {
 };
 
@@ -2138,7 +2138,7 @@ void () zombie_paine15 = [176.000, zombie_paine16]
 // function begins at statement 16985, parm_start=9851
 // OP_STATE	9851	9852	0
 // OP_DONE	0	0	0
-void () zombie_paine16 = [177.000, zombie_paine17]
+void () zombie_paine16 = [177, zombie_paine17]
 {
 };
 
@@ -2146,7 +2146,7 @@ void () zombie_paine16 = [177.000, zombie_paine17]
 // function begins at statement 16987, parm_start=9853
 // OP_STATE	9853	9854	0
 // OP_DONE	0	0	0
-void () zombie_paine17 = [178.000, zombie_paine18]
+void () zombie_paine17 = [178, zombie_paine18]
 {
 };
 
@@ -2154,7 +2154,7 @@ void () zombie_paine17 = [178.000, zombie_paine18]
 // function begins at statement 16989, parm_start=9855
 // OP_STATE	9855	9856	0
 // OP_DONE	0	0	0
-void () zombie_paine18 = [179.000, zombie_paine19]
+void () zombie_paine18 = [179, zombie_paine19]
 {
 };
 
@@ -2162,7 +2162,7 @@ void () zombie_paine18 = [179.000, zombie_paine19]
 // function begins at statement 16991, parm_start=9857
 // OP_STATE	1344	9857	0
 // OP_DONE	0	0	0
-void () zombie_paine19 = [180.000, zombie_paine20]
+void () zombie_paine19 = [180, zombie_paine20]
 {
 };
 
@@ -2170,7 +2170,7 @@ void () zombie_paine19 = [180.000, zombie_paine20]
 // function begins at statement 16993, parm_start=9858
 // OP_STATE	9858	9859	0
 // OP_DONE	0	0	0
-void () zombie_paine20 = [181.000, zombie_paine21]
+void () zombie_paine20 = [181, zombie_paine21]
 {
 };
 
@@ -2178,7 +2178,7 @@ void () zombie_paine20 = [181.000, zombie_paine21]
 // function begins at statement 16995, parm_start=9860
 // OP_STATE	9860	9861	0
 // OP_DONE	0	0	0
-void () zombie_paine21 = [182.000, zombie_paine22]
+void () zombie_paine21 = [182, zombie_paine22]
 {
 };
 
@@ -2186,7 +2186,7 @@ void () zombie_paine21 = [182.000, zombie_paine22]
 // function begins at statement 16997, parm_start=9862
 // OP_STATE	9862	9863	0
 // OP_DONE	0	0	0
-void () zombie_paine22 = [183.000, zombie_paine23]
+void () zombie_paine22 = [183, zombie_paine23]
 {
 };
 
@@ -2194,7 +2194,7 @@ void () zombie_paine22 = [183.000, zombie_paine23]
 // function begins at statement 16999, parm_start=9864
 // OP_STATE	9864	9865	0
 // OP_DONE	0	0	0
-void () zombie_paine23 = [184.000, zombie_paine24]
+void () zombie_paine23 = [184, zombie_paine24]
 {
 };
 
@@ -2202,7 +2202,7 @@ void () zombie_paine23 = [184.000, zombie_paine24]
 // function begins at statement 17001, parm_start=9866
 // OP_STATE	9866	9867	0
 // OP_DONE	0	0	0
-void () zombie_paine24 = [185.000, zombie_paine25]
+void () zombie_paine24 = [185, zombie_paine25]
 {
 };
 
@@ -2212,7 +2212,7 @@ void () zombie_paine24 = [185.000, zombie_paine25]
 // OP_STORE_V	313	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_paine25 = [186.000, zombie_paine26]
+void () zombie_paine25 = [186, zombie_paine26]
 {
     ai_painforward(TE_LIGHTNING1);
 };
@@ -2223,7 +2223,7 @@ void () zombie_paine25 = [186.000, zombie_paine26]
 // OP_STORE_V	370	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_paine26 = [187.000, zombie_paine27]
+void () zombie_paine26 = [187, zombie_paine27]
 {
     ai_painforward(AS_MELEE);
 };
@@ -2234,7 +2234,7 @@ void () zombie_paine26 = [187.000, zombie_paine27]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1348	0	0
 // OP_DONE	0	0	0
-void () zombie_paine27 = [188.000, zombie_paine28]
+void () zombie_paine27 = [188, zombie_paine28]
 {
     ai_painforward(SPAWN_CRUCIFIED);
 };
@@ -2245,7 +2245,7 @@ void () zombie_paine27 = [188.000, zombie_paine28]
 // OP_STORE_V	9491	4	0
 // OP_CALL1	1346	0	0
 // OP_DONE	0	0	0
-void () zombie_paine28 = [189.000, zombie_paine29]
+void () zombie_paine28 = [189, zombie_paine29]
 {
     ai_pain(SPAWN_CRUCIFIED);
 };
@@ -2254,7 +2254,7 @@ void () zombie_paine28 = [189.000, zombie_paine29]
 // function begins at statement 17019, parm_start=9876
 // OP_STATE	9876	9877	0
 // OP_DONE	0	0	0
-void () zombie_paine29 = [190.000, zombie_paine30]
+void () zombie_paine29 = [190, zombie_paine30]
 {
 };
 
@@ -2262,7 +2262,7 @@ void () zombie_paine29 = [190.000, zombie_paine30]
 // function begins at statement 17021, parm_start=9878
 // OP_STATE	9878	9562	0
 // OP_DONE	0	0	0
-void () zombie_paine30 = [191.000, zombie_run1]
+void () zombie_paine30 = [191, zombie_run1]
 {
 };
 
@@ -2351,7 +2351,7 @@ void () zombie_die =
 void (entity attacker, float take) zombie_pain = 
 {
     local float r;
-    self.health = 60.000;
+    self.health = 60;
     
     if(take < TE_LIGHTNING3)
     {
@@ -2365,7 +2365,7 @@ void (entity attacker, float take) zombie_pain =
     }
     
     
-    if(take >= 25.000)
+    if(take >= 25)
     {
         self.inpain = SPAWNFLAG_LASER;
         zombie_paine1();
@@ -2389,19 +2389,19 @@ void (entity attacker, float take) zombie_pain =
     
     self.inpain = SPAWN_CRUCIFIED;
     r = random();
-    if(r < 0.250)
+    if(r < 0.25)
     {
         zombie_paina1();
     }
     else
     {
-        if(r < 0.500)
+        if(r < 0.5)
         {
             zombie_painb1();
         }
         else
         {
-            if(r < 0.750)
+            if(r < 0.75)
             {
                 zombie_painc1();
             }
@@ -2508,7 +2508,7 @@ void () monster_zombie =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/zombie.mdl");
     setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
-    self.health = 60.000;
+    self.health = 60;
     self.th_stand = zombie_stand1;
     self.th_walk = zombie_walk1;
     self.th_run = zombie_run1;

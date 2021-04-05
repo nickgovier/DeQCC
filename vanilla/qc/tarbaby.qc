@@ -3,7 +3,7 @@
 // OP_STATE	337	10270	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () tbaby_stand1 = [0.000, tbaby_stand1]
+void () tbaby_stand1 = [0, tbaby_stand1]
 {
     ai_stand();
 };
@@ -13,7 +13,7 @@ void () tbaby_stand1 = [0.000, tbaby_stand1]
 // OP_STATE	337	10271	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () tbaby_hang1 = [0.000, tbaby_hang1]
+void () tbaby_hang1 = [0, tbaby_hang1]
 {
     ai_stand();
 };
@@ -23,7 +23,7 @@ void () tbaby_hang1 = [0.000, tbaby_hang1]
 // OP_STATE	337	10273	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk1 = [0.000, tbaby_walk2]
+void () tbaby_walk1 = [0, tbaby_walk2]
 {
     ai_turn();
 };
@@ -33,7 +33,7 @@ void () tbaby_walk1 = [0.000, tbaby_walk2]
 // OP_STATE	9491	10274	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk2 = [1.000, tbaby_walk3]
+void () tbaby_walk2 = [1, tbaby_walk3]
 {
     ai_turn();
 };
@@ -43,7 +43,7 @@ void () tbaby_walk2 = [1.000, tbaby_walk3]
 // OP_STATE	7369	10275	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk3 = [2.000, tbaby_walk4]
+void () tbaby_walk3 = [2, tbaby_walk4]
 {
     ai_turn();
 };
@@ -53,7 +53,7 @@ void () tbaby_walk3 = [2.000, tbaby_walk4]
 // OP_STATE	370	10276	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk4 = [3.000, tbaby_walk5]
+void () tbaby_walk4 = [3, tbaby_walk5]
 {
     ai_turn();
 };
@@ -63,7 +63,7 @@ void () tbaby_walk4 = [3.000, tbaby_walk5]
 // OP_STATE	6076	10277	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk5 = [4.000, tbaby_walk6]
+void () tbaby_walk5 = [4, tbaby_walk6]
 {
     ai_turn();
 };
@@ -73,7 +73,7 @@ void () tbaby_walk5 = [4.000, tbaby_walk6]
 // OP_STATE	313	10278	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk6 = [5.000, tbaby_walk7]
+void () tbaby_walk6 = [5, tbaby_walk7]
 {
     ai_turn();
 };
@@ -83,7 +83,7 @@ void () tbaby_walk6 = [5.000, tbaby_walk7]
 // OP_STATE	314	10279	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk7 = [6.000, tbaby_walk8]
+void () tbaby_walk7 = [6, tbaby_walk8]
 {
     ai_turn();
 };
@@ -93,7 +93,7 @@ void () tbaby_walk7 = [6.000, tbaby_walk8]
 // OP_STATE	315	10280	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk8 = [7.000, tbaby_walk9]
+void () tbaby_walk8 = [7, tbaby_walk9]
 {
     ai_turn();
 };
@@ -103,7 +103,7 @@ void () tbaby_walk8 = [7.000, tbaby_walk9]
 // OP_STATE	6077	10281	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk9 = [8.000, tbaby_walk10]
+void () tbaby_walk9 = [8, tbaby_walk10]
 {
     ai_turn();
 };
@@ -113,7 +113,7 @@ void () tbaby_walk9 = [8.000, tbaby_walk10]
 // OP_STATE	317	10282	0
 // OP_CALL0	1363	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk10 = [9.000, tbaby_walk11]
+void () tbaby_walk10 = [9, tbaby_walk11]
 {
     ai_turn();
 };
@@ -124,7 +124,7 @@ void () tbaby_walk10 = [9.000, tbaby_walk11]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk11 = [10.000, tbaby_walk12]
+void () tbaby_walk11 = [10, tbaby_walk12]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -135,7 +135,7 @@ void () tbaby_walk11 = [10.000, tbaby_walk12]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk12 = [11.000, tbaby_walk13]
+void () tbaby_walk12 = [11, tbaby_walk13]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -146,7 +146,7 @@ void () tbaby_walk12 = [11.000, tbaby_walk13]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk13 = [12.000, tbaby_walk14]
+void () tbaby_walk13 = [12, tbaby_walk14]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -157,7 +157,7 @@ void () tbaby_walk13 = [12.000, tbaby_walk14]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk14 = [13.000, tbaby_walk15]
+void () tbaby_walk14 = [13, tbaby_walk15]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -168,7 +168,7 @@ void () tbaby_walk14 = [13.000, tbaby_walk15]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk15 = [14.000, tbaby_walk16]
+void () tbaby_walk15 = [14, tbaby_walk16]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -179,7 +179,7 @@ void () tbaby_walk15 = [14.000, tbaby_walk16]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk16 = [15.000, tbaby_walk17]
+void () tbaby_walk16 = [15, tbaby_walk17]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -190,7 +190,7 @@ void () tbaby_walk16 = [15.000, tbaby_walk17]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk17 = [16.000, tbaby_walk18]
+void () tbaby_walk17 = [16, tbaby_walk18]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -201,7 +201,7 @@ void () tbaby_walk17 = [16.000, tbaby_walk18]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk18 = [17.000, tbaby_walk19]
+void () tbaby_walk18 = [17, tbaby_walk19]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -212,7 +212,7 @@ void () tbaby_walk18 = [17.000, tbaby_walk19]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk19 = [18.000, tbaby_walk20]
+void () tbaby_walk19 = [18, tbaby_walk20]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -223,7 +223,7 @@ void () tbaby_walk19 = [18.000, tbaby_walk20]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk20 = [19.000, tbaby_walk21]
+void () tbaby_walk20 = [19, tbaby_walk21]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -234,7 +234,7 @@ void () tbaby_walk20 = [19.000, tbaby_walk21]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk21 = [20.000, tbaby_walk22]
+void () tbaby_walk21 = [20, tbaby_walk22]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -245,7 +245,7 @@ void () tbaby_walk21 = [20.000, tbaby_walk22]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk22 = [21.000, tbaby_walk23]
+void () tbaby_walk22 = [21, tbaby_walk23]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -256,7 +256,7 @@ void () tbaby_walk22 = [21.000, tbaby_walk23]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk23 = [22.000, tbaby_walk24]
+void () tbaby_walk23 = [22, tbaby_walk24]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -267,7 +267,7 @@ void () tbaby_walk23 = [22.000, tbaby_walk24]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk24 = [23.000, tbaby_walk25]
+void () tbaby_walk24 = [23, tbaby_walk25]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -278,7 +278,7 @@ void () tbaby_walk24 = [23.000, tbaby_walk25]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () tbaby_walk25 = [24.000, tbaby_walk1]
+void () tbaby_walk25 = [24, tbaby_walk1]
 {
     ai_walk(SPAWNFLAG_LASER);
 };
@@ -288,7 +288,7 @@ void () tbaby_walk25 = [24.000, tbaby_walk1]
 // OP_STATE	1890	10298	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run1 = [25.000, tbaby_run2]
+void () tbaby_run1 = [25, tbaby_run2]
 {
     ai_face();
 };
@@ -298,7 +298,7 @@ void () tbaby_run1 = [25.000, tbaby_run2]
 // OP_STATE	7788	10299	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run2 = [26.000, tbaby_run3]
+void () tbaby_run2 = [26, tbaby_run3]
 {
     ai_face();
 };
@@ -308,7 +308,7 @@ void () tbaby_run2 = [26.000, tbaby_run3]
 // OP_STATE	302	10300	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run3 = [27.000, tbaby_run4]
+void () tbaby_run3 = [27, tbaby_run4]
 {
     ai_face();
 };
@@ -318,7 +318,7 @@ void () tbaby_run3 = [27.000, tbaby_run4]
 // OP_STATE	303	10301	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run4 = [28.000, tbaby_run5]
+void () tbaby_run4 = [28, tbaby_run5]
 {
     ai_face();
 };
@@ -328,7 +328,7 @@ void () tbaby_run4 = [28.000, tbaby_run5]
 // OP_STATE	5105	10302	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run5 = [29.000, tbaby_run6]
+void () tbaby_run5 = [29, tbaby_run6]
 {
     ai_face();
 };
@@ -338,7 +338,7 @@ void () tbaby_run5 = [29.000, tbaby_run6]
 // OP_STATE	304	10303	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run6 = [30.000, tbaby_run7]
+void () tbaby_run6 = [30, tbaby_run7]
 {
     ai_face();
 };
@@ -348,7 +348,7 @@ void () tbaby_run6 = [30.000, tbaby_run7]
 // OP_STATE	305	10304	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run7 = [31.000, tbaby_run8]
+void () tbaby_run7 = [31, tbaby_run8]
 {
     ai_face();
 };
@@ -358,7 +358,7 @@ void () tbaby_run7 = [31.000, tbaby_run8]
 // OP_STATE	5674	10305	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run8 = [32.000, tbaby_run9]
+void () tbaby_run8 = [32, tbaby_run9]
 {
     ai_face();
 };
@@ -368,7 +368,7 @@ void () tbaby_run8 = [32.000, tbaby_run9]
 // OP_STATE	307	10306	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run9 = [33.000, tbaby_run10]
+void () tbaby_run9 = [33, tbaby_run10]
 {
     ai_face();
 };
@@ -378,7 +378,7 @@ void () tbaby_run9 = [33.000, tbaby_run10]
 // OP_STATE	5112	10307	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_run10 = [34.000, tbaby_run11]
+void () tbaby_run10 = [34, tbaby_run11]
 {
     ai_face();
 };
@@ -389,7 +389,7 @@ void () tbaby_run10 = [34.000, tbaby_run11]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run11 = [35.000, tbaby_run12]
+void () tbaby_run11 = [35, tbaby_run12]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -400,7 +400,7 @@ void () tbaby_run11 = [35.000, tbaby_run12]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run12 = [36.000, tbaby_run13]
+void () tbaby_run12 = [36, tbaby_run13]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -411,7 +411,7 @@ void () tbaby_run12 = [36.000, tbaby_run13]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run13 = [37.000, tbaby_run14]
+void () tbaby_run13 = [37, tbaby_run14]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -422,7 +422,7 @@ void () tbaby_run13 = [37.000, tbaby_run14]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run14 = [38.000, tbaby_run15]
+void () tbaby_run14 = [38, tbaby_run15]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -433,7 +433,7 @@ void () tbaby_run14 = [38.000, tbaby_run15]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run15 = [39.000, tbaby_run16]
+void () tbaby_run15 = [39, tbaby_run16]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -444,7 +444,7 @@ void () tbaby_run15 = [39.000, tbaby_run16]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run16 = [40.000, tbaby_run17]
+void () tbaby_run16 = [40, tbaby_run17]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -455,7 +455,7 @@ void () tbaby_run16 = [40.000, tbaby_run17]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run17 = [41.000, tbaby_run18]
+void () tbaby_run17 = [41, tbaby_run18]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -466,7 +466,7 @@ void () tbaby_run17 = [41.000, tbaby_run18]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run18 = [42.000, tbaby_run19]
+void () tbaby_run18 = [42, tbaby_run19]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -477,7 +477,7 @@ void () tbaby_run18 = [42.000, tbaby_run19]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run19 = [43.000, tbaby_run20]
+void () tbaby_run19 = [43, tbaby_run20]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -488,7 +488,7 @@ void () tbaby_run19 = [43.000, tbaby_run20]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run20 = [44.000, tbaby_run21]
+void () tbaby_run20 = [44, tbaby_run21]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -499,7 +499,7 @@ void () tbaby_run20 = [44.000, tbaby_run21]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run21 = [45.000, tbaby_run22]
+void () tbaby_run21 = [45, tbaby_run22]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -510,7 +510,7 @@ void () tbaby_run21 = [45.000, tbaby_run22]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run22 = [46.000, tbaby_run23]
+void () tbaby_run22 = [46, tbaby_run23]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -521,7 +521,7 @@ void () tbaby_run22 = [46.000, tbaby_run23]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run23 = [47.000, tbaby_run24]
+void () tbaby_run23 = [47, tbaby_run24]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -532,7 +532,7 @@ void () tbaby_run23 = [47.000, tbaby_run24]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run24 = [48.000, tbaby_run25]
+void () tbaby_run24 = [48, tbaby_run25]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -543,7 +543,7 @@ void () tbaby_run24 = [48.000, tbaby_run25]
 // OP_STORE_V	7369	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () tbaby_run25 = [49.000, tbaby_run1]
+void () tbaby_run25 = [49, tbaby_run1]
 {
     ai_run(SPAWNFLAG_LASER);
 };
@@ -615,7 +615,7 @@ void () Tar_JumpTouch =
     if(other.takedamage && (other.classname != self.classname))
     {
         
-        if(vlen(self.velocity) > 400.000)
+        if(vlen(self.velocity) > 400)
         {
             ldmg = TE_LAVASPLASH + (TE_LAVASPLASH * random());
             T_Damage(other, self, self, ldmg);
@@ -637,7 +637,7 @@ void () Tar_JumpTouch =
             self.touch = SUB_Null;
             self.think = tbaby_run1;
             self.movetype = MOVETYPE_STEP;
-            self.nextthink = time + 0.100;
+            self.nextthink = time + 0.1;
         }
         
         return;
@@ -645,7 +645,7 @@ void () Tar_JumpTouch =
     
     self.touch = SUB_Null;
     self.think = tbaby_jump1;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 void () tbaby_jump5;
@@ -653,7 +653,7 @@ void () tbaby_jump5;
 // function begins at statement 18053, parm_start=10352
 // OP_STATE	5361	10352	0
 // OP_DONE	0	0	0
-void () tbaby_fly1 = [56.000, tbaby_fly2]
+void () tbaby_fly1 = [56, tbaby_fly2]
 {
 };
 
@@ -661,7 +661,7 @@ void () tbaby_fly1 = [56.000, tbaby_fly2]
 // function begins at statement 18055, parm_start=10353
 // OP_STATE	5363	10353	0
 // OP_DONE	0	0	0
-void () tbaby_fly2 = [57.000, tbaby_fly3]
+void () tbaby_fly2 = [57, tbaby_fly3]
 {
 };
 
@@ -669,7 +669,7 @@ void () tbaby_fly2 = [57.000, tbaby_fly3]
 // function begins at statement 18057, parm_start=10354
 // OP_STATE	5365	10354	0
 // OP_DONE	0	0	0
-void () tbaby_fly3 = [58.000, tbaby_fly4]
+void () tbaby_fly3 = [58, tbaby_fly4]
 {
 };
 
@@ -685,7 +685,7 @@ void () tbaby_fly3 = [58.000, tbaby_fly4]
 // OP_IFNOT	10359	2	0
 // OP_CALL0	10350	0	0
 // OP_DONE	0	0	0
-void () tbaby_fly4 = [59.000, tbaby_fly1]
+void () tbaby_fly4 = [59, tbaby_fly1]
 {
     self.cnt = self.cnt + SPAWN_CRUCIFIED;
     
@@ -701,7 +701,7 @@ void () tbaby_fly4 = [59.000, tbaby_fly1]
 // OP_STATE	2227	10360	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump1 = [50.000, tbaby_jump2]
+void () tbaby_jump1 = [50, tbaby_jump2]
 {
     ai_face();
 };
@@ -711,7 +711,7 @@ void () tbaby_jump1 = [50.000, tbaby_jump2]
 // OP_STATE	5351	10361	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump2 = [51.000, tbaby_jump3]
+void () tbaby_jump2 = [51, tbaby_jump3]
 {
     ai_face();
 };
@@ -721,7 +721,7 @@ void () tbaby_jump2 = [51.000, tbaby_jump3]
 // OP_STATE	5353	10362	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump3 = [52.000, tbaby_jump4]
+void () tbaby_jump3 = [52, tbaby_jump4]
 {
     ai_face();
 };
@@ -731,7 +731,7 @@ void () tbaby_jump3 = [52.000, tbaby_jump4]
 // OP_STATE	5355	10350	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () tbaby_jump4 = [53.000, tbaby_jump5]
+void () tbaby_jump4 = [53, tbaby_jump5]
 {
     ai_face();
 };
@@ -770,14 +770,14 @@ void () tbaby_jump4 = [53.000, tbaby_jump5]
 // OP_ADDRESS	28	421	10390
 // OP_STOREP_F	337	10390	0
 // OP_DONE	0	0	0
-void () tbaby_jump5 = [54.000, tbaby_jump6]
+void () tbaby_jump5 = [54, tbaby_jump6]
 {
     self.movetype = MOVETYPE_BOUNCE;
     self.touch = Tar_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWN_CRUCIFIED;
-    self.velocity = (v_forward * 600.000) + '0.000 0.000 200.000';
-    self.velocity_z = self.velocity_z + (random() * 150.000);
+    self.velocity = (v_forward * 600) + '0.000 0.000 200.000';
+    self.velocity_z = self.velocity_z + (random() * 150);
     
     if(self.flags & FL_ONGROUND)
     {
@@ -791,7 +791,7 @@ void () tbaby_jump5 = [54.000, tbaby_jump6]
 // function begins at statement 18113, parm_start=10391
 // OP_STATE	5359	10351	0
 // OP_DONE	0	0	0
-void () tbaby_jump6 = [55.000, tbaby_fly1]
+void () tbaby_jump6 = [55, tbaby_fly1]
 {
 };
 
@@ -801,7 +801,7 @@ void () tbaby_jump6 = [55.000, tbaby_fly1]
 // OP_ADDRESS	28	163	10393
 // OP_STOREP_F	250	10393	0
 // OP_DONE	0	0	0
-void () tbaby_die1 = [60.000, tbaby_die2]
+void () tbaby_die1 = [60, tbaby_die2]
 {
     self.takedamage = DAMAGE_NO;
 };
@@ -848,9 +848,9 @@ void () tbaby_die1 = [60.000, tbaby_die2]
 // OP_CALL2	497	0	0
 // OP_CALL0	2911	0	0
 // OP_DONE	0	0	0
-void () tbaby_die2 = [60.000, tbaby_run1]
+void () tbaby_die2 = [60, tbaby_run1]
 {
-    T_RadiusDamage(self, self, 120.000, world);
+    T_RadiusDamage(self, self, 120, world);
     sound(self, CHAN_VOICE, "blob/death1.wav", SPAWN_CRUCIFIED, ATTN_NORM);
     self.origin = self.origin - (SECRET_NO_SHOOT * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -922,7 +922,7 @@ void () monster_tarbaby =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/tarbaby.mdl");
     setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
-    self.health = 80.000;
+    self.health = 80;
     self.th_stand = tbaby_stand1;
     self.th_walk = tbaby_walk1;
     self.th_run = tbaby_run1;

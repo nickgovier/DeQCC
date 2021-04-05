@@ -62,13 +62,13 @@ void (entity missile, float mspeed, float accuracy) LaunchMissile =
     local vector move;
     local float fly;
     makevectors(self.angles);
-    vec = ((self.enemy.origin + self.enemy.mins) + (self.enemy.size * 0.700)) - missile.origin;
+    vec = ((self.enemy.origin + self.enemy.mins) + (self.enemy.size * 0.7)) - missile.origin;
     fly = vlen(vec) / mspeed;
     move = self.enemy.velocity;
     move_z = MSG_BROADCAST;
     vec = vec + (move * fly);
     vec = normalize(vec);
-    vec = (vec + ((accuracy * v_up) * (random() - 0.500))) + ((accuracy * v_right) * (random() - 0.500));
+    vec = (vec + ((accuracy * v_up) * (random() - 0.5))) + ((accuracy * v_right) * (random() - 0.5));
     missile.velocity = vec * mspeed;
     missile.angles = VEC_ORIGIN;
     missile.angles_y = vectoyaw(missile.velocity);
@@ -206,19 +206,19 @@ float () WizardCheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
+        chance = 0.9;
     }
     else
     {
         if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.600;
+            chance = 0.6;
         }
         else
         {
             if(enemy_range == RANGE_MID)
             {
-                chance = 0.200;
+                chance = 0.2;
             }
             else
             {
@@ -355,11 +355,11 @@ void () Wiz_FastFire =
     {
         self.owner.effects = self.owner.effects | EF_MUZZLEFLASH;
         makevectors(self.enemy.angles);
-        dst = self.enemy.origin - (13.000 * self.movedir);
+        dst = self.enemy.origin - (13 * self.movedir);
         vec = normalize(dst - self.origin);
         sound(self, CHAN_WEAPON, "wizard/wattack.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         launch_spike(self.origin, vec);
-        newmis.velocity = vec * 600.000;
+        newmis.velocity = vec * 600;
         newmis.owner = self.owner;
         newmis.classname = "wizspike";
         setmodel(newmis, "progs/w_spike.mdl");
@@ -453,20 +453,20 @@ void () Wiz_StartFast =
     makevectors(self.angles);
     missile = spawn();
     missile.owner = self;
-    missile.nextthink = time + 0.600;
+    missile.nextthink = time + 0.6;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * 14.000));
+    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * 14));
     missile.enemy = self.enemy;
-    missile.nextthink = time + 0.800;
+    missile.nextthink = time + 0.8;
     missile.think = Wiz_FastFire;
     missile.movedir = v_right;
     missile = spawn();
     missile.owner = self;
     missile.nextthink = time + SPAWNFLAG_SUPERSPIKE;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14.000)) + (v_right * -14.000));
+    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * -14));
     missile.enemy = self.enemy;
-    missile.nextthink = time + 0.300;
+    missile.nextthink = time + 0.3;
     missile.think = Wiz_FastFire;
     missile.movedir = VEC_ORIGIN - v_right;
 };
@@ -509,13 +509,13 @@ void () Wiz_idlesound =
     {
         self.waitmin = time + SPAWNFLAG_LASER;
         
-        if(wr > 4.500)
+        if(wr > 4.5)
         {
             sound(self, CHAN_VOICE, "wizard/widle1.wav", SPAWNFLAG_SUPERSPIKE, ATTN_IDLE);
         }
         
         
-        if(wr < 1.500)
+        if(wr < 1.5)
         {
             sound(self, CHAN_VOICE, "wizard/widle2.wav", SPAWNFLAG_SUPERSPIKE, ATTN_IDLE);
         }
@@ -530,7 +530,7 @@ void () Wiz_idlesound =
 // OP_STATE	337	9148	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand1 = [0.000, wiz_stand2]
+void () wiz_stand1 = [0, wiz_stand2]
 {
     ai_stand();
 };
@@ -540,7 +540,7 @@ void () wiz_stand1 = [0.000, wiz_stand2]
 // OP_STATE	7368	9149	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand2 = [1.000, wiz_stand3]
+void () wiz_stand2 = [1, wiz_stand3]
 {
     ai_stand();
 };
@@ -550,7 +550,7 @@ void () wiz_stand2 = [1.000, wiz_stand3]
 // OP_STATE	7369	9150	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand3 = [2.000, wiz_stand4]
+void () wiz_stand3 = [2, wiz_stand4]
 {
     ai_stand();
 };
@@ -560,7 +560,7 @@ void () wiz_stand3 = [2.000, wiz_stand4]
 // OP_STATE	370	9151	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand4 = [3.000, wiz_stand5]
+void () wiz_stand4 = [3, wiz_stand5]
 {
     ai_stand();
 };
@@ -570,7 +570,7 @@ void () wiz_stand4 = [3.000, wiz_stand5]
 // OP_STATE	6076	9152	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand5 = [4.000, wiz_stand6]
+void () wiz_stand5 = [4, wiz_stand6]
 {
     ai_stand();
 };
@@ -580,7 +580,7 @@ void () wiz_stand5 = [4.000, wiz_stand6]
 // OP_STATE	313	9153	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand6 = [5.000, wiz_stand7]
+void () wiz_stand6 = [5, wiz_stand7]
 {
     ai_stand();
 };
@@ -590,7 +590,7 @@ void () wiz_stand6 = [5.000, wiz_stand7]
 // OP_STATE	314	9154	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand7 = [6.000, wiz_stand8]
+void () wiz_stand7 = [6, wiz_stand8]
 {
     ai_stand();
 };
@@ -600,7 +600,7 @@ void () wiz_stand7 = [6.000, wiz_stand8]
 // OP_STATE	315	9147	0
 // OP_CALL0	1359	0	0
 // OP_DONE	0	0	0
-void () wiz_stand8 = [7.000, wiz_stand1]
+void () wiz_stand8 = [7, wiz_stand1]
 {
     ai_stand();
 };
@@ -612,7 +612,7 @@ void () wiz_stand8 = [7.000, wiz_stand1]
 // OP_CALL1	1351	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-void () wiz_walk1 = [0.000, wiz_walk2]
+void () wiz_walk1 = [0, wiz_walk2]
 {
     ai_walk(SECRET_NO_SHOOT);
     Wiz_idlesound();
@@ -624,7 +624,7 @@ void () wiz_walk1 = [0.000, wiz_walk2]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk2 = [1.000, wiz_walk3]
+void () wiz_walk2 = [1, wiz_walk3]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -635,7 +635,7 @@ void () wiz_walk2 = [1.000, wiz_walk3]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk3 = [2.000, wiz_walk4]
+void () wiz_walk3 = [2, wiz_walk4]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -646,7 +646,7 @@ void () wiz_walk3 = [2.000, wiz_walk4]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk4 = [3.000, wiz_walk5]
+void () wiz_walk4 = [3, wiz_walk5]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -657,7 +657,7 @@ void () wiz_walk4 = [3.000, wiz_walk5]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk5 = [4.000, wiz_walk6]
+void () wiz_walk5 = [4, wiz_walk6]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -668,7 +668,7 @@ void () wiz_walk5 = [4.000, wiz_walk6]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk6 = [5.000, wiz_walk7]
+void () wiz_walk6 = [5, wiz_walk7]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -679,7 +679,7 @@ void () wiz_walk6 = [5.000, wiz_walk7]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk7 = [6.000, wiz_walk8]
+void () wiz_walk7 = [6, wiz_walk8]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -690,7 +690,7 @@ void () wiz_walk7 = [6.000, wiz_walk8]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1351	0	0
 // OP_DONE	0	0	0
-void () wiz_walk8 = [7.000, wiz_walk1]
+void () wiz_walk8 = [7, wiz_walk1]
 {
     ai_walk(SECRET_NO_SHOOT);
 };
@@ -702,7 +702,7 @@ void () wiz_walk8 = [7.000, wiz_walk1]
 // OP_CALL1	1432	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-void () wiz_side1 = [0.000, wiz_side2]
+void () wiz_side1 = [0, wiz_side2]
 {
     ai_run(SECRET_NO_SHOOT);
     Wiz_idlesound();
@@ -714,7 +714,7 @@ void () wiz_side1 = [0.000, wiz_side2]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side2 = [1.000, wiz_side3]
+void () wiz_side2 = [1, wiz_side3]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -725,7 +725,7 @@ void () wiz_side2 = [1.000, wiz_side3]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side3 = [2.000, wiz_side4]
+void () wiz_side3 = [2, wiz_side4]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -736,7 +736,7 @@ void () wiz_side3 = [2.000, wiz_side4]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side4 = [3.000, wiz_side5]
+void () wiz_side4 = [3, wiz_side5]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -747,7 +747,7 @@ void () wiz_side4 = [3.000, wiz_side5]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side5 = [4.000, wiz_side6]
+void () wiz_side5 = [4, wiz_side6]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -758,7 +758,7 @@ void () wiz_side5 = [4.000, wiz_side6]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side6 = [5.000, wiz_side7]
+void () wiz_side6 = [5, wiz_side7]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -769,7 +769,7 @@ void () wiz_side6 = [5.000, wiz_side7]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side7 = [6.000, wiz_side8]
+void () wiz_side7 = [6, wiz_side8]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -780,7 +780,7 @@ void () wiz_side7 = [6.000, wiz_side8]
 // OP_STORE_V	6077	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_side8 = [7.000, wiz_side1]
+void () wiz_side8 = [7, wiz_side1]
 {
     ai_run(SECRET_NO_SHOOT);
 };
@@ -792,7 +792,7 @@ void () wiz_side8 = [7.000, wiz_side1]
 // OP_CALL1	1432	0	0
 // OP_CALL0	9135	0	0
 // OP_DONE	0	0	0
-void () wiz_run1 = [15.000, wiz_run2]
+void () wiz_run1 = [15, wiz_run2]
 {
     ai_run(SECRET_YES_SHOOT);
     Wiz_idlesound();
@@ -804,7 +804,7 @@ void () wiz_run1 = [15.000, wiz_run2]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run2 = [16.000, wiz_run3]
+void () wiz_run2 = [16, wiz_run3]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -815,7 +815,7 @@ void () wiz_run2 = [16.000, wiz_run3]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run3 = [17.000, wiz_run4]
+void () wiz_run3 = [17, wiz_run4]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -826,7 +826,7 @@ void () wiz_run3 = [17.000, wiz_run4]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run4 = [18.000, wiz_run5]
+void () wiz_run4 = [18, wiz_run5]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -837,7 +837,7 @@ void () wiz_run4 = [18.000, wiz_run5]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run5 = [19.000, wiz_run6]
+void () wiz_run5 = [19, wiz_run6]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -848,7 +848,7 @@ void () wiz_run5 = [19.000, wiz_run6]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run6 = [20.000, wiz_run7]
+void () wiz_run6 = [20, wiz_run7]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -859,7 +859,7 @@ void () wiz_run6 = [20.000, wiz_run7]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run7 = [21.000, wiz_run8]
+void () wiz_run7 = [21, wiz_run8]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -870,7 +870,7 @@ void () wiz_run7 = [21.000, wiz_run8]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run8 = [22.000, wiz_run9]
+void () wiz_run8 = [22, wiz_run9]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -881,7 +881,7 @@ void () wiz_run8 = [22.000, wiz_run9]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run9 = [23.000, wiz_run10]
+void () wiz_run9 = [23, wiz_run10]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -892,7 +892,7 @@ void () wiz_run9 = [23.000, wiz_run10]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run10 = [24.000, wiz_run11]
+void () wiz_run10 = [24, wiz_run11]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -903,7 +903,7 @@ void () wiz_run10 = [24.000, wiz_run11]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run11 = [25.000, wiz_run12]
+void () wiz_run11 = [25, wiz_run12]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -914,7 +914,7 @@ void () wiz_run11 = [25.000, wiz_run12]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run12 = [26.000, wiz_run13]
+void () wiz_run12 = [26, wiz_run13]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -925,7 +925,7 @@ void () wiz_run12 = [26.000, wiz_run13]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run13 = [27.000, wiz_run14]
+void () wiz_run13 = [27, wiz_run14]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -936,7 +936,7 @@ void () wiz_run13 = [27.000, wiz_run14]
 // OP_STORE_V	6078	4	0
 // OP_CALL1	1432	0	0
 // OP_DONE	0	0	0
-void () wiz_run14 = [28.000, wiz_run1]
+void () wiz_run14 = [28, wiz_run1]
 {
     ai_run(SECRET_YES_SHOOT);
 };
@@ -947,7 +947,7 @@ void () wiz_run14 = [28.000, wiz_run1]
 // OP_CALL0	758	0	0
 // OP_CALL0	9059	0	0
 // OP_DONE	0	0	0
-void () wiz_fast1 = [29.000, wiz_fast2]
+void () wiz_fast1 = [29, wiz_fast2]
 {
     ai_face();
     Wiz_StartFast();
@@ -958,7 +958,7 @@ void () wiz_fast1 = [29.000, wiz_fast2]
 // OP_STATE	304	9185	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast2 = [30.000, wiz_fast3]
+void () wiz_fast2 = [30, wiz_fast3]
 {
     ai_face();
 };
@@ -968,7 +968,7 @@ void () wiz_fast2 = [30.000, wiz_fast3]
 // OP_STATE	305	9186	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast3 = [31.000, wiz_fast4]
+void () wiz_fast3 = [31, wiz_fast4]
 {
     ai_face();
 };
@@ -978,7 +978,7 @@ void () wiz_fast3 = [31.000, wiz_fast4]
 // OP_STATE	5674	9187	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast4 = [32.000, wiz_fast5]
+void () wiz_fast4 = [32, wiz_fast5]
 {
     ai_face();
 };
@@ -988,7 +988,7 @@ void () wiz_fast4 = [32.000, wiz_fast5]
 // OP_STATE	307	9188	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast5 = [33.000, wiz_fast6]
+void () wiz_fast5 = [33, wiz_fast6]
 {
     ai_face();
 };
@@ -998,7 +998,7 @@ void () wiz_fast5 = [33.000, wiz_fast6]
 // OP_STATE	5112	9189	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast6 = [34.000, wiz_fast7]
+void () wiz_fast6 = [34, wiz_fast7]
 {
     ai_face();
 };
@@ -1008,7 +1008,7 @@ void () wiz_fast6 = [34.000, wiz_fast7]
 // OP_STATE	307	9190	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast7 = [33.000, wiz_fast8]
+void () wiz_fast7 = [33, wiz_fast8]
 {
     ai_face();
 };
@@ -1018,7 +1018,7 @@ void () wiz_fast7 = [33.000, wiz_fast8]
 // OP_STATE	5674	9191	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast8 = [32.000, wiz_fast9]
+void () wiz_fast8 = [32, wiz_fast9]
 {
     ai_face();
 };
@@ -1028,7 +1028,7 @@ void () wiz_fast8 = [32.000, wiz_fast9]
 // OP_STATE	305	9192	0
 // OP_CALL0	758	0	0
 // OP_DONE	0	0	0
-void () wiz_fast9 = [31.000, wiz_fast10]
+void () wiz_fast9 = [31, wiz_fast10]
 {
     ai_face();
 };
@@ -1041,7 +1041,7 @@ void () wiz_fast9 = [31.000, wiz_fast10]
 // OP_CALL1	731	0	0
 // OP_CALL0	8999	0	0
 // OP_DONE	0	0	0
-void () wiz_fast10 = [30.000, wiz_run1]
+void () wiz_fast10 = [30, wiz_run1]
 {
     ai_face();
     SUB_AttackFinished(SPAWNFLAG_LASER);
@@ -1052,7 +1052,7 @@ void () wiz_fast10 = [30.000, wiz_run1]
 // function begins at statement 15505, parm_start=9194
 // OP_STATE	5445	9194	0
 // OP_DONE	0	0	0
-void () wiz_pain1 = [42.000, wiz_pain2]
+void () wiz_pain1 = [42, wiz_pain2]
 {
 };
 
@@ -1060,7 +1060,7 @@ void () wiz_pain1 = [42.000, wiz_pain2]
 // function begins at statement 15507, parm_start=9195
 // OP_STATE	5447	9195	0
 // OP_DONE	0	0	0
-void () wiz_pain2 = [43.000, wiz_pain3]
+void () wiz_pain2 = [43, wiz_pain3]
 {
 };
 
@@ -1068,7 +1068,7 @@ void () wiz_pain2 = [43.000, wiz_pain3]
 // function begins at statement 15509, parm_start=9196
 // OP_STATE	5449	9196	0
 // OP_DONE	0	0	0
-void () wiz_pain3 = [44.000, wiz_pain4]
+void () wiz_pain3 = [44, wiz_pain4]
 {
 };
 
@@ -1076,7 +1076,7 @@ void () wiz_pain3 = [44.000, wiz_pain4]
 // function begins at statement 15511, parm_start=9197
 // OP_STATE	1390	8947	0
 // OP_DONE	0	0	0
-void () wiz_pain4 = [45.000, wiz_run1]
+void () wiz_pain4 = [45, wiz_run1]
 {
 };
 
@@ -1111,11 +1111,11 @@ void () wiz_pain4 = [45.000, wiz_run1]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () wiz_death1 = [46.000, wiz_death2]
+void () wiz_death1 = [46, wiz_death2]
 {
-    self.velocity_x = -200.000 + (400.000 * random());
-    self.velocity_y = -200.000 + (400.000 * random());
-    self.velocity_z = 100.000 + (100.000 * random());
+    self.velocity_x = -200 + (400 * random());
+    self.velocity_y = -200 + (400 * random());
+    self.velocity_z = 100 + (100 * random());
     self.flags = self.flags - (self.flags & FL_ONGROUND);
     sound(self, CHAN_VOICE, "wizard/wdeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
 };
@@ -1124,7 +1124,7 @@ void () wiz_death1 = [46.000, wiz_death2]
 // function begins at statement 15542, parm_start=9214
 // OP_STATE	5454	9214	0
 // OP_DONE	0	0	0
-void () wiz_death2 = [47.000, wiz_death3]
+void () wiz_death2 = [47, wiz_death3]
 {
 };
 
@@ -1134,7 +1134,7 @@ void () wiz_death2 = [47.000, wiz_death3]
 // OP_ADDRESS	28	104	9216
 // OP_STOREP_F	237	9216	0
 // OP_DONE	0	0	0
-void () wiz_death3 = [48.000, wiz_death4]
+void () wiz_death3 = [48, wiz_death4]
 {
     self.solid = SOLID_NOT;
 };
@@ -1143,7 +1143,7 @@ void () wiz_death3 = [48.000, wiz_death4]
 // function begins at statement 15548, parm_start=9217
 // OP_STATE	5458	9217	0
 // OP_DONE	0	0	0
-void () wiz_death4 = [49.000, wiz_death5]
+void () wiz_death4 = [49, wiz_death5]
 {
 };
 
@@ -1151,7 +1151,7 @@ void () wiz_death4 = [49.000, wiz_death5]
 // function begins at statement 15550, parm_start=9218
 // OP_STATE	2227	9218	0
 // OP_DONE	0	0	0
-void () wiz_death5 = [50.000, wiz_death6]
+void () wiz_death5 = [50, wiz_death6]
 {
 };
 
@@ -1159,7 +1159,7 @@ void () wiz_death5 = [50.000, wiz_death6]
 // function begins at statement 15552, parm_start=9219
 // OP_STATE	5351	9219	0
 // OP_DONE	0	0	0
-void () wiz_death6 = [51.000, wiz_death7]
+void () wiz_death6 = [51, wiz_death7]
 {
 };
 
@@ -1167,7 +1167,7 @@ void () wiz_death6 = [51.000, wiz_death7]
 // function begins at statement 15554, parm_start=9220
 // OP_STATE	5353	9220	0
 // OP_DONE	0	0	0
-void () wiz_death7 = [52.000, wiz_death8]
+void () wiz_death7 = [52, wiz_death8]
 {
 };
 
@@ -1175,7 +1175,7 @@ void () wiz_death7 = [52.000, wiz_death8]
 // function begins at statement 15556, parm_start=9221
 // OP_STATE	5355	9220	0
 // OP_DONE	0	0	0
-void () wiz_death8 = [53.000, wiz_death8]
+void () wiz_death8 = [53, wiz_death8]
 {
 };
 
@@ -1212,7 +1212,7 @@ void () wiz_death8 = [53.000, wiz_death8]
 void () wiz_die = 
 {
     
-    if(self.health < -40.000)
+    if(self.health < -40)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
         ThrowHead("progs/h_wizard.mdl", self.health);
@@ -1244,7 +1244,7 @@ void (entity attacker, float damage) Wiz_Pain =
 {
     sound(self, CHAN_VOICE, "wizard/wpain.wav", SPAWNFLAG_SUPERSPIKE, ATTN_NORM);
     
-    if((random() * 70.000) > damage)
+    if((random() * 70) > damage)
     {
         return;
     }
@@ -1337,7 +1337,7 @@ void () monster_wizard =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/wizard.mdl");
     setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
-    self.health = 80.000;
+    self.health = 80;
     self.th_stand = wiz_stand1;
     self.th_walk = wiz_walk1;
     self.th_run = wiz_run1;

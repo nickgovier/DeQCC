@@ -652,7 +652,7 @@ void () worldspawn =
     lightstyle(TE_LIGHTNING3, "aaaaaaaazzzzzzzz");
     lightstyle(TE_LAVASPLASH, "mmamammmmammamamaaamammma");
     lightstyle(TE_TELEPORT, "abcdefghijklmnopqrrqponmlkjihgfedcba");
-    lightstyle(63.000, "a");
+    lightstyle(63, "a");
 };
 
 // StartFrame

@@ -168,19 +168,30 @@ namespace DeQcc
         {
             get
             {
+                string ret;
                 switch (Type)
                 {
                     case Types.ev_string:
                         return DeQCC.CleanseString(Strings.GetString((int)IntVal));
                     case Types.ev_void:
                         return "void";
-                    case Types.ev_float:
-                        return FloatVal.ToString("F3");
+                    
                     case Types.ev_vector:
                         return "'" + FloatVal.ToString("F3") + " " + (globalList[_id + 1].FloatVal).ToString("F3") + " " + (globalList[_id + 2].FloatVal).ToString("F3") + "'";
                     default:
                         return "/* ERROR ImmediateValue for " + Type + " */";
+                    case Types.ev_float:
+                        ret = FloatVal.ToString("F3");
+                        break;
                 }
+
+                // if it has a decimal and ends in zero
+                while(ret.Contains(".") && ret.EndsWith("0"))
+                {
+                    ret = ret.Substring(0, ret.Length - 1);     // strip the zero
+                }
+                if(ret.EndsWith(".")) { ret = ret.Substring(0, ret.Length - 1); }   // if it ends in a decimal, strip it
+                return ret;
             }
         }
 

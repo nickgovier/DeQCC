@@ -114,7 +114,7 @@ void () PlaceItem =
 // OP_DONE	0	0	0
 void () StartItem = 
 {
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     self.think = PlaceItem;
 };
 
@@ -177,16 +177,16 @@ float (entity e, float healamount, float ignore) T_Heal =
     }
     
     
-    if(e.health > 250.000)
+    if(e.health > 250)
     {
-        e.health = 250.000;
+        e.health = 250;
     }
     
     return AS_STRAIGHT;
 };
 
-float H_ROTTEN = 1.000;
-float H_MEGA = 2.000;
+float H_ROTTEN = 1;
+float H_MEGA = 2;
 .float healamount;
 .float healtype;
 void () health_touch;
@@ -257,7 +257,7 @@ void () item_health =
         precache_sound("items/r_item1.wav");
         setmodel(self, "maps/b_bh10.bsp");
         self.noise = "items/r_item1.wav";
-        self.healamount = 15.000;
+        self.healamount = 15;
         self.healtype = MSG_BROADCAST;
     }
     else
@@ -268,7 +268,7 @@ void () item_health =
             precache_sound("items/r_item2.wav");
             setmodel(self, "maps/b_bh100.bsp");
             self.noise = "items/r_item2.wav";
-            self.healamount = 100.000;
+            self.healamount = 100;
             self.healtype = H_MEGA;
         }
         else
@@ -277,7 +277,7 @@ void () item_health =
             precache_sound("items/health1.wav");
             setmodel(self, "maps/b_bh25.bsp");
             self.noise = "items/health1.wav";
-            self.healamount = 25.000;
+            self.healamount = 25;
             self.healtype = H_ROTTEN;
         }
         
@@ -383,7 +383,7 @@ void () health_touch =
     if(self.healtype == H_MEGA)
     {
         
-        if(other.health >= 250.000)
+        if(other.health >= 250)
         {
             return;
         }
@@ -428,7 +428,7 @@ void () health_touch =
             
             if(deathmatch)
             {
-                self.nextthink = time + 20.000;
+                self.nextthink = time + 20;
             }
             
             self.think = SUB_regen;
@@ -485,7 +485,7 @@ void () item_megahealth_rot =
     
     if(deathmatch == H_ROTTEN)
     {
-        self.nextthink = time + 20.000;
+        self.nextthink = time + 20;
         self.think = SUB_regen;
     }
     
@@ -585,24 +585,24 @@ void () armor_touch =
     
     if(self.classname == "item_armor1")
     {
-        type = 0.300;
-        value = 100.000;
+        type = 0.3;
+        value = 100;
         bit = IT_ARMOR1;
     }
     
     
     if(self.classname == "item_armor2")
     {
-        type = 0.600;
-        value = 150.000;
+        type = 0.6;
+        value = 150;
         bit = IT_ARMOR2;
     }
     
     
     if(self.classname == "item_armorInv")
     {
-        type = 0.800;
-        value = 200.000;
+        type = 0.8;
+        value = 200;
         bit = IT_ARMOR3;
     }
     
@@ -620,7 +620,7 @@ void () armor_touch =
     
     if(deathmatch == H_ROTTEN)
     {
-        self.nextthink = time + 20.000;
+        self.nextthink = time + 20;
     }
     
     self.think = SUB_regen;
@@ -738,27 +738,27 @@ void () item_armorInv =
 void () bound_other_ammo = 
 {
     
-    if(other.ammo_shells > 100.000)
+    if(other.ammo_shells > 100)
     {
-        other.ammo_shells = 100.000;
+        other.ammo_shells = 100;
     }
     
     
-    if(other.ammo_nails > 200.000)
+    if(other.ammo_nails > 200)
     {
-        other.ammo_nails = 200.000;
+        other.ammo_nails = 200;
     }
     
     
-    if(other.ammo_rockets > 100.000)
+    if(other.ammo_rockets > 100)
     {
-        other.ammo_rockets = 100.000;
+        other.ammo_rockets = 100;
     }
     
     
-    if(other.ammo_cells > 100.000)
+    if(other.ammo_cells > 100)
     {
-        other.ammo_cells = 100.000;
+        other.ammo_cells = 100;
     }
     
 };
@@ -1132,7 +1132,7 @@ void () weapon_touch =
                             
                             hadammo = other.ammo_rockets;
                             new = IT_LIGHTNING;
-                            other.ammo_cells = other.ammo_cells + 15.000;
+                            other.ammo_cells = other.ammo_cells + 15;
                         }
                         else
                         {
@@ -1504,7 +1504,7 @@ void () ammo_touch =
     if(self.weapon == H_ROTTEN)
     {
         
-        if(other.ammo_shells >= 100.000)
+        if(other.ammo_shells >= 100)
         {
             return;
         }
@@ -1516,7 +1516,7 @@ void () ammo_touch =
     if(self.weapon == H_MEGA)
     {
         
-        if(other.ammo_nails >= 200.000)
+        if(other.ammo_nails >= 200)
         {
             return;
         }
@@ -1528,7 +1528,7 @@ void () ammo_touch =
     if(self.weapon == AS_MELEE)
     {
         
-        if(other.ammo_rockets >= 100.000)
+        if(other.ammo_rockets >= 100)
         {
             return;
         }
@@ -1540,7 +1540,7 @@ void () ammo_touch =
     if(self.weapon == AS_MISSILE)
     {
         
-        if(other.ammo_cells >= 100.000)
+        if(other.ammo_cells >= 100)
         {
             return;
         }
@@ -1581,7 +1581,7 @@ void () ammo_touch =
     SUB_UseTargets();
 };
 
-float WEAPON_BIG2 = 1.000;
+float WEAPON_BIG2 = 1;
 // item_shells
 // function begins at statement 2508, parm_start=2211
 // OP_ADDRESS	28	146	2211
@@ -1621,13 +1621,13 @@ void () item_shells =
     {
         precache_model("maps/b_shell1.bsp");
         setmodel(self, "maps/b_shell1.bsp");
-        self.aflag = 40.000;
+        self.aflag = 40;
     }
     else
     {
         precache_model("maps/b_shell0.bsp");
         setmodel(self, "maps/b_shell0.bsp");
-        self.aflag = 20.000;
+        self.aflag = 20;
     }
     
     self.weapon = WEAPON_BIG2;
@@ -1675,13 +1675,13 @@ void () item_spikes =
     {
         precache_model("maps/b_nail1.bsp");
         setmodel(self, "maps/b_nail1.bsp");
-        self.aflag = 50.000;
+        self.aflag = 50;
     }
     else
     {
         precache_model("maps/b_nail0.bsp");
         setmodel(self, "maps/b_nail0.bsp");
-        self.aflag = 25.000;
+        self.aflag = 25;
     }
     
     self.weapon = H_MEGA;
@@ -1783,7 +1783,7 @@ void () item_cells =
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = 12.000;
+        self.aflag = 12;
     }
     else
     {
@@ -1798,10 +1798,10 @@ void () item_cells =
     StartItem();
 };
 
-float WEAPON_SHOTGUN = 1.000;
-float WEAPON_ROCKET = 2.000;
-float WEAPON_SPIKES = 4.000;
-float WEAPON_BIG = 8.000;
+float WEAPON_SHOTGUN = 1;
+float WEAPON_ROCKET = 2;
+float WEAPON_SPIKES = 4;
+float WEAPON_BIG = 8;
 // item_weapon
 // function begins at statement 2628, parm_start=2261
 // OP_ADDRESS	28	146	2261
@@ -1897,13 +1897,13 @@ void () item_weapon =
         {
             precache_model("maps/b_shell1.bsp");
             setmodel(self, "maps/b_shell1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
             precache_model("maps/b_shell0.bsp");
             setmodel(self, "maps/b_shell0.bsp");
-            self.aflag = 20.000;
+            self.aflag = 20;
         }
         
         self.weapon = WEAPON_SHOTGUN;
@@ -1917,13 +1917,13 @@ void () item_weapon =
         {
             precache_model("maps/b_nail1.bsp");
             setmodel(self, "maps/b_nail1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
             precache_model("maps/b_nail0.bsp");
             setmodel(self, "maps/b_nail0.bsp");
-            self.aflag = 20.000;
+            self.aflag = 20;
         }
         
         self.weapon = WEAPON_ROCKET;
@@ -2306,7 +2306,7 @@ void () sigil_touch =
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    serverflags = serverflags | (self.spawnflags & 15.000);
+    serverflags = serverflags | (self.spawnflags & 15);
     self.classname = "";
     activator = other;
     SUB_UseTargets();
@@ -2525,11 +2525,11 @@ void () powerup_touch =
         self.mdl = self.model;
         if((self.classname == "item_artifact_invulnerability") || (self.classname == "item_artifact_invisibility"))
         {
-            self.nextthink = time + (60.000 * TE_LIGHTNING1);
+            self.nextthink = time + (60 * TE_LIGHTNING1);
         }
         else
         {
-            self.nextthink = time + 60.000;
+            self.nextthink = time + 60;
         }
         
         self.think = SUB_regen;
@@ -3224,16 +3224,16 @@ void () DropBackpack =
     item.ammo_nails = self.ammo_nails;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
-    item.velocity_z = 300.000;
-    item.velocity_x = -100.000 + (random() * 200.000);
-    item.velocity_y = -100.000 + (random() * 200.000);
+    item.velocity_z = 300;
+    item.velocity_x = -100 + (random() * 200);
+    item.velocity_y = -100 + (random() * 200);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;
     setmodel(item, "progs/backpack.mdl");
     setsize(item, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     item.touch = BackpackTouch;
-    item.nextthink = time + 120.000;
+    item.nextthink = time + 120;
     item.think = SUB_Remove;
 };
 

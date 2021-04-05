@@ -39,7 +39,7 @@ void () bubble_bob;
 // OP_ADD_F	4882	2256	4883
 // OP_STOREP_F	4883	4881	0
 // OP_DONE	0	0	0
-void () player_stand1 = [17.000, player_stand1]
+void () player_stand1 = [17, player_stand1]
 {
     self.weaponframe = MSG_BROADCAST;
     
@@ -53,12 +53,12 @@ void () player_stand1 = [17.000, player_stand1]
     if(self.weapon == IT_AXE)
     {
         
-        if(self.walkframe >= 12.000)
+        if(self.walkframe >= 12)
         {
             self.walkframe = MSG_BROADCAST;
         }
         
-        self.frame = 17.000 + self.walkframe;
+        self.frame = 17 + self.walkframe;
     }
     else
     {
@@ -68,7 +68,7 @@ void () player_stand1 = [17.000, player_stand1]
             self.walkframe = MSG_BROADCAST;
         }
         
-        self.frame = 12.000 + self.walkframe;
+        self.frame = 12 + self.walkframe;
     }
     
     self.walkframe = self.walkframe + WEAPON_SHOTGUN;
@@ -117,7 +117,7 @@ void () player_stand1 = [17.000, player_stand1]
 // OP_ADD_F	4907	2256	4908
 // OP_STOREP_F	4908	4906	0
 // OP_DONE	0	0	0
-void () player_run = [6.000, player_run]
+void () player_run = [6, player_run]
 {
     self.weaponframe = MSG_BROADCAST;
     
@@ -162,7 +162,7 @@ void () player_run = [6.000, player_run]
 // OP_BITOR	4913	334	4914
 // OP_STOREP_F	4914	4912	0
 // OP_DONE	0	0	0
-void () player_shot1 = [113.000, player_shot2]
+void () player_shot1 = [113, player_shot2]
 {
     self.weaponframe = WEAPON_SHOTGUN;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -174,7 +174,7 @@ void () player_shot1 = [113.000, player_shot2]
 // OP_ADDRESS	28	156	4917
 // OP_STOREP_F	2257	4917	0
 // OP_DONE	0	0	0
-void () player_shot2 = [114.000, player_shot3]
+void () player_shot2 = [114, player_shot3]
 {
     self.weaponframe = WEAPON_ROCKET;
 };
@@ -185,7 +185,7 @@ void () player_shot2 = [114.000, player_shot3]
 // OP_ADDRESS	28	156	4920
 // OP_STOREP_F	370	4920	0
 // OP_DONE	0	0	0
-void () player_shot3 = [115.000, player_shot4]
+void () player_shot3 = [115, player_shot4]
 {
     self.weaponframe = AS_MELEE;
 };
@@ -196,7 +196,7 @@ void () player_shot3 = [115.000, player_shot4]
 // OP_ADDRESS	28	156	4923
 // OP_STOREP_F	2258	4923	0
 // OP_DONE	0	0	0
-void () player_shot4 = [116.000, player_shot5]
+void () player_shot4 = [116, player_shot5]
 {
     self.weaponframe = WEAPON_SPIKES;
 };
@@ -207,7 +207,7 @@ void () player_shot4 = [116.000, player_shot5]
 // OP_ADDRESS	28	156	4926
 // OP_STOREP_F	313	4926	0
 // OP_DONE	0	0	0
-void () player_shot5 = [117.000, player_shot6]
+void () player_shot5 = [117, player_shot6]
 {
     self.weaponframe = TE_LIGHTNING1;
 };
@@ -218,7 +218,7 @@ void () player_shot5 = [117.000, player_shot6]
 // OP_ADDRESS	28	156	4928
 // OP_STOREP_F	314	4928	0
 // OP_DONE	0	0	0
-void () player_shot6 = [118.000, player_run]
+void () player_shot6 = [118, player_run]
 {
     self.weaponframe = TE_LIGHTNING2;
 };
@@ -229,7 +229,7 @@ void () player_shot6 = [118.000, player_run]
 // OP_ADDRESS	28	156	4931
 // OP_STOREP_F	2256	4931	0
 // OP_DONE	0	0	0
-void () player_axe1 = [119.000, player_axe2]
+void () player_axe1 = [119, player_axe2]
 {
     self.weaponframe = WEAPON_SHOTGUN;
 };
@@ -240,7 +240,7 @@ void () player_axe1 = [119.000, player_axe2]
 // OP_ADDRESS	28	156	4933
 // OP_STOREP_F	2257	4933	0
 // OP_DONE	0	0	0
-void () player_axe2 = [120.000, player_axe3]
+void () player_axe2 = [120, player_axe3]
 {
     self.weaponframe = WEAPON_ROCKET;
 };
@@ -252,7 +252,7 @@ void () player_axe2 = [120.000, player_axe3]
 // OP_STOREP_F	370	4936	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-void () player_axe3 = [121.000, player_axe4]
+void () player_axe3 = [121, player_axe4]
 {
     self.weaponframe = AS_MELEE;
     W_FireAxe();
@@ -264,7 +264,7 @@ void () player_axe3 = [121.000, player_axe4]
 // OP_ADDRESS	28	156	4938
 // OP_STOREP_F	2258	4938	0
 // OP_DONE	0	0	0
-void () player_axe4 = [122.000, player_run]
+void () player_axe4 = [122, player_run]
 {
     self.weaponframe = WEAPON_SPIKES;
 };
@@ -275,7 +275,7 @@ void () player_axe4 = [122.000, player_run]
 // OP_ADDRESS	28	156	4941
 // OP_STOREP_F	313	4941	0
 // OP_DONE	0	0	0
-void () player_axeb1 = [125.000, player_axeb2]
+void () player_axeb1 = [125, player_axeb2]
 {
     self.weaponframe = TE_LIGHTNING1;
 };
@@ -286,7 +286,7 @@ void () player_axeb1 = [125.000, player_axeb2]
 // OP_ADDRESS	28	156	4944
 // OP_STOREP_F	314	4944	0
 // OP_DONE	0	0	0
-void () player_axeb2 = [126.000, player_axeb3]
+void () player_axeb2 = [126, player_axeb3]
 {
     self.weaponframe = TE_LIGHTNING2;
 };
@@ -298,7 +298,7 @@ void () player_axeb2 = [126.000, player_axeb3]
 // OP_STOREP_F	315	4947	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-void () player_axeb3 = [127.000, player_axeb4]
+void () player_axeb3 = [127, player_axeb4]
 {
     self.weaponframe = TE_WIZSPIKE;
     W_FireAxe();
@@ -310,7 +310,7 @@ void () player_axeb3 = [127.000, player_axeb4]
 // OP_ADDRESS	28	156	4948
 // OP_STOREP_F	2259	4948	0
 // OP_DONE	0	0	0
-void () player_axeb4 = [128.000, player_run]
+void () player_axeb4 = [128, player_run]
 {
     self.weaponframe = WEAPON_BIG;
 };
@@ -321,7 +321,7 @@ void () player_axeb4 = [128.000, player_run]
 // OP_ADDRESS	28	156	4951
 // OP_STOREP_F	2256	4951	0
 // OP_DONE	0	0	0
-void () player_axec1 = [131.000, player_axec2]
+void () player_axec1 = [131, player_axec2]
 {
     self.weaponframe = WEAPON_SHOTGUN;
 };
@@ -332,7 +332,7 @@ void () player_axec1 = [131.000, player_axec2]
 // OP_ADDRESS	28	156	4954
 // OP_STOREP_F	2257	4954	0
 // OP_DONE	0	0	0
-void () player_axec2 = [132.000, player_axec3]
+void () player_axec2 = [132, player_axec3]
 {
     self.weaponframe = WEAPON_ROCKET;
 };
@@ -344,7 +344,7 @@ void () player_axec2 = [132.000, player_axec3]
 // OP_STOREP_F	370	4957	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-void () player_axec3 = [133.000, player_axec4]
+void () player_axec3 = [133, player_axec4]
 {
     self.weaponframe = AS_MELEE;
     W_FireAxe();
@@ -356,7 +356,7 @@ void () player_axec3 = [133.000, player_axec4]
 // OP_ADDRESS	28	156	4959
 // OP_STOREP_F	2258	4959	0
 // OP_DONE	0	0	0
-void () player_axec4 = [134.000, player_run]
+void () player_axec4 = [134, player_run]
 {
     self.weaponframe = WEAPON_SPIKES;
 };
@@ -367,7 +367,7 @@ void () player_axec4 = [134.000, player_run]
 // OP_ADDRESS	28	156	4962
 // OP_STOREP_F	313	4962	0
 // OP_DONE	0	0	0
-void () player_axed1 = [137.000, player_axed2]
+void () player_axed1 = [137, player_axed2]
 {
     self.weaponframe = TE_LIGHTNING1;
 };
@@ -378,7 +378,7 @@ void () player_axed1 = [137.000, player_axed2]
 // OP_ADDRESS	28	156	4965
 // OP_STOREP_F	314	4965	0
 // OP_DONE	0	0	0
-void () player_axed2 = [138.000, player_axed3]
+void () player_axed2 = [138, player_axed3]
 {
     self.weaponframe = TE_LIGHTNING2;
 };
@@ -390,7 +390,7 @@ void () player_axed2 = [138.000, player_axed3]
 // OP_STOREP_F	315	4968	0
 // OP_CALL0	2631	0	0
 // OP_DONE	0	0	0
-void () player_axed3 = [139.000, player_axed4]
+void () player_axed3 = [139, player_axed4]
 {
     self.weaponframe = TE_WIZSPIKE;
     W_FireAxe();
@@ -402,7 +402,7 @@ void () player_axed3 = [139.000, player_axed4]
 // OP_ADDRESS	28	156	4970
 // OP_STOREP_F	2259	4970	0
 // OP_DONE	0	0	0
-void () player_axed4 = [140.000, player_run]
+void () player_axed4 = [140, player_run]
 {
     self.weaponframe = WEAPON_BIG;
 };
@@ -435,7 +435,7 @@ void () player_axed4 = [140.000, player_run]
 // OP_ADD_F	31	836	4985
 // OP_STOREP_F	4985	4984	0
 // OP_DONE	0	0	0
-void () player_nail1 = [103.000, player_nail2]
+void () player_nail1 = [103, player_nail2]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -454,7 +454,7 @@ void () player_nail1 = [103.000, player_nail2]
     
     SuperDamageSound();
     W_FireSpikes(WEAPON_SPIKES);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
 };
 
 // player_nail2
@@ -485,7 +485,7 @@ void () player_nail1 = [103.000, player_nail2]
 // OP_ADD_F	31	836	4999
 // OP_STOREP_F	4999	4998	0
 // OP_DONE	0	0	0
-void () player_nail2 = [104.000, player_nail1]
+void () player_nail2 = [104, player_nail1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -504,7 +504,7 @@ void () player_nail2 = [104.000, player_nail1]
     
     SuperDamageSound();
     W_FireSpikes(CONTENT_SLIME);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
 };
 
 // player_light1
@@ -534,7 +534,7 @@ void () player_nail2 = [104.000, player_nail1]
 // OP_ADD_F	31	836	5014
 // OP_STOREP_F	5014	5013	0
 // OP_DONE	0	0	0
-void () player_light1 = [105.000, player_light2]
+void () player_light1 = [105, player_light2]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -553,7 +553,7 @@ void () player_light1 = [105.000, player_light2]
     
     SuperDamageSound();
     W_FireLightning();
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
 };
 
 // player_light2
@@ -583,7 +583,7 @@ void () player_light1 = [105.000, player_light2]
 // OP_ADD_F	31	836	5028
 // OP_STOREP_F	5028	5027	0
 // OP_DONE	0	0	0
-void () player_light2 = [106.000, player_light1]
+void () player_light2 = [106, player_light1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -602,7 +602,7 @@ void () player_light2 = [106.000, player_light1]
     
     SuperDamageSound();
     W_FireLightning();
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
 };
 
 // player_rocket1
@@ -615,7 +615,7 @@ void () player_light2 = [106.000, player_light1]
 // OP_BITOR	5033	334	5034
 // OP_STOREP_F	5034	5032	0
 // OP_DONE	0	0	0
-void () player_rocket1 = [107.000, player_rocket2]
+void () player_rocket1 = [107, player_rocket2]
 {
     self.weaponframe = WEAPON_SHOTGUN;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -627,7 +627,7 @@ void () player_rocket1 = [107.000, player_rocket2]
 // OP_ADDRESS	28	156	5037
 // OP_STOREP_F	2257	5037	0
 // OP_DONE	0	0	0
-void () player_rocket2 = [108.000, player_rocket3]
+void () player_rocket2 = [108, player_rocket3]
 {
     self.weaponframe = WEAPON_ROCKET;
 };
@@ -638,7 +638,7 @@ void () player_rocket2 = [108.000, player_rocket3]
 // OP_ADDRESS	28	156	5040
 // OP_STOREP_F	370	5040	0
 // OP_DONE	0	0	0
-void () player_rocket3 = [109.000, player_rocket4]
+void () player_rocket3 = [109, player_rocket4]
 {
     self.weaponframe = AS_MELEE;
 };
@@ -649,7 +649,7 @@ void () player_rocket3 = [109.000, player_rocket4]
 // OP_ADDRESS	28	156	5043
 // OP_STOREP_F	2258	5043	0
 // OP_DONE	0	0	0
-void () player_rocket4 = [110.000, player_rocket5]
+void () player_rocket4 = [110, player_rocket5]
 {
     self.weaponframe = WEAPON_SPIKES;
 };
@@ -660,7 +660,7 @@ void () player_rocket4 = [110.000, player_rocket5]
 // OP_ADDRESS	28	156	5046
 // OP_STOREP_F	313	5046	0
 // OP_DONE	0	0	0
-void () player_rocket5 = [111.000, player_rocket6]
+void () player_rocket5 = [111, player_rocket6]
 {
     self.weaponframe = TE_LIGHTNING1;
 };
@@ -671,7 +671,7 @@ void () player_rocket5 = [111.000, player_rocket6]
 // OP_ADDRESS	28	156	5048
 // OP_STOREP_F	314	5048	0
 // OP_DONE	0	0	0
-void () player_rocket6 = [112.000, player_run]
+void () player_rocket6 = [112, player_run]
 {
     self.weaponframe = TE_LIGHTNING2;
 };
@@ -848,7 +848,7 @@ void () PainSound =
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == AS_MELEE))
     {
         DeathBubbles(WEAPON_SHOTGUN);
-        if(random() > 0.500)
+        if(random() > 0.5)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -869,7 +869,7 @@ void () PainSound =
             DeathBubbles(WEAPON_SHOTGUN);
         }
         
-        if(random() > 0.500)
+        if(random() > 0.5)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -884,7 +884,7 @@ void () PainSound =
     
     if(self.watertype == CONTENT_LAVA)
     {
-        if(random() > 0.500)
+        if(random() > 0.5)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", WEAPON_SHOTGUN, ATTN_NORM);
         }
@@ -903,7 +903,7 @@ void () PainSound =
         return;
     }
     
-    self.pain_finished = time + 0.500;
+    self.pain_finished = time + 0.5;
     
     if(self.axhitme == WEAPON_SHOTGUN)
     {
@@ -966,7 +966,7 @@ void () PainSound =
 // OP_ADDRESS	28	156	5095
 // OP_STOREP_F	337	5095	0
 // OP_DONE	0	0	0
-void () player_pain1 = [35.000, player_pain2]
+void () player_pain1 = [35, player_pain2]
 {
     PainSound();
     self.weaponframe = MSG_BROADCAST;
@@ -976,7 +976,7 @@ void () player_pain1 = [35.000, player_pain2]
 // function begins at statement 7825, parm_start=5096
 // OP_STATE	5096	5097	0
 // OP_DONE	0	0	0
-void () player_pain2 = [36.000, player_pain3]
+void () player_pain2 = [36, player_pain3]
 {
 };
 
@@ -984,7 +984,7 @@ void () player_pain2 = [36.000, player_pain3]
 // function begins at statement 7827, parm_start=5098
 // OP_STATE	5098	5099	0
 // OP_DONE	0	0	0
-void () player_pain3 = [37.000, player_pain4]
+void () player_pain3 = [37, player_pain4]
 {
 };
 
@@ -992,7 +992,7 @@ void () player_pain3 = [37.000, player_pain4]
 // function begins at statement 7829, parm_start=5100
 // OP_STATE	5100	5101	0
 // OP_DONE	0	0	0
-void () player_pain4 = [38.000, player_pain5]
+void () player_pain4 = [38, player_pain5]
 {
 };
 
@@ -1000,7 +1000,7 @@ void () player_pain4 = [38.000, player_pain5]
 // function begins at statement 7831, parm_start=5102
 // OP_STATE	5102	5103	0
 // OP_DONE	0	0	0
-void () player_pain5 = [39.000, player_pain6]
+void () player_pain5 = [39, player_pain6]
 {
 };
 
@@ -1008,7 +1008,7 @@ void () player_pain5 = [39.000, player_pain6]
 // function begins at statement 7833, parm_start=5104
 // OP_STATE	1733	2612	0
 // OP_DONE	0	0	0
-void () player_pain6 = [40.000, player_run]
+void () player_pain6 = [40, player_run]
 {
 };
 
@@ -1019,7 +1019,7 @@ void () player_pain6 = [40.000, player_run]
 // OP_ADDRESS	28	156	5107
 // OP_STOREP_F	337	5107	0
 // OP_DONE	0	0	0
-void () player_axpain1 = [29.000, player_axpain2]
+void () player_axpain1 = [29, player_axpain2]
 {
     PainSound();
     self.weaponframe = MSG_BROADCAST;
@@ -1029,7 +1029,7 @@ void () player_axpain1 = [29.000, player_axpain2]
 // function begins at statement 7840, parm_start=5108
 // OP_STATE	304	5108	0
 // OP_DONE	0	0	0
-void () player_axpain2 = [30.000, player_axpain3]
+void () player_axpain2 = [30, player_axpain3]
 {
 };
 
@@ -1037,7 +1037,7 @@ void () player_axpain2 = [30.000, player_axpain3]
 // function begins at statement 7842, parm_start=5109
 // OP_STATE	305	5109	0
 // OP_DONE	0	0	0
-void () player_axpain3 = [31.000, player_axpain4]
+void () player_axpain3 = [31, player_axpain4]
 {
 };
 
@@ -1045,7 +1045,7 @@ void () player_axpain3 = [31.000, player_axpain4]
 // function begins at statement 7844, parm_start=5110
 // OP_STATE	306	5110	0
 // OP_DONE	0	0	0
-void () player_axpain4 = [32.000, player_axpain5]
+void () player_axpain4 = [32, player_axpain5]
 {
 };
 
@@ -1053,7 +1053,7 @@ void () player_axpain4 = [32.000, player_axpain5]
 // function begins at statement 7846, parm_start=5111
 // OP_STATE	307	5111	0
 // OP_DONE	0	0	0
-void () player_axpain5 = [33.000, player_axpain6]
+void () player_axpain5 = [33, player_axpain6]
 {
 };
 
@@ -1061,7 +1061,7 @@ void () player_axpain5 = [33.000, player_axpain6]
 // function begins at statement 7848, parm_start=5112
 // OP_STATE	5112	2612	0
 // OP_DONE	0	0	0
-void () player_axpain6 = [34.000, player_run]
+void () player_axpain6 = [34, player_run]
 {
 };
 
@@ -1189,13 +1189,13 @@ void () DeathBubblesSpawn =
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
     bubble.velocity = '0.000 0.000 15.000';
-    bubble.nextthink = time + 0.500;
+    bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.classname = "bubble";
     bubble.frame = MSG_BROADCAST;
     bubble.cnt = MSG_BROADCAST;
     setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
-    self.nextthink = time + 0.010;
+    self.nextthink = time + 0.01;
     self.think = DeathBubblesSpawn;
     self.air_finished = self.air_finished + WEAPON_SHOTGUN;
     
@@ -1237,7 +1237,7 @@ void (float num_bubbles) DeathBubbles =
     setorigin(bubble_spawner, self.origin);
     bubble_spawner.movetype = MOVETYPE_NONE;
     bubble_spawner.solid = SOLID_NOT;
-    bubble_spawner.nextthink = time + 0.010;
+    bubble_spawner.nextthink = time + 0.01;
     bubble_spawner.think = DeathBubblesSpawn;
     bubble_spawner.air_finished = MSG_BROADCAST;
     bubble_spawner.owner = self;
@@ -1299,7 +1299,7 @@ void () DeathSound =
     
     if(self.waterlevel == AS_MELEE)
     {
-        DeathBubbles(20.000);
+        DeathBubbles(20);
         sound(self, CHAN_VOICE, "player/h2odeath.wav", WEAPON_SHOTGUN, ATTN_NONE);
         return;
     }
@@ -1381,16 +1381,16 @@ void () PlayerDead =
 vector (float dm) VelocityForDamage = 
 {
     local vector v;
-    v_x = 100.000 * crandom();
-    v_y = 100.000 * crandom();
-    v_z = 200.000 + (100.000 * random());
-    if(dm > -50.000)
+    v_x = 100 * crandom();
+    v_y = 100 * crandom();
+    v_z = 200 + (100 * random());
+    if(dm > -50)
     {
-        v = v * 0.700;
+        v = v * 0.7;
     }
     else
     {
-        if(dm > -200.000)
+        if(dm > -200)
         {
             v = v * WEAPON_ROCKET;
         }
@@ -1463,9 +1463,9 @@ void (string gibname, float dm) ThrowGib =
     new.velocity = VelocityForDamage(dm);
     new.movetype = MOVETYPE_BOUNCE;
     new.solid = SOLID_NOT;
-    new.avelocity_x = random() * 600.000;
-    new.avelocity_y = random() * 600.000;
-    new.avelocity_z = random() * 600.000;
+    new.avelocity_x = random() * 600;
+    new.avelocity_y = random() * 600;
+    new.avelocity_z = random() * 600;
     new.think = SUB_Remove;
     new.ltime = time;
     new.nextthink = (time + TE_LAVASPLASH) + (random() * TE_LAVASPLASH);
@@ -1524,7 +1524,7 @@ void (string gibname, float dm) ThrowHead =
     self.view_ofs = '0.000 0.000 8.000';
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     self.velocity = VelocityForDamage(dm);
-    self.origin_z = self.origin_z - 24.000;
+    self.origin_z = self.origin_z - 24;
     self.flags = self.flags - (self.flags & FL_ONGROUND);
     self.avelocity = crandom() * '0.000 600.000 0.000';
 };
@@ -1607,7 +1607,7 @@ void () GibPlayer =
         return;
     }
     
-    if(random() < 0.500)
+    if(random() < 0.5)
     {
         sound(self, CHAN_VOICE, "player/gib.wav", WEAPON_SHOTGUN, ATTN_NONE);
     }
@@ -1738,11 +1738,11 @@ void () PlayerDie =
     
     if(self.velocity_z < TE_LAVASPLASH)
     {
-        self.velocity_z = self.velocity_z + (random() * 300.000);
+        self.velocity_z = self.velocity_z + (random() * 300);
     }
     
     
-    if(self.health < -40.000)
+    if(self.health < -40)
     {
         GibPlayer();
         return;
@@ -1825,7 +1825,7 @@ void () set_suicide_frame =
         return;
     }
     
-    self.frame = 60.000;
+    self.frame = 60;
     self.solid = SOLID_NOT;
     self.movetype = MOVETYPE_TOSS;
     self.deadflag = DEAD_DEAD;
@@ -1836,7 +1836,7 @@ void () set_suicide_frame =
 // function begins at statement 8269, parm_start=5350
 // OP_STATE	2227	5350	0
 // OP_DONE	0	0	0
-void () player_diea1 = [50.000, player_diea2]
+void () player_diea1 = [50, player_diea2]
 {
 };
 
@@ -1844,7 +1844,7 @@ void () player_diea1 = [50.000, player_diea2]
 // function begins at statement 8271, parm_start=5351
 // OP_STATE	5351	5352	0
 // OP_DONE	0	0	0
-void () player_diea2 = [51.000, player_diea3]
+void () player_diea2 = [51, player_diea3]
 {
 };
 
@@ -1852,7 +1852,7 @@ void () player_diea2 = [51.000, player_diea3]
 // function begins at statement 8273, parm_start=5353
 // OP_STATE	5353	5354	0
 // OP_DONE	0	0	0
-void () player_diea3 = [52.000, player_diea4]
+void () player_diea3 = [52, player_diea4]
 {
 };
 
@@ -1860,7 +1860,7 @@ void () player_diea3 = [52.000, player_diea4]
 // function begins at statement 8275, parm_start=5355
 // OP_STATE	5355	5356	0
 // OP_DONE	0	0	0
-void () player_diea4 = [53.000, player_diea5]
+void () player_diea4 = [53, player_diea5]
 {
 };
 
@@ -1868,7 +1868,7 @@ void () player_diea4 = [53.000, player_diea5]
 // function begins at statement 8277, parm_start=5357
 // OP_STATE	5357	5358	0
 // OP_DONE	0	0	0
-void () player_diea5 = [54.000, player_diea6]
+void () player_diea5 = [54, player_diea6]
 {
 };
 
@@ -1876,7 +1876,7 @@ void () player_diea5 = [54.000, player_diea6]
 // function begins at statement 8279, parm_start=5359
 // OP_STATE	5359	5360	0
 // OP_DONE	0	0	0
-void () player_diea6 = [55.000, player_diea7]
+void () player_diea6 = [55, player_diea7]
 {
 };
 
@@ -1884,7 +1884,7 @@ void () player_diea6 = [55.000, player_diea7]
 // function begins at statement 8281, parm_start=5361
 // OP_STATE	5361	5362	0
 // OP_DONE	0	0	0
-void () player_diea7 = [56.000, player_diea8]
+void () player_diea7 = [56, player_diea8]
 {
 };
 
@@ -1892,7 +1892,7 @@ void () player_diea7 = [56.000, player_diea8]
 // function begins at statement 8283, parm_start=5363
 // OP_STATE	5363	5364	0
 // OP_DONE	0	0	0
-void () player_diea8 = [57.000, player_diea9]
+void () player_diea8 = [57, player_diea9]
 {
 };
 
@@ -1900,7 +1900,7 @@ void () player_diea8 = [57.000, player_diea9]
 // function begins at statement 8285, parm_start=5365
 // OP_STATE	5365	5366	0
 // OP_DONE	0	0	0
-void () player_diea9 = [58.000, player_diea10]
+void () player_diea9 = [58, player_diea10]
 {
 };
 
@@ -1908,7 +1908,7 @@ void () player_diea9 = [58.000, player_diea10]
 // function begins at statement 8287, parm_start=5367
 // OP_STATE	5367	5368	0
 // OP_DONE	0	0	0
-void () player_diea10 = [59.000, player_diea11]
+void () player_diea10 = [59, player_diea11]
 {
 };
 
@@ -1917,7 +1917,7 @@ void () player_diea10 = [59.000, player_diea11]
 // OP_STATE	912	5368	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_diea11 = [60.000, player_diea11]
+void () player_diea11 = [60, player_diea11]
 {
     PlayerDead();
 };
@@ -1926,7 +1926,7 @@ void () player_diea11 = [60.000, player_diea11]
 // function begins at statement 8292, parm_start=5369
 // OP_STATE	5369	5370	0
 // OP_DONE	0	0	0
-void () player_dieb1 = [61.000, player_dieb2]
+void () player_dieb1 = [61, player_dieb2]
 {
 };
 
@@ -1934,7 +1934,7 @@ void () player_dieb1 = [61.000, player_dieb2]
 // function begins at statement 8294, parm_start=5371
 // OP_STATE	5371	5372	0
 // OP_DONE	0	0	0
-void () player_dieb2 = [62.000, player_dieb3]
+void () player_dieb2 = [62, player_dieb3]
 {
 };
 
@@ -1942,7 +1942,7 @@ void () player_dieb2 = [62.000, player_dieb3]
 // function begins at statement 8296, parm_start=5373
 // OP_STATE	3872	5373	0
 // OP_DONE	0	0	0
-void () player_dieb3 = [63.000, player_dieb4]
+void () player_dieb3 = [63, player_dieb4]
 {
 };
 
@@ -1950,7 +1950,7 @@ void () player_dieb3 = [63.000, player_dieb4]
 // function begins at statement 8298, parm_start=5374
 // OP_STATE	260	5374	0
 // OP_DONE	0	0	0
-void () player_dieb4 = [64.000, player_dieb5]
+void () player_dieb4 = [64, player_dieb5]
 {
 };
 
@@ -1958,7 +1958,7 @@ void () player_dieb4 = [64.000, player_dieb5]
 // function begins at statement 8300, parm_start=5375
 // OP_STATE	5375	5376	0
 // OP_DONE	0	0	0
-void () player_dieb5 = [65.000, player_dieb6]
+void () player_dieb5 = [65, player_dieb6]
 {
 };
 
@@ -1966,7 +1966,7 @@ void () player_dieb5 = [65.000, player_dieb6]
 // function begins at statement 8302, parm_start=5377
 // OP_STATE	5377	5378	0
 // OP_DONE	0	0	0
-void () player_dieb6 = [66.000, player_dieb7]
+void () player_dieb6 = [66, player_dieb7]
 {
 };
 
@@ -1974,7 +1974,7 @@ void () player_dieb6 = [66.000, player_dieb7]
 // function begins at statement 8304, parm_start=5379
 // OP_STATE	5379	5380	0
 // OP_DONE	0	0	0
-void () player_dieb7 = [67.000, player_dieb8]
+void () player_dieb7 = [67, player_dieb8]
 {
 };
 
@@ -1982,7 +1982,7 @@ void () player_dieb7 = [67.000, player_dieb8]
 // function begins at statement 8306, parm_start=5381
 // OP_STATE	5381	5382	0
 // OP_DONE	0	0	0
-void () player_dieb8 = [68.000, player_dieb9]
+void () player_dieb8 = [68, player_dieb9]
 {
 };
 
@@ -1991,7 +1991,7 @@ void () player_dieb8 = [68.000, player_dieb9]
 // OP_STATE	5383	5382	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_dieb9 = [69.000, player_dieb9]
+void () player_dieb9 = [69, player_dieb9]
 {
     PlayerDead();
 };
@@ -2000,7 +2000,7 @@ void () player_dieb9 = [69.000, player_dieb9]
 // function begins at statement 8311, parm_start=5384
 // OP_STATE	5384	5385	0
 // OP_DONE	0	0	0
-void () player_diec1 = [70.000, player_diec2]
+void () player_diec1 = [70, player_diec2]
 {
 };
 
@@ -2008,7 +2008,7 @@ void () player_diec1 = [70.000, player_diec2]
 // function begins at statement 8313, parm_start=5386
 // OP_STATE	5386	5387	0
 // OP_DONE	0	0	0
-void () player_diec2 = [71.000, player_diec3]
+void () player_diec2 = [71, player_diec3]
 {
 };
 
@@ -2016,7 +2016,7 @@ void () player_diec2 = [71.000, player_diec3]
 // function begins at statement 8315, parm_start=5388
 // OP_STATE	5388	5389	0
 // OP_DONE	0	0	0
-void () player_diec3 = [72.000, player_diec4]
+void () player_diec3 = [72, player_diec4]
 {
 };
 
@@ -2024,7 +2024,7 @@ void () player_diec3 = [72.000, player_diec4]
 // function begins at statement 8317, parm_start=5390
 // OP_STATE	2739	5390	0
 // OP_DONE	0	0	0
-void () player_diec4 = [73.000, player_diec5]
+void () player_diec4 = [73, player_diec5]
 {
 };
 
@@ -2032,7 +2032,7 @@ void () player_diec4 = [73.000, player_diec5]
 // function begins at statement 8319, parm_start=5391
 // OP_STATE	5391	5392	0
 // OP_DONE	0	0	0
-void () player_diec5 = [74.000, player_diec6]
+void () player_diec5 = [74, player_diec6]
 {
 };
 
@@ -2040,7 +2040,7 @@ void () player_diec5 = [74.000, player_diec6]
 // function begins at statement 8321, parm_start=5393
 // OP_STATE	5393	5394	0
 // OP_DONE	0	0	0
-void () player_diec6 = [75.000, player_diec7]
+void () player_diec6 = [75, player_diec7]
 {
 };
 
@@ -2048,7 +2048,7 @@ void () player_diec6 = [75.000, player_diec7]
 // function begins at statement 8323, parm_start=5395
 // OP_STATE	5395	5396	0
 // OP_DONE	0	0	0
-void () player_diec7 = [76.000, player_diec8]
+void () player_diec7 = [76, player_diec8]
 {
 };
 
@@ -2056,7 +2056,7 @@ void () player_diec7 = [76.000, player_diec8]
 // function begins at statement 8325, parm_start=5397
 // OP_STATE	5397	5398	0
 // OP_DONE	0	0	0
-void () player_diec8 = [77.000, player_diec9]
+void () player_diec8 = [77, player_diec9]
 {
 };
 
@@ -2064,7 +2064,7 @@ void () player_diec8 = [77.000, player_diec9]
 // function begins at statement 8327, parm_start=5399
 // OP_STATE	5399	5400	0
 // OP_DONE	0	0	0
-void () player_diec9 = [78.000, player_diec10]
+void () player_diec9 = [78, player_diec10]
 {
 };
 
@@ -2072,7 +2072,7 @@ void () player_diec9 = [78.000, player_diec10]
 // function begins at statement 8329, parm_start=5401
 // OP_STATE	5401	5402	0
 // OP_DONE	0	0	0
-void () player_diec10 = [79.000, player_diec11]
+void () player_diec10 = [79, player_diec11]
 {
 };
 
@@ -2080,7 +2080,7 @@ void () player_diec10 = [79.000, player_diec11]
 // function begins at statement 8331, parm_start=5403
 // OP_STATE	788	5403	0
 // OP_DONE	0	0	0
-void () player_diec11 = [80.000, player_diec12]
+void () player_diec11 = [80, player_diec12]
 {
 };
 
@@ -2088,7 +2088,7 @@ void () player_diec11 = [80.000, player_diec12]
 // function begins at statement 8333, parm_start=5404
 // OP_STATE	5404	5405	0
 // OP_DONE	0	0	0
-void () player_diec12 = [81.000, player_diec13]
+void () player_diec12 = [81, player_diec13]
 {
 };
 
@@ -2096,7 +2096,7 @@ void () player_diec12 = [81.000, player_diec13]
 // function begins at statement 8335, parm_start=5406
 // OP_STATE	5406	5407	0
 // OP_DONE	0	0	0
-void () player_diec13 = [82.000, player_diec14]
+void () player_diec13 = [82, player_diec14]
 {
 };
 
@@ -2104,7 +2104,7 @@ void () player_diec13 = [82.000, player_diec14]
 // function begins at statement 8337, parm_start=5408
 // OP_STATE	5408	5409	0
 // OP_DONE	0	0	0
-void () player_diec14 = [83.000, player_diec15]
+void () player_diec14 = [83, player_diec15]
 {
 };
 
@@ -2113,7 +2113,7 @@ void () player_diec14 = [83.000, player_diec15]
 // OP_STATE	5410	5409	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_diec15 = [84.000, player_diec15]
+void () player_diec15 = [84, player_diec15]
 {
     PlayerDead();
 };
@@ -2122,7 +2122,7 @@ void () player_diec15 = [84.000, player_diec15]
 // function begins at statement 8342, parm_start=5411
 // OP_STATE	5411	5412	0
 // OP_DONE	0	0	0
-void () player_died1 = [85.000, player_died2]
+void () player_died1 = [85, player_died2]
 {
 };
 
@@ -2130,7 +2130,7 @@ void () player_died1 = [85.000, player_died2]
 // function begins at statement 8344, parm_start=5413
 // OP_STATE	5413	5414	0
 // OP_DONE	0	0	0
-void () player_died2 = [86.000, player_died3]
+void () player_died2 = [86, player_died3]
 {
 };
 
@@ -2138,7 +2138,7 @@ void () player_died2 = [86.000, player_died3]
 // function begins at statement 8346, parm_start=5415
 // OP_STATE	5415	5416	0
 // OP_DONE	0	0	0
-void () player_died3 = [87.000, player_died4]
+void () player_died3 = [87, player_died4]
 {
 };
 
@@ -2146,7 +2146,7 @@ void () player_died3 = [87.000, player_died4]
 // function begins at statement 8348, parm_start=5417
 // OP_STATE	5417	5418	0
 // OP_DONE	0	0	0
-void () player_died4 = [88.000, player_died5]
+void () player_died4 = [88, player_died5]
 {
 };
 
@@ -2154,7 +2154,7 @@ void () player_died4 = [88.000, player_died5]
 // function begins at statement 8350, parm_start=5419
 // OP_STATE	5419	5420	0
 // OP_DONE	0	0	0
-void () player_died5 = [89.000, player_died6]
+void () player_died5 = [89, player_died6]
 {
 };
 
@@ -2162,7 +2162,7 @@ void () player_died5 = [89.000, player_died6]
 // function begins at statement 8352, parm_start=5421
 // OP_STATE	1423	5421	0
 // OP_DONE	0	0	0
-void () player_died6 = [90.000, player_died7]
+void () player_died6 = [90, player_died7]
 {
 };
 
@@ -2170,7 +2170,7 @@ void () player_died6 = [90.000, player_died7]
 // function begins at statement 8354, parm_start=5422
 // OP_STATE	5422	5423	0
 // OP_DONE	0	0	0
-void () player_died7 = [91.000, player_died8]
+void () player_died7 = [91, player_died8]
 {
 };
 
@@ -2178,7 +2178,7 @@ void () player_died7 = [91.000, player_died8]
 // function begins at statement 8356, parm_start=5424
 // OP_STATE	5424	5425	0
 // OP_DONE	0	0	0
-void () player_died8 = [92.000, player_died9]
+void () player_died8 = [92, player_died9]
 {
 };
 
@@ -2187,7 +2187,7 @@ void () player_died8 = [92.000, player_died9]
 // OP_STATE	5426	5425	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_died9 = [93.000, player_died9]
+void () player_died9 = [93, player_died9]
 {
     PlayerDead();
 };
@@ -2196,7 +2196,7 @@ void () player_died9 = [93.000, player_died9]
 // function begins at statement 8361, parm_start=5427
 // OP_STATE	5427	5428	0
 // OP_DONE	0	0	0
-void () player_diee1 = [94.000, player_diee2]
+void () player_diee1 = [94, player_diee2]
 {
 };
 
@@ -2204,7 +2204,7 @@ void () player_diee1 = [94.000, player_diee2]
 // function begins at statement 8363, parm_start=5429
 // OP_STATE	5429	5430	0
 // OP_DONE	0	0	0
-void () player_diee2 = [95.000, player_diee3]
+void () player_diee2 = [95, player_diee3]
 {
 };
 
@@ -2212,7 +2212,7 @@ void () player_diee2 = [95.000, player_diee3]
 // function begins at statement 8365, parm_start=5431
 // OP_STATE	5431	5432	0
 // OP_DONE	0	0	0
-void () player_diee3 = [96.000, player_diee4]
+void () player_diee3 = [96, player_diee4]
 {
 };
 
@@ -2220,7 +2220,7 @@ void () player_diee3 = [96.000, player_diee4]
 // function begins at statement 8367, parm_start=5433
 // OP_STATE	5433	5434	0
 // OP_DONE	0	0	0
-void () player_diee4 = [97.000, player_diee5]
+void () player_diee4 = [97, player_diee5]
 {
 };
 
@@ -2228,7 +2228,7 @@ void () player_diee4 = [97.000, player_diee5]
 // function begins at statement 8369, parm_start=5435
 // OP_STATE	5435	5436	0
 // OP_DONE	0	0	0
-void () player_diee5 = [98.000, player_diee6]
+void () player_diee5 = [98, player_diee6]
 {
 };
 
@@ -2236,7 +2236,7 @@ void () player_diee5 = [98.000, player_diee6]
 // function begins at statement 8371, parm_start=5437
 // OP_STATE	5437	5438	0
 // OP_DONE	0	0	0
-void () player_diee6 = [99.000, player_diee7]
+void () player_diee6 = [99, player_diee7]
 {
 };
 
@@ -2244,7 +2244,7 @@ void () player_diee6 = [99.000, player_diee7]
 // function begins at statement 8373, parm_start=5439
 // OP_STATE	1884	5439	0
 // OP_DONE	0	0	0
-void () player_diee7 = [100.000, player_diee8]
+void () player_diee7 = [100, player_diee8]
 {
 };
 
@@ -2252,7 +2252,7 @@ void () player_diee7 = [100.000, player_diee8]
 // function begins at statement 8375, parm_start=5440
 // OP_STATE	5440	5441	0
 // OP_DONE	0	0	0
-void () player_diee8 = [101.000, player_diee9]
+void () player_diee8 = [101, player_diee9]
 {
 };
 
@@ -2261,7 +2261,7 @@ void () player_diee8 = [101.000, player_diee9]
 // OP_STATE	5442	5441	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_diee9 = [102.000, player_diee9]
+void () player_diee9 = [102, player_diee9]
 {
     PlayerDead();
 };
@@ -2270,7 +2270,7 @@ void () player_diee9 = [102.000, player_diee9]
 // function begins at statement 8380, parm_start=5443
 // OP_STATE	5443	5444	0
 // OP_DONE	0	0	0
-void () player_die_ax1 = [41.000, player_die_ax2]
+void () player_die_ax1 = [41, player_die_ax2]
 {
 };
 
@@ -2278,7 +2278,7 @@ void () player_die_ax1 = [41.000, player_die_ax2]
 // function begins at statement 8382, parm_start=5445
 // OP_STATE	5445	5446	0
 // OP_DONE	0	0	0
-void () player_die_ax2 = [42.000, player_die_ax3]
+void () player_die_ax2 = [42, player_die_ax3]
 {
 };
 
@@ -2286,7 +2286,7 @@ void () player_die_ax2 = [42.000, player_die_ax3]
 // function begins at statement 8384, parm_start=5447
 // OP_STATE	5447	5448	0
 // OP_DONE	0	0	0
-void () player_die_ax3 = [43.000, player_die_ax4]
+void () player_die_ax3 = [43, player_die_ax4]
 {
 };
 
@@ -2294,7 +2294,7 @@ void () player_die_ax3 = [43.000, player_die_ax4]
 // function begins at statement 8386, parm_start=5449
 // OP_STATE	5449	5450	0
 // OP_DONE	0	0	0
-void () player_die_ax4 = [44.000, player_die_ax5]
+void () player_die_ax4 = [44, player_die_ax5]
 {
 };
 
@@ -2302,7 +2302,7 @@ void () player_die_ax4 = [44.000, player_die_ax5]
 // function begins at statement 8388, parm_start=5451
 // OP_STATE	1390	5451	0
 // OP_DONE	0	0	0
-void () player_die_ax5 = [45.000, player_die_ax6]
+void () player_die_ax5 = [45, player_die_ax6]
 {
 };
 
@@ -2310,7 +2310,7 @@ void () player_die_ax5 = [45.000, player_die_ax6]
 // function begins at statement 8390, parm_start=5452
 // OP_STATE	5452	5453	0
 // OP_DONE	0	0	0
-void () player_die_ax6 = [46.000, player_die_ax7]
+void () player_die_ax6 = [46, player_die_ax7]
 {
 };
 
@@ -2318,7 +2318,7 @@ void () player_die_ax6 = [46.000, player_die_ax7]
 // function begins at statement 8392, parm_start=5454
 // OP_STATE	5454	5455	0
 // OP_DONE	0	0	0
-void () player_die_ax7 = [47.000, player_die_ax8]
+void () player_die_ax7 = [47, player_die_ax8]
 {
 };
 
@@ -2326,7 +2326,7 @@ void () player_die_ax7 = [47.000, player_die_ax8]
 // function begins at statement 8394, parm_start=5456
 // OP_STATE	5456	5457	0
 // OP_DONE	0	0	0
-void () player_die_ax8 = [48.000, player_die_ax9]
+void () player_die_ax8 = [48, player_die_ax9]
 {
 };
 
@@ -2335,7 +2335,7 @@ void () player_die_ax8 = [48.000, player_die_ax9]
 // OP_STATE	5458	5457	0
 // OP_CALL0	5194	0	0
 // OP_DONE	0	0	0
-void () player_die_ax9 = [49.000, player_die_ax9]
+void () player_die_ax9 = [49, player_die_ax9]
 {
     PlayerDead();
 };

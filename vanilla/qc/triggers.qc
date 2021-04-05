@@ -12,8 +12,8 @@ void () trigger_reactivate =
     self.solid = SOLID_TRIGGER;
 };
 
-float SPAWNFLAG_NOMESSAGE = 1.000;
-float SPAWNFLAG_NOTOUCH = 1.000;
+float SPAWNFLAG_NOMESSAGE = 1;
+float SPAWNFLAG_NOTOUCH = 1;
 // multi_wait
 // function begins at statement 9921, parm_start=6423
 // OP_LOAD_F	28	185	6423
@@ -127,7 +127,7 @@ void () multi_trigger =
     else
     {
         self.touch = SUB_Null;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         self.think = SUB_Remove;
     }
     
@@ -293,7 +293,7 @@ void () trigger_multiple =
     
     if(!self.wait)
     {
-        self.wait = 0.200;
+        self.wait = 0.2;
     }
     
     self.use = multi_use;
@@ -553,8 +553,8 @@ void () trigger_counter =
     self.use = counter_use;
 };
 
-float PLAYER_ONLY = 1.000;
-float SILENT = 2.000;
+float PLAYER_ONLY = 1;
+float SILENT = 2;
 // play_teleport
 // function begins at statement 10171, parm_start=6566
 // OP_CALL0	452	0	0
@@ -659,13 +659,13 @@ void (vector org) spawn_tfog =
 {
     s = spawn();
     s.origin = org;
-    s.nextthink = time + 0.200;
+    s.nextthink = time + 0.2;
     s.think = play_teleport;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
 };
 
 // tdeath_touch
@@ -721,7 +721,7 @@ void () tdeath_touch =
         
         if(self.owner.classname != "player")
         {
-            T_Damage(self.owner, self, self, 50000.000);
+            T_Damage(self.owner, self, self, 50000);
             return;
         }
         
@@ -730,7 +730,7 @@ void () tdeath_touch =
     
     if(other.health)
     {
-        T_Damage(other, self, self, 50000.000);
+        T_Damage(other, self, self, 50000);
     }
     
 };
@@ -780,7 +780,7 @@ void (vector org, entity death_owner) spawn_tdeath =
     setsize(death, death_owner.mins - '1.000 1.000 1.000', death_owner.maxs + '1.000 1.000 1.000');
     setorigin(death, org);
     death.touch = tdeath_touch;
-    death.nextthink = time + 0.200;
+    death.nextthink = time + 0.2;
     death.think = SUB_Remove;
     death.owner = death_owner;
     force_retouch = SILENT;
@@ -940,14 +940,14 @@ void () teleport_touch =
     if(other.classname == "player")
     {
         other.fixangle = PLAYER_ONLY;
-        other.teleport_time = time + 0.700;
+        other.teleport_time = time + 0.7;
         
         if(other.flags & FL_ONGROUND)
         {
             other.flags = other.flags - FL_ONGROUND;
         }
         
-        other.velocity = v_forward * 300.000;
+        other.velocity = v_forward * 300;
     }
     
     other.flags = other.flags - (other.flags & FL_ONGROUND);
@@ -997,7 +997,7 @@ void () info_teleport_destination =
 // OP_DONE	0	0	0
 void () teleport_use = 
 {
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     force_retouch = SILENT;
     self.think = SUB_Null;
 };
@@ -1047,8 +1047,8 @@ void () trigger_teleport =
     if(!(self.spawnflags & SILENT))
     {
         precache_sound("ambience/hum1.wav");
-        o = (self.mins + self.maxs) * 0.500;
-        ambientsound(o, "ambience/hum1.wav", 0.500, ATTN_STATIC);
+        o = (self.mins + self.maxs) * 0.5;
+        ambientsound(o, "ambience/hum1.wav", 0.5, ATTN_STATIC);
     }
     
 };
@@ -1241,7 +1241,7 @@ void () trigger_hurt =
     
 };
 
-float PUSH_ONCE = 1.000;
+float PUSH_ONCE = 1;
 // trigger_push_touch
 // function begins at statement 10516, parm_start=6807
 // OP_LOAD_S	29	129	6807
@@ -1302,7 +1302,7 @@ void () trigger_push_touch =
                 
                 if(other.fly_sound < time)
                 {
-                    other.fly_sound = time + 1.500;
+                    other.fly_sound = time + 1.5;
                     sound(other, CHAN_AUTO, "ambience/windfly.wav", PUSH_ONCE, ATTN_NORM);
                 }
                 
@@ -1341,7 +1341,7 @@ void () trigger_push =
     
     if(!self.speed)
     {
-        self.speed = 1000.000;
+        self.speed = 1000;
     }
     
 };
@@ -1424,13 +1424,13 @@ void () trigger_monsterjump =
     
     if(!self.speed)
     {
-        self.speed = 200.000;
+        self.speed = 200;
     }
     
     
     if(!self.height)
     {
-        self.height = 200.000;
+        self.height = 200;
     }
     
     

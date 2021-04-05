@@ -77,23 +77,23 @@ void () SetChangeParms =
     
     self.items = self.items - (self.items & (((((IT_KEY1 | IT_KEY2) | IT_INVISIBILITY) | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
     
-    if(self.health > 100.000)
+    if(self.health > 100)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     
-    if(self.health < 50.000)
+    if(self.health < 50)
     {
-        self.health = 50.000;
+        self.health = 50;
     }
     
     parm1 = self.items;
     parm2 = self.health;
     parm3 = self.armorvalue;
-    if(self.ammo_shells < 25.000)
+    if(self.ammo_shells < 25)
     {
-        parm4 = 25.000;
+        parm4 = 25;
     }
     else
     {
@@ -104,7 +104,7 @@ void () SetChangeParms =
     parm6 = self.ammo_rockets;
     parm7 = self.ammo_cells;
     parm8 = self.weapon;
-    parm9 = self.armortype * 100.000;
+    parm9 = self.armortype * 100;
 };
 
 // SetNewParms
@@ -123,9 +123,9 @@ void () SetChangeParms =
 void () SetNewParms = 
 {
     parm1 = IT_SHOTGUN | IT_AXE;
-    parm2 = 100.000;
+    parm2 = 100;
     parm3 = MSG_BROADCAST;
-    parm4 = 25.000;
+    parm4 = 25;
     parm5 = MSG_BROADCAST;
     parm6 = MSG_BROADCAST;
     parm7 = MSG_BROADCAST;
@@ -182,7 +182,7 @@ void () DecodeLevelParms =
     self.ammo_rockets = parm6;
     self.ammo_cells = parm7;
     self.weapon = parm8;
-    self.armortype = parm9 * 0.010;
+    self.armortype = parm9 * 0.01;
 };
 
 // FindIntermission
@@ -511,7 +511,7 @@ void () ExitIntermission =
         }
         
         
-        if((serverflags & 15.000) == 15.000)
+        if((serverflags & 15) == 15)
         {
             WriteByte(MSG_ALL, SVC_FINALE);
             WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born.");
@@ -642,7 +642,7 @@ void () execute_changelevel =
         other.view_ofs = VEC_ORIGIN;
         other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
-        other.nextthink = time + 0.500;
+        other.nextthink = time + 0.5;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
         other.movetype = MOVETYPE_NONE;
@@ -713,7 +713,7 @@ void () changelevel_touch =
     
     if((cvar("noexit") == WEAPON_SHOTGUN) || ((cvar("noexit") == WEAPON_ROCKET) && (mapname != "start")))
     {
-        T_Damage(other, self, self, 50000.000);
+        T_Damage(other, self, self, 50000);
         return;
     }
     
@@ -735,7 +735,7 @@ void () changelevel_touch =
     
     self.touch = SUB_Null;
     self.think = execute_changelevel;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // trigger_changelevel
@@ -1126,14 +1126,14 @@ void () PutClientInServer =
     local entity spot;
     spot = SelectSpawnPoint();
     self.classname = "player";
-    self.health = 100.000;
+    self.health = 100;
     self.takedamage = DAMAGE_AIM;
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_WALK;
     self.show_hostile = MSG_BROADCAST;
-    self.max_health = 100.000;
+    self.max_health = 100;
     self.flags = FL_CLIENT;
-    self.air_finished = time + 12.000;
+    self.air_finished = time + 12;
     self.dmg = WEAPON_ROCKET;
     self.super_damage_finished = MSG_BROADCAST;
     self.radsuit_finished = MSG_BROADCAST;
@@ -1163,7 +1163,7 @@ void () PutClientInServer =
     if(deathmatch || coop)
     {
         makevectors(self.angles);
-        spawn_tfog(self.origin + (v_forward * 20.000));
+        spawn_tfog(self.origin + (v_forward * 20));
     }
     
     spawn_tdeath(self.origin, self);
@@ -1339,7 +1339,7 @@ void () NextLevel =
     if(o.nextthink < time)
     {
         o.think = execute_changelevel;
-        o.nextthink = time + 0.100;
+        o.nextthink = time + 0.1;
     }
     
 };
@@ -1379,7 +1379,7 @@ void () CheckRules =
         return;
     }
     
-    timelimit = cvar("timelimit") * 60.000;
+    timelimit = cvar("timelimit") * 60;
     fraglimit = cvar("fraglimit");
     
     if((deathmatch && timelimit) && (time >= timelimit))
@@ -1458,7 +1458,7 @@ void () PlayerDeathThink =
     if(self.flags & FL_ONGROUND)
     {
         forward = vlen(self.velocity);
-        forward = forward - 20.000;
+        forward = forward - 20;
         if(forward <= MSG_BROADCAST)
         {
             self.velocity = VEC_ORIGIN;
@@ -1589,17 +1589,17 @@ void () PlayerJump =
     {
         if(self.watertype == CONTENT_WATER)
         {
-            self.velocity_z = 100.000;
+            self.velocity_z = 100;
         }
         else
         {
             if(self.watertype == CONTENT_SLIME)
             {
-                self.velocity_z = 80.000;
+                self.velocity_z = 80;
             }
             else
             {
-                self.velocity_z = 50.000;
+                self.velocity_z = 50;
             }
             
         }
@@ -1608,7 +1608,7 @@ void () PlayerJump =
         if(self.swim_flag < time)
         {
             self.swim_flag = time + WEAPON_SHOTGUN;
-            if(random() < 0.500)
+            if(random() < 0.5)
             {
                 sound(self, CHAN_BODY, "misc/water1.wav", WEAPON_SHOTGUN, ATTN_NORM);
             }
@@ -1638,7 +1638,7 @@ void () PlayerJump =
     self.flags = self.flags - FL_ONGROUND;
     self.button2 = MSG_BROADCAST;
     sound(self, CHAN_BODY, "player/plyrjmp8.wav", WEAPON_SHOTGUN, ATTN_NORM);
-    self.velocity_z = self.velocity_z + 270.000;
+    self.velocity_z = self.velocity_z + 270;
 };
 
 .float dmgtime;
@@ -1846,7 +1846,7 @@ void () WaterMove =
             
         }
         
-        self.air_finished = time + 12.000;
+        self.air_finished = time + 12;
         self.dmg = WEAPON_ROCKET;
     }
     else
@@ -1859,7 +1859,7 @@ void () WaterMove =
             {
                 self.dmg = self.dmg + WEAPON_ROCKET;
                 
-                if(self.dmg > 15.000)
+                if(self.dmg > 15)
                 {
                     self.dmg = TE_LAVASPLASH;
                 }
@@ -1896,7 +1896,7 @@ void () WaterMove =
             }
             else
             {
-                self.dmgtime = time + 0.200;
+                self.dmgtime = time + 0.2;
             }
             
             T_Damage(self, world, world, TE_LAVASPLASH * self.waterlevel);
@@ -1947,7 +1947,7 @@ void () WaterMove =
     
     if(!(self.flags & FL_WATERJUMP))
     {
-        self.velocity = self.velocity - (((0.800 * self.waterlevel) * frametime) * self.velocity);
+        self.velocity = self.velocity - (((0.8 * self.waterlevel) * frametime) * self.velocity);
     }
     
 };
@@ -2014,23 +2014,23 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = 0.000 + WEAPON_BIG;
+    start_z = 0 + WEAPON_BIG;
     v_forward_z = MSG_BROADCAST;
     normalize(v_forward);
-    end = start + (v_forward * 24.000);
+    end = start + (v_forward * 24);
     traceline(start, end, TRUE, self);
     
     if(trace_fraction < WEAPON_SHOTGUN)
     {
-        start_z = (0.000 + self.maxs_z) - WEAPON_BIG;
-        end = start + (v_forward * 24.000);
-        self.movedir = trace_plane_normal * -50.000;
+        start_z = (0 + self.maxs_z) - WEAPON_BIG;
+        end = start + (v_forward * 24);
+        self.movedir = trace_plane_normal * -50;
         traceline(start, end, TRUE, self);
         
         if(trace_fraction == WEAPON_SHOTGUN)
         {
             self.flags = self.flags | FL_WATERJUMP;
-            self.velocity_z = 225.000;
+            self.velocity_z = 225;
             self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
             self.teleport_time = time + WEAPON_ROCKET;
             return;
@@ -2407,7 +2407,7 @@ void () CheckPowerups =
         
         if(self.invisible_sound < time)
         {
-            sound(self, CHAN_AUTO, "items/inv3.wav", 0.500, ATTN_IDLE);
+            sound(self, CHAN_AUTO, "items/inv3.wav", 0.5, ATTN_IDLE);
             self.invisible_sound = time + ((random() * AS_MELEE) + WEAPON_SHOTGUN);
         }
         
@@ -2537,7 +2537,7 @@ void () CheckPowerups =
     
     if(self.radsuit_finished)
     {
-        self.air_finished = time + 12.000;
+        self.air_finished = time + 12;
         
         if(self.radsuit_finished < (time + AS_MELEE))
         {
@@ -2653,7 +2653,7 @@ void () PlayerPostThink =
     
     W_WeaponFrame();
     
-    if(((self.jump_flag < -300.000) && (self.flags & FL_ONGROUND)) && (self.health > MSG_BROADCAST))
+    if(((self.jump_flag < -300) && (self.flags & FL_ONGROUND)) && (self.health > MSG_BROADCAST))
     {
         if(self.watertype == CONTENT_WATER)
         {
@@ -2661,7 +2661,7 @@ void () PlayerPostThink =
         }
         else
         {
-            if(self.jump_flag < -650.000)
+            if(self.jump_flag < -650)
             {
                 T_Damage(self, world, world, TE_LIGHTNING1);
                 sound(self, CHAN_VOICE, "player/land2.wav", WEAPON_SHOTGUN, ATTN_NORM);
@@ -3158,19 +3158,19 @@ void (entity targ, entity attacker) ClientObituary =
             {
                 if(((teamplay == WEAPON_ROCKET) && (targ.team > MSG_BROADCAST)) && (targ.team == attacker.team))
                 {
-                    if(rnum < 0.250)
+                    if(rnum < 0.25)
                     {
                         deathstring = " mows down a teammate\n";
                     }
                     else
                     {
-                        if(rnum < 0.500)
+                        if(rnum < 0.5)
                         {
                             deathstring = " checks his glasses\n";
                         }
                         else
                         {
-                            if(rnum < 0.750)
+                            if(rnum < 0.75)
                             {
                                 deathstring = " gets a frag for the other team\n";
                             }
@@ -3233,7 +3233,7 @@ void (entity targ, entity attacker) ClientObituary =
                         deathstring = " eats ";
                         deathstring2 = "'s pineapple\n";
                         
-                        if(targ.health < -40.000)
+                        if(targ.health < -40)
                         {
                             deathstring = " was gibbed by ";
                             deathstring2 = "'s grenade\n";
@@ -3247,7 +3247,7 @@ void (entity targ, entity attacker) ClientObituary =
                         deathstring = " rides ";
                         deathstring2 = "'s rocket\n";
                         
-                        if(targ.health < -40.000)
+                        if(targ.health < -40)
                         {
                             deathstring = " was gibbed by ";
                             deathstring2 = "'s rocket\n";
@@ -3424,7 +3424,7 @@ void (entity targ, entity attacker) ClientObituary =
             rnum = targ.watertype;
             if(rnum == CONTENT_WATER)
             {
-                if(random() < 0.500)
+                if(random() < 0.5)
                 {
                     bprint(" sleeps with the fishes\n");
                 }
@@ -3439,7 +3439,7 @@ void (entity targ, entity attacker) ClientObituary =
             {
                 if(rnum == CONTENT_SLIME)
                 {
-                    if(random() < 0.500)
+                    if(random() < 0.5)
                     {
                         bprint(" gulped a load of slime\n");
                     }
@@ -3456,13 +3456,13 @@ void (entity targ, entity attacker) ClientObituary =
                     if(rnum == CONTENT_LAVA)
                     {
                         
-                        if(targ.health < -15.000)
+                        if(targ.health < -15)
                         {
                             bprint(" burst into flames\n");
                             return;
                         }
                         
-                        if(random() < 0.500)
+                        if(random() < 0.5)
                         {
                             bprint(" turned into hot slag\n");
                         }
