@@ -60,7 +60,7 @@ void () endEnemy =
     
     self.enemy = world;
     self.think = self.th_walk;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.search_time = time - TRUE;
     self.enemyrun = FALSE;
     self.goalentity.goalentity = self.goalentity;
@@ -180,7 +180,7 @@ void () CallForHelp =
                 if(e.enemy == world)
                 {
                     
-                    if(e.health > 80.000)
+                    if(e.health > 80)
                     {
                         
                         if(e.items & ((((IT_ROCKET_LAUNCHER + IT_LIGHTNING) + IT_SUPER_NAILGUN) + IT_SUPER_SHOTGUN) + IT_GRENADE_LAUNCHER))
@@ -322,7 +322,7 @@ float () RunAway =
     if(self.items & IT_QUAD)
     {
         
-        if((self.health + (self.armorvalue * self.armortype)) > 50.000)
+        if((self.health + (self.armorvalue * self.armortype)) > 50)
         {
             return FALSE;
         }
@@ -330,7 +330,7 @@ float () RunAway =
     }
     
     
-    if(self.health < 45.000)
+    if(self.health < 45)
     {
         return TRUE;
     }
@@ -356,7 +356,7 @@ float () RunAway =
     if(self.lefty & MULTIENEMY)
     {
         
-        if(self.health < 70.000)
+        if(self.health < 70)
         {
             return TRUE;
         }
@@ -499,8 +499,8 @@ void () BotHuntTarget =
     self.strafeonly = FALSE;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     self.lefty = (self.lefty - (self.lefty & LOCAL_TIME)) + MOVETYPE_TOSS;
-    self.nextthink = time + 0.100;
-    self.attack_finished = (time + 0.700) - (0.200 * self.skil);
+    self.nextthink = time + 0.1;
+    self.attack_finished = (time + 0.7) - (0.2 * self.skil);
     self.search_time = time + MOVETYPE_PUSH;
     clearCache(self);
     
@@ -946,7 +946,7 @@ float () BotFindTarget =
     }
     
     
-    if((self.origin_z > (client.origin_z + 120.000)) || ((self.origin_z + 120.000) < client.origin_z))
+    if((self.origin_z > (client.origin_z + 120)) || ((self.origin_z + 120) < client.origin_z))
     {
         self.enemy = client;
         
@@ -969,7 +969,7 @@ float () BotFindTarget =
     {
         len = random() * MUST_HAVE;
         
-        if(len > 25.000)
+        if(len > 25)
         {
             return FALSE;
         }
@@ -1329,7 +1329,7 @@ void (float dist, float turn) aibot_run_slide =
     trn = turn;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
-    ofs = 90.000;
+    ofs = 90;
     dis = dist;
     self.strafeonly = self.strafeonly - TRUE;
     
@@ -1342,13 +1342,13 @@ void (float dist, float turn) aibot_run_slide =
     rng = botrange(self.enemy);
     if(rng == RANGE_NEAR)
     {
-        rdir = rdir + 0.800;
+        rdir = rdir + 0.8;
     }
     else
     {
         if(rng == RANGE_MELEE)
         {
-            rdir = rdir + 1.200;
+            rdir = rdir + 1.2;
             rnd = random();
             weap = W_BestHeldWeapon();
             if(weap == IT_ROCKET_LAUNCHER)
@@ -1390,10 +1390,10 @@ void (float dist, float turn) aibot_run_slide =
             }
             
             
-            if(rnd < 0.300)
+            if(rnd < 0.3)
             {
                 
-                if(botwalkmove(self.ideal_yaw + 180.000, dis))
+                if(botwalkmove(self.ideal_yaw + 180, dis))
                 {
                     return;
                 }
@@ -1421,7 +1421,7 @@ void (float dist, float turn) aibot_run_slide =
                 
                 if(rng == RANGE_FAR)
                 {
-                    rdir = rdir - 2.500;
+                    rdir = rdir - 2.5;
                 }
                 
             }
@@ -1438,14 +1438,14 @@ void (float dist, float turn) aibot_run_slide =
     {
         if(self.weapon == IT_ROCKET_LAUNCHER)
         {
-            rdir = rdir + 1.500;
+            rdir = rdir + 1.5;
         }
         else
         {
             
             if(self.weapon == IT_GRENADE_LAUNCHER)
             {
-                rdir = rdir + 1.500;
+                rdir = rdir + 1.5;
             }
             
         }
@@ -1454,14 +1454,14 @@ void (float dist, float turn) aibot_run_slide =
     
     if(self.enemy.weapon == IT_ROCKET_LAUNCHER)
     {
-        rdir = rdir + 1.500;
+        rdir = rdir + 1.5;
     }
     else
     {
         
         if(self.enemy.weapon == IT_LIGHTNING)
         {
-            rdir = rdir + 1.500;
+            rdir = rdir + 1.5;
         }
         
     }
@@ -1473,11 +1473,11 @@ void (float dist, float turn) aibot_run_slide =
     else
     {
         
-        if(self.origin_z > (self.enemy.origin_z + 130.000))
+        if(self.origin_z > (self.enemy.origin_z + 130))
         {
-            rdir = (rdir + 1.100) + random();
+            rdir = (rdir + 1.1) + random();
             
-            if(rdir >= 1.500)
+            if(rdir >= 1.5)
             {
                 trn = NOTURN;
             }
@@ -1493,7 +1493,7 @@ void (float dist, float turn) aibot_run_slide =
         
     }
     
-    if(rdir < 1.500)
+    if(rdir < 1.5)
     {
         
         if(trn == CANTURN)
@@ -1508,14 +1508,14 @@ void (float dist, float turn) aibot_run_slide =
             return;
         }
         
-        ofs = 90.000;
+        ofs = 90;
     }
     else
     {
         
-        if(rdir < 2.400)
+        if(rdir < 2.4)
         {
-            ofs = 45.000;
+            ofs = 45;
         }
         
     }
@@ -1526,24 +1526,24 @@ void (float dist, float turn) aibot_run_slide =
         return;
     }
     
-    self.strafetime = self.strafetime + 0.100;
+    self.strafetime = self.strafetime + 0.1;
     
     if(self.skil < FL_SWIM)
     {
         
         if(self.skil < TRUE)
         {
-            dis = 0.700 * dis;
+            dis = 0.7 * dis;
         }
         
         
-        if(self.strafetime == 0.100)
+        if(self.strafetime == 0.1)
         {
             rnd = random() * MOVETYPE_STEP;
             
             if(self.skil >= TRUE)
             {
-                rnd = (rnd - self.skil) + 0.500;
+                rnd = (rnd - self.skil) + 0.5;
             }
             
             
@@ -1558,11 +1558,11 @@ void (float dist, float turn) aibot_run_slide =
     }
     
     
-    if(self.strafetime > 0.400)
+    if(self.strafetime > 0.4)
     {
         rnd = random() * FL_SWIM;
         
-        if(rnd > 1.870)
+        if(rnd > 1.87)
         {
             if(self.lefty & STRAFE_DIR)
             {
@@ -1602,11 +1602,11 @@ void (float dist, float turn) aibot_run_slide =
     }
     
     
-    if((ofs == 90.000) || (ofs == -90.000))
+    if((ofs == 90) || (ofs == -90))
     {
         rnd = random();
         
-        if(rnd < 0.050)
+        if(rnd < 0.05)
         {
             
             if(trn == CANTURN)
@@ -1618,9 +1618,9 @@ void (float dist, float turn) aibot_run_slide =
         }
         
         
-        if(rnd < 0.500)
+        if(rnd < 0.5)
         {
-            walkmove(self.ideal_yaw + 180.000, dis * 0.500);
+            walkmove(self.ideal_yaw + 180, dis * 0.5);
         }
         
         return;
@@ -2273,7 +2273,7 @@ void (float dist) aibot_chase =
     enemy_vis = enemyvisible(self.enemy);
     rnd = random();
     
-    if(rnd < 0.900)
+    if(rnd < 0.9)
     {
         enemy_vis = enemy_vis;
         enemy_vis && infrontofbot(self.enemy); // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
@@ -2524,7 +2524,7 @@ float (float minweight) aibot_checkforGoodies =
     while(e)
     {
         weight = DONT_WANT;
-        if(e.origin_z > (self.origin_z + (0.700 * MAXJUMP)))
+        if(e.origin_z > (self.origin_z + (0.7 * MAXJUMP)))
         {
             weight = DONT_WANT;
         }
@@ -2855,7 +2855,7 @@ void (float dist) ai_botgetGoody =
     local float goody_yaw;
     local float dis;
     local float weap;
-    self.search_time = self.search_time + 0.100;
+    self.search_time = self.search_time + 0.1;
     
     if(time > self.goody_time)
     {
@@ -2954,7 +2954,7 @@ void (float dist) ai_botgetGoody =
     }
     
     
-    if(Bot_tryjump(270.000, dist, FALSE))
+    if(Bot_tryjump(270, dist, FALSE))
     {
         return;
     }

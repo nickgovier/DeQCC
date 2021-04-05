@@ -21,7 +21,7 @@ void () SUB_regen =
 {
     self.model = self.mdl;
     self.solid = SOLID_TRIGGER;
-    sound(self, CHAN_VOICE, "items/itembk2.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "items/itembk2.wav", 1, ATTN_NORM);
     setorigin(self, self.origin);
 };
 
@@ -90,7 +90,7 @@ void () PlaceItem =
     self.solid = SOLID_TRIGGER;
     self.movetype = MOVETYPE_TOSS;
     self.velocity = '0.000 0.000 0.000';
-    self.origin_z = self.origin_z + 6.000;
+    self.origin_z = self.origin_z + 6;
     oldz = self.origin_z;
     
     if(!droptofloor())
@@ -114,7 +114,7 @@ void () PlaceItem =
 // OP_DONE	0	0	0
 void () StartItem = 
 {
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     self.think = PlaceItem;
 };
 
@@ -157,15 +157,15 @@ void () StartItem =
 float (entity e, float healamount, float ignore) T_Heal = 
 {
     
-    if(e.health <= 0.000)
+    if(e.health <= 0)
     {
-        return 0.000;
+        return 0;
     }
     
     
     if(!ignore && (e.health >= other.max_health))
     {
-        return 0.000;
+        return 0;
     }
     
     healamount = ceil(healamount);
@@ -177,16 +177,16 @@ float (entity e, float healamount, float ignore) T_Heal =
     }
     
     
-    if(e.health > 250.000)
+    if(e.health > 250)
     {
-        e.health = 250.000;
+        e.health = 250;
     }
     
-    return 1.000;
+    return 1;
 };
 
-float H_ROTTEN = 1.000;
-float H_MEGA = 2.000;
+float H_ROTTEN = 1;
+float H_MEGA = 2;
 .float healamount;
 .float healtype;
 void () health_touch;
@@ -257,8 +257,8 @@ void () item_health =
         precache_sound("items/r_item1.wav");
         setmodel(self, "maps/b_bh10.bsp");
         self.noise = "items/r_item1.wav";
-        self.healamount = 15.000;
-        self.healtype = 0.000;
+        self.healamount = 15;
+        self.healtype = 0;
     }
     else
     {
@@ -268,8 +268,8 @@ void () item_health =
             precache_sound("items/r_item2.wav");
             setmodel(self, "maps/b_bh100.bsp");
             self.noise = "items/r_item2.wav";
-            self.healamount = 100.000;
-            self.healtype = 2.000;
+            self.healamount = 100;
+            self.healtype = 2;
         }
         else
         {
@@ -277,8 +277,8 @@ void () item_health =
             precache_sound("items/health1.wav");
             setmodel(self, "maps/b_bh25.bsp");
             self.noise = "items/health1.wav";
-            self.healamount = 25.000;
-            self.healtype = 1.000;
+            self.healamount = 25;
+            self.healtype = 1;
         }
         
     }
@@ -380,16 +380,16 @@ void () health_touch =
         return;
     }
     
-    if(self.healtype == 2.000)
+    if(self.healtype == 2)
     {
         
-        if(other.health >= 250.000)
+        if(other.health >= 250)
         {
             return;
         }
         
         
-        if(!T_Heal(other, self.healamount, 1.000))
+        if(!T_Heal(other, self.healamount, 1))
         {
             return;
         }
@@ -398,7 +398,7 @@ void () health_touch =
     else
     {
         
-        if(!T_Heal(other, self.healamount, 0.000))
+        if(!T_Heal(other, self.healamount, 0))
         {
             return;
         }
@@ -409,26 +409,26 @@ void () health_touch =
     s = ftos(self.healamount);
     sprint(other, s);
     sprint(other, " health\n");
-    sound(other, CHAN_ITEM, self.noise, 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     self.model = string_null;
     self.solid = SOLID_NOT;
-    if(self.healtype == 2.000)
+    if(self.healtype == 2)
     {
         other.items = other.items | IT_SUPERHEALTH;
-        self.nextthink = time + 5.000;
+        self.nextthink = time + 5;
         self.think = item_megahealth_rot;
         self.owner = other;
     }
     else
     {
         
-        if(deathmatch != 2.000)
+        if(deathmatch != 2)
         {
             
             if(deathmatch)
             {
-                self.nextthink = time + 20.000;
+                self.nextthink = time + 20;
             }
             
             self.think = SUB_regen;
@@ -476,16 +476,16 @@ void () item_megahealth_rot =
     
     if(other.health > other.max_health)
     {
-        other.health = other.health - 1.000;
-        self.nextthink = time + 1.000;
+        other.health = other.health - 1;
+        self.nextthink = time + 1;
         return;
     }
     
     other.items = other.items - (other.items & IT_SUPERHEALTH);
     
-    if(deathmatch == 1.000)
+    if(deathmatch == 1)
     {
-        self.nextthink = time + 20.000;
+        self.nextthink = time + 20;
         self.think = SUB_regen;
     }
     
@@ -571,7 +571,7 @@ void () armor_touch =
     local float value;
     local float bit;
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -585,24 +585,24 @@ void () armor_touch =
     
     if(self.classname == "item_armor1")
     {
-        type = 0.300;
-        value = 100.000;
+        type = 0.3;
+        value = 100;
         bit = IT_ARMOR1;
     }
     
     
     if(self.classname == "item_armor2")
     {
-        type = 0.600;
-        value = 150.000;
+        type = 0.6;
+        value = 150;
         bit = IT_ARMOR2;
     }
     
     
     if(self.classname == "item_armorInv")
     {
-        type = 0.800;
-        value = 200.000;
+        type = 0.8;
+        value = 200;
         bit = IT_ARMOR3;
     }
     
@@ -618,14 +618,14 @@ void () armor_touch =
     self.solid = SOLID_NOT;
     self.model = string_null;
     
-    if(deathmatch == 1.000)
+    if(deathmatch == 1)
     {
-        self.nextthink = time + 20.000;
+        self.nextthink = time + 20;
     }
     
     self.think = SUB_regen;
     sprint(other, "You got armor\n");
-    sound(other, CHAN_ITEM, "items/armor1.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     activator = other;
     SUB_UseTargets();
@@ -653,7 +653,7 @@ void () item_armor1 =
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
-    self.skin = 0.000;
+    self.skin = 0;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     StartItem();
 };
@@ -680,7 +680,7 @@ void () item_armor2 =
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
-    self.skin = 1.000;
+    self.skin = 1;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     StartItem();
 };
@@ -707,7 +707,7 @@ void () item_armorInv =
     self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
-    self.skin = 2.000;
+    self.skin = 2;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     StartItem();
 };
@@ -738,27 +738,27 @@ void () item_armorInv =
 void () bound_other_ammo = 
 {
     
-    if(other.ammo_shells > 100.000)
+    if(other.ammo_shells > 100)
     {
-        other.ammo_shells = 100.000;
+        other.ammo_shells = 100;
     }
     
     
-    if(other.ammo_nails > 200.000)
+    if(other.ammo_nails > 200)
     {
-        other.ammo_nails = 200.000;
+        other.ammo_nails = 200;
     }
     
     
-    if(other.ammo_rockets > 100.000)
+    if(other.ammo_rockets > 100)
     {
-        other.ammo_rockets = 100.000;
+        other.ammo_rockets = 100;
     }
     
     
-    if(other.ammo_cells > 100.000)
+    if(other.ammo_cells > 100)
     {
-        other.ammo_cells = 100.000;
+        other.ammo_cells = 100;
     }
     
 };
@@ -790,40 +790,40 @@ float (float w) RankForWeapon =
     
     if(w == IT_LIGHTNING)
     {
-        return 1.000;
+        return 1;
     }
     
     
     if(w == IT_ROCKET_LAUNCHER)
     {
-        return 2.000;
+        return 2;
     }
     
     
     if(w == IT_SUPER_NAILGUN)
     {
-        return 3.000;
+        return 3;
     }
     
     
     if(w == IT_GRENADE_LAUNCHER)
     {
-        return 4.000;
+        return 4;
     }
     
     
     if(w == IT_SUPER_SHOTGUN)
     {
-        return 5.000;
+        return 5;
     }
     
     
     if(w == IT_NAILGUN)
     {
-        return 6.000;
+        return 6;
     }
     
-    return 7.000;
+    return 7;
 };
 
 // Deathmatch_Weapon
@@ -1043,13 +1043,13 @@ void () weapon_touch =
     self = other;
     best = W_BestWeapon();
     self = stemp;
-    if((deathmatch == 2.000) || coop)
+    if((deathmatch == 2) || coop)
     {
-        leave = 1.000;
+        leave = 1;
     }
     else
     {
-        leave = 0.000;
+        leave = 0;
     }
     
     if(self.classname == "weapon_nailgun")
@@ -1062,7 +1062,7 @@ void () weapon_touch =
         
         hadammo = other.ammo_nails;
         new = IT_NAILGUN;
-        other.ammo_nails = other.ammo_nails + 30.000;
+        other.ammo_nails = other.ammo_nails + 30;
     }
     else
     {
@@ -1076,7 +1076,7 @@ void () weapon_touch =
             
             hadammo = other.ammo_rockets;
             new = IT_SUPER_NAILGUN;
-            other.ammo_nails = other.ammo_nails + 30.000;
+            other.ammo_nails = other.ammo_nails + 30;
         }
         else
         {
@@ -1090,7 +1090,7 @@ void () weapon_touch =
                 
                 hadammo = other.ammo_rockets;
                 new = IT_SUPER_SHOTGUN;
-                other.ammo_shells = other.ammo_shells + 5.000;
+                other.ammo_shells = other.ammo_shells + 5;
             }
             else
             {
@@ -1104,7 +1104,7 @@ void () weapon_touch =
                     
                     hadammo = other.ammo_rockets;
                     new = IT_ROCKET_LAUNCHER;
-                    other.ammo_rockets = other.ammo_rockets + 5.000;
+                    other.ammo_rockets = other.ammo_rockets + 5;
                 }
                 else
                 {
@@ -1118,7 +1118,7 @@ void () weapon_touch =
                         
                         hadammo = other.ammo_rockets;
                         new = IT_GRENADE_LAUNCHER;
-                        other.ammo_rockets = other.ammo_rockets + 5.000;
+                        other.ammo_rockets = other.ammo_rockets + 5;
                     }
                     else
                     {
@@ -1132,7 +1132,7 @@ void () weapon_touch =
                             
                             hadammo = other.ammo_rockets;
                             new = IT_LIGHTNING;
-                            other.ammo_cells = other.ammo_cells + 15.000;
+                            other.ammo_cells = other.ammo_cells + 15;
                         }
                         else
                         {
@@ -1152,7 +1152,7 @@ void () weapon_touch =
     sprint(other, "You got the ");
     sprint(other, self.netname);
     sprint(other, "\n");
-    sound(other, CHAN_ITEM, "weapons/pkup.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "weapons/pkup.wav", 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     bound_other_ammo();
     old = other.items;
@@ -1179,9 +1179,9 @@ void () weapon_touch =
     self.model = string_null;
     self.solid = SOLID_NOT;
     
-    if(deathmatch == 1.000)
+    if(deathmatch == 1)
     {
-        self.nextthink = time + 30.000;
+        self.nextthink = time + 30;
     }
     
     self.think = SUB_regen;
@@ -1302,7 +1302,7 @@ void () weapon_grenadelauncher =
 {
     precache_model("progs/g_rock.mdl");
     setmodel(self, "progs/g_rock.mdl");
-    self.weapon = 3.000;
+    self.weapon = 3;
     self.netname = "Grenade Launcher";
     self.touch = weapon_touch;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
@@ -1332,7 +1332,7 @@ void () weapon_rocketlauncher =
 {
     precache_model("progs/g_rock2.mdl");
     setmodel(self, "progs/g_rock2.mdl");
-    self.weapon = 3.000;
+    self.weapon = 3;
     self.netname = "Rocket Launcher";
     self.touch = weapon_touch;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
@@ -1362,7 +1362,7 @@ void () weapon_lightning =
 {
     precache_model("progs/g_light.mdl");
     setmodel(self, "progs/g_light.mdl");
-    self.weapon = 3.000;
+    self.weapon = 3;
     self.netname = "Thunderbolt";
     self.touch = weapon_touch;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
@@ -1491,7 +1491,7 @@ void () ammo_touch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -1501,10 +1501,10 @@ void () ammo_touch =
     best = W_BestWeapon();
     self = stemp;
     
-    if(self.weapon == 1.000)
+    if(self.weapon == 1)
     {
         
-        if(other.ammo_shells >= 100.000)
+        if(other.ammo_shells >= 100)
         {
             return;
         }
@@ -1513,10 +1513,10 @@ void () ammo_touch =
     }
     
     
-    if(self.weapon == 2.000)
+    if(self.weapon == 2)
     {
         
-        if(other.ammo_nails >= 200.000)
+        if(other.ammo_nails >= 200)
         {
             return;
         }
@@ -1525,10 +1525,10 @@ void () ammo_touch =
     }
     
     
-    if(self.weapon == 3.000)
+    if(self.weapon == 3)
     {
         
-        if(other.ammo_rockets >= 100.000)
+        if(other.ammo_rockets >= 100)
         {
             return;
         }
@@ -1537,10 +1537,10 @@ void () ammo_touch =
     }
     
     
-    if(self.weapon == 4.000)
+    if(self.weapon == 4)
     {
         
-        if(other.ammo_cells >= 100.000)
+        if(other.ammo_cells >= 100)
         {
             return;
         }
@@ -1552,7 +1552,7 @@ void () ammo_touch =
     sprint(other, "You got the ");
     sprint(other, self.netname);
     sprint(other, "\n");
-    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     
     if(other.weapon == best)
@@ -1571,9 +1571,9 @@ void () ammo_touch =
     self.model = string_null;
     self.solid = SOLID_NOT;
     
-    if(deathmatch == 1.000)
+    if(deathmatch == 1)
     {
-        self.nextthink = time + 30.000;
+        self.nextthink = time + 30;
     }
     
     self.think = SUB_regen;
@@ -1581,7 +1581,7 @@ void () ammo_touch =
     SUB_UseTargets();
 };
 
-float WEAPON_BIG2 = 1.000;
+float WEAPON_BIG2 = 1;
 // item_shells
 // function begins at statement 2689, parm_start=2493
 // OP_ADDRESS	28	146	2493
@@ -1621,16 +1621,16 @@ void () item_shells =
     {
         precache_model("maps/b_shell1.bsp");
         setmodel(self, "maps/b_shell1.bsp");
-        self.aflag = 40.000;
+        self.aflag = 40;
     }
     else
     {
         precache_model("maps/b_shell0.bsp");
         setmodel(self, "maps/b_shell0.bsp");
-        self.aflag = 20.000;
+        self.aflag = 20;
     }
     
-    self.weapon = 1.000;
+    self.weapon = 1;
     self.netname = "shells";
     setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
     StartItem();
@@ -1675,16 +1675,16 @@ void () item_spikes =
     {
         precache_model("maps/b_nail1.bsp");
         setmodel(self, "maps/b_nail1.bsp");
-        self.aflag = 50.000;
+        self.aflag = 50;
     }
     else
     {
         precache_model("maps/b_nail0.bsp");
         setmodel(self, "maps/b_nail0.bsp");
-        self.aflag = 25.000;
+        self.aflag = 25;
     }
     
-    self.weapon = 2.000;
+    self.weapon = 2;
     self.netname = "nails";
     setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
     StartItem();
@@ -1729,16 +1729,16 @@ void () item_rockets =
     {
         precache_model("maps/b_rock1.bsp");
         setmodel(self, "maps/b_rock1.bsp");
-        self.aflag = 10.000;
+        self.aflag = 10;
     }
     else
     {
         precache_model("maps/b_rock0.bsp");
         setmodel(self, "maps/b_rock0.bsp");
-        self.aflag = 5.000;
+        self.aflag = 5;
     }
     
-    self.weapon = 3.000;
+    self.weapon = 3;
     self.netname = "rockets";
     setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
     StartItem();
@@ -1783,25 +1783,25 @@ void () item_cells =
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = 12.000;
+        self.aflag = 12;
     }
     else
     {
         precache_model("maps/b_batt0.bsp");
         setmodel(self, "maps/b_batt0.bsp");
-        self.aflag = 6.000;
+        self.aflag = 6;
     }
     
-    self.weapon = 4.000;
+    self.weapon = 4;
     self.netname = "cells";
     setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
     StartItem();
 };
 
-float WEAPON_SHOTGUN = 1.000;
-float WEAPON_ROCKET = 2.000;
-float WEAPON_SPIKES = 4.000;
-float WEAPON_BIG = 8.000;
+float WEAPON_SHOTGUN = 1;
+float WEAPON_ROCKET = 2;
+float WEAPON_SPIKES = 4;
+float WEAPON_BIG = 8;
 // item_weapon
 // function begins at statement 2809, parm_start=2543
 // OP_ADDRESS	28	146	2543
@@ -1897,16 +1897,16 @@ void () item_weapon =
         {
             precache_model("maps/b_shell1.bsp");
             setmodel(self, "maps/b_shell1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
             precache_model("maps/b_shell0.bsp");
             setmodel(self, "maps/b_shell0.bsp");
-            self.aflag = 20.000;
+            self.aflag = 20;
         }
         
-        self.weapon = 1.000;
+        self.weapon = 1;
         self.netname = "shells";
     }
     
@@ -1917,16 +1917,16 @@ void () item_weapon =
         {
             precache_model("maps/b_nail1.bsp");
             setmodel(self, "maps/b_nail1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
             precache_model("maps/b_nail0.bsp");
             setmodel(self, "maps/b_nail0.bsp");
-            self.aflag = 20.000;
+            self.aflag = 20;
         }
         
-        self.weapon = 2.000;
+        self.weapon = 2;
         self.netname = "spikes";
     }
     
@@ -1937,16 +1937,16 @@ void () item_weapon =
         {
             precache_model("maps/b_rock1.bsp");
             setmodel(self, "maps/b_rock1.bsp");
-            self.aflag = 10.000;
+            self.aflag = 10;
         }
         else
         {
             precache_model("maps/b_rock0.bsp");
             setmodel(self, "maps/b_rock0.bsp");
-            self.aflag = 5.000;
+            self.aflag = 5;
         }
         
-        self.weapon = 3.000;
+        self.weapon = 3;
         self.netname = "rockets";
     }
     
@@ -2014,7 +2014,7 @@ void () key_touch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -2028,7 +2028,7 @@ void () key_touch =
     sprint(other, "You got the ");
     sprint(other, self.netname);
     sprint(other, "\n");
-    sound(other, CHAN_ITEM, self.noise, 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     other.items = other.items | self.items;
     
@@ -2069,21 +2069,21 @@ void () key_touch =
 void () key_setsounds = 
 {
     
-    if(world.worldtype == 0.000)
+    if(world.worldtype == 0)
     {
         precache_sound("misc/medkey.wav");
         self.noise = "misc/medkey.wav";
     }
     
     
-    if(world.worldtype == 1.000)
+    if(world.worldtype == 1)
     {
         precache_sound("misc/runekey.wav");
         self.noise = "misc/runekey.wav";
     }
     
     
-    if(world.worldtype == 2.000)
+    if(world.worldtype == 2)
     {
         precache_sound2("misc/basekey.wav");
         self.noise = "misc/basekey.wav";
@@ -2138,7 +2138,7 @@ void () key_setsounds =
 // OP_DONE	0	0	0
 void () item_key1 = 
 {
-    if(world.worldtype == 0.000)
+    if(world.worldtype == 0)
     {
         precache_model("progs/w_s_key.mdl");
         setmodel(self, "progs/w_s_key.mdl");
@@ -2146,7 +2146,7 @@ void () item_key1 =
     }
     else
     {
-        if(world.worldtype == 1.000)
+        if(world.worldtype == 1)
         {
             precache_model("progs/m_s_key.mdl");
             setmodel(self, "progs/m_s_key.mdl");
@@ -2155,7 +2155,7 @@ void () item_key1 =
         else
         {
             
-            if(world.worldtype == 2.000)
+            if(world.worldtype == 2)
             {
                 precache_model2("progs/b_s_key.mdl");
                 setmodel(self, "progs/b_s_key.mdl");
@@ -2219,7 +2219,7 @@ void () item_key1 =
 void () item_key2 = 
 {
     
-    if(world.worldtype == 0.000)
+    if(world.worldtype == 0)
     {
         precache_model("progs/w_g_key.mdl");
         setmodel(self, "progs/w_g_key.mdl");
@@ -2227,7 +2227,7 @@ void () item_key2 =
     }
     
     
-    if(world.worldtype == 1.000)
+    if(world.worldtype == 1)
     {
         precache_model("progs/m_g_key.mdl");
         setmodel(self, "progs/m_g_key.mdl");
@@ -2235,7 +2235,7 @@ void () item_key2 =
     }
     
     
-    if(world.worldtype == 2.000)
+    if(world.worldtype == 2)
     {
         precache_model2("progs/b_g_key.mdl");
         setmodel(self, "progs/b_g_key.mdl");
@@ -2296,17 +2296,17 @@ void () sigil_touch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
     
     centerprint(other, "You got the rune!");
-    sound(other, CHAN_ITEM, self.noise, 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    serverflags = serverflags | (self.spawnflags & 15.000);
+    serverflags = serverflags | (self.spawnflags & 15);
     self.classname = "";
     activator = other;
     SUB_UseTargets();
@@ -2374,28 +2374,28 @@ void () item_sigil =
     precache_sound("misc/runekey.wav");
     self.noise = "misc/runekey.wav";
     
-    if(self.spawnflags & 1.000)
+    if(self.spawnflags & 1)
     {
         precache_model("progs/end1.mdl");
         setmodel(self, "progs/end1.mdl");
     }
     
     
-    if(self.spawnflags & 2.000)
+    if(self.spawnflags & 2)
     {
         precache_model2("progs/end2.mdl");
         setmodel(self, "progs/end2.mdl");
     }
     
     
-    if(self.spawnflags & 4.000)
+    if(self.spawnflags & 4)
     {
         precache_model2("progs/end3.mdl");
         setmodel(self, "progs/end3.mdl");
     }
     
     
-    if(self.spawnflags & 8.000)
+    if(self.spawnflags & 8)
     {
         precache_model2("progs/end4.mdl");
         setmodel(self, "progs/end4.mdl");
@@ -2511,7 +2511,7 @@ void () powerup_touch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -2525,17 +2525,17 @@ void () powerup_touch =
         self.mdl = self.model;
         if((self.classname == "item_artifact_invulnerability") || (self.classname == "item_artifact_invisibility"))
         {
-            self.nextthink = time + (60.000 * 5.000);
+            self.nextthink = time + (60 * 5);
         }
         else
         {
-            self.nextthink = time + 60.000;
+            self.nextthink = time + 60;
         }
         
         self.think = SUB_regen;
     }
     
-    sound(other, CHAN_VOICE, self.noise, 1.000, ATTN_NORM);
+    sound(other, CHAN_VOICE, self.noise, 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     other.items = other.items | self.items;
@@ -2543,29 +2543,29 @@ void () powerup_touch =
     
     if(self.classname == "item_artifact_envirosuit")
     {
-        other.rad_time = 1.000;
-        other.radsuit_finished = time + 30.000;
+        other.rad_time = 1;
+        other.radsuit_finished = time + 30;
     }
     
     
     if(self.classname == "item_artifact_invulnerability")
     {
-        other.invincible_time = 1.000;
-        other.invincible_finished = time + 30.000;
+        other.invincible_time = 1;
+        other.invincible_finished = time + 30;
     }
     
     
     if(self.classname == "item_artifact_invisibility")
     {
-        other.invisible_time = 1.000;
-        other.invisible_finished = time + 30.000;
+        other.invisible_time = 1;
+        other.invisible_finished = time + 30;
     }
     
     
     if(self.classname == "item_artifact_super_damage")
     {
-        other.super_time = 1.000;
-        other.super_damage_finished = time + 30.000;
+        other.super_time = 1;
+        other.super_damage_finished = time + 30;
     }
     
     activator = other;
@@ -2871,7 +2871,7 @@ void () BackpackTouch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -2922,7 +2922,7 @@ void () BackpackTouch =
     }
     
     sprint(other, "\n");
-    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
     stuffcmd(other, "bf\n");
     remove(self);
     self = other;
@@ -3020,16 +3020,16 @@ void () DropBackpack =
     item.ammo_nails = self.ammo_nails;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
-    item.velocity_z = 300.000;
-    item.velocity_x = -100.000 + (random() * 200.000);
-    item.velocity_y = -100.000 + (random() * 200.000);
+    item.velocity_z = 300;
+    item.velocity_x = -100 + (random() * 200);
+    item.velocity_y = -100 + (random() * 200);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;
     setmodel(item, "progs/backpack.mdl");
     setsize(item, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     item.touch = BackpackTouch;
-    item.nextthink = time + 120.000;
+    item.nextthink = time + 120;
     item.think = SUB_Remove;
 };
 

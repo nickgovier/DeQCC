@@ -3,7 +3,7 @@ void () AC_Explode;
 // function begins at statement 4528, parm_start=3798
 // OP_STATE	619	3798	0
 // OP_DONE	0	0	0
-void () s_bexplode0 = [0.000, s_bexplode1]
+void () s_bexplode0 = [0, s_bexplode1]
 {
 };
 
@@ -11,7 +11,7 @@ void () s_bexplode0 = [0.000, s_bexplode1]
 // function begins at statement 4530, parm_start=3799
 // OP_STATE	677	3799	0
 // OP_DONE	0	0	0
-void () s_bexplode1 = [1.000, s_bexplode2]
+void () s_bexplode1 = [1, s_bexplode2]
 {
 };
 
@@ -19,7 +19,7 @@ void () s_bexplode1 = [1.000, s_bexplode2]
 // function begins at statement 4532, parm_start=3800
 // OP_STATE	806	3800	0
 // OP_DONE	0	0	0
-void () s_bexplode2 = [2.000, s_bexplode3]
+void () s_bexplode2 = [2, s_bexplode3]
 {
 };
 
@@ -27,7 +27,7 @@ void () s_bexplode2 = [2.000, s_bexplode3]
 // function begins at statement 4534, parm_start=3801
 // OP_STATE	788	3801	0
 // OP_DONE	0	0	0
-void () s_bexplode3 = [3.000, s_bexplode4]
+void () s_bexplode3 = [3, s_bexplode4]
 {
 };
 
@@ -35,7 +35,7 @@ void () s_bexplode3 = [3.000, s_bexplode4]
 // function begins at statement 4536, parm_start=3802
 // OP_STATE	808	3802	0
 // OP_DONE	0	0	0
-void () s_bexplode4 = [4.000, s_bexplode5]
+void () s_bexplode4 = [4, s_bexplode5]
 {
 };
 
@@ -43,7 +43,7 @@ void () s_bexplode4 = [4.000, s_bexplode5]
 // function begins at statement 4538, parm_start=3803
 // OP_STATE	813	568	0
 // OP_DONE	0	0	0
-void () s_bexplode5 = [5.000, SUB_Remove]
+void () s_bexplode5 = [5, SUB_Remove]
 {
 };
 
@@ -140,7 +140,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) WaterRadiu
     local float points;
     local entity head;
     local vector org;
-    head = findradius(inflictor.origin, damage + 40.000);
+    head = findradius(inflictor.origin, damage + 40);
     
     while(head)
     {
@@ -150,30 +150,30 @@ void (entity inflictor, entity attacker, float damage, entity ignore) WaterRadiu
             
             if(head.takedamage)
             {
-                org = head.origin + ((head.mins + head.maxs) * 0.500);
-                points = 0.500 * (vlen(inflictor.origin - org));
+                org = head.origin + ((head.mins + head.maxs) * 0.5);
+                points = 0.5 * (vlen(inflictor.origin - org));
                 
-                if(points < 0.000)
+                if(points < 0)
                 {
-                    points = 0.000;
+                    points = 0;
                 }
                 
                 points = damage - points;
                 
                 if(head == attacker)
                 {
-                    points = points * 0.500;
+                    points = points * 0.5;
                 }
                 
                 
-                if(points > 0.000)
+                if(points > 0)
                 {
                     
-                    if(CanDamage(head, inflictor) && (head.waterlevel > 0.000))
+                    if(CanDamage(head, inflictor) && (head.waterlevel > 0))
                     {
                         if(head.classname == "monster_shambler")
                         {
-                            T_Damage(head, inflictor, attacker, points * 0.500);
+                            T_Damage(head, inflictor, attacker, points * 0.5);
                         }
                         else
                         {
@@ -251,12 +251,12 @@ void (entity inflictor, entity attacker, float damage, entity ignore) WaterRadiu
 // OP_DONE	0	0	0
 void () ACprojectile_expireboom = 
 {
-    self.takedamage = 0.000;
-    self.health = 0.000;
+    self.takedamage = 0;
+    self.health = 0;
     
     if((self.classname == "mine") && (self.owner.classname == "player"))
     {
-        self.owner.value = self.owner.value - 1.000;
+        self.owner.value = self.owner.value - 1;
     }
     
     T_RadiusDamage(self, self.owner, self.dmg, self);
@@ -414,12 +414,12 @@ void () ACprojectile_touchboom =
         
     }
     
-    self.takedamage = 0.000;
-    self.health = 0.000;
+    self.takedamage = 0;
+    self.health = 0;
     
     if((self.classname == "mine") && (self.owner.classname == "player"))
     {
-        self.owner.value = self.owner.value - 1.000;
+        self.owner.value = self.owner.value - 1;
     }
     
     
@@ -438,7 +438,7 @@ void () ACprojectile_touchboom =
     damg = self.dmg;
     if(self.classname != "mine")
     {
-        if(other.health > 0.000)
+        if(other.health > 0)
         {
             T_Damage(other, self, self.owner, damg);
         }
@@ -448,7 +448,7 @@ void () ACprojectile_touchboom =
             if(other.classname == "monster_drone")
             {
                 other.think = other.th_die;
-                other.nextthink = time + 0.100;
+                other.nextthink = time + 0.1;
                 other.takedamage = DAMAGE_NO;
                 other.solid = SOLID_NOT;
             }
@@ -462,7 +462,7 @@ void () ACprojectile_touchboom =
         T_RadiusDamage(self, self.owner, damg, self);
     }
     
-    self.origin = self.origin - (8.000 * normalize(self.velocity));
+    self.origin = self.origin - (8 * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
@@ -526,14 +526,14 @@ void () ACsuperspike_touch =
     
     damg = self.dmg;
     
-    if(other.health > 0.000)
+    if(other.health > 0)
     {
         T_Damage(other, self, self.owner, damg);
     }
     
     T_RadiusDamage(self, self.owner, damg, other);
-    self.origin = self.origin - (8.000 * normalize(self.velocity));
-    sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", 1.000, ATTN_NORM);
+    self.origin = self.origin - (8 * normalize(self.velocity));
+    sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", 1, ATTN_NORM);
     BecomeExplosion();
 };
 
@@ -614,8 +614,8 @@ void () ACspike_touch =
     
     if(other.takedamage)
     {
-        spawn_touchblood(18.000);
-        T_Damage(other, self, self.owner, 25.000);
+        spawn_touchblood(18);
+        T_Damage(other, self, self.owner, 25);
     }
     else
     {
@@ -682,7 +682,7 @@ void () ACspike_touch =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_spike = 
 {
-    sound(self.enemy, CHAN_WEAPON, "autocann.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "autocann.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -699,11 +699,11 @@ void (vector org, vector dir, entity targ) AC_spike =
     newmis.touch = ACspike_touch;
     newmis.classname = "spike";
     newmis.think = SUB_Remove;
-    newmis.nextthink = time + 0.700;
+    newmis.nextthink = time + 0.7;
     setmodel(newmis, "progs/bullet.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(newmis, org);
-    newmis.velocity = dir * 1500.000;
+    newmis.velocity = dir * 1500;
 };
 
 // AC_bullet
@@ -756,7 +756,7 @@ void (vector org, vector dir, entity targ) AC_spike =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_bullet = 
 {
-    sound(self.enemy, CHAN_WEAPON, "autocann.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "autocann.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -773,10 +773,10 @@ void (vector org, vector dir, entity targ) AC_bullet =
     newmis.touch = ACspike_touch;
     newmis.classname = "spike";
     newmis.think = SUB_Remove;
-    newmis.nextthink = time + 0.700;
+    newmis.nextthink = time + 0.7;
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(newmis, org);
-    newmis.velocity = dir * 1500.000;
+    newmis.velocity = dir * 1500;
 };
 
 // AClaser_touch
@@ -859,20 +859,20 @@ void () AClaser_touch =
         return;
     }
     
-    sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", 1.000, ATTN_STATIC);
-    org = self.origin - (8.000 * normalize(self.velocity));
+    sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", 1, ATTN_STATIC);
+    org = self.origin - (8 * normalize(self.velocity));
     if(other.health)
     {
-        SpawnBlood(org, self.velocity * 0.200, 20.000);
-        T_Damage(other, self, self.owner, 20.000);
+        SpawnBlood(org, self.velocity * 0.2, 20);
+        T_Damage(other, self, self.owner, 20);
     }
     else
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0.000);
-        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, 0);
     }
     
     remove(self);
@@ -933,7 +933,7 @@ void () AClaser_touch =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_laser = 
 {
-    sound(self.enemy, CHAN_WEAPON, "enforcer/enfire.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "enforcer/enfire.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -953,9 +953,9 @@ void (vector org, vector dir, entity targ) AC_laser =
     newmis.touch = AClaser_touch;
     newmis.classname = "laser";
     newmis.think = SUB_Remove;
-    newmis.nextthink = time + 1.000;
+    newmis.nextthink = time + 1;
     setorigin(newmis, org);
-    newmis.velocity = dir * 1500.000;
+    newmis.velocity = dir * 1500;
 };
 
 // LaunchLaser
@@ -1013,7 +1013,7 @@ void (vector org, vector vec) LaunchLaser =
     
     if(self.classname == "monster_enforcer")
     {
-        sound(self, CHAN_WEAPON, "enforcer/enfire.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_WEAPON, "enforcer/enfire.wav", 1, ATTN_NORM);
     }
     
     vec = normalize(vec);
@@ -1025,9 +1025,9 @@ void (vector org, vector vec) LaunchLaser =
     setmodel(newmis, "progs/laser.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     setorigin(newmis, org);
-    newmis.velocity = vec * 600.000;
+    newmis.velocity = vec * 600;
     newmis.angles = vectoangles(newmis.velocity);
-    newmis.nextthink = time + 5.000;
+    newmis.nextthink = time + 5;
     newmis.think = SUB_Remove;
     newmis.touch = AClaser_touch;
 };
@@ -1091,7 +1091,7 @@ void (vector org, vector vec) LaunchLaser =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_rocket = 
 {
-    sound(self.enemy, CHAN_WEAPON, "rocklnch.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "rocklnch.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -1109,12 +1109,12 @@ void (vector org, vector dir, entity targ) AC_rocket =
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     newmis.angles = vectoangles(dir);
     newmis.touch = ACprojectile_touchboom;
-    newmis.dmg = 90.000;
+    newmis.dmg = 90;
     newmis.classname = "missile";
     newmis.think = ACprojectile_expireboom;
-    newmis.nextthink = time + 1.000;
+    newmis.nextthink = time + 1;
     setorigin(newmis, org);
-    newmis.velocity = dir * 1000.000;
+    newmis.velocity = dir * 1000;
     self.lastmiss = newmis;
 };
 
@@ -1139,12 +1139,12 @@ void (vector org, vector dir, entity targ) AC_rocket =
 // OP_DONE	0	0	0
 void () mine_boom = 
 {
-    self.health = 0.000;
-    self.takedamage = 0.000;
+    self.health = 0;
+    self.takedamage = 0;
     self.solid = SOLID_NOT;
     self.touch = SUB_Null;
     self.think = ACprojectile_expireboom;
-    self.nextthink = (time + 0.100) + (random() * 0.500);
+    self.nextthink = (time + 0.1) + (random() * 0.5);
 };
 
 // mine_activated
@@ -1185,21 +1185,21 @@ void () mine_activated =
     if(time > self.attack_finished)
     {
         self.think = ACprojectile_expireboom;
-        self.nextthink = 0.100;
+        self.nextthink = 0.1;
         return;
     }
     
     traceline(self.origin + '0.000 0.000 1.000', self.origin + '0.000 0.000 24.000', FALSE, self);
     
-    if(trace_fraction < 1.000)
+    if(trace_fraction < 1)
     {
         self.think = ACprojectile_expireboom;
-        self.nextthink = 0.100;
+        self.nextthink = 0.1;
         return;
     }
     
     self.think = mine_activated;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // bomb_rotate
@@ -1275,11 +1275,11 @@ void () bomb_rotate =
                 self.movetype = MOVETYPE_TOSS;
                 self.th_die = mine_boom;
                 self.angles = '0.000 0.000 0.000';
-                self.health = 1.000;
+                self.health = 1;
                 self.takedamage = DAMAGE_YES;
                 self.touch = ACprojectile_touchboom;
                 self.think = mine_activated;
-                self.nextthink = time + 0.100;
+                self.nextthink = time + 0.1;
                 return;
             }
             else
@@ -1292,7 +1292,7 @@ void () bomb_rotate =
     }
     
     self.think = bomb_rotate;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     
     if(time > self.attack_finished)
     {
@@ -1360,7 +1360,7 @@ void () bomb_rotate =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_bomb = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -1377,13 +1377,13 @@ void (vector org, vector dir, entity targ) AC_bomb =
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     newmis.angles = vectoangles(dir);
     newmis.touch = ACprojectile_touchboom;
-    newmis.dmg = 130.000;
+    newmis.dmg = 130;
     newmis.classname = "bomb";
     newmis.think = bomb_rotate;
-    newmis.nextthink = time + 0.100;
+    newmis.nextthink = time + 0.1;
     setorigin(newmis, org);
     newmis.velocity = dir;
-    newmis.attack_finished = time + 10.000;
+    newmis.attack_finished = time + 10;
     self.lastmiss = newmis;
 };
 
@@ -1435,7 +1435,7 @@ void (vector org, vector dir, entity targ) AC_bomb =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_mine = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/bounce.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "weapons/bounce.wav", 1, ATTN_NORM);
     newmis = spawn();
     newmis.owner = self;
     newmis.movetype = MOVETYPE_BOUNCE;
@@ -1443,12 +1443,12 @@ void (vector org, vector dir, entity targ) AC_mine =
     setmodel(newmis, "progs/mine.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     newmis.angles = vectoangles(dir);
-    newmis.dmg = 200.000;
+    newmis.dmg = 200;
     newmis.classname = "mine";
     newmis.think = bomb_rotate;
-    newmis.nextthink = time + 0.100;
+    newmis.nextthink = time + 0.1;
     setorigin(newmis, org);
-    newmis.attack_finished = time + 120.000;
+    newmis.attack_finished = time + 120;
     newmis.velocity = dir;
 };
 
@@ -1557,9 +1557,9 @@ void () paveway_fly =
     
     if(self.enemy)
     {
-        v0 = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500);
+        v0 = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
         traceline(self.origin, v0, TRUE, world);
-        if(trace_fraction != 1.000)
+        if(trace_fraction != 1)
         {
             self.enemy = world;
         }
@@ -1571,65 +1571,65 @@ void () paveway_fly =
     }
     
     v0 = vectoangles(self.movedir - self.origin);
-    v0_x = v0_x + 2.000;
+    v0_x = v0_x + 2;
     v1 = v0 - self.angles;
     v1_x = anglemod(v1_x);
     
-    if(v1_x > 180.000)
+    if(v1_x > 180)
     {
-        v1_x = v1_x - 360.000;
+        v1_x = v1_x - 360;
     }
     
-    v1_y = anglemod(0.000);
+    v1_y = anglemod(0);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
-    }
-    
-    
-    if(v1_x < -50.000)
-    {
-        v1_x = -50.000;
+        v1_y = 0 - 360;
     }
     
     
-    if(v1_x > 50.000)
+    if(v1_x < -50)
     {
-        v1_x = 50.000;
+        v1_x = -50;
     }
     
     
-    if(0.000 < -50.000)
+    if(v1_x > 50)
     {
-        v1_y = -50.000;
+        v1_x = 50;
     }
     
     
-    if(0.000 > 50.000)
+    if(0 < -50)
     {
-        v1_y = 50.000;
+        v1_y = -50;
+    }
+    
+    
+    if(0 > 50)
+    {
+        v1_y = 50;
     }
     
     makevectors(self.angles);
-    self.speed = (self.speed - 3.000) + (0.000 * 10.000);
+    self.speed = (self.speed - 3) + (0 * 10);
     
-    if(self.speed < 0.000)
+    if(self.speed < 0)
     {
-        self.speed = 0.000;
+        self.speed = 0;
     }
     
     
-    if(self.speed < 300.000)
+    if(self.speed < 300)
     {
-        v1_x = self.speed - 300.000;
+        v1_x = self.speed - 300;
     }
     
     self.avelocity = v1;
-    v_forward_z = 0.000 - 0.000;
+    v_forward_z = 0 - 0;
     self.velocity = self.speed * v_forward;
     self.think = paveway_fly;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // AC_paveway
@@ -1728,7 +1728,7 @@ void () paveway_fly =
 void (vector org, vector dir, entity targ) AC_paveway = 
 {
     local vector v0;
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -1745,7 +1745,7 @@ void (vector org, vector dir, entity targ) AC_paveway =
     {
         makevectors(self.v_angle);
         v0 = v_forward;
-        traceline(self.oldenemy.origin, self.oldenemy.origin + (v0 * 10000.000), TRUE, world);
+        traceline(self.oldenemy.origin, self.oldenemy.origin + (v0 * 10000), TRUE, world);
         newmis.movedir = trace_endpos;
     }
     
@@ -1756,7 +1756,7 @@ void (vector org, vector dir, entity targ) AC_paveway =
     v0 = normalize(dir);
     newmis.angles = vectoangles(v0);
     newmis.touch = ACprojectile_touchboom;
-    newmis.dmg = 220.000;
+    newmis.dmg = 220;
     newmis.classname = "missile";
     setorigin(newmis, org);
     
@@ -1767,10 +1767,10 @@ void (vector org, vector dir, entity targ) AC_paveway =
     
     self.lastmiss = newmis;
     newmis.speed = self.enemy.speed;
-    newmis.attack_finished = time + 5.000;
+    newmis.attack_finished = time + 5;
     newmis.velocity = dir;
     newmis.think = paveway_fly;
-    newmis.nextthink = time + 0.100;
+    newmis.nextthink = time + 0.1;
 };
 
 // detpak_boom
@@ -1870,18 +1870,18 @@ void (vector org, vector dir, entity targ) AC_paveway =
 // OP_DONE	0	0	0
 void () detpak_boom = 
 {
-    self.takedamage = 0.000;
-    self.health = 0.000;
+    self.takedamage = 0;
+    self.health = 0;
     
     if(self.ammo_rockets)
     {
-        self.ammo_rockets = self.ammo_rockets - 1.000;
+        self.ammo_rockets = self.ammo_rockets - 1;
     }
     
     
-    if((self.owner.classname == "player") && (self.ammo_rockets == 0.000))
+    if((self.owner.classname == "player") && (self.ammo_rockets == 0))
     {
-        self.owner.value = self.owner.value - 1.000;
+        self.owner.value = self.owner.value - 1;
     }
     
     T_RadiusDamage(self, self.owner, self.dmg, self);
@@ -1903,11 +1903,11 @@ void () detpak_boom =
     else
     {
         self.flags = self.flags - (self.flags & FL_ONGROUND);
-        self.velocity_x = self.velocity_x + (crandom() * 500.000);
-        self.velocity_y = self.velocity_y + (crandom() * 500.000);
-        self.velocity_z = self.velocity_z + (random() * 500.000);
+        self.velocity_x = self.velocity_x + (crandom() * 500);
+        self.velocity_y = self.velocity_y + (crandom() * 500);
+        self.velocity_z = self.velocity_z + (random() * 500);
         self.think = detpak_boom;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
     }
     
 };
@@ -1940,19 +1940,19 @@ void () detpak_active =
     
     if(self.owner.deadflag)
     {
-        self.attack_finished = time - 0.100;
+        self.attack_finished = time - 0.1;
     }
     
     
     if(time > self.attack_finished)
     {
         self.think = detpak_boom;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = detpak_active;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // detpak_fall
@@ -2020,15 +2020,15 @@ void () detpak_fall =
     {
         if((self.groundentity == world) || (self.groundentity.solid == SOLID_BSP))
         {
-            sound(self, CHAN_WEAPON, "misc/talk.wav", 1.000, ATTN_NORM);
+            sound(self, CHAN_WEAPON, "misc/talk.wav", 1, ATTN_NORM);
             setsize(self, '-8.000 -8.000 0.000', '8.000 8.000 8.000');
             self.movetype = MOVETYPE_TOSS;
             self.th_die = detpak_boom;
-            self.health = 1.000;
+            self.health = 1;
             self.takedamage = DAMAGE_YES;
             self.touch = SUB_Null;
             self.think = detpak_active;
-            self.nextthink = time + 0.100;
+            self.nextthink = time + 0.1;
             return;
         }
         else
@@ -2042,12 +2042,12 @@ void () detpak_fall =
     if(time > self.attack_finished)
     {
         self.think = detpak_boom;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = detpak_fall;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // AC_detpak
@@ -2102,7 +2102,7 @@ void () detpak_fall =
 // OP_DONE	0	0	0
 void (vector org, vector dir) AC_detpak = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/bounce.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "weapons/bounce.wav", 1, ATTN_NORM);
     newmis = spawn();
     newmis.owner = self;
     newmis.movetype = MOVETYPE_BOUNCE;
@@ -2111,12 +2111,12 @@ void (vector org, vector dir) AC_detpak =
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     setorigin(newmis, org);
     newmis.angles_y = self.enemy.angles_y;
-    newmis.dmg = 200.000;
+    newmis.dmg = 200;
     newmis.classname = "detpak";
     newmis.think = detpak_fall;
-    newmis.nextthink = time + 0.100;
-    newmis.attack_finished = time + 120.000;
-    newmis.ammo_rockets = 3.000;
+    newmis.nextthink = time + 0.1;
+    newmis.attack_finished = time + 120;
+    newmis.ammo_rockets = 3;
     newmis.velocity = dir;
     self.lastmiss = newmis;
 };
@@ -2338,14 +2338,14 @@ void () ACmissile_home =
     if((self.enemy.goalentity.classname == "player") && (self.enemy.goalentity.rad_time < time))
     {
         stuffcmd(self.enemy.goalentity, "play in1.wav\n");
-        self.enemy.goalentity.rad_time = time + 0.500;
+        self.enemy.goalentity.rad_time = time + 0.5;
     }
     
     
     if((self.enemy.model == "progs/plane3.mdl") || (self.enemy.model == "progs/plane3b.mdl"))
     {
         
-        if((self.enemy.unstealth_finished < time) && (random() < 0.100))
+        if((self.enemy.unstealth_finished < time) && (random() < 0.1))
         {
             self.think = ACprojectile_expireboom;
             self.nextthink = self.attack_finished;
@@ -2355,15 +2355,15 @@ void () ACmissile_home =
     }
     
     
-    if(self.angles_x > 180.000)
+    if(self.angles_x > 180)
     {
-        self.angles_x = self.angles_x - 360.000;
+        self.angles_x = self.angles_x - 360;
     }
     
-    org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500);
+    org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
     traceline(self.origin, org, TRUE, self);
     
-    if((trace_fraction != 1.000) && (self.enemy.velocity != '0.000 0.000 0.000'))
+    if((trace_fraction != 1) && (self.enemy.velocity != '0.000 0.000 0.000'))
     {
         self.think = ACprojectile_expireboom;
         self.nextthink = self.attack_finished;
@@ -2372,56 +2372,56 @@ void () ACmissile_home =
     
     v0 = vectoangles(org - self.origin);
     
-    if(v0_x > 180.000)
+    if(v0_x > 180)
     {
-        v0_x = v0_x - 360.000;
+        v0_x = v0_x - 360;
     }
     
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
     v1_x = v0_x - self.angles_x;
     v2 = '0.000 0.000 0.000';
     
-    if(v1_x < 0.000)
+    if(v1_x < 0)
     {
-        v2_x = 0.000 - self.weapon;
+        v2_x = 0 - self.weapon;
     }
     
     
-    if(v1_x > 0.000)
+    if(v1_x > 0)
     {
         v2_x = self.weapon;
     }
     
     
-    if(fabs(v1_x) < (self.weapon * 0.100))
+    if(fabs(v1_x) < (self.weapon * 0.1))
     {
-        v2_x = 0.000;
+        v2_x = 0;
         self.angles_x = v0_x;
     }
     
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        v2_y = 0.000 - self.weapon;
+        v2_y = 0 - self.weapon;
     }
     
     
-    if(0.000 > 0.000)
+    if(0 > 0)
     {
         v2_y = self.weapon;
     }
     
-    if(fabs(0.000) < (self.weapon * 0.100))
+    if(fabs(0) < (self.weapon * 0.1))
     {
-        v2_y = 0.000;
-        self.angles_y = 0.000;
+        v2_y = 0;
+        self.angles_y = 0;
     }
     else
     {
@@ -2430,20 +2430,20 @@ void () ACmissile_home =
     
     self.avelocity = v2;
     
-    if(fabs(0.000) > 90.000)
+    if(fabs(0) > 90)
     {
-        fabs(0.000);
+        fabs(0);
         
-        if((fabs(self.angles_x + v0_x)) > (180.000 - (fabs(self.angles_x + v0_x))))
+        if((fabs(self.angles_x + v0_x)) > (180 - (fabs(self.angles_x + v0_x))))
         {
-            self.angles_y = self.angles_y + 180.000;
-            if((self.angles_x + v0_x) >= 0.000)
+            self.angles_y = self.angles_y + 180;
+            if((self.angles_x + v0_x) >= 0)
             {
-                self.angles_x = 180.000 - self.angles_x;
+                self.angles_x = 180 - self.angles_x;
             }
             else
             {
-                self.angles_x = -180.000 - self.angles_x;
+                self.angles_x = -180 - self.angles_x;
             }
             
         }
@@ -2452,9 +2452,9 @@ void () ACmissile_home =
     
     makevectors(self.angles);
     dir = v_forward;
-    dir_z = 0.000 - 0.000;
+    dir_z = 0 - 0;
     self.velocity = dir * self.speed;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.think = ACmissile_home;
 };
 
@@ -2554,7 +2554,7 @@ void (vector org, vector dir, entity targ, float dm) AC_seekingmissile =
     {
         sprint(targ.goalentity, "Incoming missile!\n");
         stuffcmd(targ.goalentity, "play in1.wav\n");
-        targ.goalentity.rad_time = time + 1.000;
+        targ.goalentity.rad_time = time + 1;
     }
     
     newmis.movetype = MOVETYPE_FLYMISSILE;
@@ -2569,7 +2569,7 @@ void (vector org, vector dir, entity targ, float dm) AC_seekingmissile =
     if(newmis.enemy != world)
     {
         newmis.think = ACmissile_home;
-        newmis.nextthink = time + 0.100;
+        newmis.nextthink = time + 0.1;
     }
     else
     {
@@ -2627,22 +2627,22 @@ void (vector org, vector dir, entity targ, float dm) AC_seekingmissile =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_heatseeker = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 120.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 120);
     setmodel(newmis, "progs/rocket2.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 800.000;
-    newmis.weapon = 150.000;
+    newmis.speed = 800;
+    newmis.weapon = 150;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 800.000;
+    newmis.velocity = dir * 800;
 };
 
 // AC_miniseeker
@@ -2686,22 +2686,22 @@ void (vector org, vector dir, entity targ) AC_heatseeker =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_miniseeker = 
 {
-    sound(self.enemy, CHAN_WEAPON, "rocklnch.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 70.000);
+    sound(self.enemy, CHAN_WEAPON, "rocklnch.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 70);
     setmodel(newmis, "progs/rocket1.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 1000.000;
-    newmis.weapon = 120.000;
+    newmis.speed = 1000;
+    newmis.weapon = 120;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 1.500;
+        newmis.attack_finished = time + 1.5;
     }
     else
     {
-        newmis.nextthink = time + 1.500;
+        newmis.nextthink = time + 1.5;
     }
     
-    newmis.velocity = dir * 1000.000;
+    newmis.velocity = dir * 1000;
 };
 
 // AC_bigseeker
@@ -2745,22 +2745,22 @@ void (vector org, vector dir, entity targ) AC_miniseeker =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_bigseeker = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 200.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 200);
     setmodel(newmis, "progs/rocket2.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 500.000;
-    newmis.weapon = 60.000;
+    newmis.speed = 500;
+    newmis.weapon = 60;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 500.000;
+    newmis.velocity = dir * 500;
 };
 
 // AC_sidewinder
@@ -2804,22 +2804,22 @@ void (vector org, vector dir, entity targ) AC_bigseeker =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_sidewinder = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 120.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 120);
     setmodel(newmis, "progs/sider.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 800.000;
-    newmis.weapon = 150.000;
+    newmis.speed = 800;
+    newmis.weapon = 150;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 800.000;
+    newmis.velocity = dir * 800;
 };
 
 // AC_amraam
@@ -2863,22 +2863,22 @@ void (vector org, vector dir, entity targ) AC_sidewinder =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_amraam = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 140.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 140);
     setmodel(newmis, "progs/amraam.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 1000.000;
-    newmis.weapon = 100.000;
+    newmis.speed = 1000;
+    newmis.weapon = 100;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 1000.000;
+    newmis.velocity = dir * 1000;
 };
 
 // AC_stinger
@@ -2922,22 +2922,22 @@ void (vector org, vector dir, entity targ) AC_amraam =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_stinger = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 90.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 90);
     setmodel(newmis, "progs/sting.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 800.000;
-    newmis.weapon = 180.000;
+    newmis.speed = 800;
+    newmis.weapon = 180;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 800.000;
+    newmis.velocity = dir * 800;
 };
 
 // AC_maverick
@@ -2981,22 +2981,22 @@ void (vector org, vector dir, entity targ) AC_stinger =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_maverick = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 200.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 200);
     setmodel(newmis, "progs/maver.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 500.000;
-    newmis.weapon = 60.000;
+    newmis.speed = 500;
+    newmis.weapon = 60;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 500.000;
+    newmis.velocity = dir * 500;
 };
 
 // AC_hellfire
@@ -3040,29 +3040,29 @@ void (vector org, vector dir, entity targ) AC_maverick =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_hellfire = 
 {
-    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1.000, ATTN_NORM);
-    AC_seekingmissile(org, dir, targ, 160.000);
+    sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
+    AC_seekingmissile(org, dir, targ, 160);
     setmodel(newmis, "progs/hfire.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.speed = 600.000;
-    newmis.weapon = 75.000;
+    newmis.speed = 600;
+    newmis.weapon = 75;
     if(newmis.enemy != world)
     {
-        newmis.attack_finished = time + 5.000;
+        newmis.attack_finished = time + 5;
     }
     else
     {
-        newmis.nextthink = time + 5.000;
+        newmis.nextthink = time + 5;
     }
     
-    newmis.velocity = dir * 600.000;
+    newmis.velocity = dir * 600;
 };
 
 // s_pexplode0
 // function begins at statement 6361, parm_start=5023
 // OP_STATE	619	5023	0
 // OP_DONE	0	0	0
-void () s_pexplode0 = [0.000, s_pexplode1]
+void () s_pexplode0 = [0, s_pexplode1]
 {
 };
 
@@ -3070,7 +3070,7 @@ void () s_pexplode0 = [0.000, s_pexplode1]
 // function begins at statement 6363, parm_start=5024
 // OP_STATE	677	5024	0
 // OP_DONE	0	0	0
-void () s_pexplode1 = [1.000, s_pexplode2]
+void () s_pexplode1 = [1, s_pexplode2]
 {
 };
 
@@ -3078,7 +3078,7 @@ void () s_pexplode1 = [1.000, s_pexplode2]
 // function begins at statement 6365, parm_start=5025
 // OP_STATE	806	5025	0
 // OP_DONE	0	0	0
-void () s_pexplode2 = [2.000, s_pexplode3]
+void () s_pexplode2 = [2, s_pexplode3]
 {
 };
 
@@ -3086,7 +3086,7 @@ void () s_pexplode2 = [2.000, s_pexplode3]
 // function begins at statement 6367, parm_start=5026
 // OP_STATE	788	5026	0
 // OP_DONE	0	0	0
-void () s_pexplode3 = [3.000, s_pexplode4]
+void () s_pexplode3 = [3, s_pexplode4]
 {
 };
 
@@ -3094,7 +3094,7 @@ void () s_pexplode3 = [3.000, s_pexplode4]
 // function begins at statement 6369, parm_start=5027
 // OP_STATE	808	5027	0
 // OP_DONE	0	0	0
-void () s_pexplode4 = [4.000, s_pexplode5]
+void () s_pexplode4 = [4, s_pexplode5]
 {
 };
 
@@ -3102,7 +3102,7 @@ void () s_pexplode4 = [4.000, s_pexplode5]
 // function begins at statement 6371, parm_start=5028
 // OP_STATE	813	568	0
 // OP_DONE	0	0	0
-void () s_pexplode5 = [5.000, SUB_Remove]
+void () s_pexplode5 = [5, SUB_Remove]
 {
 };
 
@@ -3175,8 +3175,8 @@ void () Plasma_Watercheck =
     
     if(((pc == CONTENT_WATER) || (pc == CONTENT_SLIME)) || (pc == CONTENT_LAVA))
     {
-        sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", 1.000, ATTN_NORM);
-        T_RadiusDamage(self, self.owner, 60.000, world);
+        sound(self, CHAN_WEAPON, "enforcer/enfstop.wav", 1, ATTN_NORM);
+        T_RadiusDamage(self, self.owner, 60, world);
         PlasmaExplosion();
         return;
     }
@@ -3189,7 +3189,7 @@ void () Plasma_Watercheck =
     }
     
     self.think = Plasma_Watercheck;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // ACplasma_touch
@@ -3254,15 +3254,15 @@ void () ACplasma_touch =
         return;
     }
     
-    damg = 40.000 + (random() * 40.000);
+    damg = 40 + (random() * 40);
     
     if(other.health)
     {
         T_Damage(other, self, self.owner, damg);
     }
     
-    self.origin = self.origin - (8.000 * normalize(self.velocity));
-    sound(self, CHAN_WEAPON, "dsfirxpl.wav", 1.000, ATTN_NORM);
+    self.origin = self.origin - (8 * normalize(self.velocity));
+    sound(self, CHAN_WEAPON, "dsfirxpl.wav", 1, ATTN_NORM);
     PlasmaExplosion();
 };
 
@@ -3328,7 +3328,7 @@ void () ACplasma_touch =
 // OP_DONE	0	0	0
 void (vector org, vector dir, entity targ) AC_plasma = 
 {
-    sound(self.enemy, CHAN_WEAPON, "dsplasma.wav", 1.000, ATTN_NORM);
+    sound(self.enemy, CHAN_WEAPON, "dsplasma.wav", 1, ATTN_NORM);
     newmis = spawn();
     if(targ != self.enemy)
     {
@@ -3344,15 +3344,15 @@ void (vector org, vector dir, entity targ) AC_plasma =
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/pbullet.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    newmis.skin = 1.000;
+    newmis.skin = 1;
     newmis.touch = ACplasma_touch;
     newmis.classname = "plasma";
-    newmis.nextthink = time + 0.100;
+    newmis.nextthink = time + 0.1;
     newmis.think = Plasma_Watercheck;
-    newmis.attack_finished = time + 1.500;
+    newmis.attack_finished = time + 1.5;
     newmis.enemy = targ;
     setorigin(newmis, org);
-    newmis.velocity = dir * 1200.000;
+    newmis.velocity = dir * 1200;
     newmis.avelocity = '300.000 300.000 300.000';
     self.lastmiss = newmis;
 };
@@ -3463,12 +3463,12 @@ void () AC_Flare =
     newmis = spawn();
     newmis.solid = SOLID_TRIGGER;
     newmis.movetype = MOVETYPE_BOUNCE;
-    newmis.velocity_x = (random() * 200.000) - 100.000;
-    newmis.velocity_y = (random() * 200.000) - 100.000;
-    newmis.velocity_z = (random() * 200.000) - 100.000;
+    newmis.velocity_x = (random() * 200) - 100;
+    newmis.velocity_y = (random() * 200) - 100;
+    newmis.velocity_z = (random() * 200) - 100;
     newmis.velocity = newmis.velocity + self.enemy.velocity;
     
-    if(self.style > 6.000)
+    if(self.style > 6)
     {
         newmis.velocity = newmis.velocity + '0.000 0.000 600.000';
     }
@@ -3477,10 +3477,10 @@ void () AC_Flare =
     setmodel(newmis, "progs/lavaball.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     setorigin(newmis, self.enemy.origin);
-    newmis.nextthink = time + 5.000;
+    newmis.nextthink = time + 5;
     newmis.think = SUB_Remove;
     newmis.touch = flare_touch;
-    newmis.effects = 4.000;
+    newmis.effects = 4;
     e = find(world, classname, "missile");
     
     while(e)
@@ -3489,7 +3489,7 @@ void () AC_Flare =
         if(e.enemy == self.enemy)
         {
             
-            if(random() < 0.500)
+            if(random() < 0.5)
             {
                 e.enemy.pdmg = e.enemy.pdmg - e.dmg;
                 e.enemy = newmis;

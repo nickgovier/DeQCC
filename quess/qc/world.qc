@@ -745,19 +745,19 @@ void () worldspawn =
     precache_model("progs/v_light.mdl");
     precache_model("progs/null.mdl");
     precache_model("progs/headcam.mdl");
-    lightstyle(0.000, "m");
-    lightstyle(1.000, "mmnmmommommnonmmonqnmmo");
-    lightstyle(2.000, "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba");
-    lightstyle(3.000, "mmmmmaaaaammmmmaaaaaabcdefgabcdefg");
-    lightstyle(4.000, "mamamamamama");
-    lightstyle(5.000, "jklmnopqrstuvwxyzyxwvutsrqponmlkj");
-    lightstyle(6.000, "nmonqnmomnmomomno");
-    lightstyle(7.000, "mmmaaaabcdefgmmmmaaaammmaamm");
-    lightstyle(8.000, "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa");
-    lightstyle(9.000, "aaaaaaaazzzzzzzz");
-    lightstyle(10.000, "mmamammmmammamamaaamammma");
-    lightstyle(11.000, "abcdefghijklmnopqrrqponmlkjihgfedcba");
-    lightstyle(63.000, "a");
+    lightstyle(0, "m");
+    lightstyle(1, "mmnmmommommnonmmonqnmmo");
+    lightstyle(2, "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba");
+    lightstyle(3, "mmmmmaaaaammmmmaaaaaabcdefgabcdefg");
+    lightstyle(4, "mamamamamama");
+    lightstyle(5, "jklmnopqrstuvwxyzyxwvutsrqponmlkj");
+    lightstyle(6, "nmonqnmomnmomomno");
+    lightstyle(7, "mmmaaaabcdefgmmmmaaaammmaamm");
+    lightstyle(8, "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa");
+    lightstyle(9, "aaaaaaaazzzzzzzz");
+    lightstyle(10, "mmamammmmammamamaaamammma");
+    lightstyle(11, "abcdefghijklmnopqrrqponmlkjihgfedcba");
+    lightstyle(63, "a");
 };
 
 // StartFrame
@@ -775,7 +775,7 @@ void () StartFrame =
 {
     teamplay = cvar("teamplay");
     skill = cvar("skill");
-    framecount = framecount + 1.000;
+    framecount = framecount + 1;
 };
 
 entity bodyque_head;
@@ -883,7 +883,7 @@ void (entity ent) CopyToBodyQue =
     bodyque_head.colormap = ent.colormap;
     bodyque_head.movetype = ent.movetype;
     bodyque_head.velocity = ent.velocity;
-    bodyque_head.flags = 0.000;
+    bodyque_head.flags = 0;
     setorigin(bodyque_head, ent.origin);
     setsize(bodyque_head, ent.mins, ent.maxs);
     bodyque_head = bodyque_head.owner;

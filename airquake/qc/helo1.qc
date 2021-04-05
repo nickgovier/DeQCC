@@ -550,8 +550,8 @@ void () he1_steer =
     
     if(time > self.fly_sound)
     {
-        sound(stemp, CHAN_BODY, "engines/chopper.wav", (stemp.thru * 0.200) + 0.200, ATTN_NORM);
-        self.fly_sound = time + 1.000;
+        sound(stemp, CHAN_BODY, "engines/chopper.wav", (stemp.thru * 0.2) + 0.2, ATTN_NORM);
+        self.fly_sound = time + 1;
     }
     
     self.flags = self.flags - (self.flags & FL_ONGROUND);
@@ -559,37 +559,37 @@ void () he1_steer =
     
     if(pointcontents(stemp.origin) < CONTENT_EMPTY)
     {
-        T_Damage(stemp, stemp, stemp, 1000.000);
+        T_Damage(stemp, stemp, stemp, 1000);
     }
     
-    mov = 0.000;
+    mov = 0;
     
     if(self.button2)
     {
-        mov = 1.000;
+        mov = 1;
     }
     
     
-    if(stemp.angles_x < -180.000)
+    if(stemp.angles_x < -180)
     {
-        stemp.angles_x = stemp.angles_x + 360.000;
+        stemp.angles_x = stemp.angles_x + 360;
     }
     
     
-    if(stemp.angles_x > 180.000)
+    if(stemp.angles_x > 180)
     {
-        stemp.angles_x = stemp.angles_x - 360.000;
+        stemp.angles_x = stemp.angles_x - 360;
     }
     
     
-    if((stemp.health > 0.000) && !stemp.landed)
+    if((stemp.health > 0) && !stemp.landed)
     {
         v0 = '0.000 0.000 0.000';
-        v0_x = 0.000 - self.v_angle_x;
+        v0_x = 0 - self.v_angle_x;
         
-        if(self.toyview == 4.000)
+        if(self.toyview == 4)
         {
-            v0_x = 0.000;
+            v0_x = 0;
         }
         
         
@@ -598,53 +598,53 @@ void () he1_steer =
             v1 = self.v_angle;
             v2 = stemp.angles;
             v3 = v1 - v2;
-            v3_x = 0.000;
-            v3_z = 0.000;
+            v3_x = 0;
+            v3_z = 0;
             makevectors(v3);
             tmp = v_forward_x;
-            v0_x = v0_x - (40.000 * tmp);
-            tmp = 0.000;
-            v0_z = 0.000 - (40.000 * tmp);
+            v0_x = v0_x - (40 * tmp);
+            tmp = 0;
+            v0_z = 0 - (40 * tmp);
         }
         
         
-        if(v0_x < -45.000)
+        if(v0_x < -45)
         {
-            v0_x = -45.000;
+            v0_x = -45;
         }
         
         
-        if(v0_x > 45.000)
+        if(v0_x > 45)
         {
-            v0_x = 45.000;
+            v0_x = 45;
         }
         
-        if(self.toyview == 0.000)
+        if(self.toyview == 0)
         {
             v0_y = self.v_angle_y;
         }
         else
         {
-            if(self.toyview == 1.000)
+            if(self.toyview == 1)
             {
-                v0_y = anglemod(self.v_angle_y + 90.000);
+                v0_y = anglemod(self.v_angle_y + 90);
             }
             else
             {
-                if(self.toyview == 2.000)
+                if(self.toyview == 2)
                 {
-                    v0_y = anglemod(self.v_angle_y + 180.000);
+                    v0_y = anglemod(self.v_angle_y + 180);
                 }
                 else
                 {
-                    if(self.toyview == 3.000)
+                    if(self.toyview == 3)
                     {
-                        v0_y = anglemod(self.v_angle_y + 270.000);
+                        v0_y = anglemod(self.v_angle_y + 270);
                     }
                     else
                     {
                         
-                        if(self.toyview == 4.000)
+                        if(self.toyview == 4)
                         {
                             v0_y = stemp.angles_y;
                         }
@@ -658,100 +658,100 @@ void () he1_steer =
         }
         
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(0.000 - stemp.angles_y);
+        v1_y = anglemod(0 - stemp.angles_y);
         
-        if(0.000 > 180.000)
+        if(0 > 180)
         {
-            v1_y = 0.000 - 360.000;
+            v1_y = 0 - 360;
         }
         
         v1_x = v0_x - stemp.angles_x;
         v2 = '0.000 0.000 0.000';
         
-        if(v1_x < 0.000)
+        if(v1_x < 0)
         {
-            v2_x = -70.000;
+            v2_x = -70;
         }
         
         
-        if(v1_x > 0.000)
+        if(v1_x > 0)
         {
-            v2_x = 70.000;
+            v2_x = 70;
         }
         
         
-        if(fabs(v1_x) < (frametime * 70.000))
+        if(fabs(v1_x) < (frametime * 70))
         {
-            v2_x = 0.000;
+            v2_x = 0;
             stemp.angles_x = v0_x;
         }
         
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            v2_y = -110.000;
+            v2_y = -110;
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            v2_y = 110.000;
+            v2_y = 110;
         }
         
-        if(fabs(0.000) < (frametime * 110.000))
+        if(fabs(0) < (frametime * 110))
         {
-            v2_y = 0.000;
-            stemp.angles_y = 0.000;
+            v2_y = 0;
+            stemp.angles_y = 0;
         }
         else
         {
             stemp.angles_y = anglemod(stemp.angles_y);
         }
         
-        v0_z = 0.000 - ((0.000 * fabs(stemp.angles_x)) * 0.010);
-        v0_z = 0.000 + (45.000 * self.lefty);
+        v0_z = 0 - ((0 * fabs(stemp.angles_x)) * 0.01);
+        v0_z = 0 + (45 * self.lefty);
         
-        if(0.000 < -45.000)
+        if(0 < -45)
         {
-            v0_z = -45.000;
+            v0_z = -45;
         }
         
         
-        if(0.000 > 45.000)
+        if(0 > 45)
         {
-            v0_z = 45.000;
+            v0_z = 45;
         }
         
-        v1_z = 0.000 - stemp.angles_z;
+        v1_z = 0 - stemp.angles_z;
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            v2_z = -100.000;
+            v2_z = -100;
             
-            if(0.000 < (0.000 * 10.000))
+            if(0 < (0 * 10))
             {
-                v2_z = 0.000 * 10.000;
+                v2_z = 0 * 10;
             }
             
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            v2_z = 100.000;
+            v2_z = 100;
             
-            if(0.000 > (0.000 * 10.000))
+            if(0 > (0 * 10))
             {
-                v2_z = 0.000 * 10.000;
+                v2_z = 0 * 10;
             }
             
         }
         
         
-        if(fabs(0.000) < (0.000 * frametime))
+        if(fabs(0) < (0 * frametime))
         {
-            v2_z = 0.000;
-            stemp.angles_z = 0.000 - (0.000 * 0.300);
+            v2_z = 0;
+            stemp.angles_z = 0 - (0 * 0.3);
         }
         
         stemp.avelocity = v2;
@@ -761,19 +761,19 @@ void () he1_steer =
     if(stemp.landed)
     {
         
-        if(((stemp.groundentity.classname != "func_runway") || (stemp.thru > 2.000)) || (stemp.health < 1.000))
+        if(((stemp.groundentity.classname != "func_runway") || (stemp.thru > 2)) || (stemp.health < 1))
         {
-            stemp.landed = 0.000;
+            stemp.landed = 0;
             stemp.groundentity = world;
         }
         
     }
     
-    tmp = (stemp.health * 100.000) / stemp.max_health;
+    tmp = (stemp.health * 100) / stemp.max_health;
     
-    if(tmp < 1.000)
+    if(tmp < 1)
     {
-        tmp = 1.000;
+        tmp = 1;
     }
     
     
@@ -784,52 +784,52 @@ void () he1_steer =
     
     self.health = tmp;
     
-    if((self.health < 20.000) && (stemp.model == "progs/helo1.mdl"))
+    if((self.health < 20) && (stemp.model == "progs/helo1.mdl"))
     {
         setmodel(stemp, "progs/helo1b.mdl");
     }
     
     
-    if((self.health >= 20.000) && (stemp.model == "progs/helo1b.mdl"))
+    if((self.health >= 20) && (stemp.model == "progs/helo1b.mdl"))
     {
         setmodel(stemp, "progs/helo1.mdl");
     }
     
-    if(stemp.health < 1.000)
+    if(stemp.health < 1)
     {
-        tmp = random() * 50.000;
+        tmp = random() * 50;
         self.dmg_take = self.dmg_take + tmp;
-        stemp.effects = 4.000;
+        stemp.effects = 4;
     }
     else
     {
-        stemp.effects = 0.000;
+        stemp.effects = 0;
     }
     
     v3 = stemp.angles;
-    v3_x = 0.000 - v3_x;
+    v3_x = 0 - v3_x;
     makevectors(v3);
-    if((stemp.thru != 2.000) || (stemp.health < 1.000))
+    if((stemp.thru != 2) || (stemp.health < 1))
     {
-        v3 = ((v_up * 20.000) * stemp.thru) - '0.000 0.000 40.000';
+        v3 = ((v_up * 20) * stemp.thru) - '0.000 0.000 40.000';
     }
     else
     {
-        v3 = (v_up * ((20.000 * stemp.thru) / 0.000)) - '0.000 0.000 40.000';
+        v3 = (v_up * ((20 * stemp.thru) / 0)) - '0.000 0.000 40.000';
     }
     
     
     if(time >= self.pausetime)
     {
-        self.pausetime = time + 0.100;
+        self.pausetime = time + 0.1;
         if(!stemp.landed)
         {
-            stemp.velocity = (stemp.velocity * 0.800) + v3;
-            self.armorvalue = vlen(stemp.velocity) / 3.300;
+            stemp.velocity = (stemp.velocity * 0.8) + v3;
+            self.armorvalue = vlen(stemp.velocity) / 3.3;
         }
         else
         {
-            self.armorvalue = 0.000;
+            self.armorvalue = 0;
         }
         
     }
@@ -838,14 +838,14 @@ void () he1_steer =
     if(sky_z && (stemp.origin_z > sky_z))
     {
         
-        if(stemp.velocity_z > 0.000)
+        if(stemp.velocity_z > 0)
         {
             stemp.origin_z = sky_z;
-            stemp.velocity_z = 0.000;
+            stemp.velocity_z = 0;
             
-            if(stemp.angles_x > 0.000)
+            if(stemp.angles_x > 0)
             {
-                stemp.angles_x = 0.000;
+                stemp.angles_x = 0;
             }
             
         }
@@ -861,16 +861,16 @@ void () he1_steer =
     
     self.oldenemy.velocity = stemp.velocity;
     v2 = self.enemy.angles;
-    v2_x = 0.000 - v2_x;
+    v2_x = 0 - v2_x;
     makevectors(v2);
     v2 = v_forward;
     if(self.weapon == IT_WEP1)
     {
-        v1 = AC_aim2(0.970, -500.000);
+        v1 = AC_aim2(0.97, -500);
         
-        if((v2 * v1) < 0.700)
+        if((v2 * v1) < 0.7)
         {
-            v1 = AC_aim(0.970, -500.000);
+            v1 = AC_aim(0.97, -500);
         }
         
     }
@@ -878,23 +878,23 @@ void () he1_steer =
     {
         if(self.weapon == IT_WEP2)
         {
-            v1 = AC_aim(0.950, -1000.000);
+            v1 = AC_aim(0.95, -1000);
         }
         else
         {
             if(self.weapon == IT_WEP3)
             {
-                v1 = AC_aim(0.930, 1500.000);
+                v1 = AC_aim(0.93, 1500);
             }
             else
             {
                 if(self.weapon == IT_WEP4)
                 {
-                    v1 = AC_aim(0.930, 2000.000);
+                    v1 = AC_aim(0.93, 2000);
                 }
                 else
                 {
-                    v1 = AC_aim(1.000, -10.000);
+                    v1 = AC_aim(1, -10);
                 }
                 
             }
@@ -910,11 +910,11 @@ void () he1_steer =
     }
     
     v1 = normalize(v1);
-    traceline(stemp.origin, stemp.origin + (v1 * 200.000), FALSE, stemp);
+    traceline(stemp.origin, stemp.origin + (v1 * 200), FALSE, stemp);
     if(self.enemy.trigger_field == world)
     {
-        v2 = stemp.origin + (v1 * ((trace_fraction * 200.000) - 8.000));
-        self.trigger_field.frame = 0.000;
+        v2 = stemp.origin + (v1 * ((trace_fraction * 200) - 8));
+        self.trigger_field.frame = 0;
     }
     else
     {
@@ -1170,106 +1170,106 @@ void () he1_attack =
     local vector v2;
     local entity stemp;
     v1 = self.enemy.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     makevectors(v1);
     v1 = v_forward;
     self.enemy.trigger_field = world;
     if(self.weapon == IT_WEP1)
     {
-        if(self.ammo_auto >= 1.000)
+        if(self.ammo_auto >= 1)
         {
-            v2 = AC_aim2(0.970, -500.000);
+            v2 = AC_aim2(0.97, -500);
             
-            if((v2 * v1) < 0.700)
+            if((v2 * v1) < 0.7)
             {
-                v2 = AC_aim(0.970, -500.000);
+                v2 = AC_aim(0.97, -500);
             }
             
-            AC_spike(self.enemy.origin + (v1 * 10.000), v2, world);
+            AC_spike(self.enemy.origin + (v1 * 10), v2, world);
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
-            self.enemy.show_hostile = time + 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1;
+            self.enemy.show_hostile = time + 1;
         }
         else
         {
             sprint(self, "not enough ammo.\n");
         }
         
-        self.attack_finished = time + 0.100;
+        self.attack_finished = time + 0.1;
     }
     else
     {
         if(self.weapon == IT_WEP2)
         {
-            if(self.ammo_rock >= 1.000)
+            if(self.ammo_rock >= 1)
             {
-                v2 = AC_aim(0.930, -1000.000);
-                if(self.ammo_rock & 1.000)
+                v2 = AC_aim(0.93, -1000);
+                if(self.ammo_rock & 1)
                 {
-                    AC_rocket(((self.enemy.origin - (v_up * 10.000)) - (v1 * 10.000)) + (v_right * 10.000), v2, world);
+                    AC_rocket(((self.enemy.origin - (v_up * 10)) - (v1 * 10)) + (v_right * 10), v2, world);
                 }
                 else
                 {
-                    AC_rocket(((self.enemy.origin - (v_up * 10.000)) - (v1 * 10.000)) - (v_right * 10.000), v2, world);
+                    AC_rocket(((self.enemy.origin - (v_up * 10)) - (v1 * 10)) - (v_right * 10), v2, world);
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.currentammo = self.ammo_nails = self.ammo_rock = self.ammo_rock - 1.000;
-                self.enemy.show_hostile = time + 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_rock = self.ammo_rock - 1;
+                self.enemy.show_hostile = time + 1;
             }
             else
             {
                 sprint(self, "not enough ammo.\n");
             }
             
-            self.attack_finished = time + 0.400;
+            self.attack_finished = time + 0.4;
         }
         else
         {
             if(self.weapon == IT_WEP3)
             {
-                if(self.ammo_amsl >= 1.000)
+                if(self.ammo_amsl >= 1)
                 {
-                    v2 = AC_aim(0.930, 1500.000);
-                    if(self.ammo_amsl & 1.000)
+                    v2 = AC_aim(0.93, 1500);
+                    if(self.ammo_amsl & 1)
                     {
-                        AC_sidewinder((self.enemy.origin - (v1 * 10.000)) + (v_right * 16.000), v1, self.enemy.trigger_field);
+                        AC_sidewinder((self.enemy.origin - (v1 * 10)) + (v_right * 16), v1, self.enemy.trigger_field);
                     }
                     else
                     {
-                        AC_sidewinder((self.enemy.origin - (v1 * 10.000)) - (v_right * 16.000), v1, self.enemy.trigger_field);
+                        AC_sidewinder((self.enemy.origin - (v1 * 10)) - (v_right * 16), v1, self.enemy.trigger_field);
                     }
                     
                     self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                    self.currentammo = self.ammo_rockets = self.ammo_amsl = self.ammo_amsl - 1.000;
-                    self.enemy.show_hostile = time + 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_amsl = self.ammo_amsl - 1;
+                    self.enemy.show_hostile = time + 1;
                 }
                 else
                 {
                     sprint(self, "not enough ammo.\n");
                 }
                 
-                self.attack_finished = time + 1.200;
+                self.attack_finished = time + 1.2;
             }
             else
             {
                 
                 if(self.weapon == IT_WEP4)
                 {
-                    if(self.ammo_smsl > 0.000)
+                    if(self.ammo_smsl > 0)
                     {
-                        v2 = AC_aim(0.930, 2000.000);
-                        AC_hellfire((self.enemy.origin - (v_up * 10.000)) - (v1 * 10.000), v1, self.enemy.trigger_field);
+                        v2 = AC_aim(0.93, 2000);
+                        AC_hellfire((self.enemy.origin - (v_up * 10)) - (v1 * 10), v1, self.enemy.trigger_field);
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.enemy.show_hostile = time + 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1;
+                        self.enemy.show_hostile = time + 1;
                     }
                     else
                     {
                         sprint(self, "not enough ammo.\n");
                     }
                     
-                    self.attack_finished = time + 2.000;
+                    self.attack_finished = time + 2;
                 }
                 
             }
@@ -1374,24 +1374,24 @@ void () start_helo1 =
     setsize(e, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     e.solid = SOLID_SLIDEBOX;
     e.touch = T_HETouch;
-    e.health = 200.000;
+    e.health = 200;
     e.max_health = e.health;
     e.takedamage = DAMAGE_AIM;
     e.th_die = HE_Die;
     e.netname = self.netname;
-    e.thru = 2.000;
+    e.thru = 2;
     self.enemy = e;
     e.goalentity = self;
     e.owner = self;
-    self.toyview = 0.000;
+    self.toyview = 0;
     self.th_missile = he1_attack;
     self.th_run = he1_steer;
     self.th_melee = he1_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_nails = self.ammo_rock = 16.000 * wepmulti;
-    self.ammo_rockets = self.ammo_amsl = 4.000 * wepmulti;
-    self.ammo_cells = self.ammo_smsl = 4.000 * wepmulti;
+    self.ammo_auto = 100;
+    self.ammo_shells = 100;
+    self.ammo_nails = self.ammo_rock = 16 * wepmulti;
+    self.ammo_rockets = self.ammo_amsl = 4 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 4 * wepmulti;
     Check_startlanded();
 };
 

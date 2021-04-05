@@ -78,16 +78,16 @@ void () Laser_Touch =
     org = self.origin - (FL_CLIENT * normalize(self.velocity));
     if(other.health)
     {
-        SpawnBlood(org, self.velocity * 0.200, 15.000);
-        T_Damage(other, self, self.owner, 15.000);
+        SpawnBlood(org, self.velocity * 0.2, 15);
+        T_Damage(other, self, self.owner, 15);
     }
     else
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0.000);
-        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, 0);
     }
     
     remove(self);
@@ -196,7 +196,7 @@ void () enforcer_fire =
     local vector org;
     self.effects = self.effects | EF_MUZZLEFLASH;
     makevectors(self.angles);
-    org = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.500)) + '0.000 0.000 16.000';
+    org = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.5)) + '0.000 0.000 16.000';
     LaunchLaser(org, self.enemy.origin - self.origin);
 };
 
@@ -205,7 +205,7 @@ void () enforcer_fire =
 // OP_STATE	213	10361	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand1 = [0.000, enf_stand2]
+void () enf_stand1 = [0, enf_stand2]
 {
     ai_stand();
 };
@@ -215,7 +215,7 @@ void () enf_stand1 = [0.000, enf_stand2]
 // OP_STATE	214	10362	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand2 = [1.000, enf_stand3]
+void () enf_stand2 = [1, enf_stand3]
 {
     ai_stand();
 };
@@ -225,7 +225,7 @@ void () enf_stand2 = [1.000, enf_stand3]
 // OP_STATE	216	10363	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand3 = [2.000, enf_stand4]
+void () enf_stand3 = [2, enf_stand4]
 {
     ai_stand();
 };
@@ -235,7 +235,7 @@ void () enf_stand3 = [2.000, enf_stand4]
 // OP_STATE	228	10364	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand4 = [3.000, enf_stand5]
+void () enf_stand4 = [3, enf_stand5]
 {
     ai_stand();
 };
@@ -245,7 +245,7 @@ void () enf_stand4 = [3.000, enf_stand5]
 // OP_STATE	229	10365	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand5 = [4.000, enf_stand6]
+void () enf_stand5 = [4, enf_stand6]
 {
     ai_stand();
 };
@@ -255,7 +255,7 @@ void () enf_stand5 = [4.000, enf_stand6]
 // OP_STATE	230	10366	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand6 = [5.000, enf_stand7]
+void () enf_stand6 = [5, enf_stand7]
 {
     ai_stand();
 };
@@ -265,7 +265,7 @@ void () enf_stand6 = [5.000, enf_stand7]
 // OP_STATE	231	10360	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () enf_stand7 = [6.000, enf_stand1]
+void () enf_stand7 = [6, enf_stand1]
 {
     ai_stand();
 };
@@ -285,10 +285,10 @@ void () enf_stand7 = [6.000, enf_stand1]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk1 = [7.000, enf_walk2]
+void () enf_walk1 = [7, enf_walk2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "enforcer/idle1.wav", TRUE, ATTN_IDLE);
     }
@@ -302,7 +302,7 @@ void () enf_walk1 = [7.000, enf_walk2]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk2 = [8.000, enf_walk3]
+void () enf_walk2 = [8, enf_walk3]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -313,7 +313,7 @@ void () enf_walk2 = [8.000, enf_walk3]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk3 = [9.000, enf_walk4]
+void () enf_walk3 = [9, enf_walk4]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -324,7 +324,7 @@ void () enf_walk3 = [9.000, enf_walk4]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk4 = [10.000, enf_walk5]
+void () enf_walk4 = [10, enf_walk5]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -335,7 +335,7 @@ void () enf_walk4 = [10.000, enf_walk5]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk5 = [11.000, enf_walk6]
+void () enf_walk5 = [11, enf_walk6]
 {
     ai_walk(TRUE);
 };
@@ -346,7 +346,7 @@ void () enf_walk5 = [11.000, enf_walk6]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk6 = [12.000, enf_walk7]
+void () enf_walk6 = [12, enf_walk7]
 {
     ai_walk(FL_SWIM);
 };
@@ -357,7 +357,7 @@ void () enf_walk6 = [12.000, enf_walk7]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk7 = [13.000, enf_walk8]
+void () enf_walk7 = [13, enf_walk8]
 {
     ai_walk(FL_SWIM);
 };
@@ -368,7 +368,7 @@ void () enf_walk7 = [13.000, enf_walk8]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk8 = [14.000, enf_walk9]
+void () enf_walk8 = [14, enf_walk9]
 {
     ai_walk(TRUE);
 };
@@ -379,7 +379,7 @@ void () enf_walk8 = [14.000, enf_walk9]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk9 = [15.000, enf_walk10]
+void () enf_walk9 = [15, enf_walk10]
 {
     ai_walk(FL_SWIM);
 };
@@ -390,7 +390,7 @@ void () enf_walk9 = [15.000, enf_walk10]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk10 = [16.000, enf_walk11]
+void () enf_walk10 = [16, enf_walk11]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -401,7 +401,7 @@ void () enf_walk10 = [16.000, enf_walk11]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk11 = [17.000, enf_walk12]
+void () enf_walk11 = [17, enf_walk12]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -412,7 +412,7 @@ void () enf_walk11 = [17.000, enf_walk12]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk12 = [18.000, enf_walk13]
+void () enf_walk12 = [18, enf_walk13]
 {
     ai_walk(TRUE);
 };
@@ -423,7 +423,7 @@ void () enf_walk12 = [18.000, enf_walk13]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk13 = [19.000, enf_walk14]
+void () enf_walk13 = [19, enf_walk14]
 {
     ai_walk(FL_SWIM);
 };
@@ -434,7 +434,7 @@ void () enf_walk13 = [19.000, enf_walk14]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk14 = [20.000, enf_walk15]
+void () enf_walk14 = [20, enf_walk15]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -445,7 +445,7 @@ void () enf_walk14 = [20.000, enf_walk15]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk15 = [21.000, enf_walk16]
+void () enf_walk15 = [21, enf_walk16]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -456,7 +456,7 @@ void () enf_walk15 = [21.000, enf_walk16]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () enf_walk16 = [22.000, enf_walk1]
+void () enf_walk16 = [22, enf_walk1]
 {
     ai_walk(FL_SWIM);
 };
@@ -476,15 +476,15 @@ void () enf_walk16 = [22.000, enf_walk1]
 // OP_STORE_V	3866	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run1 = [23.000, enf_run2]
+void () enf_run1 = [23, enf_run2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "enforcer/idle1.wav", TRUE, ATTN_IDLE);
     }
     
-    ai_run(18.000);
+    ai_run(18);
 };
 
 // enf_run2
@@ -493,9 +493,9 @@ void () enf_run1 = [23.000, enf_run2]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run2 = [24.000, enf_run3]
+void () enf_run2 = [24, enf_run3]
 {
-    ai_run(14.000);
+    ai_run(14);
 };
 
 // enf_run3
@@ -504,7 +504,7 @@ void () enf_run2 = [24.000, enf_run3]
 // OP_STORE_V	232	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run3 = [25.000, enf_run4]
+void () enf_run3 = [25, enf_run4]
 {
     ai_run(MOVETYPE_PUSH);
 };
@@ -515,9 +515,9 @@ void () enf_run3 = [25.000, enf_run4]
 // OP_STORE_V	2717	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run4 = [26.000, enf_run5]
+void () enf_run4 = [26, enf_run5]
 {
-    ai_run(12.000);
+    ai_run(12);
 };
 
 // enf_run5
@@ -526,9 +526,9 @@ void () enf_run4 = [26.000, enf_run5]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run5 = [27.000, enf_run6]
+void () enf_run5 = [27, enf_run6]
 {
-    ai_run(14.000);
+    ai_run(14);
 };
 
 // enf_run6
@@ -537,9 +537,9 @@ void () enf_run5 = [27.000, enf_run6]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run6 = [28.000, enf_run7]
+void () enf_run6 = [28, enf_run7]
 {
-    ai_run(14.000);
+    ai_run(14);
 };
 
 // enf_run7
@@ -548,7 +548,7 @@ void () enf_run6 = [28.000, enf_run7]
 // OP_STORE_V	232	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run7 = [29.000, enf_run8]
+void () enf_run7 = [29, enf_run8]
 {
     ai_run(MOVETYPE_PUSH);
 };
@@ -559,7 +559,7 @@ void () enf_run7 = [29.000, enf_run8]
 // OP_STORE_V	236	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () enf_run8 = [30.000, enf_run1]
+void () enf_run8 = [30, enf_run1]
 {
     ai_run(MOVETYPE_BOUNCEMISSILE);
 };
@@ -569,7 +569,7 @@ void () enf_run8 = [30.000, enf_run1]
 // OP_STATE	305	10394	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk1 = [31.000, enf_atk2]
+void () enf_atk1 = [31, enf_atk2]
 {
     ai_face();
 };
@@ -579,7 +579,7 @@ void () enf_atk1 = [31.000, enf_atk2]
 // OP_STATE	219	10395	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk2 = [32.000, enf_atk3]
+void () enf_atk2 = [32, enf_atk3]
 {
     ai_face();
 };
@@ -589,7 +589,7 @@ void () enf_atk2 = [32.000, enf_atk3]
 // OP_STATE	307	10396	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk3 = [33.000, enf_atk4]
+void () enf_atk3 = [33, enf_atk4]
 {
     ai_face();
 };
@@ -599,7 +599,7 @@ void () enf_atk3 = [33.000, enf_atk4]
 // OP_STATE	5699	10397	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk4 = [34.000, enf_atk5]
+void () enf_atk4 = [34, enf_atk5]
 {
     ai_face();
 };
@@ -609,7 +609,7 @@ void () enf_atk4 = [34.000, enf_atk5]
 // OP_STATE	575	10398	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk5 = [35.000, enf_atk6]
+void () enf_atk5 = [35, enf_atk6]
 {
     ai_face();
 };
@@ -619,7 +619,7 @@ void () enf_atk5 = [35.000, enf_atk6]
 // OP_STATE	5683	10399	0
 // OP_CALL0	10321	0	0
 // OP_DONE	0	0	0
-void () enf_atk6 = [36.000, enf_atk7]
+void () enf_atk6 = [36, enf_atk7]
 {
     enforcer_fire();
 };
@@ -629,7 +629,7 @@ void () enf_atk6 = [36.000, enf_atk7]
 // OP_STATE	5685	10400	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk7 = [37.000, enf_atk8]
+void () enf_atk7 = [37, enf_atk8]
 {
     ai_face();
 };
@@ -639,7 +639,7 @@ void () enf_atk7 = [37.000, enf_atk8]
 // OP_STATE	5687	10401	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk8 = [38.000, enf_atk9]
+void () enf_atk8 = [38, enf_atk9]
 {
     ai_face();
 };
@@ -649,7 +649,7 @@ void () enf_atk8 = [38.000, enf_atk9]
 // OP_STATE	575	10402	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk9 = [35.000, enf_atk10]
+void () enf_atk9 = [35, enf_atk10]
 {
     ai_face();
 };
@@ -659,7 +659,7 @@ void () enf_atk9 = [35.000, enf_atk10]
 // OP_STATE	5683	10403	0
 // OP_CALL0	10321	0	0
 // OP_DONE	0	0	0
-void () enf_atk10 = [36.000, enf_atk11]
+void () enf_atk10 = [36, enf_atk11]
 {
     enforcer_fire();
 };
@@ -669,7 +669,7 @@ void () enf_atk10 = [36.000, enf_atk11]
 // OP_STATE	5685	10404	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk11 = [37.000, enf_atk12]
+void () enf_atk11 = [37, enf_atk12]
 {
     ai_face();
 };
@@ -679,7 +679,7 @@ void () enf_atk11 = [37.000, enf_atk12]
 // OP_STATE	5687	10405	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk12 = [38.000, enf_atk13]
+void () enf_atk12 = [38, enf_atk13]
 {
     ai_face();
 };
@@ -689,7 +689,7 @@ void () enf_atk12 = [38.000, enf_atk13]
 // OP_STATE	5689	10406	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () enf_atk13 = [39.000, enf_atk14]
+void () enf_atk13 = [39, enf_atk14]
 {
     ai_face();
 };
@@ -701,7 +701,7 @@ void () enf_atk13 = [39.000, enf_atk14]
 // OP_STORE_V	10393	4	0
 // OP_CALL1	1128	0	0
 // OP_DONE	0	0	0
-void () enf_atk14 = [40.000, enf_run1]
+void () enf_atk14 = [40, enf_run1]
 {
     ai_face();
     SUB_CheckRefire(enf_atk1);
@@ -711,7 +711,7 @@ void () enf_atk14 = [40.000, enf_run1]
 // function begins at statement 17914, parm_start=10408
 // OP_STATE	5977	10408	0
 // OP_DONE	0	0	0
-void () enf_paina1 = [66.000, enf_paina2]
+void () enf_paina1 = [66, enf_paina2]
 {
 };
 
@@ -719,7 +719,7 @@ void () enf_paina1 = [66.000, enf_paina2]
 // function begins at statement 17916, parm_start=10409
 // OP_STATE	5979	10409	0
 // OP_DONE	0	0	0
-void () enf_paina2 = [67.000, enf_paina3]
+void () enf_paina2 = [67, enf_paina3]
 {
 };
 
@@ -727,7 +727,7 @@ void () enf_paina2 = [67.000, enf_paina3]
 // function begins at statement 17918, parm_start=10410
 // OP_STATE	5981	10410	0
 // OP_DONE	0	0	0
-void () enf_paina3 = [68.000, enf_paina4]
+void () enf_paina3 = [68, enf_paina4]
 {
 };
 
@@ -735,7 +735,7 @@ void () enf_paina3 = [68.000, enf_paina4]
 // function begins at statement 17920, parm_start=10411
 // OP_STATE	5983	10384	0
 // OP_DONE	0	0	0
-void () enf_paina4 = [69.000, enf_run1]
+void () enf_paina4 = [69, enf_run1]
 {
 };
 
@@ -743,7 +743,7 @@ void () enf_paina4 = [69.000, enf_run1]
 // function begins at statement 17922, parm_start=10412
 // OP_STATE	5984	10412	0
 // OP_DONE	0	0	0
-void () enf_painb1 = [70.000, enf_painb2]
+void () enf_painb1 = [70, enf_painb2]
 {
 };
 
@@ -751,7 +751,7 @@ void () enf_painb1 = [70.000, enf_painb2]
 // function begins at statement 17924, parm_start=10413
 // OP_STATE	5986	10413	0
 // OP_DONE	0	0	0
-void () enf_painb2 = [71.000, enf_painb3]
+void () enf_painb2 = [71, enf_painb3]
 {
 };
 
@@ -759,7 +759,7 @@ void () enf_painb2 = [71.000, enf_painb3]
 // function begins at statement 17926, parm_start=10414
 // OP_STATE	5988	10414	0
 // OP_DONE	0	0	0
-void () enf_painb3 = [72.000, enf_painb4]
+void () enf_painb3 = [72, enf_painb4]
 {
 };
 
@@ -767,7 +767,7 @@ void () enf_painb3 = [72.000, enf_painb4]
 // function begins at statement 17928, parm_start=10415
 // OP_STATE	3216	10415	0
 // OP_DONE	0	0	0
-void () enf_painb4 = [73.000, enf_painb5]
+void () enf_painb4 = [73, enf_painb5]
 {
 };
 
@@ -775,7 +775,7 @@ void () enf_painb4 = [73.000, enf_painb5]
 // function begins at statement 17930, parm_start=10416
 // OP_STATE	5991	10384	0
 // OP_DONE	0	0	0
-void () enf_painb5 = [74.000, enf_run1]
+void () enf_painb5 = [74, enf_run1]
 {
 };
 
@@ -783,7 +783,7 @@ void () enf_painb5 = [74.000, enf_run1]
 // function begins at statement 17932, parm_start=10417
 // OP_STATE	5993	10417	0
 // OP_DONE	0	0	0
-void () enf_painc1 = [75.000, enf_painc2]
+void () enf_painc1 = [75, enf_painc2]
 {
 };
 
@@ -791,7 +791,7 @@ void () enf_painc1 = [75.000, enf_painc2]
 // function begins at statement 17934, parm_start=10418
 // OP_STATE	5995	10418	0
 // OP_DONE	0	0	0
-void () enf_painc2 = [76.000, enf_painc3]
+void () enf_painc2 = [76, enf_painc3]
 {
 };
 
@@ -799,7 +799,7 @@ void () enf_painc2 = [76.000, enf_painc3]
 // function begins at statement 17936, parm_start=10419
 // OP_STATE	5997	10419	0
 // OP_DONE	0	0	0
-void () enf_painc3 = [77.000, enf_painc4]
+void () enf_painc3 = [77, enf_painc4]
 {
 };
 
@@ -807,7 +807,7 @@ void () enf_painc3 = [77.000, enf_painc4]
 // function begins at statement 17938, parm_start=10420
 // OP_STATE	5999	10420	0
 // OP_DONE	0	0	0
-void () enf_painc4 = [78.000, enf_painc5]
+void () enf_painc4 = [78, enf_painc5]
 {
 };
 
@@ -815,7 +815,7 @@ void () enf_painc4 = [78.000, enf_painc5]
 // function begins at statement 17940, parm_start=10421
 // OP_STATE	6001	10421	0
 // OP_DONE	0	0	0
-void () enf_painc5 = [79.000, enf_painc6]
+void () enf_painc5 = [79, enf_painc6]
 {
 };
 
@@ -823,7 +823,7 @@ void () enf_painc5 = [79.000, enf_painc6]
 // function begins at statement 17942, parm_start=10422
 // OP_STATE	1178	10422	0
 // OP_DONE	0	0	0
-void () enf_painc6 = [80.000, enf_painc7]
+void () enf_painc6 = [80, enf_painc7]
 {
 };
 
@@ -831,7 +831,7 @@ void () enf_painc6 = [80.000, enf_painc7]
 // function begins at statement 17944, parm_start=10423
 // OP_STATE	6004	10423	0
 // OP_DONE	0	0	0
-void () enf_painc7 = [81.000, enf_painc8]
+void () enf_painc7 = [81, enf_painc8]
 {
 };
 
@@ -839,7 +839,7 @@ void () enf_painc7 = [81.000, enf_painc8]
 // function begins at statement 17946, parm_start=10424
 // OP_STATE	6006	10384	0
 // OP_DONE	0	0	0
-void () enf_painc8 = [82.000, enf_run1]
+void () enf_painc8 = [82, enf_run1]
 {
 };
 
@@ -847,7 +847,7 @@ void () enf_painc8 = [82.000, enf_run1]
 // function begins at statement 17948, parm_start=10425
 // OP_STATE	6008	10425	0
 // OP_DONE	0	0	0
-void () enf_paind1 = [83.000, enf_paind2]
+void () enf_paind1 = [83, enf_paind2]
 {
 };
 
@@ -855,7 +855,7 @@ void () enf_paind1 = [83.000, enf_paind2]
 // function begins at statement 17950, parm_start=10426
 // OP_STATE	6010	10426	0
 // OP_DONE	0	0	0
-void () enf_paind2 = [84.000, enf_paind3]
+void () enf_paind2 = [84, enf_paind3]
 {
 };
 
@@ -863,7 +863,7 @@ void () enf_paind2 = [84.000, enf_paind3]
 // function begins at statement 17952, parm_start=10427
 // OP_STATE	6011	10427	0
 // OP_DONE	0	0	0
-void () enf_paind3 = [85.000, enf_paind4]
+void () enf_paind3 = [85, enf_paind4]
 {
 };
 
@@ -873,7 +873,7 @@ void () enf_paind3 = [85.000, enf_paind4]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () enf_paind4 = [86.000, enf_paind5]
+void () enf_paind4 = [86, enf_paind5]
 {
     ai_painforward(FL_SWIM);
 };
@@ -884,7 +884,7 @@ void () enf_paind4 = [86.000, enf_paind5]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () enf_paind5 = [87.000, enf_paind6]
+void () enf_paind5 = [87, enf_paind6]
 {
     ai_painforward(TRUE);
 };
@@ -893,7 +893,7 @@ void () enf_paind5 = [87.000, enf_paind6]
 // function begins at statement 17962, parm_start=10430
 // OP_STATE	6017	10430	0
 // OP_DONE	0	0	0
-void () enf_paind6 = [88.000, enf_paind7]
+void () enf_paind6 = [88, enf_paind7]
 {
 };
 
@@ -901,7 +901,7 @@ void () enf_paind6 = [88.000, enf_paind7]
 // function begins at statement 17964, parm_start=10431
 // OP_STATE	6019	10431	0
 // OP_DONE	0	0	0
-void () enf_paind7 = [89.000, enf_paind8]
+void () enf_paind7 = [89, enf_paind8]
 {
 };
 
@@ -909,7 +909,7 @@ void () enf_paind7 = [89.000, enf_paind8]
 // function begins at statement 17966, parm_start=10432
 // OP_STATE	1789	10432	0
 // OP_DONE	0	0	0
-void () enf_paind8 = [90.000, enf_paind9]
+void () enf_paind8 = [90, enf_paind9]
 {
 };
 
@@ -917,7 +917,7 @@ void () enf_paind8 = [90.000, enf_paind9]
 // function begins at statement 17968, parm_start=10433
 // OP_STATE	6022	10433	0
 // OP_DONE	0	0	0
-void () enf_paind9 = [91.000, enf_paind10]
+void () enf_paind9 = [91, enf_paind10]
 {
 };
 
@@ -925,7 +925,7 @@ void () enf_paind9 = [91.000, enf_paind10]
 // function begins at statement 17970, parm_start=10434
 // OP_STATE	6024	10434	0
 // OP_DONE	0	0	0
-void () enf_paind10 = [92.000, enf_paind11]
+void () enf_paind10 = [92, enf_paind11]
 {
 };
 
@@ -935,7 +935,7 @@ void () enf_paind10 = [92.000, enf_paind11]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () enf_paind11 = [93.000, enf_paind12]
+void () enf_paind11 = [93, enf_paind12]
 {
     ai_painforward(TRUE);
 };
@@ -946,7 +946,7 @@ void () enf_paind11 = [93.000, enf_paind12]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () enf_paind12 = [94.000, enf_paind13]
+void () enf_paind12 = [94, enf_paind13]
 {
     ai_painforward(TRUE);
 };
@@ -957,7 +957,7 @@ void () enf_paind12 = [94.000, enf_paind13]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () enf_paind13 = [95.000, enf_paind14]
+void () enf_paind13 = [95, enf_paind14]
 {
     ai_painforward(TRUE);
 };
@@ -966,7 +966,7 @@ void () enf_paind13 = [95.000, enf_paind14]
 // function begins at statement 17984, parm_start=10438
 // OP_STATE	6031	10438	0
 // OP_DONE	0	0	0
-void () enf_paind14 = [96.000, enf_paind15]
+void () enf_paind14 = [96, enf_paind15]
 {
 };
 
@@ -974,7 +974,7 @@ void () enf_paind14 = [96.000, enf_paind15]
 // function begins at statement 17986, parm_start=10439
 // OP_STATE	6033	10439	0
 // OP_DONE	0	0	0
-void () enf_paind15 = [97.000, enf_paind16]
+void () enf_paind15 = [97, enf_paind16]
 {
 };
 
@@ -984,7 +984,7 @@ void () enf_paind15 = [97.000, enf_paind16]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () enf_paind16 = [98.000, enf_paind17]
+void () enf_paind16 = [98, enf_paind17]
 {
     ai_pain(TRUE);
 };
@@ -995,7 +995,7 @@ void () enf_paind16 = [98.000, enf_paind17]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () enf_paind17 = [99.000, enf_paind18]
+void () enf_paind17 = [99, enf_paind18]
 {
     ai_pain(TRUE);
 };
@@ -1004,7 +1004,7 @@ void () enf_paind17 = [99.000, enf_paind18]
 // function begins at statement 17996, parm_start=10442
 // OP_STATE	574	10442	0
 // OP_DONE	0	0	0
-void () enf_paind18 = [100.000, enf_paind19]
+void () enf_paind18 = [100, enf_paind19]
 {
 };
 
@@ -1012,7 +1012,7 @@ void () enf_paind18 = [100.000, enf_paind19]
 // function begins at statement 17998, parm_start=10443
 // OP_STATE	6039	10384	0
 // OP_DONE	0	0	0
-void () enf_paind19 = [101.000, enf_run1]
+void () enf_paind19 = [101, enf_run1]
 {
 };
 
@@ -1075,7 +1075,7 @@ void (entity attacker, float damage) enf_pain =
         return;
     }
     
-    if(r < 0.500)
+    if(r < 0.5)
     {
         sound(self, CHAN_VOICE, "enforcer/pain1.wav", TRUE, ATTN_NORM);
     }
@@ -1084,21 +1084,21 @@ void (entity attacker, float damage) enf_pain =
         sound(self, CHAN_VOICE, "enforcer/pain2.wav", TRUE, ATTN_NORM);
     }
     
-    if(r < 0.200)
+    if(r < 0.2)
     {
         self.pain_finished = time + TRUE;
         enf_paina1();
     }
     else
     {
-        if(r < 0.400)
+        if(r < 0.4)
         {
             self.pain_finished = time + TRUE;
             enf_painb1();
         }
         else
         {
-            if(r < 0.700)
+            if(r < 0.7)
             {
                 self.pain_finished = time + TRUE;
                 enf_painc1();
@@ -1119,7 +1119,7 @@ void (entity attacker, float damage) enf_pain =
 // function begins at statement 18047, parm_start=10462
 // OP_STATE	6042	10462	0
 // OP_DONE	0	0	0
-void () enf_die1 = [41.000, enf_die2]
+void () enf_die1 = [41, enf_die2]
 {
 };
 
@@ -1127,7 +1127,7 @@ void () enf_die1 = [41.000, enf_die2]
 // function begins at statement 18049, parm_start=10463
 // OP_STATE	6044	10463	0
 // OP_DONE	0	0	0
-void () enf_die2 = [42.000, enf_die3]
+void () enf_die2 = [42, enf_die3]
 {
 };
 
@@ -1140,7 +1140,7 @@ void () enf_die2 = [42.000, enf_die3]
 // OP_STOREP_F	230	10466	0
 // OP_CALL0	3034	0	0
 // OP_DONE	0	0	0
-void () enf_die3 = [43.000, enf_die4]
+void () enf_die3 = [43, enf_die4]
 {
     self.solid = SOLID_NOT;
     self.ammo_cells = MOVETYPE_FLY;
@@ -1153,9 +1153,9 @@ void () enf_die3 = [43.000, enf_die4]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die4 = [44.000, enf_die5]
+void () enf_die4 = [44, enf_die5]
 {
-    ai_forward(14.000);
+    ai_forward(14);
 };
 
 // enf_die5
@@ -1164,7 +1164,7 @@ void () enf_die4 = [44.000, enf_die5]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die5 = [45.000, enf_die6]
+void () enf_die5 = [45, enf_die6]
 {
     ai_forward(FL_SWIM);
 };
@@ -1173,7 +1173,7 @@ void () enf_die5 = [45.000, enf_die6]
 // function begins at statement 18066, parm_start=10469
 // OP_STATE	6051	10469	0
 // OP_DONE	0	0	0
-void () enf_die6 = [46.000, enf_die7]
+void () enf_die6 = [46, enf_die7]
 {
 };
 
@@ -1181,7 +1181,7 @@ void () enf_die6 = [46.000, enf_die7]
 // function begins at statement 18068, parm_start=10470
 // OP_STATE	6053	10470	0
 // OP_DONE	0	0	0
-void () enf_die7 = [47.000, enf_die8]
+void () enf_die7 = [47, enf_die8]
 {
 };
 
@@ -1189,7 +1189,7 @@ void () enf_die7 = [47.000, enf_die8]
 // function begins at statement 18070, parm_start=10471
 // OP_STATE	6055	10471	0
 // OP_DONE	0	0	0
-void () enf_die8 = [48.000, enf_die9]
+void () enf_die8 = [48, enf_die9]
 {
 };
 
@@ -1199,7 +1199,7 @@ void () enf_die8 = [48.000, enf_die9]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die9 = [49.000, enf_die10]
+void () enf_die9 = [49, enf_die10]
 {
     ai_forward(MOVETYPE_WALK);
 };
@@ -1210,7 +1210,7 @@ void () enf_die9 = [49.000, enf_die10]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die10 = [50.000, enf_die11]
+void () enf_die10 = [50, enf_die11]
 {
     ai_forward(MOVETYPE_FLY);
 };
@@ -1221,7 +1221,7 @@ void () enf_die10 = [50.000, enf_die11]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die11 = [51.000, enf_die12]
+void () enf_die11 = [51, enf_die12]
 {
     ai_forward(MOVETYPE_FLY);
 };
@@ -1232,7 +1232,7 @@ void () enf_die11 = [51.000, enf_die12]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () enf_die12 = [52.000, enf_die13]
+void () enf_die12 = [52, enf_die13]
 {
     ai_forward(MOVETYPE_FLY);
 };
@@ -1241,7 +1241,7 @@ void () enf_die12 = [52.000, enf_die13]
 // function begins at statement 18088, parm_start=10476
 // OP_STATE	5955	10476	0
 // OP_DONE	0	0	0
-void () enf_die13 = [53.000, enf_die14]
+void () enf_die13 = [53, enf_die14]
 {
 };
 
@@ -1249,7 +1249,7 @@ void () enf_die13 = [53.000, enf_die14]
 // function begins at statement 18090, parm_start=10477
 // OP_STATE	5957	10476	0
 // OP_DONE	0	0	0
-void () enf_die14 = [54.000, enf_die14]
+void () enf_die14 = [54, enf_die14]
 {
 };
 
@@ -1257,7 +1257,7 @@ void () enf_die14 = [54.000, enf_die14]
 // function begins at statement 18092, parm_start=10478
 // OP_STATE	5959	10478	0
 // OP_DONE	0	0	0
-void () enf_fdie1 = [55.000, enf_fdie2]
+void () enf_fdie1 = [55, enf_fdie2]
 {
 };
 
@@ -1265,7 +1265,7 @@ void () enf_fdie1 = [55.000, enf_fdie2]
 // function begins at statement 18094, parm_start=10479
 // OP_STATE	5961	10479	0
 // OP_DONE	0	0	0
-void () enf_fdie2 = [56.000, enf_fdie3]
+void () enf_fdie2 = [56, enf_fdie3]
 {
 };
 
@@ -1278,7 +1278,7 @@ void () enf_fdie2 = [56.000, enf_fdie3]
 // OP_STOREP_F	230	10482	0
 // OP_CALL0	3034	0	0
 // OP_DONE	0	0	0
-void () enf_fdie3 = [57.000, enf_fdie4]
+void () enf_fdie3 = [57, enf_fdie4]
 {
     self.solid = SOLID_NOT;
     self.ammo_cells = MOVETYPE_FLY;
@@ -1289,7 +1289,7 @@ void () enf_fdie3 = [57.000, enf_fdie4]
 // function begins at statement 18103, parm_start=10483
 // OP_STATE	5965	10483	0
 // OP_DONE	0	0	0
-void () enf_fdie4 = [58.000, enf_fdie5]
+void () enf_fdie4 = [58, enf_fdie5]
 {
 };
 
@@ -1297,7 +1297,7 @@ void () enf_fdie4 = [58.000, enf_fdie5]
 // function begins at statement 18105, parm_start=10484
 // OP_STATE	5967	10484	0
 // OP_DONE	0	0	0
-void () enf_fdie5 = [59.000, enf_fdie6]
+void () enf_fdie5 = [59, enf_fdie6]
 {
 };
 
@@ -1305,7 +1305,7 @@ void () enf_fdie5 = [59.000, enf_fdie6]
 // function begins at statement 18107, parm_start=10485
 // OP_STATE	730	10485	0
 // OP_DONE	0	0	0
-void () enf_fdie6 = [60.000, enf_fdie7]
+void () enf_fdie6 = [60, enf_fdie7]
 {
 };
 
@@ -1313,7 +1313,7 @@ void () enf_fdie6 = [60.000, enf_fdie7]
 // function begins at statement 18109, parm_start=10486
 // OP_STATE	5969	10486	0
 // OP_DONE	0	0	0
-void () enf_fdie7 = [61.000, enf_fdie8]
+void () enf_fdie7 = [61, enf_fdie8]
 {
 };
 
@@ -1321,7 +1321,7 @@ void () enf_fdie7 = [61.000, enf_fdie8]
 // function begins at statement 18111, parm_start=10487
 // OP_STATE	5971	10487	0
 // OP_DONE	0	0	0
-void () enf_fdie8 = [62.000, enf_fdie9]
+void () enf_fdie8 = [62, enf_fdie9]
 {
 };
 
@@ -1329,7 +1329,7 @@ void () enf_fdie8 = [62.000, enf_fdie9]
 // function begins at statement 18113, parm_start=10488
 // OP_STATE	4366	10488	0
 // OP_DONE	0	0	0
-void () enf_fdie9 = [63.000, enf_fdie10]
+void () enf_fdie9 = [63, enf_fdie10]
 {
 };
 
@@ -1337,7 +1337,7 @@ void () enf_fdie9 = [63.000, enf_fdie10]
 // function begins at statement 18115, parm_start=10489
 // OP_STATE	220	10489	0
 // OP_DONE	0	0	0
-void () enf_fdie10 = [64.000, enf_fdie11]
+void () enf_fdie10 = [64, enf_fdie11]
 {
 };
 
@@ -1345,7 +1345,7 @@ void () enf_fdie10 = [64.000, enf_fdie11]
 // function begins at statement 18117, parm_start=10490
 // OP_STATE	5975	10489	0
 // OP_DONE	0	0	0
-void () enf_fdie11 = [65.000, enf_fdie11]
+void () enf_fdie11 = [65, enf_fdie11]
 {
 };
 
@@ -1393,7 +1393,7 @@ void () enf_fdie11 = [65.000, enf_fdie11]
 void () enf_die = 
 {
     
-    if(self.health < -35.000)
+    if(self.health < -35)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowHead("progs/h_mega.mdl", self.health);
@@ -1404,7 +1404,7 @@ void () enf_die =
     }
     
     sound(self, CHAN_VOICE, "enforcer/death1.wav", TRUE, ATTN_NORM);
-    if(random() > 0.500)
+    if(random() > 0.5)
     {
         enf_die1();
     }
@@ -1500,7 +1500,7 @@ void () monster_enforcer =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/enforcer.mdl");
     setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
-    self.health = 80.000;
+    self.health = 80;
     self.th_stand = enf_stand1;
     self.th_walk = enf_walk1;
     self.th_run = enf_run1;

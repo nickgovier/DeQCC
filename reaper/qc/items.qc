@@ -116,7 +116,7 @@ void () PlaceItem =
 // OP_DONE	0	0	0
 void () StartItem = 
 {
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     self.think = PlaceItem;
 };
 
@@ -179,16 +179,16 @@ float (entity e, float healamount, float ignore) T_Heal =
     }
     
     
-    if(e.health > 250.000)
+    if(e.health > 250)
     {
-        e.health = 250.000;
+        e.health = 250;
     }
     
     return TRUE;
 };
 
-float H_ROTTEN = 1.000;
-float H_MEGA = 2.000;
+float H_ROTTEN = 1;
+float H_MEGA = 2;
 .float healamount;
 void () health_touch;
 void () item_megahealth_rot;
@@ -265,7 +265,7 @@ void () item_health =
         precache_sound("items/r_item1.wav");
         setmodel(self, "maps/b_bh10.bsp");
         self.noise = "items/r_item1.wav";
-        self.healamount = 15.000;
+        self.healamount = 15;
         self.healtype = FALSE;
     }
     else
@@ -287,7 +287,7 @@ void () item_health =
             precache_sound("items/health1.wav");
             setmodel(self, "maps/b_bh25.bsp");
             self.noise = "items/health1.wav";
-            self.healamount = 25.000;
+            self.healamount = 25;
             self.healtype = TRUE;
         }
         
@@ -422,7 +422,7 @@ void () health_touch =
     if(self.healtype == FL_SWIM)
     {
         
-        if(other.health >= 250.000)
+        if(other.health >= 250)
         {
             return;
         }
@@ -686,7 +686,7 @@ void () armor_touch =
     
     if(self.classname == "item_armor1")
     {
-        type = 0.300;
+        type = 0.3;
         value = MUST_HAVE;
         bit = IT_ARMOR1;
     }
@@ -694,8 +694,8 @@ void () armor_touch =
     
     if(self.classname == "item_armor2")
     {
-        type = 0.600;
-        value = 150.000;
+        type = 0.6;
+        value = 150;
         bit = IT_ARMOR2;
         
         if(other.movetarget.movetarget)
@@ -708,8 +708,8 @@ void () armor_touch =
     
     if(self.classname == "item_armorInv")
     {
-        type = 0.800;
-        value = 200.000;
+        type = 0.8;
+        value = 200;
         bit = IT_ARMOR3;
         
         if(other.movetarget.movetarget)
@@ -824,7 +824,7 @@ void () item_armor2 =
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = TRUE;
-    self.armorvalue = 150.000;
+    self.armorvalue = 150;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     self.th_weight = armorweight;
     self.th_cache = cachearmor;
@@ -863,7 +863,7 @@ void () item_armorInv =
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = FL_SWIM;
-    self.armorvalue = 200.000;
+    self.armorvalue = 200;
     setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     self.th_weight = armorweight;
     self.th_cache = cachearmor;
@@ -903,9 +903,9 @@ void () bound_other_ammo =
     }
     
     
-    if(other.ammo_nails > 200.000)
+    if(other.ammo_nails > 200)
     {
-        other.ammo_nails = 200.000;
+        other.ammo_nails = 200;
     }
     
     
@@ -1385,7 +1385,7 @@ void () weapon_touch =
                             
                             hadammo = other.ammo_rockets;
                             new = IT_LIGHTNING;
-                            other.ammo_cells = other.ammo_cells + 15.000;
+                            other.ammo_cells = other.ammo_cells + 15;
                             
                             if(other.movetarget.movetarget)
                             {
@@ -1845,7 +1845,7 @@ void () ammo_touch =
     if(self.weapon == FL_SWIM)
     {
         
-        if(other.ammo_nails >= 200.000)
+        if(other.ammo_nails >= 200)
         {
             return;
         }
@@ -1869,7 +1869,7 @@ void () ammo_touch =
     if(self.weapon == MOVETYPE_STEP)
     {
         
-        if(other.ammo_cells >= 200.000)
+        if(other.ammo_cells >= 200)
         {
             return;
         }
@@ -1926,7 +1926,7 @@ void () ammo_touch =
     SUB_UseTargets();
 };
 
-float WEAPON_BIG2 = 1.000;
+float WEAPON_BIG2 = 1;
 // item_shells
 // function begins at statement 3055, parm_start=2676
 // OP_ADDRESS	28	146	2676
@@ -1968,7 +1968,7 @@ void () item_shells =
     {
         precache_model("maps/b_shell1.bsp");
         setmodel(self, "maps/b_shell1.bsp");
-        self.aflag = 40.000;
+        self.aflag = 40;
     }
     else
     {
@@ -2025,13 +2025,13 @@ void () item_spikes =
     {
         precache_model("maps/b_nail1.bsp");
         setmodel(self, "maps/b_nail1.bsp");
-        self.aflag = 50.000;
+        self.aflag = 50;
     }
     else
     {
         precache_model("maps/b_nail0.bsp");
         setmodel(self, "maps/b_nail0.bsp");
-        self.aflag = 25.000;
+        self.aflag = 25;
     }
     
     self.weapon = FL_SWIM;
@@ -2139,7 +2139,7 @@ void () item_cells =
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = 12.000;
+        self.aflag = 12;
     }
     else
     {
@@ -2155,10 +2155,10 @@ void () item_cells =
     StartItem();
 };
 
-float WEAPON_SHOTGUN = 1.000;
-float WEAPON_ROCKET = 2.000;
-float WEAPON_SPIKES = 4.000;
-float WEAPON_BIG = 8.000;
+float WEAPON_SHOTGUN = 1;
+float WEAPON_ROCKET = 2;
+float WEAPON_SPIKES = 4;
+float WEAPON_BIG = 8;
 // item_weapon
 // function begins at statement 3183, parm_start=2729
 // OP_ADDRESS	28	146	2729
@@ -2254,7 +2254,7 @@ void () item_weapon =
         {
             precache_model("maps/b_shell1.bsp");
             setmodel(self, "maps/b_shell1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
@@ -2274,7 +2274,7 @@ void () item_weapon =
         {
             precache_model("maps/b_nail1.bsp");
             setmodel(self, "maps/b_nail1.bsp");
-            self.aflag = 40.000;
+            self.aflag = 40;
         }
         else
         {
@@ -2687,7 +2687,7 @@ void () sigil_touch =
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    serverflags = serverflags | (self.spawnflags & 15.000);
+    serverflags = serverflags | (self.spawnflags & 15);
     self.classname = "";
     activator = other;
     SUB_UseTargets();
@@ -2958,11 +2958,11 @@ void () powerup_touch =
         self.mdl = self.model;
         if((self.classname == "item_artifact_invulnerability") || (self.classname == "item_artifact_invisibility"))
         {
-            self.nextthink = time + (60.000 * MOVETYPE_FLY);
+            self.nextthink = time + (60 * MOVETYPE_FLY);
         }
         else
         {
-            self.nextthink = time + 60.000;
+            self.nextthink = time + 60;
         }
         
         self.think = SUB_regen;
@@ -3540,16 +3540,16 @@ void () DropBackpack =
     item.ammo_nails = self.ammo_nails;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
-    item.velocity_z = 300.000;
-    item.velocity_x = -100.000 + (random() * 200.000);
-    item.velocity_y = -100.000 + (random() * 200.000);
+    item.velocity_z = 300;
+    item.velocity_x = -100 + (random() * 200);
+    item.velocity_y = -100 + (random() * 200);
     item.flags = FL_ITEM;
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;
     setmodel(item, "progs/backpack.mdl");
     setsize(item, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
     item.touch = BackpackTouch;
-    item.nextthink = time + 120.000;
+    item.nextthink = time + 120;
     item.think = SUB_Remove;
 };
 

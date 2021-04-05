@@ -88,7 +88,7 @@ float (entity targ, entity inflictor) CanDamage =
     
     if(targ.movetype == MOVETYPE_PUSH)
     {
-        traceline(inflictor.origin, 0.500 * (targ.absmin + targ.absmax), TRUE, self);
+        traceline(inflictor.origin, 0.5 * (targ.absmin + targ.absmax), TRUE, self);
         
         if(trace_fraction == TRUE)
         {
@@ -189,9 +189,9 @@ void (entity targ, entity attacker) Killed =
     oself = self;
     self = targ;
     
-    if(self.health < -99.000)
+    if(self.health < -99)
     {
-        self.health = -99.000;
+        self.health = -99;
     }
     
     
@@ -434,7 +434,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     if((inflictor != world) && (targ.movetype == MOVETYPE_WALK))
     {
-        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * 0.500);
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * 0.5);
         dir = normalize(dir);
         targ.velocity = targ.velocity + ((dir * damage) * FL_CLIENT);
     }
@@ -609,7 +609,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
     local float points;
     local entity head;
     local vector org;
-    head = findradius(inflictor.origin, damage + 40.000);
+    head = findradius(inflictor.origin, damage + 40);
     
     while(head)
     {
@@ -619,8 +619,8 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
             
             if(head.takedamage)
             {
-                org = head.origin + ((head.mins + head.maxs) * 0.500);
-                points = 0.500 * (vlen(inflictor.origin - org));
+                org = head.origin + ((head.mins + head.maxs) * 0.5);
+                points = 0.5 * (vlen(inflictor.origin - org));
                 
                 if(points < FALSE)
                 {
@@ -631,7 +631,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                 
                 if(head == attacker)
                 {
-                    points = points * 0.500;
+                    points = points * 0.5;
                 }
                 
                 
@@ -642,7 +642,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                     {
                         if(head.classname == "monster_shambler")
                         {
-                            T_Damage(head, inflictor, attacker, points * 0.500);
+                            T_Damage(head, inflictor, attacker, points * 0.5);
                         }
                         else
                         {
@@ -718,14 +718,14 @@ void (entity attacker, float damage) T_BeamDamage =
 {
     local float points;
     local entity head;
-    head = findradius(attacker.origin, damage + 40.000);
+    head = findradius(attacker.origin, damage + 40);
     
     while(head)
     {
         
         if(head.takedamage)
         {
-            points = 0.500 * (vlen(attacker.origin - head.origin));
+            points = 0.5 * (vlen(attacker.origin - head.origin));
             
             if(points < FALSE)
             {
@@ -736,7 +736,7 @@ void (entity attacker, float damage) T_BeamDamage =
             
             if(head == attacker)
             {
-                points = points * 0.500;
+                points = points * 0.5;
             }
             
             
@@ -747,7 +747,7 @@ void (entity attacker, float damage) T_BeamDamage =
                 {
                     if(head.classname == "monster_shambler")
                     {
-                        T_Damage(head, attacker, attacker, points * 0.500);
+                        T_Damage(head, attacker, attacker, points * 0.5);
                     }
                     else
                     {

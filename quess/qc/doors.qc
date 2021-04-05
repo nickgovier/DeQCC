@@ -1,8 +1,8 @@
-float DOOR_START_OPEN = 1.000;
-float DOOR_DONT_LINK = 4.000;
-float DOOR_GOLD_KEY = 8.000;
-float DOOR_SILVER_KEY = 16.000;
-float DOOR_TOGGLE = 32.000;
+float DOOR_START_OPEN = 1;
+float DOOR_DONT_LINK = 4;
+float DOOR_GOLD_KEY = 8;
+float DOOR_SILVER_KEY = 16;
+float DOOR_TOGGLE = 32;
 void () door_go_down;
 void () door_go_up;
 // door_blocked
@@ -27,7 +27,7 @@ void () door_blocked =
 {
     T_Damage(other, self, self, self.dmg);
     
-    if(self.wait >= 0.000)
+    if(self.wait >= 0)
     {
         if(self.state == STATE_DOWN)
         {
@@ -67,7 +67,7 @@ void () door_blocked =
 // OP_DONE	0	0	0
 void () door_hit_top = 
 {
-    sound(self, CHAN_VOICE, self.noise1, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise1, 1, ATTN_NORM);
     self.state = STATE_TOP;
     
     if(self.spawnflags & DOOR_TOGGLE)
@@ -93,7 +93,7 @@ void () door_hit_top =
 // OP_DONE	0	0	0
 void () door_hit_bottom = 
 {
-    sound(self, CHAN_VOICE, self.noise1, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise1, 1, ATTN_NORM);
     self.state = STATE_BOTTOM;
 };
 
@@ -124,7 +124,7 @@ void () door_hit_bottom =
 // OP_DONE	0	0	0
 void () door_go_down = 
 {
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
     
     if(self.max_health)
     {
@@ -183,7 +183,7 @@ void () door_go_up =
         return;
     }
     
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
     self.state = STATE_UP;
     SUB_CalcMove(self.pos2, self.speed, door_hit_top);
     SUB_UseTargets();
@@ -250,7 +250,7 @@ void () door_fire =
     
     if(self.items)
     {
-        sound(self, CHAN_VOICE, self.noise4, 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, self.noise4, 1, ATTN_NORM);
     }
     
     self.message = string_null;
@@ -331,7 +331,7 @@ void () door_use =
 void () door_trigger_touch = 
 {
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -342,7 +342,7 @@ void () door_trigger_touch =
         return;
     }
     
-    self.attack_finished = time + 1.000;
+    self.attack_finished = time + 1;
     activator = other;
     self = self.owner;
     door_use();
@@ -528,12 +528,12 @@ void () door_touch =
         return;
     }
     
-    self.owner.attack_finished = time + 2.000;
+    self.owner.attack_finished = time + 2;
     
     if(self.owner.message != "")
     {
         centerprint(other, self.owner.message);
-        sound(other, CHAN_VOICE, "misc/talk.wav", 1.000, ATTN_NORM);
+        sound(other, CHAN_VOICE, "misc/talk.wav", 1, ATTN_NORM);
     }
     
     
@@ -547,25 +547,25 @@ void () door_touch =
     {
         if(self.owner.items == IT_KEY1)
         {
-            if(world.worldtype == 2.000)
+            if(world.worldtype == 2)
             {
                 centerprint(other, "You need the silver keycard");
-                sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
             }
             else
             {
-                if(world.worldtype == 1.000)
+                if(world.worldtype == 1)
                 {
                     centerprint(other, "You need the silver runekey");
-                    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
                 }
                 else
                 {
                     
-                    if(world.worldtype == 0.000)
+                    if(world.worldtype == 0)
                     {
                         centerprint(other, "You need the silver key");
-                        sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                        sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
                     }
                     
                 }
@@ -575,25 +575,25 @@ void () door_touch =
         }
         else
         {
-            if(world.worldtype == 2.000)
+            if(world.worldtype == 2)
             {
                 centerprint(other, "You need the gold keycard");
-                sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
             }
             else
             {
-                if(world.worldtype == 1.000)
+                if(world.worldtype == 1)
                 {
                     centerprint(other, "You need the gold runekey");
-                    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
                 }
                 else
                 {
                     
-                    if(world.worldtype == 0.000)
+                    if(world.worldtype == 0)
                     {
                         centerprint(other, "You need the gold key");
-                        sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+                        sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
                     }
                     
                 }
@@ -850,7 +850,7 @@ void () LinkDoors =
     }
     
     
-    if(self.spawnflags & 4.000)
+    if(self.spawnflags & 4)
     {
         self.owner = self.enemy = self;
         return;
@@ -925,13 +925,13 @@ void () LinkDoors =
             }
             
             
-            if(t.mins_y < 0.000)
+            if(t.mins_y < 0)
             {
                 cmins_y = t.mins_y;
             }
             
             
-            if(t.mins_z < 0.000)
+            if(t.mins_z < 0)
             {
                 cmins_z = t.mins_z;
             }
@@ -943,20 +943,20 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs_y > 0.000)
+            if(t.maxs_y > 0)
             {
                 cmaxs_y = t.maxs_y;
             }
             
             
-            if(t.maxs_z > 0.000)
+            if(t.maxs_z > 0)
             {
                 cmaxs_z = t.maxs_z;
             }
             
         }
         
-    } while (1.000);
+    } while (1);
 };
 
 // func_door
@@ -1158,7 +1158,7 @@ void () LinkDoors =
 // OP_DONE	0	0	0
 void () func_door = 
 {
-    if(world.worldtype == 0.000)
+    if(world.worldtype == 0)
     {
         precache_sound("doors/medtry.wav");
         precache_sound("doors/meduse.wav");
@@ -1167,7 +1167,7 @@ void () func_door =
     }
     else
     {
-        if(world.worldtype == 1.000)
+        if(world.worldtype == 1)
         {
             precache_sound("doors/runetry.wav");
             precache_sound("doors/runeuse.wav");
@@ -1176,7 +1176,7 @@ void () func_door =
         }
         else
         {
-            if(world.worldtype == 2.000)
+            if(world.worldtype == 2)
             {
                 precache_sound("doors/basetry.wav");
                 precache_sound("doors/baseuse.wav");
@@ -1193,7 +1193,7 @@ void () func_door =
     }
     
     
-    if(self.sounds == 0.000)
+    if(self.sounds == 0)
     {
         precache_sound("misc/null.wav");
         precache_sound("misc/null.wav");
@@ -1202,7 +1202,7 @@ void () func_door =
     }
     
     
-    if(self.sounds == 1.000)
+    if(self.sounds == 1)
     {
         precache_sound("doors/drclos4.wav");
         precache_sound("doors/doormv1.wav");
@@ -1211,7 +1211,7 @@ void () func_door =
     }
     
     
-    if(self.sounds == 2.000)
+    if(self.sounds == 2)
     {
         precache_sound("doors/hydro1.wav");
         precache_sound("doors/hydro2.wav");
@@ -1220,7 +1220,7 @@ void () func_door =
     }
     
     
-    if(self.sounds == 3.000)
+    if(self.sounds == 3)
     {
         precache_sound("doors/stndr1.wav");
         precache_sound("doors/stndr2.wav");
@@ -1229,7 +1229,7 @@ void () func_door =
     }
     
     
-    if(self.sounds == 4.000)
+    if(self.sounds == 4)
     {
         precache_sound("doors/ddoor1.wav");
         precache_sound("doors/ddoor2.wav");
@@ -1261,25 +1261,25 @@ void () func_door =
     
     if(!self.speed)
     {
-        self.speed = 100.000;
+        self.speed = 100;
     }
     
     
     if(!self.wait)
     {
-        self.wait = 3.000;
+        self.wait = 3;
     }
     
     
     if(!self.lip)
     {
-        self.lip = 8.000;
+        self.lip = 8;
     }
     
     
     if(!self.dmg)
     {
-        self.dmg = 2.000;
+        self.dmg = 2;
     }
     
     self.pos1 = self.origin;
@@ -1303,12 +1303,12 @@ void () func_door =
     
     if(self.items)
     {
-        self.wait = -1.000;
+        self.wait = -1;
     }
     
     self.touch = door_touch;
     self.think = LinkDoors;
-    self.nextthink = self.ltime + 0.100;
+    self.nextthink = self.ltime + 0.1;
 };
 
 void () fd_secret_move1;
@@ -1318,11 +1318,11 @@ void () fd_secret_move4;
 void () fd_secret_move5;
 void () fd_secret_move6;
 void () fd_secret_done;
-float SECRET_OPEN_ONCE = 1.000;
-float SECRET_1ST_LEFT = 2.000;
-float SECRET_1ST_DOWN = 4.000;
-float SECRET_NO_SHOOT = 8.000;
-float SECRET_YES_SHOOT = 16.000;
+float SECRET_OPEN_ONCE = 1;
+float SECRET_1ST_LEFT = 2;
+float SECRET_1ST_DOWN = 4;
+float SECRET_NO_SHOOT = 8;
+float SECRET_YES_SHOOT = 16;
 // fd_secret_use
 // function begins at statement 10015, parm_start=6749
 // OP_ADDRESS	28	152	6750
@@ -1431,7 +1431,7 @@ float SECRET_YES_SHOOT = 16.000;
 void () fd_secret_use = 
 {
     local float temp;
-    self.health = 10000.000;
+    self.health = 10000;
     
     if(self.origin != self.oldorigin)
     {
@@ -1448,9 +1448,9 @@ void () fd_secret_use =
     }
     
     self.velocity = '0.000 0.000 0.000';
-    sound(self, CHAN_VOICE, self.noise1, 1.000, ATTN_NORM);
-    self.nextthink = self.ltime + 0.100;
-    temp = 1.000 - (self.spawnflags & SECRET_1ST_LEFT);
+    sound(self, CHAN_VOICE, self.noise1, 1, ATTN_NORM);
+    self.nextthink = self.ltime + 0.1;
+    temp = 1 - (self.spawnflags & SECRET_1ST_LEFT);
     makevectors(self.mangle);
     
     if(!self.t_width)
@@ -1483,7 +1483,7 @@ void () fd_secret_use =
     
     self.dest2 = self.dest1 + (v_forward * self.t_length);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move1);
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
 };
 
 // fd_secret_move1
@@ -1504,9 +1504,9 @@ void () fd_secret_use =
 // OP_DONE	0	0	0
 void () fd_secret_move1 = 
 {
-    self.nextthink = self.ltime + 1.000;
+    self.nextthink = self.ltime + 1;
     self.think = fd_secret_move2;
-    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 };
 
 // fd_secret_move2
@@ -1527,7 +1527,7 @@ void () fd_secret_move1 =
 // OP_DONE	0	0	0
 void () fd_secret_move2 = 
 {
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
 };
 
@@ -1554,7 +1554,7 @@ void () fd_secret_move2 =
 // OP_DONE	0	0	0
 void () fd_secret_move3 = 
 {
-    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
     
     if(!(self.spawnflags & SECRET_OPEN_ONCE))
     {
@@ -1582,7 +1582,7 @@ void () fd_secret_move3 =
 // OP_DONE	0	0	0
 void () fd_secret_move4 = 
 {
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
 };
 
@@ -1604,9 +1604,9 @@ void () fd_secret_move4 =
 // OP_DONE	0	0	0
 void () fd_secret_move5 = 
 {
-    self.nextthink = self.ltime + 1.000;
+    self.nextthink = self.ltime + 1;
     self.think = fd_secret_move6;
-    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 };
 
 // fd_secret_move6
@@ -1627,7 +1627,7 @@ void () fd_secret_move5 =
 // OP_DONE	0	0	0
 void () fd_secret_move6 = 
 {
-    sound(self, CHAN_VOICE, self.noise2, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise2, 1, ATTN_NORM);
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
 };
 
@@ -1658,12 +1658,12 @@ void () fd_secret_done =
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
-        self.health = 10000.000;
+        self.health = 10000;
         self.takedamage = DAMAGE_YES;
         self.th_pain = fd_secret_use;
     }
     
-    sound(self, CHAN_VOICE, self.noise3, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 };
 
 // secret_blocked
@@ -1690,7 +1690,7 @@ void () secret_blocked =
         return;
     }
     
-    self.attack_finished = time + 0.500;
+    self.attack_finished = time + 0.5;
     T_Damage(other, self, self, self.dmg);
 };
 
@@ -1734,12 +1734,12 @@ void () secret_touch =
         return;
     }
     
-    self.attack_finished = time + 2.000;
+    self.attack_finished = time + 2;
     
     if(self.message)
     {
         centerprint(other, self.message);
-        sound(other, CHAN_BODY, "misc/talk.wav", 1.000, ATTN_NORM);
+        sound(other, CHAN_BODY, "misc/talk.wav", 1, ATTN_NORM);
     }
     
 };
@@ -1850,13 +1850,13 @@ void () secret_touch =
 void () func_door_secret = 
 {
     
-    if(self.sounds == 0.000)
+    if(self.sounds == 0)
     {
-        self.sounds = 3.000;
+        self.sounds = 3;
     }
     
     
-    if(self.sounds == 1.000)
+    if(self.sounds == 1)
     {
         precache_sound("doors/latch2.wav");
         precache_sound("doors/winch2.wav");
@@ -1867,7 +1867,7 @@ void () func_door_secret =
     }
     
     
-    if(self.sounds == 2.000)
+    if(self.sounds == 2)
     {
         precache_sound("doors/airdoor1.wav");
         precache_sound("doors/airdoor2.wav");
@@ -1877,7 +1877,7 @@ void () func_door_secret =
     }
     
     
-    if(self.sounds == 3.000)
+    if(self.sounds == 3)
     {
         precache_sound("doors/basesec1.wav");
         precache_sound("doors/basesec2.wav");
@@ -1889,7 +1889,7 @@ void () func_door_secret =
     
     if(!self.dmg)
     {
-        self.dmg = 2.000;
+        self.dmg = 2;
     }
     
     self.mangle = self.angles;
@@ -1901,12 +1901,12 @@ void () func_door_secret =
     setorigin(self, self.origin);
     self.touch = secret_touch;
     self.blocked = secret_blocked;
-    self.speed = 50.000;
+    self.speed = 50;
     self.use = fd_secret_use;
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
-        self.health = 10000.000;
+        self.health = 10000;
         self.takedamage = DAMAGE_YES;
         self.th_pain = fd_secret_use;
         self.th_die = fd_secret_use;
@@ -1916,7 +1916,7 @@ void () func_door_secret =
     
     if(!self.wait)
     {
-        self.wait = 5.000;
+        self.wait = 5;
     }
     
 };

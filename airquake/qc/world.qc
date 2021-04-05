@@ -880,28 +880,28 @@ void () worldspawn =
     cvar_set("sv_maxspeed", "400");
     cvar_set("sv_friction", "1");
     
-    if(serverflags < 256.000)
+    if(serverflags < 256)
     {
         n = cvar("noexit");
         admin_p = n;
-        n = n & 255.000;
+        n = n & 255;
         st = ftos(n);
         cvar_set("noexit", st);
-        admin_p = floor(admin_p / 256.000);
-        serverflags = (serverflags & 255.000) + (admin_p * 256.000);
+        admin_p = floor(admin_p / 256);
+        serverflags = (serverflags & 255) + (admin_p * 256);
     }
     
-    admin_p = floor(serverflags / 256.000);
+    admin_p = floor(serverflags / 256);
     
     if(!admin_p)
     {
-        admin_p = -1.000;
+        admin_p = -1;
     }
     
     T0 = "t0";
     T1 = "t1";
     T2 = "t2";
-    allowedcraft = 0.000;
+    allowedcraft = 0;
     W_Precache();
     precache_sound("demon/dland2.wav");
     precache_sound("misc/h2ohit1.wav");
@@ -1117,19 +1117,19 @@ void () worldspawn =
     precache_sound2("speech/mc_7.wav");
     precache_sound2("speech/rw_a_al.wav");
     precache_sound2("speech/rw_a_al2.wav");
-    lightstyle(0.000, "m");
-    lightstyle(1.000, "mmnmmommommnonmmonqnmmo");
-    lightstyle(2.000, "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba");
-    lightstyle(3.000, "mmmmmaaaaammmmmaaaaaabcdefgabcdefg");
-    lightstyle(4.000, "mamamamamama");
-    lightstyle(5.000, "jklmnopqrstuvwxyzyxwvutsrqponmlkj");
-    lightstyle(6.000, "nmonqnmomnmomomno");
-    lightstyle(7.000, "mmmaaaabcdefgmmmmaaaammmaamm");
-    lightstyle(8.000, "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa");
-    lightstyle(9.000, "aaaaaaaazzzzzzzz");
-    lightstyle(10.000, "mmamammmmammamamaaamammma");
-    lightstyle(11.000, "abcdefghijklmnopqrrqponmlkjihgfedcba");
-    lightstyle(63.000, "a");
+    lightstyle(0, "m");
+    lightstyle(1, "mmnmmommommnonmmonqnmmo");
+    lightstyle(2, "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba");
+    lightstyle(3, "mmmmmaaaaammmmmaaaaaabcdefgabcdefg");
+    lightstyle(4, "mamamamamama");
+    lightstyle(5, "jklmnopqrstuvwxyzyxwvutsrqponmlkj");
+    lightstyle(6, "nmonqnmomnmomomno");
+    lightstyle(7, "mmmaaaabcdefgmmmmaaaammmaamm");
+    lightstyle(8, "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa");
+    lightstyle(9, "aaaaaaaazzzzzzzz");
+    lightstyle(10, "mmamammmmammamamaaamammma");
+    lightstyle(11, "abcdefghijklmnopqrrqponmlkjihgfedcba");
+    lightstyle(63, "a");
 };
 
 // StartFrame
@@ -1169,23 +1169,23 @@ void () StartFrame =
     teamplay = cvar("teamplay");
     skill = cvar("skill");
     temp1 = cvar("temp1");
-    if(((temp1 & 1.000) == 1.000) && (deathmatch > 0.000))
+    if(((temp1 & 1) == 1) && (deathmatch > 0))
     {
-        wepmulti = 2.000;
+        wepmulti = 2;
     }
     else
     {
-        wepmulti = 1.000;
+        wepmulti = 1;
     }
     
-    framecount = framecount + 1.000;
+    framecount = framecount + 1;
     
     if(time > cctime)
     {
         change_cc(T0);
         change_cc(T1);
         change_cc(T2);
-        cctime = time + 0.100;
+        cctime = time + 0.1;
     }
     
 };
@@ -1295,7 +1295,7 @@ void (entity ent) CopyToBodyQue =
     bodyque_head.colormap = ent.colormap;
     bodyque_head.movetype = ent.movetype;
     bodyque_head.velocity = ent.velocity;
-    bodyque_head.flags = 0.000;
+    bodyque_head.flags = 0;
     setorigin(bodyque_head, ent.origin);
     setsize(bodyque_head, ent.mins, ent.maxs);
     bodyque_head = bodyque_head.owner;

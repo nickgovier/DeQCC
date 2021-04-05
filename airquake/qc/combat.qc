@@ -85,9 +85,9 @@ float (entity targ, entity inflictor) CanDamage =
     
     if(targ.movetype == MOVETYPE_PUSH)
     {
-        traceline(inflictor.origin, 0.500 * (targ.absmin + targ.absmax), TRUE, self);
+        traceline(inflictor.origin, 0.5 * (targ.absmin + targ.absmax), TRUE, self);
         
-        if(trace_fraction == 1.000)
+        if(trace_fraction == 1)
         {
             return TRUE;
         }
@@ -103,35 +103,35 @@ float (entity targ, entity inflictor) CanDamage =
     
     traceline(inflictor.origin, targ.origin, TRUE, self);
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
     
     traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
@@ -282,9 +282,9 @@ void (entity targ, entity attacker) Killed =
     oself = self;
     self = targ;
     
-    if(self.health < -99.000)
+    if(self.health < -99)
     {
-        self.health = -99.000;
+        self.health = -99;
     }
     
     
@@ -298,11 +298,11 @@ void (entity targ, entity attacker) Killed =
         
         self.enemy = self.enemy.enemy;
         self.trigger_field = world;
-        self.pain_finished = time + 1.000;
+        self.pain_finished = time + 1;
     }
     
     
-    if((self.value > 0.000) && (self.classname != "player"))
+    if((self.value > 0) && (self.classname != "player"))
     {
         if(!deathmatch)
         {
@@ -319,7 +319,7 @@ void (entity targ, entity attacker) Killed =
         else
         {
             
-            if((teamplay > 0.000) && (self.ts != T0))
+            if((teamplay > 0) && (self.ts != T0))
             {
                 bprint(attacker.netname);
                 if(self.ts != attacker.ts)
@@ -359,7 +359,7 @@ void (entity targ, entity attacker) Killed =
     
     if((self.flags & FL_MONSTER) && !deathmatch)
     {
-        killed_monsters = killed_monsters + 1.000;
+        killed_monsters = killed_monsters + 1;
         WriteByte(MSG_ALL, SVC_KILLEDMONSTER);
     }
     
@@ -577,7 +577,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     }
     
     
-    if(targ.health < 1.000)
+    if(targ.health < 1)
     {
         return;
     }
@@ -598,15 +598,15 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     if(attacker.super_damage_finished > time)
     {
-        damage = damage * 4.000;
+        damage = damage * 4;
     }
     
     save = targ.armorvalue;
     take = ceil(damage - save);
     
-    if(take < 0.000)
+    if(take < 0)
     {
-        take = 0.000;
+        take = 0;
     }
     
     
@@ -640,8 +640,8 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
         
         if(self.invincible_sound < time)
         {
-            sound(targ, CHAN_ITEM, "items/protect3.wav", 1.000, ATTN_NORM);
-            self.invincible_sound = time + 2.000;
+            sound(targ, CHAN_ITEM, "items/protect3.wav", 1, ATTN_NORM);
+            self.invincible_sound = time + 2;
         }
         
         return;
@@ -649,7 +649,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     targ.health = targ.health - take;
     
-    if(targ.health <= 0.000)
+    if(targ.health <= 0)
     {
         Killed(targ, attacker);
         return;
@@ -669,7 +669,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
                 if(attacker.classname == "player")
                 {
                     
-                    if((attacker.enemy.owner == attacker) && (attacker.enemy.health > 0.000))
+                    if((attacker.enemy.owner == attacker) && (attacker.enemy.health > 0))
                     {
                         self.enemy = attacker.enemy;
                     }
@@ -693,7 +693,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     }
     
     
-    if((self.owner.classname == "player") && ((attacker.takedamage > 0.000) || (attacker.classname == "player")))
+    if((self.owner.classname == "player") && ((attacker.takedamage > 0) || (attacker.classname == "player")))
     {
         
         if((self != attacker) && (self.owner != attacker))
@@ -701,7 +701,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
             if(attacker.classname == "player")
             {
                 
-                if((attacker.enemy.health > 0.000) && (attacker.enemy.owner == attacker))
+                if((attacker.enemy.health > 0) && (attacker.enemy.owner == attacker))
                 {
                     self.enemy = attacker.enemy;
                 }
@@ -721,9 +721,9 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     {
         self.th_pain(attacker, take);
         
-        if(skill == 3.000)
+        if(skill == 3)
         {
-            self.pain_finished = time + 5.000;
+            self.pain_finished = time + 5;
         }
         
     }
@@ -825,7 +825,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
     local entity head;
     local vector org;
     local string persereika;
-    head = findradius(inflictor.origin, damage + 40.000);
+    head = findradius(inflictor.origin, damage + 40);
     
     while(head)
     {
@@ -835,17 +835,17 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
             
             if(head.takedamage)
             {
-                org = head.origin + ((head.mins + head.maxs) * 0.500);
-                points = (vlen(inflictor.origin - org)) * 0.500;
+                org = head.origin + ((head.mins + head.maxs) * 0.5);
+                points = (vlen(inflictor.origin - org)) * 0.5;
                 
-                if(points < 0.000)
+                if(points < 0)
                 {
-                    points = 0.000;
+                    points = 0;
                 }
                 
                 points = damage - points;
                 
-                if(points > 0.000)
+                if(points > 0)
                 {
                     
                     if(CanDamage(head, inflictor))
@@ -855,7 +855,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                         if((head.owner.classname == "player") && (head == head.owner.enemy))
                         {
                             
-                            if(head.owner.style > 6.000)
+                            if(head.owner.style > 6)
                             {
                                 head.owner.velocity = head.owner.velocity + ((normalize(org - inflictor.origin)) * points);
                                 head.owner.velocity = head.owner.velocity + ('0.000 0.000 1.000' * points);
@@ -934,36 +934,36 @@ void (entity attacker, float damage) T_BeamDamage =
 {
     local float points;
     local entity head;
-    head = findradius(attacker.origin, damage + 40.000);
+    head = findradius(attacker.origin, damage + 40);
     
     while(head)
     {
         
         if(head.takedamage)
         {
-            points = 0.500 * (vlen(attacker.origin - head.origin));
+            points = 0.5 * (vlen(attacker.origin - head.origin));
             
-            if(points < 0.000)
+            if(points < 0)
             {
-                points = 0.000;
+                points = 0;
             }
             
             points = damage - points;
             
             if(head == attacker)
             {
-                points = points * 0.500;
+                points = points * 0.5;
             }
             
             
-            if(points > 0.000)
+            if(points > 0)
             {
                 
                 if(CanDamage(head, attacker))
                 {
                     if(head.classname == "monster_shambler")
                     {
-                        T_Damage(head, attacker, attacker, points * 0.500);
+                        T_Damage(head, attacker, attacker, points * 0.5);
                     }
                     else
                     {

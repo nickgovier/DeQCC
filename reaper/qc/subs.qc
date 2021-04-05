@@ -179,7 +179,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     if(tdest == self.origin)
     {
         self.velocity = VEC_ORIGIN;
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
         return;
     }
     
@@ -187,10 +187,10 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     len = vlen(vdestdelta);
     traveltime = len / tspeed;
     
-    if(traveltime < 0.100)
+    if(traveltime < 0.1)
     {
         self.velocity = VEC_ORIGIN;
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
         return;
     }
     

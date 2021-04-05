@@ -119,7 +119,7 @@ void () initBotLevel =
         
         if((NUMBOTS < MOVETYPE_FLY) && (!(serverflags & DEDICATED)))
         {
-            skill = (0.100 * (parm10 & (offset * SVC_FINALE))) / offset;
+            skill = (0.1 * (parm10 & (offset * SVC_FINALE))) / offset;
         }
         
         offset = offset * FL_MONSTER;
@@ -175,7 +175,7 @@ void () initBotLevel =
             
             if((i < MOVETYPE_TOSS) && (!(serverflags & DEDICATED)))
             {
-                skill = (0.100 * (parm11 & (offset * SVC_FINALE))) / offset;
+                skill = (0.1 * (parm11 & (offset * SVC_FINALE))) / offset;
             }
             
             offset = offset * FL_MONSTER;
@@ -305,20 +305,20 @@ void () setBotGravity =
     local float vel;
     local float sk;
     local string tmp;
-    GRAVITY = cvar("sv_gravity") * 0.100;
+    GRAVITY = cvar("sv_gravity") * 0.1;
     dprint("Gravity accel is ");
     tmp = ftos(GRAVITY);
     dprint(tmp);
     dprint("\n");
     newmax = FALSE;
-    vel = 270.000;
+    vel = 270;
     MAXJUMP = CONTENT_EMPTY;
     
     while(newmax > MAXJUMP)
     {
         vel = vel - GRAVITY;
         MAXJUMP = newmax;
-        newmax = newmax + (vel * 0.100);
+        newmax = newmax + (vel * 0.1);
     }
     
     MAXJUMP = MAXJUMP - TRUE;
@@ -327,14 +327,14 @@ void () setBotGravity =
     dprint(tmp);
     dprint("\n");
     LEVELJUMPTIME = FALSE;
-    vel = 270.000;
+    vel = 270;
     newmax = FALSE;
     
     while(newmax > CONTENT_EMPTY)
     {
-        LEVELJUMPTIME = LEVELJUMPTIME + 0.100;
+        LEVELJUMPTIME = LEVELJUMPTIME + 0.1;
         vel = vel - GRAVITY;
-        newmax = newmax + (vel * 0.100);
+        newmax = newmax + (vel * 0.1);
     }
     
     LEVELJUMPTIME = LEVELJUMPTIME - (newmax / vel);
@@ -343,21 +343,21 @@ void () setBotGravity =
     dprint(tmp);
     dprint("\n");
     newmax = FALSE;
-    vel = 200.000;
+    vel = 200;
     GRENADEMAXHEIGHT = CONTENT_EMPTY;
     
     while(newmax > GRENADEMAXHEIGHT)
     {
         vel = vel - GRAVITY;
         GRENADEMAXHEIGHT = newmax;
-        newmax = newmax + (vel * 0.100);
+        newmax = newmax + (vel * 0.1);
     }
     
     dprint("Max grenade height is ");
     tmp = ftos(GRENADEMAXHEIGHT);
     dprint(tmp);
     dprint("\n");
-    INVGRENADELEVELDIST = ((0.100 * FL_SWIM) * (200.000 - GRAVITY)) / GRAVITY;
+    INVGRENADELEVELDIST = ((0.1 * FL_SWIM) * (200 - GRAVITY)) / GRAVITY;
     INVGRENADELEVELDIST = TRUE / (INVGRENADELEVELDIST * SEARCH_RADIUS);
     dprint("inverse grenade level distance is ");
     tmp = ftos(INVGRENADELEVELDIST);
@@ -521,11 +521,11 @@ void () respawnBot =
             n = NUMBOTS + numplayers();
             o = (serverflags & TEAMBOTS) / FL_ITEM;
             
-            if((o < n) || (self.team != 99.000))
+            if((o < n) || (self.team != 99))
             {
                 self.nextthink = time + TRUE;
                 
-                if(self.team == 99.000)
+                if(self.team == 99)
                 {
                     NUMBOTS = NUMBOTS - TRUE;
                 }
@@ -539,7 +539,7 @@ void () respawnBot =
                     NUMPATHERS = NUMPATHERS - TRUE;
                 }
                 
-                if(self.team != 99.000)
+                if(self.team != 99)
                 {
                     m = ": I'm going to find a team server.\n";
                 }
@@ -581,7 +581,7 @@ void () respawnBot =
     }
     else
     {
-        if(self.team != 99.000)
+        if(self.team != 99)
         {
             e = find(world, classname, "player");
             
@@ -613,7 +613,7 @@ void () respawnBot =
             
             if(SKINSMODE == FL_SWIM)
             {
-                skinChange(self, 15.000);
+                skinChange(self, 15);
             }
             
         }
@@ -825,7 +825,7 @@ void () PutBotInServer =
     self.invincible_finished = FALSE;
     self.effects = FALSE;
     self.invincible_time = FALSE;
-    self.yaw_speed = 45.000 + (25.000 * self.skil);
+    self.yaw_speed = 45 + (25 * self.skil);
     self.lefty = STRAFE_DIR;
     
     if(self.goalentity == world)
@@ -847,7 +847,7 @@ void () PutBotInServer =
     self.th_melee = dmbot_melee;
     self.th_cache = cacheenemy;
     self.think = bot_start;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.enemy = world;
     self.pathtype = NEVERTARGET;
     self.deadflag = DEAD_NO;
@@ -903,7 +903,7 @@ void () PutBotInServer =
     
     aimvar = cvar("sv_aim");
     
-    if(aimvar != 0.930)
+    if(aimvar != 0.93)
     {
         dprint("Seems like sv_aim isn't 0.93\n");
     }
@@ -982,7 +982,7 @@ entity () AddBot =
     oldself = self;
     self = newbot;
     self.think = SpawnNewBot;
-    self.nextthink = time + (12.000 * random());
+    self.nextthink = time + (12 * random());
     self.skil = skill;
     if(self.skil < FALSE)
     {
@@ -1233,7 +1233,7 @@ void () AddAnotherBot =
     newbot.colormap = FALSE;
     if(teamplay)
     {
-        skinChange(newbot, 15.000);
+        skinChange(newbot, 15);
     }
     else
     {
@@ -1256,7 +1256,7 @@ void () AddAnotherBot =
         
     }
     
-    newbot.team = 99.000;
+    newbot.team = 99;
     if(NAMEBOTS)
     {
         newbot.teamname = self.netname;
@@ -1294,7 +1294,7 @@ void () AddAnotherBot =
     
     if(NUMBOTS == TRUE)
     {
-        newbot.nextthink = time + 0.100;
+        newbot.nextthink = time + 0.1;
     }
     
     
@@ -1369,26 +1369,26 @@ void () AddAnotherBot =
                                             }
                                             else
                                             {
-                                                if(NUMBOTS == 12.000)
+                                                if(NUMBOTS == 12)
                                                 {
                                                     newbot.netname = "12";
                                                 }
                                                 else
                                                 {
-                                                    if(NUMBOTS == 13.000)
+                                                    if(NUMBOTS == 13)
                                                     {
                                                         newbot.netname = "13";
                                                     }
                                                     else
                                                     {
-                                                        if(NUMBOTS == 14.000)
+                                                        if(NUMBOTS == 14)
                                                         {
                                                             newbot.netname = "14";
                                                         }
                                                         else
                                                         {
                                                             
-                                                            if(NUMBOTS == 15.000)
+                                                            if(NUMBOTS == 15)
                                                             {
                                                                 newbot.netname = "15";
                                                             }

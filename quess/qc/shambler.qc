@@ -3,7 +3,7 @@
 // OP_STATE	650	8904	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand1 = [0.000, sham_stand2]
+void () sham_stand1 = [0, sham_stand2]
 {
     ai_stand();
 };
@@ -13,7 +13,7 @@ void () sham_stand1 = [0.000, sham_stand2]
 // OP_STATE	708	8905	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand2 = [1.000, sham_stand3]
+void () sham_stand2 = [1, sham_stand3]
 {
     ai_stand();
 };
@@ -23,7 +23,7 @@ void () sham_stand2 = [1.000, sham_stand3]
 // OP_STATE	929	8906	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand3 = [2.000, sham_stand4]
+void () sham_stand3 = [2, sham_stand4]
 {
     ai_stand();
 };
@@ -33,7 +33,7 @@ void () sham_stand3 = [2.000, sham_stand4]
 // OP_STATE	819	8907	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand4 = [3.000, sham_stand5]
+void () sham_stand4 = [3, sham_stand5]
 {
     ai_stand();
 };
@@ -43,7 +43,7 @@ void () sham_stand4 = [3.000, sham_stand5]
 // OP_STATE	1835	8908	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand5 = [4.000, sham_stand6]
+void () sham_stand5 = [4, sham_stand6]
 {
     ai_stand();
 };
@@ -53,7 +53,7 @@ void () sham_stand5 = [4.000, sham_stand6]
 // OP_STATE	1660	8909	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand6 = [5.000, sham_stand7]
+void () sham_stand6 = [5, sham_stand7]
 {
     ai_stand();
 };
@@ -63,7 +63,7 @@ void () sham_stand6 = [5.000, sham_stand7]
 // OP_STATE	2107	8910	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand7 = [6.000, sham_stand8]
+void () sham_stand7 = [6, sham_stand8]
 {
     ai_stand();
 };
@@ -73,7 +73,7 @@ void () sham_stand7 = [6.000, sham_stand8]
 // OP_STATE	2307	8911	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand8 = [7.000, sham_stand9]
+void () sham_stand8 = [7, sham_stand9]
 {
     ai_stand();
 };
@@ -83,7 +83,7 @@ void () sham_stand8 = [7.000, sham_stand9]
 // OP_STATE	1502	8912	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand9 = [8.000, sham_stand10]
+void () sham_stand9 = [8, sham_stand10]
 {
     ai_stand();
 };
@@ -93,7 +93,7 @@ void () sham_stand9 = [8.000, sham_stand10]
 // OP_STATE	3556	8913	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand10 = [9.000, sham_stand11]
+void () sham_stand10 = [9, sham_stand11]
 {
     ai_stand();
 };
@@ -103,7 +103,7 @@ void () sham_stand10 = [9.000, sham_stand11]
 // OP_STATE	1931	8914	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand11 = [10.000, sham_stand12]
+void () sham_stand11 = [10, sham_stand12]
 {
     ai_stand();
 };
@@ -113,7 +113,7 @@ void () sham_stand11 = [10.000, sham_stand12]
 // OP_STATE	3931	8915	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand12 = [11.000, sham_stand13]
+void () sham_stand12 = [11, sham_stand13]
 {
     ai_stand();
 };
@@ -123,7 +123,7 @@ void () sham_stand12 = [11.000, sham_stand13]
 // OP_STATE	2532	8916	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand13 = [12.000, sham_stand14]
+void () sham_stand13 = [12, sham_stand14]
 {
     ai_stand();
 };
@@ -133,7 +133,7 @@ void () sham_stand13 = [12.000, sham_stand14]
 // OP_STATE	8427	8917	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand14 = [13.000, sham_stand15]
+void () sham_stand14 = [13, sham_stand15]
 {
     ai_stand();
 };
@@ -143,7 +143,7 @@ void () sham_stand14 = [13.000, sham_stand15]
 // OP_STATE	3153	8918	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand15 = [14.000, sham_stand16]
+void () sham_stand15 = [14, sham_stand16]
 {
     ai_stand();
 };
@@ -153,7 +153,7 @@ void () sham_stand15 = [14.000, sham_stand16]
 // OP_STATE	2157	8919	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand16 = [15.000, sham_stand17]
+void () sham_stand16 = [15, sham_stand17]
 {
     ai_stand();
 };
@@ -163,7 +163,7 @@ void () sham_stand16 = [15.000, sham_stand17]
 // OP_STATE	3273	8903	0
 // OP_CALL0	1539	0	0
 // OP_DONE	0	0	0
-void () sham_stand17 = [16.000, sham_stand1]
+void () sham_stand17 = [16, sham_stand1]
 {
     ai_stand();
 };
@@ -174,9 +174,9 @@ void () sham_stand17 = [16.000, sham_stand1]
 // OP_STORE_V	1931	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk1 = [17.000, sham_walk2]
+void () sham_walk1 = [17, sham_walk2]
 {
-    ai_walk(10.000);
+    ai_walk(10);
 };
 
 // sham_walk2
@@ -185,9 +185,9 @@ void () sham_walk1 = [17.000, sham_walk2]
 // OP_STORE_V	3556	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk2 = [18.000, sham_walk3]
+void () sham_walk2 = [18, sham_walk3]
 {
-    ai_walk(9.000);
+    ai_walk(9);
 };
 
 // sham_walk3
@@ -196,9 +196,9 @@ void () sham_walk2 = [18.000, sham_walk3]
 // OP_STORE_V	3556	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk3 = [19.000, sham_walk4]
+void () sham_walk3 = [19, sham_walk4]
 {
-    ai_walk(9.000);
+    ai_walk(9);
 };
 
 // sham_walk4
@@ -207,9 +207,9 @@ void () sham_walk3 = [19.000, sham_walk4]
 // OP_STORE_V	1660	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk4 = [20.000, sham_walk5]
+void () sham_walk4 = [20, sham_walk5]
 {
-    ai_walk(5.000);
+    ai_walk(5);
 };
 
 // sham_walk5
@@ -218,9 +218,9 @@ void () sham_walk4 = [20.000, sham_walk5]
 // OP_STORE_V	2107	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk5 = [21.000, sham_walk6]
+void () sham_walk5 = [21, sham_walk6]
 {
-    ai_walk(6.000);
+    ai_walk(6);
 };
 
 // sham_walk6
@@ -229,9 +229,9 @@ void () sham_walk5 = [21.000, sham_walk6]
 // OP_STORE_V	2532	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk6 = [22.000, sham_walk7]
+void () sham_walk6 = [22, sham_walk7]
 {
-    ai_walk(12.000);
+    ai_walk(12);
 };
 
 // sham_walk7
@@ -240,9 +240,9 @@ void () sham_walk6 = [22.000, sham_walk7]
 // OP_STORE_V	1502	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk7 = [23.000, sham_walk8]
+void () sham_walk7 = [23, sham_walk8]
 {
-    ai_walk(8.000);
+    ai_walk(8);
 };
 
 // sham_walk8
@@ -251,9 +251,9 @@ void () sham_walk7 = [23.000, sham_walk8]
 // OP_STORE_V	819	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk8 = [24.000, sham_walk9]
+void () sham_walk8 = [24, sham_walk9]
 {
-    ai_walk(3.000);
+    ai_walk(3);
 };
 
 // sham_walk9
@@ -262,9 +262,9 @@ void () sham_walk8 = [24.000, sham_walk9]
 // OP_STORE_V	8427	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk9 = [25.000, sham_walk10]
+void () sham_walk9 = [25, sham_walk10]
 {
-    ai_walk(13.000);
+    ai_walk(13);
 };
 
 // sham_walk10
@@ -273,9 +273,9 @@ void () sham_walk9 = [25.000, sham_walk10]
 // OP_STORE_V	3556	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk10 = [26.000, sham_walk11]
+void () sham_walk10 = [26, sham_walk11]
 {
-    ai_walk(9.000);
+    ai_walk(9);
 };
 
 // sham_walk11
@@ -284,9 +284,9 @@ void () sham_walk10 = [26.000, sham_walk11]
 // OP_STORE_V	2307	4	0
 // OP_CALL1	1442	0	0
 // OP_DONE	0	0	0
-void () sham_walk11 = [27.000, sham_walk12]
+void () sham_walk11 = [27, sham_walk12]
 {
-    ai_walk(7.000);
+    ai_walk(7);
 };
 
 // sham_walk12
@@ -304,13 +304,13 @@ void () sham_walk11 = [27.000, sham_walk12]
 // OP_STORE_V	328	16	0
 // OP_CALL5	454	0	0
 // OP_DONE	0	0	0
-void () sham_walk12 = [28.000, sham_walk1]
+void () sham_walk12 = [28, sham_walk1]
 {
-    ai_walk(7.000);
+    ai_walk(7);
     
-    if(random() > 0.800)
+    if(random() > 0.8)
     {
-        sound(self, CHAN_VOICE, "shambler/sidle.wav", 1.000, ATTN_IDLE);
+        sound(self, CHAN_VOICE, "shambler/sidle.wav", 1, ATTN_IDLE);
     }
     
 };
@@ -321,9 +321,9 @@ void () sham_walk12 = [28.000, sham_walk1]
 // OP_STORE_V	1017	4	0
 // OP_CALL1	1617	0	0
 // OP_DONE	0	0	0
-void () sham_run1 = [29.000, sham_run2]
+void () sham_run1 = [29, sham_run2]
 {
-    ai_run(20.000);
+    ai_run(20);
 };
 
 // sham_run2
@@ -332,9 +332,9 @@ void () sham_run1 = [29.000, sham_run2]
 // OP_STORE_V	4969	4	0
 // OP_CALL1	1617	0	0
 // OP_DONE	0	0	0
-void () sham_run2 = [30.000, sham_run3]
+void () sham_run2 = [30, sham_run3]
 {
-    ai_run(24.000);
+    ai_run(24);
 };
 
 // sham_run3
@@ -343,9 +343,9 @@ void () sham_run2 = [30.000, sham_run3]
 // OP_STORE_V	1017	4	0
 // OP_CALL1	1617	0	0
 // OP_DONE	0	0	0
-void () sham_run3 = [31.000, sham_run4]
+void () sham_run3 = [31, sham_run4]
 {
-    ai_run(20.000);
+    ai_run(20);
 };
 
 // sham_run4
@@ -354,9 +354,9 @@ void () sham_run3 = [31.000, sham_run4]
 // OP_STORE_V	1017	4	0
 // OP_CALL1	1617	0	0
 // OP_DONE	0	0	0
-void () sham_run4 = [32.000, sham_run5]
+void () sham_run4 = [32, sham_run5]
 {
-    ai_run(20.000);
+    ai_run(20);
 };
 
 // sham_run5
@@ -365,9 +365,9 @@ void () sham_run4 = [32.000, sham_run5]
 // OP_STORE_V	4969	4	0
 // OP_CALL1	1617	0	0
 // OP_DONE	0	0	0
-void () sham_run5 = [33.000, sham_run6]
+void () sham_run5 = [33, sham_run6]
 {
-    ai_run(24.000);
+    ai_run(24);
 };
 
 // sham_run6
@@ -385,13 +385,13 @@ void () sham_run5 = [33.000, sham_run6]
 // OP_STORE_V	328	16	0
 // OP_CALL5	454	0	0
 // OP_DONE	0	0	0
-void () sham_run6 = [34.000, sham_run1]
+void () sham_run6 = [34, sham_run1]
 {
-    ai_run(20.000);
+    ai_run(20);
     
-    if(random() > 0.800)
+    if(random() > 0.8)
     {
-        sound(self, CHAN_VOICE, "shambler/sidle.wav", 1.000, ATTN_IDLE);
+        sound(self, CHAN_VOICE, "shambler/sidle.wav", 1, ATTN_IDLE);
     }
     
 };
@@ -408,10 +408,10 @@ void () sham_run6 = [34.000, sham_run1]
 // OP_STORE_V	929	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash1 = [35.000, sham_smash2]
+void () sham_smash1 = [35, sham_smash2]
 {
-    sound(self, CHAN_VOICE, "shambler/melee1.wav", 1.000, ATTN_NORM);
-    ai_charge(2.000);
+    sound(self, CHAN_VOICE, "shambler/melee1.wav", 1, ATTN_NORM);
+    ai_charge(2);
 };
 
 // sham_smash2
@@ -420,9 +420,9 @@ void () sham_smash1 = [35.000, sham_smash2]
 // OP_STORE_V	2107	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash2 = [36.000, sham_smash3]
+void () sham_smash2 = [36, sham_smash3]
 {
-    ai_charge(6.000);
+    ai_charge(6);
 };
 
 // sham_smash3
@@ -431,9 +431,9 @@ void () sham_smash2 = [36.000, sham_smash3]
 // OP_STORE_V	2107	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash3 = [37.000, sham_smash4]
+void () sham_smash3 = [37, sham_smash4]
 {
-    ai_charge(6.000);
+    ai_charge(6);
 };
 
 // sham_smash4
@@ -442,9 +442,9 @@ void () sham_smash3 = [37.000, sham_smash4]
 // OP_STORE_V	1660	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash4 = [38.000, sham_smash5]
+void () sham_smash4 = [38, sham_smash5]
 {
-    ai_charge(5.000);
+    ai_charge(5);
 };
 
 // sham_smash5
@@ -453,9 +453,9 @@ void () sham_smash4 = [38.000, sham_smash5]
 // OP_STORE_V	1835	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash5 = [39.000, sham_smash6]
+void () sham_smash5 = [39, sham_smash6]
 {
-    ai_charge(4.000);
+    ai_charge(4);
 };
 
 // sham_smash6
@@ -464,9 +464,9 @@ void () sham_smash5 = [39.000, sham_smash6]
 // OP_STORE_V	708	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash6 = [40.000, sham_smash7]
+void () sham_smash6 = [40, sham_smash7]
 {
-    ai_charge(1.000);
+    ai_charge(1);
 };
 
 // sham_smash7
@@ -475,9 +475,9 @@ void () sham_smash6 = [40.000, sham_smash7]
 // OP_STORE_V	650	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash7 = [41.000, sham_smash8]
+void () sham_smash7 = [41, sham_smash8]
 {
-    ai_charge(0.000);
+    ai_charge(0);
 };
 
 // sham_smash8
@@ -486,9 +486,9 @@ void () sham_smash7 = [41.000, sham_smash8]
 // OP_STORE_V	650	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash8 = [42.000, sham_smash9]
+void () sham_smash8 = [42, sham_smash9]
 {
-    ai_charge(0.000);
+    ai_charge(0);
 };
 
 // sham_smash9
@@ -497,9 +497,9 @@ void () sham_smash8 = [42.000, sham_smash9]
 // OP_STORE_V	650	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash9 = [43.000, sham_smash10]
+void () sham_smash9 = [43, sham_smash10]
 {
-    ai_charge(0.000);
+    ai_charge(0);
 };
 
 // sham_smash10
@@ -566,7 +566,7 @@ void () sham_smash9 = [43.000, sham_smash10]
 // OP_STORE_V	8999	7	0
 // OP_CALL2	2945	0	0
 // OP_DONE	0	0	0
-void () sham_smash10 = [44.000, sham_smash11]
+void () sham_smash10 = [44, sham_smash11]
 {
     local vector delta;
     local float ldmg;
@@ -576,10 +576,10 @@ void () sham_smash10 = [44.000, sham_smash11]
         return;
     }
     
-    ai_charge(0.000);
+    ai_charge(0);
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 100.000)
+    if(vlen(delta) > 100)
     {
         return;
     }
@@ -591,11 +591,11 @@ void () sham_smash10 = [44.000, sham_smash11]
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 40.000;
+    ldmg = ((random() + random()) + random()) * 40;
     T_Damage(self.enemy, self, self, ldmg);
-    sound(self, CHAN_VOICE, "shambler/smack.wav", 1.000, ATTN_NORM);
-    SpawnMeatSpray(self.origin + (v_forward * 16.000), (crandom() * 100.000) * v_right);
-    SpawnMeatSpray(self.origin + (v_forward * 16.000), (crandom() * 100.000) * v_right);
+    sound(self, CHAN_VOICE, "shambler/smack.wav", 1, ATTN_NORM);
+    SpawnMeatSpray(self.origin + (v_forward * 16), (crandom() * 100) * v_right);
+    SpawnMeatSpray(self.origin + (v_forward * 16), (crandom() * 100) * v_right);
 };
 
 // sham_smash11
@@ -604,9 +604,9 @@ void () sham_smash10 = [44.000, sham_smash11]
 // OP_STORE_V	1660	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash11 = [45.000, sham_smash12]
+void () sham_smash11 = [45, sham_smash12]
 {
-    ai_charge(5.000);
+    ai_charge(5);
 };
 
 // sham_smash12
@@ -615,9 +615,9 @@ void () sham_smash11 = [45.000, sham_smash12]
 // OP_STORE_V	1835	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_smash12 = [46.000, sham_run1]
+void () sham_smash12 = [46, sham_run1]
 {
-    ai_charge(4.000);
+    ai_charge(4);
 };
 
 // ShamClaw
@@ -679,23 +679,23 @@ void (float side) ShamClaw =
         return;
     }
     
-    ai_charge(10.000);
+    ai_charge(10);
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 100.000)
+    if(vlen(delta) > 100)
     {
         return;
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 20.000;
+    ldmg = ((random() + random()) + random()) * 20;
     T_Damage(self.enemy, self, self, ldmg);
-    sound(self, CHAN_VOICE, "shambler/smack.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "shambler/smack.wav", 1, ATTN_NORM);
     
     if(side)
     {
         makevectors(self.angles);
-        SpawnMeatSpray(self.origin + (v_forward * 16.000), side * v_right);
+        SpawnMeatSpray(self.origin + (v_forward * 16), side * v_right);
     }
     
 };
@@ -712,10 +712,10 @@ void (float side) ShamClaw =
 // OP_STORE_V	1660	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl1 = [56.000, sham_swingl2]
+void () sham_swingl1 = [56, sham_swingl2]
 {
-    sound(self, CHAN_VOICE, "shambler/melee2.wav", 1.000, ATTN_NORM);
-    ai_charge(5.000);
+    sound(self, CHAN_VOICE, "shambler/melee2.wav", 1, ATTN_NORM);
+    ai_charge(5);
 };
 
 // sham_swingl2
@@ -724,9 +724,9 @@ void () sham_swingl1 = [56.000, sham_swingl2]
 // OP_STORE_V	819	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl2 = [57.000, sham_swingl3]
+void () sham_swingl2 = [57, sham_swingl3]
 {
-    ai_charge(3.000);
+    ai_charge(3);
 };
 
 // sham_swingl3
@@ -735,9 +735,9 @@ void () sham_swingl2 = [57.000, sham_swingl3]
 // OP_STORE_V	2307	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl3 = [58.000, sham_swingl4]
+void () sham_swingl3 = [58, sham_swingl4]
 {
-    ai_charge(7.000);
+    ai_charge(7);
 };
 
 // sham_swingl4
@@ -746,9 +746,9 @@ void () sham_swingl3 = [58.000, sham_swingl4]
 // OP_STORE_V	819	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl4 = [59.000, sham_swingl5]
+void () sham_swingl4 = [59, sham_swingl5]
 {
-    ai_charge(3.000);
+    ai_charge(3);
 };
 
 // sham_swingl5
@@ -757,9 +757,9 @@ void () sham_swingl4 = [59.000, sham_swingl5]
 // OP_STORE_V	2307	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl5 = [60.000, sham_swingl6]
+void () sham_swingl5 = [60, sham_swingl6]
 {
-    ai_charge(7.000);
+    ai_charge(7);
 };
 
 // sham_swingl6
@@ -768,9 +768,9 @@ void () sham_swingl5 = [60.000, sham_swingl6]
 // OP_STORE_V	3556	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl6 = [61.000, sham_swingl7]
+void () sham_swingl6 = [61, sham_swingl7]
 {
-    ai_charge(9.000);
+    ai_charge(9);
 };
 
 // sham_swingl7
@@ -781,10 +781,10 @@ void () sham_swingl6 = [61.000, sham_swingl7]
 // OP_STORE_V	2140	4	0
 // OP_CALL1	9003	0	0
 // OP_DONE	0	0	0
-void () sham_swingl7 = [62.000, sham_swingl8]
+void () sham_swingl7 = [62, sham_swingl8]
 {
-    ai_charge(5.000);
-    ShamClaw(250.000);
+    ai_charge(5);
+    ShamClaw(250);
 };
 
 // sham_swingl8
@@ -793,9 +793,9 @@ void () sham_swingl7 = [62.000, sham_swingl8]
 // OP_STORE_V	1835	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingl8 = [63.000, sham_swingl9]
+void () sham_swingl8 = [63, sham_swingl9]
 {
-    ai_charge(4.000);
+    ai_charge(4);
 };
 
 // sham_swingl9
@@ -809,11 +809,11 @@ void () sham_swingl8 = [63.000, sham_swingl9]
 // OP_ADDRESS	28	148	9051
 // OP_STOREP_FNC	839	9051	0
 // OP_DONE	0	0	0
-void () sham_swingl9 = [64.000, sham_run1]
+void () sham_swingl9 = [64, sham_run1]
 {
-    ai_charge(8.000);
+    ai_charge(8);
     
-    if(random() < 0.500)
+    if(random() < 0.5)
     {
         self.think = sham_swingr1;
     }
@@ -832,10 +832,10 @@ void () sham_swingl9 = [64.000, sham_run1]
 // OP_STORE_V	708	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr1 = [47.000, sham_swingr2]
+void () sham_swingr1 = [47, sham_swingr2]
 {
-    sound(self, CHAN_VOICE, "shambler/melee1.wav", 1.000, ATTN_NORM);
-    ai_charge(1.000);
+    sound(self, CHAN_VOICE, "shambler/melee1.wav", 1, ATTN_NORM);
+    ai_charge(1);
 };
 
 // sham_swingr2
@@ -844,9 +844,9 @@ void () sham_swingr1 = [47.000, sham_swingr2]
 // OP_STORE_V	1502	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr2 = [48.000, sham_swingr3]
+void () sham_swingr2 = [48, sham_swingr3]
 {
-    ai_charge(8.000);
+    ai_charge(8);
 };
 
 // sham_swingr3
@@ -855,9 +855,9 @@ void () sham_swingr2 = [48.000, sham_swingr3]
 // OP_STORE_V	3153	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr3 = [49.000, sham_swingr4]
+void () sham_swingr3 = [49, sham_swingr4]
 {
-    ai_charge(14.000);
+    ai_charge(14);
 };
 
 // sham_swingr4
@@ -866,9 +866,9 @@ void () sham_swingr3 = [49.000, sham_swingr4]
 // OP_STORE_V	2307	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr4 = [50.000, sham_swingr5]
+void () sham_swingr4 = [50, sham_swingr5]
 {
-    ai_charge(7.000);
+    ai_charge(7);
 };
 
 // sham_swingr5
@@ -877,9 +877,9 @@ void () sham_swingr4 = [50.000, sham_swingr5]
 // OP_STORE_V	819	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr5 = [51.000, sham_swingr6]
+void () sham_swingr5 = [51, sham_swingr6]
 {
-    ai_charge(3.000);
+    ai_charge(3);
 };
 
 // sham_swingr6
@@ -888,9 +888,9 @@ void () sham_swingr5 = [51.000, sham_swingr6]
 // OP_STORE_V	2107	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr6 = [52.000, sham_swingr7]
+void () sham_swingr6 = [52, sham_swingr7]
 {
-    ai_charge(6.000);
+    ai_charge(6);
 };
 
 // sham_swingr7
@@ -901,10 +901,10 @@ void () sham_swingr6 = [52.000, sham_swingr7]
 // OP_STORE_V	9059	4	0
 // OP_CALL1	9003	0	0
 // OP_DONE	0	0	0
-void () sham_swingr7 = [53.000, sham_swingr8]
+void () sham_swingr7 = [53, sham_swingr8]
 {
-    ai_charge(6.000);
-    ShamClaw(-250.000);
+    ai_charge(6);
+    ShamClaw(-250);
 };
 
 // sham_swingr8
@@ -913,9 +913,9 @@ void () sham_swingr7 = [53.000, sham_swingr8]
 // OP_STORE_V	819	4	0
 // OP_CALL1	944	0	0
 // OP_DONE	0	0	0
-void () sham_swingr8 = [54.000, sham_swingr9]
+void () sham_swingr8 = [54, sham_swingr9]
 {
-    ai_charge(3.000);
+    ai_charge(3);
 };
 
 // sham_swingr9
@@ -931,12 +931,12 @@ void () sham_swingr8 = [54.000, sham_swingr9]
 // OP_ADDRESS	28	148	9062
 // OP_STOREP_FNC	840	9062	0
 // OP_DONE	0	0	0
-void () sham_swingr9 = [55.000, sham_run1]
+void () sham_swingr9 = [55, sham_run1]
 {
-    ai_charge(1.000);
-    ai_charge(10.000);
+    ai_charge(1);
+    ai_charge(10);
     
-    if(random() < 0.500)
+    if(random() < 0.5)
     {
         self.think = sham_swingl1;
     }
@@ -964,13 +964,13 @@ void () sham_melee =
 {
     local float chance;
     chance = random();
-    if((chance > 0.600) || (self.health == 600.000))
+    if((chance > 0.6) || (self.health == 600))
     {
         sham_smash1();
     }
     else
     {
-        if(chance > 0.300)
+        if(chance > 0.3)
         {
             sham_swingr1();
         }
@@ -1051,17 +1051,17 @@ void () CastLightning =
     org = self.origin + '0.000 0.000 40.000';
     dir = (self.enemy.origin + '0.000 0.000 16.000') - org;
     dir = normalize(dir);
-    traceline(org, self.origin + (dir * 4000.000), TRUE, self);
+    traceline(org, self.origin + (dir * 4000), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING1);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    LightningDamage(org, trace_endpos, self, 10.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
+    LightningDamage(org, trace_endpos, self, 10);
 };
 
 // sham_magic1
@@ -1075,10 +1075,10 @@ void () CastLightning =
 // OP_STORE_V	327	16	0
 // OP_CALL5	454	0	0
 // OP_DONE	0	0	0
-void () sham_magic1 = [65.000, sham_magic2]
+void () sham_magic1 = [65, sham_magic2]
 {
     ai_face();
-    sound(self, CHAN_WEAPON, "shambler/sattck1.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_WEAPON, "shambler/sattck1.wav", 1, ATTN_NORM);
 };
 
 // sham_magic2
@@ -1086,7 +1086,7 @@ void () sham_magic1 = [65.000, sham_magic2]
 // OP_STATE	6094	9112	0
 // OP_CALL0	844	0	0
 // OP_DONE	0	0	0
-void () sham_magic2 = [66.000, sham_magic3]
+void () sham_magic2 = [66, sham_magic3]
 {
     ai_face();
 };
@@ -1125,11 +1125,11 @@ void () sham_magic2 = [66.000, sham_magic3]
 // OP_ADDRESS	9117	148	9135
 // OP_STOREP_FNC	520	9135	0
 // OP_DONE	0	0	0
-void () sham_magic3 = [67.000, sham_magic4]
+void () sham_magic3 = [67, sham_magic4]
 {
     local entity o;
     ai_face();
-    self.nextthink = self.nextthink + 0.200;
+    self.nextthink = self.nextthink + 0.2;
     self.effects = self.effects | EF_MUZZLEFLASH;
     ai_face();
     self.attack_missile = spawn();
@@ -1137,7 +1137,7 @@ void () sham_magic3 = [67.000, sham_magic4]
     setmodel(o, "progs/s_light.mdl");
     setorigin(o, self.origin);
     o.angles = self.angles;
-    o.nextthink = time + 0.700;
+    o.nextthink = time + 0.7;
     o.think = SUB_Remove;
 };
 
@@ -1152,10 +1152,10 @@ void () sham_magic3 = [67.000, sham_magic4]
 // OP_ADDRESS	9140	131	9141
 // OP_STOREP_F	708	9141	0
 // OP_DONE	0	0	0
-void () sham_magic4 = [68.000, sham_magic5]
+void () sham_magic4 = [68, sham_magic5]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
-    self.attack_missile.frame = 1.000;
+    self.attack_missile.frame = 1;
 };
 
 // sham_magic5
@@ -1169,10 +1169,10 @@ void () sham_magic4 = [68.000, sham_magic5]
 // OP_ADDRESS	9146	131	9147
 // OP_STOREP_F	929	9147	0
 // OP_DONE	0	0	0
-void () sham_magic5 = [69.000, sham_magic6]
+void () sham_magic5 = [69, sham_magic6]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
-    self.attack_missile.frame = 2.000;
+    self.attack_missile.frame = 2;
 };
 
 // sham_magic6
@@ -1189,11 +1189,11 @@ void () sham_magic5 = [69.000, sham_magic6]
 // OP_STORE_V	327	16	0
 // OP_CALL5	454	0	0
 // OP_DONE	0	0	0
-void () sham_magic6 = [70.000, sham_magic9]
+void () sham_magic6 = [70, sham_magic9]
 {
     remove(self.attack_missile);
     CastLightning();
-    sound(self, CHAN_WEAPON, "shambler/sboom.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_WEAPON, "shambler/sboom.wav", 1, ATTN_NORM);
 };
 
 // sham_magic9
@@ -1201,7 +1201,7 @@ void () sham_magic6 = [70.000, sham_magic9]
 // OP_STATE	2988	9151	0
 // OP_CALL0	9070	0	0
 // OP_DONE	0	0	0
-void () sham_magic9 = [73.000, sham_magic10]
+void () sham_magic9 = [73, sham_magic10]
 {
     CastLightning();
 };
@@ -1211,7 +1211,7 @@ void () sham_magic9 = [73.000, sham_magic10]
 // OP_STATE	6108	9152	0
 // OP_CALL0	9070	0	0
 // OP_DONE	0	0	0
-void () sham_magic10 = [74.000, sham_magic11]
+void () sham_magic10 = [74, sham_magic11]
 {
     CastLightning();
 };
@@ -1223,10 +1223,10 @@ void () sham_magic10 = [74.000, sham_magic11]
 // OP_IFNOT	9154	2	0
 // OP_CALL0	9070	0	0
 // OP_DONE	0	0	0
-void () sham_magic11 = [75.000, sham_magic12]
+void () sham_magic11 = [75, sham_magic12]
 {
     
-    if(skill == 3.000)
+    if(skill == 3)
     {
         CastLightning();
     }
@@ -1237,7 +1237,7 @@ void () sham_magic11 = [75.000, sham_magic12]
 // function begins at statement 14437, parm_start=9155
 // OP_STATE	6112	8934	0
 // OP_DONE	0	0	0
-void () sham_magic12 = [76.000, sham_run1]
+void () sham_magic12 = [76, sham_run1]
 {
 };
 
@@ -1245,7 +1245,7 @@ void () sham_magic12 = [76.000, sham_run1]
 // function begins at statement 14439, parm_start=9156
 // OP_STATE	6114	9156	0
 // OP_DONE	0	0	0
-void () sham_pain1 = [77.000, sham_pain2]
+void () sham_pain1 = [77, sham_pain2]
 {
 };
 
@@ -1253,7 +1253,7 @@ void () sham_pain1 = [77.000, sham_pain2]
 // function begins at statement 14441, parm_start=9157
 // OP_STATE	6116	9157	0
 // OP_DONE	0	0	0
-void () sham_pain2 = [78.000, sham_pain3]
+void () sham_pain2 = [78, sham_pain3]
 {
 };
 
@@ -1261,7 +1261,7 @@ void () sham_pain2 = [78.000, sham_pain3]
 // function begins at statement 14443, parm_start=9158
 // OP_STATE	6118	9158	0
 // OP_DONE	0	0	0
-void () sham_pain3 = [79.000, sham_pain4]
+void () sham_pain3 = [79, sham_pain4]
 {
 };
 
@@ -1269,7 +1269,7 @@ void () sham_pain3 = [79.000, sham_pain4]
 // function begins at statement 14445, parm_start=9159
 // OP_STATE	874	9159	0
 // OP_DONE	0	0	0
-void () sham_pain4 = [80.000, sham_pain5]
+void () sham_pain4 = [80, sham_pain5]
 {
 };
 
@@ -1277,7 +1277,7 @@ void () sham_pain4 = [80.000, sham_pain5]
 // function begins at statement 14447, parm_start=9160
 // OP_STATE	6121	9160	0
 // OP_DONE	0	0	0
-void () sham_pain5 = [81.000, sham_pain6]
+void () sham_pain5 = [81, sham_pain6]
 {
 };
 
@@ -1285,7 +1285,7 @@ void () sham_pain5 = [81.000, sham_pain6]
 // function begins at statement 14449, parm_start=9161
 // OP_STATE	6123	8934	0
 // OP_DONE	0	0	0
-void () sham_pain6 = [82.000, sham_run1]
+void () sham_pain6 = [82, sham_run1]
 {
 };
 
@@ -1319,15 +1319,15 @@ void () sham_pain6 = [82.000, sham_run1]
 // OP_DONE	0	0	0
 void (entity attacker, float damage) sham_pain = 
 {
-    sound(self, CHAN_VOICE, "shambler/shurt2.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "shambler/shurt2.wav", 1, ATTN_NORM);
     
-    if(self.health <= 0.000)
+    if(self.health <= 0)
     {
         return;
     }
     
     
-    if(!king_dead && ((random() * 400.000) > damage))
+    if(!king_dead && ((random() * 400) > damage))
     {
         return;
     }
@@ -1338,7 +1338,7 @@ void (entity attacker, float damage) sham_pain =
         return;
     }
     
-    self.pain_finished = time + 2.000;
+    self.pain_finished = time + 2;
     sham_pain1();
 };
 
@@ -1346,7 +1346,7 @@ void (entity attacker, float damage) sham_pain =
 // function begins at statement 14477, parm_start=9176
 // OP_STATE	6125	9176	0
 // OP_DONE	0	0	0
-void () sham_death1 = [83.000, sham_death2]
+void () sham_death1 = [83, sham_death2]
 {
 };
 
@@ -1354,7 +1354,7 @@ void () sham_death1 = [83.000, sham_death2]
 // function begins at statement 14479, parm_start=9177
 // OP_STATE	6127	9177	0
 // OP_DONE	0	0	0
-void () sham_death2 = [84.000, sham_death3]
+void () sham_death2 = [84, sham_death3]
 {
 };
 
@@ -1364,7 +1364,7 @@ void () sham_death2 = [84.000, sham_death3]
 // OP_ADDRESS	28	104	9179
 // OP_STOREP_F	238	9179	0
 // OP_DONE	0	0	0
-void () sham_death3 = [85.000, sham_death4]
+void () sham_death3 = [85, sham_death4]
 {
     self.solid = SOLID_NOT;
 };
@@ -1373,7 +1373,7 @@ void () sham_death3 = [85.000, sham_death4]
 // function begins at statement 14485, parm_start=9180
 // OP_STATE	6130	9180	0
 // OP_DONE	0	0	0
-void () sham_death4 = [86.000, sham_death5]
+void () sham_death4 = [86, sham_death5]
 {
 };
 
@@ -1381,7 +1381,7 @@ void () sham_death4 = [86.000, sham_death5]
 // function begins at statement 14487, parm_start=9181
 // OP_STATE	6132	9181	0
 // OP_DONE	0	0	0
-void () sham_death5 = [87.000, sham_death6]
+void () sham_death5 = [87, sham_death6]
 {
 };
 
@@ -1389,7 +1389,7 @@ void () sham_death5 = [87.000, sham_death6]
 // function begins at statement 14489, parm_start=9182
 // OP_STATE	6134	9182	0
 // OP_DONE	0	0	0
-void () sham_death6 = [88.000, sham_death7]
+void () sham_death6 = [88, sham_death7]
 {
 };
 
@@ -1397,7 +1397,7 @@ void () sham_death6 = [88.000, sham_death7]
 // function begins at statement 14491, parm_start=9183
 // OP_STATE	6136	9183	0
 // OP_DONE	0	0	0
-void () sham_death7 = [89.000, sham_death8]
+void () sham_death7 = [89, sham_death8]
 {
 };
 
@@ -1405,7 +1405,7 @@ void () sham_death7 = [89.000, sham_death8]
 // function begins at statement 14493, parm_start=9184
 // OP_STATE	1608	9184	0
 // OP_DONE	0	0	0
-void () sham_death8 = [90.000, sham_death9]
+void () sham_death8 = [90, sham_death9]
 {
 };
 
@@ -1413,7 +1413,7 @@ void () sham_death8 = [90.000, sham_death9]
 // function begins at statement 14495, parm_start=9185
 // OP_STATE	6139	9185	0
 // OP_DONE	0	0	0
-void () sham_death9 = [91.000, sham_death10]
+void () sham_death9 = [91, sham_death10]
 {
 };
 
@@ -1421,7 +1421,7 @@ void () sham_death9 = [91.000, sham_death10]
 // function begins at statement 14497, parm_start=9186
 // OP_STATE	6141	9186	0
 // OP_DONE	0	0	0
-void () sham_death10 = [92.000, sham_death11]
+void () sham_death10 = [92, sham_death11]
 {
 };
 
@@ -1430,7 +1430,7 @@ void () sham_death10 = [92.000, sham_death11]
 // OP_STATE	6143	9186	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () sham_death11 = [93.000, sham_death11]
+void () sham_death11 = [93, sham_death11]
 {
     SUB_Remove();
 };
@@ -1474,9 +1474,9 @@ void () sham_death11 = [93.000, sham_death11]
 void () sham_die = 
 {
     
-    if(self.health < -60.000)
+    if(self.health < -60)
     {
-        sound(self, CHAN_VOICE, "player/udeath.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "player/udeath.wav", 1, ATTN_NORM);
         ThrowHead("progs/h_shams.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib2.mdl", self.health);
@@ -1484,7 +1484,7 @@ void () sham_die =
         return;
     }
     
-    sound(self, CHAN_VOICE, "shambler/sdeath.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "shambler/sdeath.wav", 1, ATTN_NORM);
     sham_death1();
 };
 
@@ -1584,7 +1584,7 @@ void () monster_shambler =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/shambler.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = 600.000;
+    self.health = 600;
     self.th_stand = sham_stand1;
     self.th_walk = sham_walk1;
     self.th_run = sham_run1;

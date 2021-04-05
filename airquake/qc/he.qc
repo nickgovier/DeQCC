@@ -258,7 +258,7 @@ void () T_HETouch =
     if(other != world)
     {
         
-        if(!other.takedamage && (other.solid < 2.000))
+        if(!other.takedamage && (other.solid < 2))
         {
             return;
         }
@@ -272,10 +272,10 @@ void () T_HETouch =
     }
     
     
-    if((other.classname == "func_runway") && (self.health > 0.000))
+    if((other.classname == "func_runway") && (self.health > 0))
     {
         
-        if((fabs(self.angles_x) < 20.000) && (fabs(self.angles_z) < 20.000))
+        if((fabs(self.angles_x) < 20) && (fabs(self.angles_z) < 20))
         {
             
             if(!self.landed)
@@ -283,13 +283,13 @@ void () T_HETouch =
                 sprint(self.goalentity, "Landed.\n");
             }
             
-            self.landed = 1.000;
+            self.landed = 1;
             self.groundentity = other;
-            self.angles_x = 0.000;
-            self.angles_z = 0.000;
+            self.angles_x = 0;
+            self.angles_z = 0;
             self.avelocity = '0.000 0.000 0.000';
             self.velocity = '0.000 0.000 0.000';
-            self.origin_z = (other.origin_z + other.maxs_z) + 16.000;
+            self.origin_z = (other.origin_z + other.maxs_z) + 16;
             return;
         }
         
@@ -301,15 +301,15 @@ void () T_HETouch =
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     temp = self.goalentity.frags;
-    if(((other == world) || (other.health > 0.000)) || ((self.health < 1.000) && (time > self.pain_finished)))
+    if(((other == world) || (other.health > 0)) || ((self.health < 1) && (time > self.pain_finished)))
     {
-        self.origin = self.origin - (normalize(self.velocity) * 8.000);
+        self.origin = self.origin - (normalize(self.velocity) * 8);
         setorigin(self.goalentity, self.origin);
-        T_RadiusDamage(self, self, 240.000, self);
+        T_RadiusDamage(self, self, 240, self);
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
-            self.goalentity.frags = temp - 1.000;
+            self.goalentity.frags = temp - 1;
             bprint(self.goalentity.netname);
             bprint(" crashed into ");
             if(other != world)
@@ -343,7 +343,7 @@ void () T_HETouch =
                 bprint("the ground\n");
             }
             
-            self.health = 0.000;
+            self.health = 0;
         }
         
         self.takedamage = DAMAGE_NO;
@@ -352,17 +352,17 @@ void () T_HETouch =
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
-        T_Damage(self.owner, self.owner, self.owner, 1000.000);
+        T_Damage(self.owner, self.owner, self.owner, 1000);
         self.touch = SUB_Null;
     }
     else
     {
-        T_Damage(other, self, self, 240.000);
+        T_Damage(other, self, self, 240);
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
-            self.pain_finished = time + 0.300;
-            self.goalentity.frags = temp - 1.000;
+            self.pain_finished = time + 0.3;
+            self.goalentity.frags = temp - 1;
             bprint(self.goalentity.netname);
             bprint(" crashed into ");
             
@@ -395,7 +395,7 @@ void () T_HETouch =
             
         }
         
-        self.health = 0.000;
+        self.health = 0;
         self.th_die = SUB_Null;
         self.touch = T_HETouch;
         HE_Fall();
@@ -449,23 +449,23 @@ void () HE_Fall =
     local vector v2;
     local vector v3;
     v1 = '0.000 0.000 0.000';
-    v1_x = -70.000 - self.angles_x;
+    v1_x = -70 - self.angles_x;
     v2 = '0.000 0.000 360.000';
     
-    if(v1_x < 0.000)
+    if(v1_x < 0)
     {
-        v2_x = -20.000;
+        v2_x = -20;
     }
     
     
-    if(fabs(v1_x) < 2.000)
+    if(fabs(v1_x) < 2)
     {
-        v2_x = 0.000;
-        self.angles_x = -70.000;
+        v2_x = 0;
+        self.angles_x = -70;
     }
     
     self.avelocity = v2;
-    self.velocity = self.velocity + (('0.000 0.000 -1.000' * cvar("sv_gravity")) * 0.100);
+    self.velocity = self.velocity + (('0.000 0.000 -1.000' * cvar("sv_gravity")) * 0.1);
     
     if(self.flags & FL_ONGROUND)
     {
@@ -473,7 +473,7 @@ void () HE_Fall =
     }
     
     self.think = HE_Fall;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // HE_Die
@@ -510,7 +510,7 @@ void () HE_Die =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    self.pain_finished = time + 0.300;
+    self.pain_finished = time + 0.3;
     self.touch = T_HETouch;
     HE_Fall();
 };

@@ -55,12 +55,12 @@ vector (vector src, vector trg, float invMvel) leadtarget =
             
             if(trace_fraction != TRUE)
             {
-                tg = tg - (lead * 0.500);
+                tg = tg - (lead * 0.5);
                 traceline(src, tg, TRUE, self);
                 
                 if(trace_fraction != TRUE)
                 {
-                    tg = tg - (lead * 0.500);
+                    tg = tg - (lead * 0.5);
                 }
                 
             }
@@ -116,15 +116,15 @@ vector (vector trg) adjustgrenade =
     if(xypct > TRUE)
     {
         
-        if(xypct < 12.000)
+        if(xypct < 12)
         {
-            tg_z = 0.000 + (GRENADEMAXHEIGHT * (xypct - TRUE));
+            tg_z = 0 + (GRENADEMAXHEIGHT * (xypct - TRUE));
         }
         
     }
     else
     {
-        tg_z = 0.000 - (GRENADEMAXHEIGHT * (TRUE - xypct));
+        tg_z = 0 - (GRENADEMAXHEIGHT * (TRUE - xypct));
     }
     
     return tg;
@@ -315,16 +315,16 @@ vector () botaim =
                 
                 if(self.origin_z >= self.enemy.origin_z)
                 {
-                    rnd = (random() * 3.500) + TRUE;
+                    rnd = (random() * 3.5) + TRUE;
                     
                     if(self.skil > rnd)
                     {
-                        tg_z = (0.000 + self.enemy.mins_z) + FL_SWIM;
+                        tg_z = (0 + self.enemy.mins_z) + FL_SWIM;
                         traceline(src, tg, TRUE, self);
                         
                         if(trace_fraction != TRUE)
                         {
-                            tg_z = (0.000 - self.enemy.mins_z) - MOVETYPE_WALK;
+                            tg_z = (0 - self.enemy.mins_z) - MOVETYPE_WALK;
                         }
                         
                     }
@@ -366,9 +366,9 @@ vector () botaim =
     if(self.weapon == IT_LIGHTNING)
     {
         
-        if(sk > 2.500)
+        if(sk > 2.5)
         {
-            sk = 2.500;
+            sk = 2.5;
         }
         
     }
@@ -377,7 +377,7 @@ vector () botaim =
     if(sk < MOVETYPE_WALK)
     {
         lead = self.enemy.origin - self.enemy.oldorigin;
-        lead = ((lead * (MOVETYPE_WALK - sk)) * 3.500) * (random() - 0.500);
+        lead = ((lead * (MOVETYPE_WALK - sk)) * 3.5) * (random() - 0.5);
         tg = tg + lead;
     }
     
@@ -603,7 +603,7 @@ float () W_BestBotWeapon =
         if((self.ammo_rockets >= TRUE) && (it & IT_GRENADE_LAUNCHER))
         {
             
-            if(self.enemy.origin_z < (self.origin_z + 175.000))
+            if(self.enemy.origin_z < (self.origin_z + 175))
             {
                 return IT_GRENADE_LAUNCHER;
             }
@@ -739,7 +739,7 @@ float () W_BestHeldWeapon =
     if((self.ammo_rockets >= TRUE) && (it & IT_GRENADE_LAUNCHER))
     {
         
-        if(self.enemy.origin_z < (self.origin_z + 175.000))
+        if(self.enemy.origin_z < (self.origin_z + 175))
         {
             return IT_GRENADE_LAUNCHER;
         }
@@ -924,13 +924,13 @@ void () W_BotAttack =
     
     if(self.skil < MOVETYPE_WALK)
     {
-        addt = ((MOVETYPE_WALK - self.skil) * random()) * 0.350;
+        addt = ((MOVETYPE_WALK - self.skil) * random()) * 0.35;
     }
     
     
     if(self.skil < TRUE)
     {
-        addt = addt + (random() * 0.300);
+        addt = addt + (random() * 0.3);
     }
     
     makevectors(self.v_angle);
@@ -939,19 +939,19 @@ void () W_BotAttack =
     {
         sound(self, CHAN_WEAPON, "weapons/ax1.wav", TRUE, ATTN_NORM);
         r = random();
-        if(r < 0.250)
+        if(r < 0.25)
         {
             bot_axe1();
         }
         else
         {
-            if(r < 0.500)
+            if(r < 0.5)
             {
                 bot_axeb1();
             }
             else
             {
-                if(r < 0.750)
+                if(r < 0.75)
                 {
                     bot_axec1();
                 }
@@ -964,7 +964,7 @@ void () W_BotAttack =
             
         }
         
-        self.attack_finished = (time + 0.500) + addt;
+        self.attack_finished = (time + 0.5) + addt;
     }
     else
     {
@@ -972,7 +972,7 @@ void () W_BotAttack =
         {
             bot_shot1();
             W_FireShotgun();
-            self.attack_finished = (time + 0.500) + addt;
+            self.attack_finished = (time + 0.5) + addt;
         }
         else
         {
@@ -980,7 +980,7 @@ void () W_BotAttack =
             {
                 bot_shot1();
                 W_FireSuperShotgun();
-                self.attack_finished = (time + 0.700) + addt;
+                self.attack_finished = (time + 0.7) + addt;
             }
             else
             {
@@ -1000,7 +1000,7 @@ void () W_BotAttack =
                         {
                             bot_rocket1();
                             W_FireGrenade();
-                            self.attack_finished = (time + 0.600) + addt;
+                            self.attack_finished = (time + 0.6) + addt;
                         }
                         else
                         {
@@ -1008,7 +1008,7 @@ void () W_BotAttack =
                             {
                                 bot_rocket1();
                                 W_FireRocket();
-                                self.attack_finished = (time + 0.800) + addt;
+                                self.attack_finished = (time + 0.8) + addt;
                             }
                             else
                             {
@@ -1016,7 +1016,7 @@ void () W_BotAttack =
                                 if(self.weapon == IT_LIGHTNING)
                                 {
                                     self.think = bot_light1;
-                                    self.attack_finished = time + 0.100;
+                                    self.attack_finished = time + 0.1;
                                     sound(self, CHAN_AUTO, "weapons/lstart.wav", TRUE, ATTN_NORM);
                                 }
                                 
@@ -1223,7 +1223,7 @@ float () CheckReboundAttack =
     }
     
     dir = normalize(self.goalentity.origin - self.origin);
-    spot2 = spot2 + (200.000 * dir);
+    spot2 = spot2 + (200 * dir);
     traceline(spot1, spot2, TRUE, self);
     if(trace_fraction == TRUE)
     {
@@ -1245,11 +1245,11 @@ float () CheckReboundAttack =
     }
     else
     {
-        spot2 = self.goalentity.origin + ((200.000 * dir) * trace_fraction);
+        spot2 = self.goalentity.origin + ((200 * dir) * trace_fraction);
     }
     
     dist = vlen(self.enemy.origin - spot2);
-    mel = 200.000;
+    mel = 200;
     
     if(self.items & IT_QUAD)
     {
@@ -1263,7 +1263,7 @@ float () CheckReboundAttack =
     }
     
     dist = vlen(self.origin - spot2);
-    mel = (280.000 - (self.health * 0.500)) - (self.armorvalue * self.armortype);
+    mel = (280 - (self.health * 0.5)) - (self.armorvalue * self.armortype);
     
     if(self.items & IT_QUAD)
     {
@@ -1295,7 +1295,7 @@ float () CheckReboundAttack =
     
     if(self.skil < FL_SWIM)
     {
-        self.attack_finished = time + 1.500;
+        self.attack_finished = time + 1.5;
     }
     
     REBOUND = FALSE;

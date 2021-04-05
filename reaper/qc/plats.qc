@@ -4,7 +4,7 @@ void () plat_trigger_use;
 void () plat_go_up;
 void () plat_go_down;
 void () plat_crush;
-float PLAT_LOW_TRIGGER = 1.000;
+float PLAT_LOW_TRIGGER = 1;
 // plat_spawn_inside_trigger
 // function begins at statement 11579, parm_start=7615
 // OP_CALL0	459	0	0
@@ -71,25 +71,25 @@ void () plat_spawn_inside_trigger =
     trigger.enemy = self;
     tmin = self.mins + '25.000 25.000 0.000';
     tmax = self.maxs - '25.000 25.000 -8.000';
-    tmin_z = 0.000 - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
+    tmin_z = 0 - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
     
     if(self.spawnflags & PLAT_LOW_TRIGGER)
     {
-        tmax_z = 0.000 + FL_CLIENT;
+        tmax_z = 0 + FL_CLIENT;
     }
     
     
-    if(self.size_x <= 50.000)
+    if(self.size_x <= 50)
     {
         tmin_x = (self.mins_x + self.maxs_x) / FL_SWIM;
         tmax_x = tmin_x + TRUE;
     }
     
     
-    if(self.size_y <= 50.000)
+    if(self.size_y <= 50)
     {
         tmin_y = (self.mins_y + self.maxs_y) / FL_SWIM;
-        tmax_y = 0.000 + TRUE;
+        tmax_y = 0 + TRUE;
     }
     
     setsize(trigger, tmin, tmax);
@@ -192,7 +192,7 @@ void () plat_hit_bottom =
         
         if(self.lasttime > (time - MOVETYPE_BOUNCE))
         {
-            self.lastbot.search_time = time + 0.500;
+            self.lastbot.search_time = time + 0.5;
             self.lastbot.goalentity.goalentity = self.lastbot.goalentity;
         }
         
@@ -639,7 +639,7 @@ void () func_plat =
     
     if(!self.t_length)
     {
-        self.t_length = 80.000;
+        self.t_length = 80;
     }
     
     
@@ -685,7 +685,7 @@ void () func_plat =
     
     if(!self.speed)
     {
-        self.speed = 150.000;
+        self.speed = 150;
     }
     
     self.pos1 = self.origin;
@@ -740,7 +740,7 @@ void () train_blocked =
         return;
     }
     
-    self.attack_finished = time + 0.500;
+    self.attack_finished = time + 0.5;
     T_Damage(other, self, self, self.dmg);
 };
 
@@ -796,7 +796,7 @@ void () train_wait =
     }
     else
     {
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
     }
     
     self.think = train_next;
@@ -903,7 +903,7 @@ void () func_train_find =
     
     if(!self.targetname)
     {
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
         self.think = train_next;
     }
     
@@ -1031,7 +1031,7 @@ void () func_train =
     setmodel(self, self.model);
     setsize(self, self.mins, self.maxs);
     setorigin(self, self.origin);
-    self.nextthink = self.ltime + 0.100;
+    self.nextthink = self.ltime + 0.1;
     self.think = func_train_find;
 };
 
@@ -1117,7 +1117,7 @@ void () misc_teleporttrain =
     setmodel(self, "progs/teleport.mdl");
     setsize(self, self.mins, self.maxs);
     setorigin(self, self.origin);
-    self.nextthink = self.ltime + 0.100;
+    self.nextthink = self.ltime + 0.1;
     self.think = func_train_find;
 };
 

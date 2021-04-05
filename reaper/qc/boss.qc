@@ -91,22 +91,22 @@ void () lightning_fire =
         return;
     }
     
-    p1 = (le1.mins + le1.maxs) * 0.500;
+    p1 = (le1.mins + le1.maxs) * 0.5;
     p1_z = le1.absmin_z - FL_INWATER;
-    p2 = (le2.mins + le2.maxs) * 0.500;
+    p2 = (le2.mins + le2.maxs) * 0.5;
     p2_z = le2.absmin_z - FL_INWATER;
     p2 = p2 - ((normalize(p2 - p1)) * MUST_HAVE);
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.think = lightning_fire;
     WriteByte(MSG_ALL, SVC_TEMPENTITY);
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
     WriteCoord(MSG_ALL, p1_x);
-    WriteCoord(MSG_ALL, 0.000);
-    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, 0);
     WriteCoord(MSG_ALL, p2_x);
-    WriteCoord(MSG_ALL, 0.000);
-    WriteCoord(MSG_ALL, 0.000);
+    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, 0);
 };
 
 // lightning_use

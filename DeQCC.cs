@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace DeQcc
 {
@@ -59,16 +60,6 @@ namespace DeQcc
             
             InitStaticData();   // do this after reading the data so the base data exists
             Preprocess();
-
-            // HACK ALERT
-            if (outputfolder == "rally")
-            {
-                foreach (Function f in functions)
-                {
-                    f.file = "unknown.qc"; // overwrite garbage
-                }   
-            }
-
             DecompileFunctions(fulldirectorfolder);
         }
 
@@ -480,10 +471,25 @@ namespace DeQcc
             highestGlobalAccessed = RESERVED_OFS - 1;
             foreach(Global g in globalList) { g.accessed = false; }
 
+            // used for when a progs.dat has obfuscated filenames that can't be written out, but has a unique one per source file
+            // so we can output unknownx.qc where x increments with every new obfuscated filename encountered
+            Dictionary<string, string> obfuscatedFilenames = new Dictionary<string, string>();
+
             StreamWriter f;
             for (int i = 1; i < functions.Count; i++)
             {
                 string filename = functions[i].file;
+
+                // Check for progs.dat obfuscated with illegal file names
+                Regex unsupportedRegex = new Regex("(^(PRN|AUX|NUL|CON|COM[1-9]|LPT[1-9]|(\\.+)$)(\\..*)?$)|(([\\x00-\\x1f\\\\?*:\";‌​|/<>])+)|([\\. ]+)", RegexOptions.IgnoreCase);
+                if (unsupportedRegex.IsMatch(filename))
+                {
+                    if (!obfuscatedFilenames.ContainsKey(filename))
+                    {
+                        obfuscatedFilenames.Add(filename, "unknown" + obfuscatedFilenames.Count + ".qc");
+                    }
+                    filename = obfuscatedFilenames[filename];
+                }
 
                 if (AlreadySeen(filename) == false)
                 {

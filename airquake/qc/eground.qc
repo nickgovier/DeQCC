@@ -31,8 +31,8 @@ void () tilt_etank =
     self.enemy = self;
     gv_tilt();
     self.enemy = e;
-    self.angles_x = self.angles_x + (self.avelocity_x * 0.100);
-    self.angles_z = self.angles_z + (self.avelocity_z * 0.100);
+    self.angles_x = self.angles_x + (self.avelocity_x * 0.1);
+    self.angles_z = self.angles_z + (self.avelocity_z * 0.1);
     self.avelocity = '0.000 0.000 0.000';
 };
 
@@ -270,83 +270,83 @@ void (vector v0, float sp_x) turn_eturret =
     if(stemp.tur1)
     {
         setorigin(self.tur1, self.origin);
-        v0_y = stemp.angles_y - 0.000;
+        v0_y = stemp.angles_y - 0;
         
-        if(0.000 > 180.000)
+        if(0 > 180)
         {
-            v0_y = 0.000 - 360.000;
+            v0_y = 0 - 360;
         }
         
         
         if(!(self.flags & FL_ONGROUND))
         {
-            v0_y = 0.000;
+            v0_y = 0;
         }
         
-        v1_y = 0.000 - stemp.toyview;
+        v1_y = 0 - stemp.toyview;
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            v1_y = 0.000 + 360.000;
+            v1_y = 0 + 360;
         }
         
         
-        if(0.000 > 180.000)
+        if(0 > 180)
         {
-            v1_y = 0.000 - 360.000;
+            v1_y = 0 - 360;
         }
         
-        v2_y = 0.000;
+        v2_y = 0;
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            v2_y = 0.000 - sp_x;
+            v2_y = 0 - sp_x;
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
             v2_y = sp_x;
         }
         
-        f1 = fabs(0.000);
-        f2 = fabs(0.000) * 0.100;
+        f1 = fabs(0);
+        f2 = fabs(0) * 0.1;
         if(f1 < f2)
         {
-            v2_y = 0.000;
-            stemp.toyview = 0.000;
+            v2_y = 0;
+            stemp.toyview = 0;
         }
         else
         {
-            stemp.toyview = stemp.toyview + (0.000 * 0.100);
+            stemp.toyview = stemp.toyview + (0 * 0.1);
         }
         
-        if(stemp.toyview == 0.000)
+        if(stemp.toyview == 0)
         {
             self.tur1.angles = stemp.angles;
         }
         else
         {
             makevectors('0.000 1.000 0.000' * stemp.toyview);
-            f1 = 0.000;
+            f1 = 0;
             f2 = v_forward_x;
             v3 = stemp.angles;
-            v3_x = 0.000 - v3_x;
+            v3_x = 0 - v3_x;
             makevectors(v3);
             v3 = (v_forward * f2) + (v_right * f1);
             v3 = vectoangles(v3);
             stemp.tur1.angles = v3;
             f3 = stemp.tur1.angles_y - stemp.angles_y;
             
-            if(f3 < 0.000)
+            if(f3 < 0)
             {
-                f3 = f3 + 360.000;
+                f3 = f3 + 360;
             }
             
             
-            if(f3 > 180.000)
+            if(f3 > 180)
             {
-                f3 = f3 - 360.000;
+                f3 = f3 - 360;
             }
             
             stemp.tur1.angles_z = (stemp.angles_z * f2) + (stemp.angles_x * f1);
@@ -361,88 +361,88 @@ void (vector v0, float sp_x) turn_eturret =
         setorigin(self.tur2, self.origin);
         v0_x = v0_x - stemp.angles_x;
         
-        if(v0_x < 0.000)
+        if(v0_x < 0)
         {
-            v0_x = v0_x + 360.000;
+            v0_x = v0_x + 360;
         }
         
         
-        if(v0_x > 180.000)
+        if(v0_x > 180)
         {
-            v0_x = v0_x - 360.000;
+            v0_x = v0_x - 360;
         }
         
         
-        if(v0_x > 80.000)
+        if(v0_x > 80)
         {
-            v0_x = 80.000;
+            v0_x = 80;
         }
         
         
-        if(v0_x < -10.000)
+        if(v0_x < -10)
         {
-            v0_x = -10.000;
+            v0_x = -10;
         }
         
         
         if(!(self.flags & FL_ONGROUND))
         {
-            v0_x = 0.000;
+            v0_x = 0;
         }
         
         v1_x = v0_x - stemp.toyview;
-        v2_x = 0.000;
+        v2_x = 0;
         
-        if(v1_x < 0.000)
+        if(v1_x < 0)
         {
-            v2_x = 0.000 - sp_x;
+            v2_x = 0 - sp_x;
         }
         
         
-        if(v1_x > 0.000)
+        if(v1_x > 0)
         {
             v2_x = sp_x;
         }
         
         f1 = fabs(v1_x);
-        f2 = fabs(v2_x) * 0.100;
+        f2 = fabs(v2_x) * 0.1;
         if(f1 < f2)
         {
-            v2_x = 0.000;
+            v2_x = 0;
             stemp.toyview = v0_x;
         }
         else
         {
-            stemp.toyview = stemp.toyview + (v2_x * 0.100);
+            stemp.toyview = stemp.toyview + (v2_x * 0.1);
         }
         
         
-        if(stemp.toyview == 0.000)
+        if(stemp.toyview == 0)
         {
             self.tur2.angles = stemp.angles;
             return;
         }
         
         makevectors('0.000 1.000 0.000' * stemp.toyview);
-        f1 = 0.000;
+        f1 = 0;
         f2 = v_forward_x;
         v3 = stemp.angles;
-        v3_x = 0.000 - v3_x;
+        v3_x = 0 - v3_x;
         makevectors(v3);
         v3 = (v_forward * f2) + (v_up * f1);
         v3 = vectoangles(v3);
         self.tur2.angles = v3;
         f3 = self.tur2.angles_y - stemp.angles_y;
         
-        if(f3 < 0.000)
+        if(f3 < 0)
         {
-            f3 = f3 + 360.000;
+            f3 = f3 + 360;
         }
         
         
-        if(f3 > 180.000)
+        if(f3 > 180)
         {
-            f3 = f3 - 360.000;
+            f3 = f3 - 360;
         }
         
         self.tur2.angles_z = (stemp.angles_z * f2) - (f3 * f1);

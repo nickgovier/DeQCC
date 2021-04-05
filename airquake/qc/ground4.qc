@@ -444,61 +444,61 @@ void () gv4_steer =
     local float f1;
     local float f2;
     veh = self.enemy;
-    tmp = veh.speed / ((veh.thru + 1.000) * 6.000);
+    tmp = veh.speed / ((veh.thru + 1) * 6);
     tmp = floor(tmp);
     
-    if(tmp > 8.000)
+    if(tmp > 8)
     {
-        tmp = 8.000;
+        tmp = 8;
     }
     
     
     if((time > self.fly_sound) || (veh.impulse != tmp))
     {
-        f1 = veh.thru * 0.250;
-        if(tmp == 0.000)
+        f1 = veh.thru * 0.25;
+        if(tmp == 0)
         {
             sound(veh, CHAN_BODY, "engines/hov0.wav", f1, ATTN_NORM);
         }
         else
         {
-            if(tmp == 1.000)
+            if(tmp == 1)
             {
                 sound(veh, CHAN_BODY, "engines/hov1.wav", f1, ATTN_NORM);
             }
             else
             {
-                if(tmp == 2.000)
+                if(tmp == 2)
                 {
                     sound(veh, CHAN_BODY, "engines/hov2.wav", f1, ATTN_NORM);
                 }
                 else
                 {
-                    if(tmp == 3.000)
+                    if(tmp == 3)
                     {
                         sound(veh, CHAN_BODY, "engines/hov3.wav", f1, ATTN_NORM);
                     }
                     else
                     {
-                        if(tmp == 4.000)
+                        if(tmp == 4)
                         {
                             sound(veh, CHAN_BODY, "engines/hov4.wav", f1, ATTN_NORM);
                         }
                         else
                         {
-                            if(tmp == 5.000)
+                            if(tmp == 5)
                             {
                                 sound(veh, CHAN_BODY, "engines/hov5.wav", f1, ATTN_NORM);
                             }
                             else
                             {
-                                if(tmp == 6.000)
+                                if(tmp == 6)
                                 {
                                     sound(veh, CHAN_BODY, "engines/hov6.wav", f1, ATTN_NORM);
                                 }
                                 else
                                 {
-                                    if(tmp == 7.000)
+                                    if(tmp == 7)
                                     {
                                         sound(veh, CHAN_BODY, "engines/hov7.wav", f1, ATTN_NORM);
                                     }
@@ -521,71 +521,71 @@ void () gv4_steer =
             
         }
         
-        self.fly_sound = time + 1.000;
+        self.fly_sound = time + 1;
         veh.impulse = tmp;
     }
     
     if(!(self.flags & FL_GODMODE))
     {
-        Steer_hover(100.000, 100.000);
+        Steer_hover(100, 100);
     }
     else
     {
-        Steer_hover(1000.000, 1000.000);
+        Steer_hover(1000, 1000);
     }
     
     tmp = vlen(self.velocity - self.movedir);
     self.movedir = self.velocity;
     
-    if(tmp > 120.000)
+    if(tmp > 120)
     {
-        sound(veh, CHAN_VOICE, "player/land2.wav", 1.000, ATTN_NORM);
-        T_Damage(veh, world, world, (tmp - 120.000) * 0.100);
+        sound(veh, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
+        T_Damage(veh, world, world, (tmp - 120) * 0.1);
     }
     
     veh.flags = veh.flags - (veh.flags & FL_ONGROUND);
     
-    if(veh.thru != 0.000)
+    if(veh.thru != 0)
     {
         self.flags = self.flags - (self.flags & FL_ONGROUND);
     }
     
     v1 = veh.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     makevectors(v1);
     v3 = v_forward;
     
     if(time >= self.pausetime)
     {
-        tmp = 0.000;
+        tmp = 0;
         
         if(self.button2)
         {
             tmp = self.v_angle_y - veh.angles_y;
             
-            if(tmp < 0.000)
+            if(tmp < 0)
             {
-                tmp = tmp + 360.000;
+                tmp = tmp + 360;
             }
             
             
-            if(tmp > 180.000)
+            if(tmp > 180)
             {
-                tmp = tmp - 360.000;
+                tmp = tmp - 360;
             }
             
-            tmp = 60.000 * veh.thru;
+            tmp = 60 * veh.thru;
             
             if(self.flags & FL_GODMODE)
             {
-                tmp = 20.000 * tmp;
+                tmp = 20 * tmp;
             }
             
         }
         
         if(veh.speed >= tmp)
         {
-            veh.speed = veh.speed - 8.000;
+            veh.speed = veh.speed - 8;
             
             if(veh.speed < tmp)
             {
@@ -595,7 +595,7 @@ void () gv4_steer =
         }
         else
         {
-            veh.speed = veh.speed + 8.000;
+            veh.speed = veh.speed + 8;
             
             if(veh.speed > tmp)
             {
@@ -604,56 +604,56 @@ void () gv4_steer =
             
         }
         
-        sp = ((v3 * veh.speed) * 0.100) - '0.000 0.000 40.000';
+        sp = ((v3 * veh.speed) * 0.1) - '0.000 0.000 40.000';
         
         if(veh.thru)
         {
-            tmp = (veh.thru * 18.000) + 32.000;
-            traceline(veh.origin - (v_up * 16.000), veh.origin - (v_up * tmp), FALSE, self);
+            tmp = (veh.thru * 18) + 32;
+            traceline(veh.origin - (v_up * 16), veh.origin - (v_up * tmp), FALSE, self);
             f1 = trace_fraction;
             
             if(trace_inwater)
             {
                 
-                if(f1 > 0.600)
+                if(f1 > 0.6)
                 {
-                    f1 = 0.600;
+                    f1 = 0.6;
                 }
                 
                 
-                if(f1 > 0.000)
+                if(f1 > 0)
                 {
-                    traceline(veh.origin - (v_up * 16.000), veh.origin - (v_up * 22.000), FALSE, self);
+                    traceline(veh.origin - (v_up * 16), veh.origin - (v_up * 22), FALSE, self);
                     
                     if(trace_inwater)
                     {
-                        f1 = 0.000;
+                        f1 = 0;
                     }
                     
                 }
                 
                 
-                if(f1 > 0.400)
+                if(f1 > 0.4)
                 {
-                    tmp = (fabs(veh.thru) * 9.000) + 14.000;
-                    traceline(veh.origin - (v_up * 16.000), veh.origin - (v_up * tmp), FALSE, self);
+                    tmp = (fabs(veh.thru) * 9) + 14;
+                    traceline(veh.origin - (v_up * 16), veh.origin - (v_up * tmp), FALSE, self);
                     
                     if(trace_inwater)
                     {
-                        f1 = 0.400;
+                        f1 = 0.4;
                     }
                     
                 }
                 
                 
-                if(f1 > 0.500)
+                if(f1 > 0.5)
                 {
-                    tmp = (fabs(veh.thru) * 9.000) + 17.000;
-                    traceline(veh.origin - (v_up * 16.000), veh.origin - (v_up * tmp), FALSE, self);
+                    tmp = (fabs(veh.thru) * 9) + 17;
+                    traceline(veh.origin - (v_up * 16), veh.origin - (v_up * tmp), FALSE, self);
                     
                     if(trace_inwater)
                     {
-                        f1 = 0.500;
+                        f1 = 0.5;
                     }
                     
                 }
@@ -661,30 +661,30 @@ void () gv4_steer =
             }
             
             
-            if(f1 < 1.000)
+            if(f1 < 1)
             {
-                sp = sp + ((v_up * 80.000) * (1.000 - f1));
+                sp = sp + ((v_up * 80) * (1 - f1));
                 f1 = self.velocity * v_up;
                 v1 = v_up * f1;
                 v2 = self.velocity - v1;
-                self.velocity = (v1 * 0.800) + v2;
+                self.velocity = (v1 * 0.8) + v2;
             }
             
         }
         
-        self.velocity = (self.velocity * 0.900) + sp;
+        self.velocity = (self.velocity * 0.9) + sp;
         if(veh.speed)
         {
-            self.armorvalue = vlen(self.velocity) / 3.300;
-            veh.frame = 1.000;
+            self.armorvalue = vlen(self.velocity) / 3.3;
+            veh.frame = 1;
         }
         else
         {
-            self.armorvalue = 0.000;
-            veh.frame = 0.000;
+            self.armorvalue = 0;
+            veh.frame = 0;
         }
         
-        self.pausetime = time + 0.100;
+        self.pausetime = time + 0.1;
     }
     
     setorigin(self.enemy, self.origin);
@@ -702,29 +702,29 @@ void () gv4_steer =
     
     if(self.weapon == IT_WEP1)
     {
-        v1 = GV_aim(0.970, -500.000);
+        v1 = GV_aim(0.97, -500);
     }
     else
     {
         if(self.weapon == IT_WEP2)
         {
-            v1 = GV_aim(0.970, -800.000);
+            v1 = GV_aim(0.97, -800);
         }
         else
         {
             if(self.weapon == IT_WEP3)
             {
-                v1 = GV_aim(0.950, -1000.000);
+                v1 = GV_aim(0.95, -1000);
             }
             else
             {
                 if(self.weapon == IT_WEP4)
                 {
-                    v1 = GV_aim(0.930, 2000.000);
+                    v1 = GV_aim(0.93, 2000);
                 }
                 else
                 {
-                    v1 = GV_aim(1.000, -100.000);
+                    v1 = GV_aim(1, -100);
                 }
                 
             }
@@ -742,9 +742,9 @@ void () gv4_steer =
     if(self.enemy.trigger_field == world)
     {
         v1 = normalize(v1);
-        traceline(veh.origin, veh.origin + (v1 * 200.000), FALSE, veh);
-        v2 = trace_endpos - (v1 * 8.000);
-        self.trigger_field.frame = 0.000;
+        traceline(veh.origin, veh.origin + (v1 * 200), FALSE, veh);
+        v2 = trace_endpos - (v1 * 8);
+        self.trigger_field.frame = 0;
     }
     else
     {
@@ -1031,133 +1031,133 @@ void () gv4_attack =
     stemp = self.enemy;
     e = stemp.oldenemy;
     v1 = e.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     if(self.weapon == IT_WEP1)
     {
-        if(self.ammo_auto >= 1.000)
+        if(self.ammo_auto >= 1)
         {
-            v2 = GV_aim(0.970, -500.000);
+            v2 = GV_aim(0.97, -500);
             makevectors(v1);
-            if(self.ammo_auto & 1.000)
+            if(self.ammo_auto & 1)
             {
-                if(self.ammo_auto & 2.000)
+                if(self.ammo_auto & 2)
                 {
-                    AC_bullet(self.enemy.origin - (v_right * 8.000), v2, world);
+                    AC_bullet(self.enemy.origin - (v_right * 8), v2, world);
                 }
                 else
                 {
-                    AC_spike(self.enemy.origin - (v_right * 8.000), v2, world);
+                    AC_spike(self.enemy.origin - (v_right * 8), v2, world);
                 }
                 
             }
             else
             {
-                if(self.ammo_auto & 2.000)
+                if(self.ammo_auto & 2)
                 {
-                    AC_bullet(self.enemy.origin - (v_right * 8.000), v2, world);
+                    AC_bullet(self.enemy.origin - (v_right * 8), v2, world);
                 }
                 else
                 {
-                    AC_spike(self.enemy.origin + (v_right * 8.000), v2, world);
+                    AC_spike(self.enemy.origin + (v_right * 8), v2, world);
                 }
                 
             }
             
             self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1.000;
-            self.enemy.show_hostile = time + 1.000;
+            self.currentammo = self.ammo_shells = self.ammo_auto = self.ammo_auto - 1;
+            self.enemy.show_hostile = time + 1;
         }
         else
         {
             sprint(self, "not enough ammo.\n");
         }
         
-        self.attack_finished = time + 0.100;
+        self.attack_finished = time + 0.1;
     }
     else
     {
         if(self.weapon == IT_WEP2)
         {
-            if(self.ammo_cell >= 1.000)
+            if(self.ammo_cell >= 1)
             {
-                v2 = GV_aim(0.970, -800.000);
+                v2 = GV_aim(0.97, -800);
                 makevectors(v1);
-                if(self.ammo_cell & 1.000)
+                if(self.ammo_cell & 1)
                 {
-                    AC_plasma(self.enemy.origin - (v_right * 8.000), v2, world);
+                    AC_plasma(self.enemy.origin - (v_right * 8), v2, world);
                 }
                 else
                 {
-                    AC_plasma(self.enemy.origin + (v_right * 8.000), v2, world);
+                    AC_plasma(self.enemy.origin + (v_right * 8), v2, world);
                 }
                 
                 self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                self.currentammo = self.ammo_nails = self.ammo_cell = self.ammo_cell - 1.000;
-                self.enemy.show_hostile = time + 1.000;
+                self.currentammo = self.ammo_nails = self.ammo_cell = self.ammo_cell - 1;
+                self.enemy.show_hostile = time + 1;
             }
             else
             {
                 sprint(self, "not enough ammo.\n");
             }
             
-            self.attack_finished = time + 0.300;
+            self.attack_finished = time + 0.3;
         }
         else
         {
             if(self.weapon == IT_WEP3)
             {
-                if(self.ammo_rock >= 1.000)
+                if(self.ammo_rock >= 1)
                 {
-                    v2 = GV_aim(0.950, -1000.000);
+                    v2 = GV_aim(0.95, -1000);
                     makevectors(v1);
-                    if(self.ammo_rock & 1.000)
+                    if(self.ammo_rock & 1)
                     {
-                        AC_rocket(self.enemy.origin - (v_right * 8.000), v2, world);
+                        AC_rocket(self.enemy.origin - (v_right * 8), v2, world);
                     }
                     else
                     {
-                        AC_rocket(self.enemy.origin + (v_right * 8.000), v2, world);
+                        AC_rocket(self.enemy.origin + (v_right * 8), v2, world);
                     }
                     
                     self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                    self.currentammo = self.ammo_rockets = self.ammo_rock = self.ammo_rock - 1.000;
-                    self.enemy.show_hostile = time + 1.000;
+                    self.currentammo = self.ammo_rockets = self.ammo_rock = self.ammo_rock - 1;
+                    self.enemy.show_hostile = time + 1;
                 }
                 else
                 {
                     sprint(self, "not enough ammo.\n");
                 }
                 
-                self.attack_finished = time + 0.500;
+                self.attack_finished = time + 0.5;
             }
             else
             {
                 
                 if(self.weapon == IT_WEP4)
                 {
-                    if(self.ammo_smsl >= 1.000)
+                    if(self.ammo_smsl >= 1)
                     {
-                        v2 = GV_aim(0.930, 2000.000);
+                        v2 = GV_aim(0.93, 2000);
                         makevectors(v1);
-                        if(self.ammo_smsl & 1.000)
+                        if(self.ammo_smsl & 1)
                         {
-                            AC_hellfire(e.origin + (v_right * 8.000), v_forward, self.enemy.trigger_field);
+                            AC_hellfire(e.origin + (v_right * 8), v_forward, self.enemy.trigger_field);
                         }
                         else
                         {
-                            AC_hellfire(e.origin - (v_right * 8.000), v_forward, self.enemy.trigger_field);
+                            AC_hellfire(e.origin - (v_right * 8), v_forward, self.enemy.trigger_field);
                         }
                         
                         self.enemy.effects = self.enemy.effects | EF_MUZZLEFLASH;
-                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1.000;
-                        self.enemy.show_hostile = time + 1.000;
+                        self.currentammo = self.ammo_cells = self.ammo_smsl = self.ammo_smsl - 1;
+                        self.enemy.show_hostile = time + 1;
                     }
                     else
                     {
                         sprint(self, "not enough ammo.\n");
                     }
                     
-                    self.attack_finished = time + 1.300;
+                    self.attack_finished = time + 1.3;
                 }
                 
             }
@@ -1435,20 +1435,20 @@ void () start_groundveh4 =
     e.movetype = MOVETYPE_FLY;
     setsize(e, '-16.000 -16.000 -24.000', '16.000 16.000 24.000');
     e.solid = SOLID_SLIDEBOX;
-    e.health = 300.000;
+    e.health = 300;
     e.max_health = e.health;
     e.takedamage = DAMAGE_AIM;
     e.th_die = GV_Die;
     e.netname = self.netname;
-    e.speed = 0.000;
-    e.thru = 0.000;
+    e.speed = 0;
+    e.thru = 0;
     self.enemy = e;
     e.goalentity = self;
     e.owner = self;
     e.view_ofs = '0.000 0.000 1.000';
     e.colormap = self.colormap;
-    e.armorvalue = 10.000;
-    self.toyview = 0.000;
+    e.armorvalue = 10;
+    self.toyview = 0;
     e = spawn();
     setmodel(e, "progs/hovtb.mdl");
     setorigin(e, self.enemy.origin);
@@ -1464,17 +1464,17 @@ void () start_groundveh4 =
     self.th_missile = gv4_attack;
     self.th_run = gv4_steer;
     self.th_melee = gv4_currentammo;
-    self.ammo_auto = 100.000;
-    self.ammo_shells = 100.000;
-    self.ammo_nails = self.ammo_cell = 40.000 * wepmulti;
-    self.ammo_rockets = self.ammo_rock = 10.000 * wepmulti;
-    self.ammo_cells = self.ammo_smsl = 6.000 * wepmulti;
+    self.ammo_auto = 100;
+    self.ammo_shells = 100;
+    self.ammo_nails = self.ammo_cell = 40 * wepmulti;
+    self.ammo_rockets = self.ammo_rock = 10 * wepmulti;
+    self.ammo_cells = self.ammo_smsl = 6 * wepmulti;
     droptofloor();
     
     if(!checkbottom(self))
     {
         traceline(self.origin, self.origin + '0.000 0.000 -10000.000', TRUE, self);
-        self.origin_z = 0.000 + 30.000;
+        self.origin_z = 0 + 30;
     }
     
     setorigin(self.enemy, self.origin);
@@ -1482,6 +1482,6 @@ void () start_groundveh4 =
     setorigin(self.enemy.movetarget, self.origin);
     self.velocity = '0.000 0.000 0.000';
     self.movedir = '0.000 0.000 0.000';
-    self.oldenemy.style = 32.000;
+    self.oldenemy.style = 32;
 };
 

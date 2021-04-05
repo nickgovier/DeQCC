@@ -23,7 +23,7 @@ void () button_wait =
     self.think = button_return;
     activator = self.enemy;
     SUB_UseTargets();
-    self.frame = 1.000;
+    self.frame = 1;
 };
 
 // button_done
@@ -57,7 +57,7 @@ void () button_return =
 {
     self.state = STATE_DOWN;
     SUB_CalcMove(self.pos1, self.speed, button_done);
-    self.frame = 0.000;
+    self.frame = 0;
     
     if(self.health)
     {
@@ -106,7 +106,7 @@ void () button_fire =
         return;
     }
     
-    sound(self, CHAN_VOICE, self.noise, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, self.noise, 1, ATTN_NORM);
     self.state = STATE_UP;
     SUB_CalcMove(self.pos2, self.speed, button_wait);
 };
@@ -267,28 +267,28 @@ void () func_button =
     local float gtemp;
     local float ftemp;
     
-    if(self.sounds == 0.000)
+    if(self.sounds == 0)
     {
         precache_sound("buttons/airbut1.wav");
         self.noise = "buttons/airbut1.wav";
     }
     
     
-    if(self.sounds == 1.000)
+    if(self.sounds == 1)
     {
         precache_sound("buttons/switch21.wav");
         self.noise = "buttons/switch21.wav";
     }
     
     
-    if(self.sounds == 2.000)
+    if(self.sounds == 2)
     {
         precache_sound("buttons/switch02.wav");
         self.noise = "buttons/switch02.wav";
     }
     
     
-    if(self.sounds == 3.000)
+    if(self.sounds == 3)
     {
         precache_sound("buttons/switch04.wav");
         self.noise = "buttons/switch04.wav";
@@ -314,19 +314,19 @@ void () func_button =
     
     if(!self.speed)
     {
-        self.speed = 40.000;
+        self.speed = 40;
     }
     
     
     if(!self.wait)
     {
-        self.wait = 1.000;
+        self.wait = 1;
     }
     
     
     if(!self.lip)
     {
-        self.lip = 4.000;
+        self.lip = 4;
     }
     
     self.state = STATE_BOTTOM;

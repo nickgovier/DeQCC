@@ -64,7 +64,7 @@ void () info_intermission =
 void () SetChangeParms = 
 {
     
-    if(self.health <= 0.000)
+    if(self.health <= 0)
     {
         SetNewParms();
         return;
@@ -72,15 +72,15 @@ void () SetChangeParms =
     
     self.items = self.items - (self.items & (((((IT_KEY1 | IT_KEY2) | IT_INVISIBILITY) | IT_INVULNERABILITY) | IT_SUIT) | IT_QUAD));
     
-    if(self.health > 100.000)
+    if(self.health > 100)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     
-    if(self.health < 50.000)
+    if(self.health < 50)
     {
-        self.health = 50.000;
+        self.health = 50;
     }
     
     parm1 = self.items;
@@ -91,7 +91,7 @@ void () SetChangeParms =
     parm6 = self.ammo_rockets;
     parm7 = self.ammo_cells;
     parm8 = self.weapon;
-    parm9 = self.armortype * 100.000;
+    parm9 = self.armortype * 100;
 };
 
 // SetNewParms
@@ -112,14 +112,14 @@ void () SetChangeParms =
 void () SetNewParms = 
 {
     parm1 = ((IT_WEP1 | IT_WEP2) | IT_WEP3) | IT_WEP4;
-    parm2 = 100.000;
-    parm3 = 0.000;
-    parm4 = 0.000;
-    parm5 = 0.000;
-    parm6 = 0.000;
-    parm7 = 0.000;
+    parm2 = 100;
+    parm3 = 0;
+    parm4 = 0;
+    parm5 = 0;
+    parm6 = 0;
+    parm7 = 0;
     parm8 = IT_WEP1;
-    parm9 = 0.000;
+    parm9 = 0;
 };
 
 // DecodeLevelParms
@@ -149,14 +149,14 @@ void () SetNewParms =
 void () DecodeLevelParms = 
 {
     self.items = ((IT_WEP1 + IT_WEP2) + IT_WEP3) + IT_WEP4;
-    self.health = 100.000;
-    self.armorvalue = 0.000;
-    self.ammo_shells = 0.000;
-    self.ammo_nails = 0.000;
-    self.ammo_rockets = 0.000;
-    self.ammo_cells = 0.000;
+    self.health = 100;
+    self.armorvalue = 0;
+    self.ammo_shells = 0;
+    self.ammo_nails = 0;
+    self.ammo_rockets = 0;
+    self.ammo_cells = 0;
     self.weapon = IT_WEP1;
-    self.armortype = 0.000;
+    self.armortype = 0;
 };
 
 // FindIntermission
@@ -213,9 +213,9 @@ entity () FindIntermission =
     
     if(spot)
     {
-        cyc = random() * 4.000;
+        cyc = random() * 4;
         
-        while(cyc > 1.000)
+        while(cyc > 1)
         {
             spot = find(spot, classname, "info_intermission");
             
@@ -224,7 +224,7 @@ entity () FindIntermission =
                 spot = find(spot, classname, "info_intermission");
             }
             
-            cyc = cyc - 1.000;
+            cyc = cyc - 1;
         }
         
         return spot;
@@ -307,24 +307,24 @@ void () GotoNextMap =
     }
     else
     {
-        if(cvar("noexit") == 0.000)
+        if(cvar("noexit") == 0)
         {
             changelevel(nextmap);
         }
         else
         {
-            serverflags = serverflags + 1.000;
+            serverflags = serverflags + 1;
             
-            if((serverflags & 255.000) >= cvar("noexit"))
+            if((serverflags & 255) >= cvar("noexit"))
             {
-                serverflags = serverflags - (serverflags & 255.000);
+                serverflags = serverflags - (serverflags & 255);
             }
             
             localcmd("exec map");
-            f1 = floor((serverflags & 255.000) * 0.100);
+            f1 = floor((serverflags & 255) * 0.1);
             fs = ftos(f1);
             localcmd(fs);
-            f1 = (serverflags & 255.000) - (f1 * 10.000);
+            f1 = (serverflags & 255) - (f1 * 10);
             fs = ftos(f1);
             localcmd(fs);
             localcmd(".cfg\n");
@@ -467,16 +467,16 @@ void () ExitIntermission =
         return;
     }
     
-    intermission_exittime = time + 1.000;
-    intermission_running = intermission_running + 1.000;
+    intermission_exittime = time + 1;
+    intermission_running = intermission_running + 1;
     
-    if(intermission_running == 2.000)
+    if(intermission_running == 2)
     {
         if(world.model == "maps/e1m7.bsp")
         {
             WriteByte(MSG_ALL, SVC_CDTRACK);
-            WriteByte(MSG_ALL, 2.000);
-            WriteByte(MSG_ALL, 3.000);
+            WriteByte(MSG_ALL, 2);
+            WriteByte(MSG_ALL, 3);
             if(!cvar("registered"))
             {
                 WriteByte(MSG_ALL, SVC_FINALE);
@@ -495,8 +495,8 @@ void () ExitIntermission =
             if(world.model == "maps/e2m6.bsp")
             {
                 WriteByte(MSG_ALL, SVC_CDTRACK);
-                WriteByte(MSG_ALL, 2.000);
-                WriteByte(MSG_ALL, 3.000);
+                WriteByte(MSG_ALL, 2);
+                WriteByte(MSG_ALL, 3);
                 WriteByte(MSG_ALL, SVC_FINALE);
                 WriteString(MSG_ALL, "The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; Shub-Niggurath!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death and horror. But she is not\ninviolate! Armed with this Rune, you\nrealize that once all four Runes are\ncombined, the gate to Shub-Niggurath's\nPit will open, and you can face the\nWitch-Goddess herself in her frightful\notherworld cathedral.");
                 return;
@@ -506,8 +506,8 @@ void () ExitIntermission =
                 if(world.model == "maps/e3m6.bsp")
                 {
                     WriteByte(MSG_ALL, SVC_CDTRACK);
-                    WriteByte(MSG_ALL, 2.000);
-                    WriteByte(MSG_ALL, 3.000);
+                    WriteByte(MSG_ALL, 2);
+                    WriteByte(MSG_ALL, 3);
                     WriteByte(MSG_ALL, SVC_FINALE);
                     WriteString(MSG_ALL, "The charred viscera of diabolic horrors\nbubble viscously as you seize the Rune\nof Hell Magic. Its heat scorches your\nhand, and its terrible secrets blight\nyour mind. Gathering the shreds of your\ncourage, you shake the devil's shackles\nfrom your soul, and become ever more\nhard and determined to destroy the\nhideous creatures whose mere existence\nthreatens the souls and psyches of all\nthe population of Earth.");
                     return;
@@ -518,8 +518,8 @@ void () ExitIntermission =
                     if(world.model == "maps/e4m7.bsp")
                     {
                         WriteByte(MSG_ALL, SVC_CDTRACK);
-                        WriteByte(MSG_ALL, 2.000);
-                        WriteByte(MSG_ALL, 3.000);
+                        WriteByte(MSG_ALL, 2);
+                        WriteByte(MSG_ALL, 3);
                         WriteByte(MSG_ALL, SVC_FINALE);
                         WriteString(MSG_ALL, "Despite the awful might of the Elder\nWorld, you have achieved the Rune of\nElder Magic, capstone of all types of\narcane wisdom. Beyond good and evil,\nbeyond life and death, the Rune\npulsates, heavy with import. Patient and\npotent, the Elder Being Shub-Niggurath\nweaves her dire plans to clear off all\nlife from the Earth, and bring her own\nfoul offspring to our world! For all the\ndwellers in these nightmare dimensions\nare her descendants! Once all Runes of\nmagic power are united, the energy\nbehind them will blast open the Gateway\nto Shub-Niggurath, and you can travel\nthere to foil the Hell-Mother's plots\nin person.");
                         return;
@@ -535,7 +535,7 @@ void () ExitIntermission =
     }
     
     
-    if(intermission_running == 3.000)
+    if(intermission_running == 3)
     {
         
         if(!cvar("registered"))
@@ -545,7 +545,7 @@ void () ExitIntermission =
         }
         
         
-        if((serverflags & 15.000) == 15.000)
+        if((serverflags & 15) == 15)
         {
             WriteByte(MSG_ALL, SVC_FINALE);
             WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born.");
@@ -673,19 +673,19 @@ void () IntermissionThink =
 void () execute_changelevel = 
 {
     local entity pos;
-    intermission_running = 1.000;
+    intermission_running = 1;
     if(deathmatch)
     {
-        intermission_exittime = time + 5.000;
+        intermission_exittime = time + 5;
     }
     else
     {
-        intermission_exittime = time + 2.000;
+        intermission_exittime = time + 2;
     }
     
     WriteByte(MSG_ALL, SVC_CDTRACK);
-    WriteByte(MSG_ALL, 3.000);
-    WriteByte(MSG_ALL, 3.000);
+    WriteByte(MSG_ALL, 3);
+    WriteByte(MSG_ALL, 3);
     pos = FindIntermission();
     other = find(world, classname, "player");
     
@@ -718,7 +718,7 @@ void () execute_changelevel =
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
         other.movetype = MOVETYPE_NONE;
-        other.modelindex = 0.000;
+        other.modelindex = 0;
         setorigin(other, pos.origin);
         other = find(other, classname, "player");
     }
@@ -779,7 +779,7 @@ void () changelevel_touch =
     }
     
     
-    if(cvar("samelevel") == 2.000)
+    if(cvar("samelevel") == 2)
     {
         return;
     }
@@ -805,7 +805,7 @@ void () changelevel_touch =
     nextmap = self.map;
     SUB_UseTargets();
     
-    if((self.spawnflags & 1.000) && (deathmatch == 0.000))
+    if((self.spawnflags & 1) && (deathmatch == 0))
     {
         GotoNextMap();
         return;
@@ -813,7 +813,7 @@ void () changelevel_touch =
     
     self.touch = SUB_Null;
     self.think = execute_changelevel;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // trigger_changelevel
@@ -895,16 +895,16 @@ void () respawn =
         }
         else
         {
-            if((self.lives == 1.000) && (self.health < 3.000))
+            if((self.lives == 1) && (self.health < 3))
             {
                 localcmd("restart\n");
             }
             else
             {
                 
-                if((self.health < 3.000) && ((self.enemy.owner != self) || (self.enemy.health < 1.000)))
+                if((self.health < 3) && ((self.enemy.owner != self) || (self.enemy.health < 1)))
                 {
-                    self.lives = self.lives - 1.000;
+                    self.lives = self.lives - 1;
                 }
                 
                 setspawnparms(self);
@@ -950,7 +950,7 @@ void () respawn =
 void () ClientKill = 
 {
     
-    if(self.enemy.health < 1.000)
+    if(self.enemy.health < 1)
     {
         return;
     }
@@ -963,8 +963,8 @@ void () ClientKill =
     
     bprint(self.netname);
     bprint(" suicides\n");
-    self.frags = self.frags - 2.000;
-    T_Damage(self.enemy, self.enemy, self.enemy, 1000.000);
+    self.frags = self.frags - 2;
+    T_Damage(self.enemy, self.enemy, self.enemy, 1000);
 };
 
 // CheckSpawnPoint
@@ -1133,23 +1133,23 @@ entity () SelectAirSpawnPoint =
     
     if(self.style)
     {
-        f1 = calcbit(self.style - 1.000);
+        f1 = calcbit(self.style - 1);
     }
     else
     {
-        f1 = 0.000;
+        f1 = 0;
     }
     
     
-    while(1.000)
+    while(1)
     {
-        if((deathmatch > 0.000) && (teamplay > 0.000))
+        if((deathmatch > 0) && (teamplay > 0))
         {
-            tmp = 1.000;
+            tmp = 1;
         }
         else
         {
-            tmp = 0.000;
+            tmp = 0;
         }
         
         if(lastspawn.classname == teststr)
@@ -1165,12 +1165,12 @@ entity () SelectAirSpawnPoint =
         if(self.style)
         {
             e2 = find(e1, classname, teststr);
-            lop = 0.000;
+            lop = 0;
             
             while(!lop)
             {
                 
-                if(((e2.sounds & f1) != 0.000) && (((e2.ts == self.ts) && (tmp == 1.000)) || ((e2.ts == T0) && (tmp == 0.000))))
+                if(((e2.sounds & f1) != 0) && (((e2.ts == self.ts) && (tmp == 1)) || ((e2.ts == T0) && (tmp == 0))))
                 {
                     lastspawn = e2;
                     return lastspawn;
@@ -1179,7 +1179,7 @@ entity () SelectAirSpawnPoint =
                 
                 if(e2 == e1)
                 {
-                    lop = 1.000;
+                    lop = 1;
                 }
                 
                 e2 = find(e2, classname, teststr);
@@ -1188,12 +1188,12 @@ entity () SelectAirSpawnPoint =
         }
         
         e2 = find(e1, classname, teststr);
-        lop = 0.000;
+        lop = 0;
         
         while(!lop)
         {
             
-            if((e2 != world) && ((e2.ts == self.ts) || (tmp == 0.000)))
+            if((e2 != world) && ((e2.ts == self.ts) || (tmp == 0)))
             {
                 lastspawn = e2;
                 return lastspawn;
@@ -1202,7 +1202,7 @@ entity () SelectAirSpawnPoint =
             
             if(e2 == e1)
             {
-                lop = 1.000;
+                lop = 1;
             }
             
             e2 = find(e2, classname, teststr);
@@ -1387,46 +1387,46 @@ void () PutClientInServer =
 {
     local entity spot;
     
-    if((deathmatch == 0.000) && (coop == 0.000))
+    if((deathmatch == 0) && (coop == 0))
     {
         
         if(!self.lives)
         {
-            self.lives = 4.000 - skill;
+            self.lives = 4 - skill;
         }
         
     }
     
-    if(self.health != 3.000)
+    if(self.health != 3)
     {
         spot = SelectAirSpawnPoint();
     }
     else
     {
         spot = spawn();
-        spot.style = calcbit(self.style - 1.000);
+        spot.style = calcbit(self.style - 1);
         spot.origin = self.oldorigin;
         spot.angles = self.angles;
         spot.think = SUB_Remove;
-        spot.nextthink = time + 2.000;
+        spot.nextthink = time + 2;
     }
     
-    self.spawnflags = spot.spawnflags & 3.000;
+    self.spawnflags = spot.spawnflags & 3;
     self.classname = "player";
     self.solid = SOLID_NOT;
-    self.movetype = 0.000;
-    self.show_hostile = 0.000;
-    self.max_health = 100.000;
+    self.movetype = 0;
+    self.show_hostile = 0;
+    self.max_health = 100;
     self.flags = FL_CLIENT;
-    self.super_damage_finished = 0.000;
-    self.radsuit_finished = 0.000;
-    self.invisible_finished = 0.000;
-    self.invincible_finished = 0.000;
-    self.effects = 0.000;
-    self.invincible_time = 0.000;
-    self.distance = 100.000;
-    self.speed = 0.000;
-    self.health = 100.000;
+    self.super_damage_finished = 0;
+    self.radsuit_finished = 0;
+    self.invisible_finished = 0;
+    self.invincible_finished = 0;
+    self.effects = 0;
+    self.invincible_time = 0;
+    self.distance = 100;
+    self.speed = 0;
+    self.health = 100;
     self.takedamage = DAMAGE_YES;
     DecodeLevelParms();
     stuffcmd(self, "cl_bob 0\n");
@@ -1437,8 +1437,8 @@ void () PutClientInServer =
     self.th_pain = player_pain;
     self.th_die = PlayerDie;
     self.deadflag = DEAD_NO;
-    self.pausetime = 0.000;
-    self.impulse = 0.000;
+    self.pausetime = 0;
+    self.impulse = 0;
     self.goalentity = spot;
     self.origin = spot.origin + '0.000 0.000 1.000';
     self.angles = spot.angles;
@@ -1447,11 +1447,11 @@ void () PutClientInServer =
     modelindex_eyes = self.modelindex;
     setmodel(self, "progs/player.mdl");
     modelindex_player = self.modelindex;
-    self.modelindex = 0.000;
+    self.modelindex = 0;
     setsize(self, '0.000 0.000 0.000', '0.000 0.000 0.000');
     self.view_ofs = '0.000 0.000 1.000';
-    self.toyview = -1.000;
-    self.lefty = 0.000;
+    self.toyview = -1;
+    self.lefty = 0;
     
     if(!self.style)
     {
@@ -1468,7 +1468,7 @@ void () PutClientInServer =
     if(deathmatch || coop)
     {
         makevectors(self.angles);
-        spawn_tfog(self.origin + (v_forward * 20.000));
+        spawn_tfog(self.origin + (v_forward * 20));
     }
     
 };
@@ -1509,13 +1509,13 @@ void () info_player_start =
         self.ts = T0;
         if(!self.sounds)
         {
-            allowedcraft = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
-            numcraft = 10.000;
+            allowedcraft = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
+            numcraft = 10;
             self.sounds = allowedcraft;
         }
         else
         {
-            add_allowedcraft(self.sounds, 0.000);
+            add_allowedcraft(self.sounds, 0);
         }
         
     }
@@ -1575,26 +1575,26 @@ void () info_player_start2 =
         self.ts = T0;
         if(!self.sounds)
         {
-            allowedcraft = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
-            numcraft = 10.000;
+            allowedcraft = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
+            numcraft = 10;
             self.sounds = allowedcraft;
         }
         else
         {
             allowedcraft = allowedcraft | self.sounds;
-            tmp = 0.000;
-            f1 = 0.000;
+            tmp = 0;
+            f1 = 0;
             
-            while(tmp < 10.000)
+            while(tmp < 10)
             {
                 f2 = calcbit(tmp);
                 
                 if(allowedcraft & f2)
                 {
-                    f1 = f1 + 1.000;
+                    f1 = f1 + 1;
                 }
                 
-                tmp = tmp + 1.000;
+                tmp = tmp + 1;
             }
             
             numcraft = f1;
@@ -1707,7 +1707,7 @@ void () info_player_deathmatch =
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -1722,47 +1722,47 @@ void () info_player_deathmatch =
     if(deathmatch)
     {
         
-        if(self.team == 0.000)
+        if(self.team == 0)
         {
             if(!self.sounds)
             {
-                allowedcraft = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
-                numcraft = 10.000;
+                allowedcraft = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
+                numcraft = 10;
                 self.sounds = allowedcraft;
             }
             else
             {
-                add_allowedcraft(self.sounds, 0.000);
+                add_allowedcraft(self.sounds, 0);
             }
             
         }
         
         
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             if(!self.sounds)
             {
-                allow1 = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
+                allow1 = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
                 self.sounds = allow1;
             }
             else
             {
-                add_allowedcraft(self.sounds, 1.000);
+                add_allowedcraft(self.sounds, 1);
             }
             
         }
         
         
-        if(self.team == 2.000)
+        if(self.team == 2)
         {
             if(!self.sounds)
             {
-                allow2 = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
+                allow2 = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
                 self.sounds = allow2;
             }
             else
             {
-                add_allowedcraft(self.sounds, 2.000);
+                add_allowedcraft(self.sounds, 2);
             }
             
         }
@@ -1804,12 +1804,12 @@ void () info_player_coop =
         self.ts = T0;
         if(!self.sounds)
         {
-            allowedcraft = ((((((((1.000 | 2.000) | 4.000) | 8.000) | 16.000) | 32.000) | 64.000) | 128.000) | 256.000) | 512.000;
-            numcraft = 10.000;
+            allowedcraft = ((((((((1 | 2) | 4) | 8) | 16) | 32) | 64) | 128) | 256) | 512;
+            numcraft = 10;
         }
         else
         {
-            add_allowedcraft(self.sounds, 0.000);
+            add_allowedcraft(self.sounds, 0);
         }
         
     }
@@ -1898,32 +1898,32 @@ void () NextLevel =
         }
         else
         {
-            if(!(serverflags & 1.000))
+            if(!(serverflags & 1))
             {
                 mapname = "e1m1";
-                serverflags = serverflags | 1.000;
+                serverflags = serverflags | 1;
             }
             else
             {
-                if(!(serverflags & 2.000))
+                if(!(serverflags & 2))
                 {
                     mapname = "e2m1";
-                    serverflags = serverflags | 2.000;
+                    serverflags = serverflags | 2;
                 }
                 else
                 {
-                    if(!(serverflags & 4.000))
+                    if(!(serverflags & 4))
                     {
                         mapname = "e3m1";
-                        serverflags = serverflags | 4.000;
+                        serverflags = serverflags | 4;
                     }
                     else
                     {
                         
-                        if(!(serverflags & 8.000))
+                        if(!(serverflags & 8))
                         {
                             mapname = "e4m1";
-                            serverflags = serverflags - 7.000;
+                            serverflags = serverflags - 7;
                         }
                         
                     }
@@ -1962,7 +1962,7 @@ void () NextLevel =
     if(o.nextthink < time)
     {
         o.think = execute_changelevel;
-        o.nextthink = time + 0.100;
+        o.nextthink = time + 0.1;
     }
     
 };
@@ -2000,7 +2000,7 @@ void () CheckRules =
         return;
     }
     
-    timelimit = cvar("timelimit") * 60.000;
+    timelimit = cvar("timelimit") * 60;
     fraglimit = cvar("fraglimit");
     
     if(timelimit && (time >= timelimit))
@@ -2429,8 +2429,8 @@ void () PlayerDeathThink =
     if(self.flags & FL_ONGROUND)
     {
         forward = vlen(self.velocity);
-        forward = forward - 20.000;
-        if(forward <= 0.000)
+        forward = forward - 20;
+        if(forward <= 0)
         {
             self.velocity = '0.000 0.000 0.000';
         }
@@ -2455,7 +2455,7 @@ void () PlayerDeathThink =
         if(!deathmatch && !coop)
         {
             
-            if((self.health < 3.000) && (self.lives == 1.000))
+            if((self.health < 3) && (self.lives == 1))
             {
                 sprint(self, "Game over. Press special or fire to restart\n");
             }
@@ -2466,9 +2466,9 @@ void () PlayerDeathThink =
         sprint(self, "Press 1-10 to select your vehicle\n");
         sprint(self, "Press special or fire to start\n");
         
-        if(self.health < 2.000)
+        if(self.health < 2)
         {
-            self.health = 2.000;
+            self.health = 2;
         }
         
         self.solid = SOLID_NOT;
@@ -2483,11 +2483,11 @@ void () PlayerDeathThink =
         
         if(self.enemy.owner == self)
         {
-            self.health = 2.000;
+            self.health = 2;
         }
         
         
-        if(self.enemy.health < 1.000)
+        if(self.enemy.health < 1)
         {
             
             if(self.enemy.owner == self)
@@ -2504,84 +2504,84 @@ void () PlayerDeathThink =
     if(self.impulse)
     {
         
-        if(self.impulse < 11.000)
+        if(self.impulse < 11)
         {
             
             if(!check_allowed(self.impulse))
             {
                 sprint(self, "Vehicle not available.\n");
-                self.impulse = 0.000;
+                self.impulse = 0;
             }
             
         }
         
-        if(self.impulse == 1.000)
+        if(self.impulse == 1)
         {
-            self.style = 1.000;
+            self.style = 1;
             sprint(self, "Dogfighter selected.\n");
         }
         else
         {
-            if(self.impulse == 2.000)
+            if(self.impulse == 2)
             {
-                self.style = 2.000;
+                self.style = 2;
                 sprint(self, "Fighter Bomber selected.\n");
             }
             else
             {
-                if(self.impulse == 3.000)
+                if(self.impulse == 3)
                 {
-                    self.style = 3.000;
+                    self.style = 3;
                     sprint(self, "Stealth Fighter selected.\n");
                 }
                 else
                 {
-                    if(self.impulse == 4.000)
+                    if(self.impulse == 4)
                     {
-                        self.style = 4.000;
+                        self.style = 4;
                         sprint(self, "A-10 selected.\n");
                     }
                     else
                     {
-                        if(self.impulse == 5.000)
+                        if(self.impulse == 5)
                         {
-                            self.style = 5.000;
+                            self.style = 5;
                             sprint(self, "X-29 selected.\n");
                         }
                         else
                         {
-                            if(self.impulse == 6.000)
+                            if(self.impulse == 6)
                             {
-                                self.style = 6.000;
+                                self.style = 6;
                                 sprint(self, "Attack helicopter selected.\n");
                             }
                             else
                             {
-                                if(self.impulse == 7.000)
+                                if(self.impulse == 7)
                                 {
-                                    self.style = 7.000;
+                                    self.style = 7;
                                     sprint(self, "Mobile SAM selected.\n");
                                 }
                                 else
                                 {
-                                    if(self.impulse == 8.000)
+                                    if(self.impulse == 8)
                                     {
-                                        self.style = 8.000;
+                                        self.style = 8;
                                         sprint(self, "Battle Tank selected.\n");
                                     }
                                     else
                                     {
-                                        if(self.impulse == 9.000)
+                                        if(self.impulse == 9)
                                         {
-                                            self.style = 9.000;
+                                            self.style = 9;
                                             sprint(self, "Armoured Car selected.\n");
                                         }
                                         else
                                         {
                                             
-                                            if(self.impulse == 10.000)
+                                            if(self.impulse == 10)
                                             {
-                                                self.style = 10.000;
+                                                self.style = 10;
                                                 sprint(self, "Hovercraft selected.\n");
                                             }
                                             
@@ -2604,13 +2604,13 @@ void () PlayerDeathThink =
         }
         
         
-        if(self.impulse == 15.000)
+        if(self.impulse == 15)
         {
-            self.skin = self.skin + 1.000;
+            self.skin = self.skin + 1;
             
-            if(self.skin == 3.000)
+            if(self.skin == 3)
             {
-                self.skin = 0.000;
+                self.skin = 0;
             }
             
             teststr = ftos(self.skin);
@@ -2620,7 +2620,7 @@ void () PlayerDeathThink =
         }
         
         
-        if((self.impulse == 21.000) && ((teamplay == 1.000) || (deathmatch == 0.000)))
+        if((self.impulse == 21) && ((teamplay == 1) || (deathmatch == 0)))
         {
             e2 = self.enemy;
             
@@ -2657,7 +2657,7 @@ void () PlayerDeathThink =
             
         }
         
-        self.impulse = 0.000;
+        self.impulse = 0;
     }
     
     
@@ -2666,22 +2666,22 @@ void () PlayerDeathThink =
         
         if(!self.ts)
         {
-            tmp = 0.000;
-            tmp2 = 0.000;
+            tmp = 0;
+            tmp2 = 0;
             e = find(world, classname, "player");
             
             while(e)
             {
                 if(e.ts == T1)
                 {
-                    tmp = tmp + 1.000;
+                    tmp = tmp + 1;
                 }
                 else
                 {
                     
                     if(e.ts == T2)
                     {
-                        tmp2 = tmp2 + 1.000;
+                        tmp2 = tmp2 + 1;
                     }
                     
                 }
@@ -2693,59 +2693,59 @@ void () PlayerDeathThink =
             {
                 self.ts = T1;
                 
-                if(self.team != 3.000)
+                if(self.team != 3)
                 {
                     stuffcmd(self, "color 2\n");
                 }
                 
                 bprint(self.netname);
                 bprint(" joined the Blue team\n");
-                self.team = 3.000;
+                self.team = 3;
             }
             else
             {
                 self.ts = T2;
                 
-                if(self.team != 8.000)
+                if(self.team != 8)
                 {
                     stuffcmd(self, "color 7\n");
                 }
                 
                 bprint(self.netname);
                 bprint(" joined the Red team\n");
-                self.team = 8.000;
+                self.team = 8;
             }
             
         }
         
-        if(((self.oldts == T2) && (self.ts == T2)) && (self.team == 3.000))
+        if(((self.oldts == T2) && (self.ts == T2)) && (self.team == 3))
         {
             bprint(self.netname);
             bprint(" joined the Blue team\n");
             
-            if(self.team != 3.000)
+            if(self.team != 3)
             {
                 stuffcmd(self, "color 2\n");
             }
             
             self.ts = T1;
-            self.health = 2.000;
+            self.health = 2;
         }
         else
         {
             
-            if(((self.oldts == T1) && (self.ts == T1)) && (self.team == 8.000))
+            if(((self.oldts == T1) && (self.ts == T1)) && (self.team == 8))
             {
                 bprint(self.netname);
                 bprint(" joined the Red team\n");
                 
-                if(self.team != 8.000)
+                if(self.team != 8)
                 {
                     stuffcmd(self, "color 7\n");
                 }
                 
                 self.ts = T2;
-                self.health = 2.000;
+                self.health = 2;
             }
             
         }
@@ -2764,9 +2764,9 @@ void () PlayerDeathThink =
         return;
     }
     
-    self.button0 = 0.000;
-    self.button1 = 0.000;
-    self.button2 = 0.000;
+    self.button0 = 0;
+    self.button1 = 0;
+    self.button2 = 0;
     respawn();
 };
 
@@ -3042,12 +3042,12 @@ void () PlayerPreThink =
     }
     
     
-    if((deathmatch > 0.000) && (teamplay == 1.000))
+    if((deathmatch > 0) && (teamplay == 1))
     {
         if(self.ts == T2)
         {
             
-            if(self.team != 8.000)
+            if(self.team != 8)
             {
                 stuffcmd(self, "color 7\n");
             }
@@ -3056,7 +3056,7 @@ void () PlayerPreThink =
         else
         {
             
-            if(self.team != 3.000)
+            if(self.team != 3)
             {
                 stuffcmd(self, "color 2\n");
             }
@@ -3068,64 +3068,64 @@ void () PlayerPreThink =
     makevectors(self.v_angle);
     CheckRules();
     
-    if((self.style > 0.000) && (self.style < 6.000))
+    if((self.style > 0) && (self.style < 6))
     {
         plane_upright();
     }
     
     
-    if((self.impulse == 6.000) && (self.enemy.owner == self))
+    if((self.impulse == 6) && (self.enemy.owner == self))
     {
-        self.wepv = self.wepv + 1.000;
+        self.wepv = self.wepv + 1;
         
-        if(self.wepv == 3.000)
+        if(self.wepv == 3)
         {
-            self.wepv = 0.000;
+            self.wepv = 0;
         }
         
-        self.impulse = 0.000;
+        self.impulse = 0;
         W_SetCurrentAmmo();
     }
     
     
-    if(self.impulse == 106.000)
+    if(self.impulse == 106)
     {
-        self.speed = -4.000;
-        self.impulse = 0.000;
+        self.speed = -4;
+        self.impulse = 0;
     }
     
     
-    if(self.impulse == 107.000)
+    if(self.impulse == 107)
     {
-        self.speed = 4.000;
-        self.impulse = 0.000;
+        self.speed = 4;
+        self.impulse = 0;
     }
     
     
-    if(self.impulse == 108.000)
+    if(self.impulse == 108)
     {
-        self.speed = 0.000;
-        self.impulse = 0.000;
+        self.speed = 0;
+        self.impulse = 0;
     }
     
     
-    if(self.impulse == 20.000)
+    if(self.impulse == 20)
     {
-        self.oldenemy.style = self.oldenemy.style + 8.000;
+        self.oldenemy.style = self.oldenemy.style + 8;
         
-        if(self.oldenemy.style > 32.000)
+        if(self.oldenemy.style > 32)
         {
-            self.oldenemy.style = 0.000;
+            self.oldenemy.style = 0;
         }
         
-        self.impulse = 0.000;
+        self.impulse = 0;
     }
     
     
-    if(((self.impulse == 21.000) && (self.enemy.owner == self)) && (self.style > 6.000))
+    if(((self.impulse == 21) && (self.enemy.owner == self)) && (self.style > 6))
     {
-        self.oldenemy.toyview = 1.000 - self.oldenemy.toyview;
-        if(self.oldenemy.toyview == 1.000)
+        self.oldenemy.toyview = 1 - self.oldenemy.toyview;
+        if(self.oldenemy.toyview == 1)
         {
             if(!self.enemy.trigger_field)
             {
@@ -3159,27 +3159,27 @@ void () PlayerPreThink =
             sprint(self, "Turret unlocked\n");
         }
         
-        self.impulse = 0.000;
+        self.impulse = 0;
     }
     
     CheckAdminCmd();
     self.distance = self.distance + self.speed;
     
-    if(self.distance < 0.000)
+    if(self.distance < 0)
     {
-        self.distance = 0.000;
-        self.speed = 0.000;
+        self.distance = 0;
+        self.speed = 0;
     }
     
     
-    if(self.distance > 1000.000)
+    if(self.distance > 1000)
     {
-        self.distance = 1000.000;
-        self.speed = 0.000;
+        self.distance = 1000;
+        self.speed = 0;
     }
     
     
-    if(((self.search_time > time) && (self.impulse == 10.000)) && (self.enemy.owner == self))
+    if(((self.search_time > time) && (self.impulse == 10)) && (self.enemy.owner == self))
     {
         
         if(self.enemy.oldenemy)
@@ -3204,9 +3204,9 @@ void () PlayerPreThink =
         setorigin(self, self.enemy.origin + '0.000 0.000 8.000');
         setorigin(self.oldenemy, self.enemy.origin + '0.000 0.000 8.000');
         remove(self.enemy);
-        self.health = 3.000;
+        self.health = 3;
         self.deadflag = DEAD_DEAD;
-        self.impulse = 0.000;
+        self.impulse = 0;
     }
     
     
@@ -3391,7 +3391,7 @@ void () SetCameraPlace =
     {
         stemp = self.enemy;
         
-        if(((self.missileview_on == 1.000) && (self.lastmiss.origin != '0.000 0.000 0.000')) && ((self.lastmiss.owner == self) || (self.lastmiss.owner == self.enemy)))
+        if(((self.missileview_on == 1) && (self.lastmiss.origin != '0.000 0.000 0.000')) && ((self.lastmiss.owner == self) || (self.lastmiss.owner == self.enemy)))
         {
             stemp = self.lastmiss;
         }
@@ -3402,14 +3402,14 @@ void () SetCameraPlace =
         traceline(stemp.origin, stemp.origin + (v_up * r), TRUE, world);
         v1 = trace_endpos;
         v2 = stemp.origin + v_forward;
-        if(self.style < 7.000)
+        if(self.style < 7)
         {
             v2 = v2 + (stemp.velocity * frametime);
         }
         else
         {
             
-            if((self.style < 10.000) || (stemp.speed != 0.000))
+            if((self.style < 10) || (stemp.speed != 0))
             {
                 v2 = v2 + (self.velocity * frametime);
             }
@@ -3421,11 +3421,11 @@ void () SetCameraPlace =
         
         if(self.enemy != self)
         {
-            setorigin(self.oldenemy, trace_endpos - (v_forward * 4.000));
+            setorigin(self.oldenemy, trace_endpos - (v_forward * 4));
         }
         
         
-        if((self.enemy != self) && ((self.style < 7.000) || (self.enemy.owner != self)))
+        if((self.enemy != self) && ((self.style < 7) || (self.enemy.owner != self)))
         {
             setorigin(self, self.oldenemy.origin);
         }
@@ -3437,7 +3437,7 @@ void () SetCameraPlace =
         }
         
         
-        if((self.enemy.takedamage == 0.000) && (self.enemy.model != "progs/h_player.mdl"))
+        if((self.enemy.takedamage == 0) && (self.enemy.model != "progs/h_player.mdl"))
         {
             self.enemy = world;
         }
@@ -3708,34 +3708,34 @@ void () PlayerPostThink =
     
     if(self.noise != "")
     {
-        if((self.enemy.health > 0.000) && (self.enemy.owner == self))
+        if((self.enemy.health > 0) && (self.enemy.owner == self))
         {
-            sound(self.enemy, CHAN_VOICE, self.noise, 1.000, ATTN_NORM);
+            sound(self.enemy, CHAN_VOICE, self.noise, 1, ATTN_NORM);
         }
         else
         {
-            sound(self, CHAN_VOICE, self.noise, 1.000, ATTN_NORM);
+            sound(self, CHAN_VOICE, self.noise, 1, ATTN_NORM);
         }
         
         self.noise = "";
     }
     
     
-    if((self.impulse > 30.000) && (self.impulse < 100.000))
+    if((self.impulse > 30) && (self.impulse < 100))
     {
         
-        if(self.enemy.health > 0.000)
+        if(self.enemy.health > 0)
         {
-            send_voicemsg(self.impulse - 30.000, self.enemy);
+            send_voicemsg(self.impulse - 30, self.enemy);
         }
         
         
-        if((self.impulse > 60.000) && (self.impulse < 70.000))
+        if((self.impulse > 60) && (self.impulse < 70))
         {
-            comm_control(self.impulse - 61.000);
+            comm_control(self.impulse - 61);
         }
         
-        self.impulse == 0.000; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
+        self.impulse == 0; // DECOMPILATION WARNING: unused anonymous variable, possible == instead of =?
     }
     
     
@@ -3747,75 +3747,75 @@ void () PlayerPostThink =
     
     if(self.deadflag)
     {
-        self.missileview_on = 0.000;
+        self.missileview_on = 0;
         self.lastmiss = world;
         SetCameraPlace();
         return;
     }
     
     
-    if(self.toyview == -1.000)
+    if(self.toyview == -1)
     {
-        self.waterlevel = 0.000;
-        self.watertype = -1.000;
-        if(self.style == 1.000)
+        self.waterlevel = 0;
+        self.watertype = -1;
+        if(self.style == 1)
         {
             start_aircraft1();
         }
         else
         {
-            if(self.style == 2.000)
+            if(self.style == 2)
             {
                 start_aircraft2();
             }
             else
             {
-                if(self.style == 3.000)
+                if(self.style == 3)
                 {
                     start_aircraft3();
                 }
                 else
                 {
-                    if(self.style == 4.000)
+                    if(self.style == 4)
                     {
                         start_aircraft4();
                     }
                     else
                     {
-                        if(self.style == 5.000)
+                        if(self.style == 5)
                         {
                             start_aircraft5();
                         }
                         else
                         {
-                            if(self.style == 6.000)
+                            if(self.style == 6)
                             {
                                 start_helo1();
                             }
                             else
                             {
-                                if(self.style == 7.000)
+                                if(self.style == 7)
                                 {
                                     self.movetype = MOVETYPE_WALK;
                                     start_groundveh1();
                                 }
                                 else
                                 {
-                                    if(self.style == 8.000)
+                                    if(self.style == 8)
                                     {
                                         self.movetype = MOVETYPE_WALK;
                                         start_groundveh2();
                                     }
                                     else
                                     {
-                                        if(self.style == 9.000)
+                                        if(self.style == 9)
                                         {
                                             self.movetype = MOVETYPE_WALK;
                                             start_groundveh3();
                                         }
                                         else
                                         {
-                                            if(self.style == 10.000)
+                                            if(self.style == 10)
                                             {
                                                 start_groundveh4();
                                             }
@@ -3843,15 +3843,15 @@ void () PlayerPostThink =
         }
         
         
-        if((self.style < 6.000) && self.enemy.landed)
+        if((self.style < 6) && self.enemy.landed)
         {
-            comm_control(1.000);
+            comm_control(1);
         }
         
-        self.missileview_on = 0.000;
+        self.missileview_on = 0;
         self.lastmiss = world;
         
-        if(!(cvar("temp1") & 2.000))
+        if(!(cvar("temp1") & 2))
         {
             e = spawn();
             setmodel(e, "progs/s_target.spr");
@@ -3862,31 +3862,31 @@ void () PlayerPostThink =
         
         W_SetCurrentAmmo();
         self.enemy.ts = self.ts;
-        self.spawn_finished = time + 1.000;
+        self.spawn_finished = time + 1;
         
         if(self.trigger_field)
         {
             self.trigger_field.think = target_think;
-            self.trigger_field.nextthink = time + 1.000;
+            self.trigger_field.nextthink = time + 1;
         }
         
         self.enemy.think = vehicle_think;
-        self.enemy.nextthink = time + 1.000;
+        self.enemy.nextthink = time + 1;
     }
     
     
     if(self.spawn_finished > time)
     {
         v1 = self.enemy.angles;
-        v1_x = 0.000 - v1_x;
+        v1_x = 0 - v1_x;
         msg_entity = self;
-        WriteByte(MSG_ONE, 5.000);
+        WriteByte(MSG_ONE, 5);
         WriteEntity(MSG_ONE, self.oldenemy);
-        WriteByte(MSG_ONE, 10.000);
+        WriteByte(MSG_ONE, 10);
         WriteAngle(MSG_ONE, v1_x);
-        WriteAngle(MSG_ONE, 0.000);
-        WriteAngle(MSG_ONE, 0.000);
-        self.toyview = 0.000;
+        WriteAngle(MSG_ONE, 0);
+        WriteAngle(MSG_ONE, 0);
+        self.toyview = 0;
         self.v_angle = self.angles = v1;
     }
     
@@ -3966,7 +3966,7 @@ void () ClientDisconnect =
     bprint(" left the game with ");
     bprint(ftos(self.frags));
     bprint(" frags\n");
-    sound(self, CHAN_BODY, "player/tornoff2.wav", 1.000, ATTN_NONE);
+    sound(self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
     set_suicide_frame();
 };
 

@@ -264,7 +264,7 @@ void () t_botmovetarget =
         self = tmp;
         clearCache(other);
         other.search_time = time + MOVETYPE_WALK;
-        other.nextthink = time + 0.300;
+        other.nextthink = time + 0.3;
         return;
     }
     
@@ -280,7 +280,7 @@ void () t_botmovetarget =
     }
     
     pth = BestChaseRoute(other, self.goalentity);
-    rnd = (2000.000 + (random() * 1000.000)) + (other.skil * SEARCH_RADIUS);
+    rnd = (2000 + (random() * 1000)) + (other.skil * SEARCH_RADIUS);
     rnd = rnd - (vlen(other.origin - pth.origin));
     
     if(rnd < pth.enemylen)
@@ -291,7 +291,7 @@ void () t_botmovetarget =
     
     rnd = random() * (other.skil + TRUE);
     
-    if(rnd < 0.100)
+    if(rnd < 0.1)
     {
         other.search_time = time - TRUE;
         return;
@@ -443,7 +443,7 @@ void (entity bot) bot_triggered =
     if(Botgoal.goalentity)
     {
         bot.search_time = time + MOVETYPE_WALK;
-        org = (Botgoal.goalentity.absmax + Botgoal.goalentity.absmin) * 0.500;
+        org = (Botgoal.goalentity.absmax + Botgoal.goalentity.absmin) * 0.5;
         org_z = Botgoal.goalentity.absmin_z + TRUE;
         
         if(Botgoal.classname != "BotTarget")
@@ -638,7 +638,7 @@ void () enemy_touched =
         dprint("!\n");
     }
     
-    org = (self.absmax + self.absmin) * 0.500;
+    org = (self.absmax + self.absmin) * 0.5;
     org_z = self.absmin_z + TRUE;
     
     if(self.classname == "door")

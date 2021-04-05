@@ -4,7 +4,7 @@ void () army_fire;
 // OP_STATE	213	9092	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand1 = [0.000, army_stand2]
+void () army_stand1 = [0, army_stand2]
 {
     ai_stand();
 };
@@ -14,7 +14,7 @@ void () army_stand1 = [0.000, army_stand2]
 // OP_STATE	214	9093	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand2 = [1.000, army_stand3]
+void () army_stand2 = [1, army_stand3]
 {
     ai_stand();
 };
@@ -24,7 +24,7 @@ void () army_stand2 = [1.000, army_stand3]
 // OP_STATE	216	9094	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand3 = [2.000, army_stand4]
+void () army_stand3 = [2, army_stand4]
 {
     ai_stand();
 };
@@ -34,7 +34,7 @@ void () army_stand3 = [2.000, army_stand4]
 // OP_STATE	228	9095	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand4 = [3.000, army_stand5]
+void () army_stand4 = [3, army_stand5]
 {
     ai_stand();
 };
@@ -44,7 +44,7 @@ void () army_stand4 = [3.000, army_stand5]
 // OP_STATE	229	9096	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand5 = [4.000, army_stand6]
+void () army_stand5 = [4, army_stand6]
 {
     ai_stand();
 };
@@ -54,7 +54,7 @@ void () army_stand5 = [4.000, army_stand6]
 // OP_STATE	230	9097	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand6 = [5.000, army_stand7]
+void () army_stand6 = [5, army_stand7]
 {
     ai_stand();
 };
@@ -64,7 +64,7 @@ void () army_stand6 = [5.000, army_stand7]
 // OP_STATE	231	9098	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand7 = [6.000, army_stand8]
+void () army_stand7 = [6, army_stand8]
 {
     ai_stand();
 };
@@ -74,7 +74,7 @@ void () army_stand7 = [6.000, army_stand8]
 // OP_STATE	232	9091	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () army_stand8 = [7.000, army_stand1]
+void () army_stand8 = [7, army_stand1]
 {
     ai_stand();
 };
@@ -94,10 +94,10 @@ void () army_stand8 = [7.000, army_stand1]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk1 = [90.000, army_walk2]
+void () army_walk1 = [90, army_walk2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "soldier/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -111,7 +111,7 @@ void () army_walk1 = [90.000, army_walk2]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk2 = [91.000, army_walk3]
+void () army_walk2 = [91, army_walk3]
 {
     ai_walk(TRUE);
 };
@@ -122,7 +122,7 @@ void () army_walk2 = [91.000, army_walk3]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk3 = [92.000, army_walk4]
+void () army_walk3 = [92, army_walk4]
 {
     ai_walk(TRUE);
 };
@@ -133,7 +133,7 @@ void () army_walk3 = [92.000, army_walk4]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk4 = [93.000, army_walk5]
+void () army_walk4 = [93, army_walk5]
 {
     ai_walk(TRUE);
 };
@@ -144,7 +144,7 @@ void () army_walk4 = [93.000, army_walk5]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk5 = [94.000, army_walk6]
+void () army_walk5 = [94, army_walk6]
 {
     ai_walk(FL_SWIM);
 };
@@ -155,7 +155,7 @@ void () army_walk5 = [94.000, army_walk6]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk6 = [95.000, army_walk7]
+void () army_walk6 = [95, army_walk7]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -166,7 +166,7 @@ void () army_walk6 = [95.000, army_walk7]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk7 = [96.000, army_walk8]
+void () army_walk7 = [96, army_walk8]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -177,7 +177,7 @@ void () army_walk7 = [96.000, army_walk8]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk8 = [97.000, army_walk9]
+void () army_walk8 = [97, army_walk9]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -188,7 +188,7 @@ void () army_walk8 = [97.000, army_walk9]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk9 = [98.000, army_walk10]
+void () army_walk9 = [98, army_walk10]
 {
     ai_walk(FL_SWIM);
 };
@@ -199,7 +199,7 @@ void () army_walk9 = [98.000, army_walk10]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk10 = [99.000, army_walk11]
+void () army_walk10 = [99, army_walk11]
 {
     ai_walk(FL_SWIM);
 };
@@ -210,7 +210,7 @@ void () army_walk10 = [99.000, army_walk11]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk11 = [100.000, army_walk12]
+void () army_walk11 = [100, army_walk12]
 {
     ai_walk(FL_SWIM);
 };
@@ -221,7 +221,7 @@ void () army_walk11 = [100.000, army_walk12]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk12 = [101.000, army_walk13]
+void () army_walk12 = [101, army_walk13]
 {
     ai_walk(TRUE);
 };
@@ -232,7 +232,7 @@ void () army_walk12 = [101.000, army_walk13]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk13 = [102.000, army_walk14]
+void () army_walk13 = [102, army_walk14]
 {
     ai_walk(FALSE);
 };
@@ -243,7 +243,7 @@ void () army_walk13 = [102.000, army_walk14]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk14 = [103.000, army_walk15]
+void () army_walk14 = [103, army_walk15]
 {
     ai_walk(TRUE);
 };
@@ -254,7 +254,7 @@ void () army_walk14 = [103.000, army_walk15]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk15 = [104.000, army_walk16]
+void () army_walk15 = [104, army_walk16]
 {
     ai_walk(TRUE);
 };
@@ -265,7 +265,7 @@ void () army_walk15 = [104.000, army_walk16]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk16 = [105.000, army_walk17]
+void () army_walk16 = [105, army_walk17]
 {
     ai_walk(TRUE);
 };
@@ -276,7 +276,7 @@ void () army_walk16 = [105.000, army_walk17]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk17 = [106.000, army_walk18]
+void () army_walk17 = [106, army_walk18]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -287,7 +287,7 @@ void () army_walk17 = [106.000, army_walk18]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk18 = [107.000, army_walk19]
+void () army_walk18 = [107, army_walk19]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -298,7 +298,7 @@ void () army_walk18 = [107.000, army_walk19]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk19 = [108.000, army_walk20]
+void () army_walk19 = [108, army_walk20]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -309,7 +309,7 @@ void () army_walk19 = [108.000, army_walk20]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk20 = [109.000, army_walk21]
+void () army_walk20 = [109, army_walk21]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -320,7 +320,7 @@ void () army_walk20 = [109.000, army_walk21]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk21 = [110.000, army_walk22]
+void () army_walk21 = [110, army_walk22]
 {
     ai_walk(FL_SWIM);
 };
@@ -331,7 +331,7 @@ void () army_walk21 = [110.000, army_walk22]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk22 = [111.000, army_walk23]
+void () army_walk22 = [111, army_walk23]
 {
     ai_walk(TRUE);
 };
@@ -342,7 +342,7 @@ void () army_walk22 = [111.000, army_walk23]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk23 = [112.000, army_walk24]
+void () army_walk23 = [112, army_walk24]
 {
     ai_walk(TRUE);
 };
@@ -353,7 +353,7 @@ void () army_walk23 = [112.000, army_walk24]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () army_walk24 = [113.000, army_walk1]
+void () army_walk24 = [113, army_walk1]
 {
     ai_walk(TRUE);
 };
@@ -373,10 +373,10 @@ void () army_walk24 = [113.000, army_walk1]
 // OP_STORE_V	236	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run1 = [73.000, army_run2]
+void () army_run1 = [73, army_run2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "soldier/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -390,9 +390,9 @@ void () army_run1 = [73.000, army_run2]
 // OP_STORE_V	2246	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run2 = [74.000, army_run3]
+void () army_run2 = [74, army_run3]
 {
-    ai_run(15.000);
+    ai_run(15);
 };
 
 // army_run3
@@ -401,7 +401,7 @@ void () army_run2 = [74.000, army_run3]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run3 = [75.000, army_run4]
+void () army_run3 = [75, army_run4]
 {
     ai_run(MOVETYPE_BOUNCE);
 };
@@ -412,7 +412,7 @@ void () army_run3 = [75.000, army_run4]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run4 = [76.000, army_run5]
+void () army_run4 = [76, army_run5]
 {
     ai_run(MOVETYPE_BOUNCE);
 };
@@ -423,7 +423,7 @@ void () army_run4 = [76.000, army_run5]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run5 = [77.000, army_run6]
+void () army_run5 = [77, army_run6]
 {
     ai_run(FL_CLIENT);
 };
@@ -434,9 +434,9 @@ void () army_run5 = [77.000, army_run6]
 // OP_STORE_V	2246	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run6 = [78.000, army_run7]
+void () army_run6 = [78, army_run7]
 {
-    ai_run(15.000);
+    ai_run(15);
 };
 
 // army_run7
@@ -445,7 +445,7 @@ void () army_run6 = [78.000, army_run7]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run7 = [79.000, army_run8]
+void () army_run7 = [79, army_run8]
 {
     ai_run(MOVETYPE_BOUNCE);
 };
@@ -456,7 +456,7 @@ void () army_run7 = [79.000, army_run8]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () army_run8 = [80.000, army_run1]
+void () army_run8 = [80, army_run1]
 {
     ai_run(FL_CLIENT);
 };
@@ -466,7 +466,7 @@ void () army_run8 = [80.000, army_run1]
 // OP_STATE	6004	9135	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk1 = [81.000, army_atk2]
+void () army_atk1 = [81, army_atk2]
 {
     ai_face();
 };
@@ -476,7 +476,7 @@ void () army_atk1 = [81.000, army_atk2]
 // OP_STATE	6006	9136	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk2 = [82.000, army_atk3]
+void () army_atk2 = [82, army_atk3]
 {
     ai_face();
 };
@@ -486,7 +486,7 @@ void () army_atk2 = [82.000, army_atk3]
 // OP_STATE	6008	9137	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk3 = [83.000, army_atk4]
+void () army_atk3 = [83, army_atk4]
 {
     ai_face();
 };
@@ -496,7 +496,7 @@ void () army_atk3 = [83.000, army_atk4]
 // OP_STATE	6010	9138	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk4 = [84.000, army_atk5]
+void () army_atk4 = [84, army_atk5]
 {
     ai_face();
 };
@@ -511,7 +511,7 @@ void () army_atk4 = [84.000, army_atk5]
 // OP_BITOR	9141	334	9142
 // OP_STOREP_F	9142	9140	0
 // OP_DONE	0	0	0
-void () army_atk5 = [85.000, army_atk6]
+void () army_atk5 = [85, army_atk6]
 {
     ai_face();
     army_fire();
@@ -523,7 +523,7 @@ void () army_atk5 = [85.000, army_atk6]
 // OP_STATE	6013	9143	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk6 = [86.000, army_atk7]
+void () army_atk6 = [86, army_atk7]
 {
     ai_face();
 };
@@ -535,7 +535,7 @@ void () army_atk6 = [86.000, army_atk7]
 // OP_STORE_V	9134	4	0
 // OP_CALL1	1128	0	0
 // OP_DONE	0	0	0
-void () army_atk7 = [87.000, army_atk8]
+void () army_atk7 = [87, army_atk8]
 {
     ai_face();
     SUB_CheckRefire(army_atk1);
@@ -546,7 +546,7 @@ void () army_atk7 = [87.000, army_atk8]
 // OP_STATE	6017	9145	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk8 = [88.000, army_atk9]
+void () army_atk8 = [88, army_atk9]
 {
     ai_face();
 };
@@ -556,7 +556,7 @@ void () army_atk8 = [88.000, army_atk9]
 // OP_STATE	6019	9125	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () army_atk9 = [89.000, army_run1]
+void () army_atk9 = [89, army_run1]
 {
     ai_face();
 };
@@ -565,7 +565,7 @@ void () army_atk9 = [89.000, army_run1]
 // function begins at statement 14898, parm_start=9147
 // OP_STATE	2101	9147	0
 // OP_DONE	0	0	0
-void () army_pain1 = [40.000, army_pain2]
+void () army_pain1 = [40, army_pain2]
 {
 };
 
@@ -573,7 +573,7 @@ void () army_pain1 = [40.000, army_pain2]
 // function begins at statement 14900, parm_start=9148
 // OP_STATE	6042	9148	0
 // OP_DONE	0	0	0
-void () army_pain2 = [41.000, army_pain3]
+void () army_pain2 = [41, army_pain3]
 {
 };
 
@@ -581,7 +581,7 @@ void () army_pain2 = [41.000, army_pain3]
 // function begins at statement 14902, parm_start=9149
 // OP_STATE	6044	9149	0
 // OP_DONE	0	0	0
-void () army_pain3 = [42.000, army_pain4]
+void () army_pain3 = [42, army_pain4]
 {
 };
 
@@ -589,7 +589,7 @@ void () army_pain3 = [42.000, army_pain4]
 // function begins at statement 14904, parm_start=9150
 // OP_STATE	6046	9150	0
 // OP_DONE	0	0	0
-void () army_pain4 = [43.000, army_pain5]
+void () army_pain4 = [43, army_pain5]
 {
 };
 
@@ -597,7 +597,7 @@ void () army_pain4 = [43.000, army_pain5]
 // function begins at statement 14906, parm_start=9151
 // OP_STATE	6048	9151	0
 // OP_DONE	0	0	0
-void () army_pain5 = [44.000, army_pain6]
+void () army_pain5 = [44, army_pain6]
 {
 };
 
@@ -607,7 +607,7 @@ void () army_pain5 = [44.000, army_pain6]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () army_pain6 = [45.000, army_run1]
+void () army_pain6 = [45, army_run1]
 {
     ai_pain(TRUE);
 };
@@ -616,7 +616,7 @@ void () army_pain6 = [45.000, army_run1]
 // function begins at statement 14912, parm_start=9153
 // OP_STATE	6051	9153	0
 // OP_DONE	0	0	0
-void () army_painb1 = [46.000, army_painb2]
+void () army_painb1 = [46, army_painb2]
 {
 };
 
@@ -626,9 +626,9 @@ void () army_painb1 = [46.000, army_painb2]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painb2 = [47.000, army_painb3]
+void () army_painb2 = [47, army_painb3]
 {
-    ai_painforward(13.000);
+    ai_painforward(13);
 };
 
 // army_painb3
@@ -637,7 +637,7 @@ void () army_painb2 = [47.000, army_painb3]
 // OP_STORE_V	234	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painb3 = [48.000, army_painb4]
+void () army_painb3 = [48, army_painb4]
 {
     ai_painforward(MOVETYPE_FLYMISSILE);
 };
@@ -646,7 +646,7 @@ void () army_painb3 = [48.000, army_painb4]
 // function begins at statement 14922, parm_start=9156
 // OP_STATE	6057	9156	0
 // OP_DONE	0	0	0
-void () army_painb4 = [49.000, army_painb5]
+void () army_painb4 = [49, army_painb5]
 {
 };
 
@@ -654,7 +654,7 @@ void () army_painb4 = [49.000, army_painb5]
 // function begins at statement 14924, parm_start=9157
 // OP_STATE	756	9157	0
 // OP_DONE	0	0	0
-void () army_painb5 = [50.000, army_painb6]
+void () army_painb5 = [50, army_painb6]
 {
 };
 
@@ -662,7 +662,7 @@ void () army_painb5 = [50.000, army_painb6]
 // function begins at statement 14926, parm_start=9158
 // OP_STATE	5951	9158	0
 // OP_DONE	0	0	0
-void () army_painb6 = [51.000, army_painb7]
+void () army_painb6 = [51, army_painb7]
 {
 };
 
@@ -670,7 +670,7 @@ void () army_painb6 = [51.000, army_painb7]
 // function begins at statement 14928, parm_start=9159
 // OP_STATE	5953	9159	0
 // OP_DONE	0	0	0
-void () army_painb7 = [52.000, army_painb8]
+void () army_painb7 = [52, army_painb8]
 {
 };
 
@@ -678,7 +678,7 @@ void () army_painb7 = [52.000, army_painb8]
 // function begins at statement 14930, parm_start=9160
 // OP_STATE	5955	9160	0
 // OP_DONE	0	0	0
-void () army_painb8 = [53.000, army_painb9]
+void () army_painb8 = [53, army_painb9]
 {
 };
 
@@ -686,7 +686,7 @@ void () army_painb8 = [53.000, army_painb9]
 // function begins at statement 14932, parm_start=9161
 // OP_STATE	5957	9161	0
 // OP_DONE	0	0	0
-void () army_painb9 = [54.000, army_painb10]
+void () army_painb9 = [54, army_painb10]
 {
 };
 
@@ -694,7 +694,7 @@ void () army_painb9 = [54.000, army_painb10]
 // function begins at statement 14934, parm_start=9162
 // OP_STATE	5959	9162	0
 // OP_DONE	0	0	0
-void () army_painb10 = [55.000, army_painb11]
+void () army_painb10 = [55, army_painb11]
 {
 };
 
@@ -702,7 +702,7 @@ void () army_painb10 = [55.000, army_painb11]
 // function begins at statement 14936, parm_start=9163
 // OP_STATE	5961	9163	0
 // OP_DONE	0	0	0
-void () army_painb11 = [56.000, army_painb12]
+void () army_painb11 = [56, army_painb12]
 {
 };
 
@@ -712,7 +712,7 @@ void () army_painb11 = [56.000, army_painb12]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () army_painb12 = [57.000, army_painb13]
+void () army_painb12 = [57, army_painb13]
 {
     ai_pain(FL_SWIM);
 };
@@ -721,7 +721,7 @@ void () army_painb12 = [57.000, army_painb13]
 // function begins at statement 14942, parm_start=9165
 // OP_STATE	5965	9165	0
 // OP_DONE	0	0	0
-void () army_painb13 = [58.000, army_painb14]
+void () army_painb13 = [58, army_painb14]
 {
 };
 
@@ -729,7 +729,7 @@ void () army_painb13 = [58.000, army_painb14]
 // function begins at statement 14944, parm_start=9166
 // OP_STATE	5967	9125	0
 // OP_DONE	0	0	0
-void () army_painb14 = [59.000, army_run1]
+void () army_painb14 = [59, army_run1]
 {
 };
 
@@ -737,7 +737,7 @@ void () army_painb14 = [59.000, army_run1]
 // function begins at statement 14946, parm_start=9167
 // OP_STATE	730	9167	0
 // OP_DONE	0	0	0
-void () army_painc1 = [60.000, army_painc2]
+void () army_painc1 = [60, army_painc2]
 {
 };
 
@@ -747,7 +747,7 @@ void () army_painc1 = [60.000, army_painc2]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () army_painc2 = [61.000, army_painc3]
+void () army_painc2 = [61, army_painc3]
 {
     ai_pain(TRUE);
 };
@@ -756,7 +756,7 @@ void () army_painc2 = [61.000, army_painc3]
 // function begins at statement 14952, parm_start=9169
 // OP_STATE	5971	9169	0
 // OP_DONE	0	0	0
-void () army_painc3 = [62.000, army_painc4]
+void () army_painc3 = [62, army_painc4]
 {
 };
 
@@ -764,7 +764,7 @@ void () army_painc3 = [62.000, army_painc4]
 // function begins at statement 14954, parm_start=9170
 // OP_STATE	4366	9170	0
 // OP_DONE	0	0	0
-void () army_painc4 = [63.000, army_painc5]
+void () army_painc4 = [63, army_painc5]
 {
 };
 
@@ -774,7 +774,7 @@ void () army_painc4 = [63.000, army_painc5]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc5 = [64.000, army_painc6]
+void () army_painc5 = [64, army_painc6]
 {
     ai_painforward(TRUE);
 };
@@ -785,7 +785,7 @@ void () army_painc5 = [64.000, army_painc6]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc6 = [65.000, army_painc7]
+void () army_painc6 = [65, army_painc7]
 {
     ai_painforward(TRUE);
 };
@@ -794,7 +794,7 @@ void () army_painc6 = [65.000, army_painc7]
 // function begins at statement 14964, parm_start=9173
 // OP_STATE	5977	9173	0
 // OP_DONE	0	0	0
-void () army_painc7 = [66.000, army_painc8]
+void () army_painc7 = [66, army_painc8]
 {
 };
 
@@ -804,7 +804,7 @@ void () army_painc7 = [66.000, army_painc8]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () army_painc8 = [67.000, army_painc9]
+void () army_painc8 = [67, army_painc9]
 {
     ai_pain(TRUE);
 };
@@ -815,7 +815,7 @@ void () army_painc8 = [67.000, army_painc9]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc9 = [68.000, army_painc10]
+void () army_painc9 = [68, army_painc10]
 {
     ai_painforward(MOVETYPE_STEP);
 };
@@ -826,7 +826,7 @@ void () army_painc9 = [68.000, army_painc10]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc10 = [69.000, army_painc11]
+void () army_painc10 = [69, army_painc11]
 {
     ai_painforward(MOVETYPE_WALK);
 };
@@ -837,7 +837,7 @@ void () army_painc10 = [69.000, army_painc11]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc11 = [70.000, army_painc12]
+void () army_painc11 = [70, army_painc12]
 {
     ai_painforward(MOVETYPE_TOSS);
 };
@@ -848,7 +848,7 @@ void () army_painc11 = [70.000, army_painc12]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1728	0	0
 // OP_DONE	0	0	0
-void () army_painc12 = [71.000, army_painc13]
+void () army_painc12 = [71, army_painc13]
 {
     ai_painforward(FL_CLIENT);
 };
@@ -857,7 +857,7 @@ void () army_painc12 = [71.000, army_painc13]
 // function begins at statement 14986, parm_start=9179
 // OP_STATE	5988	9125	0
 // OP_DONE	0	0	0
-void () army_painc13 = [72.000, army_run1]
+void () army_painc13 = [72, army_run1]
 {
 };
 
@@ -916,23 +916,23 @@ void (entity attacker, float damage) army_pain =
     }
     
     r = random();
-    if(r < 0.200)
+    if(r < 0.2)
     {
-        self.pain_finished = time + 0.600;
+        self.pain_finished = time + 0.6;
         army_pain1();
         sound(self, CHAN_VOICE, "soldier/pain1.wav", TRUE, ATTN_NORM);
     }
     else
     {
-        if(r < 0.600)
+        if(r < 0.6)
         {
-            self.pain_finished = time + 1.100;
+            self.pain_finished = time + 1.1;
             army_painb1();
             sound(self, CHAN_VOICE, "soldier/pain2.wav", TRUE, ATTN_NORM);
         }
         else
         {
-            self.pain_finished = time + 1.100;
+            self.pain_finished = time + 1.1;
             army_painc1();
             sound(self, CHAN_VOICE, "soldier/pain2.wav", TRUE, ATTN_NORM);
         }
@@ -974,7 +974,7 @@ void () army_fire =
     ai_face();
     sound(self, CHAN_WEAPON, "soldier/sattck1.wav", TRUE, ATTN_NORM);
     en = self.enemy;
-    dir = en.origin - (en.velocity * 0.200);
+    dir = en.origin - (en.velocity * 0.2);
     dir = normalize(dir - self.origin);
     FireBullets(MOVETYPE_STEP, dir, '0.100 0.100 0.000');
 };
@@ -983,7 +983,7 @@ void () army_fire =
 // function begins at statement 15055, parm_start=9224
 // OP_STATE	217	9224	0
 // OP_DONE	0	0	0
-void () army_die1 = [8.000, army_die2]
+void () army_die1 = [8, army_die2]
 {
 };
 
@@ -991,7 +991,7 @@ void () army_die1 = [8.000, army_die2]
 // function begins at statement 15057, parm_start=9225
 // OP_STATE	234	9225	0
 // OP_DONE	0	0	0
-void () army_die2 = [9.000, army_die3]
+void () army_die2 = [9, army_die3]
 {
 };
 
@@ -1004,7 +1004,7 @@ void () army_die2 = [9.000, army_die3]
 // OP_STOREP_F	230	9228	0
 // OP_CALL0	3034	0	0
 // OP_DONE	0	0	0
-void () army_die3 = [10.000, army_die4]
+void () army_die3 = [10, army_die4]
 {
     self.solid = SOLID_NOT;
     self.ammo_shells = MOVETYPE_FLY;
@@ -1015,7 +1015,7 @@ void () army_die3 = [10.000, army_die4]
 // function begins at statement 15066, parm_start=9229
 // OP_STATE	236	9229	0
 // OP_DONE	0	0	0
-void () army_die4 = [11.000, army_die5]
+void () army_die4 = [11, army_die5]
 {
 };
 
@@ -1023,7 +1023,7 @@ void () army_die4 = [11.000, army_die5]
 // function begins at statement 15068, parm_start=9230
 // OP_STATE	2717	9230	0
 // OP_DONE	0	0	0
-void () army_die5 = [12.000, army_die6]
+void () army_die5 = [12, army_die6]
 {
 };
 
@@ -1031,7 +1031,7 @@ void () army_die5 = [12.000, army_die6]
 // function begins at statement 15070, parm_start=9231
 // OP_STATE	8413	9231	0
 // OP_DONE	0	0	0
-void () army_die6 = [13.000, army_die7]
+void () army_die6 = [13, army_die7]
 {
 };
 
@@ -1039,7 +1039,7 @@ void () army_die6 = [13.000, army_die7]
 // function begins at statement 15072, parm_start=9232
 // OP_STATE	3382	9232	0
 // OP_DONE	0	0	0
-void () army_die7 = [14.000, army_die8]
+void () army_die7 = [14, army_die8]
 {
 };
 
@@ -1047,7 +1047,7 @@ void () army_die7 = [14.000, army_die8]
 // function begins at statement 15074, parm_start=9233
 // OP_STATE	2246	9233	0
 // OP_DONE	0	0	0
-void () army_die8 = [15.000, army_die9]
+void () army_die8 = [15, army_die9]
 {
 };
 
@@ -1055,7 +1055,7 @@ void () army_die8 = [15.000, army_die9]
 // function begins at statement 15076, parm_start=9234
 // OP_STATE	218	9234	0
 // OP_DONE	0	0	0
-void () army_die9 = [16.000, army_die10]
+void () army_die9 = [16, army_die10]
 {
 };
 
@@ -1063,7 +1063,7 @@ void () army_die9 = [16.000, army_die10]
 // function begins at statement 15078, parm_start=9235
 // OP_STATE	5450	9234	0
 // OP_DONE	0	0	0
-void () army_die10 = [17.000, army_die10]
+void () army_die10 = [17, army_die10]
 {
 };
 
@@ -1071,7 +1071,7 @@ void () army_die10 = [17.000, army_die10]
 // function begins at statement 15080, parm_start=9236
 // OP_STATE	3866	9236	0
 // OP_DONE	0	0	0
-void () army_cdie1 = [18.000, army_cdie2]
+void () army_cdie1 = [18, army_cdie2]
 {
 };
 
@@ -1081,7 +1081,7 @@ void () army_cdie1 = [18.000, army_cdie2]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1721	0	0
 // OP_DONE	0	0	0
-void () army_cdie2 = [19.000, army_cdie3]
+void () army_cdie2 = [19, army_cdie3]
 {
     ai_back(MOVETYPE_FLY);
 };
@@ -1097,7 +1097,7 @@ void () army_cdie2 = [19.000, army_cdie3]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1721	0	0
 // OP_DONE	0	0	0
-void () army_cdie3 = [20.000, army_cdie4]
+void () army_cdie3 = [20, army_cdie4]
 {
     self.solid = SOLID_NOT;
     self.ammo_shells = MOVETYPE_FLY;
@@ -1111,9 +1111,9 @@ void () army_cdie3 = [20.000, army_cdie4]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1721	0	0
 // OP_DONE	0	0	0
-void () army_cdie4 = [21.000, army_cdie5]
+void () army_cdie4 = [21, army_cdie5]
 {
-    ai_back(13.000);
+    ai_back(13);
 };
 
 // army_cdie5
@@ -1122,7 +1122,7 @@ void () army_cdie4 = [21.000, army_cdie5]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1721	0	0
 // OP_DONE	0	0	0
-void () army_cdie5 = [22.000, army_cdie6]
+void () army_cdie5 = [22, army_cdie6]
 {
     ai_back(MOVETYPE_WALK);
 };
@@ -1133,7 +1133,7 @@ void () army_cdie5 = [22.000, army_cdie6]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1721	0	0
 // OP_DONE	0	0	0
-void () army_cdie6 = [23.000, army_cdie7]
+void () army_cdie6 = [23, army_cdie7]
 {
     ai_back(MOVETYPE_STEP);
 };
@@ -1142,7 +1142,7 @@ void () army_cdie6 = [23.000, army_cdie7]
 // function begins at statement 15107, parm_start=9244
 // OP_STATE	5005	9244	0
 // OP_DONE	0	0	0
-void () army_cdie7 = [24.000, army_cdie8]
+void () army_cdie7 = [24, army_cdie8]
 {
 };
 
@@ -1150,7 +1150,7 @@ void () army_cdie7 = [24.000, army_cdie8]
 // function begins at statement 15109, parm_start=9245
 // OP_STATE	2261	9245	0
 // OP_DONE	0	0	0
-void () army_cdie8 = [25.000, army_cdie9]
+void () army_cdie8 = [25, army_cdie9]
 {
 };
 
@@ -1158,7 +1158,7 @@ void () army_cdie8 = [25.000, army_cdie9]
 // function begins at statement 15111, parm_start=9246
 // OP_STATE	8433	9246	0
 // OP_DONE	0	0	0
-void () army_cdie9 = [26.000, army_cdie10]
+void () army_cdie9 = [26, army_cdie10]
 {
 };
 
@@ -1166,7 +1166,7 @@ void () army_cdie9 = [26.000, army_cdie10]
 // function begins at statement 15113, parm_start=9247
 // OP_STATE	302	9247	0
 // OP_DONE	0	0	0
-void () army_cdie10 = [27.000, army_cdie11]
+void () army_cdie10 = [27, army_cdie11]
 {
 };
 
@@ -1174,7 +1174,7 @@ void () army_cdie10 = [27.000, army_cdie11]
 // function begins at statement 15115, parm_start=9248
 // OP_STATE	303	9247	0
 // OP_DONE	0	0	0
-void () army_cdie11 = [28.000, army_cdie11]
+void () army_cdie11 = [28, army_cdie11]
 {
 };
 
@@ -1222,7 +1222,7 @@ void () army_cdie11 = [28.000, army_cdie11]
 void () army_die = 
 {
     
-    if(self.health < -35.000)
+    if(self.health < -35)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowHead("progs/h_guard.mdl", self.health);
@@ -1233,7 +1233,7 @@ void () army_die =
     }
     
     sound(self, CHAN_VOICE, "soldier/death1.wav", TRUE, ATTN_NORM);
-    if(random() < 0.500)
+    if(random() < 0.5)
     {
         army_die1();
     }

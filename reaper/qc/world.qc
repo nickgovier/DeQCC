@@ -658,7 +658,7 @@ void () worldspawn =
     lightstyle(MOVETYPE_FLYMISSILE, "aaaaaaaazzzzzzzz");
     lightstyle(MOVETYPE_BOUNCE, "mmamammmmammamamaaamammma");
     lightstyle(MOVETYPE_BOUNCEMISSILE, "abcdefghijklmnopqrrqponmlkjihgfedcba");
-    lightstyle(63.000, "a");
+    lightstyle(63, "a");
 };
 
 // StartFrame

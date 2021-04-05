@@ -47,7 +47,7 @@ void () dummycraft_touch =
     }
     
     self.think = self.th_die;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // dummycraft_die
@@ -61,7 +61,7 @@ void () dummycraft_touch =
 void () dummycraft_die = 
 {
     self.think = AC_Explode;
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
 };
 
 // monster_dummycraft
@@ -150,42 +150,42 @@ void () monster_dummycraft =
     
     if(!self.style)
     {
-        self.style = random() * 5.900;
-        self.style = floor(self.style) + 1.000;
+        self.style = random() * 5.9;
+        self.style = floor(self.style) + 1;
     }
     
-    if(self.style == 1.000)
+    if(self.style == 1)
     {
         setmodel(self, "progs/plane1.mdl");
     }
     else
     {
-        if(self.style == 2.000)
+        if(self.style == 2)
         {
             setmodel(self, "progs/plane2.mdl");
         }
         else
         {
-            if(self.style == 3.000)
+            if(self.style == 3)
             {
                 setmodel(self, "progs/plane3.mdl");
             }
             else
             {
-                if(self.style == 4.000)
+                if(self.style == 4)
                 {
                     setmodel(self, "progs/plane4.mdl");
                 }
                 else
                 {
-                    if(self.style == 5.000)
+                    if(self.style == 5)
                     {
                         setmodel(self, "progs/plane5.mdl");
                     }
                     else
                     {
                         
-                        if(self.style == 6.000)
+                        if(self.style == 6)
                         {
                             setmodel(self, "progs/helo1.mdl");
                         }
@@ -206,7 +206,7 @@ void () monster_dummycraft =
     
     if(!self.health)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     self.takedamage = DAMAGE_AIM;

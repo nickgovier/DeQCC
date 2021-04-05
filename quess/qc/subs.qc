@@ -48,12 +48,12 @@ float en_passant_flag;
 .string last_message;
 .entity pointer;
 .entity last_moved;
-float CF_SELECTED_PIECE = 4.000;
-float CF_HAS_MOVED = 8.000;
-float CF_CHECK_NOTIFY = 16.000;
-float CF_TIME_NOTIFY = 32.000;
-float LASERTARG_ON = 1.000;
-float SVC_SETVIEWANGLES = 10.000;
+float CF_SELECTED_PIECE = 4;
+float CF_HAS_MOVED = 8;
+float CF_CHECK_NOTIFY = 16;
+float CF_TIME_NOTIFY = 32;
+float LASERTARG_ON = 1;
+float SVC_SETVIEWANGLES = 10;
 float () TwoPlayersInGame;
 void () FindSelection;
 void () CameraPos;
@@ -172,7 +172,7 @@ void () InitTrigger =
     self.solid = SOLID_TRIGGER;
     setmodel(self, self.model);
     self.movetype = MOVETYPE_NONE;
-    self.modelindex = 0.000;
+    self.modelindex = 0;
     self.model = "";
 };
 
@@ -261,7 +261,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     if(tdest == self.origin)
     {
         self.velocity = '0.000 0.000 0.000';
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
         return;
     }
     
@@ -269,15 +269,15 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     len = vlen(vdestdelta);
     traveltime = len / tspeed;
     
-    if(traveltime < 0.100)
+    if(traveltime < 0.1)
     {
         self.velocity = '0.000 0.000 0.000';
-        self.nextthink = self.ltime + 0.100;
+        self.nextthink = self.ltime + 0.1;
         return;
     }
     
     self.nextthink = self.ltime + traveltime;
-    self.velocity = vdestdelta * (1.000 / traveltime);
+    self.velocity = vdestdelta * (1 / traveltime);
 };
 
 // SUB_CalcMoveDone
@@ -299,7 +299,7 @@ void () SUB_CalcMoveDone =
 {
     setorigin(self, self.finaldest);
     self.velocity = '0.000 0.000 0.000';
-    self.nextthink = -1.000;
+    self.nextthink = -1;
     
     if(self.think1)
     {
@@ -371,7 +371,7 @@ void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
     len = vlen(destdelta);
     traveltime = len / tspeed;
     self.nextthink = self.ltime + traveltime;
-    self.avelocity = destdelta * (1.000 / traveltime);
+    self.avelocity = destdelta * (1 / traveltime);
     self.think1 = func;
     self.finalangle = destangle;
     self.think = SUB_CalcAngleMoveDone;
@@ -395,7 +395,7 @@ void () SUB_CalcAngleMoveDone =
 {
     self.angles = self.finalangle;
     self.avelocity = '0.000 0.000 0.000';
-    self.nextthink = -1.000;
+    self.nextthink = -1;
     
     if(self.think1)
     {
@@ -535,7 +535,7 @@ void () SUB_UseTargets =
         
         if(!self.noise)
         {
-            sound(activator, CHAN_VOICE, "misc/talk.wav", 1.000, ATTN_NORM);
+            sound(activator, CHAN_VOICE, "misc/talk.wav", 1, ATTN_NORM);
         }
         
     }
@@ -554,7 +554,7 @@ void () SUB_UseTargets =
             }
             
             remove(t);
-        } while (1.000);
+        } while (1);
     }
     
     
@@ -589,7 +589,7 @@ void () SUB_UseTargets =
             self = stemp;
             other = otemp;
             activator = act;
-        } while (1.000);
+        } while (1);
     }
     
 };
@@ -606,9 +606,9 @@ void () SUB_UseTargets =
 // OP_DONE	0	0	0
 void (float normal) SUB_AttackFinished = 
 {
-    self.cnt = 0.000;
+    self.cnt = 0;
     
-    if(skill != 3.000)
+    if(skill != 3)
     {
         self.attack_finished = time + normal;
     }
@@ -639,13 +639,13 @@ float (entity targ) visible;
 void (void() thinkst) SUB_CheckRefire = 
 {
     
-    if(skill != 3.000)
+    if(skill != 3)
     {
         return;
     }
     
     
-    if(self.cnt == 1.000)
+    if(self.cnt == 1)
     {
         return;
     }
@@ -656,7 +656,7 @@ void (void() thinkst) SUB_CheckRefire =
         return;
     }
     
-    self.cnt = 1.000;
+    self.cnt = 1;
     self.think = thinkst;
 };
 

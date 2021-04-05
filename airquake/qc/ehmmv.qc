@@ -104,66 +104,66 @@
 void () ehmmv_sound = 
 {
     local float tmp;
-    tmp = fabs(self.speed) * 0.050;
+    tmp = fabs(self.speed) * 0.05;
     tmp = floor(tmp);
     
-    if(tmp > 8.000)
+    if(tmp > 8)
     {
-        tmp = 8.000;
+        tmp = 8;
     }
     
     
     if((time > self.fly_sound) || (self.impulse != tmp))
     {
-        if(tmp == 0.000)
+        if(tmp == 0)
         {
-            sound(self, CHAN_BODY, "engines/car0.wav", 0.200, ATTN_NORM);
+            sound(self, CHAN_BODY, "engines/car0.wav", 0.2, ATTN_NORM);
         }
         else
         {
-            if(tmp == 1.000)
+            if(tmp == 1)
             {
-                sound(self, CHAN_BODY, "engines/car1.wav", 0.300, ATTN_NORM);
+                sound(self, CHAN_BODY, "engines/car1.wav", 0.3, ATTN_NORM);
             }
             else
             {
-                if(tmp == 2.000)
+                if(tmp == 2)
                 {
-                    sound(self, CHAN_BODY, "engines/car2.wav", 0.400, ATTN_NORM);
+                    sound(self, CHAN_BODY, "engines/car2.wav", 0.4, ATTN_NORM);
                 }
                 else
                 {
-                    if(tmp == 3.000)
+                    if(tmp == 3)
                     {
-                        sound(self, CHAN_BODY, "engines/car3.wav", 0.500, ATTN_NORM);
+                        sound(self, CHAN_BODY, "engines/car3.wav", 0.5, ATTN_NORM);
                     }
                     else
                     {
-                        if(tmp == 4.000)
+                        if(tmp == 4)
                         {
-                            sound(self, CHAN_BODY, "engines/car4.wav", 0.600, ATTN_NORM);
+                            sound(self, CHAN_BODY, "engines/car4.wav", 0.6, ATTN_NORM);
                         }
                         else
                         {
-                            if(tmp == 5.000)
+                            if(tmp == 5)
                             {
-                                sound(self, CHAN_BODY, "engines/car5.wav", 0.700, ATTN_NORM);
+                                sound(self, CHAN_BODY, "engines/car5.wav", 0.7, ATTN_NORM);
                             }
                             else
                             {
-                                if(tmp == 6.000)
+                                if(tmp == 6)
                                 {
-                                    sound(self, CHAN_BODY, "engines/car6.wav", 0.800, ATTN_NORM);
+                                    sound(self, CHAN_BODY, "engines/car6.wav", 0.8, ATTN_NORM);
                                 }
                                 else
                                 {
-                                    if(tmp == 7.000)
+                                    if(tmp == 7)
                                     {
-                                        sound(self, CHAN_BODY, "engines/car7.wav", 0.900, ATTN_NORM);
+                                        sound(self, CHAN_BODY, "engines/car7.wav", 0.9, ATTN_NORM);
                                     }
                                     else
                                     {
-                                        sound(self, CHAN_BODY, "engines/car8.wav", 1.000, ATTN_NORM);
+                                        sound(self, CHAN_BODY, "engines/car8.wav", 1, ATTN_NORM);
                                     }
                                     
                                 }
@@ -180,7 +180,7 @@ void () ehmmv_sound =
             
         }
         
-        self.fly_sound = time + 1.000;
+        self.fly_sound = time + 1;
         self.impulse = tmp;
     }
     
@@ -231,30 +231,30 @@ void () ehmmv_stand =
 {
     ehmmv_sound();
     
-    if(self.speed > 0.000)
+    if(self.speed > 0)
     {
-        self.speed = self.speed - 5.000;
+        self.speed = self.speed - 5;
         
-        if(self.speed < 0.000)
+        if(self.speed < 0)
         {
-            self.speed = 0.000;
+            self.speed = 0;
         }
         
     }
     
-    walkmove(self.angles_y, self.speed * 0.100);
+    walkmove(self.angles_y, self.speed * 0.1);
     tilt_etank();
-    turn_eturret(self.angles, 100.000);
+    turn_eturret(self.angles, 100);
     
     if(FindTarget())
     {
         self.think = self.th_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = ehmmv_stand;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // ehmmv_walk
@@ -380,7 +380,7 @@ void () ehmmv_walk =
     if(FindTarget())
     {
         self.think = self.th_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -389,48 +389,48 @@ void () ehmmv_walk =
     if(!self.movetarget)
     {
         self.think = ehmmv_stand;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
-    if(fabs(0.000) > 10.000)
+    if(fabs(0) > 10)
     {
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            self.angles_y = anglemod(self.angles_y - 10.000);
+            self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            self.angles_y = anglemod(self.angles_y + 10.000);
+            self.angles_y = anglemod(self.angles_y + 10);
         }
         
     }
     else
     {
-        self.angles_y = 0.000;
+        self.angles_y = 0;
     }
     
-    if(fabs(0.000) < 45.000)
+    if(fabs(0) < 45)
     {
         
-        if(self.speed < 160.000)
+        if(self.speed < 160)
         {
-            self.speed = self.speed + 5.000;
+            self.speed = self.speed + 5;
             
-            if(self.speed > 160.000)
+            if(self.speed > 160)
             {
-                self.speed = 160.000;
+                self.speed = 160;
             }
             
         }
@@ -439,25 +439,25 @@ void () ehmmv_walk =
     else
     {
         
-        if(self.speed > 0.000)
+        if(self.speed > 0)
         {
-            self.speed = self.speed - 5.000;
+            self.speed = self.speed - 5;
             
-            if(self.speed < 0.000)
+            if(self.speed < 0)
             {
-                self.speed = 0.000;
+                self.speed = 0;
             }
             
         }
         
     }
     
-    walkmove(self.angles_y, self.speed * 0.100);
+    walkmove(self.angles_y, self.speed * 0.1);
     tilt_etank();
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    turn_eturret(v0, 100.000);
+    turn_eturret(v0, 100);
     self.think = ehmmv_walk;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // ehmmv_run
@@ -715,7 +715,7 @@ void () ehmmv_run =
     FindTarget();
     ehmmv_sound();
     
-    if((self.enemy.health < 1.000) || (self.enemy.takedamage < 1.000))
+    if((self.enemy.health < 1) || (self.enemy.takedamage < 1))
     {
         self.enemy = world;
     }
@@ -726,57 +726,57 @@ void () ehmmv_run =
     }
     else
     {
-        self.search_time = time + 30.000;
+        self.search_time = time + 30;
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
-    if(fabs(0.000) > 10.000)
+    if(fabs(0) > 10)
     {
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            self.angles_y = anglemod(self.angles_y - 10.000);
+            self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            self.angles_y = anglemod(self.angles_y + 10.000);
+            self.angles_y = anglemod(self.angles_y + 10);
         }
         
     }
     else
     {
-        self.angles_y = 0.000;
+        self.angles_y = 0;
     }
     
-    if(fabs(0.000) < 45.000)
+    if(fabs(0) < 45)
     {
-        tmp = 160.000;
+        tmp = 160;
         dist = vlen(self.movetarget.origin - self.origin);
         
-        if(dist < 256.000)
+        if(dist < 256)
         {
-            tmp = 80.000;
+            tmp = 80;
         }
         
     }
     else
     {
-        tmp = 0.000;
+        tmp = 0;
     }
     
     
     if(self.speed < tmp)
     {
-        self.speed = self.speed + 15.000;
+        self.speed = self.speed + 15;
         
         if(self.speed > tmp)
         {
@@ -788,7 +788,7 @@ void () ehmmv_run =
     
     if(self.speed > tmp)
     {
-        self.speed = self.speed - 15.000;
+        self.speed = self.speed - 15;
         
         if(self.speed < tmp)
         {
@@ -797,30 +797,30 @@ void () ehmmv_run =
         
     }
     
-    walkmove(self.angles_y, self.speed * 0.100);
+    walkmove(self.angles_y, self.speed * 0.1);
     tilt_etank();
     
     if(self.enemy == world)
     {
         self.think = self.th_walk;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     dist = vlen(self.enemy.origin - self.origin);
-    if((dist < 1800.000) && (self.ammo_rockets > 0.000))
+    if((dist < 1800) && (self.ammo_rockets > 0))
     {
-        self.attack_state = 2.000;
+        self.attack_state = 2;
     }
     else
     {
-        if(dist < 800.000)
+        if(dist < 800)
         {
-            self.attack_state = 1.000;
+            self.attack_state = 1;
         }
         else
         {
-            self.attack_state = 0.000;
+            self.attack_state = 0;
         }
         
     }
@@ -829,25 +829,25 @@ void () ehmmv_run =
     v0 = vectoangles(v1 - self.origin);
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0.000 - 0.000;
-    turn_eturret(v0, 100.000);
+    v2_z = 0 - 0;
+    turn_eturret(v0, 100);
     v1 = self.tur2.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     
-    if((self.attack_finished < time) && (self.attack_state > 0.000))
+    if((self.attack_finished < time) && (self.attack_state > 0))
     {
-        traceline(self.origin, self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500), FALSE, self);
+        traceline(self.origin, self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5), FALSE, self);
         
         if(trace_ent == self.enemy)
         {
             makevectors(v1);
-            if(self.attack_state == 1.000)
+            if(self.attack_state == 1)
             {
                 
-                if((v_forward * v2) > 0.970)
+                if((v_forward * v2) > 0.97)
                 {
-                    AC_spike(self.origin + (v_forward * 10.000), v_forward, self.enemy);
-                    self.attack_finished = time + 0.100;
+                    AC_spike(self.origin + (v_forward * 10), v_forward, self.enemy);
+                    self.attack_finished = time + 0.1;
                     self.effects = self.effects | EF_MUZZLEFLASH;
                 }
                 
@@ -855,11 +855,11 @@ void () ehmmv_run =
             else
             {
                 
-                if((v_forward * v2) > 0.950)
+                if((v_forward * v2) > 0.95)
                 {
-                    AC_stinger(self.origin + (v_forward * 10.000), v_forward, self.enemy);
-                    self.attack_finished = time + 1.500;
-                    self.ammo_rockets = self.ammo_rockets - 1.000;
+                    AC_stinger(self.origin + (v_forward * 10), v_forward, self.enemy);
+                    self.attack_finished = time + 1.5;
+                    self.ammo_rockets = self.ammo_rockets - 1;
                     self.effects = self.effects | EF_MUZZLEFLASH;
                 }
                 
@@ -870,7 +870,7 @@ void () ehmmv_run =
     }
     
     self.think = ehmmv_run;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // ehmmv_start
@@ -957,7 +957,7 @@ void () ehmmv_run =
 void () ehmmv_start = 
 {
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -990,7 +990,7 @@ void () ehmmv_start =
         self.think = self.th_stand;
     }
     
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // monster_ehmmv
@@ -1067,7 +1067,7 @@ void () monster_ehmmv =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     setmodel(self, "progs/humba.mdl");
@@ -1076,17 +1076,17 @@ void () monster_ehmmv =
     
     if(!self.health)
     {
-        self.health = 150.000;
+        self.health = 150;
     }
     
     self.netname = "an Armoured Car";
-    if((self.team == 0.000) || ((self.team != 1.000) && (deathmatch == 0.000)))
+    if((self.team == 0) || ((self.team != 1) && (deathmatch == 0)))
     {
         self.ts = T0;
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -1100,7 +1100,7 @@ void () monster_ehmmv =
     
     if(!self.ammo_rockets)
     {
-        self.ammo_rockets = 8.000;
+        self.ammo_rockets = 8;
     }
     
     self.th_die = etank_die;
@@ -1108,6 +1108,6 @@ void () monster_ehmmv =
     self.th_walk = ehmmv_walk;
     self.th_run = ehmmv_run;
     self.think = ehmmv_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

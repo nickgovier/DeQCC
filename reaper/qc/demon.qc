@@ -4,7 +4,7 @@ void () Demon_JumpTouch;
 // OP_STATE	213	8400	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand1 = [0.000, demon1_stand2]
+void () demon1_stand1 = [0, demon1_stand2]
 {
     ai_stand();
 };
@@ -14,7 +14,7 @@ void () demon1_stand1 = [0.000, demon1_stand2]
 // OP_STATE	214	8401	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand2 = [1.000, demon1_stand3]
+void () demon1_stand2 = [1, demon1_stand3]
 {
     ai_stand();
 };
@@ -24,7 +24,7 @@ void () demon1_stand2 = [1.000, demon1_stand3]
 // OP_STATE	216	8402	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand3 = [2.000, demon1_stand4]
+void () demon1_stand3 = [2, demon1_stand4]
 {
     ai_stand();
 };
@@ -34,7 +34,7 @@ void () demon1_stand3 = [2.000, demon1_stand4]
 // OP_STATE	228	8403	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand4 = [3.000, demon1_stand5]
+void () demon1_stand4 = [3, demon1_stand5]
 {
     ai_stand();
 };
@@ -44,7 +44,7 @@ void () demon1_stand4 = [3.000, demon1_stand5]
 // OP_STATE	229	8404	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand5 = [4.000, demon1_stand6]
+void () demon1_stand5 = [4, demon1_stand6]
 {
     ai_stand();
 };
@@ -54,7 +54,7 @@ void () demon1_stand5 = [4.000, demon1_stand6]
 // OP_STATE	230	8405	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand6 = [5.000, demon1_stand7]
+void () demon1_stand6 = [5, demon1_stand7]
 {
     ai_stand();
 };
@@ -64,7 +64,7 @@ void () demon1_stand6 = [5.000, demon1_stand7]
 // OP_STATE	231	8406	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand7 = [6.000, demon1_stand8]
+void () demon1_stand7 = [6, demon1_stand8]
 {
     ai_stand();
 };
@@ -74,7 +74,7 @@ void () demon1_stand7 = [6.000, demon1_stand8]
 // OP_STATE	232	8407	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand8 = [7.000, demon1_stand9]
+void () demon1_stand8 = [7, demon1_stand9]
 {
     ai_stand();
 };
@@ -84,7 +84,7 @@ void () demon1_stand8 = [7.000, demon1_stand9]
 // OP_STATE	217	8408	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand9 = [8.000, demon1_stand10]
+void () demon1_stand9 = [8, demon1_stand10]
 {
     ai_stand();
 };
@@ -94,7 +94,7 @@ void () demon1_stand9 = [8.000, demon1_stand10]
 // OP_STATE	234	8409	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand10 = [9.000, demon1_stand11]
+void () demon1_stand10 = [9, demon1_stand11]
 {
     ai_stand();
 };
@@ -104,7 +104,7 @@ void () demon1_stand10 = [9.000, demon1_stand11]
 // OP_STATE	235	8410	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand11 = [10.000, demon1_stand12]
+void () demon1_stand11 = [10, demon1_stand12]
 {
     ai_stand();
 };
@@ -114,7 +114,7 @@ void () demon1_stand11 = [10.000, demon1_stand12]
 // OP_STATE	236	8411	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand12 = [11.000, demon1_stand13]
+void () demon1_stand12 = [11, demon1_stand13]
 {
     ai_stand();
 };
@@ -124,7 +124,7 @@ void () demon1_stand12 = [11.000, demon1_stand13]
 // OP_STATE	2717	8399	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () demon1_stand13 = [12.000, demon1_stand1]
+void () demon1_stand13 = [12, demon1_stand1]
 {
     ai_stand();
 };
@@ -144,10 +144,10 @@ void () demon1_stand13 = [12.000, demon1_stand1]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk1 = [13.000, demon1_walk2]
+void () demon1_walk1 = [13, demon1_walk2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "demon/idle1.wav", TRUE, ATTN_IDLE);
     }
@@ -161,7 +161,7 @@ void () demon1_walk1 = [13.000, demon1_walk2]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk2 = [14.000, demon1_walk3]
+void () demon1_walk2 = [14, demon1_walk3]
 {
     ai_walk(MOVETYPE_TOSS);
 };
@@ -172,7 +172,7 @@ void () demon1_walk2 = [14.000, demon1_walk3]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk3 = [15.000, demon1_walk4]
+void () demon1_walk3 = [15, demon1_walk4]
 {
     ai_walk(MOVETYPE_TOSS);
 };
@@ -183,7 +183,7 @@ void () demon1_walk3 = [15.000, demon1_walk4]
 // OP_STORE_V	232	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk4 = [16.000, demon1_walk5]
+void () demon1_walk4 = [16, demon1_walk5]
 {
     ai_walk(MOVETYPE_PUSH);
 };
@@ -194,7 +194,7 @@ void () demon1_walk4 = [16.000, demon1_walk5]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk5 = [17.000, demon1_walk6]
+void () demon1_walk5 = [17, demon1_walk6]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -205,7 +205,7 @@ void () demon1_walk5 = [17.000, demon1_walk6]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk6 = [18.000, demon1_walk7]
+void () demon1_walk6 = [18, demon1_walk7]
 {
     ai_walk(MOVETYPE_TOSS);
 };
@@ -216,7 +216,7 @@ void () demon1_walk6 = [18.000, demon1_walk7]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk7 = [19.000, demon1_walk8]
+void () demon1_walk7 = [19, demon1_walk8]
 {
     ai_walk(MOVETYPE_BOUNCE);
 };
@@ -227,7 +227,7 @@ void () demon1_walk7 = [19.000, demon1_walk8]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () demon1_walk8 = [20.000, demon1_walk1]
+void () demon1_walk8 = [20, demon1_walk1]
 {
     ai_walk(MOVETYPE_BOUNCE);
 };
@@ -247,10 +247,10 @@ void () demon1_walk8 = [20.000, demon1_walk1]
 // OP_STORE_V	576	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run1 = [21.000, demon1_run2]
+void () demon1_run1 = [21, demon1_run2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "demon/idle1.wav", TRUE, ATTN_IDLE);
     }
@@ -264,9 +264,9 @@ void () demon1_run1 = [21.000, demon1_run2]
 // OP_STORE_V	2246	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run2 = [22.000, demon1_run3]
+void () demon1_run2 = [22, demon1_run3]
 {
-    ai_run(15.000);
+    ai_run(15);
 };
 
 // demon1_run3
@@ -275,9 +275,9 @@ void () demon1_run2 = [22.000, demon1_run3]
 // OP_STORE_V	5683	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run3 = [23.000, demon1_run4]
+void () demon1_run3 = [23, demon1_run4]
 {
-    ai_run(36.000);
+    ai_run(36);
 };
 
 // demon1_run4
@@ -286,7 +286,7 @@ void () demon1_run3 = [23.000, demon1_run4]
 // OP_STORE_V	576	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run4 = [24.000, demon1_run5]
+void () demon1_run4 = [24, demon1_run5]
 {
     ai_run(KINDA_WANT);
 };
@@ -297,9 +297,9 @@ void () demon1_run4 = [24.000, demon1_run5]
 // OP_STORE_V	2246	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run5 = [25.000, demon1_run6]
+void () demon1_run5 = [25, demon1_run6]
 {
-    ai_run(15.000);
+    ai_run(15);
 };
 
 // demon1_run6
@@ -308,9 +308,9 @@ void () demon1_run5 = [25.000, demon1_run6]
 // OP_STORE_V	5683	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () demon1_run6 = [26.000, demon1_run1]
+void () demon1_run6 = [26, demon1_run1]
 {
-    ai_run(36.000);
+    ai_run(36);
 };
 
 // demon1_jump1
@@ -318,7 +318,7 @@ void () demon1_run6 = [26.000, demon1_run1]
 // OP_STATE	302	8435	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () demon1_jump1 = [27.000, demon1_jump2]
+void () demon1_jump1 = [27, demon1_jump2]
 {
     ai_face();
 };
@@ -328,7 +328,7 @@ void () demon1_jump1 = [27.000, demon1_jump2]
 // OP_STATE	303	8436	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () demon1_jump2 = [28.000, demon1_jump3]
+void () demon1_jump2 = [28, demon1_jump3]
 {
     ai_face();
 };
@@ -338,7 +338,7 @@ void () demon1_jump2 = [28.000, demon1_jump3]
 // OP_STATE	5692	8437	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () demon1_jump3 = [29.000, demon1_jump4]
+void () demon1_jump3 = [29, demon1_jump4]
 {
     ai_face();
 };
@@ -368,7 +368,7 @@ void () demon1_jump3 = [29.000, demon1_jump4]
 // OP_SUB_F	8461	223	8462
 // OP_STOREP_F	8462	8460	0
 // OP_DONE	0	0	0
-void () demon1_jump4 = [30.000, demon1_jump5]
+void () demon1_jump4 = [30, demon1_jump5]
 {
     ai_face();
     self.touch = Demon_JumpTouch;
@@ -387,7 +387,7 @@ void () demon1_jump4 = [30.000, demon1_jump5]
 // function begins at statement 13130, parm_start=8463
 // OP_STATE	305	8463	0
 // OP_DONE	0	0	0
-void () demon1_jump5 = [31.000, demon1_jump6]
+void () demon1_jump5 = [31, demon1_jump6]
 {
 };
 
@@ -395,7 +395,7 @@ void () demon1_jump5 = [31.000, demon1_jump6]
 // function begins at statement 13132, parm_start=8464
 // OP_STATE	219	8464	0
 // OP_DONE	0	0	0
-void () demon1_jump6 = [32.000, demon1_jump7]
+void () demon1_jump6 = [32, demon1_jump7]
 {
 };
 
@@ -403,7 +403,7 @@ void () demon1_jump6 = [32.000, demon1_jump7]
 // function begins at statement 13134, parm_start=8465
 // OP_STATE	307	8465	0
 // OP_DONE	0	0	0
-void () demon1_jump7 = [33.000, demon1_jump8]
+void () demon1_jump7 = [33, demon1_jump8]
 {
 };
 
@@ -411,7 +411,7 @@ void () demon1_jump7 = [33.000, demon1_jump8]
 // function begins at statement 13136, parm_start=8466
 // OP_STATE	5699	8466	0
 // OP_DONE	0	0	0
-void () demon1_jump8 = [34.000, demon1_jump9]
+void () demon1_jump8 = [34, demon1_jump9]
 {
 };
 
@@ -419,7 +419,7 @@ void () demon1_jump8 = [34.000, demon1_jump9]
 // function begins at statement 13138, parm_start=8467
 // OP_STATE	575	8467	0
 // OP_DONE	0	0	0
-void () demon1_jump9 = [35.000, demon1_jump10]
+void () demon1_jump9 = [35, demon1_jump10]
 {
 };
 
@@ -430,7 +430,7 @@ void () demon1_jump9 = [35.000, demon1_jump10]
 // OP_ADD_F	31	228	8469
 // OP_STOREP_F	8469	8468	0
 // OP_DONE	0	0	0
-void () demon1_jump10 = [36.000, demon1_jump1]
+void () demon1_jump10 = [36, demon1_jump1]
 {
     self.nextthink = time + MOVETYPE_WALK;
 };
@@ -439,7 +439,7 @@ void () demon1_jump10 = [36.000, demon1_jump1]
 // function begins at statement 13145, parm_start=8471
 // OP_STATE	5685	8471	0
 // OP_DONE	0	0	0
-void () demon1_jump11 = [37.000, demon1_jump12]
+void () demon1_jump11 = [37, demon1_jump12]
 {
 };
 
@@ -447,7 +447,7 @@ void () demon1_jump11 = [37.000, demon1_jump12]
 // function begins at statement 13147, parm_start=8472
 // OP_STATE	5687	8424	0
 // OP_DONE	0	0	0
-void () demon1_jump12 = [38.000, demon1_run1]
+void () demon1_jump12 = [38, demon1_run1]
 {
 };
 
@@ -457,7 +457,7 @@ void () demon1_jump12 = [38.000, demon1_run1]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta1 = [54.000, demon1_atta2]
+void () demon1_atta1 = [54, demon1_atta2]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -468,7 +468,7 @@ void () demon1_atta1 = [54.000, demon1_atta2]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta2 = [55.000, demon1_atta3]
+void () demon1_atta2 = [55, demon1_atta3]
 {
     ai_charge(FALSE);
 };
@@ -479,7 +479,7 @@ void () demon1_atta2 = [55.000, demon1_atta3]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta3 = [56.000, demon1_atta4]
+void () demon1_atta3 = [56, demon1_atta4]
 {
     ai_charge(FALSE);
 };
@@ -490,7 +490,7 @@ void () demon1_atta3 = [56.000, demon1_atta4]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta4 = [57.000, demon1_atta5]
+void () demon1_atta4 = [57, demon1_atta5]
 {
     ai_charge(TRUE);
 };
@@ -503,10 +503,10 @@ void () demon1_atta4 = [57.000, demon1_atta5]
 // OP_STORE_V	2356	4	0
 // OP_CALL1	1146	0	0
 // OP_DONE	0	0	0
-void () demon1_atta5 = [58.000, demon1_atta6]
+void () demon1_atta5 = [58, demon1_atta6]
 {
     ai_charge(FL_SWIM);
-    Demon_Melee(200.000);
+    Demon_Melee(200);
 };
 
 // demon1_atta6
@@ -515,7 +515,7 @@ void () demon1_atta5 = [58.000, demon1_atta6]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta6 = [59.000, demon1_atta7]
+void () demon1_atta6 = [59, demon1_atta7]
 {
     ai_charge(TRUE);
 };
@@ -526,7 +526,7 @@ void () demon1_atta6 = [59.000, demon1_atta7]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta7 = [60.000, demon1_atta8]
+void () demon1_atta7 = [60, demon1_atta8]
 {
     ai_charge(MOVETYPE_TOSS);
 };
@@ -537,7 +537,7 @@ void () demon1_atta7 = [60.000, demon1_atta8]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta8 = [61.000, demon1_atta9]
+void () demon1_atta8 = [61, demon1_atta9]
 {
     ai_charge(FL_CLIENT);
 };
@@ -548,7 +548,7 @@ void () demon1_atta8 = [61.000, demon1_atta9]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta9 = [62.000, demon1_atta10]
+void () demon1_atta9 = [62, demon1_atta10]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -559,7 +559,7 @@ void () demon1_atta9 = [62.000, demon1_atta10]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta10 = [63.000, demon1_atta11]
+void () demon1_atta10 = [63, demon1_atta11]
 {
     ai_charge(FL_SWIM);
 };
@@ -570,9 +570,9 @@ void () demon1_atta10 = [63.000, demon1_atta11]
 // OP_STORE_V	5793	4	0
 // OP_CALL1	1146	0	0
 // OP_DONE	0	0	0
-void () demon1_atta11 = [64.000, demon1_atta12]
+void () demon1_atta11 = [64, demon1_atta12]
 {
-    Demon_Melee(-200.000);
+    Demon_Melee(-200);
 };
 
 // demon1_atta12
@@ -581,7 +581,7 @@ void () demon1_atta11 = [64.000, demon1_atta12]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta12 = [65.000, demon1_atta13]
+void () demon1_atta12 = [65, demon1_atta13]
 {
     ai_charge(MOVETYPE_FLY);
 };
@@ -592,7 +592,7 @@ void () demon1_atta12 = [65.000, demon1_atta13]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta13 = [66.000, demon1_atta14]
+void () demon1_atta13 = [66, demon1_atta14]
 {
     ai_charge(FL_CLIENT);
 };
@@ -603,7 +603,7 @@ void () demon1_atta13 = [66.000, demon1_atta14]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta14 = [67.000, demon1_atta15]
+void () demon1_atta14 = [67, demon1_atta15]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -614,7 +614,7 @@ void () demon1_atta14 = [67.000, demon1_atta15]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () demon1_atta15 = [68.000, demon1_run1]
+void () demon1_atta15 = [68, demon1_run1]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -623,7 +623,7 @@ void () demon1_atta15 = [68.000, demon1_run1]
 // function begins at statement 13211, parm_start=8488
 // OP_STATE	5689	8488	0
 // OP_DONE	0	0	0
-void () demon1_pain1 = [39.000, demon1_pain2]
+void () demon1_pain1 = [39, demon1_pain2]
 {
 };
 
@@ -631,7 +631,7 @@ void () demon1_pain1 = [39.000, demon1_pain2]
 // function begins at statement 13213, parm_start=8489
 // OP_STATE	2101	8489	0
 // OP_DONE	0	0	0
-void () demon1_pain2 = [40.000, demon1_pain3]
+void () demon1_pain2 = [40, demon1_pain3]
 {
 };
 
@@ -639,7 +639,7 @@ void () demon1_pain2 = [40.000, demon1_pain3]
 // function begins at statement 13215, parm_start=8490
 // OP_STATE	6042	8490	0
 // OP_DONE	0	0	0
-void () demon1_pain3 = [41.000, demon1_pain4]
+void () demon1_pain3 = [41, demon1_pain4]
 {
 };
 
@@ -647,7 +647,7 @@ void () demon1_pain3 = [41.000, demon1_pain4]
 // function begins at statement 13217, parm_start=8491
 // OP_STATE	6044	8491	0
 // OP_DONE	0	0	0
-void () demon1_pain4 = [42.000, demon1_pain5]
+void () demon1_pain4 = [42, demon1_pain5]
 {
 };
 
@@ -655,7 +655,7 @@ void () demon1_pain4 = [42.000, demon1_pain5]
 // function begins at statement 13219, parm_start=8492
 // OP_STATE	6046	8492	0
 // OP_DONE	0	0	0
-void () demon1_pain5 = [43.000, demon1_pain6]
+void () demon1_pain5 = [43, demon1_pain6]
 {
 };
 
@@ -663,7 +663,7 @@ void () demon1_pain5 = [43.000, demon1_pain6]
 // function begins at statement 13221, parm_start=8493
 // OP_STATE	6048	8424	0
 // OP_DONE	0	0	0
-void () demon1_pain6 = [44.000, demon1_run1]
+void () demon1_pain6 = [44, demon1_run1]
 {
 };
 
@@ -710,7 +710,7 @@ void (entity attacker, float damage) demon1_pain =
     self.pain_finished = time + TRUE;
     sound(self, CHAN_VOICE, "demon/dpain1.wav", TRUE, ATTN_NORM);
     
-    if((random() * 200.000) > damage)
+    if((random() * 200) > damage)
     {
         return;
     }
@@ -728,7 +728,7 @@ void (entity attacker, float damage) demon1_pain =
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () demon1_die1 = [45.000, demon1_die2]
+void () demon1_die1 = [45, demon1_die2]
 {
     sound(self, CHAN_VOICE, "demon/ddeath.wav", TRUE, ATTN_NORM);
 };
@@ -737,7 +737,7 @@ void () demon1_die1 = [45.000, demon1_die2]
 // function begins at statement 13255, parm_start=8508
 // OP_STATE	6051	8508	0
 // OP_DONE	0	0	0
-void () demon1_die2 = [46.000, demon1_die3]
+void () demon1_die2 = [46, demon1_die3]
 {
 };
 
@@ -745,7 +745,7 @@ void () demon1_die2 = [46.000, demon1_die3]
 // function begins at statement 13257, parm_start=8509
 // OP_STATE	6053	8509	0
 // OP_DONE	0	0	0
-void () demon1_die3 = [47.000, demon1_die4]
+void () demon1_die3 = [47, demon1_die4]
 {
 };
 
@@ -753,7 +753,7 @@ void () demon1_die3 = [47.000, demon1_die4]
 // function begins at statement 13259, parm_start=8510
 // OP_STATE	6055	8510	0
 // OP_DONE	0	0	0
-void () demon1_die4 = [48.000, demon1_die5]
+void () demon1_die4 = [48, demon1_die5]
 {
 };
 
@@ -761,7 +761,7 @@ void () demon1_die4 = [48.000, demon1_die5]
 // function begins at statement 13261, parm_start=8511
 // OP_STATE	6057	8511	0
 // OP_DONE	0	0	0
-void () demon1_die5 = [49.000, demon1_die6]
+void () demon1_die5 = [49, demon1_die6]
 {
 };
 
@@ -771,7 +771,7 @@ void () demon1_die5 = [49.000, demon1_die6]
 // OP_ADDRESS	28	104	8513
 // OP_STOREP_F	237	8513	0
 // OP_DONE	0	0	0
-void () demon1_die6 = [50.000, demon1_die7]
+void () demon1_die6 = [50, demon1_die7]
 {
     self.solid = SOLID_NOT;
 };
@@ -780,7 +780,7 @@ void () demon1_die6 = [50.000, demon1_die7]
 // function begins at statement 13267, parm_start=8514
 // OP_STATE	5951	8514	0
 // OP_DONE	0	0	0
-void () demon1_die7 = [51.000, demon1_die8]
+void () demon1_die7 = [51, demon1_die8]
 {
 };
 
@@ -788,7 +788,7 @@ void () demon1_die7 = [51.000, demon1_die8]
 // function begins at statement 13269, parm_start=8515
 // OP_STATE	5953	8515	0
 // OP_DONE	0	0	0
-void () demon1_die8 = [52.000, demon1_die9]
+void () demon1_die8 = [52, demon1_die9]
 {
 };
 
@@ -796,7 +796,7 @@ void () demon1_die8 = [52.000, demon1_die9]
 // function begins at statement 13271, parm_start=8516
 // OP_STATE	5955	8515	0
 // OP_DONE	0	0	0
-void () demon1_die9 = [53.000, demon1_die9]
+void () demon1_die9 = [53, demon1_die9]
 {
 };
 
@@ -833,7 +833,7 @@ void () demon1_die9 = [53.000, demon1_die9]
 void () demon_die = 
 {
     
-    if(self.health < -80.000)
+    if(self.health < -80)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowHead("progs/h_demon.mdl", self.health);
@@ -927,7 +927,7 @@ void () monster_demon1 =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/demon.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = 300.000;
+    self.health = 300;
     self.th_stand = demon1_stand1;
     self.th_walk = demon1_walk1;
     self.th_run = demon1_run1;
@@ -1016,13 +1016,13 @@ float () CheckDemonJump =
     local vector dist;
     local float d;
     
-    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.750 * self.enemy.size_z)))
+    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.75 * self.enemy.size_z)))
     {
         return FALSE;
     }
     
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.250 * self.enemy.size_z)))
+    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.25 * self.enemy.size_z)))
     {
         return FALSE;
     }
@@ -1037,10 +1037,10 @@ float () CheckDemonJump =
     }
     
     
-    if(d > 200.000)
+    if(d > 200)
     {
         
-        if(random() < 0.900)
+        if(random() < 0.9)
         {
             return FALSE;
         }
@@ -1147,7 +1147,7 @@ void (float side) Demon_Melee =
     local float ldmg;
     local vector delta;
     ai_face();
-    walkmove(self.ideal_yaw, 12.000);
+    walkmove(self.ideal_yaw, 12);
     delta = self.enemy.origin - self.origin;
     
     if(vlen(delta) > MUST_HAVE)
@@ -1226,9 +1226,9 @@ void () Demon_JumpTouch =
     if(other.takedamage)
     {
         
-        if(vlen(self.velocity) > 400.000)
+        if(vlen(self.velocity) > 400)
         {
-            ldmg = 40.000 + (MOVETYPE_BOUNCE * random());
+            ldmg = 40 + (MOVETYPE_BOUNCE * random());
             T_Damage(other, self, self, ldmg);
         }
         
@@ -1242,7 +1242,7 @@ void () Demon_JumpTouch =
         {
             self.touch = SUB_Null;
             self.think = demon1_jump1;
-            self.nextthink = time + 0.100;
+            self.nextthink = time + 0.1;
         }
         
         return;
@@ -1250,6 +1250,6 @@ void () Demon_JumpTouch =
     
     self.touch = SUB_Null;
     self.think = demon1_jump11;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 

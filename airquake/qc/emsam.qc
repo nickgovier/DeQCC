@@ -303,7 +303,7 @@ void () emsam_run =
     local float tmp;
     etank_sound();
     
-    if((self.goalentity.health < 1.000) || (self.goalentity.takedamage < 1.000))
+    if((self.goalentity.health < 1) || (self.goalentity.takedamage < 1))
     {
         self.goalentity = world;
     }
@@ -317,112 +317,112 @@ void () emsam_run =
     
     if(!self.goalentity)
     {
-        walkmove(self.angles_y, self.speed * 0.100);
-        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100.000);
+        walkmove(self.angles_y, self.speed * 0.1);
+        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100);
         self.think = self.th_walk;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
-    v1 = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.500);
+    v1 = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.5);
     v0 = vectoangles(v1 - self.origin);
     if(visible(self.goalentity) == TRUE)
     {
-        self.lefty = -1.000;
+        self.lefty = -1;
     }
     else
     {
         
         if(self.search_time < time)
         {
-            self.lefty = 1.000 - self.lefty;
-            self.search_time = (time + (random() * 20.000)) + 10.000;
+            self.lefty = 1 - self.lefty;
+            self.search_time = (time + (random() * 20)) + 10;
         }
         
         
-        if(self.lefty < 0.000)
+        if(self.lefty < 0)
         {
-            self.search_time = time + 30.000;
-            if(random() < 0.500)
+            self.search_time = time + 30;
+            if(random() < 0.5)
             {
-                self.lefty = 0.000;
+                self.lefty = 0;
             }
             else
             {
-                self.lefty = 1.000;
+                self.lefty = 1;
             }
             
         }
         
-        if(self.lefty == 0.000)
+        if(self.lefty == 0)
         {
-            tmp = 1.000;
+            tmp = 1;
         }
         else
         {
-            tmp = -1.000;
+            tmp = -1;
         }
         
         if(range(self.goalentity) > RANGE_MELEE)
         {
-            v0_y = 0.000 + (tmp * 70.000);
+            v0_y = 0 + (tmp * 70);
         }
         else
         {
-            v0_y = 0.000 + (tmp * 100.000);
+            v0_y = 0 + (tmp * 100);
         }
         
     }
     
-    makevectors(0.000 * '0.000 1.000 0.000');
-    traceline(self.origin + (v_right * 11.000), (self.origin + (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
+    makevectors(0 * '0.000 1.000 0.000');
+    traceline(self.origin + (v_right * 11), (self.origin + (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = trace_fraction;
-    traceline(self.origin - (v_right * 11.000), (self.origin - (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
+    traceline(self.origin - (v_right * 11), (self.origin - (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = tmp - trace_fraction;
     
     if(tmp)
     {
-        v0_y = 0.000 - (tmp * 90.000);
+        v0_y = 0 - (tmp * 90);
     }
     
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
-    if(fabs(0.000) > 10.000)
+    if(fabs(0) > 10)
     {
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            self.angles_y = anglemod(self.angles_y - 10.000);
+            self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            self.angles_y = anglemod(self.angles_y + 10.000);
+            self.angles_y = anglemod(self.angles_y + 10);
         }
         
     }
     else
     {
-        self.angles_y = 0.000;
+        self.angles_y = 0;
     }
     
-    if((fabs(0.000) < 45.000) && (self.attack_finished < (time - 1.000)))
+    if((fabs(0) < 45) && (self.attack_finished < (time - 1)))
     {
         
-        if(self.speed < 120.000)
+        if(self.speed < 120)
         {
-            self.speed = self.speed + 5.000;
+            self.speed = self.speed + 5;
             
-            if(self.speed > 120.000)
+            if(self.speed > 120)
             {
-                self.speed = 120.000;
+                self.speed = 120;
             }
             
         }
@@ -431,13 +431,13 @@ void () emsam_run =
     else
     {
         
-        if(self.speed > 0.000)
+        if(self.speed > 0)
         {
-            self.speed = self.speed - 5.000;
+            self.speed = self.speed - 5;
             
-            if(self.speed < 0.000)
+            if(self.speed < 0)
             {
-                self.speed = 0.000;
+                self.speed = 0;
             }
             
         }
@@ -445,13 +445,13 @@ void () emsam_run =
     }
     
     
-    if(!(walkmove(self.angles_y, self.speed * 0.100)))
+    if(!(walkmove(self.angles_y, self.speed * 0.1)))
     {
         
-        if((self.lefty >= 0.000) && (self.search_time < (time + 10.000)))
+        if((self.lefty >= 0) && (self.search_time < (time + 10)))
         {
-            self.lefty = 1.000 - self.lefty;
-            self.search_time = (time + 10.000) + (random() * 20.000);
+            self.lefty = 1 - self.lefty;
+            self.search_time = (time + 10) + (random() * 20);
         }
         
     }
@@ -459,20 +459,20 @@ void () emsam_run =
     tilt_etank();
     v1 = orgia(self.goalentity);
     v0 = vectoangles(v1 - self.origin);
-    turn_eturret(v0, 100.000);
+    turn_eturret(v0, 100);
     v1 = self.tur2.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     
     if(self.attack_finished < time)
     {
-        traceline(self.origin, self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.500), FALSE, self);
+        traceline(self.origin, self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.5), FALSE, self);
         
         if(trace_ent == self.goalentity)
         {
             makevectors(v1);
             v0 = normalize(self.goalentity.origin - self.origin);
             
-            if((v_forward * v0) > 0.950)
+            if((v_forward * v0) > 0.95)
             {
                 self.th_missile();
             }
@@ -482,7 +482,7 @@ void () emsam_run =
     }
     
     self.think = emsam_run;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // emsam_shoot
@@ -541,19 +541,19 @@ void () emsam_shoot =
 {
     local vector v0;
     v0 = self.tur2.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    if(self.ammo_rockets > 0.000)
+    if(self.ammo_rockets > 0)
     {
-        AC_heatseeker((self.origin + (v_right * 16.000)) + (v_forward * 10.000), v_forward, self.enemy);
-        self.attack_finished = time + 1.500;
-        self.ammo_rockets = self.ammo_rockets - 1.000;
+        AC_heatseeker((self.origin + (v_right * 16)) + (v_forward * 10), v_forward, self.enemy);
+        self.attack_finished = time + 1.5;
+        self.ammo_rockets = self.ammo_rockets - 1;
         self.effects = self.effects | EF_MUZZLEFLASH;
     }
     else
     {
-        AC_spike((self.origin + (v_right * 16.000)) + (v_forward * 10.000), v_forward, self.enemy);
-        self.attack_finished = time + 0.200;
+        AC_spike((self.origin + (v_right * 16)) + (v_forward * 10), v_forward, self.enemy);
+        self.attack_finished = time + 0.2;
         self.effects = self.effects | EF_MUZZLEFLASH;
     }
     
@@ -631,7 +631,7 @@ void () emsam_shoot =
 void () emsam_start = 
 {
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -661,7 +661,7 @@ void () emsam_start =
         self.think = self.th_stand;
     }
     
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // monster_emsam
@@ -740,7 +740,7 @@ void () monster_emsam =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     setmodel(self, "progs/msamba.mdl");
@@ -749,17 +749,17 @@ void () monster_emsam =
     
     if(!self.health)
     {
-        self.health = 200.000;
+        self.health = 200;
     }
     
     self.netname = "a Tank";
-    if((self.team == 0.000) || ((self.team != 1.000) && (deathmatch == 0.000)))
+    if((self.team == 0) || ((self.team != 1) && (deathmatch == 0)))
     {
         self.ts = T0;
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -773,7 +773,7 @@ void () monster_emsam =
     
     if(!self.ammo_rockets)
     {
-        self.ammo_rockets = 4.000;
+        self.ammo_rockets = 4;
     }
     
     self.th_die = etank_die;
@@ -782,6 +782,6 @@ void () monster_emsam =
     self.th_run = emsam_run;
     self.th_missile = emsam_shoot;
     self.think = emsam_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

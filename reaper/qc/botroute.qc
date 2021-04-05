@@ -527,7 +527,7 @@ float () FindAltPath =
     }
     
     e = findradius(self.origin, SEARCH_RADIUS);
-    bestrng = 1000.000;
+    bestrng = 1000;
     dropPath = TRUE;
     carriedPath = self.movetarget;
     bestPath = carriedPath.movetarget;
@@ -620,7 +620,7 @@ float () FindAPath =
     carriedPath = self.movetarget;
     dropPath = TRUE;
     e = findradius(self.origin, SEARCH_RADIUS);
-    bestrng = 1000.000;
+    bestrng = 1000;
     bestPath = carriedPath.movetarget;
     
     while(e)
@@ -768,7 +768,7 @@ float () CheckDropPath =
     local float OK_HIGH;
     local string tmp;
     
-    if(NUMPATHS > 160.000)
+    if(NUMPATHS > 160)
     {
         return FALSE;
     }
@@ -832,7 +832,7 @@ float () CheckDropPath =
     {
         self.lefty = self.lefty | NODROP;
         
-        if(self.teleport_time > (time + 0.500))
+        if(self.teleport_time > (time + 0.5))
         {
             return FALSE;
         }
@@ -940,9 +940,9 @@ void () DropBotPath =
     if(oldpath.movetarget)
     {
         
-        if(oldpath.origin_z > ((oldpath.movetarget.origin_z + (MAXJUMP * 0.600)) - TRUE))
+        if(oldpath.origin_z > ((oldpath.movetarget.origin_z + (MAXJUMP * 0.6)) - TRUE))
         {
-            drop = ((oldpath.movetarget.origin_z - oldpath.origin_z) + (MAXJUMP * 0.600)) - TRUE;
+            drop = ((oldpath.movetarget.origin_z - oldpath.origin_z) + (MAXJUMP * 0.6)) - TRUE;
             
             if(drop < (self.mins_z + FL_SWIM))
             {
@@ -997,12 +997,12 @@ void (entity node, entity targ, float len, entity item) cacheRouteTarget =
     
     if(targ.pathtype == TELEPORT)
     {
-        rng = 250.000;
+        rng = 250;
     }
     
     rng = (rng + len) + KINDA_WANT;
     RECURSEDEPTH = RECURSEDEPTH + FL_SWIM;
-    if(RECURSEDEPTH < 24.000)
+    if(RECURSEDEPTH < 24)
     {
         cacheRouteMsg(targ, rng, item);
     }

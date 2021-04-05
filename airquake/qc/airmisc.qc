@@ -53,102 +53,102 @@
 float (float n) calcbit = 
 {
     
-    if(n == 0.000)
+    if(n == 0)
     {
-        return 1.000;
+        return 1;
     }
     
     
-    if(n == 1.000)
+    if(n == 1)
     {
-        return 2.000;
+        return 2;
     }
     
     
-    if(n == 2.000)
+    if(n == 2)
     {
-        return 4.000;
+        return 4;
     }
     
     
-    if(n == 3.000)
+    if(n == 3)
     {
-        return 8.000;
+        return 8;
     }
     
     
-    if(n == 4.000)
+    if(n == 4)
     {
-        return 16.000;
+        return 16;
     }
     
     
-    if(n == 5.000)
+    if(n == 5)
     {
-        return 32.000;
+        return 32;
     }
     
     
-    if(n == 6.000)
+    if(n == 6)
     {
-        return 64.000;
+        return 64;
     }
     
     
-    if(n == 7.000)
+    if(n == 7)
     {
-        return 128.000;
+        return 128;
     }
     
     
-    if(n == 8.000)
+    if(n == 8)
     {
-        return 256.000;
+        return 256;
     }
     
     
-    if(n == 9.000)
+    if(n == 9)
     {
-        return 512.000;
+        return 512;
     }
     
     
-    if(n == 10.000)
+    if(n == 10)
     {
-        return 1024.000;
+        return 1024;
     }
     
     
-    if(n == 11.000)
+    if(n == 11)
     {
-        return 2048.000;
+        return 2048;
     }
     
     
-    if(n == 12.000)
+    if(n == 12)
     {
-        return 4096.000;
+        return 4096;
     }
     
     
-    if(n == 13.000)
+    if(n == 13)
     {
-        return 8192.000;
+        return 8192;
     }
     
     
-    if(n == 14.000)
+    if(n == 14)
     {
-        return 16384.000;
+        return 16384;
     }
     
     
-    if(n == 15.000)
+    if(n == 15)
     {
-        return 32768.000;
+        return 32768;
     }
     
-    return 0.000;
+    return 0;
 };
 
 // checkcli
@@ -287,11 +287,11 @@ void (string tstr) change_cc =
     e = find(e, ts, tstr);
     oe = e;
     
-    while(tmp < 50.000)
+    while(tmp < 50)
     {
-        tmp = tmp + 1.000;
+        tmp = tmp + 1;
         
-        if(((e.health > 0.000) && (e.takedamage > 0.000)) && (e.classname != "player"))
+        if(((e.health > 0) && (e.takedamage > 0)) && (e.classname != "player"))
         {
             if(tstr == T0)
             {
@@ -396,8 +396,8 @@ void (string tstr) change_cc =
 float (float n) check_allowed = 
 {
     local float tmp;
-    tmp = calcbit(n - 1.000);
-    if(teamplay == 0.000)
+    tmp = calcbit(n - 1);
+    if(teamplay == 0)
     {
         
         if(allowedcraft & tmp)
@@ -471,32 +471,32 @@ void (float n, float t) add_allowedcraft =
     local float f1;
     local float f2;
     local float f3;
-    if(t == 1.000)
+    if(t == 1)
     {
         allow1 = allow1 | n;
     }
     else
     {
-        if(t == 2.000)
+        if(t == 2)
         {
             allow2 = allow2 | n;
         }
         else
         {
             allowedcraft = allowedcraft | n;
-            tmp = 0.000;
-            f1 = 0.000;
+            tmp = 0;
+            f1 = 0;
             
-            while(tmp < 10.000)
+            while(tmp < 10)
             {
                 f2 = calcbit(tmp);
                 
                 if(allowedcraft & f2)
                 {
-                    f1 = f1 + 1.000;
+                    f1 = f1 + 1;
                 }
                 
-                tmp = tmp + 1.000;
+                tmp = tmp + 1;
             }
             
             numcraft = f1;
@@ -601,7 +601,7 @@ void (entity to, string str) teamprint =
     while(e)
     {
         
-        if((e.ts == to.ts) || ((e.flags & FL_NOTARGET) != 0.000))
+        if((e.ts == to.ts) || ((e.flags & FL_NOTARGET) != 0))
         {
             sprint(e, str);
         }
@@ -725,23 +725,23 @@ vector () place_targetbox =
     local vector v1;
     local vector v2;
     e = self.enemy;
-    v0 = e.trigger_field.origin + ((e.trigger_field.mins + e.trigger_field.maxs) * 0.500);
-    v1 = ((normalize(v0 - self.oldenemy.origin)) * 200.000) + (frametime * e.velocity);
+    v0 = e.trigger_field.origin + ((e.trigger_field.mins + e.trigger_field.maxs) * 0.5);
+    v1 = ((normalize(v0 - self.oldenemy.origin)) * 200) + (frametime * e.velocity);
     traceline(self.oldenemy.origin, self.oldenemy.origin + v1, FALSE, e);
-    v2 = self.oldenemy.origin + (v1 * (trace_fraction - 0.040));
-    if((e.trigger_field.ts == self.ts) && ((teamplay > 0.000) || (deathmatch == 0.000)))
+    v2 = self.oldenemy.origin + (v1 * (trace_fraction - 0.04));
+    if((e.trigger_field.ts == self.ts) && ((teamplay > 0) || (deathmatch == 0)))
     {
-        self.trigger_field.frame = 3.000;
+        self.trigger_field.frame = 3;
     }
     else
     {
-        self.trigger_field.frame = 1.000;
+        self.trigger_field.frame = 1;
     }
     
     
     if(e.trigger_field.owner.classname == "player")
     {
-        e.trigger_field.owner.armortype = e.trigger_field.owner.armortype | 1.000;
+        e.trigger_field.owner.armortype = e.trigger_field.owner.armortype | 1;
     }
     
     return v2;
@@ -761,7 +761,7 @@ vector () place_targetbox =
 vector (entity targ) orgia = 
 {
     local vector v;
-    v = targ.origin + ((targ.mins + targ.mins) * 0.500);
+    v = targ.origin + ((targ.mins + targ.mins) * 0.5);
     return v;
 };
 
@@ -800,13 +800,13 @@ vector (entity targ) orgia =
 // OP_DONE	0	0	0
 void () setup_teament = 
 {
-    if((self.team == 0.000) || ((self.team != 1.000) && (deathmatch == 0.000)))
+    if((self.team == 0) || ((self.team != 1) && (deathmatch == 0)))
     {
         self.ts = T0;
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -824,9 +824,9 @@ void () setup_teament =
         if(!deathmatch)
         {
             
-            if(self.team == 1.000)
+            if(self.team == 1)
             {
-                self.value = 0.000 - self.value;
+                self.value = 0 - self.value;
             }
             
         }
@@ -1143,46 +1143,46 @@ void (float n, entity to) send_voicemsg =
     local entity e;
     local string wave;
     wave = "misc/talk.wav";
-    if((n > 0.000) && (n < 10.000))
+    if((n > 0) && (n < 10))
     {
-        if(n == 1.000)
+        if(n == 1)
         {
             wave = "speech/f2_a.wav";
         }
         else
         {
-            if(n == 2.000)
+            if(n == 2)
             {
                 wave = "speech/f2_b.wav";
             }
             else
             {
-                if(n == 3.000)
+                if(n == 3)
                 {
                     wave = "speech/f2_c.wav";
                 }
                 else
                 {
-                    if(n == 4.000)
+                    if(n == 4)
                     {
                         wave = "speech/f2_d.wav";
                     }
                     else
                     {
-                        if(n == 5.000)
+                        if(n == 5)
                         {
                             wave = "speech/f2_e.wav";
                         }
                         else
                         {
-                            if(n == 6.000)
+                            if(n == 6)
                             {
                                 wave = "speech/f2_f.wav";
                             }
                             else
                             {
                                 
-                                if(n == 7.000)
+                                if(n == 7)
                                 {
                                     wave = "speech/f2_g.wav";
                                 }
@@ -1202,46 +1202,46 @@ void (float n, entity to) send_voicemsg =
     }
     else
     {
-        if((n > 10.000) && (n < 20.000))
+        if((n > 10) && (n < 20))
         {
-            if(n == 11.000)
+            if(n == 11)
             {
                 wave = "speech/f3_a.wav";
             }
             else
             {
-                if(n == 12.000)
+                if(n == 12)
                 {
                     wave = "speech/f3_b.wav";
                 }
                 else
                 {
-                    if(n == 13.000)
+                    if(n == 13)
                     {
                         wave = "speech/f3_c.wav";
                     }
                     else
                     {
-                        if(n == 14.000)
+                        if(n == 14)
                         {
                             wave = "speech/f3_d.wav";
                         }
                         else
                         {
-                            if(n == 15.000)
+                            if(n == 15)
                             {
                                 wave = "speech/f3_e.wav";
                             }
                             else
                             {
-                                if(n == 16.000)
+                                if(n == 16)
                                 {
                                     wave = "speech/f3_f.wav";
                                 }
                                 else
                                 {
                                     
-                                    if(n == 17.000)
+                                    if(n == 17)
                                     {
                                         wave = "speech/f3_g.wav";
                                     }
@@ -1261,46 +1261,46 @@ void (float n, entity to) send_voicemsg =
         }
         else
         {
-            if((n > 20.000) && (n < 30.000))
+            if((n > 20) && (n < 30))
             {
-                if(n == 21.000)
+                if(n == 21)
                 {
                     wave = "speech/f4_a.wav";
                 }
                 else
                 {
-                    if(n == 22.000)
+                    if(n == 22)
                     {
                         wave = "speech/f4_b.wav";
                     }
                     else
                     {
-                        if(n == 23.000)
+                        if(n == 23)
                         {
                             wave = "speech/f4_c.wav";
                         }
                         else
                         {
-                            if(n == 24.000)
+                            if(n == 24)
                             {
                                 wave = "speech/f4_d.wav";
                             }
                             else
                             {
-                                if(n == 25.000)
+                                if(n == 25)
                                 {
                                     wave = "speech/f4_e.wav";
                                 }
                                 else
                                 {
-                                    if(n == 26.000)
+                                    if(n == 26)
                                     {
                                         wave = "speech/f4_f.wav";
                                     }
                                     else
                                     {
                                         
-                                        if(n == 27.000)
+                                        if(n == 27)
                                         {
                                             wave = "speech/f4_g.wav";
                                         }
@@ -1320,46 +1320,46 @@ void (float n, entity to) send_voicemsg =
             }
             else
             {
-                if((n > 30.000) && (n < 40.000))
+                if((n > 30) && (n < 40))
                 {
-                    if(n == 31.000)
+                    if(n == 31)
                     {
                         wave = "speech/f5_a.wav";
                     }
                     else
                     {
-                        if(n == 32.000)
+                        if(n == 32)
                         {
                             wave = "speech/f5_b.wav";
                         }
                         else
                         {
-                            if(n == 33.000)
+                            if(n == 33)
                             {
                                 wave = "speech/f5_c.wav";
                             }
                             else
                             {
-                                if(n == 34.000)
+                                if(n == 34)
                                 {
                                     wave = "speech/f5_d.wav";
                                 }
                                 else
                                 {
-                                    if(n == 35.000)
+                                    if(n == 35)
                                     {
                                         wave = "speech/f5_e.wav";
                                     }
                                     else
                                     {
-                                        if(n == 36.000)
+                                        if(n == 36)
                                         {
                                             wave = "speech/f5_f.wav";
                                         }
                                         else
                                         {
                                             
-                                            if(n == 37.000)
+                                            if(n == 37)
                                             {
                                                 wave = "speech/f5_g.wav";
                                             }
@@ -1379,46 +1379,46 @@ void (float n, entity to) send_voicemsg =
                 }
                 else
                 {
-                    if((n > 40.000) && (n < 50.000))
+                    if((n > 40) && (n < 50))
                     {
-                        if(n == 41.000)
+                        if(n == 41)
                         {
                             wave = "speech/f6_a.wav";
                         }
                         else
                         {
-                            if(n == 42.000)
+                            if(n == 42)
                             {
                                 wave = "speech/f6_b.wav";
                             }
                             else
                             {
-                                if(n == 43.000)
+                                if(n == 43)
                                 {
                                     wave = "speech/f6_c.wav";
                                 }
                                 else
                                 {
-                                    if(n == 44.000)
+                                    if(n == 44)
                                     {
                                         wave = "speech/f6_d.wav";
                                     }
                                     else
                                     {
-                                        if(n == 45.000)
+                                        if(n == 45)
                                         {
                                             wave = "speech/f6_e.wav";
                                         }
                                         else
                                         {
-                                            if(n == 46.000)
+                                            if(n == 46)
                                             {
                                                 wave = "speech/f6_f.wav";
                                             }
                                             else
                                             {
                                                 
-                                                if(n == 47.000)
+                                                if(n == 47)
                                                 {
                                                     wave = "speech/f6_g.wav";
                                                 }
@@ -1438,46 +1438,46 @@ void (float n, entity to) send_voicemsg =
                     }
                     else
                     {
-                        if((n > 50.000) && (n < 60.000))
+                        if((n > 50) && (n < 60))
                         {
-                            if(n == 51.000)
+                            if(n == 51)
                             {
                                 wave = "speech/f7_a.wav";
                             }
                             else
                             {
-                                if(n == 52.000)
+                                if(n == 52)
                                 {
                                     wave = "speech/f7_b.wav";
                                 }
                                 else
                                 {
-                                    if(n == 53.000)
+                                    if(n == 53)
                                     {
                                         wave = "speech/f7_c.wav";
                                     }
                                     else
                                     {
-                                        if(n == 54.000)
+                                        if(n == 54)
                                         {
                                             wave = "speech/f7_d.wav";
                                         }
                                         else
                                         {
-                                            if(n == 55.000)
+                                            if(n == 55)
                                             {
                                                 wave = "speech/f7_e.wav";
                                             }
                                             else
                                             {
-                                                if(n == 56.000)
+                                                if(n == 56)
                                                 {
                                                     wave = "speech/f7_f.wav";
                                                 }
                                                 else
                                                 {
                                                     
-                                                    if(n == 57.000)
+                                                    if(n == 57)
                                                     {
                                                         wave = "speech/f7_g.wav";
                                                     }
@@ -1497,46 +1497,46 @@ void (float n, entity to) send_voicemsg =
                         }
                         else
                         {
-                            if((n > 60.000) && (n < 70.000))
+                            if((n > 60) && (n < 70))
                             {
-                                if(n == 61.000)
+                                if(n == 61)
                                 {
                                     wave = "speech/f8_a.wav";
                                 }
                                 else
                                 {
-                                    if(n == 62.000)
+                                    if(n == 62)
                                     {
                                         wave = "speech/f8_b.wav";
                                     }
                                     else
                                     {
-                                        if(n == 63.000)
+                                        if(n == 63)
                                         {
                                             wave = "speech/f8_c.wav";
                                         }
                                         else
                                         {
-                                            if(n == 64.000)
+                                            if(n == 64)
                                             {
                                                 wave = "speech/f8_d.wav";
                                             }
                                             else
                                             {
-                                                if(n == 65.000)
+                                                if(n == 65)
                                                 {
                                                     wave = "speech/f8_e.wav";
                                                 }
                                                 else
                                                 {
-                                                    if(n == 66.000)
+                                                    if(n == 66)
                                                     {
                                                         wave = "speech/f8_f.wav";
                                                     }
                                                     else
                                                     {
                                                         
-                                                        if(n == 67.000)
+                                                        if(n == 67)
                                                         {
                                                             wave = "speech/f8_g.wav";
                                                         }
@@ -1556,28 +1556,28 @@ void (float n, entity to) send_voicemsg =
                             }
                             else
                             {
-                                if((n > 70.000) && (n < 80.000))
+                                if((n > 70) && (n < 80))
                                 {
-                                    if(n == 71.000)
+                                    if(n == 71)
                                     {
                                         wave = "speech/fc_1.wav";
                                     }
                                     else
                                     {
-                                        if(n == 72.000)
+                                        if(n == 72)
                                         {
                                             wave = "speech/fc_2.wav";
                                         }
                                         else
                                         {
-                                            if(n == 73.000)
+                                            if(n == 73)
                                             {
                                                 wave = "speech/fc_3.wav";
                                             }
                                             else
                                             {
                                                 
-                                                if(n == 74.000)
+                                                if(n == 74)
                                                 {
                                                     wave = "speech/fc_4.wav";
                                                 }
@@ -1592,46 +1592,46 @@ void (float n, entity to) send_voicemsg =
                                 else
                                 {
                                     
-                                    if((n > 80.000) && (n < 90.000))
+                                    if((n > 80) && (n < 90))
                                     {
-                                        if(n == 81.000)
+                                        if(n == 81)
                                         {
                                             wave = "speech/mc_1.wav";
                                         }
                                         else
                                         {
-                                            if(n == 82.000)
+                                            if(n == 82)
                                             {
                                                 wave = "speech/mc_2.wav";
                                             }
                                             else
                                             {
-                                                if(n == 83.000)
+                                                if(n == 83)
                                                 {
                                                     wave = "speech/mc_3.wav";
                                                 }
                                                 else
                                                 {
-                                                    if(n == 84.000)
+                                                    if(n == 84)
                                                     {
                                                         wave = "speech/mc_4.wav";
                                                     }
                                                     else
                                                     {
-                                                        if(n == 85.000)
+                                                        if(n == 85)
                                                         {
                                                             wave = "speech/mc_5.wav";
                                                         }
                                                         else
                                                         {
-                                                            if(n == 86.000)
+                                                            if(n == 86)
                                                             {
                                                                 wave = "speech/mc_6.wav";
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if(n == 87.000)
+                                                                if(n == 87)
                                                                 {
                                                                     wave = "speech/mc_7.wav";
                                                                 }

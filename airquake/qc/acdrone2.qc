@@ -26,11 +26,11 @@ void () drone_auto =
 {
     local vector v0;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    AC_spike(self.origin + (v_forward * 10.000), v_forward, self.enemy);
+    AC_spike(self.origin + (v_forward * 10), v_forward, self.enemy);
     self.effects = self.effects | EF_MUZZLEFLASH;
-    self.attack_finished = time + 0.100;
+    self.attack_finished = time + 0.1;
 };
 
 // drone_cannon
@@ -68,14 +68,14 @@ void () drone_cannon =
 {
     local vector v0;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    AC_spike(self.origin + (v_forward * 10.000), v_forward, self.enemy);
+    AC_spike(self.origin + (v_forward * 10), v_forward, self.enemy);
     newmis.touch = ACprojectile_touchboom;
-    newmis.dmg = 50.000;
-    newmis.nextthink = time + 1.000;
+    newmis.dmg = 50;
+    newmis.nextthink = time + 1;
     self.effects = self.effects | EF_MUZZLEFLASH;
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
 };
 
 // drone_bombs
@@ -143,12 +143,12 @@ void () drone_bombs =
 {
     local vector v0;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    AC_bomb((self.origin - (v_up * 10.000)) - (v_right * 10.000), self.velocity - (v_right * 15.000), self.enemy);
-    AC_bomb((self.origin - (v_up * 10.000)) + (v_right * 10.000), self.velocity + (v_right * 15.000), self.enemy);
-    AC_bomb((self.origin - (v_up * 10.000)) - (v_right * 20.000), self.velocity - (v_right * 45.000), self.enemy);
-    AC_bomb((self.origin - (v_up * 10.000)) + (v_right * 20.000), self.velocity + (v_right * 45.000), self.enemy);
+    AC_bomb((self.origin - (v_up * 10)) - (v_right * 10), self.velocity - (v_right * 15), self.enemy);
+    AC_bomb((self.origin - (v_up * 10)) + (v_right * 10), self.velocity + (v_right * 15), self.enemy);
+    AC_bomb((self.origin - (v_up * 10)) - (v_right * 20), self.velocity - (v_right * 45), self.enemy);
+    AC_bomb((self.origin - (v_up * 10)) + (v_right * 20), self.velocity + (v_right * 45), self.enemy);
 };
 
 // drone_pave
@@ -187,11 +187,11 @@ void () drone_pave =
     local vector v0;
     local entity e;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
     e = self.enemy;
     self.enemy = find(world, targetname, self.killtarget);
-    AC_paveway(self.origin - (v_up * 10.000), self.velocity - (v_right * 15.000), self.enemy);
+    AC_paveway(self.origin - (v_up * 10), self.velocity - (v_right * 15), self.enemy);
     self.enemy = e;
 };
 
@@ -228,11 +228,11 @@ void () drone_maver =
     local vector v0;
     local entity e;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
     e = self.enemy;
     self.enemy = find(world, targetname, self.killtarget);
-    AC_maverick(self.origin - (v_up * 10.000), v_forward, self.enemy);
+    AC_maverick(self.origin - (v_up * 10), v_forward, self.enemy);
     self.enemy = e;
 };
 
@@ -261,10 +261,10 @@ void () drone_sider =
     local vector v0;
     local entity e;
     v0 = self.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    AC_sidewinder(self.origin - (v_up * 10.000), v_forward, self.enemy);
-    self.attack_finished = time + 2.000;
+    AC_sidewinder(self.origin - (v_up * 10), v_forward, self.enemy);
+    self.attack_finished = time + 2;
 };
 
 // drone2_fly
@@ -714,9 +714,9 @@ void () drone2_fly =
     
     if(self.search_time < time)
     {
-        v2 = normalize((self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500)) - self.origin);
+        v2 = normalize((self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5)) - self.origin);
         temp = find(world, noise, self.noise);
-        mr = 0.000;
+        mr = 0;
         
         while(temp)
         {
@@ -742,7 +742,7 @@ void () drone2_fly =
             temp = find(temp, noise, self.noise);
         }
         
-        self.search_time = time + 2.000;
+        self.search_time = time + 2;
     }
     
     
@@ -759,12 +759,12 @@ void () drone2_fly =
     self.goalentity = self.movetarget;
     v1 = self.goalentity.origin;
     v3 = normalize(v1 - self.origin);
-    v2 = normalize((self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500)) - self.origin);
+    v2 = normalize((self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5)) - self.origin);
     
-    if((v3 * v2) > 0.800)
+    if((v3 * v2) > 0.8)
     {
         self.goalentity = self.enemy;
-        v1 = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500);
+        v1 = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
     }
     
     dist = vlen(v1 - self.origin);
@@ -773,16 +773,16 @@ void () drone2_fly =
     {
         ab = vlen(self.trigger_field.origin - self.origin);
         ab = ab / (vlen(self.goalentity.origin - self.trigger_field.origin));
-        ab = (ab * 0.700) + 0.400;
+        ab = (ab * 0.7) + 0.4;
         
-        if(ab > 1.000)
+        if(ab > 1)
         {
-            ab = 1.000;
+            ab = 1;
         }
         
         v1 = self.trigger_field.origin + ((self.goalentity.origin - self.trigger_field.origin) * ab);
         
-        if(ab == 1.000)
+        if(ab == 1)
         {
             self.trigger_field = self.goalentity;
             self.goalentity = self.goalentity.goalentity;
@@ -793,77 +793,77 @@ void () drone2_fly =
     
     v0 = vectoangles(v1 - self.origin);
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
     v1_x = anglemod(v0_x - self.angles_x);
     
-    if(v1_x > 180.000)
+    if(v1_x > 180)
     {
-        v1_x = v1_x - 360.000;
+        v1_x = v1_x - 360;
     }
     
     v2 = '0.000 0.000 0.000';
     
-    if(v1_x < 0.000)
+    if(v1_x < 0)
     {
-        v2_x = 0.000 - self.weapon;
+        v2_x = 0 - self.weapon;
     }
     
     
-    if(v1_x > 0.000)
+    if(v1_x > 0)
     {
         v2_x = self.weapon;
     }
     
     
-    if(fabs(v1_x) < (self.weapon * 0.100))
+    if(fabs(v1_x) < (self.weapon * 0.1))
     {
-        v2_x = 0.000;
+        v2_x = 0;
         self.angles_x = v0_x;
     }
     
-    v2_y = 0.000 * 5.000;
+    v2_y = 0 * 5;
     
-    if(0.000 < (0.000 - self.weapon))
+    if(0 < (0 - self.weapon))
     {
-        v2_y = 0.000 - self.weapon;
+        v2_y = 0 - self.weapon;
     }
     
     
-    if(0.000 > self.weapon)
+    if(0 > self.weapon)
     {
         v2_y = self.weapon;
     }
     
     
-    if(fabs(0.000) < (self.weapon * 0.100))
+    if(fabs(0) < (self.weapon * 0.1))
     {
-        v2_y = 0.000;
-        self.angles_y = 0.000;
+        v2_y = 0;
+        self.angles_y = 0;
     }
     
     if(self.enemy == self.goalentity)
     {
-        if(((fabs(0.000) < 25.000) && (fabs(v1_x) < 25.000)) && (self.health < 120.000))
+        if(((fabs(0) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
         {
-            ab = 1.000;
-            self.thru = 4.000;
+            ab = 1;
+            self.thru = 4;
         }
         else
         {
-            ab = 0.000;
-            if((fabs(0.000) < 90.000) && (fabs(v1_x) < 90.000))
+            ab = 0;
+            if((fabs(0) < 90) && (fabs(v1_x) < 90))
             {
-                self.thru = 4.000;
+                self.thru = 4;
             }
             else
             {
-                self.thru = 3.000;
+                self.thru = 3;
             }
             
         }
@@ -871,40 +871,40 @@ void () drone2_fly =
     }
     else
     {
-        self.thru = 4.000;
-        ab = 0.000;
+        self.thru = 4;
+        ab = 0;
     }
     
-    v1_z = (0.000 - 0.000) - self.angles_z;
+    v1_z = (0 - 0) - self.angles_z;
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        v2_z = -200.000;
+        v2_z = -200;
         
-        if(0.000 < (0.000 * 10.000))
+        if(0 < (0 * 10))
         {
-            v2_z = 0.000 * 10.000;
+            v2_z = 0 * 10;
         }
         
     }
     
     
-    if(0.000 > 0.000)
+    if(0 > 0)
     {
-        v2_z = 200.000;
+        v2_z = 200;
         
-        if(0.000 > (0.000 * 10.000))
+        if(0 > (0 * 10))
         {
-            v2_z = 0.000 * 10.000;
+            v2_z = 0 * 10;
         }
         
     }
     
     
-    if(fabs(0.000) < 5.000)
+    if(fabs(0) < 5)
     {
-        v2_z = 0.000;
-        self.angles_z = 0.000 - 0.000;
+        v2_z = 0;
+        self.angles_z = 0 - 0;
     }
     
     self.avelocity = v2;
@@ -915,7 +915,7 @@ void () drone2_fly =
         self.groundentity = world;
     }
     
-    if(self.health < (self.max_health * 0.200))
+    if(self.health < (self.max_health * 0.2))
     {
         
         if(self.model == self.noise1)
@@ -936,41 +936,41 @@ void () drone2_fly =
     
     if(ab)
     {
-        self.skin = 1.000;
+        self.skin = 1;
         
-        if(!(temp1 & 4.000))
+        if(!(temp1 & 4))
         {
-            self.effects = 4.000;
+            self.effects = 4;
         }
         
     }
     else
     {
-        self.skin = 0.000;
-        self.effects = 0.000;
+        self.skin = 0;
+        self.effects = 0;
     }
     
     makevectors(self.angles);
     v3 = v_forward;
-    v3_z = 0.000 - 0.000;
+    v3_z = 0 - 0;
     
     if((self.enemy != world) && (self.attack_finished < time))
     {
-        v0 = (self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500)) - self.origin;
+        v0 = (self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5)) - self.origin;
         v2 = normalize(v0);
         
-        if((v2 * v3) > 0.900)
+        if((v2 * v3) > 0.9)
         {
-            if((self.style == 1.000) || (self.style == 5.000))
+            if((self.style == 1) || (self.style == 5))
             {
-                if(vlen(v0) < 800.000)
+                if(vlen(v0) < 800)
                 {
                     self.th_melee();
                 }
                 else
                 {
                     
-                    if(vlen(v0) < 1600.000)
+                    if(vlen(v0) < 1600)
                     {
                         self.th_missile();
                     }
@@ -981,7 +981,7 @@ void () drone2_fly =
             else
             {
                 
-                if(vlen(v0) < 1400.000)
+                if(vlen(v0) < 1400)
                 {
                     self.th_melee();
                 }
@@ -994,17 +994,17 @@ void () drone2_fly =
     
     if(!ab)
     {
-        self.speed = self.thru * 75.000;
+        self.speed = self.thru * 75;
     }
     else
     {
-        self.speed = 500.000;
+        self.speed = 500;
     }
     
     self.velocity = v3 * self.speed;
     drone_sound();
     self.think = drone2_fly;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // drone2_start
@@ -1066,7 +1066,7 @@ void () drone2_fly =
 void () drone2_start = 
 {
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -1075,7 +1075,7 @@ void () drone2_start =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     self.takedamage = DAMAGE_AIM;
@@ -1096,7 +1096,7 @@ void () drone2_start =
     }
     
     self.think = drone2_fly;
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // monster_drone2
@@ -1235,62 +1235,62 @@ void () monster_drone2 =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_FLY;
     self.style = self.sounds;
-    if(self.style == 2.000)
+    if(self.style == 2)
     {
         self.noise1 = "progs/plane2.mdl";
         self.noise2 = "progs/plane2b.mdl";
-        self.max_health = 250.000;
+        self.max_health = 250;
         self.netname = "Fighter Bomber";
         self.th_missile = drone_maver;
         self.th_melee = drone_sider;
-        self.weapon = 90.000;
+        self.weapon = 90;
     }
     else
     {
-        if(self.style == 3.000)
+        if(self.style == 3)
         {
             self.noise1 = "progs/plane3.mdl";
             self.noise2 = "progs/plane3b.mdl";
-            self.max_health = 200.000;
+            self.max_health = 200;
             self.netname = "Stealth Fighter";
             self.th_missile = drone_pave;
             self.th_melee = drone_sider;
-            self.weapon = 80.000;
+            self.weapon = 80;
         }
         else
         {
-            if(self.style == 4.000)
+            if(self.style == 4)
             {
                 self.noise1 = "progs/plane4.mdl";
                 self.noise2 = "progs/plane4b.mdl";
-                self.max_health = 350.000;
+                self.max_health = 350;
                 self.netname = "A-10";
                 self.th_missile = drone_bombs;
                 self.th_melee = drone_cannon;
-                self.weapon = 70.000;
+                self.weapon = 70;
             }
             else
             {
-                if(self.style == 5.000)
+                if(self.style == 5)
                 {
                     self.noise1 = "progs/plane5.mdl";
                     self.noise2 = "progs/plane5b.mdl";
-                    self.max_health = 170.000;
+                    self.max_health = 170;
                     self.netname = "X-29";
                     self.th_missile = drone_sider;
                     self.th_melee = drone_auto;
-                    self.weapon = 110.000;
+                    self.weapon = 110;
                 }
                 else
                 {
-                    self.style = 1.000;
+                    self.style = 1;
                     self.noise1 = "progs/plane1.mdl";
                     self.noise2 = "progs/plane1b.mdl";
-                    self.max_health = 200.000;
+                    self.max_health = 200;
                     self.netname = "Dogfighter";
                     self.th_missile = drone_sider;
                     self.th_melee = drone_auto;
-                    self.weapon = 100.000;
+                    self.weapon = 100;
                 }
                 
             }
@@ -1314,6 +1314,6 @@ void () monster_drone2 =
     self.th_walk = drone2_fly;
     self.th_run = drone2_fly;
     self.think = drone2_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

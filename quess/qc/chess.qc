@@ -37,24 +37,24 @@ void () SetMonsterStuff =
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.location_str = ftos(self.location);
     self.orig_angle = self.angles;
-    if(cvar("coop") <= 1.000)
+    if(cvar("coop") <= 1)
     {
         if(self.chess_team == "black")
         {
-            self.skin = 1.000;
+            self.skin = 1;
         }
         else
         {
-            self.skin = 2.000;
+            self.skin = 2;
         }
         
     }
     else
     {
         
-        if(cvar("coop") == 3.000)
+        if(cvar("coop") == 3)
         {
-            self.skin = 3.000;
+            self.skin = 3;
         }
         
     }
@@ -76,7 +76,7 @@ void () SetMonsterStuff =
 // OP_DONE	0	0	0
 void () chess_pawn = 
 {
-    if(cvar("coop") != 69.000)
+    if(cvar("coop") != 69)
     {
         monster_knight();
     }
@@ -104,7 +104,7 @@ void () chess_pawn =
 // OP_DONE	0	0	0
 void () chess_rook = 
 {
-    if(cvar("coop") != 69.000)
+    if(cvar("coop") != 69)
     {
         monster_ogre();
     }
@@ -132,7 +132,7 @@ void () chess_rook =
 // OP_DONE	0	0	0
 void () chess_knight = 
 {
-    if(cvar("coop") != 69.000)
+    if(cvar("coop") != 69)
     {
         monster_demon1();
     }
@@ -160,7 +160,7 @@ void () chess_knight =
 // OP_DONE	0	0	0
 void () chess_bishop = 
 {
-    if(cvar("coop") != 69.000)
+    if(cvar("coop") != 69)
     {
         monster_hell_knight();
     }
@@ -190,15 +190,15 @@ void () chess_bishop =
 // OP_DONE	0	0	0
 void () chess_queen = 
 {
-    secret_monsters = 0.000;
-    if(cvar("coop") != 69.000)
+    secret_monsters = 0;
+    if(cvar("coop") != 69)
     {
         monster_shambler();
     }
     else
     {
         monster_shalrath();
-        secret_monsters = 1.000;
+        secret_monsters = 1;
     }
     
     SetMonsterStuff();
@@ -228,7 +228,7 @@ void () chess_king =
 // OP_DONE	0	0	0
 float (float loc) GetX = 
 {
-    return floor(loc / 10.000);
+    return floor(loc / 10);
 };
 
 // GetY
@@ -244,7 +244,7 @@ float (float loc) GetY =
 {
     local float x;
     x = GetX(loc);
-    return loc - (x * 10.000);
+    return loc - (x * 10);
 };
 
 // TwoPlayersInGame
@@ -272,16 +272,16 @@ float () TwoPlayersInGame =
 {
     local float num_players;
     local entity trav;
-    num_players = 0.000;
+    num_players = 0;
     trav = find(world, classname, "player");
     
     while(trav != world)
     {
-        num_players = num_players + 1.000;
+        num_players = num_players + 1;
         trav = find(trav, classname, "player");
     }
     
-    return num_players == 2.000;
+    return num_players == 2;
 };
 
 // FindLocation
@@ -339,42 +339,42 @@ void () FindLocation =
     local vector v1;
     local float loc;
     makevectors(self.v_angle);
-    traceline(self.origin, self.origin + (v_forward * 4000.000), TRUE, self);
+    traceline(self.origin, self.origin + (v_forward * 4000), TRUE, self);
     current_destination = string_null;
     
-    if(trace_fraction < 1.000)
+    if(trace_fraction < 1)
     {
         v1 = trace_endpos + '256.000 256.000 0.000';
-        v1_x = v1_x / 64.000;
-        v1_y = 0.000 / 64.000;
-        v1_z = 0.000;
-        v1_y = ceil(0.000);
+        v1_x = v1_x / 64;
+        v1_y = 0 / 64;
+        v1_z = 0;
+        v1_y = ceil(0);
         
-        if(0.000 > 8.000)
+        if(0 > 8)
         {
-            v1_y = 8.000;
+            v1_y = 8;
         }
         
         
-        if(0.000 < 1.000)
+        if(0 < 1)
         {
-            v1_y = 1.000;
+            v1_y = 1;
         }
         
         v1_x = ceil(v1_x);
         
-        if(v1_x > 8.000)
+        if(v1_x > 8)
         {
-            v1_x = 8.000;
+            v1_x = 8;
         }
         
         
-        if(v1_x < 1.000)
+        if(v1_x < 1)
         {
-            v1_x = 1.000;
+            v1_x = 1;
         }
         
-        loc = (v1_x * 10.000) + 0.000;
+        loc = (v1_x * 10) + 0;
         current_destination = ftos(loc);
         current_dest_int = loc;
     }
@@ -480,7 +480,7 @@ void () FindSelection =
     }
     
     
-    if((((current_selected != world) && (current_selected.owner == current_turn)) && (self.last_voice_entity.classname != current_selected.classname)) && (self.last_voice < (time - 1.500)))
+    if((((current_selected != world) && (current_selected.owner == current_turn)) && (self.last_voice_entity.classname != current_selected.classname)) && (self.last_voice < (time - 1.5)))
     {
         mystuffcmd(current_turn, "play voice/");
         mystuffcmd(current_turn, current_selected.netname);
@@ -511,11 +511,11 @@ void () CameraPos =
     local float ideal_len;
     local float ideal_vec_len;
     makevectors(self.v_angle);
-    ideal_pos = v_forward * -350.000;
+    ideal_pos = v_forward * -350;
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        ideal_pos_z = 0.000;
+        ideal_pos_z = 0;
     }
     
     self.dest = ideal_pos;
@@ -624,31 +624,31 @@ float (float start, float end) ClearPath =
     starty = GetY(start);
     endx = GetX(end);
     endy = GetY(end);
-    step = 0.000;
+    step = 0;
     if(endy > starty)
     {
-        step = 1.000;
+        step = 1;
     }
     else
     {
         
         if(endy < starty)
         {
-            step = -1.000;
+            step = -1;
         }
         
     }
     
     if(endx > startx)
     {
-        step = step + 10.000;
+        step = step + 10;
     }
     else
     {
         
         if(endx < startx)
         {
-            step = step - 10.000;
+            step = step - 10;
         }
         
     }
@@ -1035,19 +1035,19 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
             if(newx != oldx)
             {
                 
-                if(((fabs(newx - oldx)) == 1.000) && ((oldy - newy) == 1.000))
+                if(((fabs(newx - oldx)) == 1) && ((oldy - newy) == 1))
                 {
-                    pawning_loc = (newx * 10.000) + oldy;
+                    pawning_loc = (newx * 10) + oldy;
                     pawning_ent = EntityAtLoc(pawning_loc);
-                    if(((((newy == 3.000) && (at_loc == world)) && (pawning_ent != world)) && (pawning_ent.owner == ent.owner.opponent)) && (pawning_ent == current_turn.opponent.last_moved))
+                    if(((((newy == 3) && (at_loc == world)) && (pawning_ent != world)) && (pawning_ent.owner == ent.owner.opponent)) && (pawning_ent == current_turn.opponent.last_moved))
                     {
                         pawning_enemy = pawning_ent;
                         en_passant_flag = TRUE;
-                        return 2.000;
+                        return 2;
                     }
                     else
                     {
-                        return (at_loc != world) * 2.000;
+                        return (at_loc != world) * 2;
                     }
                     
                 }
@@ -1056,7 +1056,7 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
             else
             {
                 
-                if(((oldy - newy) == 1.000) || ((((oldy - newy) == 2.000) && (!(ent.chess_flags & CF_HAS_MOVED))) && ClearPath(ent.location, loc)))
+                if(((oldy - newy) == 1) || ((((oldy - newy) == 2) && (!(ent.chess_flags & CF_HAS_MOVED))) && ClearPath(ent.location, loc)))
                 {
                     return at_loc == world;
                 }
@@ -1069,19 +1069,19 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
             if(newx != oldx)
             {
                 
-                if(((fabs(newx - oldx)) == 1.000) && ((oldy - newy) == -1.000))
+                if(((fabs(newx - oldx)) == 1) && ((oldy - newy) == -1))
                 {
-                    pawning_loc = (newx * 10.000) + oldy;
+                    pawning_loc = (newx * 10) + oldy;
                     pawning_ent = EntityAtLoc(pawning_loc);
-                    if(((((newy == 6.000) && (at_loc == world)) && (pawning_ent != world)) && (pawning_ent.owner == ent.owner.opponent)) && (pawning_ent == current_turn.opponent.last_moved))
+                    if(((((newy == 6) && (at_loc == world)) && (pawning_ent != world)) && (pawning_ent.owner == ent.owner.opponent)) && (pawning_ent == current_turn.opponent.last_moved))
                     {
                         pawning_enemy = pawning_ent;
                         en_passant_flag = TRUE;
-                        return 2.000;
+                        return 2;
                     }
                     else
                     {
-                        return (at_loc != world) * 2.000;
+                        return (at_loc != world) * 2;
                     }
                     
                 }
@@ -1090,7 +1090,7 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
             else
             {
                 
-                if(((oldy - newy) == -1.000) || ((((oldy - newy) == -2.000) && (!(ent.chess_flags & CF_HAS_MOVED))) && ClearPath(ent.location, loc)))
+                if(((oldy - newy) == -1) || ((((oldy - newy) == -2) && (!(ent.chess_flags & CF_HAS_MOVED))) && ClearPath(ent.location, loc)))
                 {
                     return at_loc == world;
                 }
@@ -1108,17 +1108,17 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
             {
                 if(ClearPath(ent.location, loc))
                 {
-                    return (at_loc != world) + 1.000;
+                    return (at_loc != world) + 1;
                 }
                 else
                 {
-                    return 0.000;
+                    return 0;
                 }
                 
             }
             else
             {
-                return 0.000;
+                return 0;
             }
             
         }
@@ -1126,13 +1126,13 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
         {
             if(ent.classname == "chess_knight")
             {
-                if((((fabs(newx - oldx)) == 2.000) && ((fabs(newy - oldy)) == 1.000)) || (((fabs(newx - oldx)) == 1.000) && ((fabs(newy - oldy)) == 2.000)))
+                if((((fabs(newx - oldx)) == 2) && ((fabs(newy - oldy)) == 1)) || (((fabs(newx - oldx)) == 1) && ((fabs(newy - oldy)) == 2)))
                 {
-                    return (at_loc != world) + 1.000;
+                    return (at_loc != world) + 1;
                 }
                 else
                 {
-                    return 0.000;
+                    return 0;
                 }
                 
             }
@@ -1155,11 +1155,11 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                     
                     if(valid)
                     {
-                        return (at_loc != world) + 1.000;
+                        return (at_loc != world) + 1;
                     }
                     else
                     {
-                        return 0.000;
+                        return 0;
                     }
                     
                 }
@@ -1182,11 +1182,11 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                         
                         if(valid)
                         {
-                            return (at_loc != world) + 1.000;
+                            return (at_loc != world) + 1;
                         }
                         else
                         {
-                            return 0.000;
+                            return 0;
                         }
                         
                     }
@@ -1194,9 +1194,9 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                     {
                         if(ent.classname == "chess_king")
                         {
-                            if(((fabs(newx - oldx)) <= 1.000) && ((fabs(newy - oldy)) <= 1.000))
+                            if(((fabs(newx - oldx)) <= 1) && ((fabs(newy - oldy)) <= 1))
                             {
-                                return (at_loc != world) + 1.000;
+                                return (at_loc != world) + 1;
                             }
                             else
                             {
@@ -1216,17 +1216,17 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                                     }
                                     
                                     
-                                    if(fabs(xchange) == 2.000)
+                                    if(fabs(xchange) == 2)
                                     {
                                         if(newx < oldx)
                                         {
-                                            castle_loc = 10.000 + GetY(ent.location);
-                                            castle_destination = (oldx - 1.000) * 10.000;
+                                            castle_loc = 10 + GetY(ent.location);
+                                            castle_destination = (oldx - 1) * 10;
                                         }
                                         else
                                         {
-                                            castle_loc = 80.000 + GetY(ent.location);
-                                            castle_destination = (oldx + 1.000) * 10.000;
+                                            castle_loc = 80 + GetY(ent.location);
+                                            castle_destination = (oldx + 1) * 10;
                                         }
                                         
                                         castle = EntityAtLoc(castle_loc);
@@ -1236,7 +1236,7 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                                             castle_to_move = castle;
                                             castle_destination = castle_destination + GetY(ent.location);
                                             king_castle_move_flag = TRUE;
-                                            valid = (at_loc != world) + 1.000;
+                                            valid = (at_loc != world) + 1;
                                         }
                                         
                                     }
@@ -1249,7 +1249,7 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
                         }
                         else
                         {
-                            return (at_loc != world) + 1.000;
+                            return (at_loc != world) + 1;
                         }
                         
                     }
@@ -1290,12 +1290,12 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
 entity (float loc) EntityAtLoc = 
 {
     local entity trav;
-    trav = findradius('0.000 0.000 0.000', 4096.000);
+    trav = findradius('0.000 0.000 0.000', 4096);
     
     while(trav != world)
     {
         
-        if(((trav.location == loc) && (trav.flags & FL_MONSTER)) && (trav.health > 0.000))
+        if(((trav.location == loc) && (trav.flags & FL_MONSTER)) && (trav.health > 0))
         {
             return trav;
         }
@@ -1338,27 +1338,27 @@ entity (float loc) EntityAtLoc =
 void () random_pawn_speech = 
 {
     local float rnd;
-    rnd = random() * 4.000;
-    if(rnd < 1.000)
+    rnd = random() * 4;
+    if(rnd < 1)
     {
         mystuffcmd(current_turn, "play voice/pawn/hwhat2.wav\n");
     }
     else
     {
-        if(rnd < 2.000)
+        if(rnd < 2)
         {
             mystuffcmd(current_turn, "play voice/pawn/hwhat3.wav\n");
         }
         else
         {
-            if(rnd < 3.000)
+            if(rnd < 3)
             {
                 mystuffcmd(current_turn, "play voice/pawn/hwhat4.wav\n");
             }
             else
             {
                 
-                if(rnd < 4.000)
+                if(rnd < 4)
                 {
                     mystuffcmd(current_turn, "play voice/pawn/hwhat5.wav\n");
                 }
@@ -1397,21 +1397,21 @@ void () random_pawn_speech =
 void () random_bishop_speech = 
 {
     local float rnd;
-    rnd = random() * 3.000;
-    if(rnd < 1.000)
+    rnd = random() * 3;
+    if(rnd < 1)
     {
         mystuffcmd(current_turn, "play voice/bishop/tuwhat1.wav\n");
     }
     else
     {
-        if(rnd < 2.000)
+        if(rnd < 2)
         {
             mystuffcmd(current_turn, "play voice/bishop/tuwhat2.wav\n");
         }
         else
         {
             
-            if(rnd < 3.000)
+            if(rnd < 3)
             {
                 mystuffcmd(current_turn, "play voice/bishop/tuwhat3.wav\n");
             }
@@ -1472,45 +1472,45 @@ void () random_bishop_speech =
 void () random_rook_speech = 
 {
     local float rnd;
-    rnd = random() * 7.000;
-    if(rnd < 1.000)
+    rnd = random() * 7;
+    if(rnd < 1)
     {
         mystuffcmd(current_turn, "play voice/rook/pissed1.wav\n");
     }
     else
     {
-        if(rnd < 2.000)
+        if(rnd < 2)
         {
             mystuffcmd(current_turn, "play voice/rook/ready.wav\n");
         }
         else
         {
-            if(rnd < 3.000)
+            if(rnd < 3)
             {
                 mystuffcmd(current_turn, "play voice/rook/what1.wav\n");
             }
             else
             {
-                if(rnd < 4.000)
+                if(rnd < 4)
                 {
                     mystuffcmd(current_turn, "play voice/rook/what2.wav\n");
                 }
                 else
                 {
-                    if(rnd < 5.000)
+                    if(rnd < 5)
                     {
                         mystuffcmd(current_turn, "play voice/rook/what3.wav\n");
                     }
                     else
                     {
-                        if(rnd < 6.000)
+                        if(rnd < 6)
                         {
                             mystuffcmd(current_turn, "play voice/rook/what4.wav\n");
                         }
                         else
                         {
                             
-                            if(rnd < 7.000)
+                            if(rnd < 7)
                             {
                                 mystuffcmd(current_turn, "play voice/rook/what5.wav\n");
                             }
@@ -1688,7 +1688,7 @@ float (entity ent, float loc, float actual_move) CanMove =
                     castle_to_move = world;
                     king_castle_move_flag = FALSE;
                     ent.owner.chess_flags = ent.owner.chess_flags - (ent.owner.chess_flags & CF_SELECTED_PIECE);
-                    light_ent.effects = 0.000;
+                    light_ent.effects = 0;
                 }
                 
             }
@@ -1703,7 +1703,7 @@ float (entity ent, float loc, float actual_move) CanMove =
     }
     
     result = CheckValidMove(ent, loc, at_loc, actual_move);
-    if(result == 0.000)
+    if(result == 0)
     {
         
         if(actual_move)
@@ -1737,7 +1737,7 @@ float (entity ent, float loc, float actual_move) CanMove =
     }
     
     
-    if(result == 2.000)
+    if(result == 2)
     {
         
         if(actual_move)
@@ -1750,23 +1750,23 @@ float (entity ent, float loc, float actual_move) CanMove =
             
             ent.enemy = at_loc;
             ent.think = FoundTarget;
-            ent.nextthink = time + 0.100;
+            ent.nextthink = time + 0.1;
             current_enemy = at_loc;
             at_loc.enemy = ent;
             at_loc.think = FoundTarget;
-            at_loc.nextthink = time + 0.100;
+            at_loc.nextthink = time + 0.1;
             
-            if(teamplay > 0.000)
+            if(teamplay > 0)
             {
                 if(!single_player)
                 {
-                    ent.owner.skin = 1.000;
-                    at_loc.owner.skin = 2.000;
+                    ent.owner.skin = 1;
+                    at_loc.owner.skin = 2;
                 }
                 else
                 {
-                    ent.owner.owner.skin = 1.000;
-                    at_loc.owner.owner.skin = 2.000;
+                    ent.owner.owner.skin = 1;
+                    at_loc.owner.owner.skin = 2;
                 }
                 
             }
@@ -1807,9 +1807,9 @@ vector (float loc) LocationToVector =
     local vector dest_org;
     dest_org_y = GetY(loc);
     dest_org_x = GetX(loc);
-    dest_org_z = 0.000;
-    dest_org = dest_org * 64.000;
-    dest_org = ((dest_org - '256.000 256.000 0.000') - '32.000 32.000 0.000') - (-24.000 * '0.000 0.000 1.000');
+    dest_org_z = 0;
+    dest_org = dest_org * 64;
+    dest_org = ((dest_org - '256.000 256.000 0.000') - '32.000 32.000 0.000') - (-24 * '0.000 0.000 1.000');
     return dest_org;
 };
 
@@ -2156,7 +2156,7 @@ void () ProcessSelection =
                 if(CanMove(current_selected, current_dest_int, TRUE))
                 {
                     action_flag = TRUE;
-                    light_ent.effects = 0.000;
+                    light_ent.effects = 0;
                     dest_org = LocationToVector(current_dest_int);
                     setorigin(dest_ent, dest_org);
                     mystuffcmd(self, "play effects/button.wav\n");
@@ -2172,21 +2172,21 @@ void () ProcessSelection =
                         {
                             if(current_selected.classname == "chess_bishop")
                             {
-                                rnd = random() * 3.000;
-                                if(rnd < 1.000)
+                                rnd = random() * 3;
+                                if(rnd < 1)
                                 {
                                     mystuffcmd(current_turn, "play voice/bishop/tuyessr1.wav\n");
                                 }
                                 else
                                 {
-                                    if(rnd < 2.000)
+                                    if(rnd < 2)
                                     {
                                         mystuffcmd(current_turn, "play voice/bishop/tuyessr2.wav\n");
                                     }
                                     else
                                     {
                                         
-                                        if(rnd < 3.000)
+                                        if(rnd < 3)
                                         {
                                             mystuffcmd(current_turn, "play voice/bishop/tuyessr3.wav\n");
                                         }
@@ -2201,27 +2201,27 @@ void () ProcessSelection =
                                 
                                 if(current_selected.classname == "chess_rook")
                                 {
-                                    rnd = random() * 4.000;
-                                    if(rnd < 1.000)
+                                    rnd = random() * 4;
+                                    if(rnd < 1)
                                     {
                                         mystuffcmd(current_turn, "play voice/rook/yessir1.wav\n");
                                     }
                                     else
                                     {
-                                        if(rnd < 2.000)
+                                        if(rnd < 2)
                                         {
                                             mystuffcmd(current_turn, "play voice/rook/yessir2.wav\n");
                                         }
                                         else
                                         {
-                                            if(rnd < 3.000)
+                                            if(rnd < 3)
                                             {
                                                 mystuffcmd(current_turn, "play voice/rook/yessir3.wav\n");
                                             }
                                             else
                                             {
                                                 
-                                                if(rnd < 4.000)
+                                                if(rnd < 4)
                                                 {
                                                     mystuffcmd(current_turn, "play voice/rook/yessir4.wav\n");
                                                 }
@@ -2247,15 +2247,15 @@ void () ProcessSelection =
                         
                         if(!secret_monsters && (current_selected.classname == "chess_queen"))
                         {
-                            rnd = random() * 2.000;
-                            if(rnd < 1.000)
+                            rnd = random() * 2;
+                            if(rnd < 1)
                             {
                                 mystuffcmd(current_turn, "play shambler/melee1.wav\n");
                             }
                             else
                             {
                                 
-                                if(rnd < 2.000)
+                                if(rnd < 2)
                                 {
                                     mystuffcmd(current_turn, "play shambler/melee2.wav\n");
                                 }
@@ -2329,7 +2329,7 @@ void (entity client) WalkToDest =
 void () message_think = 
 {
     mycentreprint(message_target, message_text);
-    self.nextthink = time + 1.000;
+    self.nextthink = time + 1;
 };
 
 // welcome_mesg
@@ -2445,7 +2445,7 @@ void () become_queen =
     new.chess_team = current_turn.chess_team;
     new.chess_flags = current_turn.chess_flags;
     new.flags = self.flags;
-    new.yaw_speed = 20.000;
+    new.yaw_speed = 20;
     new.view_ofs = '0.000 0.000 25.000';
     new.use = monster_use;
     new.ideal_yaw = new.angles * '0.000 1.000 0.000';
@@ -2456,10 +2456,10 @@ void () become_queen =
     chess_queen();
     setorigin(new, new.origin + '0.000 0.000 16.000');
     droptofloor();
-    self.pausetime = 100000000.000;
+    self.pausetime = 100000000;
     self.th_stand();
     spawn_tfog(self.origin);
-    sound(self, CHAN_AUTO, "misc/r_tele4.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_AUTO, "misc/r_tele4.wav", 1, ATTN_NORM);
 };
 
 // get_king
@@ -2636,7 +2636,7 @@ void () next_turn =
         current_turn.origin = current_turn.owner.origin;
     }
     
-    light_ent.effects = 0.000;
+    light_ent.effects = 0;
     current_turn.chess_flags = current_turn.chess_flags - (current_turn.chess_flags & CF_SELECTED_PIECE);
     current_turn.chess_flags = current_turn.chess_flags - (current_turn.chess_flags & CF_TIME_NOTIFY);
     current_turn.chess_flags = current_turn.chess_flags - (current_turn.chess_flags & CF_CHECK_NOTIFY);
@@ -2647,7 +2647,7 @@ void () next_turn =
     }
     
     current_turn = current_turn.opponent;
-    current_dest_int = 0.000;
+    current_dest_int = 0;
     if(!single_player)
     {
         setmodel(current_turn.pointer, "progs/s_bubble.spr");
@@ -2667,7 +2667,7 @@ void () next_turn =
     }
     
     mystuffcmd(current_turn, "bf\n");
-    if(random() < 0.500)
+    if(random() < 0.5)
     {
         mystuffcmd(current_turn, "play buttons/switch02.wav\n");
     }
@@ -2789,7 +2789,7 @@ entity (entity monst) FindNewEnemy =
     
     trav = find(world, chess_team, other_team);
     
-    while((trav != world) && ((((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))) || (trav.enemy == world)))
+    while((trav != world) && ((((trav.chess_team != other_team) || (trav.health <= 0)) || (!(trav.flags & FL_MONSTER))) || (trav.enemy == world)))
     {
         trav = find(trav, chess_team, other_team);
     }
@@ -2802,7 +2802,7 @@ entity (entity monst) FindNewEnemy =
     {
         trav = find(world, chess_team, other_team);
         
-        while((trav != world) && (((trav.chess_team != other_team) || (trav.health <= 0.000)) || (!(trav.flags & FL_MONSTER))))
+        while((trav != world) && (((trav.chess_team != other_team) || (trav.health <= 0)) || (!(trav.flags & FL_MONSTER))))
         {
             trav = find(trav, chess_team, other_team);
         }
@@ -3074,9 +3074,9 @@ void () CheckGameOver =
     
     if(!king_dead)
     {
-        self.health = -10.000;
+        self.health = -10;
         king_dead = TRUE;
-        sound(self, CHAN_AUTO, "boss1/death.wav", 1.000, ATTN_NONE);
+        sound(self, CHAN_AUTO, "boss1/death.wav", 1, ATTN_NONE);
         action_flag = TRUE;
         found = FALSE;
         e1trav = find(world, chess_team, "white");
@@ -3088,7 +3088,7 @@ void () CheckGameOver =
             if(e1trav != world)
             {
                 
-                if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0.000)) && (e1trav.classname != "chess_king"))
+                if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0)) && (e1trav.classname != "chess_king"))
                 {
                     found = TRUE;
                 }
@@ -3116,7 +3116,7 @@ void () CheckGameOver =
             if(e2trav != world)
             {
                 
-                if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
+                if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0)) && (e2trav.classname != "chess_king"))
                 {
                     found = TRUE;
                 }
@@ -3139,10 +3139,10 @@ void () CheckGameOver =
         {
             ent1.enemy = ent2;
             ent1.think = FoundTarget;
-            ent1.nextthink = time + 0.100;
+            ent1.nextthink = time + 0.1;
             ent2.enemy = ent1;
             ent2.think = FoundTarget;
-            ent2.nextthink = time + 0.100;
+            ent2.nextthink = time + 0.1;
             
             if(e1trav != world)
             {
@@ -3156,7 +3156,7 @@ void () CheckGameOver =
                     if(e1trav != world)
                     {
                         
-                        if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0.000)) && (e1trav.classname != "chess_king"))
+                        if(((e1trav.flags & FL_MONSTER) && (e1trav.health > 0)) && (e1trav.classname != "chess_king"))
                         {
                             found = TRUE;
                         }
@@ -3186,7 +3186,7 @@ void () CheckGameOver =
                     if(e2trav != world)
                     {
                         
-                        if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0.000)) && (e2trav.classname != "chess_king"))
+                        if(((e2trav.flags & FL_MONSTER) && (e2trav.health > 0)) && (e2trav.classname != "chess_king"))
                         {
                             found = TRUE;
                         }
@@ -3206,20 +3206,20 @@ void () CheckGameOver =
         }
         
         
-        if(teamplay > 0.000)
+        if(teamplay > 0)
         {
             
             if(self.owner.opponent.flags & FL_CLIENT)
             {
                 mycentreprint(self.owner.opponent, "YOU HAVE WON!");
-                self.owner.opponent.skin = 1.000;
+                self.owner.opponent.skin = 1;
             }
             
             
             if(self.owner.flags & FL_CLIENT)
             {
                 mycentreprint(self.owner, "You have lost..");
-                self.owner.opponent.skin = 0.000;
+                self.owner.opponent.skin = 0;
             }
             
         }
@@ -3267,7 +3267,7 @@ void (entity plyr) UpdateMonsterColors =
 {
     local entity trav;
     
-    if(cvar("coop") != 3.000)
+    if(cvar("coop") != 3)
     {
         return;
     }
@@ -3338,7 +3338,7 @@ float (entity ent, entity ignore) CanDie =
         team_str = "white";
     }
     
-    trav = findradius(VEC_ORIGIN, 4000.000);
+    trav = findradius(VEC_ORIGIN, 4000);
     
     while(trav != world)
     {
@@ -3346,7 +3346,7 @@ float (entity ent, entity ignore) CanDie =
         if((trav.owner != ent.owner) && (trav != ignore))
         {
             
-            if((trav.flags & FL_MONSTER) && (trav.health > 0.000))
+            if((trav.flags & FL_MONSTER) && (trav.health > 0))
             {
                 
                 if(CanMove(trav, ent.location, FALSE))

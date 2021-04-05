@@ -12,8 +12,8 @@ void () trigger_reactivate =
     self.solid = SOLID_TRIGGER;
 };
 
-float SPAWNFLAG_NOMESSAGE = 1.000;
-float SPAWNFLAG_NOTOUCH = 1.000;
+float SPAWNFLAG_NOMESSAGE = 1;
+float SPAWNFLAG_NOTOUCH = 1;
 // multi_wait
 // function begins at statement 10534, parm_start=7092
 // OP_LOAD_F	28	185	7092
@@ -106,20 +106,20 @@ void () multi_trigger =
             return;
         }
         
-        found_secrets = found_secrets + 1.000;
+        found_secrets = found_secrets + 1;
         WriteByte(MSG_ALL, SVC_FOUNDSECRET);
     }
     
     
     if(self.noise)
     {
-        sound(self, CHAN_VOICE, self.noise, 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, self.noise, 1, ATTN_NORM);
     }
     
     self.takedamage = DAMAGE_NO;
     activator = self.enemy;
     SUB_UseTargets();
-    if(self.wait > 0.000)
+    if(self.wait > 0)
     {
         self.think = multi_wait;
         self.nextthink = time + self.wait;
@@ -127,7 +127,7 @@ void () multi_trigger =
     else
     {
         self.touch = SUB_Null;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         self.think = SUB_Remove;
     }
     
@@ -191,7 +191,7 @@ void () multi_touch =
     {
         makevectors(other.angles);
         
-        if((v_forward * self.movedir) < 0.000)
+        if((v_forward * self.movedir) < 0)
         {
             return;
         }
@@ -265,14 +265,14 @@ void () multi_touch =
 // OP_DONE	0	0	0
 void () trigger_multiple = 
 {
-    if(self.sounds == 1.000)
+    if(self.sounds == 1)
     {
         precache_sound("misc/secret.wav");
         self.noise = "misc/secret.wav";
     }
     else
     {
-        if(self.sounds == 2.000)
+        if(self.sounds == 2)
         {
             precache_sound("misc/talk.wav");
             self.noise = "misc/talk.wav";
@@ -280,7 +280,7 @@ void () trigger_multiple =
         else
         {
             
-            if(self.sounds == 3.000)
+            if(self.sounds == 3)
             {
                 precache_sound("misc/trigger1.wav");
                 self.noise = "misc/trigger1.wav";
@@ -293,7 +293,7 @@ void () trigger_multiple =
     
     if(!self.wait)
     {
-        self.wait = 0.200;
+        self.wait = 0.2;
     }
     
     self.use = multi_use;
@@ -332,7 +332,7 @@ void () trigger_multiple =
 // OP_DONE	0	0	0
 void () trigger_once = 
 {
-    self.wait = -1.000;
+    self.wait = -1;
     trigger_multiple();
 };
 
@@ -381,8 +381,8 @@ void () trigger_relay =
 // OP_DONE	0	0	0
 void () trigger_secret = 
 {
-    total_secrets = total_secrets + 1.000;
-    self.wait = -1.000;
+    total_secrets = total_secrets + 1;
+    self.wait = -1;
     
     if(!self.message)
     {
@@ -392,10 +392,10 @@ void () trigger_secret =
     
     if(!self.sounds)
     {
-        self.sounds = 1.000;
+        self.sounds = 1;
     }
     
-    if(self.sounds == 1.000)
+    if(self.sounds == 1)
     {
         precache_sound("misc/secret.wav");
         self.noise = "misc/secret.wav";
@@ -403,7 +403,7 @@ void () trigger_secret =
     else
     {
         
-        if(self.sounds == 2.000)
+        if(self.sounds == 2)
         {
             precache_sound("misc/talk.wav");
             self.noise = "misc/talk.wav";
@@ -476,32 +476,32 @@ void () trigger_secret =
 void () counter_use = 
 {
     local string junk;
-    self.count = self.count - 1.000;
+    self.count = self.count - 1;
     
-    if(self.count < 0.000)
+    if(self.count < 0)
     {
         return;
     }
     
     
-    if(self.count != 0.000)
+    if(self.count != 0)
     {
         
-        if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == 0.000))
+        if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == 0))
         {
-            if(self.count >= 4.000)
+            if(self.count >= 4)
             {
                 centerprint(activator, "There are more to go...");
             }
             else
             {
-                if(self.count == 3.000)
+                if(self.count == 3)
                 {
                     centerprint(activator, "Only 3 more to go...");
                 }
                 else
                 {
-                    if(self.count == 2.000)
+                    if(self.count == 2)
                     {
                         centerprint(activator, "Only 2 more to go...");
                     }
@@ -520,7 +520,7 @@ void () counter_use =
     }
     
     
-    if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == 0.000))
+    if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == 0))
     {
         centerprint(activator, "Sequence completed!");
     }
@@ -543,18 +543,18 @@ void () counter_use =
 // OP_DONE	0	0	0
 void () trigger_counter = 
 {
-    self.wait = -1.000;
+    self.wait = -1;
     
     if(!self.count)
     {
-        self.count = 2.000;
+        self.count = 2;
     }
     
     self.use = counter_use;
 };
 
-float PLAYER_ONLY = 1.000;
-float SILENT = 2.000;
+float PLAYER_ONLY = 1;
+float SILENT = 2;
 // play_teleport
 // function begins at statement 10784, parm_start=7235
 // OP_STORE_S	4318	7236	0
@@ -572,7 +572,7 @@ void () play_teleport =
     local float v;
     local string tmpstr;
     tmpstr = "effects/spell.wav";
-    sound(self, CHAN_VOICE, tmpstr, 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, tmpstr, 1, ATTN_NORM);
     remove(self);
 };
 
@@ -607,13 +607,13 @@ void (vector org) spawn_tfog =
 {
     s = spawn();
     s.origin = org;
-    s.nextthink = time + 0.200;
+    s.nextthink = time + 0.2;
     s.think = play_teleport;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
 };
 
 // tdeath_touch
@@ -669,7 +669,7 @@ void () tdeath_touch =
         
         if(self.owner.classname != "player")
         {
-            T_Damage(self.owner, self, self, 50000.000);
+            T_Damage(self.owner, self, self, 50000);
             return;
         }
         
@@ -678,7 +678,7 @@ void () tdeath_touch =
     
     if(other.health)
     {
-        T_Damage(other, self, self, 50000.000);
+        T_Damage(other, self, self, 50000);
     }
     
 };
@@ -728,10 +728,10 @@ void (vector org, entity death_owner) spawn_tdeath =
     setsize(death, death_owner.mins - '1.000 1.000 1.000', death_owner.maxs + '1.000 1.000 1.000');
     setorigin(death, org);
     death.touch = tdeath_touch;
-    death.nextthink = time + 0.200;
+    death.nextthink = time + 0.2;
     death.think = SUB_Remove;
     death.owner = death_owner;
-    force_retouch = 2.000;
+    force_retouch = 2;
 };
 
 // teleport_touch
@@ -856,7 +856,7 @@ void () teleport_touch =
     }
     
     
-    if((other.health <= 0.000) || (other.solid != SOLID_SLIDEBOX))
+    if((other.health <= 0) || (other.solid != SOLID_SLIDEBOX))
     {
         return;
     }
@@ -871,7 +871,7 @@ void () teleport_touch =
     }
     
     makevectors(t.mangle);
-    org = t.origin + (32.000 * v_forward);
+    org = t.origin + (32 * v_forward);
     spawn_tfog(org);
     spawn_tdeath(t.origin, other);
     
@@ -887,15 +887,15 @@ void () teleport_touch =
     
     if(other.classname == "player")
     {
-        other.fixangle = 1.000;
-        other.teleport_time = time + 0.700;
+        other.fixangle = 1;
+        other.teleport_time = time + 0.7;
         
         if(other.flags & FL_ONGROUND)
         {
             other.flags = other.flags - FL_ONGROUND;
         }
         
-        other.velocity = v_forward * 300.000;
+        other.velocity = v_forward * 300;
     }
     
     other.flags = other.flags - (other.flags & FL_ONGROUND);
@@ -945,8 +945,8 @@ void () info_teleport_destination =
 // OP_DONE	0	0	0
 void () teleport_use = 
 {
-    self.nextthink = time + 0.200;
-    force_retouch = 2.000;
+    self.nextthink = time + 0.2;
+    force_retouch = 2;
     self.think = SUB_Null;
 };
 
@@ -995,8 +995,8 @@ void () trigger_teleport =
     if(!(self.spawnflags & SILENT))
     {
         precache_sound("ambience/hum1.wav");
-        o = (self.mins + self.maxs) * 0.500;
-        ambientsound(o, "ambience/hum1.wav", 0.500, ATTN_STATIC);
+        o = (self.mins + self.maxs) * 0.5;
+        ambientsound(o, "ambience/hum1.wav", 0.5, ATTN_STATIC);
     }
     
 };
@@ -1085,7 +1085,7 @@ void () trigger_onlyregistered_touch =
         return;
     }
     
-    self.attack_finished = time + 2.000;
+    self.attack_finished = time + 2;
     if(cvar("registered"))
     {
         self.message = "";
@@ -1098,7 +1098,7 @@ void () trigger_onlyregistered_touch =
         if(self.message != "")
         {
             centerprint(other, self.message);
-            sound(other, CHAN_BODY, "misc/talk.wav", 1.000, ATTN_NORM);
+            sound(other, CHAN_BODY, "misc/talk.wav", 1, ATTN_NORM);
         }
         
     }
@@ -1130,7 +1130,7 @@ void () trigger_onlyregistered =
 void () hurt_on = 
 {
     self.solid = SOLID_TRIGGER;
-    self.nextthink = -1.000;
+    self.nextthink = -1;
 };
 
 // hurt_touch
@@ -1160,7 +1160,7 @@ void () hurt_touch =
         self.solid = SOLID_NOT;
         T_Damage(other, self, self, self.dmg);
         self.think = hurt_on;
-        self.nextthink = time + 1.000;
+        self.nextthink = time + 1;
     }
     
     return;
@@ -1184,12 +1184,12 @@ void () trigger_hurt =
     
     if(!self.dmg)
     {
-        self.dmg = 5.000;
+        self.dmg = 5;
     }
     
 };
 
-float PUSH_ONCE = 1.000;
+float PUSH_ONCE = 1;
 // trigger_push_touch
 // function begins at statement 11110, parm_start=7471
 // OP_LOAD_S	29	129	7471
@@ -1236,22 +1236,22 @@ void () trigger_push_touch =
 {
     if(other.classname == "grenade")
     {
-        other.velocity = (self.speed * self.movedir) * 10.000;
+        other.velocity = (self.speed * self.movedir) * 10;
     }
     else
     {
         
-        if(other.health > 0.000)
+        if(other.health > 0)
         {
-            other.velocity = (self.speed * self.movedir) * 10.000;
+            other.velocity = (self.speed * self.movedir) * 10;
             
             if(other.classname == "player")
             {
                 
                 if(other.fly_sound < time)
                 {
-                    other.fly_sound = time + 1.500;
-                    sound(other, CHAN_AUTO, "ambience/windfly.wav", 1.000, ATTN_NORM);
+                    other.fly_sound = time + 1.5;
+                    sound(other, CHAN_AUTO, "ambience/windfly.wav", 1, ATTN_NORM);
                 }
                 
             }
@@ -1289,7 +1289,7 @@ void () trigger_push =
     
     if(!self.speed)
     {
-        self.speed = 1000.000;
+        self.speed = 1000;
     }
     
 };
@@ -1372,13 +1372,13 @@ void () trigger_monsterjump =
     
     if(!self.speed)
     {
-        self.speed = 200.000;
+        self.speed = 200;
     }
     
     
     if(!self.height)
     {
-        self.height = 200.000;
+        self.height = 200;
     }
     
     

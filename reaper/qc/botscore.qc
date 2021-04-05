@@ -113,17 +113,17 @@ void (entity killer, entity killed) countkill =
     
     if(skill == TRUE)
     {
-        adj = 0.800;
+        adj = 0.8;
         
         if((killed.playerdeaths + killed.botdeaths) > MOVETYPE_BOUNCE)
         {
-            adj = 0.400;
+            adj = 0.4;
         }
         
         
         if((killed.playerdeaths + killed.botdeaths) > KINDA_WANT)
         {
-            adj = 0.150;
+            adj = 0.15;
         }
         
     }
@@ -231,7 +231,7 @@ void (entity killer, entity killed) countkill =
 void (float sc) FPrintScore = 
 {
     local string fs;
-    if((sc > -10.000) && (sc < FALSE))
+    if((sc > -10) && (sc < FALSE))
     {
         sprint(self, " ");
     }

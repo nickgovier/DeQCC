@@ -49,6 +49,7 @@ namespace DeQcc
                     int decompedStatements = decomped.functions[i + 1].first_statement - decomped.functions[i].first_statement;
                     int decompedglobals = decomped.functions[i + 1].parm_start - decomped.functions[i].parm_start;
 
+                    /*
                     int s = original.functions[i].first_statement;
                     while(s > 0 && original.statements[s].Opcode != Opcodes.OP_DONE)
                     {
@@ -61,11 +62,12 @@ namespace DeQcc
                         decompedBytecode += decomped.statements[s].op.ToString("00") + "_";
                         s++;
                     }
+                    */
 
                     if (originalStatements != decompedStatements) { statementErrors.Add("ERROR: " + original.functions[i].file + " " + original.functions[i].name + " statements do not match"); }
                     if (originalglobals != decompedglobals) { globalErrors.Add("ERROR: " + original.functions[i].file + " " + original.functions[i].name + " globals do not match"); }
                     if(originalBytecode != decompedBytecode) { bytecodeErrors.Add("ERROR: " + original.functions[i].file + " " + original.functions[i].name + " bytecode doesn't match\noriginal: " + originalBytecode + "\ndecomped: " + decompedBytecode); }
-                    originalBytecode = decompedBytecode = "";
+                    //originalBytecode = decompedBytecode = "";
                 }
 
                 Console.Out.WriteLine("Statement errors:");
@@ -73,9 +75,9 @@ namespace DeQcc
                 Console.Out.WriteLine("");
                 Console.Out.WriteLine("Global errors:");
                 foreach (string s in globalErrors) { Console.Out.WriteLine(s); }
-                Console.Out.WriteLine("");
-                Console.Out.WriteLine("Bytecode errors:");
-                foreach (string s in  bytecodeErrors) { Console.Out.WriteLine(s); }
+                //Console.Out.WriteLine("");
+                //Console.Out.WriteLine("Bytecode errors:");
+                //foreach (string s in  bytecodeErrors) { Console.Out.WriteLine(s); }
 
             }
         }

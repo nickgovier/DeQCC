@@ -135,7 +135,7 @@ float (entity e) hearnoise =
     
     if(self.skil < FL_SWIM)
     {
-        rnd = random() + 0.900;
+        rnd = random() + 0.9;
         
         if(self.skil < rnd)
         {

@@ -572,60 +572,60 @@ float (entity e, float atype) check_ammo =
     
     if(e.classname != "player")
     {
-        return 0.000;
+        return 0;
     }
     
-    if(e.style == 1.000)
+    if(e.style == 1)
     {
         
-        if((atype == 1.000) && (e.ammo_auto < 200.000))
+        if((atype == 1) && (e.ammo_auto < 200))
         {
-            return 40.000;
+            return 40;
         }
         
         
-        if((atype == 2.000) && (e.ammo_rock < (10.000 * wepmulti)))
+        if((atype == 2) && (e.ammo_rock < (10 * wepmulti)))
         {
-            return 2.000;
+            return 2;
         }
         
         
-        if((atype == 4.000) && (e.ammo_amsl < (4.000 * wepmulti)))
+        if((atype == 4) && (e.ammo_amsl < (4 * wepmulti)))
         {
-            return 1.000;
+            return 1;
         }
         
         
-        if((atype == 5.000) && (e.ammo_smsl < (4.000 * wepmulti)))
+        if((atype == 5) && (e.ammo_smsl < (4 * wepmulti)))
         {
-            return 1.000;
+            return 1;
         }
         
         
-        if(atype == 0.000)
+        if(atype == 0)
         {
             
-            if(e.ammo_rock > (10.000 * wepmulti))
+            if(e.ammo_rock > (10 * wepmulti))
             {
-                e.ammo_rock = 10.000 * wepmulti;
+                e.ammo_rock = 10 * wepmulti;
             }
             
             
-            if(e.ammo_auto > 200.000)
+            if(e.ammo_auto > 200)
             {
-                e.ammo_auto = 200.000;
+                e.ammo_auto = 200;
             }
             
             
-            if(e.ammo_amsl > (4.000 * wepmulti))
+            if(e.ammo_amsl > (4 * wepmulti))
             {
-                e.ammo_amsl = 4.000 * wepmulti;
+                e.ammo_amsl = 4 * wepmulti;
             }
             
             
-            if(e.ammo_smsl > (4.000 * wepmulti))
+            if(e.ammo_smsl > (4 * wepmulti))
             {
-                e.ammo_smsl = 4.000 * wepmulti;
+                e.ammo_smsl = 4 * wepmulti;
             }
             
         }
@@ -633,57 +633,57 @@ float (entity e, float atype) check_ammo =
     }
     else
     {
-        if(e.style == 2.000)
+        if(e.style == 2)
         {
             
-            if((atype == 1.000) && (e.ammo_auto < 100.000))
+            if((atype == 1) && (e.ammo_auto < 100))
             {
-                return 10.000;
+                return 10;
             }
             
             
-            if((atype == 4.000) && (e.ammo_amsl < (4.000 * wepmulti)))
+            if((atype == 4) && (e.ammo_amsl < (4 * wepmulti)))
             {
-                return 1.000;
+                return 1;
             }
             
             
-            if((atype == 5.000) && (e.ammo_smsl < (4.000 * wepmulti)))
+            if((atype == 5) && (e.ammo_smsl < (4 * wepmulti)))
             {
-                return 1.000;
+                return 1;
             }
             
             
-            if((atype == 6.000) && (e.ammo_bomb < (4.000 * wepmulti)))
+            if((atype == 6) && (e.ammo_bomb < (4 * wepmulti)))
             {
-                return 1.000;
+                return 1;
             }
             
             
-            if(atype == 0.000)
+            if(atype == 0)
             {
                 
-                if(e.ammo_auto > 100.000)
+                if(e.ammo_auto > 100)
                 {
-                    e.ammo_auto = 100.000;
+                    e.ammo_auto = 100;
                 }
                 
                 
-                if(e.ammo_amsl > (4.000 * wepmulti))
+                if(e.ammo_amsl > (4 * wepmulti))
                 {
-                    e.ammo_amsl = 4.000 * wepmulti;
+                    e.ammo_amsl = 4 * wepmulti;
                 }
                 
                 
-                if(e.ammo_smsl > (4.000 * wepmulti))
+                if(e.ammo_smsl > (4 * wepmulti))
                 {
-                    e.ammo_smsl = 4.000 * wepmulti;
+                    e.ammo_smsl = 4 * wepmulti;
                 }
                 
                 
-                if(e.ammo_bomb > (4.000 * wepmulti))
+                if(e.ammo_bomb > (4 * wepmulti))
                 {
-                    e.ammo_bomb = 4.000 * wepmulti;
+                    e.ammo_bomb = 4 * wepmulti;
                 }
                 
             }
@@ -691,57 +691,57 @@ float (entity e, float atype) check_ammo =
         }
         else
         {
-            if(e.style == 3.000)
+            if(e.style == 3)
             {
                 
-                if((atype == 1.000) && (e.ammo_auto < 100.000))
+                if((atype == 1) && (e.ammo_auto < 100))
                 {
-                    return 10.000;
+                    return 10;
                 }
                 
                 
-                if((atype == 4.000) && (e.ammo_amsl < (4.000 * wepmulti)))
+                if((atype == 4) && (e.ammo_amsl < (4 * wepmulti)))
                 {
-                    return 1.000;
+                    return 1;
                 }
                 
                 
-                if((atype == 5.000) && (e.ammo_smsl < (4.000 * wepmulti)))
+                if((atype == 5) && (e.ammo_smsl < (4 * wepmulti)))
                 {
-                    return 1.000;
+                    return 1;
                 }
                 
                 
-                if((atype == 6.000) && (e.ammo_bomb < (4.000 * wepmulti)))
+                if((atype == 6) && (e.ammo_bomb < (4 * wepmulti)))
                 {
-                    return 1.000;
+                    return 1;
                 }
                 
                 
-                if(atype == 0.000)
+                if(atype == 0)
                 {
                     
-                    if(e.ammo_auto > 100.000)
+                    if(e.ammo_auto > 100)
                     {
-                        e.ammo_auto = 100.000;
+                        e.ammo_auto = 100;
                     }
                     
                     
-                    if(e.ammo_amsl > (4.000 * wepmulti))
+                    if(e.ammo_amsl > (4 * wepmulti))
                     {
-                        e.ammo_amsl = 4.000 * wepmulti;
+                        e.ammo_amsl = 4 * wepmulti;
                     }
                     
                     
-                    if(e.ammo_smsl > (4.000 * wepmulti))
+                    if(e.ammo_smsl > (4 * wepmulti))
                     {
-                        e.ammo_smsl = 4.000 * wepmulti;
+                        e.ammo_smsl = 4 * wepmulti;
                     }
                     
                     
-                    if(e.ammo_bomb > (4.000 * wepmulti))
+                    if(e.ammo_bomb > (4 * wepmulti))
                     {
-                        e.ammo_bomb = 4.000 * wepmulti;
+                        e.ammo_bomb = 4 * wepmulti;
                     }
                     
                 }
@@ -749,57 +749,57 @@ float (entity e, float atype) check_ammo =
             }
             else
             {
-                if(e.style == 4.000)
+                if(e.style == 4)
                 {
                     
-                    if((atype == 1.000) && (e.ammo_auto < 100.000))
+                    if((atype == 1) && (e.ammo_auto < 100))
                     {
-                        return 10.000;
+                        return 10;
                     }
                     
                     
-                    if((atype == 4.000) && (e.ammo_amsl < (2.000 * wepmulti)))
+                    if((atype == 4) && (e.ammo_amsl < (2 * wepmulti)))
                     {
-                        return 1.000;
+                        return 1;
                     }
                     
                     
-                    if((atype == 5.000) && (e.ammo_smsl < (6.000 * wepmulti)))
+                    if((atype == 5) && (e.ammo_smsl < (6 * wepmulti)))
                     {
-                        return 1.000;
+                        return 1;
                     }
                     
                     
-                    if((atype == 6.000) && (e.ammo_bomb < (6.000 * wepmulti)))
+                    if((atype == 6) && (e.ammo_bomb < (6 * wepmulti)))
                     {
-                        return 1.000;
+                        return 1;
                     }
                     
                     
-                    if(atype == 0.000)
+                    if(atype == 0)
                     {
                         
-                        if(e.ammo_auto > 100.000)
+                        if(e.ammo_auto > 100)
                         {
-                            e.ammo_auto = 100.000;
+                            e.ammo_auto = 100;
                         }
                         
                         
-                        if(e.ammo_amsl > (2.000 * wepmulti))
+                        if(e.ammo_amsl > (2 * wepmulti))
                         {
-                            e.ammo_amsl = 2.000 * wepmulti;
+                            e.ammo_amsl = 2 * wepmulti;
                         }
                         
                         
-                        if(e.ammo_smsl > (6.000 * wepmulti))
+                        if(e.ammo_smsl > (6 * wepmulti))
                         {
-                            e.ammo_smsl = 6.000 * wepmulti;
+                            e.ammo_smsl = 6 * wepmulti;
                         }
                         
                         
-                        if(e.ammo_bomb > (6.000 * wepmulti))
+                        if(e.ammo_bomb > (6 * wepmulti))
                         {
-                            e.ammo_bomb = 6.000 * wepmulti;
+                            e.ammo_bomb = 6 * wepmulti;
                         }
                         
                     }
@@ -807,57 +807,57 @@ float (entity e, float atype) check_ammo =
                 }
                 else
                 {
-                    if(e.style == 5.000)
+                    if(e.style == 5)
                     {
                         
-                        if((atype == 1.000) && (e.ammo_auto < 130.000))
+                        if((atype == 1) && (e.ammo_auto < 130))
                         {
-                            return 20.000;
+                            return 20;
                         }
                         
                         
-                        if((atype == 2.000) && (e.ammo_rock < (8.000 * wepmulti)))
+                        if((atype == 2) && (e.ammo_rock < (8 * wepmulti)))
                         {
-                            return 2.000;
+                            return 2;
                         }
                         
                         
-                        if((atype == 4.000) && (e.ammo_amsl < (4.000 * wepmulti)))
+                        if((atype == 4) && (e.ammo_amsl < (4 * wepmulti)))
                         {
-                            return 1.000;
+                            return 1;
                         }
                         
                         
-                        if((atype == 7.000) && (e.ammo_cell < (40.000 * wepmulti)))
+                        if((atype == 7) && (e.ammo_cell < (40 * wepmulti)))
                         {
-                            return 8.000;
+                            return 8;
                         }
                         
                         
-                        if(atype == 0.000)
+                        if(atype == 0)
                         {
                             
-                            if(e.ammo_auto > 130.000)
+                            if(e.ammo_auto > 130)
                             {
-                                e.ammo_auto = 130.000;
+                                e.ammo_auto = 130;
                             }
                             
                             
-                            if(e.ammo_rock > (8.000 * wepmulti))
+                            if(e.ammo_rock > (8 * wepmulti))
                             {
-                                e.ammo_rock = 8.000 * wepmulti;
+                                e.ammo_rock = 8 * wepmulti;
                             }
                             
                             
-                            if(e.ammo_amsl > (4.000 * wepmulti))
+                            if(e.ammo_amsl > (4 * wepmulti))
                             {
-                                e.ammo_amsl = 4.000 * wepmulti;
+                                e.ammo_amsl = 4 * wepmulti;
                             }
                             
                             
-                            if(e.ammo_cell > (40.000 * wepmulti))
+                            if(e.ammo_cell > (40 * wepmulti))
                             {
-                                e.ammo_cell = 40.000 * wepmulti;
+                                e.ammo_cell = 40 * wepmulti;
                             }
                             
                         }
@@ -865,57 +865,57 @@ float (entity e, float atype) check_ammo =
                     }
                     else
                     {
-                        if(e.style == 6.000)
+                        if(e.style == 6)
                         {
                             
-                            if((atype == 1.000) && (e.ammo_auto < 100.000))
+                            if((atype == 1) && (e.ammo_auto < 100))
                             {
-                                return 10.000;
+                                return 10;
                             }
                             
                             
-                            if((atype == 2.000) && (e.ammo_rock < (16.000 * wepmulti)))
+                            if((atype == 2) && (e.ammo_rock < (16 * wepmulti)))
                             {
-                                return 4.000;
+                                return 4;
                             }
                             
                             
-                            if((atype == 4.000) && (e.ammo_amsl < (4.000 * wepmulti)))
+                            if((atype == 4) && (e.ammo_amsl < (4 * wepmulti)))
                             {
-                                return 1.000;
+                                return 1;
                             }
                             
                             
-                            if((atype == 5.000) && (e.ammo_smsl < (4.000 * wepmulti)))
+                            if((atype == 5) && (e.ammo_smsl < (4 * wepmulti)))
                             {
-                                return 1.000;
+                                return 1;
                             }
                             
                             
-                            if(atype == 0.000)
+                            if(atype == 0)
                             {
                                 
-                                if(e.ammo_rock > (16.000 * wepmulti))
+                                if(e.ammo_rock > (16 * wepmulti))
                                 {
-                                    e.ammo_rock = 16.000 * wepmulti;
+                                    e.ammo_rock = 16 * wepmulti;
                                 }
                                 
                                 
-                                if(e.ammo_auto > 100.000)
+                                if(e.ammo_auto > 100)
                                 {
-                                    e.ammo_auto = 100.000;
+                                    e.ammo_auto = 100;
                                 }
                                 
                                 
-                                if(e.ammo_amsl > (4.000 * wepmulti))
+                                if(e.ammo_amsl > (4 * wepmulti))
                                 {
-                                    e.ammo_amsl = 4.000 * wepmulti;
+                                    e.ammo_amsl = 4 * wepmulti;
                                 }
                                 
                                 
-                                if(e.ammo_smsl > (4.000 * wepmulti))
+                                if(e.ammo_smsl > (4 * wepmulti))
                                 {
-                                    e.ammo_smsl = 4.000 * wepmulti;
+                                    e.ammo_smsl = 4 * wepmulti;
                                 }
                                 
                             }
@@ -923,33 +923,33 @@ float (entity e, float atype) check_ammo =
                         }
                         else
                         {
-                            if(e.style == 7.000)
+                            if(e.style == 7)
                             {
                                 
-                                if((atype == 1.000) && (e.ammo_auto < 200.000))
+                                if((atype == 1) && (e.ammo_auto < 200))
                                 {
-                                    return 40.000;
+                                    return 40;
                                 }
                                 
                                 
-                                if((atype == 4.000) && (e.ammo_amsl < (16.000 * wepmulti)))
+                                if((atype == 4) && (e.ammo_amsl < (16 * wepmulti)))
                                 {
-                                    return 4.000;
+                                    return 4;
                                 }
                                 
                                 
-                                if(atype == 0.000)
+                                if(atype == 0)
                                 {
                                     
-                                    if(e.ammo_auto > 200.000)
+                                    if(e.ammo_auto > 200)
                                     {
-                                        e.ammo_auto = 200.000;
+                                        e.ammo_auto = 200;
                                     }
                                     
                                     
-                                    if(e.ammo_amsl > (16.000 * wepmulti))
+                                    if(e.ammo_amsl > (16 * wepmulti))
                                     {
-                                        e.ammo_amsl = 16.000 * wepmulti;
+                                        e.ammo_amsl = 16 * wepmulti;
                                     }
                                     
                                 }
@@ -957,57 +957,57 @@ float (entity e, float atype) check_ammo =
                             }
                             else
                             {
-                                if(e.style == 8.000)
+                                if(e.style == 8)
                                 {
                                     
-                                    if((atype == 1.000) && (e.ammo_auto < 150.000))
+                                    if((atype == 1) && (e.ammo_auto < 150))
                                     {
-                                        return 20.000;
+                                        return 20;
                                     }
                                     
                                     
-                                    if((atype == 3.000) && (e.ammo_shel < (60.000 * wepmulti)))
+                                    if((atype == 3) && (e.ammo_shel < (60 * wepmulti)))
                                     {
-                                        return 10.000;
+                                        return 10;
                                     }
                                     
                                     
-                                    if((atype == 4.000) && (e.ammo_amsl < (6.000 * wepmulti)))
+                                    if((atype == 4) && (e.ammo_amsl < (6 * wepmulti)))
                                     {
-                                        return 1.000;
+                                        return 1;
                                     }
                                     
                                     
-                                    if((atype == 7.000) && (e.ammo_cell < (30.000 * wepmulti)))
+                                    if((atype == 7) && (e.ammo_cell < (30 * wepmulti)))
                                     {
-                                        return 5.000;
+                                        return 5;
                                     }
                                     
                                     
-                                    if(atype == 0.000)
+                                    if(atype == 0)
                                     {
                                         
-                                        if(e.ammo_shel > (60.000 * wepmulti))
+                                        if(e.ammo_shel > (60 * wepmulti))
                                         {
-                                            e.ammo_shel = 60.000 * wepmulti;
+                                            e.ammo_shel = 60 * wepmulti;
                                         }
                                         
                                         
-                                        if(e.ammo_auto > 150.000)
+                                        if(e.ammo_auto > 150)
                                         {
-                                            e.ammo_auto = 150.000;
+                                            e.ammo_auto = 150;
                                         }
                                         
                                         
-                                        if(e.ammo_amsl > (6.000 * wepmulti))
+                                        if(e.ammo_amsl > (6 * wepmulti))
                                         {
-                                            e.ammo_amsl = 6.000 * wepmulti;
+                                            e.ammo_amsl = 6 * wepmulti;
                                         }
                                         
                                         
-                                        if(e.ammo_cell > (30.000 * wepmulti))
+                                        if(e.ammo_cell > (30 * wepmulti))
                                         {
-                                            e.ammo_cell = 30.000 * wepmulti;
+                                            e.ammo_cell = 30 * wepmulti;
                                         }
                                         
                                     }
@@ -1015,57 +1015,57 @@ float (entity e, float atype) check_ammo =
                                 }
                                 else
                                 {
-                                    if(e.style == 9.000)
+                                    if(e.style == 9)
                                     {
                                         
-                                        if((atype == 1.000) && (e.ammo_auto < 150.000))
+                                        if((atype == 1) && (e.ammo_auto < 150))
                                         {
-                                            return 20.000;
+                                            return 20;
                                         }
                                         
                                         
-                                        if((atype == 4.000) && (e.ammo_amsl < (8.000 * wepmulti)))
+                                        if((atype == 4) && (e.ammo_amsl < (8 * wepmulti)))
                                         {
-                                            return 2.000;
+                                            return 2;
                                         }
                                         
                                         
-                                        if((atype == 6.000) && (e.ammo_bomb < (2.000 * wepmulti)))
+                                        if((atype == 6) && (e.ammo_bomb < (2 * wepmulti)))
                                         {
-                                            return 1.000;
+                                            return 1;
                                         }
                                         
                                         
-                                        if((atype == 8.000) && (e.ammo_mine < (6.000 * wepmulti)))
+                                        if((atype == 8) && (e.ammo_mine < (6 * wepmulti)))
                                         {
-                                            return 1.000;
+                                            return 1;
                                         }
                                         
                                         
-                                        if(atype == 0.000)
+                                        if(atype == 0)
                                         {
                                             
-                                            if(e.ammo_auto > 150.000)
+                                            if(e.ammo_auto > 150)
                                             {
-                                                e.ammo_auto = 150.000;
+                                                e.ammo_auto = 150;
                                             }
                                             
                                             
-                                            if(e.ammo_amsl > (8.000 * wepmulti))
+                                            if(e.ammo_amsl > (8 * wepmulti))
                                             {
-                                                e.ammo_amsl = 8.000 * wepmulti;
+                                                e.ammo_amsl = 8 * wepmulti;
                                             }
                                             
                                             
-                                            if(e.ammo_bomb > (2.000 * wepmulti))
+                                            if(e.ammo_bomb > (2 * wepmulti))
                                             {
-                                                e.ammo_bomb = 2.000 * wepmulti;
+                                                e.ammo_bomb = 2 * wepmulti;
                                             }
                                             
                                             
-                                            if(e.ammo_mine > (6.000 * wepmulti))
+                                            if(e.ammo_mine > (6 * wepmulti))
                                             {
-                                                e.ammo_mine = 6.000 * wepmulti;
+                                                e.ammo_mine = 6 * wepmulti;
                                             }
                                             
                                         }
@@ -1074,57 +1074,57 @@ float (entity e, float atype) check_ammo =
                                     else
                                     {
                                         
-                                        if(e.style == 10.000)
+                                        if(e.style == 10)
                                         {
                                             
-                                            if((atype == 1.000) && (e.ammo_auto < 100.000))
+                                            if((atype == 1) && (e.ammo_auto < 100))
                                             {
-                                                return 20.000;
+                                                return 20;
                                             }
                                             
                                             
-                                            if((atype == 2.000) && (e.ammo_rock < (10.000 * wepmulti)))
+                                            if((atype == 2) && (e.ammo_rock < (10 * wepmulti)))
                                             {
-                                                return 2.000;
+                                                return 2;
                                             }
                                             
                                             
-                                            if((atype == 5.000) && (e.ammo_smsl < (6.000 * wepmulti)))
+                                            if((atype == 5) && (e.ammo_smsl < (6 * wepmulti)))
                                             {
-                                                return 1.000;
+                                                return 1;
                                             }
                                             
                                             
-                                            if((atype == 7.000) && (e.ammo_cell < (40.000 * wepmulti)))
+                                            if((atype == 7) && (e.ammo_cell < (40 * wepmulti)))
                                             {
-                                                return 8.000;
+                                                return 8;
                                             }
                                             
                                             
-                                            if(atype == 0.000)
+                                            if(atype == 0)
                                             {
                                                 
-                                                if(e.ammo_auto > 100.000)
+                                                if(e.ammo_auto > 100)
                                                 {
-                                                    e.ammo_auto = 100.000;
+                                                    e.ammo_auto = 100;
                                                 }
                                                 
                                                 
-                                                if(e.ammo_rock > (10.000 * wepmulti))
+                                                if(e.ammo_rock > (10 * wepmulti))
                                                 {
-                                                    e.ammo_rock = 10.000 * wepmulti;
+                                                    e.ammo_rock = 10 * wepmulti;
                                                 }
                                                 
                                                 
-                                                if(e.ammo_smsl > (6.000 * wepmulti))
+                                                if(e.ammo_smsl > (6 * wepmulti))
                                                 {
-                                                    e.ammo_smsl = 6.000 * wepmulti;
+                                                    e.ammo_smsl = 6 * wepmulti;
                                                 }
                                                 
                                                 
-                                                if(e.ammo_cell > (40.000 * wepmulti))
+                                                if(e.ammo_cell > (40 * wepmulti))
                                                 {
-                                                    e.ammo_cell = 40.000 * wepmulti;
+                                                    e.ammo_cell = 40 * wepmulti;
                                                 }
                                                 
                                             }
@@ -1149,7 +1149,7 @@ float (entity e, float atype) check_ammo =
         
     }
     
-    return 0.000;
+    return 0;
 };
 
 // SUB_regen
@@ -1174,7 +1174,7 @@ void () SUB_regen =
 {
     self.model = self.mdl;
     self.solid = SOLID_TRIGGER;
-    sound(self, CHAN_VOICE, "items/itembk2.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "items/itembk2.wav", 1, ATTN_NORM);
     setorigin(self, self.origin);
 };
 
@@ -1212,7 +1212,7 @@ void () ACPlaceItem =
 // OP_DONE	0	0	0
 void () ACStartItem = 
 {
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     self.think = ACPlaceItem;
 };
 
@@ -1360,7 +1360,7 @@ void () ACammo_touch =
     }
     
     
-    if(other.health <= 0.000)
+    if(other.health <= 0)
     {
         return;
     }
@@ -1374,58 +1374,58 @@ void () ACammo_touch =
     }
     
     
-    if(self.weapon == 1.000)
+    if(self.weapon == 1)
     {
         pler.ammo_auto = pler.ammo_auto + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 2.000)
+    if(self.weapon == 2)
     {
         pler.ammo_rock = pler.ammo_rock + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 3.000)
+    if(self.weapon == 3)
     {
         pler.ammo_shel = pler.ammo_shel + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 4.000)
+    if(self.weapon == 4)
     {
         pler.ammo_amsl = pler.ammo_amsl + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 5.000)
+    if(self.weapon == 5)
     {
         pler.ammo_smsl = pler.ammo_smsl + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 6.000)
+    if(self.weapon == 6)
     {
         pler.ammo_bomb = pler.ammo_bomb + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 7.000)
+    if(self.weapon == 7)
     {
         pler.ammo_cell = pler.ammo_cell + (self.aflag * wepmulti);
     }
     
     
-    if(self.weapon == 8.000)
+    if(self.weapon == 8)
     {
         pler.ammo_mine = pler.ammo_mine + (self.aflag * wepmulti);
     }
     
-    check_ammo(pler, 0.000);
+    check_ammo(pler, 0);
     sprint(pler, "You got the ");
     sprint(pler, self.netname);
     sprint(pler, "\n");
-    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
     stuffcmd(pler, "bf\n");
     stemp = self;
     self = pler;
@@ -1436,7 +1436,7 @@ void () ACammo_touch =
     
     if(deathmatch)
     {
-        self.nextthink = time + 30.000;
+        self.nextthink = time + 30;
     }
     
     self.think = SUB_regen;
@@ -1469,9 +1469,9 @@ void () item_spikes =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 50.000;
-    self.skin = 0.000;
-    self.weapon = 1.000;
+    self.aflag = 50;
+    self.skin = 0;
+    self.weapon = 1;
     self.netname = "nails";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1502,9 +1502,9 @@ void () item_shells =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 8.000;
-    self.skin = 2.000;
-    self.weapon = 2.000;
+    self.aflag = 8;
+    self.skin = 2;
+    self.weapon = 2;
     self.netname = "rockets";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1535,9 +1535,9 @@ void () item_canshells =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 20.000;
-    self.skin = 5.000;
-    self.weapon = 3.000;
+    self.aflag = 20;
+    self.skin = 5;
+    self.weapon = 3;
     self.netname = "shells";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1568,9 +1568,9 @@ void () item_rockets =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 4.000;
-    self.skin = 1.000;
-    self.weapon = 4.000;
+    self.aflag = 4;
+    self.skin = 1;
+    self.weapon = 4;
     self.netname = "missiles";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1601,8 +1601,8 @@ void () item_mavericks =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/imaver.mdl");
-    self.aflag = 2.000;
-    self.weapon = 5.000;
+    self.aflag = 2;
+    self.weapon = 5;
     self.netname = "AS missiles";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     self.avelocity = '0.000 180.000 200.000';
@@ -1636,9 +1636,9 @@ void () item_bombs =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/bomb.mdl");
-    self.aflag = 2.000;
-    self.skin = 0.000;
-    self.weapon = 6.000;
+    self.aflag = 2;
+    self.skin = 0;
+    self.weapon = 6;
     self.netname = "bombs";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     self.avelocity = '0.000 180.000 200.000';
@@ -1670,9 +1670,9 @@ void () item_cells =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 20.000;
-    self.skin = 3.000;
-    self.weapon = 7.000;
+    self.aflag = 20;
+    self.skin = 3;
+    self.weapon = 7;
     self.netname = "cells";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1705,9 +1705,9 @@ void () item_mines =
 {
     self.touch = ACammo_touch;
     setmodel(self, "progs/mine.mdl");
-    self.aflag = 3.000;
-    self.skin = 0.000;
-    self.weapon = 8.000;
+    self.aflag = 3;
+    self.skin = 0;
+    self.weapon = 8;
     self.netname = "mines";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     self.avelocity = '100.000 100.000 100.000';
@@ -1804,7 +1804,7 @@ void () health_touch =
         return;
     }
     
-    other.health = other.health + (floor(other.max_health * 0.250));
+    other.health = other.health + (floor(other.max_health * 0.25));
     
     if(other.health > other.max_health)
     {
@@ -1814,14 +1814,14 @@ void () health_touch =
     sprint(other.owner, "You got the ");
     sprint(other.owner, self.netname);
     sprint(other.owner, "\n");
-    sound(other, CHAN_ITEM, "items/health1.wav", 1.000, ATTN_NORM);
+    sound(other, CHAN_ITEM, "items/health1.wav", 1, ATTN_NORM);
     stuffcmd(other.owner, "bf\n");
     self.model = string_null;
     self.solid = SOLID_NOT;
     
     if(deathmatch)
     {
-        self.nextthink = time + 20.000;
+        self.nextthink = time + 20;
     }
     
     self.think = SUB_regen;
@@ -1855,8 +1855,8 @@ void () item_health =
     self.touch = health_touch;
     precache_sound("items/health1.wav");
     setmodel(self, "progs/box1.mdl");
-    self.aflag = 25.000;
-    self.skin = 4.000;
+    self.aflag = 25;
+    self.skin = 4;
     self.netname = "health";
     setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
     ACStartItem();
@@ -1924,12 +1924,12 @@ void () flagcollected_think =
         
         bprint(" has been returned to the base.\n");
         self.think = start_flagsoldier;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = flagcollected_think;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // flagsoldier_touch
@@ -2055,7 +2055,7 @@ void () flagsoldier_touch =
     local float it1;
     local float it2;
     
-    if(other.health < 1.000)
+    if(other.health < 1)
     {
         return;
     }
@@ -2072,16 +2072,16 @@ void () flagsoldier_touch =
         return;
     }
     
-    if(other.owner.style != 6.000)
+    if(other.owner.style != 6)
     {
         
-        if(other.thru != 0.000)
+        if(other.thru != 0)
         {
             return;
         }
         
         
-        if((other.speed != 0.000) && (other.velocity != '0.000 0.000 0.000'))
+        if((other.speed != 0) && (other.velocity != '0.000 0.000 0.000'))
         {
             return;
         }
@@ -2091,7 +2091,7 @@ void () flagsoldier_touch =
     {
         it1 = vlen(other.velocity);
         
-        if(it1 > 10.000)
+        if(it1 > 10)
         {
             return;
         }
@@ -2118,8 +2118,8 @@ void () flagsoldier_touch =
         {
             bprint(e.netname);
             bprint(" made a capture!\n");
-            givefrags(e, world, 5.000);
-            giveteamfrags(e, 5.000);
+            givefrags(e, world, 5);
+            giveteamfrags(e, 5);
             e.items = e.items - it2;
         }
         
@@ -2155,7 +2155,7 @@ void () flagsoldier_touch =
     setmodel(self, "");
     self.solid = SOLID_NOT;
     self.think = flagcollected_think;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // start_flagsoldier
@@ -2214,20 +2214,20 @@ void () start_flagsoldier =
     if(deathmatch)
     {
         
-        if((teamplay == 0.000) || (self.team == 0.000))
+        if((teamplay == 0) || (self.team == 0))
         {
             remove(self);
             return;
         }
         
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
         else
         {
             
-            if(self.team == 2.000)
+            if(self.team == 2)
             {
                 self.ts = T2;
             }
@@ -2237,7 +2237,7 @@ void () start_flagsoldier =
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -2272,7 +2272,7 @@ void () item_flagsoldier =
 {
     self.oldorigin = self.origin;
     self.think = start_flagsoldier;
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
 };
 
 // item_model

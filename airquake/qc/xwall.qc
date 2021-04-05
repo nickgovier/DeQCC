@@ -22,12 +22,12 @@ void () xwall_checktrig =
     if(time > self.spawn_finished)
     {
         self.think = xwall_start;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = xwall_checktrig;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // xwall_trigtouch
@@ -38,7 +38,7 @@ void () xwall_checktrig =
 // OP_DONE	0	0	0
 void () xwall_trigtouch = 
 {
-    self.spawn_finished = time + 1.000;
+    self.spawn_finished = time + 1;
 };
 
 // xwall_preparespawn
@@ -71,12 +71,12 @@ void () xwall_preparespawn =
     self.solid = SOLID_TRIGGER;
     setmodel(self, self.mdl);
     self.movetype = MOVETYPE_NONE;
-    self.modelindex = 0.000;
+    self.modelindex = 0;
     self.model = "";
     self.touch = xwall_trigtouch;
-    self.spawn_finished = time + 1.000;
+    self.spawn_finished = time + 1;
     self.think = xwall_checktrig;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // xwall_trigger
@@ -123,9 +123,9 @@ void () xwall_trigger =
     self.solid = SOLID_NOT;
     self.touch = SUB_Null;
     
-    if(deathmatch == 0.000)
+    if(deathmatch == 0)
     {
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         self.think = SUB_Remove;
         return;
     }
@@ -204,12 +204,12 @@ void () xwall_boom =
 {
     local vector v;
     local entity e;
-    v = (self.absmin + self.absmax) * 0.500;
+    v = (self.absmin + self.absmax) * 0.5;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
     
     if(self.dmg)
     {
@@ -217,7 +217,7 @@ void () xwall_boom =
         setorigin(e, v);
         T_RadiusDamage(e, self, self.dmg, self);
         e.think = xwall_pieces;
-        e.nextthink = time + 0.100;
+        e.nextthink = time + 0.1;
     }
     
     xwall_trigger();
@@ -238,7 +238,7 @@ void () xwall_die =
 {
     self.enemy = damage_attacker;
     self.think = xwall_boom;
-    self.nextthink = self.ltime + 0.300;
+    self.nextthink = self.ltime + 0.3;
 };
 
 // func_xwall_use
@@ -250,7 +250,7 @@ void () xwall_die =
 // OP_DONE	0	0	0
 void () func_xwall_use = 
 {
-    self.frame = 1.000 - self.frame;
+    self.frame = 1 - self.frame;
 };
 
 // xwall_start
@@ -385,12 +385,12 @@ void () func_xwall =
     
     if(!self.health)
     {
-        self.health = 300.000;
+        self.health = 300;
     }
     
     self.max_health = self.health;
     self.th_die = xwall_die;
-    if((self.sounds == 0.000) || ((deathmatch > 0.000) && (cvar("teamplay") == 0.000)))
+    if((self.sounds == 0) || ((deathmatch > 0) && (cvar("teamplay") == 0)))
     {
         self.takedamage = DAMAGE_YES;
     }
@@ -402,7 +402,7 @@ void () func_xwall =
     
     if(!self.wait)
     {
-        self.wait = 30.000;
+        self.wait = 30;
     }
     
     self.use = func_xwall_use;
@@ -491,12 +491,12 @@ void () rway_die =
 {
     local vector v;
     local entity e;
-    v = (self.absmin + self.absmax) * 0.500;
+    v = (self.absmin + self.absmax) * 0.5;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
     
     if(self.dmg)
     {
@@ -504,7 +504,7 @@ void () rway_die =
         setorigin(e, v);
         T_RadiusDamage(e, self, self.dmg, self);
         e.think = xwall_pieces;
-        e.nextthink = time + 0.100;
+        e.nextthink = time + 0.1;
     }
     
     self.takedamage = DAMAGE_NO;
@@ -516,7 +516,7 @@ void () rway_die =
     
     if(!deathmatch)
     {
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         self.think = SUB_Remove;
         return;
     }
@@ -603,7 +603,7 @@ void () func_runway =
     
     if(!self.wait)
     {
-        self.wait = 60.000;
+        self.wait = 60;
     }
     
     runway_start();

@@ -50,11 +50,11 @@ void (entity e, float newskin) skinChange =
     
     if(newskin < FALSE)
     {
-        newskin = 15.000;
+        newskin = 15;
     }
     
     
-    if(newskin > 15.000)
+    if(newskin > 15)
     {
         newskin = FALSE;
     }
@@ -392,19 +392,19 @@ void () setNamingMode =
 void () botRestrictedCommand = 
 {
     local string tmp;
-    if(self.impulse == 202.000)
+    if(self.impulse == 202)
     {
         setSkinsMode();
     }
     else
     {
-        if(self.impulse == 205.000)
+        if(self.impulse == 205)
         {
             AddAnotherBot();
         }
         else
         {
-            if((self.impulse > 99.000) && (self.impulse < 116.000))
+            if((self.impulse > 99) && (self.impulse < 116))
             {
                 if(teamplay)
                 {
@@ -418,7 +418,7 @@ void () botRestrictedCommand =
             }
             else
             {
-                if(self.impulse == 208.000)
+                if(self.impulse == 208)
                 {
                     AddAnotherBot();
                     AddAnotherBot();
@@ -427,31 +427,31 @@ void () botRestrictedCommand =
                 }
                 else
                 {
-                    if(self.impulse == 211.000)
+                    if(self.impulse == 211)
                     {
                         removeAllBots();
                     }
                     else
                     {
-                        if(self.impulse == 212.000)
+                        if(self.impulse == 212)
                         {
                             setPeeperMode();
                         }
                         else
                         {
-                            if(self.impulse == 214.000)
+                            if(self.impulse == 214)
                             {
                                 setBotGravity();
                             }
                             else
                             {
-                                if(self.impulse == 215.000)
+                                if(self.impulse == 215)
                                 {
                                     setVerboseMode();
                                 }
                                 else
                                 {
-                                    if(self.impulse == 217.000)
+                                    if(self.impulse == 217)
                                     {
                                         tmp = ftos(NUMPATHS);
                                         dprint(tmp);
@@ -459,7 +459,7 @@ void () botRestrictedCommand =
                                     }
                                     else
                                     {
-                                        if(self.impulse == 117.000)
+                                        if(self.impulse == 117)
                                         {
                                             tmp = ftos(NUMPATHERS);
                                             dprint(tmp);
@@ -467,7 +467,7 @@ void () botRestrictedCommand =
                                         }
                                         else
                                         {
-                                            if(self.impulse == 118.000)
+                                            if(self.impulse == 118)
                                             {
                                                 tmp = ftos(NUMBOTS);
                                                 dprint(tmp);
@@ -475,7 +475,7 @@ void () botRestrictedCommand =
                                             }
                                             else
                                             {
-                                                if(self.impulse == 119.000)
+                                                if(self.impulse == 119)
                                                 {
                                                     tmp = ftos(serverflags);
                                                     dprint(tmp);
@@ -483,7 +483,7 @@ void () botRestrictedCommand =
                                                 }
                                                 else
                                                 {
-                                                    if(self.impulse == 218.000)
+                                                    if(self.impulse == 218)
                                                     {
                                                         serverflags = serverflags | RESTRICT;
                                                         dprint("Restricted mode set\n");
@@ -491,7 +491,7 @@ void () botRestrictedCommand =
                                                     else
                                                     {
                                                         
-                                                        if(self.impulse == 219.000)
+                                                        if(self.impulse == 219)
                                                         {
                                                             serverflags = serverflags | SUPERRESTRICT;
                                                             dprint("Super Restricted mode set\n");
@@ -596,49 +596,49 @@ void () botRestrictedCommand =
 // OP_DONE	0	0	0
 void () botImpulseCommand = 
 {
-    if(self.impulse == 200.000)
+    if(self.impulse == 200)
     {
         skinChange(self, self.skin + TRUE);
     }
     else
     {
-        if(self.impulse == 201.000)
+        if(self.impulse == 201)
         {
             skinChange(self, self.skin - TRUE);
         }
         else
         {
-            if(self.impulse == 204.000)
+            if(self.impulse == 204)
             {
                 printIntro();
             }
             else
             {
-                if(self.impulse == 210.000)
+                if(self.impulse == 210)
                 {
                     PrintScores(MYSCORE);
                 }
                 else
                 {
-                    if(self.impulse == 220.000)
+                    if(self.impulse == 220)
                     {
                         PrintScores(NORMALSCORE);
                     }
                     else
                     {
-                        if(self.impulse == 221.000)
+                        if(self.impulse == 221)
                         {
                             UpdateTeamColors();
                         }
                         else
                         {
-                            if(self.impulse == 222.000)
+                            if(self.impulse == 222)
                             {
                                 PrintTopScores();
                             }
                             else
                             {
-                                if(self.impulse == 223.000)
+                                if(self.impulse == 223)
                                 {
                                     self.items = self.items | IT_INVULNERABILITY;
                                     self.invincible_finished = time + SVC_INTERMISSION;

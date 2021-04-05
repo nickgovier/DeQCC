@@ -29,13 +29,13 @@ void () start_monster_sam;
 // OP_STOREP_F	18005	18004	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () sam_stand = [0.000, sam_stand]
+void () sam_stand = [0, sam_stand]
 {
     checkground();
     
     if(!(self.flags & FL_ONGROUND))
     {
-        T_Damage(self, world, world, 1000.000);
+        T_Damage(self, world, world, 1000);
     }
     
     if(!FindTarget())
@@ -46,7 +46,7 @@ void () sam_stand = [0.000, sam_stand]
     else
     {
         self.think = sam_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -56,7 +56,7 @@ void () sam_stand = [0.000, sam_stand]
 // function begins at statement 26435, parm_start=18007
 // OP_STATE	619	17997	0
 // OP_DONE	0	0	0
-void () sam_walk = [0.000, sam_stand]
+void () sam_walk = [0, sam_stand]
 {
 };
 
@@ -94,13 +94,13 @@ void () sam_walk = [0.000, sam_stand]
 // OP_RETURN	0	0	0
 // OP_CALL0	17993	0	0
 // OP_DONE	0	0	0
-void () sam_run = [0.000, sam_run]
+void () sam_run = [0, sam_run]
 {
     checkground();
     
     if(!(self.flags & FL_ONGROUND))
     {
-        T_Damage(self, world, world, 1000.000);
+        T_Damage(self, world, world, 1000);
     }
     
     
@@ -108,7 +108,7 @@ void () sam_run = [0.000, sam_run]
     {
         self.enemy = world;
         self.think = self.th_stand;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -144,7 +144,7 @@ void () sam_run = [0.000, sam_run]
 void () sam_death = 
 {
     self.trigger_field.think = BecomeExplosion;
-    self.trigger_field.nextthink = time + 0.100;
+    self.trigger_field.nextthink = time + 0.1;
     if(!deathmatch)
     {
         remove(self);
@@ -152,7 +152,7 @@ void () sam_death =
     else
     {
         setmodel(self, "");
-        self.takedamage = 0.000;
+        self.takedamage = 0;
         self.think = start_monster_sam;
         self.nextthink = time + self.wait;
     }
@@ -180,9 +180,9 @@ void () sam_death =
 void () sam_die = 
 {
     
-    if(self.health < -90.000)
+    if(self.health < -90)
     {
-        sound(self, CHAN_VOICE, "player/udeath.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "player/udeath.wav", 1, ATTN_NORM);
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
@@ -307,75 +307,75 @@ void () sam_aim =
     }
     else
     {
-        org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500);
+        org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
     }
     
     dist = vlen(org - self.origin);
     dir = vectoangles(org - self.origin);
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0.000 - self.angles_y;
+    vtemp_y = 0 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
-    if(vtemp_x < 0.000)
+    if(vtemp_x < 0)
     {
-        vtemp_x = vtemp_x + 360.000;
+        vtemp_x = vtemp_x + 360;
     }
     
     
-    if(vtemp_x > 180.000)
+    if(vtemp_x > 180)
     {
-        vtemp_x = vtemp_x - 360.000;
+        vtemp_x = vtemp_x - 360;
     }
     
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        vtemp_y = 0.000 + 360.000;
+        vtemp_y = 0 + 360;
     }
     
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        vtemp_y = 0.000 - 360.000;
+        vtemp_y = 0 - 360;
     }
     
     dir = vtemp;
     
-    if(dir_x < -10.000)
+    if(dir_x < -10)
     {
-        dir_x = -10.000;
+        dir_x = -10;
     }
     
     
-    if(dir_x > 10.000)
+    if(dir_x > 10)
     {
-        dir_x = 10.000;
+        dir_x = 10;
     }
     
     
-    if(0.000 < -10.000)
+    if(0 < -10)
     {
-        dir_y = -10.000;
+        dir_y = -10;
     }
     
     
-    if(0.000 > 10.000)
+    if(0 > 10)
     {
-        dir_y = 10.000;
+        dir_y = 10;
     }
     
     
     if(self.enemy)
     {
         
-        if((vlen(dir) < 10.000) && (dist < 3000.000))
+        if((vlen(dir) < 10) && (dist < 3000))
         {
             
             if(time > self.attack_finished)
             {
                 self.th_missile();
-                self.attack_finished = time + 2.000;
+                self.attack_finished = time + 2;
             }
             
         }
@@ -383,7 +383,7 @@ void () sam_aim =
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0.000);
+    self.angles_y = anglemod(self.angles_y + 0);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -439,17 +439,17 @@ void () sam_launch =
     }
     
     
-    if(self.enemy.pdmg > (self.enemy.health * 1.500))
+    if(self.enemy.pdmg > (self.enemy.health * 1.5))
     {
         return;
     }
     
-    self.ammo_rockets = self.ammo_rockets - 1.000;
+    self.ammo_rockets = self.ammo_rockets - 1;
     v1 = self.trigger_field.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     makevectors(v1);
-    tmp = ((self.ammo_rockets & 3.000) * 8.000) - 12.000;
-    AC_heatseeker((self.origin + (v_up * 8.000)) + (v_right * tmp), v_forward, self.enemy);
+    tmp = ((self.ammo_rockets & 3) * 8) - 12;
+    AC_heatseeker((self.origin + (v_up * 8)) + (v_right * tmp), v_forward, self.enemy);
 };
 
 // start_monster_sam
@@ -539,7 +539,7 @@ void () start_monster_sam =
 {
     teamplay = cvar("teamplay");
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -638,14 +638,14 @@ void () monster_sam =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     self.oldorigin = self.origin;
     
     if(!self.health)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     self.max_health = self.health;
@@ -656,17 +656,17 @@ void () monster_sam =
     
     if(!self.ammo_rockets)
     {
-        self.ammo_rockets = 4.000;
+        self.ammo_rockets = 4;
     }
     
     self.aflag = self.ammo_rockets;
     
     if(!self.wait)
     {
-        self.wait = 30.000;
+        self.wait = 30;
     }
     
     self.think = start_monster_sam;
-    self.nextthink = (time + 0.100) + (random() * 0.300);
+    self.nextthink = (time + 0.1) + (random() * 0.3);
 };
 

@@ -50,7 +50,7 @@ float (entity targ) botrange =
     spot1 = self.origin + self.view_ofs;
     spot2 = targ.origin + targ.view_ofs;
     r = vlen(spot1 - spot2);
-    mel = (180.000 - (self.health * 0.500)) - (self.armorvalue * self.armortype);
+    mel = (180 - (self.health * 0.5)) - (self.armorvalue * self.armortype);
     
     if(self.items & IT_QUAD)
     {
@@ -60,7 +60,7 @@ float (entity targ) botrange =
     
     if(teamplay == TRUE)
     {
-        mel = 60.000;
+        mel = 60;
     }
     
     if(r < mel)
@@ -76,7 +76,7 @@ float (entity targ) botrange =
         else
         {
             
-            if(r < 1000.000)
+            if(r < 1000)
             {
                 return RANGE_MID;
             }
@@ -178,15 +178,15 @@ float (entity targ) infrontofbot =
             xydir = targ.origin - self.origin;
             xydir_z = FALSE;
             dot = vlen(xydir);
-            fov = (targ.origin_z - self.origin_z) * (FL_SWIM - (0.750 * self.skil));
+            fov = (targ.origin_z - self.origin_z) * (FL_SWIM - (0.75 * self.skil));
             
             if(fov < FALSE)
             {
-                fov = -0.800 * fov;
+                fov = -0.8 * fov;
             }
             
             
-            if((fov > 150.000) && (dot < fov))
+            if((fov > 150) && (dot < fov))
             {
                 return FALSE;
             }
@@ -198,7 +198,7 @@ float (entity targ) infrontofbot =
     makevectors(self.angles);
     vec = normalize(targ.origin - self.origin);
     dot = vec * v_forward;
-    fov = 0.700 - (self.skil * 0.280);
+    fov = 0.7 - (self.skil * 0.28);
     
     if(dot > fov)
     {
@@ -261,7 +261,7 @@ float (entity targ) Swimto =
     if(lnd != CONTENT_WATER)
     {
         
-        if(0.000 > (0.000 + MAXJUMP))
+        if(0 > (0 + MAXJUMP))
         {
             return FALSE;
         }
@@ -314,7 +314,7 @@ float (entity targ) Spotvisible =
     local vector spot2;
     local string t1;
     spot1 = self.origin + self.view_ofs;
-    spot2 = (targ.absmin + targ.absmax) * 0.500;
+    spot2 = (targ.absmin + targ.absmax) * 0.5;
     traceline(spot1, spot2, TRUE, self);
     
     if(trace_fraction == TRUE)
@@ -417,7 +417,7 @@ float (entity targ) Platvisible =
     local vector spot2;
     local string t1;
     spot1 = self.origin + self.view_ofs;
-    spot2 = (targ.absmin + targ.absmax) * 0.500;
+    spot2 = (targ.absmin + targ.absmax) * 0.5;
     spot2_z = targ.absmax_z + MOVETYPE_WALK;
     traceline(spot1, spot2, TRUE, self);
     
@@ -456,9 +456,9 @@ float (vector spot) dropline =
     local vector spot2;
     local string tmp;
     spot2 = spot;
-    spot2_z = 0.000 - 500.000;
+    spot2_z = 0 - 500;
     traceline(spot, spot2, TRUE, self);
-    drop = 0.000 - (trace_fraction * 500.000);
+    drop = 0 - (trace_fraction * 500);
     return drop;
 };
 
@@ -568,7 +568,7 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
     local float goalheight;
     if(b.pathtype != DROPPED)
     {
-        borg = (b.absmin + b.absmax) * 0.500;
+        borg = (b.absmin + b.absmax) * 0.5;
         borg_z = b.absmin_z + TRUE;
     }
     else
@@ -578,16 +578,16 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
     
     spot1 = a.origin;
     dir = normalize(borg - a.origin);
-    dir = ((dir * LEVELJUMPTIME) * BOTSPEED) * 6.500;
+    dir = ((dir * LEVELJUMPTIME) * BOTSPEED) * 6.5;
     tests = vlen(borg - a.origin);
-    tests = tests / ((LEVELJUMPTIME * BOTSPEED) * 6.500);
+    tests = tests / ((LEVELJUMPTIME * BOTSPEED) * 6.5);
     if(b.pathtype == DROPPED)
     {
-        goalheight = 0.000 + self.mins_z;
+        goalheight = 0 + self.mins_z;
     }
     else
     {
-        goalheight = 0.000;
+        goalheight = 0;
     }
     
     
@@ -600,7 +600,7 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
         
         if((flr + bmaxjump) < goalheight)
         {
-            spot1 = spot1 - (dir * 0.500);
+            spot1 = spot1 - (dir * 0.5);
             flr = dropline(spot1);
             
             if((flr + bmaxjump) < goalheight)
@@ -609,7 +609,7 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
             }
             
             spot1 = spot1 + dir;
-            tests = tests - 0.500;
+            tests = tests - 0.5;
             flr = dropline(spot1);
             
             if((flr + bmaxjump) < goalheight)
@@ -620,8 +620,8 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
                     return FALSE;
                 }
                 
-                spot1 = spot1 + (dir * 0.500);
-                tests = tests - 0.500;
+                spot1 = spot1 + (dir * 0.5);
+                tests = tests - 0.5;
                 flr = dropline(spot1);
                 
                 if((flr + bmaxjump) < goalheight)
@@ -818,12 +818,12 @@ float (entity a, entity b, float truereach) Reachable =
     }
     else
     {
-        bmaxjump = 0.600 * MAXJUMP;
+        bmaxjump = 0.6 * MAXJUMP;
     }
     
     if(b.pathtype != DROPPED)
     {
-        borg = (b.absmin + b.absmax) * 0.500;
+        borg = (b.absmin + b.absmax) * 0.5;
         borg_z = b.absmin_z + TRUE;
     }
     else
@@ -847,7 +847,7 @@ float (entity a, entity b, float truereach) Reachable =
     
     if(b.pathtype != DROPPED)
     {
-        spot2_z = (b.absmin_z + b.absmax_z) * 0.500;
+        spot2_z = (b.absmin_z + b.absmax_z) * 0.5;
     }
     
     rng = vlen(spot2 - spot1);
@@ -902,7 +902,7 @@ float (entity a, entity b, float truereach) Reachable =
         
         if(truereach)
         {
-            maxzd = 45.000;
+            maxzd = 45;
             lnd = pointcontents(a.origin + self.view_ofs);
             
             if(lnd == CONTENT_WATER)
@@ -911,7 +911,7 @@ float (entity a, entity b, float truereach) Reachable =
             }
             
             
-            if(0.000 < (a.origin_z + maxzd))
+            if(0 < (a.origin_z + maxzd))
             {
                 
                 if(trace_fraction == TRUE)
@@ -919,7 +919,7 @@ float (entity a, entity b, float truereach) Reachable =
                     return TRUE;
                 }
                 
-                spot1_z = 0.000;
+                spot1_z = 0;
                 traceline(spot1, spot2, TRUE, a);
                 
                 if(trace_fraction == TRUE)
@@ -941,7 +941,7 @@ float (entity a, entity b, float truereach) Reachable =
     
     spot1 = a.origin;
     
-    if(0.000 > (0.000 + bmaxjump))
+    if(0 > (0 + bmaxjump))
     {
         return FALSE;
     }
@@ -959,13 +959,13 @@ float (entity a, entity b, float truereach) Reachable =
     }
     
     vel = FALSE;
-    diffz = a.origin_z - 0.000;
+    diffz = a.origin_z - 0;
     
     while(diffz > FALSE)
     {
         diffxy = diffxy - BOTSPEED;
         vel = vel - GRAVITY;
-        diffz = diffz + (0.100 * vel);
+        diffz = diffz + (0.1 * vel);
     }
     
     

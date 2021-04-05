@@ -23,15 +23,15 @@ float sight_entity_time;
 float (float v) anglemod = 
 {
     
-    while(v >= 360.000)
+    while(v >= 360)
     {
-        v = v - 360.000;
+        v = v - 360;
     }
     
     
     while(v < FALSE)
     {
-        v = v + 360.000;
+        v = v + 360;
     }
     
     return v;
@@ -152,7 +152,7 @@ void () t_movetarget =
     
     if(!self.movetarget)
     {
-        self.pausetime = time + 999999.000;
+        self.pausetime = time + 999999;
         self.th_stand();
         return;
     }
@@ -193,19 +193,19 @@ float (entity targ) range =
     spot2 = targ.origin + targ.view_ofs;
     r = vlen(spot1 - spot2);
     
-    if(r < 120.000)
+    if(r < 120)
     {
         return RANGE_MELEE;
     }
     
     
-    if(r < 500.000)
+    if(r < 500)
     {
         return RANGE_NEAR;
     }
     
     
-    if(r < 1000.000)
+    if(r < 1000)
     {
         return RANGE_MID;
     }
@@ -284,7 +284,7 @@ float (entity targ) infront =
     vec = normalize(targ.origin - self.origin);
     dot = vec * v_forward;
     
-    if(dot > 0.300)
+    if(dot > 0.3)
     {
         return TRUE;
     }
@@ -319,7 +319,7 @@ void () HuntTarget =
     self.goalentity = self.enemy;
     self.think = self.th_run;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     SUB_AttackFinished(TRUE);
 };
 
@@ -733,7 +733,7 @@ float () FindTarget =
 {
     local entity client;
     local float r;
-    if((sight_entity_time >= (time - 0.100)) && (!(self.spawnflags & MOVETYPE_WALK)))
+    if((sight_entity_time >= (time - 0.1)) && (!(self.spawnflags & MOVETYPE_WALK)))
     {
         client = sight_entity;
         
@@ -849,7 +849,7 @@ void (float dist) ai_forward =
 // OP_DONE	0	0	0
 void (float dist) ai_back = 
 {
-    walkmove(self.angles_y + 180.000, dist);
+    walkmove(self.angles_y + 180, dist);
 };
 
 // ai_pain
@@ -986,17 +986,17 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = 0.000;
+    newdir_x = 0;
     newdir_y = FALSE - trace_plane_normal_x;
     newdir_z = FALSE;
     if((dir * newdir) > FALSE)
     {
-        dir_x = FALSE - 0.000;
+        dir_x = FALSE - 0;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = 0.000;
+        dir_x = 0;
         dir_y = FALSE - trace_plane_normal_x;
     }
     
@@ -1024,7 +1024,7 @@ float () FacingIdeal =
     local float delta;
     delta = anglemod(self.angles_y - self.ideal_yaw);
     
-    if((delta > 45.000) && (delta < 315.000))
+    if((delta > 45) && (delta < 315))
     {
         return FALSE;
     }
@@ -1132,11 +1132,11 @@ void () ai_run_slide =
     ChangeYaw();
     if(self.lefty)
     {
-        ofs = 90.000;
+        ofs = 90;
     }
     else
     {
-        ofs = -90.000;
+        ofs = -90;
     }
     
     

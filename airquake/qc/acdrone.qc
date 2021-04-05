@@ -118,67 +118,67 @@ void () drone_sound =
     local float f1;
     local entity veh;
     veh = self;
-    tmp = veh.speed / 70.000;
+    tmp = veh.speed / 70;
     tmp = floor(tmp);
     
-    if(tmp > 8.000)
+    if(tmp > 8)
     {
-        tmp = 8.000;
+        tmp = 8;
     }
     
     
     if((time > self.fly_sound) || (veh.impulse != tmp))
     {
-        f1 = (veh.thru * 0.100) + 0.200;
+        f1 = (veh.thru * 0.1) + 0.2;
         
-        if(((self.skin & 1.000) > 0.000) && (self.style != 3.000))
+        if(((self.skin & 1) > 0) && (self.style != 3))
         {
-            f1 = 1.000;
+            f1 = 1;
         }
         
-        if(tmp == 0.000)
+        if(tmp == 0)
         {
             sound(veh, CHAN_BODY, "engines/jet0.wav", f1, ATTN_NORM);
         }
         else
         {
-            if(tmp == 1.000)
+            if(tmp == 1)
             {
                 sound(veh, CHAN_BODY, "engines/jet1.wav", f1, ATTN_NORM);
             }
             else
             {
-                if(tmp == 2.000)
+                if(tmp == 2)
                 {
                     sound(veh, CHAN_BODY, "engines/jet2.wav", f1, ATTN_NORM);
                 }
                 else
                 {
-                    if(tmp == 3.000)
+                    if(tmp == 3)
                     {
                         sound(veh, CHAN_BODY, "engines/jet3.wav", f1, ATTN_NORM);
                     }
                     else
                     {
-                        if(tmp == 4.000)
+                        if(tmp == 4)
                         {
                             sound(veh, CHAN_BODY, "engines/jet4.wav", f1, ATTN_NORM);
                         }
                         else
                         {
-                            if(tmp == 5.000)
+                            if(tmp == 5)
                             {
                                 sound(veh, CHAN_BODY, "engines/jet5.wav", f1, ATTN_NORM);
                             }
                             else
                             {
-                                if(tmp == 6.000)
+                                if(tmp == 6)
                                 {
                                     sound(veh, CHAN_BODY, "engines/jet6.wav", f1, ATTN_NORM);
                                 }
                                 else
                                 {
-                                    if(tmp == 7.000)
+                                    if(tmp == 7)
                                     {
                                         sound(veh, CHAN_BODY, "engines/jet7.wav", f1, ATTN_NORM);
                                     }
@@ -201,7 +201,7 @@ void () drone_sound =
             
         }
         
-        self.fly_sound = time + 0.200;
+        self.fly_sound = time + 0.2;
         veh.impulse = tmp;
     }
     
@@ -340,16 +340,16 @@ void () T_DroneTouch =
         
     }
     
-    T_RadiusDamage(self, self, 240.000, self);
+    T_RadiusDamage(self, self, 240, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    if(((other == world) || (other.health > 0.000)) || ((self.health < 1.000) && (time > self.pain_finished)))
+    if(((other == world) || (other.health > 0)) || ((self.health < 1) && (time > self.pain_finished)))
     {
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
             bprint(self.netname);
             bprint(" crashed into ");
@@ -369,15 +369,15 @@ void () T_DroneTouch =
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
-        T_Damage(self, self, self, 1000.000);
+        T_Damage(self, self, self, 1000);
         self.think = BecomeExplosion;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
     }
     else
     {
-        self.pain_finished = time + 0.300;
+        self.pain_finished = time + 0.3;
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
             bprint(self.netname);
             bprint(" crashed into ");
@@ -390,7 +390,7 @@ void () T_DroneTouch =
             
         }
         
-        T_Damage(self, self, self, 1000.000);
+        T_Damage(self, self, self, 1000);
         setmodel(self, "progs/plane1b.mdl");
         self.touch = T_DroneTouch;
         AC_Fall();
@@ -665,16 +665,16 @@ void () drone_fly =
         {
             ab = vlen(self.trigger_field.origin - self.origin);
             ab = ab / (vlen(self.goalentity.origin - self.trigger_field.origin));
-            ab = (ab * 0.700) + 0.400;
+            ab = (ab * 0.7) + 0.4;
             
-            if(ab > 1.000)
+            if(ab > 1)
             {
-                ab = 1.000;
+                ab = 1;
             }
             
             v1 = self.trigger_field.origin + ((self.goalentity.origin - self.trigger_field.origin) * ab);
             
-            if(ab == 1.000)
+            if(ab == 1)
             {
                 self.trigger_field = self.goalentity;
                 self.goalentity = self.goalentity.goalentity;
@@ -685,99 +685,99 @@ void () drone_fly =
         
         v0 = vectoangles(v1 - self.origin);
         v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(0.000 - self.angles_y);
+        v1_y = anglemod(0 - self.angles_y);
         
-        if(0.000 > 180.000)
+        if(0 > 180)
         {
-            v1_y = 0.000 - 360.000;
+            v1_y = 0 - 360;
         }
         
         v1_x = anglemod(v0_x - self.angles_x);
         
-        if(v1_x > 180.000)
+        if(v1_x > 180)
         {
-            v1_x = v1_x - 360.000;
+            v1_x = v1_x - 360;
         }
         
         v2 = '0.000 0.000 0.000';
         
-        if(v1_x < 0.000)
+        if(v1_x < 0)
         {
-            v2_x = -50.000;
+            v2_x = -50;
         }
         
         
-        if(v1_x > 0.000)
+        if(v1_x > 0)
         {
-            v2_x = 50.000;
+            v2_x = 50;
         }
         
         
-        if(fabs(v1_x) < 5.000)
+        if(fabs(v1_x) < 5)
         {
-            v2_x = 0.000;
+            v2_x = 0;
             self.angles_x = v0_x;
         }
         
-        v2_y = 0.000 * 5.000;
+        v2_y = 0 * 5;
         
-        if(0.000 < -100.000)
+        if(0 < -100)
         {
-            v2_y = -100.000;
+            v2_y = -100;
         }
         
         
-        if(0.000 > 100.000)
+        if(0 > 100)
         {
-            v2_y = 100.000;
+            v2_y = 100;
         }
         
         
-        if(fabs(0.000) < 2.000)
+        if(fabs(0) < 2)
         {
-            v2_y = 0.000;
-            self.angles_y = 0.000;
+            v2_y = 0;
+            self.angles_y = 0;
         }
         
-        if(((fabs(0.000) < 25.000) && (fabs(v1_x) < 25.000)) && (self.health < 120.000))
+        if(((fabs(0) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
         {
-            ab = 1.000;
+            ab = 1;
         }
         else
         {
-            ab = 0.000;
+            ab = 0;
         }
         
-        v1_z = (0.000 - 0.000) - self.angles_z;
+        v1_z = (0 - 0) - self.angles_z;
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            v2_z = -200.000;
+            v2_z = -200;
             
-            if(0.000 < (0.000 * 10.000))
+            if(0 < (0 * 10))
             {
-                v2_z = 0.000 * 10.000;
+                v2_z = 0 * 10;
             }
             
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            v2_z = 200.000;
+            v2_z = 200;
             
-            if(0.000 > (0.000 * 10.000))
+            if(0 > (0 * 10))
             {
-                v2_z = 0.000 * 10.000;
+                v2_z = 0 * 10;
             }
             
         }
         
         
-        if(fabs(0.000) < 5.000)
+        if(fabs(0) < 5)
         {
-            v2_z = 0.000;
-            self.angles_z = 0.000 - 0.000;
+            v2_z = 0;
+            self.angles_z = 0 - 0;
         }
         
         self.avelocity = v2;
@@ -789,7 +789,7 @@ void () drone_fly =
         }
         
         
-        if(self.health < 40.000)
+        if(self.health < 40)
         {
             
             if(self.model == "progs/plane1.mdl")
@@ -801,31 +801,31 @@ void () drone_fly =
         
         if(ab)
         {
-            self.skin = 1.000;
+            self.skin = 1;
             
-            if(!(temp1 & 4.000))
+            if(!(temp1 & 4))
             {
-                self.effects = 4.000;
+                self.effects = 4;
             }
             
         }
         else
         {
-            self.skin = 0.000;
-            self.effects = 0.000;
+            self.skin = 0;
+            self.effects = 0;
         }
         
         makevectors(self.angles);
         v3 = v_forward;
-        v3_z = 0.000 - 0.000;
-        self.thru = 4.000;
+        v3_z = 0 - 0;
+        self.thru = 4;
         if(!ab)
         {
-            self.speed = self.thru * 75.000;
+            self.speed = self.thru * 75;
         }
         else
         {
-            self.speed = 500.000;
+            self.speed = 500;
         }
         
         self.velocity = v3 * self.speed;
@@ -833,7 +833,7 @@ void () drone_fly =
     
     drone_sound();
     self.think = drone_fly;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // drone_start
@@ -895,7 +895,7 @@ void () drone_fly =
 void () drone_start = 
 {
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -904,7 +904,7 @@ void () drone_start =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     self.takedamage = DAMAGE_AIM;
@@ -925,7 +925,7 @@ void () drone_start =
     }
     
     self.think = drone_fly;
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // monster_drone
@@ -971,7 +971,7 @@ void () monster_drone =
     
     if(!self.health)
     {
-        self.health = 200.000;
+        self.health = 200;
     }
     
     self.netname = "Dogfighter";
@@ -979,6 +979,6 @@ void () monster_drone =
     self.touch = T_DroneTouch;
     self.th_die = drone_die;
     self.think = drone_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

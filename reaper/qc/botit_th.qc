@@ -55,57 +55,57 @@ float (entity targ, entity inflictor) CanDamage;
 .entity enemycache;
 .float endpoint;
 .string teamname;
-float NORMALSCORE = 1.000;
-float MYSCORE = 2.000;
-float MUST_HAVE = 100.000;
-float WANT = 35.000;
-float KINDA_WANT = 20.000;
-float DONT_WANT = 0.000;
-float CANTURN = 1.000;
-float NOTURN = 2.000;
-float SEARCH_RADIUS = 600.000;
-float LOOPTIME = 20.000;
-float MAXPATHERS = 16.000;
-float DROPPED = 2.000;
-float CARRIED = 1.000;
-float NEVERTARGET = 3.000;
-float REGULARTARGET = 0.000;
-float TELEPORT = 4.000;
-float BOTS = 240.000;
-float TEAMBOTS = 3840.000;
-float RESTRICT = 4096.000;
-float SUPERRESTRICT = 8192.000;
-float TEAMFLAG = 16384.000;
-float INITLEVEL = 32768.000;
-float DEDICATED = 4194304.000;
-float LOCAL_TIME = 7.000;
-float STRAFE_DIR = 16.000;
-float FAR_SEEK = 32.000;
-float WATERUPDOWN = 64.000;
-float NODROP = 128.000;
-float RUNAWAY = 256.000;
-float GETGOODY = 512.000;
-float ONTRAIN = 1024.000;
-float MULTIENEMY = 2048.000;
-float VERBOSEBOT = 0.000;
-float BOTSPEED = 0.000;
-float NUMBOTS = 0.000;
-float GRAVITY = 0.000;
-float MAXJUMP = 0.000;
-float INVGRENADELEVELDIST = 0.000;
-float GRENADEMAXHEIGHT = 0.000;
-float LEVELJUMPTIME = 0.000;
-float NUMPATHS = 0.000;
-float NUMGIBS = 0.000;
-float NUMPATHERS = 0.000;
-float SKINSMODE = 0.000;
-float RECURSEDEPTH = 0.000;
+float NORMALSCORE = 1;
+float MYSCORE = 2;
+float MUST_HAVE = 100;
+float WANT = 35;
+float KINDA_WANT = 20;
+float DONT_WANT = 0;
+float CANTURN = 1;
+float NOTURN = 2;
+float SEARCH_RADIUS = 600;
+float LOOPTIME = 20;
+float MAXPATHERS = 16;
+float DROPPED = 2;
+float CARRIED = 1;
+float NEVERTARGET = 3;
+float REGULARTARGET = 0;
+float TELEPORT = 4;
+float BOTS = 240;
+float TEAMBOTS = 3840;
+float RESTRICT = 4096;
+float SUPERRESTRICT = 8192;
+float TEAMFLAG = 16384;
+float INITLEVEL = 32768;
+float DEDICATED = 4194304;
+float LOCAL_TIME = 7;
+float STRAFE_DIR = 16;
+float FAR_SEEK = 32;
+float WATERUPDOWN = 64;
+float NODROP = 128;
+float RUNAWAY = 256;
+float GETGOODY = 512;
+float ONTRAIN = 1024;
+float MULTIENEMY = 2048;
+float VERBOSEBOT = 0;
+float BOTSPEED = 0;
+float NUMBOTS = 0;
+float GRAVITY = 0;
+float MAXJUMP = 0;
+float INVGRENADELEVELDIST = 0;
+float GRENADEMAXHEIGHT = 0;
+float LEVELJUMPTIME = 0;
+float NUMPATHS = 0;
+float NUMGIBS = 0;
+float NUMPATHERS = 0;
+float SKINSMODE = 0;
+float RECURSEDEPTH = 0;
 vector REBOUNDSPOT = '0.000 0.000 0.000';
-float REBOUND = 0.000;
-float TELEFRAGFLAG = 0.000;
+float REBOUND = 0;
+float TELEFRAGFLAG = 0;
 entity NOISEQUEUE;
-float HELPING = 0.000;
-float NAMEBOTS = 0.000;
+float HELPING = 0;
+float NAMEBOTS = 0;
 void (entity noisemaker, entity noiseobject) signalnoise;
 float (entity e) hearnoise;
 entity () noisetarget;
@@ -317,7 +317,7 @@ float (entity e) trigpushweight =
     local vector spot;
     local vector org;
     weight = DONT_WANT;
-    org = (e.absmin + e.absmax) * 0.500;
+    org = (e.absmin + e.absmax) * 0.5;
     org_z = e.absmin_z + TRUE;
     spot = org;
     spot_z = self.origin_z;
@@ -331,13 +331,13 @@ float (entity e) trigpushweight =
         {
             spot_z = dropline(org);
             
-            if(self.absmin_z > 0.000)
+            if(self.absmin_z > 0)
             {
                 spot_z = self.absmin_z;
             }
             
             
-            if(0.000 < (((self.maxs_z - self.mins_z) + 0.000) + MAXJUMP))
+            if(0 < (((self.maxs_z - self.mins_z) + 0) + MAXJUMP))
             {
                 weight = KINDA_WANT;
             }
@@ -372,7 +372,7 @@ float (entity e) triggerweight =
     weight = KINDA_WANT - FL_SWIM;
     rnd = random();
     
-    if(rnd < 0.250)
+    if(rnd < 0.25)
     {
         weight = WANT;
     }
@@ -452,7 +452,7 @@ float (entity e) healthweight =
 {
     local float weight;
     weight = WANT;
-    if(self.health < 60.000)
+    if(self.health < 60)
     {
         weight = MUST_HAVE - TRUE;
     }
@@ -465,7 +465,7 @@ float (entity e) healthweight =
         else
         {
             
-            if(self.health > 99.000)
+            if(self.health > 99)
             {
                 weight = DONT_WANT;
             }
@@ -497,14 +497,14 @@ float (entity e) nailweight =
 {
     local float weight;
     weight = WANT - TRUE;
-    if(self.ammo_nails > 199.000)
+    if(self.ammo_nails > 199)
     {
         weight = DONT_WANT;
     }
     else
     {
         
-        if(self.ammo_nails > 120.000)
+        if(self.ammo_nails > 120)
         {
             weight = KINDA_WANT - FL_SWIM;
         }
@@ -534,14 +534,14 @@ float (entity e) shellweight =
 {
     local float weight;
     weight = WANT - TRUE;
-    if(self.ammo_shells > 99.000)
+    if(self.ammo_shells > 99)
     {
         weight = DONT_WANT;
     }
     else
     {
         
-        if(self.ammo_shells > 50.000)
+        if(self.ammo_shells > 50)
         {
             weight = KINDA_WANT - FL_SWIM;
         }
@@ -565,7 +565,7 @@ float (entity e) cellweight =
     local float weight;
     weight = WANT;
     
-    if(self.ammo_cells > 99.000)
+    if(self.ammo_cells > 99)
     {
         weight = DONT_WANT;
     }
@@ -587,7 +587,7 @@ float (entity e) rocketweight =
     local float weight;
     weight = WANT;
     
-    if(self.ammo_rockets > 99.000)
+    if(self.ammo_rockets > 99)
     {
         weight = DONT_WANT;
     }

@@ -285,7 +285,7 @@ void () BotWaterMove =
             {
                 self.dmg = self.dmg + FL_SWIM;
                 
-                if(self.dmg > 15.000)
+                if(self.dmg > 15)
                 {
                     self.dmg = MOVETYPE_BOUNCE;
                 }
@@ -302,7 +302,7 @@ void () BotWaterMove =
     
     if(wlevel < TRUE)
     {
-        bt = (self.absmin + self.absmax) * 0.500;
+        bt = (self.absmin + self.absmax) * 0.5;
         bt_z = self.absmin_z + TRUE;
         pnt = pointcontents(bt);
         
@@ -349,7 +349,7 @@ void () BotWaterMove =
             }
             else
             {
-                self.dmgtime = time + 0.200;
+                self.dmgtime = time + 0.2;
             }
             
             T_Damage(self, world, world, MOVETYPE_BOUNCE * wlevel);
@@ -624,7 +624,7 @@ void () BotCheckPowerups =
         
         if(self.invisible_sound < time)
         {
-            sound(self, CHAN_AUTO, "items/inv3.wav", 0.500, ATTN_IDLE);
+            sound(self, CHAN_AUTO, "items/inv3.wav", 0.5, ATTN_IDLE);
             self.invisible_sound = time + ((random() * MOVETYPE_WALK) + TRUE);
         }
         
@@ -745,7 +745,7 @@ void () BotCheckPowerups =
     
     if(self.radsuit_finished)
     {
-        self.air_finished = time + 12.000;
+        self.air_finished = time + 12;
         
         if(self.radsuit_finished < (time + MOVETYPE_WALK))
         {

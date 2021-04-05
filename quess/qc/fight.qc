@@ -38,7 +38,7 @@ void () knight_attack =
 {
     local float len;
     len = vlen((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs));
-    if(len < 80.000)
+    if(len < 80)
     {
         knight_atk1();
     }
@@ -192,8 +192,8 @@ float () CheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
-        self.attack_finished = 0.000;
+        chance = 0.9;
+        self.attack_finished = 0;
     }
     else
     {
@@ -201,11 +201,11 @@ float () CheckAttack =
         {
             if(self.th_melee)
             {
-                chance = 0.200;
+                chance = 0.2;
             }
             else
             {
-                chance = 0.400;
+                chance = 0.4;
             }
             
         }
@@ -215,17 +215,17 @@ float () CheckAttack =
             {
                 if(self.th_melee)
                 {
-                    chance = 0.050;
+                    chance = 0.05;
                 }
                 else
                 {
-                    chance = 0.100;
+                    chance = 0.1;
                 }
                 
             }
             else
             {
-                chance = 0.000;
+                chance = 0;
             }
             
         }
@@ -236,7 +236,7 @@ float () CheckAttack =
     if(random() < chance)
     {
         self.th_missile();
-        SUB_AttackFinished(2.000 * random());
+        SUB_AttackFinished(2 * random());
         return TRUE;
     }
     
@@ -304,7 +304,7 @@ void (float d) ai_charge =
     else
     {
         
-        if((vlen(self.origin - self.goalentity.origin)) > (32.000 + d))
+        if((vlen(self.origin - self.goalentity.origin)) > (32 + d))
         {
             goal_vec = normalize(self.goalentity.origin - self.origin);
             setorigin(self, self.origin + (goal_vec * d));
@@ -349,9 +349,9 @@ void () ai_charge_side =
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
     makevectors(self.angles);
-    dtemp = self.enemy.origin - (30.000 * v_right);
+    dtemp = self.enemy.origin - (30 * v_right);
     heading = vectoyaw(dtemp - self.origin);
-    walkmove(heading, 20.000);
+    walkmove(heading, 20);
 };
 
 // ai_melee
@@ -396,13 +396,13 @@ void () ai_melee =
     
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 3.000;
+    ldmg = ((random() + random()) + random()) * 3;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -457,7 +457,7 @@ void () ai_melee_side =
     ai_charge_side();
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
@@ -469,7 +469,7 @@ void () ai_melee_side =
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 3.000;
+    ldmg = ((random() + random()) + random()) * 3;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -571,23 +571,23 @@ float () SoldierCheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
+        chance = 0.9;
     }
     else
     {
         if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.400;
+            chance = 0.4;
         }
         else
         {
             if(enemy_range == RANGE_MID)
             {
-                chance = 0.050;
+                chance = 0.05;
             }
             else
             {
-                chance = 0.000;
+                chance = 0;
             }
             
         }
@@ -598,9 +598,9 @@ float () SoldierCheckAttack =
     if(random() < chance)
     {
         self.th_missile();
-        SUB_AttackFinished(1.000 + random());
+        SUB_AttackFinished(1 + random());
         
-        if(random() < 0.300)
+        if(random() < 0.3)
         {
             self.lefty = !self.lefty;
         }
@@ -674,7 +674,7 @@ float () ShamCheckAttack =
     }
     
     self.attack_state = AS_MISSILE;
-    SUB_AttackFinished(2.000 + (2.000 * random()));
+    SUB_AttackFinished(2 + (2 * random()));
     return TRUE;
 };
 
@@ -804,17 +804,17 @@ float () OgreCheckAttack =
     {
         if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.100;
+            chance = 0.1;
         }
         else
         {
             if(enemy_range == RANGE_MID)
             {
-                chance = 0.050;
+                chance = 0.05;
             }
             else
             {
-                chance = 0.000;
+                chance = 0;
             }
             
         }
@@ -822,7 +822,7 @@ float () OgreCheckAttack =
     }
     
     self.attack_state = AS_MISSILE;
-    SUB_AttackFinished(1.000 + (2.000 * random()));
+    SUB_AttackFinished(1 + (2 * random()));
     return TRUE;
 };
 

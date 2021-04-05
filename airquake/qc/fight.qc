@@ -135,8 +135,8 @@ float () CheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
-        self.attack_finished = 0.000;
+        chance = 0.9;
+        self.attack_finished = 0;
     }
     else
     {
@@ -144,11 +144,11 @@ float () CheckAttack =
         {
             if(self.th_melee)
             {
-                chance = 0.200;
+                chance = 0.2;
             }
             else
             {
-                chance = 0.400;
+                chance = 0.4;
             }
             
         }
@@ -158,17 +158,17 @@ float () CheckAttack =
             {
                 if(self.th_melee)
                 {
-                    chance = 0.050;
+                    chance = 0.05;
                 }
                 else
                 {
-                    chance = 0.100;
+                    chance = 0.1;
                 }
                 
             }
             else
             {
-                chance = 0.000;
+                chance = 0;
             }
             
         }
@@ -179,7 +179,7 @@ float () CheckAttack =
     if(random() < chance)
     {
         self.th_missile();
-        SUB_AttackFinished(2.000 * random());
+        SUB_AttackFinished(2 * random());
         return TRUE;
     }
     
@@ -253,9 +253,9 @@ void () ai_charge_side =
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
     ChangeYaw();
     makevectors(self.angles);
-    dtemp = self.enemy.origin - (30.000 * v_right);
+    dtemp = self.enemy.origin - (30 * v_right);
     heading = vectoyaw(dtemp - self.origin);
-    walkmove(heading, 20.000);
+    walkmove(heading, 20);
 };
 
 // ai_melee
@@ -300,13 +300,13 @@ void () ai_melee =
     
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 3.000;
+    ldmg = ((random() + random()) + random()) * 3;
     T_Damage(self.enemy, self, self, ldmg);
 };
 
@@ -361,7 +361,7 @@ void () ai_melee_side =
     ai_charge_side();
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
@@ -373,7 +373,7 @@ void () ai_melee_side =
     }
     
     random();
-    ldmg = ((random() + random()) + random()) * 3.000;
+    ldmg = ((random() + random()) + random()) * 3;
     T_Damage(self.enemy, self, self, ldmg);
 };
 

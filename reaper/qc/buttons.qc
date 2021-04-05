@@ -351,7 +351,7 @@ void () func_button =
     
     if(!self.speed)
     {
-        self.speed = 40.000;
+        self.speed = 40;
     }
     
     

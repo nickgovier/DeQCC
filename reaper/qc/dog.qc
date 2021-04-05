@@ -126,7 +126,7 @@ void () Dog_JumpTouch =
     if(other.takedamage)
     {
         
-        if(vlen(self.velocity) > 300.000)
+        if(vlen(self.velocity) > 300)
         {
             ldmg = MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * random());
             T_Damage(other, self, self, ldmg);
@@ -142,7 +142,7 @@ void () Dog_JumpTouch =
         {
             self.touch = SUB_Null;
             self.think = dog_leap1;
-            self.nextthink = time + 0.100;
+            self.nextthink = time + 0.1;
         }
         
         return;
@@ -150,7 +150,7 @@ void () Dog_JumpTouch =
     
     self.touch = SUB_Null;
     self.think = dog_run1;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // dog_stand1
@@ -158,7 +158,7 @@ void () Dog_JumpTouch =
 // OP_STATE	5983	9320	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand1 = [69.000, dog_stand2]
+void () dog_stand1 = [69, dog_stand2]
 {
     ai_stand();
 };
@@ -168,7 +168,7 @@ void () dog_stand1 = [69.000, dog_stand2]
 // OP_STATE	5984	9321	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand2 = [70.000, dog_stand3]
+void () dog_stand2 = [70, dog_stand3]
 {
     ai_stand();
 };
@@ -178,7 +178,7 @@ void () dog_stand2 = [70.000, dog_stand3]
 // OP_STATE	5986	9322	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand3 = [71.000, dog_stand4]
+void () dog_stand3 = [71, dog_stand4]
 {
     ai_stand();
 };
@@ -188,7 +188,7 @@ void () dog_stand3 = [71.000, dog_stand4]
 // OP_STATE	5988	9323	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand4 = [72.000, dog_stand5]
+void () dog_stand4 = [72, dog_stand5]
 {
     ai_stand();
 };
@@ -198,7 +198,7 @@ void () dog_stand4 = [72.000, dog_stand5]
 // OP_STATE	3216	9324	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand5 = [73.000, dog_stand6]
+void () dog_stand5 = [73, dog_stand6]
 {
     ai_stand();
 };
@@ -208,7 +208,7 @@ void () dog_stand5 = [73.000, dog_stand6]
 // OP_STATE	5991	9325	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand6 = [74.000, dog_stand7]
+void () dog_stand6 = [74, dog_stand7]
 {
     ai_stand();
 };
@@ -218,7 +218,7 @@ void () dog_stand6 = [74.000, dog_stand7]
 // OP_STATE	5993	9326	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand7 = [75.000, dog_stand8]
+void () dog_stand7 = [75, dog_stand8]
 {
     ai_stand();
 };
@@ -228,7 +228,7 @@ void () dog_stand7 = [75.000, dog_stand8]
 // OP_STATE	5995	9327	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand8 = [76.000, dog_stand9]
+void () dog_stand8 = [76, dog_stand9]
 {
     ai_stand();
 };
@@ -238,7 +238,7 @@ void () dog_stand8 = [76.000, dog_stand9]
 // OP_STATE	5997	9319	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () dog_stand9 = [77.000, dog_stand1]
+void () dog_stand9 = [77, dog_stand1]
 {
     ai_stand();
 };
@@ -258,10 +258,10 @@ void () dog_stand9 = [77.000, dog_stand1]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk1 = [78.000, dog_walk2]
+void () dog_walk1 = [78, dog_walk2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "dog/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -275,7 +275,7 @@ void () dog_walk1 = [78.000, dog_walk2]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk2 = [79.000, dog_walk3]
+void () dog_walk2 = [79, dog_walk3]
 {
     ai_walk(FL_CLIENT);
 };
@@ -286,7 +286,7 @@ void () dog_walk2 = [79.000, dog_walk3]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk3 = [80.000, dog_walk4]
+void () dog_walk3 = [80, dog_walk4]
 {
     ai_walk(FL_CLIENT);
 };
@@ -297,7 +297,7 @@ void () dog_walk3 = [80.000, dog_walk4]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk4 = [81.000, dog_walk5]
+void () dog_walk4 = [81, dog_walk5]
 {
     ai_walk(FL_CLIENT);
 };
@@ -308,7 +308,7 @@ void () dog_walk4 = [81.000, dog_walk5]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk5 = [82.000, dog_walk6]
+void () dog_walk5 = [82, dog_walk6]
 {
     ai_walk(FL_CLIENT);
 };
@@ -319,7 +319,7 @@ void () dog_walk5 = [82.000, dog_walk6]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk6 = [83.000, dog_walk7]
+void () dog_walk6 = [83, dog_walk7]
 {
     ai_walk(FL_CLIENT);
 };
@@ -330,7 +330,7 @@ void () dog_walk6 = [83.000, dog_walk7]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk7 = [84.000, dog_walk8]
+void () dog_walk7 = [84, dog_walk8]
 {
     ai_walk(FL_CLIENT);
 };
@@ -341,7 +341,7 @@ void () dog_walk7 = [84.000, dog_walk8]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () dog_walk8 = [85.000, dog_walk1]
+void () dog_walk8 = [85, dog_walk1]
 {
     ai_walk(FL_CLIENT);
 };
@@ -361,10 +361,10 @@ void () dog_walk8 = [85.000, dog_walk1]
 // OP_STORE_V	218	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run1 = [48.000, dog_run2]
+void () dog_run1 = [48, dog_run2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "dog/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -378,7 +378,7 @@ void () dog_run1 = [48.000, dog_run2]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run2 = [49.000, dog_run3]
+void () dog_run2 = [49, dog_run3]
 {
     ai_run(FL_MONSTER);
 };
@@ -389,7 +389,7 @@ void () dog_run2 = [49.000, dog_run3]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run3 = [50.000, dog_run4]
+void () dog_run3 = [50, dog_run4]
 {
     ai_run(FL_MONSTER);
 };
@@ -400,7 +400,7 @@ void () dog_run3 = [50.000, dog_run4]
 // OP_STORE_V	576	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run4 = [51.000, dog_run5]
+void () dog_run4 = [51, dog_run5]
 {
     ai_run(KINDA_WANT);
 };
@@ -411,7 +411,7 @@ void () dog_run4 = [51.000, dog_run5]
 // OP_STORE_V	220	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run5 = [52.000, dog_run6]
+void () dog_run5 = [52, dog_run6]
 {
     ai_run(FL_GODMODE);
 };
@@ -422,7 +422,7 @@ void () dog_run5 = [52.000, dog_run6]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run6 = [53.000, dog_run7]
+void () dog_run6 = [53, dog_run7]
 {
     ai_run(FL_MONSTER);
 };
@@ -433,7 +433,7 @@ void () dog_run6 = [53.000, dog_run7]
 // OP_STORE_V	218	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run7 = [54.000, dog_run8]
+void () dog_run7 = [54, dog_run8]
 {
     ai_run(FL_INWATER);
 };
@@ -444,7 +444,7 @@ void () dog_run7 = [54.000, dog_run8]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run8 = [55.000, dog_run9]
+void () dog_run8 = [55, dog_run9]
 {
     ai_run(FL_MONSTER);
 };
@@ -455,7 +455,7 @@ void () dog_run8 = [55.000, dog_run9]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run9 = [56.000, dog_run10]
+void () dog_run9 = [56, dog_run10]
 {
     ai_run(FL_MONSTER);
 };
@@ -466,7 +466,7 @@ void () dog_run9 = [56.000, dog_run10]
 // OP_STORE_V	576	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run10 = [57.000, dog_run11]
+void () dog_run10 = [57, dog_run11]
 {
     ai_run(KINDA_WANT);
 };
@@ -477,7 +477,7 @@ void () dog_run10 = [57.000, dog_run11]
 // OP_STORE_V	220	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run11 = [58.000, dog_run12]
+void () dog_run11 = [58, dog_run12]
 {
     ai_run(FL_GODMODE);
 };
@@ -488,7 +488,7 @@ void () dog_run11 = [58.000, dog_run12]
 // OP_STORE_V	219	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () dog_run12 = [59.000, dog_run1]
+void () dog_run12 = [59, dog_run1]
 {
     ai_run(FL_MONSTER);
 };
@@ -499,7 +499,7 @@ void () dog_run12 = [59.000, dog_run1]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta1 = [0.000, dog_atta2]
+void () dog_atta1 = [0, dog_atta2]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -510,7 +510,7 @@ void () dog_atta1 = [0.000, dog_atta2]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta2 = [1.000, dog_atta3]
+void () dog_atta2 = [1, dog_atta3]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -521,7 +521,7 @@ void () dog_atta2 = [1.000, dog_atta3]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta3 = [2.000, dog_atta4]
+void () dog_atta3 = [2, dog_atta4]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -537,7 +537,7 @@ void () dog_atta3 = [2.000, dog_atta4]
 // OP_CALL5	453	0	0
 // OP_CALL0	9273	0	0
 // OP_DONE	0	0	0
-void () dog_atta4 = [3.000, dog_atta5]
+void () dog_atta4 = [3, dog_atta5]
 {
     sound(self, CHAN_VOICE, "dog/dattack1.wav", TRUE, ATTN_NORM);
     dog_bite();
@@ -549,7 +549,7 @@ void () dog_atta4 = [3.000, dog_atta5]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta5 = [4.000, dog_atta6]
+void () dog_atta5 = [4, dog_atta6]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -560,7 +560,7 @@ void () dog_atta5 = [4.000, dog_atta6]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta6 = [5.000, dog_atta7]
+void () dog_atta6 = [5, dog_atta7]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -571,7 +571,7 @@ void () dog_atta6 = [5.000, dog_atta7]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta7 = [6.000, dog_atta8]
+void () dog_atta7 = [6, dog_atta8]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -582,7 +582,7 @@ void () dog_atta7 = [6.000, dog_atta8]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () dog_atta8 = [7.000, dog_run1]
+void () dog_atta8 = [7, dog_run1]
 {
     ai_charge(MOVETYPE_BOUNCE);
 };
@@ -592,7 +592,7 @@ void () dog_atta8 = [7.000, dog_run1]
 // OP_STATE	730	9359	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () dog_leap1 = [60.000, dog_leap2]
+void () dog_leap1 = [60, dog_leap2]
 {
     ai_face();
 };
@@ -622,13 +622,13 @@ void () dog_leap1 = [60.000, dog_leap2]
 // OP_SUB_F	9383	223	9384
 // OP_STOREP_F	9384	9382	0
 // OP_DONE	0	0	0
-void () dog_leap2 = [61.000, dog_leap3]
+void () dog_leap2 = [61, dog_leap3]
 {
     ai_face();
     self.touch = Dog_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + TRUE;
-    self.velocity = (v_forward * 300.000) + '0.000 0.000 200.000';
+    self.velocity = (v_forward * 300) + '0.000 0.000 200.000';
     
     if(self.flags & FL_ONGROUND)
     {
@@ -641,7 +641,7 @@ void () dog_leap2 = [61.000, dog_leap3]
 // function begins at statement 15482, parm_start=9385
 // OP_STATE	5971	9385	0
 // OP_DONE	0	0	0
-void () dog_leap3 = [62.000, dog_leap4]
+void () dog_leap3 = [62, dog_leap4]
 {
 };
 
@@ -649,7 +649,7 @@ void () dog_leap3 = [62.000, dog_leap4]
 // function begins at statement 15484, parm_start=9386
 // OP_STATE	4366	9386	0
 // OP_DONE	0	0	0
-void () dog_leap4 = [63.000, dog_leap5]
+void () dog_leap4 = [63, dog_leap5]
 {
 };
 
@@ -657,7 +657,7 @@ void () dog_leap4 = [63.000, dog_leap5]
 // function begins at statement 15486, parm_start=9387
 // OP_STATE	220	9387	0
 // OP_DONE	0	0	0
-void () dog_leap5 = [64.000, dog_leap6]
+void () dog_leap5 = [64, dog_leap6]
 {
 };
 
@@ -665,7 +665,7 @@ void () dog_leap5 = [64.000, dog_leap6]
 // function begins at statement 15488, parm_start=9388
 // OP_STATE	5975	9388	0
 // OP_DONE	0	0	0
-void () dog_leap6 = [65.000, dog_leap7]
+void () dog_leap6 = [65, dog_leap7]
 {
 };
 
@@ -673,7 +673,7 @@ void () dog_leap6 = [65.000, dog_leap7]
 // function begins at statement 15490, parm_start=9389
 // OP_STATE	5977	9389	0
 // OP_DONE	0	0	0
-void () dog_leap7 = [66.000, dog_leap8]
+void () dog_leap7 = [66, dog_leap8]
 {
 };
 
@@ -681,7 +681,7 @@ void () dog_leap7 = [66.000, dog_leap8]
 // function begins at statement 15492, parm_start=9390
 // OP_STATE	5979	9390	0
 // OP_DONE	0	0	0
-void () dog_leap8 = [67.000, dog_leap9]
+void () dog_leap8 = [67, dog_leap9]
 {
 };
 
@@ -689,7 +689,7 @@ void () dog_leap8 = [67.000, dog_leap9]
 // function begins at statement 15494, parm_start=9391
 // OP_STATE	5981	9390	0
 // OP_DONE	0	0	0
-void () dog_leap9 = [68.000, dog_leap9]
+void () dog_leap9 = [68, dog_leap9]
 {
 };
 
@@ -697,7 +697,7 @@ void () dog_leap9 = [68.000, dog_leap9]
 // function begins at statement 15496, parm_start=9392
 // OP_STATE	8433	9392	0
 // OP_DONE	0	0	0
-void () dog_pain1 = [26.000, dog_pain2]
+void () dog_pain1 = [26, dog_pain2]
 {
 };
 
@@ -705,7 +705,7 @@ void () dog_pain1 = [26.000, dog_pain2]
 // function begins at statement 15498, parm_start=9393
 // OP_STATE	302	9393	0
 // OP_DONE	0	0	0
-void () dog_pain2 = [27.000, dog_pain3]
+void () dog_pain2 = [27, dog_pain3]
 {
 };
 
@@ -713,7 +713,7 @@ void () dog_pain2 = [27.000, dog_pain3]
 // function begins at statement 15500, parm_start=9394
 // OP_STATE	303	9394	0
 // OP_DONE	0	0	0
-void () dog_pain3 = [28.000, dog_pain4]
+void () dog_pain3 = [28, dog_pain4]
 {
 };
 
@@ -721,7 +721,7 @@ void () dog_pain3 = [28.000, dog_pain4]
 // function begins at statement 15502, parm_start=9395
 // OP_STATE	5692	9395	0
 // OP_DONE	0	0	0
-void () dog_pain4 = [29.000, dog_pain5]
+void () dog_pain4 = [29, dog_pain5]
 {
 };
 
@@ -729,7 +729,7 @@ void () dog_pain4 = [29.000, dog_pain5]
 // function begins at statement 15504, parm_start=9396
 // OP_STATE	304	9396	0
 // OP_DONE	0	0	0
-void () dog_pain5 = [30.000, dog_pain6]
+void () dog_pain5 = [30, dog_pain6]
 {
 };
 
@@ -737,7 +737,7 @@ void () dog_pain5 = [30.000, dog_pain6]
 // function begins at statement 15506, parm_start=9397
 // OP_STATE	305	9272	0
 // OP_DONE	0	0	0
-void () dog_pain6 = [31.000, dog_run1]
+void () dog_pain6 = [31, dog_run1]
 {
 };
 
@@ -745,7 +745,7 @@ void () dog_pain6 = [31.000, dog_run1]
 // function begins at statement 15508, parm_start=9398
 // OP_STATE	219	9398	0
 // OP_DONE	0	0	0
-void () dog_painb1 = [32.000, dog_painb2]
+void () dog_painb1 = [32, dog_painb2]
 {
 };
 
@@ -753,7 +753,7 @@ void () dog_painb1 = [32.000, dog_painb2]
 // function begins at statement 15510, parm_start=9399
 // OP_STATE	307	9399	0
 // OP_DONE	0	0	0
-void () dog_painb2 = [33.000, dog_painb3]
+void () dog_painb2 = [33, dog_painb3]
 {
 };
 
@@ -763,7 +763,7 @@ void () dog_painb2 = [33.000, dog_painb3]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb3 = [34.000, dog_painb4]
+void () dog_painb3 = [34, dog_painb4]
 {
     ai_pain(MOVETYPE_STEP);
 };
@@ -774,9 +774,9 @@ void () dog_painb3 = [34.000, dog_painb4]
 // OP_STORE_V	2717	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb4 = [35.000, dog_painb5]
+void () dog_painb4 = [35, dog_painb5]
 {
-    ai_pain(12.000);
+    ai_pain(12);
 };
 
 // dog_painb5
@@ -785,9 +785,9 @@ void () dog_painb4 = [35.000, dog_painb5]
 // OP_STORE_V	2717	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb5 = [36.000, dog_painb6]
+void () dog_painb5 = [36, dog_painb6]
 {
-    ai_pain(12.000);
+    ai_pain(12);
 };
 
 // dog_painb6
@@ -796,7 +796,7 @@ void () dog_painb5 = [36.000, dog_painb6]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb6 = [37.000, dog_painb7]
+void () dog_painb6 = [37, dog_painb7]
 {
     ai_pain(FL_SWIM);
 };
@@ -805,7 +805,7 @@ void () dog_painb6 = [37.000, dog_painb7]
 // function begins at statement 15528, parm_start=9404
 // OP_STATE	5687	9404	0
 // OP_DONE	0	0	0
-void () dog_painb7 = [38.000, dog_painb8]
+void () dog_painb7 = [38, dog_painb8]
 {
 };
 
@@ -815,7 +815,7 @@ void () dog_painb7 = [38.000, dog_painb8]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb8 = [39.000, dog_painb9]
+void () dog_painb8 = [39, dog_painb9]
 {
     ai_pain(MOVETYPE_STEP);
 };
@@ -824,7 +824,7 @@ void () dog_painb8 = [39.000, dog_painb9]
 // function begins at statement 15534, parm_start=9406
 // OP_STATE	2101	9406	0
 // OP_DONE	0	0	0
-void () dog_painb9 = [40.000, dog_painb10]
+void () dog_painb9 = [40, dog_painb10]
 {
 };
 
@@ -834,7 +834,7 @@ void () dog_painb9 = [40.000, dog_painb10]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1726	0	0
 // OP_DONE	0	0	0
-void () dog_painb10 = [41.000, dog_painb11]
+void () dog_painb10 = [41, dog_painb11]
 {
     ai_pain(MOVETYPE_BOUNCE);
 };
@@ -843,7 +843,7 @@ void () dog_painb10 = [41.000, dog_painb11]
 // function begins at statement 15540, parm_start=9408
 // OP_STATE	6044	9408	0
 // OP_DONE	0	0	0
-void () dog_painb11 = [42.000, dog_painb12]
+void () dog_painb11 = [42, dog_painb12]
 {
 };
 
@@ -851,7 +851,7 @@ void () dog_painb11 = [42.000, dog_painb12]
 // function begins at statement 15542, parm_start=9409
 // OP_STATE	6046	9409	0
 // OP_DONE	0	0	0
-void () dog_painb12 = [43.000, dog_painb13]
+void () dog_painb12 = [43, dog_painb13]
 {
 };
 
@@ -859,7 +859,7 @@ void () dog_painb12 = [43.000, dog_painb13]
 // function begins at statement 15544, parm_start=9410
 // OP_STATE	6048	9410	0
 // OP_DONE	0	0	0
-void () dog_painb13 = [44.000, dog_painb14]
+void () dog_painb13 = [44, dog_painb14]
 {
 };
 
@@ -867,7 +867,7 @@ void () dog_painb13 = [44.000, dog_painb14]
 // function begins at statement 15546, parm_start=9411
 // OP_STATE	1770	9411	0
 // OP_DONE	0	0	0
-void () dog_painb14 = [45.000, dog_painb15]
+void () dog_painb14 = [45, dog_painb15]
 {
 };
 
@@ -875,7 +875,7 @@ void () dog_painb14 = [45.000, dog_painb15]
 // function begins at statement 15548, parm_start=9412
 // OP_STATE	6051	9412	0
 // OP_DONE	0	0	0
-void () dog_painb15 = [46.000, dog_painb16]
+void () dog_painb15 = [46, dog_painb16]
 {
 };
 
@@ -883,7 +883,7 @@ void () dog_painb15 = [46.000, dog_painb16]
 // function begins at statement 15550, parm_start=9413
 // OP_STATE	6053	9272	0
 // OP_DONE	0	0	0
-void () dog_painb16 = [47.000, dog_run1]
+void () dog_painb16 = [47, dog_run1]
 {
 };
 
@@ -905,7 +905,7 @@ void () dog_painb16 = [47.000, dog_run1]
 void () dog_pain = 
 {
     sound(self, CHAN_VOICE, "dog/dpain1.wav", TRUE, ATTN_NORM);
-    if(random() > 0.500)
+    if(random() > 0.5)
     {
         dog_pain1();
     }
@@ -920,7 +920,7 @@ void () dog_pain =
 // function begins at statement 15565, parm_start=9417
 // OP_STATE	217	9417	0
 // OP_DONE	0	0	0
-void () dog_die1 = [8.000, dog_die2]
+void () dog_die1 = [8, dog_die2]
 {
 };
 
@@ -928,7 +928,7 @@ void () dog_die1 = [8.000, dog_die2]
 // function begins at statement 15567, parm_start=9418
 // OP_STATE	234	9418	0
 // OP_DONE	0	0	0
-void () dog_die2 = [9.000, dog_die3]
+void () dog_die2 = [9, dog_die3]
 {
 };
 
@@ -936,7 +936,7 @@ void () dog_die2 = [9.000, dog_die3]
 // function begins at statement 15569, parm_start=9419
 // OP_STATE	235	9419	0
 // OP_DONE	0	0	0
-void () dog_die3 = [10.000, dog_die4]
+void () dog_die3 = [10, dog_die4]
 {
 };
 
@@ -944,7 +944,7 @@ void () dog_die3 = [10.000, dog_die4]
 // function begins at statement 15571, parm_start=9420
 // OP_STATE	236	9420	0
 // OP_DONE	0	0	0
-void () dog_die4 = [11.000, dog_die5]
+void () dog_die4 = [11, dog_die5]
 {
 };
 
@@ -952,7 +952,7 @@ void () dog_die4 = [11.000, dog_die5]
 // function begins at statement 15573, parm_start=9421
 // OP_STATE	2717	9421	0
 // OP_DONE	0	0	0
-void () dog_die5 = [12.000, dog_die6]
+void () dog_die5 = [12, dog_die6]
 {
 };
 
@@ -960,7 +960,7 @@ void () dog_die5 = [12.000, dog_die6]
 // function begins at statement 15575, parm_start=9422
 // OP_STATE	8413	9422	0
 // OP_DONE	0	0	0
-void () dog_die6 = [13.000, dog_die7]
+void () dog_die6 = [13, dog_die7]
 {
 };
 
@@ -968,7 +968,7 @@ void () dog_die6 = [13.000, dog_die7]
 // function begins at statement 15577, parm_start=9423
 // OP_STATE	3382	9423	0
 // OP_DONE	0	0	0
-void () dog_die7 = [14.000, dog_die8]
+void () dog_die7 = [14, dog_die8]
 {
 };
 
@@ -976,7 +976,7 @@ void () dog_die7 = [14.000, dog_die8]
 // function begins at statement 15579, parm_start=9424
 // OP_STATE	2246	9424	0
 // OP_DONE	0	0	0
-void () dog_die8 = [15.000, dog_die9]
+void () dog_die8 = [15, dog_die9]
 {
 };
 
@@ -984,7 +984,7 @@ void () dog_die8 = [15.000, dog_die9]
 // function begins at statement 15581, parm_start=9425
 // OP_STATE	218	9424	0
 // OP_DONE	0	0	0
-void () dog_die9 = [16.000, dog_die9]
+void () dog_die9 = [16, dog_die9]
 {
 };
 
@@ -992,7 +992,7 @@ void () dog_die9 = [16.000, dog_die9]
 // function begins at statement 15583, parm_start=9426
 // OP_STATE	5450	9426	0
 // OP_DONE	0	0	0
-void () dog_dieb1 = [17.000, dog_dieb2]
+void () dog_dieb1 = [17, dog_dieb2]
 {
 };
 
@@ -1000,7 +1000,7 @@ void () dog_dieb1 = [17.000, dog_dieb2]
 // function begins at statement 15585, parm_start=9427
 // OP_STATE	3866	9427	0
 // OP_DONE	0	0	0
-void () dog_dieb2 = [18.000, dog_dieb3]
+void () dog_dieb2 = [18, dog_dieb3]
 {
 };
 
@@ -1008,7 +1008,7 @@ void () dog_dieb2 = [18.000, dog_dieb3]
 // function begins at statement 15587, parm_start=9428
 // OP_STATE	8422	9428	0
 // OP_DONE	0	0	0
-void () dog_dieb3 = [19.000, dog_dieb4]
+void () dog_dieb3 = [19, dog_dieb4]
 {
 };
 
@@ -1016,7 +1016,7 @@ void () dog_dieb3 = [19.000, dog_dieb4]
 // function begins at statement 15589, parm_start=9429
 // OP_STATE	576	9429	0
 // OP_DONE	0	0	0
-void () dog_dieb4 = [20.000, dog_dieb5]
+void () dog_dieb4 = [20, dog_dieb5]
 {
 };
 
@@ -1024,7 +1024,7 @@ void () dog_dieb4 = [20.000, dog_dieb5]
 // function begins at statement 15591, parm_start=9430
 // OP_STATE	8425	9430	0
 // OP_DONE	0	0	0
-void () dog_dieb5 = [21.000, dog_dieb6]
+void () dog_dieb5 = [21, dog_dieb6]
 {
 };
 
@@ -1032,7 +1032,7 @@ void () dog_dieb5 = [21.000, dog_dieb6]
 // function begins at statement 15593, parm_start=9431
 // OP_STATE	8428	9431	0
 // OP_DONE	0	0	0
-void () dog_dieb6 = [22.000, dog_dieb7]
+void () dog_dieb6 = [22, dog_dieb7]
 {
 };
 
@@ -1040,7 +1040,7 @@ void () dog_dieb6 = [22.000, dog_dieb7]
 // function begins at statement 15595, parm_start=9432
 // OP_STATE	301	9432	0
 // OP_DONE	0	0	0
-void () dog_dieb7 = [23.000, dog_dieb8]
+void () dog_dieb7 = [23, dog_dieb8]
 {
 };
 
@@ -1048,7 +1048,7 @@ void () dog_dieb7 = [23.000, dog_dieb8]
 // function begins at statement 15597, parm_start=9433
 // OP_STATE	5005	9433	0
 // OP_DONE	0	0	0
-void () dog_dieb8 = [24.000, dog_dieb9]
+void () dog_dieb8 = [24, dog_dieb9]
 {
 };
 
@@ -1056,7 +1056,7 @@ void () dog_dieb8 = [24.000, dog_dieb9]
 // function begins at statement 15599, parm_start=9434
 // OP_STATE	2261	9433	0
 // OP_DONE	0	0	0
-void () dog_dieb9 = [25.000, dog_dieb9]
+void () dog_dieb9 = [25, dog_dieb9]
 {
 };
 
@@ -1106,7 +1106,7 @@ void () dog_dieb9 = [25.000, dog_dieb9]
 void () dog_die = 
 {
     
-    if(self.health < -35.000)
+    if(self.health < -35)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowGib("progs/gib3.mdl", self.health);
@@ -1118,7 +1118,7 @@ void () dog_die =
     
     sound(self, CHAN_VOICE, "dog/ddeath.wav", TRUE, ATTN_NORM);
     self.solid = SOLID_NOT;
-    if(random() > 0.500)
+    if(random() > 0.5)
     {
         dog_die1();
     }
@@ -1204,13 +1204,13 @@ float () CheckDogJump =
     local vector dist;
     local float d;
     
-    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.750 * self.enemy.size_z)))
+    if((self.origin_z + self.mins_z) > ((self.enemy.origin_z + self.enemy.mins_z) + (0.75 * self.enemy.size_z)))
     {
         return FALSE;
     }
     
     
-    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.250 * self.enemy.size_z)))
+    if((self.origin_z + self.maxs_z) < ((self.enemy.origin_z + self.enemy.mins_z) + (0.25 * self.enemy.size_z)))
     {
         return FALSE;
     }
@@ -1219,13 +1219,13 @@ float () CheckDogJump =
     dist_z = FALSE;
     d = vlen(dist);
     
-    if(d < 80.000)
+    if(d < 80)
     {
         return FALSE;
     }
     
     
-    if(d > 150.000)
+    if(d > 150)
     {
         return FALSE;
     }
@@ -1336,7 +1336,7 @@ void () monster_dog =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/dog.mdl");
     setsize(self, VEC_HULL2_MIN, '32.000 32.000 40.000');
-    self.health = 25.000;
+    self.health = 25;
     self.th_stand = dog_stand1;
     self.th_walk = dog_walk1;
     self.th_run = dog_run1;

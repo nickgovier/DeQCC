@@ -58,7 +58,7 @@ void () W_Precache =
 // OP_DONE	0	0	0
 float () crandom = 
 {
-    return 2.000 * (random() - 0.500);
+    return 2 * (random() - 0.5);
 };
 
 // wall_velocity
@@ -89,9 +89,9 @@ vector () wall_velocity =
 {
     local vector vel;
     vel = normalize(self.velocity);
-    vel = normalize((vel + (v_up * (random() - 0.500))) + (v_right * (random() - 0.500)));
-    vel = vel + (2.000 * trace_plane_normal);
-    vel = vel * 200.000;
+    vel = normalize((vel + (v_up * (random() - 0.5))) + (v_right * (random() - 0.5)));
+    vel = vel + (2 * trace_plane_normal);
+    vel = vel * 200;
     return vel;
 };
 
@@ -145,9 +145,9 @@ void (vector org, vector vel) SpawnMeatSpray =
     missile.solid = SOLID_NOT;
     makevectors(self.angles);
     missile.velocity = vel;
-    missile.velocity_z = (missile.velocity_z + 250.000) + (50.000 * random());
+    missile.velocity_z = (missile.velocity_z + 250) + (50 * random());
     missile.avelocity = '3000.000 1000.000 2000.000';
-    missile.nextthink = time + 1.000;
+    missile.nextthink = time + 1;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/zom_gib.mdl");
     setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
@@ -166,7 +166,7 @@ void (vector org, vector vel) SpawnMeatSpray =
 // OP_DONE	0	0	0
 void (vector org, vector vel, float damage) SpawnBlood = 
 {
-    particle(org, vel * 0.100, 225.000, damage * 2.000);
+    particle(org, vel * 0.1, 225, damage * 2);
 };
 
 // spawn_touchblood
@@ -185,8 +185,8 @@ void (vector org, vector vel, float damage) SpawnBlood =
 void (float damage) spawn_touchblood = 
 {
     local vector vel;
-    vel = wall_velocity() * 0.200;
-    SpawnBlood(self.origin + (vel * 0.010), vel, damage);
+    vel = wall_velocity() * 0.2;
+    SpawnBlood(self.origin + (vel * 0.01), vel, damage);
 };
 
 // SpawnChunk
@@ -200,7 +200,7 @@ void (float damage) spawn_touchblood =
 // OP_DONE	0	0	0
 void (vector org, vector vel) SpawnChunk = 
 {
-    particle(org, vel * 0.020, 0.000, 10.000);
+    particle(org, vel * 0.02, 0, 10);
 };
 
 entity multi_ent;
@@ -213,7 +213,7 @@ float multi_damage;
 void () ClearMultiDamage = 
 {
     multi_ent = world;
-    multi_damage = 0.000;
+    multi_damage = 0;
 };
 
 // ApplyMultiDamage
@@ -324,12 +324,12 @@ void (float damage, vector dir) TraceAttack =
     local vector vel;
     local vector org;
     vel = normalize((dir + (v_up * crandom())) + (v_right * crandom()));
-    vel = vel + (2.000 * trace_plane_normal);
-    vel = vel * 200.000;
-    org = trace_endpos - (dir * 4.000);
+    vel = vel + (2 * trace_plane_normal);
+    vel = vel * 200;
+    org = trace_endpos - (dir * 4);
     if(trace_ent.takedamage)
     {
-        SpawnBlood(org, vel * 0.200, damage);
+        SpawnBlood(org, vel * 0.2, damage);
         AddMultiDamage(trace_ent, damage);
     }
     else
@@ -337,8 +337,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0.000);
-        WriteCoord(MSG_BROADCAST, 0.000);
+        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, 0);
     }
     
 };
@@ -391,21 +391,21 @@ void (float shotcount, vector dir, vector spread) FireBullets =
     local vector direction;
     local vector src;
     makevectors(self.v_angle);
-    src = self.origin + (v_forward * 10.000);
-    src_z = self.absmin_z + (self.size_z * 0.700);
+    src = self.origin + (v_forward * 10);
+    src_z = self.absmin_z + (self.size_z * 0.7);
     ClearMultiDamage();
     
-    while(shotcount > 0.000)
+    while(shotcount > 0)
     {
-        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * 0.000) * v_up);
-        traceline(src, src + (direction * 2048.000), FALSE, self);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * 0) * v_up);
+        traceline(src, src + (direction * 2048), FALSE, self);
         
-        if(trace_fraction != 1.000)
+        if(trace_fraction != 1)
         {
-            TraceAttack(4.000, direction);
+            TraceAttack(4, direction);
         }
         
-        shotcount = shotcount - 1.000;
+        shotcount = shotcount - 1;
     }
     
     ApplyMultiDamage();
@@ -415,7 +415,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
 // function begins at statement 2494, parm_start=2598
 // OP_STATE	619	2598	0
 // OP_DONE	0	0	0
-void () s_explode1 = [0.000, s_explode2]
+void () s_explode1 = [0, s_explode2]
 {
 };
 
@@ -423,7 +423,7 @@ void () s_explode1 = [0.000, s_explode2]
 // function begins at statement 2496, parm_start=2599
 // OP_STATE	677	2599	0
 // OP_DONE	0	0	0
-void () s_explode2 = [1.000, s_explode3]
+void () s_explode2 = [1, s_explode3]
 {
 };
 
@@ -431,7 +431,7 @@ void () s_explode2 = [1.000, s_explode3]
 // function begins at statement 2498, parm_start=2600
 // OP_STATE	806	2600	0
 // OP_DONE	0	0	0
-void () s_explode3 = [2.000, s_explode4]
+void () s_explode3 = [2, s_explode4]
 {
 };
 
@@ -439,7 +439,7 @@ void () s_explode3 = [2.000, s_explode4]
 // function begins at statement 2500, parm_start=2601
 // OP_STATE	788	2601	0
 // OP_DONE	0	0	0
-void () s_explode4 = [3.000, s_explode5]
+void () s_explode4 = [3, s_explode5]
 {
 };
 
@@ -447,7 +447,7 @@ void () s_explode4 = [3.000, s_explode5]
 // function begins at statement 2502, parm_start=2602
 // OP_STATE	808	2602	0
 // OP_DONE	0	0	0
-void () s_explode5 = [4.000, s_explode6]
+void () s_explode5 = [4, s_explode6]
 {
 };
 
@@ -455,7 +455,7 @@ void () s_explode5 = [4.000, s_explode6]
 // function begins at statement 2504, parm_start=2603
 // OP_STATE	813	568	0
 // OP_DONE	0	0	0
-void () s_explode6 = [5.000, SUB_Remove]
+void () s_explode6 = [5, SUB_Remove]
 {
 };
 
@@ -565,21 +565,21 @@ void () T_MissileTouch =
         return;
     }
     
-    damg = 100.000 + (random() * 20.000);
+    damg = 100 + (random() * 20);
     
     if(other.health)
     {
         
         if(other.classname == "monster_shambler")
         {
-            damg = damg * 0.500;
+            damg = damg * 0.5;
         }
         
         T_Damage(other, self, self.owner, damg);
     }
     
-    T_RadiusDamage(self, self.owner, 120.000, other);
-    self.origin = self.origin - (8.000 * normalize(self.velocity));
+    T_RadiusDamage(self, self.owner, 120, other);
+    self.origin = self.origin - (8 * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
@@ -686,16 +686,16 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = 0.000 - 0.000;
+    f_x = 0 - 0;
     f_y = f_x;
-    f_z = 0.000;
-    f = f * 16.000;
+    f_z = 0;
+    f = f * 16;
     e1 = e2 = world;
     traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * 4.000);
+        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -703,7 +703,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
             
             if(other.classname == "player")
             {
-                trace_ent.velocity_z = trace_ent.velocity_z + 400.000;
+                trace_ent.velocity_z = trace_ent.velocity_z + 400;
             }
             
         }
@@ -715,7 +715,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * 4.000);
+        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -724,7 +724,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225.000, damage * 4.000);
+        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -779,11 +779,11 @@ void (vector org, vector dir) launch_spike =
     newmis.touch = spike_touch;
     newmis.classname = "spike";
     newmis.think = SUB_Remove;
-    newmis.nextthink = time + 6.000;
+    newmis.nextthink = time + 6;
     setmodel(newmis, "progs/spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(newmis, org);
-    newmis.velocity = dir * 1000.000;
+    newmis.velocity = dir * 1000;
 };
 
 .float hit_z;
@@ -886,8 +886,8 @@ void () spike_touch =
     
     if(other.takedamage)
     {
-        spawn_touchblood(9.000);
-        T_Damage(other, self, self.owner, 9.000);
+        spawn_touchblood(9);
+        T_Damage(other, self, self.owner, 9);
     }
     else
     {
@@ -991,8 +991,8 @@ void () superspike_touch =
     
     if(other.takedamage)
     {
-        spawn_touchblood(18.000);
-        T_Damage(other, self, self.owner, 18.000);
+        spawn_touchblood(18);
+        T_Damage(other, self, self.owner, 18);
     }
     else
     {
@@ -1064,17 +1064,17 @@ void () W_SetCurrentAmmo =
         self.th_melee();
     }
     
-    if(self.wepv == 1.000)
+    if(self.wepv == 1)
     {
-        self.weaponframe = 1.000;
+        self.weaponframe = 1;
     }
     else
     {
-        self.weaponframe = 0.000;
+        self.weaponframe = 0;
     }
     
     
-    if(self.wepv == 2.000)
+    if(self.wepv == 2)
     {
         self.weaponmodel = "";
     }
@@ -1103,7 +1103,7 @@ void () W_SetCurrentAmmo =
                 }
                 else
                 {
-                    self.currentammo = 0.000;
+                    self.currentammo = 0;
                 }
                 
             }
@@ -1134,19 +1134,19 @@ float () W_BestWeapon =
 {
     local float it;
     
-    if(self.ammo_cells >= 1.000)
+    if(self.ammo_cells >= 1)
     {
         return IT_WEP4;
     }
     
     
-    if(self.ammo_rockets >= 1.000)
+    if(self.ammo_rockets >= 1)
     {
         return IT_WEP3;
     }
     
     
-    if(self.ammo_nails >= 2.000)
+    if(self.ammo_nails >= 2)
     {
         return IT_WEP2;
     }
@@ -1169,7 +1169,7 @@ float () W_BestWeapon =
 float () W_CheckNoAmmo = 
 {
     
-    if(self.currentammo > 1.000)
+    if(self.currentammo > 1)
     {
         return TRUE;
     }
@@ -1231,28 +1231,28 @@ void () W_ChangeWeapon =
     local float am;
     local float fl;
     it = self.items;
-    am = 0.000;
-    fl = 0.000;
-    if(self.impulse == 1.000)
+    am = 0;
+    fl = 0;
+    if(self.impulse == 1)
     {
         fl = IT_WEP1;
     }
     else
     {
-        if(self.impulse == 2.000)
+        if(self.impulse == 2)
         {
             fl = IT_WEP2;
         }
         else
         {
-            if(self.impulse == 3.000)
+            if(self.impulse == 3)
             {
                 fl = IT_WEP3;
             }
             else
             {
                 
-                if(self.impulse == 4.000)
+                if(self.impulse == 4)
                 {
                     fl = IT_WEP4;
                 }
@@ -1263,7 +1263,7 @@ void () W_ChangeWeapon =
         
     }
     
-    self.impulse = 0.000;
+    self.impulse = 0;
     
     if(!(self.items & fl))
     {
@@ -1279,7 +1279,7 @@ void () W_ChangeWeapon =
     }
     
     
-    if(fl != 0.000)
+    if(fl != 0)
     {
         self.weapon = fl;
         W_SetCurrentAmmo();
@@ -1323,16 +1323,16 @@ void () CheatCommand =
         return;
     }
     
-    self.ammo_rock = 250.000;
-    self.ammo_auto = 250.000;
-    self.ammo_shel = 250.000;
-    self.ammo_cell = 250.000;
-    self.ammo_amsl = 250.000;
-    self.ammo_smsl = 250.000;
-    self.ammo_mine = 250.000;
-    self.ammo_bomb = 250.000;
-    check_ammo(self, 0.000);
-    self.impulse = 0.000;
+    self.ammo_rock = 250;
+    self.ammo_auto = 250;
+    self.ammo_shel = 250;
+    self.ammo_cell = 250;
+    self.ammo_amsl = 250;
+    self.ammo_smsl = 250;
+    self.ammo_mine = 250;
+    self.ammo_bomb = 250;
+    check_ammo(self, 0);
+    self.impulse = 0;
     W_SetCurrentAmmo();
 };
 
@@ -1381,11 +1381,11 @@ void () CycleWeaponCommand =
     local float it;
     local float am;
     it = self.items;
-    self.impulse = 0.000;
+    self.impulse = 0;
     
-    while(1.000)
+    while(1)
     {
-        am = 0.000;
+        am = 0;
         if(self.weapon == IT_WEP4)
         {
             self.weapon = IT_WEP1;
@@ -1417,7 +1417,7 @@ void () CycleWeaponCommand =
         }
         
         
-        if((it & self.weapon) && (am == 0.000))
+        if((it & self.weapon) && (am == 0))
         {
             W_SetCurrentAmmo();
             return;
@@ -1472,11 +1472,11 @@ void () CycleWeaponReverseCommand =
     local float it;
     local float am;
     it = self.items;
-    self.impulse = 0.000;
+    self.impulse = 0;
     
-    while(1.000)
+    while(1)
     {
-        am = 0.000;
+        am = 0;
         if(self.weapon == IT_WEP4)
         {
             self.weapon = IT_WEP3;
@@ -1508,7 +1508,7 @@ void () CycleWeaponReverseCommand =
         }
         
         
-        if((it & self.weapon) && (am == 0.000))
+        if((it & self.weapon) && (am == 0))
         {
             W_SetCurrentAmmo();
             return;
@@ -1526,7 +1526,7 @@ void () CycleWeaponReverseCommand =
 // OP_DONE	0	0	0
 void () ServerflagsCommand = 
 {
-    serverflags = (serverflags * 2.000) + 1.000;
+    serverflags = (serverflags * 2) + 1;
 };
 
 // QuadCheat
@@ -1554,8 +1554,8 @@ void () QuadCheat =
         return;
     }
     
-    self.super_time = 1.000;
-    self.super_damage_finished = time + 30.000;
+    self.super_time = 1;
+    self.super_damage_finished = time + 30;
     self.items = self.items | IT_QUAD;
     dprint("quad cheat\n");
 };
@@ -1779,61 +1779,61 @@ void () ImpulseCommands =
     local vector v1;
     local entity e;
     
-    if((self.impulse >= 1.000) && (self.impulse <= 4.000))
+    if((self.impulse >= 1) && (self.impulse <= 4))
     {
         W_ChangeWeapon();
     }
     
     
-    if((self.impulse == 5.000) && (self.attack_finished < time))
+    if((self.impulse == 5) && (self.attack_finished < time))
     {
         AC_Flare();
-        self.attack_finished = time + 1.000;
+        self.attack_finished = time + 1;
     }
     
     
-    if((self.impulse >= 7.000) && (self.impulse <= 8.000))
+    if((self.impulse >= 7) && (self.impulse <= 8))
     {
         
-        if((self.impulse == 7.000) && (self.enemy.thru > 0.000))
+        if((self.impulse == 7) && (self.enemy.thru > 0))
         {
-            self.enemy.thru = self.enemy.thru - 1.000;
+            self.enemy.thru = self.enemy.thru - 1;
             self.fly_sound = time;
         }
         
         
-        if((self.impulse == 8.000) && (self.enemy.thru < 4.000))
+        if((self.impulse == 8) && (self.enemy.thru < 4))
         {
-            self.enemy.thru = self.enemy.thru + 1.000;
+            self.enemy.thru = self.enemy.thru + 1;
             self.fly_sound = time;
         }
         
-        if(self.enemy.thru == 0.000)
+        if(self.enemy.thru == 0)
         {
             sprint(self, "thrust: 0%\n");
         }
         else
         {
-            if(self.enemy.thru == 1.000)
+            if(self.enemy.thru == 1)
             {
                 sprint(self, "thrust: 25%\n");
             }
             else
             {
-                if(self.enemy.thru == 2.000)
+                if(self.enemy.thru == 2)
                 {
                     sprint(self, "thrust: 50%\n");
                 }
                 else
                 {
-                    if(self.enemy.thru == 3.000)
+                    if(self.enemy.thru == 3)
                     {
                         sprint(self, "thrust: 75%\n");
                     }
                     else
                     {
                         
-                        if(self.enemy.thru == 4.000)
+                        if(self.enemy.thru == 4)
                         {
                             sprint(self, "thrust:100%\n");
                         }
@@ -1849,9 +1849,9 @@ void () ImpulseCommands =
     }
     
     
-    if(self.impulse == 9.000)
+    if(self.impulse == 9)
     {
-        self.missileview_on = 1.000 - self.missileview_on;
+        self.missileview_on = 1 - self.missileview_on;
         if(self.missileview_on)
         {
             sprint(self, "Missile view on\n");
@@ -1864,57 +1864,57 @@ void () ImpulseCommands =
     }
     
     
-    if(self.impulse == 11.000)
+    if(self.impulse == 11)
     {
         CheatCommand();
     }
     
     
-    if(self.impulse == 12.000)
+    if(self.impulse == 12)
     {
         CycleWeaponCommand();
     }
     
     
-    if(self.impulse == 13.000)
+    if(self.impulse == 13)
     {
         ServerflagsCommand();
     }
     
     
-    if(self.impulse == 14.000)
+    if(self.impulse == 14)
     {
         CycleWeaponReverseCommand();
     }
     
     
-    if(self.impulse == 255.000)
+    if(self.impulse == 255)
     {
         QuadCheat();
     }
     
     
-    if((self.impulse >= 100.000) && (self.impulse <= 104.000))
+    if((self.impulse >= 100) && (self.impulse <= 104))
     {
-        self.toyview = self.impulse - 100.000;
+        self.toyview = self.impulse - 100;
         v1 = self.enemy.angles;
-        v1_x = 0.000 - v1_x;
-        if(self.toyview == 1.000)
+        v1_x = 0 - v1_x;
+        if(self.toyview == 1)
         {
-            v1_y = anglemod(270.000 + 0.000);
+            v1_y = anglemod(270 + 0);
         }
         else
         {
-            if(self.toyview == 2.000)
+            if(self.toyview == 2)
             {
-                v1_y = anglemod(180.000 + 0.000);
+                v1_y = anglemod(180 + 0);
             }
             else
             {
                 
-                if(self.toyview == 3.000)
+                if(self.toyview == 3)
                 {
-                    v1_y = anglemod(90.000 + 0.000);
+                    v1_y = anglemod(90 + 0);
                 }
                 
             }
@@ -1922,44 +1922,44 @@ void () ImpulseCommands =
         }
         
         
-        if(self.toyview < 4.000)
+        if(self.toyview < 4)
         {
             msg_entity = self;
-            WriteByte(MSG_ONE, 5.000);
+            WriteByte(MSG_ONE, 5);
             WriteEntity(MSG_ONE, self.oldenemy);
-            WriteByte(MSG_ONE, 10.000);
+            WriteByte(MSG_ONE, 10);
             WriteAngle(MSG_ONE, v1_x);
-            WriteAngle(MSG_ONE, 0.000);
-            WriteAngle(MSG_ONE, 0.000);
+            WriteAngle(MSG_ONE, 0);
+            WriteAngle(MSG_ONE, 0);
         }
         
     }
     
     
-    if(self.impulse == 105.000)
+    if(self.impulse == 105)
     {
-        self.toyview = 0.000;
+        self.toyview = 0;
     }
     
     
-    if(self.impulse == 110.000)
+    if(self.impulse == 110)
     {
-        self.lefty = -1.000;
+        self.lefty = -1;
     }
     
     
-    if(self.impulse == 111.000)
+    if(self.impulse == 111)
     {
-        self.lefty = 1.000;
+        self.lefty = 1;
     }
     
     
-    if(self.impulse == 109.000)
+    if(self.impulse == 109)
     {
-        self.lefty = 0.000;
+        self.lefty = 0;
     }
     
-    self.impulse = 0.000;
+    self.impulse = 0;
 };
 
 // W_WeaponFrame
@@ -2034,24 +2034,24 @@ void () W_WeaponFrame =
     
     if(self.rad_time > time)
     {
-        self.armortype = self.armortype | 2.000;
+        self.armortype = self.armortype | 2;
     }
     
     self.items = self.items - (self.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3));
-    if(self.armortype == 1.000)
+    if(self.armortype == 1)
     {
         self.items = self.items + IT_ARMOR1;
     }
     else
     {
-        if(self.armortype == 2.000)
+        if(self.armortype == 2)
         {
             self.items = self.items + IT_ARMOR2;
         }
         else
         {
             
-            if(self.armortype == 3.000)
+            if(self.armortype == 3)
             {
                 self.items = self.items + IT_ARMOR3;
             }
@@ -2060,7 +2060,7 @@ void () W_WeaponFrame =
         
     }
     
-    self.armortype = 0.000;
+    self.armortype = 0;
     
     if(time < self.attack_finished)
     {
@@ -2104,8 +2104,8 @@ void () SuperDamageSound =
         
         if(self.super_sound < time)
         {
-            self.super_sound = time + 1.000;
-            sound(self.enemy, CHAN_BODY, "items/damage3.wav", 1.000, ATTN_NORM);
+            self.super_sound = time + 1;
+            sound(self.enemy, CHAN_BODY, "items/damage3.wav", 1, ATTN_NORM);
         }
         
     }

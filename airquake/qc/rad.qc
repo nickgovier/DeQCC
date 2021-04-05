@@ -300,15 +300,15 @@ float () RadFindTarget =
         
     }
     
-    mr = 3000.000;
+    mr = 3000;
     
-    if(self.enemy.health > 0.000)
+    if(self.enemy.health > 0)
     {
         mr = vlen(self.enemy.origin - self.origin);
     }
     
-    e = findradius(self.origin, 3000.000);
-    self.impulse = 0.000;
+    e = findradius(self.origin, 3000);
+    self.impulse = 0;
     
     while(e)
     {
@@ -319,7 +319,7 @@ float () RadFindTarget =
             if((e.takedamage == DAMAGE_AIM) && (e.solid != SOLID_BSP))
             {
                 
-                if((e.health > 0.000) && (e.classname != "player"))
+                if((e.health > 0) && (e.classname != "player"))
                 {
                     if((e.model == "progs/plane3.mdl") && (e.unstealth_finished > time))
                     {
@@ -327,7 +327,7 @@ float () RadFindTarget =
                     }
                     else
                     {
-                        if(((e.model == "progs/humba.mdl") && (e.owner.attack_finished < time)) && (e.owner.style == 9.000))
+                        if(((e.model == "progs/humba.mdl") && (e.owner.attack_finished < time)) && (e.owner.style == 9))
                         {
                             self.impulse = self.impulse;
                         }
@@ -336,7 +336,7 @@ float () RadFindTarget =
                             
                             if(visible(e))
                             {
-                                self.impulse = self.impulse + 1.000;
+                                self.impulse = self.impulse + 1;
                                 r = vlen(e.origin - self.origin);
                                 
                                 if(r < mr)
@@ -348,43 +348,43 @@ float () RadFindTarget =
                                 
                                 if(e.rad_time < time)
                                 {
-                                    sound(self, CHAN_VOICE, "speech/rw_a_al.wav", 1.000, ATTN_NORM);
-                                    send_voicemsg(84.000, self);
+                                    sound(self, CHAN_VOICE, "speech/rw_a_al.wav", 1, ATTN_NORM);
+                                    send_voicemsg(84, self);
                                     teamprint(self, self.netname);
                                     teamprint(self, ": Enemy ");
                                     if(e.owner.classname == "player")
                                     {
-                                        if(e.owner.style == 1.000)
+                                        if(e.owner.style == 1)
                                         {
                                             teamprint(self, "Dogfighter (");
                                         }
                                         else
                                         {
-                                            if(e.owner.style == 2.000)
+                                            if(e.owner.style == 2)
                                             {
                                                 teamprint(self, "Fighter Bomber (");
                                             }
                                             else
                                             {
-                                                if(e.owner.style == 3.000)
+                                                if(e.owner.style == 3)
                                                 {
                                                     teamprint(self, "Stealth Fighter (");
                                                 }
                                                 else
                                                 {
-                                                    if(e.owner.style == 4.000)
+                                                    if(e.owner.style == 4)
                                                     {
                                                         teamprint(self, "Bomber (");
                                                     }
                                                     else
                                                     {
-                                                        if(e.owner.style == 5.000)
+                                                        if(e.owner.style == 5)
                                                         {
                                                             teamprint(self, "X-29 (");
                                                         }
                                                         else
                                                         {
-                                                            if(e.owner.style == 6.000)
+                                                            if(e.owner.style == 6)
                                                             {
                                                                 teamprint(self, "Helicopter (");
                                                             }
@@ -412,51 +412,51 @@ float () RadFindTarget =
                                     teamprint(self, e.netname);
                                     teamprint(self, ") in ");
                                     v_forward = vectoangles(e.origin - self.origin);
-                                    r = 0.000;
-                                    if((r > 67.000) && (r <= 112.000))
+                                    r = 0;
+                                    if((r > 67) && (r <= 112))
                                     {
                                         dirstr = "north";
                                     }
                                     else
                                     {
-                                        if((r > 22.000) && (r <= 67.000))
+                                        if((r > 22) && (r <= 67))
                                         {
                                             dirstr = "northeast";
                                         }
                                         else
                                         {
-                                            if((r > 337.000) || (r <= 22.000))
+                                            if((r > 337) || (r <= 22))
                                             {
                                                 dirstr = "east";
                                             }
                                             else
                                             {
-                                                if((r > 292.000) && (r <= 337.000))
+                                                if((r > 292) && (r <= 337))
                                                 {
                                                     dirstr = "southeast";
                                                 }
                                                 else
                                                 {
-                                                    if((r > 247.000) && (r <= 292.000))
+                                                    if((r > 247) && (r <= 292))
                                                     {
                                                         dirstr = "south";
                                                     }
                                                     else
                                                     {
-                                                        if((r > 202.000) && (r <= 247.000))
+                                                        if((r > 202) && (r <= 247))
                                                         {
                                                             dirstr = "southwest";
                                                         }
                                                         else
                                                         {
-                                                            if((r > 157.000) && (r <= 202.000))
+                                                            if((r > 157) && (r <= 202))
                                                             {
                                                                 dirstr = "west";
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if((r > 112.000) && (r <= 157.000))
+                                                                if((r > 112) && (r <= 157))
                                                                 {
                                                                     dirstr = "northwest";
                                                                 }
@@ -476,14 +476,14 @@ float () RadFindTarget =
                                     }
                                     
                                     teamprint(self, dirstr);
-                                    if((e.origin_z - self.origin_z) > 1000.000)
+                                    if((e.origin_z - self.origin_z) > 1000)
                                     {
                                         teamprint(self, " high");
                                     }
                                     else
                                     {
                                         
-                                        if((e.origin_z - self.origin_z) < 100.000)
+                                        if((e.origin_z - self.origin_z) < 100)
                                         {
                                             teamprint(self, " low");
                                         }
@@ -493,7 +493,7 @@ float () RadFindTarget =
                                     teamprint(self, "\n");
                                 }
                                 
-                                e.rad_time = time + 3.000;
+                                e.rad_time = time + 3;
                             }
                             
                         }
@@ -611,7 +611,7 @@ float () RadFindTarget =
 // OP_CALL0	19153	0	0
 // OP_CALL0	19151	0	0
 // OP_DONE	0	0	0
-void () rad_stand = [0.000, rad_stand]
+void () rad_stand = [0, rad_stand]
 {
     local entity e;
     local float n;
@@ -619,14 +619,14 @@ void () rad_stand = [0.000, rad_stand]
     
     if(!(self.flags & FL_ONGROUND))
     {
-        T_Damage(self, world, world, 1000.000);
+        T_Damage(self, world, world, 1000);
     }
     
     
     if(self.rad_time < time)
     {
         RadFindTarget();
-        self.rad_time = time + 1.000;
+        self.rad_time = time + 1;
     }
     
     
@@ -634,7 +634,7 @@ void () rad_stand = [0.000, rad_stand]
     {
         n = vlen(self.origin - self.enemy.origin);
         
-        if(n > 3000.000)
+        if(n > 3000)
         {
             self.enemy = world;
         }
@@ -646,7 +646,7 @@ void () rad_stand = [0.000, rad_stand]
         }
         
         
-        if(self.enemy.health < 1.000)
+        if(self.enemy.health < 1)
         {
             self.enemy = world;
         }
@@ -655,7 +655,7 @@ void () rad_stand = [0.000, rad_stand]
         if((self.enemy.model == "progs/plane3.mdl") && (self.enemy.unstealth_finished < time))
         {
             
-            if(random() < 0.200)
+            if(random() < 0.2)
             {
                 self.enemy = world;
             }
@@ -679,10 +679,10 @@ void () rad_stand = [0.000, rad_stand]
                     stuffcmd(self.enemy.owner, "play in2.wav\n");
                 }
                 
-                self.enemy.owner.armortype = self.enemy.owner.armortype | 1.000;
+                self.enemy.owner.armortype = self.enemy.owner.armortype | 1;
             }
             
-            self.attack_finished = time + 1.000;
+            self.attack_finished = time + 1;
             rad_assign();
         }
         
@@ -695,7 +695,7 @@ void () rad_stand = [0.000, rad_stand]
 // function begins at statement 28203, parm_start=19389
 // OP_STATE	619	19322	0
 // OP_DONE	0	0	0
-void () rad_walk = [0.000, rad_stand]
+void () rad_walk = [0, rad_stand]
 {
 };
 
@@ -703,7 +703,7 @@ void () rad_walk = [0.000, rad_stand]
 // function begins at statement 28205, parm_start=19389
 // OP_STATE	619	19322	0
 // OP_DONE	0	0	0
-void () rad_run = [0.000, rad_stand]
+void () rad_run = [0, rad_stand]
 {
 };
 
@@ -736,7 +736,7 @@ void () rad_run = [0.000, rad_stand]
 void () rad_death = 
 {
     self.trigger_field.think = BecomeExplosion;
-    self.trigger_field.nextthink = time + 0.100;
+    self.trigger_field.nextthink = time + 0.1;
     if(!deathmatch)
     {
         remove(self);
@@ -744,7 +744,7 @@ void () rad_death =
     else
     {
         setmodel(self, "");
-        self.takedamage = 0.000;
+        self.takedamage = 0;
         self.think = start_monster_rad;
         self.nextthink = time + self.wait;
     }
@@ -772,9 +772,9 @@ void () rad_death =
 void () rad_die = 
 {
     
-    if(self.health < -90.000)
+    if(self.health < -90)
     {
-        sound(self, CHAN_VOICE, "player/udeath.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "player/udeath.wav", 1, ATTN_NORM);
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
@@ -869,60 +869,60 @@ void () rad_aim =
     org = self.origin + v_forward;
     dir = vectoangles(org - self.origin);
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0.000 - self.angles_y;
+    vtemp_y = 0 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
-    if(vtemp_x < 0.000)
+    if(vtemp_x < 0)
     {
-        vtemp_x = vtemp_x + 360.000;
+        vtemp_x = vtemp_x + 360;
     }
     
     
-    if(vtemp_x > 180.000)
+    if(vtemp_x > 180)
     {
-        vtemp_x = vtemp_x - 360.000;
+        vtemp_x = vtemp_x - 360;
     }
     
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        vtemp_y = 0.000 + 360.000;
+        vtemp_y = 0 + 360;
     }
     
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        vtemp_y = 0.000 - 360.000;
+        vtemp_y = 0 - 360;
     }
     
     dir = vtemp;
     
-    if(dir_x < -10.000)
+    if(dir_x < -10)
     {
-        dir_x = -10.000;
+        dir_x = -10;
     }
     
     
-    if(dir_x > 10.000)
+    if(dir_x > 10)
     {
-        dir_x = 10.000;
+        dir_x = 10;
     }
     
     
-    if(0.000 < -10.000)
+    if(0 < -10)
     {
-        dir_y = -10.000;
+        dir_y = -10;
     }
     
     
-    if(0.000 > 10.000)
+    if(0 > 10)
     {
-        dir_y = 10.000;
+        dir_y = 10;
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0.000);
+    self.angles_y = anglemod(self.angles_y + 0);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -1024,7 +1024,7 @@ void () rad_assign =
     while(e)
     {
         
-        if(e.health > 0.000)
+        if(e.health > 0)
         {
             
             if((e.classname == "monster_sam") || (e.classname == "monster_aag"))
@@ -1033,12 +1033,12 @@ void () rad_assign =
                 if(e.th_run)
                 {
                     
-                    if(e.enemy.pdmg > (e.enemy.health * 1.500))
+                    if(e.enemy.pdmg > (e.enemy.health * 1.5))
                     {
                         e.enemy = world;
                     }
                     
-                    mr = 3000.000;
+                    mr = 3000;
                     
                     if(e.enemy)
                     {
@@ -1047,17 +1047,17 @@ void () rad_assign =
                     
                     r = vlen(stemp.enemy.origin - e.origin);
                     
-                    if((r < mr) && (temp.pdmg < (temp.health * 1.500)))
+                    if((r < mr) && (temp.pdmg < (temp.health * 1.5)))
                     {
                         mr = r;
                         traceline(e.origin, self.enemy.origin, TRUE, world);
                         
-                        if(trace_fraction == 1.000)
+                        if(trace_fraction == 1)
                         {
                             self = e;
                             self.enemy = temp;
                             self.think = self.th_run;
-                            self.nextthink = time + 0.100;
+                            self.nextthink = time + 0.1;
                         }
                         
                     }
@@ -1167,10 +1167,10 @@ void () start_monster_rad =
 {
     teamplay = cvar("teamplay");
     
-    if(deathmatch > 0.000)
+    if(deathmatch > 0)
     {
         
-        if((self.team == 0.000) || (teamplay == 0.000))
+        if((self.team == 0) || (teamplay == 0))
         {
             remove(self);
             return;
@@ -1201,7 +1201,7 @@ void () start_monster_rad =
     self.view_ofs = '0.000 0.000 1.000';
     self.use = monster_use;
     
-    if((deathmatch > 0.000) || (self.team != 1.000))
+    if((deathmatch > 0) || (self.team != 1))
     {
         self.flags = self.flags | FL_MONSTER;
     }
@@ -1269,16 +1269,16 @@ void () monster_rad =
     precache_model("progs/radba.mdl");
     precache_model("progs/radpl.mdl");
     
-    if((deathmatch == 0.000) && (self.team != 1.000))
+    if((deathmatch == 0) && (self.team != 1))
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     self.oldorigin = self.origin;
     
     if(!self.health)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     self.max_health = self.health;
@@ -1289,10 +1289,10 @@ void () monster_rad =
     
     if(!self.wait)
     {
-        self.wait = 120.000;
+        self.wait = 120;
     }
     
     self.think = start_monster_rad;
-    self.nextthink = (time + 0.100) + (random() * 0.300);
+    self.nextthink = (time + 0.1) + (random() * 0.3);
 };
 

@@ -50,10 +50,10 @@ void () shoottarget =
     botTarget = self.goalentity;
     bot_trigger1();
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", TRUE, ATTN_NORM);
-    dir = (botTarget.goalentity.absmin + botTarget.goalentity.absmax) * 0.500;
+    dir = (botTarget.goalentity.absmin + botTarget.goalentity.absmax) * 0.5;
     dir = normalize(dir - self.origin);
     FireBullets(MOVETYPE_TOSS, dir, '0.040 0.040 0.000');
-    self.attack_finished = time + 0.500;
+    self.attack_finished = time + 0.5;
     self.enemy = world;
     
     if(botTarget.goalentity.classname == "door")
@@ -163,7 +163,7 @@ void (float dist) ai_botseek =
         
         if(botTarget.goalentity.classname == "train")
         {
-            dir = (botTarget.goalentity.absmin + botTarget.goalentity.absmax) * 0.500;
+            dir = (botTarget.goalentity.absmin + botTarget.goalentity.absmax) * 0.5;
             dir_z = botTarget.goalentity.absmax_z + TRUE;
             setorigin(botTarget, dir);
         }
@@ -177,7 +177,7 @@ void (float dist) ai_botseek =
             
             if(rng >= oldrng)
             {
-                self.search_time = self.search_time - 0.400;
+                self.search_time = self.search_time - 0.4;
                 
                 if(botTarget.goalentity == botTarget)
                 {
@@ -610,34 +610,34 @@ vector (float n) chooseRoamTarget =
     bestorg = self.origin;
     d = random();
     
-    if(d < 0.800)
+    if(d < 0.8)
     {
         r = random();
         m = TRUE;
         
-        if(r < 0.500)
+        if(r < 0.5)
         {
             m = CONTENT_EMPTY;
         }
         
-        bestorg_x = bestorg_x + (m * ((700.000 * random()) + 50.000));
+        bestorg_x = bestorg_x + (m * ((700 * random()) + 50));
     }
     
     
-    if(d > 0.200)
+    if(d > 0.2)
     {
         r = random();
         m = TRUE;
         
-        if(r < 0.500)
+        if(r < 0.5)
         {
             m = CONTENT_EMPTY;
         }
         
-        bestorg_y = 0.000 + (m * ((700.000 * random()) + 50.000));
+        bestorg_y = 0 + (m * ((700 * random()) + 50));
     }
     
-    bestorg_z = ((0.000 + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
+    bestorg_z = ((0 + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
     traceline(self.origin, bestorg, TRUE, self);
     dir = normalize(bestorg - self.origin);
     len = vlen(bestorg - self.origin);
@@ -682,9 +682,9 @@ vector (float n) chooseRoamTarget =
     
     r = n + (random() * MOVETYPE_WALK);
     
-    if((0.000 > self.origin_z) || (r > MOVETYPE_FLY))
+    if((0 > self.origin_z) || (r > MOVETYPE_FLY))
     {
-        bestorg_z = 0.000 - self.mins_z;
+        bestorg_z = 0 - self.mins_z;
     }
     
     len = vlen(bestorg - self.origin);
@@ -969,11 +969,11 @@ float (entity e) cacheweight =
             
             if((self.rocketcache != e.rocketcache) || (self.rocketlen > e.rocketlen))
             {
-                weight = (1000000.000 - e.rocketlen) - (FL_SWIM * dis);
+                weight = (1000000 - e.rocketlen) - (FL_SWIM * dis);
                 
                 if(it & IT_ROCKET_LAUNCHER)
                 {
-                    weight = weight * 0.500;
+                    weight = weight * 0.5;
                 }
                 
                 e.pendingcache = e.rocketcache;
@@ -993,11 +993,11 @@ float (entity e) cacheweight =
             
             if((self.lightningcache != e.lightningcache) || (self.lightninglen > e.lightninglen))
             {
-                tw = (1000000.000 - e.lightninglen) - (FL_SWIM * dis);
+                tw = (1000000 - e.lightninglen) - (FL_SWIM * dis);
                 
                 if(it & IT_LIGHTNING)
                 {
-                    tw = tw * 0.500;
+                    tw = tw * 0.5;
                 }
                 
                 
@@ -1015,7 +1015,7 @@ float (entity e) cacheweight =
     }
     
     
-    if(self.armorvalue < 101.000)
+    if(self.armorvalue < 101)
     {
         
         if(e.armorcache)
@@ -1026,7 +1026,7 @@ float (entity e) cacheweight =
                 
                 if((self.armorcache != e.armorcache) || (self.armorlen > e.armorlen))
                 {
-                    tw = (1000000.000 - e.armorlen) - (FL_SWIM * dis);
+                    tw = (1000000 - e.armorlen) - (FL_SWIM * dis);
                     
                     if(tw > weight)
                     {
@@ -1052,15 +1052,15 @@ float (entity e) cacheweight =
             
             if((self.nailcache != e.nailcache) || (self.naillen > e.naillen))
             {
-                tw = (1000000.000 - e.naillen) - (FL_SWIM * dis);
+                tw = (1000000 - e.naillen) - (FL_SWIM * dis);
                 
                 if(it & IT_SUPER_NAILGUN)
                 {
-                    tw = tw * 0.500;
+                    tw = tw * 0.5;
                 }
                 
                 
-                if(tw > (weight + 2500.000))
+                if(tw > (weight + 2500))
                 {
                     weight = tw;
                     e.pendingcache = e.nailcache;
@@ -1082,15 +1082,15 @@ float (entity e) cacheweight =
             
             if((self.grenadecache != e.grenadecache) || (self.grenadelen > e.grenadelen))
             {
-                tw = (1000000.000 - e.grenadelen) - (FL_SWIM * dis);
+                tw = (1000000 - e.grenadelen) - (FL_SWIM * dis);
                 
                 if(it & IT_GRENADE_LAUNCHER)
                 {
-                    tw = tw * 0.500;
+                    tw = tw * 0.5;
                 }
                 
                 
-                if(tw > (weight + 2500.000))
+                if(tw > (weight + 2500))
                 {
                     weight = tw;
                     e.pendingcache = e.grenadecache;
@@ -1112,7 +1112,7 @@ float (entity e) cacheweight =
             
             if((self.powerupcache != e.powerupcache) || (self.poweruplen > e.poweruplen))
             {
-                tw = (1000000.000 - e.poweruplen) - (FL_SWIM * dis);
+                tw = (1000000 - e.poweruplen) - (FL_SWIM * dis);
                 
                 if(tw > weight)
                 {
@@ -1211,7 +1211,7 @@ float (entity e) pathweight =
         }
         
         weight = vlen(self.origin - org);
-        weight = (50.000 * SEARCH_RADIUS) - weight;
+        weight = (50 * SEARCH_RADIUS) - weight;
         if(e.lastbot == self)
         {
             if(e.lasttime > (time - MOVETYPE_TOSS))
@@ -1223,7 +1223,7 @@ float (entity e) pathweight =
                 
                 if(e.lasttime > (time - LOOPTIME))
                 {
-                    weight = (weight - (FL_SWIM * SEARCH_RADIUS)) - (((45.000 * SEARCH_RADIUS) * ((LOOPTIME + e.lasttime) - time)) / LOOPTIME);
+                    weight = (weight - (FL_SWIM * SEARCH_RADIUS)) - (((45 * SEARCH_RADIUS) * ((LOOPTIME + e.lasttime) - time)) / LOOPTIME);
                 }
                 
             }
@@ -1237,7 +1237,7 @@ float (entity e) pathweight =
                 
                 if(e.lastbot.team == self.team)
                 {
-                    if(e.lasttime > (time - 1.200))
+                    if(e.lasttime > (time - 1.2))
                     {
                         weight = DONT_WANT;
                     }
@@ -1317,13 +1317,13 @@ void () goForAir =
     }
     
     bestorg = self.origin;
-    bestorg_z = 0.000 + 800.000;
+    bestorg_z = 0 + 800;
     traceline(self.origin, bestorg, TRUE, self);
     
     if(!trace_inopen)
     {
         bestorg = chooseRoamTarget(TRUE);
-        bestorg_z = 0.000 + 200.000;
+        bestorg_z = 0 + 200;
     }
     
     botTarget = self.goalentity;
@@ -2077,7 +2077,7 @@ void () aibot_chooseGoal =
             
             if(weight > DONT_WANT)
             {
-                org = (e.absmin + e.absmax) * 0.500;
+                org = (e.absmin + e.absmax) * 0.5;
                 org_z = e.absmin_z + TRUE;
                 
                 if(((e.classname == "plat") || (e.classname == "func_plat")) || (e.classname == "train"))
@@ -2128,7 +2128,7 @@ void () aibot_chooseGoal =
         
         if(best > DONT_WANT)
         {
-            best = 1000000.000 - 900.000;
+            best = 1000000 - 900;
         }
         
         e = findradius(self.origin, SEARCH_RADIUS);
@@ -2159,7 +2159,7 @@ void () aibot_chooseGoal =
                     
                     if(!bestorg)
                     {
-                        bestorg = (e.absmin + e.absmax) * 0.500;
+                        bestorg = (e.absmin + e.absmax) * 0.5;
                         bestorg_z = e.absmin_z + TRUE;
                     }
                     
@@ -2301,7 +2301,7 @@ float (entity e) RunAwayWeight =
         weight = WANT - MOVETYPE_FLY;
     }
     
-    weight = weight + (0.100 * (vlen(self.enemy.origin - e.origin)));
+    weight = weight + (0.1 * (vlen(self.enemy.origin - e.origin)));
     weight = weight + (KINDA_WANT * random());
     return weight;
 };
@@ -2363,7 +2363,7 @@ entity (entity chaser, entity en) BestChaseRoute =
     local string ts;
     RouteToEnemy(en);
     e = findradius(chaser.origin, SEARCH_RADIUS);
-    best = 1000000.000;
+    best = 1000000;
     p = en;
     tmp = self;
     self = chaser;
@@ -2373,14 +2373,14 @@ entity (entity chaser, entity en) BestChaseRoute =
         
         if((e.pathtype == DROPPED) || (e.pathtype == TELEPORT))
         {
-            weight = 1000000.000;
+            weight = 1000000;
             
             if(e.enemycache == en)
             {
                 
                 if(TrueReachable(e))
                 {
-                    weight = e.enemylen + ((vlen(self.origin - e.origin)) * 0.500);
+                    weight = e.enemylen + ((vlen(self.origin - e.origin)) * 0.5);
                 }
                 
             }

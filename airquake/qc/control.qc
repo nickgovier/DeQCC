@@ -37,15 +37,15 @@ void () trigger_runway_touch =
     
     if(other.owner.classname == "player")
     {
-        other.owner.landed = time + 0.500;
+        other.owner.landed = time + 0.5;
     }
     
-    self.attack_finished = time + 0.500;
+    self.attack_finished = time + 0.5;
     self.oldenemy = other;
     
     if(other.classname == "plane")
     {
-        self.search_time = time + 0.500;
+        self.search_time = time + 0.5;
         self.enemy = other;
     }
     
@@ -82,7 +82,7 @@ void () toffrunway_start =
 {
     local entity e;
     
-    if((cvar("deathmatch") == 1.000) && (cvar("teamplay") == 0.000))
+    if((cvar("deathmatch") == 1) && (cvar("teamplay") == 0))
     {
         remove(self);
         return;
@@ -106,7 +106,7 @@ void () toffrunway_start =
 void () trigger_toffrunway = 
 {
     self.think = toffrunway_start;
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
 };
 
 // landrunway_start
@@ -140,7 +140,7 @@ void () landrunway_start =
 {
     local entity e;
     
-    if((cvar("deathmatch") == 1.000) && (cvar("teamplay") == 0.000))
+    if((cvar("deathmatch") == 1) && (cvar("teamplay") == 0))
     {
         remove(self);
         return;
@@ -164,7 +164,7 @@ void () landrunway_start =
 void () trigger_landrunway = 
 {
     self.think = landrunway_start;
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
 };
 
 // control_think
@@ -231,13 +231,13 @@ void () control_think =
     if(self.tur1)
     {
         
-        if((self.tur1.landed < time) && (self.tur1.enemy.landed != 0.000))
+        if((self.tur1.landed < time) && (self.tur1.enemy.landed != 0))
         {
             self.tur1 = world;
         }
         
         
-        if(self.tur1.enemy.health < 1.000)
+        if(self.tur1.enemy.health < 1)
         {
             self.tur1 = world;
         }
@@ -254,13 +254,13 @@ void () control_think =
     if(self.tur2)
     {
         
-        if((self.tur2.landed < time) && (self.tur2.enemy.landed == 0.000))
+        if((self.tur2.landed < time) && (self.tur2.enemy.landed == 0))
         {
             self.tur2 = world;
         }
         
         
-        if(self.tur2.enemy.health < 1.000)
+        if(self.tur2.enemy.health < 1)
         {
             self.tur2 = world;
         }
@@ -274,7 +274,7 @@ void () control_think =
     }
     
     self.think = control_think;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // start_control
@@ -320,7 +320,7 @@ void () start_control =
     if(self.target)
     {
         self.goalentity = find(world, targetname, self.target);
-        self.origin = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.500);
+        self.origin = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.5);
     }
     
     setorigin(self, self.origin);
@@ -331,7 +331,7 @@ void () start_control =
     }
     
     self.think = control_think;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // info_control
@@ -382,13 +382,13 @@ void () start_control =
 // OP_DONE	0	0	0
 void () info_control = 
 {
-    if((self.team == 0.000) || ((self.team != 1.000) && (deathmatch == 0.000)))
+    if((self.team == 0) || ((self.team != 1) && (deathmatch == 0)))
     {
         self.ts = T0;
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -400,10 +400,10 @@ void () info_control =
     }
     
     
-    if((cvar("deathmatch") == 1.000) && (cvar("teamplay") == 0.000))
+    if((cvar("deathmatch") == 1) && (cvar("teamplay") == 0))
     {
         self.think = SUB_Remove;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -414,7 +414,7 @@ void () info_control =
     }
     
     self.think = start_control;
-    self.nextthink = time + 0.300;
+    self.nextthink = time + 0.3;
 };
 
 // comm_control
@@ -871,7 +871,7 @@ void (float f1) comm_control =
     local entity e3;
     local string teststr;
     
-    if((deathmatch == 1.000) && (teamplay == 0.000))
+    if((deathmatch == 1) && (teamplay == 0))
     {
         return;
     }
@@ -893,7 +893,7 @@ void (float f1) comm_control =
     
     if(!e2)
     {
-        sound(self, CHAN_WEAPON, "misc/talk.wav", 0.500, ATTN_NORM);
+        sound(self, CHAN_WEAPON, "misc/talk.wav", 0.5, ATTN_NORM);
         sprint(self, "HQ doesn't reply...\n");
         return;
     }
@@ -903,9 +903,9 @@ void (float f1) comm_control =
     if(e.goalentity)
     {
         
-        if(e.goalentity.health < 1.000)
+        if(e.goalentity.health < 1)
         {
-            sound(self, CHAN_WEAPON, "misc/talk.wav", 0.500, ATTN_NORM);
+            sound(self, CHAN_WEAPON, "misc/talk.wav", 0.5, ATTN_NORM);
             sprint(self, e.netname);
             sprint(self, " doesn't reply...\n");
             return;
@@ -916,20 +916,20 @@ void (float f1) comm_control =
     sprint(self, e.netname);
     sprint(self, ": ");
     
-    if(f1 == 0.000)
+    if(f1 == 0)
     {
         sprint(self, e.message);
-        send_voicemsg(82.000, self);
+        send_voicemsg(82, self);
     }
     
     
-    if(f1 == 2.000)
+    if(f1 == 2)
     {
         
-        if(self.style > 5.000)
+        if(self.style > 5)
         {
             sprint(self, "Keep off the runways, pal.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -937,7 +937,7 @@ void (float f1) comm_control =
         if(self.enemy.landed)
         {
             sprint(self, "You're on ground already.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -945,7 +945,7 @@ void (float f1) comm_control =
         if(e.tur1 == self)
         {
             sprint(self, "Cleared for landing already.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -953,7 +953,7 @@ void (float f1) comm_control =
         if(e.tur1)
         {
             sprint(self, "please wait.\n");
-            send_voicemsg(73.000, self);
+            send_voicemsg(73, self);
             return;
         }
         else
@@ -963,7 +963,7 @@ void (float f1) comm_control =
             {
                 sprint(self, "Unauthorized aircraft on runway!\n");
                 sprint(e2.enemy.owner, "Clear the runway now!\n");
-                send_voicemsg(74.000, e2.enemy.owner);
+                send_voicemsg(74, e2.enemy.owner);
                 return;
             }
             
@@ -971,26 +971,26 @@ void (float f1) comm_control =
             if(e2.attack_finished > time)
             {
                 sprint(e2.oldenemy.owner, "Clear the runway now!\n");
-                send_voicemsg(74.000, e2.oldenemy.owner);
+                send_voicemsg(74, e2.oldenemy.owner);
             }
             
             sprint(self, "You are cleared to land\n");
-            send_voicemsg(71.000, self);
+            send_voicemsg(71, self);
             e.tur1 = self;
-            e.attack_finished = time + 30.000;
+            e.attack_finished = time + 30;
             return;
         }
         
     }
     
     
-    if(f1 == 1.000)
+    if(f1 == 1)
     {
         
-        if(self.style > 5.000)
+        if(self.style > 5)
         {
             sprint(self, "Keep off the runways, pal.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -998,7 +998,7 @@ void (float f1) comm_control =
         if(!self.enemy.landed)
         {
             sprint(self, "You're airborne already.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -1006,7 +1006,7 @@ void (float f1) comm_control =
         if(e.tur2 == self)
         {
             sprint(self, "Cleared for take-off already.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -1014,7 +1014,7 @@ void (float f1) comm_control =
         if(e.tur2)
         {
             sprint(self, "please wait for take-off clearance.\n");
-            send_voicemsg(73.000, self);
+            send_voicemsg(73, self);
             return;
         }
         else
@@ -1024,7 +1024,7 @@ void (float f1) comm_control =
             {
                 sprint(self, "Unauthorized aircraft on runway!\n");
                 sprint(e2.enemy.owner, "Clear the runway now!\n");
-                send_voicemsg(74.000, e2.enemy.owner);
+                send_voicemsg(74, e2.enemy.owner);
                 return;
             }
             
@@ -1032,26 +1032,26 @@ void (float f1) comm_control =
             if(e2.attack_finished > time)
             {
                 sprint(e2.oldenemy.owner, "Clear the runway now!\n");
-                send_voicemsg(74.000, e2.oldenemy.owner);
+                send_voicemsg(74, e2.oldenemy.owner);
             }
             
             sprint(self, "You are cleared for take-off\n");
-            send_voicemsg(72.000, self);
+            send_voicemsg(72, self);
             e.tur2 = self;
-            e.search_time = time + 30.000;
+            e.search_time = time + 30;
             return;
         }
         
     }
     
     
-    if(f1 == 3.000)
+    if(f1 == 3)
     {
         
-        if((self.style > 5.000) || ((e.tur2 != self) && (e.tur1 != self)))
+        if((self.style > 5) || ((e.tur2 != self) && (e.tur1 != self)))
         {
             sprint(self, "Nothing to cancel.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
@@ -1059,7 +1059,7 @@ void (float f1) comm_control =
         if(e.tur2 == self)
         {
             sprint(self, "Take-off clearance cancelled.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             e.tur2 = world;
         }
         
@@ -1067,7 +1067,7 @@ void (float f1) comm_control =
         if(e.tur1 == self)
         {
             sprint(self, "Landing clearance cancelled.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             e.tur1 = world;
         }
         
@@ -1075,30 +1075,30 @@ void (float f1) comm_control =
     }
     
     
-    if(f1 == 4.000)
+    if(f1 == 4)
     {
         
-        if(self.style > 5.000)
+        if(self.style > 5)
         {
             sprint(self, "Try again with a plane, man.\n");
-            send_voicemsg(0.000, self);
+            send_voicemsg(0, self);
             return;
         }
         
         
-        if(self.health > 50.000)
+        if(self.health > 50)
         {
             sprint(self, "Ask for normal landing clearance.\n");
-            send_voicemsg(73.000, self);
+            send_voicemsg(73, self);
             return;
         }
         
-        sound(self, CHAN_VOICE, "speech/rw_a_al2.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "speech/rw_a_al2.wav", 1, ATTN_NORM);
         
         if(e.enemy.attack_finished < time)
         {
             sprint(self, "You can land on the normal runway.\n");
-            send_voicemsg(71.000, self);
+            send_voicemsg(71, self);
             
             if(e.tur1)
             {
@@ -1114,7 +1114,7 @@ void (float f1) comm_control =
         if(e.oldenemy.attack_finished < time)
         {
             sprint(self, "You can land on the take-off runway.\n");
-            send_voicemsg(71.000, self);
+            send_voicemsg(71, self);
             
             if(e.tur2)
             {
@@ -1129,9 +1129,9 @@ void (float f1) comm_control =
     }
     
     
-    if(f1 == 5.000)
+    if(f1 == 5)
     {
-        send_voicemsg(81.000, self);
+        send_voicemsg(81, self);
         sprint(self, "radar report:\n");
         e2 = find(world, classname, "monster_rad");
         
@@ -1154,9 +1154,9 @@ void (float f1) comm_control =
     }
     
     
-    if(f1 == 6.000)
+    if(f1 == 6)
     {
-        send_voicemsg(83.000, self);
+        send_voicemsg(83, self);
         sprint(self, "mobile radar report:\n");
         e2 = find(world, classname, "monster_mobrad");
         

@@ -104,66 +104,66 @@
 void () etank_sound = 
 {
     local float tmp;
-    tmp = fabs(self.speed) * 0.060;
+    tmp = fabs(self.speed) * 0.06;
     tmp = floor(tmp);
     
-    if(tmp > 8.000)
+    if(tmp > 8)
     {
-        tmp = 8.000;
+        tmp = 8;
     }
     
     
     if((time > self.fly_sound) || (self.impulse != tmp))
     {
-        if(tmp == 0.000)
+        if(tmp == 0)
         {
-            sound(self, CHAN_BODY, "engines/tank0.wav", 0.200, ATTN_NORM);
+            sound(self, CHAN_BODY, "engines/tank0.wav", 0.2, ATTN_NORM);
         }
         else
         {
-            if(tmp == 1.000)
+            if(tmp == 1)
             {
-                sound(self, CHAN_BODY, "engines/tank1.wav", 0.300, ATTN_NORM);
+                sound(self, CHAN_BODY, "engines/tank1.wav", 0.3, ATTN_NORM);
             }
             else
             {
-                if(tmp == 2.000)
+                if(tmp == 2)
                 {
-                    sound(self, CHAN_BODY, "engines/tank2.wav", 0.400, ATTN_NORM);
+                    sound(self, CHAN_BODY, "engines/tank2.wav", 0.4, ATTN_NORM);
                 }
                 else
                 {
-                    if(tmp == 3.000)
+                    if(tmp == 3)
                     {
-                        sound(self, CHAN_BODY, "engines/tank3.wav", 0.500, ATTN_NORM);
+                        sound(self, CHAN_BODY, "engines/tank3.wav", 0.5, ATTN_NORM);
                     }
                     else
                     {
-                        if(tmp == 4.000)
+                        if(tmp == 4)
                         {
-                            sound(self, CHAN_BODY, "engines/tank4.wav", 0.600, ATTN_NORM);
+                            sound(self, CHAN_BODY, "engines/tank4.wav", 0.6, ATTN_NORM);
                         }
                         else
                         {
-                            if(tmp == 5.000)
+                            if(tmp == 5)
                             {
-                                sound(self, CHAN_BODY, "engines/tank5.wav", 0.700, ATTN_NORM);
+                                sound(self, CHAN_BODY, "engines/tank5.wav", 0.7, ATTN_NORM);
                             }
                             else
                             {
-                                if(tmp == 6.000)
+                                if(tmp == 6)
                                 {
-                                    sound(self, CHAN_BODY, "engines/tank6.wav", 0.800, ATTN_NORM);
+                                    sound(self, CHAN_BODY, "engines/tank6.wav", 0.8, ATTN_NORM);
                                 }
                                 else
                                 {
-                                    if(tmp == 7.000)
+                                    if(tmp == 7)
                                     {
-                                        sound(self, CHAN_BODY, "engines/tank7.wav", 0.900, ATTN_NORM);
+                                        sound(self, CHAN_BODY, "engines/tank7.wav", 0.9, ATTN_NORM);
                                     }
                                     else
                                     {
-                                        sound(self, CHAN_BODY, "engines/tank8.wav", 1.000, ATTN_NORM);
+                                        sound(self, CHAN_BODY, "engines/tank8.wav", 1, ATTN_NORM);
                                     }
                                     
                                 }
@@ -180,7 +180,7 @@ void () etank_sound =
             
         }
         
-        self.fly_sound = time + 1.000;
+        self.fly_sound = time + 1;
         self.impulse = tmp;
     }
     
@@ -204,7 +204,7 @@ void () etank_sound =
 // OP_DONE	0	0	0
 void () etank_die = 
 {
-    self.takedamage = 0.000;
+    self.takedamage = 0;
     
     if(self.tur1)
     {
@@ -265,30 +265,30 @@ void () etank_stand =
 {
     etank_sound();
     
-    if(self.speed > 0.000)
+    if(self.speed > 0)
     {
-        self.speed = self.speed - 5.000;
+        self.speed = self.speed - 5;
         
-        if(self.speed < 0.000)
+        if(self.speed < 0)
         {
-            self.speed = 0.000;
+            self.speed = 0;
         }
         
     }
     
-    walkmove(self.angles_y, self.speed * 0.100);
+    walkmove(self.angles_y, self.speed * 0.1);
     tilt_etank();
-    turn_eturret(self.angles, 100.000);
+    turn_eturret(self.angles, 100);
     
     if(FindTarget())
     {
         self.think = self.th_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     self.think = etank_stand;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // etank_walk
@@ -414,7 +414,7 @@ void () etank_walk =
     if(FindTarget())
     {
         self.think = self.th_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -423,48 +423,48 @@ void () etank_walk =
     if(!self.movetarget)
     {
         self.think = etank_stand;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
-    if(fabs(0.000) > 10.000)
+    if(fabs(0) > 10)
     {
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            self.angles_y = anglemod(self.angles_y - 10.000);
+            self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            self.angles_y = anglemod(self.angles_y + 10.000);
+            self.angles_y = anglemod(self.angles_y + 10);
         }
         
     }
     else
     {
-        self.angles_y = 0.000;
+        self.angles_y = 0;
     }
     
-    if(fabs(0.000) < 45.000)
+    if(fabs(0) < 45)
     {
         
-        if(self.speed < 120.000)
+        if(self.speed < 120)
         {
-            self.speed = self.speed + 5.000;
+            self.speed = self.speed + 5;
             
-            if(self.speed > 120.000)
+            if(self.speed > 120)
             {
-                self.speed = 120.000;
+                self.speed = 120;
             }
             
         }
@@ -473,25 +473,25 @@ void () etank_walk =
     else
     {
         
-        if(self.speed > 0.000)
+        if(self.speed > 0)
         {
-            self.speed = self.speed - 5.000;
+            self.speed = self.speed - 5;
             
-            if(self.speed < 0.000)
+            if(self.speed < 0)
             {
-                self.speed = 0.000;
+                self.speed = 0;
             }
             
         }
         
     }
     
-    walkmove(self.angles_y, self.speed * 0.100);
+    walkmove(self.angles_y, self.speed * 0.1);
     tilt_etank();
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    turn_eturret(v0, 100.000);
+    turn_eturret(v0, 100);
     self.think = etank_walk;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // etank_run
@@ -922,7 +922,7 @@ void () etank_run =
     etank_sound();
     FindTarget();
     
-    if((self.enemy.health < 1.000) || (self.enemy.takedamage < 1.000))
+    if((self.enemy.health < 1) || (self.enemy.takedamage < 1))
     {
         self.enemy = world;
     }
@@ -936,10 +936,10 @@ void () etank_run =
     
     if(!self.enemy)
     {
-        walkmove(self.angles_y, self.speed * 0.100);
-        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100.000);
+        walkmove(self.angles_y, self.speed * 0.1);
+        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100);
         self.think = self.th_walk;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -952,113 +952,113 @@ void () etank_run =
         self.goalentity = self.movetarget;
     }
     
-    v1 = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.500);
+    v1 = self.goalentity.origin + ((self.goalentity.mins + self.goalentity.maxs) * 0.5);
     v0 = vectoangles(v1 - self.origin);
     if(self.goalentity.classname == "path_corner")
     {
-        self.lefty = -1.000;
+        self.lefty = -1;
     }
     else
     {
         if((visible(self.goalentity) == TRUE) && (range(self.goalentity) > RANGE_NEAR))
         {
-            self.lefty = -1.000;
+            self.lefty = -1;
         }
         else
         {
             
             if(self.search_time < time)
             {
-                self.lefty = 1.000 - self.lefty;
-                self.search_time = (time + (random() * 20.000)) + 10.000;
+                self.lefty = 1 - self.lefty;
+                self.search_time = (time + (random() * 20)) + 10;
             }
             
             
-            if(self.lefty < 0.000)
+            if(self.lefty < 0)
             {
-                self.search_time = time + 30.000;
-                if(random() < 0.500)
+                self.search_time = time + 30;
+                if(random() < 0.5)
                 {
-                    self.lefty = 0.000;
+                    self.lefty = 0;
                 }
                 else
                 {
-                    self.lefty = 1.000;
+                    self.lefty = 1;
                 }
                 
             }
             
-            if(self.lefty == 0.000)
+            if(self.lefty == 0)
             {
-                tmp = 1.000;
+                tmp = 1;
             }
             else
             {
-                tmp = -1.000;
+                tmp = -1;
             }
             
             if(range(self.goalentity) > RANGE_MELEE)
             {
-                v0_y = 0.000 + (tmp * 70.000);
+                v0_y = 0 + (tmp * 70);
             }
             else
             {
-                v0_y = 0.000 + (tmp * 100.000);
+                v0_y = 0 + (tmp * 100);
             }
             
         }
         
     }
     
-    makevectors(0.000 * '0.000 1.000 0.000');
-    traceline(self.origin + (v_right * 11.000), (self.origin + (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
+    makevectors(0 * '0.000 1.000 0.000');
+    traceline(self.origin + (v_right * 11), (self.origin + (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = trace_fraction;
-    traceline(self.origin - (v_right * 11.000), (self.origin - (v_right * 11.000)) + (v_forward * 128.000), FALSE, self);
+    traceline(self.origin - (v_right * 11), (self.origin - (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = tmp - trace_fraction;
     
     if(tmp)
     {
-        v0_y = 0.000 - (tmp * 90.000);
+        v0_y = 0 - (tmp * 90);
     }
     
     v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0.000 - self.angles_y);
+    v1_y = anglemod(0 - self.angles_y);
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        v1_y = 0.000 - 360.000;
+        v1_y = 0 - 360;
     }
     
-    if(fabs(0.000) > 10.000)
+    if(fabs(0) > 10)
     {
         
-        if(0.000 < 0.000)
+        if(0 < 0)
         {
-            self.angles_y = anglemod(self.angles_y - 10.000);
+            self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0.000 > 0.000)
+        if(0 > 0)
         {
-            self.angles_y = anglemod(self.angles_y + 10.000);
+            self.angles_y = anglemod(self.angles_y + 10);
         }
         
     }
     else
     {
-        self.angles_y = 0.000;
+        self.angles_y = 0;
     }
     
-    if(fabs(0.000) < 45.000)
+    if(fabs(0) < 45)
     {
         
-        if(self.speed < 120.000)
+        if(self.speed < 120)
         {
-            self.speed = self.speed + 5.000;
+            self.speed = self.speed + 5;
             
-            if(self.speed > 120.000)
+            if(self.speed > 120)
             {
-                self.speed = 120.000;
+                self.speed = 120;
             }
             
         }
@@ -1067,13 +1067,13 @@ void () etank_run =
     else
     {
         
-        if(self.speed > 0.000)
+        if(self.speed > 0)
         {
-            self.speed = self.speed - 5.000;
+            self.speed = self.speed - 5;
             
-            if(self.speed < 0.000)
+            if(self.speed < 0)
             {
-                self.speed = 0.000;
+                self.speed = 0;
             }
             
         }
@@ -1081,35 +1081,35 @@ void () etank_run =
     }
     
     
-    if(!(walkmove(self.angles_y, self.speed * 0.100)))
+    if(!(walkmove(self.angles_y, self.speed * 0.1)))
     {
         
-        if((self.lefty >= 0.000) && (self.search_time < (time + 10.000)))
+        if((self.lefty >= 0) && (self.search_time < (time + 10)))
         {
-            self.lefty = 1.000 - self.lefty;
-            self.search_time = (time + 10.000) + (random() * 20.000);
+            self.lefty = 1 - self.lefty;
+            self.search_time = (time + 10) + (random() * 20);
         }
         
     }
     
     tilt_etank();
     dist = vlen(self.enemy.origin - self.origin);
-    if(dist < 1500.000)
+    if(dist < 1500)
     {
-        self.attack_state = 1.000;
+        self.attack_state = 1;
         
-        if(self.ammo_rockets > 0.000)
+        if(self.ammo_rockets > 0)
         {
             
             if(self.enemy.flags & FL_ONGROUND)
             {
-                self.attack_state = 2.000;
+                self.attack_state = 2;
             }
             
             
             if(self.enemy.classname == "tank")
             {
-                self.attack_state = 2.000;
+                self.attack_state = 2;
             }
             
         }
@@ -1117,33 +1117,33 @@ void () etank_run =
     }
     else
     {
-        self.attack_state = 0.000;
+        self.attack_state = 0;
     }
     
     v1 = orgia(self.enemy);
     v0 = vectoangles(v1 - self.origin);
     
-    if(self.attack_state == 2.000)
+    if(self.attack_state == 2)
     {
-        if(dist < 280.000)
+        if(dist < 280)
         {
             v0 = v0 + '0.000 0.000 0.000';
         }
         else
         {
-            if(dist < 480.000)
+            if(dist < 480)
             {
                 v0 = v0 + '5.000 0.000 0.000';
             }
             else
             {
-                if(dist < 690.000)
+                if(dist < 690)
                 {
                     v0 = v0 + '10.000 0.000 0.000';
                 }
                 else
                 {
-                    if(dist < 1030.000)
+                    if(dist < 1030)
                     {
                         v0 = v0 + '15.000 0.000 0.000';
                     }
@@ -1162,25 +1162,25 @@ void () etank_run =
     
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0.000 - 0.000;
-    turn_eturret(v0, 100.000);
+    v2_z = 0 - 0;
+    turn_eturret(v0, 100);
     v1 = self.tur2.angles;
-    v1_x = 0.000 - v1_x;
+    v1_x = 0 - v1_x;
     
-    if((self.attack_finished < time) && (self.attack_state > 0.000))
+    if((self.attack_finished < time) && (self.attack_state > 0))
     {
-        traceline(self.origin, self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500), FALSE, self);
+        traceline(self.origin, self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5), FALSE, self);
         
         if(trace_ent == self.enemy)
         {
             makevectors(v1);
-            if(self.attack_state == 1.000)
+            if(self.attack_state == 1)
             {
                 
-                if((v_forward * v2) > 0.950)
+                if((v_forward * v2) > 0.95)
                 {
-                    AC_plasma(self.origin + (v_forward * 10.000), v_forward, self.enemy);
-                    self.attack_finished = time + 0.500;
+                    AC_plasma(self.origin + (v_forward * 10), v_forward, self.enemy);
+                    self.attack_finished = time + 0.5;
                     self.effects = self.effects | EF_MUZZLEFLASH;
                 }
                 
@@ -1188,11 +1188,11 @@ void () etank_run =
             else
             {
                 
-                if((v_forward * v2) > 0.950)
+                if((v_forward * v2) > 0.95)
                 {
-                    AC_bomb(self.origin + (v_forward * 10.000), v_forward * 900.000, self.enemy);
-                    self.attack_finished = time + 1.000;
-                    self.ammo_rockets = self.ammo_rockets - 1.000;
+                    AC_bomb(self.origin + (v_forward * 10), v_forward * 900, self.enemy);
+                    self.attack_finished = time + 1;
+                    self.ammo_rockets = self.ammo_rockets - 1;
                     self.effects = self.effects | EF_MUZZLEFLASH;
                 }
                 
@@ -1203,7 +1203,7 @@ void () etank_run =
     }
     
     self.think = etank_run;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // etank_shoot
@@ -1228,9 +1228,9 @@ void () etank_shoot =
 {
     local vector v0;
     v0 = self.tur2.angles;
-    v0_x = 0.000 - v0_x;
+    v0_x = 0 - v0_x;
     makevectors(v0);
-    AC_plasma(self.origin + (v_forward * 10.000), v_forward, self.enemy);
+    AC_plasma(self.origin + (v_forward * 10), v_forward, self.enemy);
 };
 
 // etank_start
@@ -1317,7 +1317,7 @@ void () etank_shoot =
 void () etank_start = 
 {
     
-    if((deathmatch > 0.000) && ((self.team == 0.000) || (teamplay == 0.000)))
+    if((deathmatch > 0) && ((self.team == 0) || (teamplay == 0)))
     {
         remove(self);
         return;
@@ -1350,7 +1350,7 @@ void () etank_start =
         self.think = self.th_stand;
     }
     
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // monster_etank
@@ -1429,7 +1429,7 @@ void () monster_etank =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     setmodel(self, "progs/tankba.mdl");
@@ -1438,17 +1438,17 @@ void () monster_etank =
     
     if(!self.health)
     {
-        self.health = 300.000;
+        self.health = 300;
     }
     
     self.netname = "a Tank";
-    if((self.team == 0.000) || ((self.team != 1.000) && (deathmatch == 0.000)))
+    if((self.team == 0) || ((self.team != 1) && (deathmatch == 0)))
     {
         self.ts = T0;
     }
     else
     {
-        if(self.team == 1.000)
+        if(self.team == 1)
         {
             self.ts = T1;
         }
@@ -1462,7 +1462,7 @@ void () monster_etank =
     
     if(!self.ammo_rockets)
     {
-        self.ammo_rockets = 10.000;
+        self.ammo_rockets = 10;
     }
     
     self.th_die = etank_die;
@@ -1471,6 +1471,6 @@ void () monster_etank =
     self.th_run = etank_run;
     self.th_missile = etank_shoot;
     self.think = etank_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

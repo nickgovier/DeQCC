@@ -20,16 +20,16 @@
 // OP_ADD_F	15390	15393	15394
 // OP_STOREP_F	15394	15389	0
 // OP_DONE	0	0	0
-void () bot_start = [12.000, bot_walk]
+void () bot_start = [12, bot_walk]
 {
     local string tmp;
     BotPostThink();
     droptofloor();
-    self.nextthink = (time + 0.200) + (0.200 * random());
+    self.nextthink = (time + 0.2) + (0.2 * random());
     
     if(self.skil < MOVETYPE_WALK)
     {
-        self.nextthink = self.nextthink + (0.100 * (MOVETYPE_WALK - self.skil));
+        self.nextthink = self.nextthink + (0.1 * (MOVETYPE_WALK - self.skil));
     }
     
 };
@@ -40,7 +40,7 @@ void () bot_start = [12.000, bot_walk]
 // OP_CALL0	14753	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_stand1 = [12.000, bot_walk]
+void () bot_stand1 = [12, bot_walk]
 {
     ai_botstand();
     BotPostThink();
@@ -82,7 +82,7 @@ void () bot_stand1 = [12.000, bot_walk]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_walk = [6.000, bot_walk]
+void () bot_walk = [6, bot_walk]
 {
     self.weaponframe = FALSE;
     if(self.weapon == IT_AXE)
@@ -147,7 +147,7 @@ void () bot_walk = [6.000, bot_walk]
 // OP_CALL1	13602	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_run = [6.000, bot_run]
+void () bot_run = [6, bot_run]
 {
     self.weaponframe = FALSE;
     if(self.weapon == IT_AXE)
@@ -212,7 +212,7 @@ void () bot_run = [6.000, bot_run]
 // OP_CALL1	15108	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_chase = [6.000, bot_chase]
+void () bot_chase = [6, bot_chase]
 {
     self.weaponframe = FALSE;
     if(self.weapon == IT_AXE)
@@ -251,7 +251,7 @@ void () bot_chase = [6.000, bot_chase]
 // OP_BITOR	15455	334	15456
 // OP_STOREP_F	15456	15454	0
 // OP_DONE	0	0	0
-void () bot_shot1 = [113.000, bot_shot2]
+void () bot_shot1 = [113, bot_shot2]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -269,11 +269,11 @@ void () bot_shot1 = [113.000, bot_shot2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_shot2 = [114.000, bot_shot3]
+void () bot_shot2 = [114, bot_shot3]
 {
     self.weaponframe = FL_SWIM;
     
-    if(self.skil > 0.900)
+    if(self.skil > 0.9)
     {
         ai_botcharge(BOTSPEED);
     }
@@ -293,7 +293,7 @@ void () bot_shot2 = [114.000, bot_shot3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_shot3 = [115.000, bot_shot4]
+void () bot_shot3 = [115, bot_shot4]
 {
     self.weaponframe = MOVETYPE_WALK;
     
@@ -321,7 +321,7 @@ void () bot_shot3 = [115.000, bot_shot4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_shot4 = [116.000, bot_shot5]
+void () bot_shot4 = [116, bot_shot5]
 {
     self.weaponframe = MOVETYPE_STEP;
     if(self.skil > FALSE)
@@ -330,7 +330,7 @@ void () bot_shot4 = [116.000, bot_shot5]
     }
     else
     {
-        ai_botcharge(BOTSPEED * 0.500);
+        ai_botcharge(BOTSPEED * 0.5);
     }
     
     BotPostThink();
@@ -345,7 +345,7 @@ void () bot_shot4 = [116.000, bot_shot5]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_shot5 = [117.000, bot_shot6]
+void () bot_shot5 = [117, bot_shot6]
 {
     self.weaponframe = MOVETYPE_FLY;
     ai_botcharge(BOTSPEED);
@@ -361,7 +361,7 @@ void () bot_shot5 = [117.000, bot_shot6]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_shot6 = [118.000, bot_run]
+void () bot_shot6 = [118, bot_run]
 {
     self.weaponframe = MOVETYPE_TOSS;
     ai_botcharge(BOTSPEED);
@@ -378,7 +378,7 @@ void () bot_shot6 = [118.000, bot_run]
 // OP_BITOR	15476	334	15477
 // OP_STOREP_F	15477	15475	0
 // OP_DONE	0	0	0
-void () bot_trigger1 = [113.000, bot_trigger2]
+void () bot_trigger1 = [113, bot_trigger2]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -393,7 +393,7 @@ void () bot_trigger1 = [113.000, bot_trigger2]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_trigger2 = [114.000, bot_trigger3]
+void () bot_trigger2 = [114, bot_trigger3]
 {
     self.weaponframe = FL_SWIM;
     ai_botseek(BOTSPEED);
@@ -409,7 +409,7 @@ void () bot_trigger2 = [114.000, bot_trigger3]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_trigger3 = [115.000, bot_trigger4]
+void () bot_trigger3 = [115, bot_trigger4]
 {
     self.weaponframe = MOVETYPE_WALK;
     ai_botseek(BOTSPEED);
@@ -425,7 +425,7 @@ void () bot_trigger3 = [115.000, bot_trigger4]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_trigger4 = [116.000, bot_trigger5]
+void () bot_trigger4 = [116, bot_trigger5]
 {
     self.weaponframe = MOVETYPE_STEP;
     ai_botseek(BOTSPEED);
@@ -441,7 +441,7 @@ void () bot_trigger4 = [116.000, bot_trigger5]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_trigger5 = [117.000, bot_trigger6]
+void () bot_trigger5 = [117, bot_trigger6]
 {
     self.weaponframe = MOVETYPE_FLY;
     ai_botseek(BOTSPEED);
@@ -457,7 +457,7 @@ void () bot_trigger5 = [117.000, bot_trigger6]
 // OP_CALL1	13641	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_trigger6 = [118.000, bot_walk]
+void () bot_trigger6 = [118, bot_walk]
 {
     self.weaponframe = MOVETYPE_TOSS;
     ai_botseek(BOTSPEED);
@@ -470,7 +470,7 @@ void () bot_trigger6 = [118.000, bot_walk]
 // OP_ADDRESS	28	156	15488
 // OP_STOREP_F	214	15488	0
 // OP_DONE	0	0	0
-void () bot_axe1 = [119.000, bot_axe2]
+void () bot_axe1 = [119, bot_axe2]
 {
     self.weaponframe = TRUE;
 };
@@ -484,7 +484,7 @@ void () bot_axe1 = [119.000, bot_axe2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axe2 = [120.000, bot_axe3]
+void () bot_axe2 = [120, bot_axe3]
 {
     self.weaponframe = FL_SWIM;
     ai_botcharge(BOTSPEED);
@@ -499,7 +499,7 @@ void () bot_axe2 = [120.000, bot_axe3]
 // OP_CALL0	3106	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axe3 = [121.000, bot_axe4]
+void () bot_axe3 = [121, bot_axe4]
 {
     self.weaponframe = MOVETYPE_WALK;
     W_FireAxe();
@@ -515,7 +515,7 @@ void () bot_axe3 = [121.000, bot_axe4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axe4 = [122.000, bot_run]
+void () bot_axe4 = [122, bot_run]
 {
     self.weaponframe = MOVETYPE_STEP;
     ai_botcharge(BOTSPEED);
@@ -528,7 +528,7 @@ void () bot_axe4 = [122.000, bot_run]
 // OP_ADDRESS	28	156	15495
 // OP_STOREP_F	230	15495	0
 // OP_DONE	0	0	0
-void () bot_axeb1 = [125.000, bot_axeb2]
+void () bot_axeb1 = [125, bot_axeb2]
 {
     self.weaponframe = MOVETYPE_FLY;
 };
@@ -542,7 +542,7 @@ void () bot_axeb1 = [125.000, bot_axeb2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axeb2 = [126.000, bot_axeb3]
+void () bot_axeb2 = [126, bot_axeb3]
 {
     self.weaponframe = MOVETYPE_TOSS;
     ai_botcharge(BOTSPEED);
@@ -559,7 +559,7 @@ void () bot_axeb2 = [126.000, bot_axeb3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axeb3 = [127.000, bot_axeb4]
+void () bot_axeb3 = [127, bot_axeb4]
 {
     self.weaponframe = MOVETYPE_PUSH;
     W_FireAxe();
@@ -576,7 +576,7 @@ void () bot_axeb3 = [127.000, bot_axeb4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axeb4 = [128.000, bot_run]
+void () bot_axeb4 = [128, bot_run]
 {
     self.weaponframe = FL_CLIENT;
     ai_botcharge(BOTSPEED);
@@ -589,7 +589,7 @@ void () bot_axeb4 = [128.000, bot_run]
 // OP_ADDRESS	28	156	15502
 // OP_STOREP_F	214	15502	0
 // OP_DONE	0	0	0
-void () bot_axec1 = [131.000, bot_axec2]
+void () bot_axec1 = [131, bot_axec2]
 {
     self.weaponframe = TRUE;
 };
@@ -603,7 +603,7 @@ void () bot_axec1 = [131.000, bot_axec2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axec2 = [132.000, bot_axec3]
+void () bot_axec2 = [132, bot_axec3]
 {
     self.weaponframe = FL_SWIM;
     ai_botcharge(BOTSPEED);
@@ -620,7 +620,7 @@ void () bot_axec2 = [132.000, bot_axec3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axec3 = [133.000, bot_axec4]
+void () bot_axec3 = [133, bot_axec4]
 {
     self.weaponframe = MOVETYPE_WALK;
     W_FireAxe();
@@ -637,7 +637,7 @@ void () bot_axec3 = [133.000, bot_axec4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axec4 = [134.000, bot_run]
+void () bot_axec4 = [134, bot_run]
 {
     self.weaponframe = MOVETYPE_STEP;
     ai_botcharge(BOTSPEED);
@@ -650,7 +650,7 @@ void () bot_axec4 = [134.000, bot_run]
 // OP_ADDRESS	28	156	15509
 // OP_STOREP_F	230	15509	0
 // OP_DONE	0	0	0
-void () bot_axed1 = [137.000, bot_axed2]
+void () bot_axed1 = [137, bot_axed2]
 {
     self.weaponframe = MOVETYPE_FLY;
 };
@@ -664,7 +664,7 @@ void () bot_axed1 = [137.000, bot_axed2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axed2 = [138.000, bot_axed3]
+void () bot_axed2 = [138, bot_axed3]
 {
     self.weaponframe = MOVETYPE_TOSS;
     ai_botcharge(BOTSPEED);
@@ -681,7 +681,7 @@ void () bot_axed2 = [138.000, bot_axed3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axed3 = [139.000, bot_axed4]
+void () bot_axed3 = [139, bot_axed4]
 {
     self.weaponframe = MOVETYPE_PUSH;
     W_FireAxe();
@@ -698,7 +698,7 @@ void () bot_axed3 = [139.000, bot_axed4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axed4 = [140.000, bot_run]
+void () bot_axed4 = [140, bot_run]
 {
     self.weaponframe = FL_CLIENT;
     ai_botcharge(BOTSPEED);
@@ -744,7 +744,7 @@ void () dmbot_melee =
 // OP_STOREP_F	15527	15526	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_nail1 = [103.000, bot_nail2]
+void () bot_nail1 = [103, bot_nail2]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.weaponframe = self.weaponframe + TRUE;
@@ -757,7 +757,7 @@ void () bot_nail1 = [103.000, bot_nail2]
     SuperDamageSound();
     W_FireSpikes(MOVETYPE_STEP);
     ai_botnailcharge(BOTSPEED);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
     BotPostThink();
 };
 
@@ -787,7 +787,7 @@ void () bot_nail1 = [103.000, bot_nail2]
 // OP_STOREP_F	15538	15537	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_nail2 = [104.000, bot_nail1]
+void () bot_nail2 = [104, bot_nail1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.weaponframe = self.weaponframe + TRUE;
@@ -800,7 +800,7 @@ void () bot_nail2 = [104.000, bot_nail1]
     SuperDamageSound();
     W_FireSpikes(CONTENT_SLIME);
     ai_botnailcharge(BOTSPEED);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
     BotPostThink();
 };
 
@@ -829,7 +829,7 @@ void () bot_nail2 = [104.000, bot_nail1]
 // OP_STOREP_F	15550	15549	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_light1 = [105.000, bot_light2]
+void () bot_light1 = [105, bot_light2]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.weaponframe = self.weaponframe + TRUE;
@@ -842,7 +842,7 @@ void () bot_light1 = [105.000, bot_light2]
     SuperDamageSound();
     W_FireLightning();
     ai_botnailcharge(BOTSPEED);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
     BotPostThink();
 };
 
@@ -871,7 +871,7 @@ void () bot_light1 = [105.000, bot_light2]
 // OP_STOREP_F	15561	15560	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_light2 = [106.000, bot_light1]
+void () bot_light2 = [106, bot_light1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     self.weaponframe = self.weaponframe + TRUE;
@@ -884,7 +884,7 @@ void () bot_light2 = [106.000, bot_light1]
     SuperDamageSound();
     W_FireLightning();
     ai_botnailcharge(BOTSPEED);
-    self.attack_finished = time + 0.200;
+    self.attack_finished = time + 0.2;
     BotPostThink();
 };
 
@@ -899,7 +899,7 @@ void () bot_light2 = [106.000, bot_light1]
 // OP_STOREP_F	15566	15564	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket1 = [107.000, bot_rocket2]
+void () bot_rocket1 = [107, bot_rocket2]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -918,7 +918,7 @@ void () bot_rocket1 = [107.000, bot_rocket2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket2 = [108.000, bot_rocket3]
+void () bot_rocket2 = [108, bot_rocket3]
 {
     self.weaponframe = FL_SWIM;
     
@@ -942,7 +942,7 @@ void () bot_rocket2 = [108.000, bot_rocket3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket3 = [109.000, bot_rocket4]
+void () bot_rocket3 = [109, bot_rocket4]
 {
     self.weaponframe = MOVETYPE_WALK;
     
@@ -966,7 +966,7 @@ void () bot_rocket3 = [109.000, bot_rocket4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket4 = [110.000, bot_rocket5]
+void () bot_rocket4 = [110, bot_rocket5]
 {
     self.weaponframe = MOVETYPE_STEP;
     
@@ -990,7 +990,7 @@ void () bot_rocket4 = [110.000, bot_rocket5]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket5 = [111.000, bot_rocket6]
+void () bot_rocket5 = [111, bot_rocket6]
 {
     self.weaponframe = MOVETYPE_FLY;
     
@@ -1011,7 +1011,7 @@ void () bot_rocket5 = [111.000, bot_rocket6]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rocket6 = [112.000, bot_run]
+void () bot_rocket6 = [112, bot_run]
 {
     self.weaponframe = MOVETYPE_TOSS;
     ai_botcharge(BOTSPEED);
@@ -1029,7 +1029,7 @@ void () bot_rocket6 = [112.000, bot_run]
 // OP_STOREP_F	15588	15586	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound1 = [107.000, bot_rebound2]
+void () bot_rebound1 = [107, bot_rebound2]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -1043,7 +1043,7 @@ void () bot_rebound1 = [107.000, bot_rebound2]
 // OP_STOREP_F	216	15590	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound2 = [108.000, bot_rebound3]
+void () bot_rebound2 = [108, bot_rebound3]
 {
     self.weaponframe = FL_SWIM;
     BotPostThink();
@@ -1056,7 +1056,7 @@ void () bot_rebound2 = [108.000, bot_rebound3]
 // OP_STOREP_F	228	15592	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound3 = [109.000, bot_rebound4]
+void () bot_rebound3 = [109, bot_rebound4]
 {
     self.weaponframe = MOVETYPE_WALK;
     BotPostThink();
@@ -1071,7 +1071,7 @@ void () bot_rebound3 = [109.000, bot_rebound4]
 // OP_CALL1	15108	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound4 = [110.000, bot_rebound5]
+void () bot_rebound4 = [110, bot_rebound5]
 {
     self.weaponframe = MOVETYPE_STEP;
     aibot_chase(BOTSPEED);
@@ -1087,7 +1087,7 @@ void () bot_rebound4 = [110.000, bot_rebound5]
 // OP_CALL1	15108	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound5 = [111.000, bot_rebound6]
+void () bot_rebound5 = [111, bot_rebound6]
 {
     self.weaponframe = MOVETYPE_FLY;
     aibot_chase(BOTSPEED);
@@ -1103,7 +1103,7 @@ void () bot_rebound5 = [111.000, bot_rebound6]
 // OP_CALL1	15108	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_rebound6 = [112.000, bot_chase]
+void () bot_rebound6 = [112, bot_chase]
 {
     self.weaponframe = MOVETYPE_TOSS;
     aibot_chase(BOTSPEED);
@@ -1117,7 +1117,7 @@ void () bot_rebound6 = [112.000, bot_chase]
 // OP_ADDRESS	28	156	15600
 // OP_STOREP_F	213	15600	0
 // OP_DONE	0	0	0
-void () bot_pain1 = [35.000, bot_pain2]
+void () bot_pain1 = [35, bot_pain2]
 {
     PainSound();
     self.weaponframe = FALSE;
@@ -1140,7 +1140,7 @@ void () bot_pain1 = [35.000, bot_pain2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_pain2 = [36.000, bot_pain3]
+void () bot_pain2 = [36, bot_pain3]
 {
     local float r;
     r = (MOVETYPE_STEP * random()) + self.skil;
@@ -1169,7 +1169,7 @@ void () bot_pain2 = [36.000, bot_pain3]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_pain3 = [37.000, bot_pain4]
+void () bot_pain3 = [37, bot_pain4]
 {
     if(self.skil >= TRUE)
     {
@@ -1196,7 +1196,7 @@ void () bot_pain3 = [37.000, bot_pain4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_pain4 = [38.000, bot_pain5]
+void () bot_pain4 = [38, bot_pain5]
 {
     if(self.skil > FALSE)
     {
@@ -1223,7 +1223,7 @@ void () bot_pain4 = [38.000, bot_pain5]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_pain5 = [39.000, bot_pain6]
+void () bot_pain5 = [39, bot_pain6]
 {
     if(self.skil > FL_SWIM)
     {
@@ -1244,7 +1244,7 @@ void () bot_pain5 = [39.000, bot_pain6]
 // OP_CALL1	13602	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_pain6 = [40.000, bot_run]
+void () bot_pain6 = [40, bot_run]
 {
     ai_botrun(BOTSPEED);
     BotPostThink();
@@ -1258,7 +1258,7 @@ void () bot_pain6 = [40.000, bot_run]
 // OP_STOREP_F	213	15618	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain1 = [29.000, bot_axpain2]
+void () bot_axpain1 = [29, bot_axpain2]
 {
     PainSound();
     self.weaponframe = FALSE;
@@ -1282,7 +1282,7 @@ void () bot_axpain1 = [29.000, bot_axpain2]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain2 = [30.000, bot_axpain3]
+void () bot_axpain2 = [30, bot_axpain3]
 {
     local float r;
     r = (MOVETYPE_STEP * random()) + self.skil;
@@ -1308,7 +1308,7 @@ void () bot_axpain2 = [30.000, bot_axpain3]
 // OP_CALL1	13602	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain3 = [31.000, bot_axpain4]
+void () bot_axpain3 = [31, bot_axpain4]
 {
     
     if(self.skil >= TRUE)
@@ -1326,7 +1326,7 @@ void () bot_axpain3 = [31.000, bot_axpain4]
 // OP_CALL1	14912	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain4 = [32.000, bot_axpain5]
+void () bot_axpain4 = [32, bot_axpain5]
 {
     ai_botcharge(BOTSPEED);
     BotPostThink();
@@ -1339,7 +1339,7 @@ void () bot_axpain4 = [32.000, bot_axpain5]
 // OP_CALL1	13602	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain5 = [33.000, bot_axpain6]
+void () bot_axpain5 = [33, bot_axpain6]
 {
     ai_botrun(BOTSPEED);
     BotPostThink();
@@ -1352,7 +1352,7 @@ void () bot_axpain5 = [33.000, bot_axpain6]
 // OP_CALL1	13602	0	0
 // OP_CALL0	11472	0	0
 // OP_DONE	0	0	0
-void () bot_axpain6 = [34.000, bot_run]
+void () bot_axpain6 = [34, bot_run]
 {
     ai_botrun(BOTSPEED);
     BotPostThink();
@@ -1436,7 +1436,7 @@ void () bot_die_ax1;
 // OP_DONE	0	0	0
 void () BotDead = 
 {
-    self.nextthink = (time + 0.300) + ((random() * (NUMBOTS + MOVETYPE_WALK)) * 0.100);
+    self.nextthink = (time + 0.3) + ((random() * (NUMBOTS + MOVETYPE_WALK)) * 0.1);
     
     if(teamplay)
     {
@@ -1572,11 +1572,11 @@ void () BotDie =
     
     if(self.velocity_z < MOVETYPE_BOUNCE)
     {
-        self.velocity_z = self.velocity_z + (random() * 300.000);
+        self.velocity_z = self.velocity_z + (random() * 300);
     }
     
     
-    if(self.health < -40.000)
+    if(self.health < -40)
     {
         GibPlayer();
         BotDead();
@@ -1639,7 +1639,7 @@ void () BotDie =
 // function begins at statement 26613, parm_start=15700
 // OP_STATE	756	15700	0
 // OP_DONE	0	0	0
-void () bot_diea1 = [50.000, bot_diea2]
+void () bot_diea1 = [50, bot_diea2]
 {
 };
 
@@ -1647,7 +1647,7 @@ void () bot_diea1 = [50.000, bot_diea2]
 // function begins at statement 26615, parm_start=15701
 // OP_STATE	5951	15701	0
 // OP_DONE	0	0	0
-void () bot_diea2 = [51.000, bot_diea3]
+void () bot_diea2 = [51, bot_diea3]
 {
 };
 
@@ -1655,7 +1655,7 @@ void () bot_diea2 = [51.000, bot_diea3]
 // function begins at statement 26617, parm_start=15702
 // OP_STATE	5953	15702	0
 // OP_DONE	0	0	0
-void () bot_diea3 = [52.000, bot_diea4]
+void () bot_diea3 = [52, bot_diea4]
 {
 };
 
@@ -1663,7 +1663,7 @@ void () bot_diea3 = [52.000, bot_diea4]
 // function begins at statement 26619, parm_start=15703
 // OP_STATE	5955	15703	0
 // OP_DONE	0	0	0
-void () bot_diea4 = [53.000, bot_diea5]
+void () bot_diea4 = [53, bot_diea5]
 {
 };
 
@@ -1671,7 +1671,7 @@ void () bot_diea4 = [53.000, bot_diea5]
 // function begins at statement 26621, parm_start=15704
 // OP_STATE	5957	15704	0
 // OP_DONE	0	0	0
-void () bot_diea5 = [54.000, bot_diea6]
+void () bot_diea5 = [54, bot_diea6]
 {
 };
 
@@ -1679,7 +1679,7 @@ void () bot_diea5 = [54.000, bot_diea6]
 // function begins at statement 26623, parm_start=15705
 // OP_STATE	5959	15705	0
 // OP_DONE	0	0	0
-void () bot_diea6 = [55.000, bot_diea7]
+void () bot_diea6 = [55, bot_diea7]
 {
 };
 
@@ -1687,7 +1687,7 @@ void () bot_diea6 = [55.000, bot_diea7]
 // function begins at statement 26625, parm_start=15706
 // OP_STATE	5961	15706	0
 // OP_DONE	0	0	0
-void () bot_diea7 = [56.000, bot_diea8]
+void () bot_diea7 = [56, bot_diea8]
 {
 };
 
@@ -1695,7 +1695,7 @@ void () bot_diea7 = [56.000, bot_diea8]
 // function begins at statement 26627, parm_start=15707
 // OP_STATE	5963	15707	0
 // OP_DONE	0	0	0
-void () bot_diea8 = [57.000, bot_diea9]
+void () bot_diea8 = [57, bot_diea9]
 {
 };
 
@@ -1703,7 +1703,7 @@ void () bot_diea8 = [57.000, bot_diea9]
 // function begins at statement 26629, parm_start=15708
 // OP_STATE	5965	15708	0
 // OP_DONE	0	0	0
-void () bot_diea9 = [58.000, bot_diea10]
+void () bot_diea9 = [58, bot_diea10]
 {
 };
 
@@ -1711,7 +1711,7 @@ void () bot_diea9 = [58.000, bot_diea10]
 // function begins at statement 26631, parm_start=15709
 // OP_STATE	5967	15709	0
 // OP_DONE	0	0	0
-void () bot_diea10 = [59.000, bot_diea11]
+void () bot_diea10 = [59, bot_diea11]
 {
 };
 
@@ -1720,7 +1720,7 @@ void () bot_diea10 = [59.000, bot_diea11]
 // OP_STATE	730	15709	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_diea11 = [60.000, bot_diea11]
+void () bot_diea11 = [60, bot_diea11]
 {
     BotDead();
 };
@@ -1729,7 +1729,7 @@ void () bot_diea11 = [60.000, bot_diea11]
 // function begins at statement 26636, parm_start=15710
 // OP_STATE	5969	15710	0
 // OP_DONE	0	0	0
-void () bot_dieb1 = [61.000, bot_dieb2]
+void () bot_dieb1 = [61, bot_dieb2]
 {
 };
 
@@ -1737,7 +1737,7 @@ void () bot_dieb1 = [61.000, bot_dieb2]
 // function begins at statement 26638, parm_start=15711
 // OP_STATE	5971	15711	0
 // OP_DONE	0	0	0
-void () bot_dieb2 = [62.000, bot_dieb3]
+void () bot_dieb2 = [62, bot_dieb3]
 {
 };
 
@@ -1745,7 +1745,7 @@ void () bot_dieb2 = [62.000, bot_dieb3]
 // function begins at statement 26640, parm_start=15712
 // OP_STATE	4366	15712	0
 // OP_DONE	0	0	0
-void () bot_dieb3 = [63.000, bot_dieb4]
+void () bot_dieb3 = [63, bot_dieb4]
 {
 };
 
@@ -1753,7 +1753,7 @@ void () bot_dieb3 = [63.000, bot_dieb4]
 // function begins at statement 26642, parm_start=15713
 // OP_STATE	220	15713	0
 // OP_DONE	0	0	0
-void () bot_dieb4 = [64.000, bot_dieb5]
+void () bot_dieb4 = [64, bot_dieb5]
 {
 };
 
@@ -1761,7 +1761,7 @@ void () bot_dieb4 = [64.000, bot_dieb5]
 // function begins at statement 26644, parm_start=15714
 // OP_STATE	5975	15714	0
 // OP_DONE	0	0	0
-void () bot_dieb5 = [65.000, bot_dieb6]
+void () bot_dieb5 = [65, bot_dieb6]
 {
 };
 
@@ -1769,7 +1769,7 @@ void () bot_dieb5 = [65.000, bot_dieb6]
 // function begins at statement 26646, parm_start=15715
 // OP_STATE	5977	15715	0
 // OP_DONE	0	0	0
-void () bot_dieb6 = [66.000, bot_dieb7]
+void () bot_dieb6 = [66, bot_dieb7]
 {
 };
 
@@ -1777,7 +1777,7 @@ void () bot_dieb6 = [66.000, bot_dieb7]
 // function begins at statement 26648, parm_start=15716
 // OP_STATE	5979	15716	0
 // OP_DONE	0	0	0
-void () bot_dieb7 = [67.000, bot_dieb8]
+void () bot_dieb7 = [67, bot_dieb8]
 {
 };
 
@@ -1785,7 +1785,7 @@ void () bot_dieb7 = [67.000, bot_dieb8]
 // function begins at statement 26650, parm_start=15717
 // OP_STATE	5981	15717	0
 // OP_DONE	0	0	0
-void () bot_dieb8 = [68.000, bot_dieb9]
+void () bot_dieb8 = [68, bot_dieb9]
 {
 };
 
@@ -1794,7 +1794,7 @@ void () bot_dieb8 = [68.000, bot_dieb9]
 // OP_STATE	5983	15717	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_dieb9 = [69.000, bot_dieb9]
+void () bot_dieb9 = [69, bot_dieb9]
 {
     BotDead();
 };
@@ -1803,7 +1803,7 @@ void () bot_dieb9 = [69.000, bot_dieb9]
 // function begins at statement 26655, parm_start=15718
 // OP_STATE	5984	15718	0
 // OP_DONE	0	0	0
-void () bot_diec1 = [70.000, bot_diec2]
+void () bot_diec1 = [70, bot_diec2]
 {
 };
 
@@ -1811,7 +1811,7 @@ void () bot_diec1 = [70.000, bot_diec2]
 // function begins at statement 26657, parm_start=15719
 // OP_STATE	5986	15719	0
 // OP_DONE	0	0	0
-void () bot_diec2 = [71.000, bot_diec3]
+void () bot_diec2 = [71, bot_diec3]
 {
 };
 
@@ -1819,7 +1819,7 @@ void () bot_diec2 = [71.000, bot_diec3]
 // function begins at statement 26659, parm_start=15720
 // OP_STATE	5988	15720	0
 // OP_DONE	0	0	0
-void () bot_diec3 = [72.000, bot_diec4]
+void () bot_diec3 = [72, bot_diec4]
 {
 };
 
@@ -1827,7 +1827,7 @@ void () bot_diec3 = [72.000, bot_diec4]
 // function begins at statement 26661, parm_start=15721
 // OP_STATE	3216	15721	0
 // OP_DONE	0	0	0
-void () bot_diec4 = [73.000, bot_diec5]
+void () bot_diec4 = [73, bot_diec5]
 {
 };
 
@@ -1835,7 +1835,7 @@ void () bot_diec4 = [73.000, bot_diec5]
 // function begins at statement 26663, parm_start=15722
 // OP_STATE	5991	15722	0
 // OP_DONE	0	0	0
-void () bot_diec5 = [74.000, bot_diec6]
+void () bot_diec5 = [74, bot_diec6]
 {
 };
 
@@ -1843,7 +1843,7 @@ void () bot_diec5 = [74.000, bot_diec6]
 // function begins at statement 26665, parm_start=15723
 // OP_STATE	5993	15723	0
 // OP_DONE	0	0	0
-void () bot_diec6 = [75.000, bot_diec7]
+void () bot_diec6 = [75, bot_diec7]
 {
 };
 
@@ -1851,7 +1851,7 @@ void () bot_diec6 = [75.000, bot_diec7]
 // function begins at statement 26667, parm_start=15724
 // OP_STATE	5995	15724	0
 // OP_DONE	0	0	0
-void () bot_diec7 = [76.000, bot_diec8]
+void () bot_diec7 = [76, bot_diec8]
 {
 };
 
@@ -1859,7 +1859,7 @@ void () bot_diec7 = [76.000, bot_diec8]
 // function begins at statement 26669, parm_start=15725
 // OP_STATE	5997	15725	0
 // OP_DONE	0	0	0
-void () bot_diec8 = [77.000, bot_diec9]
+void () bot_diec8 = [77, bot_diec9]
 {
 };
 
@@ -1867,7 +1867,7 @@ void () bot_diec8 = [77.000, bot_diec9]
 // function begins at statement 26671, parm_start=15726
 // OP_STATE	5999	15726	0
 // OP_DONE	0	0	0
-void () bot_diec9 = [78.000, bot_diec10]
+void () bot_diec9 = [78, bot_diec10]
 {
 };
 
@@ -1875,7 +1875,7 @@ void () bot_diec9 = [78.000, bot_diec10]
 // function begins at statement 26673, parm_start=15727
 // OP_STATE	6001	15727	0
 // OP_DONE	0	0	0
-void () bot_diec10 = [79.000, bot_diec11]
+void () bot_diec10 = [79, bot_diec11]
 {
 };
 
@@ -1883,7 +1883,7 @@ void () bot_diec10 = [79.000, bot_diec11]
 // function begins at statement 26675, parm_start=15728
 // OP_STATE	1178	15728	0
 // OP_DONE	0	0	0
-void () bot_diec11 = [80.000, bot_diec12]
+void () bot_diec11 = [80, bot_diec12]
 {
 };
 
@@ -1891,7 +1891,7 @@ void () bot_diec11 = [80.000, bot_diec12]
 // function begins at statement 26677, parm_start=15729
 // OP_STATE	6004	15729	0
 // OP_DONE	0	0	0
-void () bot_diec12 = [81.000, bot_diec13]
+void () bot_diec12 = [81, bot_diec13]
 {
 };
 
@@ -1899,7 +1899,7 @@ void () bot_diec12 = [81.000, bot_diec13]
 // function begins at statement 26679, parm_start=15730
 // OP_STATE	6006	15730	0
 // OP_DONE	0	0	0
-void () bot_diec13 = [82.000, bot_diec14]
+void () bot_diec13 = [82, bot_diec14]
 {
 };
 
@@ -1907,7 +1907,7 @@ void () bot_diec13 = [82.000, bot_diec14]
 // function begins at statement 26681, parm_start=15731
 // OP_STATE	6008	15731	0
 // OP_DONE	0	0	0
-void () bot_diec14 = [83.000, bot_diec15]
+void () bot_diec14 = [83, bot_diec15]
 {
 };
 
@@ -1916,7 +1916,7 @@ void () bot_diec14 = [83.000, bot_diec15]
 // OP_STATE	6010	15731	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_diec15 = [84.000, bot_diec15]
+void () bot_diec15 = [84, bot_diec15]
 {
     BotDead();
 };
@@ -1925,7 +1925,7 @@ void () bot_diec15 = [84.000, bot_diec15]
 // function begins at statement 26686, parm_start=15732
 // OP_STATE	6011	15732	0
 // OP_DONE	0	0	0
-void () bot_died1 = [85.000, bot_died2]
+void () bot_died1 = [85, bot_died2]
 {
 };
 
@@ -1933,7 +1933,7 @@ void () bot_died1 = [85.000, bot_died2]
 // function begins at statement 26688, parm_start=15733
 // OP_STATE	6013	15733	0
 // OP_DONE	0	0	0
-void () bot_died2 = [86.000, bot_died3]
+void () bot_died2 = [86, bot_died3]
 {
 };
 
@@ -1941,7 +1941,7 @@ void () bot_died2 = [86.000, bot_died3]
 // function begins at statement 26690, parm_start=15734
 // OP_STATE	6015	15734	0
 // OP_DONE	0	0	0
-void () bot_died3 = [87.000, bot_died4]
+void () bot_died3 = [87, bot_died4]
 {
 };
 
@@ -1949,7 +1949,7 @@ void () bot_died3 = [87.000, bot_died4]
 // function begins at statement 26692, parm_start=15735
 // OP_STATE	6017	15735	0
 // OP_DONE	0	0	0
-void () bot_died4 = [88.000, bot_died5]
+void () bot_died4 = [88, bot_died5]
 {
 };
 
@@ -1957,7 +1957,7 @@ void () bot_died4 = [88.000, bot_died5]
 // function begins at statement 26694, parm_start=15736
 // OP_STATE	6019	15736	0
 // OP_DONE	0	0	0
-void () bot_died5 = [89.000, bot_died6]
+void () bot_died5 = [89, bot_died6]
 {
 };
 
@@ -1965,7 +1965,7 @@ void () bot_died5 = [89.000, bot_died6]
 // function begins at statement 26696, parm_start=15737
 // OP_STATE	1789	15737	0
 // OP_DONE	0	0	0
-void () bot_died6 = [90.000, bot_died7]
+void () bot_died6 = [90, bot_died7]
 {
 };
 
@@ -1973,7 +1973,7 @@ void () bot_died6 = [90.000, bot_died7]
 // function begins at statement 26698, parm_start=15738
 // OP_STATE	6022	15738	0
 // OP_DONE	0	0	0
-void () bot_died7 = [91.000, bot_died8]
+void () bot_died7 = [91, bot_died8]
 {
 };
 
@@ -1981,7 +1981,7 @@ void () bot_died7 = [91.000, bot_died8]
 // function begins at statement 26700, parm_start=15739
 // OP_STATE	6024	15739	0
 // OP_DONE	0	0	0
-void () bot_died8 = [92.000, bot_died9]
+void () bot_died8 = [92, bot_died9]
 {
 };
 
@@ -1990,7 +1990,7 @@ void () bot_died8 = [92.000, bot_died9]
 // OP_STATE	6026	15739	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_died9 = [93.000, bot_died9]
+void () bot_died9 = [93, bot_died9]
 {
     BotDead();
 };
@@ -1999,7 +1999,7 @@ void () bot_died9 = [93.000, bot_died9]
 // function begins at statement 26705, parm_start=15740
 // OP_STATE	6027	15740	0
 // OP_DONE	0	0	0
-void () bot_diee1 = [94.000, bot_diee2]
+void () bot_diee1 = [94, bot_diee2]
 {
 };
 
@@ -2007,7 +2007,7 @@ void () bot_diee1 = [94.000, bot_diee2]
 // function begins at statement 26707, parm_start=15741
 // OP_STATE	6029	15741	0
 // OP_DONE	0	0	0
-void () bot_diee2 = [95.000, bot_diee3]
+void () bot_diee2 = [95, bot_diee3]
 {
 };
 
@@ -2015,7 +2015,7 @@ void () bot_diee2 = [95.000, bot_diee3]
 // function begins at statement 26709, parm_start=15742
 // OP_STATE	6031	15742	0
 // OP_DONE	0	0	0
-void () bot_diee3 = [96.000, bot_diee4]
+void () bot_diee3 = [96, bot_diee4]
 {
 };
 
@@ -2023,7 +2023,7 @@ void () bot_diee3 = [96.000, bot_diee4]
 // function begins at statement 26711, parm_start=15743
 // OP_STATE	6033	15743	0
 // OP_DONE	0	0	0
-void () bot_diee4 = [97.000, bot_diee5]
+void () bot_diee4 = [97, bot_diee5]
 {
 };
 
@@ -2031,7 +2031,7 @@ void () bot_diee4 = [97.000, bot_diee5]
 // function begins at statement 26713, parm_start=15744
 // OP_STATE	6035	15744	0
 // OP_DONE	0	0	0
-void () bot_diee5 = [98.000, bot_diee6]
+void () bot_diee5 = [98, bot_diee6]
 {
 };
 
@@ -2039,7 +2039,7 @@ void () bot_diee5 = [98.000, bot_diee6]
 // function begins at statement 26715, parm_start=15745
 // OP_STATE	736	15745	0
 // OP_DONE	0	0	0
-void () bot_diee6 = [99.000, bot_diee7]
+void () bot_diee6 = [99, bot_diee7]
 {
 };
 
@@ -2047,7 +2047,7 @@ void () bot_diee6 = [99.000, bot_diee7]
 // function begins at statement 26717, parm_start=15746
 // OP_STATE	574	15746	0
 // OP_DONE	0	0	0
-void () bot_diee7 = [100.000, bot_diee8]
+void () bot_diee7 = [100, bot_diee8]
 {
 };
 
@@ -2055,7 +2055,7 @@ void () bot_diee7 = [100.000, bot_diee8]
 // function begins at statement 26719, parm_start=15747
 // OP_STATE	6039	15747	0
 // OP_DONE	0	0	0
-void () bot_diee8 = [101.000, bot_diee9]
+void () bot_diee8 = [101, bot_diee9]
 {
 };
 
@@ -2064,7 +2064,7 @@ void () bot_diee8 = [101.000, bot_diee9]
 // OP_STATE	6041	15747	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_diee9 = [102.000, bot_diee9]
+void () bot_diee9 = [102, bot_diee9]
 {
     BotDead();
 };
@@ -2073,7 +2073,7 @@ void () bot_diee9 = [102.000, bot_diee9]
 // function begins at statement 26724, parm_start=15748
 // OP_STATE	6042	15748	0
 // OP_DONE	0	0	0
-void () bot_die_ax1 = [41.000, bot_die_ax2]
+void () bot_die_ax1 = [41, bot_die_ax2]
 {
 };
 
@@ -2081,7 +2081,7 @@ void () bot_die_ax1 = [41.000, bot_die_ax2]
 // function begins at statement 26726, parm_start=15749
 // OP_STATE	6044	15749	0
 // OP_DONE	0	0	0
-void () bot_die_ax2 = [42.000, bot_die_ax3]
+void () bot_die_ax2 = [42, bot_die_ax3]
 {
 };
 
@@ -2089,7 +2089,7 @@ void () bot_die_ax2 = [42.000, bot_die_ax3]
 // function begins at statement 26728, parm_start=15750
 // OP_STATE	6046	15750	0
 // OP_DONE	0	0	0
-void () bot_die_ax3 = [43.000, bot_die_ax4]
+void () bot_die_ax3 = [43, bot_die_ax4]
 {
 };
 
@@ -2097,7 +2097,7 @@ void () bot_die_ax3 = [43.000, bot_die_ax4]
 // function begins at statement 26730, parm_start=15751
 // OP_STATE	6048	15751	0
 // OP_DONE	0	0	0
-void () bot_die_ax4 = [44.000, bot_die_ax5]
+void () bot_die_ax4 = [44, bot_die_ax5]
 {
 };
 
@@ -2105,7 +2105,7 @@ void () bot_die_ax4 = [44.000, bot_die_ax5]
 // function begins at statement 26732, parm_start=15752
 // OP_STATE	1770	15752	0
 // OP_DONE	0	0	0
-void () bot_die_ax5 = [45.000, bot_die_ax6]
+void () bot_die_ax5 = [45, bot_die_ax6]
 {
 };
 
@@ -2113,7 +2113,7 @@ void () bot_die_ax5 = [45.000, bot_die_ax6]
 // function begins at statement 26734, parm_start=15753
 // OP_STATE	6051	15753	0
 // OP_DONE	0	0	0
-void () bot_die_ax6 = [46.000, bot_die_ax7]
+void () bot_die_ax6 = [46, bot_die_ax7]
 {
 };
 
@@ -2121,7 +2121,7 @@ void () bot_die_ax6 = [46.000, bot_die_ax7]
 // function begins at statement 26736, parm_start=15754
 // OP_STATE	6053	15754	0
 // OP_DONE	0	0	0
-void () bot_die_ax7 = [47.000, bot_die_ax8]
+void () bot_die_ax7 = [47, bot_die_ax8]
 {
 };
 
@@ -2129,7 +2129,7 @@ void () bot_die_ax7 = [47.000, bot_die_ax8]
 // function begins at statement 26738, parm_start=15755
 // OP_STATE	6055	15755	0
 // OP_DONE	0	0	0
-void () bot_die_ax8 = [48.000, bot_die_ax9]
+void () bot_die_ax8 = [48, bot_die_ax9]
 {
 };
 
@@ -2138,7 +2138,7 @@ void () bot_die_ax8 = [48.000, bot_die_ax9]
 // OP_STATE	6057	15755	0
 // OP_CALL0	11471	0	0
 // OP_DONE	0	0	0
-void () bot_die_ax9 = [49.000, bot_die_ax9]
+void () bot_die_ax9 = [49, bot_die_ax9]
 {
     BotDead();
 };

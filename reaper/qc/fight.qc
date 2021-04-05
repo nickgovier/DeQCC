@@ -38,7 +38,7 @@ void () knight_attack =
 {
     local float len;
     len = vlen((self.enemy.origin + self.enemy.view_ofs) - (self.origin + self.view_ofs));
-    if(len < 80.000)
+    if(len < 80)
     {
         knight_atk1();
     }
@@ -192,7 +192,7 @@ float () CheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
+        chance = 0.9;
         self.attack_finished = FALSE;
     }
     else
@@ -201,11 +201,11 @@ float () CheckAttack =
         {
             if(self.th_melee)
             {
-                chance = 0.200;
+                chance = 0.2;
             }
             else
             {
-                chance = 0.400;
+                chance = 0.4;
             }
             
         }
@@ -215,11 +215,11 @@ float () CheckAttack =
             {
                 if(self.th_melee)
                 {
-                    chance = 0.050;
+                    chance = 0.05;
                 }
                 else
                 {
-                    chance = 0.100;
+                    chance = 0.1;
                 }
                 
             }
@@ -357,7 +357,7 @@ void () ai_melee =
     
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
@@ -418,7 +418,7 @@ void () ai_melee_side =
     ai_charge_side();
     delta = self.enemy.origin - self.origin;
     
-    if(vlen(delta) > 60.000)
+    if(vlen(delta) > 60)
     {
         return;
     }
@@ -532,19 +532,19 @@ float () SoldierCheckAttack =
     
     if(enemy_range == RANGE_MELEE)
     {
-        chance = 0.900;
+        chance = 0.9;
     }
     else
     {
         if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.400;
+            chance = 0.4;
         }
         else
         {
             if(enemy_range == RANGE_MID)
             {
-                chance = 0.050;
+                chance = 0.05;
             }
             else
             {
@@ -561,7 +561,7 @@ float () SoldierCheckAttack =
         self.th_missile();
         SUB_AttackFinished(TRUE + random());
         
-        if(random() < 0.300)
+        if(random() < 0.3)
         {
             self.lefty = !self.lefty;
         }
@@ -819,13 +819,13 @@ float () OgreCheckAttack =
     {
         if(enemy_range == RANGE_NEAR)
         {
-            chance = 0.100;
+            chance = 0.1;
         }
         else
         {
             if(enemy_range == RANGE_MID)
             {
-                chance = 0.050;
+                chance = 0.05;
             }
             else
             {

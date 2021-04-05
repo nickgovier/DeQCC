@@ -5,7 +5,7 @@ void () ShalMissile;
 // OP_STATE	301	10062	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () shal_stand = [23.000, shal_stand]
+void () shal_stand = [23, shal_stand]
 {
     ai_stand();
 };
@@ -25,10 +25,10 @@ void () shal_stand = [23.000, shal_stand]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk1 = [24.000, shal_walk2]
+void () shal_walk1 = [24, shal_walk2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "shalrath/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -42,7 +42,7 @@ void () shal_walk1 = [24.000, shal_walk2]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk2 = [25.000, shal_walk3]
+void () shal_walk2 = [25, shal_walk3]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -53,7 +53,7 @@ void () shal_walk2 = [25.000, shal_walk3]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk3 = [26.000, shal_walk4]
+void () shal_walk3 = [26, shal_walk4]
 {
     ai_walk(FALSE);
 };
@@ -64,7 +64,7 @@ void () shal_walk3 = [26.000, shal_walk4]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk4 = [27.000, shal_walk5]
+void () shal_walk4 = [27, shal_walk5]
 {
     ai_walk(FALSE);
 };
@@ -75,7 +75,7 @@ void () shal_walk4 = [27.000, shal_walk5]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk5 = [28.000, shal_walk6]
+void () shal_walk5 = [28, shal_walk6]
 {
     ai_walk(FALSE);
 };
@@ -86,7 +86,7 @@ void () shal_walk5 = [28.000, shal_walk6]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk6 = [29.000, shal_walk7]
+void () shal_walk6 = [29, shal_walk7]
 {
     ai_walk(FALSE);
 };
@@ -97,7 +97,7 @@ void () shal_walk6 = [29.000, shal_walk7]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk7 = [30.000, shal_walk8]
+void () shal_walk7 = [30, shal_walk8]
 {
     ai_walk(MOVETYPE_FLY);
 };
@@ -108,7 +108,7 @@ void () shal_walk7 = [30.000, shal_walk8]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk8 = [31.000, shal_walk9]
+void () shal_walk8 = [31, shal_walk9]
 {
     ai_walk(MOVETYPE_TOSS);
 };
@@ -119,7 +119,7 @@ void () shal_walk8 = [31.000, shal_walk9]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk9 = [32.000, shal_walk10]
+void () shal_walk9 = [32, shal_walk10]
 {
     ai_walk(MOVETYPE_FLY);
 };
@@ -130,7 +130,7 @@ void () shal_walk9 = [32.000, shal_walk10]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk10 = [33.000, shal_walk11]
+void () shal_walk10 = [33, shal_walk11]
 {
     ai_walk(FALSE);
 };
@@ -141,7 +141,7 @@ void () shal_walk10 = [33.000, shal_walk11]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk11 = [34.000, shal_walk12]
+void () shal_walk11 = [34, shal_walk12]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -152,7 +152,7 @@ void () shal_walk11 = [34.000, shal_walk12]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () shal_walk12 = [23.000, shal_walk1]
+void () shal_walk12 = [23, shal_walk1]
 {
     ai_walk(MOVETYPE_FLY);
 };
@@ -172,10 +172,10 @@ void () shal_walk12 = [23.000, shal_walk1]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run1 = [24.000, shal_run2]
+void () shal_run1 = [24, shal_run2]
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "shalrath/idle.wav", TRUE, ATTN_IDLE);
     }
@@ -189,7 +189,7 @@ void () shal_run1 = [24.000, shal_run2]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run2 = [25.000, shal_run3]
+void () shal_run2 = [25, shal_run3]
 {
     ai_run(MOVETYPE_STEP);
 };
@@ -200,7 +200,7 @@ void () shal_run2 = [25.000, shal_run3]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run3 = [26.000, shal_run4]
+void () shal_run3 = [26, shal_run4]
 {
     ai_run(FALSE);
 };
@@ -211,7 +211,7 @@ void () shal_run3 = [26.000, shal_run4]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run4 = [27.000, shal_run5]
+void () shal_run4 = [27, shal_run5]
 {
     ai_run(FALSE);
 };
@@ -222,7 +222,7 @@ void () shal_run4 = [27.000, shal_run5]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run5 = [28.000, shal_run6]
+void () shal_run5 = [28, shal_run6]
 {
     ai_run(FALSE);
 };
@@ -233,7 +233,7 @@ void () shal_run5 = [28.000, shal_run6]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run6 = [29.000, shal_run7]
+void () shal_run6 = [29, shal_run7]
 {
     ai_run(FALSE);
 };
@@ -244,7 +244,7 @@ void () shal_run6 = [29.000, shal_run7]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run7 = [30.000, shal_run8]
+void () shal_run7 = [30, shal_run8]
 {
     ai_run(MOVETYPE_FLY);
 };
@@ -255,7 +255,7 @@ void () shal_run7 = [30.000, shal_run8]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run8 = [31.000, shal_run9]
+void () shal_run8 = [31, shal_run9]
 {
     ai_run(MOVETYPE_TOSS);
 };
@@ -266,7 +266,7 @@ void () shal_run8 = [31.000, shal_run9]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run9 = [32.000, shal_run10]
+void () shal_run9 = [32, shal_run10]
 {
     ai_run(MOVETYPE_FLY);
 };
@@ -277,7 +277,7 @@ void () shal_run9 = [32.000, shal_run10]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run10 = [33.000, shal_run11]
+void () shal_run10 = [33, shal_run11]
 {
     ai_run(FALSE);
 };
@@ -288,7 +288,7 @@ void () shal_run10 = [33.000, shal_run11]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run11 = [34.000, shal_run12]
+void () shal_run11 = [34, shal_run12]
 {
     ai_run(MOVETYPE_STEP);
 };
@@ -299,7 +299,7 @@ void () shal_run11 = [34.000, shal_run12]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () shal_run12 = [23.000, shal_run1]
+void () shal_run12 = [23, shal_run1]
 {
     ai_run(MOVETYPE_FLY);
 };
@@ -315,7 +315,7 @@ void () shal_run12 = [23.000, shal_run1]
 // OP_CALL5	453	0	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack1 = [0.000, shal_attack2]
+void () shal_attack1 = [0, shal_attack2]
 {
     sound(self, CHAN_VOICE, "shalrath/attack.wav", TRUE, ATTN_NORM);
     ai_face();
@@ -326,7 +326,7 @@ void () shal_attack1 = [0.000, shal_attack2]
 // OP_STATE	214	10093	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack2 = [1.000, shal_attack3]
+void () shal_attack2 = [1, shal_attack3]
 {
     ai_face();
 };
@@ -336,7 +336,7 @@ void () shal_attack2 = [1.000, shal_attack3]
 // OP_STATE	216	10094	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack3 = [2.000, shal_attack4]
+void () shal_attack3 = [2, shal_attack4]
 {
     ai_face();
 };
@@ -346,7 +346,7 @@ void () shal_attack3 = [2.000, shal_attack4]
 // OP_STATE	228	10095	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack4 = [3.000, shal_attack5]
+void () shal_attack4 = [3, shal_attack5]
 {
     ai_face();
 };
@@ -356,7 +356,7 @@ void () shal_attack4 = [3.000, shal_attack5]
 // OP_STATE	229	10096	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack5 = [4.000, shal_attack6]
+void () shal_attack5 = [4, shal_attack6]
 {
     ai_face();
 };
@@ -366,7 +366,7 @@ void () shal_attack5 = [4.000, shal_attack6]
 // OP_STATE	230	10097	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack6 = [5.000, shal_attack7]
+void () shal_attack6 = [5, shal_attack7]
 {
     ai_face();
 };
@@ -376,7 +376,7 @@ void () shal_attack6 = [5.000, shal_attack7]
 // OP_STATE	231	10098	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack7 = [6.000, shal_attack8]
+void () shal_attack7 = [6, shal_attack8]
 {
     ai_face();
 };
@@ -386,7 +386,7 @@ void () shal_attack7 = [6.000, shal_attack8]
 // OP_STATE	232	10099	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack8 = [7.000, shal_attack9]
+void () shal_attack8 = [7, shal_attack9]
 {
     ai_face();
 };
@@ -396,7 +396,7 @@ void () shal_attack8 = [7.000, shal_attack9]
 // OP_STATE	217	10100	0
 // OP_CALL0	10061	0	0
 // OP_DONE	0	0	0
-void () shal_attack9 = [8.000, shal_attack10]
+void () shal_attack9 = [8, shal_attack10]
 {
     ShalMissile();
 };
@@ -406,7 +406,7 @@ void () shal_attack9 = [8.000, shal_attack10]
 // OP_STATE	234	10101	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () shal_attack10 = [9.000, shal_attack11]
+void () shal_attack10 = [9, shal_attack11]
 {
     ai_face();
 };
@@ -415,7 +415,7 @@ void () shal_attack10 = [9.000, shal_attack11]
 // function begins at statement 17325, parm_start=10102
 // OP_STATE	235	10077	0
 // OP_DONE	0	0	0
-void () shal_attack11 = [10.000, shal_run1]
+void () shal_attack11 = [10, shal_run1]
 {
 };
 
@@ -423,7 +423,7 @@ void () shal_attack11 = [10.000, shal_run1]
 // function begins at statement 17327, parm_start=10103
 // OP_STATE	236	10103	0
 // OP_DONE	0	0	0
-void () shal_pain1 = [11.000, shal_pain2]
+void () shal_pain1 = [11, shal_pain2]
 {
 };
 
@@ -431,7 +431,7 @@ void () shal_pain1 = [11.000, shal_pain2]
 // function begins at statement 17329, parm_start=10104
 // OP_STATE	2717	10104	0
 // OP_DONE	0	0	0
-void () shal_pain2 = [12.000, shal_pain3]
+void () shal_pain2 = [12, shal_pain3]
 {
 };
 
@@ -439,7 +439,7 @@ void () shal_pain2 = [12.000, shal_pain3]
 // function begins at statement 17331, parm_start=10105
 // OP_STATE	8413	10105	0
 // OP_DONE	0	0	0
-void () shal_pain3 = [13.000, shal_pain4]
+void () shal_pain3 = [13, shal_pain4]
 {
 };
 
@@ -447,7 +447,7 @@ void () shal_pain3 = [13.000, shal_pain4]
 // function begins at statement 17333, parm_start=10106
 // OP_STATE	3382	10106	0
 // OP_DONE	0	0	0
-void () shal_pain4 = [14.000, shal_pain5]
+void () shal_pain4 = [14, shal_pain5]
 {
 };
 
@@ -455,7 +455,7 @@ void () shal_pain4 = [14.000, shal_pain5]
 // function begins at statement 17335, parm_start=10107
 // OP_STATE	2246	10077	0
 // OP_DONE	0	0	0
-void () shal_pain5 = [15.000, shal_run1]
+void () shal_pain5 = [15, shal_run1]
 {
 };
 
@@ -463,7 +463,7 @@ void () shal_pain5 = [15.000, shal_run1]
 // function begins at statement 17337, parm_start=10108
 // OP_STATE	218	10108	0
 // OP_DONE	0	0	0
-void () shal_death1 = [16.000, shal_death2]
+void () shal_death1 = [16, shal_death2]
 {
 };
 
@@ -471,7 +471,7 @@ void () shal_death1 = [16.000, shal_death2]
 // function begins at statement 17339, parm_start=10109
 // OP_STATE	5450	10109	0
 // OP_DONE	0	0	0
-void () shal_death2 = [17.000, shal_death3]
+void () shal_death2 = [17, shal_death3]
 {
 };
 
@@ -479,7 +479,7 @@ void () shal_death2 = [17.000, shal_death3]
 // function begins at statement 17341, parm_start=10110
 // OP_STATE	3866	10110	0
 // OP_DONE	0	0	0
-void () shal_death3 = [18.000, shal_death4]
+void () shal_death3 = [18, shal_death4]
 {
 };
 
@@ -487,7 +487,7 @@ void () shal_death3 = [18.000, shal_death4]
 // function begins at statement 17343, parm_start=10111
 // OP_STATE	8422	10111	0
 // OP_DONE	0	0	0
-void () shal_death4 = [19.000, shal_death5]
+void () shal_death4 = [19, shal_death5]
 {
 };
 
@@ -495,7 +495,7 @@ void () shal_death4 = [19.000, shal_death5]
 // function begins at statement 17345, parm_start=10112
 // OP_STATE	576	10112	0
 // OP_DONE	0	0	0
-void () shal_death5 = [20.000, shal_death6]
+void () shal_death5 = [20, shal_death6]
 {
 };
 
@@ -503,7 +503,7 @@ void () shal_death5 = [20.000, shal_death6]
 // function begins at statement 17347, parm_start=10113
 // OP_STATE	8425	10113	0
 // OP_DONE	0	0	0
-void () shal_death6 = [21.000, shal_death7]
+void () shal_death6 = [21, shal_death7]
 {
 };
 
@@ -511,7 +511,7 @@ void () shal_death6 = [21.000, shal_death7]
 // function begins at statement 17349, parm_start=10114
 // OP_STATE	8428	10113	0
 // OP_DONE	0	0	0
-void () shal_death7 = [22.000, shal_death7]
+void () shal_death7 = [22, shal_death7]
 {
 };
 
@@ -586,7 +586,7 @@ void () shalrath_pain =
 void () shalrath_die = 
 {
     
-    if(self.health < -90.000)
+    if(self.health < -90)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowHead("progs/h_shal.mdl", self.health);
@@ -680,9 +680,9 @@ void () ShalMissile =
     dist = vlen(self.enemy.origin - self.origin);
     flytime = dist * 0.002;
     
-    if(flytime < 0.100)
+    if(flytime < 0.1)
     {
-        flytime = 0.100;
+        flytime = 0.1;
     }
     
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -694,7 +694,7 @@ void () ShalMissile =
     setmodel(missile, "progs/v_spike.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
     missile.origin = self.origin + '0.000 0.000 10.000';
-    missile.velocity = dir * 400.000;
+    missile.velocity = dir * 400;
     missile.avelocity = '300.000 300.000 300.000';
     missile.nextthink = flytime + time;
     missile.think = ShalHome;
@@ -750,14 +750,14 @@ void () ShalHome =
     dir = normalize(vtemp - self.origin);
     if(skill == MOVETYPE_WALK)
     {
-        self.velocity = dir * 350.000;
+        self.velocity = dir * 350;
     }
     else
     {
-        self.velocity = dir * 250.000;
+        self.velocity = dir * 250;
     }
     
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
     self.think = ShalHome;
 };
 
@@ -827,10 +827,10 @@ void () ShalMissileTouch =
     
     if(other.classname == "monster_zombie")
     {
-        T_Damage(other, self, self, 110.000);
+        T_Damage(other, self, self, 110);
     }
     
-    T_RadiusDamage(self, self.owner, 40.000, world);
+    T_RadiusDamage(self, self.owner, 40, world);
     sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
@@ -924,7 +924,7 @@ void () monster_shalrath =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/shalrath.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = 400.000;
+    self.health = 400;
     self.th_stand = shal_stand;
     self.th_walk = shal_walk1;
     self.th_run = shal_run1;
@@ -932,6 +932,6 @@ void () monster_shalrath =
     self.th_pain = shalrath_pain;
     self.th_missile = shal_attack1;
     self.think = walkmonster_start;
-    self.nextthink = (time + 0.100) + (random() * 0.100);
+    self.nextthink = (time + 0.1) + (random() * 0.1);
 };
 

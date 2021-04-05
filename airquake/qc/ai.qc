@@ -20,15 +20,15 @@ float sight_entity_time;
 float (float v) anglemod = 
 {
     
-    while(v >= 360.000)
+    while(v >= 360)
     {
-        v = v - 360.000;
+        v = v - 360;
     }
     
     
-    while(v < 0.000)
+    while(v < 0)
     {
-        v = v + 360.000;
+        v = v + 360;
     }
     
     return v;
@@ -84,7 +84,7 @@ void () movetarget_f =
 void () path_corner = 
 {
     self.think = movetarget_f;
-    self.nextthink = time + 0.200;
+    self.nextthink = time + 0.2;
 };
 
 // t_movetarget
@@ -215,9 +215,9 @@ void () t_movetarget =
     
     if((other.enemy != world) && (other.classname == "monster_drone2"))
     {
-        v2 = normalize((other.enemy.origin + ((other.enemy.mins + other.enemy.maxs) * 0.500)) - other.origin);
+        v2 = normalize((other.enemy.origin + ((other.enemy.mins + other.enemy.maxs) * 0.5)) - other.origin);
         temp = find(world, noise, other.noise);
-        mr = 0.000;
+        mr = 0;
         
         while(temp)
         {
@@ -274,7 +274,7 @@ void () t_movetarget =
     
     if(!self.movetarget)
     {
-        self.pausetime = time + 999999.000;
+        self.pausetime = time + 999999;
         self.th_stand();
         return;
     }
@@ -322,33 +322,33 @@ float (entity targ) range =
     local vector spot2;
     local float r;
     spot1 = self.origin + self.view_ofs;
-    spot2 = (targ.origin + ((targ.mins + targ.maxs) * 0.500)) + targ.view_ofs;
+    spot2 = (targ.origin + ((targ.mins + targ.maxs) * 0.5)) + targ.view_ofs;
     r = vlen(spot1 - spot2);
     
-    if(r < 250.000)
+    if(r < 250)
     {
         return RANGE_MELEE;
     }
     
     
-    if(r < 500.000)
+    if(r < 500)
     {
         return RANGE_NEAR;
     }
     
     
-    if(r < 1000.000)
+    if(r < 1000)
     {
         return RANGE_MID;
     }
     
-    if(r < 3000.000)
+    if(r < 3000)
     {
         return RANGE_FAR;
     }
     else
     {
-        return 4.000;
+        return 4;
     }
     
 };
@@ -389,7 +389,7 @@ float (entity targ) visible =
     local vector spot1;
     local vector spot2;
     spot1 = self.origin + self.view_ofs;
-    spot2 = (targ.origin + ((targ.mins + targ.maxs) * 0.500)) + targ.view_ofs;
+    spot2 = (targ.origin + ((targ.mins + targ.maxs) * 0.5)) + targ.view_ofs;
     traceline(spot1, spot2, TRUE, self);
     
     if(trace_inopen && trace_inwater)
@@ -404,7 +404,7 @@ float (entity targ) visible =
     }
     
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
@@ -438,7 +438,7 @@ float (entity targ) infront =
     vec = normalize(targ.origin - self.origin);
     dot = vec * v_forward;
     
-    if(dot > 0.300)
+    if(dot > 0.3)
     {
         return TRUE;
     }
@@ -473,8 +473,8 @@ void () HuntTarget =
     self.goalentity = self.enemy;
     self.think = self.th_run;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
-    self.nextthink = time + 0.100;
-    SUB_AttackFinished(1.000);
+    self.nextthink = time + 0.1;
+    SUB_AttackFinished(1);
 };
 
 // SightSound
@@ -509,7 +509,7 @@ void () FoundTarget =
         sight_entity_time = time;
     }
     
-    self.show_hostile = time + 1.000;
+    self.show_hostile = time + 1;
     SightSound();
     HuntTarget();
 };
@@ -702,7 +702,7 @@ float () FindTarget =
         
     }
     
-    if((sight_entity_time >= (time - 0.100)) && (!(self.spawnflags & 1.000)))
+    if((sight_entity_time >= (time - 0.1)) && (!(self.spawnflags & 1)))
     {
         client = sight_entity;
         
@@ -720,7 +720,7 @@ float () FindTarget =
     }
     else
     {
-        mr = 10000.000;
+        mr = 10000;
         
         if(self.enemy)
         {
@@ -734,7 +734,7 @@ float () FindTarget =
         
         client = world;
         e = checkcli(teststr);
-        org = e.origin + ((e.mins + e.maxs) * 0.500);
+        org = e.origin + ((e.mins + e.maxs) * 0.5);
         r = vlen(org - self.origin);
         
         if(r < mr)
@@ -788,7 +788,7 @@ float () FindTarget =
         }
         
         
-        if(client.pdmg > (client.health * 1.500))
+        if(client.pdmg > (client.health * 1.5))
         {
             return FALSE;
         }
@@ -805,7 +805,7 @@ float () FindTarget =
         }
         
         
-        if(r == 4.000)
+        if(r == 4)
         {
             return FALSE;
         }
@@ -878,7 +878,7 @@ void (float dist) ai_forward =
 // OP_DONE	0	0	0
 void (float dist) ai_back = 
 {
-    walkmove(self.angles_y + 180.000, dist);
+    walkmove(self.angles_y + 180, dist);
 };
 
 // ai_pain
@@ -1015,21 +1015,21 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = 0.000;
-    newdir_y = 0.000 - trace_plane_normal_x;
-    newdir_z = 0.000;
-    if((dir * newdir) > 0.000)
+    newdir_x = 0;
+    newdir_y = 0 - trace_plane_normal_x;
+    newdir_z = 0;
+    if((dir * newdir) > 0)
     {
-        dir_x = 0.000 - 0.000;
+        dir_x = 0 - 0;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = 0.000;
-        dir_y = 0.000 - trace_plane_normal_x;
+        dir_x = 0;
+        dir_y = 0 - trace_plane_normal_x;
     }
     
-    dir_z = 0.000;
+    dir_z = 0;
     self.ideal_yaw = vectoyaw(dir);
 };
 
@@ -1053,7 +1053,7 @@ float () FacingIdeal =
     local float delta;
     delta = anglemod(self.angles_y - self.ideal_yaw);
     
-    if((delta > 45.000) && (delta < 315.000))
+    if((delta > 45) && (delta < 315))
     {
         return FALSE;
     }
@@ -1164,11 +1164,11 @@ void () ai_run_slide =
     ChangeYaw();
     if(self.lefty)
     {
-        ofs = 90.000;
+        ofs = 90;
     }
     else
     {
-        ofs = -90.000;
+        ofs = -90;
     }
     
     
@@ -1177,7 +1177,7 @@ void () ai_run_slide =
         return;
     }
     
-    self.lefty = 1.000 - self.lefty;
+    self.lefty = 1 - self.lefty;
     walkmove(self.ideal_yaw - ofs, movedist);
 };
 
@@ -1271,10 +1271,10 @@ void (float dist) ai_run =
     local float ang_ceil;
     movedist = dist;
     
-    if(self.enemy.health <= 0.000)
+    if(self.enemy.health <= 0)
     {
         self.enemy = world;
-        if(self.oldenemy.health > 0.000)
+        if(self.oldenemy.health > 0)
         {
             self.enemy = self.oldenemy;
             HuntTarget();
@@ -1295,12 +1295,12 @@ void (float dist) ai_run =
         
     }
     
-    self.show_hostile = time + 1.000;
+    self.show_hostile = time + 1;
     enemy_vis = visible(self.enemy);
     
     if(enemy_vis)
     {
-        self.search_time = time + 5.000;
+        self.search_time = time + 5;
     }
     
     

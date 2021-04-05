@@ -1,8 +1,8 @@
-float DOOR_START_OPEN = 1.000;
-float DOOR_DONT_LINK = 4.000;
-float DOOR_GOLD_KEY = 8.000;
-float DOOR_SILVER_KEY = 16.000;
-float DOOR_TOGGLE = 32.000;
+float DOOR_START_OPEN = 1;
+float DOOR_DONT_LINK = 4;
+float DOOR_GOLD_KEY = 8;
+float DOOR_SILVER_KEY = 16;
+float DOOR_TOGGLE = 32;
 void () door_go_down;
 void () door_go_up;
 // door_blocked
@@ -979,13 +979,13 @@ void () LinkDoors =
             }
             
             
-            if(t.mins_y < 0.000)
+            if(t.mins_y < 0)
             {
                 cmins_y = t.mins_y;
             }
             
             
-            if(t.mins_z < 0.000)
+            if(t.mins_z < 0)
             {
                 cmins_z = t.mins_z;
             }
@@ -997,13 +997,13 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs_y > 0.000)
+            if(t.maxs_y > 0)
             {
                 cmaxs_y = t.maxs_y;
             }
             
             
-            if(t.maxs_z > 0.000)
+            if(t.maxs_z > 0)
             {
                 cmaxs_z = t.maxs_z;
             }
@@ -1365,7 +1365,7 @@ void () func_door =
     self.touch = door_touch;
     self.th_weight = doorweight;
     self.think = LinkDoors;
-    self.nextthink = self.ltime + 0.100;
+    self.nextthink = self.ltime + 0.1;
 };
 
 void () fd_secret_move1;
@@ -1375,11 +1375,11 @@ void () fd_secret_move4;
 void () fd_secret_move5;
 void () fd_secret_move6;
 void () fd_secret_done;
-float SECRET_OPEN_ONCE = 1.000;
-float SECRET_1ST_LEFT = 2.000;
-float SECRET_1ST_DOWN = 4.000;
-float SECRET_NO_SHOOT = 8.000;
-float SECRET_YES_SHOOT = 16.000;
+float SECRET_OPEN_ONCE = 1;
+float SECRET_1ST_LEFT = 2;
+float SECRET_1ST_DOWN = 4;
+float SECRET_NO_SHOOT = 8;
+float SECRET_YES_SHOOT = 16;
 // fd_secret_use
 // function begins at statement 10203, parm_start=6698
 // OP_ADDRESS	28	152	6699
@@ -1488,7 +1488,7 @@ float SECRET_YES_SHOOT = 16.000;
 void () fd_secret_use = 
 {
     local float temp;
-    self.health = 10000.000;
+    self.health = 10000;
     
     if(self.origin != self.oldorigin)
     {
@@ -1506,7 +1506,7 @@ void () fd_secret_use =
     
     self.velocity = VEC_ORIGIN;
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
-    self.nextthink = self.ltime + 0.100;
+    self.nextthink = self.ltime + 0.1;
     temp = TRUE - (self.spawnflags & SECRET_1ST_LEFT);
     makevectors(self.mangle);
     
@@ -1729,7 +1729,7 @@ void () fd_secret_done =
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
-        self.health = 10000.000;
+        self.health = 10000;
         self.takedamage = DAMAGE_YES;
         self.th_pain = fd_secret_use;
     }
@@ -1761,7 +1761,7 @@ void () secret_blocked =
         return;
     }
     
-    self.attack_finished = time + 0.500;
+    self.attack_finished = time + 0.5;
     T_Damage(other, self, self, self.dmg);
 };
 
@@ -1989,12 +1989,12 @@ void () func_door_secret =
     self.touch = secret_touch;
     self.th_weight = doorweight;
     self.blocked = secret_blocked;
-    self.speed = 50.000;
+    self.speed = 50;
     self.use = fd_secret_use;
     
     if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
-        self.health = 10000.000;
+        self.health = 10000;
         self.takedamage = DAMAGE_YES;
         self.th_pain = fd_secret_use;
     }

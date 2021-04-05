@@ -7,7 +7,7 @@ entity shub;
 // function begins at statement 21065, parm_start=11984
 // OP_STATE	650	11984	0
 // OP_DONE	0	0	0
-void () old_idle1 = [0.000, old_idle2]
+void () old_idle1 = [0, old_idle2]
 {
 };
 
@@ -15,7 +15,7 @@ void () old_idle1 = [0.000, old_idle2]
 // function begins at statement 21067, parm_start=11985
 // OP_STATE	708	11985	0
 // OP_DONE	0	0	0
-void () old_idle2 = [1.000, old_idle3]
+void () old_idle2 = [1, old_idle3]
 {
 };
 
@@ -23,7 +23,7 @@ void () old_idle2 = [1.000, old_idle3]
 // function begins at statement 21069, parm_start=11986
 // OP_STATE	929	11986	0
 // OP_DONE	0	0	0
-void () old_idle3 = [2.000, old_idle4]
+void () old_idle3 = [2, old_idle4]
 {
 };
 
@@ -31,7 +31,7 @@ void () old_idle3 = [2.000, old_idle4]
 // function begins at statement 21071, parm_start=11987
 // OP_STATE	819	11987	0
 // OP_DONE	0	0	0
-void () old_idle4 = [3.000, old_idle5]
+void () old_idle4 = [3, old_idle5]
 {
 };
 
@@ -39,7 +39,7 @@ void () old_idle4 = [3.000, old_idle5]
 // function begins at statement 21073, parm_start=11988
 // OP_STATE	1835	11988	0
 // OP_DONE	0	0	0
-void () old_idle5 = [4.000, old_idle6]
+void () old_idle5 = [4, old_idle6]
 {
 };
 
@@ -47,7 +47,7 @@ void () old_idle5 = [4.000, old_idle6]
 // function begins at statement 21075, parm_start=11989
 // OP_STATE	1660	11989	0
 // OP_DONE	0	0	0
-void () old_idle6 = [5.000, old_idle7]
+void () old_idle6 = [5, old_idle7]
 {
 };
 
@@ -55,7 +55,7 @@ void () old_idle6 = [5.000, old_idle7]
 // function begins at statement 21077, parm_start=11990
 // OP_STATE	2107	11990	0
 // OP_DONE	0	0	0
-void () old_idle7 = [6.000, old_idle8]
+void () old_idle7 = [6, old_idle8]
 {
 };
 
@@ -63,7 +63,7 @@ void () old_idle7 = [6.000, old_idle8]
 // function begins at statement 21079, parm_start=11991
 // OP_STATE	2307	11991	0
 // OP_DONE	0	0	0
-void () old_idle8 = [7.000, old_idle9]
+void () old_idle8 = [7, old_idle9]
 {
 };
 
@@ -71,7 +71,7 @@ void () old_idle8 = [7.000, old_idle9]
 // function begins at statement 21081, parm_start=11992
 // OP_STATE	1502	11992	0
 // OP_DONE	0	0	0
-void () old_idle9 = [8.000, old_idle10]
+void () old_idle9 = [8, old_idle10]
 {
 };
 
@@ -79,7 +79,7 @@ void () old_idle9 = [8.000, old_idle10]
 // function begins at statement 21083, parm_start=11993
 // OP_STATE	3556	11993	0
 // OP_DONE	0	0	0
-void () old_idle10 = [9.000, old_idle11]
+void () old_idle10 = [9, old_idle11]
 {
 };
 
@@ -87,7 +87,7 @@ void () old_idle10 = [9.000, old_idle11]
 // function begins at statement 21085, parm_start=11994
 // OP_STATE	1931	11994	0
 // OP_DONE	0	0	0
-void () old_idle11 = [10.000, old_idle12]
+void () old_idle11 = [10, old_idle12]
 {
 };
 
@@ -95,7 +95,7 @@ void () old_idle11 = [10.000, old_idle12]
 // function begins at statement 21087, parm_start=11995
 // OP_STATE	3931	11995	0
 // OP_DONE	0	0	0
-void () old_idle12 = [11.000, old_idle13]
+void () old_idle12 = [11, old_idle13]
 {
 };
 
@@ -103,7 +103,7 @@ void () old_idle12 = [11.000, old_idle13]
 // function begins at statement 21089, parm_start=11996
 // OP_STATE	2532	11996	0
 // OP_DONE	0	0	0
-void () old_idle13 = [12.000, old_idle14]
+void () old_idle13 = [12, old_idle14]
 {
 };
 
@@ -111,7 +111,7 @@ void () old_idle13 = [12.000, old_idle14]
 // function begins at statement 21091, parm_start=11997
 // OP_STATE	8427	11997	0
 // OP_DONE	0	0	0
-void () old_idle14 = [13.000, old_idle15]
+void () old_idle14 = [13, old_idle15]
 {
 };
 
@@ -119,7 +119,7 @@ void () old_idle14 = [13.000, old_idle15]
 // function begins at statement 21093, parm_start=11998
 // OP_STATE	3153	11998	0
 // OP_DONE	0	0	0
-void () old_idle15 = [14.000, old_idle16]
+void () old_idle15 = [14, old_idle16]
 {
 };
 
@@ -127,7 +127,7 @@ void () old_idle15 = [14.000, old_idle16]
 // function begins at statement 21095, parm_start=11999
 // OP_STATE	2157	11999	0
 // OP_DONE	0	0	0
-void () old_idle16 = [15.000, old_idle17]
+void () old_idle16 = [15, old_idle17]
 {
 };
 
@@ -135,7 +135,7 @@ void () old_idle16 = [15.000, old_idle17]
 // function begins at statement 21097, parm_start=12000
 // OP_STATE	3273	12000	0
 // OP_DONE	0	0	0
-void () old_idle17 = [16.000, old_idle18]
+void () old_idle17 = [16, old_idle18]
 {
 };
 
@@ -143,7 +143,7 @@ void () old_idle17 = [16.000, old_idle18]
 // function begins at statement 21099, parm_start=12001
 // OP_STATE	5588	12001	0
 // OP_DONE	0	0	0
-void () old_idle18 = [17.000, old_idle19]
+void () old_idle18 = [17, old_idle19]
 {
 };
 
@@ -151,7 +151,7 @@ void () old_idle18 = [17.000, old_idle19]
 // function begins at statement 21101, parm_start=12002
 // OP_STATE	3576	12002	0
 // OP_DONE	0	0	0
-void () old_idle19 = [18.000, old_idle20]
+void () old_idle19 = [18, old_idle20]
 {
 };
 
@@ -159,7 +159,7 @@ void () old_idle19 = [18.000, old_idle20]
 // function begins at statement 21103, parm_start=12003
 // OP_STATE	8435	12003	0
 // OP_DONE	0	0	0
-void () old_idle20 = [19.000, old_idle21]
+void () old_idle20 = [19, old_idle21]
 {
 };
 
@@ -167,7 +167,7 @@ void () old_idle20 = [19.000, old_idle21]
 // function begins at statement 21105, parm_start=12004
 // OP_STATE	1017	12004	0
 // OP_DONE	0	0	0
-void () old_idle21 = [20.000, old_idle22]
+void () old_idle21 = [20, old_idle22]
 {
 };
 
@@ -175,7 +175,7 @@ void () old_idle21 = [20.000, old_idle22]
 // function begins at statement 21107, parm_start=12005
 // OP_STATE	8438	12005	0
 // OP_DONE	0	0	0
-void () old_idle22 = [21.000, old_idle23]
+void () old_idle22 = [21, old_idle23]
 {
 };
 
@@ -183,7 +183,7 @@ void () old_idle22 = [21.000, old_idle23]
 // function begins at statement 21109, parm_start=12006
 // OP_STATE	8440	12006	0
 // OP_DONE	0	0	0
-void () old_idle23 = [22.000, old_idle24]
+void () old_idle23 = [22, old_idle24]
 {
 };
 
@@ -191,7 +191,7 @@ void () old_idle23 = [22.000, old_idle24]
 // function begins at statement 21111, parm_start=12007
 // OP_STATE	8442	12007	0
 // OP_DONE	0	0	0
-void () old_idle24 = [23.000, old_idle25]
+void () old_idle24 = [23, old_idle25]
 {
 };
 
@@ -199,7 +199,7 @@ void () old_idle24 = [23.000, old_idle25]
 // function begins at statement 21113, parm_start=12008
 // OP_STATE	4969	12008	0
 // OP_DONE	0	0	0
-void () old_idle25 = [24.000, old_idle26]
+void () old_idle25 = [24, old_idle26]
 {
 };
 
@@ -207,7 +207,7 @@ void () old_idle25 = [24.000, old_idle26]
 // function begins at statement 21115, parm_start=12009
 // OP_STATE	2171	12009	0
 // OP_DONE	0	0	0
-void () old_idle26 = [25.000, old_idle27]
+void () old_idle26 = [25, old_idle27]
 {
 };
 
@@ -215,7 +215,7 @@ void () old_idle26 = [25.000, old_idle27]
 // function begins at statement 21117, parm_start=12010
 // OP_STATE	8446	12010	0
 // OP_DONE	0	0	0
-void () old_idle27 = [26.000, old_idle28]
+void () old_idle27 = [26, old_idle28]
 {
 };
 
@@ -223,7 +223,7 @@ void () old_idle27 = [26.000, old_idle28]
 // function begins at statement 21119, parm_start=12011
 // OP_STATE	8448	12011	0
 // OP_DONE	0	0	0
-void () old_idle28 = [27.000, old_idle29]
+void () old_idle28 = [27, old_idle29]
 {
 };
 
@@ -231,7 +231,7 @@ void () old_idle28 = [27.000, old_idle29]
 // function begins at statement 21121, parm_start=12012
 // OP_STATE	8450	12012	0
 // OP_DONE	0	0	0
-void () old_idle29 = [28.000, old_idle30]
+void () old_idle29 = [28, old_idle30]
 {
 };
 
@@ -239,7 +239,7 @@ void () old_idle29 = [28.000, old_idle30]
 // function begins at statement 21123, parm_start=12013
 // OP_STATE	5829	12013	0
 // OP_DONE	0	0	0
-void () old_idle30 = [29.000, old_idle31]
+void () old_idle30 = [29, old_idle31]
 {
 };
 
@@ -247,7 +247,7 @@ void () old_idle30 = [29.000, old_idle31]
 // function begins at statement 21125, parm_start=12014
 // OP_STATE	1004	12014	0
 // OP_DONE	0	0	0
-void () old_idle31 = [30.000, old_idle32]
+void () old_idle31 = [30, old_idle32]
 {
 };
 
@@ -255,7 +255,7 @@ void () old_idle31 = [30.000, old_idle32]
 // function begins at statement 21127, parm_start=12015
 // OP_STATE	3950	12015	0
 // OP_DONE	0	0	0
-void () old_idle32 = [31.000, old_idle33]
+void () old_idle32 = [31, old_idle33]
 {
 };
 
@@ -263,7 +263,7 @@ void () old_idle32 = [31.000, old_idle33]
 // function begins at statement 21129, parm_start=12016
 // OP_STATE	959	12016	0
 // OP_DONE	0	0	0
-void () old_idle33 = [32.000, old_idle34]
+void () old_idle33 = [32, old_idle34]
 {
 };
 
@@ -271,7 +271,7 @@ void () old_idle33 = [32.000, old_idle34]
 // function begins at statement 21131, parm_start=12017
 // OP_STATE	5835	12017	0
 // OP_DONE	0	0	0
-void () old_idle34 = [33.000, old_idle35]
+void () old_idle34 = [33, old_idle35]
 {
 };
 
@@ -279,7 +279,7 @@ void () old_idle34 = [33.000, old_idle35]
 // function begins at statement 21133, parm_start=12018
 // OP_STATE	5837	12018	0
 // OP_DONE	0	0	0
-void () old_idle35 = [34.000, old_idle36]
+void () old_idle35 = [34, old_idle36]
 {
 };
 
@@ -287,7 +287,7 @@ void () old_idle35 = [34.000, old_idle36]
 // function begins at statement 21135, parm_start=12019
 // OP_STATE	3325	12019	0
 // OP_DONE	0	0	0
-void () old_idle36 = [35.000, old_idle37]
+void () old_idle36 = [35, old_idle37]
 {
 };
 
@@ -295,7 +295,7 @@ void () old_idle36 = [35.000, old_idle37]
 // function begins at statement 21137, parm_start=12020
 // OP_STATE	5820	12020	0
 // OP_DONE	0	0	0
-void () old_idle37 = [36.000, old_idle38]
+void () old_idle37 = [36, old_idle38]
 {
 };
 
@@ -303,7 +303,7 @@ void () old_idle37 = [36.000, old_idle38]
 // function begins at statement 21139, parm_start=12021
 // OP_STATE	5822	12021	0
 // OP_DONE	0	0	0
-void () old_idle38 = [37.000, old_idle39]
+void () old_idle38 = [37, old_idle39]
 {
 };
 
@@ -311,7 +311,7 @@ void () old_idle38 = [37.000, old_idle39]
 // function begins at statement 21141, parm_start=12022
 // OP_STATE	5824	12022	0
 // OP_DONE	0	0	0
-void () old_idle39 = [38.000, old_idle40]
+void () old_idle39 = [38, old_idle40]
 {
 };
 
@@ -319,7 +319,7 @@ void () old_idle39 = [38.000, old_idle40]
 // function begins at statement 21143, parm_start=12023
 // OP_STATE	5826	12023	0
 // OP_DONE	0	0	0
-void () old_idle40 = [39.000, old_idle41]
+void () old_idle40 = [39, old_idle41]
 {
 };
 
@@ -327,7 +327,7 @@ void () old_idle40 = [39.000, old_idle41]
 // function begins at statement 21145, parm_start=12024
 // OP_STATE	2007	12024	0
 // OP_DONE	0	0	0
-void () old_idle41 = [40.000, old_idle42]
+void () old_idle41 = [40, old_idle42]
 {
 };
 
@@ -335,7 +335,7 @@ void () old_idle41 = [40.000, old_idle42]
 // function begins at statement 21147, parm_start=12025
 // OP_STATE	6160	12025	0
 // OP_DONE	0	0	0
-void () old_idle42 = [41.000, old_idle43]
+void () old_idle42 = [41, old_idle43]
 {
 };
 
@@ -343,7 +343,7 @@ void () old_idle42 = [41.000, old_idle43]
 // function begins at statement 21149, parm_start=12026
 // OP_STATE	6162	12026	0
 // OP_DONE	0	0	0
-void () old_idle43 = [42.000, old_idle44]
+void () old_idle43 = [42, old_idle44]
 {
 };
 
@@ -351,7 +351,7 @@ void () old_idle43 = [42.000, old_idle44]
 // function begins at statement 21151, parm_start=12027
 // OP_STATE	6164	12027	0
 // OP_DONE	0	0	0
-void () old_idle44 = [43.000, old_idle45]
+void () old_idle44 = [43, old_idle45]
 {
 };
 
@@ -359,7 +359,7 @@ void () old_idle44 = [43.000, old_idle45]
 // function begins at statement 21153, parm_start=12028
 // OP_STATE	6166	12028	0
 // OP_DONE	0	0	0
-void () old_idle45 = [44.000, old_idle46]
+void () old_idle45 = [44, old_idle46]
 {
 };
 
@@ -367,7 +367,7 @@ void () old_idle45 = [44.000, old_idle46]
 // function begins at statement 21155, parm_start=12029
 // OP_STATE	1572	11983	0
 // OP_DONE	0	0	0
-void () old_idle46 = [45.000, old_idle1]
+void () old_idle46 = [45, old_idle1]
 {
 };
 
@@ -378,9 +378,9 @@ void () old_idle46 = [45.000, old_idle1]
 // OP_STORE_V	4333	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash1 = [46.000, old_thrash2]
+void () old_thrash1 = [46, old_thrash2]
 {
-    lightstyle(0.000, "m");
+    lightstyle(0, "m");
 };
 
 // old_thrash2
@@ -390,9 +390,9 @@ void () old_thrash1 = [46.000, old_thrash2]
 // OP_STORE_V	12032	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash2 = [47.000, old_thrash3]
+void () old_thrash2 = [47, old_thrash3]
 {
-    lightstyle(0.000, "k");
+    lightstyle(0, "k");
 };
 
 // old_thrash3
@@ -402,9 +402,9 @@ void () old_thrash2 = [47.000, old_thrash3]
 // OP_STORE_V	12032	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash3 = [48.000, old_thrash4]
+void () old_thrash3 = [48, old_thrash4]
 {
-    lightstyle(0.000, "k");
+    lightstyle(0, "k");
 };
 
 // old_thrash4
@@ -414,9 +414,9 @@ void () old_thrash3 = [48.000, old_thrash4]
 // OP_STORE_V	12035	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash4 = [49.000, old_thrash5]
+void () old_thrash4 = [49, old_thrash5]
 {
-    lightstyle(0.000, "i");
+    lightstyle(0, "i");
 };
 
 // old_thrash5
@@ -426,9 +426,9 @@ void () old_thrash4 = [49.000, old_thrash5]
 // OP_STORE_V	12037	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash5 = [50.000, old_thrash6]
+void () old_thrash5 = [50, old_thrash6]
 {
-    lightstyle(0.000, "g");
+    lightstyle(0, "g");
 };
 
 // old_thrash6
@@ -438,9 +438,9 @@ void () old_thrash5 = [50.000, old_thrash6]
 // OP_STORE_V	12039	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash6 = [51.000, old_thrash7]
+void () old_thrash6 = [51, old_thrash7]
 {
-    lightstyle(0.000, "e");
+    lightstyle(0, "e");
 };
 
 // old_thrash7
@@ -450,9 +450,9 @@ void () old_thrash6 = [51.000, old_thrash7]
 // OP_STORE_V	12041	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash7 = [52.000, old_thrash8]
+void () old_thrash7 = [52, old_thrash8]
 {
-    lightstyle(0.000, "c");
+    lightstyle(0, "c");
 };
 
 // old_thrash8
@@ -462,9 +462,9 @@ void () old_thrash7 = [52.000, old_thrash8]
 // OP_STORE_V	4346	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash8 = [53.000, old_thrash9]
+void () old_thrash8 = [53, old_thrash9]
 {
-    lightstyle(0.000, "a");
+    lightstyle(0, "a");
 };
 
 // old_thrash9
@@ -474,9 +474,9 @@ void () old_thrash8 = [53.000, old_thrash9]
 // OP_STORE_V	12041	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash9 = [54.000, old_thrash10]
+void () old_thrash9 = [54, old_thrash10]
 {
-    lightstyle(0.000, "c");
+    lightstyle(0, "c");
 };
 
 // old_thrash10
@@ -486,9 +486,9 @@ void () old_thrash9 = [54.000, old_thrash10]
 // OP_STORE_V	12039	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash10 = [55.000, old_thrash11]
+void () old_thrash10 = [55, old_thrash11]
 {
-    lightstyle(0.000, "e");
+    lightstyle(0, "e");
 };
 
 // old_thrash11
@@ -498,9 +498,9 @@ void () old_thrash10 = [55.000, old_thrash11]
 // OP_STORE_V	12037	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash11 = [56.000, old_thrash12]
+void () old_thrash11 = [56, old_thrash12]
 {
-    lightstyle(0.000, "g");
+    lightstyle(0, "g");
 };
 
 // old_thrash12
@@ -510,9 +510,9 @@ void () old_thrash11 = [56.000, old_thrash12]
 // OP_STORE_V	12035	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash12 = [57.000, old_thrash13]
+void () old_thrash12 = [57, old_thrash13]
 {
-    lightstyle(0.000, "i");
+    lightstyle(0, "i");
 };
 
 // old_thrash13
@@ -522,9 +522,9 @@ void () old_thrash12 = [57.000, old_thrash13]
 // OP_STORE_V	12032	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash13 = [59.000, old_thrash14]
+void () old_thrash13 = [59, old_thrash14]
 {
-    lightstyle(0.000, "k");
+    lightstyle(0, "k");
 };
 
 // old_thrash14
@@ -534,9 +534,9 @@ void () old_thrash13 = [59.000, old_thrash14]
 // OP_STORE_V	4333	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash14 = [60.000, old_thrash15]
+void () old_thrash14 = [60, old_thrash15]
 {
-    lightstyle(0.000, "m");
+    lightstyle(0, "m");
 };
 
 // old_thrash15
@@ -555,12 +555,12 @@ void () old_thrash14 = [60.000, old_thrash15]
 // OP_ADDRESS	28	148	12055
 // OP_STOREP_FNC	12029	12055	0
 // OP_DONE	0	0	0
-void () old_thrash15 = [61.000, old_thrash16]
+void () old_thrash15 = [61, old_thrash16]
 {
-    lightstyle(0.000, "m");
-    self.cnt = self.cnt + 1.000;
+    lightstyle(0, "m");
+    self.cnt = self.cnt + 1;
     
-    if(self.cnt != 3.000)
+    if(self.cnt != 3)
     {
         self.think = old_thrash1;
     }
@@ -574,9 +574,9 @@ void () old_thrash15 = [61.000, old_thrash16]
 // OP_STORE_V	12037	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash16 = [62.000, old_thrash17]
+void () old_thrash16 = [62, old_thrash17]
 {
-    lightstyle(0.000, "g");
+    lightstyle(0, "g");
 };
 
 // old_thrash17
@@ -586,9 +586,9 @@ void () old_thrash16 = [62.000, old_thrash17]
 // OP_STORE_V	12041	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash17 = [63.000, old_thrash18]
+void () old_thrash17 = [63, old_thrash18]
 {
-    lightstyle(0.000, "c");
+    lightstyle(0, "c");
 };
 
 // old_thrash18
@@ -598,9 +598,9 @@ void () old_thrash17 = [63.000, old_thrash18]
 // OP_STORE_V	12059	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash18 = [64.000, old_thrash19]
+void () old_thrash18 = [64, old_thrash19]
 {
-    lightstyle(0.000, "b");
+    lightstyle(0, "b");
 };
 
 // old_thrash19
@@ -610,9 +610,9 @@ void () old_thrash18 = [64.000, old_thrash19]
 // OP_STORE_V	4346	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void () old_thrash19 = [65.000, old_thrash20]
+void () old_thrash19 = [65, old_thrash20]
 {
-    lightstyle(0.000, "a");
+    lightstyle(0, "a");
 };
 
 // old_thrash20
@@ -620,7 +620,7 @@ void () old_thrash19 = [65.000, old_thrash20]
 // OP_STATE	6094	12060	0
 // OP_CALL0	11981	0	0
 // OP_DONE	0	0	0
-void () old_thrash20 = [66.000, old_thrash20]
+void () old_thrash20 = [66, old_thrash20]
 {
     finale_4();
 };
@@ -709,8 +709,8 @@ void () finale_1 =
     local entity pos;
     local entity pl;
     local entity timer;
-    intermission_exittime = time + 10000000.000;
-    intermission_running = 1.000;
+    intermission_exittime = time + 10000000;
+    intermission_running = 1;
     pos = find(world, classname, "info_intermission");
     
     if(!pos)
@@ -736,17 +736,17 @@ void () finale_1 =
         pl.angles = other.v_angle = pos.mangle;
         pl.fixangle = TRUE;
         pl.map = self.map;
-        pl.nextthink = time + 0.500;
+        pl.nextthink = time + 0.5;
         pl.takedamage = DAMAGE_NO;
         pl.solid = SOLID_NOT;
         pl.movetype = MOVETYPE_NONE;
-        pl.modelindex = 0.000;
+        pl.modelindex = 0;
         setorigin(pl, pos.origin);
         pl = find(pl, classname, "player");
     }
     
     timer = spawn();
-    timer.nextthink = time + 1.000;
+    timer.nextthink = time + 1;
     timer.think = finale_2;
 };
 
@@ -789,10 +789,10 @@ void () finale_2 =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, o_x);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    WriteCoord(MSG_BROADCAST, 0.000);
-    sound(shub, CHAN_VOICE, "misc/r_tele1.wav", 1.000, ATTN_NORM);
-    self.nextthink = time + 2.000;
+    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, 0);
+    sound(shub, CHAN_VOICE, "misc/r_tele1.wav", 1, ATTN_NORM);
+    self.nextthink = time + 2;
     self.think = finale_3;
 };
 
@@ -813,8 +813,8 @@ void () finale_2 =
 void () finale_3 = 
 {
     shub.think = old_thrash1;
-    sound(shub, CHAN_VOICE, "boss2/death.wav", 1.000, ATTN_NORM);
-    lightstyle(0.000, "abcdefghijklmlkjihgfedcb");
+    sound(shub, CHAN_VOICE, "boss2/death.wav", 1, ATTN_NORM);
+    lightstyle(0, "abcdefghijklmlkjihgfedcb");
 };
 
 // finale_4
@@ -914,48 +914,48 @@ void () finale_4 =
     local float z;
     local float r;
     local entity n;
-    sound(self, CHAN_VOICE, "boss2/pop2.wav", 1.000, ATTN_NORM);
+    sound(self, CHAN_VOICE, "boss2/pop2.wav", 1, ATTN_NORM);
     oldo = self.origin;
-    z = 16.000;
+    z = 16;
     
-    while(z <= 144.000)
+    while(z <= 144)
     {
-        x = -64.000;
+        x = -64;
         
-        while(x <= 64.000)
+        while(x <= 64)
         {
-            y = -64.000;
+            y = -64;
             
-            while(y <= 64.000)
+            while(y <= 64)
             {
                 self.origin_x = oldo_x + x;
-                self.origin_y = 0.000 + y;
-                self.origin_z = 0.000 + z;
+                self.origin_y = 0 + y;
+                self.origin_z = 0 + z;
                 r = random();
-                if(r < 0.300)
+                if(r < 0.3)
                 {
-                    ThrowGib("progs/gib1.mdl", -999.000);
+                    ThrowGib("progs/gib1.mdl", -999);
                 }
                 else
                 {
-                    if(r < 0.600)
+                    if(r < 0.6)
                     {
-                        ThrowGib("progs/gib2.mdl", -999.000);
+                        ThrowGib("progs/gib2.mdl", -999);
                     }
                     else
                     {
-                        ThrowGib("progs/gib3.mdl", -999.000);
+                        ThrowGib("progs/gib3.mdl", -999);
                     }
                     
                 }
                 
-                y = y + 32.000;
+                y = y + 32;
             }
             
-            x = x + 32.000;
+            x = x + 32;
         }
         
-        z = z + 96.000;
+        z = z + 96;
     }
     
     WriteByte(MSG_ALL, SVC_FINALE);
@@ -965,12 +965,12 @@ void () finale_4 =
     oldo = oldo - '32.000 264.000 0.000';
     setorigin(n, oldo);
     n.angles = '0.000 290.000 0.000';
-    n.frame = 1.000;
+    n.frame = 1;
     remove(self);
     WriteByte(MSG_ALL, SVC_CDTRACK);
-    WriteByte(MSG_ALL, 3.000);
-    WriteByte(MSG_ALL, 3.000);
-    lightstyle(0.000, "m");
+    WriteByte(MSG_ALL, 3);
+    WriteByte(MSG_ALL, 3);
+    lightstyle(0, "m");
 };
 
 // nopain
@@ -980,7 +980,7 @@ void () finale_4 =
 // OP_DONE	0	0	0
 void () nopain = 
 {
-    self.health = 40000.000;
+    self.health = 40000;
 };
 
 // monster_oldone
@@ -1045,13 +1045,13 @@ void () monster_oldone =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/oldone.mdl");
     setsize(self, '-160.000 -128.000 -24.000', '160.000 128.000 256.000');
-    self.health = 40000.000;
+    self.health = 40000;
     self.think = old_idle1;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.takedamage = DAMAGE_YES;
     self.th_pain = nopain;
     self.th_die = finale_1;
     shub = self;
-    total_monsters = total_monsters + 1.000;
+    total_monsters = total_monsters + 1;
 };
 

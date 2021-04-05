@@ -37,7 +37,7 @@ void () monster_use =
     }
     
     
-    if(self.health <= 0.000)
+    if(self.health <= 0)
     {
         return;
     }
@@ -61,7 +61,7 @@ void () monster_use =
     }
     
     self.enemy = activator;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
     self.think = FoundTarget;
 };
 
@@ -214,10 +214,10 @@ void () walkmonster_start_go =
 {
     local string stemp;
     local entity etemp;
-    self.origin_z = self.origin_z + 1.000;
+    self.origin_z = self.origin_z + 1;
     droptofloor();
     
-    if(!walkmove(0.000, 0.000))
+    if(!walkmove(0, 0))
     {
         dprint("walkmonster in wall at: ");
         dprint(vtos(self.origin));
@@ -229,7 +229,7 @@ void () walkmonster_start_go =
     
     if(!self.yaw_speed)
     {
-        self.yaw_speed = 20.000;
+        self.yaw_speed = 20;
     }
     
     self.view_ofs = '0.000 0.000 25.000';
@@ -253,18 +253,18 @@ void () walkmonster_start_go =
         }
         else
         {
-            self.pausetime = 100000000.000;
+            self.pausetime = 100000000;
         }
         
         self.th_stand();
     }
     else
     {
-        self.pausetime = 100000000.000;
+        self.pausetime = 100000000;
         self.th_stand();
     }
     
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // walkmonster_start
@@ -282,9 +282,9 @@ void () walkmonster_start_go =
 // OP_DONE	0	0	0
 void () walkmonster_start = 
 {
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
     self.think = walkmonster_start_go;
-    total_monsters = total_monsters + 1.000;
+    total_monsters = total_monsters + 1;
 };
 
 // flymonster_start_go
@@ -373,7 +373,7 @@ void () flymonster_start_go =
     
     if(!self.yaw_speed)
     {
-        self.yaw_speed = 10.000;
+        self.yaw_speed = 10;
     }
     
     self.view_ofs = '0.000 0.000 25.000';
@@ -381,7 +381,7 @@ void () flymonster_start_go =
     self.flags = self.flags | FL_FLY;
     self.flags = self.flags | FL_MONSTER;
     
-    if(!walkmove(0.000, 0.000))
+    if(!walkmove(0, 0))
     {
         dprint("flymonster in wall at: ");
         dprint(vtos(self.origin));
@@ -405,14 +405,14 @@ void () flymonster_start_go =
         }
         else
         {
-            self.pausetime = 100000000.000;
+            self.pausetime = 100000000;
         }
         
         self.th_stand();
     }
     else
     {
-        self.pausetime = 100000000.000;
+        self.pausetime = 100000000;
         self.th_stand();
     }
     
@@ -433,9 +433,9 @@ void () flymonster_start_go =
 // OP_DONE	0	0	0
 void () flymonster_start = 
 {
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
     self.think = flymonster_start_go;
-    total_monsters = total_monsters + 1.000;
+    total_monsters = total_monsters + 1;
 };
 
 // swimmonster_start_go
@@ -524,12 +524,12 @@ void () swimmonster_start_go =
     }
     
     self.takedamage = DAMAGE_AIM;
-    total_monsters = total_monsters + 1.000;
+    total_monsters = total_monsters + 1;
     self.ideal_yaw = self.angles * '0.000 1.000 0.000';
     
     if(!self.yaw_speed)
     {
-        self.yaw_speed = 10.000;
+        self.yaw_speed = 10;
     }
     
     self.view_ofs = '0.000 0.000 10.000';
@@ -552,11 +552,11 @@ void () swimmonster_start_go =
     }
     else
     {
-        self.pausetime = 100000000.000;
+        self.pausetime = 100000000;
         self.th_stand();
     }
     
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
 };
 
 // swimmonster_start
@@ -574,8 +574,8 @@ void () swimmonster_start_go =
 // OP_DONE	0	0	0
 void () swimmonster_start = 
 {
-    self.nextthink = self.nextthink + (random() * 0.500);
+    self.nextthink = self.nextthink + (random() * 0.5);
     self.think = swimmonster_start_go;
-    total_monsters = total_monsters + 1.000;
+    total_monsters = total_monsters + 1;
 };
 

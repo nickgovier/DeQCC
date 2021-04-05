@@ -23,15 +23,15 @@ float sight_entity_time;
 float (float v) anglemod = 
 {
     
-    while(v >= 360.000)
+    while(v >= 360)
     {
-        v = v - 360.000;
+        v = v - 360;
     }
     
     
-    while(v < 0.000)
+    while(v < 0)
     {
-        v = v + 360.000;
+        v = v + 360;
     }
     
     return v;
@@ -144,7 +144,7 @@ void () t_movetarget =
     
     if(self.classname == "monster_ogre")
     {
-        sound(self, CHAN_VOICE, "ogre/ogdrag.wav", 1.000, ATTN_IDLE);
+        sound(self, CHAN_VOICE, "ogre/ogdrag.wav", 1, ATTN_IDLE);
     }
     
     self.goalentity = self.movetarget = find(world, targetname, other.target);
@@ -152,7 +152,7 @@ void () t_movetarget =
     
     if(!self.movetarget)
     {
-        self.pausetime = time + 999999.000;
+        self.pausetime = time + 999999;
         self.th_stand();
         return;
     }
@@ -193,19 +193,19 @@ float (entity targ) range =
     spot2 = targ.origin + targ.view_ofs;
     r = vlen(spot1 - spot2);
     
-    if(r < 120.000)
+    if(r < 120)
     {
         return RANGE_MELEE;
     }
     
     
-    if(r < 500.000)
+    if(r < 500)
     {
         return RANGE_NEAR;
     }
     
     
-    if(r < 1000.000)
+    if(r < 1000)
     {
         return RANGE_MID;
     }
@@ -250,7 +250,7 @@ float (entity targ) visible =
     }
     
     
-    if(trace_fraction == 1.000)
+    if(trace_fraction == 1)
     {
         return TRUE;
     }
@@ -284,7 +284,7 @@ float (entity targ) infront =
     vec = normalize(targ.origin - self.origin);
     dot = vec * v_forward;
     
-    if(dot > 0.300)
+    if(dot > 0.3)
     {
         return TRUE;
     }
@@ -319,8 +319,8 @@ void () HuntTarget =
     self.goalentity = self.enemy;
     self.think = self.th_run;
     self.ideal_yaw = vectoyaw(self.enemy.origin - self.origin);
-    self.nextthink = time + 0.100;
-    SUB_AttackFinished(1.000);
+    self.nextthink = time + 0.1;
+    SUB_AttackFinished(1);
 };
 
 // SightSound
@@ -492,86 +492,86 @@ void () SightSound =
     local float rsnd;
     if(self.classname == "monster_ogre")
     {
-        sound(self, CHAN_VOICE, "ogre/ogwake.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "ogre/ogwake.wav", 1, ATTN_NORM);
     }
     else
     {
         if(self.classname == "monster_knight")
         {
-            sound(self, CHAN_VOICE, "knight/ksight.wav", 1.000, ATTN_NORM);
+            sound(self, CHAN_VOICE, "knight/ksight.wav", 1, ATTN_NORM);
         }
         else
         {
             if(self.classname == "monster_shambler")
             {
-                sound(self, CHAN_VOICE, "shambler/ssight.wav", 1.000, ATTN_NORM);
+                sound(self, CHAN_VOICE, "shambler/ssight.wav", 1, ATTN_NORM);
             }
             else
             {
                 if(self.classname == "monster_demon1")
                 {
-                    sound(self, CHAN_VOICE, "demon/sight2.wav", 1.000, ATTN_NORM);
+                    sound(self, CHAN_VOICE, "demon/sight2.wav", 1, ATTN_NORM);
                 }
                 else
                 {
                     if(self.classname == "monster_wizard")
                     {
-                        sound(self, CHAN_VOICE, "wizard/wsight.wav", 1.000, ATTN_NORM);
+                        sound(self, CHAN_VOICE, "wizard/wsight.wav", 1, ATTN_NORM);
                     }
                     else
                     {
                         if(self.classname == "monster_zombie")
                         {
-                            sound(self, CHAN_VOICE, "zombie/z_idle.wav", 1.000, ATTN_NORM);
+                            sound(self, CHAN_VOICE, "zombie/z_idle.wav", 1, ATTN_NORM);
                         }
                         else
                         {
                             if(self.classname == "monster_dog")
                             {
-                                sound(self, CHAN_VOICE, "dog/dsight.wav", 1.000, ATTN_NORM);
+                                sound(self, CHAN_VOICE, "dog/dsight.wav", 1, ATTN_NORM);
                             }
                             else
                             {
                                 if(self.classname == "monster_hell_knight")
                                 {
-                                    sound(self, CHAN_VOICE, "hknight/sight1.wav", 1.000, ATTN_NORM);
+                                    sound(self, CHAN_VOICE, "hknight/sight1.wav", 1, ATTN_NORM);
                                 }
                                 else
                                 {
                                     if(self.classname == "monster_tarbaby")
                                     {
-                                        sound(self, CHAN_VOICE, "blob/sight1.wav", 1.000, ATTN_NORM);
+                                        sound(self, CHAN_VOICE, "blob/sight1.wav", 1, ATTN_NORM);
                                     }
                                     else
                                     {
                                         if(self.classname == "monster_vomit")
                                         {
-                                            sound(self, CHAN_VOICE, "vomitus/v_sight1.wav", 1.000, ATTN_NORM);
+                                            sound(self, CHAN_VOICE, "vomitus/v_sight1.wav", 1, ATTN_NORM);
                                         }
                                         else
                                         {
                                             if(self.classname == "monster_enforcer")
                                             {
-                                                rsnd = rint(random() * 3.000);
-                                                if(rsnd == 1.000)
+                                                rsnd = rint(random() * 3);
+                                                if(rsnd == 1)
                                                 {
-                                                    sound(self, CHAN_VOICE, "enforcer/sight1.wav", 1.000, ATTN_NORM);
+                                                    sound(self, CHAN_VOICE, "enforcer/sight1.wav", 1, ATTN_NORM);
                                                 }
                                                 else
                                                 {
-                                                    if(rsnd == 2.000)
+                                                    if(rsnd == 2)
                                                     {
-                                                        sound(self, CHAN_VOICE, "enforcer/sight2.wav", 1.000, ATTN_NORM);
+                                                        sound(self, CHAN_VOICE, "enforcer/sight2.wav", 1, ATTN_NORM);
                                                     }
                                                     else
                                                     {
-                                                        if(rsnd == 0.000)
+                                                        if(rsnd == 0)
                                                         {
-                                                            sound(self, CHAN_VOICE, "enforcer/sight3.wav", 1.000, ATTN_NORM);
+                                                            sound(self, CHAN_VOICE, "enforcer/sight3.wav", 1, ATTN_NORM);
                                                         }
                                                         else
                                                         {
-                                                            sound(self, CHAN_VOICE, "enforcer/sight4.wav", 1.000, ATTN_NORM);
+                                                            sound(self, CHAN_VOICE, "enforcer/sight4.wav", 1, ATTN_NORM);
                                                         }
                                                         
                                                     }
@@ -583,14 +583,14 @@ void () SightSound =
                                             {
                                                 if(self.classname == "monster_army")
                                                 {
-                                                    sound(self, CHAN_VOICE, "soldier/sight1.wav", 1.000, ATTN_NORM);
+                                                    sound(self, CHAN_VOICE, "soldier/sight1.wav", 1, ATTN_NORM);
                                                 }
                                                 else
                                                 {
                                                     
                                                     if(self.classname == "monster_shalrath")
                                                     {
-                                                        sound(self, CHAN_VOICE, "shalrath/sight.wav", 1.000, ATTN_NORM);
+                                                        sound(self, CHAN_VOICE, "shalrath/sight.wav", 1, ATTN_NORM);
                                                     }
                                                     
                                                 }
@@ -642,7 +642,7 @@ void () FoundTarget =
         sight_entity_time = time;
     }
     
-    self.show_hostile = time + 1.000;
+    self.show_hostile = time + 1;
     SightSound();
     HuntTarget();
 };
@@ -735,7 +735,7 @@ float () FindTarget =
     local entity client;
     local float r;
     return FALSE;
-    if((sight_entity_time >= (time - 0.100)) && (!(self.spawnflags & 3.000)))
+    if((sight_entity_time >= (time - 0.1)) && (!(self.spawnflags & 3)))
     {
         client = sight_entity;
         
@@ -851,7 +851,7 @@ void (float dist) ai_forward =
 // OP_DONE	0	0	0
 void (float dist) ai_back = 
 {
-    walkmove(self.angles_y + 180.000, dist);
+    walkmove(self.angles_y + 180, dist);
 };
 
 // ai_pain
@@ -1037,14 +1037,14 @@ void (float dist) ai_walk =
     
     v1 = self.origin;
     v2 = self.goalentity.origin;
-    v1_z = 0.000;
-    v2_z = 0.000;
+    v1_z = 0;
+    v2_z = 0;
     ftemp = vlen(v1 - v2);
     move_vec = self.goalentity.origin - self.origin;
-    move_vec_z = 0.000;
+    move_vec_z = 0;
     move_vec = normalize(move_vec) * dist;
     
-    if((dist >= ftemp) || (ftemp <= 8.000))
+    if((dist >= ftemp) || (ftemp <= 8))
     {
         self.origin = self.goalentity.origin;
         droptofloor();
@@ -1052,7 +1052,7 @@ void (float dist) ai_walk =
         if(self.angles_y == self.orig_angle_y)
         {
             
-            if((self.classname == "chess_pawn") && ((GetY(self.location) == 8.000) || (GetY(self.location) == 1.000)))
+            if((self.classname == "chess_pawn") && ((GetY(self.location) == 8) || (GetY(self.location) == 1)))
             {
                 become_queen();
             }
@@ -1070,10 +1070,10 @@ void (float dist) ai_walk =
                 self = oldself;
                 castle_to_move.location = castle_destination;
                 spawn_tfog(castle_to_move.origin);
-                sound(castle_to_move, CHAN_AUTO, "misc/r_tele4.wav", 1.000, ATTN_NORM);
+                sound(castle_to_move, CHAN_AUTO, "misc/r_tele4.wav", 1, ATTN_NORM);
             }
             
-            king_castle_move_flag = 0.000;
+            king_castle_move_flag = 0;
             next_turn();
         }
         
@@ -1161,21 +1161,21 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = 0.000;
-    newdir_y = 0.000 - trace_plane_normal_x;
-    newdir_z = 0.000;
-    if((dir * newdir) > 0.000)
+    newdir_x = 0;
+    newdir_y = 0 - trace_plane_normal_x;
+    newdir_z = 0;
+    if((dir * newdir) > 0)
     {
-        dir_x = 0.000 - 0.000;
+        dir_x = 0 - 0;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = 0.000;
-        dir_y = 0.000 - trace_plane_normal_x;
+        dir_x = 0;
+        dir_y = 0 - trace_plane_normal_x;
     }
     
-    dir_z = 0.000;
+    dir_z = 0;
     self.ideal_yaw = vectoyaw(dir);
 };
 
@@ -1199,7 +1199,7 @@ float () FacingIdeal =
     local float delta;
     delta = anglemod(self.angles_y - self.ideal_yaw);
     
-    if((delta > 45.000) && (delta < 315.000))
+    if((delta > 45) && (delta < 315))
     {
         return FALSE;
     }
@@ -1392,11 +1392,11 @@ void () ai_run_slide =
     ChangeYaw();
     if(self.lefty)
     {
-        ofs = 90.000;
+        ofs = 90;
     }
     else
     {
-        ofs = -90.000;
+        ofs = -90;
     }
     
     
@@ -1405,7 +1405,7 @@ void () ai_run_slide =
         return;
     }
     
-    self.lefty = 1.000 - self.lefty;
+    self.lefty = 1 - self.lefty;
     walkmove(self.ideal_yaw - ofs, movedist);
 };
 
@@ -1555,11 +1555,11 @@ void (float dist) ai_run =
     }
     
     
-    if(self.enemy.health <= 0.000)
+    if(self.enemy.health <= 0)
     {
         self.enemy = world;
         
-        if(self.oldenemy.health > 0.000)
+        if(self.oldenemy.health > 0)
         {
             self.enemy = self.oldenemy;
             HuntTarget();
@@ -1590,14 +1590,14 @@ void (float dist) ai_run =
     
     if(enemy_vis)
     {
-        self.search_time = time + 5.000;
+        self.search_time = time + 5;
     }
     
     enemy_infront = infront(self.enemy);
     enemy_range = range(self.enemy);
     enemy_yaw = vectoyaw(self.enemy.origin - self.origin);
     
-    if(((vlen(self.origin - self.enemy.origin)) > (64.000 * 3.000)) && !king_dead)
+    if(((vlen(self.origin - self.enemy.origin)) > (64 * 3)) && !king_dead)
     {
         self.attack_state = AS_MISSILE;
     }
@@ -1636,9 +1636,9 @@ void (float dist) ai_run =
     else
     {
         goal_vec = self.goalentity.origin - self.origin;
-        goal_vec_z = 0.000;
+        goal_vec_z = 0;
         
-        if(vlen(goal_vec) > 32.000)
+        if(vlen(goal_vec) > 32)
         {
             goal_vec = normalize(goal_vec);
             setorigin(self, self.origin + (goal_vec * dist));

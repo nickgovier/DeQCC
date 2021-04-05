@@ -25,7 +25,7 @@ void () cammy_think =
     }
     
     self.think = cammy_think;
-    self.nextthink = time + 1.000;
+    self.nextthink = time + 1;
 };
 
 // target_think
@@ -53,7 +53,7 @@ void () target_think =
     }
     
     self.think = target_think;
-    self.nextthink = time + 1.000;
+    self.nextthink = time + 1;
 };
 
 // vehicle_think
@@ -103,7 +103,7 @@ void () vehicle_think =
     }
     
     self.think = vehicle_think;
-    self.nextthink = time + 1.000;
+    self.nextthink = time + 1;
 };
 
 // Create_chasecam
@@ -166,18 +166,18 @@ void () Create_chasecam =
     setorigin(e, self.origin);
     self.view_ofs = '0.000 0.000 1.000';
     msg_entity = self;
-    WriteByte(MSG_ONE, 5.000);
+    WriteByte(MSG_ONE, 5);
     WriteEntity(MSG_ONE, e);
-    WriteByte(MSG_ONE, 10.000);
+    WriteByte(MSG_ONE, 10);
     WriteAngle(MSG_ONE, self.enemy.angles_x);
     WriteAngle(MSG_ONE, self.enemy.angles_y);
     WriteAngle(MSG_ONE, self.enemy.angles_z);
-    e.toyview = 0.000;
-    e.style = 32.000;
+    e.toyview = 0;
+    e.style = 32;
     e.owner = self;
     self.oldenemy = e;
     e.think = cammy_think;
-    e.nextthink = time + 1.000;
+    e.nextthink = time + 1;
 };
 
 // Check_minsmaxs
@@ -229,15 +229,15 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y < 0.000)
+        if(e.origin_y < 0)
         {
-            e.origin_y = 0.000;
+            e.origin_y = 0;
         }
         
         
-        if(e.origin_z < 0.000)
+        if(e.origin_z < 0)
         {
-            e.origin_z = 0.000;
+            e.origin_z = 0;
         }
         
     }
@@ -252,15 +252,15 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y > 0.000)
+        if(e.origin_y > 0)
         {
-            e.origin_y = 0.000;
+            e.origin_y = 0;
         }
         
         
-        if(e.origin_z > 0.000)
+        if(e.origin_z > 0)
         {
-            e.origin_z = 0.000;
+            e.origin_z = 0;
         }
         
     }
@@ -316,14 +316,14 @@ void () Throw_ACgib =
     newmis = spawn();
     newmis.solid = SOLID_TRIGGER;
     newmis.movetype = MOVETYPE_TOSS;
-    newmis.velocity_x = (random() * 300.000) - 150.000;
-    newmis.velocity_y = (random() * 300.000) - 150.000;
-    newmis.velocity_z = (random() * 150.000) + 150.000;
+    newmis.velocity_x = (random() * 300) - 150;
+    newmis.velocity_y = (random() * 300) - 150;
+    newmis.velocity_z = (random() * 150) + 150;
     newmis.classname = "fireball";
     setmodel(newmis, "progs/lavaball.mdl");
     setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
     setorigin(newmis, self.origin);
-    newmis.nextthink = time + 5.000;
+    newmis.nextthink = time + 5;
     newmis.think = SUB_Remove;
     newmis.touch = fire_touch;
 };
@@ -364,7 +364,7 @@ void () Throw_ACgib =
 // OP_DONE	0	0	0
 void () AC_Explode = 
 {
-    T_RadiusDamage(self, self, 160.000, self);
+    T_RadiusDamage(self, self, 160, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
@@ -559,7 +559,7 @@ void (entity targ, entity attacker) AC_Obituary =
     {
         if(targ.owner == attacker)
         {
-            attacker.frags = attacker.frags - 1.000;
+            attacker.frags = attacker.frags - 1;
             bprint(targ.owner.netname);
             if(pointcontents(targ.origin) < CONTENT_EMPTY)
             {
@@ -574,9 +574,9 @@ void (entity targ, entity attacker) AC_Obituary =
         }
         else
         {
-            if(((teamplay == 2.000) && (targ.owner.team > 0.000)) && (targ.owner.team == attacker.team))
+            if(((teamplay == 2) && (targ.owner.team > 0)) && (targ.owner.team == attacker.team))
             {
-                attacker.frags = attacker.frags - 2.000;
+                attacker.frags = attacker.frags - 2;
                 deathstring = " has some target practise\n";
                 bprint(attacker.netname);
                 bprint(deathstring);
@@ -584,7 +584,7 @@ void (entity targ, entity attacker) AC_Obituary =
             }
             else
             {
-                attacker.frags = attacker.frags + 3.000;
+                attacker.frags = attacker.frags + 3;
                 deathstring = " is destroyed by ";
                 deathstring2 = "\n";
                 bprint(targ.owner.netname);
@@ -861,50 +861,50 @@ vector (float minim, float maxdist) AC_aim =
     local vector v2;
     local vector org;
     min = minim;
-    flg = 0.000;
+    flg = 0;
     
-    if(maxdist < 0.000)
+    if(maxdist < 0)
     {
-        flg = flg + 1.000;
-        maxdist = 0.000 - maxdist;
+        flg = flg + 1;
+        maxdist = 0 - maxdist;
     }
     
     re = world;
     makevectors(self.enemy.angles);
     v1 = v_forward;
-    v1_z = 0.000 - 0.000;
+    v1_z = 0 - 0;
     e = findradius(self.enemy.origin, maxdist);
     
     while(e)
     {
-        org = e.origin + ((e.mins + e.maxs) * 0.500);
+        org = e.origin + ((e.mins + e.maxs) * 0.5);
         
-        if((e.takedamage > 1.000) && ((e.movetype != MOVETYPE_FLY) || ((flg & 1.000) == 0.000)))
+        if((e.takedamage > 1) && ((e.movetype != MOVETYPE_FLY) || ((flg & 1) == 0)))
         {
             traceline(org, self.enemy.origin, TRUE, world);
             
             if(e.model == "progs/plane3.mdl")
             {
                 
-                if((e.skin == 1.000) && (random() < 0.500))
+                if((e.skin == 1) && (random() < 0.5))
                 {
-                    trace_fraction = 0.000;
+                    trace_fraction = 0;
                 }
                 
             }
             
             if(teamplay)
             {
-                if(((temp1 & 8.000) > 0.000) && (e.ts == self.ts))
+                if(((temp1 & 8) > 0) && (e.ts == self.ts))
                 {
-                    trace_fraction = 0.000;
+                    trace_fraction = 0;
                 }
                 else
                 {
                     
                     if(((e.ts == self.ts) && (re.ts != self.ts)) && (re != world))
                     {
-                        trace_fraction = 0.000;
+                        trace_fraction = 0;
                     }
                     
                 }
@@ -918,7 +918,7 @@ vector (float minim, float maxdist) AC_aim =
                     
                     if(e.owner.classname != "player")
                     {
-                        trace_fraction = 0.000;
+                        trace_fraction = 0;
                     }
                     
                 }
@@ -926,11 +926,11 @@ vector (float minim, float maxdist) AC_aim =
             }
             
             
-            if(trace_fraction == 1.000)
+            if(trace_fraction == 1)
             {
                 if(trace_inopen && trace_inwater)
                 {
-                    trace_fraction = 0.000;
+                    trace_fraction = 0;
                 }
                 else
                 {
@@ -942,7 +942,7 @@ vector (float minim, float maxdist) AC_aim =
                         
                         if(f2 > f1)
                         {
-                            trace_fraction = 0.000;
+                            trace_fraction = 0;
                         }
                         
                     }
@@ -952,7 +952,7 @@ vector (float minim, float maxdist) AC_aim =
             }
             
             
-            if(trace_fraction == 1.000)
+            if(trace_fraction == 1)
             {
                 v2 = normalize(org - self.enemy.origin);
                 f1 = v1 * v2;
@@ -978,7 +978,7 @@ vector (float minim, float maxdist) AC_aim =
     
     if(re != world)
     {
-        org = re.origin + ((re.mins + re.maxs) * 0.500);
+        org = re.origin + ((re.mins + re.maxs) * 0.5);
         v1 = normalize(org - self.enemy.origin);
     }
     
@@ -1155,12 +1155,12 @@ vector (float minim, float maxdist) AC_aim2 =
     local vector v2;
     local vector org;
     min = minim;
-    flg = 0.000;
+    flg = 0;
     
-    if(maxdist < 0.000)
+    if(maxdist < 0)
     {
-        flg = flg + 1.000;
-        maxdist = 0.000 - maxdist;
+        flg = flg + 1;
+        maxdist = 0 - maxdist;
     }
     
     re = world;
@@ -1170,37 +1170,37 @@ vector (float minim, float maxdist) AC_aim2 =
     
     while(e)
     {
-        org = e.origin + ((e.mins + e.maxs) * 0.500);
+        org = e.origin + ((e.mins + e.maxs) * 0.5);
         
         if((e != self) && (e != self.enemy))
         {
             
-            if((e.takedamage > 1.000) && ((e.movetype != MOVETYPE_FLY) || ((flg & 1.000) == 0.000)))
+            if((e.takedamage > 1) && ((e.movetype != MOVETYPE_FLY) || ((flg & 1) == 0)))
             {
                 traceline(org, self.oldenemy.origin, TRUE, world);
                 
                 if(e.model == "progs/plane3.mdl")
                 {
                     
-                    if((e.skin == 1.000) && (random() < 0.500))
+                    if((e.skin == 1) && (random() < 0.5))
                     {
-                        trace_fraction = 0.000;
+                        trace_fraction = 0;
                     }
                     
                 }
                 
                 if(teamplay)
                 {
-                    if(((temp1 & 8.000) > 0.000) && (e.ts == self.ts))
+                    if(((temp1 & 8) > 0) && (e.ts == self.ts))
                     {
-                        trace_fraction = 0.000;
+                        trace_fraction = 0;
                     }
                     else
                     {
                         
                         if(((e.ts == self.ts) && (re.ts != self.ts)) && (re != world))
                         {
-                            trace_fraction = 0.000;
+                            trace_fraction = 0;
                         }
                         
                     }
@@ -1214,7 +1214,7 @@ vector (float minim, float maxdist) AC_aim2 =
                         
                         if(e.owner.classname != "player")
                         {
-                            trace_fraction = 0.000;
+                            trace_fraction = 0;
                         }
                         
                     }
@@ -1222,11 +1222,11 @@ vector (float minim, float maxdist) AC_aim2 =
                 }
                 
                 
-                if(trace_fraction == 1.000)
+                if(trace_fraction == 1)
                 {
                     if(trace_inopen && trace_inwater)
                     {
-                        trace_fraction = 0.000;
+                        trace_fraction = 0;
                     }
                     else
                     {
@@ -1238,7 +1238,7 @@ vector (float minim, float maxdist) AC_aim2 =
                             
                             if(f2 > f1)
                             {
-                                trace_fraction = 0.000;
+                                trace_fraction = 0;
                             }
                             
                         }
@@ -1248,7 +1248,7 @@ vector (float minim, float maxdist) AC_aim2 =
                 }
                 
                 
-                if(trace_fraction == 1.000)
+                if(trace_fraction == 1)
                 {
                     v2 = normalize(org - self.oldenemy.origin);
                     f1 = v1 * v2;
@@ -1276,7 +1276,7 @@ vector (float minim, float maxdist) AC_aim2 =
     
     if(re != world)
     {
-        org = re.origin + ((re.mins + re.maxs) * 0.500);
+        org = re.origin + ((re.mins + re.maxs) * 0.5);
         v1 = normalize(org - self.enemy.origin);
     }
     
@@ -1567,7 +1567,7 @@ void () T_ACTouch =
     if(other != world)
     {
         
-        if(!other.takedamage && (other.solid < 2.000))
+        if(!other.takedamage && (other.solid < 2))
         {
             return;
         }
@@ -1575,16 +1575,16 @@ void () T_ACTouch =
     }
     
     
-    if((other.classname == "func_runway") && (self.health > 0.000))
+    if((other.classname == "func_runway") && (self.health > 0))
     {
         
-        if((other == self.groundentity) && (self.landed > 0.000))
+        if((other == self.groundentity) && (self.landed > 0))
         {
             return;
         }
         
         
-        if((fabs(self.angles_x) < 20.000) && (fabs(self.angles_z) < 20.000))
+        if((fabs(self.angles_x) < 20) && (fabs(self.angles_z) < 20))
         {
             traceline(self.origin, self.origin + '0.000 0.000 -32.000', FALSE, self);
             
@@ -1594,16 +1594,16 @@ void () T_ACTouch =
                 if(!self.landed)
                 {
                     sprint(self.owner, "Landed.\n");
-                    sound(self, CHAN_VOICE, "touchdwn.wav", 1.000, ATTN_NORM);
+                    sound(self, CHAN_VOICE, "touchdwn.wav", 1, ATTN_NORM);
                 }
                 
-                self.landed = 1.000;
+                self.landed = 1;
                 self.groundentity = other;
-                self.angles_x = 0.000;
-                self.angles_z = 0.000;
+                self.angles_x = 0;
+                self.angles_z = 0;
                 self.avelocity = '0.000 0.000 0.000';
-                self.velocity_z = 0.000;
-                self.origin_z = (other.origin_z + other.maxs_z) + 16.000;
+                self.velocity_z = 0;
+                self.origin_z = (other.origin_z + other.maxs_z) + 16;
                 return;
             }
             
@@ -1617,15 +1617,15 @@ void () T_ACTouch =
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
     temp = self.owner.frags;
-    if(((other == world) || (other.health > 0.000)) || ((self.health < 1.000) && (time > self.pain_finished)))
+    if(((other == world) || (other.health > 0)) || ((self.health < 1) && (time > self.pain_finished)))
     {
-        self.origin = self.origin - (normalize(self.velocity) * 8.000);
+        self.origin = self.origin - (normalize(self.velocity) * 8);
         setorigin(self.owner, self.origin);
-        T_RadiusDamage(self, self, 160.000, self);
+        T_RadiusDamage(self, self, 160, self);
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
-            self.owner.frags = temp - 1.000;
+            self.owner.frags = temp - 1;
             bprint(self.owner.netname);
             bprint(" crashed into ");
             if(other != world)
@@ -1659,27 +1659,27 @@ void () T_ACTouch =
                 bprint("the ground\n");
             }
             
-            self.health = 0.000;
+            self.health = 0;
         }
         
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
-        T_Damage(self.owner, self.owner, self.owner, 1000.000);
+        T_Damage(self.owner, self.owner, self.owner, 1000);
         self.touch = SUB_Null;
-        self.takedamage = 0.000;
+        self.takedamage = 0;
         self.think = BecomeExplosion;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
     }
     else
     {
-        T_Damage(other, self, self, 200.000);
+        T_Damage(other, self, self, 200);
         
-        if(self.health > 0.000)
+        if(self.health > 0)
         {
-            self.pain_finished = time + 0.300;
-            self.owner.frags = temp - 1.000;
+            self.pain_finished = time + 0.3;
+            self.owner.frags = temp - 1;
             bprint(self.owner.netname);
             bprint(" crashed into ");
             
@@ -1712,7 +1712,7 @@ void () T_ACTouch =
             
         }
         
-        self.health = 0.000;
+        self.health = 0;
         self.th_die = SUB_Null;
         self.touch = T_ACTouch;
         AC_Fall();
@@ -1767,26 +1767,26 @@ void () AC_Fall =
     local vector v2;
     local vector v3;
     v1 = '0.000 0.000 0.000';
-    v1_x = -70.000 - self.angles_x;
+    v1_x = -70 - self.angles_x;
     v2 = '0.000 0.000 360.000';
     
-    if(v1_x < 0.000)
+    if(v1_x < 0)
     {
-        v2_x = -20.000;
+        v2_x = -20;
     }
     
     
-    if(fabs(v1_x) < 2.000)
+    if(fabs(v1_x) < 2)
     {
-        v2_x = 0.000;
-        self.angles_x = -70.000;
+        v2_x = 0;
+        self.angles_x = -70;
     }
     
     self.avelocity = v2;
     makevectors(self.angles);
     v3 = v_forward;
-    v3_z = 0.000 - 0.000;
-    self.velocity = v3 * 300.000;
+    v3_z = 0 - 0;
+    self.velocity = v3 * 300;
     
     if(self.flags & FL_ONGROUND)
     {
@@ -1794,7 +1794,7 @@ void () AC_Fall =
     }
     
     self.think = AC_Fall;
-    self.nextthink = time + 0.100;
+    self.nextthink = time + 0.1;
 };
 
 // AC_Die
@@ -1831,7 +1831,7 @@ void () AC_Die =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    self.pain_finished = time + 0.300;
+    self.pain_finished = time + 0.3;
     self.touch = T_ACTouch;
     AC_Fall();
 };

@@ -61,16 +61,16 @@ void (float offset) hknight_shot =
     local vector org;
     local vector vec;
     offang = vectoangles(self.enemy.origin - self.origin);
-    offang_y = 0.000 + (offset * MOVETYPE_TOSS);
+    offang_y = 0 + (offset * MOVETYPE_TOSS);
     makevectors(offang);
-    org = ((self.origin + self.mins) + (self.size * 0.500)) + (v_forward * KINDA_WANT);
+    org = ((self.origin + self.mins) + (self.size * 0.5)) + (v_forward * KINDA_WANT);
     vec = normalize(v_forward);
-    vec_z = (FALSE - 0.000) + ((random() - 0.500) * 0.100);
+    vec_z = (FALSE - 0) + ((random() - 0.5) * 0.1);
     launch_spike(org, vec);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    newmis.velocity = vec * 300.000;
+    newmis.velocity = vec * 300;
     sound(self, CHAN_WEAPON, "hknight/attack1.wav", TRUE, ATTN_NORM);
 };
 
@@ -126,7 +126,7 @@ void () CheckForCharge =
     }
     
     
-    if((vlen(self.origin - self.enemy.origin)) < 80.000)
+    if((vlen(self.origin - self.enemy.origin)) < 80)
     {
         return;
     }
@@ -171,7 +171,7 @@ void () CheckContinueCharge =
         return;
     }
     
-    if(random() > 0.500)
+    if(random() > 0.5)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", TRUE, ATTN_NORM);
     }
@@ -187,7 +187,7 @@ void () CheckContinueCharge =
 // OP_STATE	213	9682	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand1 = [0.000, hknight_stand2]
+void () hknight_stand1 = [0, hknight_stand2]
 {
     ai_stand();
 };
@@ -197,7 +197,7 @@ void () hknight_stand1 = [0.000, hknight_stand2]
 // OP_STATE	214	9683	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand2 = [1.000, hknight_stand3]
+void () hknight_stand2 = [1, hknight_stand3]
 {
     ai_stand();
 };
@@ -207,7 +207,7 @@ void () hknight_stand2 = [1.000, hknight_stand3]
 // OP_STATE	216	9684	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand3 = [2.000, hknight_stand4]
+void () hknight_stand3 = [2, hknight_stand4]
 {
     ai_stand();
 };
@@ -217,7 +217,7 @@ void () hknight_stand3 = [2.000, hknight_stand4]
 // OP_STATE	228	9685	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand4 = [3.000, hknight_stand5]
+void () hknight_stand4 = [3, hknight_stand5]
 {
     ai_stand();
 };
@@ -227,7 +227,7 @@ void () hknight_stand4 = [3.000, hknight_stand5]
 // OP_STATE	229	9686	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand5 = [4.000, hknight_stand6]
+void () hknight_stand5 = [4, hknight_stand6]
 {
     ai_stand();
 };
@@ -237,7 +237,7 @@ void () hknight_stand5 = [4.000, hknight_stand6]
 // OP_STATE	230	9687	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand6 = [5.000, hknight_stand7]
+void () hknight_stand6 = [5, hknight_stand7]
 {
     ai_stand();
 };
@@ -247,7 +247,7 @@ void () hknight_stand6 = [5.000, hknight_stand7]
 // OP_STATE	231	9688	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand7 = [6.000, hknight_stand8]
+void () hknight_stand7 = [6, hknight_stand8]
 {
     ai_stand();
 };
@@ -257,7 +257,7 @@ void () hknight_stand7 = [6.000, hknight_stand8]
 // OP_STATE	232	9689	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand8 = [7.000, hknight_stand9]
+void () hknight_stand8 = [7, hknight_stand9]
 {
     ai_stand();
 };
@@ -267,7 +267,7 @@ void () hknight_stand8 = [7.000, hknight_stand9]
 // OP_STATE	217	9681	0
 // OP_CALL0	1739	0	0
 // OP_DONE	0	0	0
-void () hknight_stand9 = [8.000, hknight_stand1]
+void () hknight_stand9 = [8, hknight_stand1]
 {
     ai_stand();
 };
@@ -279,7 +279,7 @@ void () hknight_stand9 = [8.000, hknight_stand1]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk1 = [9.000, hknight_walk2]
+void () hknight_walk1 = [9, hknight_walk2]
 {
     hk_idle_sound();
     ai_walk(FL_SWIM);
@@ -291,7 +291,7 @@ void () hknight_walk1 = [9.000, hknight_walk2]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk2 = [10.000, hknight_walk3]
+void () hknight_walk2 = [10, hknight_walk3]
 {
     ai_walk(MOVETYPE_FLY);
 };
@@ -302,7 +302,7 @@ void () hknight_walk2 = [10.000, hknight_walk3]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk3 = [11.000, hknight_walk4]
+void () hknight_walk3 = [11, hknight_walk4]
 {
     ai_walk(MOVETYPE_FLY);
 };
@@ -313,7 +313,7 @@ void () hknight_walk3 = [11.000, hknight_walk4]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk4 = [12.000, hknight_walk5]
+void () hknight_walk4 = [12, hknight_walk5]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -324,7 +324,7 @@ void () hknight_walk4 = [12.000, hknight_walk5]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk5 = [13.000, hknight_walk6]
+void () hknight_walk5 = [13, hknight_walk6]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -335,7 +335,7 @@ void () hknight_walk5 = [13.000, hknight_walk6]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk6 = [14.000, hknight_walk7]
+void () hknight_walk6 = [14, hknight_walk7]
 {
     ai_walk(FL_SWIM);
 };
@@ -346,7 +346,7 @@ void () hknight_walk6 = [14.000, hknight_walk7]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk7 = [15.000, hknight_walk8]
+void () hknight_walk7 = [15, hknight_walk8]
 {
     ai_walk(FL_SWIM);
 };
@@ -357,7 +357,7 @@ void () hknight_walk7 = [15.000, hknight_walk8]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk8 = [16.000, hknight_walk9]
+void () hknight_walk8 = [16, hknight_walk9]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -368,7 +368,7 @@ void () hknight_walk8 = [16.000, hknight_walk9]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk9 = [17.000, hknight_walk10]
+void () hknight_walk9 = [17, hknight_walk10]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -379,7 +379,7 @@ void () hknight_walk9 = [17.000, hknight_walk10]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk10 = [18.000, hknight_walk11]
+void () hknight_walk10 = [18, hknight_walk11]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -390,7 +390,7 @@ void () hknight_walk10 = [18.000, hknight_walk11]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk11 = [19.000, hknight_walk12]
+void () hknight_walk11 = [19, hknight_walk12]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -401,7 +401,7 @@ void () hknight_walk11 = [19.000, hknight_walk12]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk12 = [20.000, hknight_walk13]
+void () hknight_walk12 = [20, hknight_walk13]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -412,7 +412,7 @@ void () hknight_walk12 = [20.000, hknight_walk13]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk13 = [21.000, hknight_walk14]
+void () hknight_walk13 = [21, hknight_walk14]
 {
     ai_walk(MOVETYPE_TOSS);
 };
@@ -423,7 +423,7 @@ void () hknight_walk13 = [21.000, hknight_walk14]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk14 = [22.000, hknight_walk15]
+void () hknight_walk14 = [22, hknight_walk15]
 {
     ai_walk(FL_SWIM);
 };
@@ -434,7 +434,7 @@ void () hknight_walk14 = [22.000, hknight_walk15]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk15 = [23.000, hknight_walk16]
+void () hknight_walk15 = [23, hknight_walk16]
 {
     ai_walk(FL_SWIM);
 };
@@ -445,7 +445,7 @@ void () hknight_walk15 = [23.000, hknight_walk16]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk16 = [24.000, hknight_walk17]
+void () hknight_walk16 = [24, hknight_walk17]
 {
     ai_walk(MOVETYPE_STEP);
 };
@@ -456,7 +456,7 @@ void () hknight_walk16 = [24.000, hknight_walk17]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk17 = [25.000, hknight_walk18]
+void () hknight_walk17 = [25, hknight_walk18]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -467,7 +467,7 @@ void () hknight_walk17 = [25.000, hknight_walk18]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk18 = [26.000, hknight_walk19]
+void () hknight_walk18 = [26, hknight_walk19]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -478,7 +478,7 @@ void () hknight_walk18 = [26.000, hknight_walk19]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk19 = [27.000, hknight_walk20]
+void () hknight_walk19 = [27, hknight_walk20]
 {
     ai_walk(MOVETYPE_WALK);
 };
@@ -489,7 +489,7 @@ void () hknight_walk19 = [27.000, hknight_walk20]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1731	0	0
 // OP_DONE	0	0	0
-void () hknight_walk20 = [28.000, hknight_walk1]
+void () hknight_walk20 = [28, hknight_walk1]
 {
     ai_walk(FL_SWIM);
 };
@@ -502,7 +502,7 @@ void () hknight_walk20 = [28.000, hknight_walk1]
 // OP_CALL1	1798	0	0
 // OP_CALL0	9657	0	0
 // OP_DONE	0	0	0
-void () hknight_run1 = [29.000, hknight_run2]
+void () hknight_run1 = [29, hknight_run2]
 {
     hk_idle_sound();
     ai_run(KINDA_WANT);
@@ -515,9 +515,9 @@ void () hknight_run1 = [29.000, hknight_run2]
 // OP_STORE_V	2261	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run2 = [30.000, hknight_run3]
+void () hknight_run2 = [30, hknight_run3]
 {
-    ai_run(25.000);
+    ai_run(25);
 };
 
 // hknight_run3
@@ -526,9 +526,9 @@ void () hknight_run2 = [30.000, hknight_run3]
 // OP_STORE_V	3866	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run3 = [31.000, hknight_run4]
+void () hknight_run3 = [31, hknight_run4]
 {
-    ai_run(18.000);
+    ai_run(18);
 };
 
 // hknight_run4
@@ -537,7 +537,7 @@ void () hknight_run3 = [31.000, hknight_run4]
 // OP_STORE_V	218	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run4 = [32.000, hknight_run5]
+void () hknight_run4 = [32, hknight_run5]
 {
     ai_run(FL_INWATER);
 };
@@ -548,9 +548,9 @@ void () hknight_run4 = [32.000, hknight_run5]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run5 = [33.000, hknight_run6]
+void () hknight_run5 = [33, hknight_run6]
 {
-    ai_run(14.000);
+    ai_run(14);
 };
 
 // hknight_run6
@@ -559,9 +559,9 @@ void () hknight_run5 = [33.000, hknight_run6]
 // OP_STORE_V	2261	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run6 = [34.000, hknight_run7]
+void () hknight_run6 = [34, hknight_run7]
 {
-    ai_run(25.000);
+    ai_run(25);
 };
 
 // hknight_run7
@@ -570,9 +570,9 @@ void () hknight_run6 = [34.000, hknight_run7]
 // OP_STORE_V	8425	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run7 = [35.000, hknight_run8]
+void () hknight_run7 = [35, hknight_run8]
 {
-    ai_run(21.000);
+    ai_run(21);
 };
 
 // hknight_run8
@@ -581,9 +581,9 @@ void () hknight_run7 = [35.000, hknight_run8]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1798	0	0
 // OP_DONE	0	0	0
-void () hknight_run8 = [36.000, hknight_run1]
+void () hknight_run8 = [36, hknight_run1]
 {
-    ai_run(13.000);
+    ai_run(13);
 };
 
 // hknight_pain1
@@ -596,7 +596,7 @@ void () hknight_run8 = [36.000, hknight_run1]
 // OP_STORE_V	326	16	0
 // OP_CALL5	453	0	0
 // OP_DONE	0	0	0
-void () hknight_pain1 = [37.000, hknight_pain2]
+void () hknight_pain1 = [37, hknight_pain2]
 {
     sound(self, CHAN_VOICE, "hknight/pain1.wav", TRUE, ATTN_NORM);
 };
@@ -605,7 +605,7 @@ void () hknight_pain1 = [37.000, hknight_pain2]
 // function begins at statement 16137, parm_start=9720
 // OP_STATE	5687	9720	0
 // OP_DONE	0	0	0
-void () hknight_pain2 = [38.000, hknight_pain3]
+void () hknight_pain2 = [38, hknight_pain3]
 {
 };
 
@@ -613,7 +613,7 @@ void () hknight_pain2 = [38.000, hknight_pain3]
 // function begins at statement 16139, parm_start=9721
 // OP_STATE	5689	9721	0
 // OP_DONE	0	0	0
-void () hknight_pain3 = [39.000, hknight_pain4]
+void () hknight_pain3 = [39, hknight_pain4]
 {
 };
 
@@ -621,7 +621,7 @@ void () hknight_pain3 = [39.000, hknight_pain4]
 // function begins at statement 16141, parm_start=9722
 // OP_STATE	2101	9722	0
 // OP_DONE	0	0	0
-void () hknight_pain4 = [40.000, hknight_pain5]
+void () hknight_pain4 = [40, hknight_pain5]
 {
 };
 
@@ -629,7 +629,7 @@ void () hknight_pain4 = [40.000, hknight_pain5]
 // function begins at statement 16143, parm_start=9723
 // OP_STATE	6042	9595	0
 // OP_DONE	0	0	0
-void () hknight_pain5 = [41.000, hknight_run1]
+void () hknight_pain5 = [41, hknight_run1]
 {
 };
 
@@ -639,7 +639,7 @@ void () hknight_pain5 = [41.000, hknight_run1]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () hknight_die1 = [42.000, hknight_die2]
+void () hknight_die1 = [42, hknight_die2]
 {
     ai_forward(MOVETYPE_BOUNCE);
 };
@@ -650,7 +650,7 @@ void () hknight_die1 = [42.000, hknight_die2]
 // OP_STORE_V	217	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () hknight_die2 = [43.000, hknight_die3]
+void () hknight_die2 = [43, hknight_die3]
 {
     ai_forward(FL_CLIENT);
 };
@@ -663,7 +663,7 @@ void () hknight_die2 = [43.000, hknight_die3]
 // OP_STORE_V	232	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () hknight_die3 = [44.000, hknight_die4]
+void () hknight_die3 = [44, hknight_die4]
 {
     self.solid = SOLID_NOT;
     ai_forward(MOVETYPE_PUSH);
@@ -673,7 +673,7 @@ void () hknight_die3 = [44.000, hknight_die4]
 // function begins at statement 16159, parm_start=9728
 // OP_STATE	1770	9728	0
 // OP_DONE	0	0	0
-void () hknight_die4 = [45.000, hknight_die5]
+void () hknight_die4 = [45, hknight_die5]
 {
 };
 
@@ -681,7 +681,7 @@ void () hknight_die4 = [45.000, hknight_die5]
 // function begins at statement 16161, parm_start=9729
 // OP_STATE	6051	9729	0
 // OP_DONE	0	0	0
-void () hknight_die5 = [46.000, hknight_die6]
+void () hknight_die5 = [46, hknight_die6]
 {
 };
 
@@ -689,7 +689,7 @@ void () hknight_die5 = [46.000, hknight_die6]
 // function begins at statement 16163, parm_start=9730
 // OP_STATE	6053	9730	0
 // OP_DONE	0	0	0
-void () hknight_die6 = [47.000, hknight_die7]
+void () hknight_die6 = [47, hknight_die7]
 {
 };
 
@@ -697,7 +697,7 @@ void () hknight_die6 = [47.000, hknight_die7]
 // function begins at statement 16165, parm_start=9731
 // OP_STATE	6055	9731	0
 // OP_DONE	0	0	0
-void () hknight_die7 = [48.000, hknight_die8]
+void () hknight_die7 = [48, hknight_die8]
 {
 };
 
@@ -707,7 +707,7 @@ void () hknight_die7 = [48.000, hknight_die8]
 // OP_STORE_V	235	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () hknight_die8 = [49.000, hknight_die9]
+void () hknight_die8 = [49, hknight_die9]
 {
     ai_forward(MOVETYPE_BOUNCE);
 };
@@ -718,7 +718,7 @@ void () hknight_die8 = [49.000, hknight_die9]
 // OP_STORE_V	236	4	0
 // OP_CALL1	1718	0	0
 // OP_DONE	0	0	0
-void () hknight_die9 = [50.000, hknight_die10]
+void () hknight_die9 = [50, hknight_die10]
 {
     ai_forward(MOVETYPE_BOUNCEMISSILE);
 };
@@ -727,7 +727,7 @@ void () hknight_die9 = [50.000, hknight_die10]
 // function begins at statement 16175, parm_start=9734
 // OP_STATE	5951	9734	0
 // OP_DONE	0	0	0
-void () hknight_die10 = [51.000, hknight_die11]
+void () hknight_die10 = [51, hknight_die11]
 {
 };
 
@@ -735,7 +735,7 @@ void () hknight_die10 = [51.000, hknight_die11]
 // function begins at statement 16177, parm_start=9735
 // OP_STATE	5953	9735	0
 // OP_DONE	0	0	0
-void () hknight_die11 = [52.000, hknight_die12]
+void () hknight_die11 = [52, hknight_die12]
 {
 };
 
@@ -743,7 +743,7 @@ void () hknight_die11 = [52.000, hknight_die12]
 // function begins at statement 16179, parm_start=9736
 // OP_STATE	5955	9735	0
 // OP_DONE	0	0	0
-void () hknight_die12 = [53.000, hknight_die12]
+void () hknight_die12 = [53, hknight_die12]
 {
 };
 
@@ -751,7 +751,7 @@ void () hknight_die12 = [53.000, hknight_die12]
 // function begins at statement 16181, parm_start=9737
 // OP_STATE	5957	9737	0
 // OP_DONE	0	0	0
-void () hknight_dieb1 = [54.000, hknight_dieb2]
+void () hknight_dieb1 = [54, hknight_dieb2]
 {
 };
 
@@ -759,7 +759,7 @@ void () hknight_dieb1 = [54.000, hknight_dieb2]
 // function begins at statement 16183, parm_start=9738
 // OP_STATE	5959	9738	0
 // OP_DONE	0	0	0
-void () hknight_dieb2 = [55.000, hknight_dieb3]
+void () hknight_dieb2 = [55, hknight_dieb3]
 {
 };
 
@@ -769,7 +769,7 @@ void () hknight_dieb2 = [55.000, hknight_dieb3]
 // OP_ADDRESS	28	104	9740
 // OP_STOREP_F	237	9740	0
 // OP_DONE	0	0	0
-void () hknight_dieb3 = [56.000, hknight_dieb4]
+void () hknight_dieb3 = [56, hknight_dieb4]
 {
     self.solid = SOLID_NOT;
 };
@@ -778,7 +778,7 @@ void () hknight_dieb3 = [56.000, hknight_dieb4]
 // function begins at statement 16189, parm_start=9741
 // OP_STATE	5963	9741	0
 // OP_DONE	0	0	0
-void () hknight_dieb4 = [57.000, hknight_dieb5]
+void () hknight_dieb4 = [57, hknight_dieb5]
 {
 };
 
@@ -786,7 +786,7 @@ void () hknight_dieb4 = [57.000, hknight_dieb5]
 // function begins at statement 16191, parm_start=9742
 // OP_STATE	5965	9742	0
 // OP_DONE	0	0	0
-void () hknight_dieb5 = [58.000, hknight_dieb6]
+void () hknight_dieb5 = [58, hknight_dieb6]
 {
 };
 
@@ -794,7 +794,7 @@ void () hknight_dieb5 = [58.000, hknight_dieb6]
 // function begins at statement 16193, parm_start=9743
 // OP_STATE	5967	9743	0
 // OP_DONE	0	0	0
-void () hknight_dieb6 = [59.000, hknight_dieb7]
+void () hknight_dieb6 = [59, hknight_dieb7]
 {
 };
 
@@ -802,7 +802,7 @@ void () hknight_dieb6 = [59.000, hknight_dieb7]
 // function begins at statement 16195, parm_start=9744
 // OP_STATE	730	9744	0
 // OP_DONE	0	0	0
-void () hknight_dieb7 = [60.000, hknight_dieb8]
+void () hknight_dieb7 = [60, hknight_dieb8]
 {
 };
 
@@ -810,7 +810,7 @@ void () hknight_dieb7 = [60.000, hknight_dieb8]
 // function begins at statement 16197, parm_start=9745
 // OP_STATE	5969	9745	0
 // OP_DONE	0	0	0
-void () hknight_dieb8 = [61.000, hknight_dieb9]
+void () hknight_dieb8 = [61, hknight_dieb9]
 {
 };
 
@@ -818,7 +818,7 @@ void () hknight_dieb8 = [61.000, hknight_dieb9]
 // function begins at statement 16199, parm_start=9746
 // OP_STATE	5971	9745	0
 // OP_DONE	0	0	0
-void () hknight_dieb9 = [62.000, hknight_dieb9]
+void () hknight_dieb9 = [62, hknight_dieb9]
 {
 };
 
@@ -866,7 +866,7 @@ void () hknight_dieb9 = [62.000, hknight_dieb9]
 void () hknight_die = 
 {
     
-    if(self.health < -40.000)
+    if(self.health < -40)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         ThrowHead("progs/h_hellkn.mdl", self.health);
@@ -877,7 +877,7 @@ void () hknight_die =
     }
     
     sound(self, CHAN_VOICE, "hknight/death1.wav", TRUE, ATTN_NORM);
-    if(random() > 0.500)
+    if(random() > 0.5)
     {
         hknight_die1();
     }
@@ -893,7 +893,7 @@ void () hknight_die =
 // OP_STATE	6001	9757	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica1 = [79.000, hknight_magica2]
+void () hknight_magica1 = [79, hknight_magica2]
 {
     ai_face();
 };
@@ -903,7 +903,7 @@ void () hknight_magica1 = [79.000, hknight_magica2]
 // OP_STATE	1178	9758	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica2 = [80.000, hknight_magica3]
+void () hknight_magica2 = [80, hknight_magica3]
 {
     ai_face();
 };
@@ -913,7 +913,7 @@ void () hknight_magica2 = [80.000, hknight_magica3]
 // OP_STATE	6004	9759	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica3 = [81.000, hknight_magica4]
+void () hknight_magica3 = [81, hknight_magica4]
 {
     ai_face();
 };
@@ -923,7 +923,7 @@ void () hknight_magica3 = [81.000, hknight_magica4]
 // OP_STATE	6006	9760	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica4 = [82.000, hknight_magica5]
+void () hknight_magica4 = [82, hknight_magica5]
 {
     ai_face();
 };
@@ -933,7 +933,7 @@ void () hknight_magica4 = [82.000, hknight_magica5]
 // OP_STATE	6008	9761	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica5 = [83.000, hknight_magica6]
+void () hknight_magica5 = [83, hknight_magica6]
 {
     ai_face();
 };
@@ -943,7 +943,7 @@ void () hknight_magica5 = [83.000, hknight_magica6]
 // OP_STATE	6010	9762	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica6 = [84.000, hknight_magica7]
+void () hknight_magica6 = [84, hknight_magica7]
 {
     ai_face();
 };
@@ -954,7 +954,7 @@ void () hknight_magica6 = [84.000, hknight_magica7]
 // OP_STORE_V	277	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica7 = [85.000, hknight_magica8]
+void () hknight_magica7 = [85, hknight_magica8]
 {
     hknight_shot(CONTENT_SOLID);
 };
@@ -965,7 +965,7 @@ void () hknight_magica7 = [85.000, hknight_magica8]
 // OP_STORE_V	276	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica8 = [86.000, hknight_magica9]
+void () hknight_magica8 = [86, hknight_magica9]
 {
     hknight_shot(CONTENT_EMPTY);
 };
@@ -976,7 +976,7 @@ void () hknight_magica8 = [86.000, hknight_magica9]
 // OP_STORE_V	213	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica9 = [87.000, hknight_magica10]
+void () hknight_magica9 = [87, hknight_magica10]
 {
     hknight_shot(FALSE);
 };
@@ -987,7 +987,7 @@ void () hknight_magica9 = [87.000, hknight_magica10]
 // OP_STORE_V	214	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica10 = [88.000, hknight_magica11]
+void () hknight_magica10 = [88, hknight_magica11]
 {
     hknight_shot(TRUE);
 };
@@ -998,7 +998,7 @@ void () hknight_magica10 = [88.000, hknight_magica11]
 // OP_STORE_V	216	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica11 = [89.000, hknight_magica12]
+void () hknight_magica11 = [89, hknight_magica12]
 {
     hknight_shot(FL_SWIM);
 };
@@ -1009,7 +1009,7 @@ void () hknight_magica11 = [89.000, hknight_magica12]
 // OP_STORE_V	228	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magica12 = [90.000, hknight_magica13]
+void () hknight_magica12 = [90, hknight_magica13]
 {
     hknight_shot(MOVETYPE_WALK);
 };
@@ -1019,7 +1019,7 @@ void () hknight_magica12 = [90.000, hknight_magica13]
 // OP_STATE	6022	9769	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica13 = [91.000, hknight_magica14]
+void () hknight_magica13 = [91, hknight_magica14]
 {
     ai_face();
 };
@@ -1029,7 +1029,7 @@ void () hknight_magica13 = [91.000, hknight_magica14]
 // OP_STATE	6024	9595	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magica14 = [92.000, hknight_run1]
+void () hknight_magica14 = [92, hknight_run1]
 {
     ai_face();
 };
@@ -1039,7 +1039,7 @@ void () hknight_magica14 = [92.000, hknight_run1]
 // OP_STATE	6026	9771	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb1 = [93.000, hknight_magicb2]
+void () hknight_magicb1 = [93, hknight_magicb2]
 {
     ai_face();
 };
@@ -1049,7 +1049,7 @@ void () hknight_magicb1 = [93.000, hknight_magicb2]
 // OP_STATE	6027	9772	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb2 = [94.000, hknight_magicb3]
+void () hknight_magicb2 = [94, hknight_magicb3]
 {
     ai_face();
 };
@@ -1059,7 +1059,7 @@ void () hknight_magicb2 = [94.000, hknight_magicb3]
 // OP_STATE	6029	9773	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb3 = [95.000, hknight_magicb4]
+void () hknight_magicb3 = [95, hknight_magicb4]
 {
     ai_face();
 };
@@ -1069,7 +1069,7 @@ void () hknight_magicb3 = [95.000, hknight_magicb4]
 // OP_STATE	6031	9774	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb4 = [96.000, hknight_magicb5]
+void () hknight_magicb4 = [96, hknight_magicb5]
 {
     ai_face();
 };
@@ -1079,7 +1079,7 @@ void () hknight_magicb4 = [96.000, hknight_magicb5]
 // OP_STATE	6033	9775	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb5 = [97.000, hknight_magicb6]
+void () hknight_magicb5 = [97, hknight_magicb6]
 {
     ai_face();
 };
@@ -1089,7 +1089,7 @@ void () hknight_magicb5 = [97.000, hknight_magicb6]
 // OP_STATE	6035	9776	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb6 = [98.000, hknight_magicb7]
+void () hknight_magicb6 = [98, hknight_magicb7]
 {
     ai_face();
 };
@@ -1100,7 +1100,7 @@ void () hknight_magicb6 = [98.000, hknight_magicb7]
 // OP_STORE_V	277	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb7 = [99.000, hknight_magicb8]
+void () hknight_magicb7 = [99, hknight_magicb8]
 {
     hknight_shot(CONTENT_SOLID);
 };
@@ -1111,7 +1111,7 @@ void () hknight_magicb7 = [99.000, hknight_magicb8]
 // OP_STORE_V	276	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb8 = [100.000, hknight_magicb9]
+void () hknight_magicb8 = [100, hknight_magicb9]
 {
     hknight_shot(CONTENT_EMPTY);
 };
@@ -1122,7 +1122,7 @@ void () hknight_magicb8 = [100.000, hknight_magicb9]
 // OP_STORE_V	213	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb9 = [101.000, hknight_magicb10]
+void () hknight_magicb9 = [101, hknight_magicb10]
 {
     hknight_shot(FALSE);
 };
@@ -1133,7 +1133,7 @@ void () hknight_magicb9 = [101.000, hknight_magicb10]
 // OP_STORE_V	214	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb10 = [102.000, hknight_magicb11]
+void () hknight_magicb10 = [102, hknight_magicb11]
 {
     hknight_shot(TRUE);
 };
@@ -1144,7 +1144,7 @@ void () hknight_magicb10 = [102.000, hknight_magicb11]
 // OP_STORE_V	216	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb11 = [103.000, hknight_magicb12]
+void () hknight_magicb11 = [103, hknight_magicb12]
 {
     hknight_shot(FL_SWIM);
 };
@@ -1155,7 +1155,7 @@ void () hknight_magicb11 = [103.000, hknight_magicb12]
 // OP_STORE_V	228	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb12 = [104.000, hknight_magicb13]
+void () hknight_magicb12 = [104, hknight_magicb13]
 {
     hknight_shot(MOVETYPE_WALK);
 };
@@ -1165,7 +1165,7 @@ void () hknight_magicb12 = [104.000, hknight_magicb13]
 // OP_STATE	5589	9595	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicb13 = [105.000, hknight_run1]
+void () hknight_magicb13 = [105, hknight_run1]
 {
     ai_face();
 };
@@ -1175,7 +1175,7 @@ void () hknight_magicb13 = [105.000, hknight_run1]
 // OP_STATE	9784	9785	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc1 = [155.000, hknight_magicc2]
+void () hknight_magicc1 = [155, hknight_magicc2]
 {
     ai_face();
 };
@@ -1185,7 +1185,7 @@ void () hknight_magicc1 = [155.000, hknight_magicc2]
 // OP_STATE	9786	9787	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc2 = [156.000, hknight_magicc3]
+void () hknight_magicc2 = [156, hknight_magicc3]
 {
     ai_face();
 };
@@ -1195,7 +1195,7 @@ void () hknight_magicc2 = [156.000, hknight_magicc3]
 // OP_STATE	9788	9789	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc3 = [157.000, hknight_magicc4]
+void () hknight_magicc3 = [157, hknight_magicc4]
 {
     ai_face();
 };
@@ -1205,7 +1205,7 @@ void () hknight_magicc3 = [157.000, hknight_magicc4]
 // OP_STATE	9790	9791	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc4 = [158.000, hknight_magicc5]
+void () hknight_magicc4 = [158, hknight_magicc5]
 {
     ai_face();
 };
@@ -1215,7 +1215,7 @@ void () hknight_magicc4 = [158.000, hknight_magicc5]
 // OP_STATE	9792	9793	0
 // OP_CALL0	1148	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc5 = [159.000, hknight_magicc6]
+void () hknight_magicc5 = [159, hknight_magicc6]
 {
     ai_face();
 };
@@ -1226,7 +1226,7 @@ void () hknight_magicc5 = [159.000, hknight_magicc6]
 // OP_STORE_V	277	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc6 = [160.000, hknight_magicc7]
+void () hknight_magicc6 = [160, hknight_magicc7]
 {
     hknight_shot(CONTENT_SOLID);
 };
@@ -1237,7 +1237,7 @@ void () hknight_magicc6 = [160.000, hknight_magicc7]
 // OP_STORE_V	276	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc7 = [161.000, hknight_magicc8]
+void () hknight_magicc7 = [161, hknight_magicc8]
 {
     hknight_shot(CONTENT_EMPTY);
 };
@@ -1248,7 +1248,7 @@ void () hknight_magicc7 = [161.000, hknight_magicc8]
 // OP_STORE_V	213	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc8 = [162.000, hknight_magicc9]
+void () hknight_magicc8 = [162, hknight_magicc9]
 {
     hknight_shot(FALSE);
 };
@@ -1259,7 +1259,7 @@ void () hknight_magicc8 = [162.000, hknight_magicc9]
 // OP_STORE_V	214	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc9 = [163.000, hknight_magicc10]
+void () hknight_magicc9 = [163, hknight_magicc10]
 {
     hknight_shot(TRUE);
 };
@@ -1270,7 +1270,7 @@ void () hknight_magicc9 = [163.000, hknight_magicc10]
 // OP_STORE_V	216	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc10 = [164.000, hknight_magicc11]
+void () hknight_magicc10 = [164, hknight_magicc11]
 {
     hknight_shot(FL_SWIM);
 };
@@ -1281,7 +1281,7 @@ void () hknight_magicc10 = [164.000, hknight_magicc11]
 // OP_STORE_V	228	4	0
 // OP_CALL1	9597	0	0
 // OP_DONE	0	0	0
-void () hknight_magicc11 = [165.000, hknight_run1]
+void () hknight_magicc11 = [165, hknight_run1]
 {
     hknight_shot(MOVETYPE_WALK);
 };
@@ -1292,7 +1292,7 @@ void () hknight_magicc11 = [165.000, hknight_run1]
 // OP_STORE_V	576	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a1 = [63.000, hknight_char_a2]
+void () hknight_char_a1 = [63, hknight_char_a2]
 {
     ai_charge(KINDA_WANT);
 };
@@ -1303,9 +1303,9 @@ void () hknight_char_a1 = [63.000, hknight_char_a2]
 // OP_STORE_V	2261	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a2 = [64.000, hknight_char_a3]
+void () hknight_char_a2 = [64, hknight_char_a3]
 {
-    ai_charge(25.000);
+    ai_charge(25);
 };
 
 // hknight_char_a3
@@ -1314,9 +1314,9 @@ void () hknight_char_a2 = [64.000, hknight_char_a3]
 // OP_STORE_V	3866	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a3 = [65.000, hknight_char_a4]
+void () hknight_char_a3 = [65, hknight_char_a4]
 {
-    ai_charge(18.000);
+    ai_charge(18);
 };
 
 // hknight_char_a4
@@ -1325,7 +1325,7 @@ void () hknight_char_a3 = [65.000, hknight_char_a4]
 // OP_STORE_V	218	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a4 = [66.000, hknight_char_a5]
+void () hknight_char_a4 = [66, hknight_char_a5]
 {
     ai_charge(FL_INWATER);
 };
@@ -1336,9 +1336,9 @@ void () hknight_char_a4 = [66.000, hknight_char_a5]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a5 = [67.000, hknight_char_a6]
+void () hknight_char_a5 = [67, hknight_char_a6]
 {
-    ai_charge(14.000);
+    ai_charge(14);
 };
 
 // hknight_char_a6
@@ -1348,7 +1348,7 @@ void () hknight_char_a5 = [67.000, hknight_char_a6]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a6 = [68.000, hknight_char_a7]
+void () hknight_char_a6 = [68, hknight_char_a7]
 {
     ai_charge(KINDA_WANT);
     ai_melee();
@@ -1361,9 +1361,9 @@ void () hknight_char_a6 = [68.000, hknight_char_a7]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a7 = [69.000, hknight_char_a8]
+void () hknight_char_a7 = [69, hknight_char_a8]
 {
-    ai_charge(21.000);
+    ai_charge(21);
     ai_melee();
 };
 
@@ -1374,9 +1374,9 @@ void () hknight_char_a7 = [69.000, hknight_char_a8]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a8 = [70.000, hknight_char_a9]
+void () hknight_char_a8 = [70, hknight_char_a9]
 {
-    ai_charge(13.000);
+    ai_charge(13);
     ai_melee();
 };
 
@@ -1387,7 +1387,7 @@ void () hknight_char_a8 = [70.000, hknight_char_a9]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a9 = [71.000, hknight_char_a10]
+void () hknight_char_a9 = [71, hknight_char_a10]
 {
     ai_charge(KINDA_WANT);
     ai_melee();
@@ -1400,7 +1400,7 @@ void () hknight_char_a9 = [71.000, hknight_char_a10]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a10 = [72.000, hknight_char_a11]
+void () hknight_char_a10 = [72, hknight_char_a11]
 {
     ai_charge(KINDA_WANT);
     ai_melee();
@@ -1413,9 +1413,9 @@ void () hknight_char_a10 = [72.000, hknight_char_a11]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a11 = [73.000, hknight_char_a12]
+void () hknight_char_a11 = [73, hknight_char_a12]
 {
-    ai_charge(18.000);
+    ai_charge(18);
     ai_melee();
 };
 
@@ -1425,7 +1425,7 @@ void () hknight_char_a11 = [73.000, hknight_char_a12]
 // OP_STORE_V	218	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a12 = [74.000, hknight_char_a13]
+void () hknight_char_a12 = [74, hknight_char_a13]
 {
     ai_charge(FL_INWATER);
 };
@@ -1436,9 +1436,9 @@ void () hknight_char_a12 = [74.000, hknight_char_a13]
 // OP_STORE_V	3382	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a13 = [75.000, hknight_char_a14]
+void () hknight_char_a13 = [75, hknight_char_a14]
 {
-    ai_charge(14.000);
+    ai_charge(14);
 };
 
 // hknight_char_a14
@@ -1447,9 +1447,9 @@ void () hknight_char_a13 = [75.000, hknight_char_a14]
 // OP_STORE_V	2261	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a14 = [76.000, hknight_char_a15]
+void () hknight_char_a14 = [76, hknight_char_a15]
 {
-    ai_charge(25.000);
+    ai_charge(25);
 };
 
 // hknight_char_a15
@@ -1458,9 +1458,9 @@ void () hknight_char_a14 = [76.000, hknight_char_a15]
 // OP_STORE_V	8425	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a15 = [77.000, hknight_char_a16]
+void () hknight_char_a15 = [77, hknight_char_a16]
 {
-    ai_charge(21.000);
+    ai_charge(21);
 };
 
 // hknight_char_a16
@@ -1469,9 +1469,9 @@ void () hknight_char_a15 = [77.000, hknight_char_a16]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_char_a16 = [78.000, hknight_run1]
+void () hknight_char_a16 = [78, hknight_run1]
 {
-    ai_charge(13.000);
+    ai_charge(13);
 };
 
 // hknight_char_b1
@@ -1482,7 +1482,7 @@ void () hknight_char_a16 = [78.000, hknight_run1]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b1 = [106.000, hknight_char_b2]
+void () hknight_char_b1 = [106, hknight_char_b2]
 {
     CheckContinueCharge();
     ai_charge(SVC_TEMPENTITY);
@@ -1496,9 +1496,9 @@ void () hknight_char_b1 = [106.000, hknight_char_b2]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b2 = [107.000, hknight_char_b3]
+void () hknight_char_b2 = [107, hknight_char_b3]
 {
-    ai_charge(17.000);
+    ai_charge(17);
     ai_melee();
 };
 
@@ -1509,9 +1509,9 @@ void () hknight_char_b2 = [107.000, hknight_char_b3]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b3 = [108.000, hknight_char_b4]
+void () hknight_char_b3 = [108, hknight_char_b4]
 {
-    ai_charge(12.000);
+    ai_charge(12);
     ai_melee();
 };
 
@@ -1522,9 +1522,9 @@ void () hknight_char_b3 = [108.000, hknight_char_b4]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b4 = [109.000, hknight_char_b5]
+void () hknight_char_b4 = [109, hknight_char_b5]
 {
-    ai_charge(22.000);
+    ai_charge(22);
     ai_melee();
 };
 
@@ -1535,9 +1535,9 @@ void () hknight_char_b4 = [109.000, hknight_char_b5]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b5 = [110.000, hknight_char_b6]
+void () hknight_char_b5 = [110, hknight_char_b6]
 {
-    ai_charge(18.000);
+    ai_charge(18);
     ai_melee();
 };
 
@@ -1548,7 +1548,7 @@ void () hknight_char_b5 = [110.000, hknight_char_b6]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_char_b6 = [111.000, hknight_char_b1]
+void () hknight_char_b6 = [111, hknight_char_b1]
 {
     ai_charge(FL_CLIENT);
     ai_melee();
@@ -1560,7 +1560,7 @@ void () hknight_char_b6 = [111.000, hknight_char_b1]
 // OP_STORE_V	234	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_slice1 = [112.000, hknight_slice2]
+void () hknight_slice1 = [112, hknight_slice2]
 {
     ai_charge(MOVETYPE_FLYMISSILE);
 };
@@ -1571,7 +1571,7 @@ void () hknight_slice1 = [112.000, hknight_slice2]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_slice2 = [113.000, hknight_slice3]
+void () hknight_slice2 = [113, hknight_slice3]
 {
     ai_charge(MOVETYPE_TOSS);
 };
@@ -1582,9 +1582,9 @@ void () hknight_slice2 = [113.000, hknight_slice3]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_slice3 = [114.000, hknight_slice4]
+void () hknight_slice3 = [114, hknight_slice4]
 {
-    ai_charge(13.000);
+    ai_charge(13);
 };
 
 // hknight_slice4
@@ -1593,7 +1593,7 @@ void () hknight_slice3 = [114.000, hknight_slice4]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_slice4 = [115.000, hknight_slice5]
+void () hknight_slice4 = [115, hknight_slice5]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -1605,7 +1605,7 @@ void () hknight_slice4 = [115.000, hknight_slice5]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_slice5 = [116.000, hknight_slice6]
+void () hknight_slice5 = [116, hknight_slice6]
 {
     ai_charge(MOVETYPE_PUSH);
     ai_melee();
@@ -1618,9 +1618,9 @@ void () hknight_slice5 = [116.000, hknight_slice6]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_slice6 = [117.000, hknight_slice7]
+void () hknight_slice6 = [117, hknight_slice7]
 {
-    ai_charge(15.000);
+    ai_charge(15);
     ai_melee();
 };
 
@@ -1631,7 +1631,7 @@ void () hknight_slice6 = [117.000, hknight_slice7]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_slice7 = [118.000, hknight_slice8]
+void () hknight_slice7 = [118, hknight_slice8]
 {
     ai_charge(FL_CLIENT);
     ai_melee();
@@ -1644,7 +1644,7 @@ void () hknight_slice7 = [118.000, hknight_slice8]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_slice8 = [119.000, hknight_slice9]
+void () hknight_slice8 = [119, hknight_slice9]
 {
     ai_charge(FL_SWIM);
     ai_melee();
@@ -1655,7 +1655,7 @@ void () hknight_slice8 = [119.000, hknight_slice9]
 // OP_STATE	746	9834	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_slice9 = [120.000, hknight_slice10]
+void () hknight_slice9 = [120, hknight_slice10]
 {
     ai_melee();
 };
@@ -1666,7 +1666,7 @@ void () hknight_slice9 = [120.000, hknight_slice10]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_slice10 = [121.000, hknight_run1]
+void () hknight_slice10 = [121, hknight_run1]
 {
     ai_charge(MOVETYPE_WALK);
 };
@@ -1677,7 +1677,7 @@ void () hknight_slice10 = [121.000, hknight_run1]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash1 = [122.000, hknight_smash2]
+void () hknight_smash1 = [122, hknight_smash2]
 {
     ai_charge(TRUE);
 };
@@ -1688,9 +1688,9 @@ void () hknight_smash1 = [122.000, hknight_smash2]
 // OP_STORE_V	8413	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash2 = [123.000, hknight_smash3]
+void () hknight_smash2 = [123, hknight_smash3]
 {
-    ai_charge(13.000);
+    ai_charge(13);
 };
 
 // hknight_smash3
@@ -1699,7 +1699,7 @@ void () hknight_smash2 = [123.000, hknight_smash3]
 // OP_STORE_V	234	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash3 = [124.000, hknight_smash4]
+void () hknight_smash3 = [124, hknight_smash4]
 {
     ai_charge(MOVETYPE_FLYMISSILE);
 };
@@ -1710,7 +1710,7 @@ void () hknight_smash3 = [124.000, hknight_smash4]
 // OP_STORE_V	236	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash4 = [125.000, hknight_smash5]
+void () hknight_smash4 = [125, hknight_smash5]
 {
     ai_charge(MOVETYPE_BOUNCEMISSILE);
 };
@@ -1722,7 +1722,7 @@ void () hknight_smash4 = [125.000, hknight_smash5]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_smash5 = [126.000, hknight_smash6]
+void () hknight_smash5 = [126, hknight_smash6]
 {
     ai_charge(MOVETYPE_BOUNCE);
     ai_melee();
@@ -1735,7 +1735,7 @@ void () hknight_smash5 = [126.000, hknight_smash6]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_smash6 = [127.000, hknight_smash7]
+void () hknight_smash6 = [127, hknight_smash7]
 {
     ai_charge(MOVETYPE_PUSH);
     ai_melee();
@@ -1748,9 +1748,9 @@ void () hknight_smash6 = [127.000, hknight_smash7]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_smash7 = [128.000, hknight_smash8]
+void () hknight_smash7 = [128, hknight_smash8]
 {
-    ai_charge(12.000);
+    ai_charge(12);
     ai_melee();
 };
 
@@ -1761,7 +1761,7 @@ void () hknight_smash7 = [128.000, hknight_smash8]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_smash8 = [129.000, hknight_smash9]
+void () hknight_smash8 = [129, hknight_smash9]
 {
     ai_charge(FL_SWIM);
     ai_melee();
@@ -1774,7 +1774,7 @@ void () hknight_smash8 = [129.000, hknight_smash9]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_smash9 = [130.000, hknight_smash10]
+void () hknight_smash9 = [130, hknight_smash10]
 {
     ai_charge(MOVETYPE_WALK);
     ai_melee();
@@ -1786,7 +1786,7 @@ void () hknight_smash9 = [130.000, hknight_smash10]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash10 = [131.000, hknight_smash11]
+void () hknight_smash10 = [131, hknight_smash11]
 {
     ai_charge(FALSE);
 };
@@ -1797,7 +1797,7 @@ void () hknight_smash10 = [131.000, hknight_smash11]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_smash11 = [132.000, hknight_run1]
+void () hknight_smash11 = [132, hknight_run1]
 {
     ai_charge(FALSE);
 };
@@ -1808,7 +1808,7 @@ void () hknight_smash11 = [132.000, hknight_run1]
 // OP_STORE_V	216	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk1 = [133.000, hknight_watk2]
+void () hknight_watk1 = [133, hknight_watk2]
 {
     ai_charge(FL_SWIM);
 };
@@ -1819,7 +1819,7 @@ void () hknight_watk1 = [133.000, hknight_watk2]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk2 = [134.000, hknight_watk3]
+void () hknight_watk2 = [134, hknight_watk3]
 {
     ai_charge(FALSE);
 };
@@ -1830,7 +1830,7 @@ void () hknight_watk2 = [134.000, hknight_watk3]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk3 = [135.000, hknight_watk4]
+void () hknight_watk3 = [135, hknight_watk4]
 {
     ai_charge(FALSE);
 };
@@ -1840,7 +1840,7 @@ void () hknight_watk3 = [135.000, hknight_watk4]
 // OP_STATE	9855	9856	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk4 = [136.000, hknight_watk5]
+void () hknight_watk4 = [136, hknight_watk5]
 {
     ai_melee();
 };
@@ -1850,7 +1850,7 @@ void () hknight_watk4 = [136.000, hknight_watk5]
 // OP_STATE	5549	9857	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk5 = [137.000, hknight_watk6]
+void () hknight_watk5 = [137, hknight_watk6]
 {
     ai_melee();
 };
@@ -1860,7 +1860,7 @@ void () hknight_watk5 = [137.000, hknight_watk6]
 // OP_STATE	5552	9858	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk6 = [138.000, hknight_watk7]
+void () hknight_watk6 = [138, hknight_watk7]
 {
     ai_melee();
 };
@@ -1871,7 +1871,7 @@ void () hknight_watk6 = [138.000, hknight_watk7]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk7 = [139.000, hknight_watk8]
+void () hknight_watk7 = [139, hknight_watk8]
 {
     ai_charge(TRUE);
 };
@@ -1882,7 +1882,7 @@ void () hknight_watk7 = [139.000, hknight_watk8]
 // OP_STORE_V	229	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk8 = [140.000, hknight_watk9]
+void () hknight_watk8 = [140, hknight_watk9]
 {
     ai_charge(MOVETYPE_STEP);
 };
@@ -1893,7 +1893,7 @@ void () hknight_watk8 = [140.000, hknight_watk9]
 // OP_STORE_V	230	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk9 = [141.000, hknight_watk10]
+void () hknight_watk9 = [141, hknight_watk10]
 {
     ai_charge(MOVETYPE_FLY);
 };
@@ -1905,7 +1905,7 @@ void () hknight_watk9 = [141.000, hknight_watk10]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk10 = [142.000, hknight_watk11]
+void () hknight_watk10 = [142, hknight_watk11]
 {
     ai_charge(MOVETYPE_WALK);
     ai_melee();
@@ -1918,7 +1918,7 @@ void () hknight_watk10 = [142.000, hknight_watk11]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk11 = [143.000, hknight_watk12]
+void () hknight_watk11 = [143, hknight_watk12]
 {
     ai_charge(FL_SWIM);
     ai_melee();
@@ -1931,7 +1931,7 @@ void () hknight_watk11 = [143.000, hknight_watk12]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk12 = [144.000, hknight_watk13]
+void () hknight_watk12 = [144, hknight_watk13]
 {
     ai_charge(FL_SWIM);
     ai_melee();
@@ -1943,7 +1943,7 @@ void () hknight_watk12 = [144.000, hknight_watk13]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk13 = [145.000, hknight_watk14]
+void () hknight_watk13 = [145, hknight_watk14]
 {
     ai_charge(FALSE);
 };
@@ -1954,7 +1954,7 @@ void () hknight_watk13 = [145.000, hknight_watk14]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk14 = [146.000, hknight_watk15]
+void () hknight_watk14 = [146, hknight_watk15]
 {
     ai_charge(FALSE);
 };
@@ -1965,7 +1965,7 @@ void () hknight_watk14 = [146.000, hknight_watk15]
 // OP_STORE_V	213	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk15 = [147.000, hknight_watk16]
+void () hknight_watk15 = [147, hknight_watk16]
 {
     ai_charge(FALSE);
 };
@@ -1976,7 +1976,7 @@ void () hknight_watk15 = [147.000, hknight_watk16]
 // OP_STORE_V	214	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk16 = [148.000, hknight_watk17]
+void () hknight_watk16 = [148, hknight_watk17]
 {
     ai_charge(TRUE);
 };
@@ -1988,7 +1988,7 @@ void () hknight_watk16 = [148.000, hknight_watk17]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk17 = [149.000, hknight_watk18]
+void () hknight_watk17 = [149, hknight_watk18]
 {
     ai_charge(TRUE);
     ai_melee();
@@ -2001,7 +2001,7 @@ void () hknight_watk17 = [149.000, hknight_watk18]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk18 = [150.000, hknight_watk19]
+void () hknight_watk18 = [150, hknight_watk19]
 {
     ai_charge(MOVETYPE_WALK);
     ai_melee();
@@ -2014,7 +2014,7 @@ void () hknight_watk18 = [150.000, hknight_watk19]
 // OP_CALL1	1247	0	0
 // OP_CALL0	1284	0	0
 // OP_DONE	0	0	0
-void () hknight_watk19 = [151.000, hknight_watk20]
+void () hknight_watk19 = [151, hknight_watk20]
 {
     ai_charge(MOVETYPE_STEP);
     ai_melee();
@@ -2026,7 +2026,7 @@ void () hknight_watk19 = [151.000, hknight_watk20]
 // OP_STORE_V	231	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk20 = [152.000, hknight_watk21]
+void () hknight_watk20 = [152, hknight_watk21]
 {
     ai_charge(MOVETYPE_TOSS);
 };
@@ -2037,7 +2037,7 @@ void () hknight_watk20 = [152.000, hknight_watk21]
 // OP_STORE_V	232	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk21 = [153.000, hknight_watk22]
+void () hknight_watk21 = [153, hknight_watk22]
 {
     ai_charge(MOVETYPE_PUSH);
 };
@@ -2048,7 +2048,7 @@ void () hknight_watk21 = [153.000, hknight_watk22]
 // OP_STORE_V	228	4	0
 // OP_CALL1	1247	0	0
 // OP_DONE	0	0	0
-void () hknight_watk22 = [154.000, hknight_run1]
+void () hknight_watk22 = [154, hknight_run1]
 {
     ai_charge(MOVETYPE_WALK);
 };
@@ -2068,7 +2068,7 @@ void () hknight_watk22 = [154.000, hknight_run1]
 void () hk_idle_sound = 
 {
     
-    if(random() < 0.200)
+    if(random() < 0.2)
     {
         sound(self, CHAN_VOICE, "hknight/idle.wav", TRUE, ATTN_NORM);
     }
@@ -2273,7 +2273,7 @@ void () monster_hell_knight =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/hknight.mdl");
     setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
-    self.health = 250.000;
+    self.health = 250;
     self.th_stand = hknight_stand1;
     self.th_walk = hknight_walk1;
     self.th_run = hknight_run1;

@@ -37,13 +37,13 @@ void () start_monster_aag;
 // OP_STOREP_F	18279	18278	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () aag_stand = [0.000, aag_stand]
+void () aag_stand = [0, aag_stand]
 {
     checkground();
     
     if(!(self.flags & FL_ONGROUND))
     {
-        T_Damage(self, world, world, 1000.000);
+        T_Damage(self, world, world, 1000);
     }
     
     
@@ -62,7 +62,7 @@ void () aag_stand = [0.000, aag_stand]
     else
     {
         self.think = aag_run;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -72,7 +72,7 @@ void () aag_stand = [0.000, aag_stand]
 // function begins at statement 26813, parm_start=18281
 // OP_STATE	619	18267	0
 // OP_DONE	0	0	0
-void () aag_walk = [0.000, aag_stand]
+void () aag_walk = [0, aag_stand]
 {
 };
 
@@ -111,13 +111,13 @@ void () aag_walk = [0.000, aag_stand]
 // OP_RETURN	0	0	0
 // OP_CALL0	18263	0	0
 // OP_DONE	0	0	0
-void () aag_run = [0.000, aag_run]
+void () aag_run = [0, aag_run]
 {
     checkground();
     
     if(!(self.flags & FL_ONGROUND))
     {
-        T_Damage(self, world, world, 1000.000);
+        T_Damage(self, world, world, 1000);
     }
     
     FindTarget();
@@ -126,7 +126,7 @@ void () aag_run = [0.000, aag_run]
     {
         self.enemy = world;
         self.think = self.th_stand;
-        self.nextthink = time + 0.100;
+        self.nextthink = time + 0.1;
         return;
     }
     
@@ -162,7 +162,7 @@ void () aag_run = [0.000, aag_run]
 void () aag_death = 
 {
     self.trigger_field.think = BecomeExplosion;
-    self.trigger_field.nextthink = time + 0.100;
+    self.trigger_field.nextthink = time + 0.1;
     if(!deathmatch)
     {
         remove(self);
@@ -170,7 +170,7 @@ void () aag_death =
     else
     {
         setmodel(self, "");
-        self.takedamage = 0.000;
+        self.takedamage = 0;
         self.think = start_monster_aag;
         self.nextthink = time + self.wait;
     }
@@ -198,9 +198,9 @@ void () aag_death =
 void () aag_die = 
 {
     
-    if(self.health < -90.000)
+    if(self.health < -90)
     {
-        sound(self, CHAN_VOICE, "player/udeath.wav", 1.000, ATTN_NORM);
+        sound(self, CHAN_VOICE, "player/udeath.wav", 1, ATTN_NORM);
         Throw_ACgib();
         Throw_ACgib();
         Throw_ACgib();
@@ -386,7 +386,7 @@ void () aag_aim =
         }
         else
         {
-            org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.500);
+            org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
             if(self.enemy.classname == "tank")
             {
                 vel = self.enemy.owner.velocity;
@@ -400,7 +400,7 @@ void () aag_aim =
         }
         
         dist = vlen(vtemp - self.origin);
-        dist = dist / 1200.000;
+        dist = dist / 1200;
         self.speed = dist;
         org = org + (vel * dist);
         dir = vectoangles(org - self.origin);
@@ -408,7 +408,7 @@ void () aag_aim =
     else
     {
         dir = self.owner.v_angle;
-        dir_x = 0.000 - dir_x;
+        dir_x = 0 - dir_x;
         ff = self.owner.button0;
         
         if(self.owner.enemy != self)
@@ -419,56 +419,56 @@ void () aag_aim =
     }
     
     vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0.000 - self.angles_y;
+    vtemp_y = 0 - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
     dir = '0.000 0.000 0.000';
     
-    if(vtemp_x < 0.000)
+    if(vtemp_x < 0)
     {
-        vtemp_x = vtemp_x + 360.000;
+        vtemp_x = vtemp_x + 360;
     }
     
     
-    if(vtemp_x > 180.000)
+    if(vtemp_x > 180)
     {
-        vtemp_x = vtemp_x - 360.000;
+        vtemp_x = vtemp_x - 360;
     }
     
     
-    if(0.000 < 0.000)
+    if(0 < 0)
     {
-        vtemp_y = 0.000 + 360.000;
+        vtemp_y = 0 + 360;
     }
     
     
-    if(0.000 > 180.000)
+    if(0 > 180)
     {
-        vtemp_y = 0.000 - 360.000;
+        vtemp_y = 0 - 360;
     }
     
     dir = vtemp;
     
-    if(dir_x < -10.000)
+    if(dir_x < -10)
     {
-        dir_x = -10.000;
+        dir_x = -10;
     }
     
     
-    if(dir_x > 10.000)
+    if(dir_x > 10)
     {
-        dir_x = 10.000;
+        dir_x = 10;
     }
     
     
-    if(0.000 < -10.000)
+    if(0 < -10)
     {
-        dir_y = -10.000;
+        dir_y = -10;
     }
     
     
-    if(0.000 > 10.000)
+    if(0 > 10)
     {
-        dir_y = 10.000;
+        dir_y = 10;
     }
     
     
@@ -478,13 +478,13 @@ void () aag_aim =
         if(self.enemy)
         {
             
-            if(vlen(dir) < 10.000)
+            if(vlen(dir) < 10)
             {
                 traceline(self.origin, org, TRUE, world);
                 
-                if((trace_fraction == 1.000) && (dist <= 1.000))
+                if((trace_fraction == 1) && (dist <= 1))
                 {
-                    ff = 1.000;
+                    ff = 1;
                 }
                 
             }
@@ -494,14 +494,14 @@ void () aag_aim =
     }
     
     
-    if((time > self.attack_finished) && (ff == 1.000))
+    if((time > self.attack_finished) && (ff == 1))
     {
         self.th_missile();
-        self.attack_finished = time + 0.500;
+        self.attack_finished = time + 0.5;
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0.000);
+    self.angles_y = anglemod(self.angles_y + 0);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -606,42 +606,42 @@ void () aag_launch =
         return;
     }
     
-    self.ammo_cells = self.ammo_cells - 1.000;
+    self.ammo_cells = self.ammo_cells - 1;
     makevectors(self.trigger_field.angles);
     v1 = v_forward;
-    v1_z = 0.000 - 0.000;
-    if(self.spawnflags & 2.000)
+    v1_z = 0 - 0;
+    if(self.spawnflags & 2)
     {
-        if(self.ammo_cells & 1.000)
+        if(self.ammo_cells & 1)
         {
-            AC_plasma(self.origin + (v_right * 14.000), v1 + ((crandom() * v_right) * 0.040), self.enemy);
+            AC_plasma(self.origin + (v_right * 14), v1 + ((crandom() * v_right) * 0.04), self.enemy);
         }
         else
         {
-            AC_plasma(self.origin - (v_right * 14.000), v1 + ((crandom() * v_right) * 0.040), self.enemy);
+            AC_plasma(self.origin - (v_right * 14), v1 + ((crandom() * v_right) * 0.04), self.enemy);
         }
         
         newmis.think = ACprojectile_expireboom;
         
-        if(self.speed < 0.500)
+        if(self.speed < 0.5)
         {
-            self.speed = 0.500;
+            self.speed = 0.5;
         }
         
         newmis.nextthink = time + self.speed;
         newmis.touch = ACprojectile_touchboom;
-        newmis.dmg = 60.000;
+        newmis.dmg = 60;
         self.enemy.pdmg = self.enemy.pdmg + newmis.dmg;
     }
     else
     {
-        if(self.ammo_cells & 1.000)
+        if(self.ammo_cells & 1)
         {
-            AC_plasma(self.origin + (v_right * 14.000), v1, self.enemy);
+            AC_plasma(self.origin + (v_right * 14), v1, self.enemy);
         }
         else
         {
-            AC_plasma(self.origin - (v_right * 14.000), v1, self.enemy);
+            AC_plasma(self.origin - (v_right * 14), v1, self.enemy);
         }
         
     }
@@ -739,10 +739,10 @@ void () start_monster_aag =
 {
     teamplay = cvar("teamplay");
     
-    if(deathmatch > 0.000)
+    if(deathmatch > 0)
     {
         
-        if((self.team == 0.000) || (teamplay == 0.000))
+        if((self.team == 0) || (teamplay == 0))
         {
             remove(self);
             return;
@@ -844,14 +844,14 @@ void () monster_aag =
     
     if(!deathmatch)
     {
-        total_monsters = total_monsters + 1.000;
+        total_monsters = total_monsters + 1;
     }
     
     self.oldorigin = self.origin;
     
     if(!self.health)
     {
-        self.health = 100.000;
+        self.health = 100;
     }
     
     self.max_health = self.health;
@@ -862,17 +862,17 @@ void () monster_aag =
     
     if(!self.ammo_cells)
     {
-        self.ammo_cells = 5000.000;
+        self.ammo_cells = 5000;
     }
     
     self.aflag = self.ammo_cells;
     
     if(!self.wait)
     {
-        self.wait = 30.000;
+        self.wait = 30;
     }
     
     self.think = start_monster_aag;
-    self.nextthink = (time + 0.100) + (random() * 0.300);
+    self.nextthink = (time + 0.1) + (random() * 0.3);
 };
 
