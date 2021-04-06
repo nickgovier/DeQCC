@@ -28,7 +28,7 @@ namespace DeQcc
 
         // Maps for obfuscated progs.dat files
         Dictionary<string, string> nameMap = new Dictionary<string, string>();  // map autogen name to actual name
-        Dictionary<string, string> fileMap = new Dictionary<string, string>();  // map function name to filename
+        Dictionary<int, string> fileMap = new Dictionary<int, string>();  // map function id to filename
 
         int highestGlobalAccessed;  // highest global processed so far in decompilation (used to detect globals between functions)
         List<Global> globalList = new List<Global>();
@@ -471,25 +471,10 @@ namespace DeQcc
             highestGlobalAccessed = RESERVED_OFS - 1;
             foreach(Global g in globalList) { g.accessed = false; }
 
-            // used for when a progs.dat has obfuscated filenames that can't be written out, but has a unique one per source file
-            // so we can output unknownx.qc where x increments with every new obfuscated filename encountered
-            Dictionary<string, string> obfuscatedFilenames = new Dictionary<string, string>();
-
             StreamWriter f;
             for (int i = 1; i < functions.Count; i++)
             {
                 string filename = functions[i].file;
-
-                // Check for progs.dat obfuscated with illegal file names
-                Regex unsupportedRegex = new Regex("(^(PRN|AUX|NUL|CON|COM[1-9]|LPT[1-9]|(\\.+)$)(\\..*)?$)|(([\\x00-\\x1f\\\\?*:\";‌​|/<>])+)|([\\. ]+)", RegexOptions.IgnoreCase);
-                if (unsupportedRegex.IsMatch(filename))
-                {
-                    if (!obfuscatedFilenames.ContainsKey(filename))
-                    {
-                        obfuscatedFilenames.Add(filename, "unknown" + obfuscatedFilenames.Count + ".qc");
-                    }
-                    filename = obfuscatedFilenames[filename];
-                }
 
                 if (AlreadySeen(filename) == false)
                 {
@@ -634,6 +619,10 @@ namespace DeQcc
                     {
                         Print(" = " + g.ImmediateValue);
                     }
+                    //else
+                    //{
+                    //    Print(" /* = " + g.ImmediateValue + " */");
+                    //}
                 }
                 PrintLine(";");
             }

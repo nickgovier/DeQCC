@@ -175,24 +175,26 @@ namespace DeQcc
                         return DeQCC.CleanseString(Strings.GetString((int)IntVal));
                     case Types.ev_void:
                         return "void";
-                    
                     case Types.ev_vector:
-                        return "'" + FloatVal.ToString("F3") + " " + (globalList[_id + 1].FloatVal).ToString("F3") + " " + (globalList[_id + 2].FloatVal).ToString("F3") + "'";
+                        return "'" + floatFormat(FloatVal) + " " + floatFormat(globalList[_id + 1].FloatVal) + " " + floatFormat(globalList[_id + 2].FloatVal) + "'";
+                    case Types.ev_float:
+                        return floatFormat(FloatVal);
                     default:
                         return "/* ERROR ImmediateValue for " + Type + " */";
-                    case Types.ev_float:
-                        ret = FloatVal.ToString("F3");
-                        break;
                 }
-
-                // if it has a decimal and ends in zero
-                while(ret.Contains(".") && ret.EndsWith("0"))
-                {
-                    ret = ret.Substring(0, ret.Length - 1);     // strip the zero
-                }
-                if(ret.EndsWith(".")) { ret = ret.Substring(0, ret.Length - 1); }   // if it ends in a decimal, strip it
-                return ret;
             }
+        }
+
+        private string floatFormat(float input)
+        {
+            string ret = input.ToString("F3");
+            // if it has a decimal and ends in zero
+            while (ret.Contains(".") && ret.EndsWith("0"))
+            {
+                ret = ret.Substring(0, ret.Length - 1);     // strip the zero
+            }
+            if (ret.EndsWith(".")) { ret = ret.Substring(0, ret.Length - 1); }   // if it ends in a decimal, strip it
+            return ret;
         }
 
         public string ValueToAssign // If this globaldef is being assigned to something else

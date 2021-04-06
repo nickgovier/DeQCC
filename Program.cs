@@ -11,13 +11,13 @@ namespace DeQcc
         {
             string mod = "";
             mod = "vanilla";
-            //mod = "obots";
+            mod = "obots";
             //mod = "airquake";
             //mod = "quess";
             //mod = "rally";
             //mod = "reaper";
 
-            bool decompile = false;  // true to decompile inputprogs.dat into qc files, false to compare
+            bool decompile = true;  // true to decompile inputprogs.dat into qc files, false to compare
             if (decompile)
             {
                 DeQCC p = new DeQCC();

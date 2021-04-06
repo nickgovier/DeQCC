@@ -660,7 +660,7 @@ namespace DeQcc
                 if (nameMap.ContainsKey(f.name)) { f.name = nameMap[f.name]; }
 
                 if (f.s_file > 0) { f.file = Strings.GetString(f.s_file); }
-                else if (fileMap.ContainsKey(f.name)) { f.file = fileMap[f.name]; }
+                else if (fileMap.ContainsKey(i)) { f.file = fileMap[i]; }
                 else { f.file = "unknown.qc"; }
 
                 functions.Add(f);
