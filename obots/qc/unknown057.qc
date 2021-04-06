@@ -260,9 +260,9 @@ void () func001086 =
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
         func000462("progs/h_knight.mdl", self.health);
-        func000461("progs/gib1.mdl", self.health);
-        func000461("progs/gib2.mdl", self.health);
-        func000461("progs/gib3.mdl", self.health);
+        ThrowGib("progs/gib1.mdl", self.health);
+        ThrowGib("progs/gib2.mdl", self.health);
+        ThrowGib("progs/gib3.mdl", self.health);
         return;
     }
     

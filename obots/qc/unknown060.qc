@@ -1109,9 +1109,9 @@ void () func001354 =
     if(self.health < -35)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
-        func000461("progs/gib3.mdl", self.health);
-        func000461("progs/gib3.mdl", self.health);
-        func000461("progs/gib3.mdl", self.health);
+        ThrowGib("progs/gib3.mdl", self.health);
+        ThrowGib("progs/gib3.mdl", self.health);
+        ThrowGib("progs/gib3.mdl", self.health);
         func000462("progs/h_dog.mdl", self.health);
         return;
     }

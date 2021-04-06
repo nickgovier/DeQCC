@@ -74,7 +74,7 @@ void () func000593 =
             
             if(self.message != "")
             {
-                func000072(other, self.message);
+                centerprint(other, self.message);
                 sound(other, CHAN_BODY, "misc/talk.wav", TRUE, ATTN_NORM);
             }
             

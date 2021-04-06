@@ -1683,7 +1683,7 @@ void (entity globaldef002651) func000345 =
 {
     local string globaldef002652;
     local float globaldef002653;
-    func000072(globaldef002651, "");
+    centerprint(globaldef002651, "");
     globaldef002653 = random();
     if(globaldef002609 == globaldef002608)
     {
@@ -2013,7 +2013,7 @@ void (entity globaldef002677) func000347 =
     
     if(globaldef002677.impulse == 254)
     {
-        func000072(globaldef002677, "\n\n\nThis server is running the\n\nOmicron Camper Exterminator");
+        centerprint(globaldef002677, "\n\n\nThis server is running the\n\nOmicron Camper Exterminator");
         globaldef002677.impulse = FALSE;
     }
     
@@ -2073,7 +2073,7 @@ void (entity globaldef002677) func000347 =
                 
                 if(globaldef002677.field000386 >= globaldef002603)
                 {
-                    func000072(globaldef002677, "Stop camping or you'll be punished!");
+                    centerprint(globaldef002677, "Stop camping or you'll be punished!");
                 }
                 
                 
@@ -3812,8 +3812,8 @@ void (entity globaldef002797) func000365 =
             
             globaldef000524.takedamage = DAMAGE_AIM;
             globaldef000525.takedamage = DAMAGE_AIM;
-            func000072(globaldef000524, "??????");
-            func000072(globaldef000525, "??????");
+            centerprint(globaldef000524, "??????");
+            centerprint(globaldef000525, "??????");
             globaldef000799 = FALSE;
             globaldef000527 = FALSE;
         }

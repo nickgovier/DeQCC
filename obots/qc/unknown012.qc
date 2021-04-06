@@ -58,7 +58,7 @@ void () func000236 =
         return;
     }
     
-    func000072(other, "You got the rune!");
+    centerprint(other, "You got the rune!");
     sound(other, CHAN_ITEM, self.noise, TRUE, ATTN_NORM);
     func000064(other, "bf\n");
     self.solid = SOLID_NOT;

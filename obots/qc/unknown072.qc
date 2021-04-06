@@ -17248,7 +17248,7 @@ void (entity globaldef006784) func002357 =
     func002349(globaldef006784, globaldef006784);
     func002350(globaldef006784, globaldef006784.v_angle);
     setsize(globaldef006784, VEC_HULL_MIN, VEC_HULL_MAX);
-    func000072(globaldef006784, "");
+    centerprint(globaldef006784, "");
     func002348(globaldef006784);
 };
 
@@ -17582,7 +17582,7 @@ void (entity globaldef006793) func002361 =
         globaldef006793.field000343 = globaldef006793.field000343 | globaldef000744;
     }
     
-    func000072(globaldef006793, "");
+    centerprint(globaldef006793, "");
 };
 
 // func002362
@@ -52665,7 +52665,7 @@ void () func002704 =
 // OP_DONE	0	0	0
 void () func002705 = 
 {
-    func000072(self, "???????? Omicron Bots v1.02 ????????");
+    centerprint(self, "???????? Omicron Bots v1.02 ????????");
     func000092(self, "\n ???????? Omicron Bots v1.02 ????????\n\n");
     
     if(globaldef000804 & globaldef000750)
@@ -56226,7 +56226,7 @@ void () func002736 =
                                     if(self.impulse == FL_CLIENT)
                                     {
                                         self.field000362 = globaldef000730;
-                                        func000072(self, "");
+                                        centerprint(self, "");
                                     }
                                     
                                 }

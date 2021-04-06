@@ -317,7 +317,7 @@ void(entity client, string s, string s2, string s3, string s4) bot_centerprint4 
 void(entity client, string s, string s2, string s3, string s4, string s5) bot_centerprint5 = #73;
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6) bot_centerprint6 = #73;
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6, string s7) bot_centerprint7 = #73;
-// func000072
+// centerprint
 // function begins at statement 9, parm_start=853
 // OP_LOAD_F	853	182	855
 // OP_BITAND	855	698	856
@@ -327,7 +327,7 @@ void(entity client, string s, string s2, string s3, string s4, string s5, string
 // OP_STORE_V	854	7	0
 // OP_CALL2	845	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000833, string globaldef000834) func000072 = 
+void (entity globaldef000833, string globaldef000834) centerprint = 
 {
     
     if(!(globaldef000833.flags & globaldef000681))

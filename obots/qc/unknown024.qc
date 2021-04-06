@@ -472,7 +472,7 @@ void () func000545 =
         
         if(other.classname == "player")
         {
-            func000072(other, self.owner.message);
+            centerprint(other, self.owner.message);
         }
         
         sound(other, CHAN_VOICE, "misc/talk.wav", TRUE, ATTN_NORM);
@@ -491,14 +491,14 @@ void () func000545 =
         {
             if(world.worldtype == FL_SWIM)
             {
-                func000072(other, "You need the silver keycard");
+                centerprint(other, "You need the silver keycard");
                 sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
             }
             else
             {
                 if(world.worldtype == TRUE)
                 {
-                    func000072(other, "You need the silver runekey");
+                    centerprint(other, "You need the silver runekey");
                     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
                 }
                 else
@@ -506,7 +506,7 @@ void () func000545 =
                     
                     if(world.worldtype == FALSE)
                     {
-                        func000072(other, "You need the silver key");
+                        centerprint(other, "You need the silver key");
                         sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
                     }
                     
@@ -522,14 +522,14 @@ void () func000545 =
             {
                 if(world.worldtype == FL_SWIM)
                 {
-                    func000072(other, "You need the gold keycard");
+                    centerprint(other, "You need the gold keycard");
                     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
                 }
                 else
                 {
                     if(world.worldtype == TRUE)
                     {
-                        func000072(other, "You need the gold runekey");
+                        centerprint(other, "You need the gold runekey");
                         sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
                     }
                     else
@@ -537,7 +537,7 @@ void () func000545 =
                         
                         if(world.worldtype == FALSE)
                         {
-                            func000072(other, "You need the gold key");
+                            centerprint(other, "You need the gold key");
                             sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
                         }
                         

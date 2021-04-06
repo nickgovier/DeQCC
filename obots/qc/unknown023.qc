@@ -2662,7 +2662,7 @@ void () func000460 =
     remove(self);
 };
 
-// func000461
+// ThrowGib
 // function begins at statement 14084, parm_start=9772
 // OP_GT	801	742	9775
 // OP_IFNOT	9775	2	0
@@ -2716,7 +2716,7 @@ void () func000460 =
 // OP_ADDRESS	9774	182	9801
 // OP_STOREP_F	213	9801	0
 // OP_DONE	0	0	0
-void (string globaldef003186, float globaldef003187) func000461 = 
+void (string globaldef003186, float globaldef003187) ThrowGib = 
 {
     local entity globaldef003188;
     
@@ -2877,9 +2877,9 @@ void (string globaldef003190, float globaldef003191) func000462 =
 void () func000463 = 
 {
     func000462("progs/h_player.mdl", self.health);
-    func000461("progs/gib1.mdl", self.health);
-    func000461("progs/gib2.mdl", self.health);
-    func000461("progs/gib3.mdl", self.health);
+    ThrowGib("progs/gib1.mdl", self.health);
+    ThrowGib("progs/gib2.mdl", self.health);
+    ThrowGib("progs/gib3.mdl", self.health);
     self.deadflag = DEAD_DEAD;
     
     if(damage_attacker.classname == globaldef002997)

@@ -449,7 +449,7 @@ void () SUB_UseTargets =
     
     if((activator.classname == "player") && (self.message != ""))
     {
-        func000072(activator, self.message);
+        centerprint(activator, self.message);
         
         if(!self.noise)
         {

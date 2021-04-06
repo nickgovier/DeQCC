@@ -8,8 +8,6 @@ namespace DeQcc
     {
         void InitObotMaps()
         {
-
-
             #region Names still in obfuscated progs.dat and their original qc files
 
             for(int i = 1; i <= 62; i++) { fileMap.Add(i, "defs.qc"); } // built-ins
@@ -97,15 +95,21 @@ namespace DeQcc
             fileMap.Add(2070, "shalrath.qc");   // monster_shalrath
             fileMap.Add(2182, "enforcer.qc");   // monster_enforcer
             fileMap.Add(2254, "oldone.qc");   // monster_oldone
-            //fileMap.Add(2285, ".qc");   // BotChooseTelefragMessage
-            //fileMap.Add(2443, ".qc");   // BotJumpToGoal
-            //fileMap.Add(2649, ".qc");   // update_cachex2
-            //fileMap.Add(2667, ".qc");   // waypoint
-            //fileMap.Add(2672, ".qc");   // DestroyWaypoint
-            //fileMap.Add(2690, ".qc");   // MovingEntityCached
+                                              //fileMap.Add(2285, ".qc");   // BotChooseTelefragMessage
+                                              //fileMap.Add(2443, ".qc");   // BotJumpToGoal
+                                              //fileMap.Add(2649, ".qc");   // update_cachex2
+                                              //fileMap.Add(2667, ".qc");   // waypoint
+                                              //fileMap.Add(2672, ".qc");   // DestroyWaypoint
+                                              //fileMap.Add(2690, ".qc");   // MovingEntityCached
 
             #endregion
 
+            #region Set unknown files for all unknown names at this point
+
+            // Whenever there is a gap between the known function names/files, create a new unique file for the
+            // functions in that gap (so we continue to have a sequential list of functions across multiple files)
+            // if we don't do this, all the unknown files will be appended to a single file, and we won't be able
+            // to tell where the known functions originally were in that file, making matching more difficult
             int nextfile = 0;
             bool lastFunctionWasInFileMap = false;
             for(int i = 1; i < 3000; i++)   // should be to functions.Count, but functions aren't read in yet
@@ -125,7 +129,9 @@ namespace DeQcc
                 }
             }
 
-            #region System globals
+            #endregion
+
+            #region defs.qc system globals
 
             nameMap.Add("globaldef000001", "self");
             nameMap.Add("globaldef000002", "other");
@@ -176,7 +182,7 @@ namespace DeQcc
 
             #endregion
 
-            #region Constants in defs.qc
+            #region defs.qc constants
 
             nameMap.Add("globaldef000191", "FALSE"); /* = 0 */
             nameMap.Add("globaldef000192", "TRUE"); /* = 1 */
@@ -321,6 +327,11 @@ namespace DeQcc
 
             #endregion
 
+            // not sure where this goes
+            nameMap.Add("func000072", "centerprint");
+
+            nameMap.Add("func000461", "ThrowGib");
+
             #region subs.qc
 
             // Functions
@@ -405,6 +416,41 @@ namespace DeQcc
 
             #endregion
 
+            #region oldone.qc
+
+            // Declaration
+            nameMap.Add("globaldef005566", "shub");
+
+            for(int i = 1; i <= 46; i++) { nameMap.Add("func00" + (2182+i).ToString(), "old_idle" + i.ToString()); }
+            for (int i = 1; i <= 20; i++) { nameMap.Add("func00" + (2228 + i).ToString(), "old_thrash" + i.ToString()); }
+            nameMap.Add("func002249", "finale_1");
+            nameMap.Add("func002250", "finale_2");
+            nameMap.Add("func002251", "finale_3");
+            nameMap.Add("func002252", "finale_4");
+            nameMap.Add("func002253", "nopain");
+
+            for (int i = 2183; i <= 2253; i++)
+            {
+                fileMap[i] = "oldone.qc";
+            }
+
+            // finale_1 locals
+            nameMap.Add("globaldef005639", "pos");
+            nameMap.Add("globaldef005640", "pl");
+            nameMap.Add("globaldef005641", "timer");
+
+            // finale_2 locals
+            nameMap.Add("globaldef005646", "o");
+
+            // finale_4 locals
+            nameMap.Add("globaldef005653", "oldo");
+            nameMap.Add("globaldef005657", "x");
+            nameMap.Add("globaldef005658", "y");
+            nameMap.Add("globaldef005659", "z");
+            nameMap.Add("globaldef005660", "r");
+            nameMap.Add("globaldef005661", "n");
+
+            #endregion
 
             return; // disabled for now
 

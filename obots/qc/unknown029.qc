@@ -84,7 +84,7 @@ void () func000559 =
         
         if(other.classname == "player")
         {
-            func000072(other, self.message);
+            centerprint(other, self.message);
         }
         
         sound(other, CHAN_BODY, "misc/talk.wav", TRUE, ATTN_NORM);

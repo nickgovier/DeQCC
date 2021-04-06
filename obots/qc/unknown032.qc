@@ -75,23 +75,23 @@ void () func000581 =
         {
             if(self.count >= MOVETYPE_STEP)
             {
-                func000072(activator, "There are more to go...");
+                centerprint(activator, "There are more to go...");
             }
             else
             {
                 if(self.count == MOVETYPE_WALK)
                 {
-                    func000072(activator, "Only 3 more to go...");
+                    centerprint(activator, "Only 3 more to go...");
                 }
                 else
                 {
                     if(self.count == FL_SWIM)
                     {
-                        func000072(activator, "Only 2 more to go...");
+                        centerprint(activator, "Only 2 more to go...");
                     }
                     else
                     {
-                        func000072(activator, "Only 1 more to go...");
+                        centerprint(activator, "Only 1 more to go...");
                     }
                     
                 }
@@ -106,7 +106,7 @@ void () func000581 =
     
     if((activator.classname == "player") && ((self.spawnflags & globaldef003444) == FALSE))
     {
-        func000072(activator, "Sequence completed!");
+        centerprint(activator, "Sequence completed!");
     }
     
     self.enemy = activator;
