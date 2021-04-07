@@ -270,11 +270,11 @@ void (vector v0, float sp_x) turn_eturret =
     if(stemp.tur1)
     {
         setorigin(self.tur1, self.origin);
-        v0_y = stemp.angles_y - 0;
+        v0_y = stemp.angles_y - v0_y;
         
-        if(0 > 180)
+        if(v0_y > 180)
         {
-            v0_y = 0 - 360;
+            v0_y = v0_y - 360;
         }
         
         
@@ -283,7 +283,7 @@ void (vector v0, float sp_x) turn_eturret =
             v0_y = 0;
         }
         
-        v1_y = 0 - stemp.toyview;
+        v1_y = v0_y - stemp.toyview;
         
         if(v1_y < 0)
         {
@@ -314,7 +314,7 @@ void (vector v0, float sp_x) turn_eturret =
         if(f1 < f2)
         {
             v2_y = 0;
-            stemp.toyview = 0;
+            stemp.toyview = v0_y;
         }
         else
         {

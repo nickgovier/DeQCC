@@ -481,7 +481,7 @@ void (float shotcount, vector dir, vector spread) FireBullets =
     
     while(shotcount > 0)
     {
-        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * 0) * v_up);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * spread_y) * v_up);
         traceline(src, src + (direction * 2048), FALSE, self);
         
         if(trace_fraction != 1)

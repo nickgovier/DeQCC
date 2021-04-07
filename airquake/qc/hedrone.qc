@@ -1107,7 +1107,7 @@ void (vector v0) turn_hedrone =
         }
         
         v1 = '0 0 0';
-        v1_y = anglemod(0 - self.angles_y);
+        v1_y = anglemod(v0_y - self.angles_y);
         
         if(v1_y > 180)
         {
@@ -1150,27 +1150,27 @@ void (vector v0) turn_hedrone =
         if(fabs(v1_y) < 11)
         {
             v2_y = 0;
-            self.angles_y = 0;
+            self.angles_y = v0_y;
         }
         else
         {
             self.angles_y = anglemod(self.angles_y);
         }
         
-        v0_z = 0 - ((v2_y * fabs(self.angles_x)) * 0.01);
+        v0_z = v0_z - ((v2_y * fabs(self.angles_x)) * 0.01);
         
-        if(0 < -45)
+        if(v0_z < -45)
         {
             v0_z = -45;
         }
         
         
-        if(0 > 45)
+        if(v0_z > 45)
         {
             v0_z = 45;
         }
         
-        v1_z = 0 - self.angles_z;
+        v1_z = v0_z - self.angles_z;
         
         if(v1_z < 0)
         {

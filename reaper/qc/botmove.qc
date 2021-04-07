@@ -511,7 +511,7 @@ float (vector spot) CheckLavaOrLow =
     }
     
     spot2 = spot;
-    spot2_z = 0 + FL_CLIENT;
+    spot2_z = spot_z + FL_CLIENT;
     lnd = pointcontents(spot2);
     
     if((lnd == CONTENT_LAVA) || (lnd == CONTENT_SLIME))
@@ -529,7 +529,7 @@ float (vector spot) CheckLavaOrLow =
         }
         
         
-        if((0 + boost) < self.goalentity.origin_z)
+        if((spot_z + boost) < self.goalentity.origin_z)
         {
             return TRUE;
         }
@@ -542,7 +542,7 @@ float (vector spot) CheckLavaOrLow =
         if(trace_inopen)
         {
             
-            if((0 + 45) > self.goalentity.origin_z)
+            if((spot_z + 45) > self.goalentity.origin_z)
             {
                 return FALSE;
             }

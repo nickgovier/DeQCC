@@ -479,7 +479,7 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
     local vector v3;
     stemp = self.enemy;
     v1 = '0 0 0';
-    v1_y = anglemod(0 - stemp.angles_y);
+    v1_y = anglemod(v0_y - stemp.angles_y);
     
     if(v1_y > 180)
     {
@@ -500,9 +500,9 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
             v0_x = -180 - v0_x;
         }
         
-        v0_y = anglemod(0 + 180);
+        v0_y = anglemod(v0_y + 180);
         v1 = '0 0 0';
-        v1_y = anglemod(0 - stemp.angles_y);
+        v1_y = anglemod(v0_y - stemp.angles_y);
         
         if(v1_y > 180)
         {
@@ -549,7 +549,7 @@ void (vector v0, float sp_x, float sp_y, float sp_st) Turn_plane =
     if(fabs(v2_y) < (frametime * fabs(v2_y)))
     {
         v2_y = 0;
-        stemp.angles_y = 0;
+        stemp.angles_y = v0_y;
     }
     else
     {

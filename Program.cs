@@ -11,7 +11,7 @@ namespace DeQcc
         {
             string mod = "";
             mod = "vanilla";
-            mod = "obots";
+            //mod = "obots";
             //mod = "airquake";
             //mod = "quess";
             //mod = "rally";

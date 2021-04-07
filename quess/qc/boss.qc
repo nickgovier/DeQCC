@@ -1186,7 +1186,7 @@ void (vector p) boss_missile =
     local float t;
     offang = vectoangles(self.enemy.origin - self.origin);
     makevectors(offang);
-    org = ((self.origin + (p_x * v_forward)) + (0 * v_right)) + (0 * '0 0 1');
+    org = ((self.origin + (p_x * v_forward)) + (p_y * v_right)) + (p_z * '0 0 1');
     if(skill > 1)
     {
         t = (vlen(self.enemy.origin - org)) / 300;

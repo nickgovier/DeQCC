@@ -458,7 +458,7 @@ float (vector spot) dropline =
     spot2 = spot;
     spot2_z = spot2_z - 500;
     traceline(spot, spot2, TRUE, self);
-    drop = 0 - (trace_fraction * 500);
+    drop = spot_z - (trace_fraction * 500);
     return drop;
 };
 
