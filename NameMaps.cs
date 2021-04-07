@@ -409,9 +409,108 @@ namespace DeQcc
 
             nameMap.Add("func000178", "visible");
 
-            for (int i = 178; i <= 178; i++)
+            for (int i = 175; i <= 192; i++)
             {
                 fileMap[i] = "ai.qc";
+            }
+
+            #endregion
+
+            #region items.qc
+
+            for (int i = 205; i <= 242; i++)
+            {
+                fileMap[i] = "items.qc";
+            }
+
+            #endregion
+
+            #region weapons.qc
+
+            for (int i = 256; i <= 291; i++)
+            {
+                fileMap[i] = "weapons.qc";
+            }
+
+            #endregion
+
+            #region client.qc
+
+            for (int i = 373; i <= 405; i++)
+            {
+                fileMap[i] = "client.qc";
+            }
+
+            #endregion
+
+            #region doors.qc
+
+            for (int i = 537; i <= 562; i++)
+            {
+                fileMap[i] = "doors.qc";
+            }
+
+            #endregion
+
+            #region triggers.qc
+
+            for (int i = 570; i <= 601; i++)
+            {
+                fileMap[i] = "triggers.qc";
+            }
+
+            #endregion
+
+            #region plats.qc
+
+            for (int i = 603; i <= 619; i++)
+            {
+                fileMap[i] = "plats.qc";
+            }
+
+            #endregion
+
+            #region misc.qc
+
+            for (int i = 620; i <= 664; i++)
+            {
+                fileMap[i] = "misc.qc";
+            }
+
+            #endregion
+
+            #region knight.qc
+
+            for (int i = 1055; i <= 1087; i++)
+            {
+                fileMap[i] = "knight.qc";
+            }
+
+            #endregion
+
+            #region wizard.qc
+
+            for (int i = 1195; i <= 1264; i++)
+            {
+                fileMap[i] = "wizard.qc";
+            }
+
+            #endregion
+
+            #region boss.qc
+
+            for (int i = 1677; i <= 1680; i++)
+            {
+                fileMap[i] = "wizard.qc";
+            }
+
+            #endregion
+
+            #region hknight.qc
+
+            for (int i = 1814; i <= 1920; i++)
+            {
+                fileMap[i] = "wizard.qc";
             }
 
             #endregion

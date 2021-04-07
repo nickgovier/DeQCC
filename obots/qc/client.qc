@@ -123,6 +123,594 @@ void () SetNewParms =
     parm10 = self.field000249;
 };
 
+// func000376
+// function begins at statement 11166, parm_start=8248
+// OP_IFNOT	38	5	0
+// OP_LOAD_S	30	130	8248
+// OP_EQ_S	8248	6583	8249
+// OP_IFNOT	8249	2	0
+// OP_CALL0	90	0	0
+// OP_ADDRESS	28	162	8250
+// OP_STOREP_F	43	8250	0
+// OP_ADDRESS	28	152	8251
+// OP_STOREP_F	44	8251	0
+// OP_ADDRESS	28	188	8252
+// OP_STOREP_F	45	8252	0
+// OP_ADDRESS	28	158	8253
+// OP_STOREP_F	46	8253	0
+// OP_ADDRESS	28	159	8254
+// OP_STOREP_F	47	8254	0
+// OP_ADDRESS	28	160	8255
+// OP_STOREP_F	48	8255	0
+// OP_ADDRESS	28	161	8256
+// OP_STOREP_F	49	8256	0
+// OP_ADDRESS	28	154	8257
+// OP_STOREP_F	50	8257	0
+// OP_ADDRESS	28	187	8258
+// OP_MUL_F	51	5500	8259
+// OP_STOREP_F	8259	8258	0
+// OP_ADDRESS	28	572	8260
+// OP_STOREP_F	52	8260	0
+// OP_DONE	0	0	0
+void () func000376 = 
+{
+    
+    if(serverflags)
+    {
+        
+        if(world.model == "maps/start.bsp")
+        {
+            SetNewParms();
+        }
+        
+    }
+    
+    self.items = parm1;
+    self.health = parm2;
+    self.armorvalue = parm3;
+    self.ammo_shells = parm4;
+    self.ammo_nails = parm5;
+    self.ammo_rockets = parm6;
+    self.ammo_cells = parm7;
+    self.weapon = parm8;
+    self.armortype = parm9 * 0.01;
+    self.field000249 = parm10;
+};
+
+// func000377
+// function begins at statement 11193, parm_start=8261
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8263	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8261	0
+// OP_IFNOT	8261	22	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	229	8264
+// OP_STORE_F	8264	8262	0
+// OP_GT	8262	214	8265
+// OP_IFNOT	8265	16	0
+// OP_STORE_V	8261	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8263	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8261	0
+// OP_NOT_ENT	8261	0	8266
+// OP_IFNOT	8266	6	0
+// OP_STORE_V	8261	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8263	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8261	0
+// OP_SUB_F	8262	214	8267
+// OP_STORE_F	8267	8262	0
+// OP_GOTO	-16	0	0
+// OP_RETURN	8261	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2913	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8261	0
+// OP_IFNOT	8261	2	0
+// OP_RETURN	8261	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	7689	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8261	0
+// OP_IFNOT	8261	2	0
+// OP_RETURN	8261	0	0
+// OP_STORE_V	8268	4	0
+// OP_CALL1	461	0	0
+// OP_DONE	0	0	0
+entity () func000377 = 
+{
+    local entity globaldef002867;
+    local float globaldef002868;
+    globaldef002867 = find(world, classname, "info_intermission");
+    
+    if(globaldef002867)
+    {
+        globaldef002868 = random() * MOVETYPE_STEP;
+        
+        while(globaldef002868 > TRUE)
+        {
+            globaldef002867 = find(globaldef002867, classname, "info_intermission");
+            
+            if(!globaldef002867)
+            {
+                globaldef002867 = find(globaldef002867, classname, "info_intermission");
+            }
+            
+            globaldef002868 = globaldef002868 - TRUE;
+        }
+        
+        return globaldef002867;
+    }
+    
+    globaldef002867 = find(world, classname, "info_player_start");
+    
+    if(globaldef002867)
+    {
+        return globaldef002867;
+    }
+    
+    globaldef002867 = find(world, classname, "testplayerstart");
+    
+    if(globaldef002867)
+    {
+        return globaldef002867;
+    }
+    
+    objerror("FindIntermission: no spot");
+};
+
+string globaldef002871;
+// func000378
+// function begins at statement 11237, parm_start=8271
+// OP_STORE_V	34	4	0
+// OP_STORE_V	8269	7	0
+// OP_CALL2	7481	0	0
+// OP_DONE	0	0	0
+void () func000378 = 
+{
+    func000348(mapname, globaldef002871);
+};
+
+// func000379
+// function begins at statement 11241, parm_start=8272
+// OP_IFNOT	35	3	0
+// OP_CALL0	8270	0	0
+// OP_RETURN	0	0	0
+// OP_ADD_F	31	214	8272
+// OP_STORE_F	8272	8214	0
+// OP_ADD_F	8213	214	8273
+// OP_STORE_F	8273	8213	0
+// OP_EQ_F	8213	216	8274
+// OP_IFNOT	8274	92	0
+// OP_LOAD_S	30	130	8275
+// OP_EQ_S	8275	6590	8276
+// OP_IFNOT	8276	29	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	311	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	216	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	6635	4	0
+// OP_CALL1	490	0	0
+// OP_NOT_F	1	0	8277
+// OP_IFNOT	8277	8	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8278	7	0
+// OP_CALL2	502	0	0
+// OP_GOTO	7	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8279	7	0
+// OP_CALL2	502	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	60	0	0
+// OP_LOAD_S	30	130	8280
+// OP_EQ_S	8280	6597	8281
+// OP_IFNOT	8281	18	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	311	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	216	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8282	7	0
+// OP_CALL2	502	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	40	0	0
+// OP_LOAD_S	30	130	8283
+// OP_EQ_S	8283	6604	8284
+// OP_IFNOT	8284	18	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	311	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	216	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8285	7	0
+// OP_CALL2	502	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	20	0	0
+// OP_LOAD_S	30	130	8286
+// OP_EQ_S	8286	6612	8287
+// OP_IFNOT	8287	17	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	311	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	216	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8288	7	0
+// OP_CALL2	502	0	0
+// OP_RETURN	0	0	0
+// OP_CALL0	8270	0	0
+// OP_EQ_F	8213	228	8289
+// OP_IFNOT	8289	19	0
+// OP_STORE_V	6635	4	0
+// OP_CALL1	490	0	0
+// OP_NOT_F	1	0	8290
+// OP_IFNOT	8290	5	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	312	7	0
+// OP_CALL2	496	0	0
+// OP_RETURN	0	0	0
+// OP_BITAND	38	765	8291
+// OP_EQ_F	8291	765	8292
+// OP_IFNOT	8292	8	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	310	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	8293	7	0
+// OP_CALL2	502	0	0
+// OP_RETURN	0	0	0
+// OP_CALL0	8270	0	0
+// OP_DONE	0	0	0
+void () func000379 = 
+{
+    
+    if(deathmatch)
+    {
+        func000378();
+        return;
+    }
+    
+    globaldef002864 = time + TRUE;
+    globaldef002863 = globaldef002863 + TRUE;
+    
+    if(globaldef002863 == FL_SWIM)
+    {
+        if(world.model == "maps/e1m7.bsp")
+        {
+            WriteByte(MSG_ALL, SVC_CDTRACK);
+            WriteByte(MSG_ALL, FL_SWIM);
+            WriteByte(MSG_ALL, MOVETYPE_WALK);
+            if(!cvar("registered"))
+            {
+                WriteByte(MSG_ALL, SVC_FINALE);
+                WriteString(MSG_ALL, "As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task in...");
+            }
+            else
+            {
+                WriteByte(MSG_ALL, SVC_FINALE);
+                WriteString(MSG_ALL, "As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task. A...");
+            }
+            
+            return;
+        }
+        else
+        {
+            if(world.model == "maps/e2m6.bsp")
+            {
+                WriteByte(MSG_ALL, SVC_CDTRACK);
+                WriteByte(MSG_ALL, FL_SWIM);
+                WriteByte(MSG_ALL, MOVETYPE_WALK);
+                WriteByte(MSG_ALL, SVC_FINALE);
+                WriteString(MSG_ALL, "The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; Shub-Niggurath!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death...");
+                return;
+            }
+            else
+            {
+                if(world.model == "maps/e3m6.bsp")
+                {
+                    WriteByte(MSG_ALL, SVC_CDTRACK);
+                    WriteByte(MSG_ALL, FL_SWIM);
+                    WriteByte(MSG_ALL, MOVETYPE_WALK);
+                    WriteByte(MSG_ALL, SVC_FINALE);
+                    WriteString(MSG_ALL, "The charred viscera of diabolic horrors\nbubble viscously as you seize the Rune\nof Hell Magic. Its heat scorches your\nhand, and its terrible secrets blight\nyour mind. Gathering the shreds of your\ncourage, you shake the devil's shackles\nfrom your ...");
+                    return;
+                }
+                else
+                {
+                    
+                    if(world.model == "maps/e4m7.bsp")
+                    {
+                        WriteByte(MSG_ALL, SVC_CDTRACK);
+                        WriteByte(MSG_ALL, FL_SWIM);
+                        WriteByte(MSG_ALL, MOVETYPE_WALK);
+                        WriteByte(MSG_ALL, SVC_FINALE);
+                        WriteString(MSG_ALL, "Despite the awful might of the Elder\nWorld, you have achieved the Rune of\nElder Magic, capstone of all types of\narcane wisdom. Beyond good and evil,\nbeyond life and death, the Rune\npulsates, heavy with import. Patient and\npotent, the Elder Being...");
+                        return;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        func000378();
+    }
+    
+    
+    if(globaldef002863 == MOVETYPE_WALK)
+    {
+        
+        if(!cvar("registered"))
+        {
+            WriteByte(MSG_ALL, SVC_SELLSCREEN);
+            return;
+        }
+        
+        
+        if((serverflags & globaldef000748) == globaldef000748)
+        {
+            WriteByte(MSG_ALL, SVC_FINALE);
+            WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront he...");
+            return;
+        }
+        
+    }
+    
+    func000378();
+};
+
+// func000380
+// function begins at statement 11363, parm_start=8295
+// OP_LT	31	8214	8295
+// OP_IFNOT	8295	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	170	8296
+// OP_NOT_F	8296	0	8297
+// OP_LOAD_F	28	171	8298
+// OP_NOT_F	8298	0	8299
+// OP_AND	8297	8299	8300
+// OP_LOAD_F	28	172	8301
+// OP_NOT_F	8301	0	8302
+// OP_AND	8300	8302	8303
+// OP_IFNOT	8303	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	8271	0	0
+// OP_DONE	0	0	0
+void () func000380 = 
+{
+    
+    if(time < globaldef002864)
+    {
+        return;
+    }
+    
+    
+    if((!self.button0 && !self.button1) && !self.button2)
+    {
+        return;
+    }
+    
+    func000379();
+};
+
+// func000381
+// function begins at statement 11378, parm_start=8305
+// OP_STORE_F	214	8213	0
+// OP_CALL0	1212	0	0
+// OP_CALL0	1165	0	0
+// OP_IFNOT	35	4	0
+// OP_ADD_F	31	230	8306
+// OP_STORE_F	8306	8214	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	31	216	8307
+// OP_STORE_F	8307	8214	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	311	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	228	7	0
+// OP_CALL2	496	0	0
+// OP_CALL0	8005	0	0
+// OP_STORE_ENT	1	8305	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29	0
+// OP_NE_E	29	30	8308
+// OP_IFNOT	8308	32	0
+// OP_ADDRESS	29	166	8309
+// OP_STOREP_V	286	8309	0
+// OP_ADDRESS	29	175	8312
+// OP_LOAD_V	8305	400	8315
+// OP_STOREP_V	8315	8312	0
+// OP_ADDRESS	29	117	8318
+// OP_LOAD_V	8305	400	8321
+// OP_STOREP_V	8321	8318	0
+// OP_ADDRESS	29	174	8324
+// OP_STOREP_F	214	8324	0
+// OP_ADDRESS	29	150	8325
+// OP_ADD_F	31	539	8326
+// OP_STOREP_F	8326	8325	0
+// OP_ADDRESS	29	163	8327
+// OP_STOREP_F	250	8327	0
+// OP_ADDRESS	29	104	8328
+// OP_STOREP_F	237	8328	0
+// OP_ADDRESS	29	103	8329
+// OP_STOREP_F	227	8329	0
+// OP_ADDRESS	29	93	8330
+// OP_STOREP_F	213	8330	0
+// OP_STORE_V	29	4	0
+// OP_LOAD_V	8305	105	8331
+// OP_STORE_V	8331	7	0
+// OP_CALL2	453	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	29	0
+// OP_GOTO	-32	0	0
+// OP_STORE_V	344	4	0
+// OP_STORE_V	309	7	0
+// OP_CALL2	496	0	0
+// OP_DONE	0	0	0
+void () func000381 = 
+{
+    local entity globaldef002882;
+    globaldef002863 = TRUE;
+    func002704();
+    func002523();
+    if(deathmatch)
+    {
+        globaldef002864 = time + MOVETYPE_FLY;
+    }
+    else
+    {
+        globaldef002864 = time + FL_SWIM;
+    }
+    
+    WriteByte(MSG_ALL, SVC_CDTRACK);
+    WriteByte(MSG_ALL, MOVETYPE_WALK);
+    WriteByte(MSG_ALL, MOVETYPE_WALK);
+    globaldef002882 = func000377();
+    other = find(world, classname, "player");
+    
+    while(other != world)
+    {
+        other.view_ofs = VEC_ORIGIN;
+        other.v_angle = globaldef002882.mangle;
+        other.angles = globaldef002882.mangle;
+        other.fixangle = TRUE;
+        other.nextthink = time + globaldef000522;
+        other.takedamage = DAMAGE_NO;
+        other.solid = SOLID_NOT;
+        other.movetype = MOVETYPE_NONE;
+        other.modelindex = FALSE;
+        setorigin(other, globaldef002882.origin);
+        other = find(other, classname, "player");
+    }
+    
+    WriteByte(MSG_ALL, SVC_INTERMISSION);
+};
+
+// func000382
+// function begins at statement 11440, parm_start=8335
+// OP_LOAD_S	29	129	8336
+// OP_NE_S	8336	1236	8337
+// OP_IFNOT	8337	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	8338	4	0
+// OP_CALL1	490	0	0
+// OP_IFNOT	1	7	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	28	7	0
+// OP_STORE_V	28	10	0
+// OP_STORE_V	8339	13	0
+// OP_CALL4	522	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	29	606	8340
+// OP_STORE_V	8340	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	29	180	8341
+// OP_STORE_V	8341	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	8342	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	28	356	8343
+// OP_STORE_S	8343	8269	0
+// OP_CALL0	520	0	0
+// OP_LOAD_F	28	195	8344
+// OP_BITAND	8344	214	8345
+// OP_EQ_F	35	213	8346
+// OP_AND	8345	8346	8347
+// OP_IFNOT	8347	3	0
+// OP_CALL0	8270	0	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	146	8348
+// OP_STOREP_FNC	519	8348	0
+// OP_ADDRESS	28	148	8349
+// OP_STOREP_FNC	8304	8349	0
+// OP_ADDRESS	28	150	8350
+// OP_ADD_F	31	3036	8351
+// OP_STOREP_F	8351	8350	0
+// OP_DONE	0	0	0
+void () func000382 = 
+{
+    local entity globaldef002884;
+    
+    if(other.classname != "player")
+    {
+        return;
+    }
+    
+    
+    if(cvar("noexit"))
+    {
+        func000201(other, self, self, 50000);
+        return;
+    }
+    
+    bprint(other.field000283);
+    bprint(other.netname);
+    bprint(" exited the level\n");
+    globaldef002871 = self.map;
+    SUB_UseTargets();
+    
+    if((self.spawnflags & TRUE) && (deathmatch == FALSE))
+    {
+        func000378();
+        return;
+    }
+    
+    self.touch = SUB_Null;
+    self.think = func000381;
+    self.nextthink = time + 0.1;
+};
+
 // trigger_changelevel
 // function begins at statement 11479, parm_start=8353
 // OP_LOAD_S	28	356	8353
@@ -144,6 +732,53 @@ void () trigger_changelevel =
     
     InitTrigger();
     self.touch = func000382;
+};
+
+void () func000465;
+// func000384
+// function begins at statement 11488, parm_start=8359
+// OP_IFNOT	36	9	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	6795	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	513	0	0
+// OP_LOAD_F	28	572	8359
+// OP_STORE_F	8359	52	0
+// OP_CALL0	88	0	0
+// OP_GOTO	9	0	0
+// OP_IFNOT	35	6	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	6795	0	0
+// OP_CALL0	90	0	0
+// OP_CALL0	88	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	8360	4	0
+// OP_CALL1	491	0	0
+// OP_DONE	0	0	0
+void () func000384 = 
+{
+    if(coop)
+    {
+        func000301(self);
+        setspawnparms(self);
+        parm10 = self.field000249;
+        PutClientInServer();
+    }
+    else
+    {
+        if(deathmatch)
+        {
+            func000301(self);
+            SetNewParms();
+            PutClientInServer();
+        }
+        else
+        {
+            localcmd("restart\n");
+        }
+        
+    }
+    
 };
 
 // ClientKill
@@ -198,6 +833,221 @@ void () ClientKill =
 float (vector globaldef002895) CheckSpawnPoint = 
 {
     return FALSE;
+};
+
+// func000387
+// function begins at statement 11529, parm_start=8374
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	7689	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8374	0
+// OP_IFNOT	8374	2	0
+// OP_RETURN	8374	0	0
+// OP_IFNOT	36	17	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8376	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_EQ_E	6621	30	8377
+// OP_IFNOT	8377	6	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2913	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_NE_E	6621	30	8378
+// OP_IFNOT	8378	2	0
+// OP_RETURN	6621	0	0
+// OP_GOTO	33	0	0
+// OP_IFNOT	35	32	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8379	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	8375	0
+// OP_GT	8375	8380	8381
+// OP_IFNOT	8381	6	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8379	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_GT	8375	8382	8383
+// OP_IFNOT	8383	6	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8379	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_EQ_E	6621	30	8384
+// OP_IFNOT	8384	6	0
+// OP_STORE_V	6621	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8379	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	6621	0
+// OP_NE_E	6621	30	8385
+// OP_IFNOT	8385	2	0
+// OP_RETURN	6621	0	0
+// OP_BITAND	38	765	8386
+// OP_IFNOT	8386	8	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8387	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8374	0
+// OP_IFNOT	8374	2	0
+// OP_RETURN	8374	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2913	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8374	0
+// OP_NOT_ENT	8374	0	8388
+// OP_IFNOT	8388	3	0
+// OP_STORE_V	8389	4	0
+// OP_CALL1	460	0	0
+// OP_RETURN	8374	0	0
+// OP_DONE	0	0	0
+entity () func000387 = 
+{
+    local entity globaldef002899;
+    local float globaldef002900;
+    globaldef002899 = find(world, classname, "testplayerstart");
+    
+    if(globaldef002899)
+    {
+        return globaldef002899;
+    }
+    
+    if(coop)
+    {
+        globaldef002375 = find(globaldef002375, classname, "info_player_coop");
+        
+        if(globaldef002375 == world)
+        {
+            globaldef002375 = find(globaldef002375, classname, "info_player_start");
+        }
+        
+        
+        if(globaldef002375 != world)
+        {
+            return globaldef002375;
+        }
+        
+    }
+    else
+    {
+        
+        if(deathmatch)
+        {
+            globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+            globaldef002900 = random();
+            
+            if(globaldef002900 > 0.33)
+            {
+                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+            }
+            
+            
+            if(globaldef002900 > 0.66)
+            {
+                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+            }
+            
+            
+            if(globaldef002375 == world)
+            {
+                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+            }
+            
+            
+            if(globaldef002375 != world)
+            {
+                return globaldef002375;
+            }
+            
+        }
+        
+    }
+    
+    
+    if(serverflags & globaldef000748)
+    {
+        globaldef002899 = find(world, classname, "info_player_start2");
+        
+        if(globaldef002899)
+        {
+            return globaldef002899;
+        }
+        
+    }
+    
+    globaldef002899 = find(world, classname, "info_player_start");
+    
+    if(!globaldef002899)
+    {
+        error("PutClientInServer: no info_player_start on level");
+    }
+    
+    return globaldef002899;
+};
+
+// func000388
+// function begins at statement 11605, parm_start=8391
+// OP_ADDRESS	8391	152	8392
+// OP_STOREP_F	738	8392	0
+// OP_ADDRESS	8391	188	8393
+// OP_STOREP_F	2044	8393	0
+// OP_ADDRESS	8391	187	8394
+// OP_STOREP_F	4478	8394	0
+// OP_ADDRESS	8391	158	8395
+// OP_STOREP_F	1997	8395	0
+// OP_ADDRESS	8391	159	8396
+// OP_STOREP_F	2044	8396	0
+// OP_ADDRESS	8391	160	8397
+// OP_STOREP_F	1997	8397	0
+// OP_ADDRESS	8391	161	8398
+// OP_STOREP_F	1997	8398	0
+// OP_ADDRESS	8391	162	8399
+// OP_LOAD_F	8391	162	8400
+// OP_BITOR	8400	253	8401
+// OP_BITOR	8401	254	8402
+// OP_BITOR	8402	255	8403
+// OP_BITOR	8403	256	8404
+// OP_BITOR	8404	257	8405
+// OP_BITOR	8405	258	8406
+// OP_BITOR	8406	259	8407
+// OP_BITOR	8407	260	8408
+// OP_BITOR	8408	268	8409
+// OP_BITOR	8409	273	8410
+// OP_STOREP_F	8410	8399	0
+// OP_ADDRESS	8391	154	8411
+// OP_STOREP_F	260	8411	0
+// OP_ADDRESS	8391	384	8412
+// OP_ADD_F	31	214	8413
+// OP_STOREP_F	8413	8412	0
+// OP_ADDRESS	8391	380	8414
+// OP_ADD_F	31	228	8415
+// OP_STOREP_F	8415	8414	0
+// OP_DONE	0	0	0
+void (entity globaldef002908) func000388 = 
+{
+    globaldef002908.health = globaldef000721;
+    globaldef002908.armorvalue = 200;
+    globaldef002908.armortype = 0.8;
+    globaldef002908.ammo_shells = 100;
+    globaldef002908.ammo_nails = 200;
+    globaldef002908.ammo_rockets = 100;
+    globaldef002908.ammo_cells = 100;
+    globaldef002908.items = (((((((((globaldef002908.items | IT_AXE) | IT_SHOTGUN) | IT_SUPER_SHOTGUN) | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_LIGHTNING) | IT_ARMOR3) | IT_INVULNERABILITY;
+    globaldef002908.weapon = IT_LIGHTNING;
+    globaldef002908.invincible_time = time + TRUE;
+    globaldef002908.invincible_finished = time + MOVETYPE_WALK;
 };
 
 void () func000464;
@@ -495,6 +1345,857 @@ void () info_player_coop =
 {
 };
 
+// func000395
+// function begins at statement 11801, parm_start=8529
+// OP_EQ_S	34	8530	8531
+// OP_IFNOT	8531	39	0
+// OP_STORE_V	6635	4	0
+// OP_CALL1	490	0	0
+// OP_NOT_F	1	0	8532
+// OP_IFNOT	8532	3	0
+// OP_STORE_S	8533	34	0
+// OP_GOTO	28	0	0
+// OP_BITAND	38	214	8534
+// OP_NOT_F	8534	0	8535
+// OP_IFNOT	8535	5	0
+// OP_STORE_S	8533	34	0
+// OP_BITOR	38	214	8536
+// OP_STORE_F	8536	38	0
+// OP_GOTO	21	0	0
+// OP_BITAND	38	216	8537
+// OP_NOT_F	8537	0	8538
+// OP_IFNOT	8538	5	0
+// OP_STORE_S	8539	34	0
+// OP_BITOR	38	216	8540
+// OP_STORE_F	8540	38	0
+// OP_GOTO	14	0	0
+// OP_BITAND	38	229	8541
+// OP_NOT_F	8541	0	8542
+// OP_IFNOT	8542	5	0
+// OP_STORE_S	8543	34	0
+// OP_BITOR	38	229	8544
+// OP_STORE_F	8544	38	0
+// OP_GOTO	7	0	0
+// OP_BITAND	38	217	8545
+// OP_NOT_F	8545	0	8546
+// OP_IFNOT	8546	4	0
+// OP_STORE_S	8547	34	0
+// OP_SUB_F	38	232	8548
+// OP_STORE_F	8548	38	0
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	8529	0
+// OP_ADDRESS	8529	356	8549
+// OP_STOREP_S	34	8549	0
+// OP_GOTO	13	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	8550	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	8529	0
+// OP_NOT_ENT	8529	0	8551
+// OP_IFNOT	8551	6	0
+// OP_STORE_S	8530	34	0
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	8529	0
+// OP_ADDRESS	8529	356	8552
+// OP_STOREP_S	34	8552	0
+// OP_LOAD_S	8529	356	8553
+// OP_STORE_S	8553	8269	0
+// OP_STORE_F	214	347	0
+// OP_LOAD_F	8529	150	8554
+// OP_LT	8554	31	8555
+// OP_IFNOT	8555	6	0
+// OP_ADDRESS	8529	148	8556
+// OP_STOREP_FNC	8304	8556	0
+// OP_ADDRESS	8529	150	8557
+// OP_ADD_F	31	3036	8558
+// OP_STOREP_F	8558	8557	0
+// OP_DONE	0	0	0
+void () func000395 = 
+{
+    local entity globaldef002918;
+    if(mapname == "start")
+    {
+        if(!cvar("registered"))
+        {
+            mapname = "e1m1";
+        }
+        else
+        {
+            if(!(serverflags & TRUE))
+            {
+                mapname = "e1m1";
+                serverflags = serverflags | TRUE;
+            }
+            else
+            {
+                if(!(serverflags & FL_SWIM))
+                {
+                    mapname = "e2m1";
+                    serverflags = serverflags | FL_SWIM;
+                }
+                else
+                {
+                    if(!(serverflags & MOVETYPE_STEP))
+                    {
+                        mapname = "e3m1";
+                        serverflags = serverflags | MOVETYPE_STEP;
+                    }
+                    else
+                    {
+                        
+                        if(!(serverflags & FL_CLIENT))
+                        {
+                            mapname = "e4m1";
+                            serverflags = serverflags - MOVETYPE_PUSH;
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        globaldef002918 = spawn();
+        globaldef002918.map = mapname;
+    }
+    else
+    {
+        globaldef002918 = find(world, classname, "trigger_changelevel");
+        
+        if(!globaldef002918)
+        {
+            mapname = "start";
+            globaldef002918 = spawn();
+            globaldef002918.map = mapname;
+        }
+        
+    }
+    
+    globaldef002871 = globaldef002918.map;
+    gameover = TRUE;
+    
+    if(globaldef002918.nextthink < time)
+    {
+        globaldef002918.think = func000381;
+        globaldef002918.nextthink = time + 0.1;
+    }
+    
+};
+
+// func000396
+// function begins at statement 11865, parm_start=8560
+// OP_IFNOT	347	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	8562	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	8561	0
+// OP_LOAD_F	28	153	8563
+// OP_GE	8563	8561	8564
+// OP_AND	8561	8564	8565
+// OP_IFNOT	8565	3	0
+// OP_CALL0	6709	0	0
+// OP_RETURN	0	0	0
+// OP_DONE	0	0	0
+void () func000396 = 
+{
+    local float globaldef002926;
+    local float globaldef002927;
+    
+    if(gameover)
+    {
+        return;
+    }
+    
+    globaldef002927 = cvar("fraglimit");
+    
+    if(globaldef002927 && (self.frags >= globaldef002927))
+    {
+        func000395();
+        return;
+    }
+    
+};
+
+// func000397
+// function begins at statement 11877, parm_start=8567
+// OP_LOAD_F	28	182	8569
+// OP_BITAND	8569	223	8570
+// OP_IFNOT	8570	18	0
+// OP_LOAD_V	28	113	8571
+// OP_STORE_V	8571	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	8568	0
+// OP_SUB_F	8568	2323	8574
+// OP_STORE_F	8574	8568	0
+// OP_LE	8568	213	8575
+// OP_IFNOT	8575	4	0
+// OP_ADDRESS	28	113	8576
+// OP_STOREP_V	286	8576	0
+// OP_GOTO	7	0	0
+// OP_ADDRESS	28	113	8579
+// OP_LOAD_V	28	113	8582
+// OP_STORE_V	8582	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_FV	8568	1	8585
+// OP_STOREP_V	8585	8579	0
+// OP_LOAD_F	28	165	8588
+// OP_EQ_F	8588	248	8589
+// OP_IFNOT	8589	11	0
+// OP_LOAD_F	28	172	8590
+// OP_LOAD_F	28	171	8591
+// OP_OR	8590	8591	8592
+// OP_LOAD_F	28	170	8593
+// OP_OR	8592	8593	8594
+// OP_IFNOT	8594	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	165	8595
+// OP_STOREP_F	249	8595	0
+// OP_RETURN	0	0	0
+// OP_BITAND	821	767	8596
+// OP_NOT_F	8596	0	8597
+// OP_IFNOT	8597	11	0
+// OP_LOAD_F	28	172	8598
+// OP_NOT_F	8598	0	8599
+// OP_LOAD_F	28	171	8600
+// OP_NOT_F	8600	0	8601
+// OP_AND	8599	8601	8602
+// OP_LOAD_F	28	170	8603
+// OP_NOT_F	8603	0	8604
+// OP_AND	8602	8604	8605
+// OP_IFNOT	8605	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	170	8606
+// OP_STOREP_F	213	8606	0
+// OP_ADDRESS	28	171	8607
+// OP_STOREP_F	213	8607	0
+// OP_ADDRESS	28	172	8608
+// OP_STOREP_F	213	8608	0
+// OP_CALL0	8358	0	0
+// OP_DONE	0	0	0
+void () func000397 = 
+{
+    local entity globaldef002930;
+    local float globaldef002931;
+    
+    if(self.flags & FL_ONGROUND)
+    {
+        globaldef002931 = vlen(self.velocity);
+        globaldef002931 = globaldef002931 - 20;
+        if(globaldef002931 <= FALSE)
+        {
+            self.velocity = VEC_ORIGIN;
+        }
+        else
+        {
+            self.velocity = globaldef002931 * normalize(self.velocity);
+        }
+        
+    }
+    
+    
+    if(self.deadflag == DEAD_DEAD)
+    {
+        
+        if((self.button2 || self.button1) || self.button0)
+        {
+            return;
+        }
+        
+        self.deadflag = DEAD_RESPAWNABLE;
+        return;
+    }
+    
+    
+    if(!(globaldef000804 & globaldef000750))
+    {
+        
+        if((!self.button2 && !self.button1) && !self.button0)
+        {
+            return;
+        }
+        
+    }
+    
+    self.button0 = FALSE;
+    self.button1 = FALSE;
+    self.button2 = FALSE;
+    func000384();
+};
+
+// func000398
+// function begins at statement 11931, parm_start=8610
+// OP_LOAD_F	28	182	8616
+// OP_BITAND	8616	225	8617
+// OP_IFNOT	8617	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	189	8618
+// OP_GE	8618	216	8619
+// OP_IFNOT	8619	45	0
+// OP_LOAD_F	28	190	8620
+// OP_EQ_F	8620	278	8621
+// OP_IFNOT	8621	8	0
+// OP_ADDRESS	28	116	8622
+// OP_STOREP_F	1997	8622	0
+// OP_BITAND	821	767	8623
+// OP_IFNOT	8623	3	0
+// OP_ADDRESS	28	116	8624
+// OP_STOREP_F	540	8624	0
+// OP_GOTO	9	0	0
+// OP_LOAD_F	28	190	8625
+// OP_EQ_F	8625	279	8626
+// OP_IFNOT	8626	4	0
+// OP_ADDRESS	28	116	8627
+// OP_STOREP_F	2805	8627	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	28	116	8628
+// OP_STOREP_F	1470	8628	0
+// OP_LOAD_S	28	129	8629
+// OP_EQ_S	8629	1236	8630
+// OP_IFNOT	8630	23	0
+// OP_LOAD_F	28	395	8631
+// OP_LT	8631	31	8632
+// OP_IFNOT	8632	20	0
+// OP_ADDRESS	28	395	8633
+// OP_ADD_F	31	214	8634
+// OP_STOREP_F	8634	8633	0
+// OP_CALL0	457	0	0
+// OP_LT	1	539	8635
+// OP_IFNOT	8635	8	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6682	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_GOTO	7	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6683	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	182	8636
+// OP_BITAND	8636	223	8637
+// OP_NOT_F	8637	0	8638
+// OP_IFNOT	8638	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	182	8639
+// OP_BITAND	8639	226	8640
+// OP_NOT_F	8640	0	8641
+// OP_IFNOT	8641	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	182	8642
+// OP_LOAD_F	28	182	8643
+// OP_LOAD_F	28	182	8644
+// OP_BITAND	8644	226	8645
+// OP_SUB_F	8643	8645	8646
+// OP_STOREP_F	8646	8642	0
+// OP_ADDRESS	28	182	8647
+// OP_LOAD_F	28	182	8648
+// OP_SUB_F	8648	223	8649
+// OP_STOREP_F	8649	8647	0
+// OP_ADDRESS	28	172	8650
+// OP_STOREP_F	213	8650	0
+// OP_LOAD_S	28	129	8651
+// OP_EQ_S	8651	1236	8652
+// OP_IFNOT	8652	7	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6645	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	116	8653
+// OP_LOAD_F	28	116	8654
+// OP_ADD_F	8654	734	8655
+// OP_STOREP_F	8655	8653	0
+// OP_DONE	0	0	0
+void () func000398 = 
+{
+    local vector globaldef002933;
+    local vector globaldef002937;
+    
+    if(self.flags & FL_WATERJUMP)
+    {
+        return;
+    }
+    
+    
+    if(self.waterlevel >= FL_SWIM)
+    {
+        if(self.watertype == CONTENT_WATER)
+        {
+            self.velocity_z = 100;
+            
+            if(globaldef000804 & globaldef000750)
+            {
+                self.velocity_z = globaldef000523;
+            }
+            
+        }
+        else
+        {
+            if(self.watertype == CONTENT_SLIME)
+            {
+                self.velocity_z = 80;
+            }
+            else
+            {
+                self.velocity_z = 50;
+            }
+            
+        }
+        
+        
+        if(self.classname == "player")
+        {
+            
+            if(self.swim_flag < time)
+            {
+                self.swim_flag = time + TRUE;
+                if(random() < globaldef000522)
+                {
+                    sound(self, CHAN_BODY, "misc/water1.wav", TRUE, ATTN_NORM);
+                }
+                else
+                {
+                    sound(self, CHAN_BODY, "misc/water2.wav", TRUE, ATTN_NORM);
+                }
+                
+            }
+            
+        }
+        
+        return;
+    }
+    
+    
+    if(!(self.flags & FL_ONGROUND))
+    {
+        return;
+    }
+    
+    
+    if(!(self.flags & FL_JUMPRELEASED))
+    {
+        return;
+    }
+    
+    self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
+    self.flags = self.flags - FL_ONGROUND;
+    self.button2 = FALSE;
+    
+    if(self.classname == "player")
+    {
+        sound(self, CHAN_BODY, "player/plyrjmp8.wav", TRUE, ATTN_NORM);
+    }
+    
+    self.velocity_z = self.velocity_z + globaldef000717;
+};
+
+.float dmgtime;
+// func000399
+// function begins at statement 12018, parm_start=8658
+// OP_LOAD_F	28	103	8658
+// OP_EQ_F	8658	233	8659
+// OP_IFNOT	8659	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	152	8660
+// OP_LT	8660	213	8661
+// OP_IFNOT	8661	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	189	8662
+// OP_NE_F	8662	228	8663
+// OP_IFNOT	8663	27	0
+// OP_LOAD_F	28	396	8664
+// OP_LT	8664	31	8665
+// OP_IFNOT	8665	8	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	327	7	0
+// OP_STORE_V	6651	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_GOTO	11	0	0
+// OP_LOAD_F	28	396	8666
+// OP_ADD_F	31	234	8667
+// OP_LT	8666	8667	8668
+// OP_IFNOT	8668	7	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	327	7	0
+// OP_STORE_V	6650	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	396	8669
+// OP_ADD_F	31	791	8670
+// OP_STOREP_F	8670	8669	0
+// OP_ADDRESS	28	425	8671
+// OP_STOREP_F	216	8671	0
+// OP_GOTO	25	0	0
+// OP_LOAD_F	28	396	8672
+// OP_LT	8672	31	8673
+// OP_IFNOT	8673	22	0
+// OP_LOAD_F	28	379	8674
+// OP_LT	8674	31	8675
+// OP_IFNOT	8675	19	0
+// OP_ADDRESS	28	425	8676
+// OP_LOAD_F	28	425	8677
+// OP_ADD_F	8677	216	8678
+// OP_STOREP_F	8678	8676	0
+// OP_LOAD_F	28	425	8679
+// OP_GT	8679	765	8680
+// OP_IFNOT	8680	3	0
+// OP_ADDRESS	28	425	8681
+// OP_STOREP_F	235	8681	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30	7	0
+// OP_STORE_V	30	10	0
+// OP_LOAD_F	28	425	8682
+// OP_STORE_V	8682	13	0
+// OP_CALL4	522	0	0
+// OP_ADDRESS	28	379	8683
+// OP_ADD_F	31	214	8684
+// OP_STOREP_F	8684	8683	0
+// OP_LOAD_F	28	189	8685
+// OP_NOT_F	8685	0	8686
+// OP_IFNOT	8686	15	0
+// OP_LOAD_F	28	182	8687
+// OP_BITAND	8687	218	8688
+// OP_IFNOT	8688	11	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6679	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	182	8689
+// OP_LOAD_F	28	182	8690
+// OP_SUB_F	8690	218	8691
+// OP_STOREP_F	8691	8689	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	190	8692
+// OP_EQ_F	8692	280	8693
+// OP_IFNOT	8693	22	0
+// OP_LOAD_F	28	8656	8694
+// OP_LT	8694	31	8695
+// OP_IFNOT	8695	18	0
+// OP_LOAD_F	28	383	8696
+// OP_GT	8696	31	8697
+// OP_IFNOT	8697	5	0
+// OP_ADDRESS	28	8656	8698
+// OP_ADD_F	31	214	8699
+// OP_STOREP_F	8699	8698	0
+// OP_GOTO	4	0	0
+// OP_ADDRESS	28	8656	8700
+// OP_ADD_F	31	3267	8701
+// OP_STOREP_F	8701	8700	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30	7	0
+// OP_STORE_V	30	10	0
+// OP_LOAD_F	28	189	8702
+// OP_MUL_F	235	8702	8703
+// OP_STORE_V	8703	13	0
+// OP_CALL4	522	0	0
+// OP_GOTO	20	0	0
+// OP_LOAD_F	28	190	8704
+// OP_EQ_F	8704	279	8705
+// OP_IFNOT	8705	17	0
+// OP_LOAD_F	28	8656	8706
+// OP_LT	8706	31	8707
+// OP_LOAD_F	28	383	8708
+// OP_LT	8708	31	8709
+// OP_AND	8707	8709	8710
+// OP_IFNOT	8710	11	0
+// OP_ADDRESS	28	8656	8711
+// OP_ADD_F	31	214	8712
+// OP_STOREP_F	8712	8711	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30	7	0
+// OP_STORE_V	30	10	0
+// OP_LOAD_F	28	189	8713
+// OP_MUL_F	229	8713	8714
+// OP_STORE_V	8714	13	0
+// OP_CALL4	522	0	0
+// OP_LOAD_F	28	182	8715
+// OP_BITAND	8715	218	8716
+// OP_NOT_F	8716	0	8717
+// OP_IFNOT	8717	34	0
+// OP_LOAD_F	28	190	8718
+// OP_EQ_F	8718	280	8719
+// OP_IFNOT	8719	7	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6678	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_LOAD_F	28	190	8720
+// OP_EQ_F	8720	278	8721
+// OP_IFNOT	8721	7	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6677	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_LOAD_F	28	190	8722
+// OP_EQ_F	8722	279	8723
+// OP_IFNOT	8723	7	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6676	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	182	8724
+// OP_LOAD_F	28	182	8725
+// OP_ADD_F	8725	218	8726
+// OP_STOREP_F	8726	8724	0
+// OP_ADDRESS	28	8656	8727
+// OP_STOREP_F	213	8727	0
+// OP_LOAD_F	28	182	8728
+// OP_BITAND	8728	225	8729
+// OP_NOT_F	8729	0	8730
+// OP_IFNOT	8730	10	0
+// OP_ADDRESS	28	113	8731
+// OP_LOAD_V	28	113	8734
+// OP_LOAD_F	28	189	8737
+// OP_MUL_F	4478	8737	8738
+// OP_MUL_F	8738	32	8739
+// OP_LOAD_V	28	113	8740
+// OP_MUL_FV	8739	8740	8743
+// OP_SUB_V	8734	8743	8746
+// OP_STOREP_V	8746	8731	0
+// OP_DONE	0	0	0
+void () func000399 = 
+{
+    
+    if(self.movetype == MOVETYPE_NOCLIP)
+    {
+        return;
+    }
+    
+    
+    if(self.health < FALSE)
+    {
+        return;
+    }
+    
+    if(self.waterlevel != MOVETYPE_WALK)
+    {
+        if(self.air_finished < time)
+        {
+            sound(self, CHAN_VOICE, "player/gasp2.wav", TRUE, ATTN_NORM);
+        }
+        else
+        {
+            
+            if(self.air_finished < (time + MOVETYPE_FLYMISSILE))
+            {
+                sound(self, CHAN_VOICE, "player/gasp1.wav", TRUE, ATTN_NORM);
+            }
+            
+        }
+        
+        self.air_finished = time + globaldef000774;
+        self.dmg = FL_SWIM;
+    }
+    else
+    {
+        
+        if(self.air_finished < time)
+        {
+            
+            if(self.pain_finished < time)
+            {
+                self.dmg = self.dmg + FL_SWIM;
+                
+                if(self.dmg > globaldef000748)
+                {
+                    self.dmg = MOVETYPE_BOUNCE;
+                }
+                
+                func000201(self, world, world, self.dmg);
+                self.pain_finished = time + TRUE;
+            }
+            
+        }
+        
+    }
+    
+    
+    if(!self.waterlevel)
+    {
+        
+        if(self.flags & FL_INWATER)
+        {
+            sound(self, CHAN_BODY, "misc/outwater.wav", TRUE, ATTN_NORM);
+            self.flags = self.flags - FL_INWATER;
+        }
+        
+        return;
+    }
+    
+    if(self.watertype == CONTENT_LAVA)
+    {
+        
+        if(self.dmgtime < time)
+        {
+            if(self.radsuit_finished > time)
+            {
+                self.dmgtime = time + TRUE;
+            }
+            else
+            {
+                self.dmgtime = time + 0.2;
+            }
+            
+            func000201(self, world, world, MOVETYPE_BOUNCE * self.waterlevel);
+        }
+        
+    }
+    else
+    {
+        
+        if(self.watertype == CONTENT_SLIME)
+        {
+            
+            if((self.dmgtime < time) && (self.radsuit_finished < time))
+            {
+                self.dmgtime = time + TRUE;
+                func000201(self, world, world, MOVETYPE_STEP * self.waterlevel);
+            }
+            
+        }
+        
+    }
+    
+    
+    if(!(self.flags & FL_INWATER))
+    {
+        
+        if(self.watertype == CONTENT_LAVA)
+        {
+            sound(self, CHAN_BODY, "player/inlava.wav", TRUE, ATTN_NORM);
+        }
+        
+        
+        if(self.watertype == CONTENT_WATER)
+        {
+            sound(self, CHAN_BODY, "player/inh2o.wav", TRUE, ATTN_NORM);
+        }
+        
+        
+        if(self.watertype == CONTENT_SLIME)
+        {
+            sound(self, CHAN_BODY, "player/slimbrn2.wav", TRUE, ATTN_NORM);
+        }
+        
+        self.flags = self.flags + FL_INWATER;
+        self.dmgtime = FALSE;
+    }
+    
+    
+    if(!(self.flags & FL_WATERJUMP))
+    {
+        self.velocity = self.velocity - (((0.8 * self.waterlevel) * frametime) * self.velocity);
+    }
+    
+};
+
+// func000400
+// function begins at statement 12190, parm_start=8750
+// OP_LOAD_V	28	117	8756
+// OP_STORE_V	8756	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_V	28	105	8759
+// OP_STORE_V	8759	8750	0
+// OP_ADD_F	8752	217	8762
+// OP_STORE_F	8762	8752	0
+// OP_STORE_F	213	61	0
+// OP_STORE_V	59	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	59	736	8763
+// OP_ADD_V	8750	8763	8766
+// OP_STORE_V	8766	8753	0
+// OP_STORE_V	8750	4	0
+// OP_STORE_V	8753	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	28	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	214	8769
+// OP_IFNOT	8769	34	0
+// OP_LOAD_F	28	141	8770
+// OP_ADD_F	8752	8770	8771
+// OP_SUB_F	8771	217	8772
+// OP_STORE_F	8772	8752	0
+// OP_MUL_VF	59	736	8773
+// OP_ADD_V	8750	8773	8776
+// OP_STORE_V	8776	8753	0
+// OP_ADDRESS	28	202	8779
+// OP_MUL_VF	74	8782	8783
+// OP_STOREP_V	8783	8779	0
+// OP_STORE_V	8750	4	0
+// OP_STORE_V	8753	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	28	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	8786
+// OP_IFNOT	8786	17	0
+// OP_ADDRESS	28	182	8787
+// OP_LOAD_F	28	182	8788
+// OP_BITOR	8788	225	8789
+// OP_STOREP_F	8789	8787	0
+// OP_ADDRESS	28	116	8790
+// OP_STOREP_F	5827	8790	0
+// OP_ADDRESS	28	182	8791
+// OP_LOAD_F	28	182	8792
+// OP_LOAD_F	28	182	8793
+// OP_BITAND	8793	226	8794
+// OP_SUB_F	8792	8794	8795
+// OP_STOREP_F	8795	8791	0
+// OP_ADDRESS	28	186	8796
+// OP_ADD_F	31	216	8797
+// OP_STOREP_F	8797	8796	0
+// OP_RETURN	0	0	0
+// OP_DONE	0	0	0
+void () func000400 = 
+{
+    local vector globaldef002944;
+    local vector globaldef002948;
+    makevectors(self.angles);
+    globaldef002944 = self.origin;
+    globaldef002944_z = globaldef002944_z + FL_CLIENT;
+    v_forward_z = FALSE;
+    normalize(v_forward);
+    globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
+    traceline(globaldef002944, globaldef002948, TRUE, self);
+    
+    if(trace_fraction < TRUE)
+    {
+        globaldef002944_z = (globaldef002944_z + self.maxs_z) - FL_CLIENT;
+        globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
+        self.movedir = trace_plane_normal * -50;
+        traceline(globaldef002944, globaldef002948, TRUE, self);
+        
+        if(trace_fraction == TRUE)
+        {
+            self.flags = self.flags | FL_WATERJUMP;
+            self.velocity_z = 225;
+            self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
+            self.teleport_time = time + FL_SWIM;
+            return;
+        }
+        
+    }
+    
+};
+
 // PlayerPreThink
 // function begins at statement 12244, parm_start=8798
 // OP_IFNOT	8213	3	0
@@ -618,6 +2319,459 @@ void () PlayerPreThink =
     {
         self.weapon = func000284();
         func000283();
+    }
+    
+};
+
+// func000402
+// function begins at statement 12300, parm_start=8833
+// OP_LOAD_F	28	152	8833
+// OP_LE	8833	213	8834
+// OP_IFNOT	8834	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	381	8835
+// OP_IFNOT	8835	72	0
+// OP_LOAD_F	28	387	8836
+// OP_LT	8836	31	8837
+// OP_IFNOT	8837	13	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	325	7	0
+// OP_STORE_V	5065	10	0
+// OP_STORE_V	539	13	0
+// OP_STORE_V	332	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	387	8838
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	228	8839
+// OP_ADD_F	31	8839	8840
+// OP_ADD_F	8840	214	8841
+// OP_STOREP_F	8841	8838	0
+// OP_LOAD_F	28	381	8842
+// OP_ADD_F	31	228	8843
+// OP_LT	8842	8843	8844
+// OP_IFNOT	8844	28	0
+// OP_LOAD_F	28	386	8845
+// OP_EQ_F	8845	214	8846
+// OP_IFNOT	8846	16	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8847	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	325	7	0
+// OP_STORE_V	5064	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	386	8848
+// OP_ADD_F	31	214	8849
+// OP_STOREP_F	8849	8848	0
+// OP_LOAD_F	28	386	8850
+// OP_LT	8850	31	8851
+// OP_IFNOT	8851	7	0
+// OP_ADDRESS	28	386	8852
+// OP_ADD_F	31	214	8853
+// OP_STOREP_F	8853	8852	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_LOAD_F	28	381	8854
+// OP_LT	8854	31	8855
+// OP_IFNOT	8855	9	0
+// OP_ADDRESS	28	162	8856
+// OP_LOAD_F	28	162	8857
+// OP_SUB_F	8857	272	8858
+// OP_STOREP_F	8858	8856	0
+// OP_ADDRESS	28	381	8859
+// OP_STOREP_F	213	8859	0
+// OP_ADDRESS	28	386	8860
+// OP_STOREP_F	213	8860	0
+// OP_ADDRESS	28	131	8861
+// OP_STOREP_F	213	8861	0
+// OP_BITAND	821	777	8862
+// OP_IFNOT	8862	6	0
+// OP_ADDRESS	28	574	8863
+// OP_STOREP_F	213	8863	0
+// OP_ADDRESS	28	573	8864
+// OP_STOREP_F	525	8864	0
+// OP_GOTO	5	0	0
+// OP_ADDRESS	28	132	8865
+// OP_STOREP_F	213	8865	0
+// OP_ADDRESS	28	93	8866
+// OP_STOREP_F	525	8866	0
+// OP_GOTO	14	0	0
+// OP_BITAND	821	777	8867
+// OP_IFNOT	8867	7	0
+// OP_ADDRESS	28	574	8868
+// OP_LOAD_F	28	572	8869
+// OP_STOREP_F	8869	8868	0
+// OP_ADDRESS	28	573	8870
+// OP_STOREP_F	526	8870	0
+// OP_GOTO	6	0	0
+// OP_ADDRESS	28	132	8871
+// OP_LOAD_F	28	572	8872
+// OP_STOREP_F	8872	8871	0
+// OP_ADDRESS	28	93	8873
+// OP_STOREP_F	526	8873	0
+// OP_LOAD_F	28	380	8874
+// OP_IFNOT	8874	57	0
+// OP_LOAD_F	28	380	8875
+// OP_ADD_F	31	228	8876
+// OP_LT	8875	8876	8877
+// OP_IFNOT	8877	28	0
+// OP_LOAD_F	28	384	8878
+// OP_EQ_F	8878	214	8879
+// OP_IFNOT	8879	16	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8880	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	325	7	0
+// OP_STORE_V	5042	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	384	8881
+// OP_ADD_F	31	214	8882
+// OP_STOREP_F	8882	8881	0
+// OP_LOAD_F	28	384	8883
+// OP_LT	8883	31	8884
+// OP_IFNOT	8884	7	0
+// OP_ADDRESS	28	384	8885
+// OP_ADD_F	31	214	8886
+// OP_STOREP_F	8886	8885	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_LOAD_F	28	380	8887
+// OP_LT	8887	31	8888
+// OP_IFNOT	8888	9	0
+// OP_ADDRESS	28	162	8889
+// OP_LOAD_F	28	162	8890
+// OP_SUB_F	8890	273	8891
+// OP_STOREP_F	8891	8889	0
+// OP_ADDRESS	28	384	8892
+// OP_STOREP_F	213	8892	0
+// OP_ADDRESS	28	380	8893
+// OP_STOREP_F	213	8893	0
+// OP_LOAD_F	28	380	8894
+// OP_GT	8894	31	8895
+// OP_IFNOT	8895	6	0
+// OP_ADDRESS	28	133	8896
+// OP_LOAD_F	28	133	8897
+// OP_BITOR	8897	341	8898
+// OP_STOREP_F	8898	8896	0
+// OP_GOTO	7	0	0
+// OP_ADDRESS	28	133	8899
+// OP_LOAD_F	28	133	8900
+// OP_LOAD_F	28	133	8901
+// OP_BITAND	8901	341	8902
+// OP_SUB_F	8900	8902	8903
+// OP_STOREP_F	8903	8899	0
+// OP_LOAD_F	28	382	8904
+// OP_IFNOT	8904	57	0
+// OP_LOAD_F	28	382	8905
+// OP_ADD_F	31	228	8906
+// OP_LT	8905	8906	8907
+// OP_IFNOT	8907	28	0
+// OP_LOAD_F	28	388	8908
+// OP_EQ_F	8908	214	8909
+// OP_IFNOT	8909	16	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8910	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	325	7	0
+// OP_STORE_V	5077	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	388	8911
+// OP_ADD_F	31	214	8912
+// OP_STOREP_F	8912	8911	0
+// OP_LOAD_F	28	388	8913
+// OP_LT	8913	31	8914
+// OP_IFNOT	8914	7	0
+// OP_ADDRESS	28	388	8915
+// OP_ADD_F	31	214	8916
+// OP_STOREP_F	8916	8915	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_LOAD_F	28	382	8917
+// OP_LT	8917	31	8918
+// OP_IFNOT	8918	9	0
+// OP_ADDRESS	28	162	8919
+// OP_LOAD_F	28	162	8920
+// OP_SUB_F	8920	275	8921
+// OP_STOREP_F	8921	8919	0
+// OP_ADDRESS	28	382	8922
+// OP_STOREP_F	213	8922	0
+// OP_ADDRESS	28	388	8923
+// OP_STOREP_F	213	8923	0
+// OP_LOAD_F	28	382	8924
+// OP_GT	8924	31	8925
+// OP_IFNOT	8925	6	0
+// OP_ADDRESS	28	133	8926
+// OP_LOAD_F	28	133	8927
+// OP_BITOR	8927	341	8928
+// OP_STOREP_F	8928	8926	0
+// OP_GOTO	7	0	0
+// OP_ADDRESS	28	133	8929
+// OP_LOAD_F	28	133	8930
+// OP_LOAD_F	28	133	8931
+// OP_BITAND	8931	341	8932
+// OP_SUB_F	8930	8932	8933
+// OP_STOREP_F	8933	8929	0
+// OP_LOAD_F	28	383	8934
+// OP_IFNOT	8934	46	0
+// OP_ADDRESS	28	396	8935
+// OP_ADD_F	31	791	8936
+// OP_STOREP_F	8936	8935	0
+// OP_LOAD_F	28	383	8937
+// OP_ADD_F	31	228	8938
+// OP_LT	8937	8938	8939
+// OP_IFNOT	8939	28	0
+// OP_LOAD_F	28	390	8940
+// OP_EQ_F	8940	214	8941
+// OP_IFNOT	8941	16	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	8942	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	325	7	0
+// OP_STORE_V	5054	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	390	8943
+// OP_ADD_F	31	214	8944
+// OP_STOREP_F	8944	8943	0
+// OP_LOAD_F	28	390	8945
+// OP_LT	8945	31	8946
+// OP_IFNOT	8946	7	0
+// OP_ADDRESS	28	390	8947
+// OP_ADD_F	31	214	8948
+// OP_STOREP_F	8948	8947	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_LOAD_F	28	383	8949
+// OP_LT	8949	31	8950
+// OP_IFNOT	8950	9	0
+// OP_ADDRESS	28	162	8951
+// OP_LOAD_F	28	162	8952
+// OP_SUB_F	8952	274	8953
+// OP_STOREP_F	8953	8951	0
+// OP_ADDRESS	28	390	8954
+// OP_STOREP_F	213	8954	0
+// OP_ADDRESS	28	383	8955
+// OP_STOREP_F	213	8955	0
+// OP_DONE	0	0	0
+void () func000402 = 
+{
+    
+    if(self.health <= FALSE)
+    {
+        return;
+    }
+    
+    if(self.invisible_finished)
+    {
+        
+        if(self.invisible_sound < time)
+        {
+            sound(self, CHAN_AUTO, "items/inv3.wav", globaldef000522, ATTN_IDLE);
+            self.invisible_sound = (time + (random() * MOVETYPE_WALK)) + TRUE;
+        }
+        
+        
+        if(self.invisible_finished < (time + MOVETYPE_WALK))
+        {
+            
+            if(self.invisible_time == TRUE)
+            {
+                func000092(self, "Ring of Shadows magic is fading\n");
+                func000064(self, "bf\n");
+                sound(self, CHAN_AUTO, "items/inv2.wav", TRUE, ATTN_NORM);
+                self.invisible_time = time + TRUE;
+            }
+            
+            
+            if(self.invisible_time < time)
+            {
+                self.invisible_time = time + TRUE;
+                func000064(self, "bf\n");
+            }
+            
+        }
+        
+        
+        if(self.invisible_finished < time)
+        {
+            self.items = self.items - IT_INVISIBILITY;
+            self.invisible_finished = FALSE;
+            self.invisible_time = FALSE;
+        }
+        
+        self.frame = FALSE;
+        if(globaldef000804 & globaldef000760)
+        {
+            self.field000251 = FALSE;
+            self.field000250 = globaldef000508;
+        }
+        else
+        {
+            self.skin = FALSE;
+            self.modelindex = globaldef000508;
+        }
+        
+    }
+    else
+    {
+        if(globaldef000804 & globaldef000760)
+        {
+            self.field000251 = self.field000249;
+            self.field000250 = globaldef000509;
+        }
+        else
+        {
+            self.skin = self.field000249;
+            self.modelindex = globaldef000509;
+        }
+        
+    }
+    
+    
+    if(self.invincible_finished)
+    {
+        
+        if(self.invincible_finished < (time + MOVETYPE_WALK))
+        {
+            
+            if(self.invincible_time == TRUE)
+            {
+                func000092(self, "Protection is almost burned out\n");
+                func000064(self, "bf\n");
+                sound(self, CHAN_AUTO, "items/protect2.wav", TRUE, ATTN_NORM);
+                self.invincible_time = time + TRUE;
+            }
+            
+            
+            if(self.invincible_time < time)
+            {
+                self.invincible_time = time + TRUE;
+                func000064(self, "bf\n");
+            }
+            
+        }
+        
+        
+        if(self.invincible_finished < time)
+        {
+            self.items = self.items - IT_INVULNERABILITY;
+            self.invincible_time = FALSE;
+            self.invincible_finished = FALSE;
+        }
+        
+        if(self.invincible_finished > time)
+        {
+            self.effects = self.effects | EF_DIMLIGHT;
+        }
+        else
+        {
+            self.effects = self.effects - (self.effects & EF_DIMLIGHT);
+        }
+        
+    }
+    
+    
+    if(self.super_damage_finished)
+    {
+        
+        if(self.super_damage_finished < (time + MOVETYPE_WALK))
+        {
+            
+            if(self.super_time == TRUE)
+            {
+                func000092(self, "Quad Damage is wearing off\n");
+                func000064(self, "bf\n");
+                sound(self, CHAN_AUTO, "items/damage2.wav", TRUE, ATTN_NORM);
+                self.super_time = time + TRUE;
+            }
+            
+            
+            if(self.super_time < time)
+            {
+                self.super_time = time + TRUE;
+                func000064(self, "bf\n");
+            }
+            
+        }
+        
+        
+        if(self.super_damage_finished < time)
+        {
+            self.items = self.items - IT_QUAD;
+            self.super_damage_finished = FALSE;
+            self.super_time = FALSE;
+        }
+        
+        if(self.super_damage_finished > time)
+        {
+            self.effects = self.effects | EF_DIMLIGHT;
+        }
+        else
+        {
+            self.effects = self.effects - (self.effects & EF_DIMLIGHT);
+        }
+        
+    }
+    
+    
+    if(self.radsuit_finished)
+    {
+        self.air_finished = time + globaldef000774;
+        
+        if(self.radsuit_finished < (time + MOVETYPE_WALK))
+        {
+            
+            if(self.rad_time == TRUE)
+            {
+                func000092(self, "Air supply in Biosuit expiring\n");
+                func000064(self, "bf\n");
+                sound(self, CHAN_AUTO, "items/suit2.wav", TRUE, ATTN_NORM);
+                self.rad_time = time + TRUE;
+            }
+            
+            
+            if(self.rad_time < time)
+            {
+                self.rad_time = time + TRUE;
+                func000064(self, "bf\n");
+            }
+            
+        }
+        
+        
+        if(self.radsuit_finished < time)
+        {
+            self.items = self.items - IT_SUIT;
+            self.rad_time = FALSE;
+            self.radsuit_finished = FALSE;
+        }
+        
     }
     
 };
