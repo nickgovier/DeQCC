@@ -147,6 +147,25 @@ namespace DeQcc
                 {
                     globalList[gd.ofs].Kind = GlobalKind.Globaldef;
                 }
+
+                if(i < 3) { continue; } // skip the following code which looks backwards up to 3 globals to fix vector components
+
+                // fix vector fields
+                if (globalList[globals[i - 1].ofs].Type == Types.ev_field && globalList[globals[i - 1].ofs].FieldType == Types.ev_vector)
+                {
+                    globalList[gd.ofs].FieldType = Types.ev_float;
+                    globalList[gd.ofs].NameOverride = globalList[globals[i - 1].ofs].Name + "_x";
+                }
+                if (globalList[globals[i - 2].ofs].Type == Types.ev_field && globalList[globals[i - 2].ofs].FieldType == Types.ev_vector)
+                {
+                    globalList[gd.ofs].FieldType = Types.ev_float;
+                    globalList[gd.ofs].NameOverride = globalList[globals[i - 2].ofs].Name + "_y";
+                }
+                if (globalList[globals[i - 3].ofs].Type == Types.ev_field && globalList[globals[i - 3].ofs].FieldType == Types.ev_vector)
+                {
+                    globalList[gd.ofs].FieldType = Types.ev_float;
+                    globalList[gd.ofs].NameOverride = globalList[globals[i - 3].ofs].Name + "_z";
+                }
             }
 
             #endregion
@@ -547,13 +566,13 @@ namespace DeQcc
                     if (g.Name != null) { name = g.Name.Replace("_x", ""); } // strip off _x if it exists
 
                     // set the next two globals to floats for _y and _z
-                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Globaldef || globalList[offset + 1].Kind == GlobalKind.Unknown || globalList[offset + 1].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Parameter || g.Kind == GlobalKind.Globaldef || globalList[offset + 1].Kind == GlobalKind.Unknown || globalList[offset + 1].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
                     {
                         Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
                         y.Type = Types.ev_float;
                         y.Name = name + "_y";
                     }
-                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Globaldef || globalList[offset + 2].Kind == GlobalKind.Unknown || globalList[offset + 2].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Parameter || g.Kind == GlobalKind.Globaldef || globalList[offset + 2].Kind == GlobalKind.Unknown || globalList[offset + 2].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
                     {
                         Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
                         z.Type = Types.ev_float;

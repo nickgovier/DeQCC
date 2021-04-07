@@ -709,8 +709,8 @@ void (vector globaldef003474) func000584 =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
     WriteCoord(MSG_BROADCAST, globaldef003474_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, globaldef003474_y);
+    WriteCoord(MSG_BROADCAST, globaldef003474_z);
 };
 
 // func000585

@@ -43,6 +43,8 @@ namespace DeQcc
             _name = null;
             _globaldef_type = null;
             _valueToAssignOverride = null;
+            _fieldTypeOverride = null;
+            _nameOverride = null;
 
             Kind = GlobalKind.Unknown;
             FloatVal = f;
@@ -120,13 +122,21 @@ namespace DeQcc
             }
         }
 
+        private string _nameOverride;
+        public string NameOverride { set { _nameOverride = value; } }
         public string? Name
         {
             get
             {
+                if(_nameOverride != null) { return _nameOverride; }
+
                 if (Kind == GlobalKind.Function)
                 {
                     return Function.name;
+                }
+                if(Kind == GlobalKind.Field && FieldType == Types.ev_vector && ExpectedType == Types.ev_float)
+                {
+                    return fields[fieldsOffsetMap[(int)IntVal]].name + "_x";
                 }
                 if (Kind == GlobalKind.Field)
                 {
@@ -224,11 +234,17 @@ namespace DeQcc
             }
         }
 
+        private Types? _fieldTypeOverride;
         public Types? FieldType
         {
             get
             {
+                if(_fieldTypeOverride != null) { return _fieldTypeOverride; }
                 return (Types)(fields[fieldsOffsetMap[(int)IntVal]].type);
+            }
+            set
+            {
+                _fieldTypeOverride = value;
             }
         }
 

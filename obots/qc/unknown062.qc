@@ -1186,7 +1186,7 @@ void (vector globaldef004925) func001675 =
     local float globaldef004945;
     globaldef004929 = vectoangles(self.enemy.origin - self.origin);
     makevectors(globaldef004929);
-    globaldef004933 = ((self.origin + (globaldef004925_x * v_forward)) + (0 * v_right)) + (0 * '0 0 1');
+    globaldef004933 = ((self.origin + (globaldef004925_x * v_forward)) + (globaldef004925_y * v_right)) + (globaldef004925_z * '0 0 1');
     if(skill > TRUE)
     {
         globaldef004945 = (vlen(self.enemy.origin - globaldef004933)) / globaldef000523;

@@ -206,7 +206,7 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) fun
     
     while(globaldef002106 > FALSE)
     {
-        globaldef002115 = (globaldef002107 + ((func000249() * globaldef002111_x) * v_right)) + ((func000249() * 0) * v_up);
+        globaldef002115 = (globaldef002107 + ((func000249() * globaldef002111_x) * v_right)) + ((func000249() * globaldef002111_y) * v_up);
         traceline(globaldef002119, globaldef002119 + (globaldef002115 * FL_WATERJUMP), FALSE, self);
         
         if(trace_fraction != TRUE)

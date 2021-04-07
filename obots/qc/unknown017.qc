@@ -183,11 +183,11 @@ void (vector globaldef002484, vector globaldef002488, entity globaldef002492) fu
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, globaldef002492);
     WriteCoord(MSG_BROADCAST, globaldef002484_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, globaldef002484_y);
+    WriteCoord(MSG_BROADCAST, globaldef002484_z);
     WriteCoord(MSG_BROADCAST, globaldef002488_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, globaldef002488_y);
+    WriteCoord(MSG_BROADCAST, globaldef002488_z);
 };
 
 // func000304

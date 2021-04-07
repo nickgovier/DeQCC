@@ -1116,7 +1116,7 @@ void () func002276 =
         if(globaldef005780)
         {
             
-            if((self.velocity_x == self.field000237_x) && (self.velocity_y == self.field000239))
+            if((self.velocity_x == self.field000237_x) && (self.velocity_y == self.field000237_y))
             {
                 globaldef005780 = FALSE;
             }
@@ -1128,7 +1128,7 @@ void () func002276 =
         if(globaldef005780)
         {
             
-            if(self.origin_z >= (self.field000236 + 18))
+            if(self.origin_z >= (self.field000233_z + 18))
             {
                 globaldef005780 = FALSE;
             }
@@ -1185,7 +1185,7 @@ void () func002276 =
                 if(self.flags & FL_ONGROUND)
                 {
                     self.velocity_x = self.field000237_x;
-                    self.velocity_y = self.field000239;
+                    self.velocity_y = self.field000237_y;
                 }
                 
             }
@@ -16491,8 +16491,8 @@ void (entity globaldef006692, vector globaldef006693) func002350 =
     msg_entity = globaldef006692;
     WriteByte(MSG_ONE, SVC_SETANGLE);
     WriteAngle(MSG_ONE, globaldef006693_x);
-    WriteAngle(MSG_ONE, 0);
-    WriteAngle(MSG_ONE, 0);
+    WriteAngle(MSG_ONE, globaldef006693_y);
+    WriteAngle(MSG_ONE, globaldef006693_z);
 };
 
 // func002351
@@ -16619,8 +16619,8 @@ vector (vector globaldef006703, vector globaldef006707, float globaldef006711) f
     local float globaldef006716;
     globaldef006716 = time - globaldef006711;
     globaldef006712_x = func002351(globaldef006703_x, globaldef006707_x, globaldef006716);
-    globaldef006712_y = func002351(0, 0, globaldef006716);
-    globaldef006712_z = func002351(0, 0, globaldef006716);
+    globaldef006712_y = func002351(globaldef006703_y, globaldef006707_y, globaldef006716);
+    globaldef006712_z = func002351(globaldef006703_z, globaldef006707_z, globaldef006716);
     return globaldef006703 + globaldef006712;
 };
 
@@ -17026,7 +17026,7 @@ void (entity globaldef006749) func002355 =
     globaldef006766 = v_up;
     globaldef006762 = v_forward;
     globaldef006770 = v_right;
-    globaldef006750_y = globaldef006750_y + globaldef006749.field000360;
+    globaldef006750_y = globaldef006750_y + globaldef006749.field000358_y;
     globaldef006750_y = func000173(globaldef006750_y);
     globaldef006750_x = FALSE;
     makevectors(globaldef006750);
@@ -17035,7 +17035,7 @@ void (entity globaldef006749) func002355 =
     globaldef006774_z = (CONTENT_EMPTY * ((globaldef006774_x * globaldef006766_x) + (globaldef006774_y * globaldef006766_y))) / globaldef006766_z;
     globaldef006774 = normalize(globaldef006774);
     globaldef006754 = globaldef006774 * (-64 + globaldef006749.field000358_x);
-    globaldef006754_z = (globaldef006754_z + globaldef000719) + globaldef006749.field000361;
+    globaldef006754_z = (globaldef006754_z + globaldef000719) + globaldef006749.field000358_z;
     globaldef006758 = globaldef006749.field000344.origin + globaldef006749.field000344.view_ofs;
     traceline(globaldef006758, globaldef006758 + globaldef006754, TRUE, globaldef006749.field000344);
     globaldef006749.modelindex = globaldef000509;
@@ -17044,25 +17044,25 @@ void (entity globaldef006749) func002355 =
     
     if(globaldef006749.velocity_z > TRUE)
     {
-        globaldef006749.field000361 = globaldef006749.field000361 + MOVETYPE_STEP;
+        globaldef006749.field000358_z = globaldef006749.field000358_z + MOVETYPE_STEP;
     }
     
     
     if(globaldef006749.velocity_z < CONTENT_EMPTY)
     {
-        globaldef006749.field000361 = globaldef006749.field000361 - MOVETYPE_STEP;
+        globaldef006749.field000358_z = globaldef006749.field000358_z - MOVETYPE_STEP;
     }
     
     
-    if(globaldef006749.field000361 > FL_MONSTER)
+    if(globaldef006749.field000358_z > FL_MONSTER)
     {
-        globaldef006749.field000361 = FL_MONSTER;
+        globaldef006749.field000358_z = FL_MONSTER;
     }
     
     
-    if(globaldef006749.field000361 < -64)
+    if(globaldef006749.field000358_z < -64)
     {
-        globaldef006749.field000361 = -64;
+        globaldef006749.field000358_z = -64;
     }
     
     globaldef006749.velocity_z = FALSE;
@@ -17097,16 +17097,16 @@ void (entity globaldef006749) func002355 =
     
     if(globaldef006778 > MOVETYPE_BOUNCE)
     {
-        globaldef006749.field000360 = globaldef006749.field000360 + MOVETYPE_STEP;
+        globaldef006749.field000358_y = globaldef006749.field000358_y + MOVETYPE_STEP;
     }
     
     
     if(globaldef006778 < -10)
     {
-        globaldef006749.field000360 = globaldef006749.field000360 - MOVETYPE_STEP;
+        globaldef006749.field000358_y = globaldef006749.field000358_y - MOVETYPE_STEP;
     }
     
-    globaldef006749.field000360 = func000173(globaldef006749.field000360);
+    globaldef006749.field000358_y = func000173(globaldef006749.field000358_y);
     globaldef006749.velocity = VEC_ORIGIN;
     func002349(globaldef006749, globaldef006749);
     globaldef006750 = vectoangles(globaldef006774);
@@ -24650,10 +24650,10 @@ float (entity globaldef007380, vector globaldef007381, vector globaldef007385, f
         globaldef007390 = globaldef007389;
     }
     
-    globaldef007384 = FALSE;
+    globaldef007381_z = FALSE;
     globaldef007381 = normalize(globaldef007381);
     globaldef007391_x = globaldef007381_x * globaldef007390;
-    globaldef007391_y = 0 * globaldef007390;
+    globaldef007391_y = globaldef007381_y * globaldef007390;
     globaldef007391_z = globaldef000717 + 20;
     
     if(func002433(globaldef007380, globaldef007391, 50))
@@ -25509,7 +25509,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
     local vector globaldef007492;
     local vector globaldef007496;
     globaldef007457 = normalize(globaldef007457);
-    globaldef007460 = FALSE;
+    globaldef007457_z = FALSE;
     globaldef007468_x = globaldef007456.maxs_x - TRUE;
     globaldef007468_y = globaldef007456.maxs_y - TRUE;
     globaldef007468_z = FALSE;
@@ -31459,10 +31459,10 @@ entity (entity globaldef008027, vector globaldef008028, float globaldef008032) f
         if((fabs(globaldef008034_x - globaldef008028_x)) < globaldef008032)
         {
             
-            if((fabs(globaldef008034_y - 0)) < globaldef008032)
+            if((fabs(globaldef008034_y - globaldef008028_y)) < globaldef008032)
             {
                 
-                if((fabs(globaldef008034_z - 0)) < globaldef008032)
+                if((fabs(globaldef008034_z - globaldef008028_z)) < globaldef008032)
                 {
                     
                     if((vlen(globaldef008034 - globaldef008028)) < globaldef008032)
@@ -31818,10 +31818,10 @@ entity (entity globaldef008054, vector globaldef008055, float globaldef008059, f
         if((fabs(globaldef008063_x - globaldef008055_x)) < globaldef008059)
         {
             
-            if((fabs(globaldef008063_y - 0)) < globaldef008059)
+            if((fabs(globaldef008063_y - globaldef008055_y)) < globaldef008059)
             {
                 
-                if((fabs(globaldef008063_z - 0)) < globaldef008059)
+                if((fabs(globaldef008063_z - globaldef008055_z)) < globaldef008059)
                 {
                     globaldef008061.distance = vlen(globaldef008063 - globaldef008055);
                     
@@ -47333,9 +47333,9 @@ void (entity globaldef009087, vector globaldef009088) func002659 =
     WriteByte(MSG_ONE, SVC_PRINT);
     func002658(globaldef009088_x);
     WriteByte(MSG_ONE, FL_MONSTER);
-    func002658(0);
+    func002658(globaldef009088_y);
     WriteByte(MSG_ONE, FL_MONSTER);
-    func002658(0);
+    func002658(globaldef009088_z);
     WriteByte(MSG_ONE, FALSE);
 };
 
