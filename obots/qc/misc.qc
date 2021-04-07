@@ -458,7 +458,7 @@ void () func000635 =
     self.classname = "explo_box";
     func000202(self, self, 160, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
-    particle(self.origin, VEC_ORIGIN, globaldef002995, 255);
+    particle(self.origin, VEC_ORIGIN, 75, 255);
     self.origin_z = self.origin_z + FL_MONSTER;
     func000270();
 };

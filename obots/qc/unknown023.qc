@@ -638,7 +638,7 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))
             {
                 globaldef000525.takedamage = DAMAGE_NO;
-                func000064(globaldef000525, globaldef002983);
+                func000064(globaldef000525, "-attack\n");
                 globaldef000525.enemy = world;
             }
             
@@ -646,7 +646,7 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             if((globaldef000524.classname == "player") || (globaldef000524.classname == "bot"))
             {
                 globaldef000524.takedamage = DAMAGE_NO;
-                func000064(globaldef000524, globaldef002983);
+                func000064(globaldef000524, "-attack\n");
                 globaldef000524.enemy = world;
             }
             
@@ -662,13 +662,13 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             {
                 globaldef000524.loses = globaldef000524.loses + TRUE;
                 globaldef000525.wins = globaldef000525.wins + TRUE;
-                bprint(globaldef002984);
+                bprint("The winner ");
                 bprint(globaldef000524.netname);
-                bprint(globaldef002985);
+                bprint(" has been defeated\n");
                 
                 if(globaldef002975 == globaldef002976)
                 {
-                    bprint(globaldef002986);
+                    bprint("by Himself!\n");
                     globaldef002976.frags = globaldef002976.frags - TRUE;
                 }
                 
@@ -689,13 +689,13 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
             {
                 globaldef000525.loses = globaldef000525.loses + TRUE;
                 globaldef000524.wins = globaldef000524.wins + TRUE;
-                bprint(globaldef002987);
+                bprint("The challenger ");
                 bprint(globaldef000525.netname);
-                bprint(globaldef002988);
+                bprint(" has failed\n");
                 
                 if(globaldef002975 == globaldef002976)
                 {
-                    bprint(globaldef002989);
+                    bprint("because he became bored with life!\n");
                     globaldef002976.frags = globaldef002976.frags - TRUE;
                 }
                 
@@ -710,23 +710,23 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
                 {
                     if((globaldef002980 == 100) && (globaldef002981 == 200))
                     {
-                        bprint(globaldef002990);
-                        func000356(globaldef002991);
+                        bprint("???????? ????????\n");
+                        func000356("play ra/flawless.wav\n");
                     }
                     else
                     {
                         bprint(globaldef002976.netname);
-                        bprint(globaldef002992);
+                        bprint(" had ");
                         globaldef002982 = ftos(globaldef002980);
                         bprint(globaldef002982);
-                        bprint(globaldef002993);
+                        bprint(" health and ");
                         globaldef002982 = ftos(globaldef002981);
                         bprint(globaldef002982);
-                        bprint(globaldef002994);
+                        bprint(" armor left\n");
                         
-                        if((globaldef002980 >= globaldef002995) && (globaldef002981 >= 100))
+                        if((globaldef002980 >= 75) && (globaldef002981 >= 100))
                         {
-                            func000356(globaldef002996);
+                            func000356("play ra/excelent.wav\n");
                         }
                         
                     }
@@ -740,15 +740,15 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
         }
         
         
-        if(globaldef002976.classname == globaldef002997)
+        if(globaldef002976.classname == "teledeath")
         {
             bprint(globaldef002975.netname);
-            bprint(globaldef002998);
+            bprint(" was telefragged by ");
             bprint(globaldef002976.owner.netname);
             
             if(teamplay)
             {
-                bprint(globaldef002999);
+                bprint(" ");
                 bprint(globaldef002976.owner.field000283);
             }
             
@@ -758,18 +758,18 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
         }
         
         
-        if(globaldef002976.classname == globaldef003000)
+        if(globaldef002976.classname == "teledeath2")
         {
-            bprint(globaldef003001);
+            bprint("Satan's power deflects ");
             bprint(globaldef002975.netname);
             
             if(teamplay)
             {
-                bprint(globaldef002999);
+                bprint(" ");
                 bprint(globaldef002975.field000283);
             }
             
-            bprint(globaldef003002);
+            bprint("'s telefrag\n");
             globaldef002975.frags = globaldef002975.frags - TRUE;
             return;
         }
@@ -783,23 +783,23 @@ void (entity globaldef002975, entity globaldef002976) func000406 =
                 
                 if((globaldef002975.weapon == FL_GODMODE) && (globaldef002975.waterlevel > TRUE))
                 {
-                    bprint(globaldef003003);
+                    bprint(" discharges into the water.\n");
                     return;
                 }
                 
                 if(globaldef002975.weapon == FL_INWATER)
                 {
-                    bprint(globaldef003004);
+                    bprint(" tries to put the pin back in\n");
                 }
                 else
                 {
                     if(globaldef002977)
                     {
-                        bprint(globaldef003005);
+                        bprint(" becomes bored with life\n");
                     }
                     else
                     {
-                        bprint(globaldef003006);
+                        bprint(" checks if his weapon is loaded\n");
                     }
                     
                 }
@@ -2106,7 +2106,7 @@ void () func000441 =
     }
     
     
-    if(damage_attacker.classname == globaldef002997)
+    if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", TRUE, ATTN_NONE);
         return;
@@ -2882,14 +2882,14 @@ void () func000463 =
     ThrowGib("progs/gib3.mdl", self.health);
     self.deadflag = DEAD_DEAD;
     
-    if(damage_attacker.classname == globaldef002997)
+    if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", TRUE, ATTN_NONE);
         return;
     }
     
     
-    if(damage_attacker.classname == globaldef003000)
+    if(damage_attacker.classname == "teledeath2")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", TRUE, ATTN_NONE);
         return;

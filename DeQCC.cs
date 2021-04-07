@@ -512,7 +512,7 @@ namespace DeQcc
 
             Global g = globalList[offset];
 
-            if (setKind == GlobalKind.Local && g.Type == null)
+            if (setKind == GlobalKind.Local && (g.Type == null || (g.Type == Types.ev_string && g.IntVal != 0) || (g.Type == Types.ev_float && g.FloatVal != 0.0)))
             {
                 // we are expecting a local but there wasn't a globaldef representing the type of this local
                 // so it's actually due to code sitting ahead of the locals within a function.

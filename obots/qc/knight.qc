@@ -408,7 +408,7 @@ void () monster_knight =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/knight.mdl");
     setsize(self, VEC_HULL_MIN, '16 16 40');
-    self.health = globaldef002995;
+    self.health = 75;
     self.th_stand = func000988;
     self.th_walk = func000997;
     self.th_run = func001011;

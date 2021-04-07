@@ -767,7 +767,7 @@ void () func000585 =
         
         if(other.invincible_finished > time)
         {
-            self.classname = globaldef003000;
+            self.classname = "teledeath2";
         }
         
         
@@ -830,7 +830,7 @@ void (vector globaldef003479, entity globaldef003483) func000586 =
 {
     local entity globaldef003484;
     globaldef003484 = spawn();
-    globaldef003484.classname = globaldef002997;
+    globaldef003484.classname = "teledeath";
     globaldef003484.movetype = MOVETYPE_NONE;
     globaldef003484.solid = SOLID_TRIGGER;
     globaldef003484.angles = VEC_ORIGIN;
@@ -1233,7 +1233,7 @@ void () trigger_teleport =
 void () func000591 = 
 {
     return;
-    cvar_set(globaldef002458, self.message);
+    cvar_set("skill", self.message);
 };
 
 // trigger_setskill

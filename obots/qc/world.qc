@@ -881,13 +881,13 @@ void () StartFrame =
     local float globaldef002459;
     local string globaldef002460;
     local float globaldef002461;
-    teamplay = cvar(globaldef002457);
-    skill = cvar(globaldef002458);
+    teamplay = cvar("teamplay");
+    skill = cvar("skill");
     framecount = framecount + TRUE;
     
-    if(deathmatch != cvar(globaldef002460))
+    if(deathmatch != cvar("deathmatch"))
     {
-        deathmatch = cvar(globaldef002460);
+        deathmatch = cvar("deathmatch");
         func002708();
     }
     

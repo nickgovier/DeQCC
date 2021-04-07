@@ -14766,7 +14766,7 @@ float (entity globaldef006581, entity globaldef006582) func002323 =
 // OP_DONE	0	0	0
 float (entity globaldef006583, entity globaldef006584) func002324 = 
 {
-    return globaldef002995;
+    return 75;
 };
 
 // func002325
@@ -16186,7 +16186,7 @@ void (entity globaldef006660, entity globaldef006661) func002344 =
 void (entity globaldef006672) func002345 = 
 {
     local entity globaldef006673;
-    globaldef006673 = findradius(globaldef006672.origin, globaldef002995);
+    globaldef006673 = findradius(globaldef006672.origin, 75);
     
     while(globaldef006673)
     {
@@ -26190,7 +26190,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     {
         globaldef007510 = globaldef007502.goalentity.goalentity;
         
-        if(globaldef007510.classname == globaldef007545)
+        if(globaldef007510.classname == "trigger_push")
         {
             
             if(globaldef007502.origin_x < (globaldef007510.origin_x + globaldef007510.maxs_x))
@@ -35365,7 +35365,7 @@ void () func002558 =
     }
     
     
-    if(damage_attacker.classname == globaldef002997)
+    if(damage_attacker.classname == "teledeath")
     {
         sound(self, CHAN_VOICE, "player/teledth1.wav", TRUE, ATTN_NONE);
         return;
@@ -44777,10 +44777,10 @@ void () func002638 =
             func002669(73, 72, 74, FALSE, FALSE);
             func002668('2826.1 -1846.9 98', 74, MOVETYPE_WALK, "");
             func002669(74, 73, FALSE, FALSE, FALSE);
-            func002668('2870.3 -2029 98', globaldef002995, MOVETYPE_WALK, "");
-            func002669(globaldef002995, 74, 76, FALSE, FALSE);
+            func002668('2870.3 -2029 98', 75, MOVETYPE_WALK, "");
+            func002669(75, 74, 76, FALSE, FALSE);
             func002668('2723.6 -2150.8 98.3', 76, MOVETYPE_WALK, "");
-            func002669(76, globaldef002995, 77, FALSE, FALSE);
+            func002669(76, 75, 77, FALSE, FALSE);
             func002668('2736 -2304 98', 77, MOVETYPE_FLY, "weapon_supershotgun");
             func002669(77, 76, 78, FALSE, FALSE);
             func002668('2494.1 -2308.6 98', 78, MOVETYPE_WALK, "");
@@ -45042,17 +45042,17 @@ void () func002638 =
                 func002669(73, 46, 80, FALSE, FALSE);
                 func002668('198.3 -862.5 2', 74, MOVETYPE_WALK, "");
                 func002669(74, 73, 79, 80, FALSE);
-                func002668('-75.4 -879.9 -37.5', globaldef002995, MOVETYPE_WALK, "");
-                func002669(globaldef002995, 74, 77, 76, FALSE);
+                func002668('-75.4 -879.9 -37.5', 75, MOVETYPE_WALK, "");
+                func002669(75, 74, 77, 76, FALSE);
                 func002668('-64 -704 -37.9', 76, MOVETYPE_FLY, "weapon_nailgun");
-                func002669(76, globaldef002995, 79, 81, 182);
+                func002669(76, 75, 79, 81, 182);
                 func002670(76, 77, FALSE, FALSE, FALSE);
                 func002668('166.1 -781.5 -37.9', 77, MOVETYPE_WALK, "");
                 func002669(77, 76, 78, FALSE, FALSE);
                 func002668('344.5 -720.5 -37.9', 78, MOVETYPE_WALK, "");
                 func002669(78, 77, FALSE, FALSE, FALSE);
                 func002668('44.9 -870.5 -21.8', 79, MOVETYPE_WALK, "");
-                func002669(79, globaldef002995, 74, 76, FALSE);
+                func002669(79, 75, 74, 76, FALSE);
                 func002668('361.7 -875.5 18', 80, MOVETYPE_WALK, "");
                 func002669(80, 74, 73, FALSE, FALSE);
                 func002668('-237.6 -529.2 -37.9', 81, MOVETYPE_WALK, "");
@@ -45379,9 +45379,9 @@ void () func002638 =
                     func002668('546.7 -391.6 2', MOVETYPE_STEP, MOVETYPE_WALK, "");
                     func002669(MOVETYPE_STEP, MOVETYPE_WALK, MOVETYPE_FLY, FALSE, FALSE);
                     func002668('630.2 -180.6 2', MOVETYPE_FLY, MOVETYPE_WALK, "");
-                    func002669(MOVETYPE_FLY, MOVETYPE_STEP, MOVETYPE_TOSS, globaldef002995, FALSE);
+                    func002669(MOVETYPE_FLY, MOVETYPE_STEP, MOVETYPE_TOSS, 75, FALSE);
                     func002668('847.5 -230.5 2', MOVETYPE_TOSS, MOVETYPE_WALK, "");
-                    func002669(MOVETYPE_TOSS, MOVETYPE_FLY, 63, globaldef002995, MOVETYPE_PUSH);
+                    func002669(MOVETYPE_TOSS, MOVETYPE_FLY, 63, 75, MOVETYPE_PUSH);
                     func002668('824.4 -478.7 2', MOVETYPE_PUSH, MOVETYPE_WALK, "");
                     func002669(MOVETYPE_PUSH, MOVETYPE_TOSS, FL_CLIENT, FALSE, FALSE);
                     func002668('995.5 -593.7 2', FL_CLIENT, MOVETYPE_WALK, "");
@@ -45526,8 +45526,8 @@ void () func002638 =
                     func002669(73, 59, 71, FALSE, FALSE);
                     func002668('332.3 -512 2', 74, MOVETYPE_WALK, "");
                     func002669(74, FL_SWIM, MOVETYPE_WALK, 58, FALSE);
-                    func002668('781.7 -171.3 2', globaldef002995, MOVETYPE_WALK, "");
-                    func002669(globaldef002995, MOVETYPE_FLY, MOVETYPE_TOSS, 63, FALSE);
+                    func002668('781.7 -171.3 2', 75, MOVETYPE_WALK, "");
+                    func002669(75, MOVETYPE_FLY, MOVETYPE_TOSS, 63, FALSE);
                     func002668('338.3 -777.7 -125.9', 76, MOVETYPE_WALK, "");
                     func002669(76, 51, 38, 39, FALSE);
                     func002668('285.5 -380.1 -125.9', 77, MOVETYPE_WALK, "");
@@ -45550,25 +45550,25 @@ void () func002638 =
                         func002668('591.4 -99.6 -29.9', 83, MOVETYPE_WALK, "");
                         func002669(83, 84, 85, FALSE, FALSE);
                         func002668('288 -68.3 -62.5', 82, MOVETYPE_WALK, "");
-                        func002669(82, 81, globaldef002995, 73, FALSE);
+                        func002669(82, 81, 75, 73, FALSE);
                         func002668('384.2 -11.1 -133.9', 81, MOVETYPE_WALK, "");
                         func002669(81, 80, 82, 83, FALSE);
                         func002668('552.3 18.3 -133.9', 80, MOVETYPE_WALK, "");
                         func002669(80, 79, 83, FALSE, FALSE);
                         func002668('553.9 -228.9 -133.9', 79, MOVETYPE_WALK, "");
-                        func002669(79, globaldef002995, 81, FALSE, FALSE);
+                        func002669(79, 75, 81, FALSE, FALSE);
                         func002668('-7.9 -580.7 -77.1', 78, MOVETYPE_WALK, "");
                         func002668('230 -598.6 -133.9', 77, MOVETYPE_WALK, "");
                         func002669(77, 76, 78, FALSE, FALSE);
                         func002668('467.7 -522.8 -133.9', 76, MOVETYPE_WALK, "");
-                        func002669(76, globaldef002995, 77, FALSE, FALSE);
-                        func002668('333.9 -313.5 -133.9', globaldef002995, MOVETYPE_WALK, "");
-                        func002669(globaldef002995, 73, 76, 79, 82);
+                        func002669(76, 75, 77, FALSE, FALSE);
+                        func002668('333.9 -313.5 -133.9', 75, MOVETYPE_WALK, "");
+                        func002669(75, 73, 76, 79, 82);
                         func002668('279 366.8 -69.9', 74, MOVETYPE_WALK, "");
                         func002669(74, 72, 65, 69, 86);
                         func002670(74, 71, FALSE, FALSE, FALSE);
                         func002668('294.9 -70.3 -133.9', 73, MOVETYPE_WALK, "");
-                        func002669(73, 72, globaldef002995, 81, 86);
+                        func002669(73, 72, 75, 81, 86);
                         func002670(73, 82, FALSE, FALSE, FALSE);
                         func002668('296.2 177.8 -121.3', 72, MOVETYPE_WALK, "");
                         func002669(72, 65, 73, 74, 86);
@@ -45726,7 +45726,7 @@ void () func002638 =
                             func002668('1535.3 -1090.5 18', 101, MOVETYPE_WALK, "");
                             func002669(101, 37, 68, FALSE, FALSE);
                             func002668('967.5 -1666 18', 100, MOVETYPE_WALK, "");
-                            func002669(100, FL_GODMODE, 63, globaldef002995, FALSE);
+                            func002669(100, FL_GODMODE, 63, 75, FALSE);
                             func002668('1008 -477.2 18', 99, MOVETYPE_WALK, "");
                             func002669(99, 43, 44, FALSE, FALSE);
                             func002668('521.7 -1066.5 234', 98, MOVETYPE_WALK, "");
@@ -45861,7 +45861,7 @@ void () func002638 =
                             func002668('825.2 -1658 18', 63, MOVETYPE_WALK, "");
                             func002669(63, 62, FL_GODMODE, 100, FALSE);
                             func002668('1064.1 -1587.9 18', FL_GODMODE, MOVETYPE_WALK, "");
-                            func002669(FL_GODMODE, 63, globaldef002995, 100, FALSE);
+                            func002669(FL_GODMODE, 63, 75, 100, FALSE);
                             func002668('1033.6 -1220.3 -61.9', 65, MOVETYPE_WALK, "");
                             func002669(65, FL_GODMODE, 83, 38, 71);
                             func002668('1325.5 -1085.5 -45.9', 66, MOVETYPE_WALK, "");
@@ -45881,9 +45881,9 @@ void () func002638 =
                             func002668('1019 -1387.3 -13.8', 73, MOVETYPE_WALK, "");
                             func002669(73, 72, 74, FALSE, FALSE);
                             func002668('1018.5 -1436.8 2', 74, MOVETYPE_WALK, "");
-                            func002669(74, 73, globaldef002995, FALSE, FALSE);
-                            func002668('1026.6 -1528.6 18', globaldef002995, MOVETYPE_WALK, "");
-                            func002669(globaldef002995, 74, FL_GODMODE, 100, FALSE);
+                            func002669(74, 73, 75, FALSE, FALSE);
+                            func002668('1026.6 -1528.6 18', 75, MOVETYPE_WALK, "");
+                            func002669(75, 74, FL_GODMODE, 100, FALSE);
                             func002668('761.2 -1100.5 -49.5', 76, MOVETYPE_WALK, "");
                             func002669(76, 39, 77, 83, 78);
                             func002670(76, 91, FALSE, FALSE, FALSE);
@@ -54726,7 +54726,7 @@ void () func002733 =
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
     globaldef009536 = TRUE;
     
-    while(globaldef009536 <= cvar(globaldef002457))
+    while(globaldef009536 <= cvar("teamplay"))
     {
         WriteByte(MSG_ONE, globaldef009536 + 48);
         WriteByte(MSG_ONE, FL_MONSTER);
@@ -55683,7 +55683,7 @@ void () func002735 =
     WriteByte(MSG_ONE, 245);
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    globaldef009541 = cvar(globaldef002460);
+    globaldef009541 = cvar("deathmatch");
     WriteByte(MSG_ONE, 49);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, 228);
@@ -55707,7 +55707,7 @@ void () func002735 =
     }
     
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    globaldef009541 = cvar(globaldef002457);
+    globaldef009541 = cvar("teamplay");
     WriteByte(MSG_ONE, 50);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, 244);
@@ -55731,7 +55731,7 @@ void () func002735 =
     }
     
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    globaldef009541 = cvar(globaldef002458);
+    globaldef009541 = cvar("skill");
     WriteByte(MSG_ONE, 51);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, 243);
@@ -56119,7 +56119,7 @@ void () func002736 =
         func002735();
         if(self.impulse == TRUE)
         {
-            globaldef009544 = floor(cvar(globaldef002460)) + TRUE;
+            globaldef009544 = floor(cvar("deathmatch")) + TRUE;
             
             if(globaldef009544 > MOVETYPE_STEP)
             {
@@ -56127,13 +56127,13 @@ void () func002736 =
             }
             
             globaldef009545 = ftos(globaldef009544);
-            cvar_set(globaldef002460, globaldef009545);
+            cvar_set("deathmatch", globaldef009545);
         }
         else
         {
             if(self.impulse == FL_SWIM)
             {
-                globaldef009544 = floor(cvar(globaldef002457)) + TRUE;
+                globaldef009544 = floor(cvar("teamplay")) + TRUE;
                 
                 if(globaldef009544 > FL_CLIENT)
                 {
@@ -56141,7 +56141,7 @@ void () func002736 =
                 }
                 
                 globaldef009545 = ftos(globaldef009544);
-                cvar_set(globaldef002457, globaldef009545);
+                cvar_set("teamplay", globaldef009545);
                 teamplay = globaldef009544;
                 func002424();
                 func002726();
@@ -56150,7 +56150,7 @@ void () func002736 =
             {
                 if(self.impulse == MOVETYPE_WALK)
                 {
-                    globaldef009544 = floor(cvar(globaldef002458)) + TRUE;
+                    globaldef009544 = floor(cvar("skill")) + TRUE;
                     
                     if(globaldef009544 > MOVETYPE_WALK)
                     {
@@ -56158,7 +56158,7 @@ void () func002736 =
                     }
                     
                     globaldef009545 = ftos(globaldef009544);
-                    cvar_set(globaldef002458, globaldef009545);
+                    cvar_set("skill", globaldef009545);
                     skill = globaldef009544;
                 }
                 else
