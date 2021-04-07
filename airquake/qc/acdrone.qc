@@ -684,12 +684,12 @@ void () drone_fly =
         }
         
         v0 = vectoangles(v1 - self.origin);
-        v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(0 - self.angles_y);
+        v1 = '0 0 0';
+        v1_y = anglemod(v0_y - self.angles_y);
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v1_x = anglemod(v0_x - self.angles_x);
@@ -699,7 +699,7 @@ void () drone_fly =
             v1_x = v1_x - 360;
         }
         
-        v2 = '0.000 0.000 0.000';
+        v2 = '0 0 0';
         
         if(v1_x < 0)
         {
@@ -719,27 +719,27 @@ void () drone_fly =
             self.angles_x = v0_x;
         }
         
-        v2_y = 0 * 5;
+        v2_y = v1_y * 5;
         
-        if(0 < -100)
+        if(v2_y < -100)
         {
             v2_y = -100;
         }
         
         
-        if(0 > 100)
+        if(v2_y > 100)
         {
             v2_y = 100;
         }
         
         
-        if(fabs(0) < 2)
+        if(fabs(v1_y) < 2)
         {
             v2_y = 0;
-            self.angles_y = 0;
+            self.angles_y = v0_y;
         }
         
-        if(((fabs(0) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
+        if(((fabs(v1_y) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
         {
             ab = 1;
         }
@@ -748,36 +748,36 @@ void () drone_fly =
             ab = 0;
         }
         
-        v1_z = (0 - 0) - self.angles_z;
+        v1_z = (0 - v2_y) - self.angles_z;
         
-        if(0 < 0)
+        if(v1_z < 0)
         {
             v2_z = -200;
             
-            if(0 < (0 * 10))
+            if(v2_z < (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(0 > 0)
+        if(v1_z > 0)
         {
             v2_z = 200;
             
-            if(0 > (0 * 10))
+            if(v2_z > (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(fabs(0) < 5)
+        if(fabs(v1_z) < 5)
         {
             v2_z = 0;
-            self.angles_z = 0 - 0;
+            self.angles_z = 0 - v2_y;
         }
         
         self.avelocity = v2;
@@ -817,7 +817,7 @@ void () drone_fly =
         
         makevectors(self.angles);
         v3 = v_forward;
-        v3_z = 0 - 0;
+        v3_z = 0 - v3_z;
         self.thru = 4;
         if(!ab)
         {
@@ -908,7 +908,7 @@ void () drone_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     
     if(self.target)
@@ -967,7 +967,7 @@ void () monster_drone =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_FLY;
     setmodel(self, "progs/plane1.mdl");
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     
     if(!self.health)
     {

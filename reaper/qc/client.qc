@@ -1275,7 +1275,7 @@ void () PutClientInServer =
     self.deadflag = DEAD_NO;
     self.pausetime = FALSE;
     spot = SelectSpawnPoint();
-    self.origin = spot.origin + '0.000 0.000 1.000';
+    self.origin = spot.origin + '0 0 1';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setmodel(self, "progs/eyes.mdl");
@@ -1283,7 +1283,7 @@ void () PutClientInServer =
     setmodel(self, "progs/player.mdl");
     modelindex_player = self.modelindex;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.view_ofs = '0.000 0.000 22.000';
+    self.view_ofs = '0 0 22';
     
     if(self.movetarget == world)
     {
@@ -2269,7 +2269,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = 0 + FL_CLIENT;
+    start_z = start_z + FL_CLIENT;
     v_forward_z = FALSE;
     normalize(v_forward);
     end = start + (v_forward * 24);
@@ -2277,7 +2277,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < TRUE)
     {
-        start_z = (0 + self.maxs_z) - FL_CLIENT;
+        start_z = (start_z + self.maxs_z) - FL_CLIENT;
         end = start + (v_forward * 24);
         self.movedir = trace_plane_normal * -50;
         traceline(start, end, TRUE, self);

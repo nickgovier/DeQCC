@@ -678,7 +678,7 @@ void () ShalMissile =
     local vector dir;
     local float dist;
     local float flytime;
-    dir = normalize((self.enemy.origin + '0.000 0.000 10.000') - self.origin);
+    dir = normalize((self.enemy.origin + '0 0 10') - self.origin);
     dist = vlen(self.enemy.origin - self.origin);
     flytime = dist * 0.002;
     
@@ -694,10 +694,10 @@ void () ShalMissile =
     missile.solid = SOLID_BBOX;
     missile.movetype = MOVETYPE_FLYMISSILE;
     setmodel(missile, "progs/v_spike.mdl");
-    setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    missile.origin = self.origin + '0.000 0.000 10.000';
+    setsize(missile, '0 0 0', '0 0 0');
+    missile.origin = self.origin + '0 0 10';
     missile.velocity = dir * 400;
-    missile.avelocity = '300.000 300.000 300.000';
+    missile.avelocity = '300 300 300';
     missile.nextthink = flytime + time;
     missile.think = ShalHome;
     missile.enemy = self.enemy;
@@ -741,7 +741,7 @@ void () ShalHome =
 {
     local vector dir;
     local vector vtemp;
-    vtemp = self.enemy.origin + '0.000 0.000 10.000';
+    vtemp = self.enemy.origin + '0 0 10';
     
     if(self.enemy.health < 1)
     {
@@ -839,7 +839,7 @@ void () ShalMissileTouch =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;

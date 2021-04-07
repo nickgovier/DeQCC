@@ -1160,16 +1160,16 @@ void () DeathBubblesSpawn =
     
     bubble = spawn();
     setmodel(bubble, "progs/s_bubble.spr");
-    setorigin(bubble, self.owner.origin + '0.000 0.000 24.000');
+    setorigin(bubble, self.owner.origin + '0 0 24');
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
-    bubble.velocity = '0.000 0.000 15.000';
+    bubble.velocity = '0 0 15';
     bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.classname = "bubble";
     bubble.frame = 0;
     bubble.cnt = 0;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.nextthink = time + 0.1;
     self.think = DeathBubblesSpawn;
     self.air_finished = self.air_finished + 1;
@@ -1437,7 +1437,7 @@ void (string gibname, float dm) ThrowGib =
     new = spawn();
     new.origin = self.origin;
     setmodel(new, gibname);
-    setsize(new, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(new, '0 0 0', '0 0 0');
     new.velocity = VelocityForDamage(dm);
     new.movetype = MOVETYPE_BOUNCE;
     new.solid = SOLID_NOT;
@@ -1500,12 +1500,12 @@ void (string gibname, float dm) ThrowHead =
     self.movetype = MOVETYPE_BOUNCE;
     self.takedamage = DAMAGE_NO;
     self.solid = SOLID_NOT;
-    self.view_ofs = '0.000 0.000 8.000';
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    self.view_ofs = '0 0 8';
+    setsize(self, '-16 -16 0', '16 16 56');
     self.velocity = VelocityForDamage(dm);
     self.origin_z = self.origin_z - 24;
     self.flags = self.flags - (self.flags & FL_ONGROUND);
-    self.avelocity = crandom() * '0.000 600.000 0.000';
+    self.avelocity = crandom() * '0 600 0';
 };
 
 // GibPlayer
@@ -1585,7 +1585,7 @@ void (string gibname, float dm) ThrowHead =
 void () GibPlayer = 
 {
     ThrowGib("progs/h_player.mdl", self.health);
-    newmis.avelocity = crandom() * '0.000 600.000 0.000';
+    newmis.avelocity = crandom() * '0 600 0';
     
     if((self.enemy == self) || (self.enemy.takedamage == 0))
     {
@@ -1597,7 +1597,7 @@ void () GibPlayer =
     ThrowGib("progs/gib3.mdl", self.health);
     self.deadflag = DEAD_DEAD;
     self.movetype = MOVETYPE_NONE;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     
     if(damage_attacker.classname == "teledeath")
     {
@@ -1739,7 +1739,7 @@ void () PlayerDie =
     self.radsuit_finished = 0;
     self.modelindex = modelindex_player;
     self.weaponmodel = "";
-    self.view_ofs = '0.000 0.000 -8.000';
+    self.view_ofs = '0 0 -8';
     self.deadflag = DEAD_DYING;
     self.movetype = MOVETYPE_TOSS;
     self.solid = SOLID_NOT;

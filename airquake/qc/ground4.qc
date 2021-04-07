@@ -604,7 +604,7 @@ void () gv4_steer =
             
         }
         
-        sp = ((v3 * veh.speed) * 0.1) - '0.000 0.000 40.000';
+        sp = ((v3 * veh.speed) * 0.1) - '0 0 40';
         
         if(veh.thru)
         {
@@ -1422,7 +1422,7 @@ void () start_groundveh4 =
     local entity e;
     local entity e2;
     self.takedamage = DAMAGE_NO;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 24.000');
+    setsize(self, '-16 -16 -24', '16 16 24');
     self.movetype = MOVETYPE_FLY;
     e = spawn();
     setmodel(e, "progs/hovba.mdl");
@@ -1431,9 +1431,9 @@ void () start_groundveh4 =
     setorigin(e, e2.origin);
     e.angles = e2.angles;
     e.classname = "tank";
-    e.velocity = '0.000 0.000 0.000';
+    e.velocity = '0 0 0';
     e.movetype = MOVETYPE_FLY;
-    setsize(e, '-16.000 -16.000 -24.000', '16.000 16.000 24.000');
+    setsize(e, '-16 -16 -24', '16 16 24');
     e.solid = SOLID_SLIDEBOX;
     e.health = 300;
     e.max_health = e.health;
@@ -1445,7 +1445,7 @@ void () start_groundveh4 =
     self.enemy = e;
     e.goalentity = self;
     e.owner = self;
-    e.view_ofs = '0.000 0.000 1.000';
+    e.view_ofs = '0 0 1';
     e.colormap = self.colormap;
     e.armorvalue = 10;
     self.toyview = 0;
@@ -1473,15 +1473,15 @@ void () start_groundveh4 =
     
     if(!checkbottom(self))
     {
-        traceline(self.origin, self.origin + '0.000 0.000 -10000.000', TRUE, self);
-        self.origin_z = 0 + 30;
+        traceline(self.origin, self.origin + '0 0 -10000', TRUE, self);
+        self.origin_z = trace_endpos_z + 30;
     }
     
     setorigin(self.enemy, self.origin);
     setorigin(self.enemy.oldenemy, self.origin);
     setorigin(self.enemy.movetarget, self.origin);
-    self.velocity = '0.000 0.000 0.000';
-    self.movedir = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
+    self.movedir = '0 0 0';
     self.oldenemy.style = 32;
 };
 

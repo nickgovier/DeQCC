@@ -704,7 +704,7 @@ entity (vector fmins, vector fmaxs) spawn_field =
     trigger.touch = door_trigger_touch;
     t1 = fmins;
     t2 = fmaxs;
-    setsize(trigger, t1 - '60.000 60.000 8.000', t2 + '60.000 60.000 8.000');
+    setsize(trigger, t1 - '60 60 8', t2 + '60 60 8');
     return trigger;
 };
 
@@ -979,13 +979,13 @@ void () LinkDoors =
             }
             
             
-            if(t.mins_y < 0)
+            if(t.mins_y < cmins_y)
             {
                 cmins_y = t.mins_y;
             }
             
             
-            if(t.mins_z < 0)
+            if(t.mins_z < cmins_z)
             {
                 cmins_z = t.mins_z;
             }
@@ -997,13 +997,13 @@ void () LinkDoors =
             }
             
             
-            if(t.maxs_y > 0)
+            if(t.maxs_y > cmaxs_y)
             {
                 cmaxs_y = t.maxs_y;
             }
             
             
-            if(t.maxs_z > 0)
+            if(t.maxs_z > cmaxs_z)
             {
                 cmaxs_z = t.maxs_z;
             }

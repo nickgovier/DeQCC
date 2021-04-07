@@ -418,10 +418,10 @@ void () aag_aim =
         
     }
     
-    vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0 - self.angles_y;
+    vtemp = '0 0 0';
+    vtemp_y = dir_y - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
-    dir = '0.000 0.000 0.000';
+    dir = '0 0 0';
     
     if(vtemp_x < 0)
     {
@@ -435,15 +435,15 @@ void () aag_aim =
     }
     
     
-    if(0 < 0)
+    if(vtemp_y < 0)
     {
-        vtemp_y = 0 + 360;
+        vtemp_y = vtemp_y + 360;
     }
     
     
-    if(0 > 180)
+    if(vtemp_y > 180)
     {
-        vtemp_y = 0 - 360;
+        vtemp_y = vtemp_y - 360;
     }
     
     dir = vtemp;
@@ -460,13 +460,13 @@ void () aag_aim =
     }
     
     
-    if(0 < -10)
+    if(dir_y < -10)
     {
         dir_y = -10;
     }
     
     
-    if(0 > 10)
+    if(dir_y > 10)
     {
         dir_y = 10;
     }
@@ -501,7 +501,7 @@ void () aag_aim =
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0);
+    self.angles_y = anglemod(self.angles_y + dir_y);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -609,7 +609,7 @@ void () aag_launch =
     self.ammo_cells = self.ammo_cells - 1;
     makevectors(self.trigger_field.angles);
     v1 = v_forward;
-    v1_z = 0 - 0;
+    v1_z = 0 - v1_z;
     if(self.spawnflags & 2)
     {
         if(self.ammo_cells & 1)
@@ -754,7 +754,7 @@ void () start_monster_aag =
     self.movetype = MOVETYPE_TOSS;
     self.health = self.max_health;
     setmodel(self, "progs/aagba.mdl");
-    setsize(self, '-16.000 -16.000 -20.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -20', '16 16 16');
     self.th_stand = aag_stand;
     self.th_walk = aag_walk;
     self.th_run = aag_run;
@@ -769,8 +769,8 @@ void () start_monster_aag =
     setorigin(self, self.oldorigin);
     droptofloor();
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
-    self.view_ofs = '0.000 0.000 1.000';
+    self.ideal_yaw = self.angles * '0 1 0';
+    self.view_ofs = '0 0 1';
     self.use = monster_use;
     self.flags = self.flags | FL_MONSTER;
     stemp = spawn();
@@ -855,7 +855,7 @@ void () monster_aag =
     }
     
     self.max_health = self.health;
-    v1 = (self.angles_y * '0.000 1.000 0.000') + '-20.000 0.000 0.000';
+    v1 = (self.angles_y * '0 1 0') + '-20 0 0';
     makevectors(v1);
     self.movedir = v_forward;
     setup_teament();

@@ -70,7 +70,7 @@ void (entity missile, float mspeed, float accuracy) LaunchMissile =
     vec = normalize(vec);
     vec = (vec + ((accuracy * v_up) * (random() - 0.5))) + ((accuracy * v_right) * (random() - 0.5));
     missile.velocity = vec * mspeed;
-    missile.angles = '0.000 0.000 0.000';
+    missile.angles = '0 0 0';
     missile.angles_y = vectoyaw(missile.velocity);
     missile.nextthink = time + 5;
     missile.think = SUB_Remove;
@@ -454,8 +454,8 @@ void () Wiz_StartFast =
     missile = spawn();
     missile.owner = self;
     missile.nextthink = time + 0.6;
-    setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * 14));
+    setsize(missile, '0 0 0', '0 0 0');
+    setorigin(missile, ((self.origin + '0 0 30') + (v_forward * 14)) + (v_right * 14));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.8;
     missile.think = Wiz_FastFire;
@@ -463,8 +463,8 @@ void () Wiz_StartFast =
     missile = spawn();
     missile.owner = self;
     missile.nextthink = time + 1;
-    setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * -14));
+    setsize(missile, '0 0 0', '0 0 0');
+    setorigin(missile, ((self.origin + '0 0 30') + (v_forward * 14)) + (v_right * -14));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.3;
     missile.think = Wiz_FastFire;
@@ -1338,7 +1338,7 @@ void () monster_wizard =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/wizard.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 40.000');
+    setsize(self, '-16 -16 -24', '16 16 40');
     self.health = 80;
     self.th_stand = wiz_stand1;
     self.th_walk = wiz_walk1;

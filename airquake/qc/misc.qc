@@ -258,7 +258,7 @@ void () light_street =
     self.solid = SOLID_BBOX;
     if(!(self.spawnflags & 16))
     {
-        setsize(self, '-8.000 -8.000 -64.000', '8.000 8.000 8.000');
+        setsize(self, '-8 -8 -64', '8 8 8');
     }
     else
     {
@@ -458,13 +458,13 @@ void () fire_fly =
     fireball = spawn();
     fireball.solid = SOLID_TRIGGER;
     fireball.movetype = MOVETYPE_TOSS;
-    fireball.velocity = '0.000 0.000 1000.000';
+    fireball.velocity = '0 0 1000';
     fireball.velocity_x = (random() * 100) - 50;
     fireball.velocity_y = (random() * 100) - 50;
     fireball.velocity_z = self.speed + (random() * 200);
     fireball.classname = "fireball";
     setmodel(fireball, "progs/lavaball.mdl");
-    setsize(fireball, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(fireball, '0 0 0', '0 0 0');
     setorigin(fireball, self.origin);
     fireball.nextthink = time + 5;
     fireball.think = SUB_Remove;
@@ -524,7 +524,7 @@ void () barrel_explode =
     self.classname = "explo_box";
     T_RadiusDamage(self, self, 160, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", 1, ATTN_NORM);
-    particle(self.origin, '0.000 0.000 0.000', 75, 255);
+    particle(self.origin, '0 0 0', 75, 255);
     self.origin_z = self.origin_z + 32;
     BecomeExplosion();
 };
@@ -896,7 +896,7 @@ void () tmine_touch =
 // OP_DONE	0	0	0
 void () tmine_activated = 
 {
-    traceline(self.origin + '0.000 0.000 1.000', self.origin + '0.000 0.000 24.000', FALSE, self);
+    traceline(self.origin + '0 0 1', self.origin + '0 0 24', FALSE, self);
     
     if(trace_fraction < 1)
     {
@@ -946,15 +946,15 @@ void () tmine_activated =
 void () tmine_start = 
 {
     setmodel(self, "progs/mine.mdl");
-    setsize(self, '-8.000 -8.000 -1.000', '8.000 8.000 8.000');
+    setsize(self, '-8 -8 -1', '8 8 8');
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_TOSS;
-    self.angles = '0.000 0.000 0.000';
-    self.velocity = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
+    self.velocity = '0 0 0';
     self.th_die = tmine_boom;
     self.health = 1;
     self.takedamage = DAMAGE_YES;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     droptofloor();
     self.touch = tmine_touch;
     self.think = tmine_activated;
@@ -1055,14 +1055,14 @@ void () make_bubbles =
     setorigin(bubble, self.origin);
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
-    bubble.velocity = '0.000 0.000 15.000';
+    bubble.velocity = '0 0 15';
     bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
     bubble.frame = 0;
     bubble.cnt = 0;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.nextthink = (time + random()) + 0.5;
     self.think = make_bubbles;
 };
@@ -1127,7 +1127,7 @@ void () bubble_split =
     bubble.classname = "bubble";
     bubble.frame = 1;
     bubble.cnt = 10;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.frame = 1;
     self.cnt = 10;
     
@@ -1337,7 +1337,7 @@ void () func_wall_use =
 // OP_DONE	0	0	0
 void () func_wall = 
 {
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     self.use = func_wall_use;
@@ -1360,7 +1360,7 @@ void () func_wall =
 // OP_DONE	0	0	0
 void () func_illusionary = 
 {
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_NONE;
     self.solid = SOLID_NOT;
     setmodel(self, self.model);
@@ -1395,7 +1395,7 @@ void () func_episodegate =
         return;
     }
     
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     self.use = func_wall_use;
@@ -1429,7 +1429,7 @@ void () func_bossgate =
         return;
     }
     
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     self.use = func_wall_use;

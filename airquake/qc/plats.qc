@@ -69,13 +69,13 @@ void () plat_spawn_inside_trigger =
     trigger.movetype = MOVETYPE_NONE;
     trigger.solid = SOLID_TRIGGER;
     trigger.enemy = self;
-    tmin = self.mins + '25.000 25.000 0.000';
-    tmax = self.maxs - '25.000 25.000 -8.000';
-    tmin_z = 0 - ((self.pos1_z - self.pos2_z) + 8);
+    tmin = self.mins + '25 25 0';
+    tmax = self.maxs - '25 25 -8';
+    tmin_z = tmax_z - ((self.pos1_z - self.pos2_z) + 8);
     
     if(self.spawnflags & PLAT_LOW_TRIGGER)
     {
-        tmax_z = 0 + 8;
+        tmax_z = tmin_z + 8;
     }
     
     
@@ -89,7 +89,7 @@ void () plat_spawn_inside_trigger =
     if(self.size_y <= 50)
     {
         tmin_y = (self.mins_y + self.maxs_y) / 2;
-        tmax_y = 0 + 1;
+        tmax_y = tmin_y + 1;
     }
     
     setsize(trigger, tmin, tmax);
@@ -518,7 +518,7 @@ void () func_plat =
     }
     
     self.mangle = self.angles;
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.classname = "plat";
     self.solid = SOLID_BSP;
     self.movetype = MOVETYPE_PUSH;
@@ -948,7 +948,7 @@ void () misc_teleporttrain =
     self.movetype = MOVETYPE_PUSH;
     self.blocked = train_blocked;
     self.use = train_use;
-    self.avelocity = '100.000 200.000 300.000';
+    self.avelocity = '100 200 300';
     self.noise = "misc/null.wav";
     precache_sound("misc/null.wav");
     self.noise1 = "misc/null.wav";

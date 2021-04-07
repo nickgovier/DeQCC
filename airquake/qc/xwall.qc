@@ -208,8 +208,8 @@ void () xwall_boom =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, v_y);
+    WriteCoord(MSG_BROADCAST, v_z);
     
     if(self.dmg)
     {
@@ -305,7 +305,7 @@ void () xwall_start =
         self.takedamage = DAMAGE_AIM;
     }
     
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     self.use = func_xwall_use;
@@ -379,7 +379,7 @@ void () xwall_start =
 void () func_xwall = 
 {
     setup_teament();
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     
@@ -495,8 +495,8 @@ void () rway_die =
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, v_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, v_y);
+    WriteCoord(MSG_BROADCAST, v_z);
     
     if(self.dmg)
     {
@@ -574,7 +574,7 @@ void () runway_start =
         self.takedamage = DAMAGE_NO;
     }
     
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     setsize(self, self.mins, self.maxs);

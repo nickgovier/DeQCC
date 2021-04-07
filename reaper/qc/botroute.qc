@@ -63,7 +63,7 @@ entity () botpath =
     targ.solid = SOLID_TRIGGER;
     targ.movetarget = world;
     targ.touch = t_botpath;
-    setsize(targ, '-4.000 -4.000 -4.000', '4.000 4.000 4.000');
+    setsize(targ, '-4 -4 -4', '4 4 4');
     return targ;
 };
 
@@ -790,7 +790,7 @@ float () CheckDropPath =
             
         }
         
-        lnd = pointcontents((carriedPath.origin + self.mins) + '0.000 0.000 1.000');
+        lnd = pointcontents((carriedPath.origin + self.mins) + '0 0 1');
         
         if(lnd != CONTENT_EMPTY)
         {

@@ -146,11 +146,11 @@ void (vector org, vector vel) SpawnMeatSpray =
     makevectors(self.angles);
     missile.velocity = vel;
     missile.velocity_z = (missile.velocity_z + 250) + (50 * random());
-    missile.avelocity = '3000.000 1000.000 2000.000';
+    missile.avelocity = '3000 1000 2000';
     missile.nextthink = time + 1;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/zom_gib.mdl");
-    setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(missile, '0 0 0', '0 0 0');
     setorigin(missile, org);
 };
 
@@ -337,8 +337,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
@@ -477,7 +477,7 @@ void () s_explode6 = [5, SUB_Remove]
 void () BecomeExplosion = 
 {
     self.movetype = MOVETYPE_NONE;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;
@@ -686,7 +686,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = 0 - 0;
+    f_x = 0 - f_y;
     f_y = f_x;
     f_z = 0;
     f = f * 16;
@@ -695,7 +695,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
+        particle(trace_endpos, '0 0 100', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -715,7 +715,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
+        particle(trace_endpos, '0 0 100', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -724,7 +724,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * 4);
+        particle(trace_endpos, '0 0 100', 225, damage * 4);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1901,20 +1901,20 @@ void () ImpulseCommands =
         v1_x = 0 - v1_x;
         if(self.toyview == 1)
         {
-            v1_y = anglemod(270 + 0);
+            v1_y = anglemod(270 + v1_y);
         }
         else
         {
             if(self.toyview == 2)
             {
-                v1_y = anglemod(180 + 0);
+                v1_y = anglemod(180 + v1_y);
             }
             else
             {
                 
                 if(self.toyview == 3)
                 {
-                    v1_y = anglemod(90 + 0);
+                    v1_y = anglemod(90 + v1_y);
                 }
                 
             }
@@ -1929,7 +1929,7 @@ void () ImpulseCommands =
             WriteEntity(MSG_ONE, self.oldenemy);
             WriteByte(MSG_ONE, 10);
             WriteAngle(MSG_ONE, v1_x);
-            WriteAngle(MSG_ONE, 0);
+            WriteAngle(MSG_ONE, v1_y);
             WriteAngle(MSG_ONE, 0);
         }
         

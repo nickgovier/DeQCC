@@ -100,7 +100,7 @@ float NUMGIBS = 0;
 float NUMPATHERS = 0;
 float SKINSMODE = 0;
 float RECURSEDEPTH = 0;
-vector REBOUNDSPOT = '0.000 0.000 0.000';
+vector REBOUNDSPOT = '0 0 0';
 float REBOUND = 0;
 float TELEFRAGFLAG = 0;
 entity NOISEQUEUE;
@@ -331,13 +331,13 @@ float (entity e) trigpushweight =
         {
             spot_z = dropline(org);
             
-            if(self.absmin_z > 0)
+            if(self.absmin_z > spot_z)
             {
                 spot_z = self.absmin_z;
             }
             
             
-            if(0 < (((self.maxs_z - self.mins_z) + 0) + MAXJUMP))
+            if(org_z < (((self.maxs_z - self.mins_z) + spot_z) + MAXJUMP))
             {
                 weight = KINDA_WANT;
             }
@@ -412,7 +412,7 @@ float (entity e) backpackweight =
     local float lnd;
     local float weight;
     weight = WANT;
-    lnd = pointcontents(e.absmin + '0.000 0.000 1.000');
+    lnd = pointcontents(e.absmin + '0 0 1');
     
     if(e.items & (IT_ROCKET_LAUNCHER + IT_LIGHTNING))
     {

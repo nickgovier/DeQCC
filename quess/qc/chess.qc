@@ -344,19 +344,19 @@ void () FindLocation =
     
     if(trace_fraction < 1)
     {
-        v1 = trace_endpos + '256.000 256.000 0.000';
+        v1 = trace_endpos + '256 256 0';
         v1_x = v1_x / 64;
-        v1_y = 0 / 64;
+        v1_y = v1_y / 64;
         v1_z = 0;
-        v1_y = ceil(0);
+        v1_y = ceil(v1_y);
         
-        if(0 > 8)
+        if(v1_y > 8)
         {
             v1_y = 8;
         }
         
         
-        if(0 < 1)
+        if(v1_y < 1)
         {
             v1_y = 1;
         }
@@ -374,7 +374,7 @@ void () FindLocation =
             v1_x = 1;
         }
         
-        loc = (v1_x * 10) + 0;
+        loc = (v1_x * 10) + v1_y;
         current_destination = ftos(loc);
         current_dest_int = loc;
     }
@@ -513,7 +513,7 @@ void () CameraPos =
     makevectors(self.v_angle);
     ideal_pos = v_forward * -350;
     
-    if(0 < 0)
+    if(ideal_pos_z < 0)
     {
         ideal_pos_z = 0;
     }
@@ -1290,7 +1290,7 @@ float (entity ent, float loc, entity at_loc, float actual_move) CheckValidMove =
 entity (float loc) EntityAtLoc = 
 {
     local entity trav;
-    trav = findradius('0.000 0.000 0.000', 4096);
+    trav = findradius('0 0 0', 4096);
     
     while(trav != world)
     {
@@ -1809,7 +1809,7 @@ vector (float loc) LocationToVector =
     dest_org_x = GetX(loc);
     dest_org_z = 0;
     dest_org = dest_org * 64;
-    dest_org = ((dest_org - '256.000 256.000 0.000') - '32.000 32.000 0.000') - (-24 * '0.000 0.000 1.000');
+    dest_org = ((dest_org - '256 256 0') - '32 32 0') - (VEC_HULL_MIN_z * '0 0 1');
     return dest_org;
 };
 
@@ -2118,9 +2118,9 @@ void () ProcessSelection =
             
             mystuffcmd(self, "play effects/button.wav\n");
             
-            if(light_ent.origin != (current_selected.origin + '0.000 0.000 96.000'))
+            if(light_ent.origin != (current_selected.origin + '0 0 96'))
             {
-                setorigin(light_ent, current_selected.origin + '0.000 0.000 96.000');
+                setorigin(light_ent, current_selected.origin + '0 0 96');
             }
             
             light_ent.effects = EF_DIMLIGHT;
@@ -2446,15 +2446,15 @@ void () become_queen =
     new.chess_flags = current_turn.chess_flags;
     new.flags = self.flags;
     new.yaw_speed = 20;
-    new.view_ofs = '0.000 0.000 25.000';
+    new.view_ofs = '0 0 25';
     new.use = monster_use;
-    new.ideal_yaw = new.angles * '0.000 1.000 0.000';
+    new.ideal_yaw = new.angles * '0 1 0';
     new.takedamage = DAMAGE_AIM;
     remove(self);
     self = new;
     self.classname = "chess_queen";
     chess_queen();
-    setorigin(new, new.origin + '0.000 0.000 16.000');
+    setorigin(new, new.origin + '0 0 16');
     droptofloor();
     self.pausetime = 100000000;
     self.th_stand();

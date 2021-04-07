@@ -33,7 +33,7 @@ void () tilt_etank =
     self.enemy = e;
     self.angles_x = self.angles_x + (self.avelocity_x * 0.1);
     self.angles_z = self.angles_z + (self.avelocity_z * 0.1);
-    self.avelocity = '0.000 0.000 0.000';
+    self.avelocity = '0 0 0';
 };
 
 // turn_eturret
@@ -285,32 +285,32 @@ void (vector v0, float sp_x) turn_eturret =
         
         v1_y = 0 - stemp.toyview;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
-            v1_y = 0 + 360;
+            v1_y = v1_y + 360;
         }
         
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v2_y = 0;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             v2_y = 0 - sp_x;
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             v2_y = sp_x;
         }
         
-        f1 = fabs(0);
-        f2 = fabs(0) * 0.1;
+        f1 = fabs(v1_y);
+        f2 = fabs(v2_y) * 0.1;
         if(f1 < f2)
         {
             v2_y = 0;
@@ -318,7 +318,7 @@ void (vector v0, float sp_x) turn_eturret =
         }
         else
         {
-            stemp.toyview = stemp.toyview + (0 * 0.1);
+            stemp.toyview = stemp.toyview + (v2_y * 0.1);
         }
         
         if(stemp.toyview == 0)
@@ -327,8 +327,8 @@ void (vector v0, float sp_x) turn_eturret =
         }
         else
         {
-            makevectors('0.000 1.000 0.000' * stemp.toyview);
-            f1 = 0;
+            makevectors('0 1 0' * stemp.toyview);
+            f1 = v_forward_y;
             f2 = v_forward_x;
             v3 = stemp.angles;
             v3_x = 0 - v3_x;
@@ -423,8 +423,8 @@ void (vector v0, float sp_x) turn_eturret =
             return;
         }
         
-        makevectors('0.000 1.000 0.000' * stemp.toyview);
-        f1 = 0;
+        makevectors('0 1 0' * stemp.toyview);
+        f1 = v_forward_y;
         f2 = v_forward_x;
         v3 = stemp.angles;
         v3_x = 0 - v3_x;

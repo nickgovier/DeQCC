@@ -1167,16 +1167,16 @@ void () DeathBubblesSpawn =
     
     bubble = spawn();
     setmodel(bubble, "progs/s_bubble.spr");
-    setorigin(bubble, self.owner.origin + '0.000 0.000 24.000');
+    setorigin(bubble, self.owner.origin + '0 0 24');
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
-    bubble.velocity = '0.000 0.000 15.000';
+    bubble.velocity = '0 0 15';
     bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.classname = "bubble";
     bubble.frame = FALSE;
     bubble.cnt = FALSE;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.nextthink = time + 0.1;
     self.think = DeathBubblesSpawn;
     self.air_finished = self.air_finished + TRUE;
@@ -1548,12 +1548,12 @@ void (string gibname, float dm) ThrowHead =
     self.movetype = MOVETYPE_BOUNCE;
     self.takedamage = DAMAGE_NO;
     self.solid = SOLID_NOT;
-    self.view_ofs = '0.000 0.000 8.000';
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    self.view_ofs = '0 0 8';
+    setsize(self, '-16 -16 0', '16 16 56');
     self.velocity = VelocityForDamage(dm);
     self.origin_z = self.origin_z - 24;
     self.flags = self.flags - (self.flags & FL_ONGROUND);
-    self.avelocity = crandom() * '0.000 600.000 0.000';
+    self.avelocity = crandom() * '0 600 0';
 };
 
 // GibPlayer
@@ -1786,7 +1786,7 @@ void () PlayerDie =
     }
     
     self.weaponmodel = "";
-    self.view_ofs = '0.000 0.000 -8.000';
+    self.view_ofs = '0 0 -8';
     self.deadflag = DEAD_DYING;
     self.solid = SOLID_NOT;
     self.flags = self.flags - (self.flags & FL_ONGROUND);

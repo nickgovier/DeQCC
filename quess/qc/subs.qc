@@ -121,15 +121,15 @@ void () SUB_Remove =
 // OP_DONE	0	0	0
 void () SetMovedir = 
 {
-    if(self.angles == '0.000 -1.000 0.000')
+    if(self.angles == '0 -1 0')
     {
-        self.movedir = '0.000 0.000 1.000';
+        self.movedir = '0 0 1';
     }
     else
     {
-        if(self.angles == '0.000 -2.000 0.000')
+        if(self.angles == '0 -2 0')
         {
-            self.movedir = '0.000 0.000 -1.000';
+            self.movedir = '0 0 -1';
         }
         else
         {
@@ -139,7 +139,7 @@ void () SetMovedir =
         
     }
     
-    self.angles = '0.000 0.000 0.000';
+    self.angles = '0 0 0';
 };
 
 // InitTrigger
@@ -164,7 +164,7 @@ void () SetMovedir =
 void () InitTrigger = 
 {
     
-    if(self.angles != '0.000 0.000 0.000')
+    if(self.angles != '0 0 0')
     {
         SetMovedir();
     }
@@ -260,7 +260,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     
     if(tdest == self.origin)
     {
-        self.velocity = '0.000 0.000 0.000';
+        self.velocity = '0 0 0';
         self.nextthink = self.ltime + 0.1;
         return;
     }
@@ -271,7 +271,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     
     if(traveltime < 0.1)
     {
-        self.velocity = '0.000 0.000 0.000';
+        self.velocity = '0 0 0';
         self.nextthink = self.ltime + 0.1;
         return;
     }
@@ -298,7 +298,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
 void () SUB_CalcMoveDone = 
 {
     setorigin(self, self.finaldest);
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.nextthink = -1;
     
     if(self.think1)
@@ -394,7 +394,7 @@ void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
 void () SUB_CalcAngleMoveDone = 
 {
     self.angles = self.finalangle;
-    self.avelocity = '0.000 0.000 0.000';
+    self.avelocity = '0 0 0';
     self.nextthink = -1;
     
     if(self.think1)

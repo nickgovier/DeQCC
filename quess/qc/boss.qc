@@ -590,7 +590,7 @@ void () boss_missile8 = [64, boss_missile9]
 // OP_DONE	0	0	0
 void () boss_missile9 = [65, boss_missile10]
 {
-    boss_missile('100.000 100.000 200.000');
+    boss_missile('100 100 200');
 };
 
 // boss_missile10
@@ -701,7 +701,7 @@ void () boss_missile19 = [75, boss_missile20]
 // OP_DONE	0	0	0
 void () boss_missile20 = [76, boss_missile21]
 {
-    boss_missile('100.000 -100.000 200.000');
+    boss_missile('100 -100 200');
 };
 
 // boss_missile21
@@ -1186,7 +1186,7 @@ void (vector p) boss_missile =
     local float t;
     offang = vectoangles(self.enemy.origin - self.origin);
     makevectors(offang);
-    org = ((self.origin + (p_x * v_forward)) + (0 * v_right)) + (0 * '0.000 0.000 1.000');
+    org = ((self.origin + (p_x * v_forward)) + (0 * v_right)) + (0 * '0 0 1');
     if(skill > 1)
     {
         t = (vlen(self.enemy.origin - org)) / 300;
@@ -1202,7 +1202,7 @@ void (vector p) boss_missile =
     vec = normalize(d - org);
     launch_spike(org, vec);
     setmodel(newmis, "progs/lavaball.mdl");
-    newmis.avelocity = '200.000 100.000 300.000';
+    newmis.avelocity = '200 100 300';
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     newmis.velocity = vec * 300;
     newmis.touch = T_MissileTouch;
@@ -1267,7 +1267,7 @@ void () boss_awake =
     self.movetype = MOVETYPE_STEP;
     self.takedamage = DAMAGE_NO;
     setmodel(self, "progs/boss.mdl");
-    setsize(self, '-128.000 -128.000 -24.000', '128.000 128.000 256.000');
+    setsize(self, '-128 -128 -24', '128 128 256');
     if(skill == 0)
     {
         self.health = 1;
@@ -1430,11 +1430,11 @@ void () lightning_fire =
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
     WriteCoord(MSG_ALL, p1_x);
-    WriteCoord(MSG_ALL, 0);
-    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, p1_y);
+    WriteCoord(MSG_ALL, p1_z);
     WriteCoord(MSG_ALL, p2_x);
-    WriteCoord(MSG_ALL, 0);
-    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, p2_y);
+    WriteCoord(MSG_ALL, p2_z);
 };
 
 // lightning_use

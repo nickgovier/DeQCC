@@ -946,7 +946,7 @@ void () army_fire =
     en = self.enemy;
     dir = en.origin - (en.velocity * 0.2);
     dir = normalize(dir - self.origin);
-    FireBullets(4, dir, '0.100 0.100 0.000');
+    FireBullets(4, dir, '0.1 0.1 0');
 };
 
 // army_die1
@@ -1291,7 +1291,7 @@ void () monster_army =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/soldier.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 40.000');
+    setsize(self, '-16 -16 -24', '16 16 40');
     self.health = 30;
     self.th_stand = army_stand1;
     self.th_walk = army_walk1;

@@ -853,7 +853,7 @@ void () PutBotInServer =
     self.deadflag = DEAD_NO;
     self.pausetime = FALSE;
     spwn = SelectSpawnPoint();
-    spot = spwn.origin + '0.000 0.000 1.000';
+    spot = spwn.origin + '0 0 1';
     self.origin = spot;
     setorigin(self, spot);
     self.angles = spwn.angles;
@@ -888,7 +888,7 @@ void () PutBotInServer =
         NUMPATHERS = NUMPATHERS + TRUE;
     }
     
-    self.view_ofs = '0.000 0.000 22.000';
+    self.view_ofs = '0 0 22';
     makevectors(self.angles);
     spawn_tfog(self.origin + (v_forward * KINDA_WANT));
     spawn_tdeath(self.origin, self);

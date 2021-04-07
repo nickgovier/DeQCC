@@ -164,7 +164,7 @@ void () Create_chasecam =
     e = spawn();
     setmodel(e, "progs/null.spr");
     setorigin(e, self.origin);
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     msg_entity = self;
     WriteByte(MSG_ONE, 5);
     WriteEntity(MSG_ONE, e);
@@ -220,7 +220,7 @@ void () Create_chasecam =
 void (entity e) Check_minsmaxs = 
 {
     
-    if(minims != '0.000 0.000 0.000')
+    if(minims != '0 0 0')
     {
         
         if(e.origin_x < minims_x)
@@ -229,21 +229,21 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y < 0)
+        if(e.origin_y < minims_y)
         {
-            e.origin_y = 0;
+            e.origin_y = minims_y;
         }
         
         
-        if(e.origin_z < 0)
+        if(e.origin_z < minims_z)
         {
-            e.origin_z = 0;
+            e.origin_z = minims_z;
         }
         
     }
     
     
-    if(maxims != '0.000 0.000 0.000')
+    if(maxims != '0 0 0')
     {
         
         if(e.origin_x > maxims_x)
@@ -252,15 +252,15 @@ void (entity e) Check_minsmaxs =
         }
         
         
-        if(e.origin_y > 0)
+        if(e.origin_y > maxims_y)
         {
-            e.origin_y = 0;
+            e.origin_y = maxims_y;
         }
         
         
-        if(e.origin_z > 0)
+        if(e.origin_z > maxims_z)
         {
-            e.origin_z = 0;
+            e.origin_z = maxims_z;
         }
         
     }
@@ -321,7 +321,7 @@ void () Throw_ACgib =
     newmis.velocity_z = (random() * 150) + 150;
     newmis.classname = "fireball";
     setmodel(newmis, "progs/lavaball.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     setorigin(newmis, self.origin);
     newmis.nextthink = time + 5;
     newmis.think = SUB_Remove;
@@ -872,7 +872,7 @@ vector (float minim, float maxdist) AC_aim =
     re = world;
     makevectors(self.enemy.angles);
     v1 = v_forward;
-    v1_z = 0 - 0;
+    v1_z = 0 - v1_z;
     e = findradius(self.enemy.origin, maxdist);
     
     while(e)
@@ -1586,7 +1586,7 @@ void () T_ACTouch =
         
         if((fabs(self.angles_x) < 20) && (fabs(self.angles_z) < 20))
         {
-            traceline(self.origin, self.origin + '0.000 0.000 -32.000', FALSE, self);
+            traceline(self.origin, self.origin + '0 0 -32', FALSE, self);
             
             if(trace_ent.classname == "func_runway")
             {
@@ -1601,7 +1601,7 @@ void () T_ACTouch =
                 self.groundentity = other;
                 self.angles_x = 0;
                 self.angles_z = 0;
-                self.avelocity = '0.000 0.000 0.000';
+                self.avelocity = '0 0 0';
                 self.velocity_z = 0;
                 self.origin_z = (other.origin_z + other.maxs_z) + 16;
                 return;
@@ -1766,9 +1766,9 @@ void () AC_Fall =
     local vector v1;
     local vector v2;
     local vector v3;
-    v1 = '0.000 0.000 0.000';
+    v1 = '0 0 0';
     v1_x = -70 - self.angles_x;
-    v2 = '0.000 0.000 360.000';
+    v2 = '0 0 360';
     
     if(v1_x < 0)
     {
@@ -1785,7 +1785,7 @@ void () AC_Fall =
     self.avelocity = v2;
     makevectors(self.angles);
     v3 = v_forward;
-    v3_z = 0 - 0;
+    v3_z = 0 - v3_z;
     self.velocity = v3 * 300;
     
     if(self.flags & FL_ONGROUND)

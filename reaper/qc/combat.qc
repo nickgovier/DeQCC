@@ -111,28 +111,28 @@ float (entity targ, entity inflictor) CanDamage =
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 -15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 -15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {

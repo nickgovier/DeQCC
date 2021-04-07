@@ -628,7 +628,7 @@ void () dog_leap2 = [61, dog_leap3]
     self.touch = Dog_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + TRUE;
-    self.velocity = (v_forward * 300) + '0.000 0.000 200.000';
+    self.velocity = (v_forward * 300) + '0 0 200';
     
     if(self.flags & FL_ONGROUND)
     {
@@ -1335,7 +1335,7 @@ void () monster_dog =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/dog.mdl");
-    setsize(self, VEC_HULL2_MIN, '32.000 32.000 40.000');
+    setsize(self, VEC_HULL2_MIN, '32 32 40');
     self.health = 25;
     self.th_stand = dog_stand1;
     self.th_walk = dog_walk1;

@@ -428,23 +428,23 @@ void () etank_walk =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0 - self.angles_y);
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
-    if(fabs(0) > 10)
+    if(fabs(v1_y) > 10)
     {
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             self.angles_y = anglemod(self.angles_y + 10);
         }
@@ -452,10 +452,10 @@ void () etank_walk =
     }
     else
     {
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
-    if(fabs(0) < 45)
+    if(fabs(v1_y) < 45)
     {
         
         if(self.speed < 120)
@@ -937,7 +937,7 @@ void () etank_run =
     if(!self.enemy)
     {
         walkmove(self.angles_y, self.speed * 0.1);
-        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100);
+        turn_eturret(self.angles_y * '0 1 0', 100);
         self.think = self.th_walk;
         self.nextthink = time + 0.1;
         return;
@@ -999,18 +999,18 @@ void () etank_run =
             
             if(range(self.goalentity) > RANGE_MELEE)
             {
-                v0_y = 0 + (tmp * 70);
+                v0_y = v0_y + (tmp * 70);
             }
             else
             {
-                v0_y = 0 + (tmp * 100);
+                v0_y = v0_y + (tmp * 100);
             }
             
         }
         
     }
     
-    makevectors(0 * '0.000 1.000 0.000');
+    makevectors(v0_y * '0 1 0');
     traceline(self.origin + (v_right * 11), (self.origin + (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = trace_fraction;
     traceline(self.origin - (v_right * 11), (self.origin - (v_right * 11)) + (v_forward * 128), FALSE, self);
@@ -1018,27 +1018,27 @@ void () etank_run =
     
     if(tmp)
     {
-        v0_y = 0 - (tmp * 90);
+        v0_y = v0_y - (tmp * 90);
     }
     
-    v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0 - self.angles_y);
+    v1 = '0 0 0';
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
-    if(fabs(0) > 10)
+    if(fabs(v1_y) > 10)
     {
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             self.angles_y = anglemod(self.angles_y + 10);
         }
@@ -1046,10 +1046,10 @@ void () etank_run =
     }
     else
     {
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
-    if(fabs(0) < 45)
+    if(fabs(v1_y) < 45)
     {
         
         if(self.speed < 120)
@@ -1127,29 +1127,29 @@ void () etank_run =
     {
         if(dist < 280)
         {
-            v0 = v0 + '0.000 0.000 0.000';
+            v0 = v0 + '0 0 0';
         }
         else
         {
             if(dist < 480)
             {
-                v0 = v0 + '5.000 0.000 0.000';
+                v0 = v0 + '5 0 0';
             }
             else
             {
                 if(dist < 690)
                 {
-                    v0 = v0 + '10.000 0.000 0.000';
+                    v0 = v0 + '10 0 0';
                 }
                 else
                 {
                     if(dist < 1030)
                     {
-                        v0 = v0 + '15.000 0.000 0.000';
+                        v0 = v0 + '15 0 0';
                     }
                     else
                     {
-                        v0 = v0 + '20.000 0.000 0.000';
+                        v0 = v0 + '20 0 0';
                     }
                     
                 }
@@ -1162,7 +1162,7 @@ void () etank_run =
     
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0 - 0;
+    v2_z = 0 - v2_z;
     turn_eturret(v0, 100);
     v1 = self.tur2.angles;
     v1_x = 0 - v1_x;
@@ -1324,7 +1324,7 @@ void () etank_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     self.tur1 = spawn();
     setorigin(self.tur1, self.origin);
@@ -1433,8 +1433,8 @@ void () monster_etank =
     }
     
     setmodel(self, "progs/tankba.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 8.000');
-    self.view_ofs = '0.000 0.000 1.000';
+    setsize(self, '-16 -16 -24', '16 16 8');
+    self.view_ofs = '0 0 1';
     
     if(!self.health)
     {

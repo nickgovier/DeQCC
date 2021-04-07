@@ -412,7 +412,7 @@ float () RadFindTarget =
                                     teamprint(self, e.netname);
                                     teamprint(self, ") in ");
                                     v_forward = vectoangles(e.origin - self.origin);
-                                    r = 0;
+                                    r = v_forward_y;
                                     if((r > 67) && (r <= 112))
                                     {
                                         dirstr = "north";
@@ -864,14 +864,14 @@ void () rad_aim =
     local vector org;
     local vector vel;
     local float dist;
-    dir = (self.angles_y * '0.000 1.000 0.000') + '-30.000 10.000 0.000';
+    dir = (self.angles_y * '0 1 0') + '-30 10 0';
     makevectors(dir);
     org = self.origin + v_forward;
     dir = vectoangles(org - self.origin);
-    vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0 - self.angles_y;
+    vtemp = '0 0 0';
+    vtemp_y = dir_y - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
-    dir = '0.000 0.000 0.000';
+    dir = '0 0 0';
     
     if(vtemp_x < 0)
     {
@@ -885,15 +885,15 @@ void () rad_aim =
     }
     
     
-    if(0 < 0)
+    if(vtemp_y < 0)
     {
-        vtemp_y = 0 + 360;
+        vtemp_y = vtemp_y + 360;
     }
     
     
-    if(0 > 180)
+    if(vtemp_y > 180)
     {
-        vtemp_y = 0 - 360;
+        vtemp_y = vtemp_y - 360;
     }
     
     dir = vtemp;
@@ -910,19 +910,19 @@ void () rad_aim =
     }
     
     
-    if(0 < -10)
+    if(dir_y < -10)
     {
         dir_y = -10;
     }
     
     
-    if(0 > 10)
+    if(dir_y > 10)
     {
         dir_y = 10;
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0);
+    self.angles_y = anglemod(self.angles_y + dir_y);
     self.trigger_field.angles_y = self.angles_y;
 };
 
@@ -1182,7 +1182,7 @@ void () start_monster_rad =
     self.movetype = MOVETYPE_TOSS;
     self.health = self.max_health;
     setmodel(self, "progs/radba.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -24', '16 16 16');
     self.th_stand = rad_stand;
     self.th_walk = rad_walk;
     self.th_run = rad_run;
@@ -1197,8 +1197,8 @@ void () start_monster_rad =
     setorigin(self, self.oldorigin);
     droptofloor();
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
-    self.view_ofs = '0.000 0.000 1.000';
+    self.ideal_yaw = self.angles * '0 1 0';
+    self.view_ofs = '0 0 1';
     self.use = monster_use;
     
     if((deathmatch > 0) || (self.team != 1))
@@ -1282,7 +1282,7 @@ void () monster_rad =
     }
     
     self.max_health = self.health;
-    v1 = (self.angles_y * '0.000 1.000 0.000') + '-30.000 0.000 0.000';
+    v1 = (self.angles_y * '0 1 0') + '-30 0 0';
     makevectors(v1);
     self.movedir = v_forward;
     setup_teament();

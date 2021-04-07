@@ -61,11 +61,11 @@ void (float offset) hknight_shot =
     local vector org;
     local vector vec;
     offang = vectoangles(self.enemy.origin - self.origin);
-    offang_y = 0 + (offset * MOVETYPE_TOSS);
+    offang_y = offang_y + (offset * MOVETYPE_TOSS);
     makevectors(offang);
     org = ((self.origin + self.mins) + (self.size * 0.5)) + (v_forward * KINDA_WANT);
     vec = normalize(v_forward);
-    vec_z = (FALSE - 0) + ((random() - 0.5) * 0.1);
+    vec_z = (FALSE - vec_z) + ((random() - 0.5) * 0.1);
     launch_spike(org, vec);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
@@ -2272,7 +2272,7 @@ void () monster_hell_knight =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/hknight.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 250;
     self.th_stand = hknight_stand1;
     self.th_walk = hknight_walk1;

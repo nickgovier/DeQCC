@@ -89,7 +89,7 @@ void () PlaceItem =
     self.flags = FL_ITEM;
     self.solid = SOLID_TRIGGER;
     self.movetype = MOVETYPE_TOSS;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.origin_z = self.origin_z + 6;
     oldz = self.origin_z;
     
@@ -283,7 +283,7 @@ void () item_health =
         
     }
     
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -654,7 +654,7 @@ void () item_armor1 =
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = 0;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -681,7 +681,7 @@ void () item_armor2 =
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = 1;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -708,7 +708,7 @@ void () item_armorInv =
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = 2;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1215,7 +1215,7 @@ void () weapon_supershotgun =
     self.weapon = IT_SUPER_SHOTGUN;
     self.netname = "Double-barrelled Shotgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1245,7 +1245,7 @@ void () weapon_nailgun =
     self.weapon = IT_NAILGUN;
     self.netname = "nailgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1275,7 +1275,7 @@ void () weapon_supernailgun =
     self.weapon = IT_SUPER_NAILGUN;
     self.netname = "Super Nailgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1305,7 +1305,7 @@ void () weapon_grenadelauncher =
     self.weapon = 3;
     self.netname = "Grenade Launcher";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1335,7 +1335,7 @@ void () weapon_rocketlauncher =
     self.weapon = 3;
     self.netname = "Rocket Launcher";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1365,7 +1365,7 @@ void () weapon_lightning =
     self.weapon = 3;
     self.netname = "Thunderbolt";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     StartItem();
 };
 
@@ -1632,7 +1632,7 @@ void () item_shells =
     
     self.weapon = 1;
     self.netname = "shells";
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -1686,7 +1686,7 @@ void () item_spikes =
     
     self.weapon = 2;
     self.netname = "nails";
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -1740,7 +1740,7 @@ void () item_rockets =
     
     self.weapon = 3;
     self.netname = "rockets";
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -1794,7 +1794,7 @@ void () item_cells =
     
     self.weapon = 4;
     self.netname = "cells";
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -1950,7 +1950,7 @@ void () item_weapon =
         self.netname = "rockets";
     }
     
-    setsize(self, '0.000 0.000 0.000', '32.000 32.000 56.000');
+    setsize(self, '0 0 0', '32 32 56');
     StartItem();
 };
 
@@ -2169,7 +2169,7 @@ void () item_key1 =
     key_setsounds();
     self.touch = key_touch;
     self.items = IT_KEY1;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2245,7 +2245,7 @@ void () item_key2 =
     key_setsounds();
     self.touch = key_touch;
     self.items = IT_KEY2;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2402,7 +2402,7 @@ void () item_sigil =
     }
     
     self.touch = sigil_touch;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2610,7 +2610,7 @@ void () item_artifact_invulnerability =
     setmodel(self, "progs/invulner.mdl");
     self.netname = "Pentagram of Protection";
     self.items = IT_INVULNERABILITY;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2649,7 +2649,7 @@ void () item_artifact_envirosuit =
     setmodel(self, "progs/suit.mdl");
     self.netname = "Biosuit";
     self.items = IT_SUIT;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2691,7 +2691,7 @@ void () item_artifact_invisibility =
     setmodel(self, "progs/invisibl.mdl");
     self.netname = "Ring of Shadows";
     self.items = IT_INVISIBILITY;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -2733,7 +2733,7 @@ void () item_artifact_super_damage =
     setmodel(self, "progs/quaddama.mdl");
     self.netname = "Quad Damage";
     self.items = IT_QUAD;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -24', '16 16 32');
     StartItem();
 };
 
@@ -3014,7 +3014,7 @@ void () DropBackpack =
     }
     
     item = spawn();
-    item.origin = self.origin - '0.000 0.000 24.000';
+    item.origin = self.origin - '0 0 24';
     item.items = self.weapon;
     item.ammo_shells = self.ammo_shells;
     item.ammo_nails = self.ammo_nails;
@@ -3027,7 +3027,7 @@ void () DropBackpack =
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;
     setmodel(item, "progs/backpack.mdl");
-    setsize(item, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(item, '-16 -16 0', '16 16 56');
     item.touch = BackpackTouch;
     item.nextthink = time + 120;
     item.think = SUB_Remove;

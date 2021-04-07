@@ -52,7 +52,7 @@ void () shoottarget =
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", TRUE, ATTN_NORM);
     dir = (botTarget.goalentity.absmin + botTarget.goalentity.absmax) * 0.5;
     dir = normalize(dir - self.origin);
-    FireBullets(MOVETYPE_TOSS, dir, '0.040 0.040 0.000');
+    FireBullets(MOVETYPE_TOSS, dir, '0.04 0.04 0');
     self.attack_finished = time + 0.5;
     self.enemy = world;
     
@@ -634,10 +634,10 @@ vector (float n) chooseRoamTarget =
             m = CONTENT_EMPTY;
         }
         
-        bestorg_y = 0 + (m * ((700 * random()) + 50));
+        bestorg_y = bestorg_y + (m * ((700 * random()) + 50));
     }
     
-    bestorg_z = ((0 + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
+    bestorg_z = ((bestorg_z + ((MOVETYPE_WALK * MAXJUMP) * random())) - (FL_SWIM * MAXJUMP)) - TRUE;
     traceline(self.origin, bestorg, TRUE, self);
     dir = normalize(bestorg - self.origin);
     len = vlen(bestorg - self.origin);
@@ -682,9 +682,9 @@ vector (float n) chooseRoamTarget =
     
     r = n + (random() * MOVETYPE_WALK);
     
-    if((0 > self.origin_z) || (r > MOVETYPE_FLY))
+    if((bestorg_z > self.origin_z) || (r > MOVETYPE_FLY))
     {
-        bestorg_z = 0 - self.mins_z;
+        bestorg_z = below_z - self.mins_z;
     }
     
     len = vlen(bestorg - self.origin);
@@ -1317,13 +1317,13 @@ void () goForAir =
     }
     
     bestorg = self.origin;
-    bestorg_z = 0 + 800;
+    bestorg_z = bestorg_z + 800;
     traceline(self.origin, bestorg, TRUE, self);
     
     if(!trace_inopen)
     {
         bestorg = chooseRoamTarget(TRUE);
-        bestorg_z = 0 + 200;
+        bestorg_z = bestorg_z + 200;
     }
     
     botTarget = self.goalentity;

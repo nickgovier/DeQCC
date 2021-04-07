@@ -213,9 +213,9 @@ float (float dist) teleptest =
     }
     
     start_x = start_x + FL_INWATER;
-    start_y = 0 + FL_INWATER;
+    start_y = start_y + FL_INWATER;
     up_x = up_x + FL_INWATER;
-    up_y = 0 + FL_INWATER;
+    up_y = up_y + FL_INWATER;
     traceline(start, up, FALSE, self);
     
     if(trace_fraction < TRUE)
@@ -232,8 +232,8 @@ float (float dist) teleptest =
         return FALSE;
     }
     
-    start_y = 0 - FL_MONSTER;
-    up_y = 0 - FL_MONSTER;
+    start_y = start_y - FL_MONSTER;
+    up_y = up_y - FL_MONSTER;
     traceline(start, up, FALSE, self);
     
     if(trace_fraction < TRUE)
@@ -251,7 +251,7 @@ float (float dist) teleptest =
     }
     
     start = self.origin;
-    start_z = 0;
+    start_z = up_z;
     up = start;
     start_x = start_x + FL_INWATER;
     up_x = up_x - FL_INWATER;
@@ -263,10 +263,10 @@ float (float dist) teleptest =
     }
     
     start = self.origin;
-    start_z = 0;
+    start_z = up_z;
     up = start;
-    start_y = 0 + FL_INWATER;
-    up_y = 0 - FL_INWATER;
+    start_y = start_y + FL_INWATER;
+    up_y = up_y - FL_INWATER;
     traceline(start, up, FALSE, self);
     
     if(trace_fraction < TRUE)
@@ -304,7 +304,7 @@ float (float dist) waterupz =
     }
     
     up = self.origin;
-    up_z = 0 + dist;
+    up_z = up_z + dist;
     setorigin(self, up);
     return TRUE;
 };
@@ -337,7 +337,7 @@ float (float dist) waterdownz =
     }
     
     up = self.origin;
-    up_z = 0 - dist;
+    up_z = up_z - dist;
     setorigin(self, up);
     return TRUE;
 };
@@ -678,18 +678,18 @@ float (vector middle) checkLanding =
     }
     
     spot = middle;
-    spot_y = 0 + MOVETYPE_TOSS;
+    spot_y = spot_y + MOVETYPE_TOSS;
     
     if(pointcontents(spot) == CONTENT_SOLID)
     {
-        center_y = 0 - MOVETYPE_TOSS;
+        center_y = center_y - MOVETYPE_TOSS;
     }
     
-    spot_y = 0 - 12;
+    spot_y = spot_y - 12;
     
     if(pointcontents(spot) == CONTENT_SOLID)
     {
-        center_y = 0 + MOVETYPE_TOSS;
+        center_y = center_y + MOVETYPE_TOSS;
     }
     
     spot = center;
@@ -720,7 +720,7 @@ float (vector middle) checkLanding =
     }
     
     spot = center;
-    spot_y = 0 + MOVETYPE_TOSS;
+    spot_y = spot_y + MOVETYPE_TOSS;
     spot_z = dropline(spot);
     
     if(CheckLavaOrLow(spot))
@@ -729,7 +729,7 @@ float (vector middle) checkLanding =
     }
     
     spot = center;
-    spot_y = 0 - MOVETYPE_TOSS;
+    spot_y = spot_y - MOVETYPE_TOSS;
     spot_z = dropline(spot);
     
     if(CheckLavaOrLow(spot))
@@ -1251,12 +1251,12 @@ float (float vz, float dist, float imagine) Bot_tryjump =
             return FALSE;
         }
         
-        start_z = 0 + 45;
+        start_z = start_z + 45;
     }
     
     botxy = self.origin;
     botxy_z = FALSE;
-    diffz = (0 - botTarget.origin_z) + TRUE;
+    diffz = (start_z - botTarget.origin_z) + TRUE;
     
     if(diffz < (CONTENT_EMPTY * MAXJUMP))
     {
@@ -1312,7 +1312,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
     
     bottom = start + self.view_ofs;
     top = bottom + (xydir * dis);
-    top_z = 0 + (0.1 * (velz - GRAVITY));
+    top_z = top_z + (0.1 * (velz - GRAVITY));
     traceline(bottom, top, TRUE, self);
     
     if(trace_fraction != TRUE)
@@ -1329,9 +1329,9 @@ float (float vz, float dist, float imagine) Bot_tryjump =
     }
     
     bottom = start - (FL_INWATER * v_forward);
-    bottom_z = 0 + self.mins_z;
+    bottom_z = bottom_z + self.mins_z;
     top = bottom + ((xydir * dis) * FL_SWIM);
-    top_z = (0 + (0.2 * (velz - GRAVITY))) - (0.1 * GRAVITY);
+    top_z = (top_z + (0.2 * (velz - GRAVITY))) - (0.1 * GRAVITY);
     traceline(bottom, top, TRUE, self);
     
     if(trace_fraction != TRUE)
@@ -1343,7 +1343,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
         }
         
         top = bottom + (xydir * dis);
-        top_z = (0 + (0.2 * (velz - GRAVITY))) - (0.1 * GRAVITY);
+        top_z = (top_z + (0.2 * (velz - GRAVITY))) - (0.1 * GRAVITY);
         traceline(bottom, top, TRUE, self);
         
         if(trace_fraction != TRUE)
@@ -1395,7 +1395,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
     
     tvel = velz;
     bottom = start;
-    bottom_z = 0 + self.mins_z;
+    bottom_z = bottom_z + self.mins_z;
     ht = self.view_ofs_z - self.mins_z;
     NOTLAND = TRUE;
     
@@ -1403,7 +1403,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
     {
         tvel = tvel - GRAVITY;
         newbottom = bottom + (jumpv * 0.1);
-        newbottom_z = 0 + (tvel * 0.1);
+        newbottom_z = newbottom_z + (tvel * 0.1);
         traceline(bottom, newbottom, TRUE, self);
         frac = trace_fraction;
         
@@ -1411,8 +1411,8 @@ float (float vz, float dist, float imagine) Bot_tryjump =
         {
             newtop = newbottom;
             top = bottom;
-            top_z = 0 + ht;
-            newtop_z = 0 + ht;
+            top_z = top_z + ht;
+            newtop_z = newtop_z + ht;
             traceline(top, newtop, TRUE, self);
             
             if(trace_fraction == TRUE)
@@ -1450,7 +1450,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
             dir = normalize(newbottom - bottom);
             len = vlen(newbottom - bottom);
             newbottom = bottom + ((dir * len) * frac);
-            newbottom_z = 0 + KINDA_WANT;
+            newbottom_z = newbottom_z + KINDA_WANT;
             
             if(!(checkLanding(newbottom - (FL_INWATER * v_forward))))
             {
@@ -1501,7 +1501,7 @@ float (float vz, float dist, float imagine) Bot_tryjump =
     }
     
     
-    if(0 < (self.absmin_z - MAXJUMP))
+    if(newbottom_z < (self.absmin_z - MAXJUMP))
     {
         clearCache(self);
     }

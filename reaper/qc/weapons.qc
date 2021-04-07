@@ -122,7 +122,7 @@ void () W_FireAxe =
     local vector source;
     local vector dir;
     local vector org;
-    source = self.origin + '0.000 0.000 16.000';
+    source = self.origin + '0 0 16';
     dir = v_forward;
     
     if(self.classname == "dmbot")
@@ -150,8 +150,8 @@ void () W_FireAxe =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
@@ -241,7 +241,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     makevectors(self.angles);
     missile.velocity = vel;
     missile.velocity_z = (missile.velocity_z + 250) + (50 * random());
-    missile.avelocity = '3000.000 1000.000 2000.000';
+    missile.avelocity = '3000 1000 2000';
     missile.nextthink = time + TRUE;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/zom_gib.mdl");
@@ -432,8 +432,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
@@ -552,7 +552,7 @@ void () W_FireShotgun =
         dir = aim(self, 100000);
     }
     
-    FireBullets(MOVETYPE_TOSS, dir, '0.040 0.040 0.000');
+    FireBullets(MOVETYPE_TOSS, dir, '0.04 0.04 0');
 };
 
 // W_FireSuperShotgun
@@ -610,7 +610,7 @@ void () W_FireSuperShotgun =
         dir = botaim();
     }
     
-    FireBullets(14, dir, '0.140 0.080 0.000');
+    FireBullets(14, dir, '0.14 0.08 0');
 };
 
 // s_explode1
@@ -907,11 +907,11 @@ void () W_FireRocket =
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
     if(self.classname == "dmbot")
     {
-        setorigin(missile, (self.origin + (bfwd * FL_CLIENT)) + '0.000 0.000 16.000');
+        setorigin(missile, (self.origin + (bfwd * FL_CLIENT)) + '0 0 16');
     }
     else
     {
-        setorigin(missile, (self.origin + (v_forward * FL_CLIENT)) + '0.000 0.000 16.000');
+        setorigin(missile, (self.origin + (v_forward * FL_CLIENT)) + '0 0 16');
     }
     
 };
@@ -1020,7 +1020,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = FALSE - 0;
+    f_x = FALSE - f_y;
     f_y = f_x;
     f_z = FALSE;
     f = f * FL_INWATER;
@@ -1029,7 +1029,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * MOVETYPE_STEP);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
         T_Damage(trace_ent, from, from, damage);
         
         if((self.classname == "player") || (self.classname == "dmbot"))
@@ -1049,7 +1049,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * MOVETYPE_STEP);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1058,7 +1058,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * MOVETYPE_STEP);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1240,7 +1240,7 @@ void () W_FireLightning =
     
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_cells = self.ammo_cells - TRUE;
-    org = self.origin + '0.000 0.000 16.000';
+    org = self.origin + '0 0 16';
     dir = v_forward;
     
     if(self.classname == "dmbot")
@@ -1253,11 +1253,11 @@ void () W_FireLightning =
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, org_y);
+    WriteCoord(MSG_BROADCAST, org_z);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, trace_endpos_y);
+    WriteCoord(MSG_BROADCAST, trace_endpos_z);
     LightningDamage(self.origin, trace_endpos + (dir * MOVETYPE_STEP), self, SVC_INTERMISSION);
 };
 
@@ -1478,7 +1478,7 @@ void () W_FireGrenade =
         
     }
     
-    missile.avelocity = '300.000 300.000 300.000';
+    missile.avelocity = '300 300 300';
     missile.angles = vectoangles(missile.velocity);
     missile.touch = GrenadeTouch;
     missile.nextthink = time + 2.5;
@@ -1601,7 +1601,7 @@ void () W_FireSuperSpikes =
         dir = botaim();
     }
     
-    launch_spike(self.origin + '0.000 0.000 16.000', dir);
+    launch_spike(self.origin + '0 0 16', dir);
     newmis.touch = superspike_touch;
     setmodel(newmis, "progs/s_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
@@ -1705,7 +1705,7 @@ void (float ox) W_FireSpikes =
         dir = botaim();
     }
     
-    launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
+    launch_spike((self.origin + '0 0 16') + (v_right * ox), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 

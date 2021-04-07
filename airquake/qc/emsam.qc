@@ -318,7 +318,7 @@ void () emsam_run =
     if(!self.goalentity)
     {
         walkmove(self.angles_y, self.speed * 0.1);
-        turn_eturret(self.angles_y * '0.000 1.000 0.000', 100);
+        turn_eturret(self.angles_y * '0 1 0', 100);
         self.think = self.th_walk;
         self.nextthink = time + 0.1;
         return;
@@ -365,16 +365,16 @@ void () emsam_run =
         
         if(range(self.goalentity) > RANGE_MELEE)
         {
-            v0_y = 0 + (tmp * 70);
+            v0_y = v0_y + (tmp * 70);
         }
         else
         {
-            v0_y = 0 + (tmp * 100);
+            v0_y = v0_y + (tmp * 100);
         }
         
     }
     
-    makevectors(0 * '0.000 1.000 0.000');
+    makevectors(v0_y * '0 1 0');
     traceline(self.origin + (v_right * 11), (self.origin + (v_right * 11)) + (v_forward * 128), FALSE, self);
     tmp = trace_fraction;
     traceline(self.origin - (v_right * 11), (self.origin - (v_right * 11)) + (v_forward * 128), FALSE, self);
@@ -382,27 +382,27 @@ void () emsam_run =
     
     if(tmp)
     {
-        v0_y = 0 - (tmp * 90);
+        v0_y = v0_y - (tmp * 90);
     }
     
-    v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0 - self.angles_y);
+    v1 = '0 0 0';
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
-    if(fabs(0) > 10)
+    if(fabs(v1_y) > 10)
     {
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             self.angles_y = anglemod(self.angles_y + 10);
         }
@@ -410,10 +410,10 @@ void () emsam_run =
     }
     else
     {
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
-    if((fabs(0) < 45) && (self.attack_finished < (time - 1)))
+    if((fabs(v1_y) < 45) && (self.attack_finished < (time - 1)))
     {
         
         if(self.speed < 120)
@@ -638,7 +638,7 @@ void () emsam_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     self.tur2 = spawn();
     setorigin(self.tur2, self.origin);
@@ -744,8 +744,8 @@ void () monster_emsam =
     }
     
     setmodel(self, "progs/msamba.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 8.000');
-    self.view_ofs = '0.000 0.000 1.000';
+    setsize(self, '-16 -16 -24', '16 16 8');
+    self.view_ofs = '0 0 1';
     
     if(!self.health)
     {

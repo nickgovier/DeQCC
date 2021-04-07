@@ -65,7 +65,7 @@ void () s_bexplode5 = [5, SUB_Remove]
 void () BigExplosion = 
 {
     self.movetype = MOVETYPE_NONE;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.touch = SUB_Null;
     setmodel(self, "progs/s_bigbom.spr");
     self.solid = SOLID_NOT;
@@ -871,8 +871,8 @@ void () AClaser_touch =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
     remove(self);
@@ -948,7 +948,7 @@ void (vector org, vector dir, entity targ) AC_laser =
     newmis.solid = SOLID_BBOX;
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/laser.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.angles = vectoangles(dir);
     newmis.touch = AClaser_touch;
     newmis.classname = "laser";
@@ -1023,7 +1023,7 @@ void (vector org, vector vec) LaunchLaser =
     newmis.solid = SOLID_BBOX;
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/laser.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     setorigin(newmis, org);
     newmis.velocity = vec * 600;
     newmis.angles = vectoangles(newmis.velocity);
@@ -1106,7 +1106,7 @@ void (vector org, vector dir, entity targ) AC_rocket =
     newmis.solid = SOLID_BBOX;
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/rocket1.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.angles = vectoangles(dir);
     newmis.touch = ACprojectile_touchboom;
     newmis.dmg = 90;
@@ -1189,7 +1189,7 @@ void () mine_activated =
         return;
     }
     
-    traceline(self.origin + '0.000 0.000 1.000', self.origin + '0.000 0.000 24.000', FALSE, self);
+    traceline(self.origin + '0 0 1', self.origin + '0 0 24', FALSE, self);
     
     if(trace_fraction < 1)
     {
@@ -1271,10 +1271,10 @@ void () bomb_rotate =
         {
             if((self.groundentity == world) || (self.groundentity.solid == SOLID_BSP))
             {
-                setsize(self, '-8.000 -8.000 0.000', '8.000 8.000 8.000');
+                setsize(self, '-8 -8 0', '8 8 8');
                 self.movetype = MOVETYPE_TOSS;
                 self.th_die = mine_boom;
-                self.angles = '0.000 0.000 0.000';
+                self.angles = '0 0 0';
                 self.health = 1;
                 self.takedamage = DAMAGE_YES;
                 self.touch = ACprojectile_touchboom;
@@ -1374,7 +1374,7 @@ void (vector org, vector dir, entity targ) AC_bomb =
     newmis.movetype = MOVETYPE_BOUNCE;
     newmis.solid = SOLID_BBOX;
     setmodel(newmis, "progs/bomb.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.angles = vectoangles(dir);
     newmis.touch = ACprojectile_touchboom;
     newmis.dmg = 130;
@@ -1441,7 +1441,7 @@ void (vector org, vector dir, entity targ) AC_mine =
     newmis.movetype = MOVETYPE_BOUNCE;
     newmis.solid = SOLID_SLIDEBOX;
     setmodel(newmis, "progs/mine.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.angles = vectoangles(dir);
     newmis.dmg = 200;
     newmis.classname = "mine";
@@ -1580,11 +1580,11 @@ void () paveway_fly =
         v1_x = v1_x - 360;
     }
     
-    v1_y = anglemod(0);
+    v1_y = anglemod(v1_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
     
@@ -1600,19 +1600,19 @@ void () paveway_fly =
     }
     
     
-    if(0 < -50)
+    if(v1_y < -50)
     {
         v1_y = -50;
     }
     
     
-    if(0 > 50)
+    if(v1_y > 50)
     {
         v1_y = 50;
     }
     
     makevectors(self.angles);
-    self.speed = (self.speed - 3) + (0 * 10);
+    self.speed = (self.speed - 3) + (v_forward_z * 10);
     
     if(self.speed < 0)
     {
@@ -1626,7 +1626,7 @@ void () paveway_fly =
     }
     
     self.avelocity = v1;
-    v_forward_z = 0 - 0;
+    v_forward_z = 0 - v_forward_z;
     self.velocity = self.speed * v_forward;
     self.think = paveway_fly;
     self.nextthink = time + 0.1;
@@ -1752,7 +1752,7 @@ void (vector org, vector dir, entity targ) AC_paveway =
     newmis.movetype = MOVETYPE_FLYMISSILE;
     newmis.solid = SOLID_BBOX;
     setmodel(newmis, "progs/pave.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     v0 = normalize(dir);
     newmis.angles = vectoangles(v0);
     newmis.touch = ACprojectile_touchboom;
@@ -2021,7 +2021,7 @@ void () detpak_fall =
         if((self.groundentity == world) || (self.groundentity.solid == SOLID_BSP))
         {
             sound(self, CHAN_WEAPON, "misc/talk.wav", 1, ATTN_NORM);
-            setsize(self, '-8.000 -8.000 0.000', '8.000 8.000 8.000');
+            setsize(self, '-8 -8 0', '8 8 8');
             self.movetype = MOVETYPE_TOSS;
             self.th_die = detpak_boom;
             self.health = 1;
@@ -2108,7 +2108,7 @@ void (vector org, vector dir) AC_detpak =
     newmis.movetype = MOVETYPE_BOUNCE;
     newmis.solid = SOLID_SLIDEBOX;
     setmodel(newmis, "progs/rcbo.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     setorigin(newmis, org);
     newmis.angles_y = self.enemy.angles_y;
     newmis.dmg = 200;
@@ -2363,7 +2363,7 @@ void () ACmissile_home =
     org = self.enemy.origin + ((self.enemy.mins + self.enemy.maxs) * 0.5);
     traceline(self.origin, org, TRUE, self);
     
-    if((trace_fraction != 1) && (self.enemy.velocity != '0.000 0.000 0.000'))
+    if((trace_fraction != 1) && (self.enemy.velocity != '0 0 0'))
     {
         self.think = ACprojectile_expireboom;
         self.nextthink = self.attack_finished;
@@ -2377,16 +2377,16 @@ void () ACmissile_home =
         v0_x = v0_x - 360;
     }
     
-    v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0 - self.angles_y);
+    v1 = '0 0 0';
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
     v1_x = v0_x - self.angles_x;
-    v2 = '0.000 0.000 0.000';
+    v2 = '0 0 0';
     
     if(v1_x < 0)
     {
@@ -2407,21 +2407,21 @@ void () ACmissile_home =
     }
     
     
-    if(0 < 0)
+    if(v1_y < 0)
     {
         v2_y = 0 - self.weapon;
     }
     
     
-    if(0 > 0)
+    if(v1_y > 0)
     {
         v2_y = self.weapon;
     }
     
-    if(fabs(0) < (self.weapon * 0.1))
+    if(fabs(v1_y) < (self.weapon * 0.1))
     {
         v2_y = 0;
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     else
     {
@@ -2430,9 +2430,9 @@ void () ACmissile_home =
     
     self.avelocity = v2;
     
-    if(fabs(0) > 90)
+    if(fabs(v1_y) > 90)
     {
-        fabs(0);
+        fabs(v1_y);
         
         if((fabs(self.angles_x + v0_x)) > (180 - (fabs(self.angles_x + v0_x))))
         {
@@ -2452,7 +2452,7 @@ void () ACmissile_home =
     
     makevectors(self.angles);
     dir = v_forward;
-    dir_z = 0 - 0;
+    dir_z = 0 - dir_z;
     self.velocity = dir * self.speed;
     self.nextthink = time + 0.1;
     self.think = ACmissile_home;
@@ -2561,7 +2561,7 @@ void (vector org, vector dir, entity targ, float dm) AC_seekingmissile =
     newmis.solid = SOLID_BBOX;
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/rocket2.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.angles = vectoangles(dir);
     newmis.touch = ACprojectile_touchboom;
     newmis.dmg = dm;
@@ -2630,7 +2630,7 @@ void (vector org, vector dir, entity targ) AC_heatseeker =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 120);
     setmodel(newmis, "progs/rocket2.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 800;
     newmis.weapon = 150;
     if(newmis.enemy != world)
@@ -2689,7 +2689,7 @@ void (vector org, vector dir, entity targ) AC_miniseeker =
     sound(self.enemy, CHAN_WEAPON, "rocklnch.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 70);
     setmodel(newmis, "progs/rocket1.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 1000;
     newmis.weapon = 120;
     if(newmis.enemy != world)
@@ -2748,7 +2748,7 @@ void (vector org, vector dir, entity targ) AC_bigseeker =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 200);
     setmodel(newmis, "progs/rocket2.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 500;
     newmis.weapon = 60;
     if(newmis.enemy != world)
@@ -2807,7 +2807,7 @@ void (vector org, vector dir, entity targ) AC_sidewinder =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 120);
     setmodel(newmis, "progs/sider.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 800;
     newmis.weapon = 150;
     if(newmis.enemy != world)
@@ -2866,7 +2866,7 @@ void (vector org, vector dir, entity targ) AC_amraam =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 140);
     setmodel(newmis, "progs/amraam.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 1000;
     newmis.weapon = 100;
     if(newmis.enemy != world)
@@ -2925,7 +2925,7 @@ void (vector org, vector dir, entity targ) AC_stinger =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 90);
     setmodel(newmis, "progs/sting.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 800;
     newmis.weapon = 180;
     if(newmis.enemy != world)
@@ -2984,7 +2984,7 @@ void (vector org, vector dir, entity targ) AC_maverick =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 200);
     setmodel(newmis, "progs/maver.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 500;
     newmis.weapon = 60;
     if(newmis.enemy != world)
@@ -3043,7 +3043,7 @@ void (vector org, vector dir, entity targ) AC_hellfire =
     sound(self.enemy, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
     AC_seekingmissile(org, dir, targ, 160);
     setmodel(newmis, "progs/hfire.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.speed = 600;
     newmis.weapon = 75;
     if(newmis.enemy != world)
@@ -3124,7 +3124,7 @@ void () s_pexplode5 = [5, SUB_Remove]
 void () PlasmaExplosion = 
 {
     self.movetype = MOVETYPE_NONE;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.touch = SUB_Null;
     setmodel(self, "progs/s_plasma.spr");
     self.solid = SOLID_NOT;
@@ -3343,7 +3343,7 @@ void (vector org, vector dir, entity targ) AC_plasma =
     newmis.solid = SOLID_BBOX;
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/pbullet.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     newmis.skin = 1;
     newmis.touch = ACplasma_touch;
     newmis.classname = "plasma";
@@ -3353,7 +3353,7 @@ void (vector org, vector dir, entity targ) AC_plasma =
     newmis.enemy = targ;
     setorigin(newmis, org);
     newmis.velocity = dir * 1200;
-    newmis.avelocity = '300.000 300.000 300.000';
+    newmis.avelocity = '300 300 300';
     self.lastmiss = newmis;
 };
 
@@ -3470,12 +3470,12 @@ void () AC_Flare =
     
     if(self.style > 6)
     {
-        newmis.velocity = newmis.velocity + '0.000 0.000 600.000';
+        newmis.velocity = newmis.velocity + '0 0 600';
     }
     
     newmis.classname = "flare";
     setmodel(newmis, "progs/lavaball.mdl");
-    setsize(newmis, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(newmis, '0 0 0', '0 0 0');
     setorigin(newmis, self.enemy.origin);
     newmis.nextthink = time + 5;
     newmis.think = SUB_Remove;

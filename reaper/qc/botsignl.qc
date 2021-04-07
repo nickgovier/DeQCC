@@ -26,7 +26,7 @@ entity () botmovetarget =
     targ.solid = SOLID_TRIGGER;
     targ.movetarget = world;
     targ.touch = t_botmovetarget;
-    setsize(targ, '-4.000 -4.000 0.000', '4.000 4.000 8.000');
+    setsize(targ, '-4 -4 0', '4 4 8');
     return targ;
 };
 

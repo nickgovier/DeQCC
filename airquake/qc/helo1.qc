@@ -584,7 +584,7 @@ void () he1_steer =
     
     if((stemp.health > 0) && !stemp.landed)
     {
-        v0 = '0.000 0.000 0.000';
+        v0 = '0 0 0';
         v0_x = 0 - self.v_angle_x;
         
         if(self.toyview == 4)
@@ -603,8 +603,8 @@ void () he1_steer =
             makevectors(v3);
             tmp = v_forward_x;
             v0_x = v0_x - (40 * tmp);
-            tmp = 0;
-            v0_z = 0 - (40 * tmp);
+            tmp = v_forward_y;
+            v0_z = v0_z - (40 * tmp);
         }
         
         
@@ -657,16 +657,16 @@ void () he1_steer =
             
         }
         
-        v1 = '0.000 0.000 0.000';
-        v1_y = anglemod(0 - stemp.angles_y);
+        v1 = '0 0 0';
+        v1_y = anglemod(v0_y - stemp.angles_y);
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v1_x = v0_x - stemp.angles_x;
-        v2 = '0.000 0.000 0.000';
+        v2 = '0 0 0';
         
         if(v1_x < 0)
         {
@@ -687,71 +687,71 @@ void () he1_steer =
         }
         
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             v2_y = -110;
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             v2_y = 110;
         }
         
-        if(fabs(0) < (frametime * 110))
+        if(fabs(v1_y) < (frametime * 110))
         {
             v2_y = 0;
-            stemp.angles_y = 0;
+            stemp.angles_y = v0_y;
         }
         else
         {
             stemp.angles_y = anglemod(stemp.angles_y);
         }
         
-        v0_z = 0 - ((0 * fabs(stemp.angles_x)) * 0.01);
-        v0_z = 0 + (45 * self.lefty);
+        v0_z = v0_z - ((v2_y * fabs(stemp.angles_x)) * 0.01);
+        v0_z = v0_z + (45 * self.lefty);
         
-        if(0 < -45)
+        if(v0_z < -45)
         {
             v0_z = -45;
         }
         
         
-        if(0 > 45)
+        if(v0_z > 45)
         {
             v0_z = 45;
         }
         
-        v1_z = 0 - stemp.angles_z;
+        v1_z = v0_z - stemp.angles_z;
         
-        if(0 < 0)
+        if(v1_z < 0)
         {
             v2_z = -100;
             
-            if(0 < (0 * 10))
+            if(v2_z < (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(0 > 0)
+        if(v1_z > 0)
         {
             v2_z = 100;
             
-            if(0 > (0 * 10))
+            if(v2_z > (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(fabs(0) < (0 * frametime))
+        if(fabs(v1_z) < (v2_z * frametime))
         {
             v2_z = 0;
-            stemp.angles_z = 0 - (0 * 0.3);
+            stemp.angles_z = 0 - (v2_y * 0.3);
         }
         
         stemp.avelocity = v2;
@@ -811,11 +811,11 @@ void () he1_steer =
     makevectors(v3);
     if((stemp.thru != 2) || (stemp.health < 1))
     {
-        v3 = ((v_up * 20) * stemp.thru) - '0.000 0.000 40.000';
+        v3 = ((v_up * 20) * stemp.thru) - '0 0 40';
     }
     else
     {
-        v3 = (v_up * ((20 * stemp.thru) / 0)) - '0.000 0.000 40.000';
+        v3 = (v_up * ((20 * stemp.thru) / v_up_z)) - '0 0 40';
     }
     
     
@@ -1369,9 +1369,9 @@ void () start_helo1 =
     setorigin(e, e2.origin);
     e.angles = e2.angles;
     e.classname = "plane";
-    e.velocity = '0.000 0.000 0.000';
+    e.velocity = '0 0 0';
     e.movetype = MOVETYPE_FLY;
-    setsize(e, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(e, '-16 -16 -16', '16 16 16');
     e.solid = SOLID_SLIDEBOX;
     e.touch = T_HETouch;
     e.health = 200;

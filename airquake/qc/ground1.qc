@@ -470,7 +470,7 @@ void () gv1_steer =
     
     if(time >= self.pausetime)
     {
-        veh.speed = veh.speed - (0 * 5);
+        veh.speed = veh.speed - (v3_z * 5);
         tmp = veh.thru * 30;
         
         if(self.button2)
@@ -982,7 +982,7 @@ void () start_groundveh1 =
 {
     local entity e;
     local entity e2;
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 24.000');
+    setsize(self, '-16 -16 -24', '16 16 24');
     self.takedamage = DAMAGE_NO;
     e = spawn();
     setmodel(e, "progs/msamba.mdl");
@@ -991,9 +991,9 @@ void () start_groundveh1 =
     setorigin(e, e2.origin);
     e.angles = e2.angles;
     e.classname = "tank";
-    e.velocity = '0.000 0.000 0.000';
+    e.velocity = '0 0 0';
     e.movetype = MOVETYPE_FLY;
-    setsize(e, '-16.000 -16.000 -24.000', '16.000 16.000 16.000');
+    setsize(e, '-16 -16 -24', '16 16 16');
     e.solid = SOLID_SLIDEBOX;
     e.health = 400;
     e.max_health = e.health;
@@ -1005,7 +1005,7 @@ void () start_groundveh1 =
     self.enemy = e;
     e.goalentity = self;
     e.owner = self;
-    e.view_ofs = '0.000 0.000 1.000';
+    e.view_ofs = '0 0 1';
     e.colormap = self.colormap;
     e.armorvalue = 15;
     self.toyview = 0;
@@ -1028,14 +1028,14 @@ void () start_groundveh1 =
     
     if(!checkbottom(self))
     {
-        traceline(self.origin, self.origin + '0.000 0.000 -10000.000', TRUE, self);
-        self.origin_z = 0 + 30;
+        traceline(self.origin, self.origin + '0 0 -10000', TRUE, self);
+        self.origin_z = trace_endpos_z + 30;
     }
     
     setorigin(self.enemy, self.origin);
     setorigin(self.enemy.oldenemy, self.origin);
-    self.velocity = '0.000 0.000 0.000';
-    self.movedir = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
+    self.movedir = '0 0 0';
     self.oldenemy.style = 32;
 };
 

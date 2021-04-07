@@ -108,28 +108,28 @@ float (entity targ, entity inflictor) CanDamage =
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 -15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 -15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
@@ -475,7 +475,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     if((targ == current_selected.enemy) || king_dead)
     {
         targ.health = targ.health - take;
-        vel = normalize(((dir + (('1.000 0.000 0.000' * random()) * 10)) + (('0.000 1.000 0.000' * random()) * 10)) + (('0.000 0.000 1.000' * random()) * 10));
+        vel = normalize(((dir + (('1 0 0' * random()) * 10)) + (('0 1 0' * random()) * 10)) + (('0 0 1' * random()) * 10));
         vel = vel * 5;
         org = targ.origin;
         SpawnBlood(org, vel, take);

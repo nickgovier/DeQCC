@@ -388,7 +388,7 @@ void () amg_aim =
     local vector src;
     local float dist;
     local float ff;
-    src = self.origin + '0.000 0.000 10.000';
+    src = self.origin + '0 0 10';
     if(self.owner.classname != "player")
     {
         if(self.enemy == world)
@@ -429,10 +429,10 @@ void () amg_aim =
         
     }
     
-    vtemp = '0.000 0.000 0.000';
-    vtemp_y = 0 - self.angles_y;
+    vtemp = '0 0 0';
+    vtemp_y = dir_y - self.angles_y;
     vtemp_x = dir_x - self.trigger_field.angles_x;
-    dir = '0.000 0.000 0.000';
+    dir = '0 0 0';
     
     if(vtemp_x < 0)
     {
@@ -446,15 +446,15 @@ void () amg_aim =
     }
     
     
-    if(0 < 0)
+    if(vtemp_y < 0)
     {
-        vtemp_y = 0 + 360;
+        vtemp_y = vtemp_y + 360;
     }
     
     
-    if(0 > 180)
+    if(vtemp_y > 180)
     {
-        vtemp_y = 0 - 360;
+        vtemp_y = vtemp_y - 360;
     }
     
     dir = vtemp;
@@ -471,19 +471,19 @@ void () amg_aim =
     }
     
     
-    if(0 < -15)
+    if(dir_y < -15)
     {
         dir_y = -15;
     }
     
     
-    if(0 > 15)
+    if(dir_y > 15)
     {
         dir_y = 15;
     }
     
     self.trigger_field.angles_x = anglemod(self.trigger_field.angles_x + dir_x);
-    self.angles_y = anglemod(self.angles_y + 0);
+    self.angles_y = anglemod(self.angles_y + dir_y);
     self.trigger_field.angles_y = self.angles_y;
     
     if(self.owner.classname != "player")
@@ -495,7 +495,7 @@ void () amg_aim =
             if(time > self.attack_finished)
             {
                 makevectors(self.trigger_field.angles);
-                v_forward_z = 0 - 0;
+                v_forward_z = 0 - v_forward_z;
                 dir = normalize(org - src);
                 
                 if((dir * v_forward) > 0.97)
@@ -892,7 +892,7 @@ void () start_monster_amg =
     self.movetype = MOVETYPE_TOSS;
     self.health = self.max_health;
     setmodel(self, "progs/amgba.mdl");
-    setsize(self, '-16.000 -16.000 -20.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -20', '16 16 16');
     self.th_stand = amg_stand;
     self.th_walk = amg_walk;
     self.th_run = amg_run;
@@ -907,8 +907,8 @@ void () start_monster_amg =
     setorigin(self, self.oldorigin);
     droptofloor();
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
-    self.view_ofs = '0.000 0.000 1.000';
+    self.ideal_yaw = self.angles * '0 1 0';
+    self.view_ofs = '0 0 1';
     self.use = monster_use;
     self.flags = self.flags | FL_MONSTER;
     stemp = spawn();
@@ -993,7 +993,7 @@ void () monster_amg =
     }
     
     self.max_health = self.health;
-    v1 = (self.angles_y * '0.000 1.000 0.000') + '-20.000 0.000 0.000';
+    v1 = (self.angles_y * '0 1 0') + '-20 0 0';
     makevectors(v1);
     self.movedir = v_forward;
     setup_teament();

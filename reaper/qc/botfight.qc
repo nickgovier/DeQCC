@@ -118,13 +118,13 @@ vector (vector trg) adjustgrenade =
         
         if(xypct < 12)
         {
-            tg_z = 0 + (GRENADEMAXHEIGHT * (xypct - TRUE));
+            tg_z = tg_z + (GRENADEMAXHEIGHT * (xypct - TRUE));
         }
         
     }
     else
     {
-        tg_z = 0 - (GRENADEMAXHEIGHT * (TRUE - xypct));
+        tg_z = tg_z - (GRENADEMAXHEIGHT * (TRUE - xypct));
     }
     
     return tg;
@@ -295,7 +295,7 @@ vector () botaim =
         
         if(self.weapon & ((IT_ROCKET_LAUNCHER + IT_SUPER_NAILGUN) + IT_NAILGUN))
         {
-            src = src + '0.000 0.000 16.000';
+            src = src + '0 0 16';
         }
         
         tg = self.enemy.origin;
@@ -319,12 +319,12 @@ vector () botaim =
                     
                     if(self.skil > rnd)
                     {
-                        tg_z = (0 + self.enemy.mins_z) + FL_SWIM;
+                        tg_z = (tg_z + self.enemy.mins_z) + FL_SWIM;
                         traceline(src, tg, TRUE, self);
                         
                         if(trace_fraction != TRUE)
                         {
-                            tg_z = (0 - self.enemy.mins_z) - MOVETYPE_WALK;
+                            tg_z = (tg_z - self.enemy.mins_z) - MOVETYPE_WALK;
                         }
                         
                     }
@@ -385,8 +385,8 @@ vector () botaim =
     
     if(sk < MOVETYPE_WALK)
     {
-        dir = dir + (((MOVETYPE_WALK - sk) * crandom()) * '0.060 0.000 0.000');
-        dir = dir + (((MOVETYPE_WALK - sk) * crandom()) * '0.000 0.060 0.000');
+        dir = dir + (((MOVETYPE_WALK - sk) * crandom()) * '0.06 0 0');
+        dir = dir + (((MOVETYPE_WALK - sk) * crandom()) * '0 0.06 0');
     }
     
     dir = normalize(dir);
@@ -1287,7 +1287,7 @@ float () CheckReboundAttack =
     }
     else
     {
-        REBOUNDSPOT = spot2 + (random() * '12.000 12.000 12.000');
+        REBOUNDSPOT = spot2 + (random() * '12 12 12');
         W_FireGrenade();
     }
     

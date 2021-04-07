@@ -287,8 +287,8 @@ void () T_HETouch =
             self.groundentity = other;
             self.angles_x = 0;
             self.angles_z = 0;
-            self.avelocity = '0.000 0.000 0.000';
-            self.velocity = '0.000 0.000 0.000';
+            self.avelocity = '0 0 0';
+            self.velocity = '0 0 0';
             self.origin_z = (other.origin_z + other.maxs_z) + 16;
             return;
         }
@@ -448,9 +448,9 @@ void () HE_Fall =
     local vector v1;
     local vector v2;
     local vector v3;
-    v1 = '0.000 0.000 0.000';
+    v1 = '0 0 0';
     v1_x = -70 - self.angles_x;
-    v2 = '0.000 0.000 360.000';
+    v2 = '0 0 360';
     
     if(v1_x < 0)
     {
@@ -465,7 +465,7 @@ void () HE_Fall =
     }
     
     self.avelocity = v2;
-    self.velocity = self.velocity + (('0.000 0.000 -1.000' * cvar("sv_gravity")) * 0.1);
+    self.velocity = self.velocity + (('0 0 -1' * cvar("sv_gravity")) * 0.1);
     
     if(self.flags & FL_ONGROUND)
     {

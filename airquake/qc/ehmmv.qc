@@ -394,23 +394,23 @@ void () ehmmv_walk =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0 - self.angles_y);
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
-    if(fabs(0) > 10)
+    if(fabs(v1_y) > 10)
     {
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             self.angles_y = anglemod(self.angles_y + 10);
         }
@@ -418,10 +418,10 @@ void () ehmmv_walk =
     }
     else
     {
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
-    if(fabs(0) < 45)
+    if(fabs(v1_y) < 45)
     {
         
         if(self.speed < 160)
@@ -730,23 +730,23 @@ void () ehmmv_run =
     }
     
     v0 = vectoangles(self.movetarget.origin - self.origin);
-    v1_y = anglemod(0 - self.angles_y);
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
-    if(fabs(0) > 10)
+    if(fabs(v1_y) > 10)
     {
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             self.angles_y = anglemod(self.angles_y - 10);
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             self.angles_y = anglemod(self.angles_y + 10);
         }
@@ -754,10 +754,10 @@ void () ehmmv_run =
     }
     else
     {
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
-    if(fabs(0) < 45)
+    if(fabs(v1_y) < 45)
     {
         tmp = 160;
         dist = vlen(self.movetarget.origin - self.origin);
@@ -829,7 +829,7 @@ void () ehmmv_run =
     v0 = vectoangles(v1 - self.origin);
     makevectors(v0);
     v2 = v_forward;
-    v2_z = 0 - 0;
+    v2_z = 0 - v2_z;
     turn_eturret(v0, 100);
     v1 = self.tur2.angles;
     v1_x = 0 - v1_x;
@@ -964,7 +964,7 @@ void () ehmmv_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     self.tur1 = spawn();
     setorigin(self.tur1, self.origin);
@@ -1071,8 +1071,8 @@ void () monster_ehmmv =
     }
     
     setmodel(self, "progs/humba.mdl");
-    setsize(self, '-16.000 -16.000 -24.000', '16.000 16.000 8.000');
-    self.view_ofs = '0.000 0.000 1.000';
+    setsize(self, '-16 -16 -24', '16 16 8');
+    self.view_ofs = '0 0 1';
     
     if(!self.health)
     {

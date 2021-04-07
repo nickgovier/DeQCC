@@ -792,12 +792,12 @@ void () drone2_fly =
     }
     
     v0 = vectoangles(v1 - self.origin);
-    v1 = '0.000 0.000 0.000';
-    v1_y = anglemod(0 - self.angles_y);
+    v1 = '0 0 0';
+    v1_y = anglemod(v0_y - self.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
     v1_x = anglemod(v0_x - self.angles_x);
@@ -807,7 +807,7 @@ void () drone2_fly =
         v1_x = v1_x - 360;
     }
     
-    v2 = '0.000 0.000 0.000';
+    v2 = '0 0 0';
     
     if(v1_x < 0)
     {
@@ -827,29 +827,29 @@ void () drone2_fly =
         self.angles_x = v0_x;
     }
     
-    v2_y = 0 * 5;
+    v2_y = v1_y * 5;
     
-    if(0 < (0 - self.weapon))
+    if(v2_y < (0 - self.weapon))
     {
         v2_y = 0 - self.weapon;
     }
     
     
-    if(0 > self.weapon)
+    if(v2_y > self.weapon)
     {
         v2_y = self.weapon;
     }
     
     
-    if(fabs(0) < (self.weapon * 0.1))
+    if(fabs(v1_y) < (self.weapon * 0.1))
     {
         v2_y = 0;
-        self.angles_y = 0;
+        self.angles_y = v0_y;
     }
     
     if(self.enemy == self.goalentity)
     {
-        if(((fabs(0) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
+        if(((fabs(v1_y) < 25) && (fabs(v1_x) < 25)) && (self.health < 120))
         {
             ab = 1;
             self.thru = 4;
@@ -857,7 +857,7 @@ void () drone2_fly =
         else
         {
             ab = 0;
-            if((fabs(0) < 90) && (fabs(v1_x) < 90))
+            if((fabs(v1_y) < 90) && (fabs(v1_x) < 90))
             {
                 self.thru = 4;
             }
@@ -875,36 +875,36 @@ void () drone2_fly =
         ab = 0;
     }
     
-    v1_z = (0 - 0) - self.angles_z;
+    v1_z = (0 - v2_y) - self.angles_z;
     
-    if(0 < 0)
+    if(v1_z < 0)
     {
         v2_z = -200;
         
-        if(0 < (0 * 10))
+        if(v2_z < (v1_z * 10))
         {
-            v2_z = 0 * 10;
+            v2_z = v1_z * 10;
         }
         
     }
     
     
-    if(0 > 0)
+    if(v1_z > 0)
     {
         v2_z = 200;
         
-        if(0 > (0 * 10))
+        if(v2_z > (v1_z * 10))
         {
-            v2_z = 0 * 10;
+            v2_z = v1_z * 10;
         }
         
     }
     
     
-    if(fabs(0) < 5)
+    if(fabs(v1_z) < 5)
     {
         v2_z = 0;
-        self.angles_z = 0 - 0;
+        self.angles_z = 0 - v2_y;
     }
     
     self.avelocity = v2;
@@ -952,7 +952,7 @@ void () drone2_fly =
     
     makevectors(self.angles);
     v3 = v_forward;
-    v3_z = 0 - 0;
+    v3_z = 0 - v3_z;
     
     if((self.enemy != world) && (self.attack_finished < time))
     {
@@ -1079,7 +1079,7 @@ void () drone2_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     
     if(self.target)
@@ -1300,7 +1300,7 @@ void () monster_drone2 =
     }
     
     setmodel(self, self.noise1);
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     
     if(!self.health)
     {

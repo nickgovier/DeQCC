@@ -1215,7 +1215,7 @@ void () monster_knight =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/knight.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 75;
     self.th_stand = knight_stand1;
     self.th_walk = knight_walk1;

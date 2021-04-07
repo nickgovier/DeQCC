@@ -1564,7 +1564,7 @@ void () BotDie =
     self.modelindex = modelindex_player;
     DropBackpack();
     self.weaponmodel = "";
-    self.view_ofs = '0.000 0.000 -8.000';
+    self.view_ofs = '0 0 -8';
     self.deadflag = DEAD_DYING;
     self.solid = SOLID_NOT;
     self.flags = self.flags - (self.flags & FL_ONGROUND);

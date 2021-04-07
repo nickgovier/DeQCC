@@ -224,14 +224,14 @@ void () walkmonster_start_go =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = KINDA_WANT;
     }
     
-    self.view_ofs = '0.000 0.000 25.000';
+    self.view_ofs = '0 0 25';
     self.use = monster_use;
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
@@ -368,14 +368,14 @@ void () walkmonster_start =
 void () flymonster_start_go = 
 {
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = MOVETYPE_BOUNCE;
     }
     
-    self.view_ofs = '0.000 0.000 25.000';
+    self.view_ofs = '0 0 25';
     self.use = monster_use;
     self.flags = self.flags | FL_FLY;
     self.flags = self.flags | FL_MONSTER;
@@ -524,14 +524,14 @@ void () swimmonster_start_go =
     
     self.takedamage = DAMAGE_AIM;
     total_monsters = total_monsters + TRUE;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = MOVETYPE_BOUNCE;
     }
     
-    self.view_ofs = '0.000 0.000 10.000';
+    self.view_ofs = '0 0 10';
     self.use = monster_use;
     self.flags = self.flags | FL_SWIM;
     self.flags = self.flags | FL_MONSTER;

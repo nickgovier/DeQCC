@@ -261,7 +261,7 @@ float (entity targ) Swimto =
     if(lnd != CONTENT_WATER)
     {
         
-        if(0 > (0 + MAXJUMP))
+        if(spot2_z > (spot1_z + MAXJUMP))
         {
             return FALSE;
         }
@@ -456,7 +456,7 @@ float (vector spot) dropline =
     local vector spot2;
     local string tmp;
     spot2 = spot;
-    spot2_z = 0 - 500;
+    spot2_z = spot2_z - 500;
     traceline(spot, spot2, TRUE, self);
     drop = 0 - (trace_fraction * 500);
     return drop;
@@ -583,11 +583,11 @@ float (entity a, entity b, float bmaxjump) BotWalkable =
     tests = tests / ((LEVELJUMPTIME * BOTSPEED) * 6.5);
     if(b.pathtype == DROPPED)
     {
-        goalheight = 0 + self.mins_z;
+        goalheight = borg_z + self.mins_z;
     }
     else
     {
-        goalheight = 0;
+        goalheight = borg_z;
     }
     
     
@@ -911,7 +911,7 @@ float (entity a, entity b, float truereach) Reachable =
             }
             
             
-            if(0 < (a.origin_z + maxzd))
+            if(spot2_z < (a.origin_z + maxzd))
             {
                 
                 if(trace_fraction == TRUE)
@@ -919,7 +919,7 @@ float (entity a, entity b, float truereach) Reachable =
                     return TRUE;
                 }
                 
-                spot1_z = 0;
+                spot1_z = spot2_z;
                 traceline(spot1, spot2, TRUE, a);
                 
                 if(trace_fraction == TRUE)
@@ -941,7 +941,7 @@ float (entity a, entity b, float truereach) Reachable =
     
     spot1 = a.origin;
     
-    if(0 > (0 + bmaxjump))
+    if(spot2_z > (spot1_z + bmaxjump))
     {
         return FALSE;
     }
@@ -959,7 +959,7 @@ float (entity a, entity b, float truereach) Reachable =
     }
     
     vel = FALSE;
-    diffz = a.origin_z - 0;
+    diffz = a.origin_z - borg_z;
     
     while(diffz > FALSE)
     {

@@ -108,28 +108,28 @@ float (entity targ, entity inflictor) CanDamage =
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 -15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '-15.000 15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
         return TRUE;
     }
     
-    traceline(inflictor.origin, targ.origin + '15.000 -15.000 0.000', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 -15 0', TRUE, self);
     
     if(trace_fraction == 1)
     {
@@ -858,7 +858,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                             if(head.owner.style > 6)
                             {
                                 head.owner.velocity = head.owner.velocity + ((normalize(org - inflictor.origin)) * points);
-                                head.owner.velocity = head.owner.velocity + ('0.000 0.000 1.000' * points);
+                                head.owner.velocity = head.owner.velocity + ('0 0 1' * points);
                                 head.owner.flags = head.owner.flags - (head.owner.flags & FL_ONGROUND);
                                 head.owner.radiuskiller = attacker;
                             }

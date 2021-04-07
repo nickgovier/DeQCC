@@ -18,7 +18,7 @@ entity () noisetarget =
     targ = spawn();
     targ.classname = "NoiseTarget";
     targ.solid = SOLID_NOT;
-    setsize(targ, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(targ, '-8 -8 -8', '8 8 8');
     return targ;
 };
 

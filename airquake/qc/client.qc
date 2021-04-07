@@ -712,7 +712,7 @@ void () execute_changelevel =
         other.enemy = world;
         other.oldenemy = world;
         other.trigger_field = world;
-        other.view_ofs = '0.000 0.000 0.000';
+        other.view_ofs = '0 0 0';
         other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.takedamage = DAMAGE_NO;
@@ -1440,7 +1440,7 @@ void () PutClientInServer =
     self.pausetime = 0;
     self.impulse = 0;
     self.goalentity = spot;
-    self.origin = spot.origin + '0.000 0.000 1.000';
+    self.origin = spot.origin + '0 0 1';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setmodel(self, "progs/eyes.mdl");
@@ -1448,8 +1448,8 @@ void () PutClientInServer =
     setmodel(self, "progs/player.mdl");
     modelindex_player = self.modelindex;
     self.modelindex = 0;
-    setsize(self, '0.000 0.000 0.000', '0.000 0.000 0.000');
-    self.view_ofs = '0.000 0.000 1.000';
+    setsize(self, '0 0 0', '0 0 0');
+    self.view_ofs = '0 0 1';
     self.toyview = -1;
     self.lefty = 0;
     
@@ -2432,7 +2432,7 @@ void () PlayerDeathThink =
         forward = forward - 20;
         if(forward <= 0)
         {
-            self.velocity = '0.000 0.000 0.000';
+            self.velocity = '0 0 0';
         }
         else
         {
@@ -3036,7 +3036,7 @@ void () PlayerPreThink =
     }
     
     
-    if(self.view_ofs == '0.000 0.000 0.000')
+    if(self.view_ofs == '0 0 0')
     {
         return;
     }
@@ -3200,9 +3200,9 @@ void () PlayerPreThink =
         }
         
         self.movetype = MOVETYPE_NONE;
-        self.oldorigin = self.enemy.origin + '0.000 0.000 8.000';
-        setorigin(self, self.enemy.origin + '0.000 0.000 8.000');
-        setorigin(self.oldenemy, self.enemy.origin + '0.000 0.000 8.000');
+        self.oldorigin = self.enemy.origin + '0 0 8';
+        setorigin(self, self.enemy.origin + '0 0 8');
+        setorigin(self.oldenemy, self.enemy.origin + '0 0 8');
         remove(self.enemy);
         self.health = 3;
         self.deadflag = DEAD_DEAD;
@@ -3379,7 +3379,7 @@ void () SetCameraPlace =
     if(self.lastmiss)
     {
         
-        if((self.lastmiss.origin == '0.000 0.000 0.000') || ((self.lastmiss.owner != self) && (self.lastmiss.owner != self.enemy)))
+        if((self.lastmiss.origin == '0 0 0') || ((self.lastmiss.owner != self) && (self.lastmiss.owner != self.enemy)))
         {
             self.lastmiss = world;
         }
@@ -3391,7 +3391,7 @@ void () SetCameraPlace =
     {
         stemp = self.enemy;
         
-        if(((self.missileview_on == 1) && (self.lastmiss.origin != '0.000 0.000 0.000')) && ((self.lastmiss.owner == self) || (self.lastmiss.owner == self.enemy)))
+        if(((self.missileview_on == 1) && (self.lastmiss.origin != '0 0 0')) && ((self.lastmiss.owner == self) || (self.lastmiss.owner == self.enemy)))
         {
             stemp = self.lastmiss;
         }
@@ -3700,7 +3700,7 @@ void () PlayerPostThink =
     local vector v1;
     local entity e;
     
-    if(self.view_ofs == '0.000 0.000 0.000')
+    if(self.view_ofs == '0 0 0')
     {
         return;
     }
@@ -3884,7 +3884,7 @@ void () PlayerPostThink =
         WriteEntity(MSG_ONE, self.oldenemy);
         WriteByte(MSG_ONE, 10);
         WriteAngle(MSG_ONE, v1_x);
-        WriteAngle(MSG_ONE, 0);
+        WriteAngle(MSG_ONE, v1_y);
         WriteAngle(MSG_ONE, 0);
         self.toyview = 0;
         self.v_angle = self.angles = v1;

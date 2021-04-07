@@ -112,7 +112,7 @@ vector (float minim, float maxdist) Drone_aim =
     f2 = minim;
     makevectors(self.angles);
     v1 = v_forward;
-    v1_z = 0 - 0;
+    v1_z = 0 - v1_z;
     e = findradius(self.origin, maxdist);
     
     while(e)
@@ -656,21 +656,21 @@ void () he_movetogoal =
     
     v0 = vectoangles(v1 - self.origin);
     tmp = 0;
-    traceline(self.origin + '-32.000 -32.000 -32.000', v1, TRUE, world);
+    traceline(self.origin + '-32 -32 -32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '32.000 -32.000 -32.000', v1, TRUE, world);
+    traceline(self.origin + '32 -32 -32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '-32.000 32.000 -32.000', v1, TRUE, world);
+    traceline(self.origin + '-32 32 -32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '32.000 32.000 -32.000', v1, TRUE, world);
+    traceline(self.origin + '32 32 -32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '-32.000 -32.000 32.000', v1, TRUE, world);
+    traceline(self.origin + '-32 -32 32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '32.000 -32.000 32.000', v1, TRUE, world);
+    traceline(self.origin + '32 -32 32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '-32.000 32.000 32.000', v1, TRUE, world);
+    traceline(self.origin + '-32 32 32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
-    traceline(self.origin + '32.000 32.000 32.000', v1, TRUE, world);
+    traceline(self.origin + '32 32 32', v1, TRUE, world);
     tmp = tmp + trace_fraction;
     if(tmp < 8)
     {
@@ -719,11 +719,11 @@ void () he_movetogoal =
         
         if(self.lefty)
         {
-            v0_y = anglemod(0 + 90);
+            v0_y = anglemod(v0_y + 90);
         }
         else
         {
-            v0_y = anglemod(0 - 90);
+            v0_y = anglemod(v0_y - 90);
         }
         
     }
@@ -737,25 +737,25 @@ void () he_movetogoal =
     v2_z = 0;
     tmp2 = vlen(v2);
     
-    if((self.origin_z - 0) > (tmp2 * 1))
+    if((self.origin_z - v1_z) > (tmp2 * 1))
     {
         self.thru = 1;
     }
     
     
-    if((0 - self.origin_z) > (tmp2 * 0.5))
+    if((v1_z - self.origin_z) > (tmp2 * 0.5))
     {
         self.thru = 3;
     }
     
     
-    if(((self.origin_z - 0) > (tmp2 * 2)) && ((fabs(self.origin_z - 0)) > 128))
+    if(((self.origin_z - v1_z) > (tmp2 * 2)) && ((fabs(self.origin_z - v1_z)) > 128))
     {
         self.thru = 0;
     }
     
     
-    if((0 - self.origin_z) > (tmp2 * 1))
+    if((v1_z - self.origin_z) > (tmp2 * 1))
     {
         self.thru = 4;
     }
@@ -815,7 +815,7 @@ void () he_movetogoal =
             tmp2 = 45;
         }
         
-        tmp = anglemod(0 - self.angles_y);
+        tmp = anglemod(v0_y - self.angles_y);
         
         if(tmp > 180)
         {
@@ -833,9 +833,9 @@ void () he_movetogoal =
     makevectors(v2);
     tmp = v_forward_x;
     v0_x = v0_x - (tmp2 * tmp);
-    tmp = 0;
-    v0_z = 0 - (tmp2 * tmp);
-    v1 = self.angles_y * '0.000 1.000 0.000';
+    tmp = v_forward_y;
+    v0_z = v0_z - (tmp2 * tmp);
+    v1 = self.angles_y * '0 1 0';
     makevectors(v1);
     v3 = self.origin + (self.velocity * 0.8);
     if(self.goalentity == self.enemy)
@@ -1106,16 +1106,16 @@ void (vector v0) turn_hedrone =
             v0_x = -45;
         }
         
-        v1 = '0.000 0.000 0.000';
+        v1 = '0 0 0';
         v1_y = anglemod(0 - self.angles_y);
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v1_x = v0_x - self.angles_x;
-        v2 = '0.000 0.000 0.000';
+        v2 = '0 0 0';
         
         if(v1_x < 0)
         {
@@ -1136,18 +1136,18 @@ void (vector v0) turn_hedrone =
         }
         
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             v2_y = -110;
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             v2_y = 110;
         }
         
-        if(fabs(0) < 11)
+        if(fabs(v1_y) < 11)
         {
             v2_y = 0;
             self.angles_y = 0;
@@ -1157,7 +1157,7 @@ void (vector v0) turn_hedrone =
             self.angles_y = anglemod(self.angles_y);
         }
         
-        v0_z = 0 - ((0 * fabs(self.angles_x)) * 0.01);
+        v0_z = 0 - ((v2_y * fabs(self.angles_x)) * 0.01);
         
         if(0 < -45)
         {
@@ -1172,34 +1172,34 @@ void (vector v0) turn_hedrone =
         
         v1_z = 0 - self.angles_z;
         
-        if(0 < 0)
+        if(v1_z < 0)
         {
             v2_z = -100;
             
-            if(0 < (0 * 10))
+            if(v2_z < (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(0 > 0)
+        if(v1_z > 0)
         {
             v2_z = 100;
             
-            if(0 > (0 * 10))
+            if(v2_z > (v1_z * 10))
             {
-                v2_z = 0 * 10;
+                v2_z = v1_z * 10;
             }
             
         }
         
         
-        if(fabs(0) < (0 * frametime))
+        if(fabs(v1_z) < (v2_z * frametime))
         {
             v2_z = 0;
-            self.angles_z = 0 - (0 * 0.3);
+            self.angles_z = 0 - (v2_y * 0.3);
         }
         
         self.avelocity = v2;
@@ -1238,11 +1238,11 @@ void (vector v0) turn_hedrone =
     makevectors(v3);
     if((self.thru != 2) || (self.health < 1))
     {
-        v3 = ((v_up * 20) * self.thru) - '0.000 0.000 40.000';
+        v3 = ((v_up * 20) * self.thru) - '0 0 40';
     }
     else
     {
-        v3 = (v_up * ((20 * self.thru) / 0)) - '0.000 0.000 40.000';
+        v3 = (v_up * ((20 * self.thru) / v_up_z)) - '0 0 40';
     }
     
     
@@ -1456,8 +1456,8 @@ void () T_hedroneTouch =
             self.groundentity = other;
             self.angles_x = 0;
             self.angles_z = 0;
-            self.avelocity = '0.000 0.000 0.000';
-            self.velocity = '0.000 0.000 0.000';
+            self.avelocity = '0 0 0';
+            self.velocity = '0 0 0';
             self.origin_z = (other.origin_z + other.maxs_z) + 16;
             return;
         }
@@ -1733,15 +1733,15 @@ void () hedrone_stand =
     v0 = self.angles;
     v0_x = 0 - v0_x;
     makevectors(v0);
-    v0 = '0.000 0.000 0.000';
+    v0 = '0 0 0';
     traceline(self.origin, self.origin + (v_forward * 128), TRUE, world);
     v0_x = (v0_x + 45) - (trace_fraction * 45);
     traceline(self.origin, self.origin - (v_forward * 128), TRUE, world);
     v0_x = (v0_x - 45) + (trace_fraction * 45);
     traceline(self.origin, self.origin + (v_right * 128), TRUE, world);
-    v0_z = (0 - 45) + (trace_fraction * 45);
+    v0_z = (v0_z - 45) + (trace_fraction * 45);
     traceline(self.origin, self.origin - (v_right * 128), TRUE, world);
-    v0_z = (0 + 45) - (trace_fraction * 45);
+    v0_z = (v0_z + 45) - (trace_fraction * 45);
     traceline(self.origin, self.origin + (v_up * 128), TRUE, world);
     
     if((trace_fraction < 1) || (self.velocity_z > 40))
@@ -1852,7 +1852,7 @@ void () hedrone_walk =
     
     if(!self.goalentity)
     {
-        turn_hedrone(self.angles_y * '0.000 1.000 0.000');
+        turn_hedrone(self.angles_y * '0 1 0');
         self.think = hedrone_stand;
         self.nextthink = time + 0.1;
         return;
@@ -2258,7 +2258,7 @@ void () hedrone_run =
     
     if(!self.goalentity)
     {
-        turn_hedrone(self.angles_y * '0.000 1.000 0.000');
+        turn_hedrone(self.angles_y * '0 1 0');
         self.think = hedrone_walk;
         self.nextthink = time + 0.1;
         return;
@@ -2358,7 +2358,7 @@ void () hedrone_run =
             self.thru = 0;
         }
         
-        v3 = self.angles_y * '0.000 1.000 0.000';
+        v3 = self.angles_y * '0 1 0';
         makevectors(v3);
         v3 = self.origin + (self.velocity * 0.5);
         traceline(self.origin, v3 + (v_forward * 128), FALSE, self);
@@ -2544,7 +2544,7 @@ void () hedrone_start =
     }
     
     self.takedamage = DAMAGE_AIM;
-    self.view_ofs = '0.000 0.000 1.000';
+    self.view_ofs = '0 0 1';
     self.flags = self.flags | FL_MONSTER;
     if(self.target)
     {
@@ -2624,8 +2624,8 @@ void () monster_helo =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_FLY;
     setmodel(self, "progs/helo1.mdl");
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
-    self.view_ofs = '0.000 0.000 1.000';
+    setsize(self, '-16 -16 -16', '16 16 16');
+    self.view_ofs = '0 0 1';
     
     if(!self.health)
     {

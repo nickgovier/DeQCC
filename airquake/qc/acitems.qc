@@ -1199,7 +1199,7 @@ void () ACPlaceItem =
     self.flags = FL_ITEM;
     self.solid = SOLID_TRIGGER;
     self.movetype = MOVETYPE_FLY;
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
 };
 
 // ACStartItem
@@ -1473,7 +1473,7 @@ void () item_spikes =
     self.skin = 0;
     self.weapon = 1;
     self.netname = "nails";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -1506,7 +1506,7 @@ void () item_shells =
     self.skin = 2;
     self.weapon = 2;
     self.netname = "rockets";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -1539,7 +1539,7 @@ void () item_canshells =
     self.skin = 5;
     self.weapon = 3;
     self.netname = "shells";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -1572,7 +1572,7 @@ void () item_rockets =
     self.skin = 1;
     self.weapon = 4;
     self.netname = "missiles";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -1604,8 +1604,8 @@ void () item_mavericks =
     self.aflag = 2;
     self.weapon = 5;
     self.netname = "AS missiles";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
-    self.avelocity = '0.000 180.000 200.000';
+    setsize(self, '-16 -16 -16', '16 16 16');
+    self.avelocity = '0 180 200';
     ACStartItem();
 };
 
@@ -1640,8 +1640,8 @@ void () item_bombs =
     self.skin = 0;
     self.weapon = 6;
     self.netname = "bombs";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
-    self.avelocity = '0.000 180.000 200.000';
+    setsize(self, '-16 -16 -16', '16 16 16');
+    self.avelocity = '0 180 200';
     ACStartItem();
 };
 
@@ -1674,7 +1674,7 @@ void () item_cells =
     self.skin = 3;
     self.weapon = 7;
     self.netname = "cells";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -1709,8 +1709,8 @@ void () item_mines =
     self.skin = 0;
     self.weapon = 8;
     self.netname = "mines";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
-    self.avelocity = '100.000 100.000 100.000';
+    setsize(self, '-16 -16 -16', '16 16 16');
+    self.avelocity = '100 100 100';
     ACStartItem();
 };
 
@@ -1858,7 +1858,7 @@ void () item_health =
     self.aflag = 25;
     self.skin = 4;
     self.netname = "health";
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     ACStartItem();
 };
 
@@ -2081,7 +2081,7 @@ void () flagsoldier_touch =
         }
         
         
-        if((other.speed != 0) && (other.velocity != '0.000 0.000 0.000'))
+        if((other.speed != 0) && (other.velocity != '0 0 0'))
         {
             return;
         }
@@ -2251,7 +2251,7 @@ void () start_flagsoldier =
     self.flags = FL_ITEM;
     setorigin(self, self.oldorigin);
     setmodel(self, "progs/player.mdl");
-    setsize(self, '-16.000 -16.000 -1.000', '16.000 16.000 32.000');
+    setsize(self, '-16 -16 -1', '16 16 32');
     self.solid = SOLID_TRIGGER;
     self.movetype = MOVETYPE_TOSS;
     self.touch = flagsoldier_touch;

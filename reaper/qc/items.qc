@@ -293,7 +293,7 @@ void () item_health =
         
     }
     
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     StartItem();
 };
 
@@ -788,7 +788,7 @@ void () item_armor1 =
     setmodel(self, "progs/armor.mdl");
     self.skin = FALSE;
     self.armorvalue = MUST_HAVE;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = armorweight;
     StartItem();
 };
@@ -825,7 +825,7 @@ void () item_armor2 =
     setmodel(self, "progs/armor.mdl");
     self.skin = TRUE;
     self.armorvalue = 150;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = armorweight;
     self.th_cache = cachearmor;
     self.th_update = updatearmor;
@@ -864,7 +864,7 @@ void () item_armorInv =
     setmodel(self, "progs/armor.mdl");
     self.skin = FL_SWIM;
     self.armorvalue = 200;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = armorweight;
     self.th_cache = cachearmor;
     self.th_update = updatearmor;
@@ -1486,7 +1486,7 @@ void () weapon_supershotgun =
     self.weapon = IT_SUPER_SHOTGUN;
     self.netname = "Double-barrelled Shotgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = ssgweight;
     StartItem();
 };
@@ -1519,7 +1519,7 @@ void () weapon_nailgun =
     self.weapon = IT_NAILGUN;
     self.netname = "nailgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = nailgunweight;
     StartItem();
 };
@@ -1556,7 +1556,7 @@ void () weapon_supernailgun =
     self.weapon = IT_SUPER_NAILGUN;
     self.netname = "Super Nailgun";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = supernailweight;
     self.th_cache = cachenail;
     self.th_update = updatenail;
@@ -1595,7 +1595,7 @@ void () weapon_grenadelauncher =
     self.weapon = MOVETYPE_WALK;
     self.netname = "Grenade Launcher";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = glauncherweight;
     self.th_cache = cachegrenade;
     self.th_update = updategrenade;
@@ -1634,7 +1634,7 @@ void () weapon_rocketlauncher =
     self.weapon = MOVETYPE_WALK;
     self.netname = "Rocket Launcher";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = rlauncherweight;
     self.th_cache = cacherocket;
     self.th_update = updaterocket;
@@ -1673,7 +1673,7 @@ void () weapon_lightning =
     self.weapon = MOVETYPE_WALK;
     self.netname = "Thunderbolt";
     self.touch = weapon_touch;
-    setsize(self, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(self, '-16 -16 0', '16 16 56');
     self.th_weight = lightningweight;
     self.th_cache = cachelightning;
     self.th_update = updatelightning;
@@ -1979,7 +1979,7 @@ void () item_shells =
     
     self.weapon = TRUE;
     self.netname = "shells";
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     self.th_weight = shellweight;
     StartItem();
 };
@@ -2036,7 +2036,7 @@ void () item_spikes =
     
     self.weapon = FL_SWIM;
     self.netname = "nails";
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     self.th_weight = nailweight;
     StartItem();
 };
@@ -2093,7 +2093,7 @@ void () item_rockets =
     
     self.weapon = MOVETYPE_WALK;
     self.netname = "rockets";
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     self.th_weight = rocketweight;
     StartItem();
 };
@@ -2150,7 +2150,7 @@ void () item_cells =
     
     self.weapon = MOVETYPE_STEP;
     self.netname = "cells";
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     self.th_weight = cellweight;
     StartItem();
 };
@@ -2307,7 +2307,7 @@ void () item_weapon =
         self.netname = "rockets";
     }
     
-    setsize(self, VEC_ORIGIN, '32.000 32.000 56.000');
+    setsize(self, VEC_ORIGIN, '32 32 56');
     StartItem();
 };
 
@@ -3532,7 +3532,7 @@ void () DropBackpack =
     }
     
     item = spawn();
-    item.origin = self.origin - '0.000 0.000 24.000';
+    item.origin = self.origin - '0 0 24';
     item.classname = "Backpack";
     item.items = self.weapon;
     item.th_weight = backpackweight;
@@ -3547,7 +3547,7 @@ void () DropBackpack =
     item.solid = SOLID_TRIGGER;
     item.movetype = MOVETYPE_TOSS;
     setmodel(item, "progs/backpack.mdl");
-    setsize(item, '-16.000 -16.000 0.000', '16.000 16.000 56.000');
+    setsize(item, '-16 -16 0', '16 16 56');
     item.touch = BackpackTouch;
     item.nextthink = time + 120;
     item.think = SUB_Remove;

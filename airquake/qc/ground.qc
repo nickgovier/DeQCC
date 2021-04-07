@@ -185,7 +185,7 @@ void () gv_tilt =
     local float w2;
     local entity vehicle;
     vehicle = self.enemy;
-    v1 = vehicle.angles_y * '0.000 1.000 0.000';
+    v1 = vehicle.angles_y * '0 1 0';
     makevectors(v1);
     v1 = (vehicle.origin + (8 * v_forward)) - (8 * v_right);
     v2 = (vehicle.origin + (8 * v_forward)) + (8 * v_right);
@@ -228,14 +228,14 @@ void () gv_tilt =
     
     r1 = ((l1 - l2) + l3) - l4;
     r2 = ((l1 - l3) + l2) - l4;
-    v1 = '0.000 0.500 0.000';
+    v1 = '0 0.5 0';
     v1_x = r1;
     v1_z = r2;
     v1 = normalize(v1);
     v2_x = v1_x;
-    v2_y = 0;
-    v2_z = 0;
-    v3 = ((v_up * 0) + (v_forward * 0)) - (v_right * v2_x);
+    v2_y = v1_z;
+    v2_z = v1_y;
+    v3 = ((v_up * v2_z) + (v_forward * v2_y)) - (v_right * v2_x);
     v3 = normalize(v3);
     
     if(!w1)
@@ -251,10 +251,10 @@ void () gv_tilt =
     
     makevectors(vehicle.angles);
     v2 = vectoangles(v1);
-    v3 = '0.000 2.000 0.000';
+    v3 = '0 2 0';
     v3_x = anglemod(0 - v2_x);
     v3_y = vehicle.angles_y;
-    v3_z = anglemod(0 - 90);
+    v3_z = anglemod(v2_y - 90);
     v4 = v3 - vehicle.angles;
     l1 = anglemod(v4_x);
     
@@ -263,7 +263,7 @@ void () gv_tilt =
         l1 = l1 - 360;
     }
     
-    l2 = anglemod(0);
+    l2 = anglemod(v4_z);
     
     if(l2 > 180)
     {
@@ -484,7 +484,7 @@ void (float fac) hv_tilt =
     local float w2;
     local entity vehicle;
     vehicle = self.enemy;
-    v1 = vehicle.angles_y * '0.000 1.000 0.000';
+    v1 = vehicle.angles_y * '0 1 0';
     makevectors(v1);
     v1 = (vehicle.origin + (8 * v_forward)) - (8 * v_right);
     v2 = (vehicle.origin + (8 * v_forward)) + (8 * v_right);
@@ -552,14 +552,14 @@ void (float fac) hv_tilt =
     
     r1 = ((l1 - l2) + l3) - l4;
     r2 = ((l1 - l3) + l2) - l4;
-    v1 = '0.000 0.500 0.000' * (1 / fac);
+    v1 = '0 0.5 0' * (1 / fac);
     v1_x = r1;
     v1_z = r2;
     v1 = normalize(v1);
     v2_x = v1_x;
-    v2_y = 0;
-    v2_z = 0;
-    v3 = ((v_up * 0) + (v_forward * 0)) - (v_right * v2_x);
+    v2_y = v1_z;
+    v2_z = v1_y;
+    v3 = ((v_up * v2_z) + (v_forward * v2_y)) - (v_right * v2_x);
     v3 = normalize(v3);
     
     if(!w1)
@@ -575,14 +575,14 @@ void (float fac) hv_tilt =
     
     makevectors(vehicle.angles);
     v2 = vectoangles(v1);
-    v3 = '0.000 2.000 0.000';
+    v3 = '0 2 0';
     v3_x = anglemod(0 - v2_x);
     v3_y = vehicle.angles_y;
-    v3_z = anglemod(0 - 90);
+    v3_z = anglemod(v2_y - 90);
     
     if(self.lefty)
     {
-        v3_z = 0 + ((self.lefty * vehicle.thru) * 8);
+        v3_z = v3_z + ((self.lefty * vehicle.thru) * 8);
     }
     
     v4 = v3 - vehicle.angles;
@@ -593,7 +593,7 @@ void (float fac) hv_tilt =
         l1 = l1 - 360;
     }
     
-    l2 = anglemod(0);
+    l2 = anglemod(v4_z);
     
     if(l2 > 180)
     {
@@ -941,29 +941,29 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
     local float f2;
     local float f3;
     stemp = self.enemy;
-    v1 = '0.000 0.000 0.000';
+    v1 = '0 0 0';
     v1_y = anglemod(0 - stemp.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
     v2_y = 0;
     
-    if(0 < 0)
+    if(v1_y < 0)
     {
         v2_y = 0 - sp_y;
     }
     
     
-    if(0 > 0)
+    if(v1_y > 0)
     {
         v2_y = sp_y;
     }
     
-    f1 = fabs(0);
-    f2 = fabs(0) * frametime;
+    f1 = fabs(v1_y);
+    f2 = fabs(v2_y) * frametime;
     
     if(f1 < f2)
     {
@@ -998,7 +998,7 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
         stemp.angles_z = stemp.angles_z - 360;
     }
     
-    stemp.avelocity_y = 0;
+    stemp.avelocity_y = v2_y;
     v_a = self.v_angle;
     
     if(self.oldenemy.toyview & 1)
@@ -1018,7 +1018,7 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
     
     if(stemp.movetarget)
     {
-        v0_y = stemp.angles_y - 0;
+        v0_y = stemp.angles_y - v_a_y;
         
         if(0 > 180)
         {
@@ -1033,32 +1033,32 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
         
         v1_y = 0 - stemp.toyview;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
-            v1_y = 0 + 360;
+            v1_y = v1_y + 360;
         }
         
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v2_y = 0;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             v2_y = 0 - sp_x;
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             v2_y = sp_x;
         }
         
-        f1 = fabs(0);
-        f2 = fabs(0) * frametime;
+        f1 = fabs(v1_y);
+        f2 = fabs(v2_y) * frametime;
         if(f1 < f2)
         {
             v2_y = 0;
@@ -1066,7 +1066,7 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
         }
         else
         {
-            stemp.toyview = stemp.toyview + (0 * frametime);
+            stemp.toyview = stemp.toyview + (v2_y * frametime);
         }
         
         if(stemp.toyview == 0)
@@ -1075,8 +1075,8 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
         }
         else
         {
-            makevectors('0.000 1.000 0.000' * stemp.toyview);
-            f1 = 0;
+            makevectors('0 1 0' * stemp.toyview);
+            f1 = v_forward_y;
             f2 = v_forward_x;
             v3 = stemp.angles;
             v3_x = 0 - v3_x;
@@ -1170,8 +1170,8 @@ void (vector v0, float sp_x, float sp_y) Turn_groundveh =
             return;
         }
         
-        makevectors('0.000 1.000 0.000' * stemp.toyview);
-        f1 = 0;
+        makevectors('0 1 0' * stemp.toyview);
+        f1 = v_forward_y;
         f2 = v_forward_x;
         v3 = stemp.angles;
         v3_x = 0 - v3_x;
@@ -1839,29 +1839,29 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
     local float f3;
     local float lck;
     stemp = self.enemy;
-    v1 = '0.000 0.000 0.000';
+    v1 = '0 0 0';
     v1_y = anglemod(0 - stemp.angles_y);
     
-    if(0 > 180)
+    if(v1_y > 180)
     {
-        v1_y = 0 - 360;
+        v1_y = v1_y - 360;
     }
     
     v2_y = 0;
     
-    if(0 < 0)
+    if(v1_y < 0)
     {
         v2_y = 0 - sp_y;
     }
     
     
-    if(0 > 0)
+    if(v1_y > 0)
     {
         v2_y = sp_y;
     }
     
-    f1 = fabs(0);
-    f2 = fabs(0) * frametime;
+    f1 = fabs(v1_y);
+    f2 = fabs(v2_y) * frametime;
     
     if(f1 < f2)
     {
@@ -1890,7 +1890,7 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
         stemp.angles_z = stemp.angles_z - 360;
     }
     
-    stemp.avelocity_y = 0;
+    stemp.avelocity_y = v2_y;
     v_a = self.v_angle;
     
     if(self.oldenemy.toyview & 1)
@@ -1923,7 +1923,7 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
     
     if(stemp.movetarget)
     {
-        v0_y = stemp.angles_y - 0;
+        v0_y = stemp.angles_y - v_a_y;
         
         if(0 > 180)
         {
@@ -1938,32 +1938,32 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
         
         v1_y = 0 - stemp.toyview;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
-            v1_y = 0 + 360;
+            v1_y = v1_y + 360;
         }
         
         
-        if(0 > 180)
+        if(v1_y > 180)
         {
-            v1_y = 0 - 360;
+            v1_y = v1_y - 360;
         }
         
         v2_y = 0;
         
-        if(0 < 0)
+        if(v1_y < 0)
         {
             v2_y = 0 - sp_x;
         }
         
         
-        if(0 > 0)
+        if(v1_y > 0)
         {
             v2_y = sp_x;
         }
         
-        f1 = fabs(0);
-        f2 = fabs(0) * frametime;
+        f1 = fabs(v1_y);
+        f2 = fabs(v2_y) * frametime;
         if(f1 < f2)
         {
             v2_y = 0;
@@ -1971,7 +1971,7 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
         }
         else
         {
-            stemp.toyview = stemp.toyview + (0 * frametime);
+            stemp.toyview = stemp.toyview + (v2_y * frametime);
         }
         
         if(stemp.toyview == 0)
@@ -1980,8 +1980,8 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
         }
         else
         {
-            makevectors('0.000 1.000 0.000' * stemp.toyview);
-            f1 = 0;
+            makevectors('0 1 0' * stemp.toyview);
+            f1 = v_forward_y;
             f2 = v_forward_x;
             v3 = stemp.angles;
             v3_x = 0 - v3_x;
@@ -2075,8 +2075,8 @@ void (vector v0, float sp_x, float sp_y) Turn_hover =
             return;
         }
         
-        makevectors('0.000 1.000 0.000' * stemp.toyview);
-        f1 = 0;
+        makevectors('0 1 0' * stemp.toyview);
+        f1 = v_forward_y;
         f2 = v_forward_x;
         v3 = stemp.angles;
         v3_x = 0 - v3_x;
@@ -2482,7 +2482,7 @@ vector (float minim, float maxdist) GV_aim =
     re = world;
     makevectors(self.enemy.oldenemy.angles);
     v1 = v_forward;
-    v1_z = 0 - 0;
+    v1_z = 0 - v1_z;
     e = findradius(self.enemy.origin, maxdist);
     
     while(e)

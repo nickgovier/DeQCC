@@ -200,7 +200,7 @@ void () monster_dummycraft =
         
     }
     
-    setsize(self, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(self, '-16 -16 -16', '16 16 16');
     self.netname = "a plane";
     droptofloor();
     

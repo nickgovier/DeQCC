@@ -50,7 +50,7 @@ void () OgreGrenadeExplode =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    self.velocity = '0.000 0.000 0.000';
+    self.velocity = '0 0 0';
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;
@@ -97,9 +97,9 @@ void () OgreGrenadeTouch =
     
     sound(self, CHAN_VOICE, "weapons/bounce.wav", 1, ATTN_NORM);
     
-    if(self.velocity == '0.000 0.000 0.000')
+    if(self.velocity == '0 0 0')
     {
-        self.avelocity = '0.000 0.000 0.000';
+        self.avelocity = '0 0 0';
     }
     
 };
@@ -181,13 +181,13 @@ void () OgreFireGrenade =
     missile.velocity = normalize(self.enemy.origin - self.origin);
     missile.velocity = missile.velocity * 600;
     missile.velocity_z = 200;
-    missile.avelocity = '300.000 300.000 300.000';
+    missile.avelocity = '300 300 300';
     missile.angles = vectoangles(missile.velocity);
     missile.touch = OgreGrenadeTouch;
     missile.nextthink = time + 2.5;
     missile.think = OgreGrenadeExplode;
     setmodel(missile, "progs/grenade.mdl");
-    setsize(missile, '0.000 0.000 0.000', '0.000 0.000 0.000');
+    setsize(missile, '0 0 0', '0 0 0');
     setorigin(missile, self.origin);
 };
 

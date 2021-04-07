@@ -1082,7 +1082,7 @@ void () monster_fish =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/fish.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 24.000');
+    setsize(self, VEC_HULL_MIN, '16 16 24');
     self.health = 25;
     self.th_stand = f_stand1;
     self.th_walk = f_walk1;

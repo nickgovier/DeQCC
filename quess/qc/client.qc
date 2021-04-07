@@ -635,7 +635,7 @@ void () execute_changelevel =
     
     while(other != world)
     {
-        other.view_ofs = '0.000 0.000 0.000';
+        other.view_ofs = '0 0 0';
         other.angles = other.v_angle = pos.mangle;
         other.fixangle = TRUE;
         other.nextthink = time + 0.5;
@@ -1172,11 +1172,11 @@ void () PutClientInServer =
     self.deadflag = DEAD_NO;
     self.pausetime = 0;
     spot = SelectSpawnPoint();
-    self.origin = spot.origin + '0.000 0.000 1.000';
+    self.origin = spot.origin + '0 0 1';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.view_ofs = '0.000 0.000 2.000';
+    self.view_ofs = '0 0 2';
     player_stand1();
     
     if(deathmatch || coop)
@@ -1190,7 +1190,7 @@ void () PutClientInServer =
     if(dest_ent == world)
     {
         dest_ent = spawn();
-        setsize(dest_ent, '0.000 0.000 0.000', '0.000 0.000 0.000');
+        setsize(dest_ent, '0 0 0', '0 0 0');
     }
     
     
@@ -1199,7 +1199,7 @@ void () PutClientInServer =
         light_ent = spawn();
         light_ent.classname = "chess_light";
         light_ent.owner = self;
-        setsize(light_ent, '0.000 0.000 0.000', '0.000 0.000 0.000');
+        setsize(light_ent, '0 0 0', '0 0 0');
         setmodel(light_ent, "progs/null.mdl");
         setorigin(light_ent, self.origin);
     }
@@ -1216,7 +1216,7 @@ void () PutClientInServer =
         spot.owner = self;
         spot.v_angle = spot.angles;
         AllocateMonsters(spot);
-        spot.view_ofs = '0.000 0.000 22.000';
+        spot.view_ofs = '0 0 22';
         setmodel(spot, "progs/headcam.mdl");
         spot.skin = 1;
         spot = find(spot, classname, "info_player_start");
@@ -1234,12 +1234,12 @@ void () PutClientInServer =
         player1.opponent = player2;
         player2.opponent = player1;
         AllocateMonsters(spot);
-        spot.view_ofs = '0.000 0.000 22.000';
+        spot.view_ofs = '0 0 22';
         setmodel(spot, "progs/headcam.mdl");
         spot.skin = 1;
         time_per_turn = cvar("timelimit");
         current_turn = player2;
-        self.origin = spot.origin + '0.000 0.000 1.000';
+        self.origin = spot.origin + '0 0 1';
         self.angles = spot.angles;
         self.fixangle = TRUE;
         current_turn.turn_starttime = time;
@@ -1628,7 +1628,7 @@ void () PlayerDeathThink =
         forward = forward - 20;
         if(forward <= 0)
         {
-            self.velocity = '0.000 0.000 0.000';
+            self.velocity = '0 0 0';
         }
         else
         {
@@ -2181,7 +2181,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = 0 + 8;
+    start_z = start_z + 8;
     v_forward_z = 0;
     normalize(v_forward);
     end = start + (v_forward * 24);
@@ -2189,7 +2189,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < 1)
     {
-        start_z = (0 + self.maxs_z) - 8;
+        start_z = (start_z + self.maxs_z) - 8;
         end = start + (v_forward * 24);
         self.movedir = trace_plane_normal * -50;
         traceline(start, end, TRUE, self);
@@ -2424,7 +2424,7 @@ void () PlayerPreThink =
     }
     
     
-    if(self.view_ofs == '0.000 0.000 0.000')
+    if(self.view_ofs == '0 0 0')
     {
         return;
     }
@@ -3062,7 +3062,7 @@ void () PlayerPostThink =
     local float aspeed;
     local float r;
     
-    if(self.view_ofs == '0.000 0.000 0.000')
+    if(self.view_ofs == '0 0 0')
     {
         return;
     }

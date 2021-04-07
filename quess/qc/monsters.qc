@@ -159,14 +159,14 @@ void () walkmonster_start_go =
     self.origin_z = self.origin_z + 1;
     droptofloor();
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = 20;
     }
     
-    self.view_ofs = '0.000 0.000 25.000';
+    self.view_ofs = '0 0 25';
     self.use = monster_use;
     self.flags = self.flags | FL_MONSTER;
     self.pausetime = 100000000;
@@ -241,14 +241,14 @@ void () walkmonster_start =
 void () flymonster_start_go = 
 {
     self.takedamage = DAMAGE_AIM;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = 10;
     }
     
-    self.view_ofs = '0.000 0.000 25.000';
+    self.view_ofs = '0 0 25';
     self.use = monster_use;
     self.flags = self.flags | FL_FLY;
     self.flags = self.flags | FL_MONSTER;
@@ -371,14 +371,14 @@ void () swimmonster_start_go =
     
     self.takedamage = DAMAGE_AIM;
     total_monsters = total_monsters + 1;
-    self.ideal_yaw = self.angles * '0.000 1.000 0.000';
+    self.ideal_yaw = self.angles * '0 1 0';
     
     if(!self.yaw_speed)
     {
         self.yaw_speed = 10;
     }
     
-    self.view_ofs = '0.000 0.000 10.000';
+    self.view_ofs = '0 0 10';
     self.use = monster_use;
     self.flags = self.flags | FL_SWIM;
     self.flags = self.flags | FL_MONSTER;

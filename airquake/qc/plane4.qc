@@ -339,11 +339,11 @@ void () ac4_steer =
     
     makevectors(stemp.angles);
     v3 = v_forward;
-    v3_z = 0 - 0;
+    v3_z = 0 - v3_z;
     
     if(time >= self.pausetime)
     {
-        stemp.speed = stemp.speed - (0 * 6);
+        stemp.speed = stemp.speed - (v3_z * 6);
     }
     
     
@@ -1046,9 +1046,9 @@ void () start_aircraft4 =
     setorigin(e, e2.origin);
     e.angles = e2.angles;
     e.classname = "plane";
-    e.velocity = '0.000 0.000 0.000';
+    e.velocity = '0 0 0';
     e.movetype = MOVETYPE_FLY;
-    setsize(e, '-16.000 -16.000 -16.000', '16.000 16.000 16.000');
+    setsize(e, '-16 -16 -16', '16 16 16');
     e.solid = SOLID_SLIDEBOX;
     e.touch = T_ACTouch;
     e.health = 350;
