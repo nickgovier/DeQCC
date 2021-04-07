@@ -82,21 +82,21 @@ void (vector globaldef001711) ChooseTurn =
     local vector globaldef001715;
     local vector globaldef001719;
     globaldef001715 = self.origin - globaldef001711;
-    globaldef001719_x = 0;
-    globaldef001721 = FALSE - trace_plane_normal_x;
-    globaldef001722 = FALSE;
+    globaldef001719_x = trace_plane_normal_y;
+    globaldef001719_y = FALSE - trace_plane_normal_x;
+    globaldef001719_z = FALSE;
     if((globaldef001715 * globaldef001719) > FALSE)
     {
-        globaldef001715_x = FALSE - 0;
-        globaldef001717 = trace_plane_normal_x;
+        globaldef001715_x = FALSE - trace_plane_normal_y;
+        globaldef001715_y = trace_plane_normal_x;
     }
     else
     {
-        globaldef001715_x = 0;
-        globaldef001717 = FALSE - trace_plane_normal_x;
+        globaldef001715_x = trace_plane_normal_y;
+        globaldef001715_y = FALSE - trace_plane_normal_x;
     }
     
-    globaldef001718 = FALSE;
+    globaldef001715_z = FALSE;
     self.ideal_yaw = vectoyaw(globaldef001715);
 };
 

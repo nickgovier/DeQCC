@@ -132,8 +132,8 @@ void (float globaldef002092, vector globaldef002093) func000260 =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, globaldef002101_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, globaldef002101_y);
+        WriteCoord(MSG_BROADCAST, globaldef002101_z);
     }
     
 };
@@ -187,7 +187,7 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) fun
     local vector globaldef002119;
     makevectors(self.v_angle);
     globaldef002119 = self.origin + (v_forward * MOVETYPE_BOUNCE);
-    globaldef002122 = self.absmin_z + (self.size_z * 0.7);
+    globaldef002119_z = self.absmin_z + (self.size_z * 0.7);
     func000257();
     
     while(globaldef002106 > FALSE)
@@ -711,9 +711,9 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
     local vector globaldef002165;
     globaldef002165 = globaldef002157 - globaldef002153;
     normalize(globaldef002165);
-    globaldef002165_x = FALSE - 0;
-    globaldef002167 = globaldef002165_x;
-    globaldef002168 = FALSE;
+    globaldef002165_x = FALSE - globaldef002165_y;
+    globaldef002165_y = globaldef002165_x;
+    globaldef002165_z = FALSE;
     globaldef002165 = globaldef002165 * FL_INWATER;
     globaldef002164 = globaldef002163 = world;
     traceline(globaldef002153, globaldef002157, FALSE, self);
@@ -902,11 +902,11 @@ void () func000274 =
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, globaldef002172_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, globaldef002172_y);
+    WriteCoord(MSG_BROADCAST, globaldef002172_z);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, trace_endpos_y);
+    WriteCoord(MSG_BROADCAST, trace_endpos_z);
     func000273(self.origin, trace_endpos + (v_forward * MOVETYPE_STEP), self, SVC_INTERMISSION);
 };
 

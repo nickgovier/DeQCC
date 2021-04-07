@@ -88,7 +88,7 @@ float () func000886 =
     }
     
     globaldef003914 = self.enemy.origin - self.origin;
-    globaldef003917 = FALSE;
+    globaldef003914_z = FALSE;
     globaldef003918 = vlen(globaldef003914);
     
     if(globaldef003918 < 100)
@@ -1371,11 +1371,11 @@ void () func000957 =
     WriteByte(MSG_BROADCAST, TE_LIGHTNING1);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, globaldef004012_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, globaldef004012_y);
+    WriteCoord(MSG_BROADCAST, globaldef004012_z);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, trace_endpos_y);
+    WriteCoord(MSG_BROADCAST, trace_endpos_z);
     func000273(globaldef004012, trace_endpos, self, MOVETYPE_BOUNCE);
 };
 

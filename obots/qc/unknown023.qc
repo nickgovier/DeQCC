@@ -2627,8 +2627,8 @@ vector (float globaldef003178) func000459 =
 {
     local vector globaldef003179;
     globaldef003179_x = 100 * func000249();
-    globaldef003181 = 100 * func000249();
-    globaldef003182 = 200 + (100 * random());
+    globaldef003179_y = 100 * func000249();
+    globaldef003179_z = 200 + (100 * random());
     if(globaldef003178 > -50)
     {
         globaldef003179 = globaldef003179 * 0.7;

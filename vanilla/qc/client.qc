@@ -1148,7 +1148,7 @@ void () PutClientInServer =
     self.th_die = PlayerDie;
     self.deadflag = DEAD_NO;
     self.pausetime = MSG_BROADCAST;
-    self.origin = self.oldorigin = spot.origin + '0.000 0.000 1.000';
+    self.origin = self.oldorigin = spot.origin + '0 0 1';
     self.angles = spot.angles;
     self.fixangle = TRUE;
     setmodel(self, "progs/eyes.mdl");
@@ -1156,7 +1156,7 @@ void () PutClientInServer =
     setmodel(self, "progs/player.mdl");
     modelindex_player = self.modelindex;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.view_ofs = '0.000 0.000 22.000';
+    self.view_ofs = '0 0 22';
     self.velocity = VEC_ORIGIN;
     player_stand1();
     
@@ -2014,7 +2014,7 @@ void () CheckWaterJump =
     local vector end;
     makevectors(self.angles);
     start = self.origin;
-    start_z = 0 + WEAPON_BIG;
+    start_z = start_z + WEAPON_BIG;
     v_forward_z = MSG_BROADCAST;
     normalize(v_forward);
     end = start + (v_forward * 24);
@@ -2022,7 +2022,7 @@ void () CheckWaterJump =
     
     if(trace_fraction < WEAPON_SHOTGUN)
     {
-        start_z = (0 + self.maxs_z) - WEAPON_BIG;
+        start_z = (start_z + self.maxs_z) - WEAPON_BIG;
         end = start + (v_forward * 24);
         self.movedir = trace_plane_normal * -50;
         traceline(start, end, TRUE, self);

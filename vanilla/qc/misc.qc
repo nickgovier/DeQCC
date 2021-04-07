@@ -392,7 +392,7 @@ void () fire_fly =
     fireball = spawn();
     fireball.solid = SOLID_TRIGGER;
     fireball.movetype = MOVETYPE_TOSS;
-    fireball.velocity = '0.000 0.000 1000.000';
+    fireball.velocity = '0 0 1000';
     fireball.velocity_x = (random() * 100) - 50;
     fireball.velocity_y = (random() * 100) - 50;
     fireball.velocity_z = self.speed + (random() * 200);
@@ -825,14 +825,14 @@ void () make_bubbles =
     setorigin(bubble, self.origin);
     bubble.movetype = MOVETYPE_NOCLIP;
     bubble.solid = SOLID_NOT;
-    bubble.velocity = '0.000 0.000 15.000';
+    bubble.velocity = '0 0 15';
     bubble.nextthink = time + 0.5;
     bubble.think = bubble_bob;
     bubble.touch = bubble_remove;
     bubble.classname = "bubble";
     bubble.frame = MSG_BROADCAST;
     bubble.cnt = MSG_BROADCAST;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.nextthink = (time + random()) + 0.5;
     self.think = make_bubbles;
 };
@@ -897,7 +897,7 @@ void () bubble_split =
     bubble.classname = "bubble";
     bubble.frame = SPAWNFLAG_SUPERSPIKE;
     bubble.cnt = TE_LAVASPLASH;
-    setsize(bubble, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.frame = SPAWNFLAG_SUPERSPIKE;
     self.cnt = TE_LAVASPLASH;
     

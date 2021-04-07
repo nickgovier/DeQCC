@@ -776,7 +776,7 @@ void () tbaby_jump5 = [54, tbaby_jump6]
     self.touch = Tar_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWN_CRUCIFIED;
-    self.velocity = (v_forward * 600) + '0.000 0.000 200.000';
+    self.velocity = (v_forward * 600) + '0 0 200';
     self.velocity_z = self.velocity_z + (random() * 150);
     
     if(self.flags & FL_ONGROUND)
@@ -921,7 +921,7 @@ void () monster_tarbaby =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/tarbaby.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 80;
     self.th_stand = tbaby_stand1;
     self.th_walk = tbaby_walk1;

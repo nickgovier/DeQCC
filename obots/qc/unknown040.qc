@@ -71,11 +71,11 @@ void () func000602 =
     globaldef003526.enemy = self;
     globaldef003527 = self.mins + '25 25 0';
     globaldef003531 = self.maxs - '25 25 -8';
-    globaldef003530 = 0 - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
+    globaldef003527_z = globaldef003531_z - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
     
     if(self.spawnflags & globaldef003524)
     {
-        globaldef003534 = 0 + FL_CLIENT;
+        globaldef003531_z = globaldef003527_z + FL_CLIENT;
     }
     
     
@@ -88,8 +88,8 @@ void () func000602 =
     
     if(self.size_y <= 50)
     {
-        globaldef003529 = (self.mins_y + self.maxs_y) / FL_SWIM;
-        globaldef003533 = 0 + TRUE;
+        globaldef003527_y = (self.mins_y + self.maxs_y) / FL_SWIM;
+        globaldef003531_y = globaldef003527_y + TRUE;
     }
     
     setsize(globaldef003526, globaldef003527, globaldef003531);

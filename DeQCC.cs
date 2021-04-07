@@ -547,13 +547,13 @@ namespace DeQcc
                     if (g.Name != null) { name = g.Name.Replace("_x", ""); } // strip off _x if it exists
 
                     // set the next two globals to floats for _y and _z
-                    if (globalList[offset + 1].Kind == GlobalKind.Unknown || globalList[offset + 1].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Globaldef || globalList[offset + 1].Kind == GlobalKind.Unknown || globalList[offset + 1].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
                     {
                         Global y = GetGlobal(offset + 1, calledFromFunction, g.Kind);
                         y.Type = Types.ev_float;
                         y.Name = name + "_y";
                     }
-                    if (globalList[offset + 2].Kind == GlobalKind.Unknown || globalList[offset + 2].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
+                    if (g.Kind == GlobalKind.Local || g.Kind == GlobalKind.Globaldef || globalList[offset + 2].Kind == GlobalKind.Unknown || globalList[offset + 2].Kind == GlobalKind.Anonymous)   // avoid overwriting something e.g. if this is just meant to access the float _x component and is not a real vector
                     {
                         Global z = GetGlobal(offset + 2, calledFromFunction, g.Kind);
                         z.Type = Types.ev_float;

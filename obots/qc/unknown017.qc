@@ -529,7 +529,7 @@ void () func000325 =
     
     globaldef002524 = '-0.5 -0.5 -0.7';
     globaldef002524_x = globaldef002524_x + random();
-    globaldef002526 = 0 + random();
+    globaldef002524_y = globaldef002524_y + random();
     traceline(self.origin, self.origin + (globaldef002524 * globaldef002497), TRUE, self);
     func000303(self.origin, trace_endpos, self);
     sound(self, CHAN_WEAPON, "cloud/thunder.wav", TRUE, ATTN_NORM);
@@ -582,7 +582,7 @@ void (float globaldef002529, float globaldef002530, float globaldef002531) func0
     {
         globaldef002532 = self.origin;
         globaldef002532_x = (globaldef002532_x - globaldef002529) + ((random() * globaldef002529) * FL_SWIM);
-        globaldef002534 = (0 - globaldef002529) + ((random() * globaldef002529) * FL_SWIM);
+        globaldef002532_y = (globaldef002532_y - globaldef002529) + ((random() * globaldef002529) * FL_SWIM);
         func000302(globaldef002532, '0 0 -300', FL_MONSTER, globaldef002530);
         globaldef002536 = globaldef002536 - TRUE;
     }
@@ -629,9 +629,9 @@ float (entity globaldef002539) func000327 =
     local vector globaldef002540;
     local vector globaldef002544;
     globaldef002544 = globaldef002539.movetarget.origin;
-    globaldef002547 = 0 + FL_MONSTER;
+    globaldef002544_z = globaldef002544_z + FL_MONSTER;
     globaldef002540 = globaldef002544;
-    globaldef002543 = 0 + globaldef002495;
+    globaldef002540_z = globaldef002540_z + globaldef002495;
     traceline(globaldef002544, globaldef002540, TRUE, self.movetarget);
     
     if(trace_inwater)
@@ -640,9 +640,9 @@ float (entity globaldef002539) func000327 =
     }
     
     
-    if((trace_fraction == TRUE) || ((0 - 0) > globaldef002494))
+    if((trace_fraction == TRUE) || ((trace_endpos_z - globaldef002544_z) > globaldef002494))
     {
-        return 0 - globaldef002539.movetarget.origin_z;
+        return trace_endpos_z - globaldef002539.movetarget.origin_z;
     }
     
     return FALSE;
@@ -811,7 +811,7 @@ void () func000330 =
     {
         setmodel(self, self.mdl);
         globaldef002558 = self.movetarget.origin;
-        globaldef002561 = 0 + globaldef002557;
+        globaldef002558_z = globaldef002558_z + globaldef002557;
         setorigin(self, globaldef002558);
         self.angles_x = FALSE;
         self.angles_y = self.movetarget.angles_y;
@@ -922,7 +922,7 @@ void () func000333 =
         if(globaldef002563)
         {
             globaldef002564 = self.movetarget.origin;
-            globaldef002567 = 0 + globaldef002563;
+            globaldef002564_z = globaldef002564_z + globaldef002563;
             if((vlen(globaldef002564 - self.origin)) > globaldef002496)
             {
                 func000321();
@@ -2368,10 +2368,10 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
         if((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x))
         {
             
-            if((0 <= 0) && (0 >= 0))
+            if((globaldef002712_y <= globaldef002700_y) && (globaldef002708_y >= globaldef002704_y))
             {
                 
-                if((0 <= 0) && (0 >= 0))
+                if((globaldef002712_z <= globaldef002700_z) && (globaldef002708_z >= globaldef002704_z))
                 {
                     return TRUE;
                 }
@@ -2393,10 +2393,10 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
         if((globaldef002712_x <= globaldef002700_x) && (globaldef002708_x >= globaldef002704_x))
         {
             
-            if((0 <= 0) && (0 >= 0))
+            if((globaldef002712_y <= globaldef002700_y) && (globaldef002708_y >= globaldef002704_y))
             {
                 
-                if((0 <= 0) && (0 >= 0))
+                if((globaldef002712_z <= globaldef002700_z) && (globaldef002708_z >= globaldef002704_z))
                 {
                     return TRUE;
                 }

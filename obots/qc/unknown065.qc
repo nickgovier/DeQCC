@@ -61,11 +61,11 @@ void (float globaldef005046) func001747 =
     local vector globaldef005051;
     local vector globaldef005055;
     globaldef005047 = vectoangles(self.enemy.origin - self.origin);
-    globaldef005049 = 0 + (globaldef005046 * MOVETYPE_TOSS);
+    globaldef005047_y = globaldef005047_y + (globaldef005046 * MOVETYPE_TOSS);
     makevectors(globaldef005047);
     globaldef005051 = ((self.origin + self.mins) + (self.size * globaldef000522)) + (v_forward * 20);
     globaldef005055 = normalize(v_forward);
-    globaldef005058 = (FALSE - 0) + ((random() - globaldef000522) * 0.1);
+    globaldef005055_z = (FALSE - globaldef005055_z) + ((random() - globaldef000522) * 0.1);
     func000278(globaldef005051, globaldef005055);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");

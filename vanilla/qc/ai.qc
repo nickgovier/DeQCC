@@ -63,7 +63,7 @@ void () movetarget_f =
     
     self.solid = SOLID_TRIGGER;
     self.touch = t_movetarget;
-    setsize(self, '-8.000 -8.000 -8.000', '8.000 8.000 8.000');
+    setsize(self, '-8 -8 -8', '8 8 8');
 };
 
 // path_corner
@@ -986,17 +986,17 @@ void (vector dest3) ChooseTurn =
     local vector dir;
     local vector newdir;
     dir = self.origin - dest3;
-    newdir_x = 0;
+    newdir_x = trace_plane_normal_y;
     newdir_y = MSG_BROADCAST - trace_plane_normal_x;
     newdir_z = MSG_BROADCAST;
     if((dir * newdir) > MSG_BROADCAST)
     {
-        dir_x = MSG_BROADCAST - 0;
+        dir_x = MSG_BROADCAST - trace_plane_normal_y;
         dir_y = trace_plane_normal_x;
     }
     else
     {
-        dir_x = 0;
+        dir_x = trace_plane_normal_y;
         dir_y = MSG_BROADCAST - trace_plane_normal_x;
     }
     

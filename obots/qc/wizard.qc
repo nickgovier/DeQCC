@@ -65,7 +65,7 @@ void (entity globaldef004294, float globaldef004295, float globaldef004296) Laun
     globaldef004297 = ((self.enemy.origin + self.enemy.mins) + (self.enemy.size * 0.7)) - globaldef004294.origin;
     globaldef004305 = vlen(globaldef004297) / globaldef004295;
     globaldef004301 = self.enemy.velocity;
-    globaldef004304 = FALSE;
+    globaldef004301_z = FALSE;
     globaldef004297 = globaldef004297 + (globaldef004301 * globaldef004305);
     globaldef004297 = normalize(globaldef004297);
     globaldef004297 = (globaldef004297 + ((globaldef004296 * v_up) * (random() - globaldef000522))) + ((globaldef004296 * v_right) * (random() - globaldef000522));

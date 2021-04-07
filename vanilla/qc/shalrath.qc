@@ -676,7 +676,7 @@ void () ShalMissile =
     local vector dir;
     local float dist;
     local float flytime;
-    dir = normalize((self.enemy.origin + '0.000 0.000 10.000') - self.origin);
+    dir = normalize((self.enemy.origin + '0 0 10') - self.origin);
     dist = vlen(self.enemy.origin - self.origin);
     flytime = dist * 0.002;
     
@@ -693,9 +693,9 @@ void () ShalMissile =
     missile.movetype = MOVETYPE_FLYMISSILE;
     setmodel(missile, "progs/v_spike.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    missile.origin = self.origin + '0.000 0.000 10.000';
+    missile.origin = self.origin + '0 0 10';
     missile.velocity = dir * 400;
-    missile.avelocity = '300.000 300.000 300.000';
+    missile.avelocity = '300 300 300';
     missile.nextthink = flytime + time;
     missile.think = ShalHome;
     missile.enemy = self.enemy;
@@ -739,7 +739,7 @@ void () ShalHome =
 {
     local vector dir;
     local vector vtemp;
-    vtemp = self.enemy.origin + '0.000 0.000 10.000';
+    vtemp = self.enemy.origin + '0 0 10';
     
     if(self.enemy.health < SPAWN_CRUCIFIED)
     {

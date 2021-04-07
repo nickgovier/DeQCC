@@ -838,7 +838,7 @@ void (vector st) ZombieFireGrenade =
     missile.velocity = normalize(self.enemy.origin - org);
     missile.velocity = missile.velocity * 600;
     missile.velocity_z = 200;
-    missile.avelocity = '3000.000 1000.000 2000.000';
+    missile.avelocity = '3000 1000 2000';
     missile.touch = ZombieGrenadeTouch;
     missile.nextthink = time + 2.5;
     missile.think = SUB_Remove;
@@ -977,7 +977,7 @@ void () zombie_atta12 = [63, zombie_atta13]
 void () zombie_atta13 = [64, zombie_run1]
 {
     ai_face();
-    ZombieFireGrenade('-10.000 -22.000 30.000');
+    ZombieFireGrenade('-10 -22 30');
 };
 
 // zombie_attb1
@@ -1120,7 +1120,7 @@ void () zombie_attb13 = [77, zombie_attb14]
 void () zombie_attb14 = [77, zombie_run1]
 {
     ai_face();
-    ZombieFireGrenade('-10.000 -24.000 29.000');
+    ZombieFireGrenade('-10 -24 29');
 };
 
 // zombie_attc1
@@ -1243,7 +1243,7 @@ void () zombie_attc11 = [89, zombie_attc12]
 void () zombie_attc12 = [90, zombie_run1]
 {
     ai_face();
-    ZombieFireGrenade('-12.000 -19.000 29.000');
+    ZombieFireGrenade('-12 -19 29');
 };
 
 // zombie_missile
@@ -2507,7 +2507,7 @@ void () monster_zombie =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/zombie.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 60;
     self.th_stand = zombie_stand1;
     self.th_walk = zombie_walk1;

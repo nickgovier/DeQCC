@@ -823,15 +823,15 @@ void () func000400 =
     local vector globaldef002948;
     makevectors(self.angles);
     globaldef002944 = self.origin;
-    globaldef002947 = 0 + FL_CLIENT;
-    globaldef000035 = FALSE;
+    globaldef002944_z = globaldef002944_z + FL_CLIENT;
+    v_forward_z = FALSE;
     normalize(v_forward);
     globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
     traceline(globaldef002944, globaldef002948, TRUE, self);
     
     if(trace_fraction < TRUE)
     {
-        globaldef002947 = (0 + self.maxs_z) - FL_CLIENT;
+        globaldef002944_z = (globaldef002944_z + self.maxs_z) - FL_CLIENT;
         globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
         self.movedir = trace_plane_normal * -50;
         traceline(globaldef002944, globaldef002948, TRUE, self);

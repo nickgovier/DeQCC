@@ -872,15 +872,15 @@ void () func000548 =
             }
             
             
-            if(globaldef003369.mins_y < 0)
+            if(globaldef003369.mins_y < globaldef003371_y)
             {
-                globaldef003373 = globaldef003369.mins_y;
+                globaldef003371_y = globaldef003369.mins_y;
             }
             
             
-            if(globaldef003369.mins_z < 0)
+            if(globaldef003369.mins_z < globaldef003371_z)
             {
-                globaldef003374 = globaldef003369.mins_z;
+                globaldef003371_z = globaldef003369.mins_z;
             }
             
             
@@ -890,15 +890,15 @@ void () func000548 =
             }
             
             
-            if(globaldef003369.maxs_y > 0)
+            if(globaldef003369.maxs_y > globaldef003375_y)
             {
-                globaldef003377 = globaldef003369.maxs_y;
+                globaldef003375_y = globaldef003369.maxs_y;
             }
             
             
-            if(globaldef003369.maxs_z > 0)
+            if(globaldef003369.maxs_z > globaldef003375_z)
             {
-                globaldef003378 = globaldef003369.maxs_z;
+                globaldef003375_z = globaldef003369.maxs_z;
             }
             
         }

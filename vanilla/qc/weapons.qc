@@ -118,7 +118,7 @@ void () W_FireAxe =
     local vector source;
     local vector org;
     makevectors(self.v_angle);
-    source = self.origin + '0.000 0.000 16.000';
+    source = self.origin + '0 0 16';
     traceline(source, source + (v_forward * IT_LIGHTNING), FALSE, self);
     
     if(trace_fraction == WEAPON_SHOTGUN)
@@ -139,8 +139,8 @@ void () W_FireAxe =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
@@ -230,7 +230,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     makevectors(self.angles);
     missile.velocity = vel;
     missile.velocity_z = (missile.velocity_z + 250) + (50 * random());
-    missile.avelocity = '3000.000 1000.000 2000.000';
+    missile.avelocity = '3000 1000 2000';
     missile.nextthink = time + WEAPON_SHOTGUN;
     missile.think = SUB_Remove;
     setmodel(missile, "progs/zom_gib.mdl");
@@ -421,8 +421,8 @@ void (float damage, vector dir) TraceAttack =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
@@ -527,7 +527,7 @@ void () W_FireShotgun =
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_shells = self.ammo_shells - WEAPON_SHOTGUN;
     dir = aim(self, 100000);
-    FireBullets(TE_LIGHTNING2, dir, '0.040 0.040 0.000');
+    FireBullets(TE_LIGHTNING2, dir, '0.04 0.04 0');
 };
 
 // W_FireSuperShotgun
@@ -574,7 +574,7 @@ void () W_FireSuperShotgun =
     self.punchangle_x = CONTENT_SLIME;
     self.currentammo = self.ammo_shells = self.ammo_shells - WEAPON_ROCKET;
     dir = aim(self, 100000);
-    FireBullets(14, dir, '0.140 0.080 0.000');
+    FireBullets(14, dir, '0.14 0.08 0');
 };
 
 // s_explode1
@@ -840,7 +840,7 @@ void () W_FireRocket =
     missile.think = SUB_Remove;
     setmodel(missile, "progs/missile.mdl");
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, (self.origin + (v_forward * WEAPON_BIG)) + '0.000 0.000 16.000');
+    setorigin(missile, (self.origin + (v_forward * WEAPON_BIG)) + '0 0 16');
 };
 
 // LightningDamage
@@ -941,7 +941,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     local vector f;
     f = p2 - p1;
     normalize(f);
-    f_x = MSG_BROADCAST - 0;
+    f_x = MSG_BROADCAST - f_y;
     f_y = f_x;
     f_z = MSG_BROADCAST;
     f = f * IT_GRENADE_LAUNCHER;
@@ -950,7 +950,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0 0 100', 225, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
         
         if(self.classname == "player")
@@ -970,7 +970,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0 0 100', 225, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -979,7 +979,7 @@ void (vector p1, vector p2, entity from, float damage) LightningDamage =
     
     if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0.000 0.000 100.000', 225, damage * WEAPON_SPIKES);
+        particle(trace_endpos, '0 0 100', 225, damage * WEAPON_SPIKES);
         T_Damage(trace_ent, from, from, damage);
     }
     
@@ -1107,17 +1107,17 @@ void () W_FireLightning =
     
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_cells = self.ammo_cells - WEAPON_SHOTGUN;
-    org = self.origin + '0.000 0.000 16.000';
+    org = self.origin + '0 0 16';
     traceline(org, org + (v_forward * 600), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
     WriteCoord(MSG_BROADCAST, org_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, org_y);
+    WriteCoord(MSG_BROADCAST, org_z);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
-    WriteCoord(MSG_BROADCAST, 0);
-    WriteCoord(MSG_BROADCAST, 0);
+    WriteCoord(MSG_BROADCAST, trace_endpos_y);
+    WriteCoord(MSG_BROADCAST, trace_endpos_z);
     LightningDamage(self.origin, trace_endpos + (v_forward * WEAPON_SPIKES), self, SVC_INTERMISSION);
 };
 
@@ -1313,7 +1313,7 @@ void () W_FireGrenade =
         missile.velocity_z = 200;
     }
     
-    missile.avelocity = '300.000 300.000 300.000';
+    missile.avelocity = '300 300 300';
     missile.angles = vectoangles(missile.velocity);
     missile.touch = GrenadeTouch;
     missile.nextthink = time + 2.5;
@@ -1425,7 +1425,7 @@ void () W_FireSuperSpikes =
     self.attack_finished = time + 0.2;
     self.currentammo = self.ammo_nails = self.ammo_nails - WEAPON_ROCKET;
     dir = aim(self, 1000);
-    launch_spike(self.origin + '0.000 0.000 16.000', dir);
+    launch_spike(self.origin + '0 0 16', dir);
     newmis.touch = superspike_touch;
     setmodel(newmis, "progs/s_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
@@ -1506,7 +1506,7 @@ void (float ox) W_FireSpikes =
     self.attack_finished = time + 0.2;
     self.currentammo = self.ammo_nails = self.ammo_nails - WEAPON_SHOTGUN;
     dir = aim(self, 1000);
-    launch_spike((self.origin + '0.000 0.000 16.000') + (v_right * ox), dir);
+    launch_spike((self.origin + '0 0 16') + (v_right * ox), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 

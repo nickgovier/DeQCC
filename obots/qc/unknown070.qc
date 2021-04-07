@@ -86,8 +86,8 @@ void () func002071 =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, globaldef005430_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, globaldef005430_y);
+        WriteCoord(MSG_BROADCAST, globaldef005430_z);
     }
     
     remove(self);

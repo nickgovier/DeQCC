@@ -777,7 +777,7 @@ void (vector org, entity death_owner) spawn_tdeath =
     death.movetype = MOVETYPE_NONE;
     death.solid = SOLID_TRIGGER;
     death.angles = VEC_ORIGIN;
-    setsize(death, death_owner.mins - '1.000 1.000 1.000', death_owner.maxs + '1.000 1.000 1.000');
+    setsize(death, death_owner.mins - '1 1 1', death_owner.maxs + '1 1 1');
     setorigin(death, org);
     death.touch = tdeath_touch;
     death.nextthink = time + 0.2;
@@ -977,7 +977,7 @@ void () info_teleport_destination =
     self.mangle = self.angles;
     self.angles = VEC_ORIGIN;
     self.model = "";
-    self.origin = self.origin + '0.000 0.000 27.000';
+    self.origin = self.origin + '0 0 27';
     
     if(!self.targetname)
     {
@@ -1436,7 +1436,7 @@ void () trigger_monsterjump =
     
     if(self.angles == VEC_ORIGIN)
     {
-        self.angles = '0.000 360.000 0.000';
+        self.angles = '0 360 0';
     }
     
     InitTrigger();

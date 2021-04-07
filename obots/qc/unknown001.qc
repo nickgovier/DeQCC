@@ -1188,14 +1188,14 @@ float (entity globaldef001206) func000119 =
     }
     
     globaldef001207 = globaldef001206.origin;
-    globaldef001210 = globaldef001206.absmin_z;
+    globaldef001207_z = globaldef001206.absmin_z;
     
     if(func000118(globaldef001207))
     {
         return TRUE;
     }
     
-    globaldef001210 = globaldef001206.absmax_z - FL_CLIENT;
+    globaldef001207_z = globaldef001206.absmax_z - FL_CLIENT;
     return func000118(globaldef001207);
 };
 
@@ -1260,7 +1260,7 @@ entity () func000120 =
         {
             globaldef001214 = globaldef001212.origin - self.origin;
             globaldef001214 = normalize(globaldef001214);
-            globaldef001218 = ((v_forward_x * globaldef001214_x) + (0 * 0)) + (0 * 0);
+            globaldef001218 = ((v_forward_x * globaldef001214_x) + (v_forward_y * globaldef001214_y)) + (v_forward_z * globaldef001214_z);
             
             if(globaldef001218 > globaldef001219)
             {
@@ -1466,7 +1466,7 @@ vector (float globaldef001227, float globaldef001228, float globaldef001229) fun
     }
     
     globaldef001237_x = globaldef001227;
-    globaldef001239 = globaldef001228;
+    globaldef001237_y = globaldef001228;
     return globaldef001237;
 };
 
@@ -1529,7 +1529,7 @@ float (vector globaldef001242) func000123 =
     globaldef001242 = 700 * globaldef001250;
     globaldef001250 = MOVETYPE_FLY * globaldef001250;
     globaldef001246 = self.enemy.origin;
-    globaldef001249 = self.enemy.absmax_z - FL_CLIENT;
+    globaldef001246_z = self.enemy.absmax_z - FL_CLIENT;
     traceline(globaldef001246, globaldef001246 + globaldef001242, FALSE, self.enemy);
     
     if(trace_ent != world)
@@ -1721,9 +1721,9 @@ void (float globaldef001260, float globaldef001261) func000124 =
         globaldef001262 = vectoangles(self.dest1 - self.origin);
     }
     
-    globaldef001265 = FALSE;
+    globaldef001262_z = FALSE;
     globaldef001262_x = func000117(360 - globaldef001262_x);
-    globaldef001264 = func000117(0);
+    globaldef001262_y = func000117(globaldef001262_y);
     if(globaldef001262_x > 70)
     {
         globaldef001262_x = 70;
@@ -1746,11 +1746,11 @@ void (float globaldef001260, float globaldef001261) func000124 =
     else
     {
         globaldef001266 = func000122(self.angles_x - globaldef001262_x, self.mangle_x, globaldef001261);
-        self.mangle_x = 0;
+        self.mangle_x = globaldef001266_y;
         self.angles_x = globaldef001262_x + globaldef001266_x;
-        globaldef001266 = func000122(self.angles_y - 0, self.mangle_y, globaldef001261);
-        self.mangle_y = 0;
-        self.angles_y = 0 + globaldef001266_x;
+        globaldef001266 = func000122(self.angles_y - globaldef001262_y, self.mangle_y, globaldef001261);
+        self.mangle_y = globaldef001266_y;
+        self.angles_y = globaldef001262_y + globaldef001266_x;
         self.angles_x = func000117(self.angles_x);
         self.angles_y = func000117(self.angles_y);
     }
@@ -1861,7 +1861,7 @@ vector (entity globaldef001278) func000128 =
 {
     local vector globaldef001279;
     globaldef001279 = globaldef001278.origin;
-    globaldef001282 = globaldef001278.absmax_z - FL_CLIENT;
+    globaldef001279_z = globaldef001278.absmax_z - FL_CLIENT;
     return globaldef001279;
 };
 
@@ -2177,7 +2177,7 @@ void (entity globaldef001284) func000129 =
     
     globaldef001287 = self.enemy.angles;
     globaldef001287_x = FALSE;
-    globaldef001289 = FALSE;
+    globaldef001287_y = FALSE;
     makevectors(globaldef001287);
     v_forward = MOVETYPE_WALK * v_forward;
     globaldef001286 = 1000;
@@ -3867,14 +3867,14 @@ void () func000139 =
         traceline(self.dest, self.dest1, TRUE, self);
         self.dest1 = trace_endpos;
         globaldef001372_x = (globaldef000729 * random()) - 20;
-        globaldef001374 = 360 * random();
-        globaldef001375 = FALSE;
-        globaldef001382 = 0;
+        globaldef001372_y = 360 * random();
+        globaldef001372_z = FALSE;
+        globaldef001382 = globaldef001372_y;
         if(self.origin != self.dest)
         {
             globaldef001376 = self.origin - self.dest;
             globaldef001376 = vectoangles(globaldef001376);
-            globaldef001383 = 0;
+            globaldef001383 = globaldef001376_y;
         }
         else
         {
@@ -4485,7 +4485,7 @@ void () func000142 =
                 {
                     globaldef001429 = globaldef001429 + TRUE;
                     globaldef001405 = vectoangles(globaldef001409.origin - self.origin);
-                    globaldef001411 = 0 - globaldef001410;
+                    globaldef001411 = globaldef001405_y - globaldef001410;
                     
                     while(globaldef001411 > 180)
                     {
@@ -4579,8 +4579,8 @@ void () func000142 =
         }
         
         globaldef001417_x = globaldef001417_x / globaldef001412;
-        globaldef001419 = 0 / globaldef001412;
-        globaldef001420 = 0 / globaldef001412;
+        globaldef001417_y = globaldef001417_y / globaldef001412;
+        globaldef001417_z = globaldef001417_z / globaldef001412;
         self.dest1 = globaldef001417;
     }
     

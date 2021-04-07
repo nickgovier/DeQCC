@@ -1216,7 +1216,7 @@ float () func001356 =
     }
     
     globaldef004512 = self.enemy.origin - self.origin;
-    globaldef004515 = FALSE;
+    globaldef004512_z = FALSE;
     globaldef004516 = vlen(globaldef004512);
     
     if(globaldef004516 < 80)

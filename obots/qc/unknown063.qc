@@ -80,9 +80,9 @@ void () func001678 =
     }
     
     globaldef004958 = (globaldef004954.mins + globaldef004954.maxs) * globaldef000522;
-    globaldef004961 = globaldef004954.absmin_z - FL_INWATER;
+    globaldef004958_z = globaldef004954.absmin_z - FL_INWATER;
     globaldef004962 = (globaldef004955.mins + globaldef004955.maxs) * globaldef000522;
-    globaldef004965 = globaldef004955.absmin_z - FL_INWATER;
+    globaldef004962_z = globaldef004955.absmin_z - FL_INWATER;
     globaldef004962 = globaldef004962 - ((normalize(globaldef004962 - globaldef004958)) * 100);
     self.nextthink = time + 0.1;
     self.think = func001678;
@@ -90,11 +90,11 @@ void () func001678 =
     WriteByte(MSG_ALL, TE_LIGHTNING3);
     WriteEntity(MSG_ALL, world);
     WriteCoord(MSG_ALL, globaldef004958_x);
-    WriteCoord(MSG_ALL, 0);
-    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, globaldef004958_y);
+    WriteCoord(MSG_ALL, globaldef004958_z);
     WriteCoord(MSG_ALL, globaldef004962_x);
-    WriteCoord(MSG_ALL, 0);
-    WriteCoord(MSG_ALL, 0);
+    WriteCoord(MSG_ALL, globaldef004962_y);
+    WriteCoord(MSG_ALL, globaldef004962_z);
 };
 
 // func001679

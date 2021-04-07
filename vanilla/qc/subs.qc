@@ -49,15 +49,15 @@ void () SUB_Remove =
 // OP_DONE	0	0	0
 void () SetMovedir = 
 {
-    if(self.angles == '0.000 -1.000 0.000')
+    if(self.angles == '0 -1 0')
     {
-        self.movedir = '0.000 0.000 1.000';
+        self.movedir = '0 0 1';
     }
     else
     {
-        if(self.angles == '0.000 -2.000 0.000')
+        if(self.angles == '0 -2 0')
         {
-            self.movedir = '0.000 0.000 -1.000';
+            self.movedir = '0 0 -1';
         }
         else
         {

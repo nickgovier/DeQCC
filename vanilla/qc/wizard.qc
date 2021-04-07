@@ -455,7 +455,7 @@ void () Wiz_StartFast =
     missile.owner = self;
     missile.nextthink = time + 0.6;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * 14));
+    setorigin(missile, ((self.origin + '0 0 30') + (v_forward * 14)) + (v_right * 14));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.8;
     missile.think = Wiz_FastFire;
@@ -464,7 +464,7 @@ void () Wiz_StartFast =
     missile.owner = self;
     missile.nextthink = time + SPAWNFLAG_SUPERSPIKE;
     setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(missile, ((self.origin + '0.000 0.000 30.000') + (v_forward * 14)) + (v_right * -14));
+    setorigin(missile, ((self.origin + '0 0 30') + (v_forward * 14)) + (v_right * -14));
     missile.enemy = self.enemy;
     missile.nextthink = time + 0.3;
     missile.think = Wiz_FastFire;
@@ -1336,7 +1336,7 @@ void () monster_wizard =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/wizard.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 80;
     self.th_stand = wiz_stand1;
     self.th_walk = wiz_walk1;

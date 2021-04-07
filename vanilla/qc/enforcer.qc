@@ -86,8 +86,8 @@ void () Laser_Touch =
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
         WriteCoord(MSG_BROADCAST, org_x);
-        WriteCoord(MSG_BROADCAST, 0);
-        WriteCoord(MSG_BROADCAST, 0);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
     remove(self);
@@ -196,7 +196,7 @@ void () enforcer_fire =
     local vector org;
     self.effects = self.effects | EF_MUZZLEFLASH;
     makevectors(self.angles);
-    org = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.5)) + '0.000 0.000 16.000';
+    org = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.5)) + '0 0 16';
     LaunchLaser(org, self.enemy.origin - self.origin);
 };
 
@@ -1499,7 +1499,7 @@ void () monster_enforcer =
     self.solid = SOLID_SLIDEBOX;
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/enforcer.mdl");
-    setsize(self, VEC_HULL_MIN, '16.000 16.000 40.000');
+    setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 80;
     self.th_stand = enf_stand1;
     self.th_walk = enf_walk1;

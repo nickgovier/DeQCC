@@ -374,7 +374,7 @@ void () demon1_jump4 = [30, demon1_jump5]
     self.touch = Demon_JumpTouch;
     makevectors(self.angles);
     self.origin_z = self.origin_z + SPAWNFLAG_SUPERSPIKE;
-    self.velocity = (v_forward * 600) + '0.000 0.000 250.000';
+    self.velocity = (v_forward * 600) + '0 0 250';
     
     if(self.flags & FL_ONGROUND)
     {

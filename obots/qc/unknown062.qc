@@ -1191,7 +1191,7 @@ void (vector globaldef004925) func001675 =
     {
         globaldef004945 = (vlen(self.enemy.origin - globaldef004933)) / globaldef000523;
         globaldef004937 = self.enemy.velocity;
-        globaldef004940 = FALSE;
+        globaldef004937_z = FALSE;
         globaldef004941 = self.enemy.origin + (globaldef004945 * globaldef004937);
     }
     else
