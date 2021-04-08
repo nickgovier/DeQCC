@@ -69,7 +69,7 @@ void (entity globaldef004294, float globaldef004295, float globaldef004296) Laun
     globaldef004301_z = FALSE;
     globaldef004297 = globaldef004297 + (globaldef004301 * globaldef004305);
     globaldef004297 = normalize(globaldef004297);
-    globaldef004297 = (globaldef004297 + ((globaldef004296 * v_up) * (random() - globaldef000522))) + ((globaldef004296 * v_right) * (random() - globaldef000522));
+    globaldef004297 = (globaldef004297 + ((globaldef004296 * v_up) * (random() - GLOBALDEFFIVETWOTWO))) + ((globaldef004296 * v_right) * (random() - GLOBALDEFFIVETWOTWO));
     globaldef004294.velocity = globaldef004297 * globaldef004295;
     globaldef004294.angles = VEC_ORIGIN;
     globaldef004294.angles_y = vectoyaw(globaldef004294.velocity);

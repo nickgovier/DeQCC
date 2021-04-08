@@ -416,7 +416,7 @@ void () func001018 = [16, func001011]
 // OP_DONE	0	0	0
 void () knight_runatk1 = [17, func001020]
 {
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", TRUE, ATTN_NORM);
     }

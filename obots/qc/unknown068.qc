@@ -432,7 +432,7 @@ void () func001957 = [39, func001958]
 {
     ai_run(globaldef000774);
     
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         sound(self, CHAN_VOICE, "fish/idle.wav", TRUE, ATTN_NORM);
     }

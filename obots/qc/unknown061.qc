@@ -2598,7 +2598,7 @@ void (entity globaldef004802, float globaldef004803) func001561 =
     }
     else
     {
-        if(globaldef004804 < globaldef000522)
+        if(globaldef004804 < GLOBALDEFFIVETWOTWO)
         {
             func001471();
         }

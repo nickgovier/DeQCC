@@ -1339,7 +1339,7 @@ void () func001193 =
     }
     
     sound(self, CHAN_VOICE, "soldier/death1.wav", TRUE, ATTN_NORM);
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         func001172();
     }

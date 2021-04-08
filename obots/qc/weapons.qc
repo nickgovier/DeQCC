@@ -429,7 +429,7 @@ void () func000270 =
 };
 
 
-// func000271
+// T_MissileTouch
 // function begins at statement 6802, parm_start=5711
 // OP_LOAD_ENT	28	201	5712
 // OP_EQ_E	29	5712	5713
@@ -501,7 +501,7 @@ void () func000270 =
 // OP_CALL2	500	0	0
 // OP_CALL0	5703	0	0
 // OP_DONE	0	0	0
-void () func000271 = 
+void () T_MissileTouch = 
 {
     local float globaldef002146;
     
@@ -524,13 +524,13 @@ void () func000271 =
         
         if(other.classname == "monster_shambler")
         {
-            globaldef002146 = globaldef002146 * globaldef000522;
+            globaldef002146 = globaldef002146 * GLOBALDEFFIVETWOTWO;
         }
         
         T_Damage(other, self, self.owner, globaldef002146);
     }
     
-    func000202(self, self.owner, 120, other);
+    T_RadiusDamage(self, self.owner, 120, other);
     func002453(self.owner, self.origin, TRUE, globaldef000741);
     self.origin = self.origin - (FL_CLIENT * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -630,7 +630,7 @@ void () func000272 =
     globaldef002148.velocity = func000250(self, 1000);
     globaldef002148.velocity = globaldef002148.velocity * 1000;
     globaldef002148.angles = vectoangles(globaldef002148.velocity);
-    globaldef002148.touch = func000271;
+    globaldef002148.touch = T_MissileTouch;
     globaldef002148.nextthink = time + MOVETYPE_FLY;
     globaldef002148.think = SUB_Remove;
     setmodel(globaldef002148, "progs/missile.mdl");
@@ -915,7 +915,7 @@ void () func000274 =
         globaldef002176 = self.ammo_cells;
         self.ammo_cells = FALSE;
         func000283();
-        func000202(self, self, 35 * globaldef002176, world);
+        T_RadiusDamage(self, self, 35 * globaldef002176, world);
         return;
     }
     
@@ -974,7 +974,7 @@ void () func000274 =
 // OP_DONE	0	0	0
 void () func000275 = 
 {
-    func000202(self, self.owner, 120, world);
+    T_RadiusDamage(self, self.owner, 120, world);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
     WriteCoord(MSG_BROADCAST, self.origin_x);
@@ -2044,7 +2044,7 @@ void () func000286 =
         }
         else
         {
-            if(globaldef002241 < globaldef000522)
+            if(globaldef002241 < GLOBALDEFFIVETWOTWO)
             {
                 func000419();
             }
@@ -2063,7 +2063,7 @@ void () func000286 =
             
         }
         
-        self.attack_finished = time + globaldef000522;
+        self.attack_finished = time + GLOBALDEFFIVETWOTWO;
     }
     else
     {
@@ -2071,7 +2071,7 @@ void () func000286 =
         {
             func000409();
             func000262();
-            self.attack_finished = time + globaldef000522;
+            self.attack_finished = time + GLOBALDEFFIVETWOTWO;
         }
         else
         {

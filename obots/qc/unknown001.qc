@@ -6,9 +6,9 @@ void () SUB_CalcAngleMoveDone;
 void () SUB_Null;
 void () SUB_UseTargets;
 void () SUB_Remove;
-void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage;
+void (entity targ, entity inflictor, entity attacker, float damage) T_Damage;
 float (entity globaldef001797, float globaldef001798, float globaldef001799) func000208;
-float (entity globaldef001749, entity globaldef001750) CanDamage;
+float (entity targ, entity inflictor) CanDamage;
 float globaldef000508;
 float globaldef000509;
 float globaldef000510;
@@ -23,7 +23,7 @@ float globaldef000510;
 .float loses;
 .float ratio;
 .float motd;
-float globaldef000522;
+float GLOBALDEFFIVETWOTWO = 0.5;
 float globaldef000523;
 entity globaldef000524;
 entity globaldef000525;
@@ -197,7 +197,7 @@ float globaldef000725;
 float globaldef000726;
 float globaldef000727;
 float GLOBALDEFSEVENTWOEIGHT = 500;
-float globaldef000729;
+float GLOBALDEFSEVENTWONINE = 40;
 float globaldef000730;
 float globaldef000731;
 float globaldef000732;
@@ -3943,7 +3943,7 @@ void () func000139 =
         self.enemy = self;
         traceline(self.dest, self.dest1, TRUE, self);
         self.dest1 = trace_endpos;
-        globaldef001372_x = (globaldef000729 * random()) - 20;
+        globaldef001372_x = (GLOBALDEFSEVENTWONINE * random()) - 20;
         globaldef001372_y = 360 * random();
         globaldef001372_z = FALSE;
         globaldef001382 = globaldef001372_y;
@@ -4788,7 +4788,7 @@ void () func000143 =
         
         if((globaldef001436 > TRUE) || (self.mangle != VEC_ORIGIN))
         {
-            globaldef001436 = time + globaldef000522;
+            globaldef001436 = time + GLOBALDEFFIVETWOTWO;
             
             if(self.pausetime < globaldef001436)
             {

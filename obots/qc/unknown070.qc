@@ -1160,7 +1160,7 @@ void (entity globaldef005530, float globaldef005531) func002155 =
         return;
     }
     
-    if(globaldef005532 < globaldef000522)
+    if(globaldef005532 < GLOBALDEFFIVETWOTWO)
     {
         sound(self, CHAN_VOICE, "enforcer/pain1.wav", TRUE, ATTN_NORM);
     }
@@ -1515,7 +1515,7 @@ void () func002181 =
     }
     
     sound(self, CHAN_VOICE, "enforcer/death1.wav", TRUE, ATTN_NORM);
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         func002156();
     }

@@ -1094,7 +1094,7 @@ void () func000587 =
         other.field000288 = globaldef003487.mangle_x;
         other.velocity = v_forward * globaldef000523;
         other.teleport_time = time + 0.4;
-        other.attack_finished = time + globaldef000522;
+        other.attack_finished = time + GLOBALDEFFIVETWOTWO;
     }
     
     
@@ -1237,8 +1237,8 @@ void () trigger_teleport =
     if(!(self.spawnflags & globaldef003470))
     {
         precache_sound("ambience/hum1.wav");
-        globaldef003498 = (self.mins + self.maxs) * globaldef000522;
-        ambientsound(globaldef003498, "ambience/hum1.wav", globaldef000522, ATTN_STATIC);
+        globaldef003498 = (self.mins + self.maxs) * GLOBALDEFFIVETWOTWO;
+        ambientsound(globaldef003498, "ambience/hum1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
     }
     
 };
@@ -1547,8 +1547,8 @@ void () func000598 =
                 
                 if((self.movedir_x < 0.1) && (self.movedir_y < 0.1))
                 {
-                    other.velocity_x = other.velocity_x + (globaldef000729 * func000249());
-                    other.velocity_y = other.velocity_y + (globaldef000729 * func000249());
+                    other.velocity_x = other.velocity_x + (GLOBALDEFSEVENTWONINE * func000249());
+                    other.velocity_y = other.velocity_y + (GLOBALDEFSEVENTWONINE * func000249());
                 }
                 
             }

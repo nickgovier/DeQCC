@@ -1739,7 +1739,7 @@ void (entity globaldef002651) func000345 =
         }
         else
         {
-            if(globaldef002653 < globaldef000522)
+            if(globaldef002653 < GLOBALDEFFIVETWOTWO)
             {
                 func000342(globaldef002651);
             }
@@ -1766,7 +1766,7 @@ void (entity globaldef002651) func000345 =
     }
     else
     {
-        if(!globaldef000805 && (globaldef002653 < globaldef000522))
+        if(!globaldef000805 && (globaldef002653 < GLOBALDEFFIVETWOTWO))
         {
             func000344(globaldef002651);
         }
@@ -2914,7 +2914,7 @@ void (entity globaldef002753) func000355 =
     local string globaldef002756;
     local string globaldef002757;
     local string globaldef002758;
-    globaldef002753.laststattime = time + globaldef000522;
+    globaldef002753.laststattime = time + GLOBALDEFFIVETWOTWO;
     globaldef002758 = func000354(globaldef002753);
     func000076(globaldef002753, globaldef002758, globaldef000524.netname, "          ", globaldef000525.netname, "              ");
     

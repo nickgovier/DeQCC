@@ -6,8 +6,6 @@ subs.qc
 fight.qc
 ai.qc
 combat.qc
-unknown005.qc
-unknown006.qc
 items.qc
 unknown014.qc
 weapons.qc
@@ -16,6 +14,8 @@ world.qc
 unknown017.qc
 client.qc
 unknown023.qc
+player.qc
+monsters.qc
 doors.qc
 unknown030.qc
 buttons.qc

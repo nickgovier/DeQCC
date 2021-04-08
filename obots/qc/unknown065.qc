@@ -64,9 +64,9 @@ void (float globaldef005046) func001747 =
     globaldef005047 = vectoangles(self.enemy.origin - self.origin);
     globaldef005047_y = globaldef005047_y + (globaldef005046 * MOVETYPE_TOSS);
     makevectors(globaldef005047);
-    globaldef005051 = ((self.origin + self.mins) + (self.size * globaldef000522)) + (v_forward * 20);
+    globaldef005051 = ((self.origin + self.mins) + (self.size * GLOBALDEFFIVETWOTWO)) + (v_forward * 20);
     globaldef005055 = normalize(v_forward);
-    globaldef005055_z = (FALSE - globaldef005055_z) + ((random() - globaldef000522) * 0.1);
+    globaldef005055_z = (FALSE - globaldef005055_z) + ((random() - GLOBALDEFFIVETWOTWO) * 0.1);
     func000278(globaldef005051, globaldef005055);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
@@ -174,7 +174,7 @@ void () func001749 =
         return;
     }
     
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", TRUE, ATTN_NORM);
     }
@@ -944,7 +944,7 @@ void () func001813 =
     }
     
     sound(self, CHAN_VOICE, "hknight/death1.wav", TRUE, ATTN_NORM);
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         func001792();
     }

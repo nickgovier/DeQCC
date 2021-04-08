@@ -976,7 +976,7 @@ void () func001334 = [47, func001284]
 void () func001335 = 
 {
     sound(self, CHAN_VOICE, "dog/dpain1.wav", TRUE, ATTN_NORM);
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         func001313();
     }
@@ -1208,7 +1208,7 @@ void () func001354 =
     
     sound(self, CHAN_VOICE, "dog/ddeath.wav", TRUE, ATTN_NORM);
     self.solid = SOLID_NOT;
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         func001336();
     }

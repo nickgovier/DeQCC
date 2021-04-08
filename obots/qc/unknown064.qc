@@ -915,7 +915,7 @@ void () func001744 = [60, func001745]
 // OP_DONE	0	0	0
 void () func001745 = [60, func001708]
 {
-    func000202(self, self, 120, world);
+    T_RadiusDamage(self, self, 120, world);
     sound(self, CHAN_VOICE, "blob/death1.wav", TRUE, ATTN_NORM);
     self.origin = self.origin - (FL_CLIENT * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);

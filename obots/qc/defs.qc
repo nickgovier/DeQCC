@@ -274,7 +274,7 @@ float skill;
 .void() th_run;
 .void() th_missile;
 .void() th_melee;
-.void(entity globaldef001762, float globaldef001770) th_pain;
+.void(entity attacker, float take) th_pain;
 .void() th_die;
 .entity oldenemy;
 .float speed;

@@ -803,7 +803,7 @@ void (entity globaldef005739) func002273 =
         return;
     }
     
-    if((fabs(globaldef005739.origin_z - globaldef000812.origin_z)) <= globaldef000522)
+    if((fabs(globaldef005739.origin_z - globaldef000812.origin_z)) <= GLOBALDEFFIVETWOTWO)
     {
         globaldef005739.field000252 = globaldef005739.field000252 | globaldef000683;
         globaldef005739.groundentity = globaldef000812.groundentity;
@@ -14051,7 +14051,7 @@ float (entity globaldef006514, entity globaldef006515) func002295 =
         return FALSE;
     }
     
-    globaldef006520 = (globaldef006515.absmin + globaldef006515.absmax) * globaldef000522;
+    globaldef006520 = (globaldef006515.absmin + globaldef006515.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef006520_z = globaldef006515.absmin_z + TRUE;
     globaldef006516 = globaldef006520;
     globaldef006516_z = globaldef006514.origin_z;
@@ -15036,7 +15036,7 @@ float (entity globaldef006596) func002330 =
         return 70;
     }
     
-    return globaldef000729;
+    return GLOBALDEFSEVENTWONINE;
 };
 
 
@@ -15092,7 +15092,7 @@ float (entity globaldef006599) func002331 =
         return FALSE;
     }
     
-    globaldef006600 = (180 - (globaldef006599.health * globaldef000522)) - (globaldef006599.armorvalue * globaldef006599.armortype);
+    globaldef006600 = (180 - (globaldef006599.health * GLOBALDEFFIVETWOTWO)) - (globaldef006599.armorvalue * globaldef006599.armortype);
     
     if(globaldef006599.items & IT_QUAD)
     {
@@ -16147,7 +16147,7 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     {
         globaldef006655 = normalize(globaldef006627.velocity);
         
-        if((globaldef006644 * globaldef006655) < globaldef000522)
+        if((globaldef006644 * globaldef006655) < GLOBALDEFFIVETWOTWO)
         {
             return;
         }
@@ -16221,7 +16221,7 @@ void (entity globaldef006660, entity globaldef006661) func002344 =
     local entity globaldef006662;
     local vector globaldef006663;
     local vector globaldef006667;
-    globaldef006663 = ((globaldef006661.absmax + globaldef006661.absmin) * globaldef000522) - globaldef006660.origin;
+    globaldef006663 = ((globaldef006661.absmax + globaldef006661.absmin) * GLOBALDEFFIVETWOTWO) - globaldef006660.origin;
     normalize(globaldef006663);
     globaldef006667 = globaldef006660.velocity;
     normalize(globaldef006667);
@@ -18500,7 +18500,7 @@ void (entity globaldef006840) func002375 =
 float (entity globaldef006841) func002376 = 
 {
     
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         return FALSE;
     }
@@ -19845,7 +19845,7 @@ void (entity globaldef006971) func002390 =
         }
         else
         {
-            if(globaldef006973 < globaldef000522)
+            if(globaldef006973 < GLOBALDEFFIVETWOTWO)
             {
                 globaldef006971.think = func002536;
             }
@@ -19864,7 +19864,7 @@ void (entity globaldef006971) func002390 =
             
         }
         
-        globaldef006971.attack_finished = (time + globaldef000522) + globaldef006972;
+        globaldef006971.attack_finished = (time + GLOBALDEFFIVETWOTWO) + globaldef006972;
         sound(globaldef006971, CHAN_WEAPON, "weapons/ax1.wav", TRUE, ATTN_NORM);
     }
     else
@@ -19872,7 +19872,7 @@ void (entity globaldef006971) func002390 =
         if(globaldef006971.weapon == IT_SHOTGUN)
         {
             globaldef006971.think = func002526;
-            globaldef006971.attack_finished = (time + globaldef000522) + globaldef006972;
+            globaldef006971.attack_finished = (time + GLOBALDEFFIVETWOTWO) + globaldef006972;
             func000262();
         }
         else
@@ -20065,7 +20065,7 @@ void (entity globaldef006975) func002391 =
     
     globaldef006988 = globaldef006975.goalentity;
     globaldef006984 = globaldef006975.origin + '0 0 16';
-    globaldef006976 = (globaldef006988.goalentity.absmin + globaldef006988.goalentity.absmax) * globaldef000522;
+    globaldef006976 = (globaldef006988.goalentity.absmin + globaldef006988.goalentity.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef006976 = normalize(globaldef006976 - globaldef006984);
     globaldef006980 = vectoangles(globaldef006976);
     
@@ -20263,7 +20263,7 @@ float (float globaldef007002, float globaldef007003, float globaldef007004) func
     }
     
     
-    if(fabs(globaldef007005) > (globaldef007004 * globaldef000522))
+    if(fabs(globaldef007005) > (globaldef007004 * GLOBALDEFFIVETWOTWO))
     {
         return FALSE;
     }
@@ -20505,7 +20505,7 @@ float (entity globaldef007028, entity globaldef007029) func002398 =
     globaldef007030 = globaldef007028.origin + globaldef007028.view_ofs;
     globaldef007034 = globaldef007029.origin + globaldef007029.view_ofs;
     globaldef007039 = vlen(globaldef007030 - globaldef007034);
-    globaldef007038 = (180 - (globaldef007028.health * globaldef000522)) - (globaldef007028.armorvalue * globaldef007028.armortype);
+    globaldef007038 = (180 - (globaldef007028.health * GLOBALDEFFIVETWOTWO)) - (globaldef007028.armorvalue * globaldef007028.armortype);
     
     if(globaldef007028.items & IT_QUAD)
     {
@@ -21048,7 +21048,7 @@ void (entity globaldef007040, float globaldef007041) func002399 =
             
             if(globaldef007040.field000265 >= TRUE)
             {
-                globaldef007046 = (globaldef007046 - globaldef007040.field000265) + globaldef000522;
+                globaldef007046 = (globaldef007046 - globaldef007040.field000265) + GLOBALDEFFIVETWOTWO;
             }
             
             
@@ -21135,10 +21135,10 @@ void (entity globaldef007040, float globaldef007041) func002399 =
         }
         
         
-        if(globaldef007046 < globaldef000522)
+        if(globaldef007046 < GLOBALDEFFIVETWOTWO)
         {
             
-            if(func002444(globaldef007040, globaldef007040.ideal_yaw + 180, globaldef007041 * globaldef000522))
+            if(func002444(globaldef007040, globaldef007040.ideal_yaw + 180, globaldef007041 * GLOBALDEFFIVETWOTWO))
             {
                 return;
             }
@@ -21348,7 +21348,7 @@ void () func002401 =
         
     }
     
-    globaldef007065 = globaldef007065 * globaldef000522;
+    globaldef007065 = globaldef007065 * GLOBALDEFFIVETWOTWO;
     
     if(globaldef007067 == globaldef007065)
     {
@@ -21359,18 +21359,18 @@ void () func002401 =
     if(globaldef007066 > FALSE)
     {
         
-        if(globaldef007066 > (self.field000289 * globaldef000522))
+        if(globaldef007066 > (self.field000289 * GLOBALDEFFIVETWOTWO))
         {
-            globaldef007066 = self.field000289 * globaldef000522;
+            globaldef007066 = self.field000289 * GLOBALDEFFIVETWOTWO;
         }
         
     }
     else
     {
         
-        if(globaldef007066 < (FALSE - (self.field000289 * globaldef000522)))
+        if(globaldef007066 < (FALSE - (self.field000289 * GLOBALDEFFIVETWOTWO)))
         {
-            globaldef007066 = FALSE - (self.field000289 * globaldef000522);
+            globaldef007066 = FALSE - (self.field000289 * GLOBALDEFFIVETWOTWO);
         }
         
     }
@@ -22028,11 +22028,11 @@ float () func002416 =
     local float globaldef007101;
     do
     {
-        globaldef007101 = floor((random() * (globaldef000719 - TRUE)) + globaldef000522);
+        globaldef007101 = floor((random() * (globaldef000719 - TRUE)) + GLOBALDEFFIVETWOTWO);
         
         if(globaldef007101 == FALSE)
         {
-            globaldef007101 = floor((random() * (globaldef000719 - TRUE)) + globaldef000522);
+            globaldef007101 = floor((random() * (globaldef000719 - TRUE)) + GLOBALDEFFIVETWOTWO);
         }
         
     } while (func002412(globaldef007101));
@@ -23571,11 +23571,11 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
         globaldef007188_z = globaldef007188_z + globaldef007143.maxs_z;
         globaldef007192 = globaldef007143.origin;
         globaldef007192_z = globaldef007192_z + globaldef007143.mins_z;
-        traceline(globaldef007188, globaldef007188 + (v_forward * globaldef000729), TRUE, globaldef007143);
+        traceline(globaldef007188, globaldef007188 + (v_forward * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
         
         if(trace_fraction != TRUE)
         {
-            globaldef007196 = globaldef007192 + (v_forward * ((trace_fraction * globaldef000729) + MOVETYPE_BOUNCE));
+            globaldef007196 = globaldef007192 + (v_forward * ((trace_fraction * GLOBALDEFSEVENTWONINE) + MOVETYPE_BOUNCE));
             traceline(globaldef007192, globaldef007196, TRUE, globaldef007143);
             
             if(trace_fraction == TRUE)
@@ -23584,12 +23584,12 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
                 globaldef007200 = trace_fraction * 60;
                 traceline(globaldef007196, globaldef007196 - (v_up * 60), TRUE, globaldef007143);
                 globaldef007200 = globaldef007200 + (trace_fraction * 60);
-                traceline(globaldef007196, globaldef007196 + (v_right * globaldef000729), TRUE, globaldef007143);
-                globaldef007201 = trace_fraction * globaldef000729;
-                traceline(globaldef007196, globaldef007196 - (v_right * globaldef000729), TRUE, globaldef007143);
-                globaldef007202 = trace_fraction * globaldef000729;
+                traceline(globaldef007196, globaldef007196 + (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                globaldef007201 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                traceline(globaldef007196, globaldef007196 - (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                globaldef007202 = trace_fraction * GLOBALDEFSEVENTWONINE;
                 
-                if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > globaldef000729))
+                if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > GLOBALDEFSEVENTWONINE))
                 {
                     globaldef007143.velocity = (normalize(globaldef007156) * globaldef007148) + '0 0 -200';
                     if(globaldef007201 < 20)
@@ -23622,11 +23622,11 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
         
         if(globaldef007143.waterlevel >= MOVETYPE_WALK)
         {
-            traceline(globaldef007192, globaldef007192 + (v_forward * globaldef000729), TRUE, globaldef007143);
+            traceline(globaldef007192, globaldef007192 + (v_forward * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
             
             if(trace_fraction != TRUE)
             {
-                globaldef007196 = globaldef007188 + (v_forward * ((trace_fraction * globaldef000729) + MOVETYPE_BOUNCE));
+                globaldef007196 = globaldef007188 + (v_forward * ((trace_fraction * GLOBALDEFSEVENTWONINE) + MOVETYPE_BOUNCE));
                 traceline(globaldef007188, globaldef007196, TRUE, globaldef007143);
                 
                 if(trace_fraction == TRUE)
@@ -23635,12 +23635,12 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
                     globaldef007200 = trace_fraction * 60;
                     traceline(globaldef007196, globaldef007196 - (v_up * 60), TRUE, globaldef007143);
                     globaldef007200 = globaldef007200 + (trace_fraction * 60);
-                    traceline(globaldef007196, globaldef007196 + (v_right * globaldef000729), TRUE, globaldef007143);
-                    globaldef007201 = trace_fraction * globaldef000729;
-                    traceline(globaldef007196, globaldef007196 - (v_right * globaldef000729), TRUE, globaldef007143);
-                    globaldef007202 = trace_fraction * globaldef000729;
+                    traceline(globaldef007196, globaldef007196 + (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                    globaldef007201 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                    traceline(globaldef007196, globaldef007196 - (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                    globaldef007202 = trace_fraction * GLOBALDEFSEVENTWONINE;
                     
-                    if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > globaldef000729))
+                    if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > GLOBALDEFSEVENTWONINE))
                     {
                         globaldef007143.velocity = (normalize(globaldef007156) * globaldef007148) + '0 0 200';
                         if(globaldef007201 < 20)
@@ -23858,7 +23858,7 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
         globaldef007212 = globaldef007228 - globaldef007211.origin;
     }
     
-    globaldef007237 = globaldef000729;
+    globaldef007237 = GLOBALDEFSEVENTWONINE;
     globaldef007238 = 17.9;
     globaldef007239 = FALSE;
     globaldef007216 = globaldef007211.origin;
@@ -24723,11 +24723,11 @@ float (entity globaldef007351, float globaldef007352) func002434 =
     local vector globaldef007365;
     local vector globaldef007369;
     globaldef007359 = globaldef000783;
-    globaldef007365 = globaldef007351.origin + ((globaldef007351.mins + globaldef007351.maxs) * globaldef000522);
+    globaldef007365 = globaldef007351.origin + ((globaldef007351.mins + globaldef007351.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef007365_z = globaldef007351.absmin_z;
-    globaldef007369 = globaldef007351.goalentity.origin + ((globaldef007351.goalentity.mins + globaldef007351.goalentity.maxs) * globaldef000522);
+    globaldef007369 = globaldef007351.goalentity.origin + ((globaldef007351.goalentity.mins + globaldef007351.goalentity.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef007369_z = globaldef007351.goalentity.absmin_z;
-    globaldef007360 = ((globaldef000522 * globaldef000782) * (globaldef007352 / globaldef000782)) * (globaldef007352 / globaldef000782);
+    globaldef007360 = ((GLOBALDEFFIVETWOTWO * globaldef000782) * (globaldef007352 / globaldef000782)) * (globaldef007352 / globaldef000782);
     globaldef007353 = globaldef007365_z + globaldef007360;
     globaldef007354 = globaldef007353 - globaldef007369_z;
     
@@ -25147,7 +25147,7 @@ float (entity globaldef007412) func002438 =
     }
     
     
-    if(globaldef007412.health < globaldef000729)
+    if(globaldef007412.health < GLOBALDEFSEVENTWONINE)
     {
         return globaldef000716;
     }
@@ -25168,8 +25168,8 @@ float (entity globaldef007412) func002438 =
     globaldef007421 = globaldef007417 + (v_forward * GLOBALDEFSEVENTWOEIGHT);
     traceline(globaldef007417, globaldef007421, FALSE, globaldef007412);
     globaldef007433 = globaldef007412.origin;
-    globaldef007413 = globaldef007433 + ((globaldef007412.mins + globaldef007412.maxs) * globaldef000522);
-    globaldef007449 = globaldef000522 * (vlen(trace_endpos - globaldef007413));
+    globaldef007413 = globaldef007433 + ((globaldef007412.mins + globaldef007412.maxs) * GLOBALDEFFIVETWOTWO);
+    globaldef007449 = GLOBALDEFFIVETWOTWO * (vlen(trace_endpos - globaldef007413));
     
     if(globaldef007449 < FALSE)
     {
@@ -25177,7 +25177,7 @@ float (entity globaldef007412) func002438 =
     }
     
     globaldef007450 = 120 - globaldef007449;
-    globaldef007450 = globaldef007450 * globaldef000522;
+    globaldef007450 = globaldef007450 * GLOBALDEFFIVETWOTWO;
     globaldef007425 = ((normalize(globaldef007433 - trace_endpos)) * globaldef007450) * FL_CLIENT;
     globaldef007445_z = globaldef007425_z + globaldef000717;
     globaldef007452 = func002434(globaldef007412, globaldef007445_z);
@@ -25205,7 +25205,7 @@ float (entity globaldef007412) func002438 =
         globaldef007445_z = globaldef000717;
         func002435(globaldef007412, VEC_ORIGIN);
         globaldef007412.field000279 = globaldef007445;
-        globaldef007412.field000278 = time + globaldef000522;
+        globaldef007412.field000278 = time + GLOBALDEFFIVETWOTWO;
         return globaldef000711;
     }
     
@@ -26390,7 +26390,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
                         
                         if(globaldef007502.origin_y > (globaldef007510.origin_y + globaldef007510.mins_y))
                         {
-                            globaldef007531 = (globaldef007510.absmax + globaldef007510.absmin) * globaldef000522;
+                            globaldef007531 = (globaldef007510.absmax + globaldef007510.absmin) * GLOBALDEFFIVETWOTWO;
                             
                             if(globaldef007531_z > globaldef007502.origin_z)
                             {
@@ -26659,7 +26659,7 @@ float (entity globaldef007567, vector globaldef007568, float globaldef007572, fl
     
     if((globaldef007578 == "door") || (globaldef007578 == "train"))
     {
-        globaldef007574 = (globaldef007567.goalentity.goalentity.absmin + globaldef007567.goalentity.goalentity.absmax) * globaldef000522;
+        globaldef007574 = (globaldef007567.goalentity.goalentity.absmin + globaldef007567.goalentity.goalentity.absmax) * GLOBALDEFFIVETWOTWO;
         globaldef007574_z = globaldef007567.goalentity.goalentity.absmax_z + TRUE;
         globaldef007574 = globaldef007574 + (globaldef007567.goalentity.goalentity.velocity * 0.2);
         setorigin(globaldef007567.goalentity, globaldef007574);
@@ -27692,7 +27692,7 @@ float (entity globaldef007667, entity globaldef007668) func002456 =
     local vector globaldef007669;
     local vector globaldef007673;
     globaldef007669 = globaldef007667.origin + globaldef007667.view_ofs;
-    globaldef007673 = (globaldef007668.absmin + globaldef007668.absmax) * globaldef000522;
+    globaldef007673 = (globaldef007668.absmin + globaldef007668.absmax) * GLOBALDEFFIVETWOTWO;
     traceline(globaldef007669, globaldef007673, TRUE, globaldef007667);
     
     if(trace_fraction == TRUE)
@@ -28181,9 +28181,9 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     local float globaldef007722;
     local float globaldef007723;
     local float globaldef007724;
-    globaldef007708 = (globaldef007703.absmin + globaldef007703.absmax) * globaldef000522;
+    globaldef007708 = (globaldef007703.absmin + globaldef007703.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007708_z = globaldef007703.absmin_z + globaldef000719;
-    globaldef007704 = (globaldef007702.absmin + globaldef007702.absmax) * globaldef000522;
+    globaldef007704 = (globaldef007702.absmin + globaldef007702.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007704_z = globaldef007702.absmin_z + globaldef000719;
     
     if(globaldef007702.classname == "waypoint")
@@ -28440,7 +28440,7 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
     }
     
     
-    if(globaldef007728.health < globaldef000729)
+    if(globaldef007728.health < GLOBALDEFSEVENTWONINE)
     {
         return FALSE;
     }
@@ -28451,9 +28451,9 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
         return FALSE;
     }
     
-    globaldef007731 = (globaldef007729.absmin + globaldef007729.absmax) * globaldef000522;
+    globaldef007731 = (globaldef007729.absmin + globaldef007729.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007731_z = globaldef007729.absmin_z + globaldef000719;
-    globaldef007735 = (globaldef007730.absmin + globaldef007730.absmax) * globaldef000522;
+    globaldef007735 = (globaldef007730.absmin + globaldef007730.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007735_z = globaldef007730.absmin_z + globaldef000719;
     
     if((globaldef007731_z + (FL_SWIM * globaldef000776)) > globaldef007735_z)
@@ -28496,7 +28496,7 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
     
     globaldef007743 = vectoangles(globaldef007735 - globaldef007731);
     makevectors(globaldef007743);
-    globaldef007739 = (globaldef007731 + globaldef007735) * globaldef000522;
+    globaldef007739 = (globaldef007731 + globaldef007735) * GLOBALDEFFIVETWOTWO;
     globaldef007739_z = globaldef007735_z + globaldef000776;
     traceline(globaldef007731 + (v_right * FL_INWATER), globaldef007739 + (v_right * FL_INWATER), TRUE, globaldef007728);
     
@@ -28638,9 +28638,9 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
     local float globaldef007803;
     local float globaldef007804;
     local float globaldef007805;
-    globaldef007767 = (globaldef007760.absmin + globaldef007760.absmax) * globaldef000522;
+    globaldef007767 = (globaldef007760.absmin + globaldef007760.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007767_z = globaldef007760.absmin_z + globaldef000719;
-    globaldef007763 = (globaldef007761.absmin + globaldef007761.absmax) * globaldef000522;
+    globaldef007763 = (globaldef007761.absmin + globaldef007761.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef007763_z = globaldef007761.absmin_z + globaldef000719;
     globaldef007805 = globaldef000778 * (globaldef000783 * 0.65);
     globaldef007804 = (vlen(globaldef007763 - globaldef007767)) / globaldef007805;
@@ -28677,7 +28677,7 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
             globaldef007801 = TRUE;
             do
             {
-                globaldef007801 = globaldef007801 * globaldef000522;
+                globaldef007801 = globaldef007801 * GLOBALDEFFIVETWOTWO;
                 globaldef007787 = globaldef007795 + (globaldef007801 * globaldef007775);
                 globaldef007787_z = func002457(globaldef007787) + globaldef000719;
                 
@@ -28906,7 +28906,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
         globaldef007838 = 0.6 * globaldef000776;
     }
     
-    globaldef007824 = globaldef007809.origin + ((globaldef007809.mins + globaldef007809.maxs) * globaldef000522);
+    globaldef007824 = globaldef007809.origin + ((globaldef007809.mins + globaldef007809.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef007824_z = (globaldef007809.origin_z + globaldef007809.mins_z) + globaldef000719;
     
     if(globaldef007809.classname == "waypoint")
@@ -28954,7 +28954,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
         
     }
     
-    globaldef007820 = globaldef007810.origin + ((globaldef007810.mins + globaldef007810.maxs) * globaldef000522);
+    globaldef007820 = globaldef007810.origin + ((globaldef007810.mins + globaldef007810.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef007820_z = (globaldef007810.origin_z + globaldef007810.mins_z) + globaldef000719;
     globaldef007812 = globaldef007824;
     globaldef007816 = globaldef007820;
@@ -29413,7 +29413,7 @@ void (entity globaldef007860, entity globaldef007861) func002472 =
     if(globaldef007866.goalentity)
     {
         globaldef007860.search_time = time + MOVETYPE_WALK;
-        globaldef007862 = (globaldef007866.goalentity.absmax + globaldef007866.goalentity.absmin) * globaldef000522;
+        globaldef007862 = (globaldef007866.goalentity.absmax + globaldef007866.goalentity.absmin) * GLOBALDEFFIVETWOTWO;
         globaldef007862_z = globaldef007866.goalentity.absmin_z + TRUE;
         setorigin(globaldef007866, globaldef007862);
         globaldef007866.goalentity.field000339 = globaldef007860;
@@ -29582,7 +29582,7 @@ vector (entity globaldef007869) func002474 =
         if(globaldef007872 < 0.8)
         {
             globaldef007871 = random();
-            if(globaldef007871 < globaldef000522)
+            if(globaldef007871 < GLOBALDEFFIVETWOTWO)
             {
                 globaldef007873 = CONTENT_EMPTY;
             }
@@ -29598,7 +29598,7 @@ vector (entity globaldef007869) func002474 =
         if(globaldef007872 > 0.2)
         {
             globaldef007871 = random();
-            if(globaldef007871 < globaldef000522)
+            if(globaldef007871 < GLOBALDEFFIVETWOTWO)
             {
                 globaldef007873 = CONTENT_EMPTY;
             }
@@ -29777,7 +29777,7 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
         
         if(globaldef007894 <= TRUE)
         {
-            globaldef007895 = (globaldef007896_z + globaldef007900_z) * globaldef000522;
+            globaldef007895 = (globaldef007896_z + globaldef007900_z) * GLOBALDEFFIVETWOTWO;
             
             if(globaldef007895 == FALSE)
             {
@@ -29788,7 +29788,7 @@ float (entity globaldef007889, float globaldef007890, float globaldef007891) fun
         }
         
         globaldef007904 = globaldef007896;
-        globaldef007894 = (globaldef007896_z + globaldef007900_z) * globaldef000522;
+        globaldef007894 = (globaldef007896_z + globaldef007900_z) * GLOBALDEFFIVETWOTWO;
         globaldef007896_z = globaldef007894;
         globaldef007893 = pointcontents(globaldef007896);
         
@@ -30201,7 +30201,7 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
                 
                 if(globaldef007939 < globaldef007940)
                 {
-                    traceline(globaldef007930, globaldef007930 + (globaldef000729 * v_forward), TRUE, globaldef007920);
+                    traceline(globaldef007930, globaldef007930 + (GLOBALDEFSEVENTWONINE * v_forward), TRUE, globaldef007920);
                     globaldef007930 = globaldef007930 + ((39 * trace_fraction) * v_forward);
                     traceline(globaldef007930, globaldef007930 + '0 0 16', TRUE, globaldef007920);
                     globaldef007930_z = globaldef007930_z + (globaldef000748 * trace_fraction);
@@ -30318,7 +30318,7 @@ float (entity globaldef007942, float globaldef007943) func002478 =
                 
                 if(globaldef007944.field000225(globaldef007942, globaldef007944) > FALSE)
                 {
-                    globaldef007947 = (globaldef007944.absmin + globaldef007944.absmax) * globaldef000522;
+                    globaldef007947 = (globaldef007944.absmin + globaldef007944.absmax) * GLOBALDEFFIVETWOTWO;
                     globaldef007947_z = globaldef007944.absmax_z + TRUE;
                     globaldef007957 = pointcontents(globaldef007947);
                     
@@ -30862,7 +30862,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
                 
                 if(globaldef007989 > FALSE)
                 {
-                    globaldef007981 = (globaldef007994.absmin + globaldef007994.absmax) * globaldef000522;
+                    globaldef007981 = (globaldef007994.absmin + globaldef007994.absmax) * GLOBALDEFFIVETWOTWO;
                     globaldef007981_z = globaldef007994.absmin_z + TRUE;
                     
                     if((globaldef007994.classname == "plat") || (globaldef007994.classname == "train"))
@@ -33521,11 +33521,11 @@ void (entity globaldef008119) func002508 =
             globaldef008121 = func002461(globaldef008119);
             if(globaldef008121)
             {
-                globaldef008122 = (globaldef008121.absmin + globaldef008121.absmax) * globaldef000522;
+                globaldef008122 = (globaldef008121.absmin + globaldef008121.absmax) * GLOBALDEFFIVETWOTWO;
                 globaldef008122_z = globaldef008121.absmax_z + TRUE;
                 globaldef008119.goalentity.goalentity = globaldef008121;
                 setorigin(globaldef008119.goalentity, globaldef008122);
-                globaldef008119.search_time = time + globaldef000522;
+                globaldef008119.search_time = time + GLOBALDEFFIVETWOTWO;
             }
             else
             {
@@ -33538,7 +33538,7 @@ void (entity globaldef008119) func002508 =
                     globaldef008122 = trace_endpos - (globaldef008126 * MOVETYPE_BOUNCE);
                     globaldef008119.goalentity.goalentity = globaldef008119.goalentity;
                     setorigin(globaldef008119.goalentity, globaldef008122);
-                    globaldef008119.search_time = time + globaldef000522;
+                    globaldef008119.search_time = time + GLOBALDEFFIVETWOTWO;
                     globaldef008119.field000270 = globaldef008119.field000270 + TRUE;
                 }
                 else
@@ -35679,7 +35679,7 @@ void () func002558 =
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == MOVETYPE_WALK))
     {
         func000456(TRUE);
-        if(random() > globaldef000522)
+        if(random() > GLOBALDEFFIVETWOTWO)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", TRUE, ATTN_NORM);
         }
@@ -35694,7 +35694,7 @@ void () func002558 =
     
     if(self.watertype == CONTENT_SLIME)
     {
-        if(random() > globaldef000522)
+        if(random() > GLOBALDEFFIVETWOTWO)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", TRUE, ATTN_NORM);
         }
@@ -35709,7 +35709,7 @@ void () func002558 =
     
     if(self.watertype == CONTENT_LAVA)
     {
-        if(random() > globaldef000522)
+        if(random() > GLOBALDEFFIVETWOTWO)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", TRUE, ATTN_NORM);
         }
@@ -35728,7 +35728,7 @@ void () func002558 =
         return;
     }
     
-    self.pain_finished = time + globaldef000522;
+    self.pain_finished = time + GLOBALDEFFIVETWOTWO;
     
     if(self.axhitme == TRUE)
     {
@@ -36062,7 +36062,7 @@ void () func002573 =
     }
     else
     {
-        self.nextthink = (time + globaldef000522) + (random() * FL_SWIM);
+        self.nextthink = (time + GLOBALDEFFIVETWOTWO) + (random() * FL_SWIM);
         self.think = func002421;
     }
     
@@ -44911,11 +44911,11 @@ void () func002638 =
         func002668('603.4 1322 2', 42, MOVETYPE_WALK, "");
         func002669(42, 39, 43, FALSE, FALSE);
         func002668('48 1152 2', 41, MOVETYPE_FLY, "weapon_supershotgun");
-        func002669(41, globaldef000729, 63, FALSE, FALSE);
-        func002668('264.2 1053.6 2', globaldef000729, MOVETYPE_WALK, "");
-        func002669(globaldef000729, 39, 41, FALSE, FALSE);
+        func002669(41, GLOBALDEFSEVENTWONINE, 63, FALSE, FALSE);
+        func002668('264.2 1053.6 2', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
+        func002669(GLOBALDEFSEVENTWONINE, 39, 41, FALSE, FALSE);
         func002668('442.9 1222.5 2', 39, MOVETYPE_WALK, "");
-        func002669(39, 38, globaldef000729, 42, 62);
+        func002669(39, 38, GLOBALDEFSEVENTWONINE, 42, 62);
         func002668('459.7 1468.1 2', 38, MOVETYPE_WALK, "");
         func002669(38, SVC_SELLSCREEN, 39, FALSE, FALSE);
         func002668('-56.3 1421.6 2', 37, MOVETYPE_WALK, "");
@@ -45091,10 +45091,10 @@ void () func002638 =
             func002669(38, 37, 39, FALSE, FALSE);
             func002668('1363.9 -952 10', 39, MOVETYPE_FLY, "item_armor2");
             func002669(39, 38, FALSE, FALSE, FALSE);
-            func002668('1312 -1056 2', globaldef000729, MOVETYPE_STEP, "");
-            func002669(globaldef000729, 38, FALSE, FALSE, FALSE);
+            func002668('1312 -1056 2', GLOBALDEFSEVENTWONINE, MOVETYPE_STEP, "");
+            func002669(GLOBALDEFSEVENTWONINE, 38, FALSE, FALSE, FALSE);
             func002668('1768.6 -1340.1 10', 41, MOVETYPE_WALK, "");
-            func002669(41, globaldef000729, 42, FALSE, FALSE);
+            func002669(41, GLOBALDEFSEVENTWONINE, 42, FALSE, FALSE);
             func002668('1831.1 -1344.4 34', 42, MOVETYPE_WALK, "");
             func002669(42, SVC_KILLEDMONSTER, 41, 43, FALSE);
             func002668('1870.5 -1347 50', 43, MOVETYPE_WALK, "");
@@ -45354,10 +45354,10 @@ void () func002638 =
                 func002669(38, TRUE, FALSE, FALSE, FALSE);
                 func002668('1180 -904 -29.8', 39, MOVETYPE_STEP, "");
                 func002669(39, 38, FALSE, FALSE, FALSE);
-                func002668('486.7 -207.8 34', globaldef000729, MOVETYPE_WALK, "");
-                func002669(globaldef000729, FL_INWATER, 230, FALSE, FALSE);
+                func002668('486.7 -207.8 34', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
+                func002669(GLOBALDEFSEVENTWONINE, FL_INWATER, 230, FALSE, FALSE);
                 func002668('246.8 -263.7 34', 41, MOVETYPE_WALK, "");
-                func002669(41, globaldef000729, 44, 45, 42);
+                func002669(41, GLOBALDEFSEVENTWONINE, 44, 45, 42);
                 func002670(41, 183, FALSE, FALSE, FALSE);
                 func002668('181.8 -25.3 34', 42, MOVETYPE_WALK, "");
                 func002669(42, 41, 43, 44, 229);
@@ -45740,7 +45740,7 @@ void () func002638 =
                 func002668('419.6 -195 34', 230, MOVETYPE_WALK, "");
                 func002669(230, 41, 45, FALSE, FALSE);
                 func002668('703.4 -207.8 34', 231, MOVETYPE_WALK, "");
-                func002669(231, globaldef000729, FALSE, FALSE, FALSE);
+                func002669(231, GLOBALDEFSEVENTWONINE, FALSE, FALSE, FALSE);
                 func002668('1103.6 636.7 58', 232, MOVETYPE_WALK, "");
                 func002669(232, SVC_TEMPENTITY, FALSE, FALSE, FALSE);
                 func002668('1032.6 754.5 -317.8', 233, MOVETYPE_WALK, "");
@@ -45834,13 +45834,13 @@ void () func002638 =
                     func002668('317.5 -668.2 -125.9', 38, MOVETYPE_WALK, "");
                     func002669(38, 36, 39, FL_GODMODE, 76);
                     func002668('428.2 -886 -125.9', 39, MOVETYPE_WALK, "");
-                    func002669(39, 38, globaldef000729, 76, FALSE);
-                    func002668('328 -1032 -125.9', globaldef000729, MOVETYPE_FLY, "weapon_supershotgun");
-                    func002669(globaldef000729, 39, 41, 51, 42);
+                    func002669(39, 38, GLOBALDEFSEVENTWONINE, 76, FALSE);
+                    func002668('328 -1032 -125.9', GLOBALDEFSEVENTWONINE, MOVETYPE_FLY, "weapon_supershotgun");
+                    func002669(GLOBALDEFSEVENTWONINE, 39, 41, 51, 42);
                     func002668('169 -845 -125.9', 41, MOVETYPE_WALK, "");
-                    func002669(41, globaldef000729, 51, 39, FALSE);
+                    func002669(41, GLOBALDEFSEVENTWONINE, 51, 39, FALSE);
                     func002668('99 -1124.5 -125.9', 42, MOVETYPE_WALK, "");
-                    func002669(42, globaldef000729, 43, 51, 45);
+                    func002669(42, GLOBALDEFSEVENTWONINE, 43, 51, 45);
                     func002670(42, 44, FALSE, FALSE, FALSE);
                     func002668('170 -1201.4 -109.9', 43, MOVETYPE_WALK, "");
                     func002669(43, 42, 44, 45, FALSE);
@@ -46020,10 +46020,10 @@ void () func002638 =
                         func002669(42, 41, 43, 44, FALSE);
                         func002668('-108.8 -511.8 18', 41, MOVETYPE_WALK, "");
                         func002669(41, 36, 42, FALSE, FALSE);
-                        func002668('138.3 -756.5 82', globaldef000729, MOVETYPE_WALK, "");
-                        func002669(globaldef000729, 39, 35, FALSE, FALSE);
+                        func002668('138.3 -756.5 82', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEFSEVENTWONINE, 39, 35, FALSE, FALSE);
                         func002668('95.3 -756.2 66', 39, MOVETYPE_WALK, "");
-                        func002669(39, 38, globaldef000729, 35, FALSE);
+                        func002669(39, 38, GLOBALDEFSEVENTWONINE, 35, FALSE);
                         func002668('43.3 -755.4 50', 38, MOVETYPE_WALK, "");
                         func002669(38, 37, 39, 35, FALSE);
                         func002668('-6.5 -753.9 34', 37, MOVETYPE_WALK, "");
@@ -46031,7 +46031,7 @@ void () func002638 =
                         func002668('-104.1 -753.9 18', 36, MOVETYPE_WALK, "");
                         func002669(36, 35, 37, 41, FALSE);
                         func002668('156.6 -794.6 98', 35, MOVETYPE_WALK, "");
-                        func002669(35, SVC_SELLSCREEN, globaldef000729, 39, 88);
+                        func002669(35, SVC_SELLSCREEN, GLOBALDEFSEVENTWONINE, 39, 88);
                         func002668('403.6 -625.2 114', 34, MOVETYPE_WALK, "");
                         func002669(34, SVC_SELLSCREEN, SVC_TEMPENTITY, FALSE, FALSE);
                         func002668('405.9 -800.2 98', SVC_SELLSCREEN, MOVETYPE_WALK, "");
@@ -46193,12 +46193,12 @@ void () func002638 =
                             func002669(38, 37, 65, 71, 66);
                             func002670(38, 89, 39, FALSE, FALSE);
                             func002668('1047.9 -920.7 -45.9', 39, MOVETYPE_WALK, "");
-                            func002669(39, 38, globaldef000729, 91, 41);
+                            func002669(39, 38, GLOBALDEFSEVENTWONINE, 91, 41);
                             func002670(39, 42, FALSE, FALSE, FALSE);
-                            func002668('1033 -835.7 -29.8', globaldef000729, MOVETYPE_WALK, "");
-                            func002669(globaldef000729, 39, 41, FALSE, FALSE);
+                            func002668('1033 -835.7 -29.8', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEFSEVENTWONINE, 39, 41, FALSE, FALSE);
                             func002668('1027.6 -785.7 -13.8', 41, MOVETYPE_WALK, "");
-                            func002669(41, globaldef000729, 42, FALSE, FALSE);
+                            func002669(41, GLOBALDEFSEVENTWONINE, 42, FALSE, FALSE);
                             func002668('1024.5 -740.2 2', 42, MOVETYPE_WALK, "");
                             func002669(42, 41, 43, FALSE, FALSE);
                             func002668('1021.2 -641.5 18', 43, MOVETYPE_WALK, "");
@@ -46300,7 +46300,7 @@ void () func002638 =
                             func002668('354.1 -1824.6 26', 90, MOVETYPE_WALK, "");
                             func002669(90, 61, FALSE, FALSE, FALSE);
                             func002668('912.2 -904.2 -61.9', 91, MOVETYPE_WALK, "");
-                            func002669(91, 76, 39, globaldef000729, 41);
+                            func002669(91, 76, 39, GLOBALDEFSEVENTWONINE, 41);
                             func002670(91, 42, FALSE, FALSE, FALSE);
                             func002668('1659.9 -415.3 18.6', 92, MOVETYPE_WALK, "");
                             func002669(92, 52, 34, 46, 47);
@@ -46844,7 +46844,7 @@ void (entity globaldef009019) func002651 =
     
     while(globaldef009021)
     {
-        globaldef009025 = (globaldef009021.absmin + globaldef009021.absmax) * globaldef000522;
+        globaldef009025 = (globaldef009021.absmin + globaldef009021.absmax) * GLOBALDEFFIVETWOTWO;
         globaldef009025_z = globaldef009021.absmin_z + FL_SWIM;
         globaldef009023 = vlen(globaldef009025 - globaldef009019.origin);
         
@@ -46938,7 +46938,7 @@ void (entity globaldef009031) func002652 =
     
     while(globaldef009032)
     {
-        globaldef009037 = (globaldef009032.absmin + globaldef009032.absmax) * globaldef000522;
+        globaldef009037 = (globaldef009032.absmin + globaldef009032.absmax) * GLOBALDEFFIVETWOTWO;
         globaldef009037_z = globaldef009032.absmin_z + MOVETYPE_STEP;
         globaldef009034 = vlen(globaldef009037 - globaldef009031.origin);
         
@@ -47034,7 +47034,7 @@ void (entity globaldef009043) func002653 =
     
     while(globaldef009044)
     {
-        globaldef009049 = globaldef009044.pos2 + ((globaldef009044.mins + globaldef009044.maxs) * globaldef000522);
+        globaldef009049 = globaldef009044.pos2 + ((globaldef009044.mins + globaldef009044.maxs) * GLOBALDEFFIVETWOTWO);
         globaldef009049_z = globaldef009044.maxs_z + FL_SWIM;
         globaldef009046 = vlen(globaldef009049 - globaldef009043.origin);
         
@@ -47134,7 +47134,7 @@ void (entity globaldef009055) func002654 =
     
     while(globaldef009056)
     {
-        globaldef009061 = globaldef009056.pos2 + ((globaldef009056.mins + globaldef009056.maxs) * globaldef000522);
+        globaldef009061 = globaldef009056.pos2 + ((globaldef009056.mins + globaldef009056.maxs) * GLOBALDEFFIVETWOTWO);
         globaldef009061_z = (globaldef009056.maxs_z - (globaldef009056.pos1_z - globaldef009056.pos2_z)) + FL_SWIM;
         globaldef009058 = vlen(globaldef009061 - globaldef009055.origin);
         
@@ -47244,7 +47244,7 @@ void () func002656 =
         globaldef009071 = nextent(globaldef009071);
     }
     
-    globaldef000787 = ((((GLOBALDEFSEVENTWOEIGHT - globaldef009072) - globaldef000726) - globaldef000725) - globaldef000727) - globaldef000729;
+    globaldef000787 = ((((GLOBALDEFSEVENTWOEIGHT - globaldef009072) - globaldef000726) - globaldef000725) - globaldef000727) - GLOBALDEFSEVENTWONINE;
 };
 
 
@@ -49224,7 +49224,7 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     }
     
     globaldef009188 = func002671();
-    globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * globaldef000522;
+    globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef009189_z = func002457(globaldef009189) + FL_SWIM;
     setorigin(globaldef009188, globaldef009189);
     globaldef009188.field000299 = globaldef009186.field000299;
@@ -49319,7 +49319,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     }
     
     globaldef009195 = func002671();
-    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
+    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef009197_z = (globaldef009194.maxs_z - (globaldef009194.pos1_z - globaldef009194.pos2_z)) + FL_SWIM;
     setorigin(globaldef009195, globaldef009197);
     globaldef009195.field000299 = globaldef009193.field000299;
@@ -49329,7 +49329,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     globaldef009194.field000299 = globaldef009195;
     globaldef009195.enemy = globaldef009194;
     globaldef009196 = func002671();
-    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * globaldef000522);
+    globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * GLOBALDEFFIVETWOTWO);
     globaldef009197_z = globaldef009194.maxs_z + FL_SWIM;
     setorigin(globaldef009196, globaldef009197);
     globaldef009196.field000299 = globaldef009195;
@@ -49392,7 +49392,7 @@ void (entity globaldef009202, entity globaldef009203) func002678 =
     globaldef009204 = func002671();
     globaldef009204.field000299 = globaldef009202.field000299;
     globaldef009202.field000299 = globaldef009204;
-    globaldef009205 = (globaldef009203.absmin + globaldef009203.absmax) * globaldef000522;
+    globaldef009205 = (globaldef009203.absmin + globaldef009203.absmax) * GLOBALDEFFIVETWOTWO;
     globaldef009205_z = globaldef009203.absmin_z + FL_SWIM;
     setorigin(globaldef009204, globaldef009205);
     globaldef009204.field000307 = func002655(globaldef009204, globaldef009204.field000299);
@@ -57128,7 +57128,7 @@ void (entity globaldef009562) func002742 =
     }
     
     
-    if(globaldef009565 > (globaldef009564 * globaldef000522))
+    if(globaldef009565 > (globaldef009564 * GLOBALDEFFIVETWOTWO))
     {
         func002738(globaldef000815);
         func002740();

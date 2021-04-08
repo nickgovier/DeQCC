@@ -564,7 +564,7 @@ void () func000613 =
         return;
     }
     
-    self.attack_finished = time + globaldef000522;
+    self.attack_finished = time + GLOBALDEFFIVETWOTWO;
     T_Damage(other, self, self, self.dmg);
 };
 

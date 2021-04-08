@@ -1318,7 +1318,7 @@ void (vector globaldef004925) func001675 =
     newmis.avelocity = '200 100 300';
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     newmis.velocity = globaldef004937 * globaldef000523;
-    newmis.touch = func000271;
+    newmis.touch = T_MissileTouch;
     sound(self, CHAN_WEAPON, "boss1/throw.wav", TRUE, ATTN_NORM);
     
     if(self.enemy.health <= FALSE)

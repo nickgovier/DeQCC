@@ -143,7 +143,7 @@ void () func_button =
     
     if(!self.speed)
     {
-        self.speed = globaldef000729;
+        self.speed = GLOBALDEFSEVENTWONINE;
     }
     
     

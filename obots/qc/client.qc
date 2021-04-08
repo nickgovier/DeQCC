@@ -634,7 +634,7 @@ void () func000381 =
         other.v_angle = globaldef002882.mangle;
         other.angles = globaldef002882.mangle;
         other.fixangle = TRUE;
-        other.nextthink = time + globaldef000522;
+        other.nextthink = time + GLOBALDEFFIVETWOTWO;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
         other.movetype = MOVETYPE_NONE;
@@ -1783,7 +1783,7 @@ void () func000398 =
             if(self.swim_flag < time)
             {
                 self.swim_flag = time + TRUE;
-                if(random() < globaldef000522)
+                if(random() < GLOBALDEFFIVETWOTWO)
                 {
                     sound(self, CHAN_BODY, "misc/water1.wav", TRUE, ATTN_NORM);
                 }
@@ -2622,7 +2622,7 @@ void () func000402 =
         
         if(self.invisible_sound < time)
         {
-            sound(self, CHAN_AUTO, "items/inv3.wav", globaldef000522, ATTN_IDLE);
+            sound(self, CHAN_AUTO, "items/inv3.wav", GLOBALDEFFIVETWOTWO, ATTN_IDLE);
             self.invisible_sound = (time + (random() * MOVETYPE_WALK)) + TRUE;
         }
         
@@ -3355,6 +3355,1280 @@ void () ClientDisconnect =
     if(globaldef000804 & globaldef000750)
     {
         func000366(self, globaldef002971);
+    }
+    
+};
+
+
+// ClientObituary
+// function begins at statement 12846, parm_start=9093
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	9095	0
+// OP_LOAD_S	9093	129	9101
+// OP_EQ_S	9101	1236	9102
+// OP_LOAD_S	9093	129	9103
+// OP_EQ_S	9103	1241	9104
+// OP_OR	9102	9104	9105
+// OP_IFNOT	9105	586	0
+// OP_BITAND	821	767	9106
+// OP_IFNOT	9106	143	0
+// OP_LOAD_S	542	129	9107
+// OP_EQ_S	9107	1236	9108
+// OP_LOAD_S	542	129	9109
+// OP_EQ_S	9109	1241	9110
+// OP_OR	9108	9110	9111
+// OP_IFNOT	9111	8	0
+// OP_ADDRESS	542	163	9112
+// OP_STOREP_F	250	9112	0
+// OP_STORE_V	542	4	0
+// OP_STORE_V	9113	7	0
+// OP_CALL2	839	0	0
+// OP_ADDRESS	542	181	9114
+// OP_STOREP_ENT	30	9114	0
+// OP_LOAD_S	541	129	9115
+// OP_EQ_S	9115	1236	9116
+// OP_LOAD_S	541	129	9117
+// OP_EQ_S	9117	1241	9118
+// OP_OR	9116	9118	9119
+// OP_IFNOT	9119	8	0
+// OP_ADDRESS	541	163	9120
+// OP_STOREP_F	250	9120	0
+// OP_STORE_V	541	4	0
+// OP_STORE_V	9113	7	0
+// OP_CALL2	839	0	0
+// OP_ADDRESS	541	181	9121
+// OP_STOREP_ENT	30	9121	0
+// OP_NE_E	9094	9093	9122
+// OP_IFNOT	9122	5	0
+// OP_LOAD_F	9094	152	9123
+// OP_STORE_F	9123	9098	0
+// OP_LOAD_F	9094	188	9124
+// OP_STORE_F	9124	9099	0
+// OP_EQ_E	9093	541	9125
+// OP_IFNOT	9125	36	0
+// OP_ADDRESS	541	536	9126
+// OP_LOAD_F	541	536	9127
+// OP_ADD_F	9127	214	9128
+// OP_STOREP_F	9128	9126	0
+// OP_ADDRESS	542	535	9129
+// OP_LOAD_F	542	535	9130
+// OP_ADD_F	9130	214	9131
+// OP_STOREP_F	9131	9129	0
+// OP_STORE_V	9132	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	541	180	9133
+// OP_STORE_V	9133	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9134	4	0
+// OP_CALL1	472	0	0
+// OP_EQ_E	9093	9094	9135
+// OP_IFNOT	9135	7	0
+// OP_STORE_V	9136	4	0
+// OP_CALL1	472	0	0
+// OP_ADDRESS	9094	153	9137
+// OP_LOAD_F	9094	153	9138
+// OP_SUB_F	9138	214	9139
+// OP_STOREP_F	9139	9137	0
+// OP_STORE_ENT	542	541	0
+// OP_LOAD_S	541	129	9140
+// OP_EQ_S	9140	1236	9141
+// OP_IFNOT	9141	8	0
+// OP_STORE_V	8080	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	541	180	9142
+// OP_STORE_V	9142	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_CALL0	1218	0	0
+// OP_EQ_E	9093	542	9143
+// OP_IFNOT	9143	25	0
+// OP_ADDRESS	542	536	9144
+// OP_LOAD_F	542	536	9145
+// OP_ADD_F	9145	214	9146
+// OP_STOREP_F	9146	9144	0
+// OP_ADDRESS	541	535	9147
+// OP_LOAD_F	541	535	9148
+// OP_ADD_F	9148	214	9149
+// OP_STOREP_F	9149	9147	0
+// OP_STORE_V	9150	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	542	180	9151
+// OP_STORE_V	9151	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9152	4	0
+// OP_CALL1	472	0	0
+// OP_EQ_E	9093	9094	9153
+// OP_IFNOT	9153	7	0
+// OP_STORE_V	9154	4	0
+// OP_CALL1	472	0	0
+// OP_ADDRESS	9094	153	9155
+// OP_LOAD_F	9094	153	9156
+// OP_SUB_F	9156	214	9157
+// OP_STOREP_F	9157	9155	0
+// OP_CALL0	1218	0	0
+// OP_LOAD_S	9094	129	9158
+// OP_EQ_S	9158	1236	9159
+// OP_LOAD_S	9094	129	9160
+// OP_EQ_S	9160	1241	9161
+// OP_OR	9159	9161	9162
+// OP_IFNOT	9162	41	0
+// OP_NE_E	9094	9093	9163
+// OP_IFNOT	9163	39	0
+// OP_EQ_F	9098	1997	9164
+// OP_EQ_F	9099	2044	9165
+// OP_AND	9164	9165	9166
+// OP_IFNOT	9166	6	0
+// OP_STORE_V	9167	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9168	4	0
+// OP_CALL1	1219	0	0
+// OP_GOTO	26	0	0
+// OP_LOAD_S	9094	180	9169
+// OP_STORE_V	9169	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9170	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9098	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	9100	0
+// OP_STORE_V	9100	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9171	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9099	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	9100	0
+// OP_STORE_V	9100	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9172	4	0
+// OP_CALL1	472	0	0
+// OP_GE	9098	9173	9174
+// OP_GE	9099	1997	9175
+// OP_AND	9174	9175	9176
+// OP_IFNOT	9176	3	0
+// OP_STORE_V	9177	4	0
+// OP_CALL1	1219	0	0
+// OP_ADDRESS	9094	153	9178
+// OP_LOAD_F	9094	153	9179
+// OP_ADD_F	9179	214	9180
+// OP_STOREP_F	9180	9178	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9181
+// OP_EQ_S	9181	9182	9183
+// OP_IFNOT	9183	26	0
+// OP_LOAD_S	9093	180	9184
+// OP_STORE_V	9184	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9185	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_ENT	9094	201	9186
+// OP_LOAD_S	9186	180	9187
+// OP_STORE_V	9187	4	0
+// OP_CALL1	472	0	0
+// OP_IFNOT	37	7	0
+// OP_STORE_V	9188	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_ENT	9094	201	9189
+// OP_LOAD_S	9189	606	9190
+// OP_STORE_V	9190	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_ENT	9094	201	9191
+// OP_ADDRESS	9191	153	9192
+// OP_LOAD_ENT	9094	201	9193
+// OP_LOAD_F	9193	153	9194
+// OP_ADD_F	9194	214	9195
+// OP_STOREP_F	9195	9192	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9196
+// OP_EQ_S	9196	9197	9198
+// OP_IFNOT	9198	19	0
+// OP_STORE_V	9199	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9093	180	9200
+// OP_STORE_V	9200	4	0
+// OP_CALL1	472	0	0
+// OP_IFNOT	37	6	0
+// OP_STORE_V	9188	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9093	606	9201
+// OP_STORE_V	9201	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9202	4	0
+// OP_CALL1	472	0	0
+// OP_ADDRESS	9093	153	9203
+// OP_LOAD_F	9093	153	9204
+// OP_SUB_F	9204	214	9205
+// OP_STOREP_F	9205	9203	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9206
+// OP_EQ_S	9206	1236	9207
+// OP_LOAD_S	9094	129	9208
+// OP_EQ_S	9208	1241	9209
+// OP_OR	9207	9209	9210
+// OP_IFNOT	9210	208	0
+// OP_EQ_E	9093	9094	9211
+// OP_IFNOT	9211	31	0
+// OP_ADDRESS	9094	153	9212
+// OP_LOAD_F	9094	153	9213
+// OP_SUB_F	9213	214	9214
+// OP_STOREP_F	9214	9212	0
+// OP_LOAD_S	9093	180	9215
+// OP_STORE_V	9215	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_F	9093	154	9216
+// OP_EQ_F	9216	220	9217
+// OP_LOAD_F	9093	189	9218
+// OP_GT	9218	214	9219
+// OP_AND	9217	9219	9220
+// OP_IFNOT	9220	4	0
+// OP_STORE_V	9221	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	9093	154	9222
+// OP_EQ_F	9222	218	9223
+// OP_IFNOT	9223	4	0
+// OP_STORE_V	9224	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	7	0	0
+// OP_IFNOT	9095	4	0
+// OP_STORE_V	9225	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	9226	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	174	0	0
+// OP_LOAD_F	9094	607	9227
+// OP_LOAD_F	9093	607	9228
+// OP_EQ_F	9227	9228	9229
+// OP_AND	37	9229	9230
+// OP_IFNOT	9230	106	0
+// OP_ADDRESS	9094	153	9232
+// OP_LOAD_F	9094	153	9233
+// OP_SUB_F	9233	214	9234
+// OP_STOREP_F	9234	9232	0
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	9231	0
+// OP_LOAD_F	9093	152	9235
+// OP_LT	9235	9236	9237
+// OP_IFNOT	9237	9	0
+// OP_LT	9231	539	9238
+// OP_IFNOT	9238	4	0
+// OP_STORE_S	9239	9096	0
+// OP_STORE_S	9240	9097	0
+// OP_GOTO	3	0	0
+// OP_STORE_S	9241	9096	0
+// OP_STORE_S	9242	9097	0
+// OP_GOTO	78	0	0
+// OP_LOAD_F	9094	154	9243
+// OP_STORE_F	9243	9095	0
+// OP_EQ_F	9095	253	9244
+// OP_IFNOT	9244	9	0
+// OP_LT	9231	539	9245
+// OP_IFNOT	9245	4	0
+// OP_STORE_S	9246	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	3	0	0
+// OP_STORE_S	9247	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	66	0	0
+// OP_EQ_F	9095	254	9248
+// OP_STORE_F	255	9095	0
+// OP_OR	9248	255	9249
+// OP_IFNOT	9249	9	0
+// OP_LT	9231	539	9250
+// OP_IFNOT	9250	4	0
+// OP_STORE_S	9251	9096	0
+// OP_STORE_S	9252	9097	0
+// OP_GOTO	3	0	0
+// OP_STORE_S	9253	9096	0
+// OP_STORE_S	9254	9097	0
+// OP_GOTO	54	0	0
+// OP_EQ_F	9095	256	9255
+// OP_EQ_F	9095	257	9256
+// OP_OR	9255	9256	9257
+// OP_IFNOT	9257	4	0
+// OP_STORE_S	9258	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	47	0	0
+// OP_EQ_F	9095	258	9259
+// OP_IFNOT	9259	4	0
+// OP_STORE_S	9260	9096	0
+// OP_STORE_S	9261	9097	0
+// OP_GOTO	42	0	0
+// OP_EQ_F	9095	259	9262
+// OP_IFNOT	9262	31	0
+// OP_LT	9231	9263	9264
+// OP_IFNOT	9264	4	0
+// OP_STORE_S	9265	9096	0
+// OP_STORE_S	9266	9097	0
+// OP_GOTO	25	0	0
+// OP_LT	9231	8380	9267
+// OP_IFNOT	9267	4	0
+// OP_STORE_S	9268	9096	0
+// OP_STORE_S	9269	9097	0
+// OP_GOTO	20	0	0
+// OP_LT	9231	539	9270
+// OP_IFNOT	9270	4	0
+// OP_STORE_S	9271	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	15	0	0
+// OP_LT	9231	8382	9272
+// OP_IFNOT	9272	4	0
+// OP_STORE_S	9273	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	10	0	0
+// OP_LT	9231	9274	9275
+// OP_IFNOT	9275	4	0
+// OP_STORE_S	9276	9096	0
+// OP_STORE_S	9277	9097	0
+// OP_GOTO	5	0	0
+// OP_LT	9231	214	9278
+// OP_IFNOT	9278	3	0
+// OP_STORE_S	9279	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	10	0	0
+// OP_EQ_F	9095	260	9280
+// OP_IFNOT	9280	8	0
+// OP_LT	9231	539	9281
+// OP_IFNOT	9281	4	0
+// OP_STORE_S	9282	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_GOTO	3	0	0
+// OP_STORE_S	9283	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_LOAD_S	9094	180	9284
+// OP_STORE_V	9284	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9096	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9093	180	9285
+// OP_STORE_V	9285	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9097	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	64	0	0
+// OP_ADDRESS	9094	153	9286
+// OP_LOAD_F	9094	153	9287
+// OP_ADD_F	9287	214	9288
+// OP_STOREP_F	9288	9286	0
+// OP_LOAD_F	9094	154	9289
+// OP_STORE_F	9289	9095	0
+// OP_EQ_F	9095	253	9290
+// OP_IFNOT	9290	3	0
+// OP_STORE_S	9291	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_EQ_F	9095	254	9292
+// OP_IFNOT	9292	3	0
+// OP_STORE_S	9293	9096	0
+// OP_STORE_S	9294	9097	0
+// OP_EQ_F	9095	255	9295
+// OP_IFNOT	9295	3	0
+// OP_STORE_S	9296	9096	0
+// OP_STORE_S	9297	9097	0
+// OP_EQ_F	9095	256	9298
+// OP_IFNOT	9298	3	0
+// OP_STORE_S	9299	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_EQ_F	9095	257	9300
+// OP_IFNOT	9300	3	0
+// OP_STORE_S	9301	9096	0
+// OP_STORE_S	2127	9097	0
+// OP_EQ_F	9095	258	9302
+// OP_IFNOT	9302	8	0
+// OP_STORE_S	9303	9096	0
+// OP_STORE_S	9304	9097	0
+// OP_LOAD_F	9093	152	9305
+// OP_LT	9305	9236	9306
+// OP_IFNOT	9306	3	0
+// OP_STORE_S	9307	9096	0
+// OP_STORE_S	9308	9097	0
+// OP_EQ_F	9095	259	9309
+// OP_IFNOT	9309	8	0
+// OP_STORE_S	9310	9096	0
+// OP_STORE_S	9311	9097	0
+// OP_LOAD_F	9093	152	9312
+// OP_LT	9312	9236	9313
+// OP_IFNOT	9313	3	0
+// OP_STORE_S	9314	9096	0
+// OP_STORE_S	9311	9097	0
+// OP_EQ_F	9095	260	9315
+// OP_IFNOT	9315	8	0
+// OP_STORE_S	9316	9096	0
+// OP_LOAD_F	9094	189	9317
+// OP_GT	9317	214	9318
+// OP_IFNOT	9318	3	0
+// OP_STORE_S	9319	9097	0
+// OP_GOTO	2	0	0
+// OP_STORE_S	9320	9097	0
+// OP_LOAD_S	9093	180	9321
+// OP_STORE_V	9321	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9096	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	180	9322
+// OP_STORE_V	9322	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9097	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	180	0	0
+// OP_ADDRESS	9093	153	9323
+// OP_LOAD_F	9093	153	9324
+// OP_SUB_F	9324	214	9325
+// OP_STOREP_F	9325	9323	0
+// OP_LOAD_F	9093	190	9326
+// OP_STORE_F	9326	9095	0
+// OP_LOAD_S	9093	180	9327
+// OP_STORE_V	9327	4	0
+// OP_CALL1	472	0	0
+// OP_EQ_F	9095	278	9328
+// OP_IFNOT	9328	11	0
+// OP_CALL0	457	0	0
+// OP_LT	1	539	9329
+// OP_IFNOT	9329	4	0
+// OP_STORE_V	9330	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	9331	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	30	0	0
+// OP_EQ_F	9095	279	9332
+// OP_IFNOT	9332	11	0
+// OP_CALL0	457	0	0
+// OP_LT	1	539	9333
+// OP_IFNOT	9333	4	0
+// OP_STORE_V	9334	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	9335	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_GOTO	18	0	0
+// OP_EQ_F	9095	280	9336
+// OP_IFNOT	9336	16	0
+// OP_LOAD_F	9093	152	9337
+// OP_LT	9337	9338	9339
+// OP_IFNOT	9339	4	0
+// OP_STORE_V	9340	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_CALL0	457	0	0
+// OP_LT	1	539	9341
+// OP_IFNOT	9341	4	0
+// OP_STORE_V	9342	4	0
+// OP_CALL1	472	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	9343	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	9094	182	9344
+// OP_BITAND	9344	219	9345
+// OP_IFNOT	9345	82	0
+// OP_LOAD_S	9094	129	9346
+// OP_EQ_S	9346	3704	9347
+// OP_IFNOT	9347	3	0
+// OP_STORE_V	9348	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9349
+// OP_EQ_S	9349	3665	9350
+// OP_IFNOT	9350	3	0
+// OP_STORE_V	9351	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9352
+// OP_EQ_S	9352	3677	9353
+// OP_IFNOT	9353	3	0
+// OP_STORE_V	9354	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9355
+// OP_EQ_S	9355	3800	9356
+// OP_IFNOT	9356	3	0
+// OP_STORE_V	9357	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9358
+// OP_EQ_S	9358	3693	9359
+// OP_IFNOT	9359	3	0
+// OP_STORE_V	9360	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9361
+// OP_EQ_S	9361	9362	9363
+// OP_IFNOT	9363	3	0
+// OP_STORE_V	9364	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9365
+// OP_EQ_S	9365	3681	9366
+// OP_IFNOT	9366	3	0
+// OP_STORE_V	9367	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9368
+// OP_EQ_S	9368	3254	9369
+// OP_IFNOT	9369	3	0
+// OP_STORE_V	9370	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9371
+// OP_EQ_S	9371	3532	9372
+// OP_IFNOT	9372	3	0
+// OP_STORE_V	9373	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9374
+// OP_EQ_S	9374	9375	9376
+// OP_IFNOT	9376	3	0
+// OP_STORE_V	9377	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9378
+// OP_EQ_S	9378	3708	9379
+// OP_IFNOT	9379	3	0
+// OP_STORE_V	9380	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9381
+// OP_EQ_S	9381	3661	9382
+// OP_IFNOT	9382	3	0
+// OP_STORE_V	9383	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9384
+// OP_EQ_S	9384	3685	9385
+// OP_IFNOT	9385	3	0
+// OP_STORE_V	9386	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9387
+// OP_EQ_S	9387	3689	9388
+// OP_IFNOT	9388	3	0
+// OP_STORE_V	9389	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9390
+// OP_EQ_S	9390	3669	9391
+// OP_IFNOT	9391	3	0
+// OP_STORE_V	9392	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_S	9094	129	9393
+// OP_EQ_S	9393	3673	9394
+// OP_IFNOT	9394	3	0
+// OP_STORE_V	9395	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9396
+// OP_EQ_S	9396	9397	9398
+// OP_IFNOT	9398	4	0
+// OP_STORE_V	9399	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	9094	104	9400
+// OP_EQ_F	9400	241	9401
+// OP_NE_E	9094	30	9402
+// OP_AND	9401	9402	9403
+// OP_IFNOT	9403	4	0
+// OP_STORE_V	9404	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9093	398	9405
+// OP_EQ_S	9405	8996	9406
+// OP_IFNOT	9406	6	0
+// OP_ADDRESS	9093	398	9407
+// OP_STOREP_S	3002	9407	0
+// OP_STORE_V	9408	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9409
+// OP_EQ_S	9409	9410	9411
+// OP_LOAD_S	9094	129	9412
+// OP_EQ_S	9412	9413	9414
+// OP_OR	9411	9414	9415
+// OP_IFNOT	9415	4	0
+// OP_STORE_V	9416	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9417
+// OP_EQ_S	9417	9418	9419
+// OP_IFNOT	9419	4	0
+// OP_STORE_V	9420	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	9094	129	9421
+// OP_EQ_S	9421	8550	9422
+// OP_IFNOT	9422	4	0
+// OP_STORE_V	9423	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	9424	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (entity targ, entity attacker) ClientObituary = 
+{
+    local float globaldef002977;
+    local string globaldef002978;
+    local string globaldef002979;
+    local float globaldef002980;
+    local float globaldef002981;
+    local string globaldef002982;
+    local string globaldef002983;
+    local string globaldef002984;
+    local string globaldef002985;
+    local string globaldef002986;
+    local string globaldef002987;
+    local string globaldef002988;
+    local string globaldef002989;
+    local string globaldef002990;
+    local string globaldef002991;
+    local string globaldef002992;
+    local string globaldef002993;
+    local string globaldef002994;
+    local float globaldef002995;
+    local string globaldef002996;
+    local string globaldef002997;
+    local string globaldef002998;
+    local string globaldef002999;
+    local string globaldef003000;
+    local string globaldef003001;
+    local string globaldef003002;
+    local string globaldef003003;
+    local string globaldef003004;
+    local string globaldef003005;
+    local string globaldef003006;
+    local float globaldef003007;
+    globaldef002977 = random();
+    
+    if((targ.classname == "player") || (targ.classname == "bot"))
+    {
+        
+        if(globaldef000804 & globaldef000750)
+        {
+            
+            if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))
+            {
+                globaldef000525.takedamage = DAMAGE_NO;
+                func000064(globaldef000525, "-attack\n");
+                globaldef000525.enemy = world;
+            }
+            
+            
+            if((globaldef000524.classname == "player") || (globaldef000524.classname == "bot"))
+            {
+                globaldef000524.takedamage = DAMAGE_NO;
+                func000064(globaldef000524, "-attack\n");
+                globaldef000524.enemy = world;
+            }
+            
+            
+            if(attacker != targ)
+            {
+                globaldef002980 = attacker.health;
+                globaldef002981 = attacker.armorvalue;
+            }
+            
+            
+            if(targ == globaldef000524)
+            {
+                globaldef000524.loses = globaldef000524.loses + TRUE;
+                globaldef000525.wins = globaldef000525.wins + TRUE;
+                bprint("The winner ");
+                bprint(globaldef000524.netname);
+                bprint(" has been defeated\n");
+                
+                if(targ == attacker)
+                {
+                    bprint("by Himself!\n");
+                    attacker.frags = attacker.frags - TRUE;
+                }
+                
+                globaldef000524 = globaldef000525;
+                
+                if(globaldef000524.classname == "player")
+                {
+                    bprint("The new winner is ");
+                    bprint(globaldef000524.netname);
+                    bprint("\n");
+                }
+                
+                func000362();
+            }
+            
+            
+            if(targ == globaldef000525)
+            {
+                globaldef000525.loses = globaldef000525.loses + TRUE;
+                globaldef000524.wins = globaldef000524.wins + TRUE;
+                bprint("The challenger ");
+                bprint(globaldef000525.netname);
+                bprint(" has failed\n");
+                
+                if(targ == attacker)
+                {
+                    bprint("because he became bored with life!\n");
+                    attacker.frags = attacker.frags - TRUE;
+                }
+                
+                func000362();
+            }
+            
+            
+            if((attacker.classname == "player") || (attacker.classname == "bot"))
+            {
+                
+                if(attacker != targ)
+                {
+                    if((globaldef002980 == 100) && (globaldef002981 == 200))
+                    {
+                        bprint("???????? ????????\n");
+                        func000356("play ra/flawless.wav\n");
+                    }
+                    else
+                    {
+                        bprint(attacker.netname);
+                        bprint(" had ");
+                        globaldef002982 = ftos(globaldef002980);
+                        bprint(globaldef002982);
+                        bprint(" health and ");
+                        globaldef002982 = ftos(globaldef002981);
+                        bprint(globaldef002982);
+                        bprint(" armor left\n");
+                        
+                        if((globaldef002980 >= 75) && (globaldef002981 >= 100))
+                        {
+                            func000356("play ra/excelent.wav\n");
+                        }
+                        
+                    }
+                    
+                    attacker.frags = attacker.frags + TRUE;
+                }
+                
+            }
+            
+            return;
+        }
+        
+        
+        if(attacker.classname == "teledeath")
+        {
+            bprint(targ.netname);
+            bprint(" was telefragged by ");
+            bprint(attacker.owner.netname);
+            
+            if(teamplay)
+            {
+                bprint(" ");
+                bprint(attacker.owner.field000283);
+            }
+            
+            bprint("\n");
+            attacker.owner.frags = attacker.owner.frags + TRUE;
+            return;
+        }
+        
+        
+        if(attacker.classname == "teledeath2")
+        {
+            bprint("Satan's power deflects ");
+            bprint(targ.netname);
+            
+            if(teamplay)
+            {
+                bprint(" ");
+                bprint(targ.field000283);
+            }
+            
+            bprint("'s telefrag\n");
+            targ.frags = targ.frags - TRUE;
+            return;
+        }
+        
+        if((attacker.classname == "player") || (attacker.classname == "bot"))
+        {
+            if(targ == attacker)
+            {
+                attacker.frags = attacker.frags - TRUE;
+                bprint(targ.netname);
+                
+                if((targ.weapon == FL_GODMODE) && (targ.waterlevel > TRUE))
+                {
+                    bprint(" discharges into the water.\n");
+                    return;
+                }
+                
+                if(targ.weapon == FL_INWATER)
+                {
+                    bprint(" tries to put the pin back in\n");
+                }
+                else
+                {
+                    if(globaldef002977)
+                    {
+                        bprint(" becomes bored with life\n");
+                    }
+                    else
+                    {
+                        bprint(" checks if his weapon is loaded\n");
+                    }
+                    
+                }
+                
+                return;
+            }
+            else
+            {
+                if(teamplay && (attacker.field000284 == targ.field000284))
+                {
+                    attacker.frags = attacker.frags - TRUE;
+                    globaldef003007 = random();
+                    if(targ.health < -40)
+                    {
+                        if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                        {
+                            globaldef002978 = " tells team mate ";
+                            globaldef002979 = " to spread around\n";
+                        }
+                        else
+                        {
+                            globaldef002978 = " want to play basketball with team mate ";
+                            globaldef002979 = " 's head\n";
+                        }
+                        
+                    }
+                    else
+                    {
+                        globaldef002977 = attacker.weapon;
+                        if(globaldef002977 == IT_AXE)
+                        {
+                            if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                            {
+                                globaldef002978 = " wanted to axe a few questions from team mate ";
+                                globaldef002979 = "\n";
+                            }
+                            else
+                            {
+                                globaldef002978 = " tried to shave team mate ";
+                                globaldef002979 = "\n";
+                            }
+                            
+                        }
+                        else
+                        {
+                            globaldef002977 = IT_SUPER_SHOTGUN;
+                            if((globaldef002977 == IT_SHOTGUN) || IT_SUPER_SHOTGUN)
+                            {
+                                if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                {
+                                    globaldef002978 = " found the trigger when team mate ";
+                                    globaldef002979 = " looked for a bullet in the barrel\n";
+                                }
+                                else
+                                {
+                                    globaldef002978 = " tried to clean the ears of team mate ";
+                                    globaldef002979 = " with a gun\n";
+                                }
+                                
+                            }
+                            else
+                            {
+                                if((globaldef002977 == IT_NAILGUN) || (globaldef002977 == IT_SUPER_NAILGUN))
+                                {
+                                    globaldef002978 = " crusified team mate ";
+                                    globaldef002979 = "\n";
+                                }
+                                else
+                                {
+                                    if(globaldef002977 == IT_GRENADE_LAUNCHER)
+                                    {
+                                        globaldef002978 = " sends pineapple to team mate ";
+                                        globaldef002979 = " by airmail\n";
+                                    }
+                                    else
+                                    {
+                                        if(globaldef002977 == IT_ROCKET_LAUNCHER)
+                                        {
+                                            if(globaldef003007 < 0.16)
+                                            {
+                                                globaldef002978 = " teaches team mate ";
+                                                globaldef002979 = " to fly\n";
+                                            }
+                                            else
+                                            {
+                                                if(globaldef003007 < 0.33)
+                                                {
+                                                    globaldef002978 = " checks if team mate ";
+                                                    globaldef002979 = " is invulnerable\n";
+                                                }
+                                                else
+                                                {
+                                                    if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                                    {
+                                                        globaldef002978 = " settled an argument with team mate ";
+                                                        globaldef002979 = "\n";
+                                                    }
+                                                    else
+                                                    {
+                                                        if(globaldef003007 < 0.66)
+                                                        {
+                                                            globaldef002978 = " didn't recognize team mate ";
+                                                            globaldef002979 = "\n";
+                                                        }
+                                                        else
+                                                        {
+                                                            if(globaldef003007 < 0.83)
+                                                            {
+                                                                globaldef002978 = " turned team mate ";
+                                                                globaldef002979 = " into a backpack\n";
+                                                            }
+                                                            else
+                                                            {
+                                                                
+                                                                if(globaldef003007 < TRUE)
+                                                                {
+                                                                    globaldef002978 = " played catch the rocket with team mate ";
+                                                                    globaldef002979 = "\n";
+                                                                }
+                                                                
+                                                            }
+                                                            
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                            
+                                        }
+                                        else
+                                        {
+                                            
+                                            if(globaldef002977 == IT_LIGHTNING)
+                                            {
+                                                if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                                {
+                                                    globaldef002978 = " brings shocking news to team mate ";
+                                                    globaldef002979 = "\n";
+                                                }
+                                                else
+                                                {
+                                                    globaldef002978 = " tries to recharge team mate ";
+                                                    globaldef002979 = "\n";
+                                                }
+                                                
+                                            }
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    bprint(attacker.netname);
+                    bprint(globaldef002978);
+                    bprint(targ.netname);
+                    bprint(globaldef002979);
+                }
+                else
+                {
+                    attacker.frags = attacker.frags + TRUE;
+                    globaldef002977 = attacker.weapon;
+                    
+                    if(globaldef002977 == IT_AXE)
+                    {
+                        globaldef002978 = " was ax-murdered by ";
+                        globaldef002979 = "\n";
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_SHOTGUN)
+                    {
+                        globaldef002978 = " chewed on ";
+                        globaldef002979 = "'s boomstick\n";
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_SUPER_SHOTGUN)
+                    {
+                        globaldef002978 = " ate 2 loads of ";
+                        globaldef002979 = "'s buckshot\n";
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_NAILGUN)
+                    {
+                        globaldef002978 = " was nailed by ";
+                        globaldef002979 = "\n";
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_SUPER_NAILGUN)
+                    {
+                        globaldef002978 = " was punctured by ";
+                        globaldef002979 = "\n";
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_GRENADE_LAUNCHER)
+                    {
+                        globaldef002978 = " eats ";
+                        globaldef002979 = "'s pineapple\n";
+                        
+                        if(targ.health < -40)
+                        {
+                            globaldef002978 = " was butchered by ";
+                            globaldef002979 = "'s grenade\n";
+                        }
+                        
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_ROCKET_LAUNCHER)
+                    {
+                        globaldef002978 = " rides ";
+                        globaldef002979 = "'s rocket\n";
+                        
+                        if(targ.health < -40)
+                        {
+                            globaldef002978 = " was gibbed by ";
+                            globaldef002979 = "'s rocket\n";
+                        }
+                        
+                    }
+                    
+                    
+                    if(globaldef002977 == IT_LIGHTNING)
+                    {
+                        globaldef002978 = " accepts ";
+                        if(attacker.waterlevel > TRUE)
+                        {
+                            globaldef002979 = "'s discharge\n";
+                        }
+                        else
+                        {
+                            globaldef002979 = "'s shaft\n";
+                        }
+                        
+                    }
+                    
+                    bprint(targ.netname);
+                    bprint(globaldef002978);
+                    bprint(attacker.netname);
+                    bprint(globaldef002979);
+                }
+                
+            }
+            
+            return;
+        }
+        else
+        {
+            targ.frags = targ.frags - TRUE;
+            globaldef002977 = targ.watertype;
+            bprint(targ.netname);
+            if(globaldef002977 == CONTENT_WATER)
+            {
+                if(random() < GLOBALDEFFIVETWOTWO)
+                {
+                    bprint(" sleeps with the fishes\n");
+                }
+                else
+                {
+                    bprint(" sucks it down\n");
+                }
+                
+                return;
+            }
+            else
+            {
+                if(globaldef002977 == CONTENT_SLIME)
+                {
+                    if(random() < GLOBALDEFFIVETWOTWO)
+                    {
+                        bprint(" gulped a load of slime\n");
+                    }
+                    else
+                    {
+                        bprint(" can't exist on slime alone\n");
+                    }
+                    
+                    return;
+                }
+                else
+                {
+                    
+                    if(globaldef002977 == CONTENT_LAVA)
+                    {
+                        
+                        if(targ.health < -15)
+                        {
+                            bprint(" burst into flames\n");
+                            return;
+                        }
+                        
+                        if(random() < GLOBALDEFFIVETWOTWO)
+                        {
+                            bprint(" turned into hot slag\n");
+                        }
+                        else
+                        {
+                            bprint(" visits the Volcano God\n");
+                        }
+                        
+                        return;
+                    }
+                    
+                }
+                
+            }
+            
+            
+            if(attacker.flags & FL_MONSTER)
+            {
+                
+                if(attacker.classname == "monster_army")
+                {
+                    bprint(" was shot by a Grunt\n");
+                }
+                
+                
+                if(attacker.classname == "monster_demon1")
+                {
+                    bprint(" was eviscerated by a Fiend\n");
+                }
+                
+                
+                if(attacker.classname == "monster_dog")
+                {
+                    bprint(" was mauled by a Rottweiler\n");
+                }
+                
+                
+                if(attacker.classname == "monster_dragon")
+                {
+                    bprint(" was fried by a Dragon\n");
+                }
+                
+                
+                if(attacker.classname == "monster_enforcer")
+                {
+                    bprint(" was blasted by an Enforcer\n");
+                }
+                
+                
+                if(attacker.classname == "monster_fish")
+                {
+                    bprint(" was fed to the Rotfish\n");
+                }
+                
+                
+                if(attacker.classname == "monster_hell_knight")
+                {
+                    bprint(" was slain by a Death Knight\n");
+                }
+                
+                
+                if(attacker.classname == "monster_knight")
+                {
+                    bprint(" was slashed by a Knight\n");
+                }
+                
+                
+                if(attacker.classname == "monster_ogre")
+                {
+                    bprint(" was destroyed by an Ogre\n");
+                }
+                
+                
+                if(attacker.classname == "monster_oldone")
+                {
+                    bprint(" became one with Shub-Niggurath\n");
+                }
+                
+                
+                if(attacker.classname == "monster_shalrath")
+                {
+                    bprint(" was exploded by a Vore\n");
+                }
+                
+                
+                if(attacker.classname == "monster_shambler")
+                {
+                    bprint(" was smashed by a Shambler\n");
+                }
+                
+                
+                if(attacker.classname == "monster_tarbaby")
+                {
+                    bprint(" was slimed by a Spawn\n");
+                }
+                
+                
+                if(attacker.classname == "monster_vomit")
+                {
+                    bprint(" was vomited on by a Vomitus\n");
+                }
+                
+                
+                if(attacker.classname == "monster_wizard")
+                {
+                    bprint(" was scragged by a Scrag\n");
+                }
+                
+                
+                if(attacker.classname == "monster_zombie")
+                {
+                    bprint(" joins the Zombies\n");
+                }
+                
+                return;
+            }
+            
+            
+            if(attacker.classname == "explo_box")
+            {
+                bprint(" blew up\n");
+                return;
+            }
+            
+            
+            if((attacker.solid == SOLID_BSP) && (attacker != world))
+            {
+                bprint(" was squished\n");
+                return;
+            }
+            
+            
+            if(targ.deathtype == "falling")
+            {
+                targ.deathtype = "";
+                bprint(" fell to his death\n");
+                return;
+            }
+            
+            
+            if((attacker.classname == "trap_shooter") || (attacker.classname == "trap_spikeshooter"))
+            {
+                bprint(" was spiked\n");
+                return;
+            }
+            
+            
+            if(attacker.classname == "fireball")
+            {
+                bprint(" ate a lavaball\n");
+                return;
+            }
+            
+            
+            if(attacker.classname == "trigger_changelevel")
+            {
+                bprint(" tried to leave\n");
+                return;
+            }
+            
+            bprint(" died\n");
+        }
+        
     }
     
 };

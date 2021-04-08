@@ -44,7 +44,7 @@
 // OP_DONE	0	0	0
 void () func000665 = 
 {
-    func000202(self, self.owner, globaldef000729, world);
+    T_RadiusDamage(self, self.owner, GLOBALDEFSEVENTWONINE, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
@@ -1740,7 +1740,7 @@ void (entity globaldef003785, float globaldef003786) func000782 =
     }
     else
     {
-        if(globaldef003787 < globaldef000522)
+        if(globaldef003787 < GLOBALDEFFIVETWOTWO)
         {
             func000742();
             self.pain_finished = time + TRUE;
@@ -2076,7 +2076,7 @@ void () func000807 =
     }
     
     sound(self, CHAN_VOICE, "ogre/ogdth.wav", TRUE, ATTN_NORM);
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         func000783();
     }
@@ -2099,7 +2099,7 @@ void () func000807 =
 // OP_DONE	0	0	0
 void () func000808 = 
 {
-    if(random() > globaldef000522)
+    if(random() > GLOBALDEFFIVETWOTWO)
     {
         ogre_smash1();
     }

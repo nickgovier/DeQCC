@@ -329,8 +329,11 @@ namespace DeQcc
 
             nameMap.Add("func000072", "centerprint");
 
+            nameMap.Add("globaldef000522", "GLOBALDEFFIVETWOTWO");  // constant = 0.5
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
             nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
+            nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
+            
 
             #region subs.qc
 
@@ -591,19 +594,65 @@ namespace DeQcc
 
             #region combat.qc
 
-            nameMap.Add("func000199", "CanDamage");
-            nameMap.Add("func000201", "T_Damage");
+            // Declarations
 
-            for (int i = 199; i <= 201; i++)
+            nameMap.Add("func000199", "CanDamage");
+            nameMap.Add("func000200", "Killed");
+            nameMap.Add("func000201", "T_Damage");
+            nameMap.Add("func000202", "T_RadiusDamage");
+
+            for (int i = 199; i <= 203; i++)
             {
                 fileMap[i] = "combat.qc";
             }
+
+            // CanDamage params
+            nameMap.Add("globaldef001749", "targ");
+            nameMap.Add("globaldef001750", "inflictor");
+
+            // Killed params
+            nameMap.Add("globaldef001756", "targ");
+            nameMap.Add("globaldef001757", "attacker");
+
+            // Killed locals
+            nameMap.Add("globaldef001758", "oself");
+
+            // T_Damage params
+            nameMap.Add("globaldef001760", "targ");
+            nameMap.Add("globaldef001761", "inflictor");
+            nameMap.Add("globaldef001762", "attacker");
+            nameMap.Add("globaldef001763", "damage");
+
+            // T_Damage locals
+            nameMap.Add("globaldef001764", "dir");
+            nameMap.Add("globaldef001768", "oldself");
+            nameMap.Add("globaldef001769", "save");
+            nameMap.Add("globaldef001770", "take");
+
+            // T_RadiusDamage params
+            nameMap.Add("globaldef001773", "inflictor");
+            nameMap.Add("globaldef001774", "attacker");
+            nameMap.Add("globaldef001775", "damage");
+            nameMap.Add("globaldef001776", "ignore");
+
+            // T_RadiusDamage locals
+            nameMap.Add("globaldef001777", "points");
+            nameMap.Add("globaldef001778", "head");
+            nameMap.Add("globaldef001779", "org");
+
+            // T_BeamDamage params
+            nameMap.Add("globaldef001784", "attacker");
+            nameMap.Add("globaldef001785", "damage");
+
+            // T_BeamDamage locals
+            nameMap.Add("globaldef001786", "points");
+            nameMap.Add("globaldef001787", "head");
 
             #endregion
 
             #region items.qc
 
-            for (int i = 205; i <= 242; i++)
+            for (int i = 204; i <= 242; i++)
             {
                 fileMap[i] = "items.qc";
             }
@@ -611,6 +660,8 @@ namespace DeQcc
             #endregion
 
             #region weapons.qc
+
+            nameMap.Add("func000271", "T_MissileTouch");
 
             for (int i = 256; i <= 291; i++)
             {
@@ -621,15 +672,41 @@ namespace DeQcc
 
             #region client.qc
 
-            for (int i = 373; i <= 405; i++)
+            nameMap.Add("func000406", "ClientObituary");
+
+            for (int i = 373; i <= 406; i++)
             {
                 fileMap[i] = "client.qc";
             }
 
+            // ClientObituary params
+            nameMap.Add("globaldef002975", "targ");
+            nameMap.Add("globaldef002976", "attacker");
+
+
             #endregion
 
-            // not sure where this goes
+            #region player.qc
+
             nameMap.Add("func000461", "ThrowGib");
+
+            for (int i = 461; i <= 461; i++)
+            {
+                fileMap[i] = "player.qc";
+            }
+
+            #endregion
+
+            #region monsters.qc
+
+            nameMap.Add("func000529", "monster_death_use");
+
+            for (int i = 529; i <= 529; i++)
+            {
+                fileMap[i] = "monsters.qc";
+            }
+
+            #endregion
 
             #region doors.qc
 

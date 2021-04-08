@@ -293,7 +293,7 @@ void () func000889 =
         
         if(vlen(self.velocity) > 400)
         {
-            globaldef003929 = globaldef000729 + (MOVETYPE_BOUNCE * random());
+            globaldef003929 = GLOBALDEFSEVENTWONINE + (MOVETYPE_BOUNCE * random());
             T_Damage(other, self, self, globaldef003929);
         }
         
@@ -956,7 +956,7 @@ void () func000934 = [44, func000935]
     }
     
     random();
-    globaldef003981 = ((random() + random()) + random()) * globaldef000729;
+    globaldef003981 = ((random() + random()) + random()) * GLOBALDEFSEVENTWONINE;
     T_Damage(self.enemy, self, self, globaldef003981);
     sound(self, CHAN_VOICE, "shambler/smack.wav", TRUE, ATTN_NORM);
     func000253(self.origin + (v_forward * FL_INWATER), (func000249() * 100) * v_right);
@@ -1190,7 +1190,7 @@ void () func000946 = [64, func000919]
 {
     ai_charge(FL_CLIENT);
     
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         self.think = sham_swingr1;
     }
@@ -1322,7 +1322,7 @@ void () func000955 = [55, func000919]
     ai_charge(TRUE);
     ai_charge(MOVETYPE_BOUNCE);
     
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         self.think = sham_swingl1;
     }

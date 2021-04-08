@@ -883,7 +883,7 @@ void () func002069 =
         T_Damage(other, self, self, 110);
     }
     
-    func000202(self, self.owner, globaldef000729, world);
+    T_RadiusDamage(self, self.owner, GLOBALDEFSEVENTWONINE, world);
     sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);

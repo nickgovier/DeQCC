@@ -933,7 +933,7 @@ void () func000248 =
 // OP_DONE	0	0	0
 float () func000249 = 
 {
-    return FL_SWIM * (random() - globaldef000522);
+    return FL_SWIM * (random() - GLOBALDEFFIVETWOTWO);
 };
 
 
@@ -1074,7 +1074,7 @@ vector () func000252 =
 {
     local vector globaldef002040;
     globaldef002040 = normalize(self.velocity);
-    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - globaldef000522))) + (v_right * (random() - globaldef000522)));
+    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - GLOBALDEFFIVETWOTWO))) + (v_right * (random() - GLOBALDEFFIVETWOTWO)));
     globaldef002040 = globaldef002040 + (FL_SWIM * trace_plane_normal);
     globaldef002040 = globaldef002040 * 200;
     return globaldef002040;

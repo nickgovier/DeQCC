@@ -1,7 +1,7 @@
-void () func000271;
+void () T_MissileTouch;
 void () info_player_start;
-void (entity globaldef002975, entity globaldef002976) func000406;
-void () func000529;
+void (entity targ, entity attacker) ClientObituary;
+void () monster_death_use;
 
 // CanDamage
 // function begins at statement 3781, parm_start=3926
@@ -81,12 +81,12 @@ void () func000529;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef001749, entity globaldef001750) CanDamage = 
+float (entity targ, entity inflictor) CanDamage = 
 {
     
-    if(globaldef001749.movetype == MOVETYPE_PUSH)
+    if(targ.movetype == MOVETYPE_PUSH)
     {
-        traceline(globaldef001750.origin, globaldef000522 * (globaldef001749.absmin + globaldef001749.absmax), TRUE, self);
+        traceline(inflictor.origin, GLOBALDEFFIVETWOTWO * (targ.absmin + targ.absmax), TRUE, self);
         
         if(trace_fraction == TRUE)
         {
@@ -94,7 +94,7 @@ float (entity globaldef001749, entity globaldef001750) CanDamage =
         }
         
         
-        if(trace_ent == globaldef001749)
+        if(trace_ent == targ)
         {
             return TRUE;
         }
@@ -102,35 +102,35 @@ float (entity globaldef001749, entity globaldef001750) CanDamage =
         return FALSE;
     }
     
-    traceline(globaldef001750.origin, globaldef001749.origin, TRUE, self);
+    traceline(inflictor.origin, targ.origin, TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(globaldef001750.origin, globaldef001749.origin + '15 15 0', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(globaldef001750.origin, globaldef001749.origin + '-15 -15 0', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 -15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(globaldef001750.origin, globaldef001749.origin + '-15 15 0', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '-15 15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
         return TRUE;
     }
     
-    traceline(globaldef001750.origin, globaldef001749.origin + '15 -15 0', TRUE, self);
+    traceline(inflictor.origin, targ.origin + '15 -15 0', TRUE, self);
     
     if(trace_fraction == TRUE)
     {
@@ -141,7 +141,7 @@ float (entity globaldef001749, entity globaldef001750) CanDamage =
 };
 
 
-// func000200
+// Killed
 // function begins at statement 3857, parm_start=4007
 // OP_STORE_ENT	28	4009	0
 // OP_STORE_ENT	4007	28	0
@@ -216,11 +216,11 @@ float (entity globaldef001749, entity globaldef001750) CanDamage =
 // OP_CALL0	4043	0	0
 // OP_STORE_ENT	4009	28	0
 // OP_DONE	0	0	0
-void (entity globaldef001756, entity globaldef001757) func000200 = 
+void (entity targ, entity attacker) Killed = 
 {
-    local entity globaldef001758;
-    globaldef001758 = self;
-    self = globaldef001756;
+    local entity oself;
+    oself = self;
+    self = targ;
     
     if(self.health < -99)
     {
@@ -231,11 +231,11 @@ void (entity globaldef001756, entity globaldef001757) func000200 =
     if((self.movetype == MOVETYPE_PUSH) || (self.movetype == MOVETYPE_NONE))
     {
         self.th_die();
-        self = globaldef001758;
+        self = oself;
         return;
     }
     
-    self.enemy = globaldef001757;
+    self.enemy = attacker;
     
     if(self.flags & FL_MONSTER)
     {
@@ -243,44 +243,44 @@ void (entity globaldef001756, entity globaldef001757) func000200 =
         WriteByte(MSG_ALL, SVC_KILLEDMONSTER);
     }
     
-    func000406(self, globaldef001757);
-    if(globaldef001757.classname == "bot")
+    ClientObituary(self, attacker);
+    if(attacker.classname == "bot")
     {
-        func002263(globaldef001757.field000285, globaldef001757.frags);
+        func002263(attacker.field000285, attacker.frags);
     }
     else
     {
         
-        if(globaldef001757.owner.classname == "bot")
+        if(attacker.owner.classname == "bot")
         {
-            func002263(globaldef001757.owner.field000285, globaldef001757.owner.frags);
+            func002263(attacker.owner.field000285, attacker.owner.frags);
         }
         
     }
     
     
-    if(globaldef001756.classname == "bot")
+    if(targ.classname == "bot")
     {
-        func002263(globaldef001756.field000285, globaldef001756.frags);
+        func002263(targ.field000285, targ.frags);
     }
     
     
-    if(globaldef001757)
+    if(attacker)
     {
-        globaldef001757.field000295 = self;
+        attacker.field000295 = self;
     }
     
     
     if(self)
     {
-        self.field000296 = globaldef001757;
+        self.field000296 = attacker;
     }
     
     self.takedamage = DAMAGE_NO;
     self.touch = SUB_Null;
-    func000529();
+    monster_death_use();
     self.th_die();
-    self = globaldef001758;
+    self = oself;
 };
 
 
@@ -470,12 +470,12 @@ void (entity globaldef001756, entity globaldef001757) func000200 =
 // OP_STOREP_F	4215	4214	0
 // OP_STORE_ENT	4051	28	0
 // OP_DONE	0	0	0
-void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage = 
+void (entity targ, entity inflictor, entity attacker, float damage) T_Damage = 
 {
-    local vector globaldef001764;
-    local entity globaldef001768;
-    local float globaldef001769;
-    local float globaldef001770;
+    local vector dir;
+    local entity oldself;
+    local float save;
+    local float take;
     
     if(globaldef000799)
     {
@@ -483,105 +483,105 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
     }
     
     
-    if(!globaldef001760.takedamage)
+    if(!targ.takedamage)
     {
         return;
     }
     
-    damage_attacker = globaldef001762;
+    damage_attacker = attacker;
     
-    if(globaldef001762.super_damage_finished > time)
+    if(attacker.super_damage_finished > time)
     {
         if(deathmatch == MOVETYPE_STEP)
         {
-            globaldef001763 = globaldef001763 * FL_CLIENT;
+            damage = damage * FL_CLIENT;
         }
         else
         {
-            globaldef001763 = globaldef001763 * MOVETYPE_STEP;
+            damage = damage * MOVETYPE_STEP;
         }
         
     }
     
-    globaldef001769 = ceil(globaldef001760.armortype * globaldef001763);
+    save = ceil(targ.armortype * damage);
     
-    if(globaldef001769 >= globaldef001760.armorvalue)
+    if(save >= targ.armorvalue)
     {
-        globaldef001769 = globaldef001760.armorvalue;
-        globaldef001760.armortype = FALSE;
-        globaldef001760.items = globaldef001760.items - (globaldef001760.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3));
+        save = targ.armorvalue;
+        targ.armortype = FALSE;
+        targ.items = targ.items - (targ.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3));
     }
     
-    globaldef001760.armorvalue = globaldef001760.armorvalue - globaldef001769;
-    globaldef001770 = ceil(globaldef001763 - globaldef001769);
+    targ.armorvalue = targ.armorvalue - save;
+    take = ceil(damage - save);
     
-    if(globaldef001760.flags & FL_CLIENT)
+    if(targ.flags & FL_CLIENT)
     {
-        globaldef001760.dmg_take = globaldef001760.dmg_take + globaldef001770;
-        globaldef001760.dmg_save = globaldef001760.dmg_save + globaldef001769;
-        globaldef001760.dmg_inflictor = globaldef001761;
-    }
-    
-    
-    if((globaldef001761 != world) && (globaldef001760.movetype == MOVETYPE_WALK))
-    {
-        globaldef001764 = globaldef001760.origin - ((globaldef001761.absmin + globaldef001761.absmax) * globaldef000522);
-        globaldef001764 = normalize(globaldef001764);
-        globaldef001760.velocity = globaldef001760.velocity + ((globaldef001764 * globaldef001763) * FL_CLIENT);
+        targ.dmg_take = targ.dmg_take + take;
+        targ.dmg_save = targ.dmg_save + save;
+        targ.dmg_inflictor = inflictor;
     }
     
     
-    if((globaldef001761 != world) && (globaldef001760.classname == "bot"))
+    if((inflictor != world) && (targ.movetype == MOVETYPE_WALK))
     {
-        globaldef001764 = globaldef001760.origin - ((globaldef001761.absmin + globaldef001761.absmax) * globaldef000522);
-        globaldef001764 = normalize(globaldef001764);
-        globaldef001760.velocity = globaldef001760.velocity + ((globaldef001764 * globaldef001763) * FL_CLIENT);
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * GLOBALDEFFIVETWOTWO);
+        dir = normalize(dir);
+        targ.velocity = targ.velocity + ((dir * damage) * FL_CLIENT);
+    }
+    
+    
+    if((inflictor != world) && (targ.classname == "bot"))
+    {
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * GLOBALDEFFIVETWOTWO);
+        dir = normalize(dir);
+        targ.velocity = targ.velocity + ((dir * damage) * FL_CLIENT);
         
-        if(globaldef001760.field000278 > time)
+        if(targ.field000278 > time)
         {
-            globaldef001760.velocity = globaldef001760.velocity + globaldef001760.field000279;
-            globaldef001760.field000278 = time - TRUE;
+            targ.velocity = targ.velocity + targ.field000279;
+            targ.field000278 = time - TRUE;
         }
         
     }
     
     
-    if(globaldef001760.flags & FL_GODMODE)
+    if(targ.flags & FL_GODMODE)
     {
         return;
     }
     
     
-    if(globaldef001760.invincible_finished >= time)
+    if(targ.invincible_finished >= time)
     {
         
         if(self.invincible_sound < time)
         {
-            sound(globaldef001760, CHAN_ITEM, "items/protect3.wav", TRUE, ATTN_NORM);
+            sound(targ, CHAN_ITEM, "items/protect3.wav", TRUE, ATTN_NORM);
             self.invincible_sound = time + FL_SWIM;
         }
         
         return;
     }
     
-    globaldef001760.health = globaldef001760.health - globaldef001770;
+    targ.health = targ.health - take;
     
-    if(globaldef001760.health <= FALSE)
+    if(targ.health <= FALSE)
     {
-        func000200(globaldef001760, globaldef001762);
+        Killed(targ, attacker);
         return;
     }
     
-    globaldef001768 = self;
-    self = globaldef001760;
+    oldself = self;
+    self = targ;
     
-    if((self.flags & FL_MONSTER) && (globaldef001762 != world))
+    if((self.flags & FL_MONSTER) && (attacker != world))
     {
         
-        if((self != globaldef001762) && (globaldef001762 != self.enemy))
+        if((self != attacker) && (attacker != self.enemy))
         {
             
-            if((self.classname != globaldef001762.classname) || (self.classname == "monster_army"))
+            if((self.classname != attacker.classname) || (self.classname == "monster_army"))
             {
                 
                 if(self.enemy.classname == "player")
@@ -589,7 +589,7 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
                     self.oldenemy = self.enemy;
                 }
                 
-                self.enemy = globaldef001762;
+                self.enemy = attacker;
                 FoundTarget();
             }
             
@@ -600,7 +600,7 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
     
     if(self.th_pain)
     {
-        self.th_pain(globaldef001762, globaldef001770);
+        self.th_pain(attacker, take);
         
         if(skill == MOVETYPE_WALK)
         {
@@ -609,7 +609,126 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
         
     }
     
-    self = globaldef001768;
+    self = oldself;
+};
+
+
+// T_RadiusDamage
+// function begins at statement 4114, parm_start=4217
+// OP_LOAD_V	4217	105	4226
+// OP_STORE_V	4226	4	0
+// OP_ADD_F	4219	746	4229
+// OP_STORE_V	4229	7	0
+// OP_CALL2	471	0	0
+// OP_STORE_ENT	1	4222	0
+// OP_IFNOT	4222	51	0
+// OP_NE_E	4222	4220	4230
+// OP_IFNOT	4230	46	0
+// OP_LOAD_F	4222	163	4231
+// OP_IFNOT	4231	44	0
+// OP_LOAD_V	4222	105	4232
+// OP_LOAD_V	4222	134	4235
+// OP_LOAD_V	4222	138	4238
+// OP_ADD_V	4235	4238	4241
+// OP_MUL_VF	4241	539	4244
+// OP_ADD_V	4232	4244	4247
+// OP_STORE_V	4247	4223	0
+// OP_LOAD_V	4217	105	4250
+// OP_SUB_V	4250	4223	4253
+// OP_STORE_V	4253	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_F	539	1	4256
+// OP_STORE_F	4256	4221	0
+// OP_LT	4221	213	4257
+// OP_IFNOT	4257	2	0
+// OP_STORE_F	213	4221	0
+// OP_SUB_F	4219	4221	4258
+// OP_STORE_F	4258	4221	0
+// OP_EQ_E	4222	4218	4259
+// OP_IFNOT	4259	3	0
+// OP_MUL_F	4221	539	4260
+// OP_STORE_F	4260	4221	0
+// OP_GT	4221	213	4261
+// OP_IFNOT	4261	20	0
+// OP_STORE_V	4222	4	0
+// OP_STORE_V	4217	7	0
+// OP_CALL2	524	0	0
+// OP_IFNOT	1	16	0
+// OP_LOAD_S	4222	129	4262
+// OP_EQ_S	4262	3661	4263
+// OP_IFNOT	4263	8	0
+// OP_STORE_V	4222	4	0
+// OP_STORE_V	4217	7	0
+// OP_STORE_V	4218	10	0
+// OP_MUL_F	4221	539	4264
+// OP_STORE_V	4264	13	0
+// OP_CALL4	522	0	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	4222	4	0
+// OP_STORE_V	4217	7	0
+// OP_STORE_V	4218	10	0
+// OP_STORE_V	4221	13	0
+// OP_CALL4	522	0	0
+// OP_LOAD_ENT	4222	164	4265
+// OP_STORE_ENT	4265	4222	0
+// OP_GOTO	-50	0	0
+// OP_DONE	0	0	0
+void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage = 
+{
+    local float points;
+    local entity head;
+    local vector org;
+    head = findradius(inflictor.origin, damage + GLOBALDEFSEVENTWONINE);
+    
+    while(head)
+    {
+        
+        if(head != ignore)
+        {
+            
+            if(head.takedamage)
+            {
+                org = head.origin + ((head.mins + head.maxs) * GLOBALDEFFIVETWOTWO);
+                points = GLOBALDEFFIVETWOTWO * (vlen(inflictor.origin - org));
+                
+                if(points < FALSE)
+                {
+                    points = FALSE;
+                }
+                
+                points = damage - points;
+                
+                if(head == attacker)
+                {
+                    points = points * GLOBALDEFFIVETWOTWO;
+                }
+                
+                
+                if(points > FALSE)
+                {
+                    
+                    if(CanDamage(head, inflictor))
+                    {
+                        if(head.classname == "monster_shambler")
+                        {
+                            T_Damage(head, inflictor, attacker, points * GLOBALDEFFIVETWOTWO);
+                        }
+                        else
+                        {
+                            T_Damage(head, inflictor, attacker, points);
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        head = head.chain;
+    }
+    
 };
 
 
@@ -665,44 +784,44 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
 // OP_STORE_ENT	4294	4270	0
 // OP_GOTO	-42	0	0
 // OP_DONE	0	0	0
-void (entity globaldef001784, float globaldef001785) T_BeamDamage = 
+void (entity attacker, float damage) T_BeamDamage = 
 {
-    local float globaldef001786;
-    local entity globaldef001787;
-    globaldef001787 = findradius(globaldef001784.origin, globaldef001785 + globaldef000729);
+    local float points;
+    local entity head;
+    head = findradius(attacker.origin, damage + GLOBALDEFSEVENTWONINE);
     
-    while(globaldef001787)
+    while(head)
     {
         
-        if(globaldef001787.takedamage)
+        if(head.takedamage)
         {
-            globaldef001786 = globaldef000522 * (vlen(globaldef001784.origin - globaldef001787.origin));
+            points = GLOBALDEFFIVETWOTWO * (vlen(attacker.origin - head.origin));
             
-            if(globaldef001786 < FALSE)
+            if(points < FALSE)
             {
-                globaldef001786 = FALSE;
+                points = FALSE;
             }
             
-            globaldef001786 = globaldef001785 - globaldef001786;
+            points = damage - points;
             
-            if(globaldef001787 == globaldef001784)
+            if(head == attacker)
             {
-                globaldef001786 = globaldef001786 * globaldef000522;
+                points = points * GLOBALDEFFIVETWOTWO;
             }
             
             
-            if(globaldef001786 > FALSE)
+            if(points > FALSE)
             {
                 
-                if(CanDamage(globaldef001787, globaldef001784))
+                if(CanDamage(head, attacker))
                 {
-                    if(globaldef001787.classname == "monster_shambler")
+                    if(head.classname == "monster_shambler")
                     {
-                        T_Damage(globaldef001787, globaldef001784, globaldef001784, globaldef001786 * globaldef000522);
+                        T_Damage(head, attacker, attacker, points * GLOBALDEFFIVETWOTWO);
                     }
                     else
                     {
-                        T_Damage(globaldef001787, globaldef001784, globaldef001784, globaldef001786);
+                        T_Damage(head, attacker, attacker, points);
                     }
                     
                 }
@@ -711,7 +830,7 @@ void (entity globaldef001784, float globaldef001785) T_BeamDamage =
             
         }
         
-        globaldef001787 = globaldef001787.chain;
+        head = head.chain;
     }
     
 };

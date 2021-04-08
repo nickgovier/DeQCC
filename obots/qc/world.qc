@@ -912,11 +912,11 @@ void () StartFrame =
     if(globaldef000782 != cvar("sv_gravity"))
     {
         globaldef000782 = cvar("sv_gravity");
-        globaldef000776 = (((globaldef000522 * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - 14;
-        globaldef000777 = ((globaldef000522 * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
+        globaldef000776 = (((GLOBALDEFFIVETWOTWO * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - 14;
+        globaldef000777 = ((GLOBALDEFFIVETWOTWO * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
         globaldef000778 = (FL_SWIM * (globaldef000717 / globaldef000782)) - 0.1;
         globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
-        globaldef000780 = (((globaldef000522 * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
+        globaldef000780 = (((GLOBALDEFFIVETWOTWO * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
         globaldef000781 = TRUE / (globaldef000781 * GLOBALDEFSEVENTWOTHREE);
     }

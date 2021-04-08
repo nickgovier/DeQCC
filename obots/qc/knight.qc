@@ -359,7 +359,7 @@ void () func001086 =
     }
     
     sound(self, CHAN_VOICE, "knight/kdeath.wav", TRUE, ATTN_NORM);
-    if(random() < globaldef000522)
+    if(random() < GLOBALDEFFIVETWOTWO)
     {
         func001065();
     }
