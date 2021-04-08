@@ -104,33 +104,6 @@ namespace DeQcc
 
             #endregion
 
-            #region Set unknown files for all unknown names at this point
-
-            // Whenever there is a gap between the known function names/files, create a new unique file for the
-            // functions in that gap (so we continue to have a sequential list of functions across multiple files)
-            // if we don't do this, all the unknown files will be appended to a single file, and we won't be able
-            // to tell where the known functions originally were in that file, making matching more difficult
-            int nextfile = 0;
-            bool lastFunctionWasInFileMap = false;
-            for(int i = 1; i < 3000; i++)   // should be to functions.Count, but functions aren't read in yet
-            {
-                if (!fileMap.ContainsKey(i))
-                {
-                    fileMap.Add(i, "unknown" + nextfile.ToString("000") + ".qc");
-                    lastFunctionWasInFileMap = false;
-                }
-                else
-                {
-                    if (lastFunctionWasInFileMap == false)
-                    {
-                        nextfile++;
-                    }
-                    lastFunctionWasInFileMap = true;
-                }
-            }
-
-            #endregion
-
             #region defs.qc system globals
 
             nameMap.Add("globaldef000001", "self");
@@ -670,6 +643,15 @@ namespace DeQcc
 
             #endregion
 
+            #region world.qc
+
+            for (int i = 296; i <= 299; i++)
+            {
+                fileMap[i] = "world.qc";
+            }
+
+            #endregion
+
             #region client.qc
 
             nameMap.Add("func000406", "ClientObituary");
@@ -717,6 +699,15 @@ namespace DeQcc
 
             #endregion
 
+            #region buttons.qc
+
+            for (int i = 569; i <= 569; i++)
+            {
+                fileMap[i] = "buttons.qc";
+            }
+
+            #endregion
+
             #region triggers.qc
 
             for (int i = 570; i <= 601; i++)
@@ -744,27 +735,64 @@ namespace DeQcc
 
             #endregion
 
+            #region ogre.qc
+
             nameMap.Add("func000702", "ogre_swing1");
             nameMap.Add("func000716", "ogre_smash1");
-            nameMap.Add("func000887", "DemonCheckAttack");
 
+            for (int i = 702; i <= 811; i++)
+            {
+                fileMap[i] = "ogre.qc";
+            }
+
+            #endregion
+
+            #region demon.qc
+
+            nameMap.Add("func000887", "DemonCheckAttack");
             nameMap.Add("func000888", "Demon_Melee");
+
+            for (int i = 884; i <= 888; i++)
+            {
+                fileMap[i] = "demon.qc";
+            }
+
             // Demon_Melee params
             nameMap.Add("globaldef003923", "side");
+
+            #endregion
+
+            #region shambler.qc
 
             nameMap.Add("func000925", "sham_smash1");
             nameMap.Add("func000938", "sham_swingl1");
             nameMap.Add("func000947", "sham_swingr1");
 
+            for (int i = 925; i <= 987; i++)
+            {
+                fileMap[i] = "shambler.qc";
+            }
+
+            #endregion
+
+            #region knight.qc
+
             nameMap.Add("func000997", "knight_walk1");
             nameMap.Add("func001019", "knight_runatk1");
             nameMap.Add("func001030", "knight_atk1");
 
-            #region knight.qc
-
-            for (int i = 1055; i <= 1087; i++)
+            for (int i = 997; i <= 1087; i++)
             {
                 fileMap[i] = "knight.qc";
+            }
+
+            #endregion
+
+            #region soldier.qc
+
+            for (int i = 1194; i <= 1194; i++)
+            {
+                fileMap[i] = "soldier.qc";
             }
 
             #endregion
@@ -784,9 +812,18 @@ namespace DeQcc
 
             nameMap.Add("func001357", "DogCheckAttack");
 
-            for (int i = 1357; i <= 1357; i++)
+            for (int i = 1357; i <= 1358; i++)
             {
                 fileMap[i] = "dog.qc";
+            }
+
+            #endregion
+
+            #region zombie.qc
+
+            for (int i = 1562; i <= 1562; i++)
+            {
+                fileMap[i] = "zombie.qc";
             }
 
             #endregion
@@ -800,11 +837,47 @@ namespace DeQcc
 
             #endregion
 
+            #region tarbaby.qc
+
+            for (int i = 1746; i <= 1746; i++)
+            {
+                fileMap[i] = "tarbaby.qc";
+            }
+
+            #endregion
+
             #region hknight.qc
 
             for (int i = 1814; i <= 1920; i++)
             {
                 fileMap[i] = "hknight.qc";
+            }
+
+            #endregion
+
+            #region fish.qc
+
+            for (int i = 2016; i <= 2016; i++)
+            {
+                fileMap[i] = "fish.qc";
+            }
+
+            #endregion
+
+            #region shalrath.qc
+
+            for (int i = 2070; i <= 2070; i++)
+            {
+                fileMap[i] = "shalrath.qc";
+            }
+
+            #endregion
+
+            #region enforcer.qc
+
+            for (int i = 2182; i <= 2182; i++)
+            {
+                fileMap[i] = "enforcer.qc";
             }
 
             #endregion
@@ -822,7 +895,7 @@ namespace DeQcc
             nameMap.Add("func002252", "finale_4");
             nameMap.Add("func002253", "nopain");
 
-            for (int i = 2183; i <= 2253; i++)
+            for (int i = 2183; i <= 2254; i++)
             {
                 fileMap[i] = "oldone.qc";
             }
@@ -842,6 +915,33 @@ namespace DeQcc
             nameMap.Add("globaldef005659", "z");
             nameMap.Add("globaldef005660", "r");
             nameMap.Add("globaldef005661", "n");
+
+            #endregion
+
+            #region Set unknown files for all unknown names at this point
+
+            // Whenever there is a gap between the known function names/files, create a new unique file for the
+            // functions in that gap (so we continue to have a sequential list of functions across multiple files)
+            // if we don't do this, all the unknown files will be appended to a single file, and we won't be able
+            // to tell where the known functions originally were in that file, making matching more difficult
+            int nextfile = 0;
+            bool lastFunctionWasInFileMap = false;
+            for (int i = 1; i < 3000; i++)   // should be to functions.Count, but functions aren't read in yet
+            {
+                if (!fileMap.ContainsKey(i))
+                {
+                    fileMap.Add(i, "unknown" + nextfile.ToString("000") + ".qc");
+                    lastFunctionWasInFileMap = false;
+                }
+                else
+                {
+                    if (lastFunctionWasInFileMap == false)
+                    {
+                        nextfile++;
+                    }
+                    lastFunctionWasInFileMap = true;
+                }
+            }
 
             #endregion
         }
