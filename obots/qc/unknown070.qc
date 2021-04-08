@@ -211,7 +211,7 @@ void () func002073 =
 // OP_DONE	0	0	0
 void () func002074 = [0, func002075]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -222,7 +222,7 @@ void () func002074 = [0, func002075]
 // OP_DONE	0	0	0
 void () func002075 = [1, func002076]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -233,7 +233,7 @@ void () func002075 = [1, func002076]
 // OP_DONE	0	0	0
 void () func002076 = [2, func002077]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -244,7 +244,7 @@ void () func002076 = [2, func002077]
 // OP_DONE	0	0	0
 void () func002077 = [3, func002078]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -255,7 +255,7 @@ void () func002077 = [3, func002078]
 // OP_DONE	0	0	0
 void () func002078 = [4, func002079]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -266,7 +266,7 @@ void () func002078 = [4, func002079]
 // OP_DONE	0	0	0
 void () func002079 = [5, func002080]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -277,7 +277,7 @@ void () func002079 = [5, func002080]
 // OP_DONE	0	0	0
 void () func002080 = [6, func002074]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -304,7 +304,7 @@ void () func002081 = [7, func002082]
         sound(self, CHAN_VOICE, "enforcer/idle1.wav", TRUE, ATTN_IDLE);
     }
     
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -316,7 +316,7 @@ void () func002081 = [7, func002082]
 // OP_DONE	0	0	0
 void () func002082 = [8, func002083]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -328,7 +328,7 @@ void () func002082 = [8, func002083]
 // OP_DONE	0	0	0
 void () func002083 = [9, func002084]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -340,7 +340,7 @@ void () func002083 = [9, func002084]
 // OP_DONE	0	0	0
 void () func002084 = [10, func002085]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -352,7 +352,7 @@ void () func002084 = [10, func002085]
 // OP_DONE	0	0	0
 void () func002085 = [11, func002086]
 {
-    func000189(TRUE);
+    ai_walk(TRUE);
 };
 
 
@@ -364,7 +364,7 @@ void () func002085 = [11, func002086]
 // OP_DONE	0	0	0
 void () func002086 = [12, func002087]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -376,7 +376,7 @@ void () func002086 = [12, func002087]
 // OP_DONE	0	0	0
 void () func002087 = [13, func002088]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -388,7 +388,7 @@ void () func002087 = [13, func002088]
 // OP_DONE	0	0	0
 void () func002088 = [14, func002089]
 {
-    func000189(TRUE);
+    ai_walk(TRUE);
 };
 
 
@@ -400,7 +400,7 @@ void () func002088 = [14, func002089]
 // OP_DONE	0	0	0
 void () func002089 = [15, func002090]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -412,7 +412,7 @@ void () func002089 = [15, func002090]
 // OP_DONE	0	0	0
 void () func002090 = [16, func002091]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -424,7 +424,7 @@ void () func002090 = [16, func002091]
 // OP_DONE	0	0	0
 void () func002091 = [17, func002092]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -436,7 +436,7 @@ void () func002091 = [17, func002092]
 // OP_DONE	0	0	0
 void () func002092 = [18, func002093]
 {
-    func000189(TRUE);
+    ai_walk(TRUE);
 };
 
 
@@ -448,7 +448,7 @@ void () func002092 = [18, func002093]
 // OP_DONE	0	0	0
 void () func002093 = [19, func002094]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -460,7 +460,7 @@ void () func002093 = [19, func002094]
 // OP_DONE	0	0	0
 void () func002094 = [20, func002095]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -472,7 +472,7 @@ void () func002094 = [20, func002095]
 // OP_DONE	0	0	0
 void () func002095 = [21, func002096]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -484,7 +484,7 @@ void () func002095 = [21, func002096]
 // OP_DONE	0	0	0
 void () func002096 = [22, func002081]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -511,7 +511,7 @@ void () func002097 = [23, func002098]
         sound(self, CHAN_VOICE, "enforcer/idle1.wav", TRUE, ATTN_IDLE);
     }
     
-    func000198(18);
+    ai_run(18);
 };
 
 
@@ -523,7 +523,7 @@ void () func002097 = [23, func002098]
 // OP_DONE	0	0	0
 void () func002098 = [24, func002099]
 {
-    func000198(14);
+    ai_run(14);
 };
 
 
@@ -535,7 +535,7 @@ void () func002098 = [24, func002099]
 // OP_DONE	0	0	0
 void () func002099 = [25, func002100]
 {
-    func000198(MOVETYPE_PUSH);
+    ai_run(MOVETYPE_PUSH);
 };
 
 
@@ -547,7 +547,7 @@ void () func002099 = [25, func002100]
 // OP_DONE	0	0	0
 void () func002100 = [26, func002101]
 {
-    func000198(globaldef000774);
+    ai_run(globaldef000774);
 };
 
 
@@ -559,7 +559,7 @@ void () func002100 = [26, func002101]
 // OP_DONE	0	0	0
 void () func002101 = [27, func002102]
 {
-    func000198(14);
+    ai_run(14);
 };
 
 
@@ -571,7 +571,7 @@ void () func002101 = [27, func002102]
 // OP_DONE	0	0	0
 void () func002102 = [28, func002103]
 {
-    func000198(14);
+    ai_run(14);
 };
 
 
@@ -583,7 +583,7 @@ void () func002102 = [28, func002103]
 // OP_DONE	0	0	0
 void () func002103 = [29, func002104]
 {
-    func000198(MOVETYPE_PUSH);
+    ai_run(MOVETYPE_PUSH);
 };
 
 
@@ -595,7 +595,7 @@ void () func002103 = [29, func002104]
 // OP_DONE	0	0	0
 void () func002104 = [30, func002097]
 {
-    func000198(MOVETYPE_BOUNCEMISSILE);
+    ai_run(MOVETYPE_BOUNCEMISSILE);
 };
 
 
@@ -944,7 +944,7 @@ void () func002138 = [85, func002139]
 // OP_DONE	0	0	0
 void () func002139 = [86, func002140]
 {
-    func000188(FL_SWIM);
+    ai_painforward(FL_SWIM);
 };
 
 
@@ -956,7 +956,7 @@ void () func002139 = [86, func002140]
 // OP_DONE	0	0	0
 void () func002140 = [87, func002141]
 {
-    func000188(TRUE);
+    ai_painforward(TRUE);
 };
 
 
@@ -1013,7 +1013,7 @@ void () func002145 = [92, func002146]
 // OP_DONE	0	0	0
 void () func002146 = [93, func002147]
 {
-    func000188(TRUE);
+    ai_painforward(TRUE);
 };
 
 
@@ -1025,7 +1025,7 @@ void () func002146 = [93, func002147]
 // OP_DONE	0	0	0
 void () func002147 = [94, func002148]
 {
-    func000188(TRUE);
+    ai_painforward(TRUE);
 };
 
 
@@ -1037,7 +1037,7 @@ void () func002147 = [94, func002148]
 // OP_DONE	0	0	0
 void () func002148 = [95, func002149]
 {
-    func000188(TRUE);
+    ai_painforward(TRUE);
 };
 
 
@@ -1067,7 +1067,7 @@ void () func002150 = [97, func002151]
 // OP_DONE	0	0	0
 void () func002151 = [98, func002152]
 {
-    func000187(TRUE);
+    ai_pain(TRUE);
 };
 
 
@@ -1079,7 +1079,7 @@ void () func002151 = [98, func002152]
 // OP_DONE	0	0	0
 void () func002152 = [99, func002153]
 {
-    func000187(TRUE);
+    ai_pain(TRUE);
 };
 
 
@@ -1244,7 +1244,7 @@ void () func002158 = [43, func002159]
 // OP_DONE	0	0	0
 void () func002159 = [44, func002160]
 {
-    func000185(14);
+    ai_forward(14);
 };
 
 
@@ -1256,7 +1256,7 @@ void () func002159 = [44, func002160]
 // OP_DONE	0	0	0
 void () func002160 = [45, func002161]
 {
-    func000185(FL_SWIM);
+    ai_forward(FL_SWIM);
 };
 
 
@@ -1295,7 +1295,7 @@ void () func002163 = [48, func002164]
 // OP_DONE	0	0	0
 void () func002164 = [49, func002165]
 {
-    func000185(MOVETYPE_WALK);
+    ai_forward(MOVETYPE_WALK);
 };
 
 
@@ -1307,7 +1307,7 @@ void () func002164 = [49, func002165]
 // OP_DONE	0	0	0
 void () func002165 = [50, func002166]
 {
-    func000185(MOVETYPE_FLY);
+    ai_forward(MOVETYPE_FLY);
 };
 
 
@@ -1319,7 +1319,7 @@ void () func002165 = [50, func002166]
 // OP_DONE	0	0	0
 void () func002166 = [51, func002167]
 {
-    func000185(MOVETYPE_FLY);
+    ai_forward(MOVETYPE_FLY);
 };
 
 
@@ -1331,7 +1331,7 @@ void () func002166 = [51, func002167]
 // OP_DONE	0	0	0
 void () func002167 = [52, func002168]
 {
-    func000185(MOVETYPE_FLY);
+    ai_forward(MOVETYPE_FLY);
 };
 
 

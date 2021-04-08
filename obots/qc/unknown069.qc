@@ -8,7 +8,7 @@ void () func002067;
 // OP_DONE	0	0	0
 void () func002017 = [23, func002017]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -35,7 +35,7 @@ void () func002018 = [24, func002019]
         sound(self, CHAN_VOICE, "shalrath/idle.wav", TRUE, ATTN_IDLE);
     }
     
-    func000189(MOVETYPE_TOSS);
+    ai_walk(MOVETYPE_TOSS);
 };
 
 
@@ -47,7 +47,7 @@ void () func002018 = [24, func002019]
 // OP_DONE	0	0	0
 void () func002019 = [25, func002020]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -59,7 +59,7 @@ void () func002019 = [25, func002020]
 // OP_DONE	0	0	0
 void () func002020 = [26, func002021]
 {
-    func000189(FALSE);
+    ai_walk(FALSE);
 };
 
 
@@ -71,7 +71,7 @@ void () func002020 = [26, func002021]
 // OP_DONE	0	0	0
 void () func002021 = [27, func002022]
 {
-    func000189(FALSE);
+    ai_walk(FALSE);
 };
 
 
@@ -83,7 +83,7 @@ void () func002021 = [27, func002022]
 // OP_DONE	0	0	0
 void () func002022 = [28, func002023]
 {
-    func000189(FALSE);
+    ai_walk(FALSE);
 };
 
 
@@ -95,7 +95,7 @@ void () func002022 = [28, func002023]
 // OP_DONE	0	0	0
 void () func002023 = [29, func002024]
 {
-    func000189(FALSE);
+    ai_walk(FALSE);
 };
 
 
@@ -107,7 +107,7 @@ void () func002023 = [29, func002024]
 // OP_DONE	0	0	0
 void () func002024 = [30, func002025]
 {
-    func000189(MOVETYPE_FLY);
+    ai_walk(MOVETYPE_FLY);
 };
 
 
@@ -119,7 +119,7 @@ void () func002024 = [30, func002025]
 // OP_DONE	0	0	0
 void () func002025 = [31, func002026]
 {
-    func000189(MOVETYPE_TOSS);
+    ai_walk(MOVETYPE_TOSS);
 };
 
 
@@ -131,7 +131,7 @@ void () func002025 = [31, func002026]
 // OP_DONE	0	0	0
 void () func002026 = [32, func002027]
 {
-    func000189(MOVETYPE_FLY);
+    ai_walk(MOVETYPE_FLY);
 };
 
 
@@ -143,7 +143,7 @@ void () func002026 = [32, func002027]
 // OP_DONE	0	0	0
 void () func002027 = [33, func002028]
 {
-    func000189(FALSE);
+    ai_walk(FALSE);
 };
 
 
@@ -155,7 +155,7 @@ void () func002027 = [33, func002028]
 // OP_DONE	0	0	0
 void () func002028 = [34, func002029]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -167,7 +167,7 @@ void () func002028 = [34, func002029]
 // OP_DONE	0	0	0
 void () func002029 = [23, func002018]
 {
-    func000189(MOVETYPE_FLY);
+    ai_walk(MOVETYPE_FLY);
 };
 
 
@@ -194,7 +194,7 @@ void () func002030 = [24, func002031]
         sound(self, CHAN_VOICE, "shalrath/idle.wav", TRUE, ATTN_IDLE);
     }
     
-    func000198(MOVETYPE_TOSS);
+    ai_run(MOVETYPE_TOSS);
 };
 
 
@@ -206,7 +206,7 @@ void () func002030 = [24, func002031]
 // OP_DONE	0	0	0
 void () func002031 = [25, func002032]
 {
-    func000198(MOVETYPE_STEP);
+    ai_run(MOVETYPE_STEP);
 };
 
 
@@ -218,7 +218,7 @@ void () func002031 = [25, func002032]
 // OP_DONE	0	0	0
 void () func002032 = [26, func002033]
 {
-    func000198(FALSE);
+    ai_run(FALSE);
 };
 
 
@@ -230,7 +230,7 @@ void () func002032 = [26, func002033]
 // OP_DONE	0	0	0
 void () func002033 = [27, func002034]
 {
-    func000198(FALSE);
+    ai_run(FALSE);
 };
 
 
@@ -242,7 +242,7 @@ void () func002033 = [27, func002034]
 // OP_DONE	0	0	0
 void () func002034 = [28, func002035]
 {
-    func000198(FALSE);
+    ai_run(FALSE);
 };
 
 
@@ -254,7 +254,7 @@ void () func002034 = [28, func002035]
 // OP_DONE	0	0	0
 void () func002035 = [29, func002036]
 {
-    func000198(FALSE);
+    ai_run(FALSE);
 };
 
 
@@ -266,7 +266,7 @@ void () func002035 = [29, func002036]
 // OP_DONE	0	0	0
 void () func002036 = [30, func002037]
 {
-    func000198(MOVETYPE_FLY);
+    ai_run(MOVETYPE_FLY);
 };
 
 
@@ -278,7 +278,7 @@ void () func002036 = [30, func002037]
 // OP_DONE	0	0	0
 void () func002037 = [31, func002038]
 {
-    func000198(MOVETYPE_TOSS);
+    ai_run(MOVETYPE_TOSS);
 };
 
 
@@ -290,7 +290,7 @@ void () func002037 = [31, func002038]
 // OP_DONE	0	0	0
 void () func002038 = [32, func002039]
 {
-    func000198(MOVETYPE_FLY);
+    ai_run(MOVETYPE_FLY);
 };
 
 
@@ -302,7 +302,7 @@ void () func002038 = [32, func002039]
 // OP_DONE	0	0	0
 void () func002039 = [33, func002040]
 {
-    func000198(FALSE);
+    ai_run(FALSE);
 };
 
 
@@ -314,7 +314,7 @@ void () func002039 = [33, func002040]
 // OP_DONE	0	0	0
 void () func002040 = [34, func002041]
 {
-    func000198(MOVETYPE_STEP);
+    ai_run(MOVETYPE_STEP);
 };
 
 
@@ -326,7 +326,7 @@ void () func002040 = [34, func002041]
 // OP_DONE	0	0	0
 void () func002041 = [23, func002030]
 {
-    func000198(MOVETYPE_FLY);
+    ai_run(MOVETYPE_FLY);
 };
 
 

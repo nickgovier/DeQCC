@@ -6,7 +6,7 @@
 // OP_DONE	0	0	0
 void () knight_bow1 = [67, func001056]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -17,7 +17,7 @@ void () knight_bow1 = [67, func001056]
 // OP_DONE	0	0	0
 void () func001056 = [68, func001057]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -28,7 +28,7 @@ void () func001056 = [68, func001057]
 // OP_DONE	0	0	0
 void () func001057 = [69, func001058]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -39,7 +39,7 @@ void () func001057 = [69, func001058]
 // OP_DONE	0	0	0
 void () func001058 = [70, func001059]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -50,7 +50,7 @@ void () func001058 = [70, func001059]
 // OP_DONE	0	0	0
 void () func001059 = [71, func001059]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -61,7 +61,7 @@ void () func001059 = [71, func001059]
 // OP_DONE	0	0	0
 void () knight_bow6 = [70, func001061]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -72,7 +72,7 @@ void () knight_bow6 = [70, func001061]
 // OP_DONE	0	0	0
 void () func001061 = [69, func001062]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -83,7 +83,7 @@ void () func001061 = [69, func001062]
 // OP_DONE	0	0	0
 void () func001062 = [68, func001063]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -94,7 +94,7 @@ void () func001062 = [68, func001063]
 // OP_DONE	0	0	0
 void () func001063 = [67, func001064]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -103,9 +103,9 @@ void () func001063 = [67, func001064]
 // OP_STATE	9915	3504	0
 // OP_CALL0	3806	0	0
 // OP_DONE	0	0	0
-void () func001064 = [53, func000997]
+void () func001064 = [53, knight_walk1]
 {
-    func000191();
+    ai_turn();
 };
 
 
@@ -443,7 +443,7 @@ void () monster_knight =
     setsize(self, VEC_HULL_MIN, '16 16 40');
     self.health = 75;
     self.th_stand = func000988;
-    self.th_walk = func000997;
+    self.th_walk = knight_walk1;
     self.th_run = func001011;
     self.th_melee = knight_atk1;
     self.th_pain = func001054;

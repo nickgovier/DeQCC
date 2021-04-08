@@ -196,7 +196,7 @@ float globaldef000724;
 float globaldef000725;
 float globaldef000726;
 float globaldef000727;
-float globaldef000728;
+float GLOBALDEFSEVENTWOEIGHT = 500;
 float globaldef000729;
 float globaldef000730;
 float globaldef000731;
@@ -2478,9 +2478,9 @@ void (entity globaldef001284) func000129 =
     self.state = globaldef001162;
     self.lip = 1.5 * (vlen(self.dest - self.dest1));
     
-    if(self.lip < globaldef000728)
+    if(self.lip < GLOBALDEFSEVENTWOEIGHT)
     {
-        self.lip = globaldef000728;
+        self.lip = GLOBALDEFSEVENTWOEIGHT;
     }
     
     func000124(FALSE, FALSE);
@@ -4915,7 +4915,7 @@ void () func000144 =
         if(self.state == globaldef001162)
         {
             func000140();
-            func000124(FALSE, globaldef000728);
+            func000124(FALSE, GLOBALDEFSEVENTWOEIGHT);
         }
         else
         {

@@ -80,7 +80,7 @@ void (entity globaldef004294, float globaldef004295, float globaldef004296) Laun
 void () func001225;
 void () func001217;
 
-// func001196
+// WizardCheckAttack
 // function begins at statement 21377, parm_start=13626
 // OP_LOAD_F	28	378	13634
 // OP_LT	31	13634	13635
@@ -158,7 +158,7 @@ void () func001217;
 // OP_CALL0	13625	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float () func001196 = 
+float () WizardCheckAttack = 
 {
     local vector globaldef004308;
     local vector globaldef004312;
@@ -539,7 +539,7 @@ void () func001200 =
 // OP_DONE	0	0	0
 void () func001201 = [0, func001202]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -550,7 +550,7 @@ void () func001201 = [0, func001202]
 // OP_DONE	0	0	0
 void () func001202 = [1, func001203]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -561,7 +561,7 @@ void () func001202 = [1, func001203]
 // OP_DONE	0	0	0
 void () func001203 = [2, func001204]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -572,7 +572,7 @@ void () func001203 = [2, func001204]
 // OP_DONE	0	0	0
 void () func001204 = [3, func001205]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -583,7 +583,7 @@ void () func001204 = [3, func001205]
 // OP_DONE	0	0	0
 void () func001205 = [4, func001206]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -594,7 +594,7 @@ void () func001205 = [4, func001206]
 // OP_DONE	0	0	0
 void () func001206 = [5, func001207]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -605,7 +605,7 @@ void () func001206 = [5, func001207]
 // OP_DONE	0	0	0
 void () func001207 = [6, func001208]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -616,7 +616,7 @@ void () func001207 = [6, func001208]
 // OP_DONE	0	0	0
 void () func001208 = [7, func001201]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -629,7 +629,7 @@ void () func001208 = [7, func001201]
 // OP_DONE	0	0	0
 void () func001209 = [0, func001210]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
     func001200();
 };
 
@@ -642,7 +642,7 @@ void () func001209 = [0, func001210]
 // OP_DONE	0	0	0
 void () func001210 = [1, func001211]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -654,7 +654,7 @@ void () func001210 = [1, func001211]
 // OP_DONE	0	0	0
 void () func001211 = [2, func001212]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -666,7 +666,7 @@ void () func001211 = [2, func001212]
 // OP_DONE	0	0	0
 void () func001212 = [3, func001213]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -678,7 +678,7 @@ void () func001212 = [3, func001213]
 // OP_DONE	0	0	0
 void () func001213 = [4, func001214]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -690,7 +690,7 @@ void () func001213 = [4, func001214]
 // OP_DONE	0	0	0
 void () func001214 = [5, func001215]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -702,7 +702,7 @@ void () func001214 = [5, func001215]
 // OP_DONE	0	0	0
 void () func001215 = [6, func001216]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -714,7 +714,7 @@ void () func001215 = [6, func001216]
 // OP_DONE	0	0	0
 void () func001216 = [7, func001209]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -727,7 +727,7 @@ void () func001216 = [7, func001209]
 // OP_DONE	0	0	0
 void () func001217 = [0, func001218]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
     func001200();
 };
 
@@ -740,7 +740,7 @@ void () func001217 = [0, func001218]
 // OP_DONE	0	0	0
 void () func001218 = [1, func001219]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -752,7 +752,7 @@ void () func001218 = [1, func001219]
 // OP_DONE	0	0	0
 void () func001219 = [2, func001220]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -764,7 +764,7 @@ void () func001219 = [2, func001220]
 // OP_DONE	0	0	0
 void () func001220 = [3, func001221]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -776,7 +776,7 @@ void () func001220 = [3, func001221]
 // OP_DONE	0	0	0
 void () func001221 = [4, func001222]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -788,7 +788,7 @@ void () func001221 = [4, func001222]
 // OP_DONE	0	0	0
 void () func001222 = [5, func001223]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -800,7 +800,7 @@ void () func001222 = [5, func001223]
 // OP_DONE	0	0	0
 void () func001223 = [6, func001224]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -812,7 +812,7 @@ void () func001223 = [6, func001224]
 // OP_DONE	0	0	0
 void () func001224 = [7, func001217]
 {
-    func000198(FL_CLIENT);
+    ai_run(FL_CLIENT);
 };
 
 
@@ -825,7 +825,7 @@ void () func001224 = [7, func001217]
 // OP_DONE	0	0	0
 void () func001225 = [15, func001226]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
     func001200();
 };
 
@@ -838,7 +838,7 @@ void () func001225 = [15, func001226]
 // OP_DONE	0	0	0
 void () func001226 = [16, func001227]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -850,7 +850,7 @@ void () func001226 = [16, func001227]
 // OP_DONE	0	0	0
 void () func001227 = [17, func001228]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -862,7 +862,7 @@ void () func001227 = [17, func001228]
 // OP_DONE	0	0	0
 void () func001228 = [18, func001229]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -874,7 +874,7 @@ void () func001228 = [18, func001229]
 // OP_DONE	0	0	0
 void () func001229 = [19, func001230]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -886,7 +886,7 @@ void () func001229 = [19, func001230]
 // OP_DONE	0	0	0
 void () func001230 = [20, func001231]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -898,7 +898,7 @@ void () func001230 = [20, func001231]
 // OP_DONE	0	0	0
 void () func001231 = [21, func001232]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -910,7 +910,7 @@ void () func001231 = [21, func001232]
 // OP_DONE	0	0	0
 void () func001232 = [22, func001233]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -922,7 +922,7 @@ void () func001232 = [22, func001233]
 // OP_DONE	0	0	0
 void () func001233 = [23, func001234]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -934,7 +934,7 @@ void () func001233 = [23, func001234]
 // OP_DONE	0	0	0
 void () func001234 = [24, func001235]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -946,7 +946,7 @@ void () func001234 = [24, func001235]
 // OP_DONE	0	0	0
 void () func001235 = [25, func001236]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -958,7 +958,7 @@ void () func001235 = [25, func001236]
 // OP_DONE	0	0	0
 void () func001236 = [26, func001237]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -970,7 +970,7 @@ void () func001236 = [26, func001237]
 // OP_DONE	0	0	0
 void () func001237 = [27, func001238]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -982,7 +982,7 @@ void () func001237 = [27, func001238]
 // OP_DONE	0	0	0
 void () func001238 = [28, func001225]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 

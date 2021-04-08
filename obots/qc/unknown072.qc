@@ -21488,16 +21488,16 @@ void () func002403 =
 {
     local float globaldef007073;
     local float globaldef007074;
-    globaldef001616 = anglemod(self.v_angle_y);
+    current_yaw = anglemod(self.v_angle_y);
     globaldef007073 = self.ideal_yaw;
     
-    if(globaldef001616 == globaldef007073)
+    if(current_yaw == globaldef007073)
     {
         return;
     }
     
-    globaldef007074 = globaldef007073 - globaldef001616;
-    if(globaldef007073 > globaldef001616)
+    globaldef007074 = globaldef007073 - current_yaw;
+    if(globaldef007073 > current_yaw)
     {
         
         if(globaldef007074 > 180)
@@ -21535,7 +21535,7 @@ void () func002403 =
         
     }
     
-    self.v_angle_y = anglemod(globaldef001616 + globaldef007074);
+    self.v_angle_y = anglemod(current_yaw + globaldef007074);
 };
 
 
@@ -25165,7 +25165,7 @@ float (entity globaldef007412) func002438 =
     globaldef007429_x = 80;
     makevectors(globaldef007429);
     globaldef007417 = (globaldef007412.origin + (v_forward * FL_CLIENT)) + '0 0 16';
-    globaldef007421 = globaldef007417 + (v_forward * globaldef000728);
+    globaldef007421 = globaldef007417 + (v_forward * GLOBALDEFSEVENTWOEIGHT);
     traceline(globaldef007417, globaldef007421, FALSE, globaldef007412);
     globaldef007433 = globaldef007412.origin;
     globaldef007413 = globaldef007433 + ((globaldef007412.mins + globaldef007412.maxs) * globaldef000522);
@@ -31563,7 +31563,7 @@ entity (entity globaldef008021) func002488 =
     globaldef008022 = vlen(globaldef008021.enemy.origin - globaldef008021.origin);
     globaldef008023 = vlen(globaldef008021.field000266.origin - globaldef008021.origin);
     
-    if(globaldef008022 > globaldef000728)
+    if(globaldef008022 > GLOBALDEFSEVENTWOEIGHT)
     {
         
         if(globaldef008023 < 400)
@@ -31959,7 +31959,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
                     
                     if(globaldef008048.waypointtype == globaldef000702)
                     {
-                        globaldef008051 = globaldef008051 + globaldef000728;
+                        globaldef008051 = globaldef008051 + GLOBALDEFSEVENTWOEIGHT;
                     }
                     
                 }
@@ -47244,7 +47244,7 @@ void () func002656 =
         globaldef009071 = nextent(globaldef009071);
     }
     
-    globaldef000787 = ((((globaldef000728 - globaldef009072) - globaldef000726) - globaldef000725) - globaldef000727) - globaldef000729;
+    globaldef000787 = ((((GLOBALDEFSEVENTWOEIGHT - globaldef009072) - globaldef000726) - globaldef000725) - globaldef000727) - globaldef000729;
 };
 
 

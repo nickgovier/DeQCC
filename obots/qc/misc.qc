@@ -668,7 +668,7 @@ void () func000638 =
     {
         sound(self, CHAN_VOICE, "weapons/spike2.wav", TRUE, ATTN_NORM);
         func000278(self.origin, self.movedir);
-        newmis.velocity = self.movedir * globaldef000728;
+        newmis.velocity = self.movedir * GLOBALDEFSEVENTWOEIGHT;
         
         if(self.spawnflags & globaldef003599)
         {
@@ -696,7 +696,7 @@ void () func000639 =
 {
     func000638();
     self.nextthink = time + self.wait;
-    newmis.velocity = self.movedir * globaldef000728;
+    newmis.velocity = self.movedir * GLOBALDEFSEVENTWOEIGHT;
 };
 
 

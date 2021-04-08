@@ -193,7 +193,7 @@ void () func001749 =
 // OP_DONE	0	0	0
 void () func001750 = [0, func001751]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -204,7 +204,7 @@ void () func001750 = [0, func001751]
 // OP_DONE	0	0	0
 void () func001751 = [1, func001752]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -215,7 +215,7 @@ void () func001751 = [1, func001752]
 // OP_DONE	0	0	0
 void () func001752 = [2, func001753]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -226,7 +226,7 @@ void () func001752 = [2, func001753]
 // OP_DONE	0	0	0
 void () func001753 = [3, func001754]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -237,7 +237,7 @@ void () func001753 = [3, func001754]
 // OP_DONE	0	0	0
 void () func001754 = [4, func001755]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -248,7 +248,7 @@ void () func001754 = [4, func001755]
 // OP_DONE	0	0	0
 void () func001755 = [5, func001756]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -259,7 +259,7 @@ void () func001755 = [5, func001756]
 // OP_DONE	0	0	0
 void () func001756 = [6, func001757]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -270,7 +270,7 @@ void () func001756 = [6, func001757]
 // OP_DONE	0	0	0
 void () func001757 = [7, func001758]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -281,7 +281,7 @@ void () func001757 = [7, func001758]
 // OP_DONE	0	0	0
 void () func001758 = [8, func001750]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -295,7 +295,7 @@ void () func001758 = [8, func001750]
 void () func001759 = [9, func001760]
 {
     func001917();
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -307,7 +307,7 @@ void () func001759 = [9, func001760]
 // OP_DONE	0	0	0
 void () func001760 = [10, func001761]
 {
-    func000189(MOVETYPE_FLY);
+    ai_walk(MOVETYPE_FLY);
 };
 
 
@@ -319,7 +319,7 @@ void () func001760 = [10, func001761]
 // OP_DONE	0	0	0
 void () func001761 = [11, func001762]
 {
-    func000189(MOVETYPE_FLY);
+    ai_walk(MOVETYPE_FLY);
 };
 
 
@@ -331,7 +331,7 @@ void () func001761 = [11, func001762]
 // OP_DONE	0	0	0
 void () func001762 = [12, func001763]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -343,7 +343,7 @@ void () func001762 = [12, func001763]
 // OP_DONE	0	0	0
 void () func001763 = [13, func001764]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -355,7 +355,7 @@ void () func001763 = [13, func001764]
 // OP_DONE	0	0	0
 void () func001764 = [14, func001765]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -367,7 +367,7 @@ void () func001764 = [14, func001765]
 // OP_DONE	0	0	0
 void () func001765 = [15, func001766]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -379,7 +379,7 @@ void () func001765 = [15, func001766]
 // OP_DONE	0	0	0
 void () func001766 = [16, func001767]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -391,7 +391,7 @@ void () func001766 = [16, func001767]
 // OP_DONE	0	0	0
 void () func001767 = [17, func001768]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -403,7 +403,7 @@ void () func001767 = [17, func001768]
 // OP_DONE	0	0	0
 void () func001768 = [18, func001769]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -415,7 +415,7 @@ void () func001768 = [18, func001769]
 // OP_DONE	0	0	0
 void () func001769 = [19, func001770]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -427,7 +427,7 @@ void () func001769 = [19, func001770]
 // OP_DONE	0	0	0
 void () func001770 = [20, func001771]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -439,7 +439,7 @@ void () func001770 = [20, func001771]
 // OP_DONE	0	0	0
 void () func001771 = [21, func001772]
 {
-    func000189(MOVETYPE_TOSS);
+    ai_walk(MOVETYPE_TOSS);
 };
 
 
@@ -451,7 +451,7 @@ void () func001771 = [21, func001772]
 // OP_DONE	0	0	0
 void () func001772 = [22, func001773]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -463,7 +463,7 @@ void () func001772 = [22, func001773]
 // OP_DONE	0	0	0
 void () func001773 = [23, func001774]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -475,7 +475,7 @@ void () func001773 = [23, func001774]
 // OP_DONE	0	0	0
 void () func001774 = [24, func001775]
 {
-    func000189(MOVETYPE_STEP);
+    ai_walk(MOVETYPE_STEP);
 };
 
 
@@ -487,7 +487,7 @@ void () func001774 = [24, func001775]
 // OP_DONE	0	0	0
 void () func001775 = [25, func001776]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -499,7 +499,7 @@ void () func001775 = [25, func001776]
 // OP_DONE	0	0	0
 void () func001776 = [26, func001777]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -511,7 +511,7 @@ void () func001776 = [26, func001777]
 // OP_DONE	0	0	0
 void () func001777 = [27, func001778]
 {
-    func000189(MOVETYPE_WALK);
+    ai_walk(MOVETYPE_WALK);
 };
 
 
@@ -523,7 +523,7 @@ void () func001777 = [27, func001778]
 // OP_DONE	0	0	0
 void () func001778 = [28, func001759]
 {
-    func000189(FL_SWIM);
+    ai_walk(FL_SWIM);
 };
 
 
@@ -538,7 +538,7 @@ void () func001778 = [28, func001759]
 void () func001779 = [29, func001780]
 {
     func001917();
-    func000198(20);
+    ai_run(20);
     func001748();
 };
 
@@ -551,7 +551,7 @@ void () func001779 = [29, func001780]
 // OP_DONE	0	0	0
 void () func001780 = [30, func001781]
 {
-    func000198(SVC_SIGNONNUM);
+    ai_run(SVC_SIGNONNUM);
 };
 
 
@@ -563,7 +563,7 @@ void () func001780 = [30, func001781]
 // OP_DONE	0	0	0
 void () func001781 = [31, func001782]
 {
-    func000198(18);
+    ai_run(18);
 };
 
 
@@ -575,7 +575,7 @@ void () func001781 = [31, func001782]
 // OP_DONE	0	0	0
 void () func001782 = [32, func001783]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -587,7 +587,7 @@ void () func001782 = [32, func001783]
 // OP_DONE	0	0	0
 void () func001783 = [33, func001784]
 {
-    func000198(14);
+    ai_run(14);
 };
 
 
@@ -599,7 +599,7 @@ void () func001783 = [33, func001784]
 // OP_DONE	0	0	0
 void () func001784 = [34, func001785]
 {
-    func000198(SVC_SIGNONNUM);
+    ai_run(SVC_SIGNONNUM);
 };
 
 
@@ -611,7 +611,7 @@ void () func001784 = [34, func001785]
 // OP_DONE	0	0	0
 void () func001785 = [35, func001786]
 {
-    func000198(21);
+    ai_run(21);
 };
 
 
@@ -623,7 +623,7 @@ void () func001785 = [35, func001786]
 // OP_DONE	0	0	0
 void () func001786 = [36, func001779]
 {
-    func000198(globaldef000775);
+    ai_run(globaldef000775);
 };
 
 
@@ -687,7 +687,7 @@ void () func001791 = [41, func001779]
 // OP_DONE	0	0	0
 void () func001792 = [42, func001793]
 {
-    func000185(MOVETYPE_BOUNCE);
+    ai_forward(MOVETYPE_BOUNCE);
 };
 
 
@@ -699,7 +699,7 @@ void () func001792 = [42, func001793]
 // OP_DONE	0	0	0
 void () func001793 = [43, func001794]
 {
-    func000185(FL_CLIENT);
+    ai_forward(FL_CLIENT);
 };
 
 
@@ -714,7 +714,7 @@ void () func001793 = [43, func001794]
 void () func001794 = [44, func001795]
 {
     self.solid = SOLID_NOT;
-    func000185(MOVETYPE_PUSH);
+    ai_forward(MOVETYPE_PUSH);
 };
 
 
@@ -762,7 +762,7 @@ void () func001798 = [48, func001799]
 // OP_DONE	0	0	0
 void () func001799 = [49, func001800]
 {
-    func000185(MOVETYPE_BOUNCE);
+    ai_forward(MOVETYPE_BOUNCE);
 };
 
 
@@ -774,7 +774,7 @@ void () func001799 = [49, func001800]
 // OP_DONE	0	0	0
 void () func001800 = [50, func001801]
 {
-    func000185(MOVETYPE_BOUNCEMISSILE);
+    ai_forward(MOVETYPE_BOUNCEMISSILE);
 };
 
 

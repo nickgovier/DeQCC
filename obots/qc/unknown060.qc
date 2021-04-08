@@ -163,7 +163,7 @@ void () func001266 =
 // OP_DONE	0	0	0
 void () func001267 = [69, func001268]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -174,7 +174,7 @@ void () func001267 = [69, func001268]
 // OP_DONE	0	0	0
 void () func001268 = [70, func001269]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -185,7 +185,7 @@ void () func001268 = [70, func001269]
 // OP_DONE	0	0	0
 void () func001269 = [71, func001270]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -196,7 +196,7 @@ void () func001269 = [71, func001270]
 // OP_DONE	0	0	0
 void () func001270 = [72, func001271]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -207,7 +207,7 @@ void () func001270 = [72, func001271]
 // OP_DONE	0	0	0
 void () func001271 = [73, func001272]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -218,7 +218,7 @@ void () func001271 = [73, func001272]
 // OP_DONE	0	0	0
 void () func001272 = [74, func001273]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -229,7 +229,7 @@ void () func001272 = [74, func001273]
 // OP_DONE	0	0	0
 void () func001273 = [75, func001274]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -240,7 +240,7 @@ void () func001273 = [75, func001274]
 // OP_DONE	0	0	0
 void () func001274 = [76, func001275]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -251,7 +251,7 @@ void () func001274 = [76, func001275]
 // OP_DONE	0	0	0
 void () func001275 = [77, func001267]
 {
-    func000190();
+    ai_stand();
 };
 
 
@@ -278,7 +278,7 @@ void () func001276 = [78, func001277]
         sound(self, CHAN_VOICE, "dog/idle.wav", TRUE, ATTN_IDLE);
     }
     
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -290,7 +290,7 @@ void () func001276 = [78, func001277]
 // OP_DONE	0	0	0
 void () func001277 = [79, func001278]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -302,7 +302,7 @@ void () func001277 = [79, func001278]
 // OP_DONE	0	0	0
 void () func001278 = [80, func001279]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -314,7 +314,7 @@ void () func001278 = [80, func001279]
 // OP_DONE	0	0	0
 void () func001279 = [81, func001280]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -326,7 +326,7 @@ void () func001279 = [81, func001280]
 // OP_DONE	0	0	0
 void () func001280 = [82, func001281]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -338,7 +338,7 @@ void () func001280 = [82, func001281]
 // OP_DONE	0	0	0
 void () func001281 = [83, func001282]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -350,7 +350,7 @@ void () func001281 = [83, func001282]
 // OP_DONE	0	0	0
 void () func001282 = [84, func001283]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -362,7 +362,7 @@ void () func001282 = [84, func001283]
 // OP_DONE	0	0	0
 void () func001283 = [85, func001276]
 {
-    func000189(FL_CLIENT);
+    ai_walk(FL_CLIENT);
 };
 
 
@@ -389,7 +389,7 @@ void () func001284 = [48, func001285]
         sound(self, CHAN_VOICE, "dog/idle.wav", TRUE, ATTN_IDLE);
     }
     
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -401,7 +401,7 @@ void () func001284 = [48, func001285]
 // OP_DONE	0	0	0
 void () func001285 = [49, func001286]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -413,7 +413,7 @@ void () func001285 = [49, func001286]
 // OP_DONE	0	0	0
 void () func001286 = [50, func001287]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -425,7 +425,7 @@ void () func001286 = [50, func001287]
 // OP_DONE	0	0	0
 void () func001287 = [51, func001288]
 {
-    func000198(20);
+    ai_run(20);
 };
 
 
@@ -437,7 +437,7 @@ void () func001287 = [51, func001288]
 // OP_DONE	0	0	0
 void () func001288 = [52, func001289]
 {
-    func000198(FL_GODMODE);
+    ai_run(FL_GODMODE);
 };
 
 
@@ -449,7 +449,7 @@ void () func001288 = [52, func001289]
 // OP_DONE	0	0	0
 void () func001289 = [53, func001290]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -461,7 +461,7 @@ void () func001289 = [53, func001290]
 // OP_DONE	0	0	0
 void () func001290 = [54, func001291]
 {
-    func000198(FL_INWATER);
+    ai_run(FL_INWATER);
 };
 
 
@@ -473,7 +473,7 @@ void () func001290 = [54, func001291]
 // OP_DONE	0	0	0
 void () func001291 = [55, func001292]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -485,7 +485,7 @@ void () func001291 = [55, func001292]
 // OP_DONE	0	0	0
 void () func001292 = [56, func001293]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -497,7 +497,7 @@ void () func001292 = [56, func001293]
 // OP_DONE	0	0	0
 void () func001293 = [57, func001294]
 {
-    func000198(20);
+    ai_run(20);
 };
 
 
@@ -509,7 +509,7 @@ void () func001293 = [57, func001294]
 // OP_DONE	0	0	0
 void () func001294 = [58, func001295]
 {
-    func000198(FL_GODMODE);
+    ai_run(FL_GODMODE);
 };
 
 
@@ -521,7 +521,7 @@ void () func001294 = [58, func001295]
 // OP_DONE	0	0	0
 void () func001295 = [59, func001284]
 {
-    func000198(FL_MONSTER);
+    ai_run(FL_MONSTER);
 };
 
 
@@ -822,7 +822,7 @@ void () func001320 = [33, func001321]
 // OP_DONE	0	0	0
 void () func001321 = [34, func001322]
 {
-    func000187(MOVETYPE_STEP);
+    ai_pain(MOVETYPE_STEP);
 };
 
 
@@ -834,7 +834,7 @@ void () func001321 = [34, func001322]
 // OP_DONE	0	0	0
 void () func001322 = [35, func001323]
 {
-    func000187(globaldef000774);
+    ai_pain(globaldef000774);
 };
 
 
@@ -846,7 +846,7 @@ void () func001322 = [35, func001323]
 // OP_DONE	0	0	0
 void () func001323 = [36, func001324]
 {
-    func000187(globaldef000774);
+    ai_pain(globaldef000774);
 };
 
 
@@ -858,7 +858,7 @@ void () func001323 = [36, func001324]
 // OP_DONE	0	0	0
 void () func001324 = [37, func001325]
 {
-    func000187(FL_SWIM);
+    ai_pain(FL_SWIM);
 };
 
 
@@ -879,7 +879,7 @@ void () func001325 = [38, func001326]
 // OP_DONE	0	0	0
 void () func001326 = [39, func001327]
 {
-    func000187(MOVETYPE_STEP);
+    ai_pain(MOVETYPE_STEP);
 };
 
 
@@ -900,7 +900,7 @@ void () func001327 = [40, func001328]
 // OP_DONE	0	0	0
 void () func001328 = [41, func001329]
 {
-    func000187(MOVETYPE_BOUNCE);
+    ai_pain(MOVETYPE_BOUNCE);
 };
 
 
@@ -1323,40 +1323,5 @@ float () func001356 =
     }
     
     return TRUE;
-};
-
-
-// func001357
-// function begins at statement 22431, parm_start=14145
-// OP_CALL0	14099	0	0
-// OP_IFNOT	1	4	0
-// OP_ADDRESS	28	372	14148
-// OP_STOREP_F	375	14148	0
-// OP_RETURN	214	0	0
-// OP_CALL0	14102	0	0
-// OP_IFNOT	1	4	0
-// OP_ADDRESS	28	372	14149
-// OP_STOREP_F	376	14149	0
-// OP_RETURN	214	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float () func001357 = 
-{
-    local vector globaldef004517;
-    
-    if(func001355())
-    {
-        self.attack_state = AS_MELEE;
-        return TRUE;
-    }
-    
-    
-    if(func001356())
-    {
-        self.attack_state = AS_MISSILE;
-        return TRUE;
-    }
-    
-    return FALSE;
 };
 

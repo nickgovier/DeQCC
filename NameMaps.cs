@@ -330,6 +330,7 @@ namespace DeQcc
             nameMap.Add("func000072", "centerprint");
 
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
+            nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
 
             #region subs.qc
 
@@ -471,12 +472,37 @@ namespace DeQcc
 
             #region ai.qc
 
+            // Declarations
+            nameMap.Add("globaldef001616", "current_yaw");
+            nameMap.Add("globaldef001617", "sight_entity");
+            nameMap.Add("globaldef001618", "sight_entity_time");
+
             nameMap.Add("func000173", "anglemod");
+            nameMap.Add("func000174", "movetarget_f");
+            nameMap.Add("func000176", "t_movetarget");
             nameMap.Add("func000177", "range");
             nameMap.Add("func000178", "visible");
             nameMap.Add("func000179", "infront");
+            nameMap.Add("func000180", "HuntTarget");
+            nameMap.Add("func000181", "SightSound");
+            nameMap.Add("func000182", "FoundTarget");
+            nameMap.Add("func000183", "obot_ai_FindClosestVisibleEnt");
+            nameMap.Add("func000184", "FindTarget");
+            nameMap.Add("func000185", "ai_forward");
+            nameMap.Add("func000186", "ai_back");
+            nameMap.Add("func000187", "ai_pain");
+            nameMap.Add("func000188", "ai_painforward");
+            nameMap.Add("func000189", "ai_walk");
+            nameMap.Add("func000190", "ai_stand");
+            nameMap.Add("func000191", "ai_turn");
+            nameMap.Add("func000193", "FacingIdeal");
+            nameMap.Add("func000194", "CheckAnyAttack");
+            nameMap.Add("func000195", "ai_run_melee");
+            nameMap.Add("func000196", "ai_run_missile");
+            nameMap.Add("func000197", "ai_run_slide");
+            nameMap.Add("func000198", "ai_run");
 
-            for (int i = 173; i <= 192; i++)
+            for (int i = 173; i <= 198; i++)
             {
                 fileMap[i] = "ai.qc";
             }
@@ -484,20 +510,96 @@ namespace DeQcc
             // anglemod params
             nameMap.Add("globaldef001619", "v");
 
+            // t_movetarget locals
+            nameMap.Add("globaldef001624", "temp");
+
             // range params
             nameMap.Add("globaldef001628", "targ");
+
+            // range locals
+            nameMap.Add("globaldef001629", "spot1");
+            nameMap.Add("globaldef001633", "spot2");
+            nameMap.Add("globaldef001637", "r");
+
+            // visible locals
+            nameMap.Add("globaldef001640", "spot1");
+            nameMap.Add("globaldef001644", "spot2");
 
             // infront params
             nameMap.Add("globaldef001648", "targ");
 
+            // infront locals
+            nameMap.Add("globaldef001649", "vec");
+            nameMap.Add("globaldef001653", "dot");
+
+            // SightSound locals
+            nameMap.Add("globaldef001656", "rsnd");
+
+            // obot_ai_FindClosestVisibleEnt locals
+            nameMap.Add("globaldef001686", "currentdist");
+            nameMap.Add("globaldef001687", "closestdist");
+            nameMap.Add("globaldef001688", "currentent");
+            nameMap.Add("globaldef001689", "closestent");
+
+            // FindTarget locals
+            nameMap.Add("globaldef001692", "client");
+            nameMap.Add("globaldef001693", "r");
+
+            // ai_forward params
+            nameMap.Add("globaldef001695", "dist");
+
+            // ai_back params
+            nameMap.Add("globaldef001697", "dist");
+
+            // ai_pain params
+            nameMap.Add("globaldef001699", "dist");
+
+            // ai_painforward params
+            nameMap.Add("globaldef001701", "dist");
+
+            // ai_walk params
+            nameMap.Add("globaldef001703", "dist");
+
+            // ai_walk locals
+            nameMap.Add("globaldef001704", "mtemp");
+
             // ChooseTurn params
             nameMap.Add("globaldef001711", "dest3");
 
+            // ChooseTurn locals
+            nameMap.Add("globaldef001715", "dir");
+            nameMap.Add("globaldef001719", "newdir");
+
+            // FacingIdeal locals
+            nameMap.Add("globaldef001724", "delta");
+
+            // ai_run_slide locals
+            nameMap.Add("globaldef001732", "ofs");
+
+            // ai_run params
+            nameMap.Add("globaldef001735", "dist");
+
+            // ai_run_locals
+            nameMap.Add("globaldef001736", "delta");
+            nameMap.Add("globaldef001740", "axis");
+            nameMap.Add("globaldef001741", "direct");
+            nameMap.Add("globaldef001742", "ang_rint");
+            nameMap.Add("globaldef001743", "ang_floor");
+            nameMap.Add("globaldef001744", "ang_ceil");
+
             #endregion
+
+            #region combat.qc
 
             nameMap.Add("func000199", "CanDamage");
             nameMap.Add("func000201", "T_Damage");
-            
+
+            for (int i = 199; i <= 201; i++)
+            {
+                fileMap[i] = "combat.qc";
+            }
+
+            #endregion
 
             #region items.qc
 
@@ -577,6 +679,7 @@ namespace DeQcc
             nameMap.Add("func000938", "sham_swingl1");
             nameMap.Add("func000947", "sham_swingr1");
 
+            nameMap.Add("func000997", "knight_walk1");
             nameMap.Add("func001019", "knight_runatk1");
             nameMap.Add("func001030", "knight_atk1");
 
@@ -591,9 +694,22 @@ namespace DeQcc
 
             #region wizard.qc
 
+            nameMap.Add("func001196", "WizardCheckAttack");
+
             for (int i = 1195; i <= 1264; i++)
             {
                 fileMap[i] = "wizard.qc";
+            }
+
+            #endregion
+
+            #region dog.qc
+
+            nameMap.Add("func001357", "DogCheckAttack");
+
+            for (int i = 1357; i <= 1357; i++)
+            {
+                fileMap[i] = "dog.qc";
             }
 
             #endregion

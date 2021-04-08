@@ -3834,7 +3834,7 @@ void () func000528 =
     
     self.enemy = activator;
     self.nextthink = time + 0.1;
-    self.think = func000182;
+    self.think = FoundTarget;
 };
 
 

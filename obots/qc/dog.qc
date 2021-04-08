@@ -1,4 +1,39 @@
 
+// DogCheckAttack
+// function begins at statement 22431, parm_start=14145
+// OP_CALL0	14099	0	0
+// OP_IFNOT	1	4	0
+// OP_ADDRESS	28	372	14148
+// OP_STOREP_F	375	14148	0
+// OP_RETURN	214	0	0
+// OP_CALL0	14102	0	0
+// OP_IFNOT	1	4	0
+// OP_ADDRESS	28	372	14149
+// OP_STOREP_F	376	14149	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float () DogCheckAttack = 
+{
+    local vector globaldef004517;
+    
+    if(func001355())
+    {
+        self.attack_state = AS_MELEE;
+        return TRUE;
+    }
+    
+    
+    if(func001356())
+    {
+        self.attack_state = AS_MISSILE;
+        return TRUE;
+    }
+    
+    return FALSE;
+};
+
+
 // monster_dog
 // function begins at statement 22443, parm_start=14151
 // OP_IFNOT	35	4	0

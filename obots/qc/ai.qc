@@ -1,11 +1,11 @@
-void () func000174;
-void () func000176;
-void () func000997;
+void () movetarget_f;
+void () t_movetarget;
+void () knight_walk1;
 void () knight_bow6;
 void () knight_bow1;
-float globaldef001616;
-entity globaldef001617;
-float globaldef001618;
+float current_yaw;
+entity sight_entity;
+float sight_entity_time;
 
 // anglemod
 // function begins at statement 3093, parm_start=3510
@@ -39,7 +39,7 @@ float (float v) anglemod =
 };
 
 
-// func000174
+// movetarget_f
 // function begins at statement 3105, parm_start=3515
 // OP_LOAD_S	28	197	3515
 // OP_NOT_S	3515	0	3516
@@ -55,7 +55,7 @@ float (float v) anglemod =
 // OP_STORE_V	3523	10	0
 // OP_CALL3	455	0	0
 // OP_DONE	0	0	0
-void () func000174 = 
+void () movetarget_f = 
 {
     
     if(!self.targetname)
@@ -64,7 +64,7 @@ void () func000174 =
     }
     
     self.solid = SOLID_TRIGGER;
-    self.touch = func000176;
+    self.touch = t_movetarget;
     setsize(self, '-8 -8 -8', '8 8 8');
 };
 
@@ -75,11 +75,11 @@ void () func000174 =
 // OP_DONE	0	0	0
 void () path_corner = 
 {
-    func000174();
+    movetarget_f();
 };
 
 
-// func000176
+// t_movetarget
 // function begins at statement 3121, parm_start=3527
 // OP_LOAD_ENT	29	423	3528
 // OP_NE_E	3528	28	3529
@@ -127,9 +127,9 @@ void () path_corner =
 // OP_CALL0	3554	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () func000176 = 
+void () t_movetarget = 
 {
-    local entity globaldef001624;
+    local entity temp;
     
     if(other.movetarget != self)
     {
@@ -142,9 +142,9 @@ void () func000176 =
         return;
     }
     
-    globaldef001624 = self;
+    temp = self;
     self = other;
-    other = globaldef001624;
+    other = temp;
     
     if(self.classname == "monster_ogre")
     {
@@ -191,26 +191,26 @@ void () func000176 =
 // OP_DONE	0	0	0
 float (entity targ) range = 
 {
-    local vector globaldef001629;
-    local vector globaldef001633;
-    local float globaldef001637;
-    globaldef001629 = self.origin + self.view_ofs;
-    globaldef001633 = targ.origin + targ.view_ofs;
-    globaldef001637 = vlen(globaldef001629 - globaldef001633);
+    local vector spot1;
+    local vector spot2;
+    local float r;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
+    r = vlen(spot1 - spot2);
     
-    if(globaldef001637 < 120)
+    if(r < 120)
     {
         return RANGE_MELEE;
     }
     
     
-    if(globaldef001637 < globaldef000728)
+    if(r < GLOBALDEFSEVENTWOEIGHT)
     {
         return RANGE_NEAR;
     }
     
     
-    if(globaldef001637 < 1000)
+    if(r < 1000)
     {
         return RANGE_MID;
     }
@@ -244,11 +244,11 @@ float (entity targ) range =
 // OP_DONE	0	0	0
 float (entity targ) visible = 
 {
-    local vector globaldef001640;
-    local vector globaldef001644;
-    globaldef001640 = self.origin + self.view_ofs;
-    globaldef001644 = targ.origin + targ.view_ofs;
-    traceline(globaldef001640, globaldef001644, TRUE, self);
+    local vector spot1;
+    local vector spot2;
+    spot1 = self.origin + self.view_ofs;
+    spot2 = targ.origin + targ.view_ofs;
+    traceline(spot1, spot2, TRUE, self);
     
     if(trace_inopen && trace_inwater)
     {
@@ -285,13 +285,13 @@ float (entity targ) visible =
 // OP_DONE	0	0	0
 float (entity targ) infront = 
 {
-    local vector globaldef001649;
-    local float globaldef001653;
+    local vector vec;
+    local float dot;
     makevectors(self.angles);
-    globaldef001649 = normalize(targ.origin - self.origin);
-    globaldef001653 = globaldef001649 * v_forward;
+    vec = normalize(targ.origin - self.origin);
+    dot = vec * v_forward;
     
-    if(globaldef001653 > 0.3)
+    if(dot > 0.3)
     {
         return TRUE;
     }
@@ -300,7 +300,7 @@ float (entity targ) infront =
 };
 
 
-// func000180
+// HuntTarget
 // function begins at statement 3227, parm_start=3635
 // OP_ADDRESS	28	194	3635
 // OP_LOAD_ENT	28	181	3636
@@ -322,7 +322,7 @@ float (entity targ) infront =
 // OP_STORE_V	214	4	0
 // OP_CALL1	3163	0	0
 // OP_DONE	0	0	0
-void () func000180 = 
+void () HuntTarget = 
 {
     self.goalentity = self.enemy;
     self.think = self.th_run;
@@ -332,7 +332,7 @@ void () func000180 =
 };
 
 
-// func000181
+// SightSound
 // function begins at statement 3247, parm_start=3653
 // OP_LOAD_S	28	129	3654
 // OP_EQ_S	3654	3532	3655
@@ -496,9 +496,9 @@ void () func000180 =
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000181 = 
+void () SightSound = 
 {
-    local float globaldef001656;
+    local float rsnd;
     if(self.classname == "monster_ogre")
     {
         sound(self, CHAN_VOICE, "ogre/ogwake.wav", TRUE, ATTN_NORM);
@@ -561,20 +561,20 @@ void () func000181 =
                                         {
                                             if(self.classname == "monster_enforcer")
                                             {
-                                                globaldef001656 = rint(random() * MOVETYPE_WALK);
-                                                if(globaldef001656 == TRUE)
+                                                rsnd = rint(random() * MOVETYPE_WALK);
+                                                if(rsnd == TRUE)
                                                 {
                                                     sound(self, CHAN_VOICE, "enforcer/sight1.wav", TRUE, ATTN_NORM);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef001656 == FL_SWIM)
+                                                    if(rsnd == FL_SWIM)
                                                     {
                                                         sound(self, CHAN_VOICE, "enforcer/sight2.wav", TRUE, ATTN_NORM);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef001656 == FALSE)
+                                                        if(rsnd == FALSE)
                                                         {
                                                             sound(self, CHAN_VOICE, "enforcer/sight3.wav", TRUE, ATTN_NORM);
                                                         }
@@ -629,7 +629,7 @@ void () func000181 =
 };
 
 
-// func000182
+// FoundTarget
 // function begins at statement 3409, parm_start=3712
 // OP_LOAD_ENT	28	181	3712
 // OP_LOAD_S	3712	129	3713
@@ -643,22 +643,22 @@ void () func000181 =
 // OP_CALL0	3652	0	0
 // OP_CALL0	3634	0	0
 // OP_DONE	0	0	0
-void () func000182 = 
+void () FoundTarget = 
 {
     
     if(self.enemy.classname == "player")
     {
-        globaldef001617 = self;
-        globaldef001618 = time;
+        sight_entity = self;
+        sight_entity_time = time;
     }
     
     self.show_hostile = time + TRUE;
-    func000181();
-    func000180();
+    SightSound();
+    HuntTarget();
 };
 
 
-// func000183
+// obot_ai_FindClosestVisibleEnt
 // function begins at statement 3421, parm_start=3718
 // OP_STORE_ENT	30	3721	0
 // OP_STORE_F	3722	3719	0
@@ -685,44 +685,44 @@ void () func000182 =
 // OP_GOTO	-19	0	0
 // OP_RETURN	3721	0	0
 // OP_DONE	0	0	0
-entity () func000183 = 
+entity () obot_ai_FindClosestVisibleEnt = 
 {
-    local float globaldef001686;
-    local float globaldef001687;
-    local entity globaldef001688;
-    local entity globaldef001689;
-    globaldef001689 = world;
-    globaldef001687 = 9999;
-    globaldef001688 = globaldef000817;
+    local float currentdist;
+    local float closestdist;
+    local entity currentent;
+    local entity closestent;
+    closestent = world;
+    closestdist = 9999;
+    currentent = globaldef000817;
     
-    while(globaldef001688)
+    while(currentent)
     {
-        globaldef001686 = vlen(self.origin - globaldef001688.origin);
+        currentdist = vlen(self.origin - currentent.origin);
         
-        if(globaldef001686 < globaldef001687)
+        if(currentdist < closestdist)
         {
             
-            if(visible(globaldef001688))
+            if(visible(currentent))
             {
                 
-                if(infront(globaldef001688))
+                if(infront(currentent))
                 {
-                    globaldef001687 = globaldef001686;
-                    globaldef001689 = globaldef001688;
+                    closestdist = currentdist;
+                    closestent = currentent;
                 }
                 
             }
             
         }
         
-        globaldef001688 = globaldef001688.field000297;
+        currentent = currentent.field000297;
     }
     
-    return globaldef001689;
+    return closestent;
 };
 
 
-// func000184
+// FindTarget
 // function begins at statement 3446, parm_start=3735
 // OP_SUB_F	31	3036	3737
 // OP_GE	3509	3737	3738
@@ -816,15 +816,15 @@ entity () func000183 =
 // OP_CALL0	3711	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float () func000184 = 
+float () FindTarget = 
 {
-    local entity globaldef001692;
-    local float globaldef001693;
-    if((globaldef001618 >= (time - 0.1)) && (!(self.spawnflags & MOVETYPE_WALK)))
+    local entity client;
+    local float r;
+    if((sight_entity_time >= (time - 0.1)) && (!(self.spawnflags & MOVETYPE_WALK)))
     {
-        globaldef001692 = globaldef001617;
+        client = sight_entity;
         
-        if(globaldef001692.enemy == self.enemy)
+        if(client.enemy == self.enemy)
         {
             return;
         }
@@ -832,15 +832,15 @@ float () func000184 =
     }
     else
     {
-        globaldef001692 = func000183();
+        client = obot_ai_FindClosestVisibleEnt();
         
-        if(!globaldef001692)
+        if(!client)
         {
-            globaldef001692 = checkclient();
+            client = checkclient();
         }
         
         
-        if(!globaldef001692)
+        if(!client)
         {
             return FALSE;
         }
@@ -848,40 +848,40 @@ float () func000184 =
     }
     
     
-    if(globaldef001692 == self.enemy)
+    if(client == self.enemy)
     {
         return FALSE;
     }
     
     
-    if(globaldef001692.flags & FL_NOTARGET)
+    if(client.flags & FL_NOTARGET)
     {
         return FALSE;
     }
     
     
-    if(globaldef001692.items & IT_INVISIBILITY)
+    if(client.items & IT_INVISIBILITY)
     {
         return FALSE;
     }
     
-    globaldef001693 = range(globaldef001692);
+    r = range(client);
     
-    if(globaldef001693 == RANGE_FAR)
+    if(r == RANGE_FAR)
     {
         return FALSE;
     }
     
     
-    if(!visible(globaldef001692))
+    if(!visible(client))
     {
         return FALSE;
     }
     
-    if(globaldef001693 == RANGE_NEAR)
+    if(r == RANGE_NEAR)
     {
         
-        if((globaldef001692.show_hostile < time) && !infront(globaldef001692))
+        if((client.show_hostile < time) && !infront(client))
         {
             return FALSE;
         }
@@ -890,10 +890,10 @@ float () func000184 =
     else
     {
         
-        if(globaldef001693 == RANGE_MID)
+        if(r == RANGE_MID)
         {
             
-            if(!infront(globaldef001692))
+            if(!infront(client))
             {
                 return FALSE;
             }
@@ -902,7 +902,7 @@ float () func000184 =
         
     }
     
-    self.enemy = globaldef001692;
+    self.enemy = client;
     
     if((self.enemy.classname != "player") && (self.enemy.classname != "bot"))
     {
@@ -916,25 +916,25 @@ float () func000184 =
         
     }
     
-    func000182();
+    FoundTarget();
     return TRUE;
 };
 
 
-// func000185
+// ai_forward
 // function begins at statement 3538, parm_start=3783
 // OP_LOAD_F	28	119	3784
 // OP_STORE_V	3784	4	0
 // OP_STORE_V	3783	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void (float globaldef001695) func000185 = 
+void (float dist) ai_forward = 
 {
-    walkmove(self.angles_y, globaldef001695);
+    walkmove(self.angles_y, dist);
 };
 
 
-// func000186
+// ai_back
 // function begins at statement 3543, parm_start=3786
 // OP_LOAD_F	28	119	3787
 // OP_ADD_F	3787	1296	3788
@@ -942,37 +942,37 @@ void (float globaldef001695) func000185 =
 // OP_STORE_V	3786	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void (float globaldef001697) func000186 = 
+void (float dist) ai_back = 
 {
-    walkmove(self.angles_y + 180, globaldef001697);
+    walkmove(self.angles_y + 180, dist);
 };
 
 
-// func000187
+// ai_pain
 // function begins at statement 3549, parm_start=3790
 // OP_STORE_V	3790	4	0
 // OP_CALL1	3785	0	0
 // OP_DONE	0	0	0
-void (float globaldef001699) func000187 = 
+void (float dist) ai_pain = 
 {
-    func000186(globaldef001699);
+    ai_back(dist);
 };
 
 
-// func000188
+// ai_painforward
 // function begins at statement 3552, parm_start=3792
 // OP_LOAD_F	28	191	3793
 // OP_STORE_V	3793	4	0
 // OP_STORE_V	3792	7	0
 // OP_CALL2	480	0	0
 // OP_DONE	0	0	0
-void (float globaldef001701) func000188 = 
+void (float dist) ai_painforward = 
 {
-    walkmove(self.ideal_yaw, globaldef001701);
+    walkmove(self.ideal_yaw, dist);
 };
 
 
-// func000189
+// ai_walk
 // function begins at statement 3557, parm_start=3795
 // OP_STORE_F	3795	346	0
 // OP_LOAD_S	28	129	3799
@@ -987,28 +987,28 @@ void (float globaldef001701) func000188 =
 // OP_STORE_V	3795	4	0
 // OP_CALL1	504	0	0
 // OP_DONE	0	0	0
-void (float globaldef001703) func000189 = 
+void (float dist) ai_walk = 
 {
-    local vector globaldef001704;
-    movedist = globaldef001703;
+    local vector mtemp;
+    movedist = dist;
     
     if(self.classname == "monster_dragon")
     {
-        movetogoal(globaldef001703);
+        movetogoal(dist);
         return;
     }
     
     
-    if(func000184())
+    if(FindTarget())
     {
         return;
     }
     
-    movetogoal(globaldef001703);
+    movetogoal(dist);
 };
 
 
-// func000190
+// ai_stand
 // function begins at statement 3570, parm_start=3803
 // OP_CALL0	3734	0	0
 // OP_IFNOT	1	2	0
@@ -1020,10 +1020,10 @@ void (float globaldef001703) func000189 =
 // OP_CALL0	3805	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () func000190 = 
+void () ai_stand = 
 {
     
-    if(func000184())
+    if(FindTarget())
     {
         return;
     }
@@ -1038,17 +1038,17 @@ void () func000190 =
 };
 
 
-// func000191
+// ai_turn
 // function begins at statement 3580, parm_start=3807
 // OP_CALL0	3734	0	0
 // OP_IFNOT	1	2	0
 // OP_RETURN	0	0	0
 // OP_CALL0	494	0	0
 // OP_DONE	0	0	0
-void () func000191 = 
+void () ai_turn = 
 {
     
-    if(func000184())
+    if(FindTarget())
     {
         return;
     }
@@ -1084,24 +1084,413 @@ void () func000191 =
 // OP_DONE	0	0	0
 void (vector dest3) ChooseTurn = 
 {
-    local vector globaldef001715;
-    local vector globaldef001719;
-    globaldef001715 = self.origin - dest3;
-    globaldef001719_x = trace_plane_normal_y;
-    globaldef001719_y = FALSE - trace_plane_normal_x;
-    globaldef001719_z = FALSE;
-    if((globaldef001715 * globaldef001719) > FALSE)
+    local vector dir;
+    local vector newdir;
+    dir = self.origin - dest3;
+    newdir_x = trace_plane_normal_y;
+    newdir_y = FALSE - trace_plane_normal_x;
+    newdir_z = FALSE;
+    if((dir * newdir) > FALSE)
     {
-        globaldef001715_x = FALSE - trace_plane_normal_y;
-        globaldef001715_y = trace_plane_normal_x;
+        dir_x = FALSE - trace_plane_normal_y;
+        dir_y = trace_plane_normal_x;
     }
     else
     {
-        globaldef001715_x = trace_plane_normal_y;
-        globaldef001715_y = FALSE - trace_plane_normal_x;
+        dir_x = trace_plane_normal_y;
+        dir_y = FALSE - trace_plane_normal_x;
     }
     
-    globaldef001715_z = FALSE;
-    self.ideal_yaw = vectoyaw(globaldef001715);
+    dir_z = FALSE;
+    self.ideal_yaw = vectoyaw(dir);
+};
+
+
+// FacingIdeal
+// function begins at statement 3608, parm_start=3829
+// OP_LOAD_F	28	119	3830
+// OP_LOAD_F	28	191	3831
+// OP_SUB_F	3830	3831	3832
+// OP_STORE_V	3832	4	0
+// OP_CALL1	3179	0	0
+// OP_STORE_F	1	3829	0
+// OP_GT	3829	2598	3833
+// OP_LT	3829	3834	3835
+// OP_AND	3833	3835	3836
+// OP_IFNOT	3836	2	0
+// OP_RETURN	213	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float () FacingIdeal = 
+{
+    local float delta;
+    delta = anglemod(self.angles_y - self.ideal_yaw);
+    
+    if((delta > 45) && (delta < 315))
+    {
+        return FALSE;
+    }
+    
+    return TRUE;
+};
+
+float () WizardCheckAttack;
+float () DogCheckAttack;
+
+// CheckAnyAttack
+// function begins at statement 3621, parm_start=3840
+// OP_NOT_F	3191	0	3840
+// OP_IFNOT	3840	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	28	129	3841
+// OP_EQ_S	3841	3704	3842
+// OP_IFNOT	3842	3	0
+// OP_CALL0	3370	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_S	28	129	3843
+// OP_EQ_S	3843	3532	3844
+// OP_IFNOT	3844	3	0
+// OP_CALL0	3458	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_S	28	129	3845
+// OP_EQ_S	3845	3661	3846
+// OP_IFNOT	3846	3	0
+// OP_CALL0	3414	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_S	28	129	3847
+// OP_EQ_S	3847	3665	3848
+// OP_IFNOT	3848	3	0
+// OP_CALL0	3187	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_S	28	129	3849
+// OP_EQ_S	3849	3677	3850
+// OP_IFNOT	3850	3	0
+// OP_CALL0	3838	0	0
+// OP_RETURN	1	0	0
+// OP_LOAD_S	28	129	3851
+// OP_EQ_S	3851	3669	3852
+// OP_IFNOT	3852	3	0
+// OP_CALL0	3837	0	0
+// OP_RETURN	1	0	0
+// OP_CALL0	3221	0	0
+// OP_RETURN	1	0	0
+// OP_DONE	0	0	0
+float () CheckAnyAttack = 
+{
+    
+    if(!enemy_vis)
+    {
+        return;
+    }
+    
+    
+    if(self.classname == "monster_army")
+    {
+        return SoldierCheckAttack();
+    }
+    
+    
+    if(self.classname == "monster_ogre")
+    {
+        return OgreCheckAttack();
+    }
+    
+    
+    if(self.classname == "monster_shambler")
+    {
+        return ShamCheckAttack();
+    }
+    
+    
+    if(self.classname == "monster_demon1")
+    {
+        return DemonCheckAttack();
+    }
+    
+    
+    if(self.classname == "monster_dog")
+    {
+        return DogCheckAttack();
+    }
+    
+    
+    if(self.classname == "monster_wizard")
+    {
+        return WizardCheckAttack();
+    }
+    
+    return CheckAttack();
+};
+
+
+// ai_run_melee
+// function begins at statement 3657, parm_start=3854
+// OP_ADDRESS	28	191	3854
+// OP_STOREP_F	3194	3854	0
+// OP_CALL0	494	0	0
+// OP_CALL0	3828	0	0
+// OP_IFNOT	1	5	0
+// OP_LOAD_FNC	28	365	3855
+// OP_CALL0	3855	0	0
+// OP_ADDRESS	28	372	3856
+// OP_STOREP_F	373	3856	0
+// OP_DONE	0	0	0
+void () ai_run_melee = 
+{
+    self.ideal_yaw = enemy_yaw;
+    ChangeYaw();
+    
+    if(FacingIdeal())
+    {
+        self.th_melee();
+        self.attack_state = AS_STRAIGHT;
+    }
+    
+};
+
+
+// ai_run_missile
+// function begins at statement 3667, parm_start=3858
+// OP_ADDRESS	28	191	3858
+// OP_STOREP_F	3194	3858	0
+// OP_CALL0	494	0	0
+// OP_CALL0	3828	0	0
+// OP_IFNOT	1	5	0
+// OP_LOAD_FNC	28	364	3859
+// OP_CALL0	3859	0	0
+// OP_ADDRESS	28	372	3860
+// OP_STOREP_F	373	3860	0
+// OP_DONE	0	0	0
+void () ai_run_missile = 
+{
+    self.ideal_yaw = enemy_yaw;
+    ChangeYaw();
+    
+    if(FacingIdeal())
+    {
+        self.th_missile();
+        self.attack_state = AS_STRAIGHT;
+    }
+    
+};
+
+
+// ai_run_slide
+// function begins at statement 3677, parm_start=3862
+// OP_ADDRESS	28	191	3863
+// OP_STOREP_F	3194	3863	0
+// OP_CALL0	494	0	0
+// OP_LOAD_F	28	370	3864
+// OP_IFNOT	3864	3	0
+// OP_STORE_F	2658	3862	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	3865	3862	0
+// OP_LOAD_F	28	191	3866
+// OP_ADD_F	3866	3862	3867
+// OP_STORE_V	3867	4	0
+// OP_STORE_V	346	7	0
+// OP_CALL2	480	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	370	3868
+// OP_LOAD_F	28	370	3869
+// OP_SUB_F	214	3869	3870
+// OP_STOREP_F	3870	3868	0
+// OP_LOAD_F	28	191	3871
+// OP_SUB_F	3871	3862	3872
+// OP_STORE_V	3872	4	0
+// OP_STORE_V	346	7	0
+// OP_CALL2	480	0	0
+// OP_DONE	0	0	0
+void () ai_run_slide = 
+{
+    local float ofs;
+    self.ideal_yaw = enemy_yaw;
+    ChangeYaw();
+    if(self.lefty)
+    {
+        ofs = 90;
+    }
+    else
+    {
+        ofs = -90;
+    }
+    
+    
+    if(walkmove(self.ideal_yaw + ofs, movedist))
+    {
+        return;
+    }
+    
+    self.lefty = TRUE - self.lefty;
+    walkmove(self.ideal_yaw - ofs, movedist);
+};
+
+
+// ai_run
+// function begins at statement 3702, parm_start=3874
+// OP_STORE_F	3874	346	0
+// OP_LOAD_ENT	28	181	3883
+// OP_LOAD_F	3883	152	3884
+// OP_LE	3884	213	3885
+// OP_IFNOT	3885	20	0
+// OP_ADDRESS	28	181	3886
+// OP_STOREP_ENT	30	3886	0
+// OP_LOAD_ENT	28	368	3887
+// OP_LOAD_F	3887	152	3888
+// OP_GT	3888	213	3889
+// OP_IFNOT	3889	6	0
+// OP_ADDRESS	28	181	3890
+// OP_LOAD_ENT	28	368	3891
+// OP_STOREP_ENT	3891	3890	0
+// OP_CALL0	3634	0	0
+// OP_GOTO	9	0	0
+// OP_LOAD_ENT	28	423	3892
+// OP_IFNOT	3892	4	0
+// OP_LOAD_FNC	28	362	3893
+// OP_CALL0	3893	0	0
+// OP_GOTO	3	0	0
+// OP_LOAD_FNC	28	361	3894
+// OP_CALL0	3894	0	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	393	3895
+// OP_ADD_F	31	214	3896
+// OP_STOREP_F	3896	3895	0
+// OP_LOAD_ENT	28	181	3897
+// OP_STORE_V	3897	4	0
+// OP_CALL1	3169	0	0
+// OP_STORE_F	1	3191	0
+// OP_IFNOT	3191	4	0
+// OP_ADDRESS	28	371	3898
+// OP_ADD_F	31	230	3899
+// OP_STOREP_F	3899	3898	0
+// OP_OR	36	35	3900
+// OP_LOAD_F	28	371	3901
+// OP_LT	3901	31	3902
+// OP_AND	3900	3902	3903
+// OP_IFNOT	3903	4	0
+// OP_CALL0	3734	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	28	181	3904
+// OP_STORE_V	3904	4	0
+// OP_CALL1	3285	0	0
+// OP_STORE_F	1	3192	0
+// OP_LOAD_ENT	28	181	3905
+// OP_STORE_V	3905	4	0
+// OP_CALL1	3286	0	0
+// OP_STORE_F	1	3193	0
+// OP_LOAD_ENT	28	181	3906
+// OP_LOAD_V	3906	105	3907
+// OP_LOAD_V	28	105	3910
+// OP_SUB_V	3907	3910	3913
+// OP_STORE_V	3913	4	0
+// OP_CALL1	463	0	0
+// OP_STORE_F	1	3194	0
+// OP_LOAD_F	28	372	3916
+// OP_EQ_F	3916	376	3917
+// OP_IFNOT	3917	3	0
+// OP_CALL0	3857	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	372	3918
+// OP_EQ_F	3918	375	3919
+// OP_IFNOT	3919	3	0
+// OP_CALL0	3853	0	0
+// OP_RETURN	0	0	0
+// OP_CALL0	3839	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	372	3920
+// OP_EQ_F	3920	374	3921
+// OP_IFNOT	3921	3	0
+// OP_CALL0	3861	0	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	3874	4	0
+// OP_CALL1	504	0	0
+// OP_DONE	0	0	0
+void (float dist) ai_run = 
+{
+    local vector delta;
+    local float axis;
+    local float direct;
+    local float ang_rint;
+    local float ang_floor;
+    local float ang_ceil;
+    movedist = dist;
+    
+    if(self.enemy.health <= FALSE)
+    {
+        self.enemy = world;
+        if(self.oldenemy.health > FALSE)
+        {
+            self.enemy = self.oldenemy;
+            HuntTarget();
+        }
+        else
+        {
+            if(self.movetarget)
+            {
+                self.th_walk();
+            }
+            else
+            {
+                self.th_stand();
+            }
+            
+            return;
+        }
+        
+    }
+    
+    self.show_hostile = time + TRUE;
+    enemy_vis = visible(self.enemy);
+    
+    if(enemy_vis)
+    {
+        self.search_time = time + MOVETYPE_FLY;
+    }
+    
+    
+    if((coop || deathmatch) && (self.search_time < time))
+    {
+        
+        if(FindTarget())
+        {
+            return;
+        }
+        
+    }
+    
+    enemy_infront = infront(self.enemy);
+    enemy_range = range(self.enemy);
+    enemy_yaw = vectoyaw(self.enemy.origin - self.origin);
+    
+    if(self.attack_state == AS_MISSILE)
+    {
+        ai_run_missile();
+        return;
+    }
+    
+    
+    if(self.attack_state == AS_MELEE)
+    {
+        ai_run_melee();
+        return;
+    }
+    
+    
+    if(CheckAnyAttack())
+    {
+        return;
+    }
+    
+    
+    if(self.attack_state == AS_SLIDING)
+    {
+        ai_run_slide();
+        return;
+    }
+    
+    movetogoal(dist);
 };
 
