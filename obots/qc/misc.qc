@@ -1,3 +1,4 @@
+
 // info_null
 // function begins at statement 17425, parm_start=11910
 // OP_STORE_V	28	4	0
@@ -8,6 +9,7 @@ void () info_null =
     remove(self);
 };
 
+
 // info_notnull
 // function begins at statement 17428, parm_start=11911
 // OP_DONE	0	0	0
@@ -16,6 +18,7 @@ void () info_notnull =
 };
 
 float globaldef003568;
+
 // func000622
 // function begins at statement 17429, parm_start=11913
 // OP_LOAD_F	28	195	11913
@@ -53,6 +56,7 @@ void () func000622 =
     }
     
 };
+
 
 // light
 // function begins at statement 17450, parm_start=11924
@@ -106,6 +110,7 @@ void () light =
     
 };
 
+
 // light_fluoro
 // function begins at statement 17474, parm_start=11934
 // OP_LOAD_F	28	360	11934
@@ -155,6 +160,7 @@ void () light_fluoro =
     ambientsound(self.origin, "ambience/fl_hum1.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // light_fluorospark
 // function begins at statement 17500, parm_start=11946
 // OP_LOAD_F	28	360	11946
@@ -183,6 +189,7 @@ void () light_fluorospark =
     ambientsound(self.origin, "ambience/buzz1.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // light_globe
 // function begins at statement 17514, parm_start=11954
 // OP_STORE_V	11954	4	0
@@ -200,6 +207,7 @@ void () light_globe =
     makestatic(self);
 };
 
+
 // func000627
 // function begins at statement 17522, parm_start=11956
 // OP_STORE_V	11956	4	0
@@ -216,6 +224,7 @@ void () func000627 =
     precache_sound("ambience/fire1.wav");
     ambientsound(self.origin, "ambience/fire1.wav", globaldef000522, ATTN_STATIC);
 };
+
 
 // light_torch_small_walltorch
 // function begins at statement 17531, parm_start=11961
@@ -235,6 +244,7 @@ void () light_torch_small_walltorch =
     func000627();
     makestatic(self);
 };
+
 
 // light_flame_large_yellow
 // function begins at statement 17540, parm_start=11963
@@ -258,6 +268,7 @@ void () light_flame_large_yellow =
     makestatic(self);
 };
 
+
 // light_flame_small_yellow
 // function begins at statement 17551, parm_start=11966
 // OP_STORE_V	11963	4	0
@@ -276,6 +287,7 @@ void () light_flame_small_yellow =
     func000627();
     makestatic(self);
 };
+
 
 // light_flame_small_white
 // function begins at statement 17560, parm_start=11967
@@ -298,6 +310,7 @@ void () light_flame_small_white =
 
 void () func000633;
 void () func000634;
+
 // misc_fireball
 // function begins at statement 17569, parm_start=11970
 // OP_STORE_V	6694	4	0
@@ -330,6 +343,7 @@ void () misc_fireball =
     }
     
 };
+
 
 // func000633
 // function begins at statement 17586, parm_start=11979
@@ -407,6 +421,7 @@ void () func000633 =
     self.think = func000633;
 };
 
+
 // func000634
 // function begins at statement 17639, parm_start=12011
 // OP_STORE_V	29	4	0
@@ -419,9 +434,10 @@ void () func000633 =
 // OP_DONE	0	0	0
 void () func000634 = 
 {
-    func000201(other, self, self, 20);
+    T_Damage(other, self, self, 20);
     remove(self);
 };
+
 
 // func000635
 // function begins at statement 17647, parm_start=12012
@@ -462,6 +478,7 @@ void () func000635 =
     self.origin_z = self.origin_z + FL_MONSTER;
     func000270();
 };
+
 
 // misc_explobox
 // function begins at statement 17674, parm_start=12022
@@ -529,6 +546,7 @@ void () misc_explobox =
     }
     
 };
+
 
 // misc_explobox2
 // function begins at statement 17714, parm_start=12041
@@ -600,6 +618,7 @@ void () misc_explobox2 =
 float globaldef003599;
 float globaldef003600;
 void (vector globaldef005434, vector globaldef005438) func002072;
+
 // func000638
 // function begins at statement 17754, parm_start=12062
 // OP_LOAD_F	28	195	12062
@@ -660,6 +679,7 @@ void () func000638 =
     
 };
 
+
 // func000639
 // function begins at statement 17790, parm_start=12090
 // OP_CALL0	12061	0	0
@@ -678,6 +698,7 @@ void () func000639 =
     self.nextthink = time + self.wait;
     newmis.velocity = self.movedir * globaldef000728;
 };
+
 
 // func000640
 // function begins at statement 17800, parm_start=12103
@@ -714,6 +735,7 @@ void () func000640 =
     
 };
 
+
 // trap_spikeshooter
 // function begins at statement 17816, parm_start=12109
 // OP_CALL0	12102	0	0
@@ -722,6 +744,7 @@ void () trap_spikeshooter =
 {
     func000640();
 };
+
 
 // trap_shooter
 // function begins at statement 17818, parm_start=12110
@@ -756,6 +779,7 @@ void () trap_shooter =
 
 void () func000644;
 void () func000646;
+
 // air_bubbles
 // function begins at statement 17834, parm_start=12123
 // OP_IFNOT	35	4	0
@@ -783,6 +807,7 @@ void () air_bubbles =
     self.nextthink = time + TRUE;
     self.think = func000644;
 };
+
 
 // func000644
 // function begins at statement 17846, parm_start=12126
@@ -845,6 +870,7 @@ void () func000644 =
     self.nextthink = (time + random()) + globaldef000522;
     self.think = func000644;
 };
+
 
 // func000645
 // function begins at statement 17886, parm_start=12147
@@ -917,6 +943,7 @@ void () func000645 =
     
 };
 
+
 // func000646
 // function begins at statement 17929, parm_start=12170
 // OP_LOAD_S	29	129	12170
@@ -937,6 +964,7 @@ void () func000646 =
     
     remove(self);
 };
+
 
 // func000647
 // function begins at statement 17937, parm_start=12173
@@ -1067,6 +1095,7 @@ void () func000647 =
     self.think = func000647;
 };
 
+
 // viewthing
 // function begins at statement 17998, parm_start=12215
 // OP_ADDRESS	28	103	12215
@@ -1087,6 +1116,7 @@ void () viewthing =
     setmodel(self, "progs/player.mdl");
 };
 
+
 // func000649
 // function begins at statement 18008, parm_start=12218
 // OP_ADDRESS	28	131	12218
@@ -1098,6 +1128,7 @@ void () func000649 =
 {
     self.frame = TRUE - self.frame;
 };
+
 
 // func_wall
 // function begins at statement 18013, parm_start=12222
@@ -1123,6 +1154,7 @@ void () func_wall =
     setmodel(self, self.model);
 };
 
+
 // func_illusionary
 // function begins at statement 18026, parm_start=12230
 // OP_ADDRESS	28	117	12230
@@ -1146,6 +1178,7 @@ void () func_illusionary =
     setmodel(self, self.model);
     makestatic(self);
 };
+
 
 // func_episodegate
 // function begins at statement 18039, parm_start=12237
@@ -1182,6 +1215,7 @@ void () func_episodegate =
     setmodel(self, self.model);
 };
 
+
 // func_bossgate
 // function begins at statement 18057, parm_start=12248
 // OP_BITAND	38	765	12248
@@ -1216,6 +1250,7 @@ void () func_bossgate =
     setmodel(self, self.model);
 };
 
+
 // ambient_suck_wind
 // function begins at statement 18074, parm_start=12258
 // OP_STORE_V	12258	4	0
@@ -1232,6 +1267,7 @@ void () ambient_suck_wind =
     precache_sound("ambience/suck1.wav");
     ambientsound(self.origin, "ambience/suck1.wav", TRUE, ATTN_STATIC);
 };
+
 
 // ambient_drone
 // function begins at statement 18083, parm_start=12263
@@ -1250,6 +1286,7 @@ void () ambient_drone =
     ambientsound(self.origin, "ambience/drone6.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // ambient_flouro_buzz
 // function begins at statement 18092, parm_start=12268
 // OP_STORE_V	11949	4	0
@@ -1266,6 +1303,7 @@ void () ambient_flouro_buzz =
     precache_sound("ambience/buzz1.wav");
     ambientsound(self.origin, "ambience/buzz1.wav", TRUE, ATTN_STATIC);
 };
+
 
 // ambient_drip
 // function begins at statement 18101, parm_start=12272
@@ -1284,6 +1322,7 @@ void () ambient_drip =
     ambientsound(self.origin, "ambience/drip1.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // ambient_comp_hum
 // function begins at statement 18110, parm_start=12277
 // OP_STORE_V	12277	4	0
@@ -1300,6 +1339,7 @@ void () ambient_comp_hum =
     precache_sound("ambience/comp1.wav");
     ambientsound(self.origin, "ambience/comp1.wav", TRUE, ATTN_STATIC);
 };
+
 
 // ambient_thunder
 // function begins at statement 18119, parm_start=12282
@@ -1318,6 +1358,7 @@ void () ambient_thunder =
     ambientsound(self.origin, "ambience/thunder1.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // ambient_light_buzz
 // function begins at statement 18128, parm_start=12287
 // OP_STORE_V	11941	4	0
@@ -1334,6 +1375,7 @@ void () ambient_light_buzz =
     precache_sound("ambience/fl_hum1.wav");
     ambientsound(self.origin, "ambience/fl_hum1.wav", globaldef000522, ATTN_STATIC);
 };
+
 
 // ambient_swamp1
 // function begins at statement 18137, parm_start=12291
@@ -1352,6 +1394,7 @@ void () ambient_swamp1 =
     ambientsound(self.origin, "ambience/swamp1.wav", globaldef000522, ATTN_STATIC);
 };
 
+
 // ambient_swamp2
 // function begins at statement 18146, parm_start=12296
 // OP_STORE_V	12296	4	0
@@ -1368,6 +1411,7 @@ void () ambient_swamp2 =
     precache_sound("ambience/swamp2.wav");
     ambientsound(self.origin, "ambience/swamp2.wav", globaldef000522, ATTN_STATIC);
 };
+
 
 // func000663
 // function begins at statement 18155, parm_start=12301
@@ -1428,6 +1472,7 @@ void () func000663 =
     sound(self, MOVETYPE_TOSS, "enforcer/sight4.wav", TRUE, ATTN_NORM);
     sound(self, MOVETYPE_PUSH, "enforcer/pain1.wav", TRUE, ATTN_NORM);
 };
+
 
 // misc_noisemaker
 // function begins at statement 18201, parm_start=12305

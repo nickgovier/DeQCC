@@ -1,3 +1,4 @@
+
 // monster_dog
 // function begins at statement 22443, parm_start=14151
 // OP_IFNOT	35	4	0

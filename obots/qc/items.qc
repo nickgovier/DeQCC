@@ -1,3 +1,4 @@
+
 // noclass
 // function begins at statement 4238, parm_start=4305
 // OP_STORE_V	4305	4	0
@@ -19,6 +20,7 @@ void () noclass =
     dprint("\n");
     remove(self);
 };
+
 
 // func000206
 // function begins at statement 4250, parm_start=4310
@@ -77,6 +79,7 @@ void () func000206 =
     
 };
 
+
 // func000207
 // function begins at statement 4283, parm_start=4329
 // OP_ADDRESS	28	150	4329
@@ -90,6 +93,7 @@ void () func000207 =
     self.nextthink = time + 0.2;
     self.think = func000206;
 };
+
 
 // func000208
 // function begins at statement 4289, parm_start=4332
@@ -164,6 +168,7 @@ float globaldef001801;
 .float healtype;
 void () func000210;
 void () func000211;
+
 // item_health
 // function begins at statement 4323, parm_start=4362
 // OP_ADDRESS	28	146	4362
@@ -274,6 +279,7 @@ void () item_health =
     setsize(self, VEC_ORIGIN, '32 32 56');
     func000207();
 };
+
 
 // func000210
 // function begins at statement 4388, parm_start=4390
@@ -484,6 +490,7 @@ void () func000210 =
     SUB_UseTargets();
 };
 
+
 // func000211
 // function begins at statement 4492, parm_start=4432
 // OP_LOAD_ENT	28	201	4432
@@ -548,6 +555,7 @@ void () func000211 =
     }
     
 };
+
 
 // func000212
 // function begins at statement 4527, parm_start=4455
@@ -763,6 +771,7 @@ void () func000212 =
     SUB_UseTargets();
 };
 
+
 // item_armor1
 // function begins at statement 4633, parm_start=4513
 // OP_ADDRESS	28	146	4513
@@ -795,6 +804,7 @@ void () item_armor1 =
     self.field000225 = func002311;
     func000207();
 };
+
 
 // item_armor2
 // function begins at statement 4652, parm_start=4525
@@ -835,6 +845,7 @@ void () item_armor2 =
     func000207();
 };
 
+
 // item_armorInv
 // function begins at statement 4675, parm_start=4532
 // OP_ADDRESS	28	146	4532
@@ -873,6 +884,7 @@ void () item_armorInv =
     self.field000224 = func002646;
     func000207();
 };
+
 
 // func000216
 // function begins at statement 4698, parm_start=4539
@@ -924,6 +936,7 @@ void () func000216 =
     }
     
 };
+
 
 // func000217
 // function begins at statement 4719, parm_start=4552
@@ -988,6 +1001,7 @@ float (float globaldef001838) func000217 =
     return MOVETYPE_PUSH;
 };
 
+
 // func000218
 // function begins at statement 4739, parm_start=4560
 // OP_LOAD_F	28	154	4564
@@ -1017,6 +1031,7 @@ void (float globaldef001840, float globaldef001841) func000218 =
 };
 
 float () func000284;
+
 // func000219
 // function begins at statement 4751, parm_start=4569
 // OP_IFNOT	816	2	0
@@ -1430,6 +1445,7 @@ void () func000219 =
     SUB_UseTargets();
 };
 
+
 // weapon_supershotgun
 // function begins at statement 4953, parm_start=4672
 // OP_STORE_V	4672	4	0
@@ -1468,6 +1484,7 @@ void () weapon_supershotgun =
     self.field000224 = func002640;
     func000207();
 };
+
 
 // weapon_nailgun
 // function begins at statement 4976, parm_start=4681
@@ -1508,6 +1525,7 @@ void () weapon_nailgun =
     func000207();
 };
 
+
 // weapon_supernailgun
 // function begins at statement 4999, parm_start=4690
 // OP_STORE_V	4690	4	0
@@ -1546,6 +1564,7 @@ void () weapon_supernailgun =
     self.field000224 = func002642;
     func000207();
 };
+
 
 // weapon_grenadelauncher
 // function begins at statement 5022, parm_start=4699
@@ -1586,6 +1605,7 @@ void () weapon_grenadelauncher =
     func000207();
 };
 
+
 // weapon_rocketlauncher
 // function begins at statement 5045, parm_start=4708
 // OP_STORE_V	4708	4	0
@@ -1625,6 +1645,7 @@ void () weapon_rocketlauncher =
     func000207();
 };
 
+
 // weapon_lightning
 // function begins at statement 5068, parm_start=4717
 // OP_STORE_V	4717	4	0
@@ -1663,6 +1684,7 @@ void () weapon_lightning =
     self.field000224 = func002645;
     func000207();
 };
+
 
 // func000226
 // function begins at statement 5091, parm_start=4726
@@ -1939,6 +1961,7 @@ void () func000226 =
 };
 
 float globaldef001883;
+
 // item_shells
 // function begins at statement 5228, parm_start=4791
 // OP_ADDRESS	28	146	4791
@@ -1995,6 +2018,7 @@ void () item_shells =
     self.field000225 = func002302;
     func000207();
 };
+
 
 // item_spikes
 // function begins at statement 5260, parm_start=4803
@@ -2053,6 +2077,7 @@ void () item_spikes =
     func000207();
 };
 
+
 // item_rockets
 // function begins at statement 5292, parm_start=4815
 // OP_ADDRESS	28	146	4815
@@ -2109,6 +2134,7 @@ void () item_rockets =
     self.field000225 = func002304;
     func000207();
 };
+
 
 // item_cells
 // function begins at statement 5324, parm_start=4827
@@ -2171,6 +2197,7 @@ float globaldef001900;
 float globaldef001901;
 float globaldef001902;
 float globaldef001903;
+
 // item_weapon
 // function begins at statement 5356, parm_start=4843
 // OP_ADDRESS	28	146	4843
@@ -2323,6 +2350,7 @@ void () item_weapon =
     func000207();
 };
 
+
 // func000232
 // function begins at statement 5439, parm_start=4870
 // OP_IFNOT	816	2	0
@@ -2443,6 +2471,7 @@ void () func000232 =
     SUB_UseTargets();
 };
 
+
 // func000233
 // function begins at statement 5497, parm_start=4895
 // OP_LOAD_F	30	357	4895
@@ -2497,6 +2526,7 @@ void () func000233 =
     }
     
 };
+
 
 // item_key1
 // function begins at statement 5521, parm_start=4908
@@ -2580,6 +2610,7 @@ void () item_key1 =
     func000207();
 };
 
+
 // item_key2
 // function begins at statement 5564, parm_start=4926
 // OP_LOAD_F	30	357	4926
@@ -2662,6 +2693,7 @@ void () item_key2 =
     func000207();
 };
 
+
 // func000236
 // function begins at statement 5607, parm_start=4944
 // OP_IFNOT	816	2	0
@@ -2732,6 +2764,7 @@ void () func000236 =
     activator = other;
     SUB_UseTargets();
 };
+
 
 // item_sigil
 // function begins at statement 5643, parm_start=4959
@@ -2826,6 +2859,7 @@ void () item_sigil =
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     func000207();
 };
+
 
 // func000238
 // function begins at statement 5692, parm_start=4977
@@ -3049,6 +3083,7 @@ void () func000238 =
     SUB_UseTargets();
 };
 
+
 // item_artifact_invulnerability
 // function begins at statement 5807, parm_start=5039
 // OP_ADDRESS	28	146	5039
@@ -3100,6 +3135,7 @@ void () item_artifact_invulnerability =
     func000207();
 };
 
+
 // item_artifact_envirosuit
 // function begins at statement 5838, parm_start=5051
 // OP_ADDRESS	28	146	5051
@@ -3141,6 +3177,7 @@ void () item_artifact_envirosuit =
     self.field000225 = func002314;
     func000207();
 };
+
 
 // item_artifact_invisibility
 // function begins at statement 5863, parm_start=5061
@@ -3192,6 +3229,7 @@ void () item_artifact_invisibility =
     self.field000224 = func002647;
     func000207();
 };
+
 
 // item_artifact_super_damage
 // function begins at statement 5894, parm_start=5074

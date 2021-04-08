@@ -1,3 +1,74 @@
+void () func000174;
+void () func000176;
+void () func000997;
+void () knight_bow6;
+void () knight_bow1;
+float globaldef001616;
+entity globaldef001617;
+float globaldef001618;
+
+// anglemod
+// function begins at statement 3093, parm_start=3510
+// OP_GE	3510	1298	3511
+// OP_IFNOT	3511	4	0
+// OP_SUB_F	3510	1298	3512
+// OP_STORE_F	3512	3510	0
+// OP_GOTO	-4	0	0
+// OP_LT	3510	213	3513
+// OP_IFNOT	3513	4	0
+// OP_ADD_F	3510	1298	3514
+// OP_STORE_F	3514	3510	0
+// OP_GOTO	-4	0	0
+// OP_RETURN	3510	0	0
+// OP_DONE	0	0	0
+float (float v) anglemod = 
+{
+    
+    while(v >= 360)
+    {
+        v = v - 360;
+    }
+    
+    
+    while(v < FALSE)
+    {
+        v = v + 360;
+    }
+    
+    return v;
+};
+
+
+// func000174
+// function begins at statement 3105, parm_start=3515
+// OP_LOAD_S	28	197	3515
+// OP_NOT_S	3515	0	3516
+// OP_IFNOT	3516	3	0
+// OP_STORE_V	3517	4	0
+// OP_CALL1	461	0	0
+// OP_ADDRESS	28	104	3518
+// OP_STOREP_F	238	3518	0
+// OP_ADDRESS	28	146	3519
+// OP_STOREP_FNC	3503	3519	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	3520	7	0
+// OP_STORE_V	3523	10	0
+// OP_CALL3	455	0	0
+// OP_DONE	0	0	0
+void () func000174 = 
+{
+    
+    if(!self.targetname)
+    {
+        objerror("monster_movetarget: no targetname");
+    }
+    
+    self.solid = SOLID_TRIGGER;
+    self.touch = func000176;
+    setsize(self, '-8 -8 -8', '8 8 8');
+};
+
+
 // path_corner
 // function begins at statement 3119, parm_start=3527
 // OP_CALL0	3502	0	0
@@ -6,6 +77,7 @@ void () path_corner =
 {
     func000174();
 };
+
 
 // func000176
 // function begins at statement 3121, parm_start=3527
@@ -91,7 +163,8 @@ void () func000176 =
     
 };
 
-// func000177
+
+// range
 // function begins at statement 3167, parm_start=3555
 // OP_LOAD_V	28	105	3563
 // OP_LOAD_V	28	166	3566
@@ -116,13 +189,13 @@ void () func000176 =
 // OP_RETURN	244	0	0
 // OP_RETURN	245	0	0
 // OP_DONE	0	0	0
-float (entity globaldef001628) func000177 = 
+float (entity targ) range = 
 {
     local vector globaldef001629;
     local vector globaldef001633;
     local float globaldef001637;
     globaldef001629 = self.origin + self.view_ofs;
-    globaldef001633 = globaldef001628.origin + globaldef001628.view_ofs;
+    globaldef001633 = targ.origin + targ.view_ofs;
     globaldef001637 = vlen(globaldef001629 - globaldef001633);
     
     if(globaldef001637 < 120)
@@ -144,6 +217,7 @@ float (entity globaldef001628) func000177 =
     
     return RANGE_FAR;
 };
+
 
 // visible
 // function begins at statement 3190, parm_start=3588
@@ -190,7 +264,8 @@ float (entity targ) visible =
     return FALSE;
 };
 
-// func000179
+
+// infront
 // function begins at statement 3211, parm_start=3615
 // OP_LOAD_V	28	117	3620
 // OP_STORE_V	3620	4	0
@@ -208,12 +283,12 @@ float (entity targ) visible =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef001648) func000179 = 
+float (entity targ) infront = 
 {
     local vector globaldef001649;
     local float globaldef001653;
     makevectors(self.angles);
-    globaldef001649 = normalize(globaldef001648.origin - self.origin);
+    globaldef001649 = normalize(targ.origin - self.origin);
     globaldef001653 = globaldef001649 * v_forward;
     
     if(globaldef001653 > 0.3)
@@ -223,6 +298,7 @@ float (entity globaldef001648) func000179 =
     
     return FALSE;
 };
+
 
 // func000180
 // function begins at statement 3227, parm_start=3635
@@ -254,6 +330,7 @@ void () func000180 =
     self.nextthink = time + 0.1;
     SUB_AttackFinished(TRUE);
 };
+
 
 // func000181
 // function begins at statement 3247, parm_start=3653
@@ -551,6 +628,7 @@ void () func000181 =
     
 };
 
+
 // func000182
 // function begins at statement 3409, parm_start=3712
 // OP_LOAD_ENT	28	181	3712
@@ -578,6 +656,7 @@ void () func000182 =
     func000181();
     func000180();
 };
+
 
 // func000183
 // function begins at statement 3421, parm_start=3718
@@ -626,7 +705,7 @@ entity () func000183 =
             if(visible(globaldef001688))
             {
                 
-                if(func000179(globaldef001688))
+                if(infront(globaldef001688))
                 {
                     globaldef001687 = globaldef001686;
                     globaldef001689 = globaldef001688;
@@ -641,6 +720,7 @@ entity () func000183 =
     
     return globaldef001689;
 };
+
 
 // func000184
 // function begins at statement 3446, parm_start=3735
@@ -785,7 +865,7 @@ float () func000184 =
         return FALSE;
     }
     
-    globaldef001693 = func000177(globaldef001692);
+    globaldef001693 = range(globaldef001692);
     
     if(globaldef001693 == RANGE_FAR)
     {
@@ -801,7 +881,7 @@ float () func000184 =
     if(globaldef001693 == RANGE_NEAR)
     {
         
-        if((globaldef001692.show_hostile < time) && !func000179(globaldef001692))
+        if((globaldef001692.show_hostile < time) && !infront(globaldef001692))
         {
             return FALSE;
         }
@@ -813,7 +893,7 @@ float () func000184 =
         if(globaldef001693 == RANGE_MID)
         {
             
-            if(!func000179(globaldef001692))
+            if(!infront(globaldef001692))
             {
                 return FALSE;
             }
@@ -840,6 +920,7 @@ float () func000184 =
     return TRUE;
 };
 
+
 // func000185
 // function begins at statement 3538, parm_start=3783
 // OP_LOAD_F	28	119	3784
@@ -851,6 +932,7 @@ void (float globaldef001695) func000185 =
 {
     walkmove(self.angles_y, globaldef001695);
 };
+
 
 // func000186
 // function begins at statement 3543, parm_start=3786
@@ -865,6 +947,7 @@ void (float globaldef001697) func000186 =
     walkmove(self.angles_y + 180, globaldef001697);
 };
 
+
 // func000187
 // function begins at statement 3549, parm_start=3790
 // OP_STORE_V	3790	4	0
@@ -874,6 +957,7 @@ void (float globaldef001699) func000187 =
 {
     func000186(globaldef001699);
 };
+
 
 // func000188
 // function begins at statement 3552, parm_start=3792
@@ -886,6 +970,7 @@ void (float globaldef001701) func000188 =
 {
     walkmove(self.ideal_yaw, globaldef001701);
 };
+
 
 // func000189
 // function begins at statement 3557, parm_start=3795
@@ -922,6 +1007,7 @@ void (float globaldef001703) func000189 =
     movetogoal(globaldef001703);
 };
 
+
 // func000190
 // function begins at statement 3570, parm_start=3803
 // OP_CALL0	3734	0	0
@@ -951,6 +1037,7 @@ void () func000190 =
     
 };
 
+
 // func000191
 // function begins at statement 3580, parm_start=3807
 // OP_CALL0	3734	0	0
@@ -968,6 +1055,7 @@ void () func000191 =
     
     ChangeYaw();
 };
+
 
 // ChooseTurn
 // function begins at statement 3585, parm_start=3807
@@ -994,11 +1082,11 @@ void () func000191 =
 // OP_CALL1	463	0	0
 // OP_STOREP_F	1	3827	0
 // OP_DONE	0	0	0
-void (vector globaldef001711) ChooseTurn = 
+void (vector dest3) ChooseTurn = 
 {
     local vector globaldef001715;
     local vector globaldef001719;
-    globaldef001715 = self.origin - globaldef001711;
+    globaldef001715 = self.origin - dest3;
     globaldef001719_x = trace_plane_normal_y;
     globaldef001719_y = FALSE - trace_plane_normal_x;
     globaldef001719_z = FALSE;

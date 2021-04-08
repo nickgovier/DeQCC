@@ -1,3 +1,4 @@
+
 // monster_shalrath
 // function begins at statement 26165, parm_start=15717
 // OP_IFNOT	35	4	0

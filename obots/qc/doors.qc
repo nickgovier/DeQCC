@@ -1,3 +1,4 @@
+
 // door_hit_top
 // function begins at statement 14822, parm_start=10235
 // OP_STORE_V	28	4	0
@@ -35,6 +36,7 @@ void () door_hit_top =
     self.nextthink = self.ltime + self.wait;
 };
 
+
 // door_hit_bottom
 // function begins at statement 14843, parm_start=10245
 // OP_STORE_V	28	4	0
@@ -52,6 +54,7 @@ void () door_hit_bottom =
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
     self.state = STATE_BOTTOM;
 };
+
 
 // func000539
 // function begins at statement 14853, parm_start=10247
@@ -91,6 +94,7 @@ void () func000539 =
     self.state = STATE_DOWN;
     SUB_CalcMove(self.pos1, self.speed, door_hit_bottom);
 };
+
 
 // func000540
 // function begins at statement 14876, parm_start=10257
@@ -144,6 +148,7 @@ void () func000540 =
     SUB_CalcMove(self.pos2, self.speed, door_hit_top);
     SUB_UseTargets();
 };
+
 
 // func000541
 // function begins at statement 14906, parm_start=10272
@@ -238,6 +243,7 @@ void () func000541 =
     self = globaldef003327;
 };
 
+
 // func000542
 // function begins at statement 14952, parm_start=10296
 // OP_STORE_V	29	4	0
@@ -284,6 +290,7 @@ void () func000542 =
     self = globaldef003331;
 };
 
+
 // func000543
 // function begins at statement 14977, parm_start=10309
 // OP_LOAD_F	29	152	10309
@@ -322,6 +329,7 @@ void () func000543 =
     func000542();
 };
 
+
 // func000544
 // function begins at statement 14993, parm_start=10317
 // OP_STORE_ENT	28	10317	0
@@ -345,6 +353,7 @@ void () func000544 =
     func000542();
     self = globaldef003334;
 };
+
 
 // func000545
 // function begins at statement 15004, parm_start=10323
@@ -618,6 +627,7 @@ void () func000545 =
     func000542();
 };
 
+
 // func000546
 // function begins at statement 15156, parm_start=10391
 // OP_CALL0	464	0	0
@@ -655,6 +665,7 @@ entity (vector globaldef003347, vector globaldef003351) func000546 =
     setsize(globaldef003355, globaldef003356 - '60 60 8', globaldef003360 + '60 60 8');
     return globaldef003355;
 };
+
 
 // func000547
 // function begins at statement 15176, parm_start=10418
@@ -730,6 +741,7 @@ float (entity globaldef003366, entity globaldef003367) func000547 =
     
     return TRUE;
 };
+
 
 // func000548
 // function begins at statement 15208, parm_start=10439
@@ -960,6 +972,7 @@ void () func000548 =
         
     } while (TRUE);
 };
+
 
 // func_door
 // function begins at statement 15314, parm_start=10500
@@ -1328,6 +1341,7 @@ float globaldef003405;
 float globaldef003406;
 float globaldef003407;
 float globaldef003408;
+
 // func000550
 // function begins at statement 15511, parm_start=10649
 // OP_ADDRESS	28	152	10650
@@ -1491,6 +1505,7 @@ void () func000550 =
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
 };
 
+
 // fd_secret_move1
 // function begins at statement 15614, parm_start=10745
 // OP_ADDRESS	28	150	10745
@@ -1514,6 +1529,7 @@ void () fd_secret_move1 =
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
+
 // func000552
 // function begins at statement 15628, parm_start=10750
 // OP_STORE_V	28	4	0
@@ -1535,6 +1551,7 @@ void () func000552 =
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
 };
+
 
 // fd_secret_move3
 // function begins at statement 15642, parm_start=10755
@@ -1569,6 +1586,7 @@ void () fd_secret_move3 =
     
 };
 
+
 // func000554
 // function begins at statement 15661, parm_start=10764
 // OP_STORE_V	28	4	0
@@ -1590,6 +1608,7 @@ void () func000554 =
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
 };
+
 
 // fd_secret_move5
 // function begins at statement 15675, parm_start=10769
@@ -1614,6 +1633,7 @@ void () fd_secret_move5 =
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
+
 // func000556
 // function begins at statement 15689, parm_start=10774
 // OP_STORE_V	28	4	0
@@ -1635,6 +1655,7 @@ void () func000556 =
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
 };
+
 
 // fd_secret_done
 // function begins at statement 15703, parm_start=10779
@@ -1671,6 +1692,7 @@ void () fd_secret_done =
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
+
 // func000558
 // function begins at statement 15723, parm_start=10789
 // OP_LOAD_F	28	378	10789
@@ -1696,8 +1718,9 @@ void () func000558 =
     }
     
     self.attack_finished = time + globaldef000522;
-    func000201(other, self, self, self.dmg);
+    T_Damage(other, self, self, self.dmg);
 };
+
 
 // func000559
 // function begins at statement 15737, parm_start=10795
@@ -1764,6 +1787,7 @@ void () func000559 =
     }
     
 };
+
 
 // func_door_secret
 // function begins at statement 15767, parm_start=10808
@@ -1943,6 +1967,7 @@ void () func_door_secret =
 };
 
 void () func000563;
+
 // button_wait
 // function begins at statement 15868, parm_start=10875
 // OP_ADDRESS	28	438	10875
@@ -1969,6 +1994,7 @@ void () button_wait =
     SUB_UseTargets();
     self.frame = TRUE;
 };
+
 
 // button_done
 // function begins at statement 15883, parm_start=10884

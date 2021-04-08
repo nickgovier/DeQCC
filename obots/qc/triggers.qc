@@ -2,6 +2,7 @@ entity globaldef003439;
 entity globaldef003440;
 entity globaldef003441;
 entity globaldef003442;
+
 // trigger_reactivate
 // function begins at statement 16056, parm_start=11004
 // OP_ADDRESS	28	104	11004
@@ -14,6 +15,7 @@ void () trigger_reactivate =
 
 float globaldef003444;
 float globaldef003445;
+
 // func000571
 // function begins at statement 16059, parm_start=11008
 // OP_LOAD_F	28	185	11008
@@ -37,6 +39,7 @@ void () func000571 =
     }
     
 };
+
 
 // func000572
 // function begins at statement 16069, parm_start=11014
@@ -154,6 +157,7 @@ void () func000572 =
     
 };
 
+
 // func000573
 // function begins at statement 16128, parm_start=11043
 // OP_ADDRESS	28	181	11043
@@ -166,6 +170,7 @@ void () func000573 =
     func000572();
 };
 
+
 // func000574
 // function begins at statement 16132, parm_start=11045
 // OP_ADDRESS	28	181	11045
@@ -177,6 +182,7 @@ void () func000574 =
     self.enemy = activator;
     func000572();
 };
+
 
 // func000575
 // function begins at statement 16136, parm_start=11047
@@ -230,6 +236,7 @@ void () func000575 =
     self.enemy = other;
     func000572();
 };
+
 
 // func000576
 // function begins at statement 16158, parm_start=11065
@@ -353,6 +360,7 @@ void () func000576 =
     
 };
 
+
 // trigger_multiple
 // function begins at statement 16217, parm_start=11097
 // OP_CALL0	11064	0	0
@@ -361,6 +369,7 @@ void () trigger_multiple =
 {
     func000576();
 };
+
 
 // trigger_once
 // function begins at statement 16219, parm_start=11098
@@ -374,6 +383,7 @@ void () trigger_once =
     func000576();
 };
 
+
 // trigger_relay
 // function begins at statement 16223, parm_start=11100
 // OP_ADDRESS	28	147	11100
@@ -383,6 +393,7 @@ void () trigger_relay =
 {
     self.use = SUB_UseTargets;
 };
+
 
 // trigger_secret
 // function begins at statement 16226, parm_start=11102
@@ -458,6 +469,7 @@ void () trigger_secret =
     
     func000576();
 };
+
 
 // func000581
 // function begins at statement 16259, parm_start=11119
@@ -574,6 +586,7 @@ void () func000581 =
     func000572();
 };
 
+
 // trigger_counter
 // function begins at statement 16316, parm_start=11152
 // OP_ADDRESS	28	418	11152
@@ -600,6 +613,7 @@ void () trigger_counter =
 
 float globaldef003469;
 float globaldef003470;
+
 // func000583
 // function begins at statement 16326, parm_start=11160
 // OP_CALL0	457	0	0
@@ -673,6 +687,7 @@ void () func000583 =
     remove(self);
 };
 
+
 // func000584
 // function begins at statement 16355, parm_start=11167
 // OP_CALL0	464	0	0
@@ -712,6 +727,7 @@ void (vector globaldef003474) func000584 =
     WriteCoord(MSG_BROADCAST, globaldef003474_y);
     WriteCoord(MSG_BROADCAST, globaldef003474_z);
 };
+
 
 // func000585
 // function begins at statement 16380, parm_start=11177
@@ -776,7 +792,7 @@ void () func000585 =
             
             if(self.owner.classname != "bot")
             {
-                func000201(self.owner, self, self, 50000);
+                T_Damage(self.owner, self, self, 50000);
                 return;
             }
             
@@ -787,10 +803,11 @@ void () func000585 =
     
     if(other.health)
     {
-        func000201(other, self, self, 50000);
+        T_Damage(other, self, self, 50000);
     }
     
 };
+
 
 // func000586
 // function begins at statement 16418, parm_start=11195
@@ -842,6 +859,7 @@ void (vector globaldef003479, entity globaldef003483) func000586 =
     globaldef003484.owner = globaldef003483;
     force_retouch = FL_SWIM;
 };
+
 
 // func000587
 // function begins at statement 16450, parm_start=11227
@@ -1119,6 +1137,7 @@ void () func000587 =
     other.flags = other.flags - (other.flags & FL_ONGROUND);
 };
 
+
 // info_teleport_destination
 // function begins at statement 16608, parm_start=11360
 // OP_ADDRESS	28	400	11360
@@ -1152,6 +1171,7 @@ void () info_teleport_destination =
     
 };
 
+
 // func000589
 // function begins at statement 16625, parm_start=11386
 // OP_ADDRESS	28	150	11386
@@ -1167,6 +1187,7 @@ void () func000589 =
     force_retouch = FL_SWIM;
     self.think = SUB_Null;
 };
+
 
 // trigger_teleport
 // function begins at statement 16632, parm_start=11390
@@ -1222,6 +1243,7 @@ void () trigger_teleport =
     
 };
 
+
 // func000591
 // function begins at statement 16661, parm_start=11416
 // OP_RETURN	0	0	0
@@ -1236,6 +1258,7 @@ void () func000591 =
     cvar_set("skill", self.message);
 };
 
+
 // trigger_setskill
 // function begins at statement 16667, parm_start=11418
 // OP_CALL0	2992	0	0
@@ -1247,6 +1270,7 @@ void () trigger_setskill =
     InitTrigger();
     self.touch = func000591;
 };
+
 
 // func000593
 // function begins at statement 16671, parm_start=11420
@@ -1334,6 +1358,7 @@ void () func000593 =
     
 };
 
+
 // trigger_onlyregistered
 // function begins at statement 16711, parm_start=11435
 // OP_STORE_V	3152	4	0
@@ -1352,6 +1377,7 @@ void () trigger_onlyregistered =
     self.field000225 = func002296;
 };
 
+
 // func000595
 // function begins at statement 16719, parm_start=11438
 // OP_ADDRESS	28	104	11438
@@ -1364,6 +1390,7 @@ void () func000595 =
     self.solid = SOLID_TRIGGER;
     self.nextthink = CONTENT_EMPTY;
 };
+
 
 // func000596
 // function begins at statement 16724, parm_start=11441
@@ -1390,13 +1417,14 @@ void () func000596 =
     if(other.takedamage)
     {
         self.solid = SOLID_NOT;
-        func000201(other, self, self, self.dmg);
+        T_Damage(other, self, self, self.dmg);
         self.think = func000595;
         self.nextthink = time + TRUE;
     }
     
     return;
 };
+
 
 // trigger_hurt
 // function begins at statement 16741, parm_start=11448
@@ -1422,6 +1450,7 @@ void () trigger_hurt =
 };
 
 float globaldef003511;
+
 // func000598
 // function begins at statement 16750, parm_start=11454
 // OP_LOAD_S	29	129	11454
@@ -1536,6 +1565,7 @@ void () func000598 =
     
 };
 
+
 // trigger_push
 // function begins at statement 16814, parm_start=11512
 // OP_CALL0	2992	0	0
@@ -1564,6 +1594,7 @@ void () trigger_push =
     }
     
 };
+
 
 // func000600
 // function begins at statement 16827, parm_start=11518
@@ -1616,6 +1647,7 @@ void () func000600 =
     other.flags = other.flags - FL_ONGROUND;
     other.velocity_z = self.height;
 };
+
 
 // trigger_monsterjump
 // function begins at statement 16857, parm_start=11540

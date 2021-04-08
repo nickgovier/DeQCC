@@ -1,9 +1,11 @@
+
 // SUB_Null
 // function begins at statement 2438, parm_start=2956
 // OP_DONE	0	0	0
 void () SUB_Null = 
 {
 };
+
 
 // SUB_Remove
 // function begins at statement 2439, parm_start=2956
@@ -14,6 +16,7 @@ void () SUB_Remove =
 {
     remove(self);
 };
+
 
 // SetMovedir
 // function begins at statement 2442, parm_start=2957
@@ -60,6 +63,7 @@ void () SetMovedir =
     self.angles = VEC_ORIGIN;
 };
 
+
 // InitTrigger
 // function begins at statement 2462, parm_start=2993
 // OP_LOAD_V	28	117	2993
@@ -94,6 +98,7 @@ void () InitTrigger =
     self.model = "";
 };
 
+
 // SUB_CalcMoveEnt
 // function begins at statement 2479, parm_start=3003
 // OP_STORE_ENT	28	3009	0
@@ -112,6 +117,7 @@ void (entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt =
     SUB_CalcMove(tdest, tspeed, func);
     self = stemp;
 };
+
 
 // SUB_CalcMove
 // function begins at statement 2487, parm_start=3010
@@ -198,6 +204,7 @@ void (vector tdest, float tspeed, void() func) SUB_CalcMove =
     self.velocity = vdestdelta * (TRUE / traveltime);
 };
 
+
 // SUB_CalcMoveDone
 // function begins at statement 2533, parm_start=3062
 // OP_STORE_V	28	4	0
@@ -226,6 +233,7 @@ void () SUB_CalcMoveDone =
     
 };
 
+
 // SUB_CalcAngleMoveEnt
 // function begins at statement 2546, parm_start=3072
 // OP_STORE_ENT	28	3078	0
@@ -244,6 +252,7 @@ void (entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMove
     SUB_CalcAngleMove(destangle, tspeed, func);
     self = stemp;
 };
+
 
 // SUB_CalcAngleMove
 // function begins at statement 2554, parm_start=3079
@@ -295,6 +304,7 @@ void (vector destangle, float tspeed, void() func) SUB_CalcAngleMove =
     self.think = SUB_CalcAngleMoveDone;
 };
 
+
 // SUB_CalcAngleMoveDone
 // function begins at statement 2581, parm_start=3112
 // OP_ADDRESS	28	117	3112
@@ -322,6 +332,7 @@ void () SUB_CalcAngleMoveDone =
     
 };
 
+
 // DelayThink
 // function begins at statement 2593, parm_start=3125
 // OP_LOAD_ENT	28	181	3125
@@ -336,6 +347,7 @@ void () DelayThink =
     SUB_UseTargets();
     remove(self);
 };
+
 
 // SUB_UseTargets
 // function begins at statement 2599, parm_start=3126
@@ -512,6 +524,7 @@ void () SUB_UseTargets =
     
 };
 
+
 // SUB_AttackFinished
 // function begins at statement 2686, parm_start=3164
 // OP_ADDRESS	28	426	3165
@@ -534,6 +547,7 @@ void (float normal) SUB_AttackFinished =
 };
 
 float (entity targ) visible;
+
 // SUB_CheckRefire
 // function begins at statement 2694, parm_start=3171
 // OP_NE_F	354	228	3172

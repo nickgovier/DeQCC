@@ -2,12 +2,14 @@ void () func000454;
 void () func000407;
 float globaldef002863;
 float globaldef002864;
+
 // info_intermission
 // function begins at statement 11104, parm_start=8216
 // OP_DONE	0	0	0
 void () info_intermission = 
 {
 };
+
 
 // SetChangeParms
 // function begins at statement 11105, parm_start=8216
@@ -94,6 +96,7 @@ void () SetChangeParms =
     parm10 = self.field000249;
 };
 
+
 // SetNewParms
 // function begins at statement 11153, parm_start=8245
 // OP_BITOR	254	253	8245
@@ -122,6 +125,7 @@ void () SetNewParms =
     parm9 = FALSE;
     parm10 = self.field000249;
 };
+
 
 // func000376
 // function begins at statement 11166, parm_start=8248
@@ -176,6 +180,7 @@ void () func000376 =
     self.armortype = parm9 * 0.01;
     self.field000249 = parm10;
 };
+
 
 // func000377
 // function begins at statement 11193, parm_start=8261
@@ -266,6 +271,7 @@ entity () func000377 =
 };
 
 string globaldef002871;
+
 // func000378
 // function begins at statement 11237, parm_start=8271
 // OP_STORE_V	34	4	0
@@ -276,6 +282,7 @@ void () func000378 =
 {
     func000348(mapname, globaldef002871);
 };
+
 
 // func000379
 // function begins at statement 11241, parm_start=8272
@@ -500,6 +507,7 @@ void () func000379 =
     func000378();
 };
 
+
 // func000380
 // function begins at statement 11363, parm_start=8295
 // OP_LT	31	8214	8295
@@ -533,6 +541,7 @@ void () func000380 =
     
     func000379();
 };
+
 
 // func000381
 // function begins at statement 11378, parm_start=8305
@@ -637,6 +646,7 @@ void () func000381 =
     WriteByte(MSG_ALL, SVC_INTERMISSION);
 };
 
+
 // func000382
 // function begins at statement 11440, parm_start=8335
 // OP_LOAD_S	29	129	8336
@@ -690,7 +700,7 @@ void () func000382 =
     
     if(cvar("noexit"))
     {
-        func000201(other, self, self, 50000);
+        T_Damage(other, self, self, 50000);
         return;
     }
     
@@ -710,6 +720,7 @@ void () func000382 =
     self.think = func000381;
     self.nextthink = time + 0.1;
 };
+
 
 // trigger_changelevel
 // function begins at statement 11479, parm_start=8353
@@ -735,6 +746,7 @@ void () trigger_changelevel =
 };
 
 void () func000465;
+
 // func000384
 // function begins at statement 11488, parm_start=8359
 // OP_IFNOT	36	9	0
@@ -781,6 +793,7 @@ void () func000384 =
     
 };
 
+
 // ClientKill
 // function begins at statement 11506, parm_start=8361
 // OP_BITAND	821	767	8361
@@ -826,6 +839,7 @@ void () ClientKill =
     func000384();
 };
 
+
 // CheckSpawnPoint
 // function begins at statement 11527, parm_start=8371
 // OP_RETURN	213	0	0
@@ -834,6 +848,7 @@ float (vector globaldef002895) CheckSpawnPoint =
 {
     return FALSE;
 };
+
 
 // func000387
 // function begins at statement 11529, parm_start=8374
@@ -997,6 +1012,7 @@ entity () func000387 =
     return globaldef002899;
 };
 
+
 // func000388
 // function begins at statement 11605, parm_start=8391
 // OP_ADDRESS	8391	152	8392
@@ -1051,6 +1067,7 @@ void (entity globaldef002908) func000388 =
 };
 
 void () func000464;
+
 // PutClientInServer
 // function begins at statement 11641, parm_start=8417
 // OP_ADDRESS	28	129	8419
@@ -1310,12 +1327,14 @@ void () PutClientInServer =
     
 };
 
+
 // info_player_start
 // function begins at statement 11796, parm_start=8525
 // OP_DONE	0	0	0
 void () info_player_start = 
 {
 };
+
 
 // info_player_start2
 // function begins at statement 11797, parm_start=8526
@@ -1324,12 +1343,14 @@ void () info_player_start2 =
 {
 };
 
+
 // testplayerstart
 // function begins at statement 11798, parm_start=8527
 // OP_DONE	0	0	0
 void () testplayerstart = 
 {
 };
+
 
 // info_player_deathmatch
 // function begins at statement 11799, parm_start=8528
@@ -1338,12 +1359,14 @@ void () info_player_deathmatch =
 {
 };
 
+
 // info_player_coop
 // function begins at statement 11800, parm_start=8529
 // OP_DONE	0	0	0
 void () info_player_coop = 
 {
 };
+
 
 // func000395
 // function begins at statement 11801, parm_start=8529
@@ -1485,6 +1508,7 @@ void () func000395 =
     
 };
 
+
 // func000396
 // function begins at statement 11865, parm_start=8560
 // OP_IFNOT	347	2	0
@@ -1518,6 +1542,7 @@ void () func000396 =
     }
     
 };
+
 
 // func000397
 // function begins at statement 11877, parm_start=8567
@@ -1624,6 +1649,7 @@ void () func000397 =
     self.button2 = FALSE;
     func000384();
 };
+
 
 // func000398
 // function begins at statement 11931, parm_start=8610
@@ -1798,6 +1824,7 @@ void () func000398 =
 };
 
 .float dmgtime;
+
 // func000399
 // function begins at statement 12018, parm_start=8658
 // OP_LOAD_F	28	103	8658
@@ -2020,7 +2047,7 @@ void () func000399 =
                     self.dmg = MOVETYPE_BOUNCE;
                 }
                 
-                func000201(self, world, world, self.dmg);
+                T_Damage(self, world, world, self.dmg);
                 self.pain_finished = time + TRUE;
             }
             
@@ -2055,7 +2082,7 @@ void () func000399 =
                 self.dmgtime = time + 0.2;
             }
             
-            func000201(self, world, world, MOVETYPE_BOUNCE * self.waterlevel);
+            T_Damage(self, world, world, MOVETYPE_BOUNCE * self.waterlevel);
         }
         
     }
@@ -2068,7 +2095,7 @@ void () func000399 =
             if((self.dmgtime < time) && (self.radsuit_finished < time))
             {
                 self.dmgtime = time + TRUE;
-                func000201(self, world, world, MOVETYPE_STEP * self.waterlevel);
+                T_Damage(self, world, world, MOVETYPE_STEP * self.waterlevel);
             }
             
         }
@@ -2107,6 +2134,7 @@ void () func000399 =
     }
     
 };
+
 
 // func000400
 // function begins at statement 12190, parm_start=8750
@@ -2195,6 +2223,7 @@ void () func000400 =
     }
     
 };
+
 
 // PlayerPreThink
 // function begins at statement 12244, parm_start=8798
@@ -2322,6 +2351,7 @@ void () PlayerPreThink =
     }
     
 };
+
 
 // func000402
 // function begins at statement 12300, parm_start=8833
@@ -2776,6 +2806,7 @@ void () func000402 =
     
 };
 
+
 // PlayerPostThink
 // function begins at statement 12554, parm_start=8956
 // OP_LOAD_S	28	129	8959
@@ -2961,7 +2992,7 @@ void () PlayerPostThink =
         {
             if(self.jump_flag < -650)
             {
-                func000201(self, world, world, MOVETYPE_FLY);
+                T_Damage(self, world, world, MOVETYPE_FLY);
                 sound(self, CHAN_VOICE, "player/land2.wav", TRUE, ATTN_NORM);
                 self.deathtype = "falling";
             }
@@ -2988,6 +3019,7 @@ void () PlayerPostThink =
     self.field000261 = self.flags;
     self.field000262 = self.field000252;
 };
+
 
 // ClientConnect
 // function begins at statement 12667, parm_start=9019
@@ -3184,6 +3216,7 @@ void () ClientConnect =
     }
     
 };
+
 
 // ClientDisconnect
 // function begins at statement 12773, parm_start=9067

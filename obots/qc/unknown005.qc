@@ -1,3 +1,4 @@
+
 // func000193
 // function begins at statement 3608, parm_start=3829
 // OP_LOAD_F	28	119	3830
@@ -16,7 +17,7 @@
 float () func000193 = 
 {
     local float globaldef001724;
-    globaldef001724 = func000173(self.angles_y - self.ideal_yaw);
+    globaldef001724 = anglemod(self.angles_y - self.ideal_yaw);
     
     if((globaldef001724 > 45) && (globaldef001724 < 315))
     {
@@ -28,6 +29,7 @@ float () func000193 =
 
 float () func001196;
 float () func001357;
+
 // func000194
 // function begins at statement 3621, parm_start=3840
 // OP_NOT_F	3191	0	3840
@@ -69,7 +71,7 @@ float () func001357;
 float () func000194 = 
 {
     
-    if(!globaldef001534)
+    if(!enemy_vis)
     {
         return;
     }
@@ -77,25 +79,25 @@ float () func000194 =
     
     if(self.classname == "monster_army")
     {
-        return func000170();
+        return SoldierCheckAttack();
     }
     
     
     if(self.classname == "monster_ogre")
     {
-        return func000172();
+        return OgreCheckAttack();
     }
     
     
     if(self.classname == "monster_shambler")
     {
-        return func000171();
+        return ShamCheckAttack();
     }
     
     
     if(self.classname == "monster_demon1")
     {
-        return func000887();
+        return DemonCheckAttack();
     }
     
     
@@ -110,8 +112,9 @@ float () func000194 =
         return func001196();
     }
     
-    return func000164();
+    return CheckAttack();
 };
+
 
 // func000195
 // function begins at statement 3657, parm_start=3854
@@ -127,7 +130,7 @@ float () func000194 =
 // OP_DONE	0	0	0
 void () func000195 = 
 {
-    self.ideal_yaw = globaldef001537;
+    self.ideal_yaw = enemy_yaw;
     ChangeYaw();
     
     if(func000193())
@@ -137,6 +140,7 @@ void () func000195 =
     }
     
 };
+
 
 // func000196
 // function begins at statement 3667, parm_start=3858
@@ -152,7 +156,7 @@ void () func000195 =
 // OP_DONE	0	0	0
 void () func000196 = 
 {
-    self.ideal_yaw = globaldef001537;
+    self.ideal_yaw = enemy_yaw;
     ChangeYaw();
     
     if(func000193())
@@ -162,6 +166,7 @@ void () func000196 =
     }
     
 };
+
 
 // func000197
 // function begins at statement 3677, parm_start=3862
@@ -193,7 +198,7 @@ void () func000196 =
 void () func000197 = 
 {
     local float globaldef001732;
-    self.ideal_yaw = globaldef001537;
+    self.ideal_yaw = enemy_yaw;
     ChangeYaw();
     if(self.lefty)
     {
@@ -213,6 +218,7 @@ void () func000197 =
     self.lefty = TRUE - self.lefty;
     walkmove(self.ideal_yaw - globaldef001732, movedist);
 };
+
 
 // func000198
 // function begins at statement 3702, parm_start=3874
@@ -330,9 +336,9 @@ void (float globaldef001735) func000198 =
     }
     
     self.show_hostile = time + TRUE;
-    globaldef001534 = visible(self.enemy);
+    enemy_vis = visible(self.enemy);
     
-    if(globaldef001534)
+    if(enemy_vis)
     {
         self.search_time = time + MOVETYPE_FLY;
     }
@@ -348,9 +354,9 @@ void (float globaldef001735) func000198 =
         
     }
     
-    globaldef001535 = func000179(self.enemy);
-    globaldef001536 = func000177(self.enemy);
-    globaldef001537 = vectoyaw(self.enemy.origin - self.origin);
+    enemy_infront = infront(self.enemy);
+    enemy_range = range(self.enemy);
+    enemy_yaw = vectoyaw(self.enemy.origin - self.origin);
     
     if(self.attack_state == AS_MISSILE)
     {
@@ -385,7 +391,8 @@ void () func000271;
 void () info_player_start;
 void (entity globaldef002975, entity globaldef002976) func000406;
 void () func000529;
-// func000199
+
+// CanDamage
 // function begins at statement 3781, parm_start=3926
 // OP_LOAD_F	3926	103	3928
 // OP_EQ_F	3928	232	3929
@@ -463,7 +470,7 @@ void () func000529;
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef001749, entity globaldef001750) func000199 = 
+float (entity globaldef001749, entity globaldef001750) CanDamage = 
 {
     
     if(globaldef001749.movetype == MOVETYPE_PUSH)
@@ -521,6 +528,7 @@ float (entity globaldef001749, entity globaldef001750) func000199 =
     
     return FALSE;
 };
+
 
 // func000200
 // function begins at statement 3857, parm_start=4007
@@ -664,7 +672,8 @@ void (entity globaldef001756, entity globaldef001757) func000200 =
     self = globaldef001758;
 };
 
-// func000201
+
+// T_Damage
 // function begins at statement 3930, parm_start=4044
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -850,7 +859,7 @@ void (entity globaldef001756, entity globaldef001757) func000200 =
 // OP_STOREP_F	4215	4214	0
 // OP_STORE_ENT	4051	28	0
 // OP_DONE	0	0	0
-void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) func000201 = 
+void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage = 
 {
     local vector globaldef001764;
     local entity globaldef001768;
@@ -992,6 +1001,7 @@ void (entity globaldef001760, entity globaldef001761, entity globaldef001762, fl
     self = globaldef001768;
 };
 
+
 // func000202
 // function begins at statement 4114, parm_start=4217
 // OP_LOAD_V	4217	105	4226
@@ -1086,15 +1096,15 @@ void (entity globaldef001773, entity globaldef001774, float globaldef001775, ent
                 if(globaldef001777 > FALSE)
                 {
                     
-                    if(func000199(globaldef001778, globaldef001773))
+                    if(CanDamage(globaldef001778, globaldef001773))
                     {
                         if(globaldef001778.classname == "monster_shambler")
                         {
-                            func000201(globaldef001778, globaldef001773, globaldef001774, globaldef001777 * globaldef000522);
+                            T_Damage(globaldef001778, globaldef001773, globaldef001774, globaldef001777 * globaldef000522);
                         }
                         else
                         {
-                            func000201(globaldef001778, globaldef001773, globaldef001774, globaldef001777);
+                            T_Damage(globaldef001778, globaldef001773, globaldef001774, globaldef001777);
                         }
                         
                     }

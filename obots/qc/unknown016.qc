@@ -1,3 +1,4 @@
+
 // func000292
 // function begins at statement 8092, parm_start=6470
 // OP_OR	35	36	6470
@@ -28,6 +29,7 @@ void () func000292 =
     self.items = self.items | IT_QUAD;
     dprint("quad cheat\n");
 };
+
 
 // func000293
 // function begins at statement 8107, parm_start=6479
@@ -116,6 +118,7 @@ void () func000293 =
     self.impulse = FALSE;
 };
 
+
 // func000294
 // function begins at statement 8142, parm_start=6497
 // OP_LOAD_F	28	378	6497
@@ -171,6 +174,7 @@ void () func000294 =
     }
     
 };
+
 
 // func000295
 // function begins at statement 8161, parm_start=6504

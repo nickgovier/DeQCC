@@ -5,6 +5,7 @@ void () func000606;
 void () func000605;
 void () func000610;
 float globaldef003524;
+
 // func000602
 // function begins at statement 16876, parm_start=11565
 // OP_CALL0	464	0	0

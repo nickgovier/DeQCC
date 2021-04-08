@@ -1,3 +1,4 @@
+
 // monster_boss
 // function begins at statement 23921, parm_start=14839
 // OP_IFNOT	35	4	0
@@ -52,6 +53,7 @@ void () monster_boss =
 entity globaldef004954;
 entity globaldef004955;
 float globaldef004956;
+
 // func001678
 // function begins at statement 23948, parm_start=14846
 // OP_GE	31	14844	14852
@@ -147,6 +149,7 @@ void () func001678 =
     WriteCoord(MSG_ALL, globaldef004962_y);
     WriteCoord(MSG_ALL, globaldef004962_z);
 };
+
 
 // func001679
 // function begins at statement 24010, parm_start=14894
@@ -308,6 +311,7 @@ void () func001679 =
     }
     
 };
+
 
 // event_lightning
 // function begins at statement 24102, parm_start=14937

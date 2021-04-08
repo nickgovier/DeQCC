@@ -1,3 +1,4 @@
+
 // func000243
 // function begins at statement 5925, parm_start=5087
 // OP_BITAND	821	767	5093
@@ -404,6 +405,7 @@ void () func000243 =
     func000283();
 };
 
+
 // func000244
 // function begins at statement 6139, parm_start=5178
 // OP_LOAD_F	28	158	5179
@@ -618,6 +620,7 @@ void () func000244 =
 };
 
 float globaldef001987;
+
 // func000245
 // function begins at statement 6255, parm_start=5255
 // OP_STORE_V	28	4	0
@@ -630,6 +633,7 @@ void () func000245 =
     remove(self);
     globaldef001987 = globaldef001987 - TRUE;
 };
+
 
 // func000246
 // function begins at statement 6260, parm_start=5257
@@ -727,6 +731,7 @@ void () func000246 =
     }
     
 };
+
 
 // func000247
 // function begins at statement 6313, parm_start=5298
@@ -865,7 +870,7 @@ void (vector globaldef001995, vector globaldef001999) func000247 =
     globaldef002003.velocity_x = (globaldef002003.velocity_x + (random() * 50)) - SVC_SIGNONNUM;
     globaldef002003.velocity_y = (globaldef002003.velocity_y + (random() * 50)) - SVC_SIGNONNUM;
     globaldef002003.velocity_z = (globaldef002003.velocity_z + (random() * 150)) + 50;
-    globaldef002003.avelocity_x = (random() * globaldef000723) - globaldef000523;
+    globaldef002003.avelocity_x = (random() * GLOBALDEFSEVENTWOTHREE) - globaldef000523;
     globaldef002003.avelocity_y = (random() * 400) - 200;
     globaldef002003.avelocity_z = (random() * globaldef000523) - 150;
     globaldef001987 = globaldef001987 + TRUE;
@@ -874,6 +879,7 @@ void (vector globaldef001995, vector globaldef001999) func000247 =
 void () func000408;
 void (vector globaldef002057, vector globaldef002061, float globaldef002065) func000254;
 void () func000295;
+
 // func000248
 // function begins at statement 6403, parm_start=5358
 // OP_STORE_V	5358	4	0
@@ -917,6 +923,7 @@ void () func000248 =
     precache_sound("weapons/shotgn2.wav");
 };
 
+
 // func000249
 // function begins at statement 6428, parm_start=5371
 // OP_CALL0	457	0	0
@@ -928,6 +935,7 @@ float () func000249 =
 {
     return FL_SWIM * (random() - globaldef000522);
 };
+
 
 // func000250
 // function begins at statement 6433, parm_start=5374
@@ -943,6 +951,7 @@ vector (entity globaldef002026, float globaldef002027) func000250 =
     makevectors(globaldef002026.v_angle);
     return normalize(v_forward);
 };
+
 
 // func000251
 // function begins at statement 6440, parm_start=5380
@@ -1022,7 +1031,7 @@ void () func000251 =
     {
         trace_ent.axhitme = TRUE;
         func000254(globaldef002033, VEC_ORIGIN, 20);
-        func000201(trace_ent, self, self, 20);
+        T_Damage(trace_ent, self, self, 20);
     }
     else
     {
@@ -1035,6 +1044,7 @@ void () func000251 =
     }
     
 };
+
 
 // func000252
 // function begins at statement 6498, parm_start=5415
@@ -1069,6 +1079,7 @@ vector () func000252 =
     globaldef002040 = globaldef002040 * 200;
     return globaldef002040;
 };
+
 
 // func000253
 // function begins at statement 6520, parm_start=5445
@@ -1129,6 +1140,7 @@ void (vector globaldef002045, vector globaldef002049) func000253 =
     setorigin(globaldef002053, globaldef002045);
 };
 
+
 // func000254
 // function begins at statement 6558, parm_start=5477
 // OP_STORE_V	5477	4	0
@@ -1143,6 +1155,7 @@ void (vector globaldef002057, vector globaldef002061, float globaldef002065) fun
 {
     particle(globaldef002057, globaldef002061 * 0.1, 73, globaldef002065 * FL_SWIM);
 };
+
 
 // func000255
 // function begins at statement 6566, parm_start=5490

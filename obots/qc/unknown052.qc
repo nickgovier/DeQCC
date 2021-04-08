@@ -1,3 +1,4 @@
+
 // func000665
 // function begins at statement 18229, parm_start=12313
 // OP_STORE_V	28	4	0
@@ -57,6 +58,7 @@ void () func000665 =
     func000264();
 };
 
+
 // func000666
 // function begins at statement 18270, parm_start=12323
 // OP_LOAD_ENT	28	201	12323
@@ -103,6 +105,7 @@ void () func000666 =
     }
     
 };
+
 
 // func000667
 // function begins at statement 18291, parm_start=12335
@@ -179,7 +182,7 @@ void () func000667 =
     globaldef003659.solid = SOLID_BBOX;
     makevectors(self.angles);
     globaldef003659.velocity = normalize(self.enemy.origin - self.origin);
-    globaldef003659.velocity = globaldef003659.velocity * globaldef000723;
+    globaldef003659.velocity = globaldef003659.velocity * GLOBALDEFSEVENTWOTHREE;
     globaldef003659.velocity_z = 200;
     globaldef003659.avelocity = '300 300 300';
     globaldef003659.angles = vectoangles(globaldef003659.velocity);
@@ -190,6 +193,7 @@ void () func000667 =
     setsize(globaldef003659, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(globaldef003659, self.origin);
 };
+
 
 // func000668
 // function begins at statement 18352, parm_start=12386
@@ -264,12 +268,12 @@ void (float globaldef003662) func000668 =
     }
     
     
-    if(!func000199(self.enemy, self))
+    if(!CanDamage(self.enemy, self))
     {
         return;
     }
     
-    func000166(MOVETYPE_BOUNCE);
+    ai_charge(MOVETYPE_BOUNCE);
     globaldef003663 = self.enemy.origin - self.origin;
     
     if(vlen(globaldef003663) > 100)
@@ -279,7 +283,7 @@ void (float globaldef003662) func000668 =
     
     random();
     globaldef003667 = ((random() + random()) + random()) * MOVETYPE_STEP;
-    func000201(self.enemy, self, self, globaldef003667);
+    T_Damage(self.enemy, self, self, globaldef003667);
     
     if(globaldef003662)
     {
@@ -297,6 +301,7 @@ void (float globaldef003662) func000668 =
     
 };
 
+
 // func000669
 // function begins at statement 18412, parm_start=12440
 // OP_STATE	213	12440	0
@@ -306,6 +311,7 @@ void () func000669 = [0, func000670]
 {
     func000190();
 };
+
 
 // func000670
 // function begins at statement 18415, parm_start=12441
@@ -317,6 +323,7 @@ void () func000670 = [1, func000671]
     func000190();
 };
 
+
 // func000671
 // function begins at statement 18418, parm_start=12442
 // OP_STATE	216	12442	0
@@ -327,6 +334,7 @@ void () func000671 = [2, func000672]
     func000190();
 };
 
+
 // func000672
 // function begins at statement 18421, parm_start=12443
 // OP_STATE	228	12443	0
@@ -336,6 +344,7 @@ void () func000672 = [3, func000673]
 {
     func000190();
 };
+
 
 // func000673
 // function begins at statement 18424, parm_start=12444
@@ -362,6 +371,7 @@ void () func000673 = [4, func000674]
     func000190();
 };
 
+
 // func000674
 // function begins at statement 18436, parm_start=12447
 // OP_STATE	230	12447	0
@@ -371,6 +381,7 @@ void () func000674 = [5, func000675]
 {
     func000190();
 };
+
 
 // func000675
 // function begins at statement 18439, parm_start=12448
@@ -382,6 +393,7 @@ void () func000675 = [6, func000676]
     func000190();
 };
 
+
 // func000676
 // function begins at statement 18442, parm_start=12449
 // OP_STATE	232	12449	0
@@ -392,6 +404,7 @@ void () func000676 = [7, func000677]
     func000190();
 };
 
+
 // func000677
 // function begins at statement 18445, parm_start=12450
 // OP_STATE	217	12439	0
@@ -401,6 +414,7 @@ void () func000677 = [8, func000669]
 {
     func000190();
 };
+
 
 // func000678
 // function begins at statement 18448, parm_start=12451
@@ -413,6 +427,7 @@ void () func000678 = [9, func000679]
     func000189(MOVETYPE_WALK);
 };
 
+
 // func000679
 // function begins at statement 18452, parm_start=12452
 // OP_STATE	235	12452	0
@@ -423,6 +438,7 @@ void () func000679 = [10, func000680]
 {
     func000189(FL_SWIM);
 };
+
 
 // func000680
 // function begins at statement 18456, parm_start=12453
@@ -450,6 +466,7 @@ void () func000680 = [11, func000681]
     
 };
 
+
 // func000681
 // function begins at statement 18469, parm_start=12455
 // OP_STATE	791	12455	0
@@ -461,6 +478,7 @@ void () func000681 = [12, func000682]
     func000189(FL_SWIM);
 };
 
+
 // func000682
 // function begins at statement 18473, parm_start=12456
 // OP_STATE	792	12456	0
@@ -471,6 +489,7 @@ void () func000682 = [13, func000683]
 {
     func000189(FL_SWIM);
 };
+
 
 // func000683
 // function begins at statement 18477, parm_start=12457
@@ -498,6 +517,7 @@ void () func000683 = [14, func000684]
     
 };
 
+
 // func000684
 // function begins at statement 18490, parm_start=12459
 // OP_STATE	765	12459	0
@@ -508,6 +528,7 @@ void () func000684 = [15, func000685]
 {
     func000189(MOVETYPE_WALK);
 };
+
 
 // func000685
 // function begins at statement 18494, parm_start=12460
@@ -520,6 +541,7 @@ void () func000685 = [16, func000686]
     func000189(FL_SWIM);
 };
 
+
 // func000686
 // function begins at statement 18498, parm_start=12461
 // OP_STATE	6892	12461	0
@@ -530,6 +552,7 @@ void () func000686 = [17, func000687]
 {
     func000189(MOVETYPE_WALK);
 };
+
 
 // func000687
 // function begins at statement 18502, parm_start=12462
@@ -542,6 +565,7 @@ void () func000687 = [18, func000688]
     func000189(TRUE);
 };
 
+
 // func000688
 // function begins at statement 18506, parm_start=12463
 // OP_STATE	6895	12463	0
@@ -552,6 +576,7 @@ void () func000688 = [19, func000689]
 {
     func000189(FL_SWIM);
 };
+
 
 // func000689
 // function begins at statement 18510, parm_start=12464
@@ -564,6 +589,7 @@ void () func000689 = [20, func000690]
     func000189(MOVETYPE_WALK);
 };
 
+
 // func000690
 // function begins at statement 18514, parm_start=12465
 // OP_STATE	12465	12466	0
@@ -574,6 +600,7 @@ void () func000690 = [21, func000691]
 {
     func000189(MOVETYPE_WALK);
 };
+
 
 // func000691
 // function begins at statement 18518, parm_start=12467
@@ -586,6 +613,7 @@ void () func000691 = [22, func000692]
     func000189(MOVETYPE_WALK);
 };
 
+
 // func000692
 // function begins at statement 18522, parm_start=12469
 // OP_STATE	304	12469	0
@@ -597,6 +625,7 @@ void () func000692 = [23, func000693]
     func000189(MOVETYPE_WALK);
 };
 
+
 // func000693
 // function begins at statement 18526, parm_start=12470
 // OP_STATE	736	12450	0
@@ -607,6 +636,7 @@ void () func000693 = [24, func000678]
 {
     func000189(MOVETYPE_STEP);
 };
+
 
 // func000694
 // function begins at statement 18530, parm_start=12471
@@ -634,6 +664,7 @@ void () func000694 = [25, func000695]
     
 };
 
+
 // func000695
 // function begins at statement 18543, parm_start=12474
 // OP_STATE	306	12474	0
@@ -644,6 +675,7 @@ void () func000695 = [26, func000696]
 {
     func000198(globaldef000774);
 };
+
 
 // func000696
 // function begins at statement 18547, parm_start=12475
@@ -656,6 +688,7 @@ void () func000696 = [27, func000697]
     func000198(FL_CLIENT);
 };
 
+
 // func000697
 // function begins at statement 18551, parm_start=12476
 // OP_STATE	308	12476	0
@@ -666,6 +699,7 @@ void () func000697 = [28, func000698]
 {
     func000198(22);
 };
+
 
 // func000698
 // function begins at statement 18555, parm_start=12477
@@ -678,6 +712,7 @@ void () func000698 = [29, func000699]
     func000198(FL_INWATER);
 };
 
+
 // func000699
 // function begins at statement 18559, parm_start=12478
 // OP_STATE	309	12478	0
@@ -688,6 +723,7 @@ void () func000699 = [30, func000700]
 {
     func000198(MOVETYPE_STEP);
 };
+
 
 // func000700
 // function begins at statement 18563, parm_start=12479
@@ -700,6 +736,7 @@ void () func000700 = [31, func000701]
     func000198(globaldef000775);
 };
 
+
 // func000701
 // function begins at statement 18567, parm_start=12480
 // OP_STATE	219	12470	0
@@ -711,7 +748,8 @@ void () func000701 = [32, func000694]
     func000198(globaldef000719);
 };
 
-// func000702
+
+// ogre_swing1
 // function begins at statement 18571, parm_start=12480
 // OP_STATE	312	12480	0
 // OP_STORE_V	236	4	0
@@ -723,11 +761,12 @@ void () func000701 = [32, func000694]
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000702 = [33, func000703]
+void () ogre_swing1 = [33, func000703]
 {
-    func000166(MOVETYPE_BOUNCEMISSILE);
+    ai_charge(MOVETYPE_BOUNCEMISSILE);
     sound(self, CHAN_WEAPON, "ogre/ogsawatk.wav", TRUE, ATTN_NORM);
 };
+
 
 // func000703
 // function begins at statement 18581, parm_start=12482
@@ -737,8 +776,9 @@ void () func000702 = [33, func000703]
 // OP_DONE	0	0	0
 void () func000703 = [34, func000704]
 {
-    func000166(TRUE);
+    ai_charge(TRUE);
 };
+
 
 // func000704
 // function begins at statement 18585, parm_start=12483
@@ -748,8 +788,9 @@ void () func000703 = [34, func000704]
 // OP_DONE	0	0	0
 void () func000704 = [35, func000705]
 {
-    func000166(MOVETYPE_STEP);
+    ai_charge(MOVETYPE_STEP);
 };
+
 
 // func000705
 // function begins at statement 18589, parm_start=12484
@@ -759,8 +800,9 @@ void () func000704 = [35, func000705]
 // OP_DONE	0	0	0
 void () func000705 = [36, func000706]
 {
-    func000166(globaldef000775);
+    ai_charge(globaldef000775);
 };
+
 
 // func000706
 // function begins at statement 18593, parm_start=12485
@@ -778,10 +820,11 @@ void () func000705 = [36, func000706]
 // OP_DONE	0	0	0
 void () func000706 = [37, func000707]
 {
-    func000166(MOVETYPE_FLYMISSILE);
+    ai_charge(MOVETYPE_FLYMISSILE);
     func000668(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
+
 
 // func000707
 // function begins at statement 18605, parm_start=12490
@@ -801,6 +844,7 @@ void () func000707 = [38, func000708]
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
+
 // func000708
 // function begins at statement 18615, parm_start=12495
 // OP_STATE	9661	12495	0
@@ -818,6 +862,7 @@ void () func000708 = [39, func000709]
     func000668(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
+
 
 // func000709
 // function begins at statement 18625, parm_start=12500
@@ -837,6 +882,7 @@ void () func000709 = [40, func000710]
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
+
 // func000710
 // function begins at statement 18635, parm_start=12505
 // OP_STATE	9993	12505	0
@@ -854,6 +900,7 @@ void () func000710 = [41, func000711]
     func000668(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
+
 
 // func000711
 // function begins at statement 18645, parm_start=12510
@@ -873,6 +920,7 @@ void () func000711 = [42, func000712]
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
+
 // func000712
 // function begins at statement 18655, parm_start=12515
 // OP_STATE	9997	12515	0
@@ -891,6 +939,7 @@ void () func000712 = [43, func000713]
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
+
 // func000713
 // function begins at statement 18665, parm_start=12520
 // OP_STATE	9999	12520	0
@@ -899,8 +948,9 @@ void () func000712 = [43, func000713]
 // OP_DONE	0	0	0
 void () func000713 = [44, func000714]
 {
-    func000166(MOVETYPE_WALK);
+    ai_charge(MOVETYPE_WALK);
 };
+
 
 // func000714
 // function begins at statement 18669, parm_start=12521
@@ -910,8 +960,9 @@ void () func000713 = [44, func000714]
 // OP_DONE	0	0	0
 void () func000714 = [45, func000715]
 {
-    func000166(FL_CLIENT);
+    ai_charge(FL_CLIENT);
 };
+
 
 // func000715
 // function begins at statement 18673, parm_start=12522
@@ -921,10 +972,11 @@ void () func000714 = [45, func000715]
 // OP_DONE	0	0	0
 void () func000715 = [46, func000694]
 {
-    func000166(MOVETYPE_FLYMISSILE);
+    ai_charge(MOVETYPE_FLYMISSILE);
 };
 
-// func000716
+
+// ogre_smash1
 // function begins at statement 18677, parm_start=12522
 // OP_STATE	10004	12522	0
 // OP_STORE_V	231	4	0
@@ -936,11 +988,12 @@ void () func000715 = [46, func000694]
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000716 = [47, func000717]
+void () ogre_smash1 = [47, func000717]
 {
-    func000166(MOVETYPE_TOSS);
+    ai_charge(MOVETYPE_TOSS);
     sound(self, CHAN_WEAPON, "ogre/ogsawatk.wav", TRUE, ATTN_NORM);
 };
+
 
 // func000717
 // function begins at statement 18687, parm_start=12523
@@ -950,8 +1003,9 @@ void () func000716 = [47, func000717]
 // OP_DONE	0	0	0
 void () func000717 = [48, func000718]
 {
-    func000166(FALSE);
+    ai_charge(FALSE);
 };
+
 
 // func000718
 // function begins at statement 18691, parm_start=12524
@@ -961,8 +1015,9 @@ void () func000717 = [48, func000718]
 // OP_DONE	0	0	0
 void () func000718 = [49, func000719]
 {
-    func000166(FALSE);
+    ai_charge(FALSE);
 };
+
 
 // func000719
 // function begins at statement 18695, parm_start=12525
@@ -972,8 +1027,9 @@ void () func000718 = [49, func000719]
 // OP_DONE	0	0	0
 void () func000719 = [50, func000720]
 {
-    func000166(TRUE);
+    ai_charge(TRUE);
 };
+
 
 // func000720
 // function begins at statement 18699, parm_start=12526
@@ -983,8 +1039,9 @@ void () func000719 = [50, func000720]
 // OP_DONE	0	0	0
 void () func000720 = [51, func000721]
 {
-    func000166(MOVETYPE_STEP);
+    ai_charge(MOVETYPE_STEP);
 };
+
 
 // func000721
 // function begins at statement 18703, parm_start=12527
@@ -996,9 +1053,10 @@ void () func000720 = [51, func000721]
 // OP_DONE	0	0	0
 void () func000721 = [52, func000722]
 {
-    func000166(MOVETYPE_STEP);
+    ai_charge(MOVETYPE_STEP);
     func000668(FALSE);
 };
+
 
 // func000722
 // function begins at statement 18709, parm_start=12528
@@ -1010,9 +1068,10 @@ void () func000721 = [52, func000722]
 // OP_DONE	0	0	0
 void () func000722 = [53, func000723]
 {
-    func000166(MOVETYPE_STEP);
+    ai_charge(MOVETYPE_STEP);
     func000668(FALSE);
 };
+
 
 // func000723
 // function begins at statement 18715, parm_start=12529
@@ -1024,9 +1083,10 @@ void () func000722 = [53, func000723]
 // OP_DONE	0	0	0
 void () func000723 = [54, func000724]
 {
-    func000166(MOVETYPE_BOUNCE);
+    ai_charge(MOVETYPE_BOUNCE);
     func000668(FALSE);
 };
+
 
 // func000724
 // function begins at statement 18721, parm_start=12530
@@ -1038,9 +1098,10 @@ void () func000723 = [54, func000724]
 // OP_DONE	0	0	0
 void () func000724 = [55, func000725]
 {
-    func000166(globaldef000775);
+    ai_charge(globaldef000775);
     func000668(FALSE);
 };
+
 
 // func000725
 // function begins at statement 18727, parm_start=12531
@@ -1052,6 +1113,7 @@ void () func000725 = [56, func000726]
 {
     func000668(TRUE);
 };
+
 
 // func000726
 // function begins at statement 18731, parm_start=12532
@@ -1069,10 +1131,11 @@ void () func000725 = [56, func000726]
 // OP_DONE	0	0	0
 void () func000726 = [57, func000727]
 {
-    func000166(FL_SWIM);
+    ai_charge(FL_SWIM);
     func000668(FALSE);
     self.nextthink = self.nextthink + (random() * 0.2);
 };
+
 
 // func000727
 // function begins at statement 18743, parm_start=12537
@@ -1082,8 +1145,9 @@ void () func000726 = [57, func000727]
 // OP_DONE	0	0	0
 void () func000727 = [58, func000728]
 {
-    func000166(MOVETYPE_WALK);
+    ai_charge(MOVETYPE_WALK);
 };
+
 
 // func000728
 // function begins at statement 18747, parm_start=12538
@@ -1093,8 +1157,9 @@ void () func000727 = [58, func000728]
 // OP_DONE	0	0	0
 void () func000728 = [59, func000729]
 {
-    func000166(MOVETYPE_STEP);
+    ai_charge(MOVETYPE_STEP);
 };
+
 
 // func000729
 // function begins at statement 18751, parm_start=12539
@@ -1104,8 +1169,9 @@ void () func000728 = [59, func000729]
 // OP_DONE	0	0	0
 void () func000729 = [60, func000694]
 {
-    func000166(globaldef000774);
+    ai_charge(globaldef000774);
 };
+
 
 // func000730
 // function begins at statement 18755, parm_start=12540
@@ -1114,8 +1180,9 @@ void () func000729 = [60, func000694]
 // OP_DONE	0	0	0
 void () func000730 = [61, func000731]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000731
 // function begins at statement 18758, parm_start=12541
@@ -1124,8 +1191,9 @@ void () func000730 = [61, func000731]
 // OP_DONE	0	0	0
 void () func000731 = [62, func000732]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000732
 // function begins at statement 18761, parm_start=12542
@@ -1134,8 +1202,9 @@ void () func000731 = [62, func000732]
 // OP_DONE	0	0	0
 void () func000732 = [62, func000733]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000733
 // function begins at statement 18764, parm_start=12543
@@ -1145,9 +1214,10 @@ void () func000732 = [62, func000733]
 // OP_DONE	0	0	0
 void () func000733 = [63, func000734]
 {
-    func000165();
+    ai_face();
     func000667();
 };
+
 
 // func000734
 // function begins at statement 18768, parm_start=12544
@@ -1156,8 +1226,9 @@ void () func000733 = [63, func000734]
 // OP_DONE	0	0	0
 void () func000734 = [64, func000735]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000735
 // function begins at statement 18771, parm_start=12545
@@ -1166,8 +1237,9 @@ void () func000734 = [64, func000735]
 // OP_DONE	0	0	0
 void () func000735 = [65, func000736]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000736
 // function begins at statement 18774, parm_start=12546
@@ -1176,8 +1248,9 @@ void () func000735 = [65, func000736]
 // OP_DONE	0	0	0
 void () func000736 = [66, func000694]
 {
-    func000165();
+    ai_face();
 };
+
 
 // func000737
 // function begins at statement 18777, parm_start=12547
@@ -1187,6 +1260,7 @@ void () func000737 = [67, func000738]
 {
 };
 
+
 // func000738
 // function begins at statement 18779, parm_start=12548
 // OP_STATE	8193	12548	0
@@ -1194,6 +1268,7 @@ void () func000737 = [67, func000738]
 void () func000738 = [68, func000739]
 {
 };
+
 
 // func000739
 // function begins at statement 18781, parm_start=12549
@@ -1203,6 +1278,7 @@ void () func000739 = [69, func000740]
 {
 };
 
+
 // func000740
 // function begins at statement 18783, parm_start=12550
 // OP_STATE	1536	12550	0
@@ -1210,6 +1286,7 @@ void () func000739 = [69, func000740]
 void () func000740 = [70, func000741]
 {
 };
+
 
 // func000741
 // function begins at statement 18785, parm_start=12551
@@ -1219,6 +1296,7 @@ void () func000741 = [71, func000694]
 {
 };
 
+
 // func000742
 // function begins at statement 18787, parm_start=12552
 // OP_STATE	9943	12552	0
@@ -1226,6 +1304,7 @@ void () func000741 = [71, func000694]
 void () func000742 = [72, func000743]
 {
 };
+
 
 // func000743
 // function begins at statement 18789, parm_start=12553
@@ -1235,6 +1314,7 @@ void () func000743 = [73, func000744]
 {
 };
 
+
 // func000744
 // function begins at statement 18791, parm_start=12554
 // OP_STATE	9946	12470	0
@@ -1242,6 +1322,7 @@ void () func000743 = [73, func000744]
 void () func000744 = [74, func000694]
 {
 };
+
 
 // func000745
 // function begins at statement 18793, parm_start=12555
@@ -1251,6 +1332,7 @@ void () func000745 = [75, func000746]
 {
 };
 
+
 // func000746
 // function begins at statement 18795, parm_start=12556
 // OP_STATE	9949	12556	0
@@ -1258,6 +1340,7 @@ void () func000745 = [75, func000746]
 void () func000746 = [76, func000747]
 {
 };
+
 
 // func000747
 // function begins at statement 18797, parm_start=12557
@@ -1267,6 +1350,7 @@ void () func000747 = [77, func000748]
 {
 };
 
+
 // func000748
 // function begins at statement 18799, parm_start=12558
 // OP_STATE	9953	12558	0
@@ -1274,6 +1358,7 @@ void () func000747 = [77, func000748]
 void () func000748 = [78, func000749]
 {
 };
+
 
 // func000749
 // function begins at statement 18801, parm_start=12559
@@ -1283,6 +1368,7 @@ void () func000749 = [79, func000750]
 {
 };
 
+
 // func000750
 // function begins at statement 18803, parm_start=12560
 // OP_STATE	2805	12470	0
@@ -1291,6 +1377,7 @@ void () func000750 = [80, func000694]
 {
 };
 
+
 // func000751
 // function begins at statement 18805, parm_start=12561
 // OP_STATE	8204	12561	0
@@ -1298,6 +1385,7 @@ void () func000750 = [80, func000694]
 void () func000751 = [81, func000752]
 {
 };
+
 
 // func000752
 // function begins at statement 18807, parm_start=12562
@@ -1310,6 +1398,7 @@ void () func000752 = [82, func000753]
     func000187(MOVETYPE_BOUNCE);
 };
 
+
 // func000753
 // function begins at statement 18811, parm_start=12563
 // OP_STATE	9961	12563	0
@@ -1320,6 +1409,7 @@ void () func000753 = [83, func000754]
 {
     func000187(MOVETYPE_FLYMISSILE);
 };
+
 
 // func000754
 // function begins at statement 18815, parm_start=12564
@@ -1332,6 +1422,7 @@ void () func000754 = [84, func000755]
     func000187(MOVETYPE_STEP);
 };
 
+
 // func000755
 // function begins at statement 18819, parm_start=12565
 // OP_STATE	9963	12565	0
@@ -1339,6 +1430,7 @@ void () func000754 = [84, func000755]
 void () func000755 = [85, func000756]
 {
 };
+
 
 // func000756
 // function begins at statement 18821, parm_start=12566
@@ -1348,6 +1440,7 @@ void () func000756 = [86, func000757]
 {
 };
 
+
 // func000757
 // function begins at statement 18823, parm_start=12567
 // OP_STATE	9967	12567	0
@@ -1355,6 +1448,7 @@ void () func000756 = [86, func000757]
 void () func000757 = [87, func000758]
 {
 };
+
 
 // func000758
 // function begins at statement 18825, parm_start=12568
@@ -1364,6 +1458,7 @@ void () func000758 = [88, func000759]
 {
 };
 
+
 // func000759
 // function begins at statement 18827, parm_start=12569
 // OP_STATE	9971	12569	0
@@ -1371,6 +1466,7 @@ void () func000758 = [88, func000759]
 void () func000759 = [89, func000760]
 {
 };
+
 
 // func000760
 // function begins at statement 18829, parm_start=12570
@@ -1380,6 +1476,7 @@ void () func000760 = [90, func000761]
 {
 };
 
+
 // func000761
 // function begins at statement 18831, parm_start=12571
 // OP_STATE	9974	12571	0
@@ -1387,6 +1484,7 @@ void () func000760 = [90, func000761]
 void () func000761 = [91, func000762]
 {
 };
+
 
 // func000762
 // function begins at statement 18833, parm_start=12572
@@ -1396,6 +1494,7 @@ void () func000762 = [92, func000763]
 {
 };
 
+
 // func000763
 // function begins at statement 18835, parm_start=12573
 // OP_STATE	9978	12573	0
@@ -1403,6 +1502,7 @@ void () func000762 = [92, func000763]
 void () func000763 = [93, func000764]
 {
 };
+
 
 // func000764
 // function begins at statement 18837, parm_start=12574
@@ -1412,6 +1512,7 @@ void () func000764 = [94, func000765]
 {
 };
 
+
 // func000765
 // function begins at statement 18839, parm_start=12575
 // OP_STATE	9981	12575	0
@@ -1419,6 +1520,7 @@ void () func000764 = [94, func000765]
 void () func000765 = [95, func000766]
 {
 };
+
 
 // func000766
 // function begins at statement 18841, parm_start=12576
@@ -1428,6 +1530,7 @@ void () func000766 = [96, func000694]
 {
 };
 
+
 // func000767
 // function begins at statement 18843, parm_start=12577
 // OP_STATE	9985	12577	0
@@ -1435,6 +1538,7 @@ void () func000766 = [96, func000694]
 void () func000767 = [97, func000768]
 {
 };
+
 
 // func000768
 // function begins at statement 18845, parm_start=12578
@@ -1447,6 +1551,7 @@ void () func000768 = [98, func000769]
     func000187(MOVETYPE_BOUNCE);
 };
 
+
 // func000769
 // function begins at statement 18849, parm_start=12579
 // OP_STATE	9989	12579	0
@@ -1457,6 +1562,7 @@ void () func000769 = [99, func000770]
 {
     func000187(MOVETYPE_FLYMISSILE);
 };
+
 
 // func000770
 // function begins at statement 18853, parm_start=12580
@@ -1469,6 +1575,7 @@ void () func000770 = [100, func000771]
     func000187(MOVETYPE_STEP);
 };
 
+
 // func000771
 // function begins at statement 18857, parm_start=12581
 // OP_STATE	8107	12581	0
@@ -1476,6 +1583,7 @@ void () func000770 = [100, func000771]
 void () func000771 = [101, func000772]
 {
 };
+
 
 // func000772
 // function begins at statement 18859, parm_start=12582
@@ -1485,6 +1593,7 @@ void () func000772 = [102, func000773]
 {
 };
 
+
 // func000773
 // function begins at statement 18861, parm_start=12583
 // OP_STATE	8111	12583	0
@@ -1492,6 +1601,7 @@ void () func000772 = [102, func000773]
 void () func000773 = [103, func000774]
 {
 };
+
 
 // func000774
 // function begins at statement 18863, parm_start=12584
@@ -1501,6 +1611,7 @@ void () func000774 = [104, func000775]
 {
 };
 
+
 // func000775
 // function begins at statement 18865, parm_start=12585
 // OP_STATE	9562	12585	0
@@ -1508,6 +1619,7 @@ void () func000774 = [104, func000775]
 void () func000775 = [105, func000776]
 {
 };
+
 
 // func000776
 // function begins at statement 18867, parm_start=12586
@@ -1517,6 +1629,7 @@ void () func000776 = [106, func000777]
 {
 };
 
+
 // func000777
 // function begins at statement 18869, parm_start=12587
 // OP_STATE	9591	12587	0
@@ -1524,6 +1637,7 @@ void () func000776 = [106, func000777]
 void () func000777 = [107, func000778]
 {
 };
+
 
 // func000778
 // function begins at statement 18871, parm_start=12588
@@ -1533,6 +1647,7 @@ void () func000778 = [108, func000779]
 {
 };
 
+
 // func000779
 // function begins at statement 18873, parm_start=12589
 // OP_STATE	9600	12589	0
@@ -1540,6 +1655,7 @@ void () func000778 = [108, func000779]
 void () func000779 = [109, func000780]
 {
 };
+
 
 // func000780
 // function begins at statement 18875, parm_start=12590
@@ -1549,6 +1665,7 @@ void () func000780 = [110, func000781]
 {
 };
 
+
 // func000781
 // function begins at statement 18877, parm_start=12591
 // OP_STATE	2224	12470	0
@@ -1556,6 +1673,7 @@ void () func000780 = [110, func000781]
 void () func000781 = [111, func000694]
 {
 };
+
 
 // func000782
 // function begins at statement 18879, parm_start=12592
@@ -1655,6 +1773,7 @@ void (entity globaldef003785, float globaldef003786) func000782 =
     
 };
 
+
 // func000783
 // function begins at statement 18924, parm_start=12614
 // OP_STATE	9608	12614	0
@@ -1663,6 +1782,7 @@ void () func000783 = [112, func000784]
 {
 };
 
+
 // func000784
 // function begins at statement 18926, parm_start=12615
 // OP_STATE	9473	12615	0
@@ -1670,6 +1790,7 @@ void () func000783 = [112, func000784]
 void () func000784 = [113, func000785]
 {
 };
+
 
 // func000785
 // function begins at statement 18928, parm_start=12616
@@ -1687,6 +1808,7 @@ void () func000785 = [114, func000786]
     func000244();
 };
 
+
 // func000786
 // function begins at statement 18935, parm_start=12619
 // OP_STATE	9482	12619	0
@@ -1694,6 +1816,7 @@ void () func000785 = [114, func000786]
 void () func000786 = [115, func000787]
 {
 };
+
 
 // func000787
 // function begins at statement 18937, parm_start=12620
@@ -1703,6 +1826,7 @@ void () func000787 = [116, func000788]
 {
 };
 
+
 // func000788
 // function begins at statement 18939, parm_start=12621
 // OP_STATE	9488	12621	0
@@ -1710,6 +1834,7 @@ void () func000787 = [116, func000788]
 void () func000788 = [117, func000789]
 {
 };
+
 
 // func000789
 // function begins at statement 18941, parm_start=12622
@@ -1719,6 +1844,7 @@ void () func000789 = [118, func000790]
 {
 };
 
+
 // func000790
 // function begins at statement 18943, parm_start=12623
 // OP_STATE	9493	12623	0
@@ -1726,6 +1852,7 @@ void () func000789 = [118, func000790]
 void () func000790 = [119, func000791]
 {
 };
+
 
 // func000791
 // function begins at statement 18945, parm_start=12624
@@ -1735,6 +1862,7 @@ void () func000791 = [120, func000792]
 {
 };
 
+
 // func000792
 // function begins at statement 18947, parm_start=12625
 // OP_STATE	9498	12625	0
@@ -1742,6 +1870,7 @@ void () func000791 = [120, func000792]
 void () func000792 = [121, func000793]
 {
 };
+
 
 // func000793
 // function begins at statement 18949, parm_start=12626
@@ -1751,6 +1880,7 @@ void () func000793 = [122, func000794]
 {
 };
 
+
 // func000794
 // function begins at statement 18951, parm_start=12627
 // OP_STATE	12627	12628	0
@@ -1758,6 +1888,7 @@ void () func000793 = [122, func000794]
 void () func000794 = [123, func000795]
 {
 };
+
 
 // func000795
 // function begins at statement 18953, parm_start=12629
@@ -1767,6 +1898,7 @@ void () func000795 = [124, func000796]
 {
 };
 
+
 // func000796
 // function begins at statement 18955, parm_start=12631
 // OP_STATE	9503	12630	0
@@ -1775,6 +1907,7 @@ void () func000796 = [125, func000796]
 {
 };
 
+
 // func000797
 // function begins at statement 18957, parm_start=12632
 // OP_STATE	9506	12632	0
@@ -1782,6 +1915,7 @@ void () func000796 = [125, func000796]
 void () func000797 = [126, func000798]
 {
 };
+
 
 // func000798
 // function begins at statement 18959, parm_start=12633
@@ -1793,6 +1927,7 @@ void () func000798 = [127, func000799]
 {
     func000185(MOVETYPE_FLY);
 };
+
 
 // func000799
 // function begins at statement 18963, parm_start=12634
@@ -1810,6 +1945,7 @@ void () func000799 = [128, func000800]
     func000244();
 };
 
+
 // func000800
 // function begins at statement 18970, parm_start=12637
 // OP_STATE	12637	12638	0
@@ -1820,6 +1956,7 @@ void () func000800 = [129, func000801]
 {
     func000185(TRUE);
 };
+
 
 // func000801
 // function begins at statement 18974, parm_start=12639
@@ -1832,6 +1969,7 @@ void () func000801 = [130, func000802]
     func000185(MOVETYPE_WALK);
 };
 
+
 // func000802
 // function begins at statement 18978, parm_start=12641
 // OP_STATE	9513	12641	0
@@ -1842,6 +1980,7 @@ void () func000802 = [131, func000803]
 {
     func000185(MOVETYPE_PUSH);
 };
+
 
 // func000803
 // function begins at statement 18982, parm_start=12642
@@ -1854,6 +1993,7 @@ void () func000803 = [132, func000804]
     func000185(SVC_SIGNONNUM);
 };
 
+
 // func000804
 // function begins at statement 18986, parm_start=12643
 // OP_STATE	9519	12643	0
@@ -1861,6 +2001,7 @@ void () func000803 = [132, func000804]
 void () func000804 = [133, func000805]
 {
 };
+
 
 // func000805
 // function begins at statement 18988, parm_start=12644
@@ -1870,6 +2011,7 @@ void () func000805 = [134, func000806]
 {
 };
 
+
 // func000806
 // function begins at statement 18990, parm_start=12645
 // OP_STATE	12645	12644	0
@@ -1877,6 +2019,7 @@ void () func000805 = [134, func000806]
 void () func000806 = [135, func000806]
 {
 };
+
 
 // func000807
 // function begins at statement 18992, parm_start=12647
@@ -1944,6 +2087,7 @@ void () func000807 =
     
 };
 
+
 // func000808
 // function begins at statement 19031, parm_start=12658
 // OP_CALL0	457	0	0
@@ -1957,14 +2101,15 @@ void () func000808 =
 {
     if(random() > globaldef000522)
     {
-        func000716();
+        ogre_smash1();
     }
     else
     {
-        func000702();
+        ogre_swing1();
     }
     
 };
+
 
 // func000809
 // function begins at statement 19038, parm_start=12660

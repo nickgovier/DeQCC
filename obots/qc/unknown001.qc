@@ -6,9 +6,9 @@ void () SUB_CalcAngleMoveDone;
 void () SUB_Null;
 void () SUB_UseTargets;
 void () SUB_Remove;
-void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) func000201;
+void (entity globaldef001760, entity globaldef001761, entity globaldef001762, float globaldef001763) T_Damage;
 float (entity globaldef001797, float globaldef001798, float globaldef001799) func000208;
-float (entity globaldef001749, entity globaldef001750) func000199;
+float (entity globaldef001749, entity globaldef001750) CanDamage;
 float globaldef000508;
 float globaldef000509;
 float globaldef000510;
@@ -191,7 +191,7 @@ float globaldef000719;
 float globaldef000720;
 float globaldef000721;
 float globaldef000722;
-float globaldef000723;
+float GLOBALDEFSEVENTWOTHREE = 600;
 float globaldef000724;
 float globaldef000725;
 float globaldef000726;
@@ -289,7 +289,9 @@ entity globaldef000817;
 entity globaldef000818;
 entity globaldef000819;
 entity globaldef000820;
+
 void(entity client, string s) bot_stuffcmd = #21;
+
 // func000064
 // function begins at statement 1, parm_start=840
 // OP_LOAD_F	840	182	842
@@ -310,13 +312,21 @@ void (entity globaldef000823, string globaldef000824) func000064 =
     
 };
 
+
 void(entity client, string s) bot_centerprint = #73;
+
 void(entity client, string s, string s2) bot_centerprint2 = #73;
+
 void(entity client, string s, string s2, string s3) bot_centerprint3 = #73;
+
 void(entity client, string s, string s2, string s3, string s4) bot_centerprint4 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5) bot_centerprint5 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6) bot_centerprint6 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6, string s7) bot_centerprint7 = #73;
+
 // centerprint
 // function begins at statement 9, parm_start=853
 // OP_LOAD_F	853	182	855
@@ -336,6 +346,7 @@ void (entity globaldef000833, string globaldef000834) centerprint =
     }
     
 };
+
 
 // centerprint2
 // function begins at statement 17, parm_start=859
@@ -357,6 +368,7 @@ void (entity globaldef000836, string globaldef000837, string globaldef000838) ce
     }
     
 };
+
 
 // func000074
 // function begins at statement 26, parm_start=866
@@ -380,6 +392,7 @@ void (entity globaldef000840, string globaldef000841, string globaldef000842, st
     
 };
 
+
 // centerprint4
 // function begins at statement 36, parm_start=874
 // OP_LOAD_F	874	182	879
@@ -402,6 +415,7 @@ void (entity globaldef000845, string globaldef000846, string globaldef000847, st
     }
     
 };
+
 
 // func000076
 // function begins at statement 47, parm_start=883
@@ -427,6 +441,7 @@ void (entity globaldef000851, string globaldef000852, string globaldef000853, st
     
 };
 
+
 // centerprint6
 // function begins at statement 59, parm_start=893
 // OP_LOAD_F	893	182	900
@@ -451,6 +466,7 @@ void (entity globaldef000858, string globaldef000859, string globaldef000860, st
     }
     
 };
+
 
 // centerprint7
 // function begins at statement 72, parm_start=904
@@ -478,19 +494,33 @@ void (entity globaldef000866, string globaldef000867, string globaldef000868, st
     
 };
 
+
 void(string s, string s2) bprint2 = #23;
+
 void(string s, string s2, string s3) bprint3 = #23;
+
 void(string s, string s2, string s3, string s4) bprint4 = #23;
+
 void(string s, string s2, string s3, string s4, string s5) bprint5 = #23;
+
 void(string s, string s2, string s3, string s4, string s5, string s6) bprint6 = #23;
+
 void(string s, string s2, string s3, string s4, string s5, string s6, string s7) bprint7 = #23;
+
 void(entity client, string s) bot_sprint = #24;
+
 void(entity client, string s, string s2) bot_sprint2 = #24;
+
 void(entity client, string s, string s2, string s3) bot_sprint3 = #24;
+
 void(entity client, string s, string s2, string s3, string s4) bot_sprint4 = #24;
+
 void(entity client, string s, string s2, string s3, string s4, string s5) bot_sprint5 = #24;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6) bot_sprint6 = #24;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6, string s7) bot_sprint7 = #24;
+
 // func000092
 // function begins at statement 86, parm_start=929
 // OP_LOAD_F	929	182	931
@@ -510,6 +540,7 @@ void (entity globaldef000888, string globaldef000889) func000092 =
     }
     
 };
+
 
 // func000093
 // function begins at statement 94, parm_start=935
@@ -531,6 +562,7 @@ void (entity globaldef000891, string globaldef000892, string globaldef000893) fu
     }
     
 };
+
 
 // func000094
 // function begins at statement 103, parm_start=942
@@ -554,6 +586,7 @@ void (entity globaldef000895, string globaldef000896, string globaldef000897, st
     
 };
 
+
 // sprint4
 // function begins at statement 113, parm_start=950
 // OP_LOAD_F	950	182	955
@@ -576,6 +609,7 @@ void (entity globaldef000900, string globaldef000901, string globaldef000902, st
     }
     
 };
+
 
 // sprint5
 // function begins at statement 124, parm_start=959
@@ -601,6 +635,7 @@ void (entity globaldef000906, string globaldef000907, string globaldef000908, st
     
 };
 
+
 // sprint6
 // function begins at statement 136, parm_start=969
 // OP_LOAD_F	969	182	976
@@ -625,6 +660,7 @@ void (entity globaldef000913, string globaldef000914, string globaldef000915, st
     }
     
 };
+
 
 // sprint7
 // function begins at statement 149, parm_start=980
@@ -652,12 +688,19 @@ void (entity globaldef000921, string globaldef000922, string globaldef000923, st
     
 };
 
+
 void(string e, string e2) objerror2 = #11;
+
 void(string e, string e2, string e3) objerror3 = #11;
+
 void(string e, string e2, string e3, string e4) objerror4 = #11;
+
 void(string e, string e2, string e3, string e4, string e5) objerror5 = #11;
+
 void(string e, string e2, string e3, string e4, string e5, string e6) objerror6 = #11;
+
 void(string e, string e2, string e3, string e4, string e5, string e6, string e7) objerror7 = #11;
+
 // IDCopyright
 // function begins at statement 163, parm_start=998
 // OP_STORE_V	998	4	0
@@ -899,6 +942,7 @@ float globaldef001164;
 float globaldef001165;
 float globaldef001166;
 float globaldef001167;
+
 // func000106
 // function begins at statement 166, parm_start=1231
 // OP_EQ_E	1231	30	1232
@@ -956,6 +1000,7 @@ entity (entity globaldef001169) func000106 =
     return globaldef001169;
 };
 
+
 // func000107
 // function begins at statement 192, parm_start=1243
 // OP_LOAD_S	1243	129	1244
@@ -997,13 +1042,21 @@ void (entity globaldef001173) func000107 =
     
 };
 
+
 void(entity client, string s) camcenterprint1 = #73;
+
 void(entity client, string s, string s2) camcenterprint2 = #73;
+
 void(entity client, string s, string s2, string s3) camcenterprint3 = #73;
+
 void(entity client, string s, string s2, string s3, string s4) camcenterprint4 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5) camcenterprint5 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6) camcenterprint6 = #73;
+
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6, string s7) camcenterprint7 = #73;
+
 // func000115
 // function begins at statement 210, parm_start=1265
 // OP_LOAD_F	1265	153	1269
@@ -1056,6 +1109,7 @@ void (entity globaldef001182, string globaldef001183) func000115 =
     camcenterprint6(self, globaldef001183, "\n\n\n", globaldef001182.netname, " - ", globaldef001184, globaldef001185);
 };
 
+
 // func000116
 // function begins at statement 235, parm_start=1281
 // OP_LT	1281	1283	1284
@@ -1105,6 +1159,7 @@ float (float globaldef001192) func000116 =
     return globaldef001193;
 };
 
+
 // func000117
 // function begins at statement 257, parm_start=1295
 // OP_GT	1295	1296	1297
@@ -1136,6 +1191,7 @@ float (float globaldef001196) func000117 =
     return globaldef001196;
 };
 
+
 // func000118
 // function begins at statement 269, parm_start=1304
 // OP_LOAD_V	28	105	1307
@@ -1155,6 +1211,7 @@ float (vector globaldef001201) func000118 =
     traceline(self.origin, globaldef001201, TRUE, self);
     return (trace_fraction == TRUE) && (!(trace_inopen && trace_inwater));
 };
+
 
 // func000119
 // function begins at statement 281, parm_start=1315
@@ -1198,6 +1255,7 @@ float (entity globaldef001206) func000119 =
     globaldef001207_z = globaldef001206.absmax_z - FL_CLIENT;
     return func000118(globaldef001207);
 };
+
 
 // func000120
 // function begins at statement 301, parm_start=1329
@@ -1281,6 +1339,7 @@ entity () func000120 =
     return globaldef001213;
 };
 
+
 // func000121
 // function begins at statement 341, parm_start=1361
 // OP_LT	1361	213	1366
@@ -1325,6 +1384,7 @@ float (float globaldef001221, float globaldef001222) func000121 =
     }
     
 };
+
 
 // func000122
 // function begins at statement 360, parm_start=1375
@@ -1470,6 +1530,7 @@ vector (float globaldef001227, float globaldef001228, float globaldef001229) fun
     return globaldef001237;
 };
 
+
 // func000123
 // function begins at statement 439, parm_start=1428
 // OP_STORE_V	1428	4	0
@@ -1559,6 +1620,7 @@ float (vector globaldef001242) func000123 =
     
     return fabs(333 - globaldef001254);
 };
+
 
 // func000124
 // function begins at statement 487, parm_start=1475
@@ -1758,6 +1820,7 @@ void (float globaldef001260, float globaldef001261) func000124 =
     self.v_angle = self.angles;
 };
 
+
 // func000125
 // function begins at statement 608, parm_start=1570
 // OP_ADDRESS	28	406	1570
@@ -1781,6 +1844,7 @@ void () func000125 =
     self.dest1 = self.origin + v_forward;
     func000124(FALSE, FALSE);
 };
+
 
 // func000126
 // function begins at statement 622, parm_start=1589
@@ -1807,6 +1871,7 @@ void () func000126 =
     self.dest2 = self.dest1;
     self.enemy = self;
 };
+
 
 // func000127
 // function begins at statement 636, parm_start=1601
@@ -1848,6 +1913,7 @@ void () func000127 =
     self.search_time = time + MOVETYPE_FLY;
 };
 
+
 // func000128
 // function begins at statement 658, parm_start=1620
 // OP_LOAD_V	1620	105	1624
@@ -1864,6 +1930,7 @@ vector (entity globaldef001278) func000128 =
     globaldef001279_z = globaldef001278.absmax_z - FL_CLIENT;
     return globaldef001279;
 };
+
 
 // func000129
 // function begins at statement 665, parm_start=1630
@@ -2419,6 +2486,7 @@ void (entity globaldef001284) func000129 =
     func000124(FALSE, FALSE);
 };
 
+
 // func000130
 // function begins at statement 946, parm_start=1840
 // OP_LOAD_ENT	28	181	1846
@@ -2484,6 +2552,7 @@ vector () func000130 =
     
 };
 
+
 // func000131
 // function begins at statement 987, parm_start=1878
 // OP_LOAD_ENT	28	181	1881
@@ -2519,6 +2588,7 @@ vector () func000131 =
     
     return globaldef001315;
 };
+
 
 // func000132
 // function begins at statement 1005, parm_start=1900
@@ -2558,6 +2628,7 @@ void () func000132 =
     func000124(FALSE, FALSE);
 };
 
+
 // func000133
 // function begins at statement 1032, parm_start=1938
 // OP_STORE_V	30	4	0
@@ -2593,6 +2664,7 @@ entity (float globaldef001322) func000133 =
     return globaldef001323;
 };
 
+
 // func000134
 // function begins at statement 1051, parm_start=1946
 // OP_STORE_V	1946	4	0
@@ -2624,6 +2696,7 @@ void (float globaldef001326) func000134 =
     }
     
 };
+
 
 // func000135
 // function begins at statement 1067, parm_start=1965
@@ -2673,6 +2746,7 @@ void (float globaldef001329) func000135 =
     }
     
 };
+
 
 // func000136
 // function begins at statement 1094, parm_start=1993
@@ -3288,6 +3362,7 @@ void () func000136 =
     self.impulse = FALSE;
 };
 
+
 // func000137
 // function begins at statement 1401, parm_start=2178
 // OP_LOAD_ENT	28	181	2179
@@ -3394,6 +3469,7 @@ void () func000137 =
     
 };
 
+
 // func000138
 // function begins at statement 1474, parm_start=2233
 // OP_LOAD_F	2233	152	2235
@@ -3424,6 +3500,7 @@ float (entity globaldef001367) func000138 =
     
     return globaldef001368;
 };
+
 
 // func000139
 // function begins at statement 1490, parm_start=2247
@@ -3951,6 +4028,7 @@ void () func000139 =
     
 };
 
+
 // func000140
 // function begins at statement 1783, parm_start=2458
 // OP_LOAD_ENT	28	181	2467
@@ -4231,6 +4309,7 @@ void () func000140 =
     
 };
 
+
 // func000141
 // function begins at statement 1920, parm_start=2551
 // OP_LOAD_ENT	28	181	2555
@@ -4314,6 +4393,7 @@ void () func000141 =
     }
     
 };
+
 
 // func000142
 // function begins at statement 1958, parm_start=2575
@@ -4593,6 +4673,7 @@ void () func000142 =
     
 };
 
+
 // func000143
 // function begins at statement 2087, parm_start=2692
 // OP_LOAD_F	28	371	2693
@@ -4770,6 +4851,7 @@ void () func000143 =
     
 };
 
+
 // func000144
 // function begins at statement 2182, parm_start=2797
 // OP_CALL0	2177	0	0
@@ -4870,6 +4952,7 @@ void () func000144 =
 };
 
 entity () func000387;
+
 // func000145
 // function begins at statement 2228, parm_start=2816
 // OP_LOAD_S	28	129	2818
@@ -5066,6 +5149,7 @@ void () func000145 =
     globaldef000792 = globaldef000792 + TRUE;
 };
 
+
 // func000146
 // function begins at statement 2348, parm_start=2910
 // OP_STORE_V	30	4	0
@@ -5113,6 +5197,7 @@ void () func000146 =
     }
     
 };
+
 
 // func000147
 // function begins at statement 2374, parm_start=2933
@@ -5186,6 +5271,7 @@ float () func000147 =
     }
     
 };
+
 
 // func000148
 // function begins at statement 2407, parm_start=2944

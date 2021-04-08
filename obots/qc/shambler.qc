@@ -1,3 +1,4 @@
+
 // monster_shambler
 // function begins at statement 20282, parm_start=13208
 // OP_IFNOT	35	4	0
@@ -85,7 +86,7 @@ void () monster_shambler =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/shambler.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = globaldef000723;
+    self.health = GLOBALDEFSEVENTWOTHREE;
     self.th_stand = func000890;
     self.th_walk = func000907;
     self.th_run = func000919;

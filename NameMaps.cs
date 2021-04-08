@@ -327,8 +327,9 @@ namespace DeQcc
 
             #endregion
 
-            // not sure where this goes
             nameMap.Add("func000072", "centerprint");
+
+            nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
 
             #region subs.qc
 
@@ -401,18 +402,102 @@ namespace DeQcc
 
             #region fight.qc
 
+            nameMap.Add("func000163", "knight_attack");
+            nameMap.Add("func000164", "CheckAttack");
+            nameMap.Add("func000165", "ai_face");
+            nameMap.Add("func000166", "ai_charge");
+            nameMap.Add("func000167", "ai_charge_side");
+            nameMap.Add("func000168", "ai_melee");
+            nameMap.Add("func000169", "ai_melee_side");
+            nameMap.Add("func000170", "SoldierCheckAttack");
+            nameMap.Add("func000171", "ShamCheckAttack");
+            nameMap.Add("func000172", "OgreCheckAttack");
+
+            for (int i = 163; i <= 172; i++)
+            {
+                fileMap[i] = "fight.qc";
+            }
+
+            // Declarations
+            nameMap.Add("globaldef001534", "enemy_vis");
+            nameMap.Add("globaldef001535", "enemy_infront");
+            nameMap.Add("globaldef001536", "enemy_range");
+            nameMap.Add("globaldef001537", "enemy_yaw");
+
+            // knight_attack locals
+            nameMap.Add("globaldef001539", "len");
+
+            // CheckAttack locals
+            nameMap.Add("globaldef001541", "spot1");
+            nameMap.Add("globaldef001545", "spot2");
+            nameMap.Add("globaldef001549", "targ");
+            nameMap.Add("globaldef001550", "chance");
+
+            // ai_charge params
+            nameMap.Add("globaldef001558", "d");
+
+            // ai_charge_side locals
+            nameMap.Add("globaldef001560", "dtemp");
+            nameMap.Add("globaldef001564", "heading");
+
+            // ai_melee locals
+            nameMap.Add("globaldef001566", "delta");
+            nameMap.Add("globaldef001570", "ldmg");
+
+            // ai_melee_side locals
+            nameMap.Add("globaldef001572", "delta");
+            nameMap.Add("globaldef001576", "ldmg");
+            // note extra random() call not assigned to anything, due to compiler bug
+
+            // SoldierCheckAttack locals
+            nameMap.Add("globaldef001578", "spot1");
+            nameMap.Add("globaldef001582", "spot2");
+            nameMap.Add("globaldef001586", "targ");
+            nameMap.Add("globaldef001587", "chance");
+
+            // ShamCheckAttack locals
+            nameMap.Add("globaldef001590", "spot1");
+            nameMap.Add("globaldef001594", "spot2");
+            nameMap.Add("globaldef001598", "targ");
+            nameMap.Add("globaldef001599", "chance");
+
+            // OgreCheckAttack locals
+            nameMap.Add("globaldef001601", "spot1");
+            nameMap.Add("globaldef001605", "spot2");
+            nameMap.Add("globaldef001609", "targ");
+            nameMap.Add("globaldef001610", "chance");
+
             #endregion
 
             #region ai.qc
 
+            nameMap.Add("func000173", "anglemod");
+            nameMap.Add("func000177", "range");
             nameMap.Add("func000178", "visible");
+            nameMap.Add("func000179", "infront");
 
-            for (int i = 175; i <= 192; i++)
+            for (int i = 173; i <= 192; i++)
             {
                 fileMap[i] = "ai.qc";
             }
 
+            // anglemod params
+            nameMap.Add("globaldef001619", "v");
+
+            // range params
+            nameMap.Add("globaldef001628", "targ");
+
+            // infront params
+            nameMap.Add("globaldef001648", "targ");
+
+            // ChooseTurn params
+            nameMap.Add("globaldef001711", "dest3");
+
             #endregion
+
+            nameMap.Add("func000199", "CanDamage");
+            nameMap.Add("func000201", "T_Damage");
+            
 
             #region items.qc
 
@@ -479,6 +564,21 @@ namespace DeQcc
             }
 
             #endregion
+
+            nameMap.Add("func000702", "ogre_swing1");
+            nameMap.Add("func000716", "ogre_smash1");
+            nameMap.Add("func000887", "DemonCheckAttack");
+
+            nameMap.Add("func000888", "Demon_Melee");
+            // Demon_Melee params
+            nameMap.Add("globaldef003923", "side");
+
+            nameMap.Add("func000925", "sham_smash1");
+            nameMap.Add("func000938", "sham_swingl1");
+            nameMap.Add("func000947", "sham_swingr1");
+
+            nameMap.Add("func001019", "knight_runatk1");
+            nameMap.Add("func001030", "knight_atk1");
 
             #region knight.qc
 

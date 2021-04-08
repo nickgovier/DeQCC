@@ -1,3 +1,4 @@
+
 // plat_hit_top
 // function begins at statement 16928, parm_start=11617
 // OP_STORE_V	28	4	0
@@ -24,6 +25,7 @@ void () plat_hit_top =
     self.nextthink = self.ltime + MOVETYPE_WALK;
 };
 
+
 // plat_hit_bottom
 // function begins at statement 16944, parm_start=11624
 // OP_STORE_V	28	4	0
@@ -41,6 +43,7 @@ void () plat_hit_bottom =
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
     self.state = STATE_BOTTOM;
 };
+
 
 // func000605
 // function begins at statement 16954, parm_start=11626
@@ -67,6 +70,7 @@ void () func000605 =
     SUB_CalcMove(self.pos2, self.speed, plat_hit_bottom);
 };
 
+
 // func000606
 // function begins at statement 16970, parm_start=11632
 // OP_STORE_V	28	4	0
@@ -91,6 +95,7 @@ void () func000606 =
     self.state = STATE_UP;
     SUB_CalcMove(self.pos1, self.speed, plat_hit_top);
 };
+
 
 // func000607
 // function begins at statement 16986, parm_start=11638
@@ -205,6 +210,7 @@ void () func000607 =
     
 };
 
+
 // plat_outside_touch
 // function begins at statement 17038, parm_start=11669
 // OP_LOAD_S	29	129	11669
@@ -253,6 +259,7 @@ void () plat_outside_touch =
     
 };
 
+
 // func000609
 // function begins at statement 17056, parm_start=11678
 // OP_LOAD_FNC	28	148	11678
@@ -270,6 +277,7 @@ void () func000609 =
     
     func000605();
 };
+
 
 // func000610
 // function begins at statement 17061, parm_start=11679
@@ -293,7 +301,7 @@ void () func000609 =
 // OP_DONE	0	0	0
 void () func000610 = 
 {
-    func000201(other, self, self, TRUE);
+    T_Damage(other, self, self, TRUE);
     if(self.state == STATE_UP)
     {
         func000605();
@@ -312,6 +320,7 @@ void () func000610 =
     }
     
 };
+
 
 // func000611
 // function begins at statement 17079, parm_start=11685
@@ -335,6 +344,7 @@ void () func000611 =
     
     func000605();
 };
+
 
 // func_plat
 // function begins at statement 17088, parm_start=11690
@@ -529,6 +539,7 @@ void () func_plat =
 
 void () func000616;
 void () func000617;
+
 // func000613
 // function begins at statement 17196, parm_start=11773
 // OP_LOAD_F	28	378	11773
@@ -554,8 +565,9 @@ void () func000613 =
     }
     
     self.attack_finished = time + globaldef000522;
-    func000201(other, self, self, self.dmg);
+    T_Damage(other, self, self, self.dmg);
 };
+
 
 // func000614
 // function begins at statement 17210, parm_start=11779
@@ -575,6 +587,7 @@ void () func000614 =
     
     func000616();
 };
+
 
 // train_wait
 // function begins at statement 17216, parm_start=11782
@@ -614,6 +627,7 @@ void () train_wait =
     
     self.think = func000616;
 };
+
 
 // func000616
 // function begins at statement 17238, parm_start=11792
@@ -680,6 +694,7 @@ void () func000616 =
     SUB_CalcMove(globaldef003554.origin - self.mins, self.speed, train_wait);
 };
 
+
 // func000617
 // function begins at statement 17276, parm_start=11815
 // OP_STORE_V	30	4	0
@@ -721,6 +736,7 @@ void () func000617 =
     }
     
 };
+
 
 // func_train
 // function begins at statement 17301, parm_start=11835
@@ -847,6 +863,7 @@ void () func_train =
     self.nextthink = self.ltime + 0.1;
     self.think = func000617;
 };
+
 
 // misc_teleporttrain
 // function begins at statement 17373, parm_start=11877

@@ -1,3 +1,4 @@
+
 // T_BeamDamage
 // function begins at statement 4172, parm_start=4267
 // OP_LOAD_V	4267	105	4271
@@ -79,15 +80,15 @@ void (entity globaldef001784, float globaldef001785) T_BeamDamage =
             if(globaldef001786 > FALSE)
             {
                 
-                if(func000199(globaldef001787, globaldef001784))
+                if(CanDamage(globaldef001787, globaldef001784))
                 {
                     if(globaldef001787.classname == "monster_shambler")
                     {
-                        func000201(globaldef001787, globaldef001784, globaldef001784, globaldef001786 * globaldef000522);
+                        T_Damage(globaldef001787, globaldef001784, globaldef001784, globaldef001786 * globaldef000522);
                     }
                     else
                     {
-                        func000201(globaldef001787, globaldef001784, globaldef001784, globaldef001786);
+                        T_Damage(globaldef001787, globaldef001784, globaldef001784, globaldef001786);
                     }
                     
                 }

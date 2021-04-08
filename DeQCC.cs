@@ -646,6 +646,8 @@ namespace DeQcc
                 PrintLine(";");
             }
 
+            PrintLine("");
+
             // Check for builtin functions
             if(f.IsBuiltin)
             {

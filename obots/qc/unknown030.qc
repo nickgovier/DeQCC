@@ -1,3 +1,4 @@
+
 // func000563
 // function begins at statement 15886, parm_start=10885
 // OP_ADDRESS	28	438	10885
@@ -28,12 +29,14 @@ void () func000563 =
     
 };
 
+
 // func000564
 // function begins at statement 15901, parm_start=10894
 // OP_DONE	0	0	0
 void () func000564 = 
 {
 };
+
 
 // func000565
 // function begins at statement 15902, parm_start=10895
@@ -73,6 +76,7 @@ void () func000565 =
     SUB_CalcMove(self.pos2, self.speed, button_wait);
 };
 
+
 // func000566
 // function begins at statement 15925, parm_start=10907
 // OP_ADDRESS	28	181	10907
@@ -96,6 +100,7 @@ void () func000566 =
     
     func000565();
 };
+
 
 // func000567
 // function begins at statement 15935, parm_start=10911
@@ -139,6 +144,7 @@ void () func000567 =
     
     func000565();
 };
+
 
 // func000568
 // function begins at statement 15952, parm_start=10922

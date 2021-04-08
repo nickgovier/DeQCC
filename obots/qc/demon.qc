@@ -1,3 +1,4 @@
+
 // monster_demon1
 // function begins at statement 19413, parm_start=12796
 // OP_IFNOT	35	4	0

@@ -1,3 +1,4 @@
+
 // monster_enforcer
 // function begins at statement 26772, parm_start=15969
 // OP_IFNOT	35	4	0

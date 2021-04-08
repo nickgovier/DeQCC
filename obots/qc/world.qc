@@ -1,4 +1,5 @@
 void () func000300;
+
 // main
 // function begins at statement 8178, parm_start=6511
 // OP_STORE_V	6511	4	0
@@ -340,6 +341,7 @@ void () main =
 };
 
 entity globaldef002375;
+
 // worldspawn
 // function begins at statement 8401, parm_start=6623
 // OP_STORE_ENT	30	6621	0
@@ -744,6 +746,7 @@ void () worldspawn =
 };
 
 void () func000395;
+
 // StartFrame
 // function begins at statement 8652, parm_start=6710
 // OP_STORE_V	6712	4	0
@@ -915,7 +918,7 @@ void () StartFrame =
         globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
         globaldef000780 = (((globaldef000522 * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
-        globaldef000781 = TRUE / (globaldef000781 * globaldef000723);
+        globaldef000781 = TRUE / (globaldef000781 * GLOBALDEFSEVENTWOTHREE);
     }
     
     globaldef000783 = cvar("sv_maxspeed");
@@ -978,6 +981,7 @@ void () StartFrame =
 };
 
 entity globaldef002466;
+
 // bodyque
 // function begins at statement 8778, parm_start=6774
 // OP_DONE	0	0	0

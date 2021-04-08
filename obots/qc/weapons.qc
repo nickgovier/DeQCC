@@ -1,3 +1,4 @@
+
 // SpawnChunk
 // function begins at statement 6577, parm_start=5508
 // OP_STORE_V	5508	4	0
@@ -14,6 +15,7 @@ void (vector globaldef002075, vector globaldef002079) SpawnChunk =
 
 entity globaldef002084;
 float globaldef002085;
+
 // func000257
 // function begins at statement 6584, parm_start=5521
 // OP_STORE_ENT	30	5518	0
@@ -24,6 +26,7 @@ void () func000257 =
     globaldef002084 = world;
     globaldef002085 = FALSE;
 };
+
 
 // func000258
 // function begins at statement 6587, parm_start=5522
@@ -44,8 +47,9 @@ void () func000258 =
         return;
     }
     
-    func000201(globaldef002084, self, self, globaldef002085);
+    T_Damage(globaldef002084, self, self, globaldef002085);
 };
+
 
 // func000259
 // function begins at statement 6596, parm_start=5524
@@ -81,6 +85,7 @@ void (entity globaldef002089, float globaldef002090) func000259 =
     }
     
 };
+
 
 // func000260
 // function begins at statement 6608, parm_start=5530
@@ -152,6 +157,7 @@ void (float globaldef002092, vector globaldef002093) func000260 =
     
 };
 
+
 // func000261
 // function begins at statement 6652, parm_start=5572
 // OP_LOAD_V	28	175	5585
@@ -220,6 +226,7 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) fun
     func000258();
 };
 
+
 // func000262
 // function begins at statement 6693, parm_start=5626
 // OP_STORE_V	28	4	0
@@ -269,6 +276,7 @@ void () func000262 =
     func000247((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002125);
     func000261(MOVETYPE_TOSS, globaldef002125, '0.04 0.04 0');
 };
+
 
 // func000263
 // function begins at statement 6729, parm_start=5656
@@ -340,6 +348,7 @@ void () func000263 =
     func000261(14, globaldef002132, '0.14 0.08 0');
 };
 
+
 // func000264
 // function begins at statement 6777, parm_start=5698
 // OP_STATE	213	5698	0
@@ -347,6 +356,7 @@ void () func000263 =
 void () func000264 = [0, func000265]
 {
 };
+
 
 // func000265
 // function begins at statement 6779, parm_start=5699
@@ -356,6 +366,7 @@ void () func000265 = [1, func000266]
 {
 };
 
+
 // func000266
 // function begins at statement 6781, parm_start=5700
 // OP_STATE	216	5700	0
@@ -363,6 +374,7 @@ void () func000265 = [1, func000266]
 void () func000266 = [2, func000267]
 {
 };
+
 
 // func000267
 // function begins at statement 6783, parm_start=5701
@@ -372,6 +384,7 @@ void () func000267 = [3, func000268]
 {
 };
 
+
 // func000268
 // function begins at statement 6785, parm_start=5702
 // OP_STATE	229	5702	0
@@ -380,6 +393,7 @@ void () func000268 = [4, func000269]
 {
 };
 
+
 // func000269
 // function begins at statement 6787, parm_start=5703
 // OP_STATE	230	521	0
@@ -387,6 +401,7 @@ void () func000268 = [4, func000269]
 void () func000269 = [5, SUB_Remove]
 {
 };
+
 
 // func000270
 // function begins at statement 6789, parm_start=5704
@@ -412,6 +427,7 @@ void () func000270 =
     self.solid = SOLID_NOT;
     func000264();
 };
+
 
 // func000271
 // function begins at statement 6802, parm_start=5711
@@ -511,7 +527,7 @@ void () func000271 =
             globaldef002146 = globaldef002146 * globaldef000522;
         }
         
-        func000201(other, self, self.owner, globaldef002146);
+        T_Damage(other, self, self.owner, globaldef002146);
     }
     
     func000202(self, self.owner, 120, other);
@@ -524,6 +540,7 @@ void () func000271 =
     WriteCoord(MSG_BROADCAST, self.origin_z);
     func000270();
 };
+
 
 // func000272
 // function begins at statement 6872, parm_start=5749
@@ -620,6 +637,7 @@ void () func000272 =
     setsize(globaldef002148, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(globaldef002148, (self.origin + (v_forward * FL_CLIENT)) + '0 0 16');
 };
+
 
 // func000273
 // function begins at statement 6941, parm_start=5803
@@ -735,7 +753,7 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
     if(trace_ent.takedamage)
     {
         particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        func000201(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
         
         if((self.classname == "player") || (self.classname == "bot"))
         {
@@ -755,7 +773,7 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
     if((trace_ent != globaldef002163) && trace_ent.takedamage)
     {
         particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        func000201(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
     }
     
     globaldef002164 = trace_ent;
@@ -764,10 +782,11 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
     if(((trace_ent != globaldef002163) && (trace_ent != globaldef002164)) && trace_ent.takedamage)
     {
         particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        func000201(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
     }
     
 };
+
 
 // func000274
 // function begins at statement 7036, parm_start=5865
@@ -911,7 +930,7 @@ void () func000274 =
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_cells = self.ammo_cells - TRUE;
     globaldef002172 = self.origin + '0 0 16';
-    traceline(globaldef002172, globaldef002172 + (v_forward * globaldef000723), TRUE, self);
+    traceline(globaldef002172, globaldef002172 + (v_forward * GLOBALDEFSEVENTWOTHREE), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
@@ -923,6 +942,7 @@ void () func000274 =
     WriteCoord(MSG_BROADCAST, trace_endpos_z);
     func000273(self.origin, trace_endpos + (v_forward * MOVETYPE_STEP), self, SVC_INTERMISSION);
 };
+
 
 // func000275
 // function begins at statement 7136, parm_start=5915
@@ -962,6 +982,7 @@ void () func000275 =
     WriteCoord(MSG_BROADCAST, self.origin_z);
     func000270();
 };
+
 
 // func000276
 // function begins at statement 7162, parm_start=5920
@@ -1009,6 +1030,7 @@ void () func000276 =
     }
     
 };
+
 
 // func000277
 // function begins at statement 7183, parm_start=5932
@@ -1114,12 +1136,12 @@ void () func000277 =
     makevectors(self.v_angle);
     if(self.v_angle_x)
     {
-        globaldef002182.velocity = (((v_forward * globaldef000723) + (v_up * 200)) + ((func000249() * v_right) * MOVETYPE_BOUNCE)) + ((func000249() * v_up) * MOVETYPE_BOUNCE);
+        globaldef002182.velocity = (((v_forward * GLOBALDEFSEVENTWOTHREE) + (v_up * 200)) + ((func000249() * v_right) * MOVETYPE_BOUNCE)) + ((func000249() * v_up) * MOVETYPE_BOUNCE);
     }
     else
     {
         globaldef002182.velocity = func000250(self, 10000);
-        globaldef002182.velocity = globaldef002182.velocity * globaldef000723;
+        globaldef002182.velocity = globaldef002182.velocity * GLOBALDEFSEVENTWOTHREE;
         globaldef002182.velocity_z = 200;
     }
     
@@ -1135,6 +1157,7 @@ void () func000277 =
 
 void () func000281;
 void () func000282;
+
 // func000278
 // function begins at statement 7269, parm_start=6019
 // OP_CALL0	464	0	0
@@ -1188,6 +1211,7 @@ void (vector globaldef002192, vector globaldef002196) func000278 =
     setorigin(newmis, globaldef002192);
     newmis.velocity = globaldef002196 * 1000;
 };
+
 
 // func000279
 // function begins at statement 7304, parm_start=6045
@@ -1244,6 +1268,7 @@ void () func000279 =
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     self.punchangle_x = CONTENT_SOLID;
 };
+
 
 // func000280
 // function begins at statement 7343, parm_start=6066
@@ -1327,6 +1352,7 @@ void (float globaldef002210) func000280 =
 };
 
 .float hit_z;
+
 // func000281
 // function begins at statement 7394, parm_start=6103
 // OP_LOAD_ENT	28	201	6104
@@ -1416,7 +1442,7 @@ void () func000281 =
     if(other.takedamage)
     {
         func000255(MOVETYPE_FLYMISSILE);
-        func000201(other, self, self.owner, MOVETYPE_FLYMISSILE);
+        T_Damage(other, self, self.owner, MOVETYPE_FLYMISSILE);
     }
     else
     {
@@ -1445,6 +1471,7 @@ void () func000281 =
     
     remove(self);
 };
+
 
 // func000282
 // function begins at statement 7456, parm_start=6123
@@ -1521,7 +1548,7 @@ void () func000282 =
     if(other.takedamage)
     {
         func000255(18);
-        func000201(other, self, self.owner, 18);
+        T_Damage(other, self, self.owner, 18);
     }
     else
     {
@@ -1534,6 +1561,7 @@ void () func000282 =
     
     remove(self);
 };
+
 
 // func000283
 // function begins at statement 7504, parm_start=6138
@@ -1773,6 +1801,7 @@ void () func000283 =
     
 };
 
+
 // func000284
 // function begins at statement 7639, parm_start=6227
 // OP_LOAD_F	28	162	6228
@@ -1849,6 +1878,7 @@ float () func000284 =
     return IT_AXE;
 };
 
+
 // func000285
 // function begins at statement 7676, parm_start=6253
 // OP_LOAD_F	28	157	6253
@@ -1892,6 +1922,7 @@ void () func000409;
 void () func000431;
 void () func000433;
 void () func000435;
+
 // func000286
 // function begins at statement 7690, parm_start=6267
 // OP_CALL0	6252	0	0
@@ -2103,6 +2134,7 @@ void () func000286 =
     }
     
 };
+
 
 // func000287
 // function begins at statement 7788, parm_start=6310
@@ -2325,6 +2357,7 @@ void () func000287 =
     func000283();
 };
 
+
 // func000288
 // function begins at statement 7877, parm_start=6352
 // OP_OR	35	36	6352
@@ -2378,6 +2411,7 @@ void () func000288 =
     self.impulse = FALSE;
     func000283();
 };
+
 
 // func000289
 // function begins at statement 7910, parm_start=6374
@@ -2593,6 +2627,7 @@ void () func000289 =
     
 };
 
+
 // func000290
 // function begins at statement 7999, parm_start=6420
 // OP_ADDRESS	28	173	6422
@@ -2807,6 +2842,7 @@ void () func000290 =
     }
     
 };
+
 
 // ServerflagsCommand
 // function begins at statement 8088, parm_start=6467

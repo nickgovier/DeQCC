@@ -1,3 +1,4 @@
+
 // monster_zombie
 // function begins at statement 23388, parm_start=14575
 // OP_IFNOT	35	4	0
