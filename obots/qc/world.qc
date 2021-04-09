@@ -598,7 +598,7 @@ entity globaldef002375;
 void () worldspawn = 
 {
     globaldef002375 = world;
-    func002255();
+    InitMaxClients();
     func000146();
     func000300();
     if(self.model == "maps/e1m8.bsp")
@@ -626,7 +626,7 @@ void () worldspawn =
         
     }
     
-    func000248();
+    W_Precache();
     func002458();
     
     if(cvar("registered") == FL_SWIM)
@@ -952,7 +952,7 @@ void () StartFrame =
                     while(globaldef002456)
                     {
                         func002426(globaldef002456, globaldef002456.field000284);
-                        func002264(globaldef002456.field000285, globaldef002456.field000287);
+                        msgUpdateClientColorsToAll(globaldef002456.clientnumber, globaldef002456.clientcolor);
                         globaldef002456 = globaldef002456.field000297;
                     }
                     

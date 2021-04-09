@@ -3134,8 +3134,8 @@ void () ClientConnect =
     local entity globaldef002966;
     local float globaldef002967;
     self.field000286 = CONTENT_EMPTY;
-    self.field000285 = self.colormap - TRUE;
-    self.field000287 = (FALSE * FL_INWATER) + self.team;
+    self.clientnumber = self.colormap - TRUE;
+    self.clientcolor = (FALSE * FL_INWATER) + self.team;
     self.field000249 = FALSE;
     
     if(globaldef000816)
@@ -3147,27 +3147,27 @@ void () ClientConnect =
     self.field000298 = world;
     globaldef000816 = self;
     
-    if(func002257(self.field000285))
+    if(ClientIsActive(self.clientnumber))
     {
         globaldef002966 = globaldef000817;
         
         while(globaldef002966)
         {
             
-            if(globaldef002966.field000285 == self.field000285)
+            if(globaldef002966.clientnumber == self.clientnumber)
             {
-                globaldef002967 = func002261();
+                globaldef002967 = NextAvailableClientNumber();
                 if(globaldef002967 == CONTENT_EMPTY)
                 {
                     func002417(globaldef002966);
                 }
                 else
                 {
-                    globaldef002966.field000285 = globaldef002967;
-                    func002259(globaldef002966.field000285);
-                    func002262(globaldef002966.field000285, globaldef002966.netname);
-                    func002263(globaldef002966.field000285, globaldef002966.frags);
-                    func002264(globaldef002966.field000285, globaldef002966.field000287);
+                    globaldef002966.clientnumber = globaldef002967;
+                    SetClientNumberUsed(globaldef002966.clientnumber);
+                    msgUpdateClientNameToAll(globaldef002966.clientnumber, globaldef002966.netname);
+                    msgUpdateClientFragsToAll(globaldef002966.clientnumber, globaldef002966.frags);
+                    msgUpdateClientColorsToAll(globaldef002966.clientnumber, globaldef002966.clientcolor);
                 }
                 
             }
@@ -3175,14 +3175,14 @@ void () ClientConnect =
             globaldef002966 = globaldef002966.field000297;
         }
         
-        func002262(self.field000285, self.netname);
-        func002263(self.field000285, FALSE);
+        msgUpdateClientNameToAll(self.clientnumber, self.netname);
+        msgUpdateClientFragsToAll(self.clientnumber, FALSE);
     }
     
-    func002259(self.field000285);
+    SetClientNumberUsed(self.clientnumber);
     self.impulse = 190;
     
-    if(self.field000285 == FALSE)
+    if(self.clientnumber == FALSE)
     {
         func002738(self);
     }
@@ -3299,8 +3299,8 @@ void () ClientDisconnect =
     local float globaldef002971;
     func000334(self);
     func002364(self);
-    func002262(self.field000285, "");
-    func002260(self.field000285);
+    msgUpdateClientNameToAll(self.clientnumber, "");
+    SetClientNumberFree(self.clientnumber);
     func002739(self);
     
     if(self.field000297)

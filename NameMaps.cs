@@ -313,7 +313,15 @@ namespace DeQcc
             nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
             nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
             nameMap.Add("globaldef000774", "GLOBALDEFSEVENSEVENFOUR");   // constant = 12
+
+            nameMap.Add("globaldef000795", "fActiveClients");  // b_clrank.qc
+            nameMap.Add("globaldef000796", "fMaxClients");  // b_clrank.qc
+            nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
+
+            nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
+            nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
             
+
             #region subs.qc
 
             // Functions
@@ -731,14 +739,22 @@ namespace DeQcc
 
             #region weapons.qc
 
+            nameMap.Add("func000248", "W_Precache");
+            nameMap.Add("func000254", "SpawnBlood");
             nameMap.Add("func000271", "T_MissileTouch");
             nameMap.Add("func000283", "W_SetCurrentAmmo");
             nameMap.Add("func000284", "W_BestWeapon");
+            nameMap.Add("func000295", "SuperDamageSound");
 
-            for (int i = 256; i <= 291; i++)
+            for (int i = 248; i <= 295; i++)
             {
                 fileMap[i] = "weapons.qc";
             }
+
+            // SpawnBlood args
+            nameMap.Add("globaldef002057", "org");
+            nameMap.Add("globaldef002061", "vel");
+            nameMap.Add("globaldef002065", "damage");
 
             #endregion
 
@@ -769,9 +785,10 @@ namespace DeQcc
 
             #region player.qc
 
+            nameMap.Add("func000408", "player_run");
             nameMap.Add("func000461", "ThrowGib");
 
-            for (int i = 461; i <= 461; i++)
+            for (int i = 408; i <= 461; i++)
             {
                 fileMap[i] = "player.qc";
             }
@@ -1014,6 +1031,76 @@ namespace DeQcc
             nameMap.Add("globaldef005659", "z");
             nameMap.Add("globaldef005660", "r");
             nameMap.Add("globaldef005661", "n");
+
+            #endregion
+
+            #region b_clrank.c
+
+            // this was taken from Alan Kivlin's rankings.qc, so we can match on that basis
+
+            // Declarations
+            nameMap.Add("globaldef005676", "MSG_UPDATENAME");
+            nameMap.Add("globaldef005677", "MSG_UPDATEFRAGS");
+            nameMap.Add("globaldef005678", "MSG_UPDATECOLORS");
+
+            nameMap.Add("func002255", "InitMaxClients");
+            nameMap.Add("func002256", "clientBitFlag");
+            nameMap.Add("func002257", "ClientIsActive");
+            nameMap.Add("func002258", "ActiveClientCount");
+            nameMap.Add("func002259", "SetClientNumberUsed");
+            nameMap.Add("func002260", "SetClientNumberFree");
+            nameMap.Add("func002261", "NextAvailableClientNumber");
+            nameMap.Add("func002262", "msgUpdateClientNameToAll");
+            nameMap.Add("func002263", "msgUpdateClientFragsToAll");
+            nameMap.Add("func002264", "msgUpdateClientColorsToAll");
+            nameMap.Add("func002265", "msgUpdateAllClientSettingsToAll");
+
+            for (int i = 2255; i <= 2265; i++)
+            {
+                fileMap[i] = "b_clrank.qc";
+            }
+
+            // InitMaxClients locals
+            nameMap.Add("globaldef005679", "ent");
+
+            // clientBitFlag params
+            nameMap.Add("globaldef005682", "clnumber");
+
+            // clientBitFlag locals
+            nameMap.Add("globaldef005683", "bitflag");
+
+            // ClientIsActive params
+            nameMap.Add("globaldef005684", "clnumber");
+
+            // ActiveClientCount locals
+            nameMap.Add("globaldef005686", "index");
+            nameMap.Add("globaldef005687", "num_active");
+            
+            // SetClientNumberUsed params
+            nameMap.Add("globaldef005688", "clnumber");
+
+            // SetClientNumberFree params
+            nameMap.Add("globaldef005689", "clnumber");
+
+            // NextAvailableClientNumber locals
+            nameMap.Add("globaldef005690", "clnumber");
+
+            // msgUpdateClientNameToAll params
+            nameMap.Add("globaldef005691", "clnumber");
+            nameMap.Add("globaldef005692", "n");
+
+            // msgUpdateClientFragsToAll params
+            nameMap.Add("globaldef005693", "clnumber");
+            nameMap.Add("globaldef005694", "f");
+
+            // msgUpdateClientColorsToAll params
+            nameMap.Add("globaldef005695", "clnumber");
+            nameMap.Add("globaldef005696", "c");
+
+            // locals
+            nameMap.Add("globaldef005697", "bot");
+            nameMap.Add("globaldef005698", "index");
+            
 
             #endregion
 

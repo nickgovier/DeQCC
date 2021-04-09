@@ -1,3 +1,304 @@
+void () player_run;
+void (vector org, vector vel, float damage) SpawnBlood;
+void () SuperDamageSound;
+
+// W_Precache
+// function begins at statement 6403, parm_start=5358
+// OP_STORE_V	5358	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5359	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5360	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5361	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5362	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5363	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5364	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5365	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5366	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5367	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5368	4	0
+// OP_CALL1	469	0	0
+// OP_STORE_V	5369	4	0
+// OP_CALL1	469	0	0
+// OP_DONE	0	0	0
+void () W_Precache = 
+{
+    precache_sound("weapons/r_exp3.wav");
+    precache_sound("weapons/rocket1i.wav");
+    precache_sound("weapons/sgun1.wav");
+    precache_sound("weapons/guncock.wav");
+    precache_sound("weapons/ric1.wav");
+    precache_sound("weapons/ric2.wav");
+    precache_sound("weapons/ric3.wav");
+    precache_sound("weapons/spike2.wav");
+    precache_sound("weapons/tink1.wav");
+    precache_sound("weapons/grenade.wav");
+    precache_sound("weapons/bounce.wav");
+    precache_sound("weapons/shotgn2.wav");
+};
+
+
+// func000249
+// function begins at statement 6428, parm_start=5371
+// OP_CALL0	457	0	0
+// OP_SUB_F	1	539	5371
+// OP_MUL_F	216	5371	5372
+// OP_RETURN	5372	0	0
+// OP_DONE	0	0	0
+float () func000249 = 
+{
+    return FL_SWIM * (random() - GLOBALDEFFIVETWOTWO);
+};
+
+
+// func000250
+// function begins at statement 6433, parm_start=5374
+// OP_LOAD_V	5374	175	5376
+// OP_STORE_V	5376	4	0
+// OP_CALL1	452	0	0
+// OP_STORE_V	59	4	0
+// OP_CALL1	459	0	0
+// OP_RETURN	1	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef002026, float globaldef002027) func000250 = 
+{
+    makevectors(globaldef002026.v_angle);
+    return normalize(v_forward);
+};
+
+
+// func000251
+// function begins at statement 6440, parm_start=5380
+// OP_STORE_V	28	4	0
+// OP_LOAD_V	28	105	5386
+// OP_STORE_V	5386	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	758	13	0
+// OP_CALL4	1120	0	0
+// OP_LOAD_V	28	105	5389
+// OP_ADD_V	5389	5392	5395
+// OP_STORE_V	5395	5380	0
+// OP_STORE_V	5380	4	0
+// OP_MUL_VF	59	220	5398
+// OP_ADD_V	5380	5398	5401
+// OP_STORE_V	5401	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	28	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	5404
+// OP_IFNOT	5404	2	0
+// OP_RETURN	0	0	0
+// OP_MUL_VF	59	229	5405
+// OP_SUB_V	71	5405	5408
+// OP_STORE_V	5408	5383	0
+// OP_LOAD_F	78	163	5411
+// OP_IFNOT	5411	13	0
+// OP_ADDRESS	78	392	5412
+// OP_STOREP_F	214	5412	0
+// OP_STORE_V	5383	4	0
+// OP_STORE_V	286	7	0
+// OP_STORE_V	2323	10	0
+// OP_CALL3	5355	0	0
+// OP_STORE_V	78	4	0
+// OP_STORE_V	28	7	0
+// OP_STORE_V	28	10	0
+// OP_STORE_V	2323	13	0
+// OP_CALL4	522	0	0
+// OP_GOTO	22	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	326	7	0
+// OP_STORE_V	5413	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_STORE_V	342	4	0
+// OP_STORE_V	304	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	342	4	0
+// OP_STORE_V	315	7	0
+// OP_CALL2	496	0	0
+// OP_STORE_V	342	4	0
+// OP_STORE_V	5383	7	0
+// OP_CALL2	500	0	0
+// OP_STORE_V	342	4	0
+// OP_STORE_V	5384	7	0
+// OP_CALL2	500	0	0
+// OP_STORE_V	342	4	0
+// OP_STORE_V	5385	7	0
+// OP_CALL2	500	0	0
+// OP_DONE	0	0	0
+void () func000251 = 
+{
+    local vector globaldef002029;
+    local vector globaldef002033;
+    func002453(self, self.origin, TRUE, globaldef000741);
+    globaldef002029 = self.origin + '0 0 16';
+    traceline(globaldef002029, globaldef002029 + (v_forward * FL_GODMODE), FALSE, self);
+    
+    if(trace_fraction == TRUE)
+    {
+        return;
+    }
+    
+    globaldef002033 = trace_endpos - (v_forward * MOVETYPE_STEP);
+    if(trace_ent.takedamage)
+    {
+        trace_ent.axhitme = TRUE;
+        SpawnBlood(globaldef002033, VEC_ORIGIN, 20);
+        T_Damage(trace_ent, self, self, 20);
+    }
+    else
+    {
+        sound(self, CHAN_WEAPON, "player/axhit2.wav", TRUE, ATTN_NORM);
+        WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
+        WriteByte(MSG_BROADCAST, TE_GUNSHOT);
+        WriteCoord(MSG_BROADCAST, globaldef002033_x);
+        WriteCoord(MSG_BROADCAST, globaldef002033_y);
+        WriteCoord(MSG_BROADCAST, globaldef002033_z);
+    }
+    
+};
+
+
+// func000252
+// function begins at statement 6498, parm_start=5415
+// OP_LOAD_V	28	113	5418
+// OP_STORE_V	5418	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	5415	0
+// OP_CALL0	457	0	0
+// OP_SUB_F	1	539	5421
+// OP_MUL_VF	62	5421	5422
+// OP_ADD_V	5415	5422	5425
+// OP_CALL0	457	0	0
+// OP_SUB_F	1	539	5428
+// OP_MUL_VF	65	5428	5429
+// OP_ADD_V	5425	5429	5432
+// OP_STORE_V	5432	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	5415	0
+// OP_MUL_FV	216	74	5435
+// OP_ADD_V	5415	5435	5438
+// OP_STORE_V	5438	5415	0
+// OP_MUL_VF	5415	2044	5441
+// OP_STORE_V	5441	5415	0
+// OP_RETURN	5415	0	0
+// OP_DONE	0	0	0
+vector () func000252 = 
+{
+    local vector globaldef002040;
+    globaldef002040 = normalize(self.velocity);
+    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - GLOBALDEFFIVETWOTWO))) + (v_right * (random() - GLOBALDEFFIVETWOTWO)));
+    globaldef002040 = globaldef002040 + (FL_SWIM * trace_plane_normal);
+    globaldef002040 = globaldef002040 * 200;
+    return globaldef002040;
+};
+
+
+// func000253
+// function begins at statement 6520, parm_start=5445
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	5451	0
+// OP_ADDRESS	5451	201	5453
+// OP_STOREP_ENT	28	5453	0
+// OP_ADDRESS	5451	103	5454
+// OP_STOREP_F	235	5454	0
+// OP_ADDRESS	5451	104	5455
+// OP_STOREP_F	237	5455	0
+// OP_LOAD_V	28	117	5456
+// OP_STORE_V	5456	4	0
+// OP_CALL1	452	0	0
+// OP_ADDRESS	5451	113	5459
+// OP_STOREP_V	5448	5459	0
+// OP_ADDRESS	5451	116	5462
+// OP_LOAD_F	5451	116	5463
+// OP_ADD_F	5463	738	5464
+// OP_CALL0	457	0	0
+// OP_MUL_F	1470	1	5465
+// OP_ADD_F	5464	5465	5466
+// OP_STOREP_F	5466	5462	0
+// OP_ADDRESS	5451	121	5467
+// OP_STOREP_V	5470	5467	0
+// OP_ADDRESS	5451	150	5473
+// OP_ADD_F	31	214	5474
+// OP_STOREP_F	5474	5473	0
+// OP_ADDRESS	5451	148	5475
+// OP_STOREP_FNC	521	5475	0
+// OP_STORE_V	5451	4	0
+// OP_STORE_V	5476	7	0
+// OP_CALL2	454	0	0
+// OP_STORE_V	5451	4	0
+// OP_STORE_V	286	7	0
+// OP_STORE_V	286	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	5451	4	0
+// OP_STORE_V	5445	7	0
+// OP_CALL2	453	0	0
+// OP_DONE	0	0	0
+void (vector globaldef002045, vector globaldef002049) func000253 = 
+{
+    local entity globaldef002053;
+    local entity globaldef002054;
+    globaldef002053 = spawn();
+    globaldef002053.owner = self;
+    globaldef002053.movetype = MOVETYPE_BOUNCE;
+    globaldef002053.solid = SOLID_NOT;
+    makevectors(self.angles);
+    globaldef002053.velocity = globaldef002049;
+    globaldef002053.velocity_z = (globaldef002053.velocity_z + GLOBALDEFSEVENTWOONE) + (50 * random());
+    globaldef002053.avelocity = '3000 1000 2000';
+    globaldef002053.nextthink = time + TRUE;
+    globaldef002053.think = SUB_Remove;
+    setmodel(globaldef002053, "progs/zom_gib.mdl");
+    setsize(globaldef002053, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(globaldef002053, globaldef002045);
+};
+
+
+// SpawnBlood
+// function begins at statement 6558, parm_start=5477
+// OP_STORE_V	5477	4	0
+// OP_MUL_VF	5480	3036	5484
+// OP_STORE_V	5484	7	0
+// OP_STORE_V	5487	10	0
+// OP_MUL_F	5483	216	5488
+// OP_STORE_V	5488	13	0
+// OP_CALL4	493	0	0
+// OP_DONE	0	0	0
+void (vector org, vector vel, float damage) SpawnBlood = 
+{
+    particle(org, vel * 0.1, 73, damage * FL_SWIM);
+};
+
+
+// func000255
+// function begins at statement 6566, parm_start=5490
+// OP_CALL0	5414	0	0
+// OP_MUL_VF	1	3267	5494
+// OP_STORE_V	5494	5491	0
+// OP_LOAD_V	28	105	5497
+// OP_MUL_VF	5491	5500	5501
+// OP_ADD_V	5497	5501	5504
+// OP_STORE_V	5504	4	0
+// OP_STORE_V	5491	7	0
+// OP_STORE_V	5490	10	0
+// OP_CALL3	5355	0	0
+// OP_DONE	0	0	0
+void (float globaldef002068) func000255 = 
+{
+    local vector globaldef002069;
+    globaldef002069 = func000252() * 0.2;
+    SpawnBlood(self.origin + (globaldef002069 * 0.01), globaldef002069, globaldef002068);
+};
+
 
 // SpawnChunk
 // function begins at statement 6577, parm_start=5508
@@ -143,7 +444,7 @@ void (float globaldef002092, vector globaldef002093) func000260 =
     globaldef002101 = trace_endpos - (globaldef002093 * MOVETYPE_STEP);
     if(trace_ent.takedamage)
     {
-        func000254(globaldef002101, globaldef002097 * 0.2, globaldef002092);
+        SpawnBlood(globaldef002101, globaldef002097 * 0.2, globaldef002092);
         func000259(trace_ent, globaldef002092);
     }
     else
@@ -1705,7 +2006,7 @@ void () W_SetCurrentAmmo =
     
     if(self.classname == "player")
     {
-        func000408();
+        player_run();
     }
     
     self.items = self.items - (self.items & (((IT_SHELLS | IT_NAILS) | IT_ROCKETS) | IT_CELLS));
@@ -2853,5 +3154,219 @@ void () func000290 =
 void () ServerflagsCommand = 
 {
     serverflags = (serverflags * FL_SWIM) + TRUE;
+};
+
+
+// func000292
+// function begins at statement 8092, parm_start=6470
+// OP_OR	35	36	6470
+// OP_IFNOT	6470	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	388	6471
+// OP_STOREP_F	214	6471	0
+// OP_ADDRESS	28	382	6472
+// OP_ADD_F	31	309	6473
+// OP_STOREP_F	6473	6472	0
+// OP_ADDRESS	28	162	6474
+// OP_LOAD_F	28	162	6475
+// OP_BITOR	6475	275	6476
+// OP_STOREP_F	6476	6474	0
+// OP_STORE_V	6477	4	0
+// OP_CALL1	473	0	0
+// OP_DONE	0	0	0
+void () func000292 = 
+{
+    
+    if(deathmatch || coop)
+    {
+        return;
+    }
+    
+    self.super_time = TRUE;
+    self.super_damage_finished = time + SVC_INTERMISSION;
+    self.items = self.items | IT_QUAD;
+    dprint("quad cheat\n");
+};
+
+
+// func000293
+// function begins at statement 8107, parm_start=6479
+// OP_LOAD_F	28	173	6479
+// OP_GE	6479	214	6480
+// OP_LOAD_F	28	173	6481
+// OP_LE	6481	217	6482
+// OP_AND	6480	6482	6483
+// OP_IFNOT	6483	3	0
+// OP_CALL0	6309	0	0
+// OP_GOTO	20	0	0
+// OP_LOAD_F	28	173	6484
+// OP_EQ_F	6484	234	6485
+// OP_IFNOT	6485	3	0
+// OP_CALL0	6351	0	0
+// OP_GOTO	15	0	0
+// OP_LOAD_F	28	173	6486
+// OP_EQ_F	6486	235	6487
+// OP_IFNOT	6487	3	0
+// OP_CALL0	6373	0	0
+// OP_GOTO	10	0	0
+// OP_LOAD_F	28	173	6488
+// OP_EQ_F	6488	791	6489
+// OP_IFNOT	6489	3	0
+// OP_CALL0	6419	0	0
+// OP_GOTO	5	0	0
+// OP_LOAD_F	28	173	6490
+// OP_EQ_F	6490	6491	6492
+// OP_IFNOT	6492	2	0
+// OP_CALL0	6469	0	0
+// OP_LOAD_F	28	173	6493
+// OP_EQ_F	6493	738	6494
+// OP_IFNOT	6494	2	0
+// OP_CALL0	2815	0	0
+// OP_CALL0	1221	0	0
+// OP_ADDRESS	28	173	6495
+// OP_STOREP_F	213	6495	0
+// OP_DONE	0	0	0
+void () func000293 = 
+{
+    if((self.impulse >= TRUE) && (self.impulse <= FL_CLIENT))
+    {
+        func000287();
+    }
+    else
+    {
+        if(self.impulse == MOVETYPE_FLYMISSILE)
+        {
+            func000288();
+        }
+        else
+        {
+            if(self.impulse == MOVETYPE_BOUNCE)
+            {
+                func000289();
+            }
+            else
+            {
+                if(self.impulse == GLOBALDEFSEVENSEVENFOUR)
+                {
+                    func000290();
+                }
+                else
+                {
+                    
+                    if(self.impulse == 255)
+                    {
+                        func000292();
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    if(self.impulse == GLOBALDEFSEVENTWOONE)
+    {
+        func000145();
+    }
+    
+    func000372();
+    self.impulse = FALSE;
+};
+
+
+// func000294
+// function begins at statement 8142, parm_start=6497
+// OP_LOAD_F	28	378	6497
+// OP_LT	31	6497	6498
+// OP_IFNOT	6498	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	6478	0	0
+// OP_BITAND	821	767	6499
+// OP_IFNOT	6499	8	0
+// OP_IFNOT	816	2	0
+// OP_RETURN	0	0	0
+// OP_NE_E	28	541	6500
+// OP_NE_E	28	542	6501
+// OP_AND	6500	6501	6502
+// OP_IFNOT	6502	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	170	6503
+// OP_IFNOT	6503	3	0
+// OP_CALL0	5356	0	0
+// OP_CALL0	6266	0	0
+// OP_DONE	0	0	0
+void () func000294 = 
+{
+    
+    if(time < self.attack_finished)
+    {
+        return;
+    }
+    
+    func000293();
+    
+    if(globaldef000804 & globaldef000750)
+    {
+        
+        if(globaldef000799)
+        {
+            return;
+        }
+        
+        
+        if((self != globaldef000524) && (self != globaldef000525))
+        {
+            return;
+        }
+        
+    }
+    
+    
+    if(self.button0)
+    {
+        SuperDamageSound();
+        func000286();
+    }
+    
+};
+
+
+// SuperDamageSound
+// function begins at statement 8161, parm_start=6504
+// OP_LOAD_F	28	382	6504
+// OP_GT	6504	31	6505
+// OP_IFNOT	6505	13	0
+// OP_LOAD_F	28	389	6506
+// OP_LT	6506	31	6507
+// OP_IFNOT	6507	10	0
+// OP_ADDRESS	28	389	6508
+// OP_ADD_F	31	214	6509
+// OP_STOREP_F	6509	6508	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	5078	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_RETURN	0	0	0
+// OP_DONE	0	0	0
+void () SuperDamageSound = 
+{
+    
+    if(self.super_damage_finished > time)
+    {
+        
+        if(self.super_sound < time)
+        {
+            self.super_sound = time + TRUE;
+            sound(self, CHAN_BODY, "items/damage3.wav", TRUE, ATTN_NORM);
+        }
+        
+    }
+    
+    return;
 };
 

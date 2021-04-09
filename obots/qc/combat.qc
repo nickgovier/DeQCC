@@ -246,14 +246,14 @@ void (entity targ, entity attacker) Killed =
     ClientObituary(self, attacker);
     if(attacker.classname == "bot")
     {
-        func002263(attacker.field000285, attacker.frags);
+        msgUpdateClientFragsToAll(attacker.clientnumber, attacker.frags);
     }
     else
     {
         
         if(attacker.owner.classname == "bot")
         {
-            func002263(attacker.owner.field000285, attacker.owner.frags);
+            msgUpdateClientFragsToAll(attacker.owner.clientnumber, attacker.owner.frags);
         }
         
     }
@@ -261,7 +261,7 @@ void (entity targ, entity attacker) Killed =
     
     if(targ.classname == "bot")
     {
-        func002263(targ.field000285, targ.frags);
+        msgUpdateClientFragsToAll(targ.clientnumber, targ.frags);
     }
     
     
