@@ -285,7 +285,7 @@ void () func000464 =
     
     if(deathmatch || coop)
     {
-        func000244();
+        DropBackpack();
     }
     
     self.weaponmodel = "";
@@ -297,7 +297,7 @@ void () func000464 =
     
     if(self.velocity_z < MOVETYPE_BOUNCE)
     {
-        self.velocity_z = self.velocity_z + (random() * globaldef000523);
+        self.velocity_z = self.velocity_z + (random() * GLOBALDEFFIVETWOTHREE);
     }
     
     

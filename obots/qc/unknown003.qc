@@ -88,7 +88,7 @@ void () func000293 =
             }
             else
             {
-                if(self.impulse == globaldef000774)
+                if(self.impulse == GLOBALDEFSEVENSEVENFOUR)
                 {
                     func000290();
                 }
@@ -109,7 +109,7 @@ void () func000293 =
     }
     
     
-    if(self.impulse == globaldef000721)
+    if(self.impulse == GLOBALDEFSEVENTWOONE)
     {
         func000145();
     }

@@ -419,7 +419,7 @@ void () func000728 = [59, func000729]
 // OP_DONE	0	0	0
 void () func000729 = [60, func000694]
 {
-    ai_charge(globaldef000774);
+    ai_charge(GLOBALDEFSEVENSEVENFOUR);
 };
 
 
@@ -1055,7 +1055,7 @@ void () func000785 = [114, func000786]
 {
     self.solid = SOLID_NOT;
     self.ammo_rockets = FL_SWIM;
-    func000244();
+    DropBackpack();
 };
 
 
@@ -1192,7 +1192,7 @@ void () func000799 = [128, func000800]
 {
     self.solid = SOLID_NOT;
     self.ammo_rockets = FL_SWIM;
-    func000244();
+    DropBackpack();
 };
 
 

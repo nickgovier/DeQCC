@@ -79,8 +79,8 @@ void () func002071 =
     globaldef005430 = self.origin - (FL_CLIENT * normalize(self.velocity));
     if(other.health)
     {
-        func000254(globaldef005430, self.velocity * 0.2, globaldef000748);
-        T_Damage(other, self, self.owner, globaldef000748);
+        func000254(globaldef005430, self.velocity * 0.2, GLOBALDEFSEVENFOUREIGHT);
+        T_Damage(other, self, self.owner, GLOBALDEFSEVENFOUREIGHT);
     }
     else
     {
@@ -547,7 +547,7 @@ void () func002099 = [25, func002100]
 // OP_DONE	0	0	0
 void () func002100 = [26, func002101]
 {
-    ai_run(globaldef000774);
+    ai_run(GLOBALDEFSEVENSEVENFOUR);
 };
 
 
@@ -1232,7 +1232,7 @@ void () func002158 = [43, func002159]
 {
     self.solid = SOLID_NOT;
     self.ammo_cells = MOVETYPE_FLY;
-    func000244();
+    DropBackpack();
 };
 
 
@@ -1384,7 +1384,7 @@ void () func002172 = [57, func002173]
 {
     self.solid = SOLID_NOT;
     self.ammo_cells = MOVETYPE_FLY;
-    func000244();
+    DropBackpack();
 };
 
 

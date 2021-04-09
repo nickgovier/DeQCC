@@ -2198,7 +2198,7 @@ float (float globaldef005871) func002280 =
             {
                 if(globaldef005871 == globaldef005785)
                 {
-                    return (globaldef000763 * FL_INWATER) + globaldef000774;
+                    return (globaldef000763 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
                 }
                 else
                 {
@@ -2228,13 +2228,13 @@ float (float globaldef005871) func002280 =
                                 {
                                     if(globaldef005871 == globaldef005790)
                                     {
-                                        return (globaldef000774 * FL_INWATER) + globaldef000774;
+                                        return (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
                                     }
                                     else
                                     {
                                         if(globaldef005871 == globaldef005791)
                                         {
-                                            return (globaldef000765 * FL_INWATER) + globaldef000774;
+                                            return (globaldef000765 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
                                         }
                                         else
                                         {
@@ -2246,7 +2246,7 @@ float (float globaldef005871) func002280 =
                                             {
                                                 if(globaldef005871 == globaldef005793)
                                                 {
-                                                    return (globaldef000774 * FL_INWATER) + globaldef000765;
+                                                    return (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + globaldef000765;
                                                 }
                                                 else
                                                 {
@@ -2306,7 +2306,7 @@ float (float globaldef005871) func002280 =
                                                                                     {
                                                                                         if(globaldef005871 == globaldef005803)
                                                                                         {
-                                                                                            return (globaldef000768 * FL_INWATER) + globaldef000774;
+                                                                                            return (globaldef000768 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
                                                                                         }
                                                                                         else
                                                                                         {
@@ -10690,7 +10690,7 @@ void (entity globaldef006144) func002284 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= globaldef000774)
+                                                                if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                 {
                                                                     func002369(globaldef006144, "Hey, catch this rocket", globaldef005812, FALSE);
                                                                 }
@@ -10708,7 +10708,7 @@ void (entity globaldef006144) func002284 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= globaldef000748)
+                                                                            if(globaldef006145 <= GLOBALDEFSEVENFOUREIGHT)
                                                                             {
                                                                                 func002369(globaldef006144, "Lemme at ya", globaldef005812, FL_SWIM);
                                                                             }
@@ -10945,7 +10945,7 @@ void (entity globaldef006144) func002284 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= globaldef000774)
+                                                                        if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                         {
                                                                             func002369(globaldef006144, "jlHtaHbogh naDev", globaldef005812, MOVETYPE_WALK);
                                                                         }
@@ -10964,7 +10964,7 @@ void (entity globaldef006144) func002284 =
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= globaldef000748)
+                                                                                    if(globaldef006145 <= GLOBALDEFSEVENFOUREIGHT)
                                                                                     {
                                                                                         func002370(globaldef006144, globaldef006147, " qaStaH nuq jay'", globaldef005811, MOVETYPE_WALK);
                                                                                     }
@@ -11254,7 +11254,7 @@ void (entity globaldef006144) func002284 =
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= globaldef000774)
+                                                                                    if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                                     {
                                                                                         func002369(globaldef006144, "A bull with a cleaver, huntin' for beaver", globaldef005812, MOVETYPE_WALK);
                                                                                     }
@@ -11613,7 +11613,7 @@ void (entity globaldef006144) func002284 =
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= globaldef000774)
+                                                                                                    if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                                                     {
                                                                                                         func002369(globaldef006144, "take It!!", globaldef005812, FL_SWIM);
                                                                                                     }
@@ -11797,7 +11797,7 @@ void (entity globaldef006144) func002284 =
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= globaldef000774)
+                                                                                                            if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                                                             {
                                                                                                                 func002369(globaldef006144, "Sensei was wrong about diz place, dudes", globaldef005812, MOVETYPE_FLY);
                                                                                                             }
@@ -12696,7 +12696,7 @@ void (entity globaldef006144) func002284 =
                                                                                                 {
                                                                                                     if(globaldef006144.field000286 == globaldef005802)
                                                                                                     {
-                                                                                                        globaldef006145 = floor(globaldef006145 * globaldef000748);
+                                                                                                        globaldef006145 = floor(globaldef006145 * GLOBALDEFSEVENFOUREIGHT);
                                                                                                         if(globaldef006145 <= FALSE)
                                                                                                         {
                                                                                                             func002369(globaldef006144, "Men are such babies", globaldef005811, MOVETYPE_STEP);
@@ -12769,7 +12769,7 @@ void (entity globaldef006144) func002284 =
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
-                                                                                                                                                        if(globaldef006145 <= globaldef000774)
+                                                                                                                                                        if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
                                                                                                                                                         {
                                                                                                                                                             func002371(globaldef006144, "My, ", globaldef006147, " what a small broomstick you have", globaldef005810, MOVETYPE_STEP);
                                                                                                                                                         }
@@ -13493,7 +13493,7 @@ void (entity globaldef006474) func002286 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006475 <= globaldef000774)
+                                                    if(globaldef006475 <= GLOBALDEFSEVENSEVENFOUR)
                                                     {
                                                         func002366(globaldef006474, "wow", globaldef005812);
                                                     }
@@ -13511,7 +13511,7 @@ void (entity globaldef006474) func002286 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006475 <= globaldef000748)
+                                                                if(globaldef006475 <= GLOBALDEFSEVENFOUREIGHT)
                                                                 {
                                                                     func002366(globaldef006474, "this rocks", globaldef005812);
                                                                 }
@@ -13686,7 +13686,7 @@ float (entity globaldef006499, entity globaldef006500, float globaldef006501) fu
 // OP_DONE	0	0	0
 float (entity globaldef006502, entity globaldef006503) func002289 = 
 {
-    if(func002288(globaldef006502, globaldef006503, globaldef000774))
+    if(func002288(globaldef006502, globaldef006503, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -13755,7 +13755,7 @@ float (entity globaldef006502, entity globaldef006503) func002289 =
 // OP_DONE	0	0	0
 float (entity globaldef006504, entity globaldef006505) func002290 = 
 {
-    if(func002288(globaldef006504, globaldef006505, globaldef000774))
+    if(func002288(globaldef006504, globaldef006505, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -13805,7 +13805,7 @@ float (entity globaldef006504, entity globaldef006505) func002290 =
 // OP_DONE	0	0	0
 float (entity globaldef006506, entity globaldef006507) func002291 = 
 {
-    if(func002288(globaldef006506, globaldef006507, globaldef000774))
+    if(func002288(globaldef006506, globaldef006507, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -13852,7 +13852,7 @@ float (entity globaldef006506, entity globaldef006507) func002291 =
 // OP_DONE	0	0	0
 float (entity globaldef006508, entity globaldef006509) func002292 = 
 {
-    if(func002288(globaldef006508, globaldef006509, globaldef000774))
+    if(func002288(globaldef006508, globaldef006509, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -13909,7 +13909,7 @@ float (entity globaldef006508, entity globaldef006509) func002292 =
 // OP_DONE	0	0	0
 float (entity globaldef006510, entity globaldef006511) func002293 = 
 {
-    if(func002288(globaldef006510, globaldef006511, globaldef000774))
+    if(func002288(globaldef006510, globaldef006511, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -13961,7 +13961,7 @@ float (entity globaldef006510, entity globaldef006511) func002293 =
 // OP_DONE	0	0	0
 float (entity globaldef006512, entity globaldef006513) func002294 = 
 {
-    if(func002288(globaldef006512, globaldef006513, globaldef000774))
+    if(func002288(globaldef006512, globaldef006513, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -14046,7 +14046,7 @@ float (entity globaldef006514, entity globaldef006515) func002295 =
     local vector globaldef006516;
     local vector globaldef006520;
     
-    if(func002288(globaldef006514, globaldef006515, globaldef000774))
+    if(func002288(globaldef006514, globaldef006515, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -14142,7 +14142,7 @@ float (entity globaldef006524, entity globaldef006525) func002296 =
         
     }
     
-    if(func002288(globaldef006524, globaldef006525, globaldef000774))
+    if(func002288(globaldef006524, globaldef006525, GLOBALDEFSEVENSEVENFOUR))
     {
         return FALSE;
     }
@@ -14898,7 +14898,7 @@ float (entity globaldef006591, entity globaldef006592) func002328 =
         return 83;
     }
     
-    return globaldef000748;
+    return GLOBALDEFSEVENFOUREIGHT;
 };
 
 
@@ -16244,7 +16244,7 @@ void (entity globaldef006660, entity globaldef006661) func002344 =
     globaldef006660.angles = globaldef006662.mangle;
     globaldef006660.fixangle = TRUE;
     globaldef006660.teleport_time = time + 0.7;
-    globaldef006660.velocity = v_forward * globaldef000523;
+    globaldef006660.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
 };
 
 
@@ -17477,7 +17477,7 @@ void (entity globaldef006785) func002358 =
     
     if(globaldef006785.classname != "observer")
     {
-        func000092(globaldef006785, "not in observer mode\n");
+        sprint(globaldef006785, "not in observer mode\n");
         return;
     }
     
@@ -17506,7 +17506,7 @@ void (entity globaldef006785) func002358 =
         
         if(globaldef006785.field000344 == globaldef006785)
         {
-            func000092(globaldef006785, "no players to view from\n");
+            sprint(globaldef006785, "no players to view from\n");
             globaldef006786 = find(world, classname, "bot");
             if(globaldef006786)
             {
@@ -17514,7 +17514,7 @@ void (entity globaldef006785) func002358 =
             }
             else
             {
-                func000092(globaldef006785, "no bots to view from\n");
+                sprint(globaldef006785, "no bots to view from\n");
             }
             
         }
@@ -17941,7 +17941,7 @@ void (entity globaldef006798) func002365 =
         globaldef006798.ammo_nails = FALSE;
         globaldef006798.ammo_rockets = FALSE;
         globaldef006798.ammo_cells = FALSE;
-        globaldef006798.weapon = globaldef001900;
+        globaldef006798.weapon = WEAPON_SHOTGUN;
         globaldef006798.armortype = FALSE;
         globaldef006798.items = globaldef006798.items - (globaldef006798.items & IT_INVISIBILITY);
         globaldef006798.invisible_finished = FALSE;
@@ -19378,7 +19378,7 @@ vector (entity globaldef006915) func002385 =
     if(globaldef006936 > TRUE)
     {
         
-        if(globaldef006936 < globaldef000774)
+        if(globaldef006936 < GLOBALDEFSEVENSEVENFOUR)
         {
             globaldef006920_z = globaldef006920_z + (globaldef000780 * (globaldef006936 - TRUE));
         }
@@ -20087,7 +20087,7 @@ void (entity globaldef006975) func002391 =
             globaldef006975.weapon = IT_AXE;
             globaldef006989 = self;
             self = globaldef006975;
-            func000283();
+            W_SetCurrentAmmo();
             self = globaldef006989;
             func002390(globaldef006975);
             return;
@@ -20105,7 +20105,7 @@ void (entity globaldef006975) func002391 =
             globaldef006975.weapon = IT_SHOTGUN;
             globaldef006989 = self;
             self = globaldef006975;
-            func000283();
+            W_SetCurrentAmmo();
             self = globaldef006989;
             func002390(globaldef006975);
         }
@@ -20123,7 +20123,7 @@ void (entity globaldef006975) func002391 =
             globaldef006975.weapon = IT_NAILGUN;
             globaldef006989 = self;
             self = globaldef006975;
-            func000283();
+            W_SetCurrentAmmo();
             self = globaldef006989;
             func002390(globaldef006975);
         }
@@ -20315,7 +20315,7 @@ float (entity globaldef007007, entity globaldef007008) func002394 =
     if(func002393(globaldef007013_x, FALSE - globaldef007007.v_angle_x, 90 + (globaldef007007.field000265 * MOVETYPE_BOUNCE)))
     {
         
-        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * globaldef000748)))
+        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * GLOBALDEFSEVENFOUREIGHT)))
         {
             return TRUE;
         }
@@ -20396,7 +20396,7 @@ void (entity globaldef007024) func002396 =
     local entity globaldef007025;
     globaldef007025 = self;
     self = globaldef007024;
-    func000283();
+    W_SetCurrentAmmo();
     self = globaldef007025;
 };
 
@@ -22476,7 +22476,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.movetype = MOVETYPE_STEP;
     globaldef007106.show_hostile = FALSE;
     globaldef007106.max_health = 100;
-    globaldef007106.air_finished = time + globaldef000774;
+    globaldef007106.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
     globaldef007106.dmg = TRUE;
     globaldef007106.super_damage_finished = FALSE;
     globaldef007106.radsuit_finished = FALSE;
@@ -22514,7 +22514,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.ammo_nails = FALSE;
     globaldef007106.ammo_rockets = FALSE;
     globaldef007106.ammo_cells = FALSE;
-    globaldef007106.weapon = globaldef001900;
+    globaldef007106.weapon = WEAPON_SHOTGUN;
     globaldef007106.armortype = FALSE;
     
     if(deathmatch == MOVETYPE_STEP)
@@ -22524,7 +22524,7 @@ void (entity globaldef007106) func002418 =
     
     globaldef007108 = self;
     self = globaldef007106;
-    func000283();
+    W_SetCurrentAmmo();
     self = globaldef007108;
     globaldef007106.search_time = time;
     globaldef007106.attack_finished = time;
@@ -23002,7 +23002,7 @@ void (entity globaldef007123, float globaldef007124) func002426 =
         {
             if(globaldef007124 == MOVETYPE_WALK)
             {
-                globaldef007123.field000287 = (globaldef000774 * FL_INWATER) + globaldef000774;
+                globaldef007123.field000287 = (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
             }
             else
             {
@@ -24611,7 +24611,7 @@ float (entity globaldef007245, vector globaldef007246, float globaldef007250) fu
                 globaldef007140 = globaldef007341;
                 globaldef007141 = globaldef007342 * 0.1;
                 
-                if((vlen(globaldef007307 - globaldef007245.origin)) > globaldef000748)
+                if((vlen(globaldef007307 - globaldef007245.origin)) > GLOBALDEFSEVENFOUREIGHT)
                 {
                     return TRUE;
                 }
@@ -25711,14 +25711,14 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
     {
         globaldef007488 = globaldef007456.origin;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
         traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
-        globaldef007466 = globaldef007488_z - (trace_fraction * globaldef000721);
+        globaldef007466 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
         globaldef007488 = globaldef007456.origin + globaldef007468;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
         traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
-        globaldef007465 = globaldef007488_z - (trace_fraction * globaldef000721);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -25727,9 +25727,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007472;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
         traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
-        globaldef007465 = globaldef007488_z - (trace_fraction * globaldef000721);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -25738,9 +25738,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007476;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
         traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
-        globaldef007465 = globaldef007488_z - (trace_fraction * globaldef000721);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -25749,9 +25749,9 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         
         globaldef007488 = globaldef007456.origin + globaldef007472;
         globaldef007492 = globaldef007488;
-        globaldef007492_z = globaldef007492_z - globaldef000721;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
         traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
-        globaldef007465 = globaldef007488_z - (trace_fraction * globaldef000721);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
         
         if(globaldef007465 > globaldef007466)
         {
@@ -25785,7 +25785,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
     if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
     {
         globaldef007463 = trace_fraction + 0.032;
-        globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
+        globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
         globaldef007492 = globaldef007488;
         globaldef007492_z = globaldef007492_z - 1000;
         if(pointcontents(globaldef007488) == CONTENT_SOLID)
@@ -25802,7 +25802,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
         if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
         {
             globaldef007463 = trace_fraction + 0.032;
-            globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
+            globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
             globaldef007492 = globaldef007488;
             globaldef007492_z = globaldef007492_z - 1000;
             if(pointcontents(globaldef007488) == CONTENT_SOLID)
@@ -25819,7 +25819,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
             if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
             {
                 globaldef007463 = trace_fraction + 0.032;
-                globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
+                globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
                 globaldef007492 = globaldef007488;
                 globaldef007492_z = globaldef007492_z - 1000;
                 if(pointcontents(globaldef007488) == CONTENT_SOLID)
@@ -25836,7 +25836,7 @@ float (entity globaldef007456, vector globaldef007457, float globaldef007461) fu
                 if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
                 {
                     globaldef007463 = trace_fraction + 0.032;
-                    globaldef007488 = globaldef007488 + (globaldef007457 * globaldef000748);
+                    globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
                     globaldef007492 = globaldef007488;
                     globaldef007492_z = globaldef007492_z - 1000;
                     if(pointcontents(globaldef007488) == CONTENT_SOLID)
@@ -28205,7 +28205,7 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     }
     
     
-    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * globaldef000721) * (globaldef000724 / globaldef000782)))
+    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEFSEVENTWOONE) * (globaldef000724 / globaldef000782)))
     {
         return FALSE;
     }
@@ -28669,7 +28669,7 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
         {
             globaldef007802 = globaldef007802 + TRUE;
             
-            if(globaldef007802 > globaldef000748)
+            if(globaldef007802 > GLOBALDEFSEVENFOUREIGHT)
             {
                 return FALSE;
             }
@@ -28971,7 +28971,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
     else
     {
         
-        if(globaldef007836 > globaldef000721)
+        if(globaldef007836 > GLOBALDEFSEVENTWOONE)
         {
             return FALSE;
         }
@@ -30204,7 +30204,7 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
                     traceline(globaldef007930, globaldef007930 + (GLOBALDEFSEVENTWONINE * v_forward), TRUE, globaldef007920);
                     globaldef007930 = globaldef007930 + ((39 * trace_fraction) * v_forward);
                     traceline(globaldef007930, globaldef007930 + '0 0 16', TRUE, globaldef007920);
-                    globaldef007930_z = globaldef007930_z + (globaldef000748 * trace_fraction);
+                    globaldef007930_z = globaldef007930_z + (GLOBALDEFSEVENFOUREIGHT * trace_fraction);
                     globaldef007940 = globaldef007939;
                     globaldef007934 = globaldef007930;
                 }
@@ -30614,7 +30614,7 @@ float (entity globaldef007970, entity globaldef007971) func002481 =
             }
             
             
-            if((globaldef007970.field000277 + globaldef000748) > time)
+            if((globaldef007970.field000277 + GLOBALDEFSEVENFOUREIGHT) > time)
             {
                 return FALSE;
             }
@@ -31246,7 +31246,7 @@ entity (entity globaldef008005, entity globaldef008006) func002484 =
     if(globaldef008005.field000265 < 2.8)
     {
         
-        if((vlen(globaldef008006.origin - globaldef008005.origin)) > globaldef000721)
+        if((vlen(globaldef008006.origin - globaldef008005.origin)) > GLOBALDEFSEVENTWOONE)
         {
             
             if(!func002394(globaldef008005, globaldef008006))
@@ -31953,7 +31953,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
                     
                     if(trace_fraction != TRUE)
                     {
-                        globaldef008051 = globaldef008051 + globaldef000523;
+                        globaldef008051 = globaldef008051 + GLOBALDEFFIVETWOTHREE;
                     }
                     
                     
@@ -34778,7 +34778,7 @@ void () func002524 = [12, func002524]
     if(self.weapon == IT_AXE)
     {
         
-        if(self.walkframe >= globaldef000774)
+        if(self.walkframe >= GLOBALDEFSEVENSEVENFOUR)
         {
             self.walkframe = FALSE;
         }
@@ -34793,7 +34793,7 @@ void () func002524 = [12, func002524]
             self.walkframe = FALSE;
         }
         
-        self.frame = globaldef000774 + self.walkframe;
+        self.frame = GLOBALDEFSEVENSEVENFOUR + self.walkframe;
     }
     
     self.walkframe = self.walkframe + TRUE;
@@ -36872,7 +36872,7 @@ void () func002637 =
         self.modelindex = globaldef000509;
     }
     
-    func000244();
+    DropBackpack();
     self.weaponmodel = "";
     self.view_ofs = '0 0 -8';
     self.deadflag = DEAD_DYING;
@@ -44953,7 +44953,7 @@ void () func002638 =
         func002668('-560 1384 2', 21, MOVETYPE_FLY, "weapon_nailgun");
         func002669(21, FL_SWIM, 22, FALSE, FALSE);
         func002668('456 824 2', 20, MOVETYPE_FLY, "item_health");
-        func002669(20, globaldef000774, 65, FALSE, FALSE);
+        func002669(20, GLOBALDEFSEVENSEVENFOUR, 65, FALSE, FALSE);
         func002668('1091.9 1197.8 50', 19, MOVETYPE_WALK, "");
         func002669(19, 18, 45, FALSE, FALSE);
         func002668('1093.4 951.9 50', 18, MOVETYPE_WALK, "");
@@ -44961,17 +44961,17 @@ void () func002638 =
         func002668('1088 704 50', 17, MOVETYPE_FLY, "weapon_nailgun");
         func002669(17, FL_INWATER, 18, FALSE, FALSE);
         func002668('911.5 742.6 38', FL_INWATER, MOVETYPE_WALK, "");
-        func002669(FL_INWATER, globaldef000748, 17, 18, FALSE);
-        func002668('878.9 743.4 26', globaldef000748, MOVETYPE_WALK, "");
-        func002669(globaldef000748, 14, FL_INWATER, FALSE, FALSE);
+        func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 18, FALSE);
+        func002668('878.9 743.4 26', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+        func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
         func002668('829.7 744.6 14', 14, MOVETYPE_WALK, "");
-        func002669(14, globaldef000775, globaldef000748, FL_INWATER, FALSE);
+        func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FL_INWATER, FALSE);
         func002668('583.8 729.6 2', globaldef000775, MOVETYPE_WALK, "");
-        func002669(globaldef000775, globaldef000774, 14, FALSE, FALSE);
-        func002668('511.3 592 2', globaldef000774, MOVETYPE_WALK, "");
-        func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, globaldef000775, 20, FALSE);
+        func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
+        func002668('511.3 592 2', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+        func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, 20, FALSE);
         func002668('265.3 577.3 2', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, globaldef000774, FALSE, FALSE);
+        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
         func002668('54.5 708.4 2', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
         func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, 67, FALSE);
         func002668('-190.5 749.1 2', MOVETYPE_FLYMISSILE, MOVETYPE_WALK, "");
@@ -45010,7 +45010,7 @@ void () func002638 =
             func002668('1793.6 -371.2 162', FL_NOTARGET, MOVETYPE_WALK, "");
             func002669(FL_NOTARGET, 19, 20, 122, FALSE);
             func002668('1326.3 -425.4 162', 127, MOVETYPE_WALK, "");
-            func002669(127, globaldef000748, 18, FL_INWATER, 14);
+            func002669(127, GLOBALDEFSEVENFOUREIGHT, 18, FL_INWATER, 14);
             func002668('2544 -32 -85.9', TRUE, MOVETYPE_WALK, "");
             func002669(TRUE, MOVETYPE_FLY, 112, 132, FALSE);
             func002668('2301.1 -35.4 -141.8', FL_SWIM, MOVETYPE_WALK, "");
@@ -45032,22 +45032,22 @@ void () func002638 =
             func002668('2056 -936 322', MOVETYPE_BOUNCE, MOVETYPE_FLY, "weapon_grenadelauncher");
             func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, FALSE, FALSE, FALSE);
             func002668('1414.6 -1023 322', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-            func002669(MOVETYPE_BOUNCEMISSILE, globaldef000774, MOVETYPE_PUSH, FALSE, FALSE);
-            func002668('1316.5 -799.4 322', globaldef000774, MOVETYPE_WALK, "");
-            func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, 14, FALSE, FALSE);
+            func002669(MOVETYPE_BOUNCEMISSILE, GLOBALDEFSEVENSEVENFOUR, MOVETYPE_PUSH, FALSE, FALSE);
+            func002668('1316.5 -799.4 322', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+            func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, 14, FALSE, FALSE);
             func002668('1320 -656 170', globaldef000775, FL_CLIENT, "");
-            func002669(globaldef000775, globaldef000774, globaldef000748, FALSE, FALSE);
+            func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
             func002668('1320 -656 322', 14, FL_SWIM, "");
-            func002669(14, globaldef000775, globaldef000774, FALSE, FALSE);
-            func002668('1305.8 -569.9 162', globaldef000748, MOVETYPE_WALK, "");
-            func002669(globaldef000748, 14, FL_INWATER, 18, 127);
-            func002670(globaldef000748, globaldef000775, FALSE, FALSE, FALSE);
+            func002669(14, globaldef000775, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
+            func002668('1305.8 -569.9 162', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+            func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, 18, 127);
+            func002670(GLOBALDEFSEVENFOUREIGHT, globaldef000775, FALSE, FALSE, FALSE);
             func002668('1466 -575.2 162', FL_INWATER, MOVETYPE_WALK, "");
-            func002669(FL_INWATER, globaldef000748, 17, 127, FALSE);
+            func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 127, FALSE);
             func002668('1472 -704 162', 17, MOVETYPE_FLY, "weapon_rocketlauncher");
             func002669(17, FL_INWATER, FALSE, FALSE, FALSE);
             func002668('1405 -348.2 162', 18, MOVETYPE_WALK, "");
-            func002669(18, globaldef000748, 19, 127, FALSE);
+            func002669(18, GLOBALDEFSEVENFOUREIGHT, 19, 127, FALSE);
             func002668('1650.6 -360.3 162', 19, MOVETYPE_WALK, "");
             func002669(19, 18, 20, FL_NOTARGET, FALSE);
             func002668('1843.3 -436 162', 20, MOVETYPE_WALK, "");
@@ -45297,17 +45297,17 @@ void () func002638 =
                 func002668('1570.8 -898.7 50', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                 func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                 func002668('1391 -898.7 66', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, globaldef000774, FALSE, FALSE);
-                func002668('1143 -896.7 66', globaldef000774, MOVETYPE_WALK, "");
-                func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
+                func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
+                func002668('1143 -896.7 66', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+                func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
                 func002668('939 -755.2 66', globaldef000775, MOVETYPE_WALK, "");
-                func002669(globaldef000775, globaldef000774, 14, FALSE, FALSE);
+                func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
                 func002668('718.5 -644.7 66', 14, MOVETYPE_WALK, "");
                 func002669(14, globaldef000775, SVC_SELLSCREEN, FALSE, FALSE);
-                func002668('644.4 -405 50', globaldef000748, MOVETYPE_WALK, "");
-                func002669(globaldef000748, 14, FL_INWATER, SVC_SELLSCREEN, FALSE);
+                func002668('644.4 -405 50', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+                func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, SVC_SELLSCREEN, FALSE);
                 func002668('839.5 -260.6 34', FL_INWATER, MOVETYPE_WALK, "");
-                func002669(FL_INWATER, globaldef000748, 17, 231, FALSE);
+                func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 231, FALSE);
                 func002668('937.2 -39.7 34', 17, MOVETYPE_WALK, "");
                 func002669(17, FL_INWATER, 18, FALSE, FALSE);
                 func002668('955.4 209.3 34', 18, MOVETYPE_WALK, "");
@@ -45341,7 +45341,7 @@ void () func002638 =
                 func002668('1362.8 263.8 18', FL_MONSTER, MOVETYPE_WALK, "");
                 func002669(FL_MONSTER, SVC_FINALE, globaldef000719, FALSE, FALSE);
                 func002668('652.7 -584.2 66', SVC_SELLSCREEN, MOVETYPE_WALK, "");
-                func002669(SVC_SELLSCREEN, globaldef000748, 14, FALSE, FALSE);
+                func002669(SVC_SELLSCREEN, GLOBALDEFSEVENFOUREIGHT, 14, FALSE, FALSE);
                 func002668('1358.3 -783.5 -45.9', 34, MOVETYPE_WALK, "");
                 func002669(34, TRUE, SVC_FOUNDSECRET, 35, FL_SWIM);
                 func002668('1114.1 -742.4 -45.9', 35, MOVETYPE_WALK, "");
@@ -45776,16 +45776,16 @@ void () func002638 =
                     func002669(MOVETYPE_BOUNCE, MOVETYPE_PUSH, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                     func002668('802.5 -519.7 -125.9', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
                     func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, 19, 66, FALSE);
-                    func002668('760.2 -771 -253', globaldef000774, MOVETYPE_WALK, "");
-                    func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, globaldef000775, globaldef000748, 14);
+                    func002668('760.2 -771 -253', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+                    func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, GLOBALDEFSEVENFOUREIGHT, 14);
                     func002668('768 -880 -253.8', globaldef000775, MOVETYPE_FLY, "weapon_rocketlauncher");
-                    func002669(globaldef000775, globaldef000774, 20, FALSE, FALSE);
+                    func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 20, FALSE, FALSE);
                     func002668('777.7 -725 -237.8', 14, MOVETYPE_WALK, "");
-                    func002669(14, globaldef000774, globaldef000748, FL_INWATER, FALSE);
-                    func002668('778.5 -692.7 -221.8', globaldef000748, MOVETYPE_WALK, "");
-                    func002669(globaldef000748, 14, 17, FL_INWATER, FALSE);
+                    func002669(14, GLOBALDEFSEVENSEVENFOUR, GLOBALDEFSEVENFOUREIGHT, FL_INWATER, FALSE);
+                    func002668('778.5 -692.7 -221.8', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+                    func002669(GLOBALDEFSEVENFOUREIGHT, 14, 17, FL_INWATER, FALSE);
                     func002668('779 -661.2 -205.8', FL_INWATER, MOVETYPE_WALK, "");
-                    func002669(FL_INWATER, globaldef000748, 17, FALSE, FALSE);
+                    func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
                     func002668('779.5 -629.5 -189.8', 17, MOVETYPE_WALK, "");
                     func002669(17, FL_INWATER, 18, FALSE, FALSE);
                     func002668('779.7 -596.5 -173.8', 18, MOVETYPE_WALK, "");
@@ -45793,7 +45793,7 @@ void () func002638 =
                     func002668('779.7 -563.2 -157.8', 19, MOVETYPE_WALK, "");
                     func002669(19, 18, MOVETYPE_BOUNCEMISSILE, 66, FALSE);
                     func002668('824 -848 -253.8', 20, MOVETYPE_FLY, "item_armorInv");
-                    func002669(20, 14, globaldef000774, globaldef000775, globaldef000748);
+                    func002669(20, 14, GLOBALDEFSEVENSEVENFOUR, globaldef000775, GLOBALDEFSEVENFOUREIGHT);
                     func002668('784 -944 -253.8', 21, MOVETYPE_STEP, "");
                     func002669(21, globaldef000775, FALSE, FALSE, FALSE);
                     func002668('352 -8 -317.7', 22, MOVETYPE_FLY, "weapon_nailgun");
@@ -46070,17 +46070,17 @@ void () func002638 =
                         func002668('463.7 382.8 194', 17, MOVETYPE_WALK, "");
                         func002669(17, FL_INWATER, 18, FALSE, FALSE);
                         func002668('218.6 371.9 194', FL_INWATER, MOVETYPE_WALK, "");
-                        func002669(FL_INWATER, globaldef000748, 17, FALSE, FALSE);
-                        func002668('-27.7 377.9 194', globaldef000748, MOVETYPE_WALK, "");
-                        func002669(globaldef000748, 14, FL_INWATER, FALSE, FALSE);
+                        func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
+                        func002668('-27.7 377.9 194', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
                         func002668('-101.7 212.6 194', 14, MOVETYPE_WALK, "");
-                        func002669(14, globaldef000775, globaldef000748, FALSE, FALSE);
+                        func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
                         func002668('-101.4 -36 194', globaldef000775, MOVETYPE_WALK, "");
-                        func002669(globaldef000775, globaldef000774, 14, FALSE, FALSE);
-                        func002668('-96.6 -282.5 194', globaldef000774, MOVETYPE_WALK, "");
-                        func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, globaldef000775, TRUE, FALSE);
+                        func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
+                        func002668('-96.6 -282.5 194', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, TRUE, FALSE);
                         func002668('-92.8 -527.2 194', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, globaldef000774, FALSE, FALSE);
+                        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
                         func002668('-75.1 -771.7 194', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                         func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                         func002668('172.7 -771.7 194', MOVETYPE_FLYMISSILE, MOVETYPE_WALK, "");
@@ -46100,7 +46100,7 @@ void () func002638 =
                         func002668('404.4 -224 194', FL_SWIM, MOVETYPE_WALK, "");
                         func002669(FL_SWIM, TRUE, MOVETYPE_WALK, FALSE, FALSE);
                         func002668('160 -224 194', TRUE, MOVETYPE_WALK, "");
-                        func002669(TRUE, globaldef000774, FL_SWIM, FALSE, FALSE);
+                        func002669(TRUE, GLOBALDEFSEVENSEVENFOUR, FL_SWIM, FALSE, FALSE);
                     }
                     else
                     {
@@ -46135,17 +46135,17 @@ void () func002638 =
                             func002668('223.1 -2009 82', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                             func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                             func002668('264.1 -2009.5 98', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                            func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, globaldef000774, globaldef000775, FALSE);
-                            func002668('318.7 -2009.5 114', globaldef000774, MOVETYPE_WALK, "");
-                            func002669(globaldef000774, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
+                            func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, globaldef000775, FALSE);
+                            func002668('318.7 -2009.5 114', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
                             func002668('364.1 -2008.8 130', globaldef000775, MOVETYPE_WALK, "");
-                            func002669(globaldef000775, globaldef000774, 14, FALSE, FALSE);
+                            func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
                             func002668('424 -2008 146', 14, MOVETYPE_FLY, "weapon_supernailgun");
-                            func002669(14, globaldef000775, globaldef000748, FALSE, FALSE);
-                            func002668('457.6 -1787.5 162', globaldef000748, MOVETYPE_WALK, "");
-                            func002669(globaldef000748, 14, FL_INWATER, FALSE, FALSE);
+                            func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
+                            func002668('457.6 -1787.5 162', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
                             func002668('455.2 -1741.6 178', FL_INWATER, MOVETYPE_WALK, "");
-                            func002669(FL_INWATER, globaldef000748, 17, FALSE, FALSE);
+                            func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
                             func002668('453 -1695 194', 17, MOVETYPE_WALK, "");
                             func002669(17, FL_INWATER, 18, FALSE, FALSE);
                             func002668('450.5 -1644.5 210', 18, MOVETYPE_WALK, "");
@@ -48004,10 +48004,10 @@ void () func002661 =
     
     if(globaldef000811 == world)
     {
-        func000092(self, "number of waypoints = ");
+        sprint(self, "number of waypoints = ");
         globaldef009094 = ftos(globaldef000786);
-        func000092(self, globaldef009094);
-        func000092(self, "\n\n");
+        sprint(self, globaldef009094);
+        sprint(self, "\n\n");
         globaldef000811 = globaldef000819;
     }
     
@@ -48019,7 +48019,7 @@ void () func002661 =
         
         if(globaldef009092 == world)
         {
-            func000092(self, "dumped all waypoints\n");
+            sprint(self, "dumped all waypoints\n");
             self.field000252 = self.field000252 - (self.field000252 & globaldef000692);
             return;
         }
@@ -48032,25 +48032,25 @@ void () func002661 =
         globaldef009092.wp5 = globaldef009092.field000304.waypointnumber;
         globaldef009092.wp6 = globaldef009092.field000305.waypointnumber;
         globaldef009092.wp7 = globaldef009092.field000306.waypointnumber;
-        func000092(self, "{\n");
-        func000092(self, " \"classname\" \"waypoint\"\n");
-        func000092(self, " \"origin\" \"");
+        sprint(self, "{\n");
+        sprint(self, " \"classname\" \"waypoint\"\n");
+        sprint(self, " \"origin\" \"");
         func002659(self, globaldef009092.origin);
-        func000092(self, "\"\n");
-        func000092(self, " \"waypointnumber\" \"");
+        sprint(self, "\"\n");
+        sprint(self, " \"waypointnumber\" \"");
         globaldef009094 = ftos(globaldef009092.waypointnumber);
-        func000092(self, globaldef009094);
-        func000092(self, "\"\n");
-        func000092(self, " \"waypointtype\" \"");
+        sprint(self, globaldef009094);
+        sprint(self, "\"\n");
+        sprint(self, " \"waypointtype\" \"");
         globaldef009094 = ftos(globaldef009092.waypointtype);
-        func000092(self, globaldef009094);
-        func000092(self, "\"\n");
+        sprint(self, globaldef009094);
+        sprint(self, "\"\n");
         
         if(globaldef009092.waypointitem)
         {
-            func000092(self, " \"waypointitem\" \"");
-            func000092(self, globaldef009092.waypointitem);
-            func000092(self, "\"\n");
+            sprint(self, " \"waypointitem\" \"");
+            sprint(self, globaldef009092.waypointitem);
+            sprint(self, "\"\n");
         }
         
         
@@ -48109,7 +48109,7 @@ void () func002661 =
             func000094(self, " \"wp7\" \"", globaldef009094, "\"\n");
         }
         
-        func000092(self, "}\n");
+        sprint(self, "}\n");
         globaldef009093 = globaldef009093 + TRUE;
         globaldef009092 = globaldef009092.field000297;
         globaldef000811 = globaldef009092;
@@ -48378,10 +48378,10 @@ void () func002663 =
     
     if(globaldef000811 == world)
     {
-        func000092(self, "number of waypoints = ");
+        sprint(self, "number of waypoints = ");
         globaldef009115 = ftos(globaldef000786);
-        func000092(self, globaldef009115);
-        func000092(self, "\n\n");
+        sprint(self, globaldef009115);
+        sprint(self, "\n\n");
         func000094(self, "	if (world.model == \"", world.model, "\")\n	{\n");
         globaldef000811 = globaldef000819;
     }
@@ -48394,8 +48394,8 @@ void () func002663 =
         
         if(globaldef009113 == world)
         {
-            func000092(self, "	}\n\n");
-            func000092(self, "dumped all waypoints\n");
+            sprint(self, "	}\n\n");
+            sprint(self, "dumped all waypoints\n");
             self.field000252 = self.field000252 - (self.field000252 & globaldef000693);
             return;
         }
@@ -48408,10 +48408,10 @@ void () func002663 =
         globaldef009113.wp5 = globaldef009113.field000304.waypointnumber;
         globaldef009113.wp6 = globaldef009113.field000305.waypointnumber;
         globaldef009113.wp7 = globaldef009113.field000306.waypointnumber;
-        func000092(self, "		HCWP_Create(");
-        func000092(self, "'");
+        sprint(self, "		HCWP_Create(");
+        sprint(self, "'");
         func002659(self, globaldef009113.origin);
-        func000092(self, "', ");
+        sprint(self, "', ");
         globaldef009115 = ftos(globaldef009113.waypointnumber);
         func000093(self, globaldef009115, ", ");
         globaldef009115 = ftos(globaldef009113.waypointtype);
@@ -48420,7 +48420,7 @@ void () func002663 =
         
         if(((globaldef009113.wp0 || globaldef009113.wp1) || globaldef009113.wp2) || globaldef009113.wp3)
         {
-            func000092(self, "		HCWP_SetPointers1(");
+            sprint(self, "		HCWP_SetPointers1(");
             globaldef009115 = ftos(globaldef009113.waypointnumber);
             func000093(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp0);
@@ -48436,7 +48436,7 @@ void () func002663 =
         
         if(((globaldef009113.wp4 || globaldef009113.wp5) || globaldef009113.wp6) || globaldef009113.wp7)
         {
-            func000092(self, "		HCWP_SetPointers2(");
+            sprint(self, "		HCWP_SetPointers2(");
             globaldef009115 = ftos(globaldef009113.waypointnumber);
             func000093(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp4);
@@ -49057,7 +49057,7 @@ float () func002674 =
     local vector globaldef009171;
     local vector globaldef009175;
     globaldef009164 = TRUE;
-    globaldef009165 = globaldef000721;
+    globaldef009165 = GLOBALDEFSEVENTWOONE;
     globaldef009170 = self.field000299;
     globaldef009167 = FALSE;
     globaldef009168 = globaldef000819;
@@ -49070,13 +49070,13 @@ float () func002674 =
             globaldef009171 = globaldef009168.origin;
             globaldef009175 = self.origin;
             
-            if((fabs(globaldef009171_x - globaldef009175_x)) < globaldef000721)
+            if((fabs(globaldef009171_x - globaldef009175_x)) < GLOBALDEFSEVENTWOONE)
             {
                 
-                if((fabs(globaldef009171_y - globaldef009175_y)) < globaldef000721)
+                if((fabs(globaldef009171_y - globaldef009175_y)) < GLOBALDEFSEVENTWOONE)
                 {
                     
-                    if((fabs(globaldef009171_z - globaldef009175_z)) < globaldef000721)
+                    if((fabs(globaldef009171_z - globaldef009175_z)) < GLOBALDEFSEVENTWOONE)
                     {
                         globaldef009166 = vlen(globaldef009168.origin - self.origin);
                         
@@ -52208,73 +52208,73 @@ void (entity globaldef009275, entity globaldef009276) func002692 =
 // OP_DONE	0	0	0
 void (entity globaldef009280) func002693 = 
 {
-    func000092(globaldef009280, "addbot");
-    func000092(globaldef009280, "           add one random bot\n");
-    func000092(globaldef009280, "admin");
-    func000092(globaldef009280, "            nominate yourself\n");
-    func000092(globaldef009280, "                 for admininistrator\n");
-    func000092(globaldef009280, "botpathing");
-    func000092(globaldef009280, "       toggle bot to learn\n");
-    func000092(globaldef009280, "                 map by itself\n");
-    func000092(globaldef009280, "botskills");
-    func000092(globaldef009280, "        show skills of bots\n");
-    func000092(globaldef009280, "bottalk");
-    func000092(globaldef009280, "          toggle bot chat\n");
-    func000092(globaldef009280, "camname");
-    func000092(globaldef009280, "          toggle observer name\n");
-    func000092(globaldef009280, "campmode");
-    func000092(globaldef009280, "         set the camping mode\n");
-    func000092(globaldef009280, "chasecam");
-    func000092(globaldef009280, "         toggle between\n");
-    func000092(globaldef009280, "                 eyecam and chasecam\n");
-    func000092(globaldef009280, "cmdlist");
-    func000092(globaldef009280, "          this list\n");
-    func000092(globaldef009280, "cyclecam");
-    func000092(globaldef009280, "         cycle observer\n");
-    func000092(globaldef009280, "                 camera\n");
-    func000092(globaldef009280, "dumpbspwaypoints");
-    func000092(globaldef009280, " dump bsp waypoints\n");
-    func000092(globaldef009280, "                 to console\n");
-    func000092(globaldef009280, "humanpathing");
-    func000092(globaldef009280, "     toggle bot to learn\n");
-    func000092(globaldef009280, "                 map from player\n");
-    func000092(globaldef009280, "menu");
-    func000092(globaldef009280, "             show administrator\n");
-    func000092(globaldef009280, "                 menu\n");
-    func000092(globaldef009280, "nogrenade");
-    func000092(globaldef009280, "        toggle grenade l.\n");
-    func000092(globaldef009280, "nolightning");
-    func000092(globaldef009280, "      toggle thunderbolt\n");
-    func000092(globaldef009280, "nopowerups");
-    func000092(globaldef009280, "       toggle powerups\n");
-    func000092(globaldef009280, "norocket");
-    func000092(globaldef009280, "         toggle rocket l.\n");
-    func000092(globaldef009280, "nosupernail");
-    func000092(globaldef009280, "      toggle super nailgun\n");
-    func000092(globaldef009280, "noweapons");
-    func000092(globaldef009280, "        toggle weapons\n");
-    func000092(globaldef009280, "observer");
-    func000092(globaldef009280, "         toggle observer mode\n");
-    func000092(globaldef009280, "observerfly");
-    func000092(globaldef009280, "      toggle observer\n");
-    func000092(globaldef009280, "                 flying or walking\n");
-    func000092(globaldef009280, "removeallbots");
-    func000092(globaldef009280, "    remove all bots\n");
-    func000092(globaldef009280, "removebot");
-    func000092(globaldef009280, "        remove one bot\n");
-    func000092(globaldef009280, "serverflags");
-    func000092(globaldef009280, "      show settings\n");
-    func000092(globaldef009280, "skinup");
-    func000092(globaldef009280, "           cycle skins upward\n");
-    func000092(globaldef009280, "skindown");
-    func000092(globaldef009280, "         cycle skins downward\n");
-    func000092(globaldef009280, "stopadmin");
-    func000092(globaldef009280, "        exit admin function\n");
-    func000092(globaldef009280, "team1 - team8");
-    func000092(globaldef009280, "    join specified team\n");
-    func000092(globaldef009280, "yes");
-    func000092(globaldef009280, "              vote yes for admin\n");
-    func000092(globaldef009280, "                 candidate\n");
+    sprint(globaldef009280, "addbot");
+    sprint(globaldef009280, "           add one random bot\n");
+    sprint(globaldef009280, "admin");
+    sprint(globaldef009280, "            nominate yourself\n");
+    sprint(globaldef009280, "                 for admininistrator\n");
+    sprint(globaldef009280, "botpathing");
+    sprint(globaldef009280, "       toggle bot to learn\n");
+    sprint(globaldef009280, "                 map by itself\n");
+    sprint(globaldef009280, "botskills");
+    sprint(globaldef009280, "        show skills of bots\n");
+    sprint(globaldef009280, "bottalk");
+    sprint(globaldef009280, "          toggle bot chat\n");
+    sprint(globaldef009280, "camname");
+    sprint(globaldef009280, "          toggle observer name\n");
+    sprint(globaldef009280, "campmode");
+    sprint(globaldef009280, "         set the camping mode\n");
+    sprint(globaldef009280, "chasecam");
+    sprint(globaldef009280, "         toggle between\n");
+    sprint(globaldef009280, "                 eyecam and chasecam\n");
+    sprint(globaldef009280, "cmdlist");
+    sprint(globaldef009280, "          this list\n");
+    sprint(globaldef009280, "cyclecam");
+    sprint(globaldef009280, "         cycle observer\n");
+    sprint(globaldef009280, "                 camera\n");
+    sprint(globaldef009280, "dumpbspwaypoints");
+    sprint(globaldef009280, " dump bsp waypoints\n");
+    sprint(globaldef009280, "                 to console\n");
+    sprint(globaldef009280, "humanpathing");
+    sprint(globaldef009280, "     toggle bot to learn\n");
+    sprint(globaldef009280, "                 map from player\n");
+    sprint(globaldef009280, "menu");
+    sprint(globaldef009280, "             show administrator\n");
+    sprint(globaldef009280, "                 menu\n");
+    sprint(globaldef009280, "nogrenade");
+    sprint(globaldef009280, "        toggle grenade l.\n");
+    sprint(globaldef009280, "nolightning");
+    sprint(globaldef009280, "      toggle thunderbolt\n");
+    sprint(globaldef009280, "nopowerups");
+    sprint(globaldef009280, "       toggle powerups\n");
+    sprint(globaldef009280, "norocket");
+    sprint(globaldef009280, "         toggle rocket l.\n");
+    sprint(globaldef009280, "nosupernail");
+    sprint(globaldef009280, "      toggle super nailgun\n");
+    sprint(globaldef009280, "noweapons");
+    sprint(globaldef009280, "        toggle weapons\n");
+    sprint(globaldef009280, "observer");
+    sprint(globaldef009280, "         toggle observer mode\n");
+    sprint(globaldef009280, "observerfly");
+    sprint(globaldef009280, "      toggle observer\n");
+    sprint(globaldef009280, "                 flying or walking\n");
+    sprint(globaldef009280, "removeallbots");
+    sprint(globaldef009280, "    remove all bots\n");
+    sprint(globaldef009280, "removebot");
+    sprint(globaldef009280, "        remove one bot\n");
+    sprint(globaldef009280, "serverflags");
+    sprint(globaldef009280, "      show settings\n");
+    sprint(globaldef009280, "skinup");
+    sprint(globaldef009280, "           cycle skins upward\n");
+    sprint(globaldef009280, "skindown");
+    sprint(globaldef009280, "         cycle skins downward\n");
+    sprint(globaldef009280, "stopadmin");
+    sprint(globaldef009280, "        exit admin function\n");
+    sprint(globaldef009280, "team1 - team8");
+    sprint(globaldef009280, "    join specified team\n");
+    sprint(globaldef009280, "yes");
+    sprint(globaldef009280, "              vote yes for admin\n");
+    sprint(globaldef009280, "                 candidate\n");
 };
 
 
@@ -52446,59 +52446,59 @@ void (entity globaldef009349) func002694 =
     
     while(globaldef009350 < globaldef000719)
     {
-        func000064(globaldef009349, "alias ");
+        stuffcmd(globaldef009349, "alias ");
         globaldef009351 = func002279(globaldef009350);
-        func000064(globaldef009349, globaldef009351);
-        func000064(globaldef009349, " \"impulse ");
+        stuffcmd(globaldef009349, globaldef009351);
+        stuffcmd(globaldef009349, " \"impulse ");
         globaldef009351 = ftos(100 + globaldef009350);
-        func000064(globaldef009349, globaldef009351);
-        func000064(globaldef009349, "\"\n");
+        stuffcmd(globaldef009349, globaldef009351);
+        stuffcmd(globaldef009349, "\"\n");
         globaldef009350 = globaldef009350 + TRUE;
     }
     
-    func000064(globaldef009349, "alias nopowerups \"impulse 130\"\n");
-    func000064(globaldef009349, "alias noweapons \"impulse 131\"\n");
-    func000064(globaldef009349, "alias nolightning \"impulse 132\"\n");
-    func000064(globaldef009349, "alias norocket \"impulse 133\"\n");
-    func000064(globaldef009349, "alias nogrenade \"impulse 134\"\n");
-    func000064(globaldef009349, "alias nosupernail \"impulse 135\"\n");
-    func000064(globaldef009349, "alias noshellcases \"impulse 136\"\n");
-    func000064(globaldef009349, "alias skinup \"impulse 140\"\n");
-    func000064(globaldef009349, "alias skindown \"impulse 141\"\n");
-    func000064(globaldef009349, "alias botskills \"impulse 142\"\n");
-    func000064(globaldef009349, "alias addbot \"impulse 150\"\n");
-    func000064(globaldef009349, "alias removebot \"impulse 151\"\n");
-    func000064(globaldef009349, "alias removeallbots \"impulse 152\"\n");
-    func000064(globaldef009349, "alias serverflags \"impulse 153\"\n");
-    func000064(globaldef009349, "alias botpathing \"impulse 154\"\n");
-    func000064(globaldef009349, "alias humanpathing \"impulse 155\"\n");
-    func000064(globaldef009349, "alias campmode \"impulse 156\"\n");
-    func000064(globaldef009349, "alias bottalk \"impulse 157\"\n");
-    func000064(globaldef009349, "alias rocketarena \"impulse 158\"\n");
-    func000064(globaldef009349, "alias observer \"impulse 160\"\n");
-    func000064(globaldef009349, "alias cyclecam \"impulse 161\"\n");
-    func000064(globaldef009349, "alias observerfly \"impulse 162\"\n");
-    func000064(globaldef009349, "alias camname \"impulse 163\"\n");
-    func000064(globaldef009349, "alias observerteleport \"impulse 164\"\n");
-    func000064(globaldef009349, "alias chasecam \"impulse 165\"\n");
-    func000064(globaldef009349, "alias kascam \"impulse 166\"\n");
-    func000064(globaldef009349, "alias dumpbspwaypoints \"impulse 170\"\n");
-    func000064(globaldef009349, "alias dumphcwaypoints \"impulse 171\"\n");
-    func000064(globaldef009349, "alias bubblerouting \"impulse 172\"\n");
-    func000064(globaldef009349, "alias admin \"impulse 143\"\n");
-    func000064(globaldef009349, "alias stopadmin \"impulse 144\"\n");
-    func000064(globaldef009349, "alias yes \"impulse 145\"\n");
-    func000064(globaldef009349, "alias omicron \"impulse 146\"\n");
-    func000064(globaldef009349, "alias menu \"impulse 200\"\n");
-    func000064(globaldef009349, "alias cmdlist \"impulse 147\"\n");
-    func000064(globaldef009349, "alias team1 \"impulse 201\"\n");
-    func000064(globaldef009349, "alias team2 \"impulse 202\"\n");
-    func000064(globaldef009349, "alias team3 \"impulse 203\"\n");
-    func000064(globaldef009349, "alias team4 \"impulse 204\"\n");
-    func000064(globaldef009349, "alias team5 \"impulse 205\"\n");
-    func000064(globaldef009349, "alias team6 \"impulse 206\"\n");
-    func000064(globaldef009349, "alias team7 \"impulse 207\"\n");
-    func000064(globaldef009349, "alias team8 \"impulse 208\"\n");
+    stuffcmd(globaldef009349, "alias nopowerups \"impulse 130\"\n");
+    stuffcmd(globaldef009349, "alias noweapons \"impulse 131\"\n");
+    stuffcmd(globaldef009349, "alias nolightning \"impulse 132\"\n");
+    stuffcmd(globaldef009349, "alias norocket \"impulse 133\"\n");
+    stuffcmd(globaldef009349, "alias nogrenade \"impulse 134\"\n");
+    stuffcmd(globaldef009349, "alias nosupernail \"impulse 135\"\n");
+    stuffcmd(globaldef009349, "alias noshellcases \"impulse 136\"\n");
+    stuffcmd(globaldef009349, "alias skinup \"impulse 140\"\n");
+    stuffcmd(globaldef009349, "alias skindown \"impulse 141\"\n");
+    stuffcmd(globaldef009349, "alias botskills \"impulse 142\"\n");
+    stuffcmd(globaldef009349, "alias addbot \"impulse 150\"\n");
+    stuffcmd(globaldef009349, "alias removebot \"impulse 151\"\n");
+    stuffcmd(globaldef009349, "alias removeallbots \"impulse 152\"\n");
+    stuffcmd(globaldef009349, "alias serverflags \"impulse 153\"\n");
+    stuffcmd(globaldef009349, "alias botpathing \"impulse 154\"\n");
+    stuffcmd(globaldef009349, "alias humanpathing \"impulse 155\"\n");
+    stuffcmd(globaldef009349, "alias campmode \"impulse 156\"\n");
+    stuffcmd(globaldef009349, "alias bottalk \"impulse 157\"\n");
+    stuffcmd(globaldef009349, "alias rocketarena \"impulse 158\"\n");
+    stuffcmd(globaldef009349, "alias observer \"impulse 160\"\n");
+    stuffcmd(globaldef009349, "alias cyclecam \"impulse 161\"\n");
+    stuffcmd(globaldef009349, "alias observerfly \"impulse 162\"\n");
+    stuffcmd(globaldef009349, "alias camname \"impulse 163\"\n");
+    stuffcmd(globaldef009349, "alias observerteleport \"impulse 164\"\n");
+    stuffcmd(globaldef009349, "alias chasecam \"impulse 165\"\n");
+    stuffcmd(globaldef009349, "alias kascam \"impulse 166\"\n");
+    stuffcmd(globaldef009349, "alias dumpbspwaypoints \"impulse 170\"\n");
+    stuffcmd(globaldef009349, "alias dumphcwaypoints \"impulse 171\"\n");
+    stuffcmd(globaldef009349, "alias bubblerouting \"impulse 172\"\n");
+    stuffcmd(globaldef009349, "alias admin \"impulse 143\"\n");
+    stuffcmd(globaldef009349, "alias stopadmin \"impulse 144\"\n");
+    stuffcmd(globaldef009349, "alias yes \"impulse 145\"\n");
+    stuffcmd(globaldef009349, "alias omicron \"impulse 146\"\n");
+    stuffcmd(globaldef009349, "alias menu \"impulse 200\"\n");
+    stuffcmd(globaldef009349, "alias cmdlist \"impulse 147\"\n");
+    stuffcmd(globaldef009349, "alias team1 \"impulse 201\"\n");
+    stuffcmd(globaldef009349, "alias team2 \"impulse 202\"\n");
+    stuffcmd(globaldef009349, "alias team3 \"impulse 203\"\n");
+    stuffcmd(globaldef009349, "alias team4 \"impulse 204\"\n");
+    stuffcmd(globaldef009349, "alias team5 \"impulse 205\"\n");
+    stuffcmd(globaldef009349, "alias team6 \"impulse 206\"\n");
+    stuffcmd(globaldef009349, "alias team7 \"impulse 207\"\n");
+    stuffcmd(globaldef009349, "alias team8 \"impulse 208\"\n");
 };
 
 
@@ -52524,7 +52524,7 @@ float (entity globaldef009398) func002695 =
         return TRUE;
     }
     
-    func000092(globaldef009398, "administrator command\n");
+    sprint(globaldef009398, "administrator command\n");
     globaldef009398.field000275 = globaldef009398.field000275 + TRUE;
     return FALSE;
 };
@@ -52579,14 +52579,14 @@ void (entity globaldef009401, float globaldef009402) func002696 =
     
     if(globaldef000805)
     {
-        func000092(globaldef009401, "can't change skin, extra models disabled\n");
+        sprint(globaldef009401, "can't change skin, extra models disabled\n");
         return;
     }
     
     
     if(teamplay)
     {
-        func000092(globaldef009401, "can't change skin during teamplay\n");
+        sprint(globaldef009401, "can't change skin during teamplay\n");
         return;
     }
     
@@ -52739,11 +52739,11 @@ void (float globaldef009413) func002699 =
 {
     if(globaldef009413)
     {
-        func000092(self, "on\n");
+        sprint(self, "on\n");
     }
     else
     {
-        func000092(self, "off\n");
+        sprint(self, "off\n");
     }
     
 };
@@ -53117,11 +53117,11 @@ void () func002704 =
 void () func002705 = 
 {
     centerprint(self, "???????? Omicron Bots v1.02 ????????");
-    func000092(self, "\n ???????? Omicron Bots v1.02 ????????\n\n");
+    sprint(self, "\n ???????? Omicron Bots v1.02 ????????\n\n");
     
     if(globaldef000804 & globaldef000750)
     {
-        func000092(self, "\nRocket Arena Enabled\n\n");
+        sprint(self, "\nRocket Arena Enabled\n\n");
     }
     
     func002265();
@@ -53233,7 +53233,7 @@ float (float globaldef009438, string globaldef009439) func002707 =
             globaldef009440.mdl = globaldef009440.model;
             globaldef009440.model = string_null;
             globaldef009440.solid = SOLID_NOT;
-            globaldef009440.think = func000204;
+            globaldef009440.think = SUB_regen;
             globaldef009440 = find(globaldef009440, classname, globaldef009439);
         }
         
@@ -53917,29 +53917,29 @@ void () func002717 =
 // OP_DONE	0	0	0
 void () func002718 = 
 {
-    func000092(self, "bot pathing    ");
+    sprint(self, "bot pathing    ");
     func002699(!(globaldef000804 & globaldef000751));
-    func000092(self, "human pathing  ");
+    sprint(self, "human pathing  ");
     func002699(!(globaldef000804 & globaldef000752));
-    func000092(self, "bot talk       ");
+    sprint(self, "bot talk       ");
     func002699(!(globaldef000804 & globaldef000753));
-    func000092(self, "powerups       ");
+    sprint(self, "powerups       ");
     func002699(!(globaldef000804 & globaldef000754));
-    func000092(self, "weapons        ");
+    sprint(self, "weapons        ");
     func002699(!(globaldef000804 & globaldef000755));
-    func000092(self, "lightning      ");
+    sprint(self, "lightning      ");
     func002699(!(globaldef000804 & globaldef000756));
-    func000092(self, "rocket         ");
+    sprint(self, "rocket         ");
     func002699(!(globaldef000804 & globaldef000757));
-    func000092(self, "grenade        ");
+    sprint(self, "grenade        ");
     func002699(!(globaldef000804 & globaldef000758));
-    func000092(self, "super nail     ");
+    sprint(self, "super nail     ");
     func002699(!(globaldef000804 & globaldef000759));
-    func000092(self, "shell cases    ");
+    sprint(self, "shell cases    ");
     func002699(!(globaldef000804 & globaldef000761));
-    func000092(self, "rocket arena   ");
+    sprint(self, "rocket arena   ");
     func002699(globaldef000804 & globaldef000750);
-    func000092(self, "bubble routing ");
+    sprint(self, "bubble routing ");
     func002699(globaldef000804 & globaldef000749);
 };
 
@@ -54079,11 +54079,11 @@ void () func002720 =
     
     while(globaldef009479)
     {
-        func000092(self, globaldef009479.netname);
-        func000092(self, " has skill ");
+        sprint(self, globaldef009479.netname);
+        sprint(self, " has skill ");
         globaldef009480 = ftos(globaldef009479.field000265);
-        func000092(self, globaldef009480);
-        func000092(self, "\n");
+        sprint(self, globaldef009480);
+        sprint(self, "\n");
         globaldef009479 = find(globaldef009479, classname, "bot");
     }
     
@@ -54110,7 +54110,7 @@ void (entity globaldef009483) func002721 =
     }
     else
     {
-        func000092(globaldef009483, "not allowed to toggle observer mode\n");
+        sprint(globaldef009483, "not allowed to toggle observer mode\n");
     }
     
 };
@@ -54295,21 +54295,21 @@ void (entity globaldef009493, float globaldef009494) func002725 =
     
     if(!teamplay)
     {
-        func000092(globaldef009493, "not in teamplay mode\n");
+        sprint(globaldef009493, "not in teamplay mode\n");
         return;
     }
     
     
     if(!globaldef000799)
     {
-        func000092(globaldef009493, "can't join a team while the game is running\n");
+        sprint(globaldef009493, "can't join a team while the game is running\n");
         return;
     }
     
     
     if(globaldef009493.classname == "observer")
     {
-        func000092(globaldef009493, "can't join a team in observer mode\n");
+        sprint(globaldef009493, "can't join a team in observer mode\n");
         return;
     }
     
@@ -56868,7 +56868,7 @@ void () func002737 =
     
     if(globaldef000804 & globaldef000750)
     {
-        func000092(self, "can't use menu with rocket arena\n");
+        sprint(self, "can't use menu with rocket arena\n");
         return;
     }
     
@@ -57026,7 +57026,7 @@ void (entity globaldef009555) func002741 =
     
     if(globaldef000814 == globaldef009555)
     {
-        func000092(globaldef009555, "you're already administrator\n");
+        sprint(globaldef009555, "you're already administrator\n");
         return;
     }
     
@@ -57054,7 +57054,7 @@ void (entity globaldef009555) func002741 =
             
             if(globaldef009556 != globaldef009555)
             {
-                func000092(globaldef009556, "type 'yes' on the console if you agree\n");
+                sprint(globaldef009556, "type 'yes' on the console if you agree\n");
             }
             
             globaldef009556 = globaldef009556.field000297;
@@ -57106,7 +57106,7 @@ void (entity globaldef009562) func002742 =
     
     if((globaldef000814 != world) || !globaldef000815)
     {
-        func000092(self, "nothing to vote for\n");
+        sprint(self, "nothing to vote for\n");
         return;
     }
     
@@ -57158,7 +57158,7 @@ void () func002743 =
     if(self.frags == -99)
     {
         bprint2(self.netname, " is punished for calling the Omicron\n");
-        func000064(self, "quit\n");
+        stuffcmd(self, "quit\n");
     }
     
     self.frags = -99;
@@ -57184,7 +57184,7 @@ void (entity globaldef009571, float globaldef009572) func002744 =
     
     if(teamplay)
     {
-        func000092(globaldef009571, "can't add deathmatch bot in teamplay mode\n");
+        sprint(globaldef009571, "can't add deathmatch bot in teamplay mode\n");
         globaldef009571.field000275 = globaldef009571.field000275 + TRUE;
         return;
     }
@@ -57211,7 +57211,7 @@ void (entity globaldef009575) func002745 =
     
     if(teamplay)
     {
-        func000092(globaldef009575, "can't add a random deathmatch bot in teamplay mode\n");
+        sprint(globaldef009575, "can't add a random deathmatch bot in teamplay mode\n");
         globaldef009575.field000275 = globaldef009575.field000275 + TRUE;
         return;
     }
@@ -57238,7 +57238,7 @@ void (entity globaldef009578) func002746 =
     
     if(teamplay)
     {
-        func000092(globaldef009578, "can't remove deathmatch bot in teamplay mode\n");
+        sprint(globaldef009578, "can't remove deathmatch bot in teamplay mode\n");
         globaldef009578.field000275 = globaldef009578.field000275 + TRUE;
         return;
     }

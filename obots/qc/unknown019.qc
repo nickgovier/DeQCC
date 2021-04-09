@@ -71,7 +71,7 @@ void (float globaldef005046) func001747 =
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    newmis.velocity = globaldef005055 * globaldef000523;
+    newmis.velocity = globaldef005055 * GLOBALDEFFIVETWOTHREE;
     sound(self, CHAN_WEAPON, "hknight/attack1.wav", TRUE, ATTN_NORM);
 };
 

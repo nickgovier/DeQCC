@@ -128,7 +128,7 @@ void () func001266 =
     if(other.takedamage)
     {
         
-        if(vlen(self.velocity) > globaldef000523)
+        if(vlen(self.velocity) > GLOBALDEFFIVETWOTHREE)
         {
             globaldef004417 = MOVETYPE_BOUNCE + (MOVETYPE_BOUNCE * random());
             T_Damage(other, self, self, globaldef004417);
@@ -669,7 +669,7 @@ void () func001305 = [61, func001306]
     self.touch = func001266;
     makevectors(self.angles);
     self.origin_z = self.origin_z + TRUE;
-    self.velocity = (v_forward * globaldef000523) + '0 0 200';
+    self.velocity = (v_forward * GLOBALDEFFIVETWOTHREE) + '0 0 200';
     
     if(self.flags & FL_ONGROUND)
     {
@@ -834,7 +834,7 @@ void () func001321 = [34, func001322]
 // OP_DONE	0	0	0
 void () func001322 = [35, func001323]
 {
-    ai_pain(globaldef000774);
+    ai_pain(GLOBALDEFSEVENSEVENFOUR);
 };
 
 
@@ -846,7 +846,7 @@ void () func001322 = [35, func001323]
 // OP_DONE	0	0	0
 void () func001323 = [36, func001324]
 {
-    ai_pain(globaldef000774);
+    ai_pain(GLOBALDEFSEVENSEVENFOUR);
 };
 
 

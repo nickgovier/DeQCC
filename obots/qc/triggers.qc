@@ -1092,7 +1092,7 @@ void () func000587 =
         other.v_angle = globaldef003487.mangle;
         other.ideal_yaw = globaldef003487.mangle_y;
         other.field000288 = globaldef003487.mangle_x;
-        other.velocity = v_forward * globaldef000523;
+        other.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
         other.teleport_time = time + 0.4;
         other.attack_finished = time + GLOBALDEFFIVETWOTWO;
     }
@@ -1131,7 +1131,7 @@ void () func000587 =
             other.flags = other.flags - FL_ONGROUND;
         }
         
-        other.velocity = v_forward * globaldef000523;
+        other.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
     }
     
     other.flags = other.flags - (other.flags & FL_ONGROUND);

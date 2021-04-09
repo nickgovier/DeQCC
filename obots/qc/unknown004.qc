@@ -459,7 +459,7 @@ void () func000320 = [15, func000305]
 // OP_DONE	0	0	0
 void () func000321 = [16, func000322]
 {
-    func000326(globaldef000748, MOVETYPE_TOSS, FALSE);
+    func000326(GLOBALDEFSEVENFOUREIGHT, MOVETYPE_TOSS, FALSE);
     self.velocity = VEC_ORIGIN;
 };
 
@@ -2969,19 +2969,19 @@ void (string globaldef002761) func000356 =
     
     if(globaldef000524.classname == "player")
     {
-        func000064(globaldef000524, globaldef002761);
+        stuffcmd(globaldef000524, globaldef002761);
     }
     
     
     if(globaldef000525.classname == "player")
     {
-        func000064(globaldef000525, globaldef002761);
+        stuffcmd(globaldef000525, globaldef002761);
     }
     
     
     if(self.classname == "player")
     {
-        func000064(self, globaldef002761);
+        stuffcmd(self, globaldef002761);
     }
     
     
@@ -2990,7 +2990,7 @@ void (string globaldef002761) func000356 =
         globaldef002762 = globaldef000526;
         do
         {
-            func000064(globaldef002762, globaldef002761);
+            stuffcmd(globaldef002762, globaldef002761);
             globaldef002762 = globaldef002762.ra_next;
         } while (globaldef002762 != globaldef000526);
     }
@@ -3174,7 +3174,7 @@ void (entity globaldef002765) func000358 =
     globaldef002765.invincible_time = FALSE;
     globaldef002766 = self;
     self = globaldef002765;
-    func000283();
+    W_SetCurrentAmmo();
     self = globaldef002766;
 };
 
@@ -3287,7 +3287,7 @@ void (entity globaldef002770, entity globaldef002771) func000360 =
             globaldef002770.flags = globaldef002770.flags - FL_ONGROUND;
         }
         
-        globaldef002770.velocity = v_forward * globaldef000523;
+        globaldef002770.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
     }
     
     globaldef002770.flags = globaldef002770.flags - (globaldef002770.flags & FL_ONGROUND);
@@ -3339,7 +3339,7 @@ void (entity globaldef002777) func000361 =
     func000360(globaldef002777, globaldef002778);
     setorigin(globaldef002777, globaldef002778.origin);
     func000358(globaldef002777);
-    func000064(globaldef002777, "r_drawviewmodel 1\n");
+    stuffcmd(globaldef002777, "r_drawviewmodel 1\n");
     globaldef002777.enemy = world;
     
     if(globaldef000524 != globaldef002777)
@@ -3493,7 +3493,7 @@ void (entity globaldef002786) func000363 =
         globaldef000526 = globaldef002786;
         globaldef000526.ra_next = globaldef000526;
         globaldef000526.ra_prev = globaldef000526;
-        func000092(globaldef002786, "You are next in line\n");
+        sprint(globaldef002786, "You are next in line\n");
         globaldef002786.mypos = TRUE;
     }
     else
@@ -3503,7 +3503,7 @@ void (entity globaldef002786) func000363 =
         globaldef002786.ra_prev = globaldef002787;
         globaldef000526.ra_prev = globaldef002786;
         globaldef002786.ra_next = globaldef000526;
-        func000092(globaldef002786, "You are last in line\n");
+        sprint(globaldef002786, "You are last in line\n");
         globaldef002787 = globaldef000526;
         globaldef002788 = TRUE;
         do
@@ -3645,7 +3645,7 @@ void (entity globaldef002791) func000364 =
             
             if((globaldef000524 != globaldef002791) && (globaldef000525 != globaldef002791))
             {
-                func000064(globaldef002791, "r_drawviewmodel 0\n");
+                stuffcmd(globaldef002791, "r_drawviewmodel 0\n");
                 func000363(globaldef002791);
             }
             
@@ -3655,7 +3655,7 @@ void (entity globaldef002791) func000364 =
     
     globaldef002792 = self;
     self = globaldef002791;
-    func000283();
+    W_SetCurrentAmmo();
     self = globaldef002792;
 };
 
@@ -3851,8 +3851,8 @@ void (entity globaldef002797) func000365 =
     
     if(globaldef002797.motd == TRUE)
     {
-        func000092(globaldef002797, "??????? ?? ?????? ????? v1.2\n");
-        func000092(globaldef002797, "by crt - wrightd@stanford.edu\n Port by WhiteFang - matt@lithium.com\n");
+        sprint(globaldef002797, "??????? ?? ?????? ????? v1.2\n");
+        sprint(globaldef002797, "by crt - wrightd@stanford.edu\n Port by WhiteFang - matt@lithium.com\n");
         globaldef002797.motd = FALSE;
     }
     
@@ -3863,8 +3863,8 @@ void (entity globaldef002797) func000365 =
         globaldef000528 = globaldef002800;
         if(globaldef002800 == FALSE)
         {
-            func000064(globaldef000524, "play ra/fight.wav\n");
-            func000064(globaldef000525, "play ra/fight.wav\n");
+            stuffcmd(globaldef000524, "play ra/fight.wav\n");
+            stuffcmd(globaldef000525, "play ra/fight.wav\n");
             bprint(globaldef000524.netname);
             bprint(" vs. ");
             bprint(globaldef000525.netname);
@@ -3889,12 +3889,12 @@ void (entity globaldef002797) func000365 =
             
             if(globaldef002800 <= MOVETYPE_WALK)
             {
-                func000064(globaldef000524, "play ra/");
-                func000064(globaldef000524, globaldef002798);
-                func000064(globaldef000524, ".wav\n");
-                func000064(globaldef000525, "play ra/");
-                func000064(globaldef000525, globaldef002798);
-                func000064(globaldef000525, ".wav\n");
+                stuffcmd(globaldef000524, "play ra/");
+                stuffcmd(globaldef000524, globaldef002798);
+                stuffcmd(globaldef000524, ".wav\n");
+                stuffcmd(globaldef000525, "play ra/");
+                stuffcmd(globaldef000525, globaldef002798);
+                stuffcmd(globaldef000525, ".wav\n");
             }
             
             func000074(globaldef000524, globaldef000525.netname, "\n\n", globaldef002798);
@@ -3916,37 +3916,37 @@ void (entity globaldef002797) func000365 =
                 
                 if(globaldef002800 == 60)
                 {
-                    func000092(globaldef002797, "You have 1 minute left.\n Impulse 70 to get back in line\n");
-                    func000064(globaldef002797, "play player/axhit1.wav\n");
+                    sprint(globaldef002797, "You have 1 minute left.\n Impulse 70 to get back in line\n");
+                    stuffcmd(globaldef002797, "play player/axhit1.wav\n");
                 }
                 
                 
                 if(globaldef002800 == SVC_INTERMISSION)
                 {
-                    func000092(globaldef002797, "You have 30 seconds left.\n Impulse 70 to get back in line\n");
-                    func000064(globaldef002797, "play player/axhit1.wav\n");
+                    sprint(globaldef002797, "You have 30 seconds left.\n Impulse 70 to get back in line\n");
+                    stuffcmd(globaldef002797, "play player/axhit1.wav\n");
                 }
                 
                 
                 if(globaldef002800 == FALSE)
                 {
-                    func000092(globaldef002797, "Sorry, your wait time has expired!\n");
+                    sprint(globaldef002797, "Sorry, your wait time has expired!\n");
                     bprint(globaldef002797.netname);
                     globaldef002797.idletime = FALSE;
                     bprint(" stood around too long\n");
-                    func000064(globaldef002797, "play player/death1.wav\n");
-                    func000064(globaldef002797, "disconnect\n");
+                    stuffcmd(globaldef002797, "play player/death1.wav\n");
+                    stuffcmd(globaldef002797, "disconnect\n");
                     return;
                 }
                 
                 
                 if(globaldef002800 <= MOVETYPE_BOUNCE)
                 {
-                    func000092(globaldef002797, "You have ");
+                    sprint(globaldef002797, "You have ");
                     globaldef002798 = ftos(globaldef002800);
-                    func000092(globaldef002797, globaldef002798);
-                    func000092(globaldef002797, " seconds left to get in line\n");
-                    func000064(globaldef002797, "play player/axhit1.wav\n");
+                    sprint(globaldef002797, globaldef002798);
+                    sprint(globaldef002797, " seconds left to get in line\n");
+                    stuffcmd(globaldef002797, "play player/axhit1.wav\n");
                 }
                 
             }
@@ -4248,17 +4248,17 @@ void (entity globaldef002836) func000368 =
         globaldef002836.ratio = (globaldef002836.wins * 100) / (globaldef002836.loses + globaldef002836.wins);
     }
     
-    func000092(self, globaldef002836.netname);
-    func000092(self, "  W:");
+    sprint(self, globaldef002836.netname);
+    sprint(self, "  W:");
     globaldef002837 = ftos(globaldef002836.wins);
-    func000092(self, globaldef002837);
-    func000092(self, "  L:");
+    sprint(self, globaldef002837);
+    sprint(self, "  L:");
     globaldef002837 = ftos(globaldef002836.loses);
-    func000092(self, globaldef002837);
-    func000092(self, "  SKILL:");
+    sprint(self, globaldef002837);
+    sprint(self, "  SKILL:");
     globaldef002837 = ftos(globaldef002836.ratio);
-    func000092(self, globaldef002837);
-    func000092(self, "%\n");
+    sprint(self, globaldef002837);
+    sprint(self, "%\n");
 };
 
 
@@ -4357,14 +4357,14 @@ void () func000370 =
     
     if(self == globaldef000526)
     {
-        func000092(self, "You are next\n");
+        sprint(self, "You are next\n");
         return;
     }
     
     
     if(self.ra_next == world)
     {
-        func000092(self, "You are out of line\n Impulse 70 to return\n");
+        sprint(self, "You are out of line\n Impulse 70 to return\n");
         return;
     }
     
@@ -4378,13 +4378,13 @@ void () func000370 =
     globaldef002847 = ftos(globaldef002845);
     if(globaldef002845 != TRUE)
     {
-        func000092(self, "There are ");
-        func000092(self, globaldef002847);
-        func000092(self, " people ahead of you\n");
+        sprint(self, "There are ");
+        sprint(self, globaldef002847);
+        sprint(self, " people ahead of you\n");
     }
     else
     {
-        func000092(self, "There is 1 person ahead of you\n");
+        sprint(self, "There is 1 person ahead of you\n");
     }
     
 };
@@ -4466,8 +4466,8 @@ void () func000371 =
         globaldef002854.ra_prev = self.ra_prev;
         self.ra_next = world;
         self.ra_prev = world;
-        self.idletime = time + globaldef000523;
-        func000092(self, "You can have up to a 5 minute break.\n Impulse 70 to get back in line\n");
+        self.idletime = time + GLOBALDEFFIVETWOTHREE;
+        sprint(self, "You can have up to a 5 minute break.\n Impulse 70 to get back in line\n");
     }
     else
     {
@@ -4535,7 +4535,7 @@ void () func000372 =
         if((self.impulse >= 71) && (self.impulse <= 81))
         {
             self.statstate = self.impulse - 71;
-            func000092(self, "Status bar set\n");
+            sprint(self, "Status bar set\n");
         }
         
     }

@@ -673,7 +673,7 @@ void () func000694 = [25, func000695]
 // OP_DONE	0	0	0
 void () func000695 = [26, func000696]
 {
-    ai_run(globaldef000774);
+    ai_run(GLOBALDEFSEVENSEVENFOUR);
 };
 
 

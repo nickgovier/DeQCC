@@ -426,7 +426,7 @@ void () func001120 = [73, func001121]
 // OP_DONE	0	0	0
 void () func001121 = [74, func001122]
 {
-    ai_run(globaldef000748);
+    ai_run(GLOBALDEFSEVENFOUREIGHT);
 };
 
 
@@ -474,7 +474,7 @@ void () func001124 = [77, func001125]
 // OP_DONE	0	0	0
 void () func001125 = [78, func001126]
 {
-    ai_run(globaldef000748);
+    ai_run(GLOBALDEFSEVENFOUREIGHT);
 };
 
 
@@ -1095,7 +1095,7 @@ void () func001174 = [10, func001175]
 {
     self.solid = SOLID_NOT;
     self.ammo_shells = MOVETYPE_FLY;
-    func000244();
+    DropBackpack();
 };
 
 
@@ -1198,7 +1198,7 @@ void () func001184 = [20, func001185]
 {
     self.solid = SOLID_NOT;
     self.ammo_shells = MOVETYPE_FLY;
-    func000244();
+    DropBackpack();
     ai_back(MOVETYPE_STEP);
 };
 

@@ -1,6 +1,6 @@
-void () func000283;
+void () W_SetCurrentAmmo;
 
-// func000204
+// SUB_regen
 // function begins at statement 4222, parm_start=4297
 // OP_ADDRESS	28	130	4297
 // OP_LOAD_S	28	399	4298
@@ -18,7 +18,7 @@ void () func000283;
 // OP_STORE_V	4301	7	0
 // OP_CALL2	453	0	0
 // OP_DONE	0	0	0
-void () func000204 = 
+void () SUB_regen = 
 {
     self.model = self.mdl;
     self.solid = SOLID_TRIGGER;
@@ -50,7 +50,7 @@ void () noclass =
 };
 
 
-// func000206
+// PlaceItem
 // function begins at statement 4250, parm_start=4310
 // OP_ADDRESS	28	399	4311
 // OP_LOAD_S	28	130	4312
@@ -85,16 +85,16 @@ void () noclass =
 // OP_CALL1	465	0	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () func000206 = 
+void () PlaceItem = 
 {
-    local float globaldef001794;
+    local float oldz;
     self.mdl = self.model;
     self.flags = FL_ITEM;
     self.solid = SOLID_TRIGGER;
     self.movetype = MOVETYPE_TOSS;
     self.velocity = VEC_ORIGIN;
     self.origin_z = self.origin_z + MOVETYPE_TOSS;
-    globaldef001794 = self.origin_z;
+    oldz = self.origin_z;
     
     if(!droptofloor())
     {
@@ -108,7 +108,7 @@ void () func000206 =
 };
 
 
-// func000207
+// StartItem
 // function begins at statement 4283, parm_start=4329
 // OP_ADDRESS	28	150	4329
 // OP_ADD_F	31	3267	4330
@@ -116,14 +116,14 @@ void () func000206 =
 // OP_ADDRESS	28	148	4331
 // OP_STOREP_FNC	4309	4331	0
 // OP_DONE	0	0	0
-void () func000207 = 
+void () StartItem = 
 {
     self.nextthink = time + 0.2;
-    self.think = func000206;
+    self.think = PlaceItem;
 };
 
 
-// func000208
+// T_Heal
 // function begins at statement 4289, parm_start=4332
 // OP_LOAD_F	4332	152	4335
 // OP_LE	4335	213	4336
@@ -159,43 +159,43 @@ void () func000207 =
 // OP_STOREP_F	738	4354	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float (entity globaldef001797, float globaldef001798, float globaldef001799) func000208 = 
+float (entity e, float healamount, float ignore) T_Heal = 
 {
     
-    if(globaldef001797.health <= FALSE)
+    if(e.health <= FALSE)
     {
         return FALSE;
     }
     
     
-    if(!globaldef001799 && (globaldef001797.health >= other.max_health))
+    if(!ignore && (e.health >= other.max_health))
     {
         return FALSE;
     }
     
-    globaldef001798 = ceil(globaldef001798);
-    globaldef001797.health = globaldef001797.health + globaldef001798;
+    healamount = ceil(healamount);
+    e.health = e.health + healamount;
     
-    if(!globaldef001799 && (globaldef001797.health >= other.max_health))
+    if(!ignore && (e.health >= other.max_health))
     {
-        globaldef001797.health = other.max_health;
+        e.health = other.max_health;
     }
     
     
-    if(globaldef001797.health > globaldef000721)
+    if(e.health > GLOBALDEFSEVENTWOONE)
     {
-        globaldef001797.health = globaldef000721;
+        e.health = GLOBALDEFSEVENTWOONE;
     }
     
     return TRUE;
 };
 
-float globaldef001800;
-float globaldef001801;
+float H_ROTTEN = 1;
+float H_MEGA = 2;
 .float healamount;
 .float healtype;
-void () func000210;
-void () func000211;
+void () health_touch;
+void () item_megahealth_rot;
 
 // item_health
 // function begins at statement 4323, parm_start=4362
@@ -266,20 +266,20 @@ void () func000211;
 // OP_DONE	0	0	0
 void () item_health = 
 {
-    self.touch = func000210;
-    if(self.spawnflags & globaldef001800)
+    self.touch = health_touch;
+    if(self.spawnflags & H_ROTTEN)
     {
         precache_model("maps/b_bh10.bsp");
         precache_sound("items/r_item1.wav");
         setmodel(self, "maps/b_bh10.bsp");
         self.noise = "items/r_item1.wav";
-        self.healamount = globaldef000748;
+        self.healamount = GLOBALDEFSEVENFOUREIGHT;
         self.healtype = FALSE;
         self.field000225 = func002299;
     }
     else
     {
-        if(self.spawnflags & globaldef001801)
+        if(self.spawnflags & H_MEGA)
         {
             precache_model("maps/b_bh100.bsp");
             precache_sound("items/r_item2.wav");
@@ -305,11 +305,11 @@ void () item_health =
     }
     
     setsize(self, VEC_ORIGIN, '32 32 56');
-    func000207();
+    StartItem();
 };
 
 
-// func000210
+// health_touch
 // function begins at statement 4388, parm_start=4390
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -415,10 +415,10 @@ void () item_health =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000210 = 
+void () health_touch = 
 {
-    local float globaldef001814;
-    local string globaldef001815;
+    local float amount;
+    local string s;
     
     if(globaldef000799)
     {
@@ -451,13 +451,13 @@ void () func000210 =
     if(self.healtype == FL_SWIM)
     {
         
-        if(other.health >= globaldef000721)
+        if(other.health >= GLOBALDEFSEVENTWOONE)
         {
             return;
         }
         
         
-        if(!func000208(other, self.healamount, TRUE))
+        if(!T_Heal(other, self.healamount, TRUE))
         {
             return;
         }
@@ -466,7 +466,7 @@ void () func000210 =
     else
     {
         
-        if(!func000208(other, self.healamount, FALSE))
+        if(!T_Heal(other, self.healamount, FALSE))
         {
             return;
         }
@@ -476,17 +476,17 @@ void () func000210 =
     
     if(other.classname == "player")
     {
-        func000092(other, "You receive ");
-        globaldef001815 = ftos(self.healamount);
-        func000092(other, globaldef001815);
-        func000092(other, " health\n");
+        sprint(other, "You receive ");
+        s = ftos(self.healamount);
+        sprint(other, s);
+        sprint(other, " health\n");
     }
     
     sound(other, CHAN_ITEM, self.noise, TRUE, ATTN_NORM);
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
     self.model = string_null;
@@ -495,7 +495,7 @@ void () func000210 =
     {
         other.items = other.items | IT_SUPERHEALTH;
         self.nextthink = time + MOVETYPE_FLY;
-        self.think = func000211;
+        self.think = item_megahealth_rot;
         self.owner = other;
     }
     else
@@ -509,7 +509,7 @@ void () func000210 =
                 self.nextthink = time + 20;
             }
             
-            self.think = func000204;
+            self.think = SUB_regen;
         }
         
     }
@@ -519,7 +519,7 @@ void () func000210 =
 };
 
 
-// func000211
+// item_megahealth_rot
 // function begins at statement 4492, parm_start=4432
 // OP_LOAD_ENT	28	201	4432
 // OP_STORE_ENT	4432	29	0
@@ -556,7 +556,7 @@ void () func000210 =
 // OP_ADDRESS	28	148	4453
 // OP_STOREP_FNC	4296	4453	0
 // OP_DONE	0	0	0
-void () func000211 = 
+void () item_megahealth_rot = 
 {
     other = self.owner;
     
@@ -572,20 +572,20 @@ void () func000211 =
     if(deathmatch == TRUE)
     {
         self.nextthink = time + 20;
-        self.think = func000204;
+        self.think = SUB_regen;
     }
     
     
     if(deathmatch == MOVETYPE_WALK)
     {
         self.nextthink = time + 20;
-        self.think = func000204;
+        self.think = SUB_regen;
     }
     
 };
 
 
-// func000212
+// armor_touch
 // function begins at statement 4527, parm_start=4455
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -693,11 +693,11 @@ void () func000211 =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000212 = 
+void () armor_touch = 
 {
-    local float globaldef001820;
-    local float globaldef001821;
-    local float globaldef001822;
+    local float type;
+    local float value;
+    local float bit;
     
     if(globaldef000799)
     {
@@ -736,36 +736,36 @@ void () func000212 =
     
     if(self.classname == "item_armor1")
     {
-        globaldef001820 = 0.3;
-        globaldef001821 = 100;
-        globaldef001822 = IT_ARMOR1;
+        type = 0.3;
+        value = 100;
+        bit = IT_ARMOR1;
     }
     
     
     if(self.classname == "item_armor2")
     {
-        globaldef001820 = 0.6;
-        globaldef001821 = 150;
-        globaldef001822 = IT_ARMOR2;
+        type = 0.6;
+        value = 150;
+        bit = IT_ARMOR2;
     }
     
     
     if(self.classname == "item_armorInv")
     {
-        globaldef001820 = 0.8;
-        globaldef001821 = 200;
-        globaldef001822 = IT_ARMOR3;
+        type = 0.8;
+        value = 200;
+        bit = IT_ARMOR3;
     }
     
     
-    if((other.armortype * other.armorvalue) >= (globaldef001820 * globaldef001821))
+    if((other.armortype * other.armorvalue) >= (type * value))
     {
         return;
     }
     
-    other.armortype = globaldef001820;
-    other.armorvalue = globaldef001821;
-    other.items = (other.items - (other.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + globaldef001822;
+    other.armortype = type;
+    other.armorvalue = value;
+    other.items = (other.items - (other.items & ((IT_ARMOR1 | IT_ARMOR2) | IT_ARMOR3))) + bit;
     self.solid = SOLID_NOT;
     self.model = string_null;
     
@@ -780,11 +780,11 @@ void () func000212 =
         self.nextthink = time + 20;
     }
     
-    self.think = func000204;
+    self.think = SUB_regen;
     
     if(other.classname == "player")
     {
-        func000092(other, "You got armor\n");
+        sprint(other, "You got armor\n");
     }
     
     sound(other, CHAN_ITEM, "items/armor1.wav", TRUE, ATTN_NORM);
@@ -792,7 +792,7 @@ void () func000212 =
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
     activator = other;
@@ -823,14 +823,14 @@ void () func000212 =
 // OP_DONE	0	0	0
 void () item_armor1 = 
 {
-    self.touch = func000212;
+    self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = FALSE;
     self.armorvalue = 100;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002311;
-    func000207();
+    StartItem();
 };
 
 
@@ -861,7 +861,7 @@ void () item_armor1 =
 // OP_DONE	0	0	0
 void () item_armor2 = 
 {
-    self.touch = func000212;
+    self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = TRUE;
@@ -870,7 +870,7 @@ void () item_armor2 =
     self.field000225 = func002312;
     self.field000226 = func002325;
     self.field000224 = func002646;
-    func000207();
+    StartItem();
 };
 
 
@@ -901,7 +901,7 @@ void () item_armor2 =
 // OP_DONE	0	0	0
 void () item_armorInv = 
 {
-    self.touch = func000212;
+    self.touch = armor_touch;
     precache_model("progs/armor.mdl");
     setmodel(self, "progs/armor.mdl");
     self.skin = FL_SWIM;
@@ -910,11 +910,11 @@ void () item_armorInv =
     self.field000225 = func002313;
     self.field000226 = func002326;
     self.field000224 = func002646;
-    func000207();
+    StartItem();
 };
 
 
-// func000216
+// bound_other_ammo
 // function begins at statement 4698, parm_start=4539
 // OP_LOAD_F	29	158	4539
 // OP_GT	4539	1997	4540
@@ -937,7 +937,7 @@ void () item_armorInv =
 // OP_ADDRESS	29	161	4550
 // OP_STOREP_F	1997	4550	0
 // OP_DONE	0	0	0
-void () func000216 = 
+void () bound_other_ammo = 
 {
     
     if(other.ammo_shells > 100)
@@ -966,7 +966,7 @@ void () func000216 =
 };
 
 
-// func000217
+// RankForWeapon
 // function begins at statement 4719, parm_start=4552
 // OP_EQ_F	4552	260	4553
 // OP_IFNOT	4553	2	0
@@ -988,40 +988,40 @@ void () func000216 =
 // OP_RETURN	231	0	0
 // OP_RETURN	232	0	0
 // OP_DONE	0	0	0
-float (float globaldef001838) func000217 = 
+float (float w) RankForWeapon = 
 {
     
-    if(globaldef001838 == IT_LIGHTNING)
+    if(w == IT_LIGHTNING)
     {
         return TRUE;
     }
     
     
-    if(globaldef001838 == IT_ROCKET_LAUNCHER)
+    if(w == IT_ROCKET_LAUNCHER)
     {
         return FL_SWIM;
     }
     
     
-    if(globaldef001838 == IT_SUPER_NAILGUN)
+    if(w == IT_SUPER_NAILGUN)
     {
         return MOVETYPE_WALK;
     }
     
     
-    if(globaldef001838 == IT_GRENADE_LAUNCHER)
+    if(w == IT_GRENADE_LAUNCHER)
     {
         return MOVETYPE_STEP;
     }
     
     
-    if(globaldef001838 == IT_SUPER_SHOTGUN)
+    if(w == IT_SUPER_SHOTGUN)
     {
         return MOVETYPE_FLY;
     }
     
     
-    if(globaldef001838 == IT_NAILGUN)
+    if(w == IT_NAILGUN)
     {
         return MOVETYPE_TOSS;
     }
@@ -1030,7 +1030,7 @@ float (float globaldef001838) func000217 =
 };
 
 
-// func000218
+// Deathmatch_Weapon
 // function begins at statement 4739, parm_start=4560
 // OP_LOAD_F	28	154	4564
 // OP_STORE_V	4564	4	0
@@ -1044,23 +1044,23 @@ float (float globaldef001838) func000217 =
 // OP_ADDRESS	28	154	4566
 // OP_STOREP_F	4561	4566	0
 // OP_DONE	0	0	0
-void (float globaldef001840, float globaldef001841) func000218 = 
+void (float old, float new) Deathmatch_Weapon = 
 {
-    local float globaldef001842;
-    local float globaldef001843;
-    globaldef001842 = func000217(self.weapon);
-    globaldef001843 = func000217(globaldef001841);
+    local float or;
+    local float nr;
+    or = RankForWeapon(self.weapon);
+    nr = RankForWeapon(new);
     
-    if(globaldef001843 < globaldef001842)
+    if(nr < or)
     {
-        self.weapon = globaldef001841;
+        self.weapon = new;
     }
     
 };
 
-float () func000284;
+float () W_BestWeapon;
 
-// func000219
+// weapon_touch
 // function begins at statement 4751, parm_start=4569
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -1264,14 +1264,14 @@ float () func000284;
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000219 = 
+void () weapon_touch = 
 {
-    local float globaldef001846;
-    local float globaldef001847;
-    local float globaldef001848;
-    local float globaldef001849;
-    local entity globaldef001850;
-    local float globaldef001851;
+    local float hadammo;
+    local float best;
+    local float new;
+    local float old;
+    local entity stemp;
+    local float leave;
     
     if(globaldef000799)
     {
@@ -1301,40 +1301,40 @@ void () func000219 =
         func002471(other, self);
     }
     
-    globaldef001850 = self;
+    stemp = self;
     self = other;
     
     if(self.classname == "player")
     {
-        globaldef001847 = func000284();
+        best = W_BestWeapon();
     }
     
-    self = globaldef001850;
+    self = stemp;
     if((deathmatch == FL_SWIM) || coop)
     {
-        globaldef001851 = TRUE;
+        leave = TRUE;
     }
     else
     {
-        globaldef001851 = FALSE;
+        leave = FALSE;
     }
     
     
     if(deathmatch == MOVETYPE_WALK)
     {
-        globaldef001851 = TRUE;
+        leave = TRUE;
     }
     
     if(self.classname == "weapon_nailgun")
     {
         
-        if(globaldef001851 && (other.items & IT_NAILGUN))
+        if(leave && (other.items & IT_NAILGUN))
         {
             return;
         }
         
-        globaldef001846 = other.ammo_nails;
-        globaldef001848 = IT_NAILGUN;
+        hadammo = other.ammo_nails;
+        new = IT_NAILGUN;
         other.ammo_nails = other.ammo_nails + SVC_INTERMISSION;
     }
     else
@@ -1342,13 +1342,13 @@ void () func000219 =
         if(self.classname == "weapon_supernailgun")
         {
             
-            if(globaldef001851 && (other.items & IT_SUPER_NAILGUN))
+            if(leave && (other.items & IT_SUPER_NAILGUN))
             {
                 return;
             }
             
-            globaldef001846 = other.ammo_rockets;
-            globaldef001848 = IT_SUPER_NAILGUN;
+            hadammo = other.ammo_rockets;
+            new = IT_SUPER_NAILGUN;
             other.ammo_nails = other.ammo_nails + SVC_INTERMISSION;
         }
         else
@@ -1356,13 +1356,13 @@ void () func000219 =
             if(self.classname == "weapon_supershotgun")
             {
                 
-                if(globaldef001851 && (other.items & IT_SUPER_SHOTGUN))
+                if(leave && (other.items & IT_SUPER_SHOTGUN))
                 {
                     return;
                 }
                 
-                globaldef001846 = other.ammo_rockets;
-                globaldef001848 = IT_SUPER_SHOTGUN;
+                hadammo = other.ammo_rockets;
+                new = IT_SUPER_SHOTGUN;
                 other.ammo_shells = other.ammo_shells + MOVETYPE_FLY;
             }
             else
@@ -1370,13 +1370,13 @@ void () func000219 =
                 if(self.classname == "weapon_rocketlauncher")
                 {
                     
-                    if(globaldef001851 && (other.items & IT_ROCKET_LAUNCHER))
+                    if(leave && (other.items & IT_ROCKET_LAUNCHER))
                     {
                         return;
                     }
                     
-                    globaldef001846 = other.ammo_rockets;
-                    globaldef001848 = IT_ROCKET_LAUNCHER;
+                    hadammo = other.ammo_rockets;
+                    new = IT_ROCKET_LAUNCHER;
                     other.ammo_rockets = other.ammo_rockets + MOVETYPE_FLY;
                 }
                 else
@@ -1384,13 +1384,13 @@ void () func000219 =
                     if(self.classname == "weapon_grenadelauncher")
                     {
                         
-                        if(globaldef001851 && (other.items & IT_GRENADE_LAUNCHER))
+                        if(leave && (other.items & IT_GRENADE_LAUNCHER))
                         {
                             return;
                         }
                         
-                        globaldef001846 = other.ammo_rockets;
-                        globaldef001848 = IT_GRENADE_LAUNCHER;
+                        hadammo = other.ammo_rockets;
+                        new = IT_GRENADE_LAUNCHER;
                         other.ammo_rockets = other.ammo_rockets + MOVETYPE_FLY;
                     }
                     else
@@ -1398,14 +1398,14 @@ void () func000219 =
                         if(self.classname == "weapon_lightning")
                         {
                             
-                            if(globaldef001851 && (other.items & IT_LIGHTNING))
+                            if(leave && (other.items & IT_LIGHTNING))
                             {
                                 return;
                             }
                             
-                            globaldef001846 = other.ammo_rockets;
-                            globaldef001848 = IT_LIGHTNING;
-                            other.ammo_cells = other.ammo_cells + globaldef000748;
+                            hadammo = other.ammo_rockets;
+                            new = IT_LIGHTNING;
+                            other.ammo_cells = other.ammo_cells + GLOBALDEFSEVENFOUREIGHT;
                         }
                         else
                         {
@@ -1425,9 +1425,9 @@ void () func000219 =
     
     if(other.classname == "player")
     {
-        func000092(other, "You got the ");
-        func000092(other, self.netname);
-        func000092(other, "\n");
+        sprint(other, "You got the ");
+        sprint(other, self.netname);
+        sprint(other, "\n");
     }
     
     sound(other, CHAN_ITEM, "weapons/pkup.wav", TRUE, ATTN_NORM);
@@ -1435,27 +1435,27 @@ void () func000219 =
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
-    func000216();
-    globaldef001849 = other.items;
-    other.items = other.items | globaldef001848;
-    globaldef001850 = self;
+    bound_other_ammo();
+    old = other.items;
+    other.items = other.items | new;
+    stemp = self;
     self = other;
     if(!deathmatch)
     {
-        self.weapon = globaldef001848;
+        self.weapon = new;
     }
     else
     {
-        func000218(globaldef001849, globaldef001848);
+        Deathmatch_Weapon(old, new);
     }
     
-    func000283();
-    self = globaldef001850;
+    W_SetCurrentAmmo();
+    self = stemp;
     
-    if(globaldef001851)
+    if(leave)
     {
         return;
     }
@@ -1468,7 +1468,7 @@ void () func000219 =
         self.nextthink = time + SVC_INTERMISSION;
     }
     
-    self.think = func000204;
+    self.think = SUB_regen;
     activator = other;
     SUB_UseTargets();
 };
@@ -1505,12 +1505,12 @@ void () weapon_supershotgun =
     setmodel(self, "progs/g_shot.mdl");
     self.weapon = IT_SUPER_SHOTGUN;
     self.netname = "Double-barrelled Shotgun";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002310;
     self.field000226 = func002319;
     self.field000224 = func002640;
-    func000207();
+    StartItem();
 };
 
 
@@ -1545,12 +1545,12 @@ void () weapon_nailgun =
     setmodel(self, "progs/g_nail.mdl");
     self.weapon = IT_NAILGUN;
     self.netname = "nailgun";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002308;
     self.field000226 = func002320;
     self.field000224 = func002641;
-    func000207();
+    StartItem();
 };
 
 
@@ -1585,12 +1585,12 @@ void () weapon_supernailgun =
     setmodel(self, "progs/g_nail2.mdl");
     self.weapon = IT_SUPER_NAILGUN;
     self.netname = "Super Nailgun";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002309;
     self.field000226 = func002321;
     self.field000224 = func002642;
-    func000207();
+    StartItem();
 };
 
 
@@ -1625,12 +1625,12 @@ void () weapon_grenadelauncher =
     setmodel(self, "progs/g_rock.mdl");
     self.weapon = MOVETYPE_WALK;
     self.netname = "Grenade Launcher";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002307;
     self.field000226 = func002322;
     self.field000224 = func002643;
-    func000207();
+    StartItem();
 };
 
 
@@ -1665,12 +1665,12 @@ void () weapon_rocketlauncher =
     setmodel(self, "progs/g_rock2.mdl");
     self.weapon = MOVETYPE_WALK;
     self.netname = "Rocket Launcher";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002305;
     self.field000226 = func002323;
     self.field000224 = func002644;
-    func000207();
+    StartItem();
 };
 
 
@@ -1705,16 +1705,16 @@ void () weapon_lightning =
     setmodel(self, "progs/g_light.mdl");
     self.weapon = MOVETYPE_WALK;
     self.netname = "Thunderbolt";
-    self.touch = func000219;
+    self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
     self.field000225 = func002306;
     self.field000226 = func002324;
     self.field000224 = func002645;
-    func000207();
+    StartItem();
 };
 
 
-// func000226
+// ammo_touch
 // function begins at statement 5091, parm_start=4726
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -1853,10 +1853,10 @@ void () weapon_lightning =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000226 = 
+void () ammo_touch = 
 {
-    local entity globaldef001880;
-    local float globaldef001881;
+    local entity stemp;
+    local float best;
     
     if(globaldef000799)
     {
@@ -1886,10 +1886,10 @@ void () func000226 =
         return;
     }
     
-    globaldef001880 = self;
+    stemp = self;
     self = other;
-    globaldef001881 = func000284();
-    self = globaldef001880;
+    best = W_BestWeapon();
+    self = stemp;
     
     if(self.weapon == TRUE)
     {
@@ -1938,13 +1938,13 @@ void () func000226 =
         other.ammo_cells = other.ammo_cells + self.aflag;
     }
     
-    func000216();
+    bound_other_ammo();
     
     if(other.classname == "player")
     {
-        func000092(other, "You got the ");
-        func000092(other, self.netname);
-        func000092(other, "\n");
+        sprint(other, "You got the ");
+        sprint(other, self.netname);
+        sprint(other, "\n");
     }
     
     sound(other, CHAN_ITEM, "weapons/lock4.wav", TRUE, ATTN_NORM);
@@ -1952,23 +1952,23 @@ void () func000226 =
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
     
-    if(other.weapon == globaldef001881)
+    if(other.weapon == best)
     {
-        globaldef001880 = self;
+        stemp = self;
         self = other;
-        self.weapon = func000284();
-        func000283();
-        self = globaldef001880;
+        self.weapon = W_BestWeapon();
+        W_SetCurrentAmmo();
+        self = stemp;
     }
     
-    globaldef001880 = self;
+    stemp = self;
     self = other;
-    func000283();
-    self = globaldef001880;
+    W_SetCurrentAmmo();
+    self = stemp;
     self.model = string_null;
     self.solid = SOLID_NOT;
     
@@ -1983,12 +1983,12 @@ void () func000226 =
         self.nextthink = time + SVC_INTERMISSION;
     }
     
-    self.think = func000204;
+    self.think = SUB_regen;
     activator = other;
     SUB_UseTargets();
 };
 
-float globaldef001883;
+float WEAPON_BIG2 = 1;
 
 // item_shells
 // function begins at statement 5228, parm_start=4791
@@ -2026,8 +2026,8 @@ float globaldef001883;
 // OP_DONE	0	0	0
 void () item_shells = 
 {
-    self.touch = func000226;
-    if(self.spawnflags & globaldef001883)
+    self.touch = ammo_touch;
+    if(self.spawnflags & WEAPON_BIG2)
     {
         precache_model("maps/b_shell1.bsp");
         setmodel(self, "maps/b_shell1.bsp");
@@ -2044,7 +2044,7 @@ void () item_shells =
     self.netname = "shells";
     setsize(self, VEC_ORIGIN, '32 32 56');
     self.field000225 = func002302;
-    func000207();
+    StartItem();
 };
 
 
@@ -2084,8 +2084,8 @@ void () item_shells =
 // OP_DONE	0	0	0
 void () item_spikes = 
 {
-    self.touch = func000226;
-    if(self.spawnflags & globaldef001883)
+    self.touch = ammo_touch;
+    if(self.spawnflags & WEAPON_BIG2)
     {
         precache_model("maps/b_nail1.bsp");
         setmodel(self, "maps/b_nail1.bsp");
@@ -2102,7 +2102,7 @@ void () item_spikes =
     self.netname = "nails";
     setsize(self, VEC_ORIGIN, '32 32 56');
     self.field000225 = func002301;
-    func000207();
+    StartItem();
 };
 
 
@@ -2142,8 +2142,8 @@ void () item_spikes =
 // OP_DONE	0	0	0
 void () item_rockets = 
 {
-    self.touch = func000226;
-    if(self.spawnflags & globaldef001883)
+    self.touch = ammo_touch;
+    if(self.spawnflags & WEAPON_BIG2)
     {
         precache_model("maps/b_rock1.bsp");
         setmodel(self, "maps/b_rock1.bsp");
@@ -2160,7 +2160,7 @@ void () item_rockets =
     self.netname = "rockets";
     setsize(self, VEC_ORIGIN, '32 32 56');
     self.field000225 = func002304;
-    func000207();
+    StartItem();
 };
 
 
@@ -2200,12 +2200,12 @@ void () item_rockets =
 // OP_DONE	0	0	0
 void () item_cells = 
 {
-    self.touch = func000226;
-    if(self.spawnflags & globaldef001883)
+    self.touch = ammo_touch;
+    if(self.spawnflags & WEAPON_BIG2)
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = globaldef000774;
+        self.aflag = GLOBALDEFSEVENSEVENFOUR;
     }
     else
     {
@@ -2218,13 +2218,13 @@ void () item_cells =
     self.netname = "cells";
     setsize(self, VEC_ORIGIN, '32 32 56');
     self.field000225 = func002303;
-    func000207();
+    StartItem();
 };
 
-float globaldef001900;
-float globaldef001901;
-float globaldef001902;
-float globaldef001903;
+float WEAPON_SHOTGUN = 1;
+float WEAPON_ROCKET = 2;
+float WEAPON_SPIKES = 4;
+float WEAPON_BIG = 8;
 
 // item_weapon
 // function begins at statement 5356, parm_start=4843
@@ -2313,11 +2313,11 @@ float globaldef001903;
 // OP_DONE	0	0	0
 void () item_weapon = 
 {
-    self.touch = func000226;
+    self.touch = ammo_touch;
     
-    if(self.spawnflags & globaldef001900)
+    if(self.spawnflags & WEAPON_SHOTGUN)
     {
-        if(self.spawnflags & globaldef001903)
+        if(self.spawnflags & WEAPON_BIG)
         {
             precache_model("maps/b_shell1.bsp");
             setmodel(self, "maps/b_shell1.bsp");
@@ -2335,9 +2335,9 @@ void () item_weapon =
     }
     
     
-    if(self.spawnflags & globaldef001902)
+    if(self.spawnflags & WEAPON_SPIKES)
     {
-        if(self.spawnflags & globaldef001903)
+        if(self.spawnflags & WEAPON_BIG)
         {
             precache_model("maps/b_nail1.bsp");
             setmodel(self, "maps/b_nail1.bsp");
@@ -2355,9 +2355,9 @@ void () item_weapon =
     }
     
     
-    if(self.spawnflags & globaldef001901)
+    if(self.spawnflags & WEAPON_ROCKET)
     {
-        if(self.spawnflags & globaldef001903)
+        if(self.spawnflags & WEAPON_BIG)
         {
             precache_model("maps/b_rock1.bsp");
             setmodel(self, "maps/b_rock1.bsp");
@@ -2375,11 +2375,11 @@ void () item_weapon =
     }
     
     setsize(self, VEC_ORIGIN, '32 32 56');
-    func000207();
+    StartItem();
 };
 
 
-// func000232
+// key_touch
 // function begins at statement 5439, parm_start=4870
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -2439,10 +2439,10 @@ void () item_weapon =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000232 = 
+void () key_touch = 
 {
-    local entity globaldef001907;
-    local float globaldef001908;
+    local entity stemp;
+    local float best;
     
     if(globaldef000799)
     {
@@ -2475,16 +2475,16 @@ void () func000232 =
     
     if(other.classname == "player")
     {
-        func000092(other, "You got the ");
-        func000092(other, self.netname);
-        func000092(other, "\n");
+        sprint(other, "You got the ");
+        sprint(other, self.netname);
+        sprint(other, "\n");
     }
     
     sound(other, CHAN_ITEM, self.noise, TRUE, ATTN_NORM);
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
     other.items = other.items | self.items;
@@ -2500,7 +2500,7 @@ void () func000232 =
 };
 
 
-// func000233
+// key_setsounds
 // function begins at statement 5497, parm_start=4895
 // OP_LOAD_F	30	357	4895
 // OP_EQ_F	4895	213	4896
@@ -2526,7 +2526,7 @@ void () func000232 =
 // OP_ADDRESS	28	208	4906
 // OP_STOREP_S	4905	4906	0
 // OP_DONE	0	0	0
-void () func000233 = 
+void () key_setsounds = 
 {
     if(world.worldtype == FALSE)
     {
@@ -2631,11 +2631,11 @@ void () item_key1 =
         
     }
     
-    func000233();
-    self.touch = func000232;
+    key_setsounds();
+    self.touch = key_touch;
     self.items = IT_KEY1;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    func000207();
+    StartItem();
 };
 
 
@@ -2714,15 +2714,15 @@ void () item_key2 =
         
     }
     
-    func000233();
-    self.touch = func000232;
+    key_setsounds();
+    self.touch = key_touch;
     self.items = IT_KEY2;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    func000207();
+    StartItem();
 };
 
 
-// func000236
+// sigil_touch
 // function begins at statement 5607, parm_start=4944
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -2760,10 +2760,10 @@ void () item_key2 =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000236 = 
+void () sigil_touch = 
 {
-    local entity globaldef001928;
-    local float globaldef001929;
+    local entity stemp;
+    local float best;
     
     if(globaldef000799)
     {
@@ -2784,10 +2784,10 @@ void () func000236 =
     
     centerprint(other, "You got the rune!");
     sound(other, CHAN_ITEM, self.noise, TRUE, ATTN_NORM);
-    func000064(other, "bf\n");
+    stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    serverflags = serverflags | (self.spawnflags & globaldef000748);
+    serverflags = serverflags | (self.spawnflags & GLOBALDEFSEVENFOUREIGHT);
     self.classname = "";
     activator = other;
     SUB_UseTargets();
@@ -2883,13 +2883,13 @@ void () item_sigil =
         setmodel(self, "progs/end4.mdl");
     }
     
-    self.touch = func000236;
+    self.touch = sigil_touch;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    func000207();
+    StartItem();
 };
 
 
-// func000238
+// powerup_touch
 // function begins at statement 5692, parm_start=4977
 // OP_IFNOT	816	2	0
 // OP_RETURN	0	0	0
@@ -3006,10 +3006,10 @@ void () item_sigil =
 // OP_STORE_ENT	29	351	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000238 = 
+void () powerup_touch = 
 {
-    local entity globaldef001938;
-    local float globaldef001939;
+    local entity stemp;
+    local float best;
     
     if(globaldef000799)
     {
@@ -3048,9 +3048,9 @@ void () func000238 =
     
     if(other.classname == "player")
     {
-        func000092(other, "You got the ");
-        func000092(other, self.netname);
-        func000092(other, "\n");
+        sprint(other, "You got the ");
+        sprint(other, self.netname);
+        sprint(other, "\n");
     }
     
     
@@ -3066,14 +3066,14 @@ void () func000238 =
             self.nextthink = time + 60;
         }
         
-        self.think = func000204;
+        self.think = SUB_regen;
     }
     
     sound(other, CHAN_VOICE, self.noise, TRUE, ATTN_NORM);
     
     if(other.classname == "player")
     {
-        func000064(other, "bf\n");
+        stuffcmd(other, "bf\n");
     }
     
     self.solid = SOLID_NOT;
@@ -3147,7 +3147,7 @@ void () func000238 =
 // OP_DONE	0	0	0
 void () item_artifact_invulnerability = 
 {
-    self.touch = func000238;
+    self.touch = powerup_touch;
     precache_model("progs/invulner.mdl");
     precache_sound("items/protect.wav");
     precache_sound("items/protect2.wav");
@@ -3160,7 +3160,7 @@ void () item_artifact_invulnerability =
     self.field000225 = func002317;
     self.field000226 = func002329;
     self.field000224 = func002647;
-    func000207();
+    StartItem();
 };
 
 
@@ -3193,7 +3193,7 @@ void () item_artifact_invulnerability =
 // OP_DONE	0	0	0
 void () item_artifact_envirosuit = 
 {
-    self.touch = func000238;
+    self.touch = powerup_touch;
     precache_model("progs/suit.mdl");
     precache_sound("items/suit.wav");
     precache_sound("items/suit2.wav");
@@ -3203,7 +3203,7 @@ void () item_artifact_envirosuit =
     self.items = IT_SUIT;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.field000225 = func002314;
-    func000207();
+    StartItem();
 };
 
 
@@ -3242,7 +3242,7 @@ void () item_artifact_envirosuit =
 // OP_DONE	0	0	0
 void () item_artifact_invisibility = 
 {
-    self.touch = func000238;
+    self.touch = powerup_touch;
     precache_model("progs/invisibl.mdl");
     precache_sound("items/inv1.wav");
     precache_sound("items/inv2.wav");
@@ -3255,7 +3255,7 @@ void () item_artifact_invisibility =
     self.field000225 = func002315;
     self.field000226 = func002327;
     self.field000224 = func002647;
-    func000207();
+    StartItem();
 };
 
 
@@ -3294,7 +3294,7 @@ void () item_artifact_invisibility =
 // OP_DONE	0	0	0
 void () item_artifact_super_damage = 
 {
-    self.touch = func000238;
+    self.touch = powerup_touch;
     precache_model("progs/quaddama.mdl");
     precache_sound("items/damage.wav");
     precache_sound("items/damage2.wav");
@@ -3307,6 +3307,627 @@ void () item_artifact_super_damage =
     self.field000225 = func002316;
     self.field000226 = func002328;
     self.field000224 = func002647;
-    func000207();
+    StartItem();
+};
+
+
+// BackpackTouch
+// function begins at statement 5925, parm_start=5087
+// OP_BITAND	821	767	5093
+// OP_NOT_F	5093	0	5094
+// OP_IFNOT	5094	3	0
+// OP_IFNOT	816	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	29	129	5095
+// OP_NE_S	5095	1236	5096
+// OP_IFNOT	5096	5	0
+// OP_LOAD_S	29	129	5097
+// OP_NE_S	5097	1241	5098
+// OP_IFNOT	5098	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_S	29	129	5099
+// OP_EQ_S	5099	1241	5100
+// OP_IFNOT	5100	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1131	0	0
+// OP_LOAD_F	29	152	5101
+// OP_LE	5101	213	5102
+// OP_IFNOT	5102	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_F	213	5092	0
+// OP_LOAD_S	29	129	5103
+// OP_EQ_S	5103	1236	5104
+// OP_IFNOT	5104	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5105	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28	162	5106
+// OP_IFNOT	5106	17	0
+// OP_LOAD_F	29	162	5107
+// OP_LOAD_F	28	162	5108
+// OP_BITAND	5107	5108	5109
+// OP_EQ_F	5109	213	5110
+// OP_IFNOT	5110	12	0
+// OP_STORE_F	214	5092	0
+// OP_LOAD_S	29	129	5111
+// OP_EQ_S	5111	1236	5112
+// OP_IFNOT	5112	8	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5113	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_LOAD_S	28	180	5114
+// OP_STORE_V	5114	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_ENT	28	5091	0
+// OP_STORE_ENT	29	28	0
+// OP_CALL0	4567	0	0
+// OP_STORE_F	1	5088	0
+// OP_STORE_ENT	5091	28	0
+// OP_EQ_F	35	229	5115
+// OP_IFNOT	5115	28	0
+// OP_ADDRESS	29	152	5116
+// OP_LOAD_F	29	152	5117
+// OP_ADD_F	5117	235	5118
+// OP_STOREP_F	5118	5116	0
+// OP_LOAD_F	29	152	5119
+// OP_GE	5119	540	5120
+// OP_IFNOT	5120	21	0
+// OP_ADDRESS	29	152	5121
+// OP_STOREP_F	1997	5121	0
+// OP_ADDRESS	29	388	5122
+// OP_STOREP_F	214	5122	0
+// OP_ADDRESS	29	382	5123
+// OP_ADD_F	31	309	5124
+// OP_STOREP_F	5124	5123	0
+// OP_ADDRESS	29	162	5125
+// OP_LOAD_F	29	162	5126
+// OP_BITOR	5126	275	5127
+// OP_STOREP_F	5127	5125	0
+// OP_ADDRESS	29	384	5128
+// OP_STOREP_F	214	5128	0
+// OP_ADDRESS	29	380	5129
+// OP_ADD_F	31	309	5130
+// OP_STOREP_F	5130	5129	0
+// OP_ADDRESS	29	162	5131
+// OP_LOAD_F	29	162	5132
+// OP_BITOR	5132	273	5133
+// OP_STOREP_F	5133	5131	0
+// OP_ADDRESS	29	158	5134
+// OP_LOAD_F	29	158	5135
+// OP_LOAD_F	28	158	5136
+// OP_ADD_F	5135	5136	5137
+// OP_STOREP_F	5137	5134	0
+// OP_ADDRESS	29	159	5138
+// OP_LOAD_F	29	159	5139
+// OP_LOAD_F	28	159	5140
+// OP_ADD_F	5139	5140	5141
+// OP_STOREP_F	5141	5138	0
+// OP_ADDRESS	29	160	5142
+// OP_LOAD_F	29	160	5143
+// OP_LOAD_F	28	160	5144
+// OP_ADD_F	5143	5144	5145
+// OP_STOREP_F	5145	5142	0
+// OP_ADDRESS	29	161	5146
+// OP_LOAD_F	29	161	5147
+// OP_LOAD_F	28	161	5148
+// OP_ADD_F	5147	5148	5149
+// OP_STOREP_F	5149	5146	0
+// OP_LOAD_F	28	162	5150
+// OP_STORE_F	5150	5090	0
+// OP_NOT_F	5090	0	5151
+// OP_IFNOT	5151	3	0
+// OP_LOAD_F	29	154	5152
+// OP_STORE_F	5152	5090	0
+// OP_LOAD_F	29	162	5153
+// OP_STORE_F	5153	5089	0
+// OP_ADDRESS	29	162	5154
+// OP_LOAD_F	29	162	5155
+// OP_LOAD_F	28	162	5156
+// OP_BITOR	5155	5156	5157
+// OP_STOREP_F	5157	5154	0
+// OP_CALL0	4538	0	0
+// OP_LOAD_S	29	129	5158
+// OP_EQ_S	5158	1236	5159
+// OP_IFNOT	5159	72	0
+// OP_LOAD_F	28	158	5160
+// OP_IFNOT	5160	16	0
+// OP_IFNOT	5092	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5161	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_F	214	5092	0
+// OP_LOAD_F	28	158	5162
+// OP_STORE_V	5162	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	5087	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5087	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5163	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28	159	5164
+// OP_IFNOT	5164	16	0
+// OP_IFNOT	5092	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5161	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_F	214	5092	0
+// OP_LOAD_F	28	159	5165
+// OP_STORE_V	5165	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	5087	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5087	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5166	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28	160	5167
+// OP_IFNOT	5167	16	0
+// OP_IFNOT	5092	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5161	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_F	214	5092	0
+// OP_LOAD_F	28	160	5168
+// OP_STORE_V	5168	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	5087	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5087	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5169	7	0
+// OP_CALL2	928	0	0
+// OP_LOAD_F	28	161	5170
+// OP_IFNOT	5170	16	0
+// OP_IFNOT	5092	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5161	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_F	214	5092	0
+// OP_LOAD_F	28	161	5171
+// OP_STORE_V	5171	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_S	1	5087	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5087	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	5172	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	2127	7	0
+// OP_CALL2	928	0	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	328	7	0
+// OP_STORE_V	4771	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_LOAD_S	29	129	5173
+// OP_EQ_S	5173	1236	5174
+// OP_IFNOT	5174	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	4416	7	0
+// OP_CALL2	839	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	465	0	0
+// OP_STORE_ENT	29	28	0
+// OP_NOT_F	35	0	5175
+// OP_IFNOT	5175	4	0
+// OP_ADDRESS	28	154	5176
+// OP_STOREP_F	5090	5176	0
+// OP_GOTO	4	0	0
+// OP_STORE_V	5089	4	0
+// OP_STORE_V	5090	7	0
+// OP_CALL2	4559	0	0
+// OP_CALL0	4295	0	0
+// OP_DONE	0	0	0
+void () BackpackTouch = 
+{
+    local string s;
+    local float best;
+    local float old;
+    local float new;
+    local entity stemp;
+    local float acount;
+    
+    if(!(globaldef000804 & globaldef000750))
+    {
+        
+        if(globaldef000799)
+        {
+            return;
+        }
+        
+    }
+    
+    
+    if(other.classname != "player")
+    {
+        
+        if(other.classname != "bot")
+        {
+            return;
+        }
+        
+    }
+    
+    
+    if(other.classname == "bot")
+    {
+        func002471(other, self);
+    }
+    
+    
+    if(other.health <= FALSE)
+    {
+        return;
+    }
+    
+    acount = FALSE;
+    
+    if(other.classname == "player")
+    {
+        sprint(other, "You get ");
+    }
+    
+    
+    if(self.items)
+    {
+        
+        if((other.items & self.items) == FALSE)
+        {
+            acount = TRUE;
+            
+            if(other.classname == "player")
+            {
+                sprint(other, "the ");
+                sprint(other, self.netname);
+            }
+            
+        }
+        
+    }
+    
+    stemp = self;
+    self = other;
+    best = W_BestWeapon();
+    self = stemp;
+    
+    if(deathmatch == MOVETYPE_STEP)
+    {
+        other.health = other.health + MOVETYPE_BOUNCE;
+        
+        if(other.health >= GLOBALDEFFIVETWOTHREE)
+        {
+            other.health = 100;
+            other.super_time = TRUE;
+            other.super_damage_finished = time + SVC_INTERMISSION;
+            other.items = other.items | IT_QUAD;
+            other.invincible_time = TRUE;
+            other.invincible_finished = time + SVC_INTERMISSION;
+            other.items = other.items | IT_INVULNERABILITY;
+        }
+        
+    }
+    
+    other.ammo_shells = other.ammo_shells + self.ammo_shells;
+    other.ammo_nails = other.ammo_nails + self.ammo_nails;
+    other.ammo_rockets = other.ammo_rockets + self.ammo_rockets;
+    other.ammo_cells = other.ammo_cells + self.ammo_cells;
+    new = self.items;
+    
+    if(!new)
+    {
+        new = other.weapon;
+    }
+    
+    old = other.items;
+    other.items = other.items | self.items;
+    bound_other_ammo();
+    
+    if(other.classname == "player")
+    {
+        
+        if(self.ammo_shells)
+        {
+            
+            if(acount)
+            {
+                sprint(other, ", ");
+            }
+            
+            acount = TRUE;
+            s = ftos(self.ammo_shells);
+            sprint(other, s);
+            sprint(other, " shells");
+        }
+        
+        
+        if(self.ammo_nails)
+        {
+            
+            if(acount)
+            {
+                sprint(other, ", ");
+            }
+            
+            acount = TRUE;
+            s = ftos(self.ammo_nails);
+            sprint(other, s);
+            sprint(other, " nails");
+        }
+        
+        
+        if(self.ammo_rockets)
+        {
+            
+            if(acount)
+            {
+                sprint(other, ", ");
+            }
+            
+            acount = TRUE;
+            s = ftos(self.ammo_rockets);
+            sprint(other, s);
+            sprint(other, " rockets");
+        }
+        
+        
+        if(self.ammo_cells)
+        {
+            
+            if(acount)
+            {
+                sprint(other, ", ");
+            }
+            
+            acount = TRUE;
+            s = ftos(self.ammo_cells);
+            sprint(other, s);
+            sprint(other, " cells");
+        }
+        
+        sprint(other, "\n");
+    }
+    
+    sound(other, CHAN_ITEM, "weapons/lock4.wav", TRUE, ATTN_NORM);
+    
+    if(other.classname == "player")
+    {
+        stuffcmd(other, "bf\n");
+    }
+    
+    remove(self);
+    self = other;
+    if(!deathmatch)
+    {
+        self.weapon = new;
+    }
+    else
+    {
+        Deathmatch_Weapon(old, new);
+    }
+    
+    W_SetCurrentAmmo();
+};
+
+
+// DropBackpack
+// function begins at statement 6139, parm_start=5178
+// OP_LOAD_F	28	158	5179
+// OP_LOAD_F	28	159	5180
+// OP_ADD_F	5179	5180	5181
+// OP_LOAD_F	28	160	5182
+// OP_ADD_F	5181	5182	5183
+// OP_LOAD_F	28	161	5184
+// OP_ADD_F	5183	5184	5185
+// OP_NOT_F	5185	0	5186
+// OP_IFNOT	5186	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	5178	0
+// OP_ADDRESS	5178	105	5187
+// OP_LOAD_V	28	105	5190
+// OP_SUB_V	5190	5193	5196
+// OP_STOREP_V	5196	5187	0
+// OP_ADDRESS	5178	162	5199
+// OP_LOAD_F	28	154	5200
+// OP_STOREP_F	5200	5199	0
+// OP_LOAD_F	5178	162	5201
+// OP_EQ_F	5201	253	5202
+// OP_IFNOT	5202	4	0
+// OP_ADDRESS	5178	180	5203
+// OP_STOREP_S	5204	5203	0
+// OP_GOTO	45	0	0
+// OP_LOAD_F	5178	162	5205
+// OP_EQ_F	5205	254	5206
+// OP_IFNOT	5206	4	0
+// OP_ADDRESS	5178	180	5207
+// OP_STOREP_S	5208	5207	0
+// OP_GOTO	39	0	0
+// OP_LOAD_F	5178	162	5209
+// OP_EQ_F	5209	255	5210
+// OP_IFNOT	5210	4	0
+// OP_ADDRESS	5178	180	5211
+// OP_STOREP_S	4675	5211	0
+// OP_GOTO	33	0	0
+// OP_LOAD_F	5178	162	5212
+// OP_EQ_F	5212	256	5213
+// OP_IFNOT	5213	4	0
+// OP_ADDRESS	5178	180	5214
+// OP_STOREP_S	5215	5214	0
+// OP_GOTO	27	0	0
+// OP_LOAD_F	5178	162	5216
+// OP_EQ_F	5216	257	5217
+// OP_IFNOT	5217	4	0
+// OP_ADDRESS	5178	180	5218
+// OP_STOREP_S	4693	5218	0
+// OP_GOTO	21	0	0
+// OP_LOAD_F	5178	162	5219
+// OP_EQ_F	5219	258	5220
+// OP_IFNOT	5220	4	0
+// OP_ADDRESS	5178	180	5221
+// OP_STOREP_S	4702	5221	0
+// OP_GOTO	15	0	0
+// OP_LOAD_F	5178	162	5222
+// OP_EQ_F	5222	259	5223
+// OP_IFNOT	5223	4	0
+// OP_ADDRESS	5178	180	5224
+// OP_STOREP_S	4711	5224	0
+// OP_GOTO	9	0	0
+// OP_LOAD_F	5178	162	5225
+// OP_EQ_F	5225	260	5226
+// OP_IFNOT	5226	4	0
+// OP_ADDRESS	5178	180	5227
+// OP_STOREP_S	4720	5227	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	5178	180	5228
+// OP_STOREP_S	3002	5228	0
+// OP_ADDRESS	5178	158	5229
+// OP_LOAD_F	28	158	5230
+// OP_STOREP_F	5230	5229	0
+// OP_ADDRESS	5178	159	5231
+// OP_LOAD_F	28	159	5232
+// OP_STOREP_F	5232	5231	0
+// OP_ADDRESS	5178	160	5233
+// OP_LOAD_F	28	160	5234
+// OP_STOREP_F	5234	5233	0
+// OP_ADDRESS	5178	161	5235
+// OP_LOAD_F	28	161	5236
+// OP_STOREP_F	5236	5235	0
+// OP_ADDRESS	5178	116	5237
+// OP_STOREP_F	540	5237	0
+// OP_ADDRESS	5178	114	5238
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	2044	5239
+// OP_ADD_F	1867	5239	5240
+// OP_STOREP_F	5240	5238	0
+// OP_ADDRESS	5178	115	5241
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	2044	5242
+// OP_ADD_F	1867	5242	5243
+// OP_STOREP_F	5243	5241	0
+// OP_ADDRESS	5178	182	5244
+// OP_STOREP_F	222	5244	0
+// OP_ADDRESS	5178	104	5245
+// OP_STOREP_F	238	5245	0
+// OP_ADDRESS	5178	103	5246
+// OP_STOREP_F	231	5246	0
+// OP_STORE_V	5178	4	0
+// OP_STORE_V	5247	7	0
+// OP_CALL2	454	0	0
+// OP_STORE_V	5178	4	0
+// OP_STORE_V	4517	7	0
+// OP_STORE_V	4520	10	0
+// OP_CALL3	455	0	0
+// OP_ADDRESS	5178	146	5248
+// OP_STOREP_FNC	5086	5248	0
+// OP_ADDRESS	5178	548	5249
+// OP_STOREP_FNC	1007	5249	0
+// OP_ADDRESS	5178	150	5250
+// OP_ADD_F	31	3584	5251
+// OP_STOREP_F	5251	5250	0
+// OP_ADDRESS	5178	148	5252
+// OP_STOREP_FNC	521	5252	0
+// OP_DONE	0	0	0
+void () DropBackpack = 
+{
+    local entity item;
+    
+    if(!(((self.ammo_shells + self.ammo_nails) + self.ammo_rockets) + self.ammo_cells))
+    {
+        return;
+    }
+    
+    item = spawn();
+    item.origin = self.origin - '0 0 24';
+    item.items = self.weapon;
+    if(item.items == IT_AXE)
+    {
+        item.netname = "Axe";
+    }
+    else
+    {
+        if(item.items == IT_SHOTGUN)
+        {
+            item.netname = "Shotgun";
+        }
+        else
+        {
+            if(item.items == IT_SUPER_SHOTGUN)
+            {
+                item.netname = "Double-barrelled Shotgun";
+            }
+            else
+            {
+                if(item.items == IT_NAILGUN)
+                {
+                    item.netname = "Nailgun";
+                }
+                else
+                {
+                    if(item.items == IT_SUPER_NAILGUN)
+                    {
+                        item.netname = "Super Nailgun";
+                    }
+                    else
+                    {
+                        if(item.items == IT_GRENADE_LAUNCHER)
+                        {
+                            item.netname = "Grenade Launcher";
+                        }
+                        else
+                        {
+                            if(item.items == IT_ROCKET_LAUNCHER)
+                            {
+                                item.netname = "Rocket Launcher";
+                            }
+                            else
+                            {
+                                if(item.items == IT_LIGHTNING)
+                                {
+                                    item.netname = "Thunderbolt";
+                                }
+                                else
+                                {
+                                    item.netname = "";
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    item.ammo_shells = self.ammo_shells;
+    item.ammo_nails = self.ammo_nails;
+    item.ammo_rockets = self.ammo_rockets;
+    item.ammo_cells = self.ammo_cells;
+    item.velocity_z = GLOBALDEFFIVETWOTHREE;
+    item.velocity_x = -100 + (random() * 200);
+    item.velocity_y = -100 + (random() * 200);
+    item.flags = FL_ITEM;
+    item.solid = SOLID_TRIGGER;
+    item.movetype = MOVETYPE_TOSS;
+    setmodel(item, "progs/backpack.mdl");
+    setsize(item, '-16 -16 0', '16 16 56');
+    item.touch = BackpackTouch;
+    item.field000225 = func002297;
+    item.nextthink = time + 120;
+    item.think = SUB_Remove;
 };
 

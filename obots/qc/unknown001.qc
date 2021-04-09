@@ -7,7 +7,7 @@ void () SUB_Null;
 void () SUB_UseTargets;
 void () SUB_Remove;
 void (entity targ, entity inflictor, entity attacker, float damage) T_Damage;
-float (entity globaldef001797, float globaldef001798, float globaldef001799) func000208;
+float (entity e, float healamount, float ignore) T_Heal;
 float (entity targ, entity inflictor) CanDamage;
 float globaldef000508;
 float globaldef000509;
@@ -24,7 +24,7 @@ float globaldef000510;
 .float ratio;
 .float motd;
 float GLOBALDEFFIVETWOTWO = 0.5;
-float globaldef000523;
+float GLOBALDEFFIVETWOTHREE = 300;
 entity globaldef000524;
 entity globaldef000525;
 entity globaldef000526;
@@ -189,7 +189,7 @@ float globaldef000717;
 float globaldef000718;
 float globaldef000719;
 float globaldef000720;
-float globaldef000721;
+float GLOBALDEFSEVENTWOONE = 250;
 float globaldef000722;
 float GLOBALDEFSEVENTWOTHREE = 600;
 float globaldef000724;
@@ -216,7 +216,7 @@ float globaldef000744;
 float globaldef000745;
 float globaldef000746;
 float globaldef000747;
-float globaldef000748;
+float GLOBALDEFSEVENFOUREIGHT = 15;
 float globaldef000749;
 float globaldef000750;
 float globaldef000751;
@@ -242,7 +242,7 @@ float globaldef000770;
 float globaldef000771;
 float globaldef000772;
 float globaldef000773;
-float globaldef000774;
+float GLOBALDEFSEVENSEVENFOUR = 12;
 float globaldef000775;
 float globaldef000776;
 float globaldef000777;
@@ -292,7 +292,7 @@ entity globaldef000820;
 
 void(entity client, string s) bot_stuffcmd = #21;
 
-// func000064
+// stuffcmd
 // function begins at statement 1, parm_start=840
 // OP_LOAD_F	840	182	842
 // OP_BITAND	842	698	843
@@ -302,7 +302,7 @@ void(entity client, string s) bot_stuffcmd = #21;
 // OP_STORE_V	841	7	0
 // OP_CALL2	838	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000823, string globaldef000824) func000064 = 
+void (entity globaldef000823, string globaldef000824) stuffcmd = 
 {
     
     if(!(globaldef000823.flags & globaldef000681))
@@ -521,7 +521,7 @@ void(entity client, string s, string s2, string s3, string s4, string s5, string
 
 void(entity client, string s, string s2, string s3, string s4, string s5, string s6, string s7) bot_sprint7 = #24;
 
-// func000092
+// sprint
 // function begins at statement 86, parm_start=929
 // OP_LOAD_F	929	182	931
 // OP_BITAND	931	698	932
@@ -531,7 +531,7 @@ void(entity client, string s, string s2, string s3, string s4, string s5, string
 // OP_STORE_V	930	7	0
 // OP_CALL2	921	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000888, string globaldef000889) func000092 = 
+void (entity globaldef000888, string globaldef000889) sprint = 
 {
     
     if(!(globaldef000888.flags & globaldef000681))
@@ -4294,7 +4294,7 @@ void () func000140 =
             self.enemy = self;
             self.movetarget = world;
             self.state = globaldef001161;
-            self.search_time = time + globaldef000748;
+            self.search_time = time + GLOBALDEFSEVENFOUREIGHT;
             self.pausetime = time + MOVETYPE_WALK;
             return;
         }
@@ -5144,7 +5144,7 @@ void () func000145 =
     self.delay = time;
     self.attack_state = FALSE;
     func000126();
-    func000092(self, "KasCam activated\n");
+    sprint(self, "KasCam activated\n");
     func002522(self);
     globaldef000792 = globaldef000792 + TRUE;
 };

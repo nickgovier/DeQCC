@@ -406,7 +406,7 @@ void () func000943 = [61, func000944]
 void () func000944 = [62, func000945]
 {
     ai_charge(MOVETYPE_FLY);
-    func000937(globaldef000721);
+    func000937(GLOBALDEFSEVENTWOONE);
 };
 
 

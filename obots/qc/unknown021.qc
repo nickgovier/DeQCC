@@ -806,7 +806,7 @@ void () func002068 =
     }
     else
     {
-        self.velocity = globaldef005418 * globaldef000721;
+        self.velocity = globaldef005418 * GLOBALDEFSEVENTWOONE;
     }
     
     self.nextthink = time + 0.2;

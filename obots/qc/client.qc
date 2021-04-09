@@ -121,7 +121,7 @@ void () SetNewParms =
     parm5 = FALSE;
     parm6 = FALSE;
     parm7 = FALSE;
-    parm8 = globaldef001900;
+    parm8 = WEAPON_SHOTGUN;
     parm9 = FALSE;
     parm10 = self.field000249;
 };
@@ -495,7 +495,7 @@ void () func000379 =
         }
         
         
-        if((serverflags & globaldef000748) == globaldef000748)
+        if((serverflags & GLOBALDEFSEVENFOUREIGHT) == GLOBALDEFSEVENFOUREIGHT)
         {
             WriteByte(MSG_ALL, SVC_FINALE);
             WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront he...");
@@ -991,7 +991,7 @@ entity () func000387 =
     }
     
     
-    if(serverflags & globaldef000748)
+    if(serverflags & GLOBALDEFSEVENFOUREIGHT)
     {
         globaldef002899 = find(world, classname, "info_player_start2");
         
@@ -1053,7 +1053,7 @@ entity () func000387 =
 // OP_DONE	0	0	0
 void (entity globaldef002908) func000388 = 
 {
-    globaldef002908.health = globaldef000721;
+    globaldef002908.health = GLOBALDEFSEVENTWOONE;
     globaldef002908.armorvalue = 200;
     globaldef002908.armortype = 0.8;
     globaldef002908.ammo_shells = 100;
@@ -1237,7 +1237,7 @@ void () PutClientInServer =
     self.show_hostile = FALSE;
     self.max_health = 100;
     self.flags = FL_CLIENT;
-    self.air_finished = time + globaldef000774;
+    self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
     self.dmg = FL_SWIM;
     self.super_damage_finished = FALSE;
     self.radsuit_finished = FALSE;
@@ -1252,7 +1252,7 @@ void () PutClientInServer =
         func000388(self);
     }
     
-    func000283();
+    W_SetCurrentAmmo();
     self.attack_finished = time;
     self.th_pain = func000454;
     self.th_die = func000464;
@@ -1759,7 +1759,7 @@ void () func000398 =
             
             if(globaldef000804 & globaldef000750)
             {
-                self.velocity_z = globaldef000523;
+                self.velocity_z = GLOBALDEFFIVETWOTHREE;
             }
             
         }
@@ -2029,7 +2029,7 @@ void () func000399 =
             
         }
         
-        self.air_finished = time + globaldef000774;
+        self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
         self.dmg = FL_SWIM;
     }
     else
@@ -2042,7 +2042,7 @@ void () func000399 =
             {
                 self.dmg = self.dmg + FL_SWIM;
                 
-                if(self.dmg > globaldef000748)
+                if(self.dmg > GLOBALDEFSEVENFOUREIGHT)
                 {
                     self.dmg = MOVETYPE_BOUNCE;
                 }
@@ -2346,8 +2346,8 @@ void () PlayerPreThink =
     
     if(((time > self.attack_finished) && (self.currentammo == FALSE)) && (self.weapon != IT_AXE))
     {
-        self.weapon = func000284();
-        func000283();
+        self.weapon = W_BestWeapon();
+        W_SetCurrentAmmo();
     }
     
 };
@@ -2632,8 +2632,8 @@ void () func000402 =
             
             if(self.invisible_time == TRUE)
             {
-                func000092(self, "Ring of Shadows magic is fading\n");
-                func000064(self, "bf\n");
+                sprint(self, "Ring of Shadows magic is fading\n");
+                stuffcmd(self, "bf\n");
                 sound(self, CHAN_AUTO, "items/inv2.wav", TRUE, ATTN_NORM);
                 self.invisible_time = time + TRUE;
             }
@@ -2642,7 +2642,7 @@ void () func000402 =
             if(self.invisible_time < time)
             {
                 self.invisible_time = time + TRUE;
-                func000064(self, "bf\n");
+                stuffcmd(self, "bf\n");
             }
             
         }
@@ -2692,8 +2692,8 @@ void () func000402 =
             
             if(self.invincible_time == TRUE)
             {
-                func000092(self, "Protection is almost burned out\n");
-                func000064(self, "bf\n");
+                sprint(self, "Protection is almost burned out\n");
+                stuffcmd(self, "bf\n");
                 sound(self, CHAN_AUTO, "items/protect2.wav", TRUE, ATTN_NORM);
                 self.invincible_time = time + TRUE;
             }
@@ -2702,7 +2702,7 @@ void () func000402 =
             if(self.invincible_time < time)
             {
                 self.invincible_time = time + TRUE;
-                func000064(self, "bf\n");
+                stuffcmd(self, "bf\n");
             }
             
         }
@@ -2735,8 +2735,8 @@ void () func000402 =
             
             if(self.super_time == TRUE)
             {
-                func000092(self, "Quad Damage is wearing off\n");
-                func000064(self, "bf\n");
+                sprint(self, "Quad Damage is wearing off\n");
+                stuffcmd(self, "bf\n");
                 sound(self, CHAN_AUTO, "items/damage2.wav", TRUE, ATTN_NORM);
                 self.super_time = time + TRUE;
             }
@@ -2745,7 +2745,7 @@ void () func000402 =
             if(self.super_time < time)
             {
                 self.super_time = time + TRUE;
-                func000064(self, "bf\n");
+                stuffcmd(self, "bf\n");
             }
             
         }
@@ -2772,15 +2772,15 @@ void () func000402 =
     
     if(self.radsuit_finished)
     {
-        self.air_finished = time + globaldef000774;
+        self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
         
         if(self.radsuit_finished < (time + MOVETYPE_WALK))
         {
             
             if(self.rad_time == TRUE)
             {
-                func000092(self, "Air supply in Biosuit expiring\n");
-                func000064(self, "bf\n");
+                sprint(self, "Air supply in Biosuit expiring\n");
+                stuffcmd(self, "bf\n");
                 sound(self, CHAN_AUTO, "items/suit2.wav", TRUE, ATTN_NORM);
                 self.rad_time = time + TRUE;
             }
@@ -2789,7 +2789,7 @@ void () func000402 =
             if(self.rad_time < time)
             {
                 self.rad_time = time + TRUE;
-                func000064(self, "bf\n");
+                stuffcmd(self, "bf\n");
             }
             
         }
@@ -3195,7 +3195,7 @@ void () ClientConnect =
     
     if((self.netname == "CamClient") || (self.netname == ""))
     {
-        self.impulse = globaldef000721;
+        self.impulse = GLOBALDEFSEVENTWOONE;
     }
     else
     {
@@ -4000,7 +4000,7 @@ void (entity targ, entity attacker) ClientObituary =
             if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))
             {
                 globaldef000525.takedamage = DAMAGE_NO;
-                func000064(globaldef000525, "-attack\n");
+                stuffcmd(globaldef000525, "-attack\n");
                 globaldef000525.enemy = world;
             }
             
@@ -4008,7 +4008,7 @@ void (entity targ, entity attacker) ClientObituary =
             if((globaldef000524.classname == "player") || (globaldef000524.classname == "bot"))
             {
                 globaldef000524.takedamage = DAMAGE_NO;
-                func000064(globaldef000524, "-attack\n");
+                stuffcmd(globaldef000524, "-attack\n");
                 globaldef000524.enemy = world;
             }
             

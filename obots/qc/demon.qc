@@ -71,7 +71,7 @@ void () monster_demon1 =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/demon.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = globaldef000523;
+    self.health = GLOBALDEFFIVETWOTHREE;
     self.th_stand = func000812;
     self.th_walk = func000825;
     self.th_run = func000833;
@@ -295,7 +295,7 @@ void (float side) Demon_Melee =
     local float globaldef003924;
     local vector globaldef003925;
     ai_face();
-    walkmove(self.ideal_yaw, globaldef000774);
+    walkmove(self.ideal_yaw, GLOBALDEFSEVENSEVENFOUR);
     globaldef003925 = self.enemy.origin - self.origin;
     
     if(vlen(globaldef003925) > 100)

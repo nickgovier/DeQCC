@@ -1302,7 +1302,7 @@ void (vector globaldef004925) func001675 =
     globaldef004933 = ((self.origin + (globaldef004925_x * v_forward)) + (globaldef004925_y * v_right)) + (globaldef004925_z * '0 0 1');
     if(skill > TRUE)
     {
-        globaldef004945 = (vlen(self.enemy.origin - globaldef004933)) / globaldef000523;
+        globaldef004945 = (vlen(self.enemy.origin - globaldef004933)) / GLOBALDEFFIVETWOTHREE;
         globaldef004937 = self.enemy.velocity;
         globaldef004937_z = FALSE;
         globaldef004941 = self.enemy.origin + (globaldef004945 * globaldef004937);
@@ -1317,7 +1317,7 @@ void (vector globaldef004925) func001675 =
     setmodel(newmis, "progs/lavaball.mdl");
     newmis.avelocity = '200 100 300';
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    newmis.velocity = globaldef004937 * globaldef000523;
+    newmis.velocity = globaldef004937 * GLOBALDEFFIVETWOTHREE;
     newmis.touch = T_MissileTouch;
     sound(self, CHAN_WEAPON, "boss1/throw.wav", TRUE, ATTN_NORM);
     

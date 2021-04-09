@@ -897,8 +897,8 @@ void () func000274 =
     
     if(self.ammo_cells < TRUE)
     {
-        self.weapon = func000284();
-        func000283();
+        self.weapon = W_BestWeapon();
+        W_SetCurrentAmmo();
         return;
     }
     
@@ -914,7 +914,7 @@ void () func000274 =
         
         globaldef002176 = self.ammo_cells;
         self.ammo_cells = FALSE;
-        func000283();
+        W_SetCurrentAmmo();
         T_RadiusDamage(self, self, 35 * globaldef002176, world);
         return;
     }
@@ -1338,8 +1338,8 @@ void (float globaldef002210) func000280 =
     
     if(self.ammo_nails < TRUE)
     {
-        self.weapon = func000284();
-        func000283();
+        self.weapon = W_BestWeapon();
+        W_SetCurrentAmmo();
         return;
     }
     
@@ -1563,7 +1563,7 @@ void () func000282 =
 };
 
 
-// func000283
+// W_SetCurrentAmmo
 // function begins at statement 7504, parm_start=6138
 // OP_LOAD_S	28	129	6138
 // OP_EQ_S	6138	1236	6139
@@ -1700,7 +1700,7 @@ void () func000282 =
 // OP_ADDRESS	28	156	6226
 // OP_STOREP_F	213	6226	0
 // OP_DONE	0	0	0
-void () func000283 = 
+void () W_SetCurrentAmmo = 
 {
     
     if(self.classname == "player")
@@ -1802,7 +1802,7 @@ void () func000283 =
 };
 
 
-// func000284
+// W_BestWeapon
 // function begins at statement 7639, parm_start=6227
 // OP_LOAD_F	28	162	6228
 // OP_STORE_F	6228	6227	0
@@ -1841,7 +1841,7 @@ void () func000283 =
 // OP_RETURN	254	0	0
 // OP_RETURN	253	0	0
 // OP_DONE	0	0	0
-float () func000284 = 
+float () W_BestWeapon = 
 {
     local float globaldef002230;
     globaldef002230 = self.items;
@@ -1909,8 +1909,8 @@ float () func000285 =
         return TRUE;
     }
     
-    self.weapon = func000284();
-    func000283();
+    self.weapon = W_BestWeapon();
+    W_SetCurrentAmmo();
     return FALSE;
 };
 
@@ -2342,19 +2342,19 @@ void () func000287 =
     
     if(!(self.items & globaldef002249))
     {
-        func000092(self, "no weapon.\n");
+        sprint(self, "no weapon.\n");
         return;
     }
     
     
     if(globaldef002248)
     {
-        func000092(self, "not enough ammo.\n");
+        sprint(self, "not enough ammo.\n");
         return;
     }
     
     self.weapon = globaldef002249;
-    func000283();
+    W_SetCurrentAmmo();
 };
 
 
@@ -2409,7 +2409,7 @@ void () func000288 =
     self.items = self.items | IT_LIGHTNING;
     self.weapon = IT_ROCKET_LAUNCHER;
     self.impulse = FALSE;
-    func000283();
+    W_SetCurrentAmmo();
 };
 
 
@@ -2619,7 +2619,7 @@ void () func000289 =
         
         if((self.items & self.weapon) && (globaldef002254 == FALSE))
         {
-            func000283();
+            W_SetCurrentAmmo();
             return;
         }
         
@@ -2835,7 +2835,7 @@ void () func000290 =
         
         if((self.items & self.weapon) && (globaldef002257 == FALSE))
         {
-            func000283();
+            W_SetCurrentAmmo();
             return;
         }
         

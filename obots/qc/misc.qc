@@ -537,7 +537,7 @@ void () misc_explobox =
     globaldef003593 = self.origin_z;
     droptofloor();
     
-    if((globaldef003593 - self.origin_z) > globaldef000721)
+    if((globaldef003593 - self.origin_z) > GLOBALDEFSEVENTWOONE)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -605,7 +605,7 @@ void () misc_explobox2 =
     globaldef003597 = self.origin_z;
     droptofloor();
     
-    if((globaldef003597 - self.origin_z) > globaldef000721)
+    if((globaldef003597 - self.origin_z) > GLOBALDEFSEVENTWOONE)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -1079,7 +1079,7 @@ void () func000647 =
     
     if(globaldef003618 < MOVETYPE_BOUNCE)
     {
-        globaldef003618 = globaldef000748;
+        globaldef003618 = GLOBALDEFSEVENFOUREIGHT;
     }
     
     
@@ -1238,7 +1238,7 @@ void () func_episodegate =
 void () func_bossgate = 
 {
     
-    if((serverflags & globaldef000748) == globaldef000748)
+    if((serverflags & GLOBALDEFSEVENFOUREIGHT) == GLOBALDEFSEVENFOUREIGHT)
     {
         return;
     }

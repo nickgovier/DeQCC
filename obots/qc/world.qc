@@ -965,7 +965,7 @@ void () StartFrame =
                 }
                 
                 func002277();
-                serverflags = (globaldef000804 - (globaldef000804 & globaldef000748)) | (serverflags & globaldef000748);
+                serverflags = (globaldef000804 - (globaldef000804 & GLOBALDEFSEVENFOUREIGHT)) | (serverflags & GLOBALDEFSEVENFOUREIGHT);
             }
             
         }

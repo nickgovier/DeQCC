@@ -289,7 +289,7 @@ void () func000833 = [21, func000834]
 // OP_DONE	0	0	0
 void () func000834 = [22, func000835]
 {
-    ai_run(globaldef000748);
+    ai_run(GLOBALDEFSEVENFOUREIGHT);
 };
 
 
@@ -325,7 +325,7 @@ void () func000836 = [24, func000837]
 // OP_DONE	0	0	0
 void () func000837 = [25, func000838]
 {
-    ai_run(globaldef000748);
+    ai_run(GLOBALDEFSEVENFOUREIGHT);
 };
 
 

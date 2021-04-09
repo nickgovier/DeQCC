@@ -300,14 +300,20 @@ namespace DeQcc
 
             #endregion
 
+            
+            nameMap.Add("func000064", "stuffcmd");
             nameMap.Add("func000072", "centerprint");
+            nameMap.Add("func000092", "sprint");
 
             nameMap.Add("globaldef000522", "GLOBALDEFFIVETWOTWO");  // constant = 0.5
+            nameMap.Add("globaldef000523", "GLOBALDEFFIVETWOTHREE");  // constant = 300
+            nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
             nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
+            nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
+            nameMap.Add("globaldef000774", "GLOBALDEFSEVENSEVENFOUR");   // constant = 12
             
-
             #region subs.qc
 
             // Functions
@@ -625,16 +631,109 @@ namespace DeQcc
 
             #region items.qc
 
-            for (int i = 204; i <= 242; i++)
+            // Declarations
+            nameMap.Add("globaldef001800", "H_ROTTEN");
+            nameMap.Add("globaldef001801", "H_MEGA");
+            nameMap.Add("globaldef001883", "WEAPON_BIG2");
+            nameMap.Add("globaldef001900", "WEAPON_SHOTGUN");
+            nameMap.Add("globaldef001901", "WEAPON_ROCKET");
+            nameMap.Add("globaldef001902", "WEAPON_SPIKES");
+            nameMap.Add("globaldef001903", "WEAPON_BIG");
+
+            nameMap.Add("func000204", "SUB_regen");
+            nameMap.Add("func000206", "PlaceItem");
+            nameMap.Add("func000207", "StartItem");
+            nameMap.Add("func000208", "T_Heal");
+            nameMap.Add("func000210", "health_touch");
+            nameMap.Add("func000211", "item_megahealth_rot");
+            nameMap.Add("func000212", "armor_touch");
+            nameMap.Add("func000216", "bound_other_ammo");
+            nameMap.Add("func000217", "RankForWeapon");
+            nameMap.Add("func000218", "Deathmatch_Weapon");
+            nameMap.Add("func000219", "weapon_touch");
+            nameMap.Add("func000226", "ammo_touch");
+            nameMap.Add("func000232", "key_touch");
+            nameMap.Add("func000233", "key_setsounds");
+            nameMap.Add("func000236", "sigil_touch");
+            nameMap.Add("func000238", "powerup_touch");
+            nameMap.Add("func000243", "BackpackTouch");
+            nameMap.Add("func000244", "DropBackpack");
+
+            for (int i = 204; i <= 244; i++)
             {
                 fileMap[i] = "items.qc";
             }
+
+            // PlaceItem locals
+            nameMap.Add("globaldef001794", "oldz");
+
+            // T_Heal params
+            nameMap.Add("globaldef001797", "e");
+            nameMap.Add("globaldef001798", "healamount");
+            nameMap.Add("globaldef001799", "ignore");
+
+            // health_touch locals
+            nameMap.Add("globaldef001814", "amount");
+            nameMap.Add("globaldef001815", "s");
+
+            // armor_touch locals
+            nameMap.Add("globaldef001820", "type");
+            nameMap.Add("globaldef001821", "value");
+            nameMap.Add("globaldef001822", "bit");
+
+            // RankForWeapon params
+            nameMap.Add("globaldef001838", "w");
+
+            // Deathmatch_Weapon params
+            nameMap.Add("globaldef001840", "old");
+            nameMap.Add("globaldef001841", "new");
+
+            // Deathmatch_Weapon locals
+            nameMap.Add("globaldef001842", "or");
+            nameMap.Add("globaldef001843", "nr");
+
+            // weapon_touch locals
+            nameMap.Add("globaldef001846", "hadammo");
+            nameMap.Add("globaldef001847", "best");
+            nameMap.Add("globaldef001848", "new");
+            nameMap.Add("globaldef001849", "old");
+            nameMap.Add("globaldef001850", "stemp");
+            nameMap.Add("globaldef001851", "leave");
+
+            // ammo_touch locals
+            nameMap.Add("globaldef001880", "stemp");
+            nameMap.Add("globaldef001881", "best");
+
+            // key_touch locals
+            nameMap.Add("globaldef001907", "stemp");
+            nameMap.Add("globaldef001908", "best");
+
+            // sigil_touch locals
+            nameMap.Add("globaldef001928", "stemp");
+            nameMap.Add("globaldef001929", "best");
+
+            // powerup_touch locals
+            nameMap.Add("globaldef001938", "stemp");
+            nameMap.Add("globaldef001939", "best");
+
+            // BackpackTouch locals
+            nameMap.Add("globaldef001967", "s");
+            nameMap.Add("globaldef001968", "best");
+            nameMap.Add("globaldef001969", "old");
+            nameMap.Add("globaldef001970", "new");
+            nameMap.Add("globaldef001971", "stemp");
+            nameMap.Add("globaldef001972", "acount");
+
+            // DropBackpack locala
+            nameMap.Add("globaldef001981", "item");
 
             #endregion
 
             #region weapons.qc
 
             nameMap.Add("func000271", "T_MissileTouch");
+            nameMap.Add("func000283", "W_SetCurrentAmmo");
+            nameMap.Add("func000284", "W_BestWeapon");
 
             for (int i = 256; i <= 291; i++)
             {

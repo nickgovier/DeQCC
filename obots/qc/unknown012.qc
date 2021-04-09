@@ -340,7 +340,7 @@ void () func000911 = [21, func000912]
 // OP_DONE	0	0	0
 void () func000912 = [22, func000913]
 {
-    ai_walk(globaldef000774);
+    ai_walk(GLOBALDEFSEVENSEVENFOUR);
 };
 
 
