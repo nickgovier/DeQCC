@@ -24,7 +24,7 @@ void () InitMaxClients =
     
     while(ent.classname != "worldspawn")
     {
-        fMaxClients = fMaxClients + TRUE;
+        maxClients = maxClients + TRUE;
         ent = nextent(ent);
     }
     
@@ -73,7 +73,7 @@ float (float clnumber) clientBitFlag =
 float (float clnumber) ClientIsActive = 
 {
     
-    if(fActiveClients & clientBitFlag(clnumber))
+    if(activeClientBitmask & clientBitFlag(clnumber))
     {
         return TRUE;
     }
@@ -105,7 +105,7 @@ float () ActiveClientCount =
     num_active = FALSE;
     index = FALSE;
     
-    while(index < fMaxClients)
+    while(index < maxClients)
     {
         
         if(ClientIsActive(index))
@@ -131,8 +131,8 @@ float () ActiveClientCount =
 // OP_DONE	0	0	0
 void (float clnumber) SetClientNumberUsed = 
 {
-    fActiveClients = fActiveClients | clientBitFlag(clnumber);
-    globaldef000797 = ActiveClientCount();
+    activeClientBitmask = activeClientBitmask | clientBitFlag(clnumber);
+    activeClientCount = ActiveClientCount();
 };
 
 
@@ -148,8 +148,8 @@ void (float clnumber) SetClientNumberUsed =
 // OP_DONE	0	0	0
 void (float clnumber) SetClientNumberFree = 
 {
-    fActiveClients = fActiveClients - (fActiveClients & clientBitFlag(clnumber));
-    globaldef000797 = ActiveClientCount();
+    activeClientBitmask = activeClientBitmask - (activeClientBitmask & clientBitFlag(clnumber));
+    activeClientCount = ActiveClientCount();
 };
 
 
@@ -173,7 +173,7 @@ float () NextAvailableClientNumber =
     local float clnumber;
     clnumber = FALSE;
     
-    while(clnumber < fMaxClients)
+    while(clnumber < maxClients)
     {
         
         if(!ClientIsActive(clnumber))
@@ -297,7 +297,7 @@ void () msgUpdateAllClientSettingsToAll =
     local float index;
     index = FALSE;
     
-    while(index < fMaxClients)
+    while(index < maxClients)
     {
         
         if(!ClientIsActive(index))

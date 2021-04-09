@@ -132,7 +132,7 @@ void (entity globaldef002470) func000301 =
     globaldef002466.flags = FALSE;
     setorigin(globaldef002466, globaldef002470.origin);
     setsize(globaldef002466, globaldef002470.mins, globaldef002470.maxs);
-    func000148(globaldef002470, globaldef002466);
+    CamCopyBody(globaldef002470, globaldef002466);
     globaldef002466 = globaldef002466.owner;
 };
 

@@ -599,7 +599,7 @@ void () worldspawn =
 {
     globaldef002375 = world;
     InitMaxClients();
-    func000146();
+    CamSpawn();
     func000300();
     if(self.model == "maps/e1m8.bsp")
     {

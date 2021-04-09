@@ -3269,7 +3269,7 @@ void () func000293 =
     
     if(self.impulse == GLOBALDEFSEVENTWOONE)
     {
-        func000145();
+        CamClientInit();
     }
     
     func000372();

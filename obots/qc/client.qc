@@ -2930,7 +2930,7 @@ void () PlayerPostThink =
     
     if((self.classname == "KasCam") && !globaldef002863)
     {
-        func000144();
+        CamThink();
         return;
     }
     
@@ -3339,7 +3339,7 @@ void () ClientDisconnect =
     }
     
     
-    if(func000147())
+    if(CamDisconnect())
     {
         bprint(self.field000283);
         bprint(self.netname);

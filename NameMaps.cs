@@ -309,18 +309,277 @@ namespace DeQcc
             nameMap.Add("globaldef000523", "GLOBALDEFFIVETWOTHREE");  // constant = 300
             nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
+            nameMap.Add("globaldef000724", "GLOBALDEFSEVENTWOFOUR");  // constant = 800
             nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
             nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
             nameMap.Add("globaldef000774", "GLOBALDEFSEVENSEVENFOUR");   // constant = 12
 
-            nameMap.Add("globaldef000795", "fActiveClients");  // b_clrank.qc
-            nameMap.Add("globaldef000796", "fMaxClients");  // b_clrank.qc
+            nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
+            nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
 
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
-            
+
+            // Note that b_func.qc, all the function definitions
+            // is decompiled to the top of the next file
+
+            #region b_kascam.qc
+
+            // These are taken from KasCam so we can match on that basis
+
+            // Declarations
+            nameMap.Add("globaldef001160", "CAM_IDLE");
+            nameMap.Add("globaldef001161", "CAM_FIXED");
+            nameMap.Add("globaldef001162", "CAM_FLYBY");
+            nameMap.Add("globaldef001163", "CAM_FOLLOW");
+            nameMap.Add("globaldef001164", "CAM_HAND");
+            nameMap.Add("globaldef001165", "CAM_FREE");
+            nameMap.Add("globaldef001166", "CAM_NOCLIP");
+            nameMap.Add("globaldef001167", "CAM_DEATH");
+
+            nameMap.Add("func000106", "CamCycle");
+            nameMap.Add("func000107", "CamVectors");
+            nameMap.Add("func000115", "CamReport");
+            nameMap.Add("func000116", "CamSqrt");
+            nameMap.Add("func000117", "CamReAngle");
+            nameMap.Add("func000118", "CamVisible");
+            nameMap.Add("func000119", "CamVisibleEnt");
+            nameMap.Add("func000120", "CamShoot");
+            nameMap.Add("func000121", "CamHurry");
+            nameMap.Add("func000122", "CamSmooth");
+            nameMap.Add("func000123", "TryFlybyVector");
+            nameMap.Add("func000124", "CamUpdatePos");
+            nameMap.Add("func000125", "CamSetAuto");
+            nameMap.Add("func000126", "CamGoIdle");
+            nameMap.Add("func000127", "CamGoDeath");
+            nameMap.Add("func000128", "CamFlybyTarget");
+            nameMap.Add("func000129", "CamInitFlybyMode");
+            nameMap.Add("func000130", "GetFollowCam");
+            nameMap.Add("func000131", "GetFollowTrg");
+            nameMap.Add("func000132", "CamHandJump");
+            nameMap.Add("func000133", "CamGetPos");
+            nameMap.Add("func000134", "CamSavePos");
+            nameMap.Add("func000135", "CamLoadPos");
+            nameMap.Add("func000136", "CamImpulses");
+            nameMap.Add("func000137", "CamUpdValues");
+            nameMap.Add("func000138", "CamHealthVal");
+            nameMap.Add("func000139", "CamIdleThink");
+            nameMap.Add("func000140", "CamFlyByThink");
+            nameMap.Add("func000141", "CamFollowThink");
+            nameMap.Add("func000142", "CamFixedThink");
+            nameMap.Add("func000143", "CamDeathThink");
+            nameMap.Add("func000144", "CamThink");
+            nameMap.Add("func000145", "CamClientInit");
+            nameMap.Add("func000146", "CamSpawn");
+            nameMap.Add("func000147", "CamDisconnect");
+            nameMap.Add("func000148", "CamCopyBody");
+
+            for (int i = 106; i <= 148; i++)
+            {
+                fileMap[i] = "b_kascam.qc";
+            }
+
+            // CamCycle params
+            nameMap.Add("globaldef001169", "ent");
+
+            // CamVectors params
+            nameMap.Add("globaldef001173", "ent");
+
+            // CamReport params
+            nameMap.Add("globaldef001182", "ent");
+            nameMap.Add("globaldef001183", "tit");
+
+            // CamReport locals
+            nameMap.Add("globaldef001184", "s2");
+            nameMap.Add("globaldef001185", "s3");
+
+            // CamSqrt params
+            nameMap.Add("globaldef001192", "num");
+
+            // CamSqrt locals
+            nameMap.Add("globaldef001193", "apr");
+
+            // CamReAngle params
+            nameMap.Add("globaldef001196", "a");
+
+            // CamVisible params
+            nameMap.Add("globaldef001201", "vec");
+
+            // CamVisibleEnt params
+            nameMap.Add("globaldef001206", "ent");
+
+            // CamVisibleEnt locals
+            nameMap.Add("globaldef001207", "vec");
+
+            // CamShoot locals
+            nameMap.Add("globaldef001212", "ent");
+            nameMap.Add("globaldef001213", "entx");
+            nameMap.Add("globaldef001214", "vec");
+            nameMap.Add("globaldef001218", "d1");
+            nameMap.Add("globaldef001219", "dx");
+
+            // CamHurry params
+            nameMap.Add("globaldef001221", "d");
+            nameMap.Add("globaldef001222", "a");
+
+            // CamHurry locals
+            nameMap.Add("globaldef001223", "dd");
+            nameMap.Add("globaldef001224", "t");
+            nameMap.Add("globaldef001225", "tt");
+
+            // CamSmooth params
+            nameMap.Add("globaldef001227", "s");
+            nameMap.Add("globaldef001228", "v");
+            nameMap.Add("globaldef001229", "a");
+
+            // CamSmooth locals
+            nameMap.Add("globaldef001230", "dt");
+            nameMap.Add("globaldef001231", "t1");
+            nameMap.Add("globaldef001232", "t2");
+            nameMap.Add("globaldef001233", "v2");
+            nameMap.Add("globaldef001234", "as");
+            nameMap.Add("globaldef001235", "sv2");
+            nameMap.Add("globaldef001236", "b");
+            nameMap.Add("globaldef001237", "vec");
+
+            // TryFlybyVector params
+            nameMap.Add("globaldef001242", "vec");
+
+            // TryFlybyVector locals
+            nameMap.Add("globaldef001246", "orig");
+            nameMap.Add("globaldef001250", "vec1");
+            nameMap.Add("globaldef001254", "v1");
+
+            // CamUpdatePos params
+            nameMap.Add("globaldef001260", "speedv");
+            nameMap.Add("globaldef001261", "speeda");
+
+            // CamUpdatePos locals
+            nameMap.Add("globaldef001262", "vec");
+            nameMap.Add("globaldef001266", "v1");
+            nameMap.Add("globaldef001270", "vlen");
+
+            // CamFlybyTarget params
+            nameMap.Add("globaldef001278", "ent");
+
+            // CamFlybyTarget locals
+            nameMap.Add("globaldef001279", "vec");
+
+            // CamInitFlybyMode params
+            nameMap.Add("globaldef001284", "newtarg");
+
+            // CamInitFlybyMode locals
+            nameMap.Add("globaldef001285", "f");
+            nameMap.Add("globaldef001286", "max");
+            nameMap.Add("globaldef001287", "vec");
+            nameMap.Add("globaldef001291", "vec2");
+            nameMap.Add("globaldef001295", "trg");
+            nameMap.Add("globaldef001299", "ent");
+
+            // GetFollowCam locals
+            nameMap.Add("globaldef001305", "vec");
+            nameMap.Add("globaldef001309", "vec2");
+
+            // GetFollowTrg locals
+            nameMap.Add("globaldef001315", "vec");
+
+            // CamGetPos params
+            nameMap.Add("globaldef001322", "n");
+
+            // CamGetPos locals
+            nameMap.Add("globaldef001323", "ent");
+
+            // CamSavePos params
+            nameMap.Add("globaldef001326", "n");
+
+            // CamSavePos locals
+            nameMap.Add("globaldef001327", "ent");
+
+            // CamLoadPos params
+            nameMap.Add("globaldef001329", "n");
+
+            // CamLoadPos locals
+            nameMap.Add("globaldef001330", "ent");
+
+            // CamImpulses locals
+            nameMap.Add("globaldef001332", "c");
+            nameMap.Add("globaldef001333", "ent");
+            nameMap.Add("globaldef001334", "s");
+
+            // CamUpdValues locals
+            nameMap.Add("globaldef001363", "it");
+
+            // CamHealthVal params
+            nameMap.Add("globaldef001367", "ent");
+
+            // CamHealthVal locals
+            nameMap.Add("globaldef001368", "alldmg");
+
+            // CamIdleThink locals
+            nameMap.Add("globaldef001370", "ent");
+            nameMap.Add("globaldef001371", "ent2");
+            nameMap.Add("globaldef001372", "vec");
+            nameMap.Add("globaldef001376", "vec2");
+            nameMap.Add("globaldef001380", "p1");
+            nameMap.Add("globaldef001381", "p2");
+            nameMap.Add("globaldef001382", "pa");
+            nameMap.Add("globaldef001383", "pb");
+
+            // CamFlyByThink locals
+            nameMap.Add("globaldef001386", "p0");
+            nameMap.Add("globaldef001387", "p1");
+            nameMap.Add("globaldef001388", "grad");
+            nameMap.Add("globaldef001389", "p");
+            nameMap.Add("globaldef001390", "vec");
+            nameMap.Add("globaldef001394", "ent");
+            nameMap.Add("globaldef001395", "ok");
+
+            // CamFollowThink locals
+            nameMap.Add("globaldef001399", "ent");
+            nameMap.Add("globaldef001400", "vec");
+
+            // CamFixedThink locals
+            nameMap.Add("globaldef001405", "vec");
+            nameMap.Add("globaldef001409", "ent");
+            nameMap.Add("globaldef001410", "cang");
+            nameMap.Add("globaldef001411", "a");
+            nameMap.Add("globaldef001412", "cscr");
+            nameMap.Add("globaldef001413", "maxscr");
+            nameMap.Add("globaldef001414", "minscr");
+            nameMap.Add("globaldef001415", "maxlo");
+            nameMap.Add("globaldef001416", "minhi");
+            nameMap.Add("globaldef001417", "scrv");
+            nameMap.Add("globaldef001421", "hiv");
+            nameMap.Add("globaldef001425", "lov");
+            nameMap.Add("globaldef001429", "c");
+
+            // CamDeathThink locals
+            nameMap.Add("globaldef001436", "f");
+
+            // CamClientInit locals
+            nameMap.Add("globaldef001442", "UNUSED");
+            nameMap.Add("globaldef001443", "ent2");
+
+            // CamSpawn locals
+            nameMap.Add("globaldef001448", "i");
+            nameMap.Add("globaldef001449", "ent");
+            nameMap.Add("globaldef001450", "start");
+
+            // CamDisconnect locals
+            nameMap.Add("globaldef001453", "cam");
+            nameMap.Add("globaldef001454", "oself");
+
+            // CamCopyBody params
+            nameMap.Add("globaldef001456", "ent");
+            nameMap.Add("globaldef001457", "que");
+
+            // CamCopyBody locals
+            nameMap.Add("globaldef001458", "oself");
+            nameMap.Add("globaldef001459", "cam");
+
+            #endregion
 
             #region subs.qc
 
@@ -1046,7 +1305,7 @@ namespace DeQcc
             nameMap.Add("func002255", "InitMaxClients");
             nameMap.Add("func002256", "clientBitFlag");
             nameMap.Add("func002257", "ClientIsActive");
-            nameMap.Add("func002258", "ActiveClientCount");
+            nameMap.Add("func002258", "ActiveClientCount"); // my guess as not in original rankings.qc or obotdoc
             nameMap.Add("func002259", "SetClientNumberUsed");
             nameMap.Add("func002260", "SetClientNumberFree");
             nameMap.Add("func002261", "NextAvailableClientNumber");
@@ -1100,7 +1359,6 @@ namespace DeQcc
             // locals
             nameMap.Add("globaldef005697", "bot");
             nameMap.Add("globaldef005698", "index");
-            
 
             #endregion
 

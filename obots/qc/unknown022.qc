@@ -25,7 +25,7 @@ entity (float globaldef005699) func002266 =
     globaldef005700 = nextent(world);
     globaldef005701 = FALSE;
     
-    while(globaldef005701 < fMaxClients)
+    while(globaldef005701 < maxClients)
     {
         
         if(globaldef005701 == globaldef005699)
@@ -10063,7 +10063,7 @@ void (entity globaldef006144) func002284 =
     local string globaldef006147;
     globaldef006145 = random();
     
-    if((globaldef000797 - globaldef000792) <= TRUE)
+    if((activeClientCount - globaldef000792) <= TRUE)
     {
         globaldef006147 = func002373();
         globaldef006145 = floor(globaldef006145 * MOVETYPE_STEP);
@@ -10100,7 +10100,7 @@ void (entity globaldef006144) func002284 =
         return;
     }
     
-    if(globaldef000797 <= FL_SWIM)
+    if(activeClientCount <= FL_SWIM)
     {
         globaldef006146 = globaldef005816;
     }
@@ -18580,7 +18580,7 @@ void () func002380 =
     }
     
     
-    if(((globaldef000797 - globaldef000793) - globaldef000792) <= TRUE)
+    if(((activeClientCount - globaldef000793) - globaldef000792) <= TRUE)
     {
         return;
     }
@@ -22387,7 +22387,7 @@ entity (float globaldef007113) func002420 =
     if(globaldef007115 == CONTENT_EMPTY)
     {
         bprint("Can't create bot, maxplayers = ");
-        bprint(ftos(fMaxClients));
+        bprint(ftos(maxClients));
         bprint("\n");
         return world;
     }
@@ -27287,7 +27287,7 @@ entity (entity globaldef007660) func002455 =
         return FALSE;
     }
     
-    globaldef007662 = (globaldef000797 - globaldef000792) * MOVETYPE_BOUNCE;
+    globaldef007662 = (activeClientCount - globaldef000792) * MOVETYPE_BOUNCE;
     
     if(globaldef007662 >= 100)
     {
@@ -27295,7 +27295,7 @@ entity (entity globaldef007660) func002455 =
     }
     
     
-    if((globaldef000797 - globaldef000792) > MOVETYPE_STEP)
+    if((activeClientCount - globaldef000792) > MOVETYPE_STEP)
     {
         return world;
     }
@@ -27883,7 +27883,7 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     }
     
     
-    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEFSEVENTWOONE) * (globaldef000724 / globaldef000782)))
+    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEFSEVENTWOONE) * (GLOBALDEFSEVENTWOFOUR / globaldef000782)))
     {
         return FALSE;
     }
@@ -29653,13 +29653,13 @@ void (entity globaldef007909) func002476 =
     globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
     globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
     globaldef007914 = globaldef007910;
-    globaldef007914_z = globaldef007914_z + globaldef000724;
+    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
     
     if(trace_inopen)
     {
         globaldef007914 = globaldef007910;
-        globaldef007914_z = (globaldef007914_z + (trace_fraction * globaldef000724)) - globaldef000719;
+        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - globaldef000719;
         
         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
         {
@@ -29667,13 +29667,13 @@ void (entity globaldef007909) func002476 =
             globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
             globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
             globaldef007914 = globaldef007910;
-            globaldef007914_z = globaldef007914_z + globaldef000724;
+            globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
             traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
             
             if(trace_inopen)
             {
                 globaldef007914 = globaldef007910;
-                globaldef007914_z = (globaldef007914_z + (trace_fraction * globaldef000724)) - globaldef000719;
+                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - globaldef000719;
                 
                 if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                 {
@@ -29681,13 +29681,13 @@ void (entity globaldef007909) func002476 =
                     globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
                     globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
                     globaldef007914 = globaldef007910;
-                    globaldef007914_z = globaldef007914_z + globaldef000724;
+                    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
                     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                     
                     if(trace_inopen)
                     {
                         globaldef007914 = globaldef007910;
-                        globaldef007914_z = (globaldef007914_z + (trace_fraction * globaldef000724)) - globaldef000719;
+                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - globaldef000719;
                         
                         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                         {
@@ -29695,32 +29695,32 @@ void (entity globaldef007909) func002476 =
                             globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
                             globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
                             globaldef007914 = globaldef007910;
-                            globaldef007914_z = globaldef007914_z + globaldef000724;
+                            globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
                             traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                             
                             if(trace_inopen)
                             {
                                 globaldef007914 = globaldef007910;
-                                globaldef007914_z = (globaldef007914_z + (trace_fraction * globaldef000724)) - globaldef000719;
+                                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - globaldef000719;
                                 
                                 if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                                 {
                                     globaldef007910 = globaldef007909.origin;
                                     globaldef007914 = globaldef007910;
-                                    globaldef007914_z = globaldef007914_z + globaldef000724;
+                                    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
                                     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                                     
                                     if(trace_inopen)
                                     {
                                         globaldef007914 = globaldef007910;
-                                        globaldef007914_z = (globaldef007914_z + (trace_fraction * globaldef000724)) - globaldef000719;
+                                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - globaldef000719;
                                         
                                         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                                         {
                                             globaldef007909.goalentity.goalentity = globaldef007909.goalentity;
                                             globaldef007918 = pointcontents(globaldef007909.origin);
                                             globaldef007914 = globaldef007909.origin;
-                                            globaldef007914_z = func002475(globaldef007909, (trace_fraction * globaldef000724) - TRUE, globaldef007918);
+                                            globaldef007914_z = func002475(globaldef007909, (trace_fraction * GLOBALDEFSEVENTWOFOUR) - TRUE, globaldef007918);
                                             globaldef007914_z = globaldef007914_z + 20;
                                             setorigin(globaldef007909.goalentity, globaldef007914);
                                             return;
@@ -49723,7 +49723,7 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
     local float globaldef009225;
     local float globaldef009226;
     
-    if(globaldef000791 >= globaldef000724)
+    if(globaldef000791 >= GLOBALDEFSEVENTWOFOUR)
     {
         return;
     }
@@ -50187,7 +50187,7 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         globaldef000791 = globaldef000791 + TRUE;
         
-        if(globaldef000791 > globaldef000724)
+        if(globaldef000791 > GLOBALDEFSEVENTWOFOUR)
         {
             globaldef009220 = world;
         }
@@ -50440,7 +50440,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     local float globaldef009239;
     local float globaldef009240;
     
-    if(globaldef000791 >= globaldef000724)
+    if(globaldef000791 >= GLOBALDEFSEVENTWOFOUR)
     {
         return;
     }
@@ -50659,7 +50659,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         
         globaldef000791 = globaldef000791 + TRUE;
         
-        if(globaldef000791 > globaldef000724)
+        if(globaldef000791 > GLOBALDEFSEVENTWOFOUR)
         {
             globaldef009234 = world;
         }
@@ -55230,7 +55230,7 @@ void () func002734 =
     WriteByte(MSG_ONE, 242);
     WriteByte(MSG_ONE, 243);
     WriteByte(MSG_ONE, 186);
-    func002729(MSG_ONE, (globaldef000797 - globaldef000793) - globaldef000792, FALSE);
+    func002729(MSG_ONE, (activeClientCount - globaldef000793) - globaldef000792, FALSE);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, 226);
@@ -56715,7 +56715,7 @@ void (entity globaldef009555) func002741 =
         return;
     }
     
-    if(((globaldef000797 - globaldef000792) - globaldef000793) <= TRUE)
+    if(((activeClientCount - globaldef000792) - globaldef000793) <= TRUE)
     {
         func002738(globaldef009555);
     }
@@ -57282,7 +57282,7 @@ void () func002748 =
                     {
                         if(self.impulse == 166)
                         {
-                            func000145();
+                            CamClientInit();
                         }
                         else
                         {
