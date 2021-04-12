@@ -215,13 +215,13 @@ void (vector origin, vector angle) EjectShell_spawn =
     }
     
     
-    if(globaldef000804 & globaldef000761)
+    if(globaldef000804 & OBOT_SHELLCASES)
     {
         return;
     }
     
     
-    if(numShellCases >= globaldef000727)
+    if(numShellCases >= OBOT_MAXSHELLCASES)
     {
         oldshell = find(world, classname, "shellcase");
         

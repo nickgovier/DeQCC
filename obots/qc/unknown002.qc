@@ -1104,7 +1104,7 @@ float globaldef002607;
 float globaldef002608;
 float globaldef002609;
 
-// func000337
+// campmode
 // function begins at statement 9328, parm_start=7130
 // OP_STORE_V	7130	4	0
 // OP_CALL1	7104	0	0
@@ -1130,7 +1130,7 @@ float globaldef002609;
 // OP_STORE_V	7137	4	0
 // OP_CALL1	7104	0	0
 // OP_DONE	0	0	0
-void () func000337 = 
+void () campmode = 
 {
     func000336("camping mode = ");
     if(globaldef002609 == globaldef002605)
@@ -4511,7 +4511,7 @@ void () func000371 =
 void () func000372 = 
 {
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         
         if(self.impulse == 68)

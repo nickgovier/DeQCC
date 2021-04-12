@@ -820,7 +820,7 @@ void () func000384 =
 void () ClientKill = 
 {
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         return;
     }
@@ -1278,7 +1278,7 @@ void () PutClientInServer =
     self.view_ofs = '0 0 22';
     globaldef002910 = func000350(self);
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         globaldef002910 = func000353("info_player_deathmatch");
     }
@@ -1301,7 +1301,7 @@ void () PutClientInServer =
     }
     
     
-    if((!(globaldef000804 & globaldef000752)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(globaldef000804 & OBOT_HUMANPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
         self.field000252 = self.field000252 | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
@@ -1320,7 +1320,7 @@ void () PutClientInServer =
     func000586(self.origin, self);
     func000338(self);
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         func000364(self);
     }
@@ -1634,7 +1634,7 @@ void () func000397 =
     }
     
     
-    if(!(globaldef000804 & globaldef000750))
+    if(!(globaldef000804 & OBOT_ROCKETARENA))
     {
         
         if((!self.button2 && !self.button1) && !self.button0)
@@ -1757,7 +1757,7 @@ void () func000398 =
         {
             self.velocity_z = 100;
             
-            if(globaldef000804 & globaldef000750)
+            if(globaldef000804 & OBOT_ROCKETARENA)
             {
                 self.velocity_z = GLOBALDEFFIVETWOTHREE;
             }
@@ -2201,13 +2201,13 @@ void () func000400 =
     globaldef002944_z = globaldef002944_z + FL_CLIENT;
     v_forward_z = FALSE;
     normalize(v_forward);
-    globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
+    globaldef002948 = globaldef002944 + (v_forward * OBOT_MAXBOTS);
     traceline(globaldef002944, globaldef002948, TRUE, self);
     
     if(trace_fraction < TRUE)
     {
         globaldef002944_z = (globaldef002944_z + self.maxs_z) - FL_CLIENT;
-        globaldef002948 = globaldef002944 + (v_forward * globaldef000719);
+        globaldef002948 = globaldef002944 + (v_forward * OBOT_MAXBOTS);
         self.movedir = trace_plane_normal * -50;
         traceline(globaldef002944, globaldef002948, TRUE, self);
         
@@ -2301,7 +2301,7 @@ void () PlayerPreThink =
     }
     
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         func000365(self);
     }
@@ -2950,7 +2950,7 @@ void () PlayerPostThink =
     
     if((self.classname == "player") || (self.classname == "observer"))
     {
-        func002748();
+        BotImpulseCommand();
     }
     
     
@@ -3204,7 +3204,7 @@ void () ClientConnect =
     }
     
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         self.motd = TRUE;
     }
@@ -3301,7 +3301,7 @@ void () ClientDisconnect =
     func002364(self);
     msgUpdateClientNameToAll(self.clientnumber, "");
     SetClientNumberFree(self.clientnumber);
-    func002739(self);
+    stopadmin(self);
     
     if(self.field000297)
     {
@@ -3352,7 +3352,7 @@ void () ClientDisconnect =
     }
     
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         func000366(self, globaldef002971);
     }
@@ -3994,7 +3994,7 @@ void (entity targ, entity attacker) ClientObituary =
     if((targ.classname == "player") || (targ.classname == "bot"))
     {
         
-        if(globaldef000804 & globaldef000750)
+        if(globaldef000804 & OBOT_ROCKETARENA)
         {
             
             if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))

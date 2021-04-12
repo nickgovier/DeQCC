@@ -307,19 +307,40 @@ namespace DeQcc
 
             nameMap.Add("globaldef000522", "GLOBALDEFFIVETWOTWO");  // constant = 0.5
             nameMap.Add("globaldef000523", "GLOBALDEFFIVETWOTHREE");  // constant = 300
+            nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
             nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
             nameMap.Add("globaldef000724", "GLOBALDEFSEVENTWOFOUR");  // constant = 800
-            nameMap.Add("globaldef000727", "B_MAXSHELLCASES");   // b_eject.qc, constant = 500
+            nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
             nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
+
+            // boolean flags
+            nameMap.Add("globaldef000749", "OBOT_BUBBLEROUTING");   // constant = 16
+            nameMap.Add("globaldef000750", "OBOT_ROCKETARENA");   // constant = 32
+            nameMap.Add("globaldef000751", "OBOT_BOTPATHING");   // constant = 64
+            nameMap.Add("globaldef000752", "OBOT_HUMANPATHING");   // constant = 128
+            nameMap.Add("globaldef000753", "OBOT_TALK");   // constant = 256
+            nameMap.Add("globaldef000754", "OBOT_POWERUPS");   // constant = 512 
+            nameMap.Add("globaldef000755", "OBOT_WEAPONS");   // constant = 1024
+            nameMap.Add("globaldef000756", "OBOT_LIGHTNING");   // constant = 2048
+            nameMap.Add("globaldef000757", "OBOT_ROCKET");   // constant = 4096
+            nameMap.Add("globaldef000758", "OBOT_GRENADE");   // constant = 8192
+            nameMap.Add("globaldef000759", "OBOT_SUPERNAIL");   // constant = 16384
+            //nameMap.Add("globaldef000760", "OBOT_");   // constant = 32768
+            nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
+
             nameMap.Add("globaldef000774", "GLOBALDEFSEVENSEVENFOUR");   // constant = 12
 
+            // b_clrank.qc
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
             nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
 
+            nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
+
+            // b_clrank.qc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
 
@@ -1390,6 +1411,62 @@ namespace DeQcc
             // locals
             nameMap.Add("globaldef005697", "bot");
             nameMap.Add("globaldef005698", "index");
+
+            #endregion
+
+            // these names were all obtained from the impulse code and their aliases
+            nameMap.Add("func002358", "cyclecam");  // impulse 161
+            nameMap.Add("func002360", "observerfly");   // impulse 162
+            nameMap.Add("func002361", "camname");   // impulse 163
+            nameMap.Add("func002362", "observerteleport");  // impulse 164
+            nameMap.Add("func002363", "chasecam");  // impulse 165
+            // impulse 166 = kascam
+            nameMap.Add("func002696", "skinchange");  // impulse 140, 141
+            nameMap.Add("func002721", "observer");  // impulse 160
+            nameMap.Add("func002720", "botskills");  // impulse 142
+            nameMap.Add("func002741", "admin");  // impulse 143
+            nameMap.Add("func002739", "stopadmin");  // impulse 144
+            nameMap.Add("func002742", "yes");  // impulse 145
+            nameMap.Add("func002743", "omicron");  // impulse 146
+            nameMap.Add("func002693", "cmdlist");  // impulse 147
+
+            nameMap.Add("func002705", "impulse190");  // impulse 190
+
+            nameMap.Add("func002725", "setteam");  // impulse 201-208
+            nameMap.Add("func002695", "CheckIsAdmin");  // checked before all of the following impulses
+            nameMap.Add("func002744", "addbots");  // impulse 100-10x
+            nameMap.Add("func002745", "addbot");  // impulse 150
+            nameMap.Add("func002746", "removebot");  // impulse 151
+            nameMap.Add("func002424", "removeallbots");  // impulse 152
+
+            nameMap.Add("func002710", "nopowerups");  // impulse 130
+            nameMap.Add("func002711", "noweapons");  // impulse 131
+            nameMap.Add("func002712", "nolightning");  // impulse 132
+            nameMap.Add("func002713", "norocket");  // impulse 133
+            nameMap.Add("func002714", "nogrenade");  // impulse 134
+            nameMap.Add("func002715", "nosupernail");  // impulse 135
+            nameMap.Add("func002716", "noshellcases");  // impulse 136
+            // 153 = serverflags
+            nameMap.Add("func002700", "botpathing");  // impulse 154
+            nameMap.Add("func002701", "humanpathing");  // impulse 155
+            nameMap.Add("func000337", "campmode");  // impulse 156
+            nameMap.Add("func002702", "bottalk");  // impulse 157
+            nameMap.Add("func002706", "rocketarena");  // impulse 158
+            nameMap.Add("func002660", "dumpbspwaypoints");  // impulse 170
+            nameMap.Add("func002662", "dumphcwaypoints");  // impulse 171
+            nameMap.Add("func002717", "bubblerouting");  // impulse 172
+            nameMap.Add("func002737", "menu");  // impulse 200
+
+
+            #region b_impuls.qc
+
+            nameMap.Add("func002718", "serverflags");
+            nameMap.Add("func002748", "BotImpulseCommand");
+            
+            for (int i = 2693; i <= 2748; i++)
+            {
+                fileMap[i] = "b_impuls.qc";
+            }
 
             #endregion
 

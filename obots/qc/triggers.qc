@@ -1026,7 +1026,7 @@ void () func000587 =
     local entity globaldef003487;
     local vector globaldef003488;
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         
         if((other != globaldef000524) && (other != globaldef000525))

@@ -1207,7 +1207,7 @@ void () func000274 =
     if(self.waterlevel > TRUE)
     {
         
-        if(globaldef000804 & globaldef000750)
+        if(globaldef000804 & OBOT_ROCKETARENA)
         {
             self.ammo_cells = FALSE;
             return;
@@ -3308,7 +3308,7 @@ void () func000294 =
     
     func000293();
     
-    if(globaldef000804 & globaldef000750)
+    if(globaldef000804 & OBOT_ROCKETARENA)
     {
         
         if(globaldef000799)

@@ -745,6 +745,6 @@ void () func000700 = [31, func000701]
 // OP_DONE	0	0	0
 void () func000701 = [32, func000694]
 {
-    ai_run(globaldef000719);
+    ai_run(OBOT_MAXBOTS);
 };
 

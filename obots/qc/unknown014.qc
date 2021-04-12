@@ -893,7 +893,7 @@ void (vector globaldef004596) func001418 =
     globaldef004600.owner = self;
     globaldef004600.movetype = MOVETYPE_BOUNCE;
     globaldef004600.solid = SOLID_BBOX;
-    globaldef004602 = ((self.origin + (globaldef004596_x * v_forward)) + (globaldef004596_y * v_right)) + ((globaldef004596_z - globaldef000719) * v_up);
+    globaldef004602 = ((self.origin + (globaldef004596_x * v_forward)) + (globaldef004596_y * v_right)) + ((globaldef004596_z - OBOT_MAXBOTS) * v_up);
     makevectors(self.angles);
     globaldef004600.velocity = normalize(self.enemy.origin - globaldef004602);
     globaldef004600.velocity = globaldef004600.velocity * GLOBALDEFSEVENTWOTHREE;
