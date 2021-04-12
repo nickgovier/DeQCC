@@ -622,7 +622,7 @@ void (entity globaldef006798) ToggleObserverMode =
             
             if(globaldef000804 & OBOT_ROCKETARENA)
             {
-                func000366(globaldef006798, FALSE);
+                rocket_arena_disconnect(globaldef006798, FALSE);
             }
             
             func002522(globaldef006798);

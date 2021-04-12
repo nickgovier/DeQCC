@@ -303,10 +303,18 @@ namespace DeQcc
             
             nameMap.Add("func000064", "stuffcmd");
             nameMap.Add("func000072", "centerprint");
+            nameMap.Add("func000076", "centerprint5");
             nameMap.Add("func000092", "sprint");
 
-            nameMap.Add("globaldef000522", "GLOBALDEFFIVETWOTWO");  // constant = 0.5
-            nameMap.Add("globaldef000523", "GLOBALDEFFIVETWOTHREE");  // constant = 300
+            // rocket arena
+            nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
+            nameMap.Add("globaldef000523", "RA_MAXIDLETIME");  // constant = 300
+            nameMap.Add("globaldef000524", "winner");
+            nameMap.Add("globaldef000525", "loser");
+            nameMap.Add("globaldef000526", "first");
+            nameMap.Add("globaldef000527", "time_to_start");
+            nameMap.Add("globaldef000528", "last_time");
+
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
             nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
@@ -1071,23 +1079,86 @@ namespace DeQcc
 
             #region world.qc
 
-            for (int i = 296; i <= 299; i++)
+            // Declarations
+            nameMap.Add("globaldef002375", "lastspawn");
+            nameMap.Add("globaldef002466", "bodyque_head");
+
+            nameMap.Add("func000300", "InitBodyQue");
+            nameMap.Add("func000301", "CopyToBodyQue");
+
+            for (int i = 296; i <= 301; i++)
             {
                 fileMap[i] = "world.qc";
             }
+
+            // InitBodyQue locals
+            nameMap.Add("globaldef002468", "e");
+
+            // CopyToBodyQue params
+            nameMap.Add("globaldef002470", "ent");
 
             #endregion
 
             #region b_camp.qc
 
-            nameMap.Add("func000337", "campmode");  // impulse 156
+            // this is based on one of the many anti-camp mods available
 
-            for (int i = 337; i <= 337; i++)
+            // Declarations
+            nameMap.Add("globaldef002605", "CAMP_NO_DETECTION");
+            nameMap.Add("globaldef002606", "CAMP_DETECT");
+            nameMap.Add("globaldef002607", "CAMP_DETECT_AND_PUNISH");
+            nameMap.Add("globaldef002608", "CAMP_DETECT_AND_PUNISH_SEVERE");
+            nameMap.Add("globaldef002609", "CampingMode");
+
+            for (int i = 1; i <= 12; i++) { nameMap.Add("func000" + (304 + i).ToString(), "cloud_a" + i.ToString()); }
+            for (int i = 1; i <= 4; i++) { nameMap.Add("func000" + (316 + i).ToString(), "cloud_b" + i.ToString()); }
+            for (int i = 1; i <= 4; i++) { nameMap.Add("func000" + (320 + i).ToString(), "cloud_c" + i.ToString()); }
+
+            nameMap.Add("func000336", "CampingPrint");
+            nameMap.Add("func000337", "ToggleCampingMode");  // impulse 156
+
+            for (int i = 302; i <= 347; i++)
             {
                 fileMap[i] = "b_camp.qc";
             }
 
+            // CampingPrint params
+            nameMap.Add("globaldef002586", "s");
+
             #endregion
+
+            #region b_ra.qc
+
+            // rocket arena 1.2
+
+            nameMap.Add("func000348", "rocket_arena_gotonextmap");
+            nameMap.Add("func000353", "rocket_arena_selectspawnpoint");
+            nameMap.Add("func000354", "TeamSetStatRes");
+            nameMap.Add("func000355", "PrintStats");
+            nameMap.Add("func000356", "playallsound");
+            nameMap.Add("func000358", "setfullwep");
+            nameMap.Add("func000360", "teleport_to_arena");
+            nameMap.Add("func000361", "gotoarena");
+            nameMap.Add("func000362", "getnewopponent");
+            nameMap.Add("func000363", "addtoqueue");
+            nameMap.Add("func000364", "rocket_arena_putclientinserver");
+            nameMap.Add("func000365", "rocket_arena_prethink");
+            nameMap.Add("func000366", "rocket_arena_disconnect");
+            nameMap.Add("func000368", "win_loss_ratio");
+            nameMap.Add("func000372", "rocket_arena_impulses");
+
+            for (int i = 348; i <= 372; i++)
+            {
+                fileMap[i] = "b_ra.qc";
+            }
+
+            // setfullwep params
+            nameMap.Add("globaldef002765", "anent");
+
+            #endregion
+
+            
+            
 
             #region client.qc
 
@@ -1147,6 +1218,10 @@ namespace DeQcc
             #endregion
 
             #region triggers.qc
+
+            nameMap.Add("func000584", "spawn_tfog");
+            nameMap.Add("func000586", "spawn_tdeath");
+            
 
             for (int i = 570; i <= 601; i++)
             {
@@ -1479,7 +1554,7 @@ namespace DeQcc
             nameMap.Add("func002660", "dumpbspwaypoints");  // impulse 170
             nameMap.Add("func002662", "dumphcwaypoints");  // impulse 171
 
-            for (int i = 2649; i <= 2690; i++)
+            for (int i = 2649; i <= 2692; i++)
             {
                 fileMap[i] = "b_waypnt.qc";
             }

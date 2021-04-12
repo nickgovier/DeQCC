@@ -23,13 +23,13 @@ float globaldef000510;
 .float loses;
 .float ratio;
 .float motd;
-float GLOBALDEFFIVETWOTWO = 0.5;
-float GLOBALDEFFIVETWOTHREE = 300;
-entity globaldef000524;
-entity globaldef000525;
-entity globaldef000526;
-float globaldef000527;
-float globaldef000528;
+float RA_PLAYERSTATTIME = 0.5;
+float RA_MAXIDLETIME = 300;
+entity winner;
+entity loser;
+entity first;
+float time_to_start;
+float last_time;
 void globaldef000529;
 .float(entity globaldef009217, float globaldef009224, entity globaldef009219) field000224;
 .float(entity globaldef007942, entity globaldef007944) field000225;
@@ -417,7 +417,7 @@ void (entity globaldef000845, string globaldef000846, string globaldef000847, st
 };
 
 
-// func000076
+// centerprint5
 // function begins at statement 47, parm_start=883
 // OP_LOAD_F	883	182	889
 // OP_BITAND	889	698	890
@@ -431,7 +431,7 @@ void (entity globaldef000845, string globaldef000846, string globaldef000847, st
 // OP_STORE_V	888	19	0
 // OP_CALL6	849	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000851, string globaldef000852, string globaldef000853, string globaldef000854, string globaldef000855, string globaldef000856) func000076 = 
+void (entity globaldef000851, string globaldef000852, string globaldef000853, string globaldef000854, string globaldef000855, string globaldef000856) centerprint5 = 
 {
     
     if(!(globaldef000851.flags & globaldef000681))

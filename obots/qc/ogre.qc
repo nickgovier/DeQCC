@@ -990,7 +990,7 @@ void (entity globaldef003785, float globaldef003786) func000782 =
     }
     else
     {
-        if(globaldef003787 < GLOBALDEFFIVETWOTWO)
+        if(globaldef003787 < RA_PLAYERSTATTIME)
         {
             func000742();
             self.pain_finished = time + TRUE;
@@ -1326,7 +1326,7 @@ void () func000807 =
     }
     
     sound(self, CHAN_VOICE, "ogre/ogdth.wav", TRUE, ATTN_NORM);
-    if(random() < GLOBALDEFFIVETWOTWO)
+    if(random() < RA_PLAYERSTATTIME)
     {
         func000783();
     }
@@ -1349,7 +1349,7 @@ void () func000807 =
 // OP_DONE	0	0	0
 void () func000808 = 
 {
-    if(random() > GLOBALDEFFIVETWOTWO)
+    if(random() > RA_PLAYERSTATTIME)
     {
         ogre_smash1();
     }

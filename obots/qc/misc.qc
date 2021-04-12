@@ -157,7 +157,7 @@ void () light_fluoro =
     }
     
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -186,7 +186,7 @@ void () light_fluorospark =
     }
     
     precache_sound("ambience/buzz1.wav");
-    ambientsound(self.origin, "ambience/buzz1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/buzz1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -222,7 +222,7 @@ void () light_globe =
 void () func000627 = 
 {
     precache_sound("ambience/fire1.wav");
-    ambientsound(self.origin, "ambience/fire1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fire1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -860,14 +860,14 @@ void () func000644 =
     globaldef003613.movetype = MOVETYPE_NOCLIP;
     globaldef003613.solid = SOLID_NOT;
     globaldef003613.velocity = '0 0 15';
-    globaldef003613.nextthink = time + GLOBALDEFFIVETWOTWO;
+    globaldef003613.nextthink = time + RA_PLAYERSTATTIME;
     globaldef003613.think = func000647;
     globaldef003613.touch = func000646;
     globaldef003613.classname = "bubble";
     globaldef003613.frame = FALSE;
     globaldef003613.cnt = FALSE;
     setsize(globaldef003613, '-8 -8 -8', '8 8 8');
-    self.nextthink = (time + random()) + GLOBALDEFFIVETWOTWO;
+    self.nextthink = (time + random()) + RA_PLAYERSTATTIME;
     self.think = func000644;
 };
 
@@ -926,7 +926,7 @@ void () func000645 =
     globaldef003615.movetype = MOVETYPE_NOCLIP;
     globaldef003615.solid = SOLID_NOT;
     globaldef003615.velocity = self.velocity;
-    globaldef003615.nextthink = time + GLOBALDEFFIVETWOTWO;
+    globaldef003615.nextthink = time + RA_PLAYERSTATTIME;
     globaldef003615.think = func000647;
     globaldef003615.touch = func000646;
     globaldef003615.classname = "bubble";
@@ -1091,7 +1091,7 @@ void () func000647 =
     self.velocity_x = globaldef003616;
     self.velocity_y = globaldef003617;
     self.velocity_z = globaldef003618;
-    self.nextthink = time + GLOBALDEFFIVETWOTWO;
+    self.nextthink = time + RA_PLAYERSTATTIME;
     self.think = func000647;
 };
 
@@ -1283,7 +1283,7 @@ void () ambient_suck_wind =
 void () ambient_drone = 
 {
     precache_sound("ambience/drone6.wav");
-    ambientsound(self.origin, "ambience/drone6.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drone6.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1319,7 +1319,7 @@ void () ambient_flouro_buzz =
 void () ambient_drip = 
 {
     precache_sound("ambience/drip1.wav");
-    ambientsound(self.origin, "ambience/drip1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/drip1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1355,7 +1355,7 @@ void () ambient_comp_hum =
 void () ambient_thunder = 
 {
     precache_sound("ambience/thunder1.wav");
-    ambientsound(self.origin, "ambience/thunder1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/thunder1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1373,7 +1373,7 @@ void () ambient_thunder =
 void () ambient_light_buzz = 
 {
     precache_sound("ambience/fl_hum1.wav");
-    ambientsound(self.origin, "ambience/fl_hum1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/fl_hum1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1391,7 +1391,7 @@ void () ambient_light_buzz =
 void () ambient_swamp1 = 
 {
     precache_sound("ambience/swamp1.wav");
-    ambientsound(self.origin, "ambience/swamp1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1409,7 +1409,7 @@ void () ambient_swamp1 =
 void () ambient_swamp2 = 
 {
     precache_sound("ambience/swamp2.wav");
-    ambientsound(self.origin, "ambience/swamp2.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+    ambientsound(self.origin, "ambience/swamp2.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
 };
 
 
@@ -1463,7 +1463,7 @@ void () ambient_swamp2 =
 // OP_DONE	0	0	0
 void () func000663 = 
 {
-    self.nextthink = time + GLOBALDEFFIVETWOTWO;
+    self.nextthink = time + RA_PLAYERSTATTIME;
     sound(self, TRUE, "enforcer/enfire.wav", TRUE, ATTN_NORM);
     sound(self, FL_SWIM, "enforcer/enfstop.wav", TRUE, ATTN_NORM);
     sound(self, MOVETYPE_WALK, "enforcer/sight1.wav", TRUE, ATTN_NORM);

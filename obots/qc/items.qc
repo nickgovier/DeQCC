@@ -1431,7 +1431,7 @@ void () weapon_touch =
     }
     
     sound(other, CHAN_ITEM, "weapons/pkup.wav", TRUE, ATTN_NORM);
-    func002453(other, self.origin, GLOBALDEFFIVETWOTWO, globaldef000742);
+    func002453(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
     
     if(other.classname == "player")
     {
@@ -1948,7 +1948,7 @@ void () ammo_touch =
     }
     
     sound(other, CHAN_ITEM, "weapons/lock4.wav", TRUE, ATTN_NORM);
-    func002453(other, self.origin, GLOBALDEFFIVETWOTWO, globaldef000742);
+    func002453(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
     
     if(other.classname == "player")
     {
@@ -3603,7 +3603,7 @@ void () BackpackTouch =
     {
         other.health = other.health + MOVETYPE_BOUNCE;
         
-        if(other.health >= GLOBALDEFFIVETWOTHREE)
+        if(other.health >= RA_MAXIDLETIME)
         {
             other.health = 100;
             other.super_time = TRUE;
@@ -3917,7 +3917,7 @@ void () DropBackpack =
     item.ammo_nails = self.ammo_nails;
     item.ammo_rockets = self.ammo_rockets;
     item.ammo_cells = self.ammo_cells;
-    item.velocity_z = GLOBALDEFFIVETWOTHREE;
+    item.velocity_z = RA_MAXIDLETIME;
     item.velocity_x = -100 + (random() * 200);
     item.velocity_y = -100 + (random() * 200);
     item.flags = FL_ITEM;

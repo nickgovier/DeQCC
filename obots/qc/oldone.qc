@@ -803,7 +803,7 @@ void () finale_1 =
         pl.angles = other.v_angle = pos.mangle;
         pl.fixangle = TRUE;
         pl.map = self.map;
-        pl.nextthink = time + GLOBALDEFFIVETWOTWO;
+        pl.nextthink = time + RA_PLAYERSTATTIME;
         pl.takedamage = DAMAGE_NO;
         pl.solid = SOLID_NOT;
         pl.movetype = MOVETYPE_NONE;

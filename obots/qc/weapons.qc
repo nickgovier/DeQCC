@@ -55,7 +55,7 @@ void () W_Precache =
 // OP_DONE	0	0	0
 float () func000249 = 
 {
-    return FL_SWIM * (random() - GLOBALDEFFIVETWOTWO);
+    return FL_SWIM * (random() - RA_PLAYERSTATTIME);
 };
 
 
@@ -196,7 +196,7 @@ vector () func000252 =
 {
     local vector globaldef002040;
     globaldef002040 = normalize(self.velocity);
-    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - GLOBALDEFFIVETWOTWO))) + (v_right * (random() - GLOBALDEFFIVETWOTWO)));
+    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - RA_PLAYERSTATTIME))) + (v_right * (random() - RA_PLAYERSTATTIME)));
     globaldef002040 = globaldef002040 + (FL_SWIM * trace_plane_normal);
     globaldef002040 = globaldef002040 * 200;
     return globaldef002040;
@@ -825,7 +825,7 @@ void () T_MissileTouch =
         
         if(other.classname == "monster_shambler")
         {
-            globaldef002146 = globaldef002146 * GLOBALDEFFIVETWOTWO;
+            globaldef002146 = globaldef002146 * RA_PLAYERSTATTIME;
         }
         
         T_Damage(other, self, self.owner, globaldef002146);
@@ -2345,7 +2345,7 @@ void () func000286 =
         }
         else
         {
-            if(globaldef002241 < GLOBALDEFFIVETWOTWO)
+            if(globaldef002241 < RA_PLAYERSTATTIME)
             {
                 func000419();
             }
@@ -2364,7 +2364,7 @@ void () func000286 =
             
         }
         
-        self.attack_finished = time + GLOBALDEFFIVETWOTWO;
+        self.attack_finished = time + RA_PLAYERSTATTIME;
     }
     else
     {
@@ -2372,7 +2372,7 @@ void () func000286 =
         {
             func000409();
             func000262();
-            self.attack_finished = time + GLOBALDEFFIVETWOTWO;
+            self.attack_finished = time + RA_PLAYERSTATTIME;
         }
         else
         {
@@ -3272,7 +3272,7 @@ void () func000293 =
         CamClientInit();
     }
     
-    func000372();
+    rocket_arena_impulses();
     self.impulse = FALSE;
 };
 
@@ -3317,7 +3317,7 @@ void () func000294 =
         }
         
         
-        if((self != globaldef000524) && (self != globaldef000525))
+        if((self != winner) && (self != loser))
         {
             return;
         }

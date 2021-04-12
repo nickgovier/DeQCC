@@ -280,7 +280,7 @@ string globaldef002871;
 // OP_DONE	0	0	0
 void () func000378 = 
 {
-    func000348(mapname, globaldef002871);
+    rocket_arena_gotonextmap(mapname, globaldef002871);
 };
 
 
@@ -634,7 +634,7 @@ void () func000381 =
         other.v_angle = globaldef002882.mangle;
         other.angles = globaldef002882.mangle;
         other.fixangle = TRUE;
-        other.nextthink = time + GLOBALDEFFIVETWOTWO;
+        other.nextthink = time + RA_PLAYERSTATTIME;
         other.takedamage = DAMAGE_NO;
         other.solid = SOLID_NOT;
         other.movetype = MOVETYPE_NONE;
@@ -771,7 +771,7 @@ void () func000384 =
 {
     if(coop)
     {
-        func000301(self);
+        CopyToBodyQue(self);
         setspawnparms(self);
         parm10 = self.field000249;
         PutClientInServer();
@@ -780,7 +780,7 @@ void () func000384 =
     {
         if(deathmatch)
         {
-            func000301(self);
+            CopyToBodyQue(self);
             SetNewParms();
             PutClientInServer();
         }
@@ -941,17 +941,17 @@ entity () func000387 =
     
     if(coop)
     {
-        globaldef002375 = find(globaldef002375, classname, "info_player_coop");
+        lastspawn = find(lastspawn, classname, "info_player_coop");
         
-        if(globaldef002375 == world)
+        if(lastspawn == world)
         {
-            globaldef002375 = find(globaldef002375, classname, "info_player_start");
+            lastspawn = find(lastspawn, classname, "info_player_start");
         }
         
         
-        if(globaldef002375 != world)
+        if(lastspawn != world)
         {
-            return globaldef002375;
+            return lastspawn;
         }
         
     }
@@ -960,30 +960,30 @@ entity () func000387 =
         
         if(deathmatch)
         {
-            globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+            lastspawn = find(lastspawn, classname, "info_player_deathmatch");
             globaldef002900 = random();
             
             if(globaldef002900 > 0.33)
             {
-                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+                lastspawn = find(lastspawn, classname, "info_player_deathmatch");
             }
             
             
             if(globaldef002900 > 0.66)
             {
-                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+                lastspawn = find(lastspawn, classname, "info_player_deathmatch");
             }
             
             
-            if(globaldef002375 == world)
+            if(lastspawn == world)
             {
-                globaldef002375 = find(globaldef002375, classname, "info_player_deathmatch");
+                lastspawn = find(lastspawn, classname, "info_player_deathmatch");
             }
             
             
-            if(globaldef002375 != world)
+            if(lastspawn != world)
             {
-                return globaldef002375;
+                return lastspawn;
             }
             
         }
@@ -1280,7 +1280,7 @@ void () PutClientInServer =
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
-        globaldef002910 = func000353("info_player_deathmatch");
+        globaldef002910 = rocket_arena_selectspawnpoint("info_player_deathmatch");
     }
     
     self.origin = globaldef002910.origin + '0 0 2';
@@ -1314,15 +1314,15 @@ void () PutClientInServer =
     if(deathmatch || coop)
     {
         makevectors(self.angles);
-        func000584(self.origin + (v_forward * 20));
+        spawn_tfog(self.origin + (v_forward * 20));
     }
     
-    func000586(self.origin, self);
+    spawn_tdeath(self.origin, self);
     func000338(self);
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
-        func000364(self);
+        rocket_arena_putclientinserver(self);
     }
     
 };
@@ -1759,7 +1759,7 @@ void () func000398 =
             
             if(globaldef000804 & OBOT_ROCKETARENA)
             {
-                self.velocity_z = GLOBALDEFFIVETWOTHREE;
+                self.velocity_z = RA_MAXIDLETIME;
             }
             
         }
@@ -1783,7 +1783,7 @@ void () func000398 =
             if(self.swim_flag < time)
             {
                 self.swim_flag = time + TRUE;
-                if(random() < GLOBALDEFFIVETWOTWO)
+                if(random() < RA_PLAYERSTATTIME)
                 {
                     sound(self, CHAN_BODY, "misc/water1.wav", TRUE, ATTN_NORM);
                 }
@@ -2303,7 +2303,7 @@ void () PlayerPreThink =
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
-        func000365(self);
+        rocket_arena_prethink(self);
     }
     
     makevectors(self.v_angle);
@@ -2622,7 +2622,7 @@ void () func000402 =
         
         if(self.invisible_sound < time)
         {
-            sound(self, CHAN_AUTO, "items/inv3.wav", GLOBALDEFFIVETWOTWO, ATTN_IDLE);
+            sound(self, CHAN_AUTO, "items/inv3.wav", RA_PLAYERSTATTIME, ATTN_IDLE);
             self.invisible_sound = (time + (random() * MOVETYPE_WALK)) + TRUE;
         }
         
@@ -3354,7 +3354,7 @@ void () ClientDisconnect =
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
-        func000366(self, globaldef002971);
+        rocket_arena_disconnect(self, globaldef002971);
     }
     
 };
@@ -3997,19 +3997,19 @@ void (entity targ, entity attacker) ClientObituary =
         if(globaldef000804 & OBOT_ROCKETARENA)
         {
             
-            if((globaldef000525.classname == "player") || (globaldef000525.classname == "bot"))
+            if((loser.classname == "player") || (loser.classname == "bot"))
             {
-                globaldef000525.takedamage = DAMAGE_NO;
-                stuffcmd(globaldef000525, "-attack\n");
-                globaldef000525.enemy = world;
+                loser.takedamage = DAMAGE_NO;
+                stuffcmd(loser, "-attack\n");
+                loser.enemy = world;
             }
             
             
-            if((globaldef000524.classname == "player") || (globaldef000524.classname == "bot"))
+            if((winner.classname == "player") || (winner.classname == "bot"))
             {
-                globaldef000524.takedamage = DAMAGE_NO;
-                stuffcmd(globaldef000524, "-attack\n");
-                globaldef000524.enemy = world;
+                winner.takedamage = DAMAGE_NO;
+                stuffcmd(winner, "-attack\n");
+                winner.enemy = world;
             }
             
             
@@ -4020,12 +4020,12 @@ void (entity targ, entity attacker) ClientObituary =
             }
             
             
-            if(targ == globaldef000524)
+            if(targ == winner)
             {
-                globaldef000524.loses = globaldef000524.loses + TRUE;
-                globaldef000525.wins = globaldef000525.wins + TRUE;
+                winner.loses = winner.loses + TRUE;
+                loser.wins = loser.wins + TRUE;
                 bprint("The winner ");
-                bprint(globaldef000524.netname);
+                bprint(winner.netname);
                 bprint(" has been defeated\n");
                 
                 if(targ == attacker)
@@ -4034,25 +4034,25 @@ void (entity targ, entity attacker) ClientObituary =
                     attacker.frags = attacker.frags - TRUE;
                 }
                 
-                globaldef000524 = globaldef000525;
+                winner = loser;
                 
-                if(globaldef000524.classname == "player")
+                if(winner.classname == "player")
                 {
                     bprint("The new winner is ");
-                    bprint(globaldef000524.netname);
+                    bprint(winner.netname);
                     bprint("\n");
                 }
                 
-                func000362();
+                getnewopponent();
             }
             
             
-            if(targ == globaldef000525)
+            if(targ == loser)
             {
-                globaldef000525.loses = globaldef000525.loses + TRUE;
-                globaldef000524.wins = globaldef000524.wins + TRUE;
+                loser.loses = loser.loses + TRUE;
+                winner.wins = winner.wins + TRUE;
                 bprint("The challenger ");
-                bprint(globaldef000525.netname);
+                bprint(loser.netname);
                 bprint(" has failed\n");
                 
                 if(targ == attacker)
@@ -4061,7 +4061,7 @@ void (entity targ, entity attacker) ClientObituary =
                     attacker.frags = attacker.frags - TRUE;
                 }
                 
-                func000362();
+                getnewopponent();
             }
             
             
@@ -4073,7 +4073,7 @@ void (entity targ, entity attacker) ClientObituary =
                     if((globaldef002980 == 100) && (globaldef002981 == 200))
                     {
                         bprint("???????? ????????\n");
-                        func000356("play ra/flawless.wav\n");
+                        playallsound("play ra/flawless.wav\n");
                     }
                     else
                     {
@@ -4088,7 +4088,7 @@ void (entity targ, entity attacker) ClientObituary =
                         
                         if((globaldef002980 >= 75) && (globaldef002981 >= 100))
                         {
-                            func000356("play ra/excelent.wav\n");
+                            playallsound("play ra/excelent.wav\n");
                         }
                         
                     }
@@ -4176,7 +4176,7 @@ void (entity targ, entity attacker) ClientObituary =
                     globaldef003007 = random();
                     if(targ.health < -40)
                     {
-                        if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                        if(globaldef003007 < RA_PLAYERSTATTIME)
                         {
                             globaldef002978 = " tells team mate ";
                             globaldef002979 = " to spread around\n";
@@ -4193,7 +4193,7 @@ void (entity targ, entity attacker) ClientObituary =
                         globaldef002977 = attacker.weapon;
                         if(globaldef002977 == IT_AXE)
                         {
-                            if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                            if(globaldef003007 < RA_PLAYERSTATTIME)
                             {
                                 globaldef002978 = " wanted to axe a few questions from team mate ";
                                 globaldef002979 = "\n";
@@ -4210,7 +4210,7 @@ void (entity targ, entity attacker) ClientObituary =
                             globaldef002977 = IT_SUPER_SHOTGUN;
                             if((globaldef002977 == IT_SHOTGUN) || IT_SUPER_SHOTGUN)
                             {
-                                if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                if(globaldef003007 < RA_PLAYERSTATTIME)
                                 {
                                     globaldef002978 = " found the trigger when team mate ";
                                     globaldef002979 = " looked for a bullet in the barrel\n";
@@ -4254,7 +4254,7 @@ void (entity targ, entity attacker) ClientObituary =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                                    if(globaldef003007 < RA_PLAYERSTATTIME)
                                                     {
                                                         globaldef002978 = " settled an argument with team mate ";
                                                         globaldef002979 = "\n";
@@ -4298,7 +4298,7 @@ void (entity targ, entity attacker) ClientObituary =
                                             
                                             if(globaldef002977 == IT_LIGHTNING)
                                             {
-                                                if(globaldef003007 < GLOBALDEFFIVETWOTWO)
+                                                if(globaldef003007 < RA_PLAYERSTATTIME)
                                                 {
                                                     globaldef002978 = " brings shocking news to team mate ";
                                                     globaldef002979 = "\n";
@@ -4427,7 +4427,7 @@ void (entity targ, entity attacker) ClientObituary =
             bprint(targ.netname);
             if(globaldef002977 == CONTENT_WATER)
             {
-                if(random() < GLOBALDEFFIVETWOTWO)
+                if(random() < RA_PLAYERSTATTIME)
                 {
                     bprint(" sleeps with the fishes\n");
                 }
@@ -4442,7 +4442,7 @@ void (entity targ, entity attacker) ClientObituary =
             {
                 if(globaldef002977 == CONTENT_SLIME)
                 {
-                    if(random() < GLOBALDEFFIVETWOTWO)
+                    if(random() < RA_PLAYERSTATTIME)
                     {
                         bprint(" gulped a load of slime\n");
                     }
@@ -4465,7 +4465,7 @@ void (entity targ, entity attacker) ClientObituary =
                             return;
                         }
                         
-                        if(random() < GLOBALDEFFIVETWOTWO)
+                        if(random() < RA_PLAYERSTATTIME)
                         {
                             bprint(" turned into hot slag\n");
                         }

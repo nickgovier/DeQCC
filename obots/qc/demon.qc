@@ -71,7 +71,7 @@ void () monster_demon1 =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/demon.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = GLOBALDEFFIVETWOTHREE;
+    self.health = RA_MAXIDLETIME;
     self.th_stand = func000812;
     self.th_walk = func000825;
     self.th_run = func000833;

@@ -86,7 +86,7 @@ float (entity targ, entity inflictor) CanDamage =
     
     if(targ.movetype == MOVETYPE_PUSH)
     {
-        traceline(inflictor.origin, GLOBALDEFFIVETWOTWO * (targ.absmin + targ.absmax), TRUE, self);
+        traceline(inflictor.origin, RA_PLAYERSTATTIME * (targ.absmin + targ.absmax), TRUE, self);
         
         if(trace_fraction == TRUE)
         {
@@ -525,7 +525,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     if((inflictor != world) && (targ.movetype == MOVETYPE_WALK))
     {
-        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * GLOBALDEFFIVETWOTWO);
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * RA_PLAYERSTATTIME);
         dir = normalize(dir);
         targ.velocity = targ.velocity + ((dir * damage) * FL_CLIENT);
     }
@@ -533,7 +533,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     
     if((inflictor != world) && (targ.classname == "bot"))
     {
-        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * GLOBALDEFFIVETWOTWO);
+        dir = targ.origin - ((inflictor.absmin + inflictor.absmax) * RA_PLAYERSTATTIME);
         dir = normalize(dir);
         targ.velocity = targ.velocity + ((dir * damage) * FL_CLIENT);
         
@@ -688,8 +688,8 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
             
             if(head.takedamage)
             {
-                org = head.origin + ((head.mins + head.maxs) * GLOBALDEFFIVETWOTWO);
-                points = GLOBALDEFFIVETWOTWO * (vlen(inflictor.origin - org));
+                org = head.origin + ((head.mins + head.maxs) * RA_PLAYERSTATTIME);
+                points = RA_PLAYERSTATTIME * (vlen(inflictor.origin - org));
                 
                 if(points < FALSE)
                 {
@@ -700,7 +700,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                 
                 if(head == attacker)
                 {
-                    points = points * GLOBALDEFFIVETWOTWO;
+                    points = points * RA_PLAYERSTATTIME;
                 }
                 
                 
@@ -711,7 +711,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
                     {
                         if(head.classname == "monster_shambler")
                         {
-                            T_Damage(head, inflictor, attacker, points * GLOBALDEFFIVETWOTWO);
+                            T_Damage(head, inflictor, attacker, points * RA_PLAYERSTATTIME);
                         }
                         else
                         {
@@ -795,7 +795,7 @@ void (entity attacker, float damage) T_BeamDamage =
         
         if(head.takedamage)
         {
-            points = GLOBALDEFFIVETWOTWO * (vlen(attacker.origin - head.origin));
+            points = RA_PLAYERSTATTIME * (vlen(attacker.origin - head.origin));
             
             if(points < FALSE)
             {
@@ -806,7 +806,7 @@ void (entity attacker, float damage) T_BeamDamage =
             
             if(head == attacker)
             {
-                points = points * GLOBALDEFFIVETWOTWO;
+                points = points * RA_PLAYERSTATTIME;
             }
             
             
@@ -817,7 +817,7 @@ void (entity attacker, float damage) T_BeamDamage =
                 {
                     if(head.classname == "monster_shambler")
                     {
-                        T_Damage(head, attacker, attacker, points * GLOBALDEFFIVETWOTWO);
+                        T_Damage(head, attacker, attacker, points * RA_PLAYERSTATTIME);
                     }
                     else
                     {

@@ -1717,7 +1717,7 @@ void () func000558 =
         return;
     }
     
-    self.attack_finished = time + GLOBALDEFFIVETWOTWO;
+    self.attack_finished = time + RA_PLAYERSTATTIME;
     T_Damage(other, self, self, self.dmg);
 };
 

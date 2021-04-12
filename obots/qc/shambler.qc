@@ -437,7 +437,7 @@ void () func000946 = [64, func000919]
 {
     ai_charge(FL_CLIENT);
     
-    if(random() < GLOBALDEFFIVETWOTWO)
+    if(random() < RA_PLAYERSTATTIME)
     {
         self.think = sham_swingr1;
     }
@@ -569,7 +569,7 @@ void () func000955 = [55, func000919]
     ai_charge(TRUE);
     ai_charge(MOVETYPE_BOUNCE);
     
-    if(random() < GLOBALDEFFIVETWOTWO)
+    if(random() < RA_PLAYERSTATTIME)
     {
         self.think = sham_swingl1;
     }

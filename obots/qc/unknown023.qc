@@ -1,314 +1,116 @@
 
-// func002286
-// function begins at statement 33847, parm_start=18384
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	18385	0
-// OP_MUL_F	18385	12465	18386
-// OP_STORE_V	18386	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	18385	0
-// OP_LE	18385	213	18387
-// OP_IFNOT	18387	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18388	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	140	0	0
-// OP_LE	18385	214	18389
-// OP_IFNOT	18389	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18390	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	133	0	0
-// OP_LE	18385	216	18391
-// OP_IFNOT	18391	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18392	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	126	0	0
-// OP_LE	18385	228	18393
-// OP_IFNOT	18393	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18394	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	119	0	0
-// OP_LE	18385	229	18395
-// OP_IFNOT	18395	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18396	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	112	0	0
-// OP_LE	18385	230	18397
-// OP_IFNOT	18397	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18398	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	105	0	0
-// OP_LE	18385	231	18399
-// OP_IFNOT	18399	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18400	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	98	0	0
-// OP_LE	18385	232	18401
-// OP_IFNOT	18401	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18402	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	91	0	0
-// OP_LE	18385	217	18403
-// OP_IFNOT	18403	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18404	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	84	0	0
-// OP_LE	18385	234	18405
-// OP_IFNOT	18405	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18406	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	77	0	0
-// OP_LE	18385	235	18407
-// OP_IFNOT	18407	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18408	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	70	0	0
-// OP_LE	18385	236	18409
-// OP_IFNOT	18409	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18377	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	63	0	0
-// OP_LE	18385	791	18410
-// OP_IFNOT	18410	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18381	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	56	0	0
-// OP_LE	18385	792	18411
-// OP_IFNOT	18411	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18412	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	49	0	0
-// OP_LE	18385	5693	18413
-// OP_IFNOT	18413	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18414	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	42	0	0
-// OP_LE	18385	765	18415
-// OP_IFNOT	18415	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18416	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	35	0	0
-// OP_LE	18385	218	18417
-// OP_IFNOT	18417	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18418	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	28	0	0
-// OP_LE	18385	6892	18419
-// OP_IFNOT	18419	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18420	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	21	0	0
-// OP_LE	18385	6133	18421
-// OP_IFNOT	18421	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18422	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	14	0	0
-// OP_LE	18385	6895	18423
-// OP_IFNOT	18423	6	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18424	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
-// OP_GOTO	7	0	0
-// OP_LE	18385	2323	18425
-// OP_IFNOT	18425	5	0
-// OP_STORE_V	18384	4	0
-// OP_STORE_V	18426	7	0
-// OP_STORE_V	16700	10	0
-// OP_CALL3	1070	0	0
+// func002426
+// function begins at statement 38498, parm_start=21259
+// OP_EQ_F	21260	214	21261
+// OP_IFNOT	21261	6	0
+// OP_ADDRESS	21259	610	21262
+// OP_MUL_F	783	218	21263
+// OP_ADD_F	21263	783	21264
+// OP_STOREP_F	21264	21262	0
+// OP_GOTO	52	0	0
+// OP_EQ_F	21260	216	21265
+// OP_IFNOT	21265	6	0
+// OP_ADDRESS	21259	610	21266
+// OP_MUL_F	792	218	21267
+// OP_ADD_F	21267	792	21268
+// OP_STOREP_F	21268	21266	0
+// OP_GOTO	45	0	0
+// OP_EQ_F	21260	228	21269
+// OP_IFNOT	21269	6	0
+// OP_ADDRESS	21259	610	21270
+// OP_MUL_F	791	218	21271
+// OP_ADD_F	21271	791	21272
+// OP_STOREP_F	21272	21270	0
+// OP_GOTO	38	0	0
+// OP_EQ_F	21260	229	21273
+// OP_IFNOT	21273	6	0
+// OP_ADDRESS	21259	610	21274
+// OP_MUL_F	788	218	21275
+// OP_ADD_F	21275	788	21276
+// OP_STOREP_F	21276	21274	0
+// OP_GOTO	31	0	0
+// OP_EQ_F	21260	230	21277
+// OP_IFNOT	21277	6	0
+// OP_ADDRESS	21259	610	21278
+// OP_MUL_F	782	218	21279
+// OP_ADD_F	21279	782	21280
+// OP_STOREP_F	21280	21278	0
+// OP_GOTO	24	0	0
+// OP_EQ_F	21260	231	21281
+// OP_IFNOT	21281	6	0
+// OP_ADDRESS	21259	610	21282
+// OP_MUL_F	785	218	21283
+// OP_ADD_F	21283	785	21284
+// OP_STOREP_F	21284	21282	0
+// OP_GOTO	17	0	0
+// OP_EQ_F	21260	232	21285
+// OP_IFNOT	21285	6	0
+// OP_ADDRESS	21259	610	21286
+// OP_MUL_F	786	218	21287
+// OP_ADD_F	21287	786	21288
+// OP_STOREP_F	21288	21286	0
+// OP_GOTO	10	0	0
+// OP_EQ_F	21260	217	21289
+// OP_IFNOT	21289	6	0
+// OP_ADDRESS	21259	610	21290
+// OP_MUL_F	781	218	21291
+// OP_ADD_F	21291	781	21292
+// OP_STOREP_F	21292	21290	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	21259	610	21293
+// OP_STOREP_F	213	21293	0
 // OP_DONE	0	0	0
-void (entity globaldef006474) func002286 = 
+void (entity globaldef007123, float globaldef007124) func002426 = 
 {
-    local float globaldef006475;
-    globaldef006475 = random();
-    globaldef006475 = floor(globaldef006475 * 21);
-    if(globaldef006475 <= FALSE)
+    if(globaldef007124 == TRUE)
     {
-        func002366(globaldef006474, "hihi", globaldef005812);
+        globaldef007123.clientcolor = (globaldef000766 * FL_INWATER) + globaldef000766;
     }
     else
     {
-        if(globaldef006475 <= TRUE)
+        if(globaldef007124 == FL_SWIM)
         {
-            func002366(globaldef006474, "hehe", globaldef005812);
+            globaldef007123.clientcolor = (globaldef000775 * FL_INWATER) + globaldef000775;
         }
         else
         {
-            if(globaldef006475 <= FL_SWIM)
+            if(globaldef007124 == MOVETYPE_WALK)
             {
-                func002366(globaldef006474, "hahaha", globaldef005812);
+                globaldef007123.clientcolor = (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
             }
             else
             {
-                if(globaldef006475 <= MOVETYPE_WALK)
+                if(globaldef007124 == MOVETYPE_STEP)
                 {
-                    func002366(globaldef006474, "I'll put you in backpack mode", globaldef005812);
+                    globaldef007123.clientcolor = (globaldef000771 * FL_INWATER) + globaldef000771;
                 }
                 else
                 {
-                    if(globaldef006475 <= MOVETYPE_STEP)
+                    if(globaldef007124 == MOVETYPE_FLY)
                     {
-                        func002366(globaldef006474, "you're boring", globaldef005812);
+                        globaldef007123.clientcolor = (globaldef000765 * FL_INWATER) + globaldef000765;
                     }
                     else
                     {
-                        if(globaldef006475 <= MOVETYPE_FLY)
+                        if(globaldef007124 == MOVETYPE_TOSS)
                         {
-                            func002366(globaldef006474, "you really suck at quake", globaldef005812);
+                            globaldef007123.clientcolor = (globaldef000768 * FL_INWATER) + globaldef000768;
                         }
                         else
                         {
-                            if(globaldef006475 <= MOVETYPE_TOSS)
+                            if(globaldef007124 == MOVETYPE_PUSH)
                             {
-                                func002366(globaldef006474, "let's rock", globaldef005812);
+                                globaldef007123.clientcolor = (globaldef000769 * FL_INWATER) + globaldef000769;
                             }
                             else
                             {
-                                if(globaldef006475 <= MOVETYPE_PUSH)
+                                if(globaldef007124 == FL_CLIENT)
                                 {
-                                    func002366(globaldef006474, "whoa!!", globaldef005812);
+                                    globaldef007123.clientcolor = (globaldef000764 * FL_INWATER) + globaldef000764;
                                 }
                                 else
                                 {
-                                    if(globaldef006475 <= FL_CLIENT)
-                                    {
-                                        func002366(globaldef006474, "let's play another game", globaldef005812);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006475 <= MOVETYPE_FLYMISSILE)
-                                        {
-                                            func002366(globaldef006474, "I've had it for today", globaldef005812);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006475 <= MOVETYPE_BOUNCE)
-                                            {
-                                                func002366(globaldef006474, "DUH!!!", globaldef005812);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006475 <= MOVETYPE_BOUNCEMISSILE)
-                                                {
-                                                    func002366(globaldef006474, ":)", globaldef005812);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006475 <= GLOBALDEFSEVENSEVENFOUR)
-                                                    {
-                                                        func002366(globaldef006474, "wow", globaldef005812);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006475 <= globaldef000775)
-                                                        {
-                                                            func002366(globaldef006474, "weeeee", globaldef005812);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006475 <= 14)
-                                                            {
-                                                                func002366(globaldef006474, "I'm on a roll", globaldef005812);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006475 <= GLOBALDEFSEVENFOUREIGHT)
-                                                                {
-                                                                    func002366(globaldef006474, "this rocks", globaldef005812);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006475 <= FL_INWATER)
-                                                                    {
-                                                                        func002366(globaldef006474, "aaah", globaldef005812);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006475 <= 17)
-                                                                        {
-                                                                            func002366(globaldef006474, "groovy", globaldef005812);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006475 <= 18)
-                                                                            {
-                                                                                func002366(globaldef006474, "grrrrr", globaldef005812);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006475 <= 19)
-                                                                                {
-                                                                                    func002366(globaldef006474, "!!", globaldef005812);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006475 <= 20)
-                                                                                    {
-                                                                                        func002366(globaldef006474, "nice!", globaldef005812);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
+                                    globaldef007123.clientcolor = FALSE;
                                 }
                                 
                             }
@@ -328,133 +130,614 @@ void (entity globaldef006474) func002286 =
 };
 
 
-// func002287
-// function begins at statement 34000, parm_start=18428
-// OP_NE_F	35	228	18430
-// OP_NE_F	35	216	18431
-// OP_AND	18430	18431	18432
-// OP_IFNOT	18432	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18428	162	18433
-// OP_BITAND	18433	18429	18434
-// OP_IFNOT	18434	2	0
-// OP_RETURN	214	0	0
-// OP_RETURN	213	0	0
+// func002427
+// function begins at statement 38557, parm_start=21294
+// OP_CALL0	20987	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	21203	0	0
+// OP_STORE_ENT	1	21295	0
+// OP_NOT_ENT	21295	0	21296
+// OP_IFNOT	21296	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	21295	607	21297
+// OP_STOREP_F	21294	21297	0
+// OP_ADDRESS	21295	180	21298
+// OP_LOAD_F	21295	609	21299
+// OP_STORE_V	21299	4	0
+// OP_CALL1	1085	0	0
+// OP_STOREP_S	1	21298	0
+// OP_STORE_V	21295	4	0
+// OP_STORE_V	21294	7	0
+// OP_CALL2	1109	0	0
+// OP_NOT_F	822	0	21300
+// OP_IFNOT	21300	7	0
+// OP_ADDRESS	21295	132	21301
+// OP_STOREP_F	213	21301	0
+// OP_ADDRESS	21295	574	21302
+// OP_STOREP_F	214	21302	0
+// OP_ADDRESS	21295	572	21303
+// OP_STOREP_F	214	21303	0
+// OP_LOAD_F	21295	608	21304
+// OP_STORE_V	21304	4	0
+// OP_LOAD_S	21295	180	21305
+// OP_STORE_V	21305	7	0
+// OP_CALL2	1050	0	0
+// OP_LOAD_F	21295	608	21306
+// OP_STORE_V	21306	4	0
+// OP_LOAD_F	21295	153	21307
+// OP_STORE_V	21307	7	0
+// OP_CALL2	1051	0	0
+// OP_LOAD_F	21295	608	21308
+// OP_STORE_V	21308	4	0
+// OP_LOAD_F	21295	610	21309
+// OP_STORE_V	21309	7	0
+// OP_CALL2	1052	0	0
+// OP_LOAD_S	21295	180	21310
+// OP_STORE_V	21310	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9064	4	0
+// OP_CALL1	472	0	0
 // OP_DONE	0	0	0
-float (entity globaldef006496, float globaldef006497) func002287 = 
+void (float globaldef007125) func002427 = 
 {
+    local entity globaldef007126;
+    globaldef007126 = func002420(func002415());
     
-    if((deathmatch != MOVETYPE_WALK) && (deathmatch != FL_SWIM))
+    if(!globaldef007126)
     {
-        return FALSE;
+        return;
     }
     
+    globaldef007126.field000284 = globaldef007125;
+    globaldef007126.netname = func002278(globaldef007126.field000286);
+    func002426(globaldef007126, globaldef007125);
     
-    if(globaldef006496.items & globaldef006497)
+    if(!globaldef000805)
     {
-        return TRUE;
+        globaldef007126.skin = FALSE;
+        globaldef007126.field000251 = TRUE;
+        globaldef007126.field000249 = TRUE;
     }
     
-    return FALSE;
+    msgUpdateClientNameToAll(globaldef007126.clientnumber, globaldef007126.netname);
+    msgUpdateClientFragsToAll(globaldef007126.clientnumber, globaldef007126.frags);
+    msgUpdateClientColorsToAll(globaldef007126.clientnumber, globaldef007126.clientcolor);
+    bprint(globaldef007126.netname);
+    bprint(" entered the game\n");
 };
 
 
-// func002288
-// function begins at statement 34011, parm_start=18436
-// OP_LOAD_ENT	18437	662	18439
-// OP_EQ_E	18439	18436	18440
-// OP_IFNOT	18440	6	0
-// OP_LOAD_F	18437	663	18441
-// OP_SUB_F	31	18438	18442
-// OP_GT	18441	18442	18443
-// OP_IFNOT	18443	2	0
-// OP_RETURN	214	0	0
-// OP_RETURN	213	0	0
+// func002428
+// function begins at statement 38603, parm_start=21311
+// OP_STORE_ENT	834	21312	0
+// OP_IFNOT	21312	10	0
+// OP_LOAD_F	21312	607	21313
+// OP_EQ_F	21313	21311	21314
+// OP_IFNOT	21314	4	0
+// OP_STORE_V	21312	4	0
+// OP_CALL1	1100	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	21312	620	21315
+// OP_STORE_ENT	21315	21312	0
+// OP_GOTO	-9	0	0
 // OP_DONE	0	0	0
-float (entity globaldef006499, entity globaldef006500, float globaldef006501) func002288 = 
+void (float globaldef007127) func002428 = 
 {
+    local entity globaldef007128;
+    globaldef007128 = globaldef000817;
     
-    if(globaldef006500.field000339 == globaldef006499)
+    while(globaldef007128)
     {
         
-        if(globaldef006500.field000340 > (time - globaldef006501))
+        if(globaldef007128.field000284 == globaldef007127)
         {
-            return TRUE;
+            func002417(globaldef007128);
+            return;
         }
         
+        globaldef007128 = globaldef007128.field000297;
     }
     
-    return FALSE;
 };
 
 
-// func002289
-// function begins at statement 34021, parm_start=18444
-// OP_STORE_V	18444	4	0
-// OP_STORE_V	18445	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	25	0	0
-// OP_LOAD_ENT	18445	201	18446
-// OP_LOAD_S	18446	197	18447
-// OP_IFNOT	18447	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	20	0	0
-// OP_STORE_V	18444	4	0
-// OP_STORE_V	18445	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18448
-// OP_IFNOT	18448	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	13	0	0
-// OP_LOAD_F	18445	438	18449
-// OP_EQ_F	18449	282	18450
-// OP_IFNOT	18450	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	18445	438	18451
-// OP_EQ_F	18451	284	18452
-// OP_IFNOT	18452	3	0
-// OP_RETURN	2323	0	0
-// OP_GOTO	3	0	0
-// OP_SUB_F	2323	214	18453
-// OP_RETURN	18453	0	0
+// func002429
+// function begins at statement 38615, parm_start=21316
+// OP_STORE_V	6765	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	21316	0
+// OP_STORE_F	213	21317	0
+// OP_STORE_F	214	21318	0
+// OP_BITAND	21316	21318	21319
+// OP_IFNOT	21319	3	0
+// OP_STORE_V	21317	4	0
+// OP_CALL1	1104	0	0
+// OP_MUL_F	21318	216	21320
+// OP_STORE_F	21320	21318	0
+// OP_ADD_F	21317	214	21321
+// OP_STORE_F	21321	21317	0
+// OP_LT	21317	736	21322
+// OP_IF	21322	-9	0
 // OP_DONE	0	0	0
-float (entity globaldef006502, entity globaldef006503) func002289 = 
+void () func002429 = 
 {
-    if(func002288(globaldef006502, globaldef006503, GLOBALDEFSEVENSEVENFOUR))
+    local float globaldef007129;
+    local float globaldef007130;
+    local float globaldef007131;
+    globaldef007129 = cvar("temp1");
+    globaldef007130 = FALSE;
+    globaldef007131 = TRUE;
+    do
     {
-        return FALSE;
+        
+        if(globaldef007129 & globaldef007131)
+        {
+            AddBots(globaldef007130);
+        }
+        
+        globaldef007131 = globaldef007131 * FL_SWIM;
+        globaldef007130 = globaldef007130 + TRUE;
+    } while (globaldef007130 < OBOT_MAXBOTS);
+};
+
+vector globaldef007132;
+vector globaldef007136;
+float globaldef007140;
+float globaldef007141;
+
+// func002430
+// function begins at statement 38631, parm_start=21332
+// OP_STORE_F	728	21337	0
+// OP_LOAD_ENT	21332	194	21380
+// OP_LOAD_V	21380	105	21381
+// OP_STORE_V	21381	21346	0
+// OP_EQ_V	21333	286	21384
+// OP_IFNOT	21384	11	0
+// OP_LOAD_V	21332	105	21385
+// OP_SUB_V	21346	21385	21388
+// OP_STORE_V	21388	21343	0
+// OP_STORE_V	21343	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	21342	0
+// OP_STORE_V	21343	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	21349	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	21333	21343	0
+// OP_STORE_F	21336	21342	0
+// OP_STORE_V	21343	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	21349	0
+// OP_ADDRESS	21332	113	21391
+// OP_STOREP_V	286	21391	0
+// OP_STORE_V	21349	4	0
+// OP_CALL1	452	0	0
+// OP_OR	21343	21344	21394
+// OP_IFNOT	21394	206	0
+// OP_LOAD_V	21332	105	21395
+// OP_STORE_V	21395	21368	0
+// OP_LOAD_F	21332	141	21398
+// OP_ADD_F	21370	21398	21399
+// OP_STORE_F	21399	21370	0
+// OP_LOAD_V	21332	105	21400
+// OP_STORE_V	21400	21371	0
+// OP_LOAD_F	21332	137	21403
+// OP_ADD_F	21373	21403	21404
+// OP_STORE_F	21404	21373	0
+// OP_STORE_V	21368	4	0
+// OP_MUL_VF	59	746	21405
+// OP_ADD_V	21368	21405	21408
+// OP_STORE_V	21408	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	21411
+// OP_IFNOT	21411	88	0
+// OP_MUL_F	70	746	21412
+// OP_ADD_F	21412	235	21413
+// OP_MUL_VF	59	21413	21414
+// OP_ADD_V	21371	21414	21417
+// OP_STORE_V	21417	21374	0
+// OP_STORE_V	21371	4	0
+// OP_STORE_V	21374	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	21420
+// OP_IFNOT	21420	76	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	62	2019	21421
+// OP_ADD_V	21374	21421	21424
+// OP_STORE_V	21424	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	2019	21427
+// OP_STORE_F	21427	21377	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	62	2019	21428
+// OP_SUB_V	21374	21428	21431
+// OP_STORE_V	21431	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	2019	21434
+// OP_ADD_F	21377	21434	21435
+// OP_STORE_F	21435	21377	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	65	746	21436
+// OP_ADD_V	21374	21436	21439
+// OP_STORE_V	21439	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	746	21442
+// OP_STORE_F	21442	21378	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	65	746	21443
+// OP_SUB_V	21374	21443	21446
+// OP_STORE_V	21446	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	746	21449
+// OP_STORE_F	21449	21379	0
+// OP_GT	21377	9921	21450
+// OP_ADD_F	21378	21379	21451
+// OP_GT	21451	746	21452
+// OP_AND	21450	21452	21453
+// OP_IFNOT	21453	34	0
+// OP_ADDRESS	21332	113	21454
+// OP_STORE_V	21343	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	21336	21457
+// OP_ADD_V	21457	21460	21463
+// OP_STOREP_V	21463	21454	0
+// OP_LT	21378	2323	21466
+// OP_IFNOT	21466	7	0
+// OP_ADDRESS	21332	113	21467
+// OP_LOAD_V	21332	113	21470
+// OP_MUL_VF	65	1997	21473
+// OP_SUB_V	21470	21473	21476
+// OP_STOREP_V	21476	21467	0
+// OP_GOTO	8	0	0
+// OP_LT	21379	2323	21479
+// OP_IFNOT	21479	6	0
+// OP_ADDRESS	21332	113	21480
+// OP_LOAD_V	21332	113	21483
+// OP_MUL_VF	65	1997	21486
+// OP_ADD_V	21483	21486	21489
+// OP_STOREP_V	21489	21480	0
+// OP_LOAD_V	21332	113	21492
+// OP_STORE_V	21492	4	0
+// OP_CALL1	462	0	0
+// OP_GT	1	21336	21495
+// OP_IFNOT	21495	7	0
+// OP_ADDRESS	21332	113	21496
+// OP_LOAD_V	21332	113	21499
+// OP_STORE_V	21499	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	21336	21502
+// OP_STOREP_V	21502	21496	0
+// OP_RETURN	731	0	0
+// OP_LOAD_F	21332	189	21505
+// OP_GE	21505	228	21506
+// OP_IFNOT	21506	97	0
+// OP_STORE_V	21371	4	0
+// OP_MUL_VF	59	746	21507
+// OP_ADD_V	21371	21507	21510
+// OP_STORE_V	21510	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	21513
+// OP_IFNOT	21513	88	0
+// OP_MUL_F	70	746	21514
+// OP_ADD_F	21514	235	21515
+// OP_MUL_VF	59	21515	21516
+// OP_ADD_V	21368	21516	21519
+// OP_STORE_V	21519	21374	0
+// OP_STORE_V	21368	4	0
+// OP_STORE_V	21374	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	21522
+// OP_IFNOT	21522	76	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	62	2019	21523
+// OP_ADD_V	21374	21523	21526
+// OP_STORE_V	21526	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	2019	21529
+// OP_STORE_F	21529	21377	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	62	2019	21530
+// OP_SUB_V	21374	21530	21533
+// OP_STORE_V	21533	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	2019	21536
+// OP_ADD_F	21377	21536	21537
+// OP_STORE_F	21537	21377	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	65	746	21538
+// OP_ADD_V	21374	21538	21541
+// OP_STORE_V	21541	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	746	21544
+// OP_STORE_F	21544	21378	0
+// OP_STORE_V	21374	4	0
+// OP_MUL_VF	65	746	21545
+// OP_SUB_V	21374	21545	21548
+// OP_STORE_V	21548	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	746	21551
+// OP_STORE_F	21551	21379	0
+// OP_GT	21377	9921	21552
+// OP_ADD_F	21378	21379	21553
+// OP_GT	21553	746	21554
+// OP_AND	21552	21554	21555
+// OP_IFNOT	21555	34	0
+// OP_ADDRESS	21332	113	21556
+// OP_STORE_V	21343	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	21336	21559
+// OP_ADD_V	21559	14028	21562
+// OP_STOREP_V	21562	21556	0
+// OP_LT	21378	2323	21565
+// OP_IFNOT	21565	7	0
+// OP_ADDRESS	21332	113	21566
+// OP_LOAD_V	21332	113	21569
+// OP_MUL_VF	65	1997	21572
+// OP_SUB_V	21569	21572	21575
+// OP_STOREP_V	21575	21566	0
+// OP_GOTO	8	0	0
+// OP_LT	21379	2323	21578
+// OP_IFNOT	21578	6	0
+// OP_ADDRESS	21332	113	21579
+// OP_LOAD_V	21332	113	21582
+// OP_MUL_VF	65	1997	21585
+// OP_ADD_V	21582	21585	21588
+// OP_STOREP_V	21588	21579	0
+// OP_LOAD_V	21332	113	21591
+// OP_STORE_V	21591	4	0
+// OP_CALL1	462	0	0
+// OP_GT	1	21336	21594
+// OP_IFNOT	21594	7	0
+// OP_ADDRESS	21332	113	21595
+// OP_LOAD_V	21332	113	21598
+// OP_STORE_V	21598	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	21336	21601
+// OP_STOREP_V	21601	21595	0
+// OP_RETURN	731	0	0
+// OP_MUL_F	21342	6009	21604
+// OP_STORE_F	21604	21367	0
+// OP_STORE_F	218	21366	0
+// OP_STORE_F	213	21365	0
+// OP_STORE_F	213	21364	0
+// OP_LOAD_V	21332	105	21605
+// OP_MUL_VF	65	21366	21608
+// OP_SUB_V	21605	21608	21611
+// OP_STORE_V	21611	21352	0
+// OP_MUL_VF	59	736	21614
+// OP_ADD_V	21352	21614	21617
+// OP_STORE_V	21617	21358	0
+// OP_LOAD_V	21332	105	21620
+// OP_MUL_VF	65	21366	21623
+// OP_ADD_V	21620	21623	21626
+// OP_STORE_V	21626	21355	0
+// OP_MUL_VF	59	736	21629
+// OP_ADD_V	21355	21629	21632
+// OP_STORE_V	21632	21361	0
+// OP_STORE_V	21352	4	0
+// OP_STORE_V	21358	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	21635
+// OP_IFNOT	21635	2	0
+// OP_STORE_F	214	21364	0
+// OP_STORE_V	21355	4	0
+// OP_STORE_V	21361	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	21332	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	21636
+// OP_IFNOT	21636	2	0
+// OP_STORE_F	214	21365	0
+// OP_NOT_F	21365	0	21637
+// OP_AND	21364	21637	21638
+// OP_IFNOT	21638	6	0
+// OP_MUL_VF	65	21367	21639
+// OP_ADD_V	21343	21639	21642
+// OP_STORE_V	21642	21343	0
+// OP_STORE_F	729	21337	0
+// OP_GOTO	9	0	0
+// OP_NOT_F	21364	0	21645
+// OP_AND	21365	21645	21646
+// OP_IFNOT	21646	6	0
+// OP_SUB_F	213	21367	21647
+// OP_MUL_VF	65	21647	21648
+// OP_ADD_V	21343	21648	21651
+// OP_STORE_V	21651	21343	0
+// OP_STORE_F	730	21337	0
+// OP_ADD_F	21366	218	21654
+// OP_STORE_F	21654	21366	0
+// OP_AND	21364	21365	21655
+// OP_LE	21366	220	21656
+// OP_AND	21655	21656	21657
+// OP_IF	21657	-53	0
+// OP_AND	21364	21365	21658
+// OP_IFNOT	21658	2	0
+// OP_RETURN	733	0	0
+// OP_STORE_V	21343	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	21343	0
+// OP_ADDRESS	21332	113	21659
+// OP_MUL_FV	21336	21343	21662
+// OP_STOREP_V	21662	21659	0
+// OP_LOAD_F	21332	116	21665
+// OP_GT	21665	2044	21666
+// OP_IFNOT	21666	4	0
+// OP_ADDRESS	21332	116	21667
+// OP_STOREP_F	2044	21667	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	21332	116	21668
+// OP_LT	21668	9761	21669
+// OP_IFNOT	21669	3	0
+// OP_ADDRESS	21332	116	21670
+// OP_STOREP_F	9761	21670	0
+// OP_RETURN	21337	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007143, vector globaldef007144, float globaldef007148) func002430 = 
+{
+    local float globaldef007149;
+    local vector globaldef007150;
+    local float globaldef007154;
+    local float globaldef007155;
+    local vector globaldef007156;
+    local vector globaldef007160;
+    local vector globaldef007164;
+    local vector globaldef007168;
+    local vector globaldef007172;
+    local vector globaldef007176;
+    local vector globaldef007180;
+    local float globaldef007184;
+    local float globaldef007185;
+    local float globaldef007186;
+    local float globaldef007187;
+    local vector globaldef007188;
+    local vector globaldef007192;
+    local vector globaldef007196;
+    local float globaldef007200;
+    local float globaldef007201;
+    local float globaldef007202;
+    globaldef007149 = globaldef000711;
+    globaldef007160 = globaldef007143.goalentity.origin;
+    if(globaldef007144 == VEC_ORIGIN)
+    {
+        globaldef007156 = globaldef007160 - globaldef007143.origin;
+        globaldef007155 = vlen(globaldef007156);
+        globaldef007164 = vectoangles(globaldef007156);
     }
     else
     {
-        if(globaldef006503.owner.targetname)
+        globaldef007156 = globaldef007144;
+        globaldef007155 = globaldef007148;
+        globaldef007164 = vectoangles(globaldef007156);
+    }
+    
+    globaldef007143.velocity = VEC_ORIGIN;
+    makevectors(globaldef007164);
+    
+    if(globaldef007156_x || globaldef007156_y)
+    {
+        globaldef007188 = globaldef007143.origin;
+        globaldef007188_z = globaldef007188_z + globaldef007143.maxs_z;
+        globaldef007192 = globaldef007143.origin;
+        globaldef007192_z = globaldef007192_z + globaldef007143.mins_z;
+        traceline(globaldef007188, globaldef007188 + (v_forward * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+        
+        if(trace_fraction != TRUE)
         {
-            return FALSE;
-        }
-        else
-        {
-            if(!func002456(globaldef006502, globaldef006503))
+            globaldef007196 = globaldef007192 + (v_forward * ((trace_fraction * GLOBALDEFSEVENTWONINE) + MOVETYPE_BOUNCE));
+            traceline(globaldef007192, globaldef007196, TRUE, globaldef007143);
+            
+            if(trace_fraction == TRUE)
             {
-                return FALSE;
-            }
-            else
-            {
-                if(globaldef006503.state == STATE_TOP)
+                traceline(globaldef007196, globaldef007196 + (v_up * 60), TRUE, globaldef007143);
+                globaldef007200 = trace_fraction * 60;
+                traceline(globaldef007196, globaldef007196 - (v_up * 60), TRUE, globaldef007143);
+                globaldef007200 = globaldef007200 + (trace_fraction * 60);
+                traceline(globaldef007196, globaldef007196 + (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                globaldef007201 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                traceline(globaldef007196, globaldef007196 - (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                globaldef007202 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                
+                if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > GLOBALDEFSEVENTWONINE))
                 {
-                    return FALSE;
-                }
-                else
-                {
-                    if(globaldef006503.state == STATE_UP)
+                    globaldef007143.velocity = (normalize(globaldef007156) * globaldef007148) + '0 0 -200';
+                    if(globaldef007201 < 20)
                     {
-                        return 20;
+                        globaldef007143.velocity = globaldef007143.velocity - (v_right * 100);
                     }
                     else
                     {
-                        return 20 - TRUE;
+                        
+                        if(globaldef007202 < 20)
+                        {
+                            globaldef007143.velocity = globaldef007143.velocity + (v_right * 100);
+                        }
+                        
+                    }
+                    
+                    
+                    if(vlen(globaldef007143.velocity) > globaldef007148)
+                    {
+                        globaldef007143.velocity = normalize(globaldef007143.velocity) * globaldef007148;
+                    }
+                    
+                    return globaldef000714;
+                }
+                
+            }
+            
+        }
+        
+        
+        if(globaldef007143.waterlevel >= MOVETYPE_WALK)
+        {
+            traceline(globaldef007192, globaldef007192 + (v_forward * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+            
+            if(trace_fraction != TRUE)
+            {
+                globaldef007196 = globaldef007188 + (v_forward * ((trace_fraction * GLOBALDEFSEVENTWONINE) + MOVETYPE_BOUNCE));
+                traceline(globaldef007188, globaldef007196, TRUE, globaldef007143);
+                
+                if(trace_fraction == TRUE)
+                {
+                    traceline(globaldef007196, globaldef007196 + (v_up * 60), TRUE, globaldef007143);
+                    globaldef007200 = trace_fraction * 60;
+                    traceline(globaldef007196, globaldef007196 - (v_up * 60), TRUE, globaldef007143);
+                    globaldef007200 = globaldef007200 + (trace_fraction * 60);
+                    traceline(globaldef007196, globaldef007196 + (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                    globaldef007201 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                    traceline(globaldef007196, globaldef007196 - (v_right * GLOBALDEFSEVENTWONINE), TRUE, globaldef007143);
+                    globaldef007202 = trace_fraction * GLOBALDEFSEVENTWONINE;
+                    
+                    if((globaldef007200 > 56) && ((globaldef007201 + globaldef007202) > GLOBALDEFSEVENTWONINE))
+                    {
+                        globaldef007143.velocity = (normalize(globaldef007156) * globaldef007148) + '0 0 200';
+                        if(globaldef007201 < 20)
+                        {
+                            globaldef007143.velocity = globaldef007143.velocity - (v_right * 100);
+                        }
+                        else
+                        {
+                            
+                            if(globaldef007202 < 20)
+                            {
+                                globaldef007143.velocity = globaldef007143.velocity + (v_right * 100);
+                            }
+                            
+                        }
+                        
+                        
+                        if(vlen(globaldef007143.velocity) > globaldef007148)
+                        {
+                            globaldef007143.velocity = normalize(globaldef007143.velocity) * globaldef007148;
+                        }
+                        
+                        return globaldef000714;
                     }
                     
                 }
@@ -465,2415 +748,2787 @@ float (entity globaldef006502, entity globaldef006503) func002289 =
         
     }
     
-};
-
-
-// func002290
-// function begins at statement 34053, parm_start=18454
-// OP_STORE_V	18454	4	0
-// OP_STORE_V	18455	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	14	0	0
-// OP_STORE_V	18454	4	0
-// OP_STORE_V	18455	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18456
-// OP_IFNOT	18456	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	7	0	0
-// OP_LOAD_F	18455	163	18457
-// OP_EQ_F	18457	251	18458
-// OP_IFNOT	18458	3	0
-// OP_RETURN	2323	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006504, entity globaldef006505) func002290 = 
-{
-    if(func002288(globaldef006504, globaldef006505, GLOBALDEFSEVENSEVENFOUR))
+    globaldef007187 = globaldef007155 * 2.5;
+    globaldef007186 = FL_INWATER;
+    do
     {
-        return FALSE;
-    }
-    else
-    {
-        if(!func002456(globaldef006504, globaldef006505))
+        globaldef007185 = FALSE;
+        globaldef007184 = FALSE;
+        globaldef007168 = globaldef007143.origin - (v_right * globaldef007186);
+        globaldef007176 = globaldef007168 + (v_forward * OBOT_MAXBOTS);
+        globaldef007172 = globaldef007143.origin + (v_right * globaldef007186);
+        globaldef007180 = globaldef007172 + (v_forward * OBOT_MAXBOTS);
+        traceline(globaldef007168, globaldef007176, FALSE, globaldef007143);
+        
+        if(trace_fraction != TRUE)
         {
-            return FALSE;
+            globaldef007184 = TRUE;
+        }
+        
+        traceline(globaldef007172, globaldef007180, FALSE, globaldef007143);
+        
+        if(trace_fraction != TRUE)
+        {
+            globaldef007185 = TRUE;
+        }
+        
+        if(globaldef007184 && !globaldef007185)
+        {
+            globaldef007156 = globaldef007156 + (v_right * globaldef007187);
+            globaldef007149 = globaldef000712;
         }
         else
         {
-            if(globaldef006505.takedamage == DAMAGE_YES)
+            
+            if(globaldef007185 && !globaldef007184)
             {
-                return 20;
-            }
-            else
-            {
-                return FALSE;
+                globaldef007156 = globaldef007156 + (v_right * (FALSE - globaldef007187));
+                globaldef007149 = globaldef000713;
             }
             
         }
         
+        globaldef007186 = globaldef007186 + FL_INWATER;
+    } while ((globaldef007184 && globaldef007185) && (globaldef007186 <= FL_GODMODE));
+    
+    if(globaldef007184 && globaldef007185)
+    {
+        return globaldef000716;
     }
     
-};
-
-
-// func002291
-// function begins at statement 34074, parm_start=18459
-// OP_STORE_V	18459	4	0
-// OP_STORE_V	18460	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	10	0	0
-// OP_LOAD_F	18460	438	18461
-// OP_EQ_F	18461	283	18462
-// OP_IFNOT	18462	7	0
-// OP_STORE_V	18459	4	0
-// OP_STORE_V	18460	7	0
-// OP_CALL2	1110	0	0
-// OP_IFNOT	1	3	0
-// OP_ADD_F	2323	214	18463
-// OP_RETURN	18463	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006506, entity globaldef006507) func002291 = 
-{
-    if(func002288(globaldef006506, globaldef006507, GLOBALDEFSEVENSEVENFOUR))
+    globaldef007156 = normalize(globaldef007156);
+    globaldef007143.velocity = globaldef007148 * globaldef007156;
+    if(globaldef007143.velocity_z > 200)
     {
-        return FALSE;
+        globaldef007143.velocity_z = 200;
     }
     else
     {
         
-        if(globaldef006507.state == STATE_BOTTOM)
+        if(globaldef007143.velocity_z < -200)
         {
-            
-            if(func002456(globaldef006506, globaldef006507))
-            {
-                return 20 + TRUE;
-            }
-            
+            globaldef007143.velocity_z = -200;
         }
         
     }
     
-    return FALSE;
+    return globaldef007149;
 };
 
 
-// func002292
-// function begins at statement 34092, parm_start=18464
-// OP_STORE_V	18464	4	0
-// OP_STORE_V	18465	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	13	0	0
-// OP_STORE_V	18464	4	0
-// OP_STORE_V	18465	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18466
-// OP_IFNOT	18466	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	6	0	0
-// OP_LOAD_ENT	18465	622	18467
-// OP_IFNOT	18467	3	0
-// OP_RETURN	213	0	0
+// func002431
+// function begins at statement 38942, parm_start=21672
+// OP_ADDRESS	21672	113	21676
+// OP_STOREP_V	21673	21676	0
+// OP_STORE_V	21672	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6645	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	21672	575	21679
+// OP_LOAD_F	21672	575	21680
+// OP_BITOR	21680	701	21681
+// OP_STOREP_F	21681	21679	0
+// OP_DONE	0	0	0
+void (entity globaldef007205, vector globaldef007206) func002431 = 
+{
+    globaldef007205.velocity = globaldef007206;
+    sound(globaldef007205, CHAN_BODY, "player/plyrjmp8.wav", TRUE, ATTN_NORM);
+    globaldef007205.field000252 = globaldef007205.field000252 | globaldef000684;
+};
+
+
+// func002432
+// function begins at statement 38955, parm_start=21683
+// OP_EQ_V	21684	286	21708
+// OP_IFNOT	21708	9	0
+// OP_LOAD_ENT	21683	194	21709
+// OP_LOAD_V	21709	105	21710
+// OP_STORE_V	21710	21696	0
+// OP_LOAD_F	21683	108	21713
+// OP_STORE_F	21713	21698	0
+// OP_LOAD_V	21683	105	21714
+// OP_SUB_V	21696	21714	21717
+// OP_STORE_V	21717	21684	0
+// OP_STORE_F	746	21703	0
+// OP_STORE_F	21720	21704	0
+// OP_STORE_F	213	21705	0
+// OP_LOAD_V	21683	105	21721
+// OP_STORE_V	21721	21687	0
+// OP_STORE_V	21684	21693	0
+// OP_STORE_F	213	21695	0
+// OP_STORE_V	21693	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	21693	0
+// OP_STORE_F	214	21706	0
+// OP_LOAD_F	28	182	21724
+// OP_STORE_F	21724	21707	0
+// OP_STORE_ENT	28	21702	0
+// OP_STORE_ENT	21683	28	0
+// OP_MUL_FV	21706	21693	21725
+// OP_ADD_V	21687	21725	21728
+// OP_STORE_V	21728	21690	0
+// OP_ADD_F	21692	21703	21731
+// OP_STORE_F	21731	21692	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	21690	7	0
+// OP_CALL2	453	0	0
+// OP_CALL0	481	0	0
+// OP_IFNOT	1	8	0
+// OP_LOAD_F	28	108	21732
+// OP_ADD_F	21689	21704	21733
+// OP_GT	21732	21733	21734
+// OP_IFNOT	21734	3	0
+// OP_STORE_F	214	21705	0
+// OP_STORE_F	21735	21706	0
 // OP_GOTO	2	0	0
-// OP_RETURN	2323	0	0
+// OP_STORE_F	21735	21706	0
+// OP_ADD_F	21706	229	21736
+// OP_STORE_F	21736	21706	0
+// OP_LT	21706	235	21737
+// OP_IF	21737	-21	0
+// OP_ADDRESS	28	182	21738
+// OP_STOREP_F	21707	21738	0
+// OP_STORE_ENT	21702	28	0
+// OP_STORE_V	21683	4	0
+// OP_STORE_V	21687	7	0
+// OP_CALL2	453	0	0
+// OP_IFNOT	21705	15	0
+// OP_ADDRESS	21683	575	21739
+// OP_LOAD_F	21683	575	21740
+// OP_BITOR	21740	714	21741
+// OP_STOREP_F	21741	21739	0
+// OP_MUL_F	21693	220	21742
+// OP_STORE_F	21742	21699	0
+// OP_MUL_F	21694	220	21743
+// OP_STORE_F	21743	21700	0
+// OP_STORE_F	734	21701	0
+// OP_STORE_V	21683	4	0
+// OP_STORE_V	21699	7	0
+// OP_CALL2	21671	0	0
+// OP_RETURN	214	0	0
+// OP_GOTO	2	0	0
+// OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef006508, entity globaldef006509) func002292 = 
+float (entity globaldef007211, vector globaldef007212) func002432 = 
 {
-    if(func002288(globaldef006508, globaldef006509, GLOBALDEFSEVENSEVENFOUR))
+    local vector globaldef007216;
+    local vector globaldef007220;
+    local vector globaldef007224;
+    local vector globaldef007228;
+    local vector globaldef007232;
+    local entity globaldef007236;
+    local float globaldef007237;
+    local float globaldef007238;
+    local float globaldef007239;
+    local float globaldef007240;
+    local float globaldef007241;
+    
+    if(globaldef007212 == VEC_ORIGIN)
     {
-        return FALSE;
-    }
-    else
-    {
-        if(!func002456(globaldef006508, globaldef006509))
-        {
-            return FALSE;
-        }
-        else
-        {
-            if(globaldef006509.field000299)
-            {
-                return FALSE;
-            }
-            else
-            {
-                return 20;
-            }
-            
-        }
-        
+        globaldef007228 = globaldef007211.goalentity.origin;
+        globaldef007228_z = globaldef007211.origin_z;
+        globaldef007212 = globaldef007228 - globaldef007211.origin;
     }
     
-};
-
-
-// func002293
-// function begins at statement 34112, parm_start=18468
-// OP_STORE_V	18468	4	0
-// OP_STORE_V	18469	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	18	0	0
-// OP_LOAD_F	18469	101	18470
-// OP_LOAD_F	18468	108	18471
-// OP_LOAD_F	18468	137	18472
-// OP_ADD_F	18471	18472	18473
-// OP_ADD_F	18473	793	18474
-// OP_GT	18470	18474	18475
-// OP_IFNOT	18475	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	9	0	0
-// OP_STORE_V	18468	4	0
-// OP_STORE_V	18469	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18476
-// OP_IFNOT	18476	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	2323	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006510, entity globaldef006511) func002293 = 
-{
-    if(func002288(globaldef006510, globaldef006511, GLOBALDEFSEVENSEVENFOUR))
+    globaldef007237 = GLOBALDEFSEVENTWONINE;
+    globaldef007238 = 17.9;
+    globaldef007239 = FALSE;
+    globaldef007216 = globaldef007211.origin;
+    globaldef007224 = globaldef007212;
+    globaldef007224_z = FALSE;
+    globaldef007224 = normalize(globaldef007224);
+    globaldef007240 = TRUE;
+    globaldef007241 = self.flags;
+    globaldef007236 = self;
+    self = globaldef007211;
+    do
     {
-        return FALSE;
-    }
-    else
-    {
-        if(globaldef006511.absmax_z > ((globaldef006510.origin_z + globaldef006510.mins_z) + globaldef000776))
+        globaldef007220 = globaldef007216 + (globaldef007240 * globaldef007224);
+        globaldef007220_z = globaldef007220_z + globaldef007237;
+        setorigin(self, globaldef007220);
+        if(droptofloor())
         {
-            return FALSE;
-        }
-        else
-        {
-            if(!func002456(globaldef006510, globaldef006511))
-            {
-                return FALSE;
-            }
-            else
-            {
-                return 20;
-            }
             
-        }
-        
-    }
-    
-};
-
-
-// func002294
-// function begins at statement 34137, parm_start=18477
-// OP_STORE_V	18477	4	0
-// OP_STORE_V	18478	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	13	0	0
-// OP_STORE_V	18477	4	0
-// OP_STORE_V	18478	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18479
-// OP_IFNOT	18479	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	6	0	0
-// OP_LOAD_ENT	18478	622	18480
-// OP_IFNOT	18480	3	0
-// OP_RETURN	235	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006512, entity globaldef006513) func002294 = 
-{
-    if(func002288(globaldef006512, globaldef006513, GLOBALDEFSEVENSEVENFOUR))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!func002456(globaldef006512, globaldef006513))
-        {
-            return FALSE;
-        }
-        else
-        {
-            if(globaldef006513.field000299)
+            if(self.origin_z > (globaldef007216_z + globaldef007238))
             {
-                return MOVETYPE_BOUNCE;
-            }
-            else
-            {
-                return 35;
+                globaldef007239 = TRUE;
+                globaldef007240 = 999;
             }
             
         }
-        
-    }
-    
-};
-
-
-// func002295
-// function begins at statement 34157, parm_start=18481
-// OP_STORE_V	18481	4	0
-// OP_STORE_V	18482	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_V	18482	94	18489
-// OP_LOAD_V	18482	98	18492
-// OP_ADD_V	18489	18492	18495
-// OP_MUL_VF	18495	539	18498
-// OP_STORE_V	18498	18486	0
-// OP_LOAD_F	18482	97	18501
-// OP_ADD_F	18501	214	18502
-// OP_STORE_F	18502	18488	0
-// OP_STORE_V	18486	18483	0
-// OP_LOAD_F	18481	108	18503
-// OP_STORE_F	18503	18485	0
-// OP_LOAD_V	18481	105	18504
-// OP_STORE_V	18504	4	0
-// OP_STORE_V	18483	7	0
-// OP_STORE_V	214	10	0
-// OP_STORE_V	28	13	0
-// OP_CALL4	466	0	0
-// OP_EQ_F	70	214	18507
-// OP_IFNOT	18507	24	0
-// OP_STORE_V	18483	4	0
-// OP_STORE_V	18486	7	0
-// OP_STORE_V	214	10	0
-// OP_STORE_V	28	13	0
-// OP_CALL4	466	0	0
-// OP_EQ_F	70	214	18508
-// OP_IFNOT	18508	17	0
-// OP_STORE_V	18486	4	0
-// OP_CALL1	1111	0	0
-// OP_STORE_F	1	18485	0
-// OP_LOAD_F	28	97	18509
-// OP_GT	18509	18485	18510
-// OP_IFNOT	18510	3	0
-// OP_LOAD_F	18481	97	18511
-// OP_STORE_F	18511	18485	0
-// OP_LOAD_F	18481	141	18512
-// OP_LOAD_F	18481	137	18513
-// OP_SUB_F	18512	18513	18514
-// OP_ADD_F	18514	18485	18515
-// OP_ADD_F	18515	793	18516
-// OP_LT	18488	18516	18517
-// OP_IFNOT	18517	2	0
-// OP_RETURN	2323	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006514, entity globaldef006515) func002295 = 
-{
-    local vector globaldef006516;
-    local vector globaldef006520;
-    
-    if(func002288(globaldef006514, globaldef006515, GLOBALDEFSEVENSEVENFOUR))
-    {
-        return FALSE;
-    }
-    
-    globaldef006520 = (globaldef006515.absmin + globaldef006515.absmax) * GLOBALDEFFIVETWOTWO;
-    globaldef006520_z = globaldef006515.absmin_z + TRUE;
-    globaldef006516 = globaldef006520;
-    globaldef006516_z = globaldef006514.origin_z;
-    traceline(globaldef006514.origin, globaldef006516, TRUE, self);
-    
-    if(trace_fraction == TRUE)
-    {
-        traceline(globaldef006516, globaldef006520, TRUE, self);
-        
-        if(trace_fraction == TRUE)
-        {
-            globaldef006516_z = func002457(globaldef006520);
-            
-            if(self.absmin_z > globaldef006516_z)
-            {
-                globaldef006516_z = globaldef006514.absmin_z;
-            }
-            
-            
-            if(globaldef006520_z < (((globaldef006514.maxs_z - globaldef006514.mins_z) + globaldef006516_z) + globaldef000776))
-            {
-                return 20;
-            }
-            
-        }
-        
-    }
-    
-    return FALSE;
-};
-
-
-// func002296
-// function begins at statement 34207, parm_start=18518
-// OP_LOAD_F	18519	163	18520
-// OP_NE_F	18520	251	18521
-// OP_IFNOT	18521	13	0
-// OP_LOAD_F	18519	104	18522
-// OP_NE_F	18522	238	18523
-// OP_IFNOT	18523	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18519	101	18524
-// OP_LOAD_F	18518	108	18525
-// OP_LOAD_F	18518	137	18526
-// OP_ADD_F	18525	18526	18527
-// OP_ADD_F	18527	793	18528
-// OP_GT	18524	18528	18529
-// OP_IFNOT	18529	2	0
-// OP_RETURN	213	0	0
-// OP_STORE_V	18518	4	0
-// OP_STORE_V	18519	7	0
-// OP_STORE_V	791	10	0
-// OP_CALL3	18435	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	15	0	0
-// OP_STORE_V	18518	4	0
-// OP_STORE_V	18519	7	0
-// OP_CALL2	1110	0	0
-// OP_NOT_F	1	0	18530
-// OP_IFNOT	18530	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_CALL0	457	0	0
-// OP_LT	1	6277	18531
-// OP_IFNOT	18531	3	0
-// OP_RETURN	5878	0	0
-// OP_GOTO	3	0	0
-// OP_SUB_F	2323	216	18532
-// OP_RETURN	18532	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006524, entity globaldef006525) func002296 = 
-{
-    
-    if(globaldef006525.takedamage != DAMAGE_YES)
-    {
-        
-        if(globaldef006525.solid != SOLID_TRIGGER)
-        {
-            return FALSE;
-        }
-        
-        
-        if(globaldef006525.absmax_z > ((globaldef006524.origin_z + globaldef006524.mins_z) + globaldef000776))
-        {
-            return FALSE;
-        }
-        
-    }
-    
-    if(func002288(globaldef006524, globaldef006525, GLOBALDEFSEVENSEVENFOUR))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!func002456(globaldef006524, globaldef006525))
-        {
-            return FALSE;
-        }
         else
         {
-            if(random() < 0.25)
-            {
-                return 35;
-            }
-            else
-            {
-                return 20 - FL_SWIM;
-            }
-            
+            globaldef007240 = 999;
         }
         
-    }
-    
-};
-
-
-// func002297
-// function begins at statement 34244, parm_start=18533
-// OP_LOAD_F	18533	162	18535
-// OP_BITAND	18535	259	18536
-// OP_NOT_F	18536	0	18537
-// OP_LOAD_F	18534	162	18538
-// OP_BITAND	18538	259	18539
-// OP_AND	18537	18539	18540
-// OP_IFNOT	18540	2	0
-// OP_RETURN	9989	0	0
-// OP_LOAD_F	18533	162	18541
-// OP_BITAND	18541	260	18542
-// OP_NOT_F	18542	0	18543
-// OP_LOAD_F	18534	162	18544
-// OP_BITAND	18544	260	18545
-// OP_AND	18543	18545	18546
-// OP_IFNOT	18546	2	0
-// OP_RETURN	9987	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006526, entity globaldef006527) func002297 = 
-{
-    
-    if((!(globaldef006526.items & IT_ROCKET_LAUNCHER)) && (globaldef006527.items & IT_ROCKET_LAUNCHER))
+        globaldef007240 = globaldef007240 + MOVETYPE_STEP;
+    } while (globaldef007240 < MOVETYPE_BOUNCE);
+    self.flags = globaldef007241;
+    self = globaldef007236;
+    setorigin(globaldef007211, globaldef007216);
+    if(globaldef007239)
     {
-        return 99;
-    }
-    
-    
-    if((!(globaldef006526.items & IT_LIGHTNING)) && (globaldef006527.items & IT_LIGHTNING))
-    {
-        return 98;
-    }
-    
-    return 35;
-};
-
-
-// func002298
-// function begins at statement 34262, parm_start=18547
-// OP_RETURN	1997	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006528, entity globaldef006529) func002298 = 
-{
-    return 100;
-};
-
-
-// func002299
-// function begins at statement 34264, parm_start=18549
-// OP_LOAD_F	18549	152	18551
-// OP_LT	18551	2019	18552
-// OP_IFNOT	18552	3	0
-// OP_RETURN	9974	0	0
-// OP_GOTO	7	0	0
-// OP_LOAD_F	18549	152	18553
-// OP_LT	18553	1997	18554
-// OP_IFNOT	18554	3	0
-// OP_RETURN	9671	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006530, entity globaldef006531) func002299 = 
-{
-    if(globaldef006530.health < 60)
-    {
-        return 91;
+        globaldef007211.field000252 = globaldef007211.field000252 | globaldef000697;
+        globaldef007232_x = globaldef007224_x * FL_GODMODE;
+        globaldef007232_y = globaldef007224_y * FL_GODMODE;
+        globaldef007232_z = globaldef000717;
+        func002431(globaldef007211, globaldef007232);
+        return TRUE;
     }
     else
-    {
-        if(globaldef006530.health < 100)
-        {
-            return 34;
-        }
-        else
-        {
-            return FALSE;
-        }
-        
-    }
-    
-};
-
-
-// func002300
-// function begins at statement 34276, parm_start=18555
-// OP_LOAD_F	18555	152	18557
-// OP_LT	18557	2019	18558
-// OP_IFNOT	18558	3	0
-// OP_RETURN	9976	0	0
-// OP_GOTO	7	0	0
-// OP_LOAD_F	18555	152	18559
-// OP_LT	18559	1997	18560
-// OP_IFNOT	18560	3	0
-// OP_RETURN	5878	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006532, entity globaldef006533) func002300 = 
-{
-    if(globaldef006532.health < 60)
-    {
-        return 92;
-    }
-    else
-    {
-        if(globaldef006532.health < 100)
-        {
-            return 35;
-        }
-        else
-        {
-            return FALSE;
-        }
-        
-    }
-    
-};
-
-
-// func002301
-// function begins at statement 34288, parm_start=18561
-// OP_LOAD_F	18561	159	18563
-// OP_GE	18563	2044	18564
-// OP_IFNOT	18564	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	7	0	0
-// OP_LOAD_F	18561	159	18565
-// OP_GT	18565	3584	18566
-// OP_IFNOT	18566	3	0
-// OP_RETURN	6133	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9671	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006534, entity globaldef006535) func002301 = 
-{
-    if(globaldef006534.ammo_nails >= 200)
     {
         return FALSE;
     }
-    else
-    {
-        if(globaldef006534.ammo_nails > 120)
-        {
-            return 18;
-        }
-        else
-        {
-            return 34;
-        }
-        
-    }
     
 };
 
 
-// func002302
-// function begins at statement 34300, parm_start=18567
-// OP_LOAD_F	18567	158	18569
-// OP_GE	18569	1997	18570
-// OP_IFNOT	18570	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	7	0	0
-// OP_LOAD_F	18567	158	18571
-// OP_GT	18571	1470	18572
-// OP_IFNOT	18572	3	0
-// OP_RETURN	6133	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9671	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006536, entity globaldef006537) func002302 = 
-{
-    if(globaldef006536.ammo_shells >= 100)
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(globaldef006536.ammo_shells > 50)
-        {
-            return 18;
-        }
-        else
-        {
-            return 34;
-        }
-        
-    }
-    
-};
-
-
-// func002303
-// function begins at statement 34312, parm_start=18573
-// OP_LOAD_F	18573	161	18575
-// OP_GE	18575	1997	18576
-// OP_IFNOT	18576	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	10	0	0
-// OP_LOAD_F	18573	162	18577
-// OP_BITAND	18577	260	18578
-// OP_LOAD_F	18573	161	18579
-// OP_LT	18579	309	18580
-// OP_AND	18578	18580	18581
-// OP_IFNOT	18581	3	0
-// OP_RETURN	2598	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006538, entity globaldef006539) func002303 = 
-{
-    if(globaldef006538.ammo_cells >= 100)
-    {
-        return FALSE;
-    }
-    else
-    {
-        if((globaldef006538.items & IT_LIGHTNING) && (globaldef006538.ammo_cells < SVC_INTERMISSION))
-        {
-            return 45;
-        }
-        else
-        {
-            return 35;
-        }
-        
-    }
-    
-};
-
-
-// func002304
-// function begins at statement 34327, parm_start=18582
-// OP_LOAD_F	18582	160	18584
-// OP_GE	18584	1997	18585
-// OP_IFNOT	18585	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	10	0	0
-// OP_LOAD_F	18582	162	18586
-// OP_BITAND	18586	259	18587
-// OP_LOAD_F	18582	160	18588
-// OP_LT	18588	2323	18589
-// OP_AND	18587	18589	18590
-// OP_IFNOT	18590	3	0
-// OP_RETURN	1470	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006540, entity globaldef006541) func002304 = 
-{
-    if(globaldef006540.ammo_rockets >= 100)
-    {
-        return FALSE;
-    }
-    else
-    {
-        if((globaldef006540.items & IT_ROCKET_LAUNCHER) && (globaldef006540.ammo_rockets < 20))
-        {
-            return 50;
-        }
-        else
-        {
-            return 35;
-        }
-        
-    }
-    
-};
-
-
-// func002305
-// function begins at statement 34342, parm_start=18591
-// OP_STORE_V	18591	4	0
-// OP_STORE_V	259	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	18591	162	18593
-// OP_BITAND	18593	259	18594
-// OP_NOT_F	18594	0	18595
-// OP_IFNOT	18595	3	0
-// OP_RETURN	1997	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9657	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006542, entity globaldef006543) func002305 = 
-{
-    if(func002287(globaldef006542, IT_ROCKET_LAUNCHER))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!(globaldef006542.items & IT_ROCKET_LAUNCHER))
-        {
-            return 100;
-        }
-        else
-        {
-            return 37;
-        }
-        
-    }
-    
-};
-
-
-// func002306
-// function begins at statement 34356, parm_start=18596
-// OP_STORE_V	18596	4	0
-// OP_STORE_V	260	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	18596	162	18598
-// OP_BITAND	18598	260	18599
-// OP_NOT_F	18599	0	18600
-// OP_IFNOT	18600	3	0
-// OP_RETURN	9981	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9657	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006544, entity globaldef006545) func002306 = 
-{
-    if(func002287(globaldef006544, IT_LIGHTNING))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!(globaldef006544.items & IT_LIGHTNING))
-        {
-            return 95;
-        }
-        else
-        {
-            return 37;
-        }
-        
-    }
-    
-};
-
-
-// func002307
-// function begins at statement 34370, parm_start=18601
-// OP_STORE_V	18601	4	0
-// OP_STORE_V	258	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	18601	162	18603
-// OP_BITAND	18603	258	18604
-// OP_NOT_F	18604	0	18605
-// OP_IFNOT	18605	3	0
-// OP_RETURN	2658	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9655	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006546, entity globaldef006547) func002307 = 
-{
-    if(func002287(globaldef006546, IT_GRENADE_LAUNCHER))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!(globaldef006546.items & IT_GRENADE_LAUNCHER))
-        {
-            return 90;
-        }
-        else
-        {
-            return 36;
-        }
-        
-    }
-    
-};
-
-
-// func002308
-// function begins at statement 34384, parm_start=18606
-// OP_STORE_V	18606	4	0
-// OP_STORE_V	256	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006548, entity globaldef006549) func002308 = 
-{
-    if(func002287(globaldef006548, IT_NAILGUN))
-    {
-        return FALSE;
-    }
-    else
-    {
-        return 35;
-    }
-    
-};
-
-
-// func002309
-// function begins at statement 34392, parm_start=18608
-// OP_STORE_V	18608	4	0
-// OP_STORE_V	257	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	18608	162	18610
-// OP_BITAND	18610	257	18611
-// OP_NOT_F	18611	0	18612
-// OP_IFNOT	18612	3	0
-// OP_RETURN	9963	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9655	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006550, entity globaldef006551) func002309 = 
-{
-    if(func002287(globaldef006550, IT_SUPER_NAILGUN))
-    {
-        return FALSE;
-    }
-    else
-    {
-        if(!(globaldef006550.items & IT_SUPER_NAILGUN))
-        {
-            return 85;
-        }
-        else
-        {
-            return 36;
-        }
-        
-    }
-    
-};
-
-
-// func002310
-// function begins at statement 34406, parm_start=18613
-// OP_STORE_V	18613	4	0
-// OP_STORE_V	255	7	0
-// OP_CALL2	18427	0	0
-// OP_IFNOT	1	3	0
-// OP_RETURN	213	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006552, entity globaldef006553) func002310 = 
-{
-    if(func002287(globaldef006552, IT_SUPER_SHOTGUN))
-    {
-        return FALSE;
-    }
-    else
-    {
-        return 35;
-    }
-    
-};
-
-
-// func002311
-// function begins at statement 34414, parm_start=18615
-// OP_LOAD_F	18616	188	18618
-// OP_MUL_F	18618	3409	18619
-// OP_LOAD_F	18615	188	18620
-// OP_LOAD_F	18615	187	18621
-// OP_MUL_F	18620	18621	18622
-// OP_SUB_F	18619	18622	18623
-// OP_MUL_F	216	18623	18624
-// OP_STORE_F	18624	18617	0
-// OP_LT	18617	213	18625
-// OP_IFNOT	18625	2	0
-// OP_STORE_F	213	18617	0
-// OP_RETURN	18617	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006554, entity globaldef006555) func002311 = 
-{
-    local float globaldef006556;
-    globaldef006556 = FL_SWIM * ((globaldef006555.armorvalue * 0.3) - (globaldef006554.armorvalue * globaldef006554.armortype));
-    
-    if(globaldef006556 < FALSE)
-    {
-        globaldef006556 = FALSE;
-    }
-    
-    return globaldef006556;
-};
-
-
-// func002312
-// function begins at statement 34427, parm_start=18626
-// OP_LOAD_F	18627	188	18629
-// OP_MUL_F	18629	4474	18630
-// OP_LOAD_F	18626	188	18631
-// OP_LOAD_F	18626	187	18632
-// OP_MUL_F	18631	18632	18633
-// OP_SUB_F	18630	18633	18634
-// OP_MUL_F	216	18634	18635
-// OP_STORE_F	18635	18628	0
-// OP_LT	18628	213	18636
-// OP_IFNOT	18636	2	0
-// OP_STORE_F	213	18628	0
-// OP_RETURN	18628	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006557, entity globaldef006558) func002312 = 
-{
-    local float globaldef006559;
-    globaldef006559 = FL_SWIM * ((globaldef006558.armorvalue * 0.6) - (globaldef006557.armorvalue * globaldef006557.armortype));
-    
-    if(globaldef006559 < FALSE)
-    {
-        globaldef006559 = FALSE;
-    }
-    
-    return globaldef006559;
-};
-
-
-// func002313
-// function begins at statement 34440, parm_start=18637
-// OP_LOAD_F	18638	188	18640
-// OP_MUL_F	18640	4478	18641
-// OP_LOAD_F	18637	188	18642
-// OP_LOAD_F	18637	187	18643
-// OP_MUL_F	18642	18643	18644
-// OP_SUB_F	18641	18644	18645
-// OP_MUL_F	216	18645	18646
-// OP_STORE_F	18646	18639	0
-// OP_LT	18639	213	18647
-// OP_IFNOT	18647	2	0
-// OP_STORE_F	213	18639	0
-// OP_RETURN	18639	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006560, entity globaldef006561) func002313 = 
-{
-    local float globaldef006562;
-    globaldef006562 = FL_SWIM * ((globaldef006561.armorvalue * 0.8) - (globaldef006560.armorvalue * globaldef006560.armortype));
-    
-    if(globaldef006562 < FALSE)
-    {
-        globaldef006562 = FALSE;
-    }
-    
-    return globaldef006562;
-};
-
-
-// func002314
-// function begins at statement 34453, parm_start=18648
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006563, entity globaldef006564) func002314 = 
-{
-    return 35;
-};
-
-
-// func002315
-// function begins at statement 34455, parm_start=18650
-// OP_ADD_F	1997	228	18652
-// OP_RETURN	18652	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006565, entity globaldef006566) func002315 = 
-{
-    return 100 + MOVETYPE_WALK;
-};
-
-
-// func002316
-// function begins at statement 34458, parm_start=18653
-// OP_ADD_F	1997	230	18655
-// OP_RETURN	18655	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006567, entity globaldef006568) func002316 = 
-{
-    return 100 + MOVETYPE_FLY;
-};
-
-
-// func002317
-// function begins at statement 34461, parm_start=18656
-// OP_ADD_F	1997	231	18658
-// OP_RETURN	18658	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006569, entity globaldef006570) func002317 = 
-{
-    return 100 + MOVETYPE_TOSS;
-};
-
-
-// func002318
-// function begins at statement 34464, parm_start=18659
-// OP_RETURN	9951	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006571, entity globaldef006572) func002318 = 
-{
-    return 77;
-};
-
-
-// func002319
-// function begins at statement 34466, parm_start=18661
-// OP_RETURN	9919	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006573, entity globaldef006574) func002319 = 
-{
-    return 55;
-};
-
-
-// func002320
-// function begins at statement 34468, parm_start=18663
-// OP_RETURN	1470	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006575, entity globaldef006576) func002320 = 
-{
-    return 50;
-};
-
-
-// func002321
-// function begins at statement 34470, parm_start=18665
-// OP_RETURN	1536	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006577, entity globaldef006578) func002321 = 
-{
-    return 70;
-};
-
-
-// func002322
-// function begins at statement 34472, parm_start=18667
-// OP_RETURN	2805	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006579, entity globaldef006580) func002322 = 
-{
-    return 80;
-};
-
-
-// func002323
-// function begins at statement 34474, parm_start=18669
-// OP_RETURN	1997	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006581, entity globaldef006582) func002323 = 
-{
-    return 100;
-};
-
-
-// func002324
-// function begins at statement 34476, parm_start=18671
-// OP_RETURN	9173	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006583, entity globaldef006584) func002324 = 
-{
-    return 75;
-};
-
-
-// func002325
-// function begins at statement 34478, parm_start=18673
-// OP_RETURN	2658	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006585, entity globaldef006586) func002325 = 
-{
-    return 90;
-};
-
-
-// func002326
-// function begins at statement 34480, parm_start=18675
-// OP_RETURN	9987	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006587, entity globaldef006588) func002326 = 
-{
-    return 98;
-};
-
-
-// func002327
-// function begins at statement 34482, parm_start=18677
-// OP_LOAD_F	18678	150	18679
-// OP_ADD_F	31	235	18680
-// OP_LT	18679	18680	18681
-// OP_IFNOT	18681	2	0
-// OP_RETURN	5487	0	0
-// OP_RETURN	235	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006589, entity globaldef006590) func002327 = 
-{
-    
-    if(globaldef006590.nextthink < (time + MOVETYPE_BOUNCE))
-    {
-        return 73;
-    }
-    
-    return MOVETYPE_BOUNCE;
-};
-
-
-// func002328
-// function begins at statement 34489, parm_start=18682
-// OP_LOAD_F	18683	150	18684
-// OP_ADD_F	31	235	18685
-// OP_LT	18684	18685	18686
-// OP_IFNOT	18686	2	0
-// OP_RETURN	9961	0	0
-// OP_RETURN	765	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006591, entity globaldef006592) func002328 = 
-{
-    
-    if(globaldef006592.nextthink < (time + MOVETYPE_BOUNCE))
-    {
-        return 83;
-    }
-    
-    return GLOBALDEFSEVENFOUREIGHT;
-};
-
-
-// func002329
-// function begins at statement 34496, parm_start=18687
-// OP_LOAD_F	18688	150	18689
-// OP_ADD_F	31	235	18690
-// OP_LT	18689	18690	18691
-// OP_IFNOT	18691	2	0
-// OP_RETURN	9978	0	0
-// OP_RETURN	2323	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006593, entity globaldef006594) func002329 = 
-{
-    
-    if(globaldef006594.nextthink < (time + MOVETYPE_BOUNCE))
-    {
-        return 93;
-    }
-    
-    return 20;
-};
-
-
-// func002330
-// function begins at statement 34503, parm_start=18693
-// OP_LOAD_F	18693	162	18695
-// OP_BITAND	18695	260	18696
-// OP_NOT_F	18696	0	18697
-// OP_IFNOT	18697	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18693	161	18698
-// OP_LT	18698	214	18699
-// OP_IFNOT	18699	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18693	162	18700
-// OP_BITAND	18700	273	18701
-// OP_NOT_F	18701	0	18702
-// OP_IFNOT	18702	5	0
-// OP_LOAD_F	18693	189	18703
-// OP_GE	18703	216	18704
-// OP_IFNOT	18704	2	0
-// OP_RETURN	235	0	0
-// OP_LOAD_ENT	18693	181	18705
-// OP_LOAD_V	18705	105	18706
-// OP_LOAD_V	18693	105	18709
-// OP_SUB_V	18706	18709	18712
-// OP_STORE_V	18712	4	0
+// func002433
+// function begins at statement 39025, parm_start=21745
+// OP_LOAD_F	21745	139	21827
+// OP_STORE_F	21827	21750	0
+// OP_LOAD_F	21745	140	21828
+// OP_STORE_F	21828	21751	0
+// OP_LOAD_F	21745	141	21829
+// OP_STORE_F	21829	21752	0
+// OP_LOAD_F	21745	139	21830
+// OP_STORE_F	21830	21753	0
+// OP_LOAD_F	21745	136	21831
+// OP_STORE_F	21831	21754	0
+// OP_LOAD_F	21745	141	21832
+// OP_STORE_F	21832	21755	0
+// OP_LOAD_F	21745	135	21833
+// OP_STORE_F	21833	21756	0
+// OP_LOAD_F	21745	136	21834
+// OP_STORE_F	21834	21757	0
+// OP_LOAD_F	21745	141	21835
+// OP_STORE_F	21835	21758	0
+// OP_LOAD_F	21745	135	21836
+// OP_STORE_F	21836	21759	0
+// OP_LOAD_F	21745	140	21837
+// OP_STORE_F	21837	21760	0
+// OP_LOAD_F	21745	141	21838
+// OP_STORE_F	21838	21761	0
+// OP_LOAD_F	21745	139	21839
+// OP_STORE_F	21839	21762	0
+// OP_LOAD_F	21745	140	21840
+// OP_STORE_F	21840	21763	0
+// OP_LOAD_F	21745	137	21841
+// OP_STORE_F	21841	21764	0
+// OP_LOAD_F	21745	139	21842
+// OP_STORE_F	21842	21765	0
+// OP_LOAD_F	21745	136	21843
+// OP_STORE_F	21843	21766	0
+// OP_LOAD_F	21745	137	21844
+// OP_STORE_F	21844	21767	0
+// OP_LOAD_F	21745	135	21845
+// OP_STORE_F	21845	21768	0
+// OP_LOAD_F	21745	136	21846
+// OP_STORE_F	21846	21769	0
+// OP_LOAD_F	21745	137	21847
+// OP_STORE_F	21847	21770	0
+// OP_LOAD_F	21745	135	21848
+// OP_STORE_F	21848	21771	0
+// OP_LOAD_F	21745	140	21849
+// OP_STORE_F	21849	21772	0
+// OP_LOAD_F	21745	137	21850
+// OP_STORE_F	21850	21773	0
+// OP_LOAD_F	21745	139	21851
+// OP_STORE_F	21851	21774	0
+// OP_STORE_F	213	21775	0
+// OP_STORE_F	213	21776	0
+// OP_LOAD_F	21745	135	21852
+// OP_STORE_F	21852	21777	0
+// OP_STORE_F	213	21778	0
+// OP_STORE_F	213	21779	0
+// OP_STORE_F	213	21780	0
+// OP_LOAD_F	21745	140	21853
+// OP_STORE_F	21853	21781	0
+// OP_STORE_F	213	21782	0
+// OP_STORE_F	213	21783	0
+// OP_LOAD_F	21745	136	21854
+// OP_STORE_F	21854	21784	0
+// OP_STORE_F	213	21785	0
+// OP_STORE_V	286	21786	0
+// OP_LOAD_F	21745	141	21855
+// OP_SUB_F	21855	214	21856
+// OP_STORE_F	21856	21788	0
+// OP_STORE_V	286	21789	0
+// OP_LOAD_F	21745	137	21857
+// OP_ADD_F	21857	214	21858
+// OP_STORE_F	21858	21791	0
+// OP_STORE_V	16343	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	21822	0
+// OP_STORE_V	16344	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	21823	0
+// OP_STORE_F	213	21817	0
+// OP_LOAD_V	21745	105	21859
+// OP_ADD_V	21859	2967	21862
+// OP_STORE_V	21862	21792	0
+// OP_MUL_VF	21746	3036	21865
+// OP_STORE_V	21865	21795	0
+// OP_STORE_F	213	21819	0
+// OP_MUL_F	799	5500	21868
+// OP_SUB_F	21797	21868	21869
+// OP_STORE_F	21869	21797	0
+// OP_IFNOT	21817	29	0
+// OP_MUL_VF	21795	235	21870
+// OP_STORE_V	21870	21795	0
+// OP_STORE_V	21795	21813	0
+// OP_STORE_F	213	21815	0
+// OP_STORE_V	21813	4	0
 // OP_CALL1	462	0	0
-// OP_STORE_F	1	18694	0
-// OP_LT	18694	740	18715
-// OP_IFNOT	18715	26	0
-// OP_LOAD_ENT	18693	181	18716
-// OP_LOAD_F	18716	108	18717
-// OP_LOAD_F	18693	108	18718
-// OP_ADD_F	18718	2805	18719
-// OP_GT	18717	18719	18720
-// OP_IFNOT	18720	19	0
-// OP_BITAND	821	767	18721
-// OP_IFNOT	18721	5	0
-// OP_LOAD_F	18693	588	18722
-// OP_GT	18722	216	18723
-// OP_IFNOT	18723	2	0
-// OP_RETURN	8204	0	0
-// OP_LOAD_F	18693	154	18724
-// OP_NE_F	18724	260	18725
-// OP_IFNOT	18725	6	0
-// OP_CALL0	5370	0	0
-// OP_MUL_F	1	216	18726
-// OP_ADD_F	2805	18726	18727
-// OP_RETURN	18727	0	0
-// OP_GOTO	5	0	0
-// OP_CALL0	5370	0	0
-// OP_MUL_F	1	216	18728
-// OP_ADD_F	8204	18728	18729
-// OP_RETURN	18729	0	0
-// OP_RETURN	1536	0	0
-// OP_RETURN	746	0	0
+// OP_STORE_F	1	21824	0
+// OP_IFNOT	21824	19	0
+// OP_LT	21824	21823	21873
+// OP_IFNOT	21873	3	0
+// OP_STORE_F	21823	21825	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	21824	21825	0
+// OP_MUL_F	3036	21825	21874
+// OP_MUL_F	21874	21822	21875
+// OP_SUB_F	21824	21875	21876
+// OP_STORE_F	21876	21826	0
+// OP_LT	21826	213	21877
+// OP_IFNOT	21877	2	0
+// OP_STORE_F	213	21826	0
+// OP_DIV_F	21826	21824	21878
+// OP_STORE_F	21878	21826	0
+// OP_MUL_F	21795	21826	21879
+// OP_STORE_F	21879	21795	0
+// OP_MUL_F	21796	21826	21880
+// OP_STORE_F	21880	21796	0
+// OP_MUL_VF	21795	3036	21881
+// OP_STORE_V	21881	21795	0
+// OP_STORE_V	21795	21798	0
+// OP_STORE_F	213	21820	0
+// OP_STORE_F	214	21816	0
+// OP_ADD_V	21792	21762	21884
+// OP_STORE_V	21884	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21887
+// OP_STORE_V	21887	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21890
+// OP_IFNOT	21890	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	213	21821	0
+// OP_ADD_V	21792	21765	21891
+// OP_STORE_V	21891	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21894
+// OP_STORE_V	21894	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21897
+// OP_IFNOT	21897	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	213	21821	0
+// OP_ADD_V	21792	21768	21898
+// OP_STORE_V	21898	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21901
+// OP_STORE_V	21901	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21904
+// OP_IFNOT	21904	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	213	21821	0
+// OP_ADD_V	21792	21771	21905
+// OP_STORE_V	21905	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21908
+// OP_STORE_V	21908	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21911
+// OP_IFNOT	21911	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	213	21821	0
+// OP_ADD_V	21792	21750	21912
+// OP_STORE_V	21912	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21915
+// OP_STORE_V	21915	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21918
+// OP_IFNOT	21918	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	214	21821	0
+// OP_ADD_V	21792	21753	21919
+// OP_STORE_V	21919	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21922
+// OP_STORE_V	21922	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21925
+// OP_IFNOT	21925	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	214	21821	0
+// OP_ADD_V	21792	21756	21926
+// OP_STORE_V	21926	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21929
+// OP_STORE_V	21929	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21932
+// OP_IFNOT	21932	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	214	21821	0
+// OP_ADD_V	21792	21759	21933
+// OP_STORE_V	21933	21810	0
+// OP_STORE_V	21810	4	0
+// OP_ADD_V	21810	21798	21936
+// OP_STORE_V	21936	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	21816	21939
+// OP_IFNOT	21939	4	0
+// OP_STORE_F	70	21816	0
+// OP_STORE_V	74	21804	0
+// OP_STORE_F	214	21821	0
+// OP_GE	21816	214	21940
+// OP_IFNOT	21940	39	0
+// OP_GT	21798	213	21941
+// OP_IFNOT	21941	5	0
+// OP_ADD_V	21792	21798	21942
+// OP_ADD_V	21942	21774	21945
+// OP_STORE_V	21945	21810	0
+// OP_GOTO	4	0	0
+// OP_ADD_V	21792	21798	21948
+// OP_ADD_V	21948	21777	21951
+// OP_STORE_V	21951	21810	0
+// OP_ADD_V	21810	21786	21954
+// OP_STORE_V	21954	4	0
+// OP_ADD_V	21810	21789	21957
+// OP_STORE_V	21957	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	214	21960
+// OP_IFNOT	21960	2	0
+// OP_RETURN	213	0	0
+// OP_GT	21799	213	21961
+// OP_IFNOT	21961	5	0
+// OP_ADD_V	21792	21798	21962
+// OP_ADD_V	21962	21780	21965
+// OP_STORE_V	21965	21810	0
+// OP_GOTO	4	0	0
+// OP_ADD_V	21792	21798	21968
+// OP_ADD_V	21968	21783	21971
+// OP_STORE_V	21971	21810	0
+// OP_ADD_V	21810	21786	21974
+// OP_STORE_V	21974	4	0
+// OP_ADD_V	21810	21789	21977
+// OP_STORE_V	21977	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	21745	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	214	21980
+// OP_IFNOT	21980	2	0
+// OP_RETURN	213	0	0
+// OP_LT	21816	214	21981
+// OP_IFNOT	21981	38	0
+// OP_MUL_VF	21798	21816	21982
+// OP_ADD_V	21792	21982	21985
+// OP_ADD_V	21985	21804	21988
+// OP_STORE_V	21988	21792	0
+// OP_MUL_V	21798	21804	21991
+// OP_MUL_VF	21804	21991	21992
+// OP_SUB_V	21798	21992	21995
+// OP_STORE_V	21995	21798	0
+// OP_STORE_V	21795	21801	0
+// OP_MUL_V	21795	21804	21998
+// OP_MUL_VF	21804	21998	21999
+// OP_SUB_V	21795	21999	22002
+// OP_STORE_V	22002	21795	0
+// OP_LT	21803	213	22005
+// OP_GE	21797	213	22006
+// OP_AND	22005	22006	22007
+// OP_IFNOT	22007	14	0
+// OP_EQ_F	21821	213	22008
+// OP_IFNOT	22008	10	0
+// OP_MUL_V	21804	2967	22009
+// OP_GT	22009	4478	22010
+// OP_IFNOT	22010	6	0
+// OP_LT	21803	8993	22011
+// OP_IFNOT	22011	2	0
+// OP_RETURN	213	0	0
+// OP_ADD_F	21817	216	22012
+// OP_STORE_F	22012	21817	0
+// OP_GOTO	2	0	0
+// OP_RETURN	213	0	0
+// OP_GOTO	7	0	0
+// OP_EQ_F	21821	213	22013
+// OP_IFNOT	22013	5	0
+// OP_MUL_V	21804	2980	22014
+// OP_GT	22014	4478	22015
+// OP_IFNOT	22015	2	0
+// OP_RETURN	213	0	0
+// OP_GOTO	3	0	0
+// OP_ADD_V	21792	21798	22016
+// OP_STORE_V	22016	21792	0
+// OP_ADD_F	21820	214	22019
+// OP_STORE_F	22019	21820	0
+// OP_GT	21820	2323	22020
+// OP_IFNOT	22020	2	0
+// OP_RETURN	213	0	0
+// OP_LT	21816	214	22021
+// OP_IF	22021	-192	0
+// OP_GT	21817	213	22022
+// OP_IFNOT	22022	3	0
+// OP_SUB_F	21817	214	22023
+// OP_STORE_F	22023	21817	0
+// OP_LE	21797	213	22024
+// OP_IFNOT	22024	34	0
+// OP_STORE_V	21792	21807	0
+// OP_LOAD_F	21745	137	22025
+// OP_ADD_F	21794	22025	22026
+// OP_ADD_F	22026	216	22027
+// OP_STORE_F	22027	21809	0
+// OP_STORE_V	21807	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	21818	0
+// OP_EQ_F	21818	280	22028
+// OP_EQ_F	21818	279	22029
+// OP_OR	22028	22029	22030
+// OP_IFNOT	22030	7	0
+// OP_STORE_V	21792	21323	0
+// OP_STORE_V	21746	21326	0
+// OP_STORE_F	21818	21329	0
+// OP_MUL_F	21819	3036	22031
+// OP_STORE_F	22031	21330	0
+// OP_RETURN	213	0	0
+// OP_EQ_F	21818	278	22032
+// OP_IFNOT	22032	14	0
+// OP_STORE_V	21792	21323	0
+// OP_STORE_V	21746	21326	0
+// OP_STORE_F	21818	21329	0
+// OP_MUL_F	21819	3036	22033
+// OP_STORE_F	22033	21330	0
+// OP_LOAD_V	21745	105	22034
+// OP_SUB_V	21792	22034	22037
+// OP_STORE_V	22037	4	0
+// OP_CALL1	462	0	0
+// OP_GT	1	765	22040
+// OP_IFNOT	22040	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_GE	21817	216	22041
+// OP_IFNOT	22041	7	0
+// OP_STORE_V	21792	21323	0
+// OP_STORE_V	21746	21326	0
+// OP_STORE_F	276	21329	0
+// OP_MUL_F	21819	3036	22042
+// OP_STORE_F	22042	21330	0
+// OP_RETURN	214	0	0
+// OP_ADD_F	21819	214	22043
+// OP_STORE_F	22043	21819	0
+// OP_LT	21819	21749	22044
+// OP_IF	22044	-277	0
+// OP_STORE_V	21792	21323	0
+// OP_STORE_V	21746	21326	0
+// OP_STORE_F	276	21329	0
+// OP_MUL_F	21819	3036	22045
+// OP_STORE_F	22045	21330	0
+// OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef006596) func002330 = 
+float (entity globaldef007245, vector globaldef007246, float globaldef007250) func002433 = 
 {
-    local float globaldef006597;
-    
-    if(!(globaldef006596.items & IT_LIGHTNING))
+    local vector globaldef007251;
+    local vector globaldef007255;
+    local vector globaldef007259;
+    local vector globaldef007263;
+    local vector globaldef007267;
+    local vector globaldef007271;
+    local vector globaldef007275;
+    local vector globaldef007279;
+    local vector globaldef007283;
+    local vector globaldef007287;
+    local vector globaldef007291;
+    local vector globaldef007295;
+    local vector globaldef007299;
+    local vector globaldef007303;
+    local vector globaldef007307;
+    local vector globaldef007311;
+    local vector globaldef007315;
+    local vector globaldef007319;
+    local vector globaldef007323;
+    local vector globaldef007327;
+    local vector globaldef007331;
+    local vector globaldef007335;
+    local float globaldef007339;
+    local float globaldef007340;
+    local float globaldef007341;
+    local float globaldef007342;
+    local float globaldef007343;
+    local float globaldef007344;
+    local float globaldef007345;
+    local float globaldef007346;
+    local float globaldef007347;
+    local float globaldef007348;
+    local float globaldef007349;
+    globaldef007251_x = globaldef007245.maxs_x;
+    globaldef007251_y = globaldef007245.maxs_y;
+    globaldef007251_z = globaldef007245.maxs_z;
+    globaldef007255_x = globaldef007245.maxs_x;
+    globaldef007255_y = globaldef007245.mins_y;
+    globaldef007255_z = globaldef007245.maxs_z;
+    globaldef007259_x = globaldef007245.mins_x;
+    globaldef007259_y = globaldef007245.mins_y;
+    globaldef007259_z = globaldef007245.maxs_z;
+    globaldef007263_x = globaldef007245.mins_x;
+    globaldef007263_y = globaldef007245.maxs_y;
+    globaldef007263_z = globaldef007245.maxs_z;
+    globaldef007267_x = globaldef007245.maxs_x;
+    globaldef007267_y = globaldef007245.maxs_y;
+    globaldef007267_z = globaldef007245.mins_z;
+    globaldef007271_x = globaldef007245.maxs_x;
+    globaldef007271_y = globaldef007245.mins_y;
+    globaldef007271_z = globaldef007245.mins_z;
+    globaldef007275_x = globaldef007245.mins_x;
+    globaldef007275_y = globaldef007245.mins_y;
+    globaldef007275_z = globaldef007245.mins_z;
+    globaldef007279_x = globaldef007245.mins_x;
+    globaldef007279_y = globaldef007245.maxs_y;
+    globaldef007279_z = globaldef007245.mins_z;
+    globaldef007283_x = globaldef007245.maxs_x;
+    globaldef007283_y = FALSE;
+    globaldef007283_z = FALSE;
+    globaldef007287_x = globaldef007245.mins_x;
+    globaldef007287_y = FALSE;
+    globaldef007287_z = FALSE;
+    globaldef007291_x = FALSE;
+    globaldef007291_y = globaldef007245.maxs_y;
+    globaldef007291_z = FALSE;
+    globaldef007295_x = FALSE;
+    globaldef007295_y = globaldef007245.mins_y;
+    globaldef007295_z = FALSE;
+    globaldef007299 = VEC_ORIGIN;
+    globaldef007299_z = globaldef007245.maxs_z - TRUE;
+    globaldef007303 = VEC_ORIGIN;
+    globaldef007303_z = globaldef007245.mins_z + TRUE;
+    globaldef007345 = cvar("sv_friction");
+    globaldef007346 = cvar("sv_stopspeed");
+    globaldef007340 = FALSE;
+    globaldef007307 = globaldef007245.origin + '0 0 1';
+    globaldef007311 = globaldef007246 * 0.1;
+    globaldef007342 = FALSE;
+    do
     {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006596.ammo_cells < TRUE)
-    {
-        return FALSE;
-    }
-    
-    
-    if(!(globaldef006596.items & IT_INVULNERABILITY))
-    {
+        globaldef007311_z = globaldef007311_z - (globaldef000782 * 0.01);
         
-        if(globaldef006596.waterlevel >= FL_SWIM)
+        if(globaldef007340)
         {
-            return MOVETYPE_BOUNCE;
-        }
-        
-    }
-    
-    globaldef006597 = vlen(globaldef006596.enemy.origin - globaldef006596.origin);
-    
-    if(globaldef006597 < GLOBALDEFSEVENTWOTHREE)
-    {
-        
-        if(globaldef006596.enemy.origin_z > (globaldef006596.origin_z + 80))
-        {
+            globaldef007311 = globaldef007311 * MOVETYPE_BOUNCE;
+            globaldef007335 = globaldef007311;
+            globaldef007335_z = FALSE;
+            globaldef007347 = vlen(globaldef007335);
             
-            if(globaldef000804 & OBOT_ROCKETARENA)
+            if(globaldef007347)
             {
-                
-                if(globaldef006596.field000265 > FL_SWIM)
+                if(globaldef007347 < globaldef007346)
                 {
-                    return 81;
+                    globaldef007348 = globaldef007346;
+                }
+                else
+                {
+                    globaldef007348 = globaldef007347;
                 }
                 
+                globaldef007349 = globaldef007347 - ((0.1 * globaldef007348) * globaldef007345);
+                
+                if(globaldef007349 < FALSE)
+                {
+                    globaldef007349 = FALSE;
+                }
+                
+                globaldef007349 = globaldef007349 / globaldef007347;
+                globaldef007311_x = globaldef007311_x * globaldef007349;
+                globaldef007311_y = globaldef007311_y * globaldef007349;
             }
             
-            if(globaldef006596.weapon != IT_LIGHTNING)
-            {
-                return 80 + (func000249() * FL_SWIM);
-            }
-            else
-            {
-                return 81 + (func000249() * FL_SWIM);
-            }
-            
+            globaldef007311 = globaldef007311 * 0.1;
         }
         
-        return 70;
-    }
-    
-    return GLOBALDEFSEVENTWONINE;
-};
-
-
-// func002331
-// function begins at statement 34556, parm_start=18731
-// OP_LOAD_F	18731	162	18734
-// OP_BITAND	18734	259	18735
-// OP_NOT_F	18735	0	18736
-// OP_IFNOT	18736	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18731	160	18737
-// OP_LT	18737	214	18738
-// OP_IFNOT	18738	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18731	152	18739
-// OP_MUL_F	18739	539	18740
-// OP_SUB_F	1296	18740	18741
-// OP_LOAD_F	18731	188	18742
-// OP_LOAD_F	18731	187	18743
-// OP_MUL_F	18742	18743	18744
-// OP_SUB_F	18741	18744	18745
-// OP_STORE_F	18745	18732	0
-// OP_LOAD_F	18731	162	18746
-// OP_BITAND	18746	275	18747
-// OP_IFNOT	18747	3	0
-// OP_MUL_F	18732	216	18748
-// OP_STORE_F	18748	18732	0
-// OP_LOAD_ENT	18731	181	18749
-// OP_LOAD_V	18749	105	18750
-// OP_LOAD_V	18731	105	18753
-// OP_SUB_V	18750	18753	18756
-// OP_STORE_V	18756	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	18733	0
-// OP_LT	18733	18732	18759
-// OP_IFNOT	18759	2	0
-// OP_RETURN	309	0	0
-// OP_RETURN	2805	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006599) func002331 = 
-{
-    local float globaldef006600;
-    local float globaldef006601;
-    
-    if(!(globaldef006599.items & IT_ROCKET_LAUNCHER))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006599.ammo_rockets < TRUE)
-    {
-        return FALSE;
-    }
-    
-    globaldef006600 = (180 - (globaldef006599.health * GLOBALDEFFIVETWOTWO)) - (globaldef006599.armorvalue * globaldef006599.armortype);
-    
-    if(globaldef006599.items & IT_QUAD)
-    {
-        globaldef006600 = globaldef006600 * FL_SWIM;
-    }
-    
-    globaldef006601 = vlen(globaldef006599.enemy.origin - globaldef006599.origin);
-    
-    if(globaldef006601 < globaldef006600)
-    {
-        return SVC_INTERMISSION;
-    }
-    
-    return 80;
-};
-
-
-// func002332
-// function begins at statement 34590, parm_start=18761
-// OP_LOAD_F	18761	162	18763
-// OP_BITAND	18763	258	18764
-// OP_NOT_F	18764	0	18765
-// OP_IFNOT	18765	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18761	160	18766
-// OP_LT	18766	214	18767
-// OP_IFNOT	18767	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18761	181	18768
-// OP_LOAD_F	18768	108	18769
-// OP_LOAD_F	18761	108	18770
-// OP_ADD_F	18770	14518	18771
-// OP_GT	18769	18771	18772
-// OP_IFNOT	18772	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18761	181	18773
-// OP_LOAD_V	18773	105	18774
-// OP_LOAD_V	18761	105	18777
-// OP_SUB_V	18774	18777	18780
-// OP_STORE_V	18780	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	18762	0
-// OP_GT	18762	740	18783
-// OP_IFNOT	18783	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18761	181	18784
-// OP_LOAD_F	18784	108	18785
-// OP_LOAD_F	18761	108	18786
-// OP_SUB_F	18786	2044	18787
-// OP_LT	18785	18787	18788
-// OP_IFNOT	18788	5	0
-// OP_CALL0	5370	0	0
-// OP_MUL_F	1	236	18789
-// OP_ADD_F	1536	18789	18790
-// OP_RETURN	18790	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006603) func002332 = 
-{
-    local float globaldef006604;
-    
-    if(!(globaldef006603.items & IT_GRENADE_LAUNCHER))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006603.ammo_rockets < TRUE)
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006603.enemy.origin_z > (globaldef006603.origin_z + 175))
-    {
-        return FALSE;
-    }
-    
-    globaldef006604 = vlen(globaldef006603.enemy.origin - globaldef006603.origin);
-    
-    if(globaldef006604 > GLOBALDEFSEVENTWOTHREE)
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006603.enemy.origin_z < (globaldef006603.origin_z - 200))
-    {
-        return 70 + (func000249() * MOVETYPE_BOUNCEMISSILE);
-    }
-    
-    return 35;
-};
-
-
-// func002333
-// function begins at statement 34628, parm_start=18792
-// OP_LOAD_F	18792	162	18793
-// OP_BITAND	18793	257	18794
-// OP_NOT_F	18794	0	18795
-// OP_IFNOT	18795	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18792	159	18796
-// OP_LT	18796	216	18797
-// OP_IFNOT	18797	2	0
-// OP_RETURN	213	0	0
-// OP_RETURN	9934	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006606) func002333 = 
-{
-    
-    if(!(globaldef006606.items & IT_SUPER_NAILGUN))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006606.ammo_nails < FL_SWIM)
-    {
-        return FALSE;
-    }
-    
-    return 65;
-};
-
-
-// func002334
-// function begins at statement 34639, parm_start=18799
-// OP_LOAD_F	18799	162	18800
-// OP_BITAND	18800	256	18801
-// OP_NOT_F	18801	0	18802
-// OP_IFNOT	18802	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18799	159	18803
-// OP_LT	18803	214	18804
-// OP_IFNOT	18804	2	0
-// OP_RETURN	213	0	0
-// OP_RETURN	1470	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006608) func002334 = 
-{
-    
-    if(!(globaldef006608.items & IT_NAILGUN))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006608.ammo_nails < TRUE)
-    {
-        return FALSE;
-    }
-    
-    return 50;
-};
-
-
-// func002335
-// function begins at statement 34650, parm_start=18806
-// OP_LOAD_F	18806	162	18808
-// OP_BITAND	18808	255	18809
-// OP_NOT_F	18809	0	18810
-// OP_IFNOT	18810	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18806	158	18811
-// OP_LT	18811	216	18812
-// OP_IFNOT	18812	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18806	181	18813
-// OP_LOAD_V	18813	105	18814
-// OP_LOAD_V	18806	105	18817
-// OP_SUB_V	18814	18817	18820
-// OP_STORE_V	18820	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	18807	0
-// OP_GT	18807	740	18823
-// OP_IFNOT	18823	3	0
-// OP_RETURN	305	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	9919	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006610) func002335 = 
-{
-    local float globaldef006611;
-    
-    if(!(globaldef006610.items & IT_SUPER_SHOTGUN))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006610.ammo_shells < FL_SWIM)
-    {
-        return FALSE;
-    }
-    
-    globaldef006611 = vlen(globaldef006610.enemy.origin - globaldef006610.origin);
-    if(globaldef006611 > GLOBALDEFSEVENTWOTHREE)
-    {
-        return SVC_SIGNONNUM;
-    }
-    else
-    {
-        return 55;
-    }
-    
-};
-
-
-// func002336
-// function begins at statement 34672, parm_start=18825
-// OP_LOAD_F	18825	162	18826
-// OP_BITAND	18826	254	18827
-// OP_NOT_F	18827	0	18828
-// OP_IFNOT	18828	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_F	18825	158	18829
-// OP_LT	18829	214	18830
-// OP_IFNOT	18830	2	0
-// OP_RETURN	213	0	0
-// OP_RETURN	5878	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006613) func002336 = 
-{
-    
-    if(!(globaldef006613.items & IT_SHOTGUN))
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006613.ammo_shells < TRUE)
-    {
-        return FALSE;
-    }
-    
-    return 35;
-};
-
-
-// func002337
-// function begins at statement 34683, parm_start=18832
-// OP_LOAD_F	18832	162	18834
-// OP_BITAND	18834	253	18835
-// OP_NOT_F	18835	0	18836
-// OP_IFNOT	18836	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18832	181	18837
-// OP_LOAD_V	18837	105	18838
-// OP_LOAD_V	18832	105	18841
-// OP_SUB_V	18838	18841	18844
-// OP_STORE_V	18844	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	18833	0
-// OP_LT	18833	1997	18847
-// OP_IFNOT	18847	3	0
-// OP_RETURN	2323	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	230	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006615) func002337 = 
-{
-    local float globaldef006616;
-    
-    if(!(globaldef006615.items & IT_AXE))
-    {
-        return FALSE;
-    }
-    
-    globaldef006616 = vlen(globaldef006615.enemy.origin - globaldef006615.origin);
-    if(globaldef006616 < 100)
-    {
-        return 20;
-    }
-    else
-    {
-        return MOVETYPE_FLY;
-    }
-    
-};
-
-
-// func002338
-// function begins at statement 34701, parm_start=18848
-// OP_STORE_F	213	18849	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18692	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18852
-// OP_IFNOT	18852	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	260	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18730	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18853
-// OP_IFNOT	18853	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	259	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18760	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18854
-// OP_IFNOT	18854	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	258	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18791	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18855
-// OP_IFNOT	18855	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	257	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18798	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18856
-// OP_IFNOT	18856	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	256	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18805	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18857
-// OP_IFNOT	18857	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	255	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18824	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18858
-// OP_IFNOT	18858	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	254	18851	0
-// OP_STORE_V	18848	4	0
-// OP_CALL1	18831	0	0
-// OP_STORE_F	1	18850	0
-// OP_GT	18850	18849	18859
-// OP_IFNOT	18859	3	0
-// OP_STORE_F	18850	18849	0
-// OP_STORE_F	253	18851	0
-// OP_ADDRESS	18848	154	18860
-// OP_STOREP_F	18851	18860	0
-// OP_DONE	0	0	0
-void (entity globaldef006617) func002338 = 
-{
-    local float globaldef006618;
-    local float globaldef006619;
-    local float globaldef006620;
-    globaldef006618 = FALSE;
-    globaldef006619 = func002330(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_LIGHTNING;
-    }
-    
-    globaldef006619 = func002331(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_ROCKET_LAUNCHER;
-    }
-    
-    globaldef006619 = func002332(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_GRENADE_LAUNCHER;
-    }
-    
-    globaldef006619 = func002333(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_SUPER_NAILGUN;
-    }
-    
-    globaldef006619 = func002334(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_NAILGUN;
-    }
-    
-    globaldef006619 = func002335(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_SUPER_SHOTGUN;
-    }
-    
-    globaldef006619 = func002336(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_SHOTGUN;
-    }
-    
-    globaldef006619 = func002337(globaldef006617);
-    
-    if(globaldef006619 > globaldef006618)
-    {
-        globaldef006618 = globaldef006619;
-        globaldef006620 = IT_AXE;
-    }
-    
-    globaldef006617.weapon = globaldef006620;
-};
-
-
-// func002339
-// function begins at statement 34761, parm_start=18861
-// OP_LOAD_F	18861	160	18862
-// OP_GE	18862	214	18863
-// OP_LOAD_F	18861	162	18864
-// OP_BITAND	18864	259	18865
-// OP_AND	18863	18865	18866
-// OP_IFNOT	18866	2	0
-// OP_RETURN	259	0	0
-// OP_LOAD_F	18861	161	18867
-// OP_GE	18867	214	18868
-// OP_LOAD_F	18861	162	18869
-// OP_BITAND	18869	260	18870
-// OP_AND	18868	18870	18871
-// OP_IFNOT	18871	9	0
-// OP_LOAD_F	18861	189	18872
-// OP_LT	18872	216	18873
-// OP_IFNOT	18873	2	0
-// OP_RETURN	260	0	0
-// OP_LOAD_F	18861	162	18874
-// OP_BITAND	18874	273	18875
-// OP_IFNOT	18875	2	0
-// OP_RETURN	260	0	0
-// OP_LOAD_F	18861	159	18876
-// OP_GE	18876	216	18877
-// OP_LOAD_F	18861	162	18878
-// OP_BITAND	18878	257	18879
-// OP_AND	18877	18879	18880
-// OP_IFNOT	18880	2	0
-// OP_RETURN	257	0	0
-// OP_LOAD_F	18861	160	18881
-// OP_GE	18881	214	18882
-// OP_LOAD_F	18861	162	18883
-// OP_BITAND	18883	258	18884
-// OP_AND	18882	18884	18885
-// OP_IFNOT	18885	2	0
-// OP_RETURN	258	0	0
-// OP_LOAD_F	18861	158	18886
-// OP_GE	18886	216	18887
-// OP_LOAD_F	18861	162	18888
-// OP_BITAND	18888	255	18889
-// OP_AND	18887	18889	18890
-// OP_IFNOT	18890	2	0
-// OP_RETURN	255	0	0
-// OP_LOAD_F	18861	159	18891
-// OP_GE	18891	214	18892
-// OP_LOAD_F	18861	162	18893
-// OP_BITAND	18893	256	18894
-// OP_AND	18892	18894	18895
-// OP_IFNOT	18895	2	0
-// OP_RETURN	256	0	0
-// OP_LOAD_F	18861	158	18896
-// OP_GE	18896	214	18897
-// OP_LOAD_F	18861	162	18898
-// OP_BITAND	18898	254	18899
-// OP_AND	18897	18899	18900
-// OP_IFNOT	18900	2	0
-// OP_RETURN	254	0	0
-// OP_RETURN	253	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006621) func002339 = 
-{
-    
-    if((globaldef006621.ammo_rockets >= TRUE) && (globaldef006621.items & IT_ROCKET_LAUNCHER))
-    {
-        return IT_ROCKET_LAUNCHER;
-    }
-    
-    
-    if((globaldef006621.ammo_cells >= TRUE) && (globaldef006621.items & IT_LIGHTNING))
-    {
-        
-        if(globaldef006621.waterlevel < FL_SWIM)
-        {
-            return IT_LIGHTNING;
-        }
-        
-        
-        if(globaldef006621.items & IT_INVULNERABILITY)
-        {
-            return IT_LIGHTNING;
-        }
-        
-    }
-    
-    
-    if((globaldef006621.ammo_nails >= FL_SWIM) && (globaldef006621.items & IT_SUPER_NAILGUN))
-    {
-        return IT_SUPER_NAILGUN;
-    }
-    
-    
-    if((globaldef006621.ammo_rockets >= TRUE) && (globaldef006621.items & IT_GRENADE_LAUNCHER))
-    {
-        return IT_GRENADE_LAUNCHER;
-    }
-    
-    
-    if((globaldef006621.ammo_shells >= FL_SWIM) && (globaldef006621.items & IT_SUPER_SHOTGUN))
-    {
-        return IT_SUPER_SHOTGUN;
-    }
-    
-    
-    if((globaldef006621.ammo_nails >= TRUE) && (globaldef006621.items & IT_NAILGUN))
-    {
-        return IT_NAILGUN;
-    }
-    
-    
-    if((globaldef006621.ammo_shells >= TRUE) && (globaldef006621.items & IT_SHOTGUN))
-    {
-        return IT_SHOTGUN;
-    }
-    
-    return IT_AXE;
-};
-
-
-// func002340
-// function begins at statement 34819, parm_start=18901
-// OP_LOAD_F	18901	162	18903
-// OP_BITAND	18903	273	18904
-// OP_IFNOT	18904	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18901	181	18905
-// OP_LOAD_F	18905	162	18906
-// OP_BITAND	18906	273	18907
-// OP_IFNOT	18907	2	0
-// OP_RETURN	214	0	0
-// OP_LOAD_ENT	18901	181	18908
-// OP_LOAD_F	18908	162	18909
-// OP_BITAND	18909	275	18910
-// OP_IFNOT	18910	2	0
-// OP_RETURN	214	0	0
-// OP_LOAD_F	18901	152	18911
-// OP_LT	18911	1536	18912
-// OP_IFNOT	18912	2	0
-// OP_RETURN	214	0	0
-// OP_LOAD_F	18901	162	18913
-// OP_BITAND	18913	275	18914
-// OP_IFNOT	18914	9	0
-// OP_LOAD_F	18901	152	18915
-// OP_LOAD_F	18901	188	18916
-// OP_LOAD_F	18901	187	18917
-// OP_MUL_F	18916	18917	18918
-// OP_ADD_F	18915	18918	18919
-// OP_GT	18919	1536	18920
-// OP_IFNOT	18920	2	0
-// OP_RETURN	213	0	0
-// OP_LOAD_ENT	18901	181	18921
-// OP_STORE_V	18921	4	0
-// OP_CALL1	1041	0	0
-// OP_STORE_F	1	18902	0
-// OP_LOAD_F	18901	154	18922
-// OP_ADD_F	260	259	18923
-// OP_BITAND	18922	18923	18924
-// OP_NOT_F	18924	0	18925
-// OP_IFNOT	18925	5	0
-// OP_ADD_F	260	259	18926
-// OP_BITAND	18902	18926	18927
-// OP_IFNOT	18927	2	0
-// OP_RETURN	214	0	0
-// OP_LOAD_F	18901	154	18928
-// OP_ADD_F	260	259	18929
-// OP_ADD_F	18929	258	18930
-// OP_ADD_F	18930	257	18931
-// OP_BITAND	18928	18931	18932
-// OP_NOT_F	18932	0	18933
-// OP_IFNOT	18933	7	0
-// OP_ADD_F	260	259	18934
-// OP_ADD_F	18934	258	18935
-// OP_ADD_F	18935	257	18936
-// OP_BITAND	18902	18936	18937
-// OP_IFNOT	18937	2	0
-// OP_RETURN	214	0	0
-// OP_LOAD_F	18901	154	18938
-// OP_BITAND	18938	259	18939
-// OP_IFNOT	18939	2	0
-// OP_RETURN	213	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006622) func002340 = 
-{
-    local float globaldef006623;
-    
-    if(globaldef006622.items & IT_INVULNERABILITY)
-    {
-        return FALSE;
-    }
-    
-    
-    if(globaldef006622.enemy.items & IT_INVULNERABILITY)
-    {
-        return TRUE;
-    }
-    
-    
-    if(globaldef006622.enemy.items & IT_QUAD)
-    {
-        return TRUE;
-    }
-    
-    
-    if(globaldef006622.health < 70)
-    {
-        return TRUE;
-    }
-    
-    
-    if(globaldef006622.items & IT_QUAD)
-    {
-        
-        if((globaldef006622.health + (globaldef006622.armorvalue * globaldef006622.armortype)) > 70)
-        {
-            return FALSE;
-        }
-        
-    }
-    
-    globaldef006623 = func002339(globaldef006622.enemy);
-    
-    if(!(globaldef006622.weapon & (IT_LIGHTNING + IT_ROCKET_LAUNCHER)))
-    {
-        
-        if(globaldef006623 & (IT_LIGHTNING + IT_ROCKET_LAUNCHER))
-        {
-            return TRUE;
-        }
-        
-    }
-    
-    
-    if(!(globaldef006622.weapon & (((IT_LIGHTNING + IT_ROCKET_LAUNCHER) + IT_GRENADE_LAUNCHER) + IT_SUPER_NAILGUN)))
-    {
-        
-        if(globaldef006623 & (((IT_LIGHTNING + IT_ROCKET_LAUNCHER) + IT_GRENADE_LAUNCHER) + IT_SUPER_NAILGUN))
-        {
-            return TRUE;
-        }
-        
-    }
-    
-    
-    if(globaldef006622.weapon & IT_ROCKET_LAUNCHER)
-    {
-        return FALSE;
-    }
-    
-    return FALSE;
-};
-
-
-// func002341
-// function begins at statement 34880, parm_start=18940
-// OP_STORE_V	18940	4	0
-// OP_CALL1	1042	0	0
-// OP_NOT_F	1	0	18941
-// OP_RETURN	18941	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006624) func002341 = 
-{
-    return !func002340(globaldef006624);
-};
-
-
-// func002342
-// function begins at statement 34885, parm_start=18942
-// OP_LOAD_ENT	18942	181	18943
-// OP_LOAD_F	18943	162	18944
-// OP_BITAND	18944	272	18945
-// OP_IFNOT	18945	5	0
-// OP_LOAD_F	18942	588	18946
-// OP_LT	18946	228	18947
-// OP_IFNOT	18947	2	0
-// OP_RETURN	214	0	0
-// OP_RETURN	213	0	0
-// OP_DONE	0	0	0
-float (entity globaldef006625) func002342 = 
-{
-    
-    if(globaldef006625.enemy.items & IT_INVISIBILITY)
-    {
-        
-        if(globaldef006625.field000265 < MOVETYPE_WALK)
-        {
-            return TRUE;
-        }
-        
-    }
-    
-    return FALSE;
-};
-
-
-// func002343
-// function begins at statement 34895, parm_start=18949
-// OP_LOAD_ENT	18950	201	18959
-// OP_STORE_ENT	18959	18951	0
-// OP_STORE_ENT	18959	18952	0
-// OP_IFNOT	18952	6	0
-// OP_LOAD_V	18952	94	18960
-// OP_STORE_V	18960	18953	0
-// OP_LOAD_V	18952	98	18963
-// OP_STORE_V	18963	18956	0
-// OP_GOTO	3	0	0
-// OP_STORE_V	286	18956	0
-// OP_STORE_V	286	18953	0
-// OP_NE_V	18953	18956	18966
-// OP_IFNOT	18966	42	0
-// OP_LOAD_F	18952	438	18967
-// OP_NE_F	18967	283	18968
-// OP_IFNOT	18968	2	0
-// OP_RETURN	0	0	0
-// OP_LOAD_F	18951	95	18969
-// OP_LT	18969	18953	18970
-// OP_IFNOT	18970	3	0
-// OP_LOAD_F	18951	95	18971
-// OP_STORE_F	18971	18953	0
-// OP_LOAD_F	18951	99	18972
-// OP_GT	18972	18956	18973
-// OP_IFNOT	18973	3	0
-// OP_LOAD_F	18951	99	18974
-// OP_STORE_F	18974	18956	0
-// OP_LOAD_F	18951	96	18975
-// OP_LT	18975	18954	18976
-// OP_IFNOT	18976	3	0
-// OP_LOAD_F	18951	96	18977
-// OP_STORE_F	18977	18954	0
-// OP_LOAD_F	18951	100	18978
-// OP_GT	18978	18957	18979
-// OP_IFNOT	18979	3	0
-// OP_LOAD_F	18951	100	18980
-// OP_STORE_F	18980	18957	0
-// OP_LOAD_F	18951	97	18981
-// OP_LT	18981	18955	18982
-// OP_IFNOT	18982	3	0
-// OP_LOAD_F	18951	97	18983
-// OP_STORE_F	18983	18955	0
-// OP_LOAD_F	18951	101	18984
-// OP_GT	18984	18958	18985
-// OP_IFNOT	18985	3	0
-// OP_LOAD_F	18951	101	18986
-// OP_STORE_F	18986	18958	0
-// OP_LOAD_ENT	18951	181	18987
-// OP_STORE_ENT	18987	18951	0
-// OP_NE_E	18951	18952	18988
-// OP_NE_E	18951	30	18989
-// OP_AND	18988	18989	18990
-// OP_IF	18990	-35	0
-// OP_GOTO	2	0	0
-// OP_RETURN	0	0	0
-// OP_STORE_F	213	18993	0
-// OP_STORE_F	213	18992	0
-// OP_STORE_F	213	18991	0
-// OP_STORE_F	213	18994	0
-// OP_LOAD_V	18949	105	19003
-// OP_STORE_V	19003	18999	0
-// OP_ADD_F	18953	213	19006
-// OP_LOAD_F	18949	95	19007
-// OP_LT	19006	19007	19008
-// OP_LOAD_F	18949	99	19009
-// OP_SUB_F	18956	213	19010
-// OP_LT	19009	19010	19011
-// OP_AND	19008	19011	19012
-// OP_IFNOT	19012	2	0
-// OP_STORE_F	214	18991	0
-// OP_ADD_F	18954	213	19013
-// OP_LOAD_F	18949	96	19014
-// OP_LT	19013	19014	19015
-// OP_LOAD_F	18949	100	19016
-// OP_SUB_F	18957	213	19017
-// OP_LT	19016	19017	19018
-// OP_AND	19015	19018	19019
-// OP_IFNOT	19019	2	0
-// OP_STORE_F	214	18992	0
-// OP_ADD_F	18955	213	19020
-// OP_LOAD_F	18949	97	19021
-// OP_LT	19020	19021	19022
-// OP_LOAD_F	18949	101	19023
-// OP_SUB_F	18958	213	19024
-// OP_LT	19023	19024	19025
-// OP_AND	19022	19025	19026
-// OP_IFNOT	19026	2	0
-// OP_STORE_F	214	18993	0
-// OP_AND	18991	18992	19027
-// OP_IFNOT	19027	14	0
-// OP_LT	19001	18955	19028
-// OP_IFNOT	19028	5	0
-// OP_STORE_V	2967	18996	0
-// OP_ADD_F	18958	305	19029
-// OP_STORE_F	19029	19001	0
-// OP_GOTO	6	0	0
-// OP_GT	19001	18958	19030
-// OP_IFNOT	19030	4	0
-// OP_STORE_V	2980	18996	0
-// OP_SUB_F	18955	305	19031
-// OP_STORE_F	19031	19001	0
-// OP_STORE_F	214	18994	0
-// OP_GOTO	30	0	0
-// OP_AND	18991	18993	19032
-// OP_IFNOT	19032	14	0
-// OP_LT	19000	18954	19033
-// OP_IFNOT	19033	5	0
-// OP_STORE_V	10055	18996	0
-// OP_ADD_F	18957	305	19034
-// OP_STORE_F	19034	19000	0
-// OP_GOTO	6	0	0
-// OP_GT	19000	18957	19035
-// OP_IFNOT	19035	4	0
-// OP_STORE_V	2960	18996	0
-// OP_SUB_F	18954	305	19036
-// OP_STORE_F	19036	19000	0
-// OP_STORE_F	214	18994	0
-// OP_GOTO	15	0	0
-// OP_AND	18992	18993	19037
-// OP_IFNOT	19037	13	0
-// OP_LT	18999	18953	19038
-// OP_IFNOT	19038	5	0
-// OP_STORE_V	19039	18996	0
-// OP_ADD_F	18956	305	19042
-// OP_STORE_F	19042	18999	0
-// OP_GOTO	6	0	0
-// OP_GT	18999	18956	19043
-// OP_IFNOT	19043	4	0
-// OP_STORE_V	19044	18996	0
-// OP_SUB_F	18953	305	19047
-// OP_STORE_F	19047	18999	0
-// OP_STORE_F	214	18994	0
-// OP_IFNOT	18994	25	0
-// OP_LOAD_V	18949	113	19051
-// OP_STORE_V	19051	4	0
-// OP_CALL1	459	0	0
-// OP_STORE_V	1	19048	0
-// OP_MUL_V	18996	19048	19054
-// OP_LT	19054	539	19055
-// OP_IFNOT	19055	2	0
-// OP_RETURN	0	0	0
-// OP_STORE_ENT	28	19002	0
-// OP_STORE_ENT	18949	28	0
-// OP_STORE_F	213	18995	0
-// OP_STORE_V	28	4	0
-// OP_STORE_V	18999	7	0
-// OP_CALL2	453	0	0
-// OP_ADD_F	19001	217	19056
-// OP_STORE_F	19056	19001	0
-// OP_ADD_F	18995	214	19057
-// OP_STORE_F	19057	18995	0
-// OP_CALL0	481	0	0
-// OP_NOT_F	1	0	19058
-// OP_LT	18995	235	19059
-// OP_AND	19058	19059	19060
-// OP_IF	19060	-11	0
-// OP_STORE_ENT	19002	28	0
-// OP_DONE	0	0	0
-void (entity globaldef006627, entity globaldef006628) func002343 = 
-{
-    local entity globaldef006629;
-    local entity globaldef006630;
-    local vector globaldef006631;
-    local vector globaldef006635;
-    local float globaldef006639;
-    local float globaldef006640;
-    local float globaldef006641;
-    local float globaldef006642;
-    local float globaldef006643;
-    local vector globaldef006644;
-    local vector globaldef006648;
-    local entity globaldef006652;
-    local vector globaldef006653;
-    local vector globaldef006654;
-    local vector globaldef006655;
-    globaldef006630 = globaldef006629 = globaldef006628.owner;
-    if(globaldef006630)
-    {
-        globaldef006631 = globaldef006630.absmin;
-        globaldef006635 = globaldef006630.absmax;
-    }
-    else
-    {
-        globaldef006635 = VEC_ORIGIN;
-        globaldef006631 = VEC_ORIGIN;
-    }
-    
-    if(globaldef006631 != globaldef006635)
-    {
-        
-        if(globaldef006630.state != STATE_BOTTOM)
-        {
-            return;
-        }
-        
+        globaldef007315 = globaldef007311;
+        globaldef007343 = FALSE;
         do
         {
+            globaldef007339 = TRUE;
+            globaldef007331 = globaldef007307 + globaldef007267;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
             
-            if(globaldef006629.absmin_x < globaldef006631_x)
+            if(trace_fraction < globaldef007339)
             {
-                globaldef006631_x = globaldef006629.absmin_x;
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = FALSE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007271;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = FALSE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007275;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = FALSE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007279;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = FALSE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007251;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = TRUE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007255;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = TRUE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007259;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = TRUE;
+            }
+            
+            globaldef007331 = globaldef007307 + globaldef007263;
+            traceline(globaldef007331, globaldef007331 + globaldef007315, TRUE, globaldef007245);
+            
+            if(trace_fraction < globaldef007339)
+            {
+                globaldef007339 = trace_fraction;
+                globaldef007323 = trace_plane_normal;
+                globaldef007344 = TRUE;
             }
             
             
-            if(globaldef006629.absmax_x > globaldef006635_x)
+            if(globaldef007339 >= TRUE)
             {
-                globaldef006635_x = globaldef006629.absmax_x;
-            }
-            
-            
-            if(globaldef006629.absmin_y < globaldef006631_y)
-            {
-                globaldef006631_y = globaldef006629.absmin_y;
-            }
-            
-            
-            if(globaldef006629.absmax_y > globaldef006635_y)
-            {
-                globaldef006635_y = globaldef006629.absmax_y;
-            }
-            
-            
-            if(globaldef006629.absmin_z < globaldef006631_z)
-            {
-                globaldef006631_z = globaldef006629.absmin_z;
-            }
-            
-            
-            if(globaldef006629.absmax_z > globaldef006635_z)
-            {
-                globaldef006635_z = globaldef006629.absmax_z;
-            }
-            
-            globaldef006629 = globaldef006629.enemy;
-        } while ((globaldef006629 != globaldef006630) && (globaldef006629 != world));
-    }
-    else
-    {
-        return;
-    }
-    
-    globaldef006641 = FALSE;
-    globaldef006640 = FALSE;
-    globaldef006639 = FALSE;
-    globaldef006642 = FALSE;
-    globaldef006648 = globaldef006627.origin;
-    
-    if(((globaldef006631_x + FALSE) < globaldef006627.absmin_x) && (globaldef006627.absmax_x < (globaldef006635_x - FALSE)))
-    {
-        globaldef006639 = TRUE;
-    }
-    
-    
-    if(((globaldef006631_y + FALSE) < globaldef006627.absmin_y) && (globaldef006627.absmax_y < (globaldef006635_y - FALSE)))
-    {
-        globaldef006640 = TRUE;
-    }
-    
-    
-    if(((globaldef006631_z + FALSE) < globaldef006627.absmin_z) && (globaldef006627.absmax_z < (globaldef006635_z - FALSE)))
-    {
-        globaldef006641 = TRUE;
-    }
-    
-    if(globaldef006639 && globaldef006640)
-    {
-        if(globaldef006648_z < globaldef006631_z)
-        {
-            globaldef006644 = '0 0 1';
-            globaldef006648_z = globaldef006635_z + SVC_SIGNONNUM;
-        }
-        else
-        {
-            
-            if(globaldef006648_z > globaldef006635_z)
-            {
-                globaldef006644 = '0 0 -1';
-                globaldef006648_z = globaldef006631_z - SVC_SIGNONNUM;
-            }
-            
-        }
-        
-        globaldef006642 = TRUE;
-    }
-    else
-    {
-        if(globaldef006639 && globaldef006641)
-        {
-            if(globaldef006648_y < globaldef006631_y)
-            {
-                globaldef006644 = '0 1 0';
-                globaldef006648_y = globaldef006635_y + SVC_SIGNONNUM;
-            }
-            else
-            {
-                
-                if(globaldef006648_y > globaldef006635_y)
+                if(globaldef007315_x > FALSE)
                 {
-                    globaldef006644 = '0 -1 0';
-                    globaldef006648_y = globaldef006631_y - SVC_SIGNONNUM;
+                    globaldef007331 = (globaldef007307 + globaldef007315) + globaldef007283;
+                }
+                else
+                {
+                    globaldef007331 = (globaldef007307 + globaldef007315) + globaldef007287;
+                }
+                
+                traceline(globaldef007331 + globaldef007299, globaldef007331 + globaldef007303, TRUE, globaldef007245);
+                
+                if(trace_fraction < TRUE)
+                {
+                    return FALSE;
+                }
+                
+                if(globaldef007315_y > FALSE)
+                {
+                    globaldef007331 = (globaldef007307 + globaldef007315) + globaldef007291;
+                }
+                else
+                {
+                    globaldef007331 = (globaldef007307 + globaldef007315) + globaldef007295;
+                }
+                
+                traceline(globaldef007331 + globaldef007299, globaldef007331 + globaldef007303, TRUE, globaldef007245);
+                
+                if(trace_fraction < TRUE)
+                {
+                    return FALSE;
                 }
                 
             }
             
-            globaldef006642 = TRUE;
-        }
-        else
-        {
-            
-            if(globaldef006640 && globaldef006641)
+            if(globaldef007339 < TRUE)
             {
-                if(globaldef006648_x < globaldef006631_x)
+                globaldef007307 = (globaldef007307 + (globaldef007315 * globaldef007339)) + globaldef007323;
+                globaldef007315 = globaldef007315 - (globaldef007323 * (globaldef007315 * globaldef007323));
+                globaldef007319 = globaldef007311;
+                globaldef007311 = globaldef007311 - (globaldef007323 * (globaldef007311 * globaldef007323));
+                if((globaldef007319_z < FALSE) && (globaldef007311_z >= FALSE))
                 {
-                    globaldef006644 = globaldef006653;
-                    globaldef006648_x = globaldef006635_x + SVC_SIGNONNUM;
+                    if(globaldef007344 == FALSE)
+                    {
+                        
+                        if((globaldef007323 * '0 0 1') > 0.8)
+                        {
+                            
+                            if(globaldef007319_z < -650)
+                            {
+                                return FALSE;
+                            }
+                            
+                            globaldef007340 = globaldef007340 + FL_SWIM;
+                        }
+                        
+                    }
+                    else
+                    {
+                        return FALSE;
+                    }
+                    
                 }
                 else
                 {
                     
-                    if(globaldef006648_x > globaldef006635_x)
+                    if(globaldef007344 == FALSE)
                     {
-                        globaldef006644 = globaldef006654;
-                        globaldef006648_x = globaldef006631_x - SVC_SIGNONNUM;
+                        
+                        if((globaldef007323 * '0 0 -1') > 0.8)
+                        {
+                            return FALSE;
+                        }
+                        
                     }
                     
                 }
                 
-                globaldef006642 = TRUE;
+            }
+            else
+            {
+                globaldef007307 = globaldef007307 + globaldef007315;
+            }
+            
+            globaldef007343 = globaldef007343 + TRUE;
+            
+            if(globaldef007343 > 20)
+            {
+                return FALSE;
+            }
+            
+        } while (globaldef007339 < TRUE);
+        
+        if(globaldef007340 > FALSE)
+        {
+            globaldef007340 = globaldef007340 - TRUE;
+        }
+        
+        
+        if(globaldef007311_z <= FALSE)
+        {
+            globaldef007327 = globaldef007307;
+            globaldef007327_z = (globaldef007307_z + globaldef007245.mins_z) + FL_SWIM;
+            globaldef007341 = pointcontents(globaldef007327);
+            
+            if((globaldef007341 == CONTENT_LAVA) || (globaldef007341 == CONTENT_SLIME))
+            {
+                globaldef007132 = globaldef007307;
+                globaldef007136 = globaldef007246;
+                globaldef007140 = globaldef007341;
+                globaldef007141 = globaldef007342 * 0.1;
+                return FALSE;
+            }
+            
+            
+            if(globaldef007341 == CONTENT_WATER)
+            {
+                globaldef007132 = globaldef007307;
+                globaldef007136 = globaldef007246;
+                globaldef007140 = globaldef007341;
+                globaldef007141 = globaldef007342 * 0.1;
+                
+                if((vlen(globaldef007307 - globaldef007245.origin)) > GLOBALDEFSEVENFOUREIGHT)
+                {
+                    return TRUE;
+                }
+                
+                return FALSE;
+            }
+            
+        }
+        
+        
+        if(globaldef007340 >= FL_SWIM)
+        {
+            globaldef007132 = globaldef007307;
+            globaldef007136 = globaldef007246;
+            globaldef007140 = CONTENT_EMPTY;
+            globaldef007141 = globaldef007342 * 0.1;
+            return TRUE;
+        }
+        
+        globaldef007342 = globaldef007342 + TRUE;
+    } while (globaldef007342 < globaldef007250);
+    globaldef007132 = globaldef007307;
+    globaldef007136 = globaldef007246;
+    globaldef007140 = CONTENT_EMPTY;
+    globaldef007141 = globaldef007342 * 0.1;
+    return FALSE;
+};
+
+
+// func002434
+// function begins at statement 39395, parm_start=22047
+// OP_STORE_F	800	22055	0
+// OP_LOAD_V	22047	105	22066
+// OP_LOAD_V	22047	134	22069
+// OP_LOAD_V	22047	138	22072
+// OP_ADD_V	22069	22072	22075
+// OP_MUL_VF	22075	539	22078
+// OP_ADD_V	22066	22078	22081
+// OP_STORE_V	22081	22060	0
+// OP_LOAD_F	22047	97	22084
+// OP_STORE_F	22084	22062	0
+// OP_LOAD_ENT	22047	194	22085
+// OP_LOAD_V	22085	105	22086
+// OP_LOAD_ENT	22047	194	22089
+// OP_LOAD_V	22089	134	22090
+// OP_LOAD_ENT	22047	194	22093
+// OP_LOAD_V	22093	138	22094
+// OP_ADD_V	22090	22094	22097
+// OP_MUL_VF	22097	539	22100
+// OP_ADD_V	22086	22100	22103
+// OP_STORE_V	22103	22063	0
+// OP_LOAD_ENT	22047	194	22106
+// OP_LOAD_F	22106	97	22107
+// OP_STORE_F	22107	22065	0
+// OP_MUL_F	539	799	22108
+// OP_DIV_F	22048	799	22109
+// OP_MUL_F	22108	22109	22110
+// OP_DIV_F	22048	799	22111
+// OP_MUL_F	22110	22111	22112
+// OP_STORE_F	22112	22056	0
+// OP_ADD_F	22062	22056	22113
+// OP_STORE_F	22113	22049	0
+// OP_SUB_F	22049	22065	22114
+// OP_STORE_F	22114	22050	0
+// OP_LT	22050	213	22115
+// OP_IFNOT	22115	2	0
+// OP_RETURN	22055	0	0
+// OP_STORE_F	213	22053	0
+// OP_STORE_F	213	22051	0
+// OP_MUL_F	22050	1997	22116
+// OP_STORE_F	22116	22050	0
+// OP_STORE_F	213	22052	0
+// OP_ADD_F	22051	22053	22117
+// OP_STORE_F	22117	22051	0
+// OP_MUL_F	799	5500	22118
+// OP_ADD_F	22053	22118	22119
+// OP_STORE_F	22119	22053	0
+// OP_ADD_F	22052	214	22120
+// OP_STORE_F	22120	22052	0
+// OP_LT	22051	22050	22121
+// OP_IF	22121	-8	0
+// OP_SUB_V	22063	22060	22122
+// OP_STORE_V	22122	22057	0
+// OP_STORE_F	213	22059	0
+// OP_STORE_V	22057	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_F	1	1997	22125
+// OP_MUL_F	1997	22048	22126
+// OP_DIV_F	22126	799	22127
+// OP_ADD_F	22052	22127	22128
+// OP_DIV_F	22125	22128	22129
+// OP_STORE_F	22129	22054	0
+// OP_GT	22054	22055	22130
+// OP_IFNOT	22130	2	0
+// OP_STORE_F	22055	22054	0
+// OP_RETURN	22054	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007351, float globaldef007352) func002434 = 
+{
+    local float globaldef007353;
+    local float globaldef007354;
+    local float globaldef007355;
+    local float globaldef007356;
+    local float globaldef007357;
+    local float globaldef007358;
+    local float globaldef007359;
+    local float globaldef007360;
+    local vector globaldef007361;
+    local vector globaldef007365;
+    local vector globaldef007369;
+    globaldef007359 = globaldef000783;
+    globaldef007365 = globaldef007351.origin + ((globaldef007351.mins + globaldef007351.maxs) * RA_PLAYERSTATTIME);
+    globaldef007365_z = globaldef007351.absmin_z;
+    globaldef007369 = globaldef007351.goalentity.origin + ((globaldef007351.goalentity.mins + globaldef007351.goalentity.maxs) * RA_PLAYERSTATTIME);
+    globaldef007369_z = globaldef007351.goalentity.absmin_z;
+    globaldef007360 = ((RA_PLAYERSTATTIME * globaldef000782) * (globaldef007352 / globaldef000782)) * (globaldef007352 / globaldef000782);
+    globaldef007353 = globaldef007365_z + globaldef007360;
+    globaldef007354 = globaldef007353 - globaldef007369_z;
+    
+    if(globaldef007354 < FALSE)
+    {
+        return globaldef007359;
+    }
+    
+    globaldef007357 = FALSE;
+    globaldef007355 = FALSE;
+    globaldef007354 = globaldef007354 * 100;
+    globaldef007356 = FALSE;
+    do
+    {
+        globaldef007355 = globaldef007355 + globaldef007357;
+        globaldef007357 = globaldef007357 + (globaldef000782 * 0.01);
+        globaldef007356 = globaldef007356 + TRUE;
+    } while (globaldef007355 < globaldef007354);
+    globaldef007361 = globaldef007369 - globaldef007365;
+    globaldef007361_z = FALSE;
+    globaldef007358 = (vlen(globaldef007361) * 100) / (globaldef007356 + ((100 * globaldef007352) / globaldef000782));
+    
+    if(globaldef007358 > globaldef007359)
+    {
+        globaldef007358 = globaldef007359;
+    }
+    
+    return globaldef007358;
+};
+
+
+// func002435
+// function begins at statement 39461, parm_start=22132
+// OP_ADDRESS	22132	176	22136
+// OP_STOREP_F	2805	22136	0
+// OP_ADDRESS	22132	154	22137
+// OP_STOREP_F	259	22137	0
+// OP_STORE_V	22132	4	0
+// OP_CALL1	20312	0	0
+// OP_STORE_V	22132	4	0
+// OP_STORE_V	22133	7	0
+// OP_CALL2	21671	0	0
+// OP_DONE	0	0	0
+void (entity globaldef007374, vector globaldef007375) func002435 = 
+{
+    globaldef007374.v_angle_x = 80;
+    globaldef007374.weapon = IT_ROCKET_LAUNCHER;
+    func002390(globaldef007374);
+    func002431(globaldef007374, globaldef007375);
+};
+
+
+// func002436
+// function begins at statement 39471, parm_start=22139
+// OP_EQ_V	22143	286	22151
+// OP_IFNOT	22151	6	0
+// OP_STORE_V	22139	4	0
+// OP_STORE_V	734	7	0
+// OP_CALL2	22046	0	0
+// OP_STORE_F	1	22147	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	22146	22147	0
+// OP_STORE_F	213	22142	0
+// OP_STORE_V	22140	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	22140	0
+// OP_MUL_F	22140	22147	22152
+// OP_STORE_F	22152	22148	0
+// OP_MUL_F	22141	22147	22153
+// OP_STORE_F	22153	22149	0
+// OP_ADD_F	734	2323	22154
+// OP_STORE_F	22154	22150	0
+// OP_STORE_V	22139	4	0
+// OP_STORE_V	22148	7	0
+// OP_STORE_V	1470	10	0
+// OP_CALL3	21744	0	0
+// OP_IFNOT	1	13	0
+// OP_EQ_V	22143	286	22155
+// OP_IFNOT	22155	7	0
+// OP_LOAD_ENT	22139	194	22156
+// OP_LOAD_F	22156	108	22157
+// OP_SUB_F	22157	793	22158
+// OP_LT	21325	22158	22159
+// OP_IFNOT	22159	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	22139	4	0
+// OP_STORE_V	22148	7	0
+// OP_CALL2	21671	0	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007380, vector globaldef007381, vector globaldef007385, float globaldef007389) func002436 = 
+{
+    local float globaldef007390;
+    local vector globaldef007391;
+    if(globaldef007385 == VEC_ORIGIN)
+    {
+        globaldef007390 = func002434(globaldef007380, globaldef000717);
+    }
+    else
+    {
+        globaldef007390 = globaldef007389;
+    }
+    
+    globaldef007381_z = FALSE;
+    globaldef007381 = normalize(globaldef007381);
+    globaldef007391_x = globaldef007381_x * globaldef007390;
+    globaldef007391_y = globaldef007381_y * globaldef007390;
+    globaldef007391_z = globaldef000717 + 20;
+    
+    if(func002433(globaldef007380, globaldef007391, 50))
+    {
+        
+        if(globaldef007385 == VEC_ORIGIN)
+        {
+            
+            if(globaldef007132_z < (globaldef007380.goalentity.origin_z - globaldef000776))
+            {
+                return FALSE;
+            }
+            
+        }
+        
+        func002431(globaldef007380, globaldef007391);
+        return TRUE;
+    }
+    
+    return FALSE;
+};
+
+
+// func002437
+// function begins at statement 39508, parm_start=22161
+// OP_LOAD_F	22161	186	22173
+// OP_GT	22173	31	22174
+// OP_IFNOT	22174	2	0
+// OP_RETURN	728	0	0
+// OP_LOAD_F	22161	575	22175
+// OP_BITAND	22175	700	22176
+// OP_NOT_F	22176	0	22177
+// OP_IFNOT	22177	2	0
+// OP_RETURN	728	0	0
+// OP_ADDRESS	22161	113	22178
+// OP_STOREP_V	286	22178	0
+// OP_EQ_V	22162	286	22181
+// OP_IFNOT	22181	11	0
+// OP_STORE_V	22161	4	0
+// OP_STORE_V	734	7	0
+// OP_CALL2	22046	0	0
+// OP_STORE_F	1	22166	0
+// OP_LOAD_ENT	22161	194	22182
+// OP_LOAD_V	22182	105	22183
+// OP_LOAD_V	22161	105	22186
+// OP_SUB_V	22183	22186	22189
+// OP_STORE_V	22189	22167	0
+// OP_GOTO	3	0	0
+// OP_STORE_F	22165	22166	0
+// OP_STORE_V	22162	22167	0
+// OP_STORE_F	213	22169	0
+// OP_STORE_V	22167	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	22167	0
+// OP_MUL_F	22167	22166	22192
+// OP_STORE_F	22192	22170	0
+// OP_MUL_F	22168	22166	22193
+// OP_STORE_F	22193	22171	0
+// OP_ADD_F	734	2323	22194
+// OP_STORE_F	22194	22172	0
+// OP_STORE_V	22161	4	0
+// OP_STORE_V	22170	7	0
+// OP_STORE_V	1470	10	0
+// OP_CALL3	21744	0	0
+// OP_IFNOT	1	11	0
+// OP_LOAD_ENT	22161	194	22195
+// OP_LOAD_F	22195	108	22196
+// OP_SUB_F	22196	793	22197
+// OP_LT	21325	22197	22198
+// OP_IFNOT	22198	2	0
+// OP_RETURN	733	0	0
+// OP_STORE_V	22161	4	0
+// OP_STORE_V	22170	7	0
+// OP_CALL2	21671	0	0
+// OP_RETURN	728	0	0
+// OP_RETURN	733	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007396, vector globaldef007397, float globaldef007401) func002437 = 
+{
+    local float globaldef007402;
+    local vector globaldef007403;
+    local vector globaldef007407;
+    
+    if(globaldef007396.teleport_time > time)
+    {
+        return globaldef000711;
+    }
+    
+    
+    if(!(globaldef007396.field000252 & globaldef000683))
+    {
+        return globaldef000711;
+    }
+    
+    globaldef007396.velocity = VEC_ORIGIN;
+    if(globaldef007397 == VEC_ORIGIN)
+    {
+        globaldef007402 = func002434(globaldef007396, globaldef000717);
+        globaldef007403 = globaldef007396.goalentity.origin - globaldef007396.origin;
+    }
+    else
+    {
+        globaldef007402 = globaldef007401;
+        globaldef007403 = globaldef007397;
+    }
+    
+    globaldef007403_z = FALSE;
+    globaldef007403 = normalize(globaldef007403);
+    globaldef007407_x = globaldef007403_x * globaldef007402;
+    globaldef007407_y = globaldef007403_y * globaldef007402;
+    globaldef007407_z = globaldef000717 + 20;
+    
+    if(func002433(globaldef007396, globaldef007407, 50))
+    {
+        
+        if(globaldef007132_z < (globaldef007396.goalentity.origin_z - globaldef000776))
+        {
+            return globaldef000716;
+        }
+        
+        func002431(globaldef007396, globaldef007407);
+        return globaldef000711;
+    }
+    
+    return globaldef000716;
+};
+
+
+// func002438
+// function begins at statement 39560, parm_start=22200
+// OP_LOAD_F	22200	378	22234
+// OP_GT	22234	31	22235
+// OP_IFNOT	22235	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	162	22236
+// OP_BITAND	22236	259	22237
+// OP_NOT_F	22237	0	22238
+// OP_IFNOT	22238	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	160	22239
+// OP_LE	22239	213	22240
+// OP_IFNOT	22240	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	162	22241
+// OP_BITAND	22241	275	22242
+// OP_IFNOT	22242	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	188	22243
+// OP_LOAD_F	22200	187	22244
+// OP_MUL_F	22243	22244	22245
+// OP_LOAD_F	22200	152	22246
+// OP_ADD_F	22245	22246	22247
+// OP_LT	22247	1997	22248
+// OP_IFNOT	22248	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	152	22249
+// OP_LT	22249	746	22250
+// OP_IFNOT	22250	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22200	189	22251
+// OP_GT	22251	214	22252
+// OP_IFNOT	22252	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_ENT	22200	194	22253
+// OP_LOAD_V	22253	105	22254
+// OP_LOAD_V	22200	105	22257
+// OP_SUB_V	22254	22257	22260
+// OP_STORE_V	22260	22222	0
+// OP_STORE_F	213	22224	0
+// OP_STORE_V	22222	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	22222	0
+// OP_LOAD_V	22200	175	22263
+// OP_STORE_V	22263	22213	0
+// OP_STORE_F	2805	22213	0
+// OP_STORE_V	22213	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_V	22200	105	22266
+// OP_MUL_VF	59	217	22269
+// OP_ADD_V	22266	22269	22272
+// OP_ADD_V	22272	5392	22275
+// OP_STORE_V	22275	22204	0
+// OP_MUL_VF	59	745	22278
+// OP_ADD_V	22204	22278	22281
+// OP_STORE_V	22281	22207	0
+// OP_STORE_V	22204	4	0
+// OP_STORE_V	22207	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	22200	13	0
+// OP_CALL4	466	0	0
+// OP_LOAD_V	22200	105	22284
+// OP_STORE_V	22284	22216	0
+// OP_LOAD_V	22200	134	22287
+// OP_LOAD_V	22200	138	22290
+// OP_ADD_V	22287	22290	22293
+// OP_MUL_VF	22293	539	22296
+// OP_ADD_V	22216	22296	22299
+// OP_STORE_V	22299	22201	0
+// OP_SUB_V	71	22201	22302
+// OP_STORE_V	22302	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_F	539	1	22305
+// OP_STORE_F	22305	22228	0
+// OP_LT	22228	213	22306
+// OP_IFNOT	22306	2	0
+// OP_STORE_F	213	22228	0
+// OP_SUB_F	3584	22228	22307
+// OP_STORE_F	22307	22229	0
+// OP_MUL_F	22229	539	22308
+// OP_STORE_F	22308	22229	0
+// OP_SUB_V	22216	71	22309
+// OP_STORE_V	22309	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	22229	22312
+// OP_MUL_VF	22312	217	22315
+// OP_STORE_V	22315	22210	0
+// OP_ADD_F	22212	734	22318
+// OP_STORE_F	22318	22227	0
+// OP_STORE_V	22200	4	0
+// OP_STORE_V	22227	7	0
+// OP_CALL2	22046	0	0
+// OP_STORE_F	1	22231	0
+// OP_STORE_F	213	22212	0
+// OP_MUL_FV	22231	22222	22319
+// OP_SUB_V	22319	22210	22322
+// OP_STORE_V	22322	22219	0
+// OP_STORE_V	22219	4	0
+// OP_CALL1	462	0	0
+// OP_GT	1	800	22325
+// OP_IFNOT	22325	5	0
+// OP_STORE_V	22219	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	800	22326
+// OP_STORE_V	22326	22219	0
+// OP_ADD_F	22219	22210	22329
+// OP_STORE_F	22329	22225	0
+// OP_ADD_F	22220	22211	22330
+// OP_STORE_F	22330	22226	0
+// OP_STORE_V	22200	4	0
+// OP_STORE_V	22225	7	0
+// OP_STORE_V	1470	10	0
+// OP_CALL3	21744	0	0
+// OP_IFNOT	1	19	0
+// OP_LOAD_ENT	22200	194	22331
+// OP_LOAD_F	22331	108	22332
+// OP_SUB_F	22332	793	22333
+// OP_LT	21325	22333	22334
+// OP_IFNOT	22334	2	0
+// OP_RETURN	733	0	0
+// OP_STORE_F	22219	22225	0
+// OP_STORE_F	22220	22226	0
+// OP_STORE_F	734	22227	0
+// OP_STORE_V	22200	4	0
+// OP_STORE_V	286	7	0
+// OP_CALL2	22131	0	0
+// OP_ADDRESS	22200	602	22335
+// OP_STOREP_V	22225	22335	0
+// OP_ADDRESS	22200	601	22338
+// OP_ADD_F	31	539	22339
+// OP_STOREP_F	22339	22338	0
+// OP_RETURN	728	0	0
+// OP_RETURN	733	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007412) func002438 = 
+{
+    local vector globaldef007413;
+    local vector globaldef007417;
+    local vector globaldef007421;
+    local vector globaldef007425;
+    local vector globaldef007429;
+    local vector globaldef007433;
+    local vector globaldef007437;
+    local vector globaldef007441;
+    local vector globaldef007445;
+    local float globaldef007449;
+    local float globaldef007450;
+    local float globaldef007451;
+    local float globaldef007452;
+    local float globaldef007453;
+    local entity globaldef007454;
+    
+    if(globaldef007412.attack_finished > time)
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(!(globaldef007412.items & IT_ROCKET_LAUNCHER))
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(globaldef007412.ammo_rockets <= FALSE)
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(globaldef007412.items & IT_QUAD)
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(((globaldef007412.armorvalue * globaldef007412.armortype) + globaldef007412.health) < 100)
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(globaldef007412.health < GLOBALDEFSEVENTWONINE)
+    {
+        return globaldef000716;
+    }
+    
+    
+    if(globaldef007412.waterlevel > TRUE)
+    {
+        return globaldef000716;
+    }
+    
+    globaldef007441 = globaldef007412.goalentity.origin - globaldef007412.origin;
+    globaldef007441_z = FALSE;
+    globaldef007441 = normalize(globaldef007441);
+    globaldef007429 = globaldef007412.v_angle;
+    globaldef007429_x = 80;
+    makevectors(globaldef007429);
+    globaldef007417 = (globaldef007412.origin + (v_forward * FL_CLIENT)) + '0 0 16';
+    globaldef007421 = globaldef007417 + (v_forward * GLOBALDEFSEVENTWOEIGHT);
+    traceline(globaldef007417, globaldef007421, FALSE, globaldef007412);
+    globaldef007433 = globaldef007412.origin;
+    globaldef007413 = globaldef007433 + ((globaldef007412.mins + globaldef007412.maxs) * RA_PLAYERSTATTIME);
+    globaldef007449 = RA_PLAYERSTATTIME * (vlen(trace_endpos - globaldef007413));
+    
+    if(globaldef007449 < FALSE)
+    {
+        globaldef007449 = FALSE;
+    }
+    
+    globaldef007450 = 120 - globaldef007449;
+    globaldef007450 = globaldef007450 * RA_PLAYERSTATTIME;
+    globaldef007425 = ((normalize(globaldef007433 - trace_endpos)) * globaldef007450) * FL_CLIENT;
+    globaldef007445_z = globaldef007425_z + globaldef000717;
+    globaldef007452 = func002434(globaldef007412, globaldef007445_z);
+    globaldef007425_z = FALSE;
+    globaldef007437 = (globaldef007452 * globaldef007441) - globaldef007425;
+    
+    if(vlen(globaldef007437) > globaldef000783)
+    {
+        globaldef007437 = normalize(globaldef007437) * globaldef000783;
+    }
+    
+    globaldef007445_x = globaldef007437_x + globaldef007425_x;
+    globaldef007445_y = globaldef007437_y + globaldef007425_y;
+    
+    if(func002433(globaldef007412, globaldef007445, 50))
+    {
+        
+        if(globaldef007132_z < (globaldef007412.goalentity.origin_z - globaldef000776))
+        {
+            return globaldef000716;
+        }
+        
+        globaldef007445_x = globaldef007437_x;
+        globaldef007445_y = globaldef007437_y;
+        globaldef007445_z = globaldef000717;
+        func002435(globaldef007412, VEC_ORIGIN);
+        globaldef007412.field000279 = globaldef007445;
+        globaldef007412.field000278 = time + RA_PLAYERSTATTIME;
+        return globaldef000711;
+    }
+    
+    return globaldef000716;
+};
+
+
+// func002439
+// function begins at statement 39693, parm_start=22341
+// OP_STORE_V	22342	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	22342	0
+// OP_STORE_F	213	22344	0
+// OP_LOAD_F	22341	139	22376
+// OP_SUB_F	22376	214	22377
+// OP_STORE_F	22377	22352	0
+// OP_LOAD_F	22341	140	22378
+// OP_SUB_F	22378	214	22379
+// OP_STORE_F	22379	22353	0
+// OP_STORE_F	213	22354	0
+// OP_LOAD_F	22341	139	22380
+// OP_SUB_F	22380	214	22381
+// OP_STORE_F	22381	22355	0
+// OP_LOAD_F	22341	136	22382
+// OP_ADD_F	22382	214	22383
+// OP_STORE_F	22383	22356	0
+// OP_STORE_F	213	22357	0
+// OP_LOAD_F	22341	135	22384
+// OP_ADD_F	22384	214	22385
+// OP_STORE_F	22385	22358	0
+// OP_LOAD_F	22341	136	22386
+// OP_ADD_F	22386	214	22387
+// OP_STORE_F	22387	22359	0
+// OP_STORE_F	213	22360	0
+// OP_LOAD_F	22341	135	22388
+// OP_ADD_F	22388	214	22389
+// OP_STORE_F	22389	22361	0
+// OP_LOAD_F	22341	140	22390
+// OP_SUB_F	22390	214	22391
+// OP_STORE_F	22391	22362	0
+// OP_STORE_F	213	22363	0
+// OP_NOT_F	22345	0	22392
+// OP_IFNOT	22392	88	0
+// OP_LOAD_V	22341	105	22393
+// OP_STORE_V	22393	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	738	22396
+// OP_STORE_F	22396	22372	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	738	22397
+// OP_SUB_F	22369	22397	22398
+// OP_STORE_F	22398	22350	0
+// OP_LOAD_V	22341	105	22399
+// OP_ADD_V	22399	22352	22402
+// OP_STORE_V	22402	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	738	22405
+// OP_STORE_F	22405	22372	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	738	22406
+// OP_SUB_F	22369	22406	22407
+// OP_STORE_F	22407	22349	0
+// OP_GT	22349	22350	22408
+// OP_IFNOT	22408	2	0
+// OP_STORE_F	22349	22350	0
+// OP_LOAD_V	22341	105	22409
+// OP_ADD_V	22409	22355	22412
+// OP_STORE_V	22412	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	738	22415
+// OP_STORE_F	22415	22372	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	738	22416
+// OP_SUB_F	22369	22416	22417
+// OP_STORE_F	22417	22349	0
+// OP_GT	22349	22350	22418
+// OP_IFNOT	22418	2	0
+// OP_STORE_F	22349	22350	0
+// OP_LOAD_V	22341	105	22419
+// OP_ADD_V	22419	22358	22422
+// OP_STORE_V	22422	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	738	22425
+// OP_STORE_F	22425	22372	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	738	22426
+// OP_SUB_F	22369	22426	22427
+// OP_STORE_F	22427	22349	0
+// OP_GT	22349	22350	22428
+// OP_IFNOT	22428	2	0
+// OP_STORE_F	22349	22350	0
+// OP_LOAD_V	22341	105	22429
+// OP_ADD_V	22429	22355	22432
+// OP_STORE_V	22432	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	738	22435
+// OP_STORE_F	22435	22372	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_MUL_F	70	738	22436
+// OP_SUB_F	22369	22436	22437
+// OP_STORE_F	22437	22349	0
+// OP_GT	22349	22350	22438
+// OP_IFNOT	22438	2	0
+// OP_STORE_F	22349	22350	0
+// OP_LOAD_V	22341	105	22439
+// OP_STORE_V	22439	22373	0
+// OP_LOAD_F	22341	141	22442
+// OP_ADD_F	22350	22442	22443
+// OP_STORE_F	22443	22375	0
+// OP_GOTO	5	0	0
+// OP_LOAD_V	22341	105	22444
+// OP_STORE_V	22444	22373	0
+// OP_LOAD_F	22341	101	22447
+// OP_STORE_F	22447	22375	0
+// OP_LOAD_F	22341	145	22448
+// OP_ADD_F	22448	219	22449
+// OP_DIV_F	22449	1663	22450
+// OP_STORE_F	22450	22347	0
+// OP_STORE_V	22373	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22451
+// OP_STORE_F	22451	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22452
+// OP_IFNOT	22452	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_ADD_V	71	2967	22453
+// OP_STORE_V	22453	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_LT	70	22347	22456
+// OP_NE_F	22351	280	22457
+// OP_AND	22456	22457	22458
+// OP_NE_F	22351	279	22459
+// OP_AND	22458	22459	22460
+// OP_IFNOT	22460	118	0
+// OP_ADD_F	70	22461	22462
+// OP_STORE_F	22462	22347	0
+// OP_MUL_VF	22342	765	22463
+// OP_ADD_V	22367	22463	22466
+// OP_STORE_V	22466	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22469
+// OP_STORE_F	22469	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22470
+// OP_IFNOT	22470	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_ADD_V	71	2967	22471
+// OP_STORE_V	22471	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_LT	70	22347	22474
+// OP_NE_F	22351	280	22475
+// OP_AND	22474	22475	22476
+// OP_NE_F	22351	279	22477
+// OP_AND	22476	22477	22478
+// OP_IFNOT	22478	89	0
+// OP_ADD_F	70	22461	22479
+// OP_STORE_F	22479	22347	0
+// OP_MUL_VF	22342	765	22480
+// OP_ADD_V	22367	22480	22483
+// OP_STORE_V	22483	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22486
+// OP_STORE_F	22486	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22487
+// OP_IFNOT	22487	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_ADD_V	71	2967	22488
+// OP_STORE_V	22488	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_LT	70	22347	22491
+// OP_NE_F	22351	280	22492
+// OP_AND	22491	22492	22493
+// OP_NE_F	22351	279	22494
+// OP_AND	22493	22494	22495
+// OP_IFNOT	22495	60	0
+// OP_ADD_F	70	22461	22496
+// OP_STORE_F	22496	22347	0
+// OP_MUL_VF	22342	765	22497
+// OP_ADD_V	22367	22497	22500
+// OP_STORE_V	22500	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22503
+// OP_STORE_F	22503	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22504
+// OP_IFNOT	22504	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_ADD_V	71	2967	22505
+// OP_STORE_V	22505	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_LT	70	22347	22508
+// OP_NE_F	22351	280	22509
+// OP_AND	22508	22509	22510
+// OP_NE_F	22351	279	22511
+// OP_AND	22510	22511	22512
+// OP_IFNOT	22512	31	0
+// OP_ADD_F	70	22461	22513
+// OP_STORE_F	22513	22347	0
+// OP_MUL_VF	22342	765	22514
+// OP_ADD_V	22367	22514	22517
+// OP_STORE_V	22517	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22520
+// OP_STORE_F	22520	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22521
+// OP_IFNOT	22521	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_ADD_V	71	2967	22522
+// OP_STORE_V	22522	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_LT	70	22347	22525
+// OP_NE_F	22351	280	22526
+// OP_AND	22525	22526	22527
+// OP_NE_F	22351	279	22528
+// OP_AND	22527	22528	22529
+// OP_IFNOT	22529	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	22341	145	22530
+// OP_SUB_F	22369	22530	22531
+// OP_SUB_F	22531	219	22532
+// OP_STORE_F	22532	22369	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	278	22533
+// OP_IFNOT	22533	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	22341	145	22534
+// OP_ADD_F	22534	219	22535
+// OP_DIV_F	22535	1663	22536
+// OP_STORE_F	22536	22347	0
+// OP_STORE_F	216	22346	0
+// OP_MUL_FV	22346	22342	22537
+// OP_ADD_V	22373	22537	22540
+// OP_STORE_V	22540	22364	0
+// OP_STORE_V	22364	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22543
+// OP_STORE_F	22543	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22544
+// OP_IFNOT	22544	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_STORE_F	70	22348	0
+// OP_ADD_V	71	2967	22545
+// OP_STORE_V	22545	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_GT	70	22347	22548
+// OP_LT	76	5599	22549
+// OP_OR	22548	22549	22550
+// OP_EQ_F	22351	280	22551
+// OP_OR	22550	22551	22552
+// OP_EQ_F	22351	279	22553
+// OP_OR	22552	22553	22554
+// OP_IFNOT	22554	139	0
+// OP_ADD_V	22364	22352	22555
+// OP_STORE_V	22555	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22558
+// OP_STORE_F	22558	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22559
+// OP_IFNOT	22559	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	22348	22560
+// OP_IFNOT	22560	2	0
+// OP_STORE_F	70	22348	0
+// OP_ADD_V	71	2967	22561
+// OP_STORE_V	22561	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_GT	70	22347	22564
+// OP_LT	76	5599	22565
+// OP_OR	22564	22565	22566
+// OP_EQ_F	22351	280	22567
+// OP_OR	22566	22567	22568
+// OP_EQ_F	22351	279	22569
+// OP_OR	22568	22569	22570
+// OP_IFNOT	22570	105	0
+// OP_ADD_V	22364	22355	22571
+// OP_STORE_V	22571	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22574
+// OP_STORE_F	22574	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22575
+// OP_IFNOT	22575	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	22348	22576
+// OP_IFNOT	22576	2	0
+// OP_STORE_F	70	22348	0
+// OP_ADD_V	71	2967	22577
+// OP_STORE_V	22577	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_GT	70	22347	22580
+// OP_LT	76	5599	22581
+// OP_OR	22580	22581	22582
+// OP_EQ_F	22351	280	22583
+// OP_OR	22582	22583	22584
+// OP_EQ_F	22351	279	22585
+// OP_OR	22584	22585	22586
+// OP_IFNOT	22586	71	0
+// OP_ADD_V	22364	22358	22587
+// OP_STORE_V	22587	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22590
+// OP_STORE_F	22590	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22591
+// OP_IFNOT	22591	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	22348	22592
+// OP_IFNOT	22592	2	0
+// OP_STORE_F	70	22348	0
+// OP_ADD_V	71	2967	22593
+// OP_STORE_V	22593	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_GT	70	22347	22596
+// OP_LT	76	5599	22597
+// OP_OR	22596	22597	22598
+// OP_EQ_F	22351	280	22599
+// OP_OR	22598	22599	22600
+// OP_EQ_F	22351	279	22601
+// OP_OR	22600	22601	22602
+// OP_IFNOT	22602	37	0
+// OP_ADD_V	22364	22361	22603
+// OP_STORE_V	22603	22367	0
+// OP_STORE_V	22367	22370	0
+// OP_SUB_F	22372	1663	22606
+// OP_STORE_F	22606	22372	0
+// OP_STORE_V	22367	4	0
+// OP_CALL1	487	0	0
+// OP_EQ_F	1	277	22607
+// OP_IFNOT	22607	3	0
+// OP_STORE_F	213	70	0
+// OP_GOTO	6	0	0
+// OP_STORE_V	22367	4	0
+// OP_STORE_V	22370	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	22341	13	0
+// OP_CALL4	466	0	0
+// OP_LT	70	22348	22608
+// OP_IFNOT	22608	2	0
+// OP_STORE_F	70	22348	0
+// OP_ADD_V	71	2967	22609
+// OP_STORE_V	22609	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22351	0
+// OP_GT	70	22347	22612
+// OP_LT	76	5599	22613
+// OP_OR	22612	22613	22614
+// OP_EQ_F	22351	280	22615
+// OP_OR	22614	22615	22616
+// OP_EQ_F	22351	279	22617
+// OP_OR	22616	22617	22618
+// OP_IFNOT	22618	3	0
+// OP_RETURN	214	0	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	22348	22461	22619
+// OP_STORE_F	22619	22347	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	22348	22461	22620
+// OP_STORE_F	22620	22347	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	22348	22461	22621
+// OP_STORE_F	22621	22347	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	22348	22461	22622
+// OP_STORE_F	22622	22347	0
+// OP_GOTO	3	0	0
+// OP_ADD_F	22348	22461	22623
+// OP_STORE_F	22623	22347	0
+// OP_ADD_F	22346	216	22624
+// OP_STORE_F	22624	22346	0
+// OP_LT	22346	8193	22625
+// OP_IF	22625	-174	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007456, vector globaldef007457, float globaldef007461) func002439 = 
+{
+    local float globaldef007462;
+    local float globaldef007463;
+    local float globaldef007464;
+    local float globaldef007465;
+    local float globaldef007466;
+    local float globaldef007467;
+    local vector globaldef007468;
+    local vector globaldef007472;
+    local vector globaldef007476;
+    local vector globaldef007480;
+    local vector globaldef007484;
+    local vector globaldef007488;
+    local vector globaldef007492;
+    local vector globaldef007496;
+    globaldef007457 = normalize(globaldef007457);
+    globaldef007457_z = FALSE;
+    globaldef007468_x = globaldef007456.maxs_x - TRUE;
+    globaldef007468_y = globaldef007456.maxs_y - TRUE;
+    globaldef007468_z = FALSE;
+    globaldef007472_x = globaldef007456.maxs_x - TRUE;
+    globaldef007472_y = globaldef007456.mins_y + TRUE;
+    globaldef007472_z = FALSE;
+    globaldef007476_x = globaldef007456.mins_x + TRUE;
+    globaldef007476_y = globaldef007456.mins_y + TRUE;
+    globaldef007476_z = FALSE;
+    globaldef007480_x = globaldef007456.mins_x + TRUE;
+    globaldef007480_y = globaldef007456.maxs_y - TRUE;
+    globaldef007480_z = FALSE;
+    if(!globaldef007461)
+    {
+        globaldef007488 = globaldef007456.origin;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        globaldef007466 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
+        globaldef007488 = globaldef007456.origin + globaldef007468;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
+        
+        if(globaldef007465 > globaldef007466)
+        {
+            globaldef007466 = globaldef007465;
+        }
+        
+        globaldef007488 = globaldef007456.origin + globaldef007472;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
+        
+        if(globaldef007465 > globaldef007466)
+        {
+            globaldef007466 = globaldef007465;
+        }
+        
+        globaldef007488 = globaldef007456.origin + globaldef007476;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
+        
+        if(globaldef007465 > globaldef007466)
+        {
+            globaldef007466 = globaldef007465;
+        }
+        
+        globaldef007488 = globaldef007456.origin + globaldef007472;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - GLOBALDEFSEVENTWOONE;
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        globaldef007465 = globaldef007488_z - (trace_fraction * GLOBALDEFSEVENTWOONE);
+        
+        if(globaldef007465 > globaldef007466)
+        {
+            globaldef007466 = globaldef007465;
+        }
+        
+        globaldef007496 = globaldef007456.origin;
+        globaldef007496_z = globaldef007466 + globaldef007456.maxs_z;
+    }
+    else
+    {
+        globaldef007496 = globaldef007456.origin;
+        globaldef007496_z = globaldef007456.absmax_z;
+    }
+    
+    globaldef007463 = (globaldef007456.size_z + FL_MONSTER) / 1000;
+    globaldef007488 = globaldef007496;
+    globaldef007492 = globaldef007488;
+    globaldef007492_z = globaldef007492_z - 1000;
+    if(pointcontents(globaldef007488) == CONTENT_SOLID)
+    {
+        trace_fraction = FALSE;
+    }
+    else
+    {
+        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+    }
+    
+    globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+    
+    if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
+    {
+        globaldef007463 = trace_fraction + 0.032;
+        globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - 1000;
+        if(pointcontents(globaldef007488) == CONTENT_SOLID)
+        {
+            trace_fraction = FALSE;
+        }
+        else
+        {
+            traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        }
+        
+        globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+        
+        if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
+        {
+            globaldef007463 = trace_fraction + 0.032;
+            globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
+            globaldef007492 = globaldef007488;
+            globaldef007492_z = globaldef007492_z - 1000;
+            if(pointcontents(globaldef007488) == CONTENT_SOLID)
+            {
+                trace_fraction = FALSE;
+            }
+            else
+            {
+                traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+            }
+            
+            globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+            
+            if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
+            {
+                globaldef007463 = trace_fraction + 0.032;
+                globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
+                globaldef007492 = globaldef007488;
+                globaldef007492_z = globaldef007492_z - 1000;
+                if(pointcontents(globaldef007488) == CONTENT_SOLID)
+                {
+                    trace_fraction = FALSE;
+                }
+                else
+                {
+                    traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+                }
+                
+                globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+                
+                if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
+                {
+                    globaldef007463 = trace_fraction + 0.032;
+                    globaldef007488 = globaldef007488 + (globaldef007457 * GLOBALDEFSEVENFOUREIGHT);
+                    globaldef007492 = globaldef007488;
+                    globaldef007492_z = globaldef007492_z - 1000;
+                    if(pointcontents(globaldef007488) == CONTENT_SOLID)
+                    {
+                        trace_fraction = FALSE;
+                    }
+                    else
+                    {
+                        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+                    }
+                    
+                    globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+                    
+                    if(((trace_fraction < globaldef007463) && (globaldef007467 != CONTENT_LAVA)) && (globaldef007467 != CONTENT_SLIME))
+                    {
+                        return FALSE;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    globaldef007488_z = (globaldef007488_z - globaldef007456.size_z) - FL_MONSTER;
+    
+    if(pointcontents(globaldef007488) == CONTENT_WATER)
+    {
+        return FALSE;
+    }
+    
+    globaldef007463 = (globaldef007456.size_z + FL_MONSTER) / 1000;
+    globaldef007462 = FL_SWIM;
+    do
+    {
+        globaldef007484 = globaldef007496 + (globaldef007462 * globaldef007457);
+        globaldef007488 = globaldef007484;
+        globaldef007492 = globaldef007488;
+        globaldef007492_z = globaldef007492_z - 1000;
+        if(pointcontents(globaldef007488) == CONTENT_SOLID)
+        {
+            trace_fraction = FALSE;
+        }
+        else
+        {
+            traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+        }
+        
+        globaldef007464 = trace_fraction;
+        globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+        if((((trace_fraction > globaldef007463) || (trace_plane_normal_z < 0.7)) || (globaldef007467 == CONTENT_LAVA)) || (globaldef007467 == CONTENT_SLIME))
+        {
+            globaldef007488 = globaldef007484 + globaldef007468;
+            globaldef007492 = globaldef007488;
+            globaldef007492_z = globaldef007492_z - 1000;
+            if(pointcontents(globaldef007488) == CONTENT_SOLID)
+            {
+                trace_fraction = FALSE;
+            }
+            else
+            {
+                traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+            }
+            
+            
+            if(trace_fraction < globaldef007464)
+            {
+                globaldef007464 = trace_fraction;
+            }
+            
+            globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+            if((((trace_fraction > globaldef007463) || (trace_plane_normal_z < 0.7)) || (globaldef007467 == CONTENT_LAVA)) || (globaldef007467 == CONTENT_SLIME))
+            {
+                globaldef007488 = globaldef007484 + globaldef007472;
+                globaldef007492 = globaldef007488;
+                globaldef007492_z = globaldef007492_z - 1000;
+                if(pointcontents(globaldef007488) == CONTENT_SOLID)
+                {
+                    trace_fraction = FALSE;
+                }
+                else
+                {
+                    traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+                }
+                
+                
+                if(trace_fraction < globaldef007464)
+                {
+                    globaldef007464 = trace_fraction;
+                }
+                
+                globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+                if((((trace_fraction > globaldef007463) || (trace_plane_normal_z < 0.7)) || (globaldef007467 == CONTENT_LAVA)) || (globaldef007467 == CONTENT_SLIME))
+                {
+                    globaldef007488 = globaldef007484 + globaldef007476;
+                    globaldef007492 = globaldef007488;
+                    globaldef007492_z = globaldef007492_z - 1000;
+                    if(pointcontents(globaldef007488) == CONTENT_SOLID)
+                    {
+                        trace_fraction = FALSE;
+                    }
+                    else
+                    {
+                        traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+                    }
+                    
+                    
+                    if(trace_fraction < globaldef007464)
+                    {
+                        globaldef007464 = trace_fraction;
+                    }
+                    
+                    globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+                    if((((trace_fraction > globaldef007463) || (trace_plane_normal_z < 0.7)) || (globaldef007467 == CONTENT_LAVA)) || (globaldef007467 == CONTENT_SLIME))
+                    {
+                        globaldef007488 = globaldef007484 + globaldef007480;
+                        globaldef007492 = globaldef007488;
+                        globaldef007492_z = globaldef007492_z - 1000;
+                        if(pointcontents(globaldef007488) == CONTENT_SOLID)
+                        {
+                            trace_fraction = FALSE;
+                        }
+                        else
+                        {
+                            traceline(globaldef007488, globaldef007492, TRUE, globaldef007456);
+                        }
+                        
+                        
+                        if(trace_fraction < globaldef007464)
+                        {
+                            globaldef007464 = trace_fraction;
+                        }
+                        
+                        globaldef007467 = pointcontents(trace_endpos + '0 0 1');
+                        if((((trace_fraction > globaldef007463) || (trace_plane_normal_z < 0.7)) || (globaldef007467 == CONTENT_LAVA)) || (globaldef007467 == CONTENT_SLIME))
+                        {
+                            return TRUE;
+                        }
+                        else
+                        {
+                            globaldef007463 = globaldef007464 + 0.032;
+                        }
+                        
+                    }
+                    else
+                    {
+                        globaldef007463 = globaldef007464 + 0.032;
+                    }
+                    
+                }
+                else
+                {
+                    globaldef007463 = globaldef007464 + 0.032;
+                }
+                
+            }
+            else
+            {
+                globaldef007463 = globaldef007464 + 0.032;
+            }
+            
+        }
+        else
+        {
+            globaldef007463 = globaldef007464 + 0.032;
+        }
+        
+        globaldef007462 = globaldef007462 + FL_SWIM;
+    } while (globaldef007462 < 68);
+    return FALSE;
+};
+
+
+// func002440
+// function begins at statement 40155, parm_start=22627
+// OP_LOAD_F	22627	601	22662
+// OP_GT	22662	31	22663
+// OP_IFNOT	22663	2	0
+// OP_RETURN	728	0	0
+// OP_LOAD_F	22627	182	22664
+// OP_BITAND	22664	223	22665
+// OP_NOT_F	22665	0	22666
+// OP_IFNOT	22666	16	0
+// OP_LOAD_F	22627	575	22667
+// OP_BITAND	22667	701	22668
+// OP_NOT_F	22668	0	22669
+// OP_IFNOT	22669	11	0
+// OP_STORE_V	22627	4	0
+// OP_LOAD_V	22627	113	22670
+// OP_STORE_V	22670	7	0
+// OP_STORE_V	213	10	0
+// OP_CALL3	22340	0	0
+// OP_IFNOT	1	5	0
+// OP_ADDRESS	22627	114	22673
+// OP_STOREP_F	213	22673	0
+// OP_ADDRESS	22627	115	22674
+// OP_STOREP_F	213	22674	0
+// OP_RETURN	728	0	0
+// OP_EQ_V	22628	286	22675
+// OP_IFNOT	22675	13	0
+// OP_LOAD_ENT	22627	194	22676
+// OP_LOAD_V	22676	105	22677
+// OP_STORE_V	22677	22644	0
+// OP_LOAD_F	22627	108	22680
+// OP_STORE_F	22680	22646	0
+// OP_LOAD_V	22627	105	22681
+// OP_SUB_V	22644	22681	22684
+// OP_STORE_V	22684	22641	0
+// OP_STORE_V	22641	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	22656	0
+// OP_GOTO	6	0	0
+// OP_LOAD_ENT	22627	194	22687
+// OP_LOAD_V	22687	105	22688
+// OP_STORE_V	22688	22644	0
+// OP_STORE_V	22628	22641	0
+// OP_STORE_F	22631	22656	0
+// OP_ADDRESS	22627	575	22691
+// OP_LOAD_F	22627	575	22692
+// OP_LOAD_F	22627	575	22693
+// OP_BITAND	22693	701	22694
+// OP_SUB_F	22692	22694	22695
+// OP_STOREP_F	22695	22691	0
+// OP_LOAD_F	22627	575	22696
+// OP_BITAND	22696	708	22697
+// OP_IFNOT	22697	10	0
+// OP_ADDRESS	22627	575	22698
+// OP_LOAD_F	22627	575	22699
+// OP_SUB_F	22699	708	22700
+// OP_STOREP_F	22700	22698	0
+// OP_EQ_V	22628	286	22701
+// OP_IFNOT	22701	4	0
+// OP_STORE_V	22627	4	0
+// OP_CALL1	22199	0	0
+// OP_RETURN	1	0	0
+// OP_EQ_V	22628	286	22702
+// OP_IFNOT	22702	52	0
+// OP_LOAD_ENT	22627	194	22703
+// OP_LOAD_ENT	22703	194	22704
+// OP_STORE_ENT	22704	22634	0
+// OP_LOAD_S	22634	129	22705
+// OP_EQ_S	22705	22706	22707
+// OP_IFNOT	22707	46	0
+// OP_LOAD_F	22627	106	22708
+// OP_LOAD_F	22634	106	22709
+// OP_LOAD_F	22634	139	22710
+// OP_ADD_F	22709	22710	22711
+// OP_LT	22708	22711	22712
+// OP_IFNOT	22712	40	0
+// OP_LOAD_F	22627	106	22713
+// OP_LOAD_F	22634	106	22714
+// OP_LOAD_F	22634	135	22715
+// OP_ADD_F	22714	22715	22716
+// OP_GT	22713	22716	22717
+// OP_IFNOT	22717	34	0
+// OP_LOAD_F	22627	107	22718
+// OP_LOAD_F	22634	107	22719
+// OP_LOAD_F	22634	140	22720
+// OP_ADD_F	22719	22720	22721
+// OP_LT	22718	22721	22722
+// OP_IFNOT	22722	28	0
+// OP_LOAD_F	22627	107	22723
+// OP_LOAD_F	22634	107	22724
+// OP_LOAD_F	22634	136	22725
+// OP_ADD_F	22724	22725	22726
+// OP_GT	22723	22726	22727
+// OP_IFNOT	22727	22	0
+// OP_LOAD_V	22634	98	22728
+// OP_LOAD_V	22634	94	22731
+// OP_ADD_V	22728	22731	22734
+// OP_MUL_VF	22734	539	22737
+// OP_STORE_V	22737	22650	0
+// OP_LOAD_F	22627	108	22740
+// OP_GT	22652	22740	22741
+// OP_IFNOT	22741	14	0
+// OP_LOAD_V	22627	105	22742
+// OP_SUB_V	22650	22742	22745
+// OP_STORE_V	22745	22641	0
+// OP_STORE_F	213	22643	0
+// OP_STORE_V	22641	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_FV	800	1	22748
+// OP_STORE_V	22748	22641	0
+// OP_STORE_F	734	22643	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22641	7	0
+// OP_CALL2	21671	0	0
+// OP_RETURN	728	0	0
+// OP_STORE_V	22627	4	0
+// OP_CALL1	1115	0	0
+// OP_STORE_ENT	1	22634	0
+// OP_IFNOT	22634	22	0
+// OP_GT	22656	219	22751
+// OP_IFNOT	22751	2	0
+// OP_STORE_F	219	22656	0
+// OP_STORE_F	213	22643	0
+// OP_ADDRESS	22627	113	22752
+// OP_LOAD_V	22634	113	22755
+// OP_STORE_V	22641	4	0
+// OP_CALL1	459	0	0
+// OP_MUL_VF	1	22656	22758
+// OP_MUL_VF	22758	230	22761
+// OP_ADD_V	22755	22761	22764
+// OP_STOREP_V	22764	22752	0
+// OP_LOAD_ENT	22627	194	22767
+// OP_LOAD_ENT	22767	194	22768
+// OP_NE_E	22768	22634	22769
+// OP_IFNOT	22769	5	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22628	7	0
+// OP_STORE_V	22631	10	0
+// OP_CALL3	22160	0	0
+// OP_RETURN	728	0	0
+// OP_EQ_V	22628	286	22770
+// OP_IFNOT	22770	14	0
+// OP_LOAD_F	22627	99	22771
+// OP_LT	22644	22771	22772
+// OP_IFNOT	22772	11	0
+// OP_LOAD_F	22627	95	22773
+// OP_GT	22644	22773	22774
+// OP_IFNOT	22774	8	0
+// OP_LOAD_F	22627	100	22775
+// OP_LT	22645	22775	22776
+// OP_IFNOT	22776	5	0
+// OP_LOAD_F	22627	96	22777
+// OP_GT	22645	22777	22778
+// OP_IFNOT	22778	2	0
+// OP_RETURN	733	0	0
+// OP_LOAD_F	22627	189	22779
+// OP_LE	22779	216	22780
+// OP_IFNOT	22780	21	0
+// OP_LOAD_V	22627	105	22781
+// OP_STORE_V	22781	22638	0
+// OP_LOAD_F	22627	137	22784
+// OP_ADD_F	22640	22784	22785
+// OP_ADD_F	22785	216	22786
+// OP_STORE_F	22786	22640	0
+// OP_STORE_V	22638	4	0
+// OP_CALL1	487	0	0
+// OP_STORE_F	1	22657	0
+// OP_EQ_F	22657	280	22787
+// OP_EQ_F	22657	279	22788
+// OP_OR	22787	22788	22789
+// OP_IFNOT	22789	8	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22628	7	0
+// OP_STORE_V	22631	10	0
+// OP_CALL3	22160	0	0
+// OP_NE_F	1	733	22790
+// OP_IFNOT	22790	2	0
+// OP_RETURN	728	0	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22628	7	0
+// OP_CALL2	21682	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	728	0	0
+// OP_ADDRESS	22627	113	22791
+// OP_STOREP_V	286	22791	0
+// OP_STORE_V	22641	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	22647	0
+// OP_STORE_V	22647	4	0
+// OP_CALL1	452	0	0
+// OP_MUL_F	22656	6009	22810
+// OP_STORE_F	22810	22808	0
+// OP_STORE_F	218	22809	0
+// OP_LOAD_V	22627	105	22811
+// OP_MUL_VF	65	22809	22814
+// OP_SUB_V	22811	22814	22817
+// OP_STORE_V	22817	22794	0
+// OP_MUL_VF	59	736	22820
+// OP_ADD_V	22794	22820	22823
+// OP_STORE_V	22823	22800	0
+// OP_LOAD_V	22627	105	22826
+// OP_MUL_VF	65	22809	22829
+// OP_ADD_V	22826	22829	22832
+// OP_STORE_V	22832	22797	0
+// OP_MUL_VF	59	736	22835
+// OP_ADD_V	22797	22835	22838
+// OP_STORE_V	22838	22803	0
+// OP_STORE_V	22794	4	0
+// OP_STORE_V	22800	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	22627	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	22841
+// OP_IFNOT	22841	3	0
+// OP_STORE_F	214	22806	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	213	22806	0
+// OP_STORE_V	22797	4	0
+// OP_STORE_V	22803	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	22627	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	22842
+// OP_IFNOT	22842	3	0
+// OP_STORE_F	214	22807	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	213	22807	0
+// OP_NOT_F	22807	0	22843
+// OP_AND	22806	22843	22844
+// OP_IFNOT	22844	6	0
+// OP_MUL_VF	65	22808	22845
+// OP_ADD_V	22641	22845	22848
+// OP_STORE_V	22848	22641	0
+// OP_STORE_F	729	22660	0
+// OP_GOTO	8	0	0
+// OP_NOT_F	22806	0	22851
+// OP_AND	22807	22851	22852
+// OP_IFNOT	22852	5	0
+// OP_MUL_VF	65	22808	22853
+// OP_SUB_V	22641	22853	22856
+// OP_STORE_V	22856	22641	0
+// OP_STORE_F	730	22660	0
+// OP_ADD_F	22809	218	22859
+// OP_STORE_F	22859	22809	0
+// OP_AND	22806	22807	22860
+// OP_LE	22809	220	22861
+// OP_AND	22860	22861	22862
+// OP_IF	22862	-54	0
+// OP_AND	22806	22807	22863
+// OP_IFNOT	22863	2	0
+// OP_RETURN	733	0	0
+// OP_IFNOT	22632	10	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22641	7	0
+// OP_STORE_V	22628	10	0
+// OP_STORE_V	22631	13	0
+// OP_CALL4	22138	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	728	0	0
+// OP_RETURN	733	0	0
+// OP_GOTO	14	0	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22641	7	0
+// OP_STORE_V	214	10	0
+// OP_CALL3	22340	0	0
+// OP_IFNOT	1	9	0
+// OP_STORE_V	22627	4	0
+// OP_STORE_V	22641	7	0
+// OP_STORE_V	22628	10	0
+// OP_STORE_V	22631	13	0
+// OP_CALL4	22138	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	728	0	0
+// OP_RETURN	733	0	0
+// OP_STORE_V	22641	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	22641	0
+// OP_ADDRESS	22627	113	22864
+// OP_MUL_FV	22631	22641	22867
+// OP_STOREP_V	22867	22864	0
+// OP_RETURN	22660	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007502, vector globaldef007503, float globaldef007507, float globaldef007508) func002440 = 
+{
+    local entity globaldef007509;
+    local entity globaldef007510;
+    local vector globaldef007511;
+    local vector globaldef007515;
+    local vector globaldef007519;
+    local vector globaldef007523;
+    local vector globaldef007527;
+    local vector globaldef007531;
+    local vector globaldef007535;
+    local float globaldef007539;
+    local float globaldef007540;
+    local float globaldef007541;
+    local float globaldef007542;
+    local float globaldef007543;
+    local string globaldef007544;
+    local string globaldef007545;
+    local vector globaldef007546;
+    local vector globaldef007550;
+    local vector globaldef007554;
+    local vector globaldef007558;
+    local float globaldef007562;
+    local float globaldef007563;
+    local float globaldef007564;
+    local float globaldef007565;
+    
+    if(globaldef007502.field000278 > time)
+    {
+        return globaldef000711;
+    }
+    
+    
+    if(!(globaldef007502.flags & FL_ONGROUND))
+    {
+        
+        if(!(globaldef007502.field000252 & globaldef000684))
+        {
+            
+            if(func002439(globaldef007502, globaldef007502.velocity, FALSE))
+            {
+                globaldef007502.velocity_x = FALSE;
+                globaldef007502.velocity_y = FALSE;
+            }
+            
+        }
+        
+        return globaldef000711;
+    }
+    
+    if(globaldef007503 == VEC_ORIGIN)
+    {
+        globaldef007523 = globaldef007502.goalentity.origin;
+        globaldef007523_z = globaldef007502.origin_z;
+        globaldef007519 = globaldef007523 - globaldef007502.origin;
+        globaldef007539 = vlen(globaldef007519);
+    }
+    else
+    {
+        globaldef007523 = globaldef007502.goalentity.origin;
+        globaldef007519 = globaldef007503;
+        globaldef007539 = globaldef007507;
+    }
+    
+    globaldef007502.field000252 = globaldef007502.field000252 - (globaldef007502.field000252 & globaldef000684);
+    
+    if(globaldef007502.field000252 & globaldef000691)
+    {
+        globaldef007502.field000252 = globaldef007502.field000252 - globaldef000691;
+        
+        if(globaldef007503 == VEC_ORIGIN)
+        {
+            return func002438(globaldef007502);
+        }
+        
+    }
+    
+    
+    if(globaldef007503 == VEC_ORIGIN)
+    {
+        globaldef007510 = globaldef007502.goalentity.goalentity;
+        
+        if(globaldef007510.classname == "trigger_push")
+        {
+            
+            if(globaldef007502.origin_x < (globaldef007510.origin_x + globaldef007510.maxs_x))
+            {
+                
+                if(globaldef007502.origin_x > (globaldef007510.origin_x + globaldef007510.mins_x))
+                {
+                    
+                    if(globaldef007502.origin_y < (globaldef007510.origin_y + globaldef007510.maxs_y))
+                    {
+                        
+                        if(globaldef007502.origin_y > (globaldef007510.origin_y + globaldef007510.mins_y))
+                        {
+                            globaldef007531 = (globaldef007510.absmax + globaldef007510.absmin) * RA_PLAYERSTATTIME;
+                            
+                            if(globaldef007531_z > globaldef007502.origin_z)
+                            {
+                                globaldef007519 = globaldef007531 - globaldef007502.origin;
+                                globaldef007519_z = FALSE;
+                                globaldef007519 = globaldef000783 * normalize(globaldef007519);
+                                globaldef007519_z = globaldef000717;
+                                func002431(globaldef007502, globaldef007519);
+                                return globaldef000711;
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    globaldef007510 = func002461(globaldef007502);
+    
+    if(globaldef007510)
+    {
+        
+        if(globaldef007539 > FL_MONSTER)
+        {
+            globaldef007539 = FL_MONSTER;
+        }
+        
+        globaldef007519_z = FALSE;
+        globaldef007502.velocity = globaldef007510.velocity + ((normalize(globaldef007519) * globaldef007539) * MOVETYPE_FLY);
+        
+        if(globaldef007502.goalentity.goalentity != globaldef007510)
+        {
+            func002437(globaldef007502, globaldef007503, globaldef007507);
+        }
+        
+        return globaldef000711;
+    }
+    
+    
+    if(globaldef007503 == VEC_ORIGIN)
+    {
+        
+        if(globaldef007523_x < globaldef007502.absmax_x)
+        {
+            
+            if(globaldef007523_x > globaldef007502.absmin_x)
+            {
+                
+                if(globaldef007523_y < globaldef007502.absmax_y)
+                {
+                    
+                    if(globaldef007523_y > globaldef007502.absmin_y)
+                    {
+                        return globaldef000716;
+                    }
+                    
+                }
+                
             }
             
         }
@@ -2881,1215 +3536,271 @@ void (entity globaldef006627, entity globaldef006628) func002343 =
     }
     
     
-    if(globaldef006642)
+    if(globaldef007502.waterlevel <= FL_SWIM)
     {
-        globaldef006655 = normalize(globaldef006627.velocity);
+        globaldef007515 = globaldef007502.origin;
+        globaldef007515_z = (globaldef007515_z + globaldef007502.mins_z) + FL_SWIM;
+        globaldef007540 = pointcontents(globaldef007515);
         
-        if((globaldef006644 * globaldef006655) < GLOBALDEFFIVETWOTWO)
+        if((globaldef007540 == CONTENT_LAVA) || (globaldef007540 == CONTENT_SLIME))
         {
-            return;
+            
+            if(func002437(globaldef007502, globaldef007503, globaldef007507) != globaldef000716)
+            {
+                return globaldef000711;
+            }
+            
         }
         
-        globaldef006652 = self;
-        self = globaldef006627;
-        globaldef006643 = FALSE;
-        do
+    }
+    
+    
+    if(func002432(globaldef007502, globaldef007503))
+    {
+        return globaldef000711;
+    }
+    
+    globaldef007502.velocity = VEC_ORIGIN;
+    globaldef007527 = vectoangles(globaldef007519);
+    makevectors(globaldef007527);
+    globaldef007564 = globaldef007539 * 2.5;
+    globaldef007565 = FL_INWATER;
+    do
+    {
+        globaldef007546 = globaldef007502.origin - (v_right * globaldef007565);
+        globaldef007554 = globaldef007546 + (v_forward * OBOT_MAXBOTS);
+        globaldef007550 = globaldef007502.origin + (v_right * globaldef007565);
+        globaldef007558 = globaldef007550 + (v_forward * OBOT_MAXBOTS);
+        traceline(globaldef007546, globaldef007554, FALSE, globaldef007502);
+        if(trace_fraction != TRUE)
         {
-            setorigin(self, globaldef006648);
-            globaldef006648_z = globaldef006648_z + FL_CLIENT;
-            globaldef006643 = globaldef006643 + TRUE;
-        } while (!droptofloor() && (globaldef006643 < MOVETYPE_BOUNCE));
-        self = globaldef006652;
-    }
-    
-};
-
-
-// func002344
-// function begins at statement 35053, parm_start=19062
-// OP_LOAD_V	19063	98	19071
-// OP_LOAD_V	19063	94	19074
-// OP_ADD_V	19071	19074	19077
-// OP_MUL_VF	19077	539	19080
-// OP_LOAD_V	19062	105	19083
-// OP_SUB_V	19080	19083	19086
-// OP_STORE_V	19086	19065	0
-// OP_STORE_V	19065	4	0
-// OP_CALL1	459	0	0
-// OP_LOAD_V	19062	113	19089
-// OP_STORE_V	19089	19068	0
-// OP_STORE_V	19068	4	0
-// OP_CALL1	459	0	0
-// OP_MUL_V	19065	19068	19092
-// OP_LE	19092	3036	19093
-// OP_IFNOT	19093	2	0
-// OP_RETURN	0	0	0
-// OP_STORE_V	30	4	0
-// OP_STORE_V	197	7	0
-// OP_LOAD_S	19063	196	19094
-// OP_STORE_V	19094	10	0
-// OP_CALL3	468	0	0
-// OP_STORE_ENT	1	19064	0
-// OP_NOT_ENT	19064	0	19095
-// OP_IFNOT	19095	4	0
-// OP_STORE_V	11254	4	0
-// OP_CALL1	473	0	0
-// OP_RETURN	0	0	0
-// OP_LOAD_V	19064	400	19096
-// OP_STORE_V	19096	4	0
-// OP_CALL1	452	0	0
-// OP_STORE_V	19062	4	0
-// OP_LOAD_V	19064	105	19099
-// OP_STORE_V	19099	7	0
-// OP_CALL2	453	0	0
-// OP_ADDRESS	19062	117	19102
-// OP_LOAD_V	19064	400	19105
-// OP_STOREP_V	19105	19102	0
-// OP_ADDRESS	19062	174	19108
-// OP_STOREP_F	214	19108	0
-// OP_ADDRESS	19062	186	19109
-// OP_ADD_F	31	5599	19110
-// OP_STOREP_F	19110	19109	0
-// OP_ADDRESS	19062	113	19111
-// OP_MUL_VF	59	540	19114
-// OP_STOREP_V	19114	19111	0
-// OP_DONE	0	0	0
-void (entity globaldef006660, entity globaldef006661) func002344 = 
-{
-    local entity globaldef006662;
-    local vector globaldef006663;
-    local vector globaldef006667;
-    globaldef006663 = ((globaldef006661.absmax + globaldef006661.absmin) * GLOBALDEFFIVETWOTWO) - globaldef006660.origin;
-    normalize(globaldef006663);
-    globaldef006667 = globaldef006660.velocity;
-    normalize(globaldef006667);
-    
-    if((globaldef006663 * globaldef006667) <= 0.1)
-    {
-        return;
-    }
-    
-    globaldef006662 = find(world, targetname, globaldef006661.target);
-    
-    if(!globaldef006662)
-    {
-        dprint("couldn't find teleporter target\n");
-        return;
-    }
-    
-    makevectors(globaldef006662.mangle);
-    setorigin(globaldef006660, globaldef006662.origin);
-    globaldef006660.angles = globaldef006662.mangle;
-    globaldef006660.fixangle = TRUE;
-    globaldef006660.teleport_time = time + 0.7;
-    globaldef006660.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
-};
-
-
-// func002345
-// function begins at statement 35100, parm_start=19118
-// OP_LOAD_V	19118	105	19120
-// OP_STORE_V	19120	4	0
-// OP_STORE_V	9173	7	0
-// OP_CALL2	471	0	0
-// OP_STORE_ENT	1	19119	0
-// OP_IFNOT	19119	18	0
-// OP_LOAD_S	19119	129	19123
-// OP_EQ_S	19123	5259	19124
-// OP_IFNOT	19124	5	0
-// OP_STORE_V	19118	4	0
-// OP_STORE_V	19119	7	0
-// OP_CALL2	18948	0	0
-// OP_RETURN	0	0	0
-// OP_LOAD_S	19119	129	19125
-// OP_EQ_S	19125	19126	19127
-// OP_IFNOT	19127	5	0
-// OP_STORE_V	19118	4	0
-// OP_STORE_V	19119	7	0
-// OP_CALL2	19061	0	0
-// OP_RETURN	0	0	0
-// OP_LOAD_ENT	19119	164	19128
-// OP_STORE_ENT	19128	19119	0
-// OP_GOTO	-17	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006672) func002345 = 
-{
-    local entity globaldef006673;
-    globaldef006673 = findradius(globaldef006672.origin, 75);
-    
-    while(globaldef006673)
-    {
-        
-        if(globaldef006673.classname == "door")
-        {
-            func002343(globaldef006672, globaldef006673);
-            return;
-        }
-        
-        
-        if(globaldef006673.classname == "trigger_teleport")
-        {
-            func002344(globaldef006672, globaldef006673);
-            return;
-        }
-        
-        globaldef006673 = globaldef006673.chain;
-    }
-    
-};
-
-
-// func002346
-// function begins at statement 35124, parm_start=19130
-// OP_STORE_ENT	19130	81	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	306	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	235	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	2137	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19131	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19132	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19133	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19131	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19134	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19135	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	219	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19136	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19137	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19138	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19139	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	14538	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	219	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_LOAD_ENT	19130	667	19140
-// OP_LOAD_S	19140	180	19141
-// OP_STORE_V	19141	7	0
-// OP_CALL2	502	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006676) func002346 = 
-{
-    msg_entity = globaldef006676;
-    WriteByte(MSG_ONE, SVC_CENTERPRINT);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
-    WriteByte(MSG_ONE, 214);
-    WriteByte(MSG_ONE, 233);
-    WriteByte(MSG_ONE, 229);
-    WriteByte(MSG_ONE, 247);
-    WriteByte(MSG_ONE, 233);
-    WriteByte(MSG_ONE, 238);
-    WriteByte(MSG_ONE, 231);
-    WriteByte(MSG_ONE, FL_MONSTER);
-    WriteByte(MSG_ONE, 230);
-    WriteByte(MSG_ONE, 242);
-    WriteByte(MSG_ONE, 239);
-    WriteByte(MSG_ONE, 237);
-    WriteByte(MSG_ONE, 186);
-    WriteByte(MSG_ONE, FL_MONSTER);
-    WriteString(MSG_ONE, globaldef006676.field000344.netname);
-};
-
-
-// func002347
-// function begins at statement 35212, parm_start=19143
-// OP_ADDRESS	19143	162	19144
-// OP_LOAD_ENT	19143	667	19145
-// OP_LOAD_F	19145	162	19146
-// OP_STOREP_F	19146	19144	0
-// OP_ADDRESS	19143	158	19147
-// OP_LOAD_ENT	19143	667	19148
-// OP_LOAD_F	19148	158	19149
-// OP_STOREP_F	19149	19147	0
-// OP_ADDRESS	19143	159	19150
-// OP_LOAD_ENT	19143	667	19151
-// OP_LOAD_F	19151	159	19152
-// OP_STOREP_F	19152	19150	0
-// OP_ADDRESS	19143	160	19153
-// OP_LOAD_ENT	19143	667	19154
-// OP_LOAD_F	19154	160	19155
-// OP_STOREP_F	19155	19153	0
-// OP_ADDRESS	19143	161	19156
-// OP_LOAD_ENT	19143	667	19157
-// OP_LOAD_F	19157	161	19158
-// OP_STOREP_F	19158	19156	0
-// OP_ADDRESS	19143	157	19159
-// OP_LOAD_ENT	19143	667	19160
-// OP_LOAD_F	19160	157	19161
-// OP_STOREP_F	19161	19159	0
-// OP_ADDRESS	19143	188	19162
-// OP_LOAD_ENT	19143	667	19163
-// OP_LOAD_F	19163	188	19164
-// OP_STOREP_F	19164	19162	0
-// OP_LOAD_F	19143	152	19165
-// OP_GT	19165	1997	19166
-// OP_IFNOT	19166	3	0
-// OP_ADDRESS	19143	152	19167
-// OP_STOREP_F	1997	19167	0
-// OP_LOAD_F	19143	152	19168
-// OP_LOAD_ENT	19143	667	19169
-// OP_LOAD_F	19169	152	19170
-// OP_GT	19168	19170	19171
-// OP_IFNOT	19171	9	0
-// OP_ADDRESS	19143	198	19172
-// OP_LOAD_F	19143	198	19173
-// OP_LOAD_F	19143	152	19174
-// OP_LOAD_ENT	19143	667	19175
-// OP_LOAD_F	19175	152	19176
-// OP_SUB_F	19174	19176	19177
-// OP_ADD_F	19173	19177	19178
-// OP_STOREP_F	19178	19172	0
-// OP_ADDRESS	19143	152	19179
-// OP_LOAD_ENT	19143	667	19180
-// OP_LOAD_F	19180	152	19181
-// OP_STOREP_F	19181	19179	0
-// OP_ADDRESS	19143	155	19182
-// OP_LOAD_ENT	19143	667	19183
-// OP_LOAD_S	19183	155	19184
-// OP_STOREP_S	19184	19182	0
-// OP_ADDRESS	19143	156	19185
-// OP_LOAD_ENT	19143	667	19186
-// OP_LOAD_F	19186	156	19187
-// OP_STOREP_F	19187	19185	0
-// OP_DONE	0	0	0
-void (entity globaldef006687) func002347 = 
-{
-    globaldef006687.items = globaldef006687.field000344.items;
-    globaldef006687.ammo_shells = globaldef006687.field000344.ammo_shells;
-    globaldef006687.ammo_nails = globaldef006687.field000344.ammo_nails;
-    globaldef006687.ammo_rockets = globaldef006687.field000344.ammo_rockets;
-    globaldef006687.ammo_cells = globaldef006687.field000344.ammo_cells;
-    globaldef006687.currentammo = globaldef006687.field000344.currentammo;
-    globaldef006687.armorvalue = globaldef006687.field000344.armorvalue;
-    
-    if(globaldef006687.health > 100)
-    {
-        globaldef006687.health = 100;
-    }
-    
-    
-    if(globaldef006687.health > globaldef006687.field000344.health)
-    {
-        globaldef006687.dmg_take = globaldef006687.dmg_take + (globaldef006687.health - globaldef006687.field000344.health);
-    }
-    
-    globaldef006687.health = globaldef006687.field000344.health;
-    globaldef006687.weaponmodel = globaldef006687.field000344.weaponmodel;
-    globaldef006687.weaponframe = globaldef006687.field000344.weaponframe;
-};
-
-
-// func002348
-// function begins at statement 35271, parm_start=19189
-// OP_ADDRESS	19189	162	19190
-// OP_STOREP_F	213	19190	0
-// OP_ADDRESS	19189	158	19191
-// OP_STOREP_F	213	19191	0
-// OP_ADDRESS	19189	159	19192
-// OP_STOREP_F	213	19192	0
-// OP_ADDRESS	19189	160	19193
-// OP_STOREP_F	213	19193	0
-// OP_ADDRESS	19189	161	19194
-// OP_STOREP_F	213	19194	0
-// OP_ADDRESS	19189	157	19195
-// OP_STOREP_F	9989	19195	0
-// OP_ADDRESS	19189	188	19196
-// OP_STOREP_F	9989	19196	0
-// OP_ADDRESS	19189	152	19197
-// OP_STOREP_F	9989	19197	0
-// OP_ADDRESS	19189	155	19198
-// OP_STOREP_S	3002	19198	0
-// OP_DONE	0	0	0
-void (entity globaldef006689) func002348 = 
-{
-    globaldef006689.items = FALSE;
-    globaldef006689.ammo_shells = FALSE;
-    globaldef006689.ammo_nails = FALSE;
-    globaldef006689.ammo_rockets = FALSE;
-    globaldef006689.ammo_cells = FALSE;
-    globaldef006689.currentammo = 99;
-    globaldef006689.armorvalue = 99;
-    globaldef006689.health = 99;
-    globaldef006689.weaponmodel = "";
-};
-
-
-// func002349
-// function begins at statement 35290, parm_start=19199
-// OP_STORE_ENT	19199	81	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	301	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19200	7	0
-// OP_CALL2	503	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006690, entity globaldef006691) func002349 = 
-{
-    msg_entity = globaldef006690;
-    WriteByte(MSG_ONE, SVC_SETVIEW);
-    WriteEntity(MSG_ONE, globaldef006691);
-};
-
-
-// func002350
-// function begins at statement 35298, parm_start=19201
-// OP_STORE_ENT	19201	81	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	303	7	0
-// OP_CALL2	496	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19202	7	0
-// OP_CALL2	501	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19203	7	0
-// OP_CALL2	501	0	0
-// OP_STORE_V	343	4	0
-// OP_STORE_V	19204	7	0
-// OP_CALL2	501	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006692, vector globaldef006693) func002350 = 
-{
-    msg_entity = globaldef006692;
-    WriteByte(MSG_ONE, SVC_SETANGLE);
-    WriteAngle(MSG_ONE, globaldef006693_x);
-    WriteAngle(MSG_ONE, globaldef006693_y);
-    WriteAngle(MSG_ONE, globaldef006693_z);
-};
-
-
-// func002351
-// function begins at statement 35312, parm_start=19206
-// OP_STORE_V	19206	4	0
-// OP_CALL1	3179	0	0
-// OP_STORE_F	1	19206	0
-// OP_STORE_V	19207	4	0
-// OP_CALL1	3179	0	0
-// OP_STORE_F	1	19207	0
-// OP_GT	19208	3036	19210
-// OP_IFNOT	19210	2	0
-// OP_STORE_F	3036	19208	0
-// OP_LT	19208	213	19211
-// OP_IFNOT	19211	2	0
-// OP_STORE_F	213	19208	0
-// OP_GT	19206	19207	19212
-// OP_IFNOT	19212	17	0
-// OP_SUB_F	19206	19207	19213
-// OP_LT	19213	1296	19214
-// OP_IFNOT	19214	7	0
-// OP_SUB_F	19207	19206	19215
-// OP_STORE_F	19215	19209	0
-// OP_MUL_F	19209	235	19216
-// OP_MUL_F	19216	19208	19217
-// OP_RETURN	19217	0	0
-// OP_GOTO	7	0	0
-// OP_SUB_F	1298	19206	19218
-// OP_ADD_F	19218	19207	19219
-// OP_STORE_F	19219	19209	0
-// OP_MUL_F	19209	235	19220
-// OP_MUL_F	19220	19208	19221
-// OP_RETURN	19221	0	0
-// OP_GOTO	16	0	0
-// OP_SUB_F	19207	19206	19222
-// OP_LT	19222	1296	19223
-// OP_IFNOT	19223	7	0
-// OP_SUB_F	19207	19206	19224
-// OP_STORE_F	19224	19209	0
-// OP_MUL_F	19209	235	19225
-// OP_MUL_F	19225	19208	19226
-// OP_RETURN	19226	0	0
-// OP_GOTO	7	0	0
-// OP_ADD_F	7001	19207	19227
-// OP_SUB_F	19227	19206	19228
-// OP_STORE_F	19228	19209	0
-// OP_MUL_F	19209	235	19229
-// OP_MUL_F	19229	19208	19230
-// OP_RETURN	19230	0	0
-// OP_DONE	0	0	0
-float (float globaldef006698, float globaldef006699, float globaldef006700) func002351 = 
-{
-    local float globaldef006701;
-    globaldef006698 = anglemod(globaldef006698);
-    globaldef006699 = anglemod(globaldef006699);
-    
-    if(globaldef006700 > 0.1)
-    {
-        globaldef006700 = 0.1;
-    }
-    
-    
-    if(globaldef006700 < FALSE)
-    {
-        globaldef006700 = FALSE;
-    }
-    
-    if(globaldef006698 > globaldef006699)
-    {
-        if((globaldef006698 - globaldef006699) < 180)
-        {
-            globaldef006701 = globaldef006699 - globaldef006698;
-            return (globaldef006701 * MOVETYPE_BOUNCE) * globaldef006700;
+            globaldef007562 = TRUE;
         }
         else
         {
-            globaldef006701 = (360 - globaldef006698) + globaldef006699;
-            return (globaldef006701 * MOVETYPE_BOUNCE) * globaldef006700;
+            globaldef007562 = FALSE;
         }
         
-    }
-    else
-    {
-        if((globaldef006699 - globaldef006698) < 180)
+        traceline(globaldef007550, globaldef007558, FALSE, globaldef007502);
+        if(trace_fraction != TRUE)
         {
-            globaldef006701 = globaldef006699 - globaldef006698;
-            return (globaldef006701 * MOVETYPE_BOUNCE) * globaldef006700;
+            globaldef007563 = TRUE;
         }
         else
         {
-            globaldef006701 = (-360 + globaldef006699) - globaldef006698;
-            return (globaldef006701 * MOVETYPE_BOUNCE) * globaldef006700;
+            globaldef007563 = FALSE;
         }
         
-    }
-    
-};
-
-
-// func002352
-// function begins at statement 35358, parm_start=19232
-// OP_SUB_F	31	19238	19243
-// OP_STORE_F	19243	19242	0
-// OP_STORE_V	19232	4	0
-// OP_STORE_V	19235	7	0
-// OP_STORE_V	19242	10	0
-// OP_CALL3	19205	0	0
-// OP_STORE_F	1	19239	0
-// OP_STORE_V	19233	4	0
-// OP_STORE_V	19236	7	0
-// OP_STORE_V	19242	10	0
-// OP_CALL3	19205	0	0
-// OP_STORE_F	1	19240	0
-// OP_STORE_V	19234	4	0
-// OP_STORE_V	19237	7	0
-// OP_STORE_V	19242	10	0
-// OP_CALL3	19205	0	0
-// OP_STORE_F	1	19241	0
-// OP_ADD_V	19232	19239	19244
-// OP_RETURN	19244	0	0
-// OP_DONE	0	0	0
-vector (vector globaldef006703, vector globaldef006707, float globaldef006711) func002352 = 
-{
-    local vector globaldef006712;
-    local float globaldef006716;
-    globaldef006716 = time - globaldef006711;
-    globaldef006712_x = func002351(globaldef006703_x, globaldef006707_x, globaldef006716);
-    globaldef006712_y = func002351(globaldef006703_y, globaldef006707_y, globaldef006716);
-    globaldef006712_z = func002351(globaldef006703_z, globaldef006707_z, globaldef006716);
-    return globaldef006703 + globaldef006712;
-};
-
-
-// func002353
-// function begins at statement 35378, parm_start=19248
-// OP_ADDRESS	19248	182	19266
-// OP_LOAD_F	19248	182	19267
-// OP_BITOR	19267	223	19268
-// OP_STOREP_F	19268	19266	0
-// OP_LOAD_F	19248	116	19269
-// OP_STORE_F	19269	19256	0
-// OP_ADDRESS	19248	116	19270
-// OP_STOREP_F	213	19270	0
-// OP_STORE_F	59	19257	0
-// OP_STORE_F	60	19258	0
-// OP_STORE_F	213	19259	0
-// OP_STORE_V	19257	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	19249	0
-// OP_IFNOT	19249	4	0
-// OP_DIV_F	214	19249	19271
-// OP_STORE_F	19271	19249	0
-// OP_GOTO	2	0	0
-// OP_STORE_F	213	19249	0
-// OP_MUL_VF	19257	19249	19272
-// OP_STORE_V	19272	19257	0
-// OP_LOAD_V	19248	113	19275
-// OP_MUL_V	19257	19275	19278
-// OP_STORE_F	19278	19255	0
-// OP_MUL_FV	19255	19257	19279
-// OP_STORE_V	19279	19260	0
-// OP_STORE_V	19260	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	19251	0
-// OP_LT	19255	213	19282
-// OP_IFNOT	19282	3	0
-// OP_MUL_F	19251	276	19283
-// OP_STORE_F	19283	19251	0
-// OP_LOAD_V	19248	113	19284
-// OP_SUB_V	19284	19260	19287
-// OP_STORE_V	19287	19263	0
-// OP_MUL_F	19251	19249	19290
-// OP_MUL_VF	59	19290	19291
-// OP_STORE_V	19291	19260	0
-// OP_ADD_F	19262	19256	19294
-// OP_STORE_F	19294	19262	0
-// OP_STORE_V	19260	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	19251	0
-// OP_MUL_V	59	2967	19296
-// OP_MUL_F	1997	19296	19297
-// OP_SUB_F	19295	19297	19298
-// OP_STORE_F	19298	19252	0
-// OP_GT	19251	19252	19299
-// OP_IFNOT	19299	4	0
-// OP_DIV_F	19252	19251	19300
-// OP_MUL_VF	19260	19300	19301
-// OP_STORE_V	19301	19260	0
-// OP_ADDRESS	19248	113	19304
-// OP_ADD_V	19260	19263	19307
-// OP_STOREP_V	19307	19304	0
-// OP_DONE	0	0	0
-void (entity globaldef006718) func002353 = 
-{
-    local float globaldef006719;
-    local float globaldef006720;
-    local float globaldef006721;
-    local float globaldef006722;
-    local float globaldef006723;
-    local float globaldef006724;
-    local float globaldef006725;
-    local float globaldef006726;
-    local vector globaldef006727;
-    local vector globaldef006731;
-    local vector globaldef006735;
-    globaldef006718.flags = globaldef006718.flags | FL_ONGROUND;
-    globaldef006726 = globaldef006718.velocity_z;
-    globaldef006718.velocity_z = FALSE;
-    globaldef006727_x = v_forward_x;
-    globaldef006727_y = v_forward_y;
-    globaldef006727_z = FALSE;
-    globaldef006719 = vlen(globaldef006727);
-    if(globaldef006719)
-    {
-        globaldef006719 = TRUE / globaldef006719;
-    }
-    else
-    {
-        globaldef006719 = FALSE;
-    }
-    
-    globaldef006727 = globaldef006727 * globaldef006719;
-    globaldef006725 = globaldef006727 * globaldef006718.velocity;
-    globaldef006731 = globaldef006725 * globaldef006727;
-    globaldef006721 = vlen(globaldef006731);
-    
-    if(globaldef006725 < FALSE)
-    {
-        globaldef006721 = globaldef006721 * CONTENT_EMPTY;
-    }
-    
-    globaldef006735 = globaldef006718.velocity - globaldef006731;
-    globaldef006731 = v_forward * (globaldef006721 * globaldef006719);
-    globaldef006731_z = globaldef006731_z + globaldef006726;
-    globaldef006721 = vlen(globaldef006731);
-    globaldef006722 = 320 - (100 * (v_forward * '0 0 1'));
-    
-    if(globaldef006721 > globaldef006722)
-    {
-        globaldef006731 = globaldef006731 * (globaldef006722 / globaldef006721);
-    }
-    
-    globaldef006718.velocity = globaldef006731 + globaldef006735;
-};
-
-
-// func002354
-// function begins at statement 35435, parm_start=19311
-// OP_ADDRESS	19311	93	19316
-// OP_STOREP_F	213	19316	0
-// OP_ADDRESS	19311	117	19317
-// OP_LOAD_ENT	19311	667	19320
-// OP_LOAD_V	19320	117	19321
-// OP_STOREP_V	19321	19317	0
-// OP_LOAD_ENT	19311	667	19324
-// OP_LOAD_S	19324	129	19325
-// OP_EQ_S	19325	1241	19326
-// OP_IFNOT	19326	13	0
-// OP_LOAD_V	19311	175	19327
-// OP_STORE_V	19327	4	0
-// OP_LOAD_ENT	19311	667	19330
-// OP_LOAD_V	19330	175	19331
-// OP_STORE_V	19331	7	0
-// OP_LOAD_F	19311	680	19334
-// OP_STORE_V	19334	10	0
-// OP_CALL3	19231	0	0
-// OP_STORE_V	1	19312	0
-// OP_ADDRESS	19311	680	19335
-// OP_STOREP_F	31	19335	0
-// OP_GOTO	4	0	0
-// OP_LOAD_ENT	19311	667	19336
-// OP_LOAD_V	19336	175	19337
-// OP_STORE_V	19337	19312	0
-// OP_STORE_V	19311	4	0
-// OP_LOAD_ENT	19311	667	19340
-// OP_LOAD_V	19340	105	19341
-// OP_STORE_V	19341	7	0
-// OP_CALL2	453	0	0
-// OP_ADDRESS	19311	166	19344
-// OP_LOAD_ENT	19311	667	19347
-// OP_LOAD_V	19347	166	19348
-// OP_STOREP_V	19348	19344	0
-// OP_LOAD_ENT	19311	667	19352
-// OP_LOAD_S	19352	129	19353
-// OP_EQ_S	19353	1241	19354
-// OP_BITAND	821	777	19355
-// OP_AND	19354	19355	19356
-// OP_IFNOT	19356	7	0
-// OP_LOAD_ENT	19311	667	19357
-// OP_LOAD_F	19357	608	19358
-// OP_STORE_V	19358	4	0
-// OP_CALL1	1054	0	0
-// OP_STORE_ENT	1	19351	0
-// OP_GOTO	3	0	0
-// OP_LOAD_ENT	19311	667	19359
-// OP_STORE_ENT	19359	19351	0
-// OP_STORE_V	19311	4	0
-// OP_STORE_V	19351	7	0
-// OP_CALL2	1059	0	0
-// OP_STORE_V	19311	4	0
-// OP_STORE_V	19312	7	0
-// OP_CALL2	1060	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006741) func002354 = 
-{
-    local vector globaldef006742;
-    local float globaldef006746;
-    local entity globaldef006747;
-    globaldef006741.modelindex = FALSE;
-    globaldef006741.angles = globaldef006741.field000344.angles;
-    if(globaldef006741.field000344.classname == "bot")
-    {
-        globaldef006742 = func002352(globaldef006741.v_angle, globaldef006741.field000344.v_angle, globaldef006741.field000357);
-        globaldef006741.field000357 = time;
-    }
-    else
-    {
-        globaldef006742 = globaldef006741.field000344.v_angle;
-    }
-    
-    setorigin(globaldef006741, globaldef006741.field000344.origin);
-    globaldef006741.view_ofs = globaldef006741.field000344.view_ofs;
-    if((globaldef006741.field000344.classname == "bot") && (globaldef000804 & globaldef000760))
-    {
-        globaldef006747 = func002266(globaldef006741.field000344.clientnumber);
-    }
-    else
-    {
-        globaldef006747 = globaldef006741.field000344;
-    }
-    
-    func002349(globaldef006741, globaldef006747);
-    func002350(globaldef006741, globaldef006742);
-};
-
-
-// func002355
-// function begins at statement 35490, parm_start=19361
-// OP_LOAD_ENT	19361	667	19384
-// OP_LOAD_V	19384	175	19385
-// OP_STORE_V	19385	19362	0
-// OP_LOAD_ENT	19361	667	19388
-// OP_LOAD_S	19388	129	19389
-// OP_EQ_S	19389	1241	19390
-// OP_IFNOT	19390	12	0
-// OP_LOAD_V	19361	668	19391
-// OP_STORE_V	19391	4	0
-// OP_STORE_V	19362	7	0
-// OP_LOAD_F	19361	680	19394
-// OP_STORE_V	19394	10	0
-// OP_CALL3	19231	0	0
-// OP_STORE_V	1	19362	0
-// OP_ADDRESS	19361	680	19395
-// OP_STOREP_F	31	19395	0
-// OP_ADDRESS	19361	668	19396
-// OP_STOREP_V	19362	19396	0
-// OP_STORE_V	19362	4	0
-// OP_CALL1	452	0	0
-// OP_STORE_V	62	19374	0
-// OP_STORE_V	59	19371	0
-// OP_STORE_V	65	19377	0
-// OP_LOAD_F	19361	683	19399
-// OP_ADD_F	19363	19399	19400
-// OP_STORE_F	19400	19363	0
-// OP_STORE_V	19363	4	0
-// OP_CALL1	3179	0	0
-// OP_STORE_F	1	19363	0
-// OP_STORE_F	213	19362	0
-// OP_STORE_V	19362	4	0
-// OP_CALL1	452	0	0
-// OP_STORE_F	59	19380	0
-// OP_STORE_F	60	19381	0
-// OP_MUL_F	19380	19374	19401
-// OP_MUL_F	19381	19375	19402
-// OP_ADD_F	19401	19402	19403
-// OP_MUL_F	276	19403	19404
-// OP_DIV_F	19404	19376	19405
-// OP_STORE_F	19405	19382	0
-// OP_STORE_V	19380	4	0
-// OP_CALL1	459	0	0
-// OP_STORE_V	1	19380	0
-// OP_LOAD_F	19361	682	19406
-// OP_ADD_F	16131	19406	19407
-// OP_MUL_VF	19380	19407	19408
-// OP_STORE_V	19408	19365	0
-// OP_ADD_F	19367	736	19411
-// OP_LOAD_F	19361	684	19412
-// OP_ADD_F	19411	19412	19413
-// OP_STORE_F	19413	19367	0
-// OP_LOAD_ENT	19361	667	19414
-// OP_LOAD_V	19414	105	19415
-// OP_LOAD_ENT	19361	667	19418
-// OP_LOAD_V	19418	166	19419
-// OP_ADD_V	19415	19419	19422
-// OP_STORE_V	19422	19368	0
-// OP_STORE_V	19368	4	0
-// OP_ADD_V	19368	19365	19425
-// OP_STORE_V	19425	7	0
-// OP_STORE_V	214	10	0
-// OP_LOAD_ENT	19361	667	19428
-// OP_STORE_V	19428	13	0
-// OP_CALL4	466	0	0
-// OP_ADDRESS	19361	93	19429
-// OP_STOREP_F	526	19429	0
-// OP_STORE_V	19361	4	0
-// OP_ADD_V	71	74	19430
-// OP_LOAD_V	19361	166	19433
-// OP_SUB_V	19430	19433	19436
-// OP_STORE_V	19436	7	0
-// OP_CALL2	453	0	0
-// OP_LOAD_V	19361	175	19439
-// OP_STORE_V	19439	4	0
-// OP_CALL1	452	0	0
-// OP_LOAD_F	19361	116	19442
-// OP_GT	19442	214	19443
-// OP_IFNOT	19443	5	0
-// OP_ADDRESS	19361	684	19444
-// OP_LOAD_F	19361	684	19445
-// OP_ADD_F	19445	229	19446
-// OP_STOREP_F	19446	19444	0
-// OP_LOAD_F	19361	116	19447
-// OP_LT	19447	276	19448
-// OP_IFNOT	19448	5	0
-// OP_ADDRESS	19361	684	19449
-// OP_LOAD_F	19361	684	19450
-// OP_SUB_F	19450	229	19451
-// OP_STOREP_F	19451	19449	0
-// OP_LOAD_F	19361	684	19452
-// OP_GT	19452	219	19453
-// OP_IFNOT	19453	3	0
-// OP_ADDRESS	19361	684	19454
-// OP_STOREP_F	219	19454	0
-// OP_LOAD_F	19361	684	19455
-// OP_LT	19455	16131	19456
-// OP_IFNOT	19456	3	0
-// OP_ADDRESS	19361	684	19457
-// OP_STOREP_F	16131	19457	0
-// OP_ADDRESS	19361	116	19458
-// OP_STOREP_F	213	19458	0
-// OP_STORE_F	213	61	0
-// OP_LOAD_V	19361	113	19459
-// OP_MUL_V	19459	59	19462
-// OP_STORE_F	19462	19383	0
-// OP_GT	19383	235	19463
-// OP_IFNOT	19463	5	0
-// OP_ADDRESS	19361	682	19464
-// OP_LOAD_F	19361	682	19465
-// OP_ADD_F	19465	229	19466
-// OP_STOREP_F	19466	19464	0
-// OP_LT	19383	12190	19467
-// OP_IFNOT	19467	5	0
-// OP_ADDRESS	19361	682	19468
-// OP_LOAD_F	19361	682	19469
-// OP_SUB_F	19469	229	19470
-// OP_STOREP_F	19470	19468	0
-// OP_LOAD_F	19361	682	19471
-// OP_GT	19471	220	19472
-// OP_IFNOT	19472	3	0
-// OP_ADDRESS	19361	682	19473
-// OP_STOREP_F	220	19473	0
-// OP_LOAD_F	19361	682	19474
-// OP_LT	19474	16131	19475
-// OP_IFNOT	19475	3	0
-// OP_ADDRESS	19361	682	19476
-// OP_STOREP_F	16131	19476	0
-// OP_STORE_F	213	67	0
-// OP_LOAD_V	19361	113	19477
-// OP_MUL_V	19477	65	19480
-// OP_STORE_F	19480	19383	0
-// OP_GT	19383	235	19481
-// OP_IFNOT	19481	5	0
-// OP_ADDRESS	19361	683	19482
-// OP_LOAD_F	19361	683	19483
-// OP_ADD_F	19483	229	19484
-// OP_STOREP_F	19484	19482	0
-// OP_LT	19383	12190	19485
-// OP_IFNOT	19485	5	0
-// OP_ADDRESS	19361	683	19486
-// OP_LOAD_F	19361	683	19487
-// OP_SUB_F	19487	229	19488
-// OP_STOREP_F	19488	19486	0
-// OP_ADDRESS	19361	683	19489
-// OP_LOAD_F	19361	683	19490
-// OP_STORE_V	19490	4	0
-// OP_CALL1	3179	0	0
-// OP_STOREP_F	1	19489	0
-// OP_ADDRESS	19361	113	19491
-// OP_STOREP_V	286	19491	0
-// OP_STORE_V	19361	4	0
-// OP_STORE_V	19361	7	0
-// OP_CALL2	1059	0	0
-// OP_STORE_V	19380	4	0
-// OP_CALL1	495	0	0
-// OP_STORE_V	1	19362	0
-// OP_MUL_F	276	19362	19494
-// OP_STORE_V	19494	4	0
-// OP_CALL1	3179	0	0
-// OP_STORE_F	1	19362	0
-// OP_GT	19362	1296	19495
-// OP_IFNOT	19495	3	0
-// OP_SUB_F	19362	1298	19496
-// OP_STORE_F	19496	19362	0
-// OP_STORE_V	19361	4	0
-// OP_STORE_V	19362	7	0
-// OP_CALL2	1060	0	0
-// OP_ADDRESS	19361	155	19497
-// OP_STOREP_S	3002	19497	0
-// OP_ADDRESS	19361	103	19498
-// OP_STOREP_F	230	19498	0
-// OP_ADDRESS	19361	182	19499
-// OP_LOAD_F	19361	182	19500
-// OP_BITOR	19500	223	19501
-// OP_STOREP_F	19501	19499	0
-// OP_DONE	0	0	0
-void (entity globaldef006749) func002355 = 
-{
-    local vector globaldef006750;
-    local vector globaldef006754;
-    local vector globaldef006758;
-    local vector globaldef006762;
-    local vector globaldef006766;
-    local vector globaldef006770;
-    local vector globaldef006774;
-    local float globaldef006778;
-    globaldef006750 = globaldef006749.field000344.v_angle;
-    
-    if(globaldef006749.field000344.classname == "bot")
-    {
-        globaldef006750 = func002352(globaldef006749.field000345, globaldef006750, globaldef006749.field000357);
-        globaldef006749.field000357 = time;
-        globaldef006749.field000345 = globaldef006750;
-    }
-    
-    makevectors(globaldef006750);
-    globaldef006766 = v_up;
-    globaldef006762 = v_forward;
-    globaldef006770 = v_right;
-    globaldef006750_y = globaldef006750_y + globaldef006749.field000358_y;
-    globaldef006750_y = anglemod(globaldef006750_y);
-    globaldef006750_x = FALSE;
-    makevectors(globaldef006750);
-    globaldef006774_x = v_forward_x;
-    globaldef006774_y = v_forward_y;
-    globaldef006774_z = (CONTENT_EMPTY * ((globaldef006774_x * globaldef006766_x) + (globaldef006774_y * globaldef006766_y))) / globaldef006766_z;
-    globaldef006774 = normalize(globaldef006774);
-    globaldef006754 = globaldef006774 * (-64 + globaldef006749.field000358_x);
-    globaldef006754_z = (globaldef006754_z + OBOT_MAXBOTS) + globaldef006749.field000358_z;
-    globaldef006758 = globaldef006749.field000344.origin + globaldef006749.field000344.view_ofs;
-    traceline(globaldef006758, globaldef006758 + globaldef006754, TRUE, globaldef006749.field000344);
-    globaldef006749.modelindex = globaldef000509;
-    setorigin(globaldef006749, (trace_endpos + trace_plane_normal) - globaldef006749.view_ofs);
-    makevectors(globaldef006749.v_angle);
-    
-    if(globaldef006749.velocity_z > TRUE)
-    {
-        globaldef006749.field000358_z = globaldef006749.field000358_z + MOVETYPE_STEP;
-    }
-    
-    
-    if(globaldef006749.velocity_z < CONTENT_EMPTY)
-    {
-        globaldef006749.field000358_z = globaldef006749.field000358_z - MOVETYPE_STEP;
-    }
-    
-    
-    if(globaldef006749.field000358_z > FL_MONSTER)
-    {
-        globaldef006749.field000358_z = FL_MONSTER;
-    }
-    
-    
-    if(globaldef006749.field000358_z < -64)
-    {
-        globaldef006749.field000358_z = -64;
-    }
-    
-    globaldef006749.velocity_z = FALSE;
-    v_forward_z = FALSE;
-    globaldef006778 = globaldef006749.velocity * v_forward;
-    
-    if(globaldef006778 > MOVETYPE_BOUNCE)
-    {
-        globaldef006749.field000358_x = globaldef006749.field000358_x + MOVETYPE_STEP;
-    }
-    
-    
-    if(globaldef006778 < -10)
-    {
-        globaldef006749.field000358_x = globaldef006749.field000358_x - MOVETYPE_STEP;
-    }
-    
-    
-    if(globaldef006749.field000358_x > FL_GODMODE)
-    {
-        globaldef006749.field000358_x = FL_GODMODE;
-    }
-    
-    
-    if(globaldef006749.field000358_x < -64)
-    {
-        globaldef006749.field000358_x = -64;
-    }
-    
-    v_right_z = FALSE;
-    globaldef006778 = globaldef006749.velocity * v_right;
-    
-    if(globaldef006778 > MOVETYPE_BOUNCE)
-    {
-        globaldef006749.field000358_y = globaldef006749.field000358_y + MOVETYPE_STEP;
-    }
-    
-    
-    if(globaldef006778 < -10)
-    {
-        globaldef006749.field000358_y = globaldef006749.field000358_y - MOVETYPE_STEP;
-    }
-    
-    globaldef006749.field000358_y = anglemod(globaldef006749.field000358_y);
-    globaldef006749.velocity = VEC_ORIGIN;
-    func002349(globaldef006749, globaldef006749);
-    globaldef006750 = vectoangles(globaldef006774);
-    globaldef006750_x = anglemod(CONTENT_EMPTY * globaldef006750_x);
-    
-    if(globaldef006750_x > 180)
-    {
-        globaldef006750_x = globaldef006750_x - 360;
-    }
-    
-    func002350(globaldef006749, globaldef006750);
-    globaldef006749.weaponmodel = "";
-    globaldef006749.movetype = MOVETYPE_FLY;
-    globaldef006749.flags = globaldef006749.flags | FL_ONGROUND;
-};
-
-
-// func002356
-// function begins at statement 35666, parm_start=19502
-// OP_LOAD_S	19502	129	19506
-// OP_NE_S	19506	2025	19507
-// OP_IFNOT	19507	2	0
-// OP_RETURN	0	0	0
-// OP_LOAD_ENT	19502	667	19508
-// OP_EQ_E	19508	19502	19509
-// OP_IFNOT	19509	16	0
-// OP_ADDRESS	19502	93	19510
-// OP_STOREP_F	526	19510	0
-// OP_LOAD_F	19502	666	19511
-// OP_BITAND	19511	762	19512
-// OP_NOT_F	19512	0	19513
-// OP_IFNOT	19513	3	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19117	0	0
-// OP_LOAD_F	19502	666	19514
-// OP_BITAND	19514	764	19515
-// OP_NOT_F	19515	0	19516
-// OP_IFNOT	19516	3	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19247	0	0
-// OP_RETURN	0	0	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19142	0	0
-// OP_LOAD_F	19502	666	19517
-// OP_BITAND	19517	761	19518
-// OP_IFNOT	19518	3	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19129	0	0
-// OP_LOAD_F	19502	666	19519
-// OP_BITAND	19519	763	19520
-// OP_IFNOT	19520	4	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19360	0	0
-// OP_GOTO	3	0	0
-// OP_STORE_V	19502	4	0
-// OP_CALL1	19310	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006779) func002356 = 
-{
-    local vector globaldef006780;
-    
-    if(globaldef006779.classname != "observer")
-    {
-        return;
-    }
-    
-    
-    if(globaldef006779.field000344 == globaldef006779)
-    {
-        globaldef006779.modelindex = globaldef000509;
-        
-        if(!(globaldef006779.field000343 & globaldef000745))
+        if(globaldef007562 && !globaldef007563)
         {
-            func002345(globaldef006779);
+            globaldef007519 = globaldef007519 + (v_right * globaldef007564);
+            globaldef007543 = globaldef000712;
         }
-        
-        
-        if(!(globaldef006779.field000343 & globaldef000747))
+        else
         {
-            func002353(globaldef006779);
+            
+            if(globaldef007563 && !globaldef007562)
+            {
+                globaldef007519 = globaldef007519 - (v_right * globaldef007564);
+                globaldef007543 = globaldef000713;
+            }
+            
         }
         
-        return;
+        globaldef007565 = globaldef007565 + FL_INWATER;
+    } while ((globaldef007562 && globaldef007563) && (globaldef007565 <= FL_GODMODE));
+    
+    if(globaldef007562 && globaldef007563)
+    {
+        return globaldef000716;
     }
     
-    func002347(globaldef006779);
-    
-    if(globaldef006779.field000343 & globaldef000744)
+    if(globaldef007508)
     {
-        func002346(globaldef006779);
-    }
-    
-    if(globaldef006779.field000343 & globaldef000746)
-    {
-        func002355(globaldef006779);
+        
+        if(func002436(globaldef007502, globaldef007519, globaldef007503, globaldef007507))
+        {
+            return globaldef000711;
+        }
+        
+        return globaldef000716;
     }
     else
     {
-        func002354(globaldef006779);
+        
+        if(func002439(globaldef007502, globaldef007519, TRUE))
+        {
+            
+            if(func002436(globaldef007502, globaldef007519, globaldef007503, globaldef007507))
+            {
+                return globaldef000711;
+            }
+            
+            return globaldef000716;
+        }
+        
+    }
+    
+    globaldef007519 = normalize(globaldef007519);
+    globaldef007502.velocity = globaldef007507 * globaldef007519;
+    return globaldef007543;
+};
+
+
+// func002441
+// function begins at statement 40435, parm_start=22871
+// OP_LOAD_ENT	22871	194	22881
+// OP_LOAD_ENT	22881	194	22882
+// OP_LOAD_S	22882	129	22883
+// OP_STORE_S	22883	22880	0
+// OP_EQ_S	22880	5259	22884
+// OP_EQ_S	22880	11860	22885
+// OP_OR	22884	22885	22886
+// OP_IFNOT	22886	25	0
+// OP_LOAD_ENT	22871	194	22887
+// OP_LOAD_ENT	22887	194	22888
+// OP_LOAD_V	22888	94	22889
+// OP_LOAD_ENT	22871	194	22892
+// OP_LOAD_ENT	22892	194	22893
+// OP_LOAD_V	22893	98	22894
+// OP_ADD_V	22889	22894	22897
+// OP_MUL_VF	22897	539	22900
+// OP_STORE_V	22900	22877	0
+// OP_LOAD_ENT	22871	194	22903
+// OP_LOAD_ENT	22903	194	22904
+// OP_LOAD_F	22904	101	22905
+// OP_ADD_F	22905	214	22906
+// OP_STORE_F	22906	22879	0
+// OP_LOAD_ENT	22871	194	22907
+// OP_LOAD_ENT	22907	194	22908
+// OP_LOAD_V	22908	113	22909
+// OP_MUL_VF	22909	3267	22912
+// OP_ADD_V	22877	22912	22915
+// OP_STORE_V	22915	22877	0
+// OP_LOAD_ENT	22871	194	22918
+// OP_STORE_V	22918	4	0
+// OP_STORE_V	22877	7	0
+// OP_CALL2	453	0	0
+// OP_LOAD_F	22871	575	22919
+// OP_BITAND	22919	700	22920
+// OP_IFNOT	22920	7	0
+// OP_ADDRESS	22871	575	22921
+// OP_LOAD_F	22871	575	22922
+// OP_LOAD_F	22871	575	22923
+// OP_BITAND	22923	714	22924
+// OP_SUB_F	22922	22924	22925
+// OP_STOREP_F	22925	22921	0
+// OP_LOAD_F	22871	575	22926
+// OP_BITAND	22926	714	22927
+// OP_IFNOT	22927	11	0
+// OP_LOAD_V	22871	117	22928
+// OP_STORE_V	22928	4	0
+// OP_CALL1	452	0	0
+// OP_ADDRESS	22871	114	22931
+// OP_MUL_F	59	220	22932
+// OP_STOREP_F	22932	22931	0
+// OP_ADDRESS	22871	115	22933
+// OP_MUL_F	60	220	22934
+// OP_STOREP_F	22934	22933	0
+// OP_RETURN	728	0	0
+// OP_LOAD_F	22871	189	22935
+// OP_GT	22935	214	22936
+// OP_IFNOT	22936	13	0
+// OP_ADDRESS	22871	575	22937
+// OP_LOAD_F	22871	575	22938
+// OP_LOAD_F	22871	575	22939
+// OP_BITAND	22939	701	22940
+// OP_SUB_F	22938	22940	22941
+// OP_STOREP_F	22941	22937	0
+// OP_STORE_V	22871	4	0
+// OP_STORE_V	22872	7	0
+// OP_STORE_V	22875	10	0
+// OP_CALL3	21331	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	7	0	0
+// OP_STORE_V	22871	4	0
+// OP_STORE_V	22872	7	0
+// OP_STORE_V	22875	10	0
+// OP_STORE_V	22876	13	0
+// OP_CALL4	22626	0	0
+// OP_RETURN	1	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007567, vector globaldef007568, float globaldef007572, float globaldef007573) func002441 = 
+{
+    local vector globaldef007574;
+    local string globaldef007578;
+    globaldef007578 = globaldef007567.goalentity.goalentity.classname;
+    
+    if((globaldef007578 == "door") || (globaldef007578 == "train"))
+    {
+        globaldef007574 = (globaldef007567.goalentity.goalentity.absmin + globaldef007567.goalentity.goalentity.absmax) * RA_PLAYERSTATTIME;
+        globaldef007574_z = globaldef007567.goalentity.goalentity.absmax_z + TRUE;
+        globaldef007574 = globaldef007574 + (globaldef007567.goalentity.goalentity.velocity * 0.2);
+        setorigin(globaldef007567.goalentity, globaldef007574);
+    }
+    
+    
+    if(globaldef007567.field000252 & globaldef000683)
+    {
+        globaldef007567.field000252 = globaldef007567.field000252 - (globaldef007567.field000252 & globaldef000697);
+    }
+    
+    
+    if(globaldef007567.field000252 & globaldef000697)
+    {
+        makevectors(globaldef007567.angles);
+        globaldef007567.velocity_x = v_forward_x * FL_GODMODE;
+        globaldef007567.velocity_y = v_forward_y * FL_GODMODE;
+        return globaldef000711;
+    }
+    
+    if(globaldef007567.waterlevel > TRUE)
+    {
+        globaldef007567.field000252 = globaldef007567.field000252 - (globaldef007567.field000252 & globaldef000684);
+        return func002430(globaldef007567, globaldef007568, globaldef007572);
+    }
+    else
+    {
+        return func002440(globaldef007567, globaldef007568, globaldef007572, globaldef007573);
     }
     
 };
 
 
-// func002357
-// function begins at statement 35704, parm_start=19521
-// OP_ADDRESS	19521	667	19522
-// OP_STOREP_ENT	19521	19522	0
-// OP_ADDRESS	19521	166	19523
-// OP_STOREP_V	8450	19523	0
-// OP_STORE_V	19521	4	0
-// OP_LOAD_V	19521	672	19526
-// OP_STORE_V	19526	7	0
-// OP_CALL2	453	0	0
-// OP_ADDRESS	19521	175	19529
-// OP_LOAD_V	19521	676	19532
-// OP_STOREP_V	19532	19529	0
-// OP_STORE_V	19521	4	0
-// OP_STORE_V	19521	7	0
-// OP_CALL2	1059	0	0
-// OP_STORE_V	19521	4	0
-// OP_LOAD_V	19521	175	19535
-// OP_STORE_V	19535	7	0
-// OP_CALL2	1060	0	0
-// OP_STORE_V	19521	4	0
-// OP_STORE_V	289	7	0
-// OP_STORE_V	292	10	0
-// OP_CALL3	455	0	0
-// OP_STORE_V	19521	4	0
-// OP_STORE_V	3002	7	0
-// OP_CALL2	852	0	0
-// OP_STORE_V	19521	4	0
-// OP_CALL1	19188	0	0
+// func002442
+// function begins at statement 40511, parm_start=22942
+// OP_LOAD_F	22942	186	22945
+// OP_GT	22945	31	22946
+// OP_IFNOT	22946	2	0
+// OP_RETURN	728	0	0
+// OP_GT	22943	800	22947
+// OP_IFNOT	22947	2	0
+// OP_STORE_F	800	22943	0
+// OP_STORE_F	800	22943	0
+// OP_STORE_V	22942	4	0
+// OP_STORE_V	286	7	0
+// OP_STORE_V	22943	10	0
+// OP_STORE_V	213	13	0
+// OP_CALL4	22870	0	0
+// OP_STORE_F	1	22944	0
+// OP_RETURN	22944	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006784) func002357 = 
+float (entity globaldef007579, float globaldef007580) func002442 = 
 {
-    globaldef006784.field000344 = globaldef006784;
-    globaldef006784.view_ofs = '0 0 22';
-    setorigin(globaldef006784, globaldef006784.field000349);
-    globaldef006784.v_angle = globaldef006784.field000353;
-    func002349(globaldef006784, globaldef006784);
-    func002350(globaldef006784, globaldef006784.v_angle);
-    setsize(globaldef006784, VEC_HULL_MIN, VEC_HULL_MAX);
-    centerprint(globaldef006784, "");
-    func002348(globaldef006784);
+    local float globaldef007581;
+    
+    if(globaldef007579.teleport_time > time)
+    {
+        return globaldef000711;
+    }
+    
+    
+    if(globaldef007580 > globaldef000783)
+    {
+    }
+    
+    globaldef007580 = globaldef007580 = globaldef000783;
+    globaldef007581 = func002441(globaldef007579, VEC_ORIGIN, globaldef007580, FALSE);
+    return globaldef007581;
 };
 

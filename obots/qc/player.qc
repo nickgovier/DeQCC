@@ -801,7 +801,7 @@ void () func000441 =
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == MOVETYPE_WALK))
     {
         func000456(TRUE);
-        if(random() > GLOBALDEFFIVETWOTWO)
+        if(random() > RA_PLAYERSTATTIME)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", TRUE, ATTN_NORM);
         }
@@ -816,7 +816,7 @@ void () func000441 =
     
     if(self.watertype == CONTENT_SLIME)
     {
-        if(random() > GLOBALDEFFIVETWOTWO)
+        if(random() > RA_PLAYERSTATTIME)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", TRUE, ATTN_NORM);
         }
@@ -831,7 +831,7 @@ void () func000441 =
     
     if(self.watertype == CONTENT_LAVA)
     {
-        if(random() > GLOBALDEFFIVETWOTWO)
+        if(random() > RA_PLAYERSTATTIME)
         {
             sound(self, CHAN_VOICE, "player/lburn1.wav", TRUE, ATTN_NORM);
         }
@@ -850,7 +850,7 @@ void () func000441 =
         return;
     }
     
-    self.pain_finished = time + GLOBALDEFFIVETWOTWO;
+    self.pain_finished = time + RA_PLAYERSTATTIME;
     
     if(self.axhitme == TRUE)
     {
@@ -1131,7 +1131,7 @@ void () func000455 =
     globaldef003169.movetype = MOVETYPE_NOCLIP;
     globaldef003169.solid = SOLID_NOT;
     globaldef003169.velocity = '0 0 15';
-    globaldef003169.nextthink = time + GLOBALDEFFIVETWOTWO;
+    globaldef003169.nextthink = time + RA_PLAYERSTATTIME;
     globaldef003169.think = func000647;
     globaldef003169.classname = "bubble";
     globaldef003169.frame = FALSE;

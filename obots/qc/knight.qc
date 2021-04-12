@@ -317,7 +317,7 @@ void () func001018 = [16, func001011]
 // OP_DONE	0	0	0
 void () knight_runatk1 = [17, func001020]
 {
-    if(random() > GLOBALDEFFIVETWOTWO)
+    if(random() > RA_PLAYERSTATTIME)
     {
         sound(self, CHAN_WEAPON, "knight/sword2.wav", TRUE, ATTN_NORM);
     }
@@ -1135,7 +1135,7 @@ void () func001086 =
     }
     
     sound(self, CHAN_VOICE, "knight/kdeath.wav", TRUE, ATTN_NORM);
-    if(random() < GLOBALDEFFIVETWOTWO)
+    if(random() < RA_PLAYERSTATTIME)
     {
         func001065();
     }

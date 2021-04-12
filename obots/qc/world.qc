@@ -1,4 +1,4 @@
-void () func000300;
+void () InitBodyQue;
 
 // main
 // function begins at statement 8178, parm_start=6511
@@ -340,7 +340,7 @@ void () main =
     precache_file2("maps/dm6.bsp");
 };
 
-entity globaldef002375;
+entity lastspawn;
 
 // worldspawn
 // function begins at statement 8401, parm_start=6623
@@ -597,10 +597,10 @@ entity globaldef002375;
 // OP_DONE	0	0	0
 void () worldspawn = 
 {
-    globaldef002375 = world;
+    lastspawn = world;
     InitMaxClients();
     CamSpawn();
-    func000300();
+    InitBodyQue();
     if(self.model == "maps/e1m8.bsp")
     {
         cvar_set("sv_gravity", "100");
@@ -912,11 +912,11 @@ void () StartFrame =
     if(globaldef000782 != cvar("sv_gravity"))
     {
         globaldef000782 = cvar("sv_gravity");
-        globaldef000776 = (((GLOBALDEFFIVETWOTWO * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - 14;
-        globaldef000777 = ((GLOBALDEFFIVETWOTWO * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
+        globaldef000776 = (((RA_PLAYERSTATTIME * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - 14;
+        globaldef000777 = ((RA_PLAYERSTATTIME * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
         globaldef000778 = (FL_SWIM * (globaldef000717 / globaldef000782)) - 0.1;
         globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
-        globaldef000780 = (((GLOBALDEFFIVETWOTWO * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
+        globaldef000780 = (((RA_PLAYERSTATTIME * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
         globaldef000781 = TRUE / (globaldef000781 * GLOBALDEFSEVENTWOTHREE);
     }
@@ -980,12 +980,150 @@ void () StartFrame =
     
 };
 
-entity globaldef002466;
+entity bodyque_head;
 
 // bodyque
 // function begins at statement 8778, parm_start=6774
 // OP_DONE	0	0	0
 void () bodyque = 
 {
+};
+
+
+// InitBodyQue
+// function begins at statement 8779, parm_start=6774
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	6772	0
+// OP_ADDRESS	6772	129	6775
+// OP_STOREP_S	2183	6775	0
+// OP_ADDRESS	6772	201	6776
+// OP_CALL0	464	0	0
+// OP_STOREP_ENT	1	6776	0
+// OP_LOAD_ENT	6772	201	6777
+// OP_ADDRESS	6777	129	6778
+// OP_STOREP_S	2183	6778	0
+// OP_LOAD_ENT	6772	201	6779
+// OP_ADDRESS	6779	201	6780
+// OP_CALL0	464	0	0
+// OP_STOREP_ENT	1	6780	0
+// OP_LOAD_ENT	6772	201	6781
+// OP_LOAD_ENT	6781	201	6782
+// OP_ADDRESS	6782	129	6783
+// OP_STOREP_S	2183	6783	0
+// OP_LOAD_ENT	6772	201	6784
+// OP_LOAD_ENT	6784	201	6785
+// OP_ADDRESS	6785	201	6786
+// OP_CALL0	464	0	0
+// OP_STOREP_ENT	1	6786	0
+// OP_LOAD_ENT	6772	201	6787
+// OP_LOAD_ENT	6787	201	6788
+// OP_LOAD_ENT	6788	201	6789
+// OP_ADDRESS	6789	129	6790
+// OP_STOREP_S	2183	6790	0
+// OP_LOAD_ENT	6772	201	6791
+// OP_LOAD_ENT	6791	201	6792
+// OP_LOAD_ENT	6792	201	6793
+// OP_ADDRESS	6793	201	6794
+// OP_STOREP_ENT	6772	6794	0
+// OP_DONE	0	0	0
+void () InitBodyQue = 
+{
+    local entity e;
+    bodyque_head = spawn();
+    bodyque_head.classname = "bodyque";
+    bodyque_head.owner = spawn();
+    bodyque_head.owner.classname = "bodyque";
+    bodyque_head.owner.owner = spawn();
+    bodyque_head.owner.owner.classname = "bodyque";
+    bodyque_head.owner.owner.owner = spawn();
+    bodyque_head.owner.owner.owner.classname = "bodyque";
+    bodyque_head.owner.owner.owner.owner = bodyque_head;
+};
+
+
+// CopyToBodyQue
+// function begins at statement 8813, parm_start=6796
+// OP_ADDRESS	6772	117	6797
+// OP_LOAD_V	6796	117	6800
+// OP_STOREP_V	6800	6797	0
+// OP_LOAD_S	6796	129	6803
+// OP_EQ_S	6803	1236	6804
+// OP_LOAD_S	6796	129	6805
+// OP_EQ_S	6805	1241	6806
+// OP_OR	6804	6806	6807
+// OP_IFNOT	6807	10	0
+// OP_ADDRESS	6772	132	6808
+// OP_LOAD_F	6796	574	6809
+// OP_STOREP_F	6809	6808	0
+// OP_ADDRESS	6772	93	6810
+// OP_LOAD_F	6796	573	6811
+// OP_STOREP_F	6811	6810	0
+// OP_ADDRESS	6772	130	6812
+// OP_STOREP_S	6813	6812	0
+// OP_GOTO	10	0	0
+// OP_ADDRESS	6772	132	6814
+// OP_LOAD_F	6796	132	6815
+// OP_STOREP_F	6815	6814	0
+// OP_ADDRESS	6772	130	6816
+// OP_LOAD_S	6796	130	6817
+// OP_STOREP_S	6817	6816	0
+// OP_ADDRESS	6772	93	6818
+// OP_LOAD_F	6796	93	6819
+// OP_STOREP_F	6819	6818	0
+// OP_ADDRESS	6772	131	6820
+// OP_LOAD_F	6796	131	6821
+// OP_STOREP_F	6821	6820	0
+// OP_ADDRESS	6772	183	6822
+// OP_LOAD_F	6796	183	6823
+// OP_STOREP_F	6823	6822	0
+// OP_ADDRESS	6772	103	6824
+// OP_LOAD_F	6796	103	6825
+// OP_STOREP_F	6825	6824	0
+// OP_ADDRESS	6772	113	6826
+// OP_LOAD_V	6796	113	6829
+// OP_STOREP_V	6829	6826	0
+// OP_ADDRESS	6772	182	6832
+// OP_STOREP_F	213	6832	0
+// OP_STORE_V	6772	4	0
+// OP_LOAD_V	6796	105	6833
+// OP_STORE_V	6833	7	0
+// OP_CALL2	453	0	0
+// OP_STORE_V	6772	4	0
+// OP_LOAD_V	6796	134	6836
+// OP_STORE_V	6836	7	0
+// OP_LOAD_V	6796	138	6839
+// OP_STORE_V	6839	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	6796	4	0
+// OP_STORE_V	6772	7	0
+// OP_CALL2	2943	0	0
+// OP_LOAD_ENT	6772	201	6842
+// OP_STORE_ENT	6842	6772	0
+// OP_DONE	0	0	0
+void (entity ent) CopyToBodyQue = 
+{
+    bodyque_head.angles = ent.angles;
+    if((ent.classname == "player") || (ent.classname == "bot"))
+    {
+        bodyque_head.skin = ent.field000251;
+        bodyque_head.modelindex = ent.field000250;
+        bodyque_head.model = "bla";
+    }
+    else
+    {
+        bodyque_head.skin = ent.skin;
+        bodyque_head.model = ent.model;
+        bodyque_head.modelindex = ent.modelindex;
+    }
+    
+    bodyque_head.frame = ent.frame;
+    bodyque_head.colormap = ent.colormap;
+    bodyque_head.movetype = ent.movetype;
+    bodyque_head.velocity = ent.velocity;
+    bodyque_head.flags = FALSE;
+    setorigin(bodyque_head, ent.origin);
+    setsize(bodyque_head, ent.mins, ent.maxs);
+    CamCopyBody(ent, bodyque_head);
+    bodyque_head = bodyque_head.owner;
 };
 

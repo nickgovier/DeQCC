@@ -214,13 +214,13 @@ void () BotImpulseCommand;
 void () func002704;
 void () func002719;
 void () func002708;
-void (entity globaldef002819, float globaldef002820) func000366;
-void (entity globaldef002797) func000365;
-void (entity globaldef002791) func000364;
-void () func000362;
-void (string globaldef002761) func000356;
-entity (string globaldef002729) func000353;
-void () func000372;
+void (entity globaldef002819, float globaldef002820) rocket_arena_disconnect;
+void (entity globaldef002797) rocket_arena_prethink;
+void (entity globaldef002791) rocket_arena_putclientinserver;
+void () getnewopponent;
+void (string globaldef002761) playallsound;
+entity (string globaldef002729) rocket_arena_selectspawnpoint;
+void () rocket_arena_impulses;
 float CAM_IDLE = 0;
 float CAM_FIXED = 1;
 float CAM_FLYBY = 2;
@@ -4075,7 +4075,7 @@ void () CamDeathThink =
         
         if((f > TRUE) || (self.mangle != VEC_ORIGIN))
         {
-            f = time + GLOBALDEFFIVETWOTWO;
+            f = time + RA_PLAYERSTATTIME;
             
             if(self.pausetime < f)
             {

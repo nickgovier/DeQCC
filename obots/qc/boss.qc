@@ -132,9 +132,9 @@ void () func001678 =
         return;
     }
     
-    globaldef004958 = (globaldef004954.mins + globaldef004954.maxs) * GLOBALDEFFIVETWOTWO;
+    globaldef004958 = (globaldef004954.mins + globaldef004954.maxs) * RA_PLAYERSTATTIME;
     globaldef004958_z = globaldef004954.absmin_z - FL_INWATER;
-    globaldef004962 = (globaldef004955.mins + globaldef004955.maxs) * GLOBALDEFFIVETWOTWO;
+    globaldef004962 = (globaldef004955.mins + globaldef004955.maxs) * RA_PLAYERSTATTIME;
     globaldef004962_z = globaldef004955.absmin_z - FL_INWATER;
     globaldef004962 = globaldef004962 - ((normalize(globaldef004962 - globaldef004958)) * 100);
     self.nextthink = time + 0.1;

@@ -5125,7 +5125,7 @@ void (entity globaldef009562) yes =
     }
     
     
-    if(globaldef009565 > (globaldef009564 * GLOBALDEFFIVETWOTWO))
+    if(globaldef009565 > (globaldef009564 * RA_PLAYERSTATTIME))
     {
         func002738(globaldef000815);
         func002740();
@@ -5862,7 +5862,7 @@ void () BotImpulseCommand =
                                                                 
                                                                 if(CheckIsAdmin(self))
                                                                 {
-                                                                    campmode();
+                                                                    ToggleCampingMode();
                                                                 }
                                                                 
                                                             }

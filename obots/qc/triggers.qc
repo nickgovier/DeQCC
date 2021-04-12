@@ -688,7 +688,7 @@ void () func000583 =
 };
 
 
-// func000584
+// spawn_tfog
 // function begins at statement 16355, parm_start=11167
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	11001	0
@@ -715,7 +715,7 @@ void () func000583 =
 // OP_STORE_V	11169	7	0
 // OP_CALL2	500	0	0
 // OP_DONE	0	0	0
-void (vector globaldef003474) func000584 = 
+void (vector globaldef003474) spawn_tfog = 
 {
     globaldef003441 = spawn();
     globaldef003441.origin = globaldef003474;
@@ -809,7 +809,7 @@ void () func000585 =
 };
 
 
-// func000586
+// spawn_tdeath
 // function begins at statement 16418, parm_start=11195
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	11199	0
@@ -843,7 +843,7 @@ void () func000585 =
 // OP_STOREP_ENT	11198	11225	0
 // OP_STORE_F	216	33	0
 // OP_DONE	0	0	0
-void (vector globaldef003479, entity globaldef003483) func000586 = 
+void (vector globaldef003479, entity globaldef003483) spawn_tdeath = 
 {
     local entity globaldef003484;
     globaldef003484 = spawn();
@@ -1029,7 +1029,7 @@ void () func000587 =
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
         
-        if((other != globaldef000524) && (other != globaldef000525))
+        if((other != winner) && (other != loser))
         {
             return;
         }
@@ -1070,7 +1070,7 @@ void () func000587 =
     }
     
     SUB_UseTargets();
-    func000584(other.origin);
+    spawn_tfog(other.origin);
     globaldef003487 = find(world, targetname, self.target);
     
     if(!globaldef003487)
@@ -1080,8 +1080,8 @@ void () func000587 =
     
     makevectors(globaldef003487.mangle);
     globaldef003488 = globaldef003487.origin + (FL_MONSTER * v_forward);
-    func000584(globaldef003488);
-    func000586(globaldef003487.origin, other);
+    spawn_tfog(globaldef003488);
+    spawn_tdeath(globaldef003487.origin, other);
     func002453(other, other.origin, TRUE, globaldef000740);
     func002453(other, globaldef003488, TRUE, globaldef000740);
     
@@ -1092,9 +1092,9 @@ void () func000587 =
         other.v_angle = globaldef003487.mangle;
         other.ideal_yaw = globaldef003487.mangle_y;
         other.field000288 = globaldef003487.mangle_x;
-        other.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
+        other.velocity = v_forward * RA_MAXIDLETIME;
         other.teleport_time = time + 0.4;
-        other.attack_finished = time + GLOBALDEFFIVETWOTWO;
+        other.attack_finished = time + RA_PLAYERSTATTIME;
     }
     
     
@@ -1131,7 +1131,7 @@ void () func000587 =
             other.flags = other.flags - FL_ONGROUND;
         }
         
-        other.velocity = v_forward * GLOBALDEFFIVETWOTHREE;
+        other.velocity = v_forward * RA_MAXIDLETIME;
     }
     
     other.flags = other.flags - (other.flags & FL_ONGROUND);
@@ -1237,8 +1237,8 @@ void () trigger_teleport =
     if(!(self.spawnflags & globaldef003470))
     {
         precache_sound("ambience/hum1.wav");
-        globaldef003498 = (self.mins + self.maxs) * GLOBALDEFFIVETWOTWO;
-        ambientsound(globaldef003498, "ambience/hum1.wav", GLOBALDEFFIVETWOTWO, ATTN_STATIC);
+        globaldef003498 = (self.mins + self.maxs) * RA_PLAYERSTATTIME;
+        ambientsound(globaldef003498, "ambience/hum1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
     }
     
 };
