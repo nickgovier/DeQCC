@@ -1,98 +1,179 @@
-void () func000607;
-void () plat_outside_touch;
-void () func000609;
-void () func000606;
-void () func000605;
-void () func000610;
-float globaldef003524;
 
-// func000602
-// function begins at statement 16876, parm_start=11565
-// OP_CALL0	464	0	0
-// OP_STORE_ENT	1	11565	0
-// OP_ADDRESS	11565	146	11572
-// OP_STOREP_FNC	11557	11572	0
-// OP_ADDRESS	11565	103	11573
-// OP_STOREP_F	227	11573	0
-// OP_ADDRESS	11565	104	11574
-// OP_STOREP_F	238	11574	0
-// OP_ADDRESS	11565	181	11575
-// OP_STOREP_ENT	28	11575	0
-// OP_LOAD_V	28	134	11576
-// OP_ADD_V	11576	11579	11582
-// OP_STORE_V	11582	11566	0
-// OP_LOAD_V	28	138	11585
-// OP_SUB_V	11585	11588	11591
-// OP_STORE_V	11591	11569	0
-// OP_LOAD_F	28	442	11594
-// OP_LOAD_F	28	446	11595
-// OP_SUB_F	11594	11595	11596
-// OP_ADD_F	11596	217	11597
-// OP_SUB_F	11571	11597	11598
-// OP_STORE_F	11598	11568	0
-// OP_LOAD_F	28	195	11599
-// OP_BITAND	11599	11563	11600
-// OP_IFNOT	11600	3	0
-// OP_ADD_F	11568	217	11601
-// OP_STORE_F	11601	11571	0
-// OP_LOAD_F	28	143	11602
-// OP_LE	11602	1470	11603
-// OP_IFNOT	11603	8	0
-// OP_LOAD_F	28	135	11604
-// OP_LOAD_F	28	139	11605
-// OP_ADD_F	11604	11605	11606
-// OP_DIV_F	11606	216	11607
-// OP_STORE_F	11607	11566	0
-// OP_ADD_F	11566	214	11608
-// OP_STORE_F	11608	11569	0
-// OP_LOAD_F	28	144	11609
-// OP_LE	11609	1470	11610
-// OP_IFNOT	11610	8	0
-// OP_LOAD_F	28	136	11611
-// OP_LOAD_F	28	140	11612
-// OP_ADD_F	11611	11612	11613
-// OP_DIV_F	11613	216	11614
-// OP_STORE_F	11614	11567	0
-// OP_ADD_F	11567	214	11615
-// OP_STORE_F	11615	11570	0
-// OP_STORE_V	11565	4	0
-// OP_STORE_V	11566	7	0
-// OP_STORE_V	11569	10	0
-// OP_CALL3	455	0	0
+// func000563
+// function begins at statement 15886, parm_start=10885
+// OP_ADDRESS	28	438	10885
+// OP_STOREP_F	285	10885	0
+// OP_LOAD_V	28	439	10886
+// OP_STORE_V	10886	4	0
+// OP_LOAD_F	28	369	10889
+// OP_STORE_V	10889	7	0
+// OP_STORE_V	10883	10	0
+// OP_CALL3	514	0	0
+// OP_ADDRESS	28	131	10890
+// OP_STOREP_F	213	10890	0
+// OP_LOAD_F	28	152	10891
+// OP_IFNOT	10891	3	0
+// OP_ADDRESS	28	163	10892
+// OP_STOREP_F	251	10892	0
 // OP_DONE	0	0	0
-void () func000602 = 
+void () func000563 = 
 {
-    local entity globaldef003526;
-    local vector globaldef003527;
-    local vector globaldef003531;
-    globaldef003526 = spawn();
-    globaldef003526.touch = func000607;
-    globaldef003526.movetype = MOVETYPE_NONE;
-    globaldef003526.solid = SOLID_TRIGGER;
-    globaldef003526.enemy = self;
-    globaldef003527 = self.mins + '25 25 0';
-    globaldef003531 = self.maxs - '25 25 -8';
-    globaldef003527_z = globaldef003531_z - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
+    self.state = STATE_DOWN;
+    SUB_CalcMove(self.pos1, self.speed, button_done);
+    self.frame = FALSE;
     
-    if(self.spawnflags & globaldef003524)
+    if(self.health)
     {
-        globaldef003531_z = globaldef003527_z + FL_CLIENT;
+        self.takedamage = DAMAGE_YES;
     }
     
+};
+
+
+// func000564
+// function begins at statement 15901, parm_start=10894
+// OP_DONE	0	0	0
+void () func000564 = 
+{
+};
+
+
+// func000565
+// function begins at statement 15902, parm_start=10895
+// OP_LOAD_F	28	438	10895
+// OP_EQ_F	10895	284	10896
+// OP_LOAD_F	28	438	10897
+// OP_EQ_F	10897	282	10898
+// OP_OR	10896	10898	10899
+// OP_IFNOT	10899	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	327	7	0
+// OP_LOAD_S	28	208	10900
+// OP_STORE_V	10900	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	438	10901
+// OP_STOREP_F	284	10901	0
+// OP_LOAD_V	28	443	10902
+// OP_STORE_V	10902	4	0
+// OP_LOAD_F	28	369	10905
+// OP_STORE_V	10905	7	0
+// OP_STORE_V	10874	10	0
+// OP_CALL3	514	0	0
+// OP_DONE	0	0	0
+void () func000565 = 
+{
     
-    if(self.size_x <= 50)
+    if((self.state == STATE_UP) || (self.state == STATE_TOP))
     {
-        globaldef003527_x = (self.mins_x + self.maxs_x) / FL_SWIM;
-        globaldef003531_x = globaldef003527_x + TRUE;
+        return;
     }
     
+    sound(self, CHAN_VOICE, self.noise, TRUE, ATTN_NORM);
+    self.state = STATE_UP;
+    SUB_CalcMove(self.pos2, self.speed, button_wait);
+};
+
+
+// func000566
+// function begins at statement 15925, parm_start=10907
+// OP_ADDRESS	28	181	10907
+// OP_STOREP_ENT	351	10907	0
+// OP_LOAD_S	351	129	10908
+// OP_EQ_S	10908	1241	10909
+// OP_IFNOT	10909	4	0
+// OP_STORE_V	351	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1132	0	0
+// OP_CALL0	10894	0	0
+// OP_DONE	0	0	0
+void () func000566 = 
+{
+    self.enemy = activator;
     
-    if(self.size_y <= 50)
+    if(activator.classname == "bot")
     {
-        globaldef003527_y = (self.mins_y + self.maxs_y) / FL_SWIM;
-        globaldef003531_y = globaldef003527_y + TRUE;
+        func002472(activator, self);
     }
     
-    setsize(globaldef003526, globaldef003527, globaldef003531);
+    func000565();
+};
+
+
+// func000567
+// function begins at statement 15935, parm_start=10911
+// OP_LOAD_S	29	129	10914
+// OP_NE_S	10914	1236	10915
+// OP_IFNOT	10915	5	0
+// OP_LOAD_S	29	129	10916
+// OP_NE_S	10916	1241	10917
+// OP_IFNOT	10917	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	28	181	10918
+// OP_STOREP_ENT	29	10918	0
+// OP_LOAD_S	29	129	10919
+// OP_EQ_S	10919	1241	10920
+// OP_IFNOT	10920	4	0
+// OP_STORE_V	29	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1132	0	0
+// OP_CALL0	10894	0	0
+// OP_DONE	0	0	0
+void () func000567 = 
+{
+    local vector globaldef003427;
+    
+    if(other.classname != "player")
+    {
+        
+        if(other.classname != "bot")
+        {
+            return;
+        }
+        
+    }
+    
+    self.enemy = other;
+    
+    if(other.classname == "bot")
+    {
+        func002472(other, self);
+    }
+    
+    func000565();
+};
+
+
+// func000568
+// function begins at statement 15952, parm_start=10922
+// OP_ADDRESS	28	181	10922
+// OP_STOREP_ENT	352	10922	0
+// OP_ADDRESS	28	152	10923
+// OP_LOAD_F	28	185	10924
+// OP_STOREP_F	10924	10923	0
+// OP_ADDRESS	28	163	10925
+// OP_STOREP_F	250	10925	0
+// OP_LOAD_S	352	129	10926
+// OP_EQ_S	10926	1241	10927
+// OP_IFNOT	10927	4	0
+// OP_STORE_V	352	4	0
+// OP_STORE_V	28	7	0
+// OP_CALL2	1132	0	0
+// OP_CALL0	10894	0	0
+// OP_DONE	0	0	0
+void () func000568 = 
+{
+    self.enemy = damage_attacker;
+    self.health = self.max_health;
+    self.takedamage = DAMAGE_NO;
+    
+    if(damage_attacker.classname == "bot")
+    {
+        func002472(damage_attacker, self);
+    }
+    
+    func000565();
 };
 

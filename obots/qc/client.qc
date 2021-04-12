@@ -3190,7 +3190,7 @@ void () ClientConnect =
     
     if(teamplay || !globaldef000799)
     {
-        func002365(self);
+        ToggleObserverMode(self);
     }
     
     if((self.netname == "CamClient") || (self.netname == ""))

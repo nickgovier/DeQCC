@@ -275,7 +275,7 @@ void (entity globaldef009280) cmdlist =
 };
 
 
-// func002694
+// SetUpAliases
 // function begins at statement 56322, parm_start=29661
 // OP_STORE_F	213	29662	0
 // OP_LT	29662	736	29664
@@ -435,7 +435,7 @@ void (entity globaldef009280) cmdlist =
 // OP_STORE_V	29711	7	0
 // OP_CALL2	839	0	0
 // OP_DONE	0	0	0
-void (entity globaldef009349) func002694 = 
+void (entity globaldef009349) SetUpAliases = 
 {
     local float globaldef009350;
     local string globaldef009351;
@@ -1074,7 +1074,7 @@ void () func002704 =
     
     while(globaldef009430)
     {
-        func002365(globaldef009430);
+        ToggleObserverMode(globaldef009430);
         globaldef009430 = find(globaldef009430, classname, "observer");
     }
     
@@ -1122,7 +1122,7 @@ void () impulse190 =
     }
     
     msgUpdateAllClientSettingsToAll();
-    func002694(self);
+    SetUpAliases(self);
 };
 
 
@@ -2103,7 +2103,7 @@ void (entity globaldef009483) observer =
 {
     if(!teamplay || globaldef000799)
     {
-        func002365(globaldef009483);
+        ToggleObserverMode(globaldef009483);
     }
     else
     {
@@ -2162,7 +2162,7 @@ void () func002722 =
             }
             else
             {
-                func002365(self);
+                ToggleObserverMode(self);
             }
             
         }
@@ -4622,7 +4622,7 @@ void () func002736 =
                 globaldef009545 = ftos(globaldef009544);
                 cvar_set("teamplay", globaldef009545);
                 teamplay = globaldef009544;
-                removeallbots();
+                RemoveAllBots();
                 func002726();
             }
             else
@@ -4730,19 +4730,19 @@ void () func002736 =
             func002734();
             if(self.impulse == TRUE)
             {
-                func002423();
+                AddRandomDeathmatchBot();
             }
             else
             {
                 if(self.impulse == FL_SWIM)
                 {
-                    func002425();
+                    RemoveOneDeathmatchBot();
                 }
                 else
                 {
                     if(self.impulse == MOVETYPE_WALK)
                     {
-                        removeallbots();
+                        RemoveAllBots();
                     }
                     else
                     {
@@ -5186,7 +5186,7 @@ void (entity globaldef009571, float globaldef009572) addbots =
         return;
     }
     
-    func002422(globaldef009572);
+    AddBots(globaldef009572);
 };
 
 
@@ -5213,7 +5213,7 @@ void (entity globaldef009575) addbot =
         return;
     }
     
-    func002423();
+    AddRandomDeathmatchBot();
 };
 
 
@@ -5240,7 +5240,7 @@ void (entity globaldef009578) removebot =
         return;
     }
     
-    func002425();
+    RemoveOneDeathmatchBot();
 };
 
 
@@ -5571,19 +5571,19 @@ void () BotImpulseCommand =
     func002736();
     if(self.impulse == 161)
     {
-        cyclecam(self);
+        CycleClientCamera(self);
     }
     else
     {
         if(self.impulse == 162)
         {
-            observerfly(self);
+            ToggleObserverFly(self);
         }
         else
         {
             if(self.impulse == 163)
             {
-                camname(self);
+                ToggleCamName(self);
             }
             else
             {
@@ -5595,7 +5595,7 @@ void () BotImpulseCommand =
                 {
                     if(self.impulse == 165)
                     {
-                        chasecam(self);
+                        ToggleChaseCam(self);
                     }
                     else
                     {
@@ -5741,7 +5741,7 @@ void () BotImpulseCommand =
                     
                     if(CheckIsAdmin(self))
                     {
-                        removeallbots();
+                        RemoveAllBots();
                     }
                     
                 }

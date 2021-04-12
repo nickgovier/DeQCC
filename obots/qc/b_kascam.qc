@@ -61,13 +61,13 @@ void () func002277;
 void (entity globaldef006690, entity globaldef006691) func002349;
 void (entity globaldef006692, vector globaldef006693) func002350;
 void (entity globaldef006784) func002357;
-void (entity globaldef006798) func002365;
-void (entity globaldef006792) observerfly;
-void (entity globaldef006793) camname;
-void (entity globaldef006796) chasecam;
+void (entity globaldef006798) ToggleObserverMode;
+void (entity globaldef006792) ToggleObserverFly;
+void (entity globaldef006793) ToggleCamName;
+void (entity globaldef006796) ToggleChaseCam;
 void (entity globaldef006790) func002359;
 void (entity globaldef006797) func002364;
-void (entity globaldef006785) cyclecam;
+void (entity globaldef006785) CycleClientCamera;
 void (entity globaldef006779) func002356;
 void (entity globaldef006801, string globaldef006802, float globaldef006803) func002366;
 void (entity globaldef006806, string globaldef006807, string globaldef006808, float globaldef006809) func002367;
@@ -101,12 +101,12 @@ void (entity globaldef007040, float globaldef007041) func002399;
 void (float globaldef007088) func002410;
 void (entity globaldef007102) func002417;
 void () func002421;
-void () func002423;
-void () func002425;
-void (float globaldef007118) func002422;
+void () AddRandomDeathmatchBot;
+void () RemoveOneDeathmatchBot;
+void (float globaldef007118) AddBots;
 void (float globaldef007125) func002427;
 void (float globaldef007127) func002428;
-void () removeallbots;
+void () RemoveAllBots;
 void () func002429;
 void (entity globaldef007123, float globaldef007124) func002426;
 float (entity globaldef007667, entity globaldef007668) func002456;
@@ -2385,7 +2385,7 @@ void () CamImpulses =
             if(self.impulse == 166)
             {
                 self.classname = "observer";
-                func002365(self);
+                ToggleObserverMode(self);
             }
             else
             {
