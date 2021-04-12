@@ -574,7 +574,7 @@ void () func000262 =
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_shells = self.ammo_shells - TRUE;
     globaldef002125 = func000250(self, 100000);
-    func000247((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002125);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002125);
     func000261(MOVETYPE_TOSS, globaldef002125, '0.04 0.04 0');
 };
 
@@ -644,8 +644,8 @@ void () func000263 =
     self.punchangle_x = CONTENT_SLIME;
     self.currentammo = self.ammo_shells = self.ammo_shells - FL_SWIM;
     globaldef002132 = func000250(self, 100000);
-    func000247((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
-    func000247((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
     func000261(14, globaldef002132, '0.14 0.08 0');
 };
 

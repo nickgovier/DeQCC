@@ -310,6 +310,7 @@ namespace DeQcc
             nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
             nameMap.Add("globaldef000724", "GLOBALDEFSEVENTWOFOUR");  // constant = 800
+            nameMap.Add("globaldef000727", "B_MAXSHELLCASES");   // b_eject.qc, constant = 500
             nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
             nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
@@ -993,6 +994,36 @@ namespace DeQcc
 
             // DropBackpack locala
             nameMap.Add("globaldef001981", "item");
+
+            #endregion
+
+            #region b_eject.qc
+
+            // This is taken from one of the shotgun shell eject mods 
+            // e.g. Steve Bond's eject, Bort's QuakeC mod, or similar
+
+            // Declarations
+            nameMap.Add("globaldef001987", "numShellCases");
+
+            nameMap.Add("func000245", "EjectShell_remove");
+            nameMap.Add("func000246", "EjectShell_touch");
+            nameMap.Add("func000247", "EjectShell_spawn");
+
+            for (int i = 245; i <= 247; i++)
+            {
+                fileMap[i] = "b_eject.qc";
+            }
+
+            // EjectShell_touch locals
+            nameMap.Add("globaldef001990", "currentLocationContents");
+
+            // EjectShell_spawn params
+            nameMap.Add("globaldef001995", "origin");
+            nameMap.Add("globaldef001999", "angle");
+
+            // EjectShell_spawn locals
+            nameMap.Add("globaldef002003", "shell");
+            nameMap.Add("globaldef002004", "oldshell");
 
             #endregion
 
