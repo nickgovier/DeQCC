@@ -204,7 +204,7 @@ void () EjectShell_touch =
 // OP_ADD_F	5253	214	5353
 // OP_STORE_F	5353	5253	0
 // OP_DONE	0	0	0
-void (vector origin, vector angle) EjectShell_spawn = 
+void (vector originpt, vector angle) EjectShell_spawn = 
 {
     local entity shell;
     local entity oldshell;
@@ -244,7 +244,7 @@ void (vector origin, vector angle) EjectShell_spawn =
     shell.nextthink = time + GLOBALDEFSEVENFOUREIGHT;
     setmodel(shell, "progs/shelcase.mdl");
     setsize(shell, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(shell, origin);
+    setorigin(shell, originpt);
     shell.velocity = angle * 50;
     shell.velocity_x = (shell.velocity_x + (random() * 50)) - SVC_SIGNONNUM;
     shell.velocity_y = (shell.velocity_y + (random() * 50)) - SVC_SIGNONNUM;

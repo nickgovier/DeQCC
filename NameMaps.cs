@@ -489,7 +489,7 @@ namespace DeQcc
             // CamUpdatePos locals
             nameMap.Add("globaldef001262", "vec");
             nameMap.Add("globaldef001266", "v1");
-            nameMap.Add("globaldef001270", "vlen");
+            nameMap.Add("globaldef001270", "vlength");
 
             // CamFlybyTarget params
             nameMap.Add("globaldef001278", "ent");
@@ -1047,7 +1047,7 @@ namespace DeQcc
             nameMap.Add("globaldef001990", "currentLocationContents");
 
             // EjectShell_spawn params
-            nameMap.Add("globaldef001995", "origin");
+            nameMap.Add("globaldef001995", "originpt");
             nameMap.Add("globaldef001999", "angle");
 
             // EjectShell_spawn locals
@@ -1253,7 +1253,7 @@ namespace DeQcc
             nameMap.Add("func000702", "ogre_swing1");
             nameMap.Add("func000716", "ogre_smash1");
 
-            for (int i = 702; i <= 811; i++)
+            for (int i = 665; i <= 811; i++)
             {
                 fileMap[i] = "ogre.qc";
             }
@@ -1265,7 +1265,7 @@ namespace DeQcc
             nameMap.Add("func000887", "DemonCheckAttack");
             nameMap.Add("func000888", "Demon_Melee");
 
-            for (int i = 884; i <= 888; i++)
+            for (int i = 812; i <= 889; i++)
             {
                 fileMap[i] = "demon.qc";
             }
@@ -1281,7 +1281,7 @@ namespace DeQcc
             nameMap.Add("func000938", "sham_swingl1");
             nameMap.Add("func000947", "sham_swingr1");
 
-            for (int i = 925; i <= 987; i++)
+            for (int i = 890; i <= 987; i++)
             {
                 fileMap[i] = "shambler.qc";
             }
@@ -1294,7 +1294,7 @@ namespace DeQcc
             nameMap.Add("func001019", "knight_runatk1");
             nameMap.Add("func001030", "knight_atk1");
 
-            for (int i = 997; i <= 1087; i++)
+            for (int i = 988; i <= 1087; i++)
             {
                 fileMap[i] = "knight.qc";
             }
@@ -1303,7 +1303,7 @@ namespace DeQcc
 
             #region soldier.qc
 
-            for (int i = 1194; i <= 1194; i++)
+            for (int i = 1088; i <= 1194; i++)
             {
                 fileMap[i] = "soldier.qc";
             }
@@ -1325,7 +1325,7 @@ namespace DeQcc
 
             nameMap.Add("func001357", "DogCheckAttack");
 
-            for (int i = 1357; i <= 1358; i++)
+            for (int i = 1265; i <= 1358; i++)
             {
                 fileMap[i] = "dog.qc";
             }
@@ -1334,7 +1334,7 @@ namespace DeQcc
 
             #region zombie.qc
 
-            for (int i = 1562; i <= 1562; i++)
+            for (int i = 1359; i <= 1562; i++)
             {
                 fileMap[i] = "zombie.qc";
             }
@@ -1343,7 +1343,7 @@ namespace DeQcc
 
             #region boss.qc
 
-            for (int i = 1677; i <= 1680; i++)
+            for (int i = 1563; i <= 1680; i++)
             {
                 fileMap[i] = "boss.qc";
             }
@@ -1352,7 +1352,7 @@ namespace DeQcc
 
             #region tarbaby.qc
 
-            for (int i = 1746; i <= 1746; i++)
+            for (int i = 1681; i <= 1746; i++)
             {
                 fileMap[i] = "tarbaby.qc";
             }
@@ -1361,7 +1361,7 @@ namespace DeQcc
 
             #region hknight.qc
 
-            for (int i = 1814; i <= 1920; i++)
+            for (int i = 1747; i <= 1920; i++)
             {
                 fileMap[i] = "hknight.qc";
             }
@@ -1370,7 +1370,7 @@ namespace DeQcc
 
             #region fish.qc
 
-            for (int i = 2016; i <= 2016; i++)
+            for (int i = 1921; i <= 2016; i++)
             {
                 fileMap[i] = "fish.qc";
             }
@@ -1379,7 +1379,7 @@ namespace DeQcc
 
             #region shalrath.qc
 
-            for (int i = 2070; i <= 2070; i++)
+            for (int i = 2017; i <= 2070; i++)
             {
                 fileMap[i] = "shalrath.qc";
             }
@@ -1388,7 +1388,7 @@ namespace DeQcc
 
             #region enforcer.qc
 
-            for (int i = 2182; i <= 2182; i++)
+            for (int i = 2071; i <= 2182; i++)
             {
                 fileMap[i] = "enforcer.qc";
             }
@@ -1580,7 +1580,7 @@ namespace DeQcc
             nameMap.Add("func002715", "nosupernail");  // impulse 135
             nameMap.Add("func002716", "noshellcases");  // impulse 136
             nameMap.Add("func002717", "bubblerouting");  // impulse 172
-            nameMap.Add("func002718", "serverflags");
+            nameMap.Add("func002718", "PrintServerflags");
             nameMap.Add("func002720", "botskills");  // impulse 142
             nameMap.Add("func002721", "observer");  // impulse 160
             nameMap.Add("func002725", "setteam");  // impulse 201-208

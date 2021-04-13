@@ -1036,7 +1036,7 @@ void (float speedv, float speeda) CamUpdatePos =
 {
     local vector vec;
     local vector v1;
-    local float vlen;
+    local float vlength;
     traceline(self.origin, self.dest, TRUE, self);
     
     if(trace_fraction != TRUE)
@@ -1052,10 +1052,10 @@ void (float speedv, float speeda) CamUpdatePos =
     else
     {
         vec = self.dest - self.origin;
-        vlen = vlen(vec);
+        vlength = vlen(vec);
         vec = normalize(vec);
-        vlen = CamHurry(vlen, speedv);
-        vec = vlen * vec;
+        vlength = CamHurry(vlength, speedv);
+        vec = vlength * vec;
         setorigin(self, self.origin + vec);
     }
     

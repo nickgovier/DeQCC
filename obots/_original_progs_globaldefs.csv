@@ -1269,7 +1269,7 @@ row,name,s_name,ofs,type,typename
 1267,globaldef001267,0,1480,2,float
 1268,globaldef001268,0,1481,2,float
 1269,globaldef001269,0,1482,2,float
-1270,vlen,0,1483,2,float
+1270,vlength,0,1483,2,float
 1271,globaldef001271,0,1536,2,float
 1272,globaldef001272,0,1538,2,float
 1273,CamSetAuto,0,1569,6,void()
@@ -1994,7 +1994,7 @@ row,name,s_name,ofs,type,typename
 1992,globaldef001992,0,5282,3,vector
 1993,globaldef001993,0,5289,1,string
 1994,EjectShell_spawn,0,5297,6,void()
-1995,origin,0,5298,3,vector
+1995,originpt,0,5298,3,vector
 1996,globaldef001996,0,5298,2,float
 1997,globaldef001997,0,5299,2,float
 1998,globaldef001998,0,5300,2,float
@@ -9465,7 +9465,7 @@ row,name,s_name,ofs,type,typename
 9463,globaldef009463,0,29989,1,string
 9464,bubblerouting,0,29995,6,void()
 9465,globaldef009465,0,29996,1,string
-9466,serverflags,0,30002,6,void()
+9466,PrintServerflags,0,30002,6,void()
 9467,globaldef009467,0,30003,1,string
 9468,globaldef009468,0,30006,1,string
 9469,globaldef009469,0,30009,1,string

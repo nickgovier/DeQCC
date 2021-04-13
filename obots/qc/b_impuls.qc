@@ -1827,7 +1827,7 @@ void () bubblerouting =
 };
 
 
-// serverflags
+// PrintServerflags
 // function begins at statement 57174, parm_start=30003
 // OP_STORE_V	28	4	0
 // OP_STORE_V	30003	7	0
@@ -1912,7 +1912,7 @@ void () bubblerouting =
 // OP_STORE_V	30035	4	0
 // OP_CALL1	29768	0	0
 // OP_DONE	0	0	0
-void () serverflags = 
+void () PrintServerflags = 
 {
     sprint(self, "bot pathing    ");
     func002699(!(globaldef000804 & OBOT_BOTPATHING));
@@ -5829,7 +5829,7 @@ void () BotImpulseCommand =
                                                     
                                                     if(CheckIsAdmin(self))
                                                     {
-                                                        serverflags();
+                                                        PrintServerflags();
                                                     }
                                                     
                                                 }
