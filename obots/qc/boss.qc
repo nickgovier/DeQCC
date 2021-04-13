@@ -1313,7 +1313,7 @@ void (vector globaldef004925) func001675 =
     }
     
     globaldef004937 = normalize(globaldef004941 - globaldef004933);
-    func000278(globaldef004933, globaldef004937);
+    launch_spike(globaldef004933, globaldef004937);
     setmodel(newmis, "progs/lavaball.mdl");
     newmis.avelocity = '200 100 300';
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);

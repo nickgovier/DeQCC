@@ -362,7 +362,7 @@ void () func001198 =
         globaldef004324 = self.enemy.origin - (globaldef000775 * self.movedir);
         globaldef004320 = normalize(globaldef004324 - self.origin);
         sound(self, CHAN_WEAPON, "wizard/wattack.wav", TRUE, ATTN_NORM);
-        func000278(self.origin, globaldef004320);
+        launch_spike(self.origin, globaldef004320);
         newmis.velocity = globaldef004320 * GLOBALDEFSEVENTWOTHREE;
         newmis.owner = self.owner;
         newmis.classname = "wizspike";

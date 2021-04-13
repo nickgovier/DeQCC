@@ -1762,11 +1762,11 @@ float (entity globaldef006596) func002330 =
             
             if(globaldef006596.weapon != IT_LIGHTNING)
             {
-                return 80 + (func000249() * FL_SWIM);
+                return 80 + (crandom() * FL_SWIM);
             }
             else
             {
-                return 81 + (func000249() * FL_SWIM);
+                return 81 + (crandom() * FL_SWIM);
             }
             
         }
@@ -1919,7 +1919,7 @@ float (entity globaldef006603) func002332 =
     
     if(globaldef006603.enemy.origin_z < (globaldef006603.origin_z - 200))
     {
-        return 70 + (func000249() * MOVETYPE_BOUNCEMISSILE);
+        return 70 + (crandom() * MOVETYPE_BOUNCEMISSILE);
     }
     
     return 35;

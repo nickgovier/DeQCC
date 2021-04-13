@@ -70,7 +70,7 @@ void (string globaldef003190, float globaldef003191) func000462 =
     self.velocity = func000459(globaldef003191);
     self.origin_z = self.origin_z - OBOT_MAXBOTS;
     self.flags = self.flags - (self.flags & FL_ONGROUND);
-    self.avelocity = func000249() * '0 600 0';
+    self.avelocity = crandom() * '0 600 0';
 };
 
 

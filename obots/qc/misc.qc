@@ -476,7 +476,7 @@ void () func000635 =
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     particle(self.origin, VEC_ORIGIN, 75, 255);
     self.origin_z = self.origin_z + FL_MONSTER;
-    func000270();
+    BecomeExplosion();
 };
 
 
@@ -667,12 +667,12 @@ void () func000638 =
     else
     {
         sound(self, CHAN_VOICE, "weapons/spike2.wav", TRUE, ATTN_NORM);
-        func000278(self.origin, self.movedir);
+        launch_spike(self.origin, self.movedir);
         newmis.velocity = self.movedir * GLOBALDEFSEVENTWOEIGHT;
         
         if(self.spawnflags & globaldef003599)
         {
-            newmis.touch = func000282;
+            newmis.touch = superspike_touch;
         }
         
     }

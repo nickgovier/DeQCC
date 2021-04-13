@@ -894,7 +894,7 @@ void () func002069 =
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;
-    func000264();
+    s_explode1();
 };
 
 

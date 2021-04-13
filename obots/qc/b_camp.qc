@@ -422,7 +422,7 @@ void () func000325 =
     func000303(self.origin, trace_endpos, self);
     sound(self, CHAN_WEAPON, "cloud/thunder.wav", TRUE, ATTN_NORM);
     func000304();
-    func000273(self.origin, trace_endpos + (globaldef002524 * MOVETYPE_STEP), self, 20);
+    LightningDamage(self.origin, trace_endpos + (globaldef002524 * MOVETYPE_STEP), self, 20);
 };
 
 

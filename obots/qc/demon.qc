@@ -1242,7 +1242,7 @@ void (float side) Demon_Melee =
     globaldef003924 = MOVETYPE_BOUNCE + (MOVETYPE_FLY * random());
     T_Damage(self.enemy, self, self, globaldef003924);
     makevectors(self.angles);
-    func000253(self.origin + (v_forward * FL_INWATER), side * v_right);
+    SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), side * v_right);
 };
 
 

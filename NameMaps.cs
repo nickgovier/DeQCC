@@ -1058,11 +1058,50 @@ namespace DeQcc
 
             #region weapons.qc
 
+            // Declarations
+            nameMap.Add("globaldef002084", "multi_ent");
+            nameMap.Add("globaldef002085", "multi_damage");
+
             nameMap.Add("func000248", "W_Precache");
+            nameMap.Add("func000249", "crandom");
+            nameMap.Add("func000250", "aim_obot");
+            nameMap.Add("func000251", "W_FireAxe");
+            nameMap.Add("func000252", "wall_velocity");
+            nameMap.Add("func000253", "SpawnMeatSpray");
             nameMap.Add("func000254", "SpawnBlood");
+            nameMap.Add("func000255", "spawn_touchblood");
+            nameMap.Add("func000257", "ClearMultiDamage");
+            nameMap.Add("func000258", "ApplyMultiDamage");
+            nameMap.Add("func000259", "AddMultiDamage");
+            nameMap.Add("func000260", "TraceAttack");
+            nameMap.Add("func000261", "FireBullets");
+            nameMap.Add("func000262", "W_FireShotgun");
+            nameMap.Add("func000263", "W_FireSuperShotgun");
+            for (int i = 1; i <= 6; i++) { nameMap.Add("func000" + (263 + i).ToString(), "s_explode" + i.ToString()); }
+            nameMap.Add("func000270", "BecomeExplosion");
             nameMap.Add("func000271", "T_MissileTouch");
+            nameMap.Add("func000272", "W_FireRocket");
+            nameMap.Add("func000273", "LightningDamage");
+            nameMap.Add("func000274", "W_FireLightning");
+            nameMap.Add("func000275", "GrenadeExplode");
+            nameMap.Add("func000276", "GrenadeTouch");
+            nameMap.Add("func000277", "W_FireGrenade");
+            nameMap.Add("func000278", "launch_spike");
+            nameMap.Add("func000279", "W_FireSuperSpikes");
+            nameMap.Add("func000280", "W_FireSpikes");
+            nameMap.Add("func000281", "spike_touch");
+            nameMap.Add("func000282", "superspike_touch");
             nameMap.Add("func000283", "W_SetCurrentAmmo");
             nameMap.Add("func000284", "W_BestWeapon");
+            nameMap.Add("func000285", "W_CheckNoAmmo");
+            nameMap.Add("func000286", "W_Attack");
+            nameMap.Add("func000287", "W_ChangeWeapon");
+            nameMap.Add("func000288", "CheatCommand");
+            nameMap.Add("func000289", "CycleWeaponCommand");
+            nameMap.Add("func000290", "CycleWeaponReverseCommand");
+            nameMap.Add("func000292", "QuadCheat");
+            nameMap.Add("func000293", "ImpulseCommands");
+            nameMap.Add("func000294", "W_WeaponFrame");
             nameMap.Add("func000295", "SuperDamageSound");
 
             for (int i = 248; i <= 295; i++)
@@ -1070,12 +1109,132 @@ namespace DeQcc
                 fileMap[i] = "weapons.qc";
             }
 
-            // SpawnBlood args
+            // aim params
+            nameMap.Add("globaldef002026", "e");
+            nameMap.Add("globaldef002027", "speed_UNUSED");
+
+            // W_FireAxe locals
+            nameMap.Add("globaldef002029", "source");
+            nameMap.Add("globaldef002033", "org");
+
+            // wall_velocity locals
+            nameMap.Add("globaldef002040", "vel");
+
+            // SpawnMeatSpray params
+            nameMap.Add("globaldef002045", "org");
+            nameMap.Add("globaldef002049", "vel");
+
+            // SpawnMeatSpray locals
+            nameMap.Add("globaldef002053", "missile");
+            nameMap.Add("globaldef002054", "mpuff");
+
+            // SpawnBlood params
             nameMap.Add("globaldef002057", "org");
             nameMap.Add("globaldef002061", "vel");
             nameMap.Add("globaldef002065", "damage");
 
+            // spawn_touchblood params
+            nameMap.Add("globaldef002068", "damage");
+
+            // spawn_touchblood locals
+            nameMap.Add("globaldef002069", "vel");
+
+            // SpawnChunk params
+            nameMap.Add("globaldef002075", "org");
+            nameMap.Add("globaldef002079", "vel");
+
+            // AddMultiDamage params
+            nameMap.Add("globaldef002089", "hit");
+            nameMap.Add("globaldef002090", "damage");
+
+            // TraceAttack params
+            nameMap.Add("globaldef002092", "damage");
+            nameMap.Add("globaldef002093", "dir");
+
+            // TraceAttack locals
+            nameMap.Add("globaldef002097", "vel");
+            nameMap.Add("globaldef002101", "org");
+
+            // FireBullets params
+            nameMap.Add("globaldef002106", "shotcount");
+            nameMap.Add("globaldef002107", "dir");
+            nameMap.Add("globaldef002111", "spread");
+
+            // FireBullets locals
+            nameMap.Add("globaldef002115", "direction");
+            nameMap.Add("globaldef002119", "src");
+
+            // W_FireShotgun locals
+            nameMap.Add("globaldef002125", "dir");
+
+            // W_FireSuperShotgun locals
+            nameMap.Add("globaldef002132", "dir");
+
+            // T_MissileTouch locals
+            nameMap.Add("globaldef002146", "damg");
+
+            // W_FireRocket locals
+            nameMap.Add("globaldef002148", "missile");
+            nameMap.Add("globaldef002149", "mpuff");
+
+            // LightningDamage params
+            nameMap.Add("globaldef002153", "p1");
+            nameMap.Add("globaldef002157", "p2");
+            nameMap.Add("globaldef002161", "from");
+            nameMap.Add("globaldef002162", "damage");
+
+            // LightningDamage locals
+            nameMap.Add("globaldef002163", "e1");
+            nameMap.Add("globaldef002164", "e2");
+            nameMap.Add("globaldef002165", "f");
+
+            // W_FireLightning locals
+            nameMap.Add("globaldef002172", "org");
+            nameMap.Add("globaldef002176", "cells");
+
+            // W_FireGrenade locals
+            nameMap.Add("globaldef002182", "missile");
+            nameMap.Add("globaldef002183", "mpuff");
+
+            // launch_spike params
+            nameMap.Add("globaldef002192", "org");
+            nameMap.Add("globaldef002196", "dir");
+
+            // W_FireSuperSpikes params
+            nameMap.Add("globaldef002203", "dir");
+            nameMap.Add("globaldef002207", "old");
+
+            // W_FireSpikes params
+            nameMap.Add("globaldef002211", "dir");
+            nameMap.Add("globaldef002215", "old");
+
+            // spike_touch locals
+            nameMap.Add("globaldef002217", "rand");
+
+            // superspike_touch locals
+            nameMap.Add("globaldef002220", "rand");
+
+            // W_BestWeapon locals
+            nameMap.Add("globaldef002230", "it");
+
+            // W_Attack locals
+            nameMap.Add("globaldef002241", "r");
+
+            // W_ChangeWeapon locals
+            nameMap.Add("globaldef002247", "it");
+            nameMap.Add("globaldef002248", "am");
+            nameMap.Add("globaldef002249", "fl");
+
+            // CycleWeaponCommand locals
+            nameMap.Add("globaldef002254", "am");
+
+            // CycleWeaponReverseCommand locals
+            nameMap.Add("globaldef002256", "it");
+            nameMap.Add("globaldef002257", "am");
+
             #endregion
+
+            // Done to here
 
             #region world.qc
 
@@ -1157,9 +1316,6 @@ namespace DeQcc
 
             #endregion
 
-            
-            
-
             #region client.qc
 
             nameMap.Add("func000406", "ClientObituary");
@@ -1179,6 +1335,14 @@ namespace DeQcc
             #region player.qc
 
             nameMap.Add("func000408", "player_run");
+            nameMap.Add("func000409", "player_shot1");
+            nameMap.Add("func000415", "player_axe1");
+            nameMap.Add("func000419", "player_axeb1");
+            nameMap.Add("func000423", "player_axec1");
+            nameMap.Add("func000427", "player_axed1");
+            nameMap.Add("func000431", "player_nail1");
+            nameMap.Add("func000433", "player_light1");
+            nameMap.Add("func000435", "player_rocket1");
             nameMap.Add("func000461", "ThrowGib");
 
             for (int i = 408; i <= 461; i++)

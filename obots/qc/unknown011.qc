@@ -8254,7 +8254,7 @@ void () func002534 = [121, func002535]
 {
     self.weaponframe = MOVETYPE_WALK;
     makevectors(self.v_angle);
-    func000251();
+    W_FireAxe();
     func002410(CONTENT_EMPTY);
 };
 
@@ -8320,7 +8320,7 @@ void () func002538 = [127, func002539]
 {
     self.weaponframe = MOVETYPE_PUSH;
     makevectors(self.v_angle);
-    func000251();
+    W_FireAxe();
     func002410(CONTENT_EMPTY);
 };
 
@@ -8386,7 +8386,7 @@ void () func002542 = [133, func002543]
 {
     self.weaponframe = MOVETYPE_WALK;
     makevectors(self.v_angle);
-    func000251();
+    W_FireAxe();
     func002410(CONTENT_EMPTY);
 };
 
@@ -8452,7 +8452,7 @@ void () func002546 = [139, func002547]
 {
     self.weaponframe = MOVETYPE_PUSH;
     makevectors(self.v_angle);
-    func000251();
+    W_FireAxe();
     func002410(CONTENT_EMPTY);
 };
 
@@ -8513,7 +8513,7 @@ void () func002548 = [103, func002549]
     
     SuperDamageSound();
     makevectors(self.v_angle);
-    func000280(MOVETYPE_STEP);
+    W_FireSpikes(MOVETYPE_STEP);
     self.attack_finished = self.nextthink - 0.01;
     func002410(CONTENT_EMPTY);
 };
@@ -8556,7 +8556,7 @@ void () func002549 = [104, func002525]
     
     SuperDamageSound();
     makevectors(self.v_angle);
-    func000280(CONTENT_SLIME);
+    W_FireSpikes(CONTENT_SLIME);
     func002410(CONTENT_EMPTY);
 };
 
@@ -8601,7 +8601,7 @@ void () func002550 = [105, func002551]
     
     SuperDamageSound();
     makevectors(self.v_angle);
-    func000274();
+    W_FireLightning();
     self.attack_finished = self.nextthink - 0.01;
     func002410(CONTENT_EMPTY);
 };
@@ -8643,7 +8643,7 @@ void () func002551 = [106, func002525]
     
     SuperDamageSound();
     makevectors(self.v_angle);
-    func000274();
+    W_FireLightning();
     func002410(CONTENT_EMPTY);
 };
 

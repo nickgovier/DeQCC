@@ -55,7 +55,7 @@ void () func000665 =
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;
-    func000264();
+    s_explode1();
 };
 
 
@@ -290,11 +290,11 @@ void (float globaldef003662) func000668 =
         makevectors(self.angles);
         if(globaldef003662 == TRUE)
         {
-            func000253(self.origin + (v_forward * FL_INWATER), (func000249() * 100) * v_right);
+            SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), (crandom() * 100) * v_right);
         }
         else
         {
-            func000253(self.origin + (v_forward * FL_INWATER), globaldef003662 * v_right);
+            SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), globaldef003662 * v_right);
         }
         
     }

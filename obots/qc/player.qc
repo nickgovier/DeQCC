@@ -78,7 +78,7 @@ void () player_run = [6, player_run]
 };
 
 
-// func000409
+// player_shot1
 // function begins at statement 13519, parm_start=9473
 // OP_STATE	9473	9474	0
 // OP_ADDRESS	28	156	9475
@@ -88,7 +88,7 @@ void () player_run = [6, player_run]
 // OP_BITOR	9477	339	9478
 // OP_STOREP_F	9478	9476	0
 // OP_DONE	0	0	0
-void () func000409 = [113, func000410]
+void () player_shot1 = [113, func000410]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -155,13 +155,13 @@ void () func000414 = [118, player_run]
 };
 
 
-// func000415
+// player_axe1
 // function begins at statement 13547, parm_start=9493
 // OP_STATE	9493	9494	0
 // OP_ADDRESS	28	156	9495
 // OP_STOREP_F	214	9495	0
 // OP_DONE	0	0	0
-void () func000415 = [119, func000416]
+void () player_axe1 = [119, func000416]
 {
     self.weaponframe = TRUE;
 };
@@ -189,7 +189,7 @@ void () func000416 = [120, func000417]
 void () func000417 = [121, func000418]
 {
     self.weaponframe = MOVETYPE_WALK;
-    func000251();
+    W_FireAxe();
 };
 
 
@@ -205,13 +205,13 @@ void () func000418 = [122, player_run]
 };
 
 
-// func000419
+// player_axeb1
 // function begins at statement 13564, parm_start=9503
 // OP_STATE	9503	9504	0
 // OP_ADDRESS	28	156	9505
 // OP_STOREP_F	230	9505	0
 // OP_DONE	0	0	0
-void () func000419 = [125, func000420]
+void () player_axeb1 = [125, func000420]
 {
     self.weaponframe = MOVETYPE_FLY;
 };
@@ -239,7 +239,7 @@ void () func000420 = [126, func000421]
 void () func000421 = [127, func000422]
 {
     self.weaponframe = MOVETYPE_PUSH;
-    func000251();
+    W_FireAxe();
 };
 
 
@@ -255,13 +255,13 @@ void () func000422 = [128, player_run]
 };
 
 
-// func000423
+// player_axec1
 // function begins at statement 13581, parm_start=9513
 // OP_STATE	9513	9514	0
 // OP_ADDRESS	28	156	9515
 // OP_STOREP_F	214	9515	0
 // OP_DONE	0	0	0
-void () func000423 = [131, func000424]
+void () player_axec1 = [131, func000424]
 {
     self.weaponframe = TRUE;
 };
@@ -289,7 +289,7 @@ void () func000424 = [132, func000425]
 void () func000425 = [133, func000426]
 {
     self.weaponframe = MOVETYPE_WALK;
-    func000251();
+    W_FireAxe();
 };
 
 
@@ -305,13 +305,13 @@ void () func000426 = [134, player_run]
 };
 
 
-// func000427
+// player_axed1
 // function begins at statement 13598, parm_start=9524
 // OP_STATE	9524	9525	0
 // OP_ADDRESS	28	156	9526
 // OP_STOREP_F	230	9526	0
 // OP_DONE	0	0	0
-void () func000427 = [137, func000428]
+void () player_axed1 = [137, func000428]
 {
     self.weaponframe = MOVETYPE_FLY;
 };
@@ -339,7 +339,7 @@ void () func000428 = [138, func000429]
 void () func000429 = [139, func000430]
 {
     self.weaponframe = MOVETYPE_PUSH;
-    func000251();
+    W_FireAxe();
 };
 
 
@@ -355,7 +355,7 @@ void () func000430 = [140, player_run]
 };
 
 
-// func000431
+// player_nail1
 // function begins at statement 13615, parm_start=9535
 // OP_STATE	8111	9535	0
 // OP_ADDRESS	28	133	9536
@@ -383,7 +383,7 @@ void () func000430 = [140, player_run]
 // OP_ADD_F	31	3267	9548
 // OP_STOREP_F	9548	9547	0
 // OP_DONE	0	0	0
-void () func000431 = [103, func000432]
+void () player_nail1 = [103, func000432]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -401,7 +401,7 @@ void () func000431 = [103, func000432]
     }
     
     SuperDamageSound();
-    func000280(MOVETYPE_STEP);
+    W_FireSpikes(MOVETYPE_STEP);
     self.attack_finished = time + 0.2;
 };
 
@@ -434,7 +434,7 @@ void () func000431 = [103, func000432]
 // OP_ADD_F	31	3267	9561
 // OP_STOREP_F	9561	9560	0
 // OP_DONE	0	0	0
-void () func000432 = [104, func000431]
+void () func000432 = [104, player_nail1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -452,12 +452,12 @@ void () func000432 = [104, func000431]
     }
     
     SuperDamageSound();
-    func000280(CONTENT_SLIME);
+    W_FireSpikes(CONTENT_SLIME);
     self.attack_finished = time + 0.2;
 };
 
 
-// func000433
+// player_light1
 // function begins at statement 13667, parm_start=9562
 // OP_STATE	9562	9563	0
 // OP_ADDRESS	28	133	9564
@@ -484,7 +484,7 @@ void () func000432 = [104, func000431]
 // OP_ADD_F	31	3267	9576
 // OP_STOREP_F	9576	9575	0
 // OP_DONE	0	0	0
-void () func000433 = [105, func000434]
+void () player_light1 = [105, func000434]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -502,7 +502,7 @@ void () func000433 = [105, func000434]
     }
     
     SuperDamageSound();
-    func000274();
+    W_FireLightning();
     self.attack_finished = time + 0.2;
 };
 
@@ -534,7 +534,7 @@ void () func000433 = [105, func000434]
 // OP_ADD_F	31	3267	9590
 // OP_STOREP_F	9590	9589	0
 // OP_DONE	0	0	0
-void () func000434 = [106, func000433]
+void () func000434 = [106, player_light1]
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
     
@@ -552,12 +552,12 @@ void () func000434 = [106, func000433]
     }
     
     SuperDamageSound();
-    func000274();
+    W_FireLightning();
     self.attack_finished = time + 0.2;
 };
 
 
-// func000435
+// player_rocket1
 // function begins at statement 13717, parm_start=9591
 // OP_STATE	9591	9592	0
 // OP_ADDRESS	28	156	9593
@@ -567,7 +567,7 @@ void () func000434 = [106, func000433]
 // OP_BITOR	9595	339	9596
 // OP_STOREP_F	9596	9594	0
 // OP_DONE	0	0	0
-void () func000435 = [107, func000436]
+void () player_rocket1 = [107, func000436]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
@@ -1329,8 +1329,8 @@ void () func000458 =
 vector (float globaldef003178) func000459 = 
 {
     local vector globaldef003179;
-    globaldef003179_x = 100 * func000249();
-    globaldef003179_y = 100 * func000249();
+    globaldef003179_x = 100 * crandom();
+    globaldef003179_y = 100 * crandom();
     globaldef003179_z = 200 + (100 * random());
     if(globaldef003178 > -50)
     {

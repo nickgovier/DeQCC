@@ -46,20 +46,20 @@ void () W_Precache =
 };
 
 
-// func000249
+// crandom
 // function begins at statement 6428, parm_start=5371
 // OP_CALL0	457	0	0
 // OP_SUB_F	1	539	5371
 // OP_MUL_F	216	5371	5372
 // OP_RETURN	5372	0	0
 // OP_DONE	0	0	0
-float () func000249 = 
+float () crandom = 
 {
     return FL_SWIM * (random() - RA_PLAYERSTATTIME);
 };
 
 
-// func000250
+// aim_obot
 // function begins at statement 6433, parm_start=5374
 // OP_LOAD_V	5374	175	5376
 // OP_STORE_V	5376	4	0
@@ -68,14 +68,14 @@ float () func000249 =
 // OP_CALL1	459	0	0
 // OP_RETURN	1	0	0
 // OP_DONE	0	0	0
-vector (entity globaldef002026, float globaldef002027) func000250 = 
+vector (entity e, float speed_UNUSED) aim_obot = 
 {
-    makevectors(globaldef002026.v_angle);
+    makevectors(e.v_angle);
     return normalize(v_forward);
 };
 
 
-// func000251
+// W_FireAxe
 // function begins at statement 6440, parm_start=5380
 // OP_STORE_V	28	4	0
 // OP_LOAD_V	28	105	5386
@@ -135,24 +135,24 @@ vector (entity globaldef002026, float globaldef002027) func000250 =
 // OP_STORE_V	5385	7	0
 // OP_CALL2	500	0	0
 // OP_DONE	0	0	0
-void () func000251 = 
+void () W_FireAxe = 
 {
-    local vector globaldef002029;
-    local vector globaldef002033;
+    local vector source;
+    local vector org;
     func002453(self, self.origin, TRUE, globaldef000741);
-    globaldef002029 = self.origin + '0 0 16';
-    traceline(globaldef002029, globaldef002029 + (v_forward * FL_GODMODE), FALSE, self);
+    source = self.origin + '0 0 16';
+    traceline(source, source + (v_forward * FL_GODMODE), FALSE, self);
     
     if(trace_fraction == TRUE)
     {
         return;
     }
     
-    globaldef002033 = trace_endpos - (v_forward * MOVETYPE_STEP);
+    org = trace_endpos - (v_forward * MOVETYPE_STEP);
     if(trace_ent.takedamage)
     {
         trace_ent.axhitme = TRUE;
-        SpawnBlood(globaldef002033, VEC_ORIGIN, 20);
+        SpawnBlood(org, VEC_ORIGIN, 20);
         T_Damage(trace_ent, self, self, 20);
     }
     else
@@ -160,15 +160,15 @@ void () func000251 =
         sound(self, CHAN_WEAPON, "player/axhit2.wav", TRUE, ATTN_NORM);
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
-        WriteCoord(MSG_BROADCAST, globaldef002033_x);
-        WriteCoord(MSG_BROADCAST, globaldef002033_y);
-        WriteCoord(MSG_BROADCAST, globaldef002033_z);
+        WriteCoord(MSG_BROADCAST, org_x);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
 
 
-// func000252
+// wall_velocity
 // function begins at statement 6498, parm_start=5415
 // OP_LOAD_V	28	113	5418
 // OP_STORE_V	5418	4	0
@@ -192,18 +192,18 @@ void () func000251 =
 // OP_STORE_V	5441	5415	0
 // OP_RETURN	5415	0	0
 // OP_DONE	0	0	0
-vector () func000252 = 
+vector () wall_velocity = 
 {
-    local vector globaldef002040;
-    globaldef002040 = normalize(self.velocity);
-    globaldef002040 = normalize((globaldef002040 + (v_up * (random() - RA_PLAYERSTATTIME))) + (v_right * (random() - RA_PLAYERSTATTIME)));
-    globaldef002040 = globaldef002040 + (FL_SWIM * trace_plane_normal);
-    globaldef002040 = globaldef002040 * 200;
-    return globaldef002040;
+    local vector vel;
+    vel = normalize(self.velocity);
+    vel = normalize((vel + (v_up * (random() - RA_PLAYERSTATTIME))) + (v_right * (random() - RA_PLAYERSTATTIME)));
+    vel = vel + (FL_SWIM * trace_plane_normal);
+    vel = vel * 200;
+    return vel;
 };
 
 
-// func000253
+// SpawnMeatSpray
 // function begins at statement 6520, parm_start=5445
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	5451	0
@@ -243,23 +243,23 @@ vector () func000252 =
 // OP_STORE_V	5445	7	0
 // OP_CALL2	453	0	0
 // OP_DONE	0	0	0
-void (vector globaldef002045, vector globaldef002049) func000253 = 
+void (vector org, vector vel) SpawnMeatSpray = 
 {
-    local entity globaldef002053;
-    local entity globaldef002054;
-    globaldef002053 = spawn();
-    globaldef002053.owner = self;
-    globaldef002053.movetype = MOVETYPE_BOUNCE;
-    globaldef002053.solid = SOLID_NOT;
+    local entity missile;
+    local entity mpuff;
+    missile = spawn();
+    missile.owner = self;
+    missile.movetype = MOVETYPE_BOUNCE;
+    missile.solid = SOLID_NOT;
     makevectors(self.angles);
-    globaldef002053.velocity = globaldef002049;
-    globaldef002053.velocity_z = (globaldef002053.velocity_z + GLOBALDEFSEVENTWOONE) + (50 * random());
-    globaldef002053.avelocity = '3000 1000 2000';
-    globaldef002053.nextthink = time + TRUE;
-    globaldef002053.think = SUB_Remove;
-    setmodel(globaldef002053, "progs/zom_gib.mdl");
-    setsize(globaldef002053, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(globaldef002053, globaldef002045);
+    missile.velocity = vel;
+    missile.velocity_z = (missile.velocity_z + GLOBALDEFSEVENTWOONE) + (50 * random());
+    missile.avelocity = '3000 1000 2000';
+    missile.nextthink = time + TRUE;
+    missile.think = SUB_Remove;
+    setmodel(missile, "progs/zom_gib.mdl");
+    setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(missile, org);
 };
 
 
@@ -279,7 +279,7 @@ void (vector org, vector vel, float damage) SpawnBlood =
 };
 
 
-// func000255
+// spawn_touchblood
 // function begins at statement 6566, parm_start=5490
 // OP_CALL0	5414	0	0
 // OP_MUL_VF	1	3267	5494
@@ -292,11 +292,11 @@ void (vector org, vector vel, float damage) SpawnBlood =
 // OP_STORE_V	5490	10	0
 // OP_CALL3	5355	0	0
 // OP_DONE	0	0	0
-void (float globaldef002068) func000255 = 
+void (float damage) spawn_touchblood = 
 {
-    local vector globaldef002069;
-    globaldef002069 = func000252() * 0.2;
-    SpawnBlood(self.origin + (globaldef002069 * 0.01), globaldef002069, globaldef002068);
+    local vector vel;
+    vel = wall_velocity() * 0.2;
+    SpawnBlood(self.origin + (vel * 0.01), vel, damage);
 };
 
 
@@ -309,27 +309,27 @@ void (float globaldef002068) func000255 =
 // OP_STORE_V	235	13	0
 // OP_CALL4	493	0	0
 // OP_DONE	0	0	0
-void (vector globaldef002075, vector globaldef002079) SpawnChunk = 
+void (vector org, vector vel) SpawnChunk = 
 {
-    particle(globaldef002075, globaldef002079 * 0.02, FALSE, MOVETYPE_BOUNCE);
+    particle(org, vel * 0.02, FALSE, MOVETYPE_BOUNCE);
 };
 
-entity globaldef002084;
-float globaldef002085;
+entity multi_ent;
+float multi_damage;
 
-// func000257
+// ClearMultiDamage
 // function begins at statement 6584, parm_start=5521
 // OP_STORE_ENT	30	5518	0
 // OP_STORE_F	213	5519	0
 // OP_DONE	0	0	0
-void () func000257 = 
+void () ClearMultiDamage = 
 {
-    globaldef002084 = world;
-    globaldef002085 = FALSE;
+    multi_ent = world;
+    multi_damage = FALSE;
 };
 
 
-// func000258
+// ApplyMultiDamage
 // function begins at statement 6587, parm_start=5522
 // OP_NOT_ENT	5518	0	5522
 // OP_IFNOT	5522	2	0
@@ -340,19 +340,19 @@ void () func000257 =
 // OP_STORE_V	5519	13	0
 // OP_CALL4	522	0	0
 // OP_DONE	0	0	0
-void () func000258 = 
+void () ApplyMultiDamage = 
 {
     
-    if(!globaldef002084)
+    if(!multi_ent)
     {
         return;
     }
     
-    T_Damage(globaldef002084, self, self, globaldef002085);
+    T_Damage(multi_ent, self, self, multi_damage);
 };
 
 
-// func000259
+// AddMultiDamage
 // function begins at statement 6596, parm_start=5524
 // OP_NOT_ENT	5524	0	5526
 // OP_IFNOT	5526	2	0
@@ -366,29 +366,29 @@ void () func000258 =
 // OP_ADD_F	5519	5525	5528
 // OP_STORE_F	5528	5519	0
 // OP_DONE	0	0	0
-void (entity globaldef002089, float globaldef002090) func000259 = 
+void (entity hit, float damage) AddMultiDamage = 
 {
     
-    if(!globaldef002089)
+    if(!hit)
     {
         return;
     }
     
-    if(globaldef002089 != globaldef002084)
+    if(hit != multi_ent)
     {
-        func000258();
-        globaldef002085 = globaldef002090;
-        globaldef002084 = globaldef002089;
+        ApplyMultiDamage();
+        multi_damage = damage;
+        multi_ent = hit;
     }
     else
     {
-        globaldef002085 = globaldef002085 + globaldef002090;
+        multi_damage = multi_damage + damage;
     }
     
 };
 
 
-// func000260
+// TraceAttack
 // function begins at statement 6608, parm_start=5530
 // OP_CALL0	5370	0	0
 // OP_MUL_VF	62	1	5540
@@ -434,32 +434,32 @@ void (entity globaldef002089, float globaldef002090) func000259 =
 // OP_STORE_V	5539	7	0
 // OP_CALL2	500	0	0
 // OP_DONE	0	0	0
-void (float globaldef002092, vector globaldef002093) func000260 = 
+void (float damage, vector dir) TraceAttack = 
 {
-    local vector globaldef002097;
-    local vector globaldef002101;
-    globaldef002097 = normalize((globaldef002093 + (v_up * func000249())) + (v_right * func000249()));
-    globaldef002097 = globaldef002097 + (FL_SWIM * trace_plane_normal);
-    globaldef002097 = globaldef002097 * 200;
-    globaldef002101 = trace_endpos - (globaldef002093 * MOVETYPE_STEP);
+    local vector vel;
+    local vector org;
+    vel = normalize((dir + (v_up * crandom())) + (v_right * crandom()));
+    vel = vel + (FL_SWIM * trace_plane_normal);
+    vel = vel * 200;
+    org = trace_endpos - (dir * MOVETYPE_STEP);
     if(trace_ent.takedamage)
     {
-        SpawnBlood(globaldef002101, globaldef002097 * 0.2, globaldef002092);
-        func000259(trace_ent, globaldef002092);
+        SpawnBlood(org, vel * 0.2, damage);
+        AddMultiDamage(trace_ent, damage);
     }
     else
     {
         WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
         WriteByte(MSG_BROADCAST, TE_GUNSHOT);
-        WriteCoord(MSG_BROADCAST, globaldef002101_x);
-        WriteCoord(MSG_BROADCAST, globaldef002101_y);
-        WriteCoord(MSG_BROADCAST, globaldef002101_z);
+        WriteCoord(MSG_BROADCAST, org_x);
+        WriteCoord(MSG_BROADCAST, org_y);
+        WriteCoord(MSG_BROADCAST, org_z);
     }
     
 };
 
 
-// func000261
+// FireBullets
 // function begins at statement 6652, parm_start=5572
 // OP_LOAD_V	28	175	5585
 // OP_STORE_V	5585	4	0
@@ -502,33 +502,33 @@ void (float globaldef002092, vector globaldef002093) func000260 =
 // OP_GOTO	-25	0	0
 // OP_CALL0	5521	0	0
 // OP_DONE	0	0	0
-void (float globaldef002106, vector globaldef002107, vector globaldef002111) func000261 = 
+void (float shotcount, vector dir, vector spread) FireBullets = 
 {
-    local vector globaldef002115;
-    local vector globaldef002119;
+    local vector direction;
+    local vector src;
     makevectors(self.v_angle);
-    globaldef002119 = self.origin + (v_forward * MOVETYPE_BOUNCE);
-    globaldef002119_z = self.absmin_z + (self.size_z * 0.7);
-    func000257();
+    src = self.origin + (v_forward * MOVETYPE_BOUNCE);
+    src_z = self.absmin_z + (self.size_z * 0.7);
+    ClearMultiDamage();
     
-    while(globaldef002106 > FALSE)
+    while(shotcount > FALSE)
     {
-        globaldef002115 = (globaldef002107 + ((func000249() * globaldef002111_x) * v_right)) + ((func000249() * globaldef002111_y) * v_up);
-        traceline(globaldef002119, globaldef002119 + (globaldef002115 * FL_WATERJUMP), FALSE, self);
+        direction = (dir + ((crandom() * spread_x) * v_right)) + ((crandom() * spread_y) * v_up);
+        traceline(src, src + (direction * FL_WATERJUMP), FALSE, self);
         
         if(trace_fraction != TRUE)
         {
-            func000260(MOVETYPE_STEP, globaldef002115);
+            TraceAttack(MOVETYPE_STEP, direction);
         }
         
-        globaldef002106 = globaldef002106 - TRUE;
+        shotcount = shotcount - TRUE;
     }
     
-    func000258();
+    ApplyMultiDamage();
 };
 
 
-// func000262
+// W_FireShotgun
 // function begins at statement 6693, parm_start=5626
 // OP_STORE_V	28	4	0
 // OP_STORE_V	326	7	0
@@ -566,20 +566,20 @@ void (float globaldef002106, vector globaldef002107, vector globaldef002111) fun
 // OP_STORE_V	5652	10	0
 // OP_CALL3	5571	0	0
 // OP_DONE	0	0	0
-void () func000262 = 
+void () W_FireShotgun = 
 {
-    local vector globaldef002125;
+    local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", TRUE, ATTN_NORM);
     func002453(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_shells = self.ammo_shells - TRUE;
-    globaldef002125 = func000250(self, 100000);
-    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002125);
-    func000261(MOVETYPE_TOSS, globaldef002125, '0.04 0.04 0');
+    dir = aim_obot(self, 100000);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), dir);
+    FireBullets(MOVETYPE_TOSS, dir, '0.04 0.04 0');
 };
 
 
-// func000263
+// W_FireSuperShotgun
 // function begins at statement 6729, parm_start=5656
 // OP_LOAD_F	28	157	5659
 // OP_EQ_F	5659	214	5660
@@ -629,13 +629,13 @@ void () func000262 =
 // OP_STORE_V	5694	10	0
 // OP_CALL3	5571	0	0
 // OP_DONE	0	0	0
-void () func000263 = 
+void () W_FireSuperShotgun = 
 {
-    local vector globaldef002132;
+    local vector dir;
     
     if(self.currentammo == TRUE)
     {
-        func000262();
+        W_FireShotgun();
         return;
     }
     
@@ -643,68 +643,68 @@ void () func000263 =
     func002453(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SLIME;
     self.currentammo = self.ammo_shells = self.ammo_shells - FL_SWIM;
-    globaldef002132 = func000250(self, 100000);
-    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
-    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), globaldef002132);
-    func000261(14, globaldef002132, '0.14 0.08 0');
+    dir = aim_obot(self, 100000);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), dir);
+    EjectShell_spawn((self.origin + '0 0 12') + (v_forward * FL_INWATER), dir);
+    FireBullets(14, dir, '0.14 0.08 0');
 };
 
 
-// func000264
+// s_explode1
 // function begins at statement 6777, parm_start=5698
 // OP_STATE	213	5698	0
 // OP_DONE	0	0	0
-void () func000264 = [0, func000265]
+void () s_explode1 = [0, s_explode2]
 {
 };
 
 
-// func000265
+// s_explode2
 // function begins at statement 6779, parm_start=5699
 // OP_STATE	214	5699	0
 // OP_DONE	0	0	0
-void () func000265 = [1, func000266]
+void () s_explode2 = [1, s_explode3]
 {
 };
 
 
-// func000266
+// s_explode3
 // function begins at statement 6781, parm_start=5700
 // OP_STATE	216	5700	0
 // OP_DONE	0	0	0
-void () func000266 = [2, func000267]
+void () s_explode3 = [2, s_explode4]
 {
 };
 
 
-// func000267
+// s_explode4
 // function begins at statement 6783, parm_start=5701
 // OP_STATE	228	5701	0
 // OP_DONE	0	0	0
-void () func000267 = [3, func000268]
+void () s_explode4 = [3, s_explode5]
 {
 };
 
 
-// func000268
+// s_explode5
 // function begins at statement 6785, parm_start=5702
 // OP_STATE	229	5702	0
 // OP_DONE	0	0	0
-void () func000268 = [4, func000269]
+void () s_explode5 = [4, s_explode6]
 {
 };
 
 
-// func000269
+// s_explode6
 // function begins at statement 6787, parm_start=5703
 // OP_STATE	230	521	0
 // OP_DONE	0	0	0
-void () func000269 = [5, SUB_Remove]
+void () s_explode6 = [5, SUB_Remove]
 {
 };
 
 
-// func000270
+// BecomeExplosion
 // function begins at statement 6789, parm_start=5704
 // OP_ADDRESS	28	103	5704
 // OP_STOREP_F	227	5704	0
@@ -719,14 +719,14 @@ void () func000269 = [5, SUB_Remove]
 // OP_STOREP_F	237	5710	0
 // OP_CALL0	5697	0	0
 // OP_DONE	0	0	0
-void () func000270 = 
+void () BecomeExplosion = 
 {
     self.movetype = MOVETYPE_NONE;
     self.velocity = VEC_ORIGIN;
     self.touch = SUB_Null;
     setmodel(self, "progs/s_explod.spr");
     self.solid = SOLID_NOT;
-    func000264();
+    s_explode1();
 };
 
 
@@ -804,7 +804,7 @@ void () func000270 =
 // OP_DONE	0	0	0
 void () T_MissileTouch = 
 {
-    local float globaldef002146;
+    local float damg;
     
     if(other == self.owner)
     {
@@ -818,17 +818,17 @@ void () T_MissileTouch =
         return;
     }
     
-    globaldef002146 = 100 + (random() * 20);
+    damg = 100 + (random() * 20);
     
     if(other.health)
     {
         
         if(other.classname == "monster_shambler")
         {
-            globaldef002146 = globaldef002146 * RA_PLAYERSTATTIME;
+            damg = damg * RA_PLAYERSTATTIME;
         }
         
-        T_Damage(other, self, self.owner, globaldef002146);
+        T_Damage(other, self, self.owner, damg);
     }
     
     T_RadiusDamage(self, self.owner, 120, other);
@@ -839,11 +839,11 @@ void () T_MissileTouch =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    func000270();
+    BecomeExplosion();
 };
 
 
-// func000272
+// W_FireRocket
 // function begins at statement 6872, parm_start=5749
 // OP_ADDRESS	28	157	5751
 // OP_ADDRESS	28	160	5752
@@ -914,33 +914,33 @@ void () T_MissileTouch =
 // OP_STORE_V	5799	7	0
 // OP_CALL2	453	0	0
 // OP_DONE	0	0	0
-void () func000272 = 
+void () W_FireRocket = 
 {
-    local entity globaldef002148;
-    local entity globaldef002149;
+    local entity missile;
+    local entity mpuff;
     self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", TRUE, ATTN_NORM);
     func002453(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
-    globaldef002148 = spawn();
-    globaldef002148.owner = self;
-    globaldef002148.movetype = MOVETYPE_FLYMISSILE;
-    globaldef002148.solid = SOLID_BBOX;
-    globaldef002148.classname = "missile";
+    missile = spawn();
+    missile.owner = self;
+    missile.movetype = MOVETYPE_FLYMISSILE;
+    missile.solid = SOLID_BBOX;
+    missile.classname = "missile";
     makevectors(self.v_angle);
-    globaldef002148.velocity = func000250(self, 1000);
-    globaldef002148.velocity = globaldef002148.velocity * 1000;
-    globaldef002148.angles = vectoangles(globaldef002148.velocity);
-    globaldef002148.touch = T_MissileTouch;
-    globaldef002148.nextthink = time + MOVETYPE_FLY;
-    globaldef002148.think = SUB_Remove;
-    setmodel(globaldef002148, "progs/missile.mdl");
-    setsize(globaldef002148, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(globaldef002148, (self.origin + (v_forward * FL_CLIENT)) + '0 0 16');
+    missile.velocity = aim_obot(self, 1000);
+    missile.velocity = missile.velocity * 1000;
+    missile.angles = vectoangles(missile.velocity);
+    missile.touch = T_MissileTouch;
+    missile.nextthink = time + MOVETYPE_FLY;
+    missile.think = SUB_Remove;
+    setmodel(missile, "progs/missile.mdl");
+    setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(missile, (self.origin + (v_forward * FL_CLIENT)) + '0 0 16');
 };
 
 
-// func000273
+// LightningDamage
 // function begins at statement 6941, parm_start=5803
 // OP_SUB_V	5806	5803	5816
 // OP_STORE_V	5816	5813	0
@@ -1037,24 +1037,24 @@ void () func000272 =
 // OP_STORE_V	5810	13	0
 // OP_CALL4	522	0	0
 // OP_DONE	0	0	0
-void (vector globaldef002153, vector globaldef002157, entity globaldef002161, float globaldef002162) func000273 = 
+void (vector p1, vector p2, entity from, float damage) LightningDamage = 
 {
-    local entity globaldef002163;
-    local entity globaldef002164;
-    local vector globaldef002165;
-    globaldef002165 = globaldef002157 - globaldef002153;
-    normalize(globaldef002165);
-    globaldef002165_x = FALSE - globaldef002165_y;
-    globaldef002165_y = globaldef002165_x;
-    globaldef002165_z = FALSE;
-    globaldef002165 = globaldef002165 * FL_INWATER;
-    globaldef002164 = globaldef002163 = world;
-    traceline(globaldef002153, globaldef002157, FALSE, self);
+    local entity e1;
+    local entity e2;
+    local vector f;
+    f = p2 - p1;
+    normalize(f);
+    f_x = FALSE - f_y;
+    f_y = f_x;
+    f_z = FALSE;
+    f = f * FL_INWATER;
+    e2 = e1 = world;
+    traceline(p1, p2, FALSE, self);
     
     if(trace_ent.takedamage)
     {
-        particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
+        T_Damage(trace_ent, from, from, damage);
         
         if((self.classname == "player") || (self.classname == "bot"))
         {
@@ -1068,28 +1068,28 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
         
     }
     
-    globaldef002163 = trace_ent;
-    traceline(globaldef002153 + globaldef002165, globaldef002157 + globaldef002165, FALSE, self);
+    e1 = trace_ent;
+    traceline(p1 + f, p2 + f, FALSE, self);
     
-    if((trace_ent != globaldef002163) && trace_ent.takedamage)
+    if((trace_ent != e1) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
+        T_Damage(trace_ent, from, from, damage);
     }
     
-    globaldef002164 = trace_ent;
-    traceline(globaldef002153 - globaldef002165, globaldef002157 - globaldef002165, FALSE, self);
+    e2 = trace_ent;
+    traceline(p1 - f, p2 - f, FALSE, self);
     
-    if(((trace_ent != globaldef002163) && (trace_ent != globaldef002164)) && trace_ent.takedamage)
+    if(((trace_ent != e1) && (trace_ent != e2)) && trace_ent.takedamage)
     {
-        particle(trace_endpos, '0 0 100', 225, globaldef002162 * MOVETYPE_STEP);
-        T_Damage(trace_ent, globaldef002161, globaldef002161, globaldef002162);
+        particle(trace_endpos, '0 0 100', 225, damage * MOVETYPE_STEP);
+        T_Damage(trace_ent, from, from, damage);
     }
     
 };
 
 
-// func000274
+// W_FireLightning
 // function begins at statement 7036, parm_start=5865
 // OP_LOAD_F	28	161	5869
 // OP_LT	5869	214	5870
@@ -1191,10 +1191,10 @@ void (vector globaldef002153, vector globaldef002157, entity globaldef002161, fl
 // OP_STORE_V	309	13	0
 // OP_CALL4	5802	0	0
 // OP_DONE	0	0	0
-void () func000274 = 
+void () W_FireLightning = 
 {
-    local vector globaldef002172;
-    local float globaldef002176;
+    local vector org;
+    local float cells;
     
     if(self.ammo_cells < TRUE)
     {
@@ -1213,10 +1213,10 @@ void () func000274 =
             return;
         }
         
-        globaldef002176 = self.ammo_cells;
+        cells = self.ammo_cells;
         self.ammo_cells = FALSE;
         W_SetCurrentAmmo();
-        T_RadiusDamage(self, self, 35 * globaldef002176, world);
+        T_RadiusDamage(self, self, 35 * cells, world);
         return;
     }
     
@@ -1230,22 +1230,22 @@ void () func000274 =
     
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_cells = self.ammo_cells - TRUE;
-    globaldef002172 = self.origin + '0 0 16';
-    traceline(globaldef002172, globaldef002172 + (v_forward * GLOBALDEFSEVENTWOTHREE), TRUE, self);
+    org = self.origin + '0 0 16';
+    traceline(org, org + (v_forward * GLOBALDEFSEVENTWOTHREE), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
-    WriteCoord(MSG_BROADCAST, globaldef002172_x);
-    WriteCoord(MSG_BROADCAST, globaldef002172_y);
-    WriteCoord(MSG_BROADCAST, globaldef002172_z);
+    WriteCoord(MSG_BROADCAST, org_x);
+    WriteCoord(MSG_BROADCAST, org_y);
+    WriteCoord(MSG_BROADCAST, org_z);
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
     WriteCoord(MSG_BROADCAST, trace_endpos_y);
     WriteCoord(MSG_BROADCAST, trace_endpos_z);
-    func000273(self.origin, trace_endpos + (v_forward * MOVETYPE_STEP), self, SVC_INTERMISSION);
+    LightningDamage(self.origin, trace_endpos + (v_forward * MOVETYPE_STEP), self, SVC_INTERMISSION);
 };
 
 
-// func000275
+// GrenadeExplode
 // function begins at statement 7136, parm_start=5915
 // OP_STORE_V	28	4	0
 // OP_LOAD_ENT	28	201	5915
@@ -1273,7 +1273,7 @@ void () func000274 =
 // OP_CALL2	500	0	0
 // OP_CALL0	5703	0	0
 // OP_DONE	0	0	0
-void () func000275 = 
+void () GrenadeExplode = 
 {
     T_RadiusDamage(self, self.owner, 120, world);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
@@ -1281,11 +1281,11 @@ void () func000275 =
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    func000270();
+    BecomeExplosion();
 };
 
 
-// func000276
+// GrenadeTouch
 // function begins at statement 7162, parm_start=5920
 // OP_LOAD_ENT	28	201	5920
 // OP_EQ_E	29	5920	5921
@@ -1308,7 +1308,7 @@ void () func000275 =
 // OP_ADDRESS	28	121	5928
 // OP_STOREP_V	286	5928	0
 // OP_DONE	0	0	0
-void () func000276 = 
+void () GrenadeTouch = 
 {
     
     if(other == self.owner)
@@ -1319,7 +1319,7 @@ void () func000276 =
     
     if(other.takedamage == DAMAGE_AIM)
     {
-        func000275();
+        GrenadeExplode();
         return;
     }
     
@@ -1333,7 +1333,7 @@ void () func000276 =
 };
 
 
-// func000277
+// W_FireGrenade
 // function begins at statement 7183, parm_start=5932
 // OP_ADDRESS	28	157	5934
 // OP_ADDRESS	28	160	5935
@@ -1421,45 +1421,45 @@ void () func000276 =
 // OP_STORE_V	6013	7	0
 // OP_CALL2	453	0	0
 // OP_DONE	0	0	0
-void () func000277 = 
+void () W_FireGrenade = 
 {
-    local entity globaldef002182;
-    local entity globaldef002183;
+    local entity missile;
+    local entity mpuff;
     self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", TRUE, ATTN_NORM);
     func002453(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
-    globaldef002182 = spawn();
-    globaldef002182.owner = self;
-    globaldef002182.movetype = MOVETYPE_BOUNCE;
-    globaldef002182.solid = SOLID_BBOX;
-    globaldef002182.classname = "grenade";
+    missile = spawn();
+    missile.owner = self;
+    missile.movetype = MOVETYPE_BOUNCE;
+    missile.solid = SOLID_BBOX;
+    missile.classname = "grenade";
     makevectors(self.v_angle);
     if(self.v_angle_x)
     {
-        globaldef002182.velocity = (((v_forward * GLOBALDEFSEVENTWOTHREE) + (v_up * 200)) + ((func000249() * v_right) * MOVETYPE_BOUNCE)) + ((func000249() * v_up) * MOVETYPE_BOUNCE);
+        missile.velocity = (((v_forward * GLOBALDEFSEVENTWOTHREE) + (v_up * 200)) + ((crandom() * v_right) * MOVETYPE_BOUNCE)) + ((crandom() * v_up) * MOVETYPE_BOUNCE);
     }
     else
     {
-        globaldef002182.velocity = func000250(self, 10000);
-        globaldef002182.velocity = globaldef002182.velocity * GLOBALDEFSEVENTWOTHREE;
-        globaldef002182.velocity_z = 200;
+        missile.velocity = aim_obot(self, 10000);
+        missile.velocity = missile.velocity * GLOBALDEFSEVENTWOTHREE;
+        missile.velocity_z = 200;
     }
     
-    globaldef002182.avelocity = '300 300 300';
-    globaldef002182.angles = vectoangles(globaldef002182.velocity);
-    globaldef002182.touch = func000276;
-    globaldef002182.nextthink = time + 2.5;
-    globaldef002182.think = func000275;
-    setmodel(globaldef002182, "progs/grenade.mdl");
-    setsize(globaldef002182, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(globaldef002182, self.origin);
+    missile.avelocity = '300 300 300';
+    missile.angles = vectoangles(missile.velocity);
+    missile.touch = GrenadeTouch;
+    missile.nextthink = time + 2.5;
+    missile.think = GrenadeExplode;
+    setmodel(missile, "progs/grenade.mdl");
+    setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(missile, self.origin);
 };
 
-void () func000281;
-void () func000282;
+void () spike_touch;
+void () superspike_touch;
 
-// func000278
+// launch_spike
 // function begins at statement 7269, parm_start=6019
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	350	0
@@ -1496,25 +1496,25 @@ void () func000282;
 // OP_MUL_VF	6022	1663	6041
 // OP_STOREP_V	6041	6038	0
 // OP_DONE	0	0	0
-void (vector globaldef002192, vector globaldef002196) func000278 = 
+void (vector org, vector dir) launch_spike = 
 {
     newmis = spawn();
     newmis.owner = self;
     newmis.movetype = MOVETYPE_FLYMISSILE;
     newmis.solid = SOLID_BBOX;
-    newmis.angles = vectoangles(globaldef002196);
-    newmis.touch = func000281;
+    newmis.angles = vectoangles(dir);
+    newmis.touch = spike_touch;
     newmis.classname = "spike";
     newmis.think = SUB_Remove;
     newmis.nextthink = time + MOVETYPE_TOSS;
     setmodel(newmis, "progs/spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(newmis, globaldef002192);
-    newmis.velocity = globaldef002196 * 1000;
+    setorigin(newmis, org);
+    newmis.velocity = dir * 1000;
 };
 
 
-// func000279
+// W_FireSuperSpikes
 // function begins at statement 7304, parm_start=6045
 // OP_STORE_V	28	4	0
 // OP_STORE_V	326	7	0
@@ -1555,23 +1555,23 @@ void (vector globaldef002192, vector globaldef002196) func000278 =
 // OP_ADDRESS	28	126	6064
 // OP_STOREP_F	277	6064	0
 // OP_DONE	0	0	0
-void () func000279 = 
+void () W_FireSuperSpikes = 
 {
-    local vector globaldef002203;
-    local entity globaldef002207;
+    local vector dir;
+    local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", TRUE, ATTN_NORM);
     func002453(self, self.origin, 0.1, globaldef000741);
     self.currentammo = self.ammo_nails = self.ammo_nails - FL_SWIM;
-    globaldef002203 = func000250(self, 1000);
-    func000278(self.origin + '0 0 16', globaldef002203);
-    newmis.touch = func000282;
+    dir = aim_obot(self, 1000);
+    launch_spike(self.origin + '0 0 16', dir);
+    newmis.touch = superspike_touch;
     setmodel(newmis, "progs/s_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     self.punchangle_x = CONTENT_SOLID;
 };
 
 
-// func000280
+// W_FireSpikes
 // function begins at statement 7343, parm_start=6066
 // OP_LOAD_V	28	175	6071
 // OP_STORE_V	6071	4	0
@@ -1624,15 +1624,15 @@ void () func000279 =
 // OP_ADDRESS	28	126	6101
 // OP_STOREP_F	277	6101	0
 // OP_DONE	0	0	0
-void (float globaldef002210) func000280 = 
+void (float globaldef002210) W_FireSpikes = 
 {
-    local vector globaldef002211;
-    local entity globaldef002215;
+    local vector dir;
+    local entity old;
     makevectors(self.v_angle);
     
     if((self.ammo_nails >= FL_SWIM) && (self.weapon == IT_SUPER_NAILGUN))
     {
-        func000279();
+        W_FireSuperSpikes();
         return;
     }
     
@@ -1647,14 +1647,14 @@ void (float globaldef002210) func000280 =
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", TRUE, ATTN_NORM);
     func002453(self, self.origin, 0.1, globaldef000741);
     self.currentammo = self.ammo_nails = self.ammo_nails - TRUE;
-    globaldef002211 = func000250(self, 1000);
-    func000278((self.origin + '0 0 16') + (v_right * globaldef002210), globaldef002211);
+    dir = aim_obot(self, 1000);
+    launch_spike((self.origin + '0 0 16') + (v_right * globaldef002210), dir);
     self.punchangle_x = CONTENT_SOLID;
 };
 
 .float hit_z;
 
-// func000281
+// spike_touch
 // function begins at statement 7394, parm_start=6103
 // OP_LOAD_ENT	28	201	6104
 // OP_EQ_E	29	6104	6105
@@ -1718,9 +1718,9 @@ void (float globaldef002210) func000280 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000281 = 
+void () spike_touch = 
 {
-    local float globaldef002217;
+    local float rand;
     
     if(other == self.owner)
     {
@@ -1742,7 +1742,7 @@ void () func000281 =
     
     if(other.takedamage)
     {
-        func000255(MOVETYPE_FLYMISSILE);
+        spawn_touchblood(MOVETYPE_FLYMISSILE);
         T_Damage(other, self, self.owner, MOVETYPE_FLYMISSILE);
     }
     else
@@ -1774,7 +1774,7 @@ void () func000281 =
 };
 
 
-// func000282
+// superspike_touch
 // function begins at statement 7456, parm_start=6123
 // OP_LOAD_ENT	28	201	6124
 // OP_EQ_E	29	6124	6125
@@ -1824,9 +1824,9 @@ void () func000281 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000282 = 
+void () superspike_touch = 
 {
-    local float globaldef002220;
+    local float rand;
     
     if(other == self.owner)
     {
@@ -1848,7 +1848,7 @@ void () func000282 =
     
     if(other.takedamage)
     {
-        func000255(18);
+        spawn_touchblood(18);
         T_Damage(other, self, self.owner, 18);
     }
     else
@@ -2144,34 +2144,34 @@ void () W_SetCurrentAmmo =
 // OP_DONE	0	0	0
 float () W_BestWeapon = 
 {
-    local float globaldef002230;
-    globaldef002230 = self.items;
+    local float it;
+    it = self.items;
     
-    if(((self.waterlevel <= TRUE) && (self.ammo_cells >= TRUE)) && (globaldef002230 & IT_LIGHTNING))
+    if(((self.waterlevel <= TRUE) && (self.ammo_cells >= TRUE)) && (it & IT_LIGHTNING))
     {
         return IT_LIGHTNING;
     }
     
     
-    if((self.ammo_nails >= FL_SWIM) && (globaldef002230 & IT_SUPER_NAILGUN))
+    if((self.ammo_nails >= FL_SWIM) && (it & IT_SUPER_NAILGUN))
     {
         return IT_SUPER_NAILGUN;
     }
     
     
-    if((self.ammo_shells >= FL_SWIM) && (globaldef002230 & IT_SUPER_SHOTGUN))
+    if((self.ammo_shells >= FL_SWIM) && (it & IT_SUPER_SHOTGUN))
     {
         return IT_SUPER_SHOTGUN;
     }
     
     
-    if((self.ammo_nails >= TRUE) && (globaldef002230 & IT_NAILGUN))
+    if((self.ammo_nails >= TRUE) && (it & IT_NAILGUN))
     {
         return IT_NAILGUN;
     }
     
     
-    if((self.ammo_shells >= TRUE) && (globaldef002230 & IT_SHOTGUN))
+    if((self.ammo_shells >= TRUE) && (it & IT_SHOTGUN))
     {
         return IT_SHOTGUN;
     }
@@ -2180,7 +2180,7 @@ float () W_BestWeapon =
 };
 
 
-// func000285
+// W_CheckNoAmmo
 // function begins at statement 7676, parm_start=6253
 // OP_LOAD_F	28	157	6253
 // OP_GT	6253	213	6254
@@ -2196,7 +2196,7 @@ float () W_BestWeapon =
 // OP_CALL0	4295	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float () func000285 = 
+float () W_CheckNoAmmo = 
 {
     
     if(self.currentammo > FALSE)
@@ -2215,16 +2215,16 @@ float () func000285 =
     return FALSE;
 };
 
-void () func000415;
-void () func000419;
-void () func000423;
-void () func000427;
-void () func000409;
-void () func000431;
-void () func000433;
-void () func000435;
+void () player_axe1;
+void () player_axeb1;
+void () player_axec1;
+void () player_axed1;
+void () player_shot1;
+void () player_nail1;
+void () player_light1;
+void () player_rocket1;
 
-// func000286
+// W_Attack
 // function begins at statement 7690, parm_start=6267
 // OP_CALL0	6252	0	0
 // OP_NOT_F	1	0	6268
@@ -2324,11 +2324,11 @@ void () func000435;
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000286 = 
+void () W_Attack = 
 {
-    local float globaldef002241;
+    local float r;
     
-    if(!func000285())
+    if(!W_CheckNoAmmo())
     {
         return;
     }
@@ -2338,26 +2338,26 @@ void () func000286 =
     if(self.weapon == IT_AXE)
     {
         sound(self, CHAN_WEAPON, "weapons/ax1.wav", TRUE, ATTN_NORM);
-        globaldef002241 = random();
-        if(globaldef002241 < 0.25)
+        r = random();
+        if(r < 0.25)
         {
-            func000415();
+            player_axe1();
         }
         else
         {
-            if(globaldef002241 < RA_PLAYERSTATTIME)
+            if(r < RA_PLAYERSTATTIME)
             {
-                func000419();
+                player_axeb1();
             }
             else
             {
-                if(globaldef002241 < 0.75)
+                if(r < 0.75)
                 {
-                    func000423();
+                    player_axec1();
                 }
                 else
                 {
-                    func000427();
+                    player_axed1();
                 }
                 
             }
@@ -2370,44 +2370,44 @@ void () func000286 =
     {
         if(self.weapon == IT_SHOTGUN)
         {
-            func000409();
-            func000262();
+            player_shot1();
+            W_FireShotgun();
             self.attack_finished = time + RA_PLAYERSTATTIME;
         }
         else
         {
             if(self.weapon == IT_SUPER_SHOTGUN)
             {
-                func000409();
-                func000263();
+                player_shot1();
+                W_FireSuperShotgun();
                 self.attack_finished = time + 0.7;
             }
             else
             {
                 if(self.weapon == IT_NAILGUN)
                 {
-                    func000431();
+                    player_nail1();
                 }
                 else
                 {
                     if(self.weapon == IT_SUPER_NAILGUN)
                     {
-                        func000431();
+                        player_nail1();
                     }
                     else
                     {
                         if(self.weapon == IT_GRENADE_LAUNCHER)
                         {
-                            func000435();
-                            func000277();
+                            player_rocket1();
+                            W_FireGrenade();
                             self.attack_finished = time + 0.6;
                         }
                         else
                         {
                             if(self.weapon == IT_ROCKET_LAUNCHER)
                             {
-                                func000435();
-                                func000272();
+                                player_rocket1();
+                                W_FireRocket();
                                 self.attack_finished = time + 0.8;
                             }
                             else
@@ -2415,7 +2415,7 @@ void () func000286 =
                                 
                                 if(self.weapon == IT_LIGHTNING)
                                 {
-                                    func000433();
+                                    player_light1();
                                     self.attack_finished = time + 0.1;
                                     sound(self, CHAN_AUTO, "weapons/lstart.wav", TRUE, ATTN_NORM);
                                 }
@@ -2437,7 +2437,7 @@ void () func000286 =
 };
 
 
-// func000287
+// W_ChangeWeapon
 // function begins at statement 7788, parm_start=6310
 // OP_LOAD_F	28	162	6313
 // OP_STORE_F	6313	6310	0
@@ -2528,26 +2528,26 @@ void () func000286 =
 // OP_STOREP_F	6312	6350	0
 // OP_CALL0	4295	0	0
 // OP_DONE	0	0	0
-void () func000287 = 
+void () W_ChangeWeapon = 
 {
-    local float globaldef002247;
-    local float globaldef002248;
-    local float globaldef002249;
-    globaldef002247 = self.items;
-    globaldef002248 = FALSE;
+    local float it;
+    local float am;
+    local float fl;
+    it = self.items;
+    am = FALSE;
     if(self.impulse == TRUE)
     {
-        globaldef002249 = IT_AXE;
+        fl = IT_AXE;
     }
     else
     {
         if(self.impulse == FL_SWIM)
         {
-            globaldef002249 = IT_SHOTGUN;
+            fl = IT_SHOTGUN;
             
             if(self.ammo_shells < TRUE)
             {
-                globaldef002248 = TRUE;
+                am = TRUE;
             }
             
         }
@@ -2555,11 +2555,11 @@ void () func000287 =
         {
             if(self.impulse == MOVETYPE_WALK)
             {
-                globaldef002249 = IT_SUPER_SHOTGUN;
+                fl = IT_SUPER_SHOTGUN;
                 
                 if(self.ammo_shells < FL_SWIM)
                 {
-                    globaldef002248 = TRUE;
+                    am = TRUE;
                 }
                 
             }
@@ -2567,11 +2567,11 @@ void () func000287 =
             {
                 if(self.impulse == MOVETYPE_STEP)
                 {
-                    globaldef002249 = IT_NAILGUN;
+                    fl = IT_NAILGUN;
                     
                     if(self.ammo_nails < TRUE)
                     {
-                        globaldef002248 = TRUE;
+                        am = TRUE;
                     }
                     
                 }
@@ -2579,11 +2579,11 @@ void () func000287 =
                 {
                     if(self.impulse == MOVETYPE_FLY)
                     {
-                        globaldef002249 = IT_SUPER_NAILGUN;
+                        fl = IT_SUPER_NAILGUN;
                         
                         if(self.ammo_nails < FL_SWIM)
                         {
-                            globaldef002248 = TRUE;
+                            am = TRUE;
                         }
                         
                     }
@@ -2591,11 +2591,11 @@ void () func000287 =
                     {
                         if(self.impulse == MOVETYPE_TOSS)
                         {
-                            globaldef002249 = IT_GRENADE_LAUNCHER;
+                            fl = IT_GRENADE_LAUNCHER;
                             
                             if(self.ammo_rockets < TRUE)
                             {
-                                globaldef002248 = TRUE;
+                                am = TRUE;
                             }
                             
                         }
@@ -2603,11 +2603,11 @@ void () func000287 =
                         {
                             if(self.impulse == MOVETYPE_PUSH)
                             {
-                                globaldef002249 = IT_ROCKET_LAUNCHER;
+                                fl = IT_ROCKET_LAUNCHER;
                                 
                                 if(self.ammo_rockets < TRUE)
                                 {
-                                    globaldef002248 = TRUE;
+                                    am = TRUE;
                                 }
                                 
                             }
@@ -2616,11 +2616,11 @@ void () func000287 =
                                 
                                 if(self.impulse == FL_CLIENT)
                                 {
-                                    globaldef002249 = IT_LIGHTNING;
+                                    fl = IT_LIGHTNING;
                                     
                                     if(self.ammo_cells < TRUE)
                                     {
-                                        globaldef002248 = TRUE;
+                                        am = TRUE;
                                     }
                                     
                                 }
@@ -2641,25 +2641,25 @@ void () func000287 =
     
     self.impulse = FALSE;
     
-    if(!(self.items & globaldef002249))
+    if(!(self.items & fl))
     {
         sprint(self, "no weapon.\n");
         return;
     }
     
     
-    if(globaldef002248)
+    if(am)
     {
         sprint(self, "not enough ammo.\n");
         return;
     }
     
-    self.weapon = globaldef002249;
+    self.weapon = fl;
     W_SetCurrentAmmo();
 };
 
 
-// func000288
+// CheatCommand
 // function begins at statement 7877, parm_start=6352
 // OP_OR	35	36	6352
 // OP_IFNOT	6352	2	0
@@ -2694,7 +2694,7 @@ void () func000287 =
 // OP_STOREP_F	213	6372	0
 // OP_CALL0	4295	0	0
 // OP_DONE	0	0	0
-void () func000288 = 
+void () CheatCommand = 
 {
     
     if(deathmatch || coop)
@@ -2714,7 +2714,7 @@ void () func000288 =
 };
 
 
-// func000289
+// CycleWeaponCommand
 // function begins at statement 7910, parm_start=6374
 // OP_ADDRESS	28	173	6375
 // OP_STOREP_F	213	6375	0
@@ -2805,14 +2805,14 @@ void () func000288 =
 // OP_RETURN	0	0	0
 // OP_GOTO	-85	0	0
 // OP_DONE	0	0	0
-void () func000289 = 
+void () CycleWeaponCommand = 
 {
-    local float globaldef002254;
+    local float am;
     self.impulse = FALSE;
     
     while(TRUE)
     {
-        globaldef002254 = FALSE;
+        am = FALSE;
         if(self.weapon == IT_LIGHTNING)
         {
             self.weapon = IT_AXE;
@@ -2825,7 +2825,7 @@ void () func000289 =
                 
                 if(self.ammo_shells < TRUE)
                 {
-                    globaldef002254 = TRUE;
+                    am = TRUE;
                 }
                 
             }
@@ -2837,7 +2837,7 @@ void () func000289 =
                     
                     if(self.ammo_shells < FL_SWIM)
                     {
-                        globaldef002254 = TRUE;
+                        am = TRUE;
                     }
                     
                 }
@@ -2849,7 +2849,7 @@ void () func000289 =
                         
                         if(self.ammo_nails < TRUE)
                         {
-                            globaldef002254 = TRUE;
+                            am = TRUE;
                         }
                         
                     }
@@ -2861,7 +2861,7 @@ void () func000289 =
                             
                             if(self.ammo_nails < FL_SWIM)
                             {
-                                globaldef002254 = TRUE;
+                                am = TRUE;
                             }
                             
                         }
@@ -2873,7 +2873,7 @@ void () func000289 =
                                 
                                 if(self.ammo_rockets < TRUE)
                                 {
-                                    globaldef002254 = TRUE;
+                                    am = TRUE;
                                 }
                                 
                             }
@@ -2885,7 +2885,7 @@ void () func000289 =
                                     
                                     if(self.ammo_rockets < TRUE)
                                     {
-                                        globaldef002254 = TRUE;
+                                        am = TRUE;
                                     }
                                     
                                 }
@@ -2898,7 +2898,7 @@ void () func000289 =
                                         
                                         if(self.ammo_cells < TRUE)
                                         {
-                                            globaldef002254 = TRUE;
+                                            am = TRUE;
                                         }
                                         
                                     }
@@ -2918,7 +2918,7 @@ void () func000289 =
         }
         
         
-        if((self.items & self.weapon) && (globaldef002254 == FALSE))
+        if((self.items & self.weapon) && (am == FALSE))
         {
             W_SetCurrentAmmo();
             return;
@@ -2929,7 +2929,7 @@ void () func000289 =
 };
 
 
-// func000290
+// CycleWeaponReverseCommand
 // function begins at statement 7999, parm_start=6420
 // OP_ADDRESS	28	173	6422
 // OP_STOREP_F	213	6422	0
@@ -3020,22 +3020,22 @@ void () func000289 =
 // OP_RETURN	0	0	0
 // OP_GOTO	-85	0	0
 // OP_DONE	0	0	0
-void () func000290 = 
+void () CycleWeaponReverseCommand = 
 {
-    local float globaldef002256;
-    local float globaldef002257;
+    local float it;
+    local float am;
     self.impulse = FALSE;
     
     while(TRUE)
     {
-        globaldef002257 = FALSE;
+        am = FALSE;
         if(self.weapon == IT_LIGHTNING)
         {
             self.weapon = IT_ROCKET_LAUNCHER;
             
             if(self.ammo_rockets < TRUE)
             {
-                globaldef002257 = TRUE;
+                am = TRUE;
             }
             
         }
@@ -3047,7 +3047,7 @@ void () func000290 =
                 
                 if(self.ammo_rockets < TRUE)
                 {
-                    globaldef002257 = TRUE;
+                    am = TRUE;
                 }
                 
             }
@@ -3059,7 +3059,7 @@ void () func000290 =
                     
                     if(self.ammo_nails < FL_SWIM)
                     {
-                        globaldef002257 = TRUE;
+                        am = TRUE;
                     }
                     
                 }
@@ -3071,7 +3071,7 @@ void () func000290 =
                         
                         if(self.ammo_nails < TRUE)
                         {
-                            globaldef002257 = TRUE;
+                            am = TRUE;
                         }
                         
                     }
@@ -3083,7 +3083,7 @@ void () func000290 =
                             
                             if(self.ammo_shells < FL_SWIM)
                             {
-                                globaldef002257 = TRUE;
+                                am = TRUE;
                             }
                             
                         }
@@ -3095,7 +3095,7 @@ void () func000290 =
                                 
                                 if(self.ammo_shells < TRUE)
                                 {
-                                    globaldef002257 = TRUE;
+                                    am = TRUE;
                                 }
                                 
                             }
@@ -3114,7 +3114,7 @@ void () func000290 =
                                         
                                         if(self.ammo_cells < TRUE)
                                         {
-                                            globaldef002257 = TRUE;
+                                            am = TRUE;
                                         }
                                         
                                     }
@@ -3134,7 +3134,7 @@ void () func000290 =
         }
         
         
-        if((self.items & self.weapon) && (globaldef002257 == FALSE))
+        if((self.items & self.weapon) && (am == FALSE))
         {
             W_SetCurrentAmmo();
             return;
@@ -3157,7 +3157,7 @@ void () ServerflagsCommand =
 };
 
 
-// func000292
+// QuadCheat
 // function begins at statement 8092, parm_start=6470
 // OP_OR	35	36	6470
 // OP_IFNOT	6470	2	0
@@ -3174,7 +3174,7 @@ void () ServerflagsCommand =
 // OP_STORE_V	6477	4	0
 // OP_CALL1	473	0	0
 // OP_DONE	0	0	0
-void () func000292 = 
+void () QuadCheat = 
 {
     
     if(deathmatch || coop)
@@ -3189,7 +3189,7 @@ void () func000292 =
 };
 
 
-// func000293
+// ImpulseCommands
 // function begins at statement 8107, parm_start=6479
 // OP_LOAD_F	28	173	6479
 // OP_GE	6479	214	6480
@@ -3226,36 +3226,36 @@ void () func000292 =
 // OP_ADDRESS	28	173	6495
 // OP_STOREP_F	213	6495	0
 // OP_DONE	0	0	0
-void () func000293 = 
+void () ImpulseCommands = 
 {
     if((self.impulse >= TRUE) && (self.impulse <= FL_CLIENT))
     {
-        func000287();
+        W_ChangeWeapon();
     }
     else
     {
         if(self.impulse == MOVETYPE_FLYMISSILE)
         {
-            func000288();
+            CheatCommand();
         }
         else
         {
             if(self.impulse == MOVETYPE_BOUNCE)
             {
-                func000289();
+                CycleWeaponCommand();
             }
             else
             {
                 if(self.impulse == GLOBALDEFSEVENSEVENFOUR)
                 {
-                    func000290();
+                    CycleWeaponReverseCommand();
                 }
                 else
                 {
                     
                     if(self.impulse == 255)
                     {
-                        func000292();
+                        QuadCheat();
                     }
                     
                 }
@@ -3277,7 +3277,7 @@ void () func000293 =
 };
 
 
-// func000294
+// W_WeaponFrame
 // function begins at statement 8142, parm_start=6497
 // OP_LOAD_F	28	378	6497
 // OP_LT	31	6497	6498
@@ -3298,7 +3298,7 @@ void () func000293 =
 // OP_CALL0	5356	0	0
 // OP_CALL0	6266	0	0
 // OP_DONE	0	0	0
-void () func000294 = 
+void () W_WeaponFrame = 
 {
     
     if(time < self.attack_finished)
@@ -3306,7 +3306,7 @@ void () func000294 =
         return;
     }
     
-    func000293();
+    ImpulseCommands();
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
@@ -3328,7 +3328,7 @@ void () func000294 =
     if(self.button0)
     {
         SuperDamageSound();
-        func000286();
+        W_Attack();
     }
     
 };

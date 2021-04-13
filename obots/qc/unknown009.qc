@@ -1001,8 +1001,8 @@ vector (entity globaldef006862) func002382 =
     }
     
     globaldef006871 = normalize(globaldef006867 - globaldef006863);
-    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * func000249()) * '0.05 0.05 0');
-    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * func000249()) * '0.05 0.05 0');
+    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * crandom()) * '0.05 0.05 0');
+    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * crandom()) * '0.05 0.05 0');
     globaldef006871 = normalize(globaldef006871);
     return globaldef006871;
 };
@@ -1232,8 +1232,8 @@ vector (entity globaldef006888) func002384 =
     }
     
     globaldef006905 = normalize(globaldef006893 - globaldef006889);
-    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * func000249()) * '0.06 0 0');
-    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * func000249()) * '0 0.06 0');
+    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * crandom()) * '0.06 0 0');
+    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * crandom()) * '0 0.06 0');
     globaldef006905 = normalize(globaldef006905);
     return globaldef006905;
 };
@@ -1370,8 +1370,8 @@ vector (entity globaldef006915) func002385 =
     }
     
     globaldef006924 = normalize(globaldef006920 - globaldef006916);
-    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * func000249()) * '0.06 0 0');
-    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * func000249()) * '0 0.06 0');
+    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * crandom()) * '0.06 0 0');
+    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * crandom()) * '0 0.06 0');
     globaldef006924 = normalize(globaldef006924);
     return globaldef006924;
 };
@@ -1455,8 +1455,8 @@ vector (entity globaldef006940) func002386 =
     }
     
     globaldef006949 = normalize(globaldef006945 - globaldef006941);
-    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * func000249()) * '0.05 0 0');
-    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * func000249()) * '0 0.05 0');
+    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * crandom()) * '0.05 0 0');
+    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * crandom()) * '0 0.05 0');
     globaldef006949 = normalize(globaldef006949);
     return globaldef006949;
 };
@@ -1806,7 +1806,7 @@ void (entity globaldef006971) func002390 =
     globaldef006974 = self;
     self = globaldef006971;
     
-    if(!func000285())
+    if(!W_CheckNoAmmo())
     {
         self = globaldef006974;
         return;
@@ -1853,7 +1853,7 @@ void (entity globaldef006971) func002390 =
         {
             globaldef006971.think = func002526;
             globaldef006971.attack_finished = (time + RA_PLAYERSTATTIME) + globaldef006972;
-            func000262();
+            W_FireShotgun();
         }
         else
         {
@@ -1861,7 +1861,7 @@ void (entity globaldef006971) func002390 =
             {
                 globaldef006971.think = func002526;
                 globaldef006971.attack_finished = (time + 0.7) + globaldef006972;
-                func000263();
+                W_FireSuperShotgun();
             }
             else
             {
@@ -1881,7 +1881,7 @@ void (entity globaldef006971) func002390 =
                         {
                             globaldef006971.think = func002552;
                             globaldef006971.attack_finished = (time + 0.6) + globaldef006972;
-                            func000277();
+                            W_FireGrenade();
                         }
                         else
                         {
@@ -1889,7 +1889,7 @@ void (entity globaldef006971) func002390 =
                             {
                                 globaldef006971.think = func002552;
                                 globaldef006971.attack_finished = (time + 0.8) + globaldef006972;
-                                func000272();
+                                W_FireRocket();
                             }
                             else
                             {

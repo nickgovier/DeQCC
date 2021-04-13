@@ -639,8 +639,8 @@ void () func000934 = [44, func000935]
     globaldef003981 = ((random() + random()) + random()) * GLOBALDEFSEVENTWONINE;
     T_Damage(self.enemy, self, self, globaldef003981);
     sound(self, CHAN_VOICE, "shambler/smack.wav", TRUE, ATTN_NORM);
-    func000253(self.origin + (v_forward * FL_INWATER), (func000249() * 100) * v_right);
-    func000253(self.origin + (v_forward * FL_INWATER), (func000249() * 100) * v_right);
+    SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), (crandom() * 100) * v_right);
+    SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), (crandom() * 100) * v_right);
 };
 
 
@@ -743,7 +743,7 @@ void (float globaldef003985) func000937 =
     if(globaldef003985)
     {
         makevectors(self.angles);
-        func000253(self.origin + (v_forward * FL_INWATER), globaldef003985 * v_right);
+        SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), globaldef003985 * v_right);
     }
     
 };
@@ -1129,7 +1129,7 @@ void () func000957 =
     WriteCoord(MSG_BROADCAST, trace_endpos_x);
     WriteCoord(MSG_BROADCAST, trace_endpos_y);
     WriteCoord(MSG_BROADCAST, trace_endpos_z);
-    func000273(globaldef004012, trace_endpos, self, MOVETYPE_BOUNCE);
+    LightningDamage(globaldef004012, trace_endpos, self, MOVETYPE_BOUNCE);
 };
 
 

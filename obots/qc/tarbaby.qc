@@ -923,7 +923,7 @@ void () func001745 = [60, func001708]
     WriteCoord(MSG_BROADCAST, self.origin_x);
     WriteCoord(MSG_BROADCAST, self.origin_y);
     WriteCoord(MSG_BROADCAST, self.origin_z);
-    func000270();
+    BecomeExplosion();
 };
 
 

@@ -67,7 +67,7 @@ void (float globaldef005046) func001747 =
     globaldef005051 = ((self.origin + self.mins) + (self.size * RA_PLAYERSTATTIME)) + (v_forward * 20);
     globaldef005055 = normalize(v_forward);
     globaldef005055_z = (FALSE - globaldef005055_z) + ((random() - RA_PLAYERSTATTIME) * 0.1);
-    func000278(globaldef005051, globaldef005055);
+    launch_spike(globaldef005051, globaldef005055);
     newmis.classname = "knightspike";
     setmodel(newmis, "progs/k_spike.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);

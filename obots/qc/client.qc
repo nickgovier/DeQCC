@@ -2980,7 +2980,7 @@ void () PlayerPostThink =
         func000347(self);
     }
     
-    func000294();
+    W_WeaponFrame();
     
     if(((self.jump_flag < -300) && (self.flags & FL_ONGROUND)) && (self.health > FALSE))
     {

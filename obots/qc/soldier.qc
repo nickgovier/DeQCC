@@ -1060,7 +1060,7 @@ void () func001171 =
     globaldef004263 = self.enemy;
     globaldef004259 = globaldef004263.origin - (globaldef004263.velocity * 0.2);
     globaldef004259 = normalize(globaldef004259 - self.origin);
-    func000261(MOVETYPE_STEP, globaldef004259, '0.1 0.1 0');
+    FireBullets(MOVETYPE_STEP, globaldef004259, '0.1 0.1 0');
 };
 
 
