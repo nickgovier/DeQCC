@@ -7,9 +7,9 @@
 // OP_STORE_V	6851	13	0
 // OP_CALL4	493	0	0
 // OP_DONE	0	0	0
-void (vector org, vector vel, float color, float count) CampingCloudSpawnRain = 
+void (vector org, vector vel, float color, float num) CampingCloudSpawnRain = 
 {
-    particle(org, vel, color, count);
+    particle(org, vel, color, num);
 };
 
 

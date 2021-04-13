@@ -1297,7 +1297,7 @@ namespace DeQcc
             nameMap.Add("globaldef002473", "org");
             nameMap.Add("globaldef002477", "vel");
             nameMap.Add("globaldef002481", "color");
-            nameMap.Add("globaldef002482", "count");
+            nameMap.Add("globaldef002482", "num");
 
             // CampingCloudSpawnLightning params
             nameMap.Add("globaldef002484", "start");
@@ -1693,10 +1693,194 @@ namespace DeQcc
             
             #region b_char.qc
 
-            for (int i = 2285; i <= 2285; i++)
+            for (int i = 2285; i <= 2286; i++)
             {
                 fileMap[i] = "b_char.qc";
             }
+
+            #endregion
+
+            // Done
+            #region b_fuzzy.qc
+
+            nameMap.Add("func002289", "goalweight_door");
+            nameMap.Add("func002290", "goalweight_secretdoor");
+            nameMap.Add("func002291", "goalweight_button");
+            nameMap.Add("func002292", "goalweight_plat");
+            nameMap.Add("func002293", "goalweight_train");
+            nameMap.Add("func002294", "goalweight_teleporter");
+            nameMap.Add("func002295", "goalweight_triggerpush");
+            nameMap.Add("func002296", "goalweight_trigger");
+            nameMap.Add("func002297", "goalweight_backpack");
+            nameMap.Add("func002298", "goalweight_megahealth");
+            nameMap.Add("func002299", "goalweight_health15");
+            nameMap.Add("func002300", "goalweight_health25");
+            nameMap.Add("func002301", "goalweight_nails");
+            nameMap.Add("func002302", "goalweight_shells");
+            nameMap.Add("func002303", "goalweight_cells");
+            nameMap.Add("func002304", "goalweight_rockets");
+            nameMap.Add("func002305", "goalweight_rocketlauncher");
+            nameMap.Add("func002306", "goalweight_lightning");
+            nameMap.Add("func002307", "goalweight_grenadelauncher");
+            nameMap.Add("func002308", "goalweight_nailgun");
+            nameMap.Add("func002309", "goalweight_supernailgun");
+            nameMap.Add("func002310", "goalweight_supershotgun");
+            nameMap.Add("func002311", "goalweight_greenarmor");
+            nameMap.Add("func002312", "goalweight_yellowarmor");
+            nameMap.Add("func002313", "goalweight_redarmor");
+            nameMap.Add("func002314", "goalweight_envirosuit");
+            nameMap.Add("func002315", "goalweight_invisibility");
+            nameMap.Add("func002316", "goalweight_quad");
+            nameMap.Add("func002317", "goalweight_invulnerability");
+
+            // walkaboutweight functions encode the weights for bots to go to these items
+            // not because it needs them, but because it might find other players to fight there
+            nameMap.Add("func002318", "walkaboutweight_megahealth");
+            nameMap.Add("func002319", "walkaboutweight_supershotgun");
+            nameMap.Add("func002320", "walkaboutweight_nailgun");
+            nameMap.Add("func002321", "walkaboutweight_supernailgun");
+            nameMap.Add("func002322", "walkaboutweight_grenadelauncher");
+            nameMap.Add("func002323", "walkaboutweight_rocketlauncher");
+            nameMap.Add("func002324", "walkaboutweight_lightning");
+            nameMap.Add("func002325", "walkaboutweight_yellowarmor");
+            nameMap.Add("func002326", "walkaboutweight_redarmor");
+            nameMap.Add("func002327", "walkaboutweight_invisibility");
+            nameMap.Add("func002328", "walkaboutweight_quad");
+            nameMap.Add("func002329", "walkaboutweight_invulnerability");
+
+            nameMap.Add("func002330", "fuzzy_lightning_weight");
+            nameMap.Add("func002331", "fuzzy_rocketlauncher_weight");
+            nameMap.Add("func002332", "fuzzy_grenadelauncher_weight");
+            nameMap.Add("func002333", "fuzzy_supernailgun_weight");
+            nameMap.Add("func002334", "fuzzy_nailgun_weight");
+            nameMap.Add("func002335", "fuzzy_supershotgun_weight");
+            nameMap.Add("func002336", "fuzzy_shotgun_weight");
+            nameMap.Add("func002337", "fuzzy_axe_weight");
+            nameMap.Add("func002338", "BotSetBestRangeWeapon");
+            nameMap.Add("func002339", "BestBotWeapon");
+            nameMap.Add("func002340", "BotWantsToRetreat");
+            nameMap.Add("func002341", "BotWantsToFight");
+            nameMap.Add("func002342", "BotWantsToChase");
+
+            for (int i = 2287; i <= 2342; i++)
+            {
+                fileMap[i] = "b_fuzzy.qc";
+            }
+
+            // goalweight_* params
+            for(int i = 6502; i <= 6515; i++)
+            {
+                string name = "";
+                if(i%2 == 0) { name = "bot"; }
+                else { name = "e"; }
+                nameMap.Add("globaldef00" + (i).ToString(), name);
+            }
+
+            // goalweight_triggerpush locals
+            nameMap.Add("globaldef006516", "vec1");
+            nameMap.Add("globaldef006520", "vec2");
+
+            // goalweight_* params
+            for (int i = 6524; i <= 6553; i++)
+            {
+                string name = "";
+                if (i % 2 == 0) { name = "bot"; }
+                else { name = "e"; }
+                nameMap.Add("globaldef00" + (i).ToString(), name);
+            }
+
+            // goalweight_greenarmor params
+            nameMap.Add("globaldef006554", "bot");
+            nameMap.Add("globaldef006555", "e");
+
+            // goalweight_greenarmor locals
+            nameMap.Add("globaldef006556", "compare");
+
+            // goalweight_yellowarmor params
+            nameMap.Add("globaldef006557", "bot");
+            nameMap.Add("globaldef006558", "e");
+
+            // goalweight_yellowarmor locals
+            nameMap.Add("globaldef006559", "compare");
+
+            // goalweight_redarmor params
+            nameMap.Add("globaldef006560", "bot");
+            nameMap.Add("globaldef006561", "e");
+
+            // goalweight_redarmor locals
+            nameMap.Add("globaldef006562", "compare");
+
+            // goalweight_* params
+            for (int i = 6563; i <= 6594; i++)
+            {
+                string name = "";
+                if (i % 2 == 1) { name = "bot"; }
+                else { name = "e"; }
+                nameMap.Add("globaldef00" + (i).ToString(), name);
+            }
+
+            // fuzzy_lightning_weight params
+            nameMap.Add("globaldef006596", "bot");
+
+            // fuzzy_lightning_weight locals
+            nameMap.Add("globaldef006597", "dist");
+
+            // fuzzy_rocketlauncher_weight params
+            nameMap.Add("globaldef006599", "bot");
+
+            // fuzzy_rocketlauncher_weight locals
+            nameMap.Add("globaldef006600", "condition");
+            nameMap.Add("globaldef006601", "dist");
+
+            // fuzzy_grenadelauncher_weight params
+            nameMap.Add("globaldef006603", "bot");
+
+            // fuzzy_grenadelauncher_weight locals
+            nameMap.Add("globaldef006604", "dist");
+
+            // fuzzy_supernailgun_weight params
+            nameMap.Add("globaldef006606", "bot");
+
+            // fuzzy_nailgun_weight params
+            nameMap.Add("globaldef006608", "bot");
+
+            // fuzzy_supershotgun_weight params
+            nameMap.Add("globaldef006610", "bot");
+
+            // fuzzy_supershotgun_weight locals
+            nameMap.Add("globaldef006611", "dist");
+
+            // fuzzy_shotgun_weight params
+            nameMap.Add("globaldef006613", "bot");
+
+            // fuzzy_axe_weight pararms
+            nameMap.Add("globaldef006615", "bot");
+
+            // fuzzy_axe_weight locals
+            nameMap.Add("globaldef006616", "dist");
+
+            // BotSetBestRangeWeapon params
+            nameMap.Add("globaldef006617", "bot");
+
+            // BotSetBestRangeWeapon locals
+            nameMap.Add("globaldef006618", "best");
+            nameMap.Add("globaldef006619", "weight");
+            nameMap.Add("globaldef006620", "weap");
+
+            // BestBotWeapon params
+            nameMap.Add("globaldef006621", "bot");
+
+            // BotWantsToRetreat params
+            nameMap.Add("globaldef006622", "bot");
+
+            // BotWantsToRetreat locals
+            nameMap.Add("globaldef006623", "enemybestweapon");
+
+            // BotWantsToFight params
+            nameMap.Add("globaldef006624", "bot");
+
+            // BotWantsToChase params
+            nameMap.Add("globaldef006625", "bot");
 
             #endregion
 

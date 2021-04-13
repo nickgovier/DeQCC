@@ -497,6 +497,7 @@ namespace DeQcc
 
                 if (AlreadySeen(filename) == false)
                 {
+                    Console.Out.WriteLine(filename);
                     progsSrcOutputFile.WriteLine(filename);
                     f = new StreamWriter(folder + filename, false);    // overwrite
                 }
@@ -608,7 +609,7 @@ namespace DeQcc
         void DecompileFunction(Function f)
         {
             int sIndex;
-            Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
+            //Console.Out.WriteLine("Function " + f.name + "(), parm_start:" + f.parm_start + " highestGlobalAccessed:" + highestGlobalAccessed);
 
             // Process any unprocessed globals following the previous function
             while (highestGlobalAccessed < (f.parm_start - 1))    // ends when highestGlobalAccessed == f.parm_start - 1

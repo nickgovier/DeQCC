@@ -7008,7 +7008,7 @@ void (entity globaldef008133) func002511 =
     }
     
     
-    if(!func002340(globaldef008133))
+    if(!BotWantsToRetreat(globaldef008133))
     {
         func002512(globaldef008133);
         return;
@@ -7166,7 +7166,7 @@ void (entity globaldef008135) func002513 =
     }
     
     
-    if(func002340(globaldef008135))
+    if(BotWantsToRetreat(globaldef008135))
     {
         func002516(globaldef008135);
         return;
@@ -7175,7 +7175,7 @@ void (entity globaldef008135) func002513 =
     
     if(!enemy_vis)
     {
-        if(func002341(globaldef008135))
+        if(BotWantsToFight(globaldef008135))
         {
             func002514(globaldef008135);
             return;
@@ -7374,7 +7374,7 @@ void (entity globaldef008137) func002515 =
     }
     
     
-    if(!func002341(globaldef008137))
+    if(!BotWantsToFight(globaldef008137))
     {
         func002504(globaldef008137);
         return;
@@ -7425,7 +7425,7 @@ void (entity globaldef008137) func002515 =
     }
     
     
-    if(func002342(globaldef008137))
+    if(BotWantsToChase(globaldef008137))
     {
         func002504(globaldef008137);
         return;
@@ -7653,7 +7653,7 @@ void (entity globaldef008140) func002517 =
     }
     
     
-    if(!func002340(globaldef008140))
+    if(!BotWantsToRetreat(globaldef008140))
     {
         func002514(globaldef008140);
         return;

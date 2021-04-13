@@ -1324,7 +1324,7 @@ void () func_door =
     }
     
     self.touch = func000545;
-    self.f_goalweight = func002289;
+    self.f_goalweight = goalweight_door;
     self.think = func000548;
     self.nextthink = self.ltime + 0.1;
 };
@@ -1945,7 +1945,7 @@ void () func_door_secret =
     setmodel(self, self.model);
     setorigin(self, self.origin);
     self.touch = func000559;
-    self.f_goalweight = func002290;
+    self.f_goalweight = goalweight_secretdoor;
     self.blocked = func000558;
     self.speed = 50;
     self.use = func000550;

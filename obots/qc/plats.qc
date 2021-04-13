@@ -510,7 +510,7 @@ void () func_plat =
         self.speed = 150;
     }
     
-    self.f_goalweight = func002292;
+    self.f_goalweight = goalweight_plat;
     self.pos1 = self.origin;
     self.pos2 = self.origin;
     if(self.height)
@@ -856,7 +856,7 @@ void () func_train =
     self.blocked = func000613;
     self.use = func000614;
     self.classname = "train";
-    self.f_goalweight = func002293;
+    self.f_goalweight = goalweight_train;
     setmodel(self, self.model);
     setsize(self, self.mins, self.maxs);
     setorigin(self, self.origin);

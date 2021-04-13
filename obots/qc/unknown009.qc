@@ -2431,7 +2431,7 @@ void (entity globaldef007026) func002397 =
         
     }
     
-    func002338(globaldef007026);
+    BotSetBestRangeWeapon(globaldef007026);
     func002396(globaldef007026);
 };
 
@@ -2849,7 +2849,7 @@ void (entity globaldef007040, float globaldef007041) func002399 =
         {
             globaldef007043 = globaldef007043 + 1.2;
             globaldef007046 = random();
-            globaldef007047 = func002339(globaldef007040);
+            globaldef007047 = BestBotWeapon(globaldef007040);
             if(globaldef007047 == IT_ROCKET_LAUNCHER)
             {
                 globaldef007046 = FALSE;
@@ -2904,7 +2904,7 @@ void (entity globaldef007040, float globaldef007041) func002399 =
         {
             if(globaldef007044 == RANGE_MID)
             {
-                globaldef007047 = func002339(globaldef007040);
+                globaldef007047 = BestBotWeapon(globaldef007040);
                 if(globaldef007047 == IT_LIGHTNING)
                 {
                     globaldef007043 = globaldef007043 - MOVETYPE_WALK;
