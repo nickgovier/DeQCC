@@ -223,9 +223,9 @@ row,name,s_name,ofs,type,typename
 221,loses,81487,198,2,float
 222,ratio,81499,199,2,float
 223,motd,81511,200,2,float
-224,field000224,0,201,6,void()
-225,field000225,0,202,6,void()
-226,field000226,0,203,6,void()
+224,f_updatecache,0,201,6,void()
+225,f_goalweight,0,202,6,void()
+226,f_walkaboutweight,0,203,6,void()
 227,field000227,0,204,6,void()
 228,field000228,0,205,6,void()
 229,field000229,0,206,6,void()

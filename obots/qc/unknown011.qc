@@ -3543,10 +3543,10 @@ float (entity globaldef007942, float globaldef007943) func002478 =
         if(globaldef007944.classname == "plat")
         {
             
-            if(globaldef007944.field000225)
+            if(globaldef007944.f_goalweight)
             {
                 
-                if(globaldef007944.field000225(globaldef007942, globaldef007944) > FALSE)
+                if(globaldef007944.f_goalweight(globaldef007942, globaldef007944) > FALSE)
                 {
                     globaldef007947 = (globaldef007944.absmin + globaldef007944.absmax) * RA_PLAYERSTATTIME;
                     globaldef007947_z = globaldef007944.absmax_z + TRUE;
@@ -3826,9 +3826,9 @@ float (entity globaldef007970, entity globaldef007971) func002481 =
     
     globaldef007972 = FALSE;
     
-    if(globaldef007971.field000225)
+    if(globaldef007971.f_goalweight)
     {
-        globaldef007972 = globaldef007971.field000225(globaldef007970, globaldef007971);
+        globaldef007972 = globaldef007971.f_goalweight(globaldef007970, globaldef007971);
     }
     
     
@@ -4065,7 +4065,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
         
         if((!(globaldef007978.field000252 & globaldef000689)) && (!(globaldef007978.field000252 & globaldef000688)))
         {
-            globaldef007993 = globaldef007978.field000267.field000225(globaldef007978, globaldef007978.field000267);
+            globaldef007993 = globaldef007978.field000267.f_goalweight(globaldef007978, globaldef007978.field000267);
         }
         
     }
@@ -4078,7 +4078,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
         if(globaldef007994 != globaldef007995)
         {
             
-            if(globaldef007994.field000225)
+            if(globaldef007994.f_goalweight)
             {
                 if(globaldef007994.flags & FL_ITEM)
                 {
@@ -4086,7 +4086,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
                 }
                 else
                 {
-                    globaldef007989 = globaldef007994.field000225(globaldef007978, globaldef007994);
+                    globaldef007989 = globaldef007994.f_goalweight(globaldef007978, globaldef007994);
                 }
                 
                 
@@ -4288,7 +4288,7 @@ float (entity globaldef007998, float globaldef007999) func002483 =
         if(globaldef008000.flags & FL_ITEM)
         {
             
-            if(globaldef008000.field000225)
+            if(globaldef008000.f_goalweight)
             {
                 globaldef008002 = func002481(globaldef007998, globaldef008000);
                 
@@ -5856,7 +5856,7 @@ entity (entity globaldef008076) func002495 =
                     
                     if(globaldef008092.solid == SOLID_TRIGGER)
                     {
-                        globaldef008081 = (globaldef008092.field000225(globaldef008076, globaldef008092) / globaldef008082) * 0.001;
+                        globaldef008081 = (globaldef008092.f_goalweight(globaldef008076, globaldef008092) / globaldef008082) * 0.001;
                         
                         if(globaldef008081 > globaldef008078)
                         {
@@ -5871,9 +5871,9 @@ entity (entity globaldef008076) func002495 =
                     if((globaldef008092.field000341 != globaldef008076) || (globaldef008092.field000342 < (time - SVC_SIGNONNUM)))
                     {
                         
-                        if(globaldef008092.field000226)
+                        if(globaldef008092.f_walkaboutweight)
                         {
-                            globaldef008081 = globaldef008092.field000226(globaldef008076, globaldef008092);
+                            globaldef008081 = globaldef008092.f_walkaboutweight(globaldef008076, globaldef008092);
                             
                             if(globaldef008081 > globaldef008085)
                             {
@@ -6028,7 +6028,7 @@ float (entity globaldef008100) func002496 =
         }
         
         
-        if(globaldef008100.field000267.field000225(globaldef008100, globaldef008100.field000267) <= FALSE)
+        if(globaldef008100.field000267.f_goalweight(globaldef008100, globaldef008100.field000267) <= FALSE)
         {
             return FALSE;
         }

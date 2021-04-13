@@ -5862,7 +5862,7 @@ void () BotImpulseCommand =
                                                                 
                                                                 if(CheckIsAdmin(self))
                                                                 {
-                                                                    ToggleCampingMode();
+                                                                    CampingToggleMode();
                                                                 }
                                                                 
                                                             }

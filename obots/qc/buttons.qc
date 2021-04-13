@@ -128,7 +128,7 @@ void () func_button =
     setmodel(self, self.model);
     self.blocked = func000564;
     self.use = func000566;
-    self.field000225 = func002291;
+    self.f_goalweight = func002291;
     if(self.health)
     {
         self.max_health = self.health;

@@ -275,7 +275,7 @@ void () item_health =
         self.noise = "items/r_item1.wav";
         self.healamount = GLOBALDEFSEVENFOUREIGHT;
         self.healtype = FALSE;
-        self.field000225 = func002299;
+        self.f_goalweight = func002299;
     }
     else
     {
@@ -287,9 +287,9 @@ void () item_health =
             self.noise = "items/r_item2.wav";
             self.healamount = 100;
             self.healtype = FL_SWIM;
-            self.field000225 = func002298;
-            self.field000226 = func002318;
-            self.field000224 = func002647;
+            self.f_goalweight = func002298;
+            self.f_walkaboutweight = func002318;
+            self.f_updatecache = func002647;
         }
         else
         {
@@ -299,7 +299,7 @@ void () item_health =
             self.noise = "items/health1.wav";
             self.healamount = SVC_SIGNONNUM;
             self.healtype = TRUE;
-            self.field000225 = func002300;
+            self.f_goalweight = func002300;
         }
         
     }
@@ -829,7 +829,7 @@ void () item_armor1 =
     self.skin = FALSE;
     self.armorvalue = 100;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002311;
+    self.f_goalweight = func002311;
     StartItem();
 };
 
@@ -867,9 +867,9 @@ void () item_armor2 =
     self.skin = TRUE;
     self.armorvalue = 150;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002312;
-    self.field000226 = func002325;
-    self.field000224 = func002646;
+    self.f_goalweight = func002312;
+    self.f_walkaboutweight = func002325;
+    self.f_updatecache = func002646;
     StartItem();
 };
 
@@ -907,9 +907,9 @@ void () item_armorInv =
     self.skin = FL_SWIM;
     self.armorvalue = 200;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002313;
-    self.field000226 = func002326;
-    self.field000224 = func002646;
+    self.f_goalweight = func002313;
+    self.f_walkaboutweight = func002326;
+    self.f_updatecache = func002646;
     StartItem();
 };
 
@@ -1507,9 +1507,9 @@ void () weapon_supershotgun =
     self.netname = "Double-barrelled Shotgun";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002310;
-    self.field000226 = func002319;
-    self.field000224 = func002640;
+    self.f_goalweight = func002310;
+    self.f_walkaboutweight = func002319;
+    self.f_updatecache = func002640;
     StartItem();
 };
 
@@ -1547,9 +1547,9 @@ void () weapon_nailgun =
     self.netname = "nailgun";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002308;
-    self.field000226 = func002320;
-    self.field000224 = func002641;
+    self.f_goalweight = func002308;
+    self.f_walkaboutweight = func002320;
+    self.f_updatecache = func002641;
     StartItem();
 };
 
@@ -1587,9 +1587,9 @@ void () weapon_supernailgun =
     self.netname = "Super Nailgun";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002309;
-    self.field000226 = func002321;
-    self.field000224 = func002642;
+    self.f_goalweight = func002309;
+    self.f_walkaboutweight = func002321;
+    self.f_updatecache = func002642;
     StartItem();
 };
 
@@ -1627,9 +1627,9 @@ void () weapon_grenadelauncher =
     self.netname = "Grenade Launcher";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002307;
-    self.field000226 = func002322;
-    self.field000224 = func002643;
+    self.f_goalweight = func002307;
+    self.f_walkaboutweight = func002322;
+    self.f_updatecache = func002643;
     StartItem();
 };
 
@@ -1667,9 +1667,9 @@ void () weapon_rocketlauncher =
     self.netname = "Rocket Launcher";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002305;
-    self.field000226 = func002323;
-    self.field000224 = func002644;
+    self.f_goalweight = func002305;
+    self.f_walkaboutweight = func002323;
+    self.f_updatecache = func002644;
     StartItem();
 };
 
@@ -1707,9 +1707,9 @@ void () weapon_lightning =
     self.netname = "Thunderbolt";
     self.touch = weapon_touch;
     setsize(self, '-16 -16 0', '16 16 56');
-    self.field000225 = func002306;
-    self.field000226 = func002324;
-    self.field000224 = func002645;
+    self.f_goalweight = func002306;
+    self.f_walkaboutweight = func002324;
+    self.f_updatecache = func002645;
     StartItem();
 };
 
@@ -2043,7 +2043,7 @@ void () item_shells =
     self.weapon = TRUE;
     self.netname = "shells";
     setsize(self, VEC_ORIGIN, '32 32 56');
-    self.field000225 = func002302;
+    self.f_goalweight = func002302;
     StartItem();
 };
 
@@ -2101,7 +2101,7 @@ void () item_spikes =
     self.weapon = FL_SWIM;
     self.netname = "nails";
     setsize(self, VEC_ORIGIN, '32 32 56');
-    self.field000225 = func002301;
+    self.f_goalweight = func002301;
     StartItem();
 };
 
@@ -2159,7 +2159,7 @@ void () item_rockets =
     self.weapon = MOVETYPE_WALK;
     self.netname = "rockets";
     setsize(self, VEC_ORIGIN, '32 32 56');
-    self.field000225 = func002304;
+    self.f_goalweight = func002304;
     StartItem();
 };
 
@@ -2217,7 +2217,7 @@ void () item_cells =
     self.weapon = MOVETYPE_STEP;
     self.netname = "cells";
     setsize(self, VEC_ORIGIN, '32 32 56');
-    self.field000225 = func002303;
+    self.f_goalweight = func002303;
     StartItem();
 };
 
@@ -3157,9 +3157,9 @@ void () item_artifact_invulnerability =
     self.netname = "Pentagram of Protection";
     self.items = IT_INVULNERABILITY;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.field000225 = func002317;
-    self.field000226 = func002329;
-    self.field000224 = func002647;
+    self.f_goalweight = func002317;
+    self.f_walkaboutweight = func002329;
+    self.f_updatecache = func002647;
     StartItem();
 };
 
@@ -3202,7 +3202,7 @@ void () item_artifact_envirosuit =
     self.netname = "Biosuit";
     self.items = IT_SUIT;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.field000225 = func002314;
+    self.f_goalweight = func002314;
     StartItem();
 };
 
@@ -3252,9 +3252,9 @@ void () item_artifact_invisibility =
     self.netname = "Ring of Shadows";
     self.items = IT_INVISIBILITY;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.field000225 = func002315;
-    self.field000226 = func002327;
-    self.field000224 = func002647;
+    self.f_goalweight = func002315;
+    self.f_walkaboutweight = func002327;
+    self.f_updatecache = func002647;
     StartItem();
 };
 
@@ -3304,9 +3304,9 @@ void () item_artifact_super_damage =
     self.netname = "Quad Damage";
     self.items = IT_QUAD;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
-    self.field000225 = func002316;
-    self.field000226 = func002328;
-    self.field000224 = func002647;
+    self.f_goalweight = func002316;
+    self.f_walkaboutweight = func002328;
+    self.f_updatecache = func002647;
     StartItem();
 };
 
@@ -3926,7 +3926,7 @@ void () DropBackpack =
     setmodel(item, "progs/backpack.mdl");
     setsize(item, '-16 -16 0', '16 16 56');
     item.touch = BackpackTouch;
-    item.field000225 = func002297;
+    item.f_goalweight = func002297;
     item.nextthink = time + 120;
     item.think = SUB_Remove;
 };

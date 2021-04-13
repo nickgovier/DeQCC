@@ -893,7 +893,7 @@ void () func002657 =
                     if(globaldef009073.waypointtype == globaldef000703)
                     {
                         
-                        if(!globaldef009073.enemy.field000224)
+                        if(!globaldef009073.enemy.f_updatecache)
                         {
                             objerror("cached item without cache update function");
                         }
@@ -3334,13 +3334,13 @@ void () func002680 =
 // OP_IFNOT	29274	2	0
 // OP_STORE_F	29086	819	0
 // OP_DONE	0	0	0
-void (entity globaldef009216, entity globaldef009217, float globaldef009218, entity globaldef009219) func002681 = 
+void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func002681 = 
 {
     local entity globaldef009220;
     local entity globaldef009221;
     local entity globaldef009222;
     local entity globaldef009223;
-    local float globaldef009224;
+    local float dist;
     local float globaldef009225;
     local float globaldef009226;
     
@@ -3350,20 +3350,20 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
     }
     
     
-    if(!globaldef009219.field000224)
+    if(!ent.f_updatecache)
     {
         objerror("no cache update function");
     }
     
     
-    if(!globaldef009217)
+    if(!wp)
     {
         objerror("can't cache at world entity");
     }
     
-    globaldef009224 = globaldef009218 + func002655(globaldef009216, globaldef009217);
+    dist = globaldef009218 + func002655(globaldef009216, wp);
     
-    if(!globaldef009219.field000224(globaldef009217, globaldef009224, globaldef009219))
+    if(!ent.f_updatecache(wp, dist, ent))
     {
         return;
     }
@@ -3376,11 +3376,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         globaldef009222 = globaldef009222.field000297;
     }
     
-    globaldef009217.field000337 = globaldef009224;
-    globaldef009217.field000335 = world;
-    globaldef009217.field000336 = world;
-    globaldef009221 = globaldef009220 = globaldef009217;
-    globaldef009217.field000338 = TRUE;
+    wp.field000337 = dist;
+    wp.field000335 = world;
+    wp.field000336 = world;
+    globaldef009221 = globaldef009220 = wp;
+    wp.field000338 = TRUE;
     globaldef009225 = FALSE;
     
     while(globaldef009220)
@@ -3403,11 +3403,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         if(globaldef009223)
         {
-            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000307;
+            dist = globaldef009222.field000337 + globaldef009222.field000307;
             
-            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            if(ent.f_updatecache(globaldef009223, dist, ent))
             {
-                globaldef009223.field000337 = globaldef009224;
+                globaldef009223.field000337 = dist;
                 
                 if(globaldef009223.field000338)
                 {
@@ -3483,11 +3483,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         if(globaldef009223)
         {
-            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000308;
+            dist = globaldef009222.field000337 + globaldef009222.field000308;
             
-            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            if(ent.f_updatecache(globaldef009223, dist, ent))
             {
-                globaldef009223.field000337 = globaldef009224;
+                globaldef009223.field000337 = dist;
                 
                 if(globaldef009223.field000338)
                 {
@@ -3563,11 +3563,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         if(globaldef009223)
         {
-            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000309;
+            dist = globaldef009222.field000337 + globaldef009222.field000309;
             
-            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            if(ent.f_updatecache(globaldef009223, dist, ent))
             {
-                globaldef009223.field000337 = globaldef009224;
+                globaldef009223.field000337 = dist;
                 
                 if(globaldef009223.field000338)
                 {
@@ -3643,11 +3643,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         if(globaldef009223)
         {
-            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000310;
+            dist = globaldef009222.field000337 + globaldef009222.field000310;
             
-            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            if(ent.f_updatecache(globaldef009223, dist, ent))
             {
-                globaldef009223.field000337 = globaldef009224;
+                globaldef009223.field000337 = dist;
                 
                 if(globaldef009223.field000338)
                 {
@@ -3723,11 +3723,11 @@ void (entity globaldef009216, entity globaldef009217, float globaldef009218, ent
         
         if(globaldef009223)
         {
-            globaldef009224 = globaldef009222.field000337 + globaldef009222.field000311;
+            dist = globaldef009222.field000337 + globaldef009222.field000311;
             
-            if(globaldef009219.field000224(globaldef009223, globaldef009224, globaldef009219))
+            if(ent.f_updatecache(globaldef009223, dist, ent))
             {
-                globaldef009223.field000337 = globaldef009224;
+                globaldef009223.field000337 = dist;
                 
                 if(globaldef009223.field000338)
                 {
@@ -4067,7 +4067,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     }
     
     
-    if(!globaldef009233.field000224)
+    if(!globaldef009233.f_updatecache)
     {
         objerror("no cache update function");
     }
@@ -4080,7 +4080,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     
     globaldef009238 = globaldef009232 + func002655(globaldef009230, globaldef009231);
     
-    if(!globaldef009233.field000224(globaldef009231, globaldef009238, globaldef009233))
+    if(!globaldef009233.f_updatecache(globaldef009231, globaldef009238, globaldef009233))
     {
         return;
     }
@@ -4122,7 +4122,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         {
             globaldef009238 = globaldef009236.field000337 + globaldef009236.field000307;
             
-            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
                 globaldef009237.field000337 = globaldef009238;
                 
@@ -4153,7 +4153,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         {
             globaldef009238 = globaldef009236.field000337 + globaldef009236.field000308;
             
-            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
                 globaldef009237.field000337 = globaldef009238;
                 
@@ -4184,7 +4184,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         {
             globaldef009238 = globaldef009236.field000337 + globaldef009236.field000309;
             
-            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
                 globaldef009237.field000337 = globaldef009238;
                 
@@ -4215,7 +4215,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         {
             globaldef009238 = globaldef009236.field000337 + globaldef009236.field000310;
             
-            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
                 globaldef009237.field000337 = globaldef009238;
                 
@@ -4246,7 +4246,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         {
             globaldef009238 = globaldef009236.field000337 + globaldef009236.field000311;
             
-            if(globaldef009233.field000224(globaldef009237, globaldef009238, globaldef009233))
+            if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
                 globaldef009237.field000337 = globaldef009238;
                 
@@ -4804,7 +4804,7 @@ void (entity globaldef009252, entity globaldef009253) func002686 =
     }
     
     
-    if(globaldef009253.field000224)
+    if(globaldef009253.f_updatecache)
     {
         
         if(!globaldef009253.field000299)
@@ -5287,7 +5287,7 @@ void (entity globaldef009275, entity globaldef009276) func002692 =
         objerror("can't cache the world\n");
     }
     
-    globaldef009275.field000224 = func002648;
+    globaldef009275.f_updatecache = func002648;
     globaldef009277 = globaldef000819;
     
     while(globaldef009277)

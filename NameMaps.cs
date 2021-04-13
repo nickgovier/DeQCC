@@ -300,7 +300,18 @@ namespace DeQcc
 
             #endregion
 
-            
+            nameMap.Add("globaldef000529", "end_ra_globals");
+            nameMap.Add("field000224", "f_updatecache");
+            nameMap.Add("globaldef009217", "wp");
+            nameMap.Add("globaldef009224", "dist");
+            nameMap.Add("globaldef009219", "ent");
+            nameMap.Add("field000225", "f_goalweight");
+            nameMap.Add("field000226", "f_walkaboutweight");
+
+
+
+
+
             nameMap.Add("func000064", "stuffcmd");
             nameMap.Add("func000072", "centerprint");
             nameMap.Add("func000076", "centerprint5");
@@ -1234,8 +1245,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region world.qc
 
             // Declarations
@@ -1258,6 +1267,7 @@ namespace DeQcc
 
             #endregion
 
+            // Not done
             #region b_camp.qc
 
             // this is based on one of the many anti-camp mods available
@@ -1269,23 +1279,38 @@ namespace DeQcc
             nameMap.Add("globaldef002608", "CAMP_DETECT_AND_PUNISH_SEVERE");
             nameMap.Add("globaldef002609", "CampingMode");
 
+            nameMap.Add("func000302", "CampingCloudSpawnRain");
+            nameMap.Add("func000303", "CampingCloudSpawnLightning");
+            nameMap.Add("func000304", "CampingCloudLightningFlash");
             for (int i = 1; i <= 12; i++) { nameMap.Add("func000" + (304 + i).ToString(), "cloud_a" + i.ToString()); }
             for (int i = 1; i <= 4; i++) { nameMap.Add("func000" + (316 + i).ToString(), "cloud_b" + i.ToString()); }
             for (int i = 1; i <= 4; i++) { nameMap.Add("func000" + (320 + i).ToString(), "cloud_c" + i.ToString()); }
-
             nameMap.Add("func000336", "CampingPrint");
-            nameMap.Add("func000337", "ToggleCampingMode");  // impulse 156
+            nameMap.Add("func000337", "CampingToggleMode");  // impulse 156
 
             for (int i = 302; i <= 347; i++)
             {
                 fileMap[i] = "b_camp.qc";
             }
 
+            // CampingSpawnRain params
+            nameMap.Add("globaldef002473", "org");
+            nameMap.Add("globaldef002477", "vel");
+            nameMap.Add("globaldef002481", "color");
+            nameMap.Add("globaldef002482", "count");
+
+            // CampingCloudSpawnLightning params
+            nameMap.Add("globaldef002484", "start");
+            nameMap.Add("globaldef002488", "end");
+            nameMap.Add("globaldef002492", "ent");
+
+
             // CampingPrint params
             nameMap.Add("globaldef002586", "s");
 
             #endregion
 
+            // Not done
             #region b_ra.qc
 
             // rocket arena 1.2
@@ -1315,6 +1340,8 @@ namespace DeQcc
             nameMap.Add("globaldef002765", "anent");
 
             #endregion
+
+            // Done to here
 
             #region client.qc
 

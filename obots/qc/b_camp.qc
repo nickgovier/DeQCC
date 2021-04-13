@@ -1,5 +1,5 @@
 
-// func000302
+// CampingCloudSpawnRain
 // function begins at statement 8870, parm_start=6844
 // OP_STORE_V	6844	4	0
 // OP_STORE_V	6847	7	0
@@ -7,13 +7,13 @@
 // OP_STORE_V	6851	13	0
 // OP_CALL4	493	0	0
 // OP_DONE	0	0	0
-void (vector globaldef002473, vector globaldef002477, float globaldef002481, float globaldef002482) func000302 = 
+void (vector org, vector vel, float color, float count) CampingCloudSpawnRain = 
 {
-    particle(globaldef002473, globaldef002477, globaldef002481, globaldef002482);
+    particle(org, vel, color, count);
 };
 
 
-// func000303
+// CampingCloudSpawnLightning
 // function begins at statement 8876, parm_start=6853
 // OP_STORE_V	342	4	0
 // OP_STORE_V	304	7	0
@@ -43,28 +43,28 @@ void (vector globaldef002473, vector globaldef002477, float globaldef002481, flo
 // OP_STORE_V	6858	7	0
 // OP_CALL2	500	0	0
 // OP_DONE	0	0	0
-void (vector globaldef002484, vector globaldef002488, entity globaldef002492) func000303 = 
+void (vector start, vector end, entity ent) CampingCloudSpawnLightning = 
 {
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
-    WriteEntity(MSG_BROADCAST, globaldef002492);
-    WriteCoord(MSG_BROADCAST, globaldef002484_x);
-    WriteCoord(MSG_BROADCAST, globaldef002484_y);
-    WriteCoord(MSG_BROADCAST, globaldef002484_z);
-    WriteCoord(MSG_BROADCAST, globaldef002488_x);
-    WriteCoord(MSG_BROADCAST, globaldef002488_y);
-    WriteCoord(MSG_BROADCAST, globaldef002488_z);
+    WriteEntity(MSG_BROADCAST, ent);
+    WriteCoord(MSG_BROADCAST, start_x);
+    WriteCoord(MSG_BROADCAST, start_y);
+    WriteCoord(MSG_BROADCAST, start_z);
+    WriteCoord(MSG_BROADCAST, end_x);
+    WriteCoord(MSG_BROADCAST, end_y);
+    WriteCoord(MSG_BROADCAST, end_z);
 };
 
 
-// func000304
+// CampingCloudLightningFlash
 // function begins at statement 8904, parm_start=6861
 // OP_ADDRESS	28	133	6861
 // OP_LOAD_F	28	133	6862
 // OP_BITOR	6862	339	6863
 // OP_STOREP_F	6863	6861	0
 // OP_DONE	0	0	0
-void () func000304 = 
+void () CampingCloudLightningFlash = 
 {
     self.effects = self.effects | EF_MUZZLEFLASH;
 };
@@ -419,9 +419,9 @@ void () func000325 =
     globaldef002524_x = globaldef002524_x + random();
     globaldef002524_y = globaldef002524_y + random();
     traceline(self.origin, self.origin + (globaldef002524 * globaldef002497), TRUE, self);
-    func000303(self.origin, trace_endpos, self);
+    CampingCloudSpawnLightning(self.origin, trace_endpos, self);
     sound(self, CHAN_WEAPON, "cloud/thunder.wav", TRUE, ATTN_NORM);
-    func000304();
+    CampingCloudLightningFlash();
     LightningDamage(self.origin, trace_endpos + (globaldef002524 * MOVETYPE_STEP), self, 20);
 };
 
@@ -472,7 +472,7 @@ void (float globaldef002529, float globaldef002530, float globaldef002531) func0
         globaldef002532 = self.origin;
         globaldef002532_x = (globaldef002532_x - globaldef002529) + ((random() * globaldef002529) * FL_SWIM);
         globaldef002532_y = (globaldef002532_y - globaldef002529) + ((random() * globaldef002529) * FL_SWIM);
-        func000302(globaldef002532, '0 0 -300', FL_MONSTER, globaldef002530);
+        CampingCloudSpawnRain(globaldef002532, '0 0 -300', FL_MONSTER, globaldef002530);
         globaldef002536 = globaldef002536 - TRUE;
     }
     
@@ -966,7 +966,7 @@ float CAMP_DETECT_AND_PUNISH = 2;
 float CAMP_DETECT_AND_PUNISH_SEVERE = 3;
 float CampingMode;
 
-// ToggleCampingMode
+// CampingToggleMode
 // function begins at statement 9328, parm_start=7130
 // OP_STORE_V	7130	4	0
 // OP_CALL1	7104	0	0
@@ -992,7 +992,7 @@ float CampingMode;
 // OP_STORE_V	7137	4	0
 // OP_CALL1	7104	0	0
 // OP_DONE	0	0	0
-void () ToggleCampingMode = 
+void () CampingToggleMode = 
 {
     CampingPrint("camping mode = ");
     if(CampingMode == CAMP_NO_DETECTION)

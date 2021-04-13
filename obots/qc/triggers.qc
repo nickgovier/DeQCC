@@ -1225,7 +1225,7 @@ void () trigger_teleport =
     local vector globaldef003498;
     InitTrigger();
     self.touch = func000587;
-    self.field000225 = func002294;
+    self.f_goalweight = func002294;
     
     if(!self.target)
     {
@@ -1374,7 +1374,7 @@ void () trigger_onlyregistered =
     precache_sound("misc/talk.wav");
     InitTrigger();
     self.touch = func000593;
-    self.field000225 = func002296;
+    self.f_goalweight = func002296;
 };
 
 
@@ -1586,7 +1586,7 @@ void () trigger_push =
     InitTrigger();
     precache_sound("ambience/windfly.wav");
     self.touch = func000598;
-    self.field000225 = func002295;
+    self.f_goalweight = func002295;
     
     if(!self.speed)
     {

@@ -301,9 +301,9 @@ row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,p
 299,world.qc,0,bodyque,10015,0,8778,0,0,6774,00000000
 300,world.qc,0,InitBodyQue,0,0,8779,1,0,6774,00000000
 301,world.qc,0,CopyToBodyQue,0,0,8813,0,1,6796,10000000
-302,b_camp.qc,0,func000302,0,0,8870,0,4,6844,33110000
-303,b_camp.qc,0,func000303,0,0,8876,0,3,6853,33100000
-304,b_camp.qc,0,func000304,0,0,8904,0,0,6861,00000000
+302,b_camp.qc,0,CampingCloudSpawnRain,0,0,8870,0,4,6844,33110000
+303,b_camp.qc,0,CampingCloudSpawnLightning,0,0,8876,0,3,6853,33100000
+304,b_camp.qc,0,CampingCloudLightningFlash,0,0,8904,0,0,6861,00000000
 305,b_camp.qc,0,cloud_a1,0,0,8909,0,0,6872,00000000
 306,b_camp.qc,0,cloud_a2,0,0,8916,0,0,6873,00000000
 307,b_camp.qc,0,cloud_a3,0,0,8923,0,0,6874,00000000
@@ -336,7 +336,7 @@ row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,p
 334,b_camp.qc,0,func000334,0,0,9272,2,1,7076,10000000
 335,b_camp.qc,0,func000335,0,0,9295,7,2,7086,11000000
 336,b_camp.qc,0,CampingPrint,0,0,9325,0,1,7105,10000000
-337,b_camp.qc,0,ToggleCampingMode,0,0,9328,0,0,7130,00000000
+337,b_camp.qc,0,CampingToggleMode,0,0,9328,0,0,7130,00000000
 338,b_camp.qc,0,func000338,0,0,9352,0,1,7139,10000000
 339,b_camp.qc,0,func000339,0,0,9368,5,2,7158,11000000
 340,b_camp.qc,0,func000340,0,0,9409,3,1,7193,10000000
