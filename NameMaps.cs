@@ -300,6 +300,7 @@ namespace DeQcc
 
             #endregion
 
+
             nameMap.Add("globaldef000529", "end_ra_globals");
             nameMap.Add("field000224", "f_updatecache");
             nameMap.Add("globaldef009217", "wp");
@@ -307,15 +308,6 @@ namespace DeQcc
             nameMap.Add("globaldef009219", "ent");
             nameMap.Add("field000225", "f_goalweight");
             nameMap.Add("field000226", "f_walkaboutweight");
-
-
-
-
-
-            nameMap.Add("func000064", "stuffcmd");
-            nameMap.Add("func000072", "centerprint");
-            nameMap.Add("func000076", "centerprint5");
-            nameMap.Add("func000092", "sprint");
 
             // rocket arena
             nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
@@ -366,6 +358,39 @@ namespace DeQcc
             // Note that b_func.qc, all the function definitions
             // is decompiled to the top of the next file
 
+            #region b_defs.qc
+
+            nameMap.Add("func000064", "stuffcmd");
+            nameMap.Add("func000072", "centerprint");
+            nameMap.Add("func000076", "centerprint5");
+            nameMap.Add("func000092", "sprint");
+
+            for (int i = 63; i <= 105; i++)
+            {
+                fileMap[i] = "b_defs.qc";
+            }
+
+            #endregion
+
+            #region b_func.qc
+
+            // all of the function declarations sit before the first kascam function, 
+            // so just include that one function here to make sure all the defs appear in the
+            // correct file (better to have one kascam function in b_defs than all of the
+            // declarations in b_kascam, or to rewrite the decompiler for this special case
+
+            nameMap.Add("func000106", "CamCycle");
+
+            for (int i = 106; i <= 106; i++)
+            {
+                fileMap[i] = "b_func.qc";
+            }
+
+            // CamCycle params
+            nameMap.Add("globaldef001169", "ent");
+
+            #endregion
+
             #region b_kascam.qc
 
             // These are taken from KasCam so we can match on that basis
@@ -380,7 +405,6 @@ namespace DeQcc
             nameMap.Add("globaldef001166", "CAM_NOCLIP");
             nameMap.Add("globaldef001167", "CAM_DEATH");
 
-            nameMap.Add("func000106", "CamCycle");
             nameMap.Add("func000107", "CamVectors");
             nameMap.Add("func000115", "CamReport");
             nameMap.Add("func000116", "CamSqrt");
@@ -417,13 +441,10 @@ namespace DeQcc
             nameMap.Add("func000147", "CamDisconnect");
             nameMap.Add("func000148", "CamCopyBody");
 
-            for (int i = 106; i <= 148; i++)
+            for (int i = 107; i <= 148; i++)
             {
                 fileMap[i] = "b_kascam.qc";
             }
-
-            // CamCycle params
-            nameMap.Add("globaldef001169", "ent");
 
             // CamVectors params
             nameMap.Add("globaldef001173", "ent");
