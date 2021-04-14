@@ -1936,7 +1936,7 @@ float (float globaldef005871) func002280 =
                                                     {
                                                         if(globaldef005871 == globaldef005795)
                                                         {
-                                                            return (globaldef000775 * FL_INWATER) + globaldef000763;
+                                                            return (GLOBALDEF775_13 * FL_INWATER) + globaldef000763;
                                                         }
                                                         else
                                                         {
@@ -1954,7 +1954,7 @@ float (float globaldef005871) func002280 =
                                                                 {
                                                                     if(globaldef005871 == globaldef005798)
                                                                     {
-                                                                        return (globaldef000768 * FL_INWATER) + globaldef000775;
+                                                                        return (globaldef000768 * FL_INWATER) + GLOBALDEF775_13;
                                                                     }
                                                                     else
                                                                     {
@@ -1972,7 +1972,7 @@ float (float globaldef005871) func002280 =
                                                                             {
                                                                                 if(globaldef005871 == globaldef005801)
                                                                                 {
-                                                                                    return (globaldef000763 * FL_INWATER) + globaldef000775;
+                                                                                    return (globaldef000763 * FL_INWATER) + GLOBALDEF775_13;
                                                                                 }
                                                                                 else
                                                                                 {
@@ -1996,7 +1996,7 @@ float (float globaldef005871) func002280 =
                                                                                             {
                                                                                                 if(globaldef005871 == globaldef005782)
                                                                                                 {
-                                                                                                    return (globaldef000762 * FL_INWATER) + globaldef000775;
+                                                                                                    return (globaldef000762 * FL_INWATER) + GLOBALDEF775_13;
                                                                                                 }
                                                                                                 else
                                                                                                 {
@@ -10374,7 +10374,7 @@ void (entity globaldef006144) func002284 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= globaldef000775)
+                                                                    if(globaldef006145 <= GLOBALDEF775_13)
                                                                     {
                                                                         func002369(globaldef006144, "Go get your mommie", globaldef005812, FL_SWIM);
                                                                     }
@@ -10629,7 +10629,7 @@ void (entity globaldef006144) func002284 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= globaldef000775)
+                                                                            if(globaldef006145 <= GLOBALDEF775_13)
                                                                             {
                                                                                 func002369(globaldef006144, "toH", globaldef005812, TRUE);
                                                                             }
@@ -10858,7 +10858,7 @@ void (entity globaldef006144) func002284 =
                             {
                                 if(globaldef006144.field000286 == globaldef005785)
                                 {
-                                    globaldef006145 = floor(globaldef006145 * globaldef000775);
+                                    globaldef006145 = floor(globaldef006145 * GLOBALDEF775_13);
                                     if(globaldef006145 <= FALSE)
                                     {
                                         func002369(globaldef006144, "wanna laugh or wanna die?", globaldef005812, MOVETYPE_WALK);
@@ -11298,7 +11298,7 @@ void (entity globaldef006144) func002284 =
                                                                                                     else
                                                                                                     {
                                                                                                         
-                                                                                                        if(globaldef006145 <= globaldef000775)
+                                                                                                        if(globaldef006145 <= GLOBALDEF775_13)
                                                                                                         {
                                                                                                             func002369(globaldef006144, "wanna piece of candy?", globaldef005811, FL_SWIM);
                                                                                                         }
@@ -11482,7 +11482,7 @@ void (entity globaldef006144) func002284 =
                                                                                                             else
                                                                                                             {
                                                                                                                 
-                                                                                                                if(globaldef006145 <= globaldef000775)
+                                                                                                                if(globaldef006145 <= GLOBALDEF775_13)
                                                                                                                 {
                                                                                                                     func002369(globaldef006144, "Pizza, I dice it, I slice it", globaldef005812, FL_SWIM);
                                                                                                                 }
@@ -12453,7 +12453,7 @@ void (entity globaldef006144) func002284 =
                                                                                                                                                         }
                                                                                                                                                         else
                                                                                                                                                         {
-                                                                                                                                                            if(globaldef006145 <= globaldef000775)
+                                                                                                                                                            if(globaldef006145 <= GLOBALDEF775_13)
                                                                                                                                                             {
                                                                                                                                                                 func002369(globaldef006144, "I'm the queen of the hill", globaldef005812, MOVETYPE_WALK);
                                                                                                                                                             }

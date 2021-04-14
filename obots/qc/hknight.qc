@@ -623,7 +623,7 @@ void () func001785 = [35, func001786]
 // OP_DONE	0	0	0
 void () func001786 = [36, func001779]
 {
-    ai_run(globaldef000775);
+    ai_run(GLOBALDEF775_13);
 };
 
 
@@ -1489,7 +1489,7 @@ void () func001858 = [69, func001859]
 // OP_DONE	0	0	0
 void () func001859 = [70, func001860]
 {
-    ai_charge(globaldef000775);
+    ai_charge(GLOBALDEF775_13);
     ai_melee();
 };
 
@@ -1592,7 +1592,7 @@ void () func001866 = [77, func001867]
 // OP_DONE	0	0	0
 void () func001867 = [78, func001779]
 {
-    ai_charge(globaldef000775);
+    ai_charge(GLOBALDEF775_13);
 };
 
 
@@ -1714,7 +1714,7 @@ void () func001875 = [113, func001876]
 // OP_DONE	0	0	0
 void () func001876 = [114, func001877]
 {
-    ai_charge(globaldef000775);
+    ai_charge(GLOBALDEF775_13);
 };
 
 
@@ -1829,7 +1829,7 @@ void () func001884 = [122, func001885]
 // OP_DONE	0	0	0
 void () func001885 = [123, func001886]
 {
-    ai_charge(globaldef000775);
+    ai_charge(GLOBALDEF775_13);
 };
 
 

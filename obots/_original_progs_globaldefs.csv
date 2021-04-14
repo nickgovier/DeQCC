@@ -774,7 +774,7 @@ row,name,s_name,ofs,type,typename
 772,globaldef000772,0,789,2,float
 773,globaldef000773,0,790,2,float
 774,GLOBALDEF774_12,0,791,2,float
-775,globaldef000775,0,792,2,float
+775,GLOBALDEF775_13,0,792,2,float
 776,globaldef000776,0,793,32770,
 777,globaldef000777,0,794,32770,
 778,globaldef000778,0,795,32770,

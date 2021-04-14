@@ -243,7 +243,7 @@ float globaldef000771;
 float globaldef000772;
 float globaldef000773;
 float GLOBALDEF774_12 = 12;
-float globaldef000775;
+float GLOBALDEF775_13 = 13;
 float globaldef000776;
 float globaldef000777;
 float globaldef000778;

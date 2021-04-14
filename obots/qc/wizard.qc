@@ -359,7 +359,7 @@ void () func001198 =
     {
         self.owner.effects = self.owner.effects | EF_MUZZLEFLASH;
         makevectors(self.enemy.angles);
-        globaldef004324 = self.enemy.origin - (globaldef000775 * self.movedir);
+        globaldef004324 = self.enemy.origin - (GLOBALDEF775_13 * self.movedir);
         globaldef004320 = normalize(globaldef004324 - self.origin);
         sound(self, CHAN_WEAPON, "wizard/wattack.wav", TRUE, ATTN_NORM);
         launch_spike(self.origin, globaldef004320);

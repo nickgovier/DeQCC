@@ -343,6 +343,7 @@ namespace DeQcc
             nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
 
             nameMap.Add("globaldef000774", "GLOBALDEF774_12");   // constant = 12
+            nameMap.Add("globaldef000775", "GLOBALDEF775_13");   // constant = 13
 
             // b_clrank.qc
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc

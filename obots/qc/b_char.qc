@@ -379,7 +379,7 @@ void (entity globaldef006474) func002286 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006475 <= globaldef000775)
+                                                        if(globaldef006475 <= GLOBALDEF775_13)
                                                         {
                                                             func002366(globaldef006474, "weeeee", globaldef005812);
                                                         }

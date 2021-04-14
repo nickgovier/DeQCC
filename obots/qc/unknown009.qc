@@ -70,7 +70,7 @@ void (entity globaldef007123, float globaldef007124) func002426 =
     {
         if(globaldef007124 == FL_SWIM)
         {
-            globaldef007123.clientcolor = (globaldef000775 * FL_INWATER) + globaldef000775;
+            globaldef007123.clientcolor = (GLOBALDEF775_13 * FL_INWATER) + GLOBALDEF775_13;
         }
         else
         {
