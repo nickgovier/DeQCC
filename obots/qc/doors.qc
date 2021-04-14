@@ -195,7 +195,7 @@ void () door_go_up =
 };
 
 
-// func000541
+// door_fire
 // function begins at statement 14906, parm_start=10272
 // OP_LOAD_ENT	28	201	10274
 // OP_NE_E	10274	28	10275
@@ -243,10 +243,10 @@ void () door_go_up =
 // OP_IF	10294	-6	0
 // OP_STORE_ENT	10272	28	0
 // OP_DONE	0	0	0
-void () func000541 = 
+void () door_fire = 
 {
-    local entity globaldef003327;
-    local entity globaldef003328;
+    local entity oself;
+    local entity starte;
     
     if(self.owner != self)
     {
@@ -260,36 +260,36 @@ void () func000541 =
     }
     
     self.message = string_null;
-    globaldef003327 = self;
+    oself = self;
     
     if(self.spawnflags & DOOR_TOGGLE)
     {
         
         if((self.state == STATE_UP) || (self.state == STATE_TOP))
         {
-            globaldef003328 = self;
+            starte = self;
             do
             {
                 door_go_down();
                 self = self.enemy;
-            } while ((self != globaldef003328) && (self != world));
-            self = globaldef003327;
+            } while ((self != starte) && (self != world));
+            self = oself;
             return;
         }
         
     }
     
-    globaldef003328 = self;
+    starte = self;
     do
     {
         door_go_up();
         self = self.enemy;
-    } while ((self != globaldef003328) && (self != world));
-    self = globaldef003327;
+    } while ((self != starte) && (self != world));
+    self = oself;
 };
 
 
-// func000542
+// door_use
 // function begins at statement 14952, parm_start=10296
 // OP_STORE_V	29	4	0
 // OP_LOAD_V	29	105	10297
@@ -316,9 +316,9 @@ void () func000541 =
 // OP_CALL0	10271	0	0
 // OP_STORE_ENT	10296	28	0
 // OP_DONE	0	0	0
-void () func000542 = 
+void () door_use = 
 {
-    local entity globaldef003331;
+    local entity oself;
     func002453(other, other.origin, TRUE, globaldef000739);
     
     if(other.classname == "bot")
@@ -329,14 +329,14 @@ void () func000542 =
     self.message = "";
     self.owner.message = "";
     self.enemy.message = "";
-    globaldef003331 = self;
+    oself = self;
     self = self.owner;
-    func000541();
-    self = globaldef003331;
+    door_fire();
+    self = oself;
 };
 
 
-// func000543
+// door_trigger_touch
 // function begins at statement 14977, parm_start=10309
 // OP_LOAD_F	29	152	10309
 // OP_LE	10309	213	10310
@@ -354,7 +354,7 @@ void () func000542 =
 // OP_STORE_ENT	10315	28	0
 // OP_CALL0	10295	0	0
 // OP_DONE	0	0	0
-void () func000543 = 
+void () door_trigger_touch = 
 {
     
     if(other.health <= FALSE)
@@ -371,11 +371,11 @@ void () func000543 =
     self.attack_finished = time + TRUE;
     activator = other;
     self = self.owner;
-    func000542();
+    door_use();
 };
 
 
-// func000544
+// door_killed
 // function begins at statement 14993, parm_start=10317
 // OP_STORE_ENT	28	10317	0
 // OP_LOAD_ENT	28	201	10318
@@ -388,19 +388,19 @@ void () func000543 =
 // OP_CALL0	10295	0	0
 // OP_STORE_ENT	10317	28	0
 // OP_DONE	0	0	0
-void () func000544 = 
+void () door_killed = 
 {
-    local entity globaldef003334;
-    globaldef003334 = self;
+    local entity oself;
+    oself = self;
     self = self.owner;
     self.health = self.max_health;
     self.takedamage = DAMAGE_NO;
-    func000542();
-    self = globaldef003334;
+    door_use();
+    self = oself;
 };
 
 
-// func000545
+// door_touch
 // function begins at statement 15004, parm_start=10323
 // OP_LOAD_S	29	129	10326
 // OP_NE_S	10326	1236	10327
@@ -554,9 +554,9 @@ void () func000544 =
 // OP_STOREP_FNC	519	10389	0
 // OP_CALL0	10295	0	0
 // OP_DONE	0	0	0
-void () func000545 = 
+void () door_touch = 
 {
-    local vector globaldef003336;
+    local vector UNUSED;
     
     if(other.classname != "player")
     {
@@ -669,11 +669,11 @@ void () func000545 =
         self.enemy.touch = SUB_Null;
     }
     
-    func000542();
+    door_use();
 };
 
 
-// func000546
+// spawn_field
 // function begins at statement 15156, parm_start=10391
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	10397	0
@@ -695,24 +695,24 @@ void () func000545 =
 // OP_CALL3	455	0	0
 // OP_RETURN	10397	0	0
 // OP_DONE	0	0	0
-entity (vector globaldef003347, vector globaldef003351) func000546 = 
+entity (vector fmins, vector fmaxs) spawn_field = 
 {
-    local entity globaldef003355;
-    local vector globaldef003356;
-    local vector globaldef003360;
-    globaldef003355 = spawn();
-    globaldef003355.movetype = MOVETYPE_NONE;
-    globaldef003355.solid = SOLID_TRIGGER;
-    globaldef003355.owner = self;
-    globaldef003355.touch = func000543;
-    globaldef003356 = globaldef003347;
-    globaldef003360 = globaldef003351;
-    setsize(globaldef003355, globaldef003356 - '60 60 8', globaldef003360 + '60 60 8');
-    return globaldef003355;
+    local entity trigger;
+    local vector t1;
+    local vector t2;
+    trigger = spawn();
+    trigger.movetype = MOVETYPE_NONE;
+    trigger.solid = SOLID_TRIGGER;
+    trigger.owner = self;
+    trigger.touch = door_trigger_touch;
+    t1 = fmins;
+    t2 = fmaxs;
+    setsize(trigger, t1 - '60 60 8', t2 + '60 60 8');
+    return trigger;
 };
 
 
-// func000547
+// EntitiesTouching
 // function begins at statement 15176, parm_start=10418
 // OP_LOAD_F	10418	135	10420
 // OP_LOAD_F	10419	139	10421
@@ -746,40 +746,40 @@ entity (vector globaldef003347, vector globaldef003351) func000546 =
 // OP_RETURN	213	0	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float (entity globaldef003366, entity globaldef003367) func000547 = 
+float (entity e1, entity e2) EntitiesTouching = 
 {
     
-    if(globaldef003366.mins_x > globaldef003367.maxs_x)
+    if(e1.mins_x > e2.maxs_x)
     {
         return FALSE;
     }
     
     
-    if(globaldef003366.mins_y > globaldef003367.maxs_y)
+    if(e1.mins_y > e2.maxs_y)
     {
         return FALSE;
     }
     
     
-    if(globaldef003366.mins_z > globaldef003367.maxs_z)
+    if(e1.mins_z > e2.maxs_z)
     {
         return FALSE;
     }
     
     
-    if(globaldef003366.maxs_x < globaldef003367.mins_x)
+    if(e1.maxs_x < e2.mins_x)
     {
         return FALSE;
     }
     
     
-    if(globaldef003366.maxs_y < globaldef003367.mins_y)
+    if(e1.maxs_y < e2.mins_y)
     {
         return FALSE;
     }
     
     
-    if(globaldef003366.maxs_z < globaldef003367.mins_z)
+    if(e1.maxs_z < e2.mins_z)
     {
         return FALSE;
     }
@@ -788,7 +788,7 @@ float (entity globaldef003366, entity globaldef003367) func000547 =
 };
 
 
-// func000548
+// LinkDoors
 // function begins at statement 15208, parm_start=10439
 // OP_LOAD_ENT	28	181	10447
 // OP_IFNOT	10447	2	0
@@ -896,12 +896,12 @@ float (entity globaldef003366, entity globaldef003367) func000547 =
 // OP_STORE_F	10498	10446	0
 // OP_IF	214	-87	0
 // OP_DONE	0	0	0
-void () func000548 = 
+void () LinkDoors = 
 {
-    local entity globaldef003369;
-    local entity globaldef003370;
-    local vector globaldef003371;
-    local vector globaldef003375;
+    local entity t;
+    local entity starte;
+    local vector cmins;
+    local vector cmaxs;
     
     if(self.enemy)
     {
@@ -915,35 +915,35 @@ void () func000548 =
         return;
     }
     
-    globaldef003371 = self.mins;
-    globaldef003375 = self.maxs;
-    globaldef003369 = globaldef003370 = self;
+    cmins = self.mins;
+    cmaxs = self.maxs;
+    t = starte = self;
     do
     {
-        self.owner = globaldef003370;
+        self.owner = starte;
         
         if(self.health)
         {
-            globaldef003370.health = self.health;
+            starte.health = self.health;
         }
         
         
         if(self.targetname)
         {
-            globaldef003370.targetname = self.targetname;
+            starte.targetname = self.targetname;
         }
         
         
         if(self.message != "")
         {
-            globaldef003370.message = self.message;
+            starte.message = self.message;
         }
         
-        globaldef003369 = find(globaldef003369, classname, self.classname);
+        t = find(t, classname, self.classname);
         
-        if(!globaldef003369)
+        if(!t)
         {
-            self.enemy = globaldef003370;
+            self.enemy = starte;
             self = self.owner;
             
             if(self.health)
@@ -963,54 +963,54 @@ void () func000548 =
                 return;
             }
             
-            self.owner.trigger_field = func000546(globaldef003371, globaldef003375);
+            self.owner.trigger_field = spawn_field(cmins, cmaxs);
             return;
         }
         
         
-        if(func000547(self, globaldef003369))
+        if(EntitiesTouching(self, t))
         {
             
-            if(globaldef003369.enemy)
+            if(t.enemy)
             {
                 objerror("cross connected doors");
             }
             
-            self = self.enemy = globaldef003369;
+            self = self.enemy = t;
             
-            if(globaldef003369.mins_x < globaldef003371_x)
+            if(t.mins_x < cmins_x)
             {
-                globaldef003371_x = globaldef003369.mins_x;
+                cmins_x = t.mins_x;
             }
             
             
-            if(globaldef003369.mins_y < globaldef003371_y)
+            if(t.mins_y < cmins_y)
             {
-                globaldef003371_y = globaldef003369.mins_y;
+                cmins_y = t.mins_y;
             }
             
             
-            if(globaldef003369.mins_z < globaldef003371_z)
+            if(t.mins_z < cmins_z)
             {
-                globaldef003371_z = globaldef003369.mins_z;
+                cmins_z = t.mins_z;
             }
             
             
-            if(globaldef003369.maxs_x > globaldef003375_x)
+            if(t.maxs_x > cmaxs_x)
             {
-                globaldef003375_x = globaldef003369.maxs_x;
+                cmaxs_x = t.maxs_x;
             }
             
             
-            if(globaldef003369.maxs_y > globaldef003375_y)
+            if(t.maxs_y > cmaxs_y)
             {
-                globaldef003375_y = globaldef003369.maxs_y;
+                cmaxs_y = t.maxs_y;
             }
             
             
-            if(globaldef003369.maxs_z > globaldef003375_z)
+            if(t.maxs_z > cmaxs_z)
             {
-                globaldef003375_z = globaldef003369.maxs_z;
+                cmaxs_z = t.maxs_z;
             }
             
         }
@@ -1307,7 +1307,7 @@ void () func_door =
     setmodel(self, self.model);
     self.classname = "door";
     self.blocked = door_blocked;
-    self.use = func000542;
+    self.use = door_use;
     
     if(self.spawnflags & DOOR_SILVER_KEY)
     {
@@ -1359,7 +1359,7 @@ void () func_door =
     if(self.health)
     {
         self.takedamage = DAMAGE_YES;
-        self.th_die = func000544;
+        self.th_die = door_killed;
     }
     
     
@@ -1368,26 +1368,26 @@ void () func_door =
         self.wait = CONTENT_EMPTY;
     }
     
-    self.touch = func000545;
+    self.touch = door_touch;
     self.f_goalweight = goalweight_door;
-    self.think = func000548;
+    self.think = LinkDoors;
     self.nextthink = self.ltime + 0.1;
 };
 
 void () fd_secret_move1;
-void () func000552;
+void () fd_secret_move2;
 void () fd_secret_move3;
-void () func000554;
+void () fd_secret_move4;
 void () fd_secret_move5;
-void () func000556;
+void () fd_secret_move6;
 void () fd_secret_done;
-float globaldef003404;
-float globaldef003405;
-float globaldef003406;
-float globaldef003407;
-float globaldef003408;
+float SECRET_OPEN_ONCE = 1;
+float SECRET_1ST_LEFT = 2;
+float SECRET_1ST_DOWN = 4;
+float SECRET_NO_SHOOT = 8;
+float SECRET_YES_SHOOT = 16;
 
-// func000550
+// fd_secret_use
 // function begins at statement 15511, parm_start=10649
 // OP_ADDRESS	28	152	10650
 // OP_STOREP_F	5984	10650	0
@@ -1492,9 +1492,9 @@ float globaldef003408;
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000550 = 
+void () fd_secret_use = 
 {
-    local float globaldef003410;
+    local float temp;
     self.health = 10000;
     
     if(self.origin != self.oldorigin)
@@ -1505,7 +1505,7 @@ void () func000550 =
     self.message = string_null;
     SUB_UseTargets();
     
-    if(!(self.spawnflags & globaldef003407))
+    if(!(self.spawnflags & SECRET_NO_SHOOT))
     {
         self.th_pain = SUB_Null;
         self.takedamage = DAMAGE_NO;
@@ -1514,12 +1514,12 @@ void () func000550 =
     self.velocity = VEC_ORIGIN;
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
     self.nextthink = self.ltime + 0.1;
-    globaldef003410 = TRUE - (self.spawnflags & globaldef003405);
+    temp = TRUE - (self.spawnflags & SECRET_1ST_LEFT);
     makevectors(self.mangle);
     
     if(!self.t_width)
     {
-        if(self.spawnflags & globaldef003406)
+        if(self.spawnflags & SECRET_1ST_DOWN)
         {
             self.t_width = fabs(v_up * self.size);
         }
@@ -1536,13 +1536,13 @@ void () func000550 =
         self.t_length = fabs(v_forward * self.size);
     }
     
-    if(self.spawnflags & globaldef003406)
+    if(self.spawnflags & SECRET_1ST_DOWN)
     {
         self.dest1 = self.origin - (v_up * self.t_width);
     }
     else
     {
-        self.dest1 = self.origin + (v_right * (self.t_width * globaldef003410));
+        self.dest1 = self.origin + (v_right * (self.t_width * temp));
     }
     
     self.dest2 = self.dest1 + (v_forward * self.t_length);
@@ -1570,12 +1570,12 @@ void () func000550 =
 void () fd_secret_move1 = 
 {
     self.nextthink = self.ltime + TRUE;
-    self.think = func000552;
+    self.think = fd_secret_move2;
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
 
-// func000552
+// fd_secret_move2
 // function begins at statement 15628, parm_start=10750
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -1591,7 +1591,7 @@ void () fd_secret_move1 =
 // OP_STORE_V	10638	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000552 = 
+void () fd_secret_move2 = 
 {
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.dest2, self.speed, fd_secret_move3);
@@ -1623,16 +1623,16 @@ void () fd_secret_move3 =
 {
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
     
-    if(!(self.spawnflags & globaldef003404))
+    if(!(self.spawnflags & SECRET_OPEN_ONCE))
     {
         self.nextthink = self.ltime + self.wait;
-        self.think = func000554;
+        self.think = fd_secret_move4;
     }
     
 };
 
 
-// func000554
+// fd_secret_move4
 // function begins at statement 15661, parm_start=10764
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -1648,7 +1648,7 @@ void () fd_secret_move3 =
 // OP_STORE_V	10640	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000554 = 
+void () fd_secret_move4 = 
 {
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.dest1, self.speed, fd_secret_move5);
@@ -1674,12 +1674,12 @@ void () func000554 =
 void () fd_secret_move5 = 
 {
     self.nextthink = self.ltime + TRUE;
-    self.think = func000556;
+    self.think = fd_secret_move6;
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
 
-// func000556
+// fd_secret_move6
 // function begins at statement 15689, parm_start=10774
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -1695,7 +1695,7 @@ void () fd_secret_move5 =
 // OP_STORE_V	10642	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000556 = 
+void () fd_secret_move6 = 
 {
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     SUB_CalcMove(self.oldorigin, self.speed, fd_secret_done);
@@ -1727,18 +1727,18 @@ void () func000556 =
 void () fd_secret_done = 
 {
     
-    if(!self.targetname || (self.spawnflags & globaldef003408))
+    if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
         self.health = 10000;
         self.takedamage = DAMAGE_YES;
-        self.th_pain = func000550;
+        self.th_pain = fd_secret_use;
     }
     
     sound(self, CHAN_VOICE, self.noise3, TRUE, ATTN_NORM);
 };
 
 
-// func000558
+// secret_blocked
 // function begins at statement 15723, parm_start=10789
 // OP_LOAD_F	28	378	10789
 // OP_LT	31	10789	10790
@@ -1754,7 +1754,7 @@ void () fd_secret_done =
 // OP_STORE_V	10793	13	0
 // OP_CALL4	522	0	0
 // OP_DONE	0	0	0
-void () func000558 = 
+void () secret_blocked = 
 {
     
     if(time < self.attack_finished)
@@ -1767,7 +1767,7 @@ void () func000558 =
 };
 
 
-// func000559
+// secret_touch
 // function begins at statement 15737, parm_start=10795
 // OP_LOAD_S	29	129	10795
 // OP_NE_S	10795	1236	10796
@@ -1799,7 +1799,7 @@ void () func000558 =
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000559 = 
+void () secret_touch = 
 {
     
     if(other.classname != "player")
@@ -1989,17 +1989,17 @@ void () func_door_secret =
     self.classname = "door";
     setmodel(self, self.model);
     setorigin(self, self.origin);
-    self.touch = func000559;
+    self.touch = secret_touch;
     self.f_goalweight = goalweight_secretdoor;
-    self.blocked = func000558;
+    self.blocked = secret_blocked;
     self.speed = 50;
-    self.use = func000550;
+    self.use = fd_secret_use;
     
-    if(!self.targetname || (self.spawnflags & globaldef003408))
+    if(!self.targetname || (self.spawnflags & SECRET_YES_SHOOT))
     {
         self.health = 10000;
         self.takedamage = DAMAGE_YES;
-        self.th_pain = func000550;
+        self.th_pain = fd_secret_use;
     }
     
     self.oldorigin = self.origin;

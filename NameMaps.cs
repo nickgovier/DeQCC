@@ -1635,15 +1635,69 @@ namespace DeQcc
             nameMap.Add("globaldef003318", "DOOR_GOLD_KEY");
             nameMap.Add("globaldef003319", "DOOR_SILVER_KEY");
             nameMap.Add("globaldef003320", "DOOR_TOGGLE");
+            nameMap.Add("globaldef003404", "SECRET_OPEN_ONCE");
+            nameMap.Add("globaldef003405", "SECRET_1ST_LEFT");
+            nameMap.Add("globaldef003406", "SECRET_1ST_DOWN");
+            nameMap.Add("globaldef003407", "SECRET_NO_SHOOT");
+            nameMap.Add("globaldef003408", "SECRET_YES_SHOOT");
 
             nameMap.Add("func000536", "door_blocked");
             nameMap.Add("func000539", "door_go_down");
             nameMap.Add("func000540", "door_go_up");
+            nameMap.Add("func000541", "door_fire");
+            nameMap.Add("func000542", "door_use");
+            nameMap.Add("func000543", "door_trigger_touch");
+            nameMap.Add("func000544", "door_killed");
+            nameMap.Add("func000545", "door_touch");
+            nameMap.Add("func000546", "spawn_field");
+            nameMap.Add("func000547", "EntitiesTouching");
+            nameMap.Add("func000548", "LinkDoors");
+            nameMap.Add("func000550", "fd_secret_use");
+            nameMap.Add("func000552", "fd_secret_move2");
+            nameMap.Add("func000554", "fd_secret_move4");
+            nameMap.Add("func000556", "fd_secret_move6");
+            nameMap.Add("func000558", "secret_blocked");
+            nameMap.Add("func000559", "secret_touch");
 
             for (int i = 536; i <= 560; i++)
             {
                 fileMap[i] = "doors.qc";
             }
+
+            // door_fire locals
+            nameMap.Add("globaldef003327", "oself");
+            nameMap.Add("globaldef003328", "starte");
+
+            // door_use locals
+            nameMap.Add("globaldef003331", "oself");
+
+            // door_killed locals
+            nameMap.Add("globaldef003334", "oself");
+
+            // door_touch locals
+            nameMap.Add("globaldef003336", "UNUSED");
+
+            // spawn_field params
+            nameMap.Add("globaldef003347", "fmins");
+            nameMap.Add("globaldef003351", "fmaxs");
+
+            // spawn_field locals
+            nameMap.Add("globaldef003355", "trigger");
+            nameMap.Add("globaldef003356", "t1");
+            nameMap.Add("globaldef003360", "t2");
+
+            // EntitiesTouching params
+            nameMap.Add("globaldef003366", "e1");
+            nameMap.Add("globaldef003367", "e2");
+
+            // LinkDoors locals
+            nameMap.Add("globaldef003369", "t");
+            nameMap.Add("globaldef003370", "starte");
+            nameMap.Add("globaldef003371", "cmins");
+            nameMap.Add("globaldef003375", "cmaxs");
+
+            // fd_secret_use locals
+            nameMap.Add("globaldef003410", "temp");
 
             #endregion
 
