@@ -591,7 +591,7 @@ row,name,s_name,ofs,type,typename
 589,teamname,0,606,5,ev_field
 590,field000284,0,607,5,ev_field
 591,clientnumber,0,608,5,ev_field
-592,field000286,0,609,5,ev_field
+592,botnumber,0,609,5,ev_field
 593,clientcolor,0,610,5,ev_field
 594,field000288,0,611,5,ev_field
 595,field000289,0,612,5,ev_field

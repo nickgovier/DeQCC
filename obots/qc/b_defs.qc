@@ -72,7 +72,7 @@ void end_ra_globals;
 .string teamname;
 .float field000284;
 .float clientnumber;
-.float field000286;
+.float botnumber;
 .float clientcolor;
 .float field000288;
 .float field000289;

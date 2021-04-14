@@ -69,14 +69,14 @@ void (float globaldef007118) AddBots =
     }
     
     globaldef007119.team = 99;
-    globaldef007119.netname = BotName(globaldef007119.field000286);
-    globaldef007119.clientcolor = BotShirtPantsColor(globaldef007119.field000286);
+    globaldef007119.netname = BotName(globaldef007119.botnumber);
+    globaldef007119.clientcolor = BotShirtPantsColor(globaldef007119.botnumber);
     
     if(!globaldef000805)
     {
         globaldef007119.skin = FALSE;
-        globaldef007119.field000251 = globaldef007119.field000286;
-        globaldef007119.field000249 = globaldef007119.field000286;
+        globaldef007119.field000251 = globaldef007119.botnumber;
+        globaldef007119.field000249 = globaldef007119.botnumber;
     }
     
     msgUpdateClientNameToAll(globaldef007119.clientnumber, globaldef007119.netname);

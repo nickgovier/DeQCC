@@ -3133,7 +3133,7 @@ void () ClientConnect =
 {
     local entity bot;
     local float botclnum;
-    self.field000286 = CONTENT_EMPTY;
+    self.botnumber = CONTENT_EMPTY;
     self.clientnumber = self.colormap - TRUE;
     self.clientcolor = (FALSE * FL_INWATER) + self.team;
     self.field000249 = FALSE;

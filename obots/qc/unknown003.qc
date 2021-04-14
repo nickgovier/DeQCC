@@ -4170,7 +4170,7 @@ void (entity globaldef007102) func002417 =
     }
     
     msgUpdateClientNameToAll(globaldef007102.clientnumber, "");
-    func002414(globaldef007102.field000286);
+    func002414(globaldef007102.botnumber);
     SetClientNumberFree(globaldef007102.clientnumber);
     
     if(globaldef007102.next)
@@ -4697,8 +4697,8 @@ entity (float globaldef007113) func002420 =
     SetClientNumberUsed(globaldef007115);
     globaldef007114 = spawn();
     globaldef007114.clientnumber = globaldef007115;
-    globaldef007114.field000286 = globaldef007113;
-    func002413(globaldef007114.field000286);
+    globaldef007114.botnumber = globaldef007113;
+    func002413(globaldef007114.botnumber);
     globaldef007114.colormap = globaldef007115 + TRUE;
     
     if(firstBot)
@@ -4723,7 +4723,7 @@ entity (float globaldef007113) func002420 =
     }
     
     globaldef007114.think = func002419;
-    globaldef007114.nextthink = (time + 0.1) + (globaldef007114.field000286 * 0.1);
+    globaldef007114.nextthink = (time + 0.1) + (globaldef007114.botnumber * 0.1);
     globaldef000793 = globaldef000793 + TRUE;
     return globaldef007114;
 };

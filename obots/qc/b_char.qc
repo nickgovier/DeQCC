@@ -1349,7 +1349,7 @@ void (entity e) BotChooseExitMessage =
 {
     local float rnd;
     rnd = random();
-    if(e.field000286 == BOT23)
+    if(e.botnumber == BOT23)
     {
         rnd = floor(rnd * TRUE);
         
@@ -1361,7 +1361,7 @@ void (entity e) BotChooseExitMessage =
     }
     else
     {
-        if(e.field000286 == BOT1)
+        if(e.botnumber == BOT1)
         {
             rnd = floor(rnd * TRUE);
             
@@ -1373,7 +1373,7 @@ void (entity e) BotChooseExitMessage =
         }
         else
         {
-            if(e.field000286 == BOT2)
+            if(e.botnumber == BOT2)
             {
                 rnd = floor(rnd * TRUE);
                 
@@ -1385,7 +1385,7 @@ void (entity e) BotChooseExitMessage =
             }
             else
             {
-                if(e.field000286 == BOT3)
+                if(e.botnumber == BOT3)
                 {
                     rnd = floor(rnd * TRUE);
                     
@@ -1397,7 +1397,7 @@ void (entity e) BotChooseExitMessage =
                 }
                 else
                 {
-                    if(e.field000286 == BOT4)
+                    if(e.botnumber == BOT4)
                     {
                         rnd = floor(rnd * TRUE);
                         
@@ -1409,7 +1409,7 @@ void (entity e) BotChooseExitMessage =
                     }
                     else
                     {
-                        if(e.field000286 == BOT5)
+                        if(e.botnumber == BOT5)
                         {
                             rnd = floor(rnd * TRUE);
                             
@@ -1421,7 +1421,7 @@ void (entity e) BotChooseExitMessage =
                         }
                         else
                         {
-                            if(e.field000286 == BOT6)
+                            if(e.botnumber == BOT6)
                             {
                                 rnd = floor(rnd * TRUE);
                                 
@@ -1433,7 +1433,7 @@ void (entity e) BotChooseExitMessage =
                             }
                             else
                             {
-                                if(e.field000286 == BOT7)
+                                if(e.botnumber == BOT7)
                                 {
                                     rnd = floor(rnd * TRUE);
                                     
@@ -1445,7 +1445,7 @@ void (entity e) BotChooseExitMessage =
                                 }
                                 else
                                 {
-                                    if(e.field000286 == BOT8)
+                                    if(e.botnumber == BOT8)
                                     {
                                         rnd = floor(rnd * TRUE);
                                         
@@ -1457,7 +1457,7 @@ void (entity e) BotChooseExitMessage =
                                     }
                                     else
                                     {
-                                        if(e.field000286 == BOT9)
+                                        if(e.botnumber == BOT9)
                                         {
                                             rnd = floor(rnd * TRUE);
                                             
@@ -1469,7 +1469,7 @@ void (entity e) BotChooseExitMessage =
                                         }
                                         else
                                         {
-                                            if(e.field000286 == BOT10)
+                                            if(e.botnumber == BOT10)
                                             {
                                                 rnd = floor(rnd * TRUE);
                                                 
@@ -1481,7 +1481,7 @@ void (entity e) BotChooseExitMessage =
                                             }
                                             else
                                             {
-                                                if(e.field000286 == BOT11)
+                                                if(e.botnumber == BOT11)
                                                 {
                                                     rnd = floor(rnd * TRUE);
                                                     
@@ -1493,7 +1493,7 @@ void (entity e) BotChooseExitMessage =
                                                 }
                                                 else
                                                 {
-                                                    if(e.field000286 == BOT12)
+                                                    if(e.botnumber == BOT12)
                                                     {
                                                         rnd = floor(rnd * TRUE);
                                                         
@@ -1505,7 +1505,7 @@ void (entity e) BotChooseExitMessage =
                                                     }
                                                     else
                                                     {
-                                                        if(e.field000286 == BOT13)
+                                                        if(e.botnumber == BOT13)
                                                         {
                                                             rnd = floor(rnd * TRUE);
                                                             
@@ -1517,7 +1517,7 @@ void (entity e) BotChooseExitMessage =
                                                         }
                                                         else
                                                         {
-                                                            if(e.field000286 == BOT14)
+                                                            if(e.botnumber == BOT14)
                                                             {
                                                                 rnd = floor(rnd * TRUE);
                                                                 
@@ -1529,7 +1529,7 @@ void (entity e) BotChooseExitMessage =
                                                             }
                                                             else
                                                             {
-                                                                if(e.field000286 == BOT15)
+                                                                if(e.botnumber == BOT15)
                                                                 {
                                                                     rnd = floor(rnd * TRUE);
                                                                     
@@ -1541,7 +1541,7 @@ void (entity e) BotChooseExitMessage =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(e.field000286 == BOT16)
+                                                                    if(e.botnumber == BOT16)
                                                                     {
                                                                         rnd = floor(rnd * TRUE);
                                                                         
@@ -1553,7 +1553,7 @@ void (entity e) BotChooseExitMessage =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(e.field000286 == BOT17)
+                                                                        if(e.botnumber == BOT17)
                                                                         {
                                                                             rnd = floor(rnd * TRUE);
                                                                             
@@ -1565,7 +1565,7 @@ void (entity e) BotChooseExitMessage =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(e.field000286 == BOT18)
+                                                                            if(e.botnumber == BOT18)
                                                                             {
                                                                                 rnd = floor(rnd * TRUE);
                                                                                 
@@ -1577,7 +1577,7 @@ void (entity e) BotChooseExitMessage =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(e.field000286 == BOT19)
+                                                                                if(e.botnumber == BOT19)
                                                                                 {
                                                                                     rnd = floor(rnd * TRUE);
                                                                                     
@@ -1589,7 +1589,7 @@ void (entity e) BotChooseExitMessage =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(e.field000286 == BOT20)
+                                                                                    if(e.botnumber == BOT20)
                                                                                     {
                                                                                         rnd = floor(rnd * TRUE);
                                                                                         
@@ -1601,7 +1601,7 @@ void (entity e) BotChooseExitMessage =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(e.field000286 == BOT21)
+                                                                                        if(e.botnumber == BOT21)
                                                                                         {
                                                                                             rnd = floor(rnd * TRUE);
                                                                                             
@@ -1613,7 +1613,7 @@ void (entity e) BotChooseExitMessage =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(e.field000286 == BOT22)
+                                                                                            if(e.botnumber == BOT22)
                                                                                             {
                                                                                                 rnd = floor(rnd * TRUE);
                                                                                                 
@@ -1626,7 +1626,7 @@ void (entity e) BotChooseExitMessage =
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(e.field000286 == BOT0)
+                                                                                                if(e.botnumber == BOT0)
                                                                                                 {
                                                                                                     rnd = floor(rnd * TRUE);
                                                                                                     
@@ -2806,7 +2806,7 @@ void (entity globaldef005898) func002282 =
     local string globaldef005900;
     globaldef005900 = globaldef005898.field000295.netname;
     globaldef005899 = random();
-    if(globaldef005898.field000286 == BOT23)
+    if(globaldef005898.botnumber == BOT23)
     {
         globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
         if(globaldef005899 <= FALSE)
@@ -2850,7 +2850,7 @@ void (entity globaldef005898) func002282 =
     }
     else
     {
-        if(globaldef005898.field000286 == BOT1)
+        if(globaldef005898.botnumber == BOT1)
         {
             globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
             if(globaldef005899 <= FALSE)
@@ -2894,7 +2894,7 @@ void (entity globaldef005898) func002282 =
         }
         else
         {
-            if(globaldef005898.field000286 == BOT2)
+            if(globaldef005898.botnumber == BOT2)
             {
                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                 if(globaldef005899 <= FALSE)
@@ -2938,7 +2938,7 @@ void (entity globaldef005898) func002282 =
             }
             else
             {
-                if(globaldef005898.field000286 == BOT3)
+                if(globaldef005898.botnumber == BOT3)
                 {
                     globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                     if(globaldef005899 <= FALSE)
@@ -2982,7 +2982,7 @@ void (entity globaldef005898) func002282 =
                 }
                 else
                 {
-                    if(globaldef005898.field000286 == BOT4)
+                    if(globaldef005898.botnumber == BOT4)
                     {
                         globaldef005899 = floor(globaldef005899 * MOVETYPE_STEP);
                         if(globaldef005899 <= FALSE)
@@ -3018,7 +3018,7 @@ void (entity globaldef005898) func002282 =
                     }
                     else
                     {
-                        if(globaldef005898.field000286 == BOT5)
+                        if(globaldef005898.botnumber == BOT5)
                         {
                             globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
                             if(globaldef005899 <= FALSE)
@@ -3070,7 +3070,7 @@ void (entity globaldef005898) func002282 =
                         }
                         else
                         {
-                            if(globaldef005898.field000286 == BOT6)
+                            if(globaldef005898.botnumber == BOT6)
                             {
                                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                 if(globaldef005899 <= FALSE)
@@ -3114,7 +3114,7 @@ void (entity globaldef005898) func002282 =
                             }
                             else
                             {
-                                if(globaldef005898.field000286 == BOT7)
+                                if(globaldef005898.botnumber == BOT7)
                                 {
                                     globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                     if(globaldef005899 <= FALSE)
@@ -3158,7 +3158,7 @@ void (entity globaldef005898) func002282 =
                                 }
                                 else
                                 {
-                                    if(globaldef005898.field000286 == BOT8)
+                                    if(globaldef005898.botnumber == BOT8)
                                     {
                                         globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                         if(globaldef005899 <= FALSE)
@@ -3202,7 +3202,7 @@ void (entity globaldef005898) func002282 =
                                     }
                                     else
                                     {
-                                        if(globaldef005898.field000286 == BOT9)
+                                        if(globaldef005898.botnumber == BOT9)
                                         {
                                             globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                             if(globaldef005899 <= FALSE)
@@ -3246,7 +3246,7 @@ void (entity globaldef005898) func002282 =
                                         }
                                         else
                                         {
-                                            if(globaldef005898.field000286 == BOT10)
+                                            if(globaldef005898.botnumber == BOT10)
                                             {
                                                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                 if(globaldef005899 <= FALSE)
@@ -3290,7 +3290,7 @@ void (entity globaldef005898) func002282 =
                                             }
                                             else
                                             {
-                                                if(globaldef005898.field000286 == BOT11)
+                                                if(globaldef005898.botnumber == BOT11)
                                                 {
                                                     globaldef005899 = floor(globaldef005899 * FL_SWIM);
                                                     if(globaldef005899 <= FALSE)
@@ -3310,7 +3310,7 @@ void (entity globaldef005898) func002282 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef005898.field000286 == BOT12)
+                                                    if(globaldef005898.botnumber == BOT12)
                                                     {
                                                         globaldef005899 = floor(globaldef005899 * FL_SWIM);
                                                         if(globaldef005899 <= FALSE)
@@ -3330,7 +3330,7 @@ void (entity globaldef005898) func002282 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef005898.field000286 == BOT13)
+                                                        if(globaldef005898.botnumber == BOT13)
                                                         {
                                                             globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                             if(globaldef005899 <= FALSE)
@@ -3374,7 +3374,7 @@ void (entity globaldef005898) func002282 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef005898.field000286 == BOT14)
+                                                            if(globaldef005898.botnumber == BOT14)
                                                             {
                                                                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                 if(globaldef005899 <= FALSE)
@@ -3418,7 +3418,7 @@ void (entity globaldef005898) func002282 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef005898.field000286 == BOT15)
+                                                                if(globaldef005898.botnumber == BOT15)
                                                                 {
                                                                     globaldef005899 = floor(globaldef005899 * MOVETYPE_PUSH);
                                                                     if(globaldef005899 <= FALSE)
@@ -3478,7 +3478,7 @@ void (entity globaldef005898) func002282 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef005898.field000286 == BOT16)
+                                                                    if(globaldef005898.botnumber == BOT16)
                                                                     {
                                                                         globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
                                                                         if(globaldef005899 <= FALSE)
@@ -3530,7 +3530,7 @@ void (entity globaldef005898) func002282 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef005898.field000286 == BOT17)
+                                                                        if(globaldef005898.botnumber == BOT17)
                                                                         {
                                                                             globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                             if(globaldef005899 <= FALSE)
@@ -3574,7 +3574,7 @@ void (entity globaldef005898) func002282 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef005898.field000286 == BOT18)
+                                                                            if(globaldef005898.botnumber == BOT18)
                                                                             {
                                                                                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                                 if(globaldef005899 <= FALSE)
@@ -3618,7 +3618,7 @@ void (entity globaldef005898) func002282 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef005898.field000286 == BOT19)
+                                                                                if(globaldef005898.botnumber == BOT19)
                                                                                 {
                                                                                     globaldef005899 = floor(globaldef005899 * MOVETYPE_WALK);
                                                                                     if(globaldef005899 <= FALSE)
@@ -3646,7 +3646,7 @@ void (entity globaldef005898) func002282 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005898.field000286 == BOT20)
+                                                                                    if(globaldef005898.botnumber == BOT20)
                                                                                     {
                                                                                         globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                                         if(globaldef005899 <= FALSE)
@@ -3690,7 +3690,7 @@ void (entity globaldef005898) func002282 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005898.field000286 == BOT21)
+                                                                                        if(globaldef005898.botnumber == BOT21)
                                                                                         {
                                                                                             globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                                             if(globaldef005899 <= FALSE)
@@ -3734,7 +3734,7 @@ void (entity globaldef005898) func002282 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef005898.field000286 == BOT22)
+                                                                                            if(globaldef005898.botnumber == BOT22)
                                                                                             {
                                                                                                 globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                                                 if(globaldef005899 <= FALSE)
@@ -3779,7 +3779,7 @@ void (entity globaldef005898) func002282 =
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef005898.field000286 == BOT0)
+                                                                                                if(globaldef005898.botnumber == BOT0)
                                                                                                 {
                                                                                                     globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
                                                                                                     if(globaldef005899 <= FALSE)
@@ -5051,7 +5051,7 @@ void (entity globaldef006020) func002283 =
     local string globaldef006022;
     globaldef006022 = globaldef006020.field000296.netname;
     globaldef006021 = random();
-    if(globaldef006020.field000286 == BOT23)
+    if(globaldef006020.botnumber == BOT23)
     {
         globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
         if(globaldef006021 <= FALSE)
@@ -5103,7 +5103,7 @@ void (entity globaldef006020) func002283 =
     }
     else
     {
-        if(globaldef006020.field000286 == BOT1)
+        if(globaldef006020.botnumber == BOT1)
         {
             globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
             if(globaldef006021 <= FALSE)
@@ -5155,7 +5155,7 @@ void (entity globaldef006020) func002283 =
         }
         else
         {
-            if(globaldef006020.field000286 == BOT2)
+            if(globaldef006020.botnumber == BOT2)
             {
                 globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                 if(globaldef006021 <= FALSE)
@@ -5199,7 +5199,7 @@ void (entity globaldef006020) func002283 =
             }
             else
             {
-                if(globaldef006020.field000286 == BOT3)
+                if(globaldef006020.botnumber == BOT3)
                 {
                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                     if(globaldef006021 <= FALSE)
@@ -5243,7 +5243,7 @@ void (entity globaldef006020) func002283 =
                 }
                 else
                 {
-                    if(globaldef006020.field000286 == BOT4)
+                    if(globaldef006020.botnumber == BOT4)
                     {
                         globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                         if(globaldef006021 <= FALSE)
@@ -5287,7 +5287,7 @@ void (entity globaldef006020) func002283 =
                     }
                     else
                     {
-                        if(globaldef006020.field000286 == BOT5)
+                        if(globaldef006020.botnumber == BOT5)
                         {
                             globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                             if(globaldef006021 <= FALSE)
@@ -5331,7 +5331,7 @@ void (entity globaldef006020) func002283 =
                         }
                         else
                         {
-                            if(globaldef006020.field000286 == BOT6)
+                            if(globaldef006020.botnumber == BOT6)
                             {
                                 globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                 if(globaldef006021 <= FALSE)
@@ -5375,7 +5375,7 @@ void (entity globaldef006020) func002283 =
                             }
                             else
                             {
-                                if(globaldef006020.field000286 == BOT7)
+                                if(globaldef006020.botnumber == BOT7)
                                 {
                                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                     if(globaldef006021 <= FALSE)
@@ -5419,7 +5419,7 @@ void (entity globaldef006020) func002283 =
                                 }
                                 else
                                 {
-                                    if(globaldef006020.field000286 == BOT8)
+                                    if(globaldef006020.botnumber == BOT8)
                                     {
                                         globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                         if(globaldef006021 <= FALSE)
@@ -5463,7 +5463,7 @@ void (entity globaldef006020) func002283 =
                                     }
                                     else
                                     {
-                                        if(globaldef006020.field000286 == BOT9)
+                                        if(globaldef006020.botnumber == BOT9)
                                         {
                                             globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
                                             if(globaldef006021 <= FALSE)
@@ -5515,7 +5515,7 @@ void (entity globaldef006020) func002283 =
                                         }
                                         else
                                         {
-                                            if(globaldef006020.field000286 == BOT10)
+                                            if(globaldef006020.botnumber == BOT10)
                                             {
                                                 globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                 if(globaldef006021 <= FALSE)
@@ -5559,7 +5559,7 @@ void (entity globaldef006020) func002283 =
                                             }
                                             else
                                             {
-                                                if(globaldef006020.field000286 == BOT11)
+                                                if(globaldef006020.botnumber == BOT11)
                                                 {
                                                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                     if(globaldef006021 <= FALSE)
@@ -5603,7 +5603,7 @@ void (entity globaldef006020) func002283 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006020.field000286 == BOT12)
+                                                    if(globaldef006020.botnumber == BOT12)
                                                     {
                                                         globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                         if(globaldef006021 <= FALSE)
@@ -5647,7 +5647,7 @@ void (entity globaldef006020) func002283 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006020.field000286 == BOT13)
+                                                        if(globaldef006020.botnumber == BOT13)
                                                         {
                                                             globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                             if(globaldef006021 <= FALSE)
@@ -5691,7 +5691,7 @@ void (entity globaldef006020) func002283 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006020.field000286 == BOT14)
+                                                            if(globaldef006020.botnumber == BOT14)
                                                             {
                                                                 globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                 if(globaldef006021 <= FALSE)
@@ -5735,7 +5735,7 @@ void (entity globaldef006020) func002283 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006020.field000286 == BOT15)
+                                                                if(globaldef006020.botnumber == BOT15)
                                                                 {
                                                                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                     if(globaldef006021 <= FALSE)
@@ -5779,7 +5779,7 @@ void (entity globaldef006020) func002283 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006020.field000286 == BOT16)
+                                                                    if(globaldef006020.botnumber == BOT16)
                                                                     {
                                                                         globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                         if(globaldef006021 <= FALSE)
@@ -5823,7 +5823,7 @@ void (entity globaldef006020) func002283 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006020.field000286 == BOT17)
+                                                                        if(globaldef006020.botnumber == BOT17)
                                                                         {
                                                                             globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                             if(globaldef006021 <= FALSE)
@@ -5867,7 +5867,7 @@ void (entity globaldef006020) func002283 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006020.field000286 == BOT18)
+                                                                            if(globaldef006020.botnumber == BOT18)
                                                                             {
                                                                                 globaldef006021 = floor(globaldef006021 * FL_SWIM);
                                                                                 if(globaldef006021 <= FALSE)
@@ -5887,7 +5887,7 @@ void (entity globaldef006020) func002283 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006020.field000286 == BOT19)
+                                                                                if(globaldef006020.botnumber == BOT19)
                                                                                 {
                                                                                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                                     if(globaldef006021 <= FALSE)
@@ -5931,7 +5931,7 @@ void (entity globaldef006020) func002283 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006020.field000286 == BOT20)
+                                                                                    if(globaldef006020.botnumber == BOT20)
                                                                                     {
                                                                                         globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                                         if(globaldef006021 <= FALSE)
@@ -5975,7 +5975,7 @@ void (entity globaldef006020) func002283 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006020.field000286 == BOT21)
+                                                                                        if(globaldef006020.botnumber == BOT21)
                                                                                         {
                                                                                             globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                                             if(globaldef006021 <= FALSE)
@@ -6019,7 +6019,7 @@ void (entity globaldef006020) func002283 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006020.field000286 == BOT22)
+                                                                                            if(globaldef006020.botnumber == BOT22)
                                                                                             {
                                                                                                 globaldef006021 = floor(globaldef006021 * FL_CLIENT);
                                                                                                 if(globaldef006021 <= FALSE)
@@ -6088,7 +6088,7 @@ void (entity globaldef006020) func002283 =
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef006020.field000286 == BOT0)
+                                                                                                if(globaldef006020.botnumber == BOT0)
                                                                                                 {
                                                                                                     globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
                                                                                                     if(globaldef006021 <= FALSE)
@@ -9035,7 +9035,7 @@ void (entity globaldef006144) func002284 =
     }
     else
     {
-        if(globaldef006144.field000286 == FALSE)
+        if(globaldef006144.botnumber == FALSE)
         {
             globaldef006146 = globaldef005816;
         }
@@ -9087,7 +9087,7 @@ void (entity globaldef006144) func002284 =
         }
         else
         {
-            if((globaldef006145 <= TRUE) && (globaldef006144.field000286 != BOT2))
+            if((globaldef006145 <= TRUE) && (globaldef006144.botnumber != BOT2))
             {
                 func002369(globaldef006144, "Dogs crawl under Gates, software crawls under Windows", globaldef005813, FL_SWIM);
             }
@@ -9477,7 +9477,7 @@ void (entity globaldef006144) func002284 =
                 
                 if(globaldef006146 == globaldef005816)
                 {
-                    if(globaldef006144.field000286 == BOT23)
+                    if(globaldef006144.botnumber == BOT23)
                     {
                         globaldef006145 = floor(globaldef006145 * FL_INWATER);
                         if(globaldef006145 <= FALSE)
@@ -9609,7 +9609,7 @@ void (entity globaldef006144) func002284 =
                     }
                     else
                     {
-                        if(globaldef006144.field000286 == BOT1)
+                        if(globaldef006144.botnumber == BOT1)
                         {
                             globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                             if(globaldef006145 <= FALSE)
@@ -9693,7 +9693,7 @@ void (entity globaldef006144) func002284 =
                         }
                         else
                         {
-                            if(globaldef006144.field000286 == BOT2)
+                            if(globaldef006144.botnumber == BOT2)
                             {
                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
                                 if(globaldef006145 <= FALSE)
@@ -9785,7 +9785,7 @@ void (entity globaldef006144) func002284 =
                             }
                             else
                             {
-                                if(globaldef006144.field000286 == BOT3)
+                                if(globaldef006144.botnumber == BOT3)
                                 {
                                     globaldef006145 = floor(globaldef006145 * BOTSHIRTPANTS_13);
                                     if(globaldef006145 <= FALSE)
@@ -9893,7 +9893,7 @@ void (entity globaldef006144) func002284 =
                                 }
                                 else
                                 {
-                                    if(globaldef006144.field000286 == BOT4)
+                                    if(globaldef006144.botnumber == BOT4)
                                     {
                                         globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                         if(globaldef006145 <= FALSE)
@@ -9977,7 +9977,7 @@ void (entity globaldef006144) func002284 =
                                     }
                                     else
                                     {
-                                        if(globaldef006144.field000286 == BOT5)
+                                        if(globaldef006144.botnumber == BOT5)
                                         {
                                             globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                             if(globaldef006145 <= FALSE)
@@ -10061,7 +10061,7 @@ void (entity globaldef006144) func002284 =
                                         }
                                         else
                                         {
-                                            if(globaldef006144.field000286 == BOT6)
+                                            if(globaldef006144.botnumber == BOT6)
                                             {
                                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                 if(globaldef006145 <= FALSE)
@@ -10145,7 +10145,7 @@ void (entity globaldef006144) func002284 =
                                             }
                                             else
                                             {
-                                                if(globaldef006144.field000286 == BOT7)
+                                                if(globaldef006144.botnumber == BOT7)
                                                 {
                                                     globaldef006145 = floor(globaldef006145 * 14);
                                                     if(globaldef006145 <= FALSE)
@@ -10261,7 +10261,7 @@ void (entity globaldef006144) func002284 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006144.field000286 == BOT8)
+                                                    if(globaldef006144.botnumber == BOT8)
                                                     {
                                                         globaldef006145 = floor(globaldef006145 * FL_CLIENT);
                                                         if(globaldef006145 <= FALSE)
@@ -10329,7 +10329,7 @@ void (entity globaldef006144) func002284 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006144.field000286 == BOT9)
+                                                        if(globaldef006144.botnumber == BOT9)
                                                         {
                                                             globaldef006145 = floor(globaldef006145 * 14);
                                                             if(globaldef006145 <= FALSE)
@@ -10445,7 +10445,7 @@ void (entity globaldef006144) func002284 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006144.field000286 == BOT10)
+                                                            if(globaldef006144.botnumber == BOT10)
                                                             {
                                                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                 if(globaldef006145 <= FALSE)
@@ -10529,7 +10529,7 @@ void (entity globaldef006144) func002284 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006144.field000286 == BOT11)
+                                                                if(globaldef006144.botnumber == BOT11)
                                                                 {
                                                                     globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                     if(globaldef006145 <= FALSE)
@@ -10613,7 +10613,7 @@ void (entity globaldef006144) func002284 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006144.field000286 == BOT12)
+                                                                    if(globaldef006144.botnumber == BOT12)
                                                                     {
                                                                         globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                         if(globaldef006145 <= FALSE)
@@ -10697,7 +10697,7 @@ void (entity globaldef006144) func002284 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006144.field000286 == BOT13)
+                                                                        if(globaldef006144.botnumber == BOT13)
                                                                         {
                                                                             globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
                                                                             if(globaldef006145 <= FALSE)
@@ -10789,7 +10789,7 @@ void (entity globaldef006144) func002284 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006144.field000286 == BOT14)
+                                                                            if(globaldef006144.botnumber == BOT14)
                                                                             {
                                                                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
                                                                                 if(globaldef006145 <= FALSE)
@@ -10881,7 +10881,7 @@ void (entity globaldef006144) func002284 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006144.field000286 == BOT15)
+                                                                                if(globaldef006144.botnumber == BOT15)
                                                                                 {
                                                                                     globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
                                                                                     if(globaldef006145 <= FALSE)
@@ -10965,7 +10965,7 @@ void (entity globaldef006144) func002284 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006144.field000286 == BOT16)
+                                                                                    if(globaldef006144.botnumber == BOT16)
                                                                                     {
                                                                                         globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                                         if(globaldef006145 <= FALSE)
@@ -11049,7 +11049,7 @@ void (entity globaldef006144) func002284 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006144.field000286 == BOT17)
+                                                                                        if(globaldef006144.botnumber == BOT17)
                                                                                         {
                                                                                             globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                                             if(globaldef006145 <= FALSE)
@@ -11133,7 +11133,7 @@ void (entity globaldef006144) func002284 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006144.field000286 == BOT18)
+                                                                                            if(globaldef006144.botnumber == BOT18)
                                                                                             {
                                                                                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
                                                                                                 if(globaldef006145 <= FALSE)
@@ -11217,7 +11217,7 @@ void (entity globaldef006144) func002284 =
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006144.field000286 == BOT19)
+                                                                                                if(globaldef006144.botnumber == BOT19)
                                                                                                 {
                                                                                                     globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                                                     if(globaldef006145 <= FALSE)
@@ -11301,7 +11301,7 @@ void (entity globaldef006144) func002284 =
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006144.field000286 == BOT20)
+                                                                                                    if(globaldef006144.botnumber == BOT20)
                                                                                                     {
                                                                                                         globaldef006145 = floor(globaldef006145 * GLOBALDEF748_15);
                                                                                                         if(globaldef006145 <= FALSE)
@@ -11425,7 +11425,7 @@ void (entity globaldef006144) func002284 =
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006144.field000286 == BOT21)
+                                                                                                        if(globaldef006144.botnumber == BOT21)
                                                                                                         {
                                                                                                             globaldef006145 = floor(globaldef006145 * MOVETYPE_FLYMISSILE);
                                                                                                             if(globaldef006145 <= FALSE)
@@ -11501,7 +11501,7 @@ void (entity globaldef006144) func002284 =
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006144.field000286 == BOT22)
+                                                                                                            if(globaldef006144.botnumber == BOT22)
                                                                                                             {
                                                                                                                 globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                                                                 if(globaldef006145 <= FALSE)
@@ -11586,7 +11586,7 @@ void (entity globaldef006144) func002284 =
                                                                                                             else
                                                                                                             {
                                                                                                                 
-                                                                                                                if(globaldef006144.field000286 == BOT0)
+                                                                                                                if(globaldef006144.botnumber == BOT0)
                                                                                                                 {
                                                                                                                     globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
                                                                                                                     if(globaldef006145 <= FALSE)

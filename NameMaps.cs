@@ -389,6 +389,7 @@ namespace DeQcc
 
             // b_clrank.qc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
+            nameMap.Add("field000286", "botnumber");  // b_char.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
 
             nameMap.Add("field000297", "next");

@@ -285,7 +285,7 @@ row,name,s_name,ofs,type,typename
 283,teamname,0,253,1,string
 284,field000284,0,254,2,float
 285,clientnumber,0,255,2,float
-286,field000286,0,256,2,float
+286,botnumber,0,256,2,float
 287,clientcolor,0,257,2,float
 288,field000288,0,258,2,float
 289,field000289,0,259,2,float
