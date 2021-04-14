@@ -537,7 +537,7 @@ void () misc_explobox =
     globaldef003593 = self.origin_z;
     droptofloor();
     
-    if((globaldef003593 - self.origin_z) > GLOBALDEFSEVENTWOONE)
+    if((globaldef003593 - self.origin_z) > GLOBALDEF721_250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -605,7 +605,7 @@ void () misc_explobox2 =
     globaldef003597 = self.origin_z;
     droptofloor();
     
-    if((globaldef003597 - self.origin_z) > GLOBALDEFSEVENTWOONE)
+    if((globaldef003597 - self.origin_z) > GLOBALDEF721_250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -668,7 +668,7 @@ void () func000638 =
     {
         sound(self, CHAN_VOICE, "weapons/spike2.wav", TRUE, ATTN_NORM);
         launch_spike(self.origin, self.movedir);
-        newmis.velocity = self.movedir * GLOBALDEFSEVENTWOEIGHT;
+        newmis.velocity = self.movedir * GLOBALDEF728_500;
         
         if(self.spawnflags & globaldef003599)
         {
@@ -696,7 +696,7 @@ void () func000639 =
 {
     func000638();
     self.nextthink = time + self.wait;
-    newmis.velocity = self.movedir * GLOBALDEFSEVENTWOEIGHT;
+    newmis.velocity = self.movedir * GLOBALDEF728_500;
 };
 
 
@@ -1079,7 +1079,7 @@ void () func000647 =
     
     if(globaldef003618 < MOVETYPE_BOUNCE)
     {
-        globaldef003618 = GLOBALDEFSEVENFOUREIGHT;
+        globaldef003618 = GLOBALDEF748_15;
     }
     
     
@@ -1238,7 +1238,7 @@ void () func_episodegate =
 void () func_bossgate = 
 {
     
-    if((serverflags & GLOBALDEFSEVENFOUREIGHT) == GLOBALDEFSEVENFOUREIGHT)
+    if((serverflags & GLOBALDEF748_15) == GLOBALDEF748_15)
     {
         return;
     }

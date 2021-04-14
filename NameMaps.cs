@@ -319,13 +319,13 @@ namespace DeQcc
             nameMap.Add("globaldef000528", "last_time");
 
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
-            nameMap.Add("globaldef000721", "GLOBALDEFSEVENTWOONE");  // constant = 250
-            nameMap.Add("globaldef000723", "GLOBALDEFSEVENTWOTHREE");  // constant = 600
-            nameMap.Add("globaldef000724", "GLOBALDEFSEVENTWOFOUR");  // constant = 800
+            nameMap.Add("globaldef000721", "GLOBALDEF721_250");  // constant = 250
+            nameMap.Add("globaldef000723", "GLOBALDEF723_600");  // constant = 600
+            nameMap.Add("globaldef000724", "GLOBALDEF724_800");  // constant = 800
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
-            nameMap.Add("globaldef000728", "GLOBALDEFSEVENTWOEIGHT");   // constant = 500
-            nameMap.Add("globaldef000729", "GLOBALDEFSEVENTWONINE");   // constant = 40
-            nameMap.Add("globaldef000748", "GLOBALDEFSEVENFOUREIGHT");   // constant = 15
+            nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
+            nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40
+            nameMap.Add("globaldef000748", "GLOBALDEF748_15");   // constant = 15
 
             // boolean flags
             nameMap.Add("globaldef000749", "OBOT_BUBBLEROUTING");   // constant = 16

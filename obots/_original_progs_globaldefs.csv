@@ -720,15 +720,15 @@ row,name,s_name,ofs,type,typename
 718,globaldef000718,0,735,2,float
 719,OBOT_MAXBOTS,0,736,2,float
 720,globaldef000720,0,737,2,float
-721,GLOBALDEFSEVENTWOONE,0,738,2,float
+721,GLOBALDEF721_250,0,738,2,float
 722,globaldef000722,0,739,2,float
-723,GLOBALDEFSEVENTWOTHREE,0,740,2,float
-724,GLOBALDEFSEVENTWOFOUR,0,741,2,float
+723,GLOBALDEF723_600,0,740,2,float
+724,GLOBALDEF724_800,0,741,2,float
 725,globaldef000725,0,742,2,float
 726,globaldef000726,0,743,2,float
 727,OBOT_MAXSHELLCASES,0,744,2,float
-728,GLOBALDEFSEVENTWOEIGHT,0,745,2,float
-729,GLOBALDEFSEVENTWONINE,0,746,2,float
+728,GLOBALDEF728_500,0,745,2,float
+729,GLOBALDEF729_40,0,746,2,float
 730,globaldef000730,0,747,2,float
 731,globaldef000731,0,748,2,float
 732,globaldef000732,0,749,2,float
@@ -747,7 +747,7 @@ row,name,s_name,ofs,type,typename
 745,globaldef000745,0,762,2,float
 746,globaldef000746,0,763,2,float
 747,globaldef000747,0,764,2,float
-748,GLOBALDEFSEVENFOUREIGHT,0,765,2,float
+748,GLOBALDEF748_15,0,765,2,float
 749,OBOT_BUBBLEROUTING,0,766,2,float
 750,OBOT_ROCKETARENA,0,767,2,float
 751,OBOT_BOTPATHING,0,768,2,float
@@ -773,7 +773,7 @@ row,name,s_name,ofs,type,typename
 771,globaldef000771,0,788,2,float
 772,globaldef000772,0,789,2,float
 773,globaldef000773,0,790,2,float
-774,GLOBALDEFSEVENSEVENFOUR,0,791,2,float
+774,GLOBALDEF774_12,0,791,2,float
 775,globaldef000775,0,792,2,float
 776,globaldef000776,0,793,32770,
 777,globaldef000777,0,794,32770,
@@ -1115,7 +1115,7 @@ row,name,s_name,ofs,type,typename
 1113,func002552,0,1175,6,void()
 1114,func002571,0,1176,6,void()
 1115,func002637,0,1177,6,void()
-1116,func002638,0,1178,6,void()
+1116,CheckHardCodedWaypoints,0,1178,6,void()
 1117,func002640,0,1179,6,void()
 1118,func002641,0,1180,6,void()
 1119,func002642,0,1181,6,void()

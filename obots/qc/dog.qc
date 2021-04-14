@@ -834,7 +834,7 @@ void () func001321 = [34, func001322]
 // OP_DONE	0	0	0
 void () func001322 = [35, func001323]
 {
-    ai_pain(GLOBALDEFSEVENSEVENFOUR);
+    ai_pain(GLOBALDEF774_12);
 };
 
 
@@ -846,7 +846,7 @@ void () func001322 = [35, func001323]
 // OP_DONE	0	0	0
 void () func001323 = [36, func001324]
 {
-    ai_pain(GLOBALDEFSEVENSEVENFOUR);
+    ai_pain(GLOBALDEF774_12);
 };
 
 

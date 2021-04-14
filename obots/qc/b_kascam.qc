@@ -1476,9 +1476,9 @@ void (entity newtarg) CamInitFlybyMode =
     self.state = CAM_FLYBY;
     self.lip = 1.5 * (vlen(self.dest - self.dest1));
     
-    if(self.lip < GLOBALDEFSEVENTWOEIGHT)
+    if(self.lip < GLOBALDEF728_500)
     {
-        self.lip = GLOBALDEFSEVENTWOEIGHT;
+        self.lip = GLOBALDEF728_500;
     }
     
     CamUpdatePos(FALSE, FALSE);
@@ -2941,7 +2941,7 @@ void () CamIdleThink =
         self.enemy = self;
         traceline(self.dest, self.dest1, TRUE, self);
         self.dest1 = trace_endpos;
-        vec_x = (GLOBALDEFSEVENTWONINE * random()) - 20;
+        vec_x = (GLOBALDEF729_40 * random()) - 20;
         vec_y = 360 * random();
         vec_z = FALSE;
         pa = vec_y;
@@ -3292,7 +3292,7 @@ void () CamFlyByThink =
             self.enemy = self;
             self.movetarget = world;
             self.state = CAM_FIXED;
-            self.search_time = time + GLOBALDEFSEVENFOUREIGHT;
+            self.search_time = time + GLOBALDEF748_15;
             self.pausetime = time + MOVETYPE_WALK;
             return;
         }
@@ -3913,14 +3913,14 @@ void () CamThink =
         if(self.state == CAM_FLYBY)
         {
             CamFlyByThink();
-            CamUpdatePos(FALSE, GLOBALDEFSEVENTWOEIGHT);
+            CamUpdatePos(FALSE, GLOBALDEF728_500);
         }
         else
         {
             if(self.state == CAM_FOLLOW)
             {
                 CamFollowThink();
-                CamUpdatePos(GLOBALDEFSEVENTWOFOUR, 1000);
+                CamUpdatePos(GLOBALDEF724_800, 1000);
             }
             else
             {

@@ -1876,7 +1876,7 @@ float (float globaldef005871) func002280 =
             {
                 if(globaldef005871 == globaldef005785)
                 {
-                    return (globaldef000763 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
+                    return (globaldef000763 * FL_INWATER) + GLOBALDEF774_12;
                 }
                 else
                 {
@@ -1906,13 +1906,13 @@ float (float globaldef005871) func002280 =
                                 {
                                     if(globaldef005871 == globaldef005790)
                                     {
-                                        return (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
+                                        return (GLOBALDEF774_12 * FL_INWATER) + GLOBALDEF774_12;
                                     }
                                     else
                                     {
                                         if(globaldef005871 == globaldef005791)
                                         {
-                                            return (globaldef000765 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
+                                            return (globaldef000765 * FL_INWATER) + GLOBALDEF774_12;
                                         }
                                         else
                                         {
@@ -1924,7 +1924,7 @@ float (float globaldef005871) func002280 =
                                             {
                                                 if(globaldef005871 == globaldef005793)
                                                 {
-                                                    return (GLOBALDEFSEVENSEVENFOUR * FL_INWATER) + globaldef000765;
+                                                    return (GLOBALDEF774_12 * FL_INWATER) + globaldef000765;
                                                 }
                                                 else
                                                 {
@@ -1984,7 +1984,7 @@ float (float globaldef005871) func002280 =
                                                                                     {
                                                                                         if(globaldef005871 == globaldef005803)
                                                                                         {
-                                                                                            return (globaldef000768 * FL_INWATER) + GLOBALDEFSEVENSEVENFOUR;
+                                                                                            return (globaldef000768 * FL_INWATER) + GLOBALDEF774_12;
                                                                                         }
                                                                                         else
                                                                                         {
@@ -10368,7 +10368,7 @@ void (entity globaldef006144) func002284 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                if(globaldef006145 <= GLOBALDEF774_12)
                                                                 {
                                                                     func002369(globaldef006144, "Hey, catch this rocket", globaldef005812, FALSE);
                                                                 }
@@ -10386,7 +10386,7 @@ void (entity globaldef006144) func002284 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= GLOBALDEFSEVENFOUREIGHT)
+                                                                            if(globaldef006145 <= GLOBALDEF748_15)
                                                                             {
                                                                                 func002369(globaldef006144, "Lemme at ya", globaldef005812, FL_SWIM);
                                                                             }
@@ -10623,7 +10623,7 @@ void (entity globaldef006144) func002284 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                        if(globaldef006145 <= GLOBALDEF774_12)
                                                                         {
                                                                             func002369(globaldef006144, "jlHtaHbogh naDev", globaldef005812, MOVETYPE_WALK);
                                                                         }
@@ -10642,7 +10642,7 @@ void (entity globaldef006144) func002284 =
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= GLOBALDEFSEVENFOUREIGHT)
+                                                                                    if(globaldef006145 <= GLOBALDEF748_15)
                                                                                     {
                                                                                         func002370(globaldef006144, globaldef006147, " qaStaH nuq jay'", globaldef005811, MOVETYPE_WALK);
                                                                                     }
@@ -10932,7 +10932,7 @@ void (entity globaldef006144) func002284 =
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                                    if(globaldef006145 <= GLOBALDEF774_12)
                                                                                     {
                                                                                         func002369(globaldef006144, "A bull with a cleaver, huntin' for beaver", globaldef005812, MOVETYPE_WALK);
                                                                                     }
@@ -11291,7 +11291,7 @@ void (entity globaldef006144) func002284 =
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                                                    if(globaldef006145 <= GLOBALDEF774_12)
                                                                                                     {
                                                                                                         func002369(globaldef006144, "take It!!", globaldef005812, FL_SWIM);
                                                                                                     }
@@ -11475,7 +11475,7 @@ void (entity globaldef006144) func002284 =
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                                                            if(globaldef006145 <= GLOBALDEF774_12)
                                                                                                             {
                                                                                                                 func002369(globaldef006144, "Sensei was wrong about diz place, dudes", globaldef005812, MOVETYPE_FLY);
                                                                                                             }
@@ -12374,7 +12374,7 @@ void (entity globaldef006144) func002284 =
                                                                                                 {
                                                                                                     if(globaldef006144.field000286 == globaldef005802)
                                                                                                     {
-                                                                                                        globaldef006145 = floor(globaldef006145 * GLOBALDEFSEVENFOUREIGHT);
+                                                                                                        globaldef006145 = floor(globaldef006145 * GLOBALDEF748_15);
                                                                                                         if(globaldef006145 <= FALSE)
                                                                                                         {
                                                                                                             func002369(globaldef006144, "Men are such babies", globaldef005811, MOVETYPE_STEP);
@@ -12447,7 +12447,7 @@ void (entity globaldef006144) func002284 =
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
-                                                                                                                                                        if(globaldef006145 <= GLOBALDEFSEVENSEVENFOUR)
+                                                                                                                                                        if(globaldef006145 <= GLOBALDEF774_12)
                                                                                                                                                         {
                                                                                                                                                             func002371(globaldef006144, "My, ", globaldef006147, " what a small broomstick you have", globaldef005810, MOVETYPE_STEP);
                                                                                                                                                         }

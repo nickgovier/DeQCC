@@ -254,7 +254,7 @@ void () func000911 = [21, func000912]
 // OP_DONE	0	0	0
 void () func000912 = [22, func000913]
 {
-    ai_walk(GLOBALDEFSEVENSEVENFOUR);
+    ai_walk(GLOBALDEF774_12);
 };
 
 
@@ -636,7 +636,7 @@ void () func000934 = [44, func000935]
     }
     
     random();
-    globaldef003981 = ((random() + random()) + random()) * GLOBALDEFSEVENTWONINE;
+    globaldef003981 = ((random() + random()) + random()) * GLOBALDEF729_40;
     T_Damage(self.enemy, self, self, globaldef003981);
     sound(self, CHAN_VOICE, "shambler/smack.wav", TRUE, ATTN_NORM);
     SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), (crandom() * 100) * v_right);
@@ -839,7 +839,7 @@ void () func000943 = [61, func000944]
 void () func000944 = [62, func000945]
 {
     ai_charge(MOVETYPE_FLY);
-    func000937(GLOBALDEFSEVENTWOONE);
+    func000937(GLOBALDEF721_250);
 };
 
 
@@ -1031,7 +1031,7 @@ void () func000956 =
 {
     local float globaldef004010;
     globaldef004010 = random();
-    if((globaldef004010 > 0.6) || (self.health == GLOBALDEFSEVENTWOTHREE))
+    if((globaldef004010 > 0.6) || (self.health == GLOBALDEF723_600))
     {
         sham_smash1();
     }
@@ -1119,7 +1119,7 @@ void () func000957 =
     globaldef004012 = self.origin + '0 0 40';
     globaldef004016 = (self.enemy.origin + '0 0 16') - globaldef004012;
     globaldef004016 = normalize(globaldef004016);
-    traceline(globaldef004012, self.origin + (globaldef004016 * GLOBALDEFSEVENTWOTHREE), TRUE, self);
+    traceline(globaldef004012, self.origin + (globaldef004016 * GLOBALDEF723_600), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING1);
     WriteEntity(MSG_BROADCAST, self);
@@ -1669,7 +1669,7 @@ void () monster_shambler =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/shambler.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
-    self.health = GLOBALDEFSEVENTWOTHREE;
+    self.health = GLOBALDEF723_600;
     self.th_stand = func000890;
     self.th_walk = func000907;
     self.th_run = func000919;

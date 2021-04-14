@@ -321,7 +321,7 @@ void () cloud_b4 = [15, cloud_a1]
 // OP_DONE	0	0	0
 void () cloud_c1 = [16, cloud_c2]
 {
-    func000326(GLOBALDEFSEVENFOUREIGHT, MOVETYPE_TOSS, FALSE);
+    func000326(GLOBALDEF748_15, MOVETYPE_TOSS, FALSE);
     self.velocity = VEC_ORIGIN;
 };
 

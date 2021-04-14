@@ -54,7 +54,7 @@ void () func000407 = [17, func000407]
     if(self.weapon == IT_AXE)
     {
         
-        if(self.walkframe >= GLOBALDEFSEVENSEVENFOUR)
+        if(self.walkframe >= GLOBALDEF774_12)
         {
             self.walkframe = FALSE;
         }
@@ -69,7 +69,7 @@ void () func000407 = [17, func000407]
             self.walkframe = FALSE;
         }
         
-        self.frame = GLOBALDEFSEVENSEVENFOUR + self.walkframe;
+        self.frame = GLOBALDEF774_12 + self.walkframe;
     }
     
     self.walkframe = self.walkframe + TRUE;

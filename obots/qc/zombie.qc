@@ -896,7 +896,7 @@ void (vector globaldef004596) func001418 =
     globaldef004602 = ((self.origin + (globaldef004596_x * v_forward)) + (globaldef004596_y * v_right)) + ((globaldef004596_z - OBOT_MAXBOTS) * v_up);
     makevectors(self.angles);
     globaldef004600.velocity = normalize(self.enemy.origin - globaldef004602);
-    globaldef004600.velocity = globaldef004600.velocity * GLOBALDEFSEVENTWOTHREE;
+    globaldef004600.velocity = globaldef004600.velocity * GLOBALDEF723_600;
     globaldef004600.velocity_z = 200;
     globaldef004600.avelocity = '3000 1000 2000';
     globaldef004600.touch = func001417;

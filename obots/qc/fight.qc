@@ -673,7 +673,7 @@ float () ShamCheckAttack =
     spot1 = self.origin + self.view_ofs;
     spot2 = targ.origin + targ.view_ofs;
     
-    if((vlen(spot1 - spot2)) > GLOBALDEFSEVENTWOTHREE)
+    if((vlen(spot1 - spot2)) > GLOBALDEF723_600)
     {
         return FALSE;
     }

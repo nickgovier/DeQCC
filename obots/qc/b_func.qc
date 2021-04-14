@@ -177,7 +177,7 @@ void () func002550;
 void () func002552;
 void (entity globaldef008189, float globaldef008190) func002571;
 void () func002637;
-void () func002638;
+void () CheckHardCodedWaypoints;
 float (entity globaldef008983, float globaldef008984, entity globaldef008985) func002640;
 float (entity globaldef008986, float globaldef008987, entity globaldef008988) func002641;
 float (entity globaldef008989, float globaldef008990, entity globaldef008991) func002642;

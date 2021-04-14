@@ -1435,7 +1435,7 @@ float (entity globaldef007702, entity globaldef007703) func002462 =
     }
     
     
-    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEFSEVENTWOONE) * (GLOBALDEFSEVENTWOFOUR / globaldef000782)))
+    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEF721_250) * (GLOBALDEF724_800 / globaldef000782)))
     {
         return FALSE;
     }
@@ -1670,7 +1670,7 @@ float (entity globaldef007728, entity globaldef007729, entity globaldef007730) f
     }
     
     
-    if(globaldef007728.health < GLOBALDEFSEVENTWONINE)
+    if(globaldef007728.health < GLOBALDEF729_40)
     {
         return FALSE;
     }
@@ -1899,7 +1899,7 @@ float (entity globaldef007760, entity globaldef007761, float globaldef007762) fu
         {
             globaldef007802 = globaldef007802 + TRUE;
             
-            if(globaldef007802 > GLOBALDEFSEVENFOUREIGHT)
+            if(globaldef007802 > GLOBALDEF748_15)
             {
                 return FALSE;
             }
@@ -2201,7 +2201,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
     else
     {
         
-        if(globaldef007836 > GLOBALDEFSEVENTWOONE)
+        if(globaldef007836 > GLOBALDEF721_250)
         {
             return FALSE;
         }
@@ -3205,13 +3205,13 @@ void (entity globaldef007909) func002476 =
     globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
     globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
     globaldef007914 = globaldef007910;
-    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
+    globaldef007914_z = globaldef007914_z + GLOBALDEF724_800;
     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
     
     if(trace_inopen)
     {
         globaldef007914 = globaldef007910;
-        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - OBOT_MAXBOTS;
+        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEF724_800)) - OBOT_MAXBOTS;
         
         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
         {
@@ -3219,13 +3219,13 @@ void (entity globaldef007909) func002476 =
             globaldef007910_x = globaldef007910_x + globaldef007909.maxs_x;
             globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
             globaldef007914 = globaldef007910;
-            globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
+            globaldef007914_z = globaldef007914_z + GLOBALDEF724_800;
             traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
             
             if(trace_inopen)
             {
                 globaldef007914 = globaldef007910;
-                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - OBOT_MAXBOTS;
+                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEF724_800)) - OBOT_MAXBOTS;
                 
                 if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                 {
@@ -3233,13 +3233,13 @@ void (entity globaldef007909) func002476 =
                     globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
                     globaldef007910_y = globaldef007910_y + globaldef007909.mins_y;
                     globaldef007914 = globaldef007910;
-                    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
+                    globaldef007914_z = globaldef007914_z + GLOBALDEF724_800;
                     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                     
                     if(trace_inopen)
                     {
                         globaldef007914 = globaldef007910;
-                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - OBOT_MAXBOTS;
+                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEF724_800)) - OBOT_MAXBOTS;
                         
                         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                         {
@@ -3247,32 +3247,32 @@ void (entity globaldef007909) func002476 =
                             globaldef007910_x = globaldef007910_x + globaldef007909.mins_x;
                             globaldef007910_y = globaldef007910_y + globaldef007909.maxs_y;
                             globaldef007914 = globaldef007910;
-                            globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
+                            globaldef007914_z = globaldef007914_z + GLOBALDEF724_800;
                             traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                             
                             if(trace_inopen)
                             {
                                 globaldef007914 = globaldef007910;
-                                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - OBOT_MAXBOTS;
+                                globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEF724_800)) - OBOT_MAXBOTS;
                                 
                                 if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                                 {
                                     globaldef007910 = globaldef007909.origin;
                                     globaldef007914 = globaldef007910;
-                                    globaldef007914_z = globaldef007914_z + GLOBALDEFSEVENTWOFOUR;
+                                    globaldef007914_z = globaldef007914_z + GLOBALDEF724_800;
                                     traceline(globaldef007910, globaldef007914, TRUE, globaldef007909);
                                     
                                     if(trace_inopen)
                                     {
                                         globaldef007914 = globaldef007910;
-                                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEFSEVENTWOFOUR)) - OBOT_MAXBOTS;
+                                        globaldef007914_z = (globaldef007914_z + (trace_fraction * GLOBALDEF724_800)) - OBOT_MAXBOTS;
                                         
                                         if(pointcontents(globaldef007914) == CONTENT_EMPTY)
                                         {
                                             globaldef007909.goalentity.goalentity = globaldef007909.goalentity;
                                             globaldef007918 = pointcontents(globaldef007909.origin);
                                             globaldef007914 = globaldef007909.origin;
-                                            globaldef007914_z = func002475(globaldef007909, (trace_fraction * GLOBALDEFSEVENTWOFOUR) - TRUE, globaldef007918);
+                                            globaldef007914_z = func002475(globaldef007909, (trace_fraction * GLOBALDEF724_800) - TRUE, globaldef007918);
                                             globaldef007914_z = globaldef007914_z + 20;
                                             setorigin(globaldef007909.goalentity, globaldef007914);
                                             return;
@@ -3411,17 +3411,17 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
     }
     
     globaldef007922_z = globaldef007922_z + TRUE;
-    globaldef007940 = GLOBALDEFSEVENTWOTHREE;
+    globaldef007940 = GLOBALDEF723_600;
     globaldef007926 = VEC_ORIGIN;
     do
     {
         makevectors(globaldef007926);
-        globaldef007930 = globaldef007922 + (GLOBALDEFSEVENTWOTHREE * v_forward);
+        globaldef007930 = globaldef007922 + (GLOBALDEF723_600 * v_forward);
         traceline(globaldef007922, globaldef007930, TRUE, globaldef007920);
         
         if(trace_fraction != TRUE)
         {
-            globaldef007930 = globaldef007922 + (((GLOBALDEFSEVENTWOTHREE * trace_fraction) + MOVETYPE_BOUNCE) * v_forward);
+            globaldef007930 = globaldef007922 + (((GLOBALDEF723_600 * trace_fraction) + MOVETYPE_BOUNCE) * v_forward);
             globaldef007930_z = globaldef007930_z + FL_MONSTER;
             
             if(pointcontents(globaldef007930) == CONTENT_EMPTY)
@@ -3431,10 +3431,10 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
                 
                 if(globaldef007939 < globaldef007940)
                 {
-                    traceline(globaldef007930, globaldef007930 + (GLOBALDEFSEVENTWONINE * v_forward), TRUE, globaldef007920);
+                    traceline(globaldef007930, globaldef007930 + (GLOBALDEF729_40 * v_forward), TRUE, globaldef007920);
                     globaldef007930 = globaldef007930 + ((39 * trace_fraction) * v_forward);
                     traceline(globaldef007930, globaldef007930 + '0 0 16', TRUE, globaldef007920);
-                    globaldef007930_z = globaldef007930_z + (GLOBALDEFSEVENFOUREIGHT * trace_fraction);
+                    globaldef007930_z = globaldef007930_z + (GLOBALDEF748_15 * trace_fraction);
                     globaldef007940 = globaldef007939;
                     globaldef007934 = globaldef007930;
                 }
@@ -3446,7 +3446,7 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
         globaldef007926_y = globaldef007926_y + 45;
     } while (globaldef007926_y < 360);
     
-    if(globaldef007940 < GLOBALDEFSEVENTWOTHREE)
+    if(globaldef007940 < GLOBALDEF723_600)
     {
         return globaldef007934;
     }
@@ -3844,7 +3844,7 @@ float (entity globaldef007970, entity globaldef007971) func002481 =
             }
             
             
-            if((globaldef007970.field000277 + GLOBALDEFSEVENFOUREIGHT) > time)
+            if((globaldef007970.field000277 + GLOBALDEF748_15) > time)
             {
                 return FALSE;
             }
@@ -4476,7 +4476,7 @@ entity (entity globaldef008005, entity globaldef008006) func002484 =
     if(globaldef008005.field000265 < 2.8)
     {
         
-        if((vlen(globaldef008006.origin - globaldef008005.origin)) > GLOBALDEFSEVENTWOONE)
+        if((vlen(globaldef008006.origin - globaldef008005.origin)) > GLOBALDEF721_250)
         {
             
             if(!func002394(globaldef008005, globaldef008006))
@@ -4793,7 +4793,7 @@ entity (entity globaldef008021) func002488 =
     globaldef008022 = vlen(globaldef008021.enemy.origin - globaldef008021.origin);
     globaldef008023 = vlen(globaldef008021.field000266.origin - globaldef008021.origin);
     
-    if(globaldef008022 > GLOBALDEFSEVENTWOEIGHT)
+    if(globaldef008022 > GLOBALDEF728_500)
     {
         
         if(globaldef008023 < 400)
@@ -5189,7 +5189,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
                     
                     if(globaldef008048.waypointtype == globaldef000702)
                     {
-                        globaldef008051 = globaldef008051 + GLOBALDEFSEVENTWOEIGHT;
+                        globaldef008051 = globaldef008051 + GLOBALDEF728_500;
                     }
                     
                 }
@@ -8008,7 +8008,7 @@ void () func002524 = [12, func002524]
     if(self.weapon == IT_AXE)
     {
         
-        if(self.walkframe >= GLOBALDEFSEVENSEVENFOUR)
+        if(self.walkframe >= GLOBALDEF774_12)
         {
             self.walkframe = FALSE;
         }
@@ -8023,7 +8023,7 @@ void () func002524 = [12, func002524]
             self.walkframe = FALSE;
         }
         
-        self.frame = GLOBALDEFSEVENSEVENFOUR + self.walkframe;
+        self.frame = GLOBALDEF774_12 + self.walkframe;
     }
     
     self.walkframe = self.walkframe + TRUE;

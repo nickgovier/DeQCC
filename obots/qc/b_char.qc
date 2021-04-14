@@ -373,7 +373,7 @@ void (entity globaldef006474) func002286 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006475 <= GLOBALDEFSEVENSEVENFOUR)
+                                                    if(globaldef006475 <= GLOBALDEF774_12)
                                                     {
                                                         func002366(globaldef006474, "wow", globaldef005812);
                                                     }
@@ -391,7 +391,7 @@ void (entity globaldef006474) func002286 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006475 <= GLOBALDEFSEVENFOUREIGHT)
+                                                                if(globaldef006475 <= GLOBALDEF748_15)
                                                                 {
                                                                     func002366(globaldef006474, "this rocks", globaldef005812);
                                                                 }

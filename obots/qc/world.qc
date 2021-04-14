@@ -918,7 +918,7 @@ void () StartFrame =
         globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
         globaldef000780 = (((RA_PLAYERSTATTIME * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
-        globaldef000781 = TRUE / (globaldef000781 * GLOBALDEFSEVENTWOTHREE);
+        globaldef000781 = TRUE / (globaldef000781 * GLOBALDEF723_600);
     }
     
     globaldef000783 = cvar("sv_maxspeed");
@@ -965,7 +965,7 @@ void () StartFrame =
                 }
                 
                 func002277();
-                serverflags = (globaldef000804 - (globaldef000804 & GLOBALDEFSEVENFOUREIGHT)) | (serverflags & GLOBALDEFSEVENFOUREIGHT);
+                serverflags = (globaldef000804 - (globaldef000804 & GLOBALDEF748_15)) | (serverflags & GLOBALDEF748_15);
             }
             
         }

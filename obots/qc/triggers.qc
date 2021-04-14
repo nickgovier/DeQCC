@@ -1547,8 +1547,8 @@ void () func000598 =
                 
                 if((self.movedir_x < 0.1) && (self.movedir_y < 0.1))
                 {
-                    other.velocity_x = other.velocity_x + (GLOBALDEFSEVENTWONINE * crandom());
-                    other.velocity_y = other.velocity_y + (GLOBALDEFSEVENTWONINE * crandom());
+                    other.velocity_x = other.velocity_x + (GLOBALDEF729_40 * crandom());
+                    other.velocity_y = other.velocity_y + (GLOBALDEF729_40 * crandom());
                 }
                 
             }

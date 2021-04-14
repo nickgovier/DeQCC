@@ -806,7 +806,7 @@ void () func002068 =
     }
     else
     {
-        self.velocity = globaldef005418 * GLOBALDEFSEVENTWOONE;
+        self.velocity = globaldef005418 * GLOBALDEF721_250;
     }
     
     self.nextthink = time + 0.2;
@@ -883,7 +883,7 @@ void () func002069 =
         T_Damage(other, self, self, 110);
     }
     
-    T_RadiusDamage(self, self.owner, GLOBALDEFSEVENTWONINE, world);
+    T_RadiusDamage(self, self.owner, GLOBALDEF729_40, world);
     sound(self, CHAN_WEAPON, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);

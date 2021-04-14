@@ -289,7 +289,7 @@ void () func000833 = [21, func000834]
 // OP_DONE	0	0	0
 void () func000834 = [22, func000835]
 {
-    ai_run(GLOBALDEFSEVENFOUREIGHT);
+    ai_run(GLOBALDEF748_15);
 };
 
 
@@ -325,7 +325,7 @@ void () func000836 = [24, func000837]
 // OP_DONE	0	0	0
 void () func000837 = [25, func000838]
 {
-    ai_run(GLOBALDEFSEVENFOUREIGHT);
+    ai_run(GLOBALDEF748_15);
 };
 
 
@@ -405,7 +405,7 @@ void () func000842 = [30, func000843]
     self.touch = func000889;
     makevectors(self.angles);
     self.origin_z = self.origin_z + TRUE;
-    self.velocity = (v_forward * GLOBALDEFSEVENTWOTHREE) + '0 0 250';
+    self.velocity = (v_forward * GLOBALDEF723_600) + '0 0 250';
     
     if(self.flags & FL_ONGROUND)
     {
@@ -1224,7 +1224,7 @@ void (float side) Demon_Melee =
     local float globaldef003924;
     local vector globaldef003925;
     ai_face();
-    walkmove(self.ideal_yaw, GLOBALDEFSEVENSEVENFOUR);
+    walkmove(self.ideal_yaw, GLOBALDEF774_12);
     globaldef003925 = self.enemy.origin - self.origin;
     
     if(vlen(globaldef003925) > 100)
@@ -1306,7 +1306,7 @@ void () func000889 =
         
         if(vlen(self.velocity) > 400)
         {
-            globaldef003929 = GLOBALDEFSEVENTWONINE + (MOVETYPE_BOUNCE * random());
+            globaldef003929 = GLOBALDEF729_40 + (MOVETYPE_BOUNCE * random());
             T_Damage(other, self, self, globaldef003929);
         }
         

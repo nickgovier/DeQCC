@@ -44,7 +44,7 @@
 // OP_DONE	0	0	0
 void () func000665 = 
 {
-    T_RadiusDamage(self, self.owner, GLOBALDEFSEVENTWONINE, world);
+    T_RadiusDamage(self, self.owner, GLOBALDEF729_40, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
@@ -182,7 +182,7 @@ void () func000667 =
     globaldef003659.solid = SOLID_BBOX;
     makevectors(self.angles);
     globaldef003659.velocity = normalize(self.enemy.origin - self.origin);
-    globaldef003659.velocity = globaldef003659.velocity * GLOBALDEFSEVENTWOTHREE;
+    globaldef003659.velocity = globaldef003659.velocity * GLOBALDEF723_600;
     globaldef003659.velocity_z = 200;
     globaldef003659.avelocity = '300 300 300';
     globaldef003659.angles = vectoangles(globaldef003659.velocity);
@@ -673,7 +673,7 @@ void () func000694 = [25, func000695]
 // OP_DONE	0	0	0
 void () func000695 = [26, func000696]
 {
-    ai_run(GLOBALDEFSEVENSEVENFOUR);
+    ai_run(GLOBALDEF774_12);
 };
 
 
@@ -1169,7 +1169,7 @@ void () func000728 = [59, func000729]
 // OP_DONE	0	0	0
 void () func000729 = [60, func000694]
 {
-    ai_charge(GLOBALDEFSEVENSEVENFOUR);
+    ai_charge(GLOBALDEF774_12);
 };
 
 

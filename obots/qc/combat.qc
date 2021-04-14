@@ -678,7 +678,7 @@ void (entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDa
     local float points;
     local entity head;
     local vector org;
-    head = findradius(inflictor.origin, damage + GLOBALDEFSEVENTWONINE);
+    head = findradius(inflictor.origin, damage + GLOBALDEF729_40);
     
     while(head)
     {
@@ -788,7 +788,7 @@ void (entity attacker, float damage) T_BeamDamage =
 {
     local float points;
     local entity head;
-    head = findradius(attacker.origin, damage + GLOBALDEFSEVENTWONINE);
+    head = findradius(attacker.origin, damage + GLOBALDEF729_40);
     
     while(head)
     {

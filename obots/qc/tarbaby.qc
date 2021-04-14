@@ -838,7 +838,7 @@ void () func001742 = [54, func001743]
     self.touch = func001733;
     makevectors(self.angles);
     self.origin_z = self.origin_z + TRUE;
-    self.velocity = (v_forward * GLOBALDEFSEVENTWOTHREE) + '0 0 200';
+    self.velocity = (v_forward * GLOBALDEF723_600) + '0 0 200';
     self.velocity_z = self.velocity_z + (random() * 150);
     
     if(self.flags & FL_ONGROUND)

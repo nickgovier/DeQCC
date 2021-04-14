@@ -95,7 +95,7 @@ float (entity globaldef006499, entity globaldef006500, float globaldef006501) fu
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_door = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -164,7 +164,7 @@ float (entity bot, entity e) goalweight_door =
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_secretdoor = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -214,7 +214,7 @@ float (entity bot, entity e) goalweight_secretdoor =
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_button = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -261,7 +261,7 @@ float (entity bot, entity e) goalweight_button =
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_plat = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -318,7 +318,7 @@ float (entity bot, entity e) goalweight_plat =
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_train = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -370,7 +370,7 @@ float (entity bot, entity e) goalweight_train =
 // OP_DONE	0	0	0
 float (entity bot, entity e) goalweight_teleporter = 
 {
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -455,7 +455,7 @@ float (entity bot, entity e) goalweight_triggerpush =
     local vector vec1;
     local vector vec2;
     
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -551,7 +551,7 @@ float (entity bot, entity e) goalweight_trigger =
         
     }
     
-    if(func002288(bot, e, GLOBALDEFSEVENSEVENFOUR))
+    if(func002288(bot, e, GLOBALDEF774_12))
     {
         return FALSE;
     }
@@ -1307,7 +1307,7 @@ float (entity bot, entity e) walkaboutweight_quad =
         return 83;
     }
     
-    return GLOBALDEFSEVENFOUREIGHT;
+    return GLOBALDEF748_15;
 };
 
 
@@ -1415,7 +1415,7 @@ float (entity bot) fuzzy_lightning_weight =
     
     dist = vlen(bot.enemy.origin - bot.origin);
     
-    if(dist < GLOBALDEFSEVENTWOTHREE)
+    if(dist < GLOBALDEF723_600)
     {
         
         if(bot.enemy.origin_z > (bot.origin_z + 80))
@@ -1445,7 +1445,7 @@ float (entity bot) fuzzy_lightning_weight =
         return 70;
     }
     
-    return GLOBALDEFSEVENTWONINE;
+    return GLOBALDEF729_40;
 };
 
 
@@ -1582,7 +1582,7 @@ float (entity bot) fuzzy_grenadelauncher_weight =
     
     dist = vlen(bot.enemy.origin - bot.origin);
     
-    if(dist > GLOBALDEFSEVENTWOTHREE)
+    if(dist > GLOBALDEF723_600)
     {
         return FALSE;
     }
@@ -1699,7 +1699,7 @@ float (entity bot) fuzzy_supershotgun_weight =
     }
     
     dist = vlen(bot.enemy.origin - bot.origin);
-    if(dist > GLOBALDEFSEVENTWOTHREE)
+    if(dist > GLOBALDEF723_600)
     {
         return SVC_SIGNONNUM;
     }

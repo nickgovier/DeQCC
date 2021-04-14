@@ -182,9 +182,9 @@ float (entity e, float healamount, float ignore) T_Heal =
     }
     
     
-    if(e.health > GLOBALDEFSEVENTWOONE)
+    if(e.health > GLOBALDEF721_250)
     {
-        e.health = GLOBALDEFSEVENTWOONE;
+        e.health = GLOBALDEF721_250;
     }
     
     return TRUE;
@@ -273,7 +273,7 @@ void () item_health =
         precache_sound("items/r_item1.wav");
         setmodel(self, "maps/b_bh10.bsp");
         self.noise = "items/r_item1.wav";
-        self.healamount = GLOBALDEFSEVENFOUREIGHT;
+        self.healamount = GLOBALDEF748_15;
         self.healtype = FALSE;
         self.f_goalweight = goalweight_health15;
     }
@@ -451,7 +451,7 @@ void () health_touch =
     if(self.healtype == FL_SWIM)
     {
         
-        if(other.health >= GLOBALDEFSEVENTWOONE)
+        if(other.health >= GLOBALDEF721_250)
         {
             return;
         }
@@ -1405,7 +1405,7 @@ void () weapon_touch =
                             
                             hadammo = other.ammo_rockets;
                             new = IT_LIGHTNING;
-                            other.ammo_cells = other.ammo_cells + GLOBALDEFSEVENFOUREIGHT;
+                            other.ammo_cells = other.ammo_cells + GLOBALDEF748_15;
                         }
                         else
                         {
@@ -2031,7 +2031,7 @@ void () item_shells =
     {
         precache_model("maps/b_shell1.bsp");
         setmodel(self, "maps/b_shell1.bsp");
-        self.aflag = GLOBALDEFSEVENTWONINE;
+        self.aflag = GLOBALDEF729_40;
     }
     else
     {
@@ -2205,7 +2205,7 @@ void () item_cells =
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = GLOBALDEFSEVENSEVENFOUR;
+        self.aflag = GLOBALDEF774_12;
     }
     else
     {
@@ -2321,7 +2321,7 @@ void () item_weapon =
         {
             precache_model("maps/b_shell1.bsp");
             setmodel(self, "maps/b_shell1.bsp");
-            self.aflag = GLOBALDEFSEVENTWONINE;
+            self.aflag = GLOBALDEF729_40;
         }
         else
         {
@@ -2341,7 +2341,7 @@ void () item_weapon =
         {
             precache_model("maps/b_nail1.bsp");
             setmodel(self, "maps/b_nail1.bsp");
-            self.aflag = GLOBALDEFSEVENTWONINE;
+            self.aflag = GLOBALDEF729_40;
         }
         else
         {
@@ -2787,7 +2787,7 @@ void () sigil_touch =
     stuffcmd(other, "bf\n");
     self.solid = SOLID_NOT;
     self.model = string_null;
-    serverflags = serverflags | (self.spawnflags & GLOBALDEFSEVENFOUREIGHT);
+    serverflags = serverflags | (self.spawnflags & GLOBALDEF748_15);
     self.classname = "";
     activator = other;
     SUB_UseTargets();

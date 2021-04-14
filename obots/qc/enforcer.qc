@@ -79,8 +79,8 @@ void () func002071 =
     globaldef005430 = self.origin - (FL_CLIENT * normalize(self.velocity));
     if(other.health)
     {
-        SpawnBlood(globaldef005430, self.velocity * 0.2, GLOBALDEFSEVENFOUREIGHT);
-        T_Damage(other, self, self.owner, GLOBALDEFSEVENFOUREIGHT);
+        SpawnBlood(globaldef005430, self.velocity * 0.2, GLOBALDEF748_15);
+        T_Damage(other, self, self.owner, GLOBALDEF748_15);
     }
     else
     {
@@ -162,7 +162,7 @@ void (vector globaldef005434, vector globaldef005438) func002072 =
     setmodel(newmis, "progs/laser.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(newmis, globaldef005434);
-    newmis.velocity = globaldef005438 * GLOBALDEFSEVENTWOTHREE;
+    newmis.velocity = globaldef005438 * GLOBALDEF723_600;
     newmis.angles = vectoangles(newmis.velocity);
     newmis.nextthink = time + MOVETYPE_FLY;
     newmis.think = SUB_Remove;
@@ -547,7 +547,7 @@ void () func002099 = [25, func002100]
 // OP_DONE	0	0	0
 void () func002100 = [26, func002101]
 {
-    ai_run(GLOBALDEFSEVENSEVENFOUR);
+    ai_run(GLOBALDEF774_12);
 };
 
 

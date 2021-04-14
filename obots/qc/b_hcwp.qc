@@ -1,5 +1,5 @@
 
-// func002638
+// CheckHardCodedWaypoints
 // function begins at statement 45400, parm_start=26002
 // OP_LOAD_S	30	130	26002
 // OP_EQ_S	26002	6615	26003
@@ -7902,7 +7902,7 @@
 // OP_STORE_V	213	16	0
 // OP_CALL5	1193	0	0
 // OP_DONE	0	0	0
-void () func002638 = 
+void () CheckHardCodedWaypoints = 
 {
     if(world.model == "maps/dm1.bsp")
     {
@@ -7959,11 +7959,11 @@ void () func002638 =
         func002668('603.4 1322 2', 42, MOVETYPE_WALK, "");
         func002669(42, 39, 43, FALSE, FALSE);
         func002668('48 1152 2', 41, MOVETYPE_FLY, "weapon_supershotgun");
-        func002669(41, GLOBALDEFSEVENTWONINE, 63, FALSE, FALSE);
-        func002668('264.2 1053.6 2', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
-        func002669(GLOBALDEFSEVENTWONINE, 39, 41, FALSE, FALSE);
+        func002669(41, GLOBALDEF729_40, 63, FALSE, FALSE);
+        func002668('264.2 1053.6 2', GLOBALDEF729_40, MOVETYPE_WALK, "");
+        func002669(GLOBALDEF729_40, 39, 41, FALSE, FALSE);
         func002668('442.9 1222.5 2', 39, MOVETYPE_WALK, "");
-        func002669(39, 38, GLOBALDEFSEVENTWONINE, 42, 62);
+        func002669(39, 38, GLOBALDEF729_40, 42, 62);
         func002668('459.7 1468.1 2', 38, MOVETYPE_WALK, "");
         func002669(38, SVC_SELLSCREEN, 39, FALSE, FALSE);
         func002668('-56.3 1421.6 2', 37, MOVETYPE_WALK, "");
@@ -8001,7 +8001,7 @@ void () func002638 =
         func002668('-560 1384 2', 21, MOVETYPE_FLY, "weapon_nailgun");
         func002669(21, FL_SWIM, 22, FALSE, FALSE);
         func002668('456 824 2', 20, MOVETYPE_FLY, "item_health");
-        func002669(20, GLOBALDEFSEVENSEVENFOUR, 65, FALSE, FALSE);
+        func002669(20, GLOBALDEF774_12, 65, FALSE, FALSE);
         func002668('1091.9 1197.8 50', 19, MOVETYPE_WALK, "");
         func002669(19, 18, 45, FALSE, FALSE);
         func002668('1093.4 951.9 50', 18, MOVETYPE_WALK, "");
@@ -8009,17 +8009,17 @@ void () func002638 =
         func002668('1088 704 50', 17, MOVETYPE_FLY, "weapon_nailgun");
         func002669(17, FL_INWATER, 18, FALSE, FALSE);
         func002668('911.5 742.6 38', FL_INWATER, MOVETYPE_WALK, "");
-        func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 18, FALSE);
-        func002668('878.9 743.4 26', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-        func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
+        func002669(FL_INWATER, GLOBALDEF748_15, 17, 18, FALSE);
+        func002668('878.9 743.4 26', GLOBALDEF748_15, MOVETYPE_WALK, "");
+        func002669(GLOBALDEF748_15, 14, FL_INWATER, FALSE, FALSE);
         func002668('829.7 744.6 14', 14, MOVETYPE_WALK, "");
-        func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FL_INWATER, FALSE);
+        func002669(14, globaldef000775, GLOBALDEF748_15, FL_INWATER, FALSE);
         func002668('583.8 729.6 2', globaldef000775, MOVETYPE_WALK, "");
-        func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
-        func002668('511.3 592 2', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-        func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, 20, FALSE);
+        func002669(globaldef000775, GLOBALDEF774_12, 14, FALSE, FALSE);
+        func002668('511.3 592 2', GLOBALDEF774_12, MOVETYPE_WALK, "");
+        func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, globaldef000775, 20, FALSE);
         func002668('265.3 577.3 2', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
+        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEF774_12, FALSE, FALSE);
         func002668('54.5 708.4 2', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
         func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, 67, FALSE);
         func002668('-190.5 749.1 2', MOVETYPE_FLYMISSILE, MOVETYPE_WALK, "");
@@ -8058,7 +8058,7 @@ void () func002638 =
             func002668('1793.6 -371.2 162', FL_NOTARGET, MOVETYPE_WALK, "");
             func002669(FL_NOTARGET, 19, 20, 122, FALSE);
             func002668('1326.3 -425.4 162', 127, MOVETYPE_WALK, "");
-            func002669(127, GLOBALDEFSEVENFOUREIGHT, 18, FL_INWATER, 14);
+            func002669(127, GLOBALDEF748_15, 18, FL_INWATER, 14);
             func002668('2544 -32 -85.9', TRUE, MOVETYPE_WALK, "");
             func002669(TRUE, MOVETYPE_FLY, 112, 132, FALSE);
             func002668('2301.1 -35.4 -141.8', FL_SWIM, MOVETYPE_WALK, "");
@@ -8080,22 +8080,22 @@ void () func002638 =
             func002668('2056 -936 322', MOVETYPE_BOUNCE, MOVETYPE_FLY, "weapon_grenadelauncher");
             func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, FALSE, FALSE, FALSE);
             func002668('1414.6 -1023 322', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-            func002669(MOVETYPE_BOUNCEMISSILE, GLOBALDEFSEVENSEVENFOUR, MOVETYPE_PUSH, FALSE, FALSE);
-            func002668('1316.5 -799.4 322', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-            func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, 14, FALSE, FALSE);
+            func002669(MOVETYPE_BOUNCEMISSILE, GLOBALDEF774_12, MOVETYPE_PUSH, FALSE, FALSE);
+            func002668('1316.5 -799.4 322', GLOBALDEF774_12, MOVETYPE_WALK, "");
+            func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, 14, FALSE, FALSE);
             func002668('1320 -656 170', globaldef000775, FL_CLIENT, "");
-            func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
+            func002669(globaldef000775, GLOBALDEF774_12, GLOBALDEF748_15, FALSE, FALSE);
             func002668('1320 -656 322', 14, FL_SWIM, "");
-            func002669(14, globaldef000775, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
-            func002668('1305.8 -569.9 162', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-            func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, 18, 127);
-            func002670(GLOBALDEFSEVENFOUREIGHT, globaldef000775, FALSE, FALSE, FALSE);
+            func002669(14, globaldef000775, GLOBALDEF774_12, FALSE, FALSE);
+            func002668('1305.8 -569.9 162', GLOBALDEF748_15, MOVETYPE_WALK, "");
+            func002669(GLOBALDEF748_15, 14, FL_INWATER, 18, 127);
+            func002670(GLOBALDEF748_15, globaldef000775, FALSE, FALSE, FALSE);
             func002668('1466 -575.2 162', FL_INWATER, MOVETYPE_WALK, "");
-            func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 127, FALSE);
+            func002669(FL_INWATER, GLOBALDEF748_15, 17, 127, FALSE);
             func002668('1472 -704 162', 17, MOVETYPE_FLY, "weapon_rocketlauncher");
             func002669(17, FL_INWATER, FALSE, FALSE, FALSE);
             func002668('1405 -348.2 162', 18, MOVETYPE_WALK, "");
-            func002669(18, GLOBALDEFSEVENFOUREIGHT, 19, 127, FALSE);
+            func002669(18, GLOBALDEF748_15, 19, 127, FALSE);
             func002668('1650.6 -360.3 162', 19, MOVETYPE_WALK, "");
             func002669(19, 18, 20, FL_NOTARGET, FALSE);
             func002668('1843.3 -436 162', 20, MOVETYPE_WALK, "");
@@ -8139,10 +8139,10 @@ void () func002638 =
             func002669(38, 37, 39, FALSE, FALSE);
             func002668('1363.9 -952 10', 39, MOVETYPE_FLY, "item_armor2");
             func002669(39, 38, FALSE, FALSE, FALSE);
-            func002668('1312 -1056 2', GLOBALDEFSEVENTWONINE, MOVETYPE_STEP, "");
-            func002669(GLOBALDEFSEVENTWONINE, 38, FALSE, FALSE, FALSE);
+            func002668('1312 -1056 2', GLOBALDEF729_40, MOVETYPE_STEP, "");
+            func002669(GLOBALDEF729_40, 38, FALSE, FALSE, FALSE);
             func002668('1768.6 -1340.1 10', 41, MOVETYPE_WALK, "");
-            func002669(41, GLOBALDEFSEVENTWONINE, 42, FALSE, FALSE);
+            func002669(41, GLOBALDEF729_40, 42, FALSE, FALSE);
             func002668('1831.1 -1344.4 34', 42, MOVETYPE_WALK, "");
             func002669(42, SVC_KILLEDMONSTER, 41, 43, FALSE);
             func002668('1870.5 -1347 50', 43, MOVETYPE_WALK, "");
@@ -8345,17 +8345,17 @@ void () func002638 =
                 func002668('1570.8 -898.7 50', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                 func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                 func002668('1391 -898.7 66', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
-                func002668('1143 -896.7 66', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-                func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
+                func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEF774_12, FALSE, FALSE);
+                func002668('1143 -896.7 66', GLOBALDEF774_12, MOVETYPE_WALK, "");
+                func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
                 func002668('939 -755.2 66', globaldef000775, MOVETYPE_WALK, "");
-                func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
+                func002669(globaldef000775, GLOBALDEF774_12, 14, FALSE, FALSE);
                 func002668('718.5 -644.7 66', 14, MOVETYPE_WALK, "");
                 func002669(14, globaldef000775, SVC_SELLSCREEN, FALSE, FALSE);
-                func002668('644.4 -405 50', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-                func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, SVC_SELLSCREEN, FALSE);
+                func002668('644.4 -405 50', GLOBALDEF748_15, MOVETYPE_WALK, "");
+                func002669(GLOBALDEF748_15, 14, FL_INWATER, SVC_SELLSCREEN, FALSE);
                 func002668('839.5 -260.6 34', FL_INWATER, MOVETYPE_WALK, "");
-                func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, 231, FALSE);
+                func002669(FL_INWATER, GLOBALDEF748_15, 17, 231, FALSE);
                 func002668('937.2 -39.7 34', 17, MOVETYPE_WALK, "");
                 func002669(17, FL_INWATER, 18, FALSE, FALSE);
                 func002668('955.4 209.3 34', 18, MOVETYPE_WALK, "");
@@ -8389,7 +8389,7 @@ void () func002638 =
                 func002668('1362.8 263.8 18', FL_MONSTER, MOVETYPE_WALK, "");
                 func002669(FL_MONSTER, SVC_FINALE, OBOT_MAXBOTS, FALSE, FALSE);
                 func002668('652.7 -584.2 66', SVC_SELLSCREEN, MOVETYPE_WALK, "");
-                func002669(SVC_SELLSCREEN, GLOBALDEFSEVENFOUREIGHT, 14, FALSE, FALSE);
+                func002669(SVC_SELLSCREEN, GLOBALDEF748_15, 14, FALSE, FALSE);
                 func002668('1358.3 -783.5 -45.9', 34, MOVETYPE_WALK, "");
                 func002669(34, TRUE, SVC_FOUNDSECRET, 35, FL_SWIM);
                 func002668('1114.1 -742.4 -45.9', 35, MOVETYPE_WALK, "");
@@ -8402,10 +8402,10 @@ void () func002638 =
                 func002669(38, TRUE, FALSE, FALSE, FALSE);
                 func002668('1180 -904 -29.8', 39, MOVETYPE_STEP, "");
                 func002669(39, 38, FALSE, FALSE, FALSE);
-                func002668('486.7 -207.8 34', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
-                func002669(GLOBALDEFSEVENTWONINE, FL_INWATER, 230, FALSE, FALSE);
+                func002668('486.7 -207.8 34', GLOBALDEF729_40, MOVETYPE_WALK, "");
+                func002669(GLOBALDEF729_40, FL_INWATER, 230, FALSE, FALSE);
                 func002668('246.8 -263.7 34', 41, MOVETYPE_WALK, "");
-                func002669(41, GLOBALDEFSEVENTWONINE, 44, 45, 42);
+                func002669(41, GLOBALDEF729_40, 44, 45, 42);
                 func002670(41, 183, FALSE, FALSE, FALSE);
                 func002668('181.8 -25.3 34', 42, MOVETYPE_WALK, "");
                 func002669(42, 41, 43, 44, 229);
@@ -8788,7 +8788,7 @@ void () func002638 =
                 func002668('419.6 -195 34', 230, MOVETYPE_WALK, "");
                 func002669(230, 41, 45, FALSE, FALSE);
                 func002668('703.4 -207.8 34', 231, MOVETYPE_WALK, "");
-                func002669(231, GLOBALDEFSEVENTWONINE, FALSE, FALSE, FALSE);
+                func002669(231, GLOBALDEF729_40, FALSE, FALSE, FALSE);
                 func002668('1103.6 636.7 58', 232, MOVETYPE_WALK, "");
                 func002669(232, SVC_TEMPENTITY, FALSE, FALSE, FALSE);
                 func002668('1032.6 754.5 -317.8', 233, MOVETYPE_WALK, "");
@@ -8824,16 +8824,16 @@ void () func002638 =
                     func002669(MOVETYPE_BOUNCE, MOVETYPE_PUSH, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                     func002668('802.5 -519.7 -125.9', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
                     func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, 19, 66, FALSE);
-                    func002668('760.2 -771 -253', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-                    func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, GLOBALDEFSEVENFOUREIGHT, 14);
+                    func002668('760.2 -771 -253', GLOBALDEF774_12, MOVETYPE_WALK, "");
+                    func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, globaldef000775, GLOBALDEF748_15, 14);
                     func002668('768 -880 -253.8', globaldef000775, MOVETYPE_FLY, "weapon_rocketlauncher");
-                    func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 20, FALSE, FALSE);
+                    func002669(globaldef000775, GLOBALDEF774_12, 20, FALSE, FALSE);
                     func002668('777.7 -725 -237.8', 14, MOVETYPE_WALK, "");
-                    func002669(14, GLOBALDEFSEVENSEVENFOUR, GLOBALDEFSEVENFOUREIGHT, FL_INWATER, FALSE);
-                    func002668('778.5 -692.7 -221.8', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-                    func002669(GLOBALDEFSEVENFOUREIGHT, 14, 17, FL_INWATER, FALSE);
+                    func002669(14, GLOBALDEF774_12, GLOBALDEF748_15, FL_INWATER, FALSE);
+                    func002668('778.5 -692.7 -221.8', GLOBALDEF748_15, MOVETYPE_WALK, "");
+                    func002669(GLOBALDEF748_15, 14, 17, FL_INWATER, FALSE);
                     func002668('779 -661.2 -205.8', FL_INWATER, MOVETYPE_WALK, "");
-                    func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
+                    func002669(FL_INWATER, GLOBALDEF748_15, 17, FALSE, FALSE);
                     func002668('779.5 -629.5 -189.8', 17, MOVETYPE_WALK, "");
                     func002669(17, FL_INWATER, 18, FALSE, FALSE);
                     func002668('779.7 -596.5 -173.8', 18, MOVETYPE_WALK, "");
@@ -8841,7 +8841,7 @@ void () func002638 =
                     func002668('779.7 -563.2 -157.8', 19, MOVETYPE_WALK, "");
                     func002669(19, 18, MOVETYPE_BOUNCEMISSILE, 66, FALSE);
                     func002668('824 -848 -253.8', 20, MOVETYPE_FLY, "item_armorInv");
-                    func002669(20, 14, GLOBALDEFSEVENSEVENFOUR, globaldef000775, GLOBALDEFSEVENFOUREIGHT);
+                    func002669(20, 14, GLOBALDEF774_12, globaldef000775, GLOBALDEF748_15);
                     func002668('784 -944 -253.8', 21, MOVETYPE_STEP, "");
                     func002669(21, globaldef000775, FALSE, FALSE, FALSE);
                     func002668('352 -8 -317.7', 22, MOVETYPE_FLY, "weapon_nailgun");
@@ -8882,13 +8882,13 @@ void () func002638 =
                     func002668('317.5 -668.2 -125.9', 38, MOVETYPE_WALK, "");
                     func002669(38, 36, 39, FL_GODMODE, 76);
                     func002668('428.2 -886 -125.9', 39, MOVETYPE_WALK, "");
-                    func002669(39, 38, GLOBALDEFSEVENTWONINE, 76, FALSE);
-                    func002668('328 -1032 -125.9', GLOBALDEFSEVENTWONINE, MOVETYPE_FLY, "weapon_supershotgun");
-                    func002669(GLOBALDEFSEVENTWONINE, 39, 41, 51, 42);
+                    func002669(39, 38, GLOBALDEF729_40, 76, FALSE);
+                    func002668('328 -1032 -125.9', GLOBALDEF729_40, MOVETYPE_FLY, "weapon_supershotgun");
+                    func002669(GLOBALDEF729_40, 39, 41, 51, 42);
                     func002668('169 -845 -125.9', 41, MOVETYPE_WALK, "");
-                    func002669(41, GLOBALDEFSEVENTWONINE, 51, 39, FALSE);
+                    func002669(41, GLOBALDEF729_40, 51, 39, FALSE);
                     func002668('99 -1124.5 -125.9', 42, MOVETYPE_WALK, "");
-                    func002669(42, GLOBALDEFSEVENTWONINE, 43, 51, 45);
+                    func002669(42, GLOBALDEF729_40, 43, 51, 45);
                     func002670(42, 44, FALSE, FALSE, FALSE);
                     func002668('170 -1201.4 -109.9', 43, MOVETYPE_WALK, "");
                     func002669(43, 42, 44, 45, FALSE);
@@ -9068,10 +9068,10 @@ void () func002638 =
                         func002669(42, 41, 43, 44, FALSE);
                         func002668('-108.8 -511.8 18', 41, MOVETYPE_WALK, "");
                         func002669(41, 36, 42, FALSE, FALSE);
-                        func002668('138.3 -756.5 82', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
-                        func002669(GLOBALDEFSEVENTWONINE, 39, 35, FALSE, FALSE);
+                        func002668('138.3 -756.5 82', GLOBALDEF729_40, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEF729_40, 39, 35, FALSE, FALSE);
                         func002668('95.3 -756.2 66', 39, MOVETYPE_WALK, "");
-                        func002669(39, 38, GLOBALDEFSEVENTWONINE, 35, FALSE);
+                        func002669(39, 38, GLOBALDEF729_40, 35, FALSE);
                         func002668('43.3 -755.4 50', 38, MOVETYPE_WALK, "");
                         func002669(38, 37, 39, 35, FALSE);
                         func002668('-6.5 -753.9 34', 37, MOVETYPE_WALK, "");
@@ -9079,7 +9079,7 @@ void () func002638 =
                         func002668('-104.1 -753.9 18', 36, MOVETYPE_WALK, "");
                         func002669(36, 35, 37, 41, FALSE);
                         func002668('156.6 -794.6 98', 35, MOVETYPE_WALK, "");
-                        func002669(35, SVC_SELLSCREEN, GLOBALDEFSEVENTWONINE, 39, 88);
+                        func002669(35, SVC_SELLSCREEN, GLOBALDEF729_40, 39, 88);
                         func002668('403.6 -625.2 114', 34, MOVETYPE_WALK, "");
                         func002669(34, SVC_SELLSCREEN, SVC_TEMPENTITY, FALSE, FALSE);
                         func002668('405.9 -800.2 98', SVC_SELLSCREEN, MOVETYPE_WALK, "");
@@ -9118,17 +9118,17 @@ void () func002638 =
                         func002668('463.7 382.8 194', 17, MOVETYPE_WALK, "");
                         func002669(17, FL_INWATER, 18, FALSE, FALSE);
                         func002668('218.6 371.9 194', FL_INWATER, MOVETYPE_WALK, "");
-                        func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
-                        func002668('-27.7 377.9 194', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-                        func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
+                        func002669(FL_INWATER, GLOBALDEF748_15, 17, FALSE, FALSE);
+                        func002668('-27.7 377.9 194', GLOBALDEF748_15, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEF748_15, 14, FL_INWATER, FALSE, FALSE);
                         func002668('-101.7 212.6 194', 14, MOVETYPE_WALK, "");
-                        func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
+                        func002669(14, globaldef000775, GLOBALDEF748_15, FALSE, FALSE);
                         func002668('-101.4 -36 194', globaldef000775, MOVETYPE_WALK, "");
-                        func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
-                        func002668('-96.6 -282.5 194', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-                        func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, TRUE, FALSE);
+                        func002669(globaldef000775, GLOBALDEF774_12, 14, FALSE, FALSE);
+                        func002668('-96.6 -282.5 194', GLOBALDEF774_12, MOVETYPE_WALK, "");
+                        func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, globaldef000775, TRUE, FALSE);
                         func002668('-92.8 -527.2 194', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, FALSE, FALSE);
+                        func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEF774_12, FALSE, FALSE);
                         func002668('-75.1 -771.7 194', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                         func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                         func002668('172.7 -771.7 194', MOVETYPE_FLYMISSILE, MOVETYPE_WALK, "");
@@ -9148,7 +9148,7 @@ void () func002638 =
                         func002668('404.4 -224 194', FL_SWIM, MOVETYPE_WALK, "");
                         func002669(FL_SWIM, TRUE, MOVETYPE_WALK, FALSE, FALSE);
                         func002668('160 -224 194', TRUE, MOVETYPE_WALK, "");
-                        func002669(TRUE, GLOBALDEFSEVENSEVENFOUR, FL_SWIM, FALSE, FALSE);
+                        func002669(TRUE, GLOBALDEF774_12, FL_SWIM, FALSE, FALSE);
                     }
                     else
                     {
@@ -9183,17 +9183,17 @@ void () func002638 =
                             func002668('223.1 -2009 82', MOVETYPE_BOUNCE, MOVETYPE_WALK, "");
                             func002669(MOVETYPE_BOUNCE, MOVETYPE_FLYMISSILE, MOVETYPE_BOUNCEMISSILE, FALSE, FALSE);
                             func002668('264.1 -2009.5 98', MOVETYPE_BOUNCEMISSILE, MOVETYPE_WALK, "");
-                            func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEFSEVENSEVENFOUR, globaldef000775, FALSE);
-                            func002668('318.7 -2009.5 114', GLOBALDEFSEVENSEVENFOUR, MOVETYPE_WALK, "");
-                            func002669(GLOBALDEFSEVENSEVENFOUR, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
+                            func002669(MOVETYPE_BOUNCEMISSILE, MOVETYPE_BOUNCE, GLOBALDEF774_12, globaldef000775, FALSE);
+                            func002668('318.7 -2009.5 114', GLOBALDEF774_12, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEF774_12, MOVETYPE_BOUNCEMISSILE, globaldef000775, FALSE, FALSE);
                             func002668('364.1 -2008.8 130', globaldef000775, MOVETYPE_WALK, "");
-                            func002669(globaldef000775, GLOBALDEFSEVENSEVENFOUR, 14, FALSE, FALSE);
+                            func002669(globaldef000775, GLOBALDEF774_12, 14, FALSE, FALSE);
                             func002668('424 -2008 146', 14, MOVETYPE_FLY, "weapon_supernailgun");
-                            func002669(14, globaldef000775, GLOBALDEFSEVENFOUREIGHT, FALSE, FALSE);
-                            func002668('457.6 -1787.5 162', GLOBALDEFSEVENFOUREIGHT, MOVETYPE_WALK, "");
-                            func002669(GLOBALDEFSEVENFOUREIGHT, 14, FL_INWATER, FALSE, FALSE);
+                            func002669(14, globaldef000775, GLOBALDEF748_15, FALSE, FALSE);
+                            func002668('457.6 -1787.5 162', GLOBALDEF748_15, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEF748_15, 14, FL_INWATER, FALSE, FALSE);
                             func002668('455.2 -1741.6 178', FL_INWATER, MOVETYPE_WALK, "");
-                            func002669(FL_INWATER, GLOBALDEFSEVENFOUREIGHT, 17, FALSE, FALSE);
+                            func002669(FL_INWATER, GLOBALDEF748_15, 17, FALSE, FALSE);
                             func002668('453 -1695 194', 17, MOVETYPE_WALK, "");
                             func002669(17, FL_INWATER, 18, FALSE, FALSE);
                             func002668('450.5 -1644.5 210', 18, MOVETYPE_WALK, "");
@@ -9241,12 +9241,12 @@ void () func002638 =
                             func002669(38, 37, 65, 71, 66);
                             func002670(38, 89, 39, FALSE, FALSE);
                             func002668('1047.9 -920.7 -45.9', 39, MOVETYPE_WALK, "");
-                            func002669(39, 38, GLOBALDEFSEVENTWONINE, 91, 41);
+                            func002669(39, 38, GLOBALDEF729_40, 91, 41);
                             func002670(39, 42, FALSE, FALSE, FALSE);
-                            func002668('1033 -835.7 -29.8', GLOBALDEFSEVENTWONINE, MOVETYPE_WALK, "");
-                            func002669(GLOBALDEFSEVENTWONINE, 39, 41, FALSE, FALSE);
+                            func002668('1033 -835.7 -29.8', GLOBALDEF729_40, MOVETYPE_WALK, "");
+                            func002669(GLOBALDEF729_40, 39, 41, FALSE, FALSE);
                             func002668('1027.6 -785.7 -13.8', 41, MOVETYPE_WALK, "");
-                            func002669(41, GLOBALDEFSEVENTWONINE, 42, FALSE, FALSE);
+                            func002669(41, GLOBALDEF729_40, 42, FALSE, FALSE);
                             func002668('1024.5 -740.2 2', 42, MOVETYPE_WALK, "");
                             func002669(42, 41, 43, FALSE, FALSE);
                             func002668('1021.2 -641.5 18', 43, MOVETYPE_WALK, "");
@@ -9348,7 +9348,7 @@ void () func002638 =
                             func002668('354.1 -1824.6 26', 90, MOVETYPE_WALK, "");
                             func002669(90, 61, FALSE, FALSE, FALSE);
                             func002668('912.2 -904.2 -61.9', 91, MOVETYPE_WALK, "");
-                            func002669(91, 76, 39, GLOBALDEFSEVENTWONINE, 41);
+                            func002669(91, 76, 39, GLOBALDEF729_40, 41);
                             func002670(91, 42, FALSE, FALSE, FALSE);
                             func002668('1659.9 -415.3 18.6', 92, MOVETYPE_WALK, "");
                             func002669(92, 52, 34, 46, 47);

@@ -204,7 +204,7 @@ float (entity targ) range =
     }
     
     
-    if(r < GLOBALDEFSEVENTWOEIGHT)
+    if(r < GLOBALDEF728_500)
     {
         return RANGE_NEAR;
     }

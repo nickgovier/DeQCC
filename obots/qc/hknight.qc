@@ -1635,7 +1635,7 @@ void () func001869 = [107, func001870]
 // OP_DONE	0	0	0
 void () func001870 = [108, func001871]
 {
-    ai_charge(GLOBALDEFSEVENSEVENFOUR);
+    ai_charge(GLOBALDEF774_12);
     ai_melee();
 };
 
@@ -1753,7 +1753,7 @@ void () func001878 = [116, func001879]
 // OP_DONE	0	0	0
 void () func001879 = [117, func001880]
 {
-    ai_charge(GLOBALDEFSEVENFOUREIGHT);
+    ai_charge(GLOBALDEF748_15);
     ai_melee();
 };
 
@@ -1894,7 +1894,7 @@ void () func001889 = [127, func001890]
 // OP_DONE	0	0	0
 void () func001890 = [128, func001891]
 {
-    ai_charge(GLOBALDEFSEVENSEVENFOUR);
+    ai_charge(GLOBALDEF774_12);
     ai_melee();
 };
 
@@ -2447,7 +2447,7 @@ void () monster_hell_knight =
     self.movetype = MOVETYPE_STEP;
     setmodel(self, "progs/hknight.mdl");
     setsize(self, VEC_HULL_MIN, '16 16 40');
-    self.health = GLOBALDEFSEVENTWOONE;
+    self.health = GLOBALDEF721_250;
     self.th_stand = func001750;
     self.th_walk = func001759;
     self.th_run = func001779;

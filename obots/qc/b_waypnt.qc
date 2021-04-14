@@ -543,7 +543,7 @@ void () func002656 =
         globaldef009071 = nextent(globaldef009071);
     }
     
-    globaldef000787 = ((((GLOBALDEFSEVENTWOEIGHT - globaldef009072) - globaldef000726) - globaldef000725) - OBOT_MAXSHELLCASES) - GLOBALDEFSEVENTWONINE;
+    globaldef000787 = ((((GLOBALDEF728_500 - globaldef009072) - globaldef000726) - globaldef000725) - OBOT_MAXSHELLCASES) - GLOBALDEF729_40;
 };
 
 
@@ -758,7 +758,7 @@ void () func002657 =
     {
         if(!globaldef000789)
         {
-            func002638();
+            CheckHardCodedWaypoints();
             
             if(globaldef000790)
             {
@@ -2356,7 +2356,7 @@ float () func002674 =
     local vector globaldef009171;
     local vector globaldef009175;
     globaldef009164 = TRUE;
-    globaldef009165 = GLOBALDEFSEVENTWOONE;
+    globaldef009165 = GLOBALDEF721_250;
     globaldef009170 = self.field000299;
     globaldef009167 = FALSE;
     globaldef009168 = globaldef000819;
@@ -2369,13 +2369,13 @@ float () func002674 =
             globaldef009171 = globaldef009168.origin;
             globaldef009175 = self.origin;
             
-            if((fabs(globaldef009171_x - globaldef009175_x)) < GLOBALDEFSEVENTWOONE)
+            if((fabs(globaldef009171_x - globaldef009175_x)) < GLOBALDEF721_250)
             {
                 
-                if((fabs(globaldef009171_y - globaldef009175_y)) < GLOBALDEFSEVENTWOONE)
+                if((fabs(globaldef009171_y - globaldef009175_y)) < GLOBALDEF721_250)
                 {
                     
-                    if((fabs(globaldef009171_z - globaldef009175_z)) < GLOBALDEFSEVENTWOONE)
+                    if((fabs(globaldef009171_z - globaldef009175_z)) < GLOBALDEF721_250)
                     {
                         globaldef009166 = vlen(globaldef009168.origin - self.origin);
                         
@@ -3344,7 +3344,7 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
     local float globaldef009225;
     local float globaldef009226;
     
-    if(globaldef000791 >= GLOBALDEFSEVENTWOFOUR)
+    if(globaldef000791 >= GLOBALDEF724_800)
     {
         return;
     }
@@ -3801,14 +3801,14 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
         
         globaldef009225 = globaldef009225 + TRUE;
         
-        if(globaldef009225 > GLOBALDEFSEVENTWOTHREE)
+        if(globaldef009225 > GLOBALDEF723_600)
         {
             globaldef009220 = world;
         }
         
         globaldef000791 = globaldef000791 + TRUE;
         
-        if(globaldef000791 > GLOBALDEFSEVENTWOFOUR)
+        if(globaldef000791 > GLOBALDEF724_800)
         {
             globaldef009220 = world;
         }
@@ -4061,7 +4061,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     local float globaldef009239;
     local float globaldef009240;
     
-    if(globaldef000791 >= GLOBALDEFSEVENTWOFOUR)
+    if(globaldef000791 >= GLOBALDEF724_800)
     {
         return;
     }
@@ -4273,14 +4273,14 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         
         globaldef009239 = globaldef009239 + TRUE;
         
-        if(globaldef009239 > GLOBALDEFSEVENTWOTHREE)
+        if(globaldef009239 > GLOBALDEF723_600)
         {
             globaldef009234 = world;
         }
         
         globaldef000791 = globaldef000791 + TRUE;
         
-        if(globaldef000791 > GLOBALDEFSEVENTWOFOUR)
+        if(globaldef000791 > GLOBALDEF724_800)
         {
             globaldef009234 = world;
         }

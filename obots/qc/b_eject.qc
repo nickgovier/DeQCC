@@ -241,7 +241,7 @@ void (vector originpt, vector angle) EjectShell_spawn =
     shell.touch = EjectShell_touch;
     shell.classname = "shellcase";
     shell.think = EjectShell_remove;
-    shell.nextthink = time + GLOBALDEFSEVENFOUREIGHT;
+    shell.nextthink = time + GLOBALDEF748_15;
     setmodel(shell, "progs/shelcase.mdl");
     setsize(shell, VEC_ORIGIN, VEC_ORIGIN);
     setorigin(shell, originpt);
@@ -249,7 +249,7 @@ void (vector originpt, vector angle) EjectShell_spawn =
     shell.velocity_x = (shell.velocity_x + (random() * 50)) - SVC_SIGNONNUM;
     shell.velocity_y = (shell.velocity_y + (random() * 50)) - SVC_SIGNONNUM;
     shell.velocity_z = (shell.velocity_z + (random() * 150)) + 50;
-    shell.avelocity_x = (random() * GLOBALDEFSEVENTWOTHREE) - RA_MAXIDLETIME;
+    shell.avelocity_x = (random() * GLOBALDEF723_600) - RA_MAXIDLETIME;
     shell.avelocity_y = (random() * 400) - 200;
     shell.avelocity_z = (random() * RA_MAXIDLETIME) - 150;
     numShellCases = numShellCases + TRUE;

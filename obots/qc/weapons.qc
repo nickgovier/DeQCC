@@ -253,7 +253,7 @@ void (vector org, vector vel) SpawnMeatSpray =
     missile.solid = SOLID_NOT;
     makevectors(self.angles);
     missile.velocity = vel;
-    missile.velocity_z = (missile.velocity_z + GLOBALDEFSEVENTWOONE) + (50 * random());
+    missile.velocity_z = (missile.velocity_z + GLOBALDEF721_250) + (50 * random());
     missile.avelocity = '3000 1000 2000';
     missile.nextthink = time + TRUE;
     missile.think = SUB_Remove;
@@ -1231,7 +1231,7 @@ void () W_FireLightning =
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_cells = self.ammo_cells - TRUE;
     org = self.origin + '0 0 16';
-    traceline(org, org + (v_forward * GLOBALDEFSEVENTWOTHREE), TRUE, self);
+    traceline(org, org + (v_forward * GLOBALDEF723_600), TRUE, self);
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_LIGHTNING2);
     WriteEntity(MSG_BROADCAST, self);
@@ -1437,12 +1437,12 @@ void () W_FireGrenade =
     makevectors(self.v_angle);
     if(self.v_angle_x)
     {
-        missile.velocity = (((v_forward * GLOBALDEFSEVENTWOTHREE) + (v_up * 200)) + ((crandom() * v_right) * MOVETYPE_BOUNCE)) + ((crandom() * v_up) * MOVETYPE_BOUNCE);
+        missile.velocity = (((v_forward * GLOBALDEF723_600) + (v_up * 200)) + ((crandom() * v_right) * MOVETYPE_BOUNCE)) + ((crandom() * v_up) * MOVETYPE_BOUNCE);
     }
     else
     {
         missile.velocity = aim_obot(self, 10000);
-        missile.velocity = missile.velocity * GLOBALDEFSEVENTWOTHREE;
+        missile.velocity = missile.velocity * GLOBALDEF723_600;
         missile.velocity_z = 200;
     }
     
@@ -3246,7 +3246,7 @@ void () ImpulseCommands =
             }
             else
             {
-                if(self.impulse == GLOBALDEFSEVENSEVENFOUR)
+                if(self.impulse == GLOBALDEF774_12)
                 {
                     CycleWeaponReverseCommand();
                 }
@@ -3267,7 +3267,7 @@ void () ImpulseCommands =
     }
     
     
-    if(self.impulse == GLOBALDEFSEVENTWOONE)
+    if(self.impulse == GLOBALDEF721_250)
     {
         CamClientInit();
     }

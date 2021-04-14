@@ -1358,7 +1358,7 @@ vector (entity globaldef006915) func002385 =
     if(globaldef006936 > TRUE)
     {
         
-        if(globaldef006936 < GLOBALDEFSEVENSEVENFOUR)
+        if(globaldef006936 < GLOBALDEF774_12)
         {
             globaldef006920_z = globaldef006920_z + (globaldef000780 * (globaldef006936 - TRUE));
         }
@@ -2295,7 +2295,7 @@ float (entity globaldef007007, entity globaldef007008) func002394 =
     if(func002393(globaldef007013_x, FALSE - globaldef007007.v_angle_x, 90 + (globaldef007007.field000265 * MOVETYPE_BOUNCE)))
     {
         
-        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * GLOBALDEFSEVENFOUREIGHT)))
+        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * GLOBALDEF748_15)))
         {
             return TRUE;
         }
@@ -2498,7 +2498,7 @@ float (entity globaldef007028, entity globaldef007029) func002398 =
     }
     else
     {
-        if(globaldef007039 < GLOBALDEFSEVENTWOTHREE)
+        if(globaldef007039 < GLOBALDEF723_600)
         {
             return RANGE_NEAR;
         }
@@ -4456,7 +4456,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.movetype = MOVETYPE_STEP;
     globaldef007106.show_hostile = FALSE;
     globaldef007106.max_health = 100;
-    globaldef007106.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
+    globaldef007106.air_finished = time + GLOBALDEF774_12;
     globaldef007106.dmg = TRUE;
     globaldef007106.super_damage_finished = FALSE;
     globaldef007106.radsuit_finished = FALSE;

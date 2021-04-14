@@ -495,7 +495,7 @@ void () func000379 =
         }
         
         
-        if((serverflags & GLOBALDEFSEVENFOUREIGHT) == GLOBALDEFSEVENFOUREIGHT)
+        if((serverflags & GLOBALDEF748_15) == GLOBALDEF748_15)
         {
             WriteByte(MSG_ALL, SVC_FINALE);
             WriteString(MSG_ALL, "Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront he...");
@@ -991,7 +991,7 @@ entity () func000387 =
     }
     
     
-    if(serverflags & GLOBALDEFSEVENFOUREIGHT)
+    if(serverflags & GLOBALDEF748_15)
     {
         globaldef002899 = find(world, classname, "info_player_start2");
         
@@ -1053,7 +1053,7 @@ entity () func000387 =
 // OP_DONE	0	0	0
 void (entity globaldef002908) func000388 = 
 {
-    globaldef002908.health = GLOBALDEFSEVENTWOONE;
+    globaldef002908.health = GLOBALDEF721_250;
     globaldef002908.armorvalue = 200;
     globaldef002908.armortype = 0.8;
     globaldef002908.ammo_shells = 100;
@@ -1237,7 +1237,7 @@ void () PutClientInServer =
     self.show_hostile = FALSE;
     self.max_health = 100;
     self.flags = FL_CLIENT;
-    self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
+    self.air_finished = time + GLOBALDEF774_12;
     self.dmg = FL_SWIM;
     self.super_damage_finished = FALSE;
     self.radsuit_finished = FALSE;
@@ -2029,7 +2029,7 @@ void () func000399 =
             
         }
         
-        self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
+        self.air_finished = time + GLOBALDEF774_12;
         self.dmg = FL_SWIM;
     }
     else
@@ -2042,7 +2042,7 @@ void () func000399 =
             {
                 self.dmg = self.dmg + FL_SWIM;
                 
-                if(self.dmg > GLOBALDEFSEVENFOUREIGHT)
+                if(self.dmg > GLOBALDEF748_15)
                 {
                     self.dmg = MOVETYPE_BOUNCE;
                 }
@@ -2772,7 +2772,7 @@ void () func000402 =
     
     if(self.radsuit_finished)
     {
-        self.air_finished = time + GLOBALDEFSEVENSEVENFOUR;
+        self.air_finished = time + GLOBALDEF774_12;
         
         if(self.radsuit_finished < (time + MOVETYPE_WALK))
         {
@@ -3195,7 +3195,7 @@ void () ClientConnect =
     
     if((self.netname == "CamClient") || (self.netname == ""))
     {
-        self.impulse = GLOBALDEFSEVENTWOONE;
+        self.impulse = GLOBALDEF721_250;
     }
     else
     {
