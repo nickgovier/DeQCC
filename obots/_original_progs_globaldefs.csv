@@ -838,7 +838,7 @@ row,name,s_name,ofs,type,typename
 836,globaldef000836,0,859,4,entity
 837,globaldef000837,0,860,1,string
 838,globaldef000838,0,861,1,string
-839,func000074,0,865,6,void()
+839,centerprint3,0,865,6,void()
 840,globaldef000840,0,866,4,entity
 841,globaldef000841,0,867,1,string
 842,globaldef000842,0,868,1,string
@@ -889,11 +889,11 @@ row,name,s_name,ofs,type,typename
 887,sprint,0,928,6,void()
 888,globaldef000888,0,929,4,entity
 889,globaldef000889,0,930,1,string
-890,func000093,0,934,6,void()
+890,sprint2,0,934,6,void()
 891,globaldef000891,0,935,4,entity
 892,globaldef000892,0,936,1,string
 893,globaldef000893,0,937,1,string
-894,func000094,0,941,6,void()
+894,sprint3,0,941,6,void()
 895,globaldef000895,0,942,4,entity
 896,globaldef000896,0,943,1,string
 897,globaldef000897,0,944,1,string

@@ -5030,7 +5030,7 @@ void (entity globaldef009555) admin =
     
     if(currentAdmin)
     {
-        func000093(globaldef009555, currentAdmin.netname, " is the administrator\n");
+        sprint2(globaldef009555, currentAdmin.netname, " is the administrator\n");
         return;
     }
     

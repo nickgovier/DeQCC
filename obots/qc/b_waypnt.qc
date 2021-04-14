@@ -1356,56 +1356,56 @@ void () func002661 =
         if(globaldef009092.wp0)
         {
             globaldef009094 = ftos(globaldef009092.wp0);
-            func000094(self, " \"wp0\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp0\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp1)
         {
             globaldef009094 = ftos(globaldef009092.wp1);
-            func000094(self, " \"wp1\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp1\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp2)
         {
             globaldef009094 = ftos(globaldef009092.wp2);
-            func000094(self, " \"wp2\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp2\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp3)
         {
             globaldef009094 = ftos(globaldef009092.wp3);
-            func000094(self, " \"wp3\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp3\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp4)
         {
             globaldef009094 = ftos(globaldef009092.wp4);
-            func000094(self, " \"wp4\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp4\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp5)
         {
             globaldef009094 = ftos(globaldef009092.wp5);
-            func000094(self, " \"wp5\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp5\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp6)
         {
             globaldef009094 = ftos(globaldef009092.wp6);
-            func000094(self, " \"wp6\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp6\" \"", globaldef009094, "\"\n");
         }
         
         
         if(globaldef009092.wp7)
         {
             globaldef009094 = ftos(globaldef009092.wp7);
-            func000094(self, " \"wp7\" \"", globaldef009094, "\"\n");
+            sprint3(self, " \"wp7\" \"", globaldef009094, "\"\n");
         }
         
         sprint(self, "}\n");
@@ -1681,7 +1681,7 @@ void () func002663 =
         globaldef009115 = ftos(globaldef000786);
         sprint(self, globaldef009115);
         sprint(self, "\n\n");
-        func000094(self, "	if (world.model == \"", world.model, "\")\n	{\n");
+        sprint3(self, "	if (world.model == \"", world.model, "\")\n	{\n");
         globaldef000811 = globaldef000819;
     }
     
@@ -1712,24 +1712,24 @@ void () func002663 =
         func002659(self, globaldef009113.origin);
         sprint(self, "', ");
         globaldef009115 = ftos(globaldef009113.waypointnumber);
-        func000093(self, globaldef009115, ", ");
+        sprint2(self, globaldef009115, ", ");
         globaldef009115 = ftos(globaldef009113.waypointtype);
-        func000093(self, globaldef009115, ", ");
-        func000094(self, "\"", globaldef009113.waypointitem, "\");\n");
+        sprint2(self, globaldef009115, ", ");
+        sprint3(self, "\"", globaldef009113.waypointitem, "\");\n");
         
         if(((globaldef009113.wp0 || globaldef009113.wp1) || globaldef009113.wp2) || globaldef009113.wp3)
         {
             sprint(self, "		HCWP_SetPointers1(");
             globaldef009115 = ftos(globaldef009113.waypointnumber);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp0);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp1);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp2);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp3);
-            func000093(self, globaldef009115, ");\n");
+            sprint2(self, globaldef009115, ");\n");
         }
         
         
@@ -1737,15 +1737,15 @@ void () func002663 =
         {
             sprint(self, "		HCWP_SetPointers2(");
             globaldef009115 = ftos(globaldef009113.waypointnumber);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp4);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp5);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp6);
-            func000093(self, globaldef009115, ", ");
+            sprint2(self, globaldef009115, ", ");
             globaldef009115 = ftos(globaldef009113.wp7);
-            func000093(self, globaldef009115, ");\n");
+            sprint2(self, globaldef009115, ");\n");
         }
         
         globaldef009114 = globaldef009114 + TRUE;

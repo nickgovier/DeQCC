@@ -342,7 +342,7 @@ namespace DeQcc
             //nameMap.Add("globaldef000760", "OBOT_");   // constant = 32768
             nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
 
-            nameMap.Add("globaldef000774", "GLOBALDEFSEVENSEVENFOUR");   // constant = 12
+            nameMap.Add("globaldef000774", "GLOBALDEF774_12");   // constant = 12
 
             // b_clrank.qc
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
@@ -362,8 +362,11 @@ namespace DeQcc
 
             nameMap.Add("func000064", "stuffcmd");
             nameMap.Add("func000072", "centerprint");
+            nameMap.Add("func000074", "centerprint3");
             nameMap.Add("func000076", "centerprint5");
             nameMap.Add("func000092", "sprint");
+            nameMap.Add("func000093", "sprint2");
+            nameMap.Add("func000094", "sprint3");
 
             for (int i = 63; i <= 105; i++)
             {
@@ -1941,6 +1944,27 @@ namespace DeQcc
             for (int i = 2443; i <= 2443; i++)
             {
                 fileMap[i] = "b_move.qc";
+            }
+
+            #endregion
+
+            #region b_frames.qc
+
+            for (int i = 2526; i <= 2635; i++)
+            {
+                fileMap[i] = "b_frames.qc";
+            }
+
+            #endregion
+
+            // Done
+            #region b_hcwp.qc
+
+            nameMap.Add("func002638", "CheckHardCodedWaypoints");
+
+            for (int i = 2638; i <= 2638; i++)
+            {
+                fileMap[i] = "b_hcwp.qc";
             }
 
             #endregion

@@ -1757,8 +1757,8 @@ void (entity globaldef002797) rocket_arena_prethink =
                 stuffcmd(loser, ".wav\n");
             }
             
-            func000074(winner, loser.netname, "\n\n", globaldef002798);
-            func000074(loser, winner.netname, "\n\n", globaldef002798);
+            centerprint3(winner, loser.netname, "\n\n", globaldef002798);
+            centerprint3(loser, winner.netname, "\n\n", globaldef002798);
         }
         
     }

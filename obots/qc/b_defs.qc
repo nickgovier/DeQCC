@@ -370,7 +370,7 @@ void (entity globaldef000836, string globaldef000837, string globaldef000838) ce
 };
 
 
-// func000074
+// centerprint3
 // function begins at statement 26, parm_start=866
 // OP_LOAD_F	866	182	870
 // OP_BITAND	870	698	871
@@ -382,7 +382,7 @@ void (entity globaldef000836, string globaldef000837, string globaldef000838) ce
 // OP_STORE_V	869	13	0
 // OP_CALL4	847	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000840, string globaldef000841, string globaldef000842, string globaldef000843) func000074 = 
+void (entity globaldef000840, string globaldef000841, string globaldef000842, string globaldef000843) centerprint3 = 
 {
     
     if(!(globaldef000840.flags & globaldef000681))
@@ -542,7 +542,7 @@ void (entity globaldef000888, string globaldef000889) sprint =
 };
 
 
-// func000093
+// sprint2
 // function begins at statement 94, parm_start=935
 // OP_LOAD_F	935	182	938
 // OP_BITAND	938	698	939
@@ -553,7 +553,7 @@ void (entity globaldef000888, string globaldef000889) sprint =
 // OP_STORE_V	937	10	0
 // OP_CALL3	922	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000891, string globaldef000892, string globaldef000893) func000093 = 
+void (entity globaldef000891, string globaldef000892, string globaldef000893) sprint2 = 
 {
     
     if(!(globaldef000891.flags & globaldef000681))
@@ -564,7 +564,7 @@ void (entity globaldef000891, string globaldef000892, string globaldef000893) fu
 };
 
 
-// func000094
+// sprint3
 // function begins at statement 103, parm_start=942
 // OP_LOAD_F	942	182	946
 // OP_BITAND	946	698	947
@@ -576,7 +576,7 @@ void (entity globaldef000891, string globaldef000892, string globaldef000893) fu
 // OP_STORE_V	945	13	0
 // OP_CALL4	923	0	0
 // OP_DONE	0	0	0
-void (entity globaldef000895, string globaldef000896, string globaldef000897, string globaldef000898) func000094 = 
+void (entity globaldef000895, string globaldef000896, string globaldef000897, string globaldef000898) sprint3 = 
 {
     
     if(!(globaldef000895.flags & globaldef000681))

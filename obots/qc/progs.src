@@ -53,5 +53,9 @@ b_spawn.qc
 unknown009.qc
 b_move.qc
 unknown010.qc
+b_frames.qc
+unknown011.qc
+b_hcwp.qc
+unknown012.qc
 b_waypnt.qc
 b_impuls.qc
