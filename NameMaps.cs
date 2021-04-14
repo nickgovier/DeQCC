@@ -1972,13 +1972,55 @@ namespace DeQcc
 
             #region b_waypnt.qc
 
+            nameMap.Add("func002650", "GetWaypointByID");
             nameMap.Add("func002660", "dumpbspwaypoints");  // impulse 170
             nameMap.Add("func002662", "dumphcwaypoints");  // impulse 171
+
+            nameMap.Add("func002668", "HCWP_Create");
+            nameMap.Add("func002669", "HCWP_SetPointers1");
+            nameMap.Add("func002670", "HCWP_SetPointers2");
 
             for (int i = 2649; i <= 2692; i++)
             {
                 fileMap[i] = "b_waypnt.qc";
             }
+
+            // GetWaypointByID params
+            nameMap.Add("globaldef009016", "wp_id");
+
+            // GetWaypointByID locals
+            nameMap.Add("globaldef009017", "wp");
+
+            // HCWP_Create params
+            nameMap.Add("globaldef009133", "org");
+            nameMap.Add("globaldef009137", "number");
+            nameMap.Add("globaldef009138", "type");
+            nameMap.Add("globaldef009139", "itemstr");
+
+            // HCWP_Create locals
+            nameMap.Add("globaldef009140", "new_wp");
+
+            // HCWP_SetPointers1 params
+            nameMap.Add("globaldef009141", "number");
+            nameMap.Add("globaldef009142", "p0");
+            nameMap.Add("globaldef009143", "p1");
+            nameMap.Add("globaldef009144", "p2");
+            nameMap.Add("globaldef009145", "p3");
+
+            // HCWP_SetPointers1 locals
+            nameMap.Add("globaldef009146", "wp");
+            nameMap.Add("globaldef009147", "errormsg_wpnum");
+
+            // HCWP_SetPointers2 params
+            nameMap.Add("globaldef009149", "number");
+            nameMap.Add("globaldef009150", "p4");
+            nameMap.Add("globaldef009151", "p5");
+            nameMap.Add("globaldef009152", "p6");
+            nameMap.Add("globaldef009153", "p7");
+
+            // HCWP_SetPointers2 locals
+            nameMap.Add("globaldef009154", "wp");
+            nameMap.Add("globaldef009155", "errormsg_wpnum");
 
             #endregion
 

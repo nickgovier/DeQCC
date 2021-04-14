@@ -33,7 +33,7 @@ float (entity globaldef009012, float globaldef009013, entity globaldef009014) up
 };
 
 
-// func002650
+// GetWaypointByID
 // function begins at statement 53460, parm_start=28252
 // OP_NOT_F	28252	0	28254
 // OP_IFNOT	28254	2	0
@@ -49,26 +49,26 @@ float (entity globaldef009012, float globaldef009013, entity globaldef009014) up
 // OP_GOTO	-7	0	0
 // OP_RETURN	30	0	0
 // OP_DONE	0	0	0
-entity (float globaldef009016) func002650 = 
+entity (float wp_id) GetWaypointByID = 
 {
-    local entity globaldef009017;
+    local entity wp;
     
-    if(!globaldef009016)
+    if(!wp_id)
     {
         return world;
     }
     
-    globaldef009017 = globaldef000819;
+    wp = globaldef000819;
     
-    while(globaldef009017)
+    while(wp)
     {
         
-        if(globaldef009017.waypointnumber == globaldef009016)
+        if(wp.waypointnumber == wp_id)
         {
-            return globaldef009017;
+            return wp;
         }
         
-        globaldef009017 = globaldef009017.field000297;
+        wp = wp.field000297;
     }
     
     return world;
@@ -805,14 +805,14 @@ void () func002657 =
             
             while(globaldef009073)
             {
-                globaldef009073.field000299 = func002650(globaldef009073.wp0);
-                globaldef009073.field000300 = func002650(globaldef009073.wp1);
-                globaldef009073.field000301 = func002650(globaldef009073.wp2);
-                globaldef009073.field000302 = func002650(globaldef009073.wp3);
-                globaldef009073.field000303 = func002650(globaldef009073.wp4);
-                globaldef009073.field000304 = func002650(globaldef009073.wp5);
-                globaldef009073.field000305 = func002650(globaldef009073.wp6);
-                globaldef009073.field000306 = func002650(globaldef009073.wp7);
+                globaldef009073.field000299 = GetWaypointByID(globaldef009073.wp0);
+                globaldef009073.field000300 = GetWaypointByID(globaldef009073.wp1);
+                globaldef009073.field000301 = GetWaypointByID(globaldef009073.wp2);
+                globaldef009073.field000302 = GetWaypointByID(globaldef009073.wp3);
+                globaldef009073.field000303 = GetWaypointByID(globaldef009073.wp4);
+                globaldef009073.field000304 = GetWaypointByID(globaldef009073.wp5);
+                globaldef009073.field000305 = GetWaypointByID(globaldef009073.wp6);
+                globaldef009073.field000306 = GetWaypointByID(globaldef009073.wp7);
                 globaldef009073.field000307 = func002655(globaldef009073, globaldef009073.field000299);
                 globaldef009073.field000308 = func002655(globaldef009073, globaldef009073.field000300);
                 globaldef009073.field000309 = func002655(globaldef009073, globaldef009073.field000301);
@@ -1987,7 +1987,7 @@ void () waypoint =
 };
 
 
-// func002668
+// HCWP_Create
 // function begins at statement 54544, parm_start=28772
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	28778	0
@@ -2017,30 +2017,30 @@ void () waypoint =
 // OP_CALL1	28716	0	0
 // OP_STORE_F	214	807	0
 // OP_DONE	0	0	0
-void (vector globaldef009133, float globaldef009137, float globaldef009138, string globaldef009139) func002668 = 
+void (vector org, float number, float type, string itemstr) HCWP_Create = 
 {
-    local entity globaldef009140;
-    globaldef009140 = spawn();
-    globaldef009140.classname = "waypoint";
-    globaldef009140.solid = SOLID_TRIGGER;
-    globaldef009140.touch = func002666;
-    globaldef009140.waypointnumber = globaldef009137;
-    globaldef009140.waypointtype = globaldef009138;
-    globaldef009140.waypointitem = globaldef009139;
-    setsize(globaldef009140, '-4 -4 -4', '4 4 4');
-    setorigin(globaldef009140, globaldef009133);
+    local entity new_wp;
+    new_wp = spawn();
+    new_wp.classname = "waypoint";
+    new_wp.solid = SOLID_TRIGGER;
+    new_wp.touch = func002666;
+    new_wp.waypointnumber = number;
+    new_wp.waypointtype = type;
+    new_wp.waypointitem = itemstr;
+    setsize(new_wp, '-4 -4 -4', '4 4 4');
+    setorigin(new_wp, org);
     
-    if(globaldef009137 > globaldef000786)
+    if(number > globaldef000786)
     {
-        globaldef000786 = globaldef009137;
+        globaldef000786 = number;
     }
     
-    func002664(globaldef009140);
+    func002664(new_wp);
     globaldef000790 = TRUE;
 };
 
 
-// func002669
+// HCWP_SetPointers1
 // function begins at statement 54572, parm_start=28786
 // OP_STORE_V	28786	4	0
 // OP_CALL1	28251	0	0
@@ -2063,26 +2063,26 @@ void (vector globaldef009133, float globaldef009137, float globaldef009138, stri
 // OP_ADDRESS	28791	693	28798
 // OP_STOREP_F	28790	28798	0
 // OP_DONE	0	0	0
-void (float globaldef009141, float globaldef009142, float globaldef009143, float globaldef009144, float globaldef009145) func002669 = 
+void (float number, float p0, float p1, float p2, float p3) HCWP_SetPointers1 = 
 {
-    local entity globaldef009146;
-    local string globaldef009147;
-    globaldef009146 = func002650(globaldef009141);
+    local entity wp;
+    local string errormsg_wpnum;
+    wp = GetWaypointByID(number);
     
-    if(!globaldef009146)
+    if(!wp)
     {
-        globaldef009147 = ftos(globaldef009141);
-        objerror3("HCWP wpp1: no waypoint with number ", globaldef009147, "\n");
+        errormsg_wpnum = ftos(number);
+        objerror3("HCWP wpp1: no waypoint with number ", errormsg_wpnum, "\n");
     }
     
-    globaldef009146.wp0 = globaldef009142;
-    globaldef009146.wp1 = globaldef009143;
-    globaldef009146.wp2 = globaldef009144;
-    globaldef009146.wp3 = globaldef009145;
+    wp.wp0 = p0;
+    wp.wp1 = p1;
+    wp.wp2 = p2;
+    wp.wp3 = p3;
 };
 
 
-// func002670
+// HCWP_SetPointers2
 // function begins at statement 54593, parm_start=28799
 // OP_STORE_V	28799	4	0
 // OP_CALL1	28251	0	0
@@ -2105,22 +2105,22 @@ void (float globaldef009141, float globaldef009142, float globaldef009143, float
 // OP_ADDRESS	28804	697	28811
 // OP_STOREP_F	28803	28811	0
 // OP_DONE	0	0	0
-void (float globaldef009149, float globaldef009150, float globaldef009151, float globaldef009152, float globaldef009153) func002670 = 
+void (float number, float p4, float p5, float p6, float p7) HCWP_SetPointers2 = 
 {
-    local entity globaldef009154;
-    local string globaldef009155;
-    globaldef009154 = func002650(globaldef009149);
+    local entity wp;
+    local string errormsg_wpnum;
+    wp = GetWaypointByID(number);
     
-    if(!globaldef009154)
+    if(!wp)
     {
-        globaldef009155 = ftos(globaldef009149);
-        objerror3("HCWP p2: no waypoint with number ", globaldef009155, "\n");
+        errormsg_wpnum = ftos(number);
+        objerror3("HCWP p2: no waypoint with number ", errormsg_wpnum, "\n");
     }
     
-    globaldef009154.wp4 = globaldef009150;
-    globaldef009154.wp5 = globaldef009151;
-    globaldef009154.wp6 = globaldef009152;
-    globaldef009154.wp7 = globaldef009153;
+    wp.wp4 = p4;
+    wp.wp5 = p5;
+    wp.wp6 = p6;
+    wp.wp7 = p7;
 };
 
 
