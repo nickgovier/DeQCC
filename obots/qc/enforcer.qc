@@ -95,7 +95,7 @@ void () func002071 =
 };
 
 
-// func002072
+// LaunchLaser
 // function begins at statement 26279, parm_start=15762
 // OP_LOAD_S	28	129	15768
 // OP_EQ_S	15768	3693	15769
@@ -145,7 +145,7 @@ void () func002071 =
 // OP_ADDRESS	350	146	15789
 // OP_STOREP_FNC	15732	15789	0
 // OP_DONE	0	0	0
-void (vector globaldef005434, vector globaldef005438) func002072 = 
+void (vector org, vector vec) LaunchLaser = 
 {
     
     if(self.classname == "monster_enforcer")
@@ -153,7 +153,7 @@ void (vector globaldef005434, vector globaldef005438) func002072 =
         sound(self, CHAN_WEAPON, "enforcer/enfire.wav", TRUE, ATTN_NORM);
     }
     
-    globaldef005438 = normalize(globaldef005438);
+    vec = normalize(vec);
     newmis = spawn();
     newmis.owner = self;
     newmis.movetype = MOVETYPE_FLY;
@@ -161,8 +161,8 @@ void (vector globaldef005434, vector globaldef005438) func002072 =
     newmis.effects = EF_DIMLIGHT;
     setmodel(newmis, "progs/laser.mdl");
     setsize(newmis, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(newmis, globaldef005434);
-    newmis.velocity = globaldef005438 * GLOBALDEF723_600;
+    setorigin(newmis, org);
+    newmis.velocity = vec * GLOBALDEF723_600;
     newmis.angles = vectoangles(newmis.velocity);
     newmis.nextthink = time + MOVETYPE_FLY;
     newmis.think = SUB_Remove;
@@ -200,7 +200,7 @@ void () func002073 =
     self.effects = self.effects | EF_MUZZLEFLASH;
     makevectors(self.angles);
     globaldef005443 = ((self.origin + (v_forward * SVC_INTERMISSION)) + (v_right * 8.5)) + '0 0 16';
-    func002072(globaldef005443, self.enemy.origin - self.origin);
+    LaunchLaser(globaldef005443, self.enemy.origin - self.origin);
 };
 
 

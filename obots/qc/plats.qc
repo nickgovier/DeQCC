@@ -1,12 +1,12 @@
-void () func000607;
+void () plat_center_touch;
 void () plat_outside_touch;
-void () func000609;
-void () func000606;
-void () func000605;
-void () func000610;
-float globaldef003524;
+void () plat_trigger_use;
+void () plat_go_up;
+void () plat_go_down;
+void () plat_crush;
+float PLAT_LOW_TRIGGER = 1;
 
-// func000602
+// plat_spawn_inside_trigger
 // function begins at statement 16876, parm_start=11565
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	11565	0
@@ -60,40 +60,40 @@ float globaldef003524;
 // OP_STORE_V	11569	10	0
 // OP_CALL3	455	0	0
 // OP_DONE	0	0	0
-void () func000602 = 
+void () plat_spawn_inside_trigger = 
 {
-    local entity globaldef003526;
-    local vector globaldef003527;
-    local vector globaldef003531;
-    globaldef003526 = spawn();
-    globaldef003526.touch = func000607;
-    globaldef003526.movetype = MOVETYPE_NONE;
-    globaldef003526.solid = SOLID_TRIGGER;
-    globaldef003526.enemy = self;
-    globaldef003527 = self.mins + '25 25 0';
-    globaldef003531 = self.maxs - '25 25 -8';
-    globaldef003527_z = globaldef003531_z - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
+    local entity trigger;
+    local vector tmin;
+    local vector tmax;
+    trigger = spawn();
+    trigger.touch = plat_center_touch;
+    trigger.movetype = MOVETYPE_NONE;
+    trigger.solid = SOLID_TRIGGER;
+    trigger.enemy = self;
+    tmin = self.mins + '25 25 0';
+    tmax = self.maxs - '25 25 -8';
+    tmin_z = tmax_z - ((self.pos1_z - self.pos2_z) + FL_CLIENT);
     
-    if(self.spawnflags & globaldef003524)
+    if(self.spawnflags & PLAT_LOW_TRIGGER)
     {
-        globaldef003531_z = globaldef003527_z + FL_CLIENT;
+        tmax_z = tmin_z + FL_CLIENT;
     }
     
     
     if(self.size_x <= 50)
     {
-        globaldef003527_x = (self.mins_x + self.maxs_x) / FL_SWIM;
-        globaldef003531_x = globaldef003527_x + TRUE;
+        tmin_x = (self.mins_x + self.maxs_x) / FL_SWIM;
+        tmax_x = tmin_x + TRUE;
     }
     
     
     if(self.size_y <= 50)
     {
-        globaldef003527_y = (self.mins_y + self.maxs_y) / FL_SWIM;
-        globaldef003531_y = globaldef003527_y + TRUE;
+        tmin_y = (self.mins_y + self.maxs_y) / FL_SWIM;
+        tmax_y = tmin_y + TRUE;
     }
     
-    setsize(globaldef003526, globaldef003527, globaldef003531);
+    setsize(trigger, tmin, tmax);
 };
 
 
@@ -119,7 +119,7 @@ void () plat_hit_top =
 {
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
     self.state = STATE_TOP;
-    self.think = func000605;
+    self.think = plat_go_down;
     self.nextthink = self.ltime + MOVETYPE_WALK;
 };
 
@@ -143,7 +143,7 @@ void () plat_hit_bottom =
 };
 
 
-// func000605
+// plat_go_down
 // function begins at statement 16954, parm_start=11626
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -161,7 +161,7 @@ void () plat_hit_bottom =
 // OP_STORE_V	11623	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000605 = 
+void () plat_go_down = 
 {
     sound(self, CHAN_VOICE, self.noise, TRUE, ATTN_NORM);
     self.state = STATE_DOWN;
@@ -169,7 +169,7 @@ void () func000605 =
 };
 
 
-// func000606
+// plat_go_up
 // function begins at statement 16970, parm_start=11632
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -187,7 +187,7 @@ void () func000605 =
 // OP_STORE_V	11616	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000606 = 
+void () plat_go_up = 
 {
     sound(self, CHAN_VOICE, self.noise, TRUE, ATTN_NORM);
     self.state = STATE_UP;
@@ -195,7 +195,7 @@ void () func000606 =
 };
 
 
-// func000607
+// plat_center_touch
 // function begins at statement 16986, parm_start=11638
 // OP_LOAD_S	29	129	11638
 // OP_NE_S	11638	1236	11639
@@ -249,7 +249,7 @@ void () func000606 =
 // OP_LOAD_ENT	28	622	11668
 // OP_STOREP_ENT	11668	11667	0
 // OP_DONE	0	0	0
-void () func000607 = 
+void () plat_center_touch = 
 {
     
     if(other.classname != "player")
@@ -271,7 +271,7 @@ void () func000607 =
     self = self.enemy;
     if(self.state == STATE_BOTTOM)
     {
-        func000606();
+        plat_go_up();
     }
     else
     {
@@ -352,20 +352,20 @@ void () plat_outside_touch =
     
     if(self.state == STATE_TOP)
     {
-        func000605();
+        plat_go_down();
     }
     
 };
 
 
-// func000609
+// plat_trigger_use
 // function begins at statement 17056, parm_start=11678
 // OP_LOAD_FNC	28	148	11678
 // OP_IFNOT	11678	2	0
 // OP_RETURN	0	0	0
 // OP_CALL0	11561	0	0
 // OP_DONE	0	0	0
-void () func000609 = 
+void () plat_trigger_use = 
 {
     
     if(self.think)
@@ -373,11 +373,11 @@ void () func000609 =
         return;
     }
     
-    func000605();
+    plat_go_down();
 };
 
 
-// func000610
+// plat_crush
 // function begins at statement 17061, parm_start=11679
 // OP_STORE_V	29	4	0
 // OP_STORE_V	28	7	0
@@ -397,18 +397,18 @@ void () func000609 =
 // OP_STORE_V	11683	4	0
 // OP_CALL1	461	0	0
 // OP_DONE	0	0	0
-void () func000610 = 
+void () plat_crush = 
 {
     T_Damage(other, self, self, TRUE);
     if(self.state == STATE_UP)
     {
-        func000605();
+        plat_go_down();
     }
     else
     {
         if(self.state == STATE_DOWN)
         {
-            func000606();
+            plat_go_up();
         }
         else
         {
@@ -420,7 +420,7 @@ void () func000610 =
 };
 
 
-// func000611
+// plat_use
 // function begins at statement 17079, parm_start=11685
 // OP_ADDRESS	28	147	11685
 // OP_STOREP_FNC	519	11685	0
@@ -431,7 +431,7 @@ void () func000610 =
 // OP_CALL1	461	0	0
 // OP_CALL0	11561	0	0
 // OP_DONE	0	0	0
-void () func000611 = 
+void () plat_use = 
 {
     self.use = SUB_Null;
     
@@ -440,7 +440,7 @@ void () func000611 =
         objerror("plat_use: not in up state");
     }
     
-    func000605();
+    plat_go_down();
 };
 
 
@@ -556,7 +556,7 @@ void () func000611 =
 // OP_DONE	0	0	0
 void () func_plat = 
 {
-    local entity globaldef003543;
+    local entity t;
     
     if(!self.t_length)
     {
@@ -601,7 +601,7 @@ void () func_plat =
     setorigin(self, self.origin);
     setmodel(self, self.model);
     setsize(self, self.mins, self.maxs);
-    self.blocked = func000610;
+    self.blocked = plat_crush;
     
     if(!self.speed)
     {
@@ -620,12 +620,12 @@ void () func_plat =
         self.pos2_z = (self.origin_z - self.size_z) + FL_CLIENT;
     }
     
-    self.use = func000609;
-    func000602();
+    self.use = plat_trigger_use;
+    plat_spawn_inside_trigger();
     if(self.targetname)
     {
         self.state = STATE_UP;
-        self.use = func000611;
+        self.use = plat_use;
     }
     else
     {
@@ -635,10 +635,10 @@ void () func_plat =
     
 };
 
-void () func000616;
-void () func000617;
+void () train_next;
+void () func_train_find;
 
-// func000613
+// train_blocked
 // function begins at statement 17196, parm_start=11773
 // OP_LOAD_F	28	378	11773
 // OP_LT	31	11773	11774
@@ -654,7 +654,7 @@ void () func000617;
 // OP_STORE_V	11777	13	0
 // OP_CALL4	522	0	0
 // OP_DONE	0	0	0
-void () func000613 = 
+void () train_blocked = 
 {
     
     if(time < self.attack_finished)
@@ -667,7 +667,7 @@ void () func000613 =
 };
 
 
-// func000614
+// train_use
 // function begins at statement 17210, parm_start=11779
 // OP_LOAD_FNC	28	148	11779
 // OP_NE_FNC	11779	11771	11780
@@ -675,15 +675,15 @@ void () func000613 =
 // OP_RETURN	0	0	0
 // OP_CALL0	11770	0	0
 // OP_DONE	0	0	0
-void () func000614 = 
+void () train_use = 
 {
     
-    if(self.think != func000617)
+    if(self.think != func_train_find)
     {
         return;
     }
     
-    func000616();
+    train_next();
 };
 
 
@@ -723,11 +723,11 @@ void () train_wait =
         self.nextthink = self.ltime + 0.1;
     }
     
-    self.think = func000616;
+    self.think = train_next;
 };
 
 
-// func000616
+// train_next
 // function begins at statement 17238, parm_start=11792
 // OP_STORE_V	30	4	0
 // OP_STORE_V	197	7	0
@@ -767,21 +767,21 @@ void () train_wait =
 // OP_STORE_V	11781	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000616 = 
+void () train_next = 
 {
-    local entity globaldef003554;
-    local float globaldef003555;
-    globaldef003554 = find(world, targetname, self.target);
-    self.target = globaldef003554.target;
+    local entity targ;
+    local float UNUSED;
+    targ = find(world, targetname, self.target);
+    self.target = targ.target;
     
     if(!self.target)
     {
         objerror("train_next: no next target");
     }
     
-    if(globaldef003554.wait)
+    if(targ.wait)
     {
-        self.wait = globaldef003554.wait;
+        self.wait = targ.wait;
     }
     else
     {
@@ -789,11 +789,11 @@ void () func000616 =
     }
     
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
-    SUB_CalcMove(globaldef003554.origin - self.mins, self.speed, train_wait);
+    SUB_CalcMove(targ.origin - self.mins, self.speed, train_wait);
 };
 
 
-// func000617
+// func_train_find
 // function begins at statement 17276, parm_start=11815
 // OP_STORE_V	30	4	0
 // OP_STORE_V	197	7	0
@@ -820,17 +820,17 @@ void () func000616 =
 // OP_ADDRESS	28	148	11833
 // OP_STOREP_FNC	11770	11833	0
 // OP_DONE	0	0	0
-void () func000617 = 
+void () func_train_find = 
 {
-    local entity globaldef003557;
-    globaldef003557 = find(world, targetname, self.target);
-    self.target = globaldef003557.target;
-    setorigin(self, globaldef003557.origin - self.mins);
+    local entity targ;
+    targ = find(world, targetname, self.target);
+    self.target = targ.target;
+    setorigin(self, targ.origin - self.mins);
     
     if(!self.targetname)
     {
         self.nextthink = self.ltime + 0.1;
-        self.think = func000616;
+        self.think = train_next;
     }
     
 };
@@ -951,15 +951,15 @@ void () func_train =
     self.cnt = TRUE;
     self.solid = SOLID_BSP;
     self.movetype = MOVETYPE_PUSH;
-    self.blocked = func000613;
-    self.use = func000614;
+    self.blocked = train_blocked;
+    self.use = train_use;
     self.classname = "train";
     self.f_goalweight = goalweight_train;
     setmodel(self, self.model);
     setsize(self, self.mins, self.maxs);
     setorigin(self, self.origin);
     self.nextthink = self.ltime + 0.1;
-    self.think = func000617;
+    self.think = func_train_find;
 };
 
 
@@ -1034,8 +1034,8 @@ void () misc_teleporttrain =
     self.cnt = TRUE;
     self.solid = SOLID_NOT;
     self.movetype = MOVETYPE_PUSH;
-    self.blocked = func000613;
-    self.use = func000614;
+    self.blocked = train_blocked;
+    self.use = train_use;
     self.avelocity = '100 200 300';
     self.noise = "misc/null.wav";
     precache_sound("misc/null.wav");
@@ -1046,6 +1046,6 @@ void () misc_teleporttrain =
     setsize(self, self.mins, self.maxs);
     setorigin(self, self.origin);
     self.nextthink = self.ltime + 0.1;
-    self.think = func000617;
+    self.think = func_train_find;
 };
 

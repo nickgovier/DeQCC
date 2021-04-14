@@ -17,9 +17,9 @@ void () info_notnull =
 {
 };
 
-float globaldef003568;
+float START_OFF = 1;
 
-// func000622
+// light_use
 // function begins at statement 17429, parm_start=11913
 // OP_LOAD_F	28	195	11913
 // OP_BITAND	11913	11911	11914
@@ -42,17 +42,17 @@ float globaldef003568;
 // OP_ADD_F	11921	11911	11922
 // OP_STOREP_F	11922	11920	0
 // OP_DONE	0	0	0
-void () func000622 = 
+void () light_use = 
 {
-    if(self.spawnflags & globaldef003568)
+    if(self.spawnflags & START_OFF)
     {
         lightstyle(self.style, "m");
-        self.spawnflags = self.spawnflags - globaldef003568;
+        self.spawnflags = self.spawnflags - START_OFF;
     }
     else
     {
         lightstyle(self.style, "a");
-        self.spawnflags = self.spawnflags + globaldef003568;
+        self.spawnflags = self.spawnflags + START_OFF;
     }
     
 };
@@ -96,8 +96,8 @@ void () light =
     
     if(self.style >= FL_MONSTER)
     {
-        self.use = func000622;
-        if(self.spawnflags & globaldef003568)
+        self.use = light_use;
+        if(self.spawnflags & START_OFF)
         {
             lightstyle(self.style, "a");
         }
@@ -144,8 +144,8 @@ void () light_fluoro =
     
     if(self.style >= FL_MONSTER)
     {
-        self.use = func000622;
-        if(self.spawnflags & globaldef003568)
+        self.use = light_use;
+        if(self.spawnflags & START_OFF)
         {
             lightstyle(self.style, "a");
         }
@@ -208,7 +208,7 @@ void () light_globe =
 };
 
 
-// func000627
+// FireAmbient
 // function begins at statement 17522, parm_start=11956
 // OP_STORE_V	11956	4	0
 // OP_CALL1	469	0	0
@@ -219,7 +219,7 @@ void () light_globe =
 // OP_STORE_V	333	13	0
 // OP_CALL4	509	0	0
 // OP_DONE	0	0	0
-void () func000627 = 
+void () FireAmbient = 
 {
     precache_sound("ambience/fire1.wav");
     ambientsound(self.origin, "ambience/fire1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
@@ -241,7 +241,7 @@ void () light_torch_small_walltorch =
 {
     precache_model("progs/flame.mdl");
     setmodel(self, "progs/flame.mdl");
-    func000627();
+    FireAmbient();
     makestatic(self);
 };
 
@@ -264,7 +264,7 @@ void () light_flame_large_yellow =
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
     self.frame = TRUE;
-    func000627();
+    FireAmbient();
     makestatic(self);
 };
 
@@ -284,7 +284,7 @@ void () light_flame_small_yellow =
 {
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
-    func000627();
+    FireAmbient();
     makestatic(self);
 };
 
@@ -304,12 +304,12 @@ void () light_flame_small_white =
 {
     precache_model("progs/flame2.mdl");
     setmodel(self, "progs/flame2.mdl");
-    func000627();
+    FireAmbient();
     makestatic(self);
 };
 
-void () func000633;
-void () func000634;
+void () fire_fly;
+void () fire_touch;
 
 // misc_fireball
 // function begins at statement 17569, parm_start=11970
@@ -335,7 +335,7 @@ void () misc_fireball =
     precache_model("progs/lavaball.mdl");
     self.classname = "fireball";
     self.nextthink = time + (random() * MOVETYPE_FLY);
-    self.think = func000633;
+    self.think = fire_fly;
     
     if(!self.speed)
     {
@@ -345,7 +345,7 @@ void () misc_fireball =
 };
 
 
-// func000633
+// fire_fly
 // function begins at statement 17586, parm_start=11979
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	11979	0
@@ -400,29 +400,29 @@ void () misc_fireball =
 // OP_ADDRESS	28	148	12010
 // OP_STOREP_FNC	11967	12010	0
 // OP_DONE	0	0	0
-void () func000633 = 
+void () fire_fly = 
 {
-    local entity globaldef003588;
-    globaldef003588 = spawn();
-    globaldef003588.solid = SOLID_TRIGGER;
-    globaldef003588.movetype = MOVETYPE_TOSS;
-    globaldef003588.velocity = '0 0 1000';
-    globaldef003588.velocity_x = (random() * 100) - 50;
-    globaldef003588.velocity_y = (random() * 100) - 50;
-    globaldef003588.velocity_z = self.speed + (random() * 200);
-    globaldef003588.classname = "fireball";
-    setmodel(globaldef003588, "progs/lavaball.mdl");
-    setsize(globaldef003588, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(globaldef003588, self.origin);
-    globaldef003588.nextthink = time + MOVETYPE_FLY;
-    globaldef003588.think = SUB_Remove;
-    globaldef003588.touch = func000634;
+    local entity fireball;
+    fireball = spawn();
+    fireball.solid = SOLID_TRIGGER;
+    fireball.movetype = MOVETYPE_TOSS;
+    fireball.velocity = '0 0 1000';
+    fireball.velocity_x = (random() * 100) - 50;
+    fireball.velocity_y = (random() * 100) - 50;
+    fireball.velocity_z = self.speed + (random() * 200);
+    fireball.classname = "fireball";
+    setmodel(fireball, "progs/lavaball.mdl");
+    setsize(fireball, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(fireball, self.origin);
+    fireball.nextthink = time + MOVETYPE_FLY;
+    fireball.think = SUB_Remove;
+    fireball.touch = fire_touch;
     self.nextthink = (time + (random() * MOVETYPE_FLY)) + MOVETYPE_WALK;
-    self.think = func000633;
+    self.think = fire_fly;
 };
 
 
-// func000634
+// fire_touch
 // function begins at statement 17639, parm_start=12011
 // OP_STORE_V	29	4	0
 // OP_STORE_V	28	7	0
@@ -432,14 +432,14 @@ void () func000633 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000634 = 
+void () fire_touch = 
 {
     T_Damage(other, self, self, 20);
     remove(self);
 };
 
 
-// func000635
+// barrel_explode
 // function begins at statement 17647, parm_start=12012
 // OP_ADDRESS	28	163	12012
 // OP_STOREP_F	250	12012	0
@@ -468,7 +468,7 @@ void () func000634 =
 // OP_STOREP_F	12020	12018	0
 // OP_CALL0	5703	0	0
 // OP_DONE	0	0	0
-void () func000635 = 
+void () barrel_explode = 
 {
     self.takedamage = DAMAGE_NO;
     self.classname = "explo_box";
@@ -524,20 +524,20 @@ void () func000635 =
 // OP_DONE	0	0	0
 void () misc_explobox = 
 {
-    local float globaldef003593;
+    local float oldz;
     self.solid = SOLID_BBOX;
     self.movetype = MOVETYPE_NONE;
     precache_model("maps/b_explob.bsp");
     setmodel(self, "maps/b_explob.bsp");
     precache_sound("weapons/r_exp3.wav");
     self.health = 20;
-    self.th_die = func000635;
+    self.th_die = barrel_explode;
     self.takedamage = DAMAGE_AIM;
     self.origin_z = self.origin_z + FL_SWIM;
-    globaldef003593 = self.origin_z;
+    oldz = self.origin_z;
     droptofloor();
     
-    if((globaldef003593 - self.origin_z) > GLOBALDEF721_250)
+    if((oldz - self.origin_z) > GLOBALDEF721_250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -592,20 +592,20 @@ void () misc_explobox =
 // OP_DONE	0	0	0
 void () misc_explobox2 = 
 {
-    local float globaldef003597;
+    local float oldz;
     self.solid = SOLID_BBOX;
     self.movetype = MOVETYPE_NONE;
     precache_model2("maps/b_exbox2.bsp");
     setmodel(self, "maps/b_exbox2.bsp");
     precache_sound("weapons/r_exp3.wav");
     self.health = 20;
-    self.th_die = func000635;
+    self.th_die = barrel_explode;
     self.takedamage = DAMAGE_AIM;
     self.origin_z = self.origin_z + FL_SWIM;
-    globaldef003597 = self.origin_z;
+    oldz = self.origin_z;
     droptofloor();
     
-    if((globaldef003597 - self.origin_z) > GLOBALDEF721_250)
+    if((oldz - self.origin_z) > GLOBALDEF721_250)
     {
         dprint("item fell out of level at ");
         dprint(vtos(self.origin));
@@ -615,11 +615,11 @@ void () misc_explobox2 =
     
 };
 
-float globaldef003599;
-float globaldef003600;
-void (vector globaldef005434, vector globaldef005438) func002072;
+float SPAWNFLAG_SUPERSPIKE = 1;
+float SPAWNFLAG_LASER = 2;
+void (vector org, vector vec) LaunchLaser;
 
-// func000638
+// spikeshooter_use
 // function begins at statement 17754, parm_start=12062
 // OP_LOAD_F	28	195	12062
 // OP_BITAND	12062	12059	12063
@@ -657,12 +657,12 @@ void (vector globaldef005434, vector globaldef005438) func002072;
 // OP_ADDRESS	350	146	12088
 // OP_STOREP_FNC	6017	12088	0
 // OP_DONE	0	0	0
-void () func000638 = 
+void () spikeshooter_use = 
 {
-    if(self.spawnflags & globaldef003600)
+    if(self.spawnflags & SPAWNFLAG_LASER)
     {
         sound(self, CHAN_VOICE, "enforcer/enfire.wav", TRUE, ATTN_NORM);
-        func002072(self.origin, self.movedir);
+        LaunchLaser(self.origin, self.movedir);
     }
     else
     {
@@ -670,7 +670,7 @@ void () func000638 =
         launch_spike(self.origin, self.movedir);
         newmis.velocity = self.movedir * GLOBALDEF728_500;
         
-        if(self.spawnflags & globaldef003599)
+        if(self.spawnflags & SPAWNFLAG_SUPERSPIKE)
         {
             newmis.touch = superspike_touch;
         }
@@ -680,7 +680,7 @@ void () func000638 =
 };
 
 
-// func000639
+// shooter_think
 // function begins at statement 17790, parm_start=12090
 // OP_CALL0	12061	0	0
 // OP_ADDRESS	28	150	12090
@@ -692,15 +692,15 @@ void () func000638 =
 // OP_MUL_VF	12096	745	12099
 // OP_STOREP_V	12099	12093	0
 // OP_DONE	0	0	0
-void () func000639 = 
+void () shooter_think = 
 {
-    func000638();
+    spikeshooter_use();
     self.nextthink = time + self.wait;
     newmis.velocity = self.movedir * GLOBALDEF728_500;
 };
 
 
-// func000640
+// trap_spikeshooter_original
 // function begins at statement 17800, parm_start=12103
 // OP_CALL0	2956	0	0
 // OP_ADDRESS	28	147	12103
@@ -718,11 +718,11 @@ void () func000639 =
 // OP_STORE_V	5365	4	0
 // OP_CALL1	469	0	0
 // OP_DONE	0	0	0
-void () func000640 = 
+void () trap_spikeshooter_original = 
 {
     SetMovedir();
-    self.use = func000638;
-    if(self.spawnflags & globaldef003600)
+    self.use = spikeshooter_use;
+    if(self.spawnflags & SPAWNFLAG_LASER)
     {
         precache_model2("progs/laser.mdl");
         precache_sound2("enforcer/enfire.wav");
@@ -742,7 +742,7 @@ void () func000640 =
 // OP_DONE	0	0	0
 void () trap_spikeshooter = 
 {
-    func000640();
+    trap_spikeshooter_original();
 };
 
 
@@ -766,7 +766,7 @@ void () trap_spikeshooter =
 // OP_DONE	0	0	0
 void () trap_shooter = 
 {
-    func000640();
+    trap_spikeshooter_original();
     
     if(self.wait == FALSE)
     {
@@ -774,11 +774,11 @@ void () trap_shooter =
     }
     
     self.nextthink = (self.nextthink + self.wait) + self.ltime;
-    self.think = func000639;
+    self.think = shooter_think;
 };
 
-void () func000644;
-void () func000646;
+void () make_bubbles;
+void () bubble_remove;
 
 // air_bubbles
 // function begins at statement 17834, parm_start=12123
@@ -805,11 +805,11 @@ void () air_bubbles =
     
     precache_model("progs/s_bubble.spr");
     self.nextthink = time + TRUE;
-    self.think = func000644;
+    self.think = make_bubbles;
 };
 
 
-// func000644
+// make_bubbles
 // function begins at statement 17846, parm_start=12126
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	12126	0
@@ -851,28 +851,28 @@ void () air_bubbles =
 // OP_ADDRESS	28	148	12145
 // OP_STOREP_FNC	12120	12145	0
 // OP_DONE	0	0	0
-void () func000644 = 
+void () make_bubbles = 
 {
-    local entity globaldef003613;
-    globaldef003613 = spawn();
-    setmodel(globaldef003613, "progs/s_bubble.spr");
-    setorigin(globaldef003613, self.origin);
-    globaldef003613.movetype = MOVETYPE_NOCLIP;
-    globaldef003613.solid = SOLID_NOT;
-    globaldef003613.velocity = '0 0 15';
-    globaldef003613.nextthink = time + RA_PLAYERSTATTIME;
-    globaldef003613.think = bubble_bob;
-    globaldef003613.touch = func000646;
-    globaldef003613.classname = "bubble";
-    globaldef003613.frame = FALSE;
-    globaldef003613.cnt = FALSE;
-    setsize(globaldef003613, '-8 -8 -8', '8 8 8');
+    local entity bubble;
+    bubble = spawn();
+    setmodel(bubble, "progs/s_bubble.spr");
+    setorigin(bubble, self.origin);
+    bubble.movetype = MOVETYPE_NOCLIP;
+    bubble.solid = SOLID_NOT;
+    bubble.velocity = '0 0 15';
+    bubble.nextthink = time + RA_PLAYERSTATTIME;
+    bubble.think = bubble_bob;
+    bubble.touch = bubble_remove;
+    bubble.classname = "bubble";
+    bubble.frame = FALSE;
+    bubble.cnt = FALSE;
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.nextthink = (time + random()) + RA_PLAYERSTATTIME;
-    self.think = func000644;
+    self.think = make_bubbles;
 };
 
 
-// func000645
+// bubble_split
 // function begins at statement 17886, parm_start=12147
 // OP_CALL0	464	0	0
 // OP_STORE_ENT	1	12147	0
@@ -917,22 +917,22 @@ void () func000644 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000645 = 
+void () bubble_split = 
 {
-    local entity globaldef003615;
-    globaldef003615 = spawn();
-    setmodel(globaldef003615, "progs/s_bubble.spr");
-    setorigin(globaldef003615, self.origin);
-    globaldef003615.movetype = MOVETYPE_NOCLIP;
-    globaldef003615.solid = SOLID_NOT;
-    globaldef003615.velocity = self.velocity;
-    globaldef003615.nextthink = time + RA_PLAYERSTATTIME;
-    globaldef003615.think = bubble_bob;
-    globaldef003615.touch = func000646;
-    globaldef003615.classname = "bubble";
-    globaldef003615.frame = TRUE;
-    globaldef003615.cnt = MOVETYPE_BOUNCE;
-    setsize(globaldef003615, '-8 -8 -8', '8 8 8');
+    local entity bubble;
+    bubble = spawn();
+    setmodel(bubble, "progs/s_bubble.spr");
+    setorigin(bubble, self.origin);
+    bubble.movetype = MOVETYPE_NOCLIP;
+    bubble.solid = SOLID_NOT;
+    bubble.velocity = self.velocity;
+    bubble.nextthink = time + RA_PLAYERSTATTIME;
+    bubble.think = bubble_bob;
+    bubble.touch = bubble_remove;
+    bubble.classname = "bubble";
+    bubble.frame = TRUE;
+    bubble.cnt = MOVETYPE_BOUNCE;
+    setsize(bubble, '-8 -8 -8', '8 8 8');
     self.frame = TRUE;
     self.cnt = MOVETYPE_BOUNCE;
     
@@ -944,7 +944,7 @@ void () func000645 =
 };
 
 
-// func000646
+// bubble_remove
 // function begins at statement 17929, parm_start=12170
 // OP_LOAD_S	29	129	12170
 // OP_LOAD_S	28	129	12171
@@ -954,7 +954,7 @@ void () func000645 =
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000646 = 
+void () bubble_remove = 
 {
     
     if(other.classname == self.classname)
@@ -1031,16 +1031,16 @@ void () func000646 =
 // OP_DONE	0	0	0
 void () bubble_bob = 
 {
-    local float globaldef003616;
-    local float globaldef003617;
-    local float globaldef003618;
-    local vector globaldef003619;
-    local vector globaldef003623;
+    local float rnd1;
+    local float rnd2;
+    local float rnd3;
+    local vector vtmp1;
+    local vector modi;
     self.cnt = self.cnt + TRUE;
     
     if(self.cnt == MOVETYPE_STEP)
     {
-        func000645();
+        bubble_split();
     }
     
     
@@ -1049,48 +1049,48 @@ void () bubble_bob =
         remove(self);
     }
     
-    globaldef003616 = self.velocity_x + (-10 + (random() * 20));
-    globaldef003617 = self.velocity_y + (-10 + (random() * 20));
-    globaldef003618 = (self.velocity_z + MOVETYPE_BOUNCE) + (random() * MOVETYPE_BOUNCE);
+    rnd1 = self.velocity_x + (-10 + (random() * 20));
+    rnd2 = self.velocity_y + (-10 + (random() * 20));
+    rnd3 = (self.velocity_z + MOVETYPE_BOUNCE) + (random() * MOVETYPE_BOUNCE);
     
-    if(globaldef003616 > MOVETYPE_BOUNCE)
+    if(rnd1 > MOVETYPE_BOUNCE)
     {
-        globaldef003616 = MOVETYPE_FLY;
+        rnd1 = MOVETYPE_FLY;
     }
     
     
-    if(globaldef003616 < -10)
+    if(rnd1 < -10)
     {
-        globaldef003616 = CONTENT_LAVA;
+        rnd1 = CONTENT_LAVA;
     }
     
     
-    if(globaldef003617 > MOVETYPE_BOUNCE)
+    if(rnd2 > MOVETYPE_BOUNCE)
     {
-        globaldef003617 = MOVETYPE_FLY;
+        rnd2 = MOVETYPE_FLY;
     }
     
     
-    if(globaldef003617 < -10)
+    if(rnd2 < -10)
     {
-        globaldef003617 = CONTENT_LAVA;
+        rnd2 = CONTENT_LAVA;
     }
     
     
-    if(globaldef003618 < MOVETYPE_BOUNCE)
+    if(rnd3 < MOVETYPE_BOUNCE)
     {
-        globaldef003618 = GLOBALDEF748_15;
+        rnd3 = GLOBALDEF748_15;
     }
     
     
-    if(globaldef003618 > SVC_INTERMISSION)
+    if(rnd3 > SVC_INTERMISSION)
     {
-        globaldef003618 = SVC_SIGNONNUM;
+        rnd3 = SVC_SIGNONNUM;
     }
     
-    self.velocity_x = globaldef003616;
-    self.velocity_y = globaldef003617;
-    self.velocity_z = globaldef003618;
+    self.velocity_x = rnd1;
+    self.velocity_y = rnd2;
+    self.velocity_z = rnd3;
     self.nextthink = time + RA_PLAYERSTATTIME;
     self.think = bubble_bob;
 };
@@ -1117,14 +1117,14 @@ void () viewthing =
 };
 
 
-// func000649
+// func_wall_use
 // function begins at statement 18008, parm_start=12218
 // OP_ADDRESS	28	131	12218
 // OP_LOAD_F	28	131	12219
 // OP_SUB_F	214	12219	12220
 // OP_STOREP_F	12220	12218	0
 // OP_DONE	0	0	0
-void () func000649 = 
+void () func_wall_use = 
 {
     self.frame = TRUE - self.frame;
 };
@@ -1150,7 +1150,7 @@ void () func_wall =
     self.angles = VEC_ORIGIN;
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
-    self.use = func000649;
+    self.use = func_wall_use;
     setmodel(self, self.model);
 };
 
@@ -1211,7 +1211,7 @@ void () func_episodegate =
     self.angles = VEC_ORIGIN;
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
-    self.use = func000649;
+    self.use = func_wall_use;
     setmodel(self, self.model);
 };
 
@@ -1246,7 +1246,7 @@ void () func_bossgate =
     self.angles = VEC_ORIGIN;
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
-    self.use = func000649;
+    self.use = func_wall_use;
     setmodel(self, self.model);
 };
 
@@ -1413,7 +1413,7 @@ void () ambient_swamp2 =
 };
 
 
-// func000663
+// noise_think
 // function begins at statement 18155, parm_start=12301
 // OP_ADDRESS	28	150	12301
 // OP_ADD_F	31	539	12302
@@ -1461,7 +1461,7 @@ void () ambient_swamp2 =
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000663 = 
+void () noise_think = 
 {
     self.nextthink = time + RA_PLAYERSTATTIME;
     sound(self, TRUE, "enforcer/enfire.wav", TRUE, ATTN_NORM);
@@ -1517,6 +1517,6 @@ void () misc_noisemaker =
     precache_sound2("enforcer/death1.wav");
     precache_sound2("enforcer/idle1.wav");
     self.nextthink = (time + 0.1) + random();
-    self.think = func000663;
+    self.think = noise_think;
 };
 

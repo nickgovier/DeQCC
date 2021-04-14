@@ -1722,8 +1722,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region triggers.qc
 
             // Declarations
@@ -1790,21 +1788,93 @@ namespace DeQcc
 
             #region plats.qc
 
+            // Declarations
+            nameMap.Add("globaldef003524", "PLAT_LOW_TRIGGER");
+
+            nameMap.Add("func000602", "plat_spawn_inside_trigger");
+            nameMap.Add("func000605", "plat_go_down");
+            nameMap.Add("func000606", "plat_go_up");
+            nameMap.Add("func000607", "plat_center_touch");
+            nameMap.Add("func000609", "plat_trigger_use");
+            nameMap.Add("func000610", "plat_crush");
+            nameMap.Add("func000611", "plat_use");
+            nameMap.Add("func000613", "train_blocked");
+            nameMap.Add("func000614", "train_use");
+            nameMap.Add("func000616", "train_next");
+            nameMap.Add("func000617", "func_train_find");
+
             for (int i = 602; i <= 619; i++)
             {
                 fileMap[i] = "plats.qc";
             }
 
+            // plat_spawn_inside_trigger locals
+            nameMap.Add("globaldef003526", "trigger");
+            nameMap.Add("globaldef003527", "tmin");
+            nameMap.Add("globaldef003531", "tmax");
+
+            // func_plat locals
+            nameMap.Add("globaldef003543", "t");
+
+            // train_next locals
+            nameMap.Add("globaldef003554", "targ");
+            nameMap.Add("globaldef003555", "UNUSED");
+
+            // func_train_find locals
+            nameMap.Add("globaldef003557", "targ");
+
             #endregion
+
+            // Done to here
 
             #region misc.qc
 
+            // Declarations
+            nameMap.Add("globaldef003568", "START_OFF");
+            nameMap.Add("globaldef003599", "SPAWNFLAG_SUPERSPIKE");
+            nameMap.Add("globaldef003600", "SPAWNFLAG_LASER");
+
+            nameMap.Add("func000622", "light_use");
+            nameMap.Add("func000627", "FireAmbient");
+            nameMap.Add("func000633", "fire_fly");
+            nameMap.Add("func000634", "fire_touch");
+            nameMap.Add("func000635", "barrel_explode");
+            nameMap.Add("func000638", "spikeshooter_use");
+            nameMap.Add("func000639", "shooter_think");
+            nameMap.Add("func000640", "trap_spikeshooter_original");
+            nameMap.Add("func000644", "make_bubbles");
+            nameMap.Add("func000645", "bubble_split");
+            nameMap.Add("func000646", "bubble_remove");
             nameMap.Add("func000647", "bubble_bob");
+            nameMap.Add("func000649", "func_wall_use");
+            nameMap.Add("func000663", "noise_think");
 
             for (int i = 620; i <= 664; i++)
             {
                 fileMap[i] = "misc.qc";
             }
+
+            // fire_fly locals
+            nameMap.Add("globaldef003588", "fireball");
+
+            // misc_explobox locals
+            nameMap.Add("globaldef003593", "oldz");
+
+            // misc_explobox2 locals
+            nameMap.Add("globaldef003597", "oldz");
+
+            // make_bubbles locals
+            nameMap.Add("globaldef003613", "bubble");
+
+            // bubble_split locals
+            nameMap.Add("globaldef003615", "bubble");
+
+            // bubble_bob locals
+            nameMap.Add("globaldef003616", "rnd1");
+            nameMap.Add("globaldef003617", "rnd2");
+            nameMap.Add("globaldef003618", "rnd3");
+            nameMap.Add("globaldef003619", "vtmp1");
+            nameMap.Add("globaldef003623", "modi");
 
             #endregion
 
@@ -1947,11 +2017,17 @@ namespace DeQcc
             #endregion
 
             #region enforcer.qc
+            
+            nameMap.Add("func002072", "LaunchLaser");
 
             for (int i = 2071; i <= 2182; i++)
             {
                 fileMap[i] = "enforcer.qc";
             }
+
+            // LaunchLaser params
+            nameMap.Add("globaldef005434", "org");
+            nameMap.Add("globaldef005438", "vec");
 
             #endregion
 
