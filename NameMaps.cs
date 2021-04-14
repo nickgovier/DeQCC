@@ -1625,8 +1625,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region doors.qc
 
             // Declarations
@@ -1701,12 +1699,28 @@ namespace DeQcc
 
             #endregion
 
+            // Done to here
+
             #region buttons.qc
+
+            nameMap.Add("func000563", "button_return");
+            nameMap.Add("func000564", "button_blocked");
+            nameMap.Add("func000565", "button_fire");
+            nameMap.Add("func000566", "button_use");
+            nameMap.Add("func000567", "button_touch");
+            nameMap.Add("func000568", "button_killed");
 
             for (int i = 561; i <= 569; i++)
             {
                 fileMap[i] = "buttons.qc";
             }
+
+            // button_touch locals
+            nameMap.Add("globaldef003427", "UNUSED");
+
+            // func_button locals
+            nameMap.Add("globaldef003433", "gtemp");
+            nameMap.Add("globaldef003434", "ftemp");
 
             #endregion
 

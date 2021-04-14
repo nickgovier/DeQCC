@@ -1,4 +1,4 @@
-void () func000563;
+void () button_return;
 
 // button_wait
 // function begins at statement 15868, parm_start=10875
@@ -21,7 +21,7 @@ void () button_wait =
 {
     self.state = STATE_TOP;
     self.nextthink = self.ltime + self.wait;
-    self.think = func000563;
+    self.think = button_return;
     activator = self.enemy;
     SUB_UseTargets();
     self.frame = TRUE;
@@ -39,7 +39,7 @@ void () button_done =
 };
 
 
-// func000563
+// button_return
 // function begins at statement 15886, parm_start=10885
 // OP_ADDRESS	28	438	10885
 // OP_STOREP_F	285	10885	0
@@ -56,7 +56,7 @@ void () button_done =
 // OP_ADDRESS	28	163	10892
 // OP_STOREP_F	251	10892	0
 // OP_DONE	0	0	0
-void () func000563 = 
+void () button_return = 
 {
     self.state = STATE_DOWN;
     SUB_CalcMove(self.pos1, self.speed, button_done);
@@ -70,15 +70,15 @@ void () func000563 =
 };
 
 
-// func000564
+// button_blocked
 // function begins at statement 15901, parm_start=10894
 // OP_DONE	0	0	0
-void () func000564 = 
+void () button_blocked = 
 {
 };
 
 
-// func000565
+// button_fire
 // function begins at statement 15902, parm_start=10895
 // OP_LOAD_F	28	438	10895
 // OP_EQ_F	10895	284	10896
@@ -103,7 +103,7 @@ void () func000564 =
 // OP_STORE_V	10874	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000565 = 
+void () button_fire = 
 {
     
     if((self.state == STATE_UP) || (self.state == STATE_TOP))
@@ -117,7 +117,7 @@ void () func000565 =
 };
 
 
-// func000566
+// button_use
 // function begins at statement 15925, parm_start=10907
 // OP_ADDRESS	28	181	10907
 // OP_STOREP_ENT	351	10907	0
@@ -129,7 +129,7 @@ void () func000565 =
 // OP_CALL2	1132	0	0
 // OP_CALL0	10894	0	0
 // OP_DONE	0	0	0
-void () func000566 = 
+void () button_use = 
 {
     self.enemy = activator;
     
@@ -138,11 +138,11 @@ void () func000566 =
         func002472(activator, self);
     }
     
-    func000565();
+    button_fire();
 };
 
 
-// func000567
+// button_touch
 // function begins at statement 15935, parm_start=10911
 // OP_LOAD_S	29	129	10914
 // OP_NE_S	10914	1236	10915
@@ -161,9 +161,9 @@ void () func000566 =
 // OP_CALL2	1132	0	0
 // OP_CALL0	10894	0	0
 // OP_DONE	0	0	0
-void () func000567 = 
+void () button_touch = 
 {
-    local vector globaldef003427;
+    local vector UNUSED;
     
     if(other.classname != "player")
     {
@@ -182,11 +182,11 @@ void () func000567 =
         func002472(other, self);
     }
     
-    func000565();
+    button_fire();
 };
 
 
-// func000568
+// button_killed
 // function begins at statement 15952, parm_start=10922
 // OP_ADDRESS	28	181	10922
 // OP_STOREP_ENT	352	10922	0
@@ -203,7 +203,7 @@ void () func000567 =
 // OP_CALL2	1132	0	0
 // OP_CALL0	10894	0	0
 // OP_DONE	0	0	0
-void () func000568 = 
+void () button_killed = 
 {
     self.enemy = damage_attacker;
     self.health = self.max_health;
@@ -214,7 +214,7 @@ void () func000568 =
         func002472(damage_attacker, self);
     }
     
-    func000565();
+    button_fire();
 };
 
 
@@ -311,8 +311,8 @@ void () func000568 =
 // OP_DONE	0	0	0
 void () func_button = 
 {
-    local float globaldef003433;
-    local float globaldef003434;
+    local float gtemp;
+    local float ftemp;
     
     if(self.sounds == FALSE)
     {
@@ -345,18 +345,18 @@ void () func_button =
     self.movetype = MOVETYPE_PUSH;
     self.solid = SOLID_BSP;
     setmodel(self, self.model);
-    self.blocked = func000564;
-    self.use = func000566;
+    self.blocked = button_blocked;
+    self.use = button_use;
     self.f_goalweight = goalweight_button;
     if(self.health)
     {
         self.max_health = self.health;
-        self.th_die = func000568;
+        self.th_die = button_killed;
         self.takedamage = DAMAGE_YES;
     }
     else
     {
-        self.touch = func000567;
+        self.touch = button_touch;
     }
     
     
