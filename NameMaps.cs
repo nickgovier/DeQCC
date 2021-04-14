@@ -309,6 +309,8 @@ namespace DeQcc
             nameMap.Add("field000225", "f_goalweight");
             nameMap.Add("field000226", "f_walkaboutweight");
 
+            nameMap.Add("globaldef000509", "modelindex_player");
+
             // rocket arena
             nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
             nameMap.Add("globaldef000523", "RA_MAXIDLETIME");  // constant = 300
@@ -322,6 +324,7 @@ namespace DeQcc
             nameMap.Add("globaldef000721", "GLOBALDEF721_250");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEF723_600");  // constant = 600
             nameMap.Add("globaldef000724", "GLOBALDEF724_800");  // constant = 800
+            nameMap.Add("globaldef000725", "OBOT_MAXGIBS");  // constant = 30
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40
@@ -344,6 +347,8 @@ namespace DeQcc
 
             nameMap.Add("globaldef000774", "GLOBALDEF774_12");   // constant = 12
             nameMap.Add("globaldef000775", "GLOBALDEF775_13");   // constant = 13
+
+            nameMap.Add("globaldef000784", "num_gibs"); // player.qc
 
             // b_clrank.qc
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
@@ -1390,34 +1395,97 @@ namespace DeQcc
 
             #endregion
 
+            // Done
             #region player.qc
 
+            nameMap.Add("func000407", "player_stand1");
             nameMap.Add("func000408", "player_run");
-            nameMap.Add("func000409", "player_shot1");
-            nameMap.Add("func000415", "player_axe1");
-            nameMap.Add("func000419", "player_axeb1");
-            nameMap.Add("func000423", "player_axec1");
-            nameMap.Add("func000427", "player_axed1");
-            nameMap.Add("func000431", "player_nail1");
-            nameMap.Add("func000433", "player_light1");
-            nameMap.Add("func000435", "player_rocket1");
+            for (int i = 409; i <= 414; i++) { nameMap.Add("func000" + i.ToString(), "player_shot" + (i - 408).ToString()); }
+            for (int i = 415; i <= 418; i++) { nameMap.Add("func000" + i.ToString(), "player_axe" + (i - 414).ToString()); }
+            for (int i = 419; i <= 422; i++) { nameMap.Add("func000" + i.ToString(), "player_axeb" + (i - 418).ToString()); }
+            for (int i = 423; i <= 426; i++) { nameMap.Add("func000" + i.ToString(), "player_axec" + (i - 422).ToString()); }
+            for (int i = 427; i <= 430; i++) { nameMap.Add("func000" + i.ToString(), "player_axed" + (i - 426).ToString()); }
+            for (int i = 431; i <= 432; i++) { nameMap.Add("func000" + i.ToString(), "player_nail" + (i - 430).ToString()); }
+            for (int i = 433; i <= 434; i++) { nameMap.Add("func000" + i.ToString(), "player_light" + (i - 432).ToString()); }
+            for (int i = 435; i <= 440; i++) { nameMap.Add("func000" + i.ToString(), "player_rocket" + (i - 434).ToString()); }
+            nameMap.Add("func000441", "PainSound");
+            for (int i = 442; i <= 447; i++) { nameMap.Add("func000" + i.ToString(), "player_pain" + (i - 441).ToString()); }
+            for (int i = 448; i <= 453; i++) { nameMap.Add("func000" + i.ToString(), "player_axpain" + (i - 447).ToString()); }
+            nameMap.Add("func000454", "player_pain");
+            nameMap.Add("func000455", "DeathBubblesSpawn");
+            nameMap.Add("func000456", "DeathBubbles");
+            nameMap.Add("func000457", "DeathSound");
+            nameMap.Add("func000458", "PlayerDead");
+            nameMap.Add("func000459", "VelocityForDamage");
+            nameMap.Add("func000460", "RemoveGib");
             nameMap.Add("func000461", "ThrowGib");
+            nameMap.Add("func000462", "ThrowHead");
+            nameMap.Add("func000463", "GibPlayer");
+            nameMap.Add("func000464", "PlayerDie");
+            nameMap.Add("func000465", "set_suicide_frame");
+            for (int i = 466; i <= 476; i++) { nameMap.Add("func000" + i.ToString(), "player_diea" + (i - 465).ToString()); }
+            for (int i = 477; i <= 485; i++) { nameMap.Add("func000" + i.ToString(), "player_dieb" + (i - 476).ToString()); }
+            for (int i = 486; i <= 500; i++) { nameMap.Add("func000" + i.ToString(), "player_diec" + (i - 485).ToString()); }
+            for (int i = 501; i <= 509; i++) { nameMap.Add("func000" + i.ToString(), "player_died" + (i - 500).ToString()); }
+            for (int i = 510; i <= 518; i++) { nameMap.Add("func000" + i.ToString(), "player_diee" + (i - 509).ToString()); }
+            for (int i = 519; i <= 527; i++) { nameMap.Add("func000" + i.ToString(), "player_die_ax" + (i - 518).ToString()); }
 
-            for (int i = 408; i <= 461; i++)
+            for (int i = 407; i <= 527; i++)
             {
                 fileMap[i] = "player.qc";
             }
+
+            // PainSound locals
+            nameMap.Add("globaldef003143", "rs");
+
+            // DeathBubblesSpawn locals
+            nameMap.Add("globaldef003169", "bubble");
+
+            // DeathBubbles params
+            nameMap.Add("globaldef003172", "num_bubbles");
+
+            // DeathBubbles locals
+            nameMap.Add("globaldef003173", "bubble_spawner");
+
+            // DeathSound locals
+            nameMap.Add("globaldef003175", "rs");
+
+            // VelocityForDamage params
+            nameMap.Add("globaldef003178", "dm");
+
+            // VelocityForDamage locals
+            nameMap.Add("globaldef003179", "v");
+
+            // ThrowGib params
+            nameMap.Add("globaldef003186", "gibname");
+            nameMap.Add("globaldef003187", "dm");
+
+            // ThrowGib locals
+            nameMap.Add("globaldef003188", "new");
+
+            // ThrowHead params
+            nameMap.Add("globaldef003190", "gibname");
+            nameMap.Add("globaldef003191", "dm");
+
+            // PlayerDie locals
+            nameMap.Add("globaldef003195", "i");
 
             #endregion
 
             #region monsters.qc
 
+            nameMap.Add("func000528", "monster_use");
             nameMap.Add("func000529", "monster_death_use");
 
-            for (int i = 529; i <= 529; i++)
+            for (int i = 528; i <= 529; i++)
             {
                 fileMap[i] = "monsters.qc";
             }
+
+            // monster_death_use locals
+            nameMap.Add("globaldef003297", "ent");
+            nameMap.Add("globaldef003298", "otemp");
+            nameMap.Add("globaldef003299", "stemp");
 
             #endregion
 
@@ -1462,6 +1530,8 @@ namespace DeQcc
             #endregion
 
             #region misc.qc
+
+            nameMap.Add("func000647", "bubble_bob");
 
             for (int i = 620; i <= 664; i++)
             {

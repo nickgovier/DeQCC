@@ -1,12798 +1,4756 @@
 
-// func002266
-// function begins at statement 27424, parm_start=16232
-// OP_STORE_V	30	4	0
-// OP_CALL1	492	0	0
-// OP_STORE_ENT	1	16233	0
-// OP_STORE_F	213	16234	0
-// OP_LT	16234	813	16235
-// OP_IFNOT	16235	10	0
-// OP_EQ_F	16234	16232	16236
-// OP_IFNOT	16236	2	0
-// OP_RETURN	16233	0	0
-// OP_ADD_F	16234	214	16237
-// OP_STORE_F	16237	16234	0
-// OP_STORE_V	16233	4	0
-// OP_CALL1	492	0	0
-// OP_STORE_ENT	1	16233	0
-// OP_GOTO	-10	0	0
-// OP_RETURN	30	0	0
+// func002366
+// function begins at statement 36080, parm_start=19709
+// OP_STORE_V	19712	4	0
+// OP_LOAD_S	19709	180	19713
+// OP_STORE_V	19713	7	0
+// OP_STORE_V	19714	10	0
+// OP_STORE_V	19710	13	0
+// OP_STORE_V	2127	16	0
+// OP_CALL5	918	0	0
+// OP_STORE_ENT	19709	830	0
+// OP_STORE_F	19711	820	0
 // OP_DONE	0	0	0
-entity (float globaldef005699) func002266 = 
+void (entity globaldef006801, string globaldef006802, float globaldef006803) func002366 = 
 {
-    local entity globaldef005700;
-    local float globaldef005701;
-    globaldef005700 = nextent(world);
-    globaldef005701 = FALSE;
+    bprint5("", globaldef006801.netname, ": ", globaldef006802, "\n");
+    globaldef000813 = globaldef006801;
+    globaldef000803 = globaldef006803;
+};
+
+
+// func002367
+// function begins at statement 36090, parm_start=19715
+// OP_STORE_V	19712	4	0
+// OP_LOAD_S	19715	180	19719
+// OP_STORE_V	19719	7	0
+// OP_STORE_V	19714	10	0
+// OP_STORE_V	19716	13	0
+// OP_STORE_V	19717	16	0
+// OP_STORE_V	2127	19	0
+// OP_CALL6	919	0	0
+// OP_STORE_ENT	19715	830	0
+// OP_STORE_F	19718	820	0
+// OP_DONE	0	0	0
+void (entity globaldef006806, string globaldef006807, string globaldef006808, float globaldef006809) func002367 = 
+{
+    bprint6("", globaldef006806.netname, ": ", globaldef006807, globaldef006808, "\n");
+    globaldef000813 = globaldef006806;
+    globaldef000803 = globaldef006809;
+};
+
+
+// func002368
+// function begins at statement 36101, parm_start=19720
+// OP_STORE_V	19712	4	0
+// OP_LOAD_S	19720	180	19725
+// OP_STORE_V	19725	7	0
+// OP_STORE_V	19714	10	0
+// OP_STORE_V	19721	13	0
+// OP_STORE_V	19722	16	0
+// OP_STORE_V	19723	19	0
+// OP_STORE_V	2127	22	0
+// OP_CALL7	920	0	0
+// OP_STORE_ENT	19720	830	0
+// OP_STORE_F	19724	820	0
+// OP_DONE	0	0	0
+void (entity globaldef006810, string globaldef006811, string globaldef006812, string globaldef006813, float globaldef006814) func002368 = 
+{
+    bprint7("", globaldef006810.netname, ": ", globaldef006811, globaldef006812, globaldef006813, "\n");
+    globaldef000813 = globaldef006810;
+    globaldef000803 = globaldef006814;
+};
+
+
+// func002369
+// function begins at statement 36113, parm_start=19726
+// OP_ADDRESS	19726	614	19730
+// OP_STOREP_S	19727	19730	0
+// OP_ADDRESS	19726	615	19731
+// OP_STOREP_S	348	19731	0
+// OP_ADDRESS	19726	616	19732
+// OP_STOREP_S	348	19732	0
+// OP_ADDRESS	19726	617	19733
+// OP_STOREP_F	19728	19733	0
+// OP_ADDRESS	19726	422	19734
+// OP_ADD_F	31	19729	19735
+// OP_STOREP_F	19735	19734	0
+// OP_DONE	0	0	0
+void (entity globaldef006815, string globaldef006816, float globaldef006817, float globaldef006818) func002369 = 
+{
+    globaldef006815.field000291 = globaldef006816;
+    globaldef006815.field000292 = string_null;
+    globaldef006815.field000293 = string_null;
+    globaldef006815.field000294 = globaldef006817;
+    globaldef006815.pausetime = time + globaldef006818;
+};
+
+
+// func002370
+// function begins at statement 36125, parm_start=19736
+// OP_ADDRESS	19736	614	19741
+// OP_STOREP_S	19737	19741	0
+// OP_ADDRESS	19736	615	19742
+// OP_STOREP_S	19738	19742	0
+// OP_ADDRESS	19736	616	19743
+// OP_STOREP_S	348	19743	0
+// OP_ADDRESS	19736	617	19744
+// OP_STOREP_F	19739	19744	0
+// OP_ADDRESS	19736	422	19745
+// OP_ADD_F	31	19740	19746
+// OP_STOREP_F	19746	19745	0
+// OP_DONE	0	0	0
+void (entity globaldef006819, string globaldef006820, string globaldef006821, float globaldef006822, float globaldef006823) func002370 = 
+{
+    globaldef006819.field000291 = globaldef006820;
+    globaldef006819.field000292 = globaldef006821;
+    globaldef006819.field000293 = string_null;
+    globaldef006819.field000294 = globaldef006822;
+    globaldef006819.pausetime = time + globaldef006823;
+};
+
+
+// func002371
+// function begins at statement 36137, parm_start=19747
+// OP_ADDRESS	19747	614	19753
+// OP_STOREP_S	19748	19753	0
+// OP_ADDRESS	19747	615	19754
+// OP_STOREP_S	19749	19754	0
+// OP_ADDRESS	19747	616	19755
+// OP_STOREP_S	19750	19755	0
+// OP_ADDRESS	19747	617	19756
+// OP_STOREP_F	19751	19756	0
+// OP_ADDRESS	19747	422	19757
+// OP_ADD_F	31	19752	19758
+// OP_STOREP_F	19758	19757	0
+// OP_DONE	0	0	0
+void (entity globaldef006824, string globaldef006825, string globaldef006826, string globaldef006827, float globaldef006828, float globaldef006829) func002371 = 
+{
+    globaldef006824.field000291 = globaldef006825;
+    globaldef006824.field000292 = globaldef006826;
+    globaldef006824.field000293 = globaldef006827;
+    globaldef006824.field000294 = globaldef006828;
+    globaldef006824.pausetime = time + globaldef006829;
+};
+
+
+// func002372
+// function begins at statement 36149, parm_start=19759
+// OP_STORE_F	213	19760	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_IFNOT	19762	13	0
+// OP_LOAD_S	19762	180	19763
+// OP_LOAD_S	19759	180	19764
+// OP_NE_S	19763	19764	19765
+// OP_IFNOT	19765	3	0
+// OP_ADD_F	19760	214	19766
+// OP_STORE_F	19766	19760	0
+// OP_STORE_V	19762	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_GOTO	-12	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_IFNOT	19762	13	0
+// OP_LOAD_S	19762	180	19767
+// OP_LOAD_S	19759	180	19768
+// OP_NE_S	19767	19768	19769
+// OP_IFNOT	19769	3	0
+// OP_ADD_F	19760	214	19770
+// OP_STORE_F	19770	19760	0
+// OP_STORE_V	19762	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_GOTO	-12	0	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	19760	1	19771
+// OP_STORE_V	19771	4	0
+// OP_CALL1	484	0	0
+// OP_ADD_F	1	214	19772
+// OP_STORE_F	19772	19761	0
+// OP_STORE_F	213	19760	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_IFNOT	19762	17	0
+// OP_LOAD_S	19762	180	19773
+// OP_LOAD_S	19759	180	19774
+// OP_NE_S	19773	19774	19775
+// OP_IFNOT	19775	3	0
+// OP_ADD_F	19760	214	19776
+// OP_STORE_F	19776	19760	0
+// OP_EQ_F	19760	19761	19777
+// OP_IFNOT	19777	3	0
+// OP_LOAD_S	19762	180	19778
+// OP_RETURN	19778	0	0
+// OP_STORE_V	19762	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1236	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_GOTO	-16	0	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_IFNOT	19762	17	0
+// OP_LOAD_S	19762	180	19779
+// OP_LOAD_S	19759	180	19780
+// OP_NE_S	19779	19780	19781
+// OP_IFNOT	19781	3	0
+// OP_ADD_F	19760	214	19782
+// OP_STORE_F	19782	19760	0
+// OP_EQ_F	19760	19761	19783
+// OP_IFNOT	19783	3	0
+// OP_LOAD_S	19762	180	19784
+// OP_RETURN	19784	0	0
+// OP_STORE_V	19762	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	1241	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19762	0
+// OP_GOTO	-16	0	0
+// OP_RETURN	19785	0	0
+// OP_DONE	0	0	0
+string (entity globaldef006830) func002372 = 
+{
+    local float globaldef006831;
+    local float globaldef006832;
+    local entity globaldef006833;
+    globaldef006831 = FALSE;
+    globaldef006833 = find(world, classname, "player");
     
-    while(globaldef005701 < maxClients)
+    while(globaldef006833)
     {
         
-        if(globaldef005701 == globaldef005699)
+        if(globaldef006833.netname != globaldef006830.netname)
         {
-            return globaldef005700;
+            globaldef006831 = globaldef006831 + TRUE;
         }
         
-        globaldef005701 = globaldef005701 + TRUE;
-        globaldef005700 = nextent(globaldef005700);
+        globaldef006833 = find(globaldef006833, classname, "player");
     }
     
-    return world;
+    globaldef006833 = find(world, classname, "bot");
+    
+    while(globaldef006833)
+    {
+        
+        if(globaldef006833.netname != globaldef006830.netname)
+        {
+            globaldef006831 = globaldef006831 + TRUE;
+        }
+        
+        globaldef006833 = find(globaldef006833, classname, "bot");
+    }
+    
+    globaldef006832 = (floor(globaldef006831 * random())) + TRUE;
+    globaldef006831 = FALSE;
+    globaldef006833 = find(world, classname, "player");
+    
+    while(globaldef006833)
+    {
+        
+        if(globaldef006833.netname != globaldef006830.netname)
+        {
+            globaldef006831 = globaldef006831 + TRUE;
+        }
+        
+        
+        if(globaldef006831 == globaldef006832)
+        {
+            return globaldef006833.netname;
+        }
+        
+        globaldef006833 = find(globaldef006833, classname, "player");
+    }
+    
+    globaldef006833 = find(world, classname, "bot");
+    
+    while(globaldef006833)
+    {
+        
+        if(globaldef006833.netname != globaldef006830.netname)
+        {
+            globaldef006831 = globaldef006831 + TRUE;
+        }
+        
+        
+        if(globaldef006831 == globaldef006832)
+        {
+            return globaldef006833.netname;
+        }
+        
+        globaldef006833 = find(globaldef006833, classname, "bot");
+    }
+    
+    return "unknown";
 };
 
 
-// func002267
-// function begins at statement 27441, parm_start=16238
-// OP_ADDRESS	16238	132	16240
-// OP_LOAD_F	16239	574	16241
-// OP_STOREP_F	16241	16240	0
-// OP_ADDRESS	16238	93	16242
-// OP_LOAD_F	16239	573	16243
-// OP_STOREP_F	16243	16242	0
-// OP_ADDRESS	16238	130	16244
-// OP_STOREP_S	6684	16244	0
+// func002373
+// function begins at statement 36239, parm_start=19786
+// OP_STORE_F	213	19786	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19788	0
+// OP_IFNOT	19788	9	0
+// OP_ADD_F	19786	214	19789
+// OP_STORE_F	19789	19786	0
+// OP_STORE_V	19788	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19788	0
+// OP_GOTO	-8	0	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	19786	1	19790
+// OP_STORE_V	19790	4	0
+// OP_CALL1	484	0	0
+// OP_ADD_F	1	214	19791
+// OP_STORE_F	19791	19787	0
+// OP_STORE_F	213	19786	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19788	0
+// OP_IFNOT	19788	13	0
+// OP_ADD_F	19786	214	19792
+// OP_STORE_F	19792	19786	0
+// OP_EQ_F	19786	19787	19793
+// OP_IFNOT	19793	3	0
+// OP_LOAD_S	19788	180	19794
+// OP_RETURN	19794	0	0
+// OP_STORE_V	19788	4	0
+// OP_STORE_V	129	7	0
+// OP_STORE_V	2025	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	19788	0
+// OP_GOTO	-12	0	0
+// OP_RETURN	19795	0	0
 // OP_DONE	0	0	0
-void (entity globaldef005702, entity globaldef005703) func002267 = 
+string () func002373 = 
 {
-    globaldef005702.skin = globaldef005703.field000251;
-    globaldef005702.modelindex = globaldef005703.field000250;
-    globaldef005702.model = "progs/player.mdl";
+    local float globaldef006835;
+    local float globaldef006836;
+    local entity globaldef006837;
+    globaldef006835 = FALSE;
+    globaldef006837 = find(world, classname, "observer");
+    
+    while(globaldef006837)
+    {
+        globaldef006835 = globaldef006835 + TRUE;
+        globaldef006837 = find(globaldef006837, classname, "observer");
+    }
+    
+    globaldef006836 = (floor(globaldef006835 * random())) + TRUE;
+    globaldef006835 = FALSE;
+    globaldef006837 = find(world, classname, "observer");
+    
+    while(globaldef006837)
+    {
+        globaldef006835 = globaldef006835 + TRUE;
+        
+        if(globaldef006835 == globaldef006836)
+        {
+            return globaldef006837.netname;
+        }
+        
+        globaldef006837 = find(globaldef006837, classname, "observer");
+    }
+    
+    return "you there";
 };
 
 
-// func002268
-// function begins at statement 27450, parm_start=16245
-// OP_LOAD_F	16245	608	16252
-// OP_STORE_V	16252	4	0
+// func002374
+// function begins at statement 36281, parm_start=19796
+// OP_ADDRESS	19796	614	19797
+// OP_STOREP_S	348	19797	0
+// OP_ADDRESS	19796	615	19798
+// OP_STOREP_S	348	19798	0
+// OP_ADDRESS	19796	616	19799
+// OP_STOREP_S	348	19799	0
+// OP_ADDRESS	19796	617	19800
+// OP_STOREP_F	213	19800	0
+// OP_DONE	0	0	0
+void (entity globaldef006839) func002374 = 
+{
+    globaldef006839.field000291 = string_null;
+    globaldef006839.field000292 = string_null;
+    globaldef006839.field000293 = string_null;
+    globaldef006839.field000294 = FALSE;
+};
+
+
+// func002375
+// function begins at statement 36290, parm_start=19801
+// OP_LOAD_S	19801	614	19802
+// OP_IFNOT	19802	31	0
+// OP_LOAD_S	19801	615	19803
+// OP_IFNOT	19803	23	0
+// OP_LOAD_S	19801	616	19804
+// OP_IFNOT	19804	12	0
+// OP_STORE_V	19801	4	0
+// OP_LOAD_S	19801	614	19805
+// OP_STORE_V	19805	7	0
+// OP_LOAD_S	19801	615	19806
+// OP_STORE_V	19806	10	0
+// OP_LOAD_S	19801	616	19807
+// OP_STORE_V	19807	13	0
+// OP_LOAD_F	19801	617	19808
+// OP_STORE_V	19808	16	0
+// OP_CALL5	1072	0	0
+// OP_GOTO	9	0	0
+// OP_STORE_V	19801	4	0
+// OP_LOAD_S	19801	614	19809
+// OP_STORE_V	19809	7	0
+// OP_LOAD_S	19801	615	19810
+// OP_STORE_V	19810	10	0
+// OP_LOAD_F	19801	617	19811
+// OP_STORE_V	19811	13	0
+// OP_CALL4	1071	0	0
+// OP_GOTO	7	0	0
+// OP_STORE_V	19801	4	0
+// OP_LOAD_S	19801	614	19812
+// OP_STORE_V	19812	7	0
+// OP_LOAD_F	19801	617	19813
+// OP_STORE_V	19813	10	0
+// OP_CALL3	1070	0	0
+// OP_STORE_V	19801	4	0
+// OP_CALL1	1076	0	0
+// OP_DONE	0	0	0
+void (entity globaldef006840) func002375 = 
+{
+    
+    if(globaldef006840.field000291)
+    {
+        if(globaldef006840.field000292)
+        {
+            if(globaldef006840.field000293)
+            {
+                func002368(globaldef006840, globaldef006840.field000291, globaldef006840.field000292, globaldef006840.field000293, globaldef006840.field000294);
+            }
+            else
+            {
+                func002367(globaldef006840, globaldef006840.field000291, globaldef006840.field000292, globaldef006840.field000294);
+            }
+            
+        }
+        else
+        {
+            func002366(globaldef006840, globaldef006840.field000291, globaldef006840.field000294);
+        }
+        
+    }
+    
+    func002374(globaldef006840);
+};
+
+
+// func002376
+// function begins at statement 36325, parm_start=19814
+// OP_CALL0	457	0	0
+// OP_GT	1	539	19815
+// OP_IFNOT	19815	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19814	4	0
+// OP_CALL1	1088	0	0
+// OP_STORE_V	19814	4	0
+// OP_CALL1	1077	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef006841) func002376 = 
+{
+    
+    if(random() > RA_PLAYERSTATTIME)
+    {
+        return FALSE;
+    }
+    
+    func002281(globaldef006841);
+    func002375(globaldef006841);
+    return TRUE;
+};
+
+
+// func002377
+// function begins at statement 36335, parm_start=19816
+// OP_BITAND	821	770	19817
+// OP_IFNOT	19817	2	0
+// OP_RETURN	213	0	0
+// OP_IFNOT	37	2	0
+// OP_RETURN	213	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	3036	19818
+// OP_IFNOT	19818	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19816	619	19819
+// OP_NOT_ENT	19819	0	19820
+// OP_IFNOT	19820	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19816	618	19821
+// OP_LOAD_ENT	19816	619	19822
+// OP_EQ_E	19821	19822	19823
+// OP_IFNOT	19823	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19816	619	19824
+// OP_LOAD_S	19824	129	19825
+// OP_NE_S	19825	1236	19826
+// OP_LOAD_ENT	19816	619	19827
+// OP_LOAD_S	19827	129	19828
+// OP_NE_S	19828	1241	19829
+// OP_AND	19826	19829	19830
+// OP_IFNOT	19830	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19816	4	0
+// OP_CALL1	1090	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef006842) func002377 = 
+{
+    
+    if(globaldef000804 & OBOT_TALK)
+    {
+        return FALSE;
+    }
+    
+    
+    if(teamplay)
+    {
+        return FALSE;
+    }
+    
+    
+    if(random() > 0.1)
+    {
+        return FALSE;
+    }
+    
+    
+    if(!globaldef006842.field000296)
+    {
+        return FALSE;
+    }
+    
+    
+    if(globaldef006842.field000295 == globaldef006842.field000296)
+    {
+        return FALSE;
+    }
+    
+    
+    if((globaldef006842.field000296.classname != "player") && (globaldef006842.field000296.classname != "bot"))
+    {
+        return FALSE;
+    }
+    
+    func002283(globaldef006842);
+    return TRUE;
+};
+
+
+// func002378
+// function begins at statement 36366, parm_start=19831
+// OP_BITAND	821	770	19832
+// OP_IFNOT	19832	2	0
+// OP_RETURN	213	0	0
+// OP_IFNOT	37	2	0
+// OP_RETURN	213	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	3036	19833
+// OP_IFNOT	19833	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19831	618	19834
+// OP_NOT_ENT	19834	0	19835
+// OP_IFNOT	19835	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19831	618	19836
+// OP_LOAD_ENT	19831	181	19837
+// OP_NE_E	19836	19837	19838
+// OP_IFNOT	19838	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19831	618	19839
+// OP_LOAD_ENT	19831	619	19840
+// OP_EQ_E	19839	19840	19841
+// OP_IFNOT	19841	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_ENT	19831	618	19842
+// OP_LOAD_S	19842	129	19843
+// OP_NE_S	19843	1236	19844
+// OP_LOAD_ENT	19831	618	19845
+// OP_LOAD_S	19845	129	19846
+// OP_NE_S	19846	1241	19847
+// OP_AND	19844	19847	19848
+// OP_IFNOT	19848	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19831	165	19849
+// OP_NE_F	19849	248	19850
+// OP_IFNOT	19850	22	0
+// OP_LOAD_F	19831	575	19851
+// OP_BITAND	19851	700	19852
+// OP_NOT_F	19852	0	19853
+// OP_IFNOT	19853	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19831	190	19854
+// OP_EQ_F	19854	280	19855
+// OP_IFNOT	19855	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19831	190	19856
+// OP_EQ_F	19856	279	19857
+// OP_IFNOT	19857	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19831	189	19858
+// OP_GE	19858	228	19859
+// OP_IFNOT	19859	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19831	4	0
+// OP_CALL1	1114	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19831	4	0
+// OP_CALL1	1089	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef006843) func002378 = 
+{
+    
+    if(globaldef000804 & OBOT_TALK)
+    {
+        return FALSE;
+    }
+    
+    
+    if(teamplay)
+    {
+        return FALSE;
+    }
+    
+    
+    if(random() > 0.1)
+    {
+        return FALSE;
+    }
+    
+    
+    if(!globaldef006843.field000295)
+    {
+        return FALSE;
+    }
+    
+    
+    if(globaldef006843.field000295 != globaldef006843.enemy)
+    {
+        return FALSE;
+    }
+    
+    
+    if(globaldef006843.field000295 == globaldef006843.field000296)
+    {
+        return FALSE;
+    }
+    
+    
+    if((globaldef006843.field000295.classname != "player") && (globaldef006843.field000295.classname != "bot"))
+    {
+        return FALSE;
+    }
+    
+    
+    if(globaldef006843.deadflag != DEAD_DEAD)
+    {
+        
+        if(!(globaldef006843.field000252 & globaldef000683))
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006843.watertype == CONTENT_LAVA)
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006843.watertype == CONTENT_SLIME)
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006843.waterlevel >= MOVETYPE_WALK)
+        {
+            return FALSE;
+        }
+        
+        
+        if(func002460(globaldef006843))
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    func002282(globaldef006843);
+    return TRUE;
+};
+
+
+// func002379
+// function begins at statement 36426, parm_start=19860
+// OP_BITAND	821	770	19861
+// OP_IFNOT	19861	2	0
+// OP_RETURN	213	0	0
+// OP_IFNOT	37	2	0
+// OP_RETURN	213	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	5500	19862
+// OP_IFNOT	19862	2	0
+// OP_RETURN	213	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	3036	19863
+// OP_IFNOT	19863	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19860	165	19864
+// OP_NE_F	19864	248	19865
+// OP_IFNOT	19865	22	0
+// OP_LOAD_F	19860	575	19866
+// OP_BITAND	19866	700	19867
+// OP_NOT_F	19867	0	19868
+// OP_IFNOT	19868	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19860	190	19869
+// OP_EQ_F	19869	280	19870
+// OP_IFNOT	19870	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19860	190	19871
+// OP_EQ_F	19871	279	19872
+// OP_IFNOT	19872	2	0
+// OP_RETURN	213	0	0
+// OP_LOAD_F	19860	189	19873
+// OP_GT	19873	216	19874
+// OP_IFNOT	19874	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19860	4	0
+// OP_CALL1	1114	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	213	0	0
+// OP_STORE_V	19860	4	0
+// OP_CALL1	1092	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity globaldef006844) func002379 = 
+{
+    
+    if(globaldef000804 & OBOT_TALK)
+    {
+        return FALSE;
+    }
+    
+    
+    if(teamplay)
+    {
+        return FALSE;
+    }
+    
+    
+    if(random() > 0.01)
+    {
+        return FALSE;
+    }
+    
+    
+    if(random() > 0.1)
+    {
+        return FALSE;
+    }
+    
+    
+    if(globaldef006844.deadflag != DEAD_DEAD)
+    {
+        
+        if(!(globaldef006844.field000252 & globaldef000683))
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006844.watertype == CONTENT_LAVA)
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006844.watertype == CONTENT_SLIME)
+        {
+            return FALSE;
+        }
+        
+        
+        if(globaldef006844.waterlevel > FL_SWIM)
+        {
+            return FALSE;
+        }
+        
+        
+        if(func002460(globaldef006844))
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    func002284(globaldef006844);
+    return TRUE;
+};
+
+
+// func002380
+// function begins at statement 36467, parm_start=19875
+// OP_BITAND	821	770	19875
+// OP_IFNOT	19875	2	0
+// OP_RETURN	0	0	0
+// OP_IFNOT	37	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	5500	19876
+// OP_IFNOT	19876	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	457	0	0
+// OP_LT	1	19877	19878
+// OP_IFNOT	19878	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	457	0	0
+// OP_GT	1	3409	19879
+// OP_IFNOT	19879	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	814	810	19880
+// OP_SUB_F	19880	809	19881
+// OP_LE	19881	214	19882
+// OP_IFNOT	19882	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1093	0	0
+// OP_DONE	0	0	0
+void () func002380 = 
+{
+    
+    if(globaldef000804 & OBOT_TALK)
+    {
+        return;
+    }
+    
+    
+    if(teamplay)
+    {
+        return;
+    }
+    
+    
+    if(random() > 0.01)
+    {
+        return;
+    }
+    
+    
+    if(random() < 0.95)
+    {
+        return;
+    }
+    
+    
+    if(random() > 0.3)
+    {
+        return;
+    }
+    
+    
+    if(((activeClientCount - globaldef000793) - globaldef000792) <= TRUE)
+    {
+        return;
+    }
+    
+    func002286(self);
+};
+
+float globaldef006846;
+
+// func002381
+// function begins at statement 36492, parm_start=19885
+// OP_LOAD_V	19885	105	19895
+// OP_ADD_V	19895	5392	19898
+// OP_STORE_V	19898	19886	0
+// OP_LOAD_ENT	19885	181	19901
+// OP_LOAD_V	19901	105	19902
+// OP_ADD_V	19902	5392	19905
+// OP_STORE_V	19905	19889	0
+// OP_SUB_V	19889	19886	19908
+// OP_STORE_V	19908	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	19892	0
+// OP_RETURN	19892	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006848) func002381 = 
+{
+    local vector globaldef006849;
+    local vector globaldef006853;
+    local vector globaldef006857;
+    globaldef006849 = globaldef006848.origin + '0 0 16';
+    globaldef006853 = globaldef006848.enemy.origin + '0 0 16';
+    globaldef006857 = normalize(globaldef006853 - globaldef006849);
+    return globaldef006857;
+};
+
+
+// func002382
+// function begins at statement 36505, parm_start=19912
+// OP_LOAD_F	19912	588	19923
+// OP_STORE_F	19923	19922	0
+// OP_LT	19922	213	19924
+// OP_IFNOT	19924	2	0
+// OP_STORE_F	213	19922	0
+// OP_GT	19922	228	19925
+// OP_IFNOT	19925	2	0
+// OP_STORE_F	228	19922	0
+// OP_LOAD_V	19912	105	19926
+// OP_STORE_V	19926	19913	0
+// OP_LOAD_F	19912	97	19929
+// OP_LOAD_F	19912	145	19930
+// OP_MUL_F	19930	5599	19931
+// OP_ADD_F	19929	19931	19932
+// OP_STORE_F	19932	19915	0
+// OP_LOAD_ENT	19912	181	19933
+// OP_LOAD_V	19933	105	19934
+// OP_STORE_V	19934	19916	0
+// OP_STORE_V	19913	4	0
+// OP_STORE_V	19916	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	19912	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	19937
+// OP_IFNOT	19937	5	0
+// OP_LOAD_ENT	19912	181	19938
+// OP_LOAD_V	19938	166	19939
+// OP_ADD_V	19916	19939	19942
+// OP_STORE_V	19942	19916	0
+// OP_SUB_V	19916	19913	19945
+// OP_STORE_V	19945	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	19919	0
+// OP_SUB_F	230	19922	19948
+// OP_CALL0	5370	0	0
+// OP_MUL_F	19948	1	19949
+// OP_MUL_FV	19949	19950	19953
+// OP_ADD_V	19919	19953	19956
+// OP_STORE_V	19956	19919	0
+// OP_SUB_F	230	19922	19959
+// OP_CALL0	5370	0	0
+// OP_MUL_F	19959	1	19960
+// OP_MUL_FV	19960	19950	19961
+// OP_ADD_V	19919	19961	19964
+// OP_STORE_V	19964	19919	0
+// OP_STORE_V	19919	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	19919	0
+// OP_RETURN	19919	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006862) func002382 = 
+{
+    local vector globaldef006863;
+    local vector globaldef006867;
+    local vector globaldef006871;
+    local float globaldef006875;
+    globaldef006875 = globaldef006862.field000265;
+    
+    if(globaldef006875 < FALSE)
+    {
+        globaldef006875 = FALSE;
+    }
+    
+    
+    if(globaldef006875 > MOVETYPE_WALK)
+    {
+        globaldef006875 = MOVETYPE_WALK;
+    }
+    
+    globaldef006863 = globaldef006862.origin;
+    globaldef006863_z = globaldef006862.absmin_z + (globaldef006862.size_z * 0.7);
+    globaldef006867 = globaldef006862.enemy.origin;
+    traceline(globaldef006863, globaldef006867, TRUE, globaldef006862);
+    
+    if(trace_fraction != TRUE)
+    {
+        globaldef006867 = globaldef006867 + globaldef006862.enemy.view_ofs;
+    }
+    
+    globaldef006871 = normalize(globaldef006867 - globaldef006863);
+    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * crandom()) * '0.05 0.05 0');
+    globaldef006871 = globaldef006871 + (((MOVETYPE_FLY - globaldef006875) * crandom()) * '0.05 0.05 0');
+    globaldef006871 = normalize(globaldef006871);
+    return globaldef006871;
+};
+
+
+// func002383
+// function begins at statement 36555, parm_start=19968
+// OP_LOAD_V	19968	105	19975
+// OP_ADD_V	19975	5392	19978
+// OP_STORE_V	19978	19969	0
+// OP_LOAD_ENT	19968	181	19981
+// OP_LOAD_V	19981	105	19982
+// OP_STORE_V	19982	19972	0
+// OP_STORE_V	19969	4	0
+// OP_STORE_V	19972	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	19968	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	19985
+// OP_IFNOT	19985	5	0
+// OP_LOAD_ENT	19968	181	19986
+// OP_LOAD_V	19986	166	19987
+// OP_ADD_V	19972	19987	19990
+// OP_STORE_V	19990	19972	0
+// OP_LOAD_ENT	19968	181	19993
+// OP_LOAD_V	19993	113	19994
+// OP_MUL_VF	19994	1283	19997
+// OP_SUB_V	19972	19969	20000
+// OP_STORE_V	20000	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_VF	19997	1	20003
+// OP_ADD_V	19972	20003	20006
+// OP_STORE_V	20006	19972	0
+// OP_SUB_V	19972	19969	20009
+// OP_RETURN	20009	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006878) func002383 = 
+{
+    local vector globaldef006879;
+    local vector globaldef006883;
+    globaldef006879 = globaldef006878.origin + '0 0 16';
+    globaldef006883 = globaldef006878.enemy.origin;
+    traceline(globaldef006879, globaldef006883, TRUE, globaldef006878);
+    
+    if(trace_fraction != TRUE)
+    {
+        globaldef006883 = globaldef006883 + globaldef006878.enemy.view_ofs;
+    }
+    
+    globaldef006883 = globaldef006883 + ((globaldef006878.enemy.velocity * 0.001) * (vlen(globaldef006883 - globaldef006879)));
+    return globaldef006883 - globaldef006879;
+};
+
+
+// func002384
+// function begins at statement 36584, parm_start=20013
+// OP_LOAD_F	20013	588	20031
+// OP_STORE_F	20031	20030	0
+// OP_LT	20030	213	20032
+// OP_IFNOT	20032	2	0
+// OP_STORE_F	213	20030	0
+// OP_GT	20030	228	20033
+// OP_IFNOT	20033	2	0
+// OP_STORE_F	228	20030	0
+// OP_LOAD_V	20013	105	20034
+// OP_ADD_V	20034	5392	20037
+// OP_STORE_V	20037	20014	0
+// OP_LOAD_ENT	20013	181	20040
+// OP_LOAD_V	20040	105	20041
+// OP_STORE_V	20041	20017	0
+// OP_STORE_V	20014	4	0
+// OP_STORE_V	20017	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20013	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	20044
+// OP_IFNOT	20044	5	0
+// OP_LOAD_ENT	20013	181	20045
+// OP_LOAD_V	20045	166	20046
+// OP_ADD_V	20017	20046	20049
+// OP_STORE_V	20049	20017	0
+// OP_LOAD_ENT	20013	181	20052
+// OP_LOAD_V	20052	113	20053
+// OP_MUL_VF	20053	20056	20057
+// OP_SUB_V	20017	20014	20060
+// OP_STORE_V	20060	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_VF	20057	1	20063
+// OP_STORE_V	20063	20020	0
+// OP_STORE_V	20014	4	0
+// OP_ADD_V	20017	20020	20066
+// OP_STORE_V	20066	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20013	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	20069
+// OP_IFNOT	20069	3	0
+// OP_ADD_V	20017	20020	20070
+// OP_STORE_V	20070	20017	0
+// OP_LOAD_F	20013	108	20073
+// OP_LOAD_ENT	20013	181	20074
+// OP_LOAD_F	20074	108	20075
+// OP_GE	20073	20075	20076
+// OP_IFNOT	20076	35	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	216	20077
+// OP_ADD_F	20077	3263	20078
+// OP_STORE_F	20078	20029	0
+// OP_LOAD_F	20013	588	20079
+// OP_GT	20079	20029	20080
+// OP_IFNOT	20080	28	0
+// OP_STORE_V	20017	20023	0
+// OP_LOAD_ENT	20013	181	20081
+// OP_LOAD_F	20081	137	20082
+// OP_ADD_F	20025	20082	20083
+// OP_SUB_F	20083	230	20084
+// OP_STORE_F	20084	20025	0
+// OP_STORE_V	20014	4	0
+// OP_STORE_V	20023	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20013	13	0
+// OP_CALL4	466	0	0
+// OP_SUB_F	73	20025	20085
+// OP_STORE_V	20085	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	1470	20086
+// OP_IFNOT	20086	12	0
+// OP_SUB_V	71	20023	20087
+// OP_STORE_V	20087	4	0
+// OP_CALL1	462	0	0
+// OP_LT	1	1997	20090
+// OP_IFNOT	20090	7	0
+// OP_SUB_V	71	20014	20091
+// OP_STORE_V	20091	4	0
+// OP_CALL1	462	0	0
+// OP_GT	1	2003	20094
+// OP_IFNOT	20094	2	0
+// OP_STORE_V	20023	20017	0
+// OP_SUB_V	20017	20014	20095
+// OP_STORE_V	20095	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20026	0
+// OP_SUB_F	228	20030	20098
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20098	1	20099
+// OP_MUL_FV	20099	20100	20103
+// OP_ADD_V	20026	20103	20106
+// OP_STORE_V	20106	20026	0
+// OP_SUB_F	228	20030	20109
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20109	1	20110
+// OP_MUL_FV	20110	20111	20114
+// OP_ADD_V	20026	20114	20117
+// OP_STORE_V	20117	20026	0
+// OP_STORE_V	20026	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20026	0
+// OP_RETURN	20026	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006888) func002384 = 
+{
+    local vector globaldef006889;
+    local vector globaldef006893;
+    local vector globaldef006897;
+    local vector globaldef006901;
+    local vector globaldef006905;
+    local float globaldef006909;
+    local float globaldef006910;
+    globaldef006910 = globaldef006888.field000265;
+    
+    if(globaldef006910 < FALSE)
+    {
+        globaldef006910 = FALSE;
+    }
+    
+    
+    if(globaldef006910 > MOVETYPE_WALK)
+    {
+        globaldef006910 = MOVETYPE_WALK;
+    }
+    
+    globaldef006889 = globaldef006888.origin + '0 0 16';
+    globaldef006893 = globaldef006888.enemy.origin;
+    traceline(globaldef006889, globaldef006893, TRUE, globaldef006888);
+    
+    if(trace_fraction != TRUE)
+    {
+        globaldef006893 = globaldef006893 + globaldef006888.enemy.view_ofs;
+    }
+    
+    globaldef006897 = (globaldef006888.enemy.velocity * 0.001) * (vlen(globaldef006893 - globaldef006889));
+    traceline(globaldef006889, globaldef006893 + globaldef006897, TRUE, globaldef006888);
+    
+    if(trace_fraction == TRUE)
+    {
+        globaldef006893 = globaldef006893 + globaldef006897;
+    }
+    
+    
+    if(globaldef006888.origin_z >= globaldef006888.enemy.origin_z)
+    {
+        globaldef006909 = (random() * FL_SWIM) + 0.9;
+        
+        if(globaldef006888.field000265 > globaldef006909)
+        {
+            globaldef006901 = globaldef006893;
+            globaldef006901_z = (globaldef006901_z + globaldef006888.enemy.mins_z) - MOVETYPE_FLY;
+            traceline(globaldef006889, globaldef006901, TRUE, globaldef006888);
+            
+            if((fabs(trace_endpos_z - globaldef006901_z)) < 50)
+            {
+                
+                if((vlen(trace_endpos - globaldef006901)) < 100)
+                {
+                    
+                    if((vlen(trace_endpos - globaldef006889)) > 150)
+                    {
+                        globaldef006893 = globaldef006901;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    globaldef006905 = normalize(globaldef006893 - globaldef006889);
+    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * crandom()) * '0.06 0 0');
+    globaldef006905 = globaldef006905 + (((MOVETYPE_WALK - globaldef006910) * crandom()) * '0 0.06 0');
+    globaldef006905 = normalize(globaldef006905);
+    return globaldef006905;
+};
+
+
+// func002385
+// function begins at statement 36687, parm_start=20121
+// OP_LOAD_F	20121	588	20139
+// OP_STORE_F	20139	20138	0
+// OP_LT	20138	213	20140
+// OP_IFNOT	20140	2	0
+// OP_STORE_F	213	20138	0
+// OP_GT	20138	228	20141
+// OP_IFNOT	20141	2	0
+// OP_STORE_F	228	20138	0
+// OP_LOAD_V	20121	105	20142
+// OP_STORE_V	20142	20122	0
+// OP_LOAD_ENT	20121	181	20145
+// OP_LOAD_V	20145	105	20146
+// OP_STORE_V	20146	20125	0
+// OP_STORE_V	20122	4	0
+// OP_STORE_V	20125	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20121	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	20149
+// OP_IFNOT	20149	5	0
+// OP_LOAD_ENT	20121	181	20150
+// OP_LOAD_V	20150	166	20151
+// OP_ADD_V	20125	20151	20154
+// OP_STORE_V	20154	20125	0
+// OP_LOAD_ENT	20121	181	20157
+// OP_LOAD_V	20157	113	20158
+// OP_MUL_VF	20158	20161	20162
+// OP_SUB_V	20125	20122	20165
+// OP_STORE_V	20165	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_VF	20162	1	20168
+// OP_ADD_V	20125	20168	20171
+// OP_STORE_V	20171	20125	0
+// OP_STORE_V	20125	20131	0
+// OP_STORE_F	213	20133	0
+// OP_LOAD_V	20121	105	20174
+// OP_STORE_V	20174	20134	0
+// OP_STORE_F	213	20136	0
+// OP_SUB_V	20131	20134	20177
+// OP_STORE_V	20177	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_F	1	798	20180
+// OP_STORE_F	20180	20137	0
+// OP_GT	20137	214	20181
+// OP_IFNOT	20181	8	0
+// OP_LT	20137	791	20182
+// OP_IFNOT	20182	5	0
+// OP_SUB_F	20137	214	20183
+// OP_MUL_F	797	20183	20184
+// OP_ADD_F	20127	20184	20185
+// OP_STORE_F	20185	20127	0
+// OP_GOTO	5	0	0
+// OP_SUB_F	214	20137	20186
+// OP_MUL_F	797	20186	20187
+// OP_SUB_F	20127	20187	20188
+// OP_STORE_F	20188	20127	0
+// OP_SUB_V	20125	20122	20189
+// OP_STORE_V	20189	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20128	0
+// OP_SUB_F	228	20138	20192
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20192	1	20193
+// OP_MUL_FV	20193	20100	20194
+// OP_ADD_V	20128	20194	20197
+// OP_STORE_V	20197	20128	0
+// OP_SUB_F	228	20138	20200
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20200	1	20201
+// OP_MUL_FV	20201	20111	20202
+// OP_ADD_V	20128	20202	20205
+// OP_STORE_V	20205	20128	0
+// OP_STORE_V	20128	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20128	0
+// OP_RETURN	20128	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006915) func002385 = 
+{
+    local vector globaldef006916;
+    local vector globaldef006920;
+    local vector globaldef006924;
+    local vector globaldef006928;
+    local vector globaldef006932;
+    local float globaldef006936;
+    local float globaldef006937;
+    globaldef006937 = globaldef006915.field000265;
+    
+    if(globaldef006937 < FALSE)
+    {
+        globaldef006937 = FALSE;
+    }
+    
+    
+    if(globaldef006937 > MOVETYPE_WALK)
+    {
+        globaldef006937 = MOVETYPE_WALK;
+    }
+    
+    globaldef006916 = globaldef006915.origin;
+    globaldef006920 = globaldef006915.enemy.origin;
+    traceline(globaldef006916, globaldef006920, TRUE, globaldef006915);
+    
+    if(trace_fraction != TRUE)
+    {
+        globaldef006920 = globaldef006920 + globaldef006915.enemy.view_ofs;
+    }
+    
+    globaldef006920 = globaldef006920 + ((globaldef006915.enemy.velocity * 0.001) * (vlen(globaldef006920 - globaldef006916)));
+    globaldef006928 = globaldef006920;
+    globaldef006928_z = FALSE;
+    globaldef006932 = globaldef006915.origin;
+    globaldef006932_z = FALSE;
+    globaldef006936 = (vlen(globaldef006928 - globaldef006932)) * globaldef000781;
+    if(globaldef006936 > TRUE)
+    {
+        
+        if(globaldef006936 < GLOBALDEF774_12)
+        {
+            globaldef006920_z = globaldef006920_z + (globaldef000780 * (globaldef006936 - TRUE));
+        }
+        
+    }
+    else
+    {
+        globaldef006920_z = globaldef006920_z - (globaldef000780 * (TRUE - globaldef006936));
+    }
+    
+    globaldef006924 = normalize(globaldef006920 - globaldef006916);
+    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * crandom()) * '0.06 0 0');
+    globaldef006924 = globaldef006924 + (((MOVETYPE_WALK - globaldef006937) * crandom()) * '0 0.06 0');
+    globaldef006924 = normalize(globaldef006924);
+    return globaldef006924;
+};
+
+
+// func002386
+// function begins at statement 36764, parm_start=20209
+// OP_LOAD_F	20209	588	20220
+// OP_STORE_F	20220	20219	0
+// OP_LT	20219	213	20221
+// OP_IFNOT	20221	2	0
+// OP_STORE_F	213	20219	0
+// OP_GT	20219	228	20222
+// OP_IFNOT	20222	2	0
+// OP_STORE_F	228	20219	0
+// OP_LOAD_V	20209	105	20223
+// OP_ADD_V	20223	5392	20226
+// OP_STORE_V	20226	20210	0
+// OP_LOAD_ENT	20209	181	20229
+// OP_LOAD_V	20229	105	20230
+// OP_ADD_V	20230	5392	20233
+// OP_STORE_V	20233	20213	0
+// OP_STORE_V	20210	4	0
+// OP_STORE_V	20213	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20209	13	0
+// OP_CALL4	466	0	0
+// OP_NE_F	70	214	20236
+// OP_IFNOT	20236	5	0
+// OP_LOAD_ENT	20209	181	20237
+// OP_LOAD_V	20237	166	20238
+// OP_ADD_V	20213	20238	20241
+// OP_STORE_V	20241	20213	0
+// OP_SUB_V	20213	20210	20244
+// OP_STORE_V	20244	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20216	0
+// OP_SUB_F	20247	20219	20248
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20248	1	20249
+// OP_MUL_FV	20249	20250	20253
+// OP_ADD_V	20216	20253	20256
+// OP_STORE_V	20256	20216	0
+// OP_SUB_F	20247	20219	20259
+// OP_CALL0	5370	0	0
+// OP_MUL_F	20259	1	20260
+// OP_MUL_FV	20260	20261	20264
+// OP_ADD_V	20216	20264	20267
+// OP_STORE_V	20267	20216	0
+// OP_STORE_V	20216	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20216	0
+// OP_RETURN	20216	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006940) func002386 = 
+{
+    local vector globaldef006941;
+    local vector globaldef006945;
+    local vector globaldef006949;
+    local float globaldef006953;
+    globaldef006953 = globaldef006940.field000265;
+    
+    if(globaldef006953 < FALSE)
+    {
+        globaldef006953 = FALSE;
+    }
+    
+    
+    if(globaldef006953 > MOVETYPE_WALK)
+    {
+        globaldef006953 = MOVETYPE_WALK;
+    }
+    
+    globaldef006941 = globaldef006940.origin + '0 0 16';
+    globaldef006945 = globaldef006940.enemy.origin + '0 0 16';
+    traceline(globaldef006941, globaldef006945, TRUE, globaldef006940);
+    
+    if(trace_fraction != TRUE)
+    {
+        globaldef006945 = globaldef006945 + globaldef006940.enemy.view_ofs;
+    }
+    
+    globaldef006949 = normalize(globaldef006945 - globaldef006941);
+    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * crandom()) * '0.05 0 0');
+    globaldef006949 = globaldef006949 + (((3.05 - globaldef006953) * crandom()) * '0 0.05 0');
+    globaldef006949 = normalize(globaldef006949);
+    return globaldef006949;
+};
+
+
+// func002387
+// function begins at statement 36811, parm_start=20271
+// OP_LOAD_F	20271	154	20272
+// OP_EQ_F	20272	253	20273
+// OP_IFNOT	20273	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	19884	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	49	0	0
+// OP_LOAD_F	20271	154	20274
+// OP_EQ_F	20274	254	20275
+// OP_IFNOT	20275	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	19911	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	42	0	0
+// OP_LOAD_F	20271	154	20276
+// OP_EQ_F	20276	255	20277
+// OP_IFNOT	20277	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	19911	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	35	0	0
+// OP_LOAD_F	20271	154	20278
+// OP_EQ_F	20278	256	20279
+// OP_IFNOT	20279	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	19967	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	28	0	0
+// OP_LOAD_F	20271	154	20280
+// OP_EQ_F	20280	257	20281
+// OP_IFNOT	20281	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	19967	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	21	0	0
+// OP_LOAD_F	20271	154	20282
+// OP_EQ_F	20282	258	20283
+// OP_IFNOT	20283	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	20120	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	14	0	0
+// OP_LOAD_F	20271	154	20284
+// OP_EQ_F	20284	259	20285
+// OP_IFNOT	20285	5	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	20012	0	0
+// OP_RETURN	1	0	0
+// OP_GOTO	7	0	0
+// OP_LOAD_F	20271	154	20286
+// OP_EQ_F	20286	260	20287
+// OP_IFNOT	20287	4	0
+// OP_STORE_V	20271	4	0
+// OP_CALL1	20208	0	0
+// OP_RETURN	1	0	0
+// OP_DONE	0	0	0
+vector (entity globaldef006958) func002387 = 
+{
+    if(globaldef006958.weapon == IT_AXE)
+    {
+        return func002381(globaldef006958);
+    }
+    else
+    {
+        if(globaldef006958.weapon == IT_SHOTGUN)
+        {
+            return func002382(globaldef006958);
+        }
+        else
+        {
+            if(globaldef006958.weapon == IT_SUPER_SHOTGUN)
+            {
+                return func002382(globaldef006958);
+            }
+            else
+            {
+                if(globaldef006958.weapon == IT_NAILGUN)
+                {
+                    return func002383(globaldef006958);
+                }
+                else
+                {
+                    if(globaldef006958.weapon == IT_SUPER_NAILGUN)
+                    {
+                        return func002383(globaldef006958);
+                    }
+                    else
+                    {
+                        if(globaldef006958.weapon == IT_GRENADE_LAUNCHER)
+                        {
+                            return func002385(globaldef006958);
+                        }
+                        else
+                        {
+                            if(globaldef006958.weapon == IT_ROCKET_LAUNCHER)
+                            {
+                                return func002384(globaldef006958);
+                            }
+                            else
+                            {
+                                
+                                if(globaldef006958.weapon == IT_LIGHTNING)
+                                {
+                                    return func002386(globaldef006958);
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+};
+
+
+// func002388
+// function begins at statement 36867, parm_start=20288
+// OP_LOAD_ENT	20288	181	20295
+// OP_NOT_ENT	20295	0	20296
+// OP_IFNOT	20296	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	20288	4	0
+// OP_CALL1	20270	0	0
+// OP_STORE_V	1	20289	0
+// OP_STORE_V	20289	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	20292	0
+// OP_ADDRESS	20288	191	20297
+// OP_STOREP_F	20293	20297	0
+// OP_ADDRESS	20288	611	20298
+// OP_STOREP_F	20292	20298	0
+// OP_LOAD_F	20288	611	20299
+// OP_GT	20299	1296	20300
+// OP_IFNOT	20300	5	0
+// OP_ADDRESS	20288	611	20301
+// OP_LOAD_F	20288	611	20302
+// OP_SUB_F	20302	1298	20303
+// OP_STOREP_F	20303	20301	0
+// OP_DONE	0	0	0
+void (entity globaldef006959) func002388 = 
+{
+    local vector globaldef006960;
+    local vector globaldef006964;
+    
+    if(!globaldef006959.enemy)
+    {
+        return;
+    }
+    
+    globaldef006960 = func002387(globaldef006959);
+    globaldef006964 = vectoangles(globaldef006960);
+    globaldef006959.ideal_yaw = globaldef006964_y;
+    globaldef006959.field000288 = globaldef006964_x;
+    
+    if(globaldef006959.field000288 > 180)
+    {
+        globaldef006959.field000288 = globaldef006959.field000288 - 360;
+    }
+    
+};
+
+
+// func002389
+// function begins at statement 36889, parm_start=20305
+// OP_LOAD_F	20305	382	20306
+// OP_GT	20306	31	20307
+// OP_IFNOT	20307	13	0
+// OP_LOAD_F	20305	389	20308
+// OP_LT	20308	31	20309
+// OP_IFNOT	20309	10	0
+// OP_ADDRESS	20305	389	20310
+// OP_ADD_F	31	214	20311
+// OP_STOREP_F	20311	20310	0
+// OP_STORE_V	20305	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	5078	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_DONE	0	0	0
+void (entity globaldef006969) func002389 = 
+{
+    
+    if(globaldef006969.super_damage_finished > time)
+    {
+        
+        if(globaldef006969.super_sound < time)
+        {
+            globaldef006969.super_sound = time + TRUE;
+            sound(globaldef006969, CHAN_BODY, "items/damage3.wav", TRUE, ATTN_NORM);
+        }
+        
+    }
+    
+};
+
+
+// func002390
+// function begins at statement 36905, parm_start=20313
+// OP_LOAD_F	20313	378	20317
+// OP_GT	20317	31	20318
+// OP_IFNOT	20318	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_ENT	28	20316	0
+// OP_STORE_ENT	20313	28	0
+// OP_CALL0	6252	0	0
+// OP_NOT_F	1	0	20319
+// OP_IFNOT	20319	3	0
+// OP_STORE_ENT	20316	28	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	20313	4	0
+// OP_CALL1	20304	0	0
+// OP_LOAD_F	20313	588	20320
+// OP_SUB_F	228	20320	20321
+// OP_CALL0	457	0	0
+// OP_MUL_F	20321	1	20322
+// OP_MUL_F	20322	3267	20323
+// OP_STORE_F	20323	20314	0
+// OP_LOAD_V	20313	175	20324
+// OP_STORE_V	20324	4	0
+// OP_CALL1	452	0	0
+// OP_ADDRESS	20313	393	20327
+// OP_ADD_F	31	214	20328
+// OP_STOREP_F	20328	20327	0
+// OP_LOAD_F	20313	154	20329
+// OP_EQ_F	20329	253	20330
+// OP_IFNOT	20330	31	0
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	20315	0
+// OP_LT	20315	6277	20331
+// OP_IFNOT	20331	4	0
+// OP_ADDRESS	20313	148	20332
+// OP_STOREP_FNC	1169	20332	0
+// OP_GOTO	13	0	0
+// OP_LT	20315	539	20333
+// OP_IFNOT	20333	4	0
+// OP_ADDRESS	20313	148	20334
+// OP_STOREP_FNC	1170	20334	0
+// OP_GOTO	8	0	0
+// OP_LT	20315	6280	20335
+// OP_IFNOT	20335	4	0
+// OP_ADDRESS	20313	148	20336
+// OP_STOREP_FNC	1171	20336	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	20313	148	20337
+// OP_STOREP_FNC	1172	20337	0
+// OP_ADDRESS	20313	378	20338
+// OP_ADD_F	31	539	20339
+// OP_ADD_F	20339	20314	20340
+// OP_STOREP_F	20340	20338	0
+// OP_STORE_V	20313	4	0
+// OP_STORE_V	326	7	0
+// OP_STORE_V	6276	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_GOTO	62	0	0
+// OP_LOAD_F	20313	154	20341
+// OP_EQ_F	20341	254	20342
+// OP_IFNOT	20342	9	0
+// OP_ADDRESS	20313	148	20343
+// OP_STOREP_FNC	1168	20343	0
+// OP_ADDRESS	20313	378	20344
+// OP_ADD_F	31	539	20345
+// OP_ADD_F	20345	20314	20346
+// OP_STOREP_F	20346	20344	0
+// OP_CALL0	5625	0	0
+// OP_GOTO	51	0	0
+// OP_LOAD_F	20313	154	20347
+// OP_EQ_F	20347	255	20348
+// OP_IFNOT	20348	9	0
+// OP_ADDRESS	20313	148	20349
+// OP_STOREP_FNC	1168	20349	0
+// OP_ADDRESS	20313	378	20350
+// OP_ADD_F	31	5599	20351
+// OP_ADD_F	20351	20314	20352
+// OP_STOREP_F	20352	20350	0
+// OP_CALL0	5655	0	0
+// OP_GOTO	40	0	0
+// OP_LOAD_F	20313	154	20353
+// OP_EQ_F	20353	256	20354
+// OP_IFNOT	20354	4	0
+// OP_ADDRESS	20313	148	20355
+// OP_STOREP_FNC	1173	20355	0
+// OP_GOTO	34	0	0
+// OP_LOAD_F	20313	154	20356
+// OP_EQ_F	20356	257	20357
+// OP_IFNOT	20357	4	0
+// OP_ADDRESS	20313	148	20358
+// OP_STOREP_FNC	1173	20358	0
+// OP_GOTO	28	0	0
+// OP_LOAD_F	20313	154	20359
+// OP_EQ_F	20359	258	20360
+// OP_IFNOT	20360	9	0
+// OP_ADDRESS	20313	148	20361
+// OP_STOREP_FNC	1175	20361	0
+// OP_ADDRESS	20313	378	20362
+// OP_ADD_F	31	4474	20363
+// OP_ADD_F	20363	20314	20364
+// OP_STOREP_F	20364	20362	0
+// OP_CALL0	5931	0	0
+// OP_GOTO	17	0	0
+// OP_LOAD_F	20313	154	20365
+// OP_EQ_F	20365	259	20366
+// OP_IFNOT	20366	9	0
+// OP_ADDRESS	20313	148	20367
+// OP_STOREP_FNC	1175	20367	0
+// OP_ADDRESS	20313	378	20368
+// OP_ADD_F	31	4478	20369
+// OP_ADD_F	20369	20314	20370
+// OP_STOREP_F	20370	20368	0
+// OP_CALL0	5748	0	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	20313	154	20371
+// OP_EQ_F	20371	260	20372
+// OP_IFNOT	20372	3	0
+// OP_ADDRESS	20313	148	20373
+// OP_STOREP_FNC	1174	20373	0
+// OP_STORE_ENT	20316	28	0
+// OP_DONE	0	0	0
+void (entity globaldef006971) func002390 = 
+{
+    local float globaldef006972;
+    local float globaldef006973;
+    local entity globaldef006974;
+    
+    if(globaldef006971.attack_finished > time)
+    {
+        return;
+    }
+    
+    globaldef006974 = self;
+    self = globaldef006971;
+    
+    if(!W_CheckNoAmmo())
+    {
+        self = globaldef006974;
+        return;
+    }
+    
+    func002389(globaldef006971);
+    globaldef006972 = ((MOVETYPE_WALK - globaldef006971.field000265) * random()) * 0.2;
+    makevectors(globaldef006971.v_angle);
+    globaldef006971.show_hostile = time + TRUE;
+    if(globaldef006971.weapon == IT_AXE)
+    {
+        globaldef006973 = random();
+        if(globaldef006973 < 0.25)
+        {
+            globaldef006971.think = func002532;
+        }
+        else
+        {
+            if(globaldef006973 < RA_PLAYERSTATTIME)
+            {
+                globaldef006971.think = func002536;
+            }
+            else
+            {
+                if(globaldef006973 < 0.75)
+                {
+                    globaldef006971.think = func002540;
+                }
+                else
+                {
+                    globaldef006971.think = func002544;
+                }
+                
+            }
+            
+        }
+        
+        globaldef006971.attack_finished = (time + RA_PLAYERSTATTIME) + globaldef006972;
+        sound(globaldef006971, CHAN_WEAPON, "weapons/ax1.wav", TRUE, ATTN_NORM);
+    }
+    else
+    {
+        if(globaldef006971.weapon == IT_SHOTGUN)
+        {
+            globaldef006971.think = func002526;
+            globaldef006971.attack_finished = (time + RA_PLAYERSTATTIME) + globaldef006972;
+            W_FireShotgun();
+        }
+        else
+        {
+            if(globaldef006971.weapon == IT_SUPER_SHOTGUN)
+            {
+                globaldef006971.think = func002526;
+                globaldef006971.attack_finished = (time + 0.7) + globaldef006972;
+                W_FireSuperShotgun();
+            }
+            else
+            {
+                if(globaldef006971.weapon == IT_NAILGUN)
+                {
+                    globaldef006971.think = func002548;
+                }
+                else
+                {
+                    if(globaldef006971.weapon == IT_SUPER_NAILGUN)
+                    {
+                        globaldef006971.think = func002548;
+                    }
+                    else
+                    {
+                        if(globaldef006971.weapon == IT_GRENADE_LAUNCHER)
+                        {
+                            globaldef006971.think = func002552;
+                            globaldef006971.attack_finished = (time + 0.6) + globaldef006972;
+                            W_FireGrenade();
+                        }
+                        else
+                        {
+                            if(globaldef006971.weapon == IT_ROCKET_LAUNCHER)
+                            {
+                                globaldef006971.think = func002552;
+                                globaldef006971.attack_finished = (time + 0.8) + globaldef006972;
+                                W_FireRocket();
+                            }
+                            else
+                            {
+                                
+                                if(globaldef006971.weapon == IT_LIGHTNING)
+                                {
+                                    globaldef006971.think = func002550;
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    self = globaldef006974;
+};
+
+
+// func002391
+// function begins at statement 37026, parm_start=20374
+// OP_LOAD_F	20374	378	20387
+// OP_GT	20387	31	20388
+// OP_IFNOT	20388	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	20374	194	20389
+// OP_STORE_ENT	20389	20384	0
+// OP_LOAD_V	20374	105	20390
+// OP_ADD_V	20390	5392	20393
+// OP_STORE_V	20393	20381	0
+// OP_LOAD_ENT	20384	194	20396
+// OP_LOAD_V	20396	94	20397
+// OP_LOAD_ENT	20384	194	20400
+// OP_LOAD_V	20400	98	20401
+// OP_ADD_V	20397	20401	20404
+// OP_MUL_VF	20404	539	20407
+// OP_STORE_V	20407	20375	0
+// OP_SUB_V	20375	20381	20410
+// OP_STORE_V	20410	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20375	0
+// OP_STORE_V	20375	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	20378	0
+// OP_GT	20378	1296	20413
+// OP_IFNOT	20413	3	0
+// OP_SUB_F	20378	1298	20414
+// OP_STORE_F	20414	20378	0
+// OP_ADDRESS	20374	611	20415
+// OP_STOREP_F	20378	20415	0
+// OP_ADDRESS	20374	191	20416
+// OP_STOREP_F	20379	20416	0
+// OP_LOAD_V	20374	175	20417
+// OP_STORE_V	20417	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_F	20374	162	20420
+// OP_BITAND	20420	253	20421
+// OP_IFNOT	20421	20	0
+// OP_STORE_V	20381	4	0
+// OP_MUL_VF	59	2019	20422
+// OP_ADD_V	20381	20422	20425
+// OP_STORE_V	20425	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	20374	13	0
+// OP_CALL4	466	0	0
+// OP_LOAD_ENT	20384	194	20428
+// OP_EQ_E	78	20428	20429
+// OP_IFNOT	20429	10	0
+// OP_ADDRESS	20374	154	20430
+// OP_STOREP_F	253	20430	0
+// OP_STORE_ENT	28	20385	0
+// OP_STORE_ENT	20374	28	0
+// OP_CALL0	4295	0	0
+// OP_STORE_ENT	20385	28	0
+// OP_STORE_V	20374	4	0
+// OP_CALL1	20312	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	20374	162	20431
+// OP_BITAND	20431	254	20432
+// OP_LOAD_F	20374	158	20433
+// OP_GT	20433	213	20434
+// OP_AND	20432	20434	20435
+// OP_IFNOT	20435	20	0
+// OP_STORE_V	20381	4	0
+// OP_MUL_VF	59	1663	20436
+// OP_ADD_V	20381	20436	20439
+// OP_STORE_V	20439	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	20374	13	0
+// OP_CALL4	466	0	0
+// OP_LOAD_ENT	20384	194	20442
+// OP_EQ_E	78	20442	20443
+// OP_IFNOT	20443	9	0
+// OP_ADDRESS	20374	154	20444
+// OP_STOREP_F	254	20444	0
+// OP_STORE_ENT	28	20385	0
+// OP_STORE_ENT	20374	28	0
+// OP_CALL0	4295	0	0
+// OP_STORE_ENT	20385	28	0
+// OP_STORE_V	20374	4	0
+// OP_CALL1	20312	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	20374	162	20445
+// OP_BITAND	20445	256	20446
+// OP_LOAD_F	20374	159	20447
+// OP_GT	20447	213	20448
+// OP_AND	20446	20448	20449
+// OP_IFNOT	20449	20	0
+// OP_STORE_V	20381	4	0
+// OP_MUL_VF	59	1663	20450
+// OP_ADD_V	20381	20450	20453
+// OP_STORE_V	20453	7	0
+// OP_STORE_V	213	10	0
+// OP_STORE_V	20374	13	0
+// OP_CALL4	466	0	0
+// OP_LOAD_ENT	20384	194	20456
+// OP_EQ_E	78	20456	20457
+// OP_IFNOT	20457	9	0
+// OP_ADDRESS	20374	154	20458
+// OP_STOREP_F	256	20458	0
+// OP_STORE_ENT	28	20385	0
+// OP_STORE_ENT	20374	28	0
+// OP_CALL0	4295	0	0
+// OP_STORE_ENT	20385	28	0
+// OP_STORE_V	20374	4	0
+// OP_CALL1	20312	0	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	20374	371	20459
+// OP_SUB_F	31	214	20460
+// OP_STOREP_F	20460	20459	0
+// OP_DONE	0	0	0
+void (entity globaldef006975) func002391 = 
+{
+    local vector globaldef006976;
+    local vector globaldef006980;
+    local vector globaldef006984;
+    local entity globaldef006988;
+    local entity globaldef006989;
+    local float globaldef006990;
+    
+    if(globaldef006975.attack_finished > time)
+    {
+        return;
+    }
+    
+    globaldef006988 = globaldef006975.goalentity;
+    globaldef006984 = globaldef006975.origin + '0 0 16';
+    globaldef006976 = (globaldef006988.goalentity.absmin + globaldef006988.goalentity.absmax) * RA_PLAYERSTATTIME;
+    globaldef006976 = normalize(globaldef006976 - globaldef006984);
+    globaldef006980 = vectoangles(globaldef006976);
+    
+    if(globaldef006980_x > 180)
+    {
+        globaldef006980_x = globaldef006980_x - 360;
+    }
+    
+    globaldef006975.field000288 = globaldef006980_x;
+    globaldef006975.ideal_yaw = globaldef006980_y;
+    makevectors(globaldef006975.v_angle);
+    
+    if(globaldef006975.items & IT_AXE)
+    {
+        traceline(globaldef006984, globaldef006984 + (v_forward * 60), FALSE, globaldef006975);
+        
+        if(trace_ent == globaldef006988.goalentity)
+        {
+            globaldef006975.weapon = IT_AXE;
+            globaldef006989 = self;
+            self = globaldef006975;
+            W_SetCurrentAmmo();
+            self = globaldef006989;
+            func002390(globaldef006975);
+            return;
+        }
+        
+    }
+    
+    
+    if((globaldef006975.items & IT_SHOTGUN) && (globaldef006975.ammo_shells > FALSE))
+    {
+        traceline(globaldef006984, globaldef006984 + (v_forward * 1000), FALSE, globaldef006975);
+        
+        if(trace_ent == globaldef006988.goalentity)
+        {
+            globaldef006975.weapon = IT_SHOTGUN;
+            globaldef006989 = self;
+            self = globaldef006975;
+            W_SetCurrentAmmo();
+            self = globaldef006989;
+            func002390(globaldef006975);
+        }
+        
+        return;
+    }
+    
+    
+    if((globaldef006975.items & IT_NAILGUN) && (globaldef006975.ammo_nails > FALSE))
+    {
+        traceline(globaldef006984, globaldef006984 + (v_forward * 1000), FALSE, globaldef006975);
+        
+        if(trace_ent == globaldef006988.goalentity)
+        {
+            globaldef006975.weapon = IT_NAILGUN;
+            globaldef006989 = self;
+            self = globaldef006975;
+            W_SetCurrentAmmo();
+            self = globaldef006989;
+            func002390(globaldef006975);
+        }
+        
+        return;
+    }
+    
+    globaldef006975.search_time = time - TRUE;
+};
+
+
+// func002392
+// function begins at statement 37136, parm_start=20461
+// OP_LOAD_V	20461	105	20469
+// OP_LOAD_V	20461	166	20472
+// OP_ADD_V	20469	20472	20475
+// OP_STORE_V	20475	20463	0
+// OP_LOAD_V	20462	105	20478
+// OP_STORE_V	20478	20466	0
+// OP_STORE_V	20463	4	0
+// OP_STORE_V	20466	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20461	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	20481
+// OP_IFNOT	20481	2	0
+// OP_RETURN	214	0	0
+// OP_EQ_E	78	20462	20482
+// OP_IFNOT	20482	2	0
+// OP_RETURN	214	0	0
+// OP_LOAD_V	20462	105	20483
+// OP_LOAD_V	20462	166	20486
+// OP_ADD_V	20483	20486	20489
+// OP_STORE_V	20489	20466	0
+// OP_STORE_V	20463	4	0
+// OP_STORE_V	20466	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	20461	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	20492
+// OP_IFNOT	20492	2	0
+// OP_RETURN	214	0	0
+// OP_EQ_E	78	20462	20493
+// OP_IFNOT	20493	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef006991, entity globaldef006992) func002392 = 
+{
+    local vector globaldef006993;
+    local vector globaldef006997;
+    globaldef006993 = globaldef006991.origin + globaldef006991.view_ofs;
+    globaldef006997 = globaldef006992.origin;
+    traceline(globaldef006993, globaldef006997, TRUE, globaldef006991);
+    
+    if(trace_fraction == TRUE)
+    {
+        return TRUE;
+    }
+    
+    
+    if(trace_ent == globaldef006992)
+    {
+        return TRUE;
+    }
+    
+    globaldef006997 = globaldef006992.origin + globaldef006992.view_ofs;
+    traceline(globaldef006993, globaldef006997, TRUE, globaldef006991);
+    
+    if(trace_fraction == TRUE)
+    {
+        return TRUE;
+    }
+    
+    
+    if(trace_ent == globaldef006992)
+    {
+        return TRUE;
+    }
+    
+    return FALSE;
+};
+
+
+// func002393
+// function begins at statement 37170, parm_start=20495
+// OP_STORE_V	20495	4	0
+// OP_CALL1	3179	0	0
+// OP_STORE_F	1	20495	0
+// OP_STORE_V	20496	4	0
+// OP_CALL1	3179	0	0
+// OP_STORE_F	1	20496	0
+// OP_SUB_F	20496	20495	20499
+// OP_STORE_F	20499	20498	0
+// OP_GT	20496	20495	20500
+// OP_IFNOT	20500	6	0
+// OP_GT	20498	1296	20501
+// OP_IFNOT	20501	3	0
+// OP_SUB_F	20498	1298	20502
+// OP_STORE_F	20502	20498	0
+// OP_GOTO	5	0	0
+// OP_LT	20498	1300	20503
+// OP_IFNOT	20503	3	0
+// OP_ADD_F	20498	1298	20504
+// OP_STORE_F	20504	20498	0
+// OP_STORE_V	20498	4	0
+// OP_CALL1	488	0	0
+// OP_MUL_F	20497	539	20505
+// OP_GT	1	20505	20506
+// OP_IFNOT	20506	2	0
+// OP_RETURN	213	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (float globaldef007002, float globaldef007003, float globaldef007004) func002393 = 
+{
+    local float globaldef007005;
+    globaldef007002 = anglemod(globaldef007002);
+    globaldef007003 = anglemod(globaldef007003);
+    globaldef007005 = globaldef007003 - globaldef007002;
+    if(globaldef007003 > globaldef007002)
+    {
+        
+        if(globaldef007005 > 180)
+        {
+            globaldef007005 = globaldef007005 - 360;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007005 < -180)
+        {
+            globaldef007005 = globaldef007005 + 360;
+        }
+        
+    }
+    
+    
+    if(fabs(globaldef007005) > (globaldef007004 * RA_PLAYERSTATTIME))
+    {
+        return FALSE;
+    }
+    
+    return TRUE;
+};
+
+
+// func002394
+// function begins at statement 37197, parm_start=20508
+// OP_LOAD_V	20509	105	20516
+// OP_LOAD_V	20508	105	20519
+// OP_SUB_V	20516	20519	20522
+// OP_STORE_V	20522	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20510	0
+// OP_STORE_V	20510	4	0
+// OP_CALL1	495	0	0
+// OP_STORE_V	1	20513	0
+// OP_STORE_V	20513	4	0
+// OP_LOAD_F	20508	176	20525
+// OP_SUB_F	213	20525	20526
+// OP_STORE_V	20526	7	0
+// OP_LOAD_F	20508	588	20527
+// OP_MUL_F	20527	235	20528
+// OP_ADD_F	2658	20528	20529
+// OP_STORE_V	20529	10	0
+// OP_CALL3	20494	0	0
+// OP_IFNOT	1	11	0
+// OP_STORE_V	20514	4	0
+// OP_LOAD_F	20508	177	20530
+// OP_STORE_V	20530	7	0
+// OP_LOAD_F	20508	588	20531
+// OP_MUL_F	20531	765	20532
+// OP_ADD_F	12645	20532	20533
+// OP_STORE_V	20533	10	0
+// OP_CALL3	20494	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007007, entity globaldef007008) func002394 = 
+{
+    local vector globaldef007009;
+    local vector globaldef007013;
+    globaldef007009 = normalize(globaldef007008.origin - globaldef007007.origin);
+    globaldef007013 = vectoangles(globaldef007009);
+    
+    if(func002393(globaldef007013_x, FALSE - globaldef007007.v_angle_x, 90 + (globaldef007007.field000265 * MOVETYPE_BOUNCE)))
+    {
+        
+        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * GLOBALDEF748_15)))
+        {
+            return TRUE;
+        }
+        
+    }
+    
+    return FALSE;
+};
+
+
+// func002395
+// function begins at statement 37228, parm_start=20535
+// OP_LOAD_V	20535	175	20539
+// OP_STORE_V	20539	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_ENT	20535	181	20542
+// OP_LOAD_V	20542	105	20543
+// OP_LOAD_V	20535	105	20546
+// OP_SUB_V	20543	20546	20549
+// OP_STORE_V	20549	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20536	0
+// OP_MUL_V	20536	59	20552
+// OP_GT	20552	5599	20553
+// OP_IFNOT	20553	17	0
+// OP_LOAD_F	20535	611	20554
+// OP_STORE_V	20554	4	0
+// OP_LOAD_F	20535	176	20555
+// OP_SUB_F	213	20555	20556
+// OP_STORE_V	20556	7	0
+// OP_STORE_V	2323	10	0
+// OP_CALL3	20494	0	0
+// OP_IFNOT	1	9	0
+// OP_LOAD_F	20535	191	20557
+// OP_STORE_V	20557	4	0
+// OP_LOAD_F	20535	177	20558
+// OP_STORE_V	20558	7	0
+// OP_STORE_V	309	10	0
+// OP_CALL3	20494	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007018) func002395 = 
+{
+    local vector globaldef007019;
+    makevectors(globaldef007018.v_angle);
+    globaldef007019 = normalize(globaldef007018.enemy.origin - globaldef007018.origin);
+    
+    if((globaldef007019 * v_forward) > 0.7)
+    {
+        
+        if(func002393(globaldef007018.field000288, FALSE - globaldef007018.v_angle_x, 20))
+        {
+            
+            if(func002393(globaldef007018.ideal_yaw, globaldef007018.v_angle_y, SVC_INTERMISSION))
+            {
+                return TRUE;
+            }
+            
+        }
+        
+    }
+    
+    return FALSE;
+};
+
+
+// func002396
+// function begins at statement 37259, parm_start=20560
+// OP_STORE_ENT	28	20561	0
+// OP_STORE_ENT	20560	28	0
+// OP_CALL0	4295	0	0
+// OP_STORE_ENT	20561	28	0
+// OP_DONE	0	0	0
+void (entity globaldef007024) func002396 = 
+{
+    local entity globaldef007025;
+    globaldef007025 = self;
+    self = globaldef007024;
+    W_SetCurrentAmmo();
+    self = globaldef007025;
+};
+
+
+// func002397
+// function begins at statement 37264, parm_start=20562
+// OP_LOAD_ENT	20562	181	20563
+// OP_NOT_ENT	20563	0	20564
+// OP_IFNOT	20564	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	20562	378	20565
+// OP_GT	20565	31	20566
+// OP_IFNOT	20566	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	20562	4	0
+// OP_LOAD_ENT	20562	181	20567
+// OP_STORE_V	20567	7	0
+// OP_CALL2	1096	0	0
+// OP_IFNOT	1	6	0
+// OP_STORE_V	20562	4	0
+// OP_CALL1	20534	0	0
+// OP_IFNOT	1	3	0
+// OP_STORE_V	20562	4	0
+// OP_CALL1	20312	0	0
+// OP_STORE_V	20562	4	0
+// OP_CALL1	1040	0	0
+// OP_STORE_V	20562	4	0
+// OP_CALL1	20559	0	0
+// OP_DONE	0	0	0
+void (entity globaldef007026) func002397 = 
+{
+    
+    if(!globaldef007026.enemy)
+    {
+        return;
+    }
+    
+    
+    if(globaldef007026.attack_finished > time)
+    {
+        return;
+    }
+    
+    
+    if(func002392(globaldef007026, globaldef007026.enemy))
+    {
+        
+        if(func002395(globaldef007026))
+        {
+            func002390(globaldef007026);
+        }
+        
+    }
+    
+    BotSetBestRangeWeapon(globaldef007026);
+    func002396(globaldef007026);
+};
+
+
+// func002398
+// function begins at statement 37287, parm_start=20569
+// OP_LOAD_V	20569	105	20579
+// OP_LOAD_V	20569	166	20582
+// OP_ADD_V	20579	20582	20585
+// OP_STORE_V	20585	20571	0
+// OP_LOAD_V	20570	105	20588
+// OP_LOAD_V	20570	166	20591
+// OP_ADD_V	20588	20591	20594
+// OP_STORE_V	20594	20574	0
+// OP_SUB_V	20571	20574	20597
+// OP_STORE_V	20597	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	20578	0
+// OP_LOAD_F	20569	152	20600
+// OP_MUL_F	20600	539	20601
+// OP_SUB_F	1296	20601	20602
+// OP_LOAD_F	20569	188	20603
+// OP_LOAD_F	20569	187	20604
+// OP_MUL_F	20603	20604	20605
+// OP_SUB_F	20602	20605	20606
+// OP_STORE_F	20606	20577	0
+// OP_LOAD_F	20569	162	20607
+// OP_BITAND	20607	275	20608
+// OP_IFNOT	20608	3	0
+// OP_MUL_F	216	20577	20609
+// OP_STORE_F	20609	20577	0
+// OP_LT	20578	20577	20610
+// OP_IFNOT	20610	3	0
+// OP_RETURN	242	0	0
+// OP_GOTO	8	0	0
+// OP_LT	20578	740	20611
+// OP_IFNOT	20611	3	0
+// OP_RETURN	243	0	0
+// OP_GOTO	4	0	0
+// OP_LT	20578	1663	20612
+// OP_IFNOT	20612	2	0
+// OP_RETURN	244	0	0
+// OP_RETURN	245	0	0
+// OP_DONE	0	0	0
+float (entity globaldef007028, entity globaldef007029) func002398 = 
+{
+    local vector globaldef007030;
+    local vector globaldef007034;
+    local float globaldef007038;
+    local float globaldef007039;
+    globaldef007030 = globaldef007028.origin + globaldef007028.view_ofs;
+    globaldef007034 = globaldef007029.origin + globaldef007029.view_ofs;
+    globaldef007039 = vlen(globaldef007030 - globaldef007034);
+    globaldef007038 = (180 - (globaldef007028.health * RA_PLAYERSTATTIME)) - (globaldef007028.armorvalue * globaldef007028.armortype);
+    
+    if(globaldef007028.items & IT_QUAD)
+    {
+        globaldef007038 = FL_SWIM * globaldef007038;
+    }
+    
+    if(globaldef007039 < globaldef007038)
+    {
+        return RANGE_MELEE;
+    }
+    else
+    {
+        if(globaldef007039 < GLOBALDEF723_600)
+        {
+            return RANGE_NEAR;
+        }
+        else
+        {
+            
+            if(globaldef007039 < 1000)
+            {
+                return RANGE_MID;
+            }
+            
+        }
+        
+    }
+    
+    return RANGE_FAR;
+};
+
+
+// func002399
+// function begins at statement 37325, parm_start=20613
+// OP_LOAD_ENT	20613	181	20621
+// OP_LOAD_V	20621	105	20622
+// OP_LOAD_V	20613	105	20625
+// OP_SUB_V	20622	20625	20628
+// OP_STORE_V	20628	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	20617	0
+// OP_LOAD_ENT	20613	181	20631
+// OP_LOAD_V	20631	580	20632
+// OP_LOAD_V	20613	105	20635
+// OP_SUB_V	20632	20635	20638
+// OP_STORE_V	20638	4	0
+// OP_CALL1	462	0	0
+// OP_STORE_F	1	20618	0
+// OP_LOAD_F	20613	594	20641
+// OP_GT	20641	213	20642
+// OP_IFNOT	20642	5	0
+// OP_ADDRESS	20613	594	20643
+// OP_LOAD_F	20613	594	20644
+// OP_SUB_F	20644	214	20645
+// OP_STOREP_F	20645	20643	0
+// OP_ADD_F	20618	235	20646
+// OP_GT	20617	20646	20647
+// OP_IFNOT	20647	5	0
+// OP_ADDRESS	20613	594	20648
+// OP_LOAD_F	20613	594	20649
+// OP_ADD_F	20649	216	20650
+// OP_STOREP_F	20650	20648	0
+// OP_STORE_F	2658	20615	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	228	20651
+// OP_STORE_F	20651	20616	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_ENT	20613	181	20652
+// OP_STORE_V	20652	7	0
+// OP_CALL2	20568	0	0
+// OP_STORE_F	1	20617	0
+// OP_EQ_F	20617	243	20653
+// OP_IFNOT	20653	4	0
+// OP_ADD_F	20616	4478	20654
+// OP_STORE_F	20654	20616	0
+// OP_GOTO	60	0	0
+// OP_EQ_F	20617	242	20655
+// OP_IFNOT	20655	41	0
+// OP_ADD_F	20616	20656	20657
+// OP_STORE_F	20657	20616	0
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	20619	0
+// OP_STORE_V	20613	4	0
+// OP_CALL1	1041	0	0
+// OP_STORE_F	1	20620	0
+// OP_EQ_F	20620	259	20658
+// OP_IFNOT	20658	3	0
+// OP_STORE_F	213	20619	0
+// OP_GOTO	19	0	0
+// OP_EQ_F	20620	258	20659
+// OP_IFNOT	20659	3	0
+// OP_STORE_F	213	20619	0
+// OP_GOTO	15	0	0
+// OP_LOAD_F	20613	594	20660
+// OP_GT	20660	229	20661
+// OP_IFNOT	20661	3	0
+// OP_STORE_F	214	20619	0
+// OP_GOTO	10	0	0
+// OP_EQ_F	20620	253	20662
+// OP_IFNOT	20662	3	0
+// OP_STORE_F	214	20619	0
+// OP_GOTO	6	0	0
+// OP_LOAD_ENT	20613	181	20663
+// OP_LOAD_F	20663	154	20664
+// OP_EQ_F	20664	259	20665
+// OP_IFNOT	20665	2	0
+// OP_STORE_F	214	20619	0
+// OP_LT	20619	3409	20666
+// OP_IFNOT	20666	9	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_F	20613	191	20667
+// OP_ADD_F	20667	1296	20668
+// OP_STORE_V	20668	7	0
+// OP_STORE_V	20614	10	0
+// OP_CALL3	1125	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_GOTO	18	0	0
+// OP_EQ_F	20617	244	20669
+// OP_IFNOT	20669	12	0
+// OP_STORE_V	20613	4	0
+// OP_CALL1	1041	0	0
+// OP_STORE_F	1	20620	0
+// OP_EQ_F	20620	260	20670
+// OP_IFNOT	20670	4	0
+// OP_SUB_F	20616	228	20671
+// OP_STORE_F	20671	20616	0
+// OP_GOTO	3	0	0
+// OP_SUB_F	20616	214	20672
+// OP_STORE_F	20672	20616	0
+// OP_GOTO	5	0	0
+// OP_EQ_F	20617	245	20673
+// OP_IFNOT	20673	3	0
+// OP_SUB_F	20616	6009	20674
+// OP_STORE_F	20674	20616	0
+// OP_LOAD_F	20613	154	20675
+// OP_EQ_F	20675	253	20676
+// OP_IFNOT	20676	3	0
+// OP_STORE_F	213	20616	0
+// OP_GOTO	12	0	0
+// OP_LOAD_F	20613	154	20677
+// OP_EQ_F	20677	259	20678
+// OP_IFNOT	20678	4	0
+// OP_ADD_F	20616	1825	20679
+// OP_STORE_F	20679	20616	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	20613	154	20680
+// OP_EQ_F	20680	258	20681
+// OP_IFNOT	20681	3	0
+// OP_ADD_F	20616	1825	20682
+// OP_STORE_F	20682	20616	0
+// OP_LOAD_ENT	20613	181	20683
+// OP_LOAD_F	20683	154	20684
+// OP_EQ_F	20684	259	20685
+// OP_IFNOT	20685	4	0
+// OP_ADD_F	20616	1825	20686
+// OP_STORE_F	20686	20616	0
+// OP_GOTO	7	0	0
+// OP_LOAD_ENT	20613	181	20687
+// OP_LOAD_F	20687	154	20688
+// OP_EQ_F	20688	260	20689
+// OP_IFNOT	20689	3	0
+// OP_ADD_F	20616	1825	20690
+// OP_STORE_F	20690	20616	0
+// OP_LOAD_F	20613	594	20691
+// OP_GT	20691	217	20692
+// OP_IFNOT	20692	4	0
+// OP_SUB_F	20616	216	20693
+// OP_STORE_F	20693	20616	0
+// OP_GOTO	15	0	0
+// OP_LOAD_F	20613	108	20694
+// OP_LOAD_ENT	20613	181	20695
+// OP_LOAD_F	20695	108	20696
+// OP_ADD_F	20696	12639	20697
+// OP_GT	20694	20697	20698
+// OP_IFNOT	20698	9	0
+// OP_ADD_F	20616	13457	20699
+// OP_CALL0	457	0	0
+// OP_ADD_F	20699	1	20700
+// OP_STORE_F	20700	20616	0
+// OP_LOAD_F	20613	154	20701
+// OP_EQ_F	20701	253	20702
+// OP_IFNOT	20702	2	0
+// OP_STORE_F	213	20616	0
+// OP_LT	20616	1825	20703
+// OP_IFNOT	20703	9	0
+// OP_STORE_V	20613	4	0
+// OP_STORE_V	20614	7	0
+// OP_CALL2	1123	0	0
+// OP_NE_F	1	733	20704
+// OP_IFNOT	20704	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_F	2658	20615	0
+// OP_GOTO	4	0	0
+// OP_LT	20616	20705	20706
+// OP_IFNOT	20706	2	0
+// OP_STORE_F	2598	20615	0
+// OP_LOAD_F	20613	588	20707
+// OP_EQ_F	20707	213	20708
+// OP_IFNOT	20708	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	20613	595	20709
+// OP_LOAD_F	20613	595	20710
+// OP_ADD_F	20710	3036	20711
+// OP_STOREP_F	20711	20709	0
+// OP_LOAD_F	20613	588	20712
+// OP_LT	20712	216	20713
+// OP_IFNOT	20713	25	0
+// OP_LOAD_F	20613	588	20714
+// OP_LT	20714	214	20715
+// OP_IFNOT	20715	3	0
+// OP_MUL_F	5599	20614	20716
+// OP_STORE_F	20716	20614	0
+// OP_LOAD_F	20613	595	20717
+// OP_EQ_F	20717	3036	20718
+// OP_IFNOT	20718	17	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	229	20719
+// OP_STORE_F	20719	20619	0
+// OP_LOAD_F	20613	588	20720
+// OP_GE	20720	214	20721
+// OP_IFNOT	20721	5	0
+// OP_LOAD_F	20613	588	20722
+// OP_SUB_F	20619	20722	20723
+// OP_ADD_F	20723	539	20724
+// OP_STORE_F	20724	20619	0
+// OP_LOAD_F	20613	588	20725
+// OP_GT	20619	20725	20726
+// OP_IFNOT	20726	4	0
+// OP_ADDRESS	20613	595	20727
+// OP_STOREP_F	213	20727	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	20613	595	20728
+// OP_GT	20728	1644	20729
+// OP_IFNOT	20729	21	0
+// OP_CALL0	457	0	0
+// OP_MUL_F	1	216	20730
+// OP_STORE_F	20730	20619	0
+// OP_GT	20619	20731	20732
+// OP_IFNOT	20732	16	0
+// OP_LOAD_F	20613	575	20733
+// OP_BITAND	20733	704	20734
+// OP_IFNOT	20734	6	0
+// OP_ADDRESS	20613	575	20735
+// OP_LOAD_F	20613	575	20736
+// OP_SUB_F	20736	704	20737
+// OP_STOREP_F	20737	20735	0
+// OP_GOTO	5	0	0
+// OP_ADDRESS	20613	575	20738
+// OP_LOAD_F	20613	575	20739
+// OP_ADD_F	20739	704	20740
+// OP_STOREP_F	20740	20738	0
+// OP_ADDRESS	20613	595	20741
+// OP_STOREP_F	213	20741	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	20613	575	20742
+// OP_BITAND	20742	704	20743
+// OP_IFNOT	20743	3	0
+// OP_MUL_F	276	20615	20744
+// OP_STORE_F	20744	20615	0
+// OP_LOAD_F	20613	588	20745
+// OP_GT	20745	20746	20747
+// OP_CALL0	457	0	0
+// OP_LT	1	1644	20748
+// OP_AND	20747	20748	20749
+// OP_IFNOT	20749	10	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_F	20613	191	20750
+// OP_ADD_F	20750	20615	20751
+// OP_STORE_V	20751	7	0
+// OP_STORE_V	20614	10	0
+// OP_CALL3	1126	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_GOTO	9	0	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_F	20613	191	20752
+// OP_ADD_F	20752	20615	20753
+// OP_STORE_V	20753	7	0
+// OP_STORE_V	20614	10	0
+// OP_CALL3	1125	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	20613	595	20754
+// OP_STOREP_F	213	20754	0
+// OP_LOAD_F	20613	575	20755
+// OP_BITAND	20755	704	20756
+// OP_IFNOT	20756	6	0
+// OP_ADDRESS	20613	575	20757
+// OP_LOAD_F	20613	575	20758
+// OP_SUB_F	20758	704	20759
+// OP_STOREP_F	20759	20757	0
+// OP_GOTO	5	0	0
+// OP_ADDRESS	20613	575	20760
+// OP_LOAD_F	20613	575	20761
+// OP_ADD_F	20761	704	20762
+// OP_STOREP_F	20762	20760	0
+// OP_EQ_F	20615	2658	20763
+// OP_EQ_F	20615	3865	20764
+// OP_OR	20763	20764	20765
+// OP_IFNOT	20765	22	0
+// OP_CALL0	457	0	0
+// OP_STORE_F	1	20619	0
+// OP_LT	20619	3270	20766
+// OP_IFNOT	20766	7	0
+// OP_STORE_V	20613	4	0
+// OP_STORE_V	20614	7	0
+// OP_CALL2	1123	0	0
+// OP_NE_F	1	733	20767
+// OP_IFNOT	20767	2	0
+// OP_RETURN	0	0	0
+// OP_LT	20619	539	20768
+// OP_IFNOT	20768	10	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_F	20613	191	20769
+// OP_ADD_F	20769	1296	20770
+// OP_STORE_V	20770	7	0
+// OP_MUL_F	20614	539	20771
+// OP_STORE_V	20771	10	0
+// OP_CALL3	1125	0	0
+// OP_IFNOT	1	2	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	20613	4	0
+// OP_LOAD_F	20613	191	20772
+// OP_STORE_V	20772	7	0
+// OP_STORE_V	20614	10	0
+// OP_CALL3	1125	0	0
+// OP_DONE	0	0	0
+void (entity globaldef007040, float globaldef007041) func002399 = 
+{
+    local float globaldef007042;
+    local float globaldef007043;
+    local float globaldef007044;
+    local float globaldef007045;
+    local float globaldef007046;
+    local float globaldef007047;
+    globaldef007044 = vlen(globaldef007040.enemy.origin - globaldef007040.origin);
+    globaldef007045 = vlen(globaldef007040.enemy.field000257 - globaldef007040.origin);
+    
+    if(globaldef007040.field000271 > FALSE)
+    {
+        globaldef007040.field000271 = globaldef007040.field000271 - TRUE;
+    }
+    
+    
+    if(globaldef007044 > (globaldef007045 + MOVETYPE_BOUNCE))
+    {
+        globaldef007040.field000271 = globaldef007040.field000271 + FL_SWIM;
+    }
+    
+    globaldef007042 = 90;
+    globaldef007043 = random() * MOVETYPE_WALK;
+    globaldef007044 = func002398(globaldef007040, globaldef007040.enemy);
+    if(globaldef007044 == RANGE_NEAR)
+    {
+        globaldef007043 = globaldef007043 + 0.8;
+    }
+    else
+    {
+        if(globaldef007044 == RANGE_MELEE)
+        {
+            globaldef007043 = globaldef007043 + 1.2;
+            globaldef007046 = random();
+            globaldef007047 = BestBotWeapon(globaldef007040);
+            if(globaldef007047 == IT_ROCKET_LAUNCHER)
+            {
+                globaldef007046 = FALSE;
+            }
+            else
+            {
+                if(globaldef007047 == IT_GRENADE_LAUNCHER)
+                {
+                    globaldef007046 = FALSE;
+                }
+                else
+                {
+                    if(globaldef007040.field000271 > MOVETYPE_STEP)
+                    {
+                        globaldef007046 = TRUE;
+                    }
+                    else
+                    {
+                        if(globaldef007047 == IT_AXE)
+                        {
+                            globaldef007046 = TRUE;
+                        }
+                        else
+                        {
+                            
+                            if(globaldef007040.enemy.weapon == IT_ROCKET_LAUNCHER)
+                            {
+                                globaldef007046 = TRUE;
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            
+            if(globaldef007046 < 0.3)
+            {
+                
+                if(func002444(globaldef007040, globaldef007040.ideal_yaw + 180, globaldef007041))
+                {
+                    return;
+                }
+                
+            }
+            
+        }
+        else
+        {
+            if(globaldef007044 == RANGE_MID)
+            {
+                globaldef007047 = BestBotWeapon(globaldef007040);
+                if(globaldef007047 == IT_LIGHTNING)
+                {
+                    globaldef007043 = globaldef007043 - MOVETYPE_WALK;
+                }
+                else
+                {
+                    globaldef007043 = globaldef007043 - TRUE;
+                }
+                
+            }
+            else
+            {
+                
+                if(globaldef007044 == RANGE_FAR)
+                {
+                    globaldef007043 = globaldef007043 - 2.5;
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    if(globaldef007040.weapon == IT_AXE)
+    {
+        globaldef007043 = FALSE;
+    }
+    else
+    {
+        if(globaldef007040.weapon == IT_ROCKET_LAUNCHER)
+        {
+            globaldef007043 = globaldef007043 + 1.5;
+        }
+        else
+        {
+            
+            if(globaldef007040.weapon == IT_GRENADE_LAUNCHER)
+            {
+                globaldef007043 = globaldef007043 + 1.5;
+            }
+            
+        }
+        
+    }
+    
+    if(globaldef007040.enemy.weapon == IT_ROCKET_LAUNCHER)
+    {
+        globaldef007043 = globaldef007043 + 1.5;
+    }
+    else
+    {
+        
+        if(globaldef007040.enemy.weapon == IT_LIGHTNING)
+        {
+            globaldef007043 = globaldef007043 + 1.5;
+        }
+        
+    }
+    
+    if(globaldef007040.field000271 > FL_CLIENT)
+    {
+        globaldef007043 = globaldef007043 - FL_SWIM;
+    }
+    else
+    {
+        
+        if(globaldef007040.origin_z > (globaldef007040.enemy.origin_z + 130))
+        {
+            globaldef007043 = (globaldef007043 + 1.1) + random();
+            
+            if(globaldef007040.weapon == IT_AXE)
+            {
+                globaldef007043 = FALSE;
+            }
+            
+        }
+        
+    }
+    
+    if(globaldef007043 < 1.5)
+    {
+        
+        if(func002442(globaldef007040, globaldef007041) != globaldef000716)
+        {
+            return;
+        }
+        
+        globaldef007042 = 90;
+    }
+    else
+    {
+        
+        if(globaldef007043 < 2.4)
+        {
+            globaldef007042 = 45;
+        }
+        
+    }
+    
+    
+    if(globaldef007040.field000265 == FALSE)
+    {
+        return;
+    }
+    
+    globaldef007040.field000272 = globaldef007040.field000272 + 0.1;
+    
+    if(globaldef007040.field000265 < FL_SWIM)
+    {
+        
+        if(globaldef007040.field000265 < TRUE)
+        {
+            globaldef007041 = 0.7 * globaldef007041;
+        }
+        
+        
+        if(globaldef007040.field000272 == 0.1)
+        {
+            globaldef007046 = random() * MOVETYPE_STEP;
+            
+            if(globaldef007040.field000265 >= TRUE)
+            {
+                globaldef007046 = (globaldef007046 - globaldef007040.field000265) + RA_PLAYERSTATTIME;
+            }
+            
+            
+            if(globaldef007046 > globaldef007040.field000265)
+            {
+                globaldef007040.field000272 = FALSE;
+                return;
+            }
+            
+        }
+        
+    }
+    
+    
+    if(globaldef007040.field000272 > 0.4)
+    {
+        globaldef007046 = random() * FL_SWIM;
+        
+        if(globaldef007046 > 1.87)
+        {
+            if(globaldef007040.field000252 & globaldef000687)
+            {
+                globaldef007040.field000252 = globaldef007040.field000252 - globaldef000687;
+            }
+            else
+            {
+                globaldef007040.field000252 = globaldef007040.field000252 + globaldef000687;
+            }
+            
+            globaldef007040.field000272 = FALSE;
+            return;
+        }
+        
+    }
+    
+    
+    if(globaldef007040.field000252 & globaldef000687)
+    {
+        globaldef007042 = CONTENT_EMPTY * globaldef007042;
+    }
+    
+    if((globaldef007040.field000265 > 2.8) && (random() < 0.4))
+    {
+        
+        if(func002445(globaldef007040, globaldef007040.ideal_yaw + globaldef007042, globaldef007041))
+        {
+            return;
+        }
+        
+    }
+    else
+    {
+        
+        if(func002444(globaldef007040, globaldef007040.ideal_yaw + globaldef007042, globaldef007041))
+        {
+            return;
+        }
+        
+    }
+    
+    globaldef007040.field000272 = FALSE;
+    if(globaldef007040.field000252 & globaldef000687)
+    {
+        globaldef007040.field000252 = globaldef007040.field000252 - globaldef000687;
+    }
+    else
+    {
+        globaldef007040.field000252 = globaldef007040.field000252 + globaldef000687;
+    }
+    
+    
+    if((globaldef007042 == 90) || (globaldef007042 == -90))
+    {
+        globaldef007046 = random();
+        
+        if(globaldef007046 < 0.05)
+        {
+            
+            if(func002442(globaldef007040, globaldef007041) != globaldef000716)
+            {
+                return;
+            }
+            
+        }
+        
+        
+        if(globaldef007046 < RA_PLAYERSTATTIME)
+        {
+            
+            if(func002444(globaldef007040, globaldef007040.ideal_yaw + 180, globaldef007041 * RA_PLAYERSTATTIME))
+            {
+                return;
+            }
+            
+        }
+        
+    }
+    
+    func002444(globaldef007040, globaldef007040.ideal_yaw, globaldef007041);
+};
+
+
+// func002400
+// function begins at statement 37619, parm_start=20774
+// OP_LOAD_V	28	113	20783
+// OP_STORE_V	20783	4	0
+// OP_CALL1	462	0	0
+// OP_LT	1	309	20786
+// OP_IFNOT	20786	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	186	20787
+// OP_GT	20787	31	20788
+// OP_IFNOT	20788	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_V	20774	117	20789
+// OP_STORE_V	20789	4	0
+// OP_CALL1	452	0	0
+// OP_STORE_V	65	20778	0
+// OP_STORE_F	213	20780	0
+// OP_STORE_V	20778	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20778	0
+// OP_LOAD_V	20774	105	20792
+// OP_LOAD_V	20774	580	20795
+// OP_SUB_V	20792	20795	20798
+// OP_STORE_V	20798	20775	0
+// OP_STORE_F	213	20777	0
+// OP_STORE_V	20775	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	20775	0
+// OP_MUL_V	20778	20775	20801
+// OP_STORE_F	20801	20781	0
+// OP_STORE_V	20781	4	0
+// OP_CALL1	488	0	0
+// OP_LT	1	1644	20802
+// OP_IFNOT	20802	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	20774	120	20803
+// OP_LOAD_F	20774	120	20804
+// OP_MUL_F	20781	228	20805
+// OP_ADD_F	20804	20805	20806
+// OP_STOREP_F	20806	20803	0
+// OP_LOAD_F	20774	120	20807
+// OP_LT	20807	281	20808
+// OP_IFNOT	20808	4	0
+// OP_ADDRESS	20774	120	20809
+// OP_STOREP_F	281	20809	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	20774	120	20810
+// OP_GT	20810	231	20811
+// OP_IFNOT	20811	3	0
+// OP_ADDRESS	20774	120	20812
+// OP_STOREP_F	231	20812	0
+// OP_ADDRESS	20774	178	20813
+// OP_LOAD_F	20774	178	20814
+// OP_MUL_F	20781	231	20815
+// OP_ADD_F	20814	20815	20816
+// OP_STOREP_F	20816	20813	0
+// OP_LOAD_F	20774	178	20817
+// OP_LT	20817	281	20818
+// OP_IFNOT	20818	4	0
+// OP_ADDRESS	20774	178	20819
+// OP_STOREP_F	281	20819	0
+// OP_GOTO	6	0	0
+// OP_LOAD_F	20774	178	20820
+// OP_GT	20820	231	20821
+// OP_IFNOT	20821	3	0
+// OP_ADDRESS	20774	178	20822
+// OP_STOREP_F	231	20822	0
+// OP_DONE	0	0	0
+void (entity globaldef007053) func002400 = 
+{
+    local vector globaldef007054;
+    local vector globaldef007058;
+    local float globaldef007062;
+    local float globaldef007063;
+    
+    if(vlen(self.velocity) < SVC_INTERMISSION)
+    {
+        return;
+    }
+    
+    
+    if(self.teleport_time > time)
+    {
+        return;
+    }
+    
+    makevectors(globaldef007053.angles);
+    globaldef007058 = v_right;
+    globaldef007058_z = FALSE;
+    globaldef007058 = normalize(globaldef007058);
+    globaldef007054 = globaldef007053.origin - globaldef007053.field000257;
+    globaldef007054_z = FALSE;
+    globaldef007054 = normalize(globaldef007054);
+    globaldef007062 = globaldef007058 * globaldef007054;
+    
+    if(fabs(globaldef007062) < 0.4)
+    {
+        return;
+    }
+    
+    globaldef007053.angles_z = globaldef007053.angles_z + (globaldef007062 * MOVETYPE_WALK);
+    if(globaldef007053.angles_z < CONTENT_SKY)
+    {
+        globaldef007053.angles_z = CONTENT_SKY;
+    }
+    else
+    {
+        
+        if(globaldef007053.angles_z > MOVETYPE_TOSS)
+        {
+            globaldef007053.angles_z = MOVETYPE_TOSS;
+        }
+        
+    }
+    
+    globaldef007053.v_angle_z = globaldef007053.v_angle_z + (globaldef007062 * MOVETYPE_TOSS);
+    if(globaldef007053.v_angle_z < CONTENT_SKY)
+    {
+        globaldef007053.v_angle_z = CONTENT_SKY;
+    }
+    else
+    {
+        
+        if(globaldef007053.v_angle_z > MOVETYPE_TOSS)
+        {
+            globaldef007053.v_angle_z = MOVETYPE_TOSS;
+        }
+        
+    }
+    
+};
+
+
+// func002401
+// function begins at statement 37685, parm_start=20824
+// OP_LOAD_F	28	118	20827
+// OP_STORE_F	20827	20826	0
+// OP_LOAD_F	28	611	20828
+// OP_STORE_F	20828	20824	0
+// OP_GT	20824	2805	20829
+// OP_IFNOT	20829	3	0
+// OP_STORE_F	2805	20824	0
+// OP_GOTO	4	0	0
+// OP_LT	20824	12648	20830
+// OP_IFNOT	20830	2	0
+// OP_STORE_F	12648	20824	0
+// OP_MUL_F	20824	539	20831
+// OP_STORE_F	20831	20824	0
+// OP_EQ_F	20826	20824	20832
+// OP_IFNOT	20832	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	20824	20826	20833
+// OP_STORE_F	20833	20825	0
+// OP_GT	20825	213	20834
+// OP_IFNOT	20834	9	0
+// OP_LOAD_F	28	612	20835
+// OP_MUL_F	20835	539	20836
+// OP_GT	20825	20836	20837
+// OP_IFNOT	20837	4	0
+// OP_LOAD_F	28	612	20838
+// OP_MUL_F	20838	539	20839
+// OP_STORE_F	20839	20825	0
+// OP_GOTO	10	0	0
+// OP_LOAD_F	28	612	20840
+// OP_MUL_F	20840	539	20841
+// OP_SUB_F	213	20841	20842
+// OP_LT	20825	20842	20843
+// OP_IFNOT	20843	5	0
+// OP_LOAD_F	28	612	20844
+// OP_MUL_F	20844	539	20845
+// OP_SUB_F	213	20845	20846
+// OP_STORE_F	20846	20825	0
+// OP_ADDRESS	28	118	20847
+// OP_ADD_F	20826	20825	20848
+// OP_STOREP_F	20848	20847	0
+// OP_DONE	0	0	0
+void () func002401 = 
+{
+    local float globaldef007065;
+    local float globaldef007066;
+    local float globaldef007067;
+    globaldef007067 = self.angles_x;
+    globaldef007065 = self.field000288;
+    if(globaldef007065 > 80)
+    {
+        globaldef007065 = 80;
+    }
+    else
+    {
+        
+        if(globaldef007065 < -80)
+        {
+            globaldef007065 = -80;
+        }
+        
+    }
+    
+    globaldef007065 = globaldef007065 * RA_PLAYERSTATTIME;
+    
+    if(globaldef007067 == globaldef007065)
+    {
+        return;
+    }
+    
+    globaldef007066 = globaldef007065 - globaldef007067;
+    if(globaldef007066 > FALSE)
+    {
+        
+        if(globaldef007066 > (self.field000289 * RA_PLAYERSTATTIME))
+        {
+            globaldef007066 = self.field000289 * RA_PLAYERSTATTIME;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007066 < (FALSE - (self.field000289 * RA_PLAYERSTATTIME)))
+        {
+            globaldef007066 = FALSE - (self.field000289 * RA_PLAYERSTATTIME);
+        }
+        
+    }
+    
+    self.angles_x = globaldef007067 + globaldef007066;
+};
+
+
+// func002402
+// function begins at statement 37726, parm_start=20850
+// OP_LOAD_F	28	120	20853
+// OP_STORE_F	20853	20852	0
+// OP_STORE_F	213	20850	0
+// OP_EQ_F	20852	20850	20854
+// OP_IFNOT	20854	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	20850	20852	20855
+// OP_STORE_F	20855	20851	0
+// OP_GT	20851	213	20856
+// OP_IFNOT	20856	5	0
+// OP_GT	20851	216	20857
+// OP_IFNOT	20857	2	0
+// OP_STORE_F	216	20851	0
+// OP_GOTO	4	0	0
+// OP_LT	20851	277	20858
+// OP_IFNOT	20858	2	0
+// OP_STORE_F	277	20851	0
+// OP_ADDRESS	28	120	20859
+// OP_ADD_F	20852	20851	20860
+// OP_STOREP_F	20860	20859	0
+// OP_DONE	0	0	0
+void () func002402 = 
+{
+    local float globaldef007069;
+    local float globaldef007070;
+    local float globaldef007071;
+    globaldef007071 = self.angles_z;
+    globaldef007069 = FALSE;
+    
+    if(globaldef007071 == globaldef007069)
+    {
+        return;
+    }
+    
+    globaldef007070 = globaldef007069 - globaldef007071;
+    if(globaldef007070 > FALSE)
+    {
+        
+        if(globaldef007070 > FL_SWIM)
+        {
+            globaldef007070 = FL_SWIM;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007070 < CONTENT_SOLID)
+        {
+            globaldef007070 = CONTENT_SOLID;
+        }
+        
+    }
+    
+    self.angles_z = globaldef007071 + globaldef007070;
+};
+
+
+// func002403
+// function begins at statement 37747, parm_start=20862
+// OP_LOAD_F	28	177	20864
+// OP_STORE_V	20864	4	0
+// OP_CALL1	3179	0	0
+// OP_STORE_F	1	3507	0
+// OP_LOAD_F	28	191	20865
+// OP_STORE_F	20865	20862	0
+// OP_EQ_F	3507	20862	20866
+// OP_IFNOT	20866	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	20862	3507	20867
+// OP_STORE_F	20867	20863	0
+// OP_GT	20862	3507	20868
+// OP_IFNOT	20868	6	0
+// OP_GT	20863	1296	20869
+// OP_IFNOT	20869	3	0
+// OP_SUB_F	20863	1298	20870
+// OP_STORE_F	20870	20863	0
+// OP_GOTO	5	0	0
+// OP_LT	20863	1300	20871
+// OP_IFNOT	20871	3	0
+// OP_ADD_F	20863	1298	20872
+// OP_STORE_F	20872	20863	0
+// OP_GT	20863	213	20873
+// OP_IFNOT	20873	7	0
+// OP_LOAD_F	28	192	20874
+// OP_GT	20863	20874	20875
+// OP_IFNOT	20875	3	0
+// OP_LOAD_F	28	192	20876
+// OP_STORE_F	20876	20863	0
+// OP_GOTO	8	0	0
+// OP_LOAD_F	28	192	20877
+// OP_SUB_F	213	20877	20878
+// OP_LT	20863	20878	20879
+// OP_IFNOT	20879	4	0
+// OP_LOAD_F	28	192	20880
+// OP_SUB_F	213	20880	20881
+// OP_STORE_F	20881	20863	0
+// OP_ADDRESS	28	177	20882
+// OP_ADD_F	3507	20863	20883
+// OP_STORE_V	20883	4	0
+// OP_CALL1	3179	0	0
+// OP_STOREP_F	1	20882	0
+// OP_DONE	0	0	0
+void () func002403 = 
+{
+    local float globaldef007073;
+    local float globaldef007074;
+    current_yaw = anglemod(self.v_angle_y);
+    globaldef007073 = self.ideal_yaw;
+    
+    if(current_yaw == globaldef007073)
+    {
+        return;
+    }
+    
+    globaldef007074 = globaldef007073 - current_yaw;
+    if(globaldef007073 > current_yaw)
+    {
+        
+        if(globaldef007074 > 180)
+        {
+            globaldef007074 = globaldef007074 - 360;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007074 < -180)
+        {
+            globaldef007074 = globaldef007074 + 360;
+        }
+        
+    }
+    
+    if(globaldef007074 > FALSE)
+    {
+        
+        if(globaldef007074 > self.yaw_speed)
+        {
+            globaldef007074 = self.yaw_speed;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007074 < (FALSE - self.yaw_speed))
+        {
+            globaldef007074 = FALSE - self.yaw_speed;
+        }
+        
+    }
+    
+    self.v_angle_y = anglemod(current_yaw + globaldef007074);
+};
+
+
+// func002404
+// function begins at statement 37790, parm_start=20885
+// OP_LOAD_F	28	176	20889
+// OP_STORE_F	20889	20887	0
+// OP_LOAD_F	28	611	20890
+// OP_MUL_F	20890	276	20891
+// OP_STORE_F	20891	20885	0
+// OP_GT	20885	2805	20892
+// OP_IFNOT	20892	3	0
+// OP_STORE_F	2805	20885	0
+// OP_GOTO	4	0	0
+// OP_LT	20885	12648	20893
+// OP_IFNOT	20893	2	0
+// OP_STORE_F	12648	20885	0
+// OP_EQ_F	20887	20885	20894
+// OP_IFNOT	20894	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	20885	20887	20895
+// OP_STORE_F	20895	20886	0
+// OP_GT	20886	213	20896
+// OP_IFNOT	20896	7	0
+// OP_LOAD_F	28	612	20897
+// OP_GT	20886	20897	20898
+// OP_IFNOT	20898	3	0
+// OP_LOAD_F	28	612	20899
+// OP_STORE_F	20899	20886	0
+// OP_GOTO	8	0	0
+// OP_LOAD_F	28	612	20900
+// OP_SUB_F	213	20900	20901
+// OP_LT	20886	20901	20902
+// OP_IFNOT	20902	4	0
+// OP_LOAD_F	28	612	20903
+// OP_SUB_F	213	20903	20904
+// OP_STORE_F	20904	20886	0
+// OP_ADDRESS	28	176	20905
+// OP_ADD_F	20887	20886	20906
+// OP_STOREP_F	20906	20905	0
+// OP_DONE	0	0	0
+void () func002404 = 
+{
+    local float globaldef007076;
+    local float globaldef007077;
+    local float globaldef007078;
+    local float globaldef007079;
+    globaldef007078 = self.v_angle_x;
+    globaldef007076 = self.field000288 * CONTENT_EMPTY;
+    if(globaldef007076 > 80)
+    {
+        globaldef007076 = 80;
+    }
+    else
+    {
+        
+        if(globaldef007076 < -80)
+        {
+            globaldef007076 = -80;
+        }
+        
+    }
+    
+    
+    if(globaldef007078 == globaldef007076)
+    {
+        return;
+    }
+    
+    globaldef007077 = globaldef007076 - globaldef007078;
+    if(globaldef007077 > FALSE)
+    {
+        
+        if(globaldef007077 > self.field000289)
+        {
+            globaldef007077 = self.field000289;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007077 < (FALSE - self.field000289))
+        {
+            globaldef007077 = FALSE - self.field000289;
+        }
+        
+    }
+    
+    self.v_angle_x = globaldef007078 + globaldef007077;
+};
+
+
+// func002405
+// function begins at statement 37826, parm_start=20908
+// OP_LOAD_F	28	178	20911
+// OP_STORE_F	20911	20910	0
+// OP_STORE_F	213	20908	0
+// OP_EQ_F	20910	20908	20912
+// OP_IFNOT	20912	2	0
+// OP_RETURN	0	0	0
+// OP_SUB_F	20908	20910	20913
+// OP_STORE_F	20913	20909	0
+// OP_GT	20909	213	20914
+// OP_IFNOT	20914	5	0
+// OP_GT	20909	216	20915
+// OP_IFNOT	20915	2	0
+// OP_STORE_F	216	20909	0
+// OP_GOTO	4	0	0
+// OP_LT	20909	277	20916
+// OP_IFNOT	20916	2	0
+// OP_STORE_F	277	20909	0
+// OP_ADDRESS	28	178	20917
+// OP_ADD_F	20910	20909	20918
+// OP_STOREP_F	20918	20917	0
+// OP_DONE	0	0	0
+void () func002405 = 
+{
+    local float globaldef007081;
+    local float globaldef007082;
+    local float globaldef007083;
+    globaldef007083 = self.v_angle_z;
+    globaldef007081 = FALSE;
+    
+    if(globaldef007083 == globaldef007081)
+    {
+        return;
+    }
+    
+    globaldef007082 = globaldef007081 - globaldef007083;
+    if(globaldef007082 > FALSE)
+    {
+        
+        if(globaldef007082 > FL_SWIM)
+        {
+            globaldef007082 = FL_SWIM;
+        }
+        
+    }
+    else
+    {
+        
+        if(globaldef007082 < CONTENT_SOLID)
+        {
+            globaldef007082 = CONTENT_SOLID;
+        }
+        
+    }
+    
+    self.v_angle_z = globaldef007083 + globaldef007082;
+};
+
+
+// func002406
+// function begins at statement 37847, parm_start=20920
+// OP_CALL0	20849	0	0
+// OP_CALL0	20907	0	0
+// OP_LOAD_F	28	186	20920
+// OP_GT	20920	31	20921
+// OP_IFNOT	20921	2	0
+// OP_RETURN	0	0	0
+// OP_CALL0	494	0	0
+// OP_CALL0	20823	0	0
+// OP_CALL0	20861	0	0
+// OP_CALL0	20884	0	0
+// OP_DONE	0	0	0
+void () func002406 = 
+{
+    func002402();
+    func002405();
+    
+    if(self.teleport_time > time)
+    {
+        return;
+    }
+    
+    ChangeYaw();
+    func002401();
+    func002403();
+    func002404();
+};
+
+
+// func002407
+// function begins at statement 37858, parm_start=20923
+// OP_LOAD_F	28	394	20923
+// OP_LT	20923	8982	20924
+// OP_LOAD_F	28	116	20925
+// OP_GE	20925	213	20926
+// OP_AND	20924	20926	20927
+// OP_LOAD_F	28	152	20928
+// OP_GT	20928	213	20929
+// OP_AND	20927	20929	20930
+// OP_IFNOT	20930	26	0
+// OP_LOAD_F	28	394	20931
+// OP_LT	20931	8993	20932
+// OP_IFNOT	20932	15	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	30	7	0
+// OP_STORE_V	30	10	0
+// OP_STORE_V	230	13	0
+// OP_CALL4	522	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	327	7	0
+// OP_STORE_V	6647	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	398	20933
+// OP_STOREP_S	8996	20933	0
+// OP_GOTO	7	0	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	327	7	0
+// OP_STORE_V	6646	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	331	16	0
+// OP_CALL5	458	0	0
+// OP_ADDRESS	28	394	20934
+// OP_STOREP_F	213	20934	0
+// OP_LOAD_F	28	575	20935
+// OP_BITAND	20935	700	20936
+// OP_NOT_F	20936	0	20937
+// OP_IFNOT	20937	4	0
+// OP_ADDRESS	28	394	20938
+// OP_LOAD_F	28	116	20939
+// OP_STOREP_F	20939	20938	0
+// OP_DONE	0	0	0
+void () func002407 = 
+{
+    
+    if(((self.jump_flag < -300) && (self.velocity_z >= FALSE)) && (self.health > FALSE))
+    {
+        if(self.jump_flag < -650)
+        {
+            T_Damage(self, world, world, MOVETYPE_FLY);
+            sound(self, CHAN_VOICE, "player/land2.wav", TRUE, ATTN_NORM);
+            self.deathtype = "falling";
+        }
+        else
+        {
+            sound(self, CHAN_VOICE, "player/land.wav", TRUE, ATTN_NORM);
+        }
+        
+        self.jump_flag = FALSE;
+    }
+    
+    
+    if(!(self.field000252 & globaldef000683))
+    {
+        self.jump_flag = self.velocity_z;
+    }
+    
+};
+
+
+// func002408
+// function begins at statement 37900, parm_start=20941
+// OP_STORE_V	28	4	0
+// OP_CALL1	20773	0	0
+// OP_CALL0	20919	0	0
+// OP_CALL0	8832	0	0
+// OP_CALL0	20922	0	0
+// OP_CALL0	8559	0	0
+// OP_ADDRESS	28	580	20941
+// OP_LOAD_V	28	105	20944
+// OP_STOREP_V	20944	20941	0
+// OP_ADDRESS	28	576	20947
+// OP_LOAD_V	28	113	20950
+// OP_STOREP_V	20950	20947	0
+// OP_ADDRESS	28	584	20953
+// OP_LOAD_F	28	182	20954
+// OP_STOREP_F	20954	20953	0
+// OP_ADDRESS	28	585	20955
+// OP_LOAD_F	28	575	20956
+// OP_STOREP_F	20956	20955	0
+// OP_ADDRESS	28	182	20957
+// OP_LOAD_F	28	182	20958
+// OP_LOAD_F	28	182	20959
+// OP_BITAND	20959	223	20960
+// OP_SUB_F	20958	20960	20961
+// OP_STOREP_F	20961	20957	0
+// OP_ADDRESS	28	586	20962
+// OP_STOREP_ENT	30	20962	0
+// OP_DONE	0	0	0
+void () func002408 = 
+{
+    func002400(self);
+    func002406();
+    func000402();
+    func002407();
+    func000396();
+    self.field000257 = self.origin;
+    self.field000253 = self.velocity;
+    self.field000261 = self.flags;
+    self.field000262 = self.field000252;
+    self.flags = self.flags - (self.flags & FL_ONGROUND);
+    self.field000263 = world;
+};
+
+
+// func002409
+// function begins at statement 37927, parm_start=20964
+// OP_LOAD_F	28	575	20964
+// OP_BITAND	20964	703	20965
+// OP_IFNOT	20965	2	0
+// OP_CALL0	1196	0	0
+// OP_BITAND	821	767	20966
+// OP_IFNOT	20966	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1216	0	0
+// OP_DONE	0	0	0
+void () func002409 = 
+{
+    
+    if(self.field000252 & globaldef000686)
+    {
+        func002680();
+    }
+    
+    
+    if(globaldef000804 & OBOT_ROCKETARENA)
+    {
+        rocket_arena_prethink(self);
+    }
+    
+};
+
+
+// func002410
+// function begins at statement 37936, parm_start=20967
+// OP_CALL0	20963	0	0
+// OP_LOAD_F	28	588	20968
+// OP_GT	20968	20967	20969
+// OP_IFNOT	20969	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	1141	0	0
+// OP_CALL0	20940	0	0
+// OP_DONE	0	0	0
+void (float globaldef007088) func002410 = 
+{
+    func002409();
+    
+    if(self.field000265 > globaldef007088)
+    {
+        func002499(self);
+    }
+    
+    func002408();
+};
+
+
+// func002411
+// function begins at statement 37944, parm_start=20971
+// OP_STORE_F	214	20972	0
+// OP_ADD_F	20971	214	20973
+// OP_STORE_F	20973	20971	0
+// OP_GT	20971	214	20974
+// OP_IFNOT	20974	6	0
+// OP_MUL_F	20972	216	20975
+// OP_STORE_F	20975	20972	0
+// OP_SUB_F	20971	214	20976
+// OP_STORE_F	20976	20971	0
+// OP_GOTO	-6	0	0
+// OP_RETURN	20972	0	0
+// OP_DONE	0	0	0
+float (float globaldef007090) func002411 = 
+{
+    local float globaldef007091;
+    globaldef007091 = TRUE;
+    globaldef007090 = globaldef007090 + TRUE;
+    
+    while(globaldef007090 > TRUE)
+    {
+        globaldef007091 = globaldef007091 * FL_SWIM;
+        globaldef007090 = globaldef007090 - TRUE;
+    }
+    
+    return globaldef007091;
+};
+
+
+// func002412
+// function begins at statement 37956, parm_start=20978
+// OP_STORE_V	20978	4	0
+// OP_CALL1	20970	0	0
+// OP_BITAND	811	1	20979
+// OP_IFNOT	20979	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (float globaldef007093) func002412 = 
+{
+    
+    if(globaldef000794 & func002411(globaldef007093))
+    {
+        return TRUE;
+    }
+    
+    return FALSE;
+};
+
+
+// func002413
+// function begins at statement 37963, parm_start=20981
+// OP_STORE_V	20981	4	0
+// OP_CALL1	20970	0	0
+// OP_BITOR	811	1	20982
+// OP_STORE_F	20982	811	0
+// OP_DONE	0	0	0
+void (float globaldef007095) func002413 = 
+{
+    globaldef000794 = globaldef000794 | func002411(globaldef007095);
+};
+
+
+// func002414
+// function begins at statement 37968, parm_start=20984
+// OP_STORE_V	20984	4	0
+// OP_CALL1	20970	0	0
+// OP_BITAND	811	1	20985
+// OP_SUB_F	811	20985	20986
+// OP_STORE_F	20986	811	0
+// OP_DONE	0	0	0
+void (float globaldef007097) func002414 = 
+{
+    globaldef000794 = globaldef000794 - (globaldef000794 & func002411(globaldef007097));
+};
+
+
+// func002415
+// function begins at statement 37974, parm_start=20988
+// OP_STORE_F	213	20988	0
+// OP_LT	20988	736	20989
+// OP_IFNOT	20989	9	0
+// OP_STORE_V	20988	4	0
+// OP_CALL1	20977	0	0
+// OP_NOT_F	1	0	20990
+// OP_IFNOT	20990	2	0
+// OP_RETURN	20988	0	0
+// OP_ADD_F	20988	214	20991
+// OP_STORE_F	20991	20988	0
+// OP_GOTO	-9	0	0
+// OP_RETURN	276	0	0
+// OP_DONE	0	0	0
+float () func002415 = 
+{
+    local float globaldef007099;
+    globaldef007099 = FALSE;
+    
+    while(globaldef007099 < OBOT_MAXBOTS)
+    {
+        
+        if(!func002412(globaldef007099))
+        {
+            return globaldef007099;
+        }
+        
+        globaldef007099 = globaldef007099 + TRUE;
+    }
+    
+    return CONTENT_EMPTY;
+};
+
+
+// func002416
+// function begins at statement 37987, parm_start=20993
+// OP_CALL0	457	0	0
+// OP_SUB_F	736	214	20994
+// OP_MUL_F	1	20994	20995
+// OP_ADD_F	20995	539	20996
+// OP_STORE_V	20996	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	20993	0
+// OP_EQ_F	20993	213	20997
+// OP_IFNOT	20997	8	0
+// OP_CALL0	457	0	0
+// OP_SUB_F	736	214	20998
+// OP_MUL_F	1	20998	20999
+// OP_ADD_F	20999	539	21000
+// OP_STORE_V	21000	4	0
+// OP_CALL1	484	0	0
+// OP_STORE_F	1	20993	0
+// OP_STORE_V	20993	4	0
+// OP_CALL1	20977	0	0
+// OP_IF	1	-18	0
+// OP_RETURN	20993	0	0
+// OP_DONE	0	0	0
+float () func002416 = 
+{
+    local float globaldef007101;
+    do
+    {
+        globaldef007101 = floor((random() * (OBOT_MAXBOTS - TRUE)) + RA_PLAYERSTATTIME);
+        
+        if(globaldef007101 == FALSE)
+        {
+            globaldef007101 = floor((random() * (OBOT_MAXBOTS - TRUE)) + RA_PLAYERSTATTIME);
+        }
+        
+    } while (func002412(globaldef007101));
+    return globaldef007101;
+};
+
+
+// func002417
+// function begins at statement 38008, parm_start=21001
+// OP_LOAD_F	28	165	21004
+// OP_EQ_F	21004	246	21005
+// OP_IFNOT	21005	3	0
+// OP_STORE_F	213	21003	0
+// OP_GOTO	2	0	0
+// OP_STORE_F	214	21003	0
+// OP_LOAD_S	21001	180	21006
+// OP_STORE_V	21006	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9087	4	0
+// OP_CALL1	472	0	0
+// OP_LOAD_F	21001	153	21007
+// OP_STORE_V	21007	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9089	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	21001	4	0
+// OP_STORE_V	329	7	0
+// OP_STORE_V	6662	10	0
+// OP_STORE_V	214	13	0
+// OP_STORE_V	330	16	0
+// OP_CALL5	458	0	0
+// OP_BITAND	821	777	21008
+// OP_IFNOT	21008	19	0
+// OP_LOAD_F	21001	608	21009
+// OP_STORE_V	21009	4	0
 // OP_CALL1	1054	0	0
-// OP_STORE_ENT	1	16246	0
-// OP_NOT_ENT	16246	0	16253
-// OP_IFNOT	16253	3	0
+// OP_STORE_ENT	1	21002	0
+// OP_NOT_ENT	21002	0	21010
+// OP_IFNOT	21010	3	0
 // OP_STORE_V	16254	4	0
 // OP_CALL1	461	0	0
-// OP_STORE_V	16246	4	0
-// OP_STORE_V	16245	7	0
-// OP_CALL2	1055	0	0
-// OP_ADDRESS	16245	132	16255
-// OP_STOREP_F	213	16255	0
-// OP_ADDRESS	16245	93	16256
-// OP_STOREP_F	213	16256	0
-// OP_ADDRESS	16246	131	16257
-// OP_LOAD_F	16245	131	16258
-// OP_STOREP_F	16258	16257	0
-// OP_ADDRESS	16246	162	16259
-// OP_LOAD_F	16245	162	16260
-// OP_STOREP_F	16260	16259	0
-// OP_ADDRESS	16246	133	16261
-// OP_LOAD_F	16245	133	16262
-// OP_STOREP_F	16262	16261	0
-// OP_ADDRESS	16246	117	16263
-// OP_LOAD_V	16245	117	16266
-// OP_STOREP_V	16266	16263	0
-// OP_ADDRESS	16246	175	16269
-// OP_LOAD_V	16245	175	16272
-// OP_STOREP_V	16272	16269	0
-// OP_ADDRESS	16246	183	16275
-// OP_LOAD_F	16245	608	16276
-// OP_ADD_F	16276	214	16277
-// OP_STOREP_F	16277	16275	0
-// OP_LOAD_V	16245	105	16278
-// OP_STORE_V	16278	16247	0
-// OP_LOAD_F	16245	575	16281
-// OP_BITAND	16281	712	16282
-// OP_IFNOT	16282	34	0
-// OP_LOAD_F	16246	108	16283
-// OP_LOAD_F	16245	108	16284
-// OP_SUB_F	16284	214	16285
-// OP_GE	16283	16285	16286
-// OP_LOAD_F	16245	575	16287
-// OP_BITAND	16287	700	16288
-// OP_NOT_F	16288	0	16289
-// OP_OR	16286	16289	16290
-// OP_IFNOT	16290	6	0
-// OP_ADDRESS	16245	575	16291
-// OP_LOAD_F	16245	575	16292
-// OP_SUB_F	16292	712	16293
-// OP_STOREP_F	16293	16291	0
-// OP_GOTO	20	0	0
-// OP_LOAD_F	16246	108	16294
-// OP_LOAD_F	16245	108	16295
-// OP_SUB_F	16294	16295	16296
-// OP_LOAD_F	16245	137	16297
-// OP_LE	16296	16297	16298
-// OP_IFNOT	16298	6	0
-// OP_ADDRESS	16246	108	16299
-// OP_LOAD_F	16245	108	16300
-// OP_LOAD_F	16245	137	16301
-// OP_ADD_F	16300	16301	16302
-// OP_STOREP_F	16302	16299	0
-// OP_LOAD_F	16246	108	16303
-// OP_LOAD_F	16245	108	16304
-// OP_LOAD_F	16246	108	16305
-// OP_SUB_F	16304	16305	16306
-// OP_MUL_F	16306	32	16307
-// OP_DIV_F	16307	3036	16308
-// OP_ADD_F	16303	16308	16309
-// OP_STORE_F	16309	16249	0
-// OP_STORE_V	16246	4	0
-// OP_STORE_V	16247	7	0
-// OP_CALL2	453	0	0
-// OP_STORE_V	16246	4	0
-// OP_LOAD_V	16245	134	16310
-// OP_STORE_V	16310	7	0
-// OP_LOAD_V	16245	138	16313
-// OP_STORE_V	16313	10	0
-// OP_CALL3	455	0	0
-// OP_ADDRESS	16246	113	16316
-// OP_LOAD_V	16245	113	16319
-// OP_STOREP_V	16319	16316	0
-// OP_DONE	0	0	0
-void (entity globaldef005704) func002268 = 
-{
-    local entity globaldef005705;
-    local vector globaldef005706;
-    local float globaldef005710;
-    local float globaldef005711;
-    globaldef005705 = func002266(globaldef005704.clientnumber);
-    
-    if(!globaldef005705)
-    {
-        objerror("bot with invalid client number");
-    }
-    
-    func002267(globaldef005705, globaldef005704);
-    globaldef005704.skin = FALSE;
-    globaldef005704.modelindex = FALSE;
-    globaldef005705.frame = globaldef005704.frame;
-    globaldef005705.items = globaldef005704.items;
-    globaldef005705.effects = globaldef005704.effects;
-    globaldef005705.angles = globaldef005704.angles;
-    globaldef005705.v_angle = globaldef005704.v_angle;
-    globaldef005705.colormap = globaldef005704.clientnumber + TRUE;
-    globaldef005706 = globaldef005704.origin;
-    
-    if(globaldef005704.field000252 & globaldef000695)
-    {
-        if((globaldef005705.origin_z >= (globaldef005704.origin_z - TRUE)) || (!(globaldef005704.field000252 & globaldef000683)))
-        {
-            globaldef005704.field000252 = globaldef005704.field000252 - globaldef000695;
-        }
-        else
-        {
-            
-            if((globaldef005705.origin_z - globaldef005704.origin_z) <= globaldef005704.mins_z)
-            {
-                globaldef005705.origin_z = globaldef005704.origin_z + globaldef005704.mins_z;
-            }
-            
-            globaldef005706_z = globaldef005705.origin_z + (((globaldef005704.origin_z - globaldef005705.origin_z) * frametime) / 0.1);
-        }
-        
-    }
-    
-    setorigin(globaldef005705, globaldef005706);
-    setsize(globaldef005705, globaldef005704.mins, globaldef005704.maxs);
-    globaldef005705.velocity = globaldef005704.velocity;
-};
-
-
-// func002269
-// function begins at statement 27535, parm_start=16323
-// OP_STORE_ENT	28	16324	0
-// OP_STORE_ENT	16323	28	0
-// OP_CALL0	8749	0	0
-// OP_STORE_ENT	16324	28	0
-// OP_DONE	0	0	0
-void (entity globaldef005714) func002269 = 
-{
-    local entity globaldef005715;
-    globaldef005715 = self;
-    self = globaldef005714;
-    func000400();
-    self = globaldef005715;
-};
-
-
-// func002270
-// function begins at statement 27540, parm_start=16326
-// OP_STORE_ENT	28	16327	0
-// OP_STORE_ENT	16326	28	0
-// OP_CALL0	8657	0	0
-// OP_STORE_ENT	16327	28	0
-// OP_DONE	0	0	0
-void (entity globaldef005717) func002270 = 
-{
-    local entity globaldef005718;
-    globaldef005718 = self;
-    self = globaldef005717;
-    func000399();
-    self = globaldef005718;
-};
-
-
-// func002271
-// function begins at statement 27545, parm_start=16329
-// OP_LOAD_F	16329	575	16338
-// OP_BITAND	16338	700	16339
-// OP_IFNOT	16339	36	0
-// OP_LOAD_V	16329	113	16340
-// OP_STORE_V	16340	16335	0
-// OP_STORE_F	213	16337	0
-// OP_STORE_V	16335	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	16333	0
-// OP_IFNOT	16333	29	0
-// OP_STORE_V	16343	4	0
-// OP_CALL1	490	0	0
-// OP_STORE_F	1	16330	0
-// OP_STORE_V	16344	4	0
-// OP_CALL1	490	0	0
-// OP_STORE_F	1	16331	0
-// OP_LT	16333	16331	16345
-// OP_IFNOT	16345	3	0
-// OP_STORE_F	16331	16332	0
-// OP_GOTO	2	0	0
-// OP_STORE_F	16333	16332	0
-// OP_MUL_F	3036	16332	16346
-// OP_MUL_F	16346	16330	16347
-// OP_SUB_F	16333	16347	16348
-// OP_STORE_F	16348	16334	0
-// OP_LT	16334	213	16349
-// OP_IFNOT	16349	2	0
-// OP_STORE_F	213	16334	0
-// OP_DIV_F	16334	16333	16350
-// OP_STORE_F	16350	16334	0
-// OP_ADDRESS	16329	114	16351
-// OP_LOAD_F	16329	114	16352
-// OP_MUL_F	16352	16334	16353
-// OP_STOREP_F	16353	16351	0
-// OP_ADDRESS	16329	115	16354
-// OP_LOAD_F	16329	115	16355
-// OP_MUL_F	16355	16334	16356
-// OP_STOREP_F	16356	16354	0
-// OP_DONE	0	0	0
-void (entity globaldef005720) func002271 = 
-{
-    local float globaldef005721;
-    local float globaldef005722;
-    local float globaldef005723;
-    local float globaldef005724;
-    local float globaldef005725;
-    local vector globaldef005726;
-    
-    if(globaldef005720.field000252 & globaldef000683)
-    {
-        globaldef005726 = globaldef005720.velocity;
-        globaldef005726_z = FALSE;
-        globaldef005724 = vlen(globaldef005726);
-        
-        if(globaldef005724)
-        {
-            globaldef005721 = cvar("sv_friction");
-            globaldef005722 = cvar("sv_stopspeed");
-            if(globaldef005724 < globaldef005722)
-            {
-                globaldef005723 = globaldef005722;
-            }
-            else
-            {
-                globaldef005723 = globaldef005724;
-            }
-            
-            globaldef005725 = globaldef005724 - ((0.1 * globaldef005723) * globaldef005721);
-            
-            if(globaldef005725 < FALSE)
-            {
-                globaldef005725 = FALSE;
-            }
-            
-            globaldef005725 = globaldef005725 / globaldef005724;
-            globaldef005720.velocity_x = globaldef005720.velocity_x * globaldef005725;
-            globaldef005720.velocity_y = globaldef005720.velocity_y * globaldef005725;
-        }
-        
-    }
-    
-};
-
-
-// func002272
-// function begins at statement 27584, parm_start=16358
-// OP_LOAD_V	16358	105	16363
-// OP_STORE_V	16363	16360	0
-// OP_LOAD_F	16358	137	16366
-// OP_ADD_F	16362	16366	16367
-// OP_ADD_F	16367	214	16368
-// OP_STORE_F	16368	16362	0
-// OP_STORE_V	16360	4	0
-// OP_CALL1	487	0	0
-// OP_STORE_F	1	16359	0
-// OP_EQ_F	16359	276	16369
-// OP_IFNOT	16369	6	0
-// OP_ADDRESS	16358	190	16370
-// OP_STOREP_F	276	16370	0
-// OP_ADDRESS	16358	189	16371
-// OP_STOREP_F	213	16371	0
-// OP_RETURN	0	0	0
-// OP_ADDRESS	16358	190	16372
-// OP_STOREP_F	16359	16372	0
-// OP_ADDRESS	16358	189	16373
-// OP_STOREP_F	214	16373	0
-// OP_ADD_F	16362	308	16374
-// OP_STORE_F	16374	16362	0
-// OP_STORE_V	16360	4	0
-// OP_CALL1	487	0	0
-// OP_STORE_F	1	16359	0
-// OP_EQ_F	16359	276	16375
-// OP_IFNOT	16375	2	0
-// OP_RETURN	0	0	0
-// OP_ADDRESS	16358	189	16376
-// OP_STOREP_F	216	16376	0
-// OP_ADD_F	16362	6133	16377
-// OP_STORE_F	16377	16362	0
-// OP_STORE_V	16360	4	0
-// OP_CALL1	487	0	0
-// OP_STORE_F	1	16359	0
-// OP_NE_F	16359	276	16378
-// OP_IFNOT	16378	3	0
-// OP_ADDRESS	16358	189	16379
-// OP_STOREP_F	228	16379	0
-// OP_DONE	0	0	0
-void (entity globaldef005733) func002272 = 
-{
-    local float globaldef005734;
-    local vector globaldef005735;
-    globaldef005735 = globaldef005733.origin;
-    globaldef005735_z = (globaldef005735_z + globaldef005733.mins_z) + TRUE;
-    globaldef005734 = pointcontents(globaldef005735);
-    
-    if(globaldef005734 == CONTENT_EMPTY)
-    {
-        globaldef005733.watertype = CONTENT_EMPTY;
-        globaldef005733.waterlevel = FALSE;
-        return;
-    }
-    
-    globaldef005733.watertype = globaldef005734;
-    globaldef005733.waterlevel = TRUE;
-    globaldef005735_z = globaldef005735_z + SVC_FOUNDSECRET;
-    globaldef005734 = pointcontents(globaldef005735);
-    
-    if(globaldef005734 == CONTENT_EMPTY)
-    {
-        return;
-    }
-    
-    globaldef005733.waterlevel = FL_SWIM;
-    globaldef005735_z = globaldef005735_z + 18;
-    globaldef005734 = pointcontents(globaldef005735);
-    
-    if(globaldef005734 != CONTENT_EMPTY)
-    {
-        globaldef005733.waterlevel = MOVETYPE_WALK;
-    }
-    
-};
-
-
-// func002273
-// function begins at statement 27624, parm_start=16380
-// OP_ADDRESS	16380	575	16387
-// OP_LOAD_F	16380	575	16388
-// OP_LOAD_F	16380	575	16389
-// OP_BITAND	16389	702	16390
-// OP_SUB_F	16388	16390	16391
-// OP_STOREP_F	16391	16387	0
-// OP_ADDRESS	16380	575	16392
-// OP_LOAD_F	16380	575	16393
-// OP_LOAD_F	16380	575	16394
-// OP_BITAND	16394	700	16395
-// OP_SUB_F	16393	16395	16396
-// OP_STOREP_F	16396	16392	0
-// OP_STORE_V	829	4	0
-// OP_LOAD_V	16380	134	16397
-// OP_STORE_V	16397	7	0
-// OP_LOAD_V	16380	138	16400
-// OP_STORE_V	16400	10	0
-// OP_CALL3	455	0	0
-// OP_STORE_V	829	4	0
-// OP_LOAD_V	16380	105	16403
-// OP_STORE_V	16403	7	0
-// OP_CALL2	453	0	0
-// OP_LOAD_ENT	16380	201	16406
-// OP_STORE_ENT	16406	16386	0
-// OP_ADDRESS	16380	201	16407
-// OP_STOREP_ENT	829	16407	0
-// OP_STORE_ENT	28	16385	0
-// OP_STORE_ENT	829	28	0
-// OP_CALL0	481	0	0
-// OP_STORE_F	1	16381	0
-// OP_STORE_ENT	16385	28	0
-// OP_ADDRESS	16380	201	16408
-// OP_STOREP_ENT	16386	16408	0
-// OP_NOT_F	16381	0	16409
-// OP_IFNOT	16409	2	0
-// OP_RETURN	0	0	0
-// OP_LOAD_F	16380	108	16410
-// OP_LOAD_F	829	108	16411
-// OP_SUB_F	16410	16411	16412
-// OP_STORE_V	16412	4	0
-// OP_CALL1	488	0	0
-// OP_LE	1	539	16413
-// OP_IFNOT	16413	16	0
-// OP_ADDRESS	16380	575	16414
-// OP_LOAD_F	16380	575	16415
-// OP_BITOR	16415	700	16416
-// OP_STOREP_F	16416	16414	0
-// OP_ADDRESS	16380	151	16417
-// OP_LOAD_ENT	829	151	16418
-// OP_STOREP_ENT	16418	16417	0
-// OP_LOAD_ENT	829	151	16419
-// OP_EQ_E	16419	30	16420
-// OP_IFNOT	16420	5	0
-// OP_ADDRESS	16380	575	16421
-// OP_LOAD_F	16380	575	16422
-// OP_BITOR	16422	702	16423
-// OP_STOREP_F	16423	16421	0
+// OP_ADDRESS	21002	93	21011
+// OP_STOREP_F	213	21011	0
+// OP_ADDRESS	21002	132	21012
+// OP_STOREP_F	213	21012	0
+// OP_ADDRESS	21002	130	21013
+// OP_STOREP_S	348	21013	0
+// OP_ADDRESS	21001	574	21014
+// OP_STOREP_F	213	21014	0
+// OP_ADDRESS	21001	573	21015
+// OP_STOREP_F	213	21015	0
+// OP_STORE_V	21001	4	0
+// OP_CALL1	1066	0	0
+// OP_STORE_V	21001	4	0
+// OP_CALL1	1164	0	0
+// OP_LOAD_F	21001	575	21016
+// OP_BITAND	21016	703	21017
+// OP_IFNOT	21017	7	0
+// OP_ADDRESS	21001	575	21018
+// OP_LOAD_F	21001	575	21019
+// OP_SUB_F	21019	703	21020
+// OP_STOREP_F	21020	21018	0
+// OP_SUB_F	802	214	21021
+// OP_STORE_F	21021	802	0
+// OP_LOAD_ENT	21001	194	21022
+// OP_IFNOT	21022	4	0
+// OP_LOAD_ENT	21001	194	21023
+// OP_STORE_V	21023	4	0
+// OP_CALL1	465	0	0
+// OP_LOAD_F	21001	608	21024
+// OP_STORE_V	21024	4	0
+// OP_STORE_V	3002	7	0
+// OP_CALL2	1050	0	0
+// OP_LOAD_F	21001	609	21025
+// OP_STORE_V	21025	4	0
+// OP_CALL1	20983	0	0
+// OP_LOAD_F	21001	608	21026
+// OP_STORE_V	21026	4	0
+// OP_CALL1	1049	0	0
+// OP_LOAD_ENT	21001	620	21027
+// OP_IFNOT	21027	5	0
+// OP_LOAD_ENT	21001	620	21028
+// OP_ADDRESS	21028	621	21029
+// OP_LOAD_ENT	21001	621	21030
+// OP_STOREP_ENT	21030	21029	0
+// OP_LOAD_ENT	21001	621	21031
+// OP_IFNOT	21031	6	0
+// OP_LOAD_ENT	21001	621	21032
+// OP_ADDRESS	21032	620	21033
+// OP_LOAD_ENT	21001	620	21034
+// OP_STOREP_ENT	21034	21033	0
 // OP_GOTO	3	0	0
-// OP_ADDRESS	16380	151	16424
-// OP_STOREP_ENT	30	16424	0
+// OP_LOAD_ENT	21001	620	21035
+// OP_STORE_ENT	21035	834	0
+// OP_BITAND	821	767	21036
+// OP_IFNOT	21036	4	0
+// OP_STORE_V	21001	4	0
+// OP_STORE_V	21003	7	0
+// OP_CALL2	1215	0	0
+// OP_STORE_V	21001	4	0
+// OP_CALL1	465	0	0
+// OP_SUB_F	810	214	21037
+// OP_STORE_F	21037	810	0
 // OP_DONE	0	0	0
-void (entity globaldef005739) func002273 = 
+void (entity globaldef007102) func002417 = 
 {
-    local float globaldef005740;
-    local vector globaldef005741;
-    local entity globaldef005745;
-    local entity globaldef005746;
-    globaldef005739.field000252 = globaldef005739.field000252 - (globaldef005739.field000252 & globaldef000685);
-    globaldef005739.field000252 = globaldef005739.field000252 - (globaldef005739.field000252 & globaldef000683);
-    setsize(globaldef000812, globaldef005739.mins, globaldef005739.maxs);
-    setorigin(globaldef000812, globaldef005739.origin);
-    globaldef005746 = globaldef005739.owner;
-    globaldef005739.owner = globaldef000812;
-    globaldef005745 = self;
-    self = globaldef000812;
-    globaldef005740 = droptofloor();
-    self = globaldef005745;
-    globaldef005739.owner = globaldef005746;
-    
-    if(!globaldef005740)
+    local entity globaldef007103;
+    local float globaldef007104;
+    if(self.deadflag == DEAD_NO)
     {
-        return;
-    }
-    
-    if((fabs(globaldef005739.origin_z - globaldef000812.origin_z)) <= RA_PLAYERSTATTIME)
-    {
-        globaldef005739.field000252 = globaldef005739.field000252 | globaldef000683;
-        globaldef005739.groundentity = globaldef000812.groundentity;
-        
-        if(globaldef000812.groundentity == world)
-        {
-            globaldef005739.field000252 = globaldef005739.field000252 | globaldef000685;
-        }
-        
+        globaldef007104 = FALSE;
     }
     else
     {
-        globaldef005739.groundentity = world;
+        globaldef007104 = TRUE;
     }
     
+    bprint(globaldef007102.netname);
+    bprint(" left the game with ");
+    bprint(ftos(globaldef007102.frags));
+    bprint(" frags\n");
+    sound(globaldef007102, CHAN_BODY, "player/tornoff2.wav", TRUE, ATTN_NONE);
+    
+    if(globaldef000804 & globaldef000760)
+    {
+        globaldef007103 = func002266(globaldef007102.clientnumber);
+        
+        if(!globaldef007103)
+        {
+            objerror("bot with invalid client number");
+        }
+        
+        globaldef007103.modelindex = FALSE;
+        globaldef007103.skin = FALSE;
+        globaldef007103.model = string_null;
+        globaldef007102.field000251 = FALSE;
+        globaldef007102.field000250 = FALSE;
+    }
+    
+    func002359(globaldef007102);
+    func002522(globaldef007102);
+    
+    if(globaldef007102.field000252 & globaldef000686)
+    {
+        globaldef007102.field000252 = globaldef007102.field000252 - globaldef000686;
+        globaldef000785 = globaldef000785 - TRUE;
+    }
+    
+    
+    if(globaldef007102.goalentity)
+    {
+        remove(globaldef007102.goalentity);
+    }
+    
+    msgUpdateClientNameToAll(globaldef007102.clientnumber, "");
+    func002414(globaldef007102.field000286);
+    SetClientNumberFree(globaldef007102.clientnumber);
+    
+    if(globaldef007102.next)
+    {
+        globaldef007102.next.field000298 = globaldef007102.field000298;
+    }
+    
+    if(globaldef007102.field000298)
+    {
+        globaldef007102.field000298.next = globaldef007102.next;
+    }
+    else
+    {
+        globaldef000817 = globaldef007102.next;
+    }
+    
+    
+    if(globaldef000804 & OBOT_ROCKETARENA)
+    {
+        rocket_arena_disconnect(globaldef007102, globaldef007104);
+    }
+    
+    remove(globaldef007102);
+    globaldef000793 = globaldef000793 - TRUE;
 };
 
 
-// func002274
-// function begins at statement 27685, parm_start=16426
-// OP_LOAD_V	16426	560	16440
-// OP_STORE_V	16440	16427	0
-// OP_STORE_F	213	16429	0
-// OP_STORE_V	16427	4	0
-// OP_CALL1	459	0	0
-// OP_STORE_V	1	16427	0
-// OP_STORE_ENT	28	16433	0
-// OP_LOAD_V	28	105	16443
-// OP_STORE_V	16443	16435	0
-// OP_LOAD_F	28	182	16446
-// OP_STORE_F	16446	16439	0
-// OP_STORE_ENT	16426	28	0
-// OP_STORE_V	16427	4	0
-// OP_CALL1	463	0	0
-// OP_STORE_F	1	16438	0
-// OP_ADDRESS	28	182	16447
-// OP_LOAD_F	28	182	16448
-// OP_BITOR	16448	223	16449
-// OP_BITOR	16449	224	16450
-// OP_STOREP_F	16450	16447	0
-// OP_STORE_V	16438	4	0
-// OP_STORE_V	3263	7	0
-// OP_CALL2	480	0	0
-// OP_IFNOT	1	18	0
-// OP_LOAD_F	28	108	16451
-// OP_ADD_F	16437	1283	16452
-// OP_GT	16451	16452	16453
-// OP_IFNOT	16453	11	0
-// OP_ADDRESS	16426	575	16454
-// OP_LOAD_F	16426	575	16455
-// OP_BITOR	16455	711	16456
-// OP_STOREP_F	16456	16454	0
-// OP_ADDRESS	16426	564	16457
-// OP_LOAD_V	16426	105	16460
-// OP_STOREP_V	16460	16457	0
-// OP_ADDRESS	16426	568	16463
-// OP_LOAD_V	28	105	16466
-// OP_STOREP_V	16466	16463	0
+// func002418
+// function begins at statement 38105, parm_start=21039
+// OP_ADDRESS	21039	129	21043
+// OP_STOREP_S	1241	21043	0
+// OP_ADDRESS	21039	152	21044
+// OP_STOREP_F	1997	21044	0
+// OP_ADDRESS	21039	163	21045
+// OP_STOREP_F	252	21045	0
+// OP_ADDRESS	21039	104	21046
+// OP_STOREP_F	240	21046	0
+// OP_ADDRESS	21039	103	21047
+// OP_STOREP_F	229	21047	0
+// OP_ADDRESS	21039	393	21048
+// OP_STOREP_F	213	21048	0
+// OP_ADDRESS	21039	185	21049
+// OP_STOREP_F	1997	21049	0
+// OP_ADDRESS	21039	396	21050
+// OP_ADD_F	31	791	21051
+// OP_STOREP_F	21051	21050	0
+// OP_ADDRESS	21039	425	21052
+// OP_STOREP_F	214	21052	0
+// OP_ADDRESS	21039	382	21053
+// OP_STOREP_F	213	21053	0
+// OP_ADDRESS	21039	383	21054
+// OP_STOREP_F	213	21054	0
+// OP_ADDRESS	21039	381	21055
+// OP_STOREP_F	213	21055	0
+// OP_ADDRESS	21039	380	21056
+// OP_STOREP_F	213	21056	0
+// OP_ADDRESS	21039	133	21057
+// OP_STOREP_F	213	21057	0
+// OP_ADDRESS	21039	384	21058
+// OP_STOREP_F	213	21058	0
+// OP_ADDRESS	21039	192	21059
+// OP_LOAD_F	21039	588	21060
+// OP_MUL_F	217	21060	21061
+// OP_ADD_F	2323	21061	21062
+// OP_STOREP_F	21062	21059	0
+// OP_ADDRESS	21039	612	21063
+// OP_LOAD_F	21039	588	21064
+// OP_MUL_F	228	21064	21065
+// OP_ADD_F	235	21065	21066
+// OP_STOREP_F	21066	21063	0
+// OP_LOAD_F	21039	588	21067
+// OP_GT	21067	21068	21069
+// OP_IFNOT	21069	9	0
+// OP_ADDRESS	21039	192	21070
+// OP_LOAD_F	21039	192	21071
+// OP_ADD_F	21071	235	21072
+// OP_STOREP_F	21072	21070	0
+// OP_ADDRESS	21039	612	21073
+// OP_LOAD_F	21039	612	21074
+// OP_ADD_F	21074	229	21075
+// OP_STOREP_F	21075	21073	0
+// OP_BITAND	821	767	21076
+// OP_IFNOT	21076	13	0
+// OP_ADDRESS	21039	192	21077
+// OP_LOAD_F	21039	192	21078
+// OP_LOAD_F	21039	588	21079
+// OP_MUL_F	235	21079	21080
+// OP_ADD_F	21078	21080	21081
+// OP_STOREP_F	21081	21077	0
+// OP_ADDRESS	21039	612	21082
+// OP_LOAD_F	21039	612	21083
+// OP_LOAD_F	21039	588	21084
+// OP_MUL_F	230	21084	21085
+// OP_ADD_F	21083	21085	21086
+// OP_STOREP_F	21086	21082	0
+// OP_LOAD_ENT	21039	194	21087
+// OP_EQ_E	21087	30	21088
+// OP_IFNOT	21088	4	0
+// OP_ADDRESS	21039	194	21089
+// OP_CALL0	1130	0	0
+// OP_STOREP_ENT	1	21089	0
+// OP_LOAD_ENT	21039	194	21090
+// OP_ADDRESS	21090	194	21091
+// OP_STOREP_ENT	30	21091	0
+// OP_ADDRESS	21039	162	21092
+// OP_BITOR	254	253	21093
+// OP_STOREP_F	21093	21092	0
+// OP_ADDRESS	21039	152	21094
+// OP_STOREP_F	1997	21094	0
+// OP_ADDRESS	21039	188	21095
+// OP_STOREP_F	213	21095	0
+// OP_ADDRESS	21039	158	21096
+// OP_STOREP_F	305	21096	0
+// OP_ADDRESS	21039	159	21097
+// OP_STOREP_F	213	21097	0
+// OP_ADDRESS	21039	160	21098
+// OP_STOREP_F	213	21098	0
+// OP_ADDRESS	21039	161	21099
+// OP_STOREP_F	213	21099	0
+// OP_ADDRESS	21039	154	21100
+// OP_STOREP_F	4838	21100	0
+// OP_ADDRESS	21039	187	21101
+// OP_STOREP_F	213	21101	0
+// OP_EQ_F	35	229	21102
+// OP_IFNOT	21102	3	0
+// OP_STORE_V	21039	4	0
+// OP_CALL1	8390	0	0
+// OP_STORE_ENT	28	21041	0
+// OP_STORE_ENT	21039	28	0
+// OP_CALL0	4295	0	0
+// OP_STORE_ENT	21041	28	0
+// OP_ADDRESS	21039	371	21103
+// OP_STOREP_F	31	21103	0
+// OP_ADDRESS	21039	378	21104
+// OP_STOREP_F	31	21104	0
+// OP_ADDRESS	21039	366	21105
+// OP_STOREP_FNC	1176	21105	0
+// OP_ADDRESS	21039	367	21106
+// OP_STOREP_FNC	1177	21106	0
+// OP_ADDRESS	21039	148	21107
+// OP_STOREP_FNC	1166	21107	0
+// OP_ADDRESS	21039	150	21108
+// OP_ADD_F	31	3036	21109
+// OP_STOREP_F	21109	21108	0
+// OP_ADDRESS	21039	551	21110
+// OP_STOREP_FNC	1155	21110	0
+// OP_ADDRESS	21039	422	21111
+// OP_CALL0	457	0	0
+// OP_LOAD_F	21039	588	21112
+// OP_SUB_F	228	21112	21113
+// OP_MUL_F	1	21113	21114
+// OP_ADD_F	31	21114	21115
+// OP_STOREP_F	21115	21111	0
+// OP_ADDRESS	21039	181	21116
+// OP_STOREP_ENT	30	21116	0
+// OP_ADDRESS	21039	688	21117
+// OP_STOREP_F	716	21117	0
+// OP_ADDRESS	21039	165	21118
+// OP_STOREP_F	246	21118	0
+// OP_NOT_F	527	0	21119
+// OP_IFNOT	21119	6	0
 // OP_STORE_V	28	4	0
-// OP_STORE_V	16435	7	0
+// OP_STORE_V	6686	7	0
+// OP_CALL2	454	0	0
+// OP_LOAD_F	28	93	21120
+// OP_STORE_F	21120	527	0
+// OP_NOT_F	525	0	21121
+// OP_IFNOT	21121	6	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	6685	7	0
+// OP_CALL2	454	0	0
+// OP_LOAD_F	28	93	21122
+// OP_STORE_F	21122	525	0
+// OP_NOT_F	526	0	21123
+// OP_IFNOT	21123	6	0
+// OP_STORE_V	21039	4	0
+// OP_STORE_V	6684	7	0
+// OP_CALL2	454	0	0
+// OP_LOAD_F	21039	93	21124
+// OP_STORE_F	21124	526	0
+// OP_BITAND	821	777	21125
+// OP_IFNOT	21125	11	0
+// OP_ADDRESS	21039	132	21126
+// OP_STOREP_F	213	21126	0
+// OP_ADDRESS	21039	574	21127
+// OP_LOAD_F	21039	572	21128
+// OP_STOREP_F	21128	21127	0
+// OP_ADDRESS	21039	573	21129
+// OP_STOREP_F	526	21129	0
+// OP_ADDRESS	21039	93	21130
+// OP_STOREP_F	213	21130	0
+// OP_GOTO	5	0	0
+// OP_ADDRESS	21039	130	21131
+// OP_STOREP_S	6684	21131	0
+// OP_ADDRESS	21039	93	21132
+// OP_STOREP_F	526	21132	0
+// OP_STORE_V	21039	4	0
+// OP_STORE_V	289	7	0
+// OP_STORE_V	292	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	21039	4	0
+// OP_CALL1	7623	0	0
+// OP_STORE_ENT	1	21040	0
+// OP_BITAND	821	767	21133
+// OP_IFNOT	21133	4	0
+// OP_STORE_V	8379	4	0
+// OP_CALL1	1220	0	0
+// OP_STORE_ENT	1	21040	0
+// OP_STORE_V	21039	4	0
+// OP_LOAD_V	21040	105	21134
+// OP_ADD_V	21134	2827	21137
+// OP_STORE_V	21137	7	0
 // OP_CALL2	453	0	0
-// OP_ADDRESS	28	182	16469
-// OP_STOREP_F	16439	16469	0
-// OP_STORE_ENT	16433	28	0
+// OP_ADDRESS	21039	113	21140
+// OP_STOREP_V	286	21140	0
+// OP_ADDRESS	21039	576	21143
+// OP_STOREP_V	286	21143	0
+// OP_ADDRESS	21039	182	21146
+// OP_STOREP_F	698	21146	0
+// OP_ADDRESS	21039	580	21147
+// OP_LOAD_V	21039	105	21150
+// OP_STOREP_V	21150	21147	0
+// OP_ADDRESS	21039	584	21153
+// OP_STOREP_F	213	21153	0
+// OP_ADDRESS	21039	117	21154
+// OP_LOAD_V	21040	117	21157
+// OP_STOREP_V	21157	21154	0
+// OP_ADDRESS	21039	175	21160
+// OP_LOAD_V	21039	117	21163
+// OP_STOREP_V	21163	21160	0
+// OP_ADDRESS	21039	622	21166
+// OP_STOREP_ENT	30	21166	0
+// OP_LOAD_F	21039	575	21167
+// OP_BITAND	21167	703	21168
+// OP_IFNOT	21168	7	0
+// OP_SUB_F	802	214	21169
+// OP_STORE_F	21169	802	0
+// OP_ADDRESS	21039	575	21170
+// OP_LOAD_F	21039	575	21171
+// OP_SUB_F	21171	703	21172
+// OP_STOREP_F	21172	21170	0
+// OP_BITAND	821	768	21173
+// OP_NOT_F	21173	0	21174
+// OP_LT	803	804	21175
+// OP_NE_F	805	727	21176
+// OP_OR	21175	21176	21177
+// OP_AND	21174	21177	21178
+// OP_IFNOT	21178	7	0
+// OP_ADDRESS	21039	575	21179
+// OP_LOAD_F	21039	575	21180
+// OP_BITOR	21180	703	21181
+// OP_STOREP_F	21181	21179	0
+// OP_ADD_F	802	214	21182
+// OP_STORE_F	21182	802	0
+// OP_ADDRESS	21039	166	21183
+// OP_STOREP_V	8450	21183	0
+// OP_LOAD_V	21039	117	21186
+// OP_STORE_V	21186	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_V	21039	105	21189
+// OP_MUL_VF	59	2323	21192
+// OP_ADD_V	21189	21192	21195
+// OP_STORE_V	21195	4	0
+// OP_CALL1	7259	0	0
+// OP_LOAD_V	21039	105	21198
+// OP_STORE_V	21198	4	0
+// OP_STORE_V	21039	7	0
+// OP_CALL2	7260	0	0
+// OP_BITAND	821	767	21201
+// OP_IFNOT	21201	3	0
+// OP_STORE_V	21039	4	0
+// OP_CALL1	1217	0	0
 // OP_DONE	0	0	0
-void (entity globaldef005748) func002274 = 
+void (entity globaldef007106) func002418 = 
 {
-    local vector globaldef005749;
-    local vector globaldef005753;
-    local entity globaldef005757;
-    local entity globaldef005758;
-    local vector globaldef005759;
-    local float globaldef005763;
-    local float globaldef005764;
-    globaldef005749 = globaldef005748.field000237;
-    globaldef005749_z = FALSE;
-    globaldef005749 = normalize(globaldef005749);
-    globaldef005757 = self;
-    globaldef005759 = self.origin;
-    globaldef005764 = self.flags;
-    self = globaldef005748;
-    globaldef005763 = vectoyaw(globaldef005749);
-    self.flags = (self.flags | FL_ONGROUND) | FL_PARTIALGROUND;
+    local entity globaldef007107;
+    local entity globaldef007108;
+    local string globaldef007109;
+    globaldef007106.classname = "bot";
+    globaldef007106.health = 100;
+    globaldef007106.takedamage = DAMAGE_AIM;
+    globaldef007106.solid = SOLID_SLIDEBOX;
+    globaldef007106.movetype = MOVETYPE_STEP;
+    globaldef007106.show_hostile = FALSE;
+    globaldef007106.max_health = 100;
+    globaldef007106.air_finished = time + GLOBALDEF774_12;
+    globaldef007106.dmg = TRUE;
+    globaldef007106.super_damage_finished = FALSE;
+    globaldef007106.radsuit_finished = FALSE;
+    globaldef007106.invisible_finished = FALSE;
+    globaldef007106.invincible_finished = FALSE;
+    globaldef007106.effects = FALSE;
+    globaldef007106.invincible_time = FALSE;
+    globaldef007106.yaw_speed = 20 + (FL_CLIENT * globaldef007106.field000265);
+    globaldef007106.field000289 = MOVETYPE_BOUNCE + (MOVETYPE_WALK * globaldef007106.field000265);
     
-    if(walkmove(globaldef005763, 0.9))
+    if(globaldef007106.field000265 > 2.9)
     {
-        
-        if(self.origin_z > (globaldef005759_z + 0.001))
-        {
-            globaldef005748.field000252 = globaldef005748.field000252 | globaldef000694;
-            globaldef005748.field000241 = globaldef005748.origin;
-            globaldef005748.field000245 = self.origin;
-        }
-        
-        setorigin(self, globaldef005759);
+        globaldef007106.yaw_speed = globaldef007106.yaw_speed + MOVETYPE_BOUNCE;
+        globaldef007106.field000289 = globaldef007106.field000289 + MOVETYPE_STEP;
     }
     
-    self.flags = globaldef005764;
-    self = globaldef005757;
+    
+    if(globaldef000804 & OBOT_ROCKETARENA)
+    {
+        globaldef007106.yaw_speed = globaldef007106.yaw_speed + (MOVETYPE_BOUNCE * globaldef007106.field000265);
+        globaldef007106.field000289 = globaldef007106.field000289 + (MOVETYPE_FLY * globaldef007106.field000265);
+    }
+    
+    
+    if(globaldef007106.goalentity == world)
+    {
+        globaldef007106.goalentity = func002470();
+    }
+    
+    globaldef007106.goalentity.goalentity = world;
+    globaldef007106.items = IT_SHOTGUN | IT_AXE;
+    globaldef007106.health = 100;
+    globaldef007106.armorvalue = FALSE;
+    globaldef007106.ammo_shells = SVC_SIGNONNUM;
+    globaldef007106.ammo_nails = FALSE;
+    globaldef007106.ammo_rockets = FALSE;
+    globaldef007106.ammo_cells = FALSE;
+    globaldef007106.weapon = WEAPON_SHOTGUN;
+    globaldef007106.armortype = FALSE;
+    
+    if(deathmatch == MOVETYPE_STEP)
+    {
+        func000388(globaldef007106);
+    }
+    
+    globaldef007108 = self;
+    self = globaldef007106;
+    W_SetCurrentAmmo();
+    self = globaldef007108;
+    globaldef007106.search_time = time;
+    globaldef007106.attack_finished = time;
+    globaldef007106.th_pain = func002571;
+    globaldef007106.th_die = func002637;
+    globaldef007106.think = func002524;
+    globaldef007106.nextthink = time + 0.1;
+    globaldef007106.field000228 = func002503;
+    globaldef007106.pausetime = time + (random() * (MOVETYPE_WALK - globaldef007106.field000265));
+    globaldef007106.enemy = world;
+    globaldef007106.waypointtype = globaldef000699;
+    globaldef007106.deadflag = DEAD_NO;
+    
+    if(!globaldef000510)
+    {
+        setmodel(self, "progs/h_player.mdl");
+        globaldef000510 = self.modelindex;
+    }
+    
+    
+    if(!globaldef000508)
+    {
+        setmodel(self, "progs/eyes.mdl");
+        globaldef000508 = self.modelindex;
+    }
+    
+    
+    if(!modelindex_player)
+    {
+        setmodel(globaldef007106, "progs/player.mdl");
+        modelindex_player = globaldef007106.modelindex;
+    }
+    
+    if(globaldef000804 & globaldef000760)
+    {
+        globaldef007106.skin = FALSE;
+        globaldef007106.field000251 = globaldef007106.field000249;
+        globaldef007106.field000250 = modelindex_player;
+        globaldef007106.modelindex = FALSE;
+    }
+    else
+    {
+        globaldef007106.model = "progs/player.mdl";
+        globaldef007106.modelindex = modelindex_player;
+    }
+    
+    setsize(globaldef007106, VEC_HULL_MIN, VEC_HULL_MAX);
+    globaldef007107 = func000350(globaldef007106);
+    
+    if(globaldef000804 & OBOT_ROCKETARENA)
+    {
+        globaldef007107 = rocket_arena_selectspawnpoint("info_player_deathmatch");
+    }
+    
+    setorigin(globaldef007106, globaldef007107.origin + '0 0 2');
+    globaldef007106.velocity = VEC_ORIGIN;
+    globaldef007106.field000253 = VEC_ORIGIN;
+    globaldef007106.flags = globaldef000681;
+    globaldef007106.field000257 = globaldef007106.origin;
+    globaldef007106.field000261 = FALSE;
+    globaldef007106.angles = globaldef007107.angles;
+    globaldef007106.v_angle = globaldef007106.angles;
+    globaldef007106.field000299 = world;
+    
+    if(globaldef007106.field000252 & globaldef000686)
+    {
+        globaldef000785 = globaldef000785 - TRUE;
+        globaldef007106.field000252 = globaldef007106.field000252 - globaldef000686;
+    }
+    
+    
+    if((!(globaldef000804 & OBOT_BOTPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    {
+        globaldef007106.field000252 = globaldef007106.field000252 | globaldef000686;
+        globaldef000785 = globaldef000785 + TRUE;
+    }
+    
+    globaldef007106.view_ofs = '0 0 22';
+    makevectors(globaldef007106.angles);
+    spawn_tfog(globaldef007106.origin + (v_forward * 20));
+    spawn_tdeath(globaldef007106.origin, globaldef007106);
+    
+    if(globaldef000804 & OBOT_ROCKETARENA)
+    {
+        rocket_arena_putclientinserver(globaldef007106);
+    }
+    
 };
 
 
-// func002275
-// function begins at statement 27730, parm_start=16471
-// OP_LOAD_F	28	186	16472
-// OP_LE	16472	31	16473
-// OP_IFNOT	16473	6	0
-// OP_LOAD_F	28	103	16474
-// OP_EQ_F	16474	229	16475
-// OP_IFNOT	16475	3	0
+// func002419
+// function begins at statement 38349, parm_start=21203
 // OP_STORE_V	28	4	0
-// OP_CALL1	16425	0	0
+// OP_CALL1	21038	0	0
 // OP_DONE	0	0	0
-void () func002275 = 
+void () func002419 = 
 {
-    local float globaldef005766;
-    
-    if(self.teleport_time <= time)
-    {
-        
-        if(self.movetype == MOVETYPE_STEP)
-        {
-            func002274(self);
-        }
-        
-    }
-    
+    func002418(self);
 };
 
 
-// func002276
-// function begins at statement 27739, parm_start=16477
-// OP_LOAD_F	28	103	16488
-// OP_EQ_F	16488	229	16489
-// OP_IFNOT	16489	105	0
-// OP_STORE_V	28	4	0
-// OP_CALL1	1057	0	0
-// OP_STORE_V	28	4	0
-// OP_CALL1	16357	0	0
-// OP_LOAD_F	28	575	16490
-// OP_BITAND	16490	711	16491
-// OP_IFNOT	16491	9	0
-// OP_STORE_F	214	16487	0
-// OP_ADDRESS	28	575	16492
-// OP_LOAD_F	28	575	16493
-// OP_LOAD_F	28	575	16494
-// OP_BITAND	16494	711	16495
-// OP_SUB_F	16493	16495	16496
-// OP_STOREP_F	16496	16492	0
-// OP_GOTO	2	0	0
-// OP_STORE_F	213	16487	0
-// OP_IFNOT	16487	17	0
-// OP_LOAD_F	28	189	16497
-// OP_NOT_F	16497	0	16498
-// OP_IFNOT	16498	7	0
-// OP_LOAD_F	28	575	16499
-// OP_BITAND	16499	700	16500
-// OP_NOT_F	16500	0	16501
-// OP_IFNOT	16501	2	0
-// OP_STORE_F	213	16487	0
-// OP_GOTO	8	0	0
-// OP_LOAD_F	28	189	16502
-// OP_EQ_F	16502	214	16503
-// OP_IFNOT	16503	5	0
-// OP_LOAD_F	28	182	16504
-// OP_BITAND	16504	225	16505
-// OP_IFNOT	16505	2	0
-// OP_STORE_F	213	16487	0
-// OP_IFNOT	16487	10	0
-// OP_LOAD_F	28	114	16506
-// OP_LOAD_F	28	561	16507
-// OP_EQ_F	16506	16507	16508
-// OP_LOAD_F	28	115	16509
-// OP_LOAD_F	28	562	16510
-// OP_EQ_F	16509	16510	16511
-// OP_AND	16508	16511	16512
-// OP_IFNOT	16512	2	0
-// OP_STORE_F	213	16487	0
-// OP_LOAD_F	28	555	16513
-// OP_SUB_F	31	16513	16514
-// OP_STORE_F	16514	16483	0
-// OP_IFNOT	16487	7	0
-// OP_LOAD_F	28	108	16515
-// OP_LOAD_F	28	559	16516
-// OP_ADD_F	16516	6133	16517
-// OP_GE	16515	16517	16518
-// OP_IFNOT	16518	2	0
-// OP_STORE_F	213	16487	0
-// OP_IFNOT	16487	51	0
-// OP_LOAD_F	28	182	16519
-// OP_STORE_F	16519	16484	0
-// OP_ADDRESS	28	182	16520
-// OP_LOAD_F	28	182	16521
-// OP_BITOR	16521	223	16522
-// OP_BITOR	16522	224	16523
-// OP_STOREP_F	16523	16520	0
-// OP_LOAD_V	28	105	16524
-// OP_STORE_V	16524	16480	0
-// OP_ADDRESS	28	105	16527
-// OP_LOAD_V	28	564	16530
-// OP_STOREP_V	16530	16527	0
-// OP_LOAD_V	28	560	16533
-// OP_MUL_VF	16533	16483	16536
-// OP_LOAD_V	28	564	16539
-// OP_LOAD_V	28	556	16542
-// OP_SUB_V	16539	16542	16545
-// OP_SUB_V	16536	16545	16548
-// OP_STORE_V	16548	16477	0
-// OP_STORE_F	213	16479	0
-// OP_STORE_V	16477	4	0
-// OP_CALL1	463	0	0
-// OP_STORE_F	1	16485	0
-// OP_STORE_V	16477	4	0
-// OP_CALL1	462	0	0
-// OP_STORE_F	1	16486	0
-// OP_STORE_V	16485	4	0
-// OP_STORE_V	16486	7	0
-// OP_CALL2	480	0	0
-// OP_NOT_F	1	0	16551
-// OP_IFNOT	16551	4	0
-// OP_ADDRESS	28	105	16552
-// OP_LOAD_V	28	568	16555
-// OP_STOREP_V	16555	16552	0
-// OP_ADDRESS	28	113	16558
-// OP_LOAD_V	28	560	16561
-// OP_STOREP_V	16561	16558	0
-// OP_ADDRESS	28	116	16564
-// OP_STOREP_F	213	16564	0
-// OP_ADDRESS	28	182	16565
-// OP_BITOR	16484	223	16566
-// OP_STOREP_F	16566	16565	0
-// OP_ADDRESS	28	575	16567
-// OP_LOAD_F	28	575	16568
-// OP_BITOR	16568	700	16569
-// OP_STOREP_F	16569	16567	0
-// OP_ADDRESS	28	575	16570
-// OP_LOAD_F	28	575	16571
-// OP_BITOR	16571	712	16572
-// OP_STOREP_F	16572	16570	0
-// OP_STORE_V	28	4	0
-// OP_CALL1	1056	0	0
-// OP_ADDRESS	28	555	16573
-// OP_STOREP_F	31	16573	0
-// OP_ADDRESS	28	148	16574
-// OP_LOAD_FNC	28	553	16575
-// OP_STOREP_FNC	16575	16574	0
-// OP_ADDRESS	28	150	16576
-// OP_LOAD_F	28	554	16577
-// OP_STOREP_F	16577	16576	0
-// OP_LOAD_F	28	150	16578
-// OP_GT	31	16578	16579
-// OP_IFNOT	16579	6	0
-// OP_STORE_V	28	4	0
-// OP_CALL1	16328	0	0
-// OP_LOAD_FNC	28	148	16580
-// OP_CALL0	16580	0	0
-// OP_GOTO	20	0	0
-// OP_LOAD_F	28	103	16581
-// OP_EQ_F	16581	229	16582
-// OP_IFNOT	16582	17	0
-// OP_LOAD_F	28	189	16583
-// OP_GE	16583	228	16584
-// OP_IFNOT	16584	5	0
-// OP_ADDRESS	28	113	16585
-// OP_LOAD_V	28	560	16588
-// OP_STOREP_V	16588	16585	0
-// OP_GOTO	10	0	0
-// OP_LOAD_F	28	182	16591
-// OP_BITAND	16591	223	16592
-// OP_IFNOT	16592	7	0
-// OP_ADDRESS	28	114	16593
-// OP_LOAD_F	28	561	16594
-// OP_STOREP_F	16594	16593	0
-// OP_ADDRESS	28	115	16595
-// OP_LOAD_F	28	562	16596
-// OP_STOREP_F	16596	16595	0
+// func002420
+// function begins at statement 38352, parm_start=21204
+// OP_STORE_V	21204	4	0
+// OP_CALL1	20977	0	0
+// OP_IFNOT	1	4	0
+// OP_STORE_V	21207	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	30	0	0
+// OP_CALL0	1046	0	0
+// OP_STORE_F	1	21206	0
+// OP_EQ_F	21206	276	21208
+// OP_IFNOT	21208	10	0
+// OP_STORE_V	21209	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	813	4	0
+// OP_CALL1	474	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	2127	4	0
+// OP_CALL1	472	0	0
+// OP_RETURN	30	0	0
+// OP_STORE_V	21206	4	0
+// OP_CALL1	1048	0	0
+// OP_CALL0	464	0	0
+// OP_STORE_ENT	1	21205	0
+// OP_ADDRESS	21205	608	21210
+// OP_STOREP_F	21206	21210	0
+// OP_ADDRESS	21205	609	21211
+// OP_STOREP_F	21204	21211	0
+// OP_LOAD_F	21205	609	21212
+// OP_STORE_V	21212	4	0
+// OP_CALL1	20980	0	0
+// OP_ADDRESS	21205	183	21213
+// OP_ADD_F	21206	214	21214
+// OP_STOREP_F	21214	21213	0
+// OP_IFNOT	834	3	0
+// OP_ADDRESS	834	621	21215
+// OP_STOREP_ENT	21205	21215	0
+// OP_ADDRESS	21205	620	21216
+// OP_STOREP_ENT	834	21216	0
+// OP_ADDRESS	21205	621	21217
+// OP_STOREP_ENT	30	21217	0
+// OP_STORE_ENT	21205	834	0
+// OP_ADDRESS	21205	588	21218
+// OP_STOREP_F	354	21218	0
+// OP_LOAD_F	21205	588	21219
+// OP_LT	21219	213	21220
+// OP_IFNOT	21220	3	0
+// OP_ADDRESS	21205	588	21221
+// OP_STOREP_F	213	21221	0
+// OP_LOAD_F	21205	588	21222
+// OP_GT	21222	228	21223
+// OP_IFNOT	21223	3	0
+// OP_ADDRESS	21205	588	21224
+// OP_STOREP_F	228	21224	0
+// OP_ADDRESS	21205	148	21225
+// OP_STOREP_FNC	21202	21225	0
+// OP_ADDRESS	21205	150	21226
+// OP_ADD_F	31	3036	21227
+// OP_LOAD_F	21205	609	21228
+// OP_MUL_F	21228	3036	21229
+// OP_ADD_F	21227	21229	21230
+// OP_STOREP_F	21230	21226	0
+// OP_ADD_F	810	214	21231
+// OP_STORE_F	21231	810	0
+// OP_RETURN	21205	0	0
 // OP_DONE	0	0	0
-void () func002276 = 
+entity (float globaldef007113) func002420 = 
 {
-    local vector globaldef005768;
-    local vector globaldef005772;
-    local float globaldef005776;
-    local float globaldef005777;
-    local float globaldef005778;
-    local float globaldef005779;
-    local float globaldef005780;
+    local entity globaldef007114;
+    local float globaldef007115;
     
-    if(self.movetype == MOVETYPE_STEP)
+    if(func002412(globaldef007113))
     {
-        func002273(self);
-        func002272(self);
-        if(self.field000252 & globaldef000694)
-        {
-            globaldef005780 = TRUE;
-            self.field000252 = self.field000252 - (self.field000252 & globaldef000694);
-        }
-        else
-        {
-            globaldef005780 = FALSE;
-        }
-        
-        
-        if(globaldef005780)
-        {
-            if(!self.waterlevel)
-            {
-                
-                if(!(self.field000252 & globaldef000683))
-                {
-                    globaldef005780 = FALSE;
-                }
-                
-            }
-            else
-            {
-                
-                if(self.waterlevel == TRUE)
-                {
-                    
-                    if(self.flags & FL_WATERJUMP)
-                    {
-                        globaldef005780 = FALSE;
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-        
-        if(globaldef005780)
-        {
-            
-            if((self.velocity_x == self.field000237_x) && (self.velocity_y == self.field000237_y))
-            {
-                globaldef005780 = FALSE;
-            }
-            
-        }
-        
-        globaldef005776 = time - self.field000232;
-        
-        if(globaldef005780)
-        {
-            
-            if(self.origin_z >= (self.field000233_z + 18))
-            {
-                globaldef005780 = FALSE;
-            }
-            
-        }
-        
-        
-        if(globaldef005780)
-        {
-            globaldef005777 = self.flags;
-            self.flags = (self.flags | FL_ONGROUND) | FL_PARTIALGROUND;
-            globaldef005772 = self.origin;
-            self.origin = self.field000241;
-            globaldef005768 = (self.field000237 * globaldef005776) - (self.field000241 - self.field000233);
-            globaldef005768_z = FALSE;
-            globaldef005778 = vectoyaw(globaldef005768);
-            globaldef005779 = vlen(globaldef005768);
-            
-            if(!walkmove(globaldef005778, globaldef005779))
-            {
-                self.origin = self.field000245;
-            }
-            
-            self.velocity = self.field000237;
-            self.velocity_z = FALSE;
-            self.flags = globaldef005777 | FL_ONGROUND;
-            self.field000252 = self.field000252 | globaldef000683;
-            self.field000252 = self.field000252 | globaldef000695;
-        }
-        
+        bprint("bot is already in the game\n");
+        return world;
     }
     
-    func002268(self);
-    self.field000232 = time;
-    self.think = self.field000230;
-    self.nextthink = self.field000231;
-    if(time > self.nextthink)
+    globaldef007115 = NextAvailableClientNumber();
+    
+    if(globaldef007115 == CONTENT_EMPTY)
     {
-        func002271(self);
-        self.think();
-    }
-    else
-    {
-        
-        if(self.movetype == MOVETYPE_STEP)
-        {
-            if(self.waterlevel >= MOVETYPE_WALK)
-            {
-                self.velocity = self.field000237;
-            }
-            else
-            {
-                
-                if(self.flags & FL_ONGROUND)
-                {
-                    self.velocity_x = self.field000237_x;
-                    self.velocity_y = self.field000237_y;
-                }
-                
-            }
-            
-        }
-        
+        bprint("Can't create bot, maxplayers = ");
+        bprint(ftos(maxClients));
+        bprint("\n");
+        return world;
     }
     
+    SetClientNumberUsed(globaldef007115);
+    globaldef007114 = spawn();
+    globaldef007114.clientnumber = globaldef007115;
+    globaldef007114.field000286 = globaldef007113;
+    func002413(globaldef007114.field000286);
+    globaldef007114.colormap = globaldef007115 + TRUE;
+    
+    if(globaldef000817)
+    {
+        globaldef000817.field000298 = globaldef007114;
+    }
+    
+    globaldef007114.next = globaldef000817;
+    globaldef007114.field000298 = world;
+    globaldef000817 = globaldef007114;
+    globaldef007114.field000265 = skill;
+    
+    if(globaldef007114.field000265 < FALSE)
+    {
+        globaldef007114.field000265 = FALSE;
+    }
+    
+    
+    if(globaldef007114.field000265 > MOVETYPE_WALK)
+    {
+        globaldef007114.field000265 = MOVETYPE_WALK;
+    }
+    
+    globaldef007114.think = func002419;
+    globaldef007114.nextthink = (time + 0.1) + (globaldef007114.field000286 * 0.1);
+    globaldef000793 = globaldef000793 + TRUE;
+    return globaldef007114;
 };
 
 
-// func002277
-// function begins at statement 27884, parm_start=16597
-// OP_STORE_ENT	834	16597	0
-// OP_IFNOT	16597	98	0
-// OP_LOAD_F	16597	103	16598
-// OP_EQ_F	16598	229	16599
-// OP_IFNOT	16599	49	0
-// OP_STORE_V	16597	4	0
-// OP_CALL1	16357	0	0
-// OP_LOAD_F	16597	182	16600
-// OP_BITAND	16600	225	16601
-// OP_IFNOT	16601	23	0
-// OP_ADDRESS	16597	114	16602
-// OP_LOAD_F	16597	203	16603
-// OP_STOREP_F	16603	16602	0
-// OP_ADDRESS	16597	115	16604
-// OP_LOAD_F	16597	204	16605
-// OP_STOREP_F	16605	16604	0
-// OP_LOAD_F	16597	575	16606
-// OP_BITAND	16606	700	16607
-// OP_LOAD_F	16597	189	16608
-// OP_GT	16608	216	16609
-// OP_OR	16607	16609	16610
-// OP_LOAD_F	16597	186	16611
-// OP_LT	16611	31	16612
-// OP_OR	16610	16612	16613
-// OP_IFNOT	16613	7	0
-// OP_ADDRESS	16597	182	16614
-// OP_LOAD_F	16597	182	16615
-// OP_SUB_F	16615	225	16616
-// OP_STOREP_F	16616	16614	0
-// OP_ADDRESS	16597	186	16617
-// OP_STOREP_F	213	16617	0
-// OP_GOTO	6	0	0
-// OP_LOAD_F	16597	189	16618
-// OP_EQ_F	16618	216	16619
-// OP_IFNOT	16619	3	0
-// OP_STORE_V	16597	4	0
-// OP_CALL1	16322	0	0
-// OP_LOAD_F	16597	189	16620
-// OP_GE	16620	228	16621
-// OP_LOAD_F	16597	182	16622
-// OP_BITAND	16622	225	16623
-// OP_LOAD_F	16597	189	16624
-// OP_GT	16624	213	16625
-// OP_AND	16623	16625	16626
-// OP_OR	16621	16626	16627
-// OP_IFNOT	16627	6	0
-// OP_ADDRESS	16597	116	16628
-// OP_LOAD_F	16597	116	16629
-// OP_MUL_F	799	32	16630
-// OP_ADD_F	16629	16630	16631
-// OP_STOREP_F	16631	16628	0
-// OP_STORE_V	16597	4	0
-// OP_CALL1	16325	0	0
-// OP_LOAD_FNC	16597	148	16632
-// OP_NE_FNC	16632	16476	16633
-// OP_IFNOT	16633	7	0
-// OP_ADDRESS	16597	553	16634
-// OP_LOAD_FNC	16597	148	16635
-// OP_STOREP_FNC	16635	16634	0
-// OP_ADDRESS	16597	554	16636
-// OP_LOAD_F	16597	150	16637
-// OP_STOREP_F	16637	16636	0
-// OP_ADDRESS	16597	148	16638
-// OP_STOREP_FNC	16476	16638	0
-// OP_ADDRESS	16597	150	16639
-// OP_STOREP_F	31	16639	0
-// OP_ADDRESS	16597	146	16640
-// OP_STOREP_FNC	16470	16640	0
-// OP_ADDRESS	16597	556	16641
-// OP_LOAD_V	16597	105	16644
-// OP_STOREP_V	16644	16641	0
-// OP_ADDRESS	16597	560	16647
-// OP_LOAD_V	16597	113	16650
-// OP_STOREP_V	16650	16647	0
-// OP_ADDRESS	16597	151	16653
-// OP_STOREP_ENT	16597	16653	0
-// OP_LOAD_F	16597	182	16654
-// OP_BITAND	16654	223	16655
-// OP_IFNOT	16655	6	0
-// OP_ADDRESS	16597	182	16656
-// OP_LOAD_F	16597	182	16657
-// OP_BITOR	16657	699	16658
-// OP_STOREP_F	16658	16656	0
-// OP_GOTO	7	0	0
-// OP_ADDRESS	16597	182	16659
-// OP_LOAD_F	16597	182	16660
-// OP_LOAD_F	16597	182	16661
-// OP_BITAND	16661	699	16662
-// OP_SUB_F	16660	16662	16663
-// OP_STOREP_F	16663	16659	0
-// OP_ADDRESS	16597	182	16664
-// OP_LOAD_F	16597	182	16665
-// OP_LOAD_F	16597	182	16666
-// OP_BITAND	16666	223	16667
-// OP_SUB_F	16665	16667	16668
-// OP_STOREP_F	16668	16664	0
-// OP_LOAD_ENT	16597	620	16669
-// OP_STORE_ENT	16669	16597	0
-// OP_GOTO	-97	0	0
-// OP_DONE	0	0	0
-void () func002277 = 
-{
-    local entity globaldef005781;
-    globaldef005781 = globaldef000817;
-    
-    while(globaldef005781)
-    {
-        
-        if(globaldef005781.movetype == MOVETYPE_STEP)
-        {
-            func002272(globaldef005781);
-            if(globaldef005781.flags & FL_WATERJUMP)
-            {
-                globaldef005781.velocity_x = globaldef005781.movedir_x;
-                globaldef005781.velocity_y = globaldef005781.movedir_y;
-                
-                if(((globaldef005781.field000252 & globaldef000683) || (globaldef005781.waterlevel > FL_SWIM)) || (globaldef005781.teleport_time < time))
-                {
-                    globaldef005781.flags = globaldef005781.flags - FL_WATERJUMP;
-                    globaldef005781.teleport_time = FALSE;
-                }
-                
-            }
-            else
-            {
-                
-                if(globaldef005781.waterlevel == FL_SWIM)
-                {
-                    func002269(globaldef005781);
-                }
-                
-            }
-            
-            
-            if((globaldef005781.waterlevel >= MOVETYPE_WALK) || ((globaldef005781.flags & FL_WATERJUMP) && (globaldef005781.waterlevel > FALSE)))
-            {
-                globaldef005781.velocity_z = globaldef005781.velocity_z + (globaldef000782 * frametime);
-            }
-            
-            func002270(globaldef005781);
-        }
-        
-        
-        if(globaldef005781.think != func002276)
-        {
-            globaldef005781.field000230 = globaldef005781.think;
-            globaldef005781.field000231 = globaldef005781.nextthink;
-        }
-        
-        globaldef005781.think = func002276;
-        globaldef005781.nextthink = time;
-        globaldef005781.touch = func002275;
-        globaldef005781.field000233 = globaldef005781.origin;
-        globaldef005781.field000237 = globaldef005781.velocity;
-        globaldef005781.groundentity = globaldef005781;
-        if(globaldef005781.flags & FL_ONGROUND)
-        {
-            globaldef005781.flags = globaldef005781.flags | globaldef000682;
-        }
-        else
-        {
-            globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & globaldef000682);
-        }
-        
-        globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & FL_ONGROUND);
-        globaldef005781 = globaldef005781.next;
-    }
-    
-};
-
-float globaldef005782;
-float globaldef005783;
-float globaldef005784;
-float globaldef005785;
-float globaldef005786;
-float globaldef005787;
-float globaldef005788;
-float globaldef005789;
-float globaldef005790;
-float globaldef005791;
-float globaldef005792;
-float globaldef005793;
-float globaldef005794;
-float globaldef005795;
-float globaldef005796;
-float globaldef005797;
-float globaldef005798;
-float globaldef005799;
-float globaldef005800;
-float globaldef005801;
-float globaldef005802;
-float globaldef005803;
-float globaldef005804;
-float globaldef005805;
-float globaldef005806;
-float globaldef005807;
-float globaldef005808;
-float globaldef005809;
-float globaldef005810;
-float globaldef005811;
-float globaldef005812;
-float globaldef005813;
-float globaldef005814;
-float globaldef005815;
-float globaldef005816;
-float globaldef005817;
-float globaldef005818;
-float globaldef005819;
-
-// func002278
-// function begins at statement 27984, parm_start=16708
-// OP_EQ_F	16708	16693	16709
-// OP_IFNOT	16709	3	0
-// OP_RETURN	16710	0	0
-// OP_GOTO	94	0	0
-// OP_EQ_F	16708	16671	16711
-// OP_IFNOT	16711	3	0
-// OP_RETURN	16712	0	0
-// OP_GOTO	90	0	0
-// OP_EQ_F	16708	16672	16713
-// OP_IFNOT	16713	3	0
-// OP_RETURN	16714	0	0
-// OP_GOTO	86	0	0
-// OP_EQ_F	16708	16673	16715
-// OP_IFNOT	16715	3	0
-// OP_RETURN	16716	0	0
-// OP_GOTO	82	0	0
-// OP_EQ_F	16708	16674	16717
-// OP_IFNOT	16717	3	0
-// OP_RETURN	16718	0	0
-// OP_GOTO	78	0	0
-// OP_EQ_F	16708	16675	16719
-// OP_IFNOT	16719	3	0
-// OP_RETURN	16720	0	0
-// OP_GOTO	74	0	0
-// OP_EQ_F	16708	16676	16721
-// OP_IFNOT	16721	3	0
-// OP_RETURN	16722	0	0
-// OP_GOTO	70	0	0
-// OP_EQ_F	16708	16677	16723
-// OP_IFNOT	16723	3	0
-// OP_RETURN	16724	0	0
-// OP_GOTO	66	0	0
-// OP_EQ_F	16708	16678	16725
-// OP_IFNOT	16725	3	0
-// OP_RETURN	16726	0	0
-// OP_GOTO	62	0	0
-// OP_EQ_F	16708	16679	16727
-// OP_IFNOT	16727	3	0
-// OP_RETURN	16728	0	0
-// OP_GOTO	58	0	0
-// OP_EQ_F	16708	16680	16729
-// OP_IFNOT	16729	3	0
-// OP_RETURN	16730	0	0
-// OP_GOTO	54	0	0
-// OP_EQ_F	16708	16681	16731
-// OP_IFNOT	16731	3	0
-// OP_RETURN	16732	0	0
-// OP_GOTO	50	0	0
-// OP_EQ_F	16708	16682	16733
-// OP_IFNOT	16733	3	0
-// OP_RETURN	16734	0	0
-// OP_GOTO	46	0	0
-// OP_EQ_F	16708	16683	16735
-// OP_IFNOT	16735	3	0
-// OP_RETURN	16736	0	0
-// OP_GOTO	42	0	0
-// OP_EQ_F	16708	16684	16737
-// OP_IFNOT	16737	3	0
-// OP_RETURN	16738	0	0
-// OP_GOTO	38	0	0
-// OP_EQ_F	16708	16685	16739
-// OP_IFNOT	16739	3	0
-// OP_RETURN	16740	0	0
-// OP_GOTO	34	0	0
-// OP_EQ_F	16708	16686	16741
-// OP_IFNOT	16741	3	0
-// OP_RETURN	16742	0	0
-// OP_GOTO	30	0	0
-// OP_EQ_F	16708	16687	16743
-// OP_IFNOT	16743	3	0
-// OP_RETURN	16744	0	0
-// OP_GOTO	26	0	0
-// OP_EQ_F	16708	16688	16745
-// OP_IFNOT	16745	3	0
-// OP_RETURN	16746	0	0
-// OP_GOTO	22	0	0
-// OP_EQ_F	16708	16689	16747
-// OP_IFNOT	16747	3	0
-// OP_RETURN	16748	0	0
-// OP_GOTO	18	0	0
-// OP_EQ_F	16708	16690	16749
-// OP_IFNOT	16749	3	0
-// OP_RETURN	16750	0	0
-// OP_GOTO	14	0	0
-// OP_EQ_F	16708	16691	16751
-// OP_IFNOT	16751	3	0
-// OP_RETURN	16752	0	0
-// OP_GOTO	10	0	0
-// OP_EQ_F	16708	16692	16753
-// OP_IFNOT	16753	3	0
-// OP_RETURN	16754	0	0
-// OP_GOTO	6	0	0
-// OP_EQ_F	16708	16670	16755
-// OP_IFNOT	16755	3	0
-// OP_RETURN	16756	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	16757	0	0
-// OP_DONE	0	0	0
-string (float globaldef005820) func002278 = 
-{
-    if(globaldef005820 == globaldef005805)
-    {
-        return "Klingon";
-    }
-    else
-    {
-        if(globaldef005820 == globaldef005783)
-        {
-            return "John Carmack";
-        }
-        else
-        {
-            if(globaldef005820 == globaldef005784)
-            {
-                return "Bill Gates";
-            }
-            else
-            {
-                if(globaldef005820 == globaldef005785)
-                {
-                    return "Happy Slappy";
-                }
-                else
-                {
-                    if(globaldef005820 == globaldef005786)
-                    {
-                        return "Terminator";
-                    }
-                    else
-                    {
-                        if(globaldef005820 == globaldef005787)
-                        {
-                            return "Tigger";
-                        }
-                        else
-                        {
-                            if(globaldef005820 == globaldef005788)
-                            {
-                                return "Ironman";
-                            }
-                            else
-                            {
-                                if(globaldef005820 == globaldef005789)
-                                {
-                                    return "Predator";
-                                }
-                                else
-                                {
-                                    if(globaldef005820 == globaldef005790)
-                                    {
-                                        return "Sven";
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005820 == globaldef005791)
-                                        {
-                                            return "Raphael";
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005820 == globaldef005792)
-                                            {
-                                                return "Bob";
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005820 == globaldef005793)
-                                                {
-                                                    return "Qspy";
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005820 == globaldef005794)
-                                                    {
-                                                        return "Iceman";
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005820 == globaldef005795)
-                                                        {
-                                                            return "The Tick";
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005820 == globaldef005796)
-                                                            {
-                                                                return "Tim Willits";
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005820 == globaldef005797)
-                                                                {
-                                                                    return "Slaine";
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005820 == globaldef005798)
-                                                                    {
-                                                                        return "Robocop";
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005820 == globaldef005799)
-                                                                        {
-                                                                            return "Cowboy";
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005820 == globaldef005800)
-                                                                            {
-                                                                                return "Hitman";
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005820 == globaldef005801)
-                                                                                {
-                                                                                    return "Mountie";
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005820 == globaldef005802)
-                                                                                    {
-                                                                                        return "Babe";
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005820 == globaldef005803)
-                                                                                        {
-                                                                                            return "Punisher";
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005820 == globaldef005804)
-                                                                                            {
-                                                                                                return "Elvis Presley";
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef005820 == globaldef005782)
-                                                                                                {
-                                                                                                    return "Demigod";
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    return "bug";
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002279
-// function begins at statement 28082, parm_start=16758
-// OP_EQ_F	16758	16693	16759
-// OP_IFNOT	16759	3	0
-// OP_RETURN	16760	0	0
-// OP_GOTO	94	0	0
-// OP_EQ_F	16758	16671	16761
-// OP_IFNOT	16761	3	0
-// OP_RETURN	16762	0	0
-// OP_GOTO	90	0	0
-// OP_EQ_F	16758	16672	16763
-// OP_IFNOT	16763	3	0
-// OP_RETURN	16764	0	0
-// OP_GOTO	86	0	0
-// OP_EQ_F	16758	16673	16765
-// OP_IFNOT	16765	3	0
-// OP_RETURN	16766	0	0
-// OP_GOTO	82	0	0
-// OP_EQ_F	16758	16674	16767
-// OP_IFNOT	16767	3	0
-// OP_RETURN	16768	0	0
-// OP_GOTO	78	0	0
-// OP_EQ_F	16758	16675	16769
-// OP_IFNOT	16769	3	0
-// OP_RETURN	16770	0	0
-// OP_GOTO	74	0	0
-// OP_EQ_F	16758	16676	16771
-// OP_IFNOT	16771	3	0
-// OP_RETURN	16772	0	0
-// OP_GOTO	70	0	0
-// OP_EQ_F	16758	16677	16773
-// OP_IFNOT	16773	3	0
-// OP_RETURN	16774	0	0
-// OP_GOTO	66	0	0
-// OP_EQ_F	16758	16678	16775
-// OP_IFNOT	16775	3	0
-// OP_RETURN	16776	0	0
-// OP_GOTO	62	0	0
-// OP_EQ_F	16758	16679	16777
-// OP_IFNOT	16777	3	0
-// OP_RETURN	16778	0	0
-// OP_GOTO	58	0	0
-// OP_EQ_F	16758	16680	16779
-// OP_IFNOT	16779	3	0
-// OP_RETURN	16780	0	0
-// OP_GOTO	54	0	0
-// OP_EQ_F	16758	16681	16781
-// OP_IFNOT	16781	3	0
-// OP_RETURN	16782	0	0
-// OP_GOTO	50	0	0
-// OP_EQ_F	16758	16682	16783
-// OP_IFNOT	16783	3	0
-// OP_RETURN	16784	0	0
-// OP_GOTO	46	0	0
-// OP_EQ_F	16758	16683	16785
-// OP_IFNOT	16785	3	0
-// OP_RETURN	16786	0	0
-// OP_GOTO	42	0	0
-// OP_EQ_F	16758	16684	16787
-// OP_IFNOT	16787	3	0
-// OP_RETURN	16788	0	0
-// OP_GOTO	38	0	0
-// OP_EQ_F	16758	16685	16789
-// OP_IFNOT	16789	3	0
-// OP_RETURN	16790	0	0
-// OP_GOTO	34	0	0
-// OP_EQ_F	16758	16686	16791
-// OP_IFNOT	16791	3	0
-// OP_RETURN	16792	0	0
-// OP_GOTO	30	0	0
-// OP_EQ_F	16758	16687	16793
-// OP_IFNOT	16793	3	0
-// OP_RETURN	16794	0	0
-// OP_GOTO	26	0	0
-// OP_EQ_F	16758	16688	16795
-// OP_IFNOT	16795	3	0
-// OP_RETURN	16796	0	0
-// OP_GOTO	22	0	0
-// OP_EQ_F	16758	16689	16797
-// OP_IFNOT	16797	3	0
-// OP_RETURN	16798	0	0
-// OP_GOTO	18	0	0
-// OP_EQ_F	16758	16690	16799
-// OP_IFNOT	16799	3	0
-// OP_RETURN	16800	0	0
-// OP_GOTO	14	0	0
-// OP_EQ_F	16758	16691	16801
-// OP_IFNOT	16801	3	0
-// OP_RETURN	16802	0	0
-// OP_GOTO	10	0	0
-// OP_EQ_F	16758	16692	16803
-// OP_IFNOT	16803	3	0
-// OP_RETURN	16804	0	0
-// OP_GOTO	6	0	0
-// OP_EQ_F	16758	16670	16805
-// OP_IFNOT	16805	3	0
-// OP_RETURN	16806	0	0
-// OP_GOTO	2	0	0
-// OP_RETURN	16757	0	0
-// OP_DONE	0	0	0
-string (float globaldef005846) func002279 = 
-{
-    if(globaldef005846 == globaldef005805)
-    {
-        return "klingon";
-    }
-    else
-    {
-        if(globaldef005846 == globaldef005783)
-        {
-            return "john";
-        }
-        else
-        {
-            if(globaldef005846 == globaldef005784)
-            {
-                return "bill";
-            }
-            else
-            {
-                if(globaldef005846 == globaldef005785)
-                {
-                    return "happy";
-                }
-                else
-                {
-                    if(globaldef005846 == globaldef005786)
-                    {
-                        return "terminator";
-                    }
-                    else
-                    {
-                        if(globaldef005846 == globaldef005787)
-                        {
-                            return "tigger";
-                        }
-                        else
-                        {
-                            if(globaldef005846 == globaldef005788)
-                            {
-                                return "ironman";
-                            }
-                            else
-                            {
-                                if(globaldef005846 == globaldef005789)
-                                {
-                                    return "predator";
-                                }
-                                else
-                                {
-                                    if(globaldef005846 == globaldef005790)
-                                    {
-                                        return "sven";
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005846 == globaldef005791)
-                                        {
-                                            return "raphael";
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005846 == globaldef005792)
-                                            {
-                                                return "bob";
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005846 == globaldef005793)
-                                                {
-                                                    return "qspy";
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005846 == globaldef005794)
-                                                    {
-                                                        return "iceman";
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005846 == globaldef005795)
-                                                        {
-                                                            return "tick";
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005846 == globaldef005796)
-                                                            {
-                                                                return "tim";
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005846 == globaldef005797)
-                                                                {
-                                                                    return "slaine";
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005846 == globaldef005798)
-                                                                    {
-                                                                        return "robocop";
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005846 == globaldef005799)
-                                                                        {
-                                                                            return "cowboy";
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005846 == globaldef005800)
-                                                                            {
-                                                                                return "hitman";
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005846 == globaldef005801)
-                                                                                {
-                                                                                    return "mountie";
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005846 == globaldef005802)
-                                                                                    {
-                                                                                        return "babe";
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005846 == globaldef005803)
-                                                                                        {
-                                                                                            return "punisher";
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005846 == globaldef005804)
-                                                                                            {
-                                                                                                return "elvis";
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef005846 == globaldef005782)
-                                                                                                {
-                                                                                                    return "demigod";
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    return "bug";
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002280
-// function begins at statement 28180, parm_start=16807
-// OP_EQ_F	16807	16693	16808
-// OP_IFNOT	16808	5	0
-// OP_MUL_F	785	218	16809
-// OP_ADD_F	16809	780	16810
-// OP_RETURN	16810	0	0
-// OP_GOTO	142	0	0
-// OP_EQ_F	16807	16671	16811
-// OP_IFNOT	16811	5	0
-// OP_MUL_F	782	218	16812
-// OP_ADD_F	16812	782	16813
-// OP_RETURN	16813	0	0
-// OP_GOTO	136	0	0
-// OP_EQ_F	16807	16672	16814
-// OP_IFNOT	16814	5	0
-// OP_MUL_F	779	218	16815
-// OP_ADD_F	16815	779	16816
-// OP_RETURN	16816	0	0
-// OP_GOTO	130	0	0
-// OP_EQ_F	16807	16673	16817
-// OP_IFNOT	16817	5	0
-// OP_MUL_F	780	218	16818
-// OP_ADD_F	16818	791	16819
-// OP_RETURN	16819	0	0
-// OP_GOTO	124	0	0
-// OP_EQ_F	16807	16674	16820
-// OP_IFNOT	16820	5	0
-// OP_MUL_F	784	218	16821
-// OP_ADD_F	16821	789	16822
-// OP_RETURN	16822	0	0
-// OP_GOTO	118	0	0
-// OP_EQ_F	16807	16675	16823
-// OP_IFNOT	16823	5	0
-// OP_MUL_F	783	218	16824
-// OP_ADD_F	16824	785	16825
-// OP_RETURN	16825	0	0
-// OP_GOTO	112	0	0
-// OP_EQ_F	16807	16676	16826
-// OP_IFNOT	16826	5	0
-// OP_MUL_F	784	218	16827
-// OP_ADD_F	16827	785	16828
-// OP_RETURN	16828	0	0
-// OP_GOTO	106	0	0
-// OP_EQ_F	16807	16677	16829
-// OP_IFNOT	16829	5	0
-// OP_MUL_F	780	218	16830
-// OP_ADD_F	16830	786	16831
-// OP_RETURN	16831	0	0
-// OP_GOTO	100	0	0
-// OP_EQ_F	16807	16678	16832
-// OP_IFNOT	16832	5	0
-// OP_MUL_F	791	218	16833
-// OP_ADD_F	16833	791	16834
-// OP_RETURN	16834	0	0
-// OP_GOTO	94	0	0
-// OP_EQ_F	16807	16679	16835
-// OP_IFNOT	16835	5	0
-// OP_MUL_F	782	218	16836
-// OP_ADD_F	16836	791	16837
-// OP_RETURN	16837	0	0
-// OP_GOTO	88	0	0
-// OP_EQ_F	16807	16680	16838
-// OP_IFNOT	16838	5	0
-// OP_MUL_F	785	218	16839
-// OP_ADD_F	16839	785	16840
-// OP_RETURN	16840	0	0
-// OP_GOTO	82	0	0
-// OP_EQ_F	16807	16681	16841
-// OP_IFNOT	16841	5	0
-// OP_MUL_F	791	218	16842
-// OP_ADD_F	16842	782	16843
-// OP_RETURN	16843	0	0
-// OP_GOTO	76	0	0
-// OP_EQ_F	16807	16682	16844
-// OP_IFNOT	16844	5	0
-// OP_MUL_F	780	218	16845
-// OP_ADD_F	16845	781	16846
-// OP_RETURN	16846	0	0
-// OP_GOTO	70	0	0
-// OP_EQ_F	16807	16683	16847
-// OP_IFNOT	16847	5	0
-// OP_MUL_F	792	218	16848
-// OP_ADD_F	16848	780	16849
-// OP_RETURN	16849	0	0
-// OP_GOTO	64	0	0
-// OP_EQ_F	16807	16684	16850
-// OP_IFNOT	16850	5	0
-// OP_MUL_F	789	218	16851
-// OP_ADD_F	16851	781	16852
-// OP_RETURN	16852	0	0
-// OP_GOTO	58	0	0
-// OP_EQ_F	16807	16685	16853
-// OP_IFNOT	16853	5	0
-// OP_MUL_F	780	218	16854
-// OP_ADD_F	16854	785	16855
-// OP_RETURN	16855	0	0
-// OP_GOTO	52	0	0
-// OP_EQ_F	16807	16686	16856
-// OP_IFNOT	16856	5	0
-// OP_MUL_F	785	218	16857
-// OP_ADD_F	16857	792	16858
-// OP_RETURN	16858	0	0
-// OP_GOTO	46	0	0
-// OP_EQ_F	16807	16687	16859
-// OP_IFNOT	16859	5	0
-// OP_MUL_F	790	218	16860
-// OP_ADD_F	16860	783	16861
-// OP_RETURN	16861	0	0
-// OP_GOTO	40	0	0
-// OP_EQ_F	16807	16688	16862
-// OP_IFNOT	16862	5	0
-// OP_MUL_F	780	218	16863
-// OP_ADD_F	16863	780	16864
-// OP_RETURN	16864	0	0
-// OP_GOTO	34	0	0
-// OP_EQ_F	16807	16689	16865
-// OP_IFNOT	16865	5	0
-// OP_MUL_F	780	218	16866
-// OP_ADD_F	16866	792	16867
-// OP_RETURN	16867	0	0
-// OP_GOTO	28	0	0
-// OP_EQ_F	16807	16690	16868
-// OP_IFNOT	16868	5	0
-// OP_MUL_F	782	218	16869
-// OP_ADD_F	16869	785	16870
-// OP_RETURN	16870	0	0
-// OP_GOTO	22	0	0
-// OP_EQ_F	16807	16691	16871
-// OP_IFNOT	16871	5	0
-// OP_MUL_F	785	218	16872
-// OP_ADD_F	16872	791	16873
-// OP_RETURN	16873	0	0
-// OP_GOTO	16	0	0
-// OP_EQ_F	16807	16692	16874
-// OP_IFNOT	16874	5	0
-// OP_MUL_F	789	218	16875
-// OP_ADD_F	16875	779	16876
-// OP_RETURN	16876	0	0
-// OP_GOTO	10	0	0
-// OP_EQ_F	16807	16670	16877
-// OP_IFNOT	16877	5	0
-// OP_MUL_F	779	218	16878
-// OP_ADD_F	16878	792	16879
-// OP_RETURN	16879	0	0
-// OP_GOTO	4	0	0
-// OP_MUL_F	779	218	16880
-// OP_ADD_F	16880	779	16881
-// OP_RETURN	16881	0	0
-// OP_DONE	0	0	0
-float (float globaldef005871) func002280 = 
-{
-    if(globaldef005871 == globaldef005805)
-    {
-        return (globaldef000768 * FL_INWATER) + globaldef000763;
-    }
-    else
-    {
-        if(globaldef005871 == globaldef005783)
-        {
-            return (globaldef000765 * FL_INWATER) + globaldef000765;
-        }
-        else
-        {
-            if(globaldef005871 == globaldef005784)
-            {
-                return (globaldef000762 * FL_INWATER) + globaldef000762;
-            }
-            else
-            {
-                if(globaldef005871 == globaldef005785)
-                {
-                    return (globaldef000763 * FL_INWATER) + GLOBALDEF774_12;
-                }
-                else
-                {
-                    if(globaldef005871 == globaldef005786)
-                    {
-                        return (globaldef000767 * FL_INWATER) + globaldef000772;
-                    }
-                    else
-                    {
-                        if(globaldef005871 == globaldef005787)
-                        {
-                            return (globaldef000766 * FL_INWATER) + globaldef000768;
-                        }
-                        else
-                        {
-                            if(globaldef005871 == globaldef005788)
-                            {
-                                return (globaldef000767 * FL_INWATER) + globaldef000768;
-                            }
-                            else
-                            {
-                                if(globaldef005871 == globaldef005789)
-                                {
-                                    return (globaldef000763 * FL_INWATER) + globaldef000769;
-                                }
-                                else
-                                {
-                                    if(globaldef005871 == globaldef005790)
-                                    {
-                                        return (GLOBALDEF774_12 * FL_INWATER) + GLOBALDEF774_12;
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005871 == globaldef005791)
-                                        {
-                                            return (globaldef000765 * FL_INWATER) + GLOBALDEF774_12;
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005871 == globaldef005792)
-                                            {
-                                                return (globaldef000768 * FL_INWATER) + globaldef000768;
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005871 == globaldef005793)
-                                                {
-                                                    return (GLOBALDEF774_12 * FL_INWATER) + globaldef000765;
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005871 == globaldef005794)
-                                                    {
-                                                        return (globaldef000763 * FL_INWATER) + globaldef000764;
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005871 == globaldef005795)
-                                                        {
-                                                            return (GLOBALDEF775_13 * FL_INWATER) + globaldef000763;
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005871 == globaldef005796)
-                                                            {
-                                                                return (globaldef000772 * FL_INWATER) + globaldef000764;
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005871 == globaldef005797)
-                                                                {
-                                                                    return (globaldef000763 * FL_INWATER) + globaldef000768;
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005871 == globaldef005798)
-                                                                    {
-                                                                        return (globaldef000768 * FL_INWATER) + GLOBALDEF775_13;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005871 == globaldef005799)
-                                                                        {
-                                                                            return (globaldef000773 * FL_INWATER) + globaldef000766;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005871 == globaldef005800)
-                                                                            {
-                                                                                return (globaldef000763 * FL_INWATER) + globaldef000763;
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005871 == globaldef005801)
-                                                                                {
-                                                                                    return (globaldef000763 * FL_INWATER) + GLOBALDEF775_13;
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005871 == globaldef005802)
-                                                                                    {
-                                                                                        return (globaldef000765 * FL_INWATER) + globaldef000768;
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005871 == globaldef005803)
-                                                                                        {
-                                                                                            return (globaldef000768 * FL_INWATER) + GLOBALDEF774_12;
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005871 == globaldef005804)
-                                                                                            {
-                                                                                                return (globaldef000772 * FL_INWATER) + globaldef000762;
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef005871 == globaldef005782)
-                                                                                                {
-                                                                                                    return (globaldef000762 * FL_INWATER) + GLOBALDEF775_13;
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    return (globaldef000762 * FL_INWATER) + globaldef000762;
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002281
-// function begins at statement 28328, parm_start=16882
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	16883	0
-// OP_LOAD_F	16882	609	16884
-// OP_EQ_F	16884	16693	16885
-// OP_IFNOT	16885	13	0
-// OP_MUL_F	16883	214	16886
-// OP_STORE_V	16886	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16887
-// OP_IFNOT	16887	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16888	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	345	0	0
-// OP_LOAD_F	16882	609	16889
-// OP_EQ_F	16889	16671	16890
-// OP_IFNOT	16890	13	0
-// OP_MUL_F	16883	214	16891
-// OP_STORE_V	16891	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16892
-// OP_IFNOT	16892	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16893	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	330	0	0
-// OP_LOAD_F	16882	609	16894
-// OP_EQ_F	16894	16672	16895
-// OP_IFNOT	16895	13	0
-// OP_MUL_F	16883	214	16896
-// OP_STORE_V	16896	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16897
-// OP_IFNOT	16897	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16898	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	315	0	0
-// OP_LOAD_F	16882	609	16899
-// OP_EQ_F	16899	16673	16900
-// OP_IFNOT	16900	13	0
-// OP_MUL_F	16883	214	16901
-// OP_STORE_V	16901	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16902
-// OP_IFNOT	16902	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16903	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	300	0	0
-// OP_LOAD_F	16882	609	16904
-// OP_EQ_F	16904	16674	16905
-// OP_IFNOT	16905	13	0
-// OP_MUL_F	16883	214	16906
-// OP_STORE_V	16906	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16907
-// OP_IFNOT	16907	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16908	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	285	0	0
-// OP_LOAD_F	16882	609	16909
-// OP_EQ_F	16909	16675	16910
-// OP_IFNOT	16910	13	0
-// OP_MUL_F	16883	214	16911
-// OP_STORE_V	16911	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16912
-// OP_IFNOT	16912	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16913	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	270	0	0
-// OP_LOAD_F	16882	609	16914
-// OP_EQ_F	16914	16676	16915
-// OP_IFNOT	16915	13	0
-// OP_MUL_F	16883	214	16916
-// OP_STORE_V	16916	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16917
-// OP_IFNOT	16917	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16918	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	255	0	0
-// OP_LOAD_F	16882	609	16919
-// OP_EQ_F	16919	16677	16920
-// OP_IFNOT	16920	13	0
-// OP_MUL_F	16883	214	16921
-// OP_STORE_V	16921	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16922
-// OP_IFNOT	16922	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16923	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	240	0	0
-// OP_LOAD_F	16882	609	16924
-// OP_EQ_F	16924	16678	16925
-// OP_IFNOT	16925	13	0
-// OP_MUL_F	16883	214	16926
-// OP_STORE_V	16926	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16927
-// OP_IFNOT	16927	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16928	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	225	0	0
-// OP_LOAD_F	16882	609	16929
-// OP_EQ_F	16929	16679	16930
-// OP_IFNOT	16930	13	0
-// OP_MUL_F	16883	214	16931
-// OP_STORE_V	16931	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16932
-// OP_IFNOT	16932	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16933	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	210	0	0
-// OP_LOAD_F	16882	609	16934
-// OP_EQ_F	16934	16680	16935
-// OP_IFNOT	16935	13	0
-// OP_MUL_F	16883	214	16936
-// OP_STORE_V	16936	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16937
-// OP_IFNOT	16937	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16938	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	195	0	0
-// OP_LOAD_F	16882	609	16939
-// OP_EQ_F	16939	16681	16940
-// OP_IFNOT	16940	13	0
-// OP_MUL_F	16883	214	16941
-// OP_STORE_V	16941	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16942
-// OP_IFNOT	16942	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16943	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	180	0	0
-// OP_LOAD_F	16882	609	16944
-// OP_EQ_F	16944	16682	16945
-// OP_IFNOT	16945	13	0
-// OP_MUL_F	16883	214	16946
-// OP_STORE_V	16946	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16947
-// OP_IFNOT	16947	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16948	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	165	0	0
-// OP_LOAD_F	16882	609	16949
-// OP_EQ_F	16949	16683	16950
-// OP_IFNOT	16950	13	0
-// OP_MUL_F	16883	214	16951
-// OP_STORE_V	16951	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16952
-// OP_IFNOT	16952	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16953	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	150	0	0
-// OP_LOAD_F	16882	609	16954
-// OP_EQ_F	16954	16684	16955
-// OP_IFNOT	16955	13	0
-// OP_MUL_F	16883	214	16956
-// OP_STORE_V	16956	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16957
-// OP_IFNOT	16957	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16958	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	135	0	0
-// OP_LOAD_F	16882	609	16959
-// OP_EQ_F	16959	16685	16960
-// OP_IFNOT	16960	13	0
-// OP_MUL_F	16883	214	16961
-// OP_STORE_V	16961	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16962
-// OP_IFNOT	16962	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16963	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	120	0	0
-// OP_LOAD_F	16882	609	16964
-// OP_EQ_F	16964	16686	16965
-// OP_IFNOT	16965	13	0
-// OP_MUL_F	16883	214	16966
-// OP_STORE_V	16966	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	230	16967
-// OP_IFNOT	16967	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16968	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	105	0	0
-// OP_LOAD_F	16882	609	16969
-// OP_EQ_F	16969	16687	16970
-// OP_IFNOT	16970	13	0
-// OP_MUL_F	16883	214	16971
-// OP_STORE_V	16971	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16972
-// OP_IFNOT	16972	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16973	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	90	0	0
-// OP_LOAD_F	16882	609	16974
-// OP_EQ_F	16974	16688	16975
-// OP_IFNOT	16975	13	0
-// OP_MUL_F	16883	214	16976
-// OP_STORE_V	16976	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16977
-// OP_IFNOT	16977	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16978	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LOAD_F	16882	609	16979
-// OP_EQ_F	16979	16689	16980
-// OP_IFNOT	16980	13	0
-// OP_MUL_F	16883	214	16981
-// OP_STORE_V	16981	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16982
-// OP_IFNOT	16982	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16983	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	60	0	0
-// OP_LOAD_F	16882	609	16984
-// OP_EQ_F	16984	16690	16985
-// OP_IFNOT	16985	13	0
-// OP_MUL_F	16883	214	16986
-// OP_STORE_V	16986	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16987
-// OP_IFNOT	16987	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16988	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	45	0	0
-// OP_LOAD_F	16882	609	16989
-// OP_EQ_F	16989	16691	16990
-// OP_IFNOT	16990	13	0
-// OP_MUL_F	16883	214	16991
-// OP_STORE_V	16991	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16992
-// OP_IFNOT	16992	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16993	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	30	0	0
-// OP_LOAD_F	16882	609	16994
-// OP_EQ_F	16994	16692	16995
-// OP_IFNOT	16995	13	0
-// OP_MUL_F	16883	214	16996
-// OP_STORE_V	16996	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	16997
-// OP_IFNOT	16997	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	16998	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	15	0	0
-// OP_LOAD_F	16882	609	16999
-// OP_EQ_F	16999	16670	17000
-// OP_IFNOT	17000	12	0
-// OP_MUL_F	16883	214	17001
-// OP_STORE_V	17001	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	16883	0
-// OP_LE	16883	213	17002
-// OP_IFNOT	17002	6	0
-// OP_STORE_V	16882	4	0
-// OP_STORE_V	17003	7	0
-// OP_STORE_V	16695	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_DONE	0	0	0
-void (entity globaldef005872) func002281 = 
-{
-    local float globaldef005873;
-    globaldef005873 = random();
-    if(globaldef005872.field000286 == globaldef005805)
-    {
-        globaldef005873 = floor(globaldef005873 * TRUE);
-        
-        if(globaldef005873 <= FALSE)
-        {
-            func002369(globaldef005872, "Qapla'", globaldef005807, FALSE);
-        }
-        
-    }
-    else
-    {
-        if(globaldef005872.field000286 == globaldef005783)
-        {
-            globaldef005873 = floor(globaldef005873 * TRUE);
-            
-            if(globaldef005873 <= FALSE)
-            {
-                func002369(globaldef005872, "bye, I'm going back to work", globaldef005807, FALSE);
-            }
-            
-        }
-        else
-        {
-            if(globaldef005872.field000286 == globaldef005784)
-            {
-                globaldef005873 = floor(globaldef005873 * TRUE);
-                
-                if(globaldef005873 <= FALSE)
-                {
-                    func002369(globaldef005872, "cya", globaldef005807, FALSE);
-                }
-                
-            }
-            else
-            {
-                if(globaldef005872.field000286 == globaldef005785)
-                {
-                    globaldef005873 = floor(globaldef005873 * TRUE);
-                    
-                    if(globaldef005873 <= FALSE)
-                    {
-                        func002369(globaldef005872, "Keep on smiling", globaldef005807, FALSE);
-                    }
-                    
-                }
-                else
-                {
-                    if(globaldef005872.field000286 == globaldef005786)
-                    {
-                        globaldef005873 = floor(globaldef005873 * TRUE);
-                        
-                        if(globaldef005873 <= FALSE)
-                        {
-                            func002369(globaldef005872, "Hasta La Vista", globaldef005807, FALSE);
-                        }
-                        
-                    }
-                    else
-                    {
-                        if(globaldef005872.field000286 == globaldef005787)
-                        {
-                            globaldef005873 = floor(globaldef005873 * TRUE);
-                            
-                            if(globaldef005873 <= FALSE)
-                            {
-                                func002369(globaldef005872, "C U L8TER", globaldef005807, FALSE);
-                            }
-                            
-                        }
-                        else
-                        {
-                            if(globaldef005872.field000286 == globaldef005788)
-                            {
-                                globaldef005873 = floor(globaldef005873 * TRUE);
-                                
-                                if(globaldef005873 <= FALSE)
-                                {
-                                    func002369(globaldef005872, "gotta go", globaldef005807, FALSE);
-                                }
-                                
-                            }
-                            else
-                            {
-                                if(globaldef005872.field000286 == globaldef005789)
-                                {
-                                    globaldef005873 = floor(globaldef005873 * TRUE);
-                                    
-                                    if(globaldef005873 <= FALSE)
-                                    {
-                                        func002369(globaldef005872, "take it!!! I'm leaving", globaldef005807, FALSE);
-                                    }
-                                    
-                                }
-                                else
-                                {
-                                    if(globaldef005872.field000286 == globaldef005790)
-                                    {
-                                        globaldef005873 = floor(globaldef005873 * TRUE);
-                                        
-                                        if(globaldef005873 <= FALSE)
-                                        {
-                                            func002369(globaldef005872, "Ciao motha's", globaldef005807, FALSE);
-                                        }
-                                        
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005872.field000286 == globaldef005791)
-                                        {
-                                            globaldef005873 = floor(globaldef005873 * TRUE);
-                                            
-                                            if(globaldef005873 <= FALSE)
-                                            {
-                                                func002369(globaldef005872, "later dudes", globaldef005807, FALSE);
-                                            }
-                                            
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005872.field000286 == globaldef005792)
-                                            {
-                                                globaldef005873 = floor(globaldef005873 * TRUE);
-                                                
-                                                if(globaldef005873 <= FALSE)
-                                                {
-                                                    func002369(globaldef005872, "I'm going off duty", globaldef005807, FALSE);
-                                                }
-                                                
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005872.field000286 == globaldef005793)
-                                                {
-                                                    globaldef005873 = floor(globaldef005873 * TRUE);
-                                                    
-                                                    if(globaldef005873 <= FALSE)
-                                                    {
-                                                        func002369(globaldef005872, "must go and kill 007", globaldef005807, FALSE);
-                                                    }
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005872.field000286 == globaldef005794)
-                                                    {
-                                                        globaldef005873 = floor(globaldef005873 * TRUE);
-                                                        
-                                                        if(globaldef005873 <= FALSE)
-                                                        {
-                                                            func002369(globaldef005872, "I'm chillin' out", globaldef005807, FALSE);
-                                                        }
-                                                        
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005872.field000286 == globaldef005795)
-                                                        {
-                                                            globaldef005873 = floor(globaldef005873 * TRUE);
-                                                            
-                                                            if(globaldef005873 <= FALSE)
-                                                            {
-                                                                func002369(globaldef005872, "I shall now go and fight crime elsewhere", globaldef005807, FALSE);
-                                                            }
-                                                            
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005872.field000286 == globaldef005796)
-                                                            {
-                                                                globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                
-                                                                if(globaldef005873 <= FALSE)
-                                                                {
-                                                                    func002369(globaldef005872, "gotta cruise", globaldef005807, FALSE);
-                                                                }
-                                                                
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005872.field000286 == globaldef005797)
-                                                                {
-                                                                    globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                    
-                                                                    if(globaldef005873 <= FALSE)
-                                                                    {
-                                                                        func002369(globaldef005872, "see you in hell", globaldef005807, FALSE);
-                                                                    }
-                                                                    
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005872.field000286 == globaldef005798)
-                                                                    {
-                                                                        globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                        
-                                                                        if(globaldef005873 <= MOVETYPE_FLY)
-                                                                        {
-                                                                            func002369(globaldef005872, "going offline", globaldef005807, FALSE);
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005872.field000286 == globaldef005799)
-                                                                        {
-                                                                            globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                            
-                                                                            if(globaldef005873 <= FALSE)
-                                                                            {
-                                                                                func002369(globaldef005872, "See y'all later", globaldef005807, FALSE);
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005872.field000286 == globaldef005800)
-                                                                            {
-                                                                                globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                
-                                                                                if(globaldef005873 <= FALSE)
-                                                                                {
-                                                                                    func002369(globaldef005872, "I'm out", globaldef005807, FALSE);
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005872.field000286 == globaldef005801)
-                                                                                {
-                                                                                    globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                    
-                                                                                    if(globaldef005873 <= FALSE)
-                                                                                    {
-                                                                                        func002369(globaldef005872, "Goodbye", globaldef005807, FALSE);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005872.field000286 == globaldef005802)
-                                                                                    {
-                                                                                        globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                        
-                                                                                        if(globaldef005873 <= FALSE)
-                                                                                        {
-                                                                                            func002369(globaldef005872, "See you all later,.. boys", globaldef005807, FALSE);
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005872.field000286 == globaldef005803)
-                                                                                        {
-                                                                                            globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                            
-                                                                                            if(globaldef005873 <= FALSE)
-                                                                                            {
-                                                                                                func002369(globaldef005872, "Gotta punish some real humans", globaldef005807, FALSE);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005872.field000286 == globaldef005804)
-                                                                                            {
-                                                                                                globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                                
-                                                                                                if(globaldef005873 <= FALSE)
-                                                                                                {
-                                                                                                    func002369(globaldef005872, "has left the building!", globaldef005807, FALSE);
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                
-                                                                                                if(globaldef005872.field000286 == globaldef005782)
-                                                                                                {
-                                                                                                    globaldef005873 = floor(globaldef005873 * TRUE);
-                                                                                                    
-                                                                                                    if(globaldef005873 <= FALSE)
-                                                                                                    {
-                                                                                                        func002369(globaldef005872, "Till fate brings us together again", globaldef005807, FALSE);
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002282
-// function begins at statement 28690, parm_start=17004
-// OP_LOAD_ENT	17004	618	17007
-// OP_LOAD_S	17007	180	17008
-// OP_STORE_S	17008	17006	0
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	17005	0
-// OP_LOAD_F	17004	609	17009
-// OP_EQ_F	17009	16693	17010
-// OP_IFNOT	17010	45	0
-// OP_MUL_F	17005	230	17011
-// OP_STORE_V	17011	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17012
-// OP_IFNOT	17012	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17013	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17014
-// OP_IFNOT	17014	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17015	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17016
-// OP_IFNOT	17016	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17017	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17018
-// OP_IFNOT	17018	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17019	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17020
-// OP_IFNOT	17020	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17021	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1060	0	0
-// OP_LOAD_F	17004	609	17022
-// OP_EQ_F	17022	16671	17023
-// OP_IFNOT	17023	47	0
-// OP_MUL_F	17005	230	17024
-// OP_STORE_V	17024	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17025
-// OP_IFNOT	17025	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17026	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17005	214	17027
-// OP_IFNOT	17027	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17028	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17005	216	17029
-// OP_IFNOT	17029	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17030	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17005	228	17031
-// OP_IFNOT	17031	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17006	7	0
-// OP_STORE_V	17032	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17033
-// OP_IFNOT	17033	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17034	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1011	0	0
-// OP_LOAD_F	17004	609	17035
-// OP_EQ_F	17035	16672	17036
-// OP_IFNOT	17036	45	0
-// OP_MUL_F	17005	230	17037
-// OP_STORE_V	17037	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17038
-// OP_IFNOT	17038	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17039	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17040
-// OP_IFNOT	17040	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17041	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17042
-// OP_IFNOT	17042	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17043	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17044
-// OP_IFNOT	17044	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17045	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17046
-// OP_IFNOT	17046	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17047	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	964	0	0
-// OP_LOAD_F	17004	609	17048
-// OP_EQ_F	17048	16673	17049
-// OP_IFNOT	17049	45	0
-// OP_MUL_F	17005	230	17050
-// OP_STORE_V	17050	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17051
-// OP_IFNOT	17051	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17052	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17053
-// OP_IFNOT	17053	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17054	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17055
-// OP_IFNOT	17055	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17056	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17057
-// OP_IFNOT	17057	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17058	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17059
-// OP_IFNOT	17059	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17060	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	917	0	0
-// OP_LOAD_F	17004	609	17061
-// OP_EQ_F	17061	16674	17062
-// OP_IFNOT	17062	39	0
-// OP_MUL_F	17005	229	17063
-// OP_STORE_V	17063	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17064
-// OP_IFNOT	17064	9	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17065	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	17066	13	0
-// OP_STORE_V	16696	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	214	17067
-// OP_IFNOT	17067	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17068	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	216	17069
-// OP_IFNOT	17069	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17070	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	228	17071
-// OP_IFNOT	17071	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17072	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	876	0	0
-// OP_LOAD_F	17004	609	17073
-// OP_EQ_F	17073	16675	17074
-// OP_IFNOT	17074	55	0
-// OP_MUL_F	17005	231	17075
-// OP_STORE_V	17075	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17076
-// OP_IFNOT	17076	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17077	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17005	214	17078
-// OP_IFNOT	17078	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17079	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17005	216	17080
-// OP_IFNOT	17080	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17081	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	228	17082
-// OP_IFNOT	17082	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17083	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	229	17084
-// OP_IFNOT	17084	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17085	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	230	17086
-// OP_IFNOT	17086	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17087	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	819	0	0
-// OP_LOAD_F	17004	609	17088
-// OP_EQ_F	17088	16676	17089
-// OP_IFNOT	17089	46	0
-// OP_MUL_F	17005	230	17090
-// OP_STORE_V	17090	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17091
-// OP_IFNOT	17091	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17092	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17093
-// OP_IFNOT	17093	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17094	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17095
-// OP_IFNOT	17095	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17096	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17097
-// OP_IFNOT	17097	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17098	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17099
-// OP_IFNOT	17099	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17100	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	771	0	0
-// OP_LOAD_F	17004	609	17101
-// OP_EQ_F	17101	16677	17102
-// OP_IFNOT	17102	46	0
-// OP_MUL_F	17005	230	17103
-// OP_STORE_V	17103	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17104
-// OP_IFNOT	17104	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17006	7	0
-// OP_STORE_V	17105	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17106
-// OP_IFNOT	17106	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17107	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17108
-// OP_IFNOT	17108	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17109	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17110
-// OP_IFNOT	17110	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17111	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17112
-// OP_IFNOT	17112	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17113	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	723	0	0
-// OP_LOAD_F	17004	609	17114
-// OP_EQ_F	17114	16678	17115
-// OP_IFNOT	17115	45	0
-// OP_MUL_F	17005	230	17116
-// OP_STORE_V	17116	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17117
-// OP_IFNOT	17117	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17118	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17119
-// OP_IFNOT	17119	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17120	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17121
-// OP_IFNOT	17121	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17122	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17123
-// OP_IFNOT	17123	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17124	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17125
-// OP_IFNOT	17125	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17126	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	676	0	0
-// OP_LOAD_F	17004	609	17127
-// OP_EQ_F	17127	16679	17128
-// OP_IFNOT	17128	45	0
-// OP_MUL_F	17005	230	17129
-// OP_STORE_V	17129	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17130
-// OP_IFNOT	17130	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17131	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17132
-// OP_IFNOT	17132	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17133	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17134
-// OP_IFNOT	17134	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17135	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17136
-// OP_IFNOT	17136	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17137	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17138
-// OP_IFNOT	17138	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17139	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	629	0	0
-// OP_LOAD_F	17004	609	17140
-// OP_EQ_F	17140	16680	17141
-// OP_IFNOT	17141	46	0
-// OP_MUL_F	17005	230	17142
-// OP_STORE_V	17142	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17143
-// OP_IFNOT	17143	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17144	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17005	214	17145
-// OP_IFNOT	17145	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17006	7	0
-// OP_STORE_V	17146	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17147
-// OP_IFNOT	17147	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17148	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17149
-// OP_IFNOT	17149	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17150	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17151
-// OP_IFNOT	17151	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17152	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	581	0	0
-// OP_LOAD_F	17004	609	17153
-// OP_EQ_F	17153	16681	17154
-// OP_IFNOT	17154	21	0
-// OP_MUL_F	17005	216	17155
-// OP_STORE_V	17155	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17156
-// OP_IFNOT	17156	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17157	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	214	17158
-// OP_IFNOT	17158	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17159	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	558	0	0
-// OP_LOAD_F	17004	609	17160
-// OP_EQ_F	17160	16682	17161
-// OP_IFNOT	17161	21	0
-// OP_MUL_F	17005	216	17162
-// OP_STORE_V	17162	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17163
-// OP_IFNOT	17163	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17164	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	214	17165
-// OP_IFNOT	17165	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17166	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	535	0	0
-// OP_LOAD_F	17004	609	17167
-// OP_EQ_F	17167	16683	17168
-// OP_IFNOT	17168	48	0
-// OP_MUL_F	17005	230	17169
-// OP_STORE_V	17169	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17170
-// OP_IFNOT	17170	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17171	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	35	0	0
-// OP_LE	17005	214	17172
-// OP_IFNOT	17172	9	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17173	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	17174	13	0
-// OP_STORE_V	16696	16	0
-// OP_STORE_V	228	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17005	216	17175
-// OP_IFNOT	17175	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17176	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17005	228	17177
-// OP_IFNOT	17177	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17178	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	230	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17005	229	17179
-// OP_IFNOT	17179	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17006	7	0
-// OP_STORE_V	17180	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	485	0	0
-// OP_LOAD_F	17004	609	17181
-// OP_EQ_F	17181	16684	17182
-// OP_IFNOT	17182	47	0
-// OP_MUL_F	17005	230	17183
-// OP_STORE_V	17183	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17184
-// OP_IFNOT	17184	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17185	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17005	214	17186
-// OP_IFNOT	17186	9	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17187	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	17188	13	0
-// OP_STORE_V	16696	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17189
-// OP_IFNOT	17189	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17190	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17191
-// OP_IFNOT	17191	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17192	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17193
-// OP_IFNOT	17193	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17194	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	436	0	0
-// OP_LOAD_F	17004	609	17195
-// OP_EQ_F	17195	16685	17196
-// OP_IFNOT	17196	62	0
-// OP_MUL_F	17005	232	17197
-// OP_STORE_V	17197	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17198
-// OP_IFNOT	17198	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17199	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17005	214	17200
-// OP_IFNOT	17200	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17201	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17005	216	17202
-// OP_IFNOT	17202	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17203	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	228	17204
-// OP_IFNOT	17204	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17205	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	229	17206
-// OP_IFNOT	17206	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17207	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	230	17208
-// OP_IFNOT	17208	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17209	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	231	17210
-// OP_IFNOT	17210	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17211	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	372	0	0
-// OP_LOAD_F	17004	609	17212
-// OP_EQ_F	17212	16686	17213
-// OP_IFNOT	17213	53	0
-// OP_MUL_F	17005	231	17214
-// OP_STORE_V	17214	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17215
-// OP_IFNOT	17215	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17216	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17005	214	17217
-// OP_IFNOT	17217	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17218	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	216	17219
-// OP_IFNOT	17219	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17220	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	228	17221
-// OP_IFNOT	17221	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17222	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	229	17223
-// OP_IFNOT	17223	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17224	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	230	17225
-// OP_IFNOT	17225	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17226	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	317	0	0
-// OP_LOAD_F	17004	609	17227
-// OP_EQ_F	17227	16687	17228
-// OP_IFNOT	17228	45	0
-// OP_MUL_F	17005	230	17229
-// OP_STORE_V	17229	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17230
-// OP_IFNOT	17230	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17231	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17232
-// OP_IFNOT	17232	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17233	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17234
-// OP_IFNOT	17234	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17235	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17236
-// OP_IFNOT	17236	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17237	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17238
-// OP_IFNOT	17238	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17239	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	270	0	0
-// OP_LOAD_F	17004	609	17240
-// OP_EQ_F	17240	16688	17241
-// OP_IFNOT	17241	47	0
-// OP_MUL_F	17005	230	17242
-// OP_STORE_V	17242	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17243
-// OP_IFNOT	17243	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17244	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17005	214	17245
-// OP_IFNOT	17245	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17246	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17005	216	17247
-// OP_IFNOT	17247	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17248	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	18	0	0
-// OP_LE	17005	228	17249
-// OP_IFNOT	17249	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17250	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	10	0	0
-// OP_LE	17005	229	17251
-// OP_IFNOT	17251	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17252	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	17253	13	0
-// OP_STORE_V	16696	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	221	0	0
-// OP_LOAD_F	17004	609	17254
-// OP_EQ_F	17254	16689	17255
-// OP_IFNOT	17255	29	0
-// OP_MUL_F	17005	228	17256
-// OP_STORE_V	17256	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17257
-// OP_IFNOT	17257	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17258	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	214	17259
-// OP_IFNOT	17259	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17260	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	230	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	216	17261
-// OP_IFNOT	17261	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17262	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	190	0	0
-// OP_LOAD_F	17004	609	17263
-// OP_EQ_F	17263	16690	17264
-// OP_IFNOT	17264	46	0
-// OP_MUL_F	17005	230	17265
-// OP_STORE_V	17265	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17266
-// OP_IFNOT	17266	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17267	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17005	214	17268
-// OP_IFNOT	17268	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17269	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17005	216	17270
-// OP_IFNOT	17270	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17271	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17005	228	17272
-// OP_IFNOT	17272	8	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17273	7	0
-// OP_STORE_V	17006	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	230	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17274
-// OP_IFNOT	17274	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17275	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	142	0	0
-// OP_LOAD_F	17004	609	17276
-// OP_EQ_F	17276	16691	17277
-// OP_IFNOT	17277	46	0
-// OP_MUL_F	17005	230	17278
-// OP_STORE_V	17278	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17279
-// OP_IFNOT	17279	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17280	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17005	214	17281
-// OP_IFNOT	17281	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17282	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17005	216	17283
-// OP_IFNOT	17283	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17284	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17005	228	17285
-// OP_IFNOT	17285	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17286	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17005	229	17287
-// OP_IFNOT	17287	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17006	7	0
-// OP_STORE_V	17288	10	0
-// OP_STORE_V	16696	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	94	0	0
-// OP_LOAD_F	17004	609	17289
-// OP_EQ_F	17289	16692	17290
-// OP_IFNOT	17290	45	0
-// OP_MUL_F	17005	230	17291
-// OP_STORE_V	17291	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17292
-// OP_IFNOT	17292	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17293	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17294
-// OP_IFNOT	17294	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17295	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17296
-// OP_IFNOT	17296	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17297	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17298
-// OP_IFNOT	17298	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17299	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17300
-// OP_IFNOT	17300	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17301	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	47	0	0
-// OP_LOAD_F	17004	609	17302
-// OP_EQ_F	17302	16670	17303
-// OP_IFNOT	17303	44	0
-// OP_MUL_F	17005	230	17304
-// OP_STORE_V	17304	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17005	0
-// OP_LE	17005	213	17305
-// OP_IFNOT	17305	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17306	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17005	214	17307
-// OP_IFNOT	17307	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17308	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17005	216	17309
-// OP_IFNOT	17309	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17310	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17005	228	17311
-// OP_IFNOT	17311	7	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17312	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17005	229	17313
-// OP_IFNOT	17313	6	0
-// OP_STORE_V	17004	4	0
-// OP_STORE_V	17314	7	0
-// OP_STORE_V	16696	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_DONE	0	0	0
-void (entity globaldef005898) func002282 = 
-{
-    local float globaldef005899;
-    local string globaldef005900;
-    globaldef005900 = globaldef005898.field000295.netname;
-    globaldef005899 = random();
-    if(globaldef005898.field000286 == globaldef005805)
-    {
-        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-        if(globaldef005899 <= FALSE)
-        {
-            func002369(globaldef005898, "batlh Daqawlu'taH", globaldef005808, FL_SWIM);
-        }
-        else
-        {
-            if(globaldef005899 <= TRUE)
-            {
-                func002369(globaldef005898, "petaQ", globaldef005808, TRUE);
-            }
-            else
-            {
-                if(globaldef005899 <= FL_SWIM)
-                {
-                    func002369(globaldef005898, "ghay'cha'", globaldef005808, TRUE);
-                }
-                else
-                {
-                    if(globaldef005899 <= MOVETYPE_WALK)
-                    {
-                        func002369(globaldef005898, "taHqeq", globaldef005808, TRUE);
-                    }
-                    else
-                    {
-                        
-                        if(globaldef005899 <= MOVETYPE_STEP)
-                        {
-                            func002369(globaldef005898, "Hu'tegh", globaldef005808, TRUE);
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    else
-    {
-        if(globaldef005898.field000286 == globaldef005783)
-        {
-            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-            if(globaldef005899 <= FALSE)
-            {
-                func002369(globaldef005898, "You should practice more often", globaldef005808, MOVETYPE_WALK);
-            }
-            else
-            {
-                if(globaldef005899 <= TRUE)
-                {
-                    func002369(globaldef005898, "DOOM! DOOM! DOOM!", globaldef005808, FL_SWIM);
-                }
-                else
-                {
-                    if(globaldef005899 <= FL_SWIM)
-                    {
-                        func002370(globaldef005898, "Jeeez! Ever heard about strafing, ", globaldef005900, globaldef005808, MOVETYPE_WALK);
-                    }
-                    else
-                    {
-                        if(globaldef005899 <= MOVETYPE_WALK)
-                        {
-                            func002370(globaldef005898, globaldef005900, ", you should move faster", globaldef005808, MOVETYPE_STEP);
-                        }
-                        else
-                        {
-                            
-                            if(globaldef005899 <= MOVETYPE_STEP)
-                            {
-                                func002369(globaldef005898, "I was born ready", globaldef005808, FL_SWIM);
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        else
-        {
-            if(globaldef005898.field000286 == globaldef005784)
-            {
-                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                if(globaldef005899 <= FALSE)
-                {
-                    func002369(globaldef005898, "Microsoft wins again", globaldef005808, FL_SWIM);
-                }
-                else
-                {
-                    if(globaldef005899 <= TRUE)
-                    {
-                        func002369(globaldef005898, "That's what happens to software pirates!", globaldef005808, MOVETYPE_STEP);
-                    }
-                    else
-                    {
-                        if(globaldef005899 <= FL_SWIM)
-                        {
-                            func002369(globaldef005898, "You will go the Commodore way!", globaldef005808, MOVETYPE_WALK);
-                        }
-                        else
-                        {
-                            if(globaldef005899 <= MOVETYPE_WALK)
-                            {
-                                func002369(globaldef005898, "IE 4.0 anyone? One million bucks apiece.", globaldef005808, MOVETYPE_STEP);
-                            }
-                            else
-                            {
-                                
-                                if(globaldef005899 <= MOVETYPE_STEP)
-                                {
-                                    func002369(globaldef005898, "Now if you upgraded your windows...", globaldef005808, MOVETYPE_WALK);
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            else
-            {
-                if(globaldef005898.field000286 == globaldef005785)
-                {
-                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                    if(globaldef005899 <= FALSE)
-                    {
-                        func002369(globaldef005898, "If you're not happy, you're a backpack", globaldef005808, MOVETYPE_STEP);
-                    }
-                    else
-                    {
-                        if(globaldef005899 <= TRUE)
-                        {
-                            func002369(globaldef005898, "service with a smile", globaldef005808, MOVETYPE_WALK);
-                        }
-                        else
-                        {
-                            if(globaldef005899 <= FL_SWIM)
-                            {
-                                func002369(globaldef005898, "die with a smile!", globaldef005808, FL_SWIM);
-                            }
-                            else
-                            {
-                                if(globaldef005899 <= MOVETYPE_WALK)
-                                {
-                                    func002369(globaldef005898, "That was fun...lets do it again!", globaldef005808, MOVETYPE_WALK);
-                                }
-                                else
-                                {
-                                    
-                                    if(globaldef005899 <= MOVETYPE_STEP)
-                                    {
-                                        func002369(globaldef005898, "Brag...brag...brag...", globaldef005808, FL_SWIM);
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                else
-                {
-                    if(globaldef005898.field000286 == globaldef005786)
-                    {
-                        globaldef005899 = floor(globaldef005899 * MOVETYPE_STEP);
-                        if(globaldef005899 <= FALSE)
-                        {
-                            func002371(globaldef005898, "hey ", globaldef005900, ", better luck next time", globaldef005808, MOVETYPE_STEP);
-                        }
-                        else
-                        {
-                            if(globaldef005899 <= TRUE)
-                            {
-                                func002369(globaldef005898, "Maggot-brain", globaldef005808, FL_SWIM);
-                            }
-                            else
-                            {
-                                if(globaldef005899 <= FL_SWIM)
-                                {
-                                    func002369(globaldef005898, "I want your boots, your clothes and your bike", globaldef005808, MOVETYPE_STEP);
-                                }
-                                else
-                                {
-                                    
-                                    if(globaldef005899 <= MOVETYPE_WALK)
-                                    {
-                                        func002369(globaldef005898, "Another John Doe eats the dust", globaldef005808, MOVETYPE_WALK);
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    else
-                    {
-                        if(globaldef005898.field000286 == globaldef005787)
-                        {
-                            globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
-                            if(globaldef005899 <= FALSE)
-                            {
-                                func002370(globaldef005898, "It's always fun playing with ", globaldef005900, globaldef005808, MOVETYPE_WALK);
-                            }
-                            else
-                            {
-                                if(globaldef005899 <= TRUE)
-                                {
-                                    func002369(globaldef005898, "Sticks and stones....", globaldef005808, MOVETYPE_WALK);
-                                }
-                                else
-                                {
-                                    if(globaldef005899 <= FL_SWIM)
-                                    {
-                                        func002370(globaldef005898, "beddy bye time for ,", globaldef005900, globaldef005808, MOVETYPE_WALK);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005899 <= MOVETYPE_WALK)
-                                        {
-                                            func002369(globaldef005898, "A happy friend is a dead friend", globaldef005808, MOVETYPE_WALK);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005899 <= MOVETYPE_STEP)
-                                            {
-                                                func002369(globaldef005898, "Tigger Clan is the best!!", globaldef005808, MOVETYPE_WALK);
-                                            }
-                                            else
-                                            {
-                                                
-                                                if(globaldef005899 <= MOVETYPE_FLY)
-                                                {
-                                                    func002369(globaldef005898, "Tigger is :)", globaldef005808, FL_SWIM);
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        else
-                        {
-                            if(globaldef005898.field000286 == globaldef005788)
-                            {
-                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                if(globaldef005899 <= FALSE)
-                                {
-                                    func002370(globaldef005898, "watch yer back next time ", globaldef005900, globaldef005808, MOVETYPE_WALK);
-                                }
-                                else
-                                {
-                                    if(globaldef005899 <= TRUE)
-                                    {
-                                        func002369(globaldef005898, "Reload!!! Reload!!!", globaldef005808, FL_SWIM);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005899 <= FL_SWIM)
-                                        {
-                                            func002369(globaldef005898, "I shall henceforth be called Metallica-man", globaldef005808, MOVETYPE_WALK);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005899 <= MOVETYPE_WALK)
-                                            {
-                                                func002369(globaldef005898, "Ironman with the iron-fist", globaldef005808, FL_SWIM);
-                                            }
-                                            else
-                                            {
-                                                
-                                                if(globaldef005899 <= MOVETYPE_STEP)
-                                                {
-                                                    func002369(globaldef005898, "Whazoom, and iron-man is victorious", globaldef005808, MOVETYPE_WALK);
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            else
-                            {
-                                if(globaldef005898.field000286 == globaldef005789)
-                                {
-                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                    if(globaldef005899 <= FALSE)
-                                    {
-                                        func002370(globaldef005898, globaldef005900, " has a nice spine", globaldef005808, MOVETYPE_WALK);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005899 <= TRUE)
-                                        {
-                                            func002369(globaldef005898, "Just one more head, and I can go bowling", globaldef005808, MOVETYPE_STEP);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005899 <= FL_SWIM)
-                                            {
-                                                func002369(globaldef005898, "Bring yer daugther to the slaughter", globaldef005808, FL_SWIM);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005899 <= MOVETYPE_WALK)
-                                                {
-                                                    func002369(globaldef005898, "Trophies, bring me more trophies", globaldef005808, FL_SWIM);
-                                                }
-                                                else
-                                                {
-                                                    
-                                                    if(globaldef005899 <= MOVETYPE_STEP)
-                                                    {
-                                                        func002369(globaldef005898, "Take that! (not the boy-pop-group)", globaldef005808, FL_SWIM);
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                else
-                                {
-                                    if(globaldef005898.field000286 == globaldef005790)
-                                    {
-                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                        if(globaldef005899 <= FALSE)
-                                        {
-                                            func002369(globaldef005898, "don't fuk wid da mob", globaldef005808, FL_SWIM);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005899 <= TRUE)
-                                            {
-                                                func002369(globaldef005898, "HA!", globaldef005808, TRUE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005899 <= FL_SWIM)
-                                                {
-                                                    func002369(globaldef005898, "$wedish ingenuity win$ again", globaldef005808, MOVETYPE_WALK);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005899 <= MOVETYPE_WALK)
-                                                    {
-                                                        func002369(globaldef005898, "$anta'$ ready!!!", globaldef005808, FL_SWIM);
-                                                    }
-                                                    else
-                                                    {
-                                                        
-                                                        if(globaldef005899 <= MOVETYPE_STEP)
-                                                        {
-                                                            func002369(globaldef005898, "Bring 'em 0n!!", globaldef005808, FL_SWIM);
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    else
-                                    {
-                                        if(globaldef005898.field000286 == globaldef005791)
-                                        {
-                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                            if(globaldef005899 <= FALSE)
-                                            {
-                                                func002369(globaldef005898, "It rocks, man", globaldef005808, FALSE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005899 <= TRUE)
-                                                {
-                                                    func002369(globaldef005898, "Bullseye!", globaldef005808, FALSE);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005899 <= FL_SWIM)
-                                                    {
-                                                        func002369(globaldef005898, "It's all in the reflexes", globaldef005808, FALSE);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005899 <= MOVETYPE_WALK)
-                                                        {
-                                                            func002369(globaldef005898, "It slices, it dices: the TNMT", globaldef005808, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            
-                                                            if(globaldef005899 <= MOVETYPE_STEP)
-                                                            {
-                                                                func002369(globaldef005898, "This is gibbing spamtastic, dudes", globaldef005808, FALSE);
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        else
-                                        {
-                                            if(globaldef005898.field000286 == globaldef005792)
-                                            {
-                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                if(globaldef005899 <= FALSE)
-                                                {
-                                                    func002369(globaldef005898, "you forgot my tip, SIR", globaldef005808, FL_SWIM);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005899 <= TRUE)
-                                                    {
-                                                        func002370(globaldef005898, globaldef005900, ", tip me better, next time", globaldef005808, MOVETYPE_STEP);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005899 <= FL_SWIM)
-                                                        {
-                                                            func002369(globaldef005898, "Don't point that gun on me", globaldef005808, MOVETYPE_WALK);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005899 <= MOVETYPE_WALK)
-                                                            {
-                                                                func002369(globaldef005898, "Right in the kisser!!!", globaldef005808, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                
-                                                                if(globaldef005899 <= MOVETYPE_STEP)
-                                                                {
-                                                                    func002369(globaldef005898, "CHARGE!!!!", globaldef005808, FALSE);
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            else
-                                            {
-                                                if(globaldef005898.field000286 == globaldef005793)
-                                                {
-                                                    globaldef005899 = floor(globaldef005899 * FL_SWIM);
-                                                    if(globaldef005899 <= FALSE)
-                                                    {
-                                                        func002369(globaldef005898, "This is my boomstick", globaldef005808, MOVETYPE_WALK);
-                                                    }
-                                                    else
-                                                    {
-                                                        
-                                                        if(globaldef005899 <= TRUE)
-                                                        {
-                                                            func002369(globaldef005898, "MI-5 is still on top", globaldef005808, MOVETYPE_WALK);
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef005898.field000286 == globaldef005794)
-                                                    {
-                                                        globaldef005899 = floor(globaldef005899 * FL_SWIM);
-                                                        if(globaldef005899 <= FALSE)
-                                                        {
-                                                            func002369(globaldef005898, "Finally put you on ice", globaldef005808, MOVETYPE_WALK);
-                                                        }
-                                                        else
-                                                        {
-                                                            
-                                                            if(globaldef005899 <= TRUE)
-                                                            {
-                                                                func002369(globaldef005898, "another one bites the dust", globaldef005808, MOVETYPE_WALK);
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef005898.field000286 == globaldef005795)
-                                                        {
-                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                            if(globaldef005899 <= FALSE)
-                                                            {
-                                                                func002369(globaldef005898, "Justice is served like a good meal", globaldef005808, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005899 <= TRUE)
-                                                                {
-                                                                    func002371(globaldef005898, "Who are your next of kin, ", globaldef005900, " ?", globaldef005808, MOVETYPE_WALK);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005899 <= FL_SWIM)
-                                                                    {
-                                                                        func002369(globaldef005898, "Holy Moly!", globaldef005808, TRUE);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005899 <= MOVETYPE_WALK)
-                                                                        {
-                                                                            func002369(globaldef005898, "Cease your antics, or I may be forced to assault you with the U.S. Postal System!", globaldef005808, MOVETYPE_FLY);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            
-                                                                            if(globaldef005899 <= MOVETYPE_STEP)
-                                                                            {
-                                                                                func002370(globaldef005898, globaldef005900, ", you face the Tick! And his dog, Speak!", globaldef005808, MOVETYPE_WALK);
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef005898.field000286 == globaldef005796)
-                                                            {
-                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                if(globaldef005899 <= FALSE)
-                                                                {
-                                                                    func002369(globaldef005898, "I hate you...and this time I mean it", globaldef005808, MOVETYPE_WALK);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005899 <= TRUE)
-                                                                    {
-                                                                        func002371(globaldef005898, "Hey ", globaldef005900, ", your skin has fullbright colors in it", globaldef005808, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005899 <= FL_SWIM)
-                                                                        {
-                                                                            func002369(globaldef005898, "if it ain't id, it aint good", globaldef005808, FL_SWIM);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005899 <= MOVETYPE_WALK)
-                                                                            {
-                                                                                func002369(globaldef005898, "what's this 'Magic the Gathering' then??", globaldef005808, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                
-                                                                                if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                {
-                                                                                    func002369(globaldef005898, "you can buy a legal copy of quake now....", globaldef005808, MOVETYPE_WALK);
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef005898.field000286 == globaldef005797)
-                                                                {
-                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_PUSH);
-                                                                    if(globaldef005899 <= FALSE)
-                                                                    {
-                                                                        func002369(globaldef005898, "Another soul 4 satan", globaldef005808, FL_SWIM);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005899 <= TRUE)
-                                                                        {
-                                                                            func002369(globaldef005898, "anyone else for brainsurgery?", globaldef005808, MOVETYPE_WALK);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005899 <= FL_SWIM)
-                                                                            {
-                                                                                func002370(globaldef005898, "you're bleeding all over me, ", globaldef005900, globaldef005808, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                {
-                                                                                    func002369(globaldef005898, "Aah, the quickening...heh heh", globaldef005808, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                    {
-                                                                                        func002369(globaldef005898, "kill 'em all", globaldef005808, FL_SWIM);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005899 <= MOVETYPE_FLY)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "I'll kill anyone else laughing at my pants", globaldef005808, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            
-                                                                                            if(globaldef005899 <= MOVETYPE_TOSS)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "Ooooooh! Brainbiter hits home again.", globaldef005808, MOVETYPE_STEP);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef005898.field000286 == globaldef005798)
-                                                                    {
-                                                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
-                                                                        if(globaldef005899 <= FALSE)
-                                                                        {
-                                                                            func002369(globaldef005898, "You have the right to remain silent", globaldef005808, MOVETYPE_STEP);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005899 <= TRUE)
-                                                                            {
-                                                                                func002369(globaldef005898, "Fine... dead then", globaldef005808, FL_SWIM);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005899 <= FL_SWIM)
-                                                                                {
-                                                                                    func002369(globaldef005898, "Who will be the next to be uncooperative?", globaldef005808, MOVETYPE_STEP);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                    {
-                                                                                        func002369(globaldef005898, "Spread out!! not like that!", globaldef005808, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "You HAD 10 seconds to comply", globaldef005808, MOVETYPE_WALK);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            
-                                                                                            if(globaldef005899 <= MOVETYPE_FLY)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "Citizen, you have the right to remain silent", globaldef005808, MOVETYPE_STEP);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef005898.field000286 == globaldef005799)
-                                                                        {
-                                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                            if(globaldef005899 <= FALSE)
-                                                                            {
-                                                                                func002369(globaldef005898, "You lose varmit", globaldef005808, MOVETYPE_STEP);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005899 <= TRUE)
-                                                                                {
-                                                                                    func002369(globaldef005898, "you call yerself a gunslinger?", globaldef005808, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005899 <= FL_SWIM)
-                                                                                    {
-                                                                                        func002369(globaldef005898, "bite dust, varmit!", globaldef005808, FL_SWIM);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "anyone else wanna dance for me ?", globaldef005808, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            
-                                                                                            if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "Yippedy-Heeehaw!", globaldef005808, FL_SWIM);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef005898.field000286 == globaldef005800)
-                                                                            {
-                                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                if(globaldef005899 <= FALSE)
-                                                                                {
-                                                                                    func002369(globaldef005898, "U somekinda toughguy?", globaldef005808, FL_SWIM);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005899 <= TRUE)
-                                                                                    {
-                                                                                        func002369(globaldef005898, "that's another $20000 for me", globaldef005808, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005899 <= FL_SWIM)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "Da good squeeler is a dead squeeler", globaldef005808, MOVETYPE_WALK);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "U had enuff, wizaguy?", globaldef005808, FL_SWIM);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                
-                                                                                                if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                                {
-                                                                                                    func002371(globaldef005898, "Hey!!", globaldef005900, ",  I'm earning my pay overhere.", globaldef005808, MOVETYPE_STEP);
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef005898.field000286 == globaldef005801)
-                                                                                {
-                                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_WALK);
-                                                                                    if(globaldef005899 <= FALSE)
-                                                                                    {
-                                                                                        func002369(globaldef005898, "Don't mess with the mounties", globaldef005808, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005899 <= TRUE)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "The color of your blood goes with my uniform", globaldef005808, MOVETYPE_FLY);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            
-                                                                                            if(globaldef005899 <= FL_SWIM)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "je ne regrette rien", globaldef005808, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef005898.field000286 == globaldef005802)
-                                                                                    {
-                                                                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                        if(globaldef005899 <= FALSE)
-                                                                                        {
-                                                                                            func002369(globaldef005898, "Don't mess with the Silicon Babe", globaldef005808, FL_SWIM);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005899 <= TRUE)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "The only good man is a dead man", globaldef005808, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef005899 <= FL_SWIM)
-                                                                                                {
-                                                                                                    func002369(globaldef005898, "The babe did it again!", globaldef005808, FL_SWIM);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                                    {
-                                                                                                        func002370(globaldef005898, "Hey, your blood matches my nailpolish, ", globaldef005900, globaldef005808, MOVETYPE_FLY);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        
-                                                                                                        if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                                        {
-                                                                                                            func002369(globaldef005898, "hmmm, your backpack doesn't match my outfit", globaldef005808, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef005898.field000286 == globaldef005803)
-                                                                                        {
-                                                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                            if(globaldef005899 <= FALSE)
-                                                                                            {
-                                                                                                func002369(globaldef005898, "You're a backpack!!!", globaldef005808, FL_SWIM);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef005899 <= TRUE)
-                                                                                                {
-                                                                                                    func002369(globaldef005898, "Anyone for seconds?", globaldef005808, FL_SWIM);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef005899 <= FL_SWIM)
-                                                                                                    {
-                                                                                                        func002369(globaldef005898, "Don't get your blood all over me", globaldef005808, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                                        {
-                                                                                                            func002369(globaldef005898, "If it bleeds, we can kill it", globaldef005808, MOVETYPE_WALK);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            
-                                                                                                            if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                                            {
-                                                                                                                func002370(globaldef005898, globaldef005900, ", see me ....and DIE, scumbag", globaldef005808, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef005898.field000286 == globaldef005804)
-                                                                                            {
-                                                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                                if(globaldef005899 <= FALSE)
-                                                                                                {
-                                                                                                    func002369(globaldef005898, "it's good to be the king", globaldef005808, FL_SWIM);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef005899 <= TRUE)
-                                                                                                    {
-                                                                                                        func002369(globaldef005898, "you ain't nothin but a hound dog", globaldef005808, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef005899 <= FL_SWIM)
-                                                                                                        {
-                                                                                                            func002369(globaldef005898, "you ain't no frieeend of mine!", globaldef005808, FL_SWIM);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                                            {
-                                                                                                                func002369(globaldef005898, "the king shakes, rattles and rolls", globaldef005808, MOVETYPE_WALK);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                
-                                                                                                                if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                                                {
-                                                                                                                    func002369(globaldef005898, "don't you step on my blue suede shoes", globaldef005808, MOVETYPE_WALK);
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                
-                                                                                                if(globaldef005898.field000286 == globaldef005782)
-                                                                                                {
-                                                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                                    if(globaldef005899 <= FALSE)
-                                                                                                    {
-                                                                                                        func002369(globaldef005898, "Oooh, the quickening!!!", globaldef005808, FALSE);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef005899 <= TRUE)
-                                                                                                        {
-                                                                                                            func002369(globaldef005898, "Jacta est alea", globaldef005808, FL_SWIM);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef005899 <= FL_SWIM)
-                                                                                                            {
-                                                                                                                func002369(globaldef005898, "pax vobiscum", globaldef005808, FL_SWIM);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef005899 <= MOVETYPE_WALK)
-                                                                                                                {
-                                                                                                                    func002369(globaldef005898, "da predator ees my buddy", globaldef005808, FL_SWIM);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    
-                                                                                                                    if(globaldef005899 <= MOVETYPE_STEP)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef005898, "facta non verba", globaldef005808, FL_SWIM);
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002283
-// function begins at statement 29802, parm_start=17315
-// OP_LOAD_ENT	17315	619	17318
-// OP_LOAD_S	17318	180	17319
-// OP_STORE_S	17319	17317	0
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	17316	0
-// OP_LOAD_F	17315	609	17320
-// OP_EQ_F	17320	16693	17321
-// OP_IFNOT	17321	53	0
-// OP_MUL_F	17316	231	17322
-// OP_STORE_V	17322	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17323
-// OP_IFNOT	17323	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17324	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17316	214	17325
-// OP_IFNOT	17325	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17326	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	216	17327
-// OP_IFNOT	17327	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17328	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	228	17329
-// OP_IFNOT	17329	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17330	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	229	17331
-// OP_IFNOT	17331	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17332	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	230	17333
-// OP_IFNOT	17333	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17334	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1112	0	0
-// OP_LOAD_F	17315	609	17335
-// OP_EQ_F	17335	16671	17336
-// OP_IFNOT	17336	54	0
-// OP_MUL_F	17316	231	17337
-// OP_STORE_V	17337	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17338
-// OP_IFNOT	17338	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17339	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17316	214	17340
-// OP_IFNOT	17340	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17341	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	216	17342
-// OP_IFNOT	17342	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17343	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	228	17344
-// OP_IFNOT	17344	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17345	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	229	17346
-// OP_IFNOT	17346	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17317	7	0
-// OP_STORE_V	17347	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	230	17348
-// OP_IFNOT	17348	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17349	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1056	0	0
-// OP_LOAD_F	17315	609	17350
-// OP_EQ_F	17350	16672	17351
-// OP_IFNOT	17351	45	0
-// OP_MUL_F	17316	230	17352
-// OP_STORE_V	17352	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17353
-// OP_IFNOT	17353	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17354	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17355
-// OP_IFNOT	17355	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17356	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17357
-// OP_IFNOT	17357	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17358	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17359
-// OP_IFNOT	17359	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17360	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17361
-// OP_IFNOT	17361	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17362	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1009	0	0
-// OP_LOAD_F	17315	609	17363
-// OP_EQ_F	17363	16673	17364
-// OP_IFNOT	17364	45	0
-// OP_MUL_F	17316	230	17365
-// OP_STORE_V	17365	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17366
-// OP_IFNOT	17366	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17367	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17368
-// OP_IFNOT	17368	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17369	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17370
-// OP_IFNOT	17370	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17371	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17372
-// OP_IFNOT	17372	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17373	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17374
-// OP_IFNOT	17374	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17375	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	962	0	0
-// OP_LOAD_F	17315	609	17376
-// OP_EQ_F	17376	16674	17377
-// OP_IFNOT	17377	46	0
-// OP_MUL_F	17316	230	17378
-// OP_STORE_V	17378	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17379
-// OP_IFNOT	17379	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17380	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17381
-// OP_IFNOT	17381	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17382	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17383
-// OP_IFNOT	17383	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17384	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	228	17385
-// OP_IFNOT	17385	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17386	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17316	229	17387
-// OP_IFNOT	17387	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17388	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	914	0	0
-// OP_LOAD_F	17315	609	17389
-// OP_EQ_F	17389	16675	17390
-// OP_IFNOT	17390	46	0
-// OP_MUL_F	17316	230	17391
-// OP_STORE_V	17391	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17392
-// OP_IFNOT	17392	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17393	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17394
-// OP_IFNOT	17394	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17395	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17396
-// OP_IFNOT	17396	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17397	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17398
-// OP_IFNOT	17398	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17399	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17400
-// OP_IFNOT	17400	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17401	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	866	0	0
-// OP_LOAD_F	17315	609	17402
-// OP_EQ_F	17402	16676	17403
-// OP_IFNOT	17403	45	0
-// OP_MUL_F	17316	230	17404
-// OP_STORE_V	17404	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17405
-// OP_IFNOT	17405	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17406	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17407
-// OP_IFNOT	17407	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17408	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17409
-// OP_IFNOT	17409	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17410	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17411
-// OP_IFNOT	17411	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17412	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17413
-// OP_IFNOT	17413	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17414	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	819	0	0
-// OP_LOAD_F	17315	609	17415
-// OP_EQ_F	17415	16677	17416
-// OP_IFNOT	17416	45	0
-// OP_MUL_F	17316	230	17417
-// OP_STORE_V	17417	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17418
-// OP_IFNOT	17418	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17419	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17420
-// OP_IFNOT	17420	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17421	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17422
-// OP_IFNOT	17422	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17423	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17424
-// OP_IFNOT	17424	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17425	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17426
-// OP_IFNOT	17426	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17427	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	772	0	0
-// OP_LOAD_F	17315	609	17428
-// OP_EQ_F	17428	16678	17429
-// OP_IFNOT	17429	46	0
-// OP_MUL_F	17316	230	17430
-// OP_STORE_V	17430	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17431
-// OP_IFNOT	17431	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17432	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17433
-// OP_IFNOT	17433	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17434	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17435
-// OP_IFNOT	17435	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17436	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17437
-// OP_IFNOT	17437	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17438	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17439
-// OP_IFNOT	17439	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17440	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	724	0	0
-// OP_LOAD_F	17315	609	17441
-// OP_EQ_F	17441	16679	17442
-// OP_IFNOT	17442	55	0
-// OP_MUL_F	17316	231	17443
-// OP_STORE_V	17443	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17444
-// OP_IFNOT	17444	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17445	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	42	0	0
-// OP_LE	17316	214	17446
-// OP_IFNOT	17446	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17447	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17316	216	17448
-// OP_IFNOT	17448	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17449	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17316	228	17450
-// OP_IFNOT	17450	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17451	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	229	17452
-// OP_IFNOT	17452	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17453	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	230	17454
-// OP_IFNOT	17454	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17455	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	667	0	0
-// OP_LOAD_F	17315	609	17456
-// OP_EQ_F	17456	16680	17457
-// OP_IFNOT	17457	45	0
-// OP_MUL_F	17316	230	17458
-// OP_STORE_V	17458	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17459
-// OP_IFNOT	17459	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17460	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17461
-// OP_IFNOT	17461	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17462	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17463
-// OP_IFNOT	17463	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17464	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17465
-// OP_IFNOT	17465	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17466	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17467
-// OP_IFNOT	17467	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17468	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	620	0	0
-// OP_LOAD_F	17315	609	17469
-// OP_EQ_F	17469	16681	17470
-// OP_IFNOT	17470	46	0
-// OP_MUL_F	17316	230	17471
-// OP_STORE_V	17471	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17472
-// OP_IFNOT	17472	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17473	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17474
-// OP_IFNOT	17474	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17475	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17476
-// OP_IFNOT	17476	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17477	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17478
-// OP_IFNOT	17478	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17479	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17480
-// OP_IFNOT	17480	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17481	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	572	0	0
-// OP_LOAD_F	17315	609	17482
-// OP_EQ_F	17482	16682	17483
-// OP_IFNOT	17483	46	0
-// OP_MUL_F	17316	230	17484
-// OP_STORE_V	17484	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17485
-// OP_IFNOT	17485	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17486	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17487
-// OP_IFNOT	17487	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17488	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17489
-// OP_IFNOT	17489	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17490	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	228	17491
-// OP_IFNOT	17491	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17492	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17316	229	17493
-// OP_IFNOT	17493	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17494	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	524	0	0
-// OP_LOAD_F	17315	609	17495
-// OP_EQ_F	17495	16683	17496
-// OP_IFNOT	17496	46	0
-// OP_MUL_F	17316	230	17497
-// OP_STORE_V	17497	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17498
-// OP_IFNOT	17498	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17499	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17500
-// OP_IFNOT	17500	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17317	7	0
-// OP_STORE_V	17501	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17502
-// OP_IFNOT	17502	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17503	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17504
-// OP_IFNOT	17504	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17505	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17506
-// OP_IFNOT	17506	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17507	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	476	0	0
-// OP_LOAD_F	17315	609	17508
-// OP_EQ_F	17508	16684	17509
-// OP_IFNOT	17509	45	0
-// OP_MUL_F	17316	230	17510
-// OP_STORE_V	17510	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17511
-// OP_IFNOT	17511	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17512	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17513
-// OP_IFNOT	17513	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17514	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17515
-// OP_IFNOT	17515	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17516	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17517
-// OP_IFNOT	17517	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17518	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17519
-// OP_IFNOT	17519	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17520	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	429	0	0
-// OP_LOAD_F	17315	609	17521
-// OP_EQ_F	17521	16685	17522
-// OP_IFNOT	17522	46	0
-// OP_MUL_F	17316	230	17523
-// OP_STORE_V	17523	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17524
-// OP_IFNOT	17524	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17525	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17526
-// OP_IFNOT	17526	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17527	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17528
-// OP_IFNOT	17528	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17529	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	228	17530
-// OP_IFNOT	17530	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17531	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17316	229	17532
-// OP_IFNOT	17532	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17533	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	381	0	0
-// OP_LOAD_F	17315	609	17534
-// OP_EQ_F	17534	16686	17535
-// OP_IFNOT	17535	46	0
-// OP_MUL_F	17316	230	17536
-// OP_STORE_V	17536	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17537
-// OP_IFNOT	17537	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17538	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17316	214	17539
-// OP_IFNOT	17539	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17540	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17541
-// OP_IFNOT	17541	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17542	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	228	17543
-// OP_IFNOT	17543	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17544	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17545
-// OP_IFNOT	17545	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17546	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	333	0	0
-// OP_LOAD_F	17315	609	17547
-// OP_EQ_F	17547	16687	17548
-// OP_IFNOT	17548	47	0
-// OP_MUL_F	17316	230	17549
-// OP_STORE_V	17549	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17550
-// OP_IFNOT	17550	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17551	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17316	214	17552
-// OP_IFNOT	17552	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17317	7	0
-// OP_STORE_V	17553	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17316	216	17554
-// OP_IFNOT	17554	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17555	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17316	228	17556
-// OP_IFNOT	17556	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17557	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17316	229	17558
-// OP_IFNOT	17558	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17559	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	16697	13	0
-// OP_STORE_V	213	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	284	0	0
-// OP_LOAD_F	17315	609	17560
-// OP_EQ_F	17560	16688	17561
-// OP_IFNOT	17561	21	0
-// OP_MUL_F	17316	216	17562
-// OP_STORE_V	17562	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17563
-// OP_IFNOT	17563	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17486	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	214	17564
-// OP_IFNOT	17564	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17565	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	261	0	0
-// OP_LOAD_F	17315	609	17566
-// OP_EQ_F	17566	16689	17567
-// OP_IFNOT	17567	47	0
-// OP_MUL_F	17316	230	17568
-// OP_STORE_V	17568	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17569
-// OP_IFNOT	17569	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17570	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17316	214	17571
-// OP_IFNOT	17571	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17572	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17316	216	17573
-// OP_IFNOT	17573	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17574	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	18	0	0
-// OP_LE	17316	228	17575
-// OP_IFNOT	17575	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17576	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	10	0	0
-// OP_LE	17316	229	17577
-// OP_IFNOT	17577	8	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17578	7	0
-// OP_STORE_V	17317	10	0
-// OP_STORE_V	17174	13	0
-// OP_STORE_V	16697	16	0
-// OP_STORE_V	213	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	212	0	0
-// OP_LOAD_F	17315	609	17579
-// OP_EQ_F	17579	16690	17580
-// OP_IFNOT	17580	45	0
-// OP_MUL_F	17316	230	17581
-// OP_STORE_V	17581	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17582
-// OP_IFNOT	17582	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17583	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17584
-// OP_IFNOT	17584	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17585	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17586
-// OP_IFNOT	17586	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17587	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17588
-// OP_IFNOT	17588	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17589	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17590
-// OP_IFNOT	17590	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17591	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	165	0	0
-// OP_LOAD_F	17315	609	17592
-// OP_EQ_F	17592	16691	17593
-// OP_IFNOT	17593	45	0
-// OP_MUL_F	17316	230	17594
-// OP_STORE_V	17594	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17595
-// OP_IFNOT	17595	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17512	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17596
-// OP_IFNOT	17596	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17597	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17598
-// OP_IFNOT	17598	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17599	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17600
-// OP_IFNOT	17600	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17601	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17602
-// OP_IFNOT	17602	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17603	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	118	0	0
-// OP_LOAD_F	17315	609	17604
-// OP_EQ_F	17604	16692	17605
-// OP_IFNOT	17605	69	0
-// OP_MUL_F	17316	217	17606
-// OP_STORE_V	17606	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17607
-// OP_IFNOT	17607	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17608	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17316	214	17609
-// OP_IFNOT	17609	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17610	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17316	216	17611
-// OP_IFNOT	17611	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17612	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17316	228	17613
-// OP_IFNOT	17613	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17614	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	229	17615
-// OP_IFNOT	17615	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17616	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	230	17617
-// OP_IFNOT	17617	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17618	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	231	17619
-// OP_IFNOT	17619	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17620	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	232	17621
-// OP_IFNOT	17621	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17622	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	47	0	0
-// OP_LOAD_F	17315	609	17623
-// OP_EQ_F	17623	16670	17624
-// OP_IFNOT	17624	44	0
-// OP_MUL_F	17316	230	17625
-// OP_STORE_V	17625	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17316	0
-// OP_LE	17316	213	17626
-// OP_IFNOT	17626	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17627	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17316	214	17628
-// OP_IFNOT	17628	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17629	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17316	216	17630
-// OP_IFNOT	17630	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17631	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17316	228	17632
-// OP_IFNOT	17632	7	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17633	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17316	229	17634
-// OP_IFNOT	17634	6	0
-// OP_STORE_V	17315	4	0
-// OP_STORE_V	17635	7	0
-// OP_STORE_V	16697	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_DONE	0	0	0
-void (entity globaldef006020) func002283 = 
-{
-    local float globaldef006021;
-    local string globaldef006022;
-    globaldef006022 = globaldef006020.field000296.netname;
-    globaldef006021 = random();
-    if(globaldef006020.field000286 == globaldef005805)
-    {
-        globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-        if(globaldef006021 <= FALSE)
-        {
-            func002369(globaldef006020, "nuqDaq 'oH puchpa''e'", globaldef005809, FALSE);
-        }
-        else
-        {
-            if(globaldef006021 <= TRUE)
-            {
-                func002369(globaldef006020, "va", globaldef005809, FALSE);
-            }
-            else
-            {
-                if(globaldef006021 <= FL_SWIM)
-                {
-                    func002369(globaldef006020, "toDSaH", globaldef005809, FALSE);
-                }
-                else
-                {
-                    if(globaldef006021 <= MOVETYPE_WALK)
-                    {
-                        func002369(globaldef006020, "baQa'", globaldef005809, FALSE);
-                    }
-                    else
-                    {
-                        if(globaldef006021 <= MOVETYPE_STEP)
-                        {
-                            func002369(globaldef006020, "Qovpatlh", globaldef005809, FALSE);
-                        }
-                        else
-                        {
-                            
-                            if(globaldef006021 <= MOVETYPE_FLY)
-                            {
-                                func002369(globaldef006020, "I am NOT a merry MAN!", globaldef005809, FALSE);
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    else
-    {
-        if(globaldef006020.field000286 == globaldef005783)
-        {
-            globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-            if(globaldef006021 <= FALSE)
-            {
-                func002369(globaldef006020, "I like DOOM better", globaldef005809, FALSE);
-            }
-            else
-            {
-                if(globaldef006021 <= TRUE)
-                {
-                    func002369(globaldef006020, "Give me DOOM anyday", globaldef005809, FALSE);
-                }
-                else
-                {
-                    if(globaldef006021 <= FL_SWIM)
-                    {
-                        func002369(globaldef006020, "I'm gonna program the trinity engine again", globaldef005809, FALSE);
-                    }
-                    else
-                    {
-                        if(globaldef006021 <= MOVETYPE_WALK)
-                        {
-                            func002369(globaldef006020, "I need another shot of Jolt NOW!!!", globaldef005809, FALSE);
-                        }
-                        else
-                        {
-                            if(globaldef006021 <= MOVETYPE_STEP)
-                            {
-                                func002370(globaldef006020, globaldef006022, " is a lamer", globaldef005809, FALSE);
-                            }
-                            else
-                            {
-                                
-                                if(globaldef006021 <= MOVETYPE_FLY)
-                                {
-                                    func002369(globaldef006020, "this is not my day", globaldef005809, FALSE);
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        else
-        {
-            if(globaldef006020.field000286 == globaldef005784)
-            {
-                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                if(globaldef006021 <= FALSE)
-                {
-                    func002369(globaldef006020, "Mommy!!!! I've been gibbed again!!!", globaldef005809, FALSE);
-                }
-                else
-                {
-                    if(globaldef006021 <= TRUE)
-                    {
-                        func002369(globaldef006020, "The BSA will hunt you down", globaldef005809, FALSE);
-                    }
-                    else
-                    {
-                        if(globaldef006021 <= FL_SWIM)
-                        {
-                            func002369(globaldef006020, "I want my mommy!!!!", globaldef005809, FALSE);
-                        }
-                        else
-                        {
-                            if(globaldef006021 <= MOVETYPE_WALK)
-                            {
-                                func002369(globaldef006020, "Just wait until the next windows upgrade!!!", globaldef005809, FALSE);
-                            }
-                            else
-                            {
-                                
-                                if(globaldef006021 <= MOVETYPE_STEP)
-                                {
-                                    func002369(globaldef006020, "If it isn't Microsoft, it just isn't....", globaldef005809, FALSE);
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            else
-            {
-                if(globaldef006020.field000286 == globaldef005785)
-                {
-                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                    if(globaldef006021 <= FALSE)
-                    {
-                        func002369(globaldef006020, "Judge Slappy ain't happy", globaldef005809, FALSE);
-                    }
-                    else
-                    {
-                        if(globaldef006021 <= TRUE)
-                        {
-                            func002369(globaldef006020, "no fair", globaldef005809, FALSE);
-                        }
-                        else
-                        {
-                            if(globaldef006021 <= FL_SWIM)
-                            {
-                                func002369(globaldef006020, "traitor!!!", globaldef005809, FALSE);
-                            }
-                            else
-                            {
-                                if(globaldef006021 <= MOVETYPE_WALK)
-                                {
-                                    func002369(globaldef006020, "Happy Slappy ain't happy", globaldef005809, FALSE);
-                                }
-                                else
-                                {
-                                    
-                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                    {
-                                        func002369(globaldef006020, " =(", globaldef005809, FALSE);
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                else
-                {
-                    if(globaldef006020.field000286 == globaldef005786)
-                    {
-                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                        if(globaldef006021 <= FALSE)
-                        {
-                            func002369(globaldef006020, "I'll be back!!", globaldef005809, FALSE);
-                        }
-                        else
-                        {
-                            if(globaldef006021 <= TRUE)
-                            {
-                                func002369(globaldef006020, "Lucky S.O.B.", globaldef005809, FALSE);
-                            }
-                            else
-                            {
-                                if(globaldef006021 <= FL_SWIM)
-                                {
-                                    func002369(globaldef006020, "Wait till I bring out the T1000", globaldef005809, FALSE);
-                                }
-                                else
-                                {
-                                    if(globaldef006021 <= MOVETYPE_WALK)
-                                    {
-                                        func002369(globaldef006020, "Your momma wears army boots", globaldef005809, FALSE);
-                                    }
-                                    else
-                                    {
-                                        
-                                        if(globaldef006021 <= MOVETYPE_STEP)
-                                        {
-                                            func002370(globaldef006020, "Next time, your it, ", globaldef006022, globaldef005809, FALSE);
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    else
-                    {
-                        if(globaldef006020.field000286 == globaldef005787)
-                        {
-                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                            if(globaldef006021 <= FALSE)
-                            {
-                                func002370(globaldef006020, "I really hate ", globaldef006022, globaldef005809, FALSE);
-                            }
-                            else
-                            {
-                                if(globaldef006021 <= TRUE)
-                                {
-                                    func002369(globaldef006020, "Sleeping time for tigger", globaldef005809, FALSE);
-                                }
-                                else
-                                {
-                                    if(globaldef006021 <= FL_SWIM)
-                                    {
-                                        func002369(globaldef006020, "Why can't we all be happy tiggers?", globaldef005809, FALSE);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006021 <= MOVETYPE_WALK)
-                                        {
-                                            func002369(globaldef006020, "Tigger is :(", globaldef005809, FALSE);
-                                        }
-                                        else
-                                        {
-                                            
-                                            if(globaldef006021 <= MOVETYPE_STEP)
-                                            {
-                                                func002369(globaldef006020, "Purrrrr!", globaldef005809, FALSE);
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        else
-                        {
-                            if(globaldef006020.field000286 == globaldef005788)
-                            {
-                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                if(globaldef006021 <= FALSE)
-                                {
-                                    func002369(globaldef006020, "I bet you never read my comics", globaldef005809, FALSE);
-                                }
-                                else
-                                {
-                                    if(globaldef006021 <= TRUE)
-                                    {
-                                        func002369(globaldef006020, "I really need a drink", globaldef005809, FALSE);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006021 <= FL_SWIM)
-                                        {
-                                            func002369(globaldef006020, "My suit is rusty, give me a 2nd chance", globaldef005809, FALSE);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006021 <= MOVETYPE_WALK)
-                                            {
-                                                func002369(globaldef006020, "great, another suit demolished", globaldef005809, FALSE);
-                                            }
-                                            else
-                                            {
-                                                
-                                                if(globaldef006021 <= MOVETYPE_STEP)
-                                                {
-                                                    func002369(globaldef006020, "oh yeah, lets all pick on ironman!!", globaldef005809, FALSE);
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            else
-                            {
-                                if(globaldef006020.field000286 == globaldef005789)
-                                {
-                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                    if(globaldef006021 <= FALSE)
-                                    {
-                                        func002369(globaldef006020, "You're one ugly motherfucker", globaldef005809, FALSE);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006021 <= TRUE)
-                                        {
-                                            func002369(globaldef006020, "You're all worms!!", globaldef005809, FALSE);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006021 <= FL_SWIM)
-                                            {
-                                                func002369(globaldef006020, "I will quash your puny civilization", globaldef005809, FALSE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006021 <= MOVETYPE_WALK)
-                                                {
-                                                    func002369(globaldef006020, "I am the ultimate hunter", globaldef005809, FALSE);
-                                                }
-                                                else
-                                                {
-                                                    
-                                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                                    {
-                                                        func002369(globaldef006020, "what the hell are you?", globaldef005809, FALSE);
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                else
-                                {
-                                    if(globaldef006020.field000286 == globaldef005790)
-                                    {
-                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                        if(globaldef006021 <= FALSE)
-                                        {
-                                            func002369(globaldef006020, "mamma mia", globaldef005809, FALSE);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006021 <= TRUE)
-                                            {
-                                                func002369(globaldef006020, "I'll c0me back wick $0me real p0werful friend$", globaldef005809, FALSE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006021 <= FL_SWIM)
-                                                {
-                                                    func002370(globaldef006020, "Are you trying to tell me $omething, ", globaldef006022, globaldef005809, FALSE);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006021 <= MOVETYPE_WALK)
-                                                    {
-                                                        func002369(globaldef006020, "Da m0b al$0 has bl0nde babe$", globaldef005809, FALSE);
-                                                    }
-                                                    else
-                                                    {
-                                                        
-                                                        if(globaldef006021 <= MOVETYPE_STEP)
-                                                        {
-                                                            func002369(globaldef006020, "Wait till I run y0u 0ver wick my V0lv0", globaldef005809, FALSE);
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006020.field000286 == globaldef005791)
-                                        {
-                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-                                            if(globaldef006021 <= FALSE)
-                                            {
-                                                func002369(globaldef006020, "That really sucked, dude", globaldef005809, FALSE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006021 <= TRUE)
-                                                {
-                                                    func002369(globaldef006020, "Sensei was right", globaldef005809, FALSE);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006021 <= FL_SWIM)
-                                                    {
-                                                        func002369(globaldef006020, "Donatello, Michaelangelo, Leonardo, HEEELP!!!!", globaldef005809, FALSE);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006021 <= MOVETYPE_WALK)
-                                                        {
-                                                            func002370(globaldef006020, "Are you working for the Shredder, ", globaldef006022, globaldef005809, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006021 <= MOVETYPE_STEP)
-                                                            {
-                                                                func002370(globaldef006020, "Mundo uncewl, ", globaldef006022, globaldef005809, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                
-                                                                if(globaldef006021 <= MOVETYPE_FLY)
-                                                                {
-                                                                    func002369(globaldef006020, "Bogus dude", globaldef005809, FALSE);
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006020.field000286 == globaldef005792)
-                                            {
-                                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                if(globaldef006021 <= FALSE)
-                                                {
-                                                    func002369(globaldef006020, "Ok, now call me a cab", globaldef005809, FALSE);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006021 <= TRUE)
-                                                    {
-                                                        func002369(globaldef006020, "this isn't fare!!!", globaldef005809, FALSE);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006021 <= FL_SWIM)
-                                                        {
-                                                            func002369(globaldef006020, "I'm just a cabbie", globaldef005809, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006021 <= MOVETYPE_WALK)
-                                                            {
-                                                                func002369(globaldef006020, "cab drivers make such easy targets", globaldef005809, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                
-                                                                if(globaldef006021 <= MOVETYPE_STEP)
-                                                                {
-                                                                    func002369(globaldef006020, "suck exhaust, bud!", globaldef005809, FALSE);
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006020.field000286 == globaldef005793)
-                                                {
-                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                    if(globaldef006021 <= FALSE)
-                                                    {
-                                                        func002370(globaldef006020, "Guess it's not a good day to be a bad guy, eh ", globaldef006022, globaldef005809, FALSE);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006021 <= TRUE)
-                                                        {
-                                                            func002369(globaldef006020, "Bad move, creep", globaldef005809, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006021 <= FL_SWIM)
-                                                            {
-                                                                func002369(globaldef006020, "Now your on our Qspy-hitlist", globaldef005809, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006021 <= MOVETYPE_WALK)
-                                                                {
-                                                                    func002369(globaldef006020, "I will downgrade your ping to 999", globaldef005809, FALSE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    
-                                                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                                                    {
-                                                                        func002369(globaldef006020, "Next time a bigger gun", globaldef005809, FALSE);
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006020.field000286 == globaldef005794)
-                                                    {
-                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                        if(globaldef006021 <= FALSE)
-                                                        {
-                                                            func002369(globaldef006020, "Damnit!", globaldef005809, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006021 <= TRUE)
-                                                            {
-                                                                func002369(globaldef006020, "Freeze dude", globaldef005809, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006021 <= FL_SWIM)
-                                                                {
-                                                                    func002369(globaldef006020, "Iceman will avenge himself", globaldef005809, FALSE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006021 <= MOVETYPE_WALK)
-                                                                    {
-                                                                        func002369(globaldef006020, "I should have listened to Awnald S.", globaldef005809, FALSE);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        
-                                                                        if(globaldef006021 <= MOVETYPE_STEP)
-                                                                        {
-                                                                            func002370(globaldef006020, "Yeah-ya put me on ice real cool, ", globaldef006022, globaldef005809, FALSE);
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006020.field000286 == globaldef005795)
-                                                        {
-                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                            if(globaldef006021 <= FALSE)
-                                                            {
-                                                                func002369(globaldef006020, "Unhand me, you vanilla!!", globaldef005809, FALSE);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006021 <= TRUE)
-                                                                {
-                                                                    func002370(globaldef006020, globaldef006022, ", hah! Roof pig! Most unexpected!", globaldef005809, FALSE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006021 <= FL_SWIM)
-                                                                    {
-                                                                        func002369(globaldef006020, "I will return, I AM the Tick", globaldef005809, FALSE);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006021 <= MOVETYPE_WALK)
-                                                                        {
-                                                                            func002369(globaldef006020, "Speak, my dog will bite your rear end", globaldef005809, FALSE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            
-                                                                            if(globaldef006021 <= MOVETYPE_STEP)
-                                                                            {
-                                                                                func002369(globaldef006020, "I pop my zits in your general direction", globaldef005809, FALSE);
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006020.field000286 == globaldef005796)
-                                                            {
-                                                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                if(globaldef006021 <= FALSE)
-                                                                {
-                                                                    func002369(globaldef006020, "You bastard, you killed me!!!", globaldef005809, FALSE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006021 <= TRUE)
-                                                                    {
-                                                                        func002369(globaldef006020, "Why'd ya pick on me?", globaldef005809, FALSE);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006021 <= FL_SWIM)
-                                                                        {
-                                                                            func002369(globaldef006020, "This level sucks; I bet it's John Romero's", globaldef005809, FALSE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006021 <= MOVETYPE_WALK)
-                                                                            {
-                                                                                func002369(globaldef006020, "You got better software than I have", globaldef005809, FALSE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                
-                                                                                if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                {
-                                                                                    func002369(globaldef006020, "I've had worse", globaldef005809, FALSE);
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006020.field000286 == globaldef005797)
-                                                                {
-                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                    if(globaldef006021 <= FALSE)
-                                                                    {
-                                                                        func002369(globaldef006020, "Lamer!!!", globaldef005809, FALSE);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006021 <= TRUE)
-                                                                        {
-                                                                            func002369(globaldef006020, "Danu is at my side", globaldef005809, FALSE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006021 <= FL_SWIM)
-                                                                            {
-                                                                                func002369(globaldef006020, "I will rise from the cauldron again", globaldef005809, FALSE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                {
-                                                                                    func002369(globaldef006020, "Ukko, get me out of here you dwarf", globaldef005809, FALSE);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                    {
-                                                                                        func002370(globaldef006020, "HA! You can't really kill me, ", globaldef006022, globaldef005809, FALSE);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006020.field000286 == globaldef005798)
-                                                                    {
-                                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                        if(globaldef006021 <= FALSE)
-                                                                        {
-                                                                            func002369(globaldef006020, "My disassembly is prohibited by law", globaldef005809, FALSE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006021 <= TRUE)
-                                                                            {
-                                                                                func002369(globaldef006020, "You will be brought to justice", globaldef005809, FALSE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006021 <= FL_SWIM)
-                                                                                {
-                                                                                    func002369(globaldef006020, "You are in possession of illegal weapons, sir", globaldef005809, FALSE);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                    {
-                                                                                        func002370(globaldef006020, "Please surrender at once, ", globaldef006022, globaldef005809, FALSE);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        
-                                                                                        if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                        {
-                                                                                            func002369(globaldef006020, "Offense #3, killing a police officer", globaldef005809, FALSE);
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006020.field000286 == globaldef005799)
-                                                                        {
-                                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                            if(globaldef006021 <= FALSE)
-                                                                            {
-                                                                                func002369(globaldef006020, "I guess it's boothill time 4 me", globaldef005809, FALSE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006021 <= TRUE)
-                                                                                {
-                                                                                    func002370(globaldef006020, globaldef006022, " yer a darn good gunslinger, yeller-belly", globaldef005809, FALSE);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006021 <= FL_SWIM)
-                                                                                    {
-                                                                                        func002369(globaldef006020, "Caramba!", globaldef005809, FALSE);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                        {
-                                                                                            func002369(globaldef006020, "You got me, varmitt!!", globaldef005809, FALSE);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            
-                                                                                            if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                            {
-                                                                                                func002370(globaldef006020, "Ya shot me in the back like a yeller coward, ", globaldef006022, globaldef005809, FALSE);
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006020.field000286 == globaldef005800)
-                                                                            {
-                                                                                globaldef006021 = floor(globaldef006021 * FL_SWIM);
-                                                                                if(globaldef006021 <= FALSE)
-                                                                                {
-                                                                                    func002369(globaldef006020, "Damnit!", globaldef005809, FALSE);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006021 <= TRUE)
-                                                                                    {
-                                                                                        func002369(globaldef006020, "Mamma mia", globaldef005809, FALSE);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006020.field000286 == globaldef005801)
-                                                                                {
-                                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                    if(globaldef006021 <= FALSE)
-                                                                                    {
-                                                                                        func002369(globaldef006020, "I should have remained a lumberjack", globaldef005809, FALSE);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006021 <= TRUE)
-                                                                                        {
-                                                                                            func002369(globaldef006020, "'tis but a flesh wound", globaldef005809, FALSE);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006021 <= FL_SWIM)
-                                                                                            {
-                                                                                                func002369(globaldef006020, "I've had worse cuts shaving", globaldef005809, FALSE);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                                {
-                                                                                                    func002369(globaldef006020, "My ulcer hurts more", globaldef005809, FALSE);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    
-                                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                                    {
-                                                                                                        func002371(globaldef006020, "Is that as good as you can do, ", globaldef006022, " ?", globaldef005809, FALSE);
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006020.field000286 == globaldef005802)
-                                                                                    {
-                                                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                        if(globaldef006021 <= FALSE)
-                                                                                        {
-                                                                                            func002369(globaldef006020, "First you wanna wanna kiss me, then kill me", globaldef005809, FALSE);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006021 <= TRUE)
-                                                                                            {
-                                                                                                func002369(globaldef006020, "You pig, you messed up my hair", globaldef005809, FALSE);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006021 <= FL_SWIM)
-                                                                                                {
-                                                                                                    func002369(globaldef006020, "You animal, look what you've done to my  make-up", globaldef005809, FALSE);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                                    {
-                                                                                                        func002369(globaldef006020, "Oooh, I just love the way you handle your tiny gun", globaldef005809, FALSE);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        
-                                                                                                        if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                                        {
-                                                                                                            func002369(globaldef006020, "GREAT!, now my tits need another silicone implant", globaldef005809, FALSE);
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006020.field000286 == globaldef005803)
-                                                                                        {
-                                                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                            if(globaldef006021 <= FALSE)
-                                                                                            {
-                                                                                                func002369(globaldef006020, "You bastard, you killed me!!!", globaldef005809, FALSE);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006021 <= TRUE)
-                                                                                                {
-                                                                                                    func002369(globaldef006020, "Wham! Bam! thank you m'am", globaldef005809, FALSE);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006021 <= FL_SWIM)
-                                                                                                    {
-                                                                                                        func002369(globaldef006020, "Come on fuckers, painless is waiting 4 you", globaldef005809, FALSE);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                                        {
-                                                                                                            func002369(globaldef006020, "Come on, bring on the really bad stuff", globaldef005809, FALSE);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            
-                                                                                                            if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                                            {
-                                                                                                                func002369(globaldef006020, "Payback time!", globaldef005809, FALSE);
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006020.field000286 == globaldef005804)
-                                                                                            {
-                                                                                                globaldef006021 = floor(globaldef006021 * FL_CLIENT);
-                                                                                                if(globaldef006021 <= FALSE)
-                                                                                                {
-                                                                                                    func002369(globaldef006020, "I hate Nerds", globaldef005809, FALSE);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006021 <= TRUE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006020, "you hound dog", globaldef005809, FALSE);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006021 <= FL_SWIM)
-                                                                                                        {
-                                                                                                            func002369(globaldef006020, "I ain't gonna sing no more", globaldef005809, FALSE);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                                            {
-                                                                                                                func002369(globaldef006020, "so do ya wanna have a new car ?", globaldef005809, FALSE);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006020, "Pooh! y'all call that shootin'?", globaldef005809, FALSE);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006021 <= MOVETYPE_FLY)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006020, "camper!!!", globaldef005809, FALSE);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006021 <= MOVETYPE_TOSS)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006020, "Y'all like to shoot the king of rock 'n roll", globaldef005809, FALSE);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            
-                                                                                                                            if(globaldef006021 <= MOVETYPE_PUSH)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006020, "I'mmah gonnah cry, baby", globaldef005809, FALSE);
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                
-                                                                                                if(globaldef006020.field000286 == globaldef005782)
-                                                                                                {
-                                                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                                    if(globaldef006021 <= FALSE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006020, "Resurgam", globaldef005809, FALSE);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006021 <= TRUE)
-                                                                                                        {
-                                                                                                            func002369(globaldef006020, "non placet", globaldef005809, FALSE);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006021 <= FL_SWIM)
-                                                                                                            {
-                                                                                                                func002369(globaldef006020, "Plebian", globaldef005809, FALSE);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006021 <= MOVETYPE_WALK)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006020, "oops!!", globaldef005809, FALSE);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    
-                                                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006020, "Ouch!", globaldef005809, FALSE);
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-};
-
-
-// func002284
-// function begins at statement 30974, parm_start=17636
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	17637	0
-// OP_SUB_F	814	809	17640
-// OP_LE	17640	214	17641
-// OP_IFNOT	17641	43	0
-// OP_CALL0	1082	0	0
-// OP_STORE_S	1	17639	0
-// OP_MUL_F	17637	229	17642
-// OP_STORE_V	17642	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_EQ_F	17637	213	17643
-// OP_IFNOT	17643	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17644	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	28	0	0
-// OP_EQ_F	17637	214	17645
-// OP_IFNOT	17645	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17646	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	231	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	20	0	0
-// OP_EQ_F	17637	216	17647
-// OP_IFNOT	17647	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17187	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17648	13	0
-// OP_STORE_V	16699	16	0
-// OP_STORE_V	230	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	10	0	0
-// OP_EQ_F	17637	228	17649
-// OP_IFNOT	17649	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17187	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17650	13	0
-// OP_STORE_V	16700	16	0
-// OP_STORE_V	230	19	0
-// OP_CALL6	1075	0	0
+// func002421
+// function begins at statement 38417, parm_start=21232
+// OP_IFNOT	816	5	0
+// OP_ADDRESS	28	150	21232
+// OP_ADD_F	31	214	21233
+// OP_STOREP_F	21233	21232	0
 // OP_RETURN	0	0	0
-// OP_LE	814	216	17651
-// OP_IFNOT	17651	3	0
-// OP_STORE_F	16704	17638	0
-// OP_GOTO	23	0	0
-// OP_LOAD_F	17636	609	17652
-// OP_EQ_F	17652	213	17653
-// OP_IFNOT	17653	3	0
-// OP_STORE_F	16704	17638	0
-// OP_GOTO	18	0	0
-// OP_EQ_F	820	16699	17654
-// OP_NE_E	830	17636	17655
-// OP_AND	17654	17655	17656
-// OP_IFNOT	17656	3	0
-// OP_STORE_F	16707	17638	0
-// OP_GOTO	12	0	0
-// OP_LE	17637	5599	17657
-// OP_IFNOT	17657	3	0
-// OP_STORE_F	16704	17638	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	3263	17658
-// OP_IFNOT	17658	3	0
-// OP_STORE_F	16705	17638	0
-// OP_GOTO	4	0	0
-// OP_LE	17637	214	17659
-// OP_IFNOT	17659	2	0
-// OP_STORE_F	16706	17638	0
-// OP_STORE_V	17636	4	0
-// OP_CALL1	1083	0	0
-// OP_STORE_S	1	17639	0
-// OP_CALL0	457	0	0
-// OP_STORE_F	1	17637	0
-// OP_EQ_F	17638	16707	17660
-// OP_IFNOT	17660	85	0
-// OP_LOAD_S	830	180	17661
-// OP_STORE_S	17661	17639	0
-// OP_MUL_F	17637	217	17662
-// OP_STORE_V	17662	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17663
-// OP_IFNOT	17663	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17664	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16701	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	69	0	0
-// OP_LE	17637	214	17665
-// OP_LOAD_F	17636	609	17666
-// OP_NE_F	17666	16672	17667
-// OP_AND	17665	17667	17668
-// OP_IFNOT	17668	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17669	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	216	17670
-// OP_IFNOT	17670	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17671	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16701	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	228	17672
-// OP_IFNOT	17672	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17673	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	229	17674
-// OP_IFNOT	17674	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17675	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	230	17676
-// OP_IFNOT	17676	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17677	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	231	17678
-// OP_IFNOT	17678	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17679	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	232	17680
-// OP_IFNOT	17680	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17681	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16701	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	217	17682
-// OP_IFNOT	17682	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17683	7	0
-// OP_STORE_V	16701	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	2639	0	0
-// OP_EQ_F	17638	16706	17684
-// OP_IFNOT	17684	72	0
-// OP_MUL_F	17637	217	17685
-// OP_STORE_V	17685	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17686
-// OP_IFNOT	17686	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17687	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	59	0	0
-// OP_LE	17637	214	17688
-// OP_IFNOT	17688	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17689	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	51	0	0
-// OP_LE	17637	216	17690
-// OP_IFNOT	17690	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17691	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	43	0	0
-// OP_LE	17637	228	17692
-// OP_IFNOT	17692	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17693	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	35	0	0
-// OP_LE	17637	229	17694
-// OP_IFNOT	17694	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17695	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	27	0	0
-// OP_LE	17637	230	17696
-// OP_IFNOT	17696	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17697	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	19	0	0
-// OP_LE	17637	231	17698
-// OP_IFNOT	17698	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17699	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	10	0	0
-// OP_LE	17637	232	17700
-// OP_IFNOT	17700	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17701	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17702	13	0
-// OP_STORE_V	16699	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	2566	0	0
-// OP_EQ_F	17638	16705	17703
-// OP_IFNOT	17703	258	0
-// OP_MUL_F	17637	310	17704
-// OP_STORE_V	17704	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17705
-// OP_IFNOT	17705	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17706	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	244	0	0
-// OP_LE	17637	214	17707
-// OP_IFNOT	17707	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17708	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	236	0	0
-// OP_LE	17637	216	17709
-// OP_IFNOT	17709	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17710	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	228	0	0
-// OP_LE	17637	228	17711
-// OP_IFNOT	17711	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17712	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	219	0	0
-// OP_LE	17637	229	17713
-// OP_IFNOT	17713	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17714	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	211	0	0
-// OP_LE	17637	230	17715
-// OP_IFNOT	17715	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17716	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	203	0	0
-// OP_LE	17637	231	17717
-// OP_IFNOT	17717	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17718	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	195	0	0
-// OP_LE	17637	232	17719
-// OP_IFNOT	17719	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17720	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	187	0	0
-// OP_LE	17637	217	17721
-// OP_IFNOT	17721	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17722	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	179	0	0
-// OP_LE	17637	234	17723
-// OP_IFNOT	17723	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17710	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	171	0	0
-// OP_LE	17637	235	17724
-// OP_IFNOT	17724	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17725	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	163	0	0
-// OP_LE	17637	236	17726
-// OP_IFNOT	17726	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17727	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	155	0	0
-// OP_LE	17637	791	17728
-// OP_IFNOT	17728	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17729	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	147	0	0
-// OP_LE	17637	792	17730
-// OP_IFNOT	17730	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17731	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	139	0	0
-// OP_LE	17637	5693	17732
-// OP_IFNOT	17732	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17371	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	131	0	0
-// OP_LE	17637	765	17733
-// OP_IFNOT	17733	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17734	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	123	0	0
-// OP_LE	17637	218	17735
-// OP_IFNOT	17735	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17736	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	115	0	0
-// OP_LE	17637	6892	17737
-// OP_IFNOT	17737	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17738	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	107	0	0
-// OP_LE	17637	6133	17739
-// OP_IFNOT	17739	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17740	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	99	0	0
-// OP_LE	17637	6895	17741
-// OP_IFNOT	17741	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17742	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	91	0	0
-// OP_LE	17637	2323	17743
-// OP_IFNOT	17743	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17744	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	83	0	0
-// OP_LE	17637	12465	17745
-// OP_IFNOT	17745	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17746	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17747	13	0
-// OP_STORE_V	16700	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	73	0	0
-// OP_LE	17637	12467	17748
-// OP_IFNOT	17748	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17749	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	304	17750
-// OP_IFNOT	17750	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17751	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	736	17752
-// OP_IFNOT	17752	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17753	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	305	17754
-// OP_IFNOT	17754	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17755	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	306	17756
-// OP_IFNOT	17756	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17757	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	307	17758
-// OP_IFNOT	17758	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17759	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	308	17760
-// OP_IFNOT	17760	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17761	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	9664	17762
-// OP_IFNOT	17762	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17763	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	309	17764
-// OP_IFNOT	17764	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17765	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	2307	0	0
-// OP_EQ_F	17638	16704	17766
-// OP_IFNOT	17766	2305	0
-// OP_LOAD_F	17636	609	17767
-// OP_EQ_F	17767	16693	17768
-// OP_IFNOT	17768	141	0
-// OP_MUL_F	17637	218	17769
-// OP_STORE_V	17769	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17770
-// OP_IFNOT	17770	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17771	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	214	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	127	0	0
-// OP_LE	17637	214	17772
-// OP_IFNOT	17772	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17773	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	119	0	0
-// OP_LE	17637	216	17774
-// OP_IFNOT	17774	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17775	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	111	0	0
-// OP_LE	17637	228	17776
-// OP_IFNOT	17776	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17777	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16703	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	102	0	0
-// OP_LE	17637	229	17778
-// OP_IFNOT	17778	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17779	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	93	0	0
-// OP_LE	17637	230	17780
-// OP_IFNOT	17780	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17781	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	85	0	0
-// OP_LE	17637	231	17782
-// OP_IFNOT	17782	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17783	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	77	0	0
-// OP_LE	17637	232	17784
-// OP_IFNOT	17784	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17785	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	68	0	0
-// OP_LE	17637	217	17786
-// OP_IFNOT	17786	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17787	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	59	0	0
-// OP_LE	17637	234	17788
-// OP_IFNOT	17788	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17789	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	50	0	0
-// OP_LE	17637	235	17790
-// OP_IFNOT	17790	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17791	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	42	0	0
-// OP_LE	17637	236	17792
-// OP_IFNOT	17792	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17793	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	791	17794
-// OP_IFNOT	17794	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17795	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	792	17796
-// OP_IFNOT	17796	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17797	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	5693	17798
-// OP_IFNOT	17798	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17799	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17637	765	17800
-// OP_IFNOT	17800	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17801	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	2162	0	0
-// OP_LOAD_F	17636	609	17802
-// OP_EQ_F	17802	16671	17803
-// OP_IFNOT	17803	87	0
-// OP_MUL_F	17637	235	17804
-// OP_STORE_V	17804	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17805
-// OP_IFNOT	17805	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17187	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17806	13	0
-// OP_STORE_V	16699	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	214	17807
-// OP_IFNOT	17807	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17808	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	216	17809
-// OP_IFNOT	17809	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17810	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	228	17811
-// OP_IFNOT	17811	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17812	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	229	17813
-// OP_IFNOT	17813	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17814	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	17815
-// OP_IFNOT	17815	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17816	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	17817
-// OP_IFNOT	17817	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17818	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	17819
-// OP_IFNOT	17819	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17820	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	17821
-// OP_IFNOT	17821	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17822	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	17823
-// OP_IFNOT	17823	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17824	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	2073	0	0
-// OP_LOAD_F	17636	609	17825
-// OP_EQ_F	17825	16672	17826
-// OP_IFNOT	17826	93	0
-// OP_MUL_F	17637	236	17827
-// OP_STORE_V	17827	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17828
-// OP_IFNOT	17828	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17829	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	80	0	0
-// OP_LE	17637	214	17830
-// OP_IFNOT	17830	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17831	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	216	17832
-// OP_IFNOT	17832	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17833	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	228	17834
-// OP_IFNOT	17834	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17835	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	229	17836
-// OP_IFNOT	17836	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17837	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	230	17838
-// OP_IFNOT	17838	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17839	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	231	17840
-// OP_IFNOT	17840	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17841	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	232	17842
-// OP_IFNOT	17842	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17843	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	217	17844
-// OP_IFNOT	17844	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17845	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	234	17846
-// OP_IFNOT	17846	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17847	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	235	17848
-// OP_IFNOT	17848	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17849	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1978	0	0
-// OP_LOAD_F	17636	609	17850
-// OP_EQ_F	17850	16673	17851
-// OP_IFNOT	17851	112	0
-// OP_MUL_F	17637	792	17852
-// OP_STORE_V	17852	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17853
-// OP_IFNOT	17853	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17854	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	99	0	0
-// OP_LE	17637	214	17855
-// OP_IFNOT	17855	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17856	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	91	0	0
-// OP_LE	17637	216	17857
-// OP_IFNOT	17857	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17858	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	83	0	0
-// OP_LE	17637	228	17859
-// OP_IFNOT	17859	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17860	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LE	17637	229	17861
-// OP_IFNOT	17861	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17862	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	17863	13	0
-// OP_STORE_V	16700	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	230	17864
-// OP_IFNOT	17864	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17865	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	231	17866
-// OP_IFNOT	17866	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17867	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	232	17868
-// OP_IFNOT	17868	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17869	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	217	17870
-// OP_IFNOT	17870	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17871	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	234	17872
-// OP_IFNOT	17872	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17873	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	235	17874
-// OP_IFNOT	17874	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17875	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	236	17876
-// OP_IFNOT	17876	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17877	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	791	17878
-// OP_IFNOT	17878	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17879	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1864	0	0
-// OP_LOAD_F	17636	609	17880
-// OP_EQ_F	17880	16674	17881
-// OP_IFNOT	17881	85	0
-// OP_MUL_F	17637	235	17882
-// OP_STORE_V	17882	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17883
-// OP_IFNOT	17883	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17884	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	214	17885
-// OP_IFNOT	17885	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17886	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	216	17887
-// OP_IFNOT	17887	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17888	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	228	17889
-// OP_IFNOT	17889	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17890	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	229	17891
-// OP_IFNOT	17891	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17892	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	213	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	17893
-// OP_IFNOT	17893	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17894	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	17895
-// OP_IFNOT	17895	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17896	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	17897
-// OP_IFNOT	17897	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17898	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	17899
-// OP_IFNOT	17899	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17900	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	17901
-// OP_IFNOT	17901	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17902	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1777	0	0
-// OP_LOAD_F	17636	609	17903
-// OP_EQ_F	17903	16675	17904
-// OP_IFNOT	17904	85	0
-// OP_MUL_F	17637	235	17905
-// OP_STORE_V	17905	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17906
-// OP_IFNOT	17906	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17907	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	214	17908
-// OP_IFNOT	17908	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17909	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	216	17910
-// OP_IFNOT	17910	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17911	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	228	17912
-// OP_IFNOT	17912	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17913	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	229	17914
-// OP_IFNOT	17914	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17915	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	17916
-// OP_IFNOT	17916	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17917	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	17918
-// OP_IFNOT	17918	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17919	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	17920
-// OP_IFNOT	17920	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17921	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	17922
-// OP_IFNOT	17922	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17923	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	17924
-// OP_IFNOT	17924	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17925	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1690	0	0
-// OP_LOAD_F	17636	609	17926
-// OP_EQ_F	17926	16676	17927
-// OP_IFNOT	17927	86	0
-// OP_MUL_F	17637	235	17928
-// OP_STORE_V	17928	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17929
-// OP_IFNOT	17929	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17930	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	73	0	0
-// OP_LE	17637	214	17931
-// OP_IFNOT	17931	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17932	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	216	17933
-// OP_IFNOT	17933	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17934	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	228	17935
-// OP_IFNOT	17935	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17936	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	17937
-// OP_IFNOT	17937	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17938	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	17939
-// OP_IFNOT	17939	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17940	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	17941
-// OP_IFNOT	17941	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17942	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	17943
-// OP_IFNOT	17943	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17944	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	17945
-// OP_IFNOT	17945	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17946	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	17947
-// OP_IFNOT	17947	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17948	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1602	0	0
-// OP_LOAD_F	17636	609	17949
-// OP_EQ_F	17949	16677	17950
-// OP_IFNOT	17950	117	0
-// OP_MUL_F	17637	5693	17951
-// OP_STORE_V	17951	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17952
-// OP_IFNOT	17952	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17953	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	104	0	0
-// OP_LE	17637	214	17954
-// OP_IFNOT	17954	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17955	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	96	0	0
-// OP_LE	17637	216	17956
-// OP_IFNOT	17956	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17957	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	88	0	0
-// OP_LE	17637	228	17958
-// OP_IFNOT	17958	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17959	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	80	0	0
-// OP_LE	17637	229	17960
-// OP_IFNOT	17960	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17961	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	230	17962
-// OP_IFNOT	17962	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17963	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	231	17964
-// OP_IFNOT	17964	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17965	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	232	17966
-// OP_IFNOT	17966	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17967	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	217	17968
-// OP_IFNOT	17968	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17969	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	234	17970
-// OP_IFNOT	17970	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17971	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	235	17972
-// OP_IFNOT	17972	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17973	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	236	17974
-// OP_IFNOT	17974	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17975	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	791	17976
-// OP_IFNOT	17976	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17977	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	792	17978
-// OP_IFNOT	17978	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17979	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1483	0	0
-// OP_LOAD_F	17636	609	17980
-// OP_EQ_F	17980	16678	17981
-// OP_IFNOT	17981	71	0
-// OP_MUL_F	17637	217	17982
-// OP_STORE_V	17982	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	17983
-// OP_IFNOT	17983	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17984	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	214	17985
-// OP_IFNOT	17985	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17986	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	50	0	0
-// OP_LE	17637	216	17987
-// OP_IFNOT	17987	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17988	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	228	17989
-// OP_IFNOT	17989	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	17990	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	229	17991
-// OP_IFNOT	17991	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17992	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	230	17993
-// OP_IFNOT	17993	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17994	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	231	17995
-// OP_IFNOT	17995	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17996	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	232	17997
-// OP_IFNOT	17997	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17998	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1410	0	0
-// OP_LOAD_F	17636	609	17999
-// OP_EQ_F	17999	16679	18000
-// OP_IFNOT	18000	117	0
-// OP_MUL_F	17637	5693	18001
-// OP_STORE_V	18001	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18002
-// OP_IFNOT	18002	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18003	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	104	0	0
-// OP_LE	17637	214	18004
-// OP_IFNOT	18004	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18005	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	96	0	0
-// OP_LE	17637	216	18006
-// OP_IFNOT	18006	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18007	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	88	0	0
-// OP_LE	17637	228	18008
-// OP_IFNOT	18008	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18009	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	80	0	0
-// OP_LE	17637	229	18010
-// OP_IFNOT	18010	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18011	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	230	18012
-// OP_IFNOT	18012	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18013	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	231	18014
-// OP_IFNOT	18014	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18015	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	232	18016
-// OP_IFNOT	18016	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18017	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	217	18018
-// OP_IFNOT	18018	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18019	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	234	18020
-// OP_IFNOT	18020	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18021	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	235	18022
-// OP_IFNOT	18022	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18023	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	236	18024
-// OP_IFNOT	18024	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18025	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	791	18026
-// OP_IFNOT	18026	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18027	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	230	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	792	18028
-// OP_IFNOT	18028	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18029	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1291	0	0
-// OP_LOAD_F	17636	609	18030
-// OP_EQ_F	18030	16680	18031
-// OP_IFNOT	18031	88	0
-// OP_MUL_F	17637	235	18032
-// OP_STORE_V	18032	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18033
-// OP_IFNOT	18033	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18034	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	74	0	0
-// OP_LE	17637	214	18035
-// OP_IFNOT	18035	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18036	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	216	18037
-// OP_IFNOT	18037	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18038	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18039
-// OP_IFNOT	18039	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18040	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	216	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18041
-// OP_IFNOT	18041	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18042	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	18043
-// OP_IFNOT	18043	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18044	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	18045
-// OP_IFNOT	18045	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18046	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	18047
-// OP_IFNOT	18047	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18048	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18049
-// OP_IFNOT	18049	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18050	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18051
-// OP_IFNOT	18051	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18052	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1201	0	0
-// OP_LOAD_F	17636	609	18053
-// OP_EQ_F	18053	16681	18054
-// OP_IFNOT	18054	87	0
-// OP_MUL_F	17637	235	18055
-// OP_STORE_V	18055	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18056
-// OP_IFNOT	18056	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18057	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	74	0	0
-// OP_LE	17637	214	18058
-// OP_IFNOT	18058	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18059	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	216	18060
-// OP_IFNOT	18060	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18061	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18062
-// OP_IFNOT	18062	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18063	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18064
-// OP_IFNOT	18064	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18065	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	18066
-// OP_IFNOT	18066	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18067	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	231	18068
-// OP_IFNOT	18068	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18069	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	232	18070
-// OP_IFNOT	18070	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18071	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18072
-// OP_IFNOT	18072	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18073	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18074
-// OP_IFNOT	18074	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18075	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1112	0	0
-// OP_LOAD_F	17636	609	18076
-// OP_EQ_F	18076	16682	18077
-// OP_IFNOT	18077	87	0
-// OP_MUL_F	17637	235	18078
-// OP_STORE_V	18078	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18079
-// OP_IFNOT	18079	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18080	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	74	0	0
-// OP_LE	17637	214	18081
-// OP_IFNOT	18081	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18082	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	216	18083
-// OP_IFNOT	18083	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18084	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18085
-// OP_IFNOT	18085	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18086	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	50	0	0
-// OP_LE	17637	229	18087
-// OP_IFNOT	18087	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18088	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	18089	13	0
-// OP_STORE_V	16699	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	18090
-// OP_IFNOT	18090	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18091	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	18092
-// OP_IFNOT	18092	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18093	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	18094
-// OP_IFNOT	18094	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18095	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18096
-// OP_IFNOT	18096	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18097	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18098
-// OP_IFNOT	18098	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18099	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	1023	0	0
-// OP_LOAD_F	17636	609	18100
-// OP_EQ_F	18100	16683	18101
-// OP_IFNOT	18101	96	0
-// OP_MUL_F	17637	236	18102
-// OP_STORE_V	18102	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18103
-// OP_IFNOT	18103	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18104	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	83	0	0
-// OP_LE	17637	214	18105
-// OP_IFNOT	18105	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18106	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	230	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	74	0	0
-// OP_LE	17637	216	18107
-// OP_IFNOT	18107	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18108	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	228	18109
-// OP_IFNOT	18109	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18110	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	229	18111
-// OP_IFNOT	18111	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18112	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	230	18113
-// OP_IFNOT	18113	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18114	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	231	18115
-// OP_IFNOT	18115	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18116	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	232	18117
-// OP_IFNOT	18117	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18118	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	217	18119
-// OP_IFNOT	18119	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18120	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	234	18121
-// OP_IFNOT	18121	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18122	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	235	18123
-// OP_IFNOT	18123	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18124	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	925	0	0
-// OP_LOAD_F	17636	609	18125
-// OP_EQ_F	18125	16684	18126
-// OP_IFNOT	18126	93	0
-// OP_MUL_F	17637	236	18127
-// OP_STORE_V	18127	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18128
-// OP_IFNOT	18128	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18129	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	80	0	0
-// OP_LE	17637	214	18130
-// OP_IFNOT	18130	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18131	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	216	18132
-// OP_IFNOT	18132	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18133	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	228	18134
-// OP_IFNOT	18134	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18135	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	229	18136
-// OP_IFNOT	18136	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18137	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	230	18138
-// OP_IFNOT	18138	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18139	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	231	18140
-// OP_IFNOT	18140	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18141	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	232	18142
-// OP_IFNOT	18142	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18143	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	217	18144
-// OP_IFNOT	18144	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18145	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	234	18146
-// OP_IFNOT	18146	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18147	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	235	18148
-// OP_IFNOT	18148	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18149	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	830	0	0
-// OP_LOAD_F	17636	609	18150
-// OP_EQ_F	18150	16685	18151
-// OP_IFNOT	18151	86	0
-// OP_MUL_F	17637	236	18152
-// OP_STORE_V	18152	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18153
-// OP_IFNOT	18153	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18154	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	73	0	0
-// OP_LE	17637	214	18155
-// OP_IFNOT	18155	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18156	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	216	18157
-// OP_IFNOT	18157	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18158	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	228	18159
-// OP_IFNOT	18159	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18160	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18161
-// OP_IFNOT	18161	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18162	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	18163
-// OP_IFNOT	18163	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18164	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	231	18165
-// OP_IFNOT	18165	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18166	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	232	18167
-// OP_IFNOT	18167	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18168	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	217	18169
-// OP_IFNOT	18169	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18170	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17637	235	18171
-// OP_IFNOT	18171	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18172	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	742	0	0
-// OP_LOAD_F	17636	609	18173
-// OP_EQ_F	18173	16686	18174
-// OP_IFNOT	18174	88	0
-// OP_MUL_F	17637	235	18175
-// OP_STORE_V	18175	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18176
-// OP_IFNOT	18176	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18177	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LE	17637	214	18178
-// OP_IFNOT	18178	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18179	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	216	18180
-// OP_IFNOT	18180	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18181	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18182
-// OP_IFNOT	18182	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18183	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18184
-// OP_IFNOT	18184	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18185	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	18186
-// OP_IFNOT	18186	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18187	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	231	18188
-// OP_IFNOT	18188	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18189	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	232	18190
-// OP_IFNOT	18190	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18191	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	217	18192
-// OP_IFNOT	18192	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18193	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17637	234	18194
-// OP_IFNOT	18194	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18195	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	652	0	0
-// OP_LOAD_F	17636	609	18196
-// OP_EQ_F	18196	16687	18197
-// OP_IFNOT	18197	88	0
-// OP_MUL_F	17637	235	18198
-// OP_STORE_V	18198	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18199
-// OP_IFNOT	18199	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18200	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LE	17637	214	18201
-// OP_IFNOT	18201	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18202	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	66	0	0
-// OP_LE	17637	216	18203
-// OP_IFNOT	18203	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18204	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18205
-// OP_IFNOT	18205	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18206	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	50	0	0
-// OP_LE	17637	229	18207
-// OP_IFNOT	18207	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18208	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	42	0	0
-// OP_LE	17637	230	18209
-// OP_IFNOT	18209	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18210	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	34	0	0
-// OP_LE	17637	231	18211
-// OP_IFNOT	18211	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18212	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17637	232	18213
-// OP_IFNOT	18213	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18214	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	230	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	217	18215
-// OP_IFNOT	18215	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18216	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	9	0	0
-// OP_LE	17637	234	18217
-// OP_IFNOT	18217	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18218	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	562	0	0
-// OP_LOAD_F	17636	609	18219
-// OP_EQ_F	18219	16688	18220
-// OP_IFNOT	18220	88	0
-// OP_MUL_F	17637	236	18221
-// OP_STORE_V	18221	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18222
-// OP_IFNOT	18222	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18223	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LE	17637	214	18224
-// OP_IFNOT	18224	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18225	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	67	0	0
-// OP_LE	17637	216	18226
-// OP_IFNOT	18226	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18227	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	58	0	0
-// OP_LE	17637	228	18228
-// OP_IFNOT	18228	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18229	10	0
-// OP_STORE_V	16699	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18230
-// OP_IFNOT	18230	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18231	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	18232
-// OP_IFNOT	18232	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18233	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	231	18234
-// OP_IFNOT	18234	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18235	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	232	18236
-// OP_IFNOT	18236	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18237	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18238
-// OP_IFNOT	18238	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18239	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	235	18240
-// OP_IFNOT	18240	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18241	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	472	0	0
-// OP_LOAD_F	17636	609	18242
-// OP_EQ_F	18242	16689	18243
-// OP_IFNOT	18243	85	0
-// OP_MUL_F	17637	235	18244
-// OP_STORE_V	18244	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18245
-// OP_IFNOT	18245	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18246	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	214	18247
-// OP_IFNOT	18247	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18248	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	216	18249
-// OP_IFNOT	18249	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18250	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	228	18251
-// OP_IFNOT	18251	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18252	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	229	18253
-// OP_IFNOT	18253	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18254	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	18255
-// OP_IFNOT	18255	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18256	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	18257
-// OP_IFNOT	18257	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18258	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	18259
-// OP_IFNOT	18259	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18260	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18261
-// OP_IFNOT	18261	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18262	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18263
-// OP_IFNOT	18263	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18264	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	385	0	0
-// OP_LOAD_F	17636	609	18265
-// OP_EQ_F	18265	16690	18266
-// OP_IFNOT	18266	128	0
-// OP_MUL_F	17637	765	18267
-// OP_STORE_V	18267	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18268
-// OP_IFNOT	18268	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18269	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	115	0	0
-// OP_LE	17637	214	18270
-// OP_IFNOT	18270	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18271	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	107	0	0
-// OP_LE	17637	216	18272
-// OP_IFNOT	18272	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18273	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	99	0	0
-// OP_LE	17637	228	18274
-// OP_IFNOT	18274	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18275	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	91	0	0
-// OP_LE	17637	229	18276
-// OP_IFNOT	18276	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18277	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	83	0	0
-// OP_LE	17637	230	18278
-// OP_IFNOT	18278	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18279	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	75	0	0
-// OP_LE	17637	231	18280
-// OP_IFNOT	18280	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18281	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	67	0	0
-// OP_LE	17637	232	18282
-// OP_IFNOT	18282	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18283	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	59	0	0
-// OP_LE	17637	217	18284
-// OP_IFNOT	18284	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18285	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	51	0	0
-// OP_LE	17637	234	18286
-// OP_IFNOT	18286	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18287	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	43	0	0
-// OP_LE	17637	235	18288
-// OP_IFNOT	18288	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18289	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	35	0	0
-// OP_LE	17637	236	18290
-// OP_IFNOT	18290	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18291	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	26	0	0
-// OP_LE	17637	791	18292
-// OP_IFNOT	18292	9	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18293	7	0
-// OP_STORE_V	17639	10	0
-// OP_STORE_V	18294	13	0
-// OP_STORE_V	16698	16	0
-// OP_STORE_V	229	19	0
-// OP_CALL6	1075	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	792	18295
-// OP_IFNOT	18295	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18296	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	5693	18297
-// OP_IFNOT	18297	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18298	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	255	0	0
-// OP_LOAD_F	17636	609	18299
-// OP_EQ_F	18299	16691	18300
-// OP_IFNOT	18300	78	0
-// OP_MUL_F	17637	234	18301
-// OP_STORE_V	18301	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18302
-// OP_IFNOT	18302	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18303	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	214	18304
-// OP_IFNOT	18304	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18305	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	216	18306
-// OP_IFNOT	18306	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18307	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	228	18308
-// OP_IFNOT	18308	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18309	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	229	18310
-// OP_IFNOT	18310	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18311	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	230	18312
-// OP_IFNOT	18312	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18313	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	231	18314
-// OP_IFNOT	18314	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18315	10	0
-// OP_STORE_V	16698	13	0
-// OP_STORE_V	229	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	232	18316
-// OP_IFNOT	18316	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18317	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	217	18318
-// OP_IFNOT	18318	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18319	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	229	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	175	0	0
-// OP_LOAD_F	17636	609	18320
-// OP_EQ_F	18320	16692	18321
-// OP_IFNOT	18321	86	0
-// OP_MUL_F	17637	235	18322
-// OP_STORE_V	18322	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18323
-// OP_IFNOT	18323	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18324	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	73	0	0
-// OP_LE	17637	214	18325
-// OP_IFNOT	18325	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18326	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	65	0	0
-// OP_LE	17637	216	18327
-// OP_IFNOT	18327	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18328	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	57	0	0
-// OP_LE	17637	228	18329
-// OP_IFNOT	18329	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18330	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	49	0	0
-// OP_LE	17637	229	18331
-// OP_IFNOT	18331	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18332	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	214	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	41	0	0
-// OP_LE	17637	230	18333
-// OP_IFNOT	18333	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18334	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	33	0	0
-// OP_LE	17637	231	18335
-// OP_IFNOT	18335	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18336	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	25	0	0
-// OP_LE	17637	232	18337
-// OP_IFNOT	18337	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18338	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	17	0	0
-// OP_LE	17637	217	18339
-// OP_IFNOT	18339	8	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17639	7	0
-// OP_STORE_V	18340	10	0
-// OP_STORE_V	16700	13	0
-// OP_STORE_V	228	16	0
-// OP_CALL5	1074	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18341
-// OP_IFNOT	18341	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18342	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	87	0	0
-// OP_LOAD_F	17636	609	18343
-// OP_EQ_F	18343	16670	18344
-// OP_IFNOT	18344	84	0
-// OP_MUL_F	17637	235	18345
-// OP_STORE_V	18345	4	0
-// OP_CALL1	484	0	0
-// OP_STORE_F	1	17637	0
-// OP_LE	17637	213	18346
-// OP_IFNOT	18346	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18347	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	72	0	0
-// OP_LE	17637	214	18348
-// OP_IFNOT	18348	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18349	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	64	0	0
-// OP_LE	17637	216	18350
-// OP_IFNOT	18350	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18351	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	56	0	0
-// OP_LE	17637	228	18352
-// OP_IFNOT	18352	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	17314	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	48	0	0
-// OP_LE	17637	229	18353
-// OP_IFNOT	18353	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18354	7	0
-// OP_STORE_V	16698	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	40	0	0
-// OP_LE	17637	230	18355
-// OP_IFNOT	18355	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18356	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	216	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	32	0	0
-// OP_LE	17637	231	18357
-// OP_IFNOT	18357	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18358	7	0
-// OP_STORE_V	16699	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	24	0	0
-// OP_LE	17637	232	18359
-// OP_IFNOT	18359	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18360	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	16	0	0
-// OP_LE	17637	217	18361
-// OP_IFNOT	18361	7	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18362	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
-// OP_GOTO	8	0	0
-// OP_LE	17637	234	18363
-// OP_IFNOT	18363	6	0
-// OP_STORE_V	17636	4	0
-// OP_STORE_V	18364	7	0
-// OP_STORE_V	16700	10	0
-// OP_STORE_V	228	13	0
-// OP_CALL4	1073	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	6795	0	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	21038	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006144) func002284 = 
+void () func002421 = 
 {
-    local float globaldef006145;
-    local float globaldef006146;
-    local string globaldef006147;
-    globaldef006145 = random();
     
-    if((activeClientCount - globaldef000792) <= TRUE)
+    if(globaldef000799)
     {
-        globaldef006147 = func002373();
-        globaldef006145 = floor(globaldef006145 * MOVETYPE_STEP);
-        if(globaldef006145 == FALSE)
-        {
-            func002369(globaldef006144, "Where is everybody?", globaldef005811, FL_SWIM);
-        }
-        else
-        {
-            if(globaldef006145 == TRUE)
-            {
-                func002369(globaldef006144, "I'm playing with myself and it seems you like to watch it?", globaldef005810, MOVETYPE_TOSS);
-            }
-            else
-            {
-                if(globaldef006145 == FL_SWIM)
-                {
-                    func002371(globaldef006144, "Hey ", globaldef006147, ", are you afraid to play?", globaldef005811, MOVETYPE_FLY);
-                }
-                else
-                {
-                    
-                    if(globaldef006145 == MOVETYPE_WALK)
-                    {
-                        func002371(globaldef006144, "Hey ", globaldef006147, ", lets do a 1 on 1", globaldef005812, MOVETYPE_FLY);
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
+        self.nextthink = time + TRUE;
         return;
     }
     
-    if(activeClientCount <= FL_SWIM)
-    {
-        globaldef006146 = globaldef005816;
-    }
-    else
-    {
-        if(globaldef006144.field000286 == FALSE)
-        {
-            globaldef006146 = globaldef005816;
-        }
-        else
-        {
-            if((globaldef000803 == globaldef005811) && (globaldef000813 != globaldef006144))
-            {
-                globaldef006146 = globaldef005819;
-            }
-            else
-            {
-                if(globaldef006145 <= 0.7)
-                {
-                    globaldef006146 = globaldef005816;
-                }
-                else
-                {
-                    if(globaldef006145 <= 0.9)
-                    {
-                        globaldef006146 = globaldef005817;
-                    }
-                    else
-                    {
-                        
-                        if(globaldef006145 <= TRUE)
-                        {
-                            globaldef006146 = globaldef005818;
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-    globaldef006147 = func002372(globaldef006144);
-    globaldef006145 = random();
-    if(globaldef006146 == globaldef005819)
-    {
-        globaldef006147 = globaldef000813.netname;
-        globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-        if(globaldef006145 <= FALSE)
-        {
-            func002370(globaldef006144, "Suck my broomstick ", globaldef006147, globaldef005813, FL_SWIM);
-        }
-        else
-        {
-            if((globaldef006145 <= TRUE) && (globaldef006144.field000286 != globaldef005784))
-            {
-                func002369(globaldef006144, "Dogs crawl under Gates, software crawls under Windows", globaldef005813, FL_SWIM);
-            }
-            else
-            {
-                if(globaldef006145 <= FL_SWIM)
-                {
-                    func002370(globaldef006144, "Eat my pineapple ", globaldef006147, globaldef005813, FL_SWIM);
-                }
-                else
-                {
-                    if(globaldef006145 <= MOVETYPE_WALK)
-                    {
-                        func002369(globaldef006144, "Lets go and gib Mr Elusive", globaldef005813, MOVETYPE_WALK);
-                    }
-                    else
-                    {
-                        if(globaldef006145 <= MOVETYPE_STEP)
-                        {
-                            func002369(globaldef006144, "Can't you say anything else?", globaldef005813, MOVETYPE_STEP);
-                        }
-                        else
-                        {
-                            if(globaldef006145 <= MOVETYPE_FLY)
-                            {
-                                func002369(globaldef006144, "Stop chatting, you losers!", globaldef005813, MOVETYPE_WALK);
-                            }
-                            else
-                            {
-                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                {
-                                    func002369(globaldef006144, "Just shut up and play", globaldef005813, MOVETYPE_WALK);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                    {
-                                        func002370(globaldef006144, "Enough already ", globaldef006147, globaldef005813, FL_SWIM);
-                                    }
-                                    else
-                                    {
-                                        
-                                        if(globaldef006145 <= FL_CLIENT)
-                                        {
-                                            func002369(globaldef006144, "Lemme clean out yer ears with my broomstick", globaldef005813, MOVETYPE_STEP);
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    else
-    {
-        if(globaldef006146 == globaldef005818)
-        {
-            globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-            if(globaldef006145 <= FALSE)
-            {
-                func002369(globaldef006144, "What do you guys want from me?", globaldef005811, MOVETYPE_WALK);
-            }
-            else
-            {
-                if(globaldef006145 <= TRUE)
-                {
-                    func002369(globaldef006144, "Your momma is an 8086", globaldef005812, TRUE);
-                }
-                else
-                {
-                    if(globaldef006145 <= FL_SWIM)
-                    {
-                        func002369(globaldef006144, "I'm real and you are all bots", globaldef005812, MOVETYPE_WALK);
-                    }
-                    else
-                    {
-                        if(globaldef006145 <= MOVETYPE_WALK)
-                        {
-                            func002369(globaldef006144, "You're all stupid campers", globaldef005812, FL_SWIM);
-                        }
-                        else
-                        {
-                            if(globaldef006145 <= MOVETYPE_STEP)
-                            {
-                                func002369(globaldef006144, "Any one of you know Mr Elusive?", globaldef005811, MOVETYPE_WALK);
-                            }
-                            else
-                            {
-                                if(globaldef006145 <= MOVETYPE_FLY)
-                                {
-                                    func002369(globaldef006144, "Lets go to another server", globaldef005812, MOVETYPE_WALK);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                    {
-                                        func002370(globaldef006144, "Let's go and kill ", globaldef006147, globaldef005812, MOVETYPE_WALK);
-                                    }
-                                    else
-                                    {
-                                        
-                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                        {
-                                            func002371(globaldef006144, "Anyone know where ", globaldef006147, " is?", globaldef005811, MOVETYPE_STEP);
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        else
-        {
-            if(globaldef006146 == globaldef005817)
-            {
-                globaldef006145 = floor(globaldef006145 * SVC_FINALE);
-                if(globaldef006145 <= FALSE)
-                {
-                    func002370(globaldef006144, globaldef006147, " is an illegal Quake camper", globaldef005812, MOVETYPE_WALK);
-                }
-                else
-                {
-                    if(globaldef006145 <= TRUE)
-                    {
-                        func002369(globaldef006144, "Suck my broomstick", globaldef005812, FL_SWIM);
-                    }
-                    else
-                    {
-                        if(globaldef006145 <= FL_SWIM)
-                        {
-                            func002369(globaldef006144, "Eat my pineapple", globaldef005812, FL_SWIM);
-                        }
-                        else
-                        {
-                            if(globaldef006145 <= MOVETYPE_WALK)
-                            {
-                                func002370(globaldef006144, globaldef006147, " is a camper", globaldef005812, MOVETYPE_WALK);
-                            }
-                            else
-                            {
-                                if(globaldef006145 <= MOVETYPE_STEP)
-                                {
-                                    func002369(globaldef006144, "Look! Nudie pics on the hard disk!!", globaldef005812, MOVETYPE_STEP);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                    {
-                                        func002369(globaldef006144, "Formatting hard disk", globaldef005812, MOVETYPE_WALK);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                        {
-                                            func002369(globaldef006144, "kill all windows users", globaldef005812, MOVETYPE_WALK);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                            {
-                                                func002369(globaldef006144, "I'm the best there is", globaldef005812, MOVETYPE_WALK);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= FL_CLIENT)
-                                                {
-                                                    func002369(globaldef006144, "what the !#@% am I doin' here?", globaldef005811, MOVETYPE_STEP);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                    {
-                                                        func002369(globaldef006144, "Eat my pineapple", globaldef005812, FL_SWIM);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                        {
-                                                            func002369(globaldef006144, "HeHe", globaldef005812, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                            {
-                                                                func002369(globaldef006144, "eat my dust", globaldef005812, TRUE);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= GLOBALDEF774_12)
-                                                                {
-                                                                    func002369(globaldef006144, "Hey, catch this rocket", globaldef005812, FALSE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= GLOBALDEF775_13)
-                                                                    {
-                                                                        func002369(globaldef006144, "Go get your mommie", globaldef005812, FL_SWIM);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= 14)
-                                                                        {
-                                                                            func002369(globaldef006144, "traitor!!!", globaldef005812, TRUE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= GLOBALDEF748_15)
-                                                                            {
-                                                                                func002369(globaldef006144, "Lemme at ya", globaldef005812, FL_SWIM);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= FL_INWATER)
-                                                                                {
-                                                                                    func002369(globaldef006144, "Bill Gates is an alien", globaldef005812, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= 17)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "my ping is better then my skill", globaldef005812, MOVETYPE_STEP);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= 18)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "my ping is higher than my IQ", globaldef005812, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= 19)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "HEHE", globaldef005812, TRUE);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= 20)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "I've got a lot of experience", globaldef005812, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= 21)
-                                                                                                    {
-                                                                                                        func002371(globaldef006144, "I vote ", globaldef006147, " as the camper of the day", globaldef005812, MOVETYPE_STEP);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= 22)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Omicron bots are the best", globaldef005812, FL_SWIM);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= SVC_TEMPENTITY)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Yabadabadooo!!", globaldef005812, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= OBOT_MAXBOTS)
-                                                                                                                {
-                                                                                                                    func002370(globaldef006144, globaldef006147, " your momma wears combat boots", globaldef005812, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= SVC_SIGNONNUM)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Anybody", globaldef005812, TRUE);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= SVC_CENTERPRINT)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "I hope this wraps up soon; Alf is on tonight", globaldef005812, MOVETYPE_STEP);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= SVC_KILLEDMONSTER)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "I wrote my own code", globaldef005812, FL_SWIM);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= SVC_FOUNDSECRET)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "Can someone turn the light on please ?", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= 29)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "Gee, it's dark in here...", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        
-                                                                                                                                        if(globaldef006145 <= SVC_INTERMISSION)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "Far Out", globaldef005812, FL_SWIM);
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            else
-            {
-                
-                if(globaldef006146 == globaldef005816)
-                {
-                    if(globaldef006144.field000286 == globaldef005805)
-                    {
-                        globaldef006145 = floor(globaldef006145 * FL_INWATER);
-                        if(globaldef006145 <= FALSE)
-                        {
-                            func002370(globaldef006144, globaldef006147, " boch ghlchraj", globaldef005810, TRUE);
-                        }
-                        else
-                        {
-                            if(globaldef006145 <= TRUE)
-                            {
-                                func002369(globaldef006144, "tlhlngan Hol Dajatlh'a'", globaldef005811, TRUE);
-                            }
-                            else
-                            {
-                                if(globaldef006145 <= FL_SWIM)
-                                {
-                                    func002369(globaldef006144, "bortaS blr jablu'Dl'reH QaQqu'nay'", globaldef005812, FL_SWIM);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                    {
-                                        func002370(globaldef006144, "majQa' ", globaldef006147, globaldef005815, FL_SWIM);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                        {
-                                            func002370(globaldef006144, "blmoHqu' ", globaldef006147, globaldef005810, FL_SWIM);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                            {
-                                                func002369(globaldef006144, "Duj tlvoqtaH", globaldef005812, FL_SWIM);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                {
-                                                    func002369(globaldef006144, "bljeghbe'chugh vaj blHegh", globaldef005812, FL_SWIM);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                    {
-                                                        func002370(globaldef006144, globaldef006147, " veQDuj 'oH Dujllj'e'", globaldef005810, FL_SWIM);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= FL_CLIENT)
-                                                        {
-                                                            func002370(globaldef006144, globaldef006147, " Hab SoSlI 'Quch!", globaldef005810, FL_SWIM);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                            {
-                                                                func002370(globaldef006144, globaldef006147, " ghuy'cha", globaldef005810, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                {
-                                                                    func002369(globaldef006144, "Verengan Ha'DIaH", globaldef005810, FL_SWIM);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                                    {
-                                                                        func002370(globaldef006144, globaldef006147, " Qu'vath", globaldef005810, MOVETYPE_WALK);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= GLOBALDEF774_12)
-                                                                        {
-                                                                            func002369(globaldef006144, "jlHtaHbogh naDev", globaldef005812, MOVETYPE_WALK);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= GLOBALDEF775_13)
-                                                                            {
-                                                                                func002369(globaldef006144, "toH", globaldef005812, TRUE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= 14)
-                                                                                {
-                                                                                    func002369(globaldef006144, "qay'be'", globaldef005812, TRUE);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006145 <= GLOBALDEF748_15)
-                                                                                    {
-                                                                                        func002370(globaldef006144, globaldef006147, " qaStaH nuq jay'", globaldef005811, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    else
-                    {
-                        if(globaldef006144.field000286 == globaldef005783)
-                        {
-                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                            if(globaldef006145 <= FALSE)
-                            {
-                                func002371(globaldef006144, "Hey ", globaldef006147, ", where is John Romero?", globaldef005811, MOVETYPE_STEP);
-                            }
-                            else
-                            {
-                                if(globaldef006145 <= TRUE)
-                                {
-                                    func002369(globaldef006144, "Did Tim Willits do this level?", globaldef005811, MOVETYPE_STEP);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= FL_SWIM)
-                                    {
-                                        func002369(globaldef006144, "Why isn't the Quake CD in your drive, Huh?", globaldef005811, MOVETYPE_STEP);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                        {
-                                            func002369(globaldef006144, "Did you register this Quake copy?", globaldef005811, MOVETYPE_STEP);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                            {
-                                                func002369(globaldef006144, "These Omicron bots suck man!", globaldef005812, MOVETYPE_STEP);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                {
-                                                    func002369(globaldef006144, "What are we waiting for? Christmas?", globaldef005812, MOVETYPE_STEP);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                    {
-                                                        func002369(globaldef006144, "Hey! There are some bugs in this bot code!", globaldef005812, MOVETYPE_STEP);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                        {
-                                                            func002369(globaldef006144, "Did I program this?", globaldef005812, FL_SWIM);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= FL_CLIENT)
-                                                            {
-                                                                func002369(globaldef006144, "This QuakeC *IS* half bad!!!", globaldef005812, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                
-                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                {
-                                                                    func002369(globaldef006144, "R U still playing quake while quake II is out?", globaldef005812, MOVETYPE_STEP);
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        else
-                        {
-                            if(globaldef006144.field000286 == globaldef005784)
-                            {
-                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                if(globaldef006145 <= FALSE)
-                                {
-                                    func002369(globaldef006144, "640K ought to be enough for anybody", globaldef005812, MOVETYPE_STEP);
-                                }
-                                else
-                                {
-                                    if(globaldef006145 <= TRUE)
-                                    {
-                                        func002369(globaldef006144, "If you can't make it good, make it look good.", globaldef005812, MOVETYPE_STEP);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006145 <= FL_SWIM)
-                                        {
-                                            func002369(globaldef006144, "Internet Explorer is better than Netscape", globaldef005812, MOVETYPE_STEP);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                            {
-                                                func002369(globaldef006144, "MS Quake will soon be released", globaldef005812, MOVETYPE_STEP);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                {
-                                                    func002369(globaldef006144, "Hey, your windows is pirated!", globaldef005812, MOVETYPE_WALK);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                    {
-                                                        func002369(globaldef006144, "Anybody wanna buy my quake clone? ", globaldef005811, MOVETYPE_STEP);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                        {
-                                                            func002369(globaldef006144, "Is it true that nobody likes me?", globaldef005811, MOVETYPE_STEP);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                            {
-                                                                func002369(globaldef006144, "I've got more money than skill", globaldef005812, MOVETYPE_STEP);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                {
-                                                                    func002369(globaldef006144, "if U can't beat 'em, buy 'em", globaldef005812, MOVETYPE_STEP);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                    {
-                                                                        func002369(globaldef006144, "anybody got a dime to spare?", globaldef005812, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        
-                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                        {
-                                                                            func002369(globaldef006144, "I hate SUN and JAVA(tm) sucks!!!", globaldef005812, MOVETYPE_STEP);
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            else
-                            {
-                                if(globaldef006144.field000286 == globaldef005785)
-                                {
-                                    globaldef006145 = floor(globaldef006145 * GLOBALDEF775_13);
-                                    if(globaldef006145 <= FALSE)
-                                    {
-                                        func002369(globaldef006144, "wanna laugh or wanna die?", globaldef005812, MOVETYPE_WALK);
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006145 <= TRUE)
-                                        {
-                                            func002369(globaldef006144, "Weeee!", globaldef005812, FL_SWIM);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= FL_SWIM)
-                                            {
-                                                func002369(globaldef006144, "Let's play catch the rocket!", globaldef005812, MOVETYPE_WALK);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                {
-                                                    func002369(globaldef006144, "When I'm bad I'm good", globaldef005812, MOVETYPE_WALK);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                    {
-                                                        func002371(globaldef006144, "Hey, ", globaldef006147, " your shoelaces are undone", globaldef005812, MOVETYPE_STEP);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                        {
-                                                            func002369(globaldef006144, "Eyerybody happy with Mr Slappy?", globaldef005812, MOVETYPE_WALK);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                            {
-                                                                func002370(globaldef006144, globaldef006147, " you're gonna be gibbed real funny", globaldef005812, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                {
-                                                                    func002369(globaldef006144, "who want's to be Mr gib?", globaldef005812, MOVETYPE_WALK);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                    {
-                                                                        func002369(globaldef006144, "Mr Slappy is the new-age hero!", globaldef005812, MOVETYPE_WALK);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                        {
-                                                                            func002369(globaldef006144, " =)", globaldef005812, TRUE);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                            {
-                                                                                func002369(globaldef006144, " ;)", globaldef005812, TRUE);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                                                {
-                                                                                    func002369(globaldef006144, "Let it fly", globaldef005812, FL_SWIM);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006145 <= GLOBALDEF774_12)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "A bull with a cleaver, huntin' for beaver", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                else
-                                {
-                                    if(globaldef006144.field000286 == globaldef005786)
-                                    {
-                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                        if(globaldef006145 <= FALSE)
-                                        {
-                                            func002369(globaldef006144, "Don't mess with an Austrian", globaldef005812, MOVETYPE_WALK);
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006145 <= TRUE)
-                                            {
-                                                func002369(globaldef006144, "Subject will be terminated", globaldef005812, MOVETYPE_WALK);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= FL_SWIM)
-                                                {
-                                                    func002369(globaldef006144, "no problemo", globaldef005812, FL_SWIM);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                                    {
-                                                        func002369(globaldef006144, "no way Jose", globaldef005812, FL_SWIM);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                                        {
-                                                            func002369(globaldef006144, "I am Awnald Swahtseneggah", globaldef005812, FALSE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                                            {
-                                                                func002369(globaldef006144, "I'm Austrian NOT Australian", globaldef005812, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                {
-                                                                    func002369(globaldef006144, "Smoke my cigahs", globaldef005812, FL_SWIM);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                    {
-                                                                        func002369(globaldef006144, "Did youh seeh Conan the Barbarian?", globaldef005812, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= FL_CLIENT)
-                                                                        {
-                                                                            func002369(globaldef006144, "Awnald for Presisdent!!", globaldef005812, FL_SWIM);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            
-                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                            {
-                                                                                func002369(globaldef006144, "Achtung!!", globaldef005812, TRUE);
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    else
-                                    {
-                                        if(globaldef006144.field000286 == globaldef005787)
-                                        {
-                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                            if(globaldef006145 <= FALSE)
-                                            {
-                                                func002369(globaldef006144, "pounce!", globaldef005812, TRUE);
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006145 <= TRUE)
-                                                {
-                                                    func002369(globaldef006144, "a tigger is a wonderful thing!", globaldef005812, MOVETYPE_STEP);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= FL_SWIM)
-                                                    {
-                                                        func002369(globaldef006144, "Fighting is what tiggers do best", globaldef005812, MOVETYPE_STEP);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                                        {
-                                                            func002369(globaldef006144, "meauww", globaldef005812, TRUE);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                                            {
-                                                                func002369(globaldef006144, "double pounce!", globaldef005812, FL_SWIM);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                                {
-                                                                    func002369(globaldef006144, "Roarrr!!!", globaldef005812, TRUE);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                    {
-                                                                        func002369(globaldef006144, "the tigger clan is a happy clan", globaldef005812, FL_SWIM);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                        {
-                                                                            func002369(globaldef006144, "A tigger has more stripes than a sergeant", globaldef005812, MOVETYPE_STEP);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= FL_CLIENT)
-                                                                            {
-                                                                                func002369(globaldef006144, "Who wants to play with tigger?", globaldef005812, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                
-                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                {
-                                                                                    func002369(globaldef006144, "I'm a  lean, mean, fighting machine", globaldef005812, MOVETYPE_WALK);
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        else
-                                        {
-                                            if(globaldef006144.field000286 == globaldef005788)
-                                            {
-                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                if(globaldef006145 <= FALSE)
-                                                {
-                                                    func002369(globaldef006144, "X-men are uncool", globaldef005812, FL_SWIM);
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006145 <= TRUE)
-                                                    {
-                                                        func002369(globaldef006144, "Anybody got any booze for me?", globaldef005811, MOVETYPE_WALK);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= FL_SWIM)
-                                                        {
-                                                            func002369(globaldef006144, "My real name is Tony Stark", globaldef005812, MOVETYPE_STEP);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                                            {
-                                                                func002369(globaldef006144, "Marvel comics rule", globaldef005812, MOVETYPE_STEP);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                                {
-                                                                    func002369(globaldef006144, "I'm the best Bot around", globaldef005812, MOVETYPE_STEP);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                                    {
-                                                                        func002370(globaldef006144, globaldef006147, " is a weenie sucker", globaldef005810, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                        {
-                                                                            func002369(globaldef006144, "shop smart... shop s-mart!", globaldef005812, MOVETYPE_WALK);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                            {
-                                                                                func002369(globaldef006144, "hail to the king, baby!", globaldef005812, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                                {
-                                                                                    func002369(globaldef006144, "this is my boomstick!!", globaldef005812, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "I'm not an ironing man, damnit!", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            else
-                                            {
-                                                if(globaldef006144.field000286 == globaldef005789)
-                                                {
-                                                    globaldef006145 = floor(globaldef006145 * 14);
-                                                    if(globaldef006145 <= FALSE)
-                                                    {
-                                                        func002369(globaldef006144, "All humans are spineless bastards", globaldef005812, MOVETYPE_WALK);
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006145 <= TRUE)
-                                                        {
-                                                            func002369(globaldef006144, "let's do capture the head", globaldef005812, MOVETYPE_WALK);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= FL_SWIM)
-                                                            {
-                                                                func002369(globaldef006144, "The door swings both ways my ass!", globaldef005812, MOVETYPE_STEP);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                                {
-                                                                    func002369(globaldef006144, "I've got really cool movement code", globaldef005812, MOVETYPE_STEP);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                                    {
-                                                                        func002369(globaldef006144, "Hey Dannyboy, no hero-stuff, ya understand?", globaldef005811, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                                        {
-                                                                            func002369(globaldef006144, "I'm not from Barcelona", globaldef005812, MOVETYPE_WALK);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                            {
-                                                                                func002369(globaldef006144, "Is this the Alien TC??", globaldef005811, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                {
-                                                                                    func002369(globaldef006144, "Why isn't this the Alien TC", globaldef005811, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "This must be the Alien TC; You're all aliens", globaldef005812, MOVETYPE_STEP);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "people with guns make great trophies", globaldef005812, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "motherfucker.....", globaldef005812, FL_SWIM);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "shit happens......", globaldef005812, FL_SWIM);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= GLOBALDEF774_12)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "take It!!", globaldef005812, FL_SWIM);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        
-                                                                                                        if(globaldef006145 <= GLOBALDEF775_13)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "wanna piece of candy?", globaldef005811, FL_SWIM);
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    if(globaldef006144.field000286 == globaldef005790)
-                                                    {
-                                                        globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-                                                        if(globaldef006145 <= FALSE)
-                                                        {
-                                                            func002369(globaldef006144, "anibodi know where the swemob is?", globaldef005811, MOVETYPE_STEP);
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006145 <= TRUE)
-                                                            {
-                                                                func002369(globaldef006144, "Sweden rules", globaldef005812, MOVETYPE_WALK);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= FL_SWIM)
-                                                                {
-                                                                    func002370(globaldef006144, globaldef006147, ", Don't mess with da SWEMOB", globaldef005812, MOVETYPE_STEP);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                                                    {
-                                                                        func002370(globaldef006144, globaldef006147, ", you know da Borg; Bjorn Borg?", globaldef005811, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                                                        {
-                                                                            func002369(globaldef006144, "anibodi been to sweda?", globaldef005811, MOVETYPE_STEP);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                                                            {
-                                                                                func002369(globaldef006144, "Swedish Mob is still alive!!", globaldef005812, MOVETYPE_STEP);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                {
-                                                                                    func002369(globaldef006144, "da borg is a good tenniser", globaldef005812, MOVETYPE_STEP);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    
-                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "Sweden has reindeer actually", globaldef005812, MOVETYPE_STEP);
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    else
-                                                    {
-                                                        if(globaldef006144.field000286 == globaldef005791)
-                                                        {
-                                                            globaldef006145 = floor(globaldef006145 * 14);
-                                                            if(globaldef006145 <= FALSE)
-                                                            {
-                                                                func002369(globaldef006144, "cowabunga!", globaldef005812, TRUE);
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006145 <= TRUE)
-                                                                {
-                                                                    func002369(globaldef006144, "I'm on a roll overhere!!", globaldef005812, MOVETYPE_WALK);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= FL_SWIM)
-                                                                    {
-                                                                        func002369(globaldef006144, "can somebody please play some music?", globaldef005811, MOVETYPE_WALK);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                                                        {
-                                                                            func002369(globaldef006144, "where are the babes then?", globaldef005811, MOVETYPE_WALK);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                                                            {
-                                                                                func002369(globaldef006144, "this place blows, dudes.", globaldef005812, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                {
-                                                                                    func002369(globaldef006144, "where's the shredder dude?", globaldef005811, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "It's Ninja, not hero turtles!!", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "HUHUH...Cewl", globaldef005812, MOVETYPE_WALK);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= FL_CLIENT)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "TNMT thrive on pizza, man", globaldef005812, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "one pizza coming right up", globaldef005812, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Awlright, man, cowabunga supremo", globaldef005812, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Turtles rock bigtime", globaldef005812, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= GLOBALDEF774_12)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Sensei was wrong about diz place, dudes", globaldef005812, MOVETYPE_FLY);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                
-                                                                                                                if(globaldef006145 <= GLOBALDEF775_13)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Pizza, I dice it, I slice it", globaldef005812, FL_SWIM);
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        else
-                                                        {
-                                                            if(globaldef006144.field000286 == globaldef005792)
-                                                            {
-                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                if(globaldef006145 <= FALSE)
-                                                                {
-                                                                    func002370(globaldef006144, "Pay my fare, ", globaldef006147, globaldef005812, FL_SWIM);
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006145 <= TRUE)
-                                                                    {
-                                                                        func002369(globaldef006144, "Anybody wanna rocketjump??", globaldef005811, FL_SWIM);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= FL_SWIM)
-                                                                        {
-                                                                            func002369(globaldef006144, "call me a cab", globaldef005812, FL_SWIM);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                                                            {
-                                                                                func002370(globaldef006144, globaldef006147, " is a pansy", globaldef005810, FL_SWIM);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                {
-                                                                                    func002370(globaldef006144, globaldef006147, " does not give any tips", globaldef005810, MOVETYPE_STEP);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "Do I have 'Fool' written all over my forehead", globaldef005812, MOVETYPE_STEP);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "NO! I don't have small change!", globaldef005812, FL_SWIM);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "I'm on a Highway to Hell", globaldef005812, FL_SWIM);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "Manjana, hombre", globaldef005812, FL_SWIM);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    
-                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Babe, requerdos a todos", globaldef005812, FL_SWIM);
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            else
-                                                            {
-                                                                if(globaldef006144.field000286 == globaldef005793)
-                                                                {
-                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                    if(globaldef006145 <= FALSE)
-                                                                    {
-                                                                        func002369(globaldef006144, "Anybody wanna use me ?", globaldef005811, MOVETYPE_STEP);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006145 <= TRUE)
-                                                                        {
-                                                                            func002369(globaldef006144, "Why aren't these bots on quakeworld", globaldef005811, MOVETYPE_STEP);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= FL_SWIM)
-                                                                            {
-                                                                                func002369(globaldef006144, "The name is GameSpy, actually", globaldef005812, MOVETYPE_STEP);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                {
-                                                                                    func002370(globaldef006144, globaldef006147, " are you a nerd ?", globaldef005811, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "Where is Qspy on your Hard Disk?", globaldef005811, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "Anybody actually register me?", globaldef005811, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "Good, bad... I'm the guy with the gun", globaldef005812, MOVETYPE_STEP);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                {
-                                                                                                    func002370(globaldef006144, "This seems like a NERD spot, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Obots, so what?...are you happy now?", globaldef005812, MOVETYPE_STEP);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        
-                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "How come nerds play quake?", globaldef005811, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                else
-                                                                {
-                                                                    if(globaldef006144.field000286 == globaldef005794)
-                                                                    {
-                                                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                        if(globaldef006145 <= FALSE)
-                                                                        {
-                                                                            func002369(globaldef006144, "How about Warcraft 4 a change?", globaldef005811, MOVETYPE_STEP);
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006145 <= TRUE)
-                                                                            {
-                                                                                func002369(globaldef006144, "This quake stuff ain't half bad", globaldef005812, MOVETYPE_STEP);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= FL_SWIM)
-                                                                                {
-                                                                                    func002369(globaldef006144, "Anyone like the Spice Girls?", globaldef005811, MOVETYPE_STEP);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "Anybody got tickets 4 the Spice Girls?", globaldef005811, MOVETYPE_STEP);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                        {
-                                                                                            func002371(globaldef006144, "Did you forget to flush the toilet ", globaldef006147, "?", globaldef005811, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "I put people on ice", globaldef005810, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "Don't call me Mr Freeze", globaldef005812, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Awnald S. is Mr Freeze", globaldef005812, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= FL_CLIENT)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Who wants to be put on Ice then?", globaldef005810, MOVETYPE_WALK);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            
-                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "My skin is really cool", globaldef005812, FL_SWIM);
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if(globaldef006144.field000286 == globaldef005795)
-                                                                        {
-                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                            if(globaldef006145 <= FALSE)
-                                                                            {
-                                                                                func002369(globaldef006144, "Gravity is a harsh mistress", globaldef005812, MOVETYPE_WALK);
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006145 <= TRUE)
-                                                                                {
-                                                                                    func002370(globaldef006144, globaldef006147, ", Honk if you love justice", globaldef005812, MOVETYPE_FLY);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= FL_SWIM)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "I'll be the judge of that!", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                        {
-                                                                                            func002370(globaldef006144, globaldef006147, " Monkey from no-where!!!", globaldef005812, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "Bad man hit dog with street", globaldef005812, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "Unhand him, you sun-worshipping dog launchers!", globaldef005812, MOVETYPE_STEP);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Heh, heh. Those darn ninjas. They're wacky", globaldef005812, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "I'm doing the laundry", globaldef005812, FL_SWIM);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= FL_CLIENT)
-                                                                                                            {
-                                                                                                                func002370(globaldef006144, "What a master of disguise you are, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "SPOON!", globaldef005812, TRUE);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    
-                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "That's a whole lotta' Aztecs", globaldef005812, MOVETYPE_WALK);
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if(globaldef006144.field000286 == globaldef005796)
-                                                                            {
-                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                if(globaldef006145 <= FALSE)
-                                                                                {
-                                                                                    func002369(globaldef006144, "Anybody seen John Carmack?", globaldef005812, MOVETYPE_WALK);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006145 <= TRUE)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "Doomed, I'm Doomed", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= FL_SWIM)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "Isn't this game just the Coolest", globaldef005812, MOVETYPE_STEP);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "How do I use this thing? ", globaldef005811, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "Rockets, I need Rockets", globaldef005812, MOVETYPE_STEP);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Pull the other one", globaldef005812, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Atmosphere..that's it!", globaldef005812, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Hmmm, unaligned textures", globaldef005812, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Did I do this level?", globaldef005811, MOVETYPE_WALK);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Anyone for DungeonKeeper?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        
-                                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "There is a virus on your hard disk", globaldef005811, MOVETYPE_STEP);
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if(globaldef006144.field000286 == globaldef005797)
-                                                                                {
-                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                    if(globaldef006145 <= FALSE)
-                                                                                    {
-                                                                                        func002369(globaldef006144, "See you all in hell", globaldef005812, MOVETYPE_WALK);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006145 <= TRUE)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "Ukko, you dwarf, where are U?", globaldef005811, MOVETYPE_WALK);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= FL_SWIM)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "Where has Ukko gone off to?", globaldef005811, MOVETYPE_WALK);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "I need more Blood & Gore", globaldef005812, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Brainbiter and I make a good team", globaldef005812, FL_SWIM);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Come on baby light my fire!!!", globaldef005812, MOVETYPE_WALK);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "I am Slaine Mac Roth", globaldef005812, MOVETYPE_WALK);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "I feel a riastarthae coming up...", globaldef005812, MOVETYPE_WALK);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "BrainBiter should be all I need", globaldef005812, FL_SWIM);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        
-                                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                                        {
-                                                                                                                            func002370(globaldef006144, globaldef006147, ", shall I go berserk?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if(globaldef006144.field000286 == globaldef005798)
-                                                                                    {
-                                                                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                        if(globaldef006145 <= FALSE)
-                                                                                        {
-                                                                                            func002369(globaldef006144, "I've got you are all surrounded", globaldef005812, MOVETYPE_WALK);
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006145 <= TRUE)
-                                                                                            {
-                                                                                                func002370(globaldef006144, globaldef006147, ", Dead or alive, you're coming with me", globaldef005812, MOVETYPE_STEP);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= FL_SWIM)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "Come quietly or there will be trouble", globaldef005812, MOVETYPE_STEP);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                    {
-                                                                                                        func002370(globaldef006144, globaldef006147, ", your move, creep", globaldef005812, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Thank you for NOT smoking", globaldef005812, MOVETYPE_WALK);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Keep the peace", globaldef005812, FL_SWIM);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Anyone got silverpolish 4 me?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Give up, I've got you completely surrounded", globaldef005812, MOVETYPE_STEP);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= FL_CLIENT)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "Offense #2, Shooting at an officer of the law,", globaldef005812, MOVETYPE_STEP);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            
-                                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                            {
-                                                                                                                                func002370(globaldef006144, "Offense #1, Use of illegal fire-arms,", globaldef006147, globaldef005812, MOVETYPE_STEP);
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if(globaldef006144.field000286 == globaldef005799)
-                                                                                        {
-                                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                            if(globaldef006145 <= FALSE)
-                                                                                            {
-                                                                                                func002369(globaldef006144, "Yeee-haw", globaldef005812, TRUE);
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006145 <= TRUE)
-                                                                                                {
-                                                                                                    func002370(globaldef006144, globaldef006147, " is a yella-belly", globaldef005810, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= FL_SWIM)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "Giddap, y'all flea bitten, dust-bitin' varmit", globaldef005810, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "I'm the ruffest, tuffest gunslinger in the west", globaldef005812, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Rollin' Rollin' Rawhide!!!", globaldef005812, MOVETYPE_WALK);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Yer all dead", globaldef005812, MOVETYPE_WALK);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Yer all yella-bellies", globaldef005812, MOVETYPE_WALK);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                        {
-                                                                                                                            func002370(globaldef006144, globaldef006147, ", this level ain't big enough for both of us", globaldef005812, MOVETYPE_FLY);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= FL_CLIENT)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "I'm a gunslinger, not a doctor.", globaldef005812, MOVETYPE_STEP);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                
-                                                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                                {
-                                                                                                                                    func002370(globaldef006144, "Your momma wear cowboy boots, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if(globaldef006144.field000286 == globaldef005800)
-                                                                                            {
-                                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                                if(globaldef006145 <= FALSE)
-                                                                                                {
-                                                                                                    func002369(globaldef006144, "I putta u oll on ice", globaldef005812, MOVETYPE_WALK);
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006145 <= TRUE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "u toucha mi, u die, capito?", globaldef005811, MOVETYPE_WALK);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= FL_SWIM)
-                                                                                                        {
-                                                                                                            func002370(globaldef006144, globaldef006147, ", U been ina da bigga ouse?", globaldef005811, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                            {
-                                                                                                                func002370(globaldef006144, globaldef006147, ", U wanna wear di cementa shoes?", globaldef005811, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Anybodi lika Frank Sinatra?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Da winna getsa da pizza, capiche?", globaldef005812, MOVETYPE_STEP);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "Belisimo!", globaldef005812, TRUE);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                            {
-                                                                                                                                func002370(globaldef006144, globaldef006147, " has a salami for a nose", globaldef005810, MOVETYPE_STEP);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "Come get some!", globaldef005812, FL_SWIM);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "Shaddapa ya face", globaldef005812, FL_SWIM);
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                if(globaldef006144.field000286 == globaldef005801)
-                                                                                                {
-                                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                    if(globaldef006145 <= FALSE)
-                                                                                                    {
-                                                                                                        func002369(globaldef006144, "This place hardly looks like back home", globaldef005812, MOVETYPE_STEP);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006145 <= TRUE)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "I'm not the actor from 'Down South'", globaldef005812, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= FL_SWIM)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "To protect and serve", globaldef005812, MOVETYPE_STEP);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "A moose once bit my sister", globaldef005812, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Where are the lumberjacks then?", globaldef005812, MOVETYPE_WALK);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "He's a lumberjack and he's ok...", globaldef005812, MOVETYPE_STEP);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "Has anyone seen my wolf?", globaldef005812, MOVETYPE_STEP);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "I need Canada Dry Ginger Ale...fast", globaldef005812, MOVETYPE_STEP);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "Whatever happens...Canadians rule!!!", globaldef005812, MOVETYPE_STEP);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "Chocolate Moose anyone?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if(globaldef006144.field000286 == globaldef005802)
-                                                                                                    {
-                                                                                                        globaldef006145 = floor(globaldef006145 * GLOBALDEF748_15);
-                                                                                                        if(globaldef006145 <= FALSE)
-                                                                                                        {
-                                                                                                            func002369(globaldef006144, "Men are such babies", globaldef005811, MOVETYPE_STEP);
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006145 <= TRUE)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Anybody seen my eyeliner ?", globaldef005811, MOVETYPE_WALK);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= FL_SWIM)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "Which one of you boys wants it first?", globaldef005811, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Men are such pigs", globaldef005810, FL_SWIM);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "I feel like I wanna nail a man", globaldef005812, MOVETYPE_WALK);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "I'm gonna blow a man...UP", globaldef005812, MOVETYPE_WALK);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "Pinapple anyone?", globaldef005811, FL_SWIM);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "All men can kiss my broomstick", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "Eat me..suckers", globaldef005810, FL_SWIM);
-                                                                                                                                        }
-                                                                                                                                        else
-                                                                                                                                        {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                                            {
-                                                                                                                                                func002369(globaldef006144, "Look at what you can't have", globaldef005810, MOVETYPE_WALK);
-                                                                                                                                            }
-                                                                                                                                            else
-                                                                                                                                            {
-                                                                                                                                                if(globaldef006145 <= MOVETYPE_BOUNCE)
-                                                                                                                                                {
-                                                                                                                                                    func002369(globaldef006144, "I hate Quake nerds", globaldef005810, FL_SWIM);
-                                                                                                                                                }
-                                                                                                                                                else
-                                                                                                                                                {
-                                                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
-                                                                                                                                                    {
-                                                                                                                                                        func002370(globaldef006144, globaldef006147, ", you can't get it up, babe", globaldef005810, MOVETYPE_WALK);
-                                                                                                                                                    }
-                                                                                                                                                    else
-                                                                                                                                                    {
-                                                                                                                                                        if(globaldef006145 <= GLOBALDEF774_12)
-                                                                                                                                                        {
-                                                                                                                                                            func002371(globaldef006144, "My, ", globaldef006147, " what a small broomstick you have", globaldef005810, MOVETYPE_STEP);
-                                                                                                                                                        }
-                                                                                                                                                        else
-                                                                                                                                                        {
-                                                                                                                                                            if(globaldef006145 <= GLOBALDEF775_13)
-                                                                                                                                                            {
-                                                                                                                                                                func002369(globaldef006144, "I'm the queen of the hill", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                            }
-                                                                                                                                                            else
-                                                                                                                                                            {
-                                                                                                                                                                
-                                                                                                                                                                if(globaldef006145 <= 14)
-                                                                                                                                                                {
-                                                                                                                                                                    func002369(globaldef006144, "Lara Croft, meet your match", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                                }
-                                                                                                                                                                
-                                                                                                                                                            }
-                                                                                                                                                            
-                                                                                                                                                        }
-                                                                                                                                                        
-                                                                                                                                                    }
-                                                                                                                                                    
-                                                                                                                                                }
-                                                                                                                                                
-                                                                                                                                            }
-                                                                                                                                            
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if(globaldef006144.field000286 == globaldef005803)
-                                                                                                        {
-                                                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_FLYMISSILE);
-                                                                                                            if(globaldef006145 <= FALSE)
-                                                                                                            {
-                                                                                                                func002369(globaldef006144, "Punishment due", globaldef005812, TRUE);
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if(globaldef006145 <= TRUE)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "I'm gonna deal out some heavy punishment", globaldef005812, MOVETYPE_STEP);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= FL_SWIM)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Have you been punished lately?", globaldef005811, MOVETYPE_WALK);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "My suit is prettier than Batman's", globaldef005812, MOVETYPE_WALK);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "I'm cuter than that bat eared playboy", globaldef005812, MOVETYPE_STEP);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "I hear Quake 2 really rocks!!", globaldef005812, MOVETYPE_STEP);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                                    {
-                                                                                                                                        func002370(globaldef006144, globaldef006147, " is a sunday school wimp!", globaldef005810, MOVETYPE_STEP);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "you bunch of spammers", globaldef005812, FL_SWIM);
-                                                                                                                                        }
-                                                                                                                                        else
-                                                                                                                                        {
-                                                                                                                                            
-                                                                                                                                            if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                            {
-                                                                                                                                                func002369(globaldef006144, "Chicks dig the muscles", globaldef005812, MOVETYPE_STEP);
-                                                                                                                                            }
-                                                                                                                                            
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            if(globaldef006144.field000286 == globaldef005804)
-                                                                                                            {
-                                                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                                if(globaldef006145 <= FALSE)
-                                                                                                                {
-                                                                                                                    func002369(globaldef006144, "I'm the King", globaldef005812, MOVETYPE_WALK);
-                                                                                                                }
-                                                                                                                else
-                                                                                                                {
-                                                                                                                    if(globaldef006145 <= TRUE)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "Thank y'all vary much", globaldef005812, MOVETYPE_WALK);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= FL_SWIM)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "The king is still alaive", globaldef005812, MOVETYPE_WALK);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "Shall I sing a song?", globaldef005812, MOVETYPE_WALK);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "Yeah!!", globaldef005812, TRUE);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "Do ya'll want my autograph?", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "I'm a singer, not a gibber!", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                        }
-                                                                                                                                        else
-                                                                                                                                        {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                                            {
-                                                                                                                                                func002369(globaldef006144, "Where is the mike?", globaldef005812, FL_SWIM);
-                                                                                                                                            }
-                                                                                                                                            else
-                                                                                                                                            {
-                                                                                                                                                if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                                {
-                                                                                                                                                    func002370(globaldef006144, globaldef006147, " it's Mr Presley to you, son", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                }
-                                                                                                                                                else
-                                                                                                                                                {
-                                                                                                                                                    
-                                                                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                                                    {
-                                                                                                                                                        func002369(globaldef006144, "u-HUH-huh, u-HUH-huh, yeah-yeah-YEAH!", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                    }
-                                                                                                                                                    
-                                                                                                                                                }
-                                                                                                                                                
-                                                                                                                                            }
-                                                                                                                                            
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                
-                                                                                                                if(globaldef006144.field000286 == globaldef005782)
-                                                                                                                {
-                                                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                                    if(globaldef006145 <= FALSE)
-                                                                                                                    {
-                                                                                                                        func002369(globaldef006144, "errare est humanum", globaldef005812, FL_SWIM);
-                                                                                                                    }
-                                                                                                                    else
-                                                                                                                    {
-                                                                                                                        if(globaldef006145 <= TRUE)
-                                                                                                                        {
-                                                                                                                            func002369(globaldef006144, "exitus acta probat", globaldef005812, MOVETYPE_WALK);
-                                                                                                                        }
-                                                                                                                        else
-                                                                                                                        {
-                                                                                                                            if(globaldef006145 <= FL_SWIM)
-                                                                                                                            {
-                                                                                                                                func002369(globaldef006144, "hodie mihi, cras tibi", globaldef005812, FL_SWIM);
-                                                                                                                            }
-                                                                                                                            else
-                                                                                                                            {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
-                                                                                                                                {
-                                                                                                                                    func002369(globaldef006144, "facta non verba", globaldef005812, FL_SWIM);
-                                                                                                                                }
-                                                                                                                                else
-                                                                                                                                {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
-                                                                                                                                    {
-                                                                                                                                        func002369(globaldef006144, "aut vincere aut mori", globaldef005810, MOVETYPE_WALK);
-                                                                                                                                    }
-                                                                                                                                    else
-                                                                                                                                    {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
-                                                                                                                                        {
-                                                                                                                                            func002369(globaldef006144, "Cogito, ergo sum", globaldef005812, FL_SWIM);
-                                                                                                                                        }
-                                                                                                                                        else
-                                                                                                                                        {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
-                                                                                                                                            {
-                                                                                                                                                func002369(globaldef006144, "Omicron optimus maximus", globaldef005811, MOVETYPE_WALK);
-                                                                                                                                            }
-                                                                                                                                            else
-                                                                                                                                            {
-                                                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
-                                                                                                                                                {
-                                                                                                                                                    func002369(globaldef006144, "proh pudor!", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                }
-                                                                                                                                                else
-                                                                                                                                                {
-                                                                                                                                                    if(globaldef006145 <= FL_CLIENT)
-                                                                                                                                                    {
-                                                                                                                                                        func002369(globaldef006144, "aut Omicron Bots aut nullus", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                    }
-                                                                                                                                                    else
-                                                                                                                                                    {
-                                                                                                                                                        
-                                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
-                                                                                                                                                        {
-                                                                                                                                                            func002369(globaldef006144, "aut Vincere aut Mori", globaldef005812, MOVETYPE_WALK);
-                                                                                                                                                        }
-                                                                                                                                                        
-                                                                                                                                                    }
-                                                                                                                                                    
-                                                                                                                                                }
-                                                                                                                                                
-                                                                                                                                            }
-                                                                                                                                            
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                    }
-                                                                                                                                    
-                                                                                                                                }
-                                                                                                                                
-                                                                                                                            }
-                                                                                                                            
-                                                                                                                        }
-                                                                                                                        
-                                                                                                                    }
-                                                                                                                    
-                                                                                                                }
-                                                                                                                
-                                                                                                            }
-                                                                                                            
-                                                                                                        }
-                                                                                                        
-                                                                                                    }
-                                                                                                    
-                                                                                                }
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                    }
-                                                                                    
-                                                                                }
-                                                                                
-                                                                            }
-                                                                            
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                
-                                                            }
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
-    
+    CopyToBodyQue(self);
+    func002418(self);
 };
 

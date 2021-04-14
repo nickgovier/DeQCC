@@ -907,7 +907,7 @@ void () func000882 =
     if(self.health < -80)
     {
         sound(self, CHAN_VOICE, "player/udeath.wav", TRUE, ATTN_NORM);
-        func000462("progs/h_demon.mdl", self.health);
+        ThrowHead("progs/h_demon.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);
         ThrowGib("progs/gib1.mdl", self.health);

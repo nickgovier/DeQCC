@@ -1,5 +1,5 @@
-void () func000454;
-void () func000407;
+void () player_pain;
+void () player_stand1;
 float globaldef002863;
 float globaldef002864;
 
@@ -745,7 +745,7 @@ void () trigger_changelevel =
     self.touch = func000382;
 };
 
-void () func000465;
+void () set_suicide_frame;
 
 // func000384
 // function begins at statement 11488, parm_start=8359
@@ -833,8 +833,8 @@ void () ClientKill =
     
     bprint(self.netname);
     bprint(" suicides\n");
-    func000465();
-    self.modelindex = globaldef000509;
+    set_suicide_frame();
+    self.modelindex = modelindex_player;
     self.frags = self.frags - FL_SWIM;
     func000384();
 };
@@ -1066,7 +1066,7 @@ void (entity globaldef002908) func000388 =
     globaldef002908.invincible_finished = time + MOVETYPE_WALK;
 };
 
-void () func000464;
+void () PlayerDie;
 
 // PutClientInServer
 // function begins at statement 11641, parm_start=8417
@@ -1254,8 +1254,8 @@ void () PutClientInServer =
     
     W_SetCurrentAmmo();
     self.attack_finished = time;
-    self.th_pain = func000454;
-    self.th_die = func000464;
+    self.th_pain = player_pain;
+    self.th_die = PlayerDie;
     self.deadflag = DEAD_NO;
     self.pausetime = FALSE;
     
@@ -1273,7 +1273,7 @@ void () PutClientInServer =
     }
     
     setmodel(self, "progs/player.mdl");
-    globaldef000509 = self.modelindex;
+    modelindex_player = self.modelindex;
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.view_ofs = '0 0 22';
     globaldef002910 = func000350(self);
@@ -1309,7 +1309,7 @@ void () PutClientInServer =
     
     self.field000265 = skill;
     self.field000344 = self;
-    func000407();
+    player_stand1();
     
     if(deathmatch || coop)
     {
@@ -2673,12 +2673,12 @@ void () func000402 =
         if(globaldef000804 & globaldef000760)
         {
             self.field000251 = self.field000249;
-            self.field000250 = globaldef000509;
+            self.field000250 = modelindex_player;
         }
         else
         {
             self.skin = self.field000249;
-            self.modelindex = globaldef000509;
+            self.modelindex = modelindex_player;
         }
         
     }
@@ -3348,7 +3348,7 @@ void () ClientDisconnect =
         bprint(" frags\n");
         sound(self, CHAN_BODY, "player/tornoff2.wav", TRUE, ATTN_NONE);
         self.classname = "nobody";
-        func000465();
+        set_suicide_frame();
     }
     
     

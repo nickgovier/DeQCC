@@ -2496,7 +2496,7 @@ void () func001559 = [191, func001399]
 void () func001560 = 
 {
     sound(self, CHAN_VOICE, "zombie/z_gib.wav", TRUE, ATTN_NORM);
-    func000462("progs/h_zombie.mdl", self.health);
+    ThrowHead("progs/h_zombie.mdl", self.health);
     ThrowGib("progs/gib1.mdl", self.health);
     ThrowGib("progs/gib2.mdl", self.health);
     ThrowGib("progs/gib3.mdl", self.health);

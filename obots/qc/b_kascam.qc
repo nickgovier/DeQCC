@@ -4103,7 +4103,7 @@ void () CamClientInit =
     
     self.classname = "KasCam";
     setmodel(self, string_null);
-    self.modelindex = globaldef000509;
+    self.modelindex = modelindex_player;
     
     if(globaldef000804 & globaldef000760)
     {

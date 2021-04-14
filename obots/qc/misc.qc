@@ -861,7 +861,7 @@ void () func000644 =
     globaldef003613.solid = SOLID_NOT;
     globaldef003613.velocity = '0 0 15';
     globaldef003613.nextthink = time + RA_PLAYERSTATTIME;
-    globaldef003613.think = func000647;
+    globaldef003613.think = bubble_bob;
     globaldef003613.touch = func000646;
     globaldef003613.classname = "bubble";
     globaldef003613.frame = FALSE;
@@ -927,7 +927,7 @@ void () func000645 =
     globaldef003615.solid = SOLID_NOT;
     globaldef003615.velocity = self.velocity;
     globaldef003615.nextthink = time + RA_PLAYERSTATTIME;
-    globaldef003615.think = func000647;
+    globaldef003615.think = bubble_bob;
     globaldef003615.touch = func000646;
     globaldef003615.classname = "bubble";
     globaldef003615.frame = TRUE;
@@ -966,7 +966,7 @@ void () func000646 =
 };
 
 
-// func000647
+// bubble_bob
 // function begins at statement 17937, parm_start=12173
 // OP_ADDRESS	28	426	12182
 // OP_LOAD_F	28	426	12183
@@ -1029,7 +1029,7 @@ void () func000646 =
 // OP_ADDRESS	28	148	12213
 // OP_STOREP_FNC	9425	12213	0
 // OP_DONE	0	0	0
-void () func000647 = 
+void () bubble_bob = 
 {
     local float globaldef003616;
     local float globaldef003617;
@@ -1092,7 +1092,7 @@ void () func000647 =
     self.velocity_y = globaldef003617;
     self.velocity_z = globaldef003618;
     self.nextthink = time + RA_PLAYERSTATTIME;
-    self.think = func000647;
+    self.think = bubble_bob;
 };
 
 

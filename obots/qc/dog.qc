@@ -1202,7 +1202,7 @@ void () func001354 =
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
         ThrowGib("progs/gib3.mdl", self.health);
-        func000462("progs/h_dog.mdl", self.health);
+        ThrowHead("progs/h_dog.mdl", self.health);
         return;
     }
     

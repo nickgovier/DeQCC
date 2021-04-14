@@ -794,7 +794,7 @@ void () func002558 =
     
     if((self.watertype == CONTENT_WATER) && (self.waterlevel == MOVETYPE_WALK))
     {
-        func000456(TRUE);
+        DeathBubbles(TRUE);
         if(random() > RA_PLAYERSTATTIME)
         {
             sound(self, CHAN_VOICE, "player/drown1.wav", TRUE, ATTN_NORM);
