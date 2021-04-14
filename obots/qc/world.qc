@@ -745,7 +745,7 @@ void () worldspawn =
     lightstyle(63, "a");
 };
 
-void () func000395;
+void () NextLevel;
 
 // StartFrame
 // function begins at statement 8652, parm_start=6710
@@ -904,7 +904,7 @@ void () StartFrame =
     
     if(globaldef002461 && ((time - globaldef000800) >= globaldef002461))
     {
-        func000395();
+        NextLevel();
     }
     
     globaldef000791 = FALSE;
@@ -912,9 +912,9 @@ void () StartFrame =
     if(globaldef000782 != cvar("sv_gravity"))
     {
         globaldef000782 = cvar("sv_gravity");
-        globaldef000776 = (((RA_PLAYERSTATTIME * globaldef000782) * (globaldef000717 / globaldef000782)) * (globaldef000717 / globaldef000782)) - 14;
+        globaldef000776 = (((RA_PLAYERSTATTIME * globaldef000782) * (GLOBALDEF717_270 / globaldef000782)) * (GLOBALDEF717_270 / globaldef000782)) - 14;
         globaldef000777 = ((RA_PLAYERSTATTIME * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
-        globaldef000778 = (FL_SWIM * (globaldef000717 / globaldef000782)) - 0.1;
+        globaldef000778 = (FL_SWIM * (GLOBALDEF717_270 / globaldef000782)) - 0.1;
         globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
         globaldef000780 = (((RA_PLAYERSTATTIME * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
@@ -947,7 +947,7 @@ void () StartFrame =
                 
                 if(teamplay)
                 {
-                    globaldef002456 = globaldef000816;
+                    globaldef002456 = firstClient;
                     
                     while(globaldef002456)
                     {
@@ -1106,7 +1106,7 @@ void (entity ent) CopyToBodyQue =
     if((ent.classname == "player") || (ent.classname == "bot"))
     {
         bodyque_head.skin = ent.field000251;
-        bodyque_head.modelindex = ent.field000250;
+        bodyque_head.modelindex = ent.clmodelindex;
         bodyque_head.model = "bla";
     }
     else

@@ -309,6 +309,17 @@ namespace DeQcc
             nameMap.Add("field000225", "f_goalweight");
             nameMap.Add("field000226", "f_walkaboutweight");
 
+            nameMap.Add("field000250", "clmodelindex");
+
+            nameMap.Add("field000252", "botflags");
+            nameMap.Add("field000253", "old_velocity");
+            nameMap.Add("field000257", "old_origin");
+            nameMap.Add("field000261", "old_flags");
+            nameMap.Add("field000262", "old_botflags");
+
+            nameMap.Add("field000298", "prev");
+
+            nameMap.Add("globaldef000508", "modelindex_eyes");
             nameMap.Add("globaldef000509", "modelindex_player");
 
             // rocket arena
@@ -320,6 +331,7 @@ namespace DeQcc
             nameMap.Add("globaldef000527", "time_to_start");
             nameMap.Add("globaldef000528", "last_time");
 
+            nameMap.Add("globaldef000717", "GLOBALDEF717_270");  // constant = 270
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
             nameMap.Add("globaldef000721", "GLOBALDEF721_250");  // constant = 250
             nameMap.Add("globaldef000723", "GLOBALDEF723_600");  // constant = 600
@@ -357,8 +369,11 @@ namespace DeQcc
 
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
 
+            nameMap.Add("globaldef000816", "firstClient");
+            nameMap.Add("globaldef000817", "firstBot");
             nameMap.Add("globaldef000819", "firstWaypoint");    // b_waypnt.qc GetWaypointByID
-            
+
+            nameMap.Add("field000283", "teamname"); // client.qc
 
             // b_clrank.qc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
@@ -1377,10 +1392,30 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region client.qc
 
+            // Declarations
+            nameMap.Add("globaldef002863", "intermission_running");
+            nameMap.Add("globaldef002864", "intermission_exittime");
+            nameMap.Add("globaldef002871", "nextmap");
+            
+            nameMap.Add("func000376", "DecodeLevelParms");
+            nameMap.Add("func000377", "FindIntermission");
+            nameMap.Add("func000378", "GotoNextMap");
+            nameMap.Add("func000379", "ExitIntermission");
+            nameMap.Add("func000380", "IntermissionThink");
+            nameMap.Add("func000381", "execute_changelevel");
+            nameMap.Add("func000382", "changelevel_touch");
+            nameMap.Add("func000384", "respawn");
+            nameMap.Add("func000387", "SelectSpawnPoint");
+            nameMap.Add("func000388", "FullLoadout");
+            nameMap.Add("func000395", "NextLevel");
+            nameMap.Add("func000396", "CheckRules");
+            nameMap.Add("func000397", "PlayerDeathThink");
+            nameMap.Add("func000398", "PlayerJump");
+            nameMap.Add("func000399", "WaterMove");
+            nameMap.Add("func000400", "CheckWaterJump");
+            nameMap.Add("func000402", "CheckPowerups");
             nameMap.Add("func000406", "ClientObituary");
 
             for (int i = 373; i <= 406; i++)
@@ -1388,14 +1423,105 @@ namespace DeQcc
                 fileMap[i] = "client.qc";
             }
 
+            // FindIntermission locals
+            nameMap.Add("globaldef002867", "spot");
+            nameMap.Add("globaldef002868", "cyc");
+
+            // execute_changelevel locals
+            nameMap.Add("globaldef002882", "pos");
+
+            // changelevel_touch locals
+            nameMap.Add("globaldef002884", "pos");
+
+            // CheckSpawnPoint params
+            nameMap.Add("globaldef002895", "v");
+
+            // SelectSpawnPoint locals
+            nameMap.Add("globaldef002899", "spot");
+            nameMap.Add("globaldef002900", "pcount");
+
+            // FullLoadout params
+            nameMap.Add("globaldef002908", "ent");
+
+            // PutClientInServer locals
+            nameMap.Add("globaldef002910", "spot");
+            nameMap.Add("globaldef002911", "UNUSED");
+
+            // NextLevel locals
+            nameMap.Add("globaldef002918", "o");
+
+            // CheckRules locals
+            nameMap.Add("globaldef002926", "timelimit");
+            nameMap.Add("globaldef002927", "fraglimit");
+
+            // PlayerDeathThink locals
+            nameMap.Add("globaldef002930", "old_self");
+            nameMap.Add("globaldef002931", "forward");
+
+            // PlayerJump locals
+            nameMap.Add("globaldef002933", "start");
+            nameMap.Add("globaldef002937", "end");
+
+            // CheckWaterJump locals
+            nameMap.Add("globaldef002944", "start");
+            nameMap.Add("globaldef002948", "end");
+
+            // PlayerPreThink locals
+            nameMap.Add("globaldef002953", "UNUSED1");
+            nameMap.Add("globaldef002954", "UNUSED2");
+
+            // PlayerPostThink locals
+            nameMap.Add("globaldef002960", "UNUSED1");
+            nameMap.Add("globaldef002961", "UNUSED2");
+            nameMap.Add("globaldef002962", "UNUSED3");
+
+            // ClientConnect locals
+            nameMap.Add("globaldef002966", "bot");
+            nameMap.Add("globaldef002967", "botclnum");
+
+            // ClientDisconnect locals
+            nameMap.Add("globaldef002970", "UNUSED1");
+            nameMap.Add("globaldef002971", "clientisalive");
+
             // ClientObituary params
             nameMap.Add("globaldef002975", "targ");
             nameMap.Add("globaldef002976", "attacker");
 
+            // ClientObituary locals
+            nameMap.Add("globaldef002977", "rnum");
+            nameMap.Add("globaldef002978", "deathstring");
+            nameMap.Add("globaldef002979", "deathstring2");
+            nameMap.Add("globaldef002980", "attacker_health");
+            nameMap.Add("globaldef002981", "attacker_armor");
+            nameMap.Add("globaldef002982", "attacker_stat_str");
+            nameMap.Add("globaldef002983", "UNUSED1");
+            nameMap.Add("globaldef002984", "UNUSED2");
+            nameMap.Add("globaldef002985", "UNUSED3");
+            nameMap.Add("globaldef002986", "UNUSED4");
+            nameMap.Add("globaldef002987", "UNUSED5");
+            nameMap.Add("globaldef002988", "UNUSED6");
+            nameMap.Add("globaldef002989", "UNUSED7");
+            nameMap.Add("globaldef002990", "UNUSED8");
+            nameMap.Add("globaldef002991", "UNUSED9");
+            nameMap.Add("globaldef002992", "UNUSED10");
+            nameMap.Add("globaldef002993", "UNUSED11");
+            nameMap.Add("globaldef002994", "UNUSED12");
+            nameMap.Add("globaldef002995", "UNUSED13");
+            nameMap.Add("globaldef002996", "UNUSED14");
+            nameMap.Add("globaldef002997", "UNUSED15");
+            nameMap.Add("globaldef002998", "UNUSED16");
+            nameMap.Add("globaldef002999", "UNUSED17");
+            nameMap.Add("globaldef003000", "UNUSED18");
+            nameMap.Add("globaldef003001", "UNUSED19");
+            nameMap.Add("globaldef003002", "UNUSED20");
+            nameMap.Add("globaldef003003", "UNUSED21");
+            nameMap.Add("globaldef003004", "UNUSED22");
+            nameMap.Add("globaldef003005", "UNUSED23");
+            nameMap.Add("globaldef003006", "UNUSED24");
+            nameMap.Add("globaldef003007", "rnum2");
 
             #endregion
 
-            // Done
             #region player.qc
 
             nameMap.Add("func000407", "player_stand1");
@@ -1472,7 +1598,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done
             #region monsters.qc
 
             nameMap.Add("func000528", "monster_use");
@@ -1499,6 +1624,8 @@ namespace DeQcc
             nameMap.Add("globaldef003302", "etemp");
 
             #endregion
+
+            // Done to here
 
             #region doors.qc
 

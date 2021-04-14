@@ -225,7 +225,7 @@ void () func002637 =
     if(globaldef000804 & globaldef000760)
     {
         self.field000251 = self.field000249;
-        self.field000250 = modelindex_player;
+        self.clmodelindex = modelindex_player;
     }
     else
     {

@@ -1431,12 +1431,12 @@ void (entity globaldef002641) func000341 =
 {
     local entity globaldef002642;
     local float globaldef002643;
-    globaldef002642 = func000387();
+    globaldef002642 = SelectSpawnPoint();
     globaldef002643 = FALSE;
     
     while(((vlen(globaldef002642.origin - globaldef002641.field000377)) < globaldef002600) && (globaldef002643 < MOVETYPE_FLY))
     {
-        globaldef002642 = func000387();
+        globaldef002642 = SelectSpawnPoint();
         globaldef002643 = globaldef002643 + TRUE;
     }
     

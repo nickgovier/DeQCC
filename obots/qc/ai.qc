@@ -693,7 +693,7 @@ entity () obot_ai_FindClosestVisibleEnt =
     local entity closestent;
     closestent = world;
     closestdist = 9999;
-    currentent = globaldef000817;
+    currentent = firstBot;
     
     while(currentent)
     {

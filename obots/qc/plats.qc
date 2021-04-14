@@ -284,7 +284,7 @@ void () func000607 =
     }
     
     
-    if(other.field000252 & globaldef000686)
+    if(other.botflags & globaldef000686)
     {
         
         if(!self.field000299)

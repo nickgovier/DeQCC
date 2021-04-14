@@ -1058,12 +1058,12 @@ void (entity globaldef009087, vector globaldef009088) func002659 =
 void () dumpbspwaypoints = 
 {
     
-    if(self.field000252 & globaldef000693)
+    if(self.botflags & globaldef000693)
     {
         return;
     }
     
-    self.field000252 = self.field000252 | globaldef000692;
+    self.botflags = self.botflags | globaldef000692;
 };
 
 
@@ -1295,7 +1295,7 @@ void () func002661 =
     local float globaldef009093;
     local string globaldef009094;
     
-    if(!(self.field000252 & globaldef000692))
+    if(!(self.botflags & globaldef000692))
     {
         return;
     }
@@ -1319,7 +1319,7 @@ void () func002661 =
         if(globaldef009092 == world)
         {
             sprint(self, "dumped all waypoints\n");
-            self.field000252 = self.field000252 - (self.field000252 & globaldef000692);
+            self.botflags = self.botflags - (self.botflags & globaldef000692);
             return;
         }
         
@@ -1431,12 +1431,12 @@ void () func002661 =
 void () dumphcwaypoints = 
 {
     
-    if(self.field000252 & globaldef000692)
+    if(self.botflags & globaldef000692)
     {
         return;
     }
     
-    self.field000252 = self.field000252 | globaldef000693;
+    self.botflags = self.botflags | globaldef000693;
 };
 
 
@@ -1669,7 +1669,7 @@ void () func002663 =
     local float globaldef009114;
     local string globaldef009115;
     
-    if(!(self.field000252 & globaldef000693))
+    if(!(self.botflags & globaldef000693))
     {
         return;
     }
@@ -1695,7 +1695,7 @@ void () func002663 =
         {
             sprint(self, "	}\n\n");
             sprint(self, "dumped all waypoints\n");
-            self.field000252 = self.field000252 - (self.field000252 & globaldef000693);
+            self.botflags = self.botflags - (self.botflags & globaldef000693);
             return;
         }
         
@@ -1772,11 +1772,11 @@ void (entity globaldef009128) func002664 =
     
     if(firstWaypoint)
     {
-        firstWaypoint.field000298 = globaldef009128;
+        firstWaypoint.prev = globaldef009128;
     }
     
     globaldef009128.next = firstWaypoint;
-    globaldef009128.field000298 = world;
+    globaldef009128.prev = world;
     firstWaypoint = globaldef009128;
 };
 
@@ -1804,12 +1804,12 @@ void (entity globaldef009130) func002665 =
     
     if(globaldef009130.next)
     {
-        globaldef009130.next.field000298 = globaldef009130.field000298;
+        globaldef009130.next.prev = globaldef009130.prev;
     }
     
-    if(globaldef009130.field000298)
+    if(globaldef009130.prev)
     {
-        globaldef009130.field000298.next = globaldef009130.next;
+        globaldef009130.prev.next = globaldef009130.next;
     }
     else
     {
@@ -1938,7 +1938,7 @@ void () func002666 =
     
     other.field000263 = self;
     
-    if(other.field000252 & globaldef000686)
+    if(other.botflags & globaldef000686)
     {
         
         if(other.field000299)
@@ -2465,7 +2465,7 @@ void (entity globaldef009179) func002675 =
     }
     
     globaldef009180 = func002671();
-    globaldef009182 = globaldef009179.field000257;
+    globaldef009182 = globaldef009179.old_origin;
     globaldef009182_z = (globaldef009182_z + globaldef009179.mins_z) + FL_SWIM;
     setorigin(globaldef009180, globaldef009182);
     globaldef009180.field000299 = globaldef009179.field000299;
@@ -2786,13 +2786,13 @@ float () func002679 =
     }
     
     
-    if((!(self.field000262 & globaldef000685)) && (!(self.field000261 & FL_INWATER)))
+    if((!(self.old_botflags & globaldef000685)) && (!(self.old_flags & FL_INWATER)))
     {
         return FALSE;
     }
     
     
-    if((!(self.field000252 & globaldef000685)) && (!(self.flags & FL_INWATER)))
+    if((!(self.botflags & globaldef000685)) && (!(self.flags & FL_INWATER)))
     {
         return FALSE;
     }
@@ -2815,7 +2815,7 @@ float () func002679 =
         return FALSE;
     }
     
-    globaldef009211 = self.field000257;
+    globaldef009211 = self.old_origin;
     globaldef009211_z = (globaldef009211_z + self.mins_z) + TRUE;
     globaldef009210 = pointcontents(globaldef009211);
     
@@ -5181,7 +5181,7 @@ entity (entity globaldef009262) func002691 =
     local float globaldef009266;
     local vector globaldef009267;
     local vector globaldef009271;
-    if((globaldef009262.field000252 & globaldef000686) && (globaldef009262.field000299 != world))
+    if((globaldef009262.botflags & globaldef000686) && (globaldef009262.field000299 != world))
     {
         return globaldef009262.field000299;
     }

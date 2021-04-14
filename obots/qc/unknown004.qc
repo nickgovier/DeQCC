@@ -224,7 +224,7 @@ void (float globaldef007125) func002427 =
 void (float globaldef007127) func002428 = 
 {
     local entity globaldef007128;
-    globaldef007128 = globaldef000817;
+    globaldef007128 = firstBot;
     
     while(globaldef007128)
     {
@@ -835,7 +835,7 @@ void (entity globaldef007205, vector globaldef007206) func002431 =
 {
     globaldef007205.velocity = globaldef007206;
     sound(globaldef007205, CHAN_BODY, "player/plyrjmp8.wav", TRUE, ATTN_NORM);
-    globaldef007205.field000252 = globaldef007205.field000252 | globaldef000684;
+    globaldef007205.botflags = globaldef007205.botflags | globaldef000684;
 };
 
 
@@ -970,10 +970,10 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     setorigin(globaldef007211, globaldef007216);
     if(globaldef007239)
     {
-        globaldef007211.field000252 = globaldef007211.field000252 | globaldef000697;
+        globaldef007211.botflags = globaldef007211.botflags | globaldef000697;
         globaldef007232_x = globaldef007224_x * FL_GODMODE;
         globaldef007232_y = globaldef007224_y * FL_GODMODE;
-        globaldef007232_z = globaldef000717;
+        globaldef007232_z = GLOBALDEF717_270;
         func002431(globaldef007211, globaldef007232);
         return TRUE;
     }
@@ -1899,7 +1899,7 @@ float (entity globaldef007380, vector globaldef007381, vector globaldef007385, f
     local vector globaldef007391;
     if(globaldef007385 == VEC_ORIGIN)
     {
-        globaldef007390 = func002434(globaldef007380, globaldef000717);
+        globaldef007390 = func002434(globaldef007380, GLOBALDEF717_270);
     }
     else
     {
@@ -1910,7 +1910,7 @@ float (entity globaldef007380, vector globaldef007381, vector globaldef007385, f
     globaldef007381 = normalize(globaldef007381);
     globaldef007391_x = globaldef007381_x * globaldef007390;
     globaldef007391_y = globaldef007381_y * globaldef007390;
-    globaldef007391_z = globaldef000717 + 20;
+    globaldef007391_z = GLOBALDEF717_270 + 20;
     
     if(func002433(globaldef007380, globaldef007391, 50))
     {
@@ -1999,7 +1999,7 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
     }
     
     
-    if(!(globaldef007396.field000252 & globaldef000683))
+    if(!(globaldef007396.botflags & globaldef000683))
     {
         return globaldef000711;
     }
@@ -2007,7 +2007,7 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
     globaldef007396.velocity = VEC_ORIGIN;
     if(globaldef007397 == VEC_ORIGIN)
     {
-        globaldef007402 = func002434(globaldef007396, globaldef000717);
+        globaldef007402 = func002434(globaldef007396, GLOBALDEF717_270);
         globaldef007403 = globaldef007396.goalentity.origin - globaldef007396.origin;
     }
     else
@@ -2020,7 +2020,7 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
     globaldef007403 = normalize(globaldef007403);
     globaldef007407_x = globaldef007403_x * globaldef007402;
     globaldef007407_y = globaldef007403_y * globaldef007402;
-    globaldef007407_z = globaldef000717 + 20;
+    globaldef007407_z = GLOBALDEF717_270 + 20;
     
     if(func002433(globaldef007396, globaldef007407, 50))
     {
@@ -2253,7 +2253,7 @@ float (entity globaldef007412) func002438 =
     globaldef007450 = 120 - globaldef007449;
     globaldef007450 = globaldef007450 * RA_PLAYERSTATTIME;
     globaldef007425 = ((normalize(globaldef007433 - trace_endpos)) * globaldef007450) * FL_CLIENT;
-    globaldef007445_z = globaldef007425_z + globaldef000717;
+    globaldef007445_z = globaldef007425_z + GLOBALDEF717_270;
     globaldef007452 = func002434(globaldef007412, globaldef007445_z);
     globaldef007425_z = FALSE;
     globaldef007437 = (globaldef007452 * globaldef007441) - globaldef007425;
@@ -2276,7 +2276,7 @@ float (entity globaldef007412) func002438 =
         
         globaldef007445_x = globaldef007437_x;
         globaldef007445_y = globaldef007437_y;
-        globaldef007445_z = globaldef000717;
+        globaldef007445_z = GLOBALDEF717_270;
         func002435(globaldef007412, VEC_ORIGIN);
         globaldef007412.field000279 = globaldef007445;
         globaldef007412.field000278 = time + RA_PLAYERSTATTIME;
@@ -3404,7 +3404,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     if(!(globaldef007502.flags & FL_ONGROUND))
     {
         
-        if(!(globaldef007502.field000252 & globaldef000684))
+        if(!(globaldef007502.botflags & globaldef000684))
         {
             
             if(func002439(globaldef007502, globaldef007502.velocity, FALSE))
@@ -3432,11 +3432,11 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         globaldef007539 = globaldef007507;
     }
     
-    globaldef007502.field000252 = globaldef007502.field000252 - (globaldef007502.field000252 & globaldef000684);
+    globaldef007502.botflags = globaldef007502.botflags - (globaldef007502.botflags & globaldef000684);
     
-    if(globaldef007502.field000252 & globaldef000691)
+    if(globaldef007502.botflags & globaldef000691)
     {
-        globaldef007502.field000252 = globaldef007502.field000252 - globaldef000691;
+        globaldef007502.botflags = globaldef007502.botflags - globaldef000691;
         
         if(globaldef007503 == VEC_ORIGIN)
         {
@@ -3471,7 +3471,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
                                 globaldef007519 = globaldef007531 - globaldef007502.origin;
                                 globaldef007519_z = FALSE;
                                 globaldef007519 = globaldef000783 * normalize(globaldef007519);
-                                globaldef007519_z = globaldef000717;
+                                globaldef007519_z = GLOBALDEF717_270;
                                 func002431(globaldef007502, globaldef007519);
                                 return globaldef000711;
                             }
@@ -3740,13 +3740,13 @@ float (entity globaldef007567, vector globaldef007568, float globaldef007572, fl
     }
     
     
-    if(globaldef007567.field000252 & globaldef000683)
+    if(globaldef007567.botflags & globaldef000683)
     {
-        globaldef007567.field000252 = globaldef007567.field000252 - (globaldef007567.field000252 & globaldef000697);
+        globaldef007567.botflags = globaldef007567.botflags - (globaldef007567.botflags & globaldef000697);
     }
     
     
-    if(globaldef007567.field000252 & globaldef000697)
+    if(globaldef007567.botflags & globaldef000697)
     {
         makevectors(globaldef007567.angles);
         globaldef007567.velocity_x = v_forward_x * FL_GODMODE;
@@ -3756,7 +3756,7 @@ float (entity globaldef007567, vector globaldef007568, float globaldef007572, fl
     
     if(globaldef007567.waterlevel > TRUE)
     {
-        globaldef007567.field000252 = globaldef007567.field000252 - (globaldef007567.field000252 & globaldef000684);
+        globaldef007567.botflags = globaldef007567.botflags - (globaldef007567.botflags & globaldef000684);
         return func002430(globaldef007567, globaldef007568, globaldef007572);
     }
     else

@@ -671,7 +671,7 @@ void (entity globaldef009401, float globaldef009402) skinchange =
 void () func002697 = 
 {
     local entity globaldef009407;
-    globaldef009407 = globaldef000816;
+    globaldef009407 = firstClient;
     
     while(globaldef009407)
     {
@@ -683,7 +683,7 @@ void () func002697 =
         globaldef009407 = globaldef009407.next;
     }
     
-    globaldef009407 = globaldef000817;
+    globaldef009407 = firstBot;
     
     while(globaldef009407)
     {
@@ -806,14 +806,14 @@ void () botpathing =
         
         if(globaldef000786 < globaldef000787)
         {
-            globaldef009415 = globaldef000817;
+            globaldef009415 = firstBot;
             
             while(globaldef009415)
             {
                 
-                if(!(globaldef009415.field000252 & globaldef000686))
+                if(!(globaldef009415.botflags & globaldef000686))
                 {
-                    globaldef009415.field000252 = globaldef009415.field000252 | globaldef000686;
+                    globaldef009415.botflags = globaldef009415.botflags | globaldef000686;
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
@@ -826,14 +826,14 @@ void () botpathing =
     else
     {
         globaldef000804 = globaldef000804 | OBOT_BOTPATHING;
-        globaldef009415 = globaldef000817;
+        globaldef009415 = firstBot;
         
         while(globaldef009415)
         {
             
-            if(globaldef009415.field000252 & globaldef000686)
+            if(globaldef009415.botflags & globaldef000686)
             {
-                globaldef009415.field000252 = globaldef009415.field000252 - (globaldef009415.field000252 & globaldef000686);
+                globaldef009415.botflags = globaldef009415.botflags - (globaldef009415.botflags & globaldef000686);
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
@@ -905,14 +905,14 @@ void () humanpathing =
         
         if(globaldef000786 < globaldef000787)
         {
-            globaldef009418 = globaldef000816;
+            globaldef009418 = firstClient;
             
             while(globaldef009418)
             {
                 
-                if(!(globaldef009418.field000252 & globaldef000686))
+                if(!(globaldef009418.botflags & globaldef000686))
                 {
-                    globaldef009418.field000252 = globaldef009418.field000252 | globaldef000686;
+                    globaldef009418.botflags = globaldef009418.botflags | globaldef000686;
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
@@ -925,14 +925,14 @@ void () humanpathing =
     else
     {
         globaldef000804 = globaldef000804 | OBOT_HUMANPATHING;
-        globaldef009418 = globaldef000816;
+        globaldef009418 = firstClient;
         
         while(globaldef009418)
         {
             
-            if(globaldef009418.field000252 & globaldef000686)
+            if(globaldef009418.botflags & globaldef000686)
             {
-                globaldef009418.field000252 = globaldef009418.field000252 - (globaldef009418.field000252 & globaldef000686);
+                globaldef009418.botflags = globaldef009418.botflags - (globaldef009418.botflags & globaldef000686);
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
@@ -1370,7 +1370,7 @@ void () func002708 =
 void (float globaldef009447) func002709 = 
 {
     local entity globaldef009448;
-    globaldef009448 = globaldef000816;
+    globaldef009448 = firstClient;
     
     while(globaldef009448)
     {
@@ -1378,7 +1378,7 @@ void (float globaldef009447) func002709 =
         globaldef009448 = globaldef009448.next;
     }
     
-    globaldef009448 = globaldef000817;
+    globaldef009448 = firstBot;
     
     while(globaldef009448)
     {
@@ -1490,7 +1490,7 @@ void () nopowerups =
     else
     {
         globaldef000804 = globaldef000804 | OBOT_POWERUPS;
-        globaldef009450 = globaldef000816;
+        globaldef009450 = firstClient;
         
         while(globaldef009450)
         {
@@ -1504,7 +1504,7 @@ void () nopowerups =
             globaldef009450 = globaldef009450.next;
         }
         
-        globaldef009450 = globaldef000817;
+        globaldef009450 = firstBot;
         
         while(globaldef009450)
         {
@@ -2148,7 +2148,7 @@ void () func002722 =
 {
     local entity globaldef009486;
     globaldef009486 = self;
-    self = globaldef000816;
+    self = firstClient;
     
     while(self)
     {
@@ -2170,7 +2170,7 @@ void () func002722 =
         self = self.next;
     }
     
-    self = globaldef000817;
+    self = firstBot;
     
     while(self)
     {
@@ -2212,7 +2212,7 @@ void () func002722 =
 void () func002723 = 
 {
     local entity globaldef009488;
-    globaldef009488 = globaldef000816;
+    globaldef009488 = firstClient;
     
     while(globaldef009488)
     {
@@ -2221,7 +2221,7 @@ void () func002723 =
         globaldef009488 = globaldef009488.next;
     }
     
-    globaldef009488 = globaldef000817;
+    globaldef009488 = firstBot;
     
     while(globaldef009488)
     {
@@ -2347,7 +2347,7 @@ void () func002726 =
         globaldef009500 = TRUE;
     }
     
-    globaldef009499 = globaldef000816;
+    globaldef009499 = firstClient;
     
     while(globaldef009499)
     {
@@ -2380,7 +2380,7 @@ float (float globaldef009502) func002727 =
     local entity globaldef009503;
     local float globaldef009504;
     globaldef009504 = FALSE;
-    globaldef009503 = globaldef000816;
+    globaldef009503 = firstClient;
     
     while(globaldef009503)
     {
@@ -2417,7 +2417,7 @@ float (float globaldef009506) func002728 =
     local entity globaldef009507;
     local float globaldef009508;
     globaldef009508 = FALSE;
-    globaldef009507 = globaldef000817;
+    globaldef009507 = firstBot;
     
     while(globaldef009507)
     {
@@ -4960,7 +4960,7 @@ void (entity globaldef009550) stopadmin =
 void () func002740 = 
 {
     local entity globaldef009553;
-    globaldef009553 = globaldef000816;
+    globaldef009553 = firstClient;
     
     while(globaldef009553)
     {
@@ -5044,7 +5044,7 @@ void (entity globaldef009555) admin =
         func002740();
         globaldef009555.field000362 = globaldef000738;
         bprint2(globaldef009555.netname, " wants to be the administrator\n");
-        globaldef009556 = globaldef000816;
+        globaldef009556 = firstClient;
         
         while(globaldef009556)
         {
@@ -5108,7 +5108,7 @@ void (entity globaldef009562) yes =
     }
     
     globaldef009562.field000362 = globaldef000738;
-    globaldef009563 = globaldef000816;
+    globaldef009563 = firstClient;
     globaldef009565 = FALSE;
     globaldef009564 = FALSE;
     

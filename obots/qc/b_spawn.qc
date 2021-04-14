@@ -115,7 +115,7 @@ void () AddRandomDeathmatchBot =
 void () RemoveAllBots = 
 {
     local entity globaldef007121;
-    globaldef007121 = globaldef000817;
+    globaldef007121 = firstBot;
     
     while(globaldef007121)
     {
@@ -138,7 +138,7 @@ void () RemoveAllBots =
 void () RemoveOneDeathmatchBot = 
 {
     local entity globaldef007122;
-    globaldef007122 = globaldef000817;
+    globaldef007122 = firstBot;
     
     if(globaldef007122)
     {

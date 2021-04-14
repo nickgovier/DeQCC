@@ -776,8 +776,8 @@ void () finale_1 =
     local entity pos;
     local entity pl;
     local entity timer;
-    globaldef002864 = time + 10000000;
-    globaldef002863 = TRUE;
+    intermission_exittime = time + 10000000;
+    intermission_running = TRUE;
     pos = find(world, classname, "info_intermission");
     
     if(!pos)

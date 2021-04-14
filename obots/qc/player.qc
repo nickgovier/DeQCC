@@ -1580,7 +1580,7 @@ void (string gibname, float dm) ThrowHead =
     if((gibname == "progs/h_player.mdl") && (globaldef000804 & globaldef000760))
     {
         self.field000251 = FALSE;
-        self.field000250 = globaldef000510;
+        self.clmodelindex = globaldef000510;
     }
     else
     {
@@ -1802,7 +1802,7 @@ void () PlayerDie =
     if(globaldef000804 & globaldef000760)
     {
         self.field000251 = self.field000249;
-        self.field000250 = modelindex_player;
+        self.clmodelindex = modelindex_player;
     }
     else
     {

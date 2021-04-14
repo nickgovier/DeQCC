@@ -677,7 +677,7 @@ float (entity globaldef006843) func002378 =
     if(globaldef006843.deadflag != DEAD_DEAD)
     {
         
-        if(!(globaldef006843.field000252 & globaldef000683))
+        if(!(globaldef006843.botflags & globaldef000683))
         {
             return FALSE;
         }
@@ -786,7 +786,7 @@ float (entity globaldef006844) func002379 =
     if(globaldef006844.deadflag != DEAD_DEAD)
     {
         
-        if(!(globaldef006844.field000252 & globaldef000683))
+        if(!(globaldef006844.botflags & globaldef000683))
         {
             return FALSE;
         }
@@ -2823,7 +2823,7 @@ void (entity globaldef007040, float globaldef007041) func002399 =
     local float globaldef007046;
     local float globaldef007047;
     globaldef007044 = vlen(globaldef007040.enemy.origin - globaldef007040.origin);
-    globaldef007045 = vlen(globaldef007040.enemy.field000257 - globaldef007040.origin);
+    globaldef007045 = vlen(globaldef007040.enemy.old_origin - globaldef007040.origin);
     
     if(globaldef007040.field000271 > FALSE)
     {
@@ -3049,13 +3049,13 @@ void (entity globaldef007040, float globaldef007041) func002399 =
         
         if(globaldef007046 > 1.87)
         {
-            if(globaldef007040.field000252 & globaldef000687)
+            if(globaldef007040.botflags & globaldef000687)
             {
-                globaldef007040.field000252 = globaldef007040.field000252 - globaldef000687;
+                globaldef007040.botflags = globaldef007040.botflags - globaldef000687;
             }
             else
             {
-                globaldef007040.field000252 = globaldef007040.field000252 + globaldef000687;
+                globaldef007040.botflags = globaldef007040.botflags + globaldef000687;
             }
             
             globaldef007040.field000272 = FALSE;
@@ -3065,7 +3065,7 @@ void (entity globaldef007040, float globaldef007041) func002399 =
     }
     
     
-    if(globaldef007040.field000252 & globaldef000687)
+    if(globaldef007040.botflags & globaldef000687)
     {
         globaldef007042 = CONTENT_EMPTY * globaldef007042;
     }
@@ -3090,13 +3090,13 @@ void (entity globaldef007040, float globaldef007041) func002399 =
     }
     
     globaldef007040.field000272 = FALSE;
-    if(globaldef007040.field000252 & globaldef000687)
+    if(globaldef007040.botflags & globaldef000687)
     {
-        globaldef007040.field000252 = globaldef007040.field000252 - globaldef000687;
+        globaldef007040.botflags = globaldef007040.botflags - globaldef000687;
     }
     else
     {
-        globaldef007040.field000252 = globaldef007040.field000252 + globaldef000687;
+        globaldef007040.botflags = globaldef007040.botflags + globaldef000687;
     }
     
     
@@ -3221,7 +3221,7 @@ void (entity globaldef007053) func002400 =
     globaldef007058 = v_right;
     globaldef007058_z = FALSE;
     globaldef007058 = normalize(globaldef007058);
-    globaldef007054 = globaldef007053.origin - globaldef007053.field000257;
+    globaldef007054 = globaldef007053.origin - globaldef007053.old_origin;
     globaldef007054_z = FALSE;
     globaldef007054 = normalize(globaldef007054);
     globaldef007062 = globaldef007058 * globaldef007054;
@@ -3763,7 +3763,7 @@ void () func002407 =
     }
     
     
-    if(!(self.field000252 & globaldef000683))
+    if(!(self.botflags & globaldef000683))
     {
         self.jump_flag = self.velocity_z;
     }
@@ -3804,13 +3804,13 @@ void () func002408 =
 {
     func002400(self);
     func002406();
-    func000402();
+    CheckPowerups();
     func002407();
-    func000396();
-    self.field000257 = self.origin;
-    self.field000253 = self.velocity;
-    self.field000261 = self.flags;
-    self.field000262 = self.field000252;
+    CheckRules();
+    self.old_origin = self.origin;
+    self.old_velocity = self.velocity;
+    self.old_flags = self.flags;
+    self.old_botflags = self.botflags;
     self.flags = self.flags - (self.flags & FL_ONGROUND);
     self.field000263 = world;
 };
@@ -3830,7 +3830,7 @@ void () func002408 =
 void () func002409 = 
 {
     
-    if(self.field000252 & globaldef000686)
+    if(self.botflags & globaldef000686)
     {
         func002680();
     }
@@ -4151,15 +4151,15 @@ void (entity globaldef007102) func002417 =
         globaldef007103.skin = FALSE;
         globaldef007103.model = string_null;
         globaldef007102.field000251 = FALSE;
-        globaldef007102.field000250 = FALSE;
+        globaldef007102.clmodelindex = FALSE;
     }
     
     func002359(globaldef007102);
     func002522(globaldef007102);
     
-    if(globaldef007102.field000252 & globaldef000686)
+    if(globaldef007102.botflags & globaldef000686)
     {
-        globaldef007102.field000252 = globaldef007102.field000252 - globaldef000686;
+        globaldef007102.botflags = globaldef007102.botflags - globaldef000686;
         globaldef000785 = globaldef000785 - TRUE;
     }
     
@@ -4175,16 +4175,16 @@ void (entity globaldef007102) func002417 =
     
     if(globaldef007102.next)
     {
-        globaldef007102.next.field000298 = globaldef007102.field000298;
+        globaldef007102.next.prev = globaldef007102.prev;
     }
     
-    if(globaldef007102.field000298)
+    if(globaldef007102.prev)
     {
-        globaldef007102.field000298.next = globaldef007102.next;
+        globaldef007102.prev.next = globaldef007102.next;
     }
     else
     {
-        globaldef000817 = globaldef007102.next;
+        firstBot = globaldef007102.next;
     }
     
     
@@ -4499,7 +4499,7 @@ void (entity globaldef007106) func002418 =
     
     if(deathmatch == MOVETYPE_STEP)
     {
-        func000388(globaldef007106);
+        FullLoadout(globaldef007106);
     }
     
     globaldef007108 = self;
@@ -4525,10 +4525,10 @@ void (entity globaldef007106) func002418 =
     }
     
     
-    if(!globaldef000508)
+    if(!modelindex_eyes)
     {
         setmodel(self, "progs/eyes.mdl");
-        globaldef000508 = self.modelindex;
+        modelindex_eyes = self.modelindex;
     }
     
     
@@ -4542,7 +4542,7 @@ void (entity globaldef007106) func002418 =
     {
         globaldef007106.skin = FALSE;
         globaldef007106.field000251 = globaldef007106.field000249;
-        globaldef007106.field000250 = modelindex_player;
+        globaldef007106.clmodelindex = modelindex_player;
         globaldef007106.modelindex = FALSE;
     }
     else
@@ -4561,24 +4561,24 @@ void (entity globaldef007106) func002418 =
     
     setorigin(globaldef007106, globaldef007107.origin + '0 0 2');
     globaldef007106.velocity = VEC_ORIGIN;
-    globaldef007106.field000253 = VEC_ORIGIN;
+    globaldef007106.old_velocity = VEC_ORIGIN;
     globaldef007106.flags = globaldef000681;
-    globaldef007106.field000257 = globaldef007106.origin;
-    globaldef007106.field000261 = FALSE;
+    globaldef007106.old_origin = globaldef007106.origin;
+    globaldef007106.old_flags = FALSE;
     globaldef007106.angles = globaldef007107.angles;
     globaldef007106.v_angle = globaldef007106.angles;
     globaldef007106.field000299 = world;
     
-    if(globaldef007106.field000252 & globaldef000686)
+    if(globaldef007106.botflags & globaldef000686)
     {
         globaldef000785 = globaldef000785 - TRUE;
-        globaldef007106.field000252 = globaldef007106.field000252 - globaldef000686;
+        globaldef007106.botflags = globaldef007106.botflags - globaldef000686;
     }
     
     
     if((!(globaldef000804 & OBOT_BOTPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
-        globaldef007106.field000252 = globaldef007106.field000252 | globaldef000686;
+        globaldef007106.botflags = globaldef007106.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
     }
     
@@ -4701,14 +4701,14 @@ entity (float globaldef007113) func002420 =
     func002413(globaldef007114.field000286);
     globaldef007114.colormap = globaldef007115 + TRUE;
     
-    if(globaldef000817)
+    if(firstBot)
     {
-        globaldef000817.field000298 = globaldef007114;
+        firstBot.prev = globaldef007114;
     }
     
-    globaldef007114.next = globaldef000817;
-    globaldef007114.field000298 = world;
-    globaldef000817 = globaldef007114;
+    globaldef007114.next = firstBot;
+    globaldef007114.prev = world;
+    firstBot = globaldef007114;
     globaldef007114.field000265 = skill;
     
     if(globaldef007114.field000265 < FALSE)

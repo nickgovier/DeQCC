@@ -3949,7 +3949,7 @@ void () CamThink =
     CamImpulses();
 };
 
-entity () func000387;
+entity () SelectSpawnPoint;
 
 // CamClientInit
 // function begins at statement 2228, parm_start=2816
@@ -4082,7 +4082,7 @@ void () CamClientInit =
     {
         func002357(self);
         self.classname = "player";
-        ent2 = func000387();
+        ent2 = SelectSpawnPoint();
         self.origin = ent2.origin + '0 0 2';
         self.angles = ent2.angles;
         self.fixangle = TRUE;
@@ -4108,7 +4108,7 @@ void () CamClientInit =
     if(globaldef000804 & globaldef000760)
     {
         self.field000251 = FALSE;
-        self.field000250 = FALSE;
+        self.clmodelindex = FALSE;
     }
     
     self.weaponmodel = string_null;

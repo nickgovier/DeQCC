@@ -598,7 +598,7 @@ void (entity globaldef006798) ToggleObserverMode =
         
         if(globaldef000804 & globaldef000760)
         {
-            globaldef006798.field000250 = FALSE;
+            globaldef006798.clmodelindex = FALSE;
             globaldef006798.field000251 = FALSE;
         }
         
@@ -612,7 +612,7 @@ void (entity globaldef006798) ToggleObserverMode =
         globaldef000792 = globaldef000792 - TRUE;
         bprint(globaldef006798.netname);
         bprint(" left observer mode\n");
-        func000384();
+        respawn();
     }
     else
     {
@@ -628,10 +628,10 @@ void (entity globaldef006798) ToggleObserverMode =
             func002522(globaldef006798);
             func002359(globaldef006798);
             
-            if(globaldef006798.field000252 & globaldef000686)
+            if(globaldef006798.botflags & globaldef000686)
             {
                 globaldef006798.field000299 = world;
-                globaldef006798.field000252 = globaldef006798.field000252 - globaldef000686;
+                globaldef006798.botflags = globaldef006798.botflags - globaldef000686;
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
@@ -647,7 +647,7 @@ void (entity globaldef006798) ToggleObserverMode =
             
             if(globaldef000804 & globaldef000760)
             {
-                globaldef006798.field000250 = FALSE;
+                globaldef006798.clmodelindex = FALSE;
                 globaldef006798.field000251 = FALSE;
             }
             

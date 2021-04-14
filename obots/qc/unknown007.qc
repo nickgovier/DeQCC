@@ -33,29 +33,29 @@
 void () func002639 = 
 {
     local entity globaldef008982;
-    globaldef008982 = globaldef000816;
+    globaldef008982 = firstClient;
     
     while(globaldef008982)
     {
         
-        if(globaldef008982.field000252 & globaldef000686)
+        if(globaldef008982.botflags & globaldef000686)
         {
             globaldef000785 = globaldef000785 - TRUE;
-            globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
+            globaldef008982.botflags = globaldef008982.botflags - globaldef000686;
         }
         
         globaldef008982 = globaldef008982.next;
     }
     
-    globaldef008982 = globaldef000817;
+    globaldef008982 = firstBot;
     
     while(globaldef008982)
     {
         
-        if(globaldef008982.field000252 & globaldef000686)
+        if(globaldef008982.botflags & globaldef000686)
         {
             globaldef000785 = globaldef000785 - TRUE;
-            globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
+            globaldef008982.botflags = globaldef008982.botflags - globaldef000686;
         }
         
         globaldef008982 = globaldef008982.next;

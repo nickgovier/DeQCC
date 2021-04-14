@@ -268,7 +268,7 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
     local vector globaldef002712;
     globaldef002704 = (globaldef002695 + globaldef002694.mins) - '50 50 50';
     globaldef002700 = (globaldef002695 + globaldef002694.maxs) + '50 50 50';
-    globaldef002699 = globaldef000816;
+    globaldef002699 = firstClient;
     
     while(globaldef002699)
     {
@@ -293,7 +293,7 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
         globaldef002699 = globaldef002699.next;
     }
     
-    globaldef002699 = globaldef000817;
+    globaldef002699 = firstBot;
     
     while(globaldef002699)
     {
@@ -347,7 +347,7 @@ entity (entity globaldef002718) func000350 =
     globaldef002720 = FALSE;
     do
     {
-        globaldef002719 = func000387();
+        globaldef002719 = SelectSpawnPoint();
         
         if(!func000349(globaldef002718, globaldef002719.origin))
         {
@@ -1519,7 +1519,7 @@ void (entity globaldef002791) rocket_arena_putclientinserver =
     self = globaldef002792;
 };
 
-entity () func000377;
+entity () FindIntermission;
 
 // rocket_arena_prethink
 // function begins at statement 10648, parm_start=8006
