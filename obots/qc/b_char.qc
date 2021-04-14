@@ -12030,128 +12030,128 @@ void (entity e) func002286 =
     rnd = floor(rnd * 21);
     if(rnd <= FALSE)
     {
-        BotEnterMessage(e, "hihi", BOTMESSAGETYPE_TELEFRAG);
+        BotEnterMessage1(e, "hihi", BOTMESSAGETYPE_TELEFRAG);
     }
     else
     {
         if(rnd <= TRUE)
         {
-            BotEnterMessage(e, "hehe", BOTMESSAGETYPE_TELEFRAG);
+            BotEnterMessage1(e, "hehe", BOTMESSAGETYPE_TELEFRAG);
         }
         else
         {
             if(rnd <= FL_SWIM)
             {
-                BotEnterMessage(e, "hahaha", BOTMESSAGETYPE_TELEFRAG);
+                BotEnterMessage1(e, "hahaha", BOTMESSAGETYPE_TELEFRAG);
             }
             else
             {
                 if(rnd <= MOVETYPE_WALK)
                 {
-                    BotEnterMessage(e, "I'll put you in backpack mode", BOTMESSAGETYPE_TELEFRAG);
+                    BotEnterMessage1(e, "I'll put you in backpack mode", BOTMESSAGETYPE_TELEFRAG);
                 }
                 else
                 {
                     if(rnd <= MOVETYPE_STEP)
                     {
-                        BotEnterMessage(e, "you're boring", BOTMESSAGETYPE_TELEFRAG);
+                        BotEnterMessage1(e, "you're boring", BOTMESSAGETYPE_TELEFRAG);
                     }
                     else
                     {
                         if(rnd <= MOVETYPE_FLY)
                         {
-                            BotEnterMessage(e, "you really suck at quake", BOTMESSAGETYPE_TELEFRAG);
+                            BotEnterMessage1(e, "you really suck at quake", BOTMESSAGETYPE_TELEFRAG);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_TOSS)
                             {
-                                BotEnterMessage(e, "let's rock", BOTMESSAGETYPE_TELEFRAG);
+                                BotEnterMessage1(e, "let's rock", BOTMESSAGETYPE_TELEFRAG);
                             }
                             else
                             {
                                 if(rnd <= MOVETYPE_PUSH)
                                 {
-                                    BotEnterMessage(e, "whoa!!", BOTMESSAGETYPE_TELEFRAG);
+                                    BotEnterMessage1(e, "whoa!!", BOTMESSAGETYPE_TELEFRAG);
                                 }
                                 else
                                 {
                                     if(rnd <= FL_CLIENT)
                                     {
-                                        BotEnterMessage(e, "let's play another game", BOTMESSAGETYPE_TELEFRAG);
+                                        BotEnterMessage1(e, "let's play another game", BOTMESSAGETYPE_TELEFRAG);
                                     }
                                     else
                                     {
                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                         {
-                                            BotEnterMessage(e, "I've had it for today", BOTMESSAGETYPE_TELEFRAG);
+                                            BotEnterMessage1(e, "I've had it for today", BOTMESSAGETYPE_TELEFRAG);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_BOUNCE)
                                             {
-                                                BotEnterMessage(e, "DUH!!!", BOTMESSAGETYPE_TELEFRAG);
+                                                BotEnterMessage1(e, "DUH!!!", BOTMESSAGETYPE_TELEFRAG);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                 {
-                                                    BotEnterMessage(e, ":)", BOTMESSAGETYPE_TELEFRAG);
+                                                    BotEnterMessage1(e, ":)", BOTMESSAGETYPE_TELEFRAG);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= BOTSHIRTPANTS_12)
                                                     {
-                                                        BotEnterMessage(e, "wow", BOTMESSAGETYPE_TELEFRAG);
+                                                        BotEnterMessage1(e, "wow", BOTMESSAGETYPE_TELEFRAG);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= BOTSHIRTPANTS_13)
                                                         {
-                                                            BotEnterMessage(e, "weeeee", BOTMESSAGETYPE_TELEFRAG);
+                                                            BotEnterMessage1(e, "weeeee", BOTMESSAGETYPE_TELEFRAG);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= 14)
                                                             {
-                                                                BotEnterMessage(e, "I'm on a roll", BOTMESSAGETYPE_TELEFRAG);
+                                                                BotEnterMessage1(e, "I'm on a roll", BOTMESSAGETYPE_TELEFRAG);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= GLOBALDEF748_15)
                                                                 {
-                                                                    BotEnterMessage(e, "this rocks", BOTMESSAGETYPE_TELEFRAG);
+                                                                    BotEnterMessage1(e, "this rocks", BOTMESSAGETYPE_TELEFRAG);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= FL_INWATER)
                                                                     {
-                                                                        BotEnterMessage(e, "aaah", BOTMESSAGETYPE_TELEFRAG);
+                                                                        BotEnterMessage1(e, "aaah", BOTMESSAGETYPE_TELEFRAG);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= 17)
                                                                         {
-                                                                            BotEnterMessage(e, "groovy", BOTMESSAGETYPE_TELEFRAG);
+                                                                            BotEnterMessage1(e, "groovy", BOTMESSAGETYPE_TELEFRAG);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= 18)
                                                                             {
-                                                                                BotEnterMessage(e, "grrrrr", BOTMESSAGETYPE_TELEFRAG);
+                                                                                BotEnterMessage1(e, "grrrrr", BOTMESSAGETYPE_TELEFRAG);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= 19)
                                                                                 {
-                                                                                    BotEnterMessage(e, "!!", BOTMESSAGETYPE_TELEFRAG);
+                                                                                    BotEnterMessage1(e, "!!", BOTMESSAGETYPE_TELEFRAG);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= 20)
                                                                                     {
-                                                                                        BotEnterMessage(e, "nice!", BOTMESSAGETYPE_TELEFRAG);
+                                                                                        BotEnterMessage1(e, "nice!", BOTMESSAGETYPE_TELEFRAG);
                                                                                     }
                                                                                     
                                                                                 }

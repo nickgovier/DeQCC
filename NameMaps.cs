@@ -2447,7 +2447,7 @@ namespace DeQcc
 
             #region b_talk.qc
 
-            nameMap.Add("func002366", "BotEnterMessage");
+            nameMap.Add("func002366", "BotEnterMessage1");
             nameMap.Add("func002367", "BotEnterMessage2");
             nameMap.Add("func002368", "BotEnterMessage3");
             nameMap.Add("func002369", "BotStoreMessage");

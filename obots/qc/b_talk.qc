@@ -1,5 +1,5 @@
 
-// BotEnterMessage
+// BotEnterMessage1
 // function begins at statement 36080, parm_start=19709
 // OP_STORE_V	19712	4	0
 // OP_LOAD_S	19709	180	19713
@@ -11,7 +11,7 @@
 // OP_STORE_ENT	19709	830	0
 // OP_STORE_F	19711	820	0
 // OP_DONE	0	0	0
-void (entity e, string str1, float mnr) BotEnterMessage = 
+void (entity e, string str1, float mnr) BotEnterMessage1 = 
 {
     bprint5("", e.netname, ": ", str1, "\n");
     lastBotToTalk = e;
@@ -456,7 +456,7 @@ void (entity e) BotEnterMessage =
         }
         else
         {
-            BotEnterMessage(e, e.messagestr1, e.messagenr);
+            BotEnterMessage1(e, e.messagestr1, e.messagenr);
         }
         
     }

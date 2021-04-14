@@ -1007,7 +1007,7 @@ row,name,s_name,ofs,type,typename
 1005,func002364,0,1067,6,void()
 1006,CycleClientCamera,0,1068,6,void()
 1007,func002356,0,1069,6,void()
-1008,BotEnterMessage,0,1070,6,void()
+1008,BotEnterMessage1,0,1070,6,void()
 1009,BotEnterMessage2,0,1071,6,void()
 1010,BotEnterMessage3,0,1072,6,void()
 1011,BotStoreMessage,0,1073,6,void()

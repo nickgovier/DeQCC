@@ -69,7 +69,7 @@ void (entity globaldef006790) func002359;
 void (entity globaldef006797) func002364;
 void (entity globaldef006785) CycleClientCamera;
 void (entity globaldef006779) func002356;
-void (entity e, string str1, float mnr) BotEnterMessage;
+void (entity e, string str1, float mnr) BotEnterMessage1;
 void (entity e, string str1, string str2, float mnr) BotEnterMessage2;
 void (entity e, string str1, string str2, string str3, float mnr) BotEnterMessage3;
 void (entity e, string str1, float mnr, float mtime) BotStoreMessage;
