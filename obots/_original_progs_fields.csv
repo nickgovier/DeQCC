@@ -290,12 +290,12 @@ row,name,s_name,ofs,type,typename
 288,field000288,0,258,2,float
 289,field000289,0,259,2,float
 290,field000290,0,260,4,entity
-291,field000291,0,261,1,string
-292,field000292,0,262,1,string
-293,field000293,0,263,1,string
-294,field000294,0,264,2,float
+291,messagestr1,0,261,1,string
+292,messagestr2,0,262,1,string
+293,messagestr3,0,263,1,string
+294,messagenr,0,264,2,float
 295,field000295,0,265,4,entity
-296,field000296,0,266,4,entity
+296,attackedby,0,266,4,entity
 297,next,0,267,4,entity
 298,prev,0,268,4,entity
 299,field000299,0,269,4,entity

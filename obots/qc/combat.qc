@@ -273,7 +273,7 @@ void (entity targ, entity attacker) Killed =
     
     if(self)
     {
-        self.field000296 = attacker;
+        self.attackedby = attacker;
     }
     
     self.takedamage = DAMAGE_NO;

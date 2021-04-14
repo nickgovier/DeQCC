@@ -142,7 +142,7 @@ void () RemoveOneDeathmatchBot =
     
     if(globaldef007122)
     {
-        func002376(globaldef007122);
+        CheckBotExitMessage(globaldef007122);
         func002417(globaldef007122);
     }
     

@@ -379,6 +379,9 @@ namespace DeQcc
             nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
 
+            nameMap.Add("globaldef000803", "lastBotMessageNr");    // b_talk.qc
+            nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
+
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
 
             nameMap.Add("globaldef000816", "firstClient");
@@ -392,8 +395,14 @@ namespace DeQcc
             nameMap.Add("field000286", "botnumber");  // b_char.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
 
-            nameMap.Add("field000297", "next");
+            nameMap.Add("field000291", "messagestr1");
+            nameMap.Add("field000292", "messagestr2");
+            nameMap.Add("field000293", "messagestr3");
+            nameMap.Add("field000294", "messagenr");
+
             
+            nameMap.Add("field000296", "attackedby");
+            nameMap.Add("field000297", "next");
 
             // Note that b_func.qc, all the function definitions
             // is decompiled to the top of the next file
@@ -2154,10 +2163,30 @@ namespace DeQcc
             // Declarations
             for(int i = 5782; i <= 5805; i++) { nameMap.Add("globaldef00" + i.ToString(), "BOT" + (i-5782).ToString()); }
 
+            nameMap.Add("globaldef005806", "BOTMESSAGETYPE_NEVERUSED");
+            nameMap.Add("globaldef005807", "BOTMESSAGETYPE_EXIT");
+            nameMap.Add("globaldef005808", "BOTMESSAGETYPE_KILL");
+            nameMap.Add("globaldef005809", "BOTMESSAGETYPE_DEATH");
+            nameMap.Add("globaldef005810", "BOTMESSAGE_4");
+            nameMap.Add("globaldef005811", "BOTMESSAGE_5");
+            nameMap.Add("globaldef005812", "BOTMESSAGETYPE_TELEFRAG");
+            nameMap.Add("globaldef005813", "BOTMESSAGE_7");
+            nameMap.Add("globaldef005814", "BOTMESSAGE_8");
+            nameMap.Add("globaldef005815", "BOTMESSAGE_9");
+
+            nameMap.Add("globaldef005816", "BOTMESSAGEOPTION_1");
+            nameMap.Add("globaldef005817", "BOTMESSAGEOPTION_2");
+            nameMap.Add("globaldef005818", "BOTMESSAGEOPTION_3");
+            nameMap.Add("globaldef005819", "BOTMESSAGEOPTION_4");
+
+
             nameMap.Add("func002278", "BotName");
             nameMap.Add("func002279", "BotConsoleName");
             nameMap.Add("func002280", "BotShirtPantsColor");
             nameMap.Add("func002281", "BotChooseExitMessage");
+            nameMap.Add("func002282", "BotChooseKillMessage");
+            nameMap.Add("func002283", "BotChooseDeathMessage");
+            //nameMap.Add("func002286", "BotChooseRandomMessage");
 
             for (int i = 2278; i <= 2286; i++)
             {
@@ -2179,6 +2208,39 @@ namespace DeQcc
             // BotChooseExitMessage locals
             nameMap.Add("globaldef005873", "rnd");
 
+            // BotChooseKillMessage params
+            nameMap.Add("globaldef005898", "e");
+
+            // BotChooseKillMessage locals
+            nameMap.Add("globaldef005899", "rnd");
+            nameMap.Add("globaldef005900", "enemy_name");
+
+            // BotChooseDeathMessage params
+            nameMap.Add("globaldef006020", "e");
+
+            // BotChooseDeathMessage locals
+            nameMap.Add("globaldef006021", "rnd");
+            nameMap.Add("globaldef006022", "enemy_name");
+
+            // ? params
+            nameMap.Add("globaldef006144", "e");
+
+            // ? locals
+            nameMap.Add("globaldef006145", "rnd");
+            nameMap.Add("globaldef006146", "choice");
+            nameMap.Add("globaldef006147", "name");
+
+            // BotChooseTelefragMessage params
+            nameMap.Add("globaldef006464", "e");
+
+            // BotChooseTelefragMessage locals
+            nameMap.Add("globaldef006465", "rnd");
+
+            // ? params
+            nameMap.Add("globaldef006474", "e");
+
+            // ? locals
+            nameMap.Add("globaldef006475", "rnd");
 
             #endregion
 
@@ -2380,6 +2442,96 @@ namespace DeQcc
             {
                 fileMap[i] = "b_observ.qc";
             }
+
+            #endregion
+
+            #region b_talk.qc
+
+            nameMap.Add("func002366", "BotEnterMessage");
+            nameMap.Add("func002367", "BotEnterMessage2");
+            nameMap.Add("func002368", "BotEnterMessage3");
+            nameMap.Add("func002369", "BotStoreMessage");
+            nameMap.Add("func002370", "BotStoreMessage2");
+            nameMap.Add("func002371", "BotStoreMessage3");
+            nameMap.Add("func002372", "RandomNameExcept");
+            nameMap.Add("func002373", "ObserverName");
+            nameMap.Add("func002374", "BotRemoveMessage");
+            nameMap.Add("func002375", "BotEnterMessage");
+            nameMap.Add("func002376", "CheckBotExitMessage");
+            nameMap.Add("func002377", "CheckBotDeathMessage");
+            nameMap.Add("func002378", "CheckBotKillMessage");
+
+            for (int i = 2366; i <= 2380; i++)
+            {
+                fileMap[i] = "b_talk.qc";
+            }
+
+            // BotEnterMessage params
+            nameMap.Add("globaldef006801", "e");
+            nameMap.Add("globaldef006802", "str1");
+            nameMap.Add("globaldef006803", "mnr");
+
+            // BotEnterMessage2 params
+            nameMap.Add("globaldef006806", "e");
+            nameMap.Add("globaldef006807", "str1");
+            nameMap.Add("globaldef006808", "str2");
+            nameMap.Add("globaldef006809", "mnr");
+
+            // BotEnterMessage3 params
+            nameMap.Add("globaldef006810", "e");
+            nameMap.Add("globaldef006811", "str1");
+            nameMap.Add("globaldef006812", "str2");
+            nameMap.Add("globaldef006813", "str3");
+            nameMap.Add("globaldef006814", "mnr");
+
+            // BotStoreMessage params
+            nameMap.Add("globaldef006815", "e");
+            nameMap.Add("globaldef006816", "str1");
+            nameMap.Add("globaldef006817", "mnr");
+            nameMap.Add("globaldef006818", "mtime");
+
+            // BotStoreMessage2 params
+            nameMap.Add("globaldef006819", "e");
+            nameMap.Add("globaldef006820", "str1");
+            nameMap.Add("globaldef006821", "str2");
+            nameMap.Add("globaldef006822", "mnr");
+            nameMap.Add("globaldef006823", "mtime");
+
+            // BotStoreMessage3 params
+            nameMap.Add("globaldef006824", "e");
+            nameMap.Add("globaldef006825", "str1");
+            nameMap.Add("globaldef006826", "str2");
+            nameMap.Add("globaldef006827", "str3");
+            nameMap.Add("globaldef006828", "mnr");
+            nameMap.Add("globaldef006829", "mtime");
+
+            // RandomNameExcept params
+            nameMap.Add("globaldef006830", "e");
+
+            // RandomNameExcept locals
+            nameMap.Add("globaldef006831", "count");
+            nameMap.Add("globaldef006832", "rnd");
+            nameMap.Add("globaldef006833", "plr_ent");
+
+            // ObserverName locals
+            nameMap.Add("globaldef006835", "count");
+            nameMap.Add("globaldef006836", "rnd");
+            nameMap.Add("globaldef006837", "obs_ent");
+
+            // BotRemoveMessage params
+            nameMap.Add("globaldef006839", "e");
+
+            // BotEnterMessage params
+            nameMap.Add("globaldef006840", "e");
+
+            // CheckBotExitMessage params
+            nameMap.Add("globaldef006841", "bot");
+
+            // CheckBotDeathMessage params
+            nameMap.Add("globaldef006842", "bot");
+
+            // CheckBotKillMessage params
+            nameMap.Add("globaldef006843", "bot");
 
             #endregion
 

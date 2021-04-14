@@ -22,20 +22,20 @@ float BOT20 = 20;
 float BOT21 = 21;
 float BOT22 = 22;
 float BOT23 = 23;
-float globaldef005806;
-float globaldef005807;
-float globaldef005808;
-float globaldef005809;
-float globaldef005810;
-float globaldef005811;
-float globaldef005812;
-float globaldef005813;
-float globaldef005814;
-float globaldef005815;
-float globaldef005816;
-float globaldef005817;
-float globaldef005818;
-float globaldef005819;
+float BOTMESSAGETYPE_NEVERUSED = 0;
+float BOTMESSAGETYPE_EXIT = 1;
+float BOTMESSAGETYPE_KILL = 2;
+float BOTMESSAGETYPE_DEATH = 3;
+float BOTMESSAGE_4 = 4;
+float BOTMESSAGE_5 = 5;
+float BOTMESSAGETYPE_TELEFRAG = 6;
+float BOTMESSAGE_7 = 7;
+float BOTMESSAGE_8 = 8;
+float BOTMESSAGE_9 = 9;
+float BOTMESSAGEOPTION_1 = 1;
+float BOTMESSAGEOPTION_2 = 2;
+float BOTMESSAGEOPTION_3 = 3;
+float BOTMESSAGEOPTION_4 = 0;
 
 // BotName
 // function begins at statement 27984, parm_start=16708
@@ -1355,7 +1355,7 @@ void (entity e) BotChooseExitMessage =
         
         if(rnd <= FALSE)
         {
-            func002369(e, "Qapla'", globaldef005807, FALSE);
+            BotStoreMessage(e, "Qapla'", BOTMESSAGETYPE_EXIT, FALSE);
         }
         
     }
@@ -1367,7 +1367,7 @@ void (entity e) BotChooseExitMessage =
             
             if(rnd <= FALSE)
             {
-                func002369(e, "bye, I'm going back to work", globaldef005807, FALSE);
+                BotStoreMessage(e, "bye, I'm going back to work", BOTMESSAGETYPE_EXIT, FALSE);
             }
             
         }
@@ -1379,7 +1379,7 @@ void (entity e) BotChooseExitMessage =
                 
                 if(rnd <= FALSE)
                 {
-                    func002369(e, "cya", globaldef005807, FALSE);
+                    BotStoreMessage(e, "cya", BOTMESSAGETYPE_EXIT, FALSE);
                 }
                 
             }
@@ -1391,7 +1391,7 @@ void (entity e) BotChooseExitMessage =
                     
                     if(rnd <= FALSE)
                     {
-                        func002369(e, "Keep on smiling", globaldef005807, FALSE);
+                        BotStoreMessage(e, "Keep on smiling", BOTMESSAGETYPE_EXIT, FALSE);
                     }
                     
                 }
@@ -1403,7 +1403,7 @@ void (entity e) BotChooseExitMessage =
                         
                         if(rnd <= FALSE)
                         {
-                            func002369(e, "Hasta La Vista", globaldef005807, FALSE);
+                            BotStoreMessage(e, "Hasta La Vista", BOTMESSAGETYPE_EXIT, FALSE);
                         }
                         
                     }
@@ -1415,7 +1415,7 @@ void (entity e) BotChooseExitMessage =
                             
                             if(rnd <= FALSE)
                             {
-                                func002369(e, "C U L8TER", globaldef005807, FALSE);
+                                BotStoreMessage(e, "C U L8TER", BOTMESSAGETYPE_EXIT, FALSE);
                             }
                             
                         }
@@ -1427,7 +1427,7 @@ void (entity e) BotChooseExitMessage =
                                 
                                 if(rnd <= FALSE)
                                 {
-                                    func002369(e, "gotta go", globaldef005807, FALSE);
+                                    BotStoreMessage(e, "gotta go", BOTMESSAGETYPE_EXIT, FALSE);
                                 }
                                 
                             }
@@ -1439,7 +1439,7 @@ void (entity e) BotChooseExitMessage =
                                     
                                     if(rnd <= FALSE)
                                     {
-                                        func002369(e, "take it!!! I'm leaving", globaldef005807, FALSE);
+                                        BotStoreMessage(e, "take it!!! I'm leaving", BOTMESSAGETYPE_EXIT, FALSE);
                                     }
                                     
                                 }
@@ -1451,7 +1451,7 @@ void (entity e) BotChooseExitMessage =
                                         
                                         if(rnd <= FALSE)
                                         {
-                                            func002369(e, "Ciao motha's", globaldef005807, FALSE);
+                                            BotStoreMessage(e, "Ciao motha's", BOTMESSAGETYPE_EXIT, FALSE);
                                         }
                                         
                                     }
@@ -1463,7 +1463,7 @@ void (entity e) BotChooseExitMessage =
                                             
                                             if(rnd <= FALSE)
                                             {
-                                                func002369(e, "later dudes", globaldef005807, FALSE);
+                                                BotStoreMessage(e, "later dudes", BOTMESSAGETYPE_EXIT, FALSE);
                                             }
                                             
                                         }
@@ -1475,7 +1475,7 @@ void (entity e) BotChooseExitMessage =
                                                 
                                                 if(rnd <= FALSE)
                                                 {
-                                                    func002369(e, "I'm going off duty", globaldef005807, FALSE);
+                                                    BotStoreMessage(e, "I'm going off duty", BOTMESSAGETYPE_EXIT, FALSE);
                                                 }
                                                 
                                             }
@@ -1487,7 +1487,7 @@ void (entity e) BotChooseExitMessage =
                                                     
                                                     if(rnd <= FALSE)
                                                     {
-                                                        func002369(e, "must go and kill 007", globaldef005807, FALSE);
+                                                        BotStoreMessage(e, "must go and kill 007", BOTMESSAGETYPE_EXIT, FALSE);
                                                     }
                                                     
                                                 }
@@ -1499,7 +1499,7 @@ void (entity e) BotChooseExitMessage =
                                                         
                                                         if(rnd <= FALSE)
                                                         {
-                                                            func002369(e, "I'm chillin' out", globaldef005807, FALSE);
+                                                            BotStoreMessage(e, "I'm chillin' out", BOTMESSAGETYPE_EXIT, FALSE);
                                                         }
                                                         
                                                     }
@@ -1511,7 +1511,7 @@ void (entity e) BotChooseExitMessage =
                                                             
                                                             if(rnd <= FALSE)
                                                             {
-                                                                func002369(e, "I shall now go and fight crime elsewhere", globaldef005807, FALSE);
+                                                                BotStoreMessage(e, "I shall now go and fight crime elsewhere", BOTMESSAGETYPE_EXIT, FALSE);
                                                             }
                                                             
                                                         }
@@ -1523,7 +1523,7 @@ void (entity e) BotChooseExitMessage =
                                                                 
                                                                 if(rnd <= FALSE)
                                                                 {
-                                                                    func002369(e, "gotta cruise", globaldef005807, FALSE);
+                                                                    BotStoreMessage(e, "gotta cruise", BOTMESSAGETYPE_EXIT, FALSE);
                                                                 }
                                                                 
                                                             }
@@ -1535,7 +1535,7 @@ void (entity e) BotChooseExitMessage =
                                                                     
                                                                     if(rnd <= FALSE)
                                                                     {
-                                                                        func002369(e, "see you in hell", globaldef005807, FALSE);
+                                                                        BotStoreMessage(e, "see you in hell", BOTMESSAGETYPE_EXIT, FALSE);
                                                                     }
                                                                     
                                                                 }
@@ -1547,7 +1547,7 @@ void (entity e) BotChooseExitMessage =
                                                                         
                                                                         if(rnd <= MOVETYPE_FLY)
                                                                         {
-                                                                            func002369(e, "going offline", globaldef005807, FALSE);
+                                                                            BotStoreMessage(e, "going offline", BOTMESSAGETYPE_EXIT, FALSE);
                                                                         }
                                                                         
                                                                     }
@@ -1559,7 +1559,7 @@ void (entity e) BotChooseExitMessage =
                                                                             
                                                                             if(rnd <= FALSE)
                                                                             {
-                                                                                func002369(e, "See y'all later", globaldef005807, FALSE);
+                                                                                BotStoreMessage(e, "See y'all later", BOTMESSAGETYPE_EXIT, FALSE);
                                                                             }
                                                                             
                                                                         }
@@ -1571,7 +1571,7 @@ void (entity e) BotChooseExitMessage =
                                                                                 
                                                                                 if(rnd <= FALSE)
                                                                                 {
-                                                                                    func002369(e, "I'm out", globaldef005807, FALSE);
+                                                                                    BotStoreMessage(e, "I'm out", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                 }
                                                                                 
                                                                             }
@@ -1583,7 +1583,7 @@ void (entity e) BotChooseExitMessage =
                                                                                     
                                                                                     if(rnd <= FALSE)
                                                                                     {
-                                                                                        func002369(e, "Goodbye", globaldef005807, FALSE);
+                                                                                        BotStoreMessage(e, "Goodbye", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                     }
                                                                                     
                                                                                 }
@@ -1595,7 +1595,7 @@ void (entity e) BotChooseExitMessage =
                                                                                         
                                                                                         if(rnd <= FALSE)
                                                                                         {
-                                                                                            func002369(e, "See you all later,.. boys", globaldef005807, FALSE);
+                                                                                            BotStoreMessage(e, "See you all later,.. boys", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                         }
                                                                                         
                                                                                     }
@@ -1607,7 +1607,7 @@ void (entity e) BotChooseExitMessage =
                                                                                             
                                                                                             if(rnd <= FALSE)
                                                                                             {
-                                                                                                func002369(e, "Gotta punish some real humans", globaldef005807, FALSE);
+                                                                                                BotStoreMessage(e, "Gotta punish some real humans", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                             }
                                                                                             
                                                                                         }
@@ -1619,7 +1619,7 @@ void (entity e) BotChooseExitMessage =
                                                                                                 
                                                                                                 if(rnd <= FALSE)
                                                                                                 {
-                                                                                                    func002369(e, "has left the building!", globaldef005807, FALSE);
+                                                                                                    BotStoreMessage(e, "has left the building!", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                                 }
                                                                                                 
                                                                                             }
@@ -1632,7 +1632,7 @@ void (entity e) BotChooseExitMessage =
                                                                                                     
                                                                                                     if(rnd <= FALSE)
                                                                                                     {
-                                                                                                        func002369(e, "Till fate brings us together again", globaldef005807, FALSE);
+                                                                                                        BotStoreMessage(e, "Till fate brings us together again", BOTMESSAGETYPE_EXIT, FALSE);
                                                                                                     }
                                                                                                     
                                                                                                 }
@@ -1686,7 +1686,7 @@ void (entity e) BotChooseExitMessage =
 };
 
 
-// func002282
+// BotChooseKillMessage
 // function begins at statement 28690, parm_start=17004
 // OP_LOAD_ENT	17004	618	17007
 // OP_LOAD_S	17007	180	17008
@@ -2800,43 +2800,43 @@ void (entity e) BotChooseExitMessage =
 // OP_STORE_V	216	13	0
 // OP_CALL4	1073	0	0
 // OP_DONE	0	0	0
-void (entity globaldef005898) func002282 = 
+void (entity e) BotChooseKillMessage = 
 {
-    local float globaldef005899;
-    local string globaldef005900;
-    globaldef005900 = globaldef005898.field000295.netname;
-    globaldef005899 = random();
-    if(globaldef005898.botnumber == BOT23)
+    local float rnd;
+    local string enemy_name;
+    enemy_name = e.field000295.netname;
+    rnd = random();
+    if(e.botnumber == BOT23)
     {
-        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-        if(globaldef005899 <= FALSE)
+        rnd = floor(rnd * MOVETYPE_FLY);
+        if(rnd <= FALSE)
         {
-            func002369(globaldef005898, "batlh Daqawlu'taH", globaldef005808, FL_SWIM);
+            BotStoreMessage(e, "batlh Daqawlu'taH", BOTMESSAGETYPE_KILL, FL_SWIM);
         }
         else
         {
-            if(globaldef005899 <= TRUE)
+            if(rnd <= TRUE)
             {
-                func002369(globaldef005898, "petaQ", globaldef005808, TRUE);
+                BotStoreMessage(e, "petaQ", BOTMESSAGETYPE_KILL, TRUE);
             }
             else
             {
-                if(globaldef005899 <= FL_SWIM)
+                if(rnd <= FL_SWIM)
                 {
-                    func002369(globaldef005898, "ghay'cha'", globaldef005808, TRUE);
+                    BotStoreMessage(e, "ghay'cha'", BOTMESSAGETYPE_KILL, TRUE);
                 }
                 else
                 {
-                    if(globaldef005899 <= MOVETYPE_WALK)
+                    if(rnd <= MOVETYPE_WALK)
                     {
-                        func002369(globaldef005898, "taHqeq", globaldef005808, TRUE);
+                        BotStoreMessage(e, "taHqeq", BOTMESSAGETYPE_KILL, TRUE);
                     }
                     else
                     {
                         
-                        if(globaldef005899 <= MOVETYPE_STEP)
+                        if(rnd <= MOVETYPE_STEP)
                         {
-                            func002369(globaldef005898, "Hu'tegh", globaldef005808, TRUE);
+                            BotStoreMessage(e, "Hu'tegh", BOTMESSAGETYPE_KILL, TRUE);
                         }
                         
                     }
@@ -2850,37 +2850,37 @@ void (entity globaldef005898) func002282 =
     }
     else
     {
-        if(globaldef005898.botnumber == BOT1)
+        if(e.botnumber == BOT1)
         {
-            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-            if(globaldef005899 <= FALSE)
+            rnd = floor(rnd * MOVETYPE_FLY);
+            if(rnd <= FALSE)
             {
-                func002369(globaldef005898, "You should practice more often", globaldef005808, MOVETYPE_WALK);
+                BotStoreMessage(e, "You should practice more often", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
             }
             else
             {
-                if(globaldef005899 <= TRUE)
+                if(rnd <= TRUE)
                 {
-                    func002369(globaldef005898, "DOOM! DOOM! DOOM!", globaldef005808, FL_SWIM);
+                    BotStoreMessage(e, "DOOM! DOOM! DOOM!", BOTMESSAGETYPE_KILL, FL_SWIM);
                 }
                 else
                 {
-                    if(globaldef005899 <= FL_SWIM)
+                    if(rnd <= FL_SWIM)
                     {
-                        func002370(globaldef005898, "Jeeez! Ever heard about strafing, ", globaldef005900, globaldef005808, MOVETYPE_WALK);
+                        BotStoreMessage2(e, "Jeeez! Ever heard about strafing, ", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                     }
                     else
                     {
-                        if(globaldef005899 <= MOVETYPE_WALK)
+                        if(rnd <= MOVETYPE_WALK)
                         {
-                            func002370(globaldef005898, globaldef005900, ", you should move faster", globaldef005808, MOVETYPE_STEP);
+                            BotStoreMessage2(e, enemy_name, ", you should move faster", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                         }
                         else
                         {
                             
-                            if(globaldef005899 <= MOVETYPE_STEP)
+                            if(rnd <= MOVETYPE_STEP)
                             {
-                                func002369(globaldef005898, "I was born ready", globaldef005808, FL_SWIM);
+                                BotStoreMessage(e, "I was born ready", BOTMESSAGETYPE_KILL, FL_SWIM);
                             }
                             
                         }
@@ -2894,37 +2894,37 @@ void (entity globaldef005898) func002282 =
         }
         else
         {
-            if(globaldef005898.botnumber == BOT2)
+            if(e.botnumber == BOT2)
             {
-                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                if(globaldef005899 <= FALSE)
+                rnd = floor(rnd * MOVETYPE_FLY);
+                if(rnd <= FALSE)
                 {
-                    func002369(globaldef005898, "Microsoft wins again", globaldef005808, FL_SWIM);
+                    BotStoreMessage(e, "Microsoft wins again", BOTMESSAGETYPE_KILL, FL_SWIM);
                 }
                 else
                 {
-                    if(globaldef005899 <= TRUE)
+                    if(rnd <= TRUE)
                     {
-                        func002369(globaldef005898, "That's what happens to software pirates!", globaldef005808, MOVETYPE_STEP);
+                        BotStoreMessage(e, "That's what happens to software pirates!", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                     }
                     else
                     {
-                        if(globaldef005899 <= FL_SWIM)
+                        if(rnd <= FL_SWIM)
                         {
-                            func002369(globaldef005898, "You will go the Commodore way!", globaldef005808, MOVETYPE_WALK);
+                            BotStoreMessage(e, "You will go the Commodore way!", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                         }
                         else
                         {
-                            if(globaldef005899 <= MOVETYPE_WALK)
+                            if(rnd <= MOVETYPE_WALK)
                             {
-                                func002369(globaldef005898, "IE 4.0 anyone? One million bucks apiece.", globaldef005808, MOVETYPE_STEP);
+                                BotStoreMessage(e, "IE 4.0 anyone? One million bucks apiece.", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                             }
                             else
                             {
                                 
-                                if(globaldef005899 <= MOVETYPE_STEP)
+                                if(rnd <= MOVETYPE_STEP)
                                 {
-                                    func002369(globaldef005898, "Now if you upgraded your windows...", globaldef005808, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Now if you upgraded your windows...", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                 }
                                 
                             }
@@ -2938,37 +2938,37 @@ void (entity globaldef005898) func002282 =
             }
             else
             {
-                if(globaldef005898.botnumber == BOT3)
+                if(e.botnumber == BOT3)
                 {
-                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                    if(globaldef005899 <= FALSE)
+                    rnd = floor(rnd * MOVETYPE_FLY);
+                    if(rnd <= FALSE)
                     {
-                        func002369(globaldef005898, "If you're not happy, you're a backpack", globaldef005808, MOVETYPE_STEP);
+                        BotStoreMessage(e, "If you're not happy, you're a backpack", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                     }
                     else
                     {
-                        if(globaldef005899 <= TRUE)
+                        if(rnd <= TRUE)
                         {
-                            func002369(globaldef005898, "service with a smile", globaldef005808, MOVETYPE_WALK);
+                            BotStoreMessage(e, "service with a smile", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                         }
                         else
                         {
-                            if(globaldef005899 <= FL_SWIM)
+                            if(rnd <= FL_SWIM)
                             {
-                                func002369(globaldef005898, "die with a smile!", globaldef005808, FL_SWIM);
+                                BotStoreMessage(e, "die with a smile!", BOTMESSAGETYPE_KILL, FL_SWIM);
                             }
                             else
                             {
-                                if(globaldef005899 <= MOVETYPE_WALK)
+                                if(rnd <= MOVETYPE_WALK)
                                 {
-                                    func002369(globaldef005898, "That was fun...lets do it again!", globaldef005808, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "That was fun...lets do it again!", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                 }
                                 else
                                 {
                                     
-                                    if(globaldef005899 <= MOVETYPE_STEP)
+                                    if(rnd <= MOVETYPE_STEP)
                                     {
-                                        func002369(globaldef005898, "Brag...brag...brag...", globaldef005808, FL_SWIM);
+                                        BotStoreMessage(e, "Brag...brag...brag...", BOTMESSAGETYPE_KILL, FL_SWIM);
                                     }
                                     
                                 }
@@ -2982,31 +2982,31 @@ void (entity globaldef005898) func002282 =
                 }
                 else
                 {
-                    if(globaldef005898.botnumber == BOT4)
+                    if(e.botnumber == BOT4)
                     {
-                        globaldef005899 = floor(globaldef005899 * MOVETYPE_STEP);
-                        if(globaldef005899 <= FALSE)
+                        rnd = floor(rnd * MOVETYPE_STEP);
+                        if(rnd <= FALSE)
                         {
-                            func002371(globaldef005898, "hey ", globaldef005900, ", better luck next time", globaldef005808, MOVETYPE_STEP);
+                            BotStoreMessage3(e, "hey ", enemy_name, ", better luck next time", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                         }
                         else
                         {
-                            if(globaldef005899 <= TRUE)
+                            if(rnd <= TRUE)
                             {
-                                func002369(globaldef005898, "Maggot-brain", globaldef005808, FL_SWIM);
+                                BotStoreMessage(e, "Maggot-brain", BOTMESSAGETYPE_KILL, FL_SWIM);
                             }
                             else
                             {
-                                if(globaldef005899 <= FL_SWIM)
+                                if(rnd <= FL_SWIM)
                                 {
-                                    func002369(globaldef005898, "I want your boots, your clothes and your bike", globaldef005808, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "I want your boots, your clothes and your bike", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                 }
                                 else
                                 {
                                     
-                                    if(globaldef005899 <= MOVETYPE_WALK)
+                                    if(rnd <= MOVETYPE_WALK)
                                     {
-                                        func002369(globaldef005898, "Another John Doe eats the dust", globaldef005808, MOVETYPE_WALK);
+                                        BotStoreMessage(e, "Another John Doe eats the dust", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                     }
                                     
                                 }
@@ -3018,43 +3018,43 @@ void (entity globaldef005898) func002282 =
                     }
                     else
                     {
-                        if(globaldef005898.botnumber == BOT5)
+                        if(e.botnumber == BOT5)
                         {
-                            globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
-                            if(globaldef005899 <= FALSE)
+                            rnd = floor(rnd * MOVETYPE_TOSS);
+                            if(rnd <= FALSE)
                             {
-                                func002370(globaldef005898, "It's always fun playing with ", globaldef005900, globaldef005808, MOVETYPE_WALK);
+                                BotStoreMessage2(e, "It's always fun playing with ", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                             }
                             else
                             {
-                                if(globaldef005899 <= TRUE)
+                                if(rnd <= TRUE)
                                 {
-                                    func002369(globaldef005898, "Sticks and stones....", globaldef005808, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Sticks and stones....", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                 }
                                 else
                                 {
-                                    if(globaldef005899 <= FL_SWIM)
+                                    if(rnd <= FL_SWIM)
                                     {
-                                        func002370(globaldef005898, "beddy bye time for ,", globaldef005900, globaldef005808, MOVETYPE_WALK);
+                                        BotStoreMessage2(e, "beddy bye time for ,", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                     }
                                     else
                                     {
-                                        if(globaldef005899 <= MOVETYPE_WALK)
+                                        if(rnd <= MOVETYPE_WALK)
                                         {
-                                            func002369(globaldef005898, "A happy friend is a dead friend", globaldef005808, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "A happy friend is a dead friend", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                         }
                                         else
                                         {
-                                            if(globaldef005899 <= MOVETYPE_STEP)
+                                            if(rnd <= MOVETYPE_STEP)
                                             {
-                                                func002369(globaldef005898, "Tigger Clan is the best!!", globaldef005808, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "Tigger Clan is the best!!", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                             }
                                             else
                                             {
                                                 
-                                                if(globaldef005899 <= MOVETYPE_FLY)
+                                                if(rnd <= MOVETYPE_FLY)
                                                 {
-                                                    func002369(globaldef005898, "Tigger is :)", globaldef005808, FL_SWIM);
+                                                    BotStoreMessage(e, "Tigger is :)", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                 }
                                                 
                                             }
@@ -3070,37 +3070,37 @@ void (entity globaldef005898) func002282 =
                         }
                         else
                         {
-                            if(globaldef005898.botnumber == BOT6)
+                            if(e.botnumber == BOT6)
                             {
-                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                if(globaldef005899 <= FALSE)
+                                rnd = floor(rnd * MOVETYPE_FLY);
+                                if(rnd <= FALSE)
                                 {
-                                    func002370(globaldef005898, "watch yer back next time ", globaldef005900, globaldef005808, MOVETYPE_WALK);
+                                    BotStoreMessage2(e, "watch yer back next time ", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                 }
                                 else
                                 {
-                                    if(globaldef005899 <= TRUE)
+                                    if(rnd <= TRUE)
                                     {
-                                        func002369(globaldef005898, "Reload!!! Reload!!!", globaldef005808, FL_SWIM);
+                                        BotStoreMessage(e, "Reload!!! Reload!!!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                     }
                                     else
                                     {
-                                        if(globaldef005899 <= FL_SWIM)
+                                        if(rnd <= FL_SWIM)
                                         {
-                                            func002369(globaldef005898, "I shall henceforth be called Metallica-man", globaldef005808, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "I shall henceforth be called Metallica-man", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                         }
                                         else
                                         {
-                                            if(globaldef005899 <= MOVETYPE_WALK)
+                                            if(rnd <= MOVETYPE_WALK)
                                             {
-                                                func002369(globaldef005898, "Ironman with the iron-fist", globaldef005808, FL_SWIM);
+                                                BotStoreMessage(e, "Ironman with the iron-fist", BOTMESSAGETYPE_KILL, FL_SWIM);
                                             }
                                             else
                                             {
                                                 
-                                                if(globaldef005899 <= MOVETYPE_STEP)
+                                                if(rnd <= MOVETYPE_STEP)
                                                 {
-                                                    func002369(globaldef005898, "Whazoom, and iron-man is victorious", globaldef005808, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "Whazoom, and iron-man is victorious", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                 }
                                                 
                                             }
@@ -3114,37 +3114,37 @@ void (entity globaldef005898) func002282 =
                             }
                             else
                             {
-                                if(globaldef005898.botnumber == BOT7)
+                                if(e.botnumber == BOT7)
                                 {
-                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                    if(globaldef005899 <= FALSE)
+                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                    if(rnd <= FALSE)
                                     {
-                                        func002370(globaldef005898, globaldef005900, " has a nice spine", globaldef005808, MOVETYPE_WALK);
+                                        BotStoreMessage2(e, enemy_name, " has a nice spine", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                     }
                                     else
                                     {
-                                        if(globaldef005899 <= TRUE)
+                                        if(rnd <= TRUE)
                                         {
-                                            func002369(globaldef005898, "Just one more head, and I can go bowling", globaldef005808, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Just one more head, and I can go bowling", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                         }
                                         else
                                         {
-                                            if(globaldef005899 <= FL_SWIM)
+                                            if(rnd <= FL_SWIM)
                                             {
-                                                func002369(globaldef005898, "Bring yer daugther to the slaughter", globaldef005808, FL_SWIM);
+                                                BotStoreMessage(e, "Bring yer daugther to the slaughter", BOTMESSAGETYPE_KILL, FL_SWIM);
                                             }
                                             else
                                             {
-                                                if(globaldef005899 <= MOVETYPE_WALK)
+                                                if(rnd <= MOVETYPE_WALK)
                                                 {
-                                                    func002369(globaldef005898, "Trophies, bring me more trophies", globaldef005808, FL_SWIM);
+                                                    BotStoreMessage(e, "Trophies, bring me more trophies", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                 }
                                                 else
                                                 {
                                                     
-                                                    if(globaldef005899 <= MOVETYPE_STEP)
+                                                    if(rnd <= MOVETYPE_STEP)
                                                     {
-                                                        func002369(globaldef005898, "Take that! (not the boy-pop-group)", globaldef005808, FL_SWIM);
+                                                        BotStoreMessage(e, "Take that! (not the boy-pop-group)", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                     }
                                                     
                                                 }
@@ -3158,37 +3158,37 @@ void (entity globaldef005898) func002282 =
                                 }
                                 else
                                 {
-                                    if(globaldef005898.botnumber == BOT8)
+                                    if(e.botnumber == BOT8)
                                     {
-                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                        if(globaldef005899 <= FALSE)
+                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                        if(rnd <= FALSE)
                                         {
-                                            func002369(globaldef005898, "don't fuk wid da mob", globaldef005808, FL_SWIM);
+                                            BotStoreMessage(e, "don't fuk wid da mob", BOTMESSAGETYPE_KILL, FL_SWIM);
                                         }
                                         else
                                         {
-                                            if(globaldef005899 <= TRUE)
+                                            if(rnd <= TRUE)
                                             {
-                                                func002369(globaldef005898, "HA!", globaldef005808, TRUE);
+                                                BotStoreMessage(e, "HA!", BOTMESSAGETYPE_KILL, TRUE);
                                             }
                                             else
                                             {
-                                                if(globaldef005899 <= FL_SWIM)
+                                                if(rnd <= FL_SWIM)
                                                 {
-                                                    func002369(globaldef005898, "$wedish ingenuity win$ again", globaldef005808, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "$wedish ingenuity win$ again", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef005899 <= MOVETYPE_WALK)
+                                                    if(rnd <= MOVETYPE_WALK)
                                                     {
-                                                        func002369(globaldef005898, "$anta'$ ready!!!", globaldef005808, FL_SWIM);
+                                                        BotStoreMessage(e, "$anta'$ ready!!!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                     }
                                                     else
                                                     {
                                                         
-                                                        if(globaldef005899 <= MOVETYPE_STEP)
+                                                        if(rnd <= MOVETYPE_STEP)
                                                         {
-                                                            func002369(globaldef005898, "Bring 'em 0n!!", globaldef005808, FL_SWIM);
+                                                            BotStoreMessage(e, "Bring 'em 0n!!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                         }
                                                         
                                                     }
@@ -3202,37 +3202,37 @@ void (entity globaldef005898) func002282 =
                                     }
                                     else
                                     {
-                                        if(globaldef005898.botnumber == BOT9)
+                                        if(e.botnumber == BOT9)
                                         {
-                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                            if(globaldef005899 <= FALSE)
+                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                            if(rnd <= FALSE)
                                             {
-                                                func002369(globaldef005898, "It rocks, man", globaldef005808, FALSE);
+                                                BotStoreMessage(e, "It rocks, man", BOTMESSAGETYPE_KILL, FALSE);
                                             }
                                             else
                                             {
-                                                if(globaldef005899 <= TRUE)
+                                                if(rnd <= TRUE)
                                                 {
-                                                    func002369(globaldef005898, "Bullseye!", globaldef005808, FALSE);
+                                                    BotStoreMessage(e, "Bullseye!", BOTMESSAGETYPE_KILL, FALSE);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef005899 <= FL_SWIM)
+                                                    if(rnd <= FL_SWIM)
                                                     {
-                                                        func002369(globaldef005898, "It's all in the reflexes", globaldef005808, FALSE);
+                                                        BotStoreMessage(e, "It's all in the reflexes", BOTMESSAGETYPE_KILL, FALSE);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef005899 <= MOVETYPE_WALK)
+                                                        if(rnd <= MOVETYPE_WALK)
                                                         {
-                                                            func002369(globaldef005898, "It slices, it dices: the TNMT", globaldef005808, FALSE);
+                                                            BotStoreMessage(e, "It slices, it dices: the TNMT", BOTMESSAGETYPE_KILL, FALSE);
                                                         }
                                                         else
                                                         {
                                                             
-                                                            if(globaldef005899 <= MOVETYPE_STEP)
+                                                            if(rnd <= MOVETYPE_STEP)
                                                             {
-                                                                func002369(globaldef005898, "This is gibbing spamtastic, dudes", globaldef005808, FALSE);
+                                                                BotStoreMessage(e, "This is gibbing spamtastic, dudes", BOTMESSAGETYPE_KILL, FALSE);
                                                             }
                                                             
                                                         }
@@ -3246,37 +3246,37 @@ void (entity globaldef005898) func002282 =
                                         }
                                         else
                                         {
-                                            if(globaldef005898.botnumber == BOT10)
+                                            if(e.botnumber == BOT10)
                                             {
-                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                if(globaldef005899 <= FALSE)
+                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                if(rnd <= FALSE)
                                                 {
-                                                    func002369(globaldef005898, "you forgot my tip, SIR", globaldef005808, FL_SWIM);
+                                                    BotStoreMessage(e, "you forgot my tip, SIR", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef005899 <= TRUE)
+                                                    if(rnd <= TRUE)
                                                     {
-                                                        func002370(globaldef005898, globaldef005900, ", tip me better, next time", globaldef005808, MOVETYPE_STEP);
+                                                        BotStoreMessage2(e, enemy_name, ", tip me better, next time", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef005899 <= FL_SWIM)
+                                                        if(rnd <= FL_SWIM)
                                                         {
-                                                            func002369(globaldef005898, "Don't point that gun on me", globaldef005808, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "Don't point that gun on me", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef005899 <= MOVETYPE_WALK)
+                                                            if(rnd <= MOVETYPE_WALK)
                                                             {
-                                                                func002369(globaldef005898, "Right in the kisser!!!", globaldef005808, FALSE);
+                                                                BotStoreMessage(e, "Right in the kisser!!!", BOTMESSAGETYPE_KILL, FALSE);
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if(globaldef005899 <= MOVETYPE_STEP)
+                                                                if(rnd <= MOVETYPE_STEP)
                                                                 {
-                                                                    func002369(globaldef005898, "CHARGE!!!!", globaldef005808, FALSE);
+                                                                    BotStoreMessage(e, "CHARGE!!!!", BOTMESSAGETYPE_KILL, FALSE);
                                                                 }
                                                                 
                                                             }
@@ -3290,19 +3290,19 @@ void (entity globaldef005898) func002282 =
                                             }
                                             else
                                             {
-                                                if(globaldef005898.botnumber == BOT11)
+                                                if(e.botnumber == BOT11)
                                                 {
-                                                    globaldef005899 = floor(globaldef005899 * FL_SWIM);
-                                                    if(globaldef005899 <= FALSE)
+                                                    rnd = floor(rnd * FL_SWIM);
+                                                    if(rnd <= FALSE)
                                                     {
-                                                        func002369(globaldef005898, "This is my boomstick", globaldef005808, MOVETYPE_WALK);
+                                                        BotStoreMessage(e, "This is my boomstick", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                     }
                                                     else
                                                     {
                                                         
-                                                        if(globaldef005899 <= TRUE)
+                                                        if(rnd <= TRUE)
                                                         {
-                                                            func002369(globaldef005898, "MI-5 is still on top", globaldef005808, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "MI-5 is still on top", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                         }
                                                         
                                                     }
@@ -3310,19 +3310,19 @@ void (entity globaldef005898) func002282 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef005898.botnumber == BOT12)
+                                                    if(e.botnumber == BOT12)
                                                     {
-                                                        globaldef005899 = floor(globaldef005899 * FL_SWIM);
-                                                        if(globaldef005899 <= FALSE)
+                                                        rnd = floor(rnd * FL_SWIM);
+                                                        if(rnd <= FALSE)
                                                         {
-                                                            func002369(globaldef005898, "Finally put you on ice", globaldef005808, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "Finally put you on ice", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
                                                             
-                                                            if(globaldef005899 <= TRUE)
+                                                            if(rnd <= TRUE)
                                                             {
-                                                                func002369(globaldef005898, "another one bites the dust", globaldef005808, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "another one bites the dust", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                             }
                                                             
                                                         }
@@ -3330,37 +3330,37 @@ void (entity globaldef005898) func002282 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef005898.botnumber == BOT13)
+                                                        if(e.botnumber == BOT13)
                                                         {
-                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                            if(globaldef005899 <= FALSE)
+                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                            if(rnd <= FALSE)
                                                             {
-                                                                func002369(globaldef005898, "Justice is served like a good meal", globaldef005808, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "Justice is served like a good meal", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef005899 <= TRUE)
+                                                                if(rnd <= TRUE)
                                                                 {
-                                                                    func002371(globaldef005898, "Who are your next of kin, ", globaldef005900, " ?", globaldef005808, MOVETYPE_WALK);
+                                                                    BotStoreMessage3(e, "Who are your next of kin, ", enemy_name, " ?", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef005899 <= FL_SWIM)
+                                                                    if(rnd <= FL_SWIM)
                                                                     {
-                                                                        func002369(globaldef005898, "Holy Moly!", globaldef005808, TRUE);
+                                                                        BotStoreMessage(e, "Holy Moly!", BOTMESSAGETYPE_KILL, TRUE);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef005899 <= MOVETYPE_WALK)
+                                                                        if(rnd <= MOVETYPE_WALK)
                                                                         {
-                                                                            func002369(globaldef005898, "Cease your antics, or I may be forced to assault you with the U.S. Postal System!", globaldef005808, MOVETYPE_FLY);
+                                                                            BotStoreMessage(e, "Cease your antics, or I may be forced to assault you with the U.S. Postal System!", BOTMESSAGETYPE_KILL, MOVETYPE_FLY);
                                                                         }
                                                                         else
                                                                         {
                                                                             
-                                                                            if(globaldef005899 <= MOVETYPE_STEP)
+                                                                            if(rnd <= MOVETYPE_STEP)
                                                                             {
-                                                                                func002370(globaldef005898, globaldef005900, ", you face the Tick! And his dog, Speak!", globaldef005808, MOVETYPE_WALK);
+                                                                                BotStoreMessage2(e, enemy_name, ", you face the Tick! And his dog, Speak!", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                             }
                                                                             
                                                                         }
@@ -3374,37 +3374,37 @@ void (entity globaldef005898) func002282 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef005898.botnumber == BOT14)
+                                                            if(e.botnumber == BOT14)
                                                             {
-                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                if(globaldef005899 <= FALSE)
+                                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                                if(rnd <= FALSE)
                                                                 {
-                                                                    func002369(globaldef005898, "I hate you...and this time I mean it", globaldef005808, MOVETYPE_WALK);
+                                                                    BotStoreMessage(e, "I hate you...and this time I mean it", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef005899 <= TRUE)
+                                                                    if(rnd <= TRUE)
                                                                     {
-                                                                        func002371(globaldef005898, "Hey ", globaldef005900, ", your skin has fullbright colors in it", globaldef005808, MOVETYPE_STEP);
+                                                                        BotStoreMessage3(e, "Hey ", enemy_name, ", your skin has fullbright colors in it", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef005899 <= FL_SWIM)
+                                                                        if(rnd <= FL_SWIM)
                                                                         {
-                                                                            func002369(globaldef005898, "if it ain't id, it aint good", globaldef005808, FL_SWIM);
+                                                                            BotStoreMessage(e, "if it ain't id, it aint good", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef005899 <= MOVETYPE_WALK)
+                                                                            if(rnd <= MOVETYPE_WALK)
                                                                             {
-                                                                                func002369(globaldef005898, "what's this 'Magic the Gathering' then??", globaldef005808, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "what's this 'Magic the Gathering' then??", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 
-                                                                                if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                 {
-                                                                                    func002369(globaldef005898, "you can buy a legal copy of quake now....", globaldef005808, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "you can buy a legal copy of quake now....", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                 }
                                                                                 
                                                                             }
@@ -3418,49 +3418,49 @@ void (entity globaldef005898) func002282 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef005898.botnumber == BOT15)
+                                                                if(e.botnumber == BOT15)
                                                                 {
-                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_PUSH);
-                                                                    if(globaldef005899 <= FALSE)
+                                                                    rnd = floor(rnd * MOVETYPE_PUSH);
+                                                                    if(rnd <= FALSE)
                                                                     {
-                                                                        func002369(globaldef005898, "Another soul 4 satan", globaldef005808, FL_SWIM);
+                                                                        BotStoreMessage(e, "Another soul 4 satan", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef005899 <= TRUE)
+                                                                        if(rnd <= TRUE)
                                                                         {
-                                                                            func002369(globaldef005898, "anyone else for brainsurgery?", globaldef005808, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "anyone else for brainsurgery?", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef005899 <= FL_SWIM)
+                                                                            if(rnd <= FL_SWIM)
                                                                             {
-                                                                                func002370(globaldef005898, "you're bleeding all over me, ", globaldef005900, globaldef005808, MOVETYPE_WALK);
+                                                                                BotStoreMessage2(e, "you're bleeding all over me, ", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                 {
-                                                                                    func002369(globaldef005898, "Aah, the quickening...heh heh", globaldef005808, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Aah, the quickening...heh heh", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                     {
-                                                                                        func002369(globaldef005898, "kill 'em all", globaldef005808, FL_SWIM);
+                                                                                        BotStoreMessage(e, "kill 'em all", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005899 <= MOVETYPE_FLY)
+                                                                                        if(rnd <= MOVETYPE_FLY)
                                                                                         {
-                                                                                            func002369(globaldef005898, "I'll kill anyone else laughing at my pants", globaldef005808, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "I'll kill anyone else laughing at my pants", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             
-                                                                                            if(globaldef005899 <= MOVETYPE_TOSS)
+                                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                                             {
-                                                                                                func002369(globaldef005898, "Ooooooh! Brainbiter hits home again.", globaldef005808, MOVETYPE_STEP);
+                                                                                                BotStoreMessage(e, "Ooooooh! Brainbiter hits home again.", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                             }
                                                                                             
                                                                                         }
@@ -3478,43 +3478,43 @@ void (entity globaldef005898) func002282 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef005898.botnumber == BOT16)
+                                                                    if(e.botnumber == BOT16)
                                                                     {
-                                                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_TOSS);
-                                                                        if(globaldef005899 <= FALSE)
+                                                                        rnd = floor(rnd * MOVETYPE_TOSS);
+                                                                        if(rnd <= FALSE)
                                                                         {
-                                                                            func002369(globaldef005898, "You have the right to remain silent", globaldef005808, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "You have the right to remain silent", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef005899 <= TRUE)
+                                                                            if(rnd <= TRUE)
                                                                             {
-                                                                                func002369(globaldef005898, "Fine... dead then", globaldef005808, FL_SWIM);
+                                                                                BotStoreMessage(e, "Fine... dead then", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef005899 <= FL_SWIM)
+                                                                                if(rnd <= FL_SWIM)
                                                                                 {
-                                                                                    func002369(globaldef005898, "Who will be the next to be uncooperative?", globaldef005808, MOVETYPE_STEP);
+                                                                                    BotStoreMessage(e, "Who will be the next to be uncooperative?", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                     {
-                                                                                        func002369(globaldef005898, "Spread out!! not like that!", globaldef005808, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Spread out!! not like that!", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                         {
-                                                                                            func002369(globaldef005898, "You HAD 10 seconds to comply", globaldef005808, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "You HAD 10 seconds to comply", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             
-                                                                                            if(globaldef005899 <= MOVETYPE_FLY)
+                                                                                            if(rnd <= MOVETYPE_FLY)
                                                                                             {
-                                                                                                func002369(globaldef005898, "Citizen, you have the right to remain silent", globaldef005808, MOVETYPE_STEP);
+                                                                                                BotStoreMessage(e, "Citizen, you have the right to remain silent", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                             }
                                                                                             
                                                                                         }
@@ -3530,37 +3530,37 @@ void (entity globaldef005898) func002282 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef005898.botnumber == BOT17)
+                                                                        if(e.botnumber == BOT17)
                                                                         {
-                                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                            if(globaldef005899 <= FALSE)
+                                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                                            if(rnd <= FALSE)
                                                                             {
-                                                                                func002369(globaldef005898, "You lose varmit", globaldef005808, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "You lose varmit", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef005899 <= TRUE)
+                                                                                if(rnd <= TRUE)
                                                                                 {
-                                                                                    func002369(globaldef005898, "you call yerself a gunslinger?", globaldef005808, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "you call yerself a gunslinger?", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005899 <= FL_SWIM)
+                                                                                    if(rnd <= FL_SWIM)
                                                                                     {
-                                                                                        func002369(globaldef005898, "bite dust, varmit!", globaldef005808, FL_SWIM);
+                                                                                        BotStoreMessage(e, "bite dust, varmit!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                         {
-                                                                                            func002369(globaldef005898, "anyone else wanna dance for me ?", globaldef005808, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "anyone else wanna dance for me ?", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             
-                                                                                            if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                             {
-                                                                                                func002369(globaldef005898, "Yippedy-Heeehaw!", globaldef005808, FL_SWIM);
+                                                                                                BotStoreMessage(e, "Yippedy-Heeehaw!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                             }
                                                                                             
                                                                                         }
@@ -3574,37 +3574,37 @@ void (entity globaldef005898) func002282 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef005898.botnumber == BOT18)
+                                                                            if(e.botnumber == BOT18)
                                                                             {
-                                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                if(globaldef005899 <= FALSE)
+                                                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                if(rnd <= FALSE)
                                                                                 {
-                                                                                    func002369(globaldef005898, "U somekinda toughguy?", globaldef005808, FL_SWIM);
+                                                                                    BotStoreMessage(e, "U somekinda toughguy?", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005899 <= TRUE)
+                                                                                    if(rnd <= TRUE)
                                                                                     {
-                                                                                        func002369(globaldef005898, "that's another $20000 for me", globaldef005808, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "that's another $20000 for me", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005899 <= FL_SWIM)
+                                                                                        if(rnd <= FL_SWIM)
                                                                                         {
-                                                                                            func002369(globaldef005898, "Da good squeeler is a dead squeeler", globaldef005808, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "Da good squeeler is a dead squeeler", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                             {
-                                                                                                func002369(globaldef005898, "U had enuff, wizaguy?", globaldef005808, FL_SWIM);
+                                                                                                BotStoreMessage(e, "U had enuff, wizaguy?", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                 {
-                                                                                                    func002371(globaldef005898, "Hey!!", globaldef005900, ",  I'm earning my pay overhere.", globaldef005808, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage3(e, "Hey!!", enemy_name, ",  I'm earning my pay overhere.", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 
                                                                                             }
@@ -3618,25 +3618,25 @@ void (entity globaldef005898) func002282 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef005898.botnumber == BOT19)
+                                                                                if(e.botnumber == BOT19)
                                                                                 {
-                                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_WALK);
-                                                                                    if(globaldef005899 <= FALSE)
+                                                                                    rnd = floor(rnd * MOVETYPE_WALK);
+                                                                                    if(rnd <= FALSE)
                                                                                     {
-                                                                                        func002369(globaldef005898, "Don't mess with the mounties", globaldef005808, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Don't mess with the mounties", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005899 <= TRUE)
+                                                                                        if(rnd <= TRUE)
                                                                                         {
-                                                                                            func002369(globaldef005898, "The color of your blood goes with my uniform", globaldef005808, MOVETYPE_FLY);
+                                                                                            BotStoreMessage(e, "The color of your blood goes with my uniform", BOTMESSAGETYPE_KILL, MOVETYPE_FLY);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             
-                                                                                            if(globaldef005899 <= FL_SWIM)
+                                                                                            if(rnd <= FL_SWIM)
                                                                                             {
-                                                                                                func002369(globaldef005898, "je ne regrette rien", globaldef005808, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "je ne regrette rien", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                             }
                                                                                             
                                                                                         }
@@ -3646,37 +3646,37 @@ void (entity globaldef005898) func002282 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef005898.botnumber == BOT20)
+                                                                                    if(e.botnumber == BOT20)
                                                                                     {
-                                                                                        globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                        if(globaldef005899 <= FALSE)
+                                                                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                        if(rnd <= FALSE)
                                                                                         {
-                                                                                            func002369(globaldef005898, "Don't mess with the Silicon Babe", globaldef005808, FL_SWIM);
+                                                                                            BotStoreMessage(e, "Don't mess with the Silicon Babe", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef005899 <= TRUE)
+                                                                                            if(rnd <= TRUE)
                                                                                             {
-                                                                                                func002369(globaldef005898, "The only good man is a dead man", globaldef005808, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "The only good man is a dead man", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef005899 <= FL_SWIM)
+                                                                                                if(rnd <= FL_SWIM)
                                                                                                 {
-                                                                                                    func002369(globaldef005898, "The babe did it again!", globaldef005808, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "The babe did it again!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                                     {
-                                                                                                        func002370(globaldef005898, "Hey, your blood matches my nailpolish, ", globaldef005900, globaldef005808, MOVETYPE_FLY);
+                                                                                                        BotStoreMessage2(e, "Hey, your blood matches my nailpolish, ", enemy_name, BOTMESSAGETYPE_KILL, MOVETYPE_FLY);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
-                                                                                                        if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                                         {
-                                                                                                            func002369(globaldef005898, "hmmm, your backpack doesn't match my outfit", globaldef005808, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "hmmm, your backpack doesn't match my outfit", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -3690,37 +3690,37 @@ void (entity globaldef005898) func002282 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef005898.botnumber == BOT21)
+                                                                                        if(e.botnumber == BOT21)
                                                                                         {
-                                                                                            globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                            if(globaldef005899 <= FALSE)
+                                                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                            if(rnd <= FALSE)
                                                                                             {
-                                                                                                func002369(globaldef005898, "You're a backpack!!!", globaldef005808, FL_SWIM);
+                                                                                                BotStoreMessage(e, "You're a backpack!!!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef005899 <= TRUE)
+                                                                                                if(rnd <= TRUE)
                                                                                                 {
-                                                                                                    func002369(globaldef005898, "Anyone for seconds?", globaldef005808, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "Anyone for seconds?", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef005899 <= FL_SWIM)
+                                                                                                    if(rnd <= FL_SWIM)
                                                                                                     {
-                                                                                                        func002369(globaldef005898, "Don't get your blood all over me", globaldef005808, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Don't get your blood all over me", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                                         {
-                                                                                                            func002369(globaldef005898, "If it bleeds, we can kill it", globaldef005808, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "If it bleeds, we can kill it", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             
-                                                                                                            if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                                             {
-                                                                                                                func002370(globaldef005898, globaldef005900, ", see me ....and DIE, scumbag", globaldef005808, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage2(e, enemy_name, ", see me ....and DIE, scumbag", BOTMESSAGETYPE_KILL, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             
                                                                                                         }
@@ -3734,37 +3734,37 @@ void (entity globaldef005898) func002282 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef005898.botnumber == BOT22)
+                                                                                            if(e.botnumber == BOT22)
                                                                                             {
-                                                                                                globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                                if(globaldef005899 <= FALSE)
+                                                                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                                if(rnd <= FALSE)
                                                                                                 {
-                                                                                                    func002369(globaldef005898, "it's good to be the king", globaldef005808, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "it's good to be the king", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef005899 <= TRUE)
+                                                                                                    if(rnd <= TRUE)
                                                                                                     {
-                                                                                                        func002369(globaldef005898, "you ain't nothin but a hound dog", globaldef005808, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "you ain't nothin but a hound dog", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef005899 <= FL_SWIM)
+                                                                                                        if(rnd <= FL_SWIM)
                                                                                                         {
-                                                                                                            func002369(globaldef005898, "you ain't no frieeend of mine!", globaldef005808, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "you ain't no frieeend of mine!", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                                             {
-                                                                                                                func002369(globaldef005898, "the king shakes, rattles and rolls", globaldef005808, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "the king shakes, rattles and rolls", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 
-                                                                                                                if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                                 {
-                                                                                                                    func002369(globaldef005898, "don't you step on my blue suede shoes", globaldef005808, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "don't you step on my blue suede shoes", BOTMESSAGETYPE_KILL, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 
                                                                                                             }
@@ -3779,37 +3779,37 @@ void (entity globaldef005898) func002282 =
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef005898.botnumber == BOT0)
+                                                                                                if(e.botnumber == BOT0)
                                                                                                 {
-                                                                                                    globaldef005899 = floor(globaldef005899 * MOVETYPE_FLY);
-                                                                                                    if(globaldef005899 <= FALSE)
+                                                                                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                                    if(rnd <= FALSE)
                                                                                                     {
-                                                                                                        func002369(globaldef005898, "Oooh, the quickening!!!", globaldef005808, FALSE);
+                                                                                                        BotStoreMessage(e, "Oooh, the quickening!!!", BOTMESSAGETYPE_KILL, FALSE);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef005899 <= TRUE)
+                                                                                                        if(rnd <= TRUE)
                                                                                                         {
-                                                                                                            func002369(globaldef005898, "Jacta est alea", globaldef005808, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "Jacta est alea", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef005899 <= FL_SWIM)
+                                                                                                            if(rnd <= FL_SWIM)
                                                                                                             {
-                                                                                                                func002369(globaldef005898, "pax vobiscum", globaldef005808, FL_SWIM);
+                                                                                                                BotStoreMessage(e, "pax vobiscum", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef005899 <= MOVETYPE_WALK)
+                                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                                 {
-                                                                                                                    func002369(globaldef005898, "da predator ees my buddy", globaldef005808, FL_SWIM);
+                                                                                                                    BotStoreMessage(e, "da predator ees my buddy", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     
-                                                                                                                    if(globaldef005899 <= MOVETYPE_STEP)
+                                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                                     {
-                                                                                                                        func002369(globaldef005898, "facta non verba", globaldef005808, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "facta non verba", BOTMESSAGETYPE_KILL, FL_SWIM);
                                                                                                                     }
                                                                                                                     
                                                                                                                 }
@@ -3871,7 +3871,7 @@ void (entity globaldef005898) func002282 =
 };
 
 
-// func002283
+// BotChooseDeathMessage
 // function begins at statement 29802, parm_start=17315
 // OP_LOAD_ENT	17315	619	17318
 // OP_LOAD_S	17318	180	17319
@@ -5045,49 +5045,49 @@ void (entity globaldef005898) func002282 =
 // OP_STORE_V	213	13	0
 // OP_CALL4	1073	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006020) func002283 = 
+void (entity e) BotChooseDeathMessage = 
 {
-    local float globaldef006021;
-    local string globaldef006022;
-    globaldef006022 = globaldef006020.field000296.netname;
-    globaldef006021 = random();
-    if(globaldef006020.botnumber == BOT23)
+    local float rnd;
+    local string enemy_name;
+    enemy_name = e.attackedby.netname;
+    rnd = random();
+    if(e.botnumber == BOT23)
     {
-        globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-        if(globaldef006021 <= FALSE)
+        rnd = floor(rnd * MOVETYPE_TOSS);
+        if(rnd <= FALSE)
         {
-            func002369(globaldef006020, "nuqDaq 'oH puchpa''e'", globaldef005809, FALSE);
+            BotStoreMessage(e, "nuqDaq 'oH puchpa''e'", BOTMESSAGETYPE_DEATH, FALSE);
         }
         else
         {
-            if(globaldef006021 <= TRUE)
+            if(rnd <= TRUE)
             {
-                func002369(globaldef006020, "va", globaldef005809, FALSE);
+                BotStoreMessage(e, "va", BOTMESSAGETYPE_DEATH, FALSE);
             }
             else
             {
-                if(globaldef006021 <= FL_SWIM)
+                if(rnd <= FL_SWIM)
                 {
-                    func002369(globaldef006020, "toDSaH", globaldef005809, FALSE);
+                    BotStoreMessage(e, "toDSaH", BOTMESSAGETYPE_DEATH, FALSE);
                 }
                 else
                 {
-                    if(globaldef006021 <= MOVETYPE_WALK)
+                    if(rnd <= MOVETYPE_WALK)
                     {
-                        func002369(globaldef006020, "baQa'", globaldef005809, FALSE);
+                        BotStoreMessage(e, "baQa'", BOTMESSAGETYPE_DEATH, FALSE);
                     }
                     else
                     {
-                        if(globaldef006021 <= MOVETYPE_STEP)
+                        if(rnd <= MOVETYPE_STEP)
                         {
-                            func002369(globaldef006020, "Qovpatlh", globaldef005809, FALSE);
+                            BotStoreMessage(e, "Qovpatlh", BOTMESSAGETYPE_DEATH, FALSE);
                         }
                         else
                         {
                             
-                            if(globaldef006021 <= MOVETYPE_FLY)
+                            if(rnd <= MOVETYPE_FLY)
                             {
-                                func002369(globaldef006020, "I am NOT a merry MAN!", globaldef005809, FALSE);
+                                BotStoreMessage(e, "I am NOT a merry MAN!", BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             
                         }
@@ -5103,43 +5103,43 @@ void (entity globaldef006020) func002283 =
     }
     else
     {
-        if(globaldef006020.botnumber == BOT1)
+        if(e.botnumber == BOT1)
         {
-            globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-            if(globaldef006021 <= FALSE)
+            rnd = floor(rnd * MOVETYPE_TOSS);
+            if(rnd <= FALSE)
             {
-                func002369(globaldef006020, "I like DOOM better", globaldef005809, FALSE);
+                BotStoreMessage(e, "I like DOOM better", BOTMESSAGETYPE_DEATH, FALSE);
             }
             else
             {
-                if(globaldef006021 <= TRUE)
+                if(rnd <= TRUE)
                 {
-                    func002369(globaldef006020, "Give me DOOM anyday", globaldef005809, FALSE);
+                    BotStoreMessage(e, "Give me DOOM anyday", BOTMESSAGETYPE_DEATH, FALSE);
                 }
                 else
                 {
-                    if(globaldef006021 <= FL_SWIM)
+                    if(rnd <= FL_SWIM)
                     {
-                        func002369(globaldef006020, "I'm gonna program the trinity engine again", globaldef005809, FALSE);
+                        BotStoreMessage(e, "I'm gonna program the trinity engine again", BOTMESSAGETYPE_DEATH, FALSE);
                     }
                     else
                     {
-                        if(globaldef006021 <= MOVETYPE_WALK)
+                        if(rnd <= MOVETYPE_WALK)
                         {
-                            func002369(globaldef006020, "I need another shot of Jolt NOW!!!", globaldef005809, FALSE);
+                            BotStoreMessage(e, "I need another shot of Jolt NOW!!!", BOTMESSAGETYPE_DEATH, FALSE);
                         }
                         else
                         {
-                            if(globaldef006021 <= MOVETYPE_STEP)
+                            if(rnd <= MOVETYPE_STEP)
                             {
-                                func002370(globaldef006020, globaldef006022, " is a lamer", globaldef005809, FALSE);
+                                BotStoreMessage2(e, enemy_name, " is a lamer", BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             else
                             {
                                 
-                                if(globaldef006021 <= MOVETYPE_FLY)
+                                if(rnd <= MOVETYPE_FLY)
                                 {
-                                    func002369(globaldef006020, "this is not my day", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "this is not my day", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 
                             }
@@ -5155,37 +5155,37 @@ void (entity globaldef006020) func002283 =
         }
         else
         {
-            if(globaldef006020.botnumber == BOT2)
+            if(e.botnumber == BOT2)
             {
-                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                if(globaldef006021 <= FALSE)
+                rnd = floor(rnd * MOVETYPE_FLY);
+                if(rnd <= FALSE)
                 {
-                    func002369(globaldef006020, "Mommy!!!! I've been gibbed again!!!", globaldef005809, FALSE);
+                    BotStoreMessage(e, "Mommy!!!! I've been gibbed again!!!", BOTMESSAGETYPE_DEATH, FALSE);
                 }
                 else
                 {
-                    if(globaldef006021 <= TRUE)
+                    if(rnd <= TRUE)
                     {
-                        func002369(globaldef006020, "The BSA will hunt you down", globaldef005809, FALSE);
+                        BotStoreMessage(e, "The BSA will hunt you down", BOTMESSAGETYPE_DEATH, FALSE);
                     }
                     else
                     {
-                        if(globaldef006021 <= FL_SWIM)
+                        if(rnd <= FL_SWIM)
                         {
-                            func002369(globaldef006020, "I want my mommy!!!!", globaldef005809, FALSE);
+                            BotStoreMessage(e, "I want my mommy!!!!", BOTMESSAGETYPE_DEATH, FALSE);
                         }
                         else
                         {
-                            if(globaldef006021 <= MOVETYPE_WALK)
+                            if(rnd <= MOVETYPE_WALK)
                             {
-                                func002369(globaldef006020, "Just wait until the next windows upgrade!!!", globaldef005809, FALSE);
+                                BotStoreMessage(e, "Just wait until the next windows upgrade!!!", BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             else
                             {
                                 
-                                if(globaldef006021 <= MOVETYPE_STEP)
+                                if(rnd <= MOVETYPE_STEP)
                                 {
-                                    func002369(globaldef006020, "If it isn't Microsoft, it just isn't....", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "If it isn't Microsoft, it just isn't....", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 
                             }
@@ -5199,37 +5199,37 @@ void (entity globaldef006020) func002283 =
             }
             else
             {
-                if(globaldef006020.botnumber == BOT3)
+                if(e.botnumber == BOT3)
                 {
-                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                    if(globaldef006021 <= FALSE)
+                    rnd = floor(rnd * MOVETYPE_FLY);
+                    if(rnd <= FALSE)
                     {
-                        func002369(globaldef006020, "Judge Slappy ain't happy", globaldef005809, FALSE);
+                        BotStoreMessage(e, "Judge Slappy ain't happy", BOTMESSAGETYPE_DEATH, FALSE);
                     }
                     else
                     {
-                        if(globaldef006021 <= TRUE)
+                        if(rnd <= TRUE)
                         {
-                            func002369(globaldef006020, "no fair", globaldef005809, FALSE);
+                            BotStoreMessage(e, "no fair", BOTMESSAGETYPE_DEATH, FALSE);
                         }
                         else
                         {
-                            if(globaldef006021 <= FL_SWIM)
+                            if(rnd <= FL_SWIM)
                             {
-                                func002369(globaldef006020, "traitor!!!", globaldef005809, FALSE);
+                                BotStoreMessage(e, "traitor!!!", BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             else
                             {
-                                if(globaldef006021 <= MOVETYPE_WALK)
+                                if(rnd <= MOVETYPE_WALK)
                                 {
-                                    func002369(globaldef006020, "Happy Slappy ain't happy", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "Happy Slappy ain't happy", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 else
                                 {
                                     
-                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                    if(rnd <= MOVETYPE_STEP)
                                     {
-                                        func002369(globaldef006020, " =(", globaldef005809, FALSE);
+                                        BotStoreMessage(e, " =(", BOTMESSAGETYPE_DEATH, FALSE);
                                     }
                                     
                                 }
@@ -5243,37 +5243,37 @@ void (entity globaldef006020) func002283 =
                 }
                 else
                 {
-                    if(globaldef006020.botnumber == BOT4)
+                    if(e.botnumber == BOT4)
                     {
-                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                        if(globaldef006021 <= FALSE)
+                        rnd = floor(rnd * MOVETYPE_FLY);
+                        if(rnd <= FALSE)
                         {
-                            func002369(globaldef006020, "I'll be back!!", globaldef005809, FALSE);
+                            BotStoreMessage(e, "I'll be back!!", BOTMESSAGETYPE_DEATH, FALSE);
                         }
                         else
                         {
-                            if(globaldef006021 <= TRUE)
+                            if(rnd <= TRUE)
                             {
-                                func002369(globaldef006020, "Lucky S.O.B.", globaldef005809, FALSE);
+                                BotStoreMessage(e, "Lucky S.O.B.", BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             else
                             {
-                                if(globaldef006021 <= FL_SWIM)
+                                if(rnd <= FL_SWIM)
                                 {
-                                    func002369(globaldef006020, "Wait till I bring out the T1000", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "Wait till I bring out the T1000", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 else
                                 {
-                                    if(globaldef006021 <= MOVETYPE_WALK)
+                                    if(rnd <= MOVETYPE_WALK)
                                     {
-                                        func002369(globaldef006020, "Your momma wears army boots", globaldef005809, FALSE);
+                                        BotStoreMessage(e, "Your momma wears army boots", BOTMESSAGETYPE_DEATH, FALSE);
                                     }
                                     else
                                     {
                                         
-                                        if(globaldef006021 <= MOVETYPE_STEP)
+                                        if(rnd <= MOVETYPE_STEP)
                                         {
-                                            func002370(globaldef006020, "Next time, your it, ", globaldef006022, globaldef005809, FALSE);
+                                            BotStoreMessage2(e, "Next time, your it, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                         }
                                         
                                     }
@@ -5287,37 +5287,37 @@ void (entity globaldef006020) func002283 =
                     }
                     else
                     {
-                        if(globaldef006020.botnumber == BOT5)
+                        if(e.botnumber == BOT5)
                         {
-                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                            if(globaldef006021 <= FALSE)
+                            rnd = floor(rnd * MOVETYPE_FLY);
+                            if(rnd <= FALSE)
                             {
-                                func002370(globaldef006020, "I really hate ", globaldef006022, globaldef005809, FALSE);
+                                BotStoreMessage2(e, "I really hate ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                             }
                             else
                             {
-                                if(globaldef006021 <= TRUE)
+                                if(rnd <= TRUE)
                                 {
-                                    func002369(globaldef006020, "Sleeping time for tigger", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "Sleeping time for tigger", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 else
                                 {
-                                    if(globaldef006021 <= FL_SWIM)
+                                    if(rnd <= FL_SWIM)
                                     {
-                                        func002369(globaldef006020, "Why can't we all be happy tiggers?", globaldef005809, FALSE);
+                                        BotStoreMessage(e, "Why can't we all be happy tiggers?", BOTMESSAGETYPE_DEATH, FALSE);
                                     }
                                     else
                                     {
-                                        if(globaldef006021 <= MOVETYPE_WALK)
+                                        if(rnd <= MOVETYPE_WALK)
                                         {
-                                            func002369(globaldef006020, "Tigger is :(", globaldef005809, FALSE);
+                                            BotStoreMessage(e, "Tigger is :(", BOTMESSAGETYPE_DEATH, FALSE);
                                         }
                                         else
                                         {
                                             
-                                            if(globaldef006021 <= MOVETYPE_STEP)
+                                            if(rnd <= MOVETYPE_STEP)
                                             {
-                                                func002369(globaldef006020, "Purrrrr!", globaldef005809, FALSE);
+                                                BotStoreMessage(e, "Purrrrr!", BOTMESSAGETYPE_DEATH, FALSE);
                                             }
                                             
                                         }
@@ -5331,37 +5331,37 @@ void (entity globaldef006020) func002283 =
                         }
                         else
                         {
-                            if(globaldef006020.botnumber == BOT6)
+                            if(e.botnumber == BOT6)
                             {
-                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                if(globaldef006021 <= FALSE)
+                                rnd = floor(rnd * MOVETYPE_FLY);
+                                if(rnd <= FALSE)
                                 {
-                                    func002369(globaldef006020, "I bet you never read my comics", globaldef005809, FALSE);
+                                    BotStoreMessage(e, "I bet you never read my comics", BOTMESSAGETYPE_DEATH, FALSE);
                                 }
                                 else
                                 {
-                                    if(globaldef006021 <= TRUE)
+                                    if(rnd <= TRUE)
                                     {
-                                        func002369(globaldef006020, "I really need a drink", globaldef005809, FALSE);
+                                        BotStoreMessage(e, "I really need a drink", BOTMESSAGETYPE_DEATH, FALSE);
                                     }
                                     else
                                     {
-                                        if(globaldef006021 <= FL_SWIM)
+                                        if(rnd <= FL_SWIM)
                                         {
-                                            func002369(globaldef006020, "My suit is rusty, give me a 2nd chance", globaldef005809, FALSE);
+                                            BotStoreMessage(e, "My suit is rusty, give me a 2nd chance", BOTMESSAGETYPE_DEATH, FALSE);
                                         }
                                         else
                                         {
-                                            if(globaldef006021 <= MOVETYPE_WALK)
+                                            if(rnd <= MOVETYPE_WALK)
                                             {
-                                                func002369(globaldef006020, "great, another suit demolished", globaldef005809, FALSE);
+                                                BotStoreMessage(e, "great, another suit demolished", BOTMESSAGETYPE_DEATH, FALSE);
                                             }
                                             else
                                             {
                                                 
-                                                if(globaldef006021 <= MOVETYPE_STEP)
+                                                if(rnd <= MOVETYPE_STEP)
                                                 {
-                                                    func002369(globaldef006020, "oh yeah, lets all pick on ironman!!", globaldef005809, FALSE);
+                                                    BotStoreMessage(e, "oh yeah, lets all pick on ironman!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                 }
                                                 
                                             }
@@ -5375,37 +5375,37 @@ void (entity globaldef006020) func002283 =
                             }
                             else
                             {
-                                if(globaldef006020.botnumber == BOT7)
+                                if(e.botnumber == BOT7)
                                 {
-                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                    if(globaldef006021 <= FALSE)
+                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                    if(rnd <= FALSE)
                                     {
-                                        func002369(globaldef006020, "You're one ugly motherfucker", globaldef005809, FALSE);
+                                        BotStoreMessage(e, "You're one ugly motherfucker", BOTMESSAGETYPE_DEATH, FALSE);
                                     }
                                     else
                                     {
-                                        if(globaldef006021 <= TRUE)
+                                        if(rnd <= TRUE)
                                         {
-                                            func002369(globaldef006020, "You're all worms!!", globaldef005809, FALSE);
+                                            BotStoreMessage(e, "You're all worms!!", BOTMESSAGETYPE_DEATH, FALSE);
                                         }
                                         else
                                         {
-                                            if(globaldef006021 <= FL_SWIM)
+                                            if(rnd <= FL_SWIM)
                                             {
-                                                func002369(globaldef006020, "I will quash your puny civilization", globaldef005809, FALSE);
+                                                BotStoreMessage(e, "I will quash your puny civilization", BOTMESSAGETYPE_DEATH, FALSE);
                                             }
                                             else
                                             {
-                                                if(globaldef006021 <= MOVETYPE_WALK)
+                                                if(rnd <= MOVETYPE_WALK)
                                                 {
-                                                    func002369(globaldef006020, "I am the ultimate hunter", globaldef005809, FALSE);
+                                                    BotStoreMessage(e, "I am the ultimate hunter", BOTMESSAGETYPE_DEATH, FALSE);
                                                 }
                                                 else
                                                 {
                                                     
-                                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                                    if(rnd <= MOVETYPE_STEP)
                                                     {
-                                                        func002369(globaldef006020, "what the hell are you?", globaldef005809, FALSE);
+                                                        BotStoreMessage(e, "what the hell are you?", BOTMESSAGETYPE_DEATH, FALSE);
                                                     }
                                                     
                                                 }
@@ -5419,37 +5419,37 @@ void (entity globaldef006020) func002283 =
                                 }
                                 else
                                 {
-                                    if(globaldef006020.botnumber == BOT8)
+                                    if(e.botnumber == BOT8)
                                     {
-                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                        if(globaldef006021 <= FALSE)
+                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                        if(rnd <= FALSE)
                                         {
-                                            func002369(globaldef006020, "mamma mia", globaldef005809, FALSE);
+                                            BotStoreMessage(e, "mamma mia", BOTMESSAGETYPE_DEATH, FALSE);
                                         }
                                         else
                                         {
-                                            if(globaldef006021 <= TRUE)
+                                            if(rnd <= TRUE)
                                             {
-                                                func002369(globaldef006020, "I'll c0me back wick $0me real p0werful friend$", globaldef005809, FALSE);
+                                                BotStoreMessage(e, "I'll c0me back wick $0me real p0werful friend$", BOTMESSAGETYPE_DEATH, FALSE);
                                             }
                                             else
                                             {
-                                                if(globaldef006021 <= FL_SWIM)
+                                                if(rnd <= FL_SWIM)
                                                 {
-                                                    func002370(globaldef006020, "Are you trying to tell me $omething, ", globaldef006022, globaldef005809, FALSE);
+                                                    BotStoreMessage2(e, "Are you trying to tell me $omething, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006021 <= MOVETYPE_WALK)
+                                                    if(rnd <= MOVETYPE_WALK)
                                                     {
-                                                        func002369(globaldef006020, "Da m0b al$0 has bl0nde babe$", globaldef005809, FALSE);
+                                                        BotStoreMessage(e, "Da m0b al$0 has bl0nde babe$", BOTMESSAGETYPE_DEATH, FALSE);
                                                     }
                                                     else
                                                     {
                                                         
-                                                        if(globaldef006021 <= MOVETYPE_STEP)
+                                                        if(rnd <= MOVETYPE_STEP)
                                                         {
-                                                            func002369(globaldef006020, "Wait till I run y0u 0ver wick my V0lv0", globaldef005809, FALSE);
+                                                            BotStoreMessage(e, "Wait till I run y0u 0ver wick my V0lv0", BOTMESSAGETYPE_DEATH, FALSE);
                                                         }
                                                         
                                                     }
@@ -5463,43 +5463,43 @@ void (entity globaldef006020) func002283 =
                                     }
                                     else
                                     {
-                                        if(globaldef006020.botnumber == BOT9)
+                                        if(e.botnumber == BOT9)
                                         {
-                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_TOSS);
-                                            if(globaldef006021 <= FALSE)
+                                            rnd = floor(rnd * MOVETYPE_TOSS);
+                                            if(rnd <= FALSE)
                                             {
-                                                func002369(globaldef006020, "That really sucked, dude", globaldef005809, FALSE);
+                                                BotStoreMessage(e, "That really sucked, dude", BOTMESSAGETYPE_DEATH, FALSE);
                                             }
                                             else
                                             {
-                                                if(globaldef006021 <= TRUE)
+                                                if(rnd <= TRUE)
                                                 {
-                                                    func002369(globaldef006020, "Sensei was right", globaldef005809, FALSE);
+                                                    BotStoreMessage(e, "Sensei was right", BOTMESSAGETYPE_DEATH, FALSE);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006021 <= FL_SWIM)
+                                                    if(rnd <= FL_SWIM)
                                                     {
-                                                        func002369(globaldef006020, "Donatello, Michaelangelo, Leonardo, HEEELP!!!!", globaldef005809, FALSE);
+                                                        BotStoreMessage(e, "Donatello, Michaelangelo, Leonardo, HEEELP!!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006021 <= MOVETYPE_WALK)
+                                                        if(rnd <= MOVETYPE_WALK)
                                                         {
-                                                            func002370(globaldef006020, "Are you working for the Shredder, ", globaldef006022, globaldef005809, FALSE);
+                                                            BotStoreMessage2(e, "Are you working for the Shredder, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006021 <= MOVETYPE_STEP)
+                                                            if(rnd <= MOVETYPE_STEP)
                                                             {
-                                                                func002370(globaldef006020, "Mundo uncewl, ", globaldef006022, globaldef005809, FALSE);
+                                                                BotStoreMessage2(e, "Mundo uncewl, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if(globaldef006021 <= MOVETYPE_FLY)
+                                                                if(rnd <= MOVETYPE_FLY)
                                                                 {
-                                                                    func002369(globaldef006020, "Bogus dude", globaldef005809, FALSE);
+                                                                    BotStoreMessage(e, "Bogus dude", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 
                                                             }
@@ -5515,37 +5515,37 @@ void (entity globaldef006020) func002283 =
                                         }
                                         else
                                         {
-                                            if(globaldef006020.botnumber == BOT10)
+                                            if(e.botnumber == BOT10)
                                             {
-                                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                if(globaldef006021 <= FALSE)
+                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                if(rnd <= FALSE)
                                                 {
-                                                    func002369(globaldef006020, "Ok, now call me a cab", globaldef005809, FALSE);
+                                                    BotStoreMessage(e, "Ok, now call me a cab", BOTMESSAGETYPE_DEATH, FALSE);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006021 <= TRUE)
+                                                    if(rnd <= TRUE)
                                                     {
-                                                        func002369(globaldef006020, "this isn't fare!!!", globaldef005809, FALSE);
+                                                        BotStoreMessage(e, "this isn't fare!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006021 <= FL_SWIM)
+                                                        if(rnd <= FL_SWIM)
                                                         {
-                                                            func002369(globaldef006020, "I'm just a cabbie", globaldef005809, FALSE);
+                                                            BotStoreMessage(e, "I'm just a cabbie", BOTMESSAGETYPE_DEATH, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006021 <= MOVETYPE_WALK)
+                                                            if(rnd <= MOVETYPE_WALK)
                                                             {
-                                                                func002369(globaldef006020, "cab drivers make such easy targets", globaldef005809, FALSE);
+                                                                BotStoreMessage(e, "cab drivers make such easy targets", BOTMESSAGETYPE_DEATH, FALSE);
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if(globaldef006021 <= MOVETYPE_STEP)
+                                                                if(rnd <= MOVETYPE_STEP)
                                                                 {
-                                                                    func002369(globaldef006020, "suck exhaust, bud!", globaldef005809, FALSE);
+                                                                    BotStoreMessage(e, "suck exhaust, bud!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 
                                                             }
@@ -5559,37 +5559,37 @@ void (entity globaldef006020) func002283 =
                                             }
                                             else
                                             {
-                                                if(globaldef006020.botnumber == BOT11)
+                                                if(e.botnumber == BOT11)
                                                 {
-                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                    if(globaldef006021 <= FALSE)
+                                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                                    if(rnd <= FALSE)
                                                     {
-                                                        func002370(globaldef006020, "Guess it's not a good day to be a bad guy, eh ", globaldef006022, globaldef005809, FALSE);
+                                                        BotStoreMessage2(e, "Guess it's not a good day to be a bad guy, eh ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006021 <= TRUE)
+                                                        if(rnd <= TRUE)
                                                         {
-                                                            func002369(globaldef006020, "Bad move, creep", globaldef005809, FALSE);
+                                                            BotStoreMessage(e, "Bad move, creep", BOTMESSAGETYPE_DEATH, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006021 <= FL_SWIM)
+                                                            if(rnd <= FL_SWIM)
                                                             {
-                                                                func002369(globaldef006020, "Now your on our Qspy-hitlist", globaldef005809, FALSE);
+                                                                BotStoreMessage(e, "Now your on our Qspy-hitlist", BOTMESSAGETYPE_DEATH, FALSE);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006021 <= MOVETYPE_WALK)
+                                                                if(rnd <= MOVETYPE_WALK)
                                                                 {
-                                                                    func002369(globaldef006020, "I will downgrade your ping to 999", globaldef005809, FALSE);
+                                                                    BotStoreMessage(e, "I will downgrade your ping to 999", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 else
                                                                 {
                                                                     
-                                                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                                                    if(rnd <= MOVETYPE_STEP)
                                                                     {
-                                                                        func002369(globaldef006020, "Next time a bigger gun", globaldef005809, FALSE);
+                                                                        BotStoreMessage(e, "Next time a bigger gun", BOTMESSAGETYPE_DEATH, FALSE);
                                                                     }
                                                                     
                                                                 }
@@ -5603,37 +5603,37 @@ void (entity globaldef006020) func002283 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006020.botnumber == BOT12)
+                                                    if(e.botnumber == BOT12)
                                                     {
-                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                        if(globaldef006021 <= FALSE)
+                                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                                        if(rnd <= FALSE)
                                                         {
-                                                            func002369(globaldef006020, "Damnit!", globaldef005809, FALSE);
+                                                            BotStoreMessage(e, "Damnit!", BOTMESSAGETYPE_DEATH, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006021 <= TRUE)
+                                                            if(rnd <= TRUE)
                                                             {
-                                                                func002369(globaldef006020, "Freeze dude", globaldef005809, FALSE);
+                                                                BotStoreMessage(e, "Freeze dude", BOTMESSAGETYPE_DEATH, FALSE);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006021 <= FL_SWIM)
+                                                                if(rnd <= FL_SWIM)
                                                                 {
-                                                                    func002369(globaldef006020, "Iceman will avenge himself", globaldef005809, FALSE);
+                                                                    BotStoreMessage(e, "Iceman will avenge himself", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006021 <= MOVETYPE_WALK)
+                                                                    if(rnd <= MOVETYPE_WALK)
                                                                     {
-                                                                        func002369(globaldef006020, "I should have listened to Awnald S.", globaldef005809, FALSE);
+                                                                        BotStoreMessage(e, "I should have listened to Awnald S.", BOTMESSAGETYPE_DEATH, FALSE);
                                                                     }
                                                                     else
                                                                     {
                                                                         
-                                                                        if(globaldef006021 <= MOVETYPE_STEP)
+                                                                        if(rnd <= MOVETYPE_STEP)
                                                                         {
-                                                                            func002370(globaldef006020, "Yeah-ya put me on ice real cool, ", globaldef006022, globaldef005809, FALSE);
+                                                                            BotStoreMessage2(e, "Yeah-ya put me on ice real cool, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                                         }
                                                                         
                                                                     }
@@ -5647,37 +5647,37 @@ void (entity globaldef006020) func002283 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006020.botnumber == BOT13)
+                                                        if(e.botnumber == BOT13)
                                                         {
-                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                            if(globaldef006021 <= FALSE)
+                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                            if(rnd <= FALSE)
                                                             {
-                                                                func002369(globaldef006020, "Unhand me, you vanilla!!", globaldef005809, FALSE);
+                                                                BotStoreMessage(e, "Unhand me, you vanilla!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006021 <= TRUE)
+                                                                if(rnd <= TRUE)
                                                                 {
-                                                                    func002370(globaldef006020, globaldef006022, ", hah! Roof pig! Most unexpected!", globaldef005809, FALSE);
+                                                                    BotStoreMessage2(e, enemy_name, ", hah! Roof pig! Most unexpected!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006021 <= FL_SWIM)
+                                                                    if(rnd <= FL_SWIM)
                                                                     {
-                                                                        func002369(globaldef006020, "I will return, I AM the Tick", globaldef005809, FALSE);
+                                                                        BotStoreMessage(e, "I will return, I AM the Tick", BOTMESSAGETYPE_DEATH, FALSE);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006021 <= MOVETYPE_WALK)
+                                                                        if(rnd <= MOVETYPE_WALK)
                                                                         {
-                                                                            func002369(globaldef006020, "Speak, my dog will bite your rear end", globaldef005809, FALSE);
+                                                                            BotStoreMessage(e, "Speak, my dog will bite your rear end", BOTMESSAGETYPE_DEATH, FALSE);
                                                                         }
                                                                         else
                                                                         {
                                                                             
-                                                                            if(globaldef006021 <= MOVETYPE_STEP)
+                                                                            if(rnd <= MOVETYPE_STEP)
                                                                             {
-                                                                                func002369(globaldef006020, "I pop my zits in your general direction", globaldef005809, FALSE);
+                                                                                BotStoreMessage(e, "I pop my zits in your general direction", BOTMESSAGETYPE_DEATH, FALSE);
                                                                             }
                                                                             
                                                                         }
@@ -5691,37 +5691,37 @@ void (entity globaldef006020) func002283 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006020.botnumber == BOT14)
+                                                            if(e.botnumber == BOT14)
                                                             {
-                                                                globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                if(globaldef006021 <= FALSE)
+                                                                rnd = floor(rnd * MOVETYPE_FLY);
+                                                                if(rnd <= FALSE)
                                                                 {
-                                                                    func002369(globaldef006020, "You bastard, you killed me!!!", globaldef005809, FALSE);
+                                                                    BotStoreMessage(e, "You bastard, you killed me!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006021 <= TRUE)
+                                                                    if(rnd <= TRUE)
                                                                     {
-                                                                        func002369(globaldef006020, "Why'd ya pick on me?", globaldef005809, FALSE);
+                                                                        BotStoreMessage(e, "Why'd ya pick on me?", BOTMESSAGETYPE_DEATH, FALSE);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006021 <= FL_SWIM)
+                                                                        if(rnd <= FL_SWIM)
                                                                         {
-                                                                            func002369(globaldef006020, "This level sucks; I bet it's John Romero's", globaldef005809, FALSE);
+                                                                            BotStoreMessage(e, "This level sucks; I bet it's John Romero's", BOTMESSAGETYPE_DEATH, FALSE);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006021 <= MOVETYPE_WALK)
+                                                                            if(rnd <= MOVETYPE_WALK)
                                                                             {
-                                                                                func002369(globaldef006020, "You got better software than I have", globaldef005809, FALSE);
+                                                                                BotStoreMessage(e, "You got better software than I have", BOTMESSAGETYPE_DEATH, FALSE);
                                                                             }
                                                                             else
                                                                             {
                                                                                 
-                                                                                if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                 {
-                                                                                    func002369(globaldef006020, "I've had worse", globaldef005809, FALSE);
+                                                                                    BotStoreMessage(e, "I've had worse", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                 }
                                                                                 
                                                                             }
@@ -5735,37 +5735,37 @@ void (entity globaldef006020) func002283 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006020.botnumber == BOT15)
+                                                                if(e.botnumber == BOT15)
                                                                 {
-                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                    if(globaldef006021 <= FALSE)
+                                                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                                                    if(rnd <= FALSE)
                                                                     {
-                                                                        func002369(globaldef006020, "Lamer!!!", globaldef005809, FALSE);
+                                                                        BotStoreMessage(e, "Lamer!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006021 <= TRUE)
+                                                                        if(rnd <= TRUE)
                                                                         {
-                                                                            func002369(globaldef006020, "Danu is at my side", globaldef005809, FALSE);
+                                                                            BotStoreMessage(e, "Danu is at my side", BOTMESSAGETYPE_DEATH, FALSE);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006021 <= FL_SWIM)
+                                                                            if(rnd <= FL_SWIM)
                                                                             {
-                                                                                func002369(globaldef006020, "I will rise from the cauldron again", globaldef005809, FALSE);
+                                                                                BotStoreMessage(e, "I will rise from the cauldron again", BOTMESSAGETYPE_DEATH, FALSE);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                 {
-                                                                                    func002369(globaldef006020, "Ukko, get me out of here you dwarf", globaldef005809, FALSE);
+                                                                                    BotStoreMessage(e, "Ukko, get me out of here you dwarf", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                     {
-                                                                                        func002370(globaldef006020, "HA! You can't really kill me, ", globaldef006022, globaldef005809, FALSE);
+                                                                                        BotStoreMessage2(e, "HA! You can't really kill me, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                                                     }
                                                                                     
                                                                                 }
@@ -5779,37 +5779,37 @@ void (entity globaldef006020) func002283 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006020.botnumber == BOT16)
+                                                                    if(e.botnumber == BOT16)
                                                                     {
-                                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                        if(globaldef006021 <= FALSE)
+                                                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                                                        if(rnd <= FALSE)
                                                                         {
-                                                                            func002369(globaldef006020, "My disassembly is prohibited by law", globaldef005809, FALSE);
+                                                                            BotStoreMessage(e, "My disassembly is prohibited by law", BOTMESSAGETYPE_DEATH, FALSE);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006021 <= TRUE)
+                                                                            if(rnd <= TRUE)
                                                                             {
-                                                                                func002369(globaldef006020, "You will be brought to justice", globaldef005809, FALSE);
+                                                                                BotStoreMessage(e, "You will be brought to justice", BOTMESSAGETYPE_DEATH, FALSE);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006021 <= FL_SWIM)
+                                                                                if(rnd <= FL_SWIM)
                                                                                 {
-                                                                                    func002369(globaldef006020, "You are in possession of illegal weapons, sir", globaldef005809, FALSE);
+                                                                                    BotStoreMessage(e, "You are in possession of illegal weapons, sir", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                     {
-                                                                                        func002370(globaldef006020, "Please surrender at once, ", globaldef006022, globaldef005809, FALSE);
+                                                                                        BotStoreMessage2(e, "Please surrender at once, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         
-                                                                                        if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                         {
-                                                                                            func002369(globaldef006020, "Offense #3, killing a police officer", globaldef005809, FALSE);
+                                                                                            BotStoreMessage(e, "Offense #3, killing a police officer", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                         }
                                                                                         
                                                                                     }
@@ -5823,37 +5823,37 @@ void (entity globaldef006020) func002283 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006020.botnumber == BOT17)
+                                                                        if(e.botnumber == BOT17)
                                                                         {
-                                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                            if(globaldef006021 <= FALSE)
+                                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                                            if(rnd <= FALSE)
                                                                             {
-                                                                                func002369(globaldef006020, "I guess it's boothill time 4 me", globaldef005809, FALSE);
+                                                                                BotStoreMessage(e, "I guess it's boothill time 4 me", BOTMESSAGETYPE_DEATH, FALSE);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006021 <= TRUE)
+                                                                                if(rnd <= TRUE)
                                                                                 {
-                                                                                    func002370(globaldef006020, globaldef006022, " yer a darn good gunslinger, yeller-belly", globaldef005809, FALSE);
+                                                                                    BotStoreMessage2(e, enemy_name, " yer a darn good gunslinger, yeller-belly", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006021 <= FL_SWIM)
+                                                                                    if(rnd <= FL_SWIM)
                                                                                     {
-                                                                                        func002369(globaldef006020, "Caramba!", globaldef005809, FALSE);
+                                                                                        BotStoreMessage(e, "Caramba!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                         {
-                                                                                            func002369(globaldef006020, "You got me, varmitt!!", globaldef005809, FALSE);
+                                                                                            BotStoreMessage(e, "You got me, varmitt!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             
-                                                                                            if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                             {
-                                                                                                func002370(globaldef006020, "Ya shot me in the back like a yeller coward, ", globaldef006022, globaldef005809, FALSE);
+                                                                                                BotStoreMessage2(e, "Ya shot me in the back like a yeller coward, ", enemy_name, BOTMESSAGETYPE_DEATH, FALSE);
                                                                                             }
                                                                                             
                                                                                         }
@@ -5867,19 +5867,19 @@ void (entity globaldef006020) func002283 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006020.botnumber == BOT18)
+                                                                            if(e.botnumber == BOT18)
                                                                             {
-                                                                                globaldef006021 = floor(globaldef006021 * FL_SWIM);
-                                                                                if(globaldef006021 <= FALSE)
+                                                                                rnd = floor(rnd * FL_SWIM);
+                                                                                if(rnd <= FALSE)
                                                                                 {
-                                                                                    func002369(globaldef006020, "Damnit!", globaldef005809, FALSE);
+                                                                                    BotStoreMessage(e, "Damnit!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006021 <= TRUE)
+                                                                                    if(rnd <= TRUE)
                                                                                     {
-                                                                                        func002369(globaldef006020, "Mamma mia", globaldef005809, FALSE);
+                                                                                        BotStoreMessage(e, "Mamma mia", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                     }
                                                                                     
                                                                                 }
@@ -5887,37 +5887,37 @@ void (entity globaldef006020) func002283 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006020.botnumber == BOT19)
+                                                                                if(e.botnumber == BOT19)
                                                                                 {
-                                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                    if(globaldef006021 <= FALSE)
+                                                                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                    if(rnd <= FALSE)
                                                                                     {
-                                                                                        func002369(globaldef006020, "I should have remained a lumberjack", globaldef005809, FALSE);
+                                                                                        BotStoreMessage(e, "I should have remained a lumberjack", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006021 <= TRUE)
+                                                                                        if(rnd <= TRUE)
                                                                                         {
-                                                                                            func002369(globaldef006020, "'tis but a flesh wound", globaldef005809, FALSE);
+                                                                                            BotStoreMessage(e, "'tis but a flesh wound", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006021 <= FL_SWIM)
+                                                                                            if(rnd <= FL_SWIM)
                                                                                             {
-                                                                                                func002369(globaldef006020, "I've had worse cuts shaving", globaldef005809, FALSE);
+                                                                                                BotStoreMessage(e, "I've had worse cuts shaving", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                 {
-                                                                                                    func002369(globaldef006020, "My ulcer hurts more", globaldef005809, FALSE);
+                                                                                                    BotStoreMessage(e, "My ulcer hurts more", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     
-                                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                     {
-                                                                                                        func002371(globaldef006020, "Is that as good as you can do, ", globaldef006022, " ?", globaldef005809, FALSE);
+                                                                                                        BotStoreMessage3(e, "Is that as good as you can do, ", enemy_name, " ?", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                     }
                                                                                                     
                                                                                                 }
@@ -5931,37 +5931,37 @@ void (entity globaldef006020) func002283 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006020.botnumber == BOT20)
+                                                                                    if(e.botnumber == BOT20)
                                                                                     {
-                                                                                        globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                        if(globaldef006021 <= FALSE)
+                                                                                        rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                        if(rnd <= FALSE)
                                                                                         {
-                                                                                            func002369(globaldef006020, "First you wanna wanna kiss me, then kill me", globaldef005809, FALSE);
+                                                                                            BotStoreMessage(e, "First you wanna wanna kiss me, then kill me", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006021 <= TRUE)
+                                                                                            if(rnd <= TRUE)
                                                                                             {
-                                                                                                func002369(globaldef006020, "You pig, you messed up my hair", globaldef005809, FALSE);
+                                                                                                BotStoreMessage(e, "You pig, you messed up my hair", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006021 <= FL_SWIM)
+                                                                                                if(rnd <= FL_SWIM)
                                                                                                 {
-                                                                                                    func002369(globaldef006020, "You animal, look what you've done to my  make-up", globaldef005809, FALSE);
+                                                                                                    BotStoreMessage(e, "You animal, look what you've done to my  make-up", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                                     {
-                                                                                                        func002369(globaldef006020, "Oooh, I just love the way you handle your tiny gun", globaldef005809, FALSE);
+                                                                                                        BotStoreMessage(e, "Oooh, I just love the way you handle your tiny gun", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
-                                                                                                        if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                                         {
-                                                                                                            func002369(globaldef006020, "GREAT!, now my tits need another silicone implant", globaldef005809, FALSE);
+                                                                                                            BotStoreMessage(e, "GREAT!, now my tits need another silicone implant", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -5975,37 +5975,37 @@ void (entity globaldef006020) func002283 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006020.botnumber == BOT21)
+                                                                                        if(e.botnumber == BOT21)
                                                                                         {
-                                                                                            globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                            if(globaldef006021 <= FALSE)
+                                                                                            rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                            if(rnd <= FALSE)
                                                                                             {
-                                                                                                func002369(globaldef006020, "You bastard, you killed me!!!", globaldef005809, FALSE);
+                                                                                                BotStoreMessage(e, "You bastard, you killed me!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006021 <= TRUE)
+                                                                                                if(rnd <= TRUE)
                                                                                                 {
-                                                                                                    func002369(globaldef006020, "Wham! Bam! thank you m'am", globaldef005809, FALSE);
+                                                                                                    BotStoreMessage(e, "Wham! Bam! thank you m'am", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006021 <= FL_SWIM)
+                                                                                                    if(rnd <= FL_SWIM)
                                                                                                     {
-                                                                                                        func002369(globaldef006020, "Come on fuckers, painless is waiting 4 you", globaldef005809, FALSE);
+                                                                                                        BotStoreMessage(e, "Come on fuckers, painless is waiting 4 you", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                                         {
-                                                                                                            func002369(globaldef006020, "Come on, bring on the really bad stuff", globaldef005809, FALSE);
+                                                                                                            BotStoreMessage(e, "Come on, bring on the really bad stuff", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             
-                                                                                                            if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                                             {
-                                                                                                                func002369(globaldef006020, "Payback time!", globaldef005809, FALSE);
+                                                                                                                BotStoreMessage(e, "Payback time!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                             }
                                                                                                             
                                                                                                         }
@@ -6019,55 +6019,55 @@ void (entity globaldef006020) func002283 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006020.botnumber == BOT22)
+                                                                                            if(e.botnumber == BOT22)
                                                                                             {
-                                                                                                globaldef006021 = floor(globaldef006021 * FL_CLIENT);
-                                                                                                if(globaldef006021 <= FALSE)
+                                                                                                rnd = floor(rnd * FL_CLIENT);
+                                                                                                if(rnd <= FALSE)
                                                                                                 {
-                                                                                                    func002369(globaldef006020, "I hate Nerds", globaldef005809, FALSE);
+                                                                                                    BotStoreMessage(e, "I hate Nerds", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006021 <= TRUE)
+                                                                                                    if(rnd <= TRUE)
                                                                                                     {
-                                                                                                        func002369(globaldef006020, "you hound dog", globaldef005809, FALSE);
+                                                                                                        BotStoreMessage(e, "you hound dog", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006021 <= FL_SWIM)
+                                                                                                        if(rnd <= FL_SWIM)
                                                                                                         {
-                                                                                                            func002369(globaldef006020, "I ain't gonna sing no more", globaldef005809, FALSE);
+                                                                                                            BotStoreMessage(e, "I ain't gonna sing no more", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                                             {
-                                                                                                                func002369(globaldef006020, "so do ya wanna have a new car ?", globaldef005809, FALSE);
+                                                                                                                BotStoreMessage(e, "so do ya wanna have a new car ?", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006020, "Pooh! y'all call that shootin'?", globaldef005809, FALSE);
+                                                                                                                    BotStoreMessage(e, "Pooh! y'all call that shootin'?", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006021 <= MOVETYPE_FLY)
+                                                                                                                    if(rnd <= MOVETYPE_FLY)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006020, "camper!!!", globaldef005809, FALSE);
+                                                                                                                        BotStoreMessage(e, "camper!!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006021 <= MOVETYPE_TOSS)
+                                                                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006020, "Y'all like to shoot the king of rock 'n roll", globaldef005809, FALSE);
+                                                                                                                            BotStoreMessage(e, "Y'all like to shoot the king of rock 'n roll", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             
-                                                                                                                            if(globaldef006021 <= MOVETYPE_PUSH)
+                                                                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006020, "I'mmah gonnah cry, baby", globaldef005809, FALSE);
+                                                                                                                                BotStoreMessage(e, "I'mmah gonnah cry, baby", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                             }
                                                                                                                             
                                                                                                                         }
@@ -6088,37 +6088,37 @@ void (entity globaldef006020) func002283 =
                                                                                             else
                                                                                             {
                                                                                                 
-                                                                                                if(globaldef006020.botnumber == BOT0)
+                                                                                                if(e.botnumber == BOT0)
                                                                                                 {
-                                                                                                    globaldef006021 = floor(globaldef006021 * MOVETYPE_FLY);
-                                                                                                    if(globaldef006021 <= FALSE)
+                                                                                                    rnd = floor(rnd * MOVETYPE_FLY);
+                                                                                                    if(rnd <= FALSE)
                                                                                                     {
-                                                                                                        func002369(globaldef006020, "Resurgam", globaldef005809, FALSE);
+                                                                                                        BotStoreMessage(e, "Resurgam", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006021 <= TRUE)
+                                                                                                        if(rnd <= TRUE)
                                                                                                         {
-                                                                                                            func002369(globaldef006020, "non placet", globaldef005809, FALSE);
+                                                                                                            BotStoreMessage(e, "non placet", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006021 <= FL_SWIM)
+                                                                                                            if(rnd <= FL_SWIM)
                                                                                                             {
-                                                                                                                func002369(globaldef006020, "Plebian", globaldef005809, FALSE);
+                                                                                                                BotStoreMessage(e, "Plebian", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006021 <= MOVETYPE_WALK)
+                                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006020, "oops!!", globaldef005809, FALSE);
+                                                                                                                    BotStoreMessage(e, "oops!!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     
-                                                                                                                    if(globaldef006021 <= MOVETYPE_STEP)
+                                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006020, "Ouch!", globaldef005809, FALSE);
+                                                                                                                        BotStoreMessage(e, "Ouch!", BOTMESSAGETYPE_DEATH, FALSE);
                                                                                                                     }
                                                                                                                     
                                                                                                                 }
@@ -8985,39 +8985,39 @@ void (entity globaldef006020) func002283 =
 // OP_STORE_V	228	13	0
 // OP_CALL4	1073	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006144) func002284 = 
+void (entity e) func002284 = 
 {
-    local float globaldef006145;
-    local float globaldef006146;
-    local string globaldef006147;
-    globaldef006145 = random();
+    local float rnd;
+    local float choice;
+    local string name;
+    rnd = random();
     
     if((activeClientCount - globaldef000792) <= TRUE)
     {
-        globaldef006147 = func002373();
-        globaldef006145 = floor(globaldef006145 * MOVETYPE_STEP);
-        if(globaldef006145 == FALSE)
+        name = ObserverName();
+        rnd = floor(rnd * MOVETYPE_STEP);
+        if(rnd == FALSE)
         {
-            func002369(globaldef006144, "Where is everybody?", globaldef005811, FL_SWIM);
+            BotStoreMessage(e, "Where is everybody?", BOTMESSAGE_5, FL_SWIM);
         }
         else
         {
-            if(globaldef006145 == TRUE)
+            if(rnd == TRUE)
             {
-                func002369(globaldef006144, "I'm playing with myself and it seems you like to watch it?", globaldef005810, MOVETYPE_TOSS);
+                BotStoreMessage(e, "I'm playing with myself and it seems you like to watch it?", BOTMESSAGE_4, MOVETYPE_TOSS);
             }
             else
             {
-                if(globaldef006145 == FL_SWIM)
+                if(rnd == FL_SWIM)
                 {
-                    func002371(globaldef006144, "Hey ", globaldef006147, ", are you afraid to play?", globaldef005811, MOVETYPE_FLY);
+                    BotStoreMessage3(e, "Hey ", name, ", are you afraid to play?", BOTMESSAGE_5, MOVETYPE_FLY);
                 }
                 else
                 {
                     
-                    if(globaldef006145 == MOVETYPE_WALK)
+                    if(rnd == MOVETYPE_WALK)
                     {
-                        func002371(globaldef006144, "Hey ", globaldef006147, ", lets do a 1 on 1", globaldef005812, MOVETYPE_FLY);
+                        BotStoreMessage3(e, "Hey ", name, ", lets do a 1 on 1", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
                     }
                     
                 }
@@ -9031,38 +9031,38 @@ void (entity globaldef006144) func002284 =
     
     if(activeClientCount <= FL_SWIM)
     {
-        globaldef006146 = globaldef005816;
+        choice = BOTMESSAGEOPTION_1;
     }
     else
     {
-        if(globaldef006144.botnumber == FALSE)
+        if(e.botnumber == FALSE)
         {
-            globaldef006146 = globaldef005816;
+            choice = BOTMESSAGEOPTION_1;
         }
         else
         {
-            if((globaldef000803 == globaldef005811) && (globaldef000813 != globaldef006144))
+            if((lastBotMessageNr == BOTMESSAGE_5) && (lastBotToTalk != e))
             {
-                globaldef006146 = globaldef005819;
+                choice = BOTMESSAGEOPTION_4;
             }
             else
             {
-                if(globaldef006145 <= 0.7)
+                if(rnd <= 0.7)
                 {
-                    globaldef006146 = globaldef005816;
+                    choice = BOTMESSAGEOPTION_1;
                 }
                 else
                 {
-                    if(globaldef006145 <= 0.9)
+                    if(rnd <= 0.9)
                     {
-                        globaldef006146 = globaldef005817;
+                        choice = BOTMESSAGEOPTION_2;
                     }
                     else
                     {
                         
-                        if(globaldef006145 <= TRUE)
+                        if(rnd <= TRUE)
                         {
-                            globaldef006146 = globaldef005818;
+                            choice = BOTMESSAGEOPTION_3;
                         }
                         
                     }
@@ -9075,64 +9075,64 @@ void (entity globaldef006144) func002284 =
         
     }
     
-    globaldef006147 = func002372(globaldef006144);
-    globaldef006145 = random();
-    if(globaldef006146 == globaldef005819)
+    name = RandomNameExcept(e);
+    rnd = random();
+    if(choice == BOTMESSAGEOPTION_4)
     {
-        globaldef006147 = globaldef000813.netname;
-        globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-        if(globaldef006145 <= FALSE)
+        name = lastBotToTalk.netname;
+        rnd = floor(rnd * FL_CLIENT);
+        if(rnd <= FALSE)
         {
-            func002370(globaldef006144, "Suck my broomstick ", globaldef006147, globaldef005813, FL_SWIM);
+            BotStoreMessage2(e, "Suck my broomstick ", name, BOTMESSAGE_7, FL_SWIM);
         }
         else
         {
-            if((globaldef006145 <= TRUE) && (globaldef006144.botnumber != BOT2))
+            if((rnd <= TRUE) && (e.botnumber != BOT2))
             {
-                func002369(globaldef006144, "Dogs crawl under Gates, software crawls under Windows", globaldef005813, FL_SWIM);
+                BotStoreMessage(e, "Dogs crawl under Gates, software crawls under Windows", BOTMESSAGE_7, FL_SWIM);
             }
             else
             {
-                if(globaldef006145 <= FL_SWIM)
+                if(rnd <= FL_SWIM)
                 {
-                    func002370(globaldef006144, "Eat my pineapple ", globaldef006147, globaldef005813, FL_SWIM);
+                    BotStoreMessage2(e, "Eat my pineapple ", name, BOTMESSAGE_7, FL_SWIM);
                 }
                 else
                 {
-                    if(globaldef006145 <= MOVETYPE_WALK)
+                    if(rnd <= MOVETYPE_WALK)
                     {
-                        func002369(globaldef006144, "Lets go and gib Mr Elusive", globaldef005813, MOVETYPE_WALK);
+                        BotStoreMessage(e, "Lets go and gib Mr Elusive", BOTMESSAGE_7, MOVETYPE_WALK);
                     }
                     else
                     {
-                        if(globaldef006145 <= MOVETYPE_STEP)
+                        if(rnd <= MOVETYPE_STEP)
                         {
-                            func002369(globaldef006144, "Can't you say anything else?", globaldef005813, MOVETYPE_STEP);
+                            BotStoreMessage(e, "Can't you say anything else?", BOTMESSAGE_7, MOVETYPE_STEP);
                         }
                         else
                         {
-                            if(globaldef006145 <= MOVETYPE_FLY)
+                            if(rnd <= MOVETYPE_FLY)
                             {
-                                func002369(globaldef006144, "Stop chatting, you losers!", globaldef005813, MOVETYPE_WALK);
+                                BotStoreMessage(e, "Stop chatting, you losers!", BOTMESSAGE_7, MOVETYPE_WALK);
                             }
                             else
                             {
-                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                if(rnd <= MOVETYPE_TOSS)
                                 {
-                                    func002369(globaldef006144, "Just shut up and play", globaldef005813, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Just shut up and play", BOTMESSAGE_7, MOVETYPE_WALK);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                    if(rnd <= MOVETYPE_PUSH)
                                     {
-                                        func002370(globaldef006144, "Enough already ", globaldef006147, globaldef005813, FL_SWIM);
+                                        BotStoreMessage2(e, "Enough already ", name, BOTMESSAGE_7, FL_SWIM);
                                     }
                                     else
                                     {
                                         
-                                        if(globaldef006145 <= FL_CLIENT)
+                                        if(rnd <= FL_CLIENT)
                                         {
-                                            func002369(globaldef006144, "Lemme clean out yer ears with my broomstick", globaldef005813, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Lemme clean out yer ears with my broomstick", BOTMESSAGE_7, MOVETYPE_STEP);
                                         }
                                         
                                     }
@@ -9154,55 +9154,55 @@ void (entity globaldef006144) func002284 =
     }
     else
     {
-        if(globaldef006146 == globaldef005818)
+        if(choice == BOTMESSAGEOPTION_3)
         {
-            globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-            if(globaldef006145 <= FALSE)
+            rnd = floor(rnd * FL_CLIENT);
+            if(rnd <= FALSE)
             {
-                func002369(globaldef006144, "What do you guys want from me?", globaldef005811, MOVETYPE_WALK);
+                BotStoreMessage(e, "What do you guys want from me?", BOTMESSAGE_5, MOVETYPE_WALK);
             }
             else
             {
-                if(globaldef006145 <= TRUE)
+                if(rnd <= TRUE)
                 {
-                    func002369(globaldef006144, "Your momma is an 8086", globaldef005812, TRUE);
+                    BotStoreMessage(e, "Your momma is an 8086", BOTMESSAGETYPE_TELEFRAG, TRUE);
                 }
                 else
                 {
-                    if(globaldef006145 <= FL_SWIM)
+                    if(rnd <= FL_SWIM)
                     {
-                        func002369(globaldef006144, "I'm real and you are all bots", globaldef005812, MOVETYPE_WALK);
+                        BotStoreMessage(e, "I'm real and you are all bots", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                     }
                     else
                     {
-                        if(globaldef006145 <= MOVETYPE_WALK)
+                        if(rnd <= MOVETYPE_WALK)
                         {
-                            func002369(globaldef006144, "You're all stupid campers", globaldef005812, FL_SWIM);
+                            BotStoreMessage(e, "You're all stupid campers", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                         }
                         else
                         {
-                            if(globaldef006145 <= MOVETYPE_STEP)
+                            if(rnd <= MOVETYPE_STEP)
                             {
-                                func002369(globaldef006144, "Any one of you know Mr Elusive?", globaldef005811, MOVETYPE_WALK);
+                                BotStoreMessage(e, "Any one of you know Mr Elusive?", BOTMESSAGE_5, MOVETYPE_WALK);
                             }
                             else
                             {
-                                if(globaldef006145 <= MOVETYPE_FLY)
+                                if(rnd <= MOVETYPE_FLY)
                                 {
-                                    func002369(globaldef006144, "Lets go to another server", globaldef005812, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Lets go to another server", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                    if(rnd <= MOVETYPE_TOSS)
                                     {
-                                        func002370(globaldef006144, "Let's go and kill ", globaldef006147, globaldef005812, MOVETYPE_WALK);
+                                        BotStoreMessage2(e, "Let's go and kill ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
                                         
-                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                        if(rnd <= MOVETYPE_PUSH)
                                         {
-                                            func002371(globaldef006144, "Anyone know where ", globaldef006147, " is?", globaldef005811, MOVETYPE_STEP);
+                                            BotStoreMessage3(e, "Anyone know where ", name, " is?", BOTMESSAGE_5, MOVETYPE_STEP);
                                         }
                                         
                                     }
@@ -9222,193 +9222,193 @@ void (entity globaldef006144) func002284 =
         }
         else
         {
-            if(globaldef006146 == globaldef005817)
+            if(choice == BOTMESSAGEOPTION_2)
             {
-                globaldef006145 = floor(globaldef006145 * SVC_FINALE);
-                if(globaldef006145 <= FALSE)
+                rnd = floor(rnd * SVC_FINALE);
+                if(rnd <= FALSE)
                 {
-                    func002370(globaldef006144, globaldef006147, " is an illegal Quake camper", globaldef005812, MOVETYPE_WALK);
+                    BotStoreMessage2(e, name, " is an illegal Quake camper", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                 }
                 else
                 {
-                    if(globaldef006145 <= TRUE)
+                    if(rnd <= TRUE)
                     {
-                        func002369(globaldef006144, "Suck my broomstick", globaldef005812, FL_SWIM);
+                        BotStoreMessage(e, "Suck my broomstick", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                     }
                     else
                     {
-                        if(globaldef006145 <= FL_SWIM)
+                        if(rnd <= FL_SWIM)
                         {
-                            func002369(globaldef006144, "Eat my pineapple", globaldef005812, FL_SWIM);
+                            BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                         }
                         else
                         {
-                            if(globaldef006145 <= MOVETYPE_WALK)
+                            if(rnd <= MOVETYPE_WALK)
                             {
-                                func002370(globaldef006144, globaldef006147, " is a camper", globaldef005812, MOVETYPE_WALK);
+                                BotStoreMessage2(e, name, " is a camper", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                             }
                             else
                             {
-                                if(globaldef006145 <= MOVETYPE_STEP)
+                                if(rnd <= MOVETYPE_STEP)
                                 {
-                                    func002369(globaldef006144, "Look! Nudie pics on the hard disk!!", globaldef005812, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "Look! Nudie pics on the hard disk!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                    if(rnd <= MOVETYPE_FLY)
                                     {
-                                        func002369(globaldef006144, "Formatting hard disk", globaldef005812, MOVETYPE_WALK);
+                                        BotStoreMessage(e, "Formatting hard disk", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
-                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                        if(rnd <= MOVETYPE_TOSS)
                                         {
-                                            func002369(globaldef006144, "kill all windows users", globaldef005812, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "kill all windows users", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                            if(rnd <= MOVETYPE_PUSH)
                                             {
-                                                func002369(globaldef006144, "I'm the best there is", globaldef005812, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "I'm the best there is", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= FL_CLIENT)
+                                                if(rnd <= FL_CLIENT)
                                                 {
-                                                    func002369(globaldef006144, "what the !#@% am I doin' here?", globaldef005811, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "what the !#@% am I doin' here?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                     {
-                                                        func002369(globaldef006144, "Eat my pineapple", globaldef005812, FL_SWIM);
+                                                        BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                        if(rnd <= MOVETYPE_BOUNCE)
                                                         {
-                                                            func002369(globaldef006144, "HeHe", globaldef005812, FALSE);
+                                                            BotStoreMessage(e, "HeHe", BOTMESSAGETYPE_TELEFRAG, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                            if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                             {
-                                                                func002369(globaldef006144, "eat my dust", globaldef005812, TRUE);
+                                                                BotStoreMessage(e, "eat my dust", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                if(rnd <= BOTSHIRTPANTS_12)
                                                                 {
-                                                                    func002369(globaldef006144, "Hey, catch this rocket", globaldef005812, FALSE);
+                                                                    BotStoreMessage(e, "Hey, catch this rocket", BOTMESSAGETYPE_TELEFRAG, FALSE);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= BOTSHIRTPANTS_13)
+                                                                    if(rnd <= BOTSHIRTPANTS_13)
                                                                     {
-                                                                        func002369(globaldef006144, "Go get your mommie", globaldef005812, FL_SWIM);
+                                                                        BotStoreMessage(e, "Go get your mommie", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= 14)
+                                                                        if(rnd <= 14)
                                                                         {
-                                                                            func002369(globaldef006144, "traitor!!!", globaldef005812, TRUE);
+                                                                            BotStoreMessage(e, "traitor!!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= GLOBALDEF748_15)
+                                                                            if(rnd <= GLOBALDEF748_15)
                                                                             {
-                                                                                func002369(globaldef006144, "Lemme at ya", globaldef005812, FL_SWIM);
+                                                                                BotStoreMessage(e, "Lemme at ya", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= FL_INWATER)
+                                                                                if(rnd <= FL_INWATER)
                                                                                 {
-                                                                                    func002369(globaldef006144, "Bill Gates is an alien", globaldef005812, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Bill Gates is an alien", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= 17)
+                                                                                    if(rnd <= 17)
                                                                                     {
-                                                                                        func002369(globaldef006144, "my ping is better then my skill", globaldef005812, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "my ping is better then my skill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= 18)
+                                                                                        if(rnd <= 18)
                                                                                         {
-                                                                                            func002369(globaldef006144, "my ping is higher than my IQ", globaldef005812, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "my ping is higher than my IQ", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= 19)
+                                                                                            if(rnd <= 19)
                                                                                             {
-                                                                                                func002369(globaldef006144, "HEHE", globaldef005812, TRUE);
+                                                                                                BotStoreMessage(e, "HEHE", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= 20)
+                                                                                                if(rnd <= 20)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "I've got a lot of experience", globaldef005812, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I've got a lot of experience", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= 21)
+                                                                                                    if(rnd <= 21)
                                                                                                     {
-                                                                                                        func002371(globaldef006144, "I vote ", globaldef006147, " as the camper of the day", globaldef005812, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage3(e, "I vote ", name, " as the camper of the day", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= 22)
+                                                                                                        if(rnd <= 22)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Omicron bots are the best", globaldef005812, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "Omicron bots are the best", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= SVC_TEMPENTITY)
+                                                                                                            if(rnd <= SVC_TEMPENTITY)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Yabadabadooo!!", globaldef005812, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "Yabadabadooo!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= OBOT_MAXBOTS)
+                                                                                                                if(rnd <= OBOT_MAXBOTS)
                                                                                                                 {
-                                                                                                                    func002370(globaldef006144, globaldef006147, " your momma wears combat boots", globaldef005812, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage2(e, name, " your momma wears combat boots", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= SVC_SIGNONNUM)
+                                                                                                                    if(rnd <= SVC_SIGNONNUM)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Anybody", globaldef005812, TRUE);
+                                                                                                                        BotStoreMessage(e, "Anybody", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= SVC_CENTERPRINT)
+                                                                                                                        if(rnd <= SVC_CENTERPRINT)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "I hope this wraps up soon; Alf is on tonight", globaldef005812, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "I hope this wraps up soon; Alf is on tonight", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= SVC_KILLEDMONSTER)
+                                                                                                                            if(rnd <= SVC_KILLEDMONSTER)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "I wrote my own code", globaldef005812, FL_SWIM);
+                                                                                                                                BotStoreMessage(e, "I wrote my own code", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= SVC_FOUNDSECRET)
+                                                                                                                                if(rnd <= SVC_FOUNDSECRET)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "Can someone turn the light on please ?", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                    BotStoreMessage(e, "Can someone turn the light on please ?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= 29)
+                                                                                                                                    if(rnd <= 29)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "Gee, it's dark in here...", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "Gee, it's dark in here...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         
-                                                                                                                                        if(globaldef006145 <= SVC_INTERMISSION)
+                                                                                                                                        if(rnd <= SVC_INTERMISSION)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "Far Out", globaldef005812, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Far Out", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         
                                                                                                                                     }
@@ -9475,105 +9475,105 @@ void (entity globaldef006144) func002284 =
             else
             {
                 
-                if(globaldef006146 == globaldef005816)
+                if(choice == BOTMESSAGEOPTION_1)
                 {
-                    if(globaldef006144.botnumber == BOT23)
+                    if(e.botnumber == BOT23)
                     {
-                        globaldef006145 = floor(globaldef006145 * FL_INWATER);
-                        if(globaldef006145 <= FALSE)
+                        rnd = floor(rnd * FL_INWATER);
+                        if(rnd <= FALSE)
                         {
-                            func002370(globaldef006144, globaldef006147, " boch ghlchraj", globaldef005810, TRUE);
+                            BotStoreMessage2(e, name, " boch ghlchraj", BOTMESSAGE_4, TRUE);
                         }
                         else
                         {
-                            if(globaldef006145 <= TRUE)
+                            if(rnd <= TRUE)
                             {
-                                func002369(globaldef006144, "tlhlngan Hol Dajatlh'a'", globaldef005811, TRUE);
+                                BotStoreMessage(e, "tlhlngan Hol Dajatlh'a'", BOTMESSAGE_5, TRUE);
                             }
                             else
                             {
-                                if(globaldef006145 <= FL_SWIM)
+                                if(rnd <= FL_SWIM)
                                 {
-                                    func002369(globaldef006144, "bortaS blr jablu'Dl'reH QaQqu'nay'", globaldef005812, FL_SWIM);
+                                    BotStoreMessage(e, "bortaS blr jablu'Dl'reH QaQqu'nay'", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                    if(rnd <= MOVETYPE_WALK)
                                     {
-                                        func002370(globaldef006144, "majQa' ", globaldef006147, globaldef005815, FL_SWIM);
+                                        BotStoreMessage2(e, "majQa' ", name, BOTMESSAGE_9, FL_SWIM);
                                     }
                                     else
                                     {
-                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                        if(rnd <= MOVETYPE_STEP)
                                         {
-                                            func002370(globaldef006144, "blmoHqu' ", globaldef006147, globaldef005810, FL_SWIM);
+                                            BotStoreMessage2(e, "blmoHqu' ", name, BOTMESSAGE_4, FL_SWIM);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                            if(rnd <= MOVETYPE_FLY)
                                             {
-                                                func002369(globaldef006144, "Duj tlvoqtaH", globaldef005812, FL_SWIM);
+                                                BotStoreMessage(e, "Duj tlvoqtaH", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                if(rnd <= MOVETYPE_TOSS)
                                                 {
-                                                    func002369(globaldef006144, "bljeghbe'chugh vaj blHegh", globaldef005812, FL_SWIM);
+                                                    BotStoreMessage(e, "bljeghbe'chugh vaj blHegh", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                    if(rnd <= MOVETYPE_PUSH)
                                                     {
-                                                        func002370(globaldef006144, globaldef006147, " veQDuj 'oH Dujllj'e'", globaldef005810, FL_SWIM);
+                                                        BotStoreMessage2(e, name, " veQDuj 'oH Dujllj'e'", BOTMESSAGE_4, FL_SWIM);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= FL_CLIENT)
+                                                        if(rnd <= FL_CLIENT)
                                                         {
-                                                            func002370(globaldef006144, globaldef006147, " Hab SoSlI 'Quch!", globaldef005810, FL_SWIM);
+                                                            BotStoreMessage2(e, name, " Hab SoSlI 'Quch!", BOTMESSAGE_4, FL_SWIM);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                            if(rnd <= MOVETYPE_FLYMISSILE)
                                                             {
-                                                                func002370(globaldef006144, globaldef006147, " ghuy'cha", globaldef005810, MOVETYPE_WALK);
+                                                                BotStoreMessage2(e, name, " ghuy'cha", BOTMESSAGE_4, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                if(rnd <= MOVETYPE_BOUNCE)
                                                                 {
-                                                                    func002369(globaldef006144, "Verengan Ha'DIaH", globaldef005810, FL_SWIM);
+                                                                    BotStoreMessage(e, "Verengan Ha'DIaH", BOTMESSAGE_4, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                                    if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                     {
-                                                                        func002370(globaldef006144, globaldef006147, " Qu'vath", globaldef005810, MOVETYPE_WALK);
+                                                                        BotStoreMessage2(e, name, " Qu'vath", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                        if(rnd <= BOTSHIRTPANTS_12)
                                                                         {
-                                                                            func002369(globaldef006144, "jlHtaHbogh naDev", globaldef005812, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "jlHtaHbogh naDev", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= BOTSHIRTPANTS_13)
+                                                                            if(rnd <= BOTSHIRTPANTS_13)
                                                                             {
-                                                                                func002369(globaldef006144, "toH", globaldef005812, TRUE);
+                                                                                BotStoreMessage(e, "toH", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= 14)
+                                                                                if(rnd <= 14)
                                                                                 {
-                                                                                    func002369(globaldef006144, "qay'be'", globaldef005812, TRUE);
+                                                                                    BotStoreMessage(e, "qay'be'", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= GLOBALDEF748_15)
+                                                                                    if(rnd <= GLOBALDEF748_15)
                                                                                     {
-                                                                                        func002370(globaldef006144, globaldef006147, " qaStaH nuq jay'", globaldef005811, MOVETYPE_WALK);
+                                                                                        BotStoreMessage2(e, name, " qaStaH nuq jay'", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -9609,67 +9609,67 @@ void (entity globaldef006144) func002284 =
                     }
                     else
                     {
-                        if(globaldef006144.botnumber == BOT1)
+                        if(e.botnumber == BOT1)
                         {
-                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                            if(globaldef006145 <= FALSE)
+                            rnd = floor(rnd * MOVETYPE_BOUNCE);
+                            if(rnd <= FALSE)
                             {
-                                func002371(globaldef006144, "Hey ", globaldef006147, ", where is John Romero?", globaldef005811, MOVETYPE_STEP);
+                                BotStoreMessage3(e, "Hey ", name, ", where is John Romero?", BOTMESSAGE_5, MOVETYPE_STEP);
                             }
                             else
                             {
-                                if(globaldef006145 <= TRUE)
+                                if(rnd <= TRUE)
                                 {
-                                    func002369(globaldef006144, "Did Tim Willits do this level?", globaldef005811, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "Did Tim Willits do this level?", BOTMESSAGE_5, MOVETYPE_STEP);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= FL_SWIM)
+                                    if(rnd <= FL_SWIM)
                                     {
-                                        func002369(globaldef006144, "Why isn't the Quake CD in your drive, Huh?", globaldef005811, MOVETYPE_STEP);
+                                        BotStoreMessage(e, "Why isn't the Quake CD in your drive, Huh?", BOTMESSAGE_5, MOVETYPE_STEP);
                                     }
                                     else
                                     {
-                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                        if(rnd <= MOVETYPE_WALK)
                                         {
-                                            func002369(globaldef006144, "Did you register this Quake copy?", globaldef005811, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Did you register this Quake copy?", BOTMESSAGE_5, MOVETYPE_STEP);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                            if(rnd <= MOVETYPE_STEP)
                                             {
-                                                func002369(globaldef006144, "These Omicron bots suck man!", globaldef005812, MOVETYPE_STEP);
+                                                BotStoreMessage(e, "These Omicron bots suck man!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                if(rnd <= MOVETYPE_FLY)
                                                 {
-                                                    func002369(globaldef006144, "What are we waiting for? Christmas?", globaldef005812, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "What are we waiting for? Christmas?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                    if(rnd <= MOVETYPE_TOSS)
                                                     {
-                                                        func002369(globaldef006144, "Hey! There are some bugs in this bot code!", globaldef005812, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Hey! There are some bugs in this bot code!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                        if(rnd <= MOVETYPE_PUSH)
                                                         {
-                                                            func002369(globaldef006144, "Did I program this?", globaldef005812, FL_SWIM);
+                                                            BotStoreMessage(e, "Did I program this?", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= FL_CLIENT)
+                                                            if(rnd <= FL_CLIENT)
                                                             {
-                                                                func002369(globaldef006144, "This QuakeC *IS* half bad!!!", globaldef005812, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "This QuakeC *IS* half bad!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 
-                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                if(rnd <= MOVETYPE_FLYMISSILE)
                                                                 {
-                                                                    func002369(globaldef006144, "R U still playing quake while quake II is out?", globaldef005812, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "R U still playing quake while quake II is out?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                 }
                                                                 
                                                             }
@@ -9693,73 +9693,73 @@ void (entity globaldef006144) func002284 =
                         }
                         else
                         {
-                            if(globaldef006144.botnumber == BOT2)
+                            if(e.botnumber == BOT2)
                             {
-                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                if(globaldef006145 <= FALSE)
+                                rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
+                                if(rnd <= FALSE)
                                 {
-                                    func002369(globaldef006144, "640K ought to be enough for anybody", globaldef005812, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "640K ought to be enough for anybody", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                 }
                                 else
                                 {
-                                    if(globaldef006145 <= TRUE)
+                                    if(rnd <= TRUE)
                                     {
-                                        func002369(globaldef006144, "If you can't make it good, make it look good.", globaldef005812, MOVETYPE_STEP);
+                                        BotStoreMessage(e, "If you can't make it good, make it look good.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                     }
                                     else
                                     {
-                                        if(globaldef006145 <= FL_SWIM)
+                                        if(rnd <= FL_SWIM)
                                         {
-                                            func002369(globaldef006144, "Internet Explorer is better than Netscape", globaldef005812, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Internet Explorer is better than Netscape", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                            if(rnd <= MOVETYPE_WALK)
                                             {
-                                                func002369(globaldef006144, "MS Quake will soon be released", globaldef005812, MOVETYPE_STEP);
+                                                BotStoreMessage(e, "MS Quake will soon be released", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                if(rnd <= MOVETYPE_STEP)
                                                 {
-                                                    func002369(globaldef006144, "Hey, your windows is pirated!", globaldef005812, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "Hey, your windows is pirated!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                    if(rnd <= MOVETYPE_FLY)
                                                     {
-                                                        func002369(globaldef006144, "Anybody wanna buy my quake clone? ", globaldef005811, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Anybody wanna buy my quake clone? ", BOTMESSAGE_5, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                        if(rnd <= MOVETYPE_TOSS)
                                                         {
-                                                            func002369(globaldef006144, "Is it true that nobody likes me?", globaldef005811, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "Is it true that nobody likes me?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                            if(rnd <= MOVETYPE_PUSH)
                                                             {
-                                                                func002369(globaldef006144, "I've got more money than skill", globaldef005812, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "I've got more money than skill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                if(rnd <= FL_CLIENT)
                                                                 {
-                                                                    func002369(globaldef006144, "if U can't beat 'em, buy 'em", globaldef005812, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "if U can't beat 'em, buy 'em", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                                     {
-                                                                        func002369(globaldef006144, "anybody got a dime to spare?", globaldef005812, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "anybody got a dime to spare?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         
-                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                        if(rnd <= MOVETYPE_BOUNCE)
                                                                         {
-                                                                            func002369(globaldef006144, "I hate SUN and JAVA(tm) sucks!!!", globaldef005812, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "I hate SUN and JAVA(tm) sucks!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                         }
                                                                         
                                                                     }
@@ -9785,85 +9785,85 @@ void (entity globaldef006144) func002284 =
                             }
                             else
                             {
-                                if(globaldef006144.botnumber == BOT3)
+                                if(e.botnumber == BOT3)
                                 {
-                                    globaldef006145 = floor(globaldef006145 * BOTSHIRTPANTS_13);
-                                    if(globaldef006145 <= FALSE)
+                                    rnd = floor(rnd * BOTSHIRTPANTS_13);
+                                    if(rnd <= FALSE)
                                     {
-                                        func002369(globaldef006144, "wanna laugh or wanna die?", globaldef005812, MOVETYPE_WALK);
+                                        BotStoreMessage(e, "wanna laugh or wanna die?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
-                                        if(globaldef006145 <= TRUE)
+                                        if(rnd <= TRUE)
                                         {
-                                            func002369(globaldef006144, "Weeee!", globaldef005812, FL_SWIM);
+                                            BotStoreMessage(e, "Weeee!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= FL_SWIM)
+                                            if(rnd <= FL_SWIM)
                                             {
-                                                func002369(globaldef006144, "Let's play catch the rocket!", globaldef005812, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "Let's play catch the rocket!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                if(rnd <= MOVETYPE_WALK)
                                                 {
-                                                    func002369(globaldef006144, "When I'm bad I'm good", globaldef005812, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "When I'm bad I'm good", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                    if(rnd <= MOVETYPE_STEP)
                                                     {
-                                                        func002371(globaldef006144, "Hey, ", globaldef006147, " your shoelaces are undone", globaldef005812, MOVETYPE_STEP);
+                                                        BotStoreMessage3(e, "Hey, ", name, " your shoelaces are undone", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                        if(rnd <= MOVETYPE_FLY)
                                                         {
-                                                            func002369(globaldef006144, "Eyerybody happy with Mr Slappy?", globaldef005812, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "Eyerybody happy with Mr Slappy?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                            if(rnd <= MOVETYPE_TOSS)
                                                             {
-                                                                func002370(globaldef006144, globaldef006147, " you're gonna be gibbed real funny", globaldef005812, MOVETYPE_WALK);
+                                                                BotStoreMessage2(e, name, " you're gonna be gibbed real funny", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                if(rnd <= MOVETYPE_PUSH)
                                                                 {
-                                                                    func002369(globaldef006144, "who want's to be Mr gib?", globaldef005812, MOVETYPE_WALK);
+                                                                    BotStoreMessage(e, "who want's to be Mr gib?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                    if(rnd <= FL_CLIENT)
                                                                     {
-                                                                        func002369(globaldef006144, "Mr Slappy is the new-age hero!", globaldef005812, MOVETYPE_WALK);
+                                                                        BotStoreMessage(e, "Mr Slappy is the new-age hero!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                                                         {
-                                                                            func002369(globaldef006144, " =)", globaldef005812, TRUE);
+                                                                            BotStoreMessage(e, " =)", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                            if(rnd <= MOVETYPE_BOUNCE)
                                                                             {
-                                                                                func002369(globaldef006144, " ;)", globaldef005812, TRUE);
+                                                                                BotStoreMessage(e, " ;)", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                                                if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                 {
-                                                                                    func002369(globaldef006144, "Let it fly", globaldef005812, FL_SWIM);
+                                                                                    BotStoreMessage(e, "Let it fly", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                                    if(rnd <= BOTSHIRTPANTS_12)
                                                                                     {
-                                                                                        func002369(globaldef006144, "A bull with a cleaver, huntin' for beaver", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "A bull with a cleaver, huntin' for beaver", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -9893,67 +9893,67 @@ void (entity globaldef006144) func002284 =
                                 }
                                 else
                                 {
-                                    if(globaldef006144.botnumber == BOT4)
+                                    if(e.botnumber == BOT4)
                                     {
-                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                        if(globaldef006145 <= FALSE)
+                                        rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                        if(rnd <= FALSE)
                                         {
-                                            func002369(globaldef006144, "Don't mess with an Austrian", globaldef005812, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "Don't mess with an Austrian", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                         }
                                         else
                                         {
-                                            if(globaldef006145 <= TRUE)
+                                            if(rnd <= TRUE)
                                             {
-                                                func002369(globaldef006144, "Subject will be terminated", globaldef005812, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "Subject will be terminated", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= FL_SWIM)
+                                                if(rnd <= FL_SWIM)
                                                 {
-                                                    func002369(globaldef006144, "no problemo", globaldef005812, FL_SWIM);
+                                                    BotStoreMessage(e, "no problemo", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                                    if(rnd <= MOVETYPE_WALK)
                                                     {
-                                                        func002369(globaldef006144, "no way Jose", globaldef005812, FL_SWIM);
+                                                        BotStoreMessage(e, "no way Jose", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                                        if(rnd <= MOVETYPE_STEP)
                                                         {
-                                                            func002369(globaldef006144, "I am Awnald Swahtseneggah", globaldef005812, FALSE);
+                                                            BotStoreMessage(e, "I am Awnald Swahtseneggah", BOTMESSAGETYPE_TELEFRAG, FALSE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                                            if(rnd <= MOVETYPE_FLY)
                                                             {
-                                                                func002369(globaldef006144, "I'm Austrian NOT Australian", globaldef005812, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "I'm Austrian NOT Australian", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                if(rnd <= MOVETYPE_TOSS)
                                                                 {
-                                                                    func002369(globaldef006144, "Smoke my cigahs", globaldef005812, FL_SWIM);
+                                                                    BotStoreMessage(e, "Smoke my cigahs", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                    if(rnd <= MOVETYPE_PUSH)
                                                                     {
-                                                                        func002369(globaldef006144, "Did youh seeh Conan the Barbarian?", globaldef005812, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Did youh seeh Conan the Barbarian?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= FL_CLIENT)
+                                                                        if(rnd <= FL_CLIENT)
                                                                         {
-                                                                            func002369(globaldef006144, "Awnald for Presisdent!!", globaldef005812, FL_SWIM);
+                                                                            BotStoreMessage(e, "Awnald for Presisdent!!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                         }
                                                                         else
                                                                         {
                                                                             
-                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                            if(rnd <= MOVETYPE_FLYMISSILE)
                                                                             {
-                                                                                func002369(globaldef006144, "Achtung!!", globaldef005812, TRUE);
+                                                                                BotStoreMessage(e, "Achtung!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                             }
                                                                             
                                                                         }
@@ -9977,67 +9977,67 @@ void (entity globaldef006144) func002284 =
                                     }
                                     else
                                     {
-                                        if(globaldef006144.botnumber == BOT5)
+                                        if(e.botnumber == BOT5)
                                         {
-                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                            if(globaldef006145 <= FALSE)
+                                            rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                            if(rnd <= FALSE)
                                             {
-                                                func002369(globaldef006144, "pounce!", globaldef005812, TRUE);
+                                                BotStoreMessage(e, "pounce!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                             }
                                             else
                                             {
-                                                if(globaldef006145 <= TRUE)
+                                                if(rnd <= TRUE)
                                                 {
-                                                    func002369(globaldef006144, "a tigger is a wonderful thing!", globaldef005812, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "a tigger is a wonderful thing!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= FL_SWIM)
+                                                    if(rnd <= FL_SWIM)
                                                     {
-                                                        func002369(globaldef006144, "Fighting is what tiggers do best", globaldef005812, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Fighting is what tiggers do best", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                                        if(rnd <= MOVETYPE_WALK)
                                                         {
-                                                            func002369(globaldef006144, "meauww", globaldef005812, TRUE);
+                                                            BotStoreMessage(e, "meauww", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                                            if(rnd <= MOVETYPE_STEP)
                                                             {
-                                                                func002369(globaldef006144, "double pounce!", globaldef005812, FL_SWIM);
+                                                                BotStoreMessage(e, "double pounce!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                                if(rnd <= MOVETYPE_FLY)
                                                                 {
-                                                                    func002369(globaldef006144, "Roarrr!!!", globaldef005812, TRUE);
+                                                                    BotStoreMessage(e, "Roarrr!!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                    if(rnd <= MOVETYPE_TOSS)
                                                                     {
-                                                                        func002369(globaldef006144, "the tigger clan is a happy clan", globaldef005812, FL_SWIM);
+                                                                        BotStoreMessage(e, "the tigger clan is a happy clan", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                        if(rnd <= MOVETYPE_PUSH)
                                                                         {
-                                                                            func002369(globaldef006144, "A tigger has more stripes than a sergeant", globaldef005812, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "A tigger has more stripes than a sergeant", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= FL_CLIENT)
+                                                                            if(rnd <= FL_CLIENT)
                                                                             {
-                                                                                func002369(globaldef006144, "Who wants to play with tigger?", globaldef005812, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Who wants to play with tigger?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 
-                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                 {
-                                                                                    func002369(globaldef006144, "I'm a  lean, mean, fighting machine", globaldef005812, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "I'm a  lean, mean, fighting machine", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 
                                                                             }
@@ -10061,67 +10061,67 @@ void (entity globaldef006144) func002284 =
                                         }
                                         else
                                         {
-                                            if(globaldef006144.botnumber == BOT6)
+                                            if(e.botnumber == BOT6)
                                             {
-                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                if(globaldef006145 <= FALSE)
+                                                rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                if(rnd <= FALSE)
                                                 {
-                                                    func002369(globaldef006144, "X-men are uncool", globaldef005812, FL_SWIM);
+                                                    BotStoreMessage(e, "X-men are uncool", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006145 <= TRUE)
+                                                    if(rnd <= TRUE)
                                                     {
-                                                        func002369(globaldef006144, "Anybody got any booze for me?", globaldef005811, MOVETYPE_WALK);
+                                                        BotStoreMessage(e, "Anybody got any booze for me?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= FL_SWIM)
+                                                        if(rnd <= FL_SWIM)
                                                         {
-                                                            func002369(globaldef006144, "My real name is Tony Stark", globaldef005812, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "My real name is Tony Stark", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                                            if(rnd <= MOVETYPE_WALK)
                                                             {
-                                                                func002369(globaldef006144, "Marvel comics rule", globaldef005812, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "Marvel comics rule", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                                if(rnd <= MOVETYPE_STEP)
                                                                 {
-                                                                    func002369(globaldef006144, "I'm the best Bot around", globaldef005812, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "I'm the best Bot around", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                                    if(rnd <= MOVETYPE_FLY)
                                                                     {
-                                                                        func002370(globaldef006144, globaldef006147, " is a weenie sucker", globaldef005810, MOVETYPE_STEP);
+                                                                        BotStoreMessage2(e, name, " is a weenie sucker", BOTMESSAGE_4, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                         {
-                                                                            func002369(globaldef006144, "shop smart... shop s-mart!", globaldef005812, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "shop smart... shop s-mart!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                             {
-                                                                                func002369(globaldef006144, "hail to the king, baby!", globaldef005812, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "hail to the king, baby!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                                if(rnd <= FL_CLIENT)
                                                                                 {
-                                                                                    func002369(globaldef006144, "this is my boomstick!!", globaldef005812, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "this is my boomstick!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                     {
-                                                                                        func002369(globaldef006144, "I'm not an ironing man, damnit!", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "I'm not an ironing man, damnit!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -10145,91 +10145,91 @@ void (entity globaldef006144) func002284 =
                                             }
                                             else
                                             {
-                                                if(globaldef006144.botnumber == BOT7)
+                                                if(e.botnumber == BOT7)
                                                 {
-                                                    globaldef006145 = floor(globaldef006145 * 14);
-                                                    if(globaldef006145 <= FALSE)
+                                                    rnd = floor(rnd * 14);
+                                                    if(rnd <= FALSE)
                                                     {
-                                                        func002369(globaldef006144, "All humans are spineless bastards", globaldef005812, MOVETYPE_WALK);
+                                                        BotStoreMessage(e, "All humans are spineless bastards", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006145 <= TRUE)
+                                                        if(rnd <= TRUE)
                                                         {
-                                                            func002369(globaldef006144, "let's do capture the head", globaldef005812, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "let's do capture the head", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= FL_SWIM)
+                                                            if(rnd <= FL_SWIM)
                                                             {
-                                                                func002369(globaldef006144, "The door swings both ways my ass!", globaldef005812, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "The door swings both ways my ass!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                                if(rnd <= MOVETYPE_WALK)
                                                                 {
-                                                                    func002369(globaldef006144, "I've got really cool movement code", globaldef005812, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "I've got really cool movement code", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                                    if(rnd <= MOVETYPE_STEP)
                                                                     {
-                                                                        func002369(globaldef006144, "Hey Dannyboy, no hero-stuff, ya understand?", globaldef005811, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Hey Dannyboy, no hero-stuff, ya understand?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                                        if(rnd <= MOVETYPE_FLY)
                                                                         {
-                                                                            func002369(globaldef006144, "I'm not from Barcelona", globaldef005812, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "I'm not from Barcelona", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                             {
-                                                                                func002369(globaldef006144, "Is this the Alien TC??", globaldef005811, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Is this the Alien TC??", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                if(rnd <= MOVETYPE_PUSH)
                                                                                 {
-                                                                                    func002369(globaldef006144, "Why isn't this the Alien TC", globaldef005811, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Why isn't this the Alien TC", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                                    if(rnd <= FL_CLIENT)
                                                                                     {
-                                                                                        func002369(globaldef006144, "This must be the Alien TC; You're all aliens", globaldef005812, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "This must be the Alien TC; You're all aliens", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                         {
-                                                                                            func002369(globaldef006144, "people with guns make great trophies", globaldef005812, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "people with guns make great trophies", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                            if(rnd <= MOVETYPE_BOUNCE)
                                                                                             {
-                                                                                                func002369(globaldef006144, "motherfucker.....", globaldef005812, FL_SWIM);
+                                                                                                BotStoreMessage(e, "motherfucker.....", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                                                                if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "shit happens......", globaldef005812, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "shit happens......", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                                                    if(rnd <= BOTSHIRTPANTS_12)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "take It!!", globaldef005812, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "take It!!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
-                                                                                                        if(globaldef006145 <= BOTSHIRTPANTS_13)
+                                                                                                        if(rnd <= BOTSHIRTPANTS_13)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "wanna piece of candy?", globaldef005811, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "wanna piece of candy?", BOTMESSAGE_5, FL_SWIM);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -10261,55 +10261,55 @@ void (entity globaldef006144) func002284 =
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006144.botnumber == BOT8)
+                                                    if(e.botnumber == BOT8)
                                                     {
-                                                        globaldef006145 = floor(globaldef006145 * FL_CLIENT);
-                                                        if(globaldef006145 <= FALSE)
+                                                        rnd = floor(rnd * FL_CLIENT);
+                                                        if(rnd <= FALSE)
                                                         {
-                                                            func002369(globaldef006144, "anibodi know where the swemob is?", globaldef005811, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "anibodi know where the swemob is?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006145 <= TRUE)
+                                                            if(rnd <= TRUE)
                                                             {
-                                                                func002369(globaldef006144, "Sweden rules", globaldef005812, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "Sweden rules", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= FL_SWIM)
+                                                                if(rnd <= FL_SWIM)
                                                                 {
-                                                                    func002370(globaldef006144, globaldef006147, ", Don't mess with da SWEMOB", globaldef005812, MOVETYPE_STEP);
+                                                                    BotStoreMessage2(e, name, ", Don't mess with da SWEMOB", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                                                    if(rnd <= MOVETYPE_WALK)
                                                                     {
-                                                                        func002370(globaldef006144, globaldef006147, ", you know da Borg; Bjorn Borg?", globaldef005811, MOVETYPE_STEP);
+                                                                        BotStoreMessage2(e, name, ", you know da Borg; Bjorn Borg?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                                                        if(rnd <= MOVETYPE_STEP)
                                                                         {
-                                                                            func002369(globaldef006144, "anibodi been to sweda?", globaldef005811, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "anibodi been to sweda?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                                                            if(rnd <= MOVETYPE_FLY)
                                                                             {
-                                                                                func002369(globaldef006144, "Swedish Mob is still alive!!", globaldef005812, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "Swedish Mob is still alive!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                if(rnd <= MOVETYPE_TOSS)
                                                                                 {
-                                                                                    func002369(globaldef006144, "da borg is a good tenniser", globaldef005812, MOVETYPE_STEP);
+                                                                                    BotStoreMessage(e, "da borg is a good tenniser", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                    if(rnd <= MOVETYPE_PUSH)
                                                                                     {
-                                                                                        func002369(globaldef006144, "Sweden has reindeer actually", globaldef005812, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Sweden has reindeer actually", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     
                                                                                 }
@@ -10329,91 +10329,91 @@ void (entity globaldef006144) func002284 =
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006144.botnumber == BOT9)
+                                                        if(e.botnumber == BOT9)
                                                         {
-                                                            globaldef006145 = floor(globaldef006145 * 14);
-                                                            if(globaldef006145 <= FALSE)
+                                                            rnd = floor(rnd * 14);
+                                                            if(rnd <= FALSE)
                                                             {
-                                                                func002369(globaldef006144, "cowabunga!", globaldef005812, TRUE);
+                                                                BotStoreMessage(e, "cowabunga!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006145 <= TRUE)
+                                                                if(rnd <= TRUE)
                                                                 {
-                                                                    func002369(globaldef006144, "I'm on a roll overhere!!", globaldef005812, MOVETYPE_WALK);
+                                                                    BotStoreMessage(e, "I'm on a roll overhere!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= FL_SWIM)
+                                                                    if(rnd <= FL_SWIM)
                                                                     {
-                                                                        func002369(globaldef006144, "can somebody please play some music?", globaldef005811, MOVETYPE_WALK);
+                                                                        BotStoreMessage(e, "can somebody please play some music?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                                                        if(rnd <= MOVETYPE_WALK)
                                                                         {
-                                                                            func002369(globaldef006144, "where are the babes then?", globaldef005811, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "where are the babes then?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                                                            if(rnd <= MOVETYPE_STEP)
                                                                             {
-                                                                                func002369(globaldef006144, "this place blows, dudes.", globaldef005812, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "this place blows, dudes.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                if(rnd <= MOVETYPE_FLY)
                                                                                 {
-                                                                                    func002369(globaldef006144, "where's the shredder dude?", globaldef005811, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "where's the shredder dude?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                    if(rnd <= MOVETYPE_TOSS)
                                                                                     {
-                                                                                        func002369(globaldef006144, "It's Ninja, not hero turtles!!", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "It's Ninja, not hero turtles!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                        if(rnd <= MOVETYPE_PUSH)
                                                                                         {
-                                                                                            func002369(globaldef006144, "HUHUH...Cewl", globaldef005812, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "HUHUH...Cewl", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= FL_CLIENT)
+                                                                                            if(rnd <= FL_CLIENT)
                                                                                             {
-                                                                                                func002369(globaldef006144, "TNMT thrive on pizza, man", globaldef005812, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "TNMT thrive on pizza, man", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "one pizza coming right up", globaldef005812, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "one pizza coming right up", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                    if(rnd <= MOVETYPE_BOUNCE)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Awlright, man, cowabunga supremo", globaldef005812, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Awlright, man, cowabunga supremo", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                                                                        if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Turtles rock bigtime", globaldef005812, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Turtles rock bigtime", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                                                            if(rnd <= BOTSHIRTPANTS_12)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Sensei was wrong about diz place, dudes", globaldef005812, MOVETYPE_FLY);
+                                                                                                                BotStoreMessage(e, "Sensei was wrong about diz place, dudes", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 
-                                                                                                                if(globaldef006145 <= BOTSHIRTPANTS_13)
+                                                                                                                if(rnd <= BOTSHIRTPANTS_13)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Pizza, I dice it, I slice it", globaldef005812, FL_SWIM);
+                                                                                                                    BotStoreMessage(e, "Pizza, I dice it, I slice it", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                 }
                                                                                                                 
                                                                                                             }
@@ -10445,67 +10445,67 @@ void (entity globaldef006144) func002284 =
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006144.botnumber == BOT10)
+                                                            if(e.botnumber == BOT10)
                                                             {
-                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                if(globaldef006145 <= FALSE)
+                                                                rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                if(rnd <= FALSE)
                                                                 {
-                                                                    func002370(globaldef006144, "Pay my fare, ", globaldef006147, globaldef005812, FL_SWIM);
+                                                                    BotStoreMessage2(e, "Pay my fare, ", name, BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006145 <= TRUE)
+                                                                    if(rnd <= TRUE)
                                                                     {
-                                                                        func002369(globaldef006144, "Anybody wanna rocketjump??", globaldef005811, FL_SWIM);
+                                                                        BotStoreMessage(e, "Anybody wanna rocketjump??", BOTMESSAGE_5, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= FL_SWIM)
+                                                                        if(rnd <= FL_SWIM)
                                                                         {
-                                                                            func002369(globaldef006144, "call me a cab", globaldef005812, FL_SWIM);
+                                                                            BotStoreMessage(e, "call me a cab", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                                                            if(rnd <= MOVETYPE_WALK)
                                                                             {
-                                                                                func002370(globaldef006144, globaldef006147, " is a pansy", globaldef005810, FL_SWIM);
+                                                                                BotStoreMessage2(e, name, " is a pansy", BOTMESSAGE_4, FL_SWIM);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                 {
-                                                                                    func002370(globaldef006144, globaldef006147, " does not give any tips", globaldef005810, MOVETYPE_STEP);
+                                                                                    BotStoreMessage2(e, name, " does not give any tips", BOTMESSAGE_4, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                    if(rnd <= MOVETYPE_FLY)
                                                                                     {
-                                                                                        func002369(globaldef006144, "Do I have 'Fool' written all over my forehead", globaldef005812, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Do I have 'Fool' written all over my forehead", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                                         {
-                                                                                            func002369(globaldef006144, "NO! I don't have small change!", globaldef005812, FL_SWIM);
+                                                                                            BotStoreMessage(e, "NO! I don't have small change!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                                             {
-                                                                                                func002369(globaldef006144, "I'm on a Highway to Hell", globaldef005812, FL_SWIM);
+                                                                                                BotStoreMessage(e, "I'm on a Highway to Hell", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                                                if(rnd <= FL_CLIENT)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "Manjana, hombre", globaldef005812, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "Manjana, hombre", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     
-                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Babe, requerdos a todos", globaldef005812, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "Babe, requerdos a todos", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                     }
                                                                                                     
                                                                                                 }
@@ -10529,67 +10529,67 @@ void (entity globaldef006144) func002284 =
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006144.botnumber == BOT11)
+                                                                if(e.botnumber == BOT11)
                                                                 {
-                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                    if(globaldef006145 <= FALSE)
+                                                                    rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                    if(rnd <= FALSE)
                                                                     {
-                                                                        func002369(globaldef006144, "Anybody wanna use me ?", globaldef005811, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Anybody wanna use me ?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006145 <= TRUE)
+                                                                        if(rnd <= TRUE)
                                                                         {
-                                                                            func002369(globaldef006144, "Why aren't these bots on quakeworld", globaldef005811, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "Why aren't these bots on quakeworld", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= FL_SWIM)
+                                                                            if(rnd <= FL_SWIM)
                                                                             {
-                                                                                func002369(globaldef006144, "The name is GameSpy, actually", globaldef005812, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "The name is GameSpy, actually", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                 {
-                                                                                    func002370(globaldef006144, globaldef006147, " are you a nerd ?", globaldef005811, MOVETYPE_WALK);
+                                                                                    BotStoreMessage2(e, name, " are you a nerd ?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                     {
-                                                                                        func002369(globaldef006144, "Where is Qspy on your Hard Disk?", globaldef005811, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Where is Qspy on your Hard Disk?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                        if(rnd <= MOVETYPE_FLY)
                                                                                         {
-                                                                                            func002369(globaldef006144, "Anybody actually register me?", globaldef005811, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "Anybody actually register me?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                                             {
-                                                                                                func002369(globaldef006144, "Good, bad... I'm the guy with the gun", globaldef005812, MOVETYPE_STEP);
+                                                                                                BotStoreMessage(e, "Good, bad... I'm the guy with the gun", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                if(rnd <= MOVETYPE_PUSH)
                                                                                                 {
-                                                                                                    func002370(globaldef006144, "This seems like a NERD spot, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage2(e, "This seems like a NERD spot, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                                                    if(rnd <= FL_CLIENT)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Obots, so what?...are you happy now?", globaldef005812, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage(e, "Obots, so what?...are you happy now?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
-                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "How come nerds play quake?", globaldef005811, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "How come nerds play quake?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -10613,67 +10613,67 @@ void (entity globaldef006144) func002284 =
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006144.botnumber == BOT12)
+                                                                    if(e.botnumber == BOT12)
                                                                     {
-                                                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                        if(globaldef006145 <= FALSE)
+                                                                        rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                        if(rnd <= FALSE)
                                                                         {
-                                                                            func002369(globaldef006144, "How about Warcraft 4 a change?", globaldef005811, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "How about Warcraft 4 a change?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006145 <= TRUE)
+                                                                            if(rnd <= TRUE)
                                                                             {
-                                                                                func002369(globaldef006144, "This quake stuff ain't half bad", globaldef005812, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "This quake stuff ain't half bad", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= FL_SWIM)
+                                                                                if(rnd <= FL_SWIM)
                                                                                 {
-                                                                                    func002369(globaldef006144, "Anyone like the Spice Girls?", globaldef005811, MOVETYPE_STEP);
+                                                                                    BotStoreMessage(e, "Anyone like the Spice Girls?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                     {
-                                                                                        func002369(globaldef006144, "Anybody got tickets 4 the Spice Girls?", globaldef005811, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Anybody got tickets 4 the Spice Girls?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                         {
-                                                                                            func002371(globaldef006144, "Did you forget to flush the toilet ", globaldef006147, "?", globaldef005811, MOVETYPE_STEP);
+                                                                                            BotStoreMessage3(e, "Did you forget to flush the toilet ", name, "?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                            if(rnd <= MOVETYPE_FLY)
                                                                                             {
-                                                                                                func002369(globaldef006144, "I put people on ice", globaldef005810, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "I put people on ice", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                if(rnd <= MOVETYPE_TOSS)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "Don't call me Mr Freeze", globaldef005812, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "Don't call me Mr Freeze", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                    if(rnd <= MOVETYPE_PUSH)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Awnald S. is Mr Freeze", globaldef005812, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Awnald S. is Mr Freeze", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= FL_CLIENT)
+                                                                                                        if(rnd <= FL_CLIENT)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Who wants to be put on Ice then?", globaldef005810, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Who wants to be put on Ice then?", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             
-                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                            if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "My skin is really cool", globaldef005812, FL_SWIM);
+                                                                                                                BotStoreMessage(e, "My skin is really cool", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                             }
                                                                                                             
                                                                                                         }
@@ -10697,73 +10697,73 @@ void (entity globaldef006144) func002284 =
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006144.botnumber == BOT13)
+                                                                        if(e.botnumber == BOT13)
                                                                         {
-                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                            if(globaldef006145 <= FALSE)
+                                                                            rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
+                                                                            if(rnd <= FALSE)
                                                                             {
-                                                                                func002369(globaldef006144, "Gravity is a harsh mistress", globaldef005812, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Gravity is a harsh mistress", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006145 <= TRUE)
+                                                                                if(rnd <= TRUE)
                                                                                 {
-                                                                                    func002370(globaldef006144, globaldef006147, ", Honk if you love justice", globaldef005812, MOVETYPE_FLY);
+                                                                                    BotStoreMessage2(e, name, ", Honk if you love justice", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= FL_SWIM)
+                                                                                    if(rnd <= FL_SWIM)
                                                                                     {
-                                                                                        func002369(globaldef006144, "I'll be the judge of that!", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "I'll be the judge of that!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                         {
-                                                                                            func002370(globaldef006144, globaldef006147, " Monkey from no-where!!!", globaldef005812, MOVETYPE_STEP);
+                                                                                            BotStoreMessage2(e, name, " Monkey from no-where!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                             {
-                                                                                                func002369(globaldef006144, "Bad man hit dog with street", globaldef005812, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "Bad man hit dog with street", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                if(rnd <= MOVETYPE_FLY)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "Unhand him, you sun-worshipping dog launchers!", globaldef005812, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Unhand him, you sun-worshipping dog launchers!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                    if(rnd <= MOVETYPE_TOSS)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Heh, heh. Those darn ninjas. They're wacky", globaldef005812, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Heh, heh. Those darn ninjas. They're wacky", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                        if(rnd <= MOVETYPE_PUSH)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "I'm doing the laundry", globaldef005812, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "I'm doing the laundry", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= FL_CLIENT)
+                                                                                                            if(rnd <= FL_CLIENT)
                                                                                                             {
-                                                                                                                func002370(globaldef006144, "What a master of disguise you are, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage2(e, "What a master of disguise you are, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "SPOON!", globaldef005812, TRUE);
+                                                                                                                    BotStoreMessage(e, "SPOON!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     
-                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                                    if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "That's a whole lotta' Aztecs", globaldef005812, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "That's a whole lotta' Aztecs", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     
                                                                                                                 }
@@ -10789,73 +10789,73 @@ void (entity globaldef006144) func002284 =
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006144.botnumber == BOT14)
+                                                                            if(e.botnumber == BOT14)
                                                                             {
-                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                if(globaldef006145 <= FALSE)
+                                                                                rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
+                                                                                if(rnd <= FALSE)
                                                                                 {
-                                                                                    func002369(globaldef006144, "Anybody seen John Carmack?", globaldef005812, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Anybody seen John Carmack?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006145 <= TRUE)
+                                                                                    if(rnd <= TRUE)
                                                                                     {
-                                                                                        func002369(globaldef006144, "Doomed, I'm Doomed", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Doomed, I'm Doomed", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= FL_SWIM)
+                                                                                        if(rnd <= FL_SWIM)
                                                                                         {
-                                                                                            func002369(globaldef006144, "Isn't this game just the Coolest", globaldef005812, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "Isn't this game just the Coolest", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                             {
-                                                                                                func002369(globaldef006144, "How do I use this thing? ", globaldef005811, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "How do I use this thing? ", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "Rockets, I need Rockets", globaldef005812, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Rockets, I need Rockets", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                    if(rnd <= MOVETYPE_FLY)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Pull the other one", globaldef005812, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Pull the other one", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Atmosphere..that's it!", globaldef005812, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Atmosphere..that's it!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Hmmm, unaligned textures", globaldef005812, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "Hmmm, unaligned textures", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                                                                if(rnd <= FL_CLIENT)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Did I do this level?", globaldef005811, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "Did I do this level?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Anyone for DungeonKeeper?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Anyone for DungeonKeeper?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         
-                                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                                        if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "There is a virus on your hard disk", globaldef005811, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "There is a virus on your hard disk", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         
                                                                                                                     }
@@ -10881,67 +10881,67 @@ void (entity globaldef006144) func002284 =
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006144.botnumber == BOT15)
+                                                                                if(e.botnumber == BOT15)
                                                                                 {
-                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                    if(globaldef006145 <= FALSE)
+                                                                                    rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
+                                                                                    if(rnd <= FALSE)
                                                                                     {
-                                                                                        func002369(globaldef006144, "See you all in hell", globaldef005812, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "See you all in hell", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006145 <= TRUE)
+                                                                                        if(rnd <= TRUE)
                                                                                         {
-                                                                                            func002369(globaldef006144, "Ukko, you dwarf, where are U?", globaldef005811, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "Ukko, you dwarf, where are U?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= FL_SWIM)
+                                                                                            if(rnd <= FL_SWIM)
                                                                                             {
-                                                                                                func002369(globaldef006144, "Where has Ukko gone off to?", globaldef005811, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "Where has Ukko gone off to?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "I need more Blood & Gore", globaldef005812, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I need more Blood & Gore", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Brainbiter and I make a good team", globaldef005812, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "Brainbiter and I make a good team", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                        if(rnd <= MOVETYPE_FLY)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Come on baby light my fire!!!", globaldef005812, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Come on baby light my fire!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "I am Slaine Mac Roth", globaldef005812, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "I am Slaine Mac Roth", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                if(rnd <= MOVETYPE_PUSH)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "I feel a riastarthae coming up...", globaldef005812, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "I feel a riastarthae coming up...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                                                                    if(rnd <= FL_CLIENT)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "BrainBiter should be all I need", globaldef005812, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "BrainBiter should be all I need", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         
-                                                                                                                        if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                                        if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                         {
-                                                                                                                            func002370(globaldef006144, globaldef006147, ", shall I go berserk?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage2(e, name, ", shall I go berserk?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         
                                                                                                                     }
@@ -10965,67 +10965,67 @@ void (entity globaldef006144) func002284 =
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if(globaldef006144.botnumber == BOT16)
+                                                                                    if(e.botnumber == BOT16)
                                                                                     {
-                                                                                        globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                        if(globaldef006145 <= FALSE)
+                                                                                        rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                                        if(rnd <= FALSE)
                                                                                         {
-                                                                                            func002369(globaldef006144, "I've got you are all surrounded", globaldef005812, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "I've got you are all surrounded", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006145 <= TRUE)
+                                                                                            if(rnd <= TRUE)
                                                                                             {
-                                                                                                func002370(globaldef006144, globaldef006147, ", Dead or alive, you're coming with me", globaldef005812, MOVETYPE_STEP);
+                                                                                                BotStoreMessage2(e, name, ", Dead or alive, you're coming with me", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= FL_SWIM)
+                                                                                                if(rnd <= FL_SWIM)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "Come quietly or there will be trouble", globaldef005812, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Come quietly or there will be trouble", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                                     {
-                                                                                                        func002370(globaldef006144, globaldef006147, ", your move, creep", globaldef005812, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage2(e, name, ", your move, creep", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Thank you for NOT smoking", globaldef005812, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Thank you for NOT smoking", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                            if(rnd <= MOVETYPE_FLY)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Keep the peace", globaldef005812, FL_SWIM);
+                                                                                                                BotStoreMessage(e, "Keep the peace", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                if(rnd <= MOVETYPE_TOSS)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Anyone got silverpolish 4 me?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Anyone got silverpolish 4 me?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                    if(rnd <= MOVETYPE_PUSH)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Give up, I've got you completely surrounded", globaldef005812, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Give up, I've got you completely surrounded", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= FL_CLIENT)
+                                                                                                                        if(rnd <= FL_CLIENT)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "Offense #2, Shooting at an officer of the law,", globaldef005812, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "Offense #2, Shooting at an officer of the law,", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             
-                                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                            if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                             {
-                                                                                                                                func002370(globaldef006144, "Offense #1, Use of illegal fire-arms,", globaldef006147, globaldef005812, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage2(e, "Offense #1, Use of illegal fire-arms,", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             
                                                                                                                         }
@@ -11049,67 +11049,67 @@ void (entity globaldef006144) func002284 =
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if(globaldef006144.botnumber == BOT17)
+                                                                                        if(e.botnumber == BOT17)
                                                                                         {
-                                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                            if(globaldef006145 <= FALSE)
+                                                                                            rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                                            if(rnd <= FALSE)
                                                                                             {
-                                                                                                func002369(globaldef006144, "Yeee-haw", globaldef005812, TRUE);
+                                                                                                BotStoreMessage(e, "Yeee-haw", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006145 <= TRUE)
+                                                                                                if(rnd <= TRUE)
                                                                                                 {
-                                                                                                    func002370(globaldef006144, globaldef006147, " is a yella-belly", globaldef005810, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage2(e, name, " is a yella-belly", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= FL_SWIM)
+                                                                                                    if(rnd <= FL_SWIM)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "Giddap, y'all flea bitten, dust-bitin' varmit", globaldef005810, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Giddap, y'all flea bitten, dust-bitin' varmit", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "I'm the ruffest, tuffest gunslinger in the west", globaldef005812, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "I'm the ruffest, tuffest gunslinger in the west", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Rollin' Rollin' Rawhide!!!", globaldef005812, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "Rollin' Rollin' Rawhide!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                if(rnd <= MOVETYPE_FLY)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Yer all dead", globaldef005812, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "Yer all dead", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                    if(rnd <= MOVETYPE_TOSS)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Yer all yella-bellies", globaldef005812, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Yer all yella-bellies", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                        if(rnd <= MOVETYPE_PUSH)
                                                                                                                         {
-                                                                                                                            func002370(globaldef006144, globaldef006147, ", this level ain't big enough for both of us", globaldef005812, MOVETYPE_FLY);
+                                                                                                                            BotStoreMessage2(e, name, ", this level ain't big enough for both of us", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= FL_CLIENT)
+                                                                                                                            if(rnd <= FL_CLIENT)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "I'm a gunslinger, not a doctor.", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "I'm a gunslinger, not a doctor.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 
-                                                                                                                                if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                                if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                 {
-                                                                                                                                    func002370(globaldef006144, "Your momma wear cowboy boots, ", globaldef006147, globaldef005812, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage2(e, "Your momma wear cowboy boots, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 
                                                                                                                             }
@@ -11133,67 +11133,67 @@ void (entity globaldef006144) func002284 =
                                                                                         }
                                                                                         else
                                                                                         {
-                                                                                            if(globaldef006144.botnumber == BOT18)
+                                                                                            if(e.botnumber == BOT18)
                                                                                             {
-                                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCEMISSILE);
-                                                                                                if(globaldef006145 <= FALSE)
+                                                                                                rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
+                                                                                                if(rnd <= FALSE)
                                                                                                 {
-                                                                                                    func002369(globaldef006144, "I putta u oll on ice", globaldef005812, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I putta u oll on ice", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006145 <= TRUE)
+                                                                                                    if(rnd <= TRUE)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "u toucha mi, u die, capito?", globaldef005811, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "u toucha mi, u die, capito?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= FL_SWIM)
+                                                                                                        if(rnd <= FL_SWIM)
                                                                                                         {
-                                                                                                            func002370(globaldef006144, globaldef006147, ", U been ina da bigga ouse?", globaldef005811, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage2(e, name, ", U been ina da bigga ouse?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                                             {
-                                                                                                                func002370(globaldef006144, globaldef006147, ", U wanna wear di cementa shoes?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage2(e, name, ", U wanna wear di cementa shoes?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Anybodi lika Frank Sinatra?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Anybodi lika Frank Sinatra?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                    if(rnd <= MOVETYPE_FLY)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Da winna getsa da pizza, capiche?", globaldef005812, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Da winna getsa da pizza, capiche?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "Belisimo!", globaldef005812, TRUE);
+                                                                                                                            BotStoreMessage(e, "Belisimo!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                                                                             {
-                                                                                                                                func002370(globaldef006144, globaldef006147, " has a salami for a nose", globaldef005810, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage2(e, name, " has a salami for a nose", BOTMESSAGE_4, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                if(rnd <= FL_CLIENT)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "Come get some!", globaldef005812, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "Come get some!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                                                    if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "Shaddapa ya face", globaldef005812, FL_SWIM);
+                                                                                                                                        BotStoreMessage(e, "Shaddapa ya face", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                     }
                                                                                                                                     
                                                                                                                                 }
@@ -11217,67 +11217,67 @@ void (entity globaldef006144) func002284 =
                                                                                             }
                                                                                             else
                                                                                             {
-                                                                                                if(globaldef006144.botnumber == BOT19)
+                                                                                                if(e.botnumber == BOT19)
                                                                                                 {
-                                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                    if(globaldef006145 <= FALSE)
+                                                                                                    rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                                                    if(rnd <= FALSE)
                                                                                                     {
-                                                                                                        func002369(globaldef006144, "This place hardly looks like back home", globaldef005812, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage(e, "This place hardly looks like back home", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006145 <= TRUE)
+                                                                                                        if(rnd <= TRUE)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "I'm not the actor from 'Down South'", globaldef005812, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "I'm not the actor from 'Down South'", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= FL_SWIM)
+                                                                                                            if(rnd <= FL_SWIM)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "To protect and serve", globaldef005812, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "To protect and serve", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "A moose once bit my sister", globaldef005812, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "A moose once bit my sister", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Where are the lumberjacks then?", globaldef005812, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Where are the lumberjacks then?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                        if(rnd <= MOVETYPE_FLY)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "He's a lumberjack and he's ok...", globaldef005812, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "He's a lumberjack and he's ok...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "Has anyone seen my wolf?", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "Has anyone seen my wolf?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                                if(rnd <= MOVETYPE_PUSH)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "I need Canada Dry Ginger Ale...fast", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage(e, "I need Canada Dry Ginger Ale...fast", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                    if(rnd <= FL_CLIENT)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "Whatever happens...Canadians rule!!!", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                        BotStoreMessage(e, "Whatever happens...Canadians rule!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "Chocolate Moose anyone?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                                            BotStoreMessage(e, "Chocolate Moose anyone?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                                         }
                                                                                                                                         
                                                                                                                                     }
@@ -11301,97 +11301,97 @@ void (entity globaldef006144) func002284 =
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    if(globaldef006144.botnumber == BOT20)
+                                                                                                    if(e.botnumber == BOT20)
                                                                                                     {
-                                                                                                        globaldef006145 = floor(globaldef006145 * GLOBALDEF748_15);
-                                                                                                        if(globaldef006145 <= FALSE)
+                                                                                                        rnd = floor(rnd * GLOBALDEF748_15);
+                                                                                                        if(rnd <= FALSE)
                                                                                                         {
-                                                                                                            func002369(globaldef006144, "Men are such babies", globaldef005811, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Men are such babies", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006145 <= TRUE)
+                                                                                                            if(rnd <= TRUE)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Anybody seen my eyeliner ?", globaldef005811, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "Anybody seen my eyeliner ?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= FL_SWIM)
+                                                                                                                if(rnd <= FL_SWIM)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "Which one of you boys wants it first?", globaldef005811, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Which one of you boys wants it first?", BOTMESSAGE_5, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                                    if(rnd <= MOVETYPE_WALK)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Men are such pigs", globaldef005810, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "Men are such pigs", BOTMESSAGE_4, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                        if(rnd <= MOVETYPE_STEP)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "I feel like I wanna nail a man", globaldef005812, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "I feel like I wanna nail a man", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                            if(rnd <= MOVETYPE_FLY)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "I'm gonna blow a man...UP", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                BotStoreMessage(e, "I'm gonna blow a man...UP", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                                if(rnd <= MOVETYPE_TOSS)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "Pinapple anyone?", globaldef005811, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "Pinapple anyone?", BOTMESSAGE_5, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                                    if(rnd <= MOVETYPE_PUSH)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "All men can kiss my broomstick", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "All men can kiss my broomstick", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
-                                                                                                                                        if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                        if(rnd <= FL_CLIENT)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "Eat me..suckers", globaldef005810, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Eat me..suckers", BOTMESSAGE_4, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                                            if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                             {
-                                                                                                                                                func002369(globaldef006144, "Look at what you can't have", globaldef005810, MOVETYPE_WALK);
+                                                                                                                                                BotStoreMessage(e, "Look at what you can't have", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
-                                                                                                                                                if(globaldef006145 <= MOVETYPE_BOUNCE)
+                                                                                                                                                if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                                                 {
-                                                                                                                                                    func002369(globaldef006144, "I hate Quake nerds", globaldef005810, FL_SWIM);
+                                                                                                                                                    BotStoreMessage(e, "I hate Quake nerds", BOTMESSAGE_4, FL_SWIM);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
-                                                                                                                                                    if(globaldef006145 <= MOVETYPE_BOUNCEMISSILE)
+                                                                                                                                                    if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                                                                     {
-                                                                                                                                                        func002370(globaldef006144, globaldef006147, ", you can't get it up, babe", globaldef005810, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage2(e, name, ", you can't get it up, babe", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
-                                                                                                                                                        if(globaldef006145 <= BOTSHIRTPANTS_12)
+                                                                                                                                                        if(rnd <= BOTSHIRTPANTS_12)
                                                                                                                                                         {
-                                                                                                                                                            func002371(globaldef006144, "My, ", globaldef006147, " what a small broomstick you have", globaldef005810, MOVETYPE_STEP);
+                                                                                                                                                            BotStoreMessage3(e, "My, ", name, " what a small broomstick you have", BOTMESSAGE_4, MOVETYPE_STEP);
                                                                                                                                                         }
                                                                                                                                                         else
                                                                                                                                                         {
-                                                                                                                                                            if(globaldef006145 <= BOTSHIRTPANTS_13)
+                                                                                                                                                            if(rnd <= BOTSHIRTPANTS_13)
                                                                                                                                                             {
-                                                                                                                                                                func002369(globaldef006144, "I'm the queen of the hill", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                                BotStoreMessage(e, "I'm the queen of the hill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                             }
                                                                                                                                                             else
                                                                                                                                                             {
                                                                                                                                                                 
-                                                                                                                                                                if(globaldef006145 <= 14)
+                                                                                                                                                                if(rnd <= 14)
                                                                                                                                                                 {
-                                                                                                                                                                    func002369(globaldef006144, "Lara Croft, meet your match", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                                    BotStoreMessage(e, "Lara Croft, meet your match", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                                 }
                                                                                                                                                                 
                                                                                                                                                             }
@@ -11425,61 +11425,61 @@ void (entity globaldef006144) func002284 =
                                                                                                     }
                                                                                                     else
                                                                                                     {
-                                                                                                        if(globaldef006144.botnumber == BOT21)
+                                                                                                        if(e.botnumber == BOT21)
                                                                                                         {
-                                                                                                            globaldef006145 = floor(globaldef006145 * MOVETYPE_FLYMISSILE);
-                                                                                                            if(globaldef006145 <= FALSE)
+                                                                                                            rnd = floor(rnd * MOVETYPE_FLYMISSILE);
+                                                                                                            if(rnd <= FALSE)
                                                                                                             {
-                                                                                                                func002369(globaldef006144, "Punishment due", globaldef005812, TRUE);
+                                                                                                                BotStoreMessage(e, "Punishment due", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                                             }
                                                                                                             else
                                                                                                             {
-                                                                                                                if(globaldef006145 <= TRUE)
+                                                                                                                if(rnd <= TRUE)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "I'm gonna deal out some heavy punishment", globaldef005812, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "I'm gonna deal out some heavy punishment", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= FL_SWIM)
+                                                                                                                    if(rnd <= FL_SWIM)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Have you been punished lately?", globaldef005811, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Have you been punished lately?", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                                        if(rnd <= MOVETYPE_WALK)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "My suit is prettier than Batman's", globaldef005812, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "My suit is prettier than Batman's", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                            if(rnd <= MOVETYPE_STEP)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "I'm cuter than that bat eared playboy", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "I'm cuter than that bat eared playboy", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                                if(rnd <= MOVETYPE_FLY)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "I hear Quake 2 really rocks!!", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage(e, "I hear Quake 2 really rocks!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                                    if(rnd <= MOVETYPE_TOSS)
                                                                                                                                     {
-                                                                                                                                        func002370(globaldef006144, globaldef006147, " is a sunday school wimp!", globaldef005810, MOVETYPE_STEP);
+                                                                                                                                        BotStoreMessage2(e, name, " is a sunday school wimp!", BOTMESSAGE_4, MOVETYPE_STEP);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                                        if(rnd <= MOVETYPE_PUSH)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "you bunch of spammers", globaldef005812, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "you bunch of spammers", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             
-                                                                                                                                            if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                            if(rnd <= FL_CLIENT)
                                                                                                                                             {
-                                                                                                                                                func002369(globaldef006144, "Chicks dig the muscles", globaldef005812, MOVETYPE_STEP);
+                                                                                                                                                BotStoreMessage(e, "Chicks dig the muscles", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
                                                                                                                                             }
                                                                                                                                             
                                                                                                                                         }
@@ -11501,67 +11501,67 @@ void (entity globaldef006144) func002284 =
                                                                                                         }
                                                                                                         else
                                                                                                         {
-                                                                                                            if(globaldef006144.botnumber == BOT22)
+                                                                                                            if(e.botnumber == BOT22)
                                                                                                             {
-                                                                                                                globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                                if(globaldef006145 <= FALSE)
+                                                                                                                rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                                                                if(rnd <= FALSE)
                                                                                                                 {
-                                                                                                                    func002369(globaldef006144, "I'm the King", globaldef005812, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "I'm the King", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
-                                                                                                                    if(globaldef006145 <= TRUE)
+                                                                                                                    if(rnd <= TRUE)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "Thank y'all vary much", globaldef005812, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Thank y'all vary much", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= FL_SWIM)
+                                                                                                                        if(rnd <= FL_SWIM)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "The king is still alaive", globaldef005812, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "The king is still alaive", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                                            if(rnd <= MOVETYPE_WALK)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "Shall I sing a song?", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                BotStoreMessage(e, "Shall I sing a song?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                                if(rnd <= MOVETYPE_STEP)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "Yeah!!", globaldef005812, TRUE);
+                                                                                                                                    BotStoreMessage(e, "Yeah!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                                    if(rnd <= MOVETYPE_FLY)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "Do ya'll want my autograph?", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "Do ya'll want my autograph?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                                        if(rnd <= MOVETYPE_TOSS)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "I'm a singer, not a gibber!", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                            BotStoreMessage(e, "I'm a singer, not a gibber!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                                            if(rnd <= MOVETYPE_PUSH)
                                                                                                                                             {
-                                                                                                                                                func002369(globaldef006144, "Where is the mike?", globaldef005812, FL_SWIM);
+                                                                                                                                                BotStoreMessage(e, "Where is the mike?", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
-                                                                                                                                                if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                                if(rnd <= FL_CLIENT)
                                                                                                                                                 {
-                                                                                                                                                    func002370(globaldef006144, globaldef006147, " it's Mr Presley to you, son", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                    BotStoreMessage2(e, name, " it's Mr Presley to you, son", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
                                                                                                                                                     
-                                                                                                                                                    if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                                                    if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                                     {
-                                                                                                                                                        func002369(globaldef006144, "u-HUH-huh, u-HUH-huh, yeah-yeah-YEAH!", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage(e, "u-HUH-huh, u-HUH-huh, yeah-yeah-YEAH!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     
                                                                                                                                                 }
@@ -11586,67 +11586,67 @@ void (entity globaldef006144) func002284 =
                                                                                                             else
                                                                                                             {
                                                                                                                 
-                                                                                                                if(globaldef006144.botnumber == BOT0)
+                                                                                                                if(e.botnumber == BOT0)
                                                                                                                 {
-                                                                                                                    globaldef006145 = floor(globaldef006145 * MOVETYPE_BOUNCE);
-                                                                                                                    if(globaldef006145 <= FALSE)
+                                                                                                                    rnd = floor(rnd * MOVETYPE_BOUNCE);
+                                                                                                                    if(rnd <= FALSE)
                                                                                                                     {
-                                                                                                                        func002369(globaldef006144, "errare est humanum", globaldef005812, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "errare est humanum", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
-                                                                                                                        if(globaldef006145 <= TRUE)
+                                                                                                                        if(rnd <= TRUE)
                                                                                                                         {
-                                                                                                                            func002369(globaldef006144, "exitus acta probat", globaldef005812, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "exitus acta probat", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
-                                                                                                                            if(globaldef006145 <= FL_SWIM)
+                                                                                                                            if(rnd <= FL_SWIM)
                                                                                                                             {
-                                                                                                                                func002369(globaldef006144, "hodie mihi, cras tibi", globaldef005812, FL_SWIM);
+                                                                                                                                BotStoreMessage(e, "hodie mihi, cras tibi", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
-                                                                                                                                if(globaldef006145 <= MOVETYPE_WALK)
+                                                                                                                                if(rnd <= MOVETYPE_WALK)
                                                                                                                                 {
-                                                                                                                                    func002369(globaldef006144, "facta non verba", globaldef005812, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "facta non verba", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
-                                                                                                                                    if(globaldef006145 <= MOVETYPE_STEP)
+                                                                                                                                    if(rnd <= MOVETYPE_STEP)
                                                                                                                                     {
-                                                                                                                                        func002369(globaldef006144, "aut vincere aut mori", globaldef005810, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "aut vincere aut mori", BOTMESSAGE_4, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
-                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLY)
+                                                                                                                                        if(rnd <= MOVETYPE_FLY)
                                                                                                                                         {
-                                                                                                                                            func002369(globaldef006144, "Cogito, ergo sum", globaldef005812, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Cogito, ergo sum", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
-                                                                                                                                            if(globaldef006145 <= MOVETYPE_TOSS)
+                                                                                                                                            if(rnd <= MOVETYPE_TOSS)
                                                                                                                                             {
-                                                                                                                                                func002369(globaldef006144, "Omicron optimus maximus", globaldef005811, MOVETYPE_WALK);
+                                                                                                                                                BotStoreMessage(e, "Omicron optimus maximus", BOTMESSAGE_5, MOVETYPE_WALK);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
-                                                                                                                                                if(globaldef006145 <= MOVETYPE_PUSH)
+                                                                                                                                                if(rnd <= MOVETYPE_PUSH)
                                                                                                                                                 {
-                                                                                                                                                    func002369(globaldef006144, "proh pudor!", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                    BotStoreMessage(e, "proh pudor!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
-                                                                                                                                                    if(globaldef006145 <= FL_CLIENT)
+                                                                                                                                                    if(rnd <= FL_CLIENT)
                                                                                                                                                     {
-                                                                                                                                                        func002369(globaldef006144, "aut Omicron Bots aut nullus", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage(e, "aut Omicron Bots aut nullus", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
                                                                                                                                                         
-                                                                                                                                                        if(globaldef006145 <= MOVETYPE_FLYMISSILE)
+                                                                                                                                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                                         {
-                                                                                                                                                            func002369(globaldef006144, "aut Vincere aut Mori", globaldef005812, MOVETYPE_WALK);
+                                                                                                                                                            BotStoreMessage(e, "aut Vincere aut Mori", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
                                                                                                                                                         }
                                                                                                                                                         
                                                                                                                                                     }
@@ -11798,57 +11798,57 @@ void (entity globaldef006144) func002284 =
 // OP_STORE_V	213	13	0
 // OP_CALL4	1073	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006464) BotChooseTelefragMessage = 
+void (entity e) BotChooseTelefragMessage = 
 {
-    local float globaldef006465;
-    globaldef006465 = random();
-    globaldef006465 = floor(globaldef006465 * FL_CLIENT);
-    if(globaldef006465 <= FALSE)
+    local float rnd;
+    rnd = random();
+    rnd = floor(rnd * FL_CLIENT);
+    if(rnd <= FALSE)
     {
-        func002369(globaldef006464, "smooth", globaldef005812, FALSE);
+        BotStoreMessage(e, "smooth", BOTMESSAGETYPE_TELEFRAG, FALSE);
     }
     else
     {
-        if(globaldef006465 <= TRUE)
+        if(rnd <= TRUE)
         {
-            func002369(globaldef006464, "Whack! right in the kisser", globaldef005812, FALSE);
+            BotStoreMessage(e, "Whack! right in the kisser", BOTMESSAGETYPE_TELEFRAG, FALSE);
         }
         else
         {
-            if(globaldef006465 <= FL_SWIM)
+            if(rnd <= FL_SWIM)
             {
-                func002369(globaldef006464, "SPAM!!!", globaldef005812, FALSE);
+                BotStoreMessage(e, "SPAM!!!", BOTMESSAGETYPE_TELEFRAG, FALSE);
             }
             else
             {
-                if(globaldef006465 <= MOVETYPE_WALK)
+                if(rnd <= MOVETYPE_WALK)
                 {
-                    func002369(globaldef006464, "does it hurt?", globaldef005812, FALSE);
+                    BotStoreMessage(e, "does it hurt?", BOTMESSAGETYPE_TELEFRAG, FALSE);
                 }
                 else
                 {
-                    if(globaldef006465 <= MOVETYPE_STEP)
+                    if(rnd <= MOVETYPE_STEP)
                     {
-                        func002369(globaldef006464, ":)", globaldef005812, FALSE);
+                        BotStoreMessage(e, ":)", BOTMESSAGETYPE_TELEFRAG, FALSE);
                     }
                     else
                     {
-                        if(globaldef006465 <= MOVETYPE_FLY)
+                        if(rnd <= MOVETYPE_FLY)
                         {
-                            func002369(globaldef006464, "ultimate kill", globaldef005812, FALSE);
+                            BotStoreMessage(e, "ultimate kill", BOTMESSAGETYPE_TELEFRAG, FALSE);
                         }
                         else
                         {
-                            if(globaldef006465 <= MOVETYPE_TOSS)
+                            if(rnd <= MOVETYPE_TOSS)
                             {
-                                func002369(globaldef006464, "wow", globaldef005812, FALSE);
+                                BotStoreMessage(e, "wow", BOTMESSAGETYPE_TELEFRAG, FALSE);
                             }
                             else
                             {
                                 
-                                if(globaldef006465 <= MOVETYPE_PUSH)
+                                if(rnd <= MOVETYPE_PUSH)
                                 {
-                                    func002369(globaldef006464, "ding!", globaldef005812, FALSE);
+                                    BotStoreMessage(e, "ding!", BOTMESSAGETYPE_TELEFRAG, FALSE);
                                 }
                                 
                             }
@@ -12023,135 +12023,135 @@ void (entity globaldef006464) BotChooseTelefragMessage =
 // OP_STORE_V	16700	10	0
 // OP_CALL3	1070	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006474) func002286 = 
+void (entity e) func002286 = 
 {
-    local float globaldef006475;
-    globaldef006475 = random();
-    globaldef006475 = floor(globaldef006475 * 21);
-    if(globaldef006475 <= FALSE)
+    local float rnd;
+    rnd = random();
+    rnd = floor(rnd * 21);
+    if(rnd <= FALSE)
     {
-        func002366(globaldef006474, "hihi", globaldef005812);
+        BotEnterMessage(e, "hihi", BOTMESSAGETYPE_TELEFRAG);
     }
     else
     {
-        if(globaldef006475 <= TRUE)
+        if(rnd <= TRUE)
         {
-            func002366(globaldef006474, "hehe", globaldef005812);
+            BotEnterMessage(e, "hehe", BOTMESSAGETYPE_TELEFRAG);
         }
         else
         {
-            if(globaldef006475 <= FL_SWIM)
+            if(rnd <= FL_SWIM)
             {
-                func002366(globaldef006474, "hahaha", globaldef005812);
+                BotEnterMessage(e, "hahaha", BOTMESSAGETYPE_TELEFRAG);
             }
             else
             {
-                if(globaldef006475 <= MOVETYPE_WALK)
+                if(rnd <= MOVETYPE_WALK)
                 {
-                    func002366(globaldef006474, "I'll put you in backpack mode", globaldef005812);
+                    BotEnterMessage(e, "I'll put you in backpack mode", BOTMESSAGETYPE_TELEFRAG);
                 }
                 else
                 {
-                    if(globaldef006475 <= MOVETYPE_STEP)
+                    if(rnd <= MOVETYPE_STEP)
                     {
-                        func002366(globaldef006474, "you're boring", globaldef005812);
+                        BotEnterMessage(e, "you're boring", BOTMESSAGETYPE_TELEFRAG);
                     }
                     else
                     {
-                        if(globaldef006475 <= MOVETYPE_FLY)
+                        if(rnd <= MOVETYPE_FLY)
                         {
-                            func002366(globaldef006474, "you really suck at quake", globaldef005812);
+                            BotEnterMessage(e, "you really suck at quake", BOTMESSAGETYPE_TELEFRAG);
                         }
                         else
                         {
-                            if(globaldef006475 <= MOVETYPE_TOSS)
+                            if(rnd <= MOVETYPE_TOSS)
                             {
-                                func002366(globaldef006474, "let's rock", globaldef005812);
+                                BotEnterMessage(e, "let's rock", BOTMESSAGETYPE_TELEFRAG);
                             }
                             else
                             {
-                                if(globaldef006475 <= MOVETYPE_PUSH)
+                                if(rnd <= MOVETYPE_PUSH)
                                 {
-                                    func002366(globaldef006474, "whoa!!", globaldef005812);
+                                    BotEnterMessage(e, "whoa!!", BOTMESSAGETYPE_TELEFRAG);
                                 }
                                 else
                                 {
-                                    if(globaldef006475 <= FL_CLIENT)
+                                    if(rnd <= FL_CLIENT)
                                     {
-                                        func002366(globaldef006474, "let's play another game", globaldef005812);
+                                        BotEnterMessage(e, "let's play another game", BOTMESSAGETYPE_TELEFRAG);
                                     }
                                     else
                                     {
-                                        if(globaldef006475 <= MOVETYPE_FLYMISSILE)
+                                        if(rnd <= MOVETYPE_FLYMISSILE)
                                         {
-                                            func002366(globaldef006474, "I've had it for today", globaldef005812);
+                                            BotEnterMessage(e, "I've had it for today", BOTMESSAGETYPE_TELEFRAG);
                                         }
                                         else
                                         {
-                                            if(globaldef006475 <= MOVETYPE_BOUNCE)
+                                            if(rnd <= MOVETYPE_BOUNCE)
                                             {
-                                                func002366(globaldef006474, "DUH!!!", globaldef005812);
+                                                BotEnterMessage(e, "DUH!!!", BOTMESSAGETYPE_TELEFRAG);
                                             }
                                             else
                                             {
-                                                if(globaldef006475 <= MOVETYPE_BOUNCEMISSILE)
+                                                if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                 {
-                                                    func002366(globaldef006474, ":)", globaldef005812);
+                                                    BotEnterMessage(e, ":)", BOTMESSAGETYPE_TELEFRAG);
                                                 }
                                                 else
                                                 {
-                                                    if(globaldef006475 <= BOTSHIRTPANTS_12)
+                                                    if(rnd <= BOTSHIRTPANTS_12)
                                                     {
-                                                        func002366(globaldef006474, "wow", globaldef005812);
+                                                        BotEnterMessage(e, "wow", BOTMESSAGETYPE_TELEFRAG);
                                                     }
                                                     else
                                                     {
-                                                        if(globaldef006475 <= BOTSHIRTPANTS_13)
+                                                        if(rnd <= BOTSHIRTPANTS_13)
                                                         {
-                                                            func002366(globaldef006474, "weeeee", globaldef005812);
+                                                            BotEnterMessage(e, "weeeee", BOTMESSAGETYPE_TELEFRAG);
                                                         }
                                                         else
                                                         {
-                                                            if(globaldef006475 <= 14)
+                                                            if(rnd <= 14)
                                                             {
-                                                                func002366(globaldef006474, "I'm on a roll", globaldef005812);
+                                                                BotEnterMessage(e, "I'm on a roll", BOTMESSAGETYPE_TELEFRAG);
                                                             }
                                                             else
                                                             {
-                                                                if(globaldef006475 <= GLOBALDEF748_15)
+                                                                if(rnd <= GLOBALDEF748_15)
                                                                 {
-                                                                    func002366(globaldef006474, "this rocks", globaldef005812);
+                                                                    BotEnterMessage(e, "this rocks", BOTMESSAGETYPE_TELEFRAG);
                                                                 }
                                                                 else
                                                                 {
-                                                                    if(globaldef006475 <= FL_INWATER)
+                                                                    if(rnd <= FL_INWATER)
                                                                     {
-                                                                        func002366(globaldef006474, "aaah", globaldef005812);
+                                                                        BotEnterMessage(e, "aaah", BOTMESSAGETYPE_TELEFRAG);
                                                                     }
                                                                     else
                                                                     {
-                                                                        if(globaldef006475 <= 17)
+                                                                        if(rnd <= 17)
                                                                         {
-                                                                            func002366(globaldef006474, "groovy", globaldef005812);
+                                                                            BotEnterMessage(e, "groovy", BOTMESSAGETYPE_TELEFRAG);
                                                                         }
                                                                         else
                                                                         {
-                                                                            if(globaldef006475 <= 18)
+                                                                            if(rnd <= 18)
                                                                             {
-                                                                                func002366(globaldef006474, "grrrrr", globaldef005812);
+                                                                                BotEnterMessage(e, "grrrrr", BOTMESSAGETYPE_TELEFRAG);
                                                                             }
                                                                             else
                                                                             {
-                                                                                if(globaldef006475 <= 19)
+                                                                                if(rnd <= 19)
                                                                                 {
-                                                                                    func002366(globaldef006474, "!!", globaldef005812);
+                                                                                    BotEnterMessage(e, "!!", BOTMESSAGETYPE_TELEFRAG);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
-                                                                                    if(globaldef006475 <= 20)
+                                                                                    if(rnd <= 20)
                                                                                     {
-                                                                                        func002366(globaldef006474, "nice!", globaldef005812);
+                                                                                        BotEnterMessage(e, "nice!", BOTMESSAGETYPE_TELEFRAG);
                                                                                     }
                                                                                     
                                                                                 }

@@ -6301,7 +6301,7 @@ void (entity globaldef008114) func002503 =
     
     if(func002489(globaldef008114))
     {
-        func002374(globaldef008114);
+        BotRemoveMessage(globaldef008114);
         func002509(globaldef008114);
         return;
     }
@@ -6309,7 +6309,7 @@ void (entity globaldef008114) func002503 =
     
     if(globaldef008114.pausetime < time)
     {
-        func002375(globaldef008114);
+        BotEnterMessage(globaldef008114);
         func002504(globaldef008114);
     }
     
@@ -6970,7 +6970,7 @@ void (entity globaldef008133) func002511 =
     
     if((globaldef008133.enemy.deadflag != DEAD_NO) || (globaldef008133.enemy.health <= FALSE))
     {
-        if(func002378(globaldef008133))
+        if(CheckBotKillMessage(globaldef008133))
         {
             func002502(globaldef008133);
         }
@@ -7128,7 +7128,7 @@ void (entity globaldef008135) func002513 =
     
     if((globaldef008135.enemy.deadflag != DEAD_NO) || (globaldef008135.enemy.health <= FALSE))
     {
-        if(func002378(globaldef008135))
+        if(CheckBotKillMessage(globaldef008135))
         {
             func002502(globaldef008135);
         }
@@ -7344,7 +7344,7 @@ void (entity globaldef008137) func002515 =
     
     if((globaldef008137.enemy.deadflag != DEAD_NO) || (globaldef008137.enemy.health <= FALSE))
     {
-        if(func002378(globaldef008137))
+        if(CheckBotKillMessage(globaldef008137))
         {
             func002502(globaldef008137);
         }
@@ -7597,7 +7597,7 @@ void (entity globaldef008140) func002517 =
     
     if((globaldef008140.enemy.deadflag != DEAD_NO) || (globaldef008140.enemy.health <= FALSE))
     {
-        if(func002378(globaldef008140))
+        if(CheckBotKillMessage(globaldef008140))
         {
             func002502(globaldef008140);
         }
@@ -7813,7 +7813,7 @@ void (entity globaldef008144) func002520 =
     
     if((globaldef008144.enemy.deadflag != DEAD_NO) || (globaldef008144.enemy.health <= FALSE))
     {
-        if(func002378(globaldef008144))
+        if(CheckBotKillMessage(globaldef008144))
         {
             func002502(globaldef008144);
         }

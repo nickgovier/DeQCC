@@ -1145,7 +1145,7 @@ void () func002572 =
     if(self.pausetime < time)
     {
         self.think = func002421;
-        func002375(self);
+        BotEnterMessage(self);
     }
     
 };
@@ -1172,7 +1172,7 @@ void () func002572 =
 void () func002573 = 
 {
     self.deadflag = DEAD_DEAD;
-    if(func002377(self))
+    if(CheckBotDeathMessage(self))
     {
         func002572();
     }
