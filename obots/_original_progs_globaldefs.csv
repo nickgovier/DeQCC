@@ -818,7 +818,7 @@ row,name,s_name,ofs,type,typename
 816,globaldef000816,0,833,32772,
 817,globaldef000817,0,834,32772,
 818,globaldef000818,0,835,32772,
-819,globaldef000819,0,836,32772,
+819,firstWaypoint,0,836,32772,
 820,globaldef000820,0,837,32772,
 821,bot_stuffcmd,0,838,6,void()
 822,stuffcmd,0,839,6,void()

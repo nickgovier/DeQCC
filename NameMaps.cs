@@ -352,6 +352,9 @@ namespace DeQcc
 
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
 
+            nameMap.Add("globaldef000819", "firstWaypoint");    // b_waypnt.qc GetWaypointByID
+            
+
             // b_clrank.qc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc

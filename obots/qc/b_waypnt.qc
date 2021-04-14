@@ -58,7 +58,7 @@ entity (float wp_id) GetWaypointByID =
         return world;
     }
     
-    wp = globaldef000819;
+    wp = firstWaypoint;
     
     while(wp)
     {
@@ -793,7 +793,7 @@ void () func002657 =
             if(!globaldef000810)
             {
                 bprint("setting up wpp");
-                globaldef009073 = globaldef000819;
+                globaldef009073 = firstWaypoint;
             }
             else
             {
@@ -878,7 +878,7 @@ void () func002657 =
                 if(!globaldef000810)
                 {
                     bprint("setting up wpc");
-                    globaldef009073 = globaldef000819;
+                    globaldef009073 = firstWaypoint;
                 }
                 else
                 {
@@ -1307,7 +1307,7 @@ void () func002661 =
         globaldef009094 = ftos(globaldef000786);
         sprint(self, globaldef009094);
         sprint(self, "\n\n");
-        globaldef000811 = globaldef000819;
+        globaldef000811 = firstWaypoint;
     }
     
     globaldef009093 = FALSE;
@@ -1682,7 +1682,7 @@ void () func002663 =
         sprint(self, globaldef009115);
         sprint(self, "\n\n");
         sprint3(self, "	if (world.model == \"", world.model, "\")\n	{\n");
-        globaldef000811 = globaldef000819;
+        globaldef000811 = firstWaypoint;
     }
     
     globaldef009114 = FALSE;
@@ -1770,14 +1770,14 @@ void () func002663 =
 void (entity globaldef009128) func002664 = 
 {
     
-    if(globaldef000819)
+    if(firstWaypoint)
     {
-        globaldef000819.field000298 = globaldef009128;
+        firstWaypoint.field000298 = globaldef009128;
     }
     
-    globaldef009128.next = globaldef000819;
+    globaldef009128.next = firstWaypoint;
     globaldef009128.field000298 = world;
-    globaldef000819 = globaldef009128;
+    firstWaypoint = globaldef009128;
 };
 
 
@@ -1813,7 +1813,7 @@ void (entity globaldef009130) func002665 =
     }
     else
     {
-        globaldef000819 = globaldef009130.next;
+        firstWaypoint = globaldef009130.next;
     }
     
 };
@@ -2359,7 +2359,7 @@ float () func002674 =
     globaldef009165 = GLOBALDEF721_250;
     globaldef009170 = self.field000299;
     globaldef009167 = FALSE;
-    globaldef009168 = globaldef000819;
+    globaldef009168 = firstWaypoint;
     
     while(globaldef009168)
     {
@@ -3368,7 +3368,7 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
         return;
     }
     
-    globaldef009222 = globaldef000819;
+    globaldef009222 = firstWaypoint;
     
     while(globaldef009222)
     {
@@ -4085,7 +4085,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         return;
     }
     
-    globaldef009236 = globaldef000819;
+    globaldef009236 = firstWaypoint;
     
     while(globaldef009236)
     {
@@ -5195,7 +5195,7 @@ entity (entity globaldef009262) func002691 =
         {
             globaldef009266 = globaldef000720;
             globaldef009264 = world;
-            globaldef009263 = globaldef000819;
+            globaldef009263 = firstWaypoint;
             
             while(globaldef009263)
             {
@@ -5288,7 +5288,7 @@ void (entity globaldef009275, entity globaldef009276) func002692 =
     }
     
     globaldef009275.f_updatecache = func002648;
-    globaldef009277 = globaldef000819;
+    globaldef009277 = firstWaypoint;
     
     while(globaldef009277)
     {

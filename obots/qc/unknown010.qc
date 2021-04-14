@@ -5015,7 +5015,7 @@ entity (entity globaldef008038, entity globaldef008039) func002491 =
     }
     
     func002692(globaldef008039, globaldef008042);
-    globaldef008040 = func002490(globaldef000819, globaldef008038.origin, globaldef000720);
+    globaldef008040 = func002490(firstWaypoint, globaldef008038.origin, globaldef000720);
     globaldef008044 = 99999;
     globaldef008041 = world;
     
@@ -5154,7 +5154,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
     }
     
     func002692(globaldef008047, globaldef008050);
-    globaldef008048 = func002490(globaldef000819, globaldef008046.origin, globaldef000720);
+    globaldef008048 = func002490(firstWaypoint, globaldef008046.origin, globaldef000720);
     enemy_vis = func002392(globaldef008046, globaldef008047);
     if(enemy_vis)
     {
@@ -5277,7 +5277,7 @@ entity (entity globaldef008054, vector globaldef008055, float globaldef008059, f
     local entity globaldef008061;
     local entity globaldef008062;
     local vector globaldef008063;
-    globaldef008061 = globaldef000819;
+    globaldef008061 = firstWaypoint;
     globaldef008062 = world;
     
     while(globaldef008061)

@@ -287,7 +287,7 @@ entity globaldef000815;
 entity globaldef000816;
 entity globaldef000817;
 entity globaldef000818;
-entity globaldef000819;
+entity firstWaypoint;
 entity globaldef000820;
 
 void(entity client, string s) bot_stuffcmd = #21;
