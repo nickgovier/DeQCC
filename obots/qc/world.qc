@@ -953,7 +953,7 @@ void () StartFrame =
                     {
                         func002426(globaldef002456, globaldef002456.field000284);
                         msgUpdateClientColorsToAll(globaldef002456.clientnumber, globaldef002456.clientcolor);
-                        globaldef002456 = globaldef002456.field000297;
+                        globaldef002456 = globaldef002456.next;
                     }
                     
                     cvar_set("temp1", "0");

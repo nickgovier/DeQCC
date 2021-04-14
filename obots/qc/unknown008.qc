@@ -4173,18 +4173,18 @@ void (entity globaldef007102) func002417 =
     func002414(globaldef007102.field000286);
     SetClientNumberFree(globaldef007102.clientnumber);
     
-    if(globaldef007102.field000297)
+    if(globaldef007102.next)
     {
-        globaldef007102.field000297.field000298 = globaldef007102.field000298;
+        globaldef007102.next.field000298 = globaldef007102.field000298;
     }
     
     if(globaldef007102.field000298)
     {
-        globaldef007102.field000298.field000297 = globaldef007102.field000297;
+        globaldef007102.field000298.next = globaldef007102.next;
     }
     else
     {
-        globaldef000817 = globaldef007102.field000297;
+        globaldef000817 = globaldef007102.next;
     }
     
     
@@ -4706,7 +4706,7 @@ entity (float globaldef007113) func002420 =
         globaldef000817.field000298 = globaldef007114;
     }
     
-    globaldef007114.field000297 = globaldef000817;
+    globaldef007114.next = globaldef000817;
     globaldef007114.field000298 = world;
     globaldef000817 = globaldef007114;
     globaldef007114.field000265 = skill;

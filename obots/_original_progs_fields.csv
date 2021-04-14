@@ -296,7 +296,7 @@ row,name,s_name,ofs,type,typename
 294,field000294,0,264,2,float
 295,field000295,0,265,4,entity
 296,field000296,0,266,4,entity
-297,field000297,0,267,4,entity
+297,next,0,267,4,entity
 298,field000298,0,268,4,entity
 299,field000299,0,269,4,entity
 300,field000300,0,270,4,entity

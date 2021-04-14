@@ -44,7 +44,7 @@ void () func002639 =
             globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
         }
         
-        globaldef008982 = globaldef008982.field000297;
+        globaldef008982 = globaldef008982.next;
     }
     
     globaldef008982 = globaldef000817;
@@ -58,7 +58,7 @@ void () func002639 =
             globaldef008982.field000252 = globaldef008982.field000252 - globaldef000686;
         }
         
-        globaldef008982 = globaldef008982.field000297;
+        globaldef008982 = globaldef008982.next;
     }
     
 };

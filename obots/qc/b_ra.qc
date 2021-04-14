@@ -290,7 +290,7 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
             
         }
         
-        globaldef002699 = globaldef002699.field000297;
+        globaldef002699 = globaldef002699.next;
     }
     
     globaldef002699 = globaldef000817;
@@ -315,7 +315,7 @@ float (entity globaldef002694, vector globaldef002695) func000349 =
             
         }
         
-        globaldef002699 = globaldef002699.field000297;
+        globaldef002699 = globaldef002699.next;
     }
     
     return FALSE;

@@ -3143,7 +3143,7 @@ void () ClientConnect =
         globaldef000816.field000298 = self;
     }
     
-    self.field000297 = globaldef000816;
+    self.next = globaldef000816;
     self.field000298 = world;
     globaldef000816 = self;
     
@@ -3172,7 +3172,7 @@ void () ClientConnect =
                 
             }
             
-            globaldef002966 = globaldef002966.field000297;
+            globaldef002966 = globaldef002966.next;
         }
         
         msgUpdateClientNameToAll(self.clientnumber, self.netname);
@@ -3303,18 +3303,18 @@ void () ClientDisconnect =
     SetClientNumberFree(self.clientnumber);
     stopadmin(self);
     
-    if(self.field000297)
+    if(self.next)
     {
-        self.field000297.field000298 = self.field000298;
+        self.next.field000298 = self.field000298;
     }
     
     if(self.field000298)
     {
-        self.field000298.field000297 = self.field000297;
+        self.field000298.next = self.next;
     }
     else
     {
-        globaldef000816 = self.field000297;
+        globaldef000816 = self.next;
     }
     
     

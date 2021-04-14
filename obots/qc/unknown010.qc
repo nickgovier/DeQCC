@@ -399,7 +399,7 @@ float (entity globaldef007628, entity globaldef007629) func002449 =
             
         }
         
-        globaldef007632 = globaldef007632.field000297;
+        globaldef007632 = globaldef007632.next;
     }
     
     return (100 - ((globaldef007630 * 100) / globaldef007612)) / globaldef007631;
@@ -561,18 +561,18 @@ float (entity globaldef007640, entity globaldef007641) func002451 =
 void () func002452 = 
 {
     
-    if(self.field000297)
+    if(self.next)
     {
-        self.field000297.field000298 = self.field000298;
+        self.next.field000298 = self.field000298;
     }
     
     if(self.field000298)
     {
-        self.field000298.field000297 = self.field000297;
+        self.field000298.next = self.next;
     }
     else
     {
-        globaldef000818 = self.field000297;
+        globaldef000818 = self.next;
     }
     
     globaldef000801 = globaldef000801 - TRUE;
@@ -712,7 +712,7 @@ void (entity globaldef007646, vector globaldef007647, float globaldef007651, flo
         globaldef000818.field000298 = globaldef007653;
     }
     
-    globaldef007653.field000297 = globaldef000818;
+    globaldef007653.next = globaldef000818;
     globaldef007653.field000298 = world;
     globaldef000818 = globaldef007653;
     globaldef000801 = globaldef000801 + TRUE;
@@ -759,7 +759,7 @@ float (entity globaldef007657, entity globaldef007658) func002454 =
             
         }
         
-        globaldef007659 = globaldef007659.field000297;
+        globaldef007659 = globaldef007659.next;
     }
     
     return FALSE;
@@ -886,7 +886,7 @@ entity (entity globaldef007660) func002455 =
             
         }
         
-        globaldef007664 = globaldef007664.field000297;
+        globaldef007664 = globaldef007664.next;
     }
     
     return globaldef007665;
@@ -4646,7 +4646,7 @@ entity (entity globaldef008014) func002486 =
             
         }
         
-        globaldef008014.field000339 = globaldef008014.field000339.field000297;
+        globaldef008014.field000339 = globaldef008014.field000339.next;
         globaldef008015 = globaldef008015 + TRUE;
     }
     
@@ -4943,7 +4943,7 @@ entity (entity globaldef008027, vector globaldef008028, float globaldef008032) f
             
         }
         
-        globaldef008027 = globaldef008027.field000297;
+        globaldef008027 = globaldef008027.next;
     }
     
     return globaldef008033;
@@ -5322,7 +5322,7 @@ entity (entity globaldef008054, vector globaldef008055, float globaldef008059, f
             
         }
         
-        globaldef008061 = globaldef008061.field000297;
+        globaldef008061 = globaldef008061.next;
     }
     
     return globaldef008062;
@@ -7888,7 +7888,7 @@ void () func002521 =
             func002504(globaldef008147);
         }
         
-        globaldef008147 = globaldef008147.field000297;
+        globaldef008147 = globaldef008147.next;
     }
     
 };
@@ -7920,7 +7920,7 @@ void (entity globaldef008148) func002522 =
             func002504(globaldef008149);
         }
         
-        globaldef008149 = globaldef008149.field000297;
+        globaldef008149 = globaldef008149.next;
     }
     
 };
@@ -7946,7 +7946,7 @@ void () func002523 =
     while(globaldef008150)
     {
         func002500(globaldef008150);
-        globaldef008150 = globaldef008150.field000297;
+        globaldef008150 = globaldef008150.next;
     }
     
 };

@@ -120,7 +120,7 @@ void () RemoveAllBots =
     while(globaldef007121)
     {
         func002417(globaldef007121);
-        globaldef007121 = globaldef007121.field000297;
+        globaldef007121 = globaldef007121.next;
     }
     
 };

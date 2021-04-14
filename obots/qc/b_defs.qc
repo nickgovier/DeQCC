@@ -83,7 +83,7 @@ void end_ra_globals;
 .float field000294;
 .entity field000295;
 .entity field000296;
-.entity field000297;
+.entity next;
 .entity field000298;
 .entity field000299;
 .entity field000300;

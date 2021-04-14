@@ -235,7 +235,7 @@ void (float globaldef007127) func002428 =
             return;
         }
         
-        globaldef007128 = globaldef007128.field000297;
+        globaldef007128 = globaldef007128.next;
     }
     
 };

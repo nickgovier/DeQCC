@@ -602,7 +602,7 @@ row,name,s_name,ofs,type,typename
 600,field000294,0,617,5,ev_field
 601,field000295,0,618,5,ev_field
 602,field000296,0,619,5,ev_field
-603,field000297,0,620,5,ev_field
+603,next,0,620,5,ev_field
 604,field000298,0,621,5,ev_field
 605,field000299,0,622,5,ev_field
 606,field000300,0,623,5,ev_field

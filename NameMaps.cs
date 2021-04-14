@@ -356,6 +356,9 @@ namespace DeQcc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
 
+            nameMap.Add("field000297", "next");
+            
+
             // Note that b_func.qc, all the function definitions
             // is decompiled to the top of the next file
 

@@ -680,7 +680,7 @@ void () func002697 =
         globaldef009407.weapon = IT_AXE;
         globaldef009407.weaponmodel = "progs/v_axe.mdl";
         globaldef009407.weaponframe = FALSE;
-        globaldef009407 = globaldef009407.field000297;
+        globaldef009407 = globaldef009407.next;
     }
     
     globaldef009407 = globaldef000817;
@@ -692,7 +692,7 @@ void () func002697 =
         globaldef009407.weapon = IT_AXE;
         globaldef009407.weaponmodel = "progs/v_axe.mdl";
         globaldef009407.weaponframe = FALSE;
-        globaldef009407 = globaldef009407.field000297;
+        globaldef009407 = globaldef009407.next;
     }
     
 };
@@ -817,7 +817,7 @@ void () botpathing =
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
-                globaldef009415 = globaldef009415.field000297;
+                globaldef009415 = globaldef009415.next;
             }
             
         }
@@ -837,7 +837,7 @@ void () botpathing =
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
-            globaldef009415 = globaldef009415.field000297;
+            globaldef009415 = globaldef009415.next;
         }
         
     }
@@ -916,7 +916,7 @@ void () humanpathing =
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
-                globaldef009418 = globaldef009418.field000297;
+                globaldef009418 = globaldef009418.next;
             }
             
         }
@@ -936,7 +936,7 @@ void () humanpathing =
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
-            globaldef009418 = globaldef009418.field000297;
+            globaldef009418 = globaldef009418.next;
         }
         
     }
@@ -1375,7 +1375,7 @@ void (float globaldef009447) func002709 =
     while(globaldef009448)
     {
         globaldef009448.items = globaldef009448.items - (globaldef009448.items & globaldef009447);
-        globaldef009448 = globaldef009448.field000297;
+        globaldef009448 = globaldef009448.next;
     }
     
     globaldef009448 = globaldef000817;
@@ -1383,7 +1383,7 @@ void (float globaldef009447) func002709 =
     while(globaldef009448)
     {
         globaldef009448.items = globaldef009448.items - (globaldef009448.items & globaldef009447);
-        globaldef009448 = globaldef009448.field000297;
+        globaldef009448 = globaldef009448.next;
     }
     
     globaldef009448 = find(world, model, "progs/backpack.mdl");
@@ -1501,7 +1501,7 @@ void () nopowerups =
             globaldef009450.invisible_time = FALSE;
             globaldef009450.super_damage_finished = FALSE;
             globaldef009450.super_time = FALSE;
-            globaldef009450 = globaldef009450.field000297;
+            globaldef009450 = globaldef009450.next;
         }
         
         globaldef009450 = globaldef000817;
@@ -1515,7 +1515,7 @@ void () nopowerups =
             globaldef009450.invisible_time = FALSE;
             globaldef009450.super_damage_finished = FALSE;
             globaldef009450.super_time = FALSE;
-            globaldef009450 = globaldef009450.field000297;
+            globaldef009450 = globaldef009450.next;
         }
         
     }
@@ -2167,7 +2167,7 @@ void () func002722 =
             
         }
         
-        self = self.field000297;
+        self = self.next;
     }
     
     self = globaldef000817;
@@ -2175,7 +2175,7 @@ void () func002722 =
     while(self)
     {
         func002418(self);
-        self = self.field000297;
+        self = self.next;
     }
     
     self = globaldef009486;
@@ -2218,7 +2218,7 @@ void () func002723 =
     {
         globaldef009488.frags = FALSE;
         msgUpdateClientFragsToAll(globaldef009488.clientnumber, globaldef009488.frags);
-        globaldef009488 = globaldef009488.field000297;
+        globaldef009488 = globaldef009488.next;
     }
     
     globaldef009488 = globaldef000817;
@@ -2227,7 +2227,7 @@ void () func002723 =
     {
         globaldef009488.frags = FALSE;
         msgUpdateClientFragsToAll(globaldef009488.clientnumber, globaldef009488.frags);
-        globaldef009488 = globaldef009488.field000297;
+        globaldef009488 = globaldef009488.next;
     }
     
 };
@@ -2354,7 +2354,7 @@ void () func002726 =
         func002724(globaldef009499, globaldef009499.field000284);
         globaldef009499.skin = globaldef009500;
         globaldef009499.field000249 = globaldef009500;
-        globaldef009499 = globaldef009499.field000297;
+        globaldef009499 = globaldef009499.next;
     }
     
 };
@@ -2390,7 +2390,7 @@ float (float globaldef009502) func002727 =
             globaldef009504 = globaldef009504 + TRUE;
         }
         
-        globaldef009503 = globaldef009503.field000297;
+        globaldef009503 = globaldef009503.next;
     }
     
     return globaldef009504;
@@ -2427,7 +2427,7 @@ float (float globaldef009506) func002728 =
             globaldef009508 = globaldef009508 + TRUE;
         }
         
-        globaldef009507 = globaldef009507.field000297;
+        globaldef009507 = globaldef009507.next;
     }
     
     return globaldef009508;
@@ -4970,7 +4970,7 @@ void () func002740 =
             globaldef009553.field000362 = FALSE;
         }
         
-        globaldef009553 = globaldef009553.field000297;
+        globaldef009553 = globaldef009553.next;
     }
     
 };
@@ -5054,7 +5054,7 @@ void (entity globaldef009555) admin =
                 sprint(globaldef009556, "type 'yes' on the console if you agree\n");
             }
             
-            globaldef009556 = globaldef009556.field000297;
+            globaldef009556 = globaldef009556.next;
         }
         
     }
@@ -5121,7 +5121,7 @@ void (entity globaldef009562) yes =
         }
         
         globaldef009564 = globaldef009564 + TRUE;
-        globaldef009563 = globaldef009563.field000297;
+        globaldef009563 = globaldef009563.next;
     }
     
     

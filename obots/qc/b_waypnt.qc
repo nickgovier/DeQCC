@@ -68,7 +68,7 @@ entity (float wp_id) GetWaypointByID =
             return wp;
         }
         
-        wp = wp.field000297;
+        wp = wp.next;
     }
     
     return world;
@@ -851,7 +851,7 @@ void () func002657 =
                     
                 }
                 
-                globaldef009073 = globaldef009073.field000297;
+                globaldef009073 = globaldef009073.next;
                 globaldef000810 = globaldef009073;
                 
                 if(globaldef009073)
@@ -899,11 +899,11 @@ void () func002657 =
                         }
                         
                         func002683(globaldef009073.enemy, globaldef009073, FALSE, globaldef009073.enemy);
-                        globaldef000810 = globaldef009073.field000297;
+                        globaldef000810 = globaldef009073.next;
                         return;
                     }
                     
-                    globaldef009073 = globaldef009073.field000297;
+                    globaldef009073 = globaldef009073.next;
                 }
                 
                 globaldef000810 = world;
@@ -1410,7 +1410,7 @@ void () func002661 =
         
         sprint(self, "}\n");
         globaldef009093 = globaldef009093 + TRUE;
-        globaldef009092 = globaldef009092.field000297;
+        globaldef009092 = globaldef009092.next;
         globaldef000811 = globaldef009092;
     }
     
@@ -1749,7 +1749,7 @@ void () func002663 =
         }
         
         globaldef009114 = globaldef009114 + TRUE;
-        globaldef009113 = globaldef009113.field000297;
+        globaldef009113 = globaldef009113.next;
         globaldef000811 = globaldef009113;
     }
     
@@ -1775,7 +1775,7 @@ void (entity globaldef009128) func002664 =
         globaldef000819.field000298 = globaldef009128;
     }
     
-    globaldef009128.field000297 = globaldef000819;
+    globaldef009128.next = globaldef000819;
     globaldef009128.field000298 = world;
     globaldef000819 = globaldef009128;
 };
@@ -1802,18 +1802,18 @@ void (entity globaldef009128) func002664 =
 void (entity globaldef009130) func002665 = 
 {
     
-    if(globaldef009130.field000297)
+    if(globaldef009130.next)
     {
-        globaldef009130.field000297.field000298 = globaldef009130.field000298;
+        globaldef009130.next.field000298 = globaldef009130.field000298;
     }
     
     if(globaldef009130.field000298)
     {
-        globaldef009130.field000298.field000297 = globaldef009130.field000297;
+        globaldef009130.field000298.next = globaldef009130.next;
     }
     else
     {
-        globaldef000819 = globaldef009130.field000297;
+        globaldef000819 = globaldef009130.next;
     }
     
 };
@@ -2415,7 +2415,7 @@ float () func002674 =
             
         }
         
-        globaldef009168 = globaldef009168.field000297;
+        globaldef009168 = globaldef009168.next;
     }
     
     self.field000299 = globaldef009170;
@@ -3373,7 +3373,7 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
     while(globaldef009222)
     {
         globaldef009222.field000338 = FALSE;
-        globaldef009222 = globaldef009222.field000297;
+        globaldef009222 = globaldef009222.next;
     }
     
     wp.field000337 = dist;
@@ -4090,7 +4090,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     while(globaldef009236)
     {
         globaldef009236.field000338 = FALSE;
-        globaldef009236 = globaldef009236.field000297;
+        globaldef009236 = globaldef009236.next;
     }
     
     globaldef009231.field000337 = globaldef009238;
@@ -5229,7 +5229,7 @@ entity (entity globaldef009262) func002691 =
                     
                 }
                 
-                globaldef009263 = globaldef009263.field000297;
+                globaldef009263 = globaldef009263.next;
             }
             
             
@@ -5294,7 +5294,7 @@ void (entity globaldef009275, entity globaldef009276) func002692 =
     {
         globaldef009277.field000323 = world;
         globaldef009277.field000333 = FALSE;
-        globaldef009277 = globaldef009277.field000297;
+        globaldef009277 = globaldef009277.next;
     }
     
     func002683(globaldef009275, globaldef009276, FALSE, globaldef009275);

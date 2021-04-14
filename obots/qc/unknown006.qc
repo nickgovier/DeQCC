@@ -1064,7 +1064,7 @@ void () func002277 =
         }
         
         globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & FL_ONGROUND);
-        globaldef005781 = globaldef005781.field000297;
+        globaldef005781 = globaldef005781.next;
     }
     
 };

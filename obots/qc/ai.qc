@@ -715,7 +715,7 @@ entity () obot_ai_FindClosestVisibleEnt =
             
         }
         
-        currentent = currentent.field000297;
+        currentent = currentent.next;
     }
     
     return closestent;
