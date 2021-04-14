@@ -1619,6 +1619,6 @@ void () monster_enforcer =
     self.th_pain = func002155;
     self.th_die = func002181;
     self.th_missile = func002105;
-    func000531();
+    walkmonster_start();
 };
 

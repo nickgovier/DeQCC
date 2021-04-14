@@ -1323,6 +1323,6 @@ void () monster_knight =
     self.th_melee = knight_atk1;
     self.th_pain = func001054;
     self.th_die = func001086;
-    func000531();
+    walkmonster_start();
 };
 

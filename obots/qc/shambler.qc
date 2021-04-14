@@ -1677,6 +1677,6 @@ void () monster_shambler =
     self.th_melee = func000956;
     self.th_missile = func000958;
     self.th_pain = func000974;
-    func000531();
+    walkmonster_start();
 };
 

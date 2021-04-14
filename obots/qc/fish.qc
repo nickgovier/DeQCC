@@ -1186,6 +1186,6 @@ void () monster_fish =
     self.th_die = func001985;
     self.th_pain = func002015;
     self.th_melee = func001967;
-    func000535();
+    swimmonster_start();
 };
 

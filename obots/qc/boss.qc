@@ -1529,9 +1529,9 @@ void () func001678 =
     if(time >= globaldef004956)
     {
         self = globaldef004954;
-        func000539();
+        door_go_down();
         self = globaldef004955;
-        func000539();
+        door_go_down();
         return;
     }
     

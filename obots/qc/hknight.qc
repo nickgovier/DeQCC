@@ -2455,6 +2455,6 @@ void () monster_hell_knight =
     self.th_missile = func001841;
     self.th_pain = func001918;
     self.th_die = func001813;
-    func000531();
+    walkmonster_start();
 };
 

@@ -1,3 +1,48 @@
+float DOOR_START_OPEN = 1;
+float DOOR_DONT_LINK = 4;
+float DOOR_GOLD_KEY = 8;
+float DOOR_SILVER_KEY = 16;
+float DOOR_TOGGLE = 32;
+void () door_go_down;
+void () door_go_up;
+
+// door_blocked
+// function begins at statement 14806, parm_start=10229
+// OP_STORE_V	29	4	0
+// OP_STORE_V	28	7	0
+// OP_STORE_V	28	10	0
+// OP_LOAD_F	28	425	10229
+// OP_STORE_V	10229	13	0
+// OP_CALL4	522	0	0
+// OP_LOAD_F	28	418	10230
+// OP_GE	10230	213	10231
+// OP_IFNOT	10231	7	0
+// OP_LOAD_F	28	438	10232
+// OP_EQ_F	10232	285	10233
+// OP_IFNOT	10233	3	0
+// OP_CALL0	10227	0	0
+// OP_GOTO	2	0	0
+// OP_CALL0	10226	0	0
+// OP_DONE	0	0	0
+void () door_blocked = 
+{
+    T_Damage(other, self, self, self.dmg);
+    
+    if(self.wait >= FALSE)
+    {
+        if(self.state == STATE_DOWN)
+        {
+            door_go_up();
+        }
+        else
+        {
+            door_go_down();
+        }
+        
+    }
+    
+};
+
 
 // door_hit_top
 // function begins at statement 14822, parm_start=10235
@@ -27,12 +72,12 @@ void () door_hit_top =
     sound(self, CHAN_VOICE, self.noise1, TRUE, ATTN_NORM);
     self.state = STATE_TOP;
     
-    if(self.spawnflags & globaldef003320)
+    if(self.spawnflags & DOOR_TOGGLE)
     {
         return;
     }
     
-    self.think = func000539;
+    self.think = door_go_down;
     self.nextthink = self.ltime + self.wait;
 };
 
@@ -56,7 +101,7 @@ void () door_hit_bottom =
 };
 
 
-// func000539
+// door_go_down
 // function begins at statement 14853, parm_start=10247
 // OP_STORE_V	28	4	0
 // OP_STORE_V	327	7	0
@@ -81,7 +126,7 @@ void () door_hit_bottom =
 // OP_STORE_V	10244	10	0
 // OP_CALL3	514	0	0
 // OP_DONE	0	0	0
-void () func000539 = 
+void () door_go_down = 
 {
     sound(self, CHAN_VOICE, self.noise2, TRUE, ATTN_NORM);
     
@@ -96,7 +141,7 @@ void () func000539 =
 };
 
 
-// func000540
+// door_go_up
 // function begins at statement 14876, parm_start=10257
 // OP_LOAD_F	28	438	10257
 // OP_EQ_F	10257	284	10258
@@ -128,7 +173,7 @@ void () func000539 =
 // OP_CALL3	514	0	0
 // OP_CALL0	520	0	0
 // OP_DONE	0	0	0
-void () func000540 = 
+void () door_go_up = 
 {
     
     if(self.state == STATE_UP)
@@ -217,7 +262,7 @@ void () func000541 =
     self.message = string_null;
     globaldef003327 = self;
     
-    if(self.spawnflags & globaldef003320)
+    if(self.spawnflags & DOOR_TOGGLE)
     {
         
         if((self.state == STATE_UP) || (self.state == STATE_TOP))
@@ -225,7 +270,7 @@ void () func000541 =
             globaldef003328 = self;
             do
             {
-                func000539();
+                door_go_down();
                 self = self.enemy;
             } while ((self != globaldef003328) && (self != world));
             self = globaldef003327;
@@ -237,7 +282,7 @@ void () func000541 =
     globaldef003328 = self;
     do
     {
-        func000540();
+        door_go_up();
         self = self.enemy;
     } while ((self != globaldef003328) && (self != world));
     self = globaldef003327;
@@ -1261,16 +1306,16 @@ void () func_door =
     setorigin(self, self.origin);
     setmodel(self, self.model);
     self.classname = "door";
-    self.blocked = func000536;
+    self.blocked = door_blocked;
     self.use = func000542;
     
-    if(self.spawnflags & globaldef003319)
+    if(self.spawnflags & DOOR_SILVER_KEY)
     {
         self.items = IT_KEY1;
     }
     
     
-    if(self.spawnflags & globaldef003318)
+    if(self.spawnflags & DOOR_GOLD_KEY)
     {
         self.items = IT_KEY2;
     }
@@ -1302,7 +1347,7 @@ void () func_door =
     self.pos1 = self.origin;
     self.pos2 = self.pos1 + (self.movedir * ((fabs(self.movedir * self.size)) - self.lip));
     
-    if(self.spawnflags & globaldef003316)
+    if(self.spawnflags & DOOR_START_OPEN)
     {
         setorigin(self, self.pos2);
         self.pos2 = self.pos1;
@@ -1964,45 +2009,5 @@ void () func_door_secret =
         self.wait = MOVETYPE_FLY;
     }
     
-};
-
-void () func000563;
-
-// button_wait
-// function begins at statement 15868, parm_start=10875
-// OP_ADDRESS	28	438	10875
-// OP_STOREP_F	282	10875	0
-// OP_ADDRESS	28	150	10876
-// OP_LOAD_F	28	102	10877
-// OP_LOAD_F	28	418	10878
-// OP_ADD_F	10877	10878	10879
-// OP_STOREP_F	10879	10876	0
-// OP_ADDRESS	28	148	10880
-// OP_STOREP_FNC	10873	10880	0
-// OP_LOAD_ENT	28	181	10881
-// OP_STORE_ENT	10881	351	0
-// OP_CALL0	520	0	0
-// OP_ADDRESS	28	131	10882
-// OP_STOREP_F	214	10882	0
-// OP_DONE	0	0	0
-void () button_wait = 
-{
-    self.state = STATE_TOP;
-    self.nextthink = self.ltime + self.wait;
-    self.think = func000563;
-    activator = self.enemy;
-    SUB_UseTargets();
-    self.frame = TRUE;
-};
-
-
-// button_done
-// function begins at statement 15883, parm_start=10884
-// OP_ADDRESS	28	438	10884
-// OP_STOREP_F	283	10884	0
-// OP_DONE	0	0	0
-void () button_done = 
-{
-    self.state = STATE_BOTTOM;
 };
 

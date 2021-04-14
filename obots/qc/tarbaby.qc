@@ -995,6 +995,6 @@ void () monster_tarbaby =
     self.th_missile = func001738;
     self.th_melee = func001738;
     self.th_die = func001744;
-    func000531();
+    walkmonster_start();
 };
 

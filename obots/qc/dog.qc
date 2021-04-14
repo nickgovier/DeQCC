@@ -1438,6 +1438,6 @@ void () monster_dog =
     self.th_die = func001354;
     self.th_melee = func001296;
     self.th_missile = func001304;
-    func000531();
+    walkmonster_start();
 };
 

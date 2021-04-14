@@ -1472,12 +1472,19 @@ namespace DeQcc
 
             #endregion
 
+            // Done
             #region monsters.qc
 
             nameMap.Add("func000528", "monster_use");
             nameMap.Add("func000529", "monster_death_use");
+            nameMap.Add("func000530", "walkmonster_start_go");
+            nameMap.Add("func000531", "walkmonster_start");
+            nameMap.Add("func000532", "flymonster_start_go");
+            nameMap.Add("func000533", "flymonster_start");
+            nameMap.Add("func000534", "swimmonster_start_go");
+            nameMap.Add("func000535", "swimmonster_start");
 
-            for (int i = 528; i <= 529; i++)
+            for (int i = 528; i <= 535; i++)
             {
                 fileMap[i] = "monsters.qc";
             }
@@ -1487,11 +1494,26 @@ namespace DeQcc
             nameMap.Add("globaldef003298", "otemp");
             nameMap.Add("globaldef003299", "stemp");
 
+            // walkmonster_start_go locals
+            nameMap.Add("globaldef003301", "stemp");
+            nameMap.Add("globaldef003302", "etemp");
+
             #endregion
 
             #region doors.qc
 
-            for (int i = 537; i <= 562; i++)
+            // Declarations
+            nameMap.Add("globaldef003316", "DOOR_START_OPEN");
+            nameMap.Add("globaldef003317", "DOOR_DONT_LINK");
+            nameMap.Add("globaldef003318", "DOOR_GOLD_KEY");
+            nameMap.Add("globaldef003319", "DOOR_SILVER_KEY");
+            nameMap.Add("globaldef003320", "DOOR_TOGGLE");
+
+            nameMap.Add("func000536", "door_blocked");
+            nameMap.Add("func000539", "door_go_down");
+            nameMap.Add("func000540", "door_go_up");
+
+            for (int i = 536; i <= 560; i++)
             {
                 fileMap[i] = "doors.qc";
             }
@@ -1500,7 +1522,7 @@ namespace DeQcc
 
             #region buttons.qc
 
-            for (int i = 569; i <= 569; i++)
+            for (int i = 561; i <= 569; i++)
             {
                 fileMap[i] = "buttons.qc";
             }
@@ -1522,7 +1544,7 @@ namespace DeQcc
 
             #region plats.qc
 
-            for (int i = 603; i <= 619; i++)
+            for (int i = 602; i <= 619; i++)
             {
                 fileMap[i] = "plats.qc";
             }

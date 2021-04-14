@@ -2197,7 +2197,7 @@ void () func000809 =
     self.th_melee = func000808;
     self.th_missile = func000730;
     self.th_pain = func000782;
-    func000531();
+    walkmonster_start();
 };
 
 

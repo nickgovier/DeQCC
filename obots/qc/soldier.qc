@@ -1440,6 +1440,6 @@ void () monster_army =
     self.th_missile = func001128;
     self.th_pain = func001170;
     self.th_die = func001193;
-    func000531();
+    walkmonster_start();
 };
 

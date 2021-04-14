@@ -1414,6 +1414,6 @@ void () monster_wizard =
     self.th_missile = func001263;
     self.th_pain = func001262;
     self.th_die = func001261;
-    func000533();
+    flymonster_start();
 };
 

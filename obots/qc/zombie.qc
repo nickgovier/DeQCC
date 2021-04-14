@@ -2726,7 +2726,7 @@ void () monster_zombie =
     }
     else
     {
-        func000531();
+        walkmonster_start();
     }
     
 };
