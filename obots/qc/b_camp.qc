@@ -1371,8 +1371,8 @@ void (entity globaldef002625) func000340 =
     globaldef002625.distance = globaldef002626;
 };
 
-void (vector globaldef003474) spawn_tfog;
-void (vector globaldef003479, entity globaldef003483) spawn_tdeath;
+void (vector org) spawn_tfog;
+void (vector org, entity death_owner) spawn_tdeath;
 
 // func000341
 // function begins at statement 9547, parm_start=7262

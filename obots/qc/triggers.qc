@@ -1,7 +1,7 @@
-entity globaldef003439;
-entity globaldef003440;
-entity globaldef003441;
-entity globaldef003442;
+entity stemp;
+entity otemp;
+entity s;
+entity old;
 
 // trigger_reactivate
 // function begins at statement 16056, parm_start=11004
@@ -13,10 +13,10 @@ void () trigger_reactivate =
     self.solid = SOLID_TRIGGER;
 };
 
-float globaldef003444;
-float globaldef003445;
+float SPAWNFLAG_NOMESSAGE = 1;
+float SPAWNFLAG_NOTOUCH = 1;
 
-// func000571
+// multi_wait
 // function begins at statement 16059, parm_start=11008
 // OP_LOAD_F	28	185	11008
 // OP_IFNOT	11008	8	0
@@ -28,7 +28,7 @@ float globaldef003445;
 // OP_ADDRESS	28	104	11012
 // OP_STOREP_F	239	11012	0
 // OP_DONE	0	0	0
-void () func000571 = 
+void () multi_wait = 
 {
     
     if(self.max_health)
@@ -41,7 +41,7 @@ void () func000571 =
 };
 
 
-// func000572
+// multi_trigger
 // function begins at statement 16069, parm_start=11014
 // OP_LOAD_F	28	150	11014
 // OP_GT	11014	31	11015
@@ -102,7 +102,7 @@ void () func000571 =
 // OP_ADDRESS	28	148	11041
 // OP_STOREP_FNC	521	11041	0
 // OP_DONE	0	0	0
-void () func000572 = 
+void () multi_trigger = 
 {
     
     if(self.nextthink > time)
@@ -145,7 +145,7 @@ void () func000572 =
     SUB_UseTargets();
     if(self.wait > FALSE)
     {
-        self.think = func000571;
+        self.think = multi_wait;
         self.nextthink = time + self.wait;
     }
     else
@@ -158,33 +158,33 @@ void () func000572 =
 };
 
 
-// func000573
+// multi_killed
 // function begins at statement 16128, parm_start=11043
 // OP_ADDRESS	28	181	11043
 // OP_STOREP_ENT	352	11043	0
 // OP_CALL0	11013	0	0
 // OP_DONE	0	0	0
-void () func000573 = 
+void () multi_killed = 
 {
     self.enemy = damage_attacker;
-    func000572();
+    multi_trigger();
 };
 
 
-// func000574
+// multi_use
 // function begins at statement 16132, parm_start=11045
 // OP_ADDRESS	28	181	11045
 // OP_STOREP_ENT	351	11045	0
 // OP_CALL0	11013	0	0
 // OP_DONE	0	0	0
-void () func000574 = 
+void () multi_use = 
 {
     self.enemy = activator;
-    func000572();
+    multi_trigger();
 };
 
 
-// func000575
+// multi_touch
 // function begins at statement 16136, parm_start=11047
 // OP_LOAD_S	29	129	11047
 // OP_NE_S	11047	1236	11048
@@ -208,7 +208,7 @@ void () func000574 =
 // OP_STOREP_ENT	29	11063	0
 // OP_CALL0	11013	0	0
 // OP_DONE	0	0	0
-void () func000575 = 
+void () multi_touch = 
 {
     
     if(other.classname != "player")
@@ -234,11 +234,11 @@ void () func000575 =
     }
     
     self.enemy = other;
-    func000572();
+    multi_trigger();
 };
 
 
-// func000576
+// trigger_multiple_original
 // function begins at statement 16158, parm_start=11065
 // OP_LOAD_F	28	207	11065
 // OP_EQ_F	11065	214	11066
@@ -299,7 +299,7 @@ void () func000575 =
 // OP_ADDRESS	28	146	11095
 // OP_STOREP_FNC	11046	11095	0
 // OP_DONE	0	0	0
-void () func000576 = 
+void () trigger_multiple_original = 
 {
     if(self.sounds == TRUE)
     {
@@ -332,18 +332,18 @@ void () func000576 =
         self.wait = 0.2;
     }
     
-    self.use = func000574;
+    self.use = multi_use;
     InitTrigger();
     if(self.health)
     {
         
-        if(self.spawnflags & globaldef003445)
+        if(self.spawnflags & SPAWNFLAG_NOTOUCH)
         {
             objerror("health and notouch don't make sense\n");
         }
         
         self.max_health = self.health;
-        self.th_die = func000573;
+        self.th_die = multi_killed;
         self.takedamage = DAMAGE_YES;
         self.solid = SOLID_BBOX;
         setorigin(self, self.origin);
@@ -351,9 +351,9 @@ void () func000576 =
     else
     {
         
-        if(!(self.spawnflags & globaldef003445))
+        if(!(self.spawnflags & SPAWNFLAG_NOTOUCH))
         {
-            self.touch = func000575;
+            self.touch = multi_touch;
         }
         
     }
@@ -367,7 +367,7 @@ void () func000576 =
 // OP_DONE	0	0	0
 void () trigger_multiple = 
 {
-    func000576();
+    trigger_multiple_original();
 };
 
 
@@ -380,7 +380,7 @@ void () trigger_multiple =
 void () trigger_once = 
 {
     self.wait = CONTENT_EMPTY;
-    func000576();
+    trigger_multiple_original();
 };
 
 
@@ -467,11 +467,11 @@ void () trigger_secret =
         
     }
     
-    func000576();
+    trigger_multiple_original();
 };
 
 
-// func000581
+// counter_use
 // function begins at statement 16259, parm_start=11119
 // OP_ADDRESS	28	436	11120
 // OP_LOAD_F	28	436	11121
@@ -530,9 +530,9 @@ void () trigger_secret =
 // OP_STOREP_ENT	351	11150	0
 // OP_CALL0	11013	0	0
 // OP_DONE	0	0	0
-void () func000581 = 
+void () counter_use = 
 {
-    local string globaldef003462;
+    local string junk;
     self.count = self.count - TRUE;
     
     if(self.count < FALSE)
@@ -544,7 +544,7 @@ void () func000581 =
     if(self.count != FALSE)
     {
         
-        if((activator.classname == "player") && ((self.spawnflags & globaldef003444) == FALSE))
+        if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == FALSE))
         {
             if(self.count >= MOVETYPE_STEP)
             {
@@ -577,13 +577,13 @@ void () func000581 =
     }
     
     
-    if((activator.classname == "player") && ((self.spawnflags & globaldef003444) == FALSE))
+    if((activator.classname == "player") && ((self.spawnflags & SPAWNFLAG_NOMESSAGE) == FALSE))
     {
         centerprint(activator, "Sequence completed!");
     }
     
     self.enemy = activator;
-    func000572();
+    multi_trigger();
 };
 
 
@@ -608,13 +608,13 @@ void () trigger_counter =
         self.count = FL_SWIM;
     }
     
-    self.use = func000581;
+    self.use = counter_use;
 };
 
-float globaldef003469;
-float globaldef003470;
+float PLAYER_ONLY = 1;
+float SILENT = 2;
 
-// func000583
+// play_teleport
 // function begins at statement 16326, parm_start=11160
 // OP_CALL0	457	0	0
 // OP_MUL_F	1	230	11162
@@ -645,36 +645,36 @@ float globaldef003470;
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000583 = 
+void () play_teleport = 
 {
-    local float globaldef003472;
-    local string globaldef003473;
-    globaldef003472 = random() * MOVETYPE_FLY;
-    if(globaldef003472 < TRUE)
+    local float v;
+    local string tmpstr;
+    v = random() * MOVETYPE_FLY;
+    if(v < TRUE)
     {
-        globaldef003473 = "misc/r_tele1.wav";
+        tmpstr = "misc/r_tele1.wav";
     }
     else
     {
-        if(globaldef003472 < FL_SWIM)
+        if(v < FL_SWIM)
         {
-            globaldef003473 = "misc/r_tele2.wav";
+            tmpstr = "misc/r_tele2.wav";
         }
         else
         {
-            if(globaldef003472 < MOVETYPE_WALK)
+            if(v < MOVETYPE_WALK)
             {
-                globaldef003473 = "misc/r_tele3.wav";
+                tmpstr = "misc/r_tele3.wav";
             }
             else
             {
-                if(globaldef003472 < MOVETYPE_STEP)
+                if(v < MOVETYPE_STEP)
                 {
-                    globaldef003473 = "misc/r_tele4.wav";
+                    tmpstr = "misc/r_tele4.wav";
                 }
                 else
                 {
-                    globaldef003473 = "misc/r_tele5.wav";
+                    tmpstr = "misc/r_tele5.wav";
                 }
                 
             }
@@ -683,7 +683,7 @@ void () func000583 =
         
     }
     
-    sound(self, CHAN_VOICE, globaldef003473, TRUE, ATTN_NORM);
+    sound(self, CHAN_VOICE, tmpstr, TRUE, ATTN_NORM);
     remove(self);
 };
 
@@ -715,21 +715,21 @@ void () func000583 =
 // OP_STORE_V	11169	7	0
 // OP_CALL2	500	0	0
 // OP_DONE	0	0	0
-void (vector globaldef003474) spawn_tfog = 
+void (vector org) spawn_tfog = 
 {
-    globaldef003441 = spawn();
-    globaldef003441.origin = globaldef003474;
-    globaldef003441.nextthink = time + 0.2;
-    globaldef003441.think = func000583;
+    s = spawn();
+    s.origin = org;
+    s.nextthink = time + 0.2;
+    s.think = play_teleport;
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_TELEPORT);
-    WriteCoord(MSG_BROADCAST, globaldef003474_x);
-    WriteCoord(MSG_BROADCAST, globaldef003474_y);
-    WriteCoord(MSG_BROADCAST, globaldef003474_z);
+    WriteCoord(MSG_BROADCAST, org_x);
+    WriteCoord(MSG_BROADCAST, org_y);
+    WriteCoord(MSG_BROADCAST, org_z);
 };
 
 
-// func000585
+// tdeath_touch
 // function begins at statement 16380, parm_start=11177
 // OP_LOAD_ENT	28	201	11177
 // OP_EQ_E	29	11177	11178
@@ -769,7 +769,7 @@ void (vector globaldef003474) spawn_tfog =
 // OP_STORE_V	8339	13	0
 // OP_CALL4	522	0	0
 // OP_DONE	0	0	0
-void () func000585 = 
+void () tdeath_touch = 
 {
     
     if(other == self.owner)
@@ -843,25 +843,25 @@ void () func000585 =
 // OP_STOREP_ENT	11198	11225	0
 // OP_STORE_F	216	33	0
 // OP_DONE	0	0	0
-void (vector globaldef003479, entity globaldef003483) spawn_tdeath = 
+void (vector org, entity death_owner) spawn_tdeath = 
 {
-    local entity globaldef003484;
-    globaldef003484 = spawn();
-    globaldef003484.classname = "teledeath";
-    globaldef003484.movetype = MOVETYPE_NONE;
-    globaldef003484.solid = SOLID_TRIGGER;
-    globaldef003484.angles = VEC_ORIGIN;
-    setsize(globaldef003484, globaldef003483.mins - '1 1 1', globaldef003483.maxs + '1 1 1');
-    setorigin(globaldef003484, globaldef003479);
-    globaldef003484.touch = func000585;
-    globaldef003484.nextthink = time + 0.2;
-    globaldef003484.think = SUB_Remove;
-    globaldef003484.owner = globaldef003483;
+    local entity death;
+    death = spawn();
+    death.classname = "teledeath";
+    death.movetype = MOVETYPE_NONE;
+    death.solid = SOLID_TRIGGER;
+    death.angles = VEC_ORIGIN;
+    setsize(death, death_owner.mins - '1 1 1', death_owner.maxs + '1 1 1');
+    setorigin(death, org);
+    death.touch = tdeath_touch;
+    death.nextthink = time + 0.2;
+    death.think = SUB_Remove;
+    death.owner = death_owner;
     force_retouch = FL_SWIM;
 };
 
 
-// func000587
+// teleport_touch
 // function begins at statement 16450, parm_start=11227
 // OP_BITAND	821	767	11231
 // OP_IFNOT	11231	6	0
@@ -1021,10 +1021,10 @@ void (vector globaldef003479, entity globaldef003483) spawn_tdeath =
 // OP_SUB_F	11355	11357	11358
 // OP_STOREP_F	11358	11354	0
 // OP_DONE	0	0	0
-void () func000587 = 
+void () teleport_touch = 
 {
-    local entity globaldef003487;
-    local vector globaldef003488;
+    local entity t;
+    local vector org;
     
     if(globaldef000804 & OBOT_ROCKETARENA)
     {
@@ -1048,7 +1048,7 @@ void () func000587 =
     }
     
     
-    if(self.spawnflags & globaldef003469)
+    if(self.spawnflags & PLAYER_ONLY)
     {
         
         if(other.classname != "player")
@@ -1071,27 +1071,27 @@ void () func000587 =
     
     SUB_UseTargets();
     spawn_tfog(other.origin);
-    globaldef003487 = find(world, targetname, self.target);
+    t = find(world, targetname, self.target);
     
-    if(!globaldef003487)
+    if(!t)
     {
         objerror("couldn't find teleporter target\n");
     }
     
-    makevectors(globaldef003487.mangle);
-    globaldef003488 = globaldef003487.origin + (FL_MONSTER * v_forward);
-    spawn_tfog(globaldef003488);
-    spawn_tdeath(globaldef003487.origin, other);
+    makevectors(t.mangle);
+    org = t.origin + (FL_MONSTER * v_forward);
+    spawn_tfog(org);
+    spawn_tdeath(t.origin, other);
     func002453(other, other.origin, TRUE, globaldef000740);
-    func002453(other, globaldef003488, TRUE, globaldef000740);
+    func002453(other, org, TRUE, globaldef000740);
     
     if(other.classname == "bot")
     {
         other.field000275 = time - TRUE;
         other.search_time = time - TRUE;
-        other.v_angle = globaldef003487.mangle;
-        other.ideal_yaw = globaldef003487.mangle_y;
-        other.field000288 = globaldef003487.mangle_x;
+        other.v_angle = t.mangle;
+        other.ideal_yaw = t.mangle_y;
+        other.field000288 = t.mangle_x;
         other.velocity = v_forward * RA_MAXIDLETIME;
         other.teleport_time = time + 0.4;
         other.attack_finished = time + RA_PLAYERSTATTIME;
@@ -1113,13 +1113,13 @@ void () func000587 =
     
     if(!other.health)
     {
-        other.origin = globaldef003487.origin;
+        other.origin = t.origin;
         other.velocity = (v_forward * other.velocity_x) + (v_forward * other.velocity_y);
         return;
     }
     
-    setorigin(other, globaldef003487.origin);
-    other.angles = globaldef003487.mangle;
+    setorigin(other, t.origin);
+    other.angles = t.mangle;
     
     if(other.classname == "player")
     {
@@ -1172,7 +1172,7 @@ void () info_teleport_destination =
 };
 
 
-// func000589
+// teleport_use
 // function begins at statement 16625, parm_start=11386
 // OP_ADDRESS	28	150	11386
 // OP_ADD_F	31	3267	11387
@@ -1181,7 +1181,7 @@ void () info_teleport_destination =
 // OP_ADDRESS	28	148	11388
 // OP_STOREP_FNC	519	11388	0
 // OP_DONE	0	0	0
-void () func000589 = 
+void () teleport_use = 
 {
     self.nextthink = time + 0.2;
     force_retouch = FL_SWIM;
@@ -1222,9 +1222,9 @@ void () func000589 =
 // OP_DONE	0	0	0
 void () trigger_teleport = 
 {
-    local vector globaldef003498;
+    local vector o;
     InitTrigger();
-    self.touch = func000587;
+    self.touch = teleport_touch;
     self.f_goalweight = goalweight_teleporter;
     
     if(!self.target)
@@ -1232,19 +1232,19 @@ void () trigger_teleport =
         objerror("no target");
     }
     
-    self.use = func000589;
+    self.use = teleport_use;
     
-    if(!(self.spawnflags & globaldef003470))
+    if(!(self.spawnflags & SILENT))
     {
         precache_sound("ambience/hum1.wav");
-        globaldef003498 = (self.mins + self.maxs) * RA_PLAYERSTATTIME;
-        ambientsound(globaldef003498, "ambience/hum1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
+        o = (self.mins + self.maxs) * RA_PLAYERSTATTIME;
+        ambientsound(o, "ambience/hum1.wav", RA_PLAYERSTATTIME, ATTN_STATIC);
     }
     
 };
 
 
-// func000591
+// trigger_skill_touch
 // function begins at statement 16661, parm_start=11416
 // OP_RETURN	0	0	0
 // OP_STORE_V	6713	4	0
@@ -1252,7 +1252,7 @@ void () trigger_teleport =
 // OP_STORE_V	11416	7	0
 // OP_CALL2	508	0	0
 // OP_DONE	0	0	0
-void () func000591 = 
+void () trigger_skill_touch = 
 {
     return;
     cvar_set("skill", self.message);
@@ -1268,11 +1268,11 @@ void () func000591 =
 void () trigger_setskill = 
 {
     InitTrigger();
-    self.touch = func000591;
+    self.touch = trigger_skill_touch;
 };
 
 
-// func000593
+// trigger_onlyregistered_touch
 // function begins at statement 16671, parm_start=11420
 // OP_LOAD_S	29	129	11420
 // OP_NE_S	11420	1236	11421
@@ -1314,7 +1314,7 @@ void () trigger_setskill =
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000593 = 
+void () trigger_onlyregistered_touch = 
 {
     
     if(other.classname != "player")
@@ -1373,26 +1373,26 @@ void () trigger_onlyregistered =
 {
     precache_sound("misc/talk.wav");
     InitTrigger();
-    self.touch = func000593;
+    self.touch = trigger_onlyregistered_touch;
     self.f_goalweight = goalweight_trigger;
 };
 
 
-// func000595
+// hurt_on
 // function begins at statement 16719, parm_start=11438
 // OP_ADDRESS	28	104	11438
 // OP_STOREP_F	238	11438	0
 // OP_ADDRESS	28	150	11439
 // OP_STOREP_F	276	11439	0
 // OP_DONE	0	0	0
-void () func000595 = 
+void () hurt_on = 
 {
     self.solid = SOLID_TRIGGER;
     self.nextthink = CONTENT_EMPTY;
 };
 
 
-// func000596
+// hurt_touch
 // function begins at statement 16724, parm_start=11441
 // OP_LOAD_F	29	163	11441
 // OP_IFNOT	11441	14	0
@@ -1411,14 +1411,14 @@ void () func000595 =
 // OP_STOREP_F	11446	11445	0
 // OP_RETURN	0	0	0
 // OP_DONE	0	0	0
-void () func000596 = 
+void () hurt_touch = 
 {
     
     if(other.takedamage)
     {
         self.solid = SOLID_NOT;
         T_Damage(other, self, self, self.dmg);
-        self.think = func000595;
+        self.think = hurt_on;
         self.nextthink = time + TRUE;
     }
     
@@ -1440,7 +1440,7 @@ void () func000596 =
 void () trigger_hurt = 
 {
     InitTrigger();
-    self.touch = func000596;
+    self.touch = hurt_touch;
     
     if(!self.dmg)
     {
@@ -1449,9 +1449,9 @@ void () trigger_hurt =
     
 };
 
-float globaldef003511;
+float PUSH_ONCE = 1;
 
-// func000598
+// trigger_push_touch
 // function begins at statement 16750, parm_start=11454
 // OP_LOAD_S	29	129	11454
 // OP_EQ_S	11454	5946	11455
@@ -1517,7 +1517,7 @@ float globaldef003511;
 // OP_STORE_V	28	4	0
 // OP_CALL1	465	0	0
 // OP_DONE	0	0	0
-void () func000598 = 
+void () trigger_push_touch = 
 {
     if(other.classname == "grenade")
     {
@@ -1558,7 +1558,7 @@ void () func000598 =
     }
     
     
-    if(self.spawnflags & globaldef003511)
+    if(self.spawnflags & PUSH_ONCE)
     {
         remove(self);
     }
@@ -1585,7 +1585,7 @@ void () trigger_push =
 {
     InitTrigger();
     precache_sound("ambience/windfly.wav");
-    self.touch = func000598;
+    self.touch = trigger_push_touch;
     self.f_goalweight = goalweight_triggerpush;
     
     if(!self.speed)
@@ -1596,7 +1596,7 @@ void () trigger_push =
 };
 
 
-// func000600
+// trigger_monsterjump_touch
 // function begins at statement 16827, parm_start=11518
 // OP_LOAD_F	29	182	11518
 // OP_BITOR	219	215	11519
@@ -1628,7 +1628,7 @@ void () trigger_push =
 // OP_LOAD_F	28	447	11538
 // OP_STOREP_F	11538	11537	0
 // OP_DONE	0	0	0
-void () func000600 = 
+void () trigger_monsterjump_touch = 
 {
     
     if((other.flags & ((FL_MONSTER | FL_FLY) | FL_SWIM)) != FL_MONSTER)
@@ -1691,6 +1691,6 @@ void () trigger_monsterjump =
     }
     
     InitTrigger();
-    self.touch = func000600;
+    self.touch = trigger_monsterjump_touch;
 };
 

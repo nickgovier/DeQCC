@@ -1699,8 +1699,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region buttons.qc
 
             nameMap.Add("func000563", "button_return");
@@ -1724,17 +1722,70 @@ namespace DeQcc
 
             #endregion
 
+            // Done to here
+
             #region triggers.qc
 
+            // Declarations
+            nameMap.Add("globaldef003439", "stemp");
+            nameMap.Add("globaldef003440", "otemp");
+            nameMap.Add("globaldef003441", "s");
+            nameMap.Add("globaldef003442", "old");
+            nameMap.Add("globaldef003444", "SPAWNFLAG_NOMESSAGE");
+            nameMap.Add("globaldef003445", "SPAWNFLAG_NOTOUCH");
+            nameMap.Add("globaldef003469", "PLAYER_ONLY");
+            nameMap.Add("globaldef003470", "SILENT");
+            nameMap.Add("globaldef003511", "PUSH_ONCE");
+
+            nameMap.Add("func000571", "multi_wait");
+            nameMap.Add("func000572", "multi_trigger");
+            nameMap.Add("func000573", "multi_killed");
+            nameMap.Add("func000574", "multi_use");
+            nameMap.Add("func000575", "multi_touch");
+            nameMap.Add("func000576", "trigger_multiple_original");
+            nameMap.Add("func000581", "counter_use");
+            nameMap.Add("func000583", "play_teleport");
             nameMap.Add("func000584", "spawn_tfog");
+            nameMap.Add("func000585", "tdeath_touch");
             nameMap.Add("func000586", "spawn_tdeath");
-            
+            nameMap.Add("func000587", "teleport_touch");
+            nameMap.Add("func000589", "teleport_use");
+            nameMap.Add("func000591", "trigger_skill_touch");
+            nameMap.Add("func000592", "trigger_setskill");
+            nameMap.Add("func000593", "trigger_onlyregistered_touch");
+            nameMap.Add("func000595", "hurt_on");
+            nameMap.Add("func000596", "hurt_touch");
+            nameMap.Add("func000598", "trigger_push_touch");
+            nameMap.Add("func000600", "trigger_monsterjump_touch");
 
             for (int i = 570; i <= 601; i++)
             {
                 fileMap[i] = "triggers.qc";
             }
 
+            // counter_use locals
+            nameMap.Add("globaldef003462", "junk");
+
+            // play_teleport locals
+            nameMap.Add("globaldef003472", "v");
+            nameMap.Add("globaldef003473", "tmpstr");
+
+            // spawn_tfog params
+            nameMap.Add("globaldef003474", "org");
+
+            // spawn_tdeath params
+            nameMap.Add("globaldef003479", "org");
+            nameMap.Add("globaldef003483", "death_owner");
+
+            // spawn_tdeath locals
+            nameMap.Add("globaldef003484", "death");
+
+            // teleport_touch locals
+            nameMap.Add("globaldef003487", "t");
+            nameMap.Add("globaldef003488", "org");
+
+            // trigger_teleport locals
+            nameMap.Add("globaldef003498", "o");
             #endregion
 
             #region plats.qc
