@@ -1237,7 +1237,7 @@ void () PutClientInServer =
     self.show_hostile = FALSE;
     self.max_health = 100;
     self.flags = FL_CLIENT;
-    self.air_finished = time + GLOBALDEF774_12;
+    self.air_finished = time + BOTSHIRTPANTS_12;
     self.dmg = FL_SWIM;
     self.super_damage_finished = FALSE;
     self.radsuit_finished = FALSE;
@@ -2029,7 +2029,7 @@ void () WaterMove =
             
         }
         
-        self.air_finished = time + GLOBALDEF774_12;
+        self.air_finished = time + BOTSHIRTPANTS_12;
         self.dmg = FL_SWIM;
     }
     else
@@ -2772,7 +2772,7 @@ void () CheckPowerups =
     
     if(self.radsuit_finished)
     {
-        self.air_finished = time + GLOBALDEF774_12;
+        self.air_finished = time + BOTSHIRTPANTS_12;
         
         if(self.radsuit_finished < (time + MOVETYPE_WALK))
         {

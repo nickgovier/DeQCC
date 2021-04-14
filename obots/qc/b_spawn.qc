@@ -69,8 +69,8 @@ void (float globaldef007118) AddBots =
     }
     
     globaldef007119.team = 99;
-    globaldef007119.netname = func002278(globaldef007119.field000286);
-    globaldef007119.clientcolor = func002280(globaldef007119.field000286);
+    globaldef007119.netname = BotName(globaldef007119.field000286);
+    globaldef007119.clientcolor = BotShirtPantsColor(globaldef007119.field000286);
     
     if(!globaldef000805)
     {

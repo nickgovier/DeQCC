@@ -64,49 +64,49 @@ void (entity globaldef007123, float globaldef007124) func002426 =
 {
     if(globaldef007124 == TRUE)
     {
-        globaldef007123.clientcolor = (globaldef000766 * FL_INWATER) + globaldef000766;
+        globaldef007123.clientcolor = (BOTSHIRTPANTS_04 * FL_INWATER) + BOTSHIRTPANTS_04;
     }
     else
     {
         if(globaldef007124 == FL_SWIM)
         {
-            globaldef007123.clientcolor = (GLOBALDEF775_13 * FL_INWATER) + GLOBALDEF775_13;
+            globaldef007123.clientcolor = (BOTSHIRTPANTS_13 * FL_INWATER) + BOTSHIRTPANTS_13;
         }
         else
         {
             if(globaldef007124 == MOVETYPE_WALK)
             {
-                globaldef007123.clientcolor = (GLOBALDEF774_12 * FL_INWATER) + GLOBALDEF774_12;
+                globaldef007123.clientcolor = (BOTSHIRTPANTS_12 * FL_INWATER) + BOTSHIRTPANTS_12;
             }
             else
             {
                 if(globaldef007124 == MOVETYPE_STEP)
                 {
-                    globaldef007123.clientcolor = (globaldef000771 * FL_INWATER) + globaldef000771;
+                    globaldef007123.clientcolor = (BOTSHIRTPANTS_09 * FL_INWATER) + BOTSHIRTPANTS_09;
                 }
                 else
                 {
                     if(globaldef007124 == MOVETYPE_FLY)
                     {
-                        globaldef007123.clientcolor = (globaldef000765 * FL_INWATER) + globaldef000765;
+                        globaldef007123.clientcolor = (BOTSHIRTPANTS_03 * FL_INWATER) + BOTSHIRTPANTS_03;
                     }
                     else
                     {
                         if(globaldef007124 == MOVETYPE_TOSS)
                         {
-                            globaldef007123.clientcolor = (globaldef000768 * FL_INWATER) + globaldef000768;
+                            globaldef007123.clientcolor = (BOTSHIRTPANTS_06 * FL_INWATER) + BOTSHIRTPANTS_06;
                         }
                         else
                         {
                             if(globaldef007124 == MOVETYPE_PUSH)
                             {
-                                globaldef007123.clientcolor = (globaldef000769 * FL_INWATER) + globaldef000769;
+                                globaldef007123.clientcolor = (BOTSHIRTPANTS_07 * FL_INWATER) + BOTSHIRTPANTS_07;
                             }
                             else
                             {
                                 if(globaldef007124 == FL_CLIENT)
                                 {
-                                    globaldef007123.clientcolor = (globaldef000764 * FL_INWATER) + globaldef000764;
+                                    globaldef007123.clientcolor = (BOTSHIRTPANTS_02 * FL_INWATER) + BOTSHIRTPANTS_02;
                                 }
                                 else
                                 {
@@ -189,7 +189,7 @@ void (float globaldef007125) func002427 =
     }
     
     globaldef007126.field000284 = globaldef007125;
-    globaldef007126.netname = func002278(globaldef007126.field000286);
+    globaldef007126.netname = BotName(globaldef007126.field000286);
     func002426(globaldef007126, globaldef007125);
     
     if(!globaldef000805)

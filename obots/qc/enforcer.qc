@@ -547,7 +547,7 @@ void () func002099 = [25, func002100]
 // OP_DONE	0	0	0
 void () func002100 = [26, func002101]
 {
-    ai_run(GLOBALDEF774_12);
+    ai_run(BOTSHIRTPANTS_12);
 };
 
 

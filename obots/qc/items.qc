@@ -2205,7 +2205,7 @@ void () item_cells =
     {
         precache_model("maps/b_batt1.bsp");
         setmodel(self, "maps/b_batt1.bsp");
-        self.aflag = GLOBALDEF774_12;
+        self.aflag = BOTSHIRTPANTS_12;
     }
     else
     {

@@ -254,7 +254,7 @@ void () func000911 = [21, func000912]
 // OP_DONE	0	0	0
 void () func000912 = [22, func000913]
 {
-    ai_walk(GLOBALDEF774_12);
+    ai_walk(BOTSHIRTPANTS_12);
 };
 
 
@@ -290,7 +290,7 @@ void () func000914 = [24, func000915]
 // OP_DONE	0	0	0
 void () func000915 = [25, func000916]
 {
-    ai_walk(GLOBALDEF775_13);
+    ai_walk(BOTSHIRTPANTS_13);
 };
 
 

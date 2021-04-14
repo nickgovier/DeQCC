@@ -485,7 +485,7 @@ float (entity globaldef006841) func002376 =
         return FALSE;
     }
     
-    func002281(globaldef006841);
+    BotChooseExitMessage(globaldef006841);
     func002375(globaldef006841);
     return TRUE;
 };
@@ -1358,7 +1358,7 @@ vector (entity globaldef006915) func002385 =
     if(globaldef006936 > TRUE)
     {
         
-        if(globaldef006936 < GLOBALDEF774_12)
+        if(globaldef006936 < BOTSHIRTPANTS_12)
         {
             globaldef006920_z = globaldef006920_z + (globaldef000780 * (globaldef006936 - TRUE));
         }
@@ -4456,7 +4456,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.movetype = MOVETYPE_STEP;
     globaldef007106.show_hostile = FALSE;
     globaldef007106.max_health = 100;
-    globaldef007106.air_finished = time + GLOBALDEF774_12;
+    globaldef007106.air_finished = time + BOTSHIRTPANTS_12;
     globaldef007106.dmg = TRUE;
     globaldef007106.super_damage_finished = FALSE;
     globaldef007106.radsuit_finished = FALSE;

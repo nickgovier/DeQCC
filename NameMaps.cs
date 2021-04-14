@@ -357,8 +357,20 @@ namespace DeQcc
             //nameMap.Add("globaldef000760", "OBOT_");   // constant = 32768
             nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
 
-            nameMap.Add("globaldef000774", "GLOBALDEF774_12");   // constant = 12
-            nameMap.Add("globaldef000775", "GLOBALDEF775_13");   // constant = 13
+            nameMap.Add("globaldef000762", "BOTSHIRTPANTS_00");   // constant = 0
+            nameMap.Add("globaldef000763", "BOTSHIRTPANTS_01");   // constant = 1
+            nameMap.Add("globaldef000764", "BOTSHIRTPANTS_02");   // constant = 2
+            nameMap.Add("globaldef000765", "BOTSHIRTPANTS_03");   // constant = 3
+            nameMap.Add("globaldef000766", "BOTSHIRTPANTS_04");   // constant = 4
+            nameMap.Add("globaldef000767", "BOTSHIRTPANTS_05");   // constant = 5
+            nameMap.Add("globaldef000768", "BOTSHIRTPANTS_06");   // constant = 6
+            nameMap.Add("globaldef000769", "BOTSHIRTPANTS_07");   // constant = 7
+            nameMap.Add("globaldef000770", "BOTSHIRTPANTS_08");   // constant = 8
+            nameMap.Add("globaldef000771", "BOTSHIRTPANTS_09");   // constant = 9
+            nameMap.Add("globaldef000772", "BOTSHIRTPANTS_10");   // constant = 10
+            nameMap.Add("globaldef000773", "BOTSHIRTPANTS_11");   // constant = 11
+            nameMap.Add("globaldef000774", "BOTSHIRTPANTS_12");   // constant = 12
+            nameMap.Add("globaldef000775", "BOTSHIRTPANTS_13");   // constant = 13
 
             nameMap.Add("globaldef000784", "num_gibs"); // player.qc
 
@@ -1825,8 +1837,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region misc.qc
 
             // Declarations
@@ -1877,6 +1887,8 @@ namespace DeQcc
             nameMap.Add("globaldef003623", "modi");
 
             #endregion
+
+            // Done to here
 
             #region ogre.qc
 
@@ -2135,13 +2147,37 @@ namespace DeQcc
             nameMap.Add("globaldef005698", "index");
 
             #endregion
-            
+
             #region b_char.qc
 
-            for (int i = 2285; i <= 2286; i++)
+            // Declarations
+            for(int i = 5782; i <= 5805; i++) { nameMap.Add("globaldef00" + i.ToString(), "BOT" + (i-5782).ToString()); }
+
+            nameMap.Add("func002278", "BotName");
+            nameMap.Add("func002279", "BotConsoleName");
+            nameMap.Add("func002280", "BotShirtPantsColor");
+            nameMap.Add("func002281", "BotChooseExitMessage");
+
+            for (int i = 2278; i <= 2286; i++)
             {
                 fileMap[i] = "b_char.qc";
             }
+
+            // BotName params
+            nameMap.Add("globaldef005820", "n");
+
+            // BotConsoleName params
+            nameMap.Add("globaldef005846", "n");
+
+            // BotShirtPantsColor params
+            nameMap.Add("globaldef005871", "n");
+
+            // BotChooseExitMessage params
+            nameMap.Add("globaldef005872", "e");
+
+            // BotChooseExitMessage locals
+            nameMap.Add("globaldef005873", "rnd");
+
 
             #endregion
 

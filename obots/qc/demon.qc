@@ -1224,7 +1224,7 @@ void (float side) Demon_Melee =
     local float globaldef003924;
     local vector globaldef003925;
     ai_face();
-    walkmove(self.ideal_yaw, GLOBALDEF774_12);
+    walkmove(self.ideal_yaw, BOTSHIRTPANTS_12);
     globaldef003925 = self.enemy.origin - self.origin;
     
     if(vlen(globaldef003925) > 100)

@@ -623,7 +623,7 @@ void () func001785 = [35, func001786]
 // OP_DONE	0	0	0
 void () func001786 = [36, func001779]
 {
-    ai_run(GLOBALDEF775_13);
+    ai_run(BOTSHIRTPANTS_13);
 };
 
 
@@ -1489,7 +1489,7 @@ void () func001858 = [69, func001859]
 // OP_DONE	0	0	0
 void () func001859 = [70, func001860]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
     ai_melee();
 };
 
@@ -1592,7 +1592,7 @@ void () func001866 = [77, func001867]
 // OP_DONE	0	0	0
 void () func001867 = [78, func001779]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
 };
 
 
@@ -1635,7 +1635,7 @@ void () func001869 = [107, func001870]
 // OP_DONE	0	0	0
 void () func001870 = [108, func001871]
 {
-    ai_charge(GLOBALDEF774_12);
+    ai_charge(BOTSHIRTPANTS_12);
     ai_melee();
 };
 
@@ -1714,7 +1714,7 @@ void () func001875 = [113, func001876]
 // OP_DONE	0	0	0
 void () func001876 = [114, func001877]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
 };
 
 
@@ -1829,7 +1829,7 @@ void () func001884 = [122, func001885]
 // OP_DONE	0	0	0
 void () func001885 = [123, func001886]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
 };
 
 
@@ -1894,7 +1894,7 @@ void () func001889 = [127, func001890]
 // OP_DONE	0	0	0
 void () func001890 = [128, func001891]
 {
-    ai_charge(GLOBALDEF774_12);
+    ai_charge(BOTSHIRTPANTS_12);
     ai_melee();
 };
 

@@ -444,7 +444,7 @@ void (entity globaldef009349) SetUpAliases =
     while(globaldef009350 < OBOT_MAXBOTS)
     {
         stuffcmd(globaldef009349, "alias ");
-        globaldef009351 = func002279(globaldef009350);
+        globaldef009351 = BotConsoleName(globaldef009350);
         stuffcmd(globaldef009349, globaldef009351);
         stuffcmd(globaldef009349, " \"impulse ");
         globaldef009351 = ftos(100 + globaldef009350);

@@ -685,7 +685,7 @@ void () func001143 = [46, func001144]
 // OP_DONE	0	0	0
 void () func001144 = [47, func001145]
 {
-    ai_painforward(GLOBALDEF775_13);
+    ai_painforward(BOTSHIRTPANTS_13);
 };
 
 
@@ -1211,7 +1211,7 @@ void () func001184 = [20, func001185]
 // OP_DONE	0	0	0
 void () func001185 = [21, func001186]
 {
-    ai_back(GLOBALDEF775_13);
+    ai_back(BOTSHIRTPANTS_13);
 };
 
 

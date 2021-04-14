@@ -3246,7 +3246,7 @@ void () ImpulseCommands =
             }
             else
             {
-                if(self.impulse == GLOBALDEF774_12)
+                if(self.impulse == BOTSHIRTPANTS_12)
                 {
                     CycleWeaponReverseCommand();
                 }

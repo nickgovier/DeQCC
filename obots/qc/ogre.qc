@@ -673,7 +673,7 @@ void () func000694 = [25, func000695]
 // OP_DONE	0	0	0
 void () func000695 = [26, func000696]
 {
-    ai_run(GLOBALDEF774_12);
+    ai_run(BOTSHIRTPANTS_12);
 };
 
 
@@ -733,7 +733,7 @@ void () func000699 = [30, func000700]
 // OP_DONE	0	0	0
 void () func000700 = [31, func000701]
 {
-    ai_run(GLOBALDEF775_13);
+    ai_run(BOTSHIRTPANTS_13);
 };
 
 
@@ -800,7 +800,7 @@ void () func000704 = [35, func000705]
 // OP_DONE	0	0	0
 void () func000705 = [36, func000706]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
 };
 
 
@@ -1098,7 +1098,7 @@ void () func000723 = [54, func000724]
 // OP_DONE	0	0	0
 void () func000724 = [55, func000725]
 {
-    ai_charge(GLOBALDEF775_13);
+    ai_charge(BOTSHIRTPANTS_13);
     func000668(FALSE);
 };
 
@@ -1169,7 +1169,7 @@ void () func000728 = [59, func000729]
 // OP_DONE	0	0	0
 void () func000729 = [60, func000694]
 {
-    ai_charge(GLOBALDEF774_12);
+    ai_charge(BOTSHIRTPANTS_12);
 };
 
 
