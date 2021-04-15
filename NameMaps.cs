@@ -2690,8 +2690,9 @@ namespace DeQcc
             nameMap.Add("func002459", "BotAbovePlatDoorTrain");
             nameMap.Add("func002460", "BotIsOnPlatDoorTrain");
             nameMap.Add("func002461", "BotIsOnMovingPlatDoorTrain");
+            nameMap.Add("func002462", "Reachable");
 
-            for (int i = 2456; i <= 2461; i++)
+            for (int i = 2456; i <= 2462; i++)
             {
                 fileMap[i] = "b_locate.qc";
             }
@@ -2723,6 +2724,10 @@ namespace DeQcc
             // BotIsOnMovingPlatDoorTrain locals
             nameMap.Add("globaldef007694", "start");
             nameMap.Add("globaldef007698", "end");
+
+            // Reachable params
+            nameMap.Add("globaldef007702", "a");
+            nameMap.Add("globaldef007703", "b");
 
             #endregion
 

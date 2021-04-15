@@ -115,7 +115,7 @@ void () CreateFloorTestEnt;
 float (entity e) BotAbovePlatDoorTrain;
 float (entity e) BotIsOnPlatDoorTrain;
 entity (entity e) BotIsOnMovingPlatDoorTrain;
-float (entity globaldef007702, entity globaldef007703) func002462;
+float (entity a, entity b) Reachable;
 float (entity globaldef007728, entity globaldef007729, entity globaldef007730) func002463;
 float (entity globaldef007841, entity globaldef007842) func002466;
 float (entity globaldef007843, entity globaldef007844) func002467;

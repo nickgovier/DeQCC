@@ -1053,7 +1053,7 @@ row,name,s_name,ofs,type,typename
 1051,BotAbovePlatDoorTrain,0,1113,6,void()
 1052,BotIsOnPlatDoorTrain,0,1114,6,void()
 1053,BotIsOnMovingPlatDoorTrain,0,1115,6,void()
-1054,func002462,0,1116,6,void()
+1054,Reachable,0,1116,6,void()
 1055,func002463,0,1117,6,void()
 1056,func002466,0,1118,6,void()
 1057,func002467,0,1119,6,void()
@@ -7701,8 +7701,8 @@ row,name,s_name,ofs,type,typename
 7699,globaldef007699,0,23425,2,float
 7700,globaldef007700,0,23426,2,float
 7701,globaldef007701,0,23427,2,float
-7702,globaldef007702,0,23460,4,entity
-7703,globaldef007703,0,23461,4,entity
+7702,a,0,23460,4,entity
+7703,b,0,23461,4,entity
 7704,globaldef007704,0,23462,3,vector
 7705,globaldef007705,0,23462,2,float
 7706,globaldef007706,0,23463,2,float

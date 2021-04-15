@@ -2884,7 +2884,7 @@ void () func002680 =
     }
     
     
-    if(!func002462(self.field000299, self))
+    if(!Reachable(self.field000299, self))
     {
         self.field000299 = world;
     }

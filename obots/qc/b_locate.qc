@@ -441,3 +441,118 @@ entity (entity e) BotIsOnMovingPlatDoorTrain =
     return world;
 };
 
+
+// Reachable
+// function begins at statement 41196, parm_start=23460
+// OP_LOAD_V	23461	94	23479
+// OP_LOAD_V	23461	98	23482
+// OP_ADD_V	23479	23482	23485
+// OP_MUL_VF	23485	539	23488
+// OP_STORE_V	23488	23465	0
+// OP_LOAD_F	23461	97	23491
+// OP_ADD_F	23491	736	23492
+// OP_STORE_F	23492	23467	0
+// OP_LOAD_V	23460	94	23493
+// OP_LOAD_V	23460	98	23496
+// OP_ADD_V	23493	23496	23499
+// OP_MUL_VF	23499	539	23502
+// OP_STORE_V	23502	23462	0
+// OP_LOAD_F	23460	97	23505
+// OP_ADD_F	23505	736	23506
+// OP_STORE_F	23506	23464	0
+// OP_LOAD_S	23460	129	23507
+// OP_EQ_S	23507	23508	23509
+// OP_IFNOT	23509	23	0
+// OP_LOAD_F	23460	688	23510
+// OP_EQ_F	23510	719	23511
+// OP_IFNOT	23511	20	0
+// OP_STORE_V	30	4	0
+// OP_STORE_V	197	7	0
+// OP_LOAD_ENT	23460	181	23512
+// OP_LOAD_S	23512	196	23513
+// OP_STORE_V	23513	10	0
+// OP_CALL3	468	0	0
+// OP_STORE_ENT	1	23460	0
+// OP_NOT_ENT	23460	0	23514
+// OP_IFNOT	23514	3	0
+// OP_STORE_V	23515	4	0
+// OP_CALL1	461	0	0
+// OP_LOAD_V	23460	400	23516
+// OP_STORE_V	23516	4	0
+// OP_CALL1	452	0	0
+// OP_LOAD_V	23460	105	23519
+// OP_MUL_FV	219	59	23522
+// OP_ADD_V	23519	23522	23525
+// OP_ADD_V	23525	23528	23531
+// OP_STORE_V	23531	23462	0
+// OP_SUB_V	23465	23462	23534
+// OP_STORE_V	23534	4	0
+// OP_CALL1	462	0	0
+// OP_MUL_F	216	738	23537
+// OP_DIV_F	741	799	23538
+// OP_MUL_F	23537	23538	23539
+// OP_GT	1	23539	23540
+// OP_IFNOT	23540	2	0
+// OP_RETURN	213	0	0
+// OP_MUL_F	6280	799	23541
+// OP_DIV_F	734	799	23542
+// OP_MUL_F	23541	23542	23543
+// OP_DIV_F	734	799	23544
+// OP_MUL_F	23543	23544	23545
+// OP_STORE_F	23545	23475	0
+// OP_ADD_F	23464	23475	23546
+// OP_GT	23467	23546	23547
+// OP_IFNOT	23547	2	0
+// OP_RETURN	213	0	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity a, entity b) Reachable = 
+{
+    local vector globaldef007704;
+    local vector globaldef007708;
+    local vector globaldef007712;
+    local vector globaldef007716;
+    local float globaldef007720;
+    local float globaldef007721;
+    local float globaldef007722;
+    local float globaldef007723;
+    local float globaldef007724;
+    globaldef007708 = (b.absmin + b.absmax) * RA_PLAYERSTATTIME;
+    globaldef007708_z = b.absmin_z + OBOT_MAXBOTS;
+    globaldef007704 = (a.absmin + a.absmax) * RA_PLAYERSTATTIME;
+    globaldef007704_z = a.absmin_z + OBOT_MAXBOTS;
+    
+    if(a.classname == "waypoint")
+    {
+        
+        if(a.waypointtype == globaldef000702)
+        {
+            a = find(world, targetname, a.enemy.target);
+            
+            if(!a)
+            {
+                objerror("reachability: couldn't find teleporter target\n");
+            }
+            
+            makevectors(a.mangle);
+            globaldef007704 = (a.origin + (FL_MONSTER * v_forward)) + '0 0 -20';
+        }
+        
+    }
+    
+    
+    if((vlen(globaldef007708 - globaldef007704)) > ((FL_SWIM * GLOBALDEF721_250) * (GLOBALDEF724_800 / globaldef000782)))
+    {
+        return FALSE;
+    }
+    
+    globaldef007721 = ((0.75 * globaldef000782) * (GLOBALDEF717_270 / globaldef000782)) * (GLOBALDEF717_270 / globaldef000782);
+    
+    if(globaldef007708_z > (globaldef007704_z + globaldef007721))
+    {
+        return FALSE;
+    }
+    
+    return TRUE;
+};
+
