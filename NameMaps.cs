@@ -314,6 +314,7 @@ namespace DeQcc
             nameMap.Add("globaldef009219", "ent");
             nameMap.Add("field000225", "f_goalweight");
             nameMap.Add("field000226", "f_walkaboutweight");
+            nameMap.Add("field000227", "f_sndweight");
 
             nameMap.Add("field000250", "clmodelindex");
 
@@ -349,6 +350,13 @@ namespace DeQcc
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40
+
+            nameMap.Add("globaldef000739", "BOTSOUND_DOOR");
+            nameMap.Add("globaldef000740", "BOTSOUND_TELEPORT");
+            nameMap.Add("globaldef000741", "BOTSOUND_FIRE");
+            nameMap.Add("globaldef000742", "BOTSOUND_PICKUP");
+            nameMap.Add("globaldef000743", "BOTSOUND_ARMOR");
+
             nameMap.Add("globaldef000748", "GLOBALDEF748_15");   // constant = 15
 
             // boolean flags
@@ -2624,12 +2632,20 @@ namespace DeQcc
 
             #endregion
 
+
+
             #region b_hear.qc
+
+            nameMap.Add("func002447", "soundweight_door");
+            nameMap.Add("func002448", "soundweight_teleport");
+            nameMap.Add("func002449", "soundweight_fire");
+            nameMap.Add("func002450", "soundweight_armor");
+            nameMap.Add("func002451", "soundweight_pickup");
 
             nameMap.Add("func002453", "CreateBotSound");
             nameMap.Add("func002454", "Hearable");
 
-            for (int i = 2453; i <= 2454; i++)
+            for (int i = 2447; i <= 2454; i++)
             {
                 fileMap[i] = "b_hear.qc";
             }

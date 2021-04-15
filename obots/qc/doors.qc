@@ -319,7 +319,7 @@ void () door_fire =
 void () door_use = 
 {
     local entity oself;
-    CreateBotSound(other, other.origin, TRUE, globaldef000739);
+    CreateBotSound(other, other.origin, TRUE, BOTSOUND_DOOR);
     
     if(other.classname == "bot")
     {

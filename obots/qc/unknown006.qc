@@ -102,7 +102,7 @@ entity (entity globaldef007660) func002455 =
                     
                     if(!(globaldef007664.goalentity.flags & FL_NOTARGET))
                     {
-                        globaldef007661 = globaldef007664.field000227(globaldef007660, globaldef007664);
+                        globaldef007661 = globaldef007664.f_sndweight(globaldef007660, globaldef007664);
                         
                         if(globaldef007661 > globaldef007662)
                         {

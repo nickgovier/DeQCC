@@ -1082,8 +1082,8 @@ void () teleport_touch =
     org = t.origin + (FL_MONSTER * v_forward);
     spawn_tfog(org);
     spawn_tdeath(t.origin, other);
-    CreateBotSound(other, other.origin, TRUE, globaldef000740);
-    CreateBotSound(other, org, TRUE, globaldef000740);
+    CreateBotSound(other, other.origin, TRUE, BOTSOUND_TELEPORT);
+    CreateBotSound(other, org, TRUE, BOTSOUND_TELEPORT);
     
     if(other.classname == "bot")
     {

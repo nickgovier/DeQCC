@@ -226,7 +226,7 @@ row,name,s_name,ofs,type,typename
 224,f_updatecache,0,201,6,void()
 225,f_goalweight,0,202,6,void()
 226,f_walkaboutweight,0,203,6,void()
-227,field000227,0,204,6,void()
+227,f_sndweight,0,204,6,void()
 228,field000228,0,205,6,void()
 229,field000229,0,206,6,void()
 230,field000230,0,207,6,void()
