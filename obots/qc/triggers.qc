@@ -1101,13 +1101,13 @@ void () teleport_touch =
     if(other.botflags & globaldef000686)
     {
         
-        if(!self.field000299)
+        if(!self.path0)
         {
             func002676(other, self);
         }
         
-        func002685(other.field000299, self.field000299);
-        other.field000299 = self.field000299;
+        func002685(other.path0, self.path0);
+        other.path0 = self.path0;
     }
     
     

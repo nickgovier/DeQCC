@@ -5566,8 +5566,8 @@ void (entity globaldef009581) func002747 =
 void () BotImpulseCommand = 
 {
     func002747(self);
-    func002661();
-    func002663();
+    DumpBSPWaypointsToConsole();
+    DumpHCWaypointsToConsole();
     func002736();
     if(self.impulse == 161)
     {
@@ -5895,7 +5895,7 @@ void () BotImpulseCommand =
                                                                             
                                                                             if(CheckIsAdmin(self))
                                                                             {
-                                                                                dumpbspwaypoints();
+                                                                                DumpBSPWaypointsCommand();
                                                                             }
                                                                             
                                                                         }
@@ -5906,7 +5906,7 @@ void () BotImpulseCommand =
                                                                                 
                                                                                 if(CheckIsAdmin(self))
                                                                                 {
-                                                                                    dumphcwaypoints();
+                                                                                    DumpHCWaypointsCommand();
                                                                                 }
                                                                                 
                                                                             }

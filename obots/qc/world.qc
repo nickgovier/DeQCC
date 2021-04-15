@@ -940,9 +940,9 @@ void () StartFrame =
             if(framecount > MOVETYPE_PUSH)
             {
                 
-                if(globaldef000788 != globaldef000710)
+                if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
                 {
-                    func002657();
+                    SetupWaypoints();
                 }
                 
                 if(teamplay)
@@ -973,7 +973,7 @@ void () StartFrame =
     }
     
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         gameNotRunning = TRUE;
     }

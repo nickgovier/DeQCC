@@ -630,7 +630,7 @@ void (entity globaldef006798) ToggleObserverMode =
             
             if(globaldef006798.botflags & globaldef000686)
             {
-                globaldef006798.field000299 = world;
+                globaldef006798.path0 = world;
                 globaldef006798.botflags = globaldef006798.botflags - globaldef000686;
                 globaldef000785 = globaldef000785 - TRUE;
             }

@@ -546,7 +546,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.old_flags = FALSE;
     globaldef007106.angles = globaldef007107.angles;
     globaldef007106.v_angle = globaldef007106.angles;
-    globaldef007106.field000299 = world;
+    globaldef007106.path0 = world;
     
     if(globaldef007106.botflags & globaldef000686)
     {
@@ -555,7 +555,7 @@ void (entity globaldef007106) func002418 =
     }
     
     
-    if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((waypointCount < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((waypointCount < globaldef000787) || (waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)))
     {
         globaldef007106.botflags = globaldef007106.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;

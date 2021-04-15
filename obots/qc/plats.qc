@@ -287,7 +287,7 @@ void () plat_center_touch =
     if(other.botflags & globaldef000686)
     {
         
-        if(!self.field000299)
+        if(!self.path0)
         {
             func002677(other, self);
         }
@@ -295,13 +295,13 @@ void () plat_center_touch =
     }
     
     
-    if((other.goalentity.goalentity == self) || (other.goalentity.goalentity == self.field000299))
+    if((other.goalentity.goalentity == self) || (other.goalentity.goalentity == self.path0))
     {
         other.search_time = time - TRUE;
         
-        if(self.field000299)
+        if(self.path0)
         {
-            other.field000263 = self.field000299;
+            other.field000263 = self.path0;
         }
         
     }

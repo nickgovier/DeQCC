@@ -723,7 +723,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
         if(globaldef007809.classname == "waypoint")
         {
             
-            if(func002673(globaldef007809, globaldef007810))
+            if(PathPointerExists(globaldef007809, globaldef007810))
             {
                 return TRUE;
             }

@@ -1291,7 +1291,7 @@ void () PutClientInServer =
     self.old_velocity = '0 0 40';
     self.old_origin = self.origin;
     self.old_flags = FALSE;
-    self.field000299 = world;
+    self.path0 = world;
     self.waypointtype = globaldef000699;
     
     if(self.botflags & globaldef000686)
@@ -1301,7 +1301,7 @@ void () PutClientInServer =
     }
     
     
-    if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((waypointCount < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((waypointCount < globaldef000787) || (waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)))
     {
         self.botflags = self.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;

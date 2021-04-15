@@ -312,12 +312,20 @@ namespace DeQcc
 
             #region obot constants
 
+
+            nameMap.Add("globaldef000692", "WAYPOINT_DUMP_TO_CONSOLE");
+            nameMap.Add("globaldef000693", "WAYPOINT_DO_NOT_DUMP");
+
             nameMap.Add("globaldef000700", "WAYPOINTTYPE_PLATTOP");
             nameMap.Add("globaldef000702", "WAYPOINTTYPE_TELEPORT");
             nameMap.Add("globaldef000703", "WAYPOINTTYPE_ITEM");
             nameMap.Add("globaldef000704", "WAYPOINTTYPE_UNUSED1");
             nameMap.Add("globaldef000705", "WAYPOINTTYPE_UNUSED2");
             nameMap.Add("globaldef000706", "WAYPOINTTYPE_PLATBOTTOM");
+            nameMap.Add("globaldef000707", "WAYPOINTSTATUS_UNINITIALISED");
+            nameMap.Add("globaldef000708", "WAYPOINTSTATUS_FOUND");
+            nameMap.Add("globaldef000709", "WAYPOINTSTATUS_UNCACHED");
+            nameMap.Add("globaldef000710", "WAYPOINTSTATUS_SETUP_COMPLETE");
 
             nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
 
@@ -370,12 +378,14 @@ namespace DeQcc
             nameMap.Add("globaldef000774", "BOTSHIRTPANTS_12");   // constant = 12
             nameMap.Add("globaldef000775", "BOTSHIRTPANTS_13");   // constant = 13
 
+            nameMap.Add("globaldef000788", "waypointStatus");
+
             #endregion
 
             #region obot global variables
 
 
-            
+
 
 
 
@@ -463,7 +473,22 @@ namespace DeQcc
             nameMap.Add("field000296", "attackedby");
             nameMap.Add("field000297", "next");
             nameMap.Add("field000298", "prev");
-
+            nameMap.Add("field000299", "path0");
+            nameMap.Add("field000300", "path1");
+            nameMap.Add("field000301", "path2");
+            nameMap.Add("field000302", "path3");
+            nameMap.Add("field000303", "path4");
+            nameMap.Add("field000304", "path5");
+            nameMap.Add("field000305", "path6");
+            nameMap.Add("field000306", "path7");
+            nameMap.Add("field000307", "dist0");
+            nameMap.Add("field000308", "dist1");
+            nameMap.Add("field000309", "dist2");
+            nameMap.Add("field000310", "dist3");
+            nameMap.Add("field000311", "dist4");
+            nameMap.Add("field000312", "dist5");
+            nameMap.Add("field000313", "dist6");
+            nameMap.Add("field000314", "dist7");
             nameMap.Add("field000315", "cache0_ent");
             nameMap.Add("field000316", "cache1_ent");
             nameMap.Add("field000317", "cache2_ent");
@@ -2833,15 +2858,23 @@ namespace DeQcc
             nameMap.Add("func002652", "SetNearestTeleportForWaypoint");
             nameMap.Add("func002653", "SetNearestPlatTopForWaypoint");
             nameMap.Add("func002654", "SetNearestPlatBottomForWaypoint");
+            nameMap.Add("func002655", "EntityDistance");
 
-            nameMap.Add("func002660", "dumpbspwaypoints");  // impulse 170
-            nameMap.Add("func002662", "dumphcwaypoints");  // impulse 171
+            nameMap.Add("func002657", "SetupWaypoints");
+
+            nameMap.Add("func002660", "DumpBSPWaypointsCommand");  // impulse 170
+            nameMap.Add("func002661", "DumpBSPWaypointsToConsole");
+            nameMap.Add("func002662", "DumpHCWaypointsCommand");  // impulse 171
+            nameMap.Add("func002663", "DumpHCWaypointsToConsole");
 
             nameMap.Add("func002666", "waypoint_touch");
 
             nameMap.Add("func002668", "HCWP_Create");
             nameMap.Add("func002669", "HCWP_SetPointers1");
             nameMap.Add("func002670", "HCWP_SetPointers2");
+
+            nameMap.Add("func002673", "PathPointerExists");
+            
 
             for (int i = 2640; i <= 2692; i++)
             {

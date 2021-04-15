@@ -470,7 +470,7 @@ void (entity globaldef009019) SetNearestItemForWaypoint =
     else
     {
         globaldef009020.waypointnumber = globaldef009019.waypointnumber;
-        globaldef009020.field000299 = globaldef009019;
+        globaldef009020.path0 = globaldef009019;
         globaldef009019.enemy = globaldef009020;
     }
     
@@ -564,7 +564,7 @@ void (entity globaldef009031) SetNearestTeleportForWaypoint =
     else
     {
         globaldef009033.waypointnumber = globaldef009031.waypointnumber;
-        globaldef009033.field000299 = globaldef009031;
+        globaldef009033.path0 = globaldef009031;
         globaldef009031.enemy = globaldef009033;
     }
     
@@ -660,7 +660,7 @@ void (entity globaldef009043) SetNearestPlatTopForWaypoint =
     else
     {
         globaldef009045.waypointnumber = globaldef009043.waypointnumber;
-        globaldef009045.field000300 = globaldef009043;
+        globaldef009045.path1 = globaldef009043;
         globaldef009043.enemy = globaldef009045;
     }
     
@@ -760,14 +760,14 @@ void (entity globaldef009055) SetNearestPlatBottomForWaypoint =
     else
     {
         globaldef009057.waypointnumber = globaldef009055.waypointnumber;
-        globaldef009057.field000299 = globaldef009055;
+        globaldef009057.path0 = globaldef009055;
         globaldef009055.enemy = globaldef009057;
     }
     
 };
 
 
-// func002655
+// EntityDistance
 // function begins at statement 53684, parm_start=28429
 // OP_NOT_ENT	28430	0	28432
 // OP_IFNOT	28432	2	0
@@ -788,7 +788,7 @@ void (entity globaldef009055) SetNearestPlatBottomForWaypoint =
 // OP_STORE_F	3036	28431	0
 // OP_RETURN	28431	0	0
 // OP_DONE	0	0	0
-float (entity globaldef009067, entity globaldef009068) func002655 = 
+float (entity globaldef009067, entity globaldef009068) EntityDistance = 
 {
     local float globaldef009069;
     
@@ -853,7 +853,7 @@ void () func002656 =
 };
 
 
-// func002657
+// SetupWaypoints
 // function begins at statement 53721, parm_start=28454
 // OP_EQ_F	805	724	28456
 // OP_IFNOT	28456	22	0
@@ -1056,11 +1056,11 @@ void () func002656 =
 // OP_CALL1	472	0	0
 // OP_STORE_F	213	816	0
 // OP_DONE	0	0	0
-void () func002657 = 
+void () SetupWaypoints = 
 {
     local entity globaldef009073;
     local float globaldef009074;
-    if(globaldef000788 == globaldef000707)
+    if(waypointStatus == WAYPOINTSTATUS_UNINITIALISED)
     {
         if(!bspWaypointsExist)
         {
@@ -1080,13 +1080,13 @@ void () func002657 =
         func002656();
         if(bspWaypointsExist || hardCodedWaypointsExist)
         {
-            globaldef000788 = globaldef000708;
+            waypointStatus = WAYPOINTSTATUS_FOUND;
             obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BOTPATHING;
         }
         else
         {
             gameNotRunning = FALSE;
-            globaldef000788 = globaldef000710;
+            waypointStatus = WAYPOINTSTATUS_SETUP_COMPLETE;
             globaldef000810 = world;
         }
         
@@ -1094,7 +1094,7 @@ void () func002657 =
     }
     else
     {
-        if(globaldef000788 == globaldef000708)
+        if(waypointStatus == WAYPOINTSTATUS_FOUND)
         {
             if(!globaldef000810)
             {
@@ -1111,22 +1111,22 @@ void () func002657 =
             
             while(globaldef009073)
             {
-                globaldef009073.field000299 = GetWaypointByID(globaldef009073.wp0);
-                globaldef009073.field000300 = GetWaypointByID(globaldef009073.wp1);
-                globaldef009073.field000301 = GetWaypointByID(globaldef009073.wp2);
-                globaldef009073.field000302 = GetWaypointByID(globaldef009073.wp3);
-                globaldef009073.field000303 = GetWaypointByID(globaldef009073.wp4);
-                globaldef009073.field000304 = GetWaypointByID(globaldef009073.wp5);
-                globaldef009073.field000305 = GetWaypointByID(globaldef009073.wp6);
-                globaldef009073.field000306 = GetWaypointByID(globaldef009073.wp7);
-                globaldef009073.field000307 = func002655(globaldef009073, globaldef009073.field000299);
-                globaldef009073.field000308 = func002655(globaldef009073, globaldef009073.field000300);
-                globaldef009073.field000309 = func002655(globaldef009073, globaldef009073.field000301);
-                globaldef009073.field000310 = func002655(globaldef009073, globaldef009073.field000302);
-                globaldef009073.field000311 = func002655(globaldef009073, globaldef009073.field000303);
-                globaldef009073.field000312 = func002655(globaldef009073, globaldef009073.field000304);
-                globaldef009073.field000313 = func002655(globaldef009073, globaldef009073.field000305);
-                globaldef009073.field000314 = func002655(globaldef009073, globaldef009073.field000306);
+                globaldef009073.path0 = GetWaypointByID(globaldef009073.wp0);
+                globaldef009073.path1 = GetWaypointByID(globaldef009073.wp1);
+                globaldef009073.path2 = GetWaypointByID(globaldef009073.wp2);
+                globaldef009073.path3 = GetWaypointByID(globaldef009073.wp3);
+                globaldef009073.path4 = GetWaypointByID(globaldef009073.wp4);
+                globaldef009073.path5 = GetWaypointByID(globaldef009073.wp5);
+                globaldef009073.path6 = GetWaypointByID(globaldef009073.wp6);
+                globaldef009073.path7 = GetWaypointByID(globaldef009073.wp7);
+                globaldef009073.dist0 = EntityDistance(globaldef009073, globaldef009073.path0);
+                globaldef009073.dist1 = EntityDistance(globaldef009073, globaldef009073.path1);
+                globaldef009073.dist2 = EntityDistance(globaldef009073, globaldef009073.path2);
+                globaldef009073.dist3 = EntityDistance(globaldef009073, globaldef009073.path3);
+                globaldef009073.dist4 = EntityDistance(globaldef009073, globaldef009073.path4);
+                globaldef009073.dist5 = EntityDistance(globaldef009073, globaldef009073.path5);
+                globaldef009073.dist6 = EntityDistance(globaldef009073, globaldef009073.path6);
+                globaldef009073.dist7 = EntityDistance(globaldef009073, globaldef009073.path7);
                 if(globaldef009073.waypointtype == WAYPOINTTYPE_ITEM)
                 {
                     SetNearestItemForWaypoint(globaldef009073);
@@ -1173,13 +1173,13 @@ void () func002657 =
                 
             }
             
-            globaldef000788 = globaldef000709;
+            waypointStatus = WAYPOINTSTATUS_UNCACHED;
             bprint("\n");
         }
         else
         {
             
-            if(globaldef000788 == globaldef000709)
+            if(waypointStatus == WAYPOINTSTATUS_UNCACHED)
             {
                 if(!globaldef000810)
                 {
@@ -1213,7 +1213,7 @@ void () func002657 =
                 }
                 
                 globaldef000810 = world;
-                globaldef000788 = globaldef000710;
+                waypointStatus = WAYPOINTSTATUS_SETUP_COMPLETE;
                 bprint("\n");
                 gameNotRunning = FALSE;
             }
@@ -1350,7 +1350,7 @@ void (entity globaldef009087, vector globaldef009088) func002659 =
 };
 
 
-// dumpbspwaypoints
+// DumpBSPWaypointsCommand
 // function begins at statement 53984, parm_start=28543
 // OP_LOAD_F	28	575	28543
 // OP_BITAND	28543	710	28544
@@ -1361,19 +1361,19 @@ void (entity globaldef009087, vector globaldef009088) func002659 =
 // OP_BITOR	28546	709	28547
 // OP_STOREP_F	28547	28545	0
 // OP_DONE	0	0	0
-void () dumpbspwaypoints = 
+void () DumpBSPWaypointsCommand = 
 {
     
-    if(self.botflags & globaldef000693)
+    if(self.botflags & WAYPOINT_DO_NOT_DUMP)
     {
         return;
     }
     
-    self.botflags = self.botflags | globaldef000692;
+    self.botflags = self.botflags | WAYPOINT_DUMP_TO_CONSOLE;
 };
 
 
-// func002661
+// DumpBSPWaypointsToConsole
 // function begins at statement 53993, parm_start=28548
 // OP_LOAD_F	28	575	28551
 // OP_BITAND	28551	709	28552
@@ -1595,13 +1595,13 @@ void () dumpbspwaypoints =
 // OP_STORE_ENT	28548	828	0
 // OP_GOTO	-196	0	0
 // OP_DONE	0	0	0
-void () func002661 = 
+void () DumpBSPWaypointsToConsole = 
 {
     local entity globaldef009092;
     local float globaldef009093;
     local string globaldef009094;
     
-    if(!(self.botflags & globaldef000692))
+    if(!(self.botflags & WAYPOINT_DUMP_TO_CONSOLE))
     {
         return;
     }
@@ -1625,18 +1625,18 @@ void () func002661 =
         if(globaldef009092 == world)
         {
             sprint(self, "dumped all waypoints\n");
-            self.botflags = self.botflags - (self.botflags & globaldef000692);
+            self.botflags = self.botflags - (self.botflags & WAYPOINT_DUMP_TO_CONSOLE);
             return;
         }
         
-        globaldef009092.wp0 = globaldef009092.field000299.waypointnumber;
-        globaldef009092.wp1 = globaldef009092.field000300.waypointnumber;
-        globaldef009092.wp2 = globaldef009092.field000301.waypointnumber;
-        globaldef009092.wp3 = globaldef009092.field000302.waypointnumber;
-        globaldef009092.wp4 = globaldef009092.field000303.waypointnumber;
-        globaldef009092.wp5 = globaldef009092.field000304.waypointnumber;
-        globaldef009092.wp6 = globaldef009092.field000305.waypointnumber;
-        globaldef009092.wp7 = globaldef009092.field000306.waypointnumber;
+        globaldef009092.wp0 = globaldef009092.path0.waypointnumber;
+        globaldef009092.wp1 = globaldef009092.path1.waypointnumber;
+        globaldef009092.wp2 = globaldef009092.path2.waypointnumber;
+        globaldef009092.wp3 = globaldef009092.path3.waypointnumber;
+        globaldef009092.wp4 = globaldef009092.path4.waypointnumber;
+        globaldef009092.wp5 = globaldef009092.path5.waypointnumber;
+        globaldef009092.wp6 = globaldef009092.path6.waypointnumber;
+        globaldef009092.wp7 = globaldef009092.path7.waypointnumber;
         sprint(self, "{\n");
         sprint(self, " \"classname\" \"waypoint\"\n");
         sprint(self, " \"origin\" \"");
@@ -1723,7 +1723,7 @@ void () func002661 =
 };
 
 
-// dumphcwaypoints
+// DumpHCWaypointsCommand
 // function begins at statement 54213, parm_start=28629
 // OP_LOAD_F	28	575	28629
 // OP_BITAND	28629	709	28630
@@ -1734,19 +1734,19 @@ void () func002661 =
 // OP_BITOR	28632	710	28633
 // OP_STOREP_F	28633	28631	0
 // OP_DONE	0	0	0
-void () dumphcwaypoints = 
+void () DumpHCWaypointsCommand = 
 {
     
-    if(self.botflags & globaldef000692)
+    if(self.botflags & WAYPOINT_DUMP_TO_CONSOLE)
     {
         return;
     }
     
-    self.botflags = self.botflags | globaldef000693;
+    self.botflags = self.botflags | WAYPOINT_DO_NOT_DUMP;
 };
 
 
-// func002663
+// DumpHCWaypointsToConsole
 // function begins at statement 54222, parm_start=28634
 // OP_LOAD_F	28	575	28637
 // OP_BITAND	28637	710	28638
@@ -1969,13 +1969,13 @@ void () dumphcwaypoints =
 // OP_STORE_ENT	28634	828	0
 // OP_GOTO	-191	0	0
 // OP_DONE	0	0	0
-void () func002663 = 
+void () DumpHCWaypointsToConsole = 
 {
     local entity globaldef009113;
     local float globaldef009114;
     local string globaldef009115;
     
-    if(!(self.botflags & globaldef000693))
+    if(!(self.botflags & WAYPOINT_DO_NOT_DUMP))
     {
         return;
     }
@@ -2001,18 +2001,18 @@ void () func002663 =
         {
             sprint(self, "	}\n\n");
             sprint(self, "dumped all waypoints\n");
-            self.botflags = self.botflags - (self.botflags & globaldef000693);
+            self.botflags = self.botflags - (self.botflags & WAYPOINT_DO_NOT_DUMP);
             return;
         }
         
-        globaldef009113.wp0 = globaldef009113.field000299.waypointnumber;
-        globaldef009113.wp1 = globaldef009113.field000300.waypointnumber;
-        globaldef009113.wp2 = globaldef009113.field000301.waypointnumber;
-        globaldef009113.wp3 = globaldef009113.field000302.waypointnumber;
-        globaldef009113.wp4 = globaldef009113.field000303.waypointnumber;
-        globaldef009113.wp5 = globaldef009113.field000304.waypointnumber;
-        globaldef009113.wp6 = globaldef009113.field000305.waypointnumber;
-        globaldef009113.wp7 = globaldef009113.field000306.waypointnumber;
+        globaldef009113.wp0 = globaldef009113.path0.waypointnumber;
+        globaldef009113.wp1 = globaldef009113.path1.waypointnumber;
+        globaldef009113.wp2 = globaldef009113.path2.waypointnumber;
+        globaldef009113.wp3 = globaldef009113.path3.waypointnumber;
+        globaldef009113.wp4 = globaldef009113.path4.waypointnumber;
+        globaldef009113.wp5 = globaldef009113.path5.waypointnumber;
+        globaldef009113.wp6 = globaldef009113.path6.waypointnumber;
+        globaldef009113.wp7 = globaldef009113.path7.waypointnumber;
         sprint(self, "		HCWP_Create(");
         sprint(self, "'");
         func002659(self, globaldef009113.origin);
@@ -2247,12 +2247,12 @@ void () waypoint_touch =
     if(other.botflags & globaldef000686)
     {
         
-        if(other.field000299)
+        if(other.path0)
         {
-            func002685(other.field000299, self);
+            func002685(other.path0, self);
         }
         
-        other.field000299 = self;
+        other.path0 = self;
     }
     
 };
@@ -2469,7 +2469,7 @@ entity () func002671 =
     setsize(globaldef009158, '-4 -4 -4', '4 4 4');
     func002664(globaldef009158);
     
-    if((waypointCount >= globaldef000787) && (globaldef000788 == globaldef000710))
+    if((waypointCount >= globaldef000787) && (waypointStatus == WAYPOINTSTATUS_SETUP_COMPLETE))
     {
         func002639();
     }
@@ -2492,7 +2492,7 @@ void (entity globaldef009160) DestroyWaypoint =
 };
 
 
-// func002673
+// PathPointerExists
 // function begins at statement 54644, parm_start=28824
 // OP_LOAD_ENT	28825	622	28826
 // OP_EQ_E	28826	28824	28827
@@ -2528,52 +2528,52 @@ void (entity globaldef009160) DestroyWaypoint =
 // OP_RETURN	214	0	0
 // OP_RETURN	213	0	0
 // OP_DONE	0	0	0
-float (entity globaldef009161, entity globaldef009162) func002673 = 
+float (entity globaldef009161, entity globaldef009162) PathPointerExists = 
 {
     
-    if(globaldef009162.field000299 == globaldef009161)
+    if(globaldef009162.path0 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000300 == globaldef009161)
+    if(globaldef009162.path1 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000301 == globaldef009161)
+    if(globaldef009162.path2 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000302 == globaldef009161)
+    if(globaldef009162.path3 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000303 == globaldef009161)
+    if(globaldef009162.path4 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000304 == globaldef009161)
+    if(globaldef009162.path5 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000305 == globaldef009161)
+    if(globaldef009162.path6 == globaldef009161)
     {
         return TRUE;
     }
     
     
-    if(globaldef009162.field000306 == globaldef009161)
+    if(globaldef009162.path7 == globaldef009161)
     {
         return TRUE;
     }
@@ -2663,7 +2663,7 @@ float () func002674 =
     local vector globaldef009175;
     globaldef009164 = TRUE;
     globaldef009165 = GLOBALDEF721_250;
-    globaldef009170 = self.field000299;
+    globaldef009170 = self.path0;
     globaldef009167 = FALSE;
     globaldef009168 = firstWaypoint;
     
@@ -2690,12 +2690,12 @@ float () func002674 =
                             
                             if(func002466(globaldef009168, self))
                             {
-                                if(self.field000299)
+                                if(self.path0)
                                 {
                                     
-                                    if(func002466(self.field000299, globaldef009168))
+                                    if(func002466(self.path0, globaldef009168))
                                     {
-                                        func002685(self.field000299, globaldef009168);
+                                        func002685(self.path0, globaldef009168);
                                         globaldef009170 = globaldef009168;
                                         globaldef009165 = globaldef009166;
                                         globaldef009164 = FALSE;
@@ -2724,7 +2724,7 @@ float () func002674 =
         globaldef009168 = globaldef009168.next;
     }
     
-    self.field000299 = globaldef009170;
+    self.path0 = globaldef009170;
     return globaldef009164;
 };
 
@@ -2765,7 +2765,7 @@ void (entity globaldef009179) func002675 =
     local float globaldef009181;
     local vector globaldef009182;
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         return;
     }
@@ -2774,9 +2774,9 @@ void (entity globaldef009179) func002675 =
     globaldef009182 = globaldef009179.old_origin;
     globaldef009182_z = (globaldef009182_z + globaldef009179.mins_z) + FL_SWIM;
     setorigin(globaldef009180, globaldef009182);
-    globaldef009180.field000299 = globaldef009179.field000299;
-    globaldef009179.field000299 = globaldef009180;
-    globaldef009180.field000307 = func002655(globaldef009180, globaldef009180.field000299);
+    globaldef009180.path0 = globaldef009179.path0;
+    globaldef009179.path0 = globaldef009180;
+    globaldef009180.dist0 = EntityDistance(globaldef009180, globaldef009180.path0);
     globaldef009180.waypointtype = globaldef000701;
 };
 
@@ -2823,7 +2823,7 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     local entity globaldef009188;
     local vector globaldef009189;
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         return;
     }
@@ -2832,11 +2832,11 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * RA_PLAYERSTATTIME;
     globaldef009189_z = AbsFloorHeight(globaldef009189) + FL_SWIM;
     setorigin(globaldef009188, globaldef009189);
-    globaldef009188.field000299 = globaldef009186.field000299;
-    globaldef009186.field000299 = globaldef009188;
-    globaldef009188.field000307 = func002655(globaldef009188, globaldef009188.field000299);
+    globaldef009188.path0 = globaldef009186.path0;
+    globaldef009186.path0 = globaldef009188;
+    globaldef009188.dist0 = EntityDistance(globaldef009188, globaldef009188.path0);
     globaldef009188.waypointtype = WAYPOINTTYPE_TELEPORT;
-    globaldef009187.field000299 = globaldef009188;
+    globaldef009187.path0 = globaldef009188;
     globaldef009188.enemy = globaldef009187;
 };
 
@@ -2918,7 +2918,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     local entity globaldef009196;
     local vector globaldef009197;
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         return;
     }
@@ -2927,20 +2927,20 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * RA_PLAYERSTATTIME);
     globaldef009197_z = (globaldef009194.maxs_z - (globaldef009194.pos1_z - globaldef009194.pos2_z)) + FL_SWIM;
     setorigin(globaldef009195, globaldef009197);
-    globaldef009195.field000299 = globaldef009193.field000299;
-    globaldef009195.field000307 = func002655(globaldef009195, globaldef009195.field000299);
-    globaldef009193.field000299 = globaldef009195;
+    globaldef009195.path0 = globaldef009193.path0;
+    globaldef009195.dist0 = EntityDistance(globaldef009195, globaldef009195.path0);
+    globaldef009193.path0 = globaldef009195;
     globaldef009195.waypointtype = WAYPOINTTYPE_PLATBOTTOM;
-    globaldef009194.field000299 = globaldef009195;
+    globaldef009194.path0 = globaldef009195;
     globaldef009195.enemy = globaldef009194;
     globaldef009196 = func002671();
     globaldef009197 = globaldef009194.pos2 + ((globaldef009194.mins + globaldef009194.maxs) * RA_PLAYERSTATTIME);
     globaldef009197_z = globaldef009194.maxs_z + FL_SWIM;
     setorigin(globaldef009196, globaldef009197);
-    globaldef009196.field000299 = globaldef009195;
-    globaldef009196.field000307 = func002655(globaldef009196, globaldef009196.field000299);
+    globaldef009196.path0 = globaldef009195;
+    globaldef009196.dist0 = EntityDistance(globaldef009196, globaldef009196.path0);
     globaldef009196.waypointtype = WAYPOINTTYPE_PLATTOP;
-    globaldef009194.field000300 = globaldef009196;
+    globaldef009194.path1 = globaldef009196;
     globaldef009196.enemy = globaldef009194;
 };
 
@@ -2989,20 +2989,20 @@ void (entity globaldef009202, entity globaldef009203) func002678 =
     local entity globaldef009204;
     local vector globaldef009205;
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         return;
     }
     
     globaldef009204 = func002671();
-    globaldef009204.field000299 = globaldef009202.field000299;
-    globaldef009202.field000299 = globaldef009204;
+    globaldef009204.path0 = globaldef009202.path0;
+    globaldef009202.path0 = globaldef009204;
     globaldef009205 = (globaldef009203.absmin + globaldef009203.absmax) * RA_PLAYERSTATTIME;
     globaldef009205_z = globaldef009203.absmin_z + FL_SWIM;
     setorigin(globaldef009204, globaldef009205);
-    globaldef009204.field000307 = func002655(globaldef009204, globaldef009204.field000299);
+    globaldef009204.dist0 = EntityDistance(globaldef009204, globaldef009204.path0);
     globaldef009204.waypointtype = WAYPOINTTYPE_ITEM;
-    globaldef009203.field000299 = globaldef009204;
+    globaldef009203.path0 = globaldef009204;
     globaldef009204.enemy = globaldef009203;
     globaldef009204.waypointitem = globaldef009203.classname;
 };
@@ -3142,13 +3142,13 @@ float () func002679 =
     }
     
     
-    if(!self.field000299)
+    if(!self.path0)
     {
         return func002674();
     }
     
     
-    if(!func002466(self.field000299, self))
+    if(!func002466(self.path0, self))
     {
         return func002674();
     }
@@ -3178,7 +3178,7 @@ float () func002679 =
 void () func002680 = 
 {
     
-    if(globaldef000788 != globaldef000710)
+    if(waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)
     {
         return;
     }
@@ -3190,9 +3190,9 @@ void () func002680 =
     }
     
     
-    if(!Reachable(self.field000299, self))
+    if(!Reachable(self.path0, self))
     {
-        self.field000299 = world;
+        self.path0 = world;
     }
     
 };
@@ -3667,7 +3667,7 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
         objerror("can't cache at world entity");
     }
     
-    dist = globaldef009218 + func002655(globaldef009216, wp);
+    dist = globaldef009218 + EntityDistance(globaldef009216, wp);
     
     if(!ent.f_updatecache(wp, dist, ent))
     {
@@ -3705,11 +3705,11 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
         globaldef009222.field000335 = world;
         globaldef009222.field000336 = world;
         globaldef009222.field000338 = FALSE;
-        globaldef009223 = globaldef009222.field000299;
+        globaldef009223 = globaldef009222.path0;
         
         if(globaldef009223)
         {
-            dist = globaldef009222.field000337 + globaldef009222.field000307;
+            dist = globaldef009222.field000337 + globaldef009222.dist0;
             
             if(ent.f_updatecache(globaldef009223, dist, ent))
             {
@@ -3785,11 +3785,11 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
             
         }
         
-        globaldef009223 = globaldef009222.field000300;
+        globaldef009223 = globaldef009222.path1;
         
         if(globaldef009223)
         {
-            dist = globaldef009222.field000337 + globaldef009222.field000308;
+            dist = globaldef009222.field000337 + globaldef009222.dist1;
             
             if(ent.f_updatecache(globaldef009223, dist, ent))
             {
@@ -3865,11 +3865,11 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
             
         }
         
-        globaldef009223 = globaldef009222.field000301;
+        globaldef009223 = globaldef009222.path2;
         
         if(globaldef009223)
         {
-            dist = globaldef009222.field000337 + globaldef009222.field000309;
+            dist = globaldef009222.field000337 + globaldef009222.dist2;
             
             if(ent.f_updatecache(globaldef009223, dist, ent))
             {
@@ -3945,11 +3945,11 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
             
         }
         
-        globaldef009223 = globaldef009222.field000302;
+        globaldef009223 = globaldef009222.path3;
         
         if(globaldef009223)
         {
-            dist = globaldef009222.field000337 + globaldef009222.field000310;
+            dist = globaldef009222.field000337 + globaldef009222.dist3;
             
             if(ent.f_updatecache(globaldef009223, dist, ent))
             {
@@ -4025,11 +4025,11 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
             
         }
         
-        globaldef009223 = globaldef009222.field000303;
+        globaldef009223 = globaldef009222.path4;
         
         if(globaldef009223)
         {
-            dist = globaldef009222.field000337 + globaldef009222.field000311;
+            dist = globaldef009222.field000337 + globaldef009222.dist4;
             
             if(ent.f_updatecache(globaldef009223, dist, ent))
             {
@@ -4384,7 +4384,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         objerror("can't cache at world entity");
     }
     
-    globaldef009238 = globaldef009232 + func002655(globaldef009230, globaldef009231);
+    globaldef009238 = globaldef009232 + EntityDistance(globaldef009230, globaldef009231);
     
     if(!globaldef009233.f_updatecache(globaldef009231, globaldef009238, globaldef009233))
     {
@@ -4422,11 +4422,11 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
         globaldef009236.field000335 = world;
         globaldef009236.field000336 = world;
         globaldef009236.field000338 = FALSE;
-        globaldef009237 = globaldef009236.field000299;
+        globaldef009237 = globaldef009236.path0;
         
         if(globaldef009237)
         {
-            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000307;
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.dist0;
             
             if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
@@ -4453,11 +4453,11 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
             
         }
         
-        globaldef009237 = globaldef009236.field000300;
+        globaldef009237 = globaldef009236.path1;
         
         if(globaldef009237)
         {
-            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000308;
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.dist1;
             
             if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
@@ -4484,11 +4484,11 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
             
         }
         
-        globaldef009237 = globaldef009236.field000301;
+        globaldef009237 = globaldef009236.path2;
         
         if(globaldef009237)
         {
-            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000309;
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.dist2;
             
             if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
@@ -4515,11 +4515,11 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
             
         }
         
-        globaldef009237 = globaldef009236.field000302;
+        globaldef009237 = globaldef009236.path3;
         
         if(globaldef009237)
         {
-            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000310;
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.dist3;
             
             if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
@@ -4546,11 +4546,11 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
             
         }
         
-        globaldef009237 = globaldef009236.field000303;
+        globaldef009237 = globaldef009236.path4;
         
         if(globaldef009237)
         {
-            globaldef009238 = globaldef009236.field000337 + globaldef009236.field000311;
+            globaldef009238 = globaldef009236.field000337 + globaldef009236.dist4;
             
             if(globaldef009233.f_updatecache(globaldef009237, globaldef009238, globaldef009233))
             {
@@ -4923,7 +4923,7 @@ void (entity globaldef009248, entity globaldef009249) func002685 =
     }
     
     
-    if(globaldef009249.field000299 == globaldef009248)
+    if(globaldef009249.path0 == globaldef009248)
     {
         return;
     }
@@ -4935,44 +4935,44 @@ void (entity globaldef009248, entity globaldef009249) func002685 =
     }
     
     globaldef009250 = FALSE;
-    if(globaldef009249.field000300 == globaldef009248)
+    if(globaldef009249.path1 == globaldef009248)
     {
         globaldef009250 = TRUE;
     }
     else
     {
-        if(globaldef009249.field000301 == globaldef009248)
+        if(globaldef009249.path2 == globaldef009248)
         {
             globaldef009250 = TRUE;
         }
         else
         {
-            if(globaldef009249.field000302 == globaldef009248)
+            if(globaldef009249.path3 == globaldef009248)
             {
                 globaldef009250 = TRUE;
             }
             else
             {
-                if(globaldef009249.field000303 == globaldef009248)
+                if(globaldef009249.path4 == globaldef009248)
                 {
                     globaldef009250 = TRUE;
                 }
                 else
                 {
-                    if(globaldef009249.field000304 == globaldef009248)
+                    if(globaldef009249.path5 == globaldef009248)
                     {
                         globaldef009250 = TRUE;
                     }
                     else
                     {
-                        if(globaldef009249.field000305 == globaldef009248)
+                        if(globaldef009249.path6 == globaldef009248)
                         {
                             globaldef009250 = TRUE;
                         }
                         else
                         {
                             
-                            if(globaldef009249.field000306 == globaldef009248)
+                            if(globaldef009249.path7 == globaldef009248)
                             {
                                 globaldef009250 = TRUE;
                             }
@@ -4993,59 +4993,59 @@ void (entity globaldef009248, entity globaldef009249) func002685 =
     
     if(!globaldef009250)
     {
-        if(!globaldef009249.field000299)
+        if(!globaldef009249.path0)
         {
-            globaldef009249.field000299 = globaldef009248;
-            globaldef009249.field000307 = func002655(globaldef009249, globaldef009248);
+            globaldef009249.path0 = globaldef009248;
+            globaldef009249.dist0 = EntityDistance(globaldef009249, globaldef009248);
         }
         else
         {
-            if(!globaldef009249.field000300)
+            if(!globaldef009249.path1)
             {
-                globaldef009249.field000300 = globaldef009248;
-                globaldef009249.field000308 = func002655(globaldef009249, globaldef009248);
+                globaldef009249.path1 = globaldef009248;
+                globaldef009249.dist1 = EntityDistance(globaldef009249, globaldef009248);
             }
             else
             {
-                if(!globaldef009249.field000301)
+                if(!globaldef009249.path2)
                 {
-                    globaldef009249.field000301 = globaldef009248;
-                    globaldef009249.field000309 = func002655(globaldef009249, globaldef009248);
+                    globaldef009249.path2 = globaldef009248;
+                    globaldef009249.dist2 = EntityDistance(globaldef009249, globaldef009248);
                 }
                 else
                 {
-                    if(!globaldef009249.field000302)
+                    if(!globaldef009249.path3)
                     {
-                        globaldef009249.field000302 = globaldef009248;
-                        globaldef009249.field000310 = func002655(globaldef009249, globaldef009248);
+                        globaldef009249.path3 = globaldef009248;
+                        globaldef009249.dist3 = EntityDistance(globaldef009249, globaldef009248);
                     }
                     else
                     {
-                        if(!globaldef009249.field000303)
+                        if(!globaldef009249.path4)
                         {
-                            globaldef009249.field000303 = globaldef009248;
-                            globaldef009249.field000311 = func002655(globaldef009249, globaldef009248);
+                            globaldef009249.path4 = globaldef009248;
+                            globaldef009249.dist4 = EntityDistance(globaldef009249, globaldef009248);
                         }
                         else
                         {
-                            if(!globaldef009249.field000304)
+                            if(!globaldef009249.path5)
                             {
-                                globaldef009249.field000304 = globaldef009248;
-                                globaldef009249.field000312 = func002655(globaldef009249, globaldef009248);
+                                globaldef009249.path5 = globaldef009248;
+                                globaldef009249.dist5 = EntityDistance(globaldef009249, globaldef009248);
                             }
                             else
                             {
-                                if(!globaldef009249.field000305)
+                                if(!globaldef009249.path6)
                                 {
-                                    globaldef009249.field000305 = globaldef009248;
-                                    globaldef009249.field000313 = func002655(globaldef009249, globaldef009248);
+                                    globaldef009249.path6 = globaldef009248;
+                                    globaldef009249.dist6 = EntityDistance(globaldef009249, globaldef009248);
                                 }
                                 else
                                 {
-                                    if(!globaldef009249.field000306)
+                                    if(!globaldef009249.path7)
                                     {
-                                        globaldef009249.field000306 = globaldef009248;
-                                        globaldef009249.field000314 = func002655(globaldef009249, globaldef009248);
+                                        globaldef009249.path7 = globaldef009248;
+                                        globaldef009249.dist7 = EntityDistance(globaldef009249, globaldef009248);
                                     }
                                     else
                                     {
@@ -5113,15 +5113,15 @@ void (entity globaldef009252, entity globaldef009253) func002686 =
     if(globaldef009253.f_updatecache)
     {
         
-        if(!globaldef009253.field000299)
+        if(!globaldef009253.path0)
         {
             func002678(globaldef009252, globaldef009253);
         }
         
         
-        if(globaldef009252.field000299)
+        if(globaldef009252.path0)
         {
-            func002683(globaldef009253, globaldef009252.field000299, FALSE, globaldef009253);
+            func002683(globaldef009253, globaldef009252.path0, FALSE, globaldef009253);
         }
         
     }
@@ -5487,9 +5487,9 @@ entity (entity globaldef009262) func002691 =
     local float globaldef009266;
     local vector globaldef009267;
     local vector globaldef009271;
-    if((globaldef009262.botflags & globaldef000686) && (globaldef009262.field000299 != world))
+    if((globaldef009262.botflags & globaldef000686) && (globaldef009262.path0 != world))
     {
-        return globaldef009262.field000299;
+        return globaldef009262.path0;
     }
     else
     {

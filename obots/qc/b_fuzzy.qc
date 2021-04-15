@@ -273,7 +273,7 @@ float (entity bot, entity e) goalweight_plat =
         }
         else
         {
-            if(e.field000299)
+            if(e.path0)
             {
                 return FALSE;
             }
@@ -382,7 +382,7 @@ float (entity bot, entity e) goalweight_teleporter =
         }
         else
         {
-            if(e.field000299)
+            if(e.path0)
             {
                 return MOVETYPE_BOUNCE;
             }
