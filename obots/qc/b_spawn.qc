@@ -497,10 +497,10 @@ void (entity globaldef007106) func002418 =
     globaldef007106.waypointtype = globaldef000699;
     globaldef007106.deadflag = DEAD_NO;
     
-    if(!globaldef000510)
+    if(!modelindex_head)
     {
         setmodel(self, "progs/h_player.mdl");
-        globaldef000510 = self.modelindex;
+        modelindex_head = self.modelindex;
     }
     
     

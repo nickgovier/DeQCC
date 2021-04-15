@@ -1259,10 +1259,10 @@ void () PutClientInServer =
     self.deadflag = DEAD_NO;
     self.pausetime = FALSE;
     
-    if(!globaldef000510)
+    if(!modelindex_head)
     {
         setmodel(self, "progs/h_player.mdl");
-        globaldef000510 = self.modelindex;
+        modelindex_head = self.modelindex;
     }
     
     
@@ -3184,7 +3184,7 @@ void () ClientConnect =
     
     if(self.clientnumber == FALSE)
     {
-        func002738(self);
+        SetAdmin(self);
     }
     
     

@@ -227,9 +227,9 @@ row,name,s_name,ofs,type,typename
 225,f_goalweight,0,202,6,void()
 226,f_walkaboutweight,0,203,6,void()
 227,f_sndweight,0,204,6,void()
-228,field000228,0,205,6,void()
-229,field000229,0,206,6,void()
-230,field000230,0,207,6,void()
+228,f_ai,0,205,6,void()
+229,f_lastai,0,206,6,void()
+230,think2,0,207,6,void()
 231,field000231,0,208,2,float
 232,field000232,0,209,2,float
 233,field000233,0,210,3,vector

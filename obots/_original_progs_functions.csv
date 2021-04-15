@@ -2737,7 +2737,7 @@ row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,p
 2735,b_impuls.qc,0,func002735,0,0,58304,1,0,30197,00000000
 2736,b_impuls.qc,0,func002736,0,0,58823,3,0,30199,00000000
 2737,b_impuls.qc,0,menu,0,0,59053,0,0,30286,00000000
-2738,b_impuls.qc,0,func002738,0,0,59071,0,1,30293,10000000
+2738,b_impuls.qc,0,SetAdmin,0,0,59071,0,1,30293,10000000
 2739,b_impuls.qc,0,stopadmin,0,0,59083,0,1,30297,10000000
 2740,b_impuls.qc,0,func002740,0,0,59094,1,0,30303,00000000
 2741,b_impuls.qc,0,admin,0,0,59105,2,1,30309,10000000

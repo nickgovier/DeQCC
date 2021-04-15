@@ -1580,7 +1580,7 @@ void (string gibname, float dm) ThrowHead =
     if((gibname == "progs/h_player.mdl") && (obot_game_option_bitflags & globaldef000760))
     {
         self.field000251 = FALSE;
-        self.clmodelindex = globaldef000510;
+        self.clmodelindex = modelindex_head;
     }
     else
     {

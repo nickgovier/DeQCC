@@ -4887,7 +4887,7 @@ void () menu =
 };
 
 
-// func002738
+// SetAdmin
 // function begins at statement 59071, parm_start=30293
 // OP_IFNOT	831	2	0
 // OP_RETURN	0	0	0
@@ -4901,7 +4901,7 @@ void () menu =
 // OP_STORE_V	30296	4	0
 // OP_CALL1	472	0	0
 // OP_DONE	0	0	0
-void (entity globaldef009548) func002738 = 
+void (entity globaldef009548) SetAdmin = 
 {
     
     if(currentAdmin)
@@ -4910,7 +4910,7 @@ void (entity globaldef009548) func002738 =
     }
     
     currentAdmin = globaldef009548;
-    globaldef000815 = world;
+    prospectiveAdmin = world;
     self.field000362 = globaldef000730;
     bprint(globaldef009548.netname);
     bprint(" became administrator\n");
@@ -5036,11 +5036,11 @@ void (entity globaldef009555) admin =
     
     if(((activeClientCount - globaldef000792) - globaldef000793) <= TRUE)
     {
-        func002738(globaldef009555);
+        SetAdmin(globaldef009555);
     }
     else
     {
-        globaldef000815 = globaldef009555;
+        prospectiveAdmin = globaldef009555;
         func002740();
         globaldef009555.field000362 = globaldef000738;
         bprint2(globaldef009555.netname, " wants to be the administrator\n");
@@ -5101,7 +5101,7 @@ void (entity globaldef009562) yes =
     local float globaldef009564;
     local float globaldef009565;
     
-    if((currentAdmin != world) || !globaldef000815)
+    if((currentAdmin != world) || !prospectiveAdmin)
     {
         sprint(self, "nothing to vote for\n");
         return;
@@ -5127,7 +5127,7 @@ void (entity globaldef009562) yes =
     
     if(globaldef009565 > (globaldef009564 * RA_PLAYERSTATTIME))
     {
-        func002738(globaldef000815);
+        SetAdmin(prospectiveAdmin);
         func002740();
     }
     

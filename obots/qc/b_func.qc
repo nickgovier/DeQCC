@@ -208,7 +208,7 @@ float (entity globaldef009254, entity globaldef009255) func002687;
 float (entity globaldef009256, entity globaldef009257) func002688;
 entity (entity globaldef009262) func002691;
 void (entity globaldef009275, entity globaldef009276) func002692;
-void (entity globaldef009548) func002738;
+void (entity globaldef009548) SetAdmin;
 void (entity globaldef009550) stopadmin;
 void () BotImpulseCommand;
 void () func002704;

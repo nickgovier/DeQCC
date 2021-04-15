@@ -11,7 +11,7 @@ float (entity e, float healamount, float ignore) T_Heal;
 float (entity targ, entity inflictor) CanDamage;
 float modelindex_eyes;
 float modelindex_player;
-float globaldef000510;
+float modelindex_head;
 .entity ra_next;
 .entity ra_prev;
 .float idletime;
@@ -283,12 +283,12 @@ entity globaldef000811;
 entity globaldef000812;
 entity lastBotToTalk;
 entity currentAdmin;
-entity globaldef000815;
+entity prospectiveAdmin;
 entity firstClient;
 entity firstBot;
 entity firstBotSound;
 entity firstWaypoint;
-entity globaldef000820;
+entity end_obot_globals;
 
 void(entity client, string s) bot_stuffcmd = #21;
 

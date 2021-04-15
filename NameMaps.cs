@@ -374,6 +374,7 @@ namespace DeQcc
 
             nameMap.Add("globaldef000508", "modelindex_eyes");
             nameMap.Add("globaldef000509", "modelindex_player");
+            nameMap.Add("globaldef000510", "modelindex_head");
 
             // rocket arena specific
             nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
@@ -399,11 +400,12 @@ namespace DeQcc
 
             nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
-
+            nameMap.Add("globaldef000815", "prospectiveAdmin");
             nameMap.Add("globaldef000816", "firstClient");
             nameMap.Add("globaldef000817", "firstBot");
             nameMap.Add("globaldef000818", "firstBotSound");
             nameMap.Add("globaldef000819", "firstWaypoint");    // b_waypnt.qc GetWaypointByID
+            nameMap.Add("globaldef000820", "end_obot_globals");
 
             #endregion
 
@@ -2851,6 +2853,7 @@ namespace DeQcc
             nameMap.Add("func002721", "observer");  // impulse 160
             nameMap.Add("func002725", "setteam");  // impulse 201-208
             nameMap.Add("func002737", "menu");  // impulse 200
+            nameMap.Add("func002738", "SetAdmin");
             nameMap.Add("func002739", "stopadmin");  // impulse 144
             nameMap.Add("func002741", "admin");  // impulse 143
             nameMap.Add("func002742", "yes");  // impulse 145

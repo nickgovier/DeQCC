@@ -509,7 +509,7 @@ row,name,s_name,ofs,type,typename
 507,CanDamage,0,524,6,void()
 508,modelindex_eyes,0,525,32770,
 509,modelindex_player,0,526,32770,
-510,globaldef000510,0,527,32770,
+510,modelindex_head,0,527,32770,
 511,ra_next,0,528,5,ev_field
 512,ra_prev,0,529,5,ev_field
 513,idletime,0,530,5,ev_field
@@ -814,12 +814,12 @@ row,name,s_name,ofs,type,typename
 812,globaldef000812,0,829,32772,
 813,lastBotToTalk,0,830,32772,
 814,currentAdmin,0,831,32772,
-815,globaldef000815,0,832,32772,
+815,prospectiveAdmin,0,832,32772,
 816,firstClient,0,833,32772,
 817,firstBot,0,834,32772,
 818,firstBotSound,0,835,32772,
 819,firstWaypoint,0,836,32772,
-820,globaldef000820,0,837,32772,
+820,end_obot_globals,0,837,32772,
 821,bot_stuffcmd,0,838,6,void()
 822,stuffcmd,0,839,6,void()
 823,globaldef000823,0,840,4,entity
@@ -1146,7 +1146,7 @@ row,name,s_name,ofs,type,typename
 1144,func002688,0,1206,6,void()
 1145,func002691,0,1207,6,void()
 1146,func002692,0,1208,6,void()
-1147,func002738,0,1209,6,void()
+1147,SetAdmin,0,1209,6,void()
 1148,stopadmin,0,1210,6,void()
 1149,BotImpulseCommand,0,1211,6,void()
 1150,func002704,0,1212,6,void()
