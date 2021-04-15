@@ -99,7 +99,7 @@ float (entity globaldef006991, entity globaldef006992) func002392;
 void (entity globaldef007026) func002397;
 void (entity globaldef007040, float globaldef007041) func002399;
 void (float globaldef007088) func002410;
-void (entity globaldef007102) func002417;
+void (entity globaldef007102) DestroyBot;
 void () func002421;
 void () AddRandomDeathmatchBot;
 void () RemoveOneDeathmatchBot;

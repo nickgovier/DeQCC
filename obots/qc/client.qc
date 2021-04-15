@@ -3159,7 +3159,7 @@ void () ClientConnect =
                 botclnum = NextAvailableClientNumber();
                 if(botclnum == CONTENT_EMPTY)
                 {
-                    func002417(bot);
+                    DestroyBot(bot);
                 }
                 else
                 {

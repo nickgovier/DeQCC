@@ -2606,12 +2606,14 @@ namespace DeQcc
 
             #region b_spawn.qc
 
+            nameMap.Add("func002417", "DestroyBot");
+            nameMap.Add("func002420", "AddDeathmatchBot");
             nameMap.Add("func002422", "AddBots");
             nameMap.Add("func002423", "AddRandomDeathmatchBot");
             nameMap.Add("func002424", "RemoveAllBots");  // impulse 152
             nameMap.Add("func002425", "RemoveOneDeathmatchBot");
             
-            for (int i = 2422; i <= 2425; i++)
+            for (int i = 2417; i <= 2425; i++)
             {
                 fileMap[i] = "b_spawn.qc";
             }

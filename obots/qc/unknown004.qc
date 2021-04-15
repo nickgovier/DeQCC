@@ -181,7 +181,7 @@ void (entity globaldef007123, float globaldef007124) func002426 =
 void (float globaldef007125) func002427 = 
 {
     local entity globaldef007126;
-    globaldef007126 = func002420(func002415());
+    globaldef007126 = AddDeathmatchBot(func002415());
     
     if(!globaldef007126)
     {
@@ -231,7 +231,7 @@ void (float globaldef007127) func002428 =
         
         if(globaldef007128.field000284 == globaldef007127)
         {
-            func002417(globaldef007128);
+            DestroyBot(globaldef007128);
             return;
         }
         

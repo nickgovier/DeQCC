@@ -1037,7 +1037,7 @@ row,name,s_name,ofs,type,typename
 1035,func002397,0,1097,6,void()
 1036,func002399,0,1098,6,void()
 1037,func002410,0,1099,6,void()
-1038,func002417,0,1100,6,void()
+1038,DestroyBot,0,1100,6,void()
 1039,func002421,0,1101,6,void()
 1040,AddRandomDeathmatchBot,0,1102,6,void()
 1041,RemoveOneDeathmatchBot,0,1103,6,void()
@@ -7111,7 +7111,7 @@ row,name,s_name,ofs,type,typename
 7109,globaldef007109,0,21042,1,string
 7110,globaldef007110,0,21068,2,float
 7111,func002419,0,21202,6,void()
-7112,func002420,0,21203,6,void()
+7112,AddDeathmatchBot,0,21203,6,void()
 7113,globaldef007113,0,21204,2,float
 7114,globaldef007114,0,21205,4,entity
 7115,globaldef007115,0,21206,2,float
