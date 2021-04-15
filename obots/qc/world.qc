@@ -924,8 +924,8 @@ void () StartFrame =
     globaldef000783 = cvar("sv_maxspeed");
     if(framecount == TRUE)
     {
-        globaldef000804 = serverflags;
-        globaldef000804 = globaldef000804 | globaldef000760;
+        obot_game_option_bitflags = serverflags;
+        obot_game_option_bitflags = obot_game_option_bitflags | globaldef000760;
     }
     else
     {
@@ -965,7 +965,7 @@ void () StartFrame =
                 }
                 
                 func002277();
-                serverflags = (globaldef000804 - (globaldef000804 & GLOBALDEF748_15)) | (serverflags & GLOBALDEF748_15);
+                serverflags = (obot_game_option_bitflags - (obot_game_option_bitflags & GLOBALDEF748_15)) | (serverflags & GLOBALDEF748_15);
             }
             
         }

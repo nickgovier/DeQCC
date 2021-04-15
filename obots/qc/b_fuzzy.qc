@@ -1421,7 +1421,7 @@ float (entity bot) fuzzy_lightning_weight =
         if(bot.enemy.origin_z > (bot.origin_z + 80))
         {
             
-            if(globaldef000804 & OBOT_ROCKETARENA)
+            if(obot_game_option_bitflags & OBOT_ROCKETARENA)
             {
                 
                 if(bot.field000265 > FL_SWIM)

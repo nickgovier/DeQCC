@@ -215,7 +215,7 @@ void (vector originpt, vector angle) EjectShell_spawn =
     }
     
     
-    if(globaldef000804 & OBOT_SHELLCASES)
+    if(obot_game_option_bitflags & OBOT_SHELLCASES)
     {
         return;
     }

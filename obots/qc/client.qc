@@ -820,7 +820,7 @@ void () respawn =
 void () ClientKill = 
 {
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         return;
     }
@@ -1278,7 +1278,7 @@ void () PutClientInServer =
     self.view_ofs = '0 0 22';
     spot = func000350(self);
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         spot = rocket_arena_selectspawnpoint("info_player_deathmatch");
     }
@@ -1301,7 +1301,7 @@ void () PutClientInServer =
     }
     
     
-    if((!(globaldef000804 & OBOT_HUMANPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
         self.botflags = self.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
@@ -1320,7 +1320,7 @@ void () PutClientInServer =
     spawn_tdeath(self.origin, self);
     func000338(self);
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_putclientinserver(self);
     }
@@ -1634,7 +1634,7 @@ void () PlayerDeathThink =
     }
     
     
-    if(!(globaldef000804 & OBOT_ROCKETARENA))
+    if(!(obot_game_option_bitflags & OBOT_ROCKETARENA))
     {
         
         if((!self.button2 && !self.button1) && !self.button0)
@@ -1757,7 +1757,7 @@ void () PlayerJump =
         {
             self.velocity_z = 100;
             
-            if(globaldef000804 & OBOT_ROCKETARENA)
+            if(obot_game_option_bitflags & OBOT_ROCKETARENA)
             {
                 self.velocity_z = RA_MAXIDLETIME;
             }
@@ -2301,7 +2301,7 @@ void () PlayerPreThink =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_prethink(self);
     }
@@ -2656,7 +2656,7 @@ void () CheckPowerups =
         }
         
         self.frame = FALSE;
-        if(globaldef000804 & globaldef000760)
+        if(obot_game_option_bitflags & globaldef000760)
         {
             self.field000251 = FALSE;
             self.clmodelindex = modelindex_eyes;
@@ -2670,7 +2670,7 @@ void () CheckPowerups =
     }
     else
     {
-        if(globaldef000804 & globaldef000760)
+        if(obot_game_option_bitflags & globaldef000760)
         {
             self.field000251 = self.field000249;
             self.clmodelindex = modelindex_player;
@@ -3204,7 +3204,7 @@ void () ClientConnect =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         self.motd = TRUE;
     }
@@ -3352,7 +3352,7 @@ void () ClientDisconnect =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_disconnect(self, clientisalive);
     }
@@ -3994,7 +3994,7 @@ void (entity targ, entity attacker) ClientObituary =
     if((targ.classname == "player") || (targ.classname == "bot"))
     {
         
-        if(globaldef000804 & OBOT_ROCKETARENA)
+        if(obot_game_option_bitflags & OBOT_ROCKETARENA)
         {
             
             if((loser.classname == "player") || (loser.classname == "bot"))

@@ -1577,7 +1577,7 @@ void (string gibname, float dm) ThrowGib =
 // OP_DONE	0	0	0
 void (string gibname, float dm) ThrowHead = 
 {
-    if((gibname == "progs/h_player.mdl") && (globaldef000804 & globaldef000760))
+    if((gibname == "progs/h_player.mdl") && (obot_game_option_bitflags & globaldef000760))
     {
         self.field000251 = FALSE;
         self.clmodelindex = globaldef000510;
@@ -1799,7 +1799,7 @@ void () PlayerDie =
     self.invincible_finished = FALSE;
     self.super_damage_finished = FALSE;
     self.radsuit_finished = FALSE;
-    if(globaldef000804 & globaldef000760)
+    if(obot_game_option_bitflags & globaldef000760)
     {
         self.field000251 = self.field000249;
         self.clmodelindex = modelindex_player;
@@ -1835,7 +1835,7 @@ void () PlayerDie =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         GibPlayer();
         return;

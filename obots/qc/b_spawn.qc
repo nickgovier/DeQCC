@@ -117,7 +117,7 @@ void (entity globaldef007102) DestroyBot =
     bprint(" frags\n");
     sound(globaldef007102, CHAN_BODY, "player/tornoff2.wav", TRUE, ATTN_NONE);
     
-    if(globaldef000804 & globaldef000760)
+    if(obot_game_option_bitflags & globaldef000760)
     {
         globaldef007103 = func002266(globaldef007102.clientnumber);
         
@@ -167,7 +167,7 @@ void (entity globaldef007102) DestroyBot =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_disconnect(globaldef007102, globaldef007104);
     }
@@ -453,7 +453,7 @@ void (entity globaldef007106) func002418 =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         globaldef007106.yaw_speed = globaldef007106.yaw_speed + (MOVETYPE_BOUNCE * globaldef007106.field000265);
         globaldef007106.field000289 = globaldef007106.field000289 + (MOVETYPE_FLY * globaldef007106.field000265);
@@ -517,7 +517,7 @@ void (entity globaldef007106) func002418 =
         modelindex_player = globaldef007106.modelindex;
     }
     
-    if(globaldef000804 & globaldef000760)
+    if(obot_game_option_bitflags & globaldef000760)
     {
         globaldef007106.skin = FALSE;
         globaldef007106.field000251 = globaldef007106.field000249;
@@ -533,7 +533,7 @@ void (entity globaldef007106) func002418 =
     setsize(globaldef007106, VEC_HULL_MIN, VEC_HULL_MAX);
     globaldef007107 = func000350(globaldef007106);
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         globaldef007107 = rocket_arena_selectspawnpoint("info_player_deathmatch");
     }
@@ -555,7 +555,7 @@ void (entity globaldef007106) func002418 =
     }
     
     
-    if((!(globaldef000804 & OBOT_BOTPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
         globaldef007106.botflags = globaldef007106.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
@@ -566,7 +566,7 @@ void (entity globaldef007106) func002418 =
     spawn_tfog(globaldef007106.origin + (v_forward * 20));
     spawn_tdeath(globaldef007106.origin, globaldef007106);
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_putclientinserver(globaldef007106);
     }

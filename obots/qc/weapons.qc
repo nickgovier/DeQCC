@@ -1207,7 +1207,7 @@ void () W_FireLightning =
     if(self.waterlevel > TRUE)
     {
         
-        if(globaldef000804 & OBOT_ROCKETARENA)
+        if(obot_game_option_bitflags & OBOT_ROCKETARENA)
         {
             self.ammo_cells = FALSE;
             return;
@@ -3308,7 +3308,7 @@ void () W_WeaponFrame =
     
     ImpulseCommands();
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         
         if(globaldef000799)

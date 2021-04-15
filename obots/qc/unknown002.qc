@@ -1105,7 +1105,7 @@ void (entity globaldef006741) func002354 =
     
     setorigin(globaldef006741, globaldef006741.field000344.origin);
     globaldef006741.view_ofs = globaldef006741.field000344.view_ofs;
-    if((globaldef006741.field000344.classname == "bot") && (globaldef000804 & globaldef000760))
+    if((globaldef006741.field000344.classname == "bot") && (obot_game_option_bitflags & globaldef000760))
     {
         globaldef006747 = func002266(globaldef006741.field000344.clientnumber);
     }

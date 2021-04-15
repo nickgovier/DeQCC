@@ -1026,7 +1026,7 @@ void () teleport_touch =
     local entity t;
     local vector org;
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         
         if((other != winner) && (other != loser))

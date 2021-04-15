@@ -2944,7 +2944,7 @@ void () func002409 =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         rocket_arena_prethink(self);
     }

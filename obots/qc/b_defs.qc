@@ -272,7 +272,7 @@ float globaldef000800;
 float botSoundCount;
 float globaldef000802;
 float lastBotMessageNr;
-float globaldef000804;
+float obot_game_option_bitflags;
 float globaldef000805;
 float globaldef000806;
 float globaldef000807;

@@ -527,7 +527,7 @@ float (entity bot) CheckBotExitMessage =
 float (entity bot) CheckBotDeathMessage = 
 {
     
-    if(globaldef000804 & OBOT_TALK)
+    if(obot_game_option_bitflags & OBOT_TALK)
     {
         return FALSE;
     }
@@ -632,7 +632,7 @@ float (entity bot) CheckBotDeathMessage =
 float (entity bot) CheckBotKillMessage = 
 {
     
-    if(globaldef000804 & OBOT_TALK)
+    if(obot_game_option_bitflags & OBOT_TALK)
     {
         return FALSE;
     }
@@ -759,7 +759,7 @@ float (entity bot) CheckBotKillMessage =
 float (entity globaldef006844) func002379 = 
 {
     
-    if(globaldef000804 & OBOT_TALK)
+    if(obot_game_option_bitflags & OBOT_TALK)
     {
         return FALSE;
     }
@@ -852,7 +852,7 @@ float (entity globaldef006844) func002379 =
 void () func002380 = 
 {
     
-    if(globaldef000804 & OBOT_TALK)
+    if(obot_game_option_bitflags & OBOT_TALK)
     {
         return;
     }

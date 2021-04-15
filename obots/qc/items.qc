@@ -3536,7 +3536,7 @@ void () BackpackTouch =
     local entity stemp;
     local float acount;
     
-    if(!(globaldef000804 & OBOT_ROCKETARENA))
+    if(!(obot_game_option_bitflags & OBOT_ROCKETARENA))
     {
         
         if(globaldef000799)

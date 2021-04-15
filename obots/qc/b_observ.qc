@@ -596,7 +596,7 @@ void (entity globaldef006798) ToggleObserverMode =
         globaldef006798.flags = globaldef006798.flags - (globaldef006798.flags & FL_ONGROUND);
         globaldef006798.movetype = MOVETYPE_TOSS;
         
-        if(globaldef000804 & globaldef000760)
+        if(obot_game_option_bitflags & globaldef000760)
         {
             globaldef006798.clmodelindex = FALSE;
             globaldef006798.field000251 = FALSE;
@@ -620,7 +620,7 @@ void (entity globaldef006798) ToggleObserverMode =
         if((globaldef006798.classname == "player") && (globaldef006798.health > FALSE))
         {
             
-            if(globaldef000804 & OBOT_ROCKETARENA)
+            if(obot_game_option_bitflags & OBOT_ROCKETARENA)
             {
                 rocket_arena_disconnect(globaldef006798, FALSE);
             }
@@ -645,7 +645,7 @@ void (entity globaldef006798) ToggleObserverMode =
             globaldef006798.movetype = MOVETYPE_FLY;
             globaldef006798.effects = globaldef006798.effects - (globaldef006798.effects & (((EF_BRIGHTFIELD + EF_MUZZLEFLASH) + EF_BRIGHTLIGHT) + EF_DIMLIGHT));
             
-            if(globaldef000804 & globaldef000760)
+            if(obot_game_option_bitflags & globaldef000760)
             {
                 globaldef006798.clmodelindex = FALSE;
                 globaldef006798.field000251 = FALSE;

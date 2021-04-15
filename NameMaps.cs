@@ -307,46 +307,23 @@ namespace DeQcc
             // line following is compound = statement (likely the issue)
             // seems to be a double assignment to the same variable?
 
-            nameMap.Add("globaldef000529", "end_ra_globals");
-            nameMap.Add("field000224", "f_updatecache");
-            nameMap.Add("globaldef009217", "wp");
-            nameMap.Add("globaldef009224", "dist");
-            nameMap.Add("globaldef009219", "ent");
-            nameMap.Add("field000225", "f_goalweight");
-            nameMap.Add("field000226", "f_walkaboutweight");
-            nameMap.Add("field000227", "f_sndweight");
-
-            nameMap.Add("field000250", "clmodelindex");
-
-            nameMap.Add("field000252", "botflags");
-            nameMap.Add("field000253", "old_velocity");
-            nameMap.Add("field000257", "old_origin");
-            nameMap.Add("field000261", "old_flags");
-            nameMap.Add("field000262", "old_botflags");
-
-            nameMap.Add("field000298", "prev");
-
-            nameMap.Add("globaldef000508", "modelindex_eyes");
-            nameMap.Add("globaldef000509", "modelindex_player");
-
-            // rocket arena
-            nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
-            nameMap.Add("globaldef000523", "RA_MAXIDLETIME");  // constant = 300
-            nameMap.Add("globaldef000524", "winner");
-            nameMap.Add("globaldef000525", "loser");
-            nameMap.Add("globaldef000526", "first");
-            nameMap.Add("globaldef000527", "time_to_start");
-            nameMap.Add("globaldef000528", "last_time");
-
-            nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
             
 
+
+            #region obot constants
+
+            nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
+
             nameMap.Add("globaldef000717", "GLOBALDEF717_270");  // constant = 270
+
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
+
             nameMap.Add("globaldef000721", "GLOBALDEF721_250");  // constant = 250
+
             nameMap.Add("globaldef000723", "GLOBALDEF723_600");  // constant = 600
             nameMap.Add("globaldef000724", "GLOBALDEF724_800");  // constant = 800
             nameMap.Add("globaldef000725", "OBOT_MAXGIBS");  // constant = 30
+
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40
@@ -358,8 +335,6 @@ namespace DeQcc
             nameMap.Add("globaldef000743", "BOTSOUND_ARMOR");
 
             nameMap.Add("globaldef000748", "GLOBALDEF748_15");   // constant = 15
-
-            // boolean flags
             nameMap.Add("globaldef000749", "OBOT_BUBBLEROUTING");   // constant = 16
             nameMap.Add("globaldef000750", "OBOT_ROCKETARENA");   // constant = 32
             nameMap.Add("globaldef000751", "OBOT_BOTPATHING");   // constant = 64
@@ -373,7 +348,6 @@ namespace DeQcc
             nameMap.Add("globaldef000759", "OBOT_SUPERNAIL");   // constant = 16384
             //nameMap.Add("globaldef000760", "OBOT_");   // constant = 32768
             nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
-
             nameMap.Add("globaldef000762", "BOTSHIRTPANTS_00");   // constant = 0
             nameMap.Add("globaldef000763", "BOTSHIRTPANTS_01");   // constant = 1
             nameMap.Add("globaldef000764", "BOTSHIRTPANTS_02");   // constant = 2
@@ -389,17 +363,41 @@ namespace DeQcc
             nameMap.Add("globaldef000774", "BOTSHIRTPANTS_12");   // constant = 12
             nameMap.Add("globaldef000775", "BOTSHIRTPANTS_13");   // constant = 13
 
+            #endregion
+
+            #region obot global variables
+
+
+            
+
+
+
+            nameMap.Add("globaldef000508", "modelindex_eyes");
+            nameMap.Add("globaldef000509", "modelindex_player");
+
+            // rocket arena specific
+            nameMap.Add("globaldef000522", "RA_PLAYERSTATTIME");  // constant = 0.5
+            nameMap.Add("globaldef000523", "RA_MAXIDLETIME");  // constant = 300
+            nameMap.Add("globaldef000524", "winner");
+            nameMap.Add("globaldef000525", "loser");
+            nameMap.Add("globaldef000526", "first");
+            nameMap.Add("globaldef000527", "time_to_start");
+            nameMap.Add("globaldef000528", "last_time");
+            nameMap.Add("globaldef000529", "end_ra_globals");
+
             nameMap.Add("globaldef000784", "num_gibs"); // player.qc
 
-            // b_clrank.qc
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
             nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
 
             nameMap.Add("globaldef000801", "botSoundCount");
-            nameMap.Add("globaldef000803", "lastBotMessageNr");    // b_talk.qc
-            nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
 
+            nameMap.Add("globaldef000803", "lastBotMessageNr");    // b_talk.qc
+            nameMap.Add("globaldef000804", "obot_game_option_bitflags");
+            
+
+            nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
 
             nameMap.Add("globaldef000816", "firstClient");
@@ -407,9 +405,26 @@ namespace DeQcc
             nameMap.Add("globaldef000818", "firstBotSound");
             nameMap.Add("globaldef000819", "firstWaypoint");    // b_waypnt.qc GetWaypointByID
 
+            #endregion
+
+            #region obots fields
+
+            nameMap.Add("field000224", "f_updatecache");
+            nameMap.Add("field000225", "f_goalweight");
+            nameMap.Add("field000226", "f_walkaboutweight");
+            nameMap.Add("field000227", "f_sndweight");
+
+            nameMap.Add("field000250", "clmodelindex");
+
+            nameMap.Add("field000252", "botflags");
+            nameMap.Add("field000253", "old_velocity");
+            nameMap.Add("field000257", "old_origin");
+
+            nameMap.Add("field000261", "old_flags");
+            nameMap.Add("field000262", "old_botflags");
+
             nameMap.Add("field000283", "teamname"); // client.qc
 
-            // b_clrank.qc
             nameMap.Add("field000285", "clientnumber");  // b_clrank.qc
             nameMap.Add("field000286", "botnumber");  // b_char.qc
             nameMap.Add("field000287", "clientcolor");  // b_clrank.qc
@@ -419,12 +434,11 @@ namespace DeQcc
             nameMap.Add("field000293", "messagestr3");
             nameMap.Add("field000294", "messagenr");
 
-            
             nameMap.Add("field000296", "attackedby");
             nameMap.Add("field000297", "next");
+            nameMap.Add("field000298", "prev");
 
-            // Note that b_func.qc, all the function definitions
-            // is decompiled to the top of the next file
+            #endregion
 
             #region b_defs.qc
 
@@ -2636,8 +2650,6 @@ namespace DeQcc
 
             #endregion
 
-
-
             #region b_hear.qc
 
             nameMap.Add("func002447", "soundweight_door");
@@ -2654,8 +2666,6 @@ namespace DeQcc
             {
                 fileMap[i] = "b_hear.qc";
             }
-
-            #endregion
 
             // CreateBotSound params
             nameMap.Add("globaldef007646", "cause");
@@ -2683,6 +2693,8 @@ namespace DeQcc
             nameMap.Add("globaldef007664", "botsnd");
             nameMap.Add("globaldef007665", "found");
             nameMap.Add("globaldef007666", "UNUSED");
+
+            #endregion
 
             #region b_locate.qc
 
@@ -2807,6 +2819,10 @@ namespace DeQcc
             nameMap.Add("globaldef009155", "errormsg_wpnum");
 
             #endregion
+
+            nameMap.Add("globaldef009217", "wp");
+            nameMap.Add("globaldef009224", "dist");
+            nameMap.Add("globaldef009219", "ent");
 
             #region b_impuls.qc
 

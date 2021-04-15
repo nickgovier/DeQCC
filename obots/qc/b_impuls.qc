@@ -599,7 +599,7 @@ void (entity globaldef009401, float globaldef009402) skinchange =
         globaldef009402 = FALSE;
     }
     
-    if(globaldef000804 & globaldef000760)
+    if(obot_game_option_bitflags & globaldef000760)
     {
         globaldef009401.field000251 = globaldef009402;
     }
@@ -799,10 +799,10 @@ void () botpathing =
 {
     local entity globaldef009415;
     bprint("bot pathing ");
-    func002698(globaldef000804 & OBOT_BOTPATHING);
-    if(globaldef000804 & OBOT_BOTPATHING)
+    func002698(obot_game_option_bitflags & OBOT_BOTPATHING);
+    if(obot_game_option_bitflags & OBOT_BOTPATHING)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_BOTPATHING);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_BOTPATHING);
         
         if(globaldef000786 < globaldef000787)
         {
@@ -825,7 +825,7 @@ void () botpathing =
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_BOTPATHING;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BOTPATHING;
         globaldef009415 = firstBot;
         
         while(globaldef009415)
@@ -898,10 +898,10 @@ void () humanpathing =
 {
     local entity globaldef009418;
     bprint("human pathing ");
-    func002698(globaldef000804 & OBOT_HUMANPATHING);
-    if(globaldef000804 & OBOT_HUMANPATHING)
+    func002698(obot_game_option_bitflags & OBOT_HUMANPATHING);
+    if(obot_game_option_bitflags & OBOT_HUMANPATHING)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_HUMANPATHING);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_HUMANPATHING);
         
         if(globaldef000786 < globaldef000787)
         {
@@ -924,7 +924,7 @@ void () humanpathing =
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_HUMANPATHING;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_HUMANPATHING;
         globaldef009418 = firstClient;
         
         while(globaldef009418)
@@ -963,14 +963,14 @@ void () humanpathing =
 void () bottalk = 
 {
     bprint("bottalk ");
-    func002698(globaldef000804 & OBOT_TALK);
-    if(globaldef000804 & OBOT_TALK)
+    func002698(obot_game_option_bitflags & OBOT_TALK);
+    if(obot_game_option_bitflags & OBOT_TALK)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_TALK);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_TALK);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_TALK;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_TALK;
     }
     
 };
@@ -1116,7 +1116,7 @@ void () impulse190 =
     centerprint(self, "???????? Omicron Bots v1.02 ????????");
     sprint(self, "\n ???????? Omicron Bots v1.02 ????????\n\n");
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         sprint(self, "\nRocket Arena Enabled\n\n");
     }
@@ -1147,7 +1147,7 @@ void () impulse190 =
 // OP_DONE	0	0	0
 void () rocketarena = 
 {
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         serverflags = serverflags - (serverflags & OBOT_ROCKETARENA);
         localcmd("map ");
@@ -1478,18 +1478,18 @@ void (float globaldef009447) func002709 =
 void () nopowerups = 
 {
     local entity globaldef009450;
-    func002707(globaldef000804 & OBOT_POWERUPS, "item_artifact_invulnerability");
-    func002707(globaldef000804 & OBOT_POWERUPS, "item_artifact_invisibility");
-    func002707(globaldef000804 & OBOT_POWERUPS, "item_artifact_super_damage");
+    func002707(obot_game_option_bitflags & OBOT_POWERUPS, "item_artifact_invulnerability");
+    func002707(obot_game_option_bitflags & OBOT_POWERUPS, "item_artifact_invisibility");
+    func002707(obot_game_option_bitflags & OBOT_POWERUPS, "item_artifact_super_damage");
     bprint("powerups ");
-    func002698(globaldef000804 & OBOT_POWERUPS);
-    if(globaldef000804 & OBOT_POWERUPS)
+    func002698(obot_game_option_bitflags & OBOT_POWERUPS);
+    if(obot_game_option_bitflags & OBOT_POWERUPS)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_POWERUPS);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_POWERUPS);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_POWERUPS;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_POWERUPS;
         globaldef009450 = firstClient;
         
         while(globaldef009450)
@@ -1573,21 +1573,21 @@ void () nopowerups =
 // OP_DONE	0	0	0
 void () noweapons = 
 {
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_supershotgun");
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_nailgun");
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_supernailgun");
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_rocketlauncher");
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_grenadelauncher");
-    func002707(globaldef000804 & OBOT_WEAPONS, "weapon_lightning");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_supershotgun");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_nailgun");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_supernailgun");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_rocketlauncher");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_grenadelauncher");
+    func002707(obot_game_option_bitflags & OBOT_WEAPONS, "weapon_lightning");
     bprint("weapons ");
-    func002698(globaldef000804 & OBOT_WEAPONS);
-    if(globaldef000804 & OBOT_WEAPONS)
+    func002698(obot_game_option_bitflags & OBOT_WEAPONS);
+    if(obot_game_option_bitflags & OBOT_WEAPONS)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_WEAPONS);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_WEAPONS);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_WEAPONS;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_WEAPONS;
         func002709(((((IT_SUPER_SHOTGUN | IT_NAILGUN) | IT_SUPER_NAILGUN) | IT_GRENADE_LAUNCHER) | IT_ROCKET_LAUNCHER) | IT_LIGHTNING);
         func002697();
     }
@@ -1620,16 +1620,16 @@ void () noweapons =
 // OP_DONE	0	0	0
 void () nolightning = 
 {
-    func002707(globaldef000804 & OBOT_LIGHTNING, "weapon_lightning");
+    func002707(obot_game_option_bitflags & OBOT_LIGHTNING, "weapon_lightning");
     bprint("lightning ");
-    func002698(globaldef000804 & OBOT_LIGHTNING);
-    if(globaldef000804 & OBOT_LIGHTNING)
+    func002698(obot_game_option_bitflags & OBOT_LIGHTNING);
+    if(obot_game_option_bitflags & OBOT_LIGHTNING)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_LIGHTNING);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_LIGHTNING);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_LIGHTNING;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_LIGHTNING;
         func002709(IT_LIGHTNING);
         func002697();
     }
@@ -1662,16 +1662,16 @@ void () nolightning =
 // OP_DONE	0	0	0
 void () norocket = 
 {
-    func002707(globaldef000804 & OBOT_ROCKET, "weapon_rocketlauncher");
+    func002707(obot_game_option_bitflags & OBOT_ROCKET, "weapon_rocketlauncher");
     bprint("rocket ");
-    func002698(globaldef000804 & OBOT_ROCKET);
-    if(globaldef000804 & OBOT_ROCKET)
+    func002698(obot_game_option_bitflags & OBOT_ROCKET);
+    if(obot_game_option_bitflags & OBOT_ROCKET)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_ROCKET);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_ROCKET);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_ROCKET;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_ROCKET;
         func002709(IT_ROCKET_LAUNCHER);
         func002697();
     }
@@ -1704,16 +1704,16 @@ void () norocket =
 // OP_DONE	0	0	0
 void () nogrenade = 
 {
-    func002707(globaldef000804 & OBOT_GRENADE, "weapon_grenadelauncher");
+    func002707(obot_game_option_bitflags & OBOT_GRENADE, "weapon_grenadelauncher");
     bprint("grenade ");
-    func002698(globaldef000804 & OBOT_GRENADE);
-    if(globaldef000804 & OBOT_GRENADE)
+    func002698(obot_game_option_bitflags & OBOT_GRENADE);
+    if(obot_game_option_bitflags & OBOT_GRENADE)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_GRENADE);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_GRENADE);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_GRENADE;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_GRENADE;
         func002709(IT_GRENADE_LAUNCHER);
         func002697();
     }
@@ -1746,16 +1746,16 @@ void () nogrenade =
 // OP_DONE	0	0	0
 void () nosupernail = 
 {
-    func002707(globaldef000804 & OBOT_SUPERNAIL, "weapon_supernailgun");
+    func002707(obot_game_option_bitflags & OBOT_SUPERNAIL, "weapon_supernailgun");
     bprint("super nail ");
-    func002698(globaldef000804 & OBOT_SUPERNAIL);
-    if(globaldef000804 & OBOT_SUPERNAIL)
+    func002698(obot_game_option_bitflags & OBOT_SUPERNAIL);
+    if(obot_game_option_bitflags & OBOT_SUPERNAIL)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_SUPERNAIL);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_SUPERNAIL);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_SUPERNAIL;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_SUPERNAIL;
         func002709(IT_SUPER_NAILGUN);
         func002697();
     }
@@ -1782,14 +1782,14 @@ void () nosupernail =
 void () noshellcases = 
 {
     bprint("shell cases ");
-    func002698(globaldef000804 & OBOT_SHELLCASES);
-    if(globaldef000804 & OBOT_SHELLCASES)
+    func002698(obot_game_option_bitflags & OBOT_SHELLCASES);
+    if(obot_game_option_bitflags & OBOT_SHELLCASES)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_SHELLCASES);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_SHELLCASES);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_SHELLCASES;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_SHELLCASES;
     }
     
 };
@@ -1814,16 +1814,16 @@ void () noshellcases =
 void () bubblerouting = 
 {
     bprint("bubble routing ");
-    if(globaldef000804 & OBOT_BUBBLEROUTING)
+    if(obot_game_option_bitflags & OBOT_BUBBLEROUTING)
     {
-        globaldef000804 = globaldef000804 - (globaldef000804 & OBOT_BUBBLEROUTING);
+        obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_BUBBLEROUTING);
     }
     else
     {
-        globaldef000804 = globaldef000804 | OBOT_BUBBLEROUTING;
+        obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BUBBLEROUTING;
     }
     
-    func002698(globaldef000804 & OBOT_BUBBLEROUTING);
+    func002698(obot_game_option_bitflags & OBOT_BUBBLEROUTING);
 };
 
 
@@ -1915,29 +1915,29 @@ void () bubblerouting =
 void () PrintServerflags = 
 {
     sprint(self, "bot pathing    ");
-    func002699(!(globaldef000804 & OBOT_BOTPATHING));
+    func002699(!(obot_game_option_bitflags & OBOT_BOTPATHING));
     sprint(self, "human pathing  ");
-    func002699(!(globaldef000804 & OBOT_HUMANPATHING));
+    func002699(!(obot_game_option_bitflags & OBOT_HUMANPATHING));
     sprint(self, "bot talk       ");
-    func002699(!(globaldef000804 & OBOT_TALK));
+    func002699(!(obot_game_option_bitflags & OBOT_TALK));
     sprint(self, "powerups       ");
-    func002699(!(globaldef000804 & OBOT_POWERUPS));
+    func002699(!(obot_game_option_bitflags & OBOT_POWERUPS));
     sprint(self, "weapons        ");
-    func002699(!(globaldef000804 & OBOT_WEAPONS));
+    func002699(!(obot_game_option_bitflags & OBOT_WEAPONS));
     sprint(self, "lightning      ");
-    func002699(!(globaldef000804 & OBOT_LIGHTNING));
+    func002699(!(obot_game_option_bitflags & OBOT_LIGHTNING));
     sprint(self, "rocket         ");
-    func002699(!(globaldef000804 & OBOT_ROCKET));
+    func002699(!(obot_game_option_bitflags & OBOT_ROCKET));
     sprint(self, "grenade        ");
-    func002699(!(globaldef000804 & OBOT_GRENADE));
+    func002699(!(obot_game_option_bitflags & OBOT_GRENADE));
     sprint(self, "super nail     ");
-    func002699(!(globaldef000804 & OBOT_SUPERNAIL));
+    func002699(!(obot_game_option_bitflags & OBOT_SUPERNAIL));
     sprint(self, "shell cases    ");
-    func002699(!(globaldef000804 & OBOT_SHELLCASES));
+    func002699(!(obot_game_option_bitflags & OBOT_SHELLCASES));
     sprint(self, "rocket arena   ");
-    func002699(globaldef000804 & OBOT_ROCKETARENA);
+    func002699(obot_game_option_bitflags & OBOT_ROCKETARENA);
     sprint(self, "bubble routing ");
-    func002699(globaldef000804 & OBOT_BUBBLEROUTING);
+    func002699(obot_game_option_bitflags & OBOT_BUBBLEROUTING);
 };
 
 
@@ -1983,53 +1983,53 @@ void () PrintServerflags =
 void () func002719 = 
 {
     
-    if(globaldef000804 & OBOT_POWERUPS)
+    if(obot_game_option_bitflags & OBOT_POWERUPS)
     {
-        globaldef000804 = globaldef000804 - OBOT_POWERUPS;
+        obot_game_option_bitflags = obot_game_option_bitflags - OBOT_POWERUPS;
         nopowerups();
     }
     
-    if(globaldef000804 & OBOT_WEAPONS)
+    if(obot_game_option_bitflags & OBOT_WEAPONS)
     {
-        globaldef000804 = globaldef000804 - OBOT_WEAPONS;
+        obot_game_option_bitflags = obot_game_option_bitflags - OBOT_WEAPONS;
         noweapons();
     }
     else
     {
         
-        if(globaldef000804 & OBOT_LIGHTNING)
+        if(obot_game_option_bitflags & OBOT_LIGHTNING)
         {
-            globaldef000804 = globaldef000804 - OBOT_LIGHTNING;
+            obot_game_option_bitflags = obot_game_option_bitflags - OBOT_LIGHTNING;
             nolightning();
         }
         
         
-        if(globaldef000804 & OBOT_ROCKET)
+        if(obot_game_option_bitflags & OBOT_ROCKET)
         {
-            globaldef000804 = globaldef000804 - OBOT_ROCKET;
+            obot_game_option_bitflags = obot_game_option_bitflags - OBOT_ROCKET;
             norocket();
         }
         
         
-        if(globaldef000804 & OBOT_GRENADE)
+        if(obot_game_option_bitflags & OBOT_GRENADE)
         {
-            globaldef000804 = globaldef000804 - OBOT_GRENADE;
+            obot_game_option_bitflags = obot_game_option_bitflags - OBOT_GRENADE;
             nogrenade();
         }
         
         
-        if(globaldef000804 & OBOT_SUPERNAIL)
+        if(obot_game_option_bitflags & OBOT_SUPERNAIL)
         {
-            globaldef000804 = globaldef000804 - OBOT_SUPERNAIL;
+            obot_game_option_bitflags = obot_game_option_bitflags - OBOT_SUPERNAIL;
             nosupernail();
         }
         
     }
     
     
-    if(globaldef000804 & OBOT_SHELLCASES)
+    if(obot_game_option_bitflags & OBOT_SHELLCASES)
     {
-        globaldef000804 = globaldef000804 - OBOT_SHELLCASES;
+        obot_game_option_bitflags = obot_game_option_bitflags - OBOT_SHELLCASES;
         noshellcases();
     }
     
@@ -4863,7 +4863,7 @@ void () func002736 =
 void () menu = 
 {
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         sprint(self, "can't use menu with rocket arena\n");
         return;

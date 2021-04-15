@@ -803,7 +803,7 @@ row,name,s_name,ofs,type,typename
 801,botSoundCount,0,818,32770,
 802,globaldef000802,0,819,32770,
 803,lastBotMessageNr,0,820,32770,
-804,globaldef000804,0,821,32770,
+804,obot_game_option_bitflags,0,821,32770,
 805,globaldef000805,0,822,32770,
 806,globaldef000806,0,823,32770,
 807,globaldef000807,0,824,32770,

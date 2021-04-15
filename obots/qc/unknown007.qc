@@ -222,7 +222,7 @@ void () func002637 =
     self.invincible_finished = FALSE;
     self.super_damage_finished = FALSE;
     self.radsuit_finished = FALSE;
-    if(globaldef000804 & globaldef000760)
+    if(obot_game_option_bitflags & globaldef000760)
     {
         self.field000251 = self.field000249;
         self.clmodelindex = modelindex_player;
@@ -252,7 +252,7 @@ void () func002637 =
     }
     
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         GibPlayer();
         func002573();

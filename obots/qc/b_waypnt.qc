@@ -775,7 +775,7 @@ void () func002657 =
         if(globaldef000789 || globaldef000790)
         {
             globaldef000788 = globaldef000708;
-            globaldef000804 = globaldef000804 | OBOT_BOTPATHING;
+            obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BOTPATHING;
         }
         else
         {
@@ -4314,7 +4314,7 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
 // OP_DONE	0	0	0
 void (entity globaldef009241, entity globaldef009242, float globaldef009243, entity globaldef009244) func002683 = 
 {
-    if(globaldef000804 & OBOT_BUBBLEROUTING)
+    if(obot_game_option_bitflags & OBOT_BUBBLEROUTING)
     {
         func002681(globaldef009241, globaldef009242, globaldef009243, globaldef009244);
     }

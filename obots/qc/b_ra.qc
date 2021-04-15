@@ -2371,7 +2371,7 @@ void () func000371 =
 void () rocket_arena_impulses = 
 {
     
-    if(globaldef000804 & OBOT_ROCKETARENA)
+    if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         
         if(self.impulse == 68)
