@@ -2624,18 +2624,55 @@ namespace DeQcc
 
             #endregion
 
+            #region b_hear.qc
+
+            nameMap.Add("func002453", "CreateBotSound");
+            nameMap.Add("func002454", "Hearable");
+
+            for (int i = 2453; i <= 2454; i++)
+            {
+                fileMap[i] = "b_hear.qc";
+            }
+
+            #endregion
+
+            // CreateBotSound params
+            nameMap.Add("globaldef007646", "cause");
+            nameMap.Add("globaldef007647", "spot");
+            nameMap.Add("globaldef007651", "duration");
+            nameMap.Add("globaldef007652", "type");
+
+            // CreateBotSound locals
+            nameMap.Add("globaldef007653", "botsound");
+
+            // Hearable params
+            nameMap.Add("globaldef007657", "ear");
+            nameMap.Add("globaldef007658", "e");
+
+            // Hearable locals
+            nameMap.Add("globaldef007659", "check");
+
             #region b_locate.qc
 
+            nameMap.Add("func002456", "Visible");
             nameMap.Add("func002457", "AbsFloorHeight");
             nameMap.Add("func002458", "CreateFloorTestEnt");
             nameMap.Add("func002459", "BotAbovePlatDoorTrain");
             nameMap.Add("func002460", "BotIsOnPlatDoorTrain");
             nameMap.Add("func002461", "BotIsOnMovingPlatDoorTrain");
 
-            for (int i = 2457; i <= 2461; i++)
+            for (int i = 2456; i <= 2461; i++)
             {
                 fileMap[i] = "b_locate.qc";
             }
+
+            // Visible params
+            nameMap.Add("globaldef007667", "bot");
+            nameMap.Add("globaldef007668", "obj");
+
+            // Visible locals
+            nameMap.Add("globaldef007669", "start");
+            nameMap.Add("globaldef007673", "end");
 
             // AbsFloorHeight params
             nameMap.Add("globaldef007677", "spot");

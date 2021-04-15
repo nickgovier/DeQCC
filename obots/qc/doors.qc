@@ -319,7 +319,7 @@ void () door_fire =
 void () door_use = 
 {
     local entity oself;
-    func002453(other, other.origin, TRUE, globaldef000739);
+    CreateBotSound(other, other.origin, TRUE, globaldef000739);
     
     if(other.classname == "bot")
     {

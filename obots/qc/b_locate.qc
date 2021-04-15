@@ -1,4 +1,51 @@
 
+// Visible
+// function begins at statement 40954, parm_start=23276
+// OP_LOAD_V	23276	105	23284
+// OP_LOAD_V	23276	166	23287
+// OP_ADD_V	23284	23287	23290
+// OP_STORE_V	23290	23278	0
+// OP_LOAD_V	23277	94	23293
+// OP_LOAD_V	23277	98	23296
+// OP_ADD_V	23293	23296	23299
+// OP_MUL_VF	23299	539	23302
+// OP_STORE_V	23302	23281	0
+// OP_STORE_V	23278	4	0
+// OP_STORE_V	23281	7	0
+// OP_STORE_V	214	10	0
+// OP_STORE_V	23276	13	0
+// OP_CALL4	466	0	0
+// OP_EQ_F	70	214	23305
+// OP_IFNOT	23305	2	0
+// OP_RETURN	214	0	0
+// OP_EQ_E	78	23277	23306
+// OP_IFNOT	23306	2	0
+// OP_RETURN	214	0	0
+// OP_RETURN	213	0	0
+// OP_DONE	0	0	0
+float (entity bot, entity obj) Visible = 
+{
+    local vector start;
+    local vector end;
+    start = bot.origin + bot.view_ofs;
+    end = (obj.absmin + obj.absmax) * RA_PLAYERSTATTIME;
+    traceline(start, end, TRUE, bot);
+    
+    if(trace_fraction == TRUE)
+    {
+        return TRUE;
+    }
+    
+    
+    if(trace_ent == obj)
+    {
+        return TRUE;
+    }
+    
+    return FALSE;
+};
+
+
 // AbsFloorHeight
 // function begins at statement 40976, parm_start=23307
 // OP_STORE_V	23307	4	0

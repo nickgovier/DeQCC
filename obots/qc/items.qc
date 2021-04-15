@@ -788,7 +788,7 @@ void () armor_touch =
     }
     
     sound(other, CHAN_ITEM, "items/armor1.wav", TRUE, ATTN_NORM);
-    func002453(other, self.origin, TRUE, globaldef000743);
+    CreateBotSound(other, self.origin, TRUE, globaldef000743);
     
     if(other.classname == "player")
     {
@@ -1431,7 +1431,7 @@ void () weapon_touch =
     }
     
     sound(other, CHAN_ITEM, "weapons/pkup.wav", TRUE, ATTN_NORM);
-    func002453(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
+    CreateBotSound(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
     
     if(other.classname == "player")
     {
@@ -1948,7 +1948,7 @@ void () ammo_touch =
     }
     
     sound(other, CHAN_ITEM, "weapons/lock4.wav", TRUE, ATTN_NORM);
-    func002453(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
+    CreateBotSound(other, self.origin, RA_PLAYERSTATTIME, globaldef000742);
     
     if(other.classname == "player")
     {

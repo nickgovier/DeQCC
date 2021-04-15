@@ -139,7 +139,7 @@ void () W_FireAxe =
 {
     local vector source;
     local vector org;
-    func002453(self, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self, self.origin, TRUE, globaldef000741);
     source = self.origin + '0 0 16';
     traceline(source, source + (v_forward * FL_GODMODE), FALSE, self);
     
@@ -570,7 +570,7 @@ void () W_FireShotgun =
 {
     local vector dir;
     sound(self, CHAN_WEAPON, "weapons/guncock.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
     self.currentammo = self.ammo_shells = self.ammo_shells - TRUE;
     dir = aim_obot(self, 100000);
@@ -640,7 +640,7 @@ void () W_FireSuperShotgun =
     }
     
     sound(self, CHAN_WEAPON, "weapons/shotgn2.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SLIME;
     self.currentammo = self.ammo_shells = self.ammo_shells - FL_SWIM;
     dir = aim_obot(self, 100000);
@@ -832,7 +832,7 @@ void () T_MissileTouch =
     }
     
     T_RadiusDamage(self, self.owner, 120, other);
-    func002453(self.owner, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self.owner, self.origin, TRUE, globaldef000741);
     self.origin = self.origin - (FL_CLIENT * normalize(self.velocity));
     WriteByte(MSG_BROADCAST, SVC_TEMPENTITY);
     WriteByte(MSG_BROADCAST, TE_EXPLOSION);
@@ -920,7 +920,7 @@ void () W_FireRocket =
     local entity mpuff;
     self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/sgun1.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
     missile.owner = self;
@@ -1224,7 +1224,7 @@ void () W_FireLightning =
     if(self.t_width < time)
     {
         sound(self, CHAN_WEAPON, "weapons/lhit.wav", TRUE, ATTN_NORM);
-        func002453(self, self.origin, 0.1, globaldef000741);
+        CreateBotSound(self, self.origin, 0.1, globaldef000741);
         self.t_width = time + 0.6;
     }
     
@@ -1427,7 +1427,7 @@ void () W_FireGrenade =
     local entity mpuff;
     self.currentammo = self.ammo_rockets = self.ammo_rockets - TRUE;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, TRUE, globaldef000741);
+    CreateBotSound(self, self.origin, TRUE, globaldef000741);
     self.punchangle_x = CONTENT_SOLID;
     missile = spawn();
     missile.owner = self;
@@ -1560,7 +1560,7 @@ void () W_FireSuperSpikes =
     local vector dir;
     local entity old;
     sound(self, CHAN_WEAPON, "weapons/spike2.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, 0.1, globaldef000741);
+    CreateBotSound(self, self.origin, 0.1, globaldef000741);
     self.currentammo = self.ammo_nails = self.ammo_nails - FL_SWIM;
     dir = aim_obot(self, 1000);
     launch_spike(self.origin + '0 0 16', dir);
@@ -1645,7 +1645,7 @@ void (float globaldef002210) W_FireSpikes =
     }
     
     sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", TRUE, ATTN_NORM);
-    func002453(self, self.origin, 0.1, globaldef000741);
+    CreateBotSound(self, self.origin, 0.1, globaldef000741);
     self.currentammo = self.ammo_nails = self.ammo_nails - TRUE;
     dir = aim_obot(self, 1000);
     launch_spike((self.origin + '0 0 16') + (v_right * globaldef002210), dir);

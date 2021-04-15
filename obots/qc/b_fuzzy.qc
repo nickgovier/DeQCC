@@ -107,7 +107,7 @@ float (entity bot, entity e) goalweight_door =
         }
         else
         {
-            if(!func002456(bot, e))
+            if(!Visible(bot, e))
             {
                 return FALSE;
             }
@@ -170,7 +170,7 @@ float (entity bot, entity e) goalweight_secretdoor =
     }
     else
     {
-        if(!func002456(bot, e))
+        if(!Visible(bot, e))
         {
             return FALSE;
         }
@@ -224,7 +224,7 @@ float (entity bot, entity e) goalweight_button =
         if(e.state == STATE_BOTTOM)
         {
             
-            if(func002456(bot, e))
+            if(Visible(bot, e))
             {
                 return 20 + TRUE;
             }
@@ -267,7 +267,7 @@ float (entity bot, entity e) goalweight_plat =
     }
     else
     {
-        if(!func002456(bot, e))
+        if(!Visible(bot, e))
         {
             return FALSE;
         }
@@ -330,7 +330,7 @@ float (entity bot, entity e) goalweight_train =
         }
         else
         {
-            if(!func002456(bot, e))
+            if(!Visible(bot, e))
             {
                 return FALSE;
             }
@@ -376,7 +376,7 @@ float (entity bot, entity e) goalweight_teleporter =
     }
     else
     {
-        if(!func002456(bot, e))
+        if(!Visible(bot, e))
         {
             return FALSE;
         }
@@ -557,7 +557,7 @@ float (entity bot, entity e) goalweight_trigger =
     }
     else
     {
-        if(!func002456(bot, e))
+        if(!Visible(bot, e))
         {
             return FALSE;
         }
