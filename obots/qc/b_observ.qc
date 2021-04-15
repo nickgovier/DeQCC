@@ -114,50 +114,50 @@
 // OP_STORE_V	286	10	0
 // OP_CALL3	455	0	0
 // OP_DONE	0	0	0
-void (entity globaldef006785) CycleClientCamera = 
+void (entity client) CycleClientCamera = 
 {
-    local entity globaldef006786;
+    local entity tofollow;
     
-    if(globaldef006785.classname != "observer")
+    if(client.classname != "observer")
     {
-        sprint(globaldef006785, "not in observer mode\n");
+        sprint(client, "not in observer mode\n");
         return;
     }
     
-    if(globaldef006785.field000344 == globaldef006785)
+    if(client.field000344 == client)
     {
-        globaldef006785.field000349 = globaldef006785.origin;
-        globaldef006785.field000353 = globaldef006785.v_angle;
-        globaldef006786 = find(world, classname, "player");
+        client.field000349 = client.origin;
+        client.field000353 = client.v_angle;
+        tofollow = find(world, classname, "player");
         
-        if(globaldef006786)
+        if(tofollow)
         {
             
-            if(globaldef006786 == globaldef006785)
+            if(tofollow == client)
             {
-                globaldef006786 = find(globaldef006786, classname, "player");
+                tofollow = find(tofollow, classname, "player");
             }
             
             
-            if(globaldef006786)
+            if(tofollow)
             {
-                globaldef006785.field000344 = globaldef006786;
+                client.field000344 = tofollow;
             }
             
         }
         
         
-        if(globaldef006785.field000344 == globaldef006785)
+        if(client.field000344 == client)
         {
-            sprint(globaldef006785, "no players to view from\n");
-            globaldef006786 = find(world, classname, "bot");
-            if(globaldef006786)
+            sprint(client, "no players to view from\n");
+            tofollow = find(world, classname, "bot");
+            if(tofollow)
             {
-                globaldef006785.field000344 = globaldef006786;
+                client.field000344 = tofollow;
             }
             else
             {
-                sprint(globaldef006785, "no bots to view from\n");
+                sprint(client, "no bots to view from\n");
             }
             
         }
@@ -165,37 +165,37 @@ void (entity globaldef006785) CycleClientCamera =
     }
     else
     {
-        if((globaldef006785.field000344.classname == "player") || (globaldef006785.field000344.classname == "observer"))
+        if((client.field000344.classname == "player") || (client.field000344.classname == "observer"))
         {
-            globaldef006786 = find(globaldef006785.field000344, classname, "player");
+            tofollow = find(client.field000344, classname, "player");
             
-            if(globaldef006786)
+            if(tofollow)
             {
                 
-                if(globaldef006786 == globaldef006785)
+                if(tofollow == client)
                 {
-                    globaldef006786 = find(globaldef006786, classname, "player");
+                    tofollow = find(tofollow, classname, "player");
                 }
                 
                 
-                if(globaldef006786)
+                if(tofollow)
                 {
-                    globaldef006785.field000344 = globaldef006786;
+                    client.field000344 = tofollow;
                 }
                 
             }
             
             
-            if(!globaldef006786)
+            if(!tofollow)
             {
-                globaldef006786 = find(world, classname, "bot");
-                if(globaldef006786)
+                tofollow = find(world, classname, "bot");
+                if(tofollow)
                 {
-                    globaldef006785.field000344 = globaldef006786;
+                    client.field000344 = tofollow;
                 }
                 else
                 {
-                    globaldef006785.field000344 = globaldef006785;
+                    client.field000344 = client;
                 }
                 
             }
@@ -203,27 +203,27 @@ void (entity globaldef006785) CycleClientCamera =
         }
         else
         {
-            globaldef006786 = find(globaldef006785.field000344, classname, "bot");
-            if(globaldef006786)
+            tofollow = find(client.field000344, classname, "bot");
+            if(tofollow)
             {
-                globaldef006785.field000344 = globaldef006786;
+                client.field000344 = tofollow;
             }
             else
             {
-                globaldef006785.field000344 = globaldef006785;
+                client.field000344 = client;
             }
             
         }
         
     }
     
-    if(globaldef006785.field000344 == globaldef006785)
+    if(client.field000344 == client)
     {
-        func002357(globaldef006785);
+        func002357(client);
     }
     else
     {
-        setsize(globaldef006785, VEC_ORIGIN, VEC_ORIGIN);
+        setsize(client, VEC_ORIGIN, VEC_ORIGIN);
     }
     
 };
@@ -287,17 +287,17 @@ void (entity globaldef006790) func002359 =
 // OP_ADDRESS	19586	103	19596
 // OP_STOREP_F	228	19596	0
 // OP_DONE	0	0	0
-void (entity globaldef006792) ToggleObserverFly = 
+void (entity e) ToggleObserverFly = 
 {
-    if(globaldef006792.field000343 & globaldef000747)
+    if(e.field000343 & globaldef000747)
     {
-        globaldef006792.field000343 = globaldef006792.field000343 - globaldef000747;
-        globaldef006792.movetype = MOVETYPE_FLY;
+        e.field000343 = e.field000343 - globaldef000747;
+        e.movetype = MOVETYPE_FLY;
     }
     else
     {
-        globaldef006792.field000343 = globaldef006792.field000343 | globaldef000747;
-        globaldef006792.movetype = MOVETYPE_WALK;
+        e.field000343 = e.field000343 | globaldef000747;
+        e.movetype = MOVETYPE_WALK;
     }
     
 };

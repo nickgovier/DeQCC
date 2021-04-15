@@ -1902,13 +1902,50 @@ namespace DeQcc
 
             #region ogre.qc
 
-            nameMap.Add("func000702", "ogre_swing1");
-            nameMap.Add("func000716", "ogre_smash1");
+            nameMap.Add("func000665", "OgreGrenadeExplode");
+            nameMap.Add("func000666", "OgreGrenadeTouch");
+            nameMap.Add("func000667", "OgreFireGrenade");
+            nameMap.Add("func000668", "chainsaw");
+            for (int i = 669; i <= 677; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_stand"+(i-668).ToString()); }
+            for (int i = 678; i <= 693; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_walk" + (i - 677).ToString()); }
+            for (int i = 694; i <= 701; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_run" + (i - 693).ToString()); }
+            for (int i = 702; i <= 715; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_swing" + (i - 701).ToString()); }
+            for (int i = 716; i <= 729; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_smash" + (i - 715).ToString()); }
+            for (int i = 730; i <= 736; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_nail" + (i - 729).ToString()); }
+            for (int i = 737; i <= 741; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_pain" + (i - 736).ToString()); }
+            for (int i = 742; i <= 744; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_painb" + (i - 741).ToString()); }
+            for (int i = 745; i <= 750; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_painc" + (i - 744).ToString()); }
+            for (int i = 751; i <= 766; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_paind" + (i - 750).ToString()); }
+            for (int i = 767; i <= 781; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_paine" + (i - 766).ToString()); }
+            nameMap.Add("func000782", "ogre_pain");
+            for (int i = 783; i <= 796; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_die" + (i - 782).ToString()); }
+            for (int i = 797; i <= 806; i++) { nameMap.Add("func000" + (i).ToString(), "ogre_bdie" + (i - 796).ToString()); }
+            nameMap.Add("func000807", "ogre_die");
+            nameMap.Add("func000808", "ogre_melee");
+            nameMap.Add("func000809", "monster_ogre_original");
 
             for (int i = 665; i <= 811; i++)
             {
                 fileMap[i] = "ogre.qc";
             }
+
+            // OgreFireGrenade locals
+            nameMap.Add("globaldef003659", "missile");
+            nameMap.Add("globaldef003660", "mpuff");
+
+            // chainsaw params
+            nameMap.Add("globaldef003662", "side");
+
+            // chainsaw locals
+            nameMap.Add("globaldef003663", "delta");
+            nameMap.Add("globaldef003667", "ldmg");
+
+            // ogre_pain params
+            nameMap.Add("globaldef003785", "attacker");
+            nameMap.Add("globaldef003786", "damage");
+
+            // ogre_pain locals
+            nameMap.Add("globaldef003787", "r");
 
             #endregion
 
@@ -2089,6 +2126,7 @@ namespace DeQcc
 
             #endregion
 
+            // Done
             #region b_clrank.c
 
             // this was taken from Alan Kivlin's rankings.qc, so we can match on that basis
@@ -2158,6 +2196,7 @@ namespace DeQcc
 
             #endregion
 
+            // Done
             #region b_char.qc
 
             // Declarations
@@ -2429,6 +2468,7 @@ namespace DeQcc
 
             #endregion
 
+
             #region b_observ.qc
 
             nameMap.Add("func002358", "CycleClientCamera");  // impulse 161
@@ -2443,6 +2483,15 @@ namespace DeQcc
             {
                 fileMap[i] = "b_observ.qc";
             }
+
+            // CycleClientCamera params
+            nameMap.Add("globaldef006785", "client");
+
+            // CycleClientCamera locals
+            nameMap.Add("globaldef006786", "tofollow");
+
+            // ToggleObserverFly params
+            nameMap.Add("globaldef006792", "e");
 
             #endregion
 

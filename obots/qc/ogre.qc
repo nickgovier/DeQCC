@@ -1,5 +1,5 @@
 
-// func000665
+// OgreGrenadeExplode
 // function begins at statement 18229, parm_start=12313
 // OP_STORE_V	28	4	0
 // OP_LOAD_ENT	28	201	12313
@@ -42,7 +42,7 @@
 // OP_STOREP_F	237	12321	0
 // OP_CALL0	5697	0	0
 // OP_DONE	0	0	0
-void () func000665 = 
+void () OgreGrenadeExplode = 
 {
     T_RadiusDamage(self, self.owner, GLOBALDEF729_40, world);
     sound(self, CHAN_VOICE, "weapons/r_exp3.wav", TRUE, ATTN_NORM);
@@ -59,7 +59,7 @@ void () func000665 =
 };
 
 
-// func000666
+// OgreGrenadeTouch
 // function begins at statement 18270, parm_start=12323
 // OP_LOAD_ENT	28	201	12323
 // OP_EQ_E	29	12323	12324
@@ -82,7 +82,7 @@ void () func000665 =
 // OP_ADDRESS	28	121	12331
 // OP_STOREP_V	286	12331	0
 // OP_DONE	0	0	0
-void () func000666 = 
+void () OgreGrenadeTouch = 
 {
     
     if(other == self.owner)
@@ -93,7 +93,7 @@ void () func000666 =
     
     if(other.takedamage == DAMAGE_AIM)
     {
-        func000665();
+        OgreGrenadeExplode();
         return;
     }
     
@@ -107,7 +107,7 @@ void () func000666 =
 };
 
 
-// func000667
+// OgreFireGrenade
 // function begins at statement 18291, parm_start=12335
 // OP_ADDRESS	28	133	12337
 // OP_LOAD_F	28	133	12338
@@ -170,32 +170,32 @@ void () func000666 =
 // OP_STORE_V	12382	7	0
 // OP_CALL2	453	0	0
 // OP_DONE	0	0	0
-void () func000667 = 
+void () OgreFireGrenade = 
 {
-    local entity globaldef003659;
-    local entity globaldef003660;
+    local entity missile;
+    local entity mpuff;
     self.effects = self.effects | EF_MUZZLEFLASH;
     sound(self, CHAN_WEAPON, "weapons/grenade.wav", TRUE, ATTN_NORM);
-    globaldef003659 = spawn();
-    globaldef003659.owner = self;
-    globaldef003659.movetype = MOVETYPE_BOUNCE;
-    globaldef003659.solid = SOLID_BBOX;
+    missile = spawn();
+    missile.owner = self;
+    missile.movetype = MOVETYPE_BOUNCE;
+    missile.solid = SOLID_BBOX;
     makevectors(self.angles);
-    globaldef003659.velocity = normalize(self.enemy.origin - self.origin);
-    globaldef003659.velocity = globaldef003659.velocity * GLOBALDEF723_600;
-    globaldef003659.velocity_z = 200;
-    globaldef003659.avelocity = '300 300 300';
-    globaldef003659.angles = vectoangles(globaldef003659.velocity);
-    globaldef003659.touch = func000666;
-    globaldef003659.nextthink = time + 2.5;
-    globaldef003659.think = func000665;
-    setmodel(globaldef003659, "progs/grenade.mdl");
-    setsize(globaldef003659, VEC_ORIGIN, VEC_ORIGIN);
-    setorigin(globaldef003659, self.origin);
+    missile.velocity = normalize(self.enemy.origin - self.origin);
+    missile.velocity = missile.velocity * GLOBALDEF723_600;
+    missile.velocity_z = 200;
+    missile.avelocity = '300 300 300';
+    missile.angles = vectoangles(missile.velocity);
+    missile.touch = OgreGrenadeTouch;
+    missile.nextthink = time + 2.5;
+    missile.think = OgreGrenadeExplode;
+    setmodel(missile, "progs/grenade.mdl");
+    setsize(missile, VEC_ORIGIN, VEC_ORIGIN);
+    setorigin(missile, self.origin);
 };
 
 
-// func000668
+// chainsaw
 // function begins at statement 18352, parm_start=12386
 // OP_LOAD_ENT	28	181	12391
 // OP_NOT_ENT	12391	0	12392
@@ -257,10 +257,10 @@ void () func000667 =
 // OP_STORE_V	12436	7	0
 // OP_CALL2	5444	0	0
 // OP_DONE	0	0	0
-void (float globaldef003662) func000668 = 
+void (float side) chainsaw = 
 {
-    local vector globaldef003663;
-    local float globaldef003667;
+    local vector delta;
+    local float ldmg;
     
     if(!self.enemy)
     {
@@ -274,27 +274,27 @@ void (float globaldef003662) func000668 =
     }
     
     ai_charge(MOVETYPE_BOUNCE);
-    globaldef003663 = self.enemy.origin - self.origin;
+    delta = self.enemy.origin - self.origin;
     
-    if(vlen(globaldef003663) > 100)
+    if(vlen(delta) > 100)
     {
         return;
     }
     
     random();
-    globaldef003667 = ((random() + random()) + random()) * MOVETYPE_STEP;
-    T_Damage(self.enemy, self, self, globaldef003667);
+    ldmg = ((random() + random()) + random()) * MOVETYPE_STEP;
+    T_Damage(self.enemy, self, self, ldmg);
     
-    if(globaldef003662)
+    if(side)
     {
         makevectors(self.angles);
-        if(globaldef003662 == TRUE)
+        if(side == TRUE)
         {
             SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), (crandom() * 100) * v_right);
         }
         else
         {
-            SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), globaldef003662 * v_right);
+            SpawnMeatSpray(self.origin + (v_forward * FL_INWATER), side * v_right);
         }
         
     }
@@ -302,51 +302,51 @@ void (float globaldef003662) func000668 =
 };
 
 
-// func000669
+// ogre_stand1
 // function begins at statement 18412, parm_start=12440
 // OP_STATE	213	12440	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000669 = [0, func000670]
+void () ogre_stand1 = [0, ogre_stand2]
 {
     ai_stand();
 };
 
 
-// func000670
+// ogre_stand2
 // function begins at statement 18415, parm_start=12441
 // OP_STATE	214	12441	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000670 = [1, func000671]
+void () ogre_stand2 = [1, ogre_stand3]
 {
     ai_stand();
 };
 
 
-// func000671
+// ogre_stand3
 // function begins at statement 18418, parm_start=12442
 // OP_STATE	216	12442	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000671 = [2, func000672]
+void () ogre_stand3 = [2, ogre_stand4]
 {
     ai_stand();
 };
 
 
-// func000672
+// ogre_stand4
 // function begins at statement 18421, parm_start=12443
 // OP_STATE	228	12443	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000672 = [3, func000673]
+void () ogre_stand4 = [3, ogre_stand5]
 {
     ai_stand();
 };
 
 
-// func000673
+// ogre_stand5
 // function begins at statement 18424, parm_start=12444
 // OP_STATE	229	12444	0
 // OP_CALL0	457	0	0
@@ -360,7 +360,7 @@ void () func000672 = [3, func000673]
 // OP_CALL5	458	0	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000673 = [4, func000674]
+void () ogre_stand5 = [4, ogre_stand6]
 {
     
     if(random() < 0.2)
@@ -372,75 +372,75 @@ void () func000673 = [4, func000674]
 };
 
 
-// func000674
+// ogre_stand6
 // function begins at statement 18436, parm_start=12447
 // OP_STATE	230	12447	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000674 = [5, func000675]
+void () ogre_stand6 = [5, ogre_stand7]
 {
     ai_stand();
 };
 
 
-// func000675
+// ogre_stand7
 // function begins at statement 18439, parm_start=12448
 // OP_STATE	231	12448	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000675 = [6, func000676]
+void () ogre_stand7 = [6, ogre_stand8]
 {
     ai_stand();
 };
 
 
-// func000676
+// ogre_stand8
 // function begins at statement 18442, parm_start=12449
 // OP_STATE	232	12449	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000676 = [7, func000677]
+void () ogre_stand8 = [7, ogre_stand9]
 {
     ai_stand();
 };
 
 
-// func000677
+// ogre_stand9
 // function begins at statement 18445, parm_start=12450
 // OP_STATE	217	12439	0
 // OP_CALL0	3802	0	0
 // OP_DONE	0	0	0
-void () func000677 = [8, func000669]
+void () ogre_stand9 = [8, ogre_stand1]
 {
     ai_stand();
 };
 
 
-// func000678
+// ogre_walk1
 // function begins at statement 18448, parm_start=12451
 // OP_STATE	234	12451	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000678 = [9, func000679]
+void () ogre_walk1 = [9, ogre_walk2]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000679
+// ogre_walk2
 // function begins at statement 18452, parm_start=12452
 // OP_STATE	235	12452	0
 // OP_STORE_V	216	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000679 = [10, func000680]
+void () ogre_walk2 = [10, ogre_walk3]
 {
     ai_walk(FL_SWIM);
 };
 
 
-// func000680
+// ogre_walk3
 // function begins at statement 18456, parm_start=12453
 // OP_STATE	236	12453	0
 // OP_STORE_V	216	4	0
@@ -455,7 +455,7 @@ void () func000679 = [10, func000680]
 // OP_STORE_V	332	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000680 = [11, func000681]
+void () ogre_walk3 = [11, ogre_walk4]
 {
     ai_walk(FL_SWIM);
     
@@ -467,31 +467,31 @@ void () func000680 = [11, func000681]
 };
 
 
-// func000681
+// ogre_walk4
 // function begins at statement 18469, parm_start=12455
 // OP_STATE	791	12455	0
 // OP_STORE_V	216	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000681 = [12, func000682]
+void () ogre_walk4 = [12, ogre_walk5]
 {
     ai_walk(FL_SWIM);
 };
 
 
-// func000682
+// ogre_walk5
 // function begins at statement 18473, parm_start=12456
 // OP_STATE	792	12456	0
 // OP_STORE_V	216	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000682 = [13, func000683]
+void () ogre_walk5 = [13, ogre_walk6]
 {
     ai_walk(FL_SWIM);
 };
 
 
-// func000683
+// ogre_walk6
 // function begins at statement 18477, parm_start=12457
 // OP_STATE	5693	12457	0
 // OP_STORE_V	230	4	0
@@ -506,7 +506,7 @@ void () func000682 = [13, func000683]
 // OP_STORE_V	332	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000683 = [14, func000684]
+void () ogre_walk6 = [14, ogre_walk7]
 {
     ai_walk(MOVETYPE_FLY);
     
@@ -518,127 +518,127 @@ void () func000683 = [14, func000684]
 };
 
 
-// func000684
+// ogre_walk7
 // function begins at statement 18490, parm_start=12459
 // OP_STATE	765	12459	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000684 = [15, func000685]
+void () ogre_walk7 = [15, ogre_walk8]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000685
+// ogre_walk8
 // function begins at statement 18494, parm_start=12460
 // OP_STATE	218	12460	0
 // OP_STORE_V	216	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000685 = [16, func000686]
+void () ogre_walk8 = [16, ogre_walk9]
 {
     ai_walk(FL_SWIM);
 };
 
 
-// func000686
+// ogre_walk9
 // function begins at statement 18498, parm_start=12461
 // OP_STATE	6892	12461	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000686 = [17, func000687]
+void () ogre_walk9 = [17, ogre_walk10]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000687
+// ogre_walk10
 // function begins at statement 18502, parm_start=12462
 // OP_STATE	6133	12462	0
 // OP_STORE_V	214	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000687 = [18, func000688]
+void () ogre_walk10 = [18, ogre_walk11]
 {
     ai_walk(TRUE);
 };
 
 
-// func000688
+// ogre_walk11
 // function begins at statement 18506, parm_start=12463
 // OP_STATE	6895	12463	0
 // OP_STORE_V	216	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000688 = [19, func000689]
+void () ogre_walk11 = [19, ogre_walk12]
 {
     ai_walk(FL_SWIM);
 };
 
 
-// func000689
+// ogre_walk12
 // function begins at statement 18510, parm_start=12464
 // OP_STATE	2323	12464	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000689 = [20, func000690]
+void () ogre_walk12 = [20, ogre_walk13]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000690
+// ogre_walk13
 // function begins at statement 18514, parm_start=12465
 // OP_STATE	12465	12466	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000690 = [21, func000691]
+void () ogre_walk13 = [21, ogre_walk14]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000691
+// ogre_walk14
 // function begins at statement 18518, parm_start=12467
 // OP_STATE	12467	12468	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000691 = [22, func000692]
+void () ogre_walk14 = [22, ogre_walk15]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000692
+// ogre_walk15
 // function begins at statement 18522, parm_start=12469
 // OP_STATE	304	12469	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000692 = [23, func000693]
+void () ogre_walk15 = [23, ogre_walk16]
 {
     ai_walk(MOVETYPE_WALK);
 };
 
 
-// func000693
+// ogre_walk16
 // function begins at statement 18526, parm_start=12470
 // OP_STATE	736	12450	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3794	0	0
 // OP_DONE	0	0	0
-void () func000693 = [24, func000678]
+void () ogre_walk16 = [24, ogre_walk1]
 {
     ai_walk(MOVETYPE_STEP);
 };
 
 
-// func000694
+// ogre_run1
 // function begins at statement 18530, parm_start=12471
 // OP_STATE	305	12471	0
 // OP_STORE_V	234	4	0
@@ -653,7 +653,7 @@ void () func000693 = [24, func000678]
 // OP_STORE_V	332	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () func000694 = [25, func000695]
+void () ogre_run1 = [25, ogre_run2]
 {
     ai_run(MOVETYPE_FLYMISSILE);
     
@@ -665,85 +665,85 @@ void () func000694 = [25, func000695]
 };
 
 
-// func000695
+// ogre_run2
 // function begins at statement 18543, parm_start=12474
 // OP_STATE	306	12474	0
 // OP_STORE_V	791	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000695 = [26, func000696]
+void () ogre_run2 = [26, ogre_run3]
 {
     ai_run(BOTSHIRTPANTS_12);
 };
 
 
-// func000696
+// ogre_run3
 // function begins at statement 18547, parm_start=12475
 // OP_STATE	307	12475	0
 // OP_STORE_V	217	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000696 = [27, func000697]
+void () ogre_run3 = [27, ogre_run4]
 {
     ai_run(FL_CLIENT);
 };
 
 
-// func000697
+// ogre_run4
 // function begins at statement 18551, parm_start=12476
 // OP_STATE	308	12476	0
 // OP_STORE_V	12467	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000697 = [28, func000698]
+void () ogre_run4 = [28, ogre_run5]
 {
     ai_run(22);
 };
 
 
-// func000698
+// ogre_run5
 // function begins at statement 18555, parm_start=12477
 // OP_STATE	9664	12477	0
 // OP_STORE_V	218	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000698 = [29, func000699]
+void () ogre_run5 = [29, ogre_run6]
 {
     ai_run(FL_INWATER);
 };
 
 
-// func000699
+// ogre_run6
 // function begins at statement 18559, parm_start=12478
 // OP_STATE	309	12478	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000699 = [30, func000700]
+void () ogre_run6 = [30, ogre_run7]
 {
     ai_run(MOVETYPE_STEP);
 };
 
 
-// func000700
+// ogre_run7
 // function begins at statement 18563, parm_start=12479
 // OP_STATE	310	12479	0
 // OP_STORE_V	792	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000700 = [31, func000701]
+void () ogre_run7 = [31, ogre_run8]
 {
     ai_run(BOTSHIRTPANTS_13);
 };
 
 
-// func000701
+// ogre_run8
 // function begins at statement 18567, parm_start=12480
 // OP_STATE	219	12470	0
 // OP_STORE_V	736	4	0
 // OP_CALL1	3873	0	0
 // OP_DONE	0	0	0
-void () func000701 = [32, func000694]
+void () ogre_run8 = [32, ogre_run1]
 {
     ai_run(OBOT_MAXBOTS);
 };
@@ -761,50 +761,50 @@ void () func000701 = [32, func000694]
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () ogre_swing1 = [33, func000703]
+void () ogre_swing1 = [33, ogre_swing2]
 {
     ai_charge(MOVETYPE_BOUNCEMISSILE);
     sound(self, CHAN_WEAPON, "ogre/ogsawatk.wav", TRUE, ATTN_NORM);
 };
 
 
-// func000703
+// ogre_swing2
 // function begins at statement 18581, parm_start=12482
 // OP_STATE	9671	12482	0
 // OP_STORE_V	214	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000703 = [34, func000704]
+void () ogre_swing2 = [34, ogre_swing3]
 {
     ai_charge(TRUE);
 };
 
 
-// func000704
+// ogre_swing3
 // function begins at statement 18585, parm_start=12483
 // OP_STATE	5878	12483	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000704 = [35, func000705]
+void () ogre_swing3 = [35, ogre_swing4]
 {
     ai_charge(MOVETYPE_STEP);
 };
 
 
-// func000705
+// ogre_swing4
 // function begins at statement 18589, parm_start=12484
 // OP_STATE	9655	12484	0
 // OP_STORE_V	792	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000705 = [36, func000706]
+void () ogre_swing4 = [36, ogre_swing5]
 {
     ai_charge(BOTSHIRTPANTS_13);
 };
 
 
-// func000706
+// ogre_swing5
 // function begins at statement 18593, parm_start=12485
 // OP_STATE	9657	12485	0
 // OP_STORE_V	234	4	0
@@ -818,15 +818,15 @@ void () func000705 = [36, func000706]
 // OP_ADD_F	12487	12488	12489
 // OP_STOREP_F	12489	12486	0
 // OP_DONE	0	0	0
-void () func000706 = [37, func000707]
+void () ogre_swing5 = [37, ogre_swing6]
 {
     ai_charge(MOVETYPE_FLYMISSILE);
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000707
+// ogre_swing6
 // function begins at statement 18605, parm_start=12490
 // OP_STATE	9659	12490	0
 // OP_STORE_V	2044	4	0
@@ -838,14 +838,14 @@ void () func000706 = [37, func000707]
 // OP_ADD_F	12492	12493	12494
 // OP_STOREP_F	12494	12491	0
 // OP_DONE	0	0	0
-void () func000707 = [38, func000708]
+void () ogre_swing6 = [38, ogre_swing7]
 {
-    func000668(200);
+    chainsaw(200);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000708
+// ogre_swing7
 // function begins at statement 18615, parm_start=12495
 // OP_STATE	9661	12495	0
 // OP_STORE_V	213	4	0
@@ -857,14 +857,14 @@ void () func000707 = [38, func000708]
 // OP_ADD_F	12497	12498	12499
 // OP_STOREP_F	12499	12496	0
 // OP_DONE	0	0	0
-void () func000708 = [39, func000709]
+void () ogre_swing7 = [39, ogre_swing8]
 {
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000709
+// ogre_swing8
 // function begins at statement 18625, parm_start=12500
 // OP_STATE	746	12500	0
 // OP_STORE_V	213	4	0
@@ -876,14 +876,14 @@ void () func000708 = [39, func000709]
 // OP_ADD_F	12502	12503	12504
 // OP_STOREP_F	12504	12501	0
 // OP_DONE	0	0	0
-void () func000709 = [40, func000710]
+void () ogre_swing8 = [40, ogre_swing9]
 {
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000710
+// ogre_swing9
 // function begins at statement 18635, parm_start=12505
 // OP_STATE	9993	12505	0
 // OP_STORE_V	213	4	0
@@ -895,14 +895,14 @@ void () func000709 = [40, func000710]
 // OP_ADD_F	12507	12508	12509
 // OP_STOREP_F	12509	12506	0
 // OP_DONE	0	0	0
-void () func000710 = [41, func000711]
+void () ogre_swing9 = [41, ogre_swing10]
 {
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000711
+// ogre_swing10
 // function begins at statement 18645, parm_start=12510
 // OP_STATE	9995	12510	0
 // OP_STORE_V	9761	4	0
@@ -914,14 +914,14 @@ void () func000710 = [41, func000711]
 // OP_ADD_F	12512	12513	12514
 // OP_STOREP_F	12514	12511	0
 // OP_DONE	0	0	0
-void () func000711 = [42, func000712]
+void () ogre_swing10 = [42, ogre_swing11]
 {
-    func000668(-200);
+    chainsaw(-200);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000712
+// ogre_swing11
 // function begins at statement 18655, parm_start=12515
 // OP_STATE	9997	12515	0
 // OP_STORE_V	213	4	0
@@ -933,44 +933,44 @@ void () func000711 = [42, func000712]
 // OP_ADD_F	12517	12518	12519
 // OP_STOREP_F	12519	12516	0
 // OP_DONE	0	0	0
-void () func000712 = [43, func000713]
+void () ogre_swing11 = [43, ogre_swing12]
 {
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.angles_y = self.angles_y + (random() * SVC_SIGNONNUM);
 };
 
 
-// func000713
+// ogre_swing12
 // function begins at statement 18665, parm_start=12520
 // OP_STATE	9999	12520	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000713 = [44, func000714]
+void () ogre_swing12 = [44, ogre_swing13]
 {
     ai_charge(MOVETYPE_WALK);
 };
 
 
-// func000714
+// ogre_swing13
 // function begins at statement 18669, parm_start=12521
 // OP_STATE	2598	12521	0
 // OP_STORE_V	217	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000714 = [45, func000715]
+void () ogre_swing13 = [45, ogre_swing14]
 {
     ai_charge(FL_CLIENT);
 };
 
 
-// func000715
+// ogre_swing14
 // function begins at statement 18673, parm_start=12522
 // OP_STATE	10002	12470	0
 // OP_STORE_V	234	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000715 = [46, func000694]
+void () ogre_swing14 = [46, ogre_run1]
 {
     ai_charge(MOVETYPE_FLYMISSILE);
 };
@@ -988,62 +988,62 @@ void () func000715 = [46, func000694]
 // OP_STORE_V	331	16	0
 // OP_CALL5	458	0	0
 // OP_DONE	0	0	0
-void () ogre_smash1 = [47, func000717]
+void () ogre_smash1 = [47, ogre_smash2]
 {
     ai_charge(MOVETYPE_TOSS);
     sound(self, CHAN_WEAPON, "ogre/ogsawatk.wav", TRUE, ATTN_NORM);
 };
 
 
-// func000717
+// ogre_smash2
 // function begins at statement 18687, parm_start=12523
 // OP_STATE	10006	12523	0
 // OP_STORE_V	213	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000717 = [48, func000718]
+void () ogre_smash2 = [48, ogre_smash3]
 {
     ai_charge(FALSE);
 };
 
 
-// func000718
+// ogre_smash3
 // function begins at statement 18691, parm_start=12524
 // OP_STATE	10008	12524	0
 // OP_STORE_V	213	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000718 = [49, func000719]
+void () ogre_smash3 = [49, ogre_smash4]
 {
     ai_charge(FALSE);
 };
 
 
-// func000719
+// ogre_smash4
 // function begins at statement 18695, parm_start=12525
 // OP_STATE	1470	12525	0
 // OP_STORE_V	214	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000719 = [50, func000720]
+void () ogre_smash4 = [50, ogre_smash5]
 {
     ai_charge(TRUE);
 };
 
 
-// func000720
+// ogre_smash5
 // function begins at statement 18699, parm_start=12526
 // OP_STATE	9911	12526	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000720 = [51, func000721]
+void () ogre_smash5 = [51, ogre_smash6]
 {
     ai_charge(MOVETYPE_STEP);
 };
 
 
-// func000721
+// ogre_smash6
 // function begins at statement 18703, parm_start=12527
 // OP_STATE	9913	12527	0
 // OP_STORE_V	229	4	0
@@ -1051,14 +1051,14 @@ void () func000720 = [51, func000721]
 // OP_STORE_V	213	4	0
 // OP_CALL1	12385	0	0
 // OP_DONE	0	0	0
-void () func000721 = [52, func000722]
+void () ogre_smash6 = [52, ogre_smash7]
 {
     ai_charge(MOVETYPE_STEP);
-    func000668(FALSE);
+    chainsaw(FALSE);
 };
 
 
-// func000722
+// ogre_smash7
 // function begins at statement 18709, parm_start=12528
 // OP_STATE	9915	12528	0
 // OP_STORE_V	229	4	0
@@ -1066,14 +1066,14 @@ void () func000721 = [52, func000722]
 // OP_STORE_V	213	4	0
 // OP_CALL1	12385	0	0
 // OP_DONE	0	0	0
-void () func000722 = [53, func000723]
+void () ogre_smash7 = [53, ogre_smash8]
 {
     ai_charge(MOVETYPE_STEP);
-    func000668(FALSE);
+    chainsaw(FALSE);
 };
 
 
-// func000723
+// ogre_smash8
 // function begins at statement 18715, parm_start=12529
 // OP_STATE	9917	12529	0
 // OP_STORE_V	235	4	0
@@ -1081,14 +1081,14 @@ void () func000722 = [53, func000723]
 // OP_STORE_V	213	4	0
 // OP_CALL1	12385	0	0
 // OP_DONE	0	0	0
-void () func000723 = [54, func000724]
+void () ogre_smash8 = [54, ogre_smash9]
 {
     ai_charge(MOVETYPE_BOUNCE);
-    func000668(FALSE);
+    chainsaw(FALSE);
 };
 
 
-// func000724
+// ogre_smash9
 // function begins at statement 18721, parm_start=12530
 // OP_STATE	9919	12530	0
 // OP_STORE_V	792	4	0
@@ -1096,26 +1096,26 @@ void () func000723 = [54, func000724]
 // OP_STORE_V	213	4	0
 // OP_CALL1	12385	0	0
 // OP_DONE	0	0	0
-void () func000724 = [55, func000725]
+void () ogre_smash9 = [55, ogre_smash10]
 {
     ai_charge(BOTSHIRTPANTS_13);
-    func000668(FALSE);
+    chainsaw(FALSE);
 };
 
 
-// func000725
+// ogre_smash10
 // function begins at statement 18727, parm_start=12531
 // OP_STATE	9921	12531	0
 // OP_STORE_V	214	4	0
 // OP_CALL1	12385	0	0
 // OP_DONE	0	0	0
-void () func000725 = [56, func000726]
+void () ogre_smash10 = [56, ogre_smash11]
 {
-    func000668(TRUE);
+    chainsaw(TRUE);
 };
 
 
-// func000726
+// ogre_smash11
 // function begins at statement 18731, parm_start=12532
 // OP_STATE	9923	12532	0
 // OP_STORE_V	216	4	0
@@ -1129,553 +1129,553 @@ void () func000725 = [56, func000726]
 // OP_ADD_F	12534	12535	12536
 // OP_STOREP_F	12536	12533	0
 // OP_DONE	0	0	0
-void () func000726 = [57, func000727]
+void () ogre_smash11 = [57, ogre_smash12]
 {
     ai_charge(FL_SWIM);
-    func000668(FALSE);
+    chainsaw(FALSE);
     self.nextthink = self.nextthink + (random() * 0.2);
 };
 
 
-// func000727
+// ogre_smash12
 // function begins at statement 18743, parm_start=12537
 // OP_STATE	9925	12537	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000727 = [58, func000728]
+void () ogre_smash12 = [58, ogre_smash13]
 {
     ai_charge(MOVETYPE_WALK);
 };
 
 
-// func000728
+// ogre_smash13
 // function begins at statement 18747, parm_start=12538
 // OP_STATE	2783	12538	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000728 = [59, func000729]
+void () ogre_smash13 = [59, ogre_smash14]
 {
     ai_charge(MOVETYPE_STEP);
 };
 
 
-// func000729
+// ogre_smash14
 // function begins at statement 18751, parm_start=12539
 // OP_STATE	2019	12470	0
 // OP_STORE_V	791	4	0
 // OP_CALL1	3287	0	0
 // OP_DONE	0	0	0
-void () func000729 = [60, func000694]
+void () ogre_smash14 = [60, ogre_run1]
 {
     ai_charge(BOTSHIRTPANTS_12);
 };
 
 
-// func000730
+// ogre_nail1
 // function begins at statement 18755, parm_start=12540
 // OP_STATE	9928	12540	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000730 = [61, func000731]
+void () ogre_nail1 = [61, ogre_nail2]
 {
     ai_face();
 };
 
 
-// func000731
+// ogre_nail2
 // function begins at statement 18758, parm_start=12541
 // OP_STATE	9930	12541	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000731 = [62, func000732]
+void () ogre_nail2 = [62, ogre_nail3]
 {
     ai_face();
 };
 
 
-// func000732
+// ogre_nail3
 // function begins at statement 18761, parm_start=12542
 // OP_STATE	9930	12542	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000732 = [62, func000733]
+void () ogre_nail3 = [62, ogre_nail4]
 {
     ai_face();
 };
 
 
-// func000733
+// ogre_nail4
 // function begins at statement 18764, parm_start=12543
 // OP_STATE	6707	12543	0
 // OP_CALL0	3190	0	0
 // OP_CALL0	12334	0	0
 // OP_DONE	0	0	0
-void () func000733 = [63, func000734]
+void () ogre_nail4 = [63, ogre_nail5]
 {
     ai_face();
-    func000667();
+    OgreFireGrenade();
 };
 
 
-// func000734
+// ogre_nail5
 // function begins at statement 18768, parm_start=12544
 // OP_STATE	220	12544	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000734 = [64, func000735]
+void () ogre_nail5 = [64, ogre_nail6]
 {
     ai_face();
 };
 
 
-// func000735
+// ogre_nail6
 // function begins at statement 18771, parm_start=12545
 // OP_STATE	9934	12545	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000735 = [65, func000736]
+void () ogre_nail6 = [65, ogre_nail7]
 {
     ai_face();
 };
 
 
-// func000736
+// ogre_nail7
 // function begins at statement 18774, parm_start=12546
 // OP_STATE	9936	12470	0
 // OP_CALL0	3190	0	0
 // OP_DONE	0	0	0
-void () func000736 = [66, func000694]
+void () ogre_nail7 = [66, ogre_run1]
 {
     ai_face();
 };
 
 
-// func000737
+// ogre_pain1
 // function begins at statement 18777, parm_start=12547
 // OP_STATE	9938	12547	0
 // OP_DONE	0	0	0
-void () func000737 = [67, func000738]
+void () ogre_pain1 = [67, ogre_pain2]
 {
 };
 
 
-// func000738
+// ogre_pain2
 // function begins at statement 18779, parm_start=12548
 // OP_STATE	8193	12548	0
 // OP_DONE	0	0	0
-void () func000738 = [68, func000739]
+void () ogre_pain2 = [68, ogre_pain3]
 {
 };
 
 
-// func000739
+// ogre_pain3
 // function begins at statement 18781, parm_start=12549
 // OP_STATE	8196	12549	0
 // OP_DONE	0	0	0
-void () func000739 = [69, func000740]
+void () ogre_pain3 = [69, ogre_pain4]
 {
 };
 
 
-// func000740
+// ogre_pain4
 // function begins at statement 18783, parm_start=12550
 // OP_STATE	1536	12550	0
 // OP_DONE	0	0	0
-void () func000740 = [70, func000741]
+void () ogre_pain4 = [70, ogre_pain5]
 {
 };
 
 
-// func000741
+// ogre_pain5
 // function begins at statement 18785, parm_start=12551
 // OP_STATE	8201	12470	0
 // OP_DONE	0	0	0
-void () func000741 = [71, func000694]
+void () ogre_pain5 = [71, ogre_run1]
 {
 };
 
 
-// func000742
+// ogre_painb1
 // function begins at statement 18787, parm_start=12552
 // OP_STATE	9943	12552	0
 // OP_DONE	0	0	0
-void () func000742 = [72, func000743]
+void () ogre_painb1 = [72, ogre_painb2]
 {
 };
 
 
-// func000743
+// ogre_painb2
 // function begins at statement 18789, parm_start=12553
 // OP_STATE	5487	12553	0
 // OP_DONE	0	0	0
-void () func000743 = [73, func000744]
+void () ogre_painb2 = [73, ogre_painb3]
 {
 };
 
 
-// func000744
+// ogre_painb3
 // function begins at statement 18791, parm_start=12554
 // OP_STATE	9946	12470	0
 // OP_DONE	0	0	0
-void () func000744 = [74, func000694]
+void () ogre_painb3 = [74, ogre_run1]
 {
 };
 
 
-// func000745
+// ogre_painc1
 // function begins at statement 18793, parm_start=12555
 // OP_STATE	9173	12555	0
 // OP_DONE	0	0	0
-void () func000745 = [75, func000746]
+void () ogre_painc1 = [75, ogre_painc2]
 {
 };
 
 
-// func000746
+// ogre_painc2
 // function begins at statement 18795, parm_start=12556
 // OP_STATE	9949	12556	0
 // OP_DONE	0	0	0
-void () func000746 = [76, func000747]
+void () ogre_painc2 = [76, ogre_painc3]
 {
 };
 
 
-// func000747
+// ogre_painc3
 // function begins at statement 18797, parm_start=12557
 // OP_STATE	9951	12557	0
 // OP_DONE	0	0	0
-void () func000747 = [77, func000748]
+void () ogre_painc3 = [77, ogre_painc4]
 {
 };
 
 
-// func000748
+// ogre_painc4
 // function begins at statement 18799, parm_start=12558
 // OP_STATE	9953	12558	0
 // OP_DONE	0	0	0
-void () func000748 = [78, func000749]
+void () ogre_painc4 = [78, ogre_painc5]
 {
 };
 
 
-// func000749
+// ogre_painc5
 // function begins at statement 18801, parm_start=12559
 // OP_STATE	9955	12559	0
 // OP_DONE	0	0	0
-void () func000749 = [79, func000750]
+void () ogre_painc5 = [79, ogre_painc6]
 {
 };
 
 
-// func000750
+// ogre_painc6
 // function begins at statement 18803, parm_start=12560
 // OP_STATE	2805	12470	0
 // OP_DONE	0	0	0
-void () func000750 = [80, func000694]
+void () ogre_painc6 = [80, ogre_run1]
 {
 };
 
 
-// func000751
+// ogre_paind1
 // function begins at statement 18805, parm_start=12561
 // OP_STATE	8204	12561	0
 // OP_DONE	0	0	0
-void () func000751 = [81, func000752]
+void () ogre_paind1 = [81, ogre_paind2]
 {
 };
 
 
-// func000752
+// ogre_paind2
 // function begins at statement 18807, parm_start=12562
 // OP_STATE	9959	12562	0
 // OP_STORE_V	235	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000752 = [82, func000753]
+void () ogre_paind2 = [82, ogre_paind3]
 {
     ai_pain(MOVETYPE_BOUNCE);
 };
 
 
-// func000753
+// ogre_paind3
 // function begins at statement 18811, parm_start=12563
 // OP_STATE	9961	12563	0
 // OP_STORE_V	234	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000753 = [83, func000754]
+void () ogre_paind3 = [83, ogre_paind4]
 {
     ai_pain(MOVETYPE_FLYMISSILE);
 };
 
 
-// func000754
+// ogre_paind4
 // function begins at statement 18815, parm_start=12564
 // OP_STATE	7694	12564	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000754 = [84, func000755]
+void () ogre_paind4 = [84, ogre_paind5]
 {
     ai_pain(MOVETYPE_STEP);
 };
 
 
-// func000755
+// ogre_paind5
 // function begins at statement 18819, parm_start=12565
 // OP_STATE	9963	12565	0
 // OP_DONE	0	0	0
-void () func000755 = [85, func000756]
+void () ogre_paind5 = [85, ogre_paind6]
 {
 };
 
 
-// func000756
+// ogre_paind6
 // function begins at statement 18821, parm_start=12566
 // OP_STATE	9965	12566	0
 // OP_DONE	0	0	0
-void () func000756 = [86, func000757]
+void () ogre_paind6 = [86, ogre_paind7]
 {
 };
 
 
-// func000757
+// ogre_paind7
 // function begins at statement 18823, parm_start=12567
 // OP_STATE	9967	12567	0
 // OP_DONE	0	0	0
-void () func000757 = [87, func000758]
+void () ogre_paind7 = [87, ogre_paind8]
 {
 };
 
 
-// func000758
+// ogre_paind8
 // function begins at statement 18825, parm_start=12568
 // OP_STATE	9969	12568	0
 // OP_DONE	0	0	0
-void () func000758 = [88, func000759]
+void () ogre_paind8 = [88, ogre_paind9]
 {
 };
 
 
-// func000759
+// ogre_paind9
 // function begins at statement 18827, parm_start=12569
 // OP_STATE	9971	12569	0
 // OP_DONE	0	0	0
-void () func000759 = [89, func000760]
+void () ogre_paind9 = [89, ogre_paind10]
 {
 };
 
 
-// func000760
+// ogre_paind10
 // function begins at statement 18829, parm_start=12570
 // OP_STATE	2658	12570	0
 // OP_DONE	0	0	0
-void () func000760 = [90, func000761]
+void () ogre_paind10 = [90, ogre_paind11]
 {
 };
 
 
-// func000761
+// ogre_paind11
 // function begins at statement 18831, parm_start=12571
 // OP_STATE	9974	12571	0
 // OP_DONE	0	0	0
-void () func000761 = [91, func000762]
+void () ogre_paind11 = [91, ogre_paind12]
 {
 };
 
 
-// func000762
+// ogre_paind12
 // function begins at statement 18833, parm_start=12572
 // OP_STATE	9976	12572	0
 // OP_DONE	0	0	0
-void () func000762 = [92, func000763]
+void () ogre_paind12 = [92, ogre_paind13]
 {
 };
 
 
-// func000763
+// ogre_paind13
 // function begins at statement 18835, parm_start=12573
 // OP_STATE	9978	12573	0
 // OP_DONE	0	0	0
-void () func000763 = [93, func000764]
+void () ogre_paind13 = [93, ogre_paind14]
 {
 };
 
 
-// func000764
+// ogre_paind14
 // function begins at statement 18837, parm_start=12574
 // OP_STATE	9979	12574	0
 // OP_DONE	0	0	0
-void () func000764 = [94, func000765]
+void () ogre_paind14 = [94, ogre_paind15]
 {
 };
 
 
-// func000765
+// ogre_paind15
 // function begins at statement 18839, parm_start=12575
 // OP_STATE	9981	12575	0
 // OP_DONE	0	0	0
-void () func000765 = [95, func000766]
+void () ogre_paind15 = [95, ogre_paind16]
 {
 };
 
 
-// func000766
+// ogre_paind16
 // function begins at statement 18841, parm_start=12576
 // OP_STATE	9983	12470	0
 // OP_DONE	0	0	0
-void () func000766 = [96, func000694]
+void () ogre_paind16 = [96, ogre_run1]
 {
 };
 
 
-// func000767
+// ogre_paine1
 // function begins at statement 18843, parm_start=12577
 // OP_STATE	9985	12577	0
 // OP_DONE	0	0	0
-void () func000767 = [97, func000768]
+void () ogre_paine1 = [97, ogre_paine2]
 {
 };
 
 
-// func000768
+// ogre_paine2
 // function begins at statement 18845, parm_start=12578
 // OP_STATE	9987	12578	0
 // OP_STORE_V	235	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000768 = [98, func000769]
+void () ogre_paine2 = [98, ogre_paine3]
 {
     ai_pain(MOVETYPE_BOUNCE);
 };
 
 
-// func000769
+// ogre_paine3
 // function begins at statement 18849, parm_start=12579
 // OP_STATE	9989	12579	0
 // OP_STORE_V	234	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000769 = [99, func000770]
+void () ogre_paine3 = [99, ogre_paine4]
 {
     ai_pain(MOVETYPE_FLYMISSILE);
 };
 
 
-// func000770
+// ogre_paine4
 // function begins at statement 18853, parm_start=12580
 // OP_STATE	1997	12580	0
 // OP_STORE_V	229	4	0
 // OP_CALL1	3789	0	0
 // OP_DONE	0	0	0
-void () func000770 = [100, func000771]
+void () ogre_paine4 = [100, ogre_paine5]
 {
     ai_pain(MOVETYPE_STEP);
 };
 
 
-// func000771
+// ogre_paine5
 // function begins at statement 18857, parm_start=12581
 // OP_STATE	8107	12581	0
 // OP_DONE	0	0	0
-void () func000771 = [101, func000772]
+void () ogre_paine5 = [101, ogre_paine6]
 {
 };
 
 
-// func000772
+// ogre_paine6
 // function begins at statement 18859, parm_start=12582
 // OP_STATE	8109	12582	0
 // OP_DONE	0	0	0
-void () func000772 = [102, func000773]
+void () ogre_paine6 = [102, ogre_paine7]
 {
 };
 
 
-// func000773
+// ogre_paine7
 // function begins at statement 18861, parm_start=12583
 // OP_STATE	8111	12583	0
 // OP_DONE	0	0	0
-void () func000773 = [103, func000774]
+void () ogre_paine7 = [103, ogre_paine8]
 {
 };
 
 
-// func000774
+// ogre_paine8
 // function begins at statement 18863, parm_start=12584
 // OP_STATE	8114	12584	0
 // OP_DONE	0	0	0
-void () func000774 = [104, func000775]
+void () ogre_paine8 = [104, ogre_paine9]
 {
 };
 
 
-// func000775
+// ogre_paine9
 // function begins at statement 18865, parm_start=12585
 // OP_STATE	9562	12585	0
 // OP_DONE	0	0	0
-void () func000775 = [105, func000776]
+void () ogre_paine9 = [105, ogre_paine10]
 {
 };
 
 
-// func000776
+// ogre_paine10
 // function begins at statement 18867, parm_start=12586
 // OP_STATE	9577	12586	0
 // OP_DONE	0	0	0
-void () func000776 = [106, func000777]
+void () ogre_paine10 = [106, ogre_paine11]
 {
 };
 
 
-// func000777
+// ogre_paine11
 // function begins at statement 18869, parm_start=12587
 // OP_STATE	9591	12587	0
 // OP_DONE	0	0	0
-void () func000777 = [107, func000778]
+void () ogre_paine11 = [107, ogre_paine12]
 {
 };
 
 
-// func000778
+// ogre_paine12
 // function begins at statement 18871, parm_start=12588
 // OP_STATE	9597	12588	0
 // OP_DONE	0	0	0
-void () func000778 = [108, func000779]
+void () ogre_paine12 = [108, ogre_paine13]
 {
 };
 
 
-// func000779
+// ogre_paine13
 // function begins at statement 18873, parm_start=12589
 // OP_STATE	9600	12589	0
 // OP_DONE	0	0	0
-void () func000779 = [109, func000780]
+void () ogre_paine13 = [109, ogre_paine14]
 {
 };
 
 
-// func000780
+// ogre_paine14
 // function begins at statement 18875, parm_start=12590
 // OP_STATE	9603	12590	0
 // OP_DONE	0	0	0
-void () func000780 = [110, func000781]
+void () ogre_paine14 = [110, ogre_paine15]
 {
 };
 
 
-// func000781
+// ogre_paine15
 // function begins at statement 18877, parm_start=12591
 // OP_STATE	2224	12470	0
 // OP_DONE	0	0	0
-void () func000781 = [111, func000694]
+void () ogre_paine15 = [111, ogre_run1]
 {
 };
 
 
-// func000782
+// ogre_pain
 // function begins at statement 18879, parm_start=12592
 // OP_LOAD_F	28	379	12595
 // OP_GT	12595	31	12596
@@ -1722,9 +1722,9 @@ void () func000781 = [111, func000694]
 // OP_ADD_F	31	216	12612
 // OP_STOREP_F	12612	12611	0
 // OP_DONE	0	0	0
-void (entity globaldef003785, float globaldef003786) func000782 = 
+void (entity attacker, float damage) ogre_pain = 
 {
-    local float globaldef003787;
+    local float r;
     
     if(self.pain_finished > time)
     {
@@ -1732,36 +1732,36 @@ void (entity globaldef003785, float globaldef003786) func000782 =
     }
     
     sound(self, CHAN_VOICE, "ogre/ogpain1.wav", TRUE, ATTN_NORM);
-    globaldef003787 = random();
-    if(globaldef003787 < 0.25)
+    r = random();
+    if(r < 0.25)
     {
-        func000737();
+        ogre_pain1();
         self.pain_finished = time + TRUE;
     }
     else
     {
-        if(globaldef003787 < RA_PLAYERSTATTIME)
+        if(r < RA_PLAYERSTATTIME)
         {
-            func000742();
+            ogre_painb1();
             self.pain_finished = time + TRUE;
         }
         else
         {
-            if(globaldef003787 < 0.75)
+            if(r < 0.75)
             {
-                func000745();
+                ogre_painc1();
                 self.pain_finished = time + TRUE;
             }
             else
             {
-                if(globaldef003787 < 0.88)
+                if(r < 0.88)
                 {
-                    func000751();
+                    ogre_paind1();
                     self.pain_finished = time + FL_SWIM;
                 }
                 else
                 {
-                    func000767();
+                    ogre_paine1();
                     self.pain_finished = time + FL_SWIM;
                 }
                 
@@ -1774,25 +1774,25 @@ void (entity globaldef003785, float globaldef003786) func000782 =
 };
 
 
-// func000783
+// ogre_die1
 // function begins at statement 18924, parm_start=12614
 // OP_STATE	9608	12614	0
 // OP_DONE	0	0	0
-void () func000783 = [112, func000784]
+void () ogre_die1 = [112, ogre_die2]
 {
 };
 
 
-// func000784
+// ogre_die2
 // function begins at statement 18926, parm_start=12615
 // OP_STATE	9473	12615	0
 // OP_DONE	0	0	0
-void () func000784 = [113, func000785]
+void () ogre_die2 = [113, ogre_die3]
 {
 };
 
 
-// func000785
+// ogre_die3
 // function begins at statement 18928, parm_start=12616
 // OP_STATE	9479	12616	0
 // OP_ADDRESS	28	104	12617
@@ -1801,7 +1801,7 @@ void () func000784 = [113, func000785]
 // OP_STOREP_F	216	12618	0
 // OP_CALL0	5177	0	0
 // OP_DONE	0	0	0
-void () func000785 = [114, func000786]
+void () ogre_die3 = [114, ogre_die4]
 {
     self.solid = SOLID_NOT;
     self.ammo_rockets = FL_SWIM;
@@ -1809,127 +1809,127 @@ void () func000785 = [114, func000786]
 };
 
 
-// func000786
+// ogre_die4
 // function begins at statement 18935, parm_start=12619
 // OP_STATE	9482	12619	0
 // OP_DONE	0	0	0
-void () func000786 = [115, func000787]
+void () ogre_die4 = [115, ogre_die5]
 {
 };
 
 
-// func000787
+// ogre_die5
 // function begins at statement 18937, parm_start=12620
 // OP_STATE	9485	12620	0
 // OP_DONE	0	0	0
-void () func000787 = [116, func000788]
+void () ogre_die5 = [116, ogre_die6]
 {
 };
 
 
-// func000788
+// ogre_die6
 // function begins at statement 18939, parm_start=12621
 // OP_STATE	9488	12621	0
 // OP_DONE	0	0	0
-void () func000788 = [117, func000789]
+void () ogre_die6 = [117, ogre_die7]
 {
 };
 
 
-// func000789
+// ogre_die7
 // function begins at statement 18941, parm_start=12622
 // OP_STATE	9491	12622	0
 // OP_DONE	0	0	0
-void () func000789 = [118, func000790]
+void () ogre_die7 = [118, ogre_die8]
 {
 };
 
 
-// func000790
+// ogre_die8
 // function begins at statement 18943, parm_start=12623
 // OP_STATE	9493	12623	0
 // OP_DONE	0	0	0
-void () func000790 = [119, func000791]
+void () ogre_die8 = [119, ogre_die9]
 {
 };
 
 
-// func000791
+// ogre_die9
 // function begins at statement 18945, parm_start=12624
 // OP_STATE	3584	12624	0
 // OP_DONE	0	0	0
-void () func000791 = [120, func000792]
+void () ogre_die9 = [120, ogre_die10]
 {
 };
 
 
-// func000792
+// ogre_die10
 // function begins at statement 18947, parm_start=12625
 // OP_STATE	9498	12625	0
 // OP_DONE	0	0	0
-void () func000792 = [121, func000793]
+void () ogre_die10 = [121, ogre_die11]
 {
 };
 
 
-// func000793
+// ogre_die11
 // function begins at statement 18949, parm_start=12626
 // OP_STATE	9501	12626	0
 // OP_DONE	0	0	0
-void () func000793 = [122, func000794]
+void () ogre_die11 = [122, ogre_die12]
 {
 };
 
 
-// func000794
+// ogre_die12
 // function begins at statement 18951, parm_start=12627
 // OP_STATE	12627	12628	0
 // OP_DONE	0	0	0
-void () func000794 = [123, func000795]
+void () ogre_die12 = [123, ogre_die13]
 {
 };
 
 
-// func000795
+// ogre_die13
 // function begins at statement 18953, parm_start=12629
 // OP_STATE	12629	12630	0
 // OP_DONE	0	0	0
-void () func000795 = [124, func000796]
+void () ogre_die13 = [124, ogre_die14]
 {
 };
 
 
-// func000796
+// ogre_die14
 // function begins at statement 18955, parm_start=12631
 // OP_STATE	9503	12630	0
 // OP_DONE	0	0	0
-void () func000796 = [125, func000796]
+void () ogre_die14 = [125, ogre_die14]
 {
 };
 
 
-// func000797
+// ogre_bdie1
 // function begins at statement 18957, parm_start=12632
 // OP_STATE	9506	12632	0
 // OP_DONE	0	0	0
-void () func000797 = [126, func000798]
+void () ogre_bdie1 = [126, ogre_bdie2]
 {
 };
 
 
-// func000798
+// ogre_bdie2
 // function begins at statement 18959, parm_start=12633
 // OP_STATE	9509	12633	0
 // OP_STORE_V	230	4	0
 // OP_CALL1	3782	0	0
 // OP_DONE	0	0	0
-void () func000798 = [127, func000799]
+void () ogre_bdie2 = [127, ogre_bdie3]
 {
     ai_forward(MOVETYPE_FLY);
 };
 
 
-// func000799
+// ogre_bdie3
 // function begins at statement 18963, parm_start=12634
 // OP_STATE	221	12634	0
 // OP_ADDRESS	28	104	12635
@@ -1938,7 +1938,7 @@ void () func000798 = [127, func000799]
 // OP_STOREP_F	216	12636	0
 // OP_CALL0	5177	0	0
 // OP_DONE	0	0	0
-void () func000799 = [128, func000800]
+void () ogre_bdie3 = [128, ogre_bdie4]
 {
     self.solid = SOLID_NOT;
     self.ammo_rockets = FL_SWIM;
@@ -1946,82 +1946,82 @@ void () func000799 = [128, func000800]
 };
 
 
-// func000800
+// ogre_bdie4
 // function begins at statement 18970, parm_start=12637
 // OP_STATE	12637	12638	0
 // OP_STORE_V	214	4	0
 // OP_CALL1	3782	0	0
 // OP_DONE	0	0	0
-void () func000800 = [129, func000801]
+void () ogre_bdie4 = [129, ogre_bdie5]
 {
     ai_forward(TRUE);
 };
 
 
-// func000801
+// ogre_bdie5
 // function begins at statement 18974, parm_start=12639
 // OP_STATE	12639	12640	0
 // OP_STORE_V	228	4	0
 // OP_CALL1	3782	0	0
 // OP_DONE	0	0	0
-void () func000801 = [130, func000802]
+void () ogre_bdie5 = [130, ogre_bdie6]
 {
     ai_forward(MOVETYPE_WALK);
 };
 
 
-// func000802
+// ogre_bdie6
 // function begins at statement 18978, parm_start=12641
 // OP_STATE	9513	12641	0
 // OP_STORE_V	232	4	0
 // OP_CALL1	3782	0	0
 // OP_DONE	0	0	0
-void () func000802 = [131, func000803]
+void () ogre_bdie6 = [131, ogre_bdie7]
 {
     ai_forward(MOVETYPE_PUSH);
 };
 
 
-// func000803
+// ogre_bdie7
 // function begins at statement 18982, parm_start=12642
 // OP_STATE	9516	12642	0
 // OP_STORE_V	305	4	0
 // OP_CALL1	3782	0	0
 // OP_DONE	0	0	0
-void () func000803 = [132, func000804]
+void () ogre_bdie7 = [132, ogre_bdie8]
 {
     ai_forward(SVC_SIGNONNUM);
 };
 
 
-// func000804
+// ogre_bdie8
 // function begins at statement 18986, parm_start=12643
 // OP_STATE	9519	12643	0
 // OP_DONE	0	0	0
-void () func000804 = [133, func000805]
+void () ogre_bdie8 = [133, ogre_bdie9]
 {
 };
 
 
-// func000805
+// ogre_bdie9
 // function begins at statement 18988, parm_start=12644
 // OP_STATE	9522	12644	0
 // OP_DONE	0	0	0
-void () func000805 = [134, func000806]
+void () ogre_bdie9 = [134, ogre_bdie10]
 {
 };
 
 
-// func000806
+// ogre_bdie10
 // function begins at statement 18990, parm_start=12645
 // OP_STATE	12645	12644	0
 // OP_DONE	0	0	0
-void () func000806 = [135, func000806]
+void () ogre_bdie10 = [135, ogre_bdie10]
 {
 };
 
 
-// func000807
+// ogre_die
 // function begins at statement 18992, parm_start=12647
 // OP_LOAD_F	28	152	12647
 // OP_LT	12647	12648	12649
@@ -2062,7 +2062,7 @@ void () func000806 = [135, func000806]
 // OP_GOTO	2	0	0
 // OP_CALL0	12631	0	0
 // OP_DONE	0	0	0
-void () func000807 = 
+void () ogre_die = 
 {
     
     if(self.health < -80)
@@ -2078,17 +2078,17 @@ void () func000807 =
     sound(self, CHAN_VOICE, "ogre/ogdth.wav", TRUE, ATTN_NORM);
     if(random() < RA_PLAYERSTATTIME)
     {
-        func000783();
+        ogre_die1();
     }
     else
     {
-        func000797();
+        ogre_bdie1();
     }
     
 };
 
 
-// func000808
+// ogre_melee
 // function begins at statement 19031, parm_start=12658
 // OP_CALL0	457	0	0
 // OP_GT	1	539	12658
@@ -2097,7 +2097,7 @@ void () func000807 =
 // OP_GOTO	2	0	0
 // OP_CALL0	3183	0	0
 // OP_DONE	0	0	0
-void () func000808 = 
+void () ogre_melee = 
 {
     if(random() > RA_PLAYERSTATTIME)
     {
@@ -2111,7 +2111,7 @@ void () func000808 =
 };
 
 
-// func000809
+// monster_ogre_original
 // function begins at statement 19038, parm_start=12660
 // OP_IFNOT	35	4	0
 // OP_STORE_V	28	4	0
@@ -2166,7 +2166,7 @@ void () func000808 =
 // OP_STOREP_FNC	12591	12670	0
 // OP_CALL0	10107	0	0
 // OP_DONE	0	0	0
-void () func000809 = 
+void () monster_ogre_original = 
 {
     
     if(deathmatch)
@@ -2190,13 +2190,13 @@ void () func000809 =
     setmodel(self, "progs/ogre.mdl");
     setsize(self, VEC_HULL2_MIN, VEC_HULL2_MAX);
     self.health = 200;
-    self.th_stand = func000669;
-    self.th_walk = func000678;
-    self.th_run = func000694;
-    self.th_die = func000807;
-    self.th_melee = func000808;
-    self.th_missile = func000730;
-    self.th_pain = func000782;
+    self.th_stand = ogre_stand1;
+    self.th_walk = ogre_walk1;
+    self.th_run = ogre_run1;
+    self.th_die = ogre_die;
+    self.th_melee = ogre_melee;
+    self.th_missile = ogre_nail1;
+    self.th_pain = ogre_pain;
     walkmonster_start();
 };
 
@@ -2207,7 +2207,7 @@ void () func000809 =
 // OP_DONE	0	0	0
 void () monster_ogre = 
 {
-    func000809();
+    monster_ogre_original();
 };
 
 
@@ -2217,6 +2217,6 @@ void () monster_ogre =
 // OP_DONE	0	0	0
 void () monster_ogre_marksman = 
 {
-    func000809();
+    monster_ogre_original();
 };
 
