@@ -17,22 +17,22 @@
 // OP_STORE_F	1	22950	0
 // OP_RETURN	22950	0	0
 // OP_DONE	0	0	0
-float (entity globaldef007582, float globaldef007583) BotJumpToGoal = 
+float (entity bot, float botspeed) BotJumpToGoal = 
 {
-    local float globaldef007584;
+    local float obstacle;
     
-    if(globaldef007582.teleport_time > time)
+    if(bot.teleport_time > time)
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     
-    if(globaldef007583 > globaldef000783)
+    if(botspeed > globaldef000783)
     {
     }
     
-    globaldef007583 = globaldef007583 = globaldef000783;
-    globaldef007584 = func002441(globaldef007582, VEC_ORIGIN, globaldef007583, TRUE);
-    return globaldef007584;
+    botspeed = botspeed = globaldef000783;
+    obstacle = func002441(bot, VEC_ORIGIN, botspeed, TRUE);
+    return obstacle;
 };
 

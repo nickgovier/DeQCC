@@ -179,7 +179,7 @@ float globaldef000707;
 float globaldef000708;
 float globaldef000709;
 float globaldef000710;
-float globaldef000711;
+float OBSTACLE_TELEPORT = 0;
 float globaldef000712;
 float globaldef000713;
 float globaldef000714;

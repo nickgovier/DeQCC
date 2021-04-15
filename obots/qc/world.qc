@@ -627,7 +627,7 @@ void () worldspawn =
     }
     
     W_Precache();
-    func002458();
+    CreateFloorTestEnt();
     
     if(cvar("registered") == FL_SWIM)
     {

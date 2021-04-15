@@ -2524,7 +2524,7 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     
     globaldef009188 = func002671();
     globaldef009189 = (globaldef009187.absmin + globaldef009187.absmax) * RA_PLAYERSTATTIME;
-    globaldef009189_z = func002457(globaldef009189) + FL_SWIM;
+    globaldef009189_z = AbsFloorHeight(globaldef009189) + FL_SWIM;
     setorigin(globaldef009188, globaldef009189);
     globaldef009188.field000299 = globaldef009186.field000299;
     globaldef009186.field000299 = globaldef009188;
@@ -2804,13 +2804,13 @@ float () func002679 =
     }
     
     
-    if(func002460(self))
+    if(BotIsOnPlatDoorTrain(self))
     {
         return FALSE;
     }
     
     
-    if(func002459(self))
+    if(BotAbovePlatDoorTrain(self))
     {
         return FALSE;
     }

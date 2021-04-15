@@ -300,6 +300,12 @@ namespace DeQcc
 
             #endregion
 
+            // DECOMPILATION bug
+            // b_move.qc BotJumpToGoal
+            // if(botspeed ...)
+            // line following block should be inside block
+            // line following is compound = statement (likely the issue)
+            // seems to be a double assignment to the same variable?
 
             nameMap.Add("globaldef000529", "end_ra_globals");
             nameMap.Add("field000224", "f_updatecache");
@@ -330,6 +336,9 @@ namespace DeQcc
             nameMap.Add("globaldef000526", "first");
             nameMap.Add("globaldef000527", "time_to_start");
             nameMap.Add("globaldef000528", "last_time");
+
+            nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
+            
 
             nameMap.Add("globaldef000717", "GLOBALDEF717_270");  // constant = 270
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
@@ -1898,8 +1907,6 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region ogre.qc
 
             nameMap.Add("func000665", "OgreGrenadeExplode");
@@ -1948,6 +1955,8 @@ namespace DeQcc
             nameMap.Add("globaldef003787", "r");
 
             #endregion
+
+            // Done to here
 
             #region demon.qc
 
@@ -2605,6 +2614,48 @@ namespace DeQcc
             {
                 fileMap[i] = "b_move.qc";
             }
+
+            // BotJumpToGoal params
+            nameMap.Add("globaldef007582", "bot");
+            nameMap.Add("globaldef007583", "botspeed");
+
+            // BotJumpToGoal locals
+            nameMap.Add("globaldef007584", "obstacle");
+
+            #endregion
+
+            #region b_locate.qc
+
+            nameMap.Add("func002457", "AbsFloorHeight");
+            nameMap.Add("func002458", "CreateFloorTestEnt");
+            nameMap.Add("func002459", "BotAbovePlatDoorTrain");
+            nameMap.Add("func002460", "BotIsOnPlatDoorTrain");
+            nameMap.Add("func002461", "BotIsOnMovingPlatDoorTrain");
+
+            for (int i = 2457; i <= 2461; i++)
+            {
+                fileMap[i] = "b_locate.qc";
+            }
+
+            // AbsFloorHeight params
+            nameMap.Add("globaldef007677", "spot");
+
+            // BotAbovePlatDoorTrain params
+            nameMap.Add("globaldef007683", "e");
+
+            // BotAbovePlatDoorTrain locals
+            nameMap.Add("globaldef007684", "start");
+            nameMap.Add("globaldef007688", "end");
+
+            // BotIsOnPlatDoorTrain params
+            nameMap.Add("globaldef007692", "e");
+
+            // BotIsOnMovingPlatDoorTrain params
+            nameMap.Add("globaldef007693", "e");
+
+            // BotIsOnMovingPlatDoorTrain locals
+            nameMap.Add("globaldef007694", "start");
+            nameMap.Add("globaldef007698", "end");
 
             #endregion
 

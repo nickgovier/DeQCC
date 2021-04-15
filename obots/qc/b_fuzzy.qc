@@ -472,7 +472,7 @@ float (entity bot, entity e) goalweight_triggerpush =
         
         if(trace_fraction == TRUE)
         {
-            vec1_z = func002457(vec2);
+            vec1_z = AbsFloorHeight(vec2);
             
             if(self.absmin_z > vec1_z)
             {

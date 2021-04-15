@@ -621,7 +621,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
     local float globaldef007200;
     local float globaldef007201;
     local float globaldef007202;
-    globaldef007149 = globaldef000711;
+    globaldef007149 = OBSTACLE_TELEPORT;
     globaldef007160 = globaldef007143.goalentity.origin;
     if(globaldef007144 == VEC_ORIGIN)
     {
@@ -1995,13 +1995,13 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
     
     if(globaldef007396.teleport_time > time)
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     
     if(!(globaldef007396.botflags & globaldef000683))
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     globaldef007396.velocity = VEC_ORIGIN;
@@ -2031,7 +2031,7 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
         }
         
         func002431(globaldef007396, globaldef007407);
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     return globaldef000716;
@@ -2280,7 +2280,7 @@ float (entity globaldef007412) func002438 =
         func002435(globaldef007412, VEC_ORIGIN);
         globaldef007412.field000279 = globaldef007445;
         globaldef007412.field000278 = time + RA_PLAYERSTATTIME;
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     return globaldef000716;
@@ -3397,7 +3397,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     
     if(globaldef007502.field000278 > time)
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     
@@ -3415,7 +3415,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             
         }
         
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     if(globaldef007503 == VEC_ORIGIN)
@@ -3473,7 +3473,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
                                 globaldef007519 = globaldef000783 * normalize(globaldef007519);
                                 globaldef007519_z = GLOBALDEF717_270;
                                 func002431(globaldef007502, globaldef007519);
-                                return globaldef000711;
+                                return OBSTACLE_TELEPORT;
                             }
                             
                         }
@@ -3488,7 +3488,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         
     }
     
-    globaldef007510 = func002461(globaldef007502);
+    globaldef007510 = BotIsOnMovingPlatDoorTrain(globaldef007502);
     
     if(globaldef007510)
     {
@@ -3506,7 +3506,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             func002437(globaldef007502, globaldef007503, globaldef007507);
         }
         
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     
@@ -3547,7 +3547,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             
             if(func002437(globaldef007502, globaldef007503, globaldef007507) != globaldef000716)
             {
-                return globaldef000711;
+                return OBSTACLE_TELEPORT;
             }
             
         }
@@ -3557,7 +3557,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
     
     if(func002432(globaldef007502, globaldef007503))
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     globaldef007502.velocity = VEC_ORIGIN;
@@ -3620,7 +3620,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
         
         if(func002436(globaldef007502, globaldef007519, globaldef007503, globaldef007507))
         {
-            return globaldef000711;
+            return OBSTACLE_TELEPORT;
         }
         
         return globaldef000716;
@@ -3633,7 +3633,7 @@ float (entity globaldef007502, vector globaldef007503, float globaldef007507, fl
             
             if(func002436(globaldef007502, globaldef007519, globaldef007503, globaldef007507))
             {
-                return globaldef000711;
+                return OBSTACLE_TELEPORT;
             }
             
             return globaldef000716;
@@ -3751,7 +3751,7 @@ float (entity globaldef007567, vector globaldef007568, float globaldef007572, fl
         makevectors(globaldef007567.angles);
         globaldef007567.velocity_x = v_forward_x * FL_GODMODE;
         globaldef007567.velocity_y = v_forward_y * FL_GODMODE;
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     if(globaldef007567.waterlevel > TRUE)
@@ -3791,7 +3791,7 @@ float (entity globaldef007579, float globaldef007580) func002442 =
     
     if(globaldef007579.teleport_time > time)
     {
-        return globaldef000711;
+        return OBSTACLE_TELEPORT;
     }
     
     

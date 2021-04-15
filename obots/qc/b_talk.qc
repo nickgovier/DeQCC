@@ -701,7 +701,7 @@ float (entity bot) CheckBotKillMessage =
         }
         
         
-        if(func002460(bot))
+        if(BotIsOnPlatDoorTrain(bot))
         {
             return FALSE;
         }
@@ -810,7 +810,7 @@ float (entity globaldef006844) func002379 =
         }
         
         
-        if(func002460(globaldef006844))
+        if(BotIsOnPlatDoorTrain(globaldef006844))
         {
             return FALSE;
         }
