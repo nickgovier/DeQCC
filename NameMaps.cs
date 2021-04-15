@@ -307,10 +307,17 @@ namespace DeQcc
             // line following is compound = statement (likely the issue)
             // seems to be a double assignment to the same variable?
 
-            
+
 
 
             #region obot constants
+
+            nameMap.Add("globaldef000700", "WAYPOINTTYPE_PLATTOP");
+            nameMap.Add("globaldef000702", "WAYPOINTTYPE_TELEPORT");
+            nameMap.Add("globaldef000703", "WAYPOINTTYPE_ITEM");
+            nameMap.Add("globaldef000704", "WAYPOINTTYPE_UNUSED1");
+            nameMap.Add("globaldef000705", "WAYPOINTTYPE_UNUSED2");
+            nameMap.Add("globaldef000706", "WAYPOINTTYPE_PLATBOTTOM");
 
             nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
 
@@ -389,6 +396,7 @@ namespace DeQcc
             nameMap.Add("globaldef000784", "gibsCount"); // player.qc
             nameMap.Add("globaldef000786", "waypointCount");
 
+            nameMap.Add("globaldef000789", "bspWaypointsExist");
             nameMap.Add("globaldef000790", "hardCodedWaypointsExist");
 
             nameMap.Add("globaldef000792", "observerCount");
@@ -455,6 +463,30 @@ namespace DeQcc
             nameMap.Add("field000296", "attackedby");
             nameMap.Add("field000297", "next");
             nameMap.Add("field000298", "prev");
+
+            nameMap.Add("field000315", "cache0_ent");
+            nameMap.Add("field000316", "cache1_ent");
+            nameMap.Add("field000317", "cache2_ent");
+            nameMap.Add("field000318", "cache3_ent");
+            nameMap.Add("field000319", "cache4_ent");
+            nameMap.Add("field000320", "cache5_ent");
+            nameMap.Add("field000321", "cache6_ent");
+            nameMap.Add("field000322", "cache7_ent");
+            nameMap.Add("field000323", "cache8_ent");
+            nameMap.Add("field000324", "cache9_ent");
+            nameMap.Add("field000325", "cache0_dist");
+            nameMap.Add("field000326", "cache1_dist");
+            nameMap.Add("field000327", "cache2_dist");
+            nameMap.Add("field000328", "cache3_dist");
+            nameMap.Add("field000329", "cache4_dist");
+            nameMap.Add("field000330", "cache5_dist");
+            nameMap.Add("field000331", "cache6_dist");
+            nameMap.Add("field000332", "cache7_dist");
+            nameMap.Add("field000333", "cache8_dist");
+            nameMap.Add("field000334", "cache9_dist");
+
+
+
 
             #endregion
 
@@ -2786,18 +2818,85 @@ namespace DeQcc
 
             #region b_waypnt.qc
 
+            nameMap.Add("func002640", "update_cache0");
+            nameMap.Add("func002641", "update_cache1");
+            nameMap.Add("func002642", "update_cache2");
+            nameMap.Add("func002643", "update_cache3");
+            nameMap.Add("func002644", "update_cache4");
+            nameMap.Add("func002645", "update_cache5");
+            nameMap.Add("func002646", "update_cache6");
+            nameMap.Add("func002647", "update_cache7");
+            nameMap.Add("func002648", "update_cachex1");
+
             nameMap.Add("func002650", "GetWaypointByID");
+            nameMap.Add("func002651", "SetNearestItemForWaypoint");
+            nameMap.Add("func002652", "SetNearestTeleportForWaypoint");
+            nameMap.Add("func002653", "SetNearestPlatTopForWaypoint");
+            nameMap.Add("func002654", "SetNearestPlatBottomForWaypoint");
+
             nameMap.Add("func002660", "dumpbspwaypoints");  // impulse 170
             nameMap.Add("func002662", "dumphcwaypoints");  // impulse 171
+
+            nameMap.Add("func002666", "waypoint_touch");
 
             nameMap.Add("func002668", "HCWP_Create");
             nameMap.Add("func002669", "HCWP_SetPointers1");
             nameMap.Add("func002670", "HCWP_SetPointers2");
 
-            for (int i = 2649; i <= 2692; i++)
+            for (int i = 2640; i <= 2692; i++)
             {
                 fileMap[i] = "b_waypnt.qc";
             }
+
+            // update_cache0 params
+            nameMap.Add("globaldef008983", "wp");
+            nameMap.Add("globaldef008984", "dist");
+            nameMap.Add("globaldef008985", "ent");
+
+            // update_cache1 params
+            nameMap.Add("globaldef008986", "wp");
+            nameMap.Add("globaldef008987", "dist");
+            nameMap.Add("globaldef008988", "ent");
+
+            // update_cache2 params
+            nameMap.Add("globaldef008989", "wp");
+            nameMap.Add("globaldef008990", "dist");
+            nameMap.Add("globaldef008991", "ent");
+
+            // update_cache3 params
+            nameMap.Add("globaldef008992", "wp");
+            nameMap.Add("globaldef008993", "dist");
+            nameMap.Add("globaldef008994", "ent");
+
+            // update_cache4 params
+            nameMap.Add("globaldef008995", "wp");
+            nameMap.Add("globaldef008996", "dist");
+            nameMap.Add("globaldef008997", "ent");
+
+            // update_cache5 params
+            nameMap.Add("globaldef008998", "wp");
+            nameMap.Add("globaldef008999", "dist");
+            nameMap.Add("globaldef009000", "ent");
+
+            // update_cache6 params
+            nameMap.Add("globaldef009001", "wp");
+            nameMap.Add("globaldef009002", "dist");
+            nameMap.Add("globaldef009003", "ent");
+
+            // update_cache7 params
+            nameMap.Add("globaldef009004", "wp");
+            nameMap.Add("globaldef009005", "dist");
+            nameMap.Add("globaldef009006", "ent");
+
+            // update_cachex1 params
+            nameMap.Add("globaldef009008", "wp");
+            nameMap.Add("globaldef009009", "dist");
+            nameMap.Add("globaldef009010", "ent");
+
+            // update_cachex2 params
+            nameMap.Add("globaldef009012", "wp");
+            nameMap.Add("globaldef009013", "dist");
+            nameMap.Add("globaldef009014", "ent");
 
             // GetWaypointByID params
             nameMap.Add("globaldef009016", "wp_id");

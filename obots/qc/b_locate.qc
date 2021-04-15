@@ -525,7 +525,7 @@ float (entity a, entity b) Reachable =
     if(a.classname == "waypoint")
     {
         
-        if(a.waypointtype == globaldef000702)
+        if(a.waypointtype == WAYPOINTTYPE_TELEPORT)
         {
             a = find(world, targetname, a.enemy.target);
             

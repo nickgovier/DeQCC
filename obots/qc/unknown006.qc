@@ -690,7 +690,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
     if(globaldef007809.classname == "waypoint")
     {
         
-        if(globaldef007809.waypointtype == globaldef000702)
+        if(globaldef007809.waypointtype == WAYPOINTTYPE_TELEPORT)
         {
             globaldef007809 = find(world, targetname, globaldef007809.enemy.target);
             
@@ -709,7 +709,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
     if(globaldef007810.classname == "waypoint")
     {
         
-        if((globaldef007810.waypointtype == globaldef000700) || (globaldef007810.waypointtype == globaldef000706))
+        if((globaldef007810.waypointtype == WAYPOINTTYPE_PLATTOP) || (globaldef007810.waypointtype == WAYPOINTTYPE_PLATBOTTOM))
         {
             
             if(globaldef007810.enemy.state != STATE_BOTTOM)
@@ -3735,7 +3735,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
                     }
                     
                     
-                    if(globaldef008048.waypointtype == globaldef000702)
+                    if(globaldef008048.waypointtype == WAYPOINTTYPE_TELEPORT)
                     {
                         globaldef008051 = globaldef008051 + GLOBALDEF728_500;
                     }
@@ -4327,58 +4327,58 @@ entity (entity globaldef008076) func002495 =
         {
             if(globaldef008083 == FALSE)
             {
-                globaldef008092 = globaldef008093.field000315;
-                globaldef008082 = globaldef008093.field000325;
+                globaldef008092 = globaldef008093.cache0_ent;
+                globaldef008082 = globaldef008093.cache0_dist;
             }
             else
             {
                 if(globaldef008083 == TRUE)
                 {
-                    globaldef008092 = globaldef008093.field000316;
-                    globaldef008082 = globaldef008093.field000326;
+                    globaldef008092 = globaldef008093.cache1_ent;
+                    globaldef008082 = globaldef008093.cache1_dist;
                 }
                 else
                 {
                     if(globaldef008083 == FL_SWIM)
                     {
-                        globaldef008092 = globaldef008093.field000317;
-                        globaldef008082 = globaldef008093.field000327;
+                        globaldef008092 = globaldef008093.cache2_ent;
+                        globaldef008082 = globaldef008093.cache2_dist;
                     }
                     else
                     {
                         if(globaldef008083 == MOVETYPE_WALK)
                         {
-                            globaldef008092 = globaldef008093.field000318;
-                            globaldef008082 = globaldef008093.field000328;
+                            globaldef008092 = globaldef008093.cache3_ent;
+                            globaldef008082 = globaldef008093.cache3_dist;
                         }
                         else
                         {
                             if(globaldef008083 == MOVETYPE_STEP)
                             {
-                                globaldef008092 = globaldef008093.field000319;
-                                globaldef008082 = globaldef008093.field000329;
+                                globaldef008092 = globaldef008093.cache4_ent;
+                                globaldef008082 = globaldef008093.cache4_dist;
                             }
                             else
                             {
                                 if(globaldef008083 == MOVETYPE_FLY)
                                 {
-                                    globaldef008092 = globaldef008093.field000320;
-                                    globaldef008082 = globaldef008093.field000330;
+                                    globaldef008092 = globaldef008093.cache5_ent;
+                                    globaldef008082 = globaldef008093.cache5_dist;
                                 }
                                 else
                                 {
                                     if(globaldef008083 == MOVETYPE_TOSS)
                                     {
-                                        globaldef008092 = globaldef008093.field000321;
-                                        globaldef008082 = globaldef008093.field000331;
+                                        globaldef008092 = globaldef008093.cache6_ent;
+                                        globaldef008082 = globaldef008093.cache6_dist;
                                     }
                                     else
                                     {
                                         
                                         if(globaldef008083 == MOVETYPE_PUSH)
                                         {
-                                            globaldef008092 = globaldef008093.field000322;
-                                            globaldef008082 = globaldef008093.field000332;
+                                            globaldef008092 = globaldef008093.cache7_ent;
+                                            globaldef008082 = globaldef008093.cache7_dist;
                                         }
                                         
                                     }

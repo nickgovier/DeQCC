@@ -289,7 +289,7 @@ void () item_health =
             self.healtype = FL_SWIM;
             self.f_goalweight = goalweight_megahealth;
             self.f_walkaboutweight = walkaboutweight_megahealth;
-            self.f_updatecache = func002647;
+            self.f_updatecache = update_cache7;
         }
         else
         {
@@ -869,7 +869,7 @@ void () item_armor2 =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_yellowarmor;
     self.f_walkaboutweight = walkaboutweight_yellowarmor;
-    self.f_updatecache = func002646;
+    self.f_updatecache = update_cache6;
     StartItem();
 };
 
@@ -909,7 +909,7 @@ void () item_armorInv =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_redarmor;
     self.f_walkaboutweight = walkaboutweight_redarmor;
-    self.f_updatecache = func002646;
+    self.f_updatecache = update_cache6;
     StartItem();
 };
 
@@ -1509,7 +1509,7 @@ void () weapon_supershotgun =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_supershotgun;
     self.f_walkaboutweight = walkaboutweight_supershotgun;
-    self.f_updatecache = func002640;
+    self.f_updatecache = update_cache0;
     StartItem();
 };
 
@@ -1549,7 +1549,7 @@ void () weapon_nailgun =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_nailgun;
     self.f_walkaboutweight = walkaboutweight_nailgun;
-    self.f_updatecache = func002641;
+    self.f_updatecache = update_cache1;
     StartItem();
 };
 
@@ -1589,7 +1589,7 @@ void () weapon_supernailgun =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_supernailgun;
     self.f_walkaboutweight = walkaboutweight_supernailgun;
-    self.f_updatecache = func002642;
+    self.f_updatecache = update_cache2;
     StartItem();
 };
 
@@ -1629,7 +1629,7 @@ void () weapon_grenadelauncher =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_grenadelauncher;
     self.f_walkaboutweight = walkaboutweight_grenadelauncher;
-    self.f_updatecache = func002643;
+    self.f_updatecache = update_cache3;
     StartItem();
 };
 
@@ -1669,7 +1669,7 @@ void () weapon_rocketlauncher =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_rocketlauncher;
     self.f_walkaboutweight = walkaboutweight_rocketlauncher;
-    self.f_updatecache = func002644;
+    self.f_updatecache = update_cache4;
     StartItem();
 };
 
@@ -1709,7 +1709,7 @@ void () weapon_lightning =
     setsize(self, '-16 -16 0', '16 16 56');
     self.f_goalweight = goalweight_lightning;
     self.f_walkaboutweight = walkaboutweight_lightning;
-    self.f_updatecache = func002645;
+    self.f_updatecache = update_cache5;
     StartItem();
 };
 
@@ -3159,7 +3159,7 @@ void () item_artifact_invulnerability =
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.f_goalweight = goalweight_invulnerability;
     self.f_walkaboutweight = walkaboutweight_invulnerability;
-    self.f_updatecache = func002647;
+    self.f_updatecache = update_cache7;
     StartItem();
 };
 
@@ -3254,7 +3254,7 @@ void () item_artifact_invisibility =
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.f_goalweight = goalweight_invisibility;
     self.f_walkaboutweight = walkaboutweight_invisibility;
-    self.f_updatecache = func002647;
+    self.f_updatecache = update_cache7;
     StartItem();
 };
 
@@ -3306,7 +3306,7 @@ void () item_artifact_super_damage =
     setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
     self.f_goalweight = goalweight_quad;
     self.f_walkaboutweight = walkaboutweight_quad;
-    self.f_updatecache = func002647;
+    self.f_updatecache = update_cache7;
     StartItem();
 };
 

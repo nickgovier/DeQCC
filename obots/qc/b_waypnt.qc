@@ -1,4 +1,310 @@
 
+// update_cache0
+// function begins at statement 53330, parm_start=28159
+// OP_LOAD_F	28159	648	28162
+// OP_GT	28162	213	28163
+// OP_IFNOT	28163	5	0
+// OP_LOAD_F	28159	648	28164
+// OP_GE	28160	28164	28165
+// OP_IFNOT	28165	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28159	648	28166
+// OP_STOREP_F	28160	28166	0
+// OP_ADDRESS	28159	638	28167
+// OP_STOREP_ENT	28161	28167	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache0 = 
+{
+    
+    if(wp.cache0_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache0_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache0_dist = dist;
+    wp.cache0_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache1
+// function begins at statement 53343, parm_start=28168
+// OP_LOAD_F	28168	649	28171
+// OP_GT	28171	214	28172
+// OP_IFNOT	28172	5	0
+// OP_LOAD_F	28168	649	28173
+// OP_GE	28169	28173	28174
+// OP_IFNOT	28174	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28168	649	28175
+// OP_STOREP_F	28169	28175	0
+// OP_ADDRESS	28168	639	28176
+// OP_STOREP_ENT	28170	28176	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache1 = 
+{
+    
+    if(wp.cache1_dist > TRUE)
+    {
+        
+        if(dist >= wp.cache1_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache1_dist = dist;
+    wp.cache1_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache2
+// function begins at statement 53356, parm_start=28177
+// OP_LOAD_F	28177	650	28180
+// OP_GT	28180	213	28181
+// OP_IFNOT	28181	5	0
+// OP_LOAD_F	28177	650	28182
+// OP_GE	28178	28182	28183
+// OP_IFNOT	28183	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28177	650	28184
+// OP_STOREP_F	28178	28184	0
+// OP_ADDRESS	28177	640	28185
+// OP_STOREP_ENT	28179	28185	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache2 = 
+{
+    
+    if(wp.cache2_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache2_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache2_dist = dist;
+    wp.cache2_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache3
+// function begins at statement 53369, parm_start=28186
+// OP_LOAD_F	28186	651	28189
+// OP_GT	28189	213	28190
+// OP_IFNOT	28190	5	0
+// OP_LOAD_F	28186	651	28191
+// OP_GE	28187	28191	28192
+// OP_IFNOT	28192	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28186	651	28193
+// OP_STOREP_F	28187	28193	0
+// OP_ADDRESS	28186	641	28194
+// OP_STOREP_ENT	28188	28194	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache3 = 
+{
+    
+    if(wp.cache3_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache3_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache3_dist = dist;
+    wp.cache3_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache4
+// function begins at statement 53382, parm_start=28195
+// OP_LOAD_F	28195	652	28198
+// OP_GT	28198	213	28199
+// OP_IFNOT	28199	5	0
+// OP_LOAD_F	28195	652	28200
+// OP_GE	28196	28200	28201
+// OP_IFNOT	28201	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28195	652	28202
+// OP_STOREP_F	28196	28202	0
+// OP_ADDRESS	28195	642	28203
+// OP_STOREP_ENT	28197	28203	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache4 = 
+{
+    
+    if(wp.cache4_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache4_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache4_dist = dist;
+    wp.cache4_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache5
+// function begins at statement 53395, parm_start=28204
+// OP_LOAD_F	28204	653	28207
+// OP_GT	28207	213	28208
+// OP_IFNOT	28208	5	0
+// OP_LOAD_F	28204	653	28209
+// OP_GE	28205	28209	28210
+// OP_IFNOT	28210	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28204	653	28211
+// OP_STOREP_F	28205	28211	0
+// OP_ADDRESS	28204	643	28212
+// OP_STOREP_ENT	28206	28212	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache5 = 
+{
+    
+    if(wp.cache5_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache5_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache5_dist = dist;
+    wp.cache5_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache6
+// function begins at statement 53408, parm_start=28213
+// OP_LOAD_F	28213	654	28216
+// OP_GT	28216	213	28217
+// OP_IFNOT	28217	5	0
+// OP_LOAD_F	28213	654	28218
+// OP_GE	28214	28218	28219
+// OP_IFNOT	28219	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28213	654	28220
+// OP_STOREP_F	28214	28220	0
+// OP_ADDRESS	28213	644	28221
+// OP_STOREP_ENT	28215	28221	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache6 = 
+{
+    
+    if(wp.cache6_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache6_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache6_dist = dist;
+    wp.cache6_ent = ent;
+    return TRUE;
+};
+
+
+// update_cache7
+// function begins at statement 53421, parm_start=28222
+// OP_LOAD_F	28222	655	28225
+// OP_GT	28225	213	28226
+// OP_IFNOT	28226	5	0
+// OP_LOAD_F	28222	655	28227
+// OP_GE	28223	28227	28228
+// OP_IFNOT	28228	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28222	655	28229
+// OP_STOREP_F	28223	28229	0
+// OP_ADDRESS	28222	645	28230
+// OP_STOREP_ENT	28224	28230	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cache7 = 
+{
+    
+    if(wp.cache7_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache7_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache7_dist = dist;
+    wp.cache7_ent = ent;
+    return TRUE;
+};
+
+
+// update_cachex1
+// function begins at statement 53434, parm_start=28232
+// OP_LOAD_F	28232	656	28235
+// OP_GT	28235	213	28236
+// OP_IFNOT	28236	5	0
+// OP_LOAD_F	28232	656	28237
+// OP_GE	28233	28237	28238
+// OP_IFNOT	28238	2	0
+// OP_RETURN	213	0	0
+// OP_ADDRESS	28232	656	28239
+// OP_STOREP_F	28233	28239	0
+// OP_ADDRESS	28232	646	28240
+// OP_STOREP_ENT	28234	28240	0
+// OP_RETURN	214	0	0
+// OP_DONE	0	0	0
+float (entity wp, float dist, entity ent) update_cachex1 = 
+{
+    
+    if(wp.cache8_dist > FALSE)
+    {
+        
+        if(dist >= wp.cache8_dist)
+        {
+            return FALSE;
+        }
+        
+    }
+    
+    wp.cache8_dist = dist;
+    wp.cache8_ent = ent;
+    return TRUE;
+};
+
+
 // update_cachex2
 // function begins at statement 53447, parm_start=28242
 // OP_LOAD_F	28242	657	28245
@@ -14,21 +320,21 @@
 // OP_STOREP_ENT	28244	28250	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float (entity globaldef009012, float globaldef009013, entity globaldef009014) update_cachex2 = 
+float (entity wp, float dist, entity ent) update_cachex2 = 
 {
     
-    if(globaldef009012.field000334 > FALSE)
+    if(wp.cache9_dist > FALSE)
     {
         
-        if(globaldef009013 >= globaldef009012.field000334)
+        if(dist >= wp.cache9_dist)
         {
             return FALSE;
         }
         
     }
     
-    globaldef009012.field000334 = globaldef009013;
-    globaldef009012.field000324 = globaldef009014;
+    wp.cache9_dist = dist;
+    wp.cache9_ent = ent;
     return TRUE;
 };
 
@@ -75,7 +381,7 @@ entity (float wp_id) GetWaypointByID =
 };
 
 
-// func002651
+// SetNearestItemForWaypoint
 // function begins at statement 53474, parm_start=28259
 // OP_STORE_ENT	30	28260	0
 // OP_STORE_F	5347	28262	0
@@ -129,7 +435,7 @@ entity (float wp_id) GetWaypointByID =
 // OP_ADDRESS	28259	181	28297
 // OP_STOREP_ENT	28260	28297	0
 // OP_DONE	0	0	0
-void (entity globaldef009019) func002651 = 
+void (entity globaldef009019) SetNearestItemForWaypoint = 
 {
     local entity globaldef009020;
     local entity globaldef009021;
@@ -171,7 +477,7 @@ void (entity globaldef009019) func002651 =
 };
 
 
-// func002652
+// SetNearestTeleportForWaypoint
 // function begins at statement 53526, parm_start=28299
 // OP_STORE_ENT	30	28301	0
 // OP_STORE_F	5347	28303	0
@@ -223,7 +529,7 @@ void (entity globaldef009019) func002651 =
 // OP_ADDRESS	28299	181	28335
 // OP_STOREP_ENT	28301	28335	0
 // OP_DONE	0	0	0
-void (entity globaldef009031) func002652 = 
+void (entity globaldef009031) SetNearestTeleportForWaypoint = 
 {
     local entity globaldef009032;
     local entity globaldef009033;
@@ -265,7 +571,7 @@ void (entity globaldef009031) func002652 =
 };
 
 
-// func002653
+// SetNearestPlatTopForWaypoint
 // function begins at statement 53576, parm_start=28337
 // OP_STORE_ENT	30	28339	0
 // OP_STORE_F	5347	28341	0
@@ -319,7 +625,7 @@ void (entity globaldef009031) func002652 =
 // OP_ADDRESS	28337	181	28379
 // OP_STOREP_ENT	28339	28379	0
 // OP_DONE	0	0	0
-void (entity globaldef009043) func002653 = 
+void (entity globaldef009043) SetNearestPlatTopForWaypoint = 
 {
     local entity globaldef009044;
     local entity globaldef009045;
@@ -361,7 +667,7 @@ void (entity globaldef009043) func002653 =
 };
 
 
-// func002654
+// SetNearestPlatBottomForWaypoint
 // function begins at statement 53628, parm_start=28381
 // OP_STORE_ENT	30	28383	0
 // OP_STORE_F	2044	28385	0
@@ -419,7 +725,7 @@ void (entity globaldef009043) func002653 =
 // OP_ADDRESS	28381	181	28427
 // OP_STOREP_ENT	28383	28427	0
 // OP_DONE	0	0	0
-void (entity globaldef009055) func002654 = 
+void (entity globaldef009055) SetNearestPlatBottomForWaypoint = 
 {
     local entity globaldef009056;
     local entity globaldef009057;
@@ -491,7 +797,7 @@ float (entity globaldef009067, entity globaldef009068) func002655 =
         return FALSE;
     }
     
-    if(globaldef009068.waypointtype == globaldef000702)
+    if(globaldef009068.waypointtype == WAYPOINTTYPE_TELEPORT)
     {
         globaldef009069 = 50;
     }
@@ -756,7 +1062,7 @@ void () func002657 =
     local float globaldef009074;
     if(globaldef000788 == globaldef000707)
     {
-        if(!globaldef000789)
+        if(!bspWaypointsExist)
         {
             CheckHardCodedWaypoints();
             
@@ -772,7 +1078,7 @@ void () func002657 =
         }
         
         func002656();
-        if(globaldef000789 || hardCodedWaypointsExist)
+        if(bspWaypointsExist || hardCodedWaypointsExist)
         {
             globaldef000788 = globaldef000708;
             obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BOTPATHING;
@@ -821,28 +1127,28 @@ void () func002657 =
                 globaldef009073.field000312 = func002655(globaldef009073, globaldef009073.field000304);
                 globaldef009073.field000313 = func002655(globaldef009073, globaldef009073.field000305);
                 globaldef009073.field000314 = func002655(globaldef009073, globaldef009073.field000306);
-                if(globaldef009073.waypointtype == globaldef000703)
+                if(globaldef009073.waypointtype == WAYPOINTTYPE_ITEM)
                 {
-                    func002651(globaldef009073);
+                    SetNearestItemForWaypoint(globaldef009073);
                 }
                 else
                 {
-                    if(globaldef009073.waypointtype == globaldef000702)
+                    if(globaldef009073.waypointtype == WAYPOINTTYPE_TELEPORT)
                     {
-                        func002652(globaldef009073);
+                        SetNearestTeleportForWaypoint(globaldef009073);
                     }
                     else
                     {
-                        if(globaldef009073.waypointtype == globaldef000700)
+                        if(globaldef009073.waypointtype == WAYPOINTTYPE_PLATTOP)
                         {
-                            func002653(globaldef009073);
+                            SetNearestPlatTopForWaypoint(globaldef009073);
                         }
                         else
                         {
                             
-                            if(globaldef009073.waypointtype == globaldef000706)
+                            if(globaldef009073.waypointtype == WAYPOINTTYPE_PLATBOTTOM)
                             {
-                                func002654(globaldef009073);
+                                SetNearestPlatBottomForWaypoint(globaldef009073);
                             }
                             
                         }
@@ -890,7 +1196,7 @@ void () func002657 =
                 while(globaldef009073)
                 {
                     
-                    if(globaldef009073.waypointtype == globaldef000703)
+                    if(globaldef009073.waypointtype == WAYPOINTTYPE_ITEM)
                     {
                         
                         if(!globaldef009073.enemy.f_updatecache)
@@ -1819,7 +2125,7 @@ void (entity globaldef009130) func002665 =
 };
 
 
-// func002666
+// waypoint_touch
 // function begins at statement 54468, parm_start=28733
 // OP_LOAD_S	29	129	28733
 // OP_NE_S	28733	1241	28734
@@ -1880,7 +2186,7 @@ void (entity globaldef009130) func002665 =
 // OP_ADDRESS	29	622	28765
 // OP_STOREP_ENT	28	28765	0
 // OP_DONE	0	0	0
-void () func002666 = 
+void () waypoint_touch = 
 {
     
     if(other.classname != "bot")
@@ -1902,26 +2208,26 @@ void () func002666 =
         }
         else
         {
-            if(self.waypointtype == globaldef000703)
+            if(self.waypointtype == WAYPOINTTYPE_ITEM)
             {
                 other.search_time = time - TRUE;
             }
             else
             {
-                if(self.waypointtype == globaldef000702)
+                if(self.waypointtype == WAYPOINTTYPE_TELEPORT)
                 {
                     other.search_time = time - TRUE;
                 }
                 else
                 {
-                    if(self.waypointtype == globaldef000706)
+                    if(self.waypointtype == WAYPOINTTYPE_PLATBOTTOM)
                     {
                         other.search_time = time - TRUE;
                     }
                     else
                     {
                         
-                        if(self.waypointtype == globaldef000700)
+                        if(self.waypointtype == WAYPOINTTYPE_PLATTOP)
                         {
                             other.search_time = time - TRUE;
                         }
@@ -1974,7 +2280,7 @@ void () func002666 =
 void () waypoint = 
 {
     self.solid = SOLID_TRIGGER;
-    self.touch = func002666;
+    self.touch = waypoint_touch;
     setsize(self, '-4 -4 -4', '4 4 4');
     
     if(self.waypointnumber > waypointCount)
@@ -1983,7 +2289,7 @@ void () waypoint =
     }
     
     func002664(self);
-    globaldef000789 = TRUE;
+    bspWaypointsExist = TRUE;
 };
 
 
@@ -2023,7 +2329,7 @@ void (vector org, float number, float type, string itemstr) HCWP_Create =
     new_wp = spawn();
     new_wp.classname = "waypoint";
     new_wp.solid = SOLID_TRIGGER;
-    new_wp.touch = func002666;
+    new_wp.touch = waypoint_touch;
     new_wp.waypointnumber = number;
     new_wp.waypointtype = type;
     new_wp.waypointitem = itemstr;
@@ -2158,7 +2464,7 @@ entity () func002671 =
     globaldef009158 = spawn();
     globaldef009158.classname = "waypoint";
     globaldef009158.solid = SOLID_TRIGGER;
-    globaldef009158.touch = func002666;
+    globaldef009158.touch = waypoint_touch;
     globaldef009158.waypointnumber = waypointCount;
     setsize(globaldef009158, '-4 -4 -4', '4 4 4');
     func002664(globaldef009158);
@@ -2364,7 +2670,7 @@ float () func002674 =
     while(globaldef009168)
     {
         
-        if(globaldef009168.waypointtype != globaldef000702)
+        if(globaldef009168.waypointtype != WAYPOINTTYPE_TELEPORT)
         {
             globaldef009171 = globaldef009168.origin;
             globaldef009175 = self.origin;
@@ -2529,7 +2835,7 @@ void (entity globaldef009186, entity globaldef009187) func002676 =
     globaldef009188.field000299 = globaldef009186.field000299;
     globaldef009186.field000299 = globaldef009188;
     globaldef009188.field000307 = func002655(globaldef009188, globaldef009188.field000299);
-    globaldef009188.waypointtype = globaldef000702;
+    globaldef009188.waypointtype = WAYPOINTTYPE_TELEPORT;
     globaldef009187.field000299 = globaldef009188;
     globaldef009188.enemy = globaldef009187;
 };
@@ -2624,7 +2930,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     globaldef009195.field000299 = globaldef009193.field000299;
     globaldef009195.field000307 = func002655(globaldef009195, globaldef009195.field000299);
     globaldef009193.field000299 = globaldef009195;
-    globaldef009195.waypointtype = globaldef000706;
+    globaldef009195.waypointtype = WAYPOINTTYPE_PLATBOTTOM;
     globaldef009194.field000299 = globaldef009195;
     globaldef009195.enemy = globaldef009194;
     globaldef009196 = func002671();
@@ -2633,7 +2939,7 @@ void (entity globaldef009193, entity globaldef009194) func002677 =
     setorigin(globaldef009196, globaldef009197);
     globaldef009196.field000299 = globaldef009195;
     globaldef009196.field000307 = func002655(globaldef009196, globaldef009196.field000299);
-    globaldef009196.waypointtype = globaldef000700;
+    globaldef009196.waypointtype = WAYPOINTTYPE_PLATTOP;
     globaldef009194.field000300 = globaldef009196;
     globaldef009196.enemy = globaldef009194;
 };
@@ -2695,7 +3001,7 @@ void (entity globaldef009202, entity globaldef009203) func002678 =
     globaldef009205_z = globaldef009203.absmin_z + FL_SWIM;
     setorigin(globaldef009204, globaldef009205);
     globaldef009204.field000307 = func002655(globaldef009204, globaldef009204.field000299);
-    globaldef009204.waypointtype = globaldef000703;
+    globaldef009204.waypointtype = WAYPOINTTYPE_ITEM;
     globaldef009203.field000299 = globaldef009204;
     globaldef009204.enemy = globaldef009203;
     globaldef009204.waypointitem = globaldef009203.classname;
@@ -4412,51 +4718,51 @@ void (entity globaldef009241, entity globaldef009242, float globaldef009243, ent
 void (entity globaldef009246, entity globaldef009247) func002684 = 
 {
     
-    if(globaldef009247.field000325 > FALSE)
+    if(globaldef009247.cache0_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000325, globaldef009247.field000315);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache0_dist, globaldef009247.cache0_ent);
     }
     
     
-    if(globaldef009247.field000326 > FALSE)
+    if(globaldef009247.cache1_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000326, globaldef009247.field000316);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache1_dist, globaldef009247.cache1_ent);
     }
     
     
-    if(globaldef009247.field000327 > FALSE)
+    if(globaldef009247.cache2_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000327, globaldef009247.field000317);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache2_dist, globaldef009247.cache2_ent);
     }
     
     
-    if(globaldef009247.field000328 > FALSE)
+    if(globaldef009247.cache3_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000328, globaldef009247.field000318);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache3_dist, globaldef009247.cache3_ent);
     }
     
     
-    if(globaldef009247.field000329 > FALSE)
+    if(globaldef009247.cache4_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000329, globaldef009247.field000319);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache4_dist, globaldef009247.cache4_ent);
     }
     
     
-    if(globaldef009247.field000330 > FALSE)
+    if(globaldef009247.cache5_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000330, globaldef009247.field000320);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache5_dist, globaldef009247.cache5_ent);
     }
     
     
-    if(globaldef009247.field000331 > FALSE)
+    if(globaldef009247.cache6_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000331, globaldef009247.field000321);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache6_dist, globaldef009247.cache6_ent);
     }
     
     
-    if(globaldef009247.field000332 > FALSE)
+    if(globaldef009247.cache7_dist > FALSE)
     {
-        func002683(globaldef009247, globaldef009246, globaldef009247.field000332, globaldef009247.field000322);
+        func002683(globaldef009247, globaldef009246, globaldef009247.cache7_dist, globaldef009247.cache7_ent);
     }
     
 };
@@ -4880,63 +5186,63 @@ void (entity globaldef009252, entity globaldef009253) func002686 =
 float (entity globaldef009254, entity globaldef009255) func002687 = 
 {
     
-    if(globaldef009254.field000315 == globaldef009255)
+    if(globaldef009254.cache0_ent == globaldef009255)
     {
-        return globaldef009254.field000325;
+        return globaldef009254.cache0_dist;
     }
     
     
-    if(globaldef009254.field000316 == globaldef009255)
+    if(globaldef009254.cache1_ent == globaldef009255)
     {
-        return globaldef009254.field000326;
+        return globaldef009254.cache1_dist;
     }
     
     
-    if(globaldef009254.field000317 == globaldef009255)
+    if(globaldef009254.cache2_ent == globaldef009255)
     {
-        return globaldef009254.field000327;
+        return globaldef009254.cache2_dist;
     }
     
     
-    if(globaldef009254.field000318 == globaldef009255)
+    if(globaldef009254.cache3_ent == globaldef009255)
     {
-        return globaldef009254.field000328;
+        return globaldef009254.cache3_dist;
     }
     
     
-    if(globaldef009254.field000319 == globaldef009255)
+    if(globaldef009254.cache4_ent == globaldef009255)
     {
-        return globaldef009254.field000329;
+        return globaldef009254.cache4_dist;
     }
     
     
-    if(globaldef009254.field000320 == globaldef009255)
+    if(globaldef009254.cache5_ent == globaldef009255)
     {
-        return globaldef009254.field000330;
+        return globaldef009254.cache5_dist;
     }
     
     
-    if(globaldef009254.field000321 == globaldef009255)
+    if(globaldef009254.cache6_ent == globaldef009255)
     {
-        return globaldef009254.field000331;
+        return globaldef009254.cache6_dist;
     }
     
     
-    if(globaldef009254.field000322 == globaldef009255)
+    if(globaldef009254.cache7_ent == globaldef009255)
     {
-        return globaldef009254.field000332;
+        return globaldef009254.cache7_dist;
     }
     
     
-    if(globaldef009254.field000323 == globaldef009255)
+    if(globaldef009254.cache8_ent == globaldef009255)
     {
-        return globaldef009254.field000333;
+        return globaldef009254.cache8_dist;
     }
     
     
-    if(globaldef009254.field000324 == globaldef009255)
+    if(globaldef009254.cache9_ent == globaldef009255)
     {
-        return globaldef009254.field000333;
+        return globaldef009254.cache8_dist;
     }
     
     return FALSE;
@@ -4960,15 +5266,15 @@ float (entity globaldef009254, entity globaldef009255) func002687 =
 float (entity globaldef009256, entity globaldef009257) func002688 = 
 {
     
-    if(globaldef009256.field000323 == globaldef009257)
+    if(globaldef009256.cache8_ent == globaldef009257)
     {
-        return globaldef009256.field000333;
+        return globaldef009256.cache8_dist;
     }
     
     
-    if(globaldef009256.field000324 == globaldef009257)
+    if(globaldef009256.cache9_ent == globaldef009257)
     {
-        return globaldef009256.field000334;
+        return globaldef009256.cache9_dist;
     }
     
     return FALSE;
@@ -5022,61 +5328,61 @@ float (entity globaldef009256, entity globaldef009257) func002688 =
 float (entity globaldef009258, entity globaldef009259) func002689 = 
 {
     
-    if(globaldef009258.field000315 == globaldef009259)
+    if(globaldef009258.cache0_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000316 == globaldef009259)
+    if(globaldef009258.cache1_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000317 == globaldef009259)
+    if(globaldef009258.cache2_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000318 == globaldef009259)
+    if(globaldef009258.cache3_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000319 == globaldef009259)
+    if(globaldef009258.cache4_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000320 == globaldef009259)
+    if(globaldef009258.cache5_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000321 == globaldef009259)
+    if(globaldef009258.cache6_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000322 == globaldef009259)
+    if(globaldef009258.cache7_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000323 == globaldef009259)
+    if(globaldef009258.cache8_ent == globaldef009259)
     {
         return TRUE;
     }
     
     
-    if(globaldef009258.field000324 == globaldef009259)
+    if(globaldef009258.cache9_ent == globaldef009259)
     {
         return TRUE;
     }
@@ -5100,13 +5406,13 @@ float (entity globaldef009258, entity globaldef009259) func002689 =
 float (entity globaldef009260, entity globaldef009261) MovingEntityCached = 
 {
     
-    if(globaldef009260.field000323 == globaldef009261)
+    if(globaldef009260.cache8_ent == globaldef009261)
     {
         return TRUE;
     }
     
     
-    if(globaldef009260.field000324 == globaldef009261)
+    if(globaldef009260.cache9_ent == globaldef009261)
     {
         return TRUE;
     }
@@ -5287,13 +5593,13 @@ void (entity globaldef009275, entity globaldef009276) func002692 =
         objerror("can't cache the world\n");
     }
     
-    globaldef009275.f_updatecache = func002648;
+    globaldef009275.f_updatecache = update_cachex1;
     globaldef009277 = firstWaypoint;
     
     while(globaldef009277)
     {
-        globaldef009277.field000323 = world;
-        globaldef009277.field000333 = FALSE;
+        globaldef009277.cache8_ent = world;
+        globaldef009277.cache8_dist = FALSE;
         globaldef009277 = globaldef009277.next;
     }
     
