@@ -2283,9 +2283,9 @@ row,file,s_file,name,s_name,profile,first_statement,locals,numparms,parm_start,p
 2281,b_char.qc,0,BotChooseExitMessage,0,0,28328,2,1,16882,10000000
 2282,b_char.qc,0,BotChooseKillMessage,0,0,28690,3,1,17004,10000000
 2283,b_char.qc,0,BotChooseDeathMessage,0,0,29802,3,1,17315,10000000
-2284,b_char.qc,0,func002284,0,0,30974,4,1,17636,10000000
+2284,b_char.qc,0,BotChooseInsultMessage,0,0,30974,4,1,17636,10000000
 2285,b_char.qc,0,BotChooseTelefragMessage,61014,0,33777,2,1,18365,10000000
-2286,b_char.qc,0,func002286,0,0,33847,2,1,18384,10000000
+2286,b_char.qc,0,BotChooseRandomMessage,0,0,33847,2,1,18384,10000000
 2287,b_fuzzy.qc,0,func002287,0,0,34000,0,2,18428,11000000
 2288,b_fuzzy.qc,0,func002288,0,0,34011,0,3,18436,11100000
 2289,b_fuzzy.qc,0,goalweight_door,0,0,34021,0,2,18444,11000000

@@ -2167,17 +2167,17 @@ namespace DeQcc
             nameMap.Add("globaldef005807", "BOTMESSAGETYPE_EXIT");
             nameMap.Add("globaldef005808", "BOTMESSAGETYPE_KILL");
             nameMap.Add("globaldef005809", "BOTMESSAGETYPE_DEATH");
-            nameMap.Add("globaldef005810", "BOTMESSAGE_4");
-            nameMap.Add("globaldef005811", "BOTMESSAGE_5");
-            nameMap.Add("globaldef005812", "BOTMESSAGETYPE_TELEFRAG");
-            nameMap.Add("globaldef005813", "BOTMESSAGE_7");
-            nameMap.Add("globaldef005814", "BOTMESSAGE_8");
-            nameMap.Add("globaldef005815", "BOTMESSAGE_9");
+            nameMap.Add("globaldef005810", "BOTMESSAGETYPE_INSULT");
+            nameMap.Add("globaldef005811", "BOTMESSAGETYPE_QUESTION");
+            nameMap.Add("globaldef005812", "BOTMESSAGETYPE_BRAG");
+            nameMap.Add("globaldef005813", "BOTMESSAGETYPE_REPLY");
+            nameMap.Add("globaldef005814", "BOTMESSAGETYPE_NEVERUSED2");
+            nameMap.Add("globaldef005815", "BOTMESSAGETYPE_PRAISE");
 
-            nameMap.Add("globaldef005816", "BOTMESSAGEOPTION_1");
-            nameMap.Add("globaldef005817", "BOTMESSAGEOPTION_2");
-            nameMap.Add("globaldef005818", "BOTMESSAGEOPTION_3");
-            nameMap.Add("globaldef005819", "BOTMESSAGEOPTION_4");
+            nameMap.Add("globaldef005816", "BOTMESSAGEOPTION_COMMON");
+            nameMap.Add("globaldef005817", "BOTMESSAGEOPTION_RARE");
+            nameMap.Add("globaldef005818", "BOTMESSAGEOPTION_RAREST");
+            nameMap.Add("globaldef005819", "BOTMESSAGEOPTION_REPLY");
 
 
             nameMap.Add("func002278", "BotName");
@@ -2186,7 +2186,8 @@ namespace DeQcc
             nameMap.Add("func002281", "BotChooseExitMessage");
             nameMap.Add("func002282", "BotChooseKillMessage");
             nameMap.Add("func002283", "BotChooseDeathMessage");
-            //nameMap.Add("func002286", "BotChooseRandomMessage");
+            nameMap.Add("func002284", "BotChooseInsultMessage");
+            nameMap.Add("func002286", "BotChooseRandomMessage");
 
             for (int i = 2278; i <= 2286; i++)
             {
@@ -2222,10 +2223,10 @@ namespace DeQcc
             nameMap.Add("globaldef006021", "rnd");
             nameMap.Add("globaldef006022", "enemy_name");
 
-            // ? params
+            // BotChooseInsultMessage params
             nameMap.Add("globaldef006144", "e");
 
-            // ? locals
+            // BotChooseInsultMessage locals
             nameMap.Add("globaldef006145", "rnd");
             nameMap.Add("globaldef006146", "choice");
             nameMap.Add("globaldef006147", "name");
@@ -2236,10 +2237,10 @@ namespace DeQcc
             // BotChooseTelefragMessage locals
             nameMap.Add("globaldef006465", "rnd");
 
-            // ? params
+            // BotChooseRandomMessage params
             nameMap.Add("globaldef006474", "e");
 
-            // ? locals
+            // BotChooseRandomMessage locals
             nameMap.Add("globaldef006475", "rnd");
 
             #endregion

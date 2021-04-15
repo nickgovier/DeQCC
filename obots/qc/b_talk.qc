@@ -817,7 +817,7 @@ float (entity globaldef006844) func002379 =
         
     }
     
-    func002284(globaldef006844);
+    BotChooseInsultMessage(globaldef006844);
     return TRUE;
 };
 
@@ -887,6 +887,6 @@ void () func002380 =
         return;
     }
     
-    func002286(self);
+    BotChooseRandomMessage(self);
 };
 

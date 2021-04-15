@@ -26,16 +26,16 @@ float BOTMESSAGETYPE_NEVERUSED = 0;
 float BOTMESSAGETYPE_EXIT = 1;
 float BOTMESSAGETYPE_KILL = 2;
 float BOTMESSAGETYPE_DEATH = 3;
-float BOTMESSAGE_4 = 4;
-float BOTMESSAGE_5 = 5;
-float BOTMESSAGETYPE_TELEFRAG = 6;
-float BOTMESSAGE_7 = 7;
-float BOTMESSAGE_8 = 8;
-float BOTMESSAGE_9 = 9;
-float BOTMESSAGEOPTION_1 = 1;
-float BOTMESSAGEOPTION_2 = 2;
-float BOTMESSAGEOPTION_3 = 3;
-float BOTMESSAGEOPTION_4 = 0;
+float BOTMESSAGETYPE_INSULT = 4;
+float BOTMESSAGETYPE_QUESTION = 5;
+float BOTMESSAGETYPE_BRAG = 6;
+float BOTMESSAGETYPE_REPLY = 7;
+float BOTMESSAGETYPE_NEVERUSED2 = 8;
+float BOTMESSAGETYPE_PRAISE = 9;
+float BOTMESSAGEOPTION_COMMON = 1;
+float BOTMESSAGEOPTION_RARE = 2;
+float BOTMESSAGEOPTION_RAREST = 3;
+float BOTMESSAGEOPTION_REPLY = 0;
 
 // BotName
 // function begins at statement 27984, parm_start=16708
@@ -6180,7 +6180,7 @@ void (entity e) BotChooseDeathMessage =
 };
 
 
-// func002284
+// BotChooseInsultMessage
 // function begins at statement 30974, parm_start=17636
 // OP_CALL0	457	0	0
 // OP_STORE_F	1	17637	0
@@ -8985,7 +8985,7 @@ void (entity e) BotChooseDeathMessage =
 // OP_STORE_V	228	13	0
 // OP_CALL4	1073	0	0
 // OP_DONE	0	0	0
-void (entity e) func002284 = 
+void (entity e) BotChooseInsultMessage = 
 {
     local float rnd;
     local float choice;
@@ -8998,26 +8998,26 @@ void (entity e) func002284 =
         rnd = floor(rnd * MOVETYPE_STEP);
         if(rnd == FALSE)
         {
-            BotStoreMessage(e, "Where is everybody?", BOTMESSAGE_5, FL_SWIM);
+            BotStoreMessage(e, "Where is everybody?", BOTMESSAGETYPE_QUESTION, FL_SWIM);
         }
         else
         {
             if(rnd == TRUE)
             {
-                BotStoreMessage(e, "I'm playing with myself and it seems you like to watch it?", BOTMESSAGE_4, MOVETYPE_TOSS);
+                BotStoreMessage(e, "I'm playing with myself and it seems you like to watch it?", BOTMESSAGETYPE_INSULT, MOVETYPE_TOSS);
             }
             else
             {
                 if(rnd == FL_SWIM)
                 {
-                    BotStoreMessage3(e, "Hey ", name, ", are you afraid to play?", BOTMESSAGE_5, MOVETYPE_FLY);
+                    BotStoreMessage3(e, "Hey ", name, ", are you afraid to play?", BOTMESSAGETYPE_QUESTION, MOVETYPE_FLY);
                 }
                 else
                 {
                     
                     if(rnd == MOVETYPE_WALK)
                     {
-                        BotStoreMessage3(e, "Hey ", name, ", lets do a 1 on 1", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
+                        BotStoreMessage3(e, "Hey ", name, ", lets do a 1 on 1", BOTMESSAGETYPE_BRAG, MOVETYPE_FLY);
                     }
                     
                 }
@@ -9031,38 +9031,38 @@ void (entity e) func002284 =
     
     if(activeClientCount <= FL_SWIM)
     {
-        choice = BOTMESSAGEOPTION_1;
+        choice = BOTMESSAGEOPTION_COMMON;
     }
     else
     {
         if(e.botnumber == FALSE)
         {
-            choice = BOTMESSAGEOPTION_1;
+            choice = BOTMESSAGEOPTION_COMMON;
         }
         else
         {
-            if((lastBotMessageNr == BOTMESSAGE_5) && (lastBotToTalk != e))
+            if((lastBotMessageNr == BOTMESSAGETYPE_QUESTION) && (lastBotToTalk != e))
             {
-                choice = BOTMESSAGEOPTION_4;
+                choice = BOTMESSAGEOPTION_REPLY;
             }
             else
             {
                 if(rnd <= 0.7)
                 {
-                    choice = BOTMESSAGEOPTION_1;
+                    choice = BOTMESSAGEOPTION_COMMON;
                 }
                 else
                 {
                     if(rnd <= 0.9)
                     {
-                        choice = BOTMESSAGEOPTION_2;
+                        choice = BOTMESSAGEOPTION_RARE;
                     }
                     else
                     {
                         
                         if(rnd <= TRUE)
                         {
-                            choice = BOTMESSAGEOPTION_3;
+                            choice = BOTMESSAGEOPTION_RAREST;
                         }
                         
                     }
@@ -9077,62 +9077,62 @@ void (entity e) func002284 =
     
     name = RandomNameExcept(e);
     rnd = random();
-    if(choice == BOTMESSAGEOPTION_4)
+    if(choice == BOTMESSAGEOPTION_REPLY)
     {
         name = lastBotToTalk.netname;
         rnd = floor(rnd * FL_CLIENT);
         if(rnd <= FALSE)
         {
-            BotStoreMessage2(e, "Suck my broomstick ", name, BOTMESSAGE_7, FL_SWIM);
+            BotStoreMessage2(e, "Suck my broomstick ", name, BOTMESSAGETYPE_REPLY, FL_SWIM);
         }
         else
         {
             if((rnd <= TRUE) && (e.botnumber != BOT2))
             {
-                BotStoreMessage(e, "Dogs crawl under Gates, software crawls under Windows", BOTMESSAGE_7, FL_SWIM);
+                BotStoreMessage(e, "Dogs crawl under Gates, software crawls under Windows", BOTMESSAGETYPE_REPLY, FL_SWIM);
             }
             else
             {
                 if(rnd <= FL_SWIM)
                 {
-                    BotStoreMessage2(e, "Eat my pineapple ", name, BOTMESSAGE_7, FL_SWIM);
+                    BotStoreMessage2(e, "Eat my pineapple ", name, BOTMESSAGETYPE_REPLY, FL_SWIM);
                 }
                 else
                 {
                     if(rnd <= MOVETYPE_WALK)
                     {
-                        BotStoreMessage(e, "Lets go and gib Mr Elusive", BOTMESSAGE_7, MOVETYPE_WALK);
+                        BotStoreMessage(e, "Lets go and gib Mr Elusive", BOTMESSAGETYPE_REPLY, MOVETYPE_WALK);
                     }
                     else
                     {
                         if(rnd <= MOVETYPE_STEP)
                         {
-                            BotStoreMessage(e, "Can't you say anything else?", BOTMESSAGE_7, MOVETYPE_STEP);
+                            BotStoreMessage(e, "Can't you say anything else?", BOTMESSAGETYPE_REPLY, MOVETYPE_STEP);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_FLY)
                             {
-                                BotStoreMessage(e, "Stop chatting, you losers!", BOTMESSAGE_7, MOVETYPE_WALK);
+                                BotStoreMessage(e, "Stop chatting, you losers!", BOTMESSAGETYPE_REPLY, MOVETYPE_WALK);
                             }
                             else
                             {
                                 if(rnd <= MOVETYPE_TOSS)
                                 {
-                                    BotStoreMessage(e, "Just shut up and play", BOTMESSAGE_7, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Just shut up and play", BOTMESSAGETYPE_REPLY, MOVETYPE_WALK);
                                 }
                                 else
                                 {
                                     if(rnd <= MOVETYPE_PUSH)
                                     {
-                                        BotStoreMessage2(e, "Enough already ", name, BOTMESSAGE_7, FL_SWIM);
+                                        BotStoreMessage2(e, "Enough already ", name, BOTMESSAGETYPE_REPLY, FL_SWIM);
                                     }
                                     else
                                     {
                                         
                                         if(rnd <= FL_CLIENT)
                                         {
-                                            BotStoreMessage(e, "Lemme clean out yer ears with my broomstick", BOTMESSAGE_7, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Lemme clean out yer ears with my broomstick", BOTMESSAGETYPE_REPLY, MOVETYPE_STEP);
                                         }
                                         
                                     }
@@ -9154,55 +9154,55 @@ void (entity e) func002284 =
     }
     else
     {
-        if(choice == BOTMESSAGEOPTION_3)
+        if(choice == BOTMESSAGEOPTION_RAREST)
         {
             rnd = floor(rnd * FL_CLIENT);
             if(rnd <= FALSE)
             {
-                BotStoreMessage(e, "What do you guys want from me?", BOTMESSAGE_5, MOVETYPE_WALK);
+                BotStoreMessage(e, "What do you guys want from me?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
             }
             else
             {
                 if(rnd <= TRUE)
                 {
-                    BotStoreMessage(e, "Your momma is an 8086", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                    BotStoreMessage(e, "Your momma is an 8086", BOTMESSAGETYPE_BRAG, TRUE);
                 }
                 else
                 {
                     if(rnd <= FL_SWIM)
                     {
-                        BotStoreMessage(e, "I'm real and you are all bots", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                        BotStoreMessage(e, "I'm real and you are all bots", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                     }
                     else
                     {
                         if(rnd <= MOVETYPE_WALK)
                         {
-                            BotStoreMessage(e, "You're all stupid campers", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                            BotStoreMessage(e, "You're all stupid campers", BOTMESSAGETYPE_BRAG, FL_SWIM);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_STEP)
                             {
-                                BotStoreMessage(e, "Any one of you know Mr Elusive?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                BotStoreMessage(e, "Any one of you know Mr Elusive?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                             }
                             else
                             {
                                 if(rnd <= MOVETYPE_FLY)
                                 {
-                                    BotStoreMessage(e, "Lets go to another server", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                    BotStoreMessage(e, "Lets go to another server", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                 }
                                 else
                                 {
                                     if(rnd <= MOVETYPE_TOSS)
                                     {
-                                        BotStoreMessage2(e, "Let's go and kill ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                        BotStoreMessage2(e, "Let's go and kill ", name, BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
                                         
                                         if(rnd <= MOVETYPE_PUSH)
                                         {
-                                            BotStoreMessage3(e, "Anyone know where ", name, " is?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                            BotStoreMessage3(e, "Anyone know where ", name, " is?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                         }
                                         
                                     }
@@ -9222,193 +9222,193 @@ void (entity e) func002284 =
         }
         else
         {
-            if(choice == BOTMESSAGEOPTION_2)
+            if(choice == BOTMESSAGEOPTION_RARE)
             {
                 rnd = floor(rnd * SVC_FINALE);
                 if(rnd <= FALSE)
                 {
-                    BotStoreMessage2(e, name, " is an illegal Quake camper", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                    BotStoreMessage2(e, name, " is an illegal Quake camper", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                 }
                 else
                 {
                     if(rnd <= TRUE)
                     {
-                        BotStoreMessage(e, "Suck my broomstick", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                        BotStoreMessage(e, "Suck my broomstick", BOTMESSAGETYPE_BRAG, FL_SWIM);
                     }
                     else
                     {
                         if(rnd <= FL_SWIM)
                         {
-                            BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                            BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_BRAG, FL_SWIM);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_WALK)
                             {
-                                BotStoreMessage2(e, name, " is a camper", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                BotStoreMessage2(e, name, " is a camper", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                             }
                             else
                             {
                                 if(rnd <= MOVETYPE_STEP)
                                 {
-                                    BotStoreMessage(e, "Look! Nudie pics on the hard disk!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "Look! Nudie pics on the hard disk!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                 }
                                 else
                                 {
                                     if(rnd <= MOVETYPE_FLY)
                                     {
-                                        BotStoreMessage(e, "Formatting hard disk", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                        BotStoreMessage(e, "Formatting hard disk", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
                                         if(rnd <= MOVETYPE_TOSS)
                                         {
-                                            BotStoreMessage(e, "kill all windows users", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "kill all windows users", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_PUSH)
                                             {
-                                                BotStoreMessage(e, "I'm the best there is", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "I'm the best there is", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
                                                 if(rnd <= FL_CLIENT)
                                                 {
-                                                    BotStoreMessage(e, "what the !#@% am I doin' here?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "what the !#@% am I doin' here?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                     {
-                                                        BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                        BotStoreMessage(e, "Eat my pineapple", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_BOUNCE)
                                                         {
-                                                            BotStoreMessage(e, "HeHe", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                                                            BotStoreMessage(e, "HeHe", BOTMESSAGETYPE_BRAG, FALSE);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                             {
-                                                                BotStoreMessage(e, "eat my dust", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                BotStoreMessage(e, "eat my dust", BOTMESSAGETYPE_BRAG, TRUE);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= BOTSHIRTPANTS_12)
                                                                 {
-                                                                    BotStoreMessage(e, "Hey, catch this rocket", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                                                                    BotStoreMessage(e, "Hey, catch this rocket", BOTMESSAGETYPE_BRAG, FALSE);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= BOTSHIRTPANTS_13)
                                                                     {
-                                                                        BotStoreMessage(e, "Go get your mommie", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                        BotStoreMessage(e, "Go get your mommie", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= 14)
                                                                         {
-                                                                            BotStoreMessage(e, "traitor!!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                            BotStoreMessage(e, "traitor!!!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= GLOBALDEF748_15)
                                                                             {
-                                                                                BotStoreMessage(e, "Lemme at ya", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                BotStoreMessage(e, "Lemme at ya", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= FL_INWATER)
                                                                                 {
-                                                                                    BotStoreMessage(e, "Bill Gates is an alien", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Bill Gates is an alien", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= 17)
                                                                                     {
-                                                                                        BotStoreMessage(e, "my ping is better then my skill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "my ping is better then my skill", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= 18)
                                                                                         {
-                                                                                            BotStoreMessage(e, "my ping is higher than my IQ", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "my ping is higher than my IQ", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= 19)
                                                                                             {
-                                                                                                BotStoreMessage(e, "HEHE", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                BotStoreMessage(e, "HEHE", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= 20)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "I've got a lot of experience", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I've got a lot of experience", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= 21)
                                                                                                     {
-                                                                                                        BotStoreMessage3(e, "I vote ", name, " as the camper of the day", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage3(e, "I vote ", name, " as the camper of the day", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= 22)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Omicron bots are the best", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "Omicron bots are the best", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= SVC_TEMPENTITY)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Yabadabadooo!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "Yabadabadooo!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= OBOT_MAXBOTS)
                                                                                                                 {
-                                                                                                                    BotStoreMessage2(e, name, " your momma wears combat boots", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage2(e, name, " your momma wears combat boots", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= SVC_SIGNONNUM)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Anybody", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                                        BotStoreMessage(e, "Anybody", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= SVC_CENTERPRINT)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "I hope this wraps up soon; Alf is on tonight", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "I hope this wraps up soon; Alf is on tonight", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= SVC_KILLEDMONSTER)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "I wrote my own code", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                BotStoreMessage(e, "I wrote my own code", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= SVC_FOUNDSECRET)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "Can someone turn the light on please ?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                    BotStoreMessage(e, "Can someone turn the light on please ?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= 29)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "Gee, it's dark in here...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "Gee, it's dark in here...", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         
                                                                                                                                         if(rnd <= SVC_INTERMISSION)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "Far Out", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Far Out", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         
                                                                                                                                     }
@@ -9475,105 +9475,105 @@ void (entity e) func002284 =
             else
             {
                 
-                if(choice == BOTMESSAGEOPTION_1)
+                if(choice == BOTMESSAGEOPTION_COMMON)
                 {
                     if(e.botnumber == BOT23)
                     {
                         rnd = floor(rnd * FL_INWATER);
                         if(rnd <= FALSE)
                         {
-                            BotStoreMessage2(e, name, " boch ghlchraj", BOTMESSAGE_4, TRUE);
+                            BotStoreMessage2(e, name, " boch ghlchraj", BOTMESSAGETYPE_INSULT, TRUE);
                         }
                         else
                         {
                             if(rnd <= TRUE)
                             {
-                                BotStoreMessage(e, "tlhlngan Hol Dajatlh'a'", BOTMESSAGE_5, TRUE);
+                                BotStoreMessage(e, "tlhlngan Hol Dajatlh'a'", BOTMESSAGETYPE_QUESTION, TRUE);
                             }
                             else
                             {
                                 if(rnd <= FL_SWIM)
                                 {
-                                    BotStoreMessage(e, "bortaS blr jablu'Dl'reH QaQqu'nay'", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                    BotStoreMessage(e, "bortaS blr jablu'Dl'reH QaQqu'nay'", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                 }
                                 else
                                 {
                                     if(rnd <= MOVETYPE_WALK)
                                     {
-                                        BotStoreMessage2(e, "majQa' ", name, BOTMESSAGE_9, FL_SWIM);
+                                        BotStoreMessage2(e, "majQa' ", name, BOTMESSAGETYPE_PRAISE, FL_SWIM);
                                     }
                                     else
                                     {
                                         if(rnd <= MOVETYPE_STEP)
                                         {
-                                            BotStoreMessage2(e, "blmoHqu' ", name, BOTMESSAGE_4, FL_SWIM);
+                                            BotStoreMessage2(e, "blmoHqu' ", name, BOTMESSAGETYPE_INSULT, FL_SWIM);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_FLY)
                                             {
-                                                BotStoreMessage(e, "Duj tlvoqtaH", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                BotStoreMessage(e, "Duj tlvoqtaH", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_TOSS)
                                                 {
-                                                    BotStoreMessage(e, "bljeghbe'chugh vaj blHegh", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                    BotStoreMessage(e, "bljeghbe'chugh vaj blHegh", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_PUSH)
                                                     {
-                                                        BotStoreMessage2(e, name, " veQDuj 'oH Dujllj'e'", BOTMESSAGE_4, FL_SWIM);
+                                                        BotStoreMessage2(e, name, " veQDuj 'oH Dujllj'e'", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= FL_CLIENT)
                                                         {
-                                                            BotStoreMessage2(e, name, " Hab SoSlI 'Quch!", BOTMESSAGE_4, FL_SWIM);
+                                                            BotStoreMessage2(e, name, " Hab SoSlI 'Quch!", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_FLYMISSILE)
                                                             {
-                                                                BotStoreMessage2(e, name, " ghuy'cha", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                BotStoreMessage2(e, name, " ghuy'cha", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_BOUNCE)
                                                                 {
-                                                                    BotStoreMessage(e, "Verengan Ha'DIaH", BOTMESSAGE_4, FL_SWIM);
+                                                                    BotStoreMessage(e, "Verengan Ha'DIaH", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                     {
-                                                                        BotStoreMessage2(e, name, " Qu'vath", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                        BotStoreMessage2(e, name, " Qu'vath", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= BOTSHIRTPANTS_12)
                                                                         {
-                                                                            BotStoreMessage(e, "jlHtaHbogh naDev", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "jlHtaHbogh naDev", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= BOTSHIRTPANTS_13)
                                                                             {
-                                                                                BotStoreMessage(e, "toH", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                BotStoreMessage(e, "toH", BOTMESSAGETYPE_BRAG, TRUE);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= 14)
                                                                                 {
-                                                                                    BotStoreMessage(e, "qay'be'", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                    BotStoreMessage(e, "qay'be'", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= GLOBALDEF748_15)
                                                                                     {
-                                                                                        BotStoreMessage2(e, name, " qaStaH nuq jay'", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                        BotStoreMessage2(e, name, " qaStaH nuq jay'", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -9614,62 +9614,62 @@ void (entity e) func002284 =
                             rnd = floor(rnd * MOVETYPE_BOUNCE);
                             if(rnd <= FALSE)
                             {
-                                BotStoreMessage3(e, "Hey ", name, ", where is John Romero?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                BotStoreMessage3(e, "Hey ", name, ", where is John Romero?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                             }
                             else
                             {
                                 if(rnd <= TRUE)
                                 {
-                                    BotStoreMessage(e, "Did Tim Willits do this level?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "Did Tim Willits do this level?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                 }
                                 else
                                 {
                                     if(rnd <= FL_SWIM)
                                     {
-                                        BotStoreMessage(e, "Why isn't the Quake CD in your drive, Huh?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                        BotStoreMessage(e, "Why isn't the Quake CD in your drive, Huh?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                     }
                                     else
                                     {
                                         if(rnd <= MOVETYPE_WALK)
                                         {
-                                            BotStoreMessage(e, "Did you register this Quake copy?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Did you register this Quake copy?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_STEP)
                                             {
-                                                BotStoreMessage(e, "These Omicron bots suck man!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                BotStoreMessage(e, "These Omicron bots suck man!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_FLY)
                                                 {
-                                                    BotStoreMessage(e, "What are we waiting for? Christmas?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "What are we waiting for? Christmas?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_TOSS)
                                                     {
-                                                        BotStoreMessage(e, "Hey! There are some bugs in this bot code!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Hey! There are some bugs in this bot code!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_PUSH)
                                                         {
-                                                            BotStoreMessage(e, "Did I program this?", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                            BotStoreMessage(e, "Did I program this?", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= FL_CLIENT)
                                                             {
-                                                                BotStoreMessage(e, "This QuakeC *IS* half bad!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "This QuakeC *IS* half bad!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 
                                                                 if(rnd <= MOVETYPE_FLYMISSILE)
                                                                 {
-                                                                    BotStoreMessage(e, "R U still playing quake while quake II is out?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "R U still playing quake while quake II is out?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                 }
                                                                 
                                                             }
@@ -9698,68 +9698,68 @@ void (entity e) func002284 =
                                 rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
                                 if(rnd <= FALSE)
                                 {
-                                    BotStoreMessage(e, "640K ought to be enough for anybody", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                    BotStoreMessage(e, "640K ought to be enough for anybody", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                 }
                                 else
                                 {
                                     if(rnd <= TRUE)
                                     {
-                                        BotStoreMessage(e, "If you can't make it good, make it look good.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                        BotStoreMessage(e, "If you can't make it good, make it look good.", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                     }
                                     else
                                     {
                                         if(rnd <= FL_SWIM)
                                         {
-                                            BotStoreMessage(e, "Internet Explorer is better than Netscape", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                            BotStoreMessage(e, "Internet Explorer is better than Netscape", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_WALK)
                                             {
-                                                BotStoreMessage(e, "MS Quake will soon be released", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                BotStoreMessage(e, "MS Quake will soon be released", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_STEP)
                                                 {
-                                                    BotStoreMessage(e, "Hey, your windows is pirated!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "Hey, your windows is pirated!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_FLY)
                                                     {
-                                                        BotStoreMessage(e, "Anybody wanna buy my quake clone? ", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Anybody wanna buy my quake clone? ", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_TOSS)
                                                         {
-                                                            BotStoreMessage(e, "Is it true that nobody likes me?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "Is it true that nobody likes me?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_PUSH)
                                                             {
-                                                                BotStoreMessage(e, "I've got more money than skill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "I've got more money than skill", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= FL_CLIENT)
                                                                 {
-                                                                    BotStoreMessage(e, "if U can't beat 'em, buy 'em", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "if U can't beat 'em, buy 'em", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                                     {
-                                                                        BotStoreMessage(e, "anybody got a dime to spare?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "anybody got a dime to spare?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         
                                                                         if(rnd <= MOVETYPE_BOUNCE)
                                                                         {
-                                                                            BotStoreMessage(e, "I hate SUN and JAVA(tm) sucks!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "I hate SUN and JAVA(tm) sucks!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                         }
                                                                         
                                                                     }
@@ -9790,80 +9790,80 @@ void (entity e) func002284 =
                                     rnd = floor(rnd * BOTSHIRTPANTS_13);
                                     if(rnd <= FALSE)
                                     {
-                                        BotStoreMessage(e, "wanna laugh or wanna die?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                        BotStoreMessage(e, "wanna laugh or wanna die?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                     }
                                     else
                                     {
                                         if(rnd <= TRUE)
                                         {
-                                            BotStoreMessage(e, "Weeee!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                            BotStoreMessage(e, "Weeee!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                         }
                                         else
                                         {
                                             if(rnd <= FL_SWIM)
                                             {
-                                                BotStoreMessage(e, "Let's play catch the rocket!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "Let's play catch the rocket!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_WALK)
                                                 {
-                                                    BotStoreMessage(e, "When I'm bad I'm good", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                    BotStoreMessage(e, "When I'm bad I'm good", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_STEP)
                                                     {
-                                                        BotStoreMessage3(e, "Hey, ", name, " your shoelaces are undone", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                        BotStoreMessage3(e, "Hey, ", name, " your shoelaces are undone", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_FLY)
                                                         {
-                                                            BotStoreMessage(e, "Eyerybody happy with Mr Slappy?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "Eyerybody happy with Mr Slappy?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_TOSS)
                                                             {
-                                                                BotStoreMessage2(e, name, " you're gonna be gibbed real funny", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                BotStoreMessage2(e, name, " you're gonna be gibbed real funny", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                 {
-                                                                    BotStoreMessage(e, "who want's to be Mr gib?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                    BotStoreMessage(e, "who want's to be Mr gib?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= FL_CLIENT)
                                                                     {
-                                                                        BotStoreMessage(e, "Mr Slappy is the new-age hero!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                        BotStoreMessage(e, "Mr Slappy is the new-age hero!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                                                         {
-                                                                            BotStoreMessage(e, " =)", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                            BotStoreMessage(e, " =)", BOTMESSAGETYPE_BRAG, TRUE);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_BOUNCE)
                                                                             {
-                                                                                BotStoreMessage(e, " ;)", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                BotStoreMessage(e, " ;)", BOTMESSAGETYPE_BRAG, TRUE);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                 {
-                                                                                    BotStoreMessage(e, "Let it fly", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                    BotStoreMessage(e, "Let it fly", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= BOTSHIRTPANTS_12)
                                                                                     {
-                                                                                        BotStoreMessage(e, "A bull with a cleaver, huntin' for beaver", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "A bull with a cleaver, huntin' for beaver", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -9898,62 +9898,62 @@ void (entity e) func002284 =
                                         rnd = floor(rnd * MOVETYPE_BOUNCE);
                                         if(rnd <= FALSE)
                                         {
-                                            BotStoreMessage(e, "Don't mess with an Austrian", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                            BotStoreMessage(e, "Don't mess with an Austrian", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                         }
                                         else
                                         {
                                             if(rnd <= TRUE)
                                             {
-                                                BotStoreMessage(e, "Subject will be terminated", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                BotStoreMessage(e, "Subject will be terminated", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                             }
                                             else
                                             {
                                                 if(rnd <= FL_SWIM)
                                                 {
-                                                    BotStoreMessage(e, "no problemo", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                    BotStoreMessage(e, "no problemo", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= MOVETYPE_WALK)
                                                     {
-                                                        BotStoreMessage(e, "no way Jose", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                        BotStoreMessage(e, "no way Jose", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_STEP)
                                                         {
-                                                            BotStoreMessage(e, "I am Awnald Swahtseneggah", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                                                            BotStoreMessage(e, "I am Awnald Swahtseneggah", BOTMESSAGETYPE_BRAG, FALSE);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_FLY)
                                                             {
-                                                                BotStoreMessage(e, "I'm Austrian NOT Australian", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "I'm Austrian NOT Australian", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_TOSS)
                                                                 {
-                                                                    BotStoreMessage(e, "Smoke my cigahs", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                    BotStoreMessage(e, "Smoke my cigahs", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_PUSH)
                                                                     {
-                                                                        BotStoreMessage(e, "Did youh seeh Conan the Barbarian?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Did youh seeh Conan the Barbarian?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= FL_CLIENT)
                                                                         {
-                                                                            BotStoreMessage(e, "Awnald for Presisdent!!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                            BotStoreMessage(e, "Awnald for Presisdent!!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                         }
                                                                         else
                                                                         {
                                                                             
                                                                             if(rnd <= MOVETYPE_FLYMISSILE)
                                                                             {
-                                                                                BotStoreMessage(e, "Achtung!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                BotStoreMessage(e, "Achtung!!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                             }
                                                                             
                                                                         }
@@ -9982,62 +9982,62 @@ void (entity e) func002284 =
                                             rnd = floor(rnd * MOVETYPE_BOUNCE);
                                             if(rnd <= FALSE)
                                             {
-                                                BotStoreMessage(e, "pounce!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                BotStoreMessage(e, "pounce!", BOTMESSAGETYPE_BRAG, TRUE);
                                             }
                                             else
                                             {
                                                 if(rnd <= TRUE)
                                                 {
-                                                    BotStoreMessage(e, "a tigger is a wonderful thing!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                    BotStoreMessage(e, "a tigger is a wonderful thing!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= FL_SWIM)
                                                     {
-                                                        BotStoreMessage(e, "Fighting is what tiggers do best", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                        BotStoreMessage(e, "Fighting is what tiggers do best", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= MOVETYPE_WALK)
                                                         {
-                                                            BotStoreMessage(e, "meauww", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                            BotStoreMessage(e, "meauww", BOTMESSAGETYPE_BRAG, TRUE);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_STEP)
                                                             {
-                                                                BotStoreMessage(e, "double pounce!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                BotStoreMessage(e, "double pounce!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_FLY)
                                                                 {
-                                                                    BotStoreMessage(e, "Roarrr!!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                    BotStoreMessage(e, "Roarrr!!!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_TOSS)
                                                                     {
-                                                                        BotStoreMessage(e, "the tigger clan is a happy clan", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                        BotStoreMessage(e, "the tigger clan is a happy clan", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_PUSH)
                                                                         {
-                                                                            BotStoreMessage(e, "A tigger has more stripes than a sergeant", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "A tigger has more stripes than a sergeant", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= FL_CLIENT)
                                                                             {
-                                                                                BotStoreMessage(e, "Who wants to play with tigger?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Who wants to play with tigger?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 
                                                                                 if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                 {
-                                                                                    BotStoreMessage(e, "I'm a  lean, mean, fighting machine", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "I'm a  lean, mean, fighting machine", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 
                                                                             }
@@ -10066,62 +10066,62 @@ void (entity e) func002284 =
                                                 rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                 if(rnd <= FALSE)
                                                 {
-                                                    BotStoreMessage(e, "X-men are uncool", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                    BotStoreMessage(e, "X-men are uncool", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= TRUE)
                                                     {
-                                                        BotStoreMessage(e, "Anybody got any booze for me?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                        BotStoreMessage(e, "Anybody got any booze for me?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= FL_SWIM)
                                                         {
-                                                            BotStoreMessage(e, "My real name is Tony Stark", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "My real name is Tony Stark", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= MOVETYPE_WALK)
                                                             {
-                                                                BotStoreMessage(e, "Marvel comics rule", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "Marvel comics rule", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_STEP)
                                                                 {
-                                                                    BotStoreMessage(e, "I'm the best Bot around", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "I'm the best Bot around", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_FLY)
                                                                     {
-                                                                        BotStoreMessage2(e, name, " is a weenie sucker", BOTMESSAGE_4, MOVETYPE_STEP);
+                                                                        BotStoreMessage2(e, name, " is a weenie sucker", BOTMESSAGETYPE_INSULT, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_TOSS)
                                                                         {
-                                                                            BotStoreMessage(e, "shop smart... shop s-mart!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "shop smart... shop s-mart!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_PUSH)
                                                                             {
-                                                                                BotStoreMessage(e, "hail to the king, baby!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "hail to the king, baby!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= FL_CLIENT)
                                                                                 {
-                                                                                    BotStoreMessage(e, "this is my boomstick!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "this is my boomstick!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                     {
-                                                                                        BotStoreMessage(e, "I'm not an ironing man, damnit!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "I'm not an ironing man, damnit!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     
                                                                                 }
@@ -10150,86 +10150,86 @@ void (entity e) func002284 =
                                                     rnd = floor(rnd * 14);
                                                     if(rnd <= FALSE)
                                                     {
-                                                        BotStoreMessage(e, "All humans are spineless bastards", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                        BotStoreMessage(e, "All humans are spineless bastards", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= TRUE)
                                                         {
-                                                            BotStoreMessage(e, "let's do capture the head", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                            BotStoreMessage(e, "let's do capture the head", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= FL_SWIM)
                                                             {
-                                                                BotStoreMessage(e, "The door swings both ways my ass!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                BotStoreMessage(e, "The door swings both ways my ass!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= MOVETYPE_WALK)
                                                                 {
-                                                                    BotStoreMessage(e, "I've got really cool movement code", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                    BotStoreMessage(e, "I've got really cool movement code", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_STEP)
                                                                     {
-                                                                        BotStoreMessage(e, "Hey Dannyboy, no hero-stuff, ya understand?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Hey Dannyboy, no hero-stuff, ya understand?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_FLY)
                                                                         {
-                                                                            BotStoreMessage(e, "I'm not from Barcelona", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "I'm not from Barcelona", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_TOSS)
                                                                             {
-                                                                                BotStoreMessage(e, "Is this the Alien TC??", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Is this the Alien TC??", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                                 {
-                                                                                    BotStoreMessage(e, "Why isn't this the Alien TC", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Why isn't this the Alien TC", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= FL_CLIENT)
                                                                                     {
-                                                                                        BotStoreMessage(e, "This must be the Alien TC; You're all aliens", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "This must be the Alien TC; You're all aliens", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                         {
-                                                                                            BotStoreMessage(e, "people with guns make great trophies", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "people with guns make great trophies", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_BOUNCE)
                                                                                             {
-                                                                                                BotStoreMessage(e, "motherfucker.....", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                BotStoreMessage(e, "motherfucker.....", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "shit happens......", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "shit happens......", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= BOTSHIRTPANTS_12)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "take It!!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "take It!!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
                                                                                                         if(rnd <= BOTSHIRTPANTS_13)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "wanna piece of candy?", BOTMESSAGE_5, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "wanna piece of candy?", BOTMESSAGETYPE_QUESTION, FL_SWIM);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -10266,50 +10266,50 @@ void (entity e) func002284 =
                                                         rnd = floor(rnd * FL_CLIENT);
                                                         if(rnd <= FALSE)
                                                         {
-                                                            BotStoreMessage(e, "anibodi know where the swemob is?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                            BotStoreMessage(e, "anibodi know where the swemob is?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= TRUE)
                                                             {
-                                                                BotStoreMessage(e, "Sweden rules", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                BotStoreMessage(e, "Sweden rules", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= FL_SWIM)
                                                                 {
-                                                                    BotStoreMessage2(e, name, ", Don't mess with da SWEMOB", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                    BotStoreMessage2(e, name, ", Don't mess with da SWEMOB", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= MOVETYPE_WALK)
                                                                     {
-                                                                        BotStoreMessage2(e, name, ", you know da Borg; Bjorn Borg?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                        BotStoreMessage2(e, name, ", you know da Borg; Bjorn Borg?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_STEP)
                                                                         {
-                                                                            BotStoreMessage(e, "anibodi been to sweda?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "anibodi been to sweda?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_FLY)
                                                                             {
-                                                                                BotStoreMessage(e, "Swedish Mob is still alive!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "Swedish Mob is still alive!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_TOSS)
                                                                                 {
-                                                                                    BotStoreMessage(e, "da borg is a good tenniser", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                    BotStoreMessage(e, "da borg is a good tenniser", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= MOVETYPE_PUSH)
                                                                                     {
-                                                                                        BotStoreMessage(e, "Sweden has reindeer actually", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Sweden has reindeer actually", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     
                                                                                 }
@@ -10334,86 +10334,86 @@ void (entity e) func002284 =
                                                             rnd = floor(rnd * 14);
                                                             if(rnd <= FALSE)
                                                             {
-                                                                BotStoreMessage(e, "cowabunga!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                BotStoreMessage(e, "cowabunga!", BOTMESSAGETYPE_BRAG, TRUE);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= TRUE)
                                                                 {
-                                                                    BotStoreMessage(e, "I'm on a roll overhere!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                    BotStoreMessage(e, "I'm on a roll overhere!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= FL_SWIM)
                                                                     {
-                                                                        BotStoreMessage(e, "can somebody please play some music?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                        BotStoreMessage(e, "can somebody please play some music?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= MOVETYPE_WALK)
                                                                         {
-                                                                            BotStoreMessage(e, "where are the babes then?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                            BotStoreMessage(e, "where are the babes then?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_STEP)
                                                                             {
-                                                                                BotStoreMessage(e, "this place blows, dudes.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "this place blows, dudes.", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_FLY)
                                                                                 {
-                                                                                    BotStoreMessage(e, "where's the shredder dude?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "where's the shredder dude?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= MOVETYPE_TOSS)
                                                                                     {
-                                                                                        BotStoreMessage(e, "It's Ninja, not hero turtles!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "It's Ninja, not hero turtles!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_PUSH)
                                                                                         {
-                                                                                            BotStoreMessage(e, "HUHUH...Cewl", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "HUHUH...Cewl", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= FL_CLIENT)
                                                                                             {
-                                                                                                BotStoreMessage(e, "TNMT thrive on pizza, man", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "TNMT thrive on pizza, man", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "one pizza coming right up", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "one pizza coming right up", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_BOUNCE)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Awlright, man, cowabunga supremo", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Awlright, man, cowabunga supremo", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Turtles rock bigtime", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Turtles rock bigtime", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= BOTSHIRTPANTS_12)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Sensei was wrong about diz place, dudes", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
+                                                                                                                BotStoreMessage(e, "Sensei was wrong about diz place, dudes", BOTMESSAGETYPE_BRAG, MOVETYPE_FLY);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 
                                                                                                                 if(rnd <= BOTSHIRTPANTS_13)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Pizza, I dice it, I slice it", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                    BotStoreMessage(e, "Pizza, I dice it, I slice it", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                 }
                                                                                                                 
                                                                                                             }
@@ -10450,62 +10450,62 @@ void (entity e) func002284 =
                                                                 rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                 if(rnd <= FALSE)
                                                                 {
-                                                                    BotStoreMessage2(e, "Pay my fare, ", name, BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                    BotStoreMessage2(e, "Pay my fare, ", name, BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= TRUE)
                                                                     {
-                                                                        BotStoreMessage(e, "Anybody wanna rocketjump??", BOTMESSAGE_5, FL_SWIM);
+                                                                        BotStoreMessage(e, "Anybody wanna rocketjump??", BOTMESSAGETYPE_QUESTION, FL_SWIM);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= FL_SWIM)
                                                                         {
-                                                                            BotStoreMessage(e, "call me a cab", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                            BotStoreMessage(e, "call me a cab", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= MOVETYPE_WALK)
                                                                             {
-                                                                                BotStoreMessage2(e, name, " is a pansy", BOTMESSAGE_4, FL_SWIM);
+                                                                                BotStoreMessage2(e, name, " is a pansy", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_STEP)
                                                                                 {
-                                                                                    BotStoreMessage2(e, name, " does not give any tips", BOTMESSAGE_4, MOVETYPE_STEP);
+                                                                                    BotStoreMessage2(e, name, " does not give any tips", BOTMESSAGETYPE_INSULT, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= MOVETYPE_FLY)
                                                                                     {
-                                                                                        BotStoreMessage(e, "Do I have 'Fool' written all over my forehead", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Do I have 'Fool' written all over my forehead", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_TOSS)
                                                                                         {
-                                                                                            BotStoreMessage(e, "NO! I don't have small change!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                            BotStoreMessage(e, "NO! I don't have small change!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_PUSH)
                                                                                             {
-                                                                                                BotStoreMessage(e, "I'm on a Highway to Hell", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                BotStoreMessage(e, "I'm on a Highway to Hell", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= FL_CLIENT)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "Manjana, hombre", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                    BotStoreMessage(e, "Manjana, hombre", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     
                                                                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Babe, requerdos a todos", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "Babe, requerdos a todos", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                     }
                                                                                                     
                                                                                                 }
@@ -10534,62 +10534,62 @@ void (entity e) func002284 =
                                                                     rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                     if(rnd <= FALSE)
                                                                     {
-                                                                        BotStoreMessage(e, "Anybody wanna use me ?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                        BotStoreMessage(e, "Anybody wanna use me ?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= TRUE)
                                                                         {
-                                                                            BotStoreMessage(e, "Why aren't these bots on quakeworld", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "Why aren't these bots on quakeworld", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= FL_SWIM)
                                                                             {
-                                                                                BotStoreMessage(e, "The name is GameSpy, actually", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "The name is GameSpy, actually", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= MOVETYPE_WALK)
                                                                                 {
-                                                                                    BotStoreMessage2(e, name, " are you a nerd ?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                    BotStoreMessage2(e, name, " are you a nerd ?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= MOVETYPE_STEP)
                                                                                     {
-                                                                                        BotStoreMessage(e, "Where is Qspy on your Hard Disk?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Where is Qspy on your Hard Disk?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_FLY)
                                                                                         {
-                                                                                            BotStoreMessage(e, "Anybody actually register me?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "Anybody actually register me?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_TOSS)
                                                                                             {
-                                                                                                BotStoreMessage(e, "Good, bad... I'm the guy with the gun", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                BotStoreMessage(e, "Good, bad... I'm the guy with the gun", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                                                 {
-                                                                                                    BotStoreMessage2(e, "This seems like a NERD spot, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage2(e, "This seems like a NERD spot, ", name, BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= FL_CLIENT)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Obots, so what?...are you happy now?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage(e, "Obots, so what?...are you happy now?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         
                                                                                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "How come nerds play quake?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "How come nerds play quake?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         
                                                                                                     }
@@ -10618,62 +10618,62 @@ void (entity e) func002284 =
                                                                         rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                         if(rnd <= FALSE)
                                                                         {
-                                                                            BotStoreMessage(e, "How about Warcraft 4 a change?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                            BotStoreMessage(e, "How about Warcraft 4 a change?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= TRUE)
                                                                             {
-                                                                                BotStoreMessage(e, "This quake stuff ain't half bad", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                BotStoreMessage(e, "This quake stuff ain't half bad", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= FL_SWIM)
                                                                                 {
-                                                                                    BotStoreMessage(e, "Anyone like the Spice Girls?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                    BotStoreMessage(e, "Anyone like the Spice Girls?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= MOVETYPE_WALK)
                                                                                     {
-                                                                                        BotStoreMessage(e, "Anybody got tickets 4 the Spice Girls?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                        BotStoreMessage(e, "Anybody got tickets 4 the Spice Girls?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_STEP)
                                                                                         {
-                                                                                            BotStoreMessage3(e, "Did you forget to flush the toilet ", name, "?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                            BotStoreMessage3(e, "Did you forget to flush the toilet ", name, "?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_FLY)
                                                                                             {
-                                                                                                BotStoreMessage(e, "I put people on ice", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "I put people on ice", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_TOSS)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "Don't call me Mr Freeze", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "Don't call me Mr Freeze", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_PUSH)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Awnald S. is Mr Freeze", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Awnald S. is Mr Freeze", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= FL_CLIENT)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Who wants to be put on Ice then?", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Who wants to be put on Ice then?", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             
                                                                                                             if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "My skin is really cool", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                BotStoreMessage(e, "My skin is really cool", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                             }
                                                                                                             
                                                                                                         }
@@ -10702,68 +10702,68 @@ void (entity e) func002284 =
                                                                             rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
                                                                             if(rnd <= FALSE)
                                                                             {
-                                                                                BotStoreMessage(e, "Gravity is a harsh mistress", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                BotStoreMessage(e, "Gravity is a harsh mistress", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= TRUE)
                                                                                 {
-                                                                                    BotStoreMessage2(e, name, ", Honk if you love justice", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
+                                                                                    BotStoreMessage2(e, name, ", Honk if you love justice", BOTMESSAGETYPE_BRAG, MOVETYPE_FLY);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= FL_SWIM)
                                                                                     {
-                                                                                        BotStoreMessage(e, "I'll be the judge of that!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "I'll be the judge of that!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= MOVETYPE_WALK)
                                                                                         {
-                                                                                            BotStoreMessage2(e, name, " Monkey from no-where!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                            BotStoreMessage2(e, name, " Monkey from no-where!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_STEP)
                                                                                             {
-                                                                                                BotStoreMessage(e, "Bad man hit dog with street", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "Bad man hit dog with street", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_FLY)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "Unhand him, you sun-worshipping dog launchers!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Unhand him, you sun-worshipping dog launchers!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_TOSS)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Heh, heh. Those darn ninjas. They're wacky", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Heh, heh. Those darn ninjas. They're wacky", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_PUSH)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "I'm doing the laundry", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                            BotStoreMessage(e, "I'm doing the laundry", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= FL_CLIENT)
                                                                                                             {
-                                                                                                                BotStoreMessage2(e, "What a master of disguise you are, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage2(e, "What a master of disguise you are, ", name, BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "SPOON!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                                    BotStoreMessage(e, "SPOON!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     
                                                                                                                     if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "That's a whole lotta' Aztecs", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "That's a whole lotta' Aztecs", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     
                                                                                                                 }
@@ -10794,68 +10794,68 @@ void (entity e) func002284 =
                                                                                 rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
                                                                                 if(rnd <= FALSE)
                                                                                 {
-                                                                                    BotStoreMessage(e, "Anybody seen John Carmack?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                    BotStoreMessage(e, "Anybody seen John Carmack?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     if(rnd <= TRUE)
                                                                                     {
-                                                                                        BotStoreMessage(e, "Doomed, I'm Doomed", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "Doomed, I'm Doomed", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= FL_SWIM)
                                                                                         {
-                                                                                            BotStoreMessage(e, "Isn't this game just the Coolest", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                            BotStoreMessage(e, "Isn't this game just the Coolest", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= MOVETYPE_WALK)
                                                                                             {
-                                                                                                BotStoreMessage(e, "How do I use this thing? ", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "How do I use this thing? ", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_STEP)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "Rockets, I need Rockets", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Rockets, I need Rockets", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_FLY)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Pull the other one", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Pull the other one", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_TOSS)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Atmosphere..that's it!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Atmosphere..that's it!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= MOVETYPE_PUSH)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Hmmm, unaligned textures", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "Hmmm, unaligned textures", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= FL_CLIENT)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Did I do this level?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "Did I do this level?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Anyone for DungeonKeeper?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Anyone for DungeonKeeper?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         
                                                                                                                         if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "There is a virus on your hard disk", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "There is a virus on your hard disk", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         
                                                                                                                     }
@@ -10886,62 +10886,62 @@ void (entity e) func002284 =
                                                                                     rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
                                                                                     if(rnd <= FALSE)
                                                                                     {
-                                                                                        BotStoreMessage(e, "See you all in hell", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                        BotStoreMessage(e, "See you all in hell", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                     }
                                                                                     else
                                                                                     {
                                                                                         if(rnd <= TRUE)
                                                                                         {
-                                                                                            BotStoreMessage(e, "Ukko, you dwarf, where are U?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "Ukko, you dwarf, where are U?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= FL_SWIM)
                                                                                             {
-                                                                                                BotStoreMessage(e, "Where has Ukko gone off to?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                BotStoreMessage(e, "Where has Ukko gone off to?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= MOVETYPE_WALK)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "I need more Blood & Gore", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I need more Blood & Gore", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_STEP)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Brainbiter and I make a good team", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                        BotStoreMessage(e, "Brainbiter and I make a good team", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_FLY)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Come on baby light my fire!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Come on baby light my fire!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= MOVETYPE_TOSS)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "I am Slaine Mac Roth", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "I am Slaine Mac Roth", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "I feel a riastarthae coming up...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "I feel a riastarthae coming up...", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= FL_CLIENT)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "BrainBiter should be all I need", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "BrainBiter should be all I need", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         
                                                                                                                         if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                         {
-                                                                                                                            BotStoreMessage2(e, name, ", shall I go berserk?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage2(e, name, ", shall I go berserk?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         
                                                                                                                     }
@@ -10970,62 +10970,62 @@ void (entity e) func002284 =
                                                                                         rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                                         if(rnd <= FALSE)
                                                                                         {
-                                                                                            BotStoreMessage(e, "I've got you are all surrounded", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                            BotStoreMessage(e, "I've got you are all surrounded", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                         }
                                                                                         else
                                                                                         {
                                                                                             if(rnd <= TRUE)
                                                                                             {
-                                                                                                BotStoreMessage2(e, name, ", Dead or alive, you're coming with me", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                BotStoreMessage2(e, name, ", Dead or alive, you're coming with me", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= FL_SWIM)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "Come quietly or there will be trouble", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                    BotStoreMessage(e, "Come quietly or there will be trouble", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= MOVETYPE_WALK)
                                                                                                     {
-                                                                                                        BotStoreMessage2(e, name, ", your move, creep", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage2(e, name, ", your move, creep", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_STEP)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Thank you for NOT smoking", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                            BotStoreMessage(e, "Thank you for NOT smoking", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= MOVETYPE_FLY)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Keep the peace", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                BotStoreMessage(e, "Keep the peace", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_TOSS)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Anyone got silverpolish 4 me?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Anyone got silverpolish 4 me?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_PUSH)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Give up, I've got you completely surrounded", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Give up, I've got you completely surrounded", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= FL_CLIENT)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "Offense #2, Shooting at an officer of the law,", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "Offense #2, Shooting at an officer of the law,", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             
                                                                                                                             if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                             {
-                                                                                                                                BotStoreMessage2(e, "Offense #1, Use of illegal fire-arms,", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage2(e, "Offense #1, Use of illegal fire-arms,", name, BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             
                                                                                                                         }
@@ -11054,62 +11054,62 @@ void (entity e) func002284 =
                                                                                             rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                                             if(rnd <= FALSE)
                                                                                             {
-                                                                                                BotStoreMessage(e, "Yeee-haw", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                BotStoreMessage(e, "Yeee-haw", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                             }
                                                                                             else
                                                                                             {
                                                                                                 if(rnd <= TRUE)
                                                                                                 {
-                                                                                                    BotStoreMessage2(e, name, " is a yella-belly", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage2(e, name, " is a yella-belly", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= FL_SWIM)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "Giddap, y'all flea bitten, dust-bitin' varmit", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "Giddap, y'all flea bitten, dust-bitin' varmit", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= MOVETYPE_WALK)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "I'm the ruffest, tuffest gunslinger in the west", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "I'm the ruffest, tuffest gunslinger in the west", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= MOVETYPE_STEP)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Rollin' Rollin' Rawhide!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "Rollin' Rollin' Rawhide!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_FLY)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Yer all dead", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "Yer all dead", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_TOSS)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Yer all yella-bellies", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Yer all yella-bellies", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= MOVETYPE_PUSH)
                                                                                                                         {
-                                                                                                                            BotStoreMessage2(e, name, ", this level ain't big enough for both of us", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_FLY);
+                                                                                                                            BotStoreMessage2(e, name, ", this level ain't big enough for both of us", BOTMESSAGETYPE_BRAG, MOVETYPE_FLY);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= FL_CLIENT)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "I'm a gunslinger, not a doctor.", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "I'm a gunslinger, not a doctor.", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 
                                                                                                                                 if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage2(e, "Your momma wear cowboy boots, ", name, BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage2(e, "Your momma wear cowboy boots, ", name, BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 
                                                                                                                             }
@@ -11138,62 +11138,62 @@ void (entity e) func002284 =
                                                                                                 rnd = floor(rnd * MOVETYPE_BOUNCEMISSILE);
                                                                                                 if(rnd <= FALSE)
                                                                                                 {
-                                                                                                    BotStoreMessage(e, "I putta u oll on ice", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                    BotStoreMessage(e, "I putta u oll on ice", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                 }
                                                                                                 else
                                                                                                 {
                                                                                                     if(rnd <= TRUE)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "u toucha mi, u die, capito?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                        BotStoreMessage(e, "u toucha mi, u die, capito?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= FL_SWIM)
                                                                                                         {
-                                                                                                            BotStoreMessage2(e, name, ", U been ina da bigga ouse?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage2(e, name, ", U been ina da bigga ouse?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= MOVETYPE_WALK)
                                                                                                             {
-                                                                                                                BotStoreMessage2(e, name, ", U wanna wear di cementa shoes?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage2(e, name, ", U wanna wear di cementa shoes?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_STEP)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Anybodi lika Frank Sinatra?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Anybodi lika Frank Sinatra?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_FLY)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Da winna getsa da pizza, capiche?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                        BotStoreMessage(e, "Da winna getsa da pizza, capiche?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= MOVETYPE_TOSS)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "Belisimo!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                                            BotStoreMessage(e, "Belisimo!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= MOVETYPE_PUSH)
                                                                                                                             {
-                                                                                                                                BotStoreMessage2(e, name, " has a salami for a nose", BOTMESSAGE_4, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage2(e, name, " has a salami for a nose", BOTMESSAGETYPE_INSULT, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= FL_CLIENT)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "Come get some!", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "Come get some!", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     
                                                                                                                                     if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "Shaddapa ya face", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                        BotStoreMessage(e, "Shaddapa ya face", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                     }
                                                                                                                                     
                                                                                                                                 }
@@ -11222,62 +11222,62 @@ void (entity e) func002284 =
                                                                                                     rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                                                     if(rnd <= FALSE)
                                                                                                     {
-                                                                                                        BotStoreMessage(e, "This place hardly looks like back home", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                        BotStoreMessage(e, "This place hardly looks like back home", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                     }
                                                                                                     else
                                                                                                     {
                                                                                                         if(rnd <= TRUE)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "I'm not the actor from 'Down South'", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "I'm not the actor from 'Down South'", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= FL_SWIM)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "To protect and serve", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                BotStoreMessage(e, "To protect and serve", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= MOVETYPE_WALK)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "A moose once bit my sister", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "A moose once bit my sister", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_STEP)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Where are the lumberjacks then?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Where are the lumberjacks then?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= MOVETYPE_FLY)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "He's a lumberjack and he's ok...", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                            BotStoreMessage(e, "He's a lumberjack and he's ok...", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= MOVETYPE_TOSS)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "Has anyone seen my wolf?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "Has anyone seen my wolf?", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "I need Canada Dry Ginger Ale...fast", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage(e, "I need Canada Dry Ginger Ale...fast", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= FL_CLIENT)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "Whatever happens...Canadians rule!!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                        BotStoreMessage(e, "Whatever happens...Canadians rule!!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         
                                                                                                                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "Chocolate Moose anyone?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                                            BotStoreMessage(e, "Chocolate Moose anyone?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                                         }
                                                                                                                                         
                                                                                                                                     }
@@ -11306,92 +11306,92 @@ void (entity e) func002284 =
                                                                                                         rnd = floor(rnd * GLOBALDEF748_15);
                                                                                                         if(rnd <= FALSE)
                                                                                                         {
-                                                                                                            BotStoreMessage(e, "Men are such babies", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                            BotStoreMessage(e, "Men are such babies", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                         }
                                                                                                         else
                                                                                                         {
                                                                                                             if(rnd <= TRUE)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Anybody seen my eyeliner ?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                                BotStoreMessage(e, "Anybody seen my eyeliner ?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= FL_SWIM)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "Which one of you boys wants it first?", BOTMESSAGE_5, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "Which one of you boys wants it first?", BOTMESSAGETYPE_QUESTION, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= MOVETYPE_WALK)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Men are such pigs", BOTMESSAGE_4, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "Men are such pigs", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= MOVETYPE_STEP)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "I feel like I wanna nail a man", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "I feel like I wanna nail a man", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= MOVETYPE_FLY)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "I'm gonna blow a man...UP", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                BotStoreMessage(e, "I'm gonna blow a man...UP", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= MOVETYPE_TOSS)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "Pinapple anyone?", BOTMESSAGE_5, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "Pinapple anyone?", BOTMESSAGETYPE_QUESTION, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= MOVETYPE_PUSH)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "All men can kiss my broomstick", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "All men can kiss my broomstick", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         if(rnd <= FL_CLIENT)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "Eat me..suckers", BOTMESSAGE_4, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Eat me..suckers", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                             {
-                                                                                                                                                BotStoreMessage(e, "Look at what you can't have", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                                                                BotStoreMessage(e, "Look at what you can't have", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
                                                                                                                                                 if(rnd <= MOVETYPE_BOUNCE)
                                                                                                                                                 {
-                                                                                                                                                    BotStoreMessage(e, "I hate Quake nerds", BOTMESSAGE_4, FL_SWIM);
+                                                                                                                                                    BotStoreMessage(e, "I hate Quake nerds", BOTMESSAGETYPE_INSULT, FL_SWIM);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
                                                                                                                                                     if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                                                                                                                     {
-                                                                                                                                                        BotStoreMessage2(e, name, ", you can't get it up, babe", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage2(e, name, ", you can't get it up, babe", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
                                                                                                                                                         if(rnd <= BOTSHIRTPANTS_12)
                                                                                                                                                         {
-                                                                                                                                                            BotStoreMessage3(e, "My, ", name, " what a small broomstick you have", BOTMESSAGE_4, MOVETYPE_STEP);
+                                                                                                                                                            BotStoreMessage3(e, "My, ", name, " what a small broomstick you have", BOTMESSAGETYPE_INSULT, MOVETYPE_STEP);
                                                                                                                                                         }
                                                                                                                                                         else
                                                                                                                                                         {
                                                                                                                                                             if(rnd <= BOTSHIRTPANTS_13)
                                                                                                                                                             {
-                                                                                                                                                                BotStoreMessage(e, "I'm the queen of the hill", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                                BotStoreMessage(e, "I'm the queen of the hill", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                             }
                                                                                                                                                             else
                                                                                                                                                             {
                                                                                                                                                                 
                                                                                                                                                                 if(rnd <= 14)
                                                                                                                                                                 {
-                                                                                                                                                                    BotStoreMessage(e, "Lara Croft, meet your match", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                                    BotStoreMessage(e, "Lara Croft, meet your match", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                                 }
                                                                                                                                                                 
                                                                                                                                                             }
@@ -11430,56 +11430,56 @@ void (entity e) func002284 =
                                                                                                             rnd = floor(rnd * MOVETYPE_FLYMISSILE);
                                                                                                             if(rnd <= FALSE)
                                                                                                             {
-                                                                                                                BotStoreMessage(e, "Punishment due", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                                BotStoreMessage(e, "Punishment due", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                                             }
                                                                                                             else
                                                                                                             {
                                                                                                                 if(rnd <= TRUE)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "I'm gonna deal out some heavy punishment", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                    BotStoreMessage(e, "I'm gonna deal out some heavy punishment", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= FL_SWIM)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Have you been punished lately?", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Have you been punished lately?", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= MOVETYPE_WALK)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "My suit is prettier than Batman's", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "My suit is prettier than Batman's", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= MOVETYPE_STEP)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "I'm cuter than that bat eared playboy", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                BotStoreMessage(e, "I'm cuter than that bat eared playboy", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= MOVETYPE_FLY)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "I hear Quake 2 really rocks!!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                    BotStoreMessage(e, "I hear Quake 2 really rocks!!", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= MOVETYPE_TOSS)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage2(e, name, " is a sunday school wimp!", BOTMESSAGE_4, MOVETYPE_STEP);
+                                                                                                                                        BotStoreMessage2(e, name, " is a sunday school wimp!", BOTMESSAGETYPE_INSULT, MOVETYPE_STEP);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         if(rnd <= MOVETYPE_PUSH)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "you bunch of spammers", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "you bunch of spammers", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             
                                                                                                                                             if(rnd <= FL_CLIENT)
                                                                                                                                             {
-                                                                                                                                                BotStoreMessage(e, "Chicks dig the muscles", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_STEP);
+                                                                                                                                                BotStoreMessage(e, "Chicks dig the muscles", BOTMESSAGETYPE_BRAG, MOVETYPE_STEP);
                                                                                                                                             }
                                                                                                                                             
                                                                                                                                         }
@@ -11506,62 +11506,62 @@ void (entity e) func002284 =
                                                                                                                 rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                                                                 if(rnd <= FALSE)
                                                                                                                 {
-                                                                                                                    BotStoreMessage(e, "I'm the King", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                    BotStoreMessage(e, "I'm the King", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                 }
                                                                                                                 else
                                                                                                                 {
                                                                                                                     if(rnd <= TRUE)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "Thank y'all vary much", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                        BotStoreMessage(e, "Thank y'all vary much", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= FL_SWIM)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "The king is still alaive", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "The king is still alaive", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= MOVETYPE_WALK)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "Shall I sing a song?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                BotStoreMessage(e, "Shall I sing a song?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= MOVETYPE_STEP)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "Yeah!!", BOTMESSAGETYPE_TELEFRAG, TRUE);
+                                                                                                                                    BotStoreMessage(e, "Yeah!!", BOTMESSAGETYPE_BRAG, TRUE);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= MOVETYPE_FLY)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "Do ya'll want my autograph?", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "Do ya'll want my autograph?", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         if(rnd <= MOVETYPE_TOSS)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "I'm a singer, not a gibber!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                            BotStoreMessage(e, "I'm a singer, not a gibber!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             if(rnd <= MOVETYPE_PUSH)
                                                                                                                                             {
-                                                                                                                                                BotStoreMessage(e, "Where is the mike?", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                                BotStoreMessage(e, "Where is the mike?", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
                                                                                                                                                 if(rnd <= FL_CLIENT)
                                                                                                                                                 {
-                                                                                                                                                    BotStoreMessage2(e, name, " it's Mr Presley to you, son", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                    BotStoreMessage2(e, name, " it's Mr Presley to you, son", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
                                                                                                                                                     
                                                                                                                                                     if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                                     {
-                                                                                                                                                        BotStoreMessage(e, "u-HUH-huh, u-HUH-huh, yeah-yeah-YEAH!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage(e, "u-HUH-huh, u-HUH-huh, yeah-yeah-YEAH!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     
                                                                                                                                                 }
@@ -11591,62 +11591,62 @@ void (entity e) func002284 =
                                                                                                                     rnd = floor(rnd * MOVETYPE_BOUNCE);
                                                                                                                     if(rnd <= FALSE)
                                                                                                                     {
-                                                                                                                        BotStoreMessage(e, "errare est humanum", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                        BotStoreMessage(e, "errare est humanum", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                     }
                                                                                                                     else
                                                                                                                     {
                                                                                                                         if(rnd <= TRUE)
                                                                                                                         {
-                                                                                                                            BotStoreMessage(e, "exitus acta probat", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                            BotStoreMessage(e, "exitus acta probat", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                         }
                                                                                                                         else
                                                                                                                         {
                                                                                                                             if(rnd <= FL_SWIM)
                                                                                                                             {
-                                                                                                                                BotStoreMessage(e, "hodie mihi, cras tibi", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                BotStoreMessage(e, "hodie mihi, cras tibi", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                             }
                                                                                                                             else
                                                                                                                             {
                                                                                                                                 if(rnd <= MOVETYPE_WALK)
                                                                                                                                 {
-                                                                                                                                    BotStoreMessage(e, "facta non verba", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                    BotStoreMessage(e, "facta non verba", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                 }
                                                                                                                                 else
                                                                                                                                 {
                                                                                                                                     if(rnd <= MOVETYPE_STEP)
                                                                                                                                     {
-                                                                                                                                        BotStoreMessage(e, "aut vincere aut mori", BOTMESSAGE_4, MOVETYPE_WALK);
+                                                                                                                                        BotStoreMessage(e, "aut vincere aut mori", BOTMESSAGETYPE_INSULT, MOVETYPE_WALK);
                                                                                                                                     }
                                                                                                                                     else
                                                                                                                                     {
                                                                                                                                         if(rnd <= MOVETYPE_FLY)
                                                                                                                                         {
-                                                                                                                                            BotStoreMessage(e, "Cogito, ergo sum", BOTMESSAGETYPE_TELEFRAG, FL_SWIM);
+                                                                                                                                            BotStoreMessage(e, "Cogito, ergo sum", BOTMESSAGETYPE_BRAG, FL_SWIM);
                                                                                                                                         }
                                                                                                                                         else
                                                                                                                                         {
                                                                                                                                             if(rnd <= MOVETYPE_TOSS)
                                                                                                                                             {
-                                                                                                                                                BotStoreMessage(e, "Omicron optimus maximus", BOTMESSAGE_5, MOVETYPE_WALK);
+                                                                                                                                                BotStoreMessage(e, "Omicron optimus maximus", BOTMESSAGETYPE_QUESTION, MOVETYPE_WALK);
                                                                                                                                             }
                                                                                                                                             else
                                                                                                                                             {
                                                                                                                                                 if(rnd <= MOVETYPE_PUSH)
                                                                                                                                                 {
-                                                                                                                                                    BotStoreMessage(e, "proh pudor!", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                    BotStoreMessage(e, "proh pudor!", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                 }
                                                                                                                                                 else
                                                                                                                                                 {
                                                                                                                                                     if(rnd <= FL_CLIENT)
                                                                                                                                                     {
-                                                                                                                                                        BotStoreMessage(e, "aut Omicron Bots aut nullus", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                        BotStoreMessage(e, "aut Omicron Bots aut nullus", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                     }
                                                                                                                                                     else
                                                                                                                                                     {
                                                                                                                                                         
                                                                                                                                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                                                                                                                                         {
-                                                                                                                                                            BotStoreMessage(e, "aut Vincere aut Mori", BOTMESSAGETYPE_TELEFRAG, MOVETYPE_WALK);
+                                                                                                                                                            BotStoreMessage(e, "aut Vincere aut Mori", BOTMESSAGETYPE_BRAG, MOVETYPE_WALK);
                                                                                                                                                         }
                                                                                                                                                         
                                                                                                                                                     }
@@ -11805,50 +11805,50 @@ void (entity e) BotChooseTelefragMessage =
     rnd = floor(rnd * FL_CLIENT);
     if(rnd <= FALSE)
     {
-        BotStoreMessage(e, "smooth", BOTMESSAGETYPE_TELEFRAG, FALSE);
+        BotStoreMessage(e, "smooth", BOTMESSAGETYPE_BRAG, FALSE);
     }
     else
     {
         if(rnd <= TRUE)
         {
-            BotStoreMessage(e, "Whack! right in the kisser", BOTMESSAGETYPE_TELEFRAG, FALSE);
+            BotStoreMessage(e, "Whack! right in the kisser", BOTMESSAGETYPE_BRAG, FALSE);
         }
         else
         {
             if(rnd <= FL_SWIM)
             {
-                BotStoreMessage(e, "SPAM!!!", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                BotStoreMessage(e, "SPAM!!!", BOTMESSAGETYPE_BRAG, FALSE);
             }
             else
             {
                 if(rnd <= MOVETYPE_WALK)
                 {
-                    BotStoreMessage(e, "does it hurt?", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                    BotStoreMessage(e, "does it hurt?", BOTMESSAGETYPE_BRAG, FALSE);
                 }
                 else
                 {
                     if(rnd <= MOVETYPE_STEP)
                     {
-                        BotStoreMessage(e, ":)", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                        BotStoreMessage(e, ":)", BOTMESSAGETYPE_BRAG, FALSE);
                     }
                     else
                     {
                         if(rnd <= MOVETYPE_FLY)
                         {
-                            BotStoreMessage(e, "ultimate kill", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                            BotStoreMessage(e, "ultimate kill", BOTMESSAGETYPE_BRAG, FALSE);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_TOSS)
                             {
-                                BotStoreMessage(e, "wow", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                                BotStoreMessage(e, "wow", BOTMESSAGETYPE_BRAG, FALSE);
                             }
                             else
                             {
                                 
                                 if(rnd <= MOVETYPE_PUSH)
                                 {
-                                    BotStoreMessage(e, "ding!", BOTMESSAGETYPE_TELEFRAG, FALSE);
+                                    BotStoreMessage(e, "ding!", BOTMESSAGETYPE_BRAG, FALSE);
                                 }
                                 
                             }
@@ -11868,7 +11868,7 @@ void (entity e) BotChooseTelefragMessage =
 };
 
 
-// func002286
+// BotChooseRandomMessage
 // function begins at statement 33847, parm_start=18384
 // OP_CALL0	457	0	0
 // OP_STORE_F	1	18385	0
@@ -12023,135 +12023,135 @@ void (entity e) BotChooseTelefragMessage =
 // OP_STORE_V	16700	10	0
 // OP_CALL3	1070	0	0
 // OP_DONE	0	0	0
-void (entity e) func002286 = 
+void (entity e) BotChooseRandomMessage = 
 {
     local float rnd;
     rnd = random();
     rnd = floor(rnd * 21);
     if(rnd <= FALSE)
     {
-        BotEnterMessage1(e, "hihi", BOTMESSAGETYPE_TELEFRAG);
+        BotEnterMessage1(e, "hihi", BOTMESSAGETYPE_BRAG);
     }
     else
     {
         if(rnd <= TRUE)
         {
-            BotEnterMessage1(e, "hehe", BOTMESSAGETYPE_TELEFRAG);
+            BotEnterMessage1(e, "hehe", BOTMESSAGETYPE_BRAG);
         }
         else
         {
             if(rnd <= FL_SWIM)
             {
-                BotEnterMessage1(e, "hahaha", BOTMESSAGETYPE_TELEFRAG);
+                BotEnterMessage1(e, "hahaha", BOTMESSAGETYPE_BRAG);
             }
             else
             {
                 if(rnd <= MOVETYPE_WALK)
                 {
-                    BotEnterMessage1(e, "I'll put you in backpack mode", BOTMESSAGETYPE_TELEFRAG);
+                    BotEnterMessage1(e, "I'll put you in backpack mode", BOTMESSAGETYPE_BRAG);
                 }
                 else
                 {
                     if(rnd <= MOVETYPE_STEP)
                     {
-                        BotEnterMessage1(e, "you're boring", BOTMESSAGETYPE_TELEFRAG);
+                        BotEnterMessage1(e, "you're boring", BOTMESSAGETYPE_BRAG);
                     }
                     else
                     {
                         if(rnd <= MOVETYPE_FLY)
                         {
-                            BotEnterMessage1(e, "you really suck at quake", BOTMESSAGETYPE_TELEFRAG);
+                            BotEnterMessage1(e, "you really suck at quake", BOTMESSAGETYPE_BRAG);
                         }
                         else
                         {
                             if(rnd <= MOVETYPE_TOSS)
                             {
-                                BotEnterMessage1(e, "let's rock", BOTMESSAGETYPE_TELEFRAG);
+                                BotEnterMessage1(e, "let's rock", BOTMESSAGETYPE_BRAG);
                             }
                             else
                             {
                                 if(rnd <= MOVETYPE_PUSH)
                                 {
-                                    BotEnterMessage1(e, "whoa!!", BOTMESSAGETYPE_TELEFRAG);
+                                    BotEnterMessage1(e, "whoa!!", BOTMESSAGETYPE_BRAG);
                                 }
                                 else
                                 {
                                     if(rnd <= FL_CLIENT)
                                     {
-                                        BotEnterMessage1(e, "let's play another game", BOTMESSAGETYPE_TELEFRAG);
+                                        BotEnterMessage1(e, "let's play another game", BOTMESSAGETYPE_BRAG);
                                     }
                                     else
                                     {
                                         if(rnd <= MOVETYPE_FLYMISSILE)
                                         {
-                                            BotEnterMessage1(e, "I've had it for today", BOTMESSAGETYPE_TELEFRAG);
+                                            BotEnterMessage1(e, "I've had it for today", BOTMESSAGETYPE_BRAG);
                                         }
                                         else
                                         {
                                             if(rnd <= MOVETYPE_BOUNCE)
                                             {
-                                                BotEnterMessage1(e, "DUH!!!", BOTMESSAGETYPE_TELEFRAG);
+                                                BotEnterMessage1(e, "DUH!!!", BOTMESSAGETYPE_BRAG);
                                             }
                                             else
                                             {
                                                 if(rnd <= MOVETYPE_BOUNCEMISSILE)
                                                 {
-                                                    BotEnterMessage1(e, ":)", BOTMESSAGETYPE_TELEFRAG);
+                                                    BotEnterMessage1(e, ":)", BOTMESSAGETYPE_BRAG);
                                                 }
                                                 else
                                                 {
                                                     if(rnd <= BOTSHIRTPANTS_12)
                                                     {
-                                                        BotEnterMessage1(e, "wow", BOTMESSAGETYPE_TELEFRAG);
+                                                        BotEnterMessage1(e, "wow", BOTMESSAGETYPE_BRAG);
                                                     }
                                                     else
                                                     {
                                                         if(rnd <= BOTSHIRTPANTS_13)
                                                         {
-                                                            BotEnterMessage1(e, "weeeee", BOTMESSAGETYPE_TELEFRAG);
+                                                            BotEnterMessage1(e, "weeeee", BOTMESSAGETYPE_BRAG);
                                                         }
                                                         else
                                                         {
                                                             if(rnd <= 14)
                                                             {
-                                                                BotEnterMessage1(e, "I'm on a roll", BOTMESSAGETYPE_TELEFRAG);
+                                                                BotEnterMessage1(e, "I'm on a roll", BOTMESSAGETYPE_BRAG);
                                                             }
                                                             else
                                                             {
                                                                 if(rnd <= GLOBALDEF748_15)
                                                                 {
-                                                                    BotEnterMessage1(e, "this rocks", BOTMESSAGETYPE_TELEFRAG);
+                                                                    BotEnterMessage1(e, "this rocks", BOTMESSAGETYPE_BRAG);
                                                                 }
                                                                 else
                                                                 {
                                                                     if(rnd <= FL_INWATER)
                                                                     {
-                                                                        BotEnterMessage1(e, "aaah", BOTMESSAGETYPE_TELEFRAG);
+                                                                        BotEnterMessage1(e, "aaah", BOTMESSAGETYPE_BRAG);
                                                                     }
                                                                     else
                                                                     {
                                                                         if(rnd <= 17)
                                                                         {
-                                                                            BotEnterMessage1(e, "groovy", BOTMESSAGETYPE_TELEFRAG);
+                                                                            BotEnterMessage1(e, "groovy", BOTMESSAGETYPE_BRAG);
                                                                         }
                                                                         else
                                                                         {
                                                                             if(rnd <= 18)
                                                                             {
-                                                                                BotEnterMessage1(e, "grrrrr", BOTMESSAGETYPE_TELEFRAG);
+                                                                                BotEnterMessage1(e, "grrrrr", BOTMESSAGETYPE_BRAG);
                                                                             }
                                                                             else
                                                                             {
                                                                                 if(rnd <= 19)
                                                                                 {
-                                                                                    BotEnterMessage1(e, "!!", BOTMESSAGETYPE_TELEFRAG);
+                                                                                    BotEnterMessage1(e, "!!", BOTMESSAGETYPE_BRAG);
                                                                                 }
                                                                                 else
                                                                                 {
                                                                                     
                                                                                     if(rnd <= 20)
                                                                                     {
-                                                                                        BotEnterMessage1(e, "nice!", BOTMESSAGETYPE_TELEFRAG);
+                                                                                        BotEnterMessage1(e, "nice!", BOTMESSAGETYPE_BRAG);
                                                                                     }
                                                                                     
                                                                                 }
