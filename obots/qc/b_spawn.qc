@@ -173,7 +173,7 @@ void (entity globaldef007102) DestroyBot =
     }
     
     remove(globaldef007102);
-    globaldef000793 = globaldef000793 - TRUE;
+    botCount = botCount - TRUE;
 };
 
 
@@ -555,7 +555,7 @@ void (entity globaldef007106) func002418 =
     }
     
     
-    if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((waypointCount < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
         globaldef007106.botflags = globaldef007106.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
@@ -703,7 +703,7 @@ entity (float globaldef007113) AddDeathmatchBot =
     
     globaldef007114.think = func002419;
     globaldef007114.nextthink = (time + 0.1) + (globaldef007114.botnumber * 0.1);
-    globaldef000793 = globaldef000793 + TRUE;
+    botCount = botCount + TRUE;
     return globaldef007114;
 };
 
@@ -723,7 +723,7 @@ entity (float globaldef007113) AddDeathmatchBot =
 void () func002421 = 
 {
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         self.nextthink = time + TRUE;
         return;
@@ -807,7 +807,7 @@ void (float globaldef007118) AddBots =
     globaldef007119.netname = BotName(globaldef007119.botnumber);
     globaldef007119.clientcolor = BotShirtPantsColor(globaldef007119.botnumber);
     
-    if(!globaldef000805)
+    if(!lowMemoryDisableExtraModels)
     {
         globaldef007119.skin = FALSE;
         globaldef007119.field000251 = globaldef007119.botnumber;

@@ -209,7 +209,7 @@ void (vector originpt, vector angle) EjectShell_spawn =
     local entity shell;
     local entity oldshell;
     
-    if(globaldef000805)
+    if(lowMemoryDisableExtraModels)
     {
         return;
     }

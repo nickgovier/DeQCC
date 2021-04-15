@@ -1595,7 +1595,7 @@ void (entity globaldef002651) func000345 =
     globaldef002653 = random();
     if(CampingMode == CAMP_DETECT_AND_PUNISH_SEVERE)
     {
-        if(!globaldef000805 && (globaldef002653 < 0.25))
+        if(!lowMemoryDisableExtraModels && (globaldef002653 < 0.25))
         {
             func000344(globaldef002651);
         }
@@ -1628,7 +1628,7 @@ void (entity globaldef002651) func000345 =
     }
     else
     {
-        if(!globaldef000805 && (globaldef002653 < RA_PLAYERSTATTIME))
+        if(!lowMemoryDisableExtraModels && (globaldef002653 < RA_PLAYERSTATTIME))
         {
             func000344(globaldef002651);
         }

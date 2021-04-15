@@ -1439,7 +1439,7 @@ vector (float dm) VelocityForDamage =
 // OP_DONE	0	0	0
 void () RemoveGib = 
 {
-    num_gibs = num_gibs - TRUE;
+    gibsCount = gibsCount - TRUE;
     remove(self);
 };
 
@@ -1502,12 +1502,12 @@ void (string gibname, float dm) ThrowGib =
 {
     local entity new;
     
-    if(num_gibs > OBOT_MAXGIBS)
+    if(gibsCount > OBOT_MAXGIBS)
     {
         return;
     }
     
-    num_gibs = num_gibs + TRUE;
+    gibsCount = gibsCount + TRUE;
     new = spawn();
     new.origin = self.origin;
     setmodel(new, gibname);

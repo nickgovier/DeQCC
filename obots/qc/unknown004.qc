@@ -192,7 +192,7 @@ void (float globaldef007125) func002427 =
     globaldef007126.netname = BotName(globaldef007126.botnumber);
     func002426(globaldef007126, globaldef007125);
     
-    if(!globaldef000805)
+    if(!lowMemoryDisableExtraModels)
     {
         globaldef007126.skin = FALSE;
         globaldef007126.field000251 = TRUE;

@@ -760,7 +760,7 @@ void () func002657 =
         {
             CheckHardCodedWaypoints();
             
-            if(globaldef000790)
+            if(hardCodedWaypointsExist)
             {
                 bprint("hard coded waypoints present\n");
             }
@@ -772,14 +772,14 @@ void () func002657 =
         }
         
         func002656();
-        if(globaldef000789 || globaldef000790)
+        if(globaldef000789 || hardCodedWaypointsExist)
         {
             globaldef000788 = globaldef000708;
             obot_game_option_bitflags = obot_game_option_bitflags | OBOT_BOTPATHING;
         }
         else
         {
-            globaldef000799 = FALSE;
+            gameNotRunning = FALSE;
             globaldef000788 = globaldef000710;
             globaldef000810 = world;
         }
@@ -909,7 +909,7 @@ void () func002657 =
                 globaldef000810 = world;
                 globaldef000788 = globaldef000710;
                 bprint("\n");
-                globaldef000799 = FALSE;
+                gameNotRunning = FALSE;
             }
             
         }
@@ -1304,7 +1304,7 @@ void () func002661 =
     if(globaldef000811 == world)
     {
         sprint(self, "number of waypoints = ");
-        globaldef009094 = ftos(globaldef000786);
+        globaldef009094 = ftos(waypointCount);
         sprint(self, globaldef009094);
         sprint(self, "\n\n");
         globaldef000811 = firstWaypoint;
@@ -1678,7 +1678,7 @@ void () func002663 =
     if(globaldef000811 == world)
     {
         sprint(self, "number of waypoints = ");
-        globaldef009115 = ftos(globaldef000786);
+        globaldef009115 = ftos(waypointCount);
         sprint(self, globaldef009115);
         sprint(self, "\n\n");
         sprint3(self, "	if (world.model == \"", world.model, "\")\n	{\n");
@@ -1977,9 +1977,9 @@ void () waypoint =
     self.touch = func002666;
     setsize(self, '-4 -4 -4', '4 4 4');
     
-    if(self.waypointnumber > globaldef000786)
+    if(self.waypointnumber > waypointCount)
     {
-        globaldef000786 = self.waypointnumber;
+        waypointCount = self.waypointnumber;
     }
     
     func002664(self);
@@ -2030,13 +2030,13 @@ void (vector org, float number, float type, string itemstr) HCWP_Create =
     setsize(new_wp, '-4 -4 -4', '4 4 4');
     setorigin(new_wp, org);
     
-    if(number > globaldef000786)
+    if(number > waypointCount)
     {
-        globaldef000786 = number;
+        waypointCount = number;
     }
     
     func002664(new_wp);
-    globaldef000790 = TRUE;
+    hardCodedWaypointsExist = TRUE;
 };
 
 
@@ -2154,16 +2154,16 @@ void (float number, float p4, float p5, float p6, float p7) HCWP_SetPointers2 =
 entity () func002671 = 
 {
     local entity globaldef009158;
-    globaldef000786 = globaldef000786 + TRUE;
+    waypointCount = waypointCount + TRUE;
     globaldef009158 = spawn();
     globaldef009158.classname = "waypoint";
     globaldef009158.solid = SOLID_TRIGGER;
     globaldef009158.touch = func002666;
-    globaldef009158.waypointnumber = globaldef000786;
+    globaldef009158.waypointnumber = waypointCount;
     setsize(globaldef009158, '-4 -4 -4', '4 4 4');
     func002664(globaldef009158);
     
-    if((globaldef000786 >= globaldef000787) && (globaldef000788 == globaldef000710))
+    if((waypointCount >= globaldef000787) && (globaldef000788 == globaldef000710))
     {
         func002639();
     }
@@ -2780,7 +2780,7 @@ float () func002679 =
     local float globaldef009210;
     local vector globaldef009211;
     
-    if(globaldef000786 > globaldef000787)
+    if(waypointCount > globaldef000787)
     {
         return FALSE;
     }
@@ -3816,9 +3816,9 @@ void (entity globaldef009216, entity wp, float globaldef009218, entity ent) func
     }
     
     
-    if(globaldef009225 > globaldef000802)
+    if(globaldef009225 > maxWaypoint_ONLY_SET)
     {
-        globaldef000802 = globaldef009225;
+        maxWaypoint_ONLY_SET = globaldef009225;
     }
     
 };
@@ -4288,9 +4288,9 @@ void (entity globaldef009230, entity globaldef009231, float globaldef009232, ent
     }
     
     
-    if(globaldef009239 > globaldef000802)
+    if(globaldef009239 > maxWaypoint_ONLY_SET)
     {
-        globaldef000802 = globaldef009239;
+        maxWaypoint_ONLY_SET = globaldef009239;
     }
     
 };

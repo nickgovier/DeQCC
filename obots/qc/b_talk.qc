@@ -882,7 +882,7 @@ void () func002380 =
     }
     
     
-    if(((activeClientCount - globaldef000793) - globaldef000792) <= TRUE)
+    if(((activeClientCount - botCount) - observerCount) <= TRUE)
     {
         return;
     }

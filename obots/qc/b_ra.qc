@@ -1208,7 +1208,7 @@ void (entity globaldef002777) gotoarena =
         time_to_start = time + MOVETYPE_BOUNCE;
     }
     
-    globaldef000799 = TRUE;
+    gameNotRunning = TRUE;
 };
 
 
@@ -1740,7 +1740,7 @@ void (entity globaldef002797) rocket_arena_prethink =
             loser.takedamage = DAMAGE_AIM;
             centerprint(winner, "??????");
             centerprint(loser, "??????");
-            globaldef000799 = FALSE;
+            gameNotRunning = FALSE;
             time_to_start = FALSE;
         }
         else

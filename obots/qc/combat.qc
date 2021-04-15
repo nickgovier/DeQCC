@@ -477,7 +477,7 @@ void (entity targ, entity inflictor, entity attacker, float damage) T_Damage =
     local float save;
     local float take;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }

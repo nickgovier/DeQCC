@@ -466,12 +466,12 @@ void (entity globaldef005739) func002273 =
     local entity globaldef005746;
     globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & globaldef000685);
     globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & globaldef000683);
-    setsize(globaldef000812, globaldef005739.mins, globaldef005739.maxs);
-    setorigin(globaldef000812, globaldef005739.origin);
+    setsize(floorTestEnt, globaldef005739.mins, globaldef005739.maxs);
+    setorigin(floorTestEnt, globaldef005739.origin);
     globaldef005746 = globaldef005739.owner;
-    globaldef005739.owner = globaldef000812;
+    globaldef005739.owner = floorTestEnt;
     globaldef005745 = self;
-    self = globaldef000812;
+    self = floorTestEnt;
     globaldef005740 = droptofloor();
     self = globaldef005745;
     globaldef005739.owner = globaldef005746;
@@ -481,12 +481,12 @@ void (entity globaldef005739) func002273 =
         return;
     }
     
-    if((fabs(globaldef005739.origin_z - globaldef000812.origin_z)) <= RA_PLAYERSTATTIME)
+    if((fabs(globaldef005739.origin_z - floorTestEnt.origin_z)) <= RA_PLAYERSTATTIME)
     {
         globaldef005739.botflags = globaldef005739.botflags | globaldef000683;
-        globaldef005739.groundentity = globaldef000812.groundentity;
+        globaldef005739.groundentity = floorTestEnt.groundentity;
         
-        if(globaldef000812.groundentity == world)
+        if(floorTestEnt.groundentity == world)
         {
             globaldef005739.botflags = globaldef005739.botflags | globaldef000685;
         }

@@ -628,7 +628,7 @@ entity (entity ear) LocateDistantSound =
         return FALSE;
     }
     
-    highestsndweight = (activeClientCount - globaldef000792) * MOVETYPE_BOUNCE;
+    highestsndweight = (activeClientCount - observerCount) * MOVETYPE_BOUNCE;
     
     if(highestsndweight >= 100)
     {
@@ -636,7 +636,7 @@ entity (entity ear) LocateDistantSound =
     }
     
     
-    if((activeClientCount - globaldef000792) > MOVETYPE_STEP)
+    if((activeClientCount - observerCount) > MOVETYPE_STEP)
     {
         return world;
     }

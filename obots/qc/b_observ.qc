@@ -409,7 +409,7 @@ void (entity globaldef006797) func002364 =
 {
     if(globaldef006797.classname == "observer")
     {
-        globaldef000792 = globaldef000792 - TRUE;
+        observerCount = observerCount - TRUE;
     }
     else
     {
@@ -609,7 +609,7 @@ void (entity globaldef006798) ToggleObserverMode =
             msgUpdateClientFragsToAll(globaldef006798.clientnumber, globaldef006798.frags);
         }
         
-        globaldef000792 = globaldef000792 - TRUE;
+        observerCount = observerCount - TRUE;
         bprint(globaldef006798.netname);
         bprint(" left observer mode\n");
         respawn();
@@ -652,7 +652,7 @@ void (entity globaldef006798) ToggleObserverMode =
             }
             
             func002348(globaldef006798);
-            globaldef000792 = globaldef000792 + TRUE;
+            observerCount = observerCount + TRUE;
             bprint(globaldef006798.netname);
             bprint(" entered observer mode\n");
         }

@@ -631,21 +631,21 @@ void () worldspawn =
     
     if(cvar("registered") == FL_SWIM)
     {
-        globaldef000805 = TRUE;
+        lowMemoryDisableExtraModels = TRUE;
     }
     
     precache_sound("items/protect.wav");
     precache_sound("items/protect2.wav");
     precache_sound("items/protect3.wav");
     
-    if(!globaldef000805)
+    if(!lowMemoryDisableExtraModels)
     {
         precache_model("progs/shelcase.mdl");
         precache_sound("weapons/shellhit.wav");
     }
     
     
-    if(!globaldef000805)
+    if(!lowMemoryDisableExtraModels)
     {
         precache_model("progs/cloud.mdl");
         precache_model("progs/particle.spr");
@@ -895,14 +895,14 @@ void () StartFrame =
     }
     
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
-        globaldef000800 = time;
+        mapStartTime = time;
     }
     
     globaldef002461 = cvar("timelimit") * 60;
     
-    if(globaldef002461 && ((time - globaldef000800) >= globaldef002461))
+    if(globaldef002461 && ((time - mapStartTime) >= globaldef002461))
     {
         NextLevel();
     }
@@ -975,7 +975,7 @@ void () StartFrame =
     
     if(globaldef000788 != globaldef000710)
     {
-        globaldef000799 = TRUE;
+        gameNotRunning = TRUE;
     }
     
 };

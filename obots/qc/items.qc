@@ -420,7 +420,7 @@ void () health_touch =
     local float amount;
     local string s;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -699,7 +699,7 @@ void () armor_touch =
     local float value;
     local float bit;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -1273,7 +1273,7 @@ void () weapon_touch =
     local entity stemp;
     local float leave;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -1858,7 +1858,7 @@ void () ammo_touch =
     local entity stemp;
     local float best;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -2444,7 +2444,7 @@ void () key_touch =
     local entity stemp;
     local float best;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -2765,7 +2765,7 @@ void () sigil_touch =
     local entity stemp;
     local float best;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -3011,7 +3011,7 @@ void () powerup_touch =
     local entity stemp;
     local float best;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return;
     }
@@ -3539,7 +3539,7 @@ void () BackpackTouch =
     if(!(obot_game_option_bitflags & OBOT_ROCKETARENA))
     {
         
-        if(globaldef000799)
+        if(gameNotRunning)
         {
             return;
         }

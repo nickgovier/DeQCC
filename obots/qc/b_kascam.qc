@@ -4086,7 +4086,7 @@ void () CamClientInit =
         self.origin = ent2.origin + '0 0 2';
         self.angles = ent2.angles;
         self.fixangle = TRUE;
-        globaldef000792 = globaldef000792 - TRUE;
+        observerCount = observerCount - TRUE;
     }
     
     
@@ -4144,7 +4144,7 @@ void () CamClientInit =
     CamGoIdle();
     sprint(self, "KasCam activated\n");
     func002522(self);
-    globaldef000792 = globaldef000792 + TRUE;
+    observerCount = observerCount + TRUE;
 };
 
 
@@ -4238,7 +4238,7 @@ float () CamDisconnect =
     local entity oself;
     if(self.classname == "KasCam")
     {
-        globaldef000792 = globaldef000792 - TRUE;
+        observerCount = observerCount - TRUE;
         return FALSE;
     }
     else

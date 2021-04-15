@@ -1301,7 +1301,7 @@ void () PutClientInServer =
     }
     
     
-    if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((globaldef000786 < globaldef000787) || (globaldef000788 != globaldef000710)))
+    if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((waypointCount < globaldef000787) || (globaldef000788 != globaldef000710)))
     {
         self.botflags = self.botflags | globaldef000686;
         globaldef000785 = globaldef000785 + TRUE;
@@ -3188,7 +3188,7 @@ void () ClientConnect =
     }
     
     
-    if(teamplay || !globaldef000799)
+    if(teamplay || !gameNotRunning)
     {
         ToggleObserverMode(self);
     }

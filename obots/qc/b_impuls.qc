@@ -574,7 +574,7 @@ float (entity globaldef009398) CheckIsAdmin =
 void (entity globaldef009401, float globaldef009402) skinchange = 
 {
     
-    if(globaldef000805)
+    if(lowMemoryDisableExtraModels)
     {
         sprint(globaldef009401, "can't change skin, extra models disabled\n");
         return;
@@ -804,7 +804,7 @@ void () botpathing =
     {
         obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_BOTPATHING);
         
-        if(globaldef000786 < globaldef000787)
+        if(waypointCount < globaldef000787)
         {
             globaldef009415 = firstBot;
             
@@ -903,7 +903,7 @@ void () humanpathing =
     {
         obot_game_option_bitflags = obot_game_option_bitflags - (obot_game_option_bitflags & OBOT_HUMANPATHING);
         
-        if(globaldef000786 < globaldef000787)
+        if(waypointCount < globaldef000787)
         {
             globaldef009418 = firstClient;
             
@@ -2101,7 +2101,7 @@ void () botskills =
 // OP_DONE	0	0	0
 void (entity globaldef009483) observer = 
 {
-    if(!teamplay || globaldef000799)
+    if(!teamplay || gameNotRunning)
     {
         ToggleObserverMode(globaldef009483);
     }
@@ -2297,7 +2297,7 @@ void (entity globaldef009493, float globaldef009494) setteam =
     }
     
     
-    if(!globaldef000799)
+    if(!gameNotRunning)
     {
         sprint(globaldef009493, "can't join a team while the game is running\n");
         return;
@@ -2338,7 +2338,7 @@ void () func002726 =
 {
     local entity globaldef009499;
     local float globaldef009500;
-    if(globaldef000805)
+    if(lowMemoryDisableExtraModels)
     {
         globaldef009500 = FALSE;
     }
@@ -3549,7 +3549,7 @@ void () func002734 =
     WriteByte(MSG_ONE, 242);
     WriteByte(MSG_ONE, 243);
     WriteByte(MSG_ONE, 186);
-    func002729(MSG_ONE, (activeClientCount - globaldef000793) - globaldef000792, FALSE);
+    func002729(MSG_ONE, (activeClientCount - botCount) - observerCount, FALSE);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, FL_MONSTER);
     WriteByte(MSG_ONE, 226);
@@ -3557,7 +3557,7 @@ void () func002734 =
     WriteByte(MSG_ONE, 244);
     WriteByte(MSG_ONE, 243);
     WriteByte(MSG_ONE, 186);
-    func002729(MSG_ONE, globaldef000793, FALSE);
+    func002729(MSG_ONE, botCount, FALSE);
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
     WriteByte(MSG_ONE, 49);
@@ -4292,7 +4292,7 @@ void () func002735 =
     WriteByte(MSG_ONE, MOVETYPE_BOUNCE);
     WriteByte(MSG_ONE, 55);
     WriteByte(MSG_ONE, FL_MONSTER);
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         WriteByte(MSG_ONE, 243);
         WriteByte(MSG_ONE, 244);
@@ -4686,14 +4686,14 @@ void () func002736 =
                             {
                                 if(self.impulse == MOVETYPE_PUSH)
                                 {
-                                    globaldef000799 = !globaldef000799;
-                                    if(globaldef000799)
+                                    gameNotRunning = !gameNotRunning;
+                                    if(gameNotRunning)
                                     {
                                         func002521();
                                     }
                                     else
                                     {
-                                        globaldef000800 = time;
+                                        mapStartTime = time;
                                         func002722();
                                         func002723();
                                     }
@@ -5034,7 +5034,7 @@ void (entity globaldef009555) admin =
         return;
     }
     
-    if(((activeClientCount - globaldef000792) - globaldef000793) <= TRUE)
+    if(((activeClientCount - observerCount) - botCount) <= TRUE)
     {
         SetAdmin(globaldef009555);
     }

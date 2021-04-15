@@ -8992,7 +8992,7 @@ void (entity e) BotChooseInsultMessage =
     local string name;
     rnd = random();
     
-    if((activeClientCount - globaldef000792) <= TRUE)
+    if((activeClientCount - observerCount) <= TRUE)
     {
         name = ObserverName();
         rnd = floor(rnd * MOVETYPE_STEP);

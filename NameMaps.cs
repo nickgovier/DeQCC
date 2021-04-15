@@ -386,18 +386,31 @@ namespace DeQcc
             nameMap.Add("globaldef000528", "last_time");
             nameMap.Add("globaldef000529", "end_ra_globals");
 
-            nameMap.Add("globaldef000784", "num_gibs"); // player.qc
+            nameMap.Add("globaldef000784", "gibsCount"); // player.qc
+            nameMap.Add("globaldef000786", "waypointCount");
+
+            nameMap.Add("globaldef000790", "hardCodedWaypointsExist");
+
+            nameMap.Add("globaldef000792", "observerCount");
+            nameMap.Add("globaldef000793", "botCount");
 
             nameMap.Add("globaldef000795", "activeClientBitmask");  // b_clrank.qc
             nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
-
+            nameMap.Add("globaldef000798", "unused798");
+            nameMap.Add("globaldef000799", "gameNotRunning");
+            nameMap.Add("globaldef000800", "mapStartTime");
             nameMap.Add("globaldef000801", "botSoundCount");
-
+            nameMap.Add("globaldef000802", "maxWaypoint_ONLY_SET");
             nameMap.Add("globaldef000803", "lastBotMessageNr");    // b_talk.qc
             nameMap.Add("globaldef000804", "obot_game_option_bitflags");
-            
+            nameMap.Add("globaldef000805", "lowMemoryDisableExtraModels");
+            nameMap.Add("globaldef000806", "unused806");
+            nameMap.Add("globaldef000807", "unused807");
+            nameMap.Add("globaldef000808", "unused808");
+            nameMap.Add("globaldef000809", "unused809");
 
+            nameMap.Add("globaldef000812", "floorTestEnt");
             nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
             nameMap.Add("globaldef000814", "currentAdmin");  // b_impuls.qc CheckIsAdmin
             nameMap.Add("globaldef000815", "prospectiveAdmin");

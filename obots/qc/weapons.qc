@@ -3311,7 +3311,7 @@ void () W_WeaponFrame =
     if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
         
-        if(globaldef000799)
+        if(gameNotRunning)
         {
             return;
         }

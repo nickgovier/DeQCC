@@ -3390,7 +3390,7 @@ float (entity globaldef008024) func002489 =
 {
     local entity globaldef008025;
     
-    if(globaldef000799)
+    if(gameNotRunning)
     {
         return FALSE;
     }
@@ -6488,7 +6488,7 @@ void (entity globaldef008148) func002522 =
 void () func002523 = 
 {
     local entity globaldef008150;
-    globaldef000799 = TRUE;
+    gameNotRunning = TRUE;
     globaldef008150 = firstBot;
     
     while(globaldef008150)

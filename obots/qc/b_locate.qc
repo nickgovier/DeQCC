@@ -76,10 +76,10 @@ float (vector spot) AbsFloorHeight =
 // OP_DONE	0	0	0
 void () CreateFloorTestEnt = 
 {
-    globaldef000812 = spawn();
-    globaldef000812.classname = "floortest";
-    globaldef000812.movetype = MOVETYPE_NONE;
-    globaldef000812.solid = SOLID_NOT;
+    floorTestEnt = spawn();
+    floorTestEnt.classname = "floortest";
+    floorTestEnt.movetype = MOVETYPE_NONE;
+    floorTestEnt.solid = SOLID_NOT;
 };
 
 
