@@ -396,6 +396,7 @@ namespace DeQcc
             nameMap.Add("globaldef000796", "maxClients");  // b_clrank.qc
             nameMap.Add("globaldef000797", "activeClientCount");  // b_clrank.qc
 
+            nameMap.Add("globaldef000801", "botSoundCount");
             nameMap.Add("globaldef000803", "lastBotMessageNr");    // b_talk.qc
             nameMap.Add("globaldef000813", "lastBotToTalk");    // b_talk.qc
 
@@ -403,6 +404,7 @@ namespace DeQcc
 
             nameMap.Add("globaldef000816", "firstClient");
             nameMap.Add("globaldef000817", "firstBot");
+            nameMap.Add("globaldef000818", "firstBotSound");
             nameMap.Add("globaldef000819", "firstWaypoint");    // b_waypnt.qc GetWaypointByID
 
             nameMap.Add("field000283", "teamname"); // client.qc
@@ -2641,11 +2643,12 @@ namespace DeQcc
             nameMap.Add("func002449", "soundweight_fire");
             nameMap.Add("func002450", "soundweight_armor");
             nameMap.Add("func002451", "soundweight_pickup");
-
+            nameMap.Add("func002452", "RemoveBotSound");
             nameMap.Add("func002453", "CreateBotSound");
             nameMap.Add("func002454", "Hearable");
+            nameMap.Add("func002455", "LocateDistantSound");
 
-            for (int i = 2447; i <= 2454; i++)
+            for (int i = 2447; i <= 2455; i++)
             {
                 fileMap[i] = "b_hear.qc";
             }
@@ -2667,6 +2670,17 @@ namespace DeQcc
 
             // Hearable locals
             nameMap.Add("globaldef007659", "check");
+
+            // LocateDistantSound params
+            nameMap.Add("globaldef007660", "ear");
+
+            // LocateDistantSound locals
+            nameMap.Add("globaldef007661", "sndweight");
+            nameMap.Add("globaldef007662", "highestsndweight");
+            nameMap.Add("globaldef007663", "sndtype");
+            nameMap.Add("globaldef007664", "botsnd");
+            nameMap.Add("globaldef007665", "found");
+            nameMap.Add("globaldef007666", "UNUSED");
 
             #region b_locate.qc
 

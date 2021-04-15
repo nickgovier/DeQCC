@@ -121,7 +121,7 @@ float (entity globaldef007841, entity globaldef007842) func002466;
 float (entity globaldef007843, entity globaldef007844) func002467;
 void (entity cause, vector spot, float duration, float type) CreateBotSound;
 float (entity ear, entity e) Hearable;
-entity (entity globaldef007660) func002455;
+entity (entity ear) LocateDistantSound;
 float (entity globaldef007579, float globaldef007580) func002442;
 float (entity bot, float botspeed) BotJumpToGoal;
 float (entity globaldef007585, float globaldef007586, float globaldef007587) func002444;

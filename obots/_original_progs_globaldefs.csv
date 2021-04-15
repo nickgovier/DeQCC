@@ -800,7 +800,7 @@ row,name,s_name,ofs,type,typename
 798,globaldef000798,0,815,32770,
 799,globaldef000799,0,816,32770,
 800,globaldef000800,0,817,32770,
-801,globaldef000801,0,818,32770,
+801,botSoundCount,0,818,32770,
 802,globaldef000802,0,819,32770,
 803,lastBotMessageNr,0,820,32770,
 804,globaldef000804,0,821,32770,
@@ -817,7 +817,7 @@ row,name,s_name,ofs,type,typename
 815,globaldef000815,0,832,32772,
 816,firstClient,0,833,32772,
 817,firstBot,0,834,32772,
-818,globaldef000818,0,835,32772,
+818,firstBotSound,0,835,32772,
 819,firstWaypoint,0,836,32772,
 820,globaldef000820,0,837,32772,
 821,bot_stuffcmd,0,838,6,void()
@@ -1059,7 +1059,7 @@ row,name,s_name,ofs,type,typename
 1057,func002467,0,1119,6,void()
 1058,CreateBotSound,0,1120,6,void()
 1059,Hearable,0,1121,6,void()
-1060,func002455,0,1122,6,void()
+1060,LocateDistantSound,0,1122,6,void()
 1061,func002442,0,1123,6,void()
 1062,BotJumpToGoal,0,1124,6,void()
 1063,func002444,0,1125,6,void()
@@ -7644,7 +7644,7 @@ row,name,s_name,ofs,type,typename
 7642,globaldef007642,0,23148,2,float
 7643,globaldef007643,0,23149,2,float
 7644,globaldef007644,0,23150,4,entity
-7645,func002452,0,23172,6,void()
+7645,RemoveBotSound,0,23172,6,void()
 7646,cause,0,23183,4,entity
 7647,spot,0,23184,3,vector
 7648,globaldef007648,0,23184,2,float
@@ -7659,13 +7659,13 @@ row,name,s_name,ofs,type,typename
 7657,ear,0,23223,4,entity
 7658,e,0,23224,4,entity
 7659,check,0,23225,4,entity
-7660,globaldef007660,0,23239,4,entity
-7661,globaldef007661,0,23240,2,float
-7662,globaldef007662,0,23241,2,float
-7663,globaldef007663,0,23242,2,float
-7664,globaldef007664,0,23243,4,entity
-7665,globaldef007665,0,23244,4,entity
-7666,globaldef007666,0,23245,1,string
+7660,ear,0,23239,4,entity
+7661,sndweight,0,23240,2,float
+7662,highestsndweight,0,23241,2,float
+7663,sndtype,0,23242,2,float
+7664,botsnd,0,23243,4,entity
+7665,found,0,23244,4,entity
+7666,UNUSED,0,23245,1,string
 7667,bot,0,23276,4,entity
 7668,obj,0,23277,4,entity
 7669,start,0,23278,3,vector
