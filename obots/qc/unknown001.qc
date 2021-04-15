@@ -863,7 +863,7 @@ void () func002276 =
     
     func002268(self);
     self.field000232 = time;
-    self.think = self.field000230;
+    self.think = self.think2;
     self.nextthink = self.field000231;
     if(time > self.nextthink)
     {
@@ -1044,7 +1044,7 @@ void () func002277 =
         
         if(globaldef005781.think != func002276)
         {
-            globaldef005781.field000230 = globaldef005781.think;
+            globaldef005781.think2 = globaldef005781.think;
             globaldef005781.field000231 = globaldef005781.nextthink;
         }
         

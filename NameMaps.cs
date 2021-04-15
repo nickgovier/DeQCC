@@ -413,6 +413,9 @@ namespace DeQcc
             nameMap.Add("field000225", "f_goalweight");
             nameMap.Add("field000226", "f_walkaboutweight");
             nameMap.Add("field000227", "f_sndweight");
+            nameMap.Add("field000228", "f_ai");
+            nameMap.Add("field000229", "f_lastai");
+            nameMap.Add("field000230", "think2");
 
             nameMap.Add("field000250", "clmodelindex");
 

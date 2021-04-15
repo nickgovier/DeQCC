@@ -1098,7 +1098,7 @@ void (entity globaldef008189, float globaldef008190) func002571 =
     {
         if(self.think == func002276)
         {
-            self.field000230 = func002565;
+            self.think2 = func002565;
         }
         else
         {
@@ -1110,7 +1110,7 @@ void (entity globaldef008189, float globaldef008190) func002571 =
     {
         if(self.think == func002276)
         {
-            self.field000230 = func002559;
+            self.think2 = func002559;
         }
         else
         {

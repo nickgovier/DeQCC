@@ -445,7 +445,7 @@ void (entity globaldef002728) func000352 =
     globaldef002728.field000288 = FALSE;
     globaldef002728.takedamage = DAMAGE_NO;
     globaldef002728.enemy = world;
-    globaldef002728.field000228 = func000351;
+    globaldef002728.f_ai = func000351;
 };
 
 

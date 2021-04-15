@@ -4768,7 +4768,7 @@ entity (entity globaldef008103) func002498 =
 // OP_DONE	0	0	0
 void (entity globaldef008110) func002499 = 
 {
-    globaldef008110.field000228(globaldef008110);
+    globaldef008110.f_ai(globaldef008110);
 };
 
 
@@ -4788,7 +4788,7 @@ void (entity globaldef008111) func002500 =
     globaldef008111.field000288 = FALSE;
     globaldef008111.takedamage = DAMAGE_NO;
     globaldef008111.enemy = world;
-    globaldef008111.field000228 = func002501;
+    globaldef008111.f_ai = func002501;
 };
 
 
@@ -4818,7 +4818,7 @@ void (entity globaldef008112) func002501 =
 // OP_DONE	0	0	0
 void (entity globaldef008113) func002502 = 
 {
-    globaldef008113.field000228 = func002503;
+    globaldef008113.f_ai = func002503;
     globaldef008113.search_time = time - TRUE;
     globaldef008113.goalentity.goalentity = globaldef008113.goalentity;
     globaldef008113.field000288 = FALSE;
@@ -4884,7 +4884,7 @@ void (entity globaldef008114) func002503 =
 // OP_DONE	0	0	0
 void (entity globaldef008115) func002504 = 
 {
-    globaldef008115.field000228 = func002508;
+    globaldef008115.f_ai = func002508;
     globaldef008115.search_time = time - TRUE;
     globaldef008115.goalentity.goalentity = globaldef008115.goalentity;
     globaldef008115.field000288 = FALSE;
@@ -4914,7 +4914,7 @@ void (entity globaldef008115) func002504 =
 // OP_DONE	0	0	0
 void (entity globaldef008116) func002505 = 
 {
-    globaldef008116.field000228 = func002506;
+    globaldef008116.f_ai = func002506;
     
     if(globaldef008116.goalentity.goalentity.classname == "waypoint")
     {
@@ -5068,7 +5068,7 @@ void (entity globaldef008117) func002506 =
 void (entity globaldef008118) func002507 = 
 {
     func002508(globaldef008118);
-    globaldef008118.field000228 = func002508;
+    globaldef008118.f_ai = func002508;
     globaldef008118.field000264 = FALSE;
     globaldef008118.search_time = time - TRUE;
 };
@@ -5397,14 +5397,14 @@ void (entity globaldef008130) func002509 =
 {
     globaldef008130.field000271 = FALSE;
     globaldef008130.field000272 = FALSE;
-    if(globaldef008130.field000228 == func002506)
+    if(globaldef008130.f_ai == func002506)
     {
-        globaldef008130.field000229 = func002513;
-        globaldef008130.field000228 = func002520;
+        globaldef008130.f_lastai = func002513;
+        globaldef008130.f_ai = func002520;
     }
     else
     {
-        globaldef008130.field000228 = func002513;
+        globaldef008130.f_ai = func002513;
         globaldef008130.search_time = time - TRUE;
         globaldef008130.field000275 = time - TRUE;
     }
@@ -5427,7 +5427,7 @@ void (entity globaldef008130) func002509 =
 // OP_DONE	0	0	0
 void (entity globaldef008132) func002510 = 
 {
-    globaldef008132.field000228 = func002511;
+    globaldef008132.f_ai = func002511;
 };
 
 
@@ -5578,7 +5578,7 @@ void (entity globaldef008133) func002511 =
 // OP_DONE	0	0	0
 void (entity globaldef008134) func002512 = 
 {
-    globaldef008134.field000228 = func002513;
+    globaldef008134.f_ai = func002513;
 };
 
 
@@ -5752,7 +5752,7 @@ void (entity globaldef008135) func002513 =
 // OP_DONE	0	0	0
 void (entity globaldef008136) func002514 = 
 {
-    globaldef008136.field000228 = func002515;
+    globaldef008136.f_ai = func002515;
     globaldef008136.field000273 = time + MOVETYPE_BOUNCE;
     globaldef008136.search_time = time - TRUE;
 };
@@ -6003,7 +6003,7 @@ void (entity globaldef008139) func002516 =
 {
     globaldef008139.field000274 = time + MOVETYPE_BOUNCE;
     globaldef008139.search_time = time - TRUE;
-    globaldef008139.field000228 = func002517;
+    globaldef008139.f_ai = func002517;
 };
 
 
@@ -6258,8 +6258,8 @@ void (entity globaldef008140) func002517 =
 // OP_DONE	0	0	0
 void (entity globaldef008142) func002518 = 
 {
-    globaldef008142.field000229 = globaldef008142.field000228;
-    globaldef008142.field000228 = func002520;
+    globaldef008142.f_lastai = globaldef008142.f_ai;
+    globaldef008142.f_ai = func002520;
 };
 
 
@@ -6271,7 +6271,7 @@ void (entity globaldef008142) func002518 =
 // OP_DONE	0	0	0
 void (entity globaldef008143) func002519 = 
 {
-    globaldef008143.field000228 = globaldef008143.field000229;
+    globaldef008143.f_ai = globaldef008143.f_lastai;
 };
 
 

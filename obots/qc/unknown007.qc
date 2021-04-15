@@ -207,7 +207,7 @@ void () func002637 =
     
     if(self.think == func002276)
     {
-        self.field000230 = func002637;
+        self.think2 = func002637;
         return;
     }
     

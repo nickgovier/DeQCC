@@ -533,9 +533,9 @@ row,name,s_name,ofs,type,typename
 531,f_goalweight,0,548,5,ev_field
 532,f_walkaboutweight,0,549,5,ev_field
 533,f_sndweight,0,550,5,ev_field
-534,field000228,0,551,5,ev_field
-535,field000229,0,552,5,ev_field
-536,field000230,0,553,5,ev_field
+534,f_ai,0,551,5,ev_field
+535,f_lastai,0,552,5,ev_field
+536,think2,0,553,5,ev_field
 537,field000231,0,554,5,ev_field
 538,field000232,0,555,5,ev_field
 539,field000233,0,556,5,ev_field
