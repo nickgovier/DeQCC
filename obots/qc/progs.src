@@ -38,6 +38,7 @@ shalrath.qc
 enforcer.qc
 oldone.qc
 b_clrank.qc
+b_clskin.qc
 unknown001.qc
 b_char.qc
 b_fuzzy.qc
@@ -52,8 +53,9 @@ unknown004.qc
 b_hear.qc
 b_locate.qc
 unknown005.qc
+b_goal.qc
+unknown006.qc
 b_frames.qc
 b_hcwp.qc
-unknown006.qc
 b_waypnt.qc
 b_impuls.qc

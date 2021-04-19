@@ -1307,7 +1307,7 @@ void () PutClientInServer =
         globaldef000785 = globaldef000785 + TRUE;
     }
     
-    self.field000265 = skill;
+    self.botskill = skill;
     self.field000344 = self;
     player_stand1();
     

@@ -1,4 +1,86 @@
 
+// func002525
+// function begins at statement 44535, parm_start=25638
+// OP_STATE	231	1167	0
+// OP_ADDRESS	28	156	25638
+// OP_STOREP_F	213	25638	0
+// OP_LOAD_F	28	114	25639
+// OP_NOT_F	25639	0	25640
+// OP_LOAD_F	28	115	25641
+// OP_NOT_F	25641	0	25642
+// OP_AND	25640	25642	25643
+// OP_IFNOT	25643	5	0
+// OP_ADDRESS	28	377	25644
+// OP_STOREP_F	213	25644	0
+// OP_CALL0	1166	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_F	28	154	25645
+// OP_EQ_F	25645	253	25646
+// OP_IFNOT	25646	11	0
+// OP_LOAD_F	28	377	25647
+// OP_EQ_F	25647	231	25648
+// OP_IFNOT	25648	3	0
+// OP_ADDRESS	28	377	25649
+// OP_STOREP_F	213	25649	0
+// OP_ADDRESS	28	131	25650
+// OP_LOAD_F	28	377	25651
+// OP_ADD_F	213	25651	25652
+// OP_STOREP_F	25652	25650	0
+// OP_GOTO	11	0	0
+// OP_LOAD_F	28	377	25653
+// OP_EQ_F	25653	231	25654
+// OP_IFNOT	25654	3	0
+// OP_ADDRESS	28	377	25655
+// OP_STOREP_F	213	25655	0
+// OP_ADDRESS	28	131	25656
+// OP_LOAD_F	28	131	25657
+// OP_LOAD_F	28	377	25658
+// OP_ADD_F	25657	25658	25659
+// OP_STOREP_F	25659	25656	0
+// OP_ADDRESS	28	377	25660
+// OP_LOAD_F	28	377	25661
+// OP_ADD_F	25661	214	25662
+// OP_STOREP_F	25662	25660	0
+// OP_STORE_V	276	4	0
+// OP_CALL1	1099	0	0
+// OP_DONE	0	0	0
+void () func002525 = [6, func002525]
+{
+    self.weaponframe = FALSE;
+    
+    if(!self.velocity_x && !self.velocity_y)
+    {
+        self.walkframe = FALSE;
+        func002524();
+        return;
+    }
+    
+    if(self.weapon == IT_AXE)
+    {
+        
+        if(self.walkframe == MOVETYPE_TOSS)
+        {
+            self.walkframe = FALSE;
+        }
+        
+        self.frame = FALSE + self.walkframe;
+    }
+    else
+    {
+        
+        if(self.walkframe == MOVETYPE_TOSS)
+        {
+            self.walkframe = FALSE;
+        }
+        
+        self.frame = self.frame + self.walkframe;
+    }
+    
+    self.walkframe = self.walkframe + TRUE;
+    func002410(CONTENT_EMPTY);
+};
+
+
 // func002526
 // function begins at statement 44578, parm_start=25663
 // OP_STATE	9473	25663	0

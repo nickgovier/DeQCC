@@ -119,7 +119,7 @@ void (entity globaldef007102) DestroyBot =
     
     if(obot_game_option_bitflags & globaldef000760)
     {
-        globaldef007103 = func002266(globaldef007102.clientnumber);
+        globaldef007103 = GetClientEntity(globaldef007102.clientnumber);
         
         if(!globaldef007103)
         {
@@ -443,10 +443,10 @@ void (entity globaldef007106) func002418 =
     globaldef007106.invincible_finished = FALSE;
     globaldef007106.effects = FALSE;
     globaldef007106.invincible_time = FALSE;
-    globaldef007106.yaw_speed = 20 + (FL_CLIENT * globaldef007106.field000265);
-    globaldef007106.field000289 = MOVETYPE_BOUNCE + (MOVETYPE_WALK * globaldef007106.field000265);
+    globaldef007106.yaw_speed = 20 + (FL_CLIENT * globaldef007106.botskill);
+    globaldef007106.field000289 = MOVETYPE_BOUNCE + (MOVETYPE_WALK * globaldef007106.botskill);
     
-    if(globaldef007106.field000265 > 2.9)
+    if(globaldef007106.botskill > 2.9)
     {
         globaldef007106.yaw_speed = globaldef007106.yaw_speed + MOVETYPE_BOUNCE;
         globaldef007106.field000289 = globaldef007106.field000289 + MOVETYPE_STEP;
@@ -455,14 +455,14 @@ void (entity globaldef007106) func002418 =
     
     if(obot_game_option_bitflags & OBOT_ROCKETARENA)
     {
-        globaldef007106.yaw_speed = globaldef007106.yaw_speed + (MOVETYPE_BOUNCE * globaldef007106.field000265);
-        globaldef007106.field000289 = globaldef007106.field000289 + (MOVETYPE_FLY * globaldef007106.field000265);
+        globaldef007106.yaw_speed = globaldef007106.yaw_speed + (MOVETYPE_BOUNCE * globaldef007106.botskill);
+        globaldef007106.field000289 = globaldef007106.field000289 + (MOVETYPE_FLY * globaldef007106.botskill);
     }
     
     
     if(globaldef007106.goalentity == world)
     {
-        globaldef007106.goalentity = func002470();
+        globaldef007106.goalentity = CreateBotGoal();
     }
     
     globaldef007106.goalentity.goalentity = world;
@@ -492,7 +492,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.think = func002524;
     globaldef007106.nextthink = time + 0.1;
     globaldef007106.f_ai = func002503;
-    globaldef007106.pausetime = time + (random() * (MOVETYPE_WALK - globaldef007106.field000265));
+    globaldef007106.pausetime = time + (random() * (MOVETYPE_WALK - globaldef007106.botskill));
     globaldef007106.enemy = world;
     globaldef007106.waypointtype = globaldef000699;
     globaldef007106.deadflag = DEAD_NO;
@@ -688,17 +688,17 @@ entity (float globaldef007113) AddDeathmatchBot =
     globaldef007114.next = firstBot;
     globaldef007114.prev = world;
     firstBot = globaldef007114;
-    globaldef007114.field000265 = skill;
+    globaldef007114.botskill = skill;
     
-    if(globaldef007114.field000265 < FALSE)
+    if(globaldef007114.botskill < FALSE)
     {
-        globaldef007114.field000265 = FALSE;
+        globaldef007114.botskill = FALSE;
     }
     
     
-    if(globaldef007114.field000265 > MOVETYPE_WALK)
+    if(globaldef007114.botskill > MOVETYPE_WALK)
     {
-        globaldef007114.field000265 = MOVETYPE_WALK;
+        globaldef007114.botskill = MOVETYPE_WALK;
     }
     
     globaldef007114.think = func002419;

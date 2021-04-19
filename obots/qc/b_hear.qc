@@ -623,7 +623,7 @@ entity (entity ear) LocateDistantSound =
     local entity found;
     local string UNUSED;
     
-    if((MOVETYPE_WALK - (random() * (MOVETYPE_WALK - self.field000265))) < TRUE)
+    if((MOVETYPE_WALK - (random() * (MOVETYPE_WALK - self.botskill))) < TRUE)
     {
         return FALSE;
     }

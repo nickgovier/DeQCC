@@ -54,7 +54,7 @@ void end_ra_globals;
 .float old_botflags;
 .entity field000263;
 .float field000264;
-.float field000265;
+.float botskill;
 .entity field000266;
 .entity field000267;
 .entity field000268;

@@ -300,16 +300,6 @@ namespace DeQcc
 
             #endregion
 
-            // DECOMPILATION bug
-            // b_move.qc BotJumpToGoal
-            // if(botspeed ...)
-            // line following block should be inside block
-            // line following is compound = statement (likely the issue)
-            // seems to be a double assignment to the same variable?
-
-
-
-
             #region obot constants
 
 
@@ -458,6 +448,8 @@ namespace DeQcc
 
             nameMap.Add("field000261", "old_flags");
             nameMap.Add("field000262", "old_botflags");
+
+            nameMap.Add("field000265", "botskill");
 
             nameMap.Add("field000283", "teamname"); // client.qc
 
@@ -2234,6 +2226,11 @@ namespace DeQcc
 
             #endregion
 
+
+            //b_think.qc
+            //b_aitree.qc
+            //b_clphys.qc
+
             // Done
             #region b_clrank.c
 
@@ -2304,11 +2301,22 @@ namespace DeQcc
 
             #endregion
 
+            #region b_clskin.qc
+
+            nameMap.Add("func002266", "GetClientEntity");
+
+            for (int i = 2266; i <= 2266; i++)
+            {
+                fileMap[i] = "b_clskin.qc";
+            }
+
+            #endregion
+
             // Done
             #region b_char.qc
 
             // Declarations
-            for(int i = 5782; i <= 5805; i++) { nameMap.Add("globaldef00" + i.ToString(), "BOT" + (i-5782).ToString()); }
+            for (int i = 5782; i <= 5805; i++) { nameMap.Add("globaldef00" + i.ToString(), "BOT" + (i-5782).ToString()); }
 
             nameMap.Add("globaldef005806", "BOTMESSAGETYPE_NEVERUSED");
             nameMap.Add("globaldef005807", "BOTMESSAGETYPE_EXIT");
@@ -2575,7 +2583,6 @@ namespace DeQcc
             nameMap.Add("globaldef006625", "bot");
 
             #endregion
-
 
             #region b_observ.qc
 
@@ -2911,9 +2918,20 @@ namespace DeQcc
 
             #endregion
 
+            #region b_goal.qc
+
+            nameMap.Add("func002470", "CreateBotGoal");
+            
+            for (int i = 2470; i <= 2470; i++)
+            {
+                fileMap[i] = "b_goal.qc";
+            }
+
+            #endregion
+
             #region b_frames.qc
 
-            for (int i = 2526; i <= 2637; i++)
+            for (int i = 2525; i <= 2637; i++)
             {
                 fileMap[i] = "b_frames.qc";
             }
@@ -2967,7 +2985,7 @@ namespace DeQcc
             nameMap.Add("func002673", "PathPointerExists");
             
 
-            for (int i = 2640; i <= 2692; i++)
+            for (int i = 2639; i <= 2692; i++)
             {
                 fileMap[i] = "b_waypnt.qc";
             }

@@ -726,7 +726,7 @@ void (float globaldef007088) func002410 =
 {
     func002409();
     
-    if(self.field000265 > globaldef007088)
+    if(self.botskill > globaldef007088)
     {
         func002499(self);
     }

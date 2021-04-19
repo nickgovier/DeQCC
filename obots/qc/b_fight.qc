@@ -85,7 +85,7 @@ vector (entity globaldef006862) BotAimAtEnemyShotgun =
     local vector globaldef006867;
     local vector globaldef006871;
     local float globaldef006875;
-    globaldef006875 = globaldef006862.field000265;
+    globaldef006875 = globaldef006862.botskill;
     
     if(globaldef006875 < FALSE)
     {
@@ -279,7 +279,7 @@ vector (entity globaldef006888) BotAimAtEnemyRocket =
     local vector globaldef006905;
     local float globaldef006909;
     local float globaldef006910;
-    globaldef006910 = globaldef006888.field000265;
+    globaldef006910 = globaldef006888.botskill;
     
     if(globaldef006910 < FALSE)
     {
@@ -314,7 +314,7 @@ vector (entity globaldef006888) BotAimAtEnemyRocket =
     {
         globaldef006909 = (random() * FL_SWIM) + 0.9;
         
-        if(globaldef006888.field000265 > globaldef006909)
+        if(globaldef006888.botskill > globaldef006909)
         {
             globaldef006901 = globaldef006893;
             globaldef006901_z = (globaldef006901_z + globaldef006888.enemy.mins_z) - MOVETYPE_FLY;
@@ -435,7 +435,7 @@ vector (entity globaldef006915) BotAimAtEnemyGrenade =
     local vector globaldef006932;
     local float globaldef006936;
     local float globaldef006937;
-    globaldef006937 = globaldef006915.field000265;
+    globaldef006937 = globaldef006915.botskill;
     
     if(globaldef006937 < FALSE)
     {
@@ -540,7 +540,7 @@ vector (entity globaldef006940) BotAimAtEnemyLightning =
     local vector globaldef006945;
     local vector globaldef006949;
     local float globaldef006953;
-    globaldef006953 = globaldef006940.field000265;
+    globaldef006953 = globaldef006940.botskill;
     
     if(globaldef006953 < FALSE)
     {
@@ -921,7 +921,7 @@ void (entity globaldef006971) func002390 =
     }
     
     func002389(globaldef006971);
-    globaldef006972 = ((MOVETYPE_WALK - globaldef006971.field000265) * random()) * 0.2;
+    globaldef006972 = ((MOVETYPE_WALK - globaldef006971.botskill) * random()) * 0.2;
     makevectors(globaldef006971.v_angle);
     globaldef006971.show_hostile = time + TRUE;
     if(globaldef006971.weapon == IT_AXE)
@@ -1400,10 +1400,10 @@ float (entity globaldef007007, entity globaldef007008) func002394 =
     globaldef007009 = normalize(globaldef007008.origin - globaldef007007.origin);
     globaldef007013 = vectoangles(globaldef007009);
     
-    if(func002393(globaldef007013_x, FALSE - globaldef007007.v_angle_x, 90 + (globaldef007007.field000265 * MOVETYPE_BOUNCE)))
+    if(func002393(globaldef007013_x, FALSE - globaldef007007.v_angle_x, 90 + (globaldef007007.botskill * MOVETYPE_BOUNCE)))
     {
         
-        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.field000265 * GLOBALDEF748_15)))
+        if(func002393(globaldef007013_y, globaldef007007.v_angle_y, 135 + (globaldef007007.botskill * GLOBALDEF748_15)))
         {
             return TRUE;
         }
@@ -2114,17 +2114,17 @@ void (entity bot, float botspeed) BotAttackMove =
     }
     
     
-    if(bot.field000265 == FALSE)
+    if(bot.botskill == FALSE)
     {
         return;
     }
     
     bot.field000272 = bot.field000272 + 0.1;
     
-    if(bot.field000265 < FL_SWIM)
+    if(bot.botskill < FL_SWIM)
     {
         
-        if(bot.field000265 < TRUE)
+        if(bot.botskill < TRUE)
         {
             botspeed = 0.7 * botspeed;
         }
@@ -2134,13 +2134,13 @@ void (entity bot, float botspeed) BotAttackMove =
         {
             rnd = random() * MOVETYPE_STEP;
             
-            if(bot.field000265 >= TRUE)
+            if(bot.botskill >= TRUE)
             {
-                rnd = (rnd - bot.field000265) + RA_PLAYERSTATTIME;
+                rnd = (rnd - bot.botskill) + RA_PLAYERSTATTIME;
             }
             
             
-            if(rnd > bot.field000265)
+            if(rnd > bot.botskill)
             {
                 bot.field000272 = FALSE;
                 return;
@@ -2178,7 +2178,7 @@ void (entity bot, float botspeed) BotAttackMove =
         strafeAngle = CONTENT_EMPTY * strafeAngle;
     }
     
-    if((bot.field000265 > 2.8) && (random() < 0.4))
+    if((bot.botskill > 2.8) && (random() < 0.4))
     {
         
         if(BotJumpInDirection(bot, bot.ideal_yaw + strafeAngle, botspeed))

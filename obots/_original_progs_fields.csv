@@ -264,7 +264,7 @@ row,name,s_name,ofs,type,typename
 262,old_botflags,0,233,2,float
 263,field000263,0,234,4,entity
 264,field000264,0,235,2,float
-265,field000265,0,236,2,float
+265,botskill,0,236,2,float
 266,field000266,0,237,4,entity
 267,field000267,0,238,4,entity
 268,field000268,0,239,4,entity

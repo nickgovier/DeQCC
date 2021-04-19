@@ -2078,7 +2078,7 @@ void () botskills =
     {
         sprint(self, globaldef009479.netname);
         sprint(self, " has skill ");
-        globaldef009480 = ftos(globaldef009479.field000265);
+        globaldef009480 = ftos(globaldef009479.botskill);
         sprint(self, globaldef009480);
         sprint(self, "\n");
         globaldef009479 = find(globaldef009479, classname, "bot");

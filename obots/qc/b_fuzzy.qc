@@ -1424,7 +1424,7 @@ float (entity bot) fuzzy_lightning_weight =
             if(obot_game_option_bitflags & OBOT_ROCKETARENA)
             {
                 
-                if(bot.field000265 > FL_SWIM)
+                if(bot.botskill > FL_SWIM)
                 {
                     return 81;
                 }
@@ -2204,7 +2204,7 @@ float (entity bot) BotWantsToChase =
     if(bot.enemy.items & IT_INVISIBILITY)
     {
         
-        if(bot.field000265 < MOVETYPE_WALK)
+        if(bot.botskill < MOVETYPE_WALK)
         {
             return TRUE;
         }

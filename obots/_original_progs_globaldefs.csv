@@ -570,7 +570,7 @@ row,name,s_name,ofs,type,typename
 568,old_botflags,0,585,5,ev_field
 569,field000263,0,586,5,ev_field
 570,field000264,0,587,5,ev_field
-571,field000265,0,588,5,ev_field
+571,botskill,0,588,5,ev_field
 572,field000266,0,589,5,ev_field
 573,field000267,0,590,5,ev_field
 574,field000268,0,591,5,ev_field
@@ -991,7 +991,7 @@ row,name,s_name,ofs,type,typename
 989,msgUpdateClientFragsToAll,0,1051,6,void()
 990,msgUpdateClientColorsToAll,0,1052,6,void()
 991,msgUpdateAllClientSettingsToAll,0,1053,6,void()
-992,func002266,0,1054,6,void()
+992,GetClientEntity,0,1054,6,void()
 993,func002267,0,1055,6,void()
 994,func002268,0,1056,6,void()
 995,func002273,0,1057,6,void()
@@ -1067,7 +1067,7 @@ row,name,s_name,ofs,type,typename
 1065,func002446,0,1127,6,void()
 1066,func002468,0,1128,6,void()
 1067,func002474,0,1129,6,void()
-1068,func002470,0,1130,6,void()
+1068,CreateBotGoal,0,1130,6,void()
 1069,func002471,0,1131,6,void()
 1070,func002472,0,1132,6,void()
 1071,func002473,0,1133,6,void()
