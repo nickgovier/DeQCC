@@ -2587,7 +2587,7 @@ namespace DeQcc
 
             nameMap.Add("func002365", "ToggleObserverMode");
 
-            for (int i = 2358; i <= 2365; i++)
+            for (int i = 2356; i <= 2365; i++)
             {
                 fileMap[i] = "b_observ.qc";
             }
@@ -2693,6 +2693,49 @@ namespace DeQcc
 
             #endregion
 
+            #region b_fight.qc
+
+            nameMap.Add("func002381", "BotAimAtEnemyAxe");
+            nameMap.Add("func002382", "BotAimAtEnemyShotgun");
+            nameMap.Add("func002383", "BotAimAtEnemyNailgun");
+            nameMap.Add("func002384", "BotAimAtEnemyRocket");
+            nameMap.Add("func002385", "BotAimAtEnemyGrenade");
+            nameMap.Add("func002386", "BotAimAtEnemyLightning");
+            nameMap.Add("func002387", "BotAimAtEnemyByWeapon");
+            nameMap.Add("func002388", "BotAimAtEnemy");
+
+            nameMap.Add("func002398", "BotEnemyRange");
+            nameMap.Add("func002399", "BotAttackMove");
+
+            for (int i = 2381; i <= 2399; i++)
+            {
+                fileMap[i] = "b_fight.qc";
+            }
+
+            // BotEnemyRange params
+            nameMap.Add("globaldef007028", "bot");
+            nameMap.Add("globaldef007029", "botenemy");
+
+            // BotEnemyRange locals
+            nameMap.Add("globaldef007030", "startPos");
+            nameMap.Add("globaldef007034", "endPos");
+            nameMap.Add("globaldef007038", "botCondition");
+            nameMap.Add("globaldef007039", "dist");
+
+            // BotAttackMove params
+            nameMap.Add("globaldef007040", "bot");
+            nameMap.Add("globaldef007041", "botspeed");
+
+            // BotAttackMove locals
+            nameMap.Add("globaldef007042", "strafeAngle");
+            nameMap.Add("globaldef007043", "strafeAngleChoice");
+            nameMap.Add("globaldef007044", "currentDistToEnemy");
+            nameMap.Add("globaldef007045", "oldDistToEnemy");
+            nameMap.Add("globaldef007046", "rnd");
+            nameMap.Add("globaldef007047", "bestWeapon");
+
+            #endregion
+
             #region b_spawn.qc
 
             nameMap.Add("func002417", "DestroyBot");
@@ -2702,7 +2745,7 @@ namespace DeQcc
             nameMap.Add("func002424", "RemoveAllBots");  // impulse 152
             nameMap.Add("func002425", "RemoveOneDeathmatchBot");
             
-            for (int i = 2417; i <= 2425; i++)
+            for (int i = 2417; i <= 2429; i++)
             {
                 fileMap[i] = "b_spawn.qc";
             }
@@ -2711,10 +2754,39 @@ namespace DeQcc
 
             #region b_move.qc
 
-            for (int i = 2443; i <= 2443; i++)
+            nameMap.Add("func002440", "BotMove");
+            nameMap.Add("func002441", "BotMoveInitial");
+            nameMap.Add("func002442", "BotMoveToGoal");
+            nameMap.Add("func002444", "BotMoveInDirection");
+            nameMap.Add("func002445", "BotJumpInDirection");
+
+            for (int i = 2430; i <= 2445; i++)
             {
                 fileMap[i] = "b_move.qc";
             }
+
+            // BotMove params
+            nameMap.Add("globaldef007502", "bot");
+            nameMap.Add("globaldef007503", "direction");
+            nameMap.Add("globaldef007507", "botspeed");
+            nameMap.Add("globaldef007508", "jump");
+
+            // BotMoveInitial params
+            nameMap.Add("globaldef007567", "bot");
+            nameMap.Add("globaldef007568", "direction");
+            nameMap.Add("globaldef007572", "botspeed");
+            nameMap.Add("globaldef007573", "jump");
+
+            // BotMoveInitial locals
+            nameMap.Add("globaldef007574", "goalpos");
+            nameMap.Add("globaldef007578", "goaltype");
+
+            // BotMoveToGoal params
+            nameMap.Add("globaldef007579", "bot");
+            nameMap.Add("globaldef007580", "botspeed");
+
+            // BotMoveToGoal locals
+            nameMap.Add("globaldef007581", "obstacle");
 
             // BotJumpToGoal params
             nameMap.Add("globaldef007582", "bot");
@@ -2722,6 +2794,25 @@ namespace DeQcc
 
             // BotJumpToGoal locals
             nameMap.Add("globaldef007584", "obstacle");
+
+            // BotMoveInDirection params
+            nameMap.Add("globaldef007585", "bot");
+            nameMap.Add("globaldef007586", "yaw");
+            nameMap.Add("globaldef007587", "botspeed");
+
+            // BotMoveInDirection locals
+            nameMap.Add("globaldef007588", "angle");
+            nameMap.Add("globaldef007592", "obstacle");
+
+            // BotJumpInDirection params
+            nameMap.Add("globaldef007593", "bot");
+            nameMap.Add("globaldef007594", "yaw");
+            nameMap.Add("globaldef007595", "botspeed");
+
+            // BotJumpInDirection locals
+            nameMap.Add("globaldef007596", "angle");
+            nameMap.Add("globaldef007600", "obstacle");
+
 
             #endregion
 
@@ -2822,7 +2913,7 @@ namespace DeQcc
 
             #region b_frames.qc
 
-            for (int i = 2526; i <= 2635; i++)
+            for (int i = 2526; i <= 2637; i++)
             {
                 fileMap[i] = "b_frames.qc";
             }

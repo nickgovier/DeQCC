@@ -883,3 +883,285 @@ void () RemoveOneDeathmatchBot =
     
 };
 
+
+// func002426
+// function begins at statement 38498, parm_start=21259
+// OP_EQ_F	21260	214	21261
+// OP_IFNOT	21261	6	0
+// OP_ADDRESS	21259	610	21262
+// OP_MUL_F	783	218	21263
+// OP_ADD_F	21263	783	21264
+// OP_STOREP_F	21264	21262	0
+// OP_GOTO	52	0	0
+// OP_EQ_F	21260	216	21265
+// OP_IFNOT	21265	6	0
+// OP_ADDRESS	21259	610	21266
+// OP_MUL_F	792	218	21267
+// OP_ADD_F	21267	792	21268
+// OP_STOREP_F	21268	21266	0
+// OP_GOTO	45	0	0
+// OP_EQ_F	21260	228	21269
+// OP_IFNOT	21269	6	0
+// OP_ADDRESS	21259	610	21270
+// OP_MUL_F	791	218	21271
+// OP_ADD_F	21271	791	21272
+// OP_STOREP_F	21272	21270	0
+// OP_GOTO	38	0	0
+// OP_EQ_F	21260	229	21273
+// OP_IFNOT	21273	6	0
+// OP_ADDRESS	21259	610	21274
+// OP_MUL_F	788	218	21275
+// OP_ADD_F	21275	788	21276
+// OP_STOREP_F	21276	21274	0
+// OP_GOTO	31	0	0
+// OP_EQ_F	21260	230	21277
+// OP_IFNOT	21277	6	0
+// OP_ADDRESS	21259	610	21278
+// OP_MUL_F	782	218	21279
+// OP_ADD_F	21279	782	21280
+// OP_STOREP_F	21280	21278	0
+// OP_GOTO	24	0	0
+// OP_EQ_F	21260	231	21281
+// OP_IFNOT	21281	6	0
+// OP_ADDRESS	21259	610	21282
+// OP_MUL_F	785	218	21283
+// OP_ADD_F	21283	785	21284
+// OP_STOREP_F	21284	21282	0
+// OP_GOTO	17	0	0
+// OP_EQ_F	21260	232	21285
+// OP_IFNOT	21285	6	0
+// OP_ADDRESS	21259	610	21286
+// OP_MUL_F	786	218	21287
+// OP_ADD_F	21287	786	21288
+// OP_STOREP_F	21288	21286	0
+// OP_GOTO	10	0	0
+// OP_EQ_F	21260	217	21289
+// OP_IFNOT	21289	6	0
+// OP_ADDRESS	21259	610	21290
+// OP_MUL_F	781	218	21291
+// OP_ADD_F	21291	781	21292
+// OP_STOREP_F	21292	21290	0
+// OP_GOTO	3	0	0
+// OP_ADDRESS	21259	610	21293
+// OP_STOREP_F	213	21293	0
+// OP_DONE	0	0	0
+void (entity globaldef007123, float globaldef007124) func002426 = 
+{
+    if(globaldef007124 == TRUE)
+    {
+        globaldef007123.clientcolor = (BOTSHIRTPANTS_04 * FL_INWATER) + BOTSHIRTPANTS_04;
+    }
+    else
+    {
+        if(globaldef007124 == FL_SWIM)
+        {
+            globaldef007123.clientcolor = (BOTSHIRTPANTS_13 * FL_INWATER) + BOTSHIRTPANTS_13;
+        }
+        else
+        {
+            if(globaldef007124 == MOVETYPE_WALK)
+            {
+                globaldef007123.clientcolor = (BOTSHIRTPANTS_12 * FL_INWATER) + BOTSHIRTPANTS_12;
+            }
+            else
+            {
+                if(globaldef007124 == MOVETYPE_STEP)
+                {
+                    globaldef007123.clientcolor = (BOTSHIRTPANTS_09 * FL_INWATER) + BOTSHIRTPANTS_09;
+                }
+                else
+                {
+                    if(globaldef007124 == MOVETYPE_FLY)
+                    {
+                        globaldef007123.clientcolor = (BOTSHIRTPANTS_03 * FL_INWATER) + BOTSHIRTPANTS_03;
+                    }
+                    else
+                    {
+                        if(globaldef007124 == MOVETYPE_TOSS)
+                        {
+                            globaldef007123.clientcolor = (BOTSHIRTPANTS_06 * FL_INWATER) + BOTSHIRTPANTS_06;
+                        }
+                        else
+                        {
+                            if(globaldef007124 == MOVETYPE_PUSH)
+                            {
+                                globaldef007123.clientcolor = (BOTSHIRTPANTS_07 * FL_INWATER) + BOTSHIRTPANTS_07;
+                            }
+                            else
+                            {
+                                if(globaldef007124 == FL_CLIENT)
+                                {
+                                    globaldef007123.clientcolor = (BOTSHIRTPANTS_02 * FL_INWATER) + BOTSHIRTPANTS_02;
+                                }
+                                else
+                                {
+                                    globaldef007123.clientcolor = FALSE;
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+};
+
+
+// func002427
+// function begins at statement 38557, parm_start=21294
+// OP_CALL0	20987	0	0
+// OP_STORE_V	1	4	0
+// OP_CALL1	21203	0	0
+// OP_STORE_ENT	1	21295	0
+// OP_NOT_ENT	21295	0	21296
+// OP_IFNOT	21296	2	0
+// OP_RETURN	0	0	0
+// OP_ADDRESS	21295	607	21297
+// OP_STOREP_F	21294	21297	0
+// OP_ADDRESS	21295	180	21298
+// OP_LOAD_F	21295	609	21299
+// OP_STORE_V	21299	4	0
+// OP_CALL1	1085	0	0
+// OP_STOREP_S	1	21298	0
+// OP_STORE_V	21295	4	0
+// OP_STORE_V	21294	7	0
+// OP_CALL2	1109	0	0
+// OP_NOT_F	822	0	21300
+// OP_IFNOT	21300	7	0
+// OP_ADDRESS	21295	132	21301
+// OP_STOREP_F	213	21301	0
+// OP_ADDRESS	21295	574	21302
+// OP_STOREP_F	214	21302	0
+// OP_ADDRESS	21295	572	21303
+// OP_STOREP_F	214	21303	0
+// OP_LOAD_F	21295	608	21304
+// OP_STORE_V	21304	4	0
+// OP_LOAD_S	21295	180	21305
+// OP_STORE_V	21305	7	0
+// OP_CALL2	1050	0	0
+// OP_LOAD_F	21295	608	21306
+// OP_STORE_V	21306	4	0
+// OP_LOAD_F	21295	153	21307
+// OP_STORE_V	21307	7	0
+// OP_CALL2	1051	0	0
+// OP_LOAD_F	21295	608	21308
+// OP_STORE_V	21308	4	0
+// OP_LOAD_F	21295	610	21309
+// OP_STORE_V	21309	7	0
+// OP_CALL2	1052	0	0
+// OP_LOAD_S	21295	180	21310
+// OP_STORE_V	21310	4	0
+// OP_CALL1	472	0	0
+// OP_STORE_V	9064	4	0
+// OP_CALL1	472	0	0
+// OP_DONE	0	0	0
+void (float globaldef007125) func002427 = 
+{
+    local entity globaldef007126;
+    globaldef007126 = AddDeathmatchBot(func002415());
+    
+    if(!globaldef007126)
+    {
+        return;
+    }
+    
+    globaldef007126.field000284 = globaldef007125;
+    globaldef007126.netname = BotName(globaldef007126.botnumber);
+    func002426(globaldef007126, globaldef007125);
+    
+    if(!lowMemoryDisableExtraModels)
+    {
+        globaldef007126.skin = FALSE;
+        globaldef007126.field000251 = TRUE;
+        globaldef007126.field000249 = TRUE;
+    }
+    
+    msgUpdateClientNameToAll(globaldef007126.clientnumber, globaldef007126.netname);
+    msgUpdateClientFragsToAll(globaldef007126.clientnumber, globaldef007126.frags);
+    msgUpdateClientColorsToAll(globaldef007126.clientnumber, globaldef007126.clientcolor);
+    bprint(globaldef007126.netname);
+    bprint(" entered the game\n");
+};
+
+
+// func002428
+// function begins at statement 38603, parm_start=21311
+// OP_STORE_ENT	834	21312	0
+// OP_IFNOT	21312	10	0
+// OP_LOAD_F	21312	607	21313
+// OP_EQ_F	21313	21311	21314
+// OP_IFNOT	21314	4	0
+// OP_STORE_V	21312	4	0
+// OP_CALL1	1100	0	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	21312	620	21315
+// OP_STORE_ENT	21315	21312	0
+// OP_GOTO	-9	0	0
+// OP_DONE	0	0	0
+void (float globaldef007127) func002428 = 
+{
+    local entity globaldef007128;
+    globaldef007128 = firstBot;
+    
+    while(globaldef007128)
+    {
+        
+        if(globaldef007128.field000284 == globaldef007127)
+        {
+            DestroyBot(globaldef007128);
+            return;
+        }
+        
+        globaldef007128 = globaldef007128.next;
+    }
+    
+};
+
+
+// func002429
+// function begins at statement 38615, parm_start=21316
+// OP_STORE_V	6765	4	0
+// OP_CALL1	490	0	0
+// OP_STORE_F	1	21316	0
+// OP_STORE_F	213	21317	0
+// OP_STORE_F	214	21318	0
+// OP_BITAND	21316	21318	21319
+// OP_IFNOT	21319	3	0
+// OP_STORE_V	21317	4	0
+// OP_CALL1	1104	0	0
+// OP_MUL_F	21318	216	21320
+// OP_STORE_F	21320	21318	0
+// OP_ADD_F	21317	214	21321
+// OP_STORE_F	21321	21317	0
+// OP_LT	21317	736	21322
+// OP_IF	21322	-9	0
+// OP_DONE	0	0	0
+void () func002429 = 
+{
+    local float globaldef007129;
+    local float globaldef007130;
+    local float globaldef007131;
+    globaldef007129 = cvar("temp1");
+    globaldef007130 = FALSE;
+    globaldef007131 = TRUE;
+    do
+    {
+        
+        if(globaldef007129 & globaldef007131)
+        {
+            AddBots(globaldef007130);
+        }
+        
+        globaldef007131 = globaldef007131 * FL_SWIM;
+        globaldef007130 = globaldef007130 + TRUE;
+    } while (globaldef007130 < OBOT_MAXBOTS);
+};
+

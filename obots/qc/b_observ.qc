@@ -1,4 +1,135 @@
 
+// func002356
+// function begins at statement 35666, parm_start=19502
+// OP_LOAD_S	19502	129	19506
+// OP_NE_S	19506	2025	19507
+// OP_IFNOT	19507	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	19502	667	19508
+// OP_EQ_E	19508	19502	19509
+// OP_IFNOT	19509	16	0
+// OP_ADDRESS	19502	93	19510
+// OP_STOREP_F	526	19510	0
+// OP_LOAD_F	19502	666	19511
+// OP_BITAND	19511	762	19512
+// OP_NOT_F	19512	0	19513
+// OP_IFNOT	19513	3	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19117	0	0
+// OP_LOAD_F	19502	666	19514
+// OP_BITAND	19514	764	19515
+// OP_NOT_F	19515	0	19516
+// OP_IFNOT	19516	3	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19247	0	0
+// OP_RETURN	0	0	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19142	0	0
+// OP_LOAD_F	19502	666	19517
+// OP_BITAND	19517	761	19518
+// OP_IFNOT	19518	3	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19129	0	0
+// OP_LOAD_F	19502	666	19519
+// OP_BITAND	19519	763	19520
+// OP_IFNOT	19520	4	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19360	0	0
+// OP_GOTO	3	0	0
+// OP_STORE_V	19502	4	0
+// OP_CALL1	19310	0	0
+// OP_DONE	0	0	0
+void (entity globaldef006779) func002356 = 
+{
+    local vector globaldef006780;
+    
+    if(globaldef006779.classname != "observer")
+    {
+        return;
+    }
+    
+    
+    if(globaldef006779.field000344 == globaldef006779)
+    {
+        globaldef006779.modelindex = modelindex_player;
+        
+        if(!(globaldef006779.field000343 & globaldef000745))
+        {
+            func002345(globaldef006779);
+        }
+        
+        
+        if(!(globaldef006779.field000343 & globaldef000747))
+        {
+            func002353(globaldef006779);
+        }
+        
+        return;
+    }
+    
+    func002347(globaldef006779);
+    
+    if(globaldef006779.field000343 & globaldef000744)
+    {
+        func002346(globaldef006779);
+    }
+    
+    if(globaldef006779.field000343 & globaldef000746)
+    {
+        func002355(globaldef006779);
+    }
+    else
+    {
+        func002354(globaldef006779);
+    }
+    
+};
+
+
+// func002357
+// function begins at statement 35704, parm_start=19521
+// OP_ADDRESS	19521	667	19522
+// OP_STOREP_ENT	19521	19522	0
+// OP_ADDRESS	19521	166	19523
+// OP_STOREP_V	8450	19523	0
+// OP_STORE_V	19521	4	0
+// OP_LOAD_V	19521	672	19526
+// OP_STORE_V	19526	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	19521	175	19529
+// OP_LOAD_V	19521	676	19532
+// OP_STOREP_V	19532	19529	0
+// OP_STORE_V	19521	4	0
+// OP_STORE_V	19521	7	0
+// OP_CALL2	1059	0	0
+// OP_STORE_V	19521	4	0
+// OP_LOAD_V	19521	175	19535
+// OP_STORE_V	19535	7	0
+// OP_CALL2	1060	0	0
+// OP_STORE_V	19521	4	0
+// OP_STORE_V	289	7	0
+// OP_STORE_V	292	10	0
+// OP_CALL3	455	0	0
+// OP_STORE_V	19521	4	0
+// OP_STORE_V	3002	7	0
+// OP_CALL2	852	0	0
+// OP_STORE_V	19521	4	0
+// OP_CALL1	19188	0	0
+// OP_DONE	0	0	0
+void (entity globaldef006784) func002357 = 
+{
+    globaldef006784.field000344 = globaldef006784;
+    globaldef006784.view_ofs = '0 0 22';
+    setorigin(globaldef006784, globaldef006784.field000349);
+    globaldef006784.v_angle = globaldef006784.field000353;
+    func002349(globaldef006784, globaldef006784);
+    func002350(globaldef006784, globaldef006784.v_angle);
+    setsize(globaldef006784, VEC_HULL_MIN, VEC_HULL_MAX);
+    centerprint(globaldef006784, "");
+    func002348(globaldef006784);
+};
+
+
 // CycleClientCamera
 // function begins at statement 35732, parm_start=19538
 // OP_LOAD_S	19538	129	19540
