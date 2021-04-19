@@ -929,23 +929,23 @@ void (entity globaldef006971) func002390 =
         globaldef006973 = random();
         if(globaldef006973 < 0.25)
         {
-            globaldef006971.think = func002532;
+            globaldef006971.think = bot_axe1;
         }
         else
         {
             if(globaldef006973 < RA_PLAYERSTATTIME)
             {
-                globaldef006971.think = func002536;
+                globaldef006971.think = bot_axeb1;
             }
             else
             {
                 if(globaldef006973 < 0.75)
                 {
-                    globaldef006971.think = func002540;
+                    globaldef006971.think = bot_axec1;
                 }
                 else
                 {
-                    globaldef006971.think = func002544;
+                    globaldef006971.think = bot_axed1;
                 }
                 
             }
@@ -959,7 +959,7 @@ void (entity globaldef006971) func002390 =
     {
         if(globaldef006971.weapon == IT_SHOTGUN)
         {
-            globaldef006971.think = func002526;
+            globaldef006971.think = bot_shot1;
             globaldef006971.attack_finished = (time + RA_PLAYERSTATTIME) + globaldef006972;
             W_FireShotgun();
         }
@@ -967,7 +967,7 @@ void (entity globaldef006971) func002390 =
         {
             if(globaldef006971.weapon == IT_SUPER_SHOTGUN)
             {
-                globaldef006971.think = func002526;
+                globaldef006971.think = bot_shot1;
                 globaldef006971.attack_finished = (time + 0.7) + globaldef006972;
                 W_FireSuperShotgun();
             }
@@ -975,19 +975,19 @@ void (entity globaldef006971) func002390 =
             {
                 if(globaldef006971.weapon == IT_NAILGUN)
                 {
-                    globaldef006971.think = func002548;
+                    globaldef006971.think = bot_nail1;
                 }
                 else
                 {
                     if(globaldef006971.weapon == IT_SUPER_NAILGUN)
                     {
-                        globaldef006971.think = func002548;
+                        globaldef006971.think = bot_nail1;
                     }
                     else
                     {
                         if(globaldef006971.weapon == IT_GRENADE_LAUNCHER)
                         {
-                            globaldef006971.think = func002552;
+                            globaldef006971.think = bot_rocket1;
                             globaldef006971.attack_finished = (time + 0.6) + globaldef006972;
                             W_FireGrenade();
                         }
@@ -995,7 +995,7 @@ void (entity globaldef006971) func002390 =
                         {
                             if(globaldef006971.weapon == IT_ROCKET_LAUNCHER)
                             {
-                                globaldef006971.think = func002552;
+                                globaldef006971.think = bot_rocket1;
                                 globaldef006971.attack_finished = (time + 0.8) + globaldef006972;
                                 W_FireRocket();
                             }
@@ -1004,7 +1004,7 @@ void (entity globaldef006971) func002390 =
                                 
                                 if(globaldef006971.weapon == IT_LIGHTNING)
                                 {
-                                    globaldef006971.think = func002550;
+                                    globaldef006971.think = bot_light1;
                                 }
                                 
                             }

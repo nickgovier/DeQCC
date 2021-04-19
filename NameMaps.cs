@@ -2956,10 +2956,43 @@ namespace DeQcc
 
             #region b_frames.qc
 
-            for (int i = 2525; i <= 2637; i++)
+            nameMap.Add("func002524", "bot_stand");
+            nameMap.Add("func002525", "bot_run");
+            for (int i = 2526; i <= 2531; i++) { nameMap.Add("func00" + i.ToString(), "bot_shot" + (i - 2525).ToString()); }
+            for (int i = 2532; i <= 2535; i++) { nameMap.Add("func00" + i.ToString(), "bot_axe" + (i - 2531).ToString()); }
+            for (int i = 2536; i <= 2539; i++) { nameMap.Add("func00" + i.ToString(), "bot_axeb" + (i - 2535).ToString()); }
+            for (int i = 2540; i <= 2543; i++) { nameMap.Add("func00" + i.ToString(), "bot_axec" + (i - 2539).ToString()); }
+            for (int i = 2544; i <= 2547; i++) { nameMap.Add("func00" + i.ToString(), "bot_axed" + (i - 2543).ToString()); }
+            for (int i = 2548; i <= 2549; i++) { nameMap.Add("func00" + i.ToString(), "bot_nail" + (i - 2547).ToString()); }
+            for (int i = 2550; i <= 2551; i++) { nameMap.Add("func00" + i.ToString(), "bot_light" + (i - 2549).ToString()); }
+            for (int i = 2552; i <= 2557; i++) { nameMap.Add("func00" + i.ToString(), "bot_rocket" + (i - 2551).ToString()); }
+            nameMap.Add("func002558", "BotPainSound");
+            for (int i = 2559; i <= 2564; i++) { nameMap.Add("func00" + i.ToString(), "bot_pain" + (i - 2558).ToString()); }
+            for (int i = 2565; i <= 2570; i++) { nameMap.Add("func00" + i.ToString(), "bot_axpain" + (i - 2564).ToString()); }
+            nameMap.Add("func002571", "bot_pain");
+            nameMap.Add("func002572", "PostBotDeathMessage");
+            nameMap.Add("func002573", "BotDead");
+            for (int i = 2574; i <= 2584; i++) { nameMap.Add("func00" + i.ToString(), "bot_diea" + (i - 2573).ToString()); }
+            for (int i = 2585; i <= 2593; i++) { nameMap.Add("func00" + i.ToString(), "bot_dieb" + (i - 2584).ToString()); }
+            for (int i = 2594; i <= 2608; i++) { nameMap.Add("func00" + i.ToString(), "bot_diec" + (i - 2593).ToString()); }
+            for (int i = 2609; i <= 2617; i++) { nameMap.Add("func00" + i.ToString(), "bot_died" + (i - 2608).ToString()); }
+            for (int i = 2618; i <= 2626; i++) { nameMap.Add("func00" + i.ToString(), "bot_diee" + (i - 2617).ToString()); }
+            for (int i = 2627; i <= 2635; i++) { nameMap.Add("func00" + i.ToString(), "bot_die_ax" + (i - 2626).ToString()); }
+            nameMap.Add("func002636", "BotDeathSound");
+            nameMap.Add("func002637", "BotDie");
+
+            for (int i = 2524; i <= 2637; i++)
             {
                 fileMap[i] = "b_frames.qc";
             }
+
+            // BotPainSound locals
+            nameMap.Add("globaldef008176", "rs");
+
+            // bot_pain params
+            nameMap.Add("globaldef008189", "attacker");
+            nameMap.Add("globaldef008190", "damage");
+
 
             #endregion
 
