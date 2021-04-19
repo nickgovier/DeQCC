@@ -1036,7 +1036,7 @@ row,name,s_name,ofs,type,typename
 1034,func002392,0,1096,6,void()
 1035,func002397,0,1097,6,void()
 1036,BotAttackMove,0,1098,6,void()
-1037,func002410,0,1099,6,void()
+1037,BotThink,0,1099,6,void()
 1038,DestroyBot,0,1100,6,void()
 1039,func002421,0,1101,6,void()
 1040,AddRandomDeathmatchBot,0,1102,6,void()
@@ -1078,7 +1078,7 @@ row,name,s_name,ofs,type,typename
 1076,func002492,0,1138,6,void()
 1077,func002497,0,1139,6,void()
 1078,func002498,0,1140,6,void()
-1079,func002499,0,1141,6,void()
+1079,BotAI,0,1141,6,void()
 1080,func002500,0,1142,6,void()
 1081,func002502,0,1143,6,void()
 1082,func002504,0,1144,6,void()
@@ -7085,9 +7085,9 @@ row,name,s_name,ofs,type,typename
 7083,globaldef007083,0,20910,2,float
 7084,func002406,0,20919,6,void()
 7085,func002407,0,20922,6,void()
-7086,func002408,0,20940,6,void()
-7087,func002409,0,20963,6,void()
-7088,globaldef007088,0,20967,2,float
+7086,BotPostThink,0,20940,6,void()
+7087,BotPreThink,0,20963,6,void()
+7088,sk,0,20967,2,float
 7089,func002411,0,20970,6,void()
 7090,globaldef007090,0,20971,2,float
 7091,globaldef007091,0,20972,2,float

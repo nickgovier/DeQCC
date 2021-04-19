@@ -2227,8 +2227,6 @@ namespace DeQcc
             #endregion
 
 
-            //b_think.qc
-            //b_aitree.qc
             //b_clphys.qc
 
             // Done
@@ -2743,6 +2741,22 @@ namespace DeQcc
 
             #endregion
 
+            #region b_think.qc
+
+            nameMap.Add("func002408", "BotPostThink");
+            nameMap.Add("func002409", "BotPreThink");
+            nameMap.Add("func002410", "BotThink");
+
+            for (int i = 2408; i <= 2410; i++)
+            {
+                fileMap[i] = "b_think.qc";
+            }
+
+            // BotThink params
+            nameMap.Add("globaldef007088", "sk");
+
+            #endregion
+
             #region b_spawn.qc
 
             nameMap.Add("func002417", "DestroyBot");
@@ -2928,6 +2942,17 @@ namespace DeQcc
             }
 
             #endregion
+
+            #region b_aitree.qc
+
+            nameMap.Add("func002499", "BotAI");
+
+            for (int i = 2499; i <= 2499; i++)
+            {
+                fileMap[i] = "b_aitree.qc";
+            }
+
+            #endregion 
 
             #region b_frames.qc
 

@@ -77,7 +77,7 @@ void () func002525 = [6, func002525]
     }
     
     self.walkframe = self.walkframe + TRUE;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -97,7 +97,7 @@ void () func002526 = [113, func002527]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
-    func002410(0.9);
+    BotThink(0.9);
 };
 
 
@@ -112,7 +112,7 @@ void () func002526 = [113, func002527]
 void () func002527 = [114, func002528]
 {
     self.weaponframe = FL_SWIM;
-    func002410(0.9);
+    BotThink(0.9);
 };
 
 
@@ -127,7 +127,7 @@ void () func002527 = [114, func002528]
 void () func002528 = [115, func002529]
 {
     self.weaponframe = MOVETYPE_WALK;
-    func002410(FALSE);
+    BotThink(FALSE);
 };
 
 
@@ -142,7 +142,7 @@ void () func002528 = [115, func002529]
 void () func002529 = [116, func002530]
 {
     self.weaponframe = MOVETYPE_STEP;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -157,7 +157,7 @@ void () func002529 = [116, func002530]
 void () func002530 = [117, func002531]
 {
     self.weaponframe = MOVETYPE_FLY;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -172,7 +172,7 @@ void () func002530 = [117, func002531]
 void () func002531 = [118, func002525]
 {
     self.weaponframe = MOVETYPE_TOSS;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -187,7 +187,7 @@ void () func002531 = [118, func002525]
 void () func002532 = [119, func002533]
 {
     self.weaponframe = TRUE;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -202,7 +202,7 @@ void () func002532 = [119, func002533]
 void () func002533 = [120, func002534]
 {
     self.weaponframe = FL_SWIM;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -223,7 +223,7 @@ void () func002534 = [121, func002535]
     self.weaponframe = MOVETYPE_WALK;
     makevectors(self.v_angle);
     W_FireAxe();
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -238,7 +238,7 @@ void () func002534 = [121, func002535]
 void () func002535 = [122, func002525]
 {
     self.weaponframe = MOVETYPE_STEP;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -253,7 +253,7 @@ void () func002535 = [122, func002525]
 void () func002536 = [125, func002537]
 {
     self.weaponframe = MOVETYPE_FLY;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -268,7 +268,7 @@ void () func002536 = [125, func002537]
 void () func002537 = [126, func002538]
 {
     self.weaponframe = MOVETYPE_TOSS;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -289,7 +289,7 @@ void () func002538 = [127, func002539]
     self.weaponframe = MOVETYPE_PUSH;
     makevectors(self.v_angle);
     W_FireAxe();
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -304,7 +304,7 @@ void () func002538 = [127, func002539]
 void () func002539 = [128, func002525]
 {
     self.weaponframe = FL_CLIENT;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -319,7 +319,7 @@ void () func002539 = [128, func002525]
 void () func002540 = [131, func002541]
 {
     self.weaponframe = TRUE;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -334,7 +334,7 @@ void () func002540 = [131, func002541]
 void () func002541 = [132, func002542]
 {
     self.weaponframe = FL_SWIM;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -355,7 +355,7 @@ void () func002542 = [133, func002543]
     self.weaponframe = MOVETYPE_WALK;
     makevectors(self.v_angle);
     W_FireAxe();
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -370,7 +370,7 @@ void () func002542 = [133, func002543]
 void () func002543 = [134, func002525]
 {
     self.weaponframe = MOVETYPE_STEP;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -385,7 +385,7 @@ void () func002543 = [134, func002525]
 void () func002544 = [137, func002545]
 {
     self.weaponframe = MOVETYPE_FLY;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -400,7 +400,7 @@ void () func002544 = [137, func002545]
 void () func002545 = [138, func002546]
 {
     self.weaponframe = MOVETYPE_TOSS;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -421,7 +421,7 @@ void () func002546 = [139, func002547]
     self.weaponframe = MOVETYPE_PUSH;
     makevectors(self.v_angle);
     W_FireAxe();
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -436,7 +436,7 @@ void () func002546 = [139, func002547]
 void () func002547 = [140, func002525]
 {
     self.weaponframe = FL_CLIENT;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -483,7 +483,7 @@ void () func002548 = [103, func002549]
     makevectors(self.v_angle);
     W_FireSpikes(MOVETYPE_STEP);
     self.attack_finished = self.nextthink - 0.01;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -525,7 +525,7 @@ void () func002549 = [104, func002525]
     SuperDamageSound();
     makevectors(self.v_angle);
     W_FireSpikes(CONTENT_SLIME);
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -571,7 +571,7 @@ void () func002550 = [105, func002551]
     makevectors(self.v_angle);
     W_FireLightning();
     self.attack_finished = self.nextthink - 0.01;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -612,7 +612,7 @@ void () func002551 = [106, func002525]
     SuperDamageSound();
     makevectors(self.v_angle);
     W_FireLightning();
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -632,7 +632,7 @@ void () func002552 = [107, func002553]
 {
     self.weaponframe = TRUE;
     self.effects = self.effects | EF_MUZZLEFLASH;
-    func002410(FL_SWIM);
+    BotThink(FL_SWIM);
 };
 
 
@@ -647,7 +647,7 @@ void () func002552 = [107, func002553]
 void () func002553 = [108, func002554]
 {
     self.weaponframe = FL_SWIM;
-    func002410(FL_SWIM);
+    BotThink(FL_SWIM);
 };
 
 
@@ -662,7 +662,7 @@ void () func002553 = [108, func002554]
 void () func002554 = [109, func002555]
 {
     self.weaponframe = MOVETYPE_WALK;
-    func002410(TRUE);
+    BotThink(TRUE);
 };
 
 
@@ -677,7 +677,7 @@ void () func002554 = [109, func002555]
 void () func002555 = [110, func002556]
 {
     self.weaponframe = MOVETYPE_STEP;
-    func002410(TRUE);
+    BotThink(TRUE);
 };
 
 
@@ -692,7 +692,7 @@ void () func002555 = [110, func002556]
 void () func002556 = [111, func002557]
 {
     self.weaponframe = MOVETYPE_FLY;
-    func002410(FALSE);
+    BotThink(FALSE);
 };
 
 
@@ -707,7 +707,7 @@ void () func002556 = [111, func002557]
 void () func002557 = [112, func002525]
 {
     self.weaponframe = MOVETYPE_TOSS;
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1005,7 +1005,7 @@ void () func002559 = [35, func002560]
 // OP_DONE	0	0	0
 void () func002560 = [36, func002561]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1017,7 +1017,7 @@ void () func002560 = [36, func002561]
 // OP_DONE	0	0	0
 void () func002561 = [37, func002562]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1029,7 +1029,7 @@ void () func002561 = [37, func002562]
 // OP_DONE	0	0	0
 void () func002562 = [38, func002563]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1041,7 +1041,7 @@ void () func002562 = [38, func002563]
 // OP_DONE	0	0	0
 void () func002563 = [39, func002564]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1053,7 +1053,7 @@ void () func002563 = [39, func002564]
 // OP_DONE	0	0	0
 void () func002564 = [40, func002525]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1079,7 +1079,7 @@ void () func002565 = [29, func002566]
 // OP_DONE	0	0	0
 void () func002566 = [30, func002567]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1091,7 +1091,7 @@ void () func002566 = [30, func002567]
 // OP_DONE	0	0	0
 void () func002567 = [31, func002568]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1103,7 +1103,7 @@ void () func002567 = [31, func002568]
 // OP_DONE	0	0	0
 void () func002568 = [32, func002569]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1115,7 +1115,7 @@ void () func002568 = [32, func002569]
 // OP_DONE	0	0	0
 void () func002569 = [33, func002570]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
@@ -1127,7 +1127,7 @@ void () func002569 = [33, func002570]
 // OP_DONE	0	0	0
 void () func002570 = [34, func002525]
 {
-    func002410(CONTENT_EMPTY);
+    BotThink(CONTENT_EMPTY);
 };
 
 
