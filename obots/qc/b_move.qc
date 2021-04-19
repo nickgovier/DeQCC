@@ -3515,9 +3515,10 @@ float (entity bot, float botspeed) BotMoveToGoal =
     
     if(botspeed > globaldef000783)
     {
+        botspeed = globaldef000783;
     }
     
-    botspeed = botspeed = globaldef000783;
+    botspeed = globaldef000783;
     obstacle = BotMoveInitial(bot, VEC_ORIGIN, botspeed, FALSE);
     return obstacle;
 };
@@ -3553,9 +3554,10 @@ float (entity bot, float botspeed) BotJumpToGoal =
     
     if(botspeed > globaldef000783)
     {
+        botspeed = globaldef000783;
     }
     
-    botspeed = botspeed = globaldef000783;
+    botspeed = globaldef000783;
     obstacle = BotMoveInitial(bot, VEC_ORIGIN, botspeed, TRUE);
     return obstacle;
 };
@@ -3600,9 +3602,10 @@ float (entity bot, float yaw, float botspeed) BotMoveInDirection =
     
     if(botspeed > globaldef000783)
     {
+        botspeed = globaldef000783;
     }
     
-    botspeed = botspeed = globaldef000783;
+    botspeed = globaldef000783;
     angle = VEC_ORIGIN;
     angle_y = yaw;
     makevectors(angle);
@@ -3656,9 +3659,10 @@ float (entity bot, float yaw, float botspeed) BotJumpInDirection =
     
     if(botspeed > globaldef000783)
     {
+        botspeed = globaldef000783;
     }
     
-    botspeed = botspeed = globaldef000783;
+    botspeed = globaldef000783;
     angle = VEC_ORIGIN;
     angle_y = yaw;
     makevectors(angle);

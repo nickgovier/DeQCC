@@ -853,7 +853,7 @@ namespace DeQcc
                         // fix for multiple assignments, e.g. self.currentammo = self.ammo_shells = self.ammo_shells - 1; in weapons.qc W_FireShotgun
                         Statement nextS = statements[sIndex + 1];
                         // if the next statement is also a store using the same value, but not as a parameter to a function call
-                        if (!a.IsConstant() && nextS.Opcode >= Opcodes.OP_STORE_F && nextS.Opcode <= Opcodes.OP_STOREP_FNC && nextS.a == s.a && nextS.b >= RESERVED_OFS)
+                        if (!endofBlock.Contains(sIndex+1) && !a.IsConstant() && nextS.Opcode >= Opcodes.OP_STORE_F && nextS.Opcode <= Opcodes.OP_STOREP_FNC && nextS.a == s.a && nextS.b >= RESERVED_OFS)
                         {
                             // just store the assignment ready to be written in the next statement
                             a.ValueToAssign = output;
