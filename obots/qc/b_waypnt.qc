@@ -3157,13 +3157,13 @@ float () func002679 =
     }
     
     
-    if((!(self.old_botflags & globaldef000685)) && (!(self.old_flags & FL_INWATER)))
+    if((!(self.old_botflags & GLOBALDEF685_4)) && (!(self.old_flags & FL_INWATER)))
     {
         return FALSE;
     }
     
     
-    if((!(self.botflags & globaldef000685)) && (!(self.flags & FL_INWATER)))
+    if((!(self.botflags & GLOBALDEF685_4)) && (!(self.flags & FL_INWATER)))
     {
         return FALSE;
     }

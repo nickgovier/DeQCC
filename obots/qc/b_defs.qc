@@ -153,7 +153,7 @@ float GLOBALDEF681_8192 = 8192;
 float GLOBALDEF682_16384 = 16384;
 float GLOBALDEF683_1 = 1;
 float GLOBALDEF684_2 = 2;
-float globaldef000685;
+float GLOBALDEF685_4 = 4;
 float globaldef000686;
 float globaldef000687;
 float globaldef000688;

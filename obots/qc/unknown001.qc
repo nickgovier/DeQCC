@@ -422,7 +422,7 @@ void (entity globaldef005739) func002273 =
     local vector globaldef005741;
     local entity globaldef005745;
     local entity globaldef005746;
-    globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & globaldef000685);
+    globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & GLOBALDEF685_4);
     globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & GLOBALDEF683_1);
     setsize(floorTestEnt, globaldef005739.mins, globaldef005739.maxs);
     setorigin(floorTestEnt, globaldef005739.origin);
@@ -446,7 +446,7 @@ void (entity globaldef005739) func002273 =
         
         if(floorTestEnt.groundentity == world)
         {
-            globaldef005739.botflags = globaldef005739.botflags | globaldef000685;
+            globaldef005739.botflags = globaldef005739.botflags | GLOBALDEF685_4;
         }
         
     }
