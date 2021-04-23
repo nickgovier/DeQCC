@@ -345,11 +345,11 @@ namespace DeQcc
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
             nameMap.Add("globaldef000720", "GLOBALDEF720_640");
             nameMap.Add("globaldef000721", "GLOBALDEF721_250");  // constant = 250
-
+            nameMap.Add("globaldef000722", "GLOBALDEF722_10");
             nameMap.Add("globaldef000723", "GLOBALDEF723_600");  // constant = 600
             nameMap.Add("globaldef000724", "GLOBALDEF724_800");  // constant = 800
             nameMap.Add("globaldef000725", "OBOT_MAXGIBS");  // constant = 30
-
+            nameMap.Add("globaldef000726", "GLOBALDEF726_16");
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40

@@ -914,7 +914,7 @@ void () func002656 =
         globaldef009071 = nextent(globaldef009071);
     }
     
-    globaldef000787 = ((((GLOBALDEF728_500 - globaldef009072) - globaldef000726) - OBOT_MAXGIBS) - OBOT_MAXSHELLCASES) - GLOBALDEF729_40;
+    globaldef000787 = ((((GLOBALDEF728_500 - globaldef009072) - GLOBALDEF726_16) - OBOT_MAXGIBS) - OBOT_MAXSHELLCASES) - GLOBALDEF729_40;
 };
 
 
@@ -1229,7 +1229,7 @@ void () SetupWaypoints =
                 {
                     globaldef009074 = globaldef009074 + TRUE;
                     
-                    if(globaldef009074 > globaldef000722)
+                    if(globaldef009074 > GLOBALDEF722_10)
                     {
                         return;
                     }
