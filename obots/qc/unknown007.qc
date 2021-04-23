@@ -1524,7 +1524,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
     if(globaldef007978.field000267)
     {
         
-        if((!(globaldef007978.botflags & globaldef000689)) && (!(globaldef007978.botflags & GLOBALDEF688_32)))
+        if((!(globaldef007978.botflags & GLOBALDEF689_64)) && (!(globaldef007978.botflags & GLOBALDEF688_32)))
         {
             globaldef007993 = globaldef007978.field000267.f_goalweight(globaldef007978, globaldef007978.field000267);
         }
@@ -3379,7 +3379,7 @@ entity (entity bot) func002495 =
     {
         bot.field000267 = globaldef008089;
         bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF688_32);
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000689);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF689_64);
         bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
         globaldef008090.field000339 = bot;
         globaldef008090.field000340 = time;
@@ -3395,7 +3395,7 @@ entity (entity bot) func002495 =
     if(globaldef008096)
     {
         bot.field000267 = globaldef008096;
-        bot.botflags = bot.botflags | globaldef000689;
+        bot.botflags = bot.botflags | GLOBALDEF689_64;
         bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF688_32);
         bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
         globaldef008096.field000341 = bot;
@@ -3480,7 +3480,7 @@ float (entity globaldef008100) func002496 =
         return FALSE;
     }
     
-    if((!(globaldef008100.botflags & globaldef000689)) && (!(globaldef008100.botflags & GLOBALDEF688_32)))
+    if((!(globaldef008100.botflags & GLOBALDEF689_64)) && (!(globaldef008100.botflags & GLOBALDEF688_32)))
     {
         
         if(globaldef008100.field000267.solid != SOLID_TRIGGER)
@@ -3655,7 +3655,7 @@ entity (entity globaldef008103) func002498 =
             {
                 globaldef008103.field000267 = globaldef008105;
                 globaldef008103.botflags = globaldef008103.botflags | GLOBALDEF688_32;
-                globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & globaldef000689);
+                globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & GLOBALDEF689_64);
                 globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & globaldef000690);
                 globaldef008106.field000339 = globaldef008103;
                 globaldef008106.field000340 = time;

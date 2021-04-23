@@ -498,7 +498,7 @@ void (entity globaldef008119) func002508 =
     }
     
     
-    if(globaldef008119.botflags & globaldef000689)
+    if(globaldef008119.botflags & GLOBALDEF689_64)
     {
         globaldef008120 = func002498(globaldef008119);
         

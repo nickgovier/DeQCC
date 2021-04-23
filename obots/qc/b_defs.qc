@@ -157,7 +157,7 @@ float GLOBALDEF685_4 = 4;
 float GLOBALDEF686_8 = 8;
 float GLOBALDEF687_16 = 16;
 float GLOBALDEF688_32 = 32;
-float globaldef000689;
+float GLOBALDEF689_64 = 64;
 float globaldef000690;
 float globaldef000691;
 float WAYPOINT_DUMP_TO_CONSOLE = 512;
