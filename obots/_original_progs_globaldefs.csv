@@ -682,7 +682,7 @@ row,name,s_name,ofs,type,typename
 680,wp7,0,697,5,ev_field
 681,GLOBALDEF681_8192,0,698,2,float
 682,GLOBALDEF682_16384,0,699,2,float
-683,globaldef000683,0,700,2,float
+683,GLOBALDEF683_1,0,700,2,float
 684,globaldef000684,0,701,2,float
 685,globaldef000685,0,702,2,float
 686,globaldef000686,0,703,2,float

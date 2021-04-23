@@ -1717,7 +1717,7 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
     }
     
     
-    if(!(globaldef007396.botflags & globaldef000683))
+    if(!(globaldef007396.botflags & GLOBALDEF683_1))
     {
         return OBSTACLE_TELEPORT;
     }
@@ -3458,7 +3458,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMoveInitial 
     }
     
     
-    if(bot.botflags & globaldef000683)
+    if(bot.botflags & GLOBALDEF683_1)
     {
         bot.botflags = bot.botflags - (bot.botflags & globaldef000697);
     }

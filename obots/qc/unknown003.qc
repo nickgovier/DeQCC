@@ -631,7 +631,7 @@ void () func002407 =
     }
     
     
-    if(!(self.botflags & globaldef000683))
+    if(!(self.botflags & GLOBALDEF683_1))
     {
         self.jump_flag = self.velocity_z;
     }

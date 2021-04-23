@@ -131,7 +131,7 @@ void (entity globaldef005704) func002268 =
     
     if(globaldef005704.botflags & globaldef000695)
     {
-        if((globaldef005705.origin_z >= (globaldef005704.origin_z - TRUE)) || (!(globaldef005704.botflags & globaldef000683)))
+        if((globaldef005705.origin_z >= (globaldef005704.origin_z - TRUE)) || (!(globaldef005704.botflags & GLOBALDEF683_1)))
         {
             globaldef005704.botflags = globaldef005704.botflags - globaldef000695;
         }
@@ -238,7 +238,7 @@ void (entity globaldef005720) func002271 =
     local float globaldef005725;
     local vector globaldef005726;
     
-    if(globaldef005720.botflags & globaldef000683)
+    if(globaldef005720.botflags & GLOBALDEF683_1)
     {
         globaldef005726 = globaldef005720.velocity;
         globaldef005726_z = FALSE;
@@ -423,7 +423,7 @@ void (entity globaldef005739) func002273 =
     local entity globaldef005745;
     local entity globaldef005746;
     globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & globaldef000685);
-    globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & globaldef000683);
+    globaldef005739.botflags = globaldef005739.botflags - (globaldef005739.botflags & GLOBALDEF683_1);
     setsize(floorTestEnt, globaldef005739.mins, globaldef005739.maxs);
     setorigin(floorTestEnt, globaldef005739.origin);
     globaldef005746 = globaldef005739.owner;
@@ -441,7 +441,7 @@ void (entity globaldef005739) func002273 =
     
     if((fabs(globaldef005739.origin_z - floorTestEnt.origin_z)) <= RA_PLAYERSTATTIME)
     {
-        globaldef005739.botflags = globaldef005739.botflags | globaldef000683;
+        globaldef005739.botflags = globaldef005739.botflags | GLOBALDEF683_1;
         globaldef005739.groundentity = floorTestEnt.groundentity;
         
         if(floorTestEnt.groundentity == world)

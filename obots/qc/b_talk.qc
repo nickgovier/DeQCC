@@ -677,7 +677,7 @@ float (entity bot) CheckBotKillMessage =
     if(bot.deadflag != DEAD_DEAD)
     {
         
-        if(!(bot.botflags & globaldef000683))
+        if(!(bot.botflags & GLOBALDEF683_1))
         {
             return FALSE;
         }
@@ -786,7 +786,7 @@ float (entity globaldef006844) func002379 =
     if(globaldef006844.deadflag != DEAD_DEAD)
     {
         
-        if(!(globaldef006844.botflags & globaldef000683))
+        if(!(globaldef006844.botflags & GLOBALDEF683_1))
         {
             return FALSE;
         }

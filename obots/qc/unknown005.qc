@@ -68,7 +68,7 @@ float (entity globaldef007601) func002446 =
     }
     
     
-    if(!(globaldef007601.botflags & globaldef000683))
+    if(!(globaldef007601.botflags & GLOBALDEF683_1))
     {
         return TRUE;
     }

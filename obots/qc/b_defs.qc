@@ -151,7 +151,7 @@ void end_obot_fields;
 .float wp7;
 float GLOBALDEF681_8192 = 8192;
 float GLOBALDEF682_16384 = 16384;
-float globaldef000683;
+float GLOBALDEF683_1 = 1;
 float globaldef000684;
 float globaldef000685;
 float globaldef000686;

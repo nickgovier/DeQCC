@@ -288,7 +288,7 @@ void () func002276 =
             if(!self.waterlevel)
             {
                 
-                if(!(self.botflags & globaldef000683))
+                if(!(self.botflags & GLOBALDEF683_1))
                 {
                     globaldef005780 = FALSE;
                 }
@@ -354,7 +354,7 @@ void () func002276 =
             self.velocity = self.prephysicsvelocity;
             self.velocity_z = FALSE;
             self.flags = globaldef005777 | FL_ONGROUND;
-            self.botflags = self.botflags | globaldef000683;
+            self.botflags = self.botflags | GLOBALDEF683_1;
             self.botflags = self.botflags | globaldef000695;
         }
         
@@ -514,7 +514,7 @@ void () func002277 =
                 globaldef005781.velocity_x = globaldef005781.movedir_x;
                 globaldef005781.velocity_y = globaldef005781.movedir_y;
                 
-                if(((globaldef005781.botflags & globaldef000683) || (globaldef005781.waterlevel > FL_SWIM)) || (globaldef005781.teleport_time < time))
+                if(((globaldef005781.botflags & GLOBALDEF683_1) || (globaldef005781.waterlevel > FL_SWIM)) || (globaldef005781.teleport_time < time))
                 {
                     globaldef005781.flags = globaldef005781.flags - FL_WATERJUMP;
                     globaldef005781.teleport_time = FALSE;
