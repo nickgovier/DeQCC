@@ -925,7 +925,7 @@ void () StartFrame =
     if(framecount == TRUE)
     {
         obot_game_option_bitflags = serverflags;
-        obot_game_option_bitflags = obot_game_option_bitflags | globaldef000760;
+        obot_game_option_bitflags = obot_game_option_bitflags | GLOBALDEF760_32768;
     }
     else
     {

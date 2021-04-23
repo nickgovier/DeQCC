@@ -230,13 +230,11 @@ namespace DeQcc
             nameMap.Add("globaldef000261", "STATE_BOTTOM"); /* = 1 */
             nameMap.Add("globaldef000262", "STATE_UP"); /* = 2 */
             nameMap.Add("globaldef000263", "STATE_DOWN"); /* = 3 */
-
             nameMap.Add("globaldef000264", "VEC_ORIGIN");
             nameMap.Add("globaldef000268", "VEC_HULL_MIN");
             nameMap.Add("globaldef000272", "VEC_HULL_MAX");
             nameMap.Add("globaldef000276", "VEC_HULL2_MIN");
             nameMap.Add("globaldef000280", "VEC_HULL2_MAX");
-
             nameMap.Add("globaldef000284", "SVC_SETVIEW"); /* = 5 */
             nameMap.Add("globaldef000285", "SVC_PRINT"); /* = 8 */
             nameMap.Add("globaldef000286", "SVC_SETANGLE"); /* = 10 */
@@ -282,7 +280,6 @@ namespace DeQcc
             nameMap.Add("globaldef000326", "MSG_ONE"); /* = 1 */
             nameMap.Add("globaldef000327", "MSG_ALL"); /* = 2 */
             nameMap.Add("globaldef000328", "MSG_INIT"); /* = 3 */
-
             nameMap.Add("globaldef000329", "movedist");
             nameMap.Add("globaldef000330", "gameover");
             nameMap.Add("globaldef000331", "string_null");
@@ -301,8 +298,6 @@ namespace DeQcc
             #endregion
 
             #region obot constants
-
-            nameMap.Add("globaldef000669", "end_obot_fields");
 
             nameMap.Add("globaldef000681", "GLOBALDEF681_8192");
             nameMap.Add("globaldef000682", "GLOBALDEF682_16384");
@@ -367,7 +362,10 @@ namespace DeQcc
             nameMap.Add("globaldef000741", "BOTSOUND_FIRE");
             nameMap.Add("globaldef000742", "BOTSOUND_PICKUP");
             nameMap.Add("globaldef000743", "BOTSOUND_ARMOR");
-
+            nameMap.Add("globaldef000744", "OBSERV_NAME");
+            nameMap.Add("globaldef000745", "OBSERV_TELEPORT");
+            nameMap.Add("globaldef000746", "OBSERV_CHASE");
+            nameMap.Add("globaldef000747", "OBSERV_FLY");
             nameMap.Add("globaldef000748", "GLOBALDEF748_15");   // constant = 15
             nameMap.Add("globaldef000749", "OBOT_BUBBLEROUTING");   // constant = 16
             nameMap.Add("globaldef000750", "OBOT_ROCKETARENA");   // constant = 32
@@ -380,7 +378,7 @@ namespace DeQcc
             nameMap.Add("globaldef000757", "OBOT_ROCKET");   // constant = 4096
             nameMap.Add("globaldef000758", "OBOT_GRENADE");   // constant = 8192
             nameMap.Add("globaldef000759", "OBOT_SUPERNAIL");   // constant = 16384
-            //nameMap.Add("globaldef000760", "OBOT_");   // constant = 32768
+            nameMap.Add("globaldef000760", "GLOBALDEF760_32768");   // constant = 32768
             nameMap.Add("globaldef000761", "OBOT_SHELLCASES");   // b_eject.qc, constant = 65536
             nameMap.Add("globaldef000762", "BOTSHIRTPANTS_00");   // constant = 0
             nameMap.Add("globaldef000763", "BOTSHIRTPANTS_01");   // constant = 1
@@ -397,7 +395,7 @@ namespace DeQcc
             nameMap.Add("globaldef000774", "BOTSHIRTPANTS_12");   // constant = 12
             nameMap.Add("globaldef000775", "BOTSHIRTPANTS_13");   // constant = 13
 
-            nameMap.Add("globaldef000788", "waypointStatus");
+            
 
             #endregion
 
@@ -417,16 +415,12 @@ namespace DeQcc
             nameMap.Add("globaldef000528", "last_time");
             nameMap.Add("globaldef000529", "end_ra_globals");
 
-
-
-            nameMap.Add("globaldef000744", "OBSERV_NAME");
-            nameMap.Add("globaldef000745", "OBSERV_TELEPORT");
-            nameMap.Add("globaldef000746", "OBSERV_CHASE");
-            nameMap.Add("globaldef000747", "OBSERV_FLY");
+            nameMap.Add("globaldef000669", "end_obot_fields");
 
             nameMap.Add("globaldef000784", "gibsCount"); // player.qc
             nameMap.Add("globaldef000786", "waypointCount");
 
+            nameMap.Add("globaldef000788", "waypointStatus");
             nameMap.Add("globaldef000789", "bspWaypointsExist");
             nameMap.Add("globaldef000790", "hardCodedWaypointsExist");
 

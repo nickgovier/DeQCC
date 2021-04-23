@@ -4105,7 +4105,7 @@ void () CamClientInit =
     setmodel(self, string_null);
     self.modelindex = modelindex_player;
     
-    if(obot_game_option_bitflags & globaldef000760)
+    if(obot_game_option_bitflags & GLOBALDEF760_32768)
     {
         self.field000251 = FALSE;
         self.clmodelindex = FALSE;

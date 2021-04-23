@@ -2656,7 +2656,7 @@ void () CheckPowerups =
         }
         
         self.frame = FALSE;
-        if(obot_game_option_bitflags & globaldef000760)
+        if(obot_game_option_bitflags & GLOBALDEF760_32768)
         {
             self.field000251 = FALSE;
             self.clmodelindex = modelindex_eyes;
@@ -2670,7 +2670,7 @@ void () CheckPowerups =
     }
     else
     {
-        if(obot_game_option_bitflags & globaldef000760)
+        if(obot_game_option_bitflags & GLOBALDEF760_32768)
         {
             self.field000251 = self.field000249;
             self.clmodelindex = modelindex_player;
