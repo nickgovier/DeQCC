@@ -1190,7 +1190,7 @@ void (entity globaldef002777) gotoarena =
 {
     local entity globaldef002778;
     
-    if(globaldef002777.flags & globaldef000681)
+    if(globaldef002777.flags & GLOBALDEF681_)
     {
         func002502(globaldef002777);
     }
@@ -1375,7 +1375,7 @@ void (entity globaldef002786) addtoqueue =
     }
     
     
-    if(globaldef002786.flags & globaldef000681)
+    if(globaldef002786.flags & GLOBALDEF681_)
     {
         func000352(globaldef002786);
     }

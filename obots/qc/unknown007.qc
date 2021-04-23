@@ -983,9 +983,9 @@ vector (entity globaldef007920, float globaldef007921) func002477 =
 // OP_STOREP_F	24434	24433	0
 // OP_RETURN	214	0	0
 // OP_DONE	0	0	0
-float (entity globaldef007942, float globaldef007943) func002478 = 
+float (entity bot, float globaldef007943) func002478 = 
 {
-    local entity globaldef007944;
+    local entity e;
     local entity globaldef007945;
     local entity globaldef007946;
     local vector globaldef007947;
@@ -994,32 +994,32 @@ float (entity globaldef007942, float globaldef007943) func002478 =
     local float globaldef007956;
     local float globaldef007957;
     local float globaldef007958;
-    globaldef007946 = globaldef007942.goalentity;
-    globaldef007944 = findradius(globaldef007942.origin, globaldef000720);
+    globaldef007946 = bot.goalentity;
+    e = findradius(bot.origin, globaldef000720);
     globaldef007956 = FALSE;
     
-    while(globaldef007944)
+    while(e)
     {
         
-        if(globaldef007944.classname == "plat")
+        if(e.classname == "plat")
         {
             
-            if(globaldef007944.f_goalweight)
+            if(e.f_goalweight)
             {
                 
-                if(globaldef007944.f_goalweight(globaldef007942, globaldef007944) > FALSE)
+                if(e.f_goalweight(bot, e) > FALSE)
                 {
-                    globaldef007947 = (globaldef007944.absmin + globaldef007944.absmax) * RA_PLAYERSTATTIME;
-                    globaldef007947_z = globaldef007944.absmax_z + TRUE;
+                    globaldef007947 = (e.absmin + e.absmax) * RA_PLAYERSTATTIME;
+                    globaldef007947_z = e.absmax_z + TRUE;
                     globaldef007957 = pointcontents(globaldef007947);
                     
                     if(globaldef007957 == globaldef007943)
                     {
-                        globaldef007955 = vlen(globaldef007942.origin - globaldef007947);
+                        globaldef007955 = vlen(bot.origin - globaldef007947);
                         
                         if(globaldef007955 > globaldef007956)
                         {
-                            globaldef007945 = globaldef007944;
+                            globaldef007945 = e;
                             globaldef007956 = globaldef007955;
                             globaldef007951 = globaldef007947;
                         }
@@ -1032,7 +1032,7 @@ float (entity globaldef007942, float globaldef007943) func002478 =
             
         }
         
-        globaldef007944 = globaldef007944.chain;
+        e = e.chain;
     }
     
     
@@ -1043,9 +1043,9 @@ float (entity globaldef007942, float globaldef007943) func002478 =
     
     globaldef007946.goalentity = globaldef007945;
     setorigin(globaldef007946, globaldef007951);
-    globaldef007946.goalentity.field000339 = globaldef007942;
+    globaldef007946.goalentity.field000339 = bot;
     globaldef007946.goalentity.field000340 = time;
-    globaldef007942.search_time = time + MOVETYPE_PUSH;
+    bot.search_time = time + MOVETYPE_PUSH;
     return TRUE;
 };
 
@@ -3194,7 +3194,7 @@ entity (entity globaldef008068) func002494 =
 // OP_RETURN	25007	0	0
 // OP_RETURN	30	0	0
 // OP_DONE	0	0	0
-entity (entity globaldef008076) func002495 = 
+entity (entity bot) func002495 = 
 {
     local float globaldef008077;
     local float globaldef008078;
@@ -3211,7 +3211,7 @@ entity (entity globaldef008076) func002495 =
     local entity globaldef008089;
     local entity globaldef008090;
     local entity globaldef008091;
-    local entity globaldef008092;
+    local entity e;
     local entity globaldef008093;
     local entity globaldef008094;
     local entity globaldef008095;
@@ -3222,11 +3222,11 @@ entity (entity globaldef008076) func002495 =
     globaldef008090 = globaldef008089 = world;
     globaldef008084 = FALSE;
     globaldef008097 = globaldef008096 = world;
-    globaldef008091 = globaldef008076.field000267;
-    globaldef008076.field000267 = world;
-    globaldef008076.field000269 = FALSE;
-    globaldef008076.field000268 = world;
-    globaldef008094 = func002493(globaldef008076, globaldef008076.origin, globaldef000720, TRUE);
+    globaldef008091 = bot.field000267;
+    bot.field000267 = world;
+    bot.field000269 = FALSE;
+    bot.field000268 = world;
+    globaldef008094 = func002493(bot, bot.origin, globaldef000720, TRUE);
     globaldef008093 = globaldef008094;
     
     while(globaldef008093)
@@ -3240,49 +3240,49 @@ entity (entity globaldef008076) func002495 =
         {
             if(globaldef008083 == FALSE)
             {
-                globaldef008092 = globaldef008093.cache0_ent;
+                e = globaldef008093.cache0_ent;
                 globaldef008082 = globaldef008093.cache0_dist;
             }
             else
             {
                 if(globaldef008083 == TRUE)
                 {
-                    globaldef008092 = globaldef008093.cache1_ent;
+                    e = globaldef008093.cache1_ent;
                     globaldef008082 = globaldef008093.cache1_dist;
                 }
                 else
                 {
                     if(globaldef008083 == FL_SWIM)
                     {
-                        globaldef008092 = globaldef008093.cache2_ent;
+                        e = globaldef008093.cache2_ent;
                         globaldef008082 = globaldef008093.cache2_dist;
                     }
                     else
                     {
                         if(globaldef008083 == MOVETYPE_WALK)
                         {
-                            globaldef008092 = globaldef008093.cache3_ent;
+                            e = globaldef008093.cache3_ent;
                             globaldef008082 = globaldef008093.cache3_dist;
                         }
                         else
                         {
                             if(globaldef008083 == MOVETYPE_STEP)
                             {
-                                globaldef008092 = globaldef008093.cache4_ent;
+                                e = globaldef008093.cache4_ent;
                                 globaldef008082 = globaldef008093.cache4_dist;
                             }
                             else
                             {
                                 if(globaldef008083 == MOVETYPE_FLY)
                                 {
-                                    globaldef008092 = globaldef008093.cache5_ent;
+                                    e = globaldef008093.cache5_ent;
                                     globaldef008082 = globaldef008093.cache5_dist;
                                 }
                                 else
                                 {
                                     if(globaldef008083 == MOVETYPE_TOSS)
                                     {
-                                        globaldef008092 = globaldef008093.cache6_ent;
+                                        e = globaldef008093.cache6_ent;
                                         globaldef008082 = globaldef008093.cache6_dist;
                                     }
                                     else
@@ -3290,7 +3290,7 @@ entity (entity globaldef008076) func002495 =
                                         
                                         if(globaldef008083 == MOVETYPE_PUSH)
                                         {
-                                            globaldef008092 = globaldef008093.cache7_ent;
+                                            e = globaldef008093.cache7_ent;
                                             globaldef008082 = globaldef008093.cache7_dist;
                                         }
                                         
@@ -3309,37 +3309,37 @@ entity (entity globaldef008076) func002495 =
             }
             
             
-            if(globaldef008092)
+            if(e)
             {
                 
-                if(globaldef008092 != globaldef008091)
+                if(e != globaldef008091)
                 {
                     
-                    if(globaldef008092.solid == SOLID_TRIGGER)
+                    if(e.solid == SOLID_TRIGGER)
                     {
-                        globaldef008081 = (globaldef008092.f_goalweight(globaldef008076, globaldef008092) / globaldef008082) * 0.001;
+                        globaldef008081 = (e.f_goalweight(bot, e) / globaldef008082) * 0.001;
                         
                         if(globaldef008081 > globaldef008078)
                         {
                             globaldef008078 = globaldef008081;
-                            globaldef008088 = globaldef008092;
+                            globaldef008088 = e;
                             globaldef008079 = globaldef008082;
                         }
                         
                     }
                     
                     
-                    if((globaldef008092.field000341 != globaldef008076) || (globaldef008092.field000342 < (time - SVC_SIGNONNUM)))
+                    if((e.field000341 != bot) || (e.field000342 < (time - SVC_SIGNONNUM)))
                     {
                         
-                        if(globaldef008092.f_walkaboutweight)
+                        if(e.f_walkaboutweight)
                         {
-                            globaldef008081 = globaldef008092.f_walkaboutweight(globaldef008076, globaldef008092);
+                            globaldef008081 = e.f_walkaboutweight(bot, e);
                             
                             if(globaldef008081 > globaldef008085)
                             {
                                 globaldef008085 = globaldef008081;
-                                globaldef008095 = globaldef008092;
+                                globaldef008095 = e;
                                 globaldef008086 = globaldef008082;
                             }
                             
@@ -3377,34 +3377,34 @@ entity (entity globaldef008076) func002495 =
     
     if(globaldef008089)
     {
-        globaldef008076.field000267 = globaldef008089;
-        globaldef008076.botflags = globaldef008076.botflags - (globaldef008076.botflags & globaldef000688);
-        globaldef008076.botflags = globaldef008076.botflags - (globaldef008076.botflags & globaldef000689);
-        globaldef008076.botflags = globaldef008076.botflags - (globaldef008076.botflags & globaldef000690);
-        globaldef008090.field000339 = globaldef008076;
+        bot.field000267 = globaldef008089;
+        bot.botflags = bot.botflags - (bot.botflags & globaldef000688);
+        bot.botflags = bot.botflags - (bot.botflags & globaldef000689);
+        bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
+        globaldef008090.field000339 = bot;
         globaldef008090.field000340 = time;
-        globaldef008089.field000341 = globaldef008076;
+        globaldef008089.field000341 = bot;
         globaldef008089.field000342 = time;
-        globaldef008076.field000270 = FALSE;
-        globaldef008076.field000269 = globaldef008080 + (vlen(globaldef008090.origin - globaldef008076.origin));
-        globaldef008076.field000268 = globaldef008090;
+        bot.field000270 = FALSE;
+        bot.field000269 = globaldef008080 + (vlen(globaldef008090.origin - bot.origin));
+        bot.field000268 = globaldef008090;
         return globaldef008090;
     }
     
     
     if(globaldef008096)
     {
-        globaldef008076.field000267 = globaldef008096;
-        globaldef008076.botflags = globaldef008076.botflags | globaldef000689;
-        globaldef008076.botflags = globaldef008076.botflags - (globaldef008076.botflags & globaldef000688);
-        globaldef008076.botflags = globaldef008076.botflags - (globaldef008076.botflags & globaldef000690);
-        globaldef008096.field000341 = globaldef008076;
+        bot.field000267 = globaldef008096;
+        bot.botflags = bot.botflags | globaldef000689;
+        bot.botflags = bot.botflags - (bot.botflags & globaldef000688);
+        bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
+        globaldef008096.field000341 = bot;
         globaldef008096.field000342 = time;
-        globaldef008097.field000339 = globaldef008076;
+        globaldef008097.field000339 = bot;
         globaldef008097.field000340 = time;
-        globaldef008076.field000270 = FALSE;
-        globaldef008076.field000269 = globaldef008087 + (vlen(globaldef008097.origin - globaldef008076.origin));
-        globaldef008076.field000268 = globaldef008097;
+        bot.field000270 = FALSE;
+        bot.field000269 = globaldef008087 + (vlen(globaldef008097.origin - bot.origin));
+        bot.field000268 = globaldef008097;
         return globaldef008097;
     }
     

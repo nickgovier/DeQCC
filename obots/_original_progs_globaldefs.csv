@@ -680,7 +680,7 @@ row,name,s_name,ofs,type,typename
 678,wp5,0,695,5,ev_field
 679,wp6,0,696,5,ev_field
 680,wp7,0,697,5,ev_field
-681,globaldef000681,0,698,2,float
+681,GLOBALDEF681_,0,698,2,float
 682,globaldef000682,0,699,2,float
 683,globaldef000683,0,700,2,float
 684,globaldef000684,0,701,2,float

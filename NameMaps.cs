@@ -304,6 +304,8 @@ namespace DeQcc
 
             nameMap.Add("globaldef000669", "end_obot_fields");
 
+            nameMap.Add("globaldef000681", "GLOBALDEF681_");
+
             nameMap.Add("globaldef000692", "WAYPOINT_DUMP_TO_CONSOLE");
             nameMap.Add("globaldef000693", "WAYPOINT_DO_NOT_DUMP");
 
@@ -390,6 +392,8 @@ namespace DeQcc
             nameMap.Add("globaldef000527", "time_to_start");
             nameMap.Add("globaldef000528", "last_time");
             nameMap.Add("globaldef000529", "end_ra_globals");
+
+
 
             nameMap.Add("globaldef000744", "OBSERV_NAME");
             nameMap.Add("globaldef000745", "OBSERV_TELEPORT");

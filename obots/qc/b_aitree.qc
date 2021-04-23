@@ -5,8 +5,8 @@
 // OP_STORE_V	25202	4	0
 // OP_CALL1	25203	0	0
 // OP_DONE	0	0	0
-void (entity globaldef008110) BotAI = 
+void (entity bot) BotAI = 
 {
-    globaldef008110.f_ai(globaldef008110);
+    bot.f_ai(bot);
 };
 

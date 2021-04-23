@@ -541,7 +541,7 @@ void (entity globaldef007106) func002418 =
     setorigin(globaldef007106, globaldef007107.origin + '0 0 2');
     globaldef007106.velocity = VEC_ORIGIN;
     globaldef007106.old_velocity = VEC_ORIGIN;
-    globaldef007106.flags = globaldef000681;
+    globaldef007106.flags = GLOBALDEF681_;
     globaldef007106.old_origin = globaldef007106.origin;
     globaldef007106.old_flags = FALSE;
     globaldef007106.angles = globaldef007107.angles;
