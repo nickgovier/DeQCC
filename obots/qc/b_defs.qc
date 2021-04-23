@@ -149,8 +149,8 @@ void end_obot_fields;
 .float wp5;
 .float wp6;
 .float wp7;
-float GLOBALDEF681_ = 8192;
-float globaldef000682;
+float GLOBALDEF681_8192 = 8192;
+float GLOBALDEF682_16384 = 16384;
 float globaldef000683;
 float globaldef000684;
 float globaldef000685;
@@ -305,7 +305,7 @@ void(entity client, string s) bot_stuffcmd = #21;
 void (entity globaldef000823, string globaldef000824) stuffcmd = 
 {
     
-    if(!(globaldef000823.flags & GLOBALDEF681_))
+    if(!(globaldef000823.flags & GLOBALDEF681_8192))
     {
         bot_stuffcmd(globaldef000823, globaldef000824);
     }
@@ -340,7 +340,7 @@ void(entity client, string s, string s2, string s3, string s4, string s5, string
 void (entity globaldef000833, string globaldef000834) centerprint = 
 {
     
-    if(!(globaldef000833.flags & GLOBALDEF681_))
+    if(!(globaldef000833.flags & GLOBALDEF681_8192))
     {
         bot_centerprint(globaldef000833, globaldef000834);
     }
@@ -362,7 +362,7 @@ void (entity globaldef000833, string globaldef000834) centerprint =
 void (entity globaldef000836, string globaldef000837, string globaldef000838) centerprint2 = 
 {
     
-    if(!(globaldef000836.flags & GLOBALDEF681_))
+    if(!(globaldef000836.flags & GLOBALDEF681_8192))
     {
         bot_centerprint2(globaldef000836, globaldef000837, globaldef000838);
     }
@@ -385,7 +385,7 @@ void (entity globaldef000836, string globaldef000837, string globaldef000838) ce
 void (entity globaldef000840, string globaldef000841, string globaldef000842, string globaldef000843) centerprint3 = 
 {
     
-    if(!(globaldef000840.flags & GLOBALDEF681_))
+    if(!(globaldef000840.flags & GLOBALDEF681_8192))
     {
         bot_centerprint3(globaldef000840, globaldef000841, globaldef000842, globaldef000843);
     }
@@ -409,7 +409,7 @@ void (entity globaldef000840, string globaldef000841, string globaldef000842, st
 void (entity globaldef000845, string globaldef000846, string globaldef000847, string globaldef000848, string globaldef000849) centerprint4 = 
 {
     
-    if(!(globaldef000845.flags & GLOBALDEF681_))
+    if(!(globaldef000845.flags & GLOBALDEF681_8192))
     {
         bot_centerprint4(globaldef000845, globaldef000846, globaldef000847, globaldef000848, globaldef000849);
     }
@@ -434,7 +434,7 @@ void (entity globaldef000845, string globaldef000846, string globaldef000847, st
 void (entity globaldef000851, string globaldef000852, string globaldef000853, string globaldef000854, string globaldef000855, string globaldef000856) centerprint5 = 
 {
     
-    if(!(globaldef000851.flags & GLOBALDEF681_))
+    if(!(globaldef000851.flags & GLOBALDEF681_8192))
     {
         bot_centerprint5(globaldef000851, globaldef000852, globaldef000853, globaldef000854, globaldef000855, globaldef000856);
     }
@@ -460,7 +460,7 @@ void (entity globaldef000851, string globaldef000852, string globaldef000853, st
 void (entity globaldef000858, string globaldef000859, string globaldef000860, string globaldef000861, string globaldef000862, string globaldef000863, string globaldef000864) centerprint6 = 
 {
     
-    if(!(globaldef000858.flags & GLOBALDEF681_))
+    if(!(globaldef000858.flags & GLOBALDEF681_8192))
     {
         bot_centerprint6(globaldef000858, globaldef000859, globaldef000860, globaldef000861, globaldef000862, globaldef000863, globaldef000864);
     }
@@ -487,7 +487,7 @@ void (entity globaldef000858, string globaldef000859, string globaldef000860, st
 void (entity globaldef000866, string globaldef000867, string globaldef000868, string globaldef000869, string globaldef000870, string globaldef000871, string globaldef000872, string globaldef000873) centerprint7 = 
 {
     
-    if(!(globaldef000866.flags & GLOBALDEF681_))
+    if(!(globaldef000866.flags & GLOBALDEF681_8192))
     {
         bot_centerprint7(globaldef000866, globaldef000867, globaldef000868, globaldef000869, globaldef000870, globaldef000871, globaldef000872, globaldef000873);
     }
@@ -534,7 +534,7 @@ void(entity client, string s, string s2, string s3, string s4, string s5, string
 void (entity globaldef000888, string globaldef000889) sprint = 
 {
     
-    if(!(globaldef000888.flags & GLOBALDEF681_))
+    if(!(globaldef000888.flags & GLOBALDEF681_8192))
     {
         bot_sprint(globaldef000888, globaldef000889);
     }
@@ -556,7 +556,7 @@ void (entity globaldef000888, string globaldef000889) sprint =
 void (entity globaldef000891, string globaldef000892, string globaldef000893) sprint2 = 
 {
     
-    if(!(globaldef000891.flags & GLOBALDEF681_))
+    if(!(globaldef000891.flags & GLOBALDEF681_8192))
     {
         bot_sprint2(globaldef000891, globaldef000892, globaldef000893);
     }
@@ -579,7 +579,7 @@ void (entity globaldef000891, string globaldef000892, string globaldef000893) sp
 void (entity globaldef000895, string globaldef000896, string globaldef000897, string globaldef000898) sprint3 = 
 {
     
-    if(!(globaldef000895.flags & GLOBALDEF681_))
+    if(!(globaldef000895.flags & GLOBALDEF681_8192))
     {
         bot_sprint3(globaldef000895, globaldef000896, globaldef000897, globaldef000898);
     }
@@ -603,7 +603,7 @@ void (entity globaldef000895, string globaldef000896, string globaldef000897, st
 void (entity globaldef000900, string globaldef000901, string globaldef000902, string globaldef000903, string globaldef000904) sprint4 = 
 {
     
-    if(!(globaldef000900.flags & GLOBALDEF681_))
+    if(!(globaldef000900.flags & GLOBALDEF681_8192))
     {
         bot_sprint4(globaldef000900, globaldef000901, globaldef000902, globaldef000903, globaldef000904);
     }
@@ -628,7 +628,7 @@ void (entity globaldef000900, string globaldef000901, string globaldef000902, st
 void (entity globaldef000906, string globaldef000907, string globaldef000908, string globaldef000909, string globaldef000910, string globaldef000911) sprint5 = 
 {
     
-    if(!(globaldef000906.flags & GLOBALDEF681_))
+    if(!(globaldef000906.flags & GLOBALDEF681_8192))
     {
         bot_sprint5(globaldef000906, globaldef000907, globaldef000908, globaldef000909, globaldef000910, globaldef000911);
     }
@@ -654,7 +654,7 @@ void (entity globaldef000906, string globaldef000907, string globaldef000908, st
 void (entity globaldef000913, string globaldef000914, string globaldef000915, string globaldef000916, string globaldef000917, string globaldef000918, string globaldef000919) sprint6 = 
 {
     
-    if(!(globaldef000913.flags & GLOBALDEF681_))
+    if(!(globaldef000913.flags & GLOBALDEF681_8192))
     {
         bot_sprint6(globaldef000913, globaldef000914, globaldef000915, globaldef000916, globaldef000917, globaldef000918, globaldef000919);
     }
@@ -681,7 +681,7 @@ void (entity globaldef000913, string globaldef000914, string globaldef000915, st
 void (entity globaldef000921, string globaldef000922, string globaldef000923, string globaldef000924, string globaldef000925, string globaldef000926, string globaldef000927, string globaldef000928) sprint7 = 
 {
     
-    if(!(globaldef000921.flags & GLOBALDEF681_))
+    if(!(globaldef000921.flags & GLOBALDEF681_8192))
     {
         bot_sprint7(globaldef000921, globaldef000922, globaldef000923, globaldef000924, globaldef000925, globaldef000926, globaldef000927, globaldef000928);
     }

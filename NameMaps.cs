@@ -304,7 +304,8 @@ namespace DeQcc
 
             nameMap.Add("globaldef000669", "end_obot_fields");
 
-            nameMap.Add("globaldef000681", "GLOBALDEF681_");
+            nameMap.Add("globaldef000681", "GLOBALDEF681_8192");
+            nameMap.Add("globaldef000682", "GLOBALDEF682_16384");
 
             nameMap.Add("globaldef000692", "WAYPOINT_DUMP_TO_CONSOLE");
             nameMap.Add("globaldef000693", "WAYPOINT_DO_NOT_DUMP");

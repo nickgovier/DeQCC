@@ -555,11 +555,11 @@ void () func002277 =
         globaldef005781.groundentity = globaldef005781;
         if(globaldef005781.flags & FL_ONGROUND)
         {
-            globaldef005781.flags = globaldef005781.flags | globaldef000682;
+            globaldef005781.flags = globaldef005781.flags | GLOBALDEF682_16384;
         }
         else
         {
-            globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & globaldef000682);
+            globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & GLOBALDEF682_16384);
         }
         
         globaldef005781.flags = globaldef005781.flags - (globaldef005781.flags & FL_ONGROUND);
