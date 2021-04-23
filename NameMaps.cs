@@ -2998,7 +2998,7 @@ namespace DeQcc
 
             nameMap.Add("func002499", "BotAI");
 
-            for (int i = 2499; i <= 2499; i++)
+            for (int i = 2499; i <= 2523; i++)
             {
                 fileMap[i] = "b_aitree.qc";
             }
