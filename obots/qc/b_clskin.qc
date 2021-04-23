@@ -40,3 +40,22 @@ entity (float globaldef005699) GetClientEntity =
     return world;
 };
 
+
+// func002267
+// function begins at statement 27441, parm_start=16238
+// OP_ADDRESS	16238	132	16240
+// OP_LOAD_F	16239	574	16241
+// OP_STOREP_F	16241	16240	0
+// OP_ADDRESS	16238	93	16242
+// OP_LOAD_F	16239	573	16243
+// OP_STOREP_F	16243	16242	0
+// OP_ADDRESS	16238	130	16244
+// OP_STOREP_S	6684	16244	0
+// OP_DONE	0	0	0
+void (entity globaldef005702, entity globaldef005703) func002267 = 
+{
+    globaldef005702.skin = globaldef005703.field000251;
+    globaldef005702.modelindex = globaldef005703.clmodelindex;
+    globaldef005702.model = "progs/player.mdl";
+};
+

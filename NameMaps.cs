@@ -2336,7 +2336,7 @@ namespace DeQcc
 
             nameMap.Add("func002266", "GetClientEntity");
 
-            for (int i = 2266; i <= 2266; i++)
+            for (int i = 2266; i <= 2267; i++)
             {
                 fileMap[i] = "b_clskin.qc";
             }
@@ -2345,7 +2345,7 @@ namespace DeQcc
 
             #region b_clphys.qc
 
-            for (int i = 2274; i <= 2277; i++)
+            for (int i = 2268; i <= 2277; i++)
             {
                 fileMap[i] = "b_clphys.qc";
             }
@@ -2634,7 +2634,7 @@ namespace DeQcc
 
             nameMap.Add("func002365", "ToggleObserverMode");
 
-            for (int i = 2346; i <= 2365; i++)
+            for (int i = 2343; i <= 2365; i++)
             {
                 fileMap[i] = "b_observ.qc";
             }
@@ -2987,7 +2987,7 @@ namespace DeQcc
 
             nameMap.Add("func002470", "CreateBotGoal");
             
-            for (int i = 2470; i <= 2470; i++)
+            for (int i = 2469; i <= 2470; i++)
             {
                 fileMap[i] = "b_goal.qc";
             }

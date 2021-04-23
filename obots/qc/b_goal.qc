@@ -1,4 +1,52 @@
 
+// func002469
+// function begins at statement 41760, parm_start=24013
+// OP_LOAD_ENT	29	194	24013
+// OP_NE_E	24013	28	24014
+// OP_IFNOT	24014	2	0
+// OP_RETURN	0	0	0
+// OP_LOAD_ENT	28	194	24015
+// OP_LOAD_S	24015	129	24016
+// OP_NE_S	24016	1236	24017
+// OP_LOAD_ENT	28	194	24018
+// OP_LOAD_S	24018	129	24019
+// OP_NE_S	24019	1241	24020
+// OP_AND	24017	24020	24021
+// OP_IFNOT	24021	11	0
+// OP_ADDRESS	29	598	24022
+// OP_SUB_F	31	214	24023
+// OP_STOREP_F	24023	24022	0
+// OP_LOAD_ENT	28	194	24024
+// OP_LOAD_S	24024	129	24025
+// OP_NE_S	24025	24026	24027
+// OP_IFNOT	24027	4	0
+// OP_ADDRESS	29	371	24028
+// OP_SUB_F	31	214	24029
+// OP_STOREP_F	24029	24028	0
+// OP_DONE	0	0	0
+void () func002469 = 
+{
+    
+    if(other.goalentity != self)
+    {
+        return;
+    }
+    
+    
+    if((self.goalentity.classname != "player") && (self.goalentity.classname != "bot"))
+    {
+        other.field000275 = time - TRUE;
+        
+        if(self.goalentity.classname != "func_button")
+        {
+            other.search_time = time - TRUE;
+        }
+        
+    }
+    
+};
+
+
 // CreateBotGoal
 // function begins at statement 41783, parm_start=24030
 // OP_CALL0	464	0	0
