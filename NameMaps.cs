@@ -2789,7 +2789,7 @@ namespace DeQcc
             nameMap.Add("func002409", "BotPreThink");
             nameMap.Add("func002410", "BotThink");
 
-            for (int i = 2408; i <= 2410; i++)
+            for (int i = 2400; i <= 2410; i++)
             {
                 fileMap[i] = "b_think.qc";
             }
@@ -2808,7 +2808,7 @@ namespace DeQcc
             nameMap.Add("func002424", "RemoveAllBots");  // impulse 152
             nameMap.Add("func002425", "RemoveOneDeathmatchBot");
             
-            for (int i = 2417; i <= 2429; i++)
+            for (int i = 2411; i <= 2429; i++)
             {
                 fileMap[i] = "b_spawn.qc";
             }
