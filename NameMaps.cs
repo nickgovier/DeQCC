@@ -320,8 +320,8 @@ namespace DeQcc
             nameMap.Add("globaldef000694", "GLOBALDEF694_2048");
             nameMap.Add("globaldef000695", "GLOBALDEF695_4096");
             nameMap.Add("globaldef000696", "GLOBALDEF696_8192");
-
-            nameMap.Add("globaldef000698", "unused698");
+            nameMap.Add("globaldef000697", "GLOBALDEF697_16384");
+            nameMap.Add("globaldef000698", "end_wp_options");
 
             nameMap.Add("globaldef000700", "WAYPOINTTYPE_PLATTOP");
             nameMap.Add("globaldef000702", "WAYPOINTTYPE_TELEPORT");

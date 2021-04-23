@@ -688,7 +688,7 @@ float (entity globaldef007211, vector globaldef007212) func002432 =
     setorigin(globaldef007211, globaldef007216);
     if(globaldef007239)
     {
-        globaldef007211.botflags = globaldef007211.botflags | globaldef000697;
+        globaldef007211.botflags = globaldef007211.botflags | GLOBALDEF697_16384;
         globaldef007232_x = globaldef007224_x * FL_GODMODE;
         globaldef007232_y = globaldef007224_y * FL_GODMODE;
         globaldef007232_z = GLOBALDEF717_270;
@@ -3460,11 +3460,11 @@ float (entity bot, vector direction, float botspeed, float jump) BotMoveInitial 
     
     if(bot.botflags & GLOBALDEF683_1)
     {
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000697);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF697_16384);
     }
     
     
-    if(bot.botflags & globaldef000697)
+    if(bot.botflags & GLOBALDEF697_16384)
     {
         makevectors(bot.angles);
         bot.velocity_x = v_forward_x * FL_GODMODE;
