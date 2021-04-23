@@ -404,7 +404,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
                         globaldef007143.velocity = normalize(globaldef007143.velocity) * globaldef007148;
                     }
                     
-                    return globaldef000714;
+                    return GLOBALDEF714_3;
                 }
                 
             }
@@ -455,7 +455,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
                             globaldef007143.velocity = normalize(globaldef007143.velocity) * globaldef007148;
                         }
                         
-                        return globaldef000714;
+                        return GLOBALDEF714_3;
                     }
                     
                 }
@@ -493,7 +493,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
         if(globaldef007184 && !globaldef007185)
         {
             globaldef007156 = globaldef007156 + (v_right * globaldef007187);
-            globaldef007149 = globaldef000712;
+            globaldef007149 = GLOBALDEF712_1;
         }
         else
         {
@@ -501,7 +501,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
             if(globaldef007185 && !globaldef007184)
             {
                 globaldef007156 = globaldef007156 + (v_right * (FALSE - globaldef007187));
-                globaldef007149 = globaldef000713;
+                globaldef007149 = GLOBALDEF713_2;
             }
             
         }
@@ -511,7 +511,7 @@ float (entity globaldef007143, vector globaldef007144, float globaldef007148) fu
     
     if(globaldef007184 && globaldef007185)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     globaldef007156 = normalize(globaldef007156);
@@ -1745,14 +1745,14 @@ float (entity globaldef007396, vector globaldef007397, float globaldef007401) fu
         
         if(globaldef007132_z < (globaldef007396.goalentity.origin_z - globaldef000776))
         {
-            return globaldef000716;
+            return GLOBALDEF716_5;
         }
         
         func002431(globaldef007396, globaldef007407);
         return OBSTACLE_TELEPORT;
     }
     
-    return globaldef000716;
+    return GLOBALDEF716_5;
 };
 
 
@@ -1911,43 +1911,43 @@ float (entity globaldef007412) func002438 =
     
     if(globaldef007412.attack_finished > time)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(!(globaldef007412.items & IT_ROCKET_LAUNCHER))
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(globaldef007412.ammo_rockets <= FALSE)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(globaldef007412.items & IT_QUAD)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(((globaldef007412.armorvalue * globaldef007412.armortype) + globaldef007412.health) < 100)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(globaldef007412.health < GLOBALDEF729_40)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     
     if(globaldef007412.waterlevel > TRUE)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     globaldef007441 = globaldef007412.goalentity.origin - globaldef007412.origin;
@@ -1989,7 +1989,7 @@ float (entity globaldef007412) func002438 =
         
         if(globaldef007132_z < (globaldef007412.goalentity.origin_z - globaldef000776))
         {
-            return globaldef000716;
+            return GLOBALDEF716_5;
         }
         
         globaldef007445_x = globaldef007437_x;
@@ -2001,7 +2001,7 @@ float (entity globaldef007412) func002438 =
         return OBSTACLE_TELEPORT;
     }
     
-    return globaldef000716;
+    return GLOBALDEF716_5;
 };
 
 
@@ -3242,7 +3242,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
                     
                     if(globaldef007523_y > bot.absmin_y)
                     {
-                        return globaldef000716;
+                        return GLOBALDEF716_5;
                     }
                     
                 }
@@ -3263,7 +3263,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
         if((globaldef007540 == CONTENT_LAVA) || (globaldef007540 == CONTENT_SLIME))
         {
             
-            if(func002437(bot, direction, botspeed) != globaldef000716)
+            if(func002437(bot, direction, botspeed) != GLOBALDEF716_5)
             {
                 return OBSTACLE_TELEPORT;
             }
@@ -3312,7 +3312,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
         if(globaldef007562 && !globaldef007563)
         {
             globaldef007519 = globaldef007519 + (v_right * globaldef007564);
-            globaldef007543 = globaldef000712;
+            globaldef007543 = GLOBALDEF712_1;
         }
         else
         {
@@ -3320,7 +3320,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
             if(globaldef007563 && !globaldef007562)
             {
                 globaldef007519 = globaldef007519 - (v_right * globaldef007564);
-                globaldef007543 = globaldef000713;
+                globaldef007543 = GLOBALDEF713_2;
             }
             
         }
@@ -3330,7 +3330,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
     
     if(globaldef007562 && globaldef007563)
     {
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     
     if(jump)
@@ -3341,7 +3341,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
             return OBSTACLE_TELEPORT;
         }
         
-        return globaldef000716;
+        return GLOBALDEF716_5;
     }
     else
     {
@@ -3354,7 +3354,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
                 return OBSTACLE_TELEPORT;
             }
             
-            return globaldef000716;
+            return GLOBALDEF716_5;
         }
         
     }

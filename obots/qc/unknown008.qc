@@ -266,7 +266,7 @@ void (entity globaldef008117) func002506 =
     }
     
     
-    if(BotMoveToGoal(globaldef008117, globaldef000783) == globaldef000716)
+    if(BotMoveToGoal(globaldef008117, globaldef000783) == GLOBALDEF716_5)
     {
         globaldef008117.search_time = time - TRUE;
     }
@@ -563,7 +563,7 @@ void (entity globaldef008119) func002508 =
     
     func002468(globaldef008119);
     
-    if(BotMoveToGoal(globaldef008119, globaldef000783) == globaldef000716)
+    if(BotMoveToGoal(globaldef008119, globaldef000783) == GLOBALDEF716_5)
     {
         globaldef008119.search_time = globaldef008119.search_time - TRUE;
     }
@@ -1207,7 +1207,7 @@ void (entity globaldef008137) func002515 =
     }
     
     
-    if(BotMoveToGoal(globaldef008137, globaldef000783) == globaldef000716)
+    if(BotMoveToGoal(globaldef008137, globaldef000783) == GLOBALDEF716_5)
     {
         globaldef008137.search_time = globaldef008137.search_time - TRUE;
     }
@@ -1467,7 +1467,7 @@ void (entity globaldef008140) func002517 =
     }
     
     
-    if(BotMoveToGoal(globaldef008140, globaldef000783) == globaldef000716)
+    if(BotMoveToGoal(globaldef008140, globaldef000783) == GLOBALDEF716_5)
     {
         globaldef008140.search_time = globaldef008140.search_time - TRUE;
     }
@@ -1624,7 +1624,7 @@ void (entity globaldef008144) func002520 =
     }
     
     
-    if(BotMoveToGoal(globaldef008144, globaldef000783) == globaldef000716)
+    if(BotMoveToGoal(globaldef008144, globaldef000783) == GLOBALDEF716_5)
     {
         globaldef008144.search_time = globaldef008144.search_time - TRUE;
     }

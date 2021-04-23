@@ -2096,7 +2096,7 @@ void (entity bot, float botspeed) BotAttackMove =
     if(strafeAngleChoice < 1.5)
     {
         
-        if(BotMoveToGoal(bot, botspeed) != globaldef000716)
+        if(BotMoveToGoal(bot, botspeed) != GLOBALDEF716_5)
         {
             return;
         }
@@ -2215,7 +2215,7 @@ void (entity bot, float botspeed) BotAttackMove =
         if(rnd < 0.05)
         {
             
-            if(BotMoveToGoal(bot, botspeed) != globaldef000716)
+            if(BotMoveToGoal(bot, botspeed) != GLOBALDEF716_5)
             {
                 return;
             }

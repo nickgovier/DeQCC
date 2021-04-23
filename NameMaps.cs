@@ -334,9 +334,12 @@ namespace DeQcc
             nameMap.Add("globaldef000708", "WAYPOINTSTATUS_FOUND");
             nameMap.Add("globaldef000709", "WAYPOINTSTATUS_UNCACHED");
             nameMap.Add("globaldef000710", "WAYPOINTSTATUS_SETUP_COMPLETE");
-
             nameMap.Add("globaldef000711", "OBSTACLE_TELEPORT");
-
+            nameMap.Add("globaldef000712", "GLOBALDEF712_1");
+            nameMap.Add("globaldef000713", "GLOBALDEF713_2");
+            nameMap.Add("globaldef000714", "GLOBALDEF714_3");
+            nameMap.Add("globaldef000715", "GLOBALDEF715_4");
+            nameMap.Add("globaldef000716", "GLOBALDEF716_5");
             nameMap.Add("globaldef000717", "GLOBALDEF717_270");  // constant = 270
 
             nameMap.Add("globaldef000719", "OBOT_MAXBOTS");  // constant = 24
