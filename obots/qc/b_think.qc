@@ -58,7 +58,7 @@ void () BotPostThink =
 void () BotPreThink = 
 {
     
-    if(self.botflags & globaldef000686)
+    if(self.botflags & GLOBALDEF686_8)
     {
         func002680();
     }

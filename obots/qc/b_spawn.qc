@@ -136,9 +136,9 @@ void (entity globaldef007102) DestroyBot =
     func002359(globaldef007102);
     func002522(globaldef007102);
     
-    if(globaldef007102.botflags & globaldef000686)
+    if(globaldef007102.botflags & GLOBALDEF686_8)
     {
-        globaldef007102.botflags = globaldef007102.botflags - globaldef000686;
+        globaldef007102.botflags = globaldef007102.botflags - GLOBALDEF686_8;
         globaldef000785 = globaldef000785 - TRUE;
     }
     
@@ -548,16 +548,16 @@ void (entity globaldef007106) func002418 =
     globaldef007106.v_angle = globaldef007106.angles;
     globaldef007106.path0 = world;
     
-    if(globaldef007106.botflags & globaldef000686)
+    if(globaldef007106.botflags & GLOBALDEF686_8)
     {
         globaldef000785 = globaldef000785 - TRUE;
-        globaldef007106.botflags = globaldef007106.botflags - globaldef000686;
+        globaldef007106.botflags = globaldef007106.botflags - GLOBALDEF686_8;
     }
     
     
     if((!(obot_game_option_bitflags & OBOT_BOTPATHING)) && ((waypointCount < globaldef000787) || (waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)))
     {
-        globaldef007106.botflags = globaldef007106.botflags | globaldef000686;
+        globaldef007106.botflags = globaldef007106.botflags | GLOBALDEF686_8;
         globaldef000785 = globaldef000785 + TRUE;
     }
     

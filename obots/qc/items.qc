@@ -437,7 +437,7 @@ void () health_touch =
     }
     
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         func002686(other, self);
     }
@@ -722,7 +722,7 @@ void () armor_touch =
     }
     
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         func002686(other, self);
     }
@@ -1290,7 +1290,7 @@ void () weapon_touch =
     }
     
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         func002686(other, self);
     }
@@ -3034,7 +3034,7 @@ void () powerup_touch =
     }
     
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         func002686(other, self);
     }

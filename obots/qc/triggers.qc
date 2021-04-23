@@ -1098,7 +1098,7 @@ void () teleport_touch =
     }
     
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         
         if(!self.path0)

@@ -38,10 +38,10 @@ void () func002639 =
     while(globaldef008982)
     {
         
-        if(globaldef008982.botflags & globaldef000686)
+        if(globaldef008982.botflags & GLOBALDEF686_8)
         {
             globaldef000785 = globaldef000785 - TRUE;
-            globaldef008982.botflags = globaldef008982.botflags - globaldef000686;
+            globaldef008982.botflags = globaldef008982.botflags - GLOBALDEF686_8;
         }
         
         globaldef008982 = globaldef008982.next;
@@ -52,10 +52,10 @@ void () func002639 =
     while(globaldef008982)
     {
         
-        if(globaldef008982.botflags & globaldef000686)
+        if(globaldef008982.botflags & GLOBALDEF686_8)
         {
             globaldef000785 = globaldef000785 - TRUE;
-            globaldef008982.botflags = globaldef008982.botflags - globaldef000686;
+            globaldef008982.botflags = globaldef008982.botflags - GLOBALDEF686_8;
         }
         
         globaldef008982 = globaldef008982.next;
@@ -2309,7 +2309,7 @@ void () waypoint_touch =
     
     other.field000263 = self;
     
-    if(other.botflags & globaldef000686)
+    if(other.botflags & GLOBALDEF686_8)
     {
         
         if(other.path0)
@@ -5552,7 +5552,7 @@ entity (entity globaldef009262) func002691 =
     local float globaldef009266;
     local vector globaldef009267;
     local vector globaldef009271;
-    if((globaldef009262.botflags & globaldef000686) && (globaldef009262.path0 != world))
+    if((globaldef009262.botflags & GLOBALDEF686_8) && (globaldef009262.path0 != world))
     {
         return globaldef009262.path0;
     }

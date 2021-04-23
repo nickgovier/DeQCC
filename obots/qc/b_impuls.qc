@@ -811,9 +811,9 @@ void () botpathing =
             while(globaldef009415)
             {
                 
-                if(!(globaldef009415.botflags & globaldef000686))
+                if(!(globaldef009415.botflags & GLOBALDEF686_8))
                 {
-                    globaldef009415.botflags = globaldef009415.botflags | globaldef000686;
+                    globaldef009415.botflags = globaldef009415.botflags | GLOBALDEF686_8;
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
@@ -831,9 +831,9 @@ void () botpathing =
         while(globaldef009415)
         {
             
-            if(globaldef009415.botflags & globaldef000686)
+            if(globaldef009415.botflags & GLOBALDEF686_8)
             {
-                globaldef009415.botflags = globaldef009415.botflags - (globaldef009415.botflags & globaldef000686);
+                globaldef009415.botflags = globaldef009415.botflags - (globaldef009415.botflags & GLOBALDEF686_8);
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
@@ -910,9 +910,9 @@ void () humanpathing =
             while(globaldef009418)
             {
                 
-                if(!(globaldef009418.botflags & globaldef000686))
+                if(!(globaldef009418.botflags & GLOBALDEF686_8))
                 {
-                    globaldef009418.botflags = globaldef009418.botflags | globaldef000686;
+                    globaldef009418.botflags = globaldef009418.botflags | GLOBALDEF686_8;
                     globaldef000785 = globaldef000785 + TRUE;
                 }
                 
@@ -930,9 +930,9 @@ void () humanpathing =
         while(globaldef009418)
         {
             
-            if(globaldef009418.botflags & globaldef000686)
+            if(globaldef009418.botflags & GLOBALDEF686_8)
             {
-                globaldef009418.botflags = globaldef009418.botflags - (globaldef009418.botflags & globaldef000686);
+                globaldef009418.botflags = globaldef009418.botflags - (globaldef009418.botflags & GLOBALDEF686_8);
                 globaldef000785 = globaldef000785 - TRUE;
             }
             

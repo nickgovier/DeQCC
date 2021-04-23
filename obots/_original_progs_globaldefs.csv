@@ -685,7 +685,7 @@ row,name,s_name,ofs,type,typename
 683,GLOBALDEF683_1,0,700,2,float
 684,GLOBALDEF684_2,0,701,2,float
 685,GLOBALDEF685_4,0,702,2,float
-686,globaldef000686,0,703,2,float
+686,GLOBALDEF686_8,0,703,2,float
 687,globaldef000687,0,704,2,float
 688,globaldef000688,0,705,2,float
 689,globaldef000689,0,706,2,float

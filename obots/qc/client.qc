@@ -1294,16 +1294,16 @@ void () PutClientInServer =
     self.path0 = world;
     self.waypointtype = globaldef000699;
     
-    if(self.botflags & globaldef000686)
+    if(self.botflags & GLOBALDEF686_8)
     {
         globaldef000785 = globaldef000785 - TRUE;
-        self.botflags = self.botflags - globaldef000686;
+        self.botflags = self.botflags - GLOBALDEF686_8;
     }
     
     
     if((!(obot_game_option_bitflags & OBOT_HUMANPATHING)) && ((waypointCount < globaldef000787) || (waypointStatus != WAYPOINTSTATUS_SETUP_COMPLETE)))
     {
-        self.botflags = self.botflags | globaldef000686;
+        self.botflags = self.botflags | GLOBALDEF686_8;
         globaldef000785 = globaldef000785 + TRUE;
     }
     
@@ -2969,7 +2969,7 @@ void () PlayerPostThink =
     
     func002273(self);
     
-    if(self.botflags & globaldef000686)
+    if(self.botflags & GLOBALDEF686_8)
     {
         func002680();
     }
@@ -3318,7 +3318,7 @@ void () ClientDisconnect =
     }
     
     
-    if(self.botflags & globaldef000686)
+    if(self.botflags & GLOBALDEF686_8)
     {
         globaldef000785 = globaldef000785 - TRUE;
     }

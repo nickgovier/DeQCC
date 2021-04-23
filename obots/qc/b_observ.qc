@@ -1683,10 +1683,10 @@ void (entity globaldef006798) ToggleObserverMode =
             func002522(globaldef006798);
             func002359(globaldef006798);
             
-            if(globaldef006798.botflags & globaldef000686)
+            if(globaldef006798.botflags & GLOBALDEF686_8)
             {
                 globaldef006798.path0 = world;
-                globaldef006798.botflags = globaldef006798.botflags - globaldef000686;
+                globaldef006798.botflags = globaldef006798.botflags - GLOBALDEF686_8;
                 globaldef000785 = globaldef000785 - TRUE;
             }
             
