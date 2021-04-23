@@ -1,4 +1,116 @@
 
+// func002274
+// function begins at statement 27685, parm_start=16426
+// OP_LOAD_V	16426	560	16440
+// OP_STORE_V	16440	16427	0
+// OP_STORE_F	213	16429	0
+// OP_STORE_V	16427	4	0
+// OP_CALL1	459	0	0
+// OP_STORE_V	1	16427	0
+// OP_STORE_ENT	28	16433	0
+// OP_LOAD_V	28	105	16443
+// OP_STORE_V	16443	16435	0
+// OP_LOAD_F	28	182	16446
+// OP_STORE_F	16446	16439	0
+// OP_STORE_ENT	16426	28	0
+// OP_STORE_V	16427	4	0
+// OP_CALL1	463	0	0
+// OP_STORE_F	1	16438	0
+// OP_ADDRESS	28	182	16447
+// OP_LOAD_F	28	182	16448
+// OP_BITOR	16448	223	16449
+// OP_BITOR	16449	224	16450
+// OP_STOREP_F	16450	16447	0
+// OP_STORE_V	16438	4	0
+// OP_STORE_V	3263	7	0
+// OP_CALL2	480	0	0
+// OP_IFNOT	1	18	0
+// OP_LOAD_F	28	108	16451
+// OP_ADD_F	16437	1283	16452
+// OP_GT	16451	16452	16453
+// OP_IFNOT	16453	11	0
+// OP_ADDRESS	16426	575	16454
+// OP_LOAD_F	16426	575	16455
+// OP_BITOR	16455	711	16456
+// OP_STOREP_F	16456	16454	0
+// OP_ADDRESS	16426	564	16457
+// OP_LOAD_V	16426	105	16460
+// OP_STOREP_V	16460	16457	0
+// OP_ADDRESS	16426	568	16463
+// OP_LOAD_V	28	105	16466
+// OP_STOREP_V	16466	16463	0
+// OP_STORE_V	28	4	0
+// OP_STORE_V	16435	7	0
+// OP_CALL2	453	0	0
+// OP_ADDRESS	28	182	16469
+// OP_STOREP_F	16439	16469	0
+// OP_STORE_ENT	16433	28	0
+// OP_DONE	0	0	0
+void (entity globaldef005748) func002274 = 
+{
+    local vector globaldef005749;
+    local vector globaldef005753;
+    local entity globaldef005757;
+    local entity globaldef005758;
+    local vector globaldef005759;
+    local float globaldef005763;
+    local float globaldef005764;
+    globaldef005749 = globaldef005748.prephysicsvelocity;
+    globaldef005749_z = FALSE;
+    globaldef005749 = normalize(globaldef005749);
+    globaldef005757 = self;
+    globaldef005759 = self.origin;
+    globaldef005764 = self.flags;
+    self = globaldef005748;
+    globaldef005763 = vectoyaw(globaldef005749);
+    self.flags = (self.flags | FL_ONGROUND) | FL_PARTIALGROUND;
+    
+    if(walkmove(globaldef005763, 0.9))
+    {
+        
+        if(self.origin_z > (globaldef005759_z + 0.001))
+        {
+            globaldef005748.botflags = globaldef005748.botflags | globaldef000694;
+            globaldef005748.touchorigin = globaldef005748.origin;
+            globaldef005748.steporigin = self.origin;
+        }
+        
+        setorigin(self, globaldef005759);
+    }
+    
+    self.flags = globaldef005764;
+    self = globaldef005757;
+};
+
+
+// func002275
+// function begins at statement 27730, parm_start=16471
+// OP_LOAD_F	28	186	16472
+// OP_LE	16472	31	16473
+// OP_IFNOT	16473	6	0
+// OP_LOAD_F	28	103	16474
+// OP_EQ_F	16474	229	16475
+// OP_IFNOT	16475	3	0
+// OP_STORE_V	28	4	0
+// OP_CALL1	16425	0	0
+// OP_DONE	0	0	0
+void () func002275 = 
+{
+    local float globaldef005766;
+    
+    if(self.teleport_time <= time)
+    {
+        
+        if(self.movetype == MOVETYPE_STEP)
+        {
+            func002274(self);
+        }
+        
+    }
+    
+};
+
+
 // func002276
 // function begins at statement 27739, parm_start=16477
 // OP_LOAD_F	28	103	16488
@@ -228,15 +340,15 @@ void () func002276 =
             globaldef005777 = self.flags;
             self.flags = (self.flags | FL_ONGROUND) | FL_PARTIALGROUND;
             globaldef005772 = self.origin;
-            self.origin = self.field000241;
-            globaldef005768 = (self.prephysicsvelocity * globaldef005776) - (self.field000241 - self.prephysicsorigin);
+            self.origin = self.touchorigin;
+            globaldef005768 = (self.prephysicsvelocity * globaldef005776) - (self.touchorigin - self.prephysicsorigin);
             globaldef005768_z = FALSE;
             globaldef005778 = vectoyaw(globaldef005768);
             globaldef005779 = vlen(globaldef005768);
             
             if(!walkmove(globaldef005778, globaldef005779))
             {
-                self.origin = self.field000245;
+                self.origin = self.steporigin;
             }
             
             self.velocity = self.prephysicsvelocity;

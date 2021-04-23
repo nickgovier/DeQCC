@@ -546,12 +546,12 @@ row,name,s_name,ofs,type,typename
 544,prephysicsvelocity,0,561,5,ev_field
 545,field000239,0,562,5,ev_field
 546,field000240,0,563,5,ev_field
-547,field000241,0,564,5,ev_field
-548,field000241,0,565,5,ev_field
+547,touchorigin,0,564,5,ev_field
+548,touchorigin,0,565,5,ev_field
 549,field000243,0,566,5,ev_field
 550,field000244,0,567,5,ev_field
-551,field000245,0,568,5,ev_field
-552,field000245,0,569,5,ev_field
+551,steporigin,0,568,5,ev_field
+552,steporigin,0,569,5,ev_field
 553,field000247,0,570,5,ev_field
 554,field000248,0,571,5,ev_field
 555,field000249,0,572,5,ev_field

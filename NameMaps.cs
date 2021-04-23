@@ -443,7 +443,9 @@ namespace DeQcc
             nameMap.Add("field000232", "lastphysicstime");
             nameMap.Add("field000233", "prephysicsorigin");
             nameMap.Add("field000237", "prephysicsvelocity");
-            
+            nameMap.Add("field000241", "touchorigin");
+            nameMap.Add("field000245", "steporigin");
+
             nameMap.Add("field000250", "clmodelindex");
 
             nameMap.Add("field000252", "botflags");
@@ -2313,8 +2315,7 @@ namespace DeQcc
 
             #region b_clphys.qc
 
-            // this is a guess, because func002276 is the only place where lastphysicstime is used
-            for (int i = 2276; i <= 2277; i++)
+            for (int i = 2274; i <= 2277; i++)
             {
                 fileMap[i] = "b_clphys.qc";
             }

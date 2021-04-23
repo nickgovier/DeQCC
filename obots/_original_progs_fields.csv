@@ -240,11 +240,11 @@ row,name,s_name,ofs,type,typename
 238,field000238,0,213,2,float
 239,field000239,0,214,2,float
 240,field000240,0,215,2,float
-241,field000241,0,216,3,vector
+241,touchorigin,0,216,3,vector
 242,field000242,0,216,2,float
 243,field000243,0,217,2,float
 244,field000244,0,218,2,float
-245,field000245,0,219,3,vector
+245,steporigin,0,219,3,vector
 246,field000246,0,219,2,float
 247,field000247,0,220,2,float
 248,field000248,0,221,2,float
