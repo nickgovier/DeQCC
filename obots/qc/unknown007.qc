@@ -27,7 +27,7 @@ void (entity globaldef007858, entity globaldef007859) func002471 =
     
     if(globaldef007858.field000267 == globaldef007859)
     {
-        globaldef007858.botflags = globaldef007858.botflags | globaldef000690;
+        globaldef007858.botflags = globaldef007858.botflags | GLOBALDEF690_128;
     }
     
 };
@@ -3380,7 +3380,7 @@ entity (entity bot) func002495 =
         bot.field000267 = globaldef008089;
         bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF688_32);
         bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF689_64);
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF690_128);
         globaldef008090.field000339 = bot;
         globaldef008090.field000340 = time;
         globaldef008089.field000341 = bot;
@@ -3397,7 +3397,7 @@ entity (entity bot) func002495 =
         bot.field000267 = globaldef008096;
         bot.botflags = bot.botflags | GLOBALDEF689_64;
         bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF688_32);
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF690_128);
         globaldef008096.field000341 = bot;
         globaldef008096.field000342 = time;
         globaldef008097.field000339 = bot;
@@ -3469,7 +3469,7 @@ float (entity globaldef008100) func002496 =
     }
     
     
-    if(globaldef008100.botflags & globaldef000690)
+    if(globaldef008100.botflags & GLOBALDEF690_128)
     {
         return FALSE;
     }
@@ -3656,7 +3656,7 @@ entity (entity globaldef008103) func002498 =
                 globaldef008103.field000267 = globaldef008105;
                 globaldef008103.botflags = globaldef008103.botflags | GLOBALDEF688_32;
                 globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & GLOBALDEF689_64);
-                globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & globaldef000690);
+                globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & GLOBALDEF690_128);
                 globaldef008106.field000339 = globaldef008103;
                 globaldef008106.field000340 = time;
                 globaldef008103.field000270 = FALSE;
