@@ -232,11 +232,11 @@ row,name,s_name,ofs,type,typename
 230,think2,0,207,6,void()
 231,nextthink2,0,208,2,float
 232,lastphysicstime,0,209,2,float
-233,field000233,0,210,3,vector
+233,prephysicsorigin,0,210,3,vector
 234,field000234,0,210,2,float
 235,field000235,0,211,2,float
 236,field000236,0,212,2,float
-237,field000237,0,213,3,vector
+237,prephysicsvelocity,0,213,3,vector
 238,field000238,0,213,2,float
 239,field000239,0,214,2,float
 240,field000240,0,215,2,float

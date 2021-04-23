@@ -514,7 +514,7 @@ void (entity globaldef005748) func002274 =
     local vector globaldef005759;
     local float globaldef005763;
     local float globaldef005764;
-    globaldef005749 = globaldef005748.field000237;
+    globaldef005749 = globaldef005748.prephysicsvelocity;
     globaldef005749_z = FALSE;
     globaldef005749 = normalize(globaldef005749);
     globaldef005757 = self;

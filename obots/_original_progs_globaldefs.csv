@@ -538,12 +538,12 @@ row,name,s_name,ofs,type,typename
 536,think2,0,553,5,ev_field
 537,nextthink2,0,554,5,ev_field
 538,lastphysicstime,0,555,5,ev_field
-539,field000233,0,556,5,ev_field
-540,field000233,0,557,5,ev_field
+539,prephysicsorigin,0,556,5,ev_field
+540,prephysicsorigin,0,557,5,ev_field
 541,field000235,0,558,5,ev_field
 542,field000236,0,559,5,ev_field
-543,field000237,0,560,5,ev_field
-544,field000237,0,561,5,ev_field
+543,prephysicsvelocity,0,560,5,ev_field
+544,prephysicsvelocity,0,561,5,ev_field
 545,field000239,0,562,5,ev_field
 546,field000240,0,563,5,ev_field
 547,field000241,0,564,5,ev_field
