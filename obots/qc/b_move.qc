@@ -3152,9 +3152,9 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
     
     bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF684_2);
     
-    if(bot.botflags & globaldef000691)
+    if(bot.botflags & GLOBALDEF691_256)
     {
-        bot.botflags = bot.botflags - globaldef000691;
+        bot.botflags = bot.botflags - GLOBALDEF691_256;
         
         if(direction == VEC_ORIGIN)
         {
