@@ -355,7 +355,7 @@ void () func002276 =
             self.velocity_z = FALSE;
             self.flags = globaldef005777 | FL_ONGROUND;
             self.botflags = self.botflags | GLOBALDEF683_1;
-            self.botflags = self.botflags | globaldef000695;
+            self.botflags = self.botflags | GLOBALDEF695_4096;
         }
         
     }

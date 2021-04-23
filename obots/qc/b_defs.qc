@@ -163,7 +163,7 @@ float GLOBALDEF691_256 = 256;
 float WAYPOINT_DUMP_TO_CONSOLE = 512;
 float WAYPOINT_DO_NOT_DUMP = 1024;
 float GLOBALDEF694_2048 = 2048;
-float globaldef000695;
+float GLOBALDEF695_4096 = 4096;
 float globaldef000696;
 float globaldef000697;
 float unused698;

@@ -129,11 +129,11 @@ void (entity globaldef005704) func002268 =
     globaldef005705.colormap = globaldef005704.clientnumber + TRUE;
     globaldef005706 = globaldef005704.origin;
     
-    if(globaldef005704.botflags & globaldef000695)
+    if(globaldef005704.botflags & GLOBALDEF695_4096)
     {
         if((globaldef005705.origin_z >= (globaldef005704.origin_z - TRUE)) || (!(globaldef005704.botflags & GLOBALDEF683_1)))
         {
-            globaldef005704.botflags = globaldef005704.botflags - globaldef000695;
+            globaldef005704.botflags = globaldef005704.botflags - GLOBALDEF695_4096;
         }
         else
         {
