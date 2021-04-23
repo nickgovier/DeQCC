@@ -4588,12 +4588,12 @@ void () func002736 =
     }
     
     
-    if(self.admin < globaldef000734)
+    if(self.admin < GLOBALDEF734_5)
     {
         return;
     }
     
-    if(self.admin == globaldef000734)
+    if(self.admin == GLOBALDEF734_5)
     {
         func002735();
         if(self.impulse == TRUE)
@@ -4674,11 +4674,11 @@ void () func002736 =
                             {
                                 if(teamplay)
                                 {
-                                    self.admin = globaldef000737;
+                                    self.admin = GLOBALDEF737_8;
                                 }
                                 else
                                 {
-                                    self.admin = globaldef000735;
+                                    self.admin = GLOBALDEF735_6;
                                 }
                                 
                             }
@@ -4704,7 +4704,7 @@ void () func002736 =
                                     
                                     if(self.impulse == FL_CLIENT)
                                     {
-                                        self.admin = globaldef000730;
+                                        self.admin = GLOBALDEF730_0;
                                         centerprint(self, "");
                                     }
                                     
@@ -4725,7 +4725,7 @@ void () func002736 =
     }
     else
     {
-        if(self.admin == globaldef000735)
+        if(self.admin == GLOBALDEF735_6)
         {
             func002734();
             if(self.impulse == TRUE)
@@ -4749,7 +4749,7 @@ void () func002736 =
                         
                         if(self.impulse == MOVETYPE_STEP)
                         {
-                            self.admin = globaldef000734;
+                            self.admin = GLOBALDEF734_5;
                         }
                         
                     }
@@ -4761,25 +4761,25 @@ void () func002736 =
         }
         else
         {
-            if(self.admin == globaldef000736)
+            if(self.admin == GLOBALDEF736_7)
             {
-                self.admin = globaldef000734;
+                self.admin = GLOBALDEF734_5;
             }
             else
             {
-                if(self.admin == globaldef000737)
+                if(self.admin == GLOBALDEF737_8)
                 {
                     func002733();
                     if((self.impulse >= TRUE) && (self.impulse <= teamplay))
                     {
-                        self.admin = globaldef000737 + self.impulse;
+                        self.admin = GLOBALDEF737_8 + self.impulse;
                     }
                     else
                     {
                         
                         if(self.impulse == (teamplay + TRUE))
                         {
-                            self.admin = globaldef000734;
+                            self.admin = GLOBALDEF734_5;
                         }
                         
                     }
@@ -4788,14 +4788,14 @@ void () func002736 =
                 else
                 {
                     
-                    if(self.admin > globaldef000737)
+                    if(self.admin > GLOBALDEF737_8)
                     {
-                        globaldef009543 = self.admin - globaldef000737;
+                        globaldef009543 = self.admin - GLOBALDEF737_8;
                         
                         if(globaldef009543 > teamplay)
                         {
                             globaldef009543 = teamplay;
-                            self.admin = globaldef000737 + teamplay;
+                            self.admin = GLOBALDEF737_8 + teamplay;
                         }
                         
                         func002732(globaldef009543);
@@ -4814,7 +4814,7 @@ void () func002736 =
                                 
                                 if(self.impulse == MOVETYPE_WALK)
                                 {
-                                    self.admin = globaldef000737;
+                                    self.admin = GLOBALDEF737_8;
                                 }
                                 
                             }
@@ -4875,13 +4875,13 @@ void () menu =
         return;
     }
     
-    if(self.admin < globaldef000734)
+    if(self.admin < GLOBALDEF734_5)
     {
-        self.admin = globaldef000734;
+        self.admin = GLOBALDEF734_5;
     }
     else
     {
-        self.admin = globaldef000730;
+        self.admin = GLOBALDEF730_0;
     }
     
 };
@@ -4911,7 +4911,7 @@ void (entity globaldef009548) SetAdmin =
     
     currentAdmin = globaldef009548;
     prospectiveAdmin = world;
-    self.admin = globaldef000730;
+    self.admin = GLOBALDEF730_0;
     bprint(globaldef009548.netname);
     bprint(" became administrator\n");
 };
@@ -4935,7 +4935,7 @@ void (entity globaldef009550) stopadmin =
     
     if(currentAdmin == globaldef009550)
     {
-        self.admin = globaldef000730;
+        self.admin = GLOBALDEF730_0;
         currentAdmin = world;
         bprint(globaldef009550.netname);
         bprint(" left the administrator job\n");
@@ -4965,7 +4965,7 @@ void () func002740 =
     while(globaldef009553)
     {
         
-        if(globaldef009553.admin == globaldef000738)
+        if(globaldef009553.admin == GLOBALDEF738_32)
         {
             globaldef009553.admin = FALSE;
         }
@@ -5042,7 +5042,7 @@ void (entity globaldef009555) admin =
     {
         prospectiveAdmin = globaldef009555;
         func002740();
-        globaldef009555.admin = globaldef000738;
+        globaldef009555.admin = GLOBALDEF738_32;
         bprint2(globaldef009555.netname, " wants to be the administrator\n");
         globaldef009556 = firstClient;
         
@@ -5107,7 +5107,7 @@ void (entity globaldef009562) yes =
         return;
     }
     
-    globaldef009562.admin = globaldef000738;
+    globaldef009562.admin = GLOBALDEF738_32;
     globaldef009563 = firstClient;
     globaldef009565 = FALSE;
     globaldef009564 = FALSE;
@@ -5115,7 +5115,7 @@ void (entity globaldef009562) yes =
     while(globaldef009563)
     {
         
-        if(globaldef009563.admin == globaldef000738)
+        if(globaldef009563.admin == GLOBALDEF738_32)
         {
             globaldef009565 = globaldef009565 + TRUE;
         }

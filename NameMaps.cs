@@ -353,7 +353,15 @@ namespace DeQcc
             nameMap.Add("globaldef000727", "OBOT_MAXSHELLCASES");   // b_eject.qc, constant = 30
             nameMap.Add("globaldef000728", "GLOBALDEF728_500");   // constant = 500
             nameMap.Add("globaldef000729", "GLOBALDEF729_40");   // constant = 40
-
+            nameMap.Add("globaldef000730", "GLOBALDEF730_0");
+            nameMap.Add("globaldef000731", "GLOBALDEF731_1");
+            nameMap.Add("globaldef000732", "GLOBALDEF732_2");
+            nameMap.Add("globaldef000733", "GLOBALDEF733_3");
+            nameMap.Add("globaldef000734", "GLOBALDEF734_5");
+            nameMap.Add("globaldef000735", "GLOBALDEF735_6");
+            nameMap.Add("globaldef000736", "GLOBALDEF736_7");
+            nameMap.Add("globaldef000737", "GLOBALDEF737_8");
+            nameMap.Add("globaldef000738", "GLOBALDEF738_32");
             nameMap.Add("globaldef000739", "BOTSOUND_DOOR");
             nameMap.Add("globaldef000740", "BOTSOUND_TELEPORT");
             nameMap.Add("globaldef000741", "BOTSOUND_FIRE");
