@@ -1292,7 +1292,7 @@ void () PutClientInServer =
     self.old_origin = self.origin;
     self.old_flags = FALSE;
     self.path0 = world;
-    self.waypointtype = globaldef000699;
+    self.waypointtype = WAYPOINTTYPE_SPAWN;
     
     if(self.botflags & GLOBALDEF686_8)
     {

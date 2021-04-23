@@ -494,7 +494,7 @@ void (entity globaldef007106) func002418 =
     globaldef007106.f_ai = func002503;
     globaldef007106.pausetime = time + (random() * (MOVETYPE_WALK - globaldef007106.botskill));
     globaldef007106.enemy = world;
-    globaldef007106.waypointtype = globaldef000699;
+    globaldef007106.waypointtype = WAYPOINTTYPE_SPAWN;
     globaldef007106.deadflag = DEAD_NO;
     
     if(!modelindex_head)

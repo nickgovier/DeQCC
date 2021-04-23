@@ -2267,7 +2267,7 @@ void () waypoint_touch =
     
     if(other.goalentity.goalentity == self)
     {
-        if(self.waypointtype == globaldef000701)
+        if(self.waypointtype == WAYPOINTTYPE_XXXX)
         {
             other.search_time = time - TRUE;
         }
@@ -2842,7 +2842,7 @@ void (entity globaldef009179) func002675 =
     globaldef009180.path0 = globaldef009179.path0;
     globaldef009179.path0 = globaldef009180;
     globaldef009180.dist0 = EntityDistance(globaldef009180, globaldef009180.path0);
-    globaldef009180.waypointtype = globaldef000701;
+    globaldef009180.waypointtype = WAYPOINTTYPE_XXXX;
 };
 
 
