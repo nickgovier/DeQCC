@@ -395,8 +395,6 @@ namespace DeQcc
             nameMap.Add("globaldef000774", "BOTSHIRTPANTS_12");   // constant = 12
             nameMap.Add("globaldef000775", "BOTSHIRTPANTS_13");   // constant = 13
 
-            
-
             #endregion
 
             #region obot global variables

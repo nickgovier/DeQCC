@@ -599,7 +599,7 @@ void (entity globaldef009401, float globaldef009402) skinchange =
         globaldef009402 = FALSE;
     }
     
-    if(obot_game_option_bitflags & globaldef000760)
+    if(obot_game_option_bitflags & GLOBALDEF760_32768)
     {
         globaldef009401.field000251 = globaldef009402;
     }

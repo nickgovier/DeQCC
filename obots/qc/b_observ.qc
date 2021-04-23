@@ -610,7 +610,7 @@ void (entity globaldef006741) func002354 =
     
     setorigin(globaldef006741, globaldef006741.camera.origin);
     globaldef006741.view_ofs = globaldef006741.camera.view_ofs;
-    if((globaldef006741.camera.classname == "bot") && (obot_game_option_bitflags & globaldef000760))
+    if((globaldef006741.camera.classname == "bot") && (obot_game_option_bitflags & GLOBALDEF760_32768))
     {
         globaldef006747 = GetClientEntity(globaldef006741.camera.clientnumber);
     }
@@ -1651,7 +1651,7 @@ void (entity globaldef006798) ToggleObserverMode =
         globaldef006798.flags = globaldef006798.flags - (globaldef006798.flags & FL_ONGROUND);
         globaldef006798.movetype = MOVETYPE_TOSS;
         
-        if(obot_game_option_bitflags & globaldef000760)
+        if(obot_game_option_bitflags & GLOBALDEF760_32768)
         {
             globaldef006798.clmodelindex = FALSE;
             globaldef006798.field000251 = FALSE;
@@ -1700,7 +1700,7 @@ void (entity globaldef006798) ToggleObserverMode =
             globaldef006798.movetype = MOVETYPE_FLY;
             globaldef006798.effects = globaldef006798.effects - (globaldef006798.effects & (((EF_BRIGHTFIELD + EF_MUZZLEFLASH) + EF_BRIGHTLIGHT) + EF_DIMLIGHT));
             
-            if(obot_game_option_bitflags & globaldef000760)
+            if(obot_game_option_bitflags & GLOBALDEF760_32768)
             {
                 globaldef006798.clmodelindex = FALSE;
                 globaldef006798.field000251 = FALSE;

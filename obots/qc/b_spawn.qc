@@ -117,7 +117,7 @@ void (entity globaldef007102) DestroyBot =
     bprint(" frags\n");
     sound(globaldef007102, CHAN_BODY, "player/tornoff2.wav", TRUE, ATTN_NONE);
     
-    if(obot_game_option_bitflags & globaldef000760)
+    if(obot_game_option_bitflags & GLOBALDEF760_32768)
     {
         globaldef007103 = GetClientEntity(globaldef007102.clientnumber);
         
@@ -517,7 +517,7 @@ void (entity globaldef007106) func002418 =
         modelindex_player = globaldef007106.modelindex;
     }
     
-    if(obot_game_option_bitflags & globaldef000760)
+    if(obot_game_option_bitflags & GLOBALDEF760_32768)
     {
         globaldef007106.skin = FALSE;
         globaldef007106.field000251 = globaldef007106.field000249;
