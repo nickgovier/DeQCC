@@ -52,12 +52,11 @@ b_think.qc
 unknown004.qc
 b_spawn.qc
 b_move.qc
-unknown005.qc
 b_hear.qc
 b_locate.qc
-unknown006.qc
+unknown005.qc
 b_goal.qc
-unknown007.qc
+unknown006.qc
 b_aitree.qc
 b_frames.qc
 b_hcwp.qc

@@ -134,7 +134,7 @@ void (entity globaldef007102) DestroyBot =
     }
     
     func002359(globaldef007102);
-    func002522(globaldef007102);
+    RemoveEnemyFromBots(globaldef007102);
     
     if(globaldef007102.botflags & GLOBALDEF686_8)
     {

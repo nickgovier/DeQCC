@@ -4689,7 +4689,7 @@ void () func002736 =
                                     gameNotRunning = !gameNotRunning;
                                     if(gameNotRunning)
                                     {
-                                        func002521();
+                                        StopAllBotBattles();
                                     }
                                     else
                                     {

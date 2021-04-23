@@ -2822,8 +2822,9 @@ namespace DeQcc
             nameMap.Add("func002442", "BotMoveToGoal");
             nameMap.Add("func002444", "BotMoveInDirection");
             nameMap.Add("func002445", "BotJumpInDirection");
+            nameMap.Add("func002446", "MovingCloserToGoal");
 
-            for (int i = 2430; i <= 2445; i++)
+            for (int i = 2430; i <= 2446; i++)
             {
                 fileMap[i] = "b_move.qc";
             }
@@ -2876,7 +2877,15 @@ namespace DeQcc
             nameMap.Add("globaldef007596", "angle");
             nameMap.Add("globaldef007600", "obstacle");
 
+            // MovingCloserToGoal params
+            nameMap.Add("globaldef007601", "bot");
 
+            // MovingCloserToGoal locals
+            nameMap.Add("globaldef007602", "bot");
+            nameMap.Add("globaldef007603", "unused1");
+            nameMap.Add("globaldef007604", "newdist");
+            nameMap.Add("globaldef007605", "olddist");
+            nameMap.Add("globaldef007606", "unused2");
             #endregion
 
             #region b_hear.qc
@@ -2991,19 +3000,48 @@ namespace DeQcc
             // f_walkaboutweight params
             nameMap.Add("globaldef008076", "bot");
             nameMap.Add("globaldef008092", "e");
-            // f_ai params
-            nameMap.Add("globaldef008110", "bot");
 
             #region b_aitree.qc
 
             nameMap.Add("func002499", "BotAI");
+            nameMap.Add("func002500", "BotEnterIntermission");
+            nameMap.Add("func002501", "AI_None");
+            nameMap.Add("func002504", "RemoveBotEnemy");
+            nameMap.Add("func002519", "RepeatLastAIFunction");
+            nameMap.Add("func002521", "StopAllBotBattles");
+            nameMap.Add("func002522", "RemoveEnemyFromBots");
+            nameMap.Add("func002523", "BotIntermission");
 
             for (int i = 2499; i <= 2523; i++)
             {
                 fileMap[i] = "b_aitree.qc";
             }
 
-            #endregion 
+            // BotAI params
+            nameMap.Add("globaldef008110", "bot");
+
+            // AI_None params
+            nameMap.Add("globaldef008112", "bot");
+
+            // BotEnterIntermission params
+            nameMap.Add("globaldef008111", "bot");
+
+            // RemoveBotEnemy params
+            nameMap.Add("globaldef008115", "bot");
+
+            // StopAllBotBattles locals
+            nameMap.Add("globaldef008147", "bot");
+
+            // RemoveEnemyFromBots params
+            nameMap.Add("globaldef008148", "e");
+
+            // RemoveEnemyFromBots locals
+            nameMap.Add("globaldef008149", "bot");
+
+            // BotIntermission locals
+            nameMap.Add("globaldef008150", "bot");
+
+            #endregion
 
             #region b_frames.qc
 

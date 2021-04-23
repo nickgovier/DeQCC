@@ -421,7 +421,7 @@ void (entity globaldef002722) func000351 =
     globaldef002722.velocity_z = FALSE;
     globaldef002722.velocity = normalize(globaldef002722.velocity) * globaldef000783;
     
-    if(!func002446(globaldef002722))
+    if(!MovingCloserToGoal(globaldef002722))
     {
         globaldef002722.search_time = globaldef002722.search_time - TRUE;
     }

@@ -1680,7 +1680,7 @@ void (entity globaldef006798) ToggleObserverMode =
                 rocket_arena_disconnect(globaldef006798, FALSE);
             }
             
-            func002522(globaldef006798);
+            RemoveEnemyFromBots(globaldef006798);
             func002359(globaldef006798);
             
             if(globaldef006798.botflags & GLOBALDEF686_8)

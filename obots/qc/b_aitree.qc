@@ -11,7 +11,7 @@ void (entity bot) BotAI =
 };
 
 
-// func002500
+// BotEnterIntermission
 // function begins at statement 43619, parm_start=25204
 // OP_ADDRESS	25204	611	25205
 // OP_STOREP_F	213	25205	0
@@ -22,19 +22,19 @@ void (entity bot) BotAI =
 // OP_ADDRESS	25204	551	25208
 // OP_STOREP_FNC	1154	25208	0
 // OP_DONE	0	0	0
-void (entity globaldef008111) func002500 = 
+void (entity bot) BotEnterIntermission = 
 {
-    globaldef008111.field000288 = FALSE;
-    globaldef008111.takedamage = DAMAGE_NO;
-    globaldef008111.enemy = world;
-    globaldef008111.f_ai = func002501;
+    bot.field000288 = FALSE;
+    bot.takedamage = DAMAGE_NO;
+    bot.enemy = world;
+    bot.f_ai = AI_None;
 };
 
 
-// func002501
+// AI_None
 // function begins at statement 43628, parm_start=25209
 // OP_DONE	0	0	0
-void (entity globaldef008112) func002501 = 
+void (entity bot) AI_None = 
 {
 };
 
@@ -97,13 +97,13 @@ void (entity globaldef008114) func002503 =
     if(globaldef008114.pausetime < time)
     {
         BotEnterMessage(globaldef008114);
-        func002504(globaldef008114);
+        RemoveBotEnemy(globaldef008114);
     }
     
 };
 
 
-// func002504
+// RemoveBotEnemy
 // function begins at statement 43659, parm_start=25222
 // OP_ADDRESS	25222	551	25223
 // OP_STOREP_FNC	1157	25223	0
@@ -121,14 +121,14 @@ void (entity globaldef008114) func002503 =
 // OP_ADDRESS	25222	590	25231
 // OP_STOREP_ENT	30	25231	0
 // OP_DONE	0	0	0
-void (entity globaldef008115) func002504 = 
+void (entity bot) RemoveBotEnemy = 
 {
-    globaldef008115.f_ai = func002508;
-    globaldef008115.search_time = time - TRUE;
-    globaldef008115.goalentity.goalentity = globaldef008115.goalentity;
-    globaldef008115.field000288 = FALSE;
-    globaldef008115.enemy = world;
-    globaldef008115.field000267 = world;
+    bot.f_ai = func002508;
+    bot.search_time = time - TRUE;
+    bot.goalentity.goalentity = bot.goalentity;
+    bot.field000288 = FALSE;
+    bot.enemy = world;
+    bot.field000267 = world;
 };
 
 
@@ -284,7 +284,7 @@ void (entity globaldef008117) func002506 =
     }
     
     
-    if(!func002446(globaldef008117))
+    if(!MovingCloserToGoal(globaldef008117))
     {
         globaldef008117.search_time = globaldef008117.search_time - TRUE;
     }
@@ -581,7 +581,7 @@ void (entity globaldef008119) func002508 =
     }
     
     
-    if(!func002446(globaldef008119))
+    if(!MovingCloserToGoal(globaldef008119))
     {
         globaldef008119.search_time = globaldef008119.search_time - TRUE;
     }
@@ -750,7 +750,7 @@ void (entity globaldef008133) func002511 =
     
     if(!globaldef008133.enemy)
     {
-        func002504(globaldef008133);
+        RemoveBotEnemy(globaldef008133);
         return;
     }
     
@@ -763,7 +763,7 @@ void (entity globaldef008133) func002511 =
         }
         else
         {
-            func002504(globaldef008133);
+            RemoveBotEnemy(globaldef008133);
         }
         
         return;
@@ -804,7 +804,7 @@ void (entity globaldef008133) func002511 =
     
     if(!enemy_vis)
     {
-        func002504(globaldef008133);
+        RemoveBotEnemy(globaldef008133);
     }
     
 };
@@ -908,7 +908,7 @@ void (entity globaldef008135) func002513 =
     
     if(!globaldef008135.enemy)
     {
-        func002504(globaldef008135);
+        RemoveBotEnemy(globaldef008135);
         return;
     }
     
@@ -921,7 +921,7 @@ void (entity globaldef008135) func002513 =
         }
         else
         {
-            func002504(globaldef008135);
+            RemoveBotEnemy(globaldef008135);
         }
         
         return;
@@ -969,7 +969,7 @@ void (entity globaldef008135) func002513 =
         }
         else
         {
-            func002504(globaldef008135);
+            RemoveBotEnemy(globaldef008135);
             return;
         }
         
@@ -1124,7 +1124,7 @@ void (entity globaldef008137) func002515 =
     
     if(!globaldef008137.enemy)
     {
-        func002504(globaldef008137);
+        RemoveBotEnemy(globaldef008137);
         return;
     }
     
@@ -1137,7 +1137,7 @@ void (entity globaldef008137) func002515 =
         }
         else
         {
-            func002504(globaldef008137);
+            RemoveBotEnemy(globaldef008137);
         }
         
         return;
@@ -1163,7 +1163,7 @@ void (entity globaldef008137) func002515 =
     
     if(!BotWantsToFight(globaldef008137))
     {
-        func002504(globaldef008137);
+        RemoveBotEnemy(globaldef008137);
         return;
     }
     
@@ -1207,14 +1207,14 @@ void (entity globaldef008137) func002515 =
     
     if(globaldef008137.field000273 < time)
     {
-        func002504(globaldef008137);
+        RemoveBotEnemy(globaldef008137);
         return;
     }
     
     
     if(BotWantsToChase(globaldef008137))
     {
-        func002504(globaldef008137);
+        RemoveBotEnemy(globaldef008137);
         return;
     }
     
@@ -1377,7 +1377,7 @@ void (entity globaldef008140) func002517 =
     
     if(!globaldef008140.enemy)
     {
-        func002504(globaldef008140);
+        RemoveBotEnemy(globaldef008140);
         return;
     }
     
@@ -1390,7 +1390,7 @@ void (entity globaldef008140) func002517 =
         }
         else
         {
-            func002504(globaldef008140);
+            RemoveBotEnemy(globaldef008140);
         }
         
         return;
@@ -1435,7 +1435,7 @@ void (entity globaldef008140) func002517 =
     
     if(globaldef008140.field000276 < (time - FL_SWIM))
     {
-        func002504(globaldef008140);
+        RemoveBotEnemy(globaldef008140);
         return;
     }
     
@@ -1468,7 +1468,7 @@ void (entity globaldef008140) func002517 =
     {
         if(!enemy_vis)
         {
-            func002504(globaldef008140);
+            RemoveBotEnemy(globaldef008140);
         }
         else
         {
@@ -1502,13 +1502,13 @@ void (entity globaldef008142) func002518 =
 };
 
 
-// func002519
+// RepeatLastAIFunction
 // function begins at statement 44391, parm_start=25571
 // OP_ADDRESS	25571	551	25572
 // OP_LOAD_FNC	25571	552	25573
 // OP_STOREP_FNC	25573	25572	0
 // OP_DONE	0	0	0
-void (entity globaldef008143) func002519 = 
+void (entity globaldef008143) RepeatLastAIFunction = 
 {
     globaldef008143.f_ai = globaldef008143.f_lastai;
 };
@@ -1593,7 +1593,7 @@ void (entity globaldef008144) func002520 =
     
     if(!globaldef008144.enemy)
     {
-        func002504(globaldef008144);
+        RemoveBotEnemy(globaldef008144);
         return;
     }
     
@@ -1606,7 +1606,7 @@ void (entity globaldef008144) func002520 =
         }
         else
         {
-            func002504(globaldef008144);
+            RemoveBotEnemy(globaldef008144);
         }
         
         return;
@@ -1631,7 +1631,7 @@ void (entity globaldef008144) func002520 =
     
     if((globaldef008144.goalentity.goalentity.solid == SOLID_NOT) || (globaldef008144.search_time < time))
     {
-        func002519(globaldef008144);
+        RepeatLastAIFunction(globaldef008144);
         return;
     }
     
@@ -1642,7 +1642,7 @@ void (entity globaldef008144) func002520 =
     }
     
     
-    if(!func002446(globaldef008144))
+    if(!MovingCloserToGoal(globaldef008144))
     {
         globaldef008144.search_time = globaldef008144.search_time - TRUE;
     }
@@ -1650,7 +1650,7 @@ void (entity globaldef008144) func002520 =
 };
 
 
-// func002521
+// StopAllBotBattles
 // function begins at statement 44465, parm_start=25606
 // OP_STORE_ENT	834	25606	0
 // OP_IFNOT	25606	8	0
@@ -1662,26 +1662,26 @@ void (entity globaldef008144) func002520 =
 // OP_STORE_ENT	25608	25606	0
 // OP_GOTO	-7	0	0
 // OP_DONE	0	0	0
-void () func002521 = 
+void () StopAllBotBattles = 
 {
-    local entity globaldef008147;
-    globaldef008147 = firstBot;
+    local entity bot;
+    bot = firstBot;
     
-    while(globaldef008147)
+    while(bot)
     {
         
-        if(globaldef008147.enemy)
+        if(bot.enemy)
         {
-            func002504(globaldef008147);
+            RemoveBotEnemy(bot);
         }
         
-        globaldef008147 = globaldef008147.next;
+        bot = bot.next;
     }
     
 };
 
 
-// func002522
+// RemoveEnemyFromBots
 // function begins at statement 44475, parm_start=25609
 // OP_STORE_ENT	834	25610	0
 // OP_IFNOT	25610	9	0
@@ -1694,26 +1694,26 @@ void () func002521 =
 // OP_STORE_ENT	25613	25610	0
 // OP_GOTO	-8	0	0
 // OP_DONE	0	0	0
-void (entity globaldef008148) func002522 = 
+void (entity e) RemoveEnemyFromBots = 
 {
-    local entity globaldef008149;
-    globaldef008149 = firstBot;
+    local entity bot;
+    bot = firstBot;
     
-    while(globaldef008149)
+    while(bot)
     {
         
-        if(globaldef008149.enemy == globaldef008148)
+        if(bot.enemy == e)
         {
-            func002504(globaldef008149);
+            RemoveBotEnemy(bot);
         }
         
-        globaldef008149 = globaldef008149.next;
+        bot = bot.next;
     }
     
 };
 
 
-// func002523
+// BotIntermission
 // function begins at statement 44486, parm_start=25614
 // OP_STORE_F	214	816	0
 // OP_STORE_ENT	834	25614	0
@@ -1724,16 +1724,16 @@ void (entity globaldef008148) func002522 =
 // OP_STORE_ENT	25615	25614	0
 // OP_GOTO	-5	0	0
 // OP_DONE	0	0	0
-void () func002523 = 
+void () BotIntermission = 
 {
-    local entity globaldef008150;
+    local entity bot;
     gameNotRunning = TRUE;
-    globaldef008150 = firstBot;
+    bot = firstBot;
     
-    while(globaldef008150)
+    while(bot)
     {
-        func002500(globaldef008150);
-        globaldef008150 = globaldef008150.next;
+        BotEnterIntermission(bot);
+        bot = bot.next;
     }
     
 };

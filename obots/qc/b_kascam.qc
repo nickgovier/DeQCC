@@ -4143,7 +4143,7 @@ void () CamClientInit =
     self.attack_state = FALSE;
     CamGoIdle();
     sprint(self, "KasCam activated\n");
-    func002522(self);
+    RemoveEnemyFromBots(self);
     observerCount = observerCount + TRUE;
 };
 

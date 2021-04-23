@@ -612,7 +612,7 @@ void () execute_changelevel =
     local entity pos;
     intermission_running = TRUE;
     func002704();
-    func002523();
+    BotIntermission();
     if(deathmatch)
     {
         intermission_exittime = time + MOVETYPE_FLY;
