@@ -995,7 +995,7 @@ float (entity bot, float globaldef007943) func002478 =
     local float globaldef007957;
     local float globaldef007958;
     globaldef007946 = bot.goalentity;
-    e = findradius(bot.origin, globaldef000720);
+    e = findradius(bot.origin, GLOBALDEF720_640);
     globaldef007956 = FALSE;
     
     while(e)
@@ -1531,7 +1531,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
         
     }
     
-    globaldef007994 = findradius(globaldef007978.origin, globaldef000720);
+    globaldef007994 = findradius(globaldef007978.origin, GLOBALDEF720_640);
     
     while(globaldef007994)
     {
@@ -1739,7 +1739,7 @@ float (entity globaldef007998, float globaldef007999) func002483 =
         return;
     }
     
-    globaldef008000 = findradius(globaldef007998.origin, globaldef000720);
+    globaldef008000 = findradius(globaldef007998.origin, GLOBALDEF720_640);
     globaldef008001 = world;
     globaldef008003 = globaldef007999;
     
@@ -2476,7 +2476,7 @@ entity (entity globaldef008038, entity globaldef008039) func002491 =
     }
     
     func002692(globaldef008039, globaldef008042);
-    globaldef008040 = func002490(firstWaypoint, globaldef008038.origin, globaldef000720);
+    globaldef008040 = func002490(firstWaypoint, globaldef008038.origin, GLOBALDEF720_640);
     globaldef008044 = 99999;
     globaldef008041 = world;
     
@@ -2615,7 +2615,7 @@ entity (entity globaldef008046, entity globaldef008047) func002492 =
     }
     
     func002692(globaldef008047, globaldef008050);
-    globaldef008048 = func002490(firstWaypoint, globaldef008046.origin, globaldef000720);
+    globaldef008048 = func002490(firstWaypoint, globaldef008046.origin, GLOBALDEF720_640);
     enemy_vis = func002392(globaldef008046, globaldef008047);
     if(enemy_vis)
     {
@@ -2911,7 +2911,7 @@ entity (entity globaldef008068) func002494 =
     
     globaldef008068.field000269 = globaldef008074;
     globaldef008069 = world;
-    globaldef008071 = func002493(globaldef008068, globaldef008068.origin, globaldef000720, FALSE);
+    globaldef008071 = func002493(globaldef008068, globaldef008068.origin, GLOBALDEF720_640, FALSE);
     
     if(globaldef008071)
     {
@@ -3226,7 +3226,7 @@ entity (entity bot) func002495 =
     bot.field000267 = world;
     bot.field000269 = FALSE;
     bot.field000268 = world;
-    globaldef008094 = func002493(bot, bot.origin, globaldef000720, TRUE);
+    globaldef008094 = func002493(bot, bot.origin, GLOBALDEF720_640, TRUE);
     globaldef008093 = globaldef008094;
     
     while(globaldef008093)
@@ -3630,7 +3630,7 @@ entity (entity globaldef008103) func002498 =
             func002692(globaldef008105, globaldef008105);
             globaldef008109 = 9999;
             globaldef008106 = world;
-            globaldef008107 = func002493(globaldef008103, globaldef008103.origin, globaldef000720, FALSE);
+            globaldef008107 = func002493(globaldef008103, globaldef008103.origin, GLOBALDEF720_640, FALSE);
             
             while(globaldef008107)
             {

@@ -740,7 +740,7 @@ float (entity globaldef007809, entity globaldef007810, float globaldef007811) fu
     if(globaldef007811)
     {
         
-        if(globaldef007836 > globaldef000720)
+        if(globaldef007836 > GLOBALDEF720_640)
         {
             return FALSE;
         }

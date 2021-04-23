@@ -913,9 +913,9 @@ void () StartFrame =
     {
         globaldef000782 = cvar("sv_gravity");
         globaldef000776 = (((RA_PLAYERSTATTIME * globaldef000782) * (GLOBALDEF717_270 / globaldef000782)) * (GLOBALDEF717_270 / globaldef000782)) - 14;
-        globaldef000777 = ((RA_PLAYERSTATTIME * globaldef000782) * (globaldef000718 / globaldef000782)) * (globaldef000718 / globaldef000782);
+        globaldef000777 = ((RA_PLAYERSTATTIME * globaldef000782) * (GLOBALDEF718_687 / globaldef000782)) * (GLOBALDEF718_687 / globaldef000782);
         globaldef000778 = (FL_SWIM * (GLOBALDEF717_270 / globaldef000782)) - 0.1;
-        globaldef000779 = FL_SWIM * (globaldef000718 / globaldef000782);
+        globaldef000779 = FL_SWIM * (GLOBALDEF718_687 / globaldef000782);
         globaldef000780 = (((RA_PLAYERSTATTIME * globaldef000782) * (200 / globaldef000782)) * (200 / globaldef000782)) - MOVETYPE_BOUNCE;
         globaldef000781 = ((0.1 * FL_SWIM) * (200 - (globaldef000782 * 0.1))) / (globaldef000782 * 0.1);
         globaldef000781 = TRUE / (globaldef000781 * GLOBALDEF723_600);

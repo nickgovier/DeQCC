@@ -5564,7 +5564,7 @@ entity (entity globaldef009262) func002691 =
         }
         else
         {
-            globaldef009266 = globaldef000720;
+            globaldef009266 = GLOBALDEF720_640;
             globaldef009264 = world;
             globaldef009263 = firstWaypoint;
             
@@ -5573,13 +5573,13 @@ entity (entity globaldef009262) func002691 =
                 globaldef009267 = globaldef009262.origin;
                 globaldef009271 = globaldef009263.origin;
                 
-                if((fabs(globaldef009267_x - globaldef009271_x)) < globaldef000720)
+                if((fabs(globaldef009267_x - globaldef009271_x)) < GLOBALDEF720_640)
                 {
                     
-                    if((fabs(globaldef009267_y - globaldef009271_y)) < globaldef000720)
+                    if((fabs(globaldef009267_y - globaldef009271_y)) < GLOBALDEF720_640)
                     {
                         
-                        if((fabs(globaldef009267_z - globaldef009271_z)) < globaldef000720)
+                        if((fabs(globaldef009267_z - globaldef009271_z)) < GLOBALDEF720_640)
                         {
                             globaldef009265 = vlen(globaldef009267 - globaldef009271);
                             
