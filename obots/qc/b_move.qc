@@ -553,7 +553,7 @@ void (entity globaldef007205, vector globaldef007206) func002431 =
 {
     globaldef007205.velocity = globaldef007206;
     sound(globaldef007205, CHAN_BODY, "player/plyrjmp8.wav", TRUE, ATTN_NORM);
-    globaldef007205.botflags = globaldef007205.botflags | globaldef000684;
+    globaldef007205.botflags = globaldef007205.botflags | GLOBALDEF684_2;
 };
 
 
@@ -3122,7 +3122,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
     if(!(bot.flags & FL_ONGROUND))
     {
         
-        if(!(bot.botflags & globaldef000684))
+        if(!(bot.botflags & GLOBALDEF684_2))
         {
             
             if(func002439(bot, bot.velocity, FALSE))
@@ -3150,7 +3150,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMove =
         globaldef007539 = botspeed;
     }
     
-    bot.botflags = bot.botflags - (bot.botflags & globaldef000684);
+    bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF684_2);
     
     if(bot.botflags & globaldef000691)
     {
@@ -3474,7 +3474,7 @@ float (entity bot, vector direction, float botspeed, float jump) BotMoveInitial 
     
     if(bot.waterlevel > TRUE)
     {
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000684);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF684_2);
         return func002430(bot, direction, botspeed);
     }
     else

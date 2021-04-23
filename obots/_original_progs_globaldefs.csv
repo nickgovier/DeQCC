@@ -683,11 +683,11 @@ row,name,s_name,ofs,type,typename
 681,GLOBALDEF681_8192,0,698,2,float
 682,GLOBALDEF682_16384,0,699,2,float
 683,GLOBALDEF683_1,0,700,2,float
-684,globaldef000684,0,701,2,float
+684,GLOBALDEF684_2,0,701,2,float
 685,globaldef000685,0,702,2,float
 686,globaldef000686,0,703,2,float
 687,globaldef000687,0,704,2,float
-688,GLOBALDEF684_32,0,705,2,float
+688,globaldef000688,0,705,2,float
 689,globaldef000689,0,706,2,float
 690,globaldef000690,0,707,2,float
 691,globaldef000691,0,708,2,float
