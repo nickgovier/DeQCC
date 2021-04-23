@@ -317,6 +317,7 @@ namespace DeQcc
             nameMap.Add("globaldef000691", "GLOBALDEF691_256");
             nameMap.Add("globaldef000692", "WAYPOINT_DUMP_TO_CONSOLE");
             nameMap.Add("globaldef000693", "WAYPOINT_DO_NOT_DUMP");
+            nameMap.Add("globaldef000694", "GLOBALDEF694_2048");
 
             nameMap.Add("globaldef000698", "unused698");
 

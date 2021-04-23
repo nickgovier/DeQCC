@@ -70,7 +70,7 @@ void (entity globaldef005748) func002274 =
         
         if(self.origin_z > (globaldef005759_z + 0.001))
         {
-            globaldef005748.botflags = globaldef005748.botflags | globaldef000694;
+            globaldef005748.botflags = globaldef005748.botflags | GLOBALDEF694_2048;
             globaldef005748.touchorigin = globaldef005748.origin;
             globaldef005748.steporigin = self.origin;
         }
@@ -272,10 +272,10 @@ void () func002276 =
     {
         func002273(self);
         func002272(self);
-        if(self.botflags & globaldef000694)
+        if(self.botflags & GLOBALDEF694_2048)
         {
             globaldef005780 = TRUE;
-            self.botflags = self.botflags - (self.botflags & globaldef000694);
+            self.botflags = self.botflags - (self.botflags & GLOBALDEF694_2048);
         }
         else
         {
