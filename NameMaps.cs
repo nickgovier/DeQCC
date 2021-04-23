@@ -2083,22 +2083,53 @@ namespace DeQcc
 
             #endregion
 
-            // Done to here
-
             #region demon.qc
 
+            for (int i = 812; i <= 824; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_stand" + (i - 811).ToString()); }
+            for (int i = 825; i <= 832; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_walk" + (i - 824).ToString()); }
+            for (int i = 833; i <= 838; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_run" + (i - 832).ToString()); }
+            for (int i = 839; i <= 850; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_jump" + (i - 838).ToString()); }
+            for (int i = 851; i <= 865; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_atta" + (i - 850).ToString()); }
+            for (int i = 866; i <= 871; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_pain" + (i - 865).ToString()); }
+            nameMap.Add("func000872", "demon1_pain");
+            for (int i = 873; i <= 881; i++) { nameMap.Add("func000" + (i).ToString(), "demon1_die" + (i - 872).ToString()); }
+            nameMap.Add("func000882", "demon_die");
+            nameMap.Add("func000883", "Demon_MeleeAttack");
+            nameMap.Add("func000885", "CheckDemonMelee");
+            nameMap.Add("func000886", "CheckDemonJump");
             nameMap.Add("func000887", "DemonCheckAttack");
             nameMap.Add("func000888", "Demon_Melee");
+            nameMap.Add("func000889", "Demon_JumpTouch");
 
             for (int i = 812; i <= 889; i++)
             {
                 fileMap[i] = "demon.qc";
             }
 
+            // demon1_pain params
+            nameMap.Add("globaldef003892", "attacker");
+            nameMap.Add("globaldef003893", "damage");
+
+            // CheckDemonJump locals
+            nameMap.Add("globaldef003914", "dist");
+            nameMap.Add("globaldef003918", "d");
+
+            // DemonCheckAttack locals
+            nameMap.Add("globaldef003919", "vec");
+
             // Demon_Melee params
             nameMap.Add("globaldef003923", "side");
 
+            // Demon_Melee locals
+            nameMap.Add("globaldef003924", "ldmg");
+            nameMap.Add("globaldef003925", "delta");
+
+            // Demon_JumpTouch locals
+            nameMap.Add("globaldef003929", "ldmg");
+
             #endregion
+
+            // Done to here
 
             #region shambler.qc
 
