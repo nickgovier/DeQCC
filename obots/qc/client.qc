@@ -1308,7 +1308,7 @@ void () PutClientInServer =
     }
     
     self.botskill = skill;
-    self.field000344 = self;
+    self.camera = self;
     player_stand1();
     
     if(deathmatch || coop)

@@ -4588,12 +4588,12 @@ void () func002736 =
     }
     
     
-    if(self.field000362 < globaldef000734)
+    if(self.admin < globaldef000734)
     {
         return;
     }
     
-    if(self.field000362 == globaldef000734)
+    if(self.admin == globaldef000734)
     {
         func002735();
         if(self.impulse == TRUE)
@@ -4674,11 +4674,11 @@ void () func002736 =
                             {
                                 if(teamplay)
                                 {
-                                    self.field000362 = globaldef000737;
+                                    self.admin = globaldef000737;
                                 }
                                 else
                                 {
-                                    self.field000362 = globaldef000735;
+                                    self.admin = globaldef000735;
                                 }
                                 
                             }
@@ -4704,7 +4704,7 @@ void () func002736 =
                                     
                                     if(self.impulse == FL_CLIENT)
                                     {
-                                        self.field000362 = globaldef000730;
+                                        self.admin = globaldef000730;
                                         centerprint(self, "");
                                     }
                                     
@@ -4725,7 +4725,7 @@ void () func002736 =
     }
     else
     {
-        if(self.field000362 == globaldef000735)
+        if(self.admin == globaldef000735)
         {
             func002734();
             if(self.impulse == TRUE)
@@ -4749,7 +4749,7 @@ void () func002736 =
                         
                         if(self.impulse == MOVETYPE_STEP)
                         {
-                            self.field000362 = globaldef000734;
+                            self.admin = globaldef000734;
                         }
                         
                     }
@@ -4761,25 +4761,25 @@ void () func002736 =
         }
         else
         {
-            if(self.field000362 == globaldef000736)
+            if(self.admin == globaldef000736)
             {
-                self.field000362 = globaldef000734;
+                self.admin = globaldef000734;
             }
             else
             {
-                if(self.field000362 == globaldef000737)
+                if(self.admin == globaldef000737)
                 {
                     func002733();
                     if((self.impulse >= TRUE) && (self.impulse <= teamplay))
                     {
-                        self.field000362 = globaldef000737 + self.impulse;
+                        self.admin = globaldef000737 + self.impulse;
                     }
                     else
                     {
                         
                         if(self.impulse == (teamplay + TRUE))
                         {
-                            self.field000362 = globaldef000734;
+                            self.admin = globaldef000734;
                         }
                         
                     }
@@ -4788,14 +4788,14 @@ void () func002736 =
                 else
                 {
                     
-                    if(self.field000362 > globaldef000737)
+                    if(self.admin > globaldef000737)
                     {
-                        globaldef009543 = self.field000362 - globaldef000737;
+                        globaldef009543 = self.admin - globaldef000737;
                         
                         if(globaldef009543 > teamplay)
                         {
                             globaldef009543 = teamplay;
-                            self.field000362 = globaldef000737 + teamplay;
+                            self.admin = globaldef000737 + teamplay;
                         }
                         
                         func002732(globaldef009543);
@@ -4814,7 +4814,7 @@ void () func002736 =
                                 
                                 if(self.impulse == MOVETYPE_WALK)
                                 {
-                                    self.field000362 = globaldef000737;
+                                    self.admin = globaldef000737;
                                 }
                                 
                             }
@@ -4875,13 +4875,13 @@ void () menu =
         return;
     }
     
-    if(self.field000362 < globaldef000734)
+    if(self.admin < globaldef000734)
     {
-        self.field000362 = globaldef000734;
+        self.admin = globaldef000734;
     }
     else
     {
-        self.field000362 = globaldef000730;
+        self.admin = globaldef000730;
     }
     
 };
@@ -4911,7 +4911,7 @@ void (entity globaldef009548) SetAdmin =
     
     currentAdmin = globaldef009548;
     prospectiveAdmin = world;
-    self.field000362 = globaldef000730;
+    self.admin = globaldef000730;
     bprint(globaldef009548.netname);
     bprint(" became administrator\n");
 };
@@ -4935,7 +4935,7 @@ void (entity globaldef009550) stopadmin =
     
     if(currentAdmin == globaldef009550)
     {
-        self.field000362 = globaldef000730;
+        self.admin = globaldef000730;
         currentAdmin = world;
         bprint(globaldef009550.netname);
         bprint(" left the administrator job\n");
@@ -4965,9 +4965,9 @@ void () func002740 =
     while(globaldef009553)
     {
         
-        if(globaldef009553.field000362 == globaldef000738)
+        if(globaldef009553.admin == globaldef000738)
         {
-            globaldef009553.field000362 = FALSE;
+            globaldef009553.admin = FALSE;
         }
         
         globaldef009553 = globaldef009553.next;
@@ -5042,7 +5042,7 @@ void (entity globaldef009555) admin =
     {
         prospectiveAdmin = globaldef009555;
         func002740();
-        globaldef009555.field000362 = globaldef000738;
+        globaldef009555.admin = globaldef000738;
         bprint2(globaldef009555.netname, " wants to be the administrator\n");
         globaldef009556 = firstClient;
         
@@ -5107,7 +5107,7 @@ void (entity globaldef009562) yes =
         return;
     }
     
-    globaldef009562.field000362 = globaldef000738;
+    globaldef009562.admin = globaldef000738;
     globaldef009563 = firstClient;
     globaldef009565 = FALSE;
     globaldef009564 = FALSE;
@@ -5115,7 +5115,7 @@ void (entity globaldef009562) yes =
     while(globaldef009563)
     {
         
-        if(globaldef009563.field000362 == globaldef000738)
+        if(globaldef009563.admin == globaldef000738)
         {
             globaldef009565 = globaldef009565 + TRUE;
         }

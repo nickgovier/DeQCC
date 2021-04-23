@@ -302,9 +302,12 @@ namespace DeQcc
 
             #region obot constants
 
+            nameMap.Add("globaldef000669", "end_obot_fields");
 
             nameMap.Add("globaldef000692", "WAYPOINT_DUMP_TO_CONSOLE");
             nameMap.Add("globaldef000693", "WAYPOINT_DO_NOT_DUMP");
+
+            nameMap.Add("globaldef000698", "unused698");
 
             nameMap.Add("globaldef000700", "WAYPOINTTYPE_PLATTOP");
             nameMap.Add("globaldef000702", "WAYPOINTTYPE_TELEPORT");
@@ -374,11 +377,6 @@ namespace DeQcc
 
             #region obot global variables
 
-
-
-
-
-
             nameMap.Add("globaldef000508", "modelindex_eyes");
             nameMap.Add("globaldef000509", "modelindex_player");
             nameMap.Add("globaldef000510", "modelindex_head");
@@ -392,6 +390,11 @@ namespace DeQcc
             nameMap.Add("globaldef000527", "time_to_start");
             nameMap.Add("globaldef000528", "last_time");
             nameMap.Add("globaldef000529", "end_ra_globals");
+
+            nameMap.Add("globaldef000744", "OBSERV_NAME");
+            nameMap.Add("globaldef000745", "OBSERV_TELEPORT");
+            nameMap.Add("globaldef000746", "OBSERV_CHASE");
+            nameMap.Add("globaldef000747", "OBSERV_FLY");
 
             nameMap.Add("globaldef000784", "gibsCount"); // player.qc
             nameMap.Add("globaldef000786", "waypointCount");
@@ -508,7 +511,14 @@ namespace DeQcc
             nameMap.Add("field000333", "cache8_dist");
             nameMap.Add("field000334", "cache9_dist");
 
-
+            nameMap.Add("field000343", "camflags");
+            nameMap.Add("field000344", "camera");
+            nameMap.Add("field000345", "camangle");
+            nameMap.Add("field000349", "clientorigin");
+            nameMap.Add("field000353", "clientv_angle");
+            nameMap.Add("field000357", "angletime");
+            nameMap.Add("field000358", "chasecamoffset");
+            nameMap.Add("field000362", "admin");
 
 
             #endregion
@@ -2604,7 +2614,7 @@ namespace DeQcc
 
             nameMap.Add("func002365", "ToggleObserverMode");
 
-            for (int i = 2356; i <= 2365; i++)
+            for (int i = 2346; i <= 2365; i++)
             {
                 fileMap[i] = "b_observ.qc";
             }
