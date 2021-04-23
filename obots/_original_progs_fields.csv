@@ -230,8 +230,8 @@ row,name,s_name,ofs,type,typename
 228,f_ai,0,205,6,void()
 229,f_lastai,0,206,6,void()
 230,think2,0,207,6,void()
-231,field000231,0,208,2,float
-232,field000232,0,209,2,float
+231,nextthink2,0,208,2,float
+232,lastphysicstime,0,209,2,float
 233,field000233,0,210,3,vector
 234,field000234,0,210,2,float
 235,field000235,0,211,2,float

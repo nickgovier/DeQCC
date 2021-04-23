@@ -439,6 +439,9 @@ namespace DeQcc
             nameMap.Add("field000228", "f_ai");
             nameMap.Add("field000229", "f_lastai");
             nameMap.Add("field000230", "think2");
+            nameMap.Add("field000231", "nextthink2");
+            nameMap.Add("field000232", "lastphysicstime");
+
 
             nameMap.Add("field000250", "clmodelindex");
 
@@ -2226,9 +2229,6 @@ namespace DeQcc
 
             #endregion
 
-
-            //b_clphys.qc
-
             // Done
             #region b_clrank.c
 
@@ -2306,6 +2306,16 @@ namespace DeQcc
             for (int i = 2266; i <= 2266; i++)
             {
                 fileMap[i] = "b_clskin.qc";
+            }
+
+            #endregion
+
+            #region b_clphys.qc
+
+            // this is a guess, because func002276 is the only place where lastphysicstime is used
+            for (int i = 2276; i <= 2276; i++)
+            {
+                fileMap[i] = "b_clphys.qc";
             }
 
             #endregion
