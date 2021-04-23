@@ -7941,9 +7941,9 @@ row,name,s_name,ofs,type,typename
 7939,globaldef007939,0,24326,2,float
 7940,globaldef007940,0,24327,2,float
 7941,func002478,0,24379,6,void()
-7942,globaldef007942,0,24380,4,entity
+7942,bot,0,24380,4,entity
 7943,globaldef007943,0,24381,2,float
-7944,globaldef007944,0,24382,4,entity
+7944,e,0,24382,4,entity
 7945,globaldef007945,0,24383,4,entity
 7946,globaldef007946,0,24384,4,entity
 7947,globaldef007947,0,24385,3,vector
@@ -8075,7 +8075,7 @@ row,name,s_name,ofs,type,typename
 8073,globaldef008073,0,24932,2,float
 8074,globaldef008074,0,24933,2,float
 8075,func002495,0,24985,6,void()
-8076,globaldef008076,0,24986,4,entity
+8076,bot,0,24986,4,entity
 8077,globaldef008077,0,24987,2,float
 8078,globaldef008078,0,24988,2,float
 8079,globaldef008079,0,24989,2,float
@@ -8091,7 +8091,7 @@ row,name,s_name,ofs,type,typename
 8089,globaldef008089,0,24999,4,entity
 8090,globaldef008090,0,25000,4,entity
 8091,globaldef008091,0,25001,4,entity
-8092,globaldef008092,0,25002,4,entity
+8092,e,0,25002,4,entity
 8093,globaldef008093,0,25003,4,entity
 8094,globaldef008094,0,25004,4,entity
 8095,globaldef008095,0,25005,4,entity
@@ -8109,7 +8109,7 @@ row,name,s_name,ofs,type,typename
 8107,globaldef008107,0,25165,4,entity
 8108,globaldef008108,0,25166,2,float
 8109,globaldef008109,0,25167,2,float
-8110,globaldef008110,0,25202,4,entity
+8110,bot,0,25202,4,entity
 8111,globaldef008111,0,25204,4,entity
 8112,globaldef008112,0,25209,4,entity
 8113,globaldef008113,0,25210,4,entity

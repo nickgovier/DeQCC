@@ -2965,6 +2965,15 @@ namespace DeQcc
 
             #endregion
 
+            // f_goalweight params
+            nameMap.Add("globaldef007942", "bot");
+            nameMap.Add("globaldef007944", "e");
+            // f_walkaboutweight params
+            nameMap.Add("globaldef008076", "bot");
+            nameMap.Add("globaldef008092", "e");
+            // f_ai params
+            nameMap.Add("globaldef008110", "bot");
+
             #region b_aitree.qc
 
             nameMap.Add("func002499", "BotAI");

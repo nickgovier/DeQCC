@@ -140,7 +140,7 @@ entity (entity globaldef008038, entity globaldef008039) func002491;
 entity (entity globaldef008046, entity globaldef008047) func002492;
 entity (entity globaldef008101) func002497;
 entity (entity globaldef008103) func002498;
-void (entity globaldef008110) BotAI;
+void (entity bot) BotAI;
 void (entity globaldef008111) func002500;
 void (entity globaldef008113) func002502;
 void (entity globaldef008115) func002504;
