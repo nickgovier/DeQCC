@@ -2157,13 +2157,13 @@ void (entity bot, float botspeed) BotAttackMove =
         
         if(rnd > 1.87)
         {
-            if(bot.botflags & globaldef000687)
+            if(bot.botflags & GLOBALDEF687_16)
             {
-                bot.botflags = bot.botflags - globaldef000687;
+                bot.botflags = bot.botflags - GLOBALDEF687_16;
             }
             else
             {
-                bot.botflags = bot.botflags + globaldef000687;
+                bot.botflags = bot.botflags + GLOBALDEF687_16;
             }
             
             bot.field000272 = FALSE;
@@ -2173,7 +2173,7 @@ void (entity bot, float botspeed) BotAttackMove =
     }
     
     
-    if(bot.botflags & globaldef000687)
+    if(bot.botflags & GLOBALDEF687_16)
     {
         strafeAngle = CONTENT_EMPTY * strafeAngle;
     }
@@ -2198,13 +2198,13 @@ void (entity bot, float botspeed) BotAttackMove =
     }
     
     bot.field000272 = FALSE;
-    if(bot.botflags & globaldef000687)
+    if(bot.botflags & GLOBALDEF687_16)
     {
-        bot.botflags = bot.botflags - globaldef000687;
+        bot.botflags = bot.botflags - GLOBALDEF687_16;
     }
     else
     {
-        bot.botflags = bot.botflags + globaldef000687;
+        bot.botflags = bot.botflags + GLOBALDEF687_16;
     }
     
     
