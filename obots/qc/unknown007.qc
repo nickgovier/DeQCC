@@ -1524,7 +1524,7 @@ float (entity globaldef007978, float globaldef007979, float globaldef007980) fun
     if(globaldef007978.field000267)
     {
         
-        if((!(globaldef007978.botflags & globaldef000689)) && (!(globaldef007978.botflags & globaldef000688)))
+        if((!(globaldef007978.botflags & globaldef000689)) && (!(globaldef007978.botflags & GLOBALDEF684_32)))
         {
             globaldef007993 = globaldef007978.field000267.f_goalweight(globaldef007978, globaldef007978.field000267);
         }
@@ -3378,7 +3378,7 @@ entity (entity bot) func002495 =
     if(globaldef008089)
     {
         bot.field000267 = globaldef008089;
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000688);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF684_32);
         bot.botflags = bot.botflags - (bot.botflags & globaldef000689);
         bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
         globaldef008090.field000339 = bot;
@@ -3396,7 +3396,7 @@ entity (entity bot) func002495 =
     {
         bot.field000267 = globaldef008096;
         bot.botflags = bot.botflags | globaldef000689;
-        bot.botflags = bot.botflags - (bot.botflags & globaldef000688);
+        bot.botflags = bot.botflags - (bot.botflags & GLOBALDEF684_32);
         bot.botflags = bot.botflags - (bot.botflags & globaldef000690);
         globaldef008096.field000341 = bot;
         globaldef008096.field000342 = time;
@@ -3480,7 +3480,7 @@ float (entity globaldef008100) func002496 =
         return FALSE;
     }
     
-    if((!(globaldef008100.botflags & globaldef000689)) && (!(globaldef008100.botflags & globaldef000688)))
+    if((!(globaldef008100.botflags & globaldef000689)) && (!(globaldef008100.botflags & GLOBALDEF684_32)))
     {
         
         if(globaldef008100.field000267.solid != SOLID_TRIGGER)
@@ -3654,7 +3654,7 @@ entity (entity globaldef008103) func002498 =
             if(globaldef008106)
             {
                 globaldef008103.field000267 = globaldef008105;
-                globaldef008103.botflags = globaldef008103.botflags | globaldef000688;
+                globaldef008103.botflags = globaldef008103.botflags | GLOBALDEF684_32;
                 globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & globaldef000689);
                 globaldef008103.botflags = globaldef008103.botflags - (globaldef008103.botflags & globaldef000690);
                 globaldef008106.field000339 = globaldef008103;

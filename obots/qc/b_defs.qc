@@ -156,7 +156,7 @@ float globaldef000684;
 float globaldef000685;
 float globaldef000686;
 float globaldef000687;
-float globaldef000688;
+float GLOBALDEF684_32 = 32;
 float globaldef000689;
 float globaldef000690;
 float globaldef000691;
