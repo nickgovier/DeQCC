@@ -1065,7 +1065,7 @@ row,name,s_name,ofs,type,typename
 1063,BotMoveInDirection,0,1125,6,void()
 1064,BotJumpInDirection,0,1126,6,void()
 1065,MovingCloserToGoal,0,1127,6,void()
-1066,func002468,0,1128,6,void()
+1066,BotTurnTowardsGoal,0,1128,6,void()
 1067,func002474,0,1129,6,void()
 1068,CreateBotGoal,0,1130,6,void()
 1069,func002471,0,1131,6,void()
@@ -7844,7 +7844,7 @@ row,name,s_name,ofs,type,typename
 7842,globaldef007842,0,23958,4,entity
 7843,globaldef007843,0,23959,4,entity
 7844,globaldef007844,0,23960,4,entity
-7845,globaldef007845,0,23961,4,entity
+7845,bot,0,23961,4,entity
 7846,globaldef007846,0,23962,3,vector
 7847,globaldef007847,0,23962,2,float
 7848,globaldef007848,0,23963,2,float

@@ -416,7 +416,7 @@ void (entity globaldef002722) func000351 =
         globaldef002722.search_time = time + MOVETYPE_WALK;
     }
     
-    func002468(globaldef002722);
+    BotTurnTowardsGoal(globaldef002722);
     globaldef002722.velocity = globaldef002722.goalentity.origin - globaldef002722.origin;
     globaldef002722.velocity_z = FALSE;
     globaldef002722.velocity = normalize(globaldef002722.velocity) * globaldef000783;

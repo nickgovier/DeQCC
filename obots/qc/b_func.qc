@@ -127,7 +127,7 @@ float (entity bot, float botspeed) BotJumpToGoal;
 float (entity bot, float yaw, float botspeed) BotMoveInDirection;
 float (entity bot, float yaw, float botspeed) BotJumpInDirection;
 float (entity bot) MovingCloserToGoal;
-void (entity globaldef007845) func002468;
+void (entity bot) BotTurnTowardsGoal;
 vector (entity globaldef007869) func002474;
 entity () CreateBotGoal;
 void (entity globaldef007858, entity globaldef007859) func002471;

@@ -2985,12 +2985,17 @@ namespace DeQcc
 
             #region b_goal.qc
 
+            nameMap.Add("func002468", "BotTurnTowardsGoal");
+
             nameMap.Add("func002470", "CreateBotGoal");
             
-            for (int i = 2469; i <= 2470; i++)
+            for (int i = 2468; i <= 2473; i++)
             {
                 fileMap[i] = "b_goal.qc";
             }
+
+            // BotTurnTowardsGoal params
+            nameMap.Add("globaldef007845", "bot");
 
             #endregion
 
@@ -3012,7 +3017,7 @@ namespace DeQcc
             nameMap.Add("func002522", "RemoveEnemyFromBots");
             nameMap.Add("func002523", "BotIntermission");
 
-            for (int i = 2499; i <= 2523; i++)
+            for (int i = 2474; i <= 2523; i++)
             {
                 fileMap[i] = "b_aitree.qc";
             }
