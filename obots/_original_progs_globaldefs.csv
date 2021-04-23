@@ -695,7 +695,7 @@ row,name,s_name,ofs,type,typename
 693,WAYPOINT_DO_NOT_DUMP,0,710,2,float
 694,GLOBALDEF694_2048,0,711,2,float
 695,GLOBALDEF695_4096,0,712,2,float
-696,globaldef000696,0,713,2,float
+696,GLOBALDEF696_8192,0,713,2,float
 697,globaldef000697,0,714,2,float
 698,unused698,0,715,2,float
 699,globaldef000699,0,716,2,float

@@ -1105,7 +1105,7 @@ void (entity globaldef007960, float globaldef007961) func002479 =
     
     globaldef007962 = globaldef007960.goalentity;
     globaldef007962.goalentity = globaldef007962;
-    if(globaldef007960.botflags & globaldef000696)
+    if(globaldef007960.botflags & GLOBALDEF696_8192)
     {
         if(globaldef007960.waterlevel >= MOVETYPE_WALK)
         {
@@ -1116,12 +1116,12 @@ void (entity globaldef007960, float globaldef007961) func002479 =
             globaldef007963 = func002474(globaldef007960);
         }
         
-        globaldef007960.botflags = globaldef007960.botflags - globaldef000696;
+        globaldef007960.botflags = globaldef007960.botflags - GLOBALDEF696_8192;
     }
     else
     {
         globaldef007963 = func002477(globaldef007960, globaldef007961);
-        globaldef007960.botflags = globaldef007960.botflags | globaldef000696;
+        globaldef007960.botflags = globaldef007960.botflags | GLOBALDEF696_8192;
     }
     
     globaldef007960.search_time = time + FL_SWIM;
